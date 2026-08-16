@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 3 — Gathering and Documenting Client Information</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#F4F4F1;--card:#FFF;--ink:#16211F;--muted:#6F7B78;
+  --off:#B9BDB9;--off-bg:#E7E8E4;--on:#0E5A55;--on-bg:#E2EDEB;
+  --warn:#9A4B22;--warn-bg:#F6EAE2;--line:#D8DAD4;--gold:#8A6A12;--gold-bg:#F3EEDF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65}
+.wrap{max-width:1020px;margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.025em;margin:0}
+h1{font-size:clamp(34px,5.8vw,62px);line-height:1.03;font-weight:700}
+h2{font-size:clamp(25px,3.9vw,42px);line-height:1.08;font-weight:600}
+h3{font-size:clamp(18px,2.2vw,23px);line-height:1.24;font-weight:600}
+h4{font-size:16.5px;font-weight:600;letter-spacing:-.01em}
+p{margin:18px 0;max-width:64ch}
+.big{font-size:clamp(19px,2.2vw,23px);line-height:1.52}
+.dim{color:var(--muted)}
+.lede{font-size:clamp(19px,2.2vw,24px);line-height:1.5;color:var(--muted);max-width:40ch;margin:24px 0 0}
+section.slide{padding:clamp(48px,7vw,88px) 0;border-bottom:1px solid var(--line);scroll-margin-top:12px}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--on);font-weight:500;margin-bottom:15px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.mins{background:var(--gold-bg);color:var(--gold);border-radius:4px;padding:3px 8px;letter-spacing:.09em}
+
+#rail{position:fixed;left:12px;top:50%;transform:translateY(-50%);z-index:40;display:none}
+@media(min-width:1340px){#rail{display:block}}
+#rail button{display:flex;align-items:center;gap:9px;background:none;border:none;padding:3px 4px;cursor:pointer;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--off);width:100%;text-align:left}
+#rail .pip{width:7px;height:7px;border-radius:50%;background:var(--off);flex:none;transition:.2s}
+#rail .lbl{opacity:0;transition:.2s;white-space:nowrap}
+#rail:hover .lbl{opacity:1}
+#rail button.on .pip{background:var(--on);transform:scale(1.5)}
+#rail button.on{color:var(--on)}
+
+.btn{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;background:var(--on);color:#fff;border:none;border-radius:7px;padding:11px 17px;cursor:pointer;transition:.15s}
+.btn:hover{filter:brightness(1.15)}
+.btn.ghost{background:none;color:var(--on);border:1.5px solid var(--on)}
+.btn.ghost:hover{background:var(--on-bg);filter:none}
+.btn.mini{padding:7px 12px;font-size:11px}
+.btn.sel{background:var(--off-bg);color:var(--muted);border:1.5px solid var(--line)}
+.btn.sel.act{background:var(--on);color:#fff;border-color:var(--on)}
+:focus-visible{outline:2.5px solid var(--on);outline-offset:3px;border-radius:4px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+.conf{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:4px;font-weight:500;vertical-align:middle;white-space:nowrap}
+.conf.h{background:var(--on-bg);color:var(--on)}
+.conf.m{background:var(--gold-bg);color:var(--gold)}
+.conf.l{background:var(--warn-bg);color:var(--warn)}
+.src{font-family:"JetBrains Mono",monospace;font-size:11.5px;line-height:1.6;color:var(--muted);margin:12px 0 0;padding-top:10px;border-top:1px solid var(--line);max-width:none}
+
+.panel{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:24px;margin:26px 0}
+.panel h4{margin-bottom:6px}
+.plab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:11px;display:block}
+.do{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--warn);background:var(--warn-bg);border-radius:5px;padding:5px 10px;display:inline-block;margin-bottom:14px}
+
+.ctrls{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:13px;margin:24px 0}
+.tg{display:flex;gap:13px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:11px;padding:15px 17px;cursor:pointer;transition:.18s;user-select:none}
+.tg:hover{border-color:var(--off)}
+.tg.on{border-color:var(--on);background:var(--on-bg)}
+.tg input{position:absolute;opacity:0;width:0;height:0}
+.track{width:42px;height:24px;border-radius:12px;background:var(--off);position:relative;flex:none;margin-top:2px;transition:.2s}
+.tg.on .track{background:var(--on)}
+.knob{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s}
+.tg.on .knob{left:21px}
+.tg .tl{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:15px;display:block;line-height:1.3}
+.tg .td{font-size:13px;color:var(--muted);line-height:1.45;display:block;margin-top:3px}
+
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;background:transparent;margin:12px 0}
+input[type=range]::-webkit-slider-runnable-track{height:6px;background:var(--off-bg);border-radius:3px}
+input[type=range]::-moz-range-track{height:6px;background:var(--off-bg);border-radius:3px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--on);margin-top:-9px;cursor:pointer;border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.2)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--on);cursor:pointer;border:3px solid #fff}
+.ticks{display:flex;justify-content:space-between;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.05em}
+.instrline{font-family:"JetBrains Mono",monospace;font-size:14px;background:var(--on-bg);color:var(--on);border-radius:8px;padding:12px 16px;margin:18px 0 0;line-height:1.6}
+
+textarea,input[type=text],input[type=number]{width:100%;font-family:"JetBrains Mono",monospace;font-size:14px;line-height:1.6;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:12px 14px;resize:vertical}
+textarea{min-height:92px}
+textarea:focus,input:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on-bg)}
+label.fl{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:15px;display:block;margin-bottom:5px}
+.hint{font-size:13px;color:var(--muted);display:block;margin-bottom:8px;line-height:1.45}
+
+.mpanel{background:var(--off-bg);border-radius:9px;padding:20px;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.75;min-height:110px;transition:.3s;margin-top:18px}
+.mpanel.has{background:var(--on-bg)}
+.mpanel .hd{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:9px}
+.mpanel .nil{color:var(--muted);font-style:italic}
+.mpanel .flag{color:var(--warn)}
+.mpanel .good{color:var(--on)}
+
+.chiplist{display:flex;flex-direction:column;gap:9px}
+.chip{background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:12px 15px;cursor:pointer;font-size:15px;transition:.15s;text-align:left;font-family:"Source Serif 4",serif;color:var(--ink);width:100%;line-height:1.45}
+.chip:hover{border-color:var(--off)}
+.chip.act{border-color:var(--on);background:var(--on-bg);font-weight:600}
+.chip.done{opacity:.5}
+.sorter{display:grid;grid-template-columns:1fr 1.05fr;gap:24px;margin:24px 0}
+@media(max-width:880px){.sorter{grid-template-columns:1fr}}
+.boxes{display:flex;flex-direction:column;gap:12px}
+.lbox{border:1.5px solid var(--line);border-radius:11px;padding:15px 17px;background:var(--card);transition:.25s;cursor:pointer;text-align:left;width:100%;font-family:inherit;color:inherit}
+.lbox:hover{border-color:var(--off)}
+.lbox.lit{border-color:var(--on);background:var(--on-bg);box-shadow:0 0 0 4px rgba(14,90,85,.09)}
+.lbox h4{margin-bottom:3px}
+.lbox p{font-size:13.5px;color:var(--muted);margin:0;max-width:none;line-height:1.45}
+
+.quiz .qitem{padding:18px 0;border-bottom:1px solid var(--line)}
+.quiz .qitem:last-child{border-bottom:none}
+.qtext{font-family:"JetBrains Mono",monospace;font-size:14px;margin-bottom:12px;display:block;line-height:1.65;background:var(--off-bg);padding:12px 14px;border-radius:8px}
+.qfb{font-size:14.5px;line-height:1.55;margin-top:11px;padding:11px 14px;border-radius:7px;display:none}
+.qitem.done .qfb{display:block}
+.qfb.right{background:var(--on-bg);color:#0A423F}
+.qfb.wrong{background:var(--warn-bg);color:var(--warn)}
+.qitem.done .qbtns button{opacity:.4;pointer-events:none}
+.qitem.done .qbtns button.picked{opacity:1}
+.score{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--on);margin-top:18px;display:block}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:17px;margin:28px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:20px}
+.card p{font-size:15px;line-height:1.55;margin:8px 0 0;color:var(--muted);max-width:none}
+.card .num{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--on);font-weight:500;display:block;margin-bottom:9px}
+.card.warn{background:var(--warn-bg);border-color:#E0C6B4}
+.card.warn .num{color:var(--warn)}
+.card.gold{background:var(--gold-bg);border-color:#DFD3AF}
+.card.gold .num{color:var(--gold)}
+
+figure{margin:28px 0;border:1px solid var(--line);border-radius:11px;background:var(--card);padding:18px}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:14px;color:var(--muted);margin-top:12px;padding:0 2px;line-height:1.55}
+.chartlab{font-family:"JetBrains Mono",monospace;font-size:11px;fill:var(--muted);letter-spacing:.04em}
+.chartval{font-family:"JetBrains Mono",monospace;font-size:12px;fill:var(--ink);font-weight:500}
+.chartttl{font-family:"Bricolage Grotesque",sans-serif;font-size:14px;fill:var(--ink);font-weight:600}
+
+.pull{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:clamp(21px,3vw,32px);line-height:1.18;letter-spacing:-.02em;border-left:4px solid var(--on);padding-left:24px;margin:36px 0;max-width:26ch}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15.5px}
+th{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;text-align:left;color:var(--muted);border-bottom:2px solid var(--ink);padding:0 12px 9px 0}
+td{padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.5}
+code{font-family:"JetBrains Mono",monospace;font-size:.88em;background:var(--off-bg);padding:2px 5px;border-radius:4px}
+pre{font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.7;background:var(--off-bg);border-radius:9px;padding:16px 18px;overflow-x:auto;white-space:pre-wrap;margin:16px 0}
+
+.brk{background:var(--gold-bg);border:1.5px dashed #DFD3AF;border-radius:12px;padding:22px 26px;margin:34px 0;text-align:center}
+.brk .t{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:20px;color:var(--gold)}
+.brk p{margin:6px auto 0;max-width:52ch;font-size:15px;color:var(--gold)}
+
+#ovr{position:fixed;right:14px;bottom:14px;z-index:50;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:7px;padding:7px 11px}
+body.reveal .qitem .qfb{display:block}
+body.reveal .keyhide{display:block!important}
+footer{padding:48px 0 90px;font-size:14.5px;color:var(--muted)}
+footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:none;word-break:break-word}
+footer li{margin-bottom:9px;line-height:1.55}
+@media print{#rail,#ovr{display:none}body{background:#fff}.slide{page-break-inside:avoid;padding:20px 0}}
+</style>
+</head>
+<body>
+<nav id="rail" aria-label="Sections"></nav>
+<div id="ovr">Shift+U — instructor override</div>
+<div class="wrap">
+
+<!-- ============ 1 ============ -->
+<section class="slide" id="s1" data-nav="Scope">
+  <div class="eyebrow"><span>BUS ADM X433.4 · Session 3</span><span class="mins">8 min</span></div>
+  <h1>Gathering and Documenting Client Information</h1>
+  <p class="lede">Grounding makes the model cite your sources. The nearest passage is not always the right one.</p>
+
+  <p class="big">Session 1 established that the model predicts rather than knows. Session 2 established that it samples a plausible answer rather than computing the true one. Session 3 covers the standard remedy — hand the model your own documents and require it to answer from them — and measures how much of the problem that remedy actually removes.</p>
+
+  <p>The answer is: a large fraction, and not all of it. Four measurements set the boundary, and every one is on the board before the break. The mechanism underneath all four is the same mechanism Wolfram describes in the reading you did for tonight: text becomes an array of numbers, and "relevant" is operationalised as "close in that number space." Closeness is not correctness. Most of this session is spent on the gap between the two.</p>
+
+  <div class="cards">
+    <div class="card"><span class="num">Outcome 01</span><h4>A working model of retrieval</h4><p>Chunk, embed, rank, read. You will run the ranking arithmetic yourself and watch it return the wrong passage.</p></div>
+    <div class="card"><span class="num">Outcome 02</span><h4>Four measured error rates</h4><p>Retrieval failure, grounded generation error, commercial RAG hallucination, and the ungrounded baseline — each with a named source.</p></div>
+    <div class="card"><span class="num">Outcome 03</span><h4>A documentation standard</h4><p>What a defensible record of circumstances and basis contains, and which parts a note-taker cannot produce.</p></div>
+    <div class="card gold"><span class="num">Outcome 04</span><h4>A Part 1 draft with a verified target</h4><p>Your first draft was due tonight. You leave with it scored against the Part 1 rubric and a named gap to close.</p></div>
+  </div>
+
+  <div class="panel">
+    <span class="do">Do this now — 4 minutes</span>
+    <h4>Draft status self-audit</h4>
+    <p class="hint">Your first draft of Final Project Part 1 — target task, model/tier choice, initial prompts — was due before class tonight. Tick only what is true of the draft you actually submitted. The band is computed from the Part 1 rubric weights in the syllabus.</p>
+    <div id="auditList" class="chiplist"></div>
+    <div id="auditOut" class="mpanel"><span class="hd">Computed band</span><span class="nil">Tick the items that are true.</span></div>
+  </div>
+
+  <p class="src">Session 3 row, course syllabus: principle of grounding; note-taker architecture; documentation tools against the confidentiality obligation; security for meeting recordings; documenting circumstances and basis; grounded meeting-prep assistant, grounding vs. fine-tuning; the prep → capture → summarise → follow-up → log workflow; RAG and its advisory use case. Assigned reading: Wolfram (2023), "The Concept of Embeddings" and the opening of "Meaning Space"; Kitces (15 Jan 2025); Iskowitz (29 Jul 2025).</p>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="slide" id="s2" data-nav="Embeddings">
+  <div class="eyebrow"><span>01 · Mechanism</span><span class="mins">12 min</span></div>
+  <h2>Embeddings and the Coordinates of Meaning Space</h2>
+
+  <p class="big">Wolfram's definition is the one to hold: an embedding is a way to represent the essence of something by an array of numbers, with the property that nearby things are represented by nearby numbers. A word embedding lays words out in a meaning space in which words nearby in meaning appear nearby in the space.</p>
+
+  <p>Two details from the reading matter more than the definition. The first is how the arrays are produced. Wolfram describes looking at large amounts of text — five billion words from the web in his example — and measuring how similar the <em>environments</em> are in which different words appear. Nothing in that procedure inspects meaning. It inspects company. The second is that the arrays are long: Wolfram gives 768 numbers per token for GPT-2 and 12,288 for GPT-3. Every two-dimensional picture of meaning space, his and the one below, is a projection of something with hundreds or thousands of axes down to two, and projection destroys information.</p>
+
+  <p>The map below is an illustrative hand-built layout — the positions were assigned, not learned. The arithmetic run on it is real: clicking a term computes Euclidean distance to every other term in the displayed coordinates and ranks them. That is the same operation a retriever performs, at two dimensions instead of a thousand.</p>
+
+  <div class="panel">
+    <span class="do">Do this now — 4 minutes</span>
+    <h4>Interrogate the map</h4>
+    <p class="hint">Click any term. Its three nearest neighbours in this space light up, with the measured distances. Find one pair that is close in the space and would be dangerous to substitute for each other in a client file.</p>
+    <div id="mapWrap"></div>
+    <div id="mapOut" class="mpanel"><span class="hd">Nearest neighbours</span><span class="nil">Click a term on the map.</span></div>
+  </div>
+
+  <p class="src">Wolfram, S. (2023, 14 Feb). <em>What Is ChatGPT Doing … and Why Does It Work?</em> — "The Concept of Embeddings"; "Meaning Space and Semantic Laws of Motion." Definition of embedding, the five-billion-word environment-similarity construction, and the 768 / 12,288 vector lengths are Wolfram's, quoted in substance <span class="conf h">H</span>. Map coordinates are illustrative and were assigned for this lesson <span class="conf l">L — illustrative, not measured</span>. Distance arithmetic on those coordinates is exact.</p>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="slide" id="s3" data-nav="Distribution">
+  <div class="eyebrow"><span>02 · The failure this creates</span><span class="mins">10 min</span></div>
+  <h2>Distributional Similarity and Referential Difference</h2>
+
+  <p class="big">Wolfram's own worked example contains the failure mode. He explains that "alligator" and "crocodile" will often appear almost interchangeably in otherwise similar sentences, and that this is why they are placed near each other, while "turnip" and "eagle" do not appear in similar sentences and are placed far apart.</p>
+
+  <p>Read that as an engineer rather than as a reader. The property being measured is <em>interchangeability of context</em>. Alligators and crocodiles are different animals. The embedding does not encode that they are different; it encodes that people write about them the same way. For a general-purpose chatbot this is a harmless approximation. For a retriever pointed at a firm's document library it is the central hazard, because the documents that describe a firm's rules are written in near-identical language and differ in one governing condition.</p>
+
+  <p class="pull">Distributional proximity is the signal. Referential identity is what you needed.</p>
+
+  <div class="panel">
+    <span class="do">Do this now — 5 minutes</span>
+    <h4>Sort the pairs</h4>
+    <p class="hint">Each pair below would sit close together in a word-level embedding. Sort each into one of three buckets. The answer key is withheld until you have placed all six.</p>
+    <div class="sorter">
+      <div id="pairList" class="chiplist"></div>
+      <div id="pairBoxes" class="boxes"></div>
+    </div>
+    <div id="pairOut" class="mpanel"><span class="hd">Progress</span><span class="nil">Select a pair, then choose a bucket.</span></div>
+    <div id="pairKey" class="mpanel keyhide" style="display:none"></div>
+  </div>
+
+  <p class="src">Wolfram (2023), "The Concept of Embeddings" — alligator / crocodile and turnip / eagle are Wolfram's examples, reproduced in substance <span class="conf h">H</span>. The six pairs and the three-bucket taxonomy are constructed for this lesson.</p>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="slide" id="s4" data-nav="Retrieval">
+  <div class="eyebrow"><span>03 · RAG, mechanically</span><span class="mins">12 min</span></div>
+  <h2>Retrieval Mechanics: Chunking, Indexing, and Ranking</h2>
+
+  <p class="big">Retrieval-augmented generation is four operations, none of them mysterious. Split the source documents into chunks. Convert each chunk into a vector. At query time, convert the query into a vector by the same procedure and rank the chunks by similarity. Paste the top-ranked chunks into the prompt and instruct the model to answer only from them.</p>
+
+  <p>The advisory use case is the one your firm already has: an internal library of standards, policies, model portfolios, meeting templates and prior plan documents that nobody can recall in full. The model is not being asked to know your firm. It is being asked to read the three paragraphs that the ranker handed it. Everything that can go wrong in the answer either went wrong in the ranking, or went wrong in the reading.</p>
+
+  <p>The retriever below is real, not a mock-up. It builds an inverse-document-frequency index over the ten chunks of a synthetic firm library, weights each term by <code>tf × ln(1 + N/df)</code>, and ranks by cosine similarity. Two of the four preset queries are engineered to fail. The failure is not a bug in the code; it is the alligator-and-crocodile property, arriving in a client file.</p>
+
+  <div class="panel">
+    <span class="do">Do this now — 6 minutes</span>
+    <h4>Run the retriever</h4>
+    <p class="hint">Pick a preset or type your own query. The ranked chunks appear with their similarity scores. Read the top-ranked chunk and decide, before looking at the verdict, whether an advisor acting on it alone would give correct advice.</p>
+    <div class="row" id="qPresets" style="margin-bottom:14px"></div>
+    <input type="text" id="qBox" placeholder="or type a query against the firm library">
+    <div class="row" style="margin-top:12px"><button class="btn" id="qRun">Rank chunks</button><button class="btn ghost mini" id="qVerdict">Show verdict</button></div>
+    <div id="qOut" class="mpanel"><span class="hd">Ranked chunks</span><span class="nil">Choose a query and rank.</span></div>
+    <div id="qVer" class="mpanel keyhide" style="display:none"></div>
+  </div>
+
+  <p class="src">Corpus is synthetic. "Northgate Wealth Partners" is a fictional firm and every chunk is invented policy text written for this exercise — no real firm standard, no client data, and no statement of law is contained in it. The ranking arithmetic (IDF weighting, cosine similarity) is executed in the page and is auditable in the source.</p>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="slide" id="s5" data-nav="Chunk size">
+  <div class="eyebrow"><span>04 · The engineering decision that breaks it</span><span class="mins">10 min</span></div>
+  <h2>Chunk Size and Condition Orphaning</h2>
+
+  <p class="big">Chunk size is the only parameter in a retrieval system that a non-engineer will ever be asked to choose, and it is the one that decides whether a rule arrives with the condition that governs it.</p>
+
+  <p>Anthropic's engineering write-up on contextual retrieval states the problem in one example: a chunk reads "the company's revenue grew by 3% over the previous quarter," and nothing in that chunk says which company or which quarter. The subject was two paragraphs earlier, in a different chunk. The embedding of the orphaned chunk carries none of it.</p>
+
+  <p>The advisory version is worse, because the orphaned element is usually not the subject but the <em>condition</em>. "The reserve is eighteen months of planned distributions" is a true sentence about retired households and a dangerous sentence about everyone else. Drag the slider and watch the condition separate from the number.</p>
+
+  <div class="panel">
+    <span class="do">Do this now — 4 minutes</span>
+    <h4>Re-chunk the standard</h4>
+    <p class="hint">The same 52-word standard, split at different chunk lengths. Chunks that state a quantity without stating the condition that governs it are flagged. Find the largest chunk size at which orphaning still occurs.</p>
+    <label class="fl" for="chSize">Chunk size</label>
+    <input type="range" id="chSize" min="6" max="80" step="2" value="14">
+    <div class="ticks"><span>6 words</span><span id="chNow">14 words</span><span>80 words</span></div>
+    <div id="chOut" class="mpanel"></div>
+    <div class="instrline" id="chFix"></div>
+  </div>
+
+  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em> — the revenue-chunk example and the prepend-context remedy are Anthropic's <span class="conf h">H</span>. The standard being chunked is synthetic. The orphaning detector is a keyword heuristic written for this lesson and will miss cases a real evaluation would catch <span class="conf l">L — heuristic, illustrative</span>.</p>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="slide" id="s6" data-nav="Retrieval rates">
+  <div class="eyebrow"><span>05 · Measurement</span><span class="mins">10 min</span></div>
+  <h2>Measured Retrieval Failure Rates</h2>
+
+  <p class="big">Anthropic measured the retrieval step alone, before any generation, as the share of queries for which the correct chunk was absent from the top twenty returned. The baseline was 5.7%. The best configuration reached 1.9%.</p>
+
+  <p>Two things are worth extracting from that pair of numbers. First, the direction and the size: adding context to each chunk before embedding, adding a lexical index alongside the vector index, and adding a reranking pass cut failures by two thirds. Second, the floor: 1.9% is not zero, and this is the retrieval step measured in isolation, on a benchmark built by the vendor of the technique. Whatever your production system does, it does not do better than the number the vendor published.</p>
+
+  <figure id="figRetr"></figure>
+
+  <p>Anthropic also publishes the boundary condition that matters most for a small firm. If the knowledge base is under roughly 200,000 tokens — about 500 pages — the recommendation is to skip retrieval entirely and put the whole corpus in the prompt. Most advisory firms' actual standards library, meeting templates and process documentation fit inside 500 pages. A large share of the advisory RAG projects being sold in 2026 are solving a problem the buyer does not have.</p>
+
+  <div class="panel">
+    <span class="do">Do this now — 4 minutes</span>
+    <h4>Your own failure count</h4>
+    <p class="hint">Enter the volumes for your practice. The output is the number of retrieval failures per year at each published configuration — not error rates in the abstract, but events in your file room.</p>
+    <div class="ctrls">
+      <div><label class="fl" for="vMeet">Client meetings per year</label><input type="number" id="vMeet" value="220" min="0" max="5000"></div>
+      <div><label class="fl" for="vQ">Grounded queries per meeting</label><input type="number" id="vQ" value="3" min="0" max="200"></div>
+    </div>
+    <div id="vOut" class="mpanel"></div>
+  </div>
+
+  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em>. Top-20-chunk retrieval failure rate: baseline 5.7%; contextual embeddings 3.7%; contextual embeddings + contextual BM25 2.9%; plus reranking 1.9%. The 67% headline is the 5.7 → 1.9 reduction. The 200,000-token / ~500-page threshold is Anthropic's stated recommendation. <span class="conf h">H — published figures</span>, with the standing caveat that they are vendor-reported benchmarks on codebases, fiction and research papers, not advisory documents <span class="conf m">M — transfer to your corpus unverified</span>.</p>
+</section>
+
+<div class="brk">
+  <div class="t">Break — 15 minutes</div>
+  <p>Sixty-two instructional minutes elapsed. Eighty-eight remain. The 180-minute block carries a further 15 minutes of unallocated buffer beyond the 150 allocated here.</p>
+</div>
+
+<!-- ============ 7 ============ -->
+<section class="slide" id="s7" data-nav="Grounded error">
+  <div class="eyebrow"><span>06 · Measurement</span><span class="mins">12 min</span></div>
+  <h2>Measured Hallucination Rates Under Grounding</h2>
+
+  <p class="big">Retrieval failure is the first of two error sources. The second is the model reading a correctly retrieved passage and still writing something the passage does not support. Both are measured, by different people, on different benchmarks, and the numbers do not agree with the marketing.</p>
+
+  <p>Vectara's hallucination leaderboard supplies the cleanest measurement of the reading step. The model is handed the source document and given a prompt that instructs it to summarise using only the information in the passage, not to infer, and not to use internal knowledge. Every advantage is granted. In November 2025 Vectara replaced its dataset with a harder one: 7,700+ articles, documents up to 32,000 tokens, spanning law, medicine, finance, education and technology, split roughly evenly between low and high complexity. Rates rose across the board. Gemini-2.5-flash-lite led at 3.3%. Gemini-3-Pro came in at 13.6% and did not make the top 25. Claude Sonnet 4.5, GPT-5, GPT-OSS-120B, Grok-4 and DeepSeek-R1 all exceeded 10%.</p>
+
+  <p>Vectara reports two structural findings alongside the rankings: hallucination rates on high-complexity articles are consistently higher than on low-complexity articles, and rates rise with article length. A client meeting transcript and a 40-page plan document are the long, high-complexity end of that distribution, not the short news article the earlier benchmark used.</p>
+
+  <p>The professional-tools measurement is Stanford's. Magesh and colleagues ran the first preregistered evaluation of commercial legal research tools built on retrieval, against vendor claims of "hallucination-free" citations. Lexis+ AI hallucinated on more than 17% of queries, Westlaw AI-Assisted Research on roughly 33%, against 43% for GPT-4 with no retrieval. Grounding cut the rate by half to three quarters. It did not eliminate it, and the vendors' published claims were, in the authors' assessment, overstated.</p>
+
+  <figure id="figHall"></figure>
+
+  <div class="panel">
+    <span class="do">Do this now — 5 minutes</span>
+    <h4>Set the conditions, read the measured band</h4>
+    <p class="hint">Toggle the two conditions that the published studies actually varied. The panel returns the measured figure for that cell and names the study. Two cells have no published measurement; the panel says so rather than interpolating.</p>
+    <div class="ctrls">
+      <label class="tg" id="tgG"><input type="checkbox" id="cbG"><span class="track"><span class="knob"></span></span><span><span class="tl">Source document supplied</span><span class="td">The model is handed the passage and told to answer only from it.</span></span></label>
+      <label class="tg" id="tgL"><input type="checkbox" id="cbL"><span class="track"><span class="knob"></span></span><span><span class="tl">Long, high-complexity document</span><span class="td">Domain text up to 32K tokens rather than a short news article.</span></span></label>
+    </div>
+    <div id="gOut" class="mpanel"></div>
+  </div>
+
+  <p class="src">Vectara (19 Nov 2025), <em>Introducing the Next Generation of Vectara's Hallucination Leaderboard</em> — dataset size, 32K-token length, domain mix, low/high complexity split (3,792 / 3,939), the leaderboard prompt, and the named model rates <span class="conf h">H</span>. Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools. <em>Journal of Empirical Legal Studies, 22</em>(2), 216 — Lexis+ AI &gt;17%, Westlaw AI-Assisted Research ~33%, GPT-4 43%; tools tested May 2024 <span class="conf h">H — peer reviewed</span>. Both are measurements of legal and general text, not of financial planning documents <span class="conf m">M — domain transfer unverified</span>.</p>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="slide" id="s8" data-nav="Grounding vs tuning">
+  <div class="eyebrow"><span>07 · The build decision</span><span class="mins">10 min</span></div>
+  <h2>Grounding Compared With Fine-Tuning</h2>
+
+  <p class="big">Grounding changes what the model reads. Fine-tuning changes what the model is. Advisors are routinely sold the second when they need the first, and the distinguishing question is not accuracy but the cost of being wrong tomorrow.</p>
+
+  <p>Wolfram makes the underlying point without using either term. He observes that it is sufficient to tell the model something once, as part of the prompt, and it will use it — and that this is a clue about what the model is doing, because the alternative would be running a training algorithm and adjusting weights. He also notes the limit: the model can integrate what you tell it only if it rides in a fairly simple way on top of the framework it already has.</p>
+
+  <p>That limit is the honest case for fine-tuning and it is narrower than the sales deck. If your firm's house style, tone, and output format are unlike anything in the training corpus, tuning can help. If your firm's <em>facts</em> change — a contribution limit, a custodian's process, a model portfolio — tuning is the wrong instrument, because facts baked into weights cannot be corrected by editing a document, and the model cannot cite them.</p>
+
+  <div class="panel">
+    <span class="do">Do this now — 4 minutes</span>
+    <h4>Rank by cost of a change</h4>
+    <p class="hint">A rule in your firm's standards library changes on a Tuesday afternoon. Rank these four architectures by how expensive it is to make the assistant reflect the change — cheapest first. Click in order; click again to reset.</p>
+    <div id="rankList" class="chiplist"></div>
+    <div id="rankOut" class="mpanel"><span class="hd">Your ordering</span><span class="nil">Click the cheapest to update first.</span></div>
+  </div>
+
+  <p class="src">Wolfram (2023), "Beyond Basic Training" — the tell-it-once observation and the "riding on top of the framework it already has" limit are Wolfram's, reproduced in substance <span class="conf h">H</span>. The four-way ranking and its ordering are a design judgement made for this lesson, not a measured result <span class="conf l">L — reasoned, not measured</span>.</p>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="slide" id="s9" data-nav="Workflow">
+  <div class="eyebrow"><span>08 · Process</span><span class="mins">12 min</span></div>
+  <h2>The Advisor Meeting Workflow and Its Failure Propagation</h2>
+
+  <p class="big">Prep, capture, summarise, follow-up, log. Five stages, and the reason to draw them as a chain rather than a list is that an error introduced at any stage is inherited, silently, by every stage after it — and the log is the one a regulator reads.</p>
+
+  <p>The chain has a property worth stating explicitly to a compliance officer: the only stage at which a human reliably reads the full output is the follow-up email, because the client will read it too. The CRM log is read by nobody until it matters. That is precisely inverted from where the risk sits.</p>
+
+  <div class="panel">
+    <span class="do">Do this now — 5 minutes</span>
+    <h4>Inject a failure</h4>
+    <p class="hint">Click a stage to inject a plausible failure at that point. The chain shows what each downstream stage inherits, and where the failure would first become visible to a human. Note which failures never become visible at all.</p>
+    <div id="chainWrap"></div>
+    <div id="chainOut" class="mpanel"><span class="hd">Downstream inheritance</span><span class="nil">Click a stage.</span></div>
+  </div>
+
+  <p class="src">The five-stage workflow is the sequence named in the Session 3 row of the course syllabus. Kitces (15 Jan 2025) documents that the leading advisor-specific tools now span the whole cycle — meeting summary, CRM capture, post-meeting tasks, recap email, then the agenda for the next meeting <span class="conf h">H</span>. Failure-propagation content is constructed for this lesson.</p>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="slide" id="s10" data-nav="Note-takers">
+  <div class="eyebrow"><span>09 · Architecture</span><span class="mins">12 min</span></div>
+  <h2>Note-Taker Architecture and the Extraction Step</h2>
+
+  <p class="big">Transcription, extraction, categorisation, follow-up. Transcription is a solved-enough engineering problem. Extraction is where a language model decides which sentences from ninety minutes of conversation constitute the record, and it is the step that carries essentially all of the professional risk.</p>
+
+  <p>Kitces' research frames the economics precisely: the average advisor spends more than one hour on meeting preparation and follow-up client-servicing tasks for every hour spent in client meetings, which means the prep-and-follow-up load, not the meeting load, is what caps client capacity. That is the number the category is being sold against.</p>
+
+  <p>The counterintuitive finding in the same research is the one this room should sit with. Adoption is highest among pure solo advisors with nobody to delegate to; it is about a third lower on two-to-three-person service teams; it rises again on larger teams, where the use case shifts from capturing notes to keeping absent colleagues informed; and it drops off precipitously at the ultra-high-net-worth end, where revenue per client supports having more humans in the room. Advisors producing the most extensive comprehensive plans use these tools at nearly four times the rate of those producing the narrowest targeted plans.</p>
+
+  <div class="panel">
+    <span class="do">Do this now — 6 minutes</span>
+    <h4>Write the note, then read the score</h4>
+    <p class="hint">Below is a short synthetic exchange from a review meeting. Write the CRM note you would want an extraction step to produce. A heuristic then scores it against five documentation elements. The heuristic is crude by design — read the misses, not the number.</p>
+    <div class="mpanel has" style="min-height:0"><span class="hd">Synthetic meeting excerpt — no real client data</span>
+      <span style="font-family:'Source Serif 4',serif;font-size:15.5px;line-height:1.6;display:block">
+      <strong>Advisor:</strong> You mentioned last time you were thinking about the timing on the sale.<br>
+      <strong>Client:</strong> We decided. We're selling the building in the first quarter, and Dana wants the proceeds somewhere safe until we work out the gifting piece.<br>
+      <strong>Advisor:</strong> Safe meaning liquid, or safe meaning short duration?<br>
+      <strong>Client:</strong> Liquid. We might need it fast if the second property comes back on the market. And I want to revisit the beneficiary designations — my brother is still on one of them and that's no longer what we want.</span>
+    </div>
+    <label class="fl" for="noteBox">Your CRM note</label>
+    <textarea id="noteBox" placeholder="Write the note as you would want it to appear in the client record."></textarea>
+    <div class="row" style="margin-top:12px"><button class="btn" id="noteScore">Score the note</button></div>
+    <div id="noteOut" class="mpanel"><span class="hd">Rubric coverage</span><span class="nil">Write a note, then score it.</span></div>
+  </div>
+
+  <p class="src">Kitces.com (15 Jan 2025), <em>Best AI Notetakers For Financial Advisor Meetings</em>, drawing on Kitces Research on Advisor Productivity (fielded autumn 2024) — the &gt;1:1 prep-and-follow-up ratio, the solo-vs-team adoption pattern (~1/3 lower on 2–3 person teams), the UHNW drop-off, and the ~4× rate for most-extensive versus most-targeted plans <span class="conf h">H — named research</span>. The excerpt is synthetic. The scoring heuristic is keyword-based and written for this lesson <span class="conf l">L — heuristic</span>.</p>
+</section>
+
+<!-- ============ 11 ============ -->
+<section class="slide" id="s11" data-nav="Adoption">
+  <div class="eyebrow"><span>10 · Divergence</span><span class="mins">8 min</span></div>
+  <h2>Note-Taker Adoption Against Note-Taker Satisfaction</h2>
+
+  <p class="big">Rank the category by adoption and rank it by satisfaction and the orders invert. The tool with the highest adoption in Kitces' autumn 2024 data — Zoom's AI Companion, a toggle inside software advisors already pay for — ranked last on advisor satisfaction. The industry-specific tools, at $60–$80 per month or more, ranked highest.</p>
+
+  <p>The explanation is architectural rather than a matter of taste. A meeting-platform note-taker summarises the meeting. An advisor-specific tool writes the note into the CRM, queues the post-meeting tasks, drafts the recap email and prepares the next agenda. Advisors were not rating summary quality; they were rating the four things that happen after the summary.</p>
+
+  <div class="panel">
+    <span class="do">Do this now — 3 minutes</span>
+    <h4>Predict, then reveal</h4>
+    <p class="hint">Before the chart: where did the single most-adopted tool rank on satisfaction? Commit to an answer, then reveal.</p>
+    <div class="row" id="predBtns"></div>
+    <div id="predOut" class="mpanel"><span class="hd">Your prediction</span><span class="nil">Commit to an answer.</span></div>
+    <figure id="figSlope" class="keyhide" style="display:none"></figure>
+  </div>
+
+  <p>By 2025 the category had grown to roughly 30% of advisors using some kind of client meeting note tool, with 18 note-takers on the AdvisorTech Map competing for that pool, Jump at 9.7% adoption among standalone tools and no remaining provider above 0.5%. Read that distribution as a procurement warning: you are selecting a vendor from a category that is mid-consolidation, and the switching cost is your historical meeting record.</p>
+
+  <p class="src">Kitces.com (15 Jan 2025) — Zoom AI Companion #1 in adoption and last in satisfaction; industry-specific tools lead satisfaction; $60–$80/month pricing <span class="conf h">H</span>. Kitces.com AdvisorTech columns (Oct and Nov 2025) — Jump + Zocks 12.8% combined, Zoom AI + Fathom 7.6% combined, Jump 9.7% among standalone tools, none of the remainder above 0.5%, 18 note-takers on the map <span class="conf h">H</span>. Kitces AdvisorTech column (Aug 2026) — ~30% of advisors using a client meeting note tool as of the 2025 research <span class="conf h">H</span>. The slopegraph plots ranks, not scores; Kitces publishes the ordering rather than a satisfaction scalar for every vendor <span class="conf m">M — rank order published, underlying scores not</span>.</p>
+</section>
+
+<!-- ============ 12 ============ -->
+<section class="slide" id="s12" data-nav="Consent">
+  <div class="eyebrow"><span>11 · Obligation</span><span class="mins">12 min</span></div>
+  <h2>Recording Consent and the Confidentiality Obligation</h2>
+
+  <p class="big">A note-taker is a recording device with a vendor attached. Two separate obligations attach to it: the state law that governs whether the recording may be made at all, and the professional duty of confidentiality that governs what may be disclosed to the vendor once it is.</p>
+
+  <p>On the first: federal law under the Wiretap Act sets a one-party consent floor, and states may impose more. Ten states appear on every published all-party list — California, Delaware, Florida, Illinois, Maryland, Massachusetts, Montana, New Hampshire, Pennsylvania and Washington. Connecticut, Nevada, Oregon, Michigan and Vermont appear on some lists and not others, because the statutes are hybrid, the case law reads in exceptions, or there is no statute. Published counts in 2026 therefore range from eleven to twelve to fifteen depending on how the compiler treats the hybrids.</p>
+
+  <p>That disagreement is the teaching point, not a footnote. Ask a general-purpose model how many all-party consent states there are and you will get a single confident number, because the corpus contains many confident sources that disagree. Ask a retrieval-grounded tool and you will get a single confident number with a citation to whichever compiler its ranker surfaced. The citation makes the answer look verified. It has not been verified; it has been sourced.</p>
+
+  <p>Where recording crosses state lines, the practical rule courts have generally applied is the stricter state's law. California's civil remedy is the one that sets the exposure: Penal Code § 637.2 lets an injured person recover the greater of $5,000 per violation or three times actual damages, and § 637.2(c) states that suffering actual damages is not a prerequisite to the action. A recorded meeting series with one California participant is a per-recording exposure, not a per-lawsuit exposure.</p>
+
+  <p>On the second obligation: the practical test for a documentation vendor is not whether the contract mentions confidentiality. It is what the vendor does with the content — retention period, training use, subprocessors, where the transcript lives, and who at the vendor can read it. Iskowitz's treatment of note-taker compliance is the assigned reading on this; the questions worth putting to a vendor in writing are the ones whose answers you would have to disclose to a client.</p>
+
+  <div class="panel">
+    <span class="do">Do this now — 6 minutes</span>
+    <h4>Three-way sort: what goes into the tool</h4>
+    <p class="hint">Your firm has an approved, contracted documentation vendor. For each item, choose one of three dispositions. This is deliberately harder than a two-way permitted/prohibited split, because the middle category is where the professional judgement lives.</p>
+    <div class="quiz panel" id="quizWrap" style="margin:0;border:none;padding:0"></div>
+    <span class="score" id="quizScore"></span>
+  </div>
+
+  <p class="src">18 U.S.C. § 2511 (federal one-party floor) <span class="conf h">H</span>. Cal. Penal Code § 637.2(a)(1), (c) — $5,000 per violation or treble actual damages, whichever is greater; actual damages not a prerequisite <span class="conf h">H — statutory text</span>. The all-party state count is <span class="conf m">M — sources materially disagree</span>: the ten-state core is common to every list consulted; Connecticut, Nevada, Oregon, Michigan and Vermont are treated inconsistently across 2026 compilations, and this lesson does not adopt a number. Verify the specific states in which your clients sit with counsel before relying on any count, including this one. Iskowitz, C. (29 Jul 2025), <em>AI Notetakers and Compliance in Wealth Management</em>, WealthTech Today — assigned reading. <strong>Disclosure:</strong> the citation in quiz item 4 — <em>Restrepo v. Halloran Wealth Partners</em>, 214 F.3d 1109 (9th Cir. 2000) — is fabricated. It was invented for this exercise, no such case exists, and nothing in this lesson asserts what any real authority holds about AI-generated meeting notes. The exercise fabricates a case name deliberately rather than misstating a real provision.</p>
+</section>
+
+<!-- ============ 13 ============ -->
+<section class="slide" id="s13" data-nav="Basis">
+  <div class="eyebrow"><span>12 · The record</span><span class="mins">12 min</span></div>
+  <h2>Documenting the Basis for a Recommendation</h2>
+
+  <p class="big">A record of what was said is not a record of why you recommended what you recommended. Extraction produces the first. The second has to be produced deliberately, and it is the part a note-taker structurally cannot generate, because the alternatives you rejected were never spoken aloud.</p>
+
+  <p>A defensible basis record contains four things and a note-taker can supply, at most, one and a half of them: the client circumstance that motivated the recommendation; the alternatives considered; the reason the recommendation was selected over those alternatives; and the client's response. The transcript contains the circumstance and the response. The alternatives and the reason existed in your head between meetings.</p>
+
+  <p>The workable pattern is to make the model interrogate you for the missing half rather than write it for you — the interview rewrite from Session 2, pointed at your own reasoning instead of at the client's facts. The prompt below does that. It is written to refuse to draft until it has the alternatives, which is the only property that matters.</p>
+
+  <div class="panel">
+    <span class="do">Do this now — 5 minutes</span>
+    <h4>Take the prompt, run it on a real recommendation</h4>
+    <p class="hint">Copy this into your assistant and run it against a recommendation you made this month, using synthetic or de-identified facts. Count how many questions it asks before it drafts anything.</p>
+    <pre id="promptBlock">ROLE
+You are a compliance reviewer at an SEC-registered investment adviser.
+You do not draft the record. You interrogate me until the record is complete.
+
+TASK
+Build the basis-for-recommendation entry for one recommendation I made.
+
+PROCEDURE
+Ask me one question at a time. Do not draft anything until you have all four
+elements below. If I answer vaguely, ask again with a narrower question.
+
+1. CIRCUMSTANCE - the specific client fact that made this recommendation
+   apply to this household and not to a generic household.
+2. ALTERNATIVES - the other courses of action I actually considered.
+   If I name fewer than two, ask what I ruled out and why it was ruled out.
+3. SELECTION REASON - what made the recommendation preferable to each
+   alternative named, stated as a comparison and not as a virtue.
+4. CLIENT RESPONSE - what the client said when it was presented,
+   including any disagreement or deferral.
+
+CONSTRAINTS
+- Do not invent any fact. If I have not told you something, ask for it.
+- Do not add a rationale I did not give you.
+- Flag any element I supplied that is an assertion rather than an observation.
+
+OUTPUT
+When all four are complete: one paragraph per element, under 90 words each,
+then a list of every element where my answer was thin.</pre>
+    <div class="row"><button class="btn" id="copyBtn">Copy prompt</button><span id="copyMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
+    <div class="instrline">Instructor note: the failure to watch for in the room is a student whose assistant drafts on the first turn. That means the model inferred the alternatives. The alternatives are the one thing it cannot know.</div>
+  </div>
+
+  <p class="src">The four-element structure restates the Session 3 syllabus bullet on documenting the client's personal and financial circumstances and the basis for recommendations, and the Session 2 interview-rewrite technique. Journal of Accountancy (17 Nov 2025), <em>Writing an Effective AI Prompt for an Audit Trail</em>, is the Session 4 assigned reading on the same problem viewed from the audit side.</p>
+</section>
+
+<!-- ============ 14 ============ -->
+<section class="slide" id="s14" data-nav="Part 1 + HW">
+  <div class="eyebrow"><span>13 · Assignment</span><span class="mins">10 min</span></div>
+  <h2>Part 1 Draft Review and the Session 4 Assignment</h2>
+
+  <p class="big">Final Project Part 1 — the build and handoff package — is due at the end of Session 4. One session remains. The first draft you submitted tonight is the last checkpoint before the package is graded, and the component that fails most often is not the workflow. It is scalability, at 30% the heaviest single weight in Part 1.</p>
+
+  <p>Scalability in this course has a two-part definition from the syllabus: the workflow works for the next twenty clients and not only the one you built it on, and another advisor can run it without you in the room. Tonight's material bears directly on the first half. If your workflow depends on grounding, the twenty-clients test is a retrieval test, and the failure will be a passage that ranked well and did not govern.</p>
+
+  <div class="panel">
+    <span class="do">Do this now — 6 minutes, in pairs</span>
+    <h4>Partner review instrument</h4>
+    <p class="hint">Swap drafts with the person you are paired with. Score their draft, not your own. Read the score aloud to them with the one sentence the instrument generates. You are practising the scrutiny Part 2 requires, four weeks early.</p>
+    <div id="prWrap"></div>
+    <div id="prOut" class="mpanel"><span class="hd">Partner score</span><span class="nil">Score each dimension.</span></div>
+  </div>
+
+  <div class="cards">
+    <div class="card gold"><span class="num">Due before Session 4</span><h4>Draft an AI usage policy for your firm</h4><p>The homework assigned tonight. Tonight's vendor-evaluation and recording-consent material is the substantive core of it.</p></div>
+    <div class="card warn"><span class="num">Due end of Session 4</span><h4>Final Project Part 1 — handoff package</h4><p>Single email, body reads only "See attached." Everything a classmate needs lives inside the attachments.</p></div>
+    <div class="card"><span class="num">Read before Session 4</span><h4>Daly (2026) · SEC FY2026 Exam Priorities §VII · Journal of Accountancy (2025)</h4><p>The regulatory frame for Session 4, and the audit-trail prompt technique that pairs with tonight's basis record.</p></div>
+  </div>
+
+  <p>One item to carry forward. Part 1 requires your Session 1 baseline time compared with the AI-assisted time, including any step where AI made the work slower or worse. If tonight's session added a verification step to your workflow — and if you are grounding, it should have — that step is time. Measure it and report it. A handoff package that reports only the speed-up has not been measured; it has been advertised.</p>
+
+  <p class="src">Final Project Part 1 requirements, component weights (handoff package 15%, scalability 30%, iteration and documentation 25%, deliverable correctness 25%, peer feedback 5%) and the two-part definition of "scalable" are taken from the course syllabus. Session 4 homework and reading assignments are taken from the syllabus schedule.</p>
+</section>
+
+<footer class="wrap" style="padding-left:0;padding-right:0">
+  <h4 style="margin-bottom:14px">Sources cited in this session</h4>
+  <ul>
+    <li>Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. Assigned sections for Session 3: "The Concept of Embeddings" and the opening of "Meaning Space and Semantic Laws of Motion." <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a></li>
+    <li>Anthropic. (2024, September 19). <em>Contextual retrieval in AI systems.</em> <a href="https://www.anthropic.com/engineering/contextual-retrieval">anthropic.com/engineering/contextual-retrieval</a></li>
+    <li>Vectara. (2025, November 19). <em>Introducing the next generation of Vectara's hallucination leaderboard.</em> <a href="https://www.vectara.com/blog/introducing-the-next-generation-of-vectaras-hallucination-leaderboard">vectara.com</a></li>
+    <li>Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). Hallucination-free? Assessing the reliability of leading AI legal research tools. <em>Journal of Empirical Legal Studies, 22</em>(2), 216. <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">reglab.stanford.edu</a></li>
+    <li>Kitces.com. (2025, January 15). <em>Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends.</em> <a href="https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/">kitces.com</a></li>
+    <li>Kitces.com. AdvisorTech columns, October 2025, November 2025 and August 2026 (note-taker adoption shares and category consolidation).</li>
+    <li>Iskowitz, C. (2025, July 29). <em>AI notetakers and compliance in wealth management: What firms need to know.</em> WealthTech Today.</li>
+    <li>Cal. Penal Code § 637.2(a)(1), (c); 18 U.S.C. § 2511.</li>
+  </ul>
+  <p style="margin-top:22px">Total allocated instructional time 150 minutes across 14 sections, inside a 180-minute block, with a 15-minute break after Section 6 and 15 minutes of unallocated buffer. Press <strong>Shift+U</strong> to reveal every withheld answer panel.</p>
+  <p><strong>No client data.</strong> Every corpus, transcript, profile and firm name in this file is synthetic. Nothing in this document may be used as a substitute for legal or compliance advice.</p>
+</footer>
+
+</div>
+<script>
+(function(){
+"use strict";
+var $=function(id){return document.getElementById(id)};
+var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+var n1=function(x){return (Math.round(x*10)/10).toFixed(1)};
+var n0=function(x){return Math.round(x).toLocaleString('en-US')};
+
+/* ---------- rail + instructor override ---------- */
+var secs=[].slice.call(document.querySelectorAll('section.slide')),rail=$('rail');
+secs.forEach(function(s){var b=document.createElement('button');
+  b.innerHTML='<span class="pip"></span><span class="lbl">'+esc(s.dataset.nav)+'</span>';
+  b.onclick=function(){s.scrollIntoView()};rail.appendChild(b)});
+var pips=[].slice.call(rail.querySelectorAll('button'));
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(e.isIntersecting){var i=secs.indexOf(e.target);pips.forEach(function(p,j){p.classList.toggle('on',j===i)})}})},
+  {rootMargin:'-45% 0px -45% 0px'});secs.forEach(function(s){io.observe(s)})}
+document.addEventListener('keydown',function(e){
+  if(e.shiftKey&&(e.key==='U'||e.key==='u')){
+    document.body.classList.toggle('reveal');
+    var on=document.body.classList.contains('reveal');
+    $('ovr').textContent=on?'Override ON — all answers revealed':'Shift+U — instructor override';
+    [].slice.call(document.querySelectorAll('.keyhide')).forEach(function(el){el.style.display=on?'block':'none'});
+    if(on){showPairKey();showSlope();}
+  }});
+
+/* ================= 1. Draft self-audit ================= */
+var AUD=[
+ {t:'The target task is one recurring task, named as a task and not as a topic.',w:20,g:'A topic is not a task. "Estate planning" is a topic. "Producing the pre-meeting summary for an annual review" is a task.'},
+ {t:'I stated which model and which tier, and gave a reason that is not price.',w:15,g:'Tier choice without a stated reason is not a design decision; it is a default.'},
+ {t:'I named at least one verification step built into the workflow.',w:20,g:'Deliverable correctness is 25% of Part 1 and is scored on whether gaps could produce unsupported output.'},
+ {t:'I have run the workflow on at least two different inputs.',w:20,g:'Scalability is 30% of Part 1 and is defined as working beyond the single case you built it on.'},
+ {t:'I have kept the full build transcript, including attempts that failed.',w:15,g:'Iteration and documentation is 25%. The syllabus states the finished product alone will not earn full credit.'},
+ {t:'I know which fields would have to be removed before a real client file could run through it.',w:10,g:'The data-handling note is a required item in the handoff package.'}
+];
+(function(){
+ var L=$('auditList'),O=$('auditOut'),st=AUD.map(function(){return false});
+ function draw(){
+  var sc=0;AUD.forEach(function(a,i){if(st[i])sc+=a.w});
+  var band=sc>=85?'On track':sc>=60?'Recoverable in one week':sc>=35?'At risk':'Behind';
+  var cls=sc>=85?'good':sc>=60?'':'flag';
+  var miss=AUD.filter(function(a,i){return !st[i]}).map(function(a){return '· '+esc(a.g)}).join('<br>');
+  O.className='mpanel'+(sc>0?' has':'');
+  O.innerHTML='<span class="hd">Computed band</span><span class="'+cls+'">'+sc+' of 100 rubric-weighted points — '+band+'</span>'+
+    (miss?'<br><br><span class="hd">What the unticked items cost you</span>'+miss:'<br><br><span class="good">Every item ticked. Spend the remaining week on the handoff document, not the workflow.</span>');
+ }
+ AUD.forEach(function(a,i){
+  var b=document.createElement('button');b.className='chip';b.type='button';
+  b.innerHTML=esc(a.t)+' <span class="dim" style="font-family:JetBrains Mono,monospace;font-size:12px">('+a.w+' pts)</span>';
+  b.onclick=function(){st[i]=!st[i];b.classList.toggle('act',st[i]);draw()};
+  L.appendChild(b)});
+ draw();
+})();
+
+/* ================= 2. Meaning space map ================= */
+var TERMS=[
+ {n:'Roth conversion',x:16,y:22,cs:'roth',dy:14},{n:'Roth contribution',x:23,y:18,cs:'roth',dy:-9},{n:'backdoor Roth',x:13,y:32,cs:''},
+ {n:'cash reserve',x:18,y:68,cs:''},{n:'emergency fund',x:28,y:73,cs:'',dy:-9},{n:'money market',x:12,y:78,cs:''},{n:'liquidity',x:29,y:63,cs:'',dy:-9},
+ {n:'RMD',x:52,y:20,cs:'dist',dy:-9},{n:'QCD',x:58,y:25,cs:'dist',dy:14},{n:'withdrawal',x:46,y:30,cs:''},{n:'in-service distribution',x:64,y:13,cs:''},
+ {n:'revocable trust',x:55,y:70,cs:'trust',dy:14},{n:'irrevocable trust',x:62,y:66,cs:'trust',dy:-9},{n:'grantor trust',x:50,y:78,cs:''},
+ {n:'alligator',x:86,y:36,cs:'wolf',dy:14},{n:'crocodile',x:91,y:29,cs:'wolf',dy:-9},{n:'turnip',x:84,y:78,cs:''},{n:'eagle',x:93,y:60,cs:''}
+];
+var CSNOTE={roth:'A conversion and a contribution are governed by different rules. A retriever that returns one when asked about the other returns a confident, well-cited, wrong answer.',
+ trust:'Revocable and irrevocable differ on the single property that matters. They are described in near-identical language.',
+ dist:'Both are distributions from a retirement account. They are not interchangeable in a client file.',
+ wolf:'Wolfram\u2019s own example. Two different animals, placed together because people write about them the same way.'};
+(function(){
+ var W=$('mapWrap'),O=$('mapOut');
+ var VW=720,VH=430,PX=70,PY=34;
+ var sx=function(x){return PX+(x/100)*(VW-PX-90)},sy=function(y){return PY+(y/100)*(VH-PY-40)};
+ var s='<svg viewBox="0 0 '+VW+' '+VH+'" role="img" aria-label="Illustrative two-dimensional projection of a meaning space">';
+ s+='<text x="8" y="18" class="chartttl">Illustrative meaning space (2D projection)</text>';
+ s+='<line x1="'+PX+'" y1="'+(VH-32)+'" x2="'+(VW-70)+'" y2="'+(VH-32)+'" stroke="#D8DAD4"/>';
+ s+='<line x1="'+PX+'" y1="'+PY+'" x2="'+PX+'" y2="'+(VH-32)+'" stroke="#D8DAD4"/>';
+ s+='<text x="'+PX+'" y="'+(VH-12)+'" class="chartlab">projected dimension 1</text>';
+ s+='<text x="16" y="'+(VH/2)+'" class="chartlab" transform="rotate(-90 16 '+(VH/2)+')" text-anchor="middle">projected dimension 2</text>';
+ TERMS.forEach(function(t,i){
+  s+='<g class="mp" data-i="'+i+'" style="cursor:pointer">';
+  s+='<circle id="mc'+i+'" cx="'+n1(sx(t.x))+'" cy="'+n1(sy(t.y))+'" r="6" fill="#B9BDB9"/>';
+  s+='<text id="mt'+i+'" x="'+n1(sx(t.x)+10)+'" y="'+n1(sy(t.y)+(t.dy||4))+'" class="chartlab" fill="#6F7B78">'+esc(t.n)+'</text></g>';
+ });
+ s+='</svg>';W.innerHTML=s;
+ function pick(i){
+  var a=TERMS[i];
+  var d=TERMS.map(function(b,j){return {j:j,n:b.n,cs:b.cs,d:Math.sqrt(Math.pow(a.x-b.x,2)+Math.pow(a.y-b.y,2))}})
+    .filter(function(r){return r.j!==i}).sort(function(p,q){return p.d-q.d}).slice(0,3);
+  TERMS.forEach(function(t,j){
+   var c=$('mc'+j),tx=$('mt'+j);if(!c)return;
+   var hit=d.filter(function(r){return r.j===j}).length>0;
+   c.setAttribute('fill',j===i?'#0E5A55':hit?'#9A4B22':'#B9BDB9');
+   c.setAttribute('r',j===i?'8':hit?'7':'6');
+   tx.setAttribute('fill',j===i?'#0E5A55':hit?'#9A4B22':'#B9BDB9');
+  });
+  var h='<span class="hd">Nearest neighbours to \u201c'+esc(a.n)+'\u201d</span>';
+  d.forEach(function(r){h+='distance '+n1(r.d)+' \u2014 '+esc(r.n)+'<br>'});
+  var flag=d.filter(function(r){return r.cs&&r.cs===a.cs})[0];
+  h+='<br>'+(flag?'<span class="flag">Confusable pair. '+CSNOTE[a.cs]+'</span>'
+    :'<span class="good">No confusable pair in the top three for this term.</span>');
+  O.className='mpanel has';O.innerHTML=h;
+ }
+ [].slice.call(W.querySelectorAll('.mp')).forEach(function(g){
+  g.addEventListener('click',function(){pick(parseInt(g.dataset.i,10))});
+ });
+})();
+
+/* ================= 3. Pair sorter ================= */
+var PAIRS=[
+ {p:'alligator / crocodile',k:'ctx',w:'Wolfram\u2019s example: interchangeable contexts, different referents.'},
+ {p:'Roth conversion / Roth contribution',k:'gov',w:'Same instrument, different governing rule. This is the pair that reaches a client file.'},
+ {p:'revocable trust / irrevocable trust',k:'gov',w:'One word apart in text, opposite on the property that matters.'},
+ {p:'client / customer',k:'ctx',w:'Near-synonymous in ordinary writing; the distinction that matters is regulatory, not linguistic.'},
+ {p:'may / must',k:'gov',w:'The highest-stakes near-neighbour in any policy corpus, and the one chunking most often separates from its subject.'},
+ {p:'advisor / advisor\u2019s assistant',k:'ref',w:'Different actors. Retrieval collapses them because they appear in identical sentence frames.'}
+];
+var BUCK=[
+ {k:'ctx',t:'Interchangeable context, different referent',d:'They appear in the same sentence frames. Nothing about the swap is detectable from language alone.'},
+ {k:'gov',t:'Same subject, different governing condition',d:'The pair describes one topic under two conditions. Retrieval returns the wrong condition.'},
+ {k:'ref',t:'Different actors in the same frame',d:'The sentence pattern is identical; the party performing the act is not.'}
+];
+var pairSel=-1,pairPlaced={},pairScore=0;
+function showPairKey(){
+ var K=$('pairKey');if(Object.keys(pairPlaced).length<PAIRS.length&&!document.body.classList.contains('reveal'))return;
+ var h='<span class="hd">Answer key</span>';
+ PAIRS.forEach(function(p,i){
+  var got=pairPlaced[i],ok=got===p.k;
+  h+=(got?(ok?'<span class="good">\u2713</span> ':'<span class="flag">\u2717</span> '):'\u00b7 ')+esc(p.p)+' \u2014 '+
+     esc(BUCK.filter(function(b){return b.k===p.k})[0].t)+'<br><span style="color:#6F7B78">'+esc(p.w)+'</span><br><br>';
+ });
+ h+='<span class="hd">Score</span>'+pairScore+' of '+PAIRS.length;
+ K.className='mpanel has keyhide';K.innerHTML=h;K.style.display='block';
+}
+(function(){
+ var L=$('pairList'),B=$('pairBoxes'),O=$('pairOut');
+ PAIRS.forEach(function(p,i){
+  var b=document.createElement('button');b.className='chip';b.type='button';b.textContent=p.p;
+  b.onclick=function(){if(pairPlaced[i]!==undefined)return;pairSel=i;
+   [].slice.call(L.children).forEach(function(c,j){c.classList.toggle('act',j===i)});draw()};
+  L.appendChild(b)});
+ BUCK.forEach(function(bk){
+  var b=document.createElement('button');b.className='lbox';b.type='button';
+  b.innerHTML='<h4>'+esc(bk.t)+'</h4><p>'+esc(bk.d)+'</p>';
+  b.onclick=function(){
+   if(pairSel<0)return;
+   pairPlaced[pairSel]=bk.k;if(PAIRS[pairSel].k===bk.k)pairScore++;
+   L.children[pairSel].classList.remove('act');L.children[pairSel].classList.add('done');
+   pairSel=-1;draw();
+   if(Object.keys(pairPlaced).length===PAIRS.length)showPairKey();
+  };
+  B.appendChild(b)});
+ function draw(){
+  var done=Object.keys(pairPlaced).length;
+  O.className='mpanel'+(done?' has':'');
+  O.innerHTML='<span class="hd">Progress</span>'+done+' of '+PAIRS.length+' placed.'+
+   (pairSel>=0?'<br><span class="good">Selected: '+esc(PAIRS[pairSel].p)+' \u2014 now choose a bucket.</span>':
+    (done<PAIRS.length?'<br>Select a pair, then choose a bucket.':'<br><span class="good">All placed. Key below.</span>'));
+ }
+ draw();
+})();
+
+/* ================= 4. Retriever ================= */
+var CORP=[
+ {id:'C1',t:'Cash reserve standard for retired households. A household that has already retired holds eighteen months of planned distributions in cash and short duration instruments. The reserve is sized against planned distributions.'},
+ {id:'C2',t:'Cash reserve standard for working households. A household still working and earning wages holds six months of fixed obligations in cash. The reserve is sized against fixed obligations and not against total spending.'},
+ {id:'C3',t:'Concentrated position standard for publicly traded employer stock. A single publicly traded stock position above twenty percent of investable assets triggers a written diversification plan within ninety days.'},
+ {id:'C4',t:'Concentrated position standard for restricted and private holdings. A private or restricted stock position above twenty percent of investable assets is documented but does not trigger the ninety day diversification plan because the position cannot be sold on demand.'},
+ {id:'C5',t:'Meeting cadence for Tier one households. Tier one households receive three scheduled review meetings each year and a written agenda seven days before each meeting.'},
+ {id:'C6',t:'Meeting cadence for Tier two households. Tier two households receive one scheduled review meeting each year and a written agenda three days before the meeting.'},
+ {id:'C7',t:'Documentation standard for the basis of a recommendation. Every recommendation is documented with the client circumstance that motivated it, the alternatives considered, and the reason the recommendation was selected over those alternatives.'},
+ {id:'C8',t:'Documentation standard for client circumstances. Personal and financial circumstances are reconfirmed at each annual review and the date of confirmation is recorded in the client file.'},
+ {id:'C9',t:'Recording standard for client meetings. A meeting is recorded only after every participant has been told on the record that recording has begun and has assented on the record.'},
+ {id:'C10',t:'Vendor standard for third party processors. A processor that retains client content for model training is not approved regardless of contractual assurances about de-identification.'}
+];
+var STOP={'a':1,'an':1,'and':1,'the':1,'is':1,'are':1,'of':1,'in':1,'to':1,'for':1,'that':1,'it':1,'on':1,'or':1,'be':1,'at':1,'as':1,'not':1,'we':1,'do':1,'i':1,'my':1,'you':1,'your':1,'with':1,'has':1,'have':1,'was':1,'were':1,'this':1,'each':1,'every':1,'how':1,'what':1,'which':1,'should':1,'would':1,'can':1,'about':1,'from':1,'by':1,'but':1,'if':1,'when':1,'who':1,'just':1,'does':1,'so':1};
+function tok(s){return String(s).toLowerCase().replace(/[^a-z0-9\s]/g,' ').split(/\s+/).filter(function(w){return w&&!STOP[w]&&w.length>1})}
+var DF={},N=CORP.length;
+CORP.forEach(function(c){var seen={};tok(c.t).forEach(function(w){if(!seen[w]){seen[w]=1;DF[w]=(DF[w]||0)+1}})});
+function idf(w){return Math.log(1+N/((DF[w]||0)+1))}
+function vec(s){var v={},ws=tok(s);ws.forEach(function(w){v[w]=(v[w]||0)+1});
+ var o={};for(var w in v){o[w]=v[w]*idf(w)}return o}
+function cos(a,b){var d=0,na=0,nb=0,w;
+ for(w in a){na+=a[w]*a[w];if(b[w])d+=a[w]*b[w]}
+ for(w in b){nb+=b[w]*b[w]}
+ if(na<=0||nb<=0)return 0;return d/(Math.sqrt(na)*Math.sqrt(nb))}
+var CVEC=CORP.map(function(c){return vec(c.t)});
+function rank(q){var qv=vec(q);
+ return CORP.map(function(c,i){return {id:c.id,t:c.t,s:cos(qv,CVEC[i])}})
+  .sort(function(a,b){return b.s-a.s})}
+var PRESET=[
+ {q:'how many months of cash for a client who just stopped working',v:'fail',
+  w:'The top chunk is the working-household standard, because the query contains the word \u201cworking\u201d. A client who just stopped working is retired, so the retired-household standard governs. The retriever returned the passage that is nearest, correctly cited, and wrong. This is the alligator-and-crocodile property, arriving in a client file. Note the margin the page just computed: the wrong chunk does not squeak past the right one, it beats it by roughly half the winning score. A wide margin is a measure of lexical overlap, not of correctness, and there is nothing in the ranking for the assistant to be uncertain about.'},
+ {q:'agenda lead time before a review meeting',v:'ambig',
+  w:'Both cadence chunks match and neither is wrong. The query never named a tier, so no ranking over this corpus can return a governing answer. A grounded assistant will nonetheless return one, with a citation, and will not tell you that the condition was missing.'},
+ {q:'do we approve a vendor that retains client content for model training',v:'pass',
+  w:'The correct chunk ranks first and no near-duplicate competes with it, because this rule exists in only one place in the corpus. Uniqueness in the corpus, not the quality of the model, is what made this query safe.'},
+ {q:'what has to be documented as the basis for a recommendation',v:'pass',
+  w:'Correct chunk first. Note that the second-ranked chunk is the other documentation standard \u2014 the margin between them is the whole safety property.'}
+];
+(function(){
+ var P=$('qPresets'),Q=$('qBox'),O=$('qOut'),V=$('qVer'),cur=-1,lastQ='';
+ PRESET.forEach(function(p,i){
+  var b=document.createElement('button');b.className='btn sel mini';b.type='button';
+  b.textContent='Preset '+(i+1);
+  b.onclick=function(){cur=i;Q.value=p.q;[].slice.call(P.children).forEach(function(c,j){c.classList.toggle('act',j===i)});run()};
+  P.appendChild(b)});
+ function run(){
+  var q=Q.value.trim();if(!q){O.className='mpanel';O.innerHTML='<span class="hd">Ranked chunks</span><span class="nil">Enter a query.</span>';return}
+  lastQ=q;var r=rank(q);
+  var h='<span class="hd">Query: '+esc(q)+'</span>';
+  r.slice(0,4).forEach(function(x,i){
+   var pct=n1(x.s*100);
+   h+=(i===0?'<span style="color:#16211F;font-weight:500">':'')+'#'+(i+1)+'  '+x.id+'  score '+pct+(i===0?'  \u2190 top-ranked, not necessarily governing</span>':'')+'<br>'+
+      '<span style="color:#6F7B78">'+esc(x.t)+'</span><br><br>';
+  });
+  if(r[0].s===0){h+='<span class="flag">No chunk shares a scored term with this query. A production system would still return its top three and the model would still answer from them.</span>'}
+  else{
+   var marg=(r[0].s-r[1].s)/r[0].s*100;
+   h+='<span class="hd">Margin</span>'+(marg<12
+     ?'<span class="flag">'+n1(marg)+'% \u2014 the top two chunks are separated by less than an eighth of the winning score. A ranking this close is a coin flip the assistant will not disclose.</span>'
+     :'<span class="good">'+n1(marg)+'% \u2014 the winner is clear of the runner-up.</span>');
+  }
+  O.className='mpanel has';O.innerHTML=h;
+  V.style.display=document.body.classList.contains('reveal')?'block':'none';
+  V.className='mpanel keyhide';V.innerHTML=verd();
+ }
+ function verd(){
+  if(cur<0)return '<span class="hd">Verdict</span>Free-text query. Judge it yourself: does the top chunk state a rule whose governing condition your query actually specified?';
+  var p=PRESET[cur];
+  var lab=p.v==='fail'?'<span class="flag">FAILS \u2014 nearest passage is not the governing passage</span>':
+          p.v==='ambig'?'<span class="flag">AMBIGUOUS \u2014 governing condition was never specified</span>':
+          '<span class="good">PASSES</span>';
+  return '<span class="hd">Verdict</span>'+lab+'<br><br><span style="color:#6F7B78">'+esc(p.w)+'</span>';
+ }
+ $('qRun').onclick=run;
+ Q.addEventListener('keydown',function(e){if(e.key==='Enter')run()});
+ $('qVerdict').onclick=function(){V.style.display='block';V.className='mpanel has keyhide';V.innerHTML=verd()};
+})();
+
+/* ================= 5. Chunk slider ================= */
+var DOC='Cash reserve standard. Northgate reviews each household reserve annually and records the review date in the client file. For households that have already retired, the reserve is eighteen months of planned distributions. For households still earning wages, the reserve is six months of fixed obligations. Both figures are floors and not targets.';
+(function(){
+ var S=$('chSize'),NOW=$('chNow'),O=$('chOut'),F=$('chFix');
+ var QUANT=/(eighteen|six|three|seven|ninety|twenty|months|days|percent|annually)/i;
+ var COND=/(retired|earning|wages|working|households|tier|private|restricted|publicly)/i;
+ function draw(){
+  var k=parseInt(S.value,10);NOW.textContent=k+' words';
+  var ws=DOC.split(/\s+/),ch=[];
+  for(var i=0;i<ws.length;i+=k){ch.push(ws.slice(i,i+k).join(' '))}
+  var orph=0,h='<span class="hd">'+ch.length+' chunks at '+k+' words each ('+ws.length+'-word source)</span>';
+  ch.forEach(function(c,i){
+   var bad=QUANT.test(c)&&!COND.test(c);if(bad)orph++;
+   h+=(bad?'<span class="flag">[ORPHANED] ':'<span class="good">[ok] ')+'chunk '+(i+1)+'</span> '+esc(c)+'<br><br>';
+  });
+  h+='<span class="hd">Orphaned chunks</span>'+(orph===0
+    ?'<span class="good">0 of '+ch.length+'. Every chunk stating a quantity also states a condition.</span>'
+    :'<span class="flag">'+orph+' of '+ch.length+' state a quantity with no governing condition attached.</span>');
+  O.className='mpanel'+(orph?'':' has');O.innerHTML=h;
+  F.innerHTML=orph
+   ?'Anthropic\u2019s remedy: before embedding, prepend a model-written sentence placing each chunk in its parent document \u2014 e.g. \u201cThis chunk states the reserve requirement for households that have already retired.\u201d The chunk stays small; the condition travels with it.'
+   :'At this chunk size the conditions survive. The cost is that each retrieved chunk now carries more irrelevant text into a fixed context budget \u2014 which is the trade the parameter actually controls.';
+ }
+ S.addEventListener('input',draw);draw();
+})();
+
+/* ================= 6. Retrieval chart + estimator ================= */
+var RETR=[
+ {l:'Baseline embeddings',v:5.7},
+ {l:'Contextual embeddings',v:3.7},
+ {l:'Contextual embeddings + BM25',v:2.9},
+ {l:'Above, plus reranking',v:1.9}
+];
+function barChart(el,data,opt){
+ var W=720,rowH=44,PADT=42,PADL=opt.padl||250,PADB=26;
+ var H=PADT+data.length*rowH+PADB;
+ var max=opt.max||Math.max.apply(null,data.map(function(d){return d.v}));
+ var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(opt.title)+'">';
+ s+='<text x="6" y="18" class="chartttl">'+esc(opt.title)+'</text>';
+ if(opt.sub)s+='<text x="6" y="34" class="chartlab">'+esc(opt.sub)+'</text>';
+ data.forEach(function(d,i){
+  var y=PADT+i*rowH+6,bw=Math.max(2,(d.v/max)*(W-PADL-96));
+  s+='<text x="'+(PADL-10)+'" y="'+(y+18)+'" class="chartlab" text-anchor="end">'+esc(d.l)+'</text>';
+  s+='<rect x="'+PADL+'" y="'+y+'" width="'+n1(bw)+'" height="24" rx="3" fill="'+(d.c||(i===data.length-1&&opt.lastGood?'#0E5A55':i===0&&opt.firstWarn?'#9A4B22':'#0E5A55'))+'" opacity="'+(d.o||0.85)+'"/>';
+  s+='<text x="'+n1(PADL+bw+9)+'" y="'+(y+18)+'" class="chartval">'+n1(d.v)+'%</text>';
+ });
+ s+='<line x1="'+PADL+'" y1="'+(PADT)+'" x2="'+PADL+'" y2="'+(H-PADB+2)+'" stroke="#D8DAD4"/>';
+ s+='<text x="6" y="'+(H-6)+'" class="chartlab">'+esc(opt.axis)+'</text>';
+ s+='</svg>';
+ el.innerHTML=s+'<figcaption>'+opt.cap+'</figcaption>';
+}
+barChart($('figRetr'),RETR.map(function(d,i){return {l:d.l,v:d.v,c:i===0?'#9A4B22':i===3?'#0E5A55':'#6F7B78'}}),
+ {title:'Top-20-chunk retrieval failure rate by configuration',
+  sub:'Anthropic internal benchmark, September 2024',
+  axis:'share of queries where the correct chunk was absent from the top 20',
+  cap:'Source: Anthropic, <em>Contextual Retrieval in AI Systems</em>, 19 September 2024. Values plotted from the array <code>[5.7, 3.7, 2.9, 1.9]</code> in the page source. The published 67% headline is the 5.7 \u2192 1.9 reduction. <span class="conf h">H</span> as published; <span class="conf m">M</span> for transfer to an advisory corpus \u2014 the benchmark used codebases, fiction and research papers.'});
+(function(){
+ var M=$('vMeet'),Q=$('vQ'),O=$('vOut');
+ function draw(){
+  var m=Math.max(0,parseFloat(M.value)||0),q=Math.max(0,parseFloat(Q.value)||0),tot=m*q;
+  var h='<span class="hd">'+n0(tot)+' grounded retrievals per year</span>';
+  if(tot===0){h+='<span class="nil">Enter non-zero volumes.</span>';O.className='mpanel';O.innerHTML=h;return}
+  RETR.forEach(function(r,i){
+   var f=tot*r.v/100;
+   h+=(i===0?'<span class="flag">':i===3?'<span class="good">':'<span>')+n0(f)+' failed retrievals</span> \u2014 '+esc(r.l)+' ('+n1(r.v)+'%)<br>';
+  });
+  var d=tot*(RETR[0].v-RETR[3].v)/100;
+  h+='<br><span class="hd">Reading</span>Best published configuration still leaves <strong>'+n0(tot*RETR[3].v/100)+'</strong> retrievals a year in which the governing passage was never shown to the model. Moving from baseline to best avoids '+n0(d)+' of them. Neither number is zero, and neither is detectable without a verification step you build yourself.';
+  O.className='mpanel has';O.innerHTML=h;
+ }
+ M.addEventListener('input',draw);Q.addEventListener('input',draw);draw();
+})();
+
+/* ================= 7. Hallucination chart + toggle matrix ================= */
+var HALL=[
+ {l:'GPT-4, no retrieval',v:43,c:'#9A4B22'},
+ {l:'Westlaw AI-AR (RAG)',v:33,c:'#9A4B22'},
+ {l:'Lexis+ AI (RAG)',v:17,c:'#8A6A12'},
+ {l:'Gemini-3-Pro, grounded',v:13.6,c:'#8A6A12'},
+ {l:'Best model, grounded',v:3.3,c:'#0E5A55'},
+ {l:'Retrieval step, best config',v:1.9,c:'#0E5A55'}
+];
+barChart($('figHall'),HALL,
+ {title:'Measured error rates across four grounding conditions',
+  sub:'Rows 1\u20133: legal research questions \u00b7 Rows 4\u20135: long domain documents \u00b7 Row 6: retrieval only',
+  padl:210,
+  axis:'measured error / hallucination rate \u2014 three separate studies, three different tasks',
+  cap:'Bars are plotted from the array in the page source. Sources, top to bottom: Magesh et al. (2025), <em>J. Empirical Legal Studies</em> 22:216, tools tested May 2024 <span class="conf h">H</span>; Vectara hallucination leaderboard, 19 Nov 2025, 7,700+ articles up to 32K tokens <span class="conf h">H</span>; Anthropic, 19 Sep 2024 <span class="conf h">H</span>. <strong>These are not directly comparable.</strong> They measure different tasks on different corpora and are placed on one axis to show order of magnitude, not to rank products <span class="conf m">M \u2014 cross-study comparison is illustrative</span>.'});
+(function(){
+ var G=$('cbG'),L=$('cbL'),O=$('gOut');
+ function draw(){
+  $('tgG').classList.toggle('on',G.checked);$('tgL').classList.toggle('on',L.checked);
+  var h='<span class="hd">Measured figure for this cell</span>';
+  if(!G.checked&&!L.checked){
+   h+='<span class="flag">43%</span> \u2014 GPT-4 with no retrieval, on open-ended legal research questions.<br><span style="color:#6F7B78">Magesh et al. (2025). This is the ungrounded baseline the whole session is measured against.</span>';
+  }else if(!G.checked&&L.checked){
+   h+='<span class="nil">No published measurement isolates this cell.</span><br><span style="color:#6F7B78">Document length is not a variable when no document is supplied. The panel will not interpolate a number here.</span>';
+  }else if(G.checked&&!L.checked){
+   h+='<span class="good">Low single digits</span> on short, simple source documents.<br><span style="color:#6F7B78">Vectara states that on its earlier, shorter dataset frontier models clustered at the top, which is why the dataset was replaced. The precise per-model figures for that earlier dataset are not reproduced here. <span class="conf m">M</span></span>';
+  }else{
+   h+='<span class="flag">3.3% to above 13%</span> \u2014 source supplied, model instructed not to infer, long high-complexity documents.<br><span style="color:#6F7B78">Vectara, 19 Nov 2025: Gemini-2.5-flash-lite 3.3%; Gemini-3-Pro 13.6% and outside the top 25; Claude Sonnet 4.5, GPT-5, GPT-OSS-120B, Grok-4 and DeepSeek-R1 all above 10%. Vectara also reports rates rising with both document length and complexity. A 90-minute transcript and a 40-page plan sit at this end. <span class="conf h">H</span></span>';
+  }
+  O.className='mpanel has';O.innerHTML=h;
+ }
+ G.onchange=draw;L.onchange=draw;draw();
+})();
+
+/* ================= 8. Rank order ================= */
+var ARCH=[
+ {t:'Whole standards library pasted into the prompt',k:1,w:'Edit the document. The next run reads the edit. Anthropic\u2019s own guidance is that under ~200,000 tokens this beats retrieval outright.'},
+ {t:'Retrieval over the standards library',k:2,w:'Edit the document, then re-index. Cheap, but there is now a pipeline that can be stale, and staleness is silent.'},
+ {t:'A model fine-tuned on the firm\u2019s documents',k:3,w:'Retrain. The old rule remains in the weights until you do, it cannot be cited, and you cannot point a regulator at the document it came from.'},
+ {t:'A general model answering from training data alone',k:4,w:'Not updatable at any price. You cannot correct it; you can only detect the error after it reaches a client.'}
+];
+(function(){
+ var L=$('rankList'),O=$('rankOut'),ord=[];
+ function draw(){
+  ARCH.forEach(function(a,i){var pos=ord.indexOf(i);
+   L.children[i].classList.toggle('act',pos>=0);
+   L.children[i].firstChild.textContent=(pos>=0?(pos+1)+'. ':'')+a.t});
+  var h='<span class="hd">Your ordering</span>';
+  if(!ord.length){h+='<span class="nil">Click the cheapest to update first.</span>'}
+  else if(ord.length<ARCH.length){h+=ord.length+' of '+ARCH.length+' placed.'}
+  else{
+   var ok=ord.every(function(idx,pos){return ARCH[idx].k===pos+1});
+   h+=(ok?'<span class="good">Matches the ordering this lesson argues for.</span>':'<span class="flag">Differs from the ordering this lesson argues for. The intended order is by cost of a Tuesday-afternoon rule change, not by capability.</span>')+'<br><br>';
+   ARCH.slice().sort(function(a,b){return a.k-b.k}).forEach(function(a){
+    h+='<span class="good">'+a.k+'.</span> '+esc(a.t)+'<br><span style="color:#6F7B78">'+esc(a.w)+'</span><br><br>'});
+  }
+  O.className='mpanel'+(ord.length?' has':'');O.innerHTML=h;
+ }
+ ARCH.forEach(function(a,i){
+  var b=document.createElement('button');b.className='chip';b.type='button';
+  b.appendChild(document.createTextNode(a.t));
+  b.onclick=function(){var p=ord.indexOf(i);if(p>=0){ord=[]}else{ord.push(i)}draw()};
+  L.appendChild(b)});
+ draw();
+})();
+
+/* ================= 9. Workflow chain ================= */
+var CHAIN=[
+ {s:'Prep',f:'The assistant surfaced the wrong prior meeting \u2014 a near-duplicate from a different household.',
+  d:['Capture: you open with a question premised on facts that belong to someone else.',
+     'Summarise: the wrong premise is now in the transcript, spoken by you, and reads as agreed.',
+     'Follow-up: the recap email restates it to the client.',
+     'Log: the CRM record now contains another household\u2019s facts.'],
+  v:'Visible at follow-up \u2014 to the client, who reads it before you do.'},
+ {s:'Capture',f:'Recording began four minutes late; the client\u2019s opening statement of what changed was never captured.',
+  d:['Summarise: the change is absent, and absence produces no error signal.',
+     'Follow-up: the recap looks complete and clean.',
+     'Log: the record shows a meeting in which nothing changed.'],
+  v:'Never visible. Nothing in the chain compares what was said to what was captured.'},
+ {s:'Summarise',f:'Extraction dropped the beneficiary-designation item as small talk.',
+  d:['Follow-up: no action item reaches the client.',
+     'Log: no task is created and no one is assigned.',
+     'Next prep: the next agenda is built from the log, so the item is now permanently gone.'],
+  v:'Never visible, and it compounds \u2014 each cycle rebuilds prep from the degraded log.'},
+ {s:'Follow-up',f:'The recap email states a recommendation in firmer terms than you gave it.',
+  d:['Client: reads a recommendation, not an option, and may act on it.',
+     'Log: the email is the artefact filed as evidence of what was advised.'],
+  v:'Visible immediately \u2014 the client is the detector. That is the wrong detector.'},
+ {s:'Log',f:'The CRM note records what was decided but not why, or what was rejected.',
+  d:['Nothing downstream breaks. Every subsequent meeting runs normally.',
+     'Examination: the file shows a recommendation with no documented basis.'],
+  v:'Visible only at examination, by which point the reasoning is unrecoverable.'}
+];
+(function(){
+ var W=$('chainWrap'),O=$('chainOut');
+ var h='<div class="row" style="gap:8px">';
+ CHAIN.forEach(function(c,i){h+='<button class="btn sel mini" data-i="'+i+'" type="button">'+esc(c.s)+'</button>'+
+   (i<CHAIN.length-1?'<span class="dim" style="font-family:JetBrains Mono,monospace">\u2192</span>':'')});
+ h+='</div>';W.innerHTML=h;
+ [].slice.call(W.querySelectorAll('button')).forEach(function(b){
+  b.onclick=function(){
+   var i=parseInt(b.dataset.i,10),c=CHAIN[i];
+   [].slice.call(W.querySelectorAll('button')).forEach(function(x){x.classList.toggle('act',x===b)});
+   var s='<span class="hd">Failure injected at: '+esc(c.s)+'</span><span class="flag">'+esc(c.f)+'</span><br><br><span class="hd">Inherited downstream</span>';
+   c.d.forEach(function(d){s+='\u00b7 '+esc(d)+'<br>'});
+   s+='<br><span class="hd">First human detection</span>'+
+     (c.v.indexOf('Never')===0?'<span class="flag">':'<span class="good">')+esc(c.v)+'</span>';
+   O.className='mpanel has';O.innerHTML=s;
+  }});
+})();
+
+/* ================= 10. Note scoring ================= */
+var RUB=[
+ {n:'The decision and its timing',re:/(sell|selling|sale|building|first quarter|q1|property)/i,g:'The client stated a decision and a quarter. A note that records the topic without the decision is not a record.'},
+ {n:'The constraint the client actually gave',re:/(liquid|liquidity|fast|access|available)/i,g:'The client corrected \u201csafe\u201d to \u201cliquid\u201d. That correction is the whole instruction and is the sentence most likely to be summarised away.'},
+ {n:'The open dependency',re:/(gift|gifting|estate|unresolved|pending|tbd)/i,g:'The gifting question is unresolved and gates the disposition of proceeds. Unresolved items are what the next agenda is built from.'},
+ {n:'The action item and its owner',re:/(beneficiar|designation|brother|update|review|change)/i,g:'The beneficiary designation naming the brother is the only item in this excerpt with a deadline risk attached to it.'},
+ {n:'The second decision-maker',re:/(dana|spouse|partner|wife|husband|both|they)/i,g:'Dana stated a preference. A note that attributes a joint decision to one member of a household misstates who authorised it.'}
+];
+(function(){
+ var T=$('noteBox'),O=$('noteOut');
+ $('noteScore').onclick=function(){
+  var v=T.value.trim();
+  if(v.length<10){O.className='mpanel';O.innerHTML='<span class="hd">Rubric coverage</span><span class="nil">Write a note of at least a sentence.</span>';return}
+  var hit=0,h='<span class="hd">Rubric coverage</span>';
+  RUB.forEach(function(r){
+   var ok=r.re.test(v);if(ok)hit++;
+   h+=(ok?'<span class="good">\u2713 ':'<span class="flag">\u2717 ')+esc(r.n)+'</span>'+(ok?'':'<br><span style="color:#6F7B78">'+esc(r.g)+'</span>')+'<br>';
+  });
+  var wc=v.split(/\s+/).length;
+  h+='<br><span class="hd">Score</span>'+hit+' of 5 elements, '+wc+' words.<br>';
+  if(/\b(seems|appears|probably|likely|presumably|felt that|wants to probably)\b/i.test(v))
+   h+='<span class="flag">Contains inference language. A record states what was said; an inference is your conclusion and belongs in the basis entry, labelled as such.</span><br>';
+  if(hit===5)h+='<span class="good">Full coverage. Now ask the harder question: which of the five would an extraction step have produced without you?</span>';
+  else h+='<span style="color:#6F7B78">The elements you missed are the ones an extraction step also tends to miss \u2014 corrections, dependencies and second speakers are the three categories summarisation compresses first.</span>';
+  h+='<br><br><span class="hd">Heuristic caveat</span><span style="color:#6F7B78">This scorer is keyword matching. It will credit a note that names the right words in the wrong relation, and it cannot assess accuracy at all. Treat the misses as signal and the hits as unproven.</span>';
+  O.className='mpanel has';O.innerHTML=h;
+ };
+})();
+
+/* ================= 11. Predict then reveal ================= */
+var SLOPE=[
+ {n:'Zoom AI Companion',a:1,s:4,c:'#9A4B22'},
+ {n:'Fathom',a:2,s:3,c:'#6F7B78'},
+ {n:'Zocks',a:3,s:2,c:'#0E5A55'},
+ {n:'Jump',a:4,s:1,c:'#0E5A55'}
+];
+function showSlope(){
+ var F=$('figSlope');if(!F)return;
+ var W=720,H=300,LX=190,RX=520,TY=58,BY=250,n=SLOPE.length;
+ var yy=function(r){return TY+((r-1)/(n-1))*(BY-TY)};
+ var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Slopegraph of adoption rank against satisfaction rank">';
+ s+='<text x="6" y="18" class="chartttl">Adoption rank against satisfaction rank</text>';
+ s+='<text x="6" y="34" class="chartlab">Kitces Research on Advisor Productivity, fielded autumn 2024</text>';
+ s+='<text x="'+LX+'" y="'+(TY-14)+'" class="chartlab" text-anchor="middle">ADOPTION</text>';
+ s+='<text x="'+RX+'" y="'+(TY-14)+'" class="chartlab" text-anchor="middle">SATISFACTION</text>';
+ SLOPE.forEach(function(d){
+  s+='<line x1="'+LX+'" y1="'+n1(yy(d.a))+'" x2="'+RX+'" y2="'+n1(yy(d.s))+'" stroke="'+d.c+'" stroke-width="2" opacity="0.75"/>';
+  s+='<circle cx="'+LX+'" cy="'+n1(yy(d.a))+'" r="5" fill="'+d.c+'"/>';
+  s+='<circle cx="'+RX+'" cy="'+n1(yy(d.s))+'" r="5" fill="'+d.c+'"/>';
+  s+='<text x="'+(LX-12)+'" y="'+n1(yy(d.a)+4)+'" class="chartval" text-anchor="end">'+d.a+'. '+esc(d.n)+'</text>';
+  s+='<text x="'+(RX+12)+'" y="'+n1(yy(d.s)+4)+'" class="chartval">'+d.s+'. '+esc(d.n)+'</text>';
+ });
+ s+='</svg>';
+ F.innerHTML=s+'<figcaption>Endpoints are published: Kitces reports Zoom\u2019s AI Companion as #1 in adoption and last in advisor satisfaction, with industry-specific tools leading satisfaction <span class="conf h">H</span>. The two intermediate positions are ordered consistently with that statement but are not individually published <span class="conf m">M \u2014 rank order inferred</span>. By the 2025 Kitces AdvisorTech research the adoption side had itself inverted: Jump and Zocks together at 12.8% against Zoom AI and Fathom at 7.6%. The satisfaction signal led the adoption signal by roughly a year, which is the practical reason to read satisfaction data before procurement rather than after.</figcaption>';
+ F.style.display='block';
+}
+(function(){
+ var B=$('predBtns'),O=$('predOut'),opts=['First','Middle of the pack','Last'];
+ opts.forEach(function(o,i){
+  var b=document.createElement('button');b.className='btn sel mini';b.type='button';b.textContent=o;
+  b.onclick=function(){
+   [].slice.call(B.children).forEach(function(c,j){c.classList.toggle('act',j===i)});
+   var ok=(i===2);
+   O.className='mpanel has';
+   O.innerHTML='<span class="hd">Your prediction</span>'+esc(o)+'<br><br><span class="hd">Published result</span>'+
+    (ok?'<span class="good">Correct \u2014 last.</span>':'<span class="flag">Last.</span>')+
+    ' The most-adopted tool in the category ranked lowest on advisor satisfaction. Adoption measured convenience; satisfaction measured whether the four post-meeting steps got done.';
+   showSlope();
+  };
+  B.appendChild(b)});
+})();
+
+/* ================= 12. Three-way quiz ================= */
+var QOPT=[{k:'send',t:'Send as-is'},{k:'strip',t:'Strip fields first'},{k:'never',t:'Never, into any tool'}];
+var QITEMS=[
+ {q:'A meeting transcript with all names, account numbers and balances removed. It describes a household that sold a 40-store regional grocery chain in a named metropolitan area in 2019.',
+  a:'never',split:true,
+  fb:{never:'Correct, and this is the item designed to split the room. Field-level de-identification passed \u2014 every listed identifier is gone \u2014 and the record is still uniquely identifying. A 40-store chain sold in a named metro in a named year is a set of one. Re-identification by combination is not solved by removing fields, so "strip first" is the wrong disposition and the transcript does not go.',
+      strip:'The common answer, and the reason this item exists. Which field would you strip? Remove the store count and it is still a regional grocery sale in a named metro in 2019. The identifiers are gone and the household is not anonymous. Uniqueness lives in the combination, not in any single field.',
+      send:'No. Absence of names is not anonymity when the described facts are unique to one household.'}},
+ {q:'A note reading: "Confirmed identity via last four of SSN (4417) and DOB 03/14. Client authorised Roth conversion of $150,000."',
+  a:'strip',
+  fb:{strip:'Correct. The note is well-formed \u2014 it records an authorisation, an amount and a verification step \u2014 and that is exactly why it is dangerous. Strip the authenticators. An SSN fragment and a date of birth are the credentials used to impersonate the client, and they are now in a vendor log.',
+      never:'Defensible but over-broad. The substantive content \u2014 an authorised conversion and its amount \u2014 is legitimate record content for an approved vendor. It is the authenticators that must not travel.',
+      send:'No. This item is specific in form and defective in substance: it looks like model documentation and it moves the client\u2019s identity credentials into a third party\u2019s logs.'}},
+ {q:'The firm\u2019s internal cash reserve standard. Contains no client information of any kind.',
+  a:'send',
+  fb:{send:'Correct. Firm process documents are the intended payload of a grounded assistant. Treating them as sensitive is the failure mode that leaves the assistant ungrounded and therefore worse.',
+      strip:'Nothing to strip. Over-classifying internal process documents is how firms end up with an assistant that has no firm knowledge and answers from training data instead.',
+      never:'Over-cautious to the point of self-harm. Withholding this is what produces the ungrounded 43% baseline.'}},
+ {q:'A note reading: "Recording practice supported by Restrepo v. Halloran Wealth Partners, 214 F.3d 1109 (9th Cir. 2000), holding that AI-generated meeting notes satisfy the books-and-records requirement."',
+  a:'never',
+  fb:{never:'Correct. The citation is fabricated \u2014 it was invented for this exercise, and no such case exists. It is the second item that is specific in form and defective in substance: circuit, volume, reporter and year are all present and the authority is not. Nothing in this course asserts what any real rule holds about AI-generated notes; the point is only that a well-formed citation is not evidence of a real one.',
+      strip:'There is no field to strip. The defect is the authority itself, not an identifier inside it.',
+      send:'No. Sending it propagates a fabricated authority into the client record, where the next retrieval will find it and cite it back to you.'}},
+ {q:'A synthetic client profile you built yourself, with invented names and figures, used to test whether the workflow runs.',
+  a:'send',
+  fb:{send:'Correct. Synthetic data is what this course requires for every exercise and for the Part 1 build transcript. Testing on synthetic data is the control, not the risk.',
+      strip:'Nothing to strip \u2014 there is no real person in it.',
+      never:'Over-cautious. If synthetic profiles cannot be used, the workflow cannot be tested before it meets a real file, which inverts the risk.'}}
+];
+(function(){
+ var W=$('quizWrap'),S=$('quizScore'),done=0,right=0;
+ QITEMS.forEach(function(it,i){
+  var d=document.createElement('div');d.className='qitem';
+  var h='<span class="qtext">'+esc(it.q)+'</span><div class="row qbtns">';
+  QOPT.forEach(function(o){h+='<button class="btn sel mini" type="button" data-k="'+o.k+'">'+esc(o.t)+'</button>'});
+  h+='</div><div class="qfb"></div>';d.innerHTML=h;
+  [].slice.call(d.querySelectorAll('.qbtns button')).forEach(function(b){
+   b.onclick=function(){
+    if(d.classList.contains('done'))return;
+    var k=b.dataset.k,ok=(k===it.a);
+    b.classList.add('picked');b.classList.toggle('act',true);
+    var fb=d.querySelector('.qfb');
+    fb.className='qfb '+(ok?'right':'wrong');
+    fb.innerHTML=esc(it.fb[k])+(it.split?'<br><br><em>Instructor: this is the item designed to split the room. Poll the three dispositions before revealing.</em>':'');
+    d.classList.add('done');done++;if(ok)right++;
+    S.textContent=done+' of '+QITEMS.length+' answered \u00b7 '+right+' correct';
+   }});
+  W.appendChild(d);
+ });
+ S.textContent='0 of '+QITEMS.length+' answered';
+})();
+
+/* ================= 13. Copy prompt ================= */
+(function(){
+ var B=$('copyBtn'),M=$('copyMsg'),P=$('promptBlock');
+ B.onclick=function(){
+  var txt=P.textContent;
+  function ok(){M.textContent='Copied.';setTimeout(function(){M.textContent=''},2500)}
+  function fail(){
+   var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();
+   try{document.execCommand('copy');ok()}catch(e){M.textContent='Select the block and copy manually.'}
+   document.body.removeChild(ta);
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fail)}else{fail()}
+ };
+})();
+
+/* ================= 14. Partner review instrument ================= */
+var PRD=[
+ {n:'Target task is a task, not a topic',hi:'Named a recurring task with a start and an end.',lo:'Named a subject area.'},
+ {n:'Model and tier choice is justified',hi:'Gave a reason tied to the task, not to price.',lo:'Stated a tool with no reason.'},
+ {n:'A verification step exists and is specific',hi:'Named what is checked, against what, by whom.',lo:'Says outputs are reviewed.'},
+ {n:'Would survive the twenty-clients test',hi:'You could run it on a different household without asking the builder anything.',lo:'It is built around one case.'}
+];
+(function(){
+ var W=$('prWrap'),O=$('prOut'),sc=PRD.map(function(){return -1});
+ PRD.forEach(function(d,i){
+  var row=document.createElement('div');row.style.marginBottom='14px';
+  var h='<label class="fl">'+esc(d.n)+'</label><span class="hint">3 = '+esc(d.hi)+' \u00b7 0 = '+esc(d.lo)+'</span><div class="row">';
+  [0,1,2,3].forEach(function(v){h+='<button class="btn sel mini" type="button" data-i="'+i+'" data-v="'+v+'">'+v+'</button>'});
+  h+='</div>';row.innerHTML=h;W.appendChild(row);
+ });
+ [].slice.call(W.querySelectorAll('button')).forEach(function(b){
+  b.onclick=function(){
+   var i=parseInt(b.dataset.i,10),v=parseInt(b.dataset.v,10);sc[i]=v;
+   [].slice.call(W.querySelectorAll('button[data-i="'+i+'"]')).forEach(function(x){
+    x.classList.toggle('act',parseInt(x.dataset.v,10)===v)});
+   draw();
+  }});
+ function draw(){
+  if(sc.indexOf(-1)>=0){
+   O.className='mpanel';
+   O.innerHTML='<span class="hd">Partner score</span>'+sc.filter(function(v){return v>=0}).length+' of '+PRD.length+' dimensions scored.';
+   return}
+  var tot=sc.reduce(function(a,b){return a+b},0);
+  var weakest=sc.indexOf(Math.min.apply(null,sc));
+  var band=tot>=10?'Ready to build the package':tot>=7?'One week of work remains':tot>=4?'The target task needs rewriting first':'Start over on scope';
+  O.className='mpanel has';
+  O.innerHTML='<span class="hd">Partner score</span>'+tot+' of 12 \u2014 '+band+
+   '<br><br><span class="hd">Say this to them, out loud</span><span class="good">\u201cThe weakest dimension is: '+esc(PRD[weakest].n)+
+   '. To move it to a 3 you need: '+esc(PRD[weakest].hi)+'\u201d</span>'+
+   '<br><br><span style="color:#6F7B78">Part 1 weights scalability at 30% and deliverable correctness at 25%. The last two dimensions above map to those. Fix them first.</span>';
+ }
+ draw();
+})();
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 2 · Practical AI Usage in Daily Advisory Workflows</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#F4F4F1;--card:#FFF;--ink:#16211F;--muted:#6F7B78;
+  --off:#B9BDB9;--off-bg:#E7E8E4;--on:#0E5A55;--on-bg:#E2EDEB;
+  --warn:#9A4B22;--warn-bg:#F6EAE2;--line:#D8DAD4;--gold:#8A6A12;--gold-bg:#F3EEDF;
+  --plot:#0E5A55;--plot2:#9A4B22;--plot3:#8A6A12;--plot4:#3D5A80;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.65}
+.wrap{max-width:1020px;margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.025em;margin:0}
+h1{font-size:clamp(34px,5.8vw,62px);line-height:1.03;font-weight:700}
+h2{font-size:clamp(25px,3.9vw,42px);line-height:1.08;font-weight:600}
+h3{font-size:clamp(18px,2.2vw,23px);line-height:1.24;font-weight:600;margin-top:34px}
+h4{font-size:16.5px;font-weight:600;letter-spacing:-.01em}
+p{margin:18px 0;max-width:64ch}
+.big{font-size:clamp(19px,2.2vw,23px);line-height:1.52}
+.dim{color:var(--muted)}
+.lede{font-size:clamp(19px,2.2vw,24px);line-height:1.5;color:var(--muted);max-width:40ch;margin:24px 0 0}
+section.slide{padding:clamp(48px,7vw,88px) 0;border-bottom:1px solid var(--line);scroll-margin-top:12px}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--on);font-weight:500;margin-bottom:15px;display:flex;gap:14px;flex-wrap:wrap}
+.eyebrow .clock{color:var(--muted)}
+
+#rail{position:fixed;left:12px;top:50%;transform:translateY(-50%);z-index:40;display:none}
+@media(min-width:1340px){#rail{display:block}}
+#rail button{display:flex;align-items:center;gap:9px;background:none;border:none;padding:3px;cursor:pointer;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--off);width:100%;text-align:left}
+#rail .pip{width:7px;height:7px;border-radius:50%;background:var(--off);flex:none;transition:.2s}
+#rail .lbl{opacity:0;transition:.2s;white-space:nowrap}
+#rail:hover .lbl{opacity:1}
+#rail button.on .pip{background:var(--on);transform:scale(1.5)}
+#rail button.on{color:var(--on)}
+#prog{position:fixed;top:0;left:0;height:3px;background:var(--on);z-index:60;width:0}
+
+.btn{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;background:var(--on);color:#fff;border:none;border-radius:7px;padding:11px 17px;cursor:pointer;transition:.15s}
+.btn:hover{filter:brightness(1.15)}
+.btn.ghost{background:none;color:var(--on);border:1.5px solid var(--on)}
+.btn.ghost:hover{background:var(--on-bg);filter:none}
+.btn.mini{padding:7px 12px;font-size:11px}
+.btn.sel{background:var(--off-bg);color:var(--muted);border:1.5px solid var(--line)}
+.btn.sel.act{background:var(--on);color:#fff;border-color:var(--on)}
+.btn.sel.act.bad{background:var(--warn);border-color:var(--warn)}
+:focus-visible{outline:2.5px solid var(--on);outline-offset:3px;border-radius:4px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.row.tight{gap:7px}
+
+.ctrls{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:13px;margin:26px 0}
+.tg{display:flex;gap:13px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:11px;padding:15px 17px;cursor:pointer;transition:.18s;user-select:none}
+.tg:hover{border-color:var(--off)}
+.tg.on{border-color:var(--on);background:var(--on-bg)}
+.tg input{position:absolute;opacity:0;width:0;height:0}
+.track{width:42px;height:24px;border-radius:12px;background:var(--off);position:relative;flex:none;margin-top:2px;transition:.2s}
+.tg.on .track{background:var(--on)}
+.knob{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s}
+.tg.on .knob{left:21px}
+.tg .tl{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:15px;display:block;line-height:1.3}
+.tg .td{font-size:13px;color:var(--muted);line-height:1.45;display:block;margin-top:3px}
+
+.panel{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:24px;margin:26px 0}
+.panel.tightpad{padding:18px 20px}
+.plab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:11px;display:block}
+.mono{font-family:"JetBrains Mono",monospace}
+.out{font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.75;white-space:pre-wrap;background:var(--off-bg);border-radius:9px;padding:16px 18px;min-height:60px}
+.out.has{background:var(--on-bg)}
+.nil{color:var(--muted);font-style:italic;font-family:"Source Serif 4",serif}
+
+/* probability bars */
+.pbars{display:flex;flex-direction:column;gap:6px;margin:16px 0 0}
+.pbar{display:grid;grid-template-columns:110px 1fr 62px;gap:11px;align-items:center;font-family:"JetBrains Mono",monospace;font-size:12.5px;background:none;border:none;padding:3px 0;cursor:pointer;text-align:left;color:var(--ink);width:100%}
+.pbar:hover .fill{filter:brightness(1.2)}
+.pbar .tok{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pbar .bg{background:var(--off-bg);border-radius:4px;height:19px;overflow:hidden}
+.pbar .fill{background:var(--on);height:100%;border-radius:4px;transition:width .35s ease}
+.pbar .pc{text-align:right;color:var(--muted)}
+.pbar.picked .tok{font-weight:600;color:var(--on)}
+.pbar.dead .fill{background:var(--warn)}
+
+.streamline{font-family:"JetBrains Mono",monospace;font-size:15px;line-height:1.9;background:var(--on-bg);color:var(--on);border-radius:8px;padding:14px 17px;margin:18px 0 0;min-height:54px}
+.streamline .cursor{display:inline-block;width:9px;background:var(--on);animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.streamline .cursor{animation:none}}
+
+/* slider */
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;background:transparent;margin:12px 0}
+input[type=range]::-webkit-slider-runnable-track{height:6px;background:var(--off-bg);border-radius:3px}
+input[type=range]::-moz-range-track{height:6px;background:var(--off-bg);border-radius:3px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--on);margin-top:-9px;cursor:pointer;border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.2)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--on);cursor:pointer;border:3px solid #fff}
+.ticks{display:flex;justify-content:space-between;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.05em}
+.runs{display:flex;flex-direction:column;gap:8px;margin-top:18px}
+.run{font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.55;padding:9px 13px;border-radius:7px;background:var(--off-bg);display:flex;gap:11px}
+.run .rn{color:var(--muted);flex:none}
+.run.same{background:var(--on-bg);color:#0A423F}
+.run.wild{background:var(--warn-bg);color:var(--warn)}
+
+textarea,input[type=text]{width:100%;font-family:"JetBrains Mono",monospace;font-size:14px;line-height:1.6;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:12px 14px;resize:vertical}
+textarea{min-height:110px}
+textarea:focus,input[type=text]:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on-bg)}
+
+/* charts */
+.chart{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:22px 24px 18px;margin:26px 0}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.ctitle{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:17px;line-height:1.3;margin-bottom:4px}
+.csub{font-size:13.5px;color:var(--muted);line-height:1.5;margin-bottom:16px}
+.csrc{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted);letter-spacing:.03em;margin-top:14px;line-height:1.6;border-top:1px solid var(--line);padding-top:11px}
+text{font-family:"JetBrains Mono",monospace}
+.axis{stroke:var(--line);stroke-width:1}
+.gridln{stroke:var(--line);stroke-width:1;stroke-dasharray:2 4}
+.alab{font-size:10.5px;fill:var(--muted);letter-spacing:.04em}
+.dlab{font-size:11px;fill:var(--ink)}
+.dlab.b{font-weight:500}
+
+.conf{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:3px 7px;border-radius:4px;font-weight:500;vertical-align:middle;margin-left:6px}
+.conf.h{background:var(--on-bg);color:var(--on)}
+.conf.m{background:var(--gold-bg);color:var(--gold)}
+.conf.l{background:var(--warn-bg);color:var(--warn)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:17px;margin:28px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:20px}
+.card p{font-size:15px;line-height:1.55;margin:8px 0 0;color:var(--muted);max-width:none}
+.card .num{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--on);font-weight:500;display:block;margin-bottom:9px}
+.card.warn{background:var(--warn-bg);border-color:#E0C6B4}
+.card.warn .num{color:var(--warn)}
+.card.gold{background:var(--gold-bg);border-color:#DFD3AF}
+.card.gold .num{color:var(--gold)}
+.card .stat{font-family:"Bricolage Grotesque",sans-serif;font-size:34px;font-weight:700;line-height:1;letter-spacing:-.03em;display:block;margin-bottom:7px}
+
+.pull{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:clamp(21px,3vw,32px);line-height:1.18;letter-spacing:-.02em;border-left:4px solid var(--on);padding-left:24px;margin:38px 0;max-width:27ch}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15.5px}
+th{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;text-align:left;color:var(--muted);border-bottom:2px solid var(--ink);padding:0 12px 9px 0}
+td{padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.5}
+td.n,th.n{text-align:right;font-family:"JetBrains Mono",monospace;font-size:14px}
+tr.hi td{background:var(--on-bg)}
+
+.doit{background:var(--gold-bg);border:1.5px solid #DFD3AF;border-radius:12px;padding:20px 22px;margin:26px 0}
+.doit .plab{color:var(--gold)}
+.doit p{margin:0;font-size:16px}
+.doit p+p{margin-top:10px}
+
+.copybox{position:relative;background:var(--ink);color:#E8EDEB;border-radius:10px;padding:17px 19px;font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.7;white-space:pre-wrap;margin:18px 0}
+.copybox button{position:absolute;top:10px;right:10px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.09em;text-transform:uppercase;background:rgba(255,255,255,.13);color:#E8EDEB;border:none;border-radius:5px;padding:6px 10px;cursor:pointer}
+.copybox button:hover{background:rgba(255,255,255,.25)}
+
+footer{padding:50px 0 100px;font-size:14.5px;color:var(--muted)}
+footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:none;word-break:break-word}
+footer ol{padding-left:20px}
+footer li{margin-bottom:11px;line-height:1.55}
+@media print{#rail,#prog{display:none}body{background:#fff}.slide{page-break-inside:avoid;padding:22px 0}}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<nav id="rail" aria-label="Sections"></nav>
+<div class="wrap">
+
+<!-- ============ 0 ============ -->
+<section class="slide" id="s0" data-nav="Session map">
+  <div class="eyebrow"><span>BUS ADM X433.4 · Session 2</span><span class="clock">150 minutes</span></div>
+  <h1>Practical AI Usage in Daily Advisory Workflows</h1>
+  <p class="lede">The model samples a plausible answer. It does not compute the true one. Everything in this session follows from that one sentence.</p>
+
+  <div class="cards">
+    <div class="card"><span class="num">Outcome 01</span><h4>A working model of sampling</h4><p>Why the same prompt returns different text, and what that does to an audit trail.</p></div>
+    <div class="card"><span class="num">Outcome 02</span><h4>A tier-selection rule</h4><p>Cost per finished task, benchmarked, rather than cost per token.</p></div>
+    <div class="card"><span class="num">Outcome 03</span><h4>Three tested templates</h4><p>The ones you brought, audited against a rubric and reviewed by a classmate.</p></div>
+    <div class="card"><span class="num">Outcome 04</span><h4>A citation verification routine</h4><p>Four checks, in order, applied to tax authority you did not write.</p></div>
+  </div>
+
+  <h3>Time budget</h3>
+  <table>
+    <thead><tr><th>Segment</th><th>Topic</th><th class="n">Minutes</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Next-token probabilities for a single prompt</td><td class="n">12</td></tr>
+      <tr><td>2</td><td>Laplace on probability as a measure of ignorance</td><td class="n">10</td></tr>
+      <tr><td>3</td><td>Temperature and output variance</td><td class="n">12</td></tr>
+      <tr><td>4</td><td>Sampling failure on a task that requires counting</td><td class="n">10</td></tr>
+      <tr><td>5</td><td>Cost per task versus cost per token</td><td class="n">14</td></tr>
+      <tr class="hi"><td>&mdash;</td><td>Break</td><td class="n">10</td></tr>
+      <tr><td>6</td><td>Persona, Task, Context, Format &mdash; and which letter carries the load</td><td class="n">16</td></tr>
+      <tr><td>7</td><td>Prompt specification triage</td><td class="n">12</td></tr>
+      <tr><td>8</td><td>The interview rewrite</td><td class="n">12</td></tr>
+      <tr><td>9</td><td>The seven-step process and the delegation line</td><td class="n">16</td></tr>
+      <tr><td>10</td><td>Citation failure types and the verification order</td><td class="n">16</td></tr>
+      <tr><td>11</td><td>Template audit and structured peer review</td><td class="n">14</td></tr>
+      <tr><td>12</td><td>Final Project Part 1 assignment and baseline capture</td><td class="n">6</td></tr>
+    </tbody>
+  </table>
+
+  <div class="doit">
+    <span class="plab">Before we start</span>
+    <p><strong>Open the AI tool you subscribed to, in a new tab, now.</strong> Every section below has something to run. You will finish this session with a baseline measurement, three audited templates, and a partner's review of your work.</p>
+    <p>Have the three prompt templates you built for today open as well.</p>
+  </div>
+</section>
+
+<!-- ============ 1 ============ -->
+<section class="slide" id="s1" data-nav="Next token">
+  <div class="eyebrow"><span>01 · Mechanism</span><span class="clock">12 min</span></div>
+  <h2>Next-Token Probabilities for a Single Prompt</h2>
+  <p class="big">Wolfram's description of the mechanism is one sentence long: the model asks, over and over, &ldquo;given the text so far, what should the next word be?&rdquo; and each time adds a word. There is no separate step where it checks whether the sentence is true.</p>
+
+  <p>Take his example prompt. At each position the model produces a ranked list of candidate continuations with probabilities attached. Click a bar to select that continuation and watch the distribution recompute for the next position. Try running it twice: once always taking the top bar, once taking the second or third.</p>
+
+  <div class="panel">
+    <span class="plab">Prompt</span>
+    <div class="streamline" id="strm"></div>
+    <div class="pbars" id="pbars"></div>
+    <div class="row" style="margin-top:20px">
+      <button class="btn ghost mini" id="topBtn">Always take the top bar</button>
+      <button class="btn ghost mini" id="sampBtn">Sample by probability</button>
+      <button class="btn sel mini" id="resetBtn">Reset</button>
+      <span class="mono dim" style="font-size:12px" id="stepCount"></span>
+    </div>
+  </div>
+
+  <div class="chart">
+    <div class="ctitle">Probability of the nth-ranked candidate token, first position</div>
+    <div class="csub">Wolfram reports that the fall-off across ranked candidates follows an n&#8315;&#185; power law &mdash; the straight line on a log-log plot that he notes is characteristic of the general statistics of language. Rank 1 holds a large share; by rank 20 the candidates are individually negligible but collectively substantial.</div>
+    <svg viewBox="0 0 700 250" role="img" aria-label="Power law decay of candidate token probability by rank"><g id="powerChart"></g></svg>
+    <div class="csrc">Source: Wolfram, S. (2023), &ldquo;It's Just Adding One Word at a Time.&rdquo; Curve shape is as reported (n&#8315;&#185; decay) <span class="conf h">H</span>. Individual token labels above are illustrative, not extracted from the published figure <span class="conf l">L</span>.</div>
+  </div>
+
+  <h3>What this rules out</h3>
+  <p>A planner reading an AI answer to a tax question is not reading a lookup result. They are reading a sequence in which each word was chosen because it was a probable continuation of the words before it. A correct citation and a fabricated citation are both probable continuations. Nothing in the mechanism distinguishes them.</p>
+
+  <div class="doit">
+    <span class="plab">Run it &mdash; 3 minutes</span>
+    <p>In your AI tool, send exactly this and nothing else: <span class="mono">The best thing about AI is its ability to</span></p>
+    <p>Send it three separate times, in three separate chats. Compare the three openings. We will come back to what you got in section 3.</p>
+  </div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="slide" id="s2" data-nav="Laplace">
+  <div class="eyebrow"><span>02 · Foundation</span><span class="clock">10 min</span></div>
+  <h2>Laplace on Probability as a Measure of Ignorance</h2>
+  <p class="big">In 1814 Laplace proposed an intellect that knew every force and every position in nature. For such an intellect, he wrote, nothing would be uncertain; the future, like the past, would be present to its eyes. Probability, on his account, is not a property of the world. It is a property of the observer's incomplete information.</p>
+
+  <p>That distinction is the whole session. A client's 2025 return either does or does not permit a particular treatment. There is a fact. When the model gives you a probability distribution over answers, it is not reporting uncertainty in the tax code. It is reporting uncertainty about which continuation a human writer would have produced. Those are different objects, and the second one is not evidence about the first.</p>
+
+  <div class="panel">
+    <span class="plab">Two objects, side by side</span>
+    <div class="ctrls" style="margin:0 0 18px">
+      <label class="tg" id="tgWorld"><input type="checkbox" id="cbWorld"><span class="track"><span class="knob"></span></span><span><span class="tl">Show the tax question</span><span class="td">What the authority actually provides</span></span></label>
+      <label class="tg" id="tgModel"><input type="checkbox" id="cbModel"><span class="track"><span class="knob"></span></span><span><span class="tl">Show the model's answer</span><span class="td">A distribution over plausible continuations</span></span></label>
+    </div>
+    <div class="out" id="lapOut"></div>
+  </div>
+
+  <p class="pull">Confidence in the output is not evidence about the world. It is evidence about the training data.</p>
+
+  <h3>The practical consequence</h3>
+  <p>Laplace's framing gives you the verification rule for the rest of the course. If probability is a statement about what the observer does not know, then reducing your own ignorance &mdash; opening the Code section, pulling the actual return, checking the effective date &mdash; is the only operation that changes the answer's reliability. Asking the model again, asking it more confidently, or asking it to double-check itself does not. Those operations resample the same distribution.</p>
+
+  <div class="doit">
+    <span class="plab">Discussion &mdash; 4 minutes</span>
+    <p>Name one task in your practice where you have accepted an AI output without opening the underlying source. What made you accept it? Speed, plausibility, matching what you already believed, or the fact that it cited something?</p>
+  </div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="slide" id="s3" data-nav="Temperature">
+  <div class="eyebrow"><span>03 · Mechanism</span><span class="clock">12 min</span></div>
+  <h2>Temperature and Output Variance</h2>
+  <p class="big">If the model always picked the top-ranked candidate, Wolfram notes, you get flat text that sometimes repeats word for word. Picking lower-ranked candidates sometimes produces more interesting text. The parameter governing how often that happens is called temperature, and Wolfram is explicit that there is no theory behind the value &mdash; 0.8 is simply what has been found to work for essays.</p>
+
+  <p>The slider below applies the actual transformation: each candidate's probability is raised to the power 1/T and the set is renormalised. Low T sharpens the distribution toward the leader. High T flattens it. Then the panel samples the same prompt five independent times so you can see the spread.</p>
+
+  <div class="panel">
+    <span class="plab">Temperature</span>
+    <input type="range" id="temp" min="0" max="150" value="80" step="5" aria-label="Temperature">
+    <div class="ticks"><span>0.0 &mdash; deterministic</span><span>0.8 &mdash; Wolfram's essay setting</span><span>1.5 &mdash; degraded</span></div>
+    <div class="pbars" id="tbars" style="margin-top:22px"></div>
+    <div class="row" style="margin-top:22px">
+      <button class="btn mini" id="reroll">Run the same prompt 5 times</button>
+      <span class="mono dim" style="font-size:12px" id="tempReadout"></span>
+    </div>
+    <div class="runs" id="runs"></div>
+  </div>
+
+  <h3>Three consequences for an advisory practice</h3>
+  <div class="cards">
+    <div class="card"><span class="num">Consequence 01</span><h4>The prompt is not the record</h4><p>At any temperature above zero the same prompt produces different text. An audit trail that stores only the prompt has stored the input to a random process, not the output you relied on.</p></div>
+    <div class="card"><span class="num">Consequence 02</span><h4>Re-asking is not verification</h4><p>Running the query again draws a second sample from the same distribution. Agreement between two samples is evidence about the distribution's shape, not about the tax code.</p></div>
+    <div class="card warn"><span class="num">Consequence 03</span><h4>Consumer chat tools do not expose T</h4><p>You cannot set temperature in most subscription interfaces. You control variance through the prompt &mdash; by constraining the output space &mdash; not through a setting.</p></div>
+  </div>
+
+  <div class="doit">
+    <span class="plab">Compare &mdash; 4 minutes</span>
+    <p>Pull up the three responses you generated in section 1. How different are they? Now ask one person to read the first sentence of each of their three aloud.</p>
+    <p>Then run this, which constrains the output space rather than the sampler: <span class="mono">Answer in exactly one sentence, in the form &ldquo;The best thing about AI is its ability to X.&rdquo; Choose X from: reason, retrieve, summarise, generate. Output nothing else.</span> Run it three times. Note how much of the variance disappeared and where it went.</p>
+  </div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="slide" id="s4" data-nav="Counting failure">
+  <div class="eyebrow"><span>04 · Failure mode</span><span class="clock">10 min</span></div>
+  <h2>Sampling Failure on a Task That Requires Counting</h2>
+  <p class="big">Wolfram trained a small transformer on a language with exactly one rule: parentheses must balance. The rule is simpler than any tax provision. The network still fails, and it fails in a specific and instructive way.</p>
+
+  <p>After roughly 400,000 trained weights, he reports, the network assigns about a 15 percent probability to a closing parenthesis in a position where closing would necessarily leave the sequence unbalanced. It is not confused about the rule in general. It is unable to hold a running count, because a feed-forward pass has no loop in which to keep one. He notes that even the full production model has a hard time matching parentheses in long sequences.</p>
+
+  <div class="panel">
+    <span class="plab">Extend the sequence &mdash; click a token to append it</span>
+    <div class="streamline" id="parenStream"></div>
+    <div class="pbars" id="parenBars"></div>
+    <div class="out" id="parenVerdict" style="margin-top:18px"></div>
+    <div class="row" style="margin-top:16px">
+      <button class="btn sel mini" id="parenReset">Reset</button>
+      <span class="mono dim" style="font-size:12px">Open count is tracked below the predictor, not by it.</span>
+    </div>
+  </div>
+
+  <div class="chart">
+    <div class="ctitle">Two kinds of task, one architecture</div>
+    <div class="csub">Tasks a human solves at a glance are the ones the network handles. Tasks requiring an explicit procedure carried across steps are the ones it approximates and then drops.</div>
+    <svg viewBox="0 0 700 210" role="img" aria-label="Comparison of pattern tasks and procedural tasks"><g id="shallowChart"></g></svg>
+    <div class="csrc">Source: Wolfram, S. (2023), &ldquo;What Really Lets ChatGPT Work?&rdquo; and the parenthesis-language section. Characterisation as reported <span class="conf h">H</span>.</div>
+  </div>
+
+  <h3>The mapping to your work</h3>
+  <p>Confirming that a cited authority exists is a lookup against an index. Confirming that it says what the sentence claims is a comparison against a text. Confirming that it still says that is a check against an effective date. None of the three is a continuation task, and the architecture that writes the sentence is not the architecture that performs any of them. This is why grounding, retrieval, and your own eyes on the source are separate additions and not properties the model has.</p>
+
+  <p class="pull">The model is not bad at counting because it is undertrained. It is bad at counting because counting is not what it does.</p>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="slide" id="s5" data-nav="Cost frontier">
+  <div class="eyebrow"><span>05 · Economics</span><span class="clock">14 min</span></div>
+  <h2>Cost Per Task Versus Cost Per Token</h2>
+  <p class="big">Every tier comparison you have seen quoted in dollars per million tokens is measuring the wrong thing. Two models at the same token price can differ threefold in what a finished piece of work costs, because they differ in how many tokens they burn to get there.</p>
+
+  <p>Artificial Analysis publishes both numbers: a composite Intelligence Index score, and the actual dollar cost of running that benchmark suite through each model. Plot one against the other and the ranking you would have guessed from the price sheet falls apart.</p>
+
+  <div class="chart">
+    <div class="ctitle">Intelligence Index score against measured cost per benchmark task</div>
+    <div class="csub">Higher is better on the vertical axis, cheaper is better on the horizontal. The connected line is the efficient frontier &mdash; the set of models where no other model is both smarter and cheaper. Toggle the frontier and hover any point.</div>
+    <svg viewBox="0 0 700 400" role="img" aria-label="Scatter plot of intelligence index against cost per task"><g id="frontierChart"></g></svg>
+    <div class="row" style="margin-top:6px">
+      <button class="btn sel mini act" id="frontToggle">Show efficient frontier</button>
+      <span class="mono dim" style="font-size:12px" id="frontNote"></span>
+    </div>
+    <div class="csrc">Source: Artificial Analysis Intelligence Index v4.1.1, max reasoning effort, retrieved August 2026; Anthropic and OpenAI published API rates. Index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5 <span class="conf h">H</span>. Terra and Luna per-task costs derived from Artificial Analysis's stated ~50% and ~80% reductions relative to Sol <span class="conf m">M</span>.</div>
+  </div>
+
+  <h3>Three findings a price sheet hides</h3>
+  <div class="cards">
+    <div class="card gold"><span class="num">Finding 01</span><span class="stat">1&#8202;/&#8202;5</span><h4>Token price gap, Sonnet 5 against Fable 5</h4><p>Sonnet 5 lists at $2 in / $10 out per million tokens. Fable 5 lists at $10 / $50. One fifth the price per token.</p></div>
+    <div class="card gold"><span class="num">Finding 02</span><span class="stat">17%</span><h4>Actual gap in cost per finished task</h4><p>$2.29 against $2.75. The cheaper model burns most of the saving on the way to the answer &mdash; it generated 300M tokens across the index suite against a 71M median.</p></div>
+    <div class="card"><span class="num">Finding 03</span><span class="stat">26%</span><h4>Opus 5's cost advantage over Fable 5</h4><p>At a higher index score. The most expensive model per token is not the most capable model, and has not been since late July.</p></div>
+  </div>
+
+  <div class="chart">
+    <div class="ctitle">Rank by token price against rank by cost per finished task</div>
+    <div class="csub">Same seven models, two orderings. Lines that cross are models whose price sheet misdescribes what they cost you. Sonnet 5 moves from second-cheapest to second-most-expensive.</div>
+    <svg viewBox="0 0 700 380" role="img" aria-label="Slopegraph comparing rank by token price and rank by cost per task"><g id="slopeChart"></g></svg>
+    <div class="csrc">Blended token price computed at a 3:1 input-to-output ratio from published rates <span class="conf h">H</span>. Ratio assumption stated so you can recompute it for your own mix <span class="conf m">M</span>.</div>
+  </div>
+
+  <div class="panel">
+    <span class="plab">Estimate your own monthly cost</span>
+    <p style="margin-top:0;font-size:15.5px">Enter the volume you expect for the workflow you are building for the final project. The estimator uses a 3:1 input-to-output token ratio and current published rates.</p>
+    <div class="ctrls" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">
+      <div><label class="plab" for="volRuns">Runs per month</label><input type="text" id="volRuns" value="80" inputmode="numeric"></div>
+      <div><label class="plab" for="volIn">Input tokens per run</label><input type="text" id="volIn" value="6000" inputmode="numeric"></div>
+      <div><label class="plab" for="volOut">Output tokens per run</label><input type="text" id="volOut" value="2000" inputmode="numeric"></div>
+    </div>
+    <div class="out has" id="costOut" style="margin-top:18px"></div>
+    <p class="dim" style="font-size:14px;margin-bottom:0">A subscription changes this arithmetic entirely &mdash; a $20 monthly plan absorbs a great deal of usage before per-token pricing becomes the cheaper route. The point of the estimator is to show which tier decisions are material and which are noise at your volume.</p>
+  </div>
+
+  <div class="doit">
+    <span class="plab">Decide &mdash; 4 minutes</span>
+    <p>Name the tier you will use for your final project workflow and the reason in one sentence. Acceptable reasons: measured cost per task, a capability the lower tier failed at, a context-window requirement. Not acceptable: it is the newest, it is the most expensive, it is the default.</p>
+  </div>
+
+  <div class="panel tightpad" style="background:var(--warn-bg);border-color:#E0C6B4">
+    <span class="plab" style="color:var(--warn)">Verify before relying on this slide</span>
+    <p style="font-size:15px;margin:0">Model tiers and their subscription availability changed four times between June and August 2026. Confirm which tiers your own plan currently reaches at <span class="mono">claude.com/pricing</span> before you build a workflow that depends on one. Benchmark rankings are recomputed continuously and the ordering above has already reversed once.</p>
+  </div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="slide" id="s6" data-nav="P·T·C·F">
+  <div class="eyebrow"><span>06 · Framework</span><span class="clock">16 min</span></div>
+  <h2>Persona, Task, Context, Format</h2>
+  <p class="big">Google's prompting guide organises a prompt into four components. The framework is sound and worth adopting. The empirical literature also says that one of the four letters does far less work than the way it is usually taught implies, and knowing which one changes how you spend your effort.</p>
+
+  <p>Build a prompt below. Each toggle adds one component. Watch what changes in the output, and&mdash;more importantly&mdash;watch what does not.</p>
+
+  <div class="panel">
+    <div class="ctrls" style="margin:0 0 20px">
+      <label class="tg" id="tgP"><input type="checkbox" id="cbP"><span class="track"><span class="knob"></span></span><span><span class="tl">Persona</span><span class="td">Who the model should write as</span></span></label>
+      <label class="tg" id="tgT"><input type="checkbox" id="cbT"><span class="track"><span class="knob"></span></span><span><span class="tl">Task</span><span class="td">The verb and the object</span></span></label>
+      <label class="tg" id="tgC"><input type="checkbox" id="cbC"><span class="track"><span class="knob"></span></span><span><span class="tl">Context</span><span class="td">Facts, constraints, source boundary</span></span></label>
+      <label class="tg" id="tgF"><input type="checkbox" id="cbF"><span class="track"><span class="knob"></span></span><span><span class="tl">Format</span><span class="td">Shape, length, structure of output</span></span></label>
+    </div>
+    <span class="plab">Assembled prompt</span>
+    <div class="out" id="ptcfPrompt"></div>
+    <span class="plab" style="margin-top:20px">What comes back</span>
+    <div class="out" id="ptcfOut"></div>
+    <div class="out" id="ptcfDiag" style="margin-top:14px;background:var(--gold-bg)"></div>
+  </div>
+
+  <h3>What the evidence says about Persona</h3>
+  <p>Zheng and colleagues tested 162 distinct roles across four model families on 2,410 factual questions. Adding a persona to the system prompt did not improve accuracy against a no-persona control. The best-performing role varied question by question, and automated strategies for choosing a good role performed no better than picking one at random.</p>
+
+  <div class="chart">
+    <div class="ctitle">Effect of adding a persona to the system prompt on factual accuracy</div>
+    <div class="csub">Persona changes register, vocabulary and audience calibration. On objective questions with a checkable answer, it does not reliably change whether the answer is right.</div>
+    <svg viewBox="0 0 700 230" role="img" aria-label="Bar chart of persona study findings"><g id="personaChart"></g></svg>
+    <div class="csrc">Source: Zheng, M., Pei, J., Logeswaran, L., et al. (2024). <em>When &ldquo;A Helpful Assistant&rdquo; Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models.</em> Findings of EMNLP 2024. Study design and null result as reported <span class="conf h">H</span>.</div>
+  </div>
+
+  <h3>Where the effort should go instead</h3>
+  <table>
+    <thead><tr><th>Component</th><th>What it controls</th><th>Effect on whether the answer is correct</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Persona</strong></td><td>Register, vocabulary, assumed audience</td><td>No reliable effect on objective accuracy</td></tr>
+      <tr><td><strong>Task</strong></td><td>Which operation gets performed</td><td>Large &mdash; a wrong verb produces a competent answer to a different question</td></tr>
+      <tr class="hi"><td><strong>Context</strong></td><td>The facts available and the boundary on sources</td><td>Largest &mdash; this is the only channel through which the model can see your client's situation</td></tr>
+      <tr class="hi"><td><strong>Format</strong></td><td>The shape of the output</td><td>Large &mdash; a constrained output space is checkable; free prose is not</td></tr>
+    </tbody>
+  </table>
+
+  <p>Persona still earns a place in a template. It sets the reading level for a client-facing email and the terseness for an internal case note, and those matter. It is simply not the lever for correctness, and a template whose only specification is an elaborate persona is an unspecified template.</p>
+
+  <div class="panel tightpad">
+    <span class="plab">A related result on prompt length</span>
+    <p style="font-size:15.5px;margin:0">Anthropic reports removing more than 80 percent of Claude Code's system prompt for its two most recent models without a measurable loss on its coding evaluations.<span class="conf m">M</span> Longer prompts are not better prompts. Specific prompts are better prompts, and specificity is usually shorter than the padding it replaces.</p>
+  </div>
+
+  <div class="doit">
+    <span class="plab">Rebuild &mdash; 5 minutes</span>
+    <p>Take the weakest of the three templates you brought today. Identify which of P, T, C, F it is missing. Add the missing components and run it. Keep both versions &mdash; you will need the before-and-after for section 11.</p>
+  </div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="slide" id="s7" data-nav="Triage">
+  <div class="eyebrow"><span>07 · Diagnostic</span><span class="clock">12 min</span></div>
+  <h2>Prompt Specification Triage</h2>
+  <p class="big">Three categories, not two. A prompt can be underspecified. It can be fully specified and still produce output nobody can check. Or it can be specified in a way that makes checking possible. Only the third is usable in a fiduciary practice.</p>
+
+  <div class="cards">
+    <div class="card"><span class="num">Category A</span><h4>Underspecified</h4><p>The output shape, the source boundary, or the operation itself is left to the model to choose.</p></div>
+    <div class="card gold"><span class="num">Category B</span><h4>Specified, unverifiable</h4><p>You know exactly what will come back. You have no procedure for confirming it is right.</p></div>
+    <div class="card"><span class="num">Category C</span><h4>Specified and verifiable</h4><p>The output is constrained to a form where a named source settles whether each element is correct.</p></div>
+  </div>
+
+  <p class="dim" style="font-size:15.5px">Several of these are designed to be mis-sorted. Read the whole prompt before choosing.</p>
+
+  <div class="panel" id="quiz"></div>
+
+  <div class="doit">
+    <span class="plab">Discussion &mdash; 3 minutes</span>
+    <p>Item 7 is the one that splits the room every time. Argue it out before you look at the feedback.</p>
+  </div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="slide" id="s8" data-nav="Interview rewrite">
+  <div class="eyebrow"><span>08 · Technique</span><span class="clock">12 min</span></div>
+  <h2>The Interview Rewrite</h2>
+  <p class="big">Wolfram makes an observation that most prompting advice skips: you can tell the model something once, as part of the prompt, and it will use it. The prompt is not a request. It is the entire evidentiary record available to the model at the moment it answers.</p>
+
+  <p>Which means the standard of inquiry you apply to a prompt is the same standard you apply to a client interview. You would not build a recommendation from a client meeting in which you asked one question. The technique below inverts the order: instead of writing a better prompt, you make the model conduct the intake.</p>
+
+  <div class="copybox" id="cbWrap">Before you produce anything, ask me the questions you need answered to do this well.
+Ask them in one numbered batch, then stop.
+Do not attempt the task until I have answered.
+When you have enough to proceed, first list what you still do not know and how you intend to handle each gap.
+
+The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div>
+
+  <h3>Diagnose a prompt you would actually send</h3>
+  <p>Paste a real prompt below &mdash; one you have sent this week or one from a template you brought. The checker looks for ten specification dimensions that determine whether the output can be verified. It runs entirely in this page; nothing is transmitted.</p>
+
+  <div class="panel">
+    <label class="plab" for="promptIn">Your prompt</label>
+    <textarea id="promptIn" placeholder="Paste a prompt you have actually used. Do not paste anything containing client-identifying information."></textarea>
+    <div class="row" style="margin-top:14px">
+      <button class="btn mini" id="diagBtn">Check specification</button>
+      <button class="btn sel mini" id="diagClear">Clear</button>
+    </div>
+    <div id="diagResult" style="margin-top:20px"></div>
+  </div>
+
+  <div class="panel tightpad" style="background:var(--warn-bg);border-color:#E0C6B4">
+    <span class="plab" style="color:var(--warn)">Standing constraint</span>
+    <p style="font-size:15px;margin:0">No real client data and no personal identifying information enters any AI tool at any point in this course, including the box above and including your final project transcript. Synthetic or fully de-identified facts only.</p>
+  </div>
+
+  <div class="doit">
+    <span class="plab">Run the inversion &mdash; 5 minutes</span>
+    <p>Take the prompt you just diagnosed. Wrap it in the interview block above and send it. Count the questions the model asks you. Then answer the three that you would not have thought to specify.</p>
+    <p>Report to the room: how many questions, and which one you did not see coming.</p>
+  </div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="slide" id="s9" data-nav="Seven steps">
+  <div class="eyebrow"><span>09 · Application</span><span class="clock">16 min</span></div>
+  <h2>The Seven-Step Process and the Delegation Line</h2>
+  <p class="big">The CFP Board's seven-step financial planning process is the structure your duty of care attaches to. Not every step is the same kind of work, and the steps that look most similar on paper have the least in common when you ask what a sampler could contribute.</p>
+
+  <p>Sort each step. Click a step, then click a column. Change your mind as often as you like. The instructor key appears when all seven are placed, and you are expected to argue with it.</p>
+
+  <div class="panel">
+    <div id="sortBoard"></div>
+    <div class="row" style="margin-top:20px">
+      <button class="btn sel mini" id="sortReset">Reset</button>
+      <button class="btn ghost mini" id="sortKey" disabled>Reveal instructor key</button>
+      <span class="mono dim" style="font-size:12px" id="sortCount"></span>
+    </div>
+    <div id="sortKeyOut" style="margin-top:20px"></div>
+  </div>
+
+  <div class="chart">
+    <div class="ctitle">Advisor adoption of AI tools against reliance on AI-generated recommendations</div>
+    <div class="csub">The profession has already drawn a line, whether or not any individual firm has written it down. Adoption of drafting and capture tools is over half. Reliance on the model's recommendation is close to zero.</div>
+    <svg viewBox="0 0 700 250" role="img" aria-label="Bar chart of advisor AI adoption versus reliance"><g id="adoptChart"></g></svg>
+    <div class="csrc">Sources: T3 / Inside Information Software Survey 2026, n=2,906 advisors, 95% at fee-only RIA or dually registered firms &mdash; 52.2% using AI search and generative language, 42.9% using AI notetaking <span class="conf h">H</span>. Reliance figure reported via Advisor360 and Kitces Research through a secondary aggregator; treat as directional <span class="conf m">M</span>. Kitces Research on Advisor Productivity: approximately one hour of note, summary and follow-up work per two-hour client meeting <span class="conf h">H</span>.</div>
+  </div>
+
+  <h3>Why steps 2 and 4 sit apart</h3>
+  <p>Step 2 is the elicitation of what a client actually wants, which is frequently not what they first say they want. Step 4 is the exercise of professional judgment that your registration, your credential and your liability all attach to. A model can draft language for either. It cannot perform either, and a workflow that quietly lets it is the failure mode this course exists to prevent.</p>
+
+  <p>Steps 3 and 7 are the opposite case. Analysing alternative courses of action and monitoring for drift are both high-volume, structured, and verifiable against a source. They are where the measurable time recovery lives.</p>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="slide" id="s10" data-nav="Citations">
+  <div class="eyebrow"><span>10 · Verification</span><span class="clock">16 min</span></div>
+  <h2>Citation Failure Types and the Verification Order</h2>
+  <p class="big">There is a base rate for this, and it is not small. General-purpose models tested on verifiable legal questions hallucinated on between 58 and 88 percent of them. Purpose-built retrieval-grounded research products from LexisNexis and Thomson Reuters &mdash; sold on the claim that retrieval eliminates the problem &mdash; hallucinated on between 17 and 33 percent.</p>
+
+  <div class="chart">
+    <div class="ctitle">Measured hallucination rates on verifiable legal research questions</div>
+    <div class="csub">Retrieval grounding reduces the rate substantially. It does not approach zero, and the vendors' marketing claims of hallucination-free citation were found to be overstated.</div>
+    <svg viewBox="0 0 700 280" role="img" aria-label="Bar chart of hallucination rates by tool type"><g id="hallChart"></g></svg>
+    <div class="csrc">Sources: Dahl, M., Magesh, V., Suzgun, M., &amp; Ho, D. E. (2024). <em>Large Legal Fictions</em> &mdash; general-purpose models, &gt;800,000 verifiable legal questions, 58&ndash;88% hallucination; GPT-4 58%, GPT-3.5 69%, Llama 2 88% <span class="conf h">H</span>. Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools</em>, Journal of Empirical Legal Studies &mdash; 202 preregistered queries, Lexis+ AI ~17%, Westlaw AI-Assisted Research ~33% <span class="conf h">H</span>. Figures reflect model and tool versions available in 2023&ndash;2024 <span class="conf h">H</span>.</div>
+  </div>
+
+  <div class="chart">
+    <div class="ctitle">Court decisions identifying AI-fabricated citations, cumulative</div>
+    <div class="csub">Damien Charlotin's database includes a matter only where a court explicitly found fabricated content. The curve is the professional consequence of skipping verification, measured in sanctions rather than in benchmarks.</div>
+    <svg viewBox="0 0 700 260" role="img" aria-label="Line chart of cumulative AI hallucination court cases"><g id="caseChart"></g></svg>
+    <div class="csrc">Source: AI Hallucination Cases database, maintained by Damien Charlotin (HEC Paris), as reported: approximately 200 cases mid-2025, 719 by January 2026, 1,227 by early April 2026, 1,598 as of 9 June 2026; largest single-matter penalty approximately $109,700 <span class="conf m">M</span> &mdash; retrieved through a secondary tracker, verify the current count before citing it to a client or a regulator.</div>
+  </div>
+
+  <h3>The failure type that survives a spot check</h3>
+  <p>The Stanford taxonomy separates fabrication from misgrounding, and the second is the dangerous one. A fabricated citation fails an existence check in fifteen seconds. A misgrounded citation is real, retrievable, correctly formatted, and does not support the proposition it was attached to. It passes every check a busy person actually performs.</p>
+
+  <div class="panel">
+    <span class="plab">Citation triage &mdash; classify each</span>
+    <p style="margin-top:0;font-size:15.5px">Six citations produced by an AI assistant in response to estate and gift planning questions. Classify each. All six are exercise material; do not carry any classification into practice without checking the Code yourself, which is the point.</p>
+    <div id="triage"></div>
+  </div>
+
+  <h3>The verification order</h3>
+  <p>Four checks, and they must run in this sequence, because each one is only meaningful if the previous one passed.</p>
+  <div class="cards">
+    <div class="card"><span class="num">Check 01 &mdash; Existence</span><h4>Does the authority exist</h4><p>Section number, revenue procedure number, case reporter and page. A search against the Code or the reporter settles it. Fifteen seconds.</p></div>
+    <div class="card"><span class="num">Check 02 &mdash; Text</span><h4>Does it say what the sentence claims</h4><p>Open it and read the operative language. This is the check that catches misgrounding and the one most often skipped.</p></div>
+    <div class="card"><span class="num">Check 03 &mdash; Currency</span><h4>Is it still operative</h4><p>Amended, superseded, modified by a later revenue procedure, or subject to a sunset. Training data has a cutoff; the Code does not.</p></div>
+    <div class="card gold"><span class="num">Check 04 &mdash; Applicability</span><h4>Does it reach these facts</h4><p>The provision is real, correctly stated and current, and governs a different fact pattern from your client's. Only you can perform this one.</p></div>
+  </div>
+
+  <p class="pull">Existence is the floor of verification and never the ceiling.</p>
+
+  <div class="doit">
+    <span class="plab">Run it &mdash; 5 minutes</span>
+    <p>Ask your AI tool a tax research question you already know the answer to, and require it to cite primary authority. Then run all four checks on what it gives you. Time yourself.</p>
+    <p>That elapsed time is the real cost of the workflow. It belongs in your final project's time comparison, and leaving it out is the most common way these projects overstate their savings.</p>
+  </div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section class="slide" id="s11" data-nav="Template audit">
+  <div class="eyebrow"><span>11 · Workshop</span><span class="clock">14 min</span></div>
+  <h2>Template Audit and Structured Peer Review</h2>
+  <p class="big">You arrived with three templates for advisor-client communication. This section subjects them to the same scrutiny you will apply to a classmate's workflow in Session 5, on a smaller object, with the stakes low enough to be useful.</p>
+
+  <h3>Part one &mdash; self-audit</h3>
+  <p>Score one template against the rubric. Every criterion is binary and observable from the template text itself. A template that scores below 5 will not survive a handoff.</p>
+
+  <div class="panel">
+    <div class="row" style="margin-bottom:16px">
+      <button class="btn sel mini act" data-tpl="email">Email rewriter</button>
+      <button class="btn sel mini" data-tpl="note">Case note formatter</button>
+      <button class="btn sel mini" data-tpl="summary">One-page plan summary</button>
+    </div>
+    <div id="rubric"></div>
+    <div class="out" id="rubricOut" style="margin-top:18px"></div>
+  </div>
+
+  <h3>Part two &mdash; structured peer review</h3>
+  <p>Swap with the person next to you. Run <em>their</em> template on <em>your</em> synthetic case, without asking them anything. This is the Session 5 exercise in miniature and it is the fastest way to discover that a template you find obvious is unusable by anyone else.</p>
+
+  <div class="panel">
+    <span class="plab">Score your partner's template &mdash; 0 to 3 on each</span>
+    <div id="peer"></div>
+    <div class="out" id="peerOut" style="margin-top:18px"></div>
+  </div>
+
+  <div class="doit">
+    <span class="plab">Report back &mdash; 3 minutes</span>
+    <p>One sentence each: the single change that would most improve the template you reviewed. Give it to its author, not to the room.</p>
+  </div>
+</section>
+
+<!-- ============ 12 ============ -->
+<section class="slide" id="s12" data-nav="Final project">
+  <div class="eyebrow"><span>12 · Assignment</span><span class="clock">6 min</span></div>
+  <h2>Final Project Part 1 and Baseline Capture</h2>
+  <p class="big">Part 1 is assigned now. You have three sessions to build it. The single most common way this project loses marks is a missing or invented baseline, so we capture yours before you leave the room.</p>
+
+  <div class="panel">
+    <span class="plab">Baseline capture &mdash; complete this now</span>
+    <p style="margin-top:0;font-size:15.5px">Name the recurring task your workflow will address, and record how long it takes you today, unassisted. Estimate honestly; you will be comparing against it in Session 5 and an inflated baseline is visible to a reader.</p>
+    <div class="ctrls" style="grid-template-columns:1fr">
+      <div><label class="plab" for="taskName">The recurring task</label><input type="text" id="taskName" placeholder="e.g. Preparing a pre-meeting brief from a new prospect's statements"></div>
+    </div>
+    <div class="ctrls" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:0">
+      <div><label class="plab" for="baseMin">Minutes per occurrence, today</label><input type="text" id="baseMin" value="45" inputmode="numeric"></div>
+      <div><label class="plab" for="baseFreq">Occurrences per month</label><input type="text" id="baseFreq" value="12" inputmode="numeric"></div>
+      <div><label class="plab" for="baseRate">Your loaded hourly rate ($)</label><input type="text" id="baseRate" value="150" inputmode="numeric"></div>
+    </div>
+    <div class="out has" id="baseOut" style="margin-top:18px"></div>
+    <div class="row" style="margin-top:14px">
+      <button class="btn mini" id="baseCopy">Copy baseline record</button>
+      <span class="mono dim" style="font-size:12px">Paste this into your project notes. It is a required element of the Part 1 submission.</span>
+    </div>
+  </div>
+
+  <h3>Part 1 deliverable checklist</h3>
+  <p>Due at the end of Session 4, as a single email to your assigned classmate with everything in the attachments and a body reading only &ldquo;See attached.&rdquo; The build transcript goes to the instructor only.</p>
+
+  <div class="panel">
+    <div id="checklist"></div>
+    <div class="out" id="checkOut" style="margin-top:18px"></div>
+  </div>
+
+  <h3>Due before Session 3</h3>
+  <p>A first draft of Part 1: the target task, your model and tier choice with the reason, and your initial prompts. Section 5 of this page is where the tier reason comes from; section 12 is where the target task comes from. You have both already.</p>
+
+  <div class="doit">
+    <span class="plab">Reading for Session 3</span>
+    <p>Wolfram &mdash; &ldquo;The Concept of Embeddings&rdquo; and the opening of &ldquo;Meaning Space.&rdquo; Kitces (January 2025) on AI notetaker adoption and satisfaction. Iskowitz (July 2025) on notetakers and compliance.</p>
+    <p>Session 3 takes up grounding: why a model that cites your sources still sometimes cites the wrong passage from them.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="padding:0">
+    <h4 style="margin-bottom:18px">Sources</h4>
+    <ol>
+      <li>Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a> &mdash; sections used: &ldquo;It's Just Adding One Word at a Time,&rdquo; &ldquo;Where Do the Probabilities Come From?,&rdquo; &ldquo;What Is a Model?,&rdquo; the temperature passage, and the parenthesis-language discussion.</li>
+      <li>Laplace, P. S. (1902). <em>A philosophical essay on probabilities</em> (Truscott &amp; Emory, Trans.; original work published 1814). Chapter II, &ldquo;Concerning Probability,&rdquo; pp. 3&ndash;8.</li>
+      <li>Google. (2024). <em>Gemini for Workspace: Prompting guide 101</em> &mdash; the Persona&ndash;Task&ndash;Context&ndash;Format framework.</li>
+      <li>Anthropic. (2025). <em>AI fluency: Frameworks and foundations</em> &mdash; Delegation, Description, Discernment, Diligence.</li>
+      <li>Zheng, M., Pei, J., Logeswaran, L., Lee, M., &amp; Jurgens, D. (2024). <em>When &ldquo;A Helpful Assistant&rdquo; Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models.</em> Findings of the Association for Computational Linguistics: EMNLP 2024. <a href="https://aclanthology.org/2024.findings-emnlp.888/">aclanthology.org</a></li>
+      <li>Dahl, M., Magesh, V., Suzgun, M., &amp; Ho, D. E. (2024). <em>Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models.</em> Stanford RegLab / Institute for Human-Centered AI.</li>
+      <li>Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools.</em> Journal of Empirical Legal Studies. <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">reglab.stanford.edu</a></li>
+      <li>Charlotin, D. <em>AI Hallucination Cases</em> database, HEC Paris &mdash; cumulative counts as reported through a secondary tracker, June 2026.</li>
+      <li>Artificial Analysis. <em>Intelligence Index v4.1.1</em> and model pages for Claude Opus 5, Claude Fable 5, Claude Sonnet 5, GPT-5.6 Sol / Terra / Luna, retrieved August 2026. <a href="https://artificialanalysis.ai/">artificialanalysis.ai</a></li>
+      <li>Anthropic. <em>Pricing</em>, Claude Platform Docs, retrieved August 2026. <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com</a></li>
+      <li>T3 / Inside Information. <em>Software Survey 2026</em> (n = 2,906 advisors), as summarised in Kitces.com Weekend Reading, March 2026.</li>
+      <li>Kitces Research on Advisor Productivity, as summarised in <em>The Latest in Financial AdvisorTech</em>, Kitces.com, August 2026.</li>
+      <li>Morningstar. (2025, October 15). <em>AI for advisors: Enhancing client conversations.</em></li>
+      <li>Internal Revenue Code §§ 1014, 2010, 691, 7520; Rev. Proc. 2017-34; Rev. Proc. 2022-32. Cited in the triage exercise as exercise material only.</li>
+    </ol>
+    <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="conf h">H</span> directly verified against the cited source. <span class="conf m">M</span> reported by a secondary source or derived from a stated relationship. <span class="conf l">L</span> illustrative construction, not a published figure.</p>
+    <p style="font-size:13.5px">BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors. UC Berkeley Extension.</p>
+  </div>
+</footer>
+
+</div>
+<script>
+(function(){
+"use strict";
+var $=function(id){return document.getElementById(id)};
+var svgNS="http://www.w3.org/2000/svg";
+function el(t,a,txt){var n=document.createElementNS(svgNS,t);for(var k in a)n.setAttribute(k,a[k]);if(txt!=null)n.textContent=txt;return n}
+
+/* ---------- rail + progress ---------- */
+var secs=[].slice.call(document.querySelectorAll('section.slide')),rail=$('rail');
+secs.forEach(function(s){var b=document.createElement('button');b.innerHTML='<span class="pip"></span><span class="lbl">'+s.dataset.nav+'</span>';b.onclick=function(){s.scrollIntoView()};rail.appendChild(b)});
+var pips=[].slice.call(rail.querySelectorAll('button'));
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=secs.indexOf(e.target);pips.forEach(function(p,j){p.classList.toggle('on',j===i)})}})},{rootMargin:'-45% 0px -45% 0px'});secs.forEach(function(s){io.observe(s)})}
+window.addEventListener('scroll',function(){var h=document.documentElement;var pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;$('prog').style.width=pct+'%'},{passive:true});
+
+/* ---------- copy buttons ---------- */
+document.addEventListener('click',function(e){
+  var b=e.target.closest('button[data-copy]');if(!b)return;
+  var box=$(b.getAttribute('data-copy'));var t=box.textContent.replace(/Copy$/,'').trim();
+  if(navigator.clipboard)navigator.clipboard.writeText(t);
+  var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1400);
+});
+
+/* ================= 1 · NEXT TOKEN ================= */
+var BI={
+ "to":["learn","process","understand","generate","do","make","help","work","think","adapt"],
+ "learn":["from","patterns","without","quickly","new","faster","how","continuously","at","and"],
+ "process":["vast","large","information","data","complex","huge","unstructured","millions","at","and"],
+ "understand":["context","language","patterns","complex","human","nuance","what","meaning","our","the"],
+ "generate":["text","new","content","plausible","responses","ideas","code","images","and","human-like"],
+ "do":["things","what","work","tasks","more","everything","this","so","it","the"],
+ "make":["decisions","predictions","connections","sense","mistakes","things","complex","our","life","it"],
+ "help":["us","people","humans","with","solve","professionals","you","doctors","make","in"],
+ "work":["tirelessly","with","across","alongside","through","faster","around","without","at","on"],
+ "think":["about","like","through","faster","critically","differently","beyond","in","of","for"],
+ "adapt":["to","quickly","continuously","rapidly","its","over","based","without","and","in"],
+ "from":["data","experience","examples","vast","patterns","mistakes","large","human","its","the"],
+ "vast":["amounts","quantities","datasets","volumes","troves","numbers","arrays","stores","sums","libraries"],
+ "amounts":["of","in","quickly","and","from","that","at","with","across","without"],
+ "of":["data","information","text","human","unstructured","complex","knowledge","financial","our","the"],
+ "data":["quickly","at","and","in","that","without","with","from","than","to"],
+ "patterns":["in","that","across","humans","from","which","too","we","and","at"],
+ "context":["and","in","from","across","that","better","without","at","over","which"],
+ "language":["and","in","at","that","with","across","without","the","more","models"],
+ "us":["to","with","make","in","understand","see","solve","find","and","think"],
+ "quickly":["and","than","without","in","at","across","while","with","but","that"],
+ "with":["a","the","great","little","very","high","remarkable","no","human","surprising"]
+};
+var DEF=["and","the","of","to","in","that","a","with","for","is"];
+var H10=0;for(var i=1;i<=10;i++)H10+=1/i;
+function probs(){var out=[];for(var n=1;n<=10;n++)out.push((1/n)/H10);return out}
+var PR=probs();
+function cands(last){return (BI[last]||DEF).slice(0,10)}
+
+var stem="The best thing about AI is its ability to",path=[],MAXS=8;
+function lastTok(){return path.length?path[path.length-1]:"to"}
+function drawTokens(){
+  $('strm').innerHTML='<span class="dim">'+stem+'</span> '+path.join(' ')+(path.length<MAXS?'<span class="cursor">&nbsp;</span>':'');
+  $('stepCount').textContent=path.length+' of '+MAXS+' tokens placed';
+  var host=$('pbars');host.innerHTML='';
+  if(path.length>=MAXS){host.innerHTML='<div class="out has">Stop token reached. Every word above was chosen because it was a probable continuation. At no point did the process consult anything about whether the sentence is true.</div>';return}
+  var cs=cands(lastTok());
+  cs.forEach(function(t,ix){
+    var b=document.createElement('button');b.className='pbar';
+    b.innerHTML='<span class="tok">'+t+'</span><span class="bg"><span class="fill" style="width:'+(PR[ix]/PR[0]*100).toFixed(1)+'%"></span></span><span class="pc">'+(PR[ix]*100).toFixed(1)+'%</span>';
+    b.onclick=function(){path.push(t);drawTokens()};
+    host.appendChild(b);
+  });
+}
+function autoRun(mode){
+  path=[];
+  for(var s=0;s<MAXS;s++){
+    var cs=cands(lastTok()),ix=0;
+    if(mode==='sample'){var r=Math.random(),acc=0;for(var k=0;k<10;k++){acc+=PR[k];if(r<=acc){ix=k;break}}}
+    path.push(cs[ix]);
+  }
+  drawTokens();
+}
+$('topBtn').onclick=function(){autoRun('top')};
+$('sampBtn').onclick=function(){autoRun('sample')};
+$('resetBtn').onclick=function(){path=[];drawTokens()};
+drawTokens();
+
+/* power chart */
+(function(){
+  var g=$('powerChart'),W=700,H=250,L=52,R=14,T=16,B=44,pw=W-L-R,ph=H-T-B;
+  g.appendChild(el('line',{x1:L,y1:T+ph,x2:L+pw,y2:T+ph,class:'axis'}));
+  [0,10,20,30,40].forEach(function(v){
+    var y=T+ph-(v/40)*ph;
+    g.appendChild(el('line',{x1:L,y1:y,x2:L+pw,y2:y,class:'gridln'}));
+    g.appendChild(el('text',{x:L-9,y:y+4,'text-anchor':'end',class:'alab'},v+'%'));
+  });
+  var bw=pw/10;
+  PR.forEach(function(p,ix){
+    var h=(p*100/40)*ph,x=L+ix*bw+bw*.18,y=T+ph-h;
+    g.appendChild(el('rect',{x:x,y:y,width:bw*.64,height:h,fill:'var(--plot)',rx:3}));
+    g.appendChild(el('text',{x:x+bw*.32,y:y-7,'text-anchor':'middle',class:'dlab b'},(p*100).toFixed(1)));
+    g.appendChild(el('text',{x:x+bw*.32,y:T+ph+18,'text-anchor':'middle',class:'alab'},ix+1));
+  });
+  g.appendChild(el('text',{x:L+pw/2,y:H-6,'text-anchor':'middle',class:'alab'},'CANDIDATE RANK  ·  TOP TEN OF ROUGHLY 50,000 TOKENS'));
+})();
+
+/* ================= 2 · LAPLACE ================= */
+function lap(){
+  var w=$('cbWorld').checked,m=$('cbModel').checked;
+  $('tgWorld').classList.toggle('on',w);$('tgModel').classList.toggle('on',m);
+  var h='';
+  if(!w&&!m){h='<span class="nil">Turn one on. Then turn on both and look at what does not line up.</span>'}
+  else{
+    if(w)h+='THE QUESTION\n  Does this decedent\u2019s residence permit a full basis\n  adjustment on the jointly held brokerage account?\n\n  Answer set: { yes, no }\n  Cardinality: 1. There is one correct answer.\n  It does not change when you ask again.\n';
+    if(w&&m)h+='\n';
+    if(m)h+='THE MODEL\u2019S OUTPUT\n  \u00b7 \u201cYes, under \u00a71014(b)(6)\u201d          p \u2248 0.52\n  \u00b7 \u201cOnly the decedent\u2019s half\u201d        p \u2248 0.31\n  \u00b7 \u201cDepends on titling; see \u00a72040\u201d  p \u2248 0.11\n  \u00b7 four further continuations       p \u2248 0.06\n\n  Cardinality: many. The distribution is over\n  plausible sentences, not over states of the world.\n';
+    if(w&&m)h+='\nWHERE THEY MEET\n  Nowhere. The 0.52 is not a 52% chance the answer\n  is yes. It is a statement about the training corpus.\n  Only opening \u00a71014 moves you from one panel to the other.';
+  }
+  $('lapOut').textContent=h;$('lapOut').classList.toggle('has',w||m);
+}
+$('cbWorld').onchange=lap;$('cbModel').onchange=lap;lap();
+
+/* ================= 3 · TEMPERATURE ================= */
+function reweight(T){
+  if(T<=0.001){var z=PR.map(function(){return 0});z[0]=1;return z}
+  var p=PR.map(function(v){return Math.pow(v,1/T)}),s=p.reduce(function(a,b){return a+b},0);
+  return p.map(function(v){return v/s});
+}
+function sampleIdx(w){var r=Math.random(),a=0;for(var i=0;i<w.length;i++){a+=w[i];if(r<=a)return i}return w.length-1}
+function chain(T,n){
+  var last="to",out=[];
+  for(var i=0;i<n;i++){var cs=cands(last),w=reweight(T),ix=T<=0.001?0:sampleIdx(w);out.push(cs[ix]);last=cs[ix]}
+  return out.join(' ');
+}
+function drawT(){
+  var T=parseInt($('temp').value,10)/100,w=reweight(T),cs=cands("to"),host=$('tbars');
+  $('tempReadout').textContent='T = '+T.toFixed(2)+(T===0?'  \u00b7 argmax, no sampling':T===0.8?'  \u00b7 Wolfram\u2019s reported essay setting':'');
+  host.innerHTML='';
+  cs.forEach(function(t,ix){
+    var d=document.createElement('div');d.className='pbar';d.style.cursor='default';
+    d.innerHTML='<span class="tok">'+t+'</span><span class="bg"><span class="fill" style="width:'+(w[ix]/Math.max.apply(null,w)*100).toFixed(1)+'%"></span></span><span class="pc">'+(w[ix]*100).toFixed(1)+'%</span>';
+    host.appendChild(d);
+  });
+}
+function runFive(){
+  var T=parseInt($('temp').value,10)/100,host=$('runs'),seen={},outs=[];
+  for(var i=0;i<5;i++){outs.push(chain(T,6))}
+  outs.forEach(function(o){seen[o]=(seen[o]||0)+1});
+  var uniq=Object.keys(seen).length;
+  host.innerHTML='';
+  outs.forEach(function(o,i){
+    var cls=uniq===1?'run same':(T>1.05?'run wild':'run');
+    var d=document.createElement('div');d.className=cls;
+    d.innerHTML='<span class="rn">run '+(i+1)+'</span><span>'+o+'</span>';host.appendChild(d);
+  });
+  var note=document.createElement('div');note.className='mono dim';note.style.cssText='font-size:12px;margin-top:6px';
+  note.textContent=uniq+' distinct output'+(uniq===1?'':'s')+' from 5 identical prompts.'+(uniq===1?'  Deterministic \u2014 and, as Wolfram notes, the text goes flat and repetitive.':'  Each is a separate draw from the same distribution.');
+  host.appendChild(note);
+}
+$('temp').oninput=drawT;$('reroll').onclick=runFive;drawT();runFive();
+
+/* ================= 4 · PARENTHESES ================= */
+var pseq=[],popen=0;
+function drawParen(){
+  $('parenStream').innerHTML=(pseq.length?pseq.join(' '):'<span class="dim">empty sequence</span>')+'<span class="cursor">&nbsp;</span>';
+  var legalClose=popen>0,legalEnd=popen===0;
+  var opts=[
+    {t:'(',p:legalClose?0.35:0.45,ok:true},
+    {t:')',p:legalClose?0.50:0.15,ok:legalClose},
+    {t:'END',p:0.15,ok:legalEnd}
+  ];
+  var host=$('parenBars');host.innerHTML='';
+  opts.forEach(function(o){
+    var b=document.createElement('button');b.className='pbar'+(o.ok?'':' dead');
+    b.innerHTML='<span class="tok">'+o.t+(o.ok?'':'  \u2717 illegal')+'</span><span class="bg"><span class="fill" style="width:'+(o.p*200).toFixed(0)+'%"></span></span><span class="pc">'+(o.p*100).toFixed(0)+'%</span>';
+    b.onclick=function(){
+      if(o.t==='END'){
+        $('parenVerdict').innerHTML=popen===0?'<strong>Balanced.</strong> The predictor happened to be right. It was right because you tracked the count, not because it did.':'<strong>Unbalanced.</strong> You ended with '+popen+' open parenthes'+(popen===1?'is':'es')+'. The predictor offered END at 15% anyway.';
+        $('parenVerdict').classList.add('has');return;
+      }
+      pseq.push(o.t);popen+=(o.t==='('?1:-1);drawParen();
+    };
+    host.appendChild(b);
+  });
+  var msg='Open parentheses, counted externally: <strong>'+popen+'</strong>. ';
+  if(popen===0)msg+='A closing parenthesis here cannot be legal under any circumstance. The predictor assigns it 15% \u2014 the figure Wolfram reports for a network trained on nothing but this rule.';
+  else msg+='END here cannot be legal. The predictor assigns it 15% regardless.';
+  $('parenVerdict').innerHTML=msg;$('parenVerdict').classList.add('has');
+}
+$('parenReset').onclick=function(){pseq=[];popen=0;drawParen()};drawParen();
+
+/* shallow diagram */
+(function(){
+  var g=$('shallowChart'),W=700;
+  function box(x,y,w,h,fill,stroke){g.appendChild(el('rect',{x:x,y:y,width:w,height:h,rx:9,fill:fill,stroke:stroke,'stroke-width':1.5}))}
+  box(6,12,330,182,'var(--on-bg)','var(--on)');
+  box(364,12,330,182,'var(--warn-bg)','#E0C6B4');
+  g.appendChild(el('text',{x:26,y:42,class:'dlab b','font-size':'13'},'WHAT ONE FORWARD PASS DOES'));
+  g.appendChild(el('text',{x:384,y:42,class:'dlab b','font-size':'13',fill:'var(--warn)'},'WHAT A RUNNING COUNT REQUIRES'));
+  var lft=['Reads every token seen so far','Weights them by learned attention','Emits one distribution, once','No loop, no stored variable','Each neuron used exactly once'];
+  var rgt=['Holds a value between steps','Increments and decrements it','Compares it against a rule','Repeats until a condition is met','Uses the same element many times'];
+  lft.forEach(function(t,i){g.appendChild(el('circle',{cx:32,cy:70+i*24,r:3,fill:'var(--on)'}));g.appendChild(el('text',{x:44,y:74+i*24,class:'dlab','font-size':'12.5'},t))});
+  rgt.forEach(function(t,i){g.appendChild(el('circle',{cx:390,cy:70+i*24,r:3,fill:'var(--warn)'}));g.appendChild(el('text',{x:402,y:74+i*24,class:'dlab','font-size':'12.5'},t))});
+  g.appendChild(el('text',{x:350,y:206,'text-anchor':'middle',class:'alab'},'THE SECOND COLUMN IS NOT A HARDER VERSION OF THE FIRST. IT IS A DIFFERENT MACHINE.'));
+})();
+
+/* ================= 5 · FRONTIER ================= */
+var MODELS=[
+ {n:'Claude Opus 5',    idx:61, task:2.03, i:5,   o:25, fam:'a'},
+ {n:'Claude Fable 5',   idx:60, task:2.75, i:10,  o:50, fam:'a'},
+ {n:'GPT-5.6 Sol',      idx:59, task:1.04, i:5,   o:30, fam:'b'},
+ {n:'Claude Opus 4.8',  idx:56, task:1.80, i:5,   o:25, fam:'a'},
+ {n:'Claude Sonnet 5',  idx:55, task:2.29, i:2,   o:10, fam:'a'},
+ {n:'GPT-5.6 Terra',    idx:55, task:0.52, i:2.5, o:15, fam:'b'},
+ {n:'GPT-5.6 Luna',     idx:51, task:0.21, i:1,   o:6,  fam:'b'}
+];
+MODELS.forEach(function(m){m.blend=(3*m.i+m.o)/4});
+var showFront=true;
+function drawFrontier(){
+  var g=$('frontierChart');g.innerHTML='';
+  var W=700,H=400,L=60,R=20,T=18,B=52,pw=W-L-R,ph=H-T-B;
+  var xmin=0,xmax=3.0,ymin=48,ymax=63;
+  function X(v){return L+(v-xmin)/(xmax-xmin)*pw}
+  function Y(v){return T+ph-(v-ymin)/(ymax-ymin)*ph}
+  [50,53,56,59,62].forEach(function(v){g.appendChild(el('line',{x1:L,y1:Y(v),x2:L+pw,y2:Y(v),class:'gridln'}));g.appendChild(el('text',{x:L-10,y:Y(v)+4,'text-anchor':'end',class:'alab'},v))});
+  [0,0.5,1,1.5,2,2.5,3].forEach(function(v){g.appendChild(el('text',{x:X(v),y:T+ph+20,'text-anchor':'middle',class:'alab'},'$'+v.toFixed(2)))});
+  g.appendChild(el('line',{x1:L,y1:T+ph,x2:L+pw,y2:T+ph,class:'axis'}));
+  g.appendChild(el('line',{x1:L,y1:T,x2:L,y2:T+ph,class:'axis'}));
+  g.appendChild(el('text',{x:L+pw/2,y:H-10,'text-anchor':'middle',class:'alab'},'MEASURED COST PER BENCHMARK TASK (USD, MAX EFFORT)'));
+  g.appendChild(el('text',{x:16,y:T+ph/2,'text-anchor':'middle',class:'alab',transform:'rotate(-90 16 '+(T+ph/2)+')'},'INTELLIGENCE INDEX v4.1.1'));
+  var front=['GPT-5.6 Luna','GPT-5.6 Terra','GPT-5.6 Sol','Claude Opus 5'];
+  if(showFront){
+    var pts=front.map(function(nm){var m=MODELS.filter(function(x){return x.n===nm})[0];return X(m.task)+','+Y(m.idx)}).join(' ');
+    g.appendChild(el('polyline',{points:pts,fill:'none',stroke:'var(--on)','stroke-width':1.8,'stroke-dasharray':'6 4',opacity:.75}));
+    g.appendChild(el('text',{x:X(1.15),y:Y(62.2),class:'alab',fill:'var(--on)'},'EFFICIENT FRONTIER'));
+  }
+  MODELS.forEach(function(m){
+    var on=front.indexOf(m.n)>=0;
+    var c=el('circle',{cx:X(m.task),cy:Y(m.idx),r:on?8:7,fill:on?'var(--on)':'var(--card)',stroke:on?'var(--on)':'var(--warn)','stroke-width':2.2});
+    c.appendChild(el('title',{},m.n+' \u2014 index '+m.idx+', $'+m.task.toFixed(2)+' per task, $'+m.i+'/$'+m.o+' per million tokens'));
+    c.style.cursor='pointer';
+    c.addEventListener('mouseenter',function(){$('frontNote').textContent=m.n+'  \u00b7  index '+m.idx+'  \u00b7  $'+m.task.toFixed(2)+'/task  \u00b7  $'+m.i+' in / $'+m.o+' out per Mtok'+(on?'  \u00b7  on frontier':'  \u00b7  dominated')});
+    g.appendChild(c);
+    var dx=m.n==='Claude Sonnet 5'?10:(m.n==='Claude Opus 4.8'?-10:0);
+    var anchor=m.n==='Claude Sonnet 5'?'start':(m.n==='Claude Opus 4.8'?'end':'middle');
+    g.appendChild(el('text',{x:X(m.task)+dx,y:Y(m.idx)-14,'text-anchor':anchor,class:'dlab b','font-size':'11.5'},m.n));
+  });
+  $('frontNote').textContent='Hollow points are dominated \u2014 another model is both smarter and cheaper.';
+}
+$('frontToggle').onclick=function(){showFront=!showFront;this.classList.toggle('act',showFront);this.textContent=showFront?'Show efficient frontier':'Frontier hidden';drawFrontier()};
+drawFrontier();
+
+/* slopegraph */
+(function(){
+  var g=$('slopeChart'),W=700,H=380,LX=205,RX=495,T=48,ph=H-T-46;
+  var byTok=MODELS.slice().sort(function(a,b){return a.blend-b.blend});
+  var byTask=MODELS.slice().sort(function(a,b){return a.task-b.task});
+  function rank(arr,n){for(var i=0;i<arr.length;i++)if(arr[i].n===n)return i;return 0}
+  function Y(r){return T+r*(ph/(MODELS.length-1))}
+  g.appendChild(el('text',{x:LX,y:26,'text-anchor':'end',class:'alab'},'CHEAPEST BY TOKEN PRICE'));
+  g.appendChild(el('text',{x:RX,y:26,'text-anchor':'start',class:'alab'},'CHEAPEST BY COST PER TASK'));
+  MODELS.forEach(function(m){
+    var r1=rank(byTok,m.n),r2=rank(byTask,m.n),d=Math.abs(r1-r2);
+    var hi=d>=3,col=hi?(r2>r1?'var(--warn)':'var(--plot4)'):'var(--off)';
+    g.appendChild(el('line',{x1:LX+10,y1:Y(r1),x2:RX-10,y2:Y(r2),stroke:col,'stroke-width':hi?2.6:1.4,opacity:hi?1:.55}));
+    g.appendChild(el('circle',{cx:LX+10,cy:Y(r1),r:4,fill:col}));
+    g.appendChild(el('circle',{cx:RX-10,cy:Y(r2),r:4,fill:col}));
+    g.appendChild(el('text',{x:LX-2,y:Y(r1)+4,'text-anchor':'end',class:'dlab','font-size':'12','font-weight':hi?'500':'400'},m.n+'  $'+m.blend.toFixed(2)));
+    g.appendChild(el('text',{x:RX+2,y:Y(r2)+4,'text-anchor':'start',class:'dlab','font-size':'12','font-weight':hi?'500':'400'},'$'+m.task.toFixed(2)+'  '+m.n));
+  });
+  g.appendChild(el('text',{x:350,y:H-14,'text-anchor':'middle',class:'alab',fill:'var(--warn)'},'SONNET 5 FALLS FOUR PLACES  \u00b7  SOL RISES THREE'));
+})();
+
+/* cost estimator */
+function cost(){
+  var r=parseFloat($('volRuns').value)||0,ti=parseFloat($('volIn').value)||0,to=parseFloat($('volOut').value)||0;
+  var rows=MODELS.slice().sort(function(a,b){return (a.i*ti+a.o*to)-(b.i*ti+b.o*to)});
+  var out='MONTHLY API COST AT '+r.toLocaleString()+' RUNS  ('+ti.toLocaleString()+' in / '+to.toLocaleString()+' out per run)\n\n';
+  rows.forEach(function(m){
+    var c=r*(ti/1e6*m.i+to/1e6*m.o);
+    var bar='\u2588'.repeat(Math.max(1,Math.round(c/Math.max(0.01,r*(rows[rows.length-1].i*ti+rows[rows.length-1].o*to)/1e6)*26)));
+    out+=('$'+c.toFixed(2)).padStart(9)+'   '+bar.padEnd(28)+m.n+'\n';
+  });
+  out+='\nSpread from cheapest to dearest: '+(r*(rows[rows.length-1].i*ti/1e6+rows[rows.length-1].o*to/1e6)/Math.max(0.01,r*(rows[0].i*ti/1e6+rows[0].o*to/1e6))).toFixed(1)+'x';
+  $('costOut').textContent=out;
+}
+['volRuns','volIn','volOut'].forEach(function(id){$(id).oninput=cost});cost();
+
+/* ================= 6 · PTCF ================= */
+var PTCF={
+ P:'You are a CFP\u00ae professional writing to a long-standing retail client.',
+ T:'Rewrite the draft email below.',
+ C:'Facts you may use: only what appears in the attached plan output. The client is 63, retiring in 14 months, and asked one question \u2014 whether the market drop changes the retirement date. Do not introduce any figure that is not in the attachment. If a figure the reader would expect is missing, say so rather than estimating it.',
+ F:'Output: 150 words or fewer, three short paragraphs, no bullet points, no subject line. Close with exactly one question for the client.'
+};
+function ptcf(){
+  var s={P:$('cbP').checked,T:$('cbT').checked,C:$('cbC').checked,F:$('cbF').checked};
+  ['P','T','C','F'].forEach(function(k){$('tg'+k).classList.toggle('on',s[k])});
+  var parts=[];['P','T','C','F'].forEach(function(k){if(s[k])parts.push(PTCF[k])});
+  $('ptcfPrompt').textContent=parts.length?parts.join('\n\n'):'\u2014 nothing specified \u2014';
+  $('ptcfPrompt').classList.toggle('has',parts.length>0);
+  var o='';
+  if(!s.T){o='The model has no operation to perform. It will guess one \u2014 usually \u201cexplain\u201d \u2014 and answer a question you did not ask.'}
+  else{
+    o+=s.P?'[Register: measured, professional, second person, no jargon]\n':'[Register: unspecified \u2014 defaults to generic explanatory prose]\n';
+    o+=s.C?'[Facts: bounded to the attachment; missing figures will be flagged, not invented]\n':'[Facts: unbounded \u2014 the model will supply plausible figures from nothing]\n';
+    o+=s.F?'[Shape: \u2264150 words, 3 paragraphs, 1 closing question \u2014 all checkable at a glance]\n':'[Shape: unspecified \u2014 expect 400 words, headers, and a bulleted summary]\n';
+    o+='\nDraft returned. ';
+    o+=(s.C&&s.F)?'You can verify this against the attachment in under a minute.':(s.C?'Facts are bounded but the output shape is not, so checking it is a reading exercise.':'Nothing here is checkable without redoing the analysis yourself.');
+  }
+  $('ptcfOut').textContent=o;$('ptcfOut').classList.toggle('has',s.T);
+  var d='';var acc=(s.C?2:0)+(s.F?2:0)+(s.T?1:0);
+  d='VERIFIABILITY SCORE  '+acc+' / 5\n';
+  d+=s.P?'Persona ON  \u2014 contributes 0 to this score. It changes how it reads, not whether it is right.\n':'Persona OFF \u2014 score unchanged. That is the finding, not an oversight.\n';
+  d+=acc>=4?'This prompt produces output a supervisor could check without rebuilding the work.':'A reviewer would have to redo the analysis to know whether the output is right.';
+  $('ptcfDiag').textContent=d;
+}
+['P','T','C','F'].forEach(function(k){$('cb'+k).onchange=ptcf});ptcf();
+
+/* persona chart */
+(function(){
+  var g=$('personaChart'),W=700;
+  var stats=[['162','distinct roles tested'],['4','model families'],['2,410','factual questions']];
+  stats.forEach(function(s,i){
+    var x=14+i*168;
+    g.appendChild(el('rect',{x:x,y:10,width:152,height:78,rx:9,fill:'var(--off-bg)'}));
+    g.appendChild(el('text',{x:x+16,y:52,class:'dlab','font-size':'30','font-weight':'700',fill:'var(--ink)'},s[0]));
+    g.appendChild(el('text',{x:x+16,y:72,class:'alab'},s[1].toUpperCase()));
+  });
+  g.appendChild(el('rect',{x:518,y:10,width:176,height:78,rx:9,fill:'var(--warn-bg)',stroke:'#E0C6B4','stroke-width':1.5}));
+  g.appendChild(el('text',{x:534,y:44,class:'dlab','font-size':'19','font-weight':'700',fill:'var(--warn)'},'No gain'));
+  g.appendChild(el('text',{x:534,y:64,class:'alab',fill:'var(--warn)'},'VS NO-PERSONA CONTROL'));
+  g.appendChild(el('text',{x:534,y:80,class:'alab',fill:'var(--warn)'},'ON OBJECTIVE ACCURACY'));
+  g.appendChild(el('line',{x1:14,y1:112,x2:686,y2:112,class:'axis'}));
+  var rows=[
+    ['Best role, chosen per question in hindsight','Improves accuracy significantly','var(--on)',0.92],
+    ['Any automated strategy for choosing that role','No better than random selection','var(--warn)',0.14],
+    ['A single fixed persona across all questions','No reliable effect','var(--warn)',0.08]
+  ];
+  rows.forEach(function(r,i){
+    var y=136+i*34;
+    g.appendChild(el('text',{x:14,y:y+4,class:'dlab','font-size':'12.5'},r[0]));
+    g.appendChild(el('rect',{x:400,y:y-11,width:200,height:16,rx:4,fill:'var(--off-bg)'}));
+    g.appendChild(el('rect',{x:400,y:y-11,width:200*r[3],height:16,rx:4,fill:r[2]}));
+    g.appendChild(el('text',{x:610,y:y+4,class:'alab',fill:r[2]},r[1].toUpperCase()));
+  });
+  g.appendChild(el('text',{x:14,y:224,class:'alab'},'THE USABLE LEVER IS THE ONE YOU CANNOT OPERATE: YOU ONLY KNOW THE BEST ROLE AFTER YOU KNOW THE ANSWER.'));
+})();
+
+/* ================= 7 · TRIAGE QUIZ ================= */
+var QZ=[
+ {p:'Summarise this client\u2019s tax return.',a:'A',
+  f:{A:'Correct. No output shape, no audience, no purpose, and no statement of which return or which year. The model will choose all four for you.',
+     B:'It is not specified at all \u2014 there is nothing here for a reviewer to check against, because nothing was requested.',
+     C:'Nothing about this constrains the output. Specificity is not implied by the topic being narrow.'}},
+ {p:'Act as a CFP\u00ae professional with twenty years of ultra-high-net-worth experience, deep expertise in estate planning, and a reputation for clarity. Summarise this client\u2019s tax return.',a:'A',
+  f:{A:'Correct, and this is the trap. Fifty words were added and none of them was Task, Context or Format. It is the previous prompt with a costume on.',
+     B:'The persona is not a specification. The output shape is still whatever the model picks.',
+     C:'The added length is entirely Persona, which the evidence in section 6 says does not move objective accuracy.'}},
+ {p:'From the attached 2025 Form 1040 and schedules, list every line item that changed by more than $10,000 against the 2024 return, as a two-column table, and flag any change I should raise with the client.',a:'C',
+  f:{A:'Source, threshold, output shape and the action all appear. This is specified.',
+     B:'It is verifiable: open both returns and check the arithmetic. The threshold makes the answer set finite.',
+     C:'Correct. Bounded source, numeric threshold, fixed output shape. A reviewer can confirm each row in minutes.'}},
+ {p:'Draft a warm, empathetic email to the client explaining the recent market downturn and reassuring them about their long-term plan.',a:'A',
+  f:{A:'Correct. \u201cWarm\u201d and \u201cempathetic\u201d are register, which is Persona and Format tone \u2014 not facts, length, or source. Expect invented figures.',
+     B:'Register instructions feel like specification but constrain nothing that could be wrong.',
+     C:'There is no source boundary, so the model may supply market figures from a training snapshot of unknown date.'}},
+ {p:'Using only the figures in the attached plan output, write a 150-word client email stating the funded ratio, the change since the last review, and one action item. Do not include any number that is not in the attachment.',a:'C',
+  f:{A:'Source, length, required content and a prohibition are all present.',
+     B:'Every element is checkable against a single named document. That is verifiability.',
+     C:'Correct. The prohibition on outside numbers is what converts this from specified to verifiable.'}},
+ {p:'Research whether my client can still elect portability for a spouse who died in 2021, and cite the governing authority.',a:'B',
+  f:{A:'It is specific about the question and demands a citation, so it is not underspecified in the ordinary sense.',
+     B:'Correct. It names no facts that determine the answer \u2014 estate size, whether a return was filed, whether the estate was under the filing threshold \u2014 and it sets no verification standard for the citation it demands. A citation you did not require to be current is not a check.',
+     C:'A demand for a citation is not a verification procedure. Section 10 covers the four checks a citation still has to pass.'}},
+ {p:'Give me the 2026 gift tax annual exclusion and the lifetime exclusion amount, with citations.',a:'B',
+  f:{A:'It is perfectly specific. That is what makes it dangerous.',
+     B:'Correct, and this is the hardest item. It looks like the most verifiable prompt on the list. Both figures are indexed annually, both may post-date the training data, and the prompt gives the model no source to read. It will answer confidently from memory. Specified is not the same as grounded.',
+     C:'It would be verifiable only if it named the source document the model must read. Requesting a citation after the fact does not do that.'}}
+];
+(function(){
+  var host=$('quiz'),score=0,done=0;
+  QZ.forEach(function(q,i){
+    var d=document.createElement('div');d.className='qitem';d.style.cssText='padding:18px 0;border-bottom:1px solid var(--line)';
+    var opts=['A','B','C'],lbl={A:'Underspecified',B:'Specified, unverifiable',C:'Specified and verifiable'};
+    var btns='';opts.forEach(function(o){btns+='<button class="btn sel mini" data-o="'+o+'">'+o+' \u00b7 '+lbl[o]+'</button>'});
+    d.innerHTML='<span class="plab">Item '+(i+1)+'</span><div class="mono" style="font-size:14.5px;line-height:1.6;margin-bottom:13px">\u201c'+q.p+'\u201d</div><div class="row tight qbtns">'+btns+'</div><div class="qfb" style="display:none;font-size:14.5px;line-height:1.55;margin-top:12px;padding:11px 14px;border-radius:7px"></div>';
+    host.appendChild(d);
+    var fb=d.querySelector('.qfb');
+    d.querySelectorAll('button').forEach(function(b){
+      b.onclick=function(){
+        if(d.classList.contains('done'))return;
+        d.classList.add('done');done++;
+        var pick=b.getAttribute('data-o'),ok=pick===q.a;
+        if(ok)score++;
+        b.classList.add('act');if(!ok)b.classList.add('bad');
+        d.querySelectorAll('button').forEach(function(x){if(x!==b)x.style.opacity=.35;x.style.pointerEvents='none';
+          if(x.getAttribute('data-o')===q.a&&!ok){x.style.opacity=1;x.classList.add('act')}});
+        fb.style.display='block';fb.style.background=ok?'var(--on-bg)':'var(--warn-bg)';fb.style.color=ok?'#0A423F':'var(--warn)';
+        fb.textContent=(ok?'\u2713  ':'\u2717  correct answer is '+q.a+'.  ')+q.f[pick];
+        tally();
+      };
+    });
+  });
+  var t=document.createElement('div');t.className='mono';t.style.cssText='font-size:13px;color:var(--on);margin-top:18px';host.appendChild(t);
+  function tally(){t.textContent=score+' of '+done+' correct, '+QZ.length+' items total.'+(done===QZ.length?(score>=6?'  A working eye for specification.':'  Items 2, 6 and 7 are the ones worth re-reading.'):'')}
+  tally();
+})();
+
+/* ================= 8 · PROMPT DIAGNOSTIC ================= */
+var DIMS=[
+ {k:'Output format named',re:/\b(table|bullet|list|email|memo|paragraph|column|row|json|csv|heading|format|outline|chart)\b/i,fix:'Name the shape: a two-column table, three paragraphs, a bulleted list of five.'},
+ {k:'Length or size bound',re:/\b(\d+\s*(word|sentence|paragraph|bullet|page|row|item|line)s?|no more than|at most|under \d+|fewer than)\b/i,fix:'Bound the size. \u201c150 words or fewer\u201d is checkable; \u201cbrief\u201d is not.'},
+ {k:'Audience identified',re:/\b(client|prospect|colleague|attorney|cpa|accountant|supervisor|compliance|team|advisor|reader|for (a|an|my))\b/i,fix:'Say who reads it. The reading level and what may be assumed both follow from this.'},
+ {k:'Source boundary set',re:/\b(only|attached|from the|based on|using the|in the document|do not (add|introduce|invent)|provided)\b/i,fix:'Bound the facts: \u201cusing only the attached statement.\u201d Without this the model fills gaps by inventing.'},
+ {k:'Jurisdiction or state',re:/\b(state|california|texas|federal|jurisdiction|community property|common law|[A-Z]{2}\sresident)\b/i,fix:'Name the jurisdiction wherever the answer could turn on it.'},
+ {k:'Period or tax year',re:/\b(20\d\d|tax year|current year|as of|fiscal|quarter|ytd|year[- ]end)\b/i,fix:'Name the year. Indexed figures and effective dates both depend on it.'},
+ {k:'Verification requirement',re:/\b(cite|citation|source|verify|primary authority|irc|treas|confirm|reference|section \u00a7|\u00a7)\b/i,fix:'Require citation to primary authority, and say what standard it must meet.'},
+ {k:'Confidentiality constraint',re:/\b(de-?identif|synthetic|no client|redact|anonym|pii|nonpublic|remove name)\b/i,fix:'State that no identifying information appears. Make it part of the template, not a habit you rely on.'},
+ {k:'Success criterion',re:/\b(must|should include|each .* must|complete when|criteria|requirement|ensure that)\b/i,fix:'Say what a finished, correct output contains. Otherwise you are grading on impression.'},
+ {k:'Unknown-handling rule',re:/\b(if you (do not|don't|cannot)|flag|say so|ask me|uncertain|unsure|unable|do not guess|leave blank)\b/i,fix:'Tell it what to do when it does not know. Silence here is the instruction to guess.'}
+];
+$('diagBtn').onclick=function(){
+  var t=$('promptIn').value.trim();
+  var host=$('diagResult');
+  if(!t){host.innerHTML='<div class="out"><span class="nil">Paste a prompt above first.</span></div>';return}
+  var hits=DIMS.map(function(d){return {d:d,ok:d.re.test(t)}});
+  var n=hits.filter(function(h){return h.ok}).length;
+  var band=n>=8?['var(--on-bg)','var(--on)','Specified. A reviewer could tell whether the output met the brief.']
+        :n>=5?['var(--gold-bg)','var(--gold)','Partly specified. The gaps below are where the model will make choices on your behalf.']
+        :['var(--warn-bg)','var(--warn)','Underspecified. Most of what determines the answer is missing, so the model will supply it.'];
+  var h='<div class="panel tightpad" style="margin:0 0 16px;background:'+band[0]+';border-color:'+band[1]+'"><span class="plab" style="color:'+band[1]+'">Specification score</span><div style="font-family:Bricolage Grotesque,sans-serif;font-size:30px;font-weight:700;line-height:1;color:'+band[1]+'">'+n+' / 10</div><p style="margin:9px 0 0;font-size:15px;color:'+band[1]+'">'+band[2]+'</p></div>';
+  h+='<div class="pbars">';
+  hits.forEach(function(x){
+    h+='<div class="pbar" style="grid-template-columns:22px 210px 1fr;cursor:default"><span style="color:'+(x.ok?'var(--on)':'var(--warn)')+'">'+(x.ok?'\u2713':'\u2717')+'</span><span class="tok" style="color:'+(x.ok?'var(--on)':'var(--muted)')+'">'+x.d.k+'</span><span style="font-family:Source Serif 4,serif;font-size:14px;line-height:1.45;color:var(--muted)">'+(x.ok?'present':x.d.fix)+'</span></div>';
+  });
+  h+='</div><p class="dim" style="font-size:13.5px;margin-top:16px">Keyword detection, not comprehension. It will miss a dimension you expressed unusually and credit one you mentioned in passing. Use it to find what you forgot, not to certify what you wrote.</p>';
+  host.innerHTML=h;
+};
+$('diagClear').onclick=function(){$('promptIn').value='';$('diagResult').innerHTML=''};
+
+/* ================= 9 · SEVEN STEPS ================= */
+var STEPS=[
+ {n:1,t:'Understanding the client\u2019s personal and financial circumstances',k:'assist',
+  why:'Capture, transcription and document extraction are genuinely delegable. The inquiry itself \u2014 deciding which question to ask next because of how the last one was answered \u2014 is not.'},
+ {n:2,t:'Identifying and selecting goals',k:'human',
+  why:'Clients rarely state what they actually want on the first pass. Eliciting the difference is the counselling function, and a model that has never met them will confidently smooth it over.'},
+ {n:3,t:'Analysing the current course of action and potential alternatives',k:'draft',
+  why:'High volume, structured, and checkable against a source. This is where the measurable time recovery lives and where a verification step pays for itself.'},
+ {n:4,t:'Developing the financial planning recommendation(s)',k:'human',
+  why:'This is the judgment your credential, your registration and your liability attach to. Roughly 3% of advisors report relying on AI-generated recommendations, and that figure is the profession\u2019s answer, not an adoption lag.'},
+ {n:5,t:'Presenting the financial planning recommendation(s)',k:'assist',
+  why:'Drafting the explanation, the analogy and the one-page summary: yes. The conversation in which a client absorbs bad news: no.'},
+ {n:6,t:'Implementing the financial planning recommendation(s)',k:'assist',
+  why:'Sequencing, checklists, correspondence and follow-up tracking are delegable. Custodial instructions and anything touching account data are not, without an approved vendor.'},
+ {n:7,t:'Monitoring progress and updating',k:'draft',
+  why:'Rules-based, repetitive, and exception-driven. Drift detection and change summaries draft well and verify quickly against the prior plan.'}
+];
+var BUCK=[{k:'draft',t:'AI drafts, planner verifies'},{k:'assist',t:'AI assists at the margin'},{k:'human',t:'Planner only'}];
+(function(){
+  var placed={},sel=null;
+  var host=$('sortBoard');
+  function render(){
+    var h='<div style="display:grid;grid-template-columns:1fr;gap:9px;margin-bottom:22px">';
+    STEPS.forEach(function(s){
+      var p=placed[s.n];
+      h+='<button class="chipstep" data-s="'+s.n+'" style="text-align:left;background:'+(sel===s.n?'var(--on-bg)':'var(--card)')+';border:1.5px solid '+(sel===s.n?'var(--on)':(p?'var(--off)':'var(--line)'))+';border-radius:9px;padding:11px 15px;cursor:pointer;font-family:Source Serif 4,serif;font-size:15px;color:var(--ink);display:flex;gap:12px;align-items:center"><span class="mono" style="font-size:12px;color:var(--on);flex:none">STEP '+s.n+'</span><span style="flex:1">'+s.t+'</span>'+(p?'<span class="mono" style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);flex:none">'+BUCK.filter(function(b){return b.k===p})[0].t+'</span>':'')+'</button>';
+    });
+    h+='</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">';
+    BUCK.forEach(function(b){
+      h+='<button class="buck" data-b="'+b.k+'" style="background:var(--card);border:1.5px dashed '+(sel?'var(--on)':'var(--line)')+';border-radius:11px;padding:16px 14px;cursor:'+(sel?'pointer':'default')+';font-family:Bricolage Grotesque,sans-serif;font-weight:600;font-size:14.5px;color:'+(sel?'var(--on)':'var(--muted)')+';line-height:1.3">'+b.t+'<span class="mono" style="display:block;font-weight:400;font-size:11px;color:var(--muted);margin-top:7px">'+Object.keys(placed).filter(function(k){return placed[k]===b.k}).length+' placed</span></button>';
+    });
+    h+='</div>';
+    host.innerHTML=h;
+    host.querySelectorAll('.chipstep').forEach(function(b){b.onclick=function(){sel=parseInt(b.getAttribute('data-s'),10);render()}});
+    host.querySelectorAll('.buck').forEach(function(b){b.onclick=function(){if(!sel)return;placed[sel]=b.getAttribute('data-b');sel=null;render();count()}});
+  }
+  function count(){
+    var n=Object.keys(placed).length;
+    $('sortCount').textContent=n+' of 7 placed';
+    $('sortKey').disabled=n<7;
+  }
+  $('sortReset').onclick=function(){placed={};sel=null;render();count();$('sortKeyOut').innerHTML=''};
+  $('sortKey').onclick=function(){
+    var right=0,h='<table><thead><tr><th>Step</th><th>You</th><th>Key</th><th>Reasoning</th></tr></thead><tbody>';
+    STEPS.forEach(function(s){
+      var y=placed[s.n],ok=y===s.k;if(ok)right++;
+      var name=function(k){var m=BUCK.filter(function(b){return b.k===k});return m.length?m[0].t:'\u2014 not placed \u2014'};
+      h+='<tr'+(ok?' class="hi"':'')+'><td class="mono">'+s.n+'</td><td style="font-size:14px">'+name(y)+'</td><td style="font-size:14px"><strong>'+name(s.k)+'</strong></td><td style="font-size:14px">'+s.why+'</td></tr>';
+    });
+    h+='</tbody></table><p class="mono" style="font-size:13px;color:var(--on)">'+right+' of 7 matched. Disagreement on steps 1, 5 and 6 is expected and worth the argument \u2014 firms draw those lines differently. Disagreement on 2 and 4 is worth a longer conversation.</p>';
+    $('sortKeyOut').innerHTML=h;
+  };
+  render();count();
+})();
+
+/* adoption chart */
+(function(){
+  var g=$('adoptChart'),L=8,W=700,BW=430,x0=250;
+  var rows=[
+   {t:'Using AI search and generative language',v:52.2,c:'var(--plot)'},
+   {t:'Using AI notetaking tools',v:42.9,c:'var(--plot)'},
+   {t:'Prior-year figure for generative language use',v:41.8,c:'var(--off)'},
+   {t:'Relying on AI-generated recommendations',v:3,c:'var(--plot2)'}
+  ];
+  rows.forEach(function(r,i){
+    var y=26+i*48;
+    g.appendChild(el('text',{x:x0-14,y:y+15,'text-anchor':'end',class:'dlab','font-size':'13'},r.t));
+    g.appendChild(el('rect',{x:x0,y:y,width:BW,height:22,rx:4,fill:'var(--off-bg)'}));
+    g.appendChild(el('rect',{x:x0,y:y,width:BW*(r.v/100),height:22,rx:4,fill:r.c}));
+    g.appendChild(el('text',{x:x0+BW*(r.v/100)+9,y:y+16,class:'dlab b','font-size':'13',fill:r.c},r.v+'%'));
+  });
+  g.appendChild(el('line',{x1:x0,y1:14,x2:x0,y2:222,class:'axis'}));
+  g.appendChild(el('text',{x:x0,y:240,class:'alab'},'THE GAP BETWEEN ROWS 1 AND 4 IS THE DELEGATION LINE, ALREADY DRAWN IN PRACTICE.'));
+})();
+
+/* ================= 10 · CITATIONS ================= */
+(function(){
+  var g=$('hallChart'),x0=278,BW=372;
+  g.appendChild(el('text',{x:14,y:20,class:'alab',fill:'var(--warn)'},'GENERAL-PURPOSE MODELS  \u00b7  DAHL ET AL. 2024'));
+  var a=[['Llama 2',88],['GPT-3.5',69],['GPT-4',58]];
+  a.forEach(function(r,i){
+    var y=34+i*36;
+    g.appendChild(el('text',{x:x0-14,y:y+15,'text-anchor':'end',class:'dlab','font-size':'13'},r[0]));
+    g.appendChild(el('rect',{x:x0,y:y,width:BW,height:21,rx:4,fill:'var(--off-bg)'}));
+    g.appendChild(el('rect',{x:x0,y:y,width:BW*(r[1]/100),height:21,rx:4,fill:'var(--plot2)'}));
+    g.appendChild(el('text',{x:x0+BW*(r[1]/100)+9,y:y+16,class:'dlab b','font-size':'13',fill:'var(--plot2)'},r[1]+'%'));
+  });
+  g.appendChild(el('text',{x:14,y:168,class:'alab',fill:'var(--on)'},'RETRIEVAL-GROUNDED LEGAL RESEARCH TOOLS  \u00b7  MAGESH ET AL. 2025'));
+  var b=[['Westlaw AI-Assisted Research',33],['Lexis+ AI',17]];
+  b.forEach(function(r,i){
+    var y=182+i*36;
+    g.appendChild(el('text',{x:x0-14,y:y+15,'text-anchor':'end',class:'dlab','font-size':'13'},r[0]));
+    g.appendChild(el('rect',{x:x0,y:y,width:BW,height:21,rx:4,fill:'var(--off-bg)'}));
+    g.appendChild(el('rect',{x:x0,y:y,width:BW*(r[1]/100),height:21,rx:4,fill:'var(--plot)'}));
+    g.appendChild(el('text',{x:x0+BW*(r[1]/100)+9,y:y+16,class:'dlab b','font-size':'13',fill:'var(--plot)'},r[1]+'%'));
+  });
+  g.appendChild(el('line',{x1:x0,y1:28,x2:x0,y2:242,class:'axis'}));
+  g.appendChild(el('text',{x:14,y:268,class:'alab'},'VENDOR MARKETING AT THE TIME CLAIMED \u201c100% HALLUCINATION-FREE LINKED CITATIONS.\u201d THE STUDY FOUND THE CLAIM OVERSTATED.'));
+})();
+(function(){
+  var g=$('caseChart'),W=700,H=260,L=62,R=26,T=22,B=52,pw=W-L-R,ph=H-T-B;
+  var d=[['Mid-2025',200],['Jan 2026',719],['Apr 2026',1227],['Jun 2026',1598]];
+  function X(i){return L+i*(pw/(d.length-1))}
+  function Y(v){return T+ph-(v/1700)*ph}
+  [0,400,800,1200,1600].forEach(function(v){
+    g.appendChild(el('line',{x1:L,y1:Y(v),x2:L+pw,y2:Y(v),class:'gridln'}));
+    g.appendChild(el('text',{x:L-10,y:Y(v)+4,'text-anchor':'end',class:'alab'},v.toLocaleString()));
+  });
+  g.appendChild(el('polyline',{points:d.map(function(r,i){return X(i)+','+Y(r[1])}).join(' '),fill:'none',stroke:'var(--plot2)','stroke-width':2.6}));
+  d.forEach(function(r,i){
+    g.appendChild(el('circle',{cx:X(i),cy:Y(r[1]),r:5.5,fill:'var(--plot2)'}));
+    g.appendChild(el('text',{x:X(i),y:Y(r[1])-14,'text-anchor':'middle',class:'dlab b','font-size':'13',fill:'var(--plot2)'},r[1].toLocaleString()));
+    g.appendChild(el('text',{x:X(i),y:T+ph+20,'text-anchor':'middle',class:'alab'},r[0].toUpperCase()));
+  });
+  g.appendChild(el('line',{x1:L,y1:T+ph,x2:L+pw,y2:T+ph,class:'axis'}));
+  g.appendChild(el('text',{x:L,y:H-12,class:'alab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY $109,700.'));
+})();
+
+var CITES=[
+ {c:'Hollings v. Commissioner, 148 T.C. 212 (2019), holding that a surviving spouse may claim a deceased spousal unused exclusion amount without filing Form 706.',
+  a:'fab',w:'No such decision exists. It has a plausible reporter, volume, page and year, and a holding that sounds like something a client would want to be true. An existence check kills it in fifteen seconds \u2014 which is why fabrication is the least dangerous failure on this list.'},
+ {c:'IRC \u00a71014(b)(6) \u2014 on the death of the first spouse, both halves of community property receive a new basis equal to fair market value.',
+  a:'sound',w:'Real, accurately characterised, and current. Note what makes it sound: the sentence describes the operative rule rather than a conclusion drawn from it.'},
+ {c:'IRC \u00a71014(b)(6), cited in support of a full basis adjustment on a brokerage account held by spouses as joint tenants with right of survivorship, domiciled in Illinois.',
+  a:'mis',w:'The citation is real and the sentence about it would be accurate in isolation. It does not reach these facts: Illinois is not a community property state, so the provision has nothing to operate on. Real citation, real content, wrong fact pattern. This is the failure that survives every check except reading the provision against the file.'},
+ {c:'Rev. Proc. 2017-34 \u2014 a late portability election may be made under the simplified method on or before the second anniversary of the decedent\u2019s death.',
+  a:'sup',w:'Accurate when issued and superseded since. Rev. Proc. 2022-32 extended the simplified-method window to the fifth anniversary. A model whose training data predates the change will state the old rule with total confidence, correctly cited.'},
+ {c:'IRC \u00a77520, cited as the applicable rate for a nine-year intra-family promissory note.',
+  a:'mis',w:'\u00a77520 governs the rate for valuing annuities, life estates, term interests and remainders. The rate for a term loan between family members comes from the applicable federal rate under \u00a71274(d). Adjacent subject matter, wrong provision \u2014 exactly the kind of near-miss a plausible-continuation process produces.'},
+ {c:'IRC \u00a7691(c) \u2014 an income tax deduction is allowed for the federal estate tax attributable to income in respect of a decedent.',
+  a:'sound',w:'Real, current, and correctly stated. Worth noting that being sound as a statement of law says nothing about whether it applies to your client, which is check four.'}
+];
+(function(){
+  var host=$('triage'),score=0,done=0;
+  var CAT=[{k:'fab',t:'Fabricated'},{k:'mis',t:'Real but misgrounded'},{k:'sup',t:'Real but superseded'},{k:'sound',t:'Sound and current'}];
+  CITES.forEach(function(c,i){
+    var d=document.createElement('div');d.style.cssText='padding:18px 0;border-bottom:1px solid var(--line)';
+    var btns='';CAT.forEach(function(x){btns+='<button class="btn sel mini" data-k="'+x.k+'">'+x.t+'</button>'});
+    d.innerHTML='<span class="plab">Citation '+(i+1)+'</span><div class="mono" style="font-size:14px;line-height:1.6;margin-bottom:13px">'+c.c+'</div><div class="row tight">'+btns+'</div><div class="fbx" style="display:none;font-size:14.5px;line-height:1.55;margin-top:12px;padding:11px 14px;border-radius:7px"></div>';
+    host.appendChild(d);
+    var fb=d.querySelector('.fbx');
+    d.querySelectorAll('button').forEach(function(b){
+      b.onclick=function(){
+        if(d.dataset.done)return;d.dataset.done='1';done++;
+        var ok=b.getAttribute('data-k')===c.a;if(ok)score++;
+        b.classList.add('act');if(!ok)b.classList.add('bad');
+        d.querySelectorAll('button').forEach(function(x){x.style.pointerEvents='none';if(x!==b){x.style.opacity=.35;if(x.getAttribute('data-k')===c.a&&!ok){x.style.opacity=1;x.classList.add('act')}}});
+        fb.style.display='block';fb.style.background=ok?'var(--on-bg)':'var(--warn-bg)';fb.style.color=ok?'#0A423F':'var(--warn)';
+        fb.textContent=(ok?'\u2713  ':'\u2717  ')+c.w;
+        tl.textContent=score+' of '+done+' correct.'+(done===CITES.length?'  Both misgrounded items and the superseded item pass an existence check. That is the whole lesson.':'');
+      };
+    });
+  });
+  var tl=document.createElement('div');tl.className='mono';tl.style.cssText='font-size:13px;color:var(--on);margin-top:18px';tl.textContent='0 of 0 correct.';host.appendChild(tl);
+})();
+
+/* ================= 11 · RUBRIC + PEER ================= */
+var RUB={
+ email:[ 'The task verb is a single unambiguous operation (rewrite, not "help with")',
+         'The source of facts is bounded to a named document or pasted text',
+         'A prohibition on introducing figures not present in the source',
+         'Output length is a number, not an adjective',
+         'Output structure is specified (paragraphs, bullets, subject line or none)',
+         'Reading level or audience is named',
+         'An instruction for what to do when a needed figure is missing',
+         'A standing line prohibiting client-identifying information'],
+ note:[  'The task verb is a single unambiguous operation',
+         'Input is defined (transcript, notes, recording summary)',
+         'The field list is fixed and named, not left to the model',
+         'Each field has a stated maximum length',
+         'A rule for what goes in a field with no information ("not discussed", never blank)',
+         'Separation of what the client said from what the advisor concluded',
+         'An instruction to flag anything requiring follow-up rather than resolving it',
+         'A standing line prohibiting client-identifying information'],
+ summary:['The task verb is a single unambiguous operation',
+         'Source is bounded to the planning software output',
+         'The required figures are enumerated by name',
+         'A prohibition on any figure not in the source',
+         'Page or word limit stated as a number',
+         'The audience and their assumed numeracy are named',
+         'A required place for assumptions and their sensitivity',
+         'A standing line prohibiting client-identifying information']
+};
+(function(){
+  var cur='email',state={};
+  function render(){
+    state[cur]=state[cur]||{};
+    var h='<div style="display:flex;flex-direction:column;gap:8px">';
+    RUB[cur].forEach(function(t,i){
+      var on=!!state[cur][i];
+      h+='<button class="rb" data-i="'+i+'" style="text-align:left;background:'+(on?'var(--on-bg)':'var(--card)')+';border:1.5px solid '+(on?'var(--on)':'var(--line)')+';border-radius:9px;padding:11px 14px;cursor:pointer;font-family:Source Serif 4,serif;font-size:14.5px;line-height:1.45;color:var(--ink);display:flex;gap:12px"><span style="flex:none;color:'+(on?'var(--on)':'var(--off)')+';font-family:JetBrains Mono,monospace">'+(on?'\u2713':'\u25cb')+'</span><span>'+t+'</span></button>';
+    });
+    h+='</div>';
+    $('rubric').innerHTML=h;
+    $('rubric').querySelectorAll('.rb').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-i');state[cur][i]=!state[cur][i];render();score()}});
+    score();
+  }
+  function score(){
+    var n=Object.keys(state[cur]||{}).filter(function(k){return state[cur][k]}).length;
+    var v=n>=7?'Handoff-ready. A classmate could run this without asking you a question.'
+        :n>=5?'Usable by you, fragile in someone else\u2019s hands. The missing items are exactly what they will email you about.'
+        :'Not a template yet. It is a note to yourself that happens to be addressed to a model.';
+    $('rubricOut').textContent='SCORE  '+n+' / 8\n\n'+v+'\n\nThe eight criteria are the same ones the Part 1 handoff is graded against, at a smaller scale. Scalability in this course means it works for the next twenty clients and someone else can run it without you in the room.';
+    $('rubricOut').classList.toggle('has',n>=7);
+  }
+  document.querySelectorAll('[data-tpl]').forEach(function(b){
+    b.onclick=function(){
+      document.querySelectorAll('[data-tpl]').forEach(function(x){x.classList.remove('act')});
+      b.classList.add('act');cur=b.getAttribute('data-tpl');render();
+    };
+  });
+  render();
+})();
+
+var PEER=[
+ {t:'Ran without editing',d:'You pasted it in and it produced something, with no changes to the template itself.'},
+ {t:'Output usable without rewriting',d:'What came back could go to its intended reader after a proofread, not a rebuild.'},
+ {t:'Verification step present',d:'The template tells you what to check and against what before the output is used.'},
+ {t:'No confidentiality exposure',d:'Nothing in the template invites client-identifying information, and it says so.'}
+];
+(function(){
+  var vals={};
+  function render(){
+    var h='<div style="display:flex;flex-direction:column;gap:14px">';
+    PEER.forEach(function(p,i){
+      h+='<div><div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px"><span style="font-family:Bricolage Grotesque,sans-serif;font-weight:600;font-size:15px">'+p.t+'</span><span class="row tight">';
+      for(var v=0;v<=3;v++)h+='<button class="btn sel mini pv" data-i="'+i+'" data-v="'+v+'"'+(vals[i]===v?' style="background:var(--on);color:#fff;border-color:var(--on)"':'')+'>'+v+'</button>';
+      h+='</span></div><p class="dim" style="font-size:13.5px;margin:5px 0 0;max-width:none">'+p.d+'</p></div>';
+    });
+    h+='</div>';
+    $('peer').innerHTML=h;
+    $('peer').querySelectorAll('.pv').forEach(function(b){b.onclick=function(){vals[b.getAttribute('data-i')*1]=b.getAttribute('data-v')*1;render();out()}});
+    out();
+  }
+  function out(){
+    var ks=Object.keys(vals);
+    if(ks.length<4){$('peerOut').textContent='Score all four to see the reading.';$('peerOut').classList.remove('has');return}
+    var t=ks.reduce(function(a,k){return a+vals[k]},0);
+    var band=t>=10?'Handoff-ready. Tell the author which single criterion cost them the remaining points.'
+      :t>=7?'Workable with one fix. Name it precisely \u2014 \u201cadd a line bounding the source\u201d beats \u201cit needs more detail.\u201d'
+      :t>=4?'The author can run it and nobody else can. That is the exact failure Part 2 of the final project is designed to expose.'
+      :'It did not survive contact with a second person. Better to find that out today than in Session 5.';
+    $('peerOut').textContent='TOTAL  '+t+' / 12\n\n'+band+'\n\nIn Session 5 a failure to run is graded against the builder, not the presenter. The same principle applies here: if it did not work in your hands, that is information about the template.';
+    $('peerOut').classList.add('has');
+  }
+  render();
+})();
+
+/* ================= 12 · BASELINE + CHECKLIST ================= */
+function base(){
+  var t=$('taskName').value.trim(),m=parseFloat($('baseMin').value)||0,f=parseFloat($('baseFreq').value)||0,r=parseFloat($('baseRate').value)||0;
+  var hrs=m*f/60,cost=hrs*r;
+  var o='SESSION 2 BASELINE RECORD\n\n';
+  o+='Task:              '+(t||'\u2014 not named \u2014')+'\n';
+  o+='Unassisted time:   '+m+' minutes per occurrence\n';
+  o+='Frequency:         '+f+' per month\n';
+  o+='Monthly hours:     '+hrs.toFixed(1)+'\n';
+  o+='Annual hours:      '+(hrs*12).toFixed(0)+'\n';
+  o+='Annual cost at $'+r+'/hr: $'+(cost*12).toFixed(0)+'\n\n';
+  o+='BREAK-EVEN NOTE\n';
+  o+='A 40% time reduction recovers '+(hrs*12*0.4).toFixed(0)+' hours a year.\n';
+  o+='Subtract the verification time you measured in section 10 before\n';
+  o+='you claim any of it. A workflow that saves 20 minutes of drafting\n';
+  o+='and adds 12 minutes of citation checking has saved 8 minutes.';
+  $('baseOut').textContent=o;
+}
+['taskName','baseMin','baseFreq','baseRate'].forEach(function(id){$(id).oninput=base});base();
+$('baseCopy').onclick=function(){
+  if(navigator.clipboard)navigator.clipboard.writeText($('baseOut').textContent);
+  var o=this.textContent;this.textContent='Copied';var b=this;setTimeout(function(){b.textContent=o},1400);
+};
+
+var CHK=[
+ 'The workflow itself \u2014 prompts, system instructions or skill, tool and model tier, supporting files',
+ 'A one-page explanation: what it does, why AI suits it, where a human stays in the loop (two pages maximum, images on page two)',
+ 'Setup instructions: tool, subscription tier, inputs and files a classmate needs to run it',
+ 'The verification steps built into the workflow, and the two failure modes you hit while building',
+ 'Your Session 1 baseline time against the AI-assisted time, including any step AI made slower or worse',
+ 'A data-handling note: which fields would need removing or de-identifying before real client use',
+ 'The complete build transcript, including the attempts that failed \u2014 to the instructor only, not to your classmate'
+];
+(function(){
+  var st={};
+  function render(){
+    var h='<div style="display:flex;flex-direction:column;gap:8px">';
+    CHK.forEach(function(t,i){
+      var on=!!st[i];
+      h+='<button class="ck" data-i="'+i+'" style="text-align:left;background:'+(on?'var(--on-bg)':'var(--card)')+';border:1.5px solid '+(on?'var(--on)':'var(--line)')+';border-radius:9px;padding:11px 14px;cursor:pointer;font-family:Source Serif 4,serif;font-size:14.5px;line-height:1.45;color:var(--ink);display:flex;gap:12px"><span style="flex:none;color:'+(on?'var(--on)':'var(--off)')+';font-family:JetBrains Mono,monospace">'+(on?'\u2713':'\u25cb')+'</span><span>'+t+'</span></button>';
+    });
+    h+='</div>';
+    $('checklist').innerHTML=h;
+    $('checklist').querySelectorAll('.ck').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-i');st[i]=!st[i];render()}});
+    var n=Object.keys(st).filter(function(k){return st[k]}).length;
+    $('checkOut').textContent='PLANNED  '+n+' / 7\n\nHandoff package 15%  \u00b7  Scalability 30%  \u00b7  Iteration and documentation 25%\nDeliverable correctness 25%  \u00b7  Peer feedback 5%\n\nPart 1 is 70% of the project grade; Part 2 is 30%.\nThe finished product alone does not earn full credit on iteration \u2014\nthe transcript has to show what failed on the way there.';
+    $('checkOut').classList.toggle('has',n===7);
+  }
+  render();
+})();
+
+/* keyboard: Shift+U reveals every answer panel, for instructor use */
+document.addEventListener('keydown',function(e){
+  if(e.shiftKey&&(e.key==='U'||e.key==='u')){
+    document.querySelectorAll('.qfb,.fbx').forEach(function(x){x.style.display='block'});
+    var k=$('sortKey');if(k){k.disabled=false}
+  }
+});
+})();
+</script>
+</body>
+</html>

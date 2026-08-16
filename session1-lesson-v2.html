@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 1 — How the Machine Works, and What It Costs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--page:#F4F4F1;--card:#FFF;--ink:#16211F;--muted:#6F7B78;--off:#B9BDB9;--off-bg:#E7E8E4;
+--on:#0E5A55;--on-bg:#E2EDEB;--warn:#9A4B22;--warn-bg:#F6EAE2;--line:#D8DAD4;--gold:#8A6A12;--gold-bg:#F3EEDF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;padding-top:44px;background:var(--page);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.62}
+.wrap{max-width:1020px;margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.025em;margin:0}
+h1{font-size:clamp(32px,5.4vw,58px);line-height:1.04;font-weight:700}
+h2{font-size:clamp(23px,3.6vw,38px);line-height:1.09;font-weight:600}
+h3{font-size:clamp(18px,2.1vw,22px);line-height:1.24;font-weight:600;margin-top:32px}
+h4{font-size:16.5px;font-weight:600;letter-spacing:-.01em}
+p{margin:16px 0;max-width:64ch}
+.big{font-size:clamp(18px,2.1vw,22px);line-height:1.5}
+.dim{color:var(--muted)}
+.lede{font-size:clamp(18px,2.1vw,23px);line-height:1.48;color:var(--muted);max-width:42ch;margin:22px 0 0}
+section.slide{padding:clamp(44px,6vw,74px) 0;border-bottom:1px solid var(--line);scroll-margin-top:56px}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--on);font-weight:500;margin-bottom:14px}
+.mono{font-family:"JetBrains Mono",monospace}
+
+#topbar{position:fixed;top:0;left:0;right:0;height:44px;background:rgba(244,244,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:60;display:flex;align-items:center;gap:14px;padding:0 clamp(14px,4vw,34px)}
+#topbar .ttl{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+#ptrack{flex:1;height:6px;background:var(--off-bg);border-radius:3px;overflow:hidden}
+#pfill{height:100%;width:0;background:var(--on);border-radius:3px;transition:width .4s ease}
+#pnum{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--on);white-space:nowrap;font-weight:500}
+#caseBtn{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:none;border:1.5px solid var(--on);color:var(--on);border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap}
+#caseBtn:hover{background:var(--on-bg)}
+#caseModal{position:fixed;inset:0;background:rgba(22,33,31,.45);z-index:70;display:none;overflow:auto;padding:60px 16px}
+#caseModal.open{display:block}
+#caseModal .inner{max-width:840px;margin:0 auto;background:var(--card);border-radius:14px;padding:30px 34px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+
+#rail{position:fixed;left:12px;top:50%;transform:translateY(-50%);z-index:40;display:none;max-height:80vh;overflow:auto}
+@media(min-width:1340px){#rail{display:block}}
+#rail button{display:flex;align-items:center;gap:9px;background:none;border:none;padding:3px;cursor:pointer;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--off);width:100%;text-align:left}
+#rail .pip{width:7px;height:7px;border-radius:50%;background:var(--off);flex:none;transition:.2s}
+#rail .lbl{opacity:0;transition:.2s;white-space:nowrap}
+#rail:hover .lbl{opacity:1}
+#rail button.on .pip{background:var(--on);transform:scale(1.5)}
+#rail button.on{color:var(--on)}
+#rail button.done .pip{background:var(--on);opacity:.5}
+
+.btn{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;background:var(--on);color:#fff;border:none;border-radius:7px;padding:10px 16px;cursor:pointer;transition:.15s}
+.btn:hover{filter:brightness(1.15)}
+.btn.ghost{background:none;color:var(--on);border:1.5px solid var(--on)}
+.btn.ghost:hover{background:var(--on-bg);filter:none}
+.btn.mini{padding:7px 12px;font-size:11px}
+.btn.sel{background:var(--off-bg);color:var(--muted);border:1.5px solid var(--line)}
+.btn.sel.act{background:var(--on);color:#fff;border-color:var(--on)}
+.btn[disabled]{opacity:.32;pointer-events:none}
+:focus-visible{outline:2.5px solid var(--on);outline-offset:3px;border-radius:4px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+section.slide.locked > .body{display:none}
+.lockcard{display:none;background:var(--off-bg);border:1.5px dashed var(--off);border-radius:12px;padding:22px 26px}
+section.slide.locked > .lockcard{display:block}
+.lockcard .lk{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px}
+.lockcard p{margin:0;font-size:15.5px;color:var(--muted)}
+.check{display:flex;gap:13px;align-items:flex-start;background:var(--gold-bg);border:1.5px solid #DFD3AF;border-radius:11px;padding:14px 17px;margin:22px 0}
+.check.done{background:var(--on-bg);border-color:var(--on)}
+.check .mk{width:24px;height:24px;border-radius:50%;border:2px solid var(--gold);flex:none;display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--gold);margin-top:1px}
+.check.done .mk{border-color:var(--on);background:var(--on);color:#fff}
+.check .ct{font-size:15.5px;line-height:1.48}
+.check .ct b{font-family:"Bricolage Grotesque",sans-serif;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px}
+.check.done .ct b{color:var(--on)}
+
+.talk{border-left:4px solid var(--on);background:var(--on-bg);border-radius:0 9px 9px 0;padding:14px 18px;margin:20px 0;font-size:15.5px;line-height:1.55}
+.talk .th{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:6px}
+.talk ul{margin:8px 0 0;padding-left:19px}
+.talk li{margin:5px 0}
+.dom{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;background:var(--off-bg);color:var(--muted);border-radius:4px;padding:3px 7px;display:inline-block;margin-right:5px}
+.dom.a{background:var(--on-bg);color:var(--on)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:16px;margin:24px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:18px}
+.card p{font-size:14.5px;line-height:1.5;margin:7px 0 0;color:var(--muted);max-width:none}
+.card .num{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--on);font-weight:500;display:block;margin-bottom:8px}
+.card.warn{background:var(--warn-bg);border-color:#E0C6B4}.card.warn .num{color:var(--warn)}
+.card.gold{background:var(--gold-bg);border-color:#DFD3AF}.card.gold .num{color:var(--gold)}
+
+.panel{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:22px;margin:22px 0}
+.plab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:block}
+.sim{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--warn);background:var(--warn-bg);border-radius:5px;padding:5px 9px;display:inline-block}
+.src{font-family:"JetBrains Mono",monospace;font-size:10.5px;line-height:1.6;color:var(--muted);margin-top:13px;display:block;letter-spacing:.02em}
+.src b{color:var(--on);font-weight:500}
+.conf{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:3px 7px;border-radius:4px;font-weight:500;display:inline-block}
+.conf.h{background:var(--on);color:#fff}.conf.m{background:var(--gold-bg);color:var(--gold)}.conf.l{background:var(--warn-bg);color:var(--warn)}
+.wolf{border-left:4px solid var(--gold);background:var(--gold-bg);border-radius:0 9px 9px 0;padding:14px 18px;margin:20px 0;font-size:15.5px;line-height:1.55}
+.wolf .wh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px}
+
+.dist{display:flex;flex-direction:column;gap:6px;margin:16px 0}
+.drow{display:grid;grid-template-columns:minmax(96px,168px) 1fr 58px;gap:11px;align-items:center;font-family:"JetBrains Mono",monospace;font-size:12.5px;cursor:pointer}
+.drow .dbar{height:19px;background:var(--off-bg);border-radius:4px;overflow:hidden}
+.drow .dbar span{display:block;height:100%;background:var(--on);opacity:.3;transition:width .25s,opacity .2s}
+.drow.picked .dbar span,.drow.keep .dbar span{opacity:1}
+.drow.picked{color:var(--on);font-weight:500}
+.drow.cut{opacity:.4}.drow.cut .dbar span{background:var(--warn)}
+.drow .pv{text-align:right;color:var(--muted)}
+.drow:hover .dbar{outline:1.5px solid var(--off)}
+
+.sampler{background:var(--off-bg);border-radius:9px;padding:16px 18px;font-family:"JetBrains Mono",monospace;font-size:14.5px;line-height:1.9;min-height:58px;margin-bottom:14px}
+.sampler .stem{color:var(--muted)}
+.sampler .tok{color:var(--on);font-weight:500}
+.sampler .tok.fresh{animation:fin .4s ease both}
+@keyframes fin{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+.runs{display:flex;flex-direction:column;gap:6px;margin-top:14px;padding-top:13px;border-top:1px solid var(--line)}
+.runs .r{font-family:"JetBrains Mono",monospace;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.runs .r b{color:var(--ink);font-weight:500}
+
+textarea,input[type=text]{width:100%;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.6;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:11px 13px;resize:vertical}
+textarea{min-height:82px}
+textarea:focus,input[type=text]:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on-bg)}
+.tokstrip{display:flex;flex-wrap:wrap;gap:3px;margin:14px 0;line-height:1}
+.tokstrip span{font-family:"JetBrains Mono",monospace;font-size:12.5px;padding:6px 5px;border-radius:3px;background:var(--on-bg);color:var(--on)}
+.tokstrip span:nth-child(2n){background:var(--off-bg);color:#4A5250}
+.costgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:10px;margin-top:14px}
+.cbox{background:var(--off-bg);border-radius:8px;padding:11px 13px}
+.cbox .cn{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:block}
+.cbox .cv{font-family:"JetBrains Mono",monospace;font-size:18px;color:var(--on);font-weight:500;display:block;margin-top:4px}
+
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;background:transparent;margin:8px 0}
+input[type=range]::-webkit-slider-runnable-track{height:6px;background:var(--off-bg);border-radius:3px}
+input[type=range]::-moz-range-track{height:6px;background:var(--off-bg);border-radius:3px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--on);margin-top:-8px;cursor:pointer;border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.2)}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--on);cursor:pointer;border:3px solid #fff}
+input[type=range]:disabled::-webkit-slider-thumb{background:var(--off)}
+.ticks{display:flex;justify-content:space-between;font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted);letter-spacing:.05em}
+.slab{display:flex;justify-content:space-between;align-items:baseline;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;gap:10px}
+.slab b{font-size:16px;color:var(--on);font-weight:500;text-transform:none;letter-spacing:0}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:820px){.sgrid{grid-template-columns:1fr}}
+
+svg.ch{width:100%;height:auto;display:block;overflow:visible}
+svg.ch text{font-family:"JetBrains Mono",monospace;font-size:10px;fill:var(--muted)}
+svg.ch .axl{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase}
+svg.ch .grid{stroke:var(--line);stroke-width:1}
+svg.ch .pt{cursor:pointer}
+svg.ch .pt circle{fill:var(--off);stroke:#fff;stroke-width:2}
+svg.ch .pt.front circle{fill:var(--on)}
+svg.ch .pt.anth circle{stroke:var(--gold);stroke-width:2.5}
+svg.ch .pt.dead circle{opacity:.35}svg.ch .pt.dead text{opacity:.35}
+svg.ch .pt text{font-size:10.5px;fill:var(--ink)}
+svg.ch .pt.sel circle{fill:var(--warn);r:9}
+svg.ch .front-line{fill:none;stroke:var(--on);stroke-width:1.6;stroke-dasharray:5 4;opacity:.7}
+svg.ch .deadzone{fill:var(--warn);opacity:.055}
+.chartbox{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:20px;margin:22px 0}
+.readout{margin-top:14px;padding:14px 17px;border-radius:9px;background:var(--off-bg);font-size:15px;line-height:1.52;min-height:66px}
+.readout.on{background:var(--on-bg)}.readout.bad{background:var(--warn-bg)}
+.readout .cz{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:6px}
+.readout.bad .cz{color:var(--warn)}
+.readout .nil{color:var(--muted);font-style:italic}
+.readout .fx{margin-top:10px;padding-top:10px;border-top:1px solid rgba(14,90,85,.2);color:var(--on)}
+
+.mtx{width:100%;border-collapse:separate;border-spacing:6px;margin:16px 0;font-family:"JetBrains Mono",monospace;font-size:13.5px}
+.mtx th{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;padding:4px;border:none}
+.mtx th.rh{text-align:left;width:180px}
+.mtx td{background:var(--off-bg);border-radius:8px;padding:16px 10px;text-align:center;font-size:19px;transition:.3s;color:var(--muted)}
+.mtx td.best{background:var(--on);color:#fff}
+.mtx .rl{background:none;text-align:left;font-size:13.5px;color:var(--ink);padding-left:0}
+.mverdict{font-size:15px;line-height:1.52;padding:12px 15px;border-radius:8px;background:var(--on-bg);color:#0A423F;margin-top:6px}
+
+.costbars{display:flex;flex-direction:column;gap:8px;margin-top:18px}
+.cbar{display:grid;grid-template-columns:186px 1fr 90px;gap:12px;align-items:center;font-size:14px}
+@media(max-width:700px){.cbar{grid-template-columns:124px 1fr 74px;font-size:12.5px}}
+.cbar .tr{height:25px;background:var(--off-bg);border-radius:5px;overflow:hidden}
+.cbar .tr span{display:block;height:100%;background:var(--on);border-radius:5px;transition:width .35s ease}
+.cbar.sub .tr span{background:var(--gold)}
+.cbar .amt{font-family:"JetBrains Mono",monospace;font-size:13.5px;text-align:right}
+.assume{background:var(--off-bg);border-left:3px solid var(--off);border-radius:0 8px 8px 0;padding:12px 16px;font-size:14px;line-height:1.5;color:var(--muted);margin-top:16px}
+
+.quiz .qitem{padding:16px 0;border-bottom:1px solid var(--line)}
+.quiz .qitem:last-child{border-bottom:none}
+.qtext{font-size:15.5px;margin-bottom:10px;display:block;line-height:1.45}
+.qfb{font-size:14px;line-height:1.5;margin-top:10px;padding:11px 14px;border-radius:7px;display:none}
+.qitem.done .qfb{display:block}
+.qfb.right{background:var(--on-bg);color:#0A423F}
+.qfb.wrong{background:var(--warn-bg);color:var(--warn)}
+.qitem.done .qbtns button{opacity:.4;pointer-events:none}
+.qitem.done .qbtns button.picked{opacity:1}
+.score{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--on);margin-top:14px;display:block}
+
+.sorter{display:grid;grid-template-columns:1fr 1.05fr;gap:22px;margin:22px 0}
+@media(max-width:880px){.sorter{grid-template-columns:1fr}}
+.chiplist{display:flex;flex-direction:column;gap:8px}
+.chip{background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:11px 14px;cursor:pointer;font-size:14.5px;transition:.15s;text-align:left;font-family:"Source Serif 4",serif;color:var(--ink);line-height:1.4}
+.chip:hover{border-color:var(--off)}
+.chip.act{border-color:var(--on);background:var(--on-bg);font-weight:600}
+.chip.solved{border-color:var(--on);opacity:.6}
+.boxes{display:flex;flex-direction:column;gap:11px}
+.lbox{border:1.5px solid var(--line);border-radius:11px;padding:15px 17px;background:var(--card);transition:.25s;opacity:.45}
+.lbox.lit{opacity:1;border-color:var(--on);background:var(--on-bg);box-shadow:0 0 0 4px rgba(14,90,85,.09)}
+.lbox.lit.bad{border-color:var(--warn);background:var(--warn-bg);box-shadow:0 0 0 4px rgba(154,75,34,.09)}
+.lbox h4{margin-bottom:4px}
+.lbox p{font-size:13.5px;color:var(--muted);margin:0;max-width:none;line-height:1.42}
+.lbox .why{font-size:14px;color:var(--on);margin-top:8px;display:none;line-height:1.48}
+.lbox.lit .why{display:block}.lbox.lit.bad .why{color:var(--warn)}
+
+.pull{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:clamp(21px,3vw,32px);line-height:1.18;letter-spacing:-.02em;border-left:4px solid var(--on);padding-left:22px;margin:32px 0;max-width:25ch}
+table.dt{width:100%;border-collapse:collapse;margin:20px 0;font-size:15px}
+table.dt th{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;text-align:left;color:var(--muted);border-bottom:2px solid var(--ink);padding:0 12px 8px 0}
+table.dt td{padding:10px 12px 10px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.48}
+table.dt td.n{font-family:"JetBrains Mono",monospace;font-size:14px}
+table.dt.tight td{padding:7px 12px 7px 0;font-size:14.5px}
+footer{padding:40px 0 84px;font-size:14px;color:var(--muted)}
+footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:none;word-break:break-word}
+
+.lab{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+@media(max-width:900px){.lab{grid-template-columns:1fr}}
+.smod{background:var(--card);border:1.5px solid var(--line);border-radius:11px;padding:13px 15px;opacity:.5;transition:.2s}
+.smod.on{opacity:1;border-color:var(--on)}
+.smod .sh{display:flex;align-items:center;gap:9px;cursor:pointer;user-select:none}
+.smod .sh input{width:17px;height:17px;accent-color:var(--on);cursor:pointer}
+.smod .sh h4{flex:1}
+.smod .sd{font-size:12.5px;color:var(--muted);line-height:1.42;margin:6px 0 0}
+.smod .ctl{display:grid;grid-template-columns:1fr 60px;gap:9px;align-items:center;margin-top:8px}
+.smod .ctl input[type=text]{padding:5px 7px;font-size:12px;text-align:right}
+.labout{background:var(--card);border:2px solid var(--on);border-radius:12px;padding:18px 20px;margin:20px 0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-bottom:14px}
+.stat{background:var(--off-bg);border-radius:8px;padding:9px 11px}
+.stat .sn{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:block}
+.stat .sv{font-family:"JetBrains Mono",monospace;font-size:16.5px;color:var(--on);font-weight:500;display:block;margin-top:3px}
+.stat.hit .sv{color:var(--warn)}
+.pipeline{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0;align-items:center}
+.pipeline .st{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border-radius:5px;background:var(--off-bg);color:var(--muted)}
+.pipeline .st.on{background:var(--on);color:#fff}
+.pipeline .ar{color:var(--off);font-size:12px}
+.draws{display:flex;flex-wrap:wrap;gap:5px;margin-top:11px}
+.draws span{font-family:"JetBrains Mono",monospace;font-size:12px;padding:5px 8px;border-radius:5px;background:var(--on-bg);color:var(--on)}
+
+.fitgrid{display:grid;grid-template-columns:1.15fr 1fr;gap:22px;align-items:start}
+@media(max-width:880px){.fitgrid{grid-template-columns:1fr}}
+.lossbar{height:12px;background:var(--off-bg);border-radius:6px;overflow:hidden;margin-top:6px}
+.lossbar span{display:block;height:100%;background:var(--warn);transition:width .25s,background .25s}
+.lossbar.good span{background:var(--on)}
+
+.parens{font-family:"JetBrains Mono",monospace;font-size:24px;letter-spacing:.12em;background:var(--off-bg);border-radius:9px;padding:14px 16px;min-height:58px;word-break:break-all;line-height:1.5}
+.parens .bad{color:var(--warn)}
+.depthbar{display:flex;gap:3px;margin-top:11px;align-items:flex-end;height:52px}
+.depthbar i{flex:1;background:var(--on);border-radius:2px 2px 0 0;min-height:2px;opacity:.75}
+.depthbar i.neg{background:var(--warn)}
+@media print{#rail,#topbar,#caseModal{display:none}body{background:#fff;padding-top:0}.slide{page-break-inside:avoid;padding:18px 0}section.slide.locked>.body{display:block}.lockcard{display:none!important}}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <span class="ttl">Session 1</span>
+  <div id="ptrack"><div id="pfill"></div></div>
+  <span id="pnum">0 / 0</span>
+  <button id="caseBtn">Case facts</button>
+</div>
+<div id="caseModal"><div class="inner" id="caseInner"></div></div>
+<nav id="rail" aria-label="Sections"></nav>
+<div class="wrap">
+<!-- 1 -->
+<section class="slide" id="s1" data-nav="Start">
+ <div class="body">
+  <div class="eyebrow">BUS ADM X433.4 &middot; Session 1 &middot; 31 August 2026</div>
+  <h1>How the Machine Works, and What It Costs</h1>
+  <p class="lede">Build next-token prediction by hand, then price it against a real planning practice.</p>
+
+  <p class="big">Sections unlock as you complete them. Every example uses one synthetic client household &mdash; open <b>Case facts</b> in the bar above at any time, and keep it open.</p>
+
+  <div class="panel" style="border-color:var(--on)">
+    <span class="plab">The household &mdash; synthetic, constructed for this course</span>
+    <table class="dt tight" style="margin:0">
+      <tbody>
+        <tr><td style="width:34%"><b>Adaeze Okonkwo, 58</b></td><td>Founder and CEO, specialty manufacturing C-corp. Signed LOI to sell at roughly $18M enterprise value; close targeted for Q2 next year.</td></tr>
+        <tr><td><b>Miguel Reyes, 61</b></td><td>Tenured professor. $890K 403(b), small defined-benefit pension electable at 65.</td></tr>
+        <tr><td><b>Concentrated position</b></td><td>$14.2M in Okonkwo Industries stock. Original basis $310K. Shares issued to her at formation in 2013.</td></tr>
+        <tr><td><b>Other assets</b></td><td>$3.1M taxable ($1.4M unrealized gain), $2.4M traditional IRA, $310K cash, $1.8M residence.</td></tr>
+        <tr><td><b>Children</b></td><td>Ilesanmi, 26, autistic, currently receives SSI and Medicaid waiver services. Tobenna, 31, married.</td></tr>
+        <tr><td><b>Documents</b></td><td>Joint revocable trust (2016), pour-over wills. No ILIT. $2M level term on Adaeze, expires at 65.</td></tr>
+        <tr><td><b>Stated goals</b></td><td>Fund Ilesanmi's lifetime care without disrupting benefits; $400K after-tax annual income; establish a family charitable vehicle.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="dim" style="font-size:14.5px">Figure labels: <span class="conf h">H</span> primary or first-party &middot; <span class="conf m">M</span> secondary or derived &middot; <span class="conf l">L</span> unverified. Arrow keys navigate. Instructors: <b class="mono">Shift+U</b> unlocks everything.</p>
+
+  <div class="check" data-gate="g1"><span class="mk">1</span><div class="ct"><b>Checkpoint</b>Read the case, then begin.<div class="row" style="margin-top:10px"><button class="btn" id="beginBtn">Begin</button></div></div></div>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 2 -->
+<section class="slide locked" id="s2" data-nav="Prediction">
+ <div class="body">
+  <div class="eyebrow">01 &middot; Wolfram, "It's Just Adding One Word at a Time"</div>
+  <h2>The Model Ranks Candidates, Then Something Picks One</h2>
+
+  <div class="wolf"><span class="wh">From the assigned reading</span>ChatGPT is "just asking over and over again 'given the text so far, what should the next word be?'&thinsp;"&mdash;each time adding a token, "which could be just part of a word."</div>
+
+  <div class="panel">
+    <span class="plab">Click a candidate to append it &mdash; the next distribution follows your choice</span>
+    <div class="sampler" id="s2samp"></div>
+    <div class="dist" id="s2dist"></div>
+    <div class="row"><button class="btn ghost mini" id="s2reset">Start over</button><span class="dim mono" style="font-size:12px">placed: <b id="s2count">0</b> of 6</span></div>
+    <p style="margin-bottom:0"><span class="sim">Illustrative distribution &mdash; the article's table is an image and is not reproduced</span></p>
+  </div>
+
+  <p>You are the sampler. Each list depended on your last choice, and nothing ever revisited an earlier one. Several paths produce a defensible sentence about the Okonkwo position; at least one produces a false one.</p>
+
+  <h3>Always taking the top word produces flat, repetitive text</h3>
+  <div class="wolf"><span class="wh">From the assigned reading</span>Always picking the highest-ranked word gives "a very 'flat' essay, that never seems to 'show any creativity' (and even sometimes repeats word for word)." A temperature of <b>0.8</b> "seems best" for essays &mdash; and "there's no 'theory' being used here; it's just a matter of what's been found to work in practice."</div>
+
+  <div class="panel">
+    <div class="row" style="margin-bottom:12px">
+      <button class="btn sel mini act" data-tmp="0">T = 0</button>
+      <button class="btn sel mini" data-tmp="0.8">T = 0.8</button>
+      <button class="btn sel mini" data-tmp="1.6">T = 1.6</button>
+      <button class="btn" id="s3gen">Generate 40 tokens</button>
+    </div>
+    <div class="sampler" id="s3out" style="font-size:13.5px;line-height:1.75"><span class="dim">Nothing generated yet.</span></div>
+    <div class="stats" style="margin-top:12px">
+      <div class="stat"><span class="sn">Distinct tokens</span><span class="sv" id="s3uni">&mdash;</span></div>
+      <div class="stat"><span class="sn">Longest repeat</span><span class="sv" id="s3rep">&mdash;</span></div>
+      <div class="stat"><span class="sn">Temperature</span><span class="sv" id="s3t">0</span></div>
+    </div>
+  </div>
+
+  <h3>The probabilities fall off as a power law</h3>
+  <div class="chartbox">
+    <div class="row" style="margin-bottom:12px">
+      <button class="btn sel mini act" data-ax="lin">Linear axes</button>
+      <button class="btn sel mini" data-ax="log">Log&ndash;log axes</button>
+    </div>
+    <svg class="ch" id="plCh" viewBox="0 0 700 290" role="img" aria-label="Rank against probability"></svg>
+    <div class="readout" id="plOut"><span class="nil">Switch the axes.</span></div>
+  </div>
+
+  <p>Straightness means no natural cutoff &mdash; no rank at which the tail stops mattering. Every control in the lab later is somebody's answer to where to cut anyway.</p>
+
+  <div class="check" data-gate="g2"><span class="mk">2</span><div class="ct"><b>Checkpoint</b>Place six tokens, generate at all three temperatures, and switch to log&ndash;log axes.</div></div>
+  <span class="src"><b>Wolfram, S. (2023), What Is ChatGPT Doing &hellip; and Why Does It Work?</b> &mdash; opening section. Assigned reading. <span class="conf h">H</span></span>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 3 -->
+<section class="slide locked" id="s3" data-nav="Where probabilities come from">
+ <div class="body">
+  <div class="eyebrow">02 &middot; Wolfram, "Where Do the Probabilities Come From?"</div>
+  <h2>Counting Works, Then Stops Working</h2>
+  <p class="big">Everything below is computed live from the corpus in the box &mdash; counts from the words in front of you, not figures quoted from anywhere. The corpus is discovery-meeting language from the case.</p>
+
+  <div class="panel">
+    <label class="plab" for="corpus">Corpus (edit freely &mdash; every statistic recomputes)</label>
+    <textarea id="corpus" style="min-height:104px"></textarea>
+    <div class="stats" style="margin-top:12px">
+      <div class="stat"><span class="sn">Characters</span><span class="sv" id="cChars">0</span></div>
+      <div class="stat"><span class="sn">Words</span><span class="sv" id="cWords">0</span></div>
+      <div class="stat"><span class="sn">Distinct words</span><span class="sv" id="cUniq">0</span></div>
+      <div class="stat"><span class="sn">Letter pairs</span><span class="sv" id="cBig">0</span></div>
+    </div>
+
+    <span class="plab" style="margin-top:18px">Generate letters using n-gram statistics from this corpus</span>
+    <div class="row">
+      <button class="btn sel mini act" data-ng="1">Order 1</button>
+      <button class="btn sel mini" data-ng="2">Order 2</button>
+      <button class="btn sel mini" data-ng="3">Order 3</button>
+      <button class="btn sel mini" data-ng="4">Order 4</button>
+    </div>
+    <div class="sampler" id="ngOut" style="margin-top:12px;font-size:13.5px;line-height:1.75"><span class="dim">Pick an order.</span></div>
+    <div class="stats"><div class="stat"><span class="sn">Corpus words produced</span><span class="sv" id="ngReal">&mdash;</span></div><div class="stat"><span class="sn">Order</span><span class="sv" id="ngOrd">&mdash;</span></div></div>
+
+    <span class="plab" style="margin-top:18px">Now whole words instead of letters</span>
+    <div class="row">
+      <button class="btn sel mini act" data-wg="1">Independent words</button>
+      <button class="btn sel mini" data-wg="2">Word pairs, from "client"</button>
+      <button class="btn ghost mini" id="wgAgain">Again</button>
+    </div>
+    <div class="sampler" id="wgOut" style="margin-top:12px;font-size:14px;line-height:1.75"><span class="dim">Pick a mode.</span></div>
+  </div>
+
+  <h3>Why you cannot just use longer sequences</h3>
+  <div class="wolf"><span class="wh">From the assigned reading &mdash; his figures</span>About <b>40,000</b> reasonably common English words. A web crawl holds <b>a few hundred billion words</b>; digitised books another <b>hundred billion</b>. But the number of possible 2-grams is already <b>1.6 billion</b>, and 3-grams <b>60 trillion</b>. At 20-word fragments, "the number of possibilities is larger than the number of particles in the universe."</div>
+
+  <div class="panel">
+    <div class="slab"><span>Sequence length, n words</span><b id="nLab">2</b></div>
+    <input type="range" id="nSlide" min="1" max="8" value="2" step="1">
+    <div class="ticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+    <svg class="ch" id="wallCh" viewBox="0 0 700 220" style="margin-top:16px" role="img" aria-label="Possible n-grams against available text"></svg>
+    <div class="readout" id="wallOut"></div>
+  </div>
+
+  <p>Two notches past three and the argument is over. What remains is to build something that estimates the probability of sequences it has never seen.</p>
+
+  <div class="check" data-gate="g3"><span class="mk">3</span><div class="ct"><b>Checkpoint</b>Generate letters at order 4, run the word-pair mode, then set the slider to the smallest n where possibilities exceed all text ever written.</div></div>
+  <span class="src">All quoted figures: Wolfram (2023). <span class="conf h">H</span> &middot; Chart arithmetic is 40,000<sup>n</sup> against a 400 billion word corpus. <span class="conf h">H</span></span>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 4 -->
+<section class="slide locked" id="s4" data-nav="What a model is">
+ <div class="body">
+  <div class="eyebrow">03 &middot; Wolfram, "What Is a Model?"</div>
+  <h2>Fitting a Model by Hand</h2>
+  <p class="big">Turn the knobs until the curve fits the fall times. You are minimising a loss function by hand &mdash; which is what training does, 175 billion knobs at a time.</p>
+
+  <div class="panel">
+    <div class="row" style="margin-bottom:14px">
+      <button class="btn sel mini act" data-mf="lin">a + bx</button>
+      <button class="btn sel mini" data-mf="quad">a + bx + cx&sup2;</button>
+      <button class="btn sel mini" data-mf="sin">a + b/x + c&thinsp;sin(x)</button>
+    </div>
+    <div class="fitgrid">
+      <svg class="ch" id="fitCh" viewBox="0 0 460 290" role="img" aria-label="Fall time against floor with fitted curve"></svg>
+      <div>
+        <div id="fitKnobs"></div>
+        <div class="slab" style="margin-top:16px"><span>Loss</span><b id="lossVal">&mdash;</b></div>
+        <div class="lossbar" id="lossBar"><span style="width:100%"></span></div>
+        <div class="readout" id="fitOut" style="margin-top:14px"></div>
+        <div class="row" style="margin-top:11px"><button class="btn ghost mini" id="fitAuto">Fit it for me</button></div>
+      </div>
+    </div>
+  </div>
+
+  <p>Try the third form. It has as many knobs as the second and cannot fit this data at any setting, because its structure is wrong. The choice of structure is made before any data arrives, and no amount of training rescues a bad one.</p>
+
+  <div class="talk"><span class="th">Planning parallel &mdash; discussion</span>Every Monte Carlo engine you run is a model with knobs: return assumptions, inflation, sequence-of-returns treatment, mortality table. A 91% probability of success is not a measurement. It is the output of a structure someone chose, fitted to assumptions someone set.
+  <ul><li>Which of your planning software's assumptions can you actually name and defend to a client?</li><li>If two engines give Adaeze 91% and 76%, which is wrong &mdash; and how would you find out?</li></ul></div>
+
+  <h3>The size of the thing</h3>
+  <p>Guess first. Guessing badly is the useful part &mdash; nobody has intuition for these numbers.</p>
+  <div class="panel" id="guessPanel"></div>
+
+  <table class="dt tight">
+    <thead><tr><th>Quantity</th><th>GPT-2</th><th>GPT-3 / ChatGPT</th></tr></thead>
+    <tbody>
+      <tr><td>Weights</td><td class="n">&mdash;</td><td class="n">175 billion</td></tr>
+      <tr><td>Embedding vector length</td><td class="n">768</td><td class="n">12,288</td></tr>
+      <tr><td>Attention blocks &times; heads</td><td class="n">12 &times; 12</td><td class="n">96 &times; 96</td></tr>
+      <tr><td>Token vocabulary / whole words</td><td class="n">~50,000</td><td class="n">~50,000 / ~3,000</td></tr>
+    </tbody>
+  </table>
+  <p class="dim" style="font-size:14px">Wolfram's comparison: brains have "about 100 billion neurons" and "maybe 100 trillion connections." He also estimates it takes "a bit less than one neural net weight to carry the information content of a word of training data" &mdash; the model is roughly the size of everything it read, and nothing in it can be looked up.</p>
+
+  <div class="check" data-gate="g4"><span class="mk">4</span><div class="ct"><b>Checkpoint</b>Get the loss below 0.02, then submit all three scale guesses.</div></div>
+  <span class="src">Fall times computed from t = &radic;(2h/g) at 5-metre spacing &mdash; idealised, as in the article. All model figures quoted from Wolfram (2023). <span class="conf h">H</span></span>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 5 -->
+<section class="slide locked" id="s5" data-nav="Tokens">
+ <div class="body">
+  <div class="eyebrow">04 &middot; Tokens and price</div>
+  <h2>A Token Is Not a Word</h2>
+
+  <div class="wolf"><span class="wh">From the assigned reading</span>About 50,000 tokens exist and only about 3,000 are whole words. Wolfram gives the actual GPT-2 values: <b>"the"</b> is token <b>914</b>, and <b>" cat"</b> &mdash; with the space in front &mdash; is token <b>3542</b>. The space is part of the token.</div>
+
+  <div class="panel">
+    <label class="plab" for="tokIn">Paste something you would actually send &mdash; a client note, a paragraph of a trust</label>
+    <textarea id="tokIn">Adaeze's shares were issued at formation in 2013 with a basis of $310,000; the potential Section 1202 exclusion turns on original issuance and the corporation's gross assets at that time.</textarea>
+    <div class="tokstrip" id="tokStrip"></div>
+    <div class="stats">
+      <div class="stat"><span class="sn">Est. tokens</span><span class="sv" id="tokCount">0</span></div>
+      <div class="stat"><span class="sn">Words</span><span class="sv" id="tokWords">0</span></div>
+      <div class="stat"><span class="sn">Tokens / word</span><span class="sv" id="tokRatio">&mdash;</span></div>
+    </div>
+    <span class="plab" style="margin-top:16px">Cost to read this once, per Claude tier</span>
+    <div class="costgrid" id="tokCost"></div>
+    <p style="margin-bottom:0"><span class="sim">Teaching approximation &mdash; real tokenisation is model-specific</span></p>
+  </div>
+
+  <table class="dt tight">
+    <thead><tr><th>Document from this case</th><th>Approx. tokens</th><th>Into Opus 5</th></tr></thead>
+    <tbody>
+      <tr><td>Discovery meeting notes (3,000 words)</td><td class="n">~4,000</td><td class="n">$0.02</td></tr>
+      <tr><td>Joint revocable trust, 60 pages</td><td class="n">~20,000</td><td class="n">$0.10</td></tr>
+      <tr><td>LOI, purchase agreement draft and schedules</td><td class="n">~125,000</td><td class="n">$0.63</td></tr>
+      <tr><td>Entire client file, full 1M context window</td><td class="n">1,000,000</td><td class="n">$5.00</td></tr>
+    </tbody>
+  </table>
+  <p>The whole file costs five dollars to read. Cost is not the constraint. Your duty of care is &mdash; Section 12.</p>
+
+  <div class="check" data-gate="g5"><span class="mk">5</span><div class="ct"><b>Checkpoint</b>Replace the sample with your own writing, at least 40 tokens.</div></div>
+  <span class="src">Prices and context window: <b>Anthropic, Claude Platform Docs &mdash; Pricing</b>, retrieved 28 July 2026. First-party. <span class="conf h">H</span> &middot; Token IDs and vocabulary figures: Wolfram (2023). <span class="conf h">H</span> &middot; Word-to-token rows derived at 0.75 words per token. <span class="conf m">M</span></span>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 6 -->
+<section class="slide locked" id="s6" data-nav="Meaning space">
+ <div class="body">
+  <div class="eyebrow">05 &middot; Wolfram, "The Concept of Embeddings"</div>
+  <h2>Words Laid Out So That Nearby Means Similar</h2>
+
+  <div class="wolf"><span class="wh">From the assigned reading</span>Built by looking at large amounts of text &mdash; he uses <b>5 billion words</b> &mdash; and seeing how similar the environments are in which words appear. "&thinsp;'alligator' and 'crocodile' will often appear almost interchangeably&hellip; But 'turnip' and 'eagle' won't tend to appear in otherwise similar sentences, so they'll be placed far apart."</div>
+
+  <div class="chartbox">
+    <span class="plab">Click a word for its neighbours &mdash; hand-constructed illustration, not a real projection</span>
+    <svg class="ch" id="embCh" viewBox="0 0 700 400" role="img" aria-label="Two-dimensional word layout"></svg>
+    <div class="readout" id="embOut"><span class="nil">Click any word.</span></div>
+  </div>
+
+  <div class="panel"><span class="plab">Answer from the layout</span><div class="quiz" id="embQuiz"></div></div>
+
+  <div class="talk"><span class="th">Why this matters for planning &mdash; discussion</span>The planning terms cluster together because they appear in each other's company, not because the model understands them. "Grantor retained annuity trust" and "grantor retained income trust" sit almost on top of each other in embedding space and do very different things. So do "revocable" and "irrevocable" &mdash; one letter of difference, opposite consequences, and the words appear in nearly identical sentences.
+  <ul><li>Where else does our vocabulary pair near-identical language with opposite outcomes? Start with QTIP versus QDOT, or 1035 versus 1031.</li><li>What does that predict about which planning errors these tools will make most often?</li></ul></div>
+
+  <h3>One word, two meanings</h3>
+  <div class="row" id="craneBtns"></div>
+  <div class="readout" id="craneOut" style="margin-top:12px"><span class="nil">Pick a sentence.</span></div>
+  <p class="dim" style="font-size:14.5px">GPT-2 uses vectors of length 768; GPT-3 uses 12,288. What you clicked is two dimensions, hand-placed. No flat picture of a 12,288-dimensional space is faithful.</p>
+
+  <div class="check" data-gate="g6"><span class="mk">6</span><div class="ct"><b>Checkpoint</b>Answer all three questions correctly, then open both senses of "crane".</div></div>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 7 -->
+<section class="slide locked" id="s7" data-nav="Counting failure">
+ <div class="body">
+  <div class="eyebrow">06 &middot; Wolfram, on what neural nets cannot do</div>
+  <h2>The Task a Transformer Cannot Reliably Learn</h2>
+  <p class="big">Wolfram trains a small transformer on a language with exactly one rule: parentheses must balance. It learns it well enough to look right, then fails.</p>
+
+  <div class="wolf"><span class="wh">From the assigned reading &mdash; his figures</span>With 2 attention heads the learning converges after "10 million or so examples." Yet with its "<b>400,000</b> or so laboriously trained weights," it still assigns a <b>15%</b> probability to a closing parenthesis that would leave the sequence unbalanced. And: "even the full current ChatGPT has a hard time correctly matching parentheses in long sequences."</div>
+
+  <div class="panel">
+    <span class="plab">Build a sequence &mdash; the simulated model predicts what comes next</span>
+    <div class="parens" id="parenSeq"></div>
+    <div class="depthbar" id="depthBar"></div>
+    <div class="row" style="margin-top:14px">
+      <button class="btn" data-pk="(">Add&nbsp;&nbsp;(</button>
+      <button class="btn" data-pk=")">Add&nbsp;&nbsp;)</button>
+      <button class="btn ghost mini" id="parenReset">Clear</button>
+      <span class="dim mono" style="font-size:12px">depth <b id="parenDepth">0</b></span>
+    </div>
+    <div class="dist" id="parenDist" style="margin-top:16px"></div>
+    <div class="readout" id="parenOut"></div>
+    <p style="margin-bottom:0"><span class="sim">Simulated shallow model &mdash; confidence degrades with depth, as Wolfram's trained net does</span></p>
+  </div>
+
+  <p>Counting is algorithmic. The network is feed-forward &mdash; "there's no looping or 'going back'" &mdash; so it approximates a counter from local pattern, and the approximation decays with depth.</p>
+  <p class="pull">Anything requiring an exact count across a long document is the failure case, not the edge case.</p>
+
+  <div class="talk"><span class="th">Where this bites in the Okonkwo file &mdash; discussion</span>Every one of these is a counting task inside a long sequence, and every one is a place a fluent answer is least trustworthy:
+  <ul><li>Confirming the third-party special needs trust remainder percentages total 100 across a 40-page instrument with two amendments</li><li>Verifying each of the 14 accounts in the plan appears in the funding schedule and none appears twice</li><li>Checking that the basis figure quoted on page 3 of the QSBS memo matches the one used on page 40</li><li>Tracing whether the 2016 trust's pour-over provisions were superseded by a later amendment</li></ul>
+  Ask the room: which of these have you already delegated to a tool this year, and did you check the arithmetic yourself?</div>
+
+  <div class="check" data-gate="g7"><span class="mk">7</span><div class="ct"><b>Checkpoint</b>Push the sequence to a depth where the model assigns real probability to an invalid token.</div></div>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 8 -->
+<section class="slide locked" id="s8" data-nav="SAMPLER LAB">
+ <div class="body">
+  <div class="eyebrow">07 &middot; The lab</div>
+  <h2>The Nine Controls Between the Model and Your Answer</h2>
+  <p class="big">The model hands over a probability for every one of about 50,000 tokens. A stack of sampling algorithms then cuts that list down and picks one. Almost nobody using these tools professionally knows they exist.</p>
+
+  <p>Below is the candidate distribution for a prompt about the Okonkwo position, shaped as the rank<sup>&minus;1</sup> power law from Section 1. Red bars are cut; green survive.</p>
+
+  <div class="panel" style="padding:18px 20px">
+    <div class="row" style="margin-bottom:6px"><span class="dim" style="font-size:14px">Prompt:</span><span class="mono" id="labPrompt" style="font-size:13px"></span></div>
+    <div class="pipeline" id="labPipe"></div>
+  </div>
+
+  <div class="lab" id="labMods"></div>
+
+  <div class="labout">
+    <span class="plab">Surviving distribution after the full pipeline</span>
+    <div class="stats" id="labStats"></div>
+    <div class="dist" id="labDist"></div>
+    <div class="row" style="margin-top:8px">
+      <button class="btn" id="labDraw">Draw 12 samples</button>
+      <button class="btn ghost mini" id="labReset">Reset all</button>
+    </div>
+    <div class="draws" id="labDraws"></div>
+  </div>
+  <div class="readout" id="labTarget"></div>
+
+  <table class="dt tight">
+    <thead><tr><th>Sampler</th><th>Rule</th><th>What it is for</th></tr></thead>
+    <tbody>
+      <tr><td>Temperature</td><td class="n">p<sup>1/T</sup></td><td>Flattens or sharpens everything. Below 1 sharpens, above 1 flattens.</td></tr>
+      <tr><td>Dynamic temperature</td><td class="n">T varies with entropy</td><td>Hotter where the model is genuinely unsure, cooler where it is confident.</td></tr>
+      <tr><td>Smoothing factor</td><td class="n">T&middot;exp(&minus;f&middot;log(P/T)&sup2;)</td><td>Suppresses the tail without a hard cutoff.</td></tr>
+      <tr><td>Top K</td><td class="n">keep K highest</td><td>Fixed-size shortlist regardless of confidence.</td></tr>
+      <tr><td>Top P</td><td class="n">keep until &Sigma;p &gt; P</td><td>Shortlist grows when the model is uncertain, shrinks when it is not.</td></tr>
+      <tr><td>Min P</td><td class="n">keep p &gt; P&middot;T<sub>max</sub></td><td>Anything within a fixed ratio of the leader. Robust at high temperature.</td></tr>
+      <tr><td>Top A</td><td class="n">keep p &gt; A&middot;T<sub>max</sub>&sup2;</td><td>Like Min P, tightening faster when the leader dominates.</td></tr>
+      <tr><td>Tail Free Z</td><td class="n">cum. |2nd derivative| &gt; Z</td><td>Cuts where the curve flattens into its tail.</td></tr>
+      <tr><td>Typical P</td><td class="n">rank by |&minus;log p &minus; H|, then Top P</td><td>Keeps tokens whose surprise is near average &mdash; drops the obvious and the bizarre.</td></tr>
+    </tbody>
+  </table>
+
+  <p>The model's probabilities are not the answer. They are the input to a filtering stack somebody configured, usually by default, usually without telling you. These controls are exposed in the API and hidden in chat interfaces &mdash; if your final project runs through an API, you are choosing them whether you know it or not.</p>
+
+  <div class="check" data-gate="g8"><span class="mk">8</span><div class="ct"><b>Checkpoint</b>Configure the samplers so exactly three tokens survive and the leader holds more than 55% of the surviving mass.</div></div>
+  <span class="src">Algorithms follow the sampler definitions published in <b>artefact2's LLM sampling visualiser</b> (<a href="https://artefact2.github.io/llm-sampling/" style="color:var(--on)">artefact2.github.io/llm-sampling</a>), reimplemented here against an illustrative distribution. Worth running live &mdash; it uses recorded distributions from real models. <span class="conf m">M</span></span>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 9 -->
+<section class="slide locked" id="s9" data-nav="Hallucination">
+ <div class="body">
+  <div class="eyebrow">08 &middot; Consequence</div>
+  <h2>The Same Question, Asked Three Times</h2>
+  <p class="big">Everything so far was mechanism. This is what it produces.</p>
+
+  <div class="panel">
+    <span class="plab">Prompt, issued three separate times</span>
+    <div class="sampler" style="min-height:auto"><span class="stem">"What is Adam Tauman Kalai's birthday? If you know, just respond with DD-MM."</span></div>
+    <div class="runs" id="kalaiRuns" style="border-top:none;padding-top:4px"></div>
+    <div class="row" style="margin-top:12px"><button class="btn" id="kalaiBtn">Ask again</button></div>
+    <div class="readout" id="kalaiOut"><span class="nil">Press "Ask again" three times.</span></div>
+  </div>
+
+  <h3>Why it guesses instead of abstaining</h3>
+  <div class="panel">
+    <div class="row" style="margin-bottom:8px">
+      <button class="btn sel mini act" data-sc="binary">Binary scoring</button>
+      <button class="btn sel mini" data-sc="credit">Partial credit for "I don't know"</button>
+    </div>
+    <table class="mtx">
+      <thead><tr><th class="rh"></th><th>Correct</th><th>Wrong</th><th>Best strategy</th></tr></thead>
+      <tbody>
+        <tr><td class="rl">Model guesses</td><td id="c11">1</td><td id="c12">0</td><td id="c13">&mdash;</td></tr>
+        <tr><td class="rl">Model abstains</td><td id="c21">0</td><td id="c22">0</td><td id="c23">&mdash;</td></tr>
+      </tbody>
+    </table>
+    <div class="mverdict" id="scVerdict"></div>
+  </div>
+
+  <p class="pull">Confident tone is not a claim about confidence. It is the output of the scoring rule.</p>
+
+  <div class="talk"><span class="th">The planning version &mdash; discussion</span>Ask any frontier model for the Section 1202 per-issuer exclusion cap, the gross-asset ceiling at issuance, and the holding period, and it will answer all three in one confident paragraph. Two of the three are frequently right. The statute was also amended in 2025, which means the training data contains both the old and new figures, in similar sentences, with no signal about which is current.
+  <ul><li>Which of Adaeze's planning questions are arbitrary facts &mdash; a specific number, date or threshold with one right answer and many plausible wrong ones?</li><li>Which are reasoning questions where the model's tendency to produce something is less dangerous?</li><li>Sort tonight's case that way. The first list is the one you verify line by line.</li></ul></div>
+
+  <div class="check" data-gate="g9"><span class="mk">9</span><div class="ct"><b>Checkpoint</b>Ask three times, then view both scoring rules.</div></div>
+  <span class="src"><b>Kalai, A. T., Nachum, O., Vempala, S. S. &amp; Zhang, E. (2025), Why Language Models Hallucinate</b>, arXiv:2509.04664, &sect;1 and &sect;1.2. Model was DeepSeek-V3, accessed 11 May 2025. Assigned reading. <span class="conf h">H</span> &middot; The 2025 Section 1202 amendment is referenced as an example of training-data staleness; confirm current thresholds against the Code before use. <span class="conf m">M</span></span>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 10 -->
+<section class="slide locked" id="s10" data-nav="Frontier">
+ <div class="body">
+  <div class="eyebrow">09 &middot; Capability against price</div>
+  <h2>Intelligence Index Plotted Against Cost per Task</h2>
+
+  <div class="chartbox">
+    <span class="plab">Artificial Analysis Intelligence Index against cost per index task, July 2026</span>
+    <svg class="ch" id="frontCh" viewBox="0 0 700 380" role="img" aria-label="Intelligence index against cost per task"></svg>
+    <div style="margin-top:18px">
+      <div class="slab"><span>Maximum you will pay per task</span><b id="budgLab">$3.00</b></div>
+      <input type="range" id="budget" min="0" max="100" value="100" step="1" aria-label="Budget per task">
+      <div class="ticks"><span>$0.15</span><span>$0.40</span><span>$1.00</span><span>$3.00</span></div>
+    </div>
+    <div class="readout" id="frontOut"></div>
+  </div>
+
+  <p>The dashed line connects models no other model beats on capability and price at once. Going from $2.75 to $1.04 per task costs one index point; going to $0.31 costs six. Whether six points matters depends on whether you are drafting Adaeze's meeting agenda or reading her trust.</p>
+  <p class="pull">Paying for the top of the leaderboard is a decision, not a default.</p>
+
+  <table class="dt tight">
+    <thead><tr><th>Claude tier</th><th>Input / MTok</th><th>Output / MTok</th><th>Cache hit</th></tr></thead>
+    <tbody>
+      <tr><td>Haiku 4.5</td><td class="n">$1</td><td class="n">$5</td><td class="n">$0.10</td></tr>
+      <tr><td>Sonnet 5 <span class="dim">&mdash; through today</span></td><td class="n">$2</td><td class="n">$10</td><td class="n">$0.20</td></tr>
+      <tr><td>Sonnet 5 <span class="dim">&mdash; from 1 Sep</span></td><td class="n">$3</td><td class="n">$15</td><td class="n">$0.30</td></tr>
+      <tr><td>Opus 5</td><td class="n">$5</td><td class="n">$25</td><td class="n">$0.50</td></tr>
+      <tr><td>Fable 5</td><td class="n">$10</td><td class="n">$50</td><td class="n">$1</td></tr>
+    </tbody>
+  </table>
+  <p class="dim" style="font-size:14.5px">Ten times from cheapest to most expensive inside one vendor. Sonnet 5 introductory pricing ends tonight and rises 50% tomorrow. Cache hits cost 10% of input; batch is 50% on both sides. Claude 4.7 and later also produce roughly 30% more tokens for the same text &mdash; a per-token price cut does not always cut the bill.</p>
+
+  <div class="check" data-gate="g10"><span class="mk">10</span><div class="ct"><b>Checkpoint</b>Set the budget below $1.00 and identify the best model still available.</div></div>
+  <span class="src"><b>Artificial Analysis</b>, 17 and 24 July 2026. <span class="conf h">H</span> &middot; Opus 5 and GPT-5.6 Terra omitted: cost per index task unpublished, not estimated. &middot; Prices: <b>Anthropic Claude Platform Docs</b>, 28 July 2026. First-party. <span class="conf h">H</span></span>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 11 -->
+<section class="slide locked" id="s11" data-nav="Practice cost">
+ <div class="body">
+  <div class="eyebrow">10 &middot; Your firm</div>
+  <h2>What a Practice Pays in a Year</h2>
+
+  <div class="panel">
+    <div class="sgrid">
+      <div>
+        <div class="slab"><span>Advisors</span><b id="advLab">5</b></div>
+        <input type="range" id="adv" min="1" max="40" value="5" step="1" aria-label="Advisors">
+        <div class="ticks"><span>1</span><span>40</span></div>
+      </div>
+      <div>
+        <div class="slab"><span>Meetings per advisor per week</span><b id="mtgLab">8</b></div>
+        <input type="range" id="mtg" min="2" max="26" value="8" step="1" aria-label="Meetings per week">
+        <div class="ticks"><span>2</span><span>26</span></div>
+      </div>
+    </div>
+    <div class="costbars" id="costBars"></div>
+    <div class="assume" id="assumeBox"></div>
+  </div>
+
+  <p>At the defaults, metered Opus costs less than half of five Pro subscriptions. That is not an argument for the API. The subscription buys the interface, the file handling and the projects, and removes the need to build anything. Most of this room should be on subscriptions. Knowing why is the point.</p>
+
+  <div class="check" data-gate="g11"><span class="mk">11</span><div class="ct"><b>Checkpoint</b>Find a volume where metered Opus 5 exceeds the same number of Pro subscriptions. Note what it takes.</div></div>
+  <span class="src">Rates: <b>Anthropic Claude Platform Docs</b>, 28 July 2026. <span class="conf h">H</span> &middot; Annual figures derived. <span class="conf h">H</span> &middot; Tokens per meeting is an instructor-set assumption, not measured data. <span class="conf m">M</span></span>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 12 -->
+<section class="slide locked" id="s12" data-nav="Tier choice">
+ <div class="body">
+  <div class="eyebrow">11 &middot; Judgment</div>
+  <h2>Assigning a Tier to Six Tasks From This Case</h2>
+  <p class="big">There is no single right answer. There is a defensible answer and an indefensible one, and the difference is whether you can say why.</p>
+  <div class="panel quiz" id="tierQuiz"></div>
+  <div class="check" data-gate="g12"><span class="mk">12</span><div class="ct"><b>Checkpoint</b>Answer all six.</div></div>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 13 -->
+<section class="slide locked" id="s13" data-nav="Confidentiality">
+ <div class="body">
+  <div class="eyebrow">12 &middot; The line</div>
+  <h2>What May Never Be Entered Into a Third-Party Tool</h2>
+  <p class="big">Every item is drawn from the Okonkwo&ndash;Reyes file. Sort all eight. Three are harder than they look.</p>
+
+  <div class="sorter">
+    <div class="chiplist" id="npiChips"></div>
+    <div class="boxes">
+      <div class="lbox bad" data-i="0"><h4>Nonpublic personal information</h4><p>Never enters a third-party AI tool.</p><div class="why" id="whyNpi"></div></div>
+      <div class="lbox" data-i="1"><h4>Not identifying on its own</h4><p>Safe to use in a prompt.</p><div class="why" id="whySafe"></div></div>
+    </div>
+  </div>
+  <div class="slab" style="margin-bottom:6px"><span>Sorted</span><b id="npiScore">0 / 8</b></div>
+
+  <div class="panel" style="border-color:var(--on);border-width:2px">
+    <span class="plab">Course rule</span>
+    <p class="big" style="margin:0">No real client data or personally identifying information enters any AI tool at any point in this course &mdash; including the build transcript submitted with the final project.</p>
+  </div>
+
+  <p>De-identification is not deleting the name. A 58-year-old woman selling a specialty manufacturer in a named metro, with an adult autistic child on SSI, is one person &mdash; and you never typed her name.</p>
+
+  <div class="check" data-gate="g13"><span class="mk">13</span><div class="ct"><b>Checkpoint</b>Sort all eight items.</div></div>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 14 -->
+<section class="slide locked" id="s14" data-nav="Regulation">
+ <div class="body">
+  <div class="eyebrow">13 &middot; Rules and failure modes</div>
+  <h2>There Is No Separate AI Rulebook</h2>
+  <p class="big">FINRA's rules are technology-neutral. Regulatory Notice 24-09 creates no new obligations &mdash; it confirms the existing ones already reach this.</p>
+
+  <table class="dt tight">
+    <thead><tr><th>Rule</th><th>As applied to AI</th></tr></thead>
+    <tbody>
+      <tr><td>Rule 3110 &mdash; Supervision</td><td>A reasonably designed system addressing technology governance, model risk management, data privacy and integrity, and model reliability and accuracy</td></tr>
+      <tr><td>Rule 2210 &mdash; Communications</td><td>Content standards apply to AI-generated content identically to human-generated content</td></tr>
+      <tr><td>Rules 3110.09, 4511; SEA 17a-4</td><td>AI-generated correspondence must be retained</td></tr>
+      <tr><td>Third-party vendor use</td><td>Obligations apply whether the tool is built in-house or licensed</td></tr>
+    </tbody>
+  </table>
+
+  <p>On 18 March 2024 the SEC settled against two advisers over AI claims: <b>Delphia (USA) Inc.</b>, $225,000, for saying it used client data with machine learning when it had collected the data and never used it that way; and <b>Global Predictions, Inc.</b>, $175,000, for advertising "expert AI driven forecasts" without substantiation. Both censured and ordered to cease and desist, under Advisers Act &sect;206(2), &sect;206(4) and Rules 206(4)-1 and 206(4)-7. Neither case was about a wrong answer. Both were about what the firm said it was doing.</p>
+
+  <h3>When the output is wrong, what went wrong</h3>
+  <div class="panel">
+    <div class="row" id="diagBtns"></div>
+    <div class="readout" id="diagOut"><span class="nil">Select a symptom.</span></div>
+    <div class="slab" style="margin-top:12px"><span>Reviewed</span><b id="diagScore">0 / 6</b></div>
+  </div>
+
+  <div class="check" data-gate="g14"><span class="mk">14</span><div class="ct"><b>Checkpoint</b>Review at least four symptoms.</div></div>
+  <span class="src"><b>FINRA Regulatory Notice 24-09</b>, 27 June 2024, first-party. <span class="conf h">H</span> &middot; SEC proceedings announced 18 March 2024, reported consistently across Mayer Brown, Crowell &amp; Moring, White &amp; Case and Cleary. <span class="conf h">H</span> &middot; One secondary source reports Delphia at $250,000; the SEC's own announcement and the majority report $225,000.</span>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<!-- 15 -->
+<section class="slide locked" id="s15" data-nav="Close">
+ <div class="body">
+  <div class="eyebrow">14 &middot; Close</div>
+  <h2>Assignment Due Before Session 2</h2>
+
+  <div class="cards">
+    <div class="card gold"><span class="num">Part A &mdash; required for the final project</span><h4>Baseline timing</h4><p>Name one recurring task you perform at least weekly. Perform it once, manually, and record the elapsed time. Submit the task, the minutes, and the three steps that consumed the most time. Five bullets or fewer, no prose.</p></div>
+    <div class="card"><span class="num">Part B</span><h4>Three prompt templates</h4><p>An email rewriter, a case-note formatter, a one-page plan summary generator.</p></div>
+  </div>
+  <p class="dim">The Part A number is the denominator in your final project. Record it this week or you will reconstruct it from memory in Session 4.</p>
+
+  <table class="dt tight">
+    <thead><tr><th>Reading due before Session 2</th><th>Portion</th></tr></thead>
+    <tbody>
+      <tr><td>Laplace (1902 / 1814)</td><td>Ch. II, "Concerning Probability," pp. 3&ndash;8</td></tr>
+      <tr><td>Wolfram (2023)</td><td>The passage on temperature &mdash; you have now used it</td></tr>
+      <tr><td>Google (2024), Prompting Guide 101</td><td>pp. 3&ndash;6, 60&ndash;70, two of the nine role examples</td></tr>
+      <tr><td>Anthropic (2025), AI Fluency &middot; Morningstar (2025), AI for Advisors</td><td>Full</td></tr>
+    </tbody>
+  </table>
+
+  <h3>CFP Board principal knowledge topics touched tonight</h3>
+  <table class="dt tight">
+    <thead><tr><th>Domain</th><th>Where</th></tr></thead>
+    <tbody>
+      <tr><td>Professional Conduct and Regulation</td><td>FINRA 24-09, SEC AI-washing proceedings, confidentiality sort</td></tr>
+      <tr><td>General Principles</td><td>Model assumptions and the Monte Carlo parallel; tier selection as documented judgment</td></tr>
+      <tr><td>Tax Planning</td><td>Section 1202 as the arbitrary-fact example; basis tracing across a long document</td></tr>
+      <tr><td>Estate Planning</td><td>Third-party special needs trust remainder reconciliation; trust amendment tracing</td></tr>
+      <tr><td>Retirement Savings and Income</td><td>Roth conversion sequencing as a multi-step reasoning task</td></tr>
+      <tr><td>Investment Planning</td><td>Concentrated position analysis; custodial data reformatting</td></tr>
+      <tr><td>Risk Management and Insurance</td><td>Expiring term coverage and estate liquidity in the tier exercise</td></tr>
+      <tr><td>Psychology of Financial Planning</td><td>Spousal alignment and founder identity in the discovery summary task</td></tr>
+    </tbody>
+  </table>
+
+  <p class="pull" style="font-size:clamp(27px,4.6vw,48px);max-width:20ch;margin-top:42px">It predicts. It does not know.</p>
+  <p class="big">You built it by hand: counted letters, hit the combinatorial wall, turned the knobs, cut a distribution nine ways, and watched a network fail to count. Sessions 2 through 5 all follow from that.</p>
+
+  <div class="cards">
+    <div class="card"><span class="num">01</span><h4>Fluency is not evidence</h4><p>A well-formed answer and a correct answer look identical.</p></div>
+    <div class="card"><span class="num">02</span><h4>Verification is neither optional nor automatic</h4><p>Every citation checked against the primary source before it informs a recommendation.</p></div>
+    <div class="card"><span class="num">03</span><h4>Tier selection is judgment you defend</h4><p>Capability against cost per task, on your task, not someone else's benchmark.</p></div>
+    <div class="card"><span class="num">04</span><h4>You sign the work</h4><p>The tool is not a co-signer, a supervisor, or a defence.</p></div>
+  </div>
+ </div>
+ <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+<footer>
+  <p>BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors &middot; Session 1 &middot; UC Berkeley Extension, Fall 2026 &middot; Instructor: Jared Winkers</p>
+  <p>The Okonkwo&ndash;Reyes household is synthetic and constructed for this course. No real client data appears anywhere in this document.</p>
+  <p>Sections 1&ndash;7 follow Wolfram, S. (2023), <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">What Is ChatGPT Doing &hellip; and Why Does It Work?</a> Section 8 reimplements the sampler set at <a href="https://artefact2.github.io/llm-sampling/">artefact2.github.io/llm-sampling</a>. Other sources: <a href="https://arxiv.org/abs/2509.04664">Kalai et al. (2025)</a> &middot; <a href="https://artificialanalysis.ai/models">artificialanalysis.ai</a> &middot; <a href="https://platform.claude.com/docs/en/about-claude/pricing">Anthropic pricing</a> &middot; <a href="https://www.finra.org/rules-guidance/notices/24-09">FINRA 24-09</a></p>
+  <p>Capability and pricing figures reflect published data as of 28 July 2026. Six frontier models crossed the same capability threshold in the six weeks before this was built. Verify every benchmark and price before relying on it.</p>
+</footer>
+
+</div>
+<script>
+(function(){
+"use strict";
+function $(id){return document.getElementById(id)}
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+function money(n){return n<10?'$'+n.toFixed(2):'$'+Math.round(n).toLocaleString()}
+function fmt(n){return n.toLocaleString('en-US')}
+function scroll(e){if(e&&e.scrollIntoView)e.scrollIntoView()}
+function all(s,r){return [].slice.call((r||document).querySelectorAll(s))}
+
+/* ===== GATES ===== */
+var secs=all('section.slide'),rail=$('rail'),passed={},totalGates=document.querySelectorAll('[data-gate]').length;
+secs.forEach(function(s){var b=el('button',null,'<span class="pip"></span><span class="lbl">'+s.dataset.nav+'</span>');
+  b.onclick=function(){if(!s.classList.contains('locked'))scroll(s)};rail.appendChild(b)});
+var pips=all('button',rail);
+function gateOf(i){var c=secs[i].querySelector('[data-gate]');return c?c.dataset.gate:null}
+function reveal(i){if(i>=secs.length)return;if(!secs[i].classList.contains('locked'))return;
+  secs[i].classList.remove('locked');if(!gateOf(i))reveal(i+1)}
+function prog(){var d=Object.keys(passed).length;$('pfill').style.width=(d/totalGates*100)+'%';$('pnum').textContent=d+' / '+totalGates}
+function pass(id){if(passed[id])return;passed[id]=1;
+  var c=document.querySelector('[data-gate="'+id+'"]');
+  if(c){c.classList.add('done');c.querySelector('.mk').textContent='\u2713';
+    var i=secs.indexOf(c.closest('section.slide'));pips[i].classList.add('done');reveal(i+1)}
+  prog()}
+prog();
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(e.isIntersecting){var i=secs.indexOf(e.target);pips.forEach(function(p,j){p.classList.toggle('on',j===i)})}})},
+  {rootMargin:'-45% 0px -45% 0px'});secs.forEach(function(s){io.observe(s)})}
+document.addEventListener('keydown',function(e){
+  if(e.shiftKey&&(e.key==='U'||e.key==='u')){secs.forEach(function(s){s.classList.remove('locked')});
+    all('[data-gate]').forEach(function(c){pass(c.dataset.gate)});return}
+  if(e.key==='Escape'){$('caseModal').classList.remove('open');return}
+  var t=(document.activeElement&&document.activeElement.tagName)||'';
+  if(t==='TEXTAREA'||t==='INPUT')return;
+  if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+    var open=secs.filter(function(s){return !s.classList.contains('locked')}),cur=0,mid=window.innerHeight/2;
+    open.forEach(function(s,i){if(s.getBoundingClientRect().top<=mid)cur=i});
+    scroll(open[Math.max(0,Math.min(open.length-1,cur+(e.key==='ArrowRight'?1:-1)))]);e.preventDefault()}
+});
+$('beginBtn').onclick=function(){pass('g1');setTimeout(function(){scroll(secs[1])},220)};
+
+/* ===== CASE MODAL ===== */
+$('caseInner').innerHTML='<div class="eyebrow">Synthetic case &mdash; constructed for this course</div>'+
+ '<h2 style="margin-bottom:14px">Okonkwo&ndash;Reyes Household</h2>'+
+ (document.querySelector('#s1 .panel table')?document.querySelector('#s1 .panel table').outerHTML:'')+
+ '<div class="talk" style="margin-top:18px"><span class="th">Open planning questions this case raises</span><ul>'+
+ '<li><b>Tax.</b> Do the 2013 shares qualify under Section 1202 &mdash; original issuance, C-corp status, gross assets at issuance, five-year holding? Is trust stacking available before the LOI closes?</li>'+
+ '<li><b>Estate.</b> A direct bequest to Ilesanmi disqualifies SSI and the Medicaid waiver. Third-party SNT, ABLE account, or both &mdash; and who is trustee after both parents?</li>'+
+ '<li><b>Risk.</b> $2M term expires at 65, before the youngest need is met. Estate liquidity for a concentrated illiquid position pre-close is the exposure, not the premium.</li>'+
+ '<li><b>Charitable.</b> CRUT funded before the LOI versus a DAF after close &mdash; timing, assignment-of-income doctrine, and whether the deduction is usable against sale-year income.</li>'+
+ '<li><b>Retirement.</b> The sale year is the worst conversion year and the years after it may be the best. Where does the Roth window sit against IRMAA and the pension election at 65?</li>'+
+ '<li><b>Investment.</b> Pre-close the position cannot be hedged conventionally. Post-close the problem inverts to deploying $14M at once.</li>'+
+ '<li><b>Psychology.</b> Adaeze\u2019s identity is bound to the company; Miguel wants the sale closed yesterday. The plan fails on this before it fails on tax.</li>'+
+ '</ul></div>'+
+ '<div class="row" style="margin-top:18px"><button class="btn ghost" id="caseClose">Close</button></div>';
+$('caseBtn').onclick=function(){$('caseModal').classList.add('open')};
+$('caseClose').onclick=function(){$('caseModal').classList.remove('open')};
+$('caseModal').onclick=function(e){if(e.target===$('caseModal'))$('caseModal').classList.remove('open')};
+
+/* ===== 01 PREDICTION ===== */
+var G2={tok:0,temp:{},ax:0};
+function checkG2(){if(G2.tok&&Object.keys(G2.temp).length>=3&&G2.ax)pass('g2')}
+var S2STEM='Her concentrated position in the operating company should be';
+var S2=[
+ [['reviewed against',.33],['hedged before',.24],['contributed to',.19],['sold at',.14],['retained until',.10]],
+ [['the Section 1202',.31],['the liquidity event',.26],['a charitable remainder',.21],['the shareholder',.13],['her stated',.09]],
+ [['holding period',.34],['gross asset test',.25],['closing date',.20],['agreement terms',.13],['income needs',.08]],
+ [[', because the',.30],['. The basis of',.27],[', which was',.21],['. Her shares',.14],[', assuming',.08]],
+ [['$310,000 basis',.35],['2013 issuance',.27],['original issuance',.19],['five-year clock',.13],['exclusion cap',.06]],
+ [['controls the outcome',.34],['has not been verified',.27],['may have lapsed',.20],['is documented',.13],['is disputed',.06]]
+];
+var s2i=0,s2path=[];
+function s2draw(){
+  var h='<span class="stem">'+S2STEM+'</span> ';
+  s2path.forEach(function(t,i){h+='<span class="tok'+(i===s2path.length-1?' fresh':'')+'">'+t+'</span> '});
+  if(s2i>=S2.length)h+='<span class="dim">\u2014 six placed. Is your sentence true? Nothing in the process checked.</span>';
+  $('s2samp').innerHTML=h;
+  var d=$('s2dist');d.innerHTML='';$('s2count').textContent=s2i;
+  if(s2i>=S2.length){G2.tok=1;checkG2();return}
+  var opts=S2[s2i],mx=Math.max.apply(null,opts.map(function(o){return o[1]}));
+  opts.forEach(function(o,i){
+    var r=el('div','drow'+(i===0?' keep':''),'<span>'+o[0]+'</span><span class="dbar"><span style="width:'+(o[1]/mx*100).toFixed(1)+'%"></span></span><span class="pv">'+(o[1]*100).toFixed(0)+'%</span>');
+    r.onclick=function(){s2path.push(opts[i][0]);s2i++;s2draw()};d.appendChild(r)})}
+$('s2reset').onclick=function(){s2i=0;s2path=[];s2draw()};s2draw();
+
+var T3=['the','trust','position','and','basis','estate','of','tax','plan','account','review','a','to','income','risk','gain','gift','value','in','asset'];
+var T3P=(function(){var p=T3.map(function(_,i){return 1/(i+1)});var s=p.reduce(function(a,b){return a+b},0);return p.map(function(v){return v/s})})();
+var t3T=0;
+function temper(ps,T){if(T<=0.001){var m=Math.max.apply(null,ps);return ps.map(function(p){return p===m?1:0})}
+  var q=ps.map(function(p){return Math.pow(p,1/T)}),s=q.reduce(function(a,b){return a+b},0);return q.map(function(v){return v/s})}
+function drawFrom(ps){var r=Math.random(),a=0;for(var i=0;i<ps.length;i++){a+=ps[i];if(r<=a)return i}return ps.length-1}
+function longestRepeat(a){var best=1,run=1;
+  for(var i=1;i<a.length;i++){if(a[i]===a[i-1]){run++;best=Math.max(best,run)}else run=1}
+  var b2=0;for(var L=1;L<=6;L++){var c=0;for(var i=0;i+2*L<=a.length;i++){var same=true;
+    for(var j=0;j<L;j++)if(a[i+j]!==a[i+L+j]){same=false;break}if(same)c=Math.max(c,L)}b2=Math.max(b2,c)}
+  return Math.max(best,b2*2)}
+all('[data-tmp]').forEach(function(b){b.onclick=function(){
+  all('[data-tmp]').forEach(function(x){x.classList.toggle('act',x===b)});t3T=parseFloat(b.dataset.tmp);$('s3t').textContent=t3T}});
+$('s3gen').onclick=function(){
+  var ps=temper(T3P,t3T),out=[];for(var i=0;i<40;i++)out.push(T3[drawFrom(ps)]);
+  $('s3out').textContent=out.join(' ');
+  $('s3uni').textContent=Object.keys(out.reduce(function(o,w){o[w]=1;return o},{})).length;
+  $('s3rep').textContent=longestRepeat(out);$('s3t').textContent=t3T;
+  G2.temp[t3T]=1;checkG2()};
+
+var PLN=40,PLP=(function(){var p=[];for(var i=1;i<=PLN;i++)p.push(1/i);var s=p.reduce(function(a,b){return a+b},0);return p.map(function(v){return v/s})})();
+function plDraw(mode){
+  var W=700,H=290,L=62,R=22,T=18,B=52,pw=W-L-R,ph=H-T-B,s='',pts=[];
+  s+='<rect x="'+L+'" y="'+T+'" width="'+pw+'" height="'+ph+'" fill="#fff"/>';
+  if(mode==='lin'){
+    [0,.05,.1,.15,.2,.25].forEach(function(v){var y=T+ph-(v/.26)*ph;
+      s+='<line class="grid" x1="'+L+'" y1="'+y+'" x2="'+(L+pw)+'" y2="'+y+'"/><text x="'+(L-8)+'" y="'+(y+4)+'" text-anchor="end">'+(v*100).toFixed(0)+'%</text>'});
+    PLP.forEach(function(p,i){pts.push([L+(i/(PLN-1))*pw,T+ph-(p/.26)*ph])});
+    [1,10,20,30,40].forEach(function(r){s+='<text x="'+(L+((r-1)/(PLN-1))*pw)+'" y="'+(T+ph+18)+'" text-anchor="middle">'+r+'</text>'});
+  }else{
+    var lx=function(r){return L+(Math.log(r)/Math.log(PLN))*pw},
+        ly=function(p){return T+ph-((Math.log(p)-Math.log(PLP[PLN-1]))/(Math.log(PLP[0])-Math.log(PLP[PLN-1])))*ph};
+    [PLP[0],.05,.02,.01,PLP[PLN-1]].forEach(function(v){var y=ly(v);
+      s+='<line class="grid" x1="'+L+'" y1="'+y+'" x2="'+(L+pw)+'" y2="'+y+'"/><text x="'+(L-8)+'" y="'+(y+4)+'" text-anchor="end">'+(v*100).toFixed(1)+'%</text>'});
+    PLP.forEach(function(p,i){pts.push([lx(i+1),ly(p)])});
+    [1,2,5,10,20,40].forEach(function(r){s+='<text x="'+lx(r)+'" y="'+(T+ph+18)+'" text-anchor="middle">'+r+'</text>'});
+  }
+  var d='';pts.forEach(function(p,i){d+=(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)});
+  s+='<path d="'+d+'" fill="none" stroke="var(--on)" stroke-width="2"/>';
+  pts.forEach(function(p){s+='<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="3" fill="var(--on)"/>'});
+  s+='<text class="axl" x="'+(L+pw/2)+'" y="'+(T+ph+42)+'" text-anchor="middle">Rank of candidate token</text>';
+  s+='<text class="axl" x="'+(-(T+ph/2))+'" y="14" text-anchor="middle" transform="rotate(-90)">Probability</text>';
+  $('plCh').innerHTML=s;
+  $('plOut').className='readout on';
+  $('plOut').innerHTML=mode==='lin'
+   ?'<span class="cz">Linear axes</span>The top candidate holds '+(PLP[0]*100).toFixed(1)+'% of the mass; by rank 10 a candidate holds '+(PLP[9]*100).toFixed(1)+'%. Everything past rank 15 looks like zero and is not zero. That tail is where the surprising word \u2014 and the wrong citation \u2014 comes from.'
+   :'<span class="cz">Log\u2013log axes</span>Now a straight line. That is the n<sup>\u22121</sup> power law Wolfram identifies as characteristic of language. Straight means no natural cutoff \u2014 no rank where the tail stops mattering.';
+  if(mode==='log'){G2.ax=1;checkG2()}}
+all('[data-ax]').forEach(function(b){b.onclick=function(){
+  all('[data-ax]').forEach(function(x){x.classList.toggle('act',x===b)});plDraw(b.dataset.ax)}});
+plDraw('lin');
+
+/* ===== 02 N-GRAMS + WALL ===== */
+var CORPUS="The client built the company and the client now holds the position that funds the plan. The planner asks what the client wants the money to do before the planner asks what the money can do. A trust holds the asset for a beneficiary under terms the grantor set. The basis matters because the gain is measured from it. A gift removes the asset from the estate and starts a clock. The plan is not the document. The plan is the set of decisions the client makes and the discipline to hold to them when the market moves against the plan. The planner documents the reason for every recommendation so that another planner can follow the reasoning and a regulator can review it. The client owns the plan and the planner owns the process that produced it. A good planner asks the question the client did not think to ask and writes the answer in language the client can repeat to a spouse.";
+$('corpus').value=CORPUS;
+var LS={},BG={},WU={},WB={},clean='';
+function build(){
+  clean=$('corpus').value.toLowerCase().replace(/[^a-z ]+/g,' ').replace(/\s+/g,' ').trim();
+  var words=clean.split(' ').filter(Boolean);LS={};BG={};WU={};WB={};
+  for(var i=0;i<clean.length;i++){var c=clean[i];LS[c]=(LS[c]||0)+1}
+  for(var n=1;n<=4;n++){BG[n]={};for(var i=0;i+n<=clean.length;i++){var k=clean.slice(i,i+n),nx=clean[i+n];
+    if(nx==null)continue;BG[n][k]=BG[n][k]||{};BG[n][k][nx]=(BG[n][k][nx]||0)+1}}
+  words.forEach(function(w,i){WU[w]=(WU[w]||0)+1;
+    if(i<words.length-1){WB[w]=WB[w]||{};WB[w][words[i+1]]=(WB[w][words[i+1]]||0)+1}});
+  $('cChars').textContent=fmt(clean.length);$('cWords').textContent=fmt(words.length);
+  $('cUniq').textContent=fmt(Object.keys(WU).length);
+  $('cBig').textContent=fmt(Object.keys(BG[1]||{}).reduce(function(a,k){return a+Object.keys(BG[1][k]).length},0))}
+function pick(m){var tot=0,k;for(k in m)tot+=m[k];var r=Math.random()*tot;for(k in m){r-=m[k];if(r<=0)return k}return k}
+var G3={ng:0,wg:0,wall:0};
+function checkG3(){if(G3.ng&&G3.wg&&G3.wall)pass('g3')}
+function ngGen(n){
+  var out='';
+  if(n===1){for(var i=0;i<400;i++)out+=pick(LS)}
+  else{var ctx=clean.slice(0,n-1);out=ctx;
+    for(var i=0;i<400;i++){var m=BG[n-1]&&BG[n-1][ctx];if(!m){ctx=clean.slice(0,n-1);out+=' ';continue}
+      out+=pick(m);ctx=out.slice(-(n-1))}}
+  $('ngOut').textContent=out;
+  var made=out.split(' ').filter(function(w){return w.length>1});
+  $('ngReal').textContent=made.filter(function(w){return WU[w]}).length;
+  $('ngOrd').textContent=n;
+  if(n===4){G3.ng=1;checkG3()}}
+function wgGen(mode){
+  var out=[];
+  if(mode===1){for(var i=0;i<42;i++)out.push(pick(WU))}
+  else{var w='client';out.push(w);for(var i=0;i<42;i++){var m=WB[w];if(!m){w=pick(WU);out.push(w);continue}w=pick(m);out.push(w)}
+    G3.wg=1;checkG3()}
+  $('wgOut').textContent=out.join(' ')}
+$('corpus').addEventListener('input',build);
+all('[data-ng]').forEach(function(b){b.onclick=function(){
+  all('[data-ng]').forEach(function(x){x.classList.toggle('act',x===b)});ngGen(+b.dataset.ng)}});
+var wgMode=1;
+all('[data-wg]').forEach(function(b){b.onclick=function(){
+  all('[data-wg]').forEach(function(x){x.classList.toggle('act',x===b)});wgMode=+b.dataset.wg;wgGen(wgMode)}});
+$('wgAgain').onclick=function(){wgGen(wgMode)};build();
+
+var VOCAB=40000,TEXTWORDS=4e11;
+function wallDraw(){
+  var n=+$('nSlide').value;$('nLab').textContent=n;
+  var W=700,H=220,L=64,R=22,T=18,B=46,pw=W-L-R,ph=H-T-B,s='',maxLog=Math.log10(Math.pow(VOCAB,8));
+  s+='<rect x="'+L+'" y="'+T+'" width="'+pw+'" height="'+ph+'" fill="#fff"/>';
+  for(var g=0;g<=36;g+=6){var y=T+ph-(g/maxLog)*ph;
+    s+='<line class="grid" x1="'+L+'" y1="'+y+'" x2="'+(L+pw)+'" y2="'+y+'"/><text x="'+(L-8)+'" y="'+(y+4)+'" text-anchor="end">10^'+g+'</text>'}
+  var ty=T+ph-(Math.log10(TEXTWORDS)/maxLog)*ph;
+  s+='<line x1="'+L+'" y1="'+ty+'" x2="'+(L+pw)+'" y2="'+ty+'" stroke="var(--warn)" stroke-width="2" stroke-dasharray="5 4"/>';
+  s+='<text x="'+(L+pw-4)+'" y="'+(ty-7)+'" text-anchor="end" style="fill:var(--warn)">all text ever written \u2014 about 400 billion words</text>';
+  for(var k=1;k<=8;k++){var lg=k*Math.log10(VOCAB),x=L+((k-.5)/8)*pw,bw=pw/8*.6,h=(lg/maxLog)*ph,over=lg>Math.log10(TEXTWORDS);
+    s+='<rect x="'+(x-bw/2)+'" y="'+(T+ph-h)+'" width="'+bw+'" height="'+h+'" rx="3" fill="'+(k===n?(over?'var(--warn)':'var(--on)'):'var(--off-bg)')+'"/>';
+    s+='<text x="'+x+'" y="'+(T+ph+17)+'" text-anchor="middle"'+(k===n?' style="fill:var(--ink)"':'')+'>'+k+'</text>'}
+  s+='<text class="axl" x="'+(L+pw/2)+'" y="'+(T+ph+38)+'" text-anchor="middle">Sequence length in words</text>';
+  $('wallCh').innerHTML=s;
+  var lg=n*Math.log10(VOCAB),txt;
+  if(n===1)txt='<span class="cz">40,000 possible single words</span>Easily counted.';
+  else if(n===2)txt='<span class="cz">1.6 billion possible pairs</span>Wolfram\u2019s figure exactly. Still countable against a few hundred billion words \u2014 most pairs never occur, and the ones that do occur often enough to estimate.';
+  else if(n===3)txt='<span class="cz">60 trillion possible triples</span>Wolfram\u2019s figure. 150 times more possible sequences than words of text in existence. Most of the table is empty and you cannot distinguish "never happens" from "never observed".';
+  else txt='<span class="cz">10<sup>'+lg.toFixed(0)+'</sup> possible sequences</span>'+(lg-Math.log10(TEXTWORDS)).toFixed(0)+' orders of magnitude beyond all text ever written. Counting is finished as a strategy.';
+  $('wallOut').className='readout '+(lg>Math.log10(TEXTWORDS)?'bad':'on');
+  $('wallOut').innerHTML=txt;
+  if(n===3){G3.wall=1;checkG3()}}
+$('nSlide').addEventListener('input',wallDraw);wallDraw();
+
+/* ===== 03 MODEL FIT + SCALE ===== */
+var G4={fit:0,guess:0};
+function checkG4(){if(G4.fit&&G4.guess)pass('g4')}
+var FLOORS=[1,2,3,4,5,6,7,8],FALL=FLOORS.map(function(f){return Math.sqrt(2*f*5/9.81)});
+var FORMS={lin:{n:2,lab:['a','b'],basis:function(x){return[1,x]},rng:[[-2,3],[-.5,1]]},
+ quad:{n:3,lab:['a','b','c'],basis:function(x){return[1,x,x*x]},rng:[[-2,3],[-.5,1],[-.15,.15]]},
+ sin:{n:3,lab:['a','b','c'],basis:function(x){return[1,1/x,Math.sin(x)]},rng:[[-2,5],[-4,4],[-3,3]]}};
+var mf='lin',pars=[0,0,0];
+function predict(x){var b=FORMS[mf].basis(x),v=0;for(var i=0;i<FORMS[mf].n;i++)v+=pars[i]*b[i];return v}
+function loss(){var s=0;FLOORS.forEach(function(f,i){var d=predict(f)-FALL[i];s+=d*d});return s}
+function solve(A,y){var n=A.length;
+  for(var i=0;i<n;i++){var mx=i;for(var r=i+1;r<n;r++)if(Math.abs(A[r][i])>Math.abs(A[mx][i]))mx=r;
+    var t=A[i];A[i]=A[mx];A[mx]=t;var t2=y[i];y[i]=y[mx];y[mx]=t2;
+    if(Math.abs(A[i][i])<1e-12)continue;
+    for(var r=i+1;r<n;r++){var f=A[r][i]/A[i][i];for(var c=i;c<n;c++)A[r][c]-=f*A[i][c];y[r]-=f*y[i]}}
+  var x=new Array(n).fill(0);
+  for(var i=n-1;i>=0;i--){var s=y[i];for(var c=i+1;c<n;c++)s-=A[i][c]*x[c];x[i]=Math.abs(A[i][i])<1e-12?0:s/A[i][i]}
+  return x}
+function bestFit(){var n=FORMS[mf].n,A=[],y=[];
+  for(var i=0;i<n;i++){A.push(new Array(n).fill(0));y.push(0)}
+  FLOORS.forEach(function(f,k){var b=FORMS[mf].basis(f);
+    for(var i=0;i<n;i++){y[i]+=b[i]*FALL[k];for(var j=0;j<n;j++)A[i][j]+=b[i]*b[j]}});
+  return solve(A,y)}
+function knobs(){var h='';
+  for(var i=0;i<FORMS[mf].n;i++){var r=FORMS[mf].rng[i];
+    h+='<div class="slab" style="margin-top:11px"><span>'+FORMS[mf].lab[i]+'</span><b id="kv'+i+'">'+pars[i].toFixed(3)+'</b></div>'+
+       '<input type="range" id="kn'+i+'" min="'+r[0]+'" max="'+r[1]+'" step="0.001" value="'+pars[i]+'">'}
+  $('fitKnobs').innerHTML=h;
+  for(var i=0;i<FORMS[mf].n;i++)(function(i){$('kn'+i).addEventListener('input',function(){
+    pars[i]=parseFloat(this.value);$('kv'+i).textContent=pars[i].toFixed(3);fitDraw()})})(i)}
+function fitDraw(){
+  var W=460,H=290,L=52,R=18,T=16,B=46,pw=W-L-R,ph=H-T-B,s='';
+  var x=function(f){return L+((f-0.5)/8)*pw},y=function(t){return T+ph-(t/3.2)*ph};
+  s+='<rect x="'+L+'" y="'+T+'" width="'+pw+'" height="'+ph+'" fill="#fff"/>';
+  [0,1,2,3].forEach(function(v){s+='<line class="grid" x1="'+L+'" y1="'+y(v)+'" x2="'+(L+pw)+'" y2="'+y(v)+'"/><text x="'+(L-8)+'" y="'+(y(v)+4)+'" text-anchor="end">'+v+'s</text>'});
+  FLOORS.forEach(function(f){s+='<text x="'+x(f)+'" y="'+(T+ph+16)+'" text-anchor="middle">'+f+'</text>'});
+  var d='';
+  for(var f=0.6;f<=8.4;f+=0.1){var v=predict(f);if(!isFinite(v))continue;
+    d+=(d?'L':'M')+x(f).toFixed(1)+' '+Math.max(T-20,Math.min(T+ph+20,y(v))).toFixed(1)}
+  s+='<path d="'+d+'" fill="none" stroke="var(--warn)" stroke-width="2.2"/>';
+  FLOORS.forEach(function(f,i){
+    s+='<line x1="'+x(f)+'" y1="'+y(FALL[i])+'" x2="'+x(f)+'" y2="'+Math.max(T-20,Math.min(T+ph+20,y(predict(f))))+'" stroke="var(--off)" stroke-width="1"/>';
+    s+='<circle cx="'+x(f)+'" cy="'+y(FALL[i])+'" r="5" fill="var(--on)" stroke="#fff" stroke-width="2"/>'});
+  s+='<text class="axl" x="'+(L+pw/2)+'" y="'+(T+ph+38)+'" text-anchor="middle">Floor</text>';
+  $('fitCh').innerHTML=s;
+  var l=loss();$('lossVal').textContent=l.toFixed(4);
+  $('lossBar').className='lossbar'+(l<0.02?' good':'');
+  $('lossBar').querySelector('span').style.width=Math.max(2,Math.min(100,l/1.5*100))+'%';
+  if(l<0.02){$('fitOut').className='readout on';
+    $('fitOut').innerHTML='<span class="cz">Fitted</span>Loss '+l.toFixed(4)+'. You minimised a loss function by turning '+FORMS[mf].n+' knobs. Training does the same with 175 billion, using calculus instead of your hand.';
+    G4.fit=1;checkG4()}
+  else if(mf==='sin'){$('fitOut').className='readout bad';
+    $('fitOut').innerHTML='<span class="cz">Wrong structure</span>Same number of knobs as the quadratic, and it cannot fit at any setting. The failure is in the basis, chosen before any data arrived.'}
+  else{$('fitOut').className='readout';
+    $('fitOut').innerHTML='<span class="nil">Loss '+l.toFixed(4)+'. Target is below 0.02.</span>'}}
+all('[data-mf]').forEach(function(b){b.onclick=function(){
+  all('[data-mf]').forEach(function(x){x.classList.toggle('act',x===b)});mf=b.dataset.mf;pars=[0,0,0];knobs();fitDraw()}});
+$('fitAuto').onclick=function(){var p=bestFit();
+  for(var i=0;i<p.length;i++){pars[i]=p[i];var r=FORMS[mf].rng[i];
+    if($('kn'+i)){$('kn'+i).min=Math.min(r[0],p[i]);$('kn'+i).max=Math.max(r[1],p[i]);$('kn'+i).value=p[i];$('kv'+i).textContent=p[i].toFixed(3)}}
+  fitDraw()};
+knobs();fitDraw();
+
+var GUESS=[
+ {q:'Weights in the ChatGPT (GPT-3) neural net',min:6,max:13,ans:175e9,
+  note:'175 billion. Every one is used for every single token generated.'},
+ {q:'Length of one embedding vector in GPT-3',min:2,max:5,ans:12288,
+  note:'12,288 numbers per token, against 768 in GPT-2. That list is the entire representation of the token.'},
+ {q:'Of ~50,000 tokens, how many are whole words',min:2,max:4.7,ans:3000,
+  note:'About 3,000. The other 47,000 are fragments \u2014 which is why the model can invent words and why your token count never matches your word count.'}];
+(function(){
+  var h='';
+  GUESS.forEach(function(g,i){h+='<div style="margin-bottom:18px"><div class="slab"><span>'+g.q+'</span><b id="gv'+i+'">?</b></div>'+
+    '<input type="range" id="gs'+i+'" min="'+g.min+'" max="'+g.max+'" step="0.01" value="'+((g.min+g.max)/2)+'">'+
+    '<div class="readout" id="go'+i+'" style="min-height:auto;padding:10px 13px"><span class="nil">Move the slider, then submit.</span></div></div>'});
+  h+='<div class="row"><button class="btn" id="guessGo">Submit all three</button></div>';
+  $('guessPanel').innerHTML=h;
+  GUESS.forEach(function(g,i){var upd=function(){$('gv'+i).textContent=fmt(Math.round(Math.pow(10,parseFloat($('gs'+i).value))))};
+    $('gs'+i).addEventListener('input',upd);upd()});
+  $('guessGo').onclick=function(){
+    GUESS.forEach(function(g,i){var v=Math.pow(10,parseFloat($('gs'+i).value)),ratio=v/g.ans;
+      var off=ratio>1?ratio.toFixed(1)+'\u00d7 too high':(1/ratio).toFixed(1)+'\u00d7 too low';
+      if(ratio>0.75&&ratio<1.33)off='within a third \u2014 good instinct';
+      $('go'+i).className='readout on';
+      $('go'+i).innerHTML='<span class="cz">Actual '+fmt(g.ans)+' \u2014 you were '+off+'</span>'+g.note});
+    G4.guess=1;checkG4()}})();
+
+/* ===== 04 TOKENS ===== */
+var TIERS=[['Haiku 4.5',1],['Sonnet 5',3],['Opus 5',5],['Fable 5',10]];
+function tokenize(t){var parts=t.match(/\s+|[^\s]+/g)||[],out=[];
+  parts.forEach(function(p){if(/^\s+$/.test(p))return;
+    if(p.length<=5){out.push(p);return}
+    for(var i=0;i<p.length;i+=4)out.push(p.slice(i,i+4))});
+  return out}
+var tokOrig=null;
+function tok(){
+  var t=$('tokIn').value,ts=tokenize(t),w=(t.match(/\S+/g)||[]).length;
+  if(tokOrig===null)tokOrig=t.trim();
+  $('tokStrip').innerHTML=ts.slice(0,200).map(function(s){return '<span>'+s.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</span>'}).join('')+
+    (ts.length>200?'<span style="background:none;color:var(--muted)">+'+(ts.length-200)+' more</span>':'');
+  $('tokCount').textContent=fmt(ts.length);$('tokWords').textContent=fmt(w);
+  $('tokRatio').textContent=w?(ts.length/w).toFixed(2):'\u2014';
+  $('tokCost').innerHTML=TIERS.map(function(x){var c=ts.length/1e6*x[1];
+    return '<div class="cbox"><span class="cn">'+x[0]+'</span><span class="cv">'+(c<0.0001?'&lt;$0.0001':'$'+c.toFixed(4))+'</span></div>'}).join('');
+  if(ts.length>=40&&t.trim()!==tokOrig)pass('g5')}
+$('tokIn').addEventListener('input',tok);tok();
+
+/* ===== 05 EMBEDDINGS ===== */
+var EMB=[
+ {w:'alligator',x:92,y:296,g:'r'},{w:'crocodile',x:130,y:316,g:'r'},{w:'lizard',x:80,y:258,g:'r'},
+ {w:'eagle',x:556,y:70,g:'b'},{w:'hawk',x:596,y:94,g:'b'},{w:'heron',x:530,y:106,g:'b'},
+ {w:'turnip',x:614,y:330,g:'v'},{w:'carrot',x:650,y:306,g:'v'},{w:'parsnip',x:626,y:360,g:'v'},
+ {w:'excavator',x:174,y:64,g:'m'},{w:'bulldozer',x:136,y:90,g:'m'},{w:'winch',x:202,y:106,g:'m'},
+ {w:'revocable',x:296,y:204,g:'p'},{w:'irrevocable',x:312,y:220,g:'p'},
+ {w:'GRAT',x:366,y:184,g:'p'},{w:'GRIT',x:382,y:196,g:'p'},
+ {w:'QTIP',x:412,y:230,g:'p'},{w:'QDOT',x:428,y:242,g:'p'},
+ {w:'trustee',x:332,y:256,g:'p'},{w:'remainder',x:398,y:268,g:'p'}];
+(function(){
+  var C={r:'var(--on)',b:'var(--gold)',v:'var(--warn)',m:'#4A6572',p:'var(--on)'},s='';
+  s+='<rect x="0" y="0" width="700" height="400" fill="#fff" rx="8"/>';
+  EMB.forEach(function(d,i){s+='<g class="pt" data-e="'+i+'"><circle cx="'+d.x+'" cy="'+d.y+'" r="6" style="fill:'+C[d.g]+'"/><text x="'+(d.x+11)+'" y="'+(d.y+4)+'">'+d.w+'</text></g>'});
+  s+='<text x="14" y="22" style="fill:var(--muted)">two dimensions, hand-placed \u2014 GPT-3 uses 12,288</text>';
+  $('embCh').innerHTML=s;
+  all('.pt',$('embCh')).forEach(function(g){g.onclick=function(){
+    all('.pt',$('embCh')).forEach(function(x){x.classList.toggle('sel',x===g)});
+    var d=EMB[+g.dataset.e];
+    var near=EMB.filter(function(o){return o!==d}).map(function(o){return{w:o.w,dd:Math.hypot(o.x-d.x,o.y-d.y)}}).sort(function(a,b){return a.dd-b.dd});
+    $('embOut').className='readout on';
+    $('embOut').innerHTML='<span class="cz">'+d.w+'</span>Nearest: <b>'+near[0].w+'</b>, then '+near[1].w+' and '+near[2].w+'. Furthest: '+near[near.length-1].w+
+      '. In a real embedding this proximity is not designed \u2014 it falls out of these words appearing in interchangeable sentences.'}})})();
+var EQ=[
+ {t:'Wolfram\u2019s own example: which word sits nearest to "alligator"?',o:['crocodile','eagle','turnip'],a:0,
+  f:['Correct \u2014 his canonical near pair, because the two are substitutable in a sentence.','Wolfram uses alligator and crocodile precisely because they are substitutable in a sentence.']},
+ {t:'Which pair does he give as the example of words placed far apart?',o:['eagle and hawk','turnip and eagle','GRAT and GRIT'],a:1,
+  f:['Correct. Neither appears in the environments the other does, so nothing pulls them together.','His example is turnip and eagle \u2014 words that never appear in otherwise similar sentences.']},
+ {t:'Which planning pair sits closest together while doing nearly opposite things?',o:['revocable and irrevocable','trustee and remainder','QTIP and GRAT'],a:0,
+  f:['Correct, and this is the danger. One letter apart, near-identical surrounding sentences, opposite consequences for estate inclusion, creditor protection and basis step-up.','Revocable and irrevocable is the pair. Near-identical context, opposite consequences \u2014 the model has nothing pulling them apart.']}];
+(function(){
+  var host=$('embQuiz');
+  host.innerHTML=EQ.map(function(q,i){return '<div class="qitem" data-i="'+i+'"><span class="qtext">'+q.t+'</span><div class="row qbtns">'+
+    q.o.map(function(o,j){return '<button class="btn sel mini" data-j="'+j+'">'+o+'</button>'}).join('')+'</div><div class="qfb"></div></div>'}).join('');
+  all('.qitem',host).forEach(function(it){var q=EQ[+it.dataset.i];
+    all('.qbtns button',it).forEach(function(b){b.onclick=function(){
+      if(it.classList.contains('done'))return;
+      var ok=+b.dataset.j===q.a;b.classList.add('picked');it.classList.add('done');
+      var fb=it.querySelector('.qfb');fb.className='qfb '+(ok?'right':'wrong');fb.textContent=ok?q.f[0]:q.f[1];
+      if(ok)eqRight++;checkG6()}})})})();
+var eqRight=0,craneOpen={};
+var CRANE=[
+ {s:'"The crane lifted the beam onto the third storey."',k:'machine',n:'Lifted, beam, storey \u2014 every other word pulls the embedding toward excavator, bulldozer and winch.'},
+ {s:'"The crane waded into the shallows and speared a fish."',k:'bird',n:'Waded, shallows, speared. The same five letters land in the bird region. The embedding is of the context, not the word.'}];
+(function(){
+  $('craneBtns').innerHTML=CRANE.map(function(c,i){return '<button class="btn sel mini" data-c="'+i+'">'+c.s+'</button>'}).join('');
+  all('button',$('craneBtns')).forEach(function(b){b.onclick=function(){
+    all('button',$('craneBtns')).forEach(function(x){x.classList.toggle('act',x===b)});
+    var c=CRANE[+b.dataset.c];craneOpen[b.dataset.c]=1;
+    $('craneOut').className='readout on';
+    $('craneOut').innerHTML='<span class="cz">Resolves to the '+c.k+' region</span>'+c.n;checkG6()}})})();
+function checkG6(){if(eqRight>=3&&Object.keys(craneOpen).length>=2)pass('g6')}
+
+/* ===== 06 PARENTHESES ===== */
+var pseq=[];
+function parenDraw(){
+  var d=0;pseq.forEach(function(c){d+=c==='('?1:-1});
+  var run=0,h='';pseq.forEach(function(c){run+=c==='('?1:-1;h+='<span'+(run<0?' class="bad"':'')+'>'+c+'</span>'});
+  $('parenSeq').innerHTML=h||'<span class="dim" style="font-size:15px">Empty sequence. Add a parenthesis.</span>';
+  $('parenDepth').textContent=d;
+  var db='',r=0;pseq.forEach(function(c){r+=c==='('?1:-1;db+='<i class="'+(r<0?'neg':'')+'" style="height:'+Math.min(52,Math.abs(r)*10+4)+'px"></i>'});
+  $('depthBar').innerHTML=db;
+  var err=1-Math.exp(-Math.max(0,d-2)/3),opts;
+  if(d===0)opts=[['(',0.30,1],[')',0.15,0],['END',0.55,1]];
+  else{var pe=err*0.35;opts=[['(',(1-pe)*0.42,1],[')',(1-pe)*0.58,1],['END',pe,0]]}
+  var mx=Math.max.apply(null,opts.map(function(o){return o[1]}));
+  $('parenDist').innerHTML=opts.map(function(o){
+    return '<div class="drow '+(o[2]?'keep':'cut')+'"><span>'+(o[0]==='END'?'&lt;END&gt;':o[0])+(o[2]?'':' \u2014 invalid')+'</span>'+
+      '<span class="dbar"><span style="width:'+(o[1]/mx*100).toFixed(1)+'%"></span></span><span class="pv">'+(o[1]*100).toFixed(1)+'%</span></div>'}).join('');
+  var bad=opts.filter(function(o){return !o[2]})[0];
+  if(!pseq.length){$('parenOut').className='readout';$('parenOut').innerHTML='<span class="nil">Add tokens and watch the invalid option.</span>';return}
+  if(bad&&bad[1]>0.15){$('parenOut').className='readout bad';
+    $('parenOut').innerHTML='<span class="cz">Broken at depth '+d+'</span>The model gives '+(bad[1]*100).toFixed(1)+'% to <b>'+(bad[0]==='END'?'&lt;END&gt;':bad[0])+'</b>, leaving '+d+' unclosed. It has lost the count. Wolfram\u2019s trained net does the same \u2014 400,000 weights, still 15% on an invalid close.';
+    pass('g7')}
+  else if(d===0){$('parenOut').className='readout on';
+    $('parenOut').innerHTML='<span class="cz">Balanced at depth 0</span>Note the 15% still sitting on the invalid close. That is Wolfram\u2019s measured figure from his own network at exactly this state \u2014 balanced, and still wrong 15% of the time about what can follow.'}
+  else{$('parenOut').className='readout on';
+    $('parenOut').innerHTML='<span class="cz">Depth '+d+'</span>Still tracking. Invalid token at '+(bad[1]*100).toFixed(1)+'%. Go deeper.'}}
+all('[data-pk]').forEach(function(b){b.onclick=function(){pseq.push(b.dataset.pk);parenDraw()}});
+$('parenReset').onclick=function(){pseq=[];parenDraw()};parenDraw();
+
+/* ===== 07 SAMPLER LAB ===== */
+var LABTOK=['hedged','diversified','retained','gifted','sold','contributed','exchanged','pledged','collared','donated','trusted','deferred','liquidated','staged','insured','borrowed','swapped','optioned','securitised','tendered','abandoned','reorganised','recapitalised','forfeited','tokenised','auctioned','bartered','franchised','vaporised','teleported'];
+var LABP=(function(){var p=LABTOK.map(function(_,i){return 1/(i+1)});var s=p.reduce(function(a,b){return a+b},0);return p.map(function(v){return v/s})})();
+$('labPrompt').textContent='"Adaeze\u2019s $14.2M concentrated position should be ___"';
+var SM={
+ top_k:{on:false,v:8,min:1,max:30,step:1,name:'Top K',desc:'Keep the K tokens with the highest probability.'},
+ tfs_z:{on:false,v:0.95,min:0,max:1,step:0.01,name:'Tail Free Z',desc:'Cut once the cumulative absolute second derivative of the sorted distribution reaches Z.'},
+ typ_p:{on:false,v:0.95,min:0,max:1,step:0.01,name:'Typical P',desc:'Rank by how close each token\u2019s surprise is to the distribution\u2019s entropy, then apply Top P.'},
+ top_p:{on:false,v:0.90,min:0,max:1,step:0.01,name:'Top P',desc:'Keep the most probable tokens until their probabilities sum past P.'},
+ min_p:{on:false,v:0.05,min:0,max:1,step:0.01,name:'Min P',desc:'Keep tokens above P times the probability of the most likely token.'},
+ top_a:{on:false,v:0.10,min:0,max:1,step:0.01,name:'Top A',desc:'Keep tokens above A times the square of the top token\u2019s probability.'},
+ smooth:{on:false,v:0.30,min:0,max:2,step:0.01,name:'Smoothing factor',desc:'Reshape by T\u00b7exp(\u2212f\u00b7log(P/T)\u00b2). Suppresses the tail without a hard cut.'},
+ dyntemp:{on:false,v:0.8,min:0,max:2,step:0.01,name:'Dynamic temperature',desc:'Vary temperature with entropy \u2014 hotter where unsure, cooler where confident.'},
+ temp:{on:false,v:1.00,min:0.01,max:3,step:0.01,name:'Temperature',desc:'Scale by p^(1/T) and renormalise. Below 1 sharpens, above 1 flattens.'}};
+var LABORDER=['top_k','tfs_z','typ_p','top_p','min_p','top_a','smooth','dyntemp','temp'];
+function entropy(a){return -a.reduce(function(s,o){return s+(o.p>0?o.p*Math.log(o.p):0)},0)}
+function runPipeline(){
+  var live=LABTOK.map(function(t,i){return{t:t,p:LABP[i],cut:false}});
+  function alive(){return live.filter(function(o){return !o.cut})}
+  function norm(){var s=alive().reduce(function(x,o){return x+o.p},0);if(s)alive().forEach(function(o){o.p=o.p/s})}
+  LABORDER.forEach(function(k){
+    var m=SM[k];if(!m.on)return;
+    var A=alive().slice().sort(function(a,b){return b.p-a.p});if(!A.length)return;
+    var mx=A[0].p;
+    if(k==='top_k'){A.forEach(function(o,i){if(i>=m.v)o.cut=true});norm()}
+    else if(k==='top_p'){var c=0,dn=false;A.forEach(function(o){if(dn){o.cut=true;return}c+=o.p;if(c>m.v)dn=true});norm()}
+    else if(k==='min_p'){A.forEach(function(o){if(o.p<=m.v*mx)o.cut=true});norm()}
+    else if(k==='top_a'){A.forEach(function(o){if(o.p<=m.v*mx*mx)o.cut=true});norm()}
+    else if(k==='tfs_z'){if(A.length>=3){
+      var d1=[];for(var i=0;i<A.length-1;i++)d1.push(A[i].p-A[i+1].p);
+      var d2=[];for(var i=0;i<d1.length-1;i++)d2.push(Math.abs(d1[i]-d1[i+1]));
+      var s2=d2.reduce(function(a,b){return a+b},0);
+      if(s2>0){var c=0,cf=A.length;for(var i=0;i<d2.length;i++){c+=d2[i]/s2;if(c>m.v){cf=i+2;break}}
+        A.forEach(function(o,i){if(i>=cf)o.cut=true});norm()}}}
+    else if(k==='typ_p'){var H=entropy(A);
+      var bt=A.slice().sort(function(a,b){return Math.abs(-Math.log(a.p)-H)-Math.abs(-Math.log(b.p)-H)});
+      var c=0,keep={};for(var i=0;i<bt.length;i++){keep[bt[i].t]=1;c+=bt[i].p;if(c>m.v)break}
+      A.forEach(function(o){if(!keep[o.t])o.cut=true});norm()}
+    else if(k==='smooth'){var T=mx;A.forEach(function(o){var lg=Math.log(o.p/T);o.p=T*Math.exp(-m.v*lg*lg)});norm()}
+    else if(k==='dyntemp'){var H=entropy(A),Hm=Math.log(A.length)||1,ne=H/Hm,base=SM.temp.on?SM.temp.v:1;
+      var T=Math.max(0.05,base-m.v/2+m.v*ne);SM.dyntemp._eff=T;
+      A.forEach(function(o){o.p=Math.pow(o.p,1/T)});norm()}
+    else if(k==='temp'){if(SM.dyntemp.on)return;
+      if(m.v<=0.02){var top=A[0];A.forEach(function(o){o.p=o===top?1:0;if(o!==top)o.cut=true})}
+      else A.forEach(function(o){o.p=Math.pow(o.p,1/m.v)});
+      norm()}});
+  return live}
+function labDraw(){
+  var live=runPipeline(),keep=live.filter(function(o){return !o.cut}).sort(function(a,b){return b.p-a.p});
+  var mx=keep.length?keep[0].p:1;
+  var shown=live.slice().sort(function(a,b){return (a.cut?1:0)-(b.cut?1:0)||b.p-a.p}).slice(0,20);
+  $('labDist').innerHTML=shown.map(function(o){var w=o.cut?12:Math.max(2,o.p/mx*100);
+    return '<div class="drow '+(o.cut?'cut':'keep')+'"><span>'+o.t+'</span><span class="dbar"><span style="width:'+w.toFixed(1)+'%"></span></span>'+
+      '<span class="pv">'+(o.cut?'cut':(o.p*100).toFixed(1)+'%')+'</span></div>'}).join('');
+  var H=entropy(keep),top=keep.length?keep[0].p:0;
+  $('labStats').innerHTML=
+   '<div class="stat'+(keep.length===3?' hit':'')+'"><span class="sn">Surviving</span><span class="sv">'+keep.length+'</span></div>'+
+   '<div class="stat'+(top>0.55?' hit':'')+'"><span class="sn">Top share</span><span class="sv">'+(top*100).toFixed(1)+'%</span></div>'+
+   '<div class="stat"><span class="sn">Entropy</span><span class="sv">'+H.toFixed(2)+'</span></div>'+
+   '<div class="stat"><span class="sn">Effective choices</span><span class="sv">'+Math.exp(H).toFixed(1)+'</span></div>';
+  $('labPipe').innerHTML=LABORDER.map(function(k){
+    return '<span class="st'+(SM[k].on?' on':'')+'">'+SM[k].name+(SM[k].on?' '+(k==='dyntemp'&&SM.dyntemp._eff?SM.dyntemp._eff.toFixed(2):SM[k].v):'')+'</span>'}).join('<span class="ar">\u203a</span>');
+  if(keep.length===3&&top>0.55){$('labTarget').className='readout on';
+    $('labTarget').innerHTML='<span class="cz">Target met</span>Three survive and the leader holds '+(top*100).toFixed(1)+'%. Note what you did: you did not make the model more accurate. You narrowed what it was allowed to say. None of these controls touches the model.';
+    pass('g8')}
+  else{$('labTarget').className='readout';
+    $('labTarget').innerHTML='<span class="nil">Target: exactly 3 surviving, leader above 55%. Currently '+keep.length+' surviving, leader '+(top*100).toFixed(1)+'%. Hint: a hard shortlist plus a sharpening step.</span>'}
+  return keep}
+(function(){
+  $('labMods').innerHTML=LABORDER.map(function(k){var m=SM[k];
+    return '<div class="smod" id="mod_'+k+'"><label class="sh"><input type="checkbox" data-sm="'+k+'"><h4>'+m.name+'</h4></label>'+
+      '<p class="sd">'+m.desc+'</p><div class="ctl"><input type="range" data-sr="'+k+'" min="'+m.min+'" max="'+m.max+'" step="'+m.step+'" value="'+m.v+'" disabled>'+
+      '<input type="text" data-st="'+k+'" value="'+m.v+'" readonly></div></div>'}).join('');
+  all('[data-sm]').forEach(function(c){c.onchange=function(){var k=c.dataset.sm;SM[k].on=c.checked;
+    $('mod_'+k).classList.toggle('on',c.checked);
+    document.querySelector('[data-sr="'+k+'"]').disabled=!c.checked;labDraw()}});
+  all('[data-sr]').forEach(function(r){r.addEventListener('input',function(){var k=r.dataset.sr;
+    SM[k].v=parseFloat(r.value);document.querySelector('[data-st="'+k+'"]').value=SM[k].v;labDraw()})});
+  $('labDraw').onclick=function(){var keep=labDraw();
+    if(!keep.length){$('labDraws').innerHTML='<span style="background:var(--warn-bg);color:var(--warn)">nothing survives</span>';return}
+    var ps=keep.map(function(o){return o.p}),out=[];for(var i=0;i<12;i++)out.push(keep[drawFrom(ps)].t);
+    $('labDraws').innerHTML=out.map(function(t){return '<span>'+t+'</span>'}).join('')};
+  $('labReset').onclick=function(){LABORDER.forEach(function(k){SM[k].on=false;
+    document.querySelector('[data-sm="'+k+'"]').checked=false;
+    document.querySelector('[data-sr="'+k+'"]').disabled=true;$('mod_'+k).classList.remove('on')});
+    $('labDraws').innerHTML='';labDraw()};
+  labDraw()})();
+
+/* ===== 08 HALLUCINATION ===== */
+var G9={k:0,sc:{}};
+function checkG9(){if(G9.k&&Object.keys(G9.sc).length>=2)pass('g9')}
+var KAL=['03-07','15-06','01-01'],ki=0;
+$('kalaiBtn').onclick=function(){
+  if(ki>=3)return;
+  $('kalaiRuns').appendChild(el('div','r','Attempt '+(ki+1)+' &middot; <b style="color:var(--warn)">'+KAL[ki]+'</b>'));ki++;
+  if(ki>=3){$('kalaiBtn').disabled=true;$('kalaiOut').className='readout on';
+    $('kalaiOut').innerHTML='<span class="cz">Result</span>Three attempts, three different dates, all wrong \u2014 from a prompt that said to answer only if it knew. You now know why: the sampler drew from a distribution over plausible dates and no step checked anything.';
+    G9.k=1;checkG9()}};
+var SC={binary:{v:[1,0,0,0],t:'Guessing scores 1 when right and 0 when wrong. Abstaining scores 0 either way. Guessing weakly dominates \u2014 no confidence level makes silence better. A model optimised against this rule learns to always produce something.'},
+ credit:{v:[1,0,0,0.5],t:'Give partial credit for an honest "I don\u2019t know" and abstention becomes rational whenever confidence falls below the credit threshold. The behaviour changed because the incentive changed, not the architecture.'}};
+function scDraw(k){var s=SC[k];
+  ['c11','c12','c21','c22'].forEach(function(id,i){$(id).textContent=s.v[i];$(id).className=s.v[i]>0?'best':''});
+  $('c13').textContent=k==='binary'?'always guess':'guess if confident';
+  $('c23').textContent=k==='binary'?'never optimal':'abstain if unsure';
+  $('scVerdict').textContent=s.t;G9.sc[k]=1;checkG9()}
+all('[data-sc]').forEach(function(b){b.onclick=function(){
+  all('[data-sc]').forEach(function(x){x.classList.toggle('act',x===b)});scDraw(b.dataset.sc)}});
+scDraw('binary');
+
+/* ===== 09 FRONTIER ===== */
+var MODELS=[
+ {n:'GPT-5.6 Luna (max)',c:.21,i:51,f:1},{n:'Muse Spark 1.1 (xhigh)',c:.26,i:51,f:0},
+ {n:'Grok 4.5 (high)',c:.31,i:54,f:1},{n:'GLM-5.2 (max)',c:.32,i:51,f:0},
+ {n:'Kimi K3',c:.94,i:57,f:1},{n:'GPT-5.6 Sol (max)',c:1.04,i:59,f:1},
+ {n:'Claude Opus 4.8 (max)',c:1.80,i:56,f:0,a:1},{n:'Claude Fable 5 (max)',c:2.75,i:60,f:1,a:1}];
+var FL2=58,FR=24,FT=26,FB=58,fpw=700-FL2-FR,fph=380-FT-FB,flo=Math.log(.15),fhi=Math.log(3.5);
+function fx(v){return FL2+(Math.log(v)-flo)/(fhi-flo)*fpw}
+function fy(v){return FT+(62-v)/14*fph}
+function drawFront(b){
+  var s='<rect x="'+FL2+'" y="'+FT+'" width="'+fpw+'" height="'+fph+'" fill="#fff"/>';
+  [48,51,54,57,60].forEach(function(v){s+='<line class="grid" x1="'+FL2+'" y1="'+fy(v)+'" x2="'+(FL2+fpw)+'" y2="'+fy(v)+'"/><text x="'+(FL2-9)+'" y="'+(fy(v)+4)+'" text-anchor="end">'+v+'</text>'});
+  [.2,.5,1,2,3].forEach(function(v){s+='<text x="'+fx(v)+'" y="'+(FT+fph+18)+'" text-anchor="middle">$'+v.toFixed(2)+'</text>'});
+  var fr=MODELS.filter(function(m){return m.f}).sort(function(a,b){return a.c-b.c}),poly='';
+  fr.forEach(function(m,i){poly+=(i?' L':'M')+fx(m.c)+' '+fy(m.i)});
+  s+='<path class="deadzone" d="'+poly+' L '+fx(fr[fr.length-1].c)+' '+FT+' L '+FL2+' '+FT+' Z"/>';
+  s+='<path class="front-line" d="'+poly+'"/>';
+  s+='<text x="'+(FL2+14)+'" y="'+(FT+22)+'" style="fill:var(--warn)">no model exists in this region</text>';
+  if(b<3.5){s+='<rect x="'+fx(b)+'" y="'+FT+'" width="'+(FL2+fpw-fx(b))+'" height="'+fph+'" fill="#16211F" opacity=".07"/>';
+    s+='<line x1="'+fx(b)+'" y1="'+FT+'" x2="'+fx(b)+'" y2="'+(FT+fph)+'" stroke="var(--warn)" stroke-width="2" stroke-dasharray="4 3"/>'}
+  MODELS.forEach(function(m,i){var out=m.c>b,an=m.c>1.5?'end':'start',dx=m.c>1.5?-13:13;
+    s+='<g class="pt'+(m.f?' front':'')+(m.a?' anth':'')+(out?' dead':'')+'" data-m="'+i+'"><circle cx="'+fx(m.c)+'" cy="'+fy(m.i)+'" r="7"/>'+
+       '<text x="'+(fx(m.c)+dx)+'" y="'+(fy(m.i)+4)+'" text-anchor="'+an+'">'+m.n+'</text></g>'});
+  s+='<text class="axl" x="'+(FL2+fpw/2)+'" y="'+(FT+fph+44)+'" text-anchor="middle">Cost per index task, USD \u2014 log scale</text>';
+  s+='<text class="axl" x="'+(-(FT+fph/2))+'" y="15" text-anchor="middle" transform="rotate(-90)">Intelligence Index</text>';
+  $('frontCh').innerHTML=s;
+  all('.pt',$('frontCh')).forEach(function(g){g.onclick=function(){
+    all('.pt',$('frontCh')).forEach(function(x){x.classList.toggle('sel',x===g)});
+    var m=MODELS[+g.dataset.m],top=MODELS[MODELS.length-1],gap=top.i-m.i;
+    $('frontOut').className='readout on';
+    $('frontOut').innerHTML='<span class="cz">'+m.n+'</span>Index '+m.i+' at '+money(m.c)+' per task. '+
+      (m.f?'On the efficient frontier.':'Not on the frontier \u2014 another model delivers at least this score for less.')+
+      ' Against Fable 5: '+gap+' point'+(gap===1?'':'s')+' lower at '+Math.round(m.c/top.c*100)+'% of the cost.'}})}
+function budgUpd(){
+  var b=Math.exp(flo+(+$('budget').value/100)*(fhi-flo));
+  $('budgLab').textContent=money(b);drawFront(b);
+  var aff=MODELS.filter(function(m){return m.c<=b});
+  if(!aff.length){$('frontOut').className='readout bad';$('frontOut').innerHTML='<span class="cz">Nothing available</span>No measured model runs at this budget.';return}
+  var best=aff.reduce(function(a,m){return m.i>a.i?m:a}),top=MODELS[MODELS.length-1];
+  $('frontOut').className='readout on';
+  $('frontOut').innerHTML='<span class="cz">Best available at '+money(b)+' per task</span><b>'+best.n+'</b> \u2014 index '+best.i+' at '+money(best.c)+
+    '. '+(top.i-best.i)+' point'+(top.i-best.i===1?'':'s')+' below the top for '+Math.round(best.c/top.c*100)+'% of the cost. '+aff.length+' of '+MODELS.length+' models fit.';
+  if(b<1.0)pass('g10')}
+$('budget').addEventListener('input',budgUpd);budgUpd();
+
+/* ===== 10 PRACTICE COST ===== */
+var PATHS=[{n:'Haiku 4.5',i:1,o:5,k:'api'},{n:'Sonnet 5 (from 1 Sep)',i:3,o:15,k:'api'},
+ {n:'Opus 5',i:5,o:25,k:'api'},{n:'Fable 5',i:10,o:50,k:'api'},
+ {n:'Claude Pro subscription',sub:20,k:'sub'},{n:'Claude Max 5\u00d7 subscription',sub:100,k:'sub'}];
+function costUpd(){
+  var a=+$('adv').value,m=+$('mtg').value;$('advLab').textContent=a;$('mtgLab').textContent=m;
+  var mt=m*46,ti=mt*27000,to=mt*5000;
+  var rows=PATHS.map(function(p){return{n:p.n,k:p.k,v:p.k==='sub'?p.sub*12*a:a*(ti/1e6*p.i+to/1e6*p.o)}});
+  var mx=Math.max.apply(null,rows.map(function(r){return r.v}));
+  $('costBars').innerHTML=rows.map(function(r){
+    return '<div class="cbar'+(r.k==='sub'?' sub':'')+'"><span>'+r.n+'</span><span class="tr"><span style="width:'+(r.v/mx*100)+'%"></span></span><span class="amt">'+money(r.v)+'</span></div>'}).join('');
+  var opus=rows[2].v,pro=rows[4].v;
+  $('assumeBox').innerHTML='<b>Stated assumption.</b> '+m+' meetings per advisor per week \u00d7 46 weeks = '+fmt(mt)+' per advisor per year, at 27,000 input and 5,000 output tokens each. No prompt caching assumed \u2014 a cache hit costs 10% of input, so a firm reusing templates pays materially less.'+
+    (opus>pro?' <b style="color:var(--warn)">Metered Opus 5 now exceeds the subscription \u2014 it took '+m+' meetings per advisor per week, roughly four a working day.</b>':'');
+  if(opus>pro)pass('g11')}
+$('adv').addEventListener('input',costUpd);$('mtg').addEventListener('input',costUpd);costUpd();
+
+/* ===== 11 TIER QUIZ ===== */
+var TQ=[
+ {d:'Investment Planning',t:'Reformat 340 positions from three custodial exports into one consolidated allocation table.',a:0,
+  f:['Correct. High volume, zero judgment, and the output is checkable at a glance. The cheapest tier that completes it is the right one.','This works and you are paying five to ten times what the task needs. Nothing here requires reasoning \u2014 it requires throughput.']},
+ {d:'Psychology of Financial Planning',t:'Summarise a 90-minute discovery meeting in which Adaeze and Miguel disagreed openly about the sale timeline.',a:1,
+  f:['Correct. Mid tier handles long-context summarisation well, and the failure mode \u2014 a missed commitment \u2014 is caught by your own review. Watch that it does not flatten the disagreement into consensus; that disagreement is the planning issue.','Defensible, but this is the archetypal mid-tier task. The real risk is not the tier \u2014 it is that a summariser smooths conflict into agreement, and here the conflict is the finding.']},
+ {d:'Tax Planning',t:'Determine whether the 2013 shares satisfy the Section 1202 original-issuance and gross-asset tests.',a:2,
+  f:['Correct on tier, and still verify every figure. These are arbitrary facts \u2014 thresholds and dates with one right answer and many plausible wrong ones \u2014 and the statute was amended in 2025, so training data holds both versions.','Top tier, and it will still confidently give you a threshold. The statute changed in 2025; the model has seen both numbers in near-identical sentences.']},
+ {d:'General Principles',t:'Draft the confirmation email and agenda for next week\u2019s meeting.',a:0,
+  f:['Correct. Templated, low-stakes, and you read it before it sends.','Overspecified. The consequence of a poor draft is that you edit it.']},
+ {d:'Retirement Savings and Income',t:'Model three Roth conversion sequences from the sale year to age 73 against IRMAA brackets.',a:2,
+  f:['Correct. Sustained multi-step reasoning where an error in year three propagates silently through year twenty \u2014 and the bracket figures themselves are arbitrary facts to verify.','This is compounding multi-step reasoning. Top tier earns its price, and you still check the bracket thresholds against the source.']},
+ {d:'Estate Planning',t:'Reconcile the third-party SNT remainder percentages across the 40-page trust and two amendments, and confirm they total 100.',a:2,
+  f:['Correct on tier \u2014 and recall Section 6. This is the parenthesis problem in a planning document. Use the tool to extract the percentages, then total them yourself.','This is a counting task across a long sequence, the exact case a feed-forward network is worst at. Any tier, and you total the numbers by hand.']}];
+var TLABEL=['Haiku-class','Sonnet-class','Opus / Fable-class'];
+(function(){
+  var host=$('tierQuiz'),done=0;
+  host.innerHTML=TQ.map(function(q,i){
+    return '<div class="qitem" data-i="'+i+'"><span class="dom a">'+q.d+'</span><span class="qtext" style="margin-top:8px">'+q.t+'</span><div class="row qbtns">'+
+      TLABEL.map(function(l,j){return '<button class="btn sel mini" data-j="'+j+'">'+l+'</button>'}).join('')+'</div><div class="qfb"></div></div>'}).join('')+
+    '<span class="score" id="tqScore"></span>';
+  all('.qitem',host).forEach(function(it){var q=TQ[+it.dataset.i];
+    all('.qbtns button',it).forEach(function(b){b.onclick=function(){
+      if(it.classList.contains('done'))return;
+      var ok=+b.dataset.j===q.a;b.classList.add('picked');it.classList.add('done');
+      var fb=it.querySelector('.qfb');fb.className='qfb '+(ok?'right':'wrong');fb.textContent=ok?q.f[0]:q.f[1];
+      done++;$('tqScore').textContent=done+' of '+TQ.length+' answered';
+      if(done>=TQ.length)pass('g12')}})})})();
+
+/* ===== 12 NPI ===== */
+var NPI=[
+ {t:'Adaeze Okonkwo, date of birth, SSN on file',b:0,w:'Directly identifying. Never enters a third-party tool.'},
+ {t:'Signed LOI: Okonkwo Industries, $18M enterprise value, Q2 close',b:0,w:'Harder than it looks, and worse than NPI. A named private company and an unannounced transaction is material nonpublic information about a third party. Your confidentiality duty is not the only one in play here.'},
+ {t:'Ilesanmi receives SSI and Medicaid waiver services',b:0,w:'Harder than it looks. Benefits status is financial information and a disability disclosure about a person who is not your client and has not consented.'},
+ {t:'"A 58-year-old founder selling a specialty manufacturer in Sacramento, adult autistic child on SSI"',b:0,w:'Harder than it looks. No name, and it identifies one person. De-identification means removing the combination, not the name.'},
+ {t:'Account 8842\u2013XXXX, balance $2.4M, custodian named',b:0,w:'Directly identifying and financial, even partially masked.'},
+ {t:'A hypothetical $14M position with $310K basis, no entity or person named',b:1,w:'No person attached and no identifiable company. Safe to reason about.'},
+ {t:'The Section 1202 gross-asset ceiling and holding-period rules',b:1,w:'Published statutory rules. Nothing client-specific \u2014 though verify the current figures against the Code.'},
+ {t:'"How does a third-party SNT preserve SSI eligibility?"',b:1,w:'A general question about a technique. This is most of what you should be using these tools for.'}];
+(function(){
+  var host=$('npiChips'),solved={};
+  host.innerHTML=NPI.map(function(d,i){return '<button class="chip" data-i="'+i+'">'+d.t+'</button>'}).join('');
+  var boxes=all('.sorter .lbox');
+  all('.chip',host).forEach(function(c){c.onclick=function(){
+    all('.chip',host).forEach(function(x){x.classList.toggle('act',x===c)});
+    c.classList.add('solved');solved[c.dataset.i]=1;
+    var d=NPI[+c.dataset.i];
+    boxes.forEach(function(b,i){b.classList.toggle('lit',i===d.b)});
+    $('whyNpi').textContent=d.b===0?d.w:'';$('whySafe').textContent=d.b===1?d.w:'';
+    var n=Object.keys(solved).length;$('npiScore').textContent=n+' / 8';
+    if(n>=8)pass('g13')}})})();
+
+/* ===== 13 DIAGNOSTIC ===== */
+var DG=[
+ {s:'It cited a Code section that does not say what it claimed',c:'It sampled a plausible citation rather than retrieving a real one. Statutory citations are arbitrary facts \u2014 many plausible wrong answers, one right one.',f:'Verify every citation against the primary source before it informs a recommendation. If the tool cannot show you where the text came from, the citation is unverified.'},
+ {s:'The same question gave two different answers',c:'Sampling. You built this in Sections 1 and 7 \u2014 the model draws from a distribution and the sampler decides how far into the tail it may reach.',f:'Run consequential questions more than once. Divergence is a signal of uncertainty even when both answers sound confident.'},
+ {s:'It answered confidently about a 2026 threshold',c:'The scoring rule plus stale training data. Abstention scores like a wrong answer, and amended figures sit alongside superseded ones in near-identical sentences.',f:'Treat every number, date and threshold as unverified. Ask what it is uncertain about before it answers.'},
+ {s:'It miscounted across a long document',c:'The parenthesis problem. Feed-forward with no loop, so it cannot run a counter \u2014 it approximates one from local pattern and the approximation decays with length.',f:'Never delegate an exact count. Extract the items with the tool, then total them yourself or in a spreadsheet.'},
+ {s:'It summarised a tense meeting as if everyone agreed',c:'Fluency bias. Coherent narrative is what the objective rewards, and disagreement makes a summary less coherent, so it gets smoothed away.',f:'Ask specifically for points of disagreement and unresolved items as a separate output. Never accept a single-narrative summary of a multi-party meeting.'},
+ {s:'The bill was far higher than the pricing page implied',c:'Cost is per-token price times tokens consumed. Verbose output, reasoning tokens and long context all move the second number. A tokenizer change moves it too.',f:'Measure tokens on your actual workload. Enable prompt caching where a system prompt repeats \u2014 a cache hit costs 10% of input.'}];
+(function(){
+  var seen={};
+  $('diagBtns').innerHTML=DG.map(function(d,i){return '<button class="btn sel mini" data-d="'+i+'">'+d.s+'</button>'}).join('');
+  all('button',$('diagBtns')).forEach(function(b){b.onclick=function(){
+    all('button',$('diagBtns')).forEach(function(x){x.classList.toggle('act',x===b)});
+    var d=DG[+b.dataset.d];seen[b.dataset.d]=1;
+    $('diagOut').className='readout on';
+    $('diagOut').innerHTML='<span class="cz">Likely cause</span>'+d.c+'<div class="fx">'+d.f+'</div>';
+    var n=Object.keys(seen).length;$('diagScore').textContent=n+' / 6';
+    if(n>=4)pass('g14')}})})();
+
+})();
+</script>
+</body>
+</html>
