@@ -40,6 +40,31 @@ section.slide{padding:clamp(48px,7vw,88px) 0;border-bottom:1px solid var(--line)
 #rail button.on .pip{background:var(--on);transform:scale(1.5)}
 #rail button.on{color:var(--on)}
 #prog{position:fixed;top:0;left:0;height:3px;background:var(--on);z-index:60;width:0}
+#topbar{position:fixed;top:3px;left:0;right:0;z-index:55;background:rgba(244,244,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:16px;padding:7px clamp(14px,4vw,32px);font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+#topbar .tb-r{color:var(--on);font-weight:500}
+#topbar kbd{font-family:inherit;background:var(--on-bg);border:1px solid var(--on);border-radius:4px;padding:1px 5px;color:var(--on)}
+body{padding-top:34px}
+section.slide{scroll-margin-top:46px}
+.caseflag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;background:var(--gold-bg);color:var(--gold);border:1px solid #DFD3AF;border-radius:4px;padding:3px 8px;font-weight:500}
+.editor{width:100%;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.65;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:13px 15px;min-height:150px;resize:vertical}
+.editor:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on-bg)}
+.eltile{display:grid;grid-template-columns:74px 1fr;gap:13px;align-items:center;background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:11px 14px;margin-bottom:8px}
+.eltile .elk{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:15px}
+.scale{display:flex;gap:5px}
+.scale button{flex:1;font-family:"JetBrains Mono",monospace;font-size:11px;padding:7px 0;border-radius:6px;border:1.5px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer}
+.scale button.on{background:var(--on);border-color:var(--on);color:#fff}
+.scale button.on.lo{background:var(--warn);border-color:var(--warn)}
+.vote{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:20px 0}
+.vote button{padding:18px 16px;border-radius:11px;border:2px solid var(--line);background:var(--card);cursor:pointer;text-align:left;font-family:"Source Serif 4",serif;font-size:15.5px;line-height:1.45;color:var(--ink)}
+.vote button.on{border-color:var(--on);background:var(--on-bg)}
+.vote button:disabled{cursor:not-allowed;opacity:.5}
+.vote button.on:disabled{opacity:1}
+.tally{display:flex;flex-direction:column;gap:9px;margin-top:6px}
+.trow{display:grid;grid-template-columns:118px 1fr 78px;gap:11px;align-items:center;font-family:"JetBrains Mono",monospace;font-size:12px}
+.trow .bg{background:var(--off-bg);border-radius:4px;height:20px;overflow:hidden}
+.trow .fl{height:100%;border-radius:4px;transition:width .5s ease}
+@media(max-width:640px){.vote{grid-template-columns:1fr}}
+@media print{#topbar{display:none}body{padding-top:0}}
 
 .btn{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;background:var(--on);color:#fff;border:none;border-radius:7px;padding:11px 17px;cursor:pointer;transition:.15s}
 .btn:hover{filter:brightness(1.15)}
@@ -159,6 +184,10 @@ footer li{margin-bottom:11px;line-height:1.55}
 </head>
 <body>
 <div id="prog"></div>
+<div id="topbar">
+  <span class="tb-l">BUS ADM X433.4 &middot; Session 2 &middot; 14 September 2026</span>
+  <span class="tb-r"><kbd>Shift</kbd>+<kbd>U</kbd> &mdash; reveal all answer panels</span>
+</div>
 <nav id="rail" aria-label="Sections"></nav>
 <div class="wrap">
 
@@ -168,10 +197,31 @@ footer li{margin-bottom:11px;line-height:1.55}
   <h1>Practical AI Usage in Daily Advisory Workflows</h1>
   <p class="lede">The model samples a plausible answer. It does not compute the true one. Everything in this session follows from that one sentence.</p>
 
+  <h3>Retrieval bridge &mdash; Session 1 mechanism</h3>
+  <p>Fourteen days have passed since Session 1. Four questions, ungraded, no notes. Answer each in the box before anything is revealed. Getting one wrong is worth more to you than getting it right, provided you commit to an answer first.</p>
+  <div class="panel" id="bridge"></div>
+  <div class="row" style="margin-top:-12px">
+    <button class="btn ghost mini" id="bridgeReveal">Reveal all four</button>
+    <span class="mono dim" style="font-size:12px" id="bridgeCount"></span>
+  </div>
+
+  <h3>The Cole household</h3>
+  <p><span class="caseflag">Synthetic case &mdash; teaching anchor only</span></p>
+  <p>Every worked example, exercise input and discussion prompt in this course draws on one household. It is entirely fabricated. It is <strong>not</strong> your final-project dataset: you build Part 1 on a real recurring task from your own practice, using your own synthetic or de-identified data. Nobody should build a workflow around the Cole family.</p>
+
+  <div class="cards">
+    <div class="card"><span class="num">Household</span><h4>Meg and David Cole, Dayton, Ohio</h4><p>Meg, 64, founder and 100% owner of Cole Precision Components Inc. David, 67, retired hospital pharmacist. Married 31 years, both US citizens, Ohio domicile. Approximately $30,000,000.</p></div>
+    <div class="card"><span class="num">The asset</span><h4>CPC stock: $18,000,000, basis $240,000</h4><p>C-corporation making precision aerospace fasteners. Founder stock issued 2009. A strategic buyer has expressed informal interest. No letter of intent has been signed.</p></div>
+    <div class="card gold"><span class="num">The recurring thread</span><h4>A 40% non-voting interest sold to an IDGT</h4><p>Seed gift $650,000. Pre-discount value $7,200,000. Discount claimed 31%. Note principal $4,968,000, nine years, interest-only, balloon at maturity. Discount supported by a 2023 appraisal, never re-verified.</p></div>
+    <div class="card warn"><span class="num">The live question</span><h4>Unresolved across all four sessions</h4><p>Is the planning window still open now that a buyer has expressed interest, and does a 2023 appraisal still support a 31% discount today?</p></div>
+  </div>
+
+  <p>Nathan Cole, 31, works in CPC operations. Meg has not told him she is exploring a sale. That fact, the unexecuted plan, and the existence of the relationship itself are the three things that must never reach a consumer AI tool &mdash; the boundary Session 1 established and Session 4 will test.</p>
+
   <div class="cards">
     <div class="card"><span class="num">Outcome 01</span><h4>A working model of sampling</h4><p>Why the same prompt returns different text, and what that does to an audit trail.</p></div>
     <div class="card"><span class="num">Outcome 02</span><h4>A tier-selection rule</h4><p>Cost per finished task, benchmarked, rather than cost per token.</p></div>
-    <div class="card"><span class="num">Outcome 03</span><h4>Three tested templates</h4><p>The ones you brought, audited against a rubric and reviewed by a classmate.</p></div>
+    <div class="card"><span class="num">Outcome 03</span><h4>Your submitted prompts, scored and rewritten</h4><p>The three you wrote before being taught a framework, scored element by element and one of them rebuilt in place.</p></div>
     <div class="card"><span class="num">Outcome 04</span><h4>A citation verification routine</h4><p>Four checks, in order, applied to tax authority you did not write.</p></div>
   </div>
 
@@ -179,32 +229,39 @@ footer li{margin-bottom:11px;line-height:1.55}
   <table>
     <thead><tr><th>Segment</th><th>Topic</th><th class="n">Minutes</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>Next-token probabilities for a single prompt</td><td class="n">12</td></tr>
-      <tr><td>2</td><td>Laplace on probability as a measure of ignorance</td><td class="n">10</td></tr>
-      <tr><td>3</td><td>Temperature and output variance</td><td class="n">12</td></tr>
-      <tr><td>4</td><td>Sampling failure on a task that requires counting</td><td class="n">10</td></tr>
-      <tr><td>5</td><td>Cost per task versus cost per token</td><td class="n">14</td></tr>
-      <tr class="hi"><td>&mdash;</td><td>Break</td><td class="n">10</td></tr>
-      <tr><td>6</td><td>Persona, Task, Context, Format &mdash; and which letter carries the load</td><td class="n">16</td></tr>
-      <tr><td>7</td><td>Prompt specification triage</td><td class="n">12</td></tr>
-      <tr><td>8</td><td>The interview rewrite</td><td class="n">12</td></tr>
-      <tr><td>9</td><td>The seven-step process and the delegation line</td><td class="n">16</td></tr>
-      <tr><td>10</td><td>Citation failure types and the verification order</td><td class="n">16</td></tr>
-      <tr><td>11</td><td>Template audit and structured peer review</td><td class="n">14</td></tr>
-      <tr><td>12</td><td>Final Project Part 1 assignment and baseline capture</td><td class="n">6</td></tr>
+      <tr><td>0</td><td>Retrieval bridge, case introduction, session map</td><td class="n">8</td></tr>
+      <tr><td>1</td><td>Next-token probabilities for a single prompt</td><td class="n">9</td></tr>
+      <tr><td>2</td><td>Laplace on probability as a measure of ignorance</td><td class="n">6</td></tr>
+      <tr><td>3</td><td>Temperature and output variance</td><td class="n">9</td></tr>
+      <tr><td>4</td><td>Sampling failure on a task that requires counting</td><td class="n">6</td></tr>
+      <tr><td>5</td><td>Cost per task versus cost per token</td><td class="n">10</td></tr>
+      <tr class="hi"><td>&mdash;</td><td>Break &mdash; posted as a clock time, not a duration</td><td class="n">10</td></tr>
+      <tr><td>6</td><td>Persona, Task, Context, Format</td><td class="n">11</td></tr>
+      <tr class="hi"><td>6b</td><td>Scoring your submitted prompts against P.T.C.F</td><td class="n">10</td></tr>
+      <tr><td>7</td><td>Prompt specification triage</td><td class="n">8</td></tr>
+      <tr><td>8</td><td>The interview rewrite</td><td class="n">9</td></tr>
+      <tr><td>9</td><td>The seven-step process and the delegation line</td><td class="n">11</td></tr>
+      <tr><td>10</td><td>Citation failure types on the Cole IDGT transaction</td><td class="n">13</td></tr>
+      <tr><td>11</td><td>Template audit and structured peer review</td><td class="n">10</td></tr>
+      <tr class="hi"><td>12</td><td>Discussion: specification cost against task cost</td><td class="n">20</td></tr>
+      <tr><td>13</td><td>Final Project Part 1 assignment and baseline capture</td><td class="n">10</td></tr>
+      <tr><td colspan="2" style="text-align:right;font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.09em">Allocated instructional minutes</td><td class="n"><strong>150</strong></td></tr>
+      <tr><td colspan="2" style="text-align:right;font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.09em">Break, plus transition and overrun reserve</td><td class="n">30</td></tr>
+      <tr><td colspan="2" style="text-align:right;font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.09em">Block total, 6:00 to 9:00 PM</td><td class="n"><strong>180</strong></td></tr>
     </tbody>
   </table>
+  <p class="dim" style="font-size:14px">Arithmetic: 8+9+6+9+6+10 = 48 before the break. 11+10+8+9+11+13+10+20+10 = 102 after it. 48+102 = 150 allocated, leaving 30 minutes of the 180-minute block for the posted break, transitions and overrun.</p>
 
   <div class="doit">
     <span class="plab">Before we start</span>
-    <p><strong>Open the AI tool you subscribed to, in a new tab, now.</strong> Every section below has something to run. You will finish this session with a baseline measurement, three audited templates, and a partner's review of your work.</p>
-    <p>Have the three prompt templates you built for today open as well.</p>
+    <p><strong>Open the AI tool you subscribed to, in a new tab, now.</strong> Every section below has something to run. You will finish this session with a baseline measurement, a rewritten prompt, a partner's review of your work, and Part 1 assigned.</p>
+    <p><strong>Open your submitted Prompt Engineering homework as well</strong> &mdash; all three templates, your cited techniques, and your discernment statement. You will need the exact text in section 6b.</p>
   </div>
 </section>
 
 <!-- ============ 1 ============ -->
 <section class="slide" id="s1" data-nav="Next token">
-  <div class="eyebrow"><span>01 · Mechanism</span><span class="clock">12 min</span></div>
+  <div class="eyebrow"><span>01 · Mechanism</span><span class="clock">9 min</span></div>
   <h2>Next-Token Probabilities for a Single Prompt</h2>
   <p class="big">Wolfram's description of the mechanism is one sentence long: the model asks, over and over, &ldquo;given the text so far, what should the next word be?&rdquo; and each time adds a word. There is no separate step where it checks whether the sentence is true.</p>
 
@@ -241,7 +298,7 @@ footer li{margin-bottom:11px;line-height:1.55}
 
 <!-- ============ 2 ============ -->
 <section class="slide" id="s2" data-nav="Laplace">
-  <div class="eyebrow"><span>02 · Foundation</span><span class="clock">10 min</span></div>
+  <div class="eyebrow"><span>02 · Foundation</span><span class="clock">6 min</span></div>
   <h2>Laplace on Probability as a Measure of Ignorance</h2>
   <p class="big">In 1814 Laplace proposed an intellect that knew every force and every position in nature. For such an intellect, he wrote, nothing would be uncertain; the future, like the past, would be present to its eyes. Probability, on his account, is not a property of the world. It is a property of the observer's incomplete information.</p>
 
@@ -269,8 +326,19 @@ footer li{margin-bottom:11px;line-height:1.55}
 
 <!-- ============ 3 ============ -->
 <section class="slide" id="s3" data-nav="Temperature">
-  <div class="eyebrow"><span>03 · Mechanism</span><span class="clock">12 min</span></div>
+  <div class="eyebrow"><span>03 · Mechanism</span><span class="clock">9 min</span></div>
   <h2>Temperature and Output Variance</h2>
+
+  <div class="panel" style="background:var(--gold-bg);border-color:#DFD3AF">
+    <span class="plab" style="color:var(--gold)">Commit before the content runs</span>
+    <p style="margin-top:0;font-size:16px">You send an identical prompt to the same model twice, an hour apart, with no other change. Which is true?</p>
+    <div class="vote" id="stanceVote">
+      <button data-v="a">The answers will be substantially the same. Variation is a rounding error you can ignore in practice.</button>
+      <button data-v="b">The answers may differ materially. Which one you got is a fact about that draw, not about the question.</button>
+    </div>
+    <div class="out" id="stanceOut"></div>
+  </div>
+
   <p class="big">If the model always picked the top-ranked candidate, Wolfram notes, you get flat text that sometimes repeats word for word. Picking lower-ranked candidates sometimes produces more interesting text. The parameter governing how often that happens is called temperature, and Wolfram is explicit that there is no theory behind the value &mdash; 0.8 is simply what has been found to work for essays.</p>
 
   <p>The slider below applies the actual transformation: each candidate's probability is raised to the power 1/T and the set is renormalised. Low T sharpens the distribution toward the leader. High T flattens it. Then the panel samples the same prompt five independent times so you can see the spread.</p>
@@ -303,7 +371,7 @@ footer li{margin-bottom:11px;line-height:1.55}
 
 <!-- ============ 4 ============ -->
 <section class="slide" id="s4" data-nav="Counting failure">
-  <div class="eyebrow"><span>04 · Failure mode</span><span class="clock">10 min</span></div>
+  <div class="eyebrow"><span>04 · Failure mode</span><span class="clock">6 min</span></div>
   <h2>Sampling Failure on a Task That Requires Counting</h2>
   <p class="big">Wolfram trained a small transformer on a language with exactly one rule: parentheses must balance. The rule is simpler than any tax provision. The network still fails, and it fails in a specific and instructive way.</p>
 
@@ -335,7 +403,7 @@ footer li{margin-bottom:11px;line-height:1.55}
 
 <!-- ============ 5 ============ -->
 <section class="slide" id="s5" data-nav="Cost frontier">
-  <div class="eyebrow"><span>05 · Economics</span><span class="clock">14 min</span></div>
+  <div class="eyebrow"><span>05 · Economics</span><span class="clock">10 min</span></div>
   <h2>Cost Per Task Versus Cost Per Token</h2>
   <p class="big">Every tier comparison you have seen quoted in dollars per million tokens is measuring the wrong thing. Two models at the same token price can differ threefold in what a finished piece of work costs, because they differ in how many tokens they burn to get there.</p>
 
@@ -391,11 +459,11 @@ footer li{margin-bottom:11px;line-height:1.55}
 
 <!-- ============ 6 ============ -->
 <section class="slide" id="s6" data-nav="P·T·C·F">
-  <div class="eyebrow"><span>06 · Framework</span><span class="clock">16 min</span></div>
+  <div class="eyebrow"><span>06 · Framework</span><span class="clock">11 min</span></div>
   <h2>Persona, Task, Context, Format</h2>
   <p class="big">Google's prompting guide organises a prompt into four components. The framework is sound and worth adopting. The empirical literature also says that one of the four letters does far less work than the way it is usually taught implies, and knowing which one changes how you spend your effort.</p>
 
-  <p>Build a prompt below. Each toggle adds one component. Watch what changes in the output, and&mdash;more importantly&mdash;watch what does not.</p>
+  <p><span class="caseflag">Synthetic case</span> The worked prompt is a real advisory task on the Cole household: explaining the IDGT sale to Meg in language she can act on. Build it below. Each toggle adds one component. Watch what changes in the output, and&mdash;more importantly&mdash;watch what does not.</p>
 
   <div class="panel">
     <div class="ctrls" style="margin:0 0 20px">
@@ -445,9 +513,58 @@ footer li{margin-bottom:11px;line-height:1.55}
   </div>
 </section>
 
+
+<!-- ============ 6b ============ -->
+<section class="slide" id="s6b" data-nav="Your prompts">
+  <div class="eyebrow"><span>06b · Workshop</span><span class="clock">10 min</span></div>
+  <h2>Scoring Your Submitted Prompts Against P.T.C.F</h2>
+  <p class="big">You wrote three prompt templates and submitted them before this session. You had not been taught a prompting framework when you wrote them. That was deliberate.</p>
+
+  <p>The sequencing exists so that this comparison is available to you. A framework taught before an attempt is a set of rules you comply with. A framework taught after an attempt is a diagnosis of something you already produced, and the gap between the two versions is yours rather than mine. Wrong first attempts followed by correction outperform being told the right answer first, which is the same finding that governs every prequestion in this file.</p>
+
+  <p>Score each of your three submitted prompts element by element. Then rewrite the weakest one in the editor below. <strong>The rewrite, not the original, is what carries forward</strong> &mdash; into the section 11 audit, into the peer review, and into your Part 1 template library.</p>
+
+  <div class="panel">
+    <div class="row" style="margin-bottom:18px">
+      <button class="btn sel mini act" data-hw="0">Prompt 1</button>
+      <button class="btn sel mini" data-hw="1">Prompt 2</button>
+      <button class="btn sel mini" data-hw="2">Prompt 3</button>
+      <span class="mono dim" style="font-size:12px" id="hwWhich"></span>
+    </div>
+    <label class="plab" for="hwText">Paste the prompt exactly as you submitted it, typos included</label>
+    <textarea id="hwText" placeholder="Paste your submitted prompt here. Do not clean it up first &mdash; the original is the measurement."></textarea>
+    <div id="hwScore" style="margin-top:20px"></div>
+    <div class="out" id="hwVerdict" style="margin-top:16px"></div>
+  </div>
+
+  <h3>Rewrite the weakest of the three</h3>
+  <p>The editor loads the elements you scored lowest as a scaffold. Replace every bracketed placeholder with your own text. The counter checks the same four elements against what you have written, live.</p>
+
+  <div class="panel">
+    <div class="row" style="margin-bottom:14px">
+      <button class="btn ghost mini" id="hwScaffold">Load the P.T.C.F scaffold</button>
+      <button class="btn sel mini" id="hwClear">Clear</button>
+      <span class="mono dim" style="font-size:12px" id="hwLive"></span>
+    </div>
+    <label class="plab" for="hwRewrite">Your rewritten prompt</label>
+    <textarea class="editor" id="hwRewrite" placeholder="Write the revised version here. This is the version that carries forward."></textarea>
+    <div id="hwLiveScore" style="margin-top:18px"></div>
+    <div class="row" style="margin-top:14px">
+      <button class="btn mini" id="hwCopy">Copy the rewrite</button>
+      <span class="mono dim" style="font-size:12px">Paste it into your tool and run both versions on the same input before you leave this section.</span>
+    </div>
+  </div>
+
+  <div class="doit">
+    <span class="plab">Report back &mdash; 2 minutes</span>
+    <p>One number and one sentence: which element you scored lowest across all three submitted prompts, and what you had assumed the model already knew.</p>
+    <p>Your discernment statement predicted what each prompt would return. Compare that prediction against what the original actually returned. A prediction that was accurate about a bad output is a different skill from a prompt that produced a good one, and both are graded.</p>
+  </div>
+</section>
+
 <!-- ============ 7 ============ -->
 <section class="slide" id="s7" data-nav="Triage">
-  <div class="eyebrow"><span>07 · Diagnostic</span><span class="clock">12 min</span></div>
+  <div class="eyebrow"><span>07 · Diagnostic</span><span class="clock">8 min</span></div>
   <h2>Prompt Specification Triage</h2>
   <p class="big">Three categories, not two. A prompt can be underspecified. It can be fully specified and still produce output nobody can check. Or it can be specified in a way that makes checking possible. Only the third is usable in a fiduciary practice.</p>
 
@@ -469,7 +586,7 @@ footer li{margin-bottom:11px;line-height:1.55}
 
 <!-- ============ 8 ============ -->
 <section class="slide" id="s8" data-nav="Interview rewrite">
-  <div class="eyebrow"><span>08 · Technique</span><span class="clock">12 min</span></div>
+  <div class="eyebrow"><span>08 · Technique</span><span class="clock">9 min</span></div>
   <h2>The Interview Rewrite</h2>
   <p class="big">Wolfram makes an observation that most prompting advice skips: you can tell the model something once, as part of the prompt, and it will use it. The prompt is not a request. It is the entire evidentiary record available to the model at the moment it answers.</p>
 
@@ -482,8 +599,19 @@ When you have enough to proceed, first list what you still do not know and how y
 
 The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div>
 
+  <h3>The Cole Buy-Sell Agreement</h3>
+  <p><span class="caseflag">Synthetic case</span> Meg’s buy-sell agreement was executed in 2014 and never updated. It sets a formula value that conflicts with the current $18,000,000 appraisal. You want a summary of what it does and where it breaks.</p>
+  <p>Send the wrapper above with this task, and let the model interview you before it writes anything: <span class="mono">Summarise the 2014 buy-sell agreement for Cole Precision Components and identify where it conflicts with the current planning.</span></p>
+  <p>Tick every question the model actually asked you. The instructor reveals the full list afterwards. What matters is not your score but which questions you would not have thought to answer unprompted.</p>
+
+  <div class="panel" id="bsell"></div>
+  <div class="row" style="margin-top:-12px">
+    <button class="btn ghost mini" id="bsellReveal">Reveal the questions it should have asked</button>
+    <span class="mono dim" style="font-size:12px" id="bsellCount"></span>
+  </div>
+
   <h3>Diagnose a prompt you would actually send</h3>
-  <p>Paste a real prompt below &mdash; one you have sent this week or one from a template you brought. The checker looks for ten specification dimensions that determine whether the output can be verified. It runs entirely in this page; nothing is transmitted.</p>
+  <p>Now paste one of your own submitted prompts, or the buy-sell prompt above. The checker looks for ten specification dimensions that determine whether the output can be verified. It runs entirely in this page; nothing is transmitted.</p>
 
   <div class="panel">
     <label class="plab" for="promptIn">Your prompt</label>
@@ -509,7 +637,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
 <!-- ============ 9 ============ -->
 <section class="slide" id="s9" data-nav="Seven steps">
-  <div class="eyebrow"><span>09 · Application</span><span class="clock">16 min</span></div>
+  <div class="eyebrow"><span>09 · Application</span><span class="clock">11 min</span></div>
   <h2>The Seven-Step Process and the Delegation Line</h2>
   <p class="big">The CFP Board's seven-step financial planning process is the structure your duty of care attaches to. Not every step is the same kind of work, and the steps that look most similar on paper have the least in common when you ask what a sampler could contribute.</p>
 
@@ -540,9 +668,11 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
 <!-- ============ 10 ============ -->
 <section class="slide" id="s10" data-nav="Citations">
-  <div class="eyebrow"><span>10 · Verification</span><span class="clock">16 min</span></div>
-  <h2>Citation Failure Types and the Verification Order</h2>
+  <div class="eyebrow"><span>10 · Verification</span><span class="clock">13 min</span></div>
+  <h2>Citation Failure Types on the Cole IDGT Transaction</h2>
   <p class="big">There is a base rate for this, and it is not small. General-purpose models tested on verifiable legal questions hallucinated on between 58 and 88 percent of them. Purpose-built retrieval-grounded research products from LexisNexis and Thomson Reuters &mdash; sold on the claim that retrieval eliminates the problem &mdash; hallucinated on between 17 and 33 percent.</p>
+
+  <p><span class="caseflag">Synthetic case</span> Meg&rsquo;s attorney has drafted the IDGT sale. You ask an AI assistant what authority supports the structure. What comes back looks like this section&rsquo;s exercise, and three of the six items would survive the check most people actually perform.</p>
 
   <div class="chart">
     <div class="ctitle">Measured hallucination rates on verifiable legal research questions</div>
@@ -558,12 +688,18 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <div class="csrc">Source: AI Hallucination Cases database, maintained by Damien Charlotin (HEC Paris), as reported: approximately 200 cases mid-2025, 719 by January 2026, 1,227 by early April 2026, 1,598 as of 9 June 2026; largest single-matter penalty approximately $109,700 <span class="conf m">M</span> &mdash; retrieved through a secondary tracker, verify the current count before citing it to a client or a regulator.</div>
   </div>
 
-  <h3>The failure type that survives a spot check</h3>
-  <p>The Stanford taxonomy separates fabrication from misgrounding, and the second is the dangerous one. A fabricated citation fails an existence check in fifteen seconds. A misgrounded citation is real, retrievable, correctly formatted, and does not support the proposition it was attached to. It passes every check a busy person actually performs.</p>
+  <h3>Four failure types, in ascending order of danger</h3>
+  <p>The Stanford taxonomy separates fabrication from misgrounding. This transaction adds a third and a fourth that matter specifically in estate planning, because the technique&rsquo;s most-cited authorities include two cases that were never decided.</p>
+  <div class="cards">
+    <div class="card"><span class="num">Type 01</span><h4>Fabrication</h4><p>The authority does not exist. Fails an existence search in fifteen seconds. The least dangerous failure, because it is the only one that is trivially catchable.</p></div>
+    <div class="card gold"><span class="num">Type 02</span><h4>Misgrounding</h4><p>Real, retrievable, correctly formatted, and does not support the proposition attached to it. Requires reading the authority.</p></div>
+    <div class="card gold"><span class="num">Type 03</span><h4>Superseded</h4><p>Correct when issued, changed since. Training data has a cutoff; the Code does not.</p></div>
+    <div class="card warn"><span class="num">Type 04</span><h4>Cited as holding, never decided</h4><p>A real docket number, real parties, a real dispute &mdash; and a stipulated decision rather than an opinion. Nothing was held. The citation is genuine and the proposition has no support behind it. Neither an existence check nor a text check catches this one.</p></div>
+  </div>
 
   <div class="panel">
     <span class="plab">Citation triage &mdash; classify each</span>
-    <p style="margin-top:0;font-size:15.5px">Six citations produced by an AI assistant in response to estate and gift planning questions. Classify each. All six are exercise material; do not carry any classification into practice without checking the Code yourself, which is the point.</p>
+    <p style="margin-top:0;font-size:15.5px">Six items an AI assistant returned when asked what authority supports the Cole IDGT sale. Classify each. All six are exercise material. Do not carry any classification into practice without checking the authority yourself, which is the entire point.</p>
     <div id="triage"></div>
   </div>
 
@@ -580,23 +716,25 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
   <div class="doit">
     <span class="plab">Run it &mdash; 5 minutes</span>
-    <p>Ask your AI tool a tax research question you already know the answer to, and require it to cite primary authority. Then run all four checks on what it gives you. Time yourself.</p>
+    <p>Ask your AI tool: <span class="mono">What authority supports an installment sale of non-voting stock to an intentionally defective grantor trust, and what are the principal risks?</span> Then run all four checks on every authority it returns, plus a fifth: for any case, confirm whether it produced an opinion or a stipulated decision. Time yourself.</p>
     <p>That elapsed time is the real cost of the workflow. It belongs in your final project's time comparison, and leaving it out is the most common way these projects overstate their savings.</p>
   </div>
 </section>
 
 <!-- ============ 11 ============ -->
 <section class="slide" id="s11" data-nav="Template audit">
-  <div class="eyebrow"><span>11 · Workshop</span><span class="clock">14 min</span></div>
+  <div class="eyebrow"><span>11 · Workshop</span><span class="clock">10 min</span></div>
   <h2>Template Audit and Structured Peer Review</h2>
-  <p class="big">You arrived with three templates for advisor-client communication. This section subjects them to the same scrutiny you will apply to a classmate's workflow in Session 5, on a smaller object, with the stakes low enough to be useful.</p>
+  <p class="big">Section 6b rebuilt one of your prompts. This section tests whether it is a <em>template</em> — something a second person can run — rather than a prompt that happens to work in your hands.</p>
+
+  <p><span class="caseflag">Synthetic case</span> The audit target is a client-explanation template for the Cole IDGT structure: a reusable instrument that takes any closely held business owner facing a sale to a trust and produces an explanation they can act on. Score the version you would hand to a colleague, not the one in your head.</p>
 
   <h3>Part one &mdash; self-audit</h3>
-  <p>Score one template against the rubric. Every criterion is binary and observable from the template text itself. A template that scores below 5 will not survive a handoff.</p>
+  <p>Every criterion is binary and observable from the template text itself. A template that scores below 5 will not survive a handoff.</p>
 
   <div class="panel">
     <div class="row" style="margin-bottom:16px">
-      <button class="btn sel mini act" data-tpl="email">Email rewriter</button>
+      <button class="btn sel mini act" data-tpl="email">Client explanation, IDGT structure</button>
       <button class="btn sel mini" data-tpl="note">Case note formatter</button>
       <button class="btn sel mini" data-tpl="summary">One-page plan summary</button>
     </div>
@@ -605,7 +743,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   </div>
 
   <h3>Part two &mdash; structured peer review</h3>
-  <p>Swap with the person next to you. Run <em>their</em> template on <em>your</em> synthetic case, without asking them anything. This is the Session 5 exercise in miniature and it is the fastest way to discover that a template you find obvious is unusable by anyone else.</p>
+  <p>Swap with the person you are paired with. Run <em>their</em> template on the Cole facts, without asking them anything. This is the Session 5 exercise in miniature and it is the fastest way to discover that a template you find obvious is unusable by anyone else.</p>
 
   <div class="panel">
     <span class="plab">Score your partner's template &mdash; 0 to 3 on each</span>
@@ -619,11 +757,80 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   </div>
 </section>
 
-<!-- ============ 12 ============ -->
+
+<!-- ============ 12 discussion ============ -->
+<section class="slide" id="s12d" data-nav="Discussion">
+  <div class="eyebrow"><span>12 · Discussion</span><span class="clock">20 min</span></div>
+  <h2>Specification Cost Against Task Cost</h2>
+  <p class="big">The question, stated once and not softened: if a prompt has to be specified as carefully as section 6b required to be reliable, has the tool saved time, or has it moved the work from doing the task to specifying the task?</p>
+
+  <p>This is not a rhetorical question with a preferred answer. Both positions are defensible and the room will divide. Commit before anyone speaks.</p>
+
+  <h3>Phase one &mdash; position, 3 minutes</h3>
+  <p>Vote. Your vote locks and cannot be changed. Nobody sees the distribution yet, including you.</p>
+  <div class="panel">
+    <div class="vote" id="dVote1">
+      <button data-v="saved"><strong>Time was saved.</strong><br><span class="dim" style="font-size:14px">Specification is a one-time cost amortised over every future run. The template is an asset; the task was an expense.</span></button>
+      <button data-v="moved"><strong>The work moved.</strong><br><span class="dim" style="font-size:14px">Specification is per-case, because the facts that matter change per case. What was drafting is now drafting plus specifying plus verifying.</span></button>
+    </div>
+    <div class="out" id="dVote1Out"></div>
+  </div>
+
+  <h3>Phase two &mdash; defence, 8 minutes</h3>
+  <p>Two speakers per side, alternating, ninety seconds each. <strong>The minority side speaks first</strong> &mdash; they expected to have to defend and are the more prepared for it. Nobody rebuts during this phase.</p>
+  <div class="panel tightpad">
+    <span class="plab">Speaking timer</span>
+    <div class="row">
+      <button class="btn mini" id="tStart">Start 90 seconds</button>
+      <button class="btn sel mini" id="tStop">Stop</button>
+      <span class="mono" id="tClock" style="font-size:26px;font-weight:500;color:var(--on)">1:30</span>
+      <span class="mono dim" style="font-size:12px" id="tTurn">Turn 0 of 4</span>
+    </div>
+  </div>
+
+  <h3>Phase three &mdash; complication, 5 minutes</h3>
+  <p>One fact neither side has raised. Nobody who has already spoken speaks again.</p>
+  <div class="cards">
+    <div class="card gold"><span class="num">Complication</span><h4>The verification time is not optional and it is not amortised</h4><p>Section 10 timed it on one transaction. Every run of the template on a new client produces new citations, and every one of them needs the same four checks. The template amortises the specification. It does not amortise the verification.</p></div>
+    <div class="card"><span class="num">Already on screen</span><h4>Section 12 arithmetic</h4><p>A workflow that saves 20 minutes of drafting and adds 12 minutes of citation checking has saved 8. Whoever entered numbers in the baseline widget should read theirs aloud now.</p></div>
+    <div class="card"><span class="num">Already on screen</span><h4>Section 9 adoption gap</h4><p>52.2% of advisors use these tools. Roughly 3% rely on the recommendation. The profession is already behaving as though specification and verification are the job.</p></div>
+  </div>
+
+  <h3>Phase four &mdash; re-vote, 3 minutes</h3>
+  <p>Vote again. Both distributions display together. The instructor enters the room percentages from the Zoom poll; the delta appears without comment.</p>
+  <div class="panel">
+    <div class="vote" id="dVote2">
+      <button data-v="saved"><strong>Time was saved</strong></button>
+      <button data-v="moved"><strong>The work moved</strong></button>
+    </div>
+    <div class="out" id="dVote2Out"></div>
+    <div class="row" style="margin:6px 0 16px">
+      <span class="mono dim" style="font-size:11.5px">Instructor: room percentage voting &ldquo;time was saved&rdquo;</span>
+      <input type="text" id="rm1" value="" placeholder="vote 1 %" inputmode="numeric" style="width:96px">
+      <input type="text" id="rm2" value="" placeholder="vote 2 %" inputmode="numeric" style="width:96px">
+      <button class="btn ghost mini" id="rmGo">Render both distributions</button>
+    </div>
+    <div class="tally" id="dTally"></div>
+    <div class="out" id="dDelta" style="margin-top:16px"></div>
+  </div>
+
+  <p class="dim" style="font-size:14.5px">A delta of zero is a finding, not a failure. It shows a position holding under evidence, which is the same epistemic move this course asks you to make about model output.</p>
+</section>
+
+<!-- ============ 13 ============ -->
 <section class="slide" id="s12" data-nav="Final project">
-  <div class="eyebrow"><span>12 · Assignment</span><span class="clock">6 min</span></div>
+  <div class="eyebrow"><span>13 · Assignment</span><span class="clock">10 min</span></div>
   <h2>Final Project Part 1 and Baseline Capture</h2>
-  <p class="big">Part 1 is assigned now. You have three sessions to build it. The single most common way this project loses marks is a missing or invented baseline, so we capture yours before you leave the room.</p>
+  <p class="big">Part 1 is assigned now. It is 70% of the final project grade, and the final project is 50% of the course grade &mdash; so this single deliverable is 35% of what you leave with.</p>
+
+  <div class="cards">
+    <div class="card"><span class="num">What it is</span><h4>A scalable AI-enabled workflow for a recurring task in your own practice</h4><p>Scalable means two things and both are graded: it works for the next twenty clients rather than the one you built it on, and another advisor can run it without you in the room.</p></div>
+    <div class="card warn"><span class="num">Revised due date</span><h4>Sunday 27 September 2026, 11:59 PM</h4><p>The night before Session 4, not the end of it. The deadline moved earlier so that packages can be screened and distributed <em>in</em> Session 4, which gives your recipient seven days instead of three.</p></div>
+    <div class="card"><span class="num">The handoff</span><h4>A single email, body reading only &ldquo;See attached&rdquo;</h4><p>No context in the email. No explanation in the covering note. Everything a classmate needs lives inside the attachments, because that is the test.</p></div>
+    <div class="card warn"><span class="num">Two absolute rules</span><h4>Transcript to instructor only. No client data anywhere.</h4><p>The build transcript goes to me and never to your classmate. No real client information appears in the workflow, the package, or the transcript. A transcript containing client nonpublic personal information is both an integrity violation and the exact exposure this course exists to prevent.</p></div>
+  </div>
+
+  <p>The single most common way this project loses marks is a missing or invented baseline, so we capture yours before you leave the room. The Session 1 baseline is a required component of the submission and it is graded against in Session 5.</p>
 
   <div class="panel">
     <span class="plab">Baseline capture &mdash; complete this now</span>
@@ -644,7 +851,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   </div>
 
   <h3>Part 1 deliverable checklist</h3>
-  <p>Due at the end of Session 4, as a single email to your assigned classmate with everything in the attachments and a body reading only &ldquo;See attached.&rdquo; The build transcript goes to the instructor only.</p>
+  <p>Seven required elements. Tick what you have planned for; the ones left unticked are what you will be missing on 27 September.</p>
 
   <div class="panel">
     <div id="checklist"></div>
@@ -652,13 +859,19 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   </div>
 
   <h3>Due before Session 3</h3>
-  <p>A first draft of Part 1: the target task, your model and tier choice with the reason, and your initial prompts. Section 5 of this page is where the tier reason comes from; section 12 is where the target task comes from. You have both already.</p>
+  <p>A first draft of Part 1: the target task, your model and tier choice with the reason, and your initial prompts. Section 5 is where the tier reason comes from. Section 13 is where the target task comes from. Section 6b produced at least one of the initial prompts. You have all three already.</p>
 
   <div class="doit">
     <span class="plab">Reading for Session 3</span>
     <p>Wolfram &mdash; &ldquo;The Concept of Embeddings&rdquo; and the opening of &ldquo;Meaning Space.&rdquo; Kitces (January 2025) on AI notetaker adoption and satisfaction. Iskowitz (July 2025) on notetakers and compliance.</p>
-    <p>Session 3 takes up grounding: why a model that cites your sources still sometimes cites the wrong passage from them.</p>
   </div>
+
+  <h3>What Session 3 does that this session could not</h3>
+  <p class="big">Everything in this file has treated the model as a closed system. You improved the output by improving the prompt, because the prompt was the only channel available. Section 8 made that explicit: the model cannot see the Cole file, so what you type is the entire evidentiary record.</p>
+
+  <p>Session 3 opens that channel. Grounding lets the model read the actual documents &mdash; the 2011 wills, the 2014 buy-sell, the 2023 appraisal, the unexecuted trust instrument &mdash; and cite the passages it used. That solves the problem this session could only work around, and it introduces a failure this session could not produce: an answer that is fully sourced, correctly attributed to a real document in your own corpus, and materially wrong, because the passage retrieved was the nearest one rather than the right one.</p>
+
+  <p>The Cole document set is the corpus. The question that follows you into it is the one section 10 left open: does a 2023 appraisal still support a 31% discount, and which document in the folder actually says so.</p>
 </section>
 
 <footer>
@@ -678,10 +891,17 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
       <li>T3 / Inside Information. <em>Software Survey 2026</em> (n = 2,906 advisors), as summarised in Kitces.com Weekend Reading, March 2026.</li>
       <li>Kitces Research on Advisor Productivity, as summarised in <em>The Latest in Financial AdvisorTech</em>, Kitces.com, August 2026.</li>
       <li>Morningstar. (2025, October 15). <em>AI for advisors: Enhancing client conversations.</em></li>
-      <li>Internal Revenue Code §§ 1014, 2010, 691, 7520; Rev. Proc. 2017-34; Rev. Proc. 2022-32. Cited in the triage exercise as exercise material only.</li>
+      <li>Rev. Rul. 85-13, 1985-1 C.B. 184 &mdash; a transfer of assets between a grantor and a grantor trust is not recognised as a sale for federal income tax purposes. Existence and holding verified against IRS materials citing the ruling and the published text. <span class="conf h">H</span></li>
+      <li>Rev. Rul. 2004-64, 2004-2 C.B. 7 (2004-27 I.R.B. 9) &mdash; the grantor&rsquo;s payment of income tax on grantor-trust income is not a gift (Situation 1); a governing instrument that <em>requires</em> reimbursement causes inclusion of the full trust value under § 2036(a)(1) (Situation 2); a trustee&rsquo;s <em>discretion</em> to reimburse does not, by itself, cause inclusion (Situation 3). Verified against the Internal Revenue Bulletin text. <a href="https://www.irs.gov/irb/2004-27_IRB">irs.gov/irb/2004-27_IRB</a> <span class="conf h">H</span></li>
+      <li>Estate of Donald Woelbing v. Commissioner, T.C. Docket No. 30261-13, and Estate of Marion Woelbing v. Commissioner, T.C. Docket No. 30260-13 (petitions filed 26 December 2013). <strong>Stipulated decisions entered 25 and 28 March 2016; no opinion issued; no precedential value.</strong> Procedural posture verified against contemporaneous practitioner reporting. <span class="conf h">H</span></li>
+      <li>Estate of William M. Davidson v. Commissioner, T.C. Docket No. 13748-13 (petition filed 14 June 2013). <strong>Stipulated decision entered 6 July 2015; no opinion issued.</strong> IRS originally asserted deficiencies of approximately $2.8 billion; reported settlement approximately $388 million in estate, gift and GST tax. Posture <span class="conf h">H</span>; settlement figures reported by a single valuation-practice source <span class="conf m">M</span>.</li>
+      <li><em>Kessler v. Commissioner</em>, 152 T.C. 88 (2019), appearing in the section 10 triage, does not exist. It is a deliberately fabricated citation, labelled as exercise material on the page.</li>
+      <li>Internal Revenue Code §§ 671, 675, 2036, 2702, 7520. Referenced descriptively; verify against the current Code before relying on any characterisation in this file.</li>
+      <li>Cole household case anchor &mdash; entirely synthetic. Not based on any client, living or dead. Labelled as synthetic on every page where it appears.</li>
     </ol>
     <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="conf h">H</span> directly verified against the cited source. <span class="conf m">M</span> reported by a secondary source or derived from a stated relationship. <span class="conf l">L</span> illustrative construction, not a published figure.</p>
-    <p style="font-size:13.5px">BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors. UC Berkeley Extension.</p>
+    <p style="font-size:13.5px">Nothing in this file is tax or legal advice. Every characterisation of an authority is a teaching illustration built on a synthetic case, and several are deliberately wrong and labelled as such. Verify against the Code, the Bulletin and the docket before any of it informs a recommendation. That instruction is the course.</p>
+    <p style="font-size:13.5px">BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors. UC Berkeley Extension. Session 2, 14 September 2026.</p>
   </div>
 </footer>
 
@@ -971,10 +1191,10 @@ function cost(){
 
 /* ================= 6 · PTCF ================= */
 var PTCF={
- P:'You are a CFP\u00ae professional writing to a long-standing retail client.',
- T:'Rewrite the draft email below.',
- C:'Facts you may use: only what appears in the attached plan output. The client is 63, retiring in 14 months, and asked one question \u2014 whether the market drop changes the retirement date. Do not introduce any figure that is not in the attachment. If a figure the reader would expect is missing, say so rather than estimating it.',
- F:'Output: 150 words or fewer, three short paragraphs, no bullet points, no subject line. Close with exactly one question for the client.'
+ P:'You are a CFP\u00ae professional writing to a client who founded and still runs a manufacturing company. She is not a tax specialist and does not want to become one.',
+ T:'Explain, at an eighth-grade reading level, what it means to sell a 40% non-voting interest in her company to a grantor trust in exchange for a promissory note, and why the trust\u2019s income tax being paid by her is not treated as an additional gift.',
+ C:'Facts you may use: only those in the attached case summary. Meg Cole, 64, owns 100% of Cole Precision Components. The interest being sold is 40% non-voting, valued at $7,200,000 before a 31% discount, with a note of $4,968,000 over nine years, interest-only. Do not introduce any figure that is not in the summary. Do not state a legal conclusion; describe the mechanics only, and mark anything the attorney must confirm.',
+ F:'Output: 200 words or fewer, four short paragraphs, no bullet points, no headers. End with a single sentence listing what she should ask her attorney. Flesch-Kincaid grade 8 or lower.'
 };
 function ptcf(){
   var s={P:$('cbP').checked,T:$('cbT').checked,C:$('cbC').checked,F:$('cbF').checked};
@@ -1241,22 +1461,22 @@ var BUCK=[{k:'draft',t:'AI drafts, planner verifies'},{k:'assist',t:'AI assists 
 })();
 
 var CITES=[
- {c:'Hollings v. Commissioner, 148 T.C. 212 (2019), holding that a surviving spouse may claim a deceased spousal unused exclusion amount without filing Form 706.',
-  a:'fab',w:'No such decision exists. It has a plausible reporter, volume, page and year, and a holding that sounds like something a client would want to be true. An existence check kills it in fifteen seconds \u2014 which is why fabrication is the least dangerous failure on this list.'},
- {c:'IRC \u00a71014(b)(6) \u2014 on the death of the first spouse, both halves of community property receive a new basis equal to fair market value.',
-  a:'sound',w:'Real, accurately characterised, and current. Note what makes it sound: the sentence describes the operative rule rather than a conclusion drawn from it.'},
- {c:'IRC \u00a71014(b)(6), cited in support of a full basis adjustment on a brokerage account held by spouses as joint tenants with right of survivorship, domiciled in Illinois.',
-  a:'mis',w:'The citation is real and the sentence about it would be accurate in isolation. It does not reach these facts: Illinois is not a community property state, so the provision has nothing to operate on. Real citation, real content, wrong fact pattern. This is the failure that survives every check except reading the provision against the file.'},
- {c:'Rev. Proc. 2017-34 \u2014 a late portability election may be made under the simplified method on or before the second anniversary of the decedent\u2019s death.',
-  a:'sup',w:'Accurate when issued and superseded since. Rev. Proc. 2022-32 extended the simplified-method window to the fifth anniversary. A model whose training data predates the change will state the old rule with total confidence, correctly cited.'},
- {c:'IRC \u00a77520, cited as the applicable rate for a nine-year intra-family promissory note.',
-  a:'mis',w:'\u00a77520 governs the rate for valuing annuities, life estates, term interests and remainders. The rate for a term loan between family members comes from the applicable federal rate under \u00a71274(d). Adjacent subject matter, wrong provision \u2014 exactly the kind of near-miss a plausible-continuation process produces.'},
- {c:'IRC \u00a7691(c) \u2014 an income tax deduction is allowed for the federal estate tax attributable to income in respect of a decedent.',
-  a:'sound',w:'Real, current, and correctly stated. Worth noting that being sound as a statement of law says nothing about whether it applies to your client, which is check four.'}
+ {c:'Rev. Rul. 85-13, 1985-1 C.B. 184 \u2014 cited for the proposition that Meg\u2019s sale of the 40% non-voting interest to her grantor trust is not a recognised sale for federal income tax purposes, so no gain is triggered on her $240,000 basis.',
+  a:'sound',w:'Real, current, and correctly characterised. The ruling establishes that a transaction between a grantor and a grantor trust is a non-event for income tax purposes; the IRS has restated that proposition in later guidance. Note what makes it sound: the sentence states the operative rule, not a conclusion about Meg\u2019s facts. Whether her trust is in fact a grantor trust is a question about the unexecuted instrument, not about the ruling.'},
+ {c:'Rev. Rul. 2004-64, 2004-2 C.B. 7 \u2014 cited for the proposition that Meg\u2019s payment of the income tax on the trust\u2019s income is not an additional gift to her children.',
+  a:'sound',w:'Real, current, and correctly characterised. Situation 1 of the ruling holds that the payment is not a gift because the grantor is discharging her own liability, imposed by \u00a7671. This is the authority behind the explanation you built in section 6. It is sound as stated \u2014 and it is stated without its condition, which is the next item.'},
+ {c:'Rev. Rul. 2004-64 \u2014 cited in support of adding a clause to the draft trust that requires the trustee to reimburse Meg for the income tax she pays, on the basis that the ruling blesses reimbursement.',
+  a:'mis',w:'Real citation, and it holds close to the opposite. Situation 2 of the same ruling holds that where the governing instrument requires reimbursement, the grantor has retained the right to have trust property expended in discharge of her legal obligation, and the full value of the trust is included in her gross estate under \u00a72036(a)(1). Only a discretionary reimbursement power, held by a trustee who is not related or subordinate, avoids that result \u2014 Situation 3. Same document, adjacent paragraphs, opposite outcome. This is what misgrounding looks like when it is expensive.'},
+ {c:'Estate of Donald Woelbing v. Commissioner, T.C. Docket No. 30261-13 \u2014 cited as the Tax Court having upheld an installment sale of non-voting stock to a grantor trust using a defined value clause, with beneficiary guarantees supplying economic substance.',
+  a:'nd',w:'The docket is real, the parties are real, and the Tax Court upheld nothing. The IRS attacked the 2006 sale of Carma Laboratories stock under \u00a72702 and \u00a7\u00a72036/2038 and asserted penalties; the parties settled, and stipulated decisions were entered on 25 and 28 March 2016 finding no additional tax due. A stipulated decision is the parties\u2019 agreement recorded by the court, not the court\u2019s judgment. It carries no precedential weight. Anyone citing Woelbing as a holding is citing a settlement.'},
+ {c:'Estate of Davidson v. Commissioner, T.C. Docket No. 13748-13 \u2014 cited as the Tax Court having approved the use of the \u00a77520 mortality tables to value a note where the seller died shortly after the sale.',
+  a:'nd',w:'Same failure, higher stakes. The IRS originally asserted deficiencies of roughly $2.8 billion; a stipulated decision was entered on 6 July 2015 reflecting a settlement of roughly $388 million. There is no opinion. The valuation question the planning community was waiting on was never answered, and the settlement terms do not disclose how it was resolved. Note the structural resemblance to Meg\u2019s facts: an interest-only note with a balloon, entered while a liquidity event was in view.'},
+ {c:'Kessler v. Commissioner, 152 T.C. 88 (2019) \u2014 cited as holding that a 31% combined discount for lack of control and lack of marketability is presumptively reasonable for a non-voting minority interest in a closely held manufacturer.',
+  a:'fab',w:'No such decision exists. It is also the item the reader most wants to be true, which is exactly why it was generated: it answers the question that was asked. There is no presumptively reasonable discount percentage; discounts are questions of fact proved by appraisal. Meg\u2019s 2023 appraisal, never re-verified and now facing a buyer\u2019s expression of interest, is the actual issue and no citation resolves it.'}
 ];
 (function(){
   var host=$('triage'),score=0,done=0;
-  var CAT=[{k:'fab',t:'Fabricated'},{k:'mis',t:'Real but misgrounded'},{k:'sup',t:'Real but superseded'},{k:'sound',t:'Sound and current'}];
+  var CAT=[{k:'fab',t:'Fabricated'},{k:'mis',t:'Real but misgrounded'},{k:'nd',t:'Cited as holding, never decided'},{k:'sound',t:'Sound and current'}];
   CITES.forEach(function(c,i){
     var d=document.createElement('div');d.style.cssText='padding:18px 0;border-bottom:1px solid var(--line)';
     var btns='';CAT.forEach(function(x){btns+='<button class="btn sel mini" data-k="'+x.k+'">'+x.t+'</button>'});
@@ -1271,7 +1491,7 @@ var CITES=[
         d.querySelectorAll('button').forEach(function(x){x.style.pointerEvents='none';if(x!==b){x.style.opacity=.35;if(x.getAttribute('data-k')===c.a&&!ok){x.style.opacity=1;x.classList.add('act')}}});
         fb.style.display='block';fb.style.background=ok?'var(--on-bg)':'var(--warn-bg)';fb.style.color=ok?'#0A423F':'var(--warn)';
         fb.textContent=(ok?'\u2713  ':'\u2717  ')+c.w;
-        tl.textContent=score+' of '+done+' correct.'+(done===CITES.length?'  Both misgrounded items and the superseded item pass an existence check. That is the whole lesson.':'');
+        tl.textContent=score+' of '+done+' correct.'+(done===CITES.length?'  Five of the six exist. Only one fails an existence check. That is the whole lesson.':'');
       };
     });
   });
@@ -1280,7 +1500,7 @@ var CITES=[
 
 /* ================= 11 · RUBRIC + PEER ================= */
 var RUB={
- email:[ 'The task verb is a single unambiguous operation (rewrite, not "help with")',
+ email:[ 'The task verb is a single unambiguous operation (explain, not "help with")',
          'The source of facts is bounded to a named document or pasted text',
          'A prohibition on introducing figures not present in the source',
          'Output length is a number, not an adjective',
@@ -1421,11 +1641,259 @@ var CHK=[
   render();
 })();
 
+
+/* ================= 0 · RETRIEVAL BRIDGE (Session 1) ================= */
+var BRIDGE=[
+ {q:'Session 1 called the mechanism next-token prediction. In one sentence: what does the model produce at each step, before any word is chosen?',
+  a:'A probability distribution over the whole vocabulary \u2014 roughly 50,000 candidate tokens, each with a number attached. The word you see is a draw from that distribution, not a retrieval from a store of facts.'},
+ {q:'Meg\u2019s CPC stock is worth $18,000,000 against a $240,000 basis. Which of those two numbers could a model state confidently without ever having seen the Cole file, and why does that matter?',
+  a:'Both, and neither is grounded. Given a prompt describing a founder-owned manufacturer, plausible values for each are high-probability continuations. Fluency about a number is not access to it. The model has never seen the file.'},
+ {q:'Session 1 ranked tiers by cost per finished task rather than cost per token. State the reason in one sentence.',
+  a:'Because models differ in how many tokens they burn reaching an answer. A model at one fifth the token price can cost nearly as much per completed task, which makes the price sheet a misleading ranking.'},
+ {q:'Name the three facts about the Cole household that may never be entered into a consumer AI tool.',
+  a:'That Meg is exploring a sale, which she has not told Nathan, who works in the business. The unexecuted IDGT plan and the discount being claimed. And the fact that Meg is a client of the firm at all \u2014 the relationship itself is confidential.'}
+];
+(function(){
+  var host=$('bridge'),shown=false;
+  var h='';
+  BRIDGE.forEach(function(b,i){
+    h+='<div style="padding:'+(i?'18px':'2px')+' 0 18px;border-bottom:'+(i<BRIDGE.length-1?'1px solid var(--line)':'none')+'">'+
+       '<span class="plab">Recall '+(i+1)+'</span>'+
+       '<p style="margin:0 0 11px;font-size:15.5px">'+b.q+'</p>'+
+       '<textarea data-b="'+i+'" style="min-height:66px" placeholder="Answer from memory. No notes, no searching."></textarea>'+
+       '<div class="bans" data-b="'+i+'" style="display:none;font-size:14.5px;line-height:1.55;margin-top:11px;padding:11px 14px;border-radius:7px;background:var(--on-bg);color:#0A423F"></div></div>';
+  });
+  host.innerHTML=h;
+  function count(){
+    var n=0;host.querySelectorAll('textarea').forEach(function(t){if(t.value.trim().length>8)n++});
+    $('bridgeCount').textContent=n+' of 4 answered'+(shown?' \u00b7 revealed':'');
+  }
+  host.querySelectorAll('textarea').forEach(function(t){t.oninput=count});
+  function reveal(){
+    shown=true;
+    host.querySelectorAll('.bans').forEach(function(d){
+      d.style.display='block';d.textContent=BRIDGE[d.getAttribute('data-b')*1].a;
+    });
+    count();
+  }
+  $('bridgeReveal').onclick=reveal;
+  window.__revealBridge=reveal;
+  count();
+})();
+
+/* ================= 3 · STANCE CAPTURE ================= */
+(function(){
+  var box=$('stanceVote'),locked=false;
+  box.querySelectorAll('button').forEach(function(b){
+    b.onclick=function(){
+      if(locked)return;locked=true;
+      b.classList.add('on');
+      box.querySelectorAll('button').forEach(function(x){x.disabled=true});
+      var v=b.getAttribute('data-v');
+      $('stanceOut').textContent=v==='b'
+        ? 'Locked. You took the second position. The next twelve minutes give you the mechanism behind it, and the third consequence card is the part most people have not thought through.'
+        : 'Locked. You took the first position, which is the majority answer in most rooms and is the one the slider below is built to test. Run it at 0.8 and count the distinct outputs before you decide whether the variation is a rounding error.';
+      $('stanceOut').classList.add('has');
+    };
+  });
+  $('stanceOut').textContent='Vote before scrolling. It locks on the first click and cannot be changed.';
+})();
+
+/* ================= 6b · HOMEWORK P.T.C.F AUDIT ================= */
+var ELEM=[
+ {k:'P',n:'Persona',d:'Who the model writes as, and for whom'},
+ {k:'T',n:'Task',d:'One unambiguous operation'},
+ {k:'C',n:'Context',d:'Facts available and the boundary on sources'},
+ {k:'F',n:'Format',d:'Shape, length and structure of the output'}
+];
+(function(){
+  var cur=0,texts=['','',''],sc=[{},{},{}];
+  function renderScale(){
+    var h='';
+    ELEM.forEach(function(e){
+      h+='<div class="eltile"><span class="elk">'+e.k+'<span class="dim mono" style="display:block;font-size:10px;letter-spacing:.06em;font-weight:400">'+e.n.toUpperCase()+'</span></span>'+
+         '<div><div class="dim" style="font-size:13.5px;margin-bottom:7px">'+e.d+'</div><div class="scale" data-e="'+e.k+'">'+
+         ['Absent','Gestured at','Specified','Specified and checkable'].map(function(l,v){
+           var on=sc[cur][e.k]===v;
+           return '<button data-v="'+v+'" class="'+(on?'on'+(v<2?' lo':''):'')+'">'+l+'</button>';
+         }).join('')+'</div></div></div>';
+    });
+    $('hwScore').innerHTML=h;
+    $('hwScore').querySelectorAll('.scale button').forEach(function(b){
+      b.onclick=function(){sc[cur][b.parentNode.getAttribute('data-e')]=b.getAttribute('data-v')*1;renderScale();verdict()};
+    });
+    verdict();
+  }
+  function verdict(){
+    var ks=Object.keys(sc[cur]);
+    if(ks.length<4){$('hwVerdict').textContent='Score all four elements for this prompt.';$('hwVerdict').classList.remove('has');return}
+    var tot=ks.reduce(function(a,k){return a+sc[cur][k]},0);
+    var weakest=ELEM.slice().sort(function(a,b){return sc[cur][a.k]-sc[cur][b.k]})[0];
+    var acc=sc[cur].T+sc[cur].C+sc[cur].F;
+    var o='PROMPT '+(cur+1)+'   TOTAL '+tot+' / 12\n';
+    o+='Accuracy-bearing elements (T, C, F only): '+acc+' / 9\n';
+    o+='Weakest element: '+weakest.k+' \u2014 '+weakest.n+'\n\n';
+    if(sc[cur].P>=2 && acc<=4) o+='Persona is your strongest element and the three that carry accuracy are your weakest.\nThat is the single most common pattern in prompts written before a framework,\nand section 6 gave you the evidence for why it does not help.\n\n';
+    o+= tot>=9 ? 'This one holds up. Score the other two before choosing which to rewrite.'
+      : tot>=5 ? 'Repairable. Rewriting the weakest element will move it more than rewriting the whole thing.'
+      : 'This is the one to rebuild. Load the scaffold below.';
+    $('hwVerdict').textContent=o;$('hwVerdict').classList.toggle('has',tot>=9);
+  }
+  document.querySelectorAll('[data-hw]').forEach(function(b){
+    b.onclick=function(){
+      texts[cur]=$('hwText').value;
+      document.querySelectorAll('[data-hw]').forEach(function(x){x.classList.remove('act')});
+      b.classList.add('act');cur=b.getAttribute('data-hw')*1;
+      $('hwText').value=texts[cur];$('hwWhich').textContent='Scoring prompt '+(cur+1);
+      renderScale();
+    };
+  });
+  $('hwText').oninput=function(){texts[cur]=this.value};
+  $('hwWhich').textContent='Scoring prompt 1';
+  renderScale();
+
+  $('hwScaffold').onclick=function(){
+    $('hwRewrite').value=
+'[PERSONA] You are [role], writing for [reader], who [what they know and do not know].\n\n'+
+'[TASK] [One verb. One object. The operation and nothing else.]\n\n'+
+'[CONTEXT] Use only the facts in [named source]. The relevant facts are:\n'+
+'  - [fact]\n  - [fact]\n'+
+'Do not introduce any figure that is not in [named source].\n'+
+'If a figure the reader would expect is missing, say so rather than estimating it.\n'+
+'If you cannot answer from the source, say which fact you are missing and stop.\n'+
+'No client-identifying information appears in this prompt or its output.\n\n'+
+'[FORMAT] [N] words or fewer. [Structure]. [What the closing line does.]\n'+
+'Cite [what standard] for any [tax, legal, regulatory] statement.';
+    live();$('hwRewrite').focus();
+  };
+  $('hwClear').onclick=function(){$('hwRewrite').value='';live()};
+  function live(){
+    var t=$('hwRewrite').value;
+    var tests=[
+      {k:'P',ok:/\b(you are|act as|writing (for|to)|reader|audience|persona)\b/i.test(t)},
+      {k:'T',ok:/\b(explain|summari|rewrite|draft|list|compare|extract|classify|identify|translate|calculate)\b/i.test(t)},
+      {k:'C',ok:/\b(only|attached|source|do not (introduce|add|invent)|facts|if you cannot|missing)\b/i.test(t)},
+      {k:'F',ok:/\b(\d+\s*(word|sentence|paragraph|bullet|page)|format|structure|table|paragraphs?|cite)\b/i.test(t)}
+    ];
+    var n=tests.filter(function(x){return x.ok}).length;
+    var ph=/\[[A-Z ]+\]|\[fact\]|\[N\]|\[role\]|\[reader\]/.test(t);
+    $('hwLive').textContent=t.trim()?(n+' of 4 elements detected'+(ph?' \u00b7 placeholders still present':'')):'';
+    var h='<div class="row tight">';
+    tests.forEach(function(x){
+      h+='<span class="mono" style="font-size:12px;padding:6px 12px;border-radius:6px;background:'+(x.ok?'var(--on-bg)':'var(--off-bg)')+';color:'+(x.ok?'var(--on)':'var(--muted)')+'">'+(x.ok?'\u2713':'\u25cb')+' '+x.k+'</span>';
+    });
+    h+='</div>';
+    if(t.trim()){
+      h+='<p class="dim" style="font-size:14px;margin:12px 0 0">'+
+        (ph?'Placeholders remain. A prompt with brackets in it is a scaffold, not a template \u2014 replace every one before this carries forward.'
+           :(n===4?'All four present. Run this and the original on the same input, side by side, before you leave the section.'
+                  :'Missing elements are the ones the model will decide for you.'))+'</p>';
+    }
+    $('hwLiveScore').innerHTML=h;
+  }
+  $('hwRewrite').oninput=live;live();
+  $('hwCopy').onclick=function(){
+    if(navigator.clipboard)navigator.clipboard.writeText($('hwRewrite').value);
+    var o=this.textContent,b=this;this.textContent='Copied';setTimeout(function(){b.textContent=o},1400);
+  };
+})();
+
+/* ================= 8 · BUY-SELL INTERVIEW CHECKLIST ================= */
+var BSQ=[
+ 'Which entity is the agreement between \u2014 the corporation, the shareholders, or both?',
+ 'Is it a redemption, a cross-purchase, or a hybrid? The tax consequence differs and the document decides it.',
+ 'What triggering events does it cover, and does an outright sale to a third party appear among them?',
+ 'What is the formula, stated exactly, and what inputs does it take?',
+ 'What value does that formula produce today, against the $18,000,000 appraisal?',
+ 'Is the agreement funded, and by what \u2014 insurance, sinking fund, or nothing?',
+ 'Does it restrict transfers to a trust, which is what the IDGT sale requires?',
+ 'Has it been amended, and is the version you are reading the operative one?',
+ 'What am I planning to do with the summary \u2014 brief the attorney, brief Meg, or file it?',
+ 'Which facts here are confidential to a degree that they should not be in this prompt at all?'
+];
+(function(){
+  var host=$('bsell'),shown=false,ticked={};
+  function render(){
+    var h='<span class="plab">Tick each question the model actually asked you</span><div style="display:flex;flex-direction:column;gap:8px;margin-top:11px">';
+    BSQ.forEach(function(q,i){
+      var on=!!ticked[i];
+      h+='<button class="bq" data-i="'+i+'" style="text-align:left;background:'+(on?'var(--on-bg)':'var(--card)')+';border:1.5px solid '+(on?'var(--on)':'var(--line)')+';border-radius:9px;padding:10px 14px;cursor:pointer;font-family:Source Serif 4,serif;font-size:14.5px;line-height:1.45;color:'+(shown?'var(--ink)':'transparent')+';display:flex;gap:12px;text-shadow:'+(shown?'none':'0 0 9px rgba(22,33,31,.55)')+'"><span style="flex:none;color:'+(on?'var(--on)':'var(--off)')+';font-family:JetBrains Mono,monospace;text-shadow:none">'+(on?'\u2713':'\u25cb')+'</span><span>'+q+'</span></button>';
+    });
+    h+='</div>';
+    if(!shown)h+='<p class="dim" style="font-size:13.5px;margin:14px 0 0">Ten questions are listed and blurred. Tick the ones you were asked from memory of your own run, then reveal. Counting before you read is the measurement; reading first destroys it.</p>';
+    host.innerHTML=h;
+    host.querySelectorAll('.bq').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-i');ticked[i]=!ticked[i];render();count()}});
+    count();
+  }
+  function count(){
+    var n=Object.keys(ticked).filter(function(k){return ticked[k]}).length;
+    $('bsellCount').textContent=n+' of 10 asked'+(shown?(n>=7?' \u00b7 a thorough interview':(n>=4?' \u00b7 partial \u2014 the unasked ones are where the summary goes wrong':' \u00b7 it wrote before it knew')):'');
+  }
+  function reveal(){shown=true;render()}
+  $('bsellReveal').onclick=reveal;
+  window.__revealBsell=reveal;
+  render();
+})();
+
+/* ================= 12 · DISCUSSION ================= */
+(function(){
+  var v1=null,v2=null;
+  function lock(boxId,outId,which){
+    var box=$(boxId),done=false;
+    box.querySelectorAll('button').forEach(function(b){
+      b.onclick=function(){
+        if(done)return;
+        if(which===2&&v1===null){$(outId).textContent='Cast your first vote before the re-vote opens.';$(outId).classList.add('has');return}
+        done=true;b.classList.add('on');
+        box.querySelectorAll('button').forEach(function(x){x.disabled=true});
+        var v=b.getAttribute('data-v');
+        if(which===1){v1=v;$(outId).textContent='Locked. The distribution stays hidden until after the re-vote. Nothing you hear in the next thirteen minutes can change this vote, which is the point of locking it.';}
+        else{v2=v;$(outId).textContent=v===v1?'Locked. You held your position under the complication. That is a finding, not a failure \u2014 report it as one.':'Locked. You moved. The instructor will ask which specific fact moved you, so have it ready.';}
+        $(outId).classList.add('has');
+      };
+    });
+  }
+  lock('dVote1','dVote1Out',1);lock('dVote2','dVote2Out',2);
+  $('dVote1Out').textContent='Vote now. It locks on the first click.';
+  $('dVote2Out').textContent='Re-vote opens after the complication.';
+
+  var t=90,iv=null,turn=0;
+  function paint(){$('tClock').textContent=Math.floor(t/60)+':'+String(t%60).padStart(2,'0');$('tClock').style.color=t<=10?'var(--warn)':'var(--on)'}
+  $('tStart').onclick=function(){
+    if(iv)clearInterval(iv);t=90;turn=Math.min(4,turn+1);$('tTurn').textContent='Turn '+turn+' of 4'+(turn===1?' \u00b7 minority side first':'');paint();
+    iv=setInterval(function(){t--;paint();if(t<=0){clearInterval(iv);iv=null;$('tClock').textContent='TIME'}},1000);
+  };
+  $('tStop').onclick=function(){if(iv)clearInterval(iv);iv=null;paint()};
+  paint();
+
+  $('rmGo').onclick=function(){
+    var a=parseFloat($('rm1').value),b=parseFloat($('rm2').value);
+    if(isNaN(a)||isNaN(b)){$('dDelta').textContent='Enter both room percentages \u2014 the share voting \u201ctime was saved\u201d on vote 1 and on vote 2.';$('dDelta').classList.add('has');return}
+    a=Math.max(0,Math.min(100,a));b=Math.max(0,Math.min(100,b));
+    var rows=[
+     ['Vote 1 \u00b7 saved',a,'var(--plot4)'],['Vote 1 \u00b7 moved',100-a,'var(--off)'],
+     ['Vote 2 \u00b7 saved',b,'var(--plot)'],['Vote 2 \u00b7 moved',100-b,'var(--plot2)']
+    ];
+    $('dTally').innerHTML=rows.map(function(r){
+      return '<div class="trow"><span>'+r[0]+'</span><span class="bg"><span class="fl" style="width:'+r[1].toFixed(0)+'%;background:'+r[2]+'"></span></span><span style="text-align:right">'+r[1].toFixed(0)+'%</span></div>';
+    }).join('');
+    var d=b-a;
+    $('dDelta').textContent='DELTA  '+(d>0?'+':'')+d.toFixed(0)+' percentage points toward \u201ctime was saved\u201d\n\n'+
+      (Math.abs(d)<5
+        ? 'Effectively no movement. Say that out loud and say nothing else about it.\nA position that holds under a complication neither side raised is a\ndefensible position, and holding it is the same epistemic move this\ncourse asks you to make about model output.'
+        : 'The room moved '+Math.abs(d).toFixed(0)+' points. Name the fact that did it, not the\nspeaker who said it. If nobody can identify the fact, the movement\nwas social rather than evidential, which is worth saying too.');
+    $('dDelta').classList.add('has');
+  };
+  $('dDelta').textContent='Both distributions render here after the re-vote.';
+})();
+
 /* keyboard: Shift+U reveals every answer panel, for instructor use */
 document.addEventListener('keydown',function(e){
   if(e.shiftKey&&(e.key==='U'||e.key==='u')){
     document.querySelectorAll('.qfb,.fbx').forEach(function(x){x.style.display='block'});
     var k=$('sortKey');if(k){k.disabled=false}
+    if(window.__revealBridge)window.__revealBridge();
+    if(window.__revealBsell)window.__revealBsell();
   }
 });
 })();
