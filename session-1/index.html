@@ -29,9 +29,8 @@ section.slide{padding:clamp(44px,6vw,74px) 0;border-bottom:1px solid var(--line)
 
 #topbar{position:fixed;top:0;left:0;right:0;height:44px;background:rgba(244,244,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:60;display:flex;align-items:center;gap:14px;padding:0 clamp(14px,4vw,34px)}
 #topbar .ttl{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-#ptrack{flex:1;height:6px;background:var(--off-bg);border-radius:3px;overflow:hidden}
-#pfill{height:100%;width:0;background:var(--on);border-radius:3px;transition:width .4s ease}
-#pnum{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--on);white-space:nowrap;font-weight:500}
+#pnum{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--on);white-space:nowrap;font-weight:500;border:1.5px solid var(--on);border-radius:6px;padding:4px 9px}
+#ptrack{flex:1}
 #caseBtn{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:none;border:1.5px solid var(--on);color:var(--on);border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap}
 #caseBtn:hover{background:var(--on-bg)}
 #caseModal{position:fixed;inset:0;background:rgba(22,33,31,.45);z-index:70;display:none;overflow:auto;padding:60px 16px}
@@ -59,16 +58,41 @@ section.slide{padding:clamp(44px,6vw,74px) 0;border-bottom:1px solid var(--line)
 :focus-visible{outline:2.5px solid var(--on);outline-offset:3px;border-radius:4px}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 
-section.slide.locked > .body{display:none}
-.lockcard{display:none;background:var(--off-bg);border:1.5px dashed var(--off);border-radius:12px;padding:22px 26px}
-section.slide.locked > .lockcard{display:block}
-.lockcard .lk{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px}
-.lockcard p{margin:0;font-size:15.5px;color:var(--muted)}
 .check{display:flex;gap:13px;align-items:flex-start;background:var(--gold-bg);border:1.5px solid #DFD3AF;border-radius:11px;padding:14px 17px;margin:22px 0}
 .check.done{background:var(--on-bg);border-color:var(--on)}
 .check .mk{width:24px;height:24px;border-radius:50%;border:2px solid var(--gold);flex:none;display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--gold);margin-top:1px}
 .check.done .mk{border-color:var(--on);background:var(--on);color:#fff}
 .check .ct{font-size:15.5px;line-height:1.48}
+.inote{border-left:4px solid var(--warn);background:var(--warn-bg);border-radius:0 9px 9px 0;padding:14px 18px;margin:20px 0;font-size:15px;line-height:1.52}
+.inote .ih{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
+.inote ul{margin:7px 0 0;padding-left:19px}.inote li{margin:4px 0}
+.verify{border:2px dashed var(--warn);border-radius:11px;padding:15px 18px;margin:20px 0;background:#fff;font-size:14.5px;line-height:1.5}
+.verify .vh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
+.verify ul{margin:7px 0 0;padding-left:19px}.verify li{margin:5px 0}
+.bigask{border:3px solid var(--on);border-radius:14px;padding:26px 30px;margin:28px 0;background:var(--on-bg)}
+.bigask h3{margin-top:0;font-size:clamp(21px,2.8vw,28px)}
+.bigask .req{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:8px}
+.bigask ol{padding-left:20px;margin:12px 0}.bigask li{margin:7px 0;font-size:16px}
+.bigask .warn2{margin-top:14px;padding-top:13px;border-top:1.5px solid rgba(14,90,85,.28);font-size:15px;color:var(--warn);font-weight:600}
+.vote{display:flex;flex-direction:column;gap:9px;margin:16px 0}
+.vopt{display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--line);border-radius:10px;padding:13px 16px;background:var(--card);cursor:pointer;text-align:left;font-family:"Source Serif 4",serif;font-size:15px;line-height:1.45;color:var(--ink);width:100%}
+.vopt:hover{border-color:var(--off)}
+.vopt.on{border-color:var(--on);background:var(--on-bg);font-weight:600}
+.vopt .vk{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--on);flex:none;width:16px}
+.sealed{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--off-bg);border-radius:6px;padding:8px 12px;display:inline-block}
+.phase{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+.phase .ph{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:6px;background:var(--off-bg);color:var(--muted)}
+.phase .ph.on{background:var(--on);color:#fff}
+.delta{display:grid;grid-template-columns:110px 1fr 62px;gap:11px;align-items:center;font-family:"JetBrains Mono",monospace;font-size:12.5px;margin:7px 0}
+.delta .tr{height:22px;background:var(--off-bg);border-radius:5px;overflow:hidden;position:relative}
+.delta .tr i{position:absolute;left:0;top:0;height:100%;display:block;border-radius:5px}
+.delta .tr i.v1{background:var(--off);height:9px}
+.delta .tr i.v2{background:var(--on);height:9px;top:11px}
+.ci{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:11px;margin:16px 0}
+.ci label{display:flex;gap:9px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:11px 13px;cursor:pointer;font-size:14px;line-height:1.4}
+.ci label.on{border-color:var(--on);background:var(--on-bg)}
+.ci input{margin-top:2px;accent-color:var(--on);width:16px;height:16px;flex:none}
+.hidden{display:none}
 .check .ct b{font-family:"Bricolage Grotesque",sans-serif;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px}
 .check.done .ct b{color:var(--on)}
 
@@ -247,14 +271,14 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
 .depthbar{display:flex;gap:3px;margin-top:11px;align-items:flex-end;height:52px}
 .depthbar i{flex:1;background:var(--on);border-radius:2px 2px 0 0;min-height:2px;opacity:.75}
 .depthbar i.neg{background:var(--warn)}
-@media print{#rail,#topbar,#caseModal{display:none}body{background:#fff;padding-top:0}.slide{page-break-inside:avoid;padding:18px 0}section.slide.locked>.body{display:block}.lockcard{display:none!important}}
+@media print{#rail,#topbar,#caseModal{display:none}body{background:#fff;padding-top:0}.slide{page-break-inside:avoid;padding:18px 0}}
 </style>
 </head>
 <body>
 <div id="topbar">
-  <span class="ttl">Session 1</span>
-  <div id="ptrack"><div id="pfill"></div></div>
-  <span id="pnum">0 / 0</span>
+  <span class="ttl">Session 1 &middot; Cole household</span>
+  <div id="ptrack"></div>
+  <span id="pnum" class="mono">Shift+U &mdash; reveal all</span>
   <button id="caseBtn">Case facts</button>
 </div>
 <div id="caseModal"><div class="inner" id="caseInner"></div></div>
@@ -266,33 +290,61 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
   <div class="eyebrow">BUS ADM X433.4 &middot; Session 1 &middot; 31 August 2026</div>
   <h1>How the Machine Works, and What It Costs</h1>
   <p class="lede">Build next-token prediction by hand, then price it against a real planning practice.</p>
+  <p class="dim mono" style="font-size:12.5px;letter-spacing:.06em">Scrolls freely &mdash; nothing is withheld. Answer panels open on an explicit reveal, or all at once with Shift+U.</p>
 
-  <p class="big">Sections unlock as you complete them. Every example uses one synthetic client household &mdash; open <b>Case facts</b> in the bar above at any time, and keep it open.</p>
+  <p class="big">Every example, exercise and quiz item in this session and the next three draws from one synthetic household. Open <b>Case facts</b> in the bar above and keep it open.</p>
 
   <div class="panel" style="border-color:var(--on)">
-    <span class="plab">The household &mdash; synthetic, constructed for this course</span>
+    <span class="plab">The Cole household &mdash; synthetic, constructed for this course &middot; Dayton, Ohio &middot; approximately $30,000,000</span>
     <table class="dt tight" style="margin:0">
       <tbody>
-        <tr><td style="width:34%"><b>Adaeze Okonkwo, 58</b></td><td>Founder and CEO, specialty manufacturing C-corp. Signed LOI to sell at roughly $18M enterprise value; close targeted for Q2 next year.</td></tr>
-        <tr><td><b>Miguel Reyes, 61</b></td><td>Tenured professor. $890K 403(b), small defined-benefit pension electable at 65.</td></tr>
-        <tr><td><b>Concentrated position</b></td><td>$14.2M in Okonkwo Industries stock. Original basis $310K. Shares issued to her at formation in 2013.</td></tr>
-        <tr><td><b>Other assets</b></td><td>$3.1M taxable ($1.4M unrealized gain), $2.4M traditional IRA, $310K cash, $1.8M residence.</td></tr>
-        <tr><td><b>Children</b></td><td>Ilesanmi, 26, autistic, currently receives SSI and Medicaid waiver services. Tobenna, 31, married.</td></tr>
-        <tr><td><b>Documents</b></td><td>Joint revocable trust (2016), pour-over wills. No ILIT. $2M level term on Adaeze, expires at 65.</td></tr>
-        <tr><td><b>Stated goals</b></td><td>Fund Ilesanmi's lifetime care without disrupting benefits; $400K after-tax annual income; establish a family charitable vehicle.</td></tr>
+        <tr><td style="width:32%"><b>Margaret "Meg" Cole, 64</b></td><td>Founder and 100% owner of Cole Precision Components Inc. (CPC), a C-corporation making precision aerospace fasteners. Founder stock issued 2009, basis $240,000. A strategic buyer has expressed <b>informal</b> interest. No letter of intent has been signed.</td></tr>
+        <tr><td><b>David Cole, 67</b></td><td>Retired hospital pharmacist. Social Security claimed at 66. Married 31 years, both US citizens, Ohio domicile and therefore no state estate tax.</td></tr>
+        <tr><td><b>Balance sheet</b></td><td>CPC stock $18,000,000 &middot; taxable brokerage $4,500,000 (62% in three technology names) &middot; Meg IRA $3,000,000 &middot; David 403(b) $1,000,000 &middot; residence $2,000,000, no mortgage &middot; cash and T-bills $1,500,000.</td></tr>
+        <tr><td><b>Children</b></td><td>Claire, 34, physician, married, two children, financially independent, no interest in the business. Nathan, 31, works in CPC operations &mdash; Meg has not told him she is exploring a sale.</td></tr>
+        <tr><td><b>The recurring thread</b></td><td>Meg's estate attorney has proposed selling a 40% non-voting CPC interest to an intentionally defective grantor trust <span class="dim">[IDGT &mdash; a trust treated as owned by the grantor for income tax but outside the estate for transfer tax]</span> for a promissory note, after a seed gift. Seed $650,000 &middot; pre-discount value of the interest $7,200,000 &middot; discount claimed 31% &middot; note principal $4,968,000 &middot; 9 years, interest-only, balloon at maturity &middot; supported by a 2023 appraisal never re-verified.</td></tr>
+        <tr><td><b>Documents</b></td><td>2011 wills pouring over to a joint revocable trust &middot; 2014 buy-sell using a stale formula that conflicts with the $18,000,000 appraised value &middot; 2023 appraisal &middot; 2011 powers of attorney and directives &middot; unexecuted draft IDGT and note &middot; no irrevocable life insurance trust.</td></tr>
+        <tr><td><b>Charitable</b></td><td>Donor-advised fund with a $310,000 balance, roughly $40,000 contributed annually. Meg chairs a Dayton workforce-training nonprofit and intends roughly $2,000,000 to it eventually. No pre-sale charitable technique is under consideration.</td></tr>
       </tbody>
     </table>
   </div>
 
+  <div class="talk"><span class="th">The question that stays open all four sessions</span>Is the planning window still open now that a buyer has expressed interest, and does a 2023 appraisal still support a 31% discount today? Nobody answers this tonight. Every session returns to it.</div>
+
+  <div class="inote"><span class="ih">Instructor note &mdash; classroom anchor only</span>The Cole household is a teaching anchor. Students build the final project on a real recurring task from their own practice using their own synthetic or de-identified data. Say this out loud here so nobody builds a final-project workflow around Cole.</div>
+
   <p class="dim" style="font-size:14.5px">Figure labels: <span class="conf h">H</span> primary or first-party &middot; <span class="conf m">M</span> secondary or derived &middot; <span class="conf l">L</span> unverified. Arrow keys navigate. Instructors: <b class="mono">Shift+U</b> unlocks everything.</p>
 
-  <div class="check" data-gate="g1"><span class="mk">1</span><div class="ct"><b>Checkpoint</b>Read the case, then begin.<div class="row" style="margin-top:10px"><button class="btn" id="beginBtn">Begin</button></div></div></div>
+  <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Name the one figure in this case you would refuse to accept without re-verification, and say why.<div class="row" style="margin-top:10px"><input type="text" id="s1field" placeholder="e.g. the 31% discount, because the appraisal predates the buyer's interest" style="max-width:520px"></div></div></div>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+
+<!-- COLD OPEN -->
+<section class="slide" id="s1b" data-nav="Cold open">
+ <div class="body">
+  <div class="eyebrow">00 &middot; Cold open</div>
+  <h2>The Last Prompt You Sent</h2>
+  <p class="big">Not a good one. Not a work one. The last one, whatever it was, pasted exactly as you typed it &mdash; typos, missing context, all of it.</p>
+
+  <div class="inote"><span class="ih">Instructor note &mdash; before this field is filled</span>Open by reading two or three opinions from the Week 0 Canvas discussion aloud, unattributed, for about ninety seconds. Do not name anyone, do not ask anyone to elaborate, and do not survey the room. The point is that the class hears real positions from inside itself before it hears anything from you. Then put this field on screen.
+  <ul><li>Week 0 already collected names, locations, titles, outside interests and either a plain-language work explanation or a planning opinion. <b>Do not collect any of that again.</b></li><li>This field is the only thing asked here, and it repeats every session as the standing ritual.</li></ul></div>
+
+  <div class="panel">
+    <label class="plab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
+    <textarea id="coldPrompt" placeholder="Paste it exactly. Do not clean it up &mdash; the typos are the useful part."></textarea>
+    <div class="row" style="margin-top:12px"><button class="btn" id="coldGo">Analyse what I typed</button></div>
+    <div class="readout" id="coldOut"><span class="nil">Paste something and press the button.</span></div>
+  </div>
+
+  <p>Whatever you pasted, you wrote it for a machine that does exactly one thing: assign a probability to every possible next token and pick one. Nothing in it read your intent. The rest of tonight is what that sentence actually means.</p>
+
+  <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen &mdash; you will compare it against the same field in Session 5.</div></div>
+ </div>
 </section>
 
 <!-- 2 -->
-<section class="slide locked" id="s2" data-nav="Prediction">
+<section class="slide" id="s2" data-nav="Prediction">
  <div class="body">
   <div class="eyebrow">01 &middot; Wolfram, "It's Just Adding One Word at a Time"</div>
   <h2>The Model Ranks Candidates, Then Something Picks One</h2>
@@ -307,7 +359,7 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
     <p style="margin-bottom:0"><span class="sim">Illustrative distribution &mdash; the article's table is an image and is not reproduced</span></p>
   </div>
 
-  <p>You are the sampler. Each list depended on your last choice, and nothing ever revisited an earlier one. Several paths produce a defensible sentence about the Okonkwo position; at least one produces a false one.</p>
+  <p>You are the sampler. Each list depended on your last choice, and nothing ever revisited an earlier one. Several paths produce a defensible sentence about the Cole discount; at least one produces a false one, in the same confident register.</p>
 
   <h3>Always taking the top word produces flat, repetitive text</h3>
   <div class="wolf"><span class="wh">From the assigned reading</span>Always picking the highest-ranked word gives "a very 'flat' essay, that never seems to 'show any creativity' (and even sometimes repeats word for word)." A temperature of <b>0.8</b> "seems best" for essays &mdash; and "there's no 'theory' being used here; it's just a matter of what's been found to work in practice."</div>
@@ -339,14 +391,13 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
 
   <p>Straightness means no natural cutoff &mdash; no rank at which the tail stops mattering. Every control in the lab later is somebody's answer to where to cut anyway.</p>
 
-  <div class="check" data-gate="g2"><span class="mk">2</span><div class="ct"><b>Checkpoint</b>Place six tokens, generate at all three temperatures, and switch to log&ndash;log axes.</div></div>
+  <div class="check" data-gate="g2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place six tokens, generate at all three temperatures, and switch to log&ndash;log axes.</div></div>
   <span class="src"><b>Wolfram, S. (2023), What Is ChatGPT Doing &hellip; and Why Does It Work?</b> &mdash; opening section. Assigned reading. <span class="conf h">H</span></span>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
 </section>
 
 <!-- 3 -->
-<section class="slide locked" id="s3" data-nav="Where probabilities come from">
+<section class="slide" id="s3" data-nav="Where probabilities come from">
  <div class="body">
   <div class="eyebrow">02 &middot; Wolfram, "Where Do the Probabilities Come From?"</div>
   <h2>Counting Works, Then Stops Working</h2>
@@ -394,14 +445,13 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
 
   <p>Two notches past three and the argument is over. What remains is to build something that estimates the probability of sequences it has never seen.</p>
 
-  <div class="check" data-gate="g3"><span class="mk">3</span><div class="ct"><b>Checkpoint</b>Generate letters at order 4, run the word-pair mode, then set the slider to the smallest n where possibilities exceed all text ever written.</div></div>
+  <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Generate letters at order 4, run the word-pair mode, then set the slider to the smallest n where possibilities exceed all text ever written.</div></div>
   <span class="src">All quoted figures: Wolfram (2023). <span class="conf h">H</span> &middot; Chart arithmetic is 40,000<sup>n</sup> against a 400 billion word corpus. <span class="conf h">H</span></span>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
 </section>
 
 <!-- 4 -->
-<section class="slide locked" id="s4" data-nav="What a model is">
+<section class="slide" id="s4" data-nav="What a model is">
  <div class="body">
   <div class="eyebrow">03 &middot; Wolfram, "What Is a Model?"</div>
   <h2>Fitting a Model by Hand</h2>
@@ -428,7 +478,7 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
   <p>Try the third form. It has as many knobs as the second and cannot fit this data at any setting, because its structure is wrong. The choice of structure is made before any data arrives, and no amount of training rescues a bad one.</p>
 
   <div class="talk"><span class="th">Planning parallel &mdash; discussion</span>Every Monte Carlo engine you run is a model with knobs: return assumptions, inflation, sequence-of-returns treatment, mortality table. A 91% probability of success is not a measurement. It is the output of a structure someone chose, fitted to assumptions someone set.
-  <ul><li>Which of your planning software's assumptions can you actually name and defend to a client?</li><li>If two engines give Adaeze 91% and 76%, which is wrong &mdash; and how would you find out?</li></ul></div>
+  <ul><li>Which of your planning software's assumptions can you actually name and defend to a client?</li><li>If two engines give Meg 91% and 76% on the same facts, which is wrong &mdash; and how would you find out?</li></ul></div>
 
   <h3>The size of the thing</h3>
   <p>Guess first. Guessing badly is the useful part &mdash; nobody has intuition for these numbers.</p>
@@ -445,14 +495,13 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
   </table>
   <p class="dim" style="font-size:14px">Wolfram's comparison: brains have "about 100 billion neurons" and "maybe 100 trillion connections." He also estimates it takes "a bit less than one neural net weight to carry the information content of a word of training data" &mdash; the model is roughly the size of everything it read, and nothing in it can be looked up.</p>
 
-  <div class="check" data-gate="g4"><span class="mk">4</span><div class="ct"><b>Checkpoint</b>Get the loss below 0.02, then submit all three scale guesses.</div></div>
+  <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Get the loss below 0.02, then submit all three scale guesses.</div></div>
   <span class="src">Fall times computed from t = &radic;(2h/g) at 5-metre spacing &mdash; idealised, as in the article. All model figures quoted from Wolfram (2023). <span class="conf h">H</span></span>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
 </section>
 
 <!-- 5 -->
-<section class="slide locked" id="s5" data-nav="Tokens">
+<section class="slide" id="s5" data-nav="Tokens">
  <div class="body">
   <div class="eyebrow">04 &middot; Tokens and price</div>
   <h2>A Token Is Not a Word</h2>
@@ -461,7 +510,7 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
 
   <div class="panel">
     <label class="plab" for="tokIn">Paste something you would actually send &mdash; a client note, a paragraph of a trust</label>
-    <textarea id="tokIn">Adaeze's shares were issued at formation in 2013 with a basis of $310,000; the potential Section 1202 exclusion turns on original issuance and the corporation's gross assets at that time.</textarea>
+    <textarea id="tokIn">The 2023 appraisal supporting the 31% combined discount has not been re-verified, and a strategic buyer has now expressed informal interest in Cole Precision Components.</textarea>
     <div class="tokstrip" id="tokStrip"></div>
     <div class="stats">
       <div class="stat"><span class="sn">Est. tokens</span><span class="sv" id="tokCount">0</span></div>
@@ -477,21 +526,20 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
     <thead><tr><th>Document from this case</th><th>Approx. tokens</th><th>Into Opus 5</th></tr></thead>
     <tbody>
       <tr><td>Discovery meeting notes (3,000 words)</td><td class="n">~4,000</td><td class="n">$0.02</td></tr>
-      <tr><td>Joint revocable trust, 60 pages</td><td class="n">~20,000</td><td class="n">$0.10</td></tr>
-      <tr><td>LOI, purchase agreement draft and schedules</td><td class="n">~125,000</td><td class="n">$0.63</td></tr>
-      <tr><td>Entire client file, full 1M context window</td><td class="n">1,000,000</td><td class="n">$5.00</td></tr>
+      <tr><td>2011 wills and joint revocable trust</td><td class="n">~20,000</td><td class="n">$0.10</td></tr>
+      <tr><td>Draft IDGT instrument, note, 2014 buy-sell and 2023 appraisal</td><td class="n">~125,000</td><td class="n">$0.63</td></tr>
+      <tr><td>Entire Cole file, full 1M context window</td><td class="n">1,000,000</td><td class="n">$5.00</td></tr>
     </tbody>
   </table>
   <p>The whole file costs five dollars to read. Cost is not the constraint. Your duty of care is &mdash; Section 12.</p>
 
-  <div class="check" data-gate="g5"><span class="mk">5</span><div class="ct"><b>Checkpoint</b>Replace the sample with your own writing, at least 40 tokens.</div></div>
+  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Replace the sample with your own writing, at least 40 tokens.</div></div>
   <span class="src">Prices and context window: <b>Anthropic, Claude Platform Docs &mdash; Pricing</b>, retrieved 28 July 2026. First-party. <span class="conf h">H</span> &middot; Token IDs and vocabulary figures: Wolfram (2023). <span class="conf h">H</span> &middot; Word-to-token rows derived at 0.75 words per token. <span class="conf m">M</span></span>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
 </section>
 
 <!-- 6 -->
-<section class="slide locked" id="s6" data-nav="Meaning space">
+<section class="slide" id="s6" data-nav="Meaning space">
  <div class="body">
   <div class="eyebrow">05 &middot; Wolfram, "The Concept of Embeddings"</div>
   <h2>Words Laid Out So That Nearby Means Similar</h2>
@@ -514,13 +562,12 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
   <div class="readout" id="craneOut" style="margin-top:12px"><span class="nil">Pick a sentence.</span></div>
   <p class="dim" style="font-size:14.5px">GPT-2 uses vectors of length 768; GPT-3 uses 12,288. What you clicked is two dimensions, hand-placed. No flat picture of a 12,288-dimensional space is faithful.</p>
 
-  <div class="check" data-gate="g6"><span class="mk">6</span><div class="ct"><b>Checkpoint</b>Answer all three questions correctly, then open both senses of "crane".</div></div>
+  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all three questions correctly, then open both senses of "crane".</div></div>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
 </section>
 
 <!-- 7 -->
-<section class="slide locked" id="s7" data-nav="Counting failure">
+<section class="slide" id="s7" data-nav="Counting failure">
  <div class="body">
   <div class="eyebrow">06 &middot; Wolfram, on what neural nets cannot do</div>
   <h2>The Task a Transformer Cannot Reliably Learn</h2>
@@ -546,23 +593,22 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
   <p>Counting is algorithmic. The network is feed-forward &mdash; "there's no looping or 'going back'" &mdash; so it approximates a counter from local pattern, and the approximation decays with depth.</p>
   <p class="pull">Anything requiring an exact count across a long document is the failure case, not the edge case.</p>
 
-  <div class="talk"><span class="th">Where this bites in the Okonkwo file &mdash; discussion</span>Every one of these is a counting task inside a long sequence, and every one is a place a fluent answer is least trustworthy:
-  <ul><li>Confirming the third-party special needs trust remainder percentages total 100 across a 40-page instrument with two amendments</li><li>Verifying each of the 14 accounts in the plan appears in the funding schedule and none appears twice</li><li>Checking that the basis figure quoted on page 3 of the QSBS memo matches the one used on page 40</li><li>Tracing whether the 2016 trust's pour-over provisions were superseded by a later amendment</li></ul>
-  Ask the room: which of these have you already delegated to a tool this year, and did you check the arithmetic yourself?</div>
+  <div class="talk"><span class="th">Where this bites in the Cole file &mdash; discussion</span>Every one of these is a counting or reconciliation task inside a long sequence, and every one is a place a fluent answer is least trustworthy:
+  <ul><li>Confirming the 2014 buy-sell formula value against the $18,000,000 appraisal, and listing every provision that conflicts</li><li>Checking that the note principal on the draft instrument is $4,968,000 and that it is the same figure on every schedule and exhibit</li><li>Verifying the 31% discount is applied to $7,200,000 and not to some other base, in each place it appears</li><li>Tracing whether the 2011 powers of attorney were superseded by anything in the 2016 revocable trust restatement</li></ul>
+  Ask the room: which of these have you already delegated to a tool this year, and did you total the numbers yourself?</div>
 
-  <div class="check" data-gate="g7"><span class="mk">7</span><div class="ct"><b>Checkpoint</b>Push the sequence to a depth where the model assigns real probability to an invalid token.</div></div>
+  <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the sequence to a depth where the model assigns real probability to an invalid token.</div></div>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
 </section>
 
 <!-- 8 -->
-<section class="slide locked" id="s8" data-nav="SAMPLER LAB">
+<section class="slide" id="s8" data-nav="SAMPLER LAB">
  <div class="body">
   <div class="eyebrow">07 &middot; The lab</div>
   <h2>The Nine Controls Between the Model and Your Answer</h2>
   <p class="big">The model hands over a probability for every one of about 50,000 tokens. A stack of sampling algorithms then cuts that list down and picks one. Almost nobody using these tools professionally knows they exist.</p>
 
-  <p>Below is the candidate distribution for a prompt about the Okonkwo position, shaped as the rank<sup>&minus;1</sup> power law from Section 1. Red bars are cut; green survive.</p>
+  <p>Below is the candidate distribution for a prompt about Meg's CPC interest, shaped as the rank<sup>&minus;1</sup> power law from Section 1. Red bars are cut; green survive.</p>
 
   <div class="panel" style="padding:18px 20px">
     <div class="row" style="margin-bottom:6px"><span class="dim" style="font-size:14px">Prompt:</span><span class="mono" id="labPrompt" style="font-size:13px"></span></div>
@@ -600,14 +646,13 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
 
   <p>The model's probabilities are not the answer. They are the input to a filtering stack somebody configured, usually by default, usually without telling you. These controls are exposed in the API and hidden in chat interfaces &mdash; if your final project runs through an API, you are choosing them whether you know it or not.</p>
 
-  <div class="check" data-gate="g8"><span class="mk">8</span><div class="ct"><b>Checkpoint</b>Configure the samplers so exactly three tokens survive and the leader holds more than 55% of the surviving mass.</div></div>
+  <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Configure the samplers so exactly three tokens survive and the leader holds more than 55% of the surviving mass.</div></div>
   <span class="src">Algorithms follow the sampler definitions published in <b>artefact2's LLM sampling visualiser</b> (<a href="https://artefact2.github.io/llm-sampling/" style="color:var(--on)">artefact2.github.io/llm-sampling</a>), reimplemented here against an illustrative distribution. Worth running live &mdash; it uses recorded distributions from real models. <span class="conf m">M</span></span>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
 </section>
 
 <!-- 9 -->
-<section class="slide locked" id="s9" data-nav="Hallucination">
+<section class="slide" id="s9" data-nav="Hallucination">
  <div class="body">
   <div class="eyebrow">08 &middot; Consequence</div>
   <h2>The Same Question, Asked Three Times</h2>
@@ -639,17 +684,18 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
 
   <p class="pull">Confident tone is not a claim about confidence. It is the output of the scoring rule.</p>
 
-  <div class="talk"><span class="th">The planning version &mdash; discussion</span>Ask any frontier model for the Section 1202 per-issuer exclusion cap, the gross-asset ceiling at issuance, and the holding period, and it will answer all three in one confident paragraph. Two of the three are frequently right. The statute was also amended in 2025, which means the training data contains both the old and new figures, in similar sentences, with no signal about which is current.
-  <ul><li>Which of Adaeze's planning questions are arbitrary facts &mdash; a specific number, date or threshold with one right answer and many plausible wrong ones?</li><li>Which are reasoning questions where the model's tendency to produce something is less dangerous?</li><li>Sort tonight's case that way. The first list is the one you verify line by line.</li></ul></div>
+  <div class="talk"><span class="th">The planning version &mdash; discussion</span>Ask any frontier model what seed gift a sale to a grantor trust requires, and it will give you a percentage in a confident sentence. The conventional 10% figure is a practitioner rule of thumb, not a statutory or regulatory threshold, and the model has no way to signal that difference &mdash; both appear in the same register, in the same kind of sentence.
+  <ul><li>Which of Meg's questions are arbitrary facts &mdash; a rate, a date, a threshold with one right answer and many plausible wrong ones?</li><li>Which are contested judgments where no answer is retrievable because none exists?</li><li>Sort tonight's case that way. The first list is what you verify line by line. The second is what you never delegate at all.</li></ul></div>
 
-  <div class="check" data-gate="g9"><span class="mk">9</span><div class="ct"><b>Checkpoint</b>Ask three times, then view both scoring rules.</div></div>
+  <div class="inote"><span class="ih">Instructor note &mdash; say the spiral aloud here</span>Name the three-session arc in one breath, so the repetition later reads as architecture rather than redundancy: <b>Session 1 is why hallucination happens. Session 3 is how often it happens against a real document corpus. Session 4 is what it costs you when it does.</b> Tonight you are only responsible for the mechanism.</div>
+
+  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Ask three times, then view both scoring rules.</div></div>
   <span class="src"><b>Kalai, A. T., Nachum, O., Vempala, S. S. &amp; Zhang, E. (2025), Why Language Models Hallucinate</b>, arXiv:2509.04664, &sect;1 and &sect;1.2. Model was DeepSeek-V3, accessed 11 May 2025. Assigned reading. <span class="conf h">H</span> &middot; The 2025 Section 1202 amendment is referenced as an example of training-data staleness; confirm current thresholds against the Code before use. <span class="conf m">M</span></span>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
 </section>
 
 <!-- 10 -->
-<section class="slide locked" id="s10" data-nav="Frontier">
+<section class="slide" id="s10" data-nav="Frontier">
  <div class="body">
   <div class="eyebrow">09 &middot; Capability against price</div>
   <h2>Intelligence Index Plotted Against Cost per Task</h2>
@@ -665,7 +711,7 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
     <div class="readout" id="frontOut"></div>
   </div>
 
-  <p>The dashed line connects models no other model beats on capability and price at once. Going from $2.75 to $1.04 per task costs one index point; going to $0.31 costs six. Whether six points matters depends on whether you are drafting Adaeze's meeting agenda or reading her trust.</p>
+  <p>The dashed line connects models no other model beats on capability and price at once. Going from $2.75 to $1.04 per task costs one index point; going to $0.31 costs six. Whether six points matters depends on whether you are drafting Meg's meeting agenda or reading the 2023 appraisal.</p>
   <p class="pull">Paying for the top of the leaderboard is a decision, not a default.</p>
 
   <table class="dt tight">
@@ -680,14 +726,13 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
   </table>
   <p class="dim" style="font-size:14.5px">Ten times from cheapest to most expensive inside one vendor. Sonnet 5 introductory pricing ends tonight and rises 50% tomorrow. Cache hits cost 10% of input; batch is 50% on both sides. Claude 4.7 and later also produce roughly 30% more tokens for the same text &mdash; a per-token price cut does not always cut the bill.</p>
 
-  <div class="check" data-gate="g10"><span class="mk">10</span><div class="ct"><b>Checkpoint</b>Set the budget below $1.00 and identify the best model still available.</div></div>
+  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Set the budget below $1.00 and identify the best model still available.</div></div>
   <span class="src"><b>Artificial Analysis</b>, 17 and 24 July 2026. <span class="conf h">H</span> &middot; Opus 5 and GPT-5.6 Terra omitted: cost per index task unpublished, not estimated. &middot; Prices: <b>Anthropic Claude Platform Docs</b>, 28 July 2026. First-party. <span class="conf h">H</span></span>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
 </section>
 
 <!-- 11 -->
-<section class="slide locked" id="s11" data-nav="Practice cost">
+<section class="slide" id="s11" data-nav="Practice cost">
  <div class="body">
   <div class="eyebrow">10 &middot; Your firm</div>
   <h2>What a Practice Pays in a Year</h2>
@@ -709,32 +754,47 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
     <div class="assume" id="assumeBox"></div>
   </div>
 
+  <h3>What one pass over the Cole file costs</h3>
+  <p>Different question, and the more useful one. Not what the firm spends in a year &mdash; what a single piece of work costs. Read the draft IDGT instrument, the promissory note, the 2014 buy-sell and the 2023 appraisal together, roughly 125,000 tokens in, and produce an 8,000-token issues memo.</p>
+  <div class="panel">
+    <div class="row" style="margin-bottom:12px">
+      <span class="dim" style="font-size:14px">Tier:</span>
+      <button class="btn sel mini act" data-dp="0">Haiku 4.5</button>
+      <button class="btn sel mini" data-dp="1">Sonnet 5</button>
+      <button class="btn sel mini" data-dp="2">Opus 5</button>
+      <button class="btn sel mini" data-dp="3">Fable 5</button>
+    </div>
+    <div class="stats" id="dpStats"></div>
+    <div class="readout" id="dpOut"></div>
+  </div>
+  <p>Run every tier. The spread across the whole ladder is under a dollar and fifty cents for the same piece of work. On this household, at any plausible fee, the cost of the model is not a line item you would ever discuss. The cost of getting the discount wrong is.</p>
+  <p class="pull">Price is never the reason to use the cheap tier. Fitness for the task is.</p>
+
   <p>At the defaults, metered Opus costs less than half of five Pro subscriptions. That is not an argument for the API. The subscription buys the interface, the file handling and the projects, and removes the need to build anything. Most of this room should be on subscriptions. Knowing why is the point.</p>
 
-  <div class="check" data-gate="g11"><span class="mk">11</span><div class="ct"><b>Checkpoint</b>Find a volume where metered Opus 5 exceeds the same number of Pro subscriptions. Note what it takes.</div></div>
+  <div class="check" data-gate="g11"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Find a volume where metered Opus 5 exceeds the same number of Pro subscriptions, then price the Cole document pass at all four tiers.</div></div>
   <span class="src">Rates: <b>Anthropic Claude Platform Docs</b>, 28 July 2026. <span class="conf h">H</span> &middot; Annual figures derived. <span class="conf h">H</span> &middot; Tokens per meeting is an instructor-set assumption, not measured data. <span class="conf m">M</span></span>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
 </section>
 
 <!-- 12 -->
-<section class="slide locked" id="s12" data-nav="Tier choice">
+<section class="slide" id="s12" data-nav="Tier choice">
  <div class="body">
   <div class="eyebrow">11 &middot; Judgment</div>
   <h2>Assigning a Tier to Six Tasks From This Case</h2>
   <p class="big">There is no single right answer. There is a defensible answer and an indefensible one, and the difference is whether you can say why.</p>
+  <p>Two of these are worth more than the tier they attract. The concentration calculation looks trivial and is trivial &mdash; and it is the only item here whose output you can verify in your head, which is exactly why it belongs on the cheapest tier. The meeting summary looks like a mid-tier convenience and is the one most likely to destroy information, because the thing worth preserving is a disagreement and coherent prose is what the objective rewards.</p>
   <div class="panel quiz" id="tierQuiz"></div>
-  <div class="check" data-gate="g12"><span class="mk">12</span><div class="ct"><b>Checkpoint</b>Answer all six.</div></div>
+  <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all six, then name the one task here you would not delegate at any tier.</div></div>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
 </section>
 
 <!-- 13 -->
-<section class="slide locked" id="s13" data-nav="Confidentiality">
+<section class="slide" id="s13" data-nav="Confidentiality">
  <div class="body">
   <div class="eyebrow">12 &middot; The line</div>
   <h2>What May Never Be Entered Into a Third-Party Tool</h2>
-  <p class="big">Every item is drawn from the Okonkwo&ndash;Reyes file. Sort all eight. Three are harder than they look.</p>
+  <p class="big">Every item is drawn from the Cole file. Three of these eight are the confidentiality landmines this case was built to carry. Sort all eight and find them.</p>
 
   <div class="sorter">
     <div class="chiplist" id="npiChips"></div>
@@ -750,15 +810,21 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
     <p class="big" style="margin:0">No real client data or personally identifying information enters any AI tool at any point in this course &mdash; including the build transcript submitted with the final project.</p>
   </div>
 
-  <p>De-identification is not deleting the name. A 58-year-old woman selling a specialty manufacturer in a named metro, with an adult autistic child on SSI, is one person &mdash; and you never typed her name.</p>
+  <p>De-identification is not deleting the name. A 64-year-old woman selling an aerospace-fastener company in a named metro is one person, and you never typed her name.</p>
 
-  <div class="check" data-gate="g13"><span class="mk">13</span><div class="ct"><b>Checkpoint</b>Sort all eight items.</div></div>
+  <div class="panel" style="border-color:var(--on);border-width:2px">
+    <span class="plab">What you are looking at, and what you owe</span>
+    <p style="margin-top:0">The Cole household is what a properly constructed synthetic case looks like: internally consistent numbers that reconcile, a real unresolved technical question, documents that genuinely conflict with each other, and no living person behind any of it. It exists so that this course can teach on specifics without anyone's file being at risk.</p>
+    <p><b>Your final project requires you to build one of these for your own recurring task.</b> Not a de-identified client &mdash; a constructed household with invented figures that behave like real ones. That is a graded component, and it is the skill this section is teaching.</p>
+    <p style="margin-bottom:0"><b>No client nonpublic personal information may appear in any submission in this course</b> &mdash; not in the workflow, not in the deliverable, and not in the build transcript you hand to a classmate. The transcript is the part people forget. It is also the part that gets read by someone other than me.</p>
+  </div>
+
+  <div class="check" data-gate="g13"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort all eight, then name which of the three landmines would be hardest to notice yourself mid-draft.</div></div>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
 </section>
 
 <!-- 14 -->
-<section class="slide locked" id="s14" data-nav="Regulation">
+<section class="slide" id="s14" data-nav="Regulation">
  <div class="body">
   <div class="eyebrow">13 &middot; Rules and failure modes</div>
   <h2>There Is No Separate AI Rulebook</h2>
@@ -783,23 +849,114 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
     <div class="slab" style="margin-top:12px"><span>Reviewed</span><b id="diagScore">0 / 6</b></div>
   </div>
 
-  <div class="check" data-gate="g14"><span class="mk">14</span><div class="ct"><b>Checkpoint</b>Review at least four symptoms.</div></div>
+  <div class="check" data-gate="g14"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open at least four symptoms and match each to the section of tonight that explains it.</div></div>
   <span class="src"><b>FINRA Regulatory Notice 24-09</b>, 27 June 2024, first-party. <span class="conf h">H</span> &middot; SEC proceedings announced 18 March 2024, reported consistently across Mayer Brown, Crowell &amp; Moring, White &amp; Case and Cleary. <span class="conf h">H</span> &middot; One secondary source reports Delphia at $250,000; the SEC's own announcement and the majority report $225,000.</span>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
+</section>
+
+
+<!-- CUSTOM INSTRUCTIONS -->
+<section class="slide" id="s14b" data-nav="Custom instructions">
+ <div class="body">
+  <div class="eyebrow">14 &middot; Setup for Thursday</div>
+  <h2>Where Account-Level Custom Instructions Are Configured</h2>
+  <p class="big">The Week 1 Canvas discussion asks you to build these by the Thursday after this class. This is the only place in the course that shows you where they live.</p>
+
+  <table class="dt tight">
+    <thead><tr><th>What you want</th><th>Where it is set</th><th>Scope</th></tr></thead>
+    <tbody>
+      <tr><td>Standing instructions about you and how you want responses &mdash; role, context, format, tone</td><td class="n">Settings &rsaquo; Profile</td><td>Every new conversation on your account</td></tr>
+      <tr><td>Writing style specifically</td><td class="n">Style selector in the conversation</td><td>Selected per conversation</td></tr>
+      <tr><td>Instructions for one body of work only</td><td class="n">Project instructions</td><td>That project only</td></tr>
+    </tbody>
+  </table>
+  <p class="dim" style="font-size:14.5px">Changes to account-level preferences apply to <b>new</b> conversations, not the one you are in. If you set them and nothing changes, that is why. Interface labels move between releases &mdash; if the path above does not match what you see, look under Settings first and tell me, because it means this slide needs updating.</p>
+
+  <div class="panel">
+    <span class="plab">Build a draft &mdash; select what belongs, and the block assembles below</span>
+    <div class="ci" id="ciOpts"></div>
+    <div class="sampler" id="ciOut" style="font-size:13px;line-height:1.7"><span class="dim">Select at least three elements.</span></div>
+    <div class="row"><span class="dim mono" style="font-size:12px">selected: <b id="ciCount">0</b></span></div>
+  </div>
+
+  <div class="talk"><span class="th">What actually belongs in there &mdash; discussion</span>The instinct is to write a personality description. The useful content is closer to a standing brief: who you are professionally, what you are usually doing, what a good answer looks like, and what you never want.
+  <ul><li>Credential and role, because it changes the register and the assumed floor</li><li>The standing verification requirement &mdash; the single highest-value line for anyone in this room</li><li>What never to include: no client-identifying detail, ever, in a standing instruction that will be attached to every future conversation</li></ul></div>
+
+  <div class="check" data-gate="g15"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Select at least three elements and read the assembled block. You will refine it for Thursday.</div></div>
+ </div>
+</section>
+
+<!-- DISCUSSION -->
+<section class="slide" id="s14c" data-nav="Discussion">
+ <div class="body">
+  <div class="eyebrow">15 &middot; Fifteen-minute discussion</div>
+  <h2>Disclosure of AI Use to the Client</h2>
+  <p class="big">You used a frontier model to summarise the Cole discovery meeting. The summary was accurate and you reviewed it line by line before it went in the file. Does Meg have to be told?</p>
+
+  <div class="phase" id="discPhase"></div>
+
+  <div class="panel">
+    <span class="plab" id="voteLab">First vote &mdash; commit before anyone speaks</span>
+    <div class="vote" id="vote1"></div>
+    <div class="sealed hidden" id="sealMsg">Vote sealed. Nothing is shown until the second vote is in.</div>
+    <div class="row" style="margin-top:12px"><button class="btn" id="toDefence" disabled>Lock it in &mdash; open defence</button></div>
+  </div>
+
+  <div class="panel hidden" id="defencePanel">
+    <span class="plab">Defence &mdash; two per side, alternating, ninety seconds each. Call the minority first.</span>
+    <div class="sgrid" id="defenceGrid"></div>
+    <div class="inote" style="margin-bottom:0"><span class="ih">Complication &mdash; introduce this once, after both sides have spoken</span>Nothing in FINRA 24-09 requires disclosure of AI use to a client. The Notice says existing rules apply as written. So the question is not what the rule requires. It is what you would want on the record if the summary had been wrong and Meg's counsel asked how the file was produced. Nobody re-speaks after this.</div>
+    <div class="row"><button class="btn" id="toVote2">Open second vote</button></div>
+  </div>
+
+  <div class="panel hidden" id="vote2Panel">
+    <span class="plab">Second vote &mdash; same question, after the argument</span>
+    <div class="vote" id="vote2"></div>
+    <div class="readout" id="discOut"><span class="nil">Cast the second vote.</span></div>
+    <div class="hidden" id="deltaPanel">
+      <span class="plab" style="margin-top:16px">Room tally &mdash; instructor keys in the Zoom poll counts</span>
+      <div id="tallyIn"></div>
+      <div id="deltaBars"></div>
+    </div>
+  </div>
+
+  <p class="dim" style="font-size:14.5px">A zero delta is a finding, not a failure. It means a defensible position held under argument, which is the same epistemic move this course asks you to make about model output.</p>
+
+  <div class="check" data-gate="g16"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote, argue, vote again. Your first vote stays sealed until the second is cast.</div></div>
+ </div>
 </section>
 
 <!-- 15 -->
-<section class="slide locked" id="s15" data-nav="Close">
+<section class="slide" id="s15" data-nav="Close">
  <div class="body">
-  <div class="eyebrow">14 &middot; Close</div>
+  <div class="eyebrow">16 &middot; Close</div>
   <h2>Assignment Due Before Session 2</h2>
 
-  <div class="cards">
-    <div class="card gold"><span class="num">Part A &mdash; required for the final project</span><h4>Baseline timing</h4><p>Name one recurring task you perform at least weekly. Perform it once, manually, and record the elapsed time. Submit the task, the minutes, and the three steps that consumed the most time. Five bullets or fewer, no prose.</p></div>
-    <div class="card"><span class="num">Part B</span><h4>Three prompt templates</h4><p>An email rewriter, a case-note formatter, a one-page plan summary generator.</p></div>
+  <div class="bigask">
+    <span class="req">Required &middot; do this before Session 2 &middot; graded</span>
+    <h3>Efficiency Baseline</h3>
+    <p style="margin-top:10px">Name one recurring advisory task you perform at least weekly. Perform it once, <b>unassisted</b>, start to finish, and time it.</p>
+    <ol>
+      <li>The task, in one line.</li>
+      <li>Elapsed minutes, unassisted.</li>
+      <li>One line describing the output the task produces.</li>
+    </ol>
+    <div class="panel" style="background:#fff;margin:14px 0 0">
+      <div class="sgrid">
+        <div><span class="plab">The task</span><input type="text" id="blTask" placeholder="e.g. quarterly review prep for one household"></div>
+        <div><span class="plab">Unassisted minutes</span><input type="text" id="blMin" placeholder="e.g. 47"></div>
+      </div>
+      <div style="margin-top:12px"><span class="plab">The output it produces</span><input type="text" id="blOut" placeholder="e.g. a two-page agenda and a funded-status summary"></div>
+      <div class="row" style="margin-top:12px"><button class="btn" id="blGo">Record it</button></div>
+      <div class="readout" id="blMsg"><span class="nil">Fill all three, then record. This page does not store it &mdash; write it down.</span></div>
+    </div>
+    <p class="warn2">This number is a graded component of Final Project Part 1. It is the denominator every efficiency claim you make is measured against, and it cannot be reconstructed later &mdash; once you have used a tool on the task, the unassisted time is gone.</p>
   </div>
-  <p class="dim">The Part A number is the denominator in your final project. Record it this week or you will reconstruct it from memory in Session 4.</p>
+
+  <div class="cards">
+    <div class="card"><span class="num">Also due</span><h4>Three prompt templates</h4><p>An email rewriter, a case-note formatter, a one-page plan summary generator.</p></div>
+    <div class="card gold"><span class="num">By Thursday</span><h4>Account-level custom instructions</h4><p>Built and posted to the Week 1 Canvas discussion. Section 14 shows you where they are configured.</p></div>
+  </div>
 
   <table class="dt tight">
     <thead><tr><th>Reading due before Session 2</th><th>Portion</th></tr></thead>
@@ -815,19 +972,23 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
   <table class="dt tight">
     <thead><tr><th>Domain</th><th>Where</th></tr></thead>
     <tbody>
-      <tr><td>Professional Conduct and Regulation</td><td>FINRA 24-09, SEC AI-washing proceedings, confidentiality sort</td></tr>
+      <tr><td>Professional Conduct and Regulation</td><td>FINRA 24-09, SEC AI-washing proceedings, the three landmines, the disclosure discussion</td></tr>
       <tr><td>General Principles</td><td>Model assumptions and the Monte Carlo parallel; tier selection as documented judgment</td></tr>
-      <tr><td>Tax Planning</td><td>Section 1202 as the arbitrary-fact example; basis tracing across a long document</td></tr>
-      <tr><td>Estate Planning</td><td>Third-party special needs trust remainder reconciliation; trust amendment tracing</td></tr>
-      <tr><td>Retirement Savings and Income</td><td>Roth conversion sequencing as a multi-step reasoning task</td></tr>
-      <tr><td>Investment Planning</td><td>Concentrated position analysis; custodial data reformatting</td></tr>
-      <tr><td>Risk Management and Insurance</td><td>Expiring term coverage and estate liquidity in the tier exercise</td></tr>
-      <tr><td>Psychology of Financial Planning</td><td>Spousal alignment and founder identity in the discovery summary task</td></tr>
+      <tr><td>Tax Planning</td><td>Note terms and applicable rate as the arbitrary-fact example; basis and discount tracing across a long document</td></tr>
+      <tr><td>Estate Planning</td><td>IDGT sale structure; buy-sell versus appraisal reconciliation; the unresolved discount question</td></tr>
+      <tr><td>Retirement Savings and Income</td><td>IRA distributions against a sale year as a multi-step reasoning task</td></tr>
+      <tr><td>Investment Planning</td><td>Two concentration problems with opposite liquidity; custodial data reformatting</td></tr>
+      <tr><td>Risk Management and Insurance</td><td>Absence of any life insurance trust against an illiquid $18,000,000 position</td></tr>
+      <tr><td>Psychology of Financial Planning</td><td>An undisclosed sale, an employee child, and what a summariser does to a disagreement</td></tr>
     </tbody>
   </table>
 
   <p class="pull" style="font-size:clamp(27px,4.6vw,48px);max-width:20ch;margin-top:42px">It predicts. It does not know.</p>
   <p class="big">You built it by hand: counted letters, hit the combinatorial wall, turned the knobs, cut a distribution nine ways, and watched a network fail to count. Sessions 2 through 5 all follow from that.</p>
+
+  <div class="talk"><span class="th">Handoff to Session 2</span>Session 1 explained why the machine produces what it produces and gave you no way to change it. <b>Session 2 is the first session in which you change the output</b> &mdash; prompt construction is the only control you have that operates before the sampler ever runs.</div>
+
+  <div class="check" data-gate="g17"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Record your baseline above before you leave. It is the one thing tonight you cannot do later.</div></div>
 
   <div class="cards">
     <div class="card"><span class="num">01</span><h4>Fluency is not evidence</h4><p>A well-formed answer and a correct answer look identical.</p></div>
@@ -836,12 +997,11 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
     <div class="card"><span class="num">04</span><h4>You sign the work</h4><p>The tool is not a co-signer, a supervisor, or a defence.</p></div>
   </div>
  </div>
- <div class="lockcard"><span class="lk">Locked</span><p>Complete the previous checkpoint to open this section.</p></div>
 </section>
 
 <footer>
   <p>BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors &middot; Session 1 &middot; UC Berkeley Extension, Fall 2026 &middot; Instructor: Jared Winkers</p>
-  <p>The Okonkwo&ndash;Reyes household is synthetic and constructed for this course. No real client data appears anywhere in this document.</p>
+  <p>The Cole household is synthetic and constructed for this course as a classroom anchor only. No real client data appears anywhere in this document. Students build the final project on their own recurring task using their own constructed synthetic data.</p>
   <p>Sections 1&ndash;7 follow Wolfram, S. (2023), <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">What Is ChatGPT Doing &hellip; and Why Does It Work?</a> Section 8 reimplements the sampler set at <a href="https://artefact2.github.io/llm-sampling/">artefact2.github.io/llm-sampling</a>. Other sources: <a href="https://arxiv.org/abs/2509.04664">Kalai et al. (2025)</a> &middot; <a href="https://artificialanalysis.ai/models">artificialanalysis.ai</a> &middot; <a href="https://platform.claude.com/docs/en/about-claude/pricing">Anthropic pricing</a> &middot; <a href="https://www.finra.org/rules-guidance/notices/24-09">FINRA 24-09</a></p>
   <p>Capability and pricing figures reflect published data as of 28 July 2026. Six frontier models crossed the same capability threshold in the six weeks before this was built. Verify every benchmark and price before relying on it.</p>
 </footer>
@@ -858,49 +1018,50 @@ function scroll(e){if(e&&e.scrollIntoView)e.scrollIntoView()}
 function all(s,r){return [].slice.call((r||document).querySelectorAll(s))}
 
 /* ===== GATES ===== */
-var secs=all('section.slide'),rail=$('rail'),passed={},totalGates=document.querySelectorAll('[data-gate]').length;
+var secs=all('section.slide'),rail=$('rail'),done={};
 secs.forEach(function(s){var b=el('button',null,'<span class="pip"></span><span class="lbl">'+s.dataset.nav+'</span>');
-  b.onclick=function(){if(!s.classList.contains('locked'))scroll(s)};rail.appendChild(b)});
+  b.onclick=function(){scroll(s)};rail.appendChild(b)});
 var pips=all('button',rail);
-function gateOf(i){var c=secs[i].querySelector('[data-gate]');return c?c.dataset.gate:null}
-function reveal(i){if(i>=secs.length)return;if(!secs[i].classList.contains('locked'))return;
-  secs[i].classList.remove('locked');if(!gateOf(i))reveal(i+1)}
-function prog(){var d=Object.keys(passed).length;$('pfill').style.width=(d/totalGates*100)+'%';$('pnum').textContent=d+' / '+totalGates}
-function pass(id){if(passed[id])return;passed[id]=1;
+/* Non-gating. Marks a work-along cue complete for feedback only; nothing is withheld. */
+function mark(id){if(done[id])return;done[id]=1;
   var c=document.querySelector('[data-gate="'+id+'"]');
-  if(c){c.classList.add('done');c.querySelector('.mk').textContent='\u2713';
-    var i=secs.indexOf(c.closest('section.slide'));pips[i].classList.add('done');reveal(i+1)}
-  prog()}
-prog();
+  if(c){c.classList.add('done');var m=c.querySelector('.mk');if(m)m.textContent='\u2713';
+    var i=secs.indexOf(c.closest('section.slide'));if(pips[i])pips[i].classList.add('done')}}
+var REVEALERS=[];
+function onRevealAll(fn){REVEALERS.push(fn)}
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
   if(e.isIntersecting){var i=secs.indexOf(e.target);pips.forEach(function(p,j){p.classList.toggle('on',j===i)})}})},
   {rootMargin:'-45% 0px -45% 0px'});secs.forEach(function(s){io.observe(s)})}
 document.addEventListener('keydown',function(e){
-  if(e.shiftKey&&(e.key==='U'||e.key==='u')){secs.forEach(function(s){s.classList.remove('locked')});
-    all('[data-gate]').forEach(function(c){pass(c.dataset.gate)});return}
+  if(e.shiftKey&&(e.key==='U'||e.key==='u')){
+    all('[data-gate]').forEach(function(c){mark(c.dataset.gate)});
+    all('.hidden').forEach(function(x){x.classList.remove('hidden')});
+    REVEALERS.forEach(function(f){try{f()}catch(err){}});
+    $('pnum').textContent='All revealed';return}
   if(e.key==='Escape'){$('caseModal').classList.remove('open');return}
   var t=(document.activeElement&&document.activeElement.tagName)||'';
   if(t==='TEXTAREA'||t==='INPUT')return;
   if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
-    var open=secs.filter(function(s){return !s.classList.contains('locked')}),cur=0,mid=window.innerHeight/2;
-    open.forEach(function(s,i){if(s.getBoundingClientRect().top<=mid)cur=i});
-    scroll(open[Math.max(0,Math.min(open.length-1,cur+(e.key==='ArrowRight'?1:-1)))]);e.preventDefault()}
+    var cur=0,mid=window.innerHeight/2;
+    secs.forEach(function(s,i){if(s.getBoundingClientRect().top<=mid)cur=i});
+    scroll(secs[Math.max(0,Math.min(secs.length-1,cur+(e.key==='ArrowRight'?1:-1)))]);e.preventDefault()}
 });
-$('beginBtn').onclick=function(){pass('g1');setTimeout(function(){scroll(secs[1])},220)};
+
 
 /* ===== CASE MODAL ===== */
-$('caseInner').innerHTML='<div class="eyebrow">Synthetic case &mdash; constructed for this course</div>'+
- '<h2 style="margin-bottom:14px">Okonkwo&ndash;Reyes Household</h2>'+
+$('caseInner').innerHTML='<div class="eyebrow">Synthetic case &mdash; classroom anchor only</div>'+
+ '<h2 style="margin-bottom:14px">The Cole Household</h2>'+
  (document.querySelector('#s1 .panel table')?document.querySelector('#s1 .panel table').outerHTML:'')+
- '<div class="talk" style="margin-top:18px"><span class="th">Open planning questions this case raises</span><ul>'+
- '<li><b>Tax.</b> Do the 2013 shares qualify under Section 1202 &mdash; original issuance, C-corp status, gross assets at issuance, five-year holding? Is trust stacking available before the LOI closes?</li>'+
- '<li><b>Estate.</b> A direct bequest to Ilesanmi disqualifies SSI and the Medicaid waiver. Third-party SNT, ABLE account, or both &mdash; and who is trustee after both parents?</li>'+
- '<li><b>Risk.</b> $2M term expires at 65, before the youngest need is met. Estate liquidity for a concentrated illiquid position pre-close is the exposure, not the premium.</li>'+
- '<li><b>Charitable.</b> CRUT funded before the LOI versus a DAF after close &mdash; timing, assignment-of-income doctrine, and whether the deduction is usable against sale-year income.</li>'+
- '<li><b>Retirement.</b> The sale year is the worst conversion year and the years after it may be the best. Where does the Roth window sit against IRMAA and the pension election at 65?</li>'+
- '<li><b>Investment.</b> Pre-close the position cannot be hedged conventionally. Post-close the problem inverts to deploying $14M at once.</li>'+
- '<li><b>Psychology.</b> Adaeze\u2019s identity is bound to the company; Miguel wants the sale closed yesterday. The plan fails on this before it fails on tax.</li>'+
+ '<div class="talk" style="margin-top:18px"><span class="th">Open planning questions</span><ul>'+
+ '<li><b>Valuation.</b> A 2023 appraisal supports a 31% combined discount for lack of control and lack of marketability. A buyer has now expressed informal interest. Does that appraisal still support that discount today?</li>'+
+ '<li><b>Timing.</b> The seed gift is $650,000 against a $4,968,000 note \u2014 11.6% of trust value. Is the window still open, and what closes it?</li>'+
+ '<li><b>Documents.</b> The 2014 buy-sell uses a formula value that conflicts with the $18,000,000 appraisal. Which document governs, and what breaks if the sale proceeds?</li>'+
+ '<li><b>Concentration.</b> $18,000,000 of $30,000,000 sits in one private company; 62% of the $4,500,000 brokerage sits in three technology names. Two concentration problems, opposite liquidity.</li>'+
+ '<li><b>Estate liquidity.</b> No ILIT and no life insurance trust anywhere in the document set, against an illiquid $18,000,000 position.</li>'+
+ '<li><b>Charitable.</b> A $310,000 DAF and roughly $2,000,000 of eventual intent, with no pre-sale technique under consideration.</li>'+
+ '<li><b>Family.</b> Nathan works in CPC operations and has not been told. Claire has no interest in the business. The plan fails here before it fails on tax.</li>'+
  '</ul></div>'+
+ '<div class="verify"><span class="vh">Requires instructor verification before it is taught as settled</span>Every tax and legal characterisation of this structure \u2014 the seed-gift convention, the treatment of the sale for income tax, estate-inclusion exposure, and basis treatment at death \u2014 is posed here as a question, not stated as a holding. Verify against primary authority before answering any of them in class.</div>'+
  '<div class="row" style="margin-top:18px"><button class="btn ghost" id="caseClose">Close</button></div>';
 $('caseBtn').onclick=function(){$('caseModal').classList.add('open')};
 $('caseClose').onclick=function(){$('caseModal').classList.remove('open')};
@@ -908,21 +1069,21 @@ $('caseModal').onclick=function(e){if(e.target===$('caseModal'))$('caseModal').c
 
 /* ===== 01 PREDICTION ===== */
 var G2={tok:0,temp:{},ax:0};
-function checkG2(){if(G2.tok&&Object.keys(G2.temp).length>=3&&G2.ax)pass('g2')}
-var S2STEM='Her concentrated position in the operating company should be';
+function checkG2(){if(G2.tok&&Object.keys(G2.temp).length>=3&&G2.ax)mark('g2')}
+var S2STEM='The 40% non-voting interest sold to the grantor trust was valued at';
 var S2=[
- [['reviewed against',.33],['hedged before',.24],['contributed to',.19],['sold at',.14],['retained until',.10]],
- [['the Section 1202',.31],['the liquidity event',.26],['a charitable remainder',.21],['the shareholder',.13],['her stated',.09]],
- [['holding period',.34],['gross asset test',.25],['closing date',.20],['agreement terms',.13],['income needs',.08]],
- [[', because the',.30],['. The basis of',.27],[', which was',.21],['. Her shares',.14],[', assuming',.08]],
- [['$310,000 basis',.35],['2013 issuance',.27],['original issuance',.19],['five-year clock',.13],['exclusion cap',.06]],
- [['controls the outcome',.34],['has not been verified',.27],['may have lapsed',.20],['is documented',.13],['is disputed',.06]]
+ [['a 31% discount',.33],['$4,968,000',.26],['$7,200,000',.19],['fair market value',.13],['a 45% discount',.09]],
+ [[', supported by',.31],[', which reflects',.26],['. The appraisal cites',.22],[', although the',.13],[', pending',.08]],
+ [['a 2023 appraisal',.34],['lack of control',.25],['lack of marketability',.20],['the attorney\u2019s file',.13],['the 2014 formula',.08]],
+ [['that has not been',.30],['and lack of',.27],['dated before',.21],['prepared for',.14],['reviewed by',.08]],
+ [['re-verified',.35],['updated',.27],['challenged',.19],['disclosed',.13],['superseded',.06]],
+ [['this year.',.34],['since a buyer appeared.',.27],['at all.',.20],['by counsel.',.13],['since 2023.',.06]]
 ];
 var s2i=0,s2path=[];
 function s2draw(){
   var h='<span class="stem">'+S2STEM+'</span> ';
   s2path.forEach(function(t,i){h+='<span class="tok'+(i===s2path.length-1?' fresh':'')+'">'+t+'</span> '});
-  if(s2i>=S2.length)h+='<span class="dim">\u2014 six placed. Is your sentence true? Nothing in the process checked.</span>';
+  if(s2i>=S2.length)h+='<span class="dim">\u2014 six placed. Some paths produce a true sentence about the Cole discount. Some produce a false one. Nothing in the process checked which.</span>';
   $('s2samp').innerHTML=h;
   var d=$('s2dist');d.innerHTML='';$('s2count').textContent=s2i;
   if(s2i>=S2.length){G2.tok=1;checkG2();return}
@@ -985,7 +1146,7 @@ all('[data-ax]').forEach(function(b){b.onclick=function(){
 plDraw('lin');
 
 /* ===== 02 N-GRAMS + WALL ===== */
-var CORPUS="The client built the company and the client now holds the position that funds the plan. The planner asks what the client wants the money to do before the planner asks what the money can do. A trust holds the asset for a beneficiary under terms the grantor set. The basis matters because the gain is measured from it. A gift removes the asset from the estate and starts a clock. The plan is not the document. The plan is the set of decisions the client makes and the discipline to hold to them when the market moves against the plan. The planner documents the reason for every recommendation so that another planner can follow the reasoning and a regulator can review it. The client owns the plan and the planner owns the process that produced it. A good planner asks the question the client did not think to ask and writes the answer in language the client can repeat to a spouse.";
+var CORPUS="The client built the company and the client now holds the position that funds the plan. The planner asks what the client wants the money to do before the planner asks what the money can do. A trust holds the interest for a beneficiary under terms the grantor set. The basis matters because the gain is measured from it. A discount is a claim about value and a claim about value must be supported. The appraisal is a document and the document has a date. A gift removes the asset from the estate and starts a clock. The plan is not the document. The plan is the set of decisions the client makes and the discipline to hold to them when the market moves against the plan. The planner documents the reason for every recommendation so that another planner can follow the reasoning and a regulator can review it. The client owns the plan and the planner owns the process that produced it.";
 $('corpus').value=CORPUS;
 var LS={},BG={},WU={},WB={},clean='';
 function build(){
@@ -1001,7 +1162,7 @@ function build(){
   $('cBig').textContent=fmt(Object.keys(BG[1]||{}).reduce(function(a,k){return a+Object.keys(BG[1][k]).length},0))}
 function pick(m){var tot=0,k;for(k in m)tot+=m[k];var r=Math.random()*tot;for(k in m){r-=m[k];if(r<=0)return k}return k}
 var G3={ng:0,wg:0,wall:0};
-function checkG3(){if(G3.ng&&G3.wg&&G3.wall)pass('g3')}
+function checkG3(){if(G3.ng&&G3.wg&&G3.wall)mark('g3')}
 function ngGen(n){
   var out='';
   if(n===1){for(var i=0;i<400;i++)out+=pick(LS)}
@@ -1054,7 +1215,7 @@ $('nSlide').addEventListener('input',wallDraw);wallDraw();
 
 /* ===== 03 MODEL FIT + SCALE ===== */
 var G4={fit:0,guess:0};
-function checkG4(){if(G4.fit&&G4.guess)pass('g4')}
+function checkG4(){if(G4.fit&&G4.guess)mark('g4')}
 var FLOORS=[1,2,3,4,5,6,7,8],FALL=FLOORS.map(function(f){return Math.sqrt(2*f*5/9.81)});
 var FORMS={lin:{n:2,lab:['a','b'],basis:function(x){return[1,x]},rng:[[-2,3],[-.5,1]]},
  quad:{n:3,lab:['a','b','c'],basis:function(x){return[1,x,x*x]},rng:[[-2,3],[-.5,1],[-.15,.15]]},
@@ -1156,7 +1317,7 @@ function tok(){
   $('tokRatio').textContent=w?(ts.length/w).toFixed(2):'\u2014';
   $('tokCost').innerHTML=TIERS.map(function(x){var c=ts.length/1e6*x[1];
     return '<div class="cbox"><span class="cn">'+x[0]+'</span><span class="cv">'+(c<0.0001?'&lt;$0.0001':'$'+c.toFixed(4))+'</span></div>'}).join('');
-  if(ts.length>=40&&t.trim()!==tokOrig)pass('g5')}
+  if(ts.length>=40&&t.trim()!==tokOrig)mark('g5')}
 $('tokIn').addEventListener('input',tok);tok();
 
 /* ===== 05 EMBEDDINGS ===== */
@@ -1210,7 +1371,7 @@ var CRANE=[
     var c=CRANE[+b.dataset.c];craneOpen[b.dataset.c]=1;
     $('craneOut').className='readout on';
     $('craneOut').innerHTML='<span class="cz">Resolves to the '+c.k+' region</span>'+c.n;checkG6()}})})();
-function checkG6(){if(eqRight>=3&&Object.keys(craneOpen).length>=2)pass('g6')}
+function checkG6(){if(eqRight>=3&&Object.keys(craneOpen).length>=2)mark('g6')}
 
 /* ===== 06 PARENTHESES ===== */
 var pseq=[];
@@ -1232,7 +1393,7 @@ function parenDraw(){
   if(!pseq.length){$('parenOut').className='readout';$('parenOut').innerHTML='<span class="nil">Add tokens and watch the invalid option.</span>';return}
   if(bad&&bad[1]>0.15){$('parenOut').className='readout bad';
     $('parenOut').innerHTML='<span class="cz">Broken at depth '+d+'</span>The model gives '+(bad[1]*100).toFixed(1)+'% to <b>'+(bad[0]==='END'?'&lt;END&gt;':bad[0])+'</b>, leaving '+d+' unclosed. It has lost the count. Wolfram\u2019s trained net does the same \u2014 400,000 weights, still 15% on an invalid close.';
-    pass('g7')}
+    mark('g7')}
   else if(d===0){$('parenOut').className='readout on';
     $('parenOut').innerHTML='<span class="cz">Balanced at depth 0</span>Note the 15% still sitting on the invalid close. That is Wolfram\u2019s measured figure from his own network at exactly this state \u2014 balanced, and still wrong 15% of the time about what can follow.'}
   else{$('parenOut').className='readout on';
@@ -1241,9 +1402,9 @@ all('[data-pk]').forEach(function(b){b.onclick=function(){pseq.push(b.dataset.pk
 $('parenReset').onclick=function(){pseq=[];parenDraw()};parenDraw();
 
 /* ===== 07 SAMPLER LAB ===== */
-var LABTOK=['hedged','diversified','retained','gifted','sold','contributed','exchanged','pledged','collared','donated','trusted','deferred','liquidated','staged','insured','borrowed','swapped','optioned','securitised','tendered','abandoned','reorganised','recapitalised','forfeited','tokenised','auctioned','bartered','franchised','vaporised','teleported'];
+var LABTOK=['appraised','discounted','sold','gifted','retained','valued','transferred','pledged','frozen','recapitalised','exchanged','loaned','seeded','insured','collared','contributed','deferred','tendered','securitised','swapped','abandoned','forfeited','auctioned','bartered','franchised','tokenised','vaporised','teleported','levitated','summoned'];
 var LABP=(function(){var p=LABTOK.map(function(_,i){return 1/(i+1)});var s=p.reduce(function(a,b){return a+b},0);return p.map(function(v){return v/s})})();
-$('labPrompt').textContent='"Adaeze\u2019s $14.2M concentrated position should be ___"';
+$('labPrompt').textContent='"Meg\u2019s 40% non-voting CPC interest should be ___"';
 var SM={
  top_k:{on:false,v:8,min:1,max:30,step:1,name:'Top K',desc:'Keep the K tokens with the highest probability.'},
  tfs_z:{on:false,v:0.95,min:0,max:1,step:0.01,name:'Tail Free Z',desc:'Cut once the cumulative absolute second derivative of the sorted distribution reaches Z.'},
@@ -1304,7 +1465,7 @@ function labDraw(){
     return '<span class="st'+(SM[k].on?' on':'')+'">'+SM[k].name+(SM[k].on?' '+(k==='dyntemp'&&SM.dyntemp._eff?SM.dyntemp._eff.toFixed(2):SM[k].v):'')+'</span>'}).join('<span class="ar">\u203a</span>');
   if(keep.length===3&&top>0.55){$('labTarget').className='readout on';
     $('labTarget').innerHTML='<span class="cz">Target met</span>Three survive and the leader holds '+(top*100).toFixed(1)+'%. Note what you did: you did not make the model more accurate. You narrowed what it was allowed to say. None of these controls touches the model.';
-    pass('g8')}
+    mark('g8')}
   else{$('labTarget').className='readout';
     $('labTarget').innerHTML='<span class="nil">Target: exactly 3 surviving, leader above 55%. Currently '+keep.length+' surviving, leader '+(top*100).toFixed(1)+'%. Hint: a hard shortlist plus a sharpening step.</span>'}
   return keep}
@@ -1330,7 +1491,7 @@ function labDraw(){
 
 /* ===== 08 HALLUCINATION ===== */
 var G9={k:0,sc:{}};
-function checkG9(){if(G9.k&&Object.keys(G9.sc).length>=2)pass('g9')}
+function checkG9(){if(G9.k&&Object.keys(G9.sc).length>=2)mark('g9')}
 var KAL=['03-07','15-06','01-01'],ki=0;
 $('kalaiBtn').onclick=function(){
   if(ki>=3)return;
@@ -1391,7 +1552,7 @@ function budgUpd(){
   $('frontOut').className='readout on';
   $('frontOut').innerHTML='<span class="cz">Best available at '+money(b)+' per task</span><b>'+best.n+'</b> \u2014 index '+best.i+' at '+money(best.c)+
     '. '+(top.i-best.i)+' point'+(top.i-best.i===1?'':'s')+' below the top for '+Math.round(best.c/top.c*100)+'% of the cost. '+aff.length+' of '+MODELS.length+' models fit.';
-  if(b<1.0)pass('g10')}
+  if(b<1.0)mark('g10')}
 $('budget').addEventListener('input',budgUpd);budgUpd();
 
 /* ===== 10 PRACTICE COST ===== */
@@ -1408,23 +1569,23 @@ function costUpd(){
   var opus=rows[2].v,pro=rows[4].v;
   $('assumeBox').innerHTML='<b>Stated assumption.</b> '+m+' meetings per advisor per week \u00d7 46 weeks = '+fmt(mt)+' per advisor per year, at 27,000 input and 5,000 output tokens each. No prompt caching assumed \u2014 a cache hit costs 10% of input, so a firm reusing templates pays materially less.'+
     (opus>pro?' <b style="color:var(--warn)">Metered Opus 5 now exceeds the subscription \u2014 it took '+m+' meetings per advisor per week, roughly four a working day.</b>':'');
-  if(opus>pro)pass('g11')}
+  if(opus>pro)mark('g11')}
 $('adv').addEventListener('input',costUpd);$('mtg').addEventListener('input',costUpd);costUpd();
 
 /* ===== 11 TIER QUIZ ===== */
 var TQ=[
- {d:'Investment Planning',t:'Reformat 340 positions from three custodial exports into one consolidated allocation table.',a:0,
-  f:['Correct. High volume, zero judgment, and the output is checkable at a glance. The cheapest tier that completes it is the right one.','This works and you are paying five to ten times what the task needs. Nothing here requires reasoning \u2014 it requires throughput.']},
- {d:'Psychology of Financial Planning',t:'Summarise a 90-minute discovery meeting in which Adaeze and Miguel disagreed openly about the sale timeline.',a:1,
-  f:['Correct. Mid tier handles long-context summarisation well, and the failure mode \u2014 a missed commitment \u2014 is caught by your own review. Watch that it does not flatten the disagreement into consensus; that disagreement is the planning issue.','Defensible, but this is the archetypal mid-tier task. The real risk is not the tier \u2014 it is that a summariser smooths conflict into agreement, and here the conflict is the finding.']},
- {d:'Tax Planning',t:'Determine whether the 2013 shares satisfy the Section 1202 original-issuance and gross-asset tests.',a:2,
-  f:['Correct on tier, and still verify every figure. These are arbitrary facts \u2014 thresholds and dates with one right answer and many plausible wrong ones \u2014 and the statute was amended in 2025, so training data holds both versions.','Top tier, and it will still confidently give you a threshold. The statute changed in 2025; the model has seen both numbers in near-identical sentences.']},
- {d:'General Principles',t:'Draft the confirmation email and agenda for next week\u2019s meeting.',a:0,
-  f:['Correct. Templated, low-stakes, and you read it before it sends.','Overspecified. The consequence of a poor draft is that you edit it.']},
- {d:'Retirement Savings and Income',t:'Model three Roth conversion sequences from the sale year to age 73 against IRMAA brackets.',a:2,
-  f:['Correct. Sustained multi-step reasoning where an error in year three propagates silently through year twenty \u2014 and the bracket figures themselves are arbitrary facts to verify.','This is compounding multi-step reasoning. Top tier earns its price, and you still check the bracket thresholds against the source.']},
- {d:'Estate Planning',t:'Reconcile the third-party SNT remainder percentages across the 40-page trust and two amendments, and confirm they total 100.',a:2,
-  f:['Correct on tier \u2014 and recall Section 6. This is the parenthesis problem in a planning document. Use the tool to extract the percentages, then total them yourself.','This is a counting task across a long sequence, the exact case a feed-forward network is worst at. Any tier, and you total the numbers by hand.']}];
+ {d:'Investment Planning',t:'From the brokerage export, compute the concentration of the three technology names that make up 62% of the $4,500,000 taxable account, and format the result as a one-page allocation table.',a:0,
+  f:['Correct. High volume, zero judgment, and the arithmetic is checkable at a glance \u2014 62% of $4,500,000 is $2,790,000, and either the tool got that or it did not.','This works and you are paying five to ten times what the task needs. There is no judgment here: 62% of $4,500,000 is $2,790,000, and you can verify it in your head.']},
+ {d:'General Principles',t:'Draft the confirmation email and agenda for next week\u2019s meeting with Meg and David.',a:0,
+  f:['Correct. Templated, low-stakes, and you read it before it sends.','Overspecified. The consequence of a poor draft here is that you edit it before sending.']},
+ {d:'Psychology of Financial Planning',t:'Summarise a 90-minute meeting in which Meg said, for the first time, that she has not told Nathan she is exploring a sale \u2014 and David reacted.',a:1,
+  f:['Correct on tier. The real risk is not capability: a summariser rewards coherent narrative, so it smooths an uncomfortable disclosure and a spousal reaction into a tidy paragraph. Ask separately for unresolved items and points of disagreement \u2014 here the discomfort is the planning finding.','Defensible on tier, but the tier is not the problem. A summariser flattens conflict into consensus, and this meeting is entirely conflict \u2014 Nathan does not know, David reacted, and neither survives a tidy paragraph.']},
+ {d:'Retirement Savings and Income',t:'Model the interaction between required distributions on Meg\u2019s $3,000,000 IRA, David\u2019s Social Security already claimed at 66, and a sale year that could land in the top bracket.',a:2,
+  f:['Correct. Sustained multi-step reasoning where an error in one year propagates silently through twenty \u2014 and every bracket and threshold in it is an arbitrary fact you verify separately.','This is compounding multi-step reasoning across a bracket-sensitive sale year. Top tier earns its price, and you still check every threshold against the source.']},
+ {d:'Tax Planning',t:'Identify the note terms and interest rate the 9-year interest-only note must carry for the sale to the trust to be respected as a sale rather than a part gift.',a:2,
+  f:['Correct on tier, and verify every figure. The applicable rate is a published monthly number \u2014 an arbitrary fact with one right answer and twelve plausible wrong ones per year, all of which the model has seen in identical sentences.','Top tier, and it will still hand you a rate in a confident sentence. Applicable rates publish monthly; the model has seen years of them in near-identical language with no signal about which is current.']},
+ {d:'Estate Planning',t:'Reconcile the 2014 buy-sell formula value against the $18,000,000 appraisal and list every provision of the two documents that conflicts.',a:2,
+  f:['Correct on tier \u2014 and recall Section 6. This is the parenthesis problem in a planning document: an exact reconciliation across a long sequence. Extract the provisions with the tool, then compare them yourself. Note also that nothing in this document set creates estate liquidity against an illiquid $18,000,000 position.','This is a reconciliation across a long sequence, the exact case a feed-forward network is worst at. Any tier, and you do the comparison by hand.']}];
 var TLABEL=['Haiku-class','Sonnet-class','Opus / Fable-class'];
 (function(){
   var host=$('tierQuiz'),done=0;
@@ -1438,18 +1599,18 @@ var TLABEL=['Haiku-class','Sonnet-class','Opus / Fable-class'];
       var ok=+b.dataset.j===q.a;b.classList.add('picked');it.classList.add('done');
       var fb=it.querySelector('.qfb');fb.className='qfb '+(ok?'right':'wrong');fb.textContent=ok?q.f[0]:q.f[1];
       done++;$('tqScore').textContent=done+' of '+TQ.length+' answered';
-      if(done>=TQ.length)pass('g12')}})})})();
+      if(done>=TQ.length)mark('g12')}})})})();
 
 /* ===== 12 NPI ===== */
 var NPI=[
- {t:'Adaeze Okonkwo, date of birth, SSN on file',b:0,w:'Directly identifying. Never enters a third-party tool.'},
- {t:'Signed LOI: Okonkwo Industries, $18M enterprise value, Q2 close',b:0,w:'Harder than it looks, and worse than NPI. A named private company and an unannounced transaction is material nonpublic information about a third party. Your confidentiality duty is not the only one in play here.'},
- {t:'Ilesanmi receives SSI and Medicaid waiver services',b:0,w:'Harder than it looks. Benefits status is financial information and a disability disclosure about a person who is not your client and has not consented.'},
- {t:'"A 58-year-old founder selling a specialty manufacturer in Sacramento, adult autistic child on SSI"',b:0,w:'Harder than it looks. No name, and it identifies one person. De-identification means removing the combination, not the name.'},
- {t:'Account 8842\u2013XXXX, balance $2.4M, custodian named',b:0,w:'Directly identifying and financial, even partially masked.'},
- {t:'A hypothetical $14M position with $310K basis, no entity or person named',b:1,w:'No person attached and no identifiable company. Safe to reason about.'},
- {t:'The Section 1202 gross-asset ceiling and holding-period rules',b:1,w:'Published statutory rules. Nothing client-specific \u2014 though verify the current figures against the Code.'},
- {t:'"How does a third-party SNT preserve SSI eligibility?"',b:1,w:'A general question about a technique. This is most of what you should be using these tools for.'}];
+ {t:'That Meg is exploring a sale of CPC',b:0,w:'Landmine 1. Nathan works in CPC operations and has not been told. Entering this into a consumer tool discloses an unannounced transaction in a private company, and the person most affected by it is an employee who does not know.'},
+ {t:'The unexecuted IDGT plan and the 31% discount being claimed',b:0,w:'Landmine 2. An unexecuted, unfiled position on valuation. Nothing about it is public, it is adverse to the client if it surfaces, and it is exactly the kind of detail that makes a household identifiable to anyone in the same market.'},
+ {t:'That Meg Cole is a client of this firm at all',b:0,w:'Landmine 3. The relationship itself is nonpublic personal information. The name alone, with no financial detail attached, is a disclosure.'},
+ {t:'"A Midwest aerospace-fastener founder, 64, selling a company appraised at $18M"',b:0,w:'No name, and in a market this narrow it identifies one person. De-identification means removing the combination, not the name.'},
+ {t:'"How does a sale to an intentionally defective grantor trust work?"',b:1,w:'A general question about a technique, with no client attached. This is most of what you should be using these tools for.'},
+ {t:'The applicable federal rate for a 9-year term note this month',b:1,w:'A published rate. Nothing client-specific \u2014 though verify the figure against the source rather than the model.'},
+ {t:'"What factors support a lack-of-marketability discount?"',b:1,w:'A doctrinal question with no facts attached. Safe, and worth asking before you read an appraisal rather than after.'},
+ {t:'The current federal estate and gift tax exclusion amount',b:1,w:'A published statutory figure. Verify it independently \u2014 it is an arbitrary fact and it has changed repeatedly.'}];
 (function(){
   var host=$('npiChips'),solved={};
   host.innerHTML=NPI.map(function(d,i){return '<button class="chip" data-i="'+i+'">'+d.t+'</button>'}).join('');
@@ -1461,15 +1622,15 @@ var NPI=[
     boxes.forEach(function(b,i){b.classList.toggle('lit',i===d.b)});
     $('whyNpi').textContent=d.b===0?d.w:'';$('whySafe').textContent=d.b===1?d.w:'';
     var n=Object.keys(solved).length;$('npiScore').textContent=n+' / 8';
-    if(n>=8)pass('g13')}})})();
+    if(n>=8)mark('g13')}})})();
 
 /* ===== 13 DIAGNOSTIC ===== */
 var DG=[
  {s:'It cited a Code section that does not say what it claimed',c:'It sampled a plausible citation rather than retrieving a real one. Statutory citations are arbitrary facts \u2014 many plausible wrong answers, one right one.',f:'Verify every citation against the primary source before it informs a recommendation. If the tool cannot show you where the text came from, the citation is unverified.'},
  {s:'The same question gave two different answers',c:'Sampling. You built this in Sections 1 and 7 \u2014 the model draws from a distribution and the sampler decides how far into the tail it may reach.',f:'Run consequential questions more than once. Divergence is a signal of uncertainty even when both answers sound confident.'},
- {s:'It answered confidently about a 2026 threshold',c:'The scoring rule plus stale training data. Abstention scores like a wrong answer, and amended figures sit alongside superseded ones in near-identical sentences.',f:'Treat every number, date and threshold as unverified. Ask what it is uncertain about before it answers.'},
- {s:'It miscounted across a long document',c:'The parenthesis problem. Feed-forward with no loop, so it cannot run a counter \u2014 it approximates one from local pattern and the approximation decays with length.',f:'Never delegate an exact count. Extract the items with the tool, then total them yourself or in a spreadsheet.'},
- {s:'It summarised a tense meeting as if everyone agreed',c:'Fluency bias. Coherent narrative is what the objective rewards, and disagreement makes a summary less coherent, so it gets smoothed away.',f:'Ask specifically for points of disagreement and unresolved items as a separate output. Never accept a single-narrative summary of a multi-party meeting.'},
+ {s:'It gave a confident applicable federal rate',c:'The scoring rule plus stale training data. Abstention scores like a wrong answer, and years of monthly rates sit in training in near-identical sentences with no signal about which is current.',f:'Treat every rate, date and threshold as unverified. Published figures come from the publisher, not the model.'},
+ {s:'It reconciled two documents and missed a conflict',c:'The parenthesis problem. Feed-forward with no loop, so it cannot hold an exact running comparison \u2014 it approximates one from local pattern and the approximation decays with length. The 2014 buy-sell against the 2023 appraisal is exactly this shape.',f:'Never delegate an exact reconciliation. Extract the provisions with the tool, then compare them yourself or in a spreadsheet.'},
+ {s:'It summarised a tense meeting as if everyone agreed',c:'Fluency bias. Coherent narrative is what the objective rewards, and disagreement makes a summary less coherent, so it is smoothed away \u2014 which is how Meg not having told Nathan disappears from a meeting note.',f:'Ask for points of disagreement and unresolved items as a separate output. Never accept a single-narrative summary of a multi-party meeting.'},
  {s:'The bill was far higher than the pricing page implied',c:'Cost is per-token price times tokens consumed. Verbose output, reasoning tokens and long context all move the second number. A tokenizer change moves it too.',f:'Measure tokens on your actual workload. Enable prompt caching where a system prompt repeats \u2014 a cache hit costs 10% of input.'}];
 (function(){
   var seen={};
@@ -1480,7 +1641,153 @@ var DG=[
     $('diagOut').className='readout on';
     $('diagOut').innerHTML='<span class="cz">Likely cause</span>'+d.c+'<div class="fx">'+d.f+'</div>';
     var n=Object.keys(seen).length;$('diagScore').textContent=n+' / 6';
-    if(n>=4)pass('g14')}})})();
+    if(n>=4)mark('g14')}})})();
+
+/* ===== 00 COLD OPEN ===== */
+$('coldGo').onclick=function(){
+  var t=$('coldPrompt').value.trim();
+  if(!t){$('coldOut').className='readout';$('coldOut').innerHTML='<span class="nil">Paste something first.</span>';return}
+  var words=(t.match(/\S+/g)||[]).length,chars=t.length,toks=Math.round(chars/4);
+  var q=(t.match(/\?/g)||[]).length, imper=/^(write|make|give|list|draft|summari[sz]e|explain|create|find|tell|help)/i.test(t);
+  var hasRole=/\b(you are|act as|as an?|expert|advisor|planner)\b/i.test(t);
+  var hasFmt=/\b(bullet|table|word|paragraph|format|list|tone|concise|short|long)\b/i.test(t);
+  var hasCtx=t.length>180;
+  var have=[];if(hasRole)have.push('a role or framing');if(hasFmt)have.push('an output format');if(hasCtx)have.push('substantial context');
+  var missing=[];if(!hasRole)missing.push('role or framing');if(!hasFmt)missing.push('output format');if(!hasCtx)missing.push('context beyond the ask');
+  $('coldOut').className='readout on';
+  $('coldOut').innerHTML='<span class="cz">'+words+' words &middot; '+chars+' characters &middot; roughly '+toks+' tokens</span>'+
+    'It is '+(imper?'an imperative':q?'a question':'a statement')+'. '+
+    (have.length?'It carries '+have.join(' and ')+'. ':'It carries none of the usual scaffolding. ')+
+    (missing.length?'It supplies no '+missing.join(', no ')+'.':'It supplies all three.')+
+    '<div class="fx">No judgement is implied. Session 2 is where this gets rebuilt \u2014 keep this text, because the comparison is the point.</div>';
+  mark('gc');
+};
+
+/* ===== 10b COLE DOCUMENT PASS ===== */
+var DPT=[['Haiku 4.5',1,5],['Sonnet 5 (from 1 Sep)',3,15],['Opus 5',5,25],['Fable 5',10,50]];
+var dpSeen={};
+function dpDraw(k){
+  var t=DPT[k],cin=125000/1e6*t[1],cout=8000/1e6*t[2],tot=cin+cout;
+  $('dpStats').innerHTML=
+   '<div class="stat"><span class="sn">Input 125,000 tok</span><span class="sv">$'+cin.toFixed(3)+'</span></div>'+
+   '<div class="stat"><span class="sn">Output 8,000 tok</span><span class="sv">$'+cout.toFixed(3)+'</span></div>'+
+   '<div class="stat hit"><span class="sn">One full pass</span><span class="sv">$'+tot.toFixed(2)+'</span></div>'+
+   '<div class="stat"><span class="sn">Ten passes</span><span class="sv">$'+(tot*10).toFixed(2)+'</span></div>';
+  var cheapest=125000/1e6*1+8000/1e6*5;
+  $('dpOut').className='readout on';
+  $('dpOut').innerHTML='<span class="cz">'+t[0]+'</span>Reading the draft IDGT instrument, the note, the 2014 buy-sell and the 2023 appraisal together and writing an issues memo costs <b>$'+tot.toFixed(2)+'</b> on this tier'+
+    (k===0?'. That is the floor.':' \u2014 '+(tot/cheapest).toFixed(1)+'\u00d7 the cheapest tier, and still under two dollars.')+
+    ' With prompt caching the input side drops to a tenth on every pass after the first, because those four documents do not change between questions.';
+  dpSeen[k]=1;if(Object.keys(dpSeen).length>=4)mark('g11');
+}
+all('[data-dp]').forEach(function(b){b.onclick=function(){
+  all('[data-dp]').forEach(function(x){x.classList.toggle('act',x===b)});dpDraw(+b.dataset.dp)}});
+dpDraw(0);
+
+/* ===== 14 CUSTOM INSTRUCTIONS BUILDER ===== */
+var CIOPT=[
+ {k:'role',l:'Credential and role',v:'I am a CERTIFIED FINANCIAL PLANNER\u2122 professional working with high-net-worth households on estate, tax and retirement planning.'},
+ {k:'verify',l:'Standing verification requirement',v:'Never state a statute, rate, threshold or case as settled without telling me it needs verification. Label anything you cannot verify as unverified rather than omitting the caveat.'},
+ {k:'conf',l:'Confidence labelling',v:'Label material claims H, M or L for confidence, and name the source you are relying on.'},
+ {k:'fmt',l:'Default output format',v:'Default to structured bullets and tables over long prose. Lead with the answer, then the reasoning.'},
+ {k:'push',l:'Push back on me',v:'Challenge a flawed premise before answering it. If my question rests on an error, say so first.'},
+ {k:'noflat',l:'Preserve disagreement',v:'When summarising a discussion, list points of disagreement and unresolved items separately. Do not smooth conflict into consensus.'},
+ {k:'noclient',l:'No client detail (what NOT to include)',v:'[Do not put any client-identifying detail in a standing instruction \u2014 it attaches to every future conversation.]'}
+];
+(function(){
+  var sel={};
+  $('ciOpts').innerHTML=CIOPT.map(function(o){
+    return '<label data-ci="'+o.k+'"><input type="checkbox">'+o.l+'</label>'}).join('');
+  function draw(){
+    var keys=CIOPT.filter(function(o){return sel[o.k]});
+    $('ciCount').textContent=keys.length;
+    if(keys.length<3){$('ciOut').innerHTML='<span class="dim">Select at least three elements.</span>';return}
+    $('ciOut').textContent=keys.map(function(o){return o.v}).join('\n\n');
+    mark('g15');
+  }
+  all('[data-ci]').forEach(function(l){
+    var c=l.querySelector('input');
+    c.onchange=function(){sel[l.dataset.ci]=c.checked;l.classList.toggle('on',c.checked);draw()};});
+  draw();
+})();
+
+/* ===== 15 DISCUSSION: SEALED VOTE -> DEFENCE -> REVOTE ===== */
+var DOPT=[
+ {k:'A',t:'Yes \u2014 disclose proactively, in the engagement letter and again when it materially shapes a deliverable.'},
+ {k:'B',t:'Only if asked. Answer honestly and completely, but do not volunteer it.'},
+ {k:'C',t:'No \u2014 it is an internal tool like a calculator or a research database, and the work product is mine either way.'}];
+var DEF={
+ A:['The client is paying for your judgement, and a reasonable client would want to know what produced the file.','Disclosure you chose is always cheaper than disclosure that is discovered.','It forces you to have a supervisory answer ready before you need one.'],
+ B:['Volunteering it invites a conversation about a tool, when the accountability never moved off you.','You do not disclose which research database you used, and this is the same category.','Honest on request preserves the record without renegotiating the engagement.'],
+ C:['You reviewed every line. The output is your work product and your signature.','Disclosing every tool in the chain is not a standard anyone applies consistently.','Singling out this one tool implies a reliability concern you have already addressed by reviewing it.']};
+(function(){
+  var v1=null,v2=null,phase=0;
+  function drawPhase(){
+    $('discPhase').innerHTML=['Position \u00b7 3 min','Defence \u00b7 9 min','Re-vote \u00b7 3 min'].map(function(t,i){
+      return '<span class="ph'+(i===phase?' on':'')+'">'+t+'</span>'}).join('');
+  }
+  function build(host,which){
+    $(host).innerHTML=DOPT.map(function(o){
+      return '<button class="vopt" data-v="'+o.k+'"><span class="vk">'+o.k+'</span><span>'+o.t+'</span></button>'}).join('');
+    all('[data-v]',$(host)).forEach(function(b){b.onclick=function(){
+      all('[data-v]',$(host)).forEach(function(x){x.classList.toggle('on',x===b)});
+      if(which===1){v1=b.dataset.v;$('sealMsg').classList.remove('hidden');$('toDefence').disabled=false;
+        all('[data-v]',$(host)).forEach(function(x){x.classList.remove('on')});
+        $('voteLab').textContent='First vote \u2014 sealed';}
+      else{v2=b.dataset.v;resolve()}}});
+  }
+  function resolve(){
+    var moved=v1!==v2;
+    var t1=DOPT.filter(function(o){return o.k===v1})[0],t2=DOPT.filter(function(o){return o.k===v2})[0];
+    $('discOut').className='readout '+(moved?'on':'');
+    $('discOut').innerHTML='<span class="cz">Your delta</span>First vote <b>'+v1+'</b> \u2014 '+t1.t+'<br><br>Second vote <b>'+v2+'</b> \u2014 '+t2.t+
+      '<div class="fx">'+(moved?'You moved. Name the specific argument that moved you \u2014 if you cannot, you did not move on evidence.':'You held. That is a finding, not a failure: a defensible position surviving argument is the same move this course asks you to make about model output.')+'</div>';
+    $('deltaPanel').classList.remove('hidden');
+    mark('g16');
+  }
+  build('vote1',1);build('vote2',2);drawPhase();
+  $('toDefence').onclick=function(){
+    phase=1;drawPhase();$('defencePanel').classList.remove('hidden');
+    $('defenceGrid').innerHTML=DOPT.map(function(o){
+      return '<div><h4>'+o.k+' \u2014 the case for it</h4><ul style="font-size:14.5px;line-height:1.5;padding-left:18px;margin:8px 0 0">'+
+        DEF[o.k].map(function(x){return '<li style="margin:6px 0">'+x+'</li>'}).join('')+'</ul></div>'}).join('');
+    $('defencePanel').scrollIntoView&&$('defencePanel').scrollIntoView();
+  };
+  $('toVote2').onclick=function(){phase=2;drawPhase();$('vote2Panel').classList.remove('hidden')};
+  (function(){
+    $('tallyIn').innerHTML='<div class="sgrid" style="gap:12px">'+DOPT.map(function(o){
+      return '<div><span class="plab">'+o.k+' \u2014 first / second</span><div class="row"><input type="text" data-t1="'+o.k+'" placeholder="0" style="width:70px"><input type="text" data-t2="'+o.k+'" placeholder="0" style="width:70px"></div></div>'}).join('')+'</div>';
+    function tally(){
+      var a={},b={},sa=0,sb=0;
+      DOPT.forEach(function(o){
+        a[o.k]=parseFloat((document.querySelector('[data-t1="'+o.k+'"]')||{}).value)||0;
+        b[o.k]=parseFloat((document.querySelector('[data-t2="'+o.k+'"]')||{}).value)||0;
+        sa+=a[o.k];sb+=b[o.k]});
+      if(!sa&&!sb){$('deltaBars').innerHTML='';return}
+      $('deltaBars').innerHTML='<div class="slab" style="margin:14px 0 6px"><span>Grey = first vote &nbsp;&middot;&nbsp; green = second</span><b></b></div>'+
+        DOPT.map(function(o){
+          var p1=sa?a[o.k]/sa*100:0,p2=sb?b[o.k]/sb*100:0,d=p2-p1;
+          return '<div class="delta"><span>'+o.k+'</span><span class="tr"><i class="v1" style="width:'+p1.toFixed(1)+'%"></i><i class="v2" style="width:'+p2.toFixed(1)+'%"></i></span>'+
+            '<span style="text-align:right;color:'+(Math.abs(d)<0.5?'var(--muted)':'var(--on)')+'">'+(d>0?'+':'')+d.toFixed(0)+'pt</span></div>'}).join('');
+    }
+    all('[data-t1],[data-t2]').forEach(function(i){i.addEventListener('input',tally)});
+  })();
+  onRevealAll(function(){
+    $('defencePanel').classList.remove('hidden');$('vote2Panel').classList.remove('hidden');$('deltaPanel').classList.remove('hidden');
+    if(!$('defenceGrid').innerHTML)$('toDefence').click();
+  });
+})();
+
+/* ===== 16 BASELINE ===== */
+$('blGo').onclick=function(){
+  var t=$('blTask').value.trim(),m=parseFloat($('blMin').value),o=$('blOut').value.trim();
+  if(!t||!o||!(m>0)){$('blMsg').className='readout bad';
+    $('blMsg').innerHTML='<span class="cz">Incomplete</span>All three are required, and the minutes must be a number. A baseline without an output description cannot be compared later.';return}
+  $('blMsg').className='readout on';
+  $('blMsg').innerHTML='<span class="cz">Recorded &mdash; write this down now</span><b>'+t.replace(/</g,'&lt;')+'</b> &mdash; '+m+' minutes unassisted, producing '+o.replace(/</g,'&lt;')+
+    '.<div class="fx">At '+m+' minutes weekly that is '+Math.round(m*46/60)+' hours a year on one task. This page stores nothing. Copy these three lines into your Session 2 submission.</div>';
+  mark('g17');
+};
 
 })();
 </script>
