@@ -175,36 +175,38 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
 
 <!-- ============ 0 ============ -->
 <section class="slide" id="s0" data-nav="Frame">
-  <div class="eyebrow"><span>Session 4 · BUS ADM X433.4</span><span class="mins">7 min</span></div>
+  <div class="eyebrow"><span>Session 4 &middot; BUS ADM X433.4</span><span class="mins">12 min</span></div>
   <h1>Compliance, Security and Responsible Use</h1>
   <p class="lede">There is no AI rulebook. Your existing duties apply, and you are responsible for the work.</p>
 
-  <p class="big">Nothing tonight will make you faster. All of it determines whether the speed you gained in Sessions 1 through 3 is defensible when someone asks you to account for it.</p>
+  <p class="big"><strong>The mechanism thread ends here.</strong> Three sessions took you through the architecture &mdash; prediction, sampling, embeddings, grounding &mdash; and nothing tonight follows from the architecture. It follows from the duty.</p>
 
-  <p>The organising fact is an absence. No federal rule governs an adviser's use of generative AI as such; the SEC's predictive data analytics proposal was withdrawn in June 2025 and nothing replaced it. What exists is a set of duties that predate the technology, plus two supervisory documents telling you how examiners will read them.<span class="conf h">H</span></p>
+  <h3 style="margin-top:32px">Retrieval bridge &mdash; Session 3</h3>
+  <p>Four items on grounding. No restudy, no notes, no grade. Answer, then reveal.</p>
+  <div class="quiz" id="bridgeQuiz"></div>
+  <span class="score" id="bridgeScore">0 of 4 answered</span>
+
+  <h3 style="margin-top:34px">The case, one more time</h3>
+  <div class="matrix" style="background:var(--gold-bg);border-color:#DFD3AF">
+    <h4 style="margin-bottom:6px">The Cole household &mdash; synthetic, Dayton, Ohio, approximately $30,000,000</h4>
+    <p style="margin:0 0 10px;max-width:none;font-size:15.5px">Margaret "Meg" Cole, 64, founder and 100% owner of Cole Precision Components Inc. (CPC), a C-corporation making precision aerospace fasteners; founder stock issued 2009, basis $240,000; CPC valued at $18,000,000. David Cole, 67, retired hospital pharmacist. Claire, 34, physician, no interest in the business. Nathan, 31, works in CPC operations. A strategic buyer has expressed informal interest in CPC; no letter of intent is signed, and <strong>Meg has not told Nathan</strong>. The attorney has drafted, unexecuted, a sale of a 40% non-voting interest to an IDGT [intentionally defective grantor trust] for a $4,968,000 note after a claimed 31% discount, supported by a 2023 appraisal never re-verified.</p>
+    <p style="margin:0;max-width:none;font-size:14.5px;color:var(--muted)"><strong>This case is fully synthetic and is a classroom anchor only.</strong> Do not build your final project on it. Your Part 1 workflow runs on a real recurring task from your own practice, using your own synthetic or de-identified data.</p>
+  </div>
+
+  <p>Sessions 1 through 3 asked what the tool could do with this household. Tonight asks what you are permitted to do, what you must record, and what it costs you to comply. The same facts, a different test.</p>
 
   <div class="cards">
-    <div class="card"><span class="num">Outcome 01</span><h4>A field-level disclosure boundary</h4><p>A written line between what may and may not enter a third-party tool, derived from Regulation S-P rather than instinct.</p></div>
-    <div class="card"><span class="num">Outcome 02</span><h4>A defensible vendor decision</h4><p>A six-question due-diligence instrument, completed with a computed verdict, for one tool you actually use.</p></div>
-    <div class="card"><span class="num">Outcome 03</span><h4>An audit trail specification</h4><p>The four fields that make a prompt-output-decision record reproducible, and the prompt block that captures them.</p></div>
+    <div class="card"><span class="num">Outcome 01</span><h4>A field-level disclosure boundary</h4><p>A written line across the Cole facts, drawn from the Regulation S-P definition rather than from instinct.</p></div>
+    <div class="card"><span class="num">Outcome 02</span><h4>A defensible vendor decision</h4><p>One tool scored against the actual Cole document set, with a computed verdict.</p></div>
+    <div class="card"><span class="num">Outcome 03</span><h4>A priced verification burden</h4><p>The minutes verification costs, set against the efficiency baseline you recorded in Session 1.</p></div>
   </div>
 
-  <h3 style="margin-top:34px">Part 1 submission gate</h3>
-  <p>Part 1 is due at the end of tonight. Work the checklist first. It scores completeness, not quality.</p>
-
-  <div class="diag">
-    <h4 style="margin-bottom:6px">Handoff package completeness</h4>
-    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">Seven required components, taken from the syllabus. Tick what is finished.</p>
-    <div id="mfList"></div>
-    <div class="diagout" id="mfOut"><span class="nil">Nothing ticked yet.</span></div>
-  </div>
-
-  <p class="srcnote"><strong>Instructor note.</strong> A completeness gate, not a grading instrument. Its value is surfacing the two components students most often omit &mdash; the named failure modes and the data-handling note &mdash; while there is still an hour of class left.</p>
+  <p class="srcnote"><strong>Part 1 status.</strong> Handoff packages were due Sunday night and are in. They have been read and screened; pairings are distributed later tonight, and you will attempt to run the package you receive before you leave.</p>
 </section>
 
 <!-- ============ 1 ============ -->
 <section class="slide" id="s1" data-nav="No rulebook">
-  <div class="eyebrow"><span>01</span><span class="mins">14 min</span></div>
+  <div class="eyebrow"><span>02</span><span class="mins">10 min</span></div>
   <h2>The Absence of an AI Rulebook and the Duties That Apply Instead</h2>
   <p class="big">Advisers keep asking which AI rule applies to them. The question has no answer. Every obligation tonight predates the first large language model and applies to it without amendment.</p>
 
@@ -233,27 +235,46 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
 
 <!-- ============ 2 ============ -->
 <section class="slide" id="s2" data-nav="NPI">
-  <div class="eyebrow"><span>02</span><span class="mins">13 min</span></div>
+  <div class="eyebrow"><span>03</span><span class="mins">14 min</span></div>
   <h2>Nonpublic Personal Information Under Regulation S-P</h2>
-  <p class="big">The 2024 amendments bound larger entities from 3 December 2025 and smaller entities &mdash; advisers under $1.5 billion &mdash; from 3 June 2026. Both dates have passed. There is no firm to which this does not yet apply.<span class="conf h">H</span></p>
+  <p class="big">The 2024 amendments bound larger entities from 3 December 2025 and advisers under $1.5 billion from 3 June 2026. Both dates have passed.<span class="conf h">H</span> Four obligations follow: a written incident response program; customer notification as soon as practicable and no later than 30 days after the firm becomes aware; service provider oversight; and recordkeeping.<span class="conf h">H</span></p>
 
-  <p>Four obligations: a written incident response program; customer notification as soon as practicable and no later than 30 days after the firm becomes aware; service provider oversight; and recordkeeping to evidence it.<span class="conf h">H</span> The 30-day clock is the dangerous one, because it starts when <em>the firm</em> becomes aware and most firms have never defined who that is.</p>
-
-  <p>The definition that matters is the one you apply before you paste. Identifiability is not a property of a field. It is a property of a combination.</p>
+  <p><strong>You have done this exercise before.</strong> In Session 1 you redacted the Cole facts before pasting them into a consumer tool, and you did it on instinct &mdash; the facts that felt too sensitive came out. Tonight the same facts go through a legal test instead. The interesting result is where instinct and the definition disagree.</p>
 
   <div class="matrix">
-    <h4 style="margin-bottom:4px">Field-by-field re-identification classifier</h4>
-    <p class="dim" style="font-size:14px;margin:0 0 4px;max-width:none">Toggle each field you would include in a prompt. The panel reclassifies on every change.</p>
-    <div class="ctrls" id="npiCtrls" style="margin-top:18px"></div>
+    <h4 style="margin-bottom:6px">PII and NPI are not the same term</h4>
+    <p style="margin:0 0 12px;max-width:none;font-size:15.5px">Your homework asks you to define PII. This course teaches NPI. Know which one you are writing about, because a policy that defines the wrong term will not survive an examination.</p>
+    <div class="row"><button class="btn ghost mini" id="piiToggle">Show the distinction</button></div>
+    <div class="ansk" id="piiPanel">
+      <table style="margin:4px 0">
+        <thead><tr><th></th><th>PII</th><th>NPI</th></tr></thead>
+        <tbody>
+          <tr><td>Source</td><td>General information-security usage. No single controlling definition; NIST, state breach statutes and GDPR each define their own scope.</td><td>A defined term in Regulation S-P at 17 CFR &sect;&nbsp;248.3.<span class="conf h">H</span></td></tr>
+          <tr><td>Covers</td><td>Anything that identifies a natural person.</td><td>Personally identifiable financial information, plus any list or grouping derived from it that is not publicly available.<span class="conf h">H</span></td></tr>
+          <tr><td>Notable inclusion</td><td>&mdash;</td><td>The regulation's own examples include <em>the fact that an individual is or has been one of your customers</em>, and any information about a consumer disclosed in a manner indicating they are your consumer.<span class="conf h">H</span></td></tr>
+          <tr><td>Notable exclusion</td><td>&mdash;</td><td>Publicly available information &mdash; unless it is disclosed in a manner indicating the individual is your consumer. Aggregate or blind data without personal identifiers is outside the definition.<span class="conf h">H</span></td></tr>
+          <tr><td>Scope limit</td><td>&mdash;</td><td>The subpart reaches individuals obtaining financial products or services for personal, family or household purposes. It states it does not apply to information about companies, or to individuals obtaining services for business or commercial purposes.<span class="conf h">H</span></td></tr>
+        </tbody>
+      </table>
+      <p style="margin:10px 0 0;font-size:14.5px"><strong>Why the last row is not an escape hatch.</strong> CPC is a company, and a valuation of it is information about a company. Meg is an individual receiving personal estate planning. Most Cole facts are about her, and the ones that look corporate arrive attached to her. Do not reason from the scope limit to a permission &mdash; reason from it to a question for your compliance officer.<span class="conf m">M</span></p>
+    </div>
+  </div>
+
+  <p>Nine Cole facts below. Toggle on each one you would place into a prompt to a third-party tool. The panel reclassifies the <em>combination</em> after every change, because identifiability is a property of combinations, not of fields.</p>
+
+  <div class="matrix">
+    <div class="ctrls" id="npiCtrls" style="margin-top:4px"></div>
     <div class="mpanel" id="npiPanel"></div>
   </div>
 
-  <p class="srcnote"><strong>The point of the widget.</strong> Every field is individually defensible. Age, a five-digit ZIP and sex are each non-identifying alone; together they are the canonical re-identification triple, and a compliance officer reads the combination as a disclosure. The widget is built so that ticking fields in a safe-feeling order crosses the line without any single tick feeling like the one that did it.</p>
+  <p class="srcnote"><strong>The item that catches the room.</strong> "Founder and sole owner of a Dayton aerospace-fastener manufacturer, exploring a sale, adult son in operations" contains no name, no account number and no dollar figure. Every component is arguably public or non-identifying. In a metropolitan area the size of Dayton the combination describes one person, and the regulation reaches information disclosed in a manner indicating the individual is your consumer &mdash; which is what pasting it into your advisory workflow does.<span class="conf m">M</span></p>
+
+  <p class="srcnote"><strong>Instructor verification required before teaching.</strong> The characterisations above apply &sect;&nbsp;248.3 to synthetic facts. The definitional quotations are from the regulation; the application to the Cole household is mine and is labelled M where it is inference rather than text. Confirm the scope-limit reading and the re-identification item with counsel or compliance before this goes on screen.</p>
 </section>
 
 <!-- ============ 3 ============ -->
 <section class="slide" id="s3" data-nav="Tiers">
-  <div class="eyebrow"><span>03</span><span class="mins">14 min</span></div>
+  <div class="eyebrow"><span>04</span><span class="mins">8 min</span></div>
   <h2>Consumer, Professional and Enterprise Tiers: What Changes in the Contract</h2>
   <p class="big">The tier you subscribe to does not change the model. It changes the contract. For a fiduciary, the contract is the only part that matters.</p>
 
@@ -298,7 +319,7 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
     <figcaption id="divergeCap"></figcaption>
   </figure>
 
-  <p><strong>What diverges is magnitude, systematically.</strong> Grok 4.6 carries a blended sticker 17.1&times; the cheapest model and a measured cost per task 28.0&times; it &mdash; the sticker understates by 63%. Opus 5 understates by 37%. The two worst offenders are the two highest-scoring reasoning models, and the mechanism is why: a reasoning model reaches its answer by emitting more tokens, and a per-token price cannot see how many a task will take.<span class="conf m">M</span></p>
+  <p><strong>What diverges is magnitude.</strong> Grok 4.6 carries a blended sticker 17.1&times; the cheapest model and a measured cost per task 28.0&times; it &mdash; the sticker understates by 63%. Opus 5 understates by 37%. The two worst offenders are the two highest-scoring reasoning models, and the mechanism is why: a reasoning model reaches its answer by emitting more tokens, and a per-token price cannot see how many a task will take.<span class="conf m">M</span></p>
 
   <p>Two cases sharpen it. Grok 4.6 at $2.00 / $6.00 and Gemini 3.6 Flash at $1.50 / $7.50 blend to an identical $3.00 per million tokens &mdash; the same purchase on the sticker, eleven Intelligence Index points apart on the measured axes. And on long-horizon agentic work, Artificial Analysis measures Opus 5 consuming roughly 2.0 billion input tokens across about 103 turns against Grok 4.6's 0.5 billion across about 53.<span class="conf h">H</span> At list rates that is $10,000 against $1,000: a 10&times; gap where the sticker rates differ by 2.5&times;.<span class="conf m">M</span></p>
 
@@ -307,32 +328,41 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
 
 <!-- ============ 4 ============ -->
 <section class="slide" id="s4" data-nav="Vendors">
-  <div class="eyebrow"><span>04</span><span class="mins">12 min</span></div>
-  <h2>Vendor Due Diligence: Six Questions That Produce a Yes or a No</h2>
+  <div class="eyebrow"><span>05</span><span class="mins">11 min</span></div>
+  <h2>Vendor Due Diligence Against the Cole Document Set</h2>
   <p class="big">Reg S-P requires service provider oversight and FINRA names vendor diligence in the framework it expects. Neither tells you what to ask. Six questions cover it, and each has a documentary answer rather than a judgement.</p>
 
-  <p>Score one tool you actually use &mdash; the one you opened this morning, not the one you wish your firm had approved. The contract and retention questions carry half the weight between them, because they are the two that determine whether a disclosure has occurred at all.</p>
+  <p>Do not score a tool in the abstract. Score it against the specific documents you are about to put in it. Select what you would upload from the Cole corpus, then answer the six questions for a tool you actually use &mdash; the one you opened this morning, not the one you wish your firm had approved.</p>
 
   <div class="diag">
+    <h4 style="margin-bottom:4px">Step one &mdash; what goes in</h4>
+    <p class="dim" style="font-size:14px;margin:0 0 12px;max-width:none">The Cole corpus from Session 3. Toggle what this workflow would upload.</p>
+    <div class="ctrls" id="corpusCtrls" style="margin-top:0"></div>
+    <div class="mpanel" id="corpusPanel"></div>
+  </div>
+
+  <div class="diag">
+    <h4 style="margin-bottom:4px">Step two &mdash; the six questions</h4>
+    <p class="dim" style="font-size:14px;margin:0 0 12px;max-width:none">Weighted. The contract and retention questions carry half between them, because they determine whether a disclosure has occurred at all.</p>
     <div id="vendorRows"></div>
     <div class="diagout" id="vendorOut"><span class="nil">No answers yet.</span></div>
   </div>
 
-  <p class="srcnote"><strong>Why this differs from the opening checklist.</strong> That was a binary completeness count over a fixed list. This is a weighted multi-state scorecard producing a go, conditional or stop verdict. They look similar and behave differently, which is the reason for running both.</p>
+  <p class="srcnote"><strong>Why the two steps are separate.</strong> The sensitivity of the upload changes the threshold the tool must clear. A tool that is adequate for a public-law research question is not adequate for the draft IDGT instrument, and a scorecard run without naming the payload lets you pass a tool that would fail on the documents you will actually give it.</p>
 
-  <p><strong>What the verdict is not.</strong> Green means the tool survives six questions. Not that it is safe, and not a replacement for your firm's approval process. If your firm keeps an approved-vendor list, that list governs; this explains why a tool is or is not on it.</p>
+  <p><strong>What the verdict is not.</strong> Green means the tool survives six questions. Not that it is safe, and not a replacement for your firm's approval process. If your firm keeps an approved-vendor list, that list governs.</p>
 </section>
 
 <div class="wrap" style="padding:0">
 <div class="brk">
   <div class="t">Break &middot; 10 minutes</div>
-  <p>At the 60-minute mark of 150 minutes of instruction. The 180-minute block absorbs this plus 20 minutes of unallocated slack.</p>
+  <p>At the 55-minute mark of 150 minutes of instruction. The 180-minute block absorbs this plus 20 minutes of unallocated slack.</p>
 </div>
 </div>
 
 <!-- ============ 5 ============ -->
 <section class="slide" id="s5" data-nav="Attacks">
-  <div class="eyebrow"><span>05</span><span class="mins">15 min</span></div>
+  <div class="eyebrow"><span>06</span><span class="mins">10 min</span></div>
   <h2>Prompt Injection, Data Exfiltration, Deepfakes and Model-Assisted Malware</h2>
   <p class="big">A language model cannot distinguish instructions you wrote from instructions it read. That single property generates the entire attack class. It will not be patched, because the thing being exploited is the thing the model is for.</p>
 
@@ -369,39 +399,35 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
 
   <p>Use Arup. If you need a market figure, say published totals range from roughly $2 billion to $4 billion depending on inclusion criteria, that all undercount, and that you do not know which is right. That sentence is more defensible than any number in it.</p>
 
+  <p><strong>Make it concrete.</strong> A synthetic Meg Cole joins a video call and instructs your operations desk to wire seed-gift funds to a trust account, days before a transaction the desk already knows is in progress. Every contextual cue supports the request. That is the scenario, and no amount of looking at the screen resolves it.</p>
+
   <p><strong>The control is not detection.</strong> Humans spot high-quality synthetic media at close to chance, and detectors lose much of their lab accuracy in the field.<span class="conf m">M</span> What works is procedural: out-of-band verification on a channel the requester did not choose, applied to every disbursement instruction regardless of how convincing it was. That control predates deepfakes by decades &mdash; another pre-existing duty doing new work.</p>
 </section>
 
 <!-- ============ NEW: PROVENANCE ============ -->
 <section class="slide" id="sW1" data-nav="Provenance">
-  <div class="eyebrow"><span>06</span><span class="mins">15 min</span></div>
+  <div class="eyebrow"><span>07</span><span class="mins">9 min</span></div>
   <h2>Content Provenance and the SynthID Watermark</h2>
-  <p class="big">The previous section left you with a problem: you cannot detect a deepfake by looking at it. Provenance marking is the industry's answer. It works, it is deployed at scale, and it answers a narrower question than most people think it answers.</p>
+  <p class="big">You cannot detect a deepfake by looking at it. Provenance marking is the answer, and it answers a narrower question than most people think.</p>
 
-  <p>There are two ways to attach origin information to a file. <strong>Metadata bindings</strong> attach a cryptographically signed manifest alongside the content &mdash; this is the C2PA Content Credentials approach. <strong>In-content watermarks</strong> alter the content itself so the signal travels with the pixels, samples or tokens. SynthID is the second kind.</p>
-
-  <p>The distinction matters because metadata is separable from content. Standard C2PA manifests are lost when a non-C2PA-aware tool resaves a file, and platforms that re-encode on upload strip them silently, leaving no trace that a credential ever existed. A screenshot defeats them completely.<span class="conf h">H</span></p>
+  <p>Two approaches. <strong>Metadata bindings</strong> attach a signed manifest alongside the content &mdash; C2PA Content Credentials. <strong>In-content watermarks</strong> alter the content itself. SynthID is the second kind, and metadata is separable: manifests are lost when a non-aware tool resaves a file, re-encoding strips them silently, and a screenshot defeats them.<span class="conf h">H</span></p>
 
   <div class="matrix" style="background:var(--warn-bg);border-color:#E0C6B4">
     <h4 style="margin-bottom:8px">A correction to the common framing</h4>
-    <p style="margin:0;max-width:none;font-size:16px">SynthID and C2PA are routinely compared as rivals, with watermarking scored as the winner. That framing is wrong and the specification says so. The C2PA specification defines a <em>Durable Content Credential</em> as a Content Credential for which one or more <em>soft bindings</em> exist &mdash; invisible watermarks and perceptual fingerprints that let a stripped manifest be recovered from a repository. Watermarking is a component of the C2PA architecture, not its competitor.<span class="conf h">H</span> If you are asked to choose between them, the question is malformed.</p>
+    <p style="margin:0;max-width:none;font-size:16px">SynthID and C2PA are routinely compared as rivals. The specification says otherwise: C2PA defines a <em>Durable Content Credential</em> as one for which <em>soft bindings</em> exist &mdash; invisible watermarks and perceptual fingerprints letting a stripped manifest be recovered. Watermarking is a component of the C2PA architecture, not its competitor.<span class="conf h">H</span> If asked to choose between them, the question is malformed.</p>
   </div>
 
   <h3 style="margin-top:34px">The asymmetry that governs everything else</h3>
   <p class="pull">Presence is evidence. Absence is not.</p>
 
-  <p>A valid watermark or credential tells you something. Its absence tells you almost nothing, because there are many benign reasons for it: the content predates adoption, the generating model does not participate, the capture device does not sign, the file passed through a stripping pipeline, or a credential was simply never added. Most authentic content in circulation carries no provenance marking at all, so treating absence as suspicion produces an unusable false-positive rate.<span class="conf h">H</span></p>
-
-  <p>Note what this means for the tool this course requires you to use. Anthropic has not announced SynthID adoption for Claude, so nothing you generate in this course carries a SynthID watermark.<span class="conf m">M</span> A detector returning "no watermark" on your own work is the expected result, not a finding.</p>
+  <p>A valid watermark tells you something. Its absence tells you almost nothing &mdash; the content may predate adoption, the model may not participate, the file may have been stripped. Most authentic content carries no marking, so treating absence as suspicion produces an unusable false-positive rate.<span class="conf h">H</span> Anthropic has not announced SynthID adoption for Claude, so nothing you generate in this course is watermarked.<span class="conf m">M</span></p>
 
   <h3 style="margin-top:34px">Text: tournament sampling</h3>
-  <p>The mechanism is published in <em>Nature</em>. A language model produces a probability score for each possible next token. Google's own example: for "My favourite tropical fruits are mango and&hellip;", the token <em>bananas</em> scores higher than <em>airplanes</em>. SynthID does not add anything to the text. It changes which token gets selected, by running a tournament among candidates in which each token also carries a pseudo-random value from a watermarking function seeded by the recent context plus a secret key.<span class="conf h">H</span></p>
-
-  <p>Detection re-runs the same tournaments with the same key. If the observed tokens win their brackets far more often than chance allows, the text is watermarked. No access to the original model is needed.<span class="conf h">H</span></p>
+  <p>SynthID adds nothing to the text. It changes which token is selected, running a tournament in which each candidate carries a pseudo-random value seeded by recent context plus a secret key. Detection re-runs the same tournaments: if observed tokens win their brackets far more often than chance allows, the text is watermarked &mdash; no access to the original model needed.<span class="conf h">H</span></p>
 
   <div class="diag">
     <h4 style="margin-bottom:4px">Tournament sampling, one token</h4>
-    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">Eight candidate tokens, three tournament layers. Change the key and watch the winner change while the text stays fluent.</p>
+    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">Eight candidates, three layers. Change the key; the winner changes, the text stays fluent.</p>
     <div class="row" style="margin-bottom:14px">
       <button class="btn" id="tsRun">Run tournament</button>
       <button class="btn sel mini act" id="tsKeyA" data-k="A">Key A</button>
@@ -414,13 +440,11 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
   <p class="srcnote">A simplified but faithful reconstruction of the scheme in Dathathri, See, Ghaisas, Huang, McAdam et al., "Scalable watermarking for identifying large language model outputs," <em>Nature</em> 634:818&ndash;823 (2024). The paper uses multiple watermarking functions g<sub>1</sub>&hellip;g<sub>m</sub> seeded from recent context and a watermarking key; this widget uses m&nbsp;=&nbsp;3 and a toy hash so the arithmetic is visible. Candidate probabilities are illustrative, not measured from any model.<span class="conf m">M</span></p>
 
   <h3 style="margin-top:34px">Images and video: perturbation below the perceptual floor</h3>
-  <p>SynthID alters pixel values at generation time by an amount spread across the whole image, so cropping leaves enough signal to read. Google states the image and video watermark is designed to survive cropping, filters, frame-rate changes and lossy compression.<span class="conf h">H</span></p>
-
-  <p>The claim students find hardest to believe is that a pixel change can be both readable by a machine and invisible to a person. Amplify it and see.</p>
+  <p>SynthID alters pixels at generation time, spread across the whole image, so cropping leaves enough signal to read. Google states it survives cropping, filters, frame-rate changes and lossy compression.<span class="conf h">H</span> Amplify it and see.</p>
 
   <div class="diag">
     <h4 style="margin-bottom:4px">Perturbation amplifier</h4>
-    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">One synthetic image, one spread-spectrum perturbation field, one amplitude control. The difference map is amplified 20&times; so you can see where the signal lives.</p>
+    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">One synthetic image, one perturbation field, one amplitude control. Difference map amplified 20&times;.</p>
     <div id="pfCanvases" class="cards" style="margin:0 0 16px"></div>
     <input type="range" id="pfAmp" min="0" max="40" value="3">
     <div class="ticks"><span>none</span><span>subtle</span><span>visible</span><span>destructive</span></div>
@@ -429,32 +453,30 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
   <p class="srcnote"><strong>This is a simulation, not SynthID output.</strong> Google does not publish SynthID's perturbation amplitude, so no slider position corresponds to the real thing. What the widget demonstrates is the perceptual principle the technique relies on: below roughly a 1% luminance change, the human visual system does not reliably register a difference, while a matched-filter detector reading the whole field does. The 1% figure is the Weber fraction for luminance discrimination and varies with adaptation, spatial frequency and image content.<span class="conf m">M</span></p>
 
   <h3 style="margin-top:30px">Audio: hiding in the frequencies you cannot hear</h3>
-  <p>SynthID embeds a watermark in audio generated through Lyria and the NotebookLM podcast feature. Google states it is inaudible and is not removed by adding noise, MP3 compression, or changing the speed of the track.<span class="conf h">H</span> The technique exploits the same principle as image watermarking, applied to a different perceptual system: human hearing has frequency ranges of low sensitivity, and a loud sound masks a quieter simultaneous one. The signature goes there.</p>
-
-  <p>The practically important property is survival through the air. A signal encoded in the waveform rather than the file can survive being played on a speaker and re-recorded on a phone &mdash; the path a deepfaked voice instruction actually travels.</p>
+  <p>SynthID watermarks audio from Lyria and the NotebookLM podcast feature. Google states it is inaudible and survives added noise, MP3 compression and speed changes.<span class="conf h">H</span> Same principle, different perceptual system: hearing has ranges of low sensitivity, and a loud sound masks a quieter one. What matters is survival through the air &mdash; the path that synthetic Meg Cole instruction actually travels.</p>
 
   <h3 style="margin-top:30px">Scale: a figure worth not repeating</h3>
-  <p>You will see a number attached to SynthID. Be careful which one. Google's announcement of the SynthID Detector portal cites over 10 billion pieces of content watermarked. Coverage of Google I/O in May 2026 reports more than 100 billion images and videos. Secondary sources published in the same month carry both figures.<span class="conf l">L</span> Google's own current SynthID product page states no figure at all.<span class="conf h">H</span></p>
+  <p>Google's Detector announcement cites over 10 billion items watermarked. I/O coverage in May 2026 reports more than 100 billion images and videos. Secondary sources published the same month carry both.<span class="conf l">L</span> Google's own current page states no figure at all.<span class="conf h">H</span></p>
 
   <p class="pull">Ten billion or one hundred billion, reported the same month, from the same company. A tenfold spread.</p>
 
-  <p>This is the deepfake-loss problem from the previous section repeating itself: a number gets a life of its own, propagates through secondary coverage, and arrives on your slide without a date or a definition attached. If you need to convey scale, say deployment is in the billions of items and cite the primary announcement you actually read.</p>
+  <p>The deepfake-loss problem repeating. Say deployment is in the billions and cite the primary announcement you actually read.</p>
 </section>
 
 <!-- ============ NEW: LIMITS ============ -->
 <section class="slide" id="sW2" data-nav="Watermark limits">
-  <div class="eyebrow"><span>07</span><span class="mins">9 min</span></div>
+  <div class="eyebrow"><span>08</span><span class="mins">5 min</span></div>
   <h2>Entropy, Regeneration and the Limits of Watermarking</h2>
-  <p class="big">Watermark capacity is bounded by how many acceptable outputs exist. Where only one output is correct, there is nowhere to hide a signal. This single constraint predicts every limitation that follows.</p>
+  <p class="big">Watermark capacity is bounded by how many acceptable outputs exist. Where only one output is correct, there is nowhere to hide a signal.</p>
 
-  <p>Google states the limitation directly: watermark application is less effective on factual responses, because there is less opportunity to augment generation without decreasing accuracy.<span class="conf h">H</span> A model asked for the capital of France cannot select a lower-probability token to satisfy a watermark key without being wrong. The watermark and the correct answer compete for the same degree of freedom.</p>
+  <p>Google states it directly: watermark application is less effective on factual responses, because there is less opportunity to augment generation without decreasing accuracy.<span class="conf h">H</span></p>
 
   <h3 style="margin-top:30px">The advisor's inversion</h3>
-  <p>Now map that onto what you actually produce. The outputs where a fabrication does the most damage &mdash; a citation, a tax figure, a formula, an allocation percentage &mdash; are precisely the lowest-entropy outputs, and therefore the least watermarkable. The outputs that watermark well are the ones where being wrong matters least.</p>
+  <p>The outputs where fabrication does most damage &mdash; the 31% discount, an IRC cite, the $4,968,000 note balance &mdash; are the lowest-entropy outputs and the least watermarkable. What watermarks well is what matters least when wrong.</p>
 
   <div class="diag">
     <h4 style="margin-bottom:4px">Entropy and watermarkability by output type</h4>
-    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">Click each advisor deliverable to place it. The answer key reveals after all eight.</p>
+    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">Place each deliverable. Key reveals after all eight.</p>
     <div id="entChips" class="chiplist" style="margin-bottom:16px"></div>
     <div class="boxes" id="entBoxes">
       <div class="lbox" data-b="0"><h4>High entropy &mdash; watermarks well</h4><p>Many acceptable phrasings. Room to bias selection without cost.</p><div class="why" id="e0"></div></div>
@@ -464,17 +486,17 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
   </div>
   <div class="ansk" id="entKey"></div>
 
-  <p><strong>Code and structured data are the extreme case.</strong> Executable code and spreadsheet formulas have almost no semantic slack: change a token and it either compiles differently or fails. Whatever slack remains sits in naming, quoting and whitespace &mdash; and the software ecosystem already destroys exactly that, automatically, every time a formatter or minifier runs. A code formatter parses to a syntax tree and reprints to a fixed standard, erasing lexical choices as a side effect of its normal job. Nobody has to attack the watermark; the build pipeline removes it.<span class="conf m">M</span></p>
+  <p><strong>Code and structured data are the extreme case.</strong> Change a token and it compiles differently or fails. The remaining slack sits in naming, quoting and whitespace &mdash; and a formatter reprints to a fixed standard, erasing exactly that. Nobody has to attack the watermark; the build pipeline removes it.<span class="conf m">M</span></p>
 
   <h3 style="margin-top:30px">Regeneration</h3>
-  <p>The other limit is adversarial. Passing a watermarked image through a second generative model re-synthesises the content, and the new pixels are drawn from a model that has no knowledge of the original key. Zhao et al. (2024) formalised this as a regeneration attack and showed invisible pixel-level watermarks are removable by generative AI; a 2026 analysis proves that as an image undergoes sufficient diffusion transformation, the mutual information between the image and the hidden payload approaches zero, and reports near-zero recovery against several deep watermarking schemes while preserving visual fidelity.<span class="conf h">H</span></p>
+  <p>Passing a watermarked image through a second generative model re-synthesises it from a model with no knowledge of the key. Zhao et al. (2024) formalised this as a regeneration attack; a 2026 analysis proves mutual information between image and payload approaches zero under sufficient diffusion, with near-zero recovery at preserved visual fidelity.<span class="conf h">H</span></p>
 
-  <p><strong>But not uniformly, and the nuance is the useful part.</strong> Schemes that bind the signal to semantic or latent representations rather than superimposing it on pixels degrade far less: one 2026 scheme reports retaining 78.8% bit accuracy and 75% true-positive rate after diffusion purification.<span class="conf m">M</span> Blanket claims that regeneration removes watermarks are wrong; it depends on where the signal is bound. Treat any single removal percentage you are quoted as scheme-specific until proven otherwise.</p>
+  <p><strong>Not uniformly, and the nuance is the useful part.</strong> Schemes binding the signal to latent representations rather than pixels degrade far less &mdash; one 2026 scheme retains 78.8% bit accuracy and 75% true-positive rate after diffusion purification.<span class="conf m">M</span> Treat any single removal percentage as scheme-specific until proven otherwise.</p>
 
   <p class="srcnote">This session does not teach removal technique and none is given here. The finding matters defensively, and only defensively: it is the reason a compliance procedure must never treat a missing watermark as evidence of authenticity. Sources: Zhao et al. (2024) on regeneration attacks; arXiv 2602.20680 (Feb 2026) for the information-theoretic result; arXiv 2605.01479 for the semantic-binding counterexample. Christ et al. further prove that watermark undetectability requires cryptographic secrecy, so no scheme is secure against an adversary who holds the key.<span class="conf h">H</span></p>
 
   <h3 style="margin-top:30px">What a signal licenses you to conclude</h3>
-  <p>Combine a detector result with what you know about the source. The verdict is rarely what people expect.</p>
+  <p>Combine a detector result with what you know about the source.</p>
 
   <div class="diag">
     <div class="ingrid" style="margin-bottom:16px">
@@ -484,16 +506,16 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
     <div class="diagout" id="evOut"><span class="nil">Select one of each.</span></div>
   </div>
 
-  <p><strong>Regulatory note.</strong> Marking obligations are arriving independently of whether the technology is reliable. California SB 942 took effect in January 2026, and EU AI Act Article 50 machine-readable disclosure obligations begin enforcement in August 2026.<span class="conf m">M</span> Neither is a US federal adviser rule, and neither displaces anything in this session. Verify current status before relying on either date &mdash; this is the fastest-moving area covered tonight.</p>
+  <p><strong>Regulatory note.</strong> California SB 942 took effect January 2026; EU AI Act Article 50 machine-readable disclosure obligations begin enforcement August 2026.<span class="conf m">M</span> Neither is a US federal adviser rule. Verify before relying on either date &mdash; the fastest-moving area covered tonight.</p>
 </section>
 
 <!-- ============ 6 ============ -->
 <section class="slide" id="s6" data-nav="Leaks">
-  <div class="eyebrow"><span>08</span><span class="mins">12 min</span></div>
+  <div class="eyebrow"><span>09</span><span class="mins">8 min</span></div>
   <h2>Where the Leaks Happen: Logs, Caches, Connectors and Features Nobody Turned Off</h2>
   <p class="big">Firms spend their AI governance budget on the prompt box. Almost nothing leaves through the prompt box. It leaves through the surfaces attached to it, most enabled by a default rather than a decision.</p>
 
-  <p>Published by the vendor: Claude Code stores session transcripts locally, in plaintext, under <code style="font-family:'JetBrains Mono',monospace;font-size:14px">~/.claude/projects/</code>, for 30 days by default, on every tier. Nothing about your subscription changes it and no server-side commitment reaches it, because the file is on your laptop.<span class="conf h">H</span></p>
+  <p>Every Cole document your workflow touched in Session 3 &mdash; the buy-sell agreement, the 2023 appraisal, the draft IDGT instrument &mdash; left a trace somewhere other than the prompt box. Published by the vendor: Claude Code stores session transcripts locally, in plaintext, under <code style="font-family:'JetBrains Mono',monospace;font-size:14px">~/.claude/projects/</code>, for 30 days by default, on every tier. Nothing about your subscription changes it and no server-side commitment reaches it, because the file is on your laptop.<span class="conf h">H</span></p>
 
   <div class="diag">
     <h4 style="margin-bottom:4px">Annual exposure-event estimator</h4>
@@ -508,12 +530,14 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
 </section>
 
 <!-- ============ 7 ============ -->
-<section class="slide" id="s7" data-nav="Hallucination">
-  <div class="eyebrow"><span>09</span><span class="mins">16 min</span></div>
+<section class="slide" id="s7" data-nav="What it costs">
+  <div class="eyebrow"><span>10</span><span class="mins">12 min</span></div>
   <h2>Hallucination Rates and the Verification Burden</h2>
-  <p class="big">Retrieval grounding reduces fabrication. It does not remove it. The best-measured professional research tools in an adjacent profession still returned incorrect information on roughly one query in six, and the worst on one in three, while marketing the opposite.</p>
+  <p class="pull">Session 1: why it happens. Session 3: how often. Tonight: what it costs you.</p>
 
-  <p>Magesh, Surani, Dahl, Suzgun, Manning and Ho, <em>Hallucination-Free?</em>, Stanford RegLab and HAI; preprint May 2024, published in the <em>Journal of Empirical Legal Studies</em> 2025. The first preregistered evaluation of proprietary retrieval-grounded legal AI, over 200 queries, expert hand-scored. LexisNexis had marketed "100% hallucination-free linked legal citations."<span class="conf h">H</span></p>
+  <p class="big">You have the mechanism and you have the rate. Neither has yet been converted into minutes. That conversion is the only form in which this argument survives contact with a practice.</p>
+
+  <p>The rate evidence is Magesh, Surani, Dahl, Suzgun, Manning and Ho, <em>Hallucination-Free?</em>, Stanford RegLab and HAI; preprint May 2024, published in the <em>Journal of Empirical Legal Studies</em> 2025. Over 200 preregistered legal queries, expert hand-scored. LexisNexis had marketed "100% hallucination-free linked legal citations."<span class="conf h">H</span></p>
 
   <figure>
     <div id="slopeHost"></div>
@@ -524,24 +548,8 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
 
   <div class="matrix" style="background:var(--warn-bg);border-color:#E0C6B4">
     <h4 style="margin-bottom:8px">A measurement you cannot put on the same axis</h4>
-    <p style="margin:0;max-width:none;font-size:16px">Artificial Analysis currently measures Claude Opus 5 at a 50% hallucination rate, and places Claude Fable 5 top of the boards tracking how often a model is simply wrong, at 40 on AA-Omniscience.<span class="conf h">H</span> Do not put that 50% next to the Stanford 43%. Different instruments, query sets and scoring rules, two years apart. A student who builds a slide comparing them has produced exactly the artefact this course exists to prevent. Both find double-digit error rates on their own terms; neither licenses a claim about the other.</p>
+    <p style="margin:0;max-width:none;font-size:16px">Artificial Analysis currently measures Claude Opus 5 at a 50% hallucination rate, and places Claude Fable 5 top of the boards tracking how often a model is simply wrong, at 40 on AA-Omniscience.<span class="conf h">H</span> Do not put that 50% next to the Stanford 43%. Different instruments, query sets and scoring rules, two years apart. Both find double-digit error rates on their own terms; neither licenses a claim about the other.</p>
   </div>
-
-  <h3 style="margin-top:34px">Where the rate comes from, in one mechanism</h3>
-  <p>Trained on balanced-parenthesis sequences, a small transformer assigns roughly 15% probability to a closing parenthesis at a position where one would necessarily leave the sequence unbalanced. Wolfram: this "isn't right, because that would necessarily lead to an unbalanced parenthesis." The model is not uncertain about a hard question. It is confidently assigning probability to a provably impossible continuation, because it estimates a distribution over next tokens rather than checking a constraint.<span class="conf h">H</span> A fabricated citation is that same event with a legal authority in place of a bracket. Nothing in the architecture distinguishes them.</p>
-
-  <h3 style="margin-top:30px">Where the 2023 account has gone stale</h3>
-  <p>Wolfram is a 2023 source describing a 2020 model. Three structural claims no longer describe the frontier.</p>
-
-  <table>
-    <thead><tr><th>Wolfram, February 2023</th><th>August 2026</th><th>Consequence</th></tr></thead>
-    <tbody>
-      <tr><td>175 billion weights, and every token "has to do a calculation involving every single one of these weights."</td><td>Kimi K3 runs 2.8 trillion total parameters with 104 billion active per token &mdash; a mixture-of-experts design activating roughly 3.7%. DeepSeek V4-Flash: 284B total, 13B active.<span class="conf h">H</span></td><td>Parameter count no longer predicts cost or latency. Frontier closed models have stopped publishing it.</td></tr>
-      <tr><td>"ChatGPT doesn't internally have loops or recompute on data... each computational element is used only once."</td><td>Reasoning models spend variable output tokens before answering; Artificial Analysis reports tokens and turns per task as first-class metrics. Grok 4.6 finishes long-horizon work in ~53 turns against Opus 5's ~103.<span class="conf h">H</span></td><td>The outer loop Wolfram called absent is now the main cost driver and the main quality dial.</td></tr>
-      <tr><td>"A temperature of 0.8 seems best," as the primary randomness control.</td><td>Vendors now expose effort or reasoning level &mdash; low, high, max &mdash; as the principal control, and several do not expose temperature in the consumer product.<span class="conf m">M</span></td><td>The dial taught in Session 2 may not exist in the interface a student is using.</td></tr>
-    </tbody>
-  </table>
-  <p class="srcnote">Left column from Wolfram (2023), assigned for Sessions 1&ndash;3. Right from Artificial Analysis Intelligence Index v4.1 and vendor model cards, August 2026. Row three is medium confidence: it characterises a moving interface, not a published fact. The point is not that Wolfram was wrong &mdash; it is that a source can be correct, canonical, three years old and stale in specific load-bearing places at once, and you find out which only by checking.</p>
 
   <h3 style="margin-top:34px">The arithmetic of not checking</h3>
   <p>If a tool errs on proportion <em>p</em> of citations and you verify none of <em>N</em>, the probability at least one error reaches your recommendation is 1 &minus; (1 &minus; <em>p</em>)<sup>N</sup>.</p>
@@ -563,20 +571,58 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
     <div id="verBar" style="margin-top:16px"></div>
   </div>
 
-  <p><strong>The number that ends the argument.</strong> At the Lexis+ AI rate of 17% and five unverified citations, the probability at least one error survives into your file is 60.6%. At the Westlaw rate of 33%, 86.5%. There is no version of this arithmetic in which spot-checking is adequate.<span class="conf m">M</span></p>
-  <p class="srcnote">Medium confidence, and the reason matters: the formula assumes citation errors are independent, and they are not &mdash; they cluster by query type, jurisdiction and distance from the training distribution. The direction is robust to the assumption; the decimal is not.</p>
+  <p>At the Lexis+ AI rate of 17% and five unverified citations, the probability at least one error survives into your file is 60.6%. At the Westlaw rate of 33%, 86.5%.<span class="conf m">M</span> The formula assumes citation errors are independent, and they are not &mdash; they cluster by query type and by distance from the training distribution. The direction is robust; the decimal is not.</p>
+
+  <h3 style="margin-top:34px">Pricing it against your own baseline</h3>
+  <p>Take the IDGT client explanation from Session 2 as the unit of work. Enter the baseline minutes you recorded in Session 1 for a comparable deliverable, the AI-assisted minutes, and how many citations the output carried. The calculator prices verification and reports whether the deliverable is still faster.</p>
+
+  <div class="diag">
+    <div class="ingrid" id="costIn"></div>
+    <div class="diagout" id="costOut"></div>
+  </div>
+
+  <p class="srcnote"><strong>What the calculator does and does not know.</strong> It multiplies your figures. The two-minutes-per-citation default is a placeholder you should overwrite with your own measured time, not a published benchmark &mdash; a Code section you can pull in thirty seconds and a private letter ruling you must locate are not the same check.<span class="conf l">L</span> If you did not record a Session 1 baseline, the fallback figures below the inputs let you run the exercise, and you should treat the output as illustrative rather than as a finding about your practice.</p>
 </section>
 
 <!-- ============ 8 ============ -->
 <section class="slide" id="s8" data-nav="Audit trail">
-  <div class="eyebrow"><span>10</span><span class="mins">12 min</span></div>
-  <h2>Audit Trails: Prompt, Output, Decision</h2>
+  <div class="eyebrow"><span>11</span><span class="mins">12 min</span></div>
+  <h2>Audit Trails for the Artifacts You Already Built</h2>
   <p class="big">FINRA asks for prompt and output logging, version tracking and access controls. The SEC asks whether your compliance team can explain how a tool reached a decision. Both reduce to one test: can another person re-run what you did and see why you concluded what you concluded.</p>
 
-  <p>Reproducibility is the hard part. Wolfram: "if we use the same prompt multiple times, we're likely to get different essays each time."<span class="conf h">H</span> A record capturing only the prompt does not let anyone reproduce the output; one capturing only the output does not let anyone interrogate the reasoning. Four fields are the minimum: the exact prompt; the model identifier and its effort setting; the retrieved source text rather than a paraphrase; and the human decision with date and author.</p>
+  <p>Two artifacts from this course are the test material. In Session 2 you wrote a prompt asking a model to explain the IDGT sale to Meg in client-readable language. In Session 3 you ran an extraction over the Cole corpus that surfaced the 2014 buy-sell agreement and its stale formula valuation conflicting with the $18,000,000 appraised value. Tonight you decide whether either produced a record.</p>
+
+  <div class="matrix" style="background:var(--on-bg);border-color:#9FC4C0">
+    <h4 style="margin-bottom:6px">Fallback artifacts &mdash; if you missed Session 2 or Session 3</h4>
+    <p style="margin:0 0 10px;max-width:none;font-size:15.5px">You do not need your own work to do this section. A pre-built version of both artifacts is here. Open it, use it as your input, and you lose nothing but the pleasure of auditing your own prompt.</p>
+    <div class="row"><button class="btn ghost mini" id="fbToggle">Open the fallback set</button></div>
+    <div class="ansk" id="fbPanel">
+      <p style="margin:0 0 6px"><strong>Fallback A &mdash; Session 2 IDGT client-explanation prompt.</strong></p>
+      <div class="codeblk" style="margin:6px 0 16px">Explain to a 64-year-old business owner, in plain language and
+under 400 words, the transaction her attorney has proposed: a sale
+of a 40% non-voting interest in her C-corporation to an
+intentionally defective grantor trust for a $4,968,000 promissory
+note, preceded by a $650,000 seed gift, with a 31% valuation
+discount claimed for lack of control and lack of marketability.
+Cover why the trust is "defective," who pays the income tax, and
+what happens at the balloon. Cite the authority for each mechanic.</div>
+      <p style="margin:0 0 6px"><strong>Fallback B &mdash; Session 3 buy-sell extraction, returned output.</strong></p>
+      <div class="codeblk" style="margin:6px 0 0">FINDING: The buy-sell agreement (executed 2014, never amended)
+sets a purchase price by formula at book value times a fixed
+multiple. Applied to current financials this yields a figure
+materially below the $18,000,000 appraised value used in the
+2023 valuation report.
+SOURCE: Buy-Sell Agreement, Cole Precision Components Inc.,
+  section 4.2, pages 7-8.
+CONFLICT: The formula price and the appraised value cannot both
+  govern a transfer. The documents do not resolve which controls.</div>
+    </div>
+  </div>
+
+  <p>Reproducibility is the hard part. The same prompt run twice does not return the same text. A record capturing only the prompt does not let anyone reproduce the output; one capturing only the output does not let anyone interrogate the reasoning. Four fields are the minimum: the exact prompt; the model identifier and its effort setting; the retrieved source text rather than a paraphrase; and the human decision with date and author.</p>
 
   <h3 style="margin-top:30px">Classification exercise</h3>
-  <p>Six records, three categories. Two items are specific in form and defective in substance.</p>
+  <p>Six candidate records drawn from those two artifacts. Three categories. Two items are specific in form and defective in substance.</p>
 
   <div class="quiz" id="auditQuiz"></div>
   <span class="score" id="auditScore">0 of 6 answered</span>
@@ -608,65 +654,119 @@ for that item. Do not reconstruct a citation from memory.</div>
 </section>
 
 <!-- ============ 9 ============ -->
-<section class="slide" id="s9" data-nav="Homework">
-  <div class="eyebrow"><span>11</span><span class="mins">8 min</span></div>
-  <h2>Homework: The Firm Artificial Intelligence Use Policy</h2>
-  <p class="big">Draft an AI usage policy for your firm. One discrete deliverable, due before Session 5.</p>
 
-  <p>A policy opening with a definition of machine learning has already failed; the reader is a principal who needs to know what is permitted. Seven sections, each answerable in a paragraph, most from widgets you filled in tonight.</p>
-
-  <table>
-    <thead><tr><th>Section</th><th>The question it answers</th><th>Where tonight feeds it</th></tr></thead>
-    <tbody>
-      <tr><td>Approved tools</td><td>Which tools, at which tier, under which contract</td><td>&sect;03 table; &sect;04 verdict</td></tr>
-      <tr><td>Data boundary</td><td>Which fields may never leave the firm</td><td>&sect;02 classifier</td></tr>
-      <tr><td>Human review</td><td>Which outputs require a named reviewer</td><td>&sect;07 verification arithmetic</td></tr>
-      <tr><td>Recordkeeping</td><td>What is logged, where, for how long</td><td>&sect;08 four fields</td></tr>
-      <tr><td>Vendor oversight</td><td>How and how often vendors are re-reviewed</td><td>&sect;04; Reg S-P service-provider oversight</td></tr>
-      <tr><td>Incident response</td><td>Who declares an incident and when the 30-day clock starts</td><td>&sect;02; Reg S-P notification</td></tr>
-      <tr><td>Prohibited uses</td><td>What is not permitted at any tier</td><td>&sect;05 attack surfaces</td></tr>
-    </tbody>
-  </table>
-
-  <p><strong>Format.</strong> Structured bullets, two pages maximum. If a section needs more than a paragraph, it is describing a procedure that belongs in a separate document.</p>
-
-  <h3 style="margin-top:30px">Peer review instrument</h3>
-  <p>Exchange drafts with one classmate and score theirs on four tests. Bring the score to Session 5. The instrument is deliberately hostile: a policy that cannot survive four questions from a friendly reader will not survive one from an examiner.</p>
-
-  <div class="diag">
-    <div id="peerRows"></div>
-    <div class="diagout" id="peerOut"><span class="nil">No scores entered.</span></div>
-  </div>
-</section>
 
 <!-- ============ 10 ============ -->
-<section class="slide" id="s10" data-nav="Handoff">
+<section class="slide" id="s10" data-nav="Pairings">
   <div class="eyebrow"><span>12</span><span class="mins">3 min</span></div>
-  <h2>Part 1 Handoff Mechanics and the Part 2 Assignment</h2>
-  <p class="big">You send the handoff email to me tonight. I grade it as received, then forward it &mdash; intact &mdash; to your assigned classmate.</p>
+  <h2>Part 1 Relay and the Part 2 Pairing Draw</h2>
+  <p class="big">Packages arrived Sunday night. They have been read, graded as received, and screened. Pairings are drawn now, in the room, and you will open yours in the next section.</p>
 
   <table>
     <thead><tr><th>When</th><th>Who</th><th>What</th></tr></thead>
     <tbody>
-      <tr><td>End of tonight</td><td>You</td><td>One email to the instructor. All required files attached. Body reads only "See attached."</td></tr>
-      <tr><td>Within 24 hours</td><td>Instructor</td><td>Grade the handoff package as received. Screen every attachment for real client data. Draw the pairing.</td></tr>
-      <tr><td>Within 24 hours</td><td>Instructor</td><td>Forward the original email unaltered to the assigned classmate.</td></tr>
-      <tr><td>Before Session 5</td><td>You</td><td>Run, diagnose and improve the workflow you receive. Submit the improved version and a note on what changed.</td></tr>
+      <tr><td>Sunday night</td><td>You</td><td>One email to the instructor. All required files attached. Body reads only "See attached."</td></tr>
+      <tr><td>Before tonight</td><td>Instructor</td><td>Grade the handoff package as received. Screen every attachment for real client data.</td></tr>
+      <tr><td>Now</td><td>Instructor</td><td>Draw the pairing and forward the original email unaltered to the assigned classmate.</td></tr>
+      <tr><td>Next 10 minutes</td><td>You</td><td>Open it cold and try to run it. The builder is in the room and may not help.</td></tr>
     </tbody>
   </table>
 
-  <p><strong>Forwarded intact, not repackaged.</strong> Part 2 grades a failed handoff against the builder, not the presenter. That attribution only holds if you receive exactly what the builder sent. If I strip the email and pass on files, a mislabelled attachment becomes ambiguous &mdash; my curation, or their defect. So the email goes on whole, and the 15% still scores the same thing it always scored: whether the package stands alone with no one in the room to explain it.</p>
+  <p><strong>Forwarded intact, not repackaged.</strong> Part 2 grades a failed handoff against the builder, not the presenter. That attribution only holds if you receive exactly what the builder sent. If I strip the email and pass on files, a mislabelled attachment becomes ambiguous &mdash; my curation, or their defect. The email goes on whole, and the 15% still scores whether the package stands alone with no one in the room to explain it.</p>
 
-  <p><strong>What the relay adds.</strong> Every package is now read before it reaches another student. A transcript containing real client information is caught here, not distributed to a classmate. Given the rule this course has enforced since Session 1, that is worth the day it costs.</p>
-
-  <p><strong>The draw.</strong> Pairing is a derangement: nobody reviews their own package, and no two students review each other. The second constraint matters most &mdash; reciprocal pairs could negotiate a mutual assessment; a single cycle across the class cannot, because your reviewer is not your subject.</p>
+  <p><strong>The draw.</strong> Pairing is a derangement: nobody reviews their own package, and no two students review each other. Reciprocal pairs could negotiate a mutual assessment; a single cycle across the class cannot, because your reviewer is not your subject.</p>
 
   <div class="diag">
     <div class="row"><button class="btn" id="drawBtn">Draw a pairing</button><button class="btn ghost mini" id="drawReset">Reset</button></div>
     <div class="diagout" id="drawOut"><span class="nil">No draw yet.</span></div>
   </div>
+</section>
 
-  <p>If you cannot get your assigned workflow running from the documentation you were handed, document precisely where it failed and present that. It is a valid presentation and the failure is graded against the builder.</p>
+<section class="slide" id="sCR" data-nav="Cold first run">
+  <div class="eyebrow"><span>13</span><span class="mins">10 min</span></div>
+  <h2>Cold First Run of the Package You Were Just Assigned</h2>
+  <p class="big">Open it now. Attempt to run it from the documentation alone. The builder is sitting in this room and may not help you, and you may not ask.</p>
+
+  <p>This is the scalability criterion tested in the room rather than argued about in a presentation. Part 1 defines scalable as two things: the workflow works for the next twenty clients, and another advisor can run it without you present. The second half has never actually been tested until now, and it is worth 30% of Part 1.</p>
+
+  <p><strong>Eight minutes on the clock. Then two minutes recording where you stopped.</strong> Getting stuck is the expected outcome and is the useful data. Do not fix anything, do not improve anything, and do not tell the builder what went wrong yet &mdash; that is the Session 5 presentation. Record it.</p>
+
+  <div class="diag">
+    <h4 style="margin-bottom:4px">Stuck log</h4>
+    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">Tick the first thing that stopped you, and only the first. If several applied, the earliest one is the finding.</p>
+    <div id="stuckList"></div>
+    <textarea id="stuckNote" placeholder="One sentence: what were you trying to do at the moment you stopped?" style="margin-top:14px"></textarea>
+    <div class="diagout" id="stuckOut"><span class="nil">Nothing recorded yet.</span></div>
+  </div>
+
+  <p class="srcnote"><strong>Builders: what to do with your hands.</strong> You will watch someone fail to run your workflow and you will want to intervene. Do not. Write down what you see them try that you did not anticipate &mdash; that list is the most valuable page of your Part 2 response, and you can only collect it once, tonight, before they have worked around the problem and forgotten it happened.</p>
+
+  <p><strong>If it ran.</strong> Some will. Note the elapsed time and what you did not have to ask about, then run it a second time against a different input than the one the documentation used. Working on the builder's example and working on the next twenty clients are different claims, and only one of them is the criterion.</p>
+</section>
+
+<section class="slide" id="sD" data-nav="Discussion">
+  <div class="eyebrow"><span>14</span><span class="mins">20 min</span></div>
+  <h2>Discussion: Whether the Logging Burden Costs More Than the Tool Saves</h2>
+  <p class="big">You have just watched a workflow fail to run for someone else, and you have just priced verification against your own baseline. The question is whether the compliance apparatus this session specifies leaves any of the saving intact.</p>
+
+  <p><strong>The proposition.</strong> For a typical recurring advisory deliverable, the full burden this session specifies &mdash; four-field audit records, verbatim source capture, citation verification, vendor diligence, and the data-handling review before anything is pasted &mdash; consumes more time than the AI assistance saves against the Session 1 baseline.</p>
+
+  <div class="diag">
+    <h4 style="margin-bottom:4px">Phase 1 &mdash; commit, 3 minutes</h4>
+    <p class="dim" style="font-size:14px;margin:0 0 12px;max-width:none">Everyone commits before anyone speaks. Your vote locks and cannot be changed. Bring the number from your Session 1 baseline calculator to the defence.</p>
+    <div id="voteRows"></div>
+    <div class="diagout" id="voteOut"><span class="nil">No vote cast.</span></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Phase</th><th>Min</th><th>Mechanics</th></tr></thead>
+    <tbody>
+      <tr><td>Position</td><td>3</td><td>Locked vote above. No changes after submission.</td></tr>
+      <tr><td>Defence</td><td>8</td><td>Two per side, alternating, 90 seconds each. <strong>The minority side speaks first.</strong> Cite your own baseline number, not a principle.</td></tr>
+      <tr><td>Complication</td><td>5</td><td>One fact neither side raised, introduced by the instructor. Nobody re-speaks.</td></tr>
+      <tr><td>Re-vote</td><td>4</td><td>Both distributions displayed. The delta is reported and not editorialised.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="matrix" style="background:var(--gold-bg);border-color:#DFD3AF">
+    <h4 style="margin-bottom:6px">The complication, for the instructor only</h4>
+    <p style="margin:0;max-width:none;font-size:15.5px">Introduce at minute 11, after both sides have committed to a time-cost frame: the burden is not incurred per deliverable, it is incurred once per <em>workflow</em> and then amortised across every run. The four-field record is a prompt block pasted once. Vendor diligence is answered once per tool, not once per client. Only citation verification scales linearly with output. Ask both sides to re-price on that basis. The side arguing the burden is intolerable has usually been pricing a fixed cost as a variable one &mdash; and the side arguing it is trivial has usually forgotten that citation checking is the one component that does scale.</p>
+  </div>
+
+  <div class="diag">
+    <h4 style="margin-bottom:4px">Phase 4 &mdash; re-vote</h4>
+    <p class="dim" style="font-size:14px;margin:0 0 12px;max-width:none">Unlocks after the complication. Both distributions display together.</p>
+    <div class="row"><button class="btn ghost mini" id="revoteUnlock">Unlock re-vote</button></div>
+    <div id="revoteRows" style="margin-top:12px;display:none"></div>
+    <div class="diagout" id="revoteOut" style="display:none"></div>
+  </div>
+
+  <p class="srcnote"><strong>A zero delta is a finding, not a failure.</strong> Report it aloud. A position that holds under new evidence is the same epistemic move this course asks students to make about model output, and it is worth naming when it happens rather than treating the discussion as having underperformed.</p>
+</section>
+
+<section class="slide" id="s9" data-nav="Policy homework">
+  <div class="eyebrow"><span>15</span><span class="mins">6 min</span></div>
+  <h2>Homework: The Firm Artificial Intelligence Use Policy</h2>
+  <p class="big">Draft an AI usage policy for your firm, due before Session 5. This is the last instruction you receive before writing it, so every question the assignment asks was answered somewhere tonight.</p>
+
+  <p>Click each rubric question to see which section answers it and what you may cite. Structured bullets, two pages maximum.</p>
+
+  <div class="diag">
+    <div id="rubricChips" class="chiplist"></div>
+    <div class="diagout" id="rubricOut"><span class="nil">Select a rubric question.</span></div>
+  </div>
+
+  <p><strong>Use the Cole landmines as your worked example.</strong> Your data-boundary section needs one concrete illustration, and the three you classified in Section 03 &mdash; an undisclosed sale, an unexecuted plan with a claimed discount, and the fact of the relationship &mdash; are already reasoned through with the regulation applied. Substitute your own synthetic facts before the policy leaves your desk.</p>
+
+  <p class="srcnote"><strong>One warning carried forward from Section 03.</strong> The assignment asks you to define PII. Regulation S-P governs NPI. Define both, state which one your firm's obligations actually run to, and you have turned a terminology collision into the strongest paragraph in the document.</p>
+
+  <h3 style="margin-top:30px">Peer review, before Session 5 and not tonight</h3>
+  <p>Exchange drafts with one classmate &mdash; not your Part 2 pair &mdash; and score theirs on four tests. Bring the score to Session 5. The instrument is deliberately hostile: a policy that cannot survive four questions from a friendly reader will not survive one from an examiner.</p>
+
+  <div class="diag">
+    <div id="peerRows"></div>
+    <div class="diagout" id="peerOut"><span class="nil">No scores entered.</span></div>
+  </div>
 
   <p class="pull">The tools change. The judgement does not.</p>
 </section>
@@ -1110,6 +1210,334 @@ var LEAK=[
 })();
 
 
+
+/* ================= s0 · retrieval bridge, Session 3 ================= */
+var BRIDGE=[
+ {q:'Session 3 principle: grounding makes the model cite your sources. What was the qualifier?',
+  o:['The nearest passage is not always the right one','Grounded models cannot hallucinate','Grounding replaces the need to verify'],a:0,
+  f:'Retrieval returns what is closest in the index, which is not the same as what is correct. A fully-sourced, materially wrong answer is the characteristic failure of a grounded system, and it is harder to catch than an unsourced one.'},
+ {q:'The note-taker pipeline, in order.',
+  o:['Transcription, extraction, categorization, follow-up','Recording, summarizing, filing','Capture, redact, send'],a:0,
+  f:'Four stages, and the confidentiality obligation attaches at the first. Everything downstream inherits whatever was captured at transcription.'},
+ {q:'Grounding versus fine-tuning, for a meeting-prep assistant over the Cole corpus.',
+  o:['Grounding retrieves at query time; fine-tuning changes the weights','They are two names for the same technique','Fine-tuning is grounding done at scale'],a:0,
+  f:'Grounding leaves the model untouched and swaps the corpus. Fine-tuning bakes the corpus into the weights, which is why it is the wrong choice for documents that change and for data you may later need to delete.'},
+ {q:'What did the extraction over the Cole corpus surface that the household did not know?',
+  o:['The 2014 buy-sell formula conflicts with the $18,000,000 appraised value','That Nathan knows about the sale','That the IDGT was executed in 2023'],a:0,
+  f:'A document conflict neither party had reconciled. Tonight that same finding becomes the test case for whether your audit trail captured anything usable.'}
+];
+(function(){
+  var host=$('bridgeQuiz'),sc=$('bridgeScore');if(!host)return;
+  var done={},right=0;
+  BRIDGE.forEach(function(q,i){
+    var d=document.createElement('div');d.className='qitem';d.dataset.i=i;
+    var h='<span class="qtext">'+esc(q.q)+'</span><div class="row qbtns">';
+    q.o.forEach(function(o,j){h+='<button class="btn sel mini" data-q="'+i+'" data-a="'+j+'">'+esc(o)+'</button>'});
+    h+='</div><div class="qfb"></div>';d.innerHTML=h;host.appendChild(d);
+  });
+  host.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-q]');if(!b)return;
+    var i=+b.dataset.q,a=+b.dataset.a;if(done[i]!==undefined)return;
+    done[i]=a;var ok=(a===BRIDGE[i].a);if(ok)right++;
+    var item=host.querySelector('.qitem[data-i="'+i+'"]');
+    b.classList.add('picked','act');
+    var fb=item.querySelector('.qfb');fb.className='qfb '+(ok?'right':'wrong');
+    fb.innerHTML=(ok?'<strong>Correct.</strong> ':'<strong>Not quite.</strong> ')+BRIDGE[i].f;
+    item.classList.add('done');
+    var n=Object.keys(done).length;
+    sc.textContent=n+' of 4 answered \u00b7 '+right+' correct'+(n===4?' \u00b7 ungraded, as designed':'');
+  });
+})();
+
+/* ================= s2 · PII vs NPI reveal ================= */
+(function(){
+  var b=$('piiToggle'),p=$('piiPanel');if(!b||!p)return;
+  b.onclick=function(){p.classList.toggle('show');b.textContent=p.classList.contains('show')?'Hide the distinction':'Show the distinction'};
+})();
+
+/* ================= s2 · Cole NPI classifier (rebuilt on the case) ================= */
+var NPI=[
+ {k:'sale',l:'Meg is exploring a sale and has not told Nathan',d:'LANDMINE 1 \u00b7 undisclosed to a family member inside the business',w:100,lm:1},
+ {k:'idgt',l:'The unexecuted IDGT plan and the 31% discount claimed',d:'LANDMINE 2 \u00b7 an unfiled position on a live valuation',w:100,lm:2},
+ {k:'client',l:'Margaret Cole is a client of this firm',d:'LANDMINE 3 \u00b7 the relationship itself',w:100,lm:3},
+ {k:'reid',l:'Founder and sole owner of a Dayton aerospace-fastener manufacturer, exploring a sale, adult son in operations',d:'No name, no number, no account',w:96,lm:0},
+ {k:'basis',l:'Founder stock issued 2009, basis $240,000',d:'A figure, attached to no name here',w:38,lm:0},
+ {k:'age',l:'A married couple in their sixties, one retired',d:'Demographic, unattached',w:6,lm:0},
+ {k:'ohio',l:'Ohio imposes no state estate tax',d:'Public law',w:0,lm:0},
+ {k:'excl',l:'The 2026 federal basic exclusion amount',d:'Public law',w:0,lm:0},
+ {k:'generic',l:'General question: how does a sale to a grantor trust work?',d:'No client facts of any kind',w:0,lm:0}
+];
+(function(){
+  var host=$('npiCtrls'),panel=$('npiPanel');if(!host||!panel)return;
+  host.innerHTML='';
+  NPI.forEach(function(f){
+    var l=document.createElement('label');l.className='tg';
+    l.innerHTML='<input type="checkbox" data-k="'+f.k+'"><span class="track"><span class="knob"></span></span>'+
+      '<span><span class="tl">'+esc(f.l)+'</span><span class="td">'+esc(f.d)+'</span></span>';
+    host.appendChild(l);
+  });
+  host.addEventListener('change',function(){
+    var on=[],score=0,lms=[];
+    [].slice.call(host.querySelectorAll('input')).forEach(function(inp){
+      var f=NPI.filter(function(x){return x.k===inp.dataset.k})[0];
+      inp.closest('.tg').classList.toggle('on',inp.checked);
+      if(inp.checked){on.push(f);score+=f.w;if(f.lm)lms.push(f.lm)}
+    });
+    var h='<span class="hd">Classification of the combination</span>';
+    if(!on.length){panel.innerHTML=h+'<span class="nil">Nothing selected. No disclosure.</span>';panel.className='mpanel';return}
+    h+='Selected: '+on.map(function(f){return esc(f.l.slice(0,46)+(f.l.length>46?'\u2026':''))}).join(' + ')+'<br><br>';
+    h+='Re-identification index: <strong>'+score+'</strong><br>';
+    var cls='';
+    if(lms.length){
+      cls='bad';
+      h+='<span class="flag">CONFIDENTIALITY LANDMINE '+lms.join(' and ')+' \u00b7 do not disclose</span>';
+      h+='<br><br>Reg S-P treats the fact that an individual is or has been your customer as personally identifiable financial information, and reaches information disclosed in a manner indicating the individual is your consumer.';
+    } else if(score>=90){
+      cls='bad';
+      h+='<span class="flag">RE-IDENTIFIABLE \u00b7 treat as NPI</span><br><br>No name. No account number. No dollar figure. In a market the size of Dayton this describes one person, and pasting it into your advisory workflow is a disclosure in a manner indicating she is your client.';
+    } else if(score>=30){
+      h+='ELEVATED \u00b7 coarsen further before disclosure. One more quasi-identifier crosses the line.';
+    } else {
+      cls='has';h+='LOW \u00b7 defensible. Public law and unattached demographics carry no client information.';
+    }
+    panel.innerHTML=h;panel.className='mpanel '+cls;
+  });
+  panel.innerHTML='<span class="hd">Classification of the combination</span><span class="nil">Nothing selected. No disclosure.</span>';
+})();
+
+/* ================= s4 · Cole corpus selector ================= */
+var CORPUS=[
+ {k:'wills',l:'Wills, executed 2011 (Ohio)',s:3},
+ {k:'bs',l:'Buy-sell agreement, 2014, stale formula valuation',s:4},
+ {k:'appr',l:'2023 appraisal supporting the 31% discount',s:5},
+ {k:'idgt',l:'Draft IDGT instrument and promissory note, unexecuted',s:5},
+ {k:'poa',l:'Durable powers of attorney and healthcare directives, 2011',s:4},
+ {k:'pub',l:'Published IRC sections and Ohio estate-tax status',s:0}
+];
+(function(){
+  var host=$('corpusCtrls'),panel=$('corpusPanel');if(!host||!panel)return;
+  CORPUS.forEach(function(f){
+    var l=document.createElement('label');l.className='tg';
+    l.innerHTML='<input type="checkbox" data-k="'+f.k+'"><span class="track"><span class="knob"></span></span>'+
+      '<span><span class="tl">'+esc(f.l)+'</span></span>';
+    host.appendChild(l);
+  });
+  function upd(){
+    var on=[],max=0;
+    [].slice.call(host.querySelectorAll('input')).forEach(function(inp){
+      var f=CORPUS.filter(function(x){return x.k===inp.dataset.k})[0];
+      inp.closest('.tg').classList.toggle('on',inp.checked);
+      if(inp.checked){on.push(f);if(f.s>max)max=f.s}
+    });
+    var h='<span class="hd">Required threshold for this payload</span>';
+    if(!on.length){panel.innerHTML=h+'<span class="nil">Nothing selected. No threshold set.</span>';panel.className='mpanel';window.__corpusMax=0;return}
+    window.__corpusMax=max;
+    var t,cls;
+    if(max>=5){t='HIGHEST \u00b7 an executed commercial agreement and documented zero-or-30-day retention are the floor';cls='bad'}
+    else if(max>=4){t='HIGH \u00b7 client-identifying legal instruments; consumer terms are disqualifying';cls='bad'}
+    else if(max>=3){t='ELEVATED \u00b7 client-identifying; a commercial contract is required';cls=''}
+    else {t='BASELINE \u00b7 public law only; no client information leaves the firm';cls='has'}
+    h+=on.length+' document'+(on.length>1?'s':'')+' selected. Highest sensitivity drives the threshold, not the average.<br><br><strong>'+t+'</strong>';
+    if(max>=5)h+='<br><br>The draft instrument and the appraisal are the two documents in this corpus that would embarrass the firm most on disclosure: one is an unexecuted position, the other is the evidentiary support for a discount that has not been re-verified.';
+    panel.innerHTML=h;panel.className='mpanel '+cls;
+  }
+  host.addEventListener('change',upd);upd();
+})();
+
+/* ================= s7 · verification cost calculator ================= */
+var COST=[
+ {k:'base',l:'Session 1 baseline, minutes',h:'Your recorded time without AI. Fallback: 90',v:90},
+ {k:'ai',l:'AI-assisted minutes',h:'Draft time with the tool. Fallback: 25',v:25},
+ {k:'cites',l:'Citations in the output',h:'Authorities the deliverable relies on. Fallback: 6',v:6},
+ {k:'per',l:'Minutes to verify one citation',h:'Overwrite with your own measured time',v:2},
+ {k:'log',l:'Minutes to complete the audit record',h:'Four fields, once per deliverable',v:4},
+ {k:'runs',l:'Times per year you run this deliverable',h:'For the annual view',v:40}
+];
+(function(){
+  var host=$('costIn'),out=$('costOut');if(!host||!out)return;
+  COST.forEach(function(f){
+    var d=document.createElement('div');
+    d.innerHTML='<label>'+esc(f.l)+'</label><span class="hint">'+esc(f.h)+'</span>'+
+      '<input class="numin" type="number" min="0" step="1" value="'+f.v+'" data-k="'+f.k+'">';
+    host.appendChild(d);
+  });
+  function num(k){var e=host.querySelector('[data-k="'+k+'"]');var v=e?parseFloat(e.value):0;return isFinite(v)&&v>=0?v:0}
+  function upd(){
+    var base=num('base'),ai=num('ai'),cites=num('cites'),per=num('per'),log=num('log'),runs=num('runs');
+    var verify=cites*per, loaded=ai+verify+log, net=base-loaded, annual=net*runs;
+    var pct=base>0?(net/base*100):0;
+    var h='<span class="cz">Per deliverable</span>';
+    h+='<table style="margin:0"><tbody>';
+    h+='<tr><td>Baseline, no AI</td><td style="text-align:right"><strong>'+fx(base,0)+'</strong> min</td></tr>';
+    h+='<tr><td>AI draft</td><td style="text-align:right">'+fx(ai,0)+' min</td></tr>';
+    h+='<tr><td>Citation verification ('+fx(cites,0)+' &times; '+fx(per,0)+')</td><td style="text-align:right">'+fx(verify,0)+' min</td></tr>';
+    h+='<tr><td>Audit record</td><td style="text-align:right">'+fx(log,0)+' min</td></tr>';
+    h+='<tr><td><strong>Fully loaded AI time</strong></td><td style="text-align:right"><strong>'+fx(loaded,0)+'</strong> min</td></tr>';
+    h+='</tbody></table>';
+    var band,cls;
+    if(base<=0){band='NO BASELINE';cls='y'}
+    else if(net>0){band='STILL FASTER';cls='g'}
+    else if(net===0){band='BREAK-EVEN';cls='y'}
+    else {band='SLOWER THAN BASELINE';cls='r'}
+    h+='<div class="fx"><span class="band '+cls+'">'+band+'</span> &nbsp;Net '+(net>=0?'saving':'loss')+' of <strong>'+fx(Math.abs(net),0)+' minutes</strong> per deliverable'+
+       (base>0?' ('+fx(Math.abs(pct),0)+'% of baseline)':'')+', or <strong>'+fx(Math.abs(annual)/60,1)+' hours</strong> a year across '+fx(runs,0)+' runs.';
+    if(verify>ai)h+=' Verification alone now costs more than drafting did. That is the finding to bring to the discussion.';
+    h+='</div>';
+    out.innerHTML=h;out.className='diagout'+(cls==='g'?' on':(cls==='r'?' alarm':''));
+  }
+  host.addEventListener('input',upd);upd();
+})();
+
+/* ================= s8 · fallback artifact reveal ================= */
+(function(){
+  var b=$('fbToggle'),p=$('fbPanel');if(!b||!p)return;
+  b.onclick=function(){p.classList.toggle('show');b.textContent=p.classList.contains('show')?'Close the fallback set':'Open the fallback set'};
+})();
+
+
+/* ================= sCR · cold first-run stuck log ================= */
+var STUCK=[
+ {k:'open',l:'Could not tell which file to open first',c:'Documentation'},
+ {k:'setup',l:'Missing a tool, tier, or subscription I do not have',c:'Setup'},
+ {k:'input',l:'Could not tell what input the workflow expects',c:'Documentation'},
+ {k:'prompt',l:'Prompt or skill referenced something not in the package',c:'Completeness'},
+ {k:'model',l:'Ran, but on a different model tier than the builder used',c:'Setup'},
+ {k:'output',l:'Produced output I cannot tell is correct',c:'Verification'},
+ {k:'ran',l:'It ran and I could tell the output was right',c:'None'}
+];
+(function(){
+  var host=$('stuckList'),out=$('stuckOut'),note=$('stuckNote');if(!host||!out)return;
+  var pick=null;
+  STUCK.forEach(function(x){
+    var l=document.createElement('label');l.className='ck';
+    l.innerHTML='<input type="checkbox" data-k="'+x.k+'"><span class="cl">'+esc(x.l)+'<span class="cs">'+esc(x.c==='None'?'No blocker':x.c+' gap')+'</span></span>';
+    host.appendChild(l);
+  });
+  function upd(){
+    var boxes=[].slice.call(host.querySelectorAll('input'));
+    var checked=boxes.filter(function(b){return b.checked});
+    if(checked.length>1){
+      var last=checked[checked.length-1];
+      boxes.forEach(function(b){if(b!==last)b.checked=false});
+      checked=[last];
+    }
+    if(!checked.length){pick=null;out.innerHTML='<span class="nil">Nothing recorded yet.</span>';out.className='diagout';return}
+    pick=STUCK.filter(function(x){return x.k===checked[0].dataset.k})[0];
+    var txt=(note.value||'').trim();
+    var h='<span class="cz">Recorded</span>';
+    if(pick.c==='None'){
+      h+='<span class="band g">RAN CLEAN</span><div class="fx">Rare and worth saying out loud in Session 5. Now run it a second time against an input the documentation did not use. Working on the builder\u2019s example and working for the next twenty clients are different claims, and only the second one is the criterion.</div>';
+      out.className='diagout on';
+    } else {
+      var map={
+        'Documentation':'This is a one-page-guide defect, and it is the cheapest kind to fix. It costs the builder nothing but a paragraph and it is worth 30% of their Part 1.',
+        'Setup':'This is a setup-instructions defect. The builder knew what they had installed and did not write it down. Note the exact tool and tier you were missing.',
+        'Completeness':'This is a missing-attachment defect and the most serious kind, because no amount of reading fixes it. Record which artifact was referenced and absent.',
+        'Verification':'The workflow ran and you cannot tell whether it worked. That is a verification-step defect, and it maps directly onto tonight\u2019s audit-trail section rather than onto documentation.'
+      };
+      h+='<span class="band '+(pick.c==='Completeness'?'r':'y')+'">'+esc(pick.c.toUpperCase())+' GAP</span><div class="fx">'+map[pick.c]+'</div>';
+      out.className='diagout'+(pick.c==='Completeness'?' alarm':'');
+    }
+    if(txt.length>3)h+='<div class="fx" style="font-family:JetBrains Mono,monospace;font-size:13px">Your note: '+esc(txt)+'</div>';
+    else h+='<div class="fx" style="color:var(--muted);font-size:14px">Add one sentence describing what you were trying to do when you stopped. Without it you will not reconstruct this in six days.</div>';
+    out.innerHTML=h;
+  }
+  host.addEventListener('change',upd);
+  note.addEventListener('input',function(){if(pick)upd()});
+})();
+
+/* ================= sD · locked vote, defence, re-vote ================= */
+var VOTE=[
+ ['Strongly agree \u2014 the burden exceeds the saving',0],
+ ['Agree',1],['Disagree',2],['Strongly disagree \u2014 the saving survives easily',3]
+];
+(function(){
+  var r1=$('voteRows'),o1=$('voteOut'),r2=$('revoteRows'),o2=$('revoteOut'),un=$('revoteUnlock');
+  if(!r1||!o1)return;
+  var v1=null,v2=null;
+  function build(host,which){
+    host.innerHTML='';
+    var d=document.createElement('div');d.className='row';
+    VOTE.forEach(function(o){
+      var b=document.createElement('button');b.className='btn sel mini';b.dataset.v=o[1];b.textContent=o[0];
+      d.appendChild(b);
+    });
+    host.appendChild(d);
+    host.addEventListener('click',function(e){
+      var b=e.target.closest('button[data-v]');if(!b)return;
+      if(which===1&&v1!==null)return;
+      var v=+b.dataset.v;
+      if(which===1)v1=v;else v2=v;
+      [].slice.call(host.querySelectorAll('button')).forEach(function(x){x.classList.toggle('act',+x.dataset.v===v)});
+      render();
+    });
+  }
+  function label(v){return VOTE.filter(function(o){return o[1]===v})[0][0]}
+  function render(){
+    if(v1===null){o1.innerHTML='<span class="nil">No vote cast.</span>';o1.className='diagout';return}
+    o1.innerHTML='<span class="cz">Locked</span><strong>'+esc(label(v1))+'</strong>'+
+      '<div class="fx">Your position is locked and cannot be changed before the re-vote. Write down the one number from your Session 1 baseline calculator that you would use to defend it &mdash; the defence phase rewards a figure, not a principle.</div>';
+    o1.className='diagout on';
+    [].slice.call(r1.querySelectorAll('button')).forEach(function(x){if(+x.dataset.v!==v1){x.style.opacity=.35;x.style.pointerEvents='none'}});
+    if(v2===null){o2.innerHTML='<span class="nil">Re-vote open. Cast it.</span>';o2.className='diagout';return}
+    var d=v2-v1;
+    var txt;
+    if(d===0)txt='<strong>Delta zero.</strong> Your position held under the complication. Report this aloud rather than treating it as a failed discussion: a defensible position holding under new evidence is the same epistemic move this course asks you to make about model output.';
+    else if(d>0)txt='<strong>Moved '+d+' toward the burden being tolerable.</strong> The usual cause is re-pricing a fixed cost as a fixed cost: the audit block is pasted once, vendor diligence is answered once per tool.';
+    else txt='<strong>Moved '+Math.abs(d)+' toward the burden being intolerable.</strong> The usual cause is citation verification, which is the one component that scales linearly with output volume rather than amortising.';
+    o2.innerHTML='<span class="cz">First vote &rarr; re-vote</span>'+esc(label(v1))+' &rarr; <strong>'+esc(label(v2))+'</strong><div class="fx">'+txt+'</div>';
+    o2.className='diagout on';
+  }
+  build(r1,1);build(r2,2);
+  un.onclick=function(){
+    if(v1===null){o1.innerHTML='<span class="cz">Locked</span><span class="flag">Cast the first vote before unlocking the re-vote.</span>';o1.className='diagout alarm';return}
+    r2.style.display='';o2.style.display='';un.style.display='none';render();
+  };
+  render();
+})();
+
+/* ================= s9 · policy rubric mapper ================= */
+var RUBRIC=[
+ {q:'Why does the policy exist?',s:'Section 02 \u2014 the absence of an AI rulebook',
+  w:'Because no rule names AI and every existing duty reaches it anyway. Open with that, not with a definition of machine learning.',
+  c:'FINRA 2026 Annual Regulatory Oversight Report, generative AI section; SEC Division of Examinations FY2026 Priorities \u00a7VII.B; Daly, ICI remarks, 3 Feb 2026.'},
+ {q:'Is PII defined?',s:'Section 03 \u2014 nonpublic personal information',
+  w:'Define PII, then define NPI, then state which one your obligations actually run to. The assignment asks for the first; Regulation S-P governs the second.',
+  c:'17 CFR \u00a7 248.3; Regulation S-P 2024 amendments, compliance dates 3 Dec 2025 and 3 Jun 2026.'},
+ {q:'What citations are provided?',s:'Sections 02, 03, 10 and 11',
+  w:'Name primary authority, not vendor marketing. A policy citing a vendor\u2019s accuracy claim has converted their marketing into your representation, which \u00a7VII.B says examiners will review.',
+  c:'FINRA Regulatory Notice 24-09; SEC FY2026 Priorities; Journal of Accountancy (2025) on audit-trail prompting.'},
+ {q:'Who do employees contact?',s:'Section 03 \u2014 the 30-day incident clock',
+  w:'A named role and a defined trigger. The Reg S-P clock starts when the firm becomes aware, and most firms have never defined who counts as the firm for that purpose. Your policy should.',
+  c:'Regulation S-P incident response and customer notification requirements.'},
+ {q:'What happens when AI use is undisclosed?',s:'Sections 11 and 05 \u2014 audit trails and vendor scope',
+  w:'Undisclosed use is unlogged use. State the consequence in terms of the record that is missing, not in terms of punishment.',
+  c:'FINRA 2026 report on capturing AI-enabled communications in books and records; Advisers Act Rule 204-2.'},
+ {q:'Who is ultimately responsible?',s:'Section 01 \u2014 the framing principle',
+  w:'You are. Not the vendor, not the model, not the committee. One sentence, early, unhedged. It is the only line in the policy an examiner is certain to read.',
+  c:'Investment Advisers Act fiduciary duty of care; FINRA Rule 2210 for communications.'}
+];
+(function(){
+  var host=$('rubricChips'),out=$('rubricOut');if(!host||!out)return;
+  RUBRIC.forEach(function(r,i){
+    var b=document.createElement('button');b.className='chip';b.dataset.i=i;b.textContent=r.q;
+    host.appendChild(b);
+  });
+  var seen={};
+  host.addEventListener('click',function(e){
+    var b=e.target.closest('.chip');if(!b)return;
+    var i=+b.dataset.i,r=RUBRIC[i];seen[i]=1;
+    [].slice.call(host.children).forEach(function(c){c.classList.toggle('act',+c.dataset.i===i)});
+    b.classList.add('solved');
+    var n=Object.keys(seen).length;
+    out.innerHTML='<span class="cz">'+esc(r.s)+'</span><strong>'+esc(r.q)+'</strong>'+
+      '<div class="fx">'+r.w+'</div>'+
+      '<div class="fx" style="font-size:14px"><strong>Cite:</strong> '+esc(r.c)+'</div>'+
+      '<div class="fx" style="font-size:13.5px;color:var(--muted)">'+n+' of 6 questions reviewed.'+(n===6?' Every rubric question has a section and a source. Nothing in this assignment requires material this session did not give you.':'')+'</div>';
+    out.className='diagout on';
+  });
+})();
+
 /* ================= W · tournament sampling (SynthID-Text) ================= */
 var TS_TOK=[
  {t:'bananas',p:0.34},{t:'pineapple',p:0.17},{t:'papaya',p:0.13},{t:'guava',p:0.11},
@@ -1391,21 +1819,19 @@ var HALL={
 /* ================= 8 · three-category audit-record quiz ================= */
 var CATS=['Reproducible record','Record with a gap','Not a record'];
 var AQ=[
- {t:'Prompt: "Summarise the client\u2019s estate documents." The answer is pasted into the CRM note. No model named. No date beyond the CRM timestamp.',
-  a:2,f:'Not a record. It preserves an output and nothing that would let anyone reproduce or interrogate it. The CRM timestamp records when someone pasted, not when the model ran or which model it was.'},
- {t:'Full prompt captured verbatim. Model recorded as "Claude." Full output captured. The adviser\u2019s decision is written out, signed and dated.',
-  a:1,f:'A gap, and a subtle one. Everything here looks diligent \u2014 verbatim prompt, full output, a signature. But "Claude" is a product family, not a model. Opus 5, Sonnet 5 and Fable 5 are different models at different capability and price points, and effort settings change output within a single model. Nobody can re-run this.',
-  split:false},
- {t:'Full prompt. Model recorded as "claude-opus-5, effort=high." Date. Full output. Adviser\u2019s decision, signed and dated. Every authority relied on is summarised accurately in the adviser\u2019s own words, each with a pinpoint locator.',
-  a:1,f:'This is the item designed to split the room, and the split is on one word: summarised. The record names the model and the effort setting, carries locators, and is signed \u2014 four of the five things that matter. What it does not preserve is the retrieved text itself. A paraphrase records what the adviser understood the source to say. The failure mode being controlled for is a source that does not say what the model claimed, and a paraphrase written from the model\u2019s claim reproduces the error rather than exposing it. Quote the operative sentence, or the locator is doing no work.',
+ {t:'<strong>IDGT prompt.</strong> The client explanation is pasted into the Cole CRM note. No model named. No date beyond the CRM timestamp. The prompt itself was not saved.',
+  a:2,f:'Not a record. It preserves an output and nothing that would let anyone reproduce or interrogate it. The CRM timestamp records when someone pasted, not which model ran or when.'},
+ {t:'<strong>IDGT prompt.</strong> Prompt captured verbatim. Model recorded as "Claude." Full output. The adviser\u2019s decision to send the explanation to Meg is written out, signed and dated.',
+  a:1,f:'A gap, and a subtle one. Verbatim prompt, full output, a signature \u2014 and "Claude" is a product family, not a model. Opus 5, Sonnet 5 and Fable 5 differ in capability and price, and effort settings change output within one model. Nobody can re-run this.'},
+ {t:'<strong>Buy-sell extraction.</strong> Full prompt. Model "claude-opus-5, effort=high." Date. Full output. The conflict finding is summarised accurately in the adviser\u2019s own words, with a pinpoint locator to section 4.2 of the buy-sell agreement.',
+  a:1,f:'The item designed to split the room, and the split is on one word: summarised. Four of five things that matter are present. What is missing is the retrieved text itself. A paraphrase records what the adviser understood the clause to say \u2014 and the failure being controlled for is a clause that does not say what the model claimed. A paraphrase written from the model\u2019s claim reproduces the error rather than exposing it. Quote section 4.2, or the locator is doing no work.',
   split:true},
- {t:'A screenshot of the final answer, cropped to fit the slide, with the prompt above it not visible.',
-  a:2,f:'Not a record. The prompt is the input; without it the output is unattributable to anything. Cropping is not a documentation decision, but it has the effect of one.'},
- {t:'Full prompt. Model identifier and effort setting. Date. Full output. Each authority quoted verbatim with its locator. Adviser\u2019s decision, named and dated.',
-  a:0,f:'A reproducible record. Five fields, all present. Another adviser can re-run the prompt against the named model, compare, read the quoted authority without leaving the file, and see who decided what and when.'},
- {t:'Full prompt. Model "claude-opus-5, effort=high." Date. Full output. The authority is quoted verbatim: <em>Hallowell v. Commissioner</em>, T.C. Memo. 2023-217. Adviser\u2019s decision, named and dated.',
-  a:0,f:'A reproducible record \u2014 and <em>Hallowell v. Commissioner</em>, T.C. Memo. 2023-217 does not exist. It is fabricated, by me, for this exercise. Sit with the discomfort: the record is formally complete and it is a faithful record of a fabrication. An audit trail is a record, not a verification. It documents what happened; it does not make what happened correct. The control that catches this is a separate one \u2014 someone opening the reporter and confirming the case exists \u2014 and no amount of logging discipline substitutes for it. The reason to keep the record anyway is that this failure becomes legible in minutes instead of never.',
-  split:false}
+ {t:'<strong>Buy-sell extraction.</strong> A screenshot of the conflict finding, cropped to fit the client slide, with the prompt above it not visible.',
+  a:2,f:'Not a record. Without the prompt the output is unattributable. Cropping is not a documentation decision, but it has the effect of one \u2014 and this finding contradicts a $18,000,000 appraisal, so it will be challenged.'},
+ {t:'<strong>Buy-sell extraction.</strong> Full prompt. Model identifier and effort setting. Date. Full output. Section 4.2 quoted verbatim with its page locator. Adviser\u2019s decision to raise the conflict with Meg\u2019s attorney, named and dated.',
+  a:0,f:'A reproducible record. Another adviser can re-run the prompt against the named model, compare, read the operative clause without leaving the file, and see who decided what and when.'},
+ {t:'<strong>IDGT prompt.</strong> Full prompt. Model "claude-opus-5, effort=high." Date. Full output. The authority for the grantor-trust mechanics is quoted verbatim: <em>Hallowell v. Commissioner</em>, T.C. Memo. 2023-217. Adviser\u2019s decision, named and dated.',
+  a:0,f:'A reproducible record \u2014 and <em>Hallowell v. Commissioner</em>, T.C. Memo. 2023-217 does not exist. It is fabricated, by me, for this exercise. Sit with it: the record is formally complete and is a faithful record of a fabrication that was about to be sent to a client. An audit trail is a record, not a verification. The control that catches this is someone opening the reporter, and no amount of logging discipline substitutes for it. The reason to keep the record anyway is that this failure becomes legible in minutes instead of never.'}
 ];
 (function(){
   var host=$('auditQuiz'),sc=$('auditScore'),key=$('auditKey');if(!host)return;
