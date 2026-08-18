@@ -166,6 +166,30 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
 .ansk{display:none;background:var(--on-bg);border-radius:9px;padding:16px 19px;margin-top:16px;font-size:15px;line-height:1.6;color:#0A423F}
 .ansk.show{display:block}
 @media print{#rail,.ovr{display:none}body{background:#fff}.slide{page-break-inside:avoid;padding:22px 0}.ansk{display:block}}
+/* ===== CORE / APPENDIX ARCHITECTURE ===== */
+a.apxlink{display:block;background:var(--gold-bg);border:1.5px dashed var(--gold);border-radius:10px;padding:12px 16px;margin:22px 0 0;text-decoration:none;color:inherit;transition:.15s}
+a.apxlink:hover{border-style:solid}
+a.apxlink+a.apxlink{margin-top:9px}
+a.apxlink .al{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px;font-weight:500}
+a.apxlink b{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:15.5px;font-weight:600;letter-spacing:-.015em}
+a.apxlink .aw{display:block;color:var(--muted);font-size:14px;line-height:1.45;margin-top:3px;font-family:"Source Serif 4",Georgia,serif;text-transform:none;letter-spacing:0}
+section.apxdiv{border-top:3px solid var(--gold)}
+section.apx .apxback{background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:9px 14px;margin:0 0 18px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.05em;line-height:1.6;color:var(--gold)}
+section.apx .apxback a{color:var(--gold);font-weight:500}
+.apxgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:11px;margin-top:20px}
+a.apxcard{display:block;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;transition:.15s}
+a.apxcard:hover{border-color:var(--gold);box-shadow:0 3px 14px rgba(138,106,18,.10)}
+a.apxcard .ac{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
+a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:15px;font-weight:600;letter-spacing:-.015em;margin-top:4px;line-height:1.2}
+#rail button.apxnav .pip{background:var(--gold);opacity:.5}
+#rail button.apxnav{color:var(--gold)}
+#rail button.apxnav.on .pip{background:var(--gold);opacity:1}
+@media print{a.apxlink{display:none}}
+.pace{border-color:var(--gold)!important;background:var(--gold-bg)}
+.pace .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:4px}
+.pace .pcell b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--gold)}
+.pace .pcell span{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+.pace p{margin:13px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted);max-width:70ch}
 </style>
 </head>
 <body>
@@ -175,9 +199,11 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
 
 <!-- ============ 0 ============ -->
 <section class="slide" id="s0" data-nav="Frame">
-  <div class="eyebrow"><span>Session 4 &middot; BUS ADM X433.4</span><span class="mins">12 min</span></div>
+  <div class="eyebrow"><span>Session 4 &middot; BUS ADM X433.4</span><span class="mins">5 min</span></div>
   <h1>Compliance, Security and Responsible Use</h1>
   <p class="lede">There is no AI rulebook. Your existing duties apply, and you are responsible for the work.</p>
+  <div class="panel pace"><span class="plab">How this session is paced</span><div id="paceOut"></div></div>
+
 
   <p class="big"><strong>The mechanism thread ends here.</strong> Three sessions took you through the architecture &mdash; prediction, sampling, embeddings, grounding &mdash; and nothing tonight follows from the architecture. It follows from the duty.</p>
 
@@ -189,7 +215,7 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
   <h3 style="margin-top:34px">The case, one more time</h3>
   <div class="matrix" style="background:var(--gold-bg);border-color:#DFD3AF">
     <h4 style="margin-bottom:6px">The Cole household &mdash; synthetic, Dayton, Ohio, approximately $30,000,000</h4>
-    <p style="margin:0 0 10px;max-width:none;font-size:15.5px">Margaret "Meg" Cole, 64, founder and 100% owner of Cole Precision Components Inc. (CPC), a C-corporation making precision aerospace fasteners; founder stock issued 2009, basis $240,000; CPC valued at $18,000,000. David Cole, 67, retired hospital pharmacist. Claire, 34, physician, no interest in the business. Nathan, 31, works in CPC operations. A strategic buyer has expressed informal interest in CPC; no letter of intent is signed, and <strong>Meg has not told Nathan</strong>. The attorney has drafted, unexecuted, a sale of a 40% non-voting interest to an IDGT [intentionally defective grantor trust] for a $4,968,000 note after a claimed 31% discount, supported by a 2023 appraisal never re-verified.</p>
+    <p style="margin:0 0 10px;max-width:none;font-size:15.5px">Meg Cole, 64, 100% owner of Cole Precision Components; basis $240,000, valued at $18,000,000. Nathan, 31, works in CPC operations. A strategic buyer has expressed informal interest; no LOI is signed and <strong>Meg has not told Nathan</strong>. Drafted but unexecuted: a 40% non-voting interest sold to an IDGT for a $4,968,000 note at a claimed 31% discount, on a 2023 appraisal never re-verified.</p>
     <p style="margin:0;max-width:none;font-size:14.5px;color:var(--muted)"><strong>This case is fully synthetic and is a classroom anchor only.</strong> Do not build your final project on it. Your Part 1 workflow runs on a real recurring task from your own practice, using your own synthetic or de-identified data.</p>
   </div>
 
@@ -204,17 +230,16 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
   <p class="srcnote"><strong>Part 1 status.</strong> Handoff packages were due Sunday night and are in. They have been read and screened; pairings are distributed later tonight, and you will attempt to run the package you receive before you leave.</p>
 </section>
 
-<!-- ============ 1 ============ -->
 <section class="slide" id="s1" data-nav="No rulebook">
-  <div class="eyebrow"><span>02</span><span class="mins">10 min</span></div>
+  <div class="eyebrow"><span>01 &middot; The duties that apply</span><span class="mins">5 min</span></div>
   <h2>The Absence of an AI Rulebook and the Duties That Apply Instead</h2>
   <p class="big">Advisers keep asking which AI rule applies to them. The question has no answer. Every obligation tonight predates the first large language model and applies to it without amendment.</p>
 
-  <p><strong>FINRA's 2026 Annual Regulatory Oversight Report</strong>, 9 December 2025, carries the first standalone generative-AI section FINRA has published. Firms should establish enterprise-level supervisory processes for GenAI; controls should address hallucinations, bias, cybersecurity risk and threat-actor use of AI; ongoing human monitoring of outputs is essential; AI agents that can act or transact may require novel oversight including action logging and restricted system access. FINRA is explicit that its rules are technologically neutral.<span class="conf h">H</span></p>
+  <p><strong>FINRA's 2026 Annual Regulatory Oversight Report</strong>, 9 December 2025 &mdash; FINRA's first standalone generative-AI section. Enterprise-level supervisory processes; controls addressing hallucinations, bias, cybersecurity and threat-actor use; ongoing human monitoring; and novel oversight for agents that can act or transact, including action logging and restricted system access. The rules are technologically neutral.<span class="conf h">H</span></p>
 
   <p><strong>SEC Division of Examinations, FY2026 Priorities</strong>, 17 November 2025. Section VII.B addresses AI directly. Examiners will review the accuracy of registrant representations about AI capabilities, and training and security controls for AI and polymorphic malware. Compliance with the 2024 Regulation S-P amendments is a named focus.<span class="conf h">H</span></p>
 
-  <p>Against that, <strong>Brian Daly</strong>, Director of the Division of Investment Management, told the ICI Winter Board Meeting on 3 February 2026 that the core questions remain open: whether an AI tool is marketing, advice, or something requiring registration; who is responsible when AI output is wrong; how it is supervised. He asked for comment rather than announcing an answer.<span class="conf h">H</span> The gap between "examiners will look at this" and "we have not decided what the rule is" is the space you practise in.</p>
+  <p>Against that, <strong>Brian Daly</strong>, Director of the Division of Investment Management, told the ICI Winter Board Meeting on 3 February 2026 that the core questions remain open &mdash; whether an AI tool is marketing, advice or something requiring registration; who is responsible when output is wrong; how it is supervised &mdash; and asked for comment rather than announcing an answer.<span class="conf h">H</span> The gap between "examiners will look at this" and "we have not decided what the rule is" is the space you practise in.</p>
 
   <h3 style="margin-top:32px">Sorting exercise</h3>
   <p>Click a statement, then click its bucket. The answer key is withheld until all nine are placed.</p>
@@ -233,13 +258,12 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
   <p class="pull">The rule you are looking for does not exist. The duty you are looking for has existed since 1940.</p>
 </section>
 
-<!-- ============ 2 ============ -->
 <section class="slide" id="s2" data-nav="NPI">
-  <div class="eyebrow"><span>03</span><span class="mins">14 min</span></div>
+  <div class="eyebrow"><span>02 &middot; Regulation S-P</span><span class="mins">6 min</span></div>
   <h2>Nonpublic Personal Information Under Regulation S-P</h2>
   <p class="big">The 2024 amendments bound larger entities from 3 December 2025 and advisers under $1.5 billion from 3 June 2026. Both dates have passed.<span class="conf h">H</span> Four obligations follow: a written incident response program; customer notification as soon as practicable and no later than 30 days after the firm becomes aware; service provider oversight; and recordkeeping.<span class="conf h">H</span></p>
 
-  <p><strong>You have done this exercise before.</strong> In Session 1 you redacted the Cole facts before pasting them into a consumer tool, and you did it on instinct &mdash; the facts that felt too sensitive came out. Tonight the same facts go through a legal test instead. The interesting result is where instinct and the definition disagree.</p>
+  <p><strong>You have done this before.</strong> In Session 1 you redacted the Cole facts on instinct. Tonight the same facts go through a legal test. The interesting result is where instinct and the definition disagree.</p>
 
   <div class="matrix">
     <h4 style="margin-bottom:6px">PII and NPI are not the same term</h4>
@@ -256,7 +280,7 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
           <tr><td>Scope limit</td><td>&mdash;</td><td>The subpart reaches individuals obtaining financial products or services for personal, family or household purposes. It states it does not apply to information about companies, or to individuals obtaining services for business or commercial purposes.<span class="conf h">H</span></td></tr>
         </tbody>
       </table>
-      <p style="margin:10px 0 0;font-size:14.5px"><strong>Why the last row is not an escape hatch.</strong> CPC is a company, and a valuation of it is information about a company. Meg is an individual receiving personal estate planning. Most Cole facts are about her, and the ones that look corporate arrive attached to her. Do not reason from the scope limit to a permission &mdash; reason from it to a question for your compliance officer.<span class="conf m">M</span></p>
+      <p style="margin:10px 0 0;font-size:14.5px"><strong>Why the last row is not an escape hatch.</strong> A valuation of CPC is information about a company; Meg is an individual receiving personal estate planning, and the facts that look corporate arrive attached to her. Reason from the scope limit to a question for your compliance officer, not to a permission.<span class="conf m">M</span></p>
     </div>
   </div>
 
@@ -272,13 +296,12 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
   <p class="srcnote"><strong>Instructor verification required before teaching.</strong> The characterisations above apply &sect;&nbsp;248.3 to synthetic facts. The definitional quotations are from the regulation; the application to the Cole household is mine and is labelled M where it is inference rather than text. Confirm the scope-limit reading and the re-identification item with counsel or compliance before this goes on screen.</p>
 </section>
 
-<!-- ============ 3 ============ -->
 <section class="slide" id="s3" data-nav="Tiers">
-  <div class="eyebrow"><span>04</span><span class="mins">8 min</span></div>
+  <div class="eyebrow"><span>03 &middot; What the contract changes</span><span class="mins">5 min</span></div>
   <h2>Consumer, Professional and Enterprise Tiers: What Changes in the Contract</h2>
   <p class="big">The tier you subscribe to does not change the model. It changes the contract. For a fiduciary, the contract is the only part that matters.</p>
 
-  <p>Take the tool this course requires. On Claude's consumer plans, Anthropic's Consumer Terms since 8 October 2025 make model training a setting you must choose rather than a default off; if it is on, retention runs up to five years. If off, 30 days. On the commercial side &mdash; API, Claude for Work, Team, Enterprise, Bedrock and Vertex &mdash; the Commercial Terms state customer content is not used for training, with 30-day default retention. Zero Data Retention exists but is not part of the standard Enterprise plan; it is enabled per organisation after an eligibility check.<span class="conf h">H</span></p>
+  <p>Take the tool this course requires. Anthropic's Consumer Terms since 8 October 2025 make model training a setting you must choose rather than a default off &mdash; on, retention runs up to five years; off, 30 days. On the commercial side &mdash; API, Claude for Work, Team, Enterprise, Bedrock, Vertex &mdash; customer content is not used for training, 30-day default retention. Zero Data Retention exists but is not standard on Enterprise; it is enabled per organisation after an eligibility check.<span class="conf h">H</span></p>
 
   <p class="pull">A retention spread of roughly 61&times;, decided by a toggle most subscribers have never opened. The models on both sides are identical.</p>
 
@@ -309,10 +332,10 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
     <label class="tg" id="tgDom"><input type="checkbox" id="cbDom" checked><span class="track"><span class="knob"></span></span><span><span class="tl">Mark dominated points</span><span class="td">Dominated: another model scores at least as high and costs less</span></span></label>
   </div>
 
-  <p><strong>Two dominated points.</strong> Fable 5 scores 62 at $3.15 per task against Opus 5's 63 at $2.34 &mdash; higher score, lower cost, strictly dominated. Gemini 3.6 Flash scores 50 at $0.56 against DeepSeek V4-Flash's 50 at $0.03 and Luna's 51 at $0.07: dominated twice over.<span class="conf h">H</span> Neither means nobody should use either. Migration cost, data residency and procurement sit outside these two axes &mdash; which is this section's argument.</p>
+  <p><strong>Two dominated points.</strong> Fable 5 scores 62 at $3.15 per task against Opus 5's 63 at $2.34 &mdash; strictly dominated. Gemini 3.6 Flash scores 50 at $0.56 against DeepSeek V4-Flash's 50 at $0.03 and Luna's 51 at $0.07: dominated twice over.<span class="conf h">H</span> Neither means nobody should use either &mdash; migration cost, data residency and procurement sit outside these two axes, which is this section's argument.</p>
 
   <h3 style="margin-top:30px">Rank by sticker, rank by task: the orderings agree and the magnitudes do not</h3>
-  <p><strong>A correction worth making out loud.</strong> The conventional teaching point is that ranking by token price gives a different order than ranking by measured cost per task. On today's data that is false. All six models sit in the identical order on both measures. If you find it in a slide deck, check the arithmetic before repeating it &mdash; including in this one.<span class="conf h">H</span></p>
+  <p><strong>A correction worth making out loud.</strong> The conventional teaching point &mdash; that token price and measured cost per task give different orderings &mdash; is false on today's data. All six models sit in identical order on both. Check the arithmetic before repeating it, including in this deck.<span class="conf h">H</span></p>
 
   <figure>
     <div id="divergeHost"></div>
@@ -321,18 +344,17 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
 
   <p><strong>What diverges is magnitude.</strong> Grok 4.6 carries a blended sticker 17.1&times; the cheapest model and a measured cost per task 28.0&times; it &mdash; the sticker understates by 63%. Opus 5 understates by 37%. The two worst offenders are the two highest-scoring reasoning models, and the mechanism is why: a reasoning model reaches its answer by emitting more tokens, and a per-token price cannot see how many a task will take.<span class="conf m">M</span></p>
 
-  <p>Two cases sharpen it. Grok 4.6 at $2.00 / $6.00 and Gemini 3.6 Flash at $1.50 / $7.50 blend to an identical $3.00 per million tokens &mdash; the same purchase on the sticker, eleven Intelligence Index points apart on the measured axes. And on long-horizon agentic work, Artificial Analysis measures Opus 5 consuming roughly 2.0 billion input tokens across about 103 turns against Grok 4.6's 0.5 billion across about 53.<span class="conf h">H</span> At list rates that is $10,000 against $1,000: a 10&times; gap where the sticker rates differ by 2.5&times;.<span class="conf m">M</span></p>
+  <p>Two cases sharpen it. Grok 4.6 at $2.00 / $6.00 and Gemini 3.6 Flash at $1.50 / $7.50 blend to an identical $3.00 per million tokens &mdash; same sticker, eleven Intelligence Index points apart. On long-horizon agentic work, Opus 5 consumes roughly 2.0 billion input tokens across ~103 turns against Grok 4.6's 0.5 billion across ~53.<span class="conf h">H</span> At list rates, $10,000 against $1,000: a 10&times; gap where the stickers differ by 2.5&times;.<span class="conf m">M</span></p>
 
   <p class="srcnote"><strong>Derivations.</strong> Blended sticker: Grok 4.6 = (2.00 &times; 0.75) + (6.00 &times; 0.25) = $3.00; Gemini 3.6 Flash = (1.50 &times; 0.75) + (7.50 &times; 0.25) = $3.00. Long-horizon input cost: Opus 5 = 2,000 MTok &times; $5.00 = $10,000; Grok 4.6 = 500 MTok &times; $2.00 = $1,000; ratio 10.0&times; against a sticker ratio of 2.5&times;. Medium confidence: computed by me from published rate cards and token counts rather than published as such; the underlying figures are each high confidence. Two caveats &mdash; the token counts are one benchmark workload and will not transfer unchanged, and Grok 4.6 carries a cliff visible in neither number: at 200,000 prompt tokens the entire request re-bills at $4.00 / $12.00, not just the overage.</p>
 </section>
 
-<!-- ============ 4 ============ -->
 <section class="slide" id="s4" data-nav="Vendors">
-  <div class="eyebrow"><span>05</span><span class="mins">11 min</span></div>
+  <div class="eyebrow"><span>04 &middot; Due diligence</span><span class="mins">6 min</span></div>
   <h2>Vendor Due Diligence Against the Cole Document Set</h2>
   <p class="big">Reg S-P requires service provider oversight and FINRA names vendor diligence in the framework it expects. Neither tells you what to ask. Six questions cover it, and each has a documentary answer rather than a judgement.</p>
 
-  <p>Do not score a tool in the abstract. Score it against the specific documents you are about to put in it. Select what you would upload from the Cole corpus, then answer the six questions for a tool you actually use &mdash; the one you opened this morning, not the one you wish your firm had approved.</p>
+  <p>Do not score a tool in the abstract &mdash; score it against the documents you are about to put in it. Select what you would upload from the Cole corpus, then answer the six questions for the tool you opened this morning, not the one you wish your firm had approved.</p>
 
   <div class="diag">
     <h4 style="margin-bottom:4px">Step one &mdash; what goes in</h4>
@@ -353,20 +375,12 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
   <p><strong>What the verdict is not.</strong> Green means the tool survives six questions. Not that it is safe, and not a replacement for your firm's approval process. If your firm keeps an approved-vendor list, that list governs.</p>
 </section>
 
-<div class="wrap" style="padding:0">
-<div class="brk">
-  <div class="t">Break &middot; 10 minutes</div>
-  <p>At the 55-minute mark of 150 minutes of instruction. The 180-minute block absorbs this plus 20 minutes of unallocated slack.</p>
-</div>
-</div>
-
-<!-- ============ 5 ============ -->
 <section class="slide" id="s5" data-nav="Attacks">
-  <div class="eyebrow"><span>06</span><span class="mins">10 min</span></div>
+  <div class="eyebrow"><span>05 &middot; Threat model</span><span class="mins">6 min</span></div>
   <h2>Prompt Injection, Data Exfiltration, Deepfakes and Model-Assisted Malware</h2>
   <p class="big">A language model cannot distinguish instructions you wrote from instructions it read. That single property generates the entire attack class. It will not be patched, because the thing being exploited is the thing the model is for.</p>
 
-  <p>OWASP ranks prompt injection LLM01, top of its Top 10 for LLM Applications, and its Top 10 for Agentic Applications maps it into six of ten categories.<span class="conf h">H</span> FINRA published a standalone primer, "Understanding Generative AI and Prompt Injection Fundamentals," on 6 March 2026. When a self-regulatory organisation writes a primer on an attack technique, the technique has left the research literature.<span class="conf h">H</span></p>
+  <p>OWASP ranks prompt injection LLM01, and its Agentic Top 10 maps it into six of ten categories.<span class="conf h">H</span> FINRA published a standalone primer on 6 March 2026. When a self-regulatory organisation writes a primer on an attack technique, the technique has left the research literature.<span class="conf h">H</span></p>
 
   <table>
     <thead><tr><th>Name</th><th>Identifier</th><th>What happened</th><th>Why it matters here</th></tr></thead>
@@ -393,20 +407,258 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
   <h3 style="margin-top:34px">Deepfakes: one hard number and a pile of soft ones</h3>
   <p>In January 2024 the engineering firm Arup lost approximately $25 million across 15 transfers after an employee joined a video conference populated by synthetic versions of the CFO and colleagues, reported by the Financial Times in May 2024.<span class="conf h">H</span> That is the only deepfake number here I would put in front of a client.</p>
 
-  <p>The rest is softer, and the softness is the lesson. Gartner, surveying 302 security leaders: 62% of organisations experienced at least one deepfake attack in twelve months, 37% on a live video call.<span class="conf m">M</span> Deloitte projects US generative-AI-enabled fraud losses rising from $12.3 billion in 2023 to $40 billion by 2027 &mdash; a projection, not a measurement.<span class="conf m">M</span> And two outlets citing the same Surfshark 2026 analysis report $2.19 billion and $3.7 billion.<span class="conf l">L</span></p>
+  <p>The rest is softer, and the softness is the lesson. Gartner, 302 security leaders: 62% of organisations hit by at least one deepfake attack in twelve months, 37% on a live video call.<span class="conf m">M</span> Deloitte projects US GenAI-enabled fraud losses from $12.3 billion in 2023 to $40 billion by 2027 &mdash; a projection.<span class="conf m">M</span> Two outlets citing the same Surfshark 2026 analysis report $2.19 billion and $3.7 billion.<span class="conf l">L</span></p>
 
   <p class="pull">Two numbers, one underlying study, a 69% discrepancy. Neither outlet is lying. They are counting different things and neither says which.</p>
 
   <p>Use Arup. If you need a market figure, say published totals range from roughly $2 billion to $4 billion depending on inclusion criteria, that all undercount, and that you do not know which is right. That sentence is more defensible than any number in it.</p>
 
-  <p><strong>Make it concrete.</strong> A synthetic Meg Cole joins a video call and instructs your operations desk to wire seed-gift funds to a trust account, days before a transaction the desk already knows is in progress. Every contextual cue supports the request. That is the scenario, and no amount of looking at the screen resolves it.</p>
+  <p><strong>Make it concrete.</strong> A synthetic Meg Cole joins a video call and instructs your operations desk to wire seed-gift funds to a trust account, days before a transaction the desk knows is in progress. Every contextual cue supports the request, and no amount of looking at the screen resolves it.</p>
 
-  <p><strong>The control is not detection.</strong> Humans spot high-quality synthetic media at close to chance, and detectors lose much of their lab accuracy in the field.<span class="conf m">M</span> What works is procedural: out-of-band verification on a channel the requester did not choose, applied to every disbursement instruction regardless of how convincing it was. That control predates deepfakes by decades &mdash; another pre-existing duty doing new work.</p>
+  <p><strong>The control is not detection.</strong> Humans spot high-quality synthetic media at close to chance, and detectors lose much of their lab accuracy in the field.<span class="conf m">M</span> What works is procedural: out-of-band verification on a channel the requester did not choose, on every disbursement instruction. That control predates deepfakes by decades &mdash; another pre-existing duty doing new work.</p>
+
+
+  <a class="apxlink" href="#sW1"><span class="al">If there is time &middot; Appendix D1 &middot; 9 min</span><b>Content Provenance and the SynthID Watermark</b><span class="aw">How a watermark is hidden in text, images and audio, and the asymmetry that governs whether you can ever rely on one. Deep, self-contained, and the part a technical room will ask about.</span></a>
+  <a class="apxlink" href="#sW2"><span class="al">If there is time &middot; Appendix D2 &middot; 6 min</span><b>Entropy, Regeneration and the Limits of Watermarking</b><span class="aw">Why a watermark survives paraphrase and dies to regeneration, and what a detected signal actually licenses you to conclude. Takes D1 first.</span></a>
 </section>
 
-<!-- ============ NEW: PROVENANCE ============ -->
-<section class="slide" id="sW1" data-nav="Provenance">
-  <div class="eyebrow"><span>07</span><span class="mins">9 min</span></div>
+<section class="slide" id="s6" data-nav="Leaks">
+  <div class="eyebrow"><span>06 &middot; Where data escapes</span><span class="mins">4 min</span></div>
+  <h2>Where the Leaks Happen: Logs, Caches, Connectors and Features Nobody Turned Off</h2>
+  <p class="big">Firms spend their AI governance budget on the prompt box. Almost nothing leaves through the prompt box. It leaves through the surfaces attached to it, most enabled by a default rather than a decision.</p>
+
+  <p>Every Cole document your workflow touched in Session 3 left a trace somewhere other than the prompt box. Published by the vendor: Claude Code stores session transcripts locally, in plaintext, under <code style="font-family:'JetBrains Mono',monospace;font-size:14px">~/.claude/projects/</code>, 30 days by default, on every tier. No subscription changes it and no server-side commitment reaches it, because the file is on your laptop.<span class="conf h">H</span></p>
+
+  <div class="diag">
+    <h4 style="margin-bottom:4px">Annual exposure-event estimator</h4>
+    <p class="dim" style="font-size:14px;margin:0 0 16px;max-width:none">Enter your own volumes. Every output is arithmetic on your inputs.</p>
+    <div class="ingrid" id="leakIn"></div>
+    <div class="diagout" id="leakOut"></div>
+  </div>
+
+  <p class="srcnote"><strong>What it is and is not.</strong> It multiplies numbers you supply. No industry data, no base rates, no probability of compromise. It answers one question &mdash; how often a year does client-adjacent text cross a boundary you have not inspected &mdash; and only as accurately as your inputs. Its purpose is converting a worry into a quantity you can put in a policy.</p>
+
+  <p><strong>Four surfaces, ordered by how often they are missed.</strong> Local caches, because they survive account deletion and sit outside every vendor commitment. Connectors, because each grants standing access nobody re-reviews. Features shipped enabled, because a default is not a decision and no one logs it. Retention settings, because the toggle is one click and the consequence is measured in years.</p>
+</section>
+
+<section class="slide" id="s7" data-nav="What it costs">
+  <div class="eyebrow"><span>07 &middot; The verification burden</span><span class="mins">6 min</span></div>
+  <h2>Hallucination Rates and the Verification Burden</h2>
+  <p class="pull">Session 1: why it happens. Session 3: how often. Tonight: what it costs you.</p>
+
+  <p class="big">You have the mechanism and you have the rate. Neither has yet been converted into minutes. That conversion is the only form in which this argument survives contact with a practice.</p>
+
+  <p>The rate evidence is Magesh, Surani, Dahl, Suzgun, Manning and Ho, <em>Hallucination-Free?</em>, Stanford RegLab and HAI; preprint May 2024, published in the <em>Journal of Empirical Legal Studies</em> 2025. Over 200 preregistered legal queries, expert hand-scored. LexisNexis had marketed "100% hallucination-free linked legal citations."<span class="conf h">H</span></p>
+
+  <figure>
+    <div id="slopeHost"></div>
+    <figcaption id="slopeCap"></figcaption>
+  </figure>
+
+  <p><strong>Read the reduction honestly.</strong> Ungrounded to best grounded: 43% to 17%, a 60% relative cut; to the worse grounded tool, 43% to 33%, a 23% cut. Grounding is worth doing and is not a solution. The higher rate also correlated with longer responses &mdash; roughly 350 words against 219 &mdash; so the more thorough-looking answer was likelier to contain something false.<span class="conf m">M</span></p>
+
+  <div class="matrix" style="background:var(--warn-bg);border-color:#E0C6B4">
+    <h4 style="margin-bottom:8px">A measurement you cannot put on the same axis</h4>
+    <p style="margin:0;max-width:none;font-size:16px">Artificial Analysis currently measures Claude Opus 5 at a 50% hallucination rate, and places Claude Fable 5 top of the boards tracking how often a model is simply wrong, at 40 on AA-Omniscience.<span class="conf h">H</span> Do not put that 50% next to the Stanford 43%. Different instruments, query sets and scoring rules, two years apart. Both find double-digit error rates on their own terms; neither licenses a claim about the other.</p>
+  </div>
+
+  <h3 style="margin-top:34px">The arithmetic of not checking</h3>
+  <p>If a tool errs on proportion <em>p</em> of citations and you verify none of <em>N</em>, the probability at least one error reaches your recommendation is 1 &minus; (1 &minus; <em>p</em>)<sup>N</sup>.</p>
+
+  <div class="sliderwrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px" id="verGrid">
+      <div>
+        <label style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px">Per-citation error rate</label>
+        <input type="range" id="verP" min="1" max="50" value="17">
+        <div class="ticks"><span>1%</span><span>17%</span><span>33%</span><span>50%</span></div>
+      </div>
+      <div>
+        <label style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px">Citations you do not verify</label>
+        <input type="range" id="verN" min="1" max="25" value="5">
+        <div class="ticks"><span>1</span><span>10</span><span>18</span><span>25</span></div>
+      </div>
+    </div>
+    <div class="instrline" id="verOut"></div>
+    <div id="verBar" style="margin-top:16px"></div>
+  </div>
+
+  <p>At the Lexis+ AI rate of 17% and five unverified citations, the probability at least one error survives into your file is 60.6%. At the Westlaw rate of 33%, 86.5%.<span class="conf m">M</span> The formula assumes citation errors are independent, and they are not &mdash; they cluster by query type and by distance from the training distribution. The direction is robust; the decimal is not.</p>
+
+  <h3 style="margin-top:34px">Pricing it against your own baseline</h3>
+  <p>Take the IDGT client explanation from Session 2 as the unit of work. Enter the baseline minutes you recorded in Session 1 for a comparable deliverable, the AI-assisted minutes, and how many citations the output carried. The calculator prices verification and reports whether the deliverable is still faster.</p>
+
+  <div class="diag">
+    <div class="ingrid" id="costIn"></div>
+    <div class="diagout" id="costOut"></div>
+  </div>
+
+  <p class="srcnote"><strong>What the calculator does and does not know.</strong> It multiplies your figures. The two-minutes-per-citation default is a placeholder you should overwrite with your own measured time, not a published benchmark &mdash; a Code section you can pull in thirty seconds and a private letter ruling you must locate are not the same check.<span class="conf l">L</span> If you did not record a Session 1 baseline, the fallback figures below the inputs let you run the exercise, and you should treat the output as illustrative rather than as a finding about your practice.</p>
+
+
+  <a class="apxlink" href="#sWS"><span class="al">If there is time &middot; Appendix D3 &middot; 8 min</span><b>Where the Assigned Reading Has Gone Stale</b><span class="aw">Three Wolfram claims from 2023 that no longer describe the frontier, plus the parenthesis mechanism behind the hallucination rate. The course auditing its own syllabus.</span></a>
+</section>
+
+<section class="slide" id="s8" data-nav="Audit trail">
+  <div class="eyebrow"><span>08 &middot; The record</span><span class="mins">6 min</span></div>
+  <h2>Audit Trails for the Artifacts You Already Built</h2>
+  <p class="big">FINRA asks for prompt and output logging, version tracking and access controls. The SEC asks whether your compliance team can explain how a tool reached a decision. Both reduce to one test: can another person re-run what you did and see why you concluded what you concluded.</p>
+
+  <p>Two artifacts from this course are the test material: the Session 2 prompt explaining the IDGT sale to Meg in client-readable language, and the Session 3 extraction that surfaced the 2014 buy-sell and its stale formula valuation conflicting with the $18,000,000 appraisal. Tonight you decide whether either produced a record.</p>
+
+  <div class="matrix" style="background:var(--on-bg);border-color:#9FC4C0">
+    <h4 style="margin-bottom:6px">Fallback artifacts &mdash; if you missed Session 2 or Session 3</h4>
+    <p style="margin:0 0 10px;max-width:none;font-size:15.5px">You do not need your own work to do this section. A pre-built version of both artifacts is here. Open it, use it as your input, and you lose nothing but the pleasure of auditing your own prompt.</p>
+    <div class="row"><button class="btn ghost mini" id="fbToggle">Open the fallback set</button></div>
+    <div class="ansk" id="fbPanel">
+      <p style="margin:0 0 6px"><strong>Fallback A &mdash; Session 2 IDGT client-explanation prompt.</strong></p>
+      <div class="codeblk" style="margin:6px 0 16px">Explain to a 64-year-old business owner, in plain language and
+under 400 words, the transaction her attorney has proposed: a sale
+of a 40% non-voting interest in her C-corporation to an
+intentionally defective grantor trust for a $4,968,000 promissory
+note, preceded by a $650,000 seed gift, with a 31% valuation
+discount claimed for lack of control and lack of marketability.
+Cover why the trust is "defective," who pays the income tax, and
+what happens at the balloon. Cite the authority for each mechanic.</div>
+      <p style="margin:0 0 6px"><strong>Fallback B &mdash; Session 3 buy-sell extraction, returned output.</strong></p>
+      <div class="codeblk" style="margin:6px 0 0">FINDING: The buy-sell agreement (executed 2014, never amended)
+sets a purchase price by formula at book value times a fixed
+multiple. Applied to current financials this yields a figure
+materially below the $18,000,000 appraised value used in the
+2023 valuation report.
+SOURCE: Buy-Sell Agreement, Cole Precision Components Inc.,
+  section 4.2, pages 7-8.
+CONFLICT: The formula price and the appraised value cannot both
+  govern a transfer. The documents do not resolve which controls.</div>
+    </div>
+  </div>
+
+  <p>Reproducibility is the hard part. Wolfram: &ldquo;if we use the same prompt multiple times, we&rsquo;re likely to get different essays each time.&rdquo;<span class="conf h">H</span> A record capturing only the prompt does not let anyone reproduce the output; one capturing only the output does not let anyone interrogate the reasoning. Four fields are the minimum: the exact prompt; the model identifier and its effort setting; the retrieved source text rather than a paraphrase; and the human decision with date and author.</p>
+
+  <h3 style="margin-top:30px">Classification exercise</h3>
+  <p>Six candidate records drawn from those two artifacts. Three categories. Two items are specific in form and defective in substance.</p>
+
+  <div class="quiz" id="auditQuiz"></div>
+  <span class="score" id="auditScore">0 of 6 answered</span>
+  <div class="ansk" id="auditKey"></div>
+
+  <h3 style="margin-top:34px">A prompt block that produces the record</h3>
+  <p>Paste at the end of any research prompt. It does not improve the answer. It changes what the answer contains, so the file you keep is a record rather than a conclusion.</p>
+
+  <div class="codeblk" id="auditBlock"><button class="copybtn" id="copyAudit">Copy</button>Before your answer, output a header block containing exactly these fields:
+
+MODEL: the model identifier and effort or reasoning setting in use
+DATE: today's date
+PROMPT_HASH: the first eight words of my request, verbatim
+
+Then answer.
+
+After your answer, output a verification block containing:
+
+SOURCES: for each authority you relied on, quote the operative
+  sentence verbatim and give its locator. Do not paraphrase.
+NOT_VERIFIED: every claim you made that is not supported by a
+  quoted source above. List it even if you believe it is true.
+WOULD_CHANGE: what fact, if different, would change your answer.
+
+If you cannot quote a source verbatim, write NO SOURCE RETRIEVED
+for that item. Do not reconstruct a citation from memory.</div>
+
+  <p><strong>Why the last instruction carries the weight.</strong> The failure mode is not a model that refuses to answer. It is one that produces a plausible citation having retrieved nothing, because producing plausible text is what it does. NO SOURCE RETRIEVED gives it a licensed output for that state. Whether a model honours it is empirical &mdash; which is why the block ends with something you can test rather than a promise you must trust.</p>
+</section>
+
+<section class="slide" id="s10" data-nav="Pairings">
+  <div class="eyebrow"><span>09 &middot; Relay</span><span class="mins">3 min</span></div>
+  <h2>Part 1 Relay and the Part 2 Pairing Draw</h2>
+  <p class="big">Packages arrived Sunday night. They have been read, graded as received, and screened. Pairings are drawn now, in the room, and you will open yours in the next section.</p>
+
+  <table>
+    <thead><tr><th>When</th><th>Who</th><th>What</th></tr></thead>
+    <tbody>
+      <tr><td>Sunday night</td><td>You</td><td>One email to the instructor. All required files attached. Body reads only "See attached."</td></tr>
+      <tr><td>Before tonight</td><td>Instructor</td><td>Grade the handoff package as received. Screen every attachment for real client data.</td></tr>
+      <tr><td>Now</td><td>Instructor</td><td>Draw the pairing and forward the original email unaltered to the assigned classmate.</td></tr>
+      <tr><td>Next 10 minutes</td><td>You</td><td>Open it cold and try to run it. The builder is in the room and may not help.</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Forwarded intact, not repackaged.</strong> Part 2 grades a failed handoff against the builder, not the presenter. That attribution only holds if you receive exactly what the builder sent. If I strip the email and pass on files, a mislabelled attachment becomes ambiguous &mdash; my curation, or their defect. The email goes on whole, and the 15% still scores whether the package stands alone with no one in the room to explain it.</p>
+
+  <p><strong>The draw.</strong> Pairing is a derangement: nobody reviews their own package, and no two students review each other. Reciprocal pairs could negotiate a mutual assessment; a single cycle across the class cannot, because your reviewer is not your subject.</p>
+
+  <div class="diag">
+    <div class="row"><button class="btn" id="drawBtn">Draw a pairing</button><button class="btn ghost mini" id="drawReset">Reset</button></div>
+    <div class="diagout" id="drawOut"><span class="nil">No draw yet.</span></div>
+  </div>
+</section>
+
+<section class="slide" id="sCR" data-nav="Cold first run">
+  <div class="eyebrow"><span>10 &middot; The scalability test</span><span class="mins">10 min</span></div>
+  <h2>Cold First Run of the Package You Were Just Assigned</h2>
+  <p class="big">Open it now. Attempt to run it from the documentation alone. The builder is sitting in this room and may not help you, and you may not ask.</p>
+
+  <p>This is the scalability criterion tested in the room rather than argued about in a presentation. Part 1 defines scalable as two things: the workflow works for the next twenty clients, and another advisor can run it without you present. The second half has never actually been tested until now, and it is worth 30% of Part 1.</p>
+
+  <p><strong>Eight minutes on the clock. Then two minutes recording where you stopped.</strong> Getting stuck is the expected outcome and is the useful data. Do not fix anything, do not improve anything, and do not tell the builder what went wrong yet &mdash; that is the Session 5 presentation. Record it.</p>
+
+  <div class="diag">
+    <h4 style="margin-bottom:4px">Stuck log</h4>
+    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">Tick the first thing that stopped you, and only the first. If several applied, the earliest one is the finding.</p>
+    <div id="stuckList"></div>
+    <textarea id="stuckNote" placeholder="One sentence: what were you trying to do at the moment you stopped?" style="margin-top:14px"></textarea>
+    <div class="diagout" id="stuckOut"><span class="nil">Nothing recorded yet.</span></div>
+  </div>
+
+  <p class="srcnote"><strong>Builders: what to do with your hands.</strong> You will watch someone fail to run your workflow and you will want to intervene. Do not. Write down what you see them try that you did not anticipate &mdash; that list is the most valuable page of your Part 2 response, and you can only collect it once, tonight, before they have worked around the problem and forgotten it happened.</p>
+
+  <p><strong>If it ran.</strong> Some will. Note the elapsed time and what you did not have to ask about, then run it a second time against a different input than the one the documentation used. Working on the builder's example and working on the next twenty clients are different claims, and only one of them is the criterion.</p>
+
+
+  <a class="apxlink" href="#sD"><span class="al">If there is time &middot; Appendix D4 &middot; 20 min</span><b>Whether the Logging Burden Costs More Than the Tool Saves</b><span class="aw">Twenty minutes, immediately after a room has watched its own packages fail to run. The timing is the point; do not move it earlier.</span></a>
+</section>
+
+<section class="slide" id="s9" data-nav="Policy homework">
+  <div class="eyebrow"><span>11 &middot; Assignment</span><span class="mins">5 min</span></div>
+  <h2>Homework: The Firm Artificial Intelligence Use Policy</h2>
+  <p class="big">Draft an AI usage policy for your firm, due before Session 5. This is the last instruction you receive before writing it, so every question the assignment asks was answered somewhere tonight.</p>
+
+  <p>Click each rubric question to see which section answers it and what you may cite. Structured bullets, two pages maximum.</p>
+
+  <div class="diag">
+    <div id="rubricChips" class="chiplist"></div>
+    <div class="diagout" id="rubricOut"><span class="nil">Select a rubric question.</span></div>
+  </div>
+
+  <p><strong>Use the Cole landmines as your worked example.</strong> Your data-boundary section needs one concrete illustration, and the three you classified in Section 03 &mdash; an undisclosed sale, an unexecuted plan with a claimed discount, and the fact of the relationship &mdash; are already reasoned through with the regulation applied. Substitute your own synthetic facts before the policy leaves your desk.</p>
+
+  <p class="srcnote"><strong>One warning carried forward from Section 03.</strong> The assignment asks you to define PII. Regulation S-P governs NPI. Define both, state which one your firm's obligations actually run to, and you have turned a terminology collision into the strongest paragraph in the document.</p>
+
+  <h3 style="margin-top:30px">Peer review, before Session 5 and not tonight</h3>
+  <p>Exchange drafts with one classmate &mdash; not your Part 2 pair &mdash; and score theirs on four tests. Bring the score to Session 5. The instrument is deliberately hostile: a policy that cannot survive four questions from a friendly reader will not survive one from an examiner.</p>
+
+  <div class="diag">
+    <div id="peerRows"></div>
+    <div class="diagout" id="peerOut"><span class="nil">No scores entered.</span></div>
+  </div>
+
+  <p class="pull">The tools change. The judgement does not.</p>
+</section>
+
+<section class="slide apxdiv" id="apx" data-nav="— APPENDIX —">
+  <div class="eyebrow"><span>Appendix &middot; 4 optional sections</span><span class="mins">43 min</span></div>
+  <h2>Appendix</h2>
+  <p class="lede">Four optional sections. Provenance runs deep on watermarking; source staleness turns the course&rsquo;s verification discipline on its own syllabus.</p>
+  <p>The 12 sections above are the core session and run in about 67 minutes. Everything below is optional depth. Each appendix section names the two core sections it belongs between and links back to that point, so it can be taken in place during a long session or on its own afterwards. Nothing in the core depends on anything down here.</p>
+  <div class="apxgrid">
+    <a class="apxcard" href="#sW1"><span class="ac">D1 &middot; 9 min &middot; after §05</span><b>Content Provenance and the SynthID Watermark</b></a>
+    <a class="apxcard" href="#sW2"><span class="ac">D2 &middot; 6 min &middot; after §05</span><b>Entropy, Regeneration and the Limits of Watermarking</b></a>
+    <a class="apxcard" href="#sWS"><span class="ac">D3 &middot; 8 min &middot; after §07</span><b>Where the Assigned Reading Has Gone Stale</b></a>
+    <a class="apxcard" href="#sD"><span class="ac">D4 &middot; 20 min &middot; after §10</span><b>Whether the Logging Burden Costs More Than the Tool Saves</b></a>
+  </div>
+</section>
+
+<section class="slide apx" id="sW1" data-nav="D1 · Provenance" data-insert-after="s5" data-tier="standard">
+  <div class="eyebrow"><span>Appendix D1 &middot; Provenance</span><span class="mins">9 min</span></div>
+  <div class="apxback">Insert between §05 Attacks and §06 Leaks &mdash; <a href="#s5">back to that point</a></div>
   <h2>Content Provenance and the SynthID Watermark</h2>
   <p class="big">You cannot detect a deepfake by looking at it. Provenance marking is the answer, and it answers a narrower question than most people think.</p>
 
@@ -463,9 +715,9 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
   <p>The deepfake-loss problem repeating. Say deployment is in the billions and cite the primary announcement you actually read.</p>
 </section>
 
-<!-- ============ NEW: LIMITS ============ -->
-<section class="slide" id="sW2" data-nav="Watermark limits">
-  <div class="eyebrow"><span>08</span><span class="mins">5 min</span></div>
+<section class="slide apx" id="sW2" data-nav="D2 · Watermark limits" data-insert-after="s5" data-tier="standard">
+  <div class="eyebrow"><span>Appendix D2 &middot; Provenance, deeper</span><span class="mins">6 min</span></div>
+  <div class="apxback">Insert between §05 Attacks and §06 Leaks &mdash; <a href="#s5">back to that point</a></div>
   <h2>Entropy, Regeneration and the Limits of Watermarking</h2>
   <p class="big">Watermark capacity is bounded by how many acceptable outputs exist. Where only one output is correct, there is nowhere to hide a signal.</p>
 
@@ -509,203 +761,33 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
   <p><strong>Regulatory note.</strong> California SB 942 took effect January 2026; EU AI Act Article 50 machine-readable disclosure obligations begin enforcement August 2026.<span class="conf m">M</span> Neither is a US federal adviser rule. Verify before relying on either date &mdash; the fastest-moving area covered tonight.</p>
 </section>
 
-<!-- ============ 6 ============ -->
-<section class="slide" id="s6" data-nav="Leaks">
-  <div class="eyebrow"><span>09</span><span class="mins">8 min</span></div>
-  <h2>Where the Leaks Happen: Logs, Caches, Connectors and Features Nobody Turned Off</h2>
-  <p class="big">Firms spend their AI governance budget on the prompt box. Almost nothing leaves through the prompt box. It leaves through the surfaces attached to it, most enabled by a default rather than a decision.</p>
+<section class="slide apx" id="sWS" data-nav="D3 · Source staleness" data-insert-after="s7" data-tier="standard">
+  <div class="eyebrow"><span>Appendix D3 &middot; Source staleness</span><span class="mins">8 min</span></div>
+  <div class="apxback">Insert between §07 What it costs and §08 Audit trail &mdash; <a href="#s7">back to that point</a></div>
+  <h2>Where the Assigned Reading Has Gone Stale</h2>
 
-  <p>Every Cole document your workflow touched in Session 3 &mdash; the buy-sell agreement, the 2023 appraisal, the draft IDGT instrument &mdash; left a trace somewhere other than the prompt box. Published by the vendor: Claude Code stores session transcripts locally, in plaintext, under <code style="font-family:'JetBrains Mono',monospace;font-size:14px">~/.claude/projects/</code>, for 30 days by default, on every tier. Nothing about your subscription changes it and no server-side commitment reaches it, because the file is on your laptop.<span class="conf h">H</span></p>
+  <p class="big">Wolfram is a February 2023 source describing a 2020 model, and it is the reading Sessions 1 through 3 are built on. Three of its structural claims no longer describe the frontier. This section runs the course&rsquo;s own verification discipline against the course&rsquo;s own syllabus.</p>
 
-  <div class="diag">
-    <h4 style="margin-bottom:4px">Annual exposure-event estimator</h4>
-    <p class="dim" style="font-size:14px;margin:0 0 16px;max-width:none">Enter your own volumes. Every output is arithmetic on your inputs.</p>
-    <div class="ingrid" id="leakIn"></div>
-    <div class="diagout" id="leakOut"></div>
-  </div>
+  <h3>Where the hallucination rate comes from, in one mechanism</h3>
+  <p>Trained on balanced-parenthesis sequences, a small transformer assigns roughly 15% probability to a closing parenthesis at a position where one would necessarily leave the sequence unbalanced. Wolfram: this &ldquo;isn&rsquo;t right, because that would necessarily lead to an unbalanced parenthesis.&rdquo;<span class="conf h">H</span> The model is not uncertain about a hard question. It is confidently assigning probability to a provably impossible continuation, because it estimates a distribution over next tokens rather than checking a constraint. A fabricated citation is that same event with a legal authority in place of a bracket. Nothing in the architecture distinguishes them &mdash; which is why the verification burden priced in &sect;07 is structural rather than a defect awaiting a patch.</p>
 
-  <p class="srcnote"><strong>What it is and is not.</strong> It multiplies numbers you supply. No industry data, no base rates, no probability of compromise. It answers one question &mdash; how often a year does client-adjacent text cross a boundary you have not inspected &mdash; and only as accurately as your inputs. Its purpose is converting a worry into a quantity you can put in a policy.</p>
-
-  <p><strong>Four surfaces, ordered by how often they are missed.</strong> Local caches, because they survive account deletion and sit outside every vendor commitment. Connectors, because each grants standing access nobody re-reviews. Features shipped enabled, because a default is not a decision and no one logs it. Retention settings, because the toggle is one click and the consequence is measured in years.</p>
-</section>
-
-<!-- ============ 7 ============ -->
-<section class="slide" id="s7" data-nav="What it costs">
-  <div class="eyebrow"><span>10</span><span class="mins">12 min</span></div>
-  <h2>Hallucination Rates and the Verification Burden</h2>
-  <p class="pull">Session 1: why it happens. Session 3: how often. Tonight: what it costs you.</p>
-
-  <p class="big">You have the mechanism and you have the rate. Neither has yet been converted into minutes. That conversion is the only form in which this argument survives contact with a practice.</p>
-
-  <p>The rate evidence is Magesh, Surani, Dahl, Suzgun, Manning and Ho, <em>Hallucination-Free?</em>, Stanford RegLab and HAI; preprint May 2024, published in the <em>Journal of Empirical Legal Studies</em> 2025. Over 200 preregistered legal queries, expert hand-scored. LexisNexis had marketed "100% hallucination-free linked legal citations."<span class="conf h">H</span></p>
-
-  <figure>
-    <div id="slopeHost"></div>
-    <figcaption id="slopeCap"></figcaption>
-  </figure>
-
-  <p><strong>Read the reduction honestly.</strong> Ungrounded to best-performing grounded: 43% to 17%, a 60% relative cut. To the worse-performing grounded tool: 43% to 33%, a 23% cut. Grounding is worth doing and is not a solution. The study also found the higher rate correlated with longer responses &mdash; roughly 350 words against 219 &mdash; so the more thorough-looking answer was the likelier one to contain something false.<span class="conf m">M</span></p>
-
-  <div class="matrix" style="background:var(--warn-bg);border-color:#E0C6B4">
-    <h4 style="margin-bottom:8px">A measurement you cannot put on the same axis</h4>
-    <p style="margin:0;max-width:none;font-size:16px">Artificial Analysis currently measures Claude Opus 5 at a 50% hallucination rate, and places Claude Fable 5 top of the boards tracking how often a model is simply wrong, at 40 on AA-Omniscience.<span class="conf h">H</span> Do not put that 50% next to the Stanford 43%. Different instruments, query sets and scoring rules, two years apart. Both find double-digit error rates on their own terms; neither licenses a claim about the other.</p>
-  </div>
-
-  <h3 style="margin-top:34px">The arithmetic of not checking</h3>
-  <p>If a tool errs on proportion <em>p</em> of citations and you verify none of <em>N</em>, the probability at least one error reaches your recommendation is 1 &minus; (1 &minus; <em>p</em>)<sup>N</sup>.</p>
-
-  <div class="sliderwrap">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px" id="verGrid">
-      <div>
-        <label style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px">Per-citation error rate</label>
-        <input type="range" id="verP" min="1" max="50" value="17">
-        <div class="ticks"><span>1%</span><span>17%</span><span>33%</span><span>50%</span></div>
-      </div>
-      <div>
-        <label style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px">Citations you do not verify</label>
-        <input type="range" id="verN" min="1" max="25" value="5">
-        <div class="ticks"><span>1</span><span>10</span><span>18</span><span>25</span></div>
-      </div>
-    </div>
-    <div class="instrline" id="verOut"></div>
-    <div id="verBar" style="margin-top:16px"></div>
-  </div>
-
-  <p>At the Lexis+ AI rate of 17% and five unverified citations, the probability at least one error survives into your file is 60.6%. At the Westlaw rate of 33%, 86.5%.<span class="conf m">M</span> The formula assumes citation errors are independent, and they are not &mdash; they cluster by query type and by distance from the training distribution. The direction is robust; the decimal is not.</p>
-
-  <h3 style="margin-top:34px">Pricing it against your own baseline</h3>
-  <p>Take the IDGT client explanation from Session 2 as the unit of work. Enter the baseline minutes you recorded in Session 1 for a comparable deliverable, the AI-assisted minutes, and how many citations the output carried. The calculator prices verification and reports whether the deliverable is still faster.</p>
-
-  <div class="diag">
-    <div class="ingrid" id="costIn"></div>
-    <div class="diagout" id="costOut"></div>
-  </div>
-
-  <p class="srcnote"><strong>What the calculator does and does not know.</strong> It multiplies your figures. The two-minutes-per-citation default is a placeholder you should overwrite with your own measured time, not a published benchmark &mdash; a Code section you can pull in thirty seconds and a private letter ruling you must locate are not the same check.<span class="conf l">L</span> If you did not record a Session 1 baseline, the fallback figures below the inputs let you run the exercise, and you should treat the output as illustrative rather than as a finding about your practice.</p>
-</section>
-
-<!-- ============ 8 ============ -->
-<section class="slide" id="s8" data-nav="Audit trail">
-  <div class="eyebrow"><span>11</span><span class="mins">12 min</span></div>
-  <h2>Audit Trails for the Artifacts You Already Built</h2>
-  <p class="big">FINRA asks for prompt and output logging, version tracking and access controls. The SEC asks whether your compliance team can explain how a tool reached a decision. Both reduce to one test: can another person re-run what you did and see why you concluded what you concluded.</p>
-
-  <p>Two artifacts from this course are the test material. In Session 2 you wrote a prompt asking a model to explain the IDGT sale to Meg in client-readable language. In Session 3 you ran an extraction over the Cole corpus that surfaced the 2014 buy-sell agreement and its stale formula valuation conflicting with the $18,000,000 appraised value. Tonight you decide whether either produced a record.</p>
-
-  <div class="matrix" style="background:var(--on-bg);border-color:#9FC4C0">
-    <h4 style="margin-bottom:6px">Fallback artifacts &mdash; if you missed Session 2 or Session 3</h4>
-    <p style="margin:0 0 10px;max-width:none;font-size:15.5px">You do not need your own work to do this section. A pre-built version of both artifacts is here. Open it, use it as your input, and you lose nothing but the pleasure of auditing your own prompt.</p>
-    <div class="row"><button class="btn ghost mini" id="fbToggle">Open the fallback set</button></div>
-    <div class="ansk" id="fbPanel">
-      <p style="margin:0 0 6px"><strong>Fallback A &mdash; Session 2 IDGT client-explanation prompt.</strong></p>
-      <div class="codeblk" style="margin:6px 0 16px">Explain to a 64-year-old business owner, in plain language and
-under 400 words, the transaction her attorney has proposed: a sale
-of a 40% non-voting interest in her C-corporation to an
-intentionally defective grantor trust for a $4,968,000 promissory
-note, preceded by a $650,000 seed gift, with a 31% valuation
-discount claimed for lack of control and lack of marketability.
-Cover why the trust is "defective," who pays the income tax, and
-what happens at the balloon. Cite the authority for each mechanic.</div>
-      <p style="margin:0 0 6px"><strong>Fallback B &mdash; Session 3 buy-sell extraction, returned output.</strong></p>
-      <div class="codeblk" style="margin:6px 0 0">FINDING: The buy-sell agreement (executed 2014, never amended)
-sets a purchase price by formula at book value times a fixed
-multiple. Applied to current financials this yields a figure
-materially below the $18,000,000 appraised value used in the
-2023 valuation report.
-SOURCE: Buy-Sell Agreement, Cole Precision Components Inc.,
-  section 4.2, pages 7-8.
-CONFLICT: The formula price and the appraised value cannot both
-  govern a transfer. The documents do not resolve which controls.</div>
-    </div>
-  </div>
-
-  <p>Reproducibility is the hard part. The same prompt run twice does not return the same text. A record capturing only the prompt does not let anyone reproduce the output; one capturing only the output does not let anyone interrogate the reasoning. Four fields are the minimum: the exact prompt; the model identifier and its effort setting; the retrieved source text rather than a paraphrase; and the human decision with date and author.</p>
-
-  <h3 style="margin-top:30px">Classification exercise</h3>
-  <p>Six candidate records drawn from those two artifacts. Three categories. Two items are specific in form and defective in substance.</p>
-
-  <div class="quiz" id="auditQuiz"></div>
-  <span class="score" id="auditScore">0 of 6 answered</span>
-  <div class="ansk" id="auditKey"></div>
-
-  <h3 style="margin-top:34px">A prompt block that produces the record</h3>
-  <p>Paste at the end of any research prompt. It does not improve the answer. It changes what the answer contains, so the file you keep is a record rather than a conclusion.</p>
-
-  <div class="codeblk" id="auditBlock"><button class="copybtn" id="copyAudit">Copy</button>Before your answer, output a header block containing exactly these fields:
-
-MODEL: the model identifier and effort or reasoning setting in use
-DATE: today's date
-PROMPT_HASH: the first eight words of my request, verbatim
-
-Then answer.
-
-After your answer, output a verification block containing:
-
-SOURCES: for each authority you relied on, quote the operative
-  sentence verbatim and give its locator. Do not paraphrase.
-NOT_VERIFIED: every claim you made that is not supported by a
-  quoted source above. List it even if you believe it is true.
-WOULD_CHANGE: what fact, if different, would change your answer.
-
-If you cannot quote a source verbatim, write NO SOURCE RETRIEVED
-for that item. Do not reconstruct a citation from memory.</div>
-
-  <p><strong>Why the last instruction carries the weight.</strong> The failure mode is not a model that refuses to answer. It is one that produces a plausible citation having retrieved nothing, because producing plausible text is what it does. NO SOURCE RETRIEVED gives it a licensed output for that state. Whether a model honours it is empirical &mdash; which is why the block ends with something you can test rather than a promise you must trust.</p>
-</section>
-
-<!-- ============ 9 ============ -->
-
-
-<!-- ============ 10 ============ -->
-<section class="slide" id="s10" data-nav="Pairings">
-  <div class="eyebrow"><span>12</span><span class="mins">3 min</span></div>
-  <h2>Part 1 Relay and the Part 2 Pairing Draw</h2>
-  <p class="big">Packages arrived Sunday night. They have been read, graded as received, and screened. Pairings are drawn now, in the room, and you will open yours in the next section.</p>
-
+  <h3 style="margin-top:30px">Three claims that have gone stale</h3>
   <table>
-    <thead><tr><th>When</th><th>Who</th><th>What</th></tr></thead>
+    <thead><tr><th>Wolfram, February 2023</th><th>August 2026</th><th>Consequence</th></tr></thead>
     <tbody>
-      <tr><td>Sunday night</td><td>You</td><td>One email to the instructor. All required files attached. Body reads only "See attached."</td></tr>
-      <tr><td>Before tonight</td><td>Instructor</td><td>Grade the handoff package as received. Screen every attachment for real client data.</td></tr>
-      <tr><td>Now</td><td>Instructor</td><td>Draw the pairing and forward the original email unaltered to the assigned classmate.</td></tr>
-      <tr><td>Next 10 minutes</td><td>You</td><td>Open it cold and try to run it. The builder is in the room and may not help.</td></tr>
+      <tr><td>175 billion weights, and every token &ldquo;has to do a calculation involving every single one of these weights.&rdquo;</td><td>Kimi K3 runs 2.8 trillion total parameters with 104 billion active per token &mdash; a mixture-of-experts design activating roughly 3.7%. DeepSeek V4-Flash: 284B total, 13B active.<span class="conf h">H</span></td><td>Parameter count no longer predicts cost or latency. Frontier closed models have stopped publishing it.</td></tr>
+      <tr><td>&ldquo;ChatGPT doesn&rsquo;t internally have loops or recompute on data&hellip; each computational element is used only once.&rdquo;</td><td>Reasoning models spend variable output tokens before answering; Artificial Analysis reports tokens and turns per task as first-class metrics. Grok 4.6 finishes long-horizon work in ~53 turns against Opus 5&rsquo;s ~103.<span class="conf h">H</span></td><td>The outer loop Wolfram called absent is now the main cost driver and the main quality dial. It is also why the sticker price understates cost per task in &sect;03.</td></tr>
+      <tr><td>&ldquo;A temperature of 0.8 seems best,&rdquo; as the primary randomness control.</td><td>Vendors now expose effort or reasoning level &mdash; low, high, max &mdash; as the principal control, and several do not expose temperature in the consumer product.<span class="conf m">M</span></td><td>The dial taught in Session 2 may not exist in the interface a student is using.</td></tr>
     </tbody>
   </table>
+  <p class="srcnote">Left column from Wolfram (2023), assigned for Sessions 1&ndash;3. Right from Artificial Analysis Intelligence Index v4.1 and vendor model cards, August 2026. Row three is medium confidence: it characterises a moving interface, not a published fact. The point is not that Wolfram was wrong &mdash; it is that a source can be correct, canonical, three years old and stale in specific load-bearing places at once, and you find out which only by checking. That is the same instruction you will write into your firm policy tonight, applied to the syllabus you were handed.</p>
 
-  <p><strong>Forwarded intact, not repackaged.</strong> Part 2 grades a failed handoff against the builder, not the presenter. That attribution only holds if you receive exactly what the builder sent. If I strip the email and pass on files, a mislabelled attachment becomes ambiguous &mdash; my curation, or their defect. The email goes on whole, and the 15% still scores whether the package stands alone with no one in the room to explain it.</p>
-
-  <p><strong>The draw.</strong> Pairing is a derangement: nobody reviews their own package, and no two students review each other. Reciprocal pairs could negotiate a mutual assessment; a single cycle across the class cannot, because your reviewer is not your subject.</p>
-
-  <div class="diag">
-    <div class="row"><button class="btn" id="drawBtn">Draw a pairing</button><button class="btn ghost mini" id="drawReset">Reset</button></div>
-    <div class="diagout" id="drawOut"><span class="nil">No draw yet.</span></div>
-  </div>
+  <div class="talk"><span class="th">The question to put to the room</span>Every citation in your Part 1 package has a date. Which of them is the oldest, and what would have to have changed in the world for it to be wrong now? You have four minutes and you may not open the document to answer.</div>
 </section>
 
-<section class="slide" id="sCR" data-nav="Cold first run">
-  <div class="eyebrow"><span>13</span><span class="mins">10 min</span></div>
-  <h2>Cold First Run of the Package You Were Just Assigned</h2>
-  <p class="big">Open it now. Attempt to run it from the documentation alone. The builder is sitting in this room and may not help you, and you may not ask.</p>
-
-  <p>This is the scalability criterion tested in the room rather than argued about in a presentation. Part 1 defines scalable as two things: the workflow works for the next twenty clients, and another advisor can run it without you present. The second half has never actually been tested until now, and it is worth 30% of Part 1.</p>
-
-  <p><strong>Eight minutes on the clock. Then two minutes recording where you stopped.</strong> Getting stuck is the expected outcome and is the useful data. Do not fix anything, do not improve anything, and do not tell the builder what went wrong yet &mdash; that is the Session 5 presentation. Record it.</p>
-
-  <div class="diag">
-    <h4 style="margin-bottom:4px">Stuck log</h4>
-    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">Tick the first thing that stopped you, and only the first. If several applied, the earliest one is the finding.</p>
-    <div id="stuckList"></div>
-    <textarea id="stuckNote" placeholder="One sentence: what were you trying to do at the moment you stopped?" style="margin-top:14px"></textarea>
-    <div class="diagout" id="stuckOut"><span class="nil">Nothing recorded yet.</span></div>
-  </div>
-
-  <p class="srcnote"><strong>Builders: what to do with your hands.</strong> You will watch someone fail to run your workflow and you will want to intervene. Do not. Write down what you see them try that you did not anticipate &mdash; that list is the most valuable page of your Part 2 response, and you can only collect it once, tonight, before they have worked around the problem and forgotten it happened.</p>
-
-  <p><strong>If it ran.</strong> Some will. Note the elapsed time and what you did not have to ask about, then run it a second time against a different input than the one the documentation used. Working on the builder's example and working on the next twenty clients are different claims, and only one of them is the criterion.</p>
-</section>
-
-<section class="slide" id="sD" data-nav="Discussion">
-  <div class="eyebrow"><span>14</span><span class="mins">20 min</span></div>
+<section class="slide apx" id="sD" data-nav="D4 · Discussion" data-insert-after="sCR" data-tier="standard">
+  <div class="eyebrow"><span>Appendix D4 &middot; Discussion</span><span class="mins">20 min</span></div>
+  <div class="apxback">Insert between §10 Cold first run and §11 Policy homework &mdash; <a href="#sCR">back to that point</a></div>
   <h2>Discussion: Whether the Logging Burden Costs More Than the Tool Saves</h2>
   <p class="big">You have just watched a workflow fail to run for someone else, and you have just priced verification against your own baseline. The question is whether the compliance apparatus this session specifies leaves any of the saving intact.</p>
 
@@ -744,33 +826,6 @@ for that item. Do not reconstruct a citation from memory.</div>
   <p class="srcnote"><strong>A zero delta is a finding, not a failure.</strong> Report it aloud. A position that holds under new evidence is the same epistemic move this course asks students to make about model output, and it is worth naming when it happens rather than treating the discussion as having underperformed.</p>
 </section>
 
-<section class="slide" id="s9" data-nav="Policy homework">
-  <div class="eyebrow"><span>15</span><span class="mins">6 min</span></div>
-  <h2>Homework: The Firm Artificial Intelligence Use Policy</h2>
-  <p class="big">Draft an AI usage policy for your firm, due before Session 5. This is the last instruction you receive before writing it, so every question the assignment asks was answered somewhere tonight.</p>
-
-  <p>Click each rubric question to see which section answers it and what you may cite. Structured bullets, two pages maximum.</p>
-
-  <div class="diag">
-    <div id="rubricChips" class="chiplist"></div>
-    <div class="diagout" id="rubricOut"><span class="nil">Select a rubric question.</span></div>
-  </div>
-
-  <p><strong>Use the Cole landmines as your worked example.</strong> Your data-boundary section needs one concrete illustration, and the three you classified in Section 03 &mdash; an undisclosed sale, an unexecuted plan with a claimed discount, and the fact of the relationship &mdash; are already reasoned through with the regulation applied. Substitute your own synthetic facts before the policy leaves your desk.</p>
-
-  <p class="srcnote"><strong>One warning carried forward from Section 03.</strong> The assignment asks you to define PII. Regulation S-P governs NPI. Define both, state which one your firm's obligations actually run to, and you have turned a terminology collision into the strongest paragraph in the document.</p>
-
-  <h3 style="margin-top:30px">Peer review, before Session 5 and not tonight</h3>
-  <p>Exchange drafts with one classmate &mdash; not your Part 2 pair &mdash; and score theirs on four tests. Bring the score to Session 5. The instrument is deliberately hostile: a policy that cannot survive four questions from a friendly reader will not survive one from an examiner.</p>
-
-  <div class="diag">
-    <div id="peerRows"></div>
-    <div class="diagout" id="peerOut"><span class="nil">No scores entered.</span></div>
-  </div>
-
-  <p class="pull">The tools change. The judgement does not.</p>
-</section>
-
 <footer>
   <div class="wrap" style="padding:0">
     <h3 style="margin-bottom:14px">Sources</h3>
@@ -800,6 +855,7 @@ secs.forEach(function(s){var b=document.createElement('button');
   b.innerHTML='<span class="pip"></span><span class="lbl">'+esc(s.dataset.nav)+'</span>';
   b.onclick=function(){s.scrollIntoView()};rail.appendChild(b)});
 var pips=[].slice.call(rail.querySelectorAll('button'));
+secs.forEach(function(s,i){if(pips[i]&&(s.classList.contains('apx')||s.classList.contains('apxdiv')))pips[i].classList.add('apxnav')});
 if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
     var i=secs.indexOf(e.target);pips.forEach(function(p,j){p.classList.toggle('on',j===i)})}})},
@@ -1943,6 +1999,30 @@ var PEER=[
   rst.onclick=function(){draws=0;out.innerHTML='<span class="nil">No draw yet.</span>';out.className='diagout'};
 })();
 
+})();
+</script>
+
+<script>
+/* ===== pacing readout: core vs appendix, computed from the minute chips ===== */
+(function(){
+  var host=document.getElementById('paceOut'); if(!host) return;
+  var chip='.mins,.clock';
+  var secs=[].slice.call(document.querySelectorAll('section.slide'));
+  function mins(s){var m=s.querySelector(chip);if(!m)return 0;var v=parseInt(m.textContent,10);return isNaN(v)?0:v}
+  var core=0,apx=0,nc=0,na=0;
+  secs.forEach(function(s){
+    if(s.classList.contains('apxdiv'))return;
+    if(s.classList.contains('apx')){apx+=mins(s);na++}else{core+=mins(s);nc++}
+  });
+  host.innerHTML=
+    '<div class="pgrid">'+
+      '<div class="pcell"><b>'+core+' min</b><span>'+nc+' core sections</span></div>'+
+      '<div class="pcell"><b>'+apx+' min</b><span>'+na+' appendix sections</span></div>'+
+      '<div class="pcell"><b>'+(core+apx)+' min</b><span>everything</span></div>'+
+    '</div>'+
+    '<p>The core runs in about '+core+' minutes and is what always gets taught. In a full '+
+    'block, take appendix sections in place at the gold links; in a short one, skip them and '+
+    'the session still closes properly. Appendix sections are also readable alone afterwards.</p>';
 })();
 </script>
 </body>

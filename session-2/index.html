@@ -180,6 +180,30 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
 footer ol{padding-left:20px}
 footer li{margin-bottom:11px;line-height:1.55}
 @media print{#rail,#prog{display:none}body{background:#fff}.slide{page-break-inside:avoid;padding:22px 0}}
+/* ===== CORE / APPENDIX ARCHITECTURE ===== */
+a.apxlink{display:block;background:var(--gold-bg);border:1.5px dashed var(--gold);border-radius:10px;padding:12px 16px;margin:22px 0 0;text-decoration:none;color:inherit;transition:.15s}
+a.apxlink:hover{border-style:solid}
+a.apxlink+a.apxlink{margin-top:9px}
+a.apxlink .al{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px;font-weight:500}
+a.apxlink b{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:15.5px;font-weight:600;letter-spacing:-.015em}
+a.apxlink .aw{display:block;color:var(--muted);font-size:14px;line-height:1.45;margin-top:3px;font-family:"Source Serif 4",Georgia,serif;text-transform:none;letter-spacing:0}
+section.apxdiv{border-top:3px solid var(--gold)}
+section.apx .apxback{background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:9px 14px;margin:0 0 18px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.05em;line-height:1.6;color:var(--gold)}
+section.apx .apxback a{color:var(--gold);font-weight:500}
+.apxgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:11px;margin-top:20px}
+a.apxcard{display:block;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;transition:.15s}
+a.apxcard:hover{border-color:var(--gold);box-shadow:0 3px 14px rgba(138,106,18,.10)}
+a.apxcard .ac{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
+a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:15px;font-weight:600;letter-spacing:-.015em;margin-top:4px;line-height:1.2}
+#rail button.apxnav .pip{background:var(--gold);opacity:.5}
+#rail button.apxnav{color:var(--gold)}
+#rail button.apxnav.on .pip{background:var(--gold);opacity:1}
+@media print{a.apxlink{display:none}}
+.pace{border-color:var(--gold)!important;background:var(--gold-bg)}
+.pace .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:4px}
+.pace .pcell b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--gold)}
+.pace .pcell span{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+.pace p{margin:13px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted);max-width:70ch}
 </style>
 </head>
 <body>
@@ -193,9 +217,11 @@ footer li{margin-bottom:11px;line-height:1.55}
 
 <!-- ============ 0 ============ -->
 <section class="slide" id="s0" data-nav="Session map">
-  <div class="eyebrow"><span>BUS ADM X433.4 · Session 2</span><span class="clock">150 minutes</span></div>
+  <div class="eyebrow"><span>BUS ADM X433.4 · Session 2</span><span class="clock">6 min</span></div>
   <h1>Practical AI Usage in Daily Advisory Workflows</h1>
   <p class="lede">The model samples a plausible answer. It does not compute the true one. Everything in this session follows from that one sentence.</p>
+  <div class="panel pace"><span class="plab">How this session is paced</span><div id="paceOut"></div></div>
+
 
   <h3>Retrieval bridge &mdash; Session 1 mechanism</h3>
   <p>Fourteen days have passed since Session 1. Four questions, ungraded, no notes. Answer each in the box before anything is revealed. Getting one wrong is worth more to you than getting it right, provided you commit to an answer first.</p>
@@ -257,76 +283,14 @@ footer li{margin-bottom:11px;line-height:1.55}
     <p><strong>Open the AI tool you subscribed to, in a new tab, now.</strong> Every section below has something to run. You will finish this session with a baseline measurement, a rewritten prompt, a partner's review of your work, and Part 1 assigned.</p>
     <p><strong>Open your submitted Prompt Engineering homework as well</strong> &mdash; all three templates, your cited techniques, and your discernment statement. You will need the exact text in section 6b.</p>
   </div>
+
+
+  <a class="apxlink" href="#s1"><span class="al">If there is time &middot; Appendix B1 &middot; 10 min</span><b>Next-Token Probabilities for a Single Prompt</b><span class="aw">The distribution behind one prompt, drawn from repeatedly. Session 1 established the mechanism; this is the second worked example, and a room that already believes it does not need it.</span></a>
+  <a class="apxlink" href="#s2"><span class="al">If there is time &middot; Appendix B2 &middot; 8 min</span><b>Laplace on Probability as a Measure of Ignorance</b><span class="aw">The 1814 argument that probability describes what the observer does not know rather than what the world does. Reframes everything after it, and costs eight minutes.</span></a>
 </section>
 
-<!-- ============ 1 ============ -->
-<section class="slide" id="s1" data-nav="Next token">
-  <div class="eyebrow"><span>01 · Mechanism</span><span class="clock">9 min</span></div>
-  <h2>Next-Token Probabilities for a Single Prompt</h2>
-  <p class="big">Wolfram's description of the mechanism is one sentence long: the model asks, over and over, &ldquo;given the text so far, what should the next word be?&rdquo; and each time adds a word. There is no separate step where it checks whether the sentence is true.</p>
-
-  <p>Take his example prompt. At each position the model produces a ranked list of candidate continuations with probabilities attached. Click a bar to select that continuation and watch the distribution recompute for the next position. Try running it twice: once always taking the top bar, once taking the second or third.</p>
-
-  <div class="panel">
-    <span class="plab">Prompt</span>
-    <div class="streamline" id="strm"></div>
-    <div class="pbars" id="pbars"></div>
-    <div class="row" style="margin-top:20px">
-      <button class="btn ghost mini" id="topBtn">Always take the top bar</button>
-      <button class="btn ghost mini" id="sampBtn">Sample by probability</button>
-      <button class="btn sel mini" id="resetBtn">Reset</button>
-      <span class="mono dim" style="font-size:12px" id="stepCount"></span>
-    </div>
-  </div>
-
-  <div class="chart">
-    <div class="ctitle">Probability of the nth-ranked candidate token, first position</div>
-    <div class="csub">Wolfram reports that the fall-off across ranked candidates follows an n&#8315;&#185; power law &mdash; the straight line on a log-log plot that he notes is characteristic of the general statistics of language. Rank 1 holds a large share; by rank 20 the candidates are individually negligible but collectively substantial.</div>
-    <svg viewBox="0 0 700 250" role="img" aria-label="Power law decay of candidate token probability by rank"><g id="powerChart"></g></svg>
-    <div class="csrc">Source: Wolfram, S. (2023), &ldquo;It's Just Adding One Word at a Time.&rdquo; Curve shape is as reported (n&#8315;&#185; decay) <span class="conf h">H</span>. Individual token labels above are illustrative, not extracted from the published figure <span class="conf l">L</span>.</div>
-  </div>
-
-  <h3>What this rules out</h3>
-  <p>A planner reading an AI answer to a tax question is not reading a lookup result. They are reading a sequence in which each word was chosen because it was a probable continuation of the words before it. A correct citation and a fabricated citation are both probable continuations. Nothing in the mechanism distinguishes them.</p>
-
-  <div class="doit">
-    <span class="plab">Run it &mdash; 3 minutes</span>
-    <p>In your AI tool, send exactly this and nothing else: <span class="mono">The best thing about AI is its ability to</span></p>
-    <p>Send it three separate times, in three separate chats. Compare the three openings. We will come back to what you got in section 3.</p>
-  </div>
-</section>
-
-<!-- ============ 2 ============ -->
-<section class="slide" id="s2" data-nav="Laplace">
-  <div class="eyebrow"><span>02 · Foundation</span><span class="clock">6 min</span></div>
-  <h2>Laplace on Probability as a Measure of Ignorance</h2>
-  <p class="big">In 1814 Laplace proposed an intellect that knew every force and every position in nature. For such an intellect, he wrote, nothing would be uncertain; the future, like the past, would be present to its eyes. Probability, on his account, is not a property of the world. It is a property of the observer's incomplete information.</p>
-
-  <p>That distinction is the whole session. A client's 2025 return either does or does not permit a particular treatment. There is a fact. When the model gives you a probability distribution over answers, it is not reporting uncertainty in the tax code. It is reporting uncertainty about which continuation a human writer would have produced. Those are different objects, and the second one is not evidence about the first.</p>
-
-  <div class="panel">
-    <span class="plab">Two objects, side by side</span>
-    <div class="ctrls" style="margin:0 0 18px">
-      <label class="tg" id="tgWorld"><input type="checkbox" id="cbWorld"><span class="track"><span class="knob"></span></span><span><span class="tl">Show the tax question</span><span class="td">What the authority actually provides</span></span></label>
-      <label class="tg" id="tgModel"><input type="checkbox" id="cbModel"><span class="track"><span class="knob"></span></span><span><span class="tl">Show the model's answer</span><span class="td">A distribution over plausible continuations</span></span></label>
-    </div>
-    <div class="out" id="lapOut"></div>
-  </div>
-
-  <p class="pull">Confidence in the output is not evidence about the world. It is evidence about the training data.</p>
-
-  <h3>The practical consequence</h3>
-  <p>Laplace's framing gives you the verification rule for the rest of the course. If probability is a statement about what the observer does not know, then reducing your own ignorance &mdash; opening the Code section, pulling the actual return, checking the effective date &mdash; is the only operation that changes the answer's reliability. Asking the model again, asking it more confidently, or asking it to double-check itself does not. Those operations resample the same distribution.</p>
-
-  <div class="doit">
-    <span class="plab">Discussion &mdash; 4 minutes</span>
-    <p>Name one task in your practice where you have accepted an AI output without opening the underlying source. What made you accept it? Speed, plausibility, matching what you already believed, or the fact that it cited something?</p>
-  </div>
-</section>
-
-<!-- ============ 3 ============ -->
 <section class="slide" id="s3" data-nav="Temperature">
-  <div class="eyebrow"><span>03 · Mechanism</span><span class="clock">9 min</span></div>
+  <div class="eyebrow"><span>01 &middot; Mechanism</span><span class="clock">6 min</span></div>
   <h2>Temperature and Output Variance</h2>
 
   <div class="panel" style="background:var(--gold-bg);border-color:#DFD3AF">
@@ -367,43 +331,13 @@ footer li{margin-bottom:11px;line-height:1.55}
     <p>Pull up the three responses you generated in section 1. How different are they? Now ask one person to read the first sentence of each of their three aloud.</p>
     <p>Then run this, which constrains the output space rather than the sampler: <span class="mono">Answer in exactly one sentence, in the form &ldquo;The best thing about AI is its ability to X.&rdquo; Choose X from: reason, retrieve, summarise, generate. Output nothing else.</span> Run it three times. Note how much of the variance disappeared and where it went.</p>
   </div>
+
+
+  <a class="apxlink" href="#s4"><span class="al">If there is time &middot; Appendix B3 &middot; 10 min</span><b>Sampling Failure on a Task That Requires Counting</b><span class="aw">Watch sampling break on a task with one right answer. If Session 1 Appendix A4 already ran, this is the same point on different material.</span></a>
 </section>
 
-<!-- ============ 4 ============ -->
-<section class="slide" id="s4" data-nav="Counting failure">
-  <div class="eyebrow"><span>04 · Failure mode</span><span class="clock">6 min</span></div>
-  <h2>Sampling Failure on a Task That Requires Counting</h2>
-  <p class="big">Wolfram trained a small transformer on a language with exactly one rule: parentheses must balance. The rule is simpler than any tax provision. The network still fails, and it fails in a specific and instructive way.</p>
-
-  <p>After roughly 400,000 trained weights, he reports, the network assigns about a 15 percent probability to a closing parenthesis in a position where closing would necessarily leave the sequence unbalanced. It is not confused about the rule in general. It is unable to hold a running count, because a feed-forward pass has no loop in which to keep one. He notes that even the full production model has a hard time matching parentheses in long sequences.</p>
-
-  <div class="panel">
-    <span class="plab">Extend the sequence &mdash; click a token to append it</span>
-    <div class="streamline" id="parenStream"></div>
-    <div class="pbars" id="parenBars"></div>
-    <div class="out" id="parenVerdict" style="margin-top:18px"></div>
-    <div class="row" style="margin-top:16px">
-      <button class="btn sel mini" id="parenReset">Reset</button>
-      <span class="mono dim" style="font-size:12px">Open count is tracked below the predictor, not by it.</span>
-    </div>
-  </div>
-
-  <div class="chart">
-    <div class="ctitle">Two kinds of task, one architecture</div>
-    <div class="csub">Tasks a human solves at a glance are the ones the network handles. Tasks requiring an explicit procedure carried across steps are the ones it approximates and then drops.</div>
-    <svg viewBox="0 0 700 210" role="img" aria-label="Comparison of pattern tasks and procedural tasks"><g id="shallowChart"></g></svg>
-    <div class="csrc">Source: Wolfram, S. (2023), &ldquo;What Really Lets ChatGPT Work?&rdquo; and the parenthesis-language section. Characterisation as reported <span class="conf h">H</span>.</div>
-  </div>
-
-  <h3>The mapping to your work</h3>
-  <p>Confirming that a cited authority exists is a lookup against an index. Confirming that it says what the sentence claims is a comparison against a text. Confirming that it still says that is a check against an effective date. None of the three is a continuation task, and the architecture that writes the sentence is not the architecture that performs any of them. This is why grounding, retrieval, and your own eyes on the source are separate additions and not properties the model has.</p>
-
-  <p class="pull">The model is not bad at counting because it is undertrained. It is bad at counting because counting is not what it does.</p>
-</section>
-
-<!-- ============ 5 ============ -->
 <section class="slide" id="s5" data-nav="Cost frontier">
-  <div class="eyebrow"><span>05 · Economics</span><span class="clock">10 min</span></div>
+  <div class="eyebrow"><span>02 &middot; Economics</span><span class="clock">6 min</span></div>
   <h2>Cost Per Task Versus Cost Per Token</h2>
   <p class="big">Every tier comparison you have seen quoted in dollars per million tokens is measuring the wrong thing. Two models at the same token price can differ threefold in what a finished piece of work costs, because they differ in how many tokens they burn to get there.</p>
 
@@ -457,9 +391,8 @@ footer li{margin-bottom:11px;line-height:1.55}
   </div>
 </section>
 
-<!-- ============ 6 ============ -->
 <section class="slide" id="s6" data-nav="P·T·C·F">
-  <div class="eyebrow"><span>06 · Framework</span><span class="clock">11 min</span></div>
+  <div class="eyebrow"><span>03 &middot; Framework</span><span class="clock">6 min</span></div>
   <h2>Persona, Task, Context, Format</h2>
   <p class="big">Google's prompting guide organises a prompt into four components. The framework is sound and worth adopting. The empirical literature also says that one of the four letters does far less work than the way it is usually taught implies, and knowing which one changes how you spend your effort.</p>
 
@@ -513,10 +446,8 @@ footer li{margin-bottom:11px;line-height:1.55}
   </div>
 </section>
 
-
-<!-- ============ 6b ============ -->
 <section class="slide" id="s6b" data-nav="Your prompts">
-  <div class="eyebrow"><span>06b · Workshop</span><span class="clock">10 min</span></div>
+  <div class="eyebrow"><span>04 &middot; Workshop</span><span class="clock">8 min</span></div>
   <h2>Scoring Your Submitted Prompts Against P.T.C.F</h2>
   <p class="big">You wrote three prompt templates and submitted them before this session. You had not been taught a prompting framework when you wrote them. That was deliberate.</p>
 
@@ -562,9 +493,8 @@ footer li{margin-bottom:11px;line-height:1.55}
   </div>
 </section>
 
-<!-- ============ 7 ============ -->
 <section class="slide" id="s7" data-nav="Triage">
-  <div class="eyebrow"><span>07 · Diagnostic</span><span class="clock">8 min</span></div>
+  <div class="eyebrow"><span>05 &middot; Diagnostic</span><span class="clock">6 min</span></div>
   <h2>Prompt Specification Triage</h2>
   <p class="big">Three categories, not two. A prompt can be underspecified. It can be fully specified and still produce output nobody can check. Or it can be specified in a way that makes checking possible. Only the third is usable in a fiduciary practice.</p>
 
@@ -584,9 +514,8 @@ footer li{margin-bottom:11px;line-height:1.55}
   </div>
 </section>
 
-<!-- ============ 8 ============ -->
 <section class="slide" id="s8" data-nav="Interview rewrite">
-  <div class="eyebrow"><span>08 · Technique</span><span class="clock">9 min</span></div>
+  <div class="eyebrow"><span>06 &middot; Technique</span><span class="clock">7 min</span></div>
   <h2>The Interview Rewrite</h2>
   <p class="big">Wolfram makes an observation that most prompting advice skips: you can tell the model something once, as part of the prompt, and it will use it. The prompt is not a request. It is the entire evidentiary record available to the model at the moment it answers.</p>
 
@@ -633,42 +562,13 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <p>Take the prompt you just diagnosed. Wrap it in the interview block above and send it. Count the questions the model asks you. Then answer the three that you would not have thought to specify.</p>
     <p>Report to the room: how many questions, and which one you did not see coming.</p>
   </div>
+
+
+  <a class="apxlink" href="#s9"><span class="al">If there is time &middot; Appendix B4 &middot; 10 min</span><b>The Seven-Step Process and the Delegation Line</b><span class="aw">Where in a seven-step workflow the model may act and where it may only draft. Useful to a room that delegates; skippable for a room still learning to prompt.</span></a>
 </section>
 
-<!-- ============ 9 ============ -->
-<section class="slide" id="s9" data-nav="Seven steps">
-  <div class="eyebrow"><span>09 · Application</span><span class="clock">11 min</span></div>
-  <h2>The Seven-Step Process and the Delegation Line</h2>
-  <p class="big">The CFP Board's seven-step financial planning process is the structure your duty of care attaches to. Not every step is the same kind of work, and the steps that look most similar on paper have the least in common when you ask what a sampler could contribute.</p>
-
-  <p>Sort each step. Click a step, then click a column. Change your mind as often as you like. The instructor key appears when all seven are placed, and you are expected to argue with it.</p>
-
-  <div class="panel">
-    <div id="sortBoard"></div>
-    <div class="row" style="margin-top:20px">
-      <button class="btn sel mini" id="sortReset">Reset</button>
-      <button class="btn ghost mini" id="sortKey" disabled>Reveal instructor key</button>
-      <span class="mono dim" style="font-size:12px" id="sortCount"></span>
-    </div>
-    <div id="sortKeyOut" style="margin-top:20px"></div>
-  </div>
-
-  <div class="chart">
-    <div class="ctitle">Advisor adoption of AI tools against reliance on AI-generated recommendations</div>
-    <div class="csub">The profession has already drawn a line, whether or not any individual firm has written it down. Adoption of drafting and capture tools is over half. Reliance on the model's recommendation is close to zero.</div>
-    <svg viewBox="0 0 700 250" role="img" aria-label="Bar chart of advisor AI adoption versus reliance"><g id="adoptChart"></g></svg>
-    <div class="csrc">Sources: T3 / Inside Information Software Survey 2026, n=2,906 advisors, 95% at fee-only RIA or dually registered firms &mdash; 52.2% using AI search and generative language, 42.9% using AI notetaking <span class="conf h">H</span>. Reliance figure reported via Advisor360 and Kitces Research through a secondary aggregator; treat as directional <span class="conf m">M</span>. Kitces Research on Advisor Productivity: approximately one hour of note, summary and follow-up work per two-hour client meeting <span class="conf h">H</span>.</div>
-  </div>
-
-  <h3>Why steps 2 and 4 sit apart</h3>
-  <p>Step 2 is the elicitation of what a client actually wants, which is frequently not what they first say they want. Step 4 is the exercise of professional judgment that your registration, your credential and your liability all attach to. A model can draft language for either. It cannot perform either, and a workflow that quietly lets it is the failure mode this course exists to prevent.</p>
-
-  <p>Steps 3 and 7 are the opposite case. Analysing alternative courses of action and monitoring for drift are both high-volume, structured, and verifiable against a source. They are where the measurable time recovery lives.</p>
-</section>
-
-<!-- ============ 10 ============ -->
 <section class="slide" id="s10" data-nav="Citations">
-  <div class="eyebrow"><span>10 · Verification</span><span class="clock">13 min</span></div>
+  <div class="eyebrow"><span>07 &middot; Verification</span><span class="clock">9 min</span></div>
   <h2>Citation Failure Types on the Cole IDGT Transaction</h2>
   <p class="big">There is a base rate for this, and it is not small. General-purpose models tested on verifiable legal questions hallucinated on between 58 and 88 percent of them. Purpose-built retrieval-grounded research products from LexisNexis and Thomson Reuters &mdash; sold on the claim that retrieval eliminates the problem &mdash; hallucinated on between 17 and 33 percent.</p>
 
@@ -721,9 +621,8 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   </div>
 </section>
 
-<!-- ============ 11 ============ -->
 <section class="slide" id="s11" data-nav="Template audit">
-  <div class="eyebrow"><span>11 · Workshop</span><span class="clock">10 min</span></div>
+  <div class="eyebrow"><span>08 &middot; Workshop</span><span class="clock">6 min</span></div>
   <h2>Template Audit and Structured Peer Review</h2>
   <p class="big">Section 6b rebuilt one of your prompts. This section tests whether it is a <em>template</em> — something a second person can run — rather than a prompt that happens to work in your hands.</p>
 
@@ -755,12 +654,212 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <span class="plab">Report back &mdash; 3 minutes</span>
     <p>One sentence each: the single change that would most improve the template you reviewed. Give it to its author, not to the room.</p>
   </div>
+
+
+  <a class="apxlink" href="#s12d"><span class="al">If there is time &middot; Appendix B5 &middot; 20 min</span><b>Specification Cost Against Task Cost</b><span class="aw">Four phases, position through re-vote. Twenty minutes and a room willing to change its mind on the record.</span></a>
 </section>
 
+<section class="slide" id="s12" data-nav="Final project">
+  <div class="eyebrow"><span>09 &middot; Assignment</span><span class="clock">7 min</span></div>
+  <h2>Final Project Part 1 and Baseline Capture</h2>
+  <p class="big">Part 1 is assigned now. It is 70% of the final project grade, and the final project is 50% of the course grade &mdash; so this single deliverable is 35% of what you leave with.</p>
 
-<!-- ============ 12 discussion ============ -->
-<section class="slide" id="s12d" data-nav="Discussion">
-  <div class="eyebrow"><span>12 · Discussion</span><span class="clock">20 min</span></div>
+  <div class="cards">
+    <div class="card"><span class="num">What it is</span><h4>A scalable AI-enabled workflow for a recurring task in your own practice</h4><p>Scalable means two things and both are graded: it works for the next twenty clients rather than the one you built it on, and another advisor can run it without you in the room.</p></div>
+    <div class="card warn"><span class="num">Revised due date</span><h4>Sunday 27 September 2026, 11:59 PM</h4><p>The night before Session 4, not the end of it. The deadline moved earlier so that packages can be screened and distributed <em>in</em> Session 4, which gives your recipient seven days instead of three.</p></div>
+    <div class="card"><span class="num">The handoff</span><h4>A single email, body reading only &ldquo;See attached&rdquo;</h4><p>No context in the email. No explanation in the covering note. Everything a classmate needs lives inside the attachments, because that is the test.</p></div>
+    <div class="card warn"><span class="num">Two absolute rules</span><h4>Transcript to instructor only. No client data anywhere.</h4><p>The build transcript goes to me and never to your classmate. No real client information appears in the workflow, the package, or the transcript. A transcript containing client nonpublic personal information is both an integrity violation and the exact exposure this course exists to prevent.</p></div>
+  </div>
+
+  <p>The single most common way this project loses marks is a missing or invented baseline, so we capture yours before you leave the room. The Session 1 baseline is a required component of the submission and it is graded against in Session 5.</p>
+
+  <div class="panel">
+    <span class="plab">Baseline capture &mdash; complete this now</span>
+    <p style="margin-top:0;font-size:15.5px">Name the recurring task your workflow will address, and record how long it takes you today, unassisted. Estimate honestly; you will be comparing against it in Session 5 and an inflated baseline is visible to a reader.</p>
+    <div class="ctrls" style="grid-template-columns:1fr">
+      <div><label class="plab" for="taskName">The recurring task</label><input type="text" id="taskName" placeholder="e.g. Preparing a pre-meeting brief from a new prospect's statements"></div>
+    </div>
+    <div class="ctrls" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:0">
+      <div><label class="plab" for="baseMin">Minutes per occurrence, today</label><input type="text" id="baseMin" value="45" inputmode="numeric"></div>
+      <div><label class="plab" for="baseFreq">Occurrences per month</label><input type="text" id="baseFreq" value="12" inputmode="numeric"></div>
+      <div><label class="plab" for="baseRate">Your loaded hourly rate ($)</label><input type="text" id="baseRate" value="150" inputmode="numeric"></div>
+    </div>
+    <div class="out has" id="baseOut" style="margin-top:18px"></div>
+    <div class="row" style="margin-top:14px">
+      <button class="btn mini" id="baseCopy">Copy baseline record</button>
+      <span class="mono dim" style="font-size:12px">Paste this into your project notes. It is a required element of the Part 1 submission.</span>
+    </div>
+  </div>
+
+  <h3>Part 1 deliverable checklist</h3>
+  <p>Seven required elements. Tick what you have planned for; the ones left unticked are what you will be missing on 27 September.</p>
+
+  <div class="panel">
+    <div id="checklist"></div>
+    <div class="out" id="checkOut" style="margin-top:18px"></div>
+  </div>
+
+  <h3>Due before Session 3</h3>
+  <p>A first draft of Part 1: the target task, your model and tier choice with the reason, and your initial prompts. Section 5 is where the tier reason comes from. Section 13 is where the target task comes from. Section 6b produced at least one of the initial prompts. You have all three already.</p>
+
+  <div class="doit">
+    <span class="plab">Reading for Session 3</span>
+    <p>Wolfram &mdash; &ldquo;The Concept of Embeddings&rdquo; and the opening of &ldquo;Meaning Space.&rdquo; Kitces (January 2025) on AI notetaker adoption and satisfaction. Iskowitz (July 2025) on notetakers and compliance.</p>
+  </div>
+
+  <h3>What Session 3 does that this session could not</h3>
+  <p class="big">Everything in this file has treated the model as a closed system. You improved the output by improving the prompt, because the prompt was the only channel available. Section 8 made that explicit: the model cannot see the Cole file, so what you type is the entire evidentiary record.</p>
+
+  <p>Session 3 opens that channel. Grounding lets the model read the actual documents &mdash; the 2011 wills, the 2014 buy-sell, the 2023 appraisal, the unexecuted trust instrument &mdash; and cite the passages it used. That solves the problem this session could only work around, and it introduces a failure this session could not produce: an answer that is fully sourced, correctly attributed to a real document in your own corpus, and materially wrong, because the passage retrieved was the nearest one rather than the right one.</p>
+
+  <p>The Cole document set is the corpus. The question that follows you into it is the one section 10 left open: does a 2023 appraisal still support a 31% discount, and which document in the folder actually says so.</p>
+</section>
+
+<section class="slide apxdiv" id="apx" data-nav="— APPENDIX —">
+  <div class="eyebrow"><span>Appendix &middot; 5 optional sections</span><span class="clock">58 min</span></div>
+  <h2>Appendix</h2>
+  <p class="lede">Five optional sections. The mechanism sections deepen Session 1; the discussion needs twenty uninterrupted minutes.</p>
+  <p>The 10 sections above are the core session and run in about 67 minutes. Everything below is optional depth. Each appendix section names the two core sections it belongs between and links back to that point, so it can be taken in place during a long session or on its own afterwards. Nothing in the core depends on anything down here.</p>
+  <div class="apxgrid">
+    <a class="apxcard" href="#s1"><span class="ac">B1 &middot; 10 min &middot; after §00</span><b>Next-Token Probabilities for a Single Prompt</b></a>
+    <a class="apxcard" href="#s2"><span class="ac">B2 &middot; 8 min &middot; after §00</span><b>Laplace on Probability as a Measure of Ignorance</b></a>
+    <a class="apxcard" href="#s4"><span class="ac">B3 &middot; 10 min &middot; after §01</span><b>Sampling Failure on a Task That Requires Counting</b></a>
+    <a class="apxcard" href="#s9"><span class="ac">B4 &middot; 10 min &middot; after §06</span><b>The Seven-Step Process and the Delegation Line</b></a>
+    <a class="apxcard" href="#s12d"><span class="ac">B5 &middot; 20 min &middot; after §08</span><b>Specification Cost Against Task Cost</b></a>
+  </div>
+</section>
+
+<section class="slide apx" id="s1" data-nav="B1 · Next token" data-insert-after="s0" data-tier="standard">
+  <div class="eyebrow"><span>Appendix B1 &middot; Mechanism, deeper</span><span class="clock">10 min</span></div>
+  <div class="apxback">Insert between §00 Session map and §01 Temperature &mdash; <a href="#s0">back to that point</a></div>
+  <h2>Next-Token Probabilities for a Single Prompt</h2>
+  <p class="big">Wolfram's description of the mechanism is one sentence long: the model asks, over and over, &ldquo;given the text so far, what should the next word be?&rdquo; and each time adds a word. There is no separate step where it checks whether the sentence is true.</p>
+
+  <p>Take his example prompt. At each position the model produces a ranked list of candidate continuations with probabilities attached. Click a bar to select that continuation and watch the distribution recompute for the next position. Try running it twice: once always taking the top bar, once taking the second or third.</p>
+
+  <div class="panel">
+    <span class="plab">Prompt</span>
+    <div class="streamline" id="strm"></div>
+    <div class="pbars" id="pbars"></div>
+    <div class="row" style="margin-top:20px">
+      <button class="btn ghost mini" id="topBtn">Always take the top bar</button>
+      <button class="btn ghost mini" id="sampBtn">Sample by probability</button>
+      <button class="btn sel mini" id="resetBtn">Reset</button>
+      <span class="mono dim" style="font-size:12px" id="stepCount"></span>
+    </div>
+  </div>
+
+  <div class="chart">
+    <div class="ctitle">Probability of the nth-ranked candidate token, first position</div>
+    <div class="csub">Wolfram reports that the fall-off across ranked candidates follows an n&#8315;&#185; power law &mdash; the straight line on a log-log plot that he notes is characteristic of the general statistics of language. Rank 1 holds a large share; by rank 20 the candidates are individually negligible but collectively substantial.</div>
+    <svg viewBox="0 0 700 250" role="img" aria-label="Power law decay of candidate token probability by rank"><g id="powerChart"></g></svg>
+    <div class="csrc">Source: Wolfram, S. (2023), &ldquo;It's Just Adding One Word at a Time.&rdquo; Curve shape is as reported (n&#8315;&#185; decay) <span class="conf h">H</span>. Individual token labels above are illustrative, not extracted from the published figure <span class="conf l">L</span>.</div>
+  </div>
+
+  <h3>What this rules out</h3>
+  <p>A planner reading an AI answer to a tax question is not reading a lookup result. They are reading a sequence in which each word was chosen because it was a probable continuation of the words before it. A correct citation and a fabricated citation are both probable continuations. Nothing in the mechanism distinguishes them.</p>
+
+  <div class="doit">
+    <span class="plab">Run it &mdash; 3 minutes</span>
+    <p>In your AI tool, send exactly this and nothing else: <span class="mono">The best thing about AI is its ability to</span></p>
+    <p>Send it three separate times, in three separate chats. Compare the three openings. We will come back to what you got in section 3.</p>
+  </div>
+</section>
+
+<section class="slide apx" id="s2" data-nav="B2 · Laplace" data-insert-after="s0" data-tier="standard">
+  <div class="eyebrow"><span>Appendix B2 &middot; Foundation</span><span class="clock">8 min</span></div>
+  <div class="apxback">Insert between §00 Session map and §01 Temperature &mdash; <a href="#s0">back to that point</a></div>
+  <h2>Laplace on Probability as a Measure of Ignorance</h2>
+  <p class="big">In 1814 Laplace proposed an intellect that knew every force and every position in nature. For such an intellect, he wrote, nothing would be uncertain; the future, like the past, would be present to its eyes. Probability, on his account, is not a property of the world. It is a property of the observer's incomplete information.</p>
+
+  <p>That distinction is the whole session. A client's 2025 return either does or does not permit a particular treatment. There is a fact. When the model gives you a probability distribution over answers, it is not reporting uncertainty in the tax code. It is reporting uncertainty about which continuation a human writer would have produced. Those are different objects, and the second one is not evidence about the first.</p>
+
+  <div class="panel">
+    <span class="plab">Two objects, side by side</span>
+    <div class="ctrls" style="margin:0 0 18px">
+      <label class="tg" id="tgWorld"><input type="checkbox" id="cbWorld"><span class="track"><span class="knob"></span></span><span><span class="tl">Show the tax question</span><span class="td">What the authority actually provides</span></span></label>
+      <label class="tg" id="tgModel"><input type="checkbox" id="cbModel"><span class="track"><span class="knob"></span></span><span><span class="tl">Show the model's answer</span><span class="td">A distribution over plausible continuations</span></span></label>
+    </div>
+    <div class="out" id="lapOut"></div>
+  </div>
+
+  <p class="pull">Confidence in the output is not evidence about the world. It is evidence about the training data.</p>
+
+  <h3>The practical consequence</h3>
+  <p>Laplace's framing gives you the verification rule for the rest of the course. If probability is a statement about what the observer does not know, then reducing your own ignorance &mdash; opening the Code section, pulling the actual return, checking the effective date &mdash; is the only operation that changes the answer's reliability. Asking the model again, asking it more confidently, or asking it to double-check itself does not. Those operations resample the same distribution.</p>
+
+  <div class="doit">
+    <span class="plab">Discussion &mdash; 4 minutes</span>
+    <p>Name one task in your practice where you have accepted an AI output without opening the underlying source. What made you accept it? Speed, plausibility, matching what you already believed, or the fact that it cited something?</p>
+  </div>
+</section>
+
+<section class="slide apx" id="s4" data-nav="B3 · Counting failure" data-insert-after="s3" data-tier="standard">
+  <div class="eyebrow"><span>Appendix B3 &middot; Failure mode</span><span class="clock">10 min</span></div>
+  <div class="apxback">Insert between §01 Temperature and §02 Cost frontier &mdash; <a href="#s3">back to that point</a></div>
+  <h2>Sampling Failure on a Task That Requires Counting</h2>
+  <p class="big">Wolfram trained a small transformer on a language with exactly one rule: parentheses must balance. The rule is simpler than any tax provision. The network still fails, and it fails in a specific and instructive way.</p>
+
+  <p>After roughly 400,000 trained weights, he reports, the network assigns about a 15 percent probability to a closing parenthesis in a position where closing would necessarily leave the sequence unbalanced. It is not confused about the rule in general. It is unable to hold a running count, because a feed-forward pass has no loop in which to keep one. He notes that even the full production model has a hard time matching parentheses in long sequences.</p>
+
+  <div class="panel">
+    <span class="plab">Extend the sequence &mdash; click a token to append it</span>
+    <div class="streamline" id="parenStream"></div>
+    <div class="pbars" id="parenBars"></div>
+    <div class="out" id="parenVerdict" style="margin-top:18px"></div>
+    <div class="row" style="margin-top:16px">
+      <button class="btn sel mini" id="parenReset">Reset</button>
+      <span class="mono dim" style="font-size:12px">Open count is tracked below the predictor, not by it.</span>
+    </div>
+  </div>
+
+  <div class="chart">
+    <div class="ctitle">Two kinds of task, one architecture</div>
+    <div class="csub">Tasks a human solves at a glance are the ones the network handles. Tasks requiring an explicit procedure carried across steps are the ones it approximates and then drops.</div>
+    <svg viewBox="0 0 700 210" role="img" aria-label="Comparison of pattern tasks and procedural tasks"><g id="shallowChart"></g></svg>
+    <div class="csrc">Source: Wolfram, S. (2023), &ldquo;What Really Lets ChatGPT Work?&rdquo; and the parenthesis-language section. Characterisation as reported <span class="conf h">H</span>.</div>
+  </div>
+
+  <h3>The mapping to your work</h3>
+  <p>Confirming that a cited authority exists is a lookup against an index. Confirming that it says what the sentence claims is a comparison against a text. Confirming that it still says that is a check against an effective date. None of the three is a continuation task, and the architecture that writes the sentence is not the architecture that performs any of them. This is why grounding, retrieval, and your own eyes on the source are separate additions and not properties the model has.</p>
+
+  <p class="pull">The model is not bad at counting because it is undertrained. It is bad at counting because counting is not what it does.</p>
+</section>
+
+<section class="slide apx" id="s9" data-nav="B4 · Seven steps" data-insert-after="s8" data-tier="standard">
+  <div class="eyebrow"><span>Appendix B4 &middot; Process</span><span class="clock">10 min</span></div>
+  <div class="apxback">Insert between §06 Interview rewrite and §07 Citations &mdash; <a href="#s8">back to that point</a></div>
+  <h2>The Seven-Step Process and the Delegation Line</h2>
+  <p class="big">The CFP Board's seven-step financial planning process is the structure your duty of care attaches to. Not every step is the same kind of work, and the steps that look most similar on paper have the least in common when you ask what a sampler could contribute.</p>
+
+  <p>Sort each step. Click a step, then click a column. Change your mind as often as you like. The instructor key appears when all seven are placed, and you are expected to argue with it.</p>
+
+  <div class="panel">
+    <div id="sortBoard"></div>
+    <div class="row" style="margin-top:20px">
+      <button class="btn sel mini" id="sortReset">Reset</button>
+      <button class="btn ghost mini" id="sortKey" disabled>Reveal instructor key</button>
+      <span class="mono dim" style="font-size:12px" id="sortCount"></span>
+    </div>
+    <div id="sortKeyOut" style="margin-top:20px"></div>
+  </div>
+
+  <div class="chart">
+    <div class="ctitle">Advisor adoption of AI tools against reliance on AI-generated recommendations</div>
+    <div class="csub">The profession has already drawn a line, whether or not any individual firm has written it down. Adoption of drafting and capture tools is over half. Reliance on the model's recommendation is close to zero.</div>
+    <svg viewBox="0 0 700 250" role="img" aria-label="Bar chart of advisor AI adoption versus reliance"><g id="adoptChart"></g></svg>
+    <div class="csrc">Sources: T3 / Inside Information Software Survey 2026, n=2,906 advisors, 95% at fee-only RIA or dually registered firms &mdash; 52.2% using AI search and generative language, 42.9% using AI notetaking <span class="conf h">H</span>. Reliance figure reported via Advisor360 and Kitces Research through a secondary aggregator; treat as directional <span class="conf m">M</span>. Kitces Research on Advisor Productivity: approximately one hour of note, summary and follow-up work per two-hour client meeting <span class="conf h">H</span>.</div>
+  </div>
+
+  <h3>Why steps 2 and 4 sit apart</h3>
+  <p>Step 2 is the elicitation of what a client actually wants, which is frequently not what they first say they want. Step 4 is the exercise of professional judgment that your registration, your credential and your liability all attach to. A model can draft language for either. It cannot perform either, and a workflow that quietly lets it is the failure mode this course exists to prevent.</p>
+
+  <p>Steps 3 and 7 are the opposite case. Analysing alternative courses of action and monitoring for drift are both high-volume, structured, and verifiable against a source. They are where the measurable time recovery lives.</p>
+</section>
+
+<section class="slide apx" id="s12d" data-nav="B5 · Discussion" data-insert-after="s11" data-tier="standard">
+  <div class="eyebrow"><span>Appendix B5 &middot; Discussion</span><span class="clock">20 min</span></div>
+  <div class="apxback">Insert between §08 Template audit and §09 Final project &mdash; <a href="#s11">back to that point</a></div>
   <h2>Specification Cost Against Task Cost</h2>
   <p class="big">The question, stated once and not softened: if a prompt has to be specified as carefully as section 6b required to be reliable, has the tool saved time, or has it moved the work from doing the task to specifying the task?</p>
 
@@ -817,63 +916,6 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <p class="dim" style="font-size:14.5px">A delta of zero is a finding, not a failure. It shows a position holding under evidence, which is the same epistemic move this course asks you to make about model output.</p>
 </section>
 
-<!-- ============ 13 ============ -->
-<section class="slide" id="s12" data-nav="Final project">
-  <div class="eyebrow"><span>13 · Assignment</span><span class="clock">10 min</span></div>
-  <h2>Final Project Part 1 and Baseline Capture</h2>
-  <p class="big">Part 1 is assigned now. It is 70% of the final project grade, and the final project is 50% of the course grade &mdash; so this single deliverable is 35% of what you leave with.</p>
-
-  <div class="cards">
-    <div class="card"><span class="num">What it is</span><h4>A scalable AI-enabled workflow for a recurring task in your own practice</h4><p>Scalable means two things and both are graded: it works for the next twenty clients rather than the one you built it on, and another advisor can run it without you in the room.</p></div>
-    <div class="card warn"><span class="num">Revised due date</span><h4>Sunday 27 September 2026, 11:59 PM</h4><p>The night before Session 4, not the end of it. The deadline moved earlier so that packages can be screened and distributed <em>in</em> Session 4, which gives your recipient seven days instead of three.</p></div>
-    <div class="card"><span class="num">The handoff</span><h4>A single email, body reading only &ldquo;See attached&rdquo;</h4><p>No context in the email. No explanation in the covering note. Everything a classmate needs lives inside the attachments, because that is the test.</p></div>
-    <div class="card warn"><span class="num">Two absolute rules</span><h4>Transcript to instructor only. No client data anywhere.</h4><p>The build transcript goes to me and never to your classmate. No real client information appears in the workflow, the package, or the transcript. A transcript containing client nonpublic personal information is both an integrity violation and the exact exposure this course exists to prevent.</p></div>
-  </div>
-
-  <p>The single most common way this project loses marks is a missing or invented baseline, so we capture yours before you leave the room. The Session 1 baseline is a required component of the submission and it is graded against in Session 5.</p>
-
-  <div class="panel">
-    <span class="plab">Baseline capture &mdash; complete this now</span>
-    <p style="margin-top:0;font-size:15.5px">Name the recurring task your workflow will address, and record how long it takes you today, unassisted. Estimate honestly; you will be comparing against it in Session 5 and an inflated baseline is visible to a reader.</p>
-    <div class="ctrls" style="grid-template-columns:1fr">
-      <div><label class="plab" for="taskName">The recurring task</label><input type="text" id="taskName" placeholder="e.g. Preparing a pre-meeting brief from a new prospect's statements"></div>
-    </div>
-    <div class="ctrls" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:0">
-      <div><label class="plab" for="baseMin">Minutes per occurrence, today</label><input type="text" id="baseMin" value="45" inputmode="numeric"></div>
-      <div><label class="plab" for="baseFreq">Occurrences per month</label><input type="text" id="baseFreq" value="12" inputmode="numeric"></div>
-      <div><label class="plab" for="baseRate">Your loaded hourly rate ($)</label><input type="text" id="baseRate" value="150" inputmode="numeric"></div>
-    </div>
-    <div class="out has" id="baseOut" style="margin-top:18px"></div>
-    <div class="row" style="margin-top:14px">
-      <button class="btn mini" id="baseCopy">Copy baseline record</button>
-      <span class="mono dim" style="font-size:12px">Paste this into your project notes. It is a required element of the Part 1 submission.</span>
-    </div>
-  </div>
-
-  <h3>Part 1 deliverable checklist</h3>
-  <p>Seven required elements. Tick what you have planned for; the ones left unticked are what you will be missing on 27 September.</p>
-
-  <div class="panel">
-    <div id="checklist"></div>
-    <div class="out" id="checkOut" style="margin-top:18px"></div>
-  </div>
-
-  <h3>Due before Session 3</h3>
-  <p>A first draft of Part 1: the target task, your model and tier choice with the reason, and your initial prompts. Section 5 is where the tier reason comes from. Section 13 is where the target task comes from. Section 6b produced at least one of the initial prompts. You have all three already.</p>
-
-  <div class="doit">
-    <span class="plab">Reading for Session 3</span>
-    <p>Wolfram &mdash; &ldquo;The Concept of Embeddings&rdquo; and the opening of &ldquo;Meaning Space.&rdquo; Kitces (January 2025) on AI notetaker adoption and satisfaction. Iskowitz (July 2025) on notetakers and compliance.</p>
-  </div>
-
-  <h3>What Session 3 does that this session could not</h3>
-  <p class="big">Everything in this file has treated the model as a closed system. You improved the output by improving the prompt, because the prompt was the only channel available. Section 8 made that explicit: the model cannot see the Cole file, so what you type is the entire evidentiary record.</p>
-
-  <p>Session 3 opens that channel. Grounding lets the model read the actual documents &mdash; the 2011 wills, the 2014 buy-sell, the 2023 appraisal, the unexecuted trust instrument &mdash; and cite the passages it used. That solves the problem this session could only work around, and it introduces a failure this session could not produce: an answer that is fully sourced, correctly attributed to a real document in your own corpus, and materially wrong, because the passage retrieved was the nearest one rather than the right one.</p>
-
-  <p>The Cole document set is the corpus. The question that follows you into it is the one section 10 left open: does a 2023 appraisal still support a 31% discount, and which document in the folder actually says so.</p>
-</section>
-
 <footer>
   <div class="wrap" style="padding:0">
     <h4 style="margin-bottom:18px">Sources</h4>
@@ -917,15 +959,20 @@ function el(t,a,txt){var n=document.createElementNS(svgNS,t);for(var k in a)n.se
 var secs=[].slice.call(document.querySelectorAll('section.slide')),rail=$('rail');
 secs.forEach(function(s){var b=document.createElement('button');b.innerHTML='<span class="pip"></span><span class="lbl">'+s.dataset.nav+'</span>';b.onclick=function(){s.scrollIntoView()};rail.appendChild(b)});
 var pips=[].slice.call(rail.querySelectorAll('button'));
+secs.forEach(function(s,i){if(pips[i]&&(s.classList.contains('apx')||s.classList.contains('apxdiv')))pips[i].classList.add('apxnav')});
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=secs.indexOf(e.target);pips.forEach(function(p,j){p.classList.toggle('on',j===i)})}})},{rootMargin:'-45% 0px -45% 0px'});secs.forEach(function(s){io.observe(s)})}
 window.addEventListener('scroll',function(){var h=document.documentElement;var pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;$('prog').style.width=pct+'%'},{passive:true});
 
 /* ---------- copy buttons ---------- */
+function copyTo(btn,txt,okLabel){
+  var o=btn.textContent, done=function(l){btn.textContent=l;setTimeout(function(){btn.textContent=o},1400)};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){done(okLabel||'Copied')},function(){done('Select and copy')})
+  }else{done('Select and copy')}
+}
 document.addEventListener('click',function(e){
   var b=e.target.closest('button[data-copy]');if(!b)return;
-  var box=$(b.getAttribute('data-copy'));var t=box.textContent.replace(/Copy$/,'').trim();
-  if(navigator.clipboard)navigator.clipboard.writeText(t);
-  var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1400);
+  var box=$(b.getAttribute('data-copy'));copyTo(b,box.textContent.replace(/Copy$/,'').trim());
 });
 
 /* ================= 1 · NEXT TOKEN ================= */
@@ -1609,10 +1656,7 @@ function base(){
   $('baseOut').textContent=o;
 }
 ['taskName','baseMin','baseFreq','baseRate'].forEach(function(id){$(id).oninput=base});base();
-$('baseCopy').onclick=function(){
-  if(navigator.clipboard)navigator.clipboard.writeText($('baseOut').textContent);
-  var o=this.textContent;this.textContent='Copied';var b=this;setTimeout(function(){b.textContent=o},1400);
-};
+$('baseCopy').onclick=function(){copyTo(this,$('baseOut').textContent)};
 
 var CHK=[
  'The workflow itself \u2014 prompts, system instructions or skill, tool and model tier, supporting files',
@@ -1792,10 +1836,7 @@ var ELEM=[
     $('hwLiveScore').innerHTML=h;
   }
   $('hwRewrite').oninput=live;live();
-  $('hwCopy').onclick=function(){
-    if(navigator.clipboard)navigator.clipboard.writeText($('hwRewrite').value);
-    var o=this.textContent,b=this;this.textContent='Copied';setTimeout(function(){b.textContent=o},1400);
-  };
+  $('hwCopy').onclick=function(){copyTo(this,$('hwRewrite').value)};
 })();
 
 /* ================= 8 · BUY-SELL INTERVIEW CHECKLIST ================= */
@@ -1896,6 +1937,30 @@ document.addEventListener('keydown',function(e){
     if(window.__revealBsell)window.__revealBsell();
   }
 });
+})();
+</script>
+
+<script>
+/* ===== pacing readout: core vs appendix, computed from the minute chips ===== */
+(function(){
+  var host=document.getElementById('paceOut'); if(!host) return;
+  var chip='.mins,.clock';
+  var secs=[].slice.call(document.querySelectorAll('section.slide'));
+  function mins(s){var m=s.querySelector(chip);if(!m)return 0;var v=parseInt(m.textContent,10);return isNaN(v)?0:v}
+  var core=0,apx=0,nc=0,na=0;
+  secs.forEach(function(s){
+    if(s.classList.contains('apxdiv'))return;
+    if(s.classList.contains('apx')){apx+=mins(s);na++}else{core+=mins(s);nc++}
+  });
+  host.innerHTML=
+    '<div class="pgrid">'+
+      '<div class="pcell"><b>'+core+' min</b><span>'+nc+' core sections</span></div>'+
+      '<div class="pcell"><b>'+apx+' min</b><span>'+na+' appendix sections</span></div>'+
+      '<div class="pcell"><b>'+(core+apx)+' min</b><span>everything</span></div>'+
+    '</div>'+
+    '<p>The core runs in about '+core+' minutes and is what always gets taught. In a full '+
+    'block, take appendix sections in place at the gold links; in a short one, skip them and '+
+    'the session still closes properly. Appendix sections are also readable alone afterwards.</p>';
 })();
 </script>
 </body>
