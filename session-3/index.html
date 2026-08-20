@@ -176,6 +176,29 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 .pace .pcell b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--gold)}
 .pace .pcell span{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
 .pace p{margin:13px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted);max-width:70ch}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+.verify{border:2px dashed var(--warn);border-radius:11px;padding:15px 18px;margin:20px 0;background:#fff;font-size:14.5px;line-height:1.5}
+.verify .vh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
+.verify ul{margin:7px 0 0;padding-left:19px}.verify li{margin:5px 0}
+/* ===== family 17: standing cold-open ritual — identical in every session ===== */
+.ritual{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:20px 24px;margin:22px 0}
+.ritual .rlab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:9px;font-weight:500}
+.ritual textarea{width:100%;min-height:96px;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.55;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;background:var(--page);color:var(--ink);resize:vertical}
+.ritual textarea:focus{outline:2.5px solid var(--on);outline-offset:2px}
+.rout{margin-top:13px;background:var(--off-bg);border-radius:9px;padding:13px 16px;font-size:14.5px;line-height:1.55}
+.rout.on{background:var(--on-bg)}
+.rout .rz{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:5px;font-weight:500}
+.rout .rnil{color:var(--muted)}
+.rout .rfx{margin-top:9px;padding-top:9px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+.rnote{background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0;font-size:14px;line-height:1.5}
+.rnote .rh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px;font-weight:500}
+/* ===== family 1: work-along gate (completion feedback only; never withholds) ===== */
+.check{display:flex;gap:13px;align-items:flex-start;background:var(--gold-bg);border:1.5px solid #DFD3AF;border-radius:11px;padding:14px 17px;margin:22px 0}
+.check.done{background:var(--on-bg);border-color:var(--on)}
+.check.done .mk{border-color:var(--on);background:var(--on);color:#fff}
+.mk{width:24px;height:24px;border-radius:50%;border:2px solid var(--gold);flex:none;display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--gold);margin-top:1px}
+.ct{font-size:15.5px;line-height:1.48}
+.ct b{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px}
 </style></head>
 <body>
 <nav id="rail" aria-label="Sections"></nav>
@@ -184,7 +207,7 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 
 <!-- ============ 1 ============ -->
 <section class="slide" id="s1" data-nav="Bridge + case">
-  <div class="eyebrow"><span>BUS ADM X433.4 · Session 3</span><span class="mins">6 min</span></div>
+  <div class="eyebrow"><span>BUS ADM X433.4 · Session 3</span><span class="mins">5 min</span></div>
   <h1>Gathering and Documenting Client Information</h1>
   <p class="lede">Grounding makes the model cite your sources. The nearest passage is not always the right one.</p>
   <div class="panel pace"><span class="plab">How this session is paced</span><div id="paceOut"></div></div>
@@ -212,6 +235,28 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
   <p>The corpus for the next three sections: 2011 wills pouring over to a joint revocable trust, the 2014 buy-sell, the 2023 appraisal, and the unexecuted IDGT instrument and note. Retrieval will fail on it twice, in two different ways, and neither failure will look like one on screen.</p>
 
   <p class="src">Case facts are reproduced from the course case anchor and are fully synthetic. No real firm, household, entity or client data appears anywhere in this file. Session 3 syllabus row: grounding principle; note-taker architecture; documentation tools against the confidentiality obligation; recording security; documenting circumstances and basis; grounding vs. fine-tuning; the prep → capture → summarise → follow-up → log workflow; RAG in an advisory practice. Assigned reading: Wolfram (2023), "The Concept of Embeddings" and the opening of "Meaning Space"; Kitces (15 Jan 2025); Iskowitz (29 Jul 2025).</p>
+
+  <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Order all four verification checks before anything is revealed.</div></div>
+
+</section>
+
+<section class="slide" id="sCold" data-nav="Cold open">
+  <div class="eyebrow"><span>Cold open &middot; standing ritual</span><span class="mins">8 min</span></div>
+  <h2>The Last Prompt You Sent</h2>
+  <p class="big">Not a good one. Not a work one. The last one, whatever it was, pasted exactly as you typed it &mdash; typos, missing context, all of it.</p>
+
+  <div class="rnote"><span class="rh">Instructor note &mdash; the standing ritual</span>This runs identically every session and takes eight minutes. Do not vary it, do not survey the room, and do not collect anything else here. The value is the comparison across five weeks, and that only exists if the instrument does not move.</div>
+
+  <div class="ritual" data-task="t-cold-open" data-comp="timed-ritual">
+    <label class="rlab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
+    <textarea id="coldPrompt" placeholder="Paste it exactly. Do not clean it up &mdash; the typos are the useful part."></textarea>
+    <div class="row" style="margin-top:12px"><button class="btn" id="coldGo">Analyse what I typed</button></div>
+    <div class="rout" id="coldOut"><span class="rnil">Paste something and press the button.</span></div>
+  </div>
+
+  <p>By now the prompt you paste here should look different from the one you pasted in Session 1. Tonight is about the channel the prompt cannot reach: the documents themselves.</p>
+
+  <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen &mdash; the comparison across sessions is the point.</div></div>
 </section>
 
 <section class="slide" id="s2" data-nav="Embeddings">
@@ -233,6 +278,9 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
   </div>
 
   <p class="src">Wolfram, S. (2023, 14 Feb). <em>What Is ChatGPT Doing … and Why Does It Work?</em> — "The Concept of Embeddings"; "Meaning Space and Semantic Laws of Motion." Definition of embedding, the five-billion-word environment-similarity construction, and the 768 / 12,288 vector lengths are Wolfram's, quoted in substance <span class="conf h">H</span>. Map coordinates are illustrative and were assigned for this lesson <span class="conf l">L — illustrative, not measured</span>. Distance arithmetic on those coordinates is exact.</p>
+
+  <div class="check" data-gate="g2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Click at least four terms on the map and find the pair most dangerous to substitute in Meg’s file.</div></div>
+
 </section>
 
 <section class="slide" id="s3" data-nav="Distribution">
@@ -258,6 +306,9 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
   </div>
 
   <p class="src">Wolfram (2023), "The Concept of Embeddings" — alligator / crocodile and turnip / eagle are Wolfram's examples, reproduced in substance <span class="conf h">H</span>. The six pairs are drawn from the Cole document set and the three-bucket taxonomy is constructed for this lesson.</p>
+
+  <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort all six pairs into the three buckets, then open the key and argue with it.</div></div>
+
 </section>
 
 <section class="slide" id="s4" data-nav="Retrieval">
@@ -285,6 +336,9 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 
 
   <a class="apxlink" href="#s5"><span class="al">If there is time &middot; Appendix C1 &middot; 12 min</span><b>Chunk Size and Condition Orphaning</b><span class="aw">Move the chunk boundary and watch a governing condition get separated from the rule it governs. The most concrete retrieval failure in the course, and the one a document-heavy practice needs.</span></a>
+
+  <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run all four preset queries, including the two engineered to fail.</div></div>
+
 </section>
 
 <section class="slide" id="s6" data-nav="Retrieval rates">
@@ -317,6 +371,9 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
   <p>Anthropic publishes the boundary condition that matters most for a small firm: under roughly 200,000 tokens — about 500 pages — skip retrieval and put the whole corpus in the prompt. The Cole set is nine documents. A large share of the advisory RAG projects sold in 2026 solve a problem the buyer does not have.</p>
 
   <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em>. Top-20-chunk retrieval failure rate: baseline 5.7%; contextual embeddings 3.7%; contextual embeddings + contextual BM25 2.9%; plus reranking 1.9%. The 67% headline is the 5.7 → 1.9 reduction. The 200,000-token / ~500-page threshold is Anthropic's stated recommendation. <span class="conf h">H — published figures</span>, with the standing caveat that they are vendor-reported benchmarks on codebases, fiction and research papers, not advisory documents <span class="conf m">M — transfer to your corpus unverified</span>. The valuation contradiction is synthetic case content, not a measured result.</p>
+
+  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Predict the failure rate before revealing it, then read the measured figure.</div></div>
+
 </section>
 
 <section class="slide" id="s7" data-nav="Grounded error">
@@ -350,6 +407,9 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 
 
   <a class="apxlink" href="#s8"><span class="al">If there is time &middot; Appendix C2 &middot; 9 min</span><b>Grounding Compared With Fine-Tuning</b><span class="aw">Why grounding retrieves at query time and fine-tuning does not, and when a firm would ever pay for the second. Take it when someone in the room has been sold fine-tuning.</span></a>
+
+  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Read all four measured rates and name which one your own workflow is exposed to.</div></div>
+
 </section>
 
 <section class="slide" id="s9" data-nav="Workflow">
@@ -369,6 +429,9 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
   </div>
 
   <p class="src">The five-stage workflow is the sequence named in the Session 3 syllabus row. Kitces (15 Jan 2025) documents that leading advisor-specific tools now span the whole cycle — meeting summary, CRM capture, post-meeting tasks, recap email, then the next agenda <span class="conf h">H</span>. Failure content is synthetic case material constructed for this lesson.</p>
+
+  <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Inject a failure at every stage and note which ones never become visible to a human.</div></div>
+
 </section>
 
 <section class="slide" id="s10" data-nav="Note-takers">
@@ -403,11 +466,26 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 
 
   <a class="apxlink" href="#s11"><span class="al">If there is time &middot; Appendix C3 &middot; 7 min</span><b>Note-Taker Adoption Against Note-Taker Satisfaction</b><span class="aw">Adoption is high and satisfaction is not. Useful for a room already running a note-taker; skippable for a room deciding whether to.</span></a>
+
+  <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Write the CRM note you would want, then read the misses rather than the score.</div></div>
+
 </section>
 
 <section class="slide" id="s12" data-nav="Consent">
   <div class="eyebrow"><span>08 &middot; Obligation</span><span class="mins">6 min</span></div>
   <h2>Recording Consent and the Confidentiality Obligation</h2>
+
+  <div class="verify">
+  <span class="vh">Requires instructor verification before it is taught as settled</span>
+  This session characterises recording law and professional-conduct obligations. None of it is legal advice, and the state counts genuinely disagree across published compilations. Verify before teaching any of it as settled:
+  <ul>
+    <li><strong>18 U.S.C. &sect; 2511</strong> as a federal one-party-consent floor, and whether your state imposes more.</li>
+    <li><strong>The all-party-consent state count.</strong> Published 2026 compilations range from eleven to fifteen depending on how hybrid statutes are treated. The disagreement is the teaching point; do not resolve it to a single number at the podium.</li>
+    <li><strong>Cal. Penal Code &sect; 637.2(a)(1) and (c)</strong> &mdash; the greater of $5,000 per violation or treble actual damages, with actual damages not a prerequisite.</li>
+    <li><strong>The stricter-state rule</strong> for recordings crossing state lines. Courts have generally applied it; confirm the position in your jurisdiction.</li>
+    <li><strong>The duty of confidentiality</strong> as it applies to disclosing client content to a documentation vendor, under your own firm's policy and your credentialing body's code.</li>
+  </ul>
+</div>
 
   <p class="big">A note-taker is a recording device with a vendor attached. Two separate obligations attach: the state law governing whether the recording may be made at all, and the professional duty of confidentiality governing what may be disclosed to the vendor once it is.</p>
 
@@ -428,6 +506,9 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
   </div>
 
   <p class="src">18 U.S.C. § 2511 (federal one-party floor) <span class="conf h">H</span>. Cal. Penal Code § 637.2(a)(1), (c) — $5,000 per violation or treble actual damages, whichever is greater; actual damages not a prerequisite <span class="conf h">H — statutory text</span>. The all-party state count is <span class="conf m">M — sources materially disagree</span>: the ten-state core is common to every list consulted; Connecticut, Nevada, Oregon, Michigan and Vermont are treated inconsistently across 2026 compilations, and this lesson does not adopt a number. Verify the states your clients sit in with counsel. Iskowitz, C. (29 Jul 2025), <em>AI Notetakers and Compliance in Wealth Management</em>, WealthTech Today — assigned reading. <strong>Disclosure:</strong> the citation in item 4 — <em>Restrepo v. Halloran Wealth Partners</em>, 214 F.3d 1109 (9th Cir. 2000) — is fabricated. It was invented for this exercise, no such case exists, and nothing in this lesson asserts what any real authority holds about AI-generated meeting notes. The exercise fabricates a case name deliberately rather than misstating a real provision.</p>
+
+  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer every consent item, then name your own state’s rule out loud.</div></div>
+
 </section>
 
 <section class="slide" id="s13" data-nav="Basis">
@@ -490,6 +571,9 @@ then a list of every element where my answer was thin.</pre>
   <div class="instrline">Instructor note: the failure to watch for is a student whose assistant drafts on the first turn. That means the model inferred the alternatives. The alternatives are the one thing it cannot know.</div>
 
   <p class="src"><strong>Instructor verification required before teaching.</strong> Part A asks students to identify a planning rationale, and the answer panel is labelled on screen as pending the instructor's verification rather than stated as settled. This lesson does not assert any tax result, does not characterise the operation of any Code section or regulation, and does not state what an examiner would accept. The Cole transaction, its figures and the attorney's proposal are synthetic. Part B teaches the general documentation discipline — that evidence contemporaneous with a transaction is worth more than evidence created afterwards — and deliberately stops short of naming disclosure requirements. Structure restates the Session 3 syllabus bullet on documenting circumstances and the basis for recommendations. Journal of Accountancy (17 Nov 2025), <em>Writing an Effective AI Prompt for an Audit Trail</em>, is the Session 4 reading on the same problem from the audit side.</p>
+
+  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Build the basis entry with the interrogation prompt, then sort what would help from what would not.</div></div>
+
 </section>
 
 <section class="slide" id="s14" data-nav="Policy HW">
@@ -512,10 +596,13 @@ then a list of every element where my answer was thin.</pre>
 
 
   <a class="apxlink" href="#s15"><span class="al">If there is time &middot; Appendix C4 &middot; 20 min</span><b>Citation-Backed Output and Verification Effort</b><span class="aw">Whether a citation-backed answer costs less to verify than an unsourced one. Twenty minutes, and it works best after the measurement sections have landed.</span></a>
+
+  <div class="check" data-gate="g11"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Select every element your policy needs and read the assembled outline.</div></div>
+
 </section>
 
 <section class="slide" id="s16" data-nav="Part 1 + handoff">
-  <div class="eyebrow"><span>11 &middot; Close</span><span class="mins">6 min</span></div>
+  <div class="eyebrow"><span>11 &middot; Close</span><span class="mins">5 min</span></div>
   <h2>Part 1 Draft Peer Exchange and the Session 4 Handoff</h2>
 
   <p class="big">Your Part 1 draft outline was due today. The handoff package is due at the end of Session 4 — six days out. The component that fails most often is not the workflow. It is scalability, at 30% the heaviest single weight in Part 1.</p>
@@ -546,7 +633,10 @@ then a list of every element where my answer was thin.</pre>
 
   <p>Everything tonight was a measurement of how often grounding is wrong. Nothing tonight established what happens to you when it is. Session 4 supplies the part this session structurally cannot reach — the duties that attach when a grounded, well-cited, materially wrong answer reaches a client file, what counts as nonpublic personal information inside these transcripts, which of the three Cole confidentiality landmines a public tool would have already leaked, and what an audit trail has to contain to survive an examination. Tonight you learned that the citation is not the verification. Session 4 is where that stops being an epistemics problem and starts being your problem.</p>
 
-  <p class="src">Final Project Part 1 requirements, component weights (handoff package 15%, scalability 30%, iteration and documentation 25%, deliverable correctness 25%, peer feedback 5%) and the two-part definition of "scalable" are taken from the course syllabus. Session 4 readings are taken from the syllabus schedule. The AI usage policy due date is revised for this cohort as noted in Section 13.</p>
+  <p class="src">Final Project Part 1 requirements, component weights (handoff package 15%, scalability 30%, iteration and documentation 25%, deliverable correctness 25%, peer feedback 5%) and the two-part definition of "scalable" are taken from the course syllabus. Session 4 readings are taken from the syllabus schedule. The AI usage policy due date is revised for this cohort as noted in &sect;10.</p>
+
+  <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Score your Part 1 draft against the rubric and name the one gap you will close before Session 4.</div></div>
+
 </section>
 
 <section class="slide apxdiv" id="apx" data-nav="— APPENDIX —">
@@ -562,9 +652,35 @@ then a list of every element where my answer was thin.</pre>
   </div>
 </section>
 
+<section class="slide apx" id="sHY" data-nav="C5 &middot; Hybrid search" data-insert-after="s4" data-tier="advanced">
+  <div class="eyebrow"><span>Appendix C5 &middot; Mechanism, deeper</span><span class="mins">16 min</span></div>
+  <div class="apxback">Insert between &sect;03 Retrieval and &sect;04 Retrieval rates &mdash; <a href="#s4">back to &sect;03</a> &middot; <a href="#s6">continue to &sect;04 &rarr;</a></div>
+  <h2>Hybrid Search and the Re-ranking Pass</h2>
+
+  <p class="big">&sect;04 gives you a failure rate and a floor. This section is the three engineering changes that move the rate, in the order they pay off, measured on Anthropic&rsquo;s own corpus.</p>
+
+  <p>The baseline is embedding-only retrieval: chunk, embed, rank by cosine similarity, return the top&nbsp;k. Each change below is additive and each is reported separately, so you can see which one your vendor has actually implemented and which one they are describing.</p>
+
+  <div class="panel">
+    <span class="do">Do this now &mdash; 5 minutes</span>
+    <h4>Switch each stage on and watch the failure rate move</h4>
+    <p class="hint">Failure rate is the share of queries where the correct passage is absent from the top 20 retrieved. Toggle in any order; the readout names what each stage fixes and what it cannot.</p>
+    <div id="hyCtrls" class="row"></div>
+    <div class="diagout" id="hyOut"></div>
+  </div>
+
+  <p><strong>Read the last stage carefully.</strong> Re-ranking is the most expensive of the three &mdash; it runs a second model over the candidates &mdash; and it is the one most often sold as the whole product. On these numbers it is worth roughly a third of the total improvement, and it cannot recover a passage that retrieval never surfaced. Nothing downstream fixes a chunk that was not in the candidate set.</p>
+
+  <p><strong>What none of it fixes.</strong> The Article VII failure you produced in &sect;03 was not a ranking miss. The right chunk was retrieved and it was the wrong chunk to answer with, because a valuation formula severed from its triggering event reads as the general rule. Hybrid search returns it faster. It does not know it should not have been used.</p>
+
+  <p class="src"><b>Anthropic (2024, 19 Sep), Contextual Retrieval in AI Systems</b> &mdash; embedding-only baseline 5.7% failure at top-20; contextual embeddings 3.7%; plus contextual BM25 2.9%; plus re-ranking 1.9%. Figures are Anthropic&rsquo;s, measured on their own evaluation corpus by the vendor of the technique <span class="conf m">M &mdash; vendor-run benchmark</span>. Percentages reproduced verbatim; the ordering commentary is mine.</p>
+
+  <div class="check" data-gate="ga5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Enable all three stages, then say which one your current tool actually runs and how you know.</div></div>
+</section>
+
 <section class="slide apx" id="s5" data-nav="C1 · Chunk size" data-insert-after="s4" data-tier="standard">
-  <div class="eyebrow"><span>Appendix C1 &middot; Mechanism, deeper</span><span class="mins">12 min</span></div>
-  <div class="apxback">Insert between §03 Retrieval and §04 Retrieval rates &mdash; <a href="#s4">back to that point</a></div>
+  <div class="eyebrow"><span>Appendix C1 &middot; Mechanism, deeper</span><span class="mins">16 min</span></div>
+  <div class="apxback">Insert between §03 Retrieval and §04 Retrieval rates &mdash; <a href="#s4">back to §03</a> &middot; <a href="#s6">continue to §04 &rarr;</a></div>
   <h2>Chunk Size and Condition Orphaning</h2>
 
   <p class="big">Chunk size is the only parameter in a retrieval system a non-engineer will ever be asked to choose, and it decides whether a rule arrives with the condition that governs it.</p>
@@ -585,11 +701,14 @@ then a list of every element where my answer was thin.</pre>
   </div>
 
   <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em> — the revenue-chunk example and the prepend-context remedy are Anthropic's <span class="conf h">H</span>. Article VII text is synthetic case content and is not a model buy-sell provision. The orphaning detector is a keyword heuristic written for this lesson and will miss cases a real evaluation would catch <span class="conf l">L — heuristic, illustrative</span>.</p>
+
+  <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Find the largest chunk size at which the trigger still separates from the formula.</div></div>
+
 </section>
 
 <section class="slide apx" id="s8" data-nav="C2 · Grounding vs tuning" data-insert-after="s7" data-tier="standard">
-  <div class="eyebrow"><span>Appendix C2 &middot; Comparison</span><span class="mins">9 min</span></div>
-  <div class="apxback">Insert between §05 Grounded error and §06 Workflow &mdash; <a href="#s7">back to that point</a></div>
+  <div class="eyebrow"><span>Appendix C2 &middot; Comparison</span><span class="mins">14 min</span></div>
+  <div class="apxback">Insert between §05 Grounded error and §06 Workflow &mdash; <a href="#s7">back to §05</a> &middot; <a href="#s9">continue to §06 &rarr;</a></div>
   <h2>Grounding Compared With Fine-Tuning</h2>
 
   <p class="big">Grounding changes what the model reads. Fine-tuning changes what the model is. Advisors are routinely sold the second when they need the first, and the distinguishing question is not accuracy but the cost of being wrong tomorrow.</p>
@@ -607,11 +726,14 @@ then a list of every element where my answer was thin.</pre>
   </div>
 
   <p class="src">Wolfram (2023), "Beyond Basic Training" — the tell-it-once observation and the "riding on top of the framework it already has" limit are Wolfram's, reproduced in substance <span class="conf h">H</span>. The four-way ranking and its ordering are a design judgement made for this lesson, not a measured result <span class="conf l">L — reasoned, not measured</span>.</p>
+
+  <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort every case into grounding or fine-tuning and read the whys you got wrong.</div></div>
+
 </section>
 
 <section class="slide apx" id="s11" data-nav="C3 · Adoption" data-insert-after="s10" data-tier="standard">
-  <div class="eyebrow"><span>Appendix C3 &middot; Market evidence</span><span class="mins">7 min</span></div>
-  <div class="apxback">Insert between §07 Note-takers and §08 Consent &mdash; <a href="#s10">back to that point</a></div>
+  <div class="eyebrow"><span>Appendix C3 &middot; Market evidence</span><span class="mins">14 min</span></div>
+  <div class="apxback">Insert between §07 Note-takers and §08 Consent &mdash; <a href="#s10">back to §07</a> &middot; <a href="#s12">continue to §08 &rarr;</a></div>
   <h2>Note-Taker Adoption Against Note-Taker Satisfaction</h2>
 
   <p class="big">Rank the category by adoption and rank it by satisfaction and the orders invert. The tool with the highest adoption in Kitces' autumn 2024 data — Zoom's AI Companion, a toggle inside software advisors already pay for — ranked last on advisor satisfaction. The industry-specific tools, at $60–$80 per month or more, ranked highest.</p>
@@ -630,11 +752,14 @@ then a list of every element where my answer was thin.</pre>
   <p>By 2025 the category had grown to roughly 30% of advisors using some kind of client meeting note tool, with 18 note-takers on the AdvisorTech Map competing for that pool, Jump at 9.7% adoption among standalone tools and no remaining provider above 0.5%. Read that as a procurement warning: you are selecting from a category mid-consolidation, and the switching cost is your historical meeting record.</p>
 
   <p class="src">Kitces.com (15 Jan 2025) — Zoom AI Companion #1 in adoption and last in satisfaction; industry-specific tools lead satisfaction; $60–$80/month pricing <span class="conf h">H</span>. Kitces.com AdvisorTech columns (Oct and Nov 2025) — Jump + Zocks 12.8% combined, Zoom AI + Fathom 7.6% combined, Jump 9.7% among standalone tools, none of the remainder above 0.5%, 18 note-takers on the map <span class="conf h">H</span>. Kitces AdvisorTech column (Aug 2026) — ~30% of advisors using a client meeting note tool as of the 2025 research <span class="conf h">H</span>. The slopegraph plots ranks, not scores <span class="conf m">M — rank order published, underlying scores not</span>.</p>
+
+  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Name the segment you sit in and whether its adoption rate matches your own.</div></div>
+
 </section>
 
 <section class="slide apx" id="s15" data-nav="C4 · Discussion" data-insert-after="s14" data-tier="standard">
   <div class="eyebrow"><span>Appendix C4 &middot; Discussion</span><span class="mins">20 min</span></div>
-  <div class="apxback">Insert between §10 Policy HW and §11 Part 1 + handoff &mdash; <a href="#s14">back to that point</a></div>
+  <div class="apxback">Insert between §10 Policy HW and §11 Part 1 + handoff &mdash; <a href="#s14">back to §10</a> &middot; <a href="#s16">continue to §11 &rarr;</a></div>
   <h2>Citation-Backed Output and Verification Effort</h2>
 
   <p class="big">The question: does a citation-backed output make you check more, or check less?</p>
@@ -657,6 +782,9 @@ then a list of every element where my answer was thin.</pre>
   <div class="instrline">Instructor: run the same three options as a Zoom poll at each vote so the room distributions are captured alongside the individual deltas this widget records. Decision rule — if fewer than 25% take "check less" on vote one, read the Magesh finding aloud before the defence phase rather than after, or the minority has nothing to defend.</div>
 
   <p class="src">Magesh et al. (2025) report that the tools tested made claims not supported by the sources they cited, which is the specific failure a reader who trusts the citation will not catch <span class="conf h">H</span>. Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025), <em>The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects from a Survey of Knowledge Workers</em>, Microsoft Research / CHI 2025 — the Session 5 reading; characterised here only by its title claim of self-reported reductions in cognitive effort <span class="conf m">M — full findings not re-verified in this build</span>. No claim is made here about the size or direction of any measured effect on verification behaviour.</p>
+
+  <div class="check" data-gate="ga4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote, defend, absorb the complication, re-vote.</div></div>
+
 </section>
 
 <footer class="wrap" style="padding-left:0;padding-right:0">
@@ -1066,7 +1194,7 @@ var VALOPT=[
  {t:'$7,200,000 less 31% — the 2023 appraisal figure',k:false,
   w:'Plausible, and wrong \u2014 and wrong for a reason worth more than the answer. The appraisal chunk describes a discount on a forty percent non-voting interest. Asked about \u201cMeg\u2019s CPC shares,\u201d it scored 0.0, because it shares no term with the question. The document that holds the answer is invisible to the query that needs it, and no amount of instructing the model to answer only from its sources can fix a document that was never retrieved.'},
  {t:'Five times three-year average EBIT — the 2014 buy-sell formula',k:true,
-  w:'Correct, and you watched it happen in Section 3. The answer will be fully sourced, will quote Article VII accurately, and will be materially wrong: that formula is the purchase price on a death, a disability or a withdrawal, not the valuation standard for a sale to a trust. It contradicts the $18,000,000 appraisal, and nothing on the screen will say so.'},
+  w:'Correct, and you watched it happen in \u00a703. The answer will be fully sourced, will quote Article VII accurately, and will be materially wrong: that formula is the purchase price on a death, a disability or a withdrawal, not the valuation standard for a sale to a trust. It contradicts the $18,000,000 appraisal, and nothing on the screen will say so.'},
  {t:'It refuses, because the documents conflict',k:false,
   w:'This is what you want and not what happens. Nothing in the corpus asserts a conflict, and the retriever surfaces passages by similarity, not by contradiction. Detecting that two documents disagree requires reading both, which is the step retrieval is designed to avoid.'}
 ];
@@ -1273,7 +1401,7 @@ var QITEMS=[
   a:'send',
   fb:{send:'Correct. Firm process documents are the intended payload of a grounded assistant. Treating them as sensitive is the failure mode that leaves the assistant ungrounded and therefore worse.',
       strip:'Nothing to strip. Over-classifying internal process documents is how firms end up with an assistant that has no firm knowledge and answers from training data instead.',
-      never:'Over-cautious to the point of self-harm. Withholding this is what produces the ungrounded 43% baseline from Section 7.'}},
+      never:'Over-cautious to the point of self-harm. Withholding this is what produces the ungrounded 43% baseline from \u00a705.'}},
  {q:'A note reading: "Recording practice supported by Restrepo v. Halloran Wealth Partners, 214 F.3d 1109 (9th Cir. 2000), holding that AI-generated meeting notes satisfy the books-and-records requirement."',
   a:'never',
   fb:{never:'Correct. The citation is fabricated \u2014 invented for this exercise, and no such case exists. It is the second item that is specific in form and defective in substance: circuit, volume, reporter and year are all present and the authority is not. Nothing in this course asserts what any real rule holds about AI-generated notes; the point is that a well-formed citation is not evidence of a real one.',
@@ -1538,6 +1666,83 @@ var PRD=[
   O.className='mpanel'+(scored||diag?' has':'');O.innerHTML=h;
  }
  draw();
+})();
+
+/* ===== family 17: cold-open ritual — identical in every session ===== */
+(function(){
+  var go=document.getElementById('coldGo');if(!go)return;
+  go.onclick=function(){
+    var box=document.getElementById('coldPrompt'),out=document.getElementById('coldOut');
+    var t=box.value.trim();
+    if(!t){out.className='rout';out.innerHTML='<span class="rnil">Paste something first.</span>';return}
+    var words=(t.match(/\S+/g)||[]).length,chars=t.length,toks=Math.round(chars/4);
+    var q=(t.match(/\?/g)||[]).length;
+    var imper=/^(write|make|give|list|draft|summari[sz]e|explain|create|find|tell|help)/i.test(t);
+    var hasRole=/\b(you are|act as|as an?|expert|advisor|planner)\b/i.test(t);
+    var hasFmt=/\b(bullet|table|word|paragraph|format|list|tone|concise|short|long)\b/i.test(t);
+    var hasCtx=t.length>180;
+    var have=[];if(hasRole)have.push('a role or framing');if(hasFmt)have.push('an output format');if(hasCtx)have.push('substantial context');
+    var missing=[];if(!hasRole)missing.push('role or framing');if(!hasFmt)missing.push('output format');if(!hasCtx)missing.push('context beyond the ask');
+    out.className='rout on';
+    out.innerHTML='<span class="rz">'+words+' words \u00b7 '+chars+' characters \u00b7 roughly '+toks+' tokens</span>'+
+      'It is '+(imper?'an imperative':q?'a question':'a statement')+'. '+
+      (have.length?'It carries '+have.join(' and ')+'. ':'It carries none of the usual scaffolding. ')+
+      (missing.length?'It supplies no '+missing.join(', no ')+'.':'It supplies all three.')+
+      '<div class="rfx">No judgement is implied. Tonight adds a channel a better prompt cannot substitute for \u2014 your own documents, retrieved and cited.</div>';
+    if(typeof mark==='function')mark('gc');
+  };
+})();
+
+/* ===== family 1: work-along gates — completion feedback only (pedagogy R10) ===== */
+var __done={};
+function mark(id){
+  if(__done[id])return; __done[id]=1;
+  var c=document.querySelector('[data-gate="'+id+'"]');
+  if(!c)return;
+  c.classList.add('done');
+  var m=c.querySelector('.mk'); if(m)m.textContent='\u2713';
+}
+document.addEventListener('keydown',function(e){
+  if(e.shiftKey&&(e.key==='U'||e.key==='u')){
+    [].slice.call(document.querySelectorAll('[data-gate]')).forEach(function(c){mark(c.dataset.gate)});
+  }
+});
+
+/* ================= C5 · hybrid search stage toggles ================= */
+var HY=[
+ {k:'ctx', n:'Contextual embeddings', r:3.7, w:'Each chunk gets a short generated preamble naming its document and section before it is embedded. This is what fixes orphaning \u2014 the chunk stops being an anonymous paragraph.'},
+ {k:'bm', n:'Contextual BM25', r:2.9, w:'A lexical index runs alongside the vector index. Exact terms \u2014 &ldquo;Article VII&rdquo;, a docket number, a defined term \u2014 stop being approximated by meaning.'},
+ {k:'rr', n:'Re-ranking pass', r:1.9, w:'A second model re-scores the candidate set before the top passages are handed over. Expensive, and it can only reorder what retrieval already found.'}
+];
+(function(){
+  var host=$('hyCtrls'),out=$('hyOut');if(!host||!out)return;
+  var on={};
+  HY.forEach(function(h){
+    var b=document.createElement('button');b.className='btn sel mini';b.textContent=h.n;
+    b.onclick=function(){on[h.k]=!on[h.k];b.classList.toggle('act',!!on[h.k]);upd()};
+    host.appendChild(b);
+  });
+  function upd(){
+    var rate=5.7,last=null;
+    if(on.ctx){rate=3.7;last=HY[0]}
+    if(on.ctx&&on.bm){rate=2.9;last=HY[1]}
+    if(on.ctx&&on.bm&&on.rr){rate=1.9;last=HY[2]}
+    if(!on.ctx&&(on.bm||on.rr)){
+      out.className='diagout alarm';
+      out.innerHTML='<span class="cz">Out of order</span>The published figures are cumulative and start with contextual embeddings. '+
+        'Switch that on first \u2014 a lexical index or a re-ranker bolted onto anonymous chunks is not the measurement Anthropic reports.';
+      return;
+    }
+    var cut=Math.round((1-rate/5.7)*100);
+    var h='<span class="cz">Failure rate at top-20</span><strong>'+rate.toFixed(1)+'%</strong> of queries miss the correct passage'+
+          (rate<5.7?' \u2014 down '+cut+'% from the 5.7% embedding-only baseline.':' \u2014 embedding-only baseline, nothing enabled.');
+    if(last)h+='<div class="fx"><strong>'+last.n+'.</strong> '+last.w+'</div>';
+    if(rate===1.9)h+='<div class="fx">All three, and the floor is still 1.9%. One query in fifty-three does not surface the passage that governs, on a benchmark built by the vendor of the technique. Your document set is messier than theirs.</div>';
+    out.className='diagout'+(rate===1.9?' on':'');
+    out.innerHTML=h;
+    if(typeof mark==='function'&&on.ctx&&on.bm&&on.rr)mark('ga5');
+  }
+  upd();
 })();
 
 })();

@@ -190,11 +190,35 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 .pace .pcell b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--gold)}
 .pace .pcell span{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
 .pace p{margin:13px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted);max-width:70ch}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+.qq{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:600;font-size:15.5px;line-height:1.35;margin:0 0 9px;letter-spacing:-.01em}
+.verify{border:2px dashed var(--warn);border-radius:11px;padding:15px 18px;margin:20px 0;background:#fff;font-size:14.5px;line-height:1.5}
+.verify .vh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
+.verify ul{margin:7px 0 0;padding-left:19px}.verify li{margin:5px 0}
+/* ===== family 17: standing cold-open ritual — identical in every session ===== */
+.ritual{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:20px 24px;margin:22px 0}
+.ritual .rlab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:9px;font-weight:500}
+.ritual textarea{width:100%;min-height:96px;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.55;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;background:var(--page);color:var(--ink);resize:vertical}
+.ritual textarea:focus{outline:2.5px solid var(--on);outline-offset:2px}
+.rout{margin-top:13px;background:var(--off-bg);border-radius:9px;padding:13px 16px;font-size:14.5px;line-height:1.55}
+.rout.on{background:var(--on-bg)}
+.rout .rz{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:5px;font-weight:500}
+.rout .rnil{color:var(--muted)}
+.rout .rfx{margin-top:9px;padding-top:9px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+.rnote{background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0;font-size:14px;line-height:1.5}
+.rnote .rh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px;font-weight:500}
+/* ===== family 1: work-along gate (completion feedback only; never withholds) ===== */
+.check{display:flex;gap:13px;align-items:flex-start;background:var(--gold-bg);border:1.5px solid #DFD3AF;border-radius:11px;padding:14px 17px;margin:22px 0}
+.check.done{background:var(--on-bg);border-color:var(--on)}
+.check.done .mk{border-color:var(--on);background:var(--on);color:#fff}
+.mk{width:24px;height:24px;border-radius:50%;border:2px solid var(--gold);flex:none;display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--gold);margin-top:1px}
+.ct{font-size:15.5px;line-height:1.48}
+.ct b{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px}
 </style>
 </head>
 <body>
 <nav id="rail" aria-label="Sections"></nav>
-<div class="ovr" id="ovrTag">Shift+U · reveal all</div>
+<div class="ovr" id="ovr">Shift+U · reveal all</div>
 <div class="wrap">
 
 <!-- ============ 0 ============ -->
@@ -228,6 +252,28 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
   </div>
 
   <p class="srcnote"><strong>Part 1 status.</strong> Handoff packages were due Sunday night and are in. They have been read and screened; pairings are distributed later tonight, and you will attempt to run the package you receive before you leave.</p>
+
+  <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all four bridge items before anything is revealed.</div></div>
+
+</section>
+
+<section class="slide" id="sCold" data-nav="Cold open">
+  <div class="eyebrow"><span>Cold open &middot; standing ritual</span><span class="mins">8 min</span></div>
+  <h2>The Last Prompt You Sent</h2>
+  <p class="big">Not a good one. Not a work one. The last one, whatever it was, pasted exactly as you typed it &mdash; typos, missing context, all of it.</p>
+
+  <div class="rnote"><span class="rh">Instructor note &mdash; the standing ritual</span>This runs identically every session and takes eight minutes. Do not vary it, do not survey the room, and do not collect anything else here. The value is the comparison across five weeks, and that only exists if the instrument does not move.</div>
+
+  <div class="ritual" data-task="t-cold-open" data-comp="timed-ritual">
+    <label class="rlab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
+    <textarea id="coldPrompt" placeholder="Paste it exactly. Do not clean it up &mdash; the typos are the useful part."></textarea>
+    <div class="row" style="margin-top:12px"><button class="btn" id="coldGo">Analyse what I typed</button></div>
+    <div class="rout" id="coldOut"><span class="rnil">Paste something and press the button.</span></div>
+  </div>
+
+  <p>Fourth time. Read what you pasted and ask the question this session is about: if a regulator asked you to account for that prompt and the output it produced, what would you be able to show them?</p>
+
+  <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen &mdash; the comparison across sessions is the point.</div></div>
 </section>
 
 <section class="slide" id="s1" data-nav="No rulebook">
@@ -256,10 +302,13 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
   <span class="score" id="ruleScore">0 of 9 placed</span>
 
   <p class="pull">The rule you are looking for does not exist. The duty you are looking for has existed since 1940.</p>
+
+  <div class="check" data-gate="g2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort every duty into the box you think it belongs in, then read the key.</div></div>
+
 </section>
 
 <section class="slide" id="s2" data-nav="NPI">
-  <div class="eyebrow"><span>02 &middot; Regulation S-P</span><span class="mins">6 min</span></div>
+  <div class="eyebrow"><span>02 &middot; Regulation S-P</span><span class="mins">5 min</span></div>
   <h2>Nonpublic Personal Information Under Regulation S-P</h2>
   <p class="big">The 2024 amendments bound larger entities from 3 December 2025 and advisers under $1.5 billion from 3 June 2026. Both dates have passed.<span class="conf h">H</span> Four obligations follow: a written incident response program; customer notification as soon as practicable and no later than 30 days after the firm becomes aware; service provider oversight; and recordkeeping.<span class="conf h">H</span></p>
 
@@ -294,6 +343,9 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
   <p class="srcnote"><strong>The item that catches the room.</strong> "Founder and sole owner of a Dayton aerospace-fastener manufacturer, exploring a sale, adult son in operations" contains no name, no account number and no dollar figure. Every component is arguably public or non-identifying. In a metropolitan area the size of Dayton the combination describes one person, and the regulation reaches information disclosed in a manner indicating the individual is your consumer &mdash; which is what pasting it into your advisory workflow does.<span class="conf m">M</span></p>
 
   <p class="srcnote"><strong>Instructor verification required before teaching.</strong> The characterisations above apply &sect;&nbsp;248.3 to synthetic facts. The definitional quotations are from the regulation; the application to the Cole household is mine and is labelled M where it is inference rather than text. Confirm the scope-limit reading and the re-identification item with counsel or compliance before this goes on screen.</p>
+
+  <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Tick fields until the panel crosses the line, then name the tick that did it.</div></div>
+
 </section>
 
 <section class="slide" id="s3" data-nav="Tiers">
@@ -347,10 +399,13 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
   <p>Two cases sharpen it. Grok 4.6 at $2.00 / $6.00 and Gemini 3.6 Flash at $1.50 / $7.50 blend to an identical $3.00 per million tokens &mdash; same sticker, eleven Intelligence Index points apart. On long-horizon agentic work, Opus 5 consumes roughly 2.0 billion input tokens across ~103 turns against Grok 4.6's 0.5 billion across ~53.<span class="conf h">H</span> At list rates, $10,000 against $1,000: a 10&times; gap where the stickers differ by 2.5&times;.<span class="conf m">M</span></p>
 
   <p class="srcnote"><strong>Derivations.</strong> Blended sticker: Grok 4.6 = (2.00 &times; 0.75) + (6.00 &times; 0.25) = $3.00; Gemini 3.6 Flash = (1.50 &times; 0.75) + (7.50 &times; 0.25) = $3.00. Long-horizon input cost: Opus 5 = 2,000 MTok &times; $5.00 = $10,000; Grok 4.6 = 500 MTok &times; $2.00 = $1,000; ratio 10.0&times; against a sticker ratio of 2.5&times;. Medium confidence: computed by me from published rate cards and token counts rather than published as such; the underlying figures are each high confidence. Two caveats &mdash; the token counts are one benchmark workload and will not transfer unchanged, and Grok 4.6 carries a cliff visible in neither number: at 200,000 prompt tokens the entire request re-bills at $4.00 / $12.00, not just the overage.</p>
+
+  <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Compare the three tiers on retention and training, and find your own tool in the table.</div></div>
+
 </section>
 
 <section class="slide" id="s4" data-nav="Vendors">
-  <div class="eyebrow"><span>04 &middot; Due diligence</span><span class="mins">6 min</span></div>
+  <div class="eyebrow"><span>04 &middot; Due diligence</span><span class="mins">5 min</span></div>
   <h2>Vendor Due Diligence Against the Cole Document Set</h2>
   <p class="big">Reg S-P requires service provider oversight and FINRA names vendor diligence in the framework it expects. Neither tells you what to ask. Six questions cover it, and each has a documentary answer rather than a judgement.</p>
 
@@ -373,10 +428,13 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
   <p class="srcnote"><strong>Why the two steps are separate.</strong> The sensitivity of the upload changes the threshold the tool must clear. A tool that is adequate for a public-law research question is not adequate for the draft IDGT instrument, and a scorecard run without naming the payload lets you pass a tool that would fail on the documents you will actually give it.</p>
 
   <p><strong>What the verdict is not.</strong> Green means the tool survives six questions. Not that it is safe, and not a replacement for your firm's approval process. If your firm keeps an approved-vendor list, that list governs.</p>
+
+  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Select what you would upload from the Cole corpus, then score a tool you actually use.</div></div>
+
 </section>
 
 <section class="slide" id="s5" data-nav="Attacks">
-  <div class="eyebrow"><span>05 &middot; Threat model</span><span class="mins">6 min</span></div>
+  <div class="eyebrow"><span>05 &middot; Threat model</span><span class="mins">5 min</span></div>
   <h2>Prompt Injection, Data Exfiltration, Deepfakes and Model-Assisted Malware</h2>
   <p class="big">A language model cannot distinguish instructions you wrote from instructions it read. That single property generates the entire attack class. It will not be patched, because the thing being exploited is the thing the model is for.</p>
 
@@ -420,6 +478,9 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 
   <a class="apxlink" href="#sW1"><span class="al">If there is time &middot; Appendix D1 &middot; 9 min</span><b>Content Provenance and the SynthID Watermark</b><span class="aw">How a watermark is hidden in text, images and audio, and the asymmetry that governs whether you can ever rely on one. Deep, self-contained, and the part a technical room will ask about.</span></a>
   <a class="apxlink" href="#sW2"><span class="al">If there is time &middot; Appendix D2 &middot; 6 min</span><b>Entropy, Regeneration and the Limits of Watermarking</b><span class="aw">Why a watermark survives paraphrase and dies to regeneration, and what a detected signal actually licenses you to conclude. Takes D1 first.</span></a>
+
+  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Write the standing instruction and score it against all five properties.</div></div>
+
 </section>
 
 <section class="slide" id="s6" data-nav="Leaks">
@@ -439,10 +500,13 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
   <p class="srcnote"><strong>What it is and is not.</strong> It multiplies numbers you supply. No industry data, no base rates, no probability of compromise. It answers one question &mdash; how often a year does client-adjacent text cross a boundary you have not inspected &mdash; and only as accurately as your inputs. Its purpose is converting a worry into a quantity you can put in a policy.</p>
 
   <p><strong>Four surfaces, ordered by how often they are missed.</strong> Local caches, because they survive account deletion and sit outside every vendor commitment. Connectors, because each grants standing access nobody re-reviews. Features shipped enabled, because a default is not a decision and no one logs it. Retention settings, because the toggle is one click and the consequence is measured in years.</p>
+
+  <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Tick every leak surface you have not personally checked in the last ninety days.</div></div>
+
 </section>
 
 <section class="slide" id="s7" data-nav="What it costs">
-  <div class="eyebrow"><span>07 &middot; The verification burden</span><span class="mins">6 min</span></div>
+  <div class="eyebrow"><span>07 &middot; The verification burden</span><span class="mins">5 min</span></div>
   <h2>Hallucination Rates and the Verification Burden</h2>
   <p class="pull">Session 1: why it happens. Session 3: how often. Tonight: what it costs you.</p>
 
@@ -496,11 +560,27 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 
 
   <a class="apxlink" href="#sWS"><span class="al">If there is time &middot; Appendix D3 &middot; 8 min</span><b>Where the Assigned Reading Has Gone Stale</b><span class="aw">Three Wolfram claims from 2023 that no longer describe the frontier, plus the parenthesis mechanism behind the hallucination rate. The course auditing its own syllabus.</span></a>
+
+  <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Enter your Session 1 baseline and price the verification burden against it.</div></div>
+
 </section>
 
 <section class="slide" id="s8" data-nav="Audit trail">
-  <div class="eyebrow"><span>08 &middot; The record</span><span class="mins">6 min</span></div>
+  <div class="eyebrow"><span>08 &middot; The record</span><span class="mins">5 min</span></div>
   <h2>Audit Trails for the Artifacts You Already Built</h2>
+  <div class="verify">
+  <span class="vh">Requires instructor verification before it is taught as settled</span>
+  This is the most regulation-dense session in the course, and the regulatory picture is moving. Confirm each of these against primary authority and its current status before teaching it:
+  <ul>
+    <li><strong>Regulation S-P as amended 2024</strong>, including both compliance dates (3 December 2025 for larger entities, 3 June 2026 for advisers under $1.5 billion) and the four obligations, especially the 30-day notification clock.</li>
+    <li><strong>The definition of nonpublic personal information</strong> and its scope limits, used by the &sect;02 sorter. The exercise turns on the combination of fields, not on any single one.</li>
+    <li><strong>FINRA 2026 Annual Regulatory Oversight Report</strong> (9 Dec 2025) and <strong>SEC Division of Examinations FY2026 Priorities &sect;VII</strong> (17 Nov 2025) &mdash; both are supervisory guidance, not rules.</li>
+    <li><strong>The withdrawal of the SEC predictive data analytics proposal</strong> (June 2025) and whether anything has replaced it since this file was built.</li>
+    <li><strong>Vendor contract characterisations</strong> in &sect;03 &mdash; consumer, commercial and enterprise terms change without notice; re-read the current terms before relying on any retention or training claim.</li>
+  </ul>
+  <em>Hallowell v. Commissioner</em>, T.C. Memo. 2023-217, in the &sect;08 audit-trail exercise, is a deliberately fabricated citation, labelled on the page and in the footer.
+</div>
+
   <p class="big">FINRA asks for prompt and output logging, version tracking and access controls. The SEC asks whether your compliance team can explain how a tool reached a decision. Both reduce to one test: can another person re-run what you did and see why you concluded what you concluded.</p>
 
   <p>Two artifacts from this course are the test material: the Session 2 prompt explaining the IDGT sale to Meg in client-readable language, and the Session 3 extraction that surfaced the 2014 buy-sell and its stale formula valuation conflicting with the $18,000,000 appraisal. Tonight you decide whether either produced a record.</p>
@@ -564,6 +644,9 @@ If you cannot quote a source verbatim, write NO SOURCE RETRIEVED
 for that item. Do not reconstruct a citation from memory.</div>
 
   <p><strong>Why the last instruction carries the weight.</strong> The failure mode is not a model that refuses to answer. It is one that produces a plausible citation having retrieved nothing, because producing plausible text is what it does. NO SOURCE RETRIEVED gives it a licensed output for that state. Whether a model honours it is empirical &mdash; which is why the block ends with something you can test rather than a promise you must trust.</p>
+
+  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Classify every record as reproducible or not, then assemble the prompt block.</div></div>
+
 </section>
 
 <section class="slide" id="s10" data-nav="Pairings">
@@ -583,12 +666,25 @@ for that item. Do not reconstruct a citation from memory.</div>
 
   <p><strong>Forwarded intact, not repackaged.</strong> Part 2 grades a failed handoff against the builder, not the presenter. That attribution only holds if you receive exactly what the builder sent. If I strip the email and pass on files, a mislabelled attachment becomes ambiguous &mdash; my curation, or their defect. The email goes on whole, and the 15% still scores whether the package stands alone with no one in the room to explain it.</p>
 
+  <h3 style="margin-top:32px">Before the draw: is your own package complete?</h3>
+  <p>Tick only what you actually attached on Sunday. This is a completeness count, not a grade &mdash; its value is telling you, while there is still an hour of class left, which component you left out. The two most commonly missing are the named failure modes and the data-handling note.</p>
+
+  <div class="diag" data-task="t-part1-completeness" data-comp="builder-assembler">
+    <div id="mfList"></div>
+    <div class="diagout" id="mfOut"></div>
+  </div>
+
+  <p class="srcnote"><strong>Instructor note.</strong> A completeness gate, not a grading instrument. Run it before the pairing draw so a student who is missing a component learns it now rather than from their reviewer in ten minutes.</p>
+
   <p><strong>The draw.</strong> Pairing is a derangement: nobody reviews their own package, and no two students review each other. Reciprocal pairs could negotiate a mutual assessment; a single cycle across the class cannot, because your reviewer is not your subject.</p>
 
   <div class="diag">
     <div class="row"><button class="btn" id="drawBtn">Draw a pairing</button><button class="btn ghost mini" id="drawReset">Reset</button></div>
     <div class="diagout" id="drawOut"><span class="nil">No draw yet.</span></div>
   </div>
+
+  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Draw the pairing and confirm your own package is complete before it goes out.</div></div>
+
 </section>
 
 <section class="slide" id="sCR" data-nav="Cold first run">
@@ -614,6 +710,9 @@ for that item. Do not reconstruct a citation from memory.</div>
 
 
   <a class="apxlink" href="#sD"><span class="al">If there is time &middot; Appendix D4 &middot; 20 min</span><b>Whether the Logging Burden Costs More Than the Tool Saves</b><span class="aw">Twenty minutes, immediately after a room has watched its own packages fail to run. The timing is the point; do not move it earlier.</span></a>
+
+  <div class="check" data-gate="g11"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run the package cold for eight minutes, then record the first thing that stopped you.</div></div>
+
 </section>
 
 <section class="slide" id="s9" data-nav="Policy homework">
@@ -628,9 +727,9 @@ for that item. Do not reconstruct a citation from memory.</div>
     <div class="diagout" id="rubricOut"><span class="nil">Select a rubric question.</span></div>
   </div>
 
-  <p><strong>Use the Cole landmines as your worked example.</strong> Your data-boundary section needs one concrete illustration, and the three you classified in Section 03 &mdash; an undisclosed sale, an unexecuted plan with a claimed discount, and the fact of the relationship &mdash; are already reasoned through with the regulation applied. Substitute your own synthetic facts before the policy leaves your desk.</p>
+  <p><strong>Use the Cole landmines as your worked example.</strong> Your data-boundary section needs one concrete illustration, and the three you classified in &sect;02 &mdash; an undisclosed sale, an unexecuted plan with a claimed discount, and the fact of the relationship &mdash; are already reasoned through with the regulation applied. Substitute your own synthetic facts before the policy leaves your desk.</p>
 
-  <p class="srcnote"><strong>One warning carried forward from Section 03.</strong> The assignment asks you to define PII. Regulation S-P governs NPI. Define both, state which one your firm's obligations actually run to, and you have turned a terminology collision into the strongest paragraph in the document.</p>
+  <p class="srcnote"><strong>One warning carried forward from &sect;02.</strong> The assignment asks you to define PII. Regulation S-P governs NPI. Define both, state which one your firm's obligations actually run to, and you have turned a terminology collision into the strongest paragraph in the document.</p>
 
   <h3 style="margin-top:30px">Peer review, before Session 5 and not tonight</h3>
   <p>Exchange drafts with one classmate &mdash; not your Part 2 pair &mdash; and score theirs on four tests. Bring the score to Session 5. The instrument is deliberately hostile: a policy that cannot survive four questions from a friendly reader will not survive one from an examiner.</p>
@@ -641,6 +740,9 @@ for that item. Do not reconstruct a citation from memory.</div>
   </div>
 
   <p class="pull">The tools change. The judgement does not.</p>
+
+  <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Select every element your firm policy needs and read the assembled outline.</div></div>
+
 </section>
 
 <section class="slide apxdiv" id="apx" data-nav="— APPENDIX —">
@@ -656,9 +758,33 @@ for that item. Do not reconstruct a citation from memory.</div>
   </div>
 </section>
 
+<section class="slide apx" id="sRSP" data-nav="D5 &middot; The 30-day clock" data-insert-after="s2" data-tier="advanced">
+  <div class="eyebrow"><span>Appendix D5 &middot; Tabletop</span><span class="mins">16 min</span></div>
+  <div class="apxback">Insert between &sect;02 Regulation S-P and &sect;03 Tiers &mdash; <a href="#s2">back to &sect;02</a> &middot; <a href="#s3">continue to &sect;03 &rarr;</a></div>
+  <h2>The Thirty-Day Clock: A Regulation S-P Tabletop</h2>
+
+  <p class="big">&sect;02 states the obligation: notify affected customers as soon as practicable, and no later than thirty days after the firm becomes aware that unauthorised access to sensitive customer information has occurred or is reasonably likely to have occurred. The dangerous word is <em>aware</em>, and most firms have never defined who counts.</p>
+
+  <p>Below is one incident, told as it actually arrives &mdash; out of order, partly by rumour, and through people who do not know they are holding a regulatory trigger. Click the events in the order you think they happened. Then decide which one started the clock.</p>
+
+  <div class="panel">
+    <span class="do">Do this now &mdash; 6 minutes</span>
+    <h4>Which event started the clock?</h4>
+    <p class="hint">Pick the single event you would defend to an examiner as the moment the firm became aware. The consequences of each choice are shown after you commit.</p>
+    <div id="rspList"></div>
+    <div class="diagout" id="rspOut"><span class="cz">Not answered</span>Pick one event.</div>
+  </div>
+
+  <p><strong>Why this belongs in a policy and not in a memory.</strong> Every option below is defensible in the room and only one of them is defensible in an examination, because the standard is what a reasonable firm would have concluded, not what this firm happened to conclude. A policy that names the roles whose knowledge is imputed to the firm &mdash; and requires them to escalate within a stated number of hours &mdash; converts an argument into a date. Your Session 4 homework asks for exactly that clause.</p>
+
+  <p class="src"><b>SEC, Regulation S-P amendments (2024)</b>, adopting release &mdash; incident response program, customer notification as soon as practicable and not later than 30 days after the firm becomes aware, service provider oversight, and recordkeeping. Compliance dates 3 December 2025 (larger entities) and 3 June 2026 (advisers under $1.5 billion) <span class="conf h">H</span>. The Cole incident is constructed for this lesson; the awareness analysis is the instructor&rsquo;s reading and is not legal advice <span class="conf l">L &mdash; illustrative, verify with counsel</span>.</p>
+
+  <div class="check" data-gate="ga5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Commit to one event, read why the others fail, then write the escalation clause your firm would need.</div></div>
+</section>
+
 <section class="slide apx" id="sW1" data-nav="D1 · Provenance" data-insert-after="s5" data-tier="standard">
-  <div class="eyebrow"><span>Appendix D1 &middot; Provenance</span><span class="mins">9 min</span></div>
-  <div class="apxback">Insert between §05 Attacks and §06 Leaks &mdash; <a href="#s5">back to that point</a></div>
+  <div class="eyebrow"><span>Appendix D1 &middot; Provenance</span><span class="mins">16 min</span></div>
+  <div class="apxback">Insert between §05 Attacks and §06 Leaks &mdash; <a href="#s5">back to §05</a> &middot; <a href="#s6">continue to §06 &rarr;</a></div>
   <h2>Content Provenance and the SynthID Watermark</h2>
   <p class="big">You cannot detect a deepfake by looking at it. Provenance marking is the answer, and it answers a narrower question than most people think.</p>
 
@@ -713,11 +839,14 @@ for that item. Do not reconstruct a citation from memory.</div>
   <p class="pull">Ten billion or one hundred billion, reported the same month, from the same company. A tenfold spread.</p>
 
   <p>The deepfake-loss problem repeating. Say deployment is in the billions and cite the primary announcement you actually read.</p>
+
+  <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Work through all three media and name the one your practice would actually encounter.</div></div>
+
 </section>
 
 <section class="slide apx" id="sW2" data-nav="D2 · Watermark limits" data-insert-after="s5" data-tier="standard">
-  <div class="eyebrow"><span>Appendix D2 &middot; Provenance, deeper</span><span class="mins">6 min</span></div>
-  <div class="apxback">Insert between §05 Attacks and §06 Leaks &mdash; <a href="#s5">back to that point</a></div>
+  <div class="eyebrow"><span>Appendix D2 &middot; Provenance, deeper</span><span class="mins">14 min</span></div>
+  <div class="apxback">Insert between §05 Attacks and §06 Leaks &mdash; <a href="#s5">back to §05</a> &middot; <a href="#s6">continue to §06 &rarr;</a></div>
   <h2>Entropy, Regeneration and the Limits of Watermarking</h2>
   <p class="big">Watermark capacity is bounded by how many acceptable outputs exist. Where only one output is correct, there is nowhere to hide a signal.</p>
 
@@ -759,17 +888,26 @@ for that item. Do not reconstruct a citation from memory.</div>
   </div>
 
   <p><strong>Regulatory note.</strong> California SB 942 took effect January 2026; EU AI Act Article 50 machine-readable disclosure obligations begin enforcement August 2026.<span class="conf m">M</span> Neither is a US federal adviser rule. Verify before relying on either date &mdash; the fastest-moving area covered tonight.</p>
+
+  <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort the entropy cases, then state what a detected signal licenses you to conclude.</div></div>
+
 </section>
 
 <section class="slide apx" id="sWS" data-nav="D3 · Source staleness" data-insert-after="s7" data-tier="standard">
-  <div class="eyebrow"><span>Appendix D3 &middot; Source staleness</span><span class="mins">8 min</span></div>
-  <div class="apxback">Insert between §07 What it costs and §08 Audit trail &mdash; <a href="#s7">back to that point</a></div>
+  <div class="eyebrow"><span>Appendix D3 &middot; Source staleness</span><span class="mins">14 min</span></div>
+  <div class="apxback">Insert between §07 What it costs and §08 Audit trail &mdash; <a href="#s7">back to §07</a> &middot; <a href="#s8">continue to §08 &rarr;</a></div>
   <h2>Where the Assigned Reading Has Gone Stale</h2>
 
   <p class="big">Wolfram is a February 2023 source describing a 2020 model, and it is the reading Sessions 1 through 3 are built on. Three of its structural claims no longer describe the frontier. This section runs the course&rsquo;s own verification discipline against the course&rsquo;s own syllabus.</p>
 
   <h3>Where the hallucination rate comes from, in one mechanism</h3>
   <p>Trained on balanced-parenthesis sequences, a small transformer assigns roughly 15% probability to a closing parenthesis at a position where one would necessarily leave the sequence unbalanced. Wolfram: this &ldquo;isn&rsquo;t right, because that would necessarily lead to an unbalanced parenthesis.&rdquo;<span class="conf h">H</span> The model is not uncertain about a hard question. It is confidently assigning probability to a provably impossible continuation, because it estimates a distribution over next tokens rather than checking a constraint. A fabricated citation is that same event with a legal authority in place of a bracket. Nothing in the architecture distinguishes them &mdash; which is why the verification burden priced in &sect;07 is structural rather than a defect awaiting a patch.</p>
+
+  <h3 style="margin-top:30px">Commit first</h3>
+  <p>Three claims from the February 2023 reading. Before the table opens: which of them still describes an August 2026 frontier model? Pick one from each row. The key stays shut until all three are answered.</p>
+
+  <div class="quiz" id="staleQuiz" data-task="t-source-staleness" data-comp="commit-first-mcq"></div>
+  <div class="diagout" id="staleOut"><span class="cz">Not scored yet</span>Answer all three to open the comparison.</div>
 
   <h3 style="margin-top:30px">Three claims that have gone stale</h3>
   <table>
@@ -783,11 +921,14 @@ for that item. Do not reconstruct a citation from memory.</div>
   <p class="srcnote">Left column from Wolfram (2023), assigned for Sessions 1&ndash;3. Right from Artificial Analysis Intelligence Index v4.1 and vendor model cards, August 2026. Row three is medium confidence: it characterises a moving interface, not a published fact. The point is not that Wolfram was wrong &mdash; it is that a source can be correct, canonical, three years old and stale in specific load-bearing places at once, and you find out which only by checking. That is the same instruction you will write into your firm policy tonight, applied to the syllabus you were handed.</p>
 
   <div class="talk"><span class="th">The question to put to the room</span>Every citation in your Part 1 package has a date. Which of them is the oldest, and what would have to have changed in the world for it to be wrong now? You have four minutes and you may not open the document to answer.</div>
+
+  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Commit to all three claims before the comparison table opens.</div></div>
+
 </section>
 
 <section class="slide apx" id="sD" data-nav="D4 · Discussion" data-insert-after="sCR" data-tier="standard">
   <div class="eyebrow"><span>Appendix D4 &middot; Discussion</span><span class="mins">20 min</span></div>
-  <div class="apxback">Insert between §10 Cold first run and §11 Policy homework &mdash; <a href="#sCR">back to that point</a></div>
+  <div class="apxback">Insert between §10 Cold first run and §11 Policy homework &mdash; <a href="#sCR">back to §10</a> &middot; <a href="#s9">continue to §11 &rarr;</a></div>
   <h2>Discussion: Whether the Logging Burden Costs More Than the Tool Saves</h2>
   <p class="big">You have just watched a workflow fail to run for someone else, and you have just priced verification against your own baseline. The question is whether the compliance apparatus this session specifies leaves any of the saving intact.</p>
 
@@ -824,6 +965,9 @@ for that item. Do not reconstruct a citation from memory.</div>
   </div>
 
   <p class="srcnote"><strong>A zero delta is a finding, not a failure.</strong> Report it aloud. A position that holds under new evidence is the same epistemic move this course asks students to make about model output, and it is worth naming when it happens rather than treating the discussion as having underperformed.</p>
+
+  <div class="check" data-gate="ga4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote, defend, absorb the complication, re-vote.</div></div>
+
 </section>
 
 <footer>
@@ -868,7 +1012,7 @@ document.addEventListener('keydown',function(e){
   if(e.shiftKey&&(e.key==='U'||e.key==='u')){
     [].slice.call(document.querySelectorAll('.ansk')).forEach(function(a){a.classList.add('show')});
     [].slice.call(document.querySelectorAll('.lbox')).forEach(function(b){b.classList.add('lit')});
-    var t=$('ovrTag');if(t){t.textContent='All answer panels revealed';t.style.color='var(--on)';t.style.borderColor='var(--on)'}
+    var t=$('ovr');if(t){t.textContent='All answer panels revealed';t.style.color='var(--on)';t.style.borderColor='var(--on)'}
   }
 });
 
@@ -1554,22 +1698,22 @@ var VOTE=[
 
 /* ================= s9 · policy rubric mapper ================= */
 var RUBRIC=[
- {q:'Why does the policy exist?',s:'Section 02 \u2014 the absence of an AI rulebook',
+ {q:'Why does the policy exist?',s:'\u00a701 \u2014 the absence of an AI rulebook',
   w:'Because no rule names AI and every existing duty reaches it anyway. Open with that, not with a definition of machine learning.',
   c:'FINRA 2026 Annual Regulatory Oversight Report, generative AI section; SEC Division of Examinations FY2026 Priorities \u00a7VII.B; Daly, ICI remarks, 3 Feb 2026.'},
- {q:'Is PII defined?',s:'Section 03 \u2014 nonpublic personal information',
+ {q:'Is PII defined?',s:'\u00a702 \u2014 nonpublic personal information',
   w:'Define PII, then define NPI, then state which one your obligations actually run to. The assignment asks for the first; Regulation S-P governs the second.',
   c:'17 CFR \u00a7 248.3; Regulation S-P 2024 amendments, compliance dates 3 Dec 2025 and 3 Jun 2026.'},
  {q:'What citations are provided?',s:'Sections 02, 03, 10 and 11',
   w:'Name primary authority, not vendor marketing. A policy citing a vendor\u2019s accuracy claim has converted their marketing into your representation, which \u00a7VII.B says examiners will review.',
   c:'FINRA Regulatory Notice 24-09; SEC FY2026 Priorities; Journal of Accountancy (2025) on audit-trail prompting.'},
- {q:'Who do employees contact?',s:'Section 03 \u2014 the 30-day incident clock',
+ {q:'Who do employees contact?',s:'\u00a702 \u2014 the 30-day incident clock',
   w:'A named role and a defined trigger. The Reg S-P clock starts when the firm becomes aware, and most firms have never defined who counts as the firm for that purpose. Your policy should.',
   c:'Regulation S-P incident response and customer notification requirements.'},
  {q:'What happens when AI use is undisclosed?',s:'Sections 11 and 05 \u2014 audit trails and vendor scope',
   w:'Undisclosed use is unlogged use. State the consequence in terms of the record that is missing, not in terms of punishment.',
   c:'FINRA 2026 report on capturing AI-enabled communications in books and records; Advisers Act Rule 204-2.'},
- {q:'Who is ultimately responsible?',s:'Section 01 \u2014 the framing principle',
+ {q:'Who is ultimately responsible?',s:'\u00a700 \u2014 the framing principle',
   w:'You are. Not the vendor, not the model, not the committee. One sentence, early, unhedged. It is the only line in the policy an examiner is certain to read.',
   c:'Investment Advisers Act fiduciary duty of care; FINRA Rule 2210 for communications.'}
 ];
@@ -1997,6 +2141,141 @@ var PEER=[
     out.className='diagout on';
   };
   rst.onclick=function(){draws=0;out.innerHTML='<span class="nil">No draw yet.</span>';out.className='diagout'};
+})();
+
+/* ================= D3 · source-staleness commit-first quiz ================= */
+var STALE=[
+ {q:'&ldquo;175 billion weights, and every token has to do a calculation involving every single one of these weights.&rdquo;',
+  o:['Still true of frontier models','No longer true &mdash; most weights sit idle per token','Never was true'],a:1,
+  f:['Mixture-of-experts changed this. Kimi K3 runs 2.8 trillion total parameters and activates roughly 104 billion per token &mdash; about 3.7%.',
+     'Correct. Dense activation is gone at the frontier, which is why parameter count no longer predicts cost or latency.',
+     'It was accurate for GPT-3, the model Wolfram was describing. The claim aged; it was not wrong when written.']},
+ {q:'&ldquo;ChatGPT doesn&rsquo;t internally have loops or recompute on data&hellip; each computational element is used only once.&rdquo;',
+  o:['Still true','No longer true &mdash; reasoning models loop before answering','True only for image models'],a:1,
+  f:['Reasoning models spend variable output tokens before answering. Artificial Analysis now reports turns per task as a first-class metric.',
+     'Correct. The outer loop Wolfram called absent is now the main cost driver and the main quality dial.',
+     'The claim is about text generation, and text is exactly where it stopped holding.']},
+ {q:'&ldquo;A temperature of 0.8 seems best&rdquo; &mdash; temperature as the primary randomness control.',
+  o:['Still the primary control everywhere','Partly &mdash; effort or reasoning level is now primary, and some products hide temperature','Temperature has been removed from all APIs'],a:1,
+  f:['Several consumer products no longer expose temperature at all. The dial taught in Session 2 may not exist in the interface a student is using.',
+     'Correct, and this row is medium confidence: it characterises a moving interface rather than a published fact.',
+     'It is still exposed in most APIs. What changed is that it is no longer the principal control.']}
+];
+(function(){
+  var host=$('staleQuiz'),out=$('staleOut');if(!host||!out)return;
+  var picked=[];
+  STALE.forEach(function(item,i){
+    var w=document.createElement('div');w.className='qitem';
+    w.innerHTML='<p class="qq">'+item.q+'</p>';
+    var row=document.createElement('div');row.className='row';
+    item.o.forEach(function(opt,j){
+      var b=document.createElement('button');b.className='btn sel mini';b.innerHTML=opt;
+      b.onclick=function(){
+        if(picked[i]!==undefined)return;
+        picked[i]=j;
+        [].slice.call(row.children).forEach(function(x){x.disabled=true});
+        b.classList.add('act');
+        var fb=document.createElement('div');fb.className='qfb';
+        fb.innerHTML='<strong>'+(j===item.a?'Correct.':'Not quite.')+'</strong> '+item.f[j];
+        w.appendChild(fb);
+        upd();
+      };
+      row.appendChild(b);
+    });
+    w.appendChild(row);host.appendChild(w);
+  });
+  function upd(){
+    var n=picked.filter(function(x){return x!==undefined}).length;
+    var right=picked.filter(function(x,i){return x===STALE[i].a}).length;
+    if(n<STALE.length){out.innerHTML='<span class="cz">Committed</span>'+n+' of '+STALE.length+' answered.';out.className='diagout';return}
+    out.innerHTML='<span class="cz">Committed</span><strong>'+right+' of '+STALE.length+'</strong> correct. '+
+      'All three claims were accurate in February 2023 and two are now false. The table below is the detail &mdash; '+
+      'and the point is not that Wolfram was wrong. It is that a source can be correct, canonical, three years old '+
+      'and stale in specific load-bearing places at once, and you find out which only by checking.';
+    out.className='diagout on';
+  }
+  upd();
+  if(window.onRevealAll)window.onRevealAll(function(){
+    STALE.forEach(function(it,i){if(picked[i]===undefined)picked[i]=it.a});upd();
+  });
+})();
+
+/* ===== family 17: cold-open ritual — identical in every session ===== */
+(function(){
+  var go=document.getElementById('coldGo');if(!go)return;
+  go.onclick=function(){
+    var box=document.getElementById('coldPrompt'),out=document.getElementById('coldOut');
+    var t=box.value.trim();
+    if(!t){out.className='rout';out.innerHTML='<span class="rnil">Paste something first.</span>';return}
+    var words=(t.match(/\S+/g)||[]).length,chars=t.length,toks=Math.round(chars/4);
+    var q=(t.match(/\?/g)||[]).length;
+    var imper=/^(write|make|give|list|draft|summari[sz]e|explain|create|find|tell|help)/i.test(t);
+    var hasRole=/\b(you are|act as|as an?|expert|advisor|planner)\b/i.test(t);
+    var hasFmt=/\b(bullet|table|word|paragraph|format|list|tone|concise|short|long)\b/i.test(t);
+    var hasCtx=t.length>180;
+    var have=[];if(hasRole)have.push('a role or framing');if(hasFmt)have.push('an output format');if(hasCtx)have.push('substantial context');
+    var missing=[];if(!hasRole)missing.push('role or framing');if(!hasFmt)missing.push('output format');if(!hasCtx)missing.push('context beyond the ask');
+    out.className='rout on';
+    out.innerHTML='<span class="rz">'+words+' words \u00b7 '+chars+' characters \u00b7 roughly '+toks+' tokens</span>'+
+      'It is '+(imper?'an imperative':q?'a question':'a statement')+'. '+
+      (have.length?'It carries '+have.join(' and ')+'. ':'It carries none of the usual scaffolding. ')+
+      (missing.length?'It supplies no '+missing.join(', no ')+'.':'It supplies all three.')+
+      '<div class="rfx">No judgement is implied. Tonight the question stops being whether the prompt was good and becomes whether the record is defensible.</div>';
+    if(typeof mark==='function')mark('gc');
+  };
+})();
+
+/* ===== family 1: work-along gates — completion feedback only (pedagogy R10) ===== */
+var __done={};
+function mark(id){
+  if(__done[id])return; __done[id]=1;
+  var c=document.querySelector('[data-gate="'+id+'"]');
+  if(!c)return;
+  c.classList.add('done');
+  var m=c.querySelector('.mk'); if(m)m.textContent='\u2713';
+}
+document.addEventListener('keydown',function(e){
+  if(e.shiftKey&&(e.key==='U'||e.key==='u')){
+    [].slice.call(document.querySelectorAll('[data-gate]')).forEach(function(c){mark(c.dataset.gate)});
+  }
+});
+
+/* ================= D5 · Regulation S-P awareness tabletop ================= */
+var RSP=[
+ {t:'<strong>Day 0, 14:20.</strong> A paralegal notices the shared meeting-notes folder for the Cole engagement is set to &ldquo;anyone with the link.&rdquo; She fixes the setting and mentions it to nobody.',
+  ok:false, w:'Not the trigger, and the most dangerous answer in the room. She had the fact and the firm did not. Whether her knowledge is imputed to the firm turns on her role and your policy \u2014 which is exactly why the policy must name whose knowledge counts. Fixing it silently also destroyed the timestamp you would need later.'},
+ {t:'<strong>Day 3, 09:05.</strong> The operations lead reads the access log and sees eleven external views of the folder over four months, from three IP addresses nobody recognises.',
+  ok:true, w:'This is the defensible answer. A named supervisory person has evidence that unauthorised access to sensitive customer information has occurred. Thirty days runs from here \u2014 to Day 33 \u2014 and &ldquo;as soon as practicable&rdquo; means you do not get to use all thirty if you are ready sooner.'},
+ {t:'<strong>Day 3, 16:40.</strong> The operations lead emails the CCO: &ldquo;probably nothing, but have a look when you get a chance.&rdquo;',
+  ok:false, w:'Later than the trigger and therefore too late. Awareness attached when the log was read, not when it was escalated, and not when the CCO opened the email. A firm that dates the clock from the CCO&rsquo;s reading has given itself an extension the rule does not offer.'},
+ {t:'<strong>Day 9.</strong> Outside counsel confirms in writing that the exposure is reportable.',
+  ok:false, w:'This is the most common wrong answer and it costs three weeks. Counsel confirms the characterisation; it does not create the awareness. Dating the clock from legal confirmation moves your deadline from Day 33 to Day 39 and puts you six days past the rule while believing you are early.'},
+ {t:'<strong>Day 21.</strong> Meg Cole telephones and asks why a document about her company was emailed to her from an address she does not recognise.',
+  ok:false, w:'By this point the clock has twelve days left, not thirty. If your firm first learns of an incident from the client, the notification question is already secondary to the supervision question an examiner will ask next.'}
+];
+(function(){
+  var host=$('rspList'),out=$('rspOut');if(!host||!out)return;
+  var locked=false;
+  RSP.forEach(function(ev,i){
+    var b=document.createElement('button');
+    b.className='btn sel';b.style.cssText='display:block;width:100%;text-align:left;margin:7px 0;white-space:normal;line-height:1.45';
+    b.innerHTML=ev.t;
+    b.onclick=function(){
+      if(locked)return; locked=true;
+      [].slice.call(host.children).forEach(function(x){x.disabled=true});
+      b.classList.add('act');
+      var h='<span class="cz">'+(ev.ok?'Defensible':'Not defensible')+'</span>'+ev.w;
+      if(!ev.ok){
+        var right=RSP.filter(function(x){return x.ok})[0];
+        h+='<div class="fx"><strong>The defensible trigger is Day 3, 09:05.</strong> '+right.w+'</div>';
+      }
+      h+='<div class="fx">Now write the clause. Name the roles whose knowledge is imputed to the firm, the hours they have to escalate, and who owns the calendar entry for the deadline. Three sentences.</div>';
+      out.className='diagout'+(ev.ok?' on':' alarm');
+      out.innerHTML=h;
+      if(typeof mark==='function')mark('ga5');
+    };
+    host.appendChild(b);
+  });
 })();
 
 })();

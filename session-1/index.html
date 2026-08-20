@@ -30,7 +30,7 @@ section.slide{padding:clamp(44px,6vw,74px) 0;border-bottom:1px solid var(--line)
 
 #topbar{position:fixed;top:0;left:0;right:0;height:44px;background:rgba(244,244,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:60;display:flex;align-items:center;gap:14px;padding:0 clamp(14px,4vw,34px)}
 #topbar .ttl{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-#pnum{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--on);white-space:nowrap;font-weight:500;border:1.5px solid var(--on);border-radius:6px;padding:4px 9px}
+#ovr{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--on);white-space:nowrap;font-weight:500;border:1.5px solid var(--on);border-radius:6px;padding:4px 9px}
 #ptrack{flex:1}
 #caseBtn{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:none;border:1.5px solid var(--on);color:var(--on);border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap}
 #caseBtn:hover{background:var(--on-bg)}
@@ -297,13 +297,25 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 .pace .pcell b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--gold)}
 .pace .pcell span{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
 .pace p{margin:13px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted);max-width:70ch}
+/* ===== family 17: standing cold-open ritual — identical in every session ===== */
+.ritual{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:20px 24px;margin:22px 0}
+.ritual .rlab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:9px;font-weight:500}
+.ritual textarea{width:100%;min-height:96px;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.55;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;background:var(--page);color:var(--ink);resize:vertical}
+.ritual textarea:focus{outline:2.5px solid var(--on);outline-offset:2px}
+.rout{margin-top:13px;background:var(--off-bg);border-radius:9px;padding:13px 16px;font-size:14.5px;line-height:1.55}
+.rout.on{background:var(--on-bg)}
+.rout .rz{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:5px;font-weight:500}
+.rout .rnil{color:var(--muted)}
+.rout .rfx{margin-top:9px;padding-top:9px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+.rnote{background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0;font-size:14px;line-height:1.5}
+.rnote .rh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px;font-weight:500}
 </style>
 </head>
 <body>
 <div id="topbar">
   <span class="ttl">Session 1 &middot; Cole household</span>
   <div id="ptrack"></div>
-  <span id="pnum" class="mono">Shift+U &mdash; reveal all</span>
+  <span id="ovr" class="mono">Shift+U &mdash; reveal all</span>
   <button id="caseBtn">Case facts</button>
 </div>
 <div id="caseModal"><div class="inner" id="caseInner"></div></div>
@@ -346,26 +358,25 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
  </div>
 </section>
 
-<section class="slide" id="s1b" data-nav="Cold open">
+<section class="slide" id="sCold" data-nav="Cold open">
  <div class="body">
-  <div class="eyebrow"><span>01 &middot; Cold open</span><span class="mins">4 min</span></div>
+  <div class="eyebrow"><span>01 &middot; Cold open &middot; standing ritual</span><span class="mins">8 min</span></div>
   <h2>The Last Prompt You Sent</h2>
   <p class="big">Not a good one. Not a work one. The last one, whatever it was, pasted exactly as you typed it &mdash; typos, missing context, all of it.</p>
 
-  <div class="inote"><span class="ih">Instructor note &mdash; before this field is filled</span>Open by reading two or three opinions from the Week 0 Canvas discussion aloud, unattributed, for about ninety seconds. Do not name anyone, do not ask anyone to elaborate, and do not survey the room. The point is that the class hears real positions from inside itself before it hears anything from you. Then put this field on screen.
-  <ul><li>Week 0 already collected names, locations, titles, outside interests and either a plain-language work explanation or a planning opinion. <b>Do not collect any of that again.</b></li><li>This field is the only thing asked here, and it repeats every session as the standing ritual.</li></ul></div>
+  <div class="rnote"><span class="rh">Instructor note &mdash; the standing ritual</span>This runs identically every session and takes eight minutes. Do not vary it, do not survey the room, and do not collect anything else here. The value is the comparison across five weeks, and that only exists if the instrument does not move.</div>
 
-  <div class="panel">
-    <label class="plab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
+  <div class="ritual" data-task="t-cold-open" data-comp="timed-ritual">
+    <label class="rlab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
     <textarea id="coldPrompt" placeholder="Paste it exactly. Do not clean it up &mdash; the typos are the useful part."></textarea>
     <div class="row" style="margin-top:12px"><button class="btn" id="coldGo">Analyse what I typed</button></div>
-    <div class="readout" id="coldOut"><span class="nil">Paste something and press the button.</span></div>
+    <div class="rout" id="coldOut"><span class="rnil">Paste something and press the button.</span></div>
   </div>
 
   <p>Whatever you pasted, you wrote it for a machine that does exactly one thing: assign a probability to every possible next token and pick one. Nothing in it read your intent. The rest of tonight is what that sentence actually means.</p>
-
-  <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen &mdash; you will compare it against the same field in Session 5.</div></div>
  </div>
+
+  <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen &mdash; the comparison across sessions is the point.</div></div>
 </section>
 
 <section class="slide" id="s2" data-nav="Prediction">
@@ -454,7 +465,7 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
       <tr><td>Entire Cole file, full 1M context window</td><td class="n">1,000,000</td><td class="n">$5.00</td></tr>
     </tbody>
   </table>
-  <p>The whole file costs five dollars to read. Cost is not the constraint. Your duty of care is &mdash; Section 12.</p>
+  <p>The whole file costs five dollars to read. Cost is not the constraint. Your duty of care is &mdash; &sect;08.</p>
 
   <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Replace the sample with your own writing, at least 40 tokens.</div></div>
   <span class="src">Prices and context window: <b>Anthropic, Claude Platform Docs &mdash; Pricing</b>, retrieved 28 July 2026. First-party. <span class="conf h">H</span> &middot; Token IDs and vocabulary figures: Wolfram (2023). <span class="conf h">H</span> &middot; Word-to-token rows derived at 0.75 words per token. <span class="conf m">M</span></span>
@@ -697,7 +708,7 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 
   <div class="cards">
     <div class="card"><span class="num">Also due</span><h4>Three prompt templates</h4><p>An email rewriter, a case-note formatter, a one-page plan summary generator.</p></div>
-    <div class="card gold"><span class="num">By Thursday</span><h4>Account-level custom instructions</h4><p>Built and posted to the Week 1 Canvas discussion. Section 14 shows you where they are configured.</p></div>
+    <div class="card gold"><span class="num">By Thursday</span><h4>Account-level custom instructions</h4><p>Built and posted to the Week 1 Canvas discussion. &sect;09 shows you where they are configured.</p></div>
   </div>
 
   <table class="dt tight">
@@ -760,7 +771,7 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 <section class="slide apx" id="s3" data-nav="A1 · n-grams" data-insert-after="s2" data-tier="standard">
  <div class="body">
   <div class="eyebrow"><span>Appendix A1 &middot; Mechanism, deeper</span><span class="mins">11 min</span></div>
-  <div class="apxback">Insert between §02 Prediction and §03 Tokens &mdash; <a href="#s2">back to that point</a></div>
+  <div class="apxback">Insert between §02 Prediction and §03 Tokens &mdash; <a href="#s2">back to §02</a> &middot; <a href="#s5">continue to §03 &rarr;</a></div>
   <h2>Counting Works, Then Stops Working</h2>
   <p class="big">Everything below is computed live from the corpus in the box &mdash; counts from the words in front of you, not figures quoted from anywhere. The corpus is discovery-meeting language from the case.</p>
 
@@ -814,7 +825,7 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 <section class="slide apx" id="s4" data-nav="A2 · Fitting a model" data-insert-after="s2" data-tier="standard">
  <div class="body">
   <div class="eyebrow"><span>Appendix A2 &middot; Mechanism, deeper</span><span class="mins">12 min</span></div>
-  <div class="apxback">Insert between §02 Prediction and §03 Tokens &mdash; <a href="#s2">back to that point</a></div>
+  <div class="apxback">Insert between §02 Prediction and §03 Tokens &mdash; <a href="#s2">back to §02</a> &middot; <a href="#s5">continue to §03 &rarr;</a></div>
   <h2>Fitting a Model by Hand</h2>
   <p class="big">Turn the knobs until the curve fits the fall times. You are minimising a loss function by hand &mdash; which is what training does, 175 billion knobs at a time.</p>
 
@@ -864,7 +875,7 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 <section class="slide apx" id="s6" data-nav="A3 · Meaning space" data-insert-after="s5" data-tier="standard">
  <div class="body">
   <div class="eyebrow"><span>Appendix A3 &middot; Mechanism, deeper</span><span class="mins">9 min</span></div>
-  <div class="apxback">Insert between §03 Tokens and §04 Hallucination &mdash; <a href="#s5">back to that point</a></div>
+  <div class="apxback">Insert between §03 Tokens and §04 Hallucination &mdash; <a href="#s5">back to §03</a> &middot; <a href="#s9">continue to §04 &rarr;</a></div>
   <h2>Words Laid Out So That Nearby Means Similar</h2>
 
   <div class="wolf"><span class="wh">From the assigned reading</span>Built by looking at large amounts of text &mdash; he uses <b>5 billion words</b> &mdash; and seeing how similar the environments are in which words appear. "&thinsp;'alligator' and 'crocodile' will often appear almost interchangeably&hellip; But 'turnip' and 'eagle' won't tend to appear in otherwise similar sentences, so they'll be placed far apart."</div>
@@ -892,7 +903,7 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 <section class="slide apx" id="s7" data-nav="A4 · Counting failure" data-insert-after="s5" data-tier="standard">
  <div class="body">
   <div class="eyebrow"><span>Appendix A4 &middot; Failure mode</span><span class="mins">9 min</span></div>
-  <div class="apxback">Insert between §03 Tokens and §04 Hallucination &mdash; <a href="#s5">back to that point</a></div>
+  <div class="apxback">Insert between §03 Tokens and §04 Hallucination &mdash; <a href="#s5">back to §03</a> &middot; <a href="#s9">continue to §04 &rarr;</a></div>
   <h2>The Task a Transformer Cannot Reliably Learn</h2>
   <p class="big">Wolfram trains a small transformer on a language with exactly one rule: parentheses must balance. It learns it well enough to look right, then fails.</p>
 
@@ -926,12 +937,12 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 
 <section class="slide apx" id="s8" data-nav="A5 · SAMPLER LAB" data-insert-after="s5" data-tier="standard">
  <div class="body">
-  <div class="eyebrow"><span>Appendix A5 &middot; Lab</span><span class="mins">18 min</span></div>
-  <div class="apxback">Insert between §03 Tokens and §04 Hallucination &mdash; <a href="#s5">back to that point</a></div>
+  <div class="eyebrow"><span>Appendix A5 &middot; Lab</span><span class="mins">16 min</span></div>
+  <div class="apxback">Insert between §03 Tokens and §04 Hallucination &mdash; <a href="#s5">back to §03</a> &middot; <a href="#s9">continue to §04 &rarr;</a></div>
   <h2>The Nine Controls Between the Model and Your Answer</h2>
   <p class="big">The model hands over a probability for every one of about 50,000 tokens. A stack of sampling algorithms then cuts that list down and picks one. Almost nobody using these tools professionally knows they exist.</p>
 
-  <p>Below is the candidate distribution for a prompt about Meg's CPC interest, shaped as the rank<sup>&minus;1</sup> power law from Section 1. Red bars are cut; green survive.</p>
+  <p>Below is the candidate distribution for a prompt about Meg's CPC interest, shaped as the rank<sup>&minus;1</sup> power law from &sect;02. Red bars are cut; green survive.</p>
 
   <div class="panel" style="padding:18px 20px">
     <div class="row" style="margin-bottom:6px"><span class="dim" style="font-size:14px">Prompt:</span><span class="mono" id="labPrompt" style="font-size:13px"></span></div>
@@ -977,7 +988,7 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 <section class="slide apx" id="s14" data-nav="A6 · Regulation" data-insert-after="s13" data-tier="standard">
  <div class="body">
   <div class="eyebrow"><span>Appendix A6 &middot; Regulation</span><span class="mins">9 min</span></div>
-  <div class="apxback">Insert between §08 Confidentiality and §09 Custom instructions &mdash; <a href="#s13">back to that point</a></div>
+  <div class="apxback">Insert between §08 Confidentiality and §09 Custom instructions &mdash; <a href="#s13">back to §08</a> &middot; <a href="#s14b">continue to §09 &rarr;</a></div>
   <h2>There Is No Separate AI Rulebook</h2>
   <p class="big">FINRA's rules are technology-neutral. Regulatory Notice 24-09 creates no new obligations &mdash; it confirms the existing ones already reach this.</p>
 
@@ -1007,8 +1018,8 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 
 <section class="slide apx" id="s14c" data-nav="A7 · Discussion" data-insert-after="s14b" data-tier="standard">
  <div class="body">
-  <div class="eyebrow"><span>Appendix A7 &middot; Discussion</span><span class="mins">15 min</span></div>
-  <div class="apxback">Insert between §09 Custom instructions and §10 Close &mdash; <a href="#s14b">back to that point</a></div>
+  <div class="eyebrow"><span>Appendix A7 &middot; Discussion</span><span class="mins">17 min</span></div>
+  <div class="apxback">Insert between §09 Custom instructions and §10 Close &mdash; <a href="#s14b">back to §09</a> &middot; <a href="#s15">continue to §10 &rarr;</a></div>
   <h2>Disclosure of AI Use to the Client</h2>
   <p class="big">You used a frontier model to summarise the Cole discovery meeting. The summary was accurate and you reviewed it line by line before it went in the file. Does Meg have to be told?</p>
 
@@ -1048,7 +1059,7 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 <footer>
   <p>BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors &middot; Session 1 &middot; UC Berkeley Extension, Fall 2026 &middot; Instructor: Jared Winkers</p>
   <p>The Cole household is synthetic and constructed for this course as a classroom anchor only. No real client data appears anywhere in this document. Students build the final project on their own recurring task using their own constructed synthetic data.</p>
-  <p>Sections 1&ndash;7 follow Wolfram, S. (2023), <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">What Is ChatGPT Doing &hellip; and Why Does It Work?</a> Section 8 reimplements the sampler set at <a href="https://artefact2.github.io/llm-sampling/">artefact2.github.io/llm-sampling</a>. Other sources: <a href="https://arxiv.org/abs/2509.04664">Kalai et al. (2025)</a> &middot; <a href="https://artificialanalysis.ai/models">artificialanalysis.ai</a> &middot; <a href="https://platform.claude.com/docs/en/about-claude/pricing">Anthropic pricing</a> &middot; <a href="https://www.finra.org/rules-guidance/notices/24-09">FINRA 24-09</a></p>
+  <p>The core sections and Appendices A1&ndash;A4 follow Wolfram, S. (2023), <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">What Is ChatGPT Doing &hellip; and Why Does It Work?</a> Appendix A5 reimplements the sampler set at <a href="https://artefact2.github.io/llm-sampling/">artefact2.github.io/llm-sampling</a>. Other sources: <a href="https://arxiv.org/abs/2509.04664">Kalai et al. (2025)</a> &middot; <a href="https://artificialanalysis.ai/models">artificialanalysis.ai</a> &middot; <a href="https://platform.claude.com/docs/en/about-claude/pricing">Anthropic pricing</a> &middot; <a href="https://www.finra.org/rules-guidance/notices/24-09">FINRA 24-09</a></p>
   <p>Capability and pricing figures reflect published data as of 28 July 2026. Six frontier models crossed the same capability threshold in the six weeks before this was built. Verify every benchmark and price before relying on it.</p>
 </footer>
 
@@ -1084,7 +1095,7 @@ document.addEventListener('keydown',function(e){
     all('[data-gate]').forEach(function(c){mark(c.dataset.gate)});
     all('.hidden').forEach(function(x){x.classList.remove('hidden')});
     REVEALERS.forEach(function(f){try{f()}catch(err){}});
-    $('pnum').textContent='All revealed';return}
+    $('ovr').textContent='All revealed';return}
   if(e.key==='Escape'){$('caseModal').classList.remove('open');return}
   var t=(document.activeElement&&document.activeElement.tagName)||'';
   if(t==='TEXTAREA'||t==='INPUT')return;
@@ -1110,6 +1121,7 @@ $('caseInner').innerHTML='<div class="eyebrow">Synthetic case &mdash; classroom 
  '</ul></div>'+
  '<div class="verify"><span class="vh">Requires instructor verification before it is taught as settled</span>Every tax and legal characterisation of this structure \u2014 the seed-gift convention, the treatment of the sale for income tax, estate-inclusion exposure, and basis treatment at death \u2014 is posed here as a question, not stated as a holding. Verify against primary authority before answering any of them in class.</div>'+
  '<div class="row" style="margin-top:18px"><button class="btn ghost" id="caseClose">Close</button></div>';
+(function(){var f=$('s1field');if(f)f.addEventListener('input',function(){if(f.value.trim().length>8)mark('g1')})})();
 $('caseBtn').onclick=function(){$('caseModal').classList.add('open')};
 $('caseClose').onclick=function(){$('caseModal').classList.remove('open')};
 $('caseModal').onclick=function(e){if(e.target===$('caseModal'))$('caseModal').classList.remove('open')};
@@ -1632,7 +1644,7 @@ var TQ=[
  {d:'Tax Planning',t:'Identify the note terms and interest rate the 9-year interest-only note must carry for the sale to the trust to be respected as a sale rather than a part gift.',a:2,
   f:['Correct on tier, and verify every figure. The applicable rate is a published monthly number \u2014 an arbitrary fact with one right answer and twelve plausible wrong ones per year, all of which the model has seen in identical sentences.','Top tier, and it will still hand you a rate in a confident sentence. Applicable rates publish monthly; the model has seen years of them in near-identical language with no signal about which is current.']},
  {d:'Estate Planning',t:'Reconcile the 2014 buy-sell formula value against the $18,000,000 appraisal and list every provision of the two documents that conflicts.',a:2,
-  f:['Correct on tier \u2014 and recall Section 6. This is the parenthesis problem in a planning document: an exact reconciliation across a long sequence. Extract the provisions with the tool, then compare them yourself. Note also that nothing in this document set creates estate liquidity against an illiquid $18,000,000 position.','This is a reconciliation across a long sequence, the exact case a feed-forward network is worst at. Any tier, and you do the comparison by hand.']}];
+  f:['Correct on tier \u2014 and recall Appendix A4. This is the parenthesis problem in a planning document: an exact reconciliation across a long sequence. Extract the provisions with the tool, then compare them yourself. Note also that nothing in this document set creates estate liquidity against an illiquid $18,000,000 position.','This is a reconciliation across a long sequence, the exact case a feed-forward network is worst at. Any tier, and you do the comparison by hand.']}];
 var TLABEL=['Haiku-class','Sonnet-class','Opus / Fable-class'];
 (function(){
   var host=$('tierQuiz'),done=0;
@@ -1674,7 +1686,7 @@ var NPI=[
 /* ===== 13 DIAGNOSTIC ===== */
 var DG=[
  {s:'It cited a Code section that does not say what it claimed',c:'It sampled a plausible citation rather than retrieving a real one. Statutory citations are arbitrary facts \u2014 many plausible wrong answers, one right one.',f:'Verify every citation against the primary source before it informs a recommendation. If the tool cannot show you where the text came from, the citation is unverified.'},
- {s:'The same question gave two different answers',c:'Sampling. You built this in Sections 1 and 7 \u2014 the model draws from a distribution and the sampler decides how far into the tail it may reach.',f:'Run consequential questions more than once. Divergence is a signal of uncertainty even when both answers sound confident.'},
+ {s:'The same question gave two different answers',c:'Sampling. You built this in \u00a702 and Appendix A5 \u2014 the model draws from a distribution and the sampler decides how far into the tail it may reach.',f:'Run consequential questions more than once. Divergence is a signal of uncertainty even when both answers sound confident.'},
  {s:'It gave a confident applicable federal rate',c:'The scoring rule plus stale training data. Abstention scores like a wrong answer, and years of monthly rates sit in training in near-identical sentences with no signal about which is current.',f:'Treat every rate, date and threshold as unverified. Published figures come from the publisher, not the model.'},
  {s:'It reconciled two documents and missed a conflict',c:'The parenthesis problem. Feed-forward with no loop, so it cannot hold an exact running comparison \u2014 it approximates one from local pattern and the approximation decays with length. The 2014 buy-sell against the 2023 appraisal is exactly this shape.',f:'Never delegate an exact reconciliation. Extract the provisions with the tool, then compare them yourself or in a spreadsheet.'},
  {s:'It summarised a tense meeting as if everyone agreed',c:'Fluency bias. Coherent narrative is what the objective rewards, and disagreement makes a summary less coherent, so it is smoothed away \u2014 which is how Meg not having told Nathan disappears from a meeting note.',f:'Ask for points of disagreement and unresolved items as a separate output. Never accept a single-narrative summary of a multi-party meeting.'},
@@ -1690,25 +1702,6 @@ var DG=[
     var n=Object.keys(seen).length;$('diagScore').textContent=n+' / 6';
     if(n>=4)mark('g14')}})})();
 
-/* ===== 00 COLD OPEN ===== */
-$('coldGo').onclick=function(){
-  var t=$('coldPrompt').value.trim();
-  if(!t){$('coldOut').className='readout';$('coldOut').innerHTML='<span class="nil">Paste something first.</span>';return}
-  var words=(t.match(/\S+/g)||[]).length,chars=t.length,toks=Math.round(chars/4);
-  var q=(t.match(/\?/g)||[]).length, imper=/^(write|make|give|list|draft|summari[sz]e|explain|create|find|tell|help)/i.test(t);
-  var hasRole=/\b(you are|act as|as an?|expert|advisor|planner)\b/i.test(t);
-  var hasFmt=/\b(bullet|table|word|paragraph|format|list|tone|concise|short|long)\b/i.test(t);
-  var hasCtx=t.length>180;
-  var have=[];if(hasRole)have.push('a role or framing');if(hasFmt)have.push('an output format');if(hasCtx)have.push('substantial context');
-  var missing=[];if(!hasRole)missing.push('role or framing');if(!hasFmt)missing.push('output format');if(!hasCtx)missing.push('context beyond the ask');
-  $('coldOut').className='readout on';
-  $('coldOut').innerHTML='<span class="cz">'+words+' words &middot; '+chars+' characters &middot; roughly '+toks+' tokens</span>'+
-    'It is '+(imper?'an imperative':q?'a question':'a statement')+'. '+
-    (have.length?'It carries '+have.join(' and ')+'. ':'It carries none of the usual scaffolding. ')+
-    (missing.length?'It supplies no '+missing.join(', no ')+'.':'It supplies all three.')+
-    '<div class="fx">No judgement is implied. Session 2 is where this gets rebuilt \u2014 keep this text, because the comparison is the point.</div>';
-  mark('gc');
-};
 
 /* ===== 10b COLE DOCUMENT PASS ===== */
 var DPT=[['Haiku 4.5',1,5],['Sonnet 5 (from 1 Sep)',3,15],['Opus 5',5,25],['Fable 5',10,50]];
@@ -1835,6 +1828,31 @@ $('blGo').onclick=function(){
     '.<div class="fx">At '+m+' minutes weekly that is '+Math.round(m*46/60)+' hours a year on one task. This page stores nothing. Copy these three lines into your Session 2 submission.</div>';
   mark('g17');
 };
+
+/* ===== family 17: cold-open ritual — identical in every session ===== */
+(function(){
+  var go=document.getElementById('coldGo');if(!go)return;
+  go.onclick=function(){
+    var box=document.getElementById('coldPrompt'),out=document.getElementById('coldOut');
+    var t=box.value.trim();
+    if(!t){out.className='rout';out.innerHTML='<span class="rnil">Paste something first.</span>';return}
+    var words=(t.match(/\S+/g)||[]).length,chars=t.length,toks=Math.round(chars/4);
+    var q=(t.match(/\?/g)||[]).length;
+    var imper=/^(write|make|give|list|draft|summari[sz]e|explain|create|find|tell|help)/i.test(t);
+    var hasRole=/\b(you are|act as|as an?|expert|advisor|planner)\b/i.test(t);
+    var hasFmt=/\b(bullet|table|word|paragraph|format|list|tone|concise|short|long)\b/i.test(t);
+    var hasCtx=t.length>180;
+    var have=[];if(hasRole)have.push('a role or framing');if(hasFmt)have.push('an output format');if(hasCtx)have.push('substantial context');
+    var missing=[];if(!hasRole)missing.push('role or framing');if(!hasFmt)missing.push('output format');if(!hasCtx)missing.push('context beyond the ask');
+    out.className='rout on';
+    out.innerHTML='<span class="rz">'+words+' words \u00b7 '+chars+' characters \u00b7 roughly '+toks+' tokens</span>'+
+      'It is '+(imper?'an imperative':q?'a question':'a statement')+'. '+
+      (have.length?'It carries '+have.join(' and ')+'. ':'It carries none of the usual scaffolding. ')+
+      (missing.length?'It supplies no '+missing.join(', no ')+'.':'It supplies all three.')+
+      '<div class="rfx">No judgement is implied. \u00a703 is where this gets rebuilt \u2014 keep this text, because the comparison is the point.</div>';
+    if(typeof mark==='function')mark('gc');
+  };
+})();
 
 })();
 </script>

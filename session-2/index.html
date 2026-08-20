@@ -30,6 +30,7 @@ p{margin:18px 0;max-width:64ch}
 section.slide{padding:clamp(48px,7vw,88px) 0;border-bottom:1px solid var(--line);scroll-margin-top:12px}
 .eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--on);font-weight:500;margin-bottom:15px;display:flex;gap:14px;flex-wrap:wrap}
 .eyebrow .clock{color:var(--muted)}
+.mins{background:var(--gold-bg);color:var(--gold);border-radius:4px;padding:3px 8px;letter-spacing:.09em}
 
 #rail{position:fixed;left:12px;top:50%;transform:translateY(-50%);z-index:40;display:none}
 @media(min-width:1340px){#rail{display:block}}
@@ -204,20 +205,42 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 .pace .pcell b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--gold)}
 .pace .pcell span{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
 .pace p{margin:13px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted);max-width:70ch}
+.verify{border:2px dashed var(--warn);border-radius:11px;padding:15px 18px;margin:20px 0;background:#fff;font-size:14.5px;line-height:1.5}
+.verify .vh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
+.verify ul{margin:7px 0 0;padding-left:19px}.verify li{margin:5px 0}
+/* ===== family 17: standing cold-open ritual — identical in every session ===== */
+.ritual{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:20px 24px;margin:22px 0}
+.ritual .rlab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:9px;font-weight:500}
+.ritual textarea{width:100%;min-height:96px;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.55;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;background:var(--page);color:var(--ink);resize:vertical}
+.ritual textarea:focus{outline:2.5px solid var(--on);outline-offset:2px}
+.rout{margin-top:13px;background:var(--off-bg);border-radius:9px;padding:13px 16px;font-size:14.5px;line-height:1.55}
+.rout.on{background:var(--on-bg)}
+.rout .rz{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:5px;font-weight:500}
+.rout .rnil{color:var(--muted)}
+.rout .rfx{margin-top:9px;padding-top:9px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+.rnote{background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0;font-size:14px;line-height:1.5}
+.rnote .rh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px;font-weight:500}
+/* ===== family 1: work-along gate (completion feedback only; never withholds) ===== */
+.check{display:flex;gap:13px;align-items:flex-start;background:var(--gold-bg);border:1.5px solid #DFD3AF;border-radius:11px;padding:14px 17px;margin:22px 0}
+.check.done{background:var(--on-bg);border-color:var(--on)}
+.check.done .mk{border-color:var(--on);background:var(--on);color:#fff}
+.mk{width:24px;height:24px;border-radius:50%;border:2px solid var(--gold);flex:none;display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--gold);margin-top:1px}
+.ct{font-size:15.5px;line-height:1.48}
+.ct b{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px}
 </style>
 </head>
 <body>
 <div id="prog"></div>
 <div id="topbar">
   <span class="tb-l">BUS ADM X433.4 &middot; Session 2 &middot; 14 September 2026</span>
-  <span class="tb-r"><kbd>Shift</kbd>+<kbd>U</kbd> &mdash; reveal all answer panels</span>
+  <span class="tb-r" id="ovr"><kbd>Shift</kbd>+<kbd>U</kbd> &mdash; reveal all answer panels</span>
 </div>
 <nav id="rail" aria-label="Sections"></nav>
 <div class="wrap">
 
 <!-- ============ 0 ============ -->
 <section class="slide" id="s0" data-nav="Session map">
-  <div class="eyebrow"><span>BUS ADM X433.4 · Session 2</span><span class="clock">6 min</span></div>
+  <div class="eyebrow"><span>BUS ADM X433.4 · Session 2</span><span class="mins">6 min</span></div>
   <h1>Practical AI Usage in Daily Advisory Workflows</h1>
   <p class="lede">The model samples a plausible answer. It does not compute the true one. Everything in this session follows from that one sentence.</p>
   <div class="panel pace"><span class="plab">How this session is paced</span><div id="paceOut"></div></div>
@@ -287,10 +310,32 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 
   <a class="apxlink" href="#s1"><span class="al">If there is time &middot; Appendix B1 &middot; 10 min</span><b>Next-Token Probabilities for a Single Prompt</b><span class="aw">The distribution behind one prompt, drawn from repeatedly. Session 1 established the mechanism; this is the second worked example, and a room that already believes it does not need it.</span></a>
   <a class="apxlink" href="#s2"><span class="al">If there is time &middot; Appendix B2 &middot; 8 min</span><b>Laplace on Probability as a Measure of Ignorance</b><span class="aw">The 1814 argument that probability describes what the observer does not know rather than what the world does. Reframes everything after it, and costs eight minutes.</span></a>
+
+  <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all four bridge items and commit each before revealing anything.</div></div>
+
+</section>
+
+<section class="slide" id="sCold" data-nav="Cold open">
+  <div class="eyebrow"><span>Cold open &middot; standing ritual</span><span class="mins">8 min</span></div>
+  <h2>The Last Prompt You Sent</h2>
+  <p class="big">Not a good one. Not a work one. The last one, whatever it was, pasted exactly as you typed it &mdash; typos, missing context, all of it.</p>
+
+  <div class="rnote"><span class="rh">Instructor note &mdash; the standing ritual</span>This runs identically every session and takes eight minutes. Do not vary it, do not survey the room, and do not collect anything else here. The value is the comparison across five weeks, and that only exists if the instrument does not move.</div>
+
+  <div class="ritual" data-task="t-cold-open" data-comp="timed-ritual">
+    <label class="rlab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
+    <textarea id="coldPrompt" placeholder="Paste it exactly. Do not clean it up &mdash; the typos are the useful part."></textarea>
+    <div class="row" style="margin-top:12px"><button class="btn" id="coldGo">Analyse what I typed</button></div>
+    <div class="rout" id="coldOut"><span class="rnil">Paste something and press the button.</span></div>
+  </div>
+
+  <p>Same field, three weeks on. Session 1 said nothing in this prompt read your intent. Tonight you learn the framework that fixes it, and \u00a704 scores the three templates you submitted against that framework.</p>
+
+  <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen &mdash; the comparison across sessions is the point.</div></div>
 </section>
 
 <section class="slide" id="s3" data-nav="Temperature">
-  <div class="eyebrow"><span>01 &middot; Mechanism</span><span class="clock">6 min</span></div>
+  <div class="eyebrow"><span>01 &middot; Mechanism</span><span class="mins">5 min</span></div>
   <h2>Temperature and Output Variance</h2>
 
   <div class="panel" style="background:var(--gold-bg);border-color:#DFD3AF">
@@ -328,16 +373,19 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 
   <div class="doit">
     <span class="plab">Compare &mdash; 4 minutes</span>
-    <p>Pull up the three responses you generated in section 1. How different are they? Now ask one person to read the first sentence of each of their three aloud.</p>
+    <p>Pull up the three responses you generated in Appendix B1. How different are they? Now ask one person to read the first sentence of each of their three aloud.</p>
     <p>Then run this, which constrains the output space rather than the sampler: <span class="mono">Answer in exactly one sentence, in the form &ldquo;The best thing about AI is its ability to X.&rdquo; Choose X from: reason, retrieve, summarise, generate. Output nothing else.</span> Run it three times. Note how much of the variance disappeared and where it went.</p>
   </div>
 
 
   <a class="apxlink" href="#s4"><span class="al">If there is time &middot; Appendix B3 &middot; 10 min</span><b>Sampling Failure on a Task That Requires Counting</b><span class="aw">Watch sampling break on a task with one right answer. If Session 1 Appendix A4 already ran, this is the same point on different material.</span></a>
+
+  <div class="check" data-gate="g2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run the same prompt three times at one temperature, then constrain the output space and run it three more.</div></div>
+
 </section>
 
 <section class="slide" id="s5" data-nav="Cost frontier">
-  <div class="eyebrow"><span>02 &middot; Economics</span><span class="clock">6 min</span></div>
+  <div class="eyebrow"><span>02 &middot; Economics</span><span class="mins">6 min</span></div>
   <h2>Cost Per Task Versus Cost Per Token</h2>
   <p class="big">Every tier comparison you have seen quoted in dollars per million tokens is measuring the wrong thing. Two models at the same token price can differ threefold in what a finished piece of work costs, because they differ in how many tokens they burn to get there.</p>
 
@@ -389,10 +437,13 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
     <span class="plab" style="color:var(--warn)">Verify before relying on this slide</span>
     <p style="font-size:15px;margin:0">Model tiers and their subscription availability changed four times between June and August 2026. Confirm which tiers your own plan currently reaches at <span class="mono">claude.com/pricing</span> before you build a workflow that depends on one. Benchmark rankings are recomputed continuously and the ordering above has already reversed once.</p>
   </div>
+
+  <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Estimate your own monthly cost, then find the tier where cost per finished task beats cost per token.</div></div>
+
 </section>
 
 <section class="slide" id="s6" data-nav="P·T·C·F">
-  <div class="eyebrow"><span>03 &middot; Framework</span><span class="clock">6 min</span></div>
+  <div class="eyebrow"><span>03 &middot; Framework</span><span class="mins">6 min</span></div>
   <h2>Persona, Task, Context, Format</h2>
   <p class="big">Google's prompting guide organises a prompt into four components. The framework is sound and worth adopting. The empirical literature also says that one of the four letters does far less work than the way it is usually taught implies, and knowing which one changes how you spend your effort.</p>
 
@@ -442,18 +493,33 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 
   <div class="doit">
     <span class="plab">Rebuild &mdash; 5 minutes</span>
-    <p>Take the weakest of the three templates you brought today. Identify which of P, T, C, F it is missing. Add the missing components and run it. Keep both versions &mdash; you will need the before-and-after for section 11.</p>
+    <p>Take the weakest of the three templates you brought today. Identify which of P, T, C, F it is missing. Add the missing components and run it. Keep both versions &mdash; you will need the before-and-after for &sect;08.</p>
   </div>
+
+  <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Assemble one prompt with all four P.T.C.F elements and read the assembled text back.</div></div>
+
 </section>
 
 <section class="slide" id="s6b" data-nav="Your prompts">
-  <div class="eyebrow"><span>04 &middot; Workshop</span><span class="clock">8 min</span></div>
+  <div class="eyebrow"><span>04 &middot; Workshop</span><span class="mins">7 min</span></div>
   <h2>Scoring Your Submitted Prompts Against P.T.C.F</h2>
+  <div class="verify">
+  <span class="vh">Requires instructor verification before it is taught as settled</span>
+  Every tax and legal characterisation in this session is posed as a question, not stated as a holding. Verify each against primary authority before answering it in class:
+  <ul>
+    <li><strong>IRC &sect; 671 and the grantor-trust rules</strong> as the authority behind the IDGT client explanation built in &sect;03 &mdash; sound as stated, and stated without its limits.</li>
+    <li><strong>Rev. Proc. 2017-34 and Rev. Proc. 2022-32</strong>, cited in the &sect;05 triage as exercise material only; confirm current portability relief before repeating either.</li>
+    <li><strong>IRC &sect;&sect; 1014, 2010, 691 and 7520</strong>, appearing across the triage and citation exercises. Confirm current thresholds and rates against the Code.</li>
+    <li><strong>The 31% combined discount</strong> for lack of control and lack of marketability. Nothing in this session establishes that it is defensible; the case exists to make that an open question.</li>
+  </ul>
+  <em>Kessler v. Commissioner</em> is a deliberately fabricated citation used as exercise material in &sect;05, labelled on the page and in the footer.
+</div>
+
   <p class="big">You wrote three prompt templates and submitted them before this session. You had not been taught a prompting framework when you wrote them. That was deliberate.</p>
 
   <p>The sequencing exists so that this comparison is available to you. A framework taught before an attempt is a set of rules you comply with. A framework taught after an attempt is a diagnosis of something you already produced, and the gap between the two versions is yours rather than mine. Wrong first attempts followed by correction outperform being told the right answer first, which is the same finding that governs every prequestion in this file.</p>
 
-  <p>Score each of your three submitted prompts element by element. Then rewrite the weakest one in the editor below. <strong>The rewrite, not the original, is what carries forward</strong> &mdash; into the section 11 audit, into the peer review, and into your Part 1 template library.</p>
+  <p>Score each of your three submitted prompts element by element. Then rewrite the weakest one in the editor below. <strong>The rewrite, not the original, is what carries forward</strong> &mdash; into the &sect;08 audit, into the peer review, and into your Part 1 template library.</p>
 
   <div class="panel">
     <div class="row" style="margin-bottom:18px">
@@ -491,10 +557,13 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
     <p>One number and one sentence: which element you scored lowest across all three submitted prompts, and what you had assumed the model already knew.</p>
     <p>Your discernment statement predicted what each prompt would return. Compare that prediction against what the original actually returned. A prediction that was accurate about a bad output is a different skill from a prompt that produced a good one, and both are graded.</p>
   </div>
+
+  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Score all three submitted prompts element by element, then rewrite the weakest in the editor.</div></div>
+
 </section>
 
 <section class="slide" id="s7" data-nav="Triage">
-  <div class="eyebrow"><span>05 &middot; Diagnostic</span><span class="clock">6 min</span></div>
+  <div class="eyebrow"><span>05 &middot; Diagnostic</span><span class="mins">5 min</span></div>
   <h2>Prompt Specification Triage</h2>
   <p class="big">Three categories, not two. A prompt can be underspecified. It can be fully specified and still produce output nobody can check. Or it can be specified in a way that makes checking possible. Only the third is usable in a fiduciary practice.</p>
 
@@ -512,10 +581,13 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
     <span class="plab">Discussion &mdash; 3 minutes</span>
     <p>Item 7 is the one that splits the room every time. Argue it out before you look at the feedback.</p>
   </div>
+
+  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Triage every prompt in the set and read the feedback on the ones you got wrong.</div></div>
+
 </section>
 
 <section class="slide" id="s8" data-nav="Interview rewrite">
-  <div class="eyebrow"><span>06 &middot; Technique</span><span class="clock">7 min</span></div>
+  <div class="eyebrow"><span>06 &middot; Technique</span><span class="mins">6 min</span></div>
   <h2>The Interview Rewrite</h2>
   <p class="big">Wolfram makes an observation that most prompting advice skips: you can tell the model something once, as part of the prompt, and it will use it. The prompt is not a request. It is the entire evidentiary record available to the model at the moment it answers.</p>
 
@@ -565,10 +637,13 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
 
   <a class="apxlink" href="#s9"><span class="al">If there is time &middot; Appendix B4 &middot; 10 min</span><b>The Seven-Step Process and the Delegation Line</b><span class="aw">Where in a seven-step workflow the model may act and where it may only draft. Useful to a room that delegates; skippable for a room still learning to prompt.</span></a>
+
+  <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run the interview inversion on a real task and keep both versions.</div></div>
+
 </section>
 
 <section class="slide" id="s10" data-nav="Citations">
-  <div class="eyebrow"><span>07 &middot; Verification</span><span class="clock">9 min</span></div>
+  <div class="eyebrow"><span>07 &middot; Verification</span><span class="mins">8 min</span></div>
   <h2>Citation Failure Types on the Cole IDGT Transaction</h2>
   <p class="big">There is a base rate for this, and it is not small. General-purpose models tested on verifiable legal questions hallucinated on between 58 and 88 percent of them. Purpose-built retrieval-grounded research products from LexisNexis and Thomson Reuters &mdash; sold on the claim that retrieval eliminates the problem &mdash; hallucinated on between 17 and 33 percent.</p>
 
@@ -619,10 +694,13 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <p>Ask your AI tool: <span class="mono">What authority supports an installment sale of non-voting stock to an intentionally defective grantor trust, and what are the principal risks?</span> Then run all four checks on every authority it returns, plus a fifth: for any case, confirm whether it produced an opinion or a stipulated decision. Time yourself.</p>
     <p>That elapsed time is the real cost of the workflow. It belongs in your final project's time comparison, and leaving it out is the most common way these projects overstate their savings.</p>
   </div>
+
+  <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Classify all six citations, then run the four checks against a question you already know the answer to.</div></div>
+
 </section>
 
 <section class="slide" id="s11" data-nav="Template audit">
-  <div class="eyebrow"><span>08 &middot; Workshop</span><span class="clock">6 min</span></div>
+  <div class="eyebrow"><span>08 &middot; Workshop</span><span class="mins">5 min</span></div>
   <h2>Template Audit and Structured Peer Review</h2>
   <p class="big">Section 6b rebuilt one of your prompts. This section tests whether it is a <em>template</em> — something a second person can run — rather than a prompt that happens to work in your hands.</p>
 
@@ -657,10 +735,13 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
 
   <a class="apxlink" href="#s12d"><span class="al">If there is time &middot; Appendix B5 &middot; 20 min</span><b>Specification Cost Against Task Cost</b><span class="aw">Four phases, position through re-vote. Twenty minutes and a room willing to change its mind on the record.</span></a>
+
+  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Self-audit one template against the rubric, then swap and run a partner’s on your synthetic case.</div></div>
+
 </section>
 
 <section class="slide" id="s12" data-nav="Final project">
-  <div class="eyebrow"><span>09 &middot; Assignment</span><span class="clock">7 min</span></div>
+  <div class="eyebrow"><span>09 &middot; Assignment</span><span class="mins">5 min</span></div>
   <h2>Final Project Part 1 and Baseline Capture</h2>
   <p class="big">Part 1 is assigned now. It is 70% of the final project grade, and the final project is 50% of the course grade &mdash; so this single deliverable is 35% of what you leave with.</p>
 
@@ -700,7 +781,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   </div>
 
   <h3>Due before Session 3</h3>
-  <p>A first draft of Part 1: the target task, your model and tier choice with the reason, and your initial prompts. Section 5 is where the tier reason comes from. Section 13 is where the target task comes from. Section 6b produced at least one of the initial prompts. You have all three already.</p>
+  <p>A first draft of Part 1: the target task, your model and tier choice with the reason, and your initial prompts. &sect;02 is where the tier reason comes from. This section is where the target task comes from. &sect;04 produced at least one of the initial prompts. You have all three already.</p>
 
   <div class="doit">
     <span class="plab">Reading for Session 3</span>
@@ -708,15 +789,18 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   </div>
 
   <h3>What Session 3 does that this session could not</h3>
-  <p class="big">Everything in this file has treated the model as a closed system. You improved the output by improving the prompt, because the prompt was the only channel available. Section 8 made that explicit: the model cannot see the Cole file, so what you type is the entire evidentiary record.</p>
+  <p class="big">Everything in this file has treated the model as a closed system. You improved the output by improving the prompt, because the prompt was the only channel available. &sect;06 made that explicit: the model cannot see the Cole file, so what you type is the entire evidentiary record.</p>
 
   <p>Session 3 opens that channel. Grounding lets the model read the actual documents &mdash; the 2011 wills, the 2014 buy-sell, the 2023 appraisal, the unexecuted trust instrument &mdash; and cite the passages it used. That solves the problem this session could only work around, and it introduces a failure this session could not produce: an answer that is fully sourced, correctly attributed to a real document in your own corpus, and materially wrong, because the passage retrieved was the nearest one rather than the right one.</p>
 
-  <p>The Cole document set is the corpus. The question that follows you into it is the one section 10 left open: does a 2023 appraisal still support a 31% discount, and which document in the folder actually says so.</p>
+  <p>The Cole document set is the corpus. The question that follows you into it is the one &sect;07 left open: does a 2023 appraisal still support a 31% discount, and which document in the folder actually says so.</p>
+
+  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Record your baseline before you leave. It is the one thing tonight you cannot reconstruct later.</div></div>
+
 </section>
 
 <section class="slide apxdiv" id="apx" data-nav="— APPENDIX —">
-  <div class="eyebrow"><span>Appendix &middot; 5 optional sections</span><span class="clock">58 min</span></div>
+  <div class="eyebrow"><span>Appendix &middot; 5 optional sections</span><span class="mins">58 min</span></div>
   <h2>Appendix</h2>
   <p class="lede">Five optional sections. The mechanism sections deepen Session 1; the discussion needs twenty uninterrupted minutes.</p>
   <p>The 10 sections above are the core session and run in about 67 minutes. Everything below is optional depth. Each appendix section names the two core sections it belongs between and links back to that point, so it can be taken in place during a long session or on its own afterwards. Nothing in the core depends on anything down here.</p>
@@ -730,8 +814,8 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 </section>
 
 <section class="slide apx" id="s1" data-nav="B1 · Next token" data-insert-after="s0" data-tier="standard">
-  <div class="eyebrow"><span>Appendix B1 &middot; Mechanism, deeper</span><span class="clock">10 min</span></div>
-  <div class="apxback">Insert between §00 Session map and §01 Temperature &mdash; <a href="#s0">back to that point</a></div>
+  <div class="eyebrow"><span>Appendix B1 &middot; Mechanism, deeper</span><span class="mins">16 min</span></div>
+  <div class="apxback">Insert between §00 Session map and §01 Temperature &mdash; <a href="#s0">back to §00</a> &middot; <a href="#s3">continue to §01 &rarr;</a></div>
   <h2>Next-Token Probabilities for a Single Prompt</h2>
   <p class="big">Wolfram's description of the mechanism is one sentence long: the model asks, over and over, &ldquo;given the text so far, what should the next word be?&rdquo; and each time adds a word. There is no separate step where it checks whether the sentence is true.</p>
 
@@ -762,13 +846,16 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <div class="doit">
     <span class="plab">Run it &mdash; 3 minutes</span>
     <p>In your AI tool, send exactly this and nothing else: <span class="mono">The best thing about AI is its ability to</span></p>
-    <p>Send it three separate times, in three separate chats. Compare the three openings. We will come back to what you got in section 3.</p>
+    <p>Send it three separate times, in three separate chats. Compare the three openings. We will come back to what you got in &sect;01.</p>
   </div>
+
+  <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Draw from the distribution until you have seen the same prompt produce three different continuations.</div></div>
+
 </section>
 
 <section class="slide apx" id="s2" data-nav="B2 · Laplace" data-insert-after="s0" data-tier="standard">
-  <div class="eyebrow"><span>Appendix B2 &middot; Foundation</span><span class="clock">8 min</span></div>
-  <div class="apxback">Insert between §00 Session map and §01 Temperature &mdash; <a href="#s0">back to that point</a></div>
+  <div class="eyebrow"><span>Appendix B2 &middot; Foundation</span><span class="mins">15 min</span></div>
+  <div class="apxback">Insert between §00 Session map and §01 Temperature &mdash; <a href="#s0">back to §00</a> &middot; <a href="#s3">continue to §01 &rarr;</a></div>
   <h2>Laplace on Probability as a Measure of Ignorance</h2>
   <p class="big">In 1814 Laplace proposed an intellect that knew every force and every position in nature. For such an intellect, he wrote, nothing would be uncertain; the future, like the past, would be present to its eyes. Probability, on his account, is not a property of the world. It is a property of the observer's incomplete information.</p>
 
@@ -792,11 +879,14 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <span class="plab">Discussion &mdash; 4 minutes</span>
     <p>Name one task in your practice where you have accepted an AI output without opening the underlying source. What made you accept it? Speed, plausibility, matching what you already believed, or the fact that it cited something?</p>
   </div>
+
+  <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>State in one sentence what Laplace says probability is a property of.</div></div>
+
 </section>
 
 <section class="slide apx" id="s4" data-nav="B3 · Counting failure" data-insert-after="s3" data-tier="standard">
-  <div class="eyebrow"><span>Appendix B3 &middot; Failure mode</span><span class="clock">10 min</span></div>
-  <div class="apxback">Insert between §01 Temperature and §02 Cost frontier &mdash; <a href="#s3">back to that point</a></div>
+  <div class="eyebrow"><span>Appendix B3 &middot; Failure mode</span><span class="mins">16 min</span></div>
+  <div class="apxback">Insert between §01 Temperature and §02 Cost frontier &mdash; <a href="#s3">back to §01</a> &middot; <a href="#s5">continue to §02 &rarr;</a></div>
   <h2>Sampling Failure on a Task That Requires Counting</h2>
   <p class="big">Wolfram trained a small transformer on a language with exactly one rule: parentheses must balance. The rule is simpler than any tax provision. The network still fails, and it fails in a specific and instructive way.</p>
 
@@ -824,11 +914,14 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <p>Confirming that a cited authority exists is a lookup against an index. Confirming that it says what the sentence claims is a comparison against a text. Confirming that it still says that is a check against an effective date. None of the three is a continuation task, and the architecture that writes the sentence is not the architecture that performs any of them. This is why grounding, retrieval, and your own eyes on the source are separate additions and not properties the model has.</p>
 
   <p class="pull">The model is not bad at counting because it is undertrained. It is bad at counting because counting is not what it does.</p>
+
+  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the counting task until the model produces a confidently wrong count.</div></div>
+
 </section>
 
 <section class="slide apx" id="s9" data-nav="B4 · Seven steps" data-insert-after="s8" data-tier="standard">
-  <div class="eyebrow"><span>Appendix B4 &middot; Process</span><span class="clock">10 min</span></div>
-  <div class="apxback">Insert between §06 Interview rewrite and §07 Citations &mdash; <a href="#s8">back to that point</a></div>
+  <div class="eyebrow"><span>Appendix B4 &middot; Process</span><span class="mins">16 min</span></div>
+  <div class="apxback">Insert between §06 Interview rewrite and §07 Citations &mdash; <a href="#s8">back to §06</a> &middot; <a href="#s10">continue to §07 &rarr;</a></div>
   <h2>The Seven-Step Process and the Delegation Line</h2>
   <p class="big">The CFP Board's seven-step financial planning process is the structure your duty of care attaches to. Not every step is the same kind of work, and the steps that look most similar on paper have the least in common when you ask what a sampler could contribute.</p>
 
@@ -855,11 +948,14 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <p>Step 2 is the elicitation of what a client actually wants, which is frequently not what they first say they want. Step 4 is the exercise of professional judgment that your registration, your credential and your liability all attach to. A model can draft language for either. It cannot perform either, and a workflow that quietly lets it is the failure mode this course exists to prevent.</p>
 
   <p>Steps 3 and 7 are the opposite case. Analysing alternative courses of action and monitoring for drift are both high-volume, structured, and verifiable against a source. They are where the measurable time recovery lives.</p>
+
+  <div class="check" data-gate="ga4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all seven steps against the delegation line, then argue with the key.</div></div>
+
 </section>
 
 <section class="slide apx" id="s12d" data-nav="B5 · Discussion" data-insert-after="s11" data-tier="standard">
-  <div class="eyebrow"><span>Appendix B5 &middot; Discussion</span><span class="clock">20 min</span></div>
-  <div class="apxback">Insert between §08 Template audit and §09 Final project &mdash; <a href="#s11">back to that point</a></div>
+  <div class="eyebrow"><span>Appendix B5 &middot; Discussion</span><span class="mins">20 min</span></div>
+  <div class="apxback">Insert between §08 Template audit and §09 Final project &mdash; <a href="#s11">back to §08</a> &middot; <a href="#s12">continue to §09 &rarr;</a></div>
   <h2>Specification Cost Against Task Cost</h2>
   <p class="big">The question, stated once and not softened: if a prompt has to be specified as carefully as section 6b required to be reliable, has the tool saved time, or has it moved the work from doing the task to specifying the task?</p>
 
@@ -890,9 +986,9 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <h3>Phase three &mdash; complication, 5 minutes</h3>
   <p>One fact neither side has raised. Nobody who has already spoken speaks again.</p>
   <div class="cards">
-    <div class="card gold"><span class="num">Complication</span><h4>The verification time is not optional and it is not amortised</h4><p>Section 10 timed it on one transaction. Every run of the template on a new client produces new citations, and every one of them needs the same four checks. The template amortises the specification. It does not amortise the verification.</p></div>
-    <div class="card"><span class="num">Already on screen</span><h4>Section 12 arithmetic</h4><p>A workflow that saves 20 minutes of drafting and adds 12 minutes of citation checking has saved 8. Whoever entered numbers in the baseline widget should read theirs aloud now.</p></div>
-    <div class="card"><span class="num">Already on screen</span><h4>Section 9 adoption gap</h4><p>52.2% of advisors use these tools. Roughly 3% rely on the recommendation. The profession is already behaving as though specification and verification are the job.</p></div>
+    <div class="card gold"><span class="num">Complication</span><h4>The verification time is not optional and it is not amortised</h4><p>&sect;07 timed it on one transaction. Every run of the template on a new client produces new citations, and every one of them needs the same four checks. The template amortises the specification. It does not amortise the verification.</p></div>
+    <div class="card"><span class="num">Already on screen</span><h4>&sect;09 arithmetic</h4><p>A workflow that saves 20 minutes of drafting and adds 12 minutes of citation checking has saved 8. Whoever entered numbers in the baseline widget should read theirs aloud now.</p></div>
+    <div class="card"><span class="num">Already on screen</span><h4>Appendix B4 adoption gap</h4><p>52.2% of advisors use these tools. Roughly 3% rely on the recommendation. The profession is already behaving as though specification and verification are the job.</p></div>
   </div>
 
   <h3>Phase four &mdash; re-vote, 3 minutes</h3>
@@ -914,6 +1010,9 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   </div>
 
   <p class="dim" style="font-size:14.5px">A delta of zero is a finding, not a failure. It shows a position holding under evidence, which is the same epistemic move this course asks you to make about model output.</p>
+
+  <div class="check" data-gate="ga5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote, defend, absorb the complication, re-vote. Your first vote stays sealed until the second is cast.</div></div>
+
 </section>
 
 <footer>
@@ -937,7 +1036,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
       <li>Rev. Rul. 2004-64, 2004-2 C.B. 7 (2004-27 I.R.B. 9) &mdash; the grantor&rsquo;s payment of income tax on grantor-trust income is not a gift (Situation 1); a governing instrument that <em>requires</em> reimbursement causes inclusion of the full trust value under § 2036(a)(1) (Situation 2); a trustee&rsquo;s <em>discretion</em> to reimburse does not, by itself, cause inclusion (Situation 3). Verified against the Internal Revenue Bulletin text. <a href="https://www.irs.gov/irb/2004-27_IRB">irs.gov/irb/2004-27_IRB</a> <span class="conf h">H</span></li>
       <li>Estate of Donald Woelbing v. Commissioner, T.C. Docket No. 30261-13, and Estate of Marion Woelbing v. Commissioner, T.C. Docket No. 30260-13 (petitions filed 26 December 2013). <strong>Stipulated decisions entered 25 and 28 March 2016; no opinion issued; no precedential value.</strong> Procedural posture verified against contemporaneous practitioner reporting. <span class="conf h">H</span></li>
       <li>Estate of William M. Davidson v. Commissioner, T.C. Docket No. 13748-13 (petition filed 14 June 2013). <strong>Stipulated decision entered 6 July 2015; no opinion issued.</strong> IRS originally asserted deficiencies of approximately $2.8 billion; reported settlement approximately $388 million in estate, gift and GST tax. Posture <span class="conf h">H</span>; settlement figures reported by a single valuation-practice source <span class="conf m">M</span>.</li>
-      <li><em>Kessler v. Commissioner</em>, 152 T.C. 88 (2019), appearing in the section 10 triage, does not exist. It is a deliberately fabricated citation, labelled as exercise material on the page.</li>
+      <li><em>Kessler v. Commissioner</em>, 152 T.C. 88 (2019), appearing in the &sect;05 triage, does not exist. It is a deliberately fabricated citation, labelled as exercise material on the page.</li>
       <li>Internal Revenue Code §§ 671, 675, 2036, 2702, 7520. Referenced descriptively; verify against the current Code before relying on any characterisation in this file.</li>
       <li>Cole household case anchor &mdash; entirely synthetic. Not based on any client, living or dead. Labelled as synthetic on every page where it appears.</li>
     </ol>
@@ -1306,7 +1405,7 @@ var QZ=[
  {p:'Act as a CFP\u00ae professional with twenty years of ultra-high-net-worth experience, deep expertise in estate planning, and a reputation for clarity. Summarise this client\u2019s tax return.',a:'A',
   f:{A:'Correct, and this is the trap. Fifty words were added and none of them was Task, Context or Format. It is the previous prompt with a costume on.',
      B:'The persona is not a specification. The output shape is still whatever the model picks.',
-     C:'The added length is entirely Persona, which the evidence in section 6 says does not move objective accuracy.'}},
+     C:'The added length is entirely Persona, which the evidence in &sect;03 says does not move objective accuracy.'}},
  {p:'From the attached 2025 Form 1040 and schedules, list every line item that changed by more than $10,000 against the 2024 return, as a two-column table, and flag any change I should raise with the client.',a:'C',
   f:{A:'Source, threshold, output shape and the action all appear. This is specified.',
      B:'It is verifiable: open both returns and check the arithmetic. The threshold makes the answer set finite.',
@@ -1322,7 +1421,7 @@ var QZ=[
  {p:'Research whether my client can still elect portability for a spouse who died in 2021, and cite the governing authority.',a:'B',
   f:{A:'It is specific about the question and demands a citation, so it is not underspecified in the ordinary sense.',
      B:'Correct. It names no facts that determine the answer \u2014 estate size, whether a return was filed, whether the estate was under the filing threshold \u2014 and it sets no verification standard for the citation it demands. A citation you did not require to be current is not a check.',
-     C:'A demand for a citation is not a verification procedure. Section 10 covers the four checks a citation still has to pass.'}},
+     C:'A demand for a citation is not a verification procedure. &sect;07 covers the four checks a citation still has to pass.'}},
  {p:'Give me the 2026 gift tax annual exclusion and the lifetime exclusion amount, with citations.',a:'B',
   f:{A:'It is perfectly specific. That is what makes it dangerous.',
      B:'Correct, and this is the hardest item. It looks like the most verifiable prompt on the list. Both figures are indexed annually, both may post-date the training data, and the prompt gives the model no source to read. It will answer confidently from memory. Specified is not the same as grounded.',
@@ -1511,7 +1610,7 @@ var CITES=[
  {c:'Rev. Rul. 85-13, 1985-1 C.B. 184 \u2014 cited for the proposition that Meg\u2019s sale of the 40% non-voting interest to her grantor trust is not a recognised sale for federal income tax purposes, so no gain is triggered on her $240,000 basis.',
   a:'sound',w:'Real, current, and correctly characterised. The ruling establishes that a transaction between a grantor and a grantor trust is a non-event for income tax purposes; the IRS has restated that proposition in later guidance. Note what makes it sound: the sentence states the operative rule, not a conclusion about Meg\u2019s facts. Whether her trust is in fact a grantor trust is a question about the unexecuted instrument, not about the ruling.'},
  {c:'Rev. Rul. 2004-64, 2004-2 C.B. 7 \u2014 cited for the proposition that Meg\u2019s payment of the income tax on the trust\u2019s income is not an additional gift to her children.',
-  a:'sound',w:'Real, current, and correctly characterised. Situation 1 of the ruling holds that the payment is not a gift because the grantor is discharging her own liability, imposed by \u00a7671. This is the authority behind the explanation you built in section 6. It is sound as stated \u2014 and it is stated without its condition, which is the next item.'},
+  a:'sound',w:'Real, current, and correctly characterised. Situation 1 of the ruling holds that the payment is not a gift because the grantor is discharging her own liability, imposed by \u00a7671. This is the authority behind the explanation you built in &sect;03. It is sound as stated \u2014 and it is stated without its condition, which is the next item.'},
  {c:'Rev. Rul. 2004-64 \u2014 cited in support of adding a clause to the draft trust that requires the trustee to reimburse Meg for the income tax she pays, on the basis that the ruling blesses reimbursement.',
   a:'mis',w:'Real citation, and it holds close to the opposite. Situation 2 of the same ruling holds that where the governing instrument requires reimbursement, the grantor has retained the right to have trust property expended in discharge of her legal obligation, and the full value of the trust is included in her gross estate under \u00a72036(a)(1). Only a discretionary reimbursement power, held by a trustee who is not related or subordinate, avoids that result \u2014 Situation 3. Same document, adjacent paragraphs, opposite outcome. This is what misgrounding looks like when it is expensive.'},
  {c:'Estate of Donald Woelbing v. Commissioner, T.C. Docket No. 30261-13 \u2014 cited as the Tax Court having upheld an installment sale of non-voting stock to a grantor trust using a defined value clause, with beneficiary guarantees supplying economic substance.',
@@ -1650,7 +1749,7 @@ function base(){
   o+='Annual cost at $'+r+'/hr: $'+(cost*12).toFixed(0)+'\n\n';
   o+='BREAK-EVEN NOTE\n';
   o+='A 40% time reduction recovers '+(hrs*12*0.4).toFixed(0)+' hours a year.\n';
-  o+='Subtract the verification time you measured in section 10 before\n';
+  o+='Subtract the verification time you measured in \u00a707 before\n';
   o+='you claim any of it. A workflow that saves 20 minutes of drafting\n';
   o+='and adds 12 minutes of citation checking has saved 8 minutes.';
   $('baseOut').textContent=o;
@@ -1777,7 +1876,7 @@ var ELEM=[
     var o='PROMPT '+(cur+1)+'   TOTAL '+tot+' / 12\n';
     o+='Accuracy-bearing elements (T, C, F only): '+acc+' / 9\n';
     o+='Weakest element: '+weakest.k+' \u2014 '+weakest.n+'\n\n';
-    if(sc[cur].P>=2 && acc<=4) o+='Persona is your strongest element and the three that carry accuracy are your weakest.\nThat is the single most common pattern in prompts written before a framework,\nand section 6 gave you the evidence for why it does not help.\n\n';
+    if(sc[cur].P>=2 && acc<=4) o+='Persona is your strongest element and the three that carry accuracy are your weakest.\nThat is the single most common pattern in prompts written before a framework,\nand \u00a703 gave you the evidence for why it does not help.\n\n';
     o+= tot>=9 ? 'This one holds up. Score the other two before choosing which to rewrite.'
       : tot>=5 ? 'Repairable. Rewriting the weakest element will move it more than rewriting the whole thing.'
       : 'This is the one to rebuild. Load the scaffold below.';
@@ -1935,8 +2034,49 @@ document.addEventListener('keydown',function(e){
     var k=$('sortKey');if(k){k.disabled=false}
     if(window.__revealBridge)window.__revealBridge();
     if(window.__revealBsell)window.__revealBsell();
+    var t=$('ovr');if(t){t.textContent='Override ON \u2014 all answer panels revealed';t.style.color='var(--on)'}
   }
 });
+/* ===== family 17: cold-open ritual — identical in every session ===== */
+(function(){
+  var go=document.getElementById('coldGo');if(!go)return;
+  go.onclick=function(){
+    var box=document.getElementById('coldPrompt'),out=document.getElementById('coldOut');
+    var t=box.value.trim();
+    if(!t){out.className='rout';out.innerHTML='<span class="rnil">Paste something first.</span>';return}
+    var words=(t.match(/\S+/g)||[]).length,chars=t.length,toks=Math.round(chars/4);
+    var q=(t.match(/\?/g)||[]).length;
+    var imper=/^(write|make|give|list|draft|summari[sz]e|explain|create|find|tell|help)/i.test(t);
+    var hasRole=/\b(you are|act as|as an?|expert|advisor|planner)\b/i.test(t);
+    var hasFmt=/\b(bullet|table|word|paragraph|format|list|tone|concise|short|long)\b/i.test(t);
+    var hasCtx=t.length>180;
+    var have=[];if(hasRole)have.push('a role or framing');if(hasFmt)have.push('an output format');if(hasCtx)have.push('substantial context');
+    var missing=[];if(!hasRole)missing.push('role or framing');if(!hasFmt)missing.push('output format');if(!hasCtx)missing.push('context beyond the ask');
+    out.className='rout on';
+    out.innerHTML='<span class="rz">'+words+' words \u00b7 '+chars+' characters \u00b7 roughly '+toks+' tokens</span>'+
+      'It is '+(imper?'an imperative':q?'a question':'a statement')+'. '+
+      (have.length?'It carries '+have.join(' and ')+'. ':'It carries none of the usual scaffolding. ')+
+      (missing.length?'It supplies no '+missing.join(', no ')+'.':'It supplies all three.')+
+      '<div class="rfx">No judgement is implied. Compare this against what you pasted in Session 1 \u2014 the drift is the measurement.</div>';
+    if(typeof mark==='function')mark('gc');
+  };
+})();
+
+/* ===== family 1: work-along gates — completion feedback only (pedagogy R10) ===== */
+var __done={};
+function mark(id){
+  if(__done[id])return; __done[id]=1;
+  var c=document.querySelector('[data-gate="'+id+'"]');
+  if(!c)return;
+  c.classList.add('done');
+  var m=c.querySelector('.mk'); if(m)m.textContent='\u2713';
+}
+document.addEventListener('keydown',function(e){
+  if(e.shiftKey&&(e.key==='U'||e.key==='u')){
+    [].slice.call(document.querySelectorAll('[data-gate]')).forEach(function(c){mark(c.dataset.gate)});
+  }
+});
+
 })();
 </script>
 
