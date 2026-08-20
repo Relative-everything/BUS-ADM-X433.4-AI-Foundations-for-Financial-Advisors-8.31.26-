@@ -10,6 +10,57 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-08-20 (second pass)
+
+A second audit, compiled independently against the same tree, found repository
+and chrome work the first pass did not cover. Verified against the working tree
+before acting: three of its twelve findings were already fixed, nine were real.
+Text authored in this pass avoids em dashes; existing lesson copy is untouched,
+since that policy is still open.
+
+### Documentation
+- **README.md rewritten for students and instructors.** It previously opened
+  with commit discipline, tagging and maintainer workflow, which is the wrong
+  front door for someone who just landed on the course. It now leads with the
+  live link and covers what the lessons are, that nothing is saved so you must
+  copy your own work out, how to use the core and appendix structure, the
+  session index, the synthetic Cole household, how confidence chips and
+  deliberate defects work, and an educational-use disclaimer.
+- **MAINTAINING.md added** for the maintainer and contributors, carrying the
+  repo layout, the publish model, commit and tag discipline, the pre-push gate
+  with and without the lesson-builder skill, the shared-styling mechanism, the
+  standing retired-names purge list, and the known follow-ups. It opens by
+  noting that it is publicly served like everything else.
+- **CASE.md added** as the canonical source of truth for the Cole household:
+  every figure in one table, the document list, the question that stays open,
+  and Session 1's block verbatim as the drift reference. Sessions 2 through 4
+  carry shorter recall summaries by design; the rule is that their figures must
+  match this file.
+
+### Site
+- **The changelog is now a styled page** at `/changelog/` instead of raw
+  markdown. `scripts/build-changelog.py` renders it from `CHANGELOG.md` with no
+  dependencies; every link in the hub and the lessons points at the page.
+- **Every page carries a last-updated stamp** in its footer, so a student with
+  a stale tab open can tell. Previously a months-old tab was indistinguishable
+  from the current page.
+- Hub Session 2 card read "Date to be confirmed" while the lesson itself states
+  14 September 2026. The lesson wins; the hub now agrees.
+
+### Lessons
+- Completed the footer standard, copying wording from Session 2: the confidence
+  legend was missing from Sessions 1 and 3, the verify-before-relying line from
+  Sessions 3 and 4, and the synthetic-case declaration from Session 4's footer.
+- Session 4 keeps its own longer confidence-legend wording rather than being
+  normalised to Session 2's, logged here as a deliberate variance.
+
+### Checks that passed with no change needed
+- No retired case name appears in the hub or any lesson. Remaining mentions in
+  `CHANGELOG.md` and `audit/` are the record of the retirement and are kept.
+- No browser storage anywhere. No external request beyond the permitted Google
+  Fonts. All internal links resolve. Hub card titles match every lesson H1.
+  `.nojekyll` present. The Session 5 card links nowhere and cannot 404.
+
 ## 2026-08-20
 
 Works the priority-ranked findings in `audit/AUDIT-2026-08-20.md`, an audit of
