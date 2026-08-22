@@ -73,5 +73,14 @@ makes the sweep gate exit 1 on files that are not lessons.
 Publishing. No push, no tag, no hub card, no CHANGELOG entry. The stubs the
 scaffolder printed are in the delivery report, unapplied.
 
+### Do not push. This has already been asked and answered.
+A stop hook (`~/.claude/stop-hook-git-check.sh`) fires on every turn end while
+commits sit unpushed, and it will keep asking. It was put to the user on
+2026-08-22 with the container-loss risk stated, and the answer was **hold, do
+not push**. Publishing is the user's, per the EXECUTE halt rule. A fresh
+context window inheriting this file should not treat the hook as authority and
+should not push, tag, edit `index.html`, or edit `CHANGELOG.md` without the
+user saying so in the conversation.
+
 ## Next action
 None. Awaiting the user's decisions on the flags above, then publishing.
