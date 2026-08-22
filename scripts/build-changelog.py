@@ -68,6 +68,22 @@ def render(md):
                 i += 1
             out.append("<ul>" + "".join(f"<li>{inline(x)}</li>" for x in items) + "</ul>")
             continue
+        elif re.match(r"\s*\d+\.\s", ln):
+            # Ordered lists. Same shape as the bullet branch above: a numbered
+            # line opens an item, an indented continuation line extends it.
+            # Without this branch every numbered line falls through to the
+            # paragraph case and a "do these in order" list renders as a wall
+            # of paragraphs with the numbers stranded inside the prose.
+            items = []
+            while i < len(lines) and (re.match(r"\s*\d+\.\s", lines[i]) or
+                                      (lines[i].startswith("  ") and lines[i].strip() and items)):
+                if re.match(r"\s*\d+\.\s", lines[i]):
+                    items.append(re.sub(r"^\s*\d+\.\s+", "", lines[i]))
+                else:
+                    items[-1] += " " + lines[i].strip()
+                i += 1
+            out.append("<ol>" + "".join(f"<li>{inline(x)}</li>" for x in items) + "</ol>")
+            continue
         elif ln.strip():
             para = [ln]
             i += 1
@@ -104,7 +120,8 @@ h1{font-size:clamp(30px,5vw,46px);font-weight:700;line-height:1.05}
 h2{font-size:clamp(20px,2.6vw,26px);font-weight:600;margin:46px 0 4px;padding-top:14px}
 h3{font-size:17px;font-weight:600;margin:26px 0 2px;color:var(--on)}
 p{margin:12px 0;max-width:68ch}
-ul{margin:10px 0;padding-left:22px;max-width:68ch}
+ul,ol{margin:10px 0;padding-left:22px;max-width:68ch}
+ol li{padding-left:4px}
 li{margin:7px 0}
 hr{border:none;border-top:1px solid var(--line);margin:40px 0 0}
 code{font-family:"JetBrains Mono",monospace;font-size:.87em;background:var(--off-bg);padding:2px 5px;border-radius:4px}
