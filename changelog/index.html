@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BUS ADM X433.4 — AI Foundations for Financial Advisors</title>
+<title>Changelog · BUS ADM X433.4</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -454,129 +454,106 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
   .conf{white-space:normal;display:inline;line-height:1.9}
 }
 /* STYLE:END */
-
+</style>
+<style>
 :root{--page:#F4F4F1;--card:#FFF;--ink:#16211F;--muted:#6F7B78;--off:#B9BDB9;--off-bg:#E7E8E4;
 --on:#0E5A55;--on-bg:#E2EDEB;--warn:#9A4B22;--warn-bg:#F6EAE2;--line:#D8DAD4;--gold:#8A6A12;--gold-bg:#F3EEDF}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--page);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.62}
-.wrap{max-width:1020px;margin:0 auto;padding:clamp(48px,7vw,88px) clamp(20px,5vw,56px) 72px}
-h1,h2,h3,h4{font-family:"Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.025em;margin:0}
-h1{font-size:clamp(32px,5.4vw,58px);line-height:1.04;font-weight:700}
-h2{font-size:clamp(21px,2.6vw,27px);line-height:1.12;font-weight:600;margin-top:56px}
-h3{font-size:clamp(19px,2.2vw,23px);line-height:1.22;font-weight:600}
-p{margin:16px 0;max-width:64ch}
-.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--on);font-weight:500;margin-bottom:14px}
-.lede{font-size:clamp(18px,2.1vw,23px);line-height:1.48;color:var(--muted);max-width:46ch;margin:22px 0 0}
-.mono{font-family:"JetBrains Mono",monospace}
-.dim{color:var(--muted)}
-
-.sessions{display:flex;flex-direction:column;gap:14px;margin:28px 0 0}
-a.sx{display:block;background:var(--card);border:1.5px solid var(--line);border-radius:12px;
-  padding:20px 24px;text-decoration:none;color:inherit;transition:.15s}
-a.sx:hover{border-color:var(--on);box-shadow:0 4px 18px rgba(14,90,85,.09);transform:translateY(-1px)}
-a.sx:focus-visible{outline:2.5px solid var(--on);outline-offset:3px}
-.sx .top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:5px}
-.sx .no{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--on);font-weight:500}
-.sx .dt{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;color:var(--muted);margin-left:auto}
-.sx p{font-size:14.5px;line-height:1.5;color:var(--muted);margin:6px 0 0;max-width:60ch}
-.sx.soon{opacity:.55;pointer-events:none;border-style:dashed}
-
-.tag{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
-  padding:3px 8px;border-radius:4px;font-weight:500;background:var(--on-bg);color:var(--on)}
-.tag.soon{background:var(--off-bg);color:var(--muted)}
-
-.note{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:20px 24px;margin:24px 0}
-.note.on{border-color:var(--on);background:var(--on-bg)}
-.note .plab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--on);margin-bottom:8px;display:block}
-.note p{margin:0;font-size:15.5px;line-height:1.5}
-.note p+p{margin-top:10px}
-
-footer{border-top:1px solid var(--line);margin-top:64px;padding-top:26px;font-size:14px;color:var(--muted)}
-footer a{color:var(--on);text-decoration:none;border-bottom:1px solid var(--line)}
-footer a:hover{border-color:var(--on)}
-footer p{margin:8px 0;max-width:72ch}
-.stamp{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.05em;color:var(--muted);margin:18px 0 0}
+body{margin:0;background:var(--page);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.6}
+.wrap{max-width:840px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,48px) 72px}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.022em;margin:0}
+h1{font-size:clamp(30px,5vw,46px);font-weight:700;line-height:1.05}
+h2{font-size:clamp(20px,2.6vw,26px);font-weight:600;margin:46px 0 4px;padding-top:14px}
+h3{font-size:17px;font-weight:600;margin:26px 0 2px;color:var(--on)}
+p{margin:12px 0;max-width:68ch}
+ul{margin:10px 0;padding-left:22px;max-width:68ch}
+li{margin:7px 0}
+hr{border:none;border-top:1px solid var(--line);margin:40px 0 0}
+code{font-family:"JetBrains Mono",monospace;font-size:.87em;background:var(--off-bg);padding:2px 5px;border-radius:4px}
+a{color:var(--on)}
+table{border-collapse:collapse;margin:16px 0;font-size:14.5px;width:100%;display:block;overflow-x:auto}
+th{text-align:left;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);border-bottom:1.5px solid var(--line);padding:7px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--on);font-weight:500;margin-bottom:12px}
+.back{display:inline-block;margin-bottom:26px;font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.05em;text-decoration:none;color:var(--on)}
+.back:hover{text-decoration:underline}
+footer{border-top:1px solid var(--line);margin-top:56px;padding-top:22px;font-size:13.5px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+:focus-visible{outline:2.5px solid var(--on);outline-offset:3px;border-radius:4px}
 </style>
 </head>
 <body>
 <div class="wrap">
-
-  <div class="eyebrow">UC Berkeley Extension &middot; Fall 2026</div>
-  <h1>AI Foundations for Financial Advisors</h1>
-  <p class="lede">BUS ADM X433.4 &mdash; five sessions building from next-token prediction to a deployed workflow you can defend to a regulator.</p>
-
-  <div class="note on">
-    <span class="plab">Bookmark this page</span>
-    <p>This is the live course site. Every lesson is updated here directly &mdash; there are no files to download and no version numbers to track. Whatever you see on this page is current.</p>
-    <p>Each lesson is built as a <b>core session</b> of about an hour that always runs, followed by an <b>appendix</b> of optional depth. Gold links in the core point down to the appendix material that belongs at that moment; every appendix section links back. A control at the top of each lesson filters the appendix by depth &mdash; foundational, standard or advanced &mdash; or hides it entirely for the one-hour version.</p>
-    <p class="dim" style="font-size:14px">Each lesson runs entirely in your browser. Your progress and any notes you enter stay on your own device and are never uploaded.</p>
-  </div>
-
-  <h2>Sessions</h2>
-  <div class="sessions">
-
-    <a class="sx" href="session-1/">
-      <div class="top">
-        <span class="no">Session 1</span><span class="tag">Published</span>
-        <span class="dt">31 August 2026</span>
-      </div>
-      <h3>How the Machine Works, and What It Costs</h3>
-      <p>Build next-token prediction by hand, then price it against a real planning practice. Sampling, embeddings, the counting failure, and the nine sampler controls.</p>
-    </a>
-
-    <a class="sx" href="session-2/">
-      <div class="top">
-        <span class="no">Session 2</span><span class="tag">Published</span>
-        <span class="dt">14 September 2026</span>
-      </div>
-      <h3>Practical AI Usage in Daily Advisory Workflows</h3>
-      <p>Prompting patterns, role framing, and where these tools earn their keep inside the work you already do.</p>
-    </a>
-
-    <a class="sx" href="session-3/">
-      <div class="top">
-        <span class="no">Session 3</span><span class="tag">Published</span>
-        <span class="dt">Date to be confirmed</span>
-      </div>
-      <h3>Gathering and Documenting Client Information</h3>
-      <p>Discovery, note-taking tools, retrieval, and documenting what the tool did so the file stands up later.</p>
-    </a>
-
-    <a class="sx" href="session-4/">
-      <div class="top">
-        <span class="no">Session 4</span><span class="tag">Published</span>
-        <span class="dt">Date to be confirmed</span>
-      </div>
-      <h3>Compliance, Security and Responsible Use</h3>
-      <p>Supervision, retention, vendor obligations, and the failure modes that turn into enforcement.</p>
-    </a>
-
-    <a class="sx soon" href="#">
-      <div class="top">
-        <span class="no">Session 5</span><span class="tag soon">Not yet published</span>
-        <span class="dt">Date to be confirmed</span>
-      </div>
-      <h3>Final project</h3>
-      <p>Coming before the session runs.</p>
-    </a>
-
-  </div>
-
-  <h2>Course rule on client data</h2>
-  <div class="note">
-    <p><b>No real client data or personally identifying information enters any AI tool at any point in this course</b> &mdash; including the build transcript submitted with the final project.</p>
-    <p class="dim" style="font-size:14.5px">Every example across all five sessions uses one synthetic household, the Cole case, constructed for this course. No real client data appears anywhere on this site.</p>
-  </div>
-
-  <footer>
-    <p>BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors &middot; UC Berkeley Extension, Fall 2026 &middot; Instructor: Jared Winkers</p>
-    <p>Every revision to these lessons is recorded. See the <a href="changelog/">changelog</a> for what changed and when.</p>
-    <p>Capability and pricing figures reflect published data as of the date noted in each lesson. Verify every benchmark and price before relying on it.</p>
-  
-  <p class="stamp">Last updated 2026-08-20. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="changelog/">What changed</a></p>
+<a class="back" href="../">&larr; Course hub</a>
+<div class="eyebrow">BUS ADM X433.4 &middot; UC Berkeley Extension &middot; Fall 2026</div>
+<h1>Changelog</h1>
+<p>Every substantive revision to the course materials, newest first.</p>
+<p>Each entry corresponds to one or more commits. For the exact character-level diff of any change, see the <a href="../../commits/main">commit history</a> on GitHub.</p>
+<p>Format: <code>## YYYY-MM-DD</code> with changes grouped by session.</p>
+<hr>
+<h2>2026-08-20 (second pass)</h2>
+<p>A second audit, compiled independently against the same tree, found repository and chrome work the first pass did not cover. Verified against the working tree before acting: three of its twelve findings were already fixed, nine were real. Text authored in this pass avoids em dashes; existing lesson copy is untouched, since that policy is still open.</p>
+<h3>Documentation</h3>
+<ul><li><strong>README.md rewritten for students and instructors.</strong> It previously opened with commit discipline, tagging and maintainer workflow, which is the wrong front door for someone who just landed on the course. It now leads with the live link and covers what the lessons are, that nothing is saved so you must copy your own work out, how to use the core and appendix structure, the session index, the synthetic Cole household, how confidence chips and deliberate defects work, and an educational-use disclaimer.</li><li><strong>MAINTAINING.md added</strong> for the maintainer and contributors, carrying the repo layout, the publish model, commit and tag discipline, the pre-push gate with and without the lesson-builder skill, the shared-styling mechanism, the standing retired-names purge list, and the known follow-ups. It opens by noting that it is publicly served like everything else.</li><li><strong>CASE.md added</strong> as the canonical source of truth for the Cole household: every figure in one table, the document list, the question that stays open, and Session 1's block verbatim as the drift reference. Sessions 2 through 4 carry shorter recall summaries by design; the rule is that their figures must match this file.</li></ul>
+<h3>Site</h3>
+<ul><li><strong>The changelog is now a styled page</strong> at <code>/changelog/</code> instead of raw markdown. <code>scripts/build-changelog.py</code> renders it from <code>CHANGELOG.md</code> with no dependencies; every link in the hub and the lessons points at the page.</li><li><strong>Every page carries a last-updated stamp</strong> in its footer, so a student with a stale tab open can tell. Previously a months-old tab was indistinguishable from the current page.</li><li>Hub Session 2 card read "Date to be confirmed" while the lesson itself states 14 September 2026. The lesson wins; the hub now agrees.</li></ul>
+<h3>Lessons</h3>
+<ul><li>Completed the footer standard, copying wording from Session 2: the confidence legend was missing from Sessions 1 and 3, the verify-before-relying line from Sessions 3 and 4, and the synthetic-case declaration from Session 4's footer.</li><li>Session 4 keeps its own longer confidence-legend wording rather than being normalised to Session 2's, logged here as a deliberate variance.</li></ul>
+<h3>Checks that passed with no change needed</h3>
+<ul><li>No retired case name appears in the hub or any lesson. Remaining mentions in <code>CHANGELOG.md</code> and <code>audit/</code> are the record of the retirement and are kept.</li><li>No browser storage anywhere. No external request beyond the permitted Google Fonts. All internal links resolve. Hub card titles match every lesson H1. <code>.nojekyll</code> present. The Session 5 card links nowhere and cannot 404.</li></ul>
+<h2>2026-08-20</h2>
+<p>Works the priority-ranked findings in <code>audit/AUDIT-2026-08-20.md</code>, an audit of all four lessons run under the interactive-lesson-builder protocol. All four sessions now pass the full scripted gate with zero failures, in DOM-execution mode rather than the degraded static fallback.</p>
+<h3>Critical</h3>
+<ul><li><strong>Repaired 30 broken internal cross-references.</strong> The 18 August renumber invalidated every prose reference to a section number: 5 in Session 1, 17 in Session 2, 2 in Session 3, 6 in Session 4. These sat in student instructions, quiz feedback and homework answer keys, so a student following them landed in the wrong place.</li><li><strong>Restored Session 4's Part 1 completeness checklist.</strong> The 17 August rebuild deleted its markup and left the JavaScript, which failed silently behind a guard clause. A seven-item submission gate had been invisible on the night the package is due.</li></ul>
+<h3>Evidence and legal apparatus</h3>
+<ul><li><strong>Implemented the chip-to-source contract</strong>, which had never existed. Every confidence chip in the body now carries a key resolving to a numbered footer entry: 58 source entries across the four sessions, 133 chips wired. Session 1 and Session 4 gained numbered footers; Session 2 and Session 3 had lists already and gained the keys.</li><li><strong>Added the legal verify gate to Sessions 2, 3 and 4.</strong> It previously existed only in Session 1, while the three sessions carrying Regulation S-P, the thirty-day clock, the Wiretap Act floor, the disputed all-party state count and the grantor-trust authority had none.</li><li>Added illustrative-source badges to the simulated interactives in Sessions 2, 3 and 4, and citation hyperlinks to Session 4's footer.</li></ul>
+<h3>Structure and pacing</h3>
+<ul><li><strong>Every session now allocates exactly 150 minutes</strong>, against a parameter with zero tolerance. The core stays near an hour (67/67/70/70) and the appendix carries the balance, so the short version is unchanged.</li><li>Added an instructor minute-budget table to each session, listing core and appendix rows separately with break and reserve excluded from the sum.</li><li><strong>The cold-open ritual now runs in every session</strong> at 8 minutes, rebuilt as one shared component. It previously existed only in Session 1, which defeats the point of a ritual.</li><li><strong>Added 48 work-along cues to Sessions 2, 3 and 4</strong>, which had none. Every section now names the action it expects, and Shift+U marks them all.</li></ul>
+<h3>Appendix architecture</h3>
+<ul><li><strong>Complexity tiers are live.</strong> Every appendix section is tagged foundational, standard or advanced, and a control in each lesson filters by depth or hides the appendix entirely. The readout recomputes minutes for the selection, so the choice at 7pm is a number rather than a guess.</li><li><strong>Fixed the appendix return path.</strong> Sections linked back to where they came from but not forward, stranding an instructor who took one in place. Every appendix section now links both directions.</li><li>Two new appendix sections: Session 3 C5 on hybrid search and re-ranking, with cumulative failure rates and an out-of-order guard; Session 4 D5, a Regulation S-P tabletop turning on when the firm became aware.</li><li>Gave the restored Wolfram appendix a commit-first quiz; it was the only section in the course with nothing to do.</li></ul>
+<h3>Repository mechanics</h3>
+<ul><li><strong>Added the managed style fence to all five pages</strong>, so one edit to the shared stylesheets now restyles the whole repository. Verified byte-identical rendering before and after adoption, then used the mechanism to ship a narrow-viewport fix for confidence chips.</li><li>Tagged every interaction root with its task and component family, so diversity and density are now measurable rather than inferred.</li><li>Normalised the Shift+U indicator across all four sessions and gave Session 2 the visual confirmation it never had; wired Session 1's dead work-along cue; added reduced-motion support to Sessions 3 and 4; removed a duplicate budget table from Session 3.</li></ul>
+<h2>2026-08-18</h2>
+<h3>Site</h3>
+<ul><li><strong>Core + appendix architecture across all four lessons.</strong> Every lesson now splits into a core session that always gets taught and an appendix of optional depth. The core runs in roughly 60–67 minutes, so a lesson can be taught in a one-hour slot without deciding in advance what to drop; in a full block, appendix sections are taken in place. Each core section links down to the appendix material that belongs after it, and each appendix section names the two core sections it sits between and links back to that point.</li><li>Appendix sections carry a <code>data-tier</code> attribute so per-section complexity levels (basic / advanced) can be added later without re-architecting.</li><li>Added a pacing panel to every lesson: core minutes, appendix minutes and the total, computed live from the section minute chips.</li><li>Nav rail now distinguishes core from appendix sections.</li><li>Fixed the course hub, which still named the retired Okonkwo–Reyes case. All lessons use the Cole household; the hub now says so.</li></ul>
+<table><thead><tr><th></th><th>Core sections</th><th>Appendix</th><th>Core minutes</th><th>Appendix minutes</th></tr></thead><tbody><tr><td>Session 1</td><td>11</td><td>7</td><td>63</td><td>83</td></tr><tr><td>Session 2</td><td>10</td><td>5</td><td>67</td><td>58</td></tr><tr><td>Session 3</td><td>12</td><td>4</td><td>64</td><td>48</td></tr><tr><td>Session 4</td><td>12</td><td>4</td><td>67</td><td>43</td></tr></tbody></table>
+<h3>Session 1 — How the Machine Works, and What It Costs</h3>
+<ul><li>Added a 150-minute pacing model and per-section minute chips, matching Sessions 2–4. Session 1 previously had no time budget of any kind.</li><li>Moved to the appendix: n-gram counting, fitting a model by hand, meaning space, the counting-failure lab, the sampler lab, the regulation preview, and the disclosure discussion.</li><li>Core keeps the case, the cold open, prediction, tokens, hallucination, the cost frontier, practice cost, tier choice, confidentiality, custom instructions and the baseline capture.</li></ul>
+<h3>Session 2 — Practical AI Usage in Daily Advisory Workflows</h3>
+<ul><li>Moved to the appendix: next-token probabilities, Laplace, the counting-failure example, the seven-step delegation process, and the specification-cost discussion.</li><li>Fixed three copy-to-clipboard buttons that reported success and threw an unhandled rejection when the clipboard write was denied. They now fall back to "Select and copy", matching Sessions 3 and 4.</li></ul>
+<h3>Session 3 — Gathering and Documenting Client Information</h3>
+<ul><li>Moved to the appendix: chunk size and condition orphaning, grounding versus fine-tuning, note-taker adoption, and the verification-effort discussion.</li><li>The instructor minute-budget table now reports core and appendix subtotals separately instead of one running total.</li></ul>
+<h3>Session 4 — Compliance, Security and Responsible Use</h3>
+<ul><li><strong>Restored the Wolfram material cut in the 17 August rebuild.</strong> Session 4 had fallen from seven Wolfram references to one. New appendix section D3, "Where the Assigned Reading Has Gone Stale", brings back the three-row 2023-versus-2026 comparison table and the parenthesis mechanism behind the hallucination rate. The reproducibility quote is restored to the audit-trail section.</li><li>Moved to the appendix: SynthID provenance, watermark limits, source staleness (new), and the logging-burden discussion.</li></ul>
+<h3>Prose</h3>
+<ul><li>Tightened prose throughout. Core-session prose is down about 28% against the pre-restructure lessons. Total document length is up about 7%, because the appendix navigation and the restored Session 4 material are additions; the lesson that actually gets taught is materially shorter.</li></ul>
+<h2>2026-08-16</h2>
+<h3>Site</h3>
+<ul><li>Published the course as a live site. All lessons now live at stable URLs (<code>/session-1/</code>, <code>/session-2/</code>, …) and are updated in place.</li><li>Added course hub landing page listing all sessions.</li><li>Restructured session files into per-session directories. File history is preserved — use <code>git log --follow</code> to trace any lesson back through the rename.</li><li>Added this changelog.</li></ul>
+<h3>Session 1 — How the Machine Works, and What It Costs</h3>
+<ul><li>No content changes <em>in this commit</em>. File moved from <code>session1-lesson-v2.html</code> to <code>session-1/index.html</code>; the <code>-v2</code> suffix is retired now that git tracks versions. All four lessons were substantially rewritten the following day — see 2026-08-17 below.</li></ul>
+<h3>Session 2 — Practical AI Usage in Daily Advisory Workflows</h3>
+<ul><li>No content changes. Moved to <code>session-2/index.html</code>.</li></ul>
+<h3>Session 3 — Gathering and Documenting Client Information</h3>
+<ul><li>No content changes. Moved to <code>session-3/index.html</code>.</li></ul>
+<h3>Session 4 — Compliance, Security and Responsible Use</h3>
+<ul><li>No content changes. Moved to <code>session-4/index.html</code>.</li></ul>
+<hr>
+<h2>2026-08-17</h2>
+<p>All four lessons rebuilt from the curriculum development project. These commits were not recorded at the time; this entry is reconstructed from the diffs.</p>
+<h3>All sessions</h3>
+<ul><li><strong>One case now runs through the whole course.</strong> The Cole household — Meg Cole, Cole Precision Components, the IDGT sale at a 31% discount on a 2023 appraisal never re-verified — replaces the Session-1-only Okonkwo–Reyes household and now appears in all four lessons with consistent figures throughout.</li><li><strong>Cross-session continuity.</strong> References between sessions roughly tripled, and students now carry real artifacts forward: the Session 1 cold-open prompt and efficiency baseline, the Session 2 IDGT client-explanation prompt, the Session 3 buy-sell extraction and Part 1 draft.</li></ul>
+<h3>Session 1</h3>
+<ul><li>Progressive section gating removed. Sections previously unlocked as work-along cues were completed; everything now scrolls freely and the cues mark completion for feedback only.</li><li>Added the cold-open prompt field, account-level custom instructions, the disclosure discussion, and the efficiency baseline capture.</li></ul>
+<h3>Session 2</h3>
+<ul><li>Added the Session 1 retrieval bridge, the Cole case frame, P.T.C.F scoring of submitted prompts, the buy-sell exercise, and the specification-cost discussion.</li></ul>
+<h3>Session 3</h3>
+<ul><li>Added the AI usage policy assignment, the citation-backed output discussion, and the Part 1 peer exchange.</li></ul>
+<h3>Session 4</h3>
+<ul><li>Added the Session 3 retrieval bridge, vendor due diligence against the Cole document set, the Part 1 relay with a derangement pairing draw, the cold first run, and the logging-burden discussion.</li><li>Removed the "Where the 2023 account has gone stale" table and most Wolfram references. Restored 18 August.</li></ul>
+<footer>
+<p>Generated from <code>CHANGELOG.md</code> by <code>scripts/build-changelog.py</code>. Regenerate and commit both files whenever the changelog changes.</p>
 </footer>
-
 </div>
 </body>
 </html>
