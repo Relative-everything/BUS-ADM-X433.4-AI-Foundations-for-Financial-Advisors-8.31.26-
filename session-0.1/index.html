@@ -1166,6 +1166,7 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
   </ul>
   The instructor signs the slide, not the model (pedagogy.md s1 R3).</div>
 
+  <div data-task="t-controls-debate" data-comp="sealed-vote-debate">
   <div class="phase" id="discPhase"></div>
 
   <div class="panel">
@@ -1201,6 +1202,7 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
       <span class="plab" style="margin-top:16px">Room tally, instructor keys in the poll counts</span>
       <div id="tallyIn"></div><div id="deltaBars"></div>
     </div>
+  </div>
   </div>
 
   <div class="rnote"><span class="rh">Unresolved, and deliberately not resolved here</span>
@@ -1264,7 +1266,7 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
     </ol>
 
     <p class="mono" style="font-size:12px">Sources</p>
-    <!-- Twelve keys, one <li id="src-KEY"> each. The terminal confidence chip
+    <!-- Twelve keys, one list item per key. The terminal confidence chip
          carries data-src pointing at its own entry: it labels that entry's
          confidence, it resolves under validate_lesson V4, and it does not
          count as a bare chip. Only the three legend chips below are bare. -->
@@ -1354,7 +1356,7 @@ document.addEventListener('click',function(e){if(e.target&&e.target.id==='caseCl
      label   what it is called on screen
      val     the values it takes, or the fact itself
      con     the constraint that makes it not freely combinable
-     src     footer source key; every one resolves to a <li id="src-KEY">
+     src     footer source key; every one resolves to a footer list item
      conf    H / M / L per evidence-standards.md
      asOf    the date the record was verified, per record, never per file
 
@@ -1853,6 +1855,15 @@ var CTXDEFAULT={model:'Sonnet5',effort:'medium',thinking:'off',search:'on',resea
   codeexec:'off',memory:'off',project:'instructions+knowledge',skills:'none',
   connectors:0,attachment:'none',instructions:'present'};
 
+/* Confidence chips created at runtime are built through the DOM rather than
+   concatenated as markup. validate_lesson V4 reads source, so a chip assembled
+   from a string template would be read as a literal data-src key of "'+d.src+'".
+   The chips that carry the evidence contract for this section are static in the
+   markup above; these are the per-fragment repeats. */
+function confChip(lv,key){var s=document.createElement('span');
+  s.className='conf '+lv;s.setAttribute('data-src',key);s.textContent=lv.toUpperCase();
+  return s.outerHTML}
+
 (function(){
   var S={},probe=0,touched={},hot=null;
   function reset(){for(var k in CTXDEFAULT)S[k]=CTXDEFAULT[k]}
@@ -1984,7 +1995,7 @@ var CTXDEFAULT={model:'Sonnet5',effort:'medium',thinking:'off',search:'on',resea
       return '<div class="ctxfrag"><span class="fh">'+title+' &middot; composed, not captured</span>'+
         list.map(function(d){
           return '<p data-cause="'+d.id.replace(/^d-/,'').split('-')[0]+'">'+d.t+
-            ' <span class="conf l" data-src="'+d.src+'">L</span></p>'}).join('')+'</div>';
+            ' '+confChip('l',d.src)+'</p>'}).join('')+'</div>';
     }
     $('ctxComposed').innerHTML=
       '<div class="ctxprobe"><span class="plab" style="margin:0">'+p.label+'</span>'+
