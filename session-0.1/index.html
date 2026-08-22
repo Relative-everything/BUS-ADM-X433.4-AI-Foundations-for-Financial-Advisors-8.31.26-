@@ -1792,61 +1792,61 @@ var CTXBLOCK=[
    by construction rather than by coincidence.
    slot is one of: opening, body, citations, signals. */
 var OUTDELTA=[
- {id:'d-model-fable',when:function(s){return s.model==='Fable5'},wire:'sys',slot:'signals',
+ {id:'d-model-fable',ctl:'model',when:function(s){return s.model==='Fable5'},wire:'sys',slot:'signals',
   sig:{thinking:'present, adaptive'},src:'src-models',
   t:'Fable 5: thinking is adaptive and always on, so the depth follows the question rather than the setting.'},
- {id:'d-model-opus',when:function(s){return s.model==='Opus5'},wire:'sys',slot:'signals',
+ {id:'d-model-opus',ctl:'model',when:function(s){return s.model==='Opus5'},wire:'sys',slot:'signals',
   sig:{thinking:'present, cannot be disabled'},src:'src-effort',
   t:'Opus 5: a thinking block is present and cannot be removed in Claude. Its absence would mean you are not on Opus 5.'},
- {id:'d-model-sonnet',when:function(s){return s.model==='Sonnet5'},wire:'sys',slot:'signals',
+ {id:'d-model-sonnet',ctl:'model',when:function(s){return s.model==='Sonnet5'},wire:'sys',slot:'signals',
   sig:{thinking:'follows the toggle'},src:'src-effort',
   t:'Sonnet 5: thinking is genuinely yours to switch, which makes it the only 1M model where a terse fast pass is available.'},
- {id:'d-model-haiku',when:function(s){return s.model==='Haiku45'},wire:'hist',slot:'body',
+ {id:'d-model-haiku',ctl:'model',when:function(s){return s.model==='Haiku45'},wire:'hist',slot:'body',
   sig:{length:'shorter'},src:'src-models',
   t:'Haiku 4.5 holds 200K rather than 1M, so the same context is a five times larger share of the window and the history is summarised sooner.'},
- {id:'d-effort-low',when:function(s){return s.effort==='low'&&s.model!=='Haiku45'},wire:'sys',slot:'signals',
+ {id:'d-effort-low',ctl:'effort',when:function(s){return s.effort==='low'&&s.model!=='Haiku45'},wire:'sys',slot:'signals',
   sig:{length:'short'},src:'src-effort',t:'Effort low: fewer passes, terser output.'},
- {id:'d-effort-high',when:function(s){return s.effort==='high'&&s.model!=='Haiku45'},wire:'sys',slot:'signals',
+ {id:'d-effort-high',ctl:'effort',when:function(s){return s.effort==='high'&&s.model!=='Haiku45'},wire:'sys',slot:'signals',
   sig:{length:'medium'},src:'src-effort',t:'Effort high: the default on the API and in Claude Code for Opus 5 and Sonnet 5.'},
- {id:'d-effort-xhigh',when:function(s){return s.effort==='xhigh'&&s.model!=='Haiku45'},wire:'sys',slot:'body',
+ {id:'d-effort-xhigh',ctl:'effort',when:function(s){return s.effort==='xhigh'&&s.model!=='Haiku45'},wire:'sys',slot:'body',
   sig:{length:'long'},src:'src-effort',
   t:'Effort xhigh: requires Opus 4.7 or newer, and an Enterprise admin can remove this level for your role.'},
- {id:'d-effort-max',when:function(s){return s.effort==='max'&&s.model!=='Haiku45'},wire:'sys',slot:'body',
+ {id:'d-effort-max',ctl:'effort',when:function(s){return s.effort==='max'&&s.model!=='Haiku45'},wire:'sys',slot:'body',
   sig:{length:'long'},src:'src-effort',
   t:'Effort max: the top of the dial. Thoroughness has almost stopped moving while latency and usage are still climbing.'},
- {id:'d-thinking-on',when:function(s){return s.thinking==='on'},wire:'sys',slot:'signals',
+ {id:'d-thinking-on',ctl:'thinking',when:function(s){return s.thinking==='on'},wire:'sys',slot:'signals',
   sig:{thinking:'yes'},src:'src-effort',t:'Extended thinking on: a visible reasoning block precedes the answer.'},
- {id:'d-search-on',when:function(s){return s.search==='on'&&s.research==='off'},wire:'toolres',slot:'citations',
+ {id:'d-search-on',ctl:'search',when:function(s){return s.search==='on'&&s.research==='off'},wire:'toolres',slot:'citations',
   sig:{citations:'yes',toolcalls:'1-2'},src:'src-tools3',
   t:'Web search on: inline citations and an as-of date appear, on one to two tool calls.'},
- {id:'d-research-on',when:function(s){return s.research==='on'},wire:'toolres',slot:'citations',
+ {id:'d-research-on',ctl:'research',when:function(s){return s.research==='on'},wire:'toolres',slot:'citations',
   sig:{citations:'yes, multi-source',toolcalls:'5+',length:'long'},src:'src-tools3',
   t:'Research on: a longer synthesised report with citations across multiple sources, on five or more tool calls over one to three minutes.'},
- {id:'d-codeexec-on',when:function(s){return s.codeexec==='on'},wire:'sys',slot:'body',
+ {id:'d-codeexec-on',ctl:'codeexec',when:function(s){return s.codeexec==='on'},wire:'sys',slot:'body',
   src:'src-skills',t:'Code execution on: skills become available, and so does automatic context management.'},
- {id:'d-memory-search',when:function(s){return s.memory==='search'},wire:'mem',slot:'body',
+ {id:'d-memory-search',ctl:'memory',when:function(s){return s.memory==='search'},wire:'mem',slot:'body',
   sig:{toolcalls:'+1 retrieval'},src:'src-memory',
   t:'Past-chat search on: earlier conversations are retrieved and appear as tool calls. This is how an answer cites a document you never attached here.'},
- {id:'d-memory-generate',when:function(s){return s.memory==='generate'},wire:'mem',slot:'body',
+ {id:'d-memory-generate',ctl:'memory',when:function(s){return s.memory==='generate'},wire:'mem',slot:'body',
   src:'src-memory',t:'Memory generation on: what happens in this turn can persist past it, and deleting the conversation later will not remove it.'},
- {id:'d-memory-both',when:function(s){return s.memory==='both'},wire:'mem',slot:'body',
+ {id:'d-memory-both',ctl:'memory',when:function(s){return s.memory==='both'},wire:'mem',slot:'body',
   sig:{toolcalls:'+1 retrieval'},src:'src-memory',
   t:'Search and generation both on: prior chats come in, and this one goes out. Both directions are live at once.'},
- {id:'d-project-instr',when:function(s){return s.project!=='none'},wire:'projin',slot:'opening',
+ {id:'d-project-instr',ctl:'project',when:function(s){return s.project!=='none'},wire:'projin',slot:'opening',
   src:'src-personalization',t:'Project instructions in force: the framing and house conventions of this project are applied before your message is read.'},
- {id:'d-project-kb',when:function(s){return s.project==='instructions+knowledge'},wire:'projkb',slot:'body',
+ {id:'d-project-kb',ctl:'project',when:function(s){return s.project==='instructions+knowledge'},wire:'projkb',slot:'body',
   src:'src-ctxwindow',t:'Project knowledge available: retrieval pulls the relevant chunks only, never the whole file. Stored is not the same as in context.'},
- {id:'d-skills-relevant',when:function(s){return s.skills==='relevant'&&s.codeexec==='on'},wire:'skbody',slot:'body',
+ {id:'d-skills-relevant',ctl:'skills',when:function(s){return s.skills==='relevant'&&s.codeexec==='on'},wire:'skbody',slot:'body',
   src:'src-skills',t:'A relevant skill fired: its body loaded and its procedure shaped the structure of the answer.'},
- {id:'d-skills-irrelevant',when:function(s){return s.skills==='irrelevant'&&s.codeexec==='on'},wire:'skmeta',slot:'body',
+ {id:'d-skills-irrelevant',ctl:'skills',when:function(s){return s.skills==='irrelevant'&&s.codeexec==='on'},wire:'skmeta',slot:'body',
   src:'src-skills',t:'An irrelevant skill is installed: its name and description sit in context on every turn and its body never loads. It costs you something and changes nothing.'},
- {id:'d-conn-1',when:function(s){return s.connectors===1},wire:'conn',slot:'body',
+ {id:'d-conn-1',ctl:'connectors',when:function(s){return s.connectors===1},wire:'conn',slot:'body',
   src:'src-ctxwindow',t:'One connector enabled: its tool definitions are in context on this turn, and on every other turn, whether or not you use it.'},
- {id:'d-conn-5',when:function(s){return s.connectors===5},wire:'conn',slot:'body',
+ {id:'d-conn-5',ctl:'connectors',when:function(s){return s.connectors===5},wire:'conn',slot:'body',
   src:'src-ctxwindow',t:'Five connectors enabled: five sets of tool definitions on every turn. This is the block first-party guidance is talking about when it says to limit how many are active.'},
- {id:'d-attach-one',when:function(s){return s.attachment==='one'},wire:'attach',slot:'opening',
+ {id:'d-attach-one',ctl:'attachment',when:function(s){return s.attachment==='one'},wire:'attach',slot:'opening',
   src:'src-features',t:'A file is attached to this turn: it is in context now and it is not stored anywhere the next conversation can reach.'},
- {id:'d-instr-present',when:function(s){return s.instructions==='present'},wire:'instr',slot:'opening',
+ {id:'d-instr-present',ctl:'instructions',when:function(s){return s.instructions==='present'},wire:'instr',slot:'opening',
   src:'src-personalization',t:'Instructions for Claude are set: they apply to this and every other conversation until you change them.'}
 ];
 
@@ -1930,7 +1930,7 @@ function confChip(lv,key){var s=document.createElement('span');
     var rows=CTXBLOCK.map(function(b){
       var on=b.on(S),p=on?blockPct(b):0;
       if(on)used+=p;
-      var wired=hot&&OUTDELTA.some(function(d){return d.wire===b.id&&d.when(S)&&d.id.indexOf('d-'+hot)===0});
+      var wired=hot&&OUTDELTA.some(function(d){return d.wire===b.id&&d.when(S)&&d.ctl===hot});
       return '<div class="ctxblk'+(on?' on':' off')+(wired?' wired':'')+'" id="blk-'+b.id+'" title="'+b.when.replace(/"/g,'&quot;')+'">'+
         '<span class="bname">'+b.label+'</span>'+
         '<span class="bpct">'+(on?p.toFixed(0)+'%':'&middot;')+'</span></div>';
@@ -1968,7 +1968,7 @@ function confChip(lv,key){var s=document.createElement('span');
   function ctxWire(){
     var svg=$('ctxWireSvg');svg.innerHTML='';
     if(!hot)return;
-    var d=OUTDELTA.filter(function(x){return x.id.indexOf('d-'+hot)===0&&x.when(S)})[0];
+    var d=OUTDELTA.filter(function(x){return x.ctl===hot&&x.when(S)})[0];
     if(!d)return;
     var blk=$('blk-'+d.wire);if(!blk)return;
     blk.classList.add('wired');
@@ -1994,7 +1994,7 @@ function confChip(lv,key){var s=document.createElement('span');
       if(!list.length)return '';
       return '<div class="ctxfrag"><span class="fh">'+title+' &middot; composed, not captured</span>'+
         list.map(function(d){
-          return '<p data-cause="'+d.id.replace(/^d-/,'').split('-')[0]+'">'+d.t+
+          return '<p data-cause="'+d.ctl+'">'+d.t+
             ' '+confChip('l',d.src)+'</p>'}).join('')+'</div>';
     }
     $('ctxComposed').innerHTML=
