@@ -309,6 +309,338 @@
 
   <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Move the dial, then switch to Opus 5 and try to turn thinking off. Read what the control says instead of doing nothing.</div></div>
 </section>
+
+<!-- ==================================================================
+     SECTION 5. The retrieval ladder. 9 min. estimate-then-reveal (family 10).
+     Harvest anchor: session-1/index.html s4 GUESS panel, via
+     component-library.md family 10 (INLINE, harvested verbatim). Log scale
+     kept, because the quantities span orders of magnitude. The answer's
+     magnitude never appears in a slider label.
+     ================================================================== -->
+<section class="slide" id="s5" data-nav="Retrieval ladder">
+  <div class="eyebrow"><span>05 &middot; Content</span><span class="mins">9 min</span></div>
+  <h2>The retrieval ladder: nothing, search, research</h2>
+
+  <p class="big">There are four rungs, not two, and the room usually knows about two of them. Guess the numbers before you see them; a committed wrong guess is worth more than a lookup.</p>
+
+  <div class="panel" data-task="t-retrieval-ladder" data-comp="estimate-then-reveal">
+    <span class="plab">Estimate first, then reveal. The sliders are logarithmic.</span>
+    <div id="guessPanel"></div>
+    <span class="src"><b>When should I use web search, extended thinking, and research?</b>, support 11095361, fetched 2026-08-20: one to two tool calls for a factual web search, five or more tool calls over one to three minutes for research <span class="conf h" data-src="src-tools3">H</span>.</span>
+  </div>
+
+  <h3>The four rungs</h3>
+  <table class="dt tight">
+    <thead><tr><th>Rung</th><th>What it puts in the context</th><th>What you see in the output</th></tr></thead>
+    <tbody>
+      <tr><td><b>0 &middot; Nothing</b></td><td>Only the weights, plus whatever the other four layers already carried.</td><td>No citations, no as-of date, and no way to tell from the surface of the text whether the facts are current.</td></tr>
+      <tr><td><b>1 &middot; Past-chat search</b></td><td>Retrieved slices of your own earlier conversations. Paid plans only. Scope is every chat outside projects; inside a project, that project only. <span class="conf h" data-src="src-memory">H</span></td><td><b>Tool calls in the conversation.</b> This is the rung people forget, and it is the reason an answer can cite a document you never attached to this chat.</td></tr>
+      <tr><td><b>2 &middot; Web search</b></td><td>One to two tool calls on a factual query. <span class="conf h" data-src="src-tools3">H</span></td><td>Inline citations and an as-of date. Fast enough to leave on.</td></tr>
+      <tr><td><b>3 &middot; Research</b></td><td>Five or more tool calls over one to three minutes, spanning the web and your connected integrations. <span class="conf h" data-src="src-tools3">H</span></td><td>A longer synthesised report with citations across multiple sources. Slow enough that you will not leave it on.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="talk"><span class="th">The load-bearing consequence</span>
+  Rungs 1, 2 and 3 all show up in the output as tool calls. Rung 0 shows up as nothing at all. That asymmetry is the entire basis of section 9: you can see that retrieval happened, but you cannot see that it did not, except by its absence, and absence is exactly what a fluent answer is good at hiding.</div>
+
+  <p>One more thing about rung 1, and it matters for an RIA specifically: on Enterprise plans with customer-managed keys, past-chat search does not work at all, because the content is encrypted and cannot be indexed. A control your firm bought for confidentiality removes a retrieval rung as a side effect. Nobody tells you that at the point of use. <span class="conf h" data-src="src-memory">H</span></p>
+
+  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Commit all three estimates before you press reveal, then say which one you were furthest out on.</div></div>
+</section>
+
+<!-- ==================================================================
+     SECTION 6. What persists, and what dies with the tab. 10 min.
+     two-bucket-sorter (family 12).
+     Harvest anchor: session-1/index.html s13 NPI sorter (ITEMS / sortChips /
+     .lbox lit-with-why), via component-library.md family 12 (harvested
+     verbatim). Twelve chips, three designed landmines, per-item why.
+     Landmine set follows the VERIFIED ANNEX section C3, which replaces the
+     spec's third landmine (a project knowledge file) with the deletion trap
+     and demotes the project-knowledge chip to an ordinary item.
+     FLAG-1 (spec s4, frozen decision D6): this section and section 7 are
+     both chip-classification mechanics in adjacent sections. Distinct family
+     keys, so V6 passes, but a student may experience them as the same
+     mechanism twice. Kept deliberately and flagged on the page below.
+     ================================================================== -->
+<section class="slide" id="s6" data-nav="What persists">
+  <div class="eyebrow"><span>06 &middot; Content</span><span class="mins">10 min</span></div>
+  <h2>What persists, and what dies with the tab</h2>
+
+  <p class="big">Layer 2 is the one people get wrong, and they get it wrong in the direction that matters: they assume things die when they persist.</p>
+
+  <div class="inote"><span class="ih">Before you sort: which memory experience are you on</span>
+  Two experiences are live at the same time. The <b>new</b> one puts the toggles at Settings &rsaquo; Memory and writes entries in real time, in categories. The <b>legacy</b> one puts them at Settings &rsaquo; Capabilities and builds a synthesis updated every 24 hours. New is the default for new users; Free, Pro and Max are being migrated; Team and Enterprise stay on legacy for now. Same feature name, materially different behaviour. Read the section that matches your own screen, not the one that matches mine. <span class="conf h" data-src="src-memory">H</span></div>
+
+  <p>Twelve items. Click a chip, and the box it belongs in lights up with the reason. <b>Three of the twelve are designed to be sorted wrong.</b> They are labelled as landmines when they resolve, and they are labelled in the footer as exercise material. They are the three worth writing down.</p>
+
+  <div class="sorter" data-task="t-persistence-sort" data-comp="two-bucket-sorter">
+    <div class="chiplist" id="sortChips"></div>
+    <div class="boxes">
+      <div class="lbox bad" data-i="0"><h4>Survives this chat</h4><p>Still exists, somewhere, after you close the tab. Whether it is <em>in context</em> next time is a separate question.</p><div class="why" id="whyA"></div></div>
+      <div class="lbox" data-i="1"><h4>Dies with this chat</h4><p>Gone when the conversation ends, as far as anything this lesson can source.</p><div class="why" id="whyB"></div></div>
+    </div>
+  </div>
+  <div class="slab" style="margin-bottom:6px"><span>Sorted</span><b id="sortScore">0 / 12</b></div>
+  <span class="src"><b>Use Claude&rsquo;s chat search and memory to build on previous context</b>, support 11817273, fetched in full 2026-08-20, page reported &ldquo;Updated today&rdquo; <span class="conf h" data-src="src-memory">H</span>. <b>Understanding Claude&rsquo;s personalization features</b>, support 10185728, for profile and project instructions and styles <span class="conf h" data-src="src-personalization">H</span>. <b>How large is the context window on paid Claude plans?</b>, support 8606394, for project knowledge being served by retrieval rather than loaded whole <span class="conf h" data-src="src-ctxwindow">H</span>. <b>What are skills?</b>, support 12512176 <span class="conf h" data-src="src-skills">H</span>.</span>
+
+  <div class="talk"><span class="th">The distinction the whole section exists for</span>
+  <b>Stored</b> and <b>in context</b> are different states. A project knowledge file is stored permanently and is in context only for the turns where retrieval decided it was relevant. A memory entry is stored permanently and is in context on every turn until you pause or reset it. Most confusion about "why did it remember that" and "why did it forget that" resolves into this one distinction.</div>
+
+  <div class="rnote"><span class="rh">Interleaving, flagged not fixed &mdash; pedagogy.md s3.5</span>
+  This section and the next are both chip-classification exercises, back to back. They are different families and different decision rules: this one is a binary about persistence, the next is a three-way about what kind of artifact a thing is, and the next one has an instructor key to argue with. The pairing was kept deliberately (spec s4 FLAG-1, frozen decision D6) rather than swapped for a different mechanism, because losing the key would lose the argument. It is on the page because a repeat that is not flagged is drift.</div>
+
+  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort all twelve. When you hit a landmine, say out loud what you assumed before you clicked.</div></div>
+</section>
+
+<!-- ==================================================================
+     SECTION 7. Skills, connectors, plugins. 10 min.
+     multi-column-sorter (family 13).
+     Harvest anchor: session-2/index.html s9 seven-step sorter (STEPS / BUCK /
+     sortBoard / sortReset / sortKey / sortCount / sortKeyOut, the
+     "9 SEVEN STEPS" block at line 1998, read 2026-08-22). Wiring harvested
+     verbatim including the key-disabled-until-complete contract; ids are
+     prefixed pk* because ids are page-global and section 6 already owns
+     sortChips and sortScore.
+     ================================================================== -->
+<section class="slide" id="s7" data-nav="Skills, connectors, plugins">
+  <div class="eyebrow"><span>07 &middot; Content</span><span class="mins">10 min</span></div>
+  <h2>Skills, connectors, plugins: three things people call the same thing</h2>
+
+  <p class="big">A skill is procedural knowledge. A connector is access to a service. A plugin is a bundle of both, plus things that only run somewhere else. They live in one sidebar under three tabs, which is exactly why they get conflated.</p>
+
+  <p>Fifteen statements. Click one, then click the column you think it belongs to. Change your mind as often as you like. The instructor key appears only when all fifteen are placed, and you are expected to argue with it.</p>
+
+  <div class="panel" data-task="t-pack-sort" data-comp="multi-column-sorter">
+    <div id="pkBoard"></div>
+    <div class="row" style="margin-top:20px">
+      <button class="btn sel mini" id="pkReset">Reset</button>
+      <button class="btn ghost mini" id="pkKey" disabled>Reveal instructor key</button>
+      <span class="mono dim" style="font-size:12px" id="pkCount"></span>
+    </div>
+    <div id="pkKeyOut" style="margin-top:20px"></div>
+    <span class="src"><b>Browse skills, connectors, and plugins in one directory</b>, support 14328846, fetched 2026-08-20 <span class="conf h" data-src="src-directory">H</span>. <b>What are skills?</b>, support 12512176, for progressive disclosure and the code-execution requirement <span class="conf h" data-src="src-skills">H</span>. <b>Use plugins in Claude</b>, support 13837440, retrieved 2026-08-20 via search result content rather than a full page fetch <span class="conf h" data-src="src-plugins">H</span>. Three plugin items are starred in the verified annex for re-confirmation at the page before they are taught: the built-in and GitHub-sourced marketplaces, the Customize action, and the Plugin Create walkthrough. They are marked with an asterisk in the key.</span>
+  </div>
+
+  <div class="talk"><span class="th">The finding that generalises section 4</span>
+  A plugin&rsquo;s hooks and sub-agents are greyed out in chat because they only run in Cowork. That is the same mechanic as the illegal states in the inspector, one level up: a capability that exists, is installed, is visible, and is unavailable because of the surface you are standing on. Illegal states are not a quirk of the model menu. They are a general property of this product, and once you can see them you stop misreading them as bugs. <span class="conf h" data-src="src-plugins">H</span></div>
+
+  <p>There is a <b>Financial Services</b> marketplace. It is not added by default; Knowledge Work is. Adding it is the shortest path in this whole lesson from a product concept to something you could install on Monday. <span class="conf h" data-src="src-plugins">H</span></p>
+
+  <h3>Surfaces beyond the chat box</h3>
+  <p>Enumerated, deliberately not taught in depth, and deliberately not an axis in the inspector: Claude Code, Cowork, Desktop and desktop extensions, mobile, Chrome, Excel, PowerPoint, Word, Outlook, Design, Xcode, Microsoft 365, Claude Security, and the API and Console. Adding surface as a fifteen-value axis would multiply the state space by fifteen and add nothing to the five-layer model. The omission is a decision, and it is here so it is visible rather than accidental. <span class="conf h" data-src="src-features">H</span> Memory is not available in Cowork. <span class="conf h" data-src="src-memory">H</span></p>
+
+  <h3>Beta and research preview, as of 2026-07-07</h3>
+  <p>The label semantics are the durable content. A <b>research preview</b> is earlier and more likely to change; a <b>beta</b> is stable enough for regular use; not every feature graduates. The table below is the perishable content, and it is the oldest thing in this file by six weeks.</p>
+  <table class="dt tight" id="betaTable"></table>
+  <span class="src"><b>Available beta and research preview features</b>, support 14503520, fetched 2026-08-20; the article itself is dated <b>2026-07-07</b> and this table is H as of that date and no later <span class="conf h" data-src="src-beta">H</span>.</span>
+
+  <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all fifteen, reveal the key, then name one you still think the key gets wrong.</div></div>
+</section>
+
+<!-- ==================================================================
+     SECTION 8. Live: one prompt, three configurations. 10 min.
+     builder-assembler (family 15).
+     Harvest anchor: session-1/index.html s14b custom-instructions builder
+     (CIOPT / ciOpts / ciOut / ciCount, the "14 CUSTOM INSTRUCTIONS BUILDER"
+     block at line 2249), via component-library.md family 15, harvested
+     verbatim. The output is the ARTIFACT ITSELF: a configuration card the
+     student pastes at their desk, not prose about one.
+     Every run carries a pre-captured fallback embedded in the page (spec s9),
+     because a live demo depends on the network, your usage limits, and a
+     model menu that may have changed this morning.
+     ================================================================== -->
+<section class="slide" id="s8" data-nav="Live demo">
+  <div class="eyebrow"><span>08 &middot; Demo</span><span class="mins">10 min</span></div>
+  <h2>Live: one prompt, three configurations</h2>
+
+  <p class="big">Same prompt, same case, one variable changed per run. You assemble the configuration card as each run goes; the card is the thing you take back to your desk.</p>
+
+  <table class="dt tight">
+    <thead><tr><th>Run</th><th>Configuration</th><th>Expected wall clock</th><th>What to point at</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td>Sonnet 5, medium, search off</td><td class="n">10 to 20 s</td><td>Hedging, no citations, no as-of date</td></tr>
+      <tr><td class="n">2</td><td>Sonnet 5, medium, search on</td><td class="n">20 to 40 s</td><td>Citations appear, an as-of date appears, one to two tool calls</td></tr>
+      <tr><td class="n">3</td><td>Opus 5, high, search on</td><td class="n">30 to 60 s</td><td>A thinking block that is present and cannot be turned off; longer reasoning, same facts</td></tr>
+    </tbody>
+  </table>
+  <span class="src">Wall-clock ranges are the instructor&rsquo;s planning estimates for the runbook, not published figures <span class="conf l" data-src="src-tools3">L</span>. The sourced part is the tool-call count: one to two for web search <span class="conf h" data-src="src-tools3">H</span>. <b>Research is not run live.</b> Five or more tool calls over one to three minutes will not survive a ten-minute window with two other runs <span class="conf h" data-src="src-tools3">H</span>.</span>
+
+  <div class="inote"><span class="ih">Fallback, mandatory</span>
+  Every run below has a real captured output embedded in this page. If the network, the usage limit, or a changed model menu breaks the live demo, open the capture and the class continues at full pace. The captures are dated and carry the exact settings they were run at.</div>
+
+  <div class="panel">
+    <span class="plab">Run 1 fallback &middot; captured 2026-08-22 &middot; Sonnet 5 / medium / web search OFF</span>
+    <button class="btn ghost mini" id="capOpen1">Show the captured run 1 output</button>
+    <div class="hidden" id="cap1" style="margin-top:14px"></div>
+  </div>
+
+  <div class="panel">
+    <span class="plab">Run 2 fallback &middot; captured 2026-08-22 &middot; Sonnet 5 / medium / web search ON</span>
+    <button class="btn ghost mini" id="capOpen2">Show the captured run 2 output</button>
+    <div class="hidden" id="cap2" style="margin-top:14px"></div>
+  </div>
+
+  <div class="talk"><span class="th">What changed between run 1 and run 2, in one sentence</span>
+  Nothing about the model, and nothing about the prompt. One control in the composer moved, layer 4 filled, and the answer went from an honest refusal to a cited table. Run 1 is the better output on one axis that matters more than it looks: it says plainly that it cannot verify the figure, rather than producing a plausible one. Notice how much less confident it sounds while being much more trustworthy.</div>
+
+  <h3>Assemble the card</h3>
+  <p>Tick every element you would record for a run you might have to justify later. The card assembles live and is the thing you paste. One option is deliberately not selectable.</p>
+
+  <div class="panel" data-task="t-config-card" data-comp="builder-assembler">
+    <div class="ci" id="ciOpts"></div>
+    <div class="slab" style="margin:14px 0 8px"><span>Elements selected</span><b id="ciCount">0</b></div>
+    <div class="sampler" id="ciOut"></div>
+    <span class="src">Every field on this card corresponds to a control in the SURFACE array at the top of this file, with its own source and verification date. The card records configuration only. It records no client facts, deliberately.</span>
+  </div>
+
+  <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Build a card with at least five elements, then say which one you would have forgotten.</div></div>
+</section>
+
+<!-- ==================================================================
+     SECTION 9. Read the output, infer the configuration. 8 min.
+     symptom-diagnoser (family 14).
+     Harvest anchor: session-1/index.html "13 DIAGNOSTIC" (DG / diagBtns /
+     diagOut / diagScore, line 2208), via component-library.md family 14,
+     harvested verbatim. Gate at four reviewed, per the family contract and
+     the section map.
+     This is objective 4, the objective that survives the product changing,
+     and it is deliberately the most heavily weighted thing in the lesson.
+     ================================================================== -->
+<section class="slide" id="s9" data-nav="Output forensics">
+  <div class="eyebrow"><span>09 &middot; Assessment</span><span class="mins">8 min</span></div>
+  <h2>Read the output, infer the configuration</h2>
+
+  <p class="big">This is the part that outlives the product. Menus move, models get renamed, settings pages get reorganised. Reading an output and inferring what produced it does not go stale.</p>
+
+  <p>Six symptoms, as a colleague would report them to you. Each returns the likely cause, pointed back at the section that explains the mechanism, and the fix. Review at least four.</p>
+
+  <div class="panel" data-task="t-output-forensics" data-comp="symptom-diagnoser">
+    <div class="row" id="diagBtns"></div>
+    <div class="readout" id="diagOut"><span class="nil">Pick a symptom.</span></div>
+    <div class="slab" style="margin-top:12px"><span>Reviewed</span><b id="diagScore">0 / 6</b></div>
+    <span class="src">Each cause is the mechanism named in the section it points at, and each of those sections carries its own source line and chips. <b>When should I use web search, extended thinking, and research?</b> <span class="conf h" data-src="src-tools3">H</span>, <b>Change the model, effort, and thinking settings</b> <span class="conf h" data-src="src-effort">H</span>, <b>Use Claude&rsquo;s chat search and memory</b> <span class="conf h" data-src="src-memory">H</span>, <b>What are skills?</b> <span class="conf h" data-src="src-skills">H</span>. All fetched 2026-08-20.</span>
+  </div>
+
+  <div class="talk"><span class="th">The asymmetry worth stating out loud</span>
+  Five of these six symptoms are visible in the output. The first one is visible only as an absence, and an absence is exactly what a fluent answer conceals best. You cannot see that retrieval did not happen. You can only notice that nothing in the text proves it did.</div>
+
+  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Review at least four, then name the one you have actually hit in the last month.</div></div>
+</section>
+
+<!-- ==================================================================
+     SECTION 10. Discussion: which controls does this firm turn off? 15 min.
+     sealed-vote-debate (family 16), the one I-class family in the session.
+     Harvest anchors: component-library.md family 16 (INLINE, full machine,
+     harvested from session-1/index.html s14c "15 DISCUSSION" at line 2276),
+     plus the 90-second speaking timer from session-2/index.html s12
+     (tStart/tStop/tClock/tTurn, line 2507), harvested verbatim.
+     Family 16 requires prepared cases for EVERY option and EXACTLY ONE
+     complication. Three positions, three prepared cases, one complication.
+     R3: every recordkeeping and supervision characterisation in this section
+     sits behind the .verify block below, phrased as a question. Nothing here
+     is asserted as a holding. The instructor signs the slide.
+     ================================================================== -->
+<section class="slide" id="s10" data-nav="Discussion">
+  <div class="eyebrow"><span>10 &middot; Discussion</span><span class="mins">15 min</span></div>
+  <h2>Which controls does this firm turn off?</h2>
+
+  <p class="big">The Cole file is the reason this is not abstract. A closely held business, an unsigned buy-sell, a son who has not been told, and a discount nobody has re-verified. Which of tonight&rsquo;s controls does your firm leave on when that file is open?</p>
+
+  <div class="verify"><span class="vh">Requires instructor verification before it is taught as settled</span>
+  This section is a <b>contested judgment</b>, not a settled question, and nothing in it has been verified against primary authority by this build. Every regulatory characterisation below is posed as a question. Verify each against primary authority before answering any of them in class:
+  <ul>
+    <li>Does a chat with a general-purpose AI tool constitute a communication or a record that must be retained, and under which rule?</li>
+    <li>If it is a record, does an incognito chat that appears in the organisation&rsquo;s data export satisfy retention, or create an unindexed one?</li>
+    <li>What supervisory obligation attaches to a tool an employee configures individually, where the firm has no administrative control over the setting?</li>
+    <li>Does a memory entry generated from a client conversation become a record, separately from the conversation it came from?</li>
+    <li>Is a policy that the firm cannot technically enforce a supervisory system, or a statement of intent?</li>
+    <li>What does the answer to any of the above depend on: the plan tier, the entity&rsquo;s registration, or the content of the chat?</li>
+  </ul>
+  The instructor signs the slide, not the model (pedagogy.md s1 R3).</div>
+
+  <div class="phase" id="discPhase"></div>
+
+  <div class="panel">
+    <span class="plab" id="voteLab">First vote, commit before anyone speaks</span>
+    <div class="vote" id="vote1"></div>
+    <div class="sealed hidden" id="sealMsg">Vote sealed. Nothing is shown until the second vote is in.</div>
+    <div class="row" style="margin-top:12px"><button class="btn" id="toDefence" disabled>Lock it in, open defence</button></div>
+  </div>
+
+  <div class="panel hidden" id="defencePanel">
+    <span class="plab">Defence: two per side, alternating, ninety seconds each. Call the minority first.</span>
+    <p style="margin-top:0">Two speakers per side, alternating, ninety seconds each. <b>The minority side speaks first</b>, because they expected to have to defend and are the more prepared for it. Nobody rebuts during this phase.</p>
+    <div class="panel" style="margin-top:0">
+      <span class="plab">Speaking timer</span>
+      <div class="row">
+        <button class="btn mini" id="tStart">Start 90 seconds</button>
+        <button class="btn sel mini" id="tStop">Stop</button>
+        <span class="mono" id="tClock" style="font-size:26px;font-weight:500;color:var(--on)">1:30</span>
+        <span class="mono dim" style="font-size:12px" id="tTurn">Turn 0 of 4</span>
+      </div>
+    </div>
+    <div class="sgrid" id="defenceGrid"></div>
+    <div class="inote" style="margin-bottom:0"><span class="ih">Complication, introduce once, after both sides</span>
+    On an Enterprise or Team plan, <b>incognito chats are included in standard data exports and follow the organisation&rsquo;s retention policy.</b> They do not contribute to memory and they are not visible in the user&rsquo;s own chat history, and they remain available to Owners through export and are retained at least 30 days. So position A&rsquo;s containment mechanism is not a containment mechanism. It is a visibility mechanism, and it hides the chat from the person who wrote it rather than from the firm. Nobody who has already spoken speaks again. <span class="conf h" data-src="src-memory">H</span></div>
+    <div class="row"><button class="btn" id="toVote2">Open second vote</button></div>
+  </div>
+
+  <div class="panel hidden" id="vote2Panel">
+    <span class="plab">Second vote, same question, after the argument</span>
+    <div class="vote" id="vote2"></div>
+    <div class="readout" id="discOut"><span class="nil">Cast the second vote.</span></div>
+    <div class="hidden" id="deltaPanel">
+      <span class="plab" style="margin-top:16px">Room tally, instructor keys in the poll counts</span>
+      <div id="tallyIn"></div><div id="deltaBars"></div>
+    </div>
+  </div>
+
+  <div class="rnote"><span class="rh">Unresolved, and deliberately not resolved here</span>
+  Whether position A is even administratively available depends on your plan tier, and this build does not know it. <b>Team plans have no organisation-level controls for memory features</b>: individual members manage their own settings. Enterprise Owners do have an org-wide toggle, on by default, and disabling it permanently deletes all memory data for every user in the organisation. If this firm is on Team, position A is a training-and-supervision policy wearing an IT-control costume, and that is a fact position A cannot answer. It is written into position B&rsquo;s prepared case rather than used as the complication, because family 16 permits exactly one complication and the incognito fact is the sharper one. <span class="conf h" data-src="src-memory">H</span></div>
+
+  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote before anyone speaks, vote again after the complication, and say which specific argument moved you or why nothing did.</div></div>
+</section>
+
+<!-- ==================================================================
+     SECTION 11. Baseline capture and what 0.2 answers. 7 min.
+     timed-ritual (family 17), the closing standing instrument.
+     Harvest anchor: session-1/index.html s15 baseline (blGo/blTask/blMin/
+     blOut/blMsg, the "16 BASELINE" block at line 2343), via
+     component-library.md family 17, harvested verbatim including the
+     completeness enforcement and the "this page stores nothing, write it
+     down" line (pedagogy R9).
+     ================================================================== -->
+<section class="slide" id="s11" data-nav="Baseline and close">
+  <div class="eyebrow"><span>11 &middot; Ritual</span><span class="mins">7 min</span></div>
+  <h2>Baseline capture, and what 0.2 answers</h2>
+
+  <p class="big">Before you leave, record one task you do unassisted today, how long it takes, and what it produces. Session 0.2 measures against this number, and the number is only useful if you write it down now rather than reconstruct it later.</p>
+
+  <div class="ritual" data-task="t-baseline" data-comp="timed-ritual">
+    <label class="rlab" for="blTask">One recurring task you currently do without any assistance</label>
+    <textarea id="blTask" placeholder="For example: drafting the post-meeting summary email for a review meeting."></textarea>
+    <div class="row" style="margin-top:12px">
+      <label class="rlab" for="blMin" style="margin:0">Minutes, unassisted</label>
+      <input type="text" id="blMin" placeholder="45" style="width:90px">
+    </div>
+    <label class="rlab" for="blOut" style="margin-top:14px">What it produces, concretely</label>
+    <textarea id="blOut" placeholder="A 300-word email plus three follow-up items in the CRM."></textarea>
+    <div class="row" style="margin-top:12px"><button class="btn" id="blGo">Record it</button></div>
+    <div class="rout" id="blMsg"><span class="rnil">All three fields are required.</span></div>
+  </div>
+
+  <div class="pull">0.1 is what every control does to one inference. 0.2 is what a good prompt does with the controls already set. 0.3 is how you verify the answer once you have it.</div>
+
+  <p>Say that out loud before the room leaves. It is the spiral, and it is what stops each of these sessions reading as a standalone tour.</p>
+
+  <h3>The question that is still open</h3>
+  <p>Is the planning window still open now that a buyer has expressed interest, and does a 2023 appraisal still support a 31% discount today? No session answers it. Every session returns to it. Tonight it acquired a second edge: whichever configuration you use to work on it puts some part of the Cole file somewhere, and you now have the vocabulary to say exactly where.</p>
+
+  <div class="talk"><span class="th">What to change before Monday</span>
+  One thing, not five. Open Settings, read your Instructions for Claude, and either write them for the first time or delete a line that is no longer true. It is the cheapest and most durable control on the whole surface, it applies to every conversation, and almost nobody in this room has looked at it in six months.</div>
+
+  <div class="check" data-gate="g11"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Fill all three fields, press record, and copy the line into your own notes. This page stores nothing.</div></div>
+</section>
 </div>
 <footer>
   <div class="wrap">
@@ -499,6 +831,46 @@ var SURFACE=[
 ];
 /* The label semantics are the durable content. The table above is the
    perishable content, and the page says so where it renders. */
+/* ===== PROBE: the three captured base outputs =====
+   EPISTEMIC CONTRACT, non-negotiable (spec s7.3). These base strings are
+   CAPTURED TRANSCRIPTS, extracted programmatically from docs/probe-captures.md
+   at build time so they are verbatim by construction rather than by care.
+   They are the ONLY H-chipped output text in this lesson, and they are H
+   against their capture date and the exact settings recorded with them,
+   not against the world.
+   Everything the inspector composes on top of them is a CONSTRUCTION, chipped
+   L, badged .sim, and rendered in a visibly different surface. The output
+   panel carries a permanent line saying so. Without that line the artifact
+   violates R1 and R5 and does not ship.
+   P3 is a verbatim LEADING EXCERPT: the capture runs to 19047 characters, which
+   would swamp a 16-minute section. The cut point is stated on screen and the
+   full capture is in docs/probe-captures.md. Nothing inside the excerpt is
+   altered.
+   P2 carries a capture NOTE recorded by whoever ran it. It is the capturer's
+   annotation, not model output, so it is stored and displayed separately and
+   never rendered as part of the transcript. */
+var PROBE=[
+{id:"p1",label:"P1 · factual, cutoff-sensitive",task:"Rate lookup for the Cole installment sale note",
+ prompt:"What is the current Section 7520 rate and Applicable Federal Rate (AFR) for midterm transactions relevant to structuring an installment sale or grantor trust transaction for a household this month?",
+ settings:"Sonnet 5 / effort medium / web search OFF / thinking off",captured:"2026-08-22",full:true,note:"",
+ base:"No web search tool is connected in this session — I can't independently verify the current published rate.\n\nRan a command\n\nThe IRS AFR listing on this page loads dynamically (AJAX/views block), so I got the shell page, not the rate table. Let me pull the actual Revenue Ruling PDF directly instead.\n\nRan 2 commands\n\nThat endpoint returned a redirect with no body. I don't have a working live-search path in this session, and my training data cutoff (Jan 2026) is stale for an August 2026 rate that changes monthly — quoting from memory would violate the zero-unbacked-claims standard.\n\nBottom line: I cannot verify the August 2026 §7520 rate or the AFR mid-term rate right now — no web search tool is connected in this chat, and the IRS site requires JS-rendered content my fetch can't pull.\n\nTwo ways to close this out:\n\nEnable web search for this conversation (toggle in the message composer / settings) — one query gets me the exact Rev. Rul. citation, the §7520 rate, and AFR short/mid/long-term (annual + semiannual + monthly compounding) for August 2026, with the IRS.gov source linked.\nDirect source, no tool needed: irs.gov/applicable-federal-rates — the current month's Revenue Ruling is always posted there; search engines/Bloomberg Tax also mirror it same-day.\n\nFor context on the mechanics (not rate-specific, so this part is reliable): the §7520 rate — used for GRATs, QPRTs, CRTs, and CLATs — is 120% of the mid-term AFR (annual compounding), rounded to the nearest 0.2%, published monthly under IRC §7520(a)(2). The mid-term AFR itself (2–9 year instruments, e.g., installment sale notes or intra-family loans funding a grantor trust) is unbundled by compounding frequency — annual, semiannual, quarterly, monthly — and you'd want the compounding that matches your note terms.\n\nGiven the planning stakes (GRAT/installment sale sizing is rate-sensitive at the margin), want me to run this the moment you enable search, or do you have this month's Rev. Rul. number already and just want me to build out the structuring analysis around it?"},
+{id:"p2",label:"P2 · generative, personalisation-sensitive",task:"Client email summarising the Cole meeting",
+ prompt:"Draft a concise, professional follow-up email to David and Sarah Cole summarizing our initial planning meeting regarding their business transition, estate liquidity objectives, and next steps for their advisory team.",
+ settings:"Sonnet 5 / effort medium / thinking off / instructions ON",captured:"2026-08-22",full:true,note:"(First run Claude rejected request due to client sensitive info - prompt was adapted slightly):",
+ base:"Subject: Following Up — Business Transition & Liquidity Planning Discussion\n\nDear David and Sarah,\n\nThank you for the time you both gave this week to walk through the transition planning for the business and its implications for your broader estate. It was a productive first session, and I want to summarize where we landed and what comes next.\n\nWhat we covered:\n\nYour near-term objectives around transitioning ownership of the business, including timeline flexibility and the outcomes that matter most to you\nThe liquidity gap between your estate's current structure and what a transition (or an estate settlement absent one) would require\nPreliminary discussion of a sale structure using an intentionally defective grantor trust (IDGT), including how a note-based sale could address both the liquidity question and the valuation discount opportunity — at a high level; we have not yet run the numbers\n\nWhat I flagged as open:\n\nWe need a current business valuation before any note terms, discount rate, or gift/sale split can be modeled with confidence\nThe installment note rate assumption should be benchmarked against the applicable federal rate at time of execution, not today's rate\nI want to loop in your estate attorney before we go further, since the trust mechanics interact directly with your existing documents\n\nNext steps:\n\nMy team will request the valuation engagement letter this week\nI'll draft a preliminary liquidity model reflecting two or three structuring scenarios\nWe'll schedule a follow-up once your attorney has reviewed the trust framework — target three weeks out\n\nPlease let me know if I've mischaracterized anything above, or if there's a detail from our conversation you'd like added before I circulate this internally.\n\nBest regards,"},
+{id:"p3",label:"P3 · analytical, effort-sensitive",task:"Compare the structuring options on the Cole transaction",
+ prompt:"Provide a structured comparative analysis of structuring the Cole family transition via an Intentionally Defective Grantor Trust (IDGT) sale versus an outright installment sale, evaluating gift tax exposure, basis adjustment at death, and income tax flow-through mechanics.",
+ settings:"Opus 5 / effort high / thinking on (forced)",captured:"2026-08-22",full:false,fulllen:19047,note:"",
+ base:"# Cole Family Transition — IDGT Sale vs. Outright Installment Sale\n\n**Comparative structural analysis · 2026-08-22**\n**Synthetic case. The Cole household is a fabricated teaching case; no facts describe a real client.**\n\n---\n\n## 0. Headline finding\n\nModeled on the Cole facts below, over a 15-year horizon, total federal transfer + income tax at the family level:\n\n| Rank | Structure | Estate tax | Income tax | **Total** | vs. baseline |\n|---|---|---|---|---|---|\n| 1 | **Retain and step up** (no freeze) | $3.06M | $0 | **$3.06M** | — |\n| 2 | **IDGT sale** | $0 | $7.59M | **$7.59M** | +$4.53M |\n| 3 | **Outright installment sale** | $0 | $9.09M | **$9.09M** | +$6.03M |\n\nBetween the two structures actually asked about, the IDGT sale wins by **$1.50M**, almost entirely because the §453A(c) interest charge and the seller-side installment gain do not exist in a Rev. Rul. 85-13 transaction. But both are dominated by simply holding the asset until death.\n\n**Crossover.** The IDGT sale only beats retention once the gross estate at death reaches approximately **$62M** (see §5). Below that, the §1014 basis forgone under Rev. Rul. 2023-2 exceeds the estate tax avoided. Confidence: **H** on the direction; **M** on the specific crossover figure, which is a function of the assumptions in §1 and moves materially with the basis fraction and the heirs' holding period.\n\n**Recommendation.** Do not freeze the whole interest. Size any IDGT sale to the *projected excess over the indexed exclusion*, not to the business. On these facts that is a partial sale of roughly $4–6M of discounted interest, leaving the balance to receive §1014 treatment. Full-freeze structuring at this net worth is a solution to a 2017–2025 problem that OBBBA removed."}
+];
+/* P1b is a FOURTH capture: the same prompt as P1 at the same settings except
+   web search ON. It is the pre-captured fallback for run 2 of the section 8
+   live demo (spec s9: every run has a fallback embedded in the page, because
+   a live demo in front of thirty advisors depends on three systems you do not
+   control). H against its own capture date and settings, like the others. */
+var PROBE1B={id:"p1b",label:"P1b · the same prompt with web search ON",settings:"Sonnet 5 / effort medium / web search ON",captured:"2026-08-22",
+ base:"August 2026 rates (Rev. Rul. 2026-13, IRS):\n\nRate\tAnnual\tSemiannual\tMonthly\n§7520 rate\t5.20%\t—\t—\nMid-term AFR (100%)\t4.35%\t4.30%\t4.26%\nShort-term AFR (100%)\t4.10%\t4.06%\t4.03%\nLong-term AFR (100%)\t4.92%\t4.86%\t4.81%\n\nSource: Rev. Rul. 2026-13, mid-term AFR annual compounding 4.35%, semiannual 4.30%, monthly 4.26%; §7520 rate for August 2026 is 5.20%. This is unchanged from July — the August 2026 Section 7520 rate is 5.20%, the same as July, while the short-term AFR rose to 4.10% from 4.00%. Confidence: high, primary source (IRS Revenue Ruling). \nIRS\nMondaq\n\nApplication notes for your two structures:\n\nGRAT (uses §7520 = 5.20%): This is a headwind relative to the 4.6%–5.0% range that prevailed for most of 2025–early 2026. Higher §7520 rate raises the hurdle the trust assets must beat to pass value to remaindermen — zeroing out requires higher assumed annuity payout %. All else equal, a rolling short-term GRAT strategy is less penalized by rate moves than a single long-term GRAT, since you re-lock the rate more frequently.\nInstallment sale to IDGT [Intentionally Defective Grantor Trust]: Use the mid-term AFR (4.35% annual / 4.26% monthly), not §7520, since a note with a duration of 3–9 years falls in the mid-term bucket. The 3-to-9-year mid-term rate for use with a sale to a defective grantor trust or intra-family loan is what governs minimum note interest to avoid imputed gift treatment under §7872/§1274. Compounding frequency matters — match the column to how the note actually compounds (monthly note → use 4.26%, not 4.35%). \nMondaq\n\nFlag: §7520 = 5.20% is a floor-rounded 120% of mid-term AFR — by statute the §7520 rate equals 120% of the mid-term AFR (annual compounding), rounded to the nearest two-tenths of one percent, so it's mechanically derived, not independently set. If you're comparing this month against a decision window, note the rate has been flat at 5.20% for two consecutive months (July, August), which reduces the \"wait for a better print\" argument on GRAT timing — no meaningful drift to exploit right now. \nUSTaxTools\n\nOne flaw worth surfacing: I did not independently verify whether your household's note/trust document already specifies a fixed compounding convention (monthly vs. annual) — that choice changes which column applies by up to 9bps on the mid-term AFR, which compounds materially over a 9-year note on a large principal. Confirm before drafting."};
+
 /* ===== 00 COLD OPEN, family 17 =====
    Harvest anchor: session-1/index.html, "family 17: cold-open ritual" IIFE
    (line 2354, read 2026-08-22). Structure verbatim: same guard, same empty
@@ -735,6 +1107,395 @@ var EFMOD=[
   draw();
   onRevealAll(function(){touched.slider=1;touched.locked=1;draw()});
 })();
+
+/* ===== 05 RETRIEVAL LADDER, family 10 =====
+   Harvest anchor: session-1/index.html s4 GUESS panel, via
+   component-library.md family 10 (harvested verbatim). Structure kept: log
+   slider, live value label, submit, ratio-based error, per-item note.
+   The 'ans' figures below are the sourced figures; where the source gives a
+   RANGE or a FLOOR rather than a point, the note says so, because a ratio
+   against a floor is not an error measurement. */
+var GUESS=[
+ {q:'Tool calls a factual WEB SEARCH makes',min:0,max:2,ans:2,unit:'',
+  note:'The source says <b>one to two</b> tool calls on a factual query, so this is a range, not a point. Scored against the top of it. The practical reading: web search is cheap enough in time that leaving it on costs you very little, and turning it off costs you every current fact.'},
+ {q:'Tool calls RESEARCH makes',min:0,max:2.7,ans:5,unit:'',
+  note:'The source says <b>five or more</b>. That is a floor, not a figure, so scoring is one-directional: a guess below five is certainly wrong, a guess above five may well be right and this readout cannot tell you. The honest summary is that nobody outside Anthropic knows the upper bound.'},
+ {q:'Seconds RESEARCH runs before it answers',min:0.7,max:2.9,ans:180,unit:'s',
+  note:'The source says <b>one to three minutes</b>, so 60 to 180 seconds. Scored against the top. This is why research is not run live in section 8: three runs including one research run eats three to five minutes of pure wall clock out of a ten-minute budget, before anyone says a word.'}
+];
+(function(){
+  var h='';
+  GUESS.forEach(function(g,i){h+='<div style="margin-bottom:18px"><div class="slab"><span>'+g.q+'</span><b id="gv'+i+'">?</b></div>'+
+    '<input type="range" id="gs'+i+'" min="'+g.min+'" max="'+g.max+'" step="0.01" value="'+((g.min+g.max)/2)+'">'+
+    '<div class="readout" id="go'+i+'" style="min-height:auto;padding:10px 13px"><span class="nil">Move the slider, then submit.</span></div></div>'});
+  h+='<div class="row"><button class="btn" id="guessGo">Submit all three</button></div>';
+  $('guessPanel').innerHTML=h;
+  GUESS.forEach(function(g,i){var upd=function(){
+    $('gv'+i).textContent=Math.round(Math.pow(10,parseFloat($('gs'+i).value))).toLocaleString('en-US')+g.unit};
+    $('gs'+i).addEventListener('input',upd);upd()});
+  function reveal(){
+    GUESS.forEach(function(g,i){var v=Math.pow(10,parseFloat($('gs'+i).value)),ratio=v/g.ans;
+      var off=ratio>1?ratio.toFixed(1)+'× too high':(1/ratio).toFixed(1)+'× too low';
+      if(ratio>0.75&&ratio<1.33)off='within a third';
+      $('go'+i).className='readout on';
+      $('go'+i).innerHTML='<span class="cz">Sourced figure '+g.ans.toLocaleString('en-US')+g.unit+', you were '+off+'</span>'+g.note});
+    mark('g5');
+  }
+  $('guessGo').onclick=reveal;
+  onRevealAll(reveal);
+})();
+
+/* ===== 06 PERSISTENCE SORTER, family 12 =====
+   Harvest anchor: session-1/index.html s13 NPI sorter (ITEMS/sortChips/
+   whyA/whyB/sortScore), via component-library.md family 12, harvested
+   verbatim. Wiring unchanged; ITEMS is this section's content.
+   b:0 = survives this chat. b:1 = dies with this chat.
+   Three designed landmines carry lm:1 and are labelled in the why (R5). */
+var ITEMS=[
+ {t:'An incognito chat, on a Team plan',b:0,lm:1,
+  w:'LANDMINE. Most rooms put this in "dies". On an Enterprise or Team plan, incognito chats are included in standard data exports and follow the organisation’s retention policy. They do not contribute to memory and are not visible in your own chat history, and they remain available to Owners through export, retained at least 30 days. Incognito hides it from you. It does not hide it from your firm. For an RIA this is the single highest-value fact in the lesson.'},
+ {t:'A memory you paused last week',b:0,lm:1,
+  w:'LANDMINE. Paused is not deleted. Existing memory is retained but not used, and conversations that happen during the pause are never retro-summarised once you unpause. So pausing loses the new material and keeps the old, which is the opposite of what most people expect from a pause button.'},
+ {t:'The memory generated from a conversation you then deleted',b:0,lm:1,
+  w:'LANDMINE, and the newest of the three. On the new memory experience, deleting a conversation does not remove the memory entries that were generated from it. The chat is gone from your history and the thing it taught the product is not. If you delete a chat because of what was in it, deleting the chat is not the remediation.'},
+ {t:'Instructions for Claude, set in Settings',b:0,
+  w:'Account-wide, applies to every conversation until you change it. This is layer 2, and it is the cheapest, most durable control on the whole surface.'},
+ {t:'A project knowledge file',b:0,
+  w:'Stored permanently, but served by retrieval rather than loaded whole into context. It survives the chat, and it is in context only on the turns where retrieval judged it relevant. Stored and in context are different states.'},
+ {t:'A custom style',b:0,
+  w:'Persists as an account-level setting, and it is a different mechanism from instructions and a different mechanism again from skills. Three things people call "telling it how to write".'},
+ {t:'A skill you installed from the directory',b:0,
+  w:'Persists, and it is enabled by default on install. Directory-installed skills are view-only, so you cannot edit what it actually says. Its name and description sit in context for every turn; its body loads only when it is judged relevant.'},
+ {t:'Search past chats, once you have switched it on',b:0,
+  w:'An account setting, so it persists. Paid plans only: Pro, Max, Team, Enterprise. Enabled by default once it has rolled out to you. On Enterprise with customer-managed keys it does not work at all, because the content is encrypted and cannot be indexed.'},
+ {t:'A PDF you attached to this message',b:1,
+  w:'Layer 5, the current turn. It is in context for this turn and it is not stored anywhere the next chat can reach. Attaching is not uploading to a project.'},
+ {t:'The web search results from this turn',b:1,
+  w:'Layer 4, invoked tools. Retrieved for this turn, in the transcript afterwards, and not available to a fresh conversation. Knowledge that arrives through a tool is rented, not owned.'},
+ {t:'The effort level you set in the composer',b:1,
+  w:'It dies sooner than the chat does. A change to effort or thinking applies starting with Claude’s next response, which makes the configuration a property of the turn. Two answers in the same thread can come from two different configurations.'},
+ {t:'Your memories, after you press Reset',b:1,
+  w:'Reset permanently deletes all memories, including project memories, and it is not undoable. This is the only item in the list where "dies" is the strong, sourced, deliberate answer, which is exactly why it belongs next to the pause chip.'}
+];
+(function(){
+  var host=$('sortChips'),solved={};
+  host.innerHTML=ITEMS.map(function(d,i){return '<button class="chip" data-i="'+i+'">'+d.t+(d.lm?' <span class="dom">landmine</span>':'')+'</button>'}).join('');
+  var boxes=all('.sorter .lbox');
+  function open(c){
+    all('.chip',host).forEach(function(x){x.classList.toggle('act',x===c)});
+    c.classList.add('solved');solved[c.dataset.i]=1;
+    var d=ITEMS[+c.dataset.i];
+    boxes.forEach(function(b,i){b.classList.toggle('lit',i===d.b)});
+    $('whyA').innerHTML=d.b===0?d.w:'';$('whyB').innerHTML=d.b===1?d.w:'';
+    var n=Object.keys(solved).length;$('sortScore').textContent=n+' / '+ITEMS.length;
+    if(n>=ITEMS.length)mark('g6');
+  }
+  all('.chip',host).forEach(function(c){c.onclick=function(){open(c)}});
+  onRevealAll(function(){all('.chip',host).forEach(function(c){c.classList.add('solved');solved[c.dataset.i]=1});
+    $('sortScore').textContent=ITEMS.length+' / '+ITEMS.length;mark('g6')});
+})();
+
+/* ===== 07 SKILLS / CONNECTORS / PLUGINS, family 13 =====
+   Harvest anchor: session-2/index.html "9 SEVEN STEPS" (line 1998). The
+   chip-then-column render loop, the placed{} map, the count()/disabled-key
+   contract and the key table are harvested verbatim in structure. Ids are
+   prefixed pk* because section 6 already owns sortChips/sortScore and ids
+   are page-global (harvest protocol step 4).
+   star:1 marks the three items the verified annex flags for re-confirmation
+   at the source page before they are taught. */
+var PACK=[
+ {n:1, k:'skill',   t:'A folder of instructions telling Claude how your firm formats an investment policy statement',
+  why:'Procedural knowledge, written down once, applied when relevant. That is the definition of a skill and it is the one of the three you are most likely to build yourself.'},
+ {n:2, k:'skill',   t:'Its name and description sit in context on every turn; its body loads only when it is judged relevant',
+  why:'Progressive disclosure. It is why you can have many installed without paying for all of them on every turn, and it is why an irrelevant one still costs you something.'},
+ {n:3, k:'skill',   t:'Will not work at all unless code execution is enabled in Settings',
+  why:'The dependency people trip over. Code execution off means skills unavailable, and the failure presents as "it refused a capability I know exists" rather than as a settings error. Section 9 tests exactly this symptom.'},
+ {n:4, k:'skill',   t:'Installed from the directory, it is view-only: you cannot edit what it actually says',
+  why:'Worth knowing before you rely on one in a client workflow. You are adopting someone else’s procedure and you cannot read it into your own compliance manual by editing it.'},
+ {n:5, k:'skill',   t:'Sharing it with your organisation is off by default, behind its own separate toggle',
+  why:'Two toggles, not one: general org sharing, and skill sharing specifically. Off by default is the right default and it also means nothing is shared by accident.'},
+ {n:6, k:'connector',t:'Clicking Connect starts an authentication flow against a third-party service',
+  why:'Access, not knowledge. A connector does not teach Claude anything; it gives it a door into a system that already holds the answer.'},
+ {n:7, k:'connector',t:'Every enabled one puts its tool definitions into context on every single turn',
+  why:'This is the cost line. Not when you use it. Every turn, whether you use it or not, for as long as it is enabled. It is the reason the inspector in section 4 has connectors as its heaviest block.'},
+ {n:8, k:'connector',t:'First-party guidance is to limit how many are active, because they are token-intensive',
+  why:'A direction, not a magnitude. No published figure exists for what one costs, which is why this lesson prints proportions and never token counts.'},
+ {n:9, k:'connector',t:'The thing you install so Claude can read your calendar',
+  why:'The concrete case. If the answer lives in a system, you want a connector. If the answer lives in a procedure, you want a skill.'},
+ {n:10,k:'plugin',  t:'Bundles skills, connectors and sub-agents into one installable package',
+  why:'The definition. A plugin is a container, which is why "I installed a plugin" tells you almost nothing about what actually changed.'},
+ {n:11,k:'plugin',  t:'Available on all paid plans: Pro, Max, Team, Enterprise',
+  why:'Not a free-plan feature. Worth checking before you design a workflow around one for a team on mixed plans.'},
+ {n:12,k:'plugin',  t:'Its hooks and sub-agents run only in Cowork, and appear greyed out in chat',
+  why:'The generalising case. Installed, visible, and unavailable because of the surface you are on. Bundled skills do work in all three surfaces: chat on the web, the Desktop Chat tab, and Cowork.'},
+ {n:13,k:'plugin',  star:1,t:'Knowledge Work is added by default; Financial Services and Legal can be added',
+  why:'* Re-confirm at the article before teaching. There is a Financial Services marketplace, and for this room it is the most concrete thing on the whole surface.'},
+ {n:14,k:'plugin',  star:1,t:'A marketplace can be added from an arbitrary GitHub repository',
+  why:'* Re-confirm at the article before teaching. Note what it implies without going further than the evidence: installing from an arbitrary marketplace is installing third-party code. This lesson makes no security claim beyond that sentence, because the scanning article has not been read.'},
+ {n:15,k:'plugin',  star:1,t:'Customize on an installed one opens a Cowork task to adjust its skills and connectors',
+  why:'* Re-confirm at the article before teaching. Note that configuring the thing sends you to a different surface, which is the same lesson as item 12.'}
+];
+var PKCOL=[{k:'skill',t:'Skill · procedural knowledge'},{k:'connector',t:'Connector · access to a service'},{k:'plugin',t:'Plugin · a bundle'}];
+(function(){
+  var placed={},sel=null,host=$('pkBoard');
+  function render(){
+    var h='<div style="display:grid;grid-template-columns:1fr;gap:9px;margin-bottom:22px">';
+    PACK.forEach(function(s){
+      var p=placed[s.n];
+      h+='<button class="chipstep" data-s="'+s.n+'" style="text-align:left;background:'+(sel===s.n?'var(--on-bg)':'var(--card)')+';border:1.5px solid '+(sel===s.n?'var(--on)':(p?'var(--off)':'var(--line)'))+';border-radius:9px;padding:11px 15px;cursor:pointer;font-family:Source Serif 4,serif;font-size:14.5px;color:var(--ink);display:flex;gap:12px;align-items:center"><span class="mono" style="font-size:11.5px;color:var(--on);flex:none">'+s.n+'</span><span style="flex:1">'+s.t+(s.star?' *':'')+'</span>'+(p?'<span class="mono" style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);flex:none">'+PKCOL.filter(function(b){return b.k===p})[0].t.split(' · ')[0]+'</span>':'')+'</button>';
+    });
+    h+='</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">';
+    PKCOL.forEach(function(b){
+      h+='<button class="buck" data-b="'+b.k+'" style="background:var(--card);border:1.5px dashed '+(sel?'var(--on)':'var(--line)')+';border-radius:11px;padding:16px 14px;cursor:'+(sel?'pointer':'default')+';font-family:Bricolage Grotesque,sans-serif;font-weight:600;font-size:14px;color:'+(sel?'var(--on)':'var(--muted)')+';line-height:1.3">'+b.t+'<span class="mono" style="display:block;font-weight:400;font-size:11px;color:var(--muted);margin-top:7px">'+Object.keys(placed).filter(function(k){return placed[k]===b.k}).length+' placed</span></button>';
+    });
+    h+='</div>';
+    host.innerHTML=h;
+    all('.chipstep',host).forEach(function(b){b.onclick=function(){sel=parseInt(b.getAttribute('data-s'),10);render()}});
+    all('.buck',host).forEach(function(b){b.onclick=function(){if(!sel)return;placed[sel]=b.getAttribute('data-b');sel=null;render();count()}});
+  }
+  function count(){
+    var n=Object.keys(placed).length;
+    $('pkCount').textContent=n+' of '+PACK.length+' placed';
+    $('pkKey').disabled=n<PACK.length;
+  }
+  function name(k){var m=PKCOL.filter(function(b){return b.k===k});return m.length?m[0].t.split(' · ')[0]:'not placed'}
+  function showKey(){
+    var right=0,h='<table class="dt tight"><thead><tr><th>#</th><th>You</th><th>Key</th><th>Reasoning</th></tr></thead><tbody>';
+    PACK.forEach(function(s){
+      var y=placed[s.n],ok=y===s.k;if(ok)right++;
+      h+='<tr><td class="n">'+s.n+'</td><td style="font-size:13.5px">'+name(y)+'</td><td style="font-size:13.5px"><b>'+name(s.k)+'</b></td><td style="font-size:13.5px">'+s.why+'</td></tr>';
+    });
+    h+='</tbody></table><p class="mono" style="font-size:13px;color:var(--on)">'+right+' of '+PACK.length+' matched. Items 9 and 10 are the ones worth arguing about: a calendar integration shipped inside a bundle is both, and the key picks the primitive rather than the wrapper. Items marked * still need re-confirmation at the source page.</p>';
+    $('pkKeyOut').innerHTML=h;
+    mark('g7');
+  }
+  $('pkReset').onclick=function(){placed={};sel=null;render();count();$('pkKeyOut').innerHTML=''};
+  $('pkKey').onclick=showKey;
+  onRevealAll(function(){PACK.forEach(function(s){if(!placed[s.n])placed[s.n]=s.k});render();count();showKey()});
+  render();count();
+  /* beta and research preview table, rendered from SURFACE so the perishable
+     rows live in one array with their own asOf (spec PA-7) */
+  (function(){
+    var rows=SURFACE.filter(function(r){return r.kind==='beta'});
+    $('betaTable').innerHTML='<thead><tr><th>Feature</th><th>Label</th><th>As of</th></tr></thead><tbody>'+
+      rows.map(function(r){return '<tr><td>'+r.label+'</td><td>'+r.val+'</td><td class="n">'+r.asOf+'</td></tr>'}).join('')+'</tbody>';
+  })();
+})();
+
+/* ===== 08 CONFIGURATION CARD, family 15 =====
+   Harvest anchor: session-1/index.html "14 CUSTOM INSTRUCTIONS BUILDER"
+   (CIOPT/ciOpts/ciOut/ciCount, line 2249), via component-library.md family
+   15, harvested verbatim: same sel{} map, same draw(), same minimum-selection
+   threshold, same bracketed non-option. The assembled string is the artifact.
+   Also renders the two pre-captured demo fallbacks (spec s9). */
+var CIOPT=[
+ {k:'model', l:'Model',              v:'Model: ................................ (Fable 5 / Opus 5 / Sonnet 5 / Haiku 4.5)'},
+ {k:'eff',   l:'Effort level',       v:'Effort: ............................... (low / medium / high / xhigh / max, or "none on this model")'},
+ {k:'think', l:'Extended thinking',  v:'Extended thinking: .................... (on / off / locked on by the model)'},
+ {k:'search',l:'Web search',         v:'Web search: ........................... (on / off)'},
+ {k:'res',   l:'Research',           v:'Research: ............................. (on / off)   [if on, expect 5+ tool calls, 1-3 min]'},
+ {k:'exec',  l:'Code execution',     v:'Code execution: ....................... (on / off)   [off means no skills and no auto context management]'},
+ {k:'mem',   l:'Memory state',       v:'Memory: ............................... (off / search past chats / generate / both)   [and which experience: Settings > Memory, or Settings > Capabilities]'},
+ {k:'proj',  l:'Project',            v:'Project: .............................. (none / instructions only / instructions + knowledge)'},
+ {k:'skills',l:'Skills active',      v:'Skills active: ........................ (name each one; an installed skill you did not intend is still in context)'},
+ {k:'conn',  l:'Connectors enabled', v:'Connectors enabled: .................... (count and names; every one costs context on every turn)'},
+ {k:'att',   l:'Attachments',        v:'Attachments: .......................... (what was attached to THIS turn)'},
+ {k:'instr', l:'Instructions in force',v:'Instructions in force: ................ (account-level / project-level / style)'},
+ {k:'when',  l:'Date and time of the run',v:'Run at: ............................... (date and time; the surface changes weekly)'},
+ {k:'never', l:'What NOT to put on this card', v:'[Do NOT record client identifiers, account numbers, or case facts on this card. The card is configuration only. A configuration card travels between colleagues, gets pasted into tickets, and outlives the engagement. The client should not be in it.]'}
+];
+(function(){
+  var sel={};
+  $('ciOpts').innerHTML=CIOPT.map(function(o){
+    return '<label data-ci="'+o.k+'"><input type="checkbox"'+(o.k==='never'?' checked disabled':'')+'>'+o.l+'</label>'}).join('');
+  function draw(){
+    var keys=CIOPT.filter(function(o){return sel[o.k]||o.k==='never'});
+    var n=keys.filter(function(o){return o.k!=='never'}).length;
+    $('ciCount').textContent=n;
+    if(n<5){$('ciOut').innerHTML='<span class="dim">Select at least five elements. The bracketed line is always on the card and is not yours to remove.</span>'+
+      '\n\n'+CIOPT[CIOPT.length-1].v;return}
+    $('ciOut').textContent='CONFIGURATION CARD\nTask: ..................................\n\n'+
+      keys.map(function(o){return o.v}).join('\n');
+    mark('g8');
+  }
+  all('[data-ci]').forEach(function(l){
+    var c=l.querySelector('input');
+    if(l.dataset.ci==='never'){l.classList.add('on');return}
+    c.onchange=function(){sel[l.dataset.ci]=c.checked;l.classList.toggle('on',c.checked);draw()};});
+  draw();
+  onRevealAll(function(){CIOPT.forEach(function(o){sel[o.k]=1});
+    all('[data-ci]').forEach(function(l){var c=l.querySelector('input');if(!c.disabled)c.checked=true;l.classList.add('on')});draw()});
+  /* pre-captured demo fallbacks */
+  function capBox(p,extraNote){
+    return '<p style="margin-top:0"><span class="sim">Captured transcript, verbatim</span> '+
+      '<span class="conf h" data-src="src-tools3">H</span> to its capture, not to the world: run '+p.captured+' at '+esc(p.settings)+'.</p>'+
+      (extraNote?'<div class="inote" style="margin-top:0"><span class="ih">Capture note, recorded by whoever ran it</span>'+esc(extraNote)+'</div>':'')+
+      '<div class="sampler" style="font-family:\'Source Serif 4\',Georgia,serif;font-size:15px;line-height:1.6;white-space:pre-wrap">'+esc(p.base)+'</div>';
+  }
+  function wire(btnId,boxId,p,note){
+    var open=function(){$(boxId).innerHTML=capBox(p,note);$(boxId).classList.remove('hidden')};
+    $(btnId).onclick=open;onRevealAll(open);
+  }
+  wire('capOpen1','cap1',PROBE[0],'');
+  wire('capOpen2','cap2',PROBE1B,'');
+})();
+
+/* ===== 09 OUTPUT FORENSICS, family 14 =====
+   Harvest anchor: session-1/index.html "13 DIAGNOSTIC" (DG/diagBtns/diagOut/
+   diagScore, line 2208), via component-library.md family 14, harvested
+   verbatim: same seen{} map, same .act toggle, same cause-then-.fx readout,
+   same gate at min(4, DG.length). Symptoms and causes are this section's, and
+   each points back at the section that explains its mechanism (spec s8). */
+var DG=[
+ {s:'Current facts, no citations',
+  c:'Web search was off, so the model answered a cutoff-sensitive question out of training data. Nothing in layer 4 filled. This is section 5, rung 0: the only rung that leaves no trace in the output. The answer looks exactly like a researched one and is not one.',
+  f:'Fix: check for citations and an as-of date before you believe a date-sensitive figure. If they are absent, the figure came from memory. Ask again with search on and compare.'},
+ {s:'No thinking block on what should be Opus 5',
+  c:'The model is not what you think it is. Extended thinking cannot be turned off in Claude on Opus 5, so a missing thinking block means you are not on Opus 5. Either the selector moved, an Enterprise admin removed the model for your role, or the conversation switched models. Sections 2 and 3.',
+  f:'Fix: read the model chip on the response, not the one in the composer. A configuration change applies starting with the next response, so the composer shows what will happen next, not what just happened.'},
+ {s:'It cites a document you never attached',
+  c:'Something in layer 3 retrieved it. Either project knowledge was pulled by retrieval, or past-chat search found it in an earlier conversation, or a skill body loaded. All three are retrieval, all three show up as tool calls, and none of them required you to attach anything. Sections 5 and 6.',
+  f:'Fix: look for the tool calls in the transcript, then check whether you are inside a project and whether past-chat search is on. Stored and in context are different states, and this is the moment the difference bites.'},
+ {s:'It ignores your standing instructions',
+  c:'A precedence problem in layer 2, not a memory failure. Account-level instructions, project instructions, a style and a skill can all say something about how to write, and they do not all win. This is section 6, and it is the most common complaint that is not actually a bug.',
+  f:'Fix: name every layer-2 source in force before you blame the model. Open Settings, open the project, and list the enabled skills. Then remove one at a time.'},
+ {s:'It ran three minutes and produced a report when you wanted a sentence',
+  c:'Research was on. Five or more tool calls over one to three minutes, returning a longer synthesised report with citations across multiple sources. That is the documented behaviour, not an overrun. Section 5, rung 3.',
+  f:'Fix: research is a deliberate mode, not a quality setting. For a one-line factual lookup you want web search, which is one to two calls.'},
+ {s:'It refuses a capability you know exists',
+  c:'Code execution is off. Skills require it, and so does automatic context management. The failure presents as a refusal rather than as a settings error, which sends people to the wrong place to fix it. Sections 6 and 7.',
+  f:'Fix: check Settings for code execution before you conclude the capability was removed. And note the general form: installed, visible, unavailable because of the surface or a dependency. A plugin’s hooks are greyed out in chat for the same reason.'}
+];
+(function(){
+  var seen={};
+  $('diagBtns').innerHTML=DG.map(function(d,i){return '<button class="btn sel mini" data-d="'+i+'">'+d.s+'</button>'}).join('');
+  function open(b){
+    all('button',$('diagBtns')).forEach(function(x){x.classList.toggle('act',x===b)});
+    var d=DG[+b.dataset.d];seen[b.dataset.d]=1;
+    $('diagOut').className='readout on';
+    $('diagOut').innerHTML='<span class="cz">Likely cause</span>'+d.c+'<div class="fx">'+d.f+'</div>';
+    var n=Object.keys(seen).length;$('diagScore').textContent=n+' / '+DG.length;
+    if(n>=Math.min(4,DG.length))mark('g9');
+  }
+  all('button',$('diagBtns')).forEach(function(b){b.onclick=function(){open(b)}});
+  onRevealAll(function(){DG.forEach(function(d,i){seen[i]=1});
+    $('diagScore').textContent=DG.length+' / '+DG.length;mark('g9');
+    open(all('button',$('diagBtns'))[0])});
+})();
+
+/* ===== 10 DISCUSSION, family 16 =====
+   Harvest anchor: component-library.md family 16 (the full machine, itself
+   harvested from session-1/index.html "15 DISCUSSION", line 2276), plus the
+   speaking timer from session-2/index.html s12 (line 2507). Both verbatim in
+   wiring: sealed first vote, phase strip, prepared cases for every option,
+   one complication, second vote, per-student delta, room tally with paired
+   distribution bars. A zero delta is presented as a finding, not a failure. */
+var DOPT=[
+ {k:'A',t:'Memory and past-chat search off firm-wide. Incognito required for anything client-adjacent.'},
+ {k:'B',t:'Memory on. Client identifiers banned by policy. Train and supervise to the policy.'},
+ {k:'C',t:'Memory on, with projects as the containment boundary. No firm-wide prohibition.'}
+];
+var DEF={
+ A:['The controls are individually toggleable, which means any policy short of "off" depends on every employee getting it right every time, on a screen you never see.',
+    'Memory entries persist beyond the conversation that made them, and on the new experience deleting the conversation does not delete the entry. If a chat should not have happened, deleting it is not the remediation.',
+    'Reset permanently deletes all memories including project memories, so the firm has a clean-slate mechanism available. That is a real, auditable action, unlike "we told people not to".',
+    'The Cole file is exactly the case: a son who has not been told, a buyer with no signed letter of intent, a discount nobody has re-verified. None of that should be sitting in a persistent summary.'],
+ B:['A prohibition you cannot enforce is not a control. On a <b>Team plan there are no organisation-level controls for memory features at all</b>: individual members manage their own settings. Position A is unenforceable on Team by construction, not by oversight.',
+    'The risk is the content, not the mechanism. Client identifiers are what create the exposure; the memory feature is just one of several places they can land, and banning one place moves the problem rather than solving it.',
+    'Turning off past-chat search removes a real capability: it is how the product reuses your own prior work. Paying that cost only makes sense if the alternative actually reduces exposure.',
+    'Individual memory edits are not audit-logged. Organisation toggle changes are. That asymmetry argues for putting the control where it is logged and the behaviour where it is trained.'],
+ C:['Search scope inside a project is that project only. That is a real containment boundary that the product enforces, rather than one the firm asserts.',
+    'It preserves the capability where the work is, and constrains it where the sensitivity is, without asking every employee to hold a rule in their head at the moment of typing.',
+    'Enterprise customer-managed keys already block past-chat search entirely, so a firm that bought CMEK has this containment whether it chose it or not. Know which regime you are actually in before you write policy for a different one.',
+    'It is the only position that survives the plan tier being wrong, because it does not depend on an administrative control existing.']
+};
+(function(){
+  var v1=null,v2=null,phase=0;
+  function drawPhase(){
+    $('discPhase').innerHTML=['Position · 3 min','Defence · 9 min','Re-vote · 3 min'].map(function(t,i){
+      return '<span class="ph'+(i===phase?' on':'')+'">'+t+'</span>'}).join('');
+  }
+  function build(host,which){
+    $(host).innerHTML=DOPT.map(function(o){
+      return '<button class="vopt" data-v="'+o.k+'"><span class="vk">'+o.k+'</span><span>'+o.t+'</span></button>'}).join('');
+    all('[data-v]',$(host)).forEach(function(b){b.onclick=function(){
+      all('[data-v]',$(host)).forEach(function(x){x.classList.toggle('on',x===b)});
+      if(which===1){v1=b.dataset.v;$('sealMsg').classList.remove('hidden');$('toDefence').disabled=false;
+        all('[data-v]',$(host)).forEach(function(x){x.classList.remove('on')});
+        $('voteLab').textContent='First vote, sealed';}
+      else{v2=b.dataset.v;resolve()}}});
+  }
+  function resolve(){
+    var moved=v1!==v2;
+    var t1=DOPT.filter(function(o){return o.k===v1})[0],t2=DOPT.filter(function(o){return o.k===v2})[0];
+    $('discOut').className='readout '+(moved?'on':'');
+    $('discOut').innerHTML='<span class="cz">Your delta</span>First vote <b>'+(v1||'not cast')+'</b>: '+(t1?t1.t:'')+
+      '<br><br>Second vote <b>'+v2+'</b>: '+t2.t+
+      '<div class="fx">'+(moved?'You moved. Name the specific argument that moved you.':'You held. That is a finding, not a failure: say which part of the complication you had already priced in.')+'</div>';
+    $('deltaPanel').classList.remove('hidden');
+    mark('g10');
+  }
+  build('vote1',1);build('vote2',2);drawPhase();
+  function openDefence(){
+    phase=1;drawPhase();$('defencePanel').classList.remove('hidden');
+    $('defenceGrid').innerHTML=DOPT.map(function(o){
+      return '<div><h4>'+o.k+', the case for it</h4><ul style="font-size:14.5px;line-height:1.5;padding-left:18px;margin:8px 0 0">'+
+        DEF[o.k].map(function(x){return '<li style="margin:6px 0">'+x+'</li>'}).join('')+'</ul></div>'}).join('');
+  }
+  $('toDefence').onclick=function(){openDefence();if($('defencePanel').scrollIntoView)$('defencePanel').scrollIntoView()};
+  $('toVote2').onclick=function(){phase=2;drawPhase();$('vote2Panel').classList.remove('hidden')};
+  /* speaking timer, harvested verbatim from session-2 s12 (line 2507) */
+  (function(){
+    var t=90,iv=null,turn=0;
+    function paint(){$('tClock').textContent=Math.floor(t/60)+':'+String(t%60).padStart(2,'0');
+      $('tClock').style.color=t<=10?'var(--warn)':'var(--on)'}
+    $('tStart').onclick=function(){
+      if(iv)clearInterval(iv);t=90;turn=Math.min(4,turn+1);
+      $('tTurn').textContent='Turn '+turn+' of 4'+(turn===1?' · minority side first':'');paint();
+      iv=setInterval(function(){t--;paint();if(t<=0){clearInterval(iv);iv=null;$('tClock').textContent='TIME'}},1000);
+    };
+    $('tStop').onclick=function(){if(iv)clearInterval(iv);iv=null;paint()};
+    paint();
+  })();
+  (function(){
+    $('tallyIn').innerHTML='<div class="sgrid" style="gap:12px">'+DOPT.map(function(o){
+      return '<div><span class="plab">'+o.k+', first / second</span><div class="row"><input type="text" data-t1="'+o.k+'" placeholder="0" style="width:70px"><input type="text" data-t2="'+o.k+'" placeholder="0" style="width:70px"></div></div>'}).join('')+'</div>';
+    function tally(){
+      var a={},b={},sa=0,sb=0;
+      DOPT.forEach(function(o){
+        a[o.k]=parseFloat((document.querySelector('[data-t1="'+o.k+'"]')||{}).value)||0;
+        b[o.k]=parseFloat((document.querySelector('[data-t2="'+o.k+'"]')||{}).value)||0;
+        sa+=a[o.k];sb+=b[o.k]});
+      if(!sa&&!sb){$('deltaBars').innerHTML='';return}
+      $('deltaBars').innerHTML=DOPT.map(function(o){
+          var p1=sa?a[o.k]/sa*100:0,p2=sb?b[o.k]/sb*100:0,d=p2-p1;
+          return '<div class="delta"><span>'+o.k+'</span><span class="tr"><i class="v1" style="width:'+p1.toFixed(1)+'%"></i><i class="v2" style="width:'+p2.toFixed(1)+'%"></i></span>'+
+            '<span style="text-align:right;color:'+(Math.abs(d)<0.5?'var(--muted)':'var(--on)')+'">'+(d>0?'+':'')+d.toFixed(0)+'pt</span></div>'}).join('');
+    }
+    all('[data-t1],[data-t2]').forEach(function(i){i.addEventListener('input',tally)});
+  })();
+  onRevealAll(function(){
+    openDefence();
+    $('vote2Panel').classList.remove('hidden');$('deltaPanel').classList.remove('hidden');
+    mark('g10');
+  });
+})();
+
+/* ===== 11 BASELINE, family 17 =====
+   Harvest anchor: session-1/index.html "16 BASELINE" (blGo/blTask/blMin/
+   blOut/blMsg, line 2343), via component-library.md family 17, harvested
+   verbatim: same three-field completeness check, same .rout class flip, same
+   escaped echo, same "this page stores nothing" line (pedagogy R9). */
+$('blGo').onclick=function(){
+  var t=$('blTask').value.trim(),m=parseFloat($('blMin').value),o=$('blOut').value.trim();
+  if(!t||!o||!(m>0)){$('blMsg').className='rout';
+    $('blMsg').innerHTML='<span class="rz">Incomplete</span>All three are required, and the minutes must be a number.';return}
+  $('blMsg').className='rout on';
+  $('blMsg').innerHTML='<span class="rz">Recorded, write this down now</span><b>'+esc(t)+'</b>: '+m+
+    ' minutes unassisted, producing '+esc(o)+
+    '.<div class="rfx">This page stores nothing, uploads nothing, and will not remember this after a reload. Copy these lines into your own notes before you close the tab.</div>';
+  mark('g11');
+};
 
 })();
 </script>
