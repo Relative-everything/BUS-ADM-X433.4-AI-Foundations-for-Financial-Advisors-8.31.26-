@@ -297,6 +297,106 @@ $('caseBtn').onclick=function(){$('caseModal').classList.add('open')};
 $('caseModal').onclick=function(e){if(e.target===$('caseModal'))$('caseModal').classList.remove('open')};
 document.addEventListener('click',function(e){if(e.target&&e.target.id==='caseClose')$('caseModal').classList.remove('open')});
 
+/* ==================================================================
+   SURFACE  (build step 4, authored before any section prose)
+
+   Spec PA-7, the single most important build decision in the plan.
+   This lesson has the shortest half-life in the corpus: three of the eight
+   primary sources changed inside a month of each other. So every enumerated
+   product fact lives HERE, in one array, with an asOf per record. Prose in
+   the sections refers to the surface generically. Re-verifying this lesson
+   next term is an edit to this array, not a sweep through twelve sections.
+
+   Fields
+     kind    composer | account | beyond | beta | model | window
+     label   what it is called on screen
+     val     the values it takes, or the fact itself
+     con     the constraint that makes it not freely combinable
+     src     footer source key; every one resolves to a <li id="src-KEY">
+     conf    H / M / L per evidence-standards.md
+     asOf    the date the record was verified, per record, never per file
+
+   NO PRICES AND NO KNOWLEDGE CUTOFFS APPEAR HERE. The spec's evidence ledger
+   says src-models carries them; neither the spec nor the verified annex
+   quotes a figure, so quoting one would be fabrication (pedagogy R1). The
+   sections print [UNVERIFIED, needs source] where the teaching wants the
+   number.
+   NO TOKEN COUNTS APPEAR ANYWHERE (spec PA-5). Window sizes are H. Per-block
+   figures in the inspector are illustrative proportions of the window,
+   chipped L and badged .sim.
+   ================================================================== */
+var SURFACE=[
+/* ---- the composer row: controls that are a property of the turn ---- */
+{kind:'composer',label:'Model',val:'Fable 5, Opus 5, Sonnet 5, Haiku 4.5',
+ con:'Enterprise admins can remove models per role.',src:'src-models',conf:'H',asOf:'2026-08-20'},
+{kind:'composer',label:'Effort',val:'low, medium, high, xhigh, max',
+ con:'No effort selector on Haiku 4.5. xhigh requires Opus 4.7 or newer. Defaults to high on Opus 5 and Sonnet 5 on the API and in Claude Code.',src:'src-effort',conf:'H',asOf:'2026-08-20'},
+{kind:'composer',label:'Extended thinking',val:'on, off',
+ con:'Cannot be turned off in Claude on Opus 5. Always on, adaptive, on Fable 5.',src:'src-effort',conf:'H',asOf:'2026-08-20'},
+{kind:'composer',label:'Web search',val:'on, off',
+ con:'One to two tool calls on a factual query.',src:'src-tools3',conf:'H',asOf:'2026-08-20'},
+{kind:'composer',label:'Research',val:'on, off',
+ con:'Five or more tool calls over one to three minutes, spanning web and integrations, returning a longer cited report.',src:'src-tools3',conf:'H',asOf:'2026-08-20'},
+{kind:'composer',label:'Attachments',val:'files, images, PDFs',
+ con:'Upload path into the current turn.',src:'src-features',conf:'H',asOf:'2026-08-20'},
+{kind:'composer',label:'Style',val:'default, custom',
+ con:'Distinct from instructions and distinct from skills.',src:'src-personalization',conf:'H',asOf:'2026-08-20'},
+{kind:'composer',label:'Incognito',val:'on, off',
+ con:'Ghost icon, not saved to your history. On Enterprise or Team it is still included in standard data exports and follows the organisation’s retention policy.',src:'src-memory',conf:'H',asOf:'2026-08-20'},
+{kind:'composer',label:'When a change takes effect',val:'Starting with Claude’s next response',
+ con:'The configuration is a property of the turn, not of the chat. This is the single most useful sentence on the whole surface.',src:'src-effort',conf:'H',asOf:'2026-08-20'},
+
+/* ---- account and sidebar surfaces ---- */
+{kind:'account',label:'Customize › Skills',val:'Installed skills, enabled by default on install, toggleable',
+ con:'Directory-installed skills are view-only. Skills require code execution.',src:'src-directory',conf:'H',asOf:'2026-08-20'},
+{kind:'account',label:'Customize › Connectors',val:'Service catalogue; Connect starts auth',
+ con:'Every enabled connector puts its tool definitions in context on every turn.',src:'src-directory',conf:'H',asOf:'2026-08-20'},
+{kind:'account',label:'Customize › Plugins',val:'Bundles of skills, connectors and sub-agents',
+ con:'Available on all paid plans. Bundled skills work in chat, the Desktop Chat tab and Cowork. Hooks and sub-agents run only in Cowork and appear greyed out in chat.',src:'src-plugins',conf:'H',asOf:'2026-08-20'},
+{kind:'account',label:'Plugin marketplaces',val:'Knowledge Work added by default; Financial Services and Legal can be added; a marketplace can also be added from a GitHub repository',
+ con:'Re-confirm at the article before teaching. Retrieved via search result content, not a full page fetch.',src:'src-plugins',conf:'H',asOf:'2026-08-20'},
+{kind:'account',label:'Settings › Instructions for Claude',val:'Account-wide, applies to every conversation',
+ con:'Distinct from project instructions and from a style.',src:'src-personalization',conf:'H',asOf:'2026-08-20'},
+{kind:'account',label:'Settings › Capabilities',val:'Code execution and file creation',
+ con:'Gates skills. Also gates automatic context management.',src:'src-skills',conf:'H',asOf:'2026-08-20'},
+{kind:'account',label:'Memory, which experience you are on',val:'New experience at Settings › Memory. Legacy experience at Settings › Capabilities.',
+ con:'A live migration, not a documentation error. New is the default for new users; Free, Pro and Max are being migrated. Team and Enterprise stay on legacy for now. Look at your own screen and read the matching section.',src:'src-memory',conf:'H',asOf:'2026-08-20'},
+{kind:'account',label:'Memory, write latency',val:'New writes and updates entries in real time, in categories. Legacy builds a synthesis updated every 24 hours.',
+ con:'Same feature name, materially different latency.',src:'src-memory',conf:'H',asOf:'2026-08-20'},
+{kind:'account',label:'Memory, organisation controls',val:'Enterprise Owners have an org-wide toggle, on by default. Team plans have none.',
+ con:'Team members manage their own memory settings individually. Disabling the Enterprise toggle permanently deletes all memory data for every user in the organisation.',src:'src-memory',conf:'H',asOf:'2026-08-20'},
+{kind:'account',label:'Search past chats',val:'Paid plans only: Pro, Max, Team, Enterprise. Web, Desktop, Mobile.',
+ con:'Uses retrieval and appears as tool calls in the conversation. Scope is all chats outside projects; inside a project, that project only. Enabled by default once rolled out. Enterprise CMEK blocks it entirely, because the content is encrypted.',src:'src-memory',conf:'H',asOf:'2026-08-20'},
+{kind:'account',label:'Projects',val:'Project instructions plus project knowledge',
+ con:'Project knowledge is served by retrieval, not by loading the whole file into context. Five projects on the free plan.',src:'src-ctxwindow',conf:'H',asOf:'2026-08-20'},
+{kind:'account',label:'Organization settings › Skills',val:'Central provisioning and sharing',
+ con:'Share with organization is off by default, and skill sharing is a separate toggle.',src:'src-directory',conf:'H',asOf:'2026-08-20'},
+
+/* ---- window sizes: the only absolute numbers in this lesson ---- */
+{kind:'window',label:'Fable 5, Opus 5, Sonnet 5',val:'1M context window',con:'',src:'src-models',conf:'H',asOf:'2026-08-20'},
+{kind:'window',label:'Haiku 4.5',val:'200K context window',con:'',src:'src-models',conf:'H',asOf:'2026-08-20'},
+{kind:'window',label:'The 4.x tier in chat',val:'500K in chat, 200K outside those models',con:'',src:'src-ctxwindow',conf:'H',asOf:'2026-08-20'},
+{kind:'window',label:'Automatic context management',val:'Summarises history as the window fills',con:'Requires code execution enabled.',src:'src-ctxwindow',conf:'H',asOf:'2026-08-20'},
+{kind:'window',label:'Tools and connectors',val:'Described as token-intensive; first-party guidance is to limit how many are active',con:'A direction, not a magnitude. No first-party figure exists for what a connector costs.',src:'src-ctxwindow',conf:'H',asOf:'2026-08-20'},
+
+/* ---- surfaces beyond the chat box: enumerated, not taught (spec s6.3) ---- */
+{kind:'beyond',label:'Enumerated, not inspector axes',
+ val:'Claude Code, Cowork, Desktop and desktop extensions, mobile, Chrome, Excel, PowerPoint, Word, Outlook, Design, Xcode, Microsoft 365, Claude Security, API and Console',
+ con:'Deliberately not an inspector axis: adding surface as a twelfth-value axis multiplies the state space by twelve and adds nothing to the five-layer model. The omission is a decision, not an oversight.',src:'src-features',conf:'H',asOf:'2026-08-20'},
+{kind:'beyond',label:'Memory in Cowork',val:'Not available',con:'',src:'src-memory',conf:'H',asOf:'2026-08-20'},
+
+/* ---- beta and research preview: the perishable table (spec s6.4) ---- */
+{kind:'beta',label:'Claude Managed Agents',val:'Research preview',con:'',src:'src-beta',conf:'H',asOf:'2026-07-07'},
+{kind:'beta',label:'Claude Code usage tracking',val:'Beta',con:'',src:'src-beta',conf:'H',asOf:'2026-07-07'},
+{kind:'beta',label:'Claude Code Desktop',val:'Beta',con:'',src:'src-beta',conf:'H',asOf:'2026-07-07'},
+{kind:'beta',label:'Claude Code Security Center',val:'Research preview',con:'',src:'src-beta',conf:'H',asOf:'2026-07-07'},
+{kind:'beta',label:'Claude Code web',val:'Research preview',con:'',src:'src-beta',conf:'H',asOf:'2026-07-07'},
+{kind:'beta',label:'Code review',val:'Research preview',con:'',src:'src-beta',conf:'H',asOf:'2026-07-07'},
+{kind:'beta',label:'Claude for Word',val:'Beta',con:'',src:'src-beta',conf:'H',asOf:'2026-07-07'},
+{kind:'beta',label:'GitHub integration',val:'Beta',con:'',src:'src-beta',conf:'H',asOf:'2026-07-07'}
+];
+/* The label semantics are the durable content. The table above is the
+   perishable content, and the page says so where it renders. */
 })();
 </script>
 </body>
