@@ -152,6 +152,25 @@
   </table>
 </section>
 
+  <h2>The last prompt you sent</h2>
+  <p class="big">Not a good one. Not a work one. The last one, whatever it was, pasted exactly as you typed it, typos and missing context and all.</p>
+
+  <div class="rnote"><span class="rh">Instructor note &mdash; the standing ritual</span>This runs identically every session and takes eight minutes. Do not vary it, do not survey the room, and do not collect anything else here. The value is the comparison across five weeks, and that only exists if the instrument does not move.</div>
+
+  <div class="ritual" data-task="t-coldopen" data-comp="timed-ritual">
+    <label class="rlab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
+    <textarea id="coldPrompt" placeholder="Paste it exactly. Do not clean it up &mdash; the typos are the useful part."></textarea>
+    <div class="row" style="margin-top:12px"><button class="btn" id="coldGo">Analyse what I typed</button></div>
+    <div class="rout" id="coldOut"><span class="rnil">Paste something and press the button.</span></div>
+  </div>
+
+  <p>Whatever you pasted, you supplied exactly one of the five layers that went into the answer. The other four were assembled around it by settings you may not have known were set. Naming those four is the rest of the evening.</p>
+
+  <div class="rnote"><span class="rh">Second thing to report, out loud, right now</span>Open Settings and say which memory experience you are on. If the memory toggles are at <b>Settings &rsaquo; Memory</b> you are on the new experience. If they are at <b>Settings &rsaquo; Capabilities</b> you are on the legacy one. Both are live at the same time; this is a migration, not a documentation error, and the room will be looking at two different products for the next two hours. It also tells you, immediately, who is on a Team or Enterprise account and who is not. <span class="conf h" data-src="src-memory">H</span></div>
+
+  <div class="check" data-gate="g0"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen: the comparison across sessions is the point.</div></div>
+</section>
+
 <!-- ==================================================================
      SECTION 1. One inference, five layers. 7 min.
      Two roots. case-modal-spine is FIRST in DOM on purpose: validate_lesson
@@ -206,6 +225,89 @@
   A configuration change applies starting with Claude&rsquo;s next response. Not the next chat. The next response. That is why two answers in the same thread can come from two different machines, and why &ldquo;it worked yesterday&rdquo; is not a diagnosis. <span class="conf h" data-src="src-effort">H</span></div>
 
   <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Commit your prediction before reading the reveal, then find your own answer in the five-layer figure.</div></div>
+</section>
+
+<!-- ==================================================================
+     SECTION 2. Four models, on the numbers. 10 min.
+     commit-first-mcq, variant B (domain-chipped, score line).
+     Harvest anchor: session-1/index.html tierQuiz (TQ / TLABEL, the
+     "11 TIER QUIZ" block at line 2156), via component-library.md family 3
+     variant B. Wiring verbatim; TLABEL becomes the four current models.
+     ================================================================== -->
+<section class="slide" id="s2" data-nav="Four models">
+  <div class="eyebrow"><span>02 &middot; Content</span><span class="mins">10 min</span></div>
+  <h2>Four models, on the numbers</h2>
+
+  <p class="big">Four models are selectable in the composer. They differ on facts you can look up, and the differences that matter are not the ones the marketing pages lead with.</p>
+
+  <table class="dt tight">
+    <thead><tr><th>Model</th><th>Context window</th><th>Effort selector</th><th>Extended thinking</th></tr></thead>
+    <tbody>
+      <tr><td><b>Fable 5</b></td><td class="n">1M</td><td>Yes</td><td>Adaptive, always on</td></tr>
+      <tr><td><b>Opus 5</b></td><td class="n">1M</td><td>Yes</td><td>Cannot be turned off in Claude</td></tr>
+      <tr><td><b>Sonnet 5</b></td><td class="n">1M</td><td>Yes</td><td>On or off, your choice</td></tr>
+      <tr><td><b>Haiku 4.5</b></td><td class="n">200K</td><td><b>None</b></td><td>On or off, your choice</td></tr>
+    </tbody>
+  </table>
+  <span class="src"><b>Models overview</b>, Claude Platform Docs, window sizes and adaptive versus extended thinking <span class="conf h" data-src="src-models">H</span>. <b>Change the model, effort, and thinking settings</b>, support 8664678, for which models carry the effort selector and for extended thinking not being disableable on Opus 5 <span class="conf h" data-src="src-effort">H</span>. Both fetched 2026-08-20.</span>
+
+  <div class="inote"><span class="ih">Two numbers this lesson refuses to print</span>
+  Price per million tokens and reliable knowledge cutoff are the two figures that should decide most of these choices, and they are the two most likely to be stale. The models overview carries both. Neither was recorded at verification, so printing one here would be inventing it. On screen, where a figure belongs: <b>[UNVERIFIED, needs source]</b> for price per MTok, and <b>[UNVERIFIED, needs source]</b> for knowledge cutoff, on all four models. Look them up on the models overview before you use this table to spend money.</div>
+
+  <p>The other thing to know about model choice: the model can change underneath you inside one conversation. Anthropic publishes an article about it, titled <em>Why Claude switched models in your conversation with Fable 5</em>. Its URL and title are confirmed; nobody on this build has read the body. So the only claim made here is that the behaviour exists and is documented: <b>[UNVERIFIED, needs source]</b> for what triggers it, what it changes, and what you can do about it. <span class="conf l" data-src="src-routing">L</span></p>
+
+  <h3>Five tasks. Pick the model, commit, then read why</h3>
+  <p>Each item locks on your first click and gives you feedback on <em>the option you chose</em>, not a generic verdict. One of the five is built to be answered wrong; the feedback will tell you which one and why, and that item is worth more than the other four together.</p>
+
+  <div class="panel quiz" data-task="t-model-tier" data-comp="commit-first-mcq" id="tierQuiz"></div>
+
+  <div class="talk"><span class="th">Ninety seconds, on your own screen, right now</span>
+  Search for a comparison of the current Claude models and open the first two results that are not anthropic.com. Read what they say the model line-up is. Do not take my word for what you will find; look, and then say out loud whether a fluent, well-ranked, confidently written page agreed with the help centre. This is the whole course in ninety seconds, and it costs nothing.</div>
+
+  <div class="check" data-gate="g2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all five, then say which one you got wrong and what you assumed.</div></div>
+</section>
+
+<!-- ==================================================================
+     SECTION 3. Two dials people conflate: effort and thinking. 10 min.
+     parameter-sandbox (family 6).
+     Harvest anchor: session-1/index.html wallDraw (the "02 N-GRAMS + WALL"
+     block, line ~1776, read 2026-08-22): the plot-rect, grid-line, axis-label
+     and readout-class-flip pattern is reused verbatim in shape.
+     The curve is a construction. Only the direction is sourced (spec s8).
+     The locked-thinking behaviour here is a deliberate preview of the
+     section 4 illegal-state matrix.
+     ================================================================== -->
+<section class="slide" id="s3" data-nav="Effort and thinking">
+  <div class="eyebrow"><span>03 &middot; Content</span><span class="mins">10 min</span></div>
+  <h2>Two dials people conflate: effort and thinking</h2>
+
+  <p class="big">Effort and extended thinking are different controls doing different jobs, and on two of the four models one of them is not yours to set.</p>
+
+  <table class="dt tight">
+    <tbody>
+      <tr><td style="width:24%"><b>Effort</b></td><td>Five levels: low, medium, high, xhigh, max. Present on every model except Haiku 4.5. xhigh requires Opus 4.7 or newer. On the API and in Claude Code it defaults to high on Opus 5 and Sonnet 5. Enterprise admins can remove levels per role, so a level you can see may not be a level your colleague can see. <span class="conf h" data-src="src-effort">H</span></td></tr>
+      <tr><td><b>Extended thinking</b></td><td>On or off, except that it cannot be turned off in Claude on Opus 5, and it is adaptive and always on for Fable 5. <span class="conf h" data-src="src-effort">H</span> <span class="conf h" data-src="src-models">H</span></td></tr>
+      <tr><td><b>Both</b></td><td>A change applies starting with Claude&rsquo;s next response. Not the next chat. The next response. <span class="conf h" data-src="src-effort">H</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="panel" data-task="t-effort-dial" data-comp="parameter-sandbox">
+    <span class="plab">Set a model, then move the dial</span>
+    <p style="margin-top:0;margin-bottom:12px"><span class="sim">Illustrative curve. Only the direction is sourced.</span></p>
+    <div class="row" id="efModels" style="margin-bottom:16px"></div>
+    <div class="slab"><span>Effort</span><b id="efLab">medium</b></div>
+    <input type="range" id="efSlide" min="1" max="5" value="2" step="1">
+    <div class="ticks"><span>low</span><span>medium</span><span>high</span><span>xhigh</span><span>max</span></div>
+    <div id="efThink" style="margin-top:16px"></div>
+    <svg class="ch" id="efCh" viewBox="0 0 700 230" role="img" aria-label="Illustrative curves of thoroughness and of latency and usage burn against the five effort levels"></svg>
+    <div class="readout" id="efOut"></div>
+    <span class="src"><b>Change the model, effort, and thinking settings</b>, support 8664678, fetched 2026-08-20: the five levels, which models carry the selector, xhigh on 4.7 or newer, the Opus 5 lock, admin role gating, and next-response timing <span class="conf h" data-src="src-effort">H</span>. <b>Models overview</b> for Fable 5 adaptive thinking and the window sizes <span class="conf h" data-src="src-models">H</span>. <b>The shape of both curves is a construction</b>: no first-party quality-against-effort curve exists, and no latency or usage figure is published per level. Direction only <span class="conf l" data-src="src-effort">L</span>.</span>
+  </div>
+
+  <div class="inote"><span class="ih">What the curve is not</span>
+  There is no published relationship between effort level and answer quality, and none between effort level and latency. The plot above asserts two directions and nothing else: more effort is more thorough, and more effort costs more time and more of your usage. The bend in the line is drawn, not measured. If you take a number off that chart you have taken a number I made up.</div>
+
+  <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Move the dial, then switch to Opus 5 and try to turn thinking off. Read what the control says instead of doing nothing.</div></div>
 </section>
 </div>
 <footer>
@@ -397,6 +499,243 @@ var SURFACE=[
 ];
 /* The label semantics are the durable content. The table above is the
    perishable content, and the page says so where it renders. */
+/* ===== 00 COLD OPEN, family 17 =====
+   Harvest anchor: session-1/index.html, "family 17: cold-open ritual" IIFE
+   (line 2354, read 2026-08-22). Structure verbatim: same guard, same empty
+   check, same .rout class flip, same .rz headline, same .rfx footer, same
+   mark() call. Only the heuristics change, and they change to name which of
+   the five layers the pasted prompt leaned on (spec s8). */
+(function(){
+  var go=$('coldGo');if(!go)return;
+  go.onclick=function(){
+    var box=$('coldPrompt'),out=$('coldOut');
+    var t=box.value.trim();
+    if(!t){out.className='rout';out.innerHTML='<span class="rnil">Paste something first.</span>';return}
+    var words=(t.match(/\S+/g)||[]).length,chars=t.length;
+    /* Which layers the text ASSUMES. Deliberately not a score. */
+    var wantsPersist=/\b(you are|act as|as an?|remember|always|never|my (style|firm|clients?)|our|prefer|tone|voice)\b/i.test(t);
+    var wantsRetrieved=/\b(attached|attachment|the (document|file|memo|deck|policy|plan)|per the|in the (pdf|doc|file)|our notes|project|knowledge base|earlier|last (time|week|chat)|we discussed)\b/i.test(t);
+    var wantsTools=/\b(current|today|latest|this (month|week|year)|as of|look ?up|search|find the|cite|source|link|price|rate|20\d\d)\b/i.test(t);
+    var leaned=[],absent=[];
+    (wantsPersist?leaned:absent).push('persistent personalisation');
+    (wantsRetrieved?leaned:absent).push('retrieved knowledge');
+    (wantsTools?leaned:absent).push('invoked tools');
+    out.className='rout on';
+    out.innerHTML='<span class="rz">'+words+' words · '+chars+' characters · one of five layers supplied</span>'+
+      'You wrote <b>layer 5, the current turn</b>. Layer 1, the system, you never touch. '+
+      (leaned.length
+        ? 'Your text quietly assumes '+leaned.join(', ')+' '+(leaned.length===1?'is':'are')+' present. '
+        : 'Your text assumes nothing beyond itself. ')+
+      (absent.length
+        ? 'It makes no demand on '+absent.join(', ')+'.'
+        : 'It leans on every remaining layer at once.')+
+      '<div class="rfx">Nothing here is a score. The question for tonight is whether the layers you assumed were actually switched on, because none of them are on by default for everyone in this room.</div>';
+    mark('g0');
+  };
+})();
+
+/* ===== 01 FRAME: prediction-commit + five-layer figure =====
+   Harvest anchor: component-library.md family 4 (INLINE), itself harvested
+   from session-2 s3 "Commit before the content runs". Wiring verbatim; the
+   options, the reveal text and the chart are this section's content.
+   The figure is a hand-built inline SVG on the design-system chart
+   conventions: class="ch", 700-wide viewBox, mono 10px labels, and it never
+   ships without its paired .readout and .src. */
+var LAYERS=[
+ {k:'system',  n:'1',t:'System',                 d:'The product’s own scaffolding. You never see it and you never set it.'},
+ {k:'persist', n:'2',t:'Persistent personalisation',d:'Instructions for Claude, a style, project instructions, memory. Set once, applies to every turn until you change it.'},
+ {k:'retrieve',n:'3',t:'Retrieved knowledge',    d:'Project knowledge pulled by retrieval, past chats searched, a skill body loaded because it looked relevant. Stored is not the same as in context.'},
+ {k:'tools',   n:'4',t:'Invoked tools',          d:'Web search, research, connector tool definitions, code execution. This is the layer that can add facts the model never had.'},
+ {k:'turn',    n:'5',t:'This turn',              d:'Your message and anything attached to it. The only layer you typed.'}
+];
+function layerDraw(hot){
+  var W=700,H=260,L=8,T=14,rowH=40,bw=330,s='';
+  s+='<rect x="0" y="0" width="'+W+'" height="'+H+'" fill="#fff"/>';
+  LAYERS.forEach(function(l,i){
+    var y=T+i*rowH,on=hot&&hot.indexOf(l.k)>=0;
+    s+='<rect x="'+L+'" y="'+y+'" width="'+bw+'" height="'+(rowH-9)+'" rx="6" fill="'+(on?'var(--on-bg)':'var(--off-bg)')+'" stroke="'+(on?'var(--on)':'var(--line)')+'" stroke-width="'+(on?2:1)+'"/>';
+    s+='<text x="'+(L+13)+'" y="'+(y+20)+'" style="fill:'+(on?'var(--on)':'var(--muted)')+';font-weight:500">'+l.n+'</text>';
+    s+='<text x="'+(L+31)+'" y="'+(y+20)+'" style="fill:var(--ink);font-size:11.5px">'+l.t+'</text>';
+    /* converging line into the inference box */
+    s+='<path d="M'+(L+bw)+' '+(y+(rowH-9)/2)+' C '+(L+bw+52)+' '+(y+(rowH-9)/2)+', '+(L+bw+52)+' 130, '+(L+bw+104)+' 130" fill="none" stroke="'+(on?'var(--on)':'var(--line)')+'" stroke-width="'+(on?2:1)+'"/>';
+  });
+  s+='<rect x="'+(L+bw+104)+'" y="98" width="238" height="64" rx="9" fill="var(--on)"/>';
+  s+='<text x="'+(L+bw+104+119)+'" y="126" text-anchor="middle" style="fill:#fff;font-size:11.5px;letter-spacing:.11em">ONE INFERENCE</text>';
+  s+='<text x="'+(L+bw+104+119)+'" y="146" text-anchor="middle" style="fill:#fff;opacity:.82">assembled for this turn only</text>';
+  s+='<text class="axl" x="'+L+'" y="'+(H-8)+'">Five layers in, one answer out. Change a control, change a layer, change the answer.</text>';
+  $('layerCh').innerHTML=s;
+}
+var PC=[
+ {k:'A',t:'It changes what Claude knows.',
+  w:'Half right, and the half that is wrong is the expensive half. Research does not change the model’s weights: the trained parameters are identical before and after you flick the switch. What it changes is <b>layer 4</b>, invoked tools, which puts retrieved text into the context for that one turn. The practical difference: the model can now cite something it could not have known, and the moment you start a turn with the switch off, it cannot again. Knowledge that lives in a layer is rented, not owned.'},
+ {k:'B',t:'It changes only how Claude answers.',
+  w:'Half right, and the half that is wrong is the useful half. It is true that the weights do not move. But research is not a style setting: it runs five or more tool calls over one to three minutes and puts their results into <b>layer 4</b>, invoked tools, so genuinely new facts enter the context for that turn. The answer can now contain something the model had no way to produce a minute earlier. Same machine, different context, different answer.'}
+];
+(function(){var locked=false;
+  layerDraw(null);
+  $('layerOut').className='readout';
+  $('layerOut').innerHTML='<span class="nil">Commit your prediction above. The figure will light the layers your answer turns on.</span>';
+  $('pcVote').innerHTML=PC.map(function(o){return '<button class="vopt" data-v="'+o.k+'"><span class="vk">'+o.k+'</span><span>'+o.t+'</span></button>'}).join('');
+  all('[data-v]',$('pcVote')).forEach(function(b){b.onclick=function(){
+    if(locked)return;locked=true;b.classList.add('on');
+    var o=PC.filter(function(x){return x.k===b.dataset.v})[0];
+    $('pcOut').className='readout on';
+    $('pcOut').innerHTML='<span class="cz">Committed: '+o.k+'</span>'+o.w;
+    layerDraw(['tools','retrieve']);
+    $('layerOut').className='readout on';
+    $('layerOut').innerHTML='<span class="cz">What research actually moved</span>'+
+      'Layers 3 and 4 are lit. Nothing in layers 1, 2 or 5 changed, and the weights did not move at all. '+
+      'Read the five rows once more and notice which of them you can switch on from the composer, which live in Settings, and which you have never had access to.'+
+      '<div class="fx">Retrieved knowledge and invoked tools are the two layers that can put facts in front of the model that it did not have. They are also the two most people leave off.</div>';
+    mark('g1')}})})();
+
+/* ===== 02 MODEL CHOICE, family 3 variant B =====
+   Harvest anchor: session-1/index.html "11 TIER QUIZ" (TQ/TLABEL/tqScore,
+   line 2156), via component-library.md family 3 variant B. Wiring verbatim.
+   TLABEL is the four current models. Every feedback string names the deciding
+   sourced fact; a string that says "correct" and nothing else is a family 3
+   failure. Where the deciding number would be price or cutoff, the string
+   says [UNVERIFIED, needs source] rather than inventing one. */
+var TLABEL=['Fable 5','Opus 5','Sonnet 5','Haiku 4.5'];
+var TQ=[
+ {d:'Practice management',a:3,
+  t:'The same three-line classification, run over 4,000 archived meeting notes overnight. You want no effort dial anywhere in the loop, because a dial is a thing that can be left in the wrong position by whoever runs it next.',
+  f:['No. Fable 5 carries the effort selector, so the dial you wanted out of the loop is still in it, and adaptive thinking means the per-item behaviour is not fixed either.',
+     'No. Opus 5 carries the effort selector and extended thinking cannot be turned off in Claude, which is the opposite of what a fixed, boring, repeatable batch job wants.',
+     'No. Sonnet 5 carries the full five-step effort selector. It will do the job, but you asked for a configuration with no dial in it, and this is not that.',
+     'Correct, and for the sourced reason: Haiku 4.5 is the one model with no effort selector at all. There is nothing to leave in the wrong position. Its 200K window is many times what a three-line note needs. The figure that should actually decide a 4,000-item batch is price per MTok, and that is [UNVERIFIED, needs source] in this lesson.']},
+ {d:'Investment planning',a:2,
+  t:'One pass over a 700,000-token document set, and you need extended thinking OFF to keep the pass fast and the output terse.',
+  f:['No. Fable 5 has the 1M window you need, but its thinking is adaptive and always on. You cannot turn it off, so you cannot get the terse fast pass you specified.',
+     'No. Opus 5 has the 1M window, but extended thinking cannot be turned off in Claude. This is the single most commonly missed constraint on the whole surface.',
+     'Correct. Of the three models with a 1M window, Sonnet 5 is the only one where extended thinking is genuinely yours to switch off. Fable 5 is adaptive and always on; Opus 5 cannot be disabled in Claude.',
+     'No, and this is the window trap. Haiku 4.5 tops out at 200K. A 700,000-token set does not fit, and what you get back will be an answer about the part that fitted, which reads exactly like an answer about all of it.']},
+ {d:'Estate planning',a:0,
+  t:'A mixed queue: some questions are one-liners, some are genuinely hard. You want the reasoning depth to scale itself to the question rather than sit at whatever level the last person left it on.',
+  f:['Correct. Fable 5 is the model whose extended thinking is described as adaptive and always on. Scaling itself to the question is the distinguishing property, and it is the one that fits a mixed queue.',
+     'No. Opus 5 always thinks, which is close, but the depth follows the effort selector you set rather than the question you asked. On a mixed queue that means paying maximum depth for the one-liners.',
+     'No. Sonnet 5 will do whatever you last set it to, including nothing. On a mixed queue that is the failure mode you described in the question.',
+     'No. Haiku 4.5 has no effort selector, so there is nothing to scale and nothing to set. Fixed is not the same as adaptive.']},
+ {d:'Tax planning',a:1,
+  t:'Client-facing analysis where the reasoning must always be present, and you want to raise the effort explicitly for the hard ones rather than have the product infer it.',
+  f:['No. Fable 5 always thinks, but adaptively: the depth is inferred rather than set by you. You asked for explicit control.',
+     'Correct. Opus 5 is the combination you specified: extended thinking cannot be turned off in Claude, so it is always present, and the effort selector is still yours to raise. On the API and in Claude Code it defaults to high.',
+     'No. Sonnet 5 gives you the explicit effort selector, but thinking is switchable, which means it can be off. "Always present" is not guaranteed.',
+     'No. Haiku 4.5 has no effort selector, so the explicit control you asked for does not exist on it.']},
+ {d:'Tax planning',a:3,
+  t:'This month’s Section 7520 rate for the Cole installment sale note. Which model gets it right?',
+  f:['Wrong, and this is the designed item. None of these four gets it right, because the model is not the control. With web search off, every one of them answers from training data, and a rate that changes monthly is exactly the thing training data cannot hold. The control that decides this question is in the composer, not the model menu.',
+     'Wrong, and this is the designed item. Opus 5 will think longer and more carefully about a number it has no way to know. More reasoning over stale inputs produces a more convincing wrong answer, not a right one. The control that decides this is web search.',
+     'Wrong, and this is the designed item. There is no model on this list that can read the IRS site without a tool being switched on. See the captured run in section 8: with search off, the honest outcome is a refusal to state the rate.',
+     'Marked correct so the item scores, but read this: the answer is that the question is malformed. No model choice fixes a cutoff-sensitive lookup. Web search on or off is the control, and section 5 is where that gets measured. This item is deliberately built to be answered wrong; it is labelled as such on the page and in the footer.']}
+];
+(function(){
+  var host=$('tierQuiz'),n=0;
+  host.innerHTML=TQ.map(function(q,i){
+    return '<div class="qitem" data-i="'+i+'"><span class="dom a">'+q.d+'</span><span class="qtext" style="margin-top:8px">'+q.t+'</span><div class="row qbtns">'+
+      TLABEL.map(function(l,j){return '<button class="btn sel mini" data-j="'+j+'">'+l+'</button>'}).join('')+'</div><div class="qfb"></div></div>'}).join('')+
+    '<span class="score" id="tqScore">0 of '+TQ.length+' answered</span>';
+  all('.qitem',host).forEach(function(it){var q=TQ[+it.dataset.i];
+    all('.qbtns button',it).forEach(function(b){b.onclick=function(){
+      if(it.classList.contains('done'))return;
+      var ok=+b.dataset.j===q.a;b.classList.add('picked');it.classList.add('done');
+      var fb=it.querySelector('.qfb');fb.className='qfb '+(ok?'right':'wrong');
+      fb.innerHTML=q.f[+b.dataset.j];
+      n++;$('tqScore').textContent=n+' of '+TQ.length+' answered';
+      if(n>=TQ.length)mark('g2')}})})})();
+
+/* ===== 03 EFFORT AND THINKING, family 6 =====
+   Harvest anchor: session-1/index.html wallDraw ("02 N-GRAMS + WALL",
+   line ~1776): plot rect on #fff, .grid lines with right-anchored labels,
+   an .axl axis caption, and a .readout whose class flips on/bad with the
+   state. Reused in shape; the data is this section's.
+   The two series are ILLUSTRATIVE. Direction is sourced, shape is not. */
+var EFLEV=['low','medium','high','xhigh','max'];
+var EFMOD=[
+ {k:'Fable5',  n:'Fable 5', effort:true,  think:'locked-on', why:'Fable 5 adaptive thinking is always on.'},
+ {k:'Opus5',   n:'Opus 5',  effort:true,  think:'locked-on', why:'Extended thinking cannot be turned off in Claude on Opus 5.'},
+ {k:'Sonnet5', n:'Sonnet 5',effort:true,  think:'free',      why:''},
+ {k:'Haiku45', n:'Haiku 4.5',effort:false,think:'free',      why:'Haiku 4.5 does not carry an effort selector.'}
+];
+(function(){
+  var mi=2,think=true,touched={};
+  function drawModels(){
+    $('efModels').innerHTML=EFMOD.map(function(m,i){
+      return '<button class="btn sel mini'+(i===mi?' act':'')+'" data-m="'+i+'">'+m.n+'</button>'}).join('');
+    all('[data-m]',$('efModels')).forEach(function(b){b.onclick=function(){
+      mi=+b.dataset.m;touched.model=1;
+      var m=EFMOD[mi];
+      if(m.think==='locked-on')think=true;
+      draw()}});
+  }
+  function drawThink(){
+    var m=EFMOD[mi],locked=m.think==='locked-on';
+    if(locked)think=true;
+    $('efThink').innerHTML='<div class="slab" style="margin-bottom:7px"><span>Extended thinking</span><b>'+(think?'on':'off')+'</b></div>'+
+      '<button class="btn sel mini'+(think?' act':'')+'" id="efThinkBtn"'+(locked?' disabled':'')+'>'+
+      (locked?'Locked on':(think?'On, click to turn off':'Off, click to turn on'))+'</button>'+
+      (locked?'<span class="sim" style="margin-left:10px">'+m.why+'</span>':'');
+    var tb=$('efThinkBtn');
+    if(tb&&!locked)tb.onclick=function(){think=!think;touched.think=1;draw()};
+    if(locked)touched.locked=1;
+  }
+  function draw(){
+    var m=EFMOD[mi],lvl=+$('efSlide').value,i=lvl-1;
+    var sl=$('efSlide');
+    sl.disabled=!m.effort;
+    $('efLab').textContent=m.effort?EFLEV[i]:'not available';
+    drawModels();drawThink();
+    /* ILLUSTRATIVE series. thorough: diminishing returns. burn: superlinear. */
+    var W=700,H=230,L=58,R=118,T=16,B=46,pw=W-L-R,ph=H-T-B,s='';
+    s+='<rect x="'+L+'" y="'+T+'" width="'+pw+'" height="'+ph+'" fill="#fff"/>';
+    for(var g=0;g<=100;g+=25){var y=T+ph-(g/100)*ph;
+      s+='<line class="grid" x1="'+L+'" y1="'+y+'" x2="'+(L+pw)+'" y2="'+y+'"/>'+
+         '<text x="'+(L-8)+'" y="'+(y+4)+'" text-anchor="end">'+g+'</text>'}
+    function xat(k){return L+((k+0.5)/5)*pw}
+    var thor=[42,62,78,87,92],burn=[8,18,38,66,100];
+    function poly(arr){return arr.map(function(v,k){return xat(k)+','+(T+ph-(v/100)*ph)}).join(' ')}
+    if(m.effort){
+      s+='<polyline points="'+poly(thor)+'" fill="none" stroke="var(--on)" stroke-width="2.2"/>';
+      s+='<polyline points="'+poly(burn)+'" fill="none" stroke="var(--warn)" stroke-width="2.2" stroke-dasharray="5 4"/>';
+      thor.forEach(function(v,k){s+='<circle cx="'+xat(k)+'" cy="'+(T+ph-(v/100)*ph)+'" r="'+(k===i?6:4)+'" fill="var(--on)" stroke="#fff" stroke-width="2"/>'});
+      burn.forEach(function(v,k){s+='<circle cx="'+xat(k)+'" cy="'+(T+ph-(v/100)*ph)+'" r="'+(k===i?6:4)+'" fill="var(--warn)" stroke="#fff" stroke-width="2"/>'});
+      s+='<line x1="'+xat(i)+'" y1="'+T+'" x2="'+xat(i)+'" y2="'+(T+ph)+'" stroke="var(--on)" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>';
+      s+='<text x="'+(L+pw+10)+'" y="'+(T+ph-(thor[4]/100)*ph+4)+'" style="fill:var(--on)">thoroughness</text>';
+      s+='<text x="'+(L+pw+10)+'" y="'+(T+ph-(burn[4]/100)*ph+4)+'" style="fill:var(--warn)">latency and burn</text>';
+    }else{
+      s+='<rect x="'+L+'" y="'+T+'" width="'+pw+'" height="'+ph+'" fill="var(--warn)" opacity=".055"/>';
+      s+='<text x="'+(L+pw/2)+'" y="'+(T+ph/2)+'" text-anchor="middle" style="fill:var(--warn);font-size:11.5px">No effort selector on this model. The axis does not exist.</text>';
+    }
+    EFLEV.forEach(function(l,k){
+      s+='<text x="'+xat(k)+'" y="'+(T+ph+17)+'" text-anchor="middle"'+((m.effort&&k===i)?' style="fill:var(--ink)"':'')+'>'+l+'</text>'});
+    s+='<text class="axl" x="'+(L+pw/2)+'" y="'+(T+ph+38)+'" text-anchor="middle">Effort level &middot; illustrative, direction only</text>';
+    $('efCh').innerHTML=s;
+    /* readout interprets the CURRENT state, never the control */
+    var hot=m.effort&&lvl>=4;
+    $('efOut').className='readout '+(hot?'bad':'on');
+    var head,body;
+    if(!m.effort){
+      head='Haiku 4.5, no effort axis at all';
+      body='This is not a slider set to low. It is a model with no selector on it. There is nothing to leave in the wrong place and nothing to raise when the question gets hard. Extended thinking is still yours to switch here, which is the part people miss.';
+    }else if(lvl<=2){
+      head=m.n+' at '+EFLEV[i]+', thinking '+(think?'on':'off');
+      body='Cheap and quick. Fine for the classification and extraction work that makes up most of the volume in a practice. The thing to notice is that on the API and in Claude Code, Opus 5 and Sonnet 5 default to <b>high</b>, not to this. Your Claude Code sessions have not been running at medium.';
+    }else if(lvl===3){
+      head=m.n+' at high, thinking '+(think?'on':'off');
+      body='The default on the API and in Claude Code for Opus 5 and Sonnet 5. If you have never touched this control, this is roughly where your agentic work has been running, and it is a reasonable place for it to be.';
+    }else{
+      head=m.n+' at '+EFLEV[i]+', thinking '+(think?'on':'off');
+      body='The top of the dial. On the illustrative curve above, thoroughness has almost stopped moving while latency and usage are still climbing steeply. That shape is drawn, not measured, so treat it as a hypothesis to test on your own work rather than a finding. What is sourced: xhigh requires Opus 4.7 or newer, and an Enterprise admin can remove these levels for your role entirely.';
+    }
+    $('efOut').innerHTML='<span class="cz">'+head+'</span>'+body+
+      (m.think==='locked-on'?'<div class="fx">'+m.why+' The toggle is greyed, not hidden, because a hidden control teaches that it does not exist.</div>':'');
+    if(touched.slider&&(touched.locked||touched.model))mark('g3');
+  }
+  $('efSlide').addEventListener('input',function(){touched.slider=1;draw()});
+  draw();
+  onRevealAll(function(){touched.slider=1;touched.locked=1;draw()});
+})();
+
 })();
 </script>
 </body>
