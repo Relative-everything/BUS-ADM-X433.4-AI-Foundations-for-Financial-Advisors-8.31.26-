@@ -10,6 +10,93 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-08-22
+
+Sessions 0.1 and 1 gain an optional live model console. A reader pastes their
+own free Gemini API key into a box at the top of the page and the probes on that
+page run against a live model instead of the captured outputs. It is off by
+default and nothing depends on it.
+
+This is the first time any page in the course makes a network request beyond
+Google Fonts, so it is an architectural exception and is recorded as one. The
+reasoning, the alternatives rejected, and the pedagogical case are in
+`docs/gemini-live-api-feasibility.md` and `docs/live-model-console-plan.md`.
+
+### Why bring-your-own-key, and why only these two sessions
+- **A single shared course key was analysed and rejected.** Google's free tier
+  terms permit training on submissions and human review; a key in a static page
+  is public the moment it ships and is a GitHub secret-scanning partner pattern;
+  and the free quota was cut 92% without notice in December 2025. Each student
+  using their own key removes all three problems at once.
+- **Scoped to Sessions 0.1 and 1 deliberately.** Every prompt on those pages is
+  a public fact or synthetic Cole household data already published on this site,
+  so there is nothing confidential to send. Sessions 2 to 4 build on students'
+  own client work and must not get this treatment.
+
+### Session 1
+- **The Kalai probe in section 04 now runs live when a key is connected.** It
+  previously rendered three hardcoded dates and asserted its own conclusion,
+  which made an empirical claim about model behaviour unverifiable by the reader
+  in a course built on the opposite standard. The three captured dates remain
+  and render whenever no key is connected or a call fails.
+- **The verdict was rewritten to report what happened rather than what was
+  supposed to happen.** Divergent answers, identical answers and a refusal are
+  now all handled, and each teaches: convergence gets the harder lesson, that a
+  stable wrong answer is the one that survives being asked twice. The old text
+  could be contradicted by the model it was describing.
+- **Appendix A5 gains a live temperature control** below the existing nine-control
+  simulator, which is untouched. The simulator teaches why temperature changes
+  the output; the live control shows that it does, on a real distribution.
+- Source line for the Kalai section now records that the captured dates are the
+  paper's DeepSeek-V3 runs and that a live run is the reader's own observation,
+  carrying no confidence chip.
+
+### Session 0.1
+- **Section 08 gains run 4: the same probe with none of the five layers.** Runs
+  1 to 3 and the runbook table are unchanged. Run 4 sends the section 01 probe
+  through the bare API with no system prompt, personalisation, retrieval, tools
+  or history, which makes the five-layer frame a measured difference rather than
+  a diagram. Hidden entirely unless a key is connected.
+- Prompt is byte-identical to P1 in `docs/probe-captures.md` so the comparison
+  against runs 1 and 2 is exact.
+
+### Both sessions
+- Console is collapsed by default, carries the free-tier data warning and an
+  instruction to verify the page's only outbound origin before pasting anything,
+  and includes a free-form prompt box.
+- **No storage of any kind.** The key lives in one JavaScript variable, never
+  reaches localStorage, sessionStorage, a cookie or a URL, is never written into
+  the DOM, and is cleared from the visible field on connect so it does not sit
+  on a projector. The repository's existing storage grep is now the regression
+  test for this.
+- Every live element degrades to its captured form automatically on no key,
+  rate limit, timeout, offline, safety block or empty response. A reader who
+  never connects a key sees both lessons exactly as they ran before this change.
+- Model list is discovered at runtime rather than hardcoded, so an upstream
+  model rename does not break a lesson mid-class. Forty-call per-page ceiling
+  protects a student's daily free quota.
+- Instructor notes added to both sections: connect before sharing the screen,
+  and say aloud that the simulations teach the mechanism while the live call
+  shows the mechanism is not a teaching fiction.
+
+### Repository
+- `MAINTAINING.md`: the externals rule now allows a second origin, with the
+  conditions on it; a new section documents the three shared fences, the ES5
+  constraint, the two-`<script>`-block trap in Session 1, and the rule that
+  model output is written with `textContent`; the pre-push gate gains checks
+  that the new origin appears only in Sessions 0.1 and 1 and that the shared
+  blocks stay byte-identical.
+- `README.md`: the "transmits nothing" promise was true and is now qualified
+  rather than deleted, with a subsection explaining exactly what the console
+  sends, when, and why it is on these two pages and not the others.
+- `scripts/test_live_console.js` added: 64 browser assertions against a mocked
+  endpoint, covering the no-key path for both lessons, bad keys, rate limits,
+  divergent and convergent verdicts, key hygiene, output escaping and print.
+- `docs/probe-captures.md`: P4 entry added for run 4, marked UNVERIFIED until
+  captured against a real key.
+
+---
+
 ## 2026-08-20 (second pass)
 
 A second audit, compiled independently against the same tree, found repository

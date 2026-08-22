@@ -20,16 +20,44 @@ third of the time and teach a fraction of the material.
 
 ## Your work is not saved
 
-These pages store nothing, save nothing, and transmit nothing. There is no
-database behind them and no analytics in them. Everything you type lives in
-the browser tab and disappears when you reload or close it.
+These pages store nothing and save nothing. There is no database behind them,
+no analytics in them, and no login. Everything you type lives in the browser tab
+and disappears when you reload or close it.
 
 That is deliberate: no client information you paste into an exercise can leak
-from a page that never sends anything anywhere. It also means **anything you
-want to keep, you copy into your own notes before you leave the page.** The
-baseline measurement in Session 1 and the prompts you rewrite in Session 2 are
-graded components of the final project, and the page will not remember them
-for you.
+from a page that is not sending it anywhere. It also means **anything you want
+to keep, you copy into your own notes before you leave the page.** The baseline
+measurement in Session 1 and the prompts you rewrite in Session 2 are graded
+components of the final project, and the page will not remember them for you.
+
+### The one exception, and it is off unless you switch it on
+
+Sessions 0.1 and 1 have an optional box at the top marked **Live model**. Leave
+it alone and those pages behave like every other: they transmit nothing, and the
+model outputs you see are real runs that were captured and dated in advance.
+
+Paste your own free Gemini API key into it and the exercises call a live model
+instead, so you watch it happen rather than read a recording. Then, and only
+then, those two pages send something: whatever is in the box you pressed the
+button on, to Google, over the connection your key authorises. Your key is held
+in one JavaScript variable, is never stored, never appears in a link, and is
+gone the moment you reload.
+
+Three things worth knowing before you use it:
+
+- **Nothing depends on it.** Every exercise works, and every gate completes,
+  with no key. Nothing is graded on it.
+- **Do not send client information through it.** Google's terms for the free
+  tier let it use what you submit to improve its products, and let human
+  reviewers read it. Every prompt on those two pages is a public fact or
+  synthetic Cole household data that is already published on this site. That is
+  why the box is on those pages and not on the ones built around your own
+  practice.
+- **Check before you trust it.** The pages are static and their source is
+  readable. View Source, or open the Network tab in your browser's developer
+  tools, and confirm for yourself that the only address they send to is
+  `generativelanguage.googleapis.com`. Doing that, rather than taking this
+  paragraph's word for it, is the habit Session 4 is about.
 
 ## How to use a lesson
 
