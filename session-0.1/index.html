@@ -311,6 +311,90 @@
 </section>
 
 <!-- ==================================================================
+     SECTION 4. The context window inspector. 16 min. THE FLAGSHIP.
+     data-comp="ctx-inspector"  [NEW]  (component-bank.md has 18 families;
+     this is not one of them. It earns entry 19 only after it has survived one
+     delivery, per the bank's own rule that a family that has run once is a
+     mechanism, not a family.)
+
+     HARVEST PROVENANCE (pedagogy R11). Roughly 85% of this is harvested:
+       control rail toggles and live assembly ... S1 s14b CIOPT builder (fam 15)
+       budget bar, readout state grammar ........ S1 s3 wallDraw + fam 6 contract
+       output composition surface ............... S1 s14b .sampler pattern
+       reset and full-state redraw .............. S1 s8 lab reset (fam 8)
+       illegal-state greying + reason ........... [NEW]
+       SVG wire + reverse-highlight ............. [NEW]
+     The [NEW] parts are isolated in the ctxWire and ctxLegal functions.
+
+     DEVIATION FROM SPEC s7.3, flagged not silent (R6). The spec enumerates
+     ten CTXBLOCK records under the rule "one record per control value", but
+     twelve of the rail's controls inject something. Two blocks are missing
+     from its list: retrieved tool results (where web search and research
+     actually land) and the current attachment. Both are added here. Omitting
+     the block where search results land would undercut the section's own
+     thesis. The 26-authored-strings figure is unaffected: that counts PROBE
+     bases and OUTDELTA records, not context blocks.
+     ================================================================== -->
+<section class="slide" id="s4" data-nav="Context inspector">
+  <div class="eyebrow"><span>04 &middot; Flagship</span><span class="mins">16 min</span></div>
+  <h2>The context window inspector</h2>
+
+  <p class="big">Twelve controls, twelve context blocks, three probe prompts, and 38,016 legal configurations. Flip a control and watch which block fills, what the output gains, and what the signals do.</p>
+
+  <div class="inote"><span class="ih">Why this is not a lookup table</span>
+  The obvious way to build this is a grid of pre-written outputs. Here is what that costs, computed rather than asserted, by <b>scripts/state_space.py</b>, which ships with this lesson so the figure is reproducible:
+  <ul>
+    <li>Legal configurations, dependencies enforced: <b>38,016</b></li>
+    <li>Naive independent grid, no dependency pruning: <b>138,240</b></li>
+    <li>Illegal states the naive grid would expose: <b>100,224</b>, which is 72.5% of it</li>
+    <li>Coverage of a hand-written 50-cell lookup table: <b>0.132%</b>, leaving 37,966 dead ends</li>
+  </ul>
+  So this is a compositional engine instead: three captured base outputs plus 23 authored delta fragments, 26 strings covering all 38,016 states, roughly 1,462 states per string. The point is not the saving. It is that a lookup table teaches &ldquo;this combination produces that output&rdquo;, which is memorisation, and composition teaches &ldquo;each control injects a specific thing, and the output is the sum&rdquo;, which is the actual model and transfers to controls that ship after this class.</div>
+
+  <div class="panel" data-task="t-ctx-inspector" data-comp="ctx-inspector">
+    <span class="plab">Context inspector &middot; Cole household &middot; three probe prompts</span>
+    <div class="row" style="margin-bottom:14px">
+      <span class="mono dim" style="font-size:11px">Probe</span>
+      <span id="ctxProbes"></span>
+      <button class="btn sel mini" id="ctxReset">Reset to the firm default</button>
+      <span class="mono dim" style="font-size:12px" id="ctxCount"></span>
+    </div>
+    <div class="ctxi">
+      <div class="ctxi-rail" id="ctxRail"></div>
+      <div class="ctxi-stack">
+        <svg class="ctxwire" id="ctxWireSvg" aria-hidden="true"></svg>
+        <div id="ctxBlocks"></div>
+        <div class="ctxbudget">
+          <div class="slab"><span>Window used, illustrative</span><b id="ctxPct">0%</b></div>
+          <div class="ctxbar" id="ctxBar"></div>
+          <div class="mono dim" style="font-size:10.5px;margin-top:6px" id="ctxWin"></div>
+        </div>
+        <div class="readout" id="ctxOutRead"></div>
+      </div>
+      <div class="ctxi-out">
+        <div class="ctxsig" id="ctxSignals"></div>
+        <div id="ctxComposed"></div>
+      </div>
+    </div>
+    <p style="margin-bottom:0;margin-top:18px"><span class="sim">Composed illustration. The base output is a captured run; the deltas are constructed.</span></p>
+    <span class="src"><b>The permanent line, and it is not decoration.</b> Each probe&rsquo;s base text is a real transcript, captured 2026-08-22 at the exact settings printed with it, extracted programmatically from docs/probe-captures.md so it is verbatim by construction <span class="conf h" data-src="src-tools3">H</span> to its capture and to nothing else. <b>Every fragment the controls add is authored by this course</b>, not produced by any model, and is rendered in the tinted inset so you can always see which is which <span class="conf l" data-src="src-ctxwindow">L</span>. <b>Every percentage in the budget bar is an illustrative proportion of the window</b>, not a token count. No first-party figure exists for what any of these blocks costs; the only sourced claim is the direction, that tools and connectors are token-intensive and that guidance is to limit how many are active <span class="conf h" data-src="src-ctxwindow">H</span>. The window sizes themselves are the only absolute numbers here and they are sourced: 1M for Fable 5, Opus 5 and Sonnet 5, 200K for Haiku 4.5 <span class="conf h" data-src="src-models">H</span>. The relative ordering of the consumers is derived, and the derivation is printed under the bar <span class="conf m" data-src="src-ctxwindow">M</span>.</span>
+  </div>
+
+  <div class="panel" data-task="t-ctx-budget-guess" data-comp="ctx-inspector">
+    <span class="plab">Before you touch anything: which block is biggest?</span>
+    <p style="margin-top:0">Rank these four from largest to smallest share of a full window, then reveal. This locks on your first submission.</p>
+    <div class="row" id="ctxRank"></div>
+    <div class="readout" id="ctxRankOut"><span class="nil">Click the four in order, largest first.</span></div>
+    <span class="src">The ordering is <b>derived, not published</b>: connector tool definitions load for every enabled connector on every turn, and first-party guidance singles out tools and connectors as token-intensive; conversation history grows monotonically; project knowledge enters only as retrieved chunks; profile instructions and skill frontmatter are a few lines each. That chain is the derivation, and it is why this claim is M rather than H <span class="conf m" data-src="src-ctxwindow">M</span>. No magnitude is claimed for any of them.</span>
+  </div>
+
+  <div class="talk"><span class="th">Illegal states are greyed, never hidden</span>
+  72.5% of the naive grid does not exist. Every control that cannot be set in the current configuration stays on screen, greyed, with its reason printed next to it rather than only on hover. A hidden control teaches that it does not exist. A greyed control with a reason teaches the constraint, and the constraint is the content. Try Haiku 4.5, then try turning thinking off on Opus 5, then turn code execution off and watch skills go with it.</div>
+
+  <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Exercise at least six of the twelve controls, then switch probes without resetting and watch the same configuration hit three different task types.</div></div>
+</section>
+
+<!-- ==================================================================
      SECTION 5. The retrieval ladder. 9 min. estimate-then-reveal (family 10).
      Harvest anchor: session-1/index.html s4 GUESS panel, via
      component-library.md family 10 (INLINE, harvested verbatim). Log scale
@@ -1106,6 +1190,349 @@ var EFMOD=[
   $('efSlide').addEventListener('input',function(){touched.slider=1;draw()});
   draw();
   onRevealAll(function(){touched.slider=1;touched.locked=1;draw()});
+})();
+
+/* ==================================================================
+   04 ctx-inspector  [NEW]  (spec s7, built to spec)
+
+   THREE FLAT ARRAYS, plain ES5, no framework (R12):
+     CTXCTL    the twelve controls in the rail and their legal values
+     CTXBLOCK  what each control injects into the context stack
+     OUTDELTA  what each control value does to the output, 23 records,
+               appended to NAMED SLOTS (opening, body, citations, signals),
+               never to free text. Spec s15: two deltas that both rewrite the
+               opening sentence would collide, so the slot discipline is
+               enforced in the data model rather than hoped for.
+   PROBE is declared earlier in this script block.
+   ================================================================== */
+
+/* ---- window sizes: sourced, the only absolute numbers in the component ---- */
+var CTXWIN={Fable5:{n:'1M',mult:1},Opus5:{n:'1M',mult:1},Sonnet5:{n:'1M',mult:1},Haiku45:{n:'200K',mult:5}};
+
+var CTXCTL=[
+ {id:'model',   name:'Model',        vals:[['Fable5','Fable 5'],['Opus5','Opus 5'],['Sonnet5','Sonnet 5'],['Haiku45','Haiku 4.5']]},
+ {id:'effort',  name:'Effort',       vals:[['low','low'],['medium','medium'],['high','high'],['xhigh','xhigh'],['max','max']]},
+ {id:'thinking',name:'Extended thinking',vals:[['on','on'],['off','off']]},
+ {id:'search',  name:'Web search',   vals:[['off','off'],['on','on']]},
+ {id:'research',name:'Research',     vals:[['off','off'],['on','on']]},
+ {id:'codeexec',name:'Code execution',vals:[['off','off'],['on','on']]},
+ {id:'memory',  name:'Memory',       vals:[['off','off'],['search','search past chats'],['generate','generate'],['both','both']]},
+ {id:'project', name:'Project',      vals:[['none','none'],['instructions','instructions only'],['instructions+knowledge','instructions + knowledge']]},
+ {id:'skills',  name:'Skills',       vals:[['none','none'],['relevant','one relevant'],['irrelevant','one irrelevant']]},
+ {id:'connectors',name:'Connectors', vals:[[0,'0'],[1,'1'],[5,'5']]},
+ {id:'attachment',name:'Attachment', vals:[['none','none'],['one','one file']]},
+ {id:'instructions',name:'Instructions for Claude',vals:[['none','not set'],['present','set']]}
+];
+
+/* WHAT EACH CONTROL INJECTS. pct is an ILLUSTRATIVE PROPORTION of a 1M
+   window, never a token count (spec PA-5). On Haiku 4.5 the same content is a
+   five-times larger share, because the window is five times smaller: that
+   scaling is arithmetic on a sourced window size, not a new invention.
+   Twelve records: the spec's ten, plus toolres and attach (see the DEVIATION
+   note in the section markup). */
+var CTXBLOCK=[
+ {id:'sys',    lane:'system',   label:'System prompt',              pct:2,  when:'always',
+  on:function(s){return true},                                   src:'src-ctxwindow',conf:'L'},
+ {id:'instr',  lane:'persist',  label:'Instructions for Claude',    pct:1,  when:'always, once set',
+  on:function(s){return s.instructions==='present'},             src:'src-personalization',conf:'H'},
+ {id:'projin', lane:'persist',  label:'Project instructions',       pct:1,  when:'inside a project',
+  on:function(s){return s.project!=='none'},                     src:'src-personalization',conf:'H'},
+ {id:'projkb', lane:'retrieve', label:'Project knowledge (retrieved)',pct:9,when:'relevant chunks only, never the whole file',
+  on:function(s){return s.project==='instructions+knowledge'},   src:'src-ctxwindow',conf:'H'},
+ {id:'skmeta', lane:'retrieve', label:'Skill name + description',   pct:1,  when:'always, for every installed skill',
+  on:function(s){return s.skills!=='none'},                      src:'src-skills',conf:'H'},
+ {id:'skbody', lane:'retrieve', label:'Skill body',                 pct:3,  when:'only when judged relevant',
+  on:function(s){return s.skills==='relevant'},                  src:'src-skills',conf:'H'},
+ {id:'conn',   lane:'tools',    label:'Connector tool definitions', pct:14, when:'every enabled connector, every turn',
+  on:function(s){return s.connectors>0},
+  scale:function(s){return s.connectors===5?14:3},               src:'src-ctxwindow',conf:'M'},
+ {id:'toolres',lane:'tools',    label:'Retrieved tool results',     pct:12, when:'search or research, this turn only',
+  on:function(s){return s.search==='on'||s.research==='on'},
+  scale:function(s){return s.research==='on'?12:4},              src:'src-tools3',conf:'L'},
+ {id:'mem',    lane:'persist',  label:'Memory summary',             pct:2,  when:'memory enabled',
+  on:function(s){return s.memory!=='off'},                       src:'src-memory',conf:'H'},
+ {id:'attach', lane:'turn',     label:'Attachment',                 pct:4,  when:'this turn only',
+  on:function(s){return s.attachment==='one'},                   src:'src-features',conf:'L'},
+ {id:'hist',   lane:'turn',     label:'Conversation history',       pct:11, when:'always, summarised near the limit',
+  on:function(s){return true},                                   src:'src-ctxwindow',conf:'H'},
+ {id:'turn',   lane:'turn',     label:'This message',               pct:1,  when:'always',
+  on:function(s){return true},                                   src:'src-ctxwindow',conf:'L'}
+];
+
+/* WHAT EACH CONTROL DOES TO THE OUTPUT. 23 records, one per non-null control
+   value that changes the output. medium effort is the baseline and therefore
+   authors no delta, which is what makes the count 23 and not 24; that figure
+   is the authored_deltas constant in scripts/state_space.py, so the two agree
+   by construction rather than by coincidence.
+   slot is one of: opening, body, citations, signals. */
+var OUTDELTA=[
+ {id:'d-model-fable',when:function(s){return s.model==='Fable5'},wire:'sys',slot:'signals',
+  sig:{thinking:'present, adaptive'},src:'src-models',
+  t:'Fable 5: thinking is adaptive and always on, so the depth follows the question rather than the setting.'},
+ {id:'d-model-opus',when:function(s){return s.model==='Opus5'},wire:'sys',slot:'signals',
+  sig:{thinking:'present, cannot be disabled'},src:'src-effort',
+  t:'Opus 5: a thinking block is present and cannot be removed in Claude. Its absence would mean you are not on Opus 5.'},
+ {id:'d-model-sonnet',when:function(s){return s.model==='Sonnet5'},wire:'sys',slot:'signals',
+  sig:{thinking:'follows the toggle'},src:'src-effort',
+  t:'Sonnet 5: thinking is genuinely yours to switch, which makes it the only 1M model where a terse fast pass is available.'},
+ {id:'d-model-haiku',when:function(s){return s.model==='Haiku45'},wire:'hist',slot:'body',
+  sig:{length:'shorter'},src:'src-models',
+  t:'Haiku 4.5 holds 200K rather than 1M, so the same context is a five times larger share of the window and the history is summarised sooner.'},
+ {id:'d-effort-low',when:function(s){return s.effort==='low'&&s.model!=='Haiku45'},wire:'sys',slot:'signals',
+  sig:{length:'short'},src:'src-effort',t:'Effort low: fewer passes, terser output.'},
+ {id:'d-effort-high',when:function(s){return s.effort==='high'&&s.model!=='Haiku45'},wire:'sys',slot:'signals',
+  sig:{length:'medium'},src:'src-effort',t:'Effort high: the default on the API and in Claude Code for Opus 5 and Sonnet 5.'},
+ {id:'d-effort-xhigh',when:function(s){return s.effort==='xhigh'&&s.model!=='Haiku45'},wire:'sys',slot:'body',
+  sig:{length:'long'},src:'src-effort',
+  t:'Effort xhigh: requires Opus 4.7 or newer, and an Enterprise admin can remove this level for your role.'},
+ {id:'d-effort-max',when:function(s){return s.effort==='max'&&s.model!=='Haiku45'},wire:'sys',slot:'body',
+  sig:{length:'long'},src:'src-effort',
+  t:'Effort max: the top of the dial. Thoroughness has almost stopped moving while latency and usage are still climbing.'},
+ {id:'d-thinking-on',when:function(s){return s.thinking==='on'},wire:'sys',slot:'signals',
+  sig:{thinking:'yes'},src:'src-effort',t:'Extended thinking on: a visible reasoning block precedes the answer.'},
+ {id:'d-search-on',when:function(s){return s.search==='on'&&s.research==='off'},wire:'toolres',slot:'citations',
+  sig:{citations:'yes',toolcalls:'1-2'},src:'src-tools3',
+  t:'Web search on: inline citations and an as-of date appear, on one to two tool calls.'},
+ {id:'d-research-on',when:function(s){return s.research==='on'},wire:'toolres',slot:'citations',
+  sig:{citations:'yes, multi-source',toolcalls:'5+',length:'long'},src:'src-tools3',
+  t:'Research on: a longer synthesised report with citations across multiple sources, on five or more tool calls over one to three minutes.'},
+ {id:'d-codeexec-on',when:function(s){return s.codeexec==='on'},wire:'sys',slot:'body',
+  src:'src-skills',t:'Code execution on: skills become available, and so does automatic context management.'},
+ {id:'d-memory-search',when:function(s){return s.memory==='search'},wire:'mem',slot:'body',
+  sig:{toolcalls:'+1 retrieval'},src:'src-memory',
+  t:'Past-chat search on: earlier conversations are retrieved and appear as tool calls. This is how an answer cites a document you never attached here.'},
+ {id:'d-memory-generate',when:function(s){return s.memory==='generate'},wire:'mem',slot:'body',
+  src:'src-memory',t:'Memory generation on: what happens in this turn can persist past it, and deleting the conversation later will not remove it.'},
+ {id:'d-memory-both',when:function(s){return s.memory==='both'},wire:'mem',slot:'body',
+  sig:{toolcalls:'+1 retrieval'},src:'src-memory',
+  t:'Search and generation both on: prior chats come in, and this one goes out. Both directions are live at once.'},
+ {id:'d-project-instr',when:function(s){return s.project!=='none'},wire:'projin',slot:'opening',
+  src:'src-personalization',t:'Project instructions in force: the framing and house conventions of this project are applied before your message is read.'},
+ {id:'d-project-kb',when:function(s){return s.project==='instructions+knowledge'},wire:'projkb',slot:'body',
+  src:'src-ctxwindow',t:'Project knowledge available: retrieval pulls the relevant chunks only, never the whole file. Stored is not the same as in context.'},
+ {id:'d-skills-relevant',when:function(s){return s.skills==='relevant'&&s.codeexec==='on'},wire:'skbody',slot:'body',
+  src:'src-skills',t:'A relevant skill fired: its body loaded and its procedure shaped the structure of the answer.'},
+ {id:'d-skills-irrelevant',when:function(s){return s.skills==='irrelevant'&&s.codeexec==='on'},wire:'skmeta',slot:'body',
+  src:'src-skills',t:'An irrelevant skill is installed: its name and description sit in context on every turn and its body never loads. It costs you something and changes nothing.'},
+ {id:'d-conn-1',when:function(s){return s.connectors===1},wire:'conn',slot:'body',
+  src:'src-ctxwindow',t:'One connector enabled: its tool definitions are in context on this turn, and on every other turn, whether or not you use it.'},
+ {id:'d-conn-5',when:function(s){return s.connectors===5},wire:'conn',slot:'body',
+  src:'src-ctxwindow',t:'Five connectors enabled: five sets of tool definitions on every turn. This is the block first-party guidance is talking about when it says to limit how many are active.'},
+ {id:'d-attach-one',when:function(s){return s.attachment==='one'},wire:'attach',slot:'opening',
+  src:'src-features',t:'A file is attached to this turn: it is in context now and it is not stored anywhere the next conversation can reach.'},
+ {id:'d-instr-present',when:function(s){return s.instructions==='present'},wire:'instr',slot:'opening',
+  src:'src-personalization',t:'Instructions for Claude are set: they apply to this and every other conversation until you change them.'}
+];
+
+/* ---- the firm default the Reset button returns to ---- */
+var CTXDEFAULT={model:'Sonnet5',effort:'medium',thinking:'off',search:'on',research:'off',
+  codeexec:'off',memory:'off',project:'instructions+knowledge',skills:'none',
+  connectors:0,attachment:'none',instructions:'present'};
+
+(function(){
+  var S={},probe=0,touched={},hot=null;
+  function reset(){for(var k in CTXDEFAULT)S[k]=CTXDEFAULT[k]}
+  reset();
+
+  /* ---- [NEW] illegal-state matrix (spec s7.4). Returns, per control value,
+     either null (legal) or the verbatim on-page reason it is not. ---- */
+  function ctxLegal(ctl,val){
+    if(ctl==='effort'&&S.model==='Haiku45')
+      return 'Haiku 4.5 does not carry an effort selector.';
+    if(ctl==='thinking'&&val==='off'&&S.model==='Opus5')
+      return 'Extended thinking cannot be turned off in Claude on Opus 5.';
+    if(ctl==='thinking'&&val==='off'&&S.model==='Fable5')
+      return 'Fable 5 adaptive thinking is always on.';
+    if(ctl==='thinking'&&val==='off'&&(S.effort==='xhigh'||S.effort==='max'))
+      return 'On the API, disabling thinking at xhigh or max returns an error.';
+    if(ctl==='skills'&&val!=='none'&&S.codeexec==='off')
+      return 'Skills require code execution. So does automatic context management.';
+    if(ctl==='search'&&val==='off'&&S.research==='on')
+      return 'Research runs web search among five or more tool calls.';
+    return null;
+  }
+  /* Dependencies that FORCE a value rather than forbidding one. */
+  function ctxCoerce(){
+    if(S.model==='Opus5'||S.model==='Fable5')S.thinking='on';
+    if(S.effort==='xhigh'||S.effort==='max')S.thinking='on';
+    if(S.model==='Haiku45')S.effort='n/a';
+    else if(S.effort==='n/a')S.effort='medium';
+    if(S.codeexec==='off')S.skills='none';
+    if(S.research==='on')S.search='on';
+  }
+
+  /* ---- rail ---- */
+  function drawRail(){
+    $('ctxRail').innerHTML=CTXCTL.map(function(c){
+      var reasons={},anyReason=null;
+      var btns=c.vals.map(function(v){
+        var val=v[0],why=ctxLegal(c.id,val);
+        if(why){reasons[val]=why;anyReason=why}
+        var sel=String(S[c.id])===String(val);
+        return '<button class="ctxbtn'+(sel?' act':'')+'" data-c="'+c.id+'" data-v="'+val+'"'+
+          (why?' disabled title="'+why.replace(/"/g,'&quot;')+'"':'')+'>'+v[1]+'</button>';
+      }).join('');
+      var greyAll=(c.id==='effort'&&S.model==='Haiku45');
+      return '<div class="ctxctl'+(greyAll?' dead':'')+'" data-ctl="'+c.id+'" id="ctl-'+c.id+'">'+
+        '<span class="cname">'+c.name+'</span><div class="cvals">'+btns+'</div>'+
+        (anyReason?'<span class="ctxwhy">'+anyReason+'</span>':'')+'</div>';
+    }).join('');
+    all('.ctxbtn',$('ctxRail')).forEach(function(b){b.onclick=function(){
+      var c=b.dataset.c,v=b.dataset.v;
+      S[c]=(c==='connectors')?parseInt(v,10):v;
+      touched[c]=1;hot=c;ctxCoerce();draw();
+    }});
+  }
+
+  /* ---- context stack + budget ---- */
+  function blockPct(b){
+    var base=b.scale?b.scale(S):b.pct;
+    return base*CTXWIN[S.model].mult;
+  }
+  function activeBlocks(){return CTXBLOCK.filter(function(b){return b.on(S)})}
+  function drawStack(){
+    var used=0;
+    var rows=CTXBLOCK.map(function(b){
+      var on=b.on(S),p=on?blockPct(b):0;
+      if(on)used+=p;
+      var wired=hot&&OUTDELTA.some(function(d){return d.wire===b.id&&d.when(S)&&d.id.indexOf('d-'+hot)===0});
+      return '<div class="ctxblk'+(on?' on':' off')+(wired?' wired':'')+'" id="blk-'+b.id+'" title="'+b.when.replace(/"/g,'&quot;')+'">'+
+        '<span class="bname">'+b.label+'</span>'+
+        '<span class="bpct">'+(on?p.toFixed(0)+'%':'&middot;')+'</span></div>';
+    });
+    $('ctxBlocks').innerHTML=rows.join('');
+    var over=used>100,free=Math.max(0,100-used);
+    $('ctxPct').textContent=Math.min(100,Math.round(used))+'%';
+    $('ctxBar').innerHTML=activeBlocks().map(function(b){
+      var w=Math.min(100,blockPct(b)/Math.max(used,100)*100);
+      return '<i class="lane-'+b.lane+'" style="width:'+w.toFixed(2)+'%" title="'+b.label+'"></i>';
+    }).join('')+'<i class="lane-free" style="width:'+(free/Math.max(used,100)*100).toFixed(2)+'%"></i>';
+    $('ctxWin').innerHTML='Window: <b>'+CTXWIN[S.model].n+'</b> on '+
+      CTXCTL[0].vals.filter(function(v){return v[0]===S.model})[0][1]+
+      '. Percentages are illustrative proportions of that window, not token counts. '+
+      'Ordering derived: connector definitions and retrieved chunks dominate; instructions and skill frontmatter are a few lines each.';
+    var r=$('ctxOutRead');
+    r.className='readout '+(over?'bad':(used>70?'bad':'on'));
+    if(over){
+      r.innerHTML='<span class="cz">Over the window on this model</span>'+
+        'At these settings the same context is more than a '+CTXWIN[S.model].n+' window holds. The product does not simply fail here: automatic context management summarises the history to make room, and it needs code execution enabled to do it. What you lose is the earlier detail, silently.'+
+        '<div class="fx">This is the Haiku 4.5 lesson. Nothing about your configuration changed; the container did.</div>';
+    }else if(used>70){
+      r.innerHTML='<span class="cz">Past 70% of the window</span>'+
+        'First-party guidance singles out tools and connectors as token-intensive and advises limiting how many are active. You are in the region that advice is about. The largest blocks here are '+
+        activeBlocks().sort(function(a,b){return blockPct(b)-blockPct(a)}).slice(0,2).map(function(b){return '<b>'+b.label+'</b>'}).join(' and ')+'.'+
+        '<div class="fx">The proportions are illustrative. The direction is sourced, and the direction is the teachable part.</div>';
+    }else{
+      r.innerHTML='<span class="cz">'+activeBlocks().length+' of '+CTXBLOCK.length+' blocks filled</span>'+
+        'Everything lit above was assembled for this turn and will be assembled again, from scratch, for the next one. Nothing here is a property of the chat.'+
+        '<div class="fx">Change a control and watch which row fills. The row is the layer; the layer is the lesson.</div>';
+    }
+  }
+
+  /* ---- [NEW] wire from the control to the block it populates ---- */
+  function ctxWire(){
+    var svg=$('ctxWireSvg');svg.innerHTML='';
+    if(!hot)return;
+    var d=OUTDELTA.filter(function(x){return x.id.indexOf('d-'+hot)===0&&x.when(S)})[0];
+    if(!d)return;
+    var blk=$('blk-'+d.wire);if(!blk)return;
+    blk.classList.add('wired');
+    /* Geometry is best-effort: offsetTop is 0 under a headless DOM, and a
+       degenerate line is harmless. The prose carries the claim, not the
+       animation (spec s7.6). */
+    var y=(blk.offsetTop||0)+(blk.offsetHeight||0)/2;
+    svg.setAttribute('viewBox','0 0 40 '+Math.max(1,(svg.parentNode.offsetHeight||1)));
+    svg.innerHTML='<path d="M0 '+y+' L40 '+y+'" stroke="var(--on)" stroke-width="2" fill="none"/>';
+  }
+
+  /* ---- output composition: base + sum of deltas, into NAMED SLOTS ---- */
+  function drawOut(){
+    var p=PROBE[probe];
+    var act=OUTDELTA.filter(function(d){return d.when(S)});
+    var slots={opening:[],body:[],citations:[]};
+    var sig={citations:'no',thinking:'no',toolcalls:'0',length:'medium'};
+    act.forEach(function(d){
+      if(d.sig)for(var k in d.sig)sig[k]=d.sig[k];
+      if(d.slot!=='signals'&&slots[d.slot])slots[d.slot].push(d);
+    });
+    function frag(list,title){
+      if(!list.length)return '';
+      return '<div class="ctxfrag"><span class="fh">'+title+' &middot; composed, not captured</span>'+
+        list.map(function(d){
+          return '<p data-cause="'+d.id.replace(/^d-/,'').split('-')[0]+'">'+d.t+
+            ' <span class="conf l" data-src="'+d.src+'">L</span></p>'}).join('')+'</div>';
+    }
+    $('ctxComposed').innerHTML=
+      '<div class="ctxprobe"><span class="plab" style="margin:0">'+p.label+'</span>'+
+      '<p class="ctxtask">'+esc(p.task)+'</p></div>'+
+      frag(slots.opening,'Before the answer')+
+      '<div class="ctxbase"><span class="fh">Captured transcript &middot; '+esc(p.settings)+' &middot; '+p.captured+'</span>'+
+      esc(p.base)+
+      (p.full?'':'\n\n[ Verbatim leading excerpt. The full capture runs to '+p.fulllen.toLocaleString('en-US')+' characters and is in docs/probe-captures.md. Nothing inside this excerpt is altered. ]')+
+      '</div>'+
+      (p.note?'<div class="inote" style="margin:12px 0"><span class="ih">Capture note, recorded by whoever ran it, not model output</span>'+esc(p.note)+'</div>':'')+
+      (probe===1?'<div class="inote" style="margin:12px 0"><span class="ih">Designed defect, labelled here and in the footer</span>This capture was run against a prompt naming <b>&ldquo;David and Sarah Cole&rdquo;</b>. The canonical household in CASE.md is <b>Meg and David Cole</b>, and there is no Sarah Cole. It is shown verbatim because editing a transcript would make it a fabrication. A fluent, professional, entirely wrong client name is exactly what this course exists to catch, so read it as exercise material rather than as a case fact.</div>':'')+
+      (probe===2?'<div class="inote" style="margin:12px 0"><span class="ih">Designed defect, labelled here and in the footer</span>This capture models a closely held interest of $12.0M with $1.2M of basis and a $1.2M seed gift. <b>CASE.md states a pre-discount interest value of $7,200,000, basis of $240,000, and a seed gift of $650,000.</b> Shown verbatim and to be resolved by the instructor before delivery. Do not teach the capture&rsquo;s numbers as the case&rsquo;s numbers.</div>':'')+
+      frag(slots.body,'Added to the body')+
+      frag(slots.citations,'Added to the citations');
+    $('ctxSignals').innerHTML='<span class="plab" style="margin:0">Signals section 9 will test you on</span>'+
+      [['Citations',sig.citations],['Thinking block',sig.thinking],['Tool calls',sig.toolcalls],['Length',sig.length]]
+        .map(function(r){return '<div class="srow"><span>'+r[0]+'</span><b>'+r[1]+'</b></div>'}).join('');
+    /* reverse-highlight: hovering a composed fragment lights its cause */
+    all('[data-cause]',$('ctxComposed')).forEach(function(el2){
+      el2.onmouseover=function(){var c=$('ctl-'+el2.dataset.cause);if(c)c.classList.add('cause')};
+      el2.onmouseout=function(){var c=$('ctl-'+el2.dataset.cause);if(c)c.classList.remove('cause')};
+    });
+  }
+
+  function drawProbes(){
+    $('ctxProbes').innerHTML=PROBE.map(function(p,i){
+      return '<button class="btn sel mini'+(i===probe?' act':'')+'" data-p="'+i+'">'+p.id.toUpperCase()+'</button>'}).join('');
+    all('[data-p]',$('ctxProbes')).forEach(function(b){b.onclick=function(){
+      probe=+b.dataset.p;draw();  /* switching probe does NOT reset configuration */
+    }});
+  }
+
+  function draw(){
+    ctxCoerce();drawRail();drawStack();ctxWire();drawOut();drawProbes();
+    var n=Object.keys(touched).length;
+    $('ctxCount').textContent=n+' of '+CTXCTL.length+' controls exercised';
+    if(n>=6)mark('g4');
+  }
+  $('ctxReset').onclick=function(){reset();hot=null;draw()};
+  draw();
+  onRevealAll(function(){CTXCTL.forEach(function(c){touched[c.id]=1});draw()});
+
+  /* ---- the ranking prequestion (t-ctx-budget-guess) ---- */
+  var RANK=[
+   {k:'conn',l:'Five connectors’ tool definitions'},
+   {k:'hist',l:'Conversation history'},
+   {k:'projkb',l:'Project knowledge, retrieved chunks'},
+   {k:'instr',l:'Instructions for Claude'}
+  ];
+  var KEY=['conn','hist','projkb','instr'];
+  (function(){
+    var picked=[];
+    function render(){
+      $('ctxRank').innerHTML=RANK.map(function(r){
+        var i=picked.indexOf(r.k);
+        return '<button class="btn sel mini'+(i>=0?' act':'')+'" data-r="'+r.k+'">'+(i>=0?(i+1)+'. ':'')+r.l+'</button>'}).join('');
+      all('[data-r]',$('ctxRank')).forEach(function(b){b.onclick=function(){
+        if(picked.indexOf(b.dataset.r)>=0)return;
+        picked.push(b.dataset.r);render();
+        if(picked.length===RANK.length)resolve()}});
+    }
+    function resolve(){
+      var right=picked.filter(function(k,i){return k===KEY[i]}).length;
+      $('ctxRankOut').className='readout on';
+      $('ctxRankOut').innerHTML='<span class="cz">'+right+' of 4 in the derived order</span>'+
+        'The derived order, largest first: <b>five connectors&rsquo; tool definitions</b>, then <b>conversation history</b>, then <b>retrieved project chunks</b>, then <b>instructions</b>. '+
+        'Connectors load for every enabled one on every turn and first-party guidance names them as token-intensive. History grows monotonically until it is summarised. Project knowledge enters as chunks, not as the whole file. Instructions are a few lines.'+
+        '<div class="fx">No magnitude is claimed for any of them, and none of these is a published figure. If this readout printed token counts it would be inventing them.</div>';
+    }
+    render();
+    onRevealAll(function(){if(picked.length<RANK.length){picked=KEY.slice();render();resolve()}});
+  })();
 })();
 
 /* ===== 05 RETRIEVAL LADDER, family 10 =====
