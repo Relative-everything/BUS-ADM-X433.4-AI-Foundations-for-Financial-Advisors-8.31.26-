@@ -44,7 +44,12 @@ const rel = (p) => relative(REPO, p);
 const REGISTER = new Set(['CASE.md', 'CHANGELOG.md', 'changelog/index.html',
                           'docs/probe-captures.md', 'docs/live-model-console-plan.md',
                           /* this file names every retired string in order to search for it */
-                          'scripts/verify-migration.mjs']);
+                          'scripts/verify-migration.mjs',
+                          /* the spine brief's section 1 is an inventory of the retired framing
+                             question, so it necessarily quotes it. Same standing as CASE.md
+                             Part K: a register of what was removed, not an assertion of it.
+                             It is instructor-facing and ships in no lesson. */
+                          'docs/spine-brief.md']);
 
 /* ---- 1  retired facts purged --------------------------------------------- */
 const NB = String.raw`(?<![0-9,.])`, NA = String.raw`(?![0-9])(?!,[0-9])`;
