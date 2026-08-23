@@ -539,6 +539,30 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 @media print{.ctxi{grid-template-columns:1fr}.ctxwire{display:none}
   .ctxbase{max-height:none;overflow:visible}}
 /* STYLE:END */
+/* ===== generated case block, injected by scripts/inject-case.mjs =====
+   Layout only. Every figure inside the sentinels comes from CASE.md through
+   scripts/case-facts.json; nothing here is a case fact. */
+#caseBtn.casefab{position:fixed;right:14px;bottom:56px;z-index:60}
+.case-tabs{display:flex;gap:6px;margin:0 0 16px;border-bottom:1px solid var(--line)}
+.case-tab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;background:none;border:none;border-bottom:2px solid transparent;
+  color:var(--muted);padding:8px 12px;cursor:pointer;margin-bottom:-1px}
+.case-tab:hover{color:var(--ink)}
+.case-tab.on{color:var(--on);border-bottom-color:var(--on)}
+.case-tab:focus-visible{outline:2px solid var(--on);outline-offset:3px;border-radius:4px}
+.case-panel:focus{outline:none}
+.case-lede{font-size:14.5px;color:var(--muted);margin:0 0 14px}
+.case-t{margin:0 0 14px}
+.case-t td.case-k{width:30%}
+.case-h{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--on);margin:20px 0 8px}
+.case-struct,.case-open{margin:0 0 14px;padding-left:20px}
+.case-struct li,.case-open li{margin:0 0 7px}
+.case-src{font-size:13px;color:var(--muted);margin:16px 0 0}
+.case-stamp{margin:18px 0 0;text-align:right}
+.case-stamp .mono{font-size:10.5px;letter-spacing:.08em;color:var(--muted);opacity:.75}
+.cole-flow{max-width:100%;overflow-x:auto}
+.cole-flow svg{max-width:100%;height:auto}
 </style>
 <style>
 /* Lesson-specific CSS only. The restyle sweep never touches this block.
@@ -609,37 +633,344 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 <div id="caseModal"><div class="inner" id="caseInner">
   <div class="eyebrow"><span>Synthetic case, classroom anchor only</span></div>
   <h2 style="margin-bottom:14px">Cole household</h2>
-  <p class="dim" style="font-size:15px">Pasted byte-identically from <b>CASE.md</b>, the canonical source of truth for the course case (pedagogy.md s5.1). The same block appears in section 1 of this lesson. If these two and CASE.md ever differ, CASE.md is right and this file is wrong.</p>
-<!-- CASE BLOCK, copy 1 of 2 (modal). Byte-identical from CASE.md, canonical
-     block, Session 1 verbatim. Do not retype, do not reflow, do not
-     paraphrase (pedagogy.md s5.1). Diffed against CASE.md at build time. -->
-<div class="panel" style="border-color:var(--on)">
-    <span class="plab">The Cole household &mdash; synthetic, constructed for this course &middot; Dayton, Ohio &middot; approximately $30,000,000</span>
-    <table class="dt tight" style="margin:0">
-      <tbody>
-        <tr><td style="width:32%"><b>Margaret "Meg" Cole, 64</b></td><td>Founder and 100% owner of Cole Precision Components Inc. (CPC), a C-corporation making precision aerospace fasteners. Founder stock issued 2009, basis $240,000. A strategic buyer has expressed <b>informal</b> interest. No letter of intent has been signed.</td></tr>
-        <tr><td><b>David Cole, 67</b></td><td>Retired hospital pharmacist. Social Security claimed at 66. Married 31 years, both US citizens, Ohio domicile and therefore no state estate tax.</td></tr>
-        <tr><td><b>Balance sheet</b></td><td>CPC stock $18,000,000 &middot; taxable brokerage $4,500,000 (62% in three technology names) &middot; Meg IRA $3,000,000 &middot; David 403(b) $1,000,000 &middot; residence $2,000,000, no mortgage &middot; cash and T-bills $1,500,000.</td></tr>
-        <tr><td><b>Children</b></td><td>Claire, 34, physician, married, two children, financially independent, no interest in the business. Nathan, 31, works in CPC operations &mdash; Meg has not told him she is exploring a sale.</td></tr>
-        <tr><td><b>The recurring thread</b></td><td>Meg's estate attorney has proposed selling a 40% non-voting CPC interest to an intentionally defective grantor trust <span class="dim">[IDGT &mdash; a trust treated as owned by the grantor for income tax but outside the estate for transfer tax]</span> for a promissory note, after a seed gift. Seed $650,000 &middot; pre-discount value of the interest $7,200,000 &middot; discount claimed 31% &middot; note principal $4,968,000 &middot; 9 years, interest-only, balloon at maturity &middot; supported by a 2023 appraisal never re-verified.</td></tr>
-        <tr><td><b>Documents</b></td><td>2011 wills pouring over to a joint revocable trust &middot; 2014 buy-sell using a stale formula that conflicts with the $18,000,000 appraised value &middot; 2023 appraisal &middot; 2011 powers of attorney and directives &middot; unexecuted draft IDGT and note &middot; no irrevocable life insurance trust.</td></tr>
-        <tr><td><b>Charitable</b></td><td>Donor-advised fund with a $310,000 balance, roughly $40,000 contributed annually. Meg chairs a Dayton workforce-training nonprofit and intends roughly $2,000,000 to it eventually. No pre-sale charitable technique is under consideration.</td></tr>
-      </tbody>
-    </table>
+  <p class="dim" style="font-size:15px">Generated from <b>CASE.md</b>, the canonical fact set for the course case, by <code>scripts/build-case.mjs</code> (pedagogy.md s5.1). Nothing between the sentinels below is edited by hand: the master is edited and the lessons are rebuilt, and <code>scripts/verify-case.mjs</code> fails the build if any copy has drifted. The same block appears in every session.</p>
+<!-- CASE:BEGIN cole-household v4.0 -->
+<!-- generated by scripts/inject-case.mjs from CASE.md v4.0 · sha256 c42421f09f00580cdef88b3e86266dbeaefae86634be023d40ad871a1ebd0a96 · do not edit between the sentinels -->
+<div class="case-gen">
+  <div class="case-tabs" role="tablist" aria-label="Cole household case">
+    <button type="button" class="case-tab on" role="tab" id="caseTabFacts" aria-controls="casePanelFacts" aria-selected="true" tabindex="0">Facts</button>
+    <button type="button" class="case-tab" role="tab" id="caseTabStruct" aria-controls="casePanelStruct" aria-selected="false" tabindex="-1">Structure</button>
   </div>
+  <div class="case-panel" role="tabpanel" id="casePanelFacts" aria-labelledby="caseTabFacts" tabindex="0">
+    <div class="case-extract" data-case-version="4.0">
+      <p class="case-lede"><b>Synthetic case.</b> No real person, entity, transaction or document. One household runs through all five sessions. It is never the assignment substrate: students build their own work on their own recurring tasks with their own synthetic data.</p>
+      <table class="dt tight case-t"><tbody>
+        <tr><td class="case-k"><b>Margaret "Meg" Cole, 64</b></td><td>President and CEO, Cole Precision Components Inc. Bought all 1,000 CPC shares from her father Walter Hensley on 1 July 2016 for $14,000,000; that purchase price is her basis. She did not found the company and did not inherit the stock.</td></tr>
+        <tr><td class="case-k"><b>David Cole, 63</b></td><td>Hospital pharmacist, retired 2024. Social Security eligible, <b>not claimed</b>. Married 34 years. Both spouses are <b>Illinois-domiciled for life</b>, so the estate is exposed to the Illinois estate tax above $4,000,000, which is not indexed and <b>not portable</b>.</td></tr>
+        <tr><td class="case-k"><b>Children</b></td><td>Claire, 34, physician, financially independent, wants no ownership role. Nathan, 31, works in CPC operations and has not been told a competitor made an unsolicited inquiry in October 2025.</td></tr>
+        <tr><td class="case-k"><b>CPC</b></td><td>Cole Precision Components Inc., a C corporation in Rockford, Illinois, 180 employees, precision aerospace fasteners. Revenue $42,400,000, EBITDA $9,170,000. Pays <b>$5,000,000 a year in dividends</b>, a policy adopted in 2016 to service a note that was satisfied in 2025 and never revisited.</td></tr>
+        <tr><td class="case-k"><b>Balance sheet</b></td><td>CPC stock $55,000,000 &middot; taxable brokerage $2,500,000, of which 62% ($1,550,000) sits in three technology names &middot; Meg IRA $3,000,000 &middot; <b>Meg inherited IRA $1,000,000</b> &middot; David 403(b) $1,000,000 &middot; residence $2,000,000 &middot; cash $1,500,000 &middot; T-bills $1,000,000. <b>Total $67,000,000</b>, no liabilities. CPC alone is 82.1% of it.</td></tr>
+        <tr><td class="case-k"><b>Retirement clocks</b></td><td>Meg's applicable age is 75; her first distribution year is 2037. The inherited IRA runs a separate ten-year clock to <b>31 December 2031</b> <b>with annual RMDs</b>, because Walter Hensley died after his required beginning date. The 2026 RMD is $43,290.</td></tr>
+      </tbody></table>
+      <p class="case-h">The proposed structure, in five lines. <b>Nothing in it has been executed.</b></p>
+      <ol class="case-struct">
+        <li>Meg contributes all CPC stock to <b>Cole Family Holdings LLC</b>, recapitalized into <b>100 voting</b> and <b>900 non-voting</b> units of 1,000. Economic rights per unit are identical; only the vote differs.</li>
+        <li>A 30% combined lack-of-control and lack-of-marketability discount is asserted on the non-voting units, putting them at <b>$38,500</b> each against $55,000 for a voting unit. <b>No appraiser has been engaged</b> and the memorandum cites no study.</li>
+        <li>She gifts <b>52 non-voting units</b>, $2,002,000, to the Cole 2026 Irrevocable Trust, a SLAT for David. That consumes $2,002,000 of her $15,000,000 exclusion, leaving $12,998,000.</li>
+        <li>She sells <b>520 more units</b>, $20,020,000, to the same trust for a <b>demand note</b> at 3.82%, interest only, <b>$764,764</b> a year. Seed is exactly 10.00% of the note. Rev. Rul. 85-13 disregards the sale for income tax.</li>
+        <li>The trust applies dividends above note interest to buy Meg's remaining <b>328 units</b> in annual tranches, reaching all 900 by the end of year 5 for $12,628,000 of cash.</li>
+      </ol>
+      <table class="dt tight case-t"><tbody>
+        <tr><td class="case-k"><b>Where it lands</b></td><td>Meg after closing: $5,500,000 of voting units + $12,628,000 of non-voting + $20,020,000 note = <b>$38,148,000</b>, down $16,852,000 from $55,000,000. That reduction has <b>two</b> components: $11,440,000 of below-pro-rata transfer plus $5,412,000 of discount on the 328 units she kept. The trust holds $22,022,000 of units against the $20,020,000 note: net equity $2,002,000, equal to the seed gift exactly.</td></tr>
+        <tr><td class="case-k"><b>The cash</b></td><td>The LLC distributes <b>pro rata</b>, so Meg draws on all 428 units she holds after closing: $2,140,000 in year 1, not $500,000. In years 1 through 4 the entire $5,000,000 round-trips to her. From year 6 she holds only the voting block: $1,264,764 in against $1,786,850 of tax and household gap, a shortfall of <b>$522,086</b> a year.</td></tr>
+        <tr><td class="case-k"><b>The burn</b></td><td>While grantor-trust status holds, Meg reports <b>100% of the LLC's income</b> whatever the trust owns. The tax she pays on the trust's share is <b>a transfer of value to the trust that consumes no exemption and is not a gift</b> (Rev. Rul. 2004-64). $822,250 in year 1, $1,293,750 a year at steady state, $30,876,930 cumulative by Meg's age 89. It is the mechanism, not a cost.</td></tr>
+        <tr><td class="case-k"><b>Documents</b></td><td>2011 wills and a joint revocable trust with a credit-shelter formula written for a $5,000,000 exclusion and <b>no Illinois QTIP direction</b> &middot; a 2014 buy-sell, never amended, whose formula produces about <b>$18,000,000</b> against a $55,000,000 indicated value &middot; a 2023 appraisal concluding <b>$38,000,000</b> with <b>no discount study</b> &middot; unexecuted 2026 drafts of the trust and note &middot; <b>no LLC agreement, no 2026 valuation, no life insurance, no Form 709 ever filed</b>.</td></tr>
+        <tr><td class="case-k"><b>Charitable</b></td><td><b>No donor-advised fund has ever existed.</b> $80,000 a year in direct cash to four public charities. Meg chairs the Rockford Workforce Alliance and intends a <b>$5,000,000 lifetime endowment</b> to it. Undecided, unpledged, and the board has not been told.</td></tr>
+      </tbody></table>
+      <p class="case-h">Open in the file, and answered by no session.</p>
+      <ul class="case-open">
+        <li><b>Which rate governs the note.</b> &sect;7872's blended annual rate at 3.82%, which the memorandum uses, or &sect;1274's short-term AFR at 4.10% for a note issued for property. The difference is $56,056 of interest a year. <b>No controlling authority resolves it.</b></li>
+        <li><b>Whether the voting block carries a premium.</b> The memorandum values 100 units holding sole voting control at pro-rata value with no adjustment.</li>
+        <li><b>Whether Meg's retained non-voting units carry a discount</b> while she controls the LLC through the voting block. $5,412,000 of the estate reduction depends on the answer.</li>
+        <li><b>Whether discretionary distributions survive &sect;2036(a)(2).</b> <i>Mirowski</i> turned on mandatory distributions; the draft operating agreement makes them discretionary.</li>
+        <li><b>Whether the Illinois exposure is addressed at all.</b> Neither spouse has engaged with it, and the 2011 documents contain no Illinois QTIP direction.</li>
+      </ul>
+      <p class="case-src">Every figure above is generated from <b>CASE.md v4.0</b> by <code>scripts/build-case.mjs</code>. Confidence labels, authorities and the full fact set live there. Cases flagged in CASE.md Part I as settled or stipulated (<i>Karmazin</i>, <i>Woelbing</i>, <i>Davidson</i>) decided nothing and are not authority.</p>
+    </div>
+  </div>
+  <div class="case-panel hidden" role="tabpanel" id="casePanelStruct" aria-labelledby="caseTabStruct" tabindex="0">
+    <p class="case-h">Structure and annual cash flow. Sheet 1 is ownership after closing with both balance sheets; Sheet 2 is year-1 cash with ribbon widths proportional to dollars.</p>
+    <!-- CASE:FLOWCHART cole-household v4.1 -->
+    <div class="cole-flow" style="background:#E4DFD6;padding:16px;border-radius:8px;overflow-x:auto">
+    <style>
+    /* Cole household flowchart v4.1 — self-contained, no external assets */
+    </style>
+    <div id="dc-root"><div class="sc-host" data-sc-name="Estate_Flow_Chart"><div data-dc-tpl="2" style="display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 24px; box-sizing: border-box; background: rgb(228, 223, 214);"><div data-dc-tpl="3" style="width: 100%; max-width: 1240px; box-shadow: rgba(30, 26, 18, 0.18) 0px 2px 18px;"><svg data-dc-tpl="4" viewBox="0 0 1240 970" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t1 d1" shape-rendering="geometricPrecision" style="width: 100%; height: auto; display: block; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;">
+      <title data-dc-tpl="5" id="t1">Sheet 1 — ownership and balance sheet after the transaction</title>
+      <desc data-dc-tpl="6" id="d1">Meg Cole contributes all Cole Precision Components stock to Cole Family Holdings LLC, which is recapitalized into 100 voting and 900 non-voting units. She gifts 52 non-voting units worth 2,002,000 dollars to the Cole 2026 Irrevocable Trust and sells 520 non-voting units worth 20,020,000 dollars to the same trust for an interest-only demand note at 3.82 percent. After the transaction Meg holds 100 voting units, 328 non-voting units and the note, totaling 38,148,000 dollars in her taxable estate. The trust holds 572 non-voting units worth 22,022,000 dollars against the 20,020,000 dollar note payable, for net equity of 2,002,000 dollars.</desc>
+      <defs data-dc-tpl="7">
+        <marker data-dc-tpl="8" id="s1i" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path data-dc-tpl="9" d="M0 0 L10 5 L0 10 Z" fill="#4A4E55"></path></marker>
+        <marker data-dc-tpl="10" id="s1a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path data-dc-tpl="11" d="M0 0 L10 5 L0 10 Z" fill="#8A6A1F"></path></marker>
+      </defs>
+      <rect data-dc-tpl="12" x="0" y="0" width="1240" height="970" fill="#FBFAF7"></rect>
 
-  <h3>The question that stays open</h3>
-  <p style="font-size:15.5px">Is the planning window still open now that a buyer has expressed interest, and does a 2023 appraisal still support a 31% discount today?</p>
-  <p class="dim" style="font-size:14.5px">No session answers it. Every session returns to it. This is the deliberately unresolved technical question the case is built around (pedagogy.md s5.3).</p>
-  <p class="dim" style="font-size:14.5px"><b>The Cole household is not your final-project dataset.</b> It is a classroom anchor and nothing else. Bring your own facts to the final project (pedagogy.md s5.4).</p>
+      <text data-dc-tpl="13" x="40" y="46" font-size="10" font-weight="700" letter-spacing="1.8" fill="#8C8272">SHEET 1 OF 2 · STRUCTURE AND OWNERSHIP</text>
+      <text data-dc-tpl="14" x="40" y="76" font-size="26" font-weight="700" letter-spacing="-0.3" fill="#16171A">Ownership and balance sheets after the transaction</text>
+      <text data-dc-tpl="15" x="40" y="98" font-size="12" fill="#6E7178" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">Cole household · LLC recapitalized into 1,000 units · 52 units gifted, 520 units sold for a $20,020,000 interest-only demand note at 3.82%</text>
+      <line data-dc-tpl="16" x1="40" y1="112" x2="1200" y2="112" stroke="#DDD7CC" stroke-width="1"></line>
+
+      <rect data-dc-tpl="17" x="40" y="128" width="580" height="692" rx="6" fill="#F5F1EA"></rect>
+      <rect data-dc-tpl="18" x="660" y="128" width="540" height="692" rx="6" fill="#EBF1F0"></rect>
+      <line data-dc-tpl="19" x1="640" y1="128" x2="640" y2="820" stroke="#B6AC9C" stroke-width="1.5" stroke-dasharray="7 6"></line>
+      <text data-dc-tpl="20" x="330" y="150" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.6" fill="#8C8272">IN MEG’S TAXABLE ESTATE</text>
+      <text data-dc-tpl="21" x="930" y="150" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.6" fill="#5F8478">OUTSIDE MEG’S TAXABLE ESTATE</text>
+
+      <g data-dc-tpl="22">
+        <path data-dc-tpl="23" d="M187 254 L187 290" stroke="#4A4E55" stroke-width="2" fill="none" marker-end="url(#s1i)"></path>
+        <text data-dc-tpl="24" x="199" y="278" font-size="11" fill="#4A4E55">contributes 100% of CPC stock</text>
+        <path data-dc-tpl="25" d="M408 326 L676 326" stroke="#8A6A1F" stroke-width="2.2" fill="none" marker-end="url(#s1a)"></path>
+        <path data-dc-tpl="26" d="M408 378 L676 378" stroke="#8A6A1F" stroke-width="2.2" fill="none" marker-end="url(#s1a)"></path>
+        <path data-dc-tpl="27" d="M672 426 L470 426 L470 444" stroke="#8A6A1F" stroke-width="2.2" fill="none" stroke-linejoin="round" marker-end="url(#s1a)"></path>
+        <text data-dc-tpl="28" x="542" y="316" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="0.5" fill="#7A5C16">1 · GIFT OF 52 NON-VOTING UNITS</text>
+        <text data-dc-tpl="29" x="542" y="344" text-anchor="middle" font-size="11.5" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$2,002,000</text>
+        <text data-dc-tpl="30" x="542" y="368" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="0.5" fill="#7A5C16">2 · SALE OF 520 NON-VOTING UNITS</text>
+        <text data-dc-tpl="31" x="542" y="396" text-anchor="middle" font-size="11.5" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$20,020,000</text>
+        <text data-dc-tpl="32" x="556" y="418" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="0.5" fill="#7A5C16">3 · DEMAND NOTE · $20,020,000 · 3.82%</text>
+      </g>
+
+      <g data-dc-tpl="33">
+        <rect data-dc-tpl="34" x="52" y="174" width="270" height="80" rx="5" fill="#E3EAF1" stroke="#24425F" stroke-width="1.5"></rect>
+        <text data-dc-tpl="35" x="68" y="196" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#24425F">INDIVIDUAL · GRANTOR</text>
+        <text data-dc-tpl="36" x="68" y="220" font-size="18" font-weight="700" fill="#16171A">Meg Cole</text>
+        <text data-dc-tpl="37" x="68" y="240" font-size="11.5" fill="#3E4A57" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">owns 100% of CPC · $55,000,000</text>
+      </g>
+
+      <g data-dc-tpl="38">
+        <rect data-dc-tpl="39" x="52" y="290" width="356" height="130" rx="5" fill="#E3EAF1" stroke="#24425F" stroke-width="1.5"></rect>
+        <text data-dc-tpl="40" x="68" y="312" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#24425F">ENTITY · HOLDING LLC</text>
+        <text data-dc-tpl="41" x="68" y="336" font-size="17" font-weight="700" fill="#16171A">Cole Family Holdings LLC</text>
+        <text data-dc-tpl="42" x="68" y="356" font-size="11" fill="#3E4A57">Recapitalized into 1,000 units · sole asset is CPC</text>
+        <rect data-dc-tpl="43" x="68" y="366" width="152" height="42" rx="3" fill="#F7EEDA" stroke="#D3BE94" stroke-width="1"></rect>
+        <text data-dc-tpl="44" x="80" y="382" font-size="9.5" font-weight="700" letter-spacing="1" fill="#7A5C16">100 VOTING</text>
+        <text data-dc-tpl="45" x="80" y="398" font-size="12" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$5,500,000</text>
+        <rect data-dc-tpl="46" x="232" y="366" width="160" height="42" rx="3" fill="#F7EEDA" stroke="#D3BE94" stroke-width="1"></rect>
+        <text data-dc-tpl="47" x="244" y="382" font-size="9.5" font-weight="700" letter-spacing="1" fill="#7A5C16">900 NON-VOTING</text>
+        <text data-dc-tpl="48" x="244" y="398" font-size="12" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$34,650,000</text>
+      </g>
+
+      <g data-dc-tpl="49">
+        <rect data-dc-tpl="50" x="676" y="290" width="508" height="150" rx="5" fill="#E3EAF1" stroke="#24425F" stroke-width="1.5"></rect>
+        <text data-dc-tpl="51" x="692" y="312" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#24425F">ENTITY · IRREVOCABLE GRANTOR TRUST</text>
+        <text data-dc-tpl="52" x="692" y="336" font-size="17" font-weight="700" fill="#16171A">Cole 2026 Irrevocable Trust</text>
+        <text data-dc-tpl="53" x="692" y="356" font-size="11" fill="#3E4A57">IRC §§ 671–679 — Meg is taxed on all trust income</text>
+        <rect data-dc-tpl="54" x="692" y="366" width="242" height="42" rx="3" fill="#F7EEDA" stroke="#D3BE94" stroke-width="1"></rect>
+        <text data-dc-tpl="55" x="704" y="382" font-size="9.5" font-weight="700" letter-spacing="1" fill="#7A5C16">HOLDS AFTER CLOSING</text>
+        <text data-dc-tpl="56" x="704" y="398" font-size="10.5" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">572 non-voting units · $22,022,000</text>
+        <rect data-dc-tpl="57" x="946" y="366" width="222" height="42" rx="3" fill="#F7EEDA" stroke="#D3BE94" stroke-width="1"></rect>
+        <text data-dc-tpl="58" x="958" y="382" font-size="9.5" font-weight="700" letter-spacing="1" fill="#7A5C16">OWES</text>
+        <text data-dc-tpl="59" x="958" y="398" font-size="10.5" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$20,020,000 demand note</text>
+      </g>
+
+      <g data-dc-tpl="60">
+        <rect data-dc-tpl="61" x="52" y="444" width="240" height="76" rx="5" fill="#F7EEDA" stroke="#8A6A1F" stroke-width="1.5"></rect>
+        <text data-dc-tpl="62" x="68" y="466" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#7A5C16">ASSET · UNITS HELD BY MEG</text>
+        <text data-dc-tpl="63" x="68" y="488" font-size="13.5" font-weight="700" fill="#16171A">100 voting · 328 non-voting</text>
+        <text data-dc-tpl="64" x="68" y="507" font-size="11" fill="#4A4030" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$18,128,000 · 42.8% of units</text>
+        <rect data-dc-tpl="65" x="306" y="444" width="262" height="76" rx="5" fill="#F7EEDA" stroke="#8A6A1F" stroke-width="1.5"></rect>
+        <text data-dc-tpl="66" x="322" y="466" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#7A5C16">INSTRUMENT · NOTE RECEIVABLE</text>
+        <text data-dc-tpl="67" x="322" y="488" font-size="13.5" font-weight="700" fill="#16171A">Demand note from the trust</text>
+        <text data-dc-tpl="68" x="322" y="507" font-size="11" fill="#4A4030" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$20,020,000 · 3.82% · interest only</text>
+      </g>
+
+      <g data-dc-tpl="69">
+        <rect data-dc-tpl="70" x="52" y="556" width="516" height="240" rx="5" fill="#FFFFFF" stroke="#C9CFD6" stroke-width="1.5"></rect>
+        <text data-dc-tpl="71" x="68" y="580" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#24425F">BALANCE SHEET · MEG COLE, AFTER</text>
+        <text data-dc-tpl="72" x="68" y="604" font-size="15" font-weight="700" fill="#16171A">Assets inside the taxable estate</text>
+        <text data-dc-tpl="73" x="68" y="634" font-size="12" fill="#3E4A57">100 voting LLC units · 10.0%</text>
+        <text data-dc-tpl="74" x="552" y="634" text-anchor="end" font-size="12" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$5,500,000</text>
+        <text data-dc-tpl="75" x="68" y="658" font-size="12" fill="#3E4A57">328 non-voting LLC units · 32.8%</text>
+        <text data-dc-tpl="76" x="552" y="658" text-anchor="end" font-size="12" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$12,628,000</text>
+        <text data-dc-tpl="77" x="68" y="682" font-size="12" fill="#3E4A57">Demand note receivable from the trust</text>
+        <text data-dc-tpl="78" x="552" y="682" text-anchor="end" font-size="12" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$20,020,000</text>
+        <line data-dc-tpl="79" x1="68" y1="696" x2="552" y2="696" stroke="#C9CFD6" stroke-width="1"></line>
+        <text data-dc-tpl="80" x="68" y="718" font-size="12.5" font-weight="700" fill="#16171A">Total</text>
+        <text data-dc-tpl="81" x="552" y="718" text-anchor="end" font-size="13.5" font-weight="700" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$38,148,000</text>
+        <text data-dc-tpl="82" x="68" y="748" font-size="11" fill="#6E7178">The $16,852,000 drop is two things: the 572 units left for $11,440,000 less than pro rata,</text>
+        <text data-dc-tpl="83" x="68" y="766" font-size="11" fill="#6E7178">and the 328 retained non-voting units are now themselves discounted, $5,412,000.</text>
+      </g>
+
+      <g data-dc-tpl="84">
+        <rect data-dc-tpl="85" x="676" y="556" width="508" height="240" rx="5" fill="#FFFFFF" stroke="#B9CBC4" stroke-width="1.5"></rect>
+        <text data-dc-tpl="86" x="692" y="580" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#24425F">BALANCE SHEET · COLE 2026 TRUST, AFTER</text>
+        <text data-dc-tpl="87" x="692" y="604" font-size="15" font-weight="700" fill="#16171A">Trust assets and obligations</text>
+        <text data-dc-tpl="88" x="692" y="634" font-size="12" fill="#3E4A57">572 non-voting LLC units · 57.2%</text>
+        <text data-dc-tpl="89" x="1168" y="634" text-anchor="end" font-size="12" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$22,022,000</text>
+        <text data-dc-tpl="90" x="692" y="658" font-size="12" fill="#3E4A57">Demand note payable to Meg</text>
+        <text data-dc-tpl="91" x="1168" y="658" text-anchor="end" font-size="12" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">($20,020,000)</text>
+        <line data-dc-tpl="92" x1="692" y1="672" x2="1168" y2="672" stroke="#B9CBC4" stroke-width="1"></line>
+        <text data-dc-tpl="93" x="692" y="694" font-size="12.5" font-weight="700" fill="#16171A">Net trust equity</text>
+        <text data-dc-tpl="94" x="1168" y="694" text-anchor="end" font-size="13.5" font-weight="700" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$2,002,000</text>
+        <text data-dc-tpl="95" x="692" y="724" font-size="11" fill="#6E7178">Net equity equals the seed gift; the seed is 10.0% of the note.</text>
+        <text data-dc-tpl="96" x="692" y="742" font-size="11" fill="#6E7178">Note is interest only, payable on demand, at the 2026 blended annual rate of 3.82%.</text>
+        <text data-dc-tpl="97" x="692" y="766" font-size="11" fill="#6E7178">Unit values use $55,000 per voting unit and $38,500 per non-voting unit.</text>
+      </g>
+
+      <g data-dc-tpl="98">
+        <rect data-dc-tpl="99" x="40" y="844" width="1160" height="62" rx="6" fill="#FFFFFF" stroke="#E3DED4" stroke-width="1"></rect>
+        <text data-dc-tpl="100" x="60" y="868" font-size="10" font-weight="700" letter-spacing="1.6" fill="#8C8272">KEY</text>
+        <rect data-dc-tpl="101" x="60" y="878" width="22" height="15" rx="2" fill="#E3EAF1" stroke="#24425F" stroke-width="1.3"></rect>
+        <text data-dc-tpl="102" x="90" y="890" font-size="11.5" fill="#3E4A57">entity or person</text>
+        <rect data-dc-tpl="103" x="196" y="878" width="22" height="15" rx="2" fill="#F7EEDA" stroke="#8A6A1F" stroke-width="1.3"></rect>
+        <text data-dc-tpl="104" x="226" y="890" font-size="11.5" fill="#4A4030">asset or instrument</text>
+        <rect data-dc-tpl="105" x="356" y="878" width="22" height="15" rx="2" fill="#FFFFFF" stroke="#C9CFD6" stroke-width="1.3"></rect>
+        <text data-dc-tpl="106" x="386" y="890" font-size="11.5" fill="#3E4A57">balance sheet</text>
+        <line data-dc-tpl="107" x1="500" y1="886" x2="536" y2="886" stroke="#B6AC9C" stroke-width="1.5" stroke-dasharray="7 6"></line>
+        <text data-dc-tpl="108" x="546" y="890" font-size="11.5" fill="#3E4A57">estate boundary</text>
+        <path data-dc-tpl="109" d="M672 886 L706 886" stroke="#8A6A1F" stroke-width="2.2" fill="none" marker-end="url(#s1a)"></path>
+        <text data-dc-tpl="110" x="722" y="890" font-size="11.5" fill="#4A4030">one-time transfer of units or an instrument</text>
+      </g>
+      <text data-dc-tpl="111" x="40" y="940" font-size="10.5" fill="#8C8272">Synthetic case — nothing here has been executed. Rates and exemption amounts as of August 2026. Unit values reflect a combined lack-of-control and marketability discount; see Part H.</text></svg></div><div data-dc-tpl="112" style="width: 100%; max-width: 1240px; box-shadow: rgba(30, 26, 18, 0.18) 0px 2px 18px;"><svg data-dc-tpl="113" viewBox="0 0 1240 820" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t2 d2" shape-rendering="geometricPrecision" style="width: 100%; height: auto; display: block; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;">
+      <title data-dc-tpl="114" id="t2">Sheet 2 — annual cash flow once the structure is in place</title>
+      <desc data-dc-tpl="115" id="d2">Ribbon widths are proportional to dollars. CPC pays 5,000,000 dollars of qualified dividends to the LLC. The LLC distributes pro rata: 2,860,000 dollars to the trust on its 572 units, and 2,140,000 dollars to Meg on the 428 units she still holds, being 100 voting and 328 non-voting. The trust pays 764,764 dollars of note interest to Meg and applies 2,095,236 dollars to purchasing 54.42 additional non-voting units from her, retaining nothing in year 1. Meg receives 5,000,000 dollars in total, the entire dividend, and pays 1,437,500 dollars of federal and Illinois income tax on all 5,000,000 dollars of dividends because the trust is a grantor trust.</desc>
+      <rect data-dc-tpl="116" x="0" y="0" width="1240" height="820" fill="#FBFAF7"></rect>
+
+      <text data-dc-tpl="117" x="40" y="46" font-size="10" font-weight="700" letter-spacing="1.8" fill="#8C8272">SHEET 2 OF 2 · ANNUAL CASH FLOW</text>
+      <text data-dc-tpl="118" x="40" y="76" font-size="26" font-weight="700" letter-spacing="-0.3" fill="#16171A">Annual cash flow once the structure is in place</text>
+      <text data-dc-tpl="119" x="40" y="98" font-size="12" fill="#6E7178" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">Year 1 · $5,000,000 of CPC qualified dividends · ribbon width is proportional to dollars</text>
+      <line data-dc-tpl="120" x1="40" y1="112" x2="1200" y2="112" stroke="#DDD7CC" stroke-width="1"></line>
+
+      <rect data-dc-tpl="121" x="40" y="128" width="580" height="532" rx="6" fill="#F5F1EA"></rect>
+      <rect data-dc-tpl="122" x="660" y="128" width="540" height="532" rx="6" fill="#EBF1F0"></rect>
+      <line data-dc-tpl="123" x1="640" y1="128" x2="640" y2="660" stroke="#B6AC9C" stroke-width="1.5" stroke-dasharray="7 6"></line>
+      <text data-dc-tpl="124" x="330" y="150" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.6" fill="#8C8272">IN MEG’S TAXABLE ESTATE</text>
+      <text data-dc-tpl="125" x="930" y="150" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.6" fill="#5F8478">OUTSIDE MEG’S TAXABLE ESTATE</text>
+
+      <g data-dc-tpl="126" fill="none" stroke="#2E7D5B" stroke-opacity="0.75" stroke-linejoin="round">
+        <path data-dc-tpl="127" d="M212 230 L288 230" stroke-width="28"></path>
+        <path data-dc-tpl="128" d="M450 218 L664 218" stroke-width="16"></path>
+        <path data-dc-tpl="129" d="M375 270 L375 354 L364 354" stroke-width="3.5"></path>
+        <path data-dc-tpl="130" d="M720 284 L720 376 L364 376" stroke-width="4.3"></path>
+        <path data-dc-tpl="131" d="M900 284 L900 398 L364 398" stroke-width="11.7"></path>
+      </g>
+      <g data-dc-tpl="132" fill="#2E7D5B" fill-opacity="0.75">
+        <polygon data-dc-tpl="133" points="288,213 288,247 302,230"></polygon>
+        <polygon data-dc-tpl="134" points="664,209 664,227 678,218"></polygon>
+        <polygon data-dc-tpl="135" points="364,348 364,360 352,354"></polygon>
+        <polygon data-dc-tpl="136" points="364,369 364,383 352,376"></polygon>
+        <polygon data-dc-tpl="137" points="364,389 364,407 350,398"></polygon>
+      </g>
+      <g data-dc-tpl="138" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" fill="#1D4A38" paint-order="stroke" stroke="#FBFAF7" stroke-width="3.5" stroke-linejoin="round">
+        <text data-dc-tpl="139" x="250" y="204" text-anchor="middle" font-size="12">$5,000,000</text>
+        <text data-dc-tpl="140" x="557" y="198" text-anchor="middle" font-size="11">$2,860,000 · 57.2% on 572 units</text>
+        <text data-dc-tpl="141" x="388" y="344" font-size="11">428 units pro rata · $2,140,000</text>
+        <text data-dc-tpl="142" x="500" y="368" text-anchor="middle" font-size="11">note interest · $764,764</text>
+        <text data-dc-tpl="143" x="560" y="390" text-anchor="middle" font-size="11">purchase of 54.42 units · $2,095,236</text>
+        <text data-dc-tpl="144" x="166" y="474" font-size="11">$1,437,500</text>
+      </g>
+      <path data-dc-tpl="145" d="M150 452 L150 476" stroke="#A0402B" stroke-opacity="0.8" stroke-width="8.05" fill="none"></path>
+      <polygon data-dc-tpl="146" points="140,476 160,476 150,488" fill="#A0402B" fill-opacity="0.8"></polygon>
+
+      <g data-dc-tpl="147">
+        <rect data-dc-tpl="148" x="52" y="190" width="160" height="80" rx="5" fill="#E3EAF1" stroke="#24425F" stroke-width="1.5"></rect>
+        <text data-dc-tpl="149" x="68" y="212" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#24425F">OPERATING CO.</text>
+        <text data-dc-tpl="150" x="68" y="236" font-size="17" font-weight="700" fill="#16171A">CPC</text>
+        <text data-dc-tpl="151" x="68" y="254" font-size="10.5" fill="#3E4A57">qualified dividends</text>
+        <rect data-dc-tpl="152" x="300" y="190" width="150" height="80" rx="5" fill="#E3EAF1" stroke="#24425F" stroke-width="1.5"></rect>
+        <text data-dc-tpl="153" x="316" y="212" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#24425F">ENTITY · LLC</text>
+        <text data-dc-tpl="154" x="316" y="236" font-size="17" font-weight="700" fill="#16171A">The LLC</text>
+        <text data-dc-tpl="155" x="316" y="254" font-size="10.5" fill="#3E4A57">distributes pro rata</text>
+      </g>
+
+      <g data-dc-tpl="156">
+        <rect data-dc-tpl="157" x="676" y="174" width="508" height="110" rx="5" fill="#E3EAF1" stroke="#24425F" stroke-width="1.5"></rect>
+        <text data-dc-tpl="158" x="692" y="198" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#24425F">ENTITY · THE TRUST</text>
+        <text data-dc-tpl="159" x="692" y="222" font-size="17" font-weight="700" fill="#16171A">Cole 2026 Irrevocable Trust</text>
+        <text data-dc-tpl="160" x="692" y="244" font-size="12" fill="#3E4A57">Holds 572 non-voting units · owes the $20,020,000 demand note</text>
+        <text data-dc-tpl="161" x="692" y="266" font-size="11" fill="#5F6B78">All trust income is reported on Meg’s return · IRC §§ 671–679</text>
+      </g>
+
+      <g data-dc-tpl="162">
+        <rect data-dc-tpl="163" x="52" y="284" width="300" height="168" rx="5" fill="#E3EAF1" stroke="#24425F" stroke-width="1.5"></rect>
+        <text data-dc-tpl="164" x="68" y="306" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#24425F">INDIVIDUAL · MEG COLE</text>
+        <text data-dc-tpl="165" x="68" y="328" font-size="15" font-weight="700" fill="#16171A">Cash received, year 1</text>
+        <text data-dc-tpl="166" x="68" y="354" font-size="11.5" fill="#3E4A57">Pro-rata distribution on 428 units</text>
+        <text data-dc-tpl="167" x="336" y="354" text-anchor="end" font-size="12" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$2,140,000</text>
+        <text data-dc-tpl="168" x="68" y="376" font-size="11.5" fill="#3E4A57">Note interest at 3.82%</text>
+        <text data-dc-tpl="169" x="336" y="376" text-anchor="end" font-size="12" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$764,764</text>
+        <text data-dc-tpl="170" x="68" y="398" font-size="11.5" fill="#3E4A57">Sales of units to the trust</text>
+        <text data-dc-tpl="171" x="336" y="398" text-anchor="end" font-size="12" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$2,095,236</text>
+        <line data-dc-tpl="172" x1="68" y1="412" x2="336" y2="412" stroke="#A9B7C4" stroke-width="1"></line>
+        <text data-dc-tpl="173" x="68" y="432" font-size="12" font-weight="700" fill="#16171A">Total</text>
+        <text data-dc-tpl="174" x="336" y="432" text-anchor="end" font-size="13.5" font-weight="700" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$5,000,000</text>
+      </g>
+
+      <g data-dc-tpl="175">
+        <rect data-dc-tpl="176" x="52" y="488" width="300" height="96" rx="5" fill="#F7E3DC" stroke="#A0402B" stroke-width="1.5"></rect>
+        <text data-dc-tpl="177" x="68" y="510" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#8F3A26">TAX OUTFLOW · PAID BY MEG</text>
+        <text data-dc-tpl="178" x="68" y="540" font-size="21" font-weight="700" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$1,437,500</text>
+        <text data-dc-tpl="179" x="68" y="559" font-size="11" fill="#5A3126">23.8% federal + 4.95% Illinois</text>
+        <text data-dc-tpl="180" x="68" y="575" font-size="11" fill="#7C5347">on all $5,000,000 of dividends</text>
+      </g>
+
+      <g data-dc-tpl="181">
+        <rect data-dc-tpl="182" x="676" y="420" width="508" height="180" rx="5" fill="#FFFFFF" stroke="#B9CBC4" stroke-width="1.5"></rect>
+        <text data-dc-tpl="183" x="692" y="444" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#24425F">TRUST · APPLICATION OF CASH, YEAR 1</text>
+        <text data-dc-tpl="184" x="692" y="472" font-size="12" fill="#3E4A57">Distribution received on 572 units</text>
+        <text data-dc-tpl="185" x="1168" y="472" text-anchor="end" font-size="12" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$2,860,000</text>
+        <text data-dc-tpl="186" x="692" y="496" font-size="12" fill="#3E4A57">Note interest paid to Meg</text>
+        <text data-dc-tpl="187" x="1168" y="496" text-anchor="end" font-size="12" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">($764,764)</text>
+        <text data-dc-tpl="188" x="692" y="520" font-size="12" fill="#3E4A57">Applied to purchase units from Meg</text>
+        <text data-dc-tpl="189" x="1168" y="520" text-anchor="end" font-size="12" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">($2,095,236)</text>
+        <line data-dc-tpl="190" x1="692" y1="534" x2="1168" y2="534" stroke="#B9CBC4" stroke-width="1"></line>
+        <text data-dc-tpl="191" x="692" y="556" font-size="12" font-weight="700" fill="#16171A">Cash remaining</text>
+        <text data-dc-tpl="192" x="1168" y="556" text-anchor="end" font-size="13" font-weight="700" fill="#16171A" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$0</text>
+        <text data-dc-tpl="193" x="692" y="582" font-size="11" fill="#6E7178">Units purchased in year 1: 54.42 at $38,500 · units held after year 1: 626.42</text>
+      </g>
+
+      <text data-dc-tpl="194" x="52" y="628" font-size="11" fill="#6E7178">In years 1 through 4 the entire $5,000,000 round-trips to Meg &#8212; her 428 units draw $2,140,000 pro rata and the trust passes through its whole $2,860,000 as interest and unit purchases. The trust first retains cash in year 5.</text>
+
+      <g data-dc-tpl="195">
+        <rect data-dc-tpl="196" x="40" y="684" width="1160" height="62" rx="6" fill="#FFFFFF" stroke="#E3DED4" stroke-width="1"></rect>
+        <text data-dc-tpl="197" x="60" y="708" font-size="10" font-weight="700" letter-spacing="1.6" fill="#8C8272">KEY</text>
+        <rect data-dc-tpl="198" x="60" y="718" width="22" height="15" rx="2" fill="#E3EAF1" stroke="#24425F" stroke-width="1.3"></rect>
+        <text data-dc-tpl="199" x="90" y="730" font-size="11.5" fill="#3E4A57">entity or person</text>
+        <rect data-dc-tpl="200" x="196" y="718" width="22" height="15" rx="2" fill="#F7E3DC" stroke="#A0402B" stroke-width="1.3"></rect>
+        <text data-dc-tpl="201" x="226" y="730" font-size="11.5" fill="#5A3126">tax outflow</text>
+        <path data-dc-tpl="202" d="M330 726 L366 726" stroke="#2E7D5B" stroke-opacity="0.75" stroke-width="28"></path>
+        <text data-dc-tpl="203" x="374" y="730" font-size="11.5" fill="#1D4A38" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$5,000,000</text>
+        <path data-dc-tpl="204" d="M480 726 L516 726" stroke="#2E7D5B" stroke-opacity="0.75" stroke-width="11.7"></path>
+        <text data-dc-tpl="205" x="524" y="730" font-size="11.5" fill="#1D4A38" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$2,095,236</text>
+        <path data-dc-tpl="206" d="M630 726 L666 726" stroke="#2E7D5B" stroke-opacity="0.75" stroke-width="3.5"></path>
+        <text data-dc-tpl="207" x="674" y="730" font-size="11.5" fill="#1D4A38" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">$2,140,000</text>
+        <text data-dc-tpl="208" x="778" y="730" font-size="11" fill="#8C8272">ribbon width ∝ annual dollars</text>
+        <line data-dc-tpl="209" x1="960" y1="726" x2="996" y2="726" stroke="#B6AC9C" stroke-width="1.5" stroke-dasharray="7 6"></line>
+        <text data-dc-tpl="210" x="1006" y="730" font-size="11.5" fill="#3E4A57">estate boundary</text>
+      </g>
+      <text data-dc-tpl="211" x="40" y="778" font-size="10.5" fill="#8C8272">Synthetic case — nothing here has been executed. Rates as of August 2026. Amounts assume the dividend, distribution and interest terms shown on Sheet 1; see Part H.</text></svg></div></div></div></div>
+    </div>
+    <!-- CASE:FLOWCHART END -->
+  </div>
+  <p class="case-stamp"><span class="mono">Case v4.0 a268498</span></p>
+</div>
+<script>
+/* Case tabs and the generated COLE constant. Generated by
+   scripts/inject-case.mjs from scripts/case-facts.json. Exercise code reads
+   figures from COLE; a number typed into an exercise is the defect this
+   prevents. Do not edit inside the sentinels: edit CASE.md and rebuild. */
+var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64,"davidAge":63,"megRole":"President and CEO, Cole Precision Components Inc.","davidRole":"Hospital pharmacist, retired 2024","marriedYears":34,"marriedDate":"21 September 1991","claireAge":34,"nathanAge":31,"decedent":"Walter Hensley","decedentDied":"4 November 2021","domicile":"Illinois","residenceTown":"Barrington Hills","plantTown":"Rockford","ilExclusion":4000000,"companyName":"Cole Precision Components Inc.","companyAbbr":"CPC","companyState":"Illinois","companyCity":"Rockford","employees":180,"megBasis":14000000,"purchaseDate":"1 Jul 2016","revenue":42400000,"ebitda":9170000,"dividend":5000000,"cpcValue":55000000,"brokerage":2500000,"megIra":3000000,"inheritedIra":1000000,"david403b":1000000,"residence":2000000,"cash":1500000,"tbills":1000000,"netWorth":67000000,"techPositions":1550000,"techPct":0.62,"megApplicableAge":75,"megFirstDistYear":2037,"inhIraOuterLimit":"31 December 2031","inhIraRmd2026":43290,"megW2":450000,"householdIncome":5644790,"livingExpenses":600000,"charitable":80000,"propertyTax":38000,"qualDivRate":0.2875,"ordinaryRate":0.41950000000000004,"ilIncomeRate":0.0495,"dividendTax":1437500,"householdGap":349350,"totalUnits":1000,"votingUnits":100,"nonVotingUnits":900,"discount":0.3,"perNonVoting":38500,"perVoting":55000,"proRataNonVote":49500000,"seedUnits":52,"seedValue":2002000,"exemption":15000000,"exemptionLeft":12998000,"saleUnits":520,"notePrincipal":20020000,"trustUnitsAtClose":572,"megRetainedNV":328,"noteRate":0.0382,"noteInterest":764764,"trancheCash":12628000,"totalToMeg":32648000,"estateReduction":16852000,"leverage":"8.42","megPostClose":38148000,"belowProRata":11440000,"retainedDiscount":5412000,"megYear1Units":428,"megYear1Distrib":2140000,"megYear1Total":5000000,"steadyInflow":1264764,"steadyOutflow":1786850,"steadyGap":522086,"trustEquity":2002000,"trustUnitsValue":22022000,"burnSteady":1293750,"trustDivSteady":4500000,"burnYear1":822250,"burnCum25":30876930,"buySellFormula":18000000,"appraisal2023":38000000,"givingAnnual":80000,"endowmentIntent":5000000,"charityName":"Rockford Workforce Alliance","afrShort":0.040999999999999995,"afrMid":0.0435,"afrLong":0.0492,"rate7520":0.052000000000000005,"blendedAnnual":0.0382,"rateSpreadCost":56056,"fedExclusion":15000000,"ilTopRate":0.16,"cpcShareOfNetWorth":82.1,"techValueCheck":1550000};
+(function(){
+  var tabs=[document.getElementById('caseTabFacts'),document.getElementById('caseTabStruct')];
+  var panels=[document.getElementById('casePanelFacts'),document.getElementById('casePanelStruct')];
+  if(!tabs[0]||!tabs[1]||!panels[0]||!panels[1])return;
+  function show(i){
+    for(var k=0;k<2;k++){
+      tabs[k].className='case-tab'+(k===i?' on':'');
+      tabs[k].setAttribute('aria-selected',k===i?'true':'false');
+      tabs[k].tabIndex=k===i?0:-1;
+      panels[k].className='case-panel'+(k===i?'':' hidden');
+    }
+  }
+  for(var i=0;i<2;i++)(function(i){
+    tabs[i].addEventListener('click',function(){show(i)});
+    tabs[i].addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var n=1-i;show(n);tabs[n].focus()}
+    });
+  })(i);
+})();
+</script>
+<!-- CASE:END cole-household -->
+
   <div class="verify"><span class="vh">Requires instructor verification before it is taught as settled</span>
-  Every tax and legal characterisation attached to this case is posed as a question, not a holding. Nothing in this lesson has been verified against primary authority. Before any of the following is answered in class, verify it yourself:
+  Every tax and legal characterisation attached to this case is posed as a question, not a holding. Nothing in this lesson has been verified against a primary source by the model that drafted it. Verify before teaching any of it as settled:
   <ul>
-    <li>Whether a 2023 appraisal still supports a 31% marketability and minority discount in 2026.</li>
-    <li>Whether an expression of informal buyer interest, with no letter of intent, closes the planning window.</li>
-    <li>What the 2014 buy-sell formula value does to the $18,000,000 appraised value, and which controls.</li>
+    <li>Whether &sect;7872's blended annual rate or &sect;1274's applicable federal rate governs a demand note issued in exchange for property. CASE.md &sect;H.4 records no controlling authority and marks the point unresolved.</li>
+    <li>Whether a 30% combined lack-of-control and lack-of-marketability discount is supportable here. No appraiser has been engaged, no restricted-stock or pre-IPO study is in the file, and the memorandum allocates nothing between the two components.</li>
+    <li>The Illinois estate tax rate table and the adjusted-taxable-gift add-back that tests the $4,000,000 threshold. CASE.md carries both at <b>[M]</b> pending verification at the primary source.</li>
+    <li>The Illinois 1.5% replacement income tax on trusts, which is material to what turning grantor status off would cost.</li>
+    <li>The Single Life Table factor at age 60 and the number and applicability date of the final RMD regulations, both carried at <b>[M]</b>.</li>
     <li>Every recordkeeping, supervision, and books-and-records question raised in section 10.</li>
   </ul>
+  <b>Karmazin</b>, <b>Woelbing</b> and <b>Davidson</b> appear in practice literature on this structure and are flagged in CASE.md Part I as settled or stipulated. They decided nothing and are not authority.
   The instructor signs the slide, not the model (pedagogy.md s1 R3).</div>
   <div class="row" style="margin-top:18px"><button class="btn ghost" id="caseClose">Close</button></div>
 </div></div>
@@ -794,24 +1125,15 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 
   <div data-task="t-case" data-comp="case-modal-spine">
   <p class="big">Everything tonight runs against one household. The same facts, through every configuration, is what makes the outputs comparable. The case is <b>synthetic</b>, constructed for this course, and it is not your final-project dataset.</p>
-<!-- CASE BLOCK, copy 2 of 2 (section 1 panel). Byte-identical from CASE.md,
-     canonical block, Session 1 verbatim (pedagogy.md s5.1). Diffed against
-     CASE.md at build time; checklist B4 forbids eyeballing it. -->
-<div class="panel" style="border-color:var(--on)">
-    <span class="plab">The Cole household &mdash; synthetic, constructed for this course &middot; Dayton, Ohio &middot; approximately $30,000,000</span>
-    <table class="dt tight" style="margin:0">
-      <tbody>
-        <tr><td style="width:32%"><b>Margaret "Meg" Cole, 64</b></td><td>Founder and 100% owner of Cole Precision Components Inc. (CPC), a C-corporation making precision aerospace fasteners. Founder stock issued 2009, basis $240,000. A strategic buyer has expressed <b>informal</b> interest. No letter of intent has been signed.</td></tr>
-        <tr><td><b>David Cole, 67</b></td><td>Retired hospital pharmacist. Social Security claimed at 66. Married 31 years, both US citizens, Ohio domicile and therefore no state estate tax.</td></tr>
-        <tr><td><b>Balance sheet</b></td><td>CPC stock $18,000,000 &middot; taxable brokerage $4,500,000 (62% in three technology names) &middot; Meg IRA $3,000,000 &middot; David 403(b) $1,000,000 &middot; residence $2,000,000, no mortgage &middot; cash and T-bills $1,500,000.</td></tr>
-        <tr><td><b>Children</b></td><td>Claire, 34, physician, married, two children, financially independent, no interest in the business. Nathan, 31, works in CPC operations &mdash; Meg has not told him she is exploring a sale.</td></tr>
-        <tr><td><b>The recurring thread</b></td><td>Meg's estate attorney has proposed selling a 40% non-voting CPC interest to an intentionally defective grantor trust <span class="dim">[IDGT &mdash; a trust treated as owned by the grantor for income tax but outside the estate for transfer tax]</span> for a promissory note, after a seed gift. Seed $650,000 &middot; pre-discount value of the interest $7,200,000 &middot; discount claimed 31% &middot; note principal $4,968,000 &middot; 9 years, interest-only, balloon at maturity &middot; supported by a 2023 appraisal never re-verified.</td></tr>
-        <tr><td><b>Documents</b></td><td>2011 wills pouring over to a joint revocable trust &middot; 2014 buy-sell using a stale formula that conflicts with the $18,000,000 appraised value &middot; 2023 appraisal &middot; 2011 powers of attorney and directives &middot; unexecuted draft IDGT and note &middot; no irrevocable life insurance trust.</td></tr>
-        <tr><td><b>Charitable</b></td><td>Donor-advised fund with a $310,000 balance, roughly $40,000 contributed annually. Meg chairs a Dayton workforce-training nonprofit and intends roughly $2,000,000 to it eventually. No pre-sale charitable technique is under consideration.</td></tr>
-      </tbody>
-    </table>
+<!-- The case block used to be duplicated here and in the modal. One generated
+     region now lives in the modal between the CASE sentinels, so there is
+     exactly one copy in this file and drift between copies is not possible.
+     scripts/verify-case.mjs enforces it. -->
+  <div class="panel" style="border-color:var(--on)">
+    <span class="plab">The Cole household &middot; synthetic &middot; Rockford and Barrington Hills, Illinois &middot; $67,000,000</span>
+    <p style="margin:10px 0 0">Meg Cole, 64, owns 100% of Cole Precision Components, a Rockford aerospace-fastener maker she bought from her father in 2016 and did not found. David, 63, retired. The proposed structure moves 900 non-voting LLC units to a grantor trust by a $2,002,000 seed gift and a $20,020,000 demand note. Nothing in it has been executed.</p>
+    <p class="dim" style="font-size:14.5px;margin:12px 0 0">The full fact set, the structure flowchart, the open questions and the instructor verification gate are behind <b>Case facts</b> in the bar above. Open it and keep it open.</p>
   </div>
-  <p class="dim" style="font-size:14.5px">Full facts, the open question, and the instructor verification gate are behind <b>Case facts</b> in the top bar. The block above and the block in that modal are the same bytes as CASE.md. That is a statement about this document, not a sourced claim, so it carries no chip.</p>
   </div>
 
   <h3>Commit before the content runs</h3>
@@ -1354,7 +1676,15 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
   <p>Say that out loud before the room leaves. It is the spiral, and it is what stops each of these sessions reading as a standalone tour.</p>
 
   <h3>The question that is still open</h3>
-  <p>Is the planning window still open now that a buyer has expressed interest, and does a 2023 appraisal still support a 31% discount today? No session answers it. Every session returns to it. Tonight it acquired a second edge: whichever configuration you use to work on it puts some part of the Cole file somewhere, and you now have the vocabulary to say exactly where.</p>
+  <!-- VOID: needs replacement -->
+  <!-- The recurring framing question that opened this paragraph is retired by
+       CASE.md v4.0 Part K, which forbids reintroducing it in any form. Its exact
+       wording is recorded in Part K and in docs/spine-brief.md and is not
+       repeated here, so that a repo-wide search for retired strings stays clean.
+       CASE.md supplies no replacement and this file does not invent one:
+       docs/spine-brief.md collects the material for a new recurring question and
+       choosing it is the instructor's decision. -->
+  <p>Tonight the case acquired a second edge: whichever configuration you use to work on it puts some part of the Cole file somewhere, and you now have the vocabulary to say exactly where.</p>
 
   <div class="talk"><span class="th">What to change before Monday</span>
   One thing, not five. Open Settings, read your Instructions for Claude, and either write them for the first time or delete a line that is no longer true. It is the cheapest and most durable control on the whole surface, it applies to every conversation, and almost nobody in this room has looked at it in six months.</div>
@@ -1371,7 +1701,7 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
     <ol style="font-size:13px;line-height:1.6">
       <li><b>Section 6, three designed landmines.</b> The persistence sorter contains three chips built to be mis-sorted: an incognito chat on a Team plan, a paused memory, and a deleted conversation. Each is labelled as a landmine on the page when it is solved. They are exercise material, not a trick.</li>
       <li><b>Section 4 and section 8, probe capture P2 names a client who is not in the case.</b> The captured run was made against a prompt naming &ldquo;David and Sarah Cole&rdquo;. The canonical household in CASE.md is <b>Meg and David Cole</b>, and there is no Sarah Cole. The capture is shown verbatim because editing a transcript would make it a fabrication (R1). The divergence is labelled on screen and is itself teaching material: a fluent, professional, entirely wrong client name is exactly what this course exists to catch.</li>
-      <li><b>Section 4 and section 8, probe capture P3 models figures that contradict CASE.md.</b> The capture assumes a closely held interest of $12.0M with $1.2M of basis and a $1.2M seed gift. CASE.md states a pre-discount interest value of $7,200,000, basis of $240,000 on the founder stock, and a seed gift of $650,000. Shown verbatim, labelled on screen, and to be resolved by the instructor before delivery. Do not teach the capture&rsquo;s numbers as the case&rsquo;s numbers.</li>
+      <li><b>Section 4 and section 8, probe capture P3 models figures that contradict CASE.md.</b> The capture assumes a closely held interest of $12.0M with $1.2M of basis and a $1.2M seed gift. CASE.md v4.0 states a $55,000,000 company, non-voting LLC units at $38,500 each, Meg&rsquo;s basis of $14,000,000 from her 2016 purchase, and a $2,002,000 seed gift of 52 units against a $20,020,000 demand note. The capture predates v4.0 and is <b>shown verbatim</b>: editing a transcript would make it a fabrication (pedagogy.md s1 R1, R5). Labelled on screen and to be re-run by the instructor before delivery. Do not teach the capture&rsquo;s numbers as the case&rsquo;s numbers.</li>
       <li><b>Everything composed in the section 4 inspector is a construction.</b> Only the three base outputs are captured runs. Every fragment the controls add is authored illustration, badged and chipped L wherever it appears.</li>
     </ol>
 
@@ -2267,7 +2597,7 @@ function confChip(lv,key){var s=document.createElement('span');
       '</div>'+
       (p.note?'<div class="inote" style="margin:12px 0"><span class="ih">Capture note, recorded by whoever ran it, not model output</span>'+esc(p.note)+'</div>':'')+
       (probe===1?'<div class="inote" style="margin:12px 0"><span class="ih">Designed defect, labelled here and in the footer</span>This capture was run against a prompt naming <b>&ldquo;David and Sarah Cole&rdquo;</b>. The canonical household in CASE.md is <b>Meg and David Cole</b>, and there is no Sarah Cole. It is shown verbatim because editing a transcript would make it a fabrication. A fluent, professional, entirely wrong client name is exactly what this course exists to catch, so read it as exercise material rather than as a case fact.</div>':'')+
-      (probe===2?'<div class="inote" style="margin:12px 0"><span class="ih">Designed defect, labelled here and in the footer</span>This capture models a closely held interest of $12.0M with $1.2M of basis and a $1.2M seed gift. <b>CASE.md states a pre-discount interest value of $7,200,000, basis of $240,000, and a seed gift of $650,000.</b> Shown verbatim and to be resolved by the instructor before delivery. Do not teach the capture&rsquo;s numbers as the case&rsquo;s numbers.</div>':'')+
+      (probe===2?'<div class="inote" style="margin:12px 0"><span class="ih">Designed defect, labelled here and in the footer</span>This capture models a closely held interest of $12.0M with $1.2M of basis and a $1.2M seed gift. <b>CASE.md v4.0 states a $55,000,000 company, non-voting units at $38,500, basis of $14,000,000, and a $2,002,000 seed gift against a $20,020,000 demand note.</b> This capture predates v4.0 and is shown verbatim, because editing a transcript would make it a fabrication. To be re-run by the instructor before delivery. Do not teach the capture&rsquo;s numbers as the case&rsquo;s numbers.</div>':'')+
       frag(slots.body,'Added to the body')+
       frag(slots.citations,'Added to the citations');
     $('ctxSignals').innerHTML='<span class="plab" style="margin:0">Signals section 9 will test you on</span>'+
