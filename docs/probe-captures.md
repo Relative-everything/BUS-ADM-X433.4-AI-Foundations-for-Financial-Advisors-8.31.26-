@@ -120,8 +120,9 @@ than the document claiming a fidelity it no longer has (pedagogy.md s1 R1, R5).
 3. The sensitivity row naming Ohio income tax renamed to Illinois.
 4. The second-death sensitivity row, which assumed portability, corrected:
    Illinois has none.
-5. `[SUPERSEDED]` markers added to the two conclusions that the state-tax
-   inversion invalidates. **The model was not re-run and the numbers were not
+5. `[SUPERSEDED BY ILLINOIS]` markers added to the two conclusions that the
+   Ohio-to-Illinois inversion invalidates. The marker names the fact that
+   replaced the old one rather than only recording that something changed. **The model was not re-run and the numbers were not
    recomputed**, because doing so would be fabricating an output no model
    produced. Re-run P3 against v4.0 before teaching any figure in sections 0, 5
    or 6.
@@ -135,8 +136,8 @@ than the document claiming a fidelity it no longer has (pedagogy.md s1 R1, R5).
 
 ## 0. Headline finding
 
-> `[SUPERSEDED 2026-08-23]` **This finding was computed with no state estate tax,
-> which was true of Ohio and is false of Illinois.** Illinois taxes the estate
+> `[SUPERSEDED BY ILLINOIS, 2026-08-23]` **This finding was computed with no state
+> estate tax, which was true of Ohio and is false of Illinois.** Illinois taxes the estate
 > above $4,000,000 with no portability, which adds a state-level benefit to
 > lifetime transfer that this model excludes entirely and which moves the
 > crossover toward the IDGT by an amount not computed here. The figures below
@@ -175,12 +176,12 @@ Every figure below is an assumption of the model, not a fact about the case. Fla
 | Horizon to first death | 15 years | Assumption |
 | 2026 basic exclusion amount | $15.0M / person; $30.0M couple | IRC §2010(c)(3) as amended by P.L. 119-21 §70106. **Confidence: H** |
 | Top federal estate/gift/GST rate | 40% | IRC §2001(c). **Confidence: H** |
-| Illinois estate tax `[CORRECTED 2026-08-23]` | Applies above a **$4,000,000** exclusion that is **not indexed and not portable**; adjusted taxable gifts are added back in testing the threshold; graduated to a top rate of 16% | 35 ILCS 405/2, 405/2(b-1). **Confidence: H** on the exclusion, portability and QTIP election; **M** on the rate table and the add-back |
+| Illinois estate tax `[ILLINOIS, replacing Ohio, 2026-08-23]` | Applies above a **$4,000,000** exclusion that is **not indexed and not portable**; adjusted taxable gifts are added back in testing the threshold; graduated to a top rate of 16% | 35 ILCS 405/2, 405/2(b-1). **Confidence: H** on the exclusion, portability and QTIP election; **M** on the rate table and the add-back |
 | Long-term AFR, August 2026 | 4.92% (annual) | Rev. Rul. 2026-13, Table 1. **Confidence: H** |
 | Mid-term AFR, August 2026 | 4.35% (annual) | Rev. Rul. 2026-13, Table 1. **Confidence: H** |
 | §7520 rate, August 2026 | 5.20% | 120% × mid-term AFR, IRC §7520(a)(2). **Confidence: H** |
 | Federal LTCG + NIIT | 23.8% | IRC §1(h), §1411. **Confidence: H** |
-| Illinois individual income tax `[CORRECTED 2026-08-23]` | **4.95% flat**, no preferential rate for capital gains or dividends, no itemized deductions | 35 ILCS 5/201(b)(14). **Confidence: H**. Excluded from the base model; see §7 Flag 3 |
+| Illinois individual income tax `[ILLINOIS, replacing Ohio, 2026-08-23]` | **4.95% flat**, no preferential rate for capital gains or dividends, no itemized deductions | 35 ILCS 5/201(b)(14). **Confidence: H**. Excluded from the base model; see §7 Flag 3 |
 | §6621(a)(2) underpayment rate for §453A charge | **[UNVERIFIED — confirm current quarterly rate]** | Modeled at 7.0% for illustration only |
 
 **Derived terminal values at year 15:**
@@ -249,8 +250,8 @@ This is the decisive axis and the one the pre-2023 literature gets wrong.
 
 ## 5. The crossover
 
-> `[SUPERSEDED 2026-08-23]` The crossover arithmetic below prices the federal
-> exclusion only. With Illinois taxing above $4,000,000 with no portability there
+> `[SUPERSEDED BY ILLINOIS, 2026-08-23]` The crossover arithmetic below prices the
+> federal exclusion only. With Illinois taxing above $4,000,000 with no portability there
 > is a second, much lower threshold the model never crosses into. The direction
 > of the error is known: **it understates the case for lifetime transfer.** The
 > magnitude is not computed here and must not be guessed.
@@ -275,11 +276,11 @@ Add the indexed exclusion: gross estate at death of **$43.45M + $18.98M ≈ $62.
 |---|---|---|
 | Heirs never sell the business | Strongly favors IDGT | The basis cost is deferred indefinitely and may never crystallize. This single assumption can invert the ranking |
 | Higher basis in the interest | Favors IDGT | Crossover falls roughly linearly with the gain fraction |
-| Illinois income tax included `[CORRECTED 2026-08-23]` | Favors retention | Raises the effective LTCG rate to 28.75%, raising the basis cost |
+| Illinois income tax included `[ILLINOIS, replacing Ohio, 2026-08-23]` | Favors retention | Raises the effective LTCG rate to 28.75%, raising the basis cost |
 | Future exclusion reduction by Congress | Favors IDGT | OBBBA removed the sunset but not the possibility of amendment. **Confidence: L** on any probability estimate |
 | Faster business growth | Favors IDGT | Widens the excess faster than it widens the basis gap, but only above the exclusion |
 | Discount sustained on audit | Favors IDGT | A denied discount converts the shortfall into a taxable gift |
-| Second death timing `[CORRECTED 2026-08-23]` | **Strongly favors lifetime transfer** | Federal portability requires a timely Form 706. **Illinois has no portability at all**, so unused Illinois exclusion at the first death is permanently lost. That is a one-way ratchet the model does not price |
+| Second death timing `[ILLINOIS has no portability, replacing the Ohio no-estate-tax assumption, 2026-08-23]` | **Strongly favors lifetime transfer** | Federal portability requires a timely Form 706. **Illinois has no portability at all**, so unused Illinois exclusion at the first death is permanently lost. That is a one-way ratchet the model does not price |
 
 ---
 

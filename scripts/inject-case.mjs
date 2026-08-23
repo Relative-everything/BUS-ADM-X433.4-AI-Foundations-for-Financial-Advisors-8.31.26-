@@ -33,8 +33,8 @@ const CLOSE = `<!-- CASE:END ${facts.case_id} -->`;
  * every lesson gets the identical implementation.
  */
 export function buildBlock() {
-  const extract   = readFileSync(join(HERE, 'case-extract.fragment'), 'utf8').trim();
-  const flowchart = readFileSync(join(HERE, 'case-flowchart.fragment'), 'utf8').trim();
+  const extract   = readFileSync(join(HERE, 'case-extract.html'), 'utf8').trim();
+  const flowchart = readFileSync(join(HERE, 'case-flowchart.html'), 'utf8').trim();
   const F = facts.figures;
   const L = [];
   L.push('<div class="case-gen">');

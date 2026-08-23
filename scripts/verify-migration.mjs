@@ -148,7 +148,7 @@ for (const [id, name, rxs] of [
 
 /* ---- 7  extract fidelity -------------------------------------------------- */
 {
-  const extract = readFileSync(join(REPO, 'scripts/case-extract.fragment'), 'utf8');
+  const extract = readFileSync(join(REPO, 'scripts/case-extract.html'), 'utf8');
   const nums = [...extract.matchAll(/\$([0-9][0-9,]{2,})/g)].map((m) => m[1].replace(/,/g, ''));
   const known = new Set(Object.values(F).filter((v) => typeof v === 'number').map(String));
   // figures the extract composes rather than quotes, each shown with its arithmetic
@@ -250,7 +250,7 @@ for (const [id, name, rxs] of [
 /* ---- 14b  SVG hygiene ----------------------------------------------------- */
 {
   const bad = [];
-  const files = [...LESSONS.map((l) => join(REPO, l)), join(REPO, 'scripts/case-flowchart.fragment')];
+  const files = [...LESSONS.map((l) => join(REPO, l)), join(REPO, 'scripts/case-flowchart.html')];
   for (const p of files) {
     const t = text(p);
     for (const m of t.matchAll(/(fill|stroke|stop-color|stroke-width|font-size)="var\(/g))
@@ -265,7 +265,7 @@ for (const [id, name, rxs] of [
      either way. verify-browser.mjs measures whether it actually renders. */
   const VAR_BASELINE = { 'index.html': 0, 'session-0.1/index.html': 8, 'session-1/index.html': 7,
                          'session-2/index.html': 0, 'session-3/index.html': 0, 'session-4/index.html': 0,
-                         'scripts/case-flowchart.fragment': 0 };
+                         'scripts/case-flowchart.html': 0 };
   const varsBy = {};
   for (const b of bad) { const f = b.split(':')[0]; if (/var\(/.test(b)) varsBy[f] = (varsBy[f] || 0) + 1; }
   const regress = Object.entries(varsBy).filter(([f, n]) => n > (VAR_BASELINE[f] ?? 0));
