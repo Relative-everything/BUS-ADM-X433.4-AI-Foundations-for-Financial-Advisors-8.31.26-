@@ -40,7 +40,13 @@ function walk(d, out = []) {
 const ALL = walk(REPO);
 const text = (p) => { try { return readFileSync(p, 'utf8'); } catch { return ''; } };
 const rel = (p) => relative(REPO, p);
-/** Files where a retired string is a legitimate historical or register entry. */
+/**
+ * Files where naming a retired string is a RECORD OF ITS REMOVAL rather than an
+ * assertion of it. Same standing as CASE.md Part K's conditional-allowances
+ * table. Anything under audit/ qualifies by definition: an audit that cannot
+ * name what it retired is not an audit.
+ */
+const isRegister = (rel) => rel.startsWith('audit/') || REGISTER.has(rel);
 const REGISTER = new Set(['CASE.md', 'CHANGELOG.md', 'changelog/index.html',
                           'docs/probe-captures.md', 'docs/live-model-console-plan.md',
                           /* this file names every retired string in order to search for it */
@@ -82,7 +88,7 @@ const RETIRED = [
 {
   const bad = [];
   for (const p of ALL) {
-    const r = rel(p); if (REGISTER.has(r)) continue;
+    const r = rel(p); if (isRegister(r)) continue;
     const t = text(p);
     for (const [label, rx] of RETIRED) {
       rx.lastIndex = 0;
@@ -107,7 +113,7 @@ for (const [id, name, rxs] of [
   for (const p of ALL) {
     const r = rel(p);
     if (/\bOhio\b|\bDayton\b|QSBS|1202/i.test(r)) bad.push(`FILENAME ${r}`);
-    if (REGISTER.has(r)) continue;
+    if (isRegister(r)) continue;
     const t = text(p);
     for (const rx of rxs) { rx.lastIndex = 0; let m;
       while ((m = rx.exec(t))) bad.push(`${r}:${t.slice(0, m.index).split('\n').length}  ${m[0]}`); }
