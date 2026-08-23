@@ -89,7 +89,8 @@ Three things worth knowing before you use it:
 ## The Cole household
 
 Every worked example, exercise input and discussion prompt in the course draws
-on one client household: Meg and David Cole of Dayton, Ohio. The Cole household
+on one client household: Meg and David Cole of Barrington Hills, Illinois,
+whose company is in Rockford. The Cole household
 is **entirely synthetic**. It was constructed for this course, it is labelled as
 synthetic in every lesson that presents it, and it is not derived from, based
 on, or de-identified from any real household.

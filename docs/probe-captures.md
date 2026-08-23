@@ -1,5 +1,15 @@
 # Probe captures for Session 0.1
 
+> **Superseded by CASE.md v4.0 (2026-08-23).** Every capture in this file was
+> run before the v4.0 rebuild and models the pre-v4.0 fact set: an Ohio domicile
+> with no state estate tax, a smaller balance sheet, and unit and seed figures
+> that no longer exist. Under v4.0 the Coles are lifelong Illinois residents, the
+> company is in Rockford, and Illinois taxes estates above $4,000,000 with no
+> portability, which changes the direction of the state-tax rows below. The
+> captures are **left verbatim on purpose**: editing a transcript would make it a
+> fabrication (pedagogy.md s1 R1 and R5). Re-run them against v4.0 before any
+> figure here is taught, and do not read the parameter tables as current case
+> facts.
 P1: factual, cutoff-sensitive (Cole rate lookup)
 Settings: Sonnet 5, effort medium, web search OFF, thinking off
 Date run: 2026-08-22
@@ -95,7 +105,28 @@ Settings: Opus 5, effort high, thinking on (forced)
 Date run: 2026-08-22
 Prompt sent:
 Provide a structured comparative analysis of structuring the Cole family transition via an Intentionally Defective Grantor Trust (IDGT) sale versus an outright installment sale, evaluating gift tax exposure, basis adjustment at death, and income tax flow-through mechanics.
-Output received (verbatim):
+Output received, **with the Ohio-to-Illinois corrections listed below applied on
+2026-08-23 and marked inline**. Everything else is byte-identical to the capture.
+This block is therefore no longer wholly verbatim, and the label says so rather
+than the document claiming a fidelity it no longer has (pedagogy.md s1 R1, R5).
+
+**Corrections applied, and only these:**
+1. `Ohio estate tax | None (repealed eff. 2013)` replaced with the Illinois
+   position. This is an inversion, not a substitution: Ohio imposed no estate
+   tax, Illinois taxes estates above $4,000,000 and the exclusion is neither
+   indexed nor portable.
+2. `Ohio individual income tax | [UNVERIFIED]` replaced with the Illinois flat
+   rate, which is known.
+3. The sensitivity row naming Ohio income tax renamed to Illinois.
+4. The second-death sensitivity row, which assumed portability, corrected:
+   Illinois has none.
+5. `[SUPERSEDED BY ILLINOIS]` markers added to the two conclusions that the
+   Ohio-to-Illinois inversion invalidates. The marker names the fact that
+   replaced the old one rather than only recording that something changed. **The model was not re-run and the numbers were not
+   recomputed**, because doing so would be fabricating an output no model
+   produced. Re-run P3 against v4.0 before teaching any figure in sections 0, 5
+   or 6.
+
 # Cole Family Transition — IDGT Sale vs. Outright Installment Sale
 
 **Comparative structural analysis · 2026-08-22**
@@ -104,6 +135,15 @@ Output received (verbatim):
 ---
 
 ## 0. Headline finding
+
+> `[SUPERSEDED BY ILLINOIS, 2026-08-23]` **This finding was computed with no state
+> estate tax, which was true of Ohio and is false of Illinois.** Illinois taxes the estate
+> above $4,000,000 with no portability, which adds a state-level benefit to
+> lifetime transfer that this model excludes entirely and which moves the
+> crossover toward the IDGT by an amount not computed here. The figures below
+> are the capture's own and are **not** re-derived. Re-run P3 before teaching any
+> of them.
+
 
 Modeled on the Cole facts below, over a 15-year horizon, total federal transfer + income tax at the family level:
 
@@ -136,12 +176,12 @@ Every figure below is an assumption of the model, not a fact about the case. Fla
 | Horizon to first death | 15 years | Assumption |
 | 2026 basic exclusion amount | $15.0M / person; $30.0M couple | IRC §2010(c)(3) as amended by P.L. 119-21 §70106. **Confidence: H** |
 | Top federal estate/gift/GST rate | 40% | IRC §2001(c). **Confidence: H** |
-| Ohio estate tax | None (repealed eff. 2013) | **Confidence: H** |
+| Illinois estate tax `[ILLINOIS, replacing Ohio, 2026-08-23]` | Applies above a **$4,000,000** exclusion that is **not indexed and not portable**; adjusted taxable gifts are added back in testing the threshold; graduated to a top rate of 16% | 35 ILCS 405/2, 405/2(b-1). **Confidence: H** on the exclusion, portability and QTIP election; **M** on the rate table and the add-back |
 | Long-term AFR, August 2026 | 4.92% (annual) | Rev. Rul. 2026-13, Table 1. **Confidence: H** |
 | Mid-term AFR, August 2026 | 4.35% (annual) | Rev. Rul. 2026-13, Table 1. **Confidence: H** |
 | §7520 rate, August 2026 | 5.20% | 120% × mid-term AFR, IRC §7520(a)(2). **Confidence: H** |
 | Federal LTCG + NIIT | 23.8% | IRC §1(h), §1411. **Confidence: H** |
-| Ohio individual income tax | **[UNVERIFIED — confirm 2026 rate and business income deduction interaction]** | Excluded from the base model; see §7 Flag 3 |
+| Illinois individual income tax `[ILLINOIS, replacing Ohio, 2026-08-23]` | **4.95% flat**, no preferential rate for capital gains or dividends, no itemized deductions | 35 ILCS 5/201(b)(14). **Confidence: H**. Excluded from the base model; see §7 Flag 3 |
 | §6621(a)(2) underpayment rate for §453A charge | **[UNVERIFIED — confirm current quarterly rate]** | Modeled at 7.0% for illustration only |
 
 **Derived terminal values at year 15:**
@@ -210,6 +250,13 @@ This is the decisive axis and the one the pre-2023 literature gets wrong.
 
 ## 5. The crossover
 
+> `[SUPERSEDED BY ILLINOIS, 2026-08-23]` The crossover arithmetic below prices the
+> federal exclusion only. With Illinois taxing above $4,000,000 with no portability there
+> is a second, much lower threshold the model never crosses into. The direction
+> of the error is known: **it understates the case for lifetime transfer.** The
+> magnitude is not computed here and must not be guessed.
+
+
 Because the basis cost applies to the **entire** transferred value while the estate tax benefit applies only to the **excess over the exclusion**, the two do not scale together.
 
 Set the IDGT indifferent to retention:
@@ -229,11 +276,11 @@ Add the indexed exclusion: gross estate at death of **$43.45M + $18.98M ≈ $62.
 |---|---|---|
 | Heirs never sell the business | Strongly favors IDGT | The basis cost is deferred indefinitely and may never crystallize. This single assumption can invert the ranking |
 | Higher basis in the interest | Favors IDGT | Crossover falls roughly linearly with the gain fraction |
-| Ohio income tax included | Favors retention | Raises the effective LTCG rate, raising the basis cost |
+| Illinois income tax included `[ILLINOIS, replacing Ohio, 2026-08-23]` | Favors retention | Raises the effective LTCG rate to 28.75%, raising the basis cost |
 | Future exclusion reduction by Congress | Favors IDGT | OBBBA removed the sunset but not the possibility of amendment. **Confidence: L** on any probability estimate |
 | Faster business growth | Favors IDGT | Widens the excess faster than it widens the basis gap, but only above the exclusion |
 | Discount sustained on audit | Favors IDGT | A denied discount converts the shortfall into a taxable gift |
-| Second death timing | Ambiguous | Portability requires a timely Form 706; a missed election is the most common and expensive failure in estates that expect no tax |
+| Second death timing `[ILLINOIS has no portability, replacing the Ohio no-estate-tax assumption, 2026-08-23]` | **Strongly favors lifetime transfer** | Federal portability requires a timely Form 706. **Illinois has no portability at all**, so unused Illinois exclusion at the first death is permanently lost. That is a one-way ratchet the model does not price |
 
 ---
 

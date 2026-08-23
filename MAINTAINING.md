@@ -48,7 +48,7 @@ Publishing and versioning are the same act. GitHub Pages serves whatever is on
 git pull origin main
 # make the edit
 git add -A
-git commit -m "Session 1: correct the Section 1202 gross-asset ceiling"
+git commit -m "Session 1: correct the combined valuation discount"
 git push origin main
 ```
 
@@ -93,8 +93,36 @@ python3 scripts/validate_lesson.py <repo>/session-N/index.html \
   --case Cole --purge "Okonkwo,Reyes,Adaeze,Ilesanmi" \
   --require-timing --require-tagging
 node scripts/validate_dom.js <repo>/session-N/index.html      # needs jsdom
-python3 scripts/restyle_sweep.py <repo> --check
+python3 scripts/restyle_sweep.py <repo>                       # WRITE the fence
 ```
+
+## The CASE.md v4.0 migration checks
+
+These live in this repo, not the skill, and all exit 0. Run them from the repo
+root after any edit to `CASE.md` or to a lesson.
+
+```bash
+node scripts/build-case.mjs        # CASE.md -> the generated artifacts. Fails
+                                   # loudly if a figure it looks for has moved,
+                                   # and recomputes 13 Part M identities.
+node scripts/inject-case.mjs       # rewrite the span between the CASE sentinels
+node scripts/inject-case.mjs --check   # report drift, write nothing
+node scripts/verify-case.mjs       # hash every injected block; non-zero on drift
+node scripts/verify-migration.mjs  # retired facts, allowances, arithmetic, timing,
+                                   # and the spine drift guard (check 20)
+node scripts/verify-browser.mjs    # DOM, handlers, flowchart, screenshots (Chromium)
+node scripts/verify-style.mjs      # CHECK the managed style fence, see below
+```
+
+**Why `verify-style.mjs` instead of `restyle_sweep.py --check`.** The sweep globs
+every `*.html` in the tree and wants a fence in each. Two files here are HTML
+*fragments*, not documents: `scripts/case-extract.html` and
+`scripts/case-flowchart.html` are generated and injected *into* the lessons, so
+giving them a fence would embed the whole stylesheet in every lesson six times.
+The wrapper asserts something stricter than the raw sweep: every lesson document
+must be current, **and** the only fenceless files in the tree must be exactly
+those two fragments. A third fenceless file fails it. Use the raw sweep to
+*write* the fence; use the wrapper to *check* it.
 
 Without the skill, these fallback checks cover the same ground:
 

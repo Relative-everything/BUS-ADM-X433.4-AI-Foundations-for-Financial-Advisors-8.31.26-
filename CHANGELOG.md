@@ -10,6 +10,47 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-08-23
+
+### All sessions · CASE.md v4.0 migration
+
+- **CASE.md v4.0 replaces the whole fact set** and every lesson is rebuilt
+  against it. The Coles are lifelong Illinois residents, the company is in
+  Rockford, and the balance sheet is $67,000,000 against $30,000,000. The
+  recapitalization is 1,000 LLC units, 100 voting and 900 non-voting, at a 30%
+  discount; the seed is 52 units at $2,002,000 and the sale 520 units at
+  $20,020,000 on a demand note at 3.82%. Meg bought the company from her father
+  in 2016 for $14,000,000 and did not found it. A $1,000,000 inherited IRA is
+  new, running a ten-year clock to 31 December 2031 with annual RMDs.
+- **Ohio and Dayton are gone, and the replacement is not a name swap.** Ohio
+  imposed no estate tax; Illinois taxes estates above $4,000,000, does not index
+  it, and does not allow portability, and adjusted taxable gifts are added back
+  in testing the threshold. That exposure is now taught rather than absent.
+- **QSBS and IRC §1202 are removed entirely** as out of scope for this course,
+  and not replaced.
+- **The grantor tax is presented as the burn**, a transfer of value to the trust
+  that consumes no exemption and is not a gift, per Rev. Rul. 2004-64.
+- **The recurring four-session framing question is retired** by CASE.md Part K,
+  which forbids reintroducing it and supplies no replacement. Its sockets are
+  marked `VOID: needs replacement` in the lesson source and are deliberately
+  empty. `docs/spine-brief.md` collects the material for a new one; choosing it
+  is the instructor's decision.
+- **The case block is now generated, not maintained by hand.**
+  `scripts/build-case.mjs` reads CASE.md and emits `case-facts.json`,
+  `case-extract.html` and `case-flowchart.html`; `scripts/inject-case.mjs`
+  replaces the span between the CASE sentinels in each of the six files;
+  `scripts/verify-case.mjs` hashes each injected block and exits non-zero on
+  drift. Sessions 0.1 and 1 each carried two copies of the block and now carry
+  one. Sessions 2, 3, 4 and the hub had no case modal and now have one, with a
+  Structure tab carrying the Part L flowchart.
+- **`scripts/diff_case_block.py` retired.** Against CASE.md v4.0 it extracted
+  the Part L flowchart as "the canonical block" and could only fail.
+- Entries below this one describe the repository as it stood before v4.0 and are
+  left unedited. A changelog that is rewritten to match the present is not a
+  changelog.
+
+---
+
 ## 2026-08-22
 
 ### Session 0.1 · The Control Surface (new)
@@ -51,8 +92,9 @@ being on the site.
    in `docs/probe-captures.md` contradict `CASE.md`. P2 was run against a
    prompt naming "David and Sarah Cole"; the canonical household is Meg and
    David Cole and there is no Sarah. P3 models a $12.0M interest with $1.2M of
-   basis and a $1.2M seed gift against the canonical $7,200,000 pre-discount
-   value, $240,000 basis and $650,000 seed. Both ship verbatim, because editing
+   basis and a $1.2M seed gift against CASE.md v4.0's $55,000,000 company,
+   $38,500 non-voting unit, $14,000,000 basis and $2,002,000 seed. Both ship
+   verbatim, because editing
    a transcript would make it a fabrication, and both are labelled on the page
    and in the footer as designed defects in the meantime. When you re-run them,
    the base strings are extracted from `docs/probe-captures.md` programmatically

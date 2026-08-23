@@ -48,7 +48,7 @@ makes the sweep gate exit 1 on files that are not lessons.
 - FLAG-CASE-1 and FLAG-CASE-2, BLOCKING-SEVERITY, user decision.
   `docs/probe-captures.md` P2 was run against "David and Sarah Cole"; CASE.md
   is "Meg and David Cole". P3 models $12.0M / $1.2M basis / $1.2M seed against
-  CASE.md's $7,200,000 / $240,000 / $650,000. Captures ship verbatim, labelled
+  CASE.md v4.0's $55,000,000 company, $38,500 unit and $2,002,000 seed. Captures ship verbatim, labelled
   on the page and in the footer as designed defects. CASE.md is untouched.
   Reversible in one edit if you want it handled differently.
 - FLAG-B8-TOPBAR, corpus-wide, user decision. At 380px the topbar "Case facts"
