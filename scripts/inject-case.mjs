@@ -49,6 +49,13 @@ export function buildBlock() {
   L.push('    <p class="case-h">Structure and annual cash flow. Sheet 1 is ownership after closing with both balance sheets; Sheet 2 is year-1 cash with ribbon widths proportional to dollars.</p>');
   L.push(indent(flowchart, 4));
   L.push('  </div>');
+  L.push('  <!-- VOID: needs replacement -->');
+  L.push('  <!-- The recurring four-session framing question is retired by CASE.md');
+  L.push('       v4.0 Part K, which forbids reintroducing it and supplies no');
+  L.push('       replacement. The open questions listed above are the ones CASE.md');
+  L.push('       itself marks open; they are NOT a substitute recurring question.');
+  L.push('       The recurring-question socket is empty in every session until the');
+  L.push('       instructor chooses one. See docs/spine-brief.md. -->');
   L.push('  <p class="case-stamp"><span class="mono">Case v' + facts.case_version + ' ' + '__STAMP__' + '</span></p>');
   L.push('</div>');
   L.push('<script>');
