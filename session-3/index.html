@@ -1860,7 +1860,7 @@ var TERMS=[
 ];
 var CSNOTE={
  trust:'One word apart in text, opposite on the only property that matters. Both appear in the Cole file and only one of them is the IDGT.',
- vote:'The entire 31% discount rests on which of these two the transferred interest is. A retriever cannot tell them apart from language.',
+ vote:'The entire 30% discount rests on which of these two the transferred interest is. A retriever cannot tell them apart from language.',
  val:'Two valuation standards with different triggering events. Substituting one for the other is exactly the failure you are about to watch.',
  wolf:'Wolfram\u2019s own example. Two different animals, placed together because people write about them the same way.'};
 (function(){
@@ -1961,12 +1961,12 @@ function showPairKey(){
 var CORP=[
  {id:'D1',t:'Buy-Sell Agreement, Article VII, Valuation. This Article applies only upon the death, permanent disability, or voluntary withdrawal of a holder of record. The value of the shares shall equal five times the average annual earnings before interest and taxes for the three fiscal years then ended. No appraisal obtained after execution is incorporated by reference.'},
  {id:'D2',t:'Buy-Sell Agreement, Article IX, Transfer Restrictions. No holder may transfer stock to any person other than a permitted transferee without first offering the stock to the corporation. A trust established by a holder for the benefit of descendants is a permitted transferee.'},
- {id:'D3',t:'Appraisal report issued 2023. The subject is a forty percent non-voting interest in Cole Precision Components. The report supports a combined discount of thirty-one percent for lack of control and lack of marketability. The report has not been re-verified since issuance.'},
+ {id:'D3',t:'Appraisal report issued 2023. The subject is a one hundred percent controlling and marketable interest in Cole Precision Components. The report concludes a value of thirty eight million dollars. The report contains no discount study and no analysis of lack of control or lack of marketability. The report has not been updated since issuance.'},
  {id:'D4',t:'Joint revocable trust, executed 2011. The trust receives the residue of each settlor probate estate and holds it in a marital share and a family share. The trust is revocable during the joint lifetimes of the settlors.'},
- {id:'D5',t:'Last will and testament, executed 2011 under Ohio law. The residue of the probate estate passes to the joint revocable trust. The will names the surviving spouse as executor and a descendant as successor executor.'},
+ {id:'D5',t:'Last will and testament, executed 2011 under Illinois law. The residue of the probate estate passes to the joint revocable trust. The will names the surviving spouse as executor and a descendant as successor executor.'},
  {id:'D6',t:'Draft irrevocable trust instrument, unexecuted. The settlor retains a power to substitute assets of equivalent value held in a nonfiduciary capacity. The instrument has not been signed and no trustee has accepted appointment.'},
- {id:'D7',t:'Draft promissory note, unexecuted. Principal of four million nine hundred sixty eight thousand dollars. Interest only for nine years with a balloon payment of principal at maturity. No prepayment penalty applies.'},
- {id:'D8',t:'Planning memorandum on the seed gift. A gift of six hundred fifty thousand dollars is to be made to the trust before any sale occurs. The memorandum is dated and unsigned.'},
+ {id:'D7',t:'Draft promissory note, unexecuted. Principal of twenty million twenty thousand dollars. Interest only at three point eight two percent per annum, payable annually in arrears, with the entire principal payable on demand by the holder. The note is unsecured. No prepayment penalty applies.'},
+ {id:'D8',t:'Planning memorandum on the proposed transfer. A seed gift of fifty two non-voting units valued at two million two thousand dollars is to be made to the trust before any sale occurs. The memorandum asserts a combined discount of thirty percent for lack of control and lack of marketability on the non-voting units and cites no appraisal. The memorandum is dated and unsigned.'},
  {id:'D9',t:'Durable power of attorney, executed 2011. The agent may act on financial matters upon the principal incapacity. The instrument has not been reviewed since execution.'},
  {id:'D10',t:'Healthcare directive and living will, executed 2011. The instrument names a healthcare agent and states preferences regarding life sustaining treatment. The instrument has not been reviewed since execution.'}
 ];
@@ -1987,11 +1987,11 @@ function rank(q){var qv=vec(q);
   .sort(function(a,b){return b.s-a.s})}
 var PRESET=[
  {q:'what value should we use for Meg CPC shares',v:'fail',
-  w:'The top chunk is Article VII of the 2014 buy-sell. It is a real clause, correctly retrieved, correctly quoted, and it governs a death, a disability or a withdrawal \u2014 none of which is happening. It is not the valuation standard for a sale to a trust. Nothing in the ranking signals that, because the ranker matched on \u201cvalue\u201d and \u201cshares\u201d and has no representation of a triggering event. Read the rest of the ranking, which is worse than the top result. Second place is the draft trust\u2019s asset-substitution power \u2014 it scores because it contains the word \u201cvalue,\u201d in an entirely unrelated sense. And the 2023 appraisal, the one document in this file that actually prices the interest being transferred, scores 0.0: it shares no scored term with the question it is the answer to. The correct document was not outranked. It was never in the running. This is the alligator-and-crocodile property, arriving in an $18,000,000 valuation question.'},
+  w:'The top chunk is Article VII of the 2014 buy-sell. It is a real clause, correctly retrieved, correctly quoted, and it governs a death, a disability or a withdrawal \u2014 none of which is happening. It is not the valuation standard for a sale to a trust. Nothing in the ranking signals that, because the ranker matched on \u201cvalue\u201d and \u201cshares\u201d and has no representation of a triggering event. Read the rest of the ranking, which is worse than the top result. Second place is the draft trust\u2019s asset-substitution power \u2014 it scores because it contains the word \u201cvalue,\u201d in an entirely unrelated sense. And the 2023 appraisal, the one document in this file that actually prices the interest being transferred, scores 0.0: it shares no scored term with the question it is the answer to. The correct document was not outranked. It was never in the running. This is the alligator-and-crocodile property, arriving in a $55,000,000 valuation question.'},
  {q:'where does the residue of the probate estate go',v:'ambig',
   w:'The will and the trust both match, and neither is wrong. The will says the residue passes to the trust; the trust says it receives the residue and splits it. Answering from either alone gives you half the mechanism. A grounded assistant will pick one, cite it, and not tell you the other half exists.'},
  {q:'what discount was claimed on the non-voting interest',v:'pass',
-  w:'The correct chunk ranks first and nothing competes, because this fact exists in exactly one place in the corpus. Uniqueness in the corpus, not the quality of the model, is what made this query safe.'},
+  w:'The correct chunk ranks first and nothing competes, because this fact exists in exactly one place in the corpus \u2014 and note WHICH place. The discount is asserted in the planning memorandum, not in the appraisal. The 2023 appraisal ranks second and contains no discount study at all. Uniqueness in the corpus, not the quality of the model, is what made this query safe.'},
  {q:'what are the terms of the promissory note',v:'pass',
   w:'Correct chunk first. Note what the answer will not tell you: the note is unexecuted, which the chunk does say, and whether the principal still matches a current appraisal, which no chunk says at all.'}
 ];
@@ -2141,12 +2141,12 @@ function showSlope(){
 
 /* ================= 6. Valuation prediction + retrieval chart + estimator ================= */
 var VALOPT=[
- {t:'$18,000,000 — the appraised value of the company',k:false,
+ {t:'$55,000,000 — the indicated value of the company',k:false,
   w:'No. That figure is nowhere in the indexed document set. It lives in the appraisal engagement and in your planning software, not in the nine documents you gave the assistant. A grounded assistant cannot return a number it was never shown.'},
- {t:'$7,200,000 less 31% — the 2023 appraisal figure',k:false,
-  w:'Plausible, and wrong \u2014 and wrong for a reason worth more than the answer. The appraisal chunk describes a discount on a forty percent non-voting interest. Asked about \u201cMeg\u2019s CPC shares,\u201d it scored 0.0, because it shares no term with the question. The document that holds the answer is invisible to the query that needs it, and no amount of instructing the model to answer only from its sources can fix a document that was never retrieved.'},
+ {t:'$38,000,000 less 30% — the 2023 appraisal figure',k:false,
+  w:'Plausible, and wrong \u2014 and wrong for a reason worth more than the answer. The memorandum chunk describes a discount on the non-voting units, and the appraisal chunk describes no discount at all. Asked about \u201cMeg\u2019s CPC shares,\u201d it scored 0.0, because it shares no term with the question. The document that holds the answer is invisible to the query that needs it, and no amount of instructing the model to answer only from its sources can fix a document that was never retrieved.'},
  {t:'Five times three-year average EBIT — the 2014 buy-sell formula',k:true,
-  w:'Correct, and you watched it happen in \u00a703. The answer will be fully sourced, will quote Article VII accurately, and will be materially wrong: that formula is the purchase price on a death, a disability or a withdrawal, not the valuation standard for a sale to a trust. It contradicts the $18,000,000 appraisal, and nothing on the screen will say so.'},
+  w:'Correct, and you watched it happen in \u00a703. The answer will be fully sourced, will quote Article VII accurately, and will be materially wrong: that formula is the purchase price on a death, a disability or a withdrawal, not the valuation standard for a sale to a trust. It produces roughly $18,000,000 against a $55,000,000 indicated value, and nothing on the screen will say so.'},
  {t:'It refuses, because the documents conflict',k:false,
   w:'This is what you want and not what happens. Nothing in the corpus asserts a conflict, and the retriever surfaces passages by similarity, not by contradiction. Detecting that two documents disagree requires reading both, which is the step retrieval is designed to avoid.'}
 ];
@@ -2263,7 +2263,7 @@ var CHAIN=[
      'Log: no task is created and nobody is assigned to the appraisal.',
      'Next prep: the next agenda is built from the log, so the request is now permanently gone.'],
   v:'Never visible, and it compounds \u2014 each cycle rebuilds prep from the degraded log.'},
- {s:'Follow-up',f:'The recap email states the 31% discount as settled rather than as pending re-verification.',
+ {s:'Follow-up',f:'The recap email states the 30% discount as settled rather than as asserted in a memorandum with no appraisal behind it.',
   d:['Client: Meg reads a settled position and may instruct the attorney to proceed.',
      'Log: the email is the artefact filed as evidence of what was advised.'],
   v:'Visible immediately \u2014 to the client, who may act on it before you notice. That is the wrong detector.'},
@@ -2294,7 +2294,11 @@ var CHAIN=[
 var RUB=[
  {n:'The buyer approach, and that nothing is signed',re:/(buyer|approach|acquir|sale|sell|purchas|march|offer)/i,g:'A third party approached the owner about buying the company. Recording the approach without recording that nothing is signed misstates the posture; recording neither loses the meeting.'},
  {n:'The confidentiality constraint on Nathan',re:/(nathan|son|not told|does not know|doesn.t know|confidential|withhold|undisclosed)/i,g:'Meg named a person who must not learn this. That constraint governs who may see the note, which means it belongs in the note \u2014 and it is exactly the sentence a summariser treats as personal colour.'},
- {n:'The open question on timing',re:/(timing|time|window|delay|when|sequence|still open|pending)/i,g:'Whether buyer interest changes the planning window is the question Meg actually asked you. An unanswered client question is the most important thing in any note.'},
+ /* VOID: needs replacement. This scorer used to reward a note that named the
+    recurring framing question retired by CASE.md v4.0 Part K. The rubric line now
+    rewards naming whatever question the meeting left open, which the note itself
+    supplies; it is not a substitute recurring question. See docs/spine-brief.md. */
+ {n:'The open question Meg actually asked',re:/(timing|time|window|delay|when|sequence|still open|pending|unresolved|open)/i,g:'An unanswered client question is the most important thing in any note.'},
  {n:'The attorney position on the note term',re:/(nine|9.year|note|term|warren|attorney|counsel|balloon)/i,g:'Counsel wants the nine-year term held. That is a position taken by a third party, and it is the thing you will be asked to explain if the structure is later questioned.'},
  {n:'David\u2019s request to re-verify the appraisal',re:/(apprais|revalu|re-run|rerun|revisit|stale|two years|2023|update the val)/i,g:'A client asked for a specific piece of diligence before signing. This is an action item with an owner and it is the item extraction most often drops as an aside.'}
 ];
@@ -2339,12 +2343,12 @@ var RUB=[
 /* ================= 12. Three-way quiz on the Cole engagement ================= */
 var QOPT=[{k:'send',t:'Send as-is'},{k:'strip',t:'Strip fields first'},{k:'never',t:'Never, into any tool'}];
 var QITEMS=[
- {q:'A meeting transcript with all names, entity names and figures removed. It describes the sole owner of a precision aerospace fastener manufacturer in a named Ohio metropolitan area who is fielding informal interest from a strategic buyer.',
+ {q:'A meeting transcript with all names, entity names and figures removed. It describes the sole owner of a precision aerospace fastener manufacturer in a named Illinois metropolitan area who is fielding informal interest from a strategic buyer.',
   a:'never',split:true,
-  fb:{never:'Correct, and this is the item designed to split the room. Field-level de-identification passed \u2014 every listed identifier is gone \u2014 and the record is still uniquely identifying. A sole-owner aerospace fastener manufacturer in a named Ohio metro with a live strategic approach is a set of one, and it discloses the landmine: that Meg is exploring a sale. Re-identification by combination is not solved by removing fields.',
+  fb:{never:'Correct, and this is the item designed to split the room. Field-level de-identification passed \u2014 every listed identifier is gone \u2014 and the record is still uniquely identifying. A sole-owner aerospace fastener manufacturer in a named Illinois metro with a live strategic approach is a set of one, and it discloses the landmine: that Meg is exploring a sale. Re-identification by combination is not solved by removing fields.',
       strip:'The common answer, and the reason this item exists. Which field would you strip next? Remove the industry and it is still a sole-owned manufacturer in a named metro with a buyer circling. The identifiers are gone and the household is not anonymous. Uniqueness lives in the combination.',
       send:'No. Absence of names is not anonymity when the described facts are unique to one household, and the fact being disclosed is the one Nathan does not know.'}},
- {q:'A note reading: "Confirmed identity via last four of SSN (4417) and DOB 06/09. Meg authorised the $650,000 seed gift to the trust."',
+ {q:'A note reading: "Confirmed identity via last four of SSN (4417) and DOB 06/09. Meg authorised the $2,002,000 seed gift to the trust."',
   a:'strip',
   fb:{strip:'Correct. The note is well-formed \u2014 it records an authorisation, an amount and a verification step \u2014 and that is exactly why it is dangerous. Strip the authenticators. An SSN fragment and a date of birth are the credentials used to impersonate the client, and they are now in a vendor log.',
       never:'Defensible but over-broad. The substantive content \u2014 an authorised seed gift and its amount \u2014 is legitimate record content for an approved vendor. It is the authenticators that must not travel.',

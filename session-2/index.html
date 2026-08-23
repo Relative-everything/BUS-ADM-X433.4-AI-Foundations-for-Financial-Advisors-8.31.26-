@@ -2321,8 +2321,8 @@ function cost(){
 /* ================= 6 · PTCF ================= */
 var PTCF={
  P:'You are a CFP\u00ae professional writing to a client who founded and still runs a manufacturing company. She is not a tax specialist and does not want to become one.',
- T:'Explain, at an eighth-grade reading level, what it means to sell a 40% non-voting interest in her company to a grantor trust in exchange for a promissory note, and why the trust\u2019s income tax being paid by her is not treated as an additional gift.',
- C:'Facts you may use: only those in the attached case summary. Meg Cole, 64, owns 100% of Cole Precision Components. The interest being sold is 40% non-voting, valued at $7,200,000 before a 31% discount, with a note of $4,968,000 over nine years, interest-only. Do not introduce any figure that is not in the summary. Do not state a legal conclusion; describe the mechanics only, and mark anything the attorney must confirm.',
+ T:'Explain, at an eighth-grade reading level, what it means to sell 520 non-voting units of a family LLC to a grantor trust in exchange for a note payable on demand, and why the trust\u2019s income tax being paid by her is not treated as an additional gift.',
+ C:'Facts you may use: only those in the attached case summary. Meg Cole, 64, owns 100% of Cole Precision Components. What is being sold is 520 of 900 non-voting LLC units, valued at $38,500 each after a 30% discount from a $49,500,000 pro-rata value, for a $20,020,000 note payable on demand at 3.82%, interest only. Do not introduce any figure that is not in the summary. Do not state a legal conclusion; describe the mechanics only, and mark anything the attorney must confirm.',
  F:'Output: 200 words or fewer, four short paragraphs, no bullet points, no headers. End with a single sentence listing what she should ask her attorney. Flesch-Kincaid grade 8 or lower.'
 };
 function ptcf(){
@@ -2590,7 +2590,7 @@ var BUCK=[{k:'draft',t:'AI drafts, planner verifies'},{k:'assist',t:'AI assists 
 })();
 
 var CITES=[
- {c:'Rev. Rul. 85-13, 1985-1 C.B. 184 \u2014 cited for the proposition that Meg\u2019s sale of the 40% non-voting interest to her grantor trust is not a recognised sale for federal income tax purposes, so no gain is triggered on her $240,000 basis.',
+ {c:'Rev. Rul. 85-13, 1985-1 C.B. 184 \u2014 cited for the proposition that Meg\u2019s sale of 520 non-voting LLC units to her grantor trust is not a recognised sale for federal income tax purposes, so no gain is triggered on her $14,000,000 basis.',
   a:'sound',w:'Real, current, and correctly characterised. The ruling establishes that a transaction between a grantor and a grantor trust is a non-event for income tax purposes; the IRS has restated that proposition in later guidance. Note what makes it sound: the sentence states the operative rule, not a conclusion about Meg\u2019s facts. Whether her trust is in fact a grantor trust is a question about the unexecuted instrument, not about the ruling.'},
  {c:'Rev. Rul. 2004-64, 2004-2 C.B. 7 \u2014 cited for the proposition that Meg\u2019s payment of the income tax on the trust\u2019s income is not an additional gift to her children.',
   a:'sound',w:'Real, current, and correctly characterised. Situation 1 of the ruling holds that the payment is not a gift because the grantor is discharging her own liability, imposed by \u00a7671. This is the authority behind the explanation you built in &sect;03. It is sound as stated \u2014 and it is stated without its condition, which is the next item.'},
@@ -2600,7 +2600,7 @@ var CITES=[
   a:'nd',w:'The docket is real, the parties are real, and the Tax Court upheld nothing. The IRS attacked the 2006 sale of Carma Laboratories stock under \u00a72702 and \u00a7\u00a72036/2038 and asserted penalties; the parties settled, and stipulated decisions were entered on 25 and 28 March 2016 finding no additional tax due. A stipulated decision is the parties\u2019 agreement recorded by the court, not the court\u2019s judgment. It carries no precedential weight. Anyone citing Woelbing as a holding is citing a settlement.'},
  {c:'Estate of Davidson v. Commissioner, T.C. Docket No. 13748-13 \u2014 cited as the Tax Court having approved the use of the \u00a77520 mortality tables to value a note where the seller died shortly after the sale.',
   a:'nd',w:'Same failure, higher stakes. The IRS originally asserted deficiencies of roughly $2.8 billion; a stipulated decision was entered on 6 July 2015 reflecting a settlement of roughly $388 million. There is no opinion. The valuation question the planning community was waiting on was never answered, and the settlement terms do not disclose how it was resolved. Note the structural resemblance to Meg\u2019s facts: an interest-only note with a balloon, entered while a liquidity event was in view.'},
- {c:'Kessler v. Commissioner, 152 T.C. 88 (2019) \u2014 cited as holding that a 31% combined discount for lack of control and lack of marketability is presumptively reasonable for a non-voting minority interest in a closely held manufacturer.',
+ {c:'Kessler v. Commissioner, 152 T.C. 88 (2019) \u2014 cited as holding that a 30% combined discount for lack of control and lack of marketability is presumptively reasonable for a non-voting minority interest in a closely held manufacturer.',
   a:'fab',w:'No such decision exists. It is also the item the reader most wants to be true, which is exactly why it was generated: it answers the question that was asked. There is no presumptively reasonable discount percentage; discounts are questions of fact proved by appraisal. Meg\u2019s 2023 appraisal, never re-verified and now facing a buyer\u2019s expression of interest, is the actual issue and no citation resolves it.'}
 ];
 (function(){
@@ -2772,7 +2772,7 @@ var CHK=[
 var BRIDGE=[
  {q:'Session 1 called the mechanism next-token prediction. In one sentence: what does the model produce at each step, before any word is chosen?',
   a:'A probability distribution over the whole vocabulary \u2014 roughly 50,000 candidate tokens, each with a number attached. The word you see is a draw from that distribution, not a retrieval from a store of facts.'},
- {q:'Meg\u2019s CPC stock is worth $18,000,000 against a $240,000 basis. Which of those two numbers could a model state confidently without ever having seen the Cole file, and why does that matter?',
+ {q:'Meg\u2019s CPC stock is indicated at $55,000,000 against a $14,000,000 basis. Which of those two numbers could a model state confidently without ever having seen the Cole file, and why does that matter?',
   a:'Both, and neither is grounded. Given a prompt describing a founder-owned manufacturer, plausible values for each are high-probability continuations. Fluency about a number is not access to it. The model has never seen the file.'},
  {q:'Session 1 ranked tiers by cost per finished task rather than cost per token. State the reason in one sentence.',
   a:'Because models differ in how many tokens they burn reaching an answer. A model at one fifth the token price can cost nearly as much per completed task, which makes the price sheet a misleading ranking.'},
@@ -2927,7 +2927,7 @@ var BSQ=[
  'Is it a redemption, a cross-purchase, or a hybrid? The tax consequence differs and the document decides it.',
  'What triggering events does it cover, and does an outright sale to a third party appear among them?',
  'What is the formula, stated exactly, and what inputs does it take?',
- 'What value does that formula produce today, against the $18,000,000 appraisal?',
+ 'What value does that formula produce today, and how far does it sit below the $55,000,000 indicated value?',
  'Is the agreement funded, and by what \u2014 insurance, sinking fund, or nothing?',
  'Does it restrict transfers to a trust, which is what the IDGT sale requires?',
  'Has it been amended, and is the version you are reading the operative one?',

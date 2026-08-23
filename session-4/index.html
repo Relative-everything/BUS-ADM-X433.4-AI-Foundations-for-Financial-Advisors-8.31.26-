@@ -1183,7 +1183,7 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
   <h3 style="margin-top:34px">The case, one more time</h3>
   <div class="matrix" style="background:var(--gold-bg);border-color:#DFD3AF">
     <h4 style="margin-bottom:6px">The Cole household &mdash; synthetic, Barrington Hills and Rockford, Illinois, $67,000,000</h4>
-    <p style="margin:0 0 10px;max-width:none;font-size:15.5px">Meg Cole, 64, 100% owner of Cole Precision Components; basis $14,000,000 from her 2016 purchase, indicated at $55,000,000. Nathan, 31, works in CPC operations. A strategic buyer has expressed informal interest; no LOI is signed and <strong>Meg has not told Nathan</strong>. Drafted but unexecuted: a 40% non-voting interest sold to an IDGT for a $4,968,000 note at a claimed 31% discount, on a 2023 appraisal never re-verified.</p>
+    <p style="margin:0 0 10px;max-width:none;font-size:15.5px">Meg Cole, 64, 100% owner of Cole Precision Components; basis $14,000,000 from her 2016 purchase, indicated at $55,000,000. Nathan, 31, works in CPC operations. A strategic buyer has expressed informal interest; no LOI is signed and <strong>Meg has not told Nathan</strong>. Drafted but unexecuted: 900 non-voting units of a new family LLC moved to a grantor trust by a $2,002,000 seed gift and a $20,020,000 note payable on demand, at a claimed 30% discount that no appraisal supports.</p>
     <p style="margin:0;max-width:none;font-size:14.5px;color:var(--muted)"><strong>This case is fully synthetic and is a classroom anchor only.</strong> Do not build your final project on it. Your Part 1 workflow runs on a real recurring task from your own practice, using your own synthetic or de-identified data.</p>
   </div>
 
@@ -2427,7 +2427,7 @@ var BRIDGE=[
   o:['Grounding retrieves at query time; fine-tuning changes the weights','They are two names for the same technique','Fine-tuning is grounding done at scale'],a:0,
   f:'Grounding leaves the model untouched and swaps the corpus. Fine-tuning bakes the corpus into the weights, which is why it is the wrong choice for documents that change and for data you may later need to delete.'},
  {q:'What did the extraction over the Cole corpus surface that the household did not know?',
-  o:['The 2014 buy-sell formula conflicts with the $18,000,000 appraised value','That Nathan knows about the sale','That the IDGT was executed in 2023'],a:0,
+  o:['The 2014 buy-sell formula produces roughly $18,000,000, far below the $55,000,000 indicated value','That Nathan knows about the sale','That the trust was executed in 2023'],a:0,
   f:'A document conflict neither party had reconciled. Tonight that same finding becomes the test case for whether your audit trail captured anything usable.'}
 ];
 (function(){
@@ -2462,12 +2462,12 @@ var BRIDGE=[
 /* ================= s2 · Cole NPI classifier (rebuilt on the case) ================= */
 var NPI=[
  {k:'sale',l:'Meg is exploring a sale and has not told Nathan',d:'LANDMINE 1 \u00b7 undisclosed to a family member inside the business',w:100,lm:1},
- {k:'idgt',l:'The unexecuted IDGT plan and the 31% discount claimed',d:'LANDMINE 2 \u00b7 an unfiled position on a live valuation',w:100,lm:2},
+ {k:'idgt',l:'The unexecuted transfer plan and the 30% discount claimed',d:'LANDMINE 2 \u00b7 an unfiled position on a live valuation',w:100,lm:2},
  {k:'client',l:'Margaret Cole is a client of this firm',d:'LANDMINE 3 \u00b7 the relationship itself',w:100,lm:3},
- {k:'reid',l:'Founder and sole owner of a Dayton aerospace-fastener manufacturer, exploring a sale, adult son in operations',d:'No name, no number, no account',w:96,lm:0},
- {k:'basis',l:'Founder stock issued 2009, basis $240,000',d:'A figure, attached to no name here',w:38,lm:0},
+ {k:'reid',l:'Sole owner of a Rockford aerospace-fastener manufacturer, exploring a sale, adult son in operations',d:'No name, no number, no account',w:96,lm:0},
+ {k:'basis',l:'Stock purchased 2016, basis $14,000,000',d:'A figure, attached to no name here',w:38,lm:0},
  {k:'age',l:'A married couple in their sixties, one retired',d:'Demographic, unattached',w:6,lm:0},
- {k:'ohio',l:'Ohio imposes no state estate tax',d:'Public law',w:0,lm:0},
+ {k:'ilest',l:'Illinois taxes estates above $4,000,000, with no portability',d:'Public law',w:0,lm:0},
  {k:'excl',l:'The 2026 federal basic exclusion amount',d:'Public law',w:0,lm:0},
  {k:'generic',l:'General question: how does a sale to a grantor trust work?',d:'No client facts of any kind',w:0,lm:0}
 ];
@@ -2511,12 +2511,12 @@ var NPI=[
 
 /* ================= s4 · Cole corpus selector ================= */
 var CORPUS=[
- {k:'wills',l:'Wills, executed 2011 (Ohio)',s:3},
+ {k:'wills',l:'Wills, executed 2011 (Illinois)',s:3},
  {k:'bs',l:'Buy-sell agreement, 2014, stale formula valuation',s:4},
- {k:'appr',l:'2023 appraisal supporting the 31% discount',s:5},
+ {k:'appr',l:'2023 appraisal concluding $38,000,000, with no discount study',s:5},
  {k:'idgt',l:'Draft IDGT instrument and promissory note, unexecuted',s:5},
  {k:'poa',l:'Durable powers of attorney and healthcare directives, 2011',s:4},
- {k:'pub',l:'Published IRC sections and Ohio estate-tax status',s:0}
+ {k:'pub',l:'Published IRC sections and Illinois estate-tax status',s:0}
 ];
 (function(){
   var host=$('corpusCtrls'),panel=$('corpusPanel');if(!host||!panel)return;
@@ -3031,7 +3031,7 @@ var AQ=[
   a:1,f:'The item designed to split the room, and the split is on one word: summarised. Four of five things that matter are present. What is missing is the retrieved text itself. A paraphrase records what the adviser understood the clause to say \u2014 and the failure being controlled for is a clause that does not say what the model claimed. A paraphrase written from the model\u2019s claim reproduces the error rather than exposing it. Quote section 4.2, or the locator is doing no work.',
   split:true},
  {t:'<strong>Buy-sell extraction.</strong> A screenshot of the conflict finding, cropped to fit the client slide, with the prompt above it not visible.',
-  a:2,f:'Not a record. Without the prompt the output is unattributable. Cropping is not a documentation decision, but it has the effect of one \u2014 and this finding contradicts a $18,000,000 appraisal, so it will be challenged.'},
+  a:2,f:'Not a record. Without the prompt the output is unattributable. Cropping is not a documentation decision, but it has the effect of one \u2014 and this finding sits against a $55,000,000 indicated value, so it will be challenged.'},
  {t:'<strong>Buy-sell extraction.</strong> Full prompt. Model identifier and effort setting. Date. Full output. Section 4.2 quoted verbatim with its page locator. Adviser\u2019s decision to raise the conflict with Meg\u2019s attorney, named and dated.',
   a:0,f:'A reproducible record. Another adviser can re-run the prompt against the named model, compare, read the operative clause without leaving the file, and see who decided what and when.'},
  {t:'<strong>IDGT prompt.</strong> Full prompt. Model "claude-opus-5, effort=high." Date. Full output. The authority for the grantor-trust mechanics is quoted verbatim: <em>Hallowell v. Commissioner</em>, T.C. Memo. 2023-217. Adviser\u2019s decision, named and dated.',
