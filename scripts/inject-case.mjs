@@ -45,7 +45,7 @@ export function buildBlock() {
   L.push('  <div class="case-panel" role="tabpanel" id="casePanelFacts" aria-labelledby="caseTabFacts" tabindex="0">');
   L.push(indent(extract, 4));
   L.push('  </div>');
-  L.push('  <div class="case-panel hidden" role="tabpanel" id="casePanelStruct" aria-labelledby="caseTabStruct" tabindex="0">');
+  L.push('  <div class="case-panel case-off" role="tabpanel" id="casePanelStruct" aria-labelledby="caseTabStruct" tabindex="0">');
   L.push('    <p class="case-h">Structure and annual cash flow. Sheet 1 is ownership after closing with both balance sheets; Sheet 2 is year-1 cash with ribbon widths proportional to dollars.</p>');
   L.push(indent(flowchart, 4));
   L.push('  </div>');
@@ -66,7 +66,7 @@ export function buildBlock() {
   L.push("      tabs[k].className='case-tab'+(k===i?' on':'');");
   L.push("      tabs[k].setAttribute('aria-selected',k===i?'true':'false');");
   L.push("      tabs[k].tabIndex=k===i?0:-1;");
-  L.push("      panels[k].className='case-panel'+(k===i?'':' hidden');");
+  L.push("      panels[k].className='case-panel'+(k===i?'':' case-off');");
   L.push('    }');
   L.push('  }');
   L.push('  for(var i=0;i<2;i++)(function(i){');
