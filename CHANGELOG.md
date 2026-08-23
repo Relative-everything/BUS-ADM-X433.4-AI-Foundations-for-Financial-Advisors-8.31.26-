@@ -12,6 +12,65 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ## 2026-08-23
 
+### Repository · Editorial rules and their checker
+
+**No lesson file changed.** This entry adds a rules document, a checker and its
+baselines. Every violation the checker finds is reported and left standing.
+
+- **`EDITORIAL.md` ratifies the house rules for student-facing prose.** Nineteen
+  Part A rules a validator decides, nine Part B rules needing a human read, and
+  the split is the point: a rule a script decides 80% of goes in Part A with its
+  residue named as a Part B rule rather than averaged. The open em-dash decision
+  is ratified as D1 — existing copy keeps its dashes, newly authored text uses
+  none, and there is never a repo-wide substitution.
+- **`scripts/verify-editorial.mjs` and `scripts/editorial-regions.mjs`.** The
+  classifier assigns every character to one of eleven regions, because every
+  alarming raw count in this corpus turned out to be something else once
+  classified: the 1,239 hits for `color` are CSS properties, and session 3's 110
+  literal em dashes are the original author's convention, present in the first
+  upload before any automated pass.
+- **The checker is advisory and outside the pre-push gate**, by decision D16.
+  It reports 28 hard findings and 31 advisory. The largest are mechanical and
+  nothing previously owned them: appendix index cards disagree with their own
+  sections in all four lessons, and two appendix sections — session 3's C5 and
+  session 4's D5, 16 minutes each — have no index card and no inbound link from
+  anywhere on the page.
+
+**Two rules were wrong until seeded violations found them, and that is the
+substance of this entry.**
+
+- **A10 could not see `&mdash;`.** The rule guarding dashes inside quoted matter
+  matched only the literal character, and this corpus writes its quotations with
+  entities. It had been passing clean against every lesson while structurally
+  blind to the one case it exists for — a check that cannot fail is not a check,
+  and reading it did not reveal that. Fixed to normalise both dash forms
+  alongside the quote marks. The corpus is still clean under the corrected rule,
+  so the finding that no dash sits inside an attributed quotation survives a rule
+  that can now actually see one.
+- **A13's first formulation could not catch either cascade.** It fired when a
+  chip's source surname was absent from the sentence. But in both real
+  off-by-one cascades — session 4's Gartner/Deloitte/Surfshark sentence and
+  session 3's Magesh/Vectara/Anthropic caption — every named source *is* present
+  and only the attachment is shifted, so no surname is ever absent. It found
+  neither and produced four false positives. Replaced by an ordered shift test,
+  which catches both and nothing else.
+
+Both were found by seeding a known violation into a scratch copy and requiring
+the rule to report it, not by review. A rule that has never been observed failing
+is not yet a rule.
+
+- **Three "Known follow-ups" close**, each pointing at what owns it now: the
+  em-dash policy (D1, enforced by A8 and A9), the prose-density band (D15, and
+  the previously published 73–89 range is not reproducible — whole-file is 43–63,
+  the core 52–84), and orphan footer sources (A15, which asserts a chip *or* a
+  declared reason, because the blanket rule would have demanded a confidence chip
+  on the two deliberately fabricated citations).
+- **`docs/editorial-gap-report.md` joins the purge check's register list**,
+  alongside the spine brief. Its verification-surface section quotes
+  `verify-migration.mjs`'s own check descriptions, which necessarily name every
+  retired string they search for — a record of the retirement, not an assertion
+  of it.
+
 ### All sessions · CASE.md v4.0 migration
 
 - **CASE.md v4.0 replaces the whole fact set** and every lesson is rebuilt
