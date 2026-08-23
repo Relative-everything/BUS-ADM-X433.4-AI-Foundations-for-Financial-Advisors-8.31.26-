@@ -536,27 +536,70 @@ const WOLF_FIGURES = [
   /5 billion words/, /n<sup>|n&#8315;|n⁻¹/, /alligator/,
 ];
 if (enabled('A12')) {
+  /* POPULATION CORRECTED after measurement. The first cut anchored on R7/R8/R9
+     blocks and found 4. But RC-1 records that sessions 1 and 4 carry zero
+     section-level citations attached to any claim — and a quotation with no
+     source note has no R7/R8/R9 block to sit in, so that reading skipped exactly
+     the cases D6 exists to catch. Measured: 19 Wolfram quotations and quoted
+     figures in R1 body prose, of which 7 sit in a section carrying no note at
+     all, 4 of those in session-4. So A12 anchors on the QUOTATION in R1 and
+     looks outward for a section name — in the enclosing section's notes, or in
+     the file's own Wolfram footer entry. "No note to look in" is a finding, not
+     a skip. */
   let n = 0, seen = 0;
   for (const l of lessonFiles()) {
     const text = src(l);
     const c = classify(text);
-    const blocks = [];
-    for (const r of ['R7', 'R8', 'R9']) for (const sp of (c.spans[r] || [])) blocks.push(sp);
-    for (const [s, e] of blocks) {
+    const pop = c.mask(['R1']);
+    /* Section boundaries, so a note is matched to the quotation it serves. */
+    const bounds = [];
+    for (const m of text.matchAll(/<section\b[^>]*>/g)) bounds.push(m.index);
+    bounds.push(text.length);
+    const sectionOf = (off) => {
+      let i = 0;
+      for (let k = 0; k < bounds.length - 1; k++) if (bounds[k] <= off) i = k;
+      return [bounds[i], bounds[i + 1]];
+    };
+    const notes = [...(c.spans.R8 || []), ...(c.spans.R9 || [])];
+    /* The lesson's own Wolfram footer entry counts: EDITORIAL.md A12 says the
+       section name may sit in "its own source note OR footer entry". */
+    let footerNames = false;
+    for (const [s, e] of (c.spans.R7 || [])) {
       const body = text.slice(s, e);
-      const quotes = /(?:&ldquo;|“|")[^“”"&]{12,}?(?:&rdquo;|”|")/.test(body);
-      const figure = WOLF_FIGURES.some((rx) => rx.test(body));
-      if (!/Wolfram/.test(body) || (!quotes && !figure)) continue;
+      if (/Wolfram/.test(body) && [...VALID].some((v) => norm(body).includes(v))) footerNames = true;
+    }
+    const cand = new Set();
+    const q = /(?:&ldquo;|\u201c|")[^\u201c\u201d"&]{12,}?(?:&rdquo;|\u201d|")/g;
+    let m;
+    while ((m = q.exec(pop))) {
+      const ctx = pop.slice(Math.max(0, m.index - 260), m.index + 260);
+      if (/Wolfram/.test(ctx)) cand.add(m.index);
+    }
+    for (const rx of WOLF_FIGURES) {
+      const g = new RegExp(rx.source, 'g');
+      while ((m = g.exec(pop))) cand.add(m.index);
+    }
+    /* One finding per site, not per matching pattern: several WOLF_FIGURES can
+       hit the same sentence, and a reader fixing it fixes one citation. */
+    const byLine = new Map();
+    for (const off of [...cand].sort((x, y) => x - y)) {
+      const ln = c.lineAt(off);
+      if (!byLine.has(ln)) byLine.set(ln, off);
+    }
+    for (const off of byLine.values()) {
       seen++;
-      const named = [...VALID].some((v) => norm(body).includes(v));
+      const [s, e] = sectionOf(off);
+      const near = notes.filter(([ns]) => ns >= s && ns < e).map(([ns, ne]) => text.slice(ns, ne)).join(' ');
+      const named = footerNames || [...VALID].some((v) => norm(near).includes(v));
       if (!named) {
         n++;
-        violation('A12', `${l}/index.html:${c.lineAt(s)}`,
-          `direct quotation of Wolfram (2023) with no\n             section name in its source note`);
+        violation('A12', `${l}/index.html:${c.lineAt(off)}`,
+          `direct quotation of Wolfram (2023) with no\n             section name in its source note`
+          + (near ? '' : '\n             (the section carries no source note at all)'));
       }
     }
   }
-  if (!n) ran('A12', `${seen} Wolfram quotation block(s) all carry a section name`);
+  if (!n) ran('A12', `${seen} Wolfram quotation(s) all reach a section name`);
 }
 
 /* ===================================================================== A13 */

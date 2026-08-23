@@ -45,7 +45,7 @@ may be cited by a future one until it is re-derived.
 | Section | Defect |
 |---|---|
 | **§5** complexity rubric | §5.5 states 62 sections / 58 content. Its own enumeration (12 + 19 + 17 + 19 + 19) gives **86 / 82**, corroborated by §10.1. The rubric is **not approved** (D13) and nothing here depends on it |
-| **§6** mechanism-against-application split | §6.1's normalised table contradicts the detail blocks it embeds — session-0.1 is given a 31 per cent mechanism share in the table and 62 per cent in its own detail; three of the four `<details>` blocks are truncated mid-table |
+| **§6** mechanism-against-application split | §6.1's normalised table contradicts the detail blocks it embeds — session-0.1 is 31% in the table and 62% in its own detail; three of the four `<details>` blocks are truncated mid-table |
 | **§7** prose density | Words ÷ minutes fails to recompute in 7 of 13 rows of §7.4 (e.g. `session-4` `s3`: 732 / 5 = 146.4, printed 143). §7.3's core-to-appendix ratio is stated as 1.25–2.0× where §7.2's own figures give 1.55–2.59×. The band stays unratified (D15) |
 
 Two smaller report defects worth recording so nobody propagates them: the essay's
@@ -371,7 +371,7 @@ explicitly and lives in Part B. They are not averaged.
 | A9 | Em-dash count in body prose does not increase | R1 | HARD FAIL | clean (baseline) |
 | A10 | No dash inside an attributed quotation | R1, R2, R7, R8, R9 | HARD FAIL | clean (0) |
 | A11 | Wolfram section names come from the locked 17 | R1, R7, R8, R9 | HARD FAIL | clean |
-| A12 | Every direct Wolfram quotation carries a section name | R7, R8, R9 | ADVISE → HARD | **~19** |
+| A12 | Every direct Wolfram quotation carries a section name | R1, looking out to R7, R8, R9 | ADVISE | **8** |
 | A13 | No off-by-one chip cascade | R1, R2 | HARD FAIL | **2 cascades** |
 | A14 | No declared-synthetic key on an external-work claim | R1, R2 | HARD FAIL | **≥2** |
 | A15 | Every footer key has a chip or a `data-nochip` reason | R7 | HARD FAIL | **23 keys** |
@@ -713,7 +713,16 @@ token vocabulary, temperature 0.8, 175 billion weights, 100 billion neurons /
 100 trillion connections, the balanced-parenthesis 15%, the 5 billion word
 embedding corpus, the `n⁻¹` power law, the alligator/crocodile pair).
 
-**Regions.** R7, R8, R9.
+**Population.** Anchored in **R1**, looking outward to R7, R8 and R9 for the
+section name — the enclosing section's notes, or the file's own Wolfram footer
+entry, either of which satisfies D6.
+
+**The population was corrected after measurement.** Anchoring on R7/R8/R9 blocks
+finds 4, because a quotation with no source note has no such block to sit in —
+so that reading skipped exactly the cases D6 exists to catch. Measured over R1:
+**19 Wolfram quotations and quoted figures, of which 7 sit in a section carrying
+no note at all**, 4 of those in session 4. "No note to look in" is a finding, not
+a skip.
 
 **Verdict.** **ADVISE at first, HARD FAIL once the D7 mapping is signed off.**
 It cannot be hard today, because the fix requires knowing which section each
@@ -725,9 +734,11 @@ ADVISE  A12  session-4/index.html:1489  direct quotation of Wolfram (2023) with 
              section name in its source note
 ```
 
-**Currently around nineteen instances**, concentrated where RC-1 shows the gap:
-sessions 1 and 4 carry zero section-level citations attached to a claim between
-them, against 20 and 12 named mentions.
+**Currently 8 instances**, deduplicated to one per site — `session-1` at lines
+1652, 1765, 1797, 1803, 1862 and 1878, and `session-4` at 1798 and 1800. Every
+one is in a lesson RC-1 records as carrying **zero** section-level citations
+attached to a claim. Sessions 2 and 3 report none, because their footer entries
+name the sections they draw on.
 
 **Residue for Part B (B4):** deciding *which* of the seventeen a given quotation
 came from. A script can find an uncited quotation; only a reader who knows the

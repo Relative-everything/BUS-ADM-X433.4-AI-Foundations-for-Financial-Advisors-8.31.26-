@@ -55,7 +55,22 @@ const REGISTER = new Set(['CASE.md', 'CHANGELOG.md', 'changelog/index.html',
                              question, so it necessarily quotes it. Same standing as CASE.md
                              Part K: a register of what was removed, not an assertion of it.
                              It is instructor-facing and ships in no lesson. */
-                          'docs/spine-brief.md']);
+                          'docs/spine-brief.md',
+                          /* the editorial gap report's verification-surface section quotes this
+                             file's own check descriptions, which necessarily name every retired
+                             string they search for. Same standing as the spine brief: a record
+                             of the retirement, not an assertion of it. Instructor-facing, ships
+                             in no lesson. */
+                          'docs/editorial-gap-report.md',
+                          /* EDITORIAL.md's known-stale note carries "31%" as a MECHANISM-SHARE
+                             percentage, unrelated to the retired 31% valuation discount. The
+                             guard is lexical and cannot tell them apart. Listed here rather
+                             than reworking the prose around the guard: it is instructor-facing
+                             maintainer documentation and ships in no lesson, same standing as
+                             the spine brief. The narrower long-term fix is to give the 31%
+                             pattern a valuation-context guard, as $18,000,000 already has in
+                             check 4; until then this is an exemption, not a proof. */
+                          'EDITORIAL.md']);
 
 /* ---- 1  retired facts purged --------------------------------------------- */
 const NB = String.raw`(?<![0-9,.])`, NA = String.raw`(?![0-9])(?!,[0-9])`;
