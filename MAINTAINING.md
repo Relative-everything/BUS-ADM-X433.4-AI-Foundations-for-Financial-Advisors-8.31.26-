@@ -108,7 +108,8 @@ node scripts/build-case.mjs        # CASE.md -> the generated artifacts. Fails
 node scripts/inject-case.mjs       # rewrite the span between the CASE sentinels
 node scripts/inject-case.mjs --check   # report drift, write nothing
 node scripts/verify-case.mjs       # hash every injected block; non-zero on drift
-node scripts/verify-migration.mjs  # retired facts, allowances, arithmetic, timing
+node scripts/verify-migration.mjs  # retired facts, allowances, arithmetic, timing,
+                                   # and the spine drift guard (check 20)
 node scripts/verify-browser.mjs    # DOM, handlers, flowchart, screenshots (Chromium)
 node scripts/verify-style.mjs      # CHECK the managed style fence, see below
 ```

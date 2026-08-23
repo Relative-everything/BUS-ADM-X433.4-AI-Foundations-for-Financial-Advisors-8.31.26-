@@ -330,6 +330,39 @@ for (const [id, name, rxs] of [
         bad.length === 0, bad.length ? bad.join('\n') + '\n' + rows.join('\n') : rows.join('\n'));
 }
 
+
+/* ---- 20  case figures written as literals in hand-edited prose ------------ */
+/* The generated block reads every figure from case-facts.json. The recurring
+   question also appears in hand-written prose in three lessons, where the
+   figures are literals. Those are the ones that can drift silently when CASE.md
+   changes, so each is pinned to its fact here. Add a row whenever a case figure
+   is typed into prose rather than generated. */
+{
+  const PINS = [
+    [/Meg is short (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? a year/g, 'steadyGap',    'the steady-state annual shortfall'],
+    [/How much of the (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? note does she call/g, 'notePrincipal', 'the demand-note principal'],
+    [/Each \$1,000,000 she calls permanently removes \$([0-9,]+) of future interest/g, null, 'interest removed per $1,000,000 called'],
+  ];
+  const bad = [], seen = [];
+  for (const l of LESSONS) {
+    const raw = readFileSync(join(REPO, l), 'utf8');
+    const a = raw.indexOf('<!-- CASE:BEGIN'), b = raw.indexOf('<!-- CASE:END');
+    /* prose only: everything outside the generated region */
+    const prose = a >= 0 && b > a ? raw.slice(0, a) + raw.slice(b) : raw;
+    for (const [rx, key, label] of PINS) {
+      rx.lastIndex = 0; let m;
+      while ((m = rx.exec(prose))) {
+        const got = Number(m[1].replace(/,/g, ''));
+        const want = key ? F[key] : Math.round(1000000 * F.noteRate);
+        seen.push(`${l}: ${label} = $${got.toLocaleString('en-US')}`);
+        if (got !== want) bad.push(`${l}: ${label} reads $${got.toLocaleString('en-US')}, case-facts.json says $${want.toLocaleString('en-US')}`);
+      }
+    }
+  }
+  check('20', 'Case figures typed into prose match case-facts.json (spine drift guard)',
+        bad.length === 0, bad.length ? bad.join('\n') : `${seen.length} pinned figure(s) checked, all agree:\n` + seen.join('\n'));
+}
+
 console.log(report.join('\n'));
 console.log(`\nsummary: ${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);
