@@ -1,0 +1,413 @@
+# CASE.md — The Cole Household
+
+**Version 3.0 · 2026-08-23 · supersedes v2.x (Ohio / $18M / founder stock)**
+
+**Golden source. Byte-identical replication required — PEDAGOGY §5.1. Edit this file, run `tools/build-case.mjs`, never hand-edit an injected block in a session file.**
+
+**Synthetic case — classroom anchor only.** No real person, entity, or transaction. Never the assignment substrate (PEDAGOGY §5.5): students build their own work on their own recurring tasks with their own synthetic data.
+
+---
+
+## 0. Machine header
+
+```yaml
+case_id: cole-household
+case_version: "3.0"
+generated: 2026-08-23
+sentinel_open:  "<!-- CASE:BEGIN cole-household v3.0 -->"
+sentinel_close: "<!-- CASE:END cole-household -->"
+retired_versions: ["2.0", "2.1", "2.2"]
+state: arithmetic-verified; legal-characterisations-flagged-pending-instructor-signoff
+```
+
+---
+
+## 1. The household
+
+| | |
+|---|---|
+| **Margaret "Meg" Cole, 64** | Chief executive and 100% owner of **Cole Precision Components Inc. (CPC)**, a C corporation in Dayton, Ohio making precision aerospace fasteners. Meg's father founded the company in 1987. **Meg purchased 100% of the stock from him in 2016 for $14,000,000**, paid on a nine-year installment note serviced with CPC dividends and satisfied in 2025. **Her basis in the CPC stock is $14,000,000.** He died in 2021. She has not claimed Social Security. |
+| **David Cole, 63** | Retired hospital pharmacist. Has not claimed Social Security. |
+| **Marriage and domicile** | Married 31 years, both U.S. citizens. **Illinois domicile since 2023** — the Coles moved from Dayton to Hinsdale to be near their daughter. CPC's plant, workforce, and Meg's office remain in Dayton; Meg travels there roughly weekly. |
+| **Balance sheet** | CPC stock **$55,000,000** · taxable brokerage **$2,500,000** (62% in three technology names) · Meg IRA **$3,000,000** · David 403(b) **$1,000,000** · residence **$2,000,000**, no mortgage · cash **$1,500,000** · T-bills **$1,000,000**. **Total $66,000,000.** |
+| **Household cash flow** | CPC pays **$5,000,000 per year of qualified dividends**. Meg draws **$450,000** of W-2 compensation from CPC. Household living expenses run **$600,000 per year**. |
+| **Children** | **Claire, 34**, physician in Chicago, married, two children, financially independent, no interest in the business. **Nathan, 31**, works in CPC operations. |
+
+**What the $55,000,000 is.** The mid-point of a **2026 preliminary range from CPC's transaction advisor**. It is not a signed appraisal. The only appraisal on file is a **2023 report concluding $38,000,000**. No appraisal of the family-LLC units exists and no discount study has been performed.
+
+---
+
+## 2. The recurring thread
+
+Nothing below has been executed. This is the live technical question the course returns to.
+
+**Step 1 — Recapitalize.** Meg contributes 100% of her CPC stock to a newly formed **Cole Family Holdings LLC**, which issues **1 voting unit and 99 non-voting units**, all to Meg. The LLC's only asset is the CPC stock.
+
+**Step 2 — Seed gift.** Meg makes a **taxable gift of 10 non-voting units** to the **Cole 2026 Irrevocable Trust**, an intentionally defective grantor trust [IDGT — treated as owned by the grantor for income tax, outside the estate for transfer tax]. The attorney proposes drafting it as a **SLAT** [spousal lifetime access trust] with David as a discretionary beneficiary.
+
+**Step 3 — Installment sale.** Meg sells the remaining **89 non-voting units** to the same trust for a **demand promissory note**.
+
+**Step 4 — Retained interest.** Meg keeps the **1 voting unit** in her revocable trust. She controls the LLC after the transaction.
+
+**Step 5 — The annual loop.** CPC pays dividends to the LLC, which distributes 99% to the trust and 1% to Meg. **The trust makes minimum payments — interest only.** The excess accumulates inside the trust. Principal is paid down only when Meg needs cash. Meg, as grantor, pays the income tax on **all** of the trust's income from her own funds.
+
+**Discount claimed.** **30% combined** for lack of control and lack of marketability, on the non-voting units only. The voting unit is valued undiscounted.
+
+---
+
+## 3. The numbers
+
+Recomputed independently on 2026-08-23. Every figure below reconciles. Rates sourced in §11.
+
+### 3.1 Unit valuation
+
+| Line | Amount | Derivation |
+|---|---|---|
+| CPC fair market value, 100% controlling interest | $55,000,000 | stated |
+| Non-voting units, pro-rata NAV (99%) | $54,450,000 | $55,000,000 × 0.99 |
+| Less 30% combined discount | ($16,335,000) | × 0.30 |
+| **Non-voting units, aggregate** | **$38,115,000** | |
+| **Value per non-voting unit** | **$385,000** | $38,115,000 ÷ 99 |
+| 1 voting unit, undiscounted | $550,000 | $55,000,000 × 0.01 |
+
+### 3.2 The transaction
+
+| Line | Amount |
+|---|---|
+| Seed gift — 10 non-voting units | **$3,850,000** |
+| Sale — 89 non-voting units | **$34,265,000** |
+| Seed as a percentage of the note | **11.24%** |
+| 2026 federal exemption | $15,000,000 |
+| Exemption remaining after the seed | $11,150,000 |
+| Demand-note rate — 2026 blended annual rate | **3.82%** |
+| Value removed from the estate at closing | **$20,185,000** |
+| **Value removed per $1 of exemption used** | **$5.24** |
+
+### 3.3 The annual loop
+
+| Flow | Amount |
+|---|---|
+| CPC dividend to the LLC | $5,000,000 |
+| LLC → trust (99%) | $4,950,000 |
+| LLC → Meg (1%) | $50,000 |
+| Trust → Meg, **interest only**, constant | $1,308,923 |
+| Trust retains and accumulates | $3,641,077 |
+| **Meg receives** | **$1,358,923** |
+| Meg's tax on the full $5,000,000 — 23.8% federal plus 4.95% Illinois = 28.75% | **($1,437,500)** |
+| **Year-1 shortfall** | **($78,577)** |
+
+**Meg is underwater from day one, before any assumption about anything.** Her tax on the dividends alone exceeds everything she receives.
+
+### 3.4 Why it gets worse every year — the case's central checkable defect
+
+Meg's inflow is fixed at $1,358,923 because the note is interest-only. Her tax is not fixed: the trust's accumulating cash earns income that is **also taxed to Meg**.
+
+Assumes trust cash invested at 4.0% and taxed to Meg at 45.75% (37% + 3.8% NIIT + 4.95% Illinois). **[M — an assumption, not a fact; a student who challenges it is right to. The direction does not depend on it.]** Household deficit of $349,350 is $600,000 of living expenses against $450,000 of W-2 comp worth roughly $250,650 after tax.
+
+| Year | Meg receives | Meg owes | Household deficit | Cash she must find | Cumulative | Trust cash |
+|---|---|---|---|---|---|---|
+| 1 | $1,358,923 | $1,437,500 | $349,350 | $427,927 | $427,927 | $3,641,077 |
+| 3 | $1,358,923 | $1,573,429 | $349,350 | $563,856 | $1,486,341 | $11,365,986 |
+| 5 | $1,358,923 | $1,720,449 | $349,350 | $710,876 | $2,833,142 | $19,721,247 |
+| 7 | $1,358,923 | $1,879,466 | $349,350 | $869,893 | $4,491,861 | $28,758,298 |
+| 9 | $1,358,923 | $2,051,460 | $349,350 | $1,041,887 | **$6,487,952** | **$38,532,773** |
+
+- **Liquid assets — $5,000,000 of brokerage, cash, and T-bills — are exhausted in year 8.**
+- By year 9 the trust holds **$38,532,773 of idle cash against a $34,265,000 note it is not repaying.** It could have retired the note in year 8 and did not, because the instruction was "minimum payments."
+- Fully liquidating the IRA and 403(b) yields roughly **$2,322,000** after ordinary rates — enough to reach year 11, not further.
+
+### 3.5 The liquidity valve is self-defeating
+
+The note is payable on demand, so Meg can call principal whenever she is short. That is the design. It is also the problem: **every dollar of principal she calls returns to her estate at 100 cents on the dollar**, undoing the discount she paid gift tax to create.
+
+| Line | Amount |
+|---|---|
+| Cash Meg must find over nine years | $6,487,952 |
+| If sourced entirely by calling principal, value returned to the estate | $6,487,952 |
+| Federal estate tax on it at 40% | $2,595,181 |
+| Illinois estate tax at roughly 16% marginal **[M — verify on Form 700]** | $1,038,072 |
+| **Combined transfer-tax cost of the liquidity relief** | **$3,633,253** |
+
+**Every $1 of liquidity relief costs about $0.56 of transfer tax later.**
+
+### 3.6 What the structure buys — the burn, quantified
+
+The pain has a purpose. Every dollar of income tax Meg pays on trust income is a transfer to the trust that consumes **no** gift-tax exemption.
+
+| Line | Amount |
+|---|---|
+| Value removed at closing (the discount) | $20,185,000 |
+| Income tax Meg pays on trust income over nine years — the burn | $15,574,109 |
+| **Total value shifted in nine years** | **$35,759,109** |
+| Transfer tax avoided on the burn alone, at a 56% combined marginal rate | $8,721,501 |
+| Gift-tax exemption consumed | $3,850,000 |
+
+**This is why the structure is worth arguing about.** It shifts $35.8M for $3.85M of exemption. It also cannot be funded past year 8. Both are true, and neither cancels the other.
+
+### 3.7 Why a demand note rather than a term note
+
+| Structure | Rate | Year-1 interest on $34,265,000 |
+|---|---|---|
+| 9-year term note, mid-term AFR | 4.35% | $1,490,528 |
+| Demand note, 2026 blended annual rate | 3.82% | $1,308,923 |
+| **Additional value shifted, year 1** | | **$181,604** |
+
+53 basis points cheaper. The cost: Meg can call $34,265,000 at any time against a trust whose only real asset is illiquid units — which is precisely the retained-power fact pattern the Service attacks. **The demand feature is simultaneously the liquidity valve (§3.5) and the §2036 exposure (§10, V3).**
+
+### 3.8 The alternative the attorney's memo also describes, tested and rejected
+
+One passage of the proposal reads as though the trust buys units **incrementally** over time with excess dividends rather than buying 89 units at one closing. Tested on these numbers:
+
+- The trust's 10 seed units entitle it to 10% of $5,000,000 = **$500,000 per year**.
+- Units cost $385,000 each, so holdings compound at **12.99% per year**.
+- Reaching 99 units takes **19 years**, and every unit after the first is bought at a **higher** price as CPC appreciates — which is the opposite of a freeze.
+
+**Not recommended.** One closing at today's value transfers more, faster, with one appraisal instead of nineteen. This is a genuine ambiguity in the source instruction and is resolved here on arithmetic, not preference. See §10, V14.
+
+---
+
+## 4. Documents
+
+- **2011 wills** pouring over to a joint revocable trust, drafted under Ohio law when the federal exemption was $5,000,000. The credit-shelter formula has never been tested against the 2026 $15,000,000 exemption, against Illinois's $4,000,000 exclusion, or against the move.
+- **2014 shareholder and buy-sell agreement** between CPC and Meg's father, with a **formula price producing $18,000,000** and transfer restrictions requiring corporate consent. Never amended after Meg's 2016 purchase. Unfunded — no life insurance, no sinking fund.
+- **2023 appraisal** concluding **$38,000,000**.
+- **2011 powers of attorney and health-care directives**, Ohio forms.
+- **Unexecuted draft IDGT and demand note.**
+- **No irrevocable life insurance trust. No life insurance of any kind, personal or corporate-owned.**
+- **No LLC operating agreement drafted. No 2026 appraisal. No discount study.**
+
+---
+
+## 5. Charitable
+
+- **No donor-advised fund.** The Coles give **$80,000 per year in cash** directly to their favourite charities.
+- Meg **chairs a Dayton workforce-training nonprofit** and wants to **endow it with $5,000,000 during her lifetime**. She and David have not agreed and are still discussing it.
+- No charitable technique of any kind is under consideration alongside the transfer structure.
+
+**The 2026 arithmetic on the current giving.** Against roughly $5,000,000 of AGI, the OBBBA §170(b)(1)(I) floor disallows the first **$25,000**. Of $80,000 given, **$55,000** is deductible; at the 35% cap on itemized-deduction benefit the saving is **$19,250** — an effective subsidy of **24.06%**, not 37%. Illinois allows no charitable deduction at all.
+
+---
+
+## 6. Open planning questions
+
+Five. None is answered in any session. Each returns.
+
+**1. Business succession.** Does Nathan take over CPC, or does it go to a strategic buyer? A competitor made an unsolicited inquiry in 2025 — no letter of intent, no process, no banker. An internal succession memo rates Nathan not yet ready and Nathan has not seen it. The discount, the note term, the endowment, and the liquidity plan all assume an answer to this, and none has been given.
+
+**2. The SLAT provision.** How should the trust be drafted so David has access without pulling the assets back into Meg's estate? **Reciprocity is the wrong worry here and the file should say so:** the reciprocal-trust doctrine requires two interrelated trusts, and David has no transferable assets with which to create one. The live risks are different — §2036 exposure if Meg has any beneficial access or any power to be added later, David predeceasing at 63, divorce, and the direct conflict between discretionary distributions to David and the trust's obligation on the note.
+
+**3. Note administration.** A demand note is respected only if it is administered like one. Who confirms the interest was actually paid, in cash, on time, from trust funds rather than from Meg? What happens the year the dividend is late? What record survives an examination eight years from now — and what does it mean that the trust sat on $38,532,773 while making minimum payments?
+
+**4. Liquidity for the grantor tax.** Meg owes tax on income she does not receive, against a fixed inflow and a household already running a deficit. Liquid assets run out in year 8 (§3.4), and the obvious fix costs $0.56 on the dollar (§3.5). The other options — toggling grantor-trust status off, a discretionary reimbursement provision under Rev. Rul. 2004-64, cutting CPC's dividend, restructuring to a term note, or simply transferring less — each cost something different. Which cost is worth paying?
+
+**5. Funding the $5,000,000 endowment.** Meg has no liquidity, her deduction is capped at 35 cents with the first $25,000 disallowed, Illinois gives nothing, and a gift of LLC units needs a qualified appraisal and runs into the 30%-of-AGI limit for capital-gain property. The endowment competes with the grantor tax for the same dollars.
+
+---
+
+## 7. Confidentiality landmines
+
+Exactly three (PEDAGOGY §5.3.4). Each is a fact a practitioner would never type into a consumer AI tool.
+
+1. **Nathan.** He does not know a buyer has approached the company, and he has not seen the memo that rates him not ready.
+2. **The privileged strategy.** The 30% discount, the seed sizing, and the demand-note choice exist only in an attorney-client email. No appraiser has been engaged and no privilege waiver has been contemplated.
+3. **The endowment.** Meg chairs the named nonprofit she intends to endow with $5,000,000. Her board does not know, and the intent carries disclosure and conflict implications she has not raised with them.
+
+---
+
+## 8. The case flowchart
+
+Rendered inside the **Case facts** modal on a second tab labelled **Structure**. Self-contained, no network dependency, themes from the host page's CSS custom properties with hard-coded fallbacks. Verified in Chromium 2026-08-23: parses, renders, zero text collisions, zero out-of-viewBox elements.
+
+```html
+<!-- CASE:FLOWCHART cole-household v3.0 -->
+<svg viewBox="0 0 980 780" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-labelledby="coleFcT coleFcD" style="width:100%;height:auto;">
+  <title id="coleFcT">The Cole household transfer structure</title>
+  <desc id="coleFcD">Meg Cole contributes all of her Cole Precision Components stock to Cole Family Holdings LLC, which issues one voting unit and ninety-nine non-voting units. She gifts ten non-voting units to the Cole 2026 Irrevocable Trust as a seed gift worth 3,850,000 dollars, then sells the remaining eighty-nine units to the same trust for a 34,265,000 dollar demand note. She keeps the single voting unit and therefore controls the LLC. Each year CPC pays 5,000,000 dollars of dividends to the LLC, which distributes 4,950,000 to the trust and 50,000 to Meg. The trust pays interest only on the note, 1,308,923 dollars, and retains the remaining 3,641,077 dollars. Meg receives 1,358,923 dollars and owes 1,437,500 dollars of income tax on the entire dividend because the trust is a grantor trust, leaving her 78,577 dollars short in year one and 1,041,887 dollars short by year nine.</desc>
+  <style>
+    .t{font-family:"Source Serif 4",Georgia,serif;font-size:12.5px;fill:var(--case-ink,#16181d)}
+    .m{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;
+       fill:var(--case-muted,#565c68)}
+    .h{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;font-weight:700;
+       font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;fill:var(--case-muted,#565c68)}
+    .g{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:10.5px;
+       fill:var(--case-ink,#16181d)}
+    .box{fill:var(--case-surface,#fff);stroke:var(--case-line,#b4bac4);stroke-width:1.4}
+    .est{fill:var(--case-fill-estate,#f4efe7)}
+    .out{fill:var(--case-fill-outside,#e8eff3)}
+    .ln{stroke:var(--case-line,#868d9a);stroke-width:1.6;fill:none}
+    .dv{stroke:var(--case-line,#b4bac4);stroke-width:1.3;stroke-dasharray:7 6}
+    .w{fill:var(--case-warn,#8a2f14)}
+    .mk{fill:var(--case-line,#868d9a)}
+  </style>
+  <defs><marker id="cA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+     orient="auto"><path class="mk" d="M0 0 L10 5 L0 10 z"/></marker></defs>
+
+  <line class="dv" x1="520" y1="46" x2="520" y2="700"/>
+  <text class="h" x="250" y="34" text-anchor="middle">In Meg&#8217;s estate</text>
+  <text class="h" x="760" y="34" text-anchor="middle">Outside Meg&#8217;s estate</text>
+
+  <text class="h" x="28" y="68">What moves once &#8212; the 2026 restructure</text>
+
+  <rect class="box est" x="28" y="84" width="250" height="50" rx="4"/>
+  <text class="t" x="44" y="105">Meg Cole</text>
+  <text class="m" x="44" y="123">owns 100% of CPC &#183; $55,000,000</text>
+
+  <path class="ln" d="M153 134 L153 174" marker-end="url(#cA)"/>
+  <text class="m" x="163" y="159">contributes all CPC stock</text>
+
+  <rect class="box est" x="28" y="178" width="440" height="82" rx="4"/>
+  <text class="t" x="44" y="200">Cole Family Holdings LLC</text>
+  <text class="m" x="44" y="221">Sole asset: 100% of CPC stock</text>
+  <text class="m" x="44" y="241">Issues 1 voting unit and 99 non-voting units, all to Meg</text>
+
+  <rect class="box est" x="28" y="278" width="214" height="56" rx="4"/>
+  <text class="t" x="42" y="299">Meg keeps 1 voting unit</text>
+  <text class="m" x="42" y="320">$550,000 &#183; controls the LLC</text>
+
+  <rect class="box est" x="254" y="278" width="214" height="56" rx="4"/>
+  <text class="t" x="268" y="299">Note receivable</text>
+  <text class="m" x="268" y="320">$34,265,000 &#183; on demand</text>
+
+  <rect class="box out" x="640" y="142" width="312" height="96" rx="4"/>
+  <text class="t" x="656" y="164">Cole 2026 Irrevocable Trust</text>
+  <text class="m" x="656" y="184">IDGT &#183; drafted as a SLAT for David</text>
+  <text class="m" x="656" y="204">99 non-voting units</text>
+  <text class="m" x="656" y="224">$38,115,000 after a 30% discount</text>
+
+  <text class="g" x="478" y="140">1  SEED GIFT</text>
+  <text class="g" x="478" y="154">10 units &#183; $3,850,000</text>
+  <path class="ln" d="M468 196 L636 172" marker-end="url(#cA)"/>
+
+  <text class="g" x="478" y="240">2  SALE</text>
+  <text class="g" x="478" y="254">89 units &#183; $34,265,000</text>
+  <path class="ln" d="M468 214 L636 206" marker-end="url(#cA)"/>
+
+  <path class="ln" d="M636 256 L472 286" marker-end="url(#cA)"/>
+  <text class="g" x="478" y="306">3  DEMAND NOTE</text>
+  <text class="g" x="478" y="320">$34,265,000 @ 3.82%</text>
+
+  <line class="dv" x1="28" y1="358" x2="952" y2="358"/>
+  <text class="h" x="28" y="390">What moves every year</text>
+
+  <rect class="box est" x="28" y="404" width="176" height="50" rx="4"/>
+  <text class="t" x="116" y="425" text-anchor="middle">CPC</text>
+  <text class="m" x="116" y="443" text-anchor="middle">qualified dividends</text>
+
+  <path class="ln" d="M204 429 L294 429" marker-end="url(#cA)"/>
+  <text class="g" x="249" y="420" text-anchor="middle">$5,000,000</text>
+
+  <rect class="box est" x="298" y="404" width="140" height="50" rx="4"/>
+  <text class="t" x="368" y="434" text-anchor="middle">The LLC</text>
+
+  <path class="ln" d="M438 422 L636 412" marker-end="url(#cA)"/>
+  <text class="g" x="537" y="404" text-anchor="middle">99% &#8594; $4,950,000</text>
+
+  <rect class="box out" x="640" y="396" width="312" height="100" rx="4"/>
+  <text class="t" x="656" y="418">The trust</text>
+  <text class="m" x="656" y="438">pays interest only &#8212; $1,308,923</text>
+  <text class="m" x="656" y="458">retains $3,641,077 every year</text>
+  <text class="m" x="656" y="478">by year 9 it holds $38,532,773 in cash</text>
+
+  <path class="ln" d="M368 454 L368 486 L252 486" marker-end="url(#cA)"/>
+  <text class="g" x="378" y="490">1% &#8594; $50,000</text>
+
+  <path class="ln" d="M700 496 L700 528 L252 528" marker-end="url(#cA)"/>
+  <text class="g" x="430" y="520">interest only &#183; $1,308,923</text>
+
+  <rect class="box est" x="28" y="458" width="220" height="92" rx="4"/>
+  <text class="t" x="42" y="480">Meg receives</text>
+  <text class="m" x="42" y="501">1% share   $&#160;&#160;&#160;50,000</text>
+  <text class="m" x="42" y="521">interest   $1,308,923</text>
+  <text class="m" x="42" y="541">total      $1,358,923</text>
+
+  <path class="ln" d="M138 550 L138 584" marker-end="url(#cA)"/>
+
+  <rect class="box" x="28" y="588" width="300" height="78" rx="4"/>
+  <text class="t w" x="42" y="610">Meg pays the tax</text>
+  <text class="m" x="42" y="631">on all $5,000,000 &#8212; grantor trust</text>
+  <text class="m w" x="42" y="651">$1,437,500 &#183; 28.75% all-in</text>
+
+  <rect class="box" x="348" y="588" width="604" height="78" rx="4"/>
+  <text class="t" x="366" y="610">Year 1: receives $1,358,923, owes $1,437,500. Short $78,577.</text>
+  <text class="t w" x="366" y="631">Year 9: receives $1,358,923, owes $2,051,460. Short $1,041,887.</text>
+  <text class="m" x="366" y="651">Her inflow never grows. Her tax does. Liquid assets run out in year 8. See &#167;3.4.</text>
+
+  <text class="m" x="28" y="700">Synthetic case. Nothing here has been executed. Every tax and legal characterisation is a question, not a holding.</text>
+</svg>
+<!-- CASE:FLOWCHART END -->
+```
+
+---
+
+## 9. Retired facts — the migration grep register
+
+**Every string below is false as of v3.0 and must not survive anywhere in the repo.** This section exists so the migration is verifiable by search rather than by reading.
+
+| Retired | Replaced by | Why |
+|---|---|---|
+| Ohio domicile · "no state estate tax" | Illinois domicile | Illinois taxes estates above $4,000,000, no portability. The old file asserted the opposite of the new truth. **Blocking.** |
+| Founder stock issued 2009 · basis $240,000 | Purchased from her father 2016 · basis $14,000,000 | |
+| Any reference to **QSBS** or **§1202** | Nothing — the technique is unavailable | Purchased stock is not acquired at original issuance and is never QSBS. **Blocking if present.** |
+| CPC $18,000,000 | CPC $55,000,000 | $18,000,000 survives **only** as the 2014 buy-sell formula output |
+| David 67 · Social Security claimed at 66 | David 63 · not claimed | |
+| Taxable brokerage $4,500,000 | $2,500,000 (62% tech = $1,550,000) | |
+| Cash and T-bills $1,500,000 combined | Cash $1,500,000 · T-bills $1,000,000 | |
+| 40% non-voting CPC interest sold directly | 89 of 99 non-voting **LLC** units | the entity layer is new |
+| Seed $650,000 · pre-discount $7,200,000 · discount 31% · note $4,968,000 · 9-year interest-only balloon | Seed $3,850,000 · $385,000/unit · discount 30% · demand note $34,265,000 @ 3.82% | every number changed |
+| "2023 appraisal supports a 31% discount" | 2023 appraisal concluded **$38,000,000**; no discount study exists | |
+| Donor-advised fund · $310,000 balance · $40,000/yr | No DAF · $80,000/yr direct cash | |
+| "$2,000,000 eventual intent" | $5,000,000 lifetime endowment, undecided with David | |
+| The four-session framing question about the planning window and whether a 2023 appraisal still supports a 31% discount | **Deleted outright** | instructed removal — do not reintroduce in any form |
+| Total net worth $30,000,000 | $66,000,000 | |
+| Dayton residence | Hinsdale, Illinois; the 2011 Ohio documents are now **stale instruments**, which is the point | |
+
+**Grep targets that must return zero:** `Ohio domicile`, `QSBS`, `1202`, `founder stock`, `$240,000`, `$4,968,000`, `$650,000`, `31%`, `$7,200,000`, `donor-advised`, `DAF`, `$310,000`, `$4,500,000`, `$30,000,000`, `$2,000,000 to it`, `planning window`.
+**Conditional:** `$18,000,000` is permitted **only** in the 2014 buy-sell sentence. `$2,000,000` is permitted **only** as the residence value.
+
+---
+
+## 10. Instructor verification register
+
+**Per PEDAGOGY §1.3 nothing below appears on screen as settled until Jared signs it off.** Every item is posed in the files as a question.
+
+| ID | Characterisation | Conf. | Note |
+|---|---|---|---|
+| V1 | Illinois estate tax: $4,000,000 exclusion, not indexed, no portability, graduated rates to 16%, separate state QTIP under 35 ILCS 405/2(b-1), Form 700 with the Attorney General within nine months | **H** | Statutory, verified 2026-08-23. Any **dollar** figure on screen needs the AG calculator. |
+| V2 | Adjusted taxable gifts are added back in determining whether the Illinois $4,000,000 threshold is crossed | **M** | Sourced through secondary summaries of the AG fact sheet. Material — Meg's $3,850,000 seed is affected. |
+| V3 | §2036(a)(2) exposure from the retained voting unit — *Powell* (148 T.C. 392, 2017), *Cahill* (T.C. Memo 2018-84), *Strangi* (T.C. Memo 2003-145); *Mirowski* (T.C. Memo 2008-74) as the taxpayer-favourable counterweight where the operating agreement mandates distributions | **M** | Largest technical risk in the structure and the thing a model is most likely to state confidently and wrongly. Teach as open. |
+| V4 | §2036 bona fide sale exception needs a significant non-tax purpose (*Bongard*). CPC is 100% Meg-owned — there is no existing family ownership to consolidate, so the business purpose is thin | **M** | Characterisation, not holding. |
+| V5 | §2701 does not apply — voting and non-voting units with identical economic rights are the same class; management differences disregarded under Treas. Reg. §25.2701-1(c)(3) | **M** | The most commonly misapplied provision on this fact pattern. Teach precisely because students expect it to apply. |
+| V6 | §2704(b) does not disregard the operating agreement where its restrictions are no more restrictive than the Illinois LLC Act default; the 2016 proposed regulations were withdrawn in 2017 | **M** | Confirm the Illinois default. |
+| V7 | §2703(a) disregards the 2014 buy-sell for **valuation** unless the three-prong test is met, while leaving it **enforceable** as contract. A 2014 formula producing $18,000,000 against $55,000,000 fails §2703(b)(3) comparability | **M** | The valuation/enforceability distinction is the teaching point and is easy to state wrongly. |
+| V8 | Rev. Rul. 85-13 — note interest between grantor and grantor trust is disregarded: no income to Meg, no deduction to the trust | **H** | Load-bearing for §3.3. |
+| V9 | Rev. Rul. 2004-64 — a **discretionary** reimbursement provision does not cause inclusion; a **mandatory** one does. State creditor law can still reach the assets | **M** | Confirm Illinois creditor treatment before offering this as an answer to question 4. |
+| V10 | §1202 original-issuance requirement — purchased stock is never QSBS; only gift, death, and certain partnership distributions tack | **H** | Verified 2026-08-23. Basis for the blocking purge in §9. |
+| V11 | The LLC remains disregarded after the sale because Meg and the grantor trust are one taxpayer for income tax (Rev. Rul. 2004-77) | **M** | Determines who reports the dividends and on which return. |
+| V12 | 2026 blended annual rate of 3.82% as the operative §7872 rate for a demand loan outstanding the full year | **M** | Published figure confirmed. Confirm its application to a **seller-financed sale** rather than a loan before stating it as operative. |
+| V13 | Implied EV/EBITDA of the $55,000,000 mid-point is roughly **6.0x** on about $9,170,000 of EBITDA — below observed aerospace-machining comparables | **L** | Inferred from the dividend; no comparables set consulted. Flag as an attack surface on the **undiscounted** value. Do not put a comps figure on screen. |
+| V14 | Resolution of the single-closing vs. serial-purchase ambiguity in favour of one closing (§3.8) | **M** | Resolved on arithmetic. Jared's call to confirm. |
+| V15 | Trust reinvestment at 4.0% taxed at 45.75% (§3.4) | **M** | A modelling assumption, labelled as such on screen. The year-1 shortfall of $78,577 does **not** depend on it. |
+
+---
+
+## 11. Sources
+
+- **Rev. Rul. 2026-13** — August 2026 AFRs: short-term 4.10%, mid-term 4.35%, long-term 4.92%, §7520 rate 5.20%, annual compounding. 2026 blended annual rate 3.82%. **H**
+- **One Big Beautiful Bill Act, P.L. 119-21** (4 July 2025) — basic exclusion $15,000,000 per individual for gifts made and decedents dying after 31 December 2025, indexed from 2027; 40% top rate unchanged; 2026 annual exclusion $19,000. **H**
+- **OBBBA — new IRC §170(b)(1)(I)** — 0.5%-of-contribution-base floor on individual charitable deductions for tax years beginning after 31 December 2025; 60% cash limit made permanent; itemized-deduction benefit capped at 35% for top-bracket taxpayers. **H**
+- **35 ILCS 405** — Illinois Estate and Generation-Skipping Transfer Tax Act: $4,000,000 exclusion, no portability, separate state QTIP under §2(b-1). Illinois Attorney General estate tax instruction fact sheet. **H**
+- **IRC §1202(c)(1)(B)** original issuance; **§1202(h)** tacking for gift, death, and certain partnership distributions only. **H**
+- *Estate of Powell*, 148 T.C. 392 (2017); *Estate of Cahill*, T.C. Memo 2018-84; *Estate of Strangi*, T.C. Memo 2003-145; *Estate of Mirowski*, T.C. Memo 2008-74; *Estate of Bongard*, 124 T.C. 95 (2005). **M** — cited for the shape of the argument, not a holding on these facts.
+- **Rev. Rul. 85-13; Rev. Rul. 2004-64; Rev. Rul. 2004-77.** **M**
+- Illinois individual income tax 4.95%; federal qualified-dividend rate 20% plus 3.8% NIIT under §1411. **H**
+
+Every figure in §3 was recomputed independently on 2026-08-23. No figure in this file is drawn from memory.
+
+---
+
+## 12. Changelog
+
+| Version | Date | Change |
+|---|---|---|
+| 3.0 | 2026-08-23 | Illinois domicile. Ages 64/63, neither claiming Social Security. Stock purchased from father 2016, basis $14,000,000 — QSBS eliminated. CPC $55,000,000 with $5,000,000 of annual qualified dividends. Balance sheet rebuilt to $66,000,000. Structure replaced: family LLC recapitalisation, 30% discount, $3,850,000 seed, $34,265,000 interest-only demand note at the blended annual rate. Charitable rebuilt: no DAF, $80,000/yr, $5,000,000 lifetime endowment intent. Four-session framing question deleted. Five open planning questions replace the previous seven. Flowchart added. Retired-fact grep register added. |
