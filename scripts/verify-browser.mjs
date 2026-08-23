@@ -182,10 +182,10 @@ for (const rel of LESSONS) {
   const errors = [], external = [];
   page.on('pageerror', (e) => errors.push(String(e)));
   page.on('request', (r) => { const u = r.url(); if (!u.startsWith('file://') && !u.startsWith('data:')) external.push(u); });
-  const frag = readFileSync(join(REPO, 'scripts/case-flowchart.html'), 'utf8');
+  const frag = readFileSync(join(REPO, 'scripts/case-flowchart.fragment'), 'utf8');
   await page.setContent(`<!doctype html><meta charset="utf-8"><body>${frag}`, { waitUntil: 'load' });
   await page.waitForTimeout(300);
-  console.log(`\n--- scripts/case-flowchart.html (standalone) ---`);
+  console.log(`\n--- scripts/case-flowchart.fragment (standalone) ---`);
   say(errors.length === 0, `14  zero JS errors` + (errors.length ? `: ${errors[0]}` : ''));
   say(external.length === 0, `14  zero network requests` + (external.length ? `: ${external[0]}` : ''));
   say(!/<script|unpkg|cdn\.|https?:\/\/[^"']*\.(js|css)/i.test(frag), `14  no <script>, unpkg or CDN reference in the source`);

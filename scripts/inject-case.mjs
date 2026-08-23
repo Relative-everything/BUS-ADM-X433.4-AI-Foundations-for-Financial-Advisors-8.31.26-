@@ -33,8 +33,8 @@ const CLOSE = `<!-- CASE:END ${facts.case_id} -->`;
  * every lesson gets the identical implementation.
  */
 export function buildBlock() {
-  const extract   = readFileSync(join(HERE, 'case-extract.html'), 'utf8').trim();
-  const flowchart = readFileSync(join(HERE, 'case-flowchart.html'), 'utf8').trim();
+  const extract   = readFileSync(join(HERE, 'case-extract.fragment'), 'utf8').trim();
+  const flowchart = readFileSync(join(HERE, 'case-flowchart.fragment'), 'utf8').trim();
   const F = facts.figures;
   const L = [];
   L.push('<div class="case-gen">');
@@ -49,13 +49,16 @@ export function buildBlock() {
   L.push('    <p class="case-h">Structure and annual cash flow. Sheet 1 is ownership after closing with both balance sheets; Sheet 2 is year-1 cash with ribbon widths proportional to dollars.</p>');
   L.push(indent(flowchart, 4));
   L.push('  </div>');
-  L.push('  <!-- VOID: needs replacement -->');
-  L.push('  <!-- The recurring four-session framing question is retired by CASE.md');
-  L.push('       v4.0 Part K, which forbids reintroducing it and supplies no');
-  L.push('       replacement. The open questions listed above are the ones CASE.md');
-  L.push('       itself marks open; they are NOT a substitute recurring question.');
-  L.push('       The recurring-question socket is empty in every session until the');
-  L.push('       instructor chooses one. See docs/spine-brief.md. -->');
+  /* The recurring question. Chosen by the instructor from docs/spine-brief.md:
+     candidate A as the spine, with candidate C's lever-choice as the closing
+     clause. It is NOT a CASE.md fact and is deliberately not generated from the
+     master: CASE.md supplies the arithmetic and draws no conclusion, and this
+     question asks for none. It lives here so one edit reaches all six files. */
+  L.push('  <div class="case-spine">');
+  L.push('    <span class="case-spine-h">The question that runs through every session</span>');
+  L.push('    <p class="case-spine-q">Meg is short <b>' + usd(F.steadyGap) + '</b> a year from year 6, while the structure performs exactly as designed. <b>How much of the ' + usd(F.notePrincipal) + ' note does she call this year, what does calling it cost her in every year after, and when is a different lever the better answer?</b></p>');
+  L.push('    <p class="case-spine-n">No session answers it. Every session works on a different part of it. The arithmetic is in the case: each ' + usd(1000000) + ' called permanently removes ' + usd(Math.round(1000000 * F.noteRate)) + ' of future interest, so the gap widens by ' + (F.noteRate * 100).toFixed(2) + '% of every call. CASE.md draws no conclusion about whether the structure is advisable, and neither does this course.</p>');
+  L.push('  </div>');
   L.push('  <p class="case-stamp"><span class="mono">Case v' + facts.case_version + ' ' + '__STAMP__' + '</span></p>');
   L.push('</div>');
   L.push('<script>');
@@ -88,6 +91,8 @@ export function buildBlock() {
   const stamp = createHash('sha256').update(body.replace('__STAMP__', ''), 'utf8').digest('hex').slice(0, 7);
   return { body: body.replace('__STAMP__', stamp), stamp };
 }
+
+const usd = (n) => '$' + Number(n).toLocaleString('en-US');
 
 function indent(s, n) {
   const pad = ' '.repeat(n);

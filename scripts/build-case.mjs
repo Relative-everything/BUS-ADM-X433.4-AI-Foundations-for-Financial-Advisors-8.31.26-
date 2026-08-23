@@ -6,8 +6,8 @@
  * pattern inside a NAMED section, and emits three generated artifacts:
  *
  *   scripts/case-facts.json      every figure as a keyed value
- *   scripts/case-extract.html    the one-screen modal extract
- *   scripts/case-flowchart.html  Part L, stylesheet scoped under .cole-flow
+ *   scripts/case-extract.fragment    the one-screen modal extract
+ *   scripts/case-flowchart.fragment  Part L, scoped under .cole-flow
  *
  * A pattern that no longer matches is a hard failure, not a warning. That is
  * the drift detection: CASE.md changed shape and the extract cannot be trusted.
@@ -236,16 +236,16 @@ writeFileSync(join(HERE, 'case-facts.json'), JSON.stringify(facts, null, 2) + '\
 /* ---------- emit case-flowchart.html ---------------------------------- */
 const fcRaw = CASE.match(/<!-- CASE:FLOWCHART[^>]*-->([\s\S]*?)<!-- CASE:FLOWCHART END -->/);
 if (!fcRaw) die('CASE.md Part L flowchart markers not found');
-writeFileSync(join(HERE, 'case-flowchart.html'), scopeFlowchart(fcRaw[0]));
+writeFileSync(join(HERE, 'case-flowchart.fragment'), scopeFlowchart(fcRaw[0]));
 
 /* ---------- emit case-extract.html ------------------------------------ */
 const extract = buildExtract();
-writeFileSync(join(HERE, 'case-extract.html'), extract);
+writeFileSync(join(HERE, 'case-extract.fragment'), extract);
 
 const stamp = createHash('sha256').update(extract, 'utf8').digest('hex').slice(0, 7);
 console.log(`OK    case-facts.json      ${Object.keys(F).length} keyed figures`);
-console.log(`OK    case-extract.html    ${extract.length} bytes  stamp ${stamp}`);
-console.log(`OK    case-flowchart.html  Part L, scoped under .cole-flow`);
+console.log(`OK    case-extract.fragment ${extract.length} bytes  stamp ${stamp}`);
+console.log(`OK    case-flowchart.fragment  Part L, scoped under .cole-flow`);
 console.log(`OK    Part M self-check    ${checks.length} identities recomputed, all agree`);
 
 /* ====================================================================== */
