@@ -45,7 +45,7 @@ may be cited by a future one until it is re-derived.
 | Section | Defect |
 |---|---|
 | **§5** complexity rubric | §5.5 states 62 sections / 58 content. Its own enumeration (12 + 19 + 17 + 19 + 19) gives **86 / 82**, corroborated by §10.1. The rubric is **not approved** (D13) and nothing here depends on it |
-| **§6** mechanism-against-application split | §6.1's normalised table contradicts the detail blocks it embeds — session-0.1 is 31% in the table and 62% in its own detail; three of the four `<details>` blocks are truncated mid-table |
+| **§6** mechanism-against-application split | §6.1's normalised table contradicts the detail blocks it embeds — session-0.1 is given a 31 per cent mechanism share in the table and 62 per cent in its own detail; three of the four `<details>` blocks are truncated mid-table |
 | **§7** prose density | Words ÷ minutes fails to recompute in 7 of 13 rows of §7.4 (e.g. `session-4` `s3`: 732 / 5 = 146.4, printed 143). §7.3's core-to-appendix ratio is stated as 1.25–2.0× where §7.2's own figures give 1.55–2.59×. The band stays unratified (D15) |
 
 Two smaller report defects worth recording so nobody propagates them: the essay's
