@@ -1169,7 +1169,7 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
   <div class="panel" style="background:var(--gold-bg);border-color:#DFD3AF">
     <span class="plab">Course case — synthetic</span>
     <h4>The Cole household</h4>
-    <p style="max-width:none">Meg Cole, 64, sole owner of Cole Precision Components; founder stock 2009, basis $240,000, appraised at $18,000,000. David Cole, 67, retired. Dayton, Ohio, roughly $30,000,000 in total. A strategic buyer has expressed informal interest; no LOI is signed and Nathan, who works in CPC operations, has not been told. The live transaction: a 40% non-voting interest sold to an IDGT <span class="dim">[a trust drafted so its income is taxed to the grantor while the assets sit outside the estate]</span> for a note, after a $650,000 seed gift, at a 31% discount supported by a 2023 appraisal never re-verified.</p>
+    <p style="max-width:none">Meg Cole, 64, sole owner of Cole Precision Components, which she bought from her father Walter Hensley on 1 July 2016 for $14,000,000. That purchase price is her basis; she did not found the company. CPC is indicated at $55,000,000 of a $67,000,000 balance sheet. David Cole, 63, retired. Barrington Hills, Illinois, and the plant is in Rockford. A strategic buyer has expressed informal interest; no LOI is signed and Nathan, who works in CPC operations, has not been told. The live transaction: 900 non-voting units of a new LLC moved to a grantor trust <span class="dim">[a trust drafted so its income is taxed to the grantor while the assets sit outside the estate]</span> by a $2,002,000 seed gift of 52 units and a $20,020,000 demand note for 520 more, at a 30% discount the file supports with no appraisal at all.</p>
     <p style="max-width:none"><strong>Classroom anchor only.</strong> Part 1 is built on a real recurring task from your own practice, using your own synthetic or de-identified data. Do not build it around the Coles — your handoff partner would already know every input.</p>
   </div>
 
@@ -1261,7 +1261,7 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
 
   <p>The advisory use case is in front of you: governing terms spread across a 2011 will, a 2011 trust, a 2014 buy-sell, a 2023 appraisal and two unexecuted drafts, none read end to end this year. The model is not asked to know the Coles. It is asked to read the three paragraphs the ranker handed it. Everything that goes wrong went wrong in the ranking or in the reading.</p>
 
-  <p>The retriever is real. It builds an IDF index over ten chunks of the Cole set, weights each term by <code>tf × ln(1 + N/df)</code>, and ranks by cosine similarity. Two of four preset queries are engineered to fail — not a bug, the alligator-and-crocodile property arriving in an $18,000,000 valuation question.</p>
+  <p>The retriever is real. It builds an IDF index over ten chunks of the Cole set, weights each term by <code>tf × ln(1 + N/df)</code>, and ranks by cosine similarity. Two of four preset queries are engineered to fail — not a bug, the alligator-and-crocodile property arriving in a $55,000,000 valuation question.</p>
 
   <div class="panel" data-task="t-s4" data-comp="estimate-then-reveal">
     <span class="do">Do this now — 6 minutes</span>
@@ -1460,9 +1460,9 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
 
   <p class="big">A record of what was said is not a record of why you recommended what you recommended. Extraction produces the first. The second must be produced deliberately, and a note-taker structurally cannot generate it, because the alternatives you rejected were never spoken aloud.</p>
 
-  <p>Take the live decision in the Cole file. The 40% non-voting interest is being <em>sold</em> to the trust for a $4,968,000 note rather than <em>gifted</em> to it. Nobody in the meeting will say why. The reasoning happened between meetings, in the attorney's head and yours, and if it is not written down at the time it is not recoverable later — not because memory fails, but because a reconstruction written after an examination begins is worth approximately nothing.</p>
+  <p>Take the live decision in the Cole file. The 520 non-voting units are being <em>sold</em> to the trust for a $20,020,000 demand note rather than <em>gifted</em> to it. Nobody in the meeting will say why. The reasoning happened between meetings, in the attorney's head and yours, and if it is not written down at the time it is not recoverable later — not because memory fails, but because a reconstruction written after an examination begins is worth approximately nothing.</p>
 
-  <p>The second half of the exercise is harder and more valuable. If the return supporting this transaction were examined, the 31% discount would have to be defended on the evidence that existed <em>when the transaction closed</em>. The case supplies a 2023 appraisal that has never been re-verified and a buyer who has expressed informal interest. Sort what would help from what would not.</p>
+  <p>The second half of the exercise is harder and more valuable. If the return supporting this transaction were examined, the 30% discount would have to be defended on the evidence that existed <em>when the transaction closed</em>. The case supplies a 2023 appraisal that concluded a value for the whole company and contains no discount study at all, and no appraiser has been engaged since. There is nothing behind the 30% to re-verify, and a buyer has now expressed informal interest. Sort what would help from what would not.</p>
 
   <div class="panel" data-task="t-s13" data-comp="two-bucket-sorter">
     <span class="do">Do this now — 6 minutes</span>

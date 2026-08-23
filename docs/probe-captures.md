@@ -1,5 +1,15 @@
 # Probe captures for Session 0.1
 
+> **Superseded by CASE.md v4.0 (2026-08-23).** Every capture in this file was
+> run before the v4.0 rebuild and models the pre-v4.0 fact set: an Ohio domicile
+> with no state estate tax, a smaller balance sheet, and unit and seed figures
+> that no longer exist. Under v4.0 the Coles are lifelong Illinois residents, the
+> company is in Rockford, and Illinois taxes estates above $4,000,000 with no
+> portability, which changes the direction of the state-tax rows below. The
+> captures are **left verbatim on purpose**: editing a transcript would make it a
+> fabrication (pedagogy.md s1 R1 and R5). Re-run them against v4.0 before any
+> figure here is taught, and do not read the parameter tables as current case
+> facts.
 P1: factual, cutoff-sensitive (Cole rate lookup)
 Settings: Sonnet 5, effort medium, web search OFF, thinking off
 Date run: 2026-08-22

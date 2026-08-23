@@ -48,7 +48,7 @@ Publishing and versioning are the same act. GitHub Pages serves whatever is on
 git pull origin main
 # make the edit
 git add -A
-git commit -m "Session 1: correct the Section 1202 gross-asset ceiling"
+git commit -m "Session 1: correct the combined valuation discount"
 git push origin main
 ```
 
