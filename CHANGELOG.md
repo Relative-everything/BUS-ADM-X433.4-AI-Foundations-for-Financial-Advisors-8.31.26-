@@ -12,6 +12,144 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ## 2026-08-22
 
+### Session 0.1 · The Control Surface (new)
+
+- **Session 0.1 built and published** at `session-0.1/index.html`. It runs
+  *before* Session 1, so it carries no retrieval bridge; the page says so. A
+  150-minute block with 120 allocated across twelve sections, which is a
+  second block format for the 0.x series and is the one parameter this lesson
+  does not share with Sessions 1 to 4.
+- **Fourteen interactions across twelve component types**, including one new
+  mechanism: `ctx-inspector`, the first three-pane component in the corpus.
+  Twelve controls, twelve context blocks, three probe prompts. It renders the
+  output as one captured base plus composed delta fragments rather than as a
+  lookup table, because the legal configuration space is 38,016 states and a
+  fifty-cell table would cover 0.132% of it. `scripts/state_space.py` ships
+  with the lesson so that figure is reproducible rather than asserted.
+- **Illegal states are greyed and visible, never hidden**, each with its reason
+  printed next to it rather than only on hover. All seven dependency rules are
+  live: no effort selector on Haiku 4.5, thinking locked on Opus 5 and Fable 5,
+  thinking not disableable at xhigh or max, skills requiring code execution,
+  research forcing web search, and the project blocks greying outside a project.
+- **No token counts anywhere.** Window sizes are the only absolute numbers and
+  they are sourced. Every per-block figure is an illustrative proportion of the
+  window, badged and chipped L. Price per million tokens and knowledge cutoffs
+  print `[UNVERIFIED, needs source]` rather than an invented figure.
+- **Twelve footer sources**, with the memory article upgraded from M to H and
+  the plugins article from UNVERIFIED to H, both per the verified evidence annex.
+- New: `scripts/diff_case_block.py`, so the byte-identity check on the Cole
+  block is reproducible instead of eyeballed. Current output: CASE.md block
+  2,617 bytes, `sha256 5ea2282e`, both copies in the lesson identical.
+
+### Session 0.1 · What is still open, in the order to do it
+
+Read this first when you come back to the lesson. Everything below is known,
+labelled on the page where it appears, and none of it blocks the file from
+being on the site.
+
+1. **Re-capture probe P2 and P3.** This is the one that matters. Both captures
+   in `docs/probe-captures.md` contradict `CASE.md`. P2 was run against a
+   prompt naming "David and Sarah Cole"; the canonical household is Meg and
+   David Cole and there is no Sarah. P3 models a $12.0M interest with $1.2M of
+   basis and a $1.2M seed gift against the canonical $7,200,000 pre-discount
+   value, $240,000 basis and $650,000 seed. Both ship verbatim, because editing
+   a transcript would make it a fabrication, and both are labelled on the page
+   and in the footer as designed defects in the meantime. When you re-run them,
+   the base strings are extracted from `docs/probe-captures.md` programmatically
+   at build time, so a rebuild picks up new captures verbatim with no
+   hand-editing of the HTML; what you retire by hand is the pair of on-page
+   defect notices in section 4 and the two matching footer entries.
+2. **Re-verify the twelve sources against the primary articles.** No source was
+   fetched during the build. Every H chip inherits the 2026-08-20 verification
+   recorded in the build spec's ledger and the annex. This is build-checklist
+   item B1 and it is the largest thing the validators cannot cover.
+3. **Fetch the body of `src-routing`**, support article 15363606, or cut the
+   model-switching paragraph in section 2. Its URL and title are confirmed and
+   its body has never been read, so the page currently claims only that the
+   behaviour exists and is documented.
+4. **Re-confirm the three starred plugin items** at support article 13837440:
+   the built-in and GitHub-sourced marketplaces, the Customize action opening a
+   Cowork task, and the Plugin Create walkthrough. They are marked with an
+   asterisk in the section 7 instructor key.
+5. **Walk the live settings interface on the morning you teach.** Record which
+   memory experience your own account is on, because the new and legacy
+   experiences are both live and put the toggles in different places. The cold
+   open already asks the room to report which one they see.
+6. **Decide about price per million tokens and knowledge cutoff.** Seven
+   `[UNVERIFIED, needs source]` markers are on the page. The models overview
+   carries both figures; nobody recorded them at verification.
+
+### Session 0.1 · Timing and known defects
+
+- **Sections 1 and 7 are over budget at the podium**, measured in a browser with
+  every panel revealed: section 1 runs about 88 words per minute against seven
+  minutes, section 7 about 124 against ten. Sections 4 and 8 read over only
+  because the measurement counts material that is revealed on demand, chiefly
+  the captured transcripts and the two demo fallbacks. A reallocation that
+  keeps the total at exactly 120 and therefore keeps the validator green:
+  section 1 from 7 to 9, section 7 from 10 to 12, section 4 from 16 to 14,
+  section 8 from 10 to 8. Not applied, because the section map is the build
+  spec's and changing it is a deliberate revision rather than a fix.
+- **At 380px the topbar Case facts button is pushed off the screen**, by 150px
+  in this lesson and 135px in Session 1. This is pre-existing chrome in the
+  shared stylesheet, not something Session 0.1 introduced, and fixing it
+  restyles every lesson in the repository. One media query at `#topbar` does it.
+- **The prose-density figure the validator reports is not a prose measurement.**
+  It counts markup as words, because the method never strips tags. Reported
+  86.1 words per allocated minute; the tag-stripped section figure is 44.9.
+  The metric is unratified and never blocks, but do not quote the reported one.
+- **`restyle_sweep.py` has no ignore list.** It walks every `.html` under the
+  repository, so any `node_modules` left in the tree fails the style gate on
+  files that are not lessons. Keep build tooling outside the repository.
+
+### Session 0.1 · Still to do outside the lesson file
+
+- Ratify the 150/120 block for the 0.x series in the pedagogy spec, and close
+  the open em-dash decision. Session 0.1 is the first new build since that
+  decision opened; the file bans em dashes in new copy and keeps them verbatim
+  in harvested corpus code and captured transcripts. All 32 in the file are
+  accounted for that way and none are in new copy.
+- Register `ctx-inspector` as component-bank entry 19, but only after it has
+  survived one delivery. A mechanism that has run once is not yet a family.
+- Add the 0.x series rows to the course document and rerun the
+  assignment-alignment audit.
+- Tag the lesson after it is delivered:
+  `git tag -a session-0.1-delivered-YYYY-MM-DD -m "Session 0.1 as delivered"`.
+
+### Site
+
+- **The hub now carries a Session 0.1 card**, placed above Session 1 because
+  0.1 runs before it. The card is marked as a primer so the numbering does not
+  read as a missing session.
+- Hub last-updated stamp moved to 2026-08-22.
+
+### Repository
+
+- **Four Session 0.1 input files moved onto their intended paths** out of an
+  accidental `docs/docs/scripts/docs` nesting, and the empty tree deleted. The
+  build spec, the verified evidence annex and the probe captures now sit in
+  `docs/`, and the state-space script in `scripts/`. Pure renames, no content
+  changed.
+- `docs/session-0-1-progress.md` added: the build state, the authority order,
+  and the open flags, so the work can be resumed from the file plus the commit
+  history rather than from memory.
+- **Style payload refreshed across all six existing pages.** Adding the
+  `ctx-inspector` block to the shared component stylesheet changes the payload
+  hash for every file carrying the managed fence, so the sweep necessarily
+  rewrote them. Verified that in all six, every byte outside the fence is
+  identical to what was on `main`: no lesson copy and no hub content changed.
+
+### Checks that passed with no change needed
+
+- Session 0.1 is clean against the full standing purge list, not only the name
+  the build was given: no Okonkwo, Reyes, Adaeze or Ilesanmi.
+- **The hub case-name drift is already fixed.** The maintainer notes still
+  carry it as a known defect and the lesson-builder skill still lists it as
+  repository backlog item 1, but `index.html` contains no retired name. It was
+  resolved in the 2026-08-20 second pass. Both backlogs are stale on this point.
+
+### Live model console · Sessions 0.1 and 1 (new)
+
 Sessions 0.1 and 1 gain an optional live model console. A reader pastes their
 own free Gemini API key into a box at the top of the page and the probes on that
 page run against a live model instead of the captured outputs. It is off by
@@ -22,7 +160,7 @@ Google Fonts, so it is an architectural exception and is recorded as one. The
 reasoning, the alternatives rejected, and the pedagogical case are in
 `docs/gemini-live-api-feasibility.md` and `docs/live-model-console-plan.md`.
 
-### Why bring-your-own-key, and why only these two sessions
+### Live model console · why bring-your-own-key, and why only these two sessions
 - **A single shared course key was analysed and rejected.** Google's free tier
   terms permit training on submissions and human review; a key in a static page
   is public the moment it ships and is a GitHub secret-scanning partner pattern;
@@ -33,7 +171,7 @@ reasoning, the alternatives rejected, and the pedagogical case are in
   so there is nothing confidential to send. Sessions 2 to 4 build on students'
   own client work and must not get this treatment.
 
-### Session 1
+### Live model console · Session 1
 - **The Kalai probe in section 04 now runs live when a key is connected.** It
   previously rendered three hardcoded dates and asserted its own conclusion,
   which made an empirical claim about model behaviour unverifiable by the reader
@@ -51,7 +189,7 @@ reasoning, the alternatives rejected, and the pedagogical case are in
   paper's DeepSeek-V3 runs and that a live run is the reader's own observation,
   carrying no confidence chip.
 
-### Session 0.1
+### Live model console · Session 0.1
 - **Section 08 gains run 4: the same probe with none of the five layers.** Runs
   1 to 3 and the runbook table are unchanged. Run 4 sends the section 01 probe
   through the bare API with no system prompt, personalisation, retrieval, tools
@@ -60,7 +198,7 @@ reasoning, the alternatives rejected, and the pedagogical case are in
 - Prompt is byte-identical to P1 in `docs/probe-captures.md` so the comparison
   against runs 1 and 2 is exact.
 
-### Both sessions
+### Live model console · both sessions
 - Console is collapsed by default, carries the free-tier data warning and an
   instruction to verify the page's only outbound origin before pasting anything,
   and includes a free-form prompt box.
@@ -79,7 +217,7 @@ reasoning, the alternatives rejected, and the pedagogical case are in
   and say aloud that the simulations teach the mechanism while the live call
   shows the mechanism is not a teaching fiction.
 
-### Repository
+### Live model console · repository
 - `MAINTAINING.md`: the externals rule now allows a second origin, with the
   conditions on it; a new section documents the three shared fences, the ES5
   constraint, the two-`<script>`-block trap in Session 1, and the rule that
