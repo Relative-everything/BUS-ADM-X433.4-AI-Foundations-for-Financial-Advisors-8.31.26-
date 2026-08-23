@@ -26,16 +26,16 @@ The measurement pass is [`docs/editorial-gap-report.md`](docs/editorial-gap-repo
 Rules cite it by section. It is not restated here.
 
 The report was assembled from parallel passes and does not fully reconcile against
-itself. Four figures this document relies on normatively were re-derived before any
+itself. Four figures this document relies on normatively (RC-1 to RC-4) were re-derived before any
 rule was written. Where the re-derivation and the report disagree, **the figure
 below governs**.
 
 | | Re-derived | Report says | Verdict |
 |---|---|---|---|
-| **R-1** Wolfram references already carrying a valid section-level citation | **11 lines**: hub 0, S0.1 0, S1 2, S2 4, S3 5, S4 0 | §2.2 "nine" with a ten-row table; §2.3 "11" | **11.** §2.2's prose is wrong twice — against its own table and against disk |
-| **R-2** Wolfram named mentions per file | **lines 1 / 1 / 20 / 14 / 12 / 12**; occurrences 1 / 1 / 29 / 22 / 24 / 17 | §2.1 says 1/1/20/14/12/12 (lines, correct); §9.2 concern #4 says 1/1/20/16/16/13 | **§2.1 is right, §9.2 is wrong.** §9.2's figures match neither scope |
-| **R-3** Exemption-class counts | Class A **0**; Class A2 **28** (22 em + 6 en, four captured strings); Class B **9 per file × 6 = 54**; Class C `IRC §§ 671–679` **12**; Class D 22 `.apxback` + 4 nav labels + 12 placeholder cells | §1.7 Class B "9 × 6 = 54" ✓; §1.3's injected column says 8; §1.7 says `IRC §§ 671–679` ×13 | **§1.7's 54 is right** — §1.3 misses the `&#8212;` at `session-1:1118`, which is inside the sentinels, not in the swept stylesheet as §1.2 claims. **`IRC §§ 671–679` is 12, not 13** |
-| **R-4** Appendix index cards | Reproduced exactly, all four lessons | §10.1 | **§10.1 is correct in every cell.** `session-3 #sHY` and `session-4 #sRSP` confirmed at **zero** inbound `href` |
+| **RC-1** Wolfram references already carrying a valid section-level citation | **11 lines**: hub 0, S0.1 0, S1 2, S2 4, S3 5, S4 0 | §2.2 "nine" with a ten-row table; §2.3 "11" | **11.** §2.2's prose is wrong twice — against its own table and against disk |
+| **RC-2** Wolfram named mentions per file | **lines 1 / 1 / 20 / 14 / 12 / 12**; occurrences 1 / 1 / 29 / 22 / 24 / 17 | §2.1 says 1/1/20/14/12/12 (lines, correct); §9.2 concern #4 says 1/1/20/16/16/13 | **§2.1 is right, §9.2 is wrong.** §9.2's figures match neither scope |
+| **RC-3** Exemption-class counts | Class A **0**; Class A2 **28** (22 em + 6 en, four captured strings); Class B **9 per file × 6 = 54**; Class C `IRC §§ 671–679` **12**; Class D 22 `.apxback` + 4 nav labels + 12 placeholder cells | §1.7 Class B "9 × 6 = 54" ✓; §1.3's injected column says 8; §1.7 says `IRC §§ 671–679` ×13 | **§1.7's 54 is right** — §1.3 misses the `&#8212;` at `session-1:1118`, which is inside the sentinels, not in the swept stylesheet as §1.2 claims. **`IRC §§ 671–679` is 12, not 13** |
+| **RC-4** Appendix index cards | Reproduced exactly, all four lessons | §10.1 | **§10.1 is correct in every cell.** `session-3 #sHY` and `session-4 #sRSP` confirmed at **zero** inbound `href` |
 
 ### Known-stale evidence — build no rule on these
 
@@ -104,8 +104,34 @@ authorial choice — the picture is clean:
 | `session-3` | **94** | 15 | **literal** | 14% |
 | `session-4` | 1 | 84 | entity | 1% |
 
-Measured over R1 with R2–R11 removed. That table is the **declared baseline**, and
-A8 ratchets against it rather than against a universal threshold.
+That table is the **declared baseline**, and A8 ratchets against it rather than
+against a universal threshold.
+
+## authoredProse — the population, defined once
+
+This population has been under-specified three separate times: R8 and R9 dropped
+by a literal reading of "R2–R11 removed", R11 absent from the declared table, and
+A9's region line never naming R11 at all. It is therefore named once, here, and
+every rule that uses it cites the name and restates no region list.
+
+> **`authoredProse` = `mask(R1, R8, R9)`, which by construction excludes R11 and
+> every other region, and therefore excludes the exempt classes that live in
+> them.**
+
+Source notes (R8) and reading blocks (R9) are **in**; footer entries (R7),
+attribute values (R3), script (R2), CSS (R4), comments (R5), the injected span
+(R6), captured transcripts (R10) and byte-shared boilerplate (R11) are **out**.
+Defined in code as `authoredProse()` in `scripts/editorial-regions.mjs`.
+
+**A8 and A9 run on `authoredProse`. A10 does not, and the difference is
+deliberate** — a quotation guard has to reach footer entries and script literals,
+so A10 keeps its own wider population of R1, R2, R7, R8, R9.
+
+**The R11 figures for `session-0.1` and `session-1` in the table above predate the
+console fences entering R11.** The R11-complete figures are **0 / 7** and
+**1 / 83**. A8 is unaffected — both files' majority form is already entity and
+their minority counts are already 0 and 1 — so the table stands as A8's baseline.
+A9, which ratchets the total, uses the R11-complete figures.
 ---
 
 # The em-dash exemption register
@@ -279,7 +305,7 @@ So ... What Is ChatGPT Doing, and Why Does It Work?
 Thanks
 ```
 
-Two matching notes a checker needs, both learned from re-deriving R-1:
+Two matching notes a checker needs, both learned from re-deriving RC-1:
 
 - **Match after normalisation, not on bytes.** The corpus writes these names in at
   least four encodings — `It's`, `It&rsquo;s`, `It’s`; `…`, `&hellip;`,
@@ -289,7 +315,7 @@ Two matching notes a checker needs, both learned from re-deriving R-1:
   appear inside quotation marks or immediately adjacent to a Wolfram attribution
   before treating them as a section citation.
 
-## Where the eleven existing citations are (R-1)
+## Where the eleven existing citations are (RC-1)
 
 Recorded so the checker's first run has a known-good baseline, and because the
 distribution is the argument for **D6**.
@@ -334,7 +360,7 @@ explicitly and lives in Part B. They are not averaged.
 
 | # | Rule | Regions | Verdict | Violated today |
 |---|---|---|---|---|
-| A1 | Appendix card minutes match their section | R1 | HARD FAIL | **14 cards** |
+| A1 | Appendix card minutes match their section | R1 | HARD FAIL | **12 cards** |
 | A2 | Appendix card count matches appendix section count | R1 | HARD FAIL | **2 lessons** |
 | A3 | Appendix eyebrow minute total matches the sections | R1 | HARD FAIL | **3 lessons** |
 | A4 | Core lede section count and minutes match the page | R1 | HARD FAIL | **4 lessons** |
@@ -358,7 +384,7 @@ explicitly and lives in Part B. They are not averaged.
 
 ## The appendix-index rules (A1–A5)
 
-Report §10.1, re-derived as **R-4**. All five are pure arithmetic against markup
+Report §10.1, re-derived as **RC-4**. All five are pure arithmetic against markup
 that is already on the page, all five are currently wrong, and **nothing in the
 existing gate touches them** — `verify-migration.mjs` check 16 and
 `validate_lesson.py` V5 both verify the *footer time table*, which sums correctly
@@ -383,10 +409,25 @@ section's `.eyebrow span.mins`.
 FAIL  A1  session-2/index.html  card #s1 says 10 min, section says 16 min
 ```
 
-**Currently violated 14 times**: session 1 cards `A5` (18 vs 16) and `A7`
-(15 vs 17); session 2 `B1` (10 vs 16), `B2` (8 vs 15), `B3` (10 vs 16), `B4`
-(10 vs 16); session 3 `C1` (12 vs 16), `C2` (9 vs 14), `C3` (7 vs 14); session 4
-`D1` (9 vs 16), `D2` (6 vs 14), `D3` (8 vs 14).
+**Currently violated 12 times.** The header of this paragraph previously said 14
+while its own enumeration listed 12; 12 is right. Report §10.1's "cards whose
+minutes disagree" row of 2 / 4 / 3 / 3 was correct, and so was RC-4's finding
+that §10.1 is correct in every cell.
+
+| Lesson | Card | `href` | Card says | Section says |
+|---|---|---|---|---|
+| `session-1` | A5 | `#s8` | 18 | 16 |
+| `session-1` | A7 | `#s14c` | 15 | 17 |
+| `session-2` | B1 | `#s1` | 10 | 16 |
+| `session-2` | B2 | `#s2` | 8 | 15 |
+| `session-2` | B3 | `#s4` | 10 | 16 |
+| `session-2` | B4 | `#s9` | 10 | 16 |
+| `session-3` | C1 | `#s5` | 12 | 16 |
+| `session-3` | C2 | `#s8` | 9 | 14 |
+| `session-3` | C3 | `#s11` | 7 | 14 |
+| `session-4` | D1 | `#sW1` | 9 | 16 |
+| `session-4` | D2 | `#sW2` | 6 | 14 |
+| `session-4` | D3 | `#sWS` | 8 | 14 |
 
 ### A2 — appendix card count matches appendix section count
 
@@ -490,6 +531,29 @@ These implement **D1**, **D2 as amended**, **D3**, **D3b** and **D4**. Read the
 exemption register above first; every one of these rules runs against a population
 with the exempt classes already removed.
 
+### R11 is not unchecked — it has its own corpus baseline
+
+Excluding byte-shared boilerplate from every per-file population would leave it
+checked nowhere, and it is student-facing copy: *"Live model &mdash; optional"*,
+*"Gemini API key &mdash; free, from…"*. So R11 carries **one corpus-level
+baseline**, ratcheted the same way, and is covered once instead of N times.
+
+Measured from the canonical copy — R11 spans deduplicated by content hash, so a
+block shared across four lessons is counted once, not four times:
+
+| | Distinct blocks | Literal `—` | `&mdash;` | Total |
+|---|---|---|---|---|
+| R11, corpus-wide, deduplicated | **23** | **0** | **23** | **23** |
+
+Eight of the 23 appear in more than one file. The `.ritual` block is in four, the
+three console fences are in two each, and the `.apxback` bars are mostly unique
+because each names the two sections it sits between.
+
+This does not conflict with the md5 pairing in the pre-push gate, which asserts
+that the console fences are byte-identical *across* the two lessons. This asserts
+that their dash count does not drift *over time*. Different propositions, and both
+are worth holding.
+
 ### A8 — em-dash form does not drift from the file's baseline
 
 **Asserts.** Each lesson has a declared **majority form** and a declared
@@ -527,7 +591,10 @@ that `MAINTAINING.md` forbids. A ratchet asks only that a file does not get *les
 consistent than it is now, which is the whole point and costs nobody an edit.
 
 **Session 3 is left alone (D3), and its 22 crept-in entities are left alone
-(D3b).** Report §10.2's git evidence is decisive: session 3 arrived at 77 literal /
+(D3b).** **Both figures for session 3 are correct and count different
+populations: 22 is the whole-file `&mdash;` count, 15 is the count over
+`authoredProse`. Neither supersedes the other, and the baseline file records which
+population each figure belongs to.** Report §10.2's git evidence is decisive: session 3 arrived at 77 literal /
 0 entity in the instructor's own first upload at `7f1ece4`, before any model pass,
 and an independent rebuild at `a5fafff` reproduced it at 98/0. It is the original
 author's convention. `—` and `&mdash;` render the identical glyph, so normalising
@@ -540,10 +607,23 @@ lesson has". Four such rebuild commits exist — `879c6a4` and `5b7e7fc` (sessio
 
 ### A9 — em-dash count in body prose does not increase
 
-**Asserts.** Total em dashes in R1 per file does not rise above its recorded
-baseline.
+**Asserts.** Total em dashes per file does not rise above its recorded baseline.
 
-**Regions.** R1, exempt classes removed.
+**Population.** `authoredProse`. See the definition above; no region list is
+restated here.
+
+**The baseline**, measured on this commit over `authoredProse`:
+
+| File | Literal `—` | `&mdash;` | **Total** |
+|---|---|---|---|
+| `session-0.1` | 0 | 7 | **7** |
+| `session-1` | 1 | 83 | **84** |
+| `session-2` | 2 | 69 | **71** |
+| `session-3` | 94 | 15 | **109** |
+| `session-4` | 1 | 84 | **85** |
+
+`session-0.1` and `session-1` are the two files the console-fence decision moved:
+7 not 11, and 83 not 87 on the entity count.
 
 **Verdict.** HARD FAIL.
 
@@ -645,7 +725,7 @@ ADVISE  A12  session-4/index.html:1489  direct quotation of Wolfram (2023) with 
              section name in its source note
 ```
 
-**Currently around nineteen instances**, concentrated where R-1 shows the gap:
+**Currently around nineteen instances**, concentrated where RC-1 shows the gap:
 sessions 1 and 4 carry zero section-level citations attached to a claim between
 them, against 20 and 12 named mentions.
 
@@ -768,9 +848,10 @@ marked `[UNVERIFIED — needs source]` rather than filled in."*
 So the rule is **register-aware**: the marker must use the declared form
 (`[UNVERIFIED, needs source]` in the lessons, `[UNVERIFIED — needs source]` in
 `CASE.md`), and it must sit in a region the file's convention covers. Session 0.1's
-eight sit across five region classes — body prose (2), footer entries (2), a JS
-feedback string (1), and two comments declaring the convention itself — and all
-eight pass.
+eight occurrences sit on seven lines — line 1113 carries two — across four region
+classes: body prose (1113 ×2 and 1115), footer entries (1642, 1645), a JS feedback
+string (2098), and two comments declaring the convention itself (1876, 2090). All
+eight pass. Report §9.2 concern #16 says seven; it counted lines, not occurrences.
 
 **Verdict.** HARD FAIL.
 
@@ -1126,11 +1207,18 @@ claims that has not yet been tested against a running implementation.
 Exit-code contract:
 
 ```
-Part A violation                              -> exit 1, blocks the push
-Part A rule whose exemption list is still moving -> demote to ADVISE until it settles
-Part B                                        -> never in the checker at all
-Exempt classes                                -> silent, not warned
+Part A rule at HARD, violated      -> exit 1, blocks the push
+Part A rule at ADVISE, violated    -> printed under ADVISORY, exit unaffected
+Part A rule at DISABLED            -> prints nothing at all
+Part B                             -> never in the checker at all
+Exempt classes                     -> silent, not warned
 ```
+
+**Severity is a committed config field, never inferred at runtime.** It lives in
+`scripts/editorial-baseline.json` under `severity`, one entry per rule, visible
+and diffable. "Demote a rule whose exemption list is still moving" is a judgment
+no process can evaluate, so the process does not try: a human edits the field.
+`--advisory-only` overrides every rule to ADVISE for the burn-in and exits 0.
 
 Advisory output prints under a clearly separated `ADVISORY` heading. Nothing that
 prints there may be mistaken for a failure.
@@ -1216,7 +1304,7 @@ Not in scope for this document, recorded so they are not lost.
 - **Report §5, §6 and §7 need re-deriving** before any rule cites them. See the
   known-stale note.
 - **Report §2.2, §2.3, §1.2, §1.3, §8 and §9.2 carry the numeric defects** listed
-  in R-1 to R-3 and in the two smaller corrections. This file's figures govern.
+  in RC-1 to RC-3 and in the two smaller corrections. This file's figures govern.
 - **`validate_lesson.py` C2** is corrected or retired upstream when A8 and A9 go
   hard.
 - **The 27 mis-wired chips** are fixed before any bibliography is generated.
