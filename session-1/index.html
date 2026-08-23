@@ -859,6 +859,32 @@ table.tbudget tr.apxrow td{color:var(--gold)}
 table.tbudget tr.nosum td{color:var(--muted);font-style:italic}
 table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border-bottom:none}
 .stamp{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.05em;color:var(--muted);margin:18px 0 0}
+
+/* LMSTYLE:BEGIN v1 managed-by=hand keep byte-identical across lessons.
+   Live model console. Optional, off by default, no storage of any kind.
+   Placed after the restyle fence so the sweep never touches it. */
+.lm{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 30px}
+.lm.on{border-color:var(--on)}
+.lmhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.lmhead .plab{margin:0}
+.lmstat{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-right:auto}
+.lmstat.ok{color:var(--on)}
+.lmstat.bad{color:var(--warn)}
+.lmstat.wait{color:var(--gold)}
+.lmnote{font-size:13.5px;line-height:1.66;color:var(--muted);margin:13px 0 0}
+.lmnote b{color:var(--ink);font-weight:600}
+.lmnote.warn{color:var(--warn)}
+.lmnote.warn b{color:var(--warn)}
+.lmkey{width:100%;margin-top:6px;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.6;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:11px 13px}
+.lmkey:focus{outline:none;border-color:var(--on)}
+.lmsel{padding:7px 9px;border:1.5px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink);font-family:"JetBrains Mono",monospace;font-size:12px}
+.lmdiv{border-top:1px solid var(--line);margin:18px 0 0;padding-top:16px}
+.lmtag{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);margin-left:7px}
+.lmtag.cap{color:var(--muted)}
+.lmusage{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;color:var(--muted);margin-top:9px;display:block}
+.lmout{white-space:pre-wrap}
+@media print{#lmbox{display:none}}
+/* LMSTYLE:END v1 */
 </style>
 </head>
 <body>
@@ -871,6 +897,68 @@ table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border
 <div id="caseModal"><div class="inner" id="caseInner"></div></div>
 <nav id="rail" aria-label="Sections"></nav>
 <div class="wrap">
+<!-- LMBOX:BEGIN v1 keep byte-identical across lessons. Optional live model
+     console. No key is stored anywhere: it lives in one JS variable and dies
+     on reload, like every other piece of state in this file. -->
+<div id="lmbox" class="lm">
+  <div class="lmhead">
+    <span class="plab">Live model &mdash; optional</span>
+    <span class="lmstat" id="lmStat">Not connected</span>
+    <button class="btn ghost mini" id="lmToggle" aria-expanded="false" aria-controls="lmBody">Set up</button>
+  </div>
+
+  <div class="hidden" id="lmBody">
+    <p class="lmnote">Every exercise on this page works without a key. The outputs
+    you see are real runs, captured and dated. Connect a key and the same
+    exercises call a live model instead, so you watch it happen rather than read
+    a recording. Nothing is graded on it and nothing breaks without it.</p>
+
+    <p class="lmnote"><b>Check the page before you paste anything into it.</b>
+    This file is static and its source is readable &mdash; View Source, or the
+    Network tab in your browser&rsquo;s developer tools. The only address it ever
+    sends to is <span class="mono">generativelanguage.googleapis.com</span>. Your
+    key is held in one JavaScript variable, is never written to storage, never
+    appears in a link, and is gone the moment you reload. Verifying that for
+    yourself, rather than taking this paragraph&rsquo;s word for it, is the habit
+    Session 4 is about.</p>
+
+    <p class="lmnote warn"><b>Do not send client information.</b> Google&rsquo;s
+    terms for the free tier let it use what you submit to improve its products,
+    and let human reviewers read it. Every prompt on this page is either a public
+    fact or synthetic Cole household data that is already published on this site,
+    which is why the console is here and not in the sessions that use your own
+    practice.</p>
+
+    <label class="plab" for="lmKey" style="margin-top:16px">Gemini API key &mdash; free, from <span class="mono">aistudio.google.com/apikey</span></label>
+    <input type="password" id="lmKey" class="lmkey" autocomplete="off" spellcheck="false" autocapitalize="off" autocorrect="off" placeholder="Paste the key here. It is not saved.">
+
+    <div class="row" style="margin-top:12px">
+      <button class="btn mini" id="lmConnect">Connect</button>
+      <button class="btn sel mini" id="lmForget">Forget the key</button>
+      <select id="lmModel" class="lmsel" aria-label="Model"><option value="gemini-2.5-flash">gemini-2.5-flash</option></select>
+      <span class="mono dim" style="font-size:11.5px" id="lmCount"></span>
+    </div>
+
+    <div class="readout" id="lmMsg" style="margin-top:14px" aria-live="polite"><span class="nil">No key connected. Captured outputs are in use.</span></div>
+
+    <div class="lmdiv hidden" data-lm-live>
+      <span class="plab">Send your own prompt</span>
+      <p class="lmnote" style="margin-top:0">Goes straight to the model with nothing
+      wrapped around it &mdash; no system prompt, no instructions, no memory of the
+      last one. The same warning above applies to whatever you type here.</p>
+      <label class="plab" for="lmPrompt" style="margin-top:12px">Prompt</label>
+      <textarea id="lmPrompt" placeholder="Ask it anything the room can see on screen."></textarea>
+      <div class="row" style="margin-top:12px">
+        <button class="btn mini" id="lmSend">Send</button>
+        <button class="btn sel mini" id="lmClear">Clear</button>
+        <span class="mono dim" style="font-size:11.5px">Temperature 1.0 &middot; up to 700 tokens back</span>
+      </div>
+      <div class="sampler lmout" id="lmFreeOut" style="margin-top:14px;font-size:13.5px;line-height:1.75"><span class="dim">Nothing sent yet.</span></div>
+      <span class="lmusage" id="lmFreeUse"></span>
+    </div>
+  </div>
+</div>
+<!-- LMBOX:END v1 -->
 <!-- 1 -->
 <section class="slide" id="s1" data-nav="Start">
  <div class="body">
@@ -1046,7 +1134,8 @@ table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border
     <span class="plab">Prompt, issued three separate times</span>
     <div class="sampler" style="min-height:auto"><span class="stem">"What is Adam Tauman Kalai's birthday? If you know, just respond with DD-MM."</span></div>
     <div class="runs" id="kalaiRuns" style="border-top:none;padding-top:4px"></div>
-    <div class="row" style="margin-top:12px"><button class="btn" id="kalaiBtn">Ask again</button></div>
+    <div class="row" style="margin-top:12px"><button class="btn" id="kalaiBtn">Ask again</button>
+      <span class="mono dim" style="font-size:12px" id="kalaiMode">Captured runs. Connect a key at the top of the page to issue these live.</span></div>
     <div class="readout" id="kalaiOut"><span class="nil">Press "Ask again" three times.</span></div>
   </div>
 
@@ -1071,10 +1160,12 @@ table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border
   <div class="talk"><span class="th">The planning version &mdash; discussion</span>Ask any frontier model what seed gift a sale to a grantor trust requires, and it will give you a percentage in a confident sentence. The conventional 10% figure is a practitioner rule of thumb, not a statutory or regulatory threshold, and the model has no way to signal that difference &mdash; both appear in the same register, in the same kind of sentence.
   <ul><li>Which of Meg's questions are arbitrary facts &mdash; a rate, a date, a threshold with one right answer and many plausible wrong ones?</li><li>Which are contested judgments where no answer is retrievable because none exists?</li><li>Sort tonight's case that way. The first list is what you verify line by line. The second is what you never delegate at all.</li></ul></div>
 
+  <div class="inote"><span class="ih">Instructor note &mdash; if you are running this live</span>Connect your key before you share the screen, not after. Then say the division out loud, because the room will otherwise read the live box as a gimmick: <b>the simulations teach the mechanism reliably, the live call shows the mechanism is not a teaching fiction.</b> Neither replaces the other. Ask the three times, then read whichever verdict comes up &mdash; divergence, or the same answer three times. Both are the lesson, and the second one is the better lesson: a stable wrong answer is the one that survives being asked twice. If Google rate-limits you, the captured dates appear on their own and nothing stalls.</div>
+
   <div class="inote"><span class="ih">Instructor note &mdash; say the spiral aloud here</span>Name the three-session arc in one breath, so the repetition later reads as architecture rather than redundancy: <b>Session 1 is why hallucination happens. Session 3 is how often it happens against a real document corpus. Session 4 is what it costs you when it does.</b> Tonight you are only responsible for the mechanism.</div>
 
   <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Ask three times, then view both scoring rules.</div></div>
-  <span class="src"><b>Kalai, A. T., Nachum, O., Vempala, S. S. &amp; Zhang, E. (2025), Why Language Models Hallucinate</b>, arXiv:2509.04664, &sect;1 and &sect;1.2. Model was DeepSeek-V3, accessed 11 May 2025. Assigned reading. <span class="conf h" data-src="src-kalai">H</span> &middot; The 2025 Section 1202 amendment is referenced as an example of training-data staleness; confirm current thresholds against the Code before use. <span class="conf m" data-src="src-kalai">M</span></span>
+  <span class="src"><b>Kalai, A. T., Nachum, O., Vempala, S. S. &amp; Zhang, E. (2025), Why Language Models Hallucinate</b>, arXiv:2509.04664, &sect;1 and &sect;1.2. Model was DeepSeek-V3, accessed 11 May 2025. Assigned reading. <span class="conf h" data-src="src-kalai">H</span> &middot; The three captured dates are that paper's runs. With a key connected the prompt is issued live against whichever model you chose, and what you see is your own observation rather than a sourced claim, so it carries no chip. &middot; The 2025 Section 1202 amendment is referenced as an example of training-data staleness; confirm current thresholds against the Code before use. <span class="conf m" data-src="src-kalai">M</span></span>
  </div>
 </section>
 
@@ -1539,6 +1630,26 @@ table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border
 
   <p>The model's probabilities are not the answer. They are the input to a filtering stack somebody configured, usually by default, usually without telling you. These controls are exposed in the API and hidden in chat interfaces &mdash; if your final project runs through an API, you are choosing them whether you know it or not.</p>
 
+  <div class="panel hidden" data-lm-live>
+    <span class="plab">The same control, on a real model</span>
+    <p class="lmnote" style="margin-top:0">The lab above shows you <b>why</b>
+    temperature changes the output, against an illustrative distribution. This
+    shows you <b>that</b> it does, against a live one. Run the same prompt at 0
+    and again near 2. Gemini's temperature and the lab's are the same idea under
+    different implementations, not the same number, so compare the character of
+    the output rather than matching the figures.</p>
+    <label class="plab" for="lmTempP" style="margin-top:14px">Prompt, held constant between runs</label>
+    <textarea id="lmTempP" style="min-height:60px">In one sentence, describe the risk Meg Cole is taking by relying on a 2023 appraisal.</textarea>
+    <div class="row" style="margin-top:12px">
+      <label class="mono dim" for="lmTemp" style="font-size:12px">Temperature</label>
+      <input type="range" id="lmTemp" min="0" max="2" step="0.1" value="1" style="width:200px">
+      <span class="mono" id="lmTempV" style="font-size:13px">1.0</span>
+      <button class="btn mini" id="lmTempRun">Generate</button>
+    </div>
+    <div class="runs" id="lmTempRuns"></div>
+    <span class="lmusage" id="lmTempUse"></span>
+  </div>
+
   <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Configure the samplers so exactly three tokens survive and the leader holds more than 55% of the surviving mass.</div></div>
   <span class="src">Algorithms follow the sampler definitions published in <b>artefact2's LLM sampling visualiser</b> (<a href="https://artefact2.github.io/llm-sampling/" style="color:var(--on)">artefact2.github.io/llm-sampling</a>), reimplemented here against an illustrative distribution. Worth running live &mdash; it uses recorded distributions from real models. <span class="conf m" data-src="src-sampling">M</span></span>
  </div>
@@ -1675,6 +1786,156 @@ function money(n){return n<10?'$'+n.toFixed(2):'$'+Math.round(n).toLocaleString(
 function fmt(n){return n.toLocaleString('en-US')}
 function scroll(e){if(e&&e.scrollIntoView)e.scrollIntoView()}
 function all(s,r){return [].slice.call((r||document).querySelectorAll(s))}
+
+/* ===== LM:BEGIN v1 =====================================================
+   Live model console. Keep byte-identical across lessons; bump the version
+   in this fence on any change and diff the two blocks before pushing.
+
+   Contract, and the reason each line is the way it is:
+     - The key lives in LM.key and nowhere else. No storage, no URL, never
+       written into the DOM. The storage grep in MAINTAINING.md is the
+       regression test for this.
+     - Every caller passes a captured fallback. A failed or absent live call
+       must leave the lesson exactly as it runs with no key.
+     - Plain ES5, one exception: fetch returns a promise, so .then() chains
+       are used. No arrow functions, no const/let, no template literals.
+   ====================================================================== */
+var LMBASE='https://generativelanguage.googleapis.com/v1beta';
+var LM={key:'',model:'gemini-2.5-flash',on:false,calls:0,cap:40};
+
+function lmEsc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+
+function lmStat(t,c){var n=$('lmStat');if(n){n.textContent=t;n.className='lmstat '+(c||'')}
+  var b=$('lmbox');if(b)b.classList.toggle('on',!!LM.on)}
+
+function lmMsg(t,bad){var n=$('lmMsg');if(!n)return;
+  n.className='readout'+(bad?' bad':' on');n.innerHTML=t}
+
+function lmCount(){var n=$('lmCount');if(n)n.textContent=LM.calls?LM.calls+' / '+LM.cap+' calls this page':''}
+
+function lmLive(on){all('[data-lm-live]').forEach(function(n){n.classList.toggle('hidden',!on)})}
+
+function lmErr(code,body){
+  if(code===400&&/API_KEY_INVALID/.test(body))
+    return'That key was rejected. Check you copied the whole string, with no trailing space.';
+  if(code===400)return'Google rejected the request (400). Check the model selection.';
+  if(code===403)
+    return'Key refused. Either the Generative Language API is not enabled on it, or the key is restricted to a different site.';
+  if(code===404)return'That model is not available to this key. Pick another from the list.';
+  if(code===429)
+    return'Rate limit or daily quota reached. The captured output is in use and the lesson continues at full pace.';
+  if(code>=500)return'Google returned a server error. Try once more, then use the capture.';
+  return'Request failed ('+code+'). The captured output is in use.';
+}
+
+/* One call site for the whole page. cb(err,res); err is a display string. */
+function lmCall(prompt,opts,cb){
+  if(!LM.on){cb('No key connected.',null);return}
+  if(LM.calls>=LM.cap){cb('You have used this page\u2019s '+LM.cap+'-call ceiling. Reload to reset it.',null);return}
+  LM.calls++;lmCount();
+  opts=opts||{};
+  var body={contents:[{parts:[{text:prompt}]}]},gc={};
+  if(opts.temperature!=null)gc.temperature=opts.temperature;
+  if(opts.topP!=null)gc.topP=opts.topP;
+  if(opts.topK!=null)gc.topK=opts.topK;
+  gc.maxOutputTokens=opts.maxTokens||512;
+  body.generationConfig=gc;
+  if(opts.system)body.systemInstruction={parts:[{text:opts.system}]};
+  var ctl=('AbortController' in window)?new AbortController():null;
+  var timer=setTimeout(function(){if(ctl)ctl.abort()},opts.timeout||30000);
+  fetch(LMBASE+'/models/'+encodeURIComponent(opts.model||LM.model)+':generateContent',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-goog-api-key':LM.key},
+      body:JSON.stringify(body),
+      signal:ctl?ctl.signal:undefined})
+    .then(function(r){return r.text().then(function(tx){return{code:r.status,tx:tx}})})
+    .then(function(o){clearTimeout(timer);
+      if(o.code!==200){cb(lmErr(o.code,o.tx),null);return}
+      var j;try{j=JSON.parse(o.tx)}catch(e){cb('Unreadable response from Google.',null);return}
+      var c=j.candidates&&j.candidates[0];
+      var parts=(c&&c.content&&c.content.parts)||[];
+      var txt=parts.map(function(p){return p.text||''}).join('').replace(/^\s+|\s+$/g,'');
+      if(!txt){cb('The model returned no text (finish reason: '+((c&&c.finishReason)||'unknown')+').',null);return}
+      cb(null,{text:txt,usage:j.usageMetadata||null,finish:(c&&c.finishReason)||''})})
+    .catch(function(e){clearTimeout(timer);
+      cb(e&&e.name==='AbortError'
+        ?'Timed out after 30 seconds. The captured output is in use.'
+        :'Could not reach Google \u2014 offline, or the network blocks the endpoint.',null)});
+}
+
+/* Validate against the model list rather than a generation call: it costs no
+   generation quota and returns what this key can actually reach, so a model
+   rename upstream does not break the lesson mid-class. */
+function lmConnect(){
+  var f=$('lmKey'),k=f?f.value.replace(/^\s+|\s+$/g,''):'';
+  if(!k){lmStat('Not connected','bad');lmMsg('Paste a key first.',true);return}
+  lmStat('Checking the key\u2026','wait');
+  fetch(LMBASE+'/models',{headers:{'x-goog-api-key':k}})
+    .then(function(r){return r.text().then(function(tx){return{code:r.status,tx:tx}})})
+    .then(function(o){
+      if(o.code!==200){LM.on=false;lmStat('Not connected','bad');lmMsg(lmErr(o.code,o.tx),true);lmLive(false);return}
+      var j={},names=[];try{j=JSON.parse(o.tx)}catch(e){}
+      (j.models||[]).forEach(function(m){
+        var n=String(m.name||'').replace(/^models\//,'');
+        if((m.supportedGenerationMethods||[]).indexOf('generateContent')<0)return;
+        if(n.indexOf('flash')<0)return;
+        if(/vision|embedding|tts|image|audio|live|native/.test(n))return;
+        if(names.indexOf(n)<0)names.push(n)});
+      if(!names.length)names=['gemini-2.5-flash'];
+      names.sort();
+      var sel=$('lmModel');sel.innerHTML='';
+      names.forEach(function(n){var op=el('option',null,n);op.value=n;sel.appendChild(op)});
+      sel.value=names.indexOf('gemini-2.5-flash')>=0?'gemini-2.5-flash':names[0];
+      LM.model=sel.value;LM.key=k;LM.on=true;
+      if(f)f.value='';                       /* off the screen and out of the DOM */
+      lmStat('Connected \u00b7 '+LM.model,'ok');
+      lmMsg('Live. The key is held in memory only and is gone when you reload. '+
+            'Captured outputs stay on the page so you can compare them with what you get.');
+      lmCount();lmLive(true);
+      if(typeof lmOnConnect==='function')lmOnConnect()})
+    .catch(function(){LM.on=false;lmStat('Not connected','bad');
+      lmMsg('Could not reach Google. Captured outputs remain in use.',true);lmLive(false)});
+}
+
+function lmForget(){
+  LM.key='';LM.on=false;
+  var f=$('lmKey');if(f)f.value='';
+  lmStat('Not connected');
+  lmMsg('<span class="nil">Key discarded. Captured outputs are in use.</span>');
+  lmLive(false);
+}
+
+(function(){
+  var t=$('lmToggle');if(!t)return;
+  t.onclick=function(){
+    var b=$('lmBody'),open=!b.classList.toggle('hidden');
+    t.textContent=open?'Hide':'Set up';t.setAttribute('aria-expanded',open?'true':'false')};
+  $('lmConnect').onclick=lmConnect;
+  $('lmForget').onclick=lmForget;
+  $('lmModel').onchange=function(){LM.model=this.value;if(LM.on)lmStat('Connected \u00b7 '+LM.model,'ok')};
+  $('lmKey').onkeydown=function(e){if(e.key==='Enter'||e.keyCode===13){e.preventDefault();lmConnect()}};
+
+  var send=$('lmSend');
+  if(send)send.onclick=function(){
+    var p=$('lmPrompt').value.replace(/^\s+|\s+$/g,'');
+    if(!p){$('lmFreeOut').innerHTML='<span class="dim">Type a prompt first.</span>';return}
+    send.disabled=true;
+    $('lmFreeOut').innerHTML='<span class="dim">Running\u2026</span>';
+    $('lmFreeUse').textContent='';
+    lmCall(p,{temperature:1,maxTokens:700},function(err,res){
+      send.disabled=false;
+      if(err){$('lmFreeOut').innerHTML='<span style="color:var(--warn)">'+lmEsc(err)+'</span>';return}
+      $('lmFreeOut').textContent=res.text;
+      if(res.usage)$('lmFreeUse').textContent=
+        'in '+(res.usage.promptTokenCount||0)+' tokens \u00b7 out '+
+        (res.usage.candidatesTokenCount||0)+' tokens \u00b7 '+LM.model})};
+
+  var clr=$('lmClear');
+  if(clr)clr.onclick=function(){$('lmPrompt').value='';
+    $('lmFreeOut').innerHTML='<span class="dim">Nothing sent yet.</span>';$('lmFreeUse').textContent=''};
+})();
+/* ===== LM:END v1 ===== */
+
 
 /* ===== GATES ===== */
 var secs=all('section.slide'),rail=$('rail'),done={};
@@ -2153,13 +2414,40 @@ function labDraw(){
 /* ===== 08 HALLUCINATION ===== */
 var G9={k:0,sc:{}};
 function checkG9(){if(G9.k&&Object.keys(G9.sc).length>=2)mark('g9')}
-var KAL=['03-07','15-06','01-01'],ki=0;
+var KAL=['03-07','15-06','01-01'],ki=0,KLIVE=[];
+var KQ="What is Adam Tauman Kalai's birthday? If you know, just respond with DD-MM.";
+/* Captured dates are the paper's runs against DeepSeek-V3. With a key connected
+   the same prompt is issued live three times instead, and kVerdict reports what
+   actually happened rather than what the capture happened to show. Divergence,
+   convergence and refusal are all the lesson; see docs/live-model-console-plan.md. */
+function kRow(ans,tag){
+  $('kalaiRuns').appendChild(el('div','r','Attempt '+(ki+1)+
+    ' &middot; <b style="color:var(--warn)">'+lmEsc(ans)+'</b>'+
+    '<span class="lmtag'+(tag==='live'?'':' cap')+'">'+tag+'</span>'));
+  ki++;if(ki>=3){$('kalaiBtn').disabled=true;kVerdict()}}
+function kVerdict(){
+  var o=$('kalaiOut');o.className='readout on';
+  if(KLIVE.length<3){
+    o.innerHTML='<span class="cz">Result \u00b7 captured</span>Three attempts, three different dates, all wrong \u2014 from a prompt that said to answer only if it knew. You now know why: the sampler drew from a distribution over plausible dates and no step checked anything.';
+    G9.k=1;checkG9();return}
+  var seen={},n=0;
+  KLIVE.forEach(function(a){var k=a.toLowerCase().replace(/[^a-z0-9]/g,'');
+    if(!seen[k]){seen[k]=1;n++}});
+  if(n>1){
+    o.innerHTML='<span class="cz">Result \u00b7 live</span>'+n+' different answers from three identical prompts. Nothing changed between the runs \u2014 not the model, not a word of the prompt, not a setting. The sampler drew from a distribution over plausible dates and no step checked anything. That is the mechanism, observed on your own screen rather than described to you.';
+  }else{
+    o.innerHTML='<span class="cz">Result \u00b7 live</span>Three identical answers. Sampling did not switch off \u2014 the distribution was sharp enough that the same token won every draw. Now go and check the date. If it is wrong, you have just met the harder failure: confident, reproducible and false. <b>Reproducibility is not correctness</b>, and a stable wrong answer is precisely the one that survives being asked twice.';
+  }
+  G9.k=1;checkG9()}
 $('kalaiBtn').onclick=function(){
   if(ki>=3)return;
-  $('kalaiRuns').appendChild(el('div','r','Attempt '+(ki+1)+' &middot; <b style="color:var(--warn)">'+KAL[ki]+'</b>'));ki++;
-  if(ki>=3){$('kalaiBtn').disabled=true;$('kalaiOut').className='readout on';
-    $('kalaiOut').innerHTML='<span class="cz">Result</span>Three attempts, three different dates, all wrong \u2014 from a prompt that said to answer only if it knew. You now know why: the sampler drew from a distribution over plausible dates and no step checked anything.';
-    G9.k=1;checkG9()}};
+  if(!LM.on){kRow(KAL[ki],'captured');return}
+  $('kalaiBtn').disabled=true;
+  lmCall(KQ,{temperature:1,maxTokens:64},function(err,res){
+    $('kalaiBtn').disabled=false;
+    if(err){lmMsg(lmEsc(err),true);kRow(KAL[ki],'capture \u00b7 live call failed');return}
+    KLIVE.push(res.text);
+    kRow(res.text.replace(/\s+/g,' ').slice(0,48),'live')})};
 var SC={binary:{v:[1,0,0,0],t:'Guessing scores 1 when right and 0 when wrong. Abstaining scores 0 either way. Guessing weakly dominates \u2014 no confidence level makes silence better. A model optimised against this rule learns to always produce something.'},
  credit:{v:[1,0,0,0.5],t:'Give partial credit for an honest "I don\u2019t know" and abstention becomes rational whenever confidence falls below the credit threshold. The behaviour changed because the incentive changed, not the architecture.'}};
 function scDraw(k){var s=SC[k];
@@ -2501,6 +2789,34 @@ window.__coreMins=67;
   apply();
 })();
 
+/* ===== LIVE HOOKS, page-specific =====================================
+   Appendix A5: the same temperature control the lab simulates, applied to a
+   live model. The simulator above is untouched \u2014 it teaches the mechanism,
+   this shows the mechanism is not a teaching fiction. */
+(function(){
+  var r=$('lmTemp'),b=$('lmTempRun');if(!r||!b)return;
+  r.oninput=function(){$('lmTempV').textContent=parseFloat(r.value).toFixed(1)};
+  b.onclick=function(){
+    var p=$('lmTempP').value.replace(/^\s+|\s+$/g,'');
+    if(!p)return;
+    var t=parseFloat(r.value);
+    b.disabled=true;
+    lmCall(p,{temperature:t,maxTokens:160},function(err,res){
+      b.disabled=false;
+      if(err){lmMsg(lmEsc(err),true);
+        $('lmTempRuns').appendChild(el('div','r','temp '+t.toFixed(1)+
+          ' &middot; <span style="color:var(--warn)">'+lmEsc(err)+'</span>'));return}
+      $('lmTempRuns').appendChild(el('div','r','temp '+t.toFixed(1)+
+        ' &middot; <b>'+lmEsc(res.text.replace(/\s+/g,' '))+'</b>'));
+      if(res.usage)$('lmTempUse').textContent='last run: out '+
+        (res.usage.candidatesTokenCount||0)+' tokens \u00b7 '+LM.model})};
+})();
+
+function lmOnConnect(){
+  var n=$('kalaiMode');
+  if(n)n.textContent='Live. Each press issues the prompt against ' + LM.model + '.';
+}
+
 })();
 </script>
 
@@ -2525,6 +2841,7 @@ window.__coreMins=67;
     '<p>The core runs in about '+core+' minutes and is what always gets taught. In a full '+
     'block, take appendix sections in place at the gold links; in a short one, skip them and '+
     'the session still closes properly. Appendix sections are also readable alone afterwards.</p>';
+
 })();
 </script>
 </body>

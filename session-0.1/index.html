@@ -571,6 +571,32 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 .rout .rfx{margin-top:9px;padding-top:9px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
 .rnote{background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0;font-size:14px;line-height:1.5}
 .rnote .rh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px;font-weight:500}
+
+/* LMSTYLE:BEGIN v1 managed-by=hand keep byte-identical across lessons.
+   Live model console. Optional, off by default, no storage of any kind.
+   Placed after the restyle fence so the sweep never touches it. */
+.lm{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 30px}
+.lm.on{border-color:var(--on)}
+.lmhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.lmhead .plab{margin:0}
+.lmstat{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-right:auto}
+.lmstat.ok{color:var(--on)}
+.lmstat.bad{color:var(--warn)}
+.lmstat.wait{color:var(--gold)}
+.lmnote{font-size:13.5px;line-height:1.66;color:var(--muted);margin:13px 0 0}
+.lmnote b{color:var(--ink);font-weight:600}
+.lmnote.warn{color:var(--warn)}
+.lmnote.warn b{color:var(--warn)}
+.lmkey{width:100%;margin-top:6px;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.6;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:11px 13px}
+.lmkey:focus{outline:none;border-color:var(--on)}
+.lmsel{padding:7px 9px;border:1.5px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink);font-family:"JetBrains Mono",monospace;font-size:12px}
+.lmdiv{border-top:1px solid var(--line);margin:18px 0 0;padding-top:16px}
+.lmtag{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);margin-left:7px}
+.lmtag.cap{color:var(--muted)}
+.lmusage{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;color:var(--muted);margin-top:9px;display:block}
+.lmout{white-space:pre-wrap}
+@media print{#lmbox{display:none}}
+/* LMSTYLE:END v1 */
 </style>
 </head>
 <body>
@@ -619,6 +645,68 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 </div></div>
 <nav id="rail" aria-label="Sections"></nav>
 <div class="wrap">
+<!-- LMBOX:BEGIN v1 keep byte-identical across lessons. Optional live model
+     console. No key is stored anywhere: it lives in one JS variable and dies
+     on reload, like every other piece of state in this file. -->
+<div id="lmbox" class="lm">
+  <div class="lmhead">
+    <span class="plab">Live model &mdash; optional</span>
+    <span class="lmstat" id="lmStat">Not connected</span>
+    <button class="btn ghost mini" id="lmToggle" aria-expanded="false" aria-controls="lmBody">Set up</button>
+  </div>
+
+  <div class="hidden" id="lmBody">
+    <p class="lmnote">Every exercise on this page works without a key. The outputs
+    you see are real runs, captured and dated. Connect a key and the same
+    exercises call a live model instead, so you watch it happen rather than read
+    a recording. Nothing is graded on it and nothing breaks without it.</p>
+
+    <p class="lmnote"><b>Check the page before you paste anything into it.</b>
+    This file is static and its source is readable &mdash; View Source, or the
+    Network tab in your browser&rsquo;s developer tools. The only address it ever
+    sends to is <span class="mono">generativelanguage.googleapis.com</span>. Your
+    key is held in one JavaScript variable, is never written to storage, never
+    appears in a link, and is gone the moment you reload. Verifying that for
+    yourself, rather than taking this paragraph&rsquo;s word for it, is the habit
+    Session 4 is about.</p>
+
+    <p class="lmnote warn"><b>Do not send client information.</b> Google&rsquo;s
+    terms for the free tier let it use what you submit to improve its products,
+    and let human reviewers read it. Every prompt on this page is either a public
+    fact or synthetic Cole household data that is already published on this site,
+    which is why the console is here and not in the sessions that use your own
+    practice.</p>
+
+    <label class="plab" for="lmKey" style="margin-top:16px">Gemini API key &mdash; free, from <span class="mono">aistudio.google.com/apikey</span></label>
+    <input type="password" id="lmKey" class="lmkey" autocomplete="off" spellcheck="false" autocapitalize="off" autocorrect="off" placeholder="Paste the key here. It is not saved.">
+
+    <div class="row" style="margin-top:12px">
+      <button class="btn mini" id="lmConnect">Connect</button>
+      <button class="btn sel mini" id="lmForget">Forget the key</button>
+      <select id="lmModel" class="lmsel" aria-label="Model"><option value="gemini-2.5-flash">gemini-2.5-flash</option></select>
+      <span class="mono dim" style="font-size:11.5px" id="lmCount"></span>
+    </div>
+
+    <div class="readout" id="lmMsg" style="margin-top:14px" aria-live="polite"><span class="nil">No key connected. Captured outputs are in use.</span></div>
+
+    <div class="lmdiv hidden" data-lm-live>
+      <span class="plab">Send your own prompt</span>
+      <p class="lmnote" style="margin-top:0">Goes straight to the model with nothing
+      wrapped around it &mdash; no system prompt, no instructions, no memory of the
+      last one. The same warning above applies to whatever you type here.</p>
+      <label class="plab" for="lmPrompt" style="margin-top:12px">Prompt</label>
+      <textarea id="lmPrompt" placeholder="Ask it anything the room can see on screen."></textarea>
+      <div class="row" style="margin-top:12px">
+        <button class="btn mini" id="lmSend">Send</button>
+        <button class="btn sel mini" id="lmClear">Clear</button>
+        <span class="mono dim" style="font-size:11.5px">Temperature 1.0 &middot; up to 700 tokens back</span>
+      </div>
+      <div class="sampler lmout" id="lmFreeOut" style="margin-top:14px;font-size:13.5px;line-height:1.75"><span class="dim">Nothing sent yet.</span></div>
+      <span class="lmusage" id="lmFreeUse"></span>
+    </div>
+  </div>
+</div>
+<!-- LMBOX:END v1 -->
 <!-- ==================================================================
      SECTION 0. Cold open, 8 min. Family 17 timed-ritual.
      Harvest anchor: session-1/index.html #sCold markup and the
@@ -1073,7 +1161,8 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
   <span class="src">Wall-clock ranges are the instructor&rsquo;s planning estimates for the runbook, not published figures <span class="conf l" data-src="src-tools3">L</span>. The sourced part is the tool-call count: one to two for web search <span class="conf h" data-src="src-tools3">H</span>. <b>Research is not run live.</b> Five or more tool calls over one to three minutes will not survive a ten-minute window with two other runs <span class="conf h" data-src="src-tools3">H</span>.</span>
 
   <div class="inote"><span class="ih">Fallback, mandatory</span>
-  Every run below has a real captured output embedded in this page. If the network, the usage limit, or a changed model menu breaks the live demo, open the capture and the class continues at full pace. The captures are dated and carry the exact settings they were run at.</div>
+  Every run below has a real captured output embedded in this page. If the network, the usage limit, or a changed model menu breaks the live demo, open the capture and the class continues at full pace. The captures are dated and carry the exact settings they were run at.
+  <span class="mono" style="display:block;margin-top:9px;font-size:12px" id="lmHint08">Captured runs only. Connect a key at the top of the page to add run 4, the same probe with no product layers around it.</span></div>
 
   <div class="panel">
     <span class="plab">Run 1 fallback &middot; captured 2026-08-22 &middot; Sonnet 5 / medium / web search OFF</span>
@@ -1087,8 +1176,30 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
     <div class="hidden" id="cap2" style="margin-top:14px"></div>
   </div>
 
+  <div class="panel hidden" data-lm-live>
+    <span class="plab">Run 4 &middot; live &middot; the same question with none of the five layers</span>
+    <p class="lmnote" style="margin-top:0">Runs 1 to 3 are the <b>product</b>: a system
+    prompt you cannot see, your profile instructions, whatever retrieval and tools
+    the composer switched on, and the conversation so far. This run is the bare
+    API. None of those five layers exist here &mdash; there is nothing between your
+    sentence and the model. Same question, same case, nothing wrapped around it.</p>
+    <div class="row" style="margin-top:12px">
+      <button class="btn mini" id="lmRun4">Run it live</button>
+      <span class="mono dim" style="font-size:12px">One call &middot; temperature 1.0</span>
+    </div>
+    <div class="sampler lmout" id="lmOut4" style="margin-top:14px;font-size:13.5px;line-height:1.75"><span class="dim">Not run yet.</span></div>
+    <span class="lmusage" id="lmUse4"></span>
+    <p class="lmnote">Watch for what is <b>missing</b> rather than what is there. No
+    citation, no as-of date, and no way for it to know that the rate it is
+    reaching for changes monthly. Run 2 had those because a control in the
+    composer put them there, not because the model is cleverer than this one.
+    That gap is the whole of section 01, measured instead of drawn.</p>
+  </div>
+
   <div class="talk"><span class="th">What changed between run 1 and run 2, in one sentence</span>
   Nothing about the model, and nothing about the prompt. One control in the composer moved, layer 4 filled, and the answer went from an honest refusal to a cited table. Run 1 is the better output on one axis that matters more than it looks: it says plainly that it cannot verify the figure, rather than producing a plausible one. Notice how much less confident it sounds while being much more trustworthy.</div>
+
+  <div class="inote"><span class="ih">Instructor note &mdash; run 4, if you have a key connected</span>Run 4 is not a fourth configuration of the product. It is the product removed: the same question with none of the five layers from section 01 around it. Say that before you press it, or the room will read it as "a worse model" rather than "the same kind of model with nothing helping it". Point at what is <b>missing</b> against run 2 &mdash; no citation, no as-of date &mdash; and then point back at the five-layer figure. This is the closest thing in the course to a controlled experiment on that frame. Connect your key before you share the screen.</div>
 
   <h3>Assemble the card</h3>
   <p>Tick every element you would record for a run you might have to justify later. The card assembles live and is the thing you paste. One option is deliberately not selectable.</p>
@@ -1300,6 +1411,156 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 function $(id){return document.getElementById(id)}
 function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
 function all(s,r){return [].slice.call((r||document).querySelectorAll(s))}
+
+/* ===== LM:BEGIN v1 =====================================================
+   Live model console. Keep byte-identical across lessons; bump the version
+   in this fence on any change and diff the two blocks before pushing.
+
+   Contract, and the reason each line is the way it is:
+     - The key lives in LM.key and nowhere else. No storage, no URL, never
+       written into the DOM. The storage grep in MAINTAINING.md is the
+       regression test for this.
+     - Every caller passes a captured fallback. A failed or absent live call
+       must leave the lesson exactly as it runs with no key.
+     - Plain ES5, one exception: fetch returns a promise, so .then() chains
+       are used. No arrow functions, no const/let, no template literals.
+   ====================================================================== */
+var LMBASE='https://generativelanguage.googleapis.com/v1beta';
+var LM={key:'',model:'gemini-2.5-flash',on:false,calls:0,cap:40};
+
+function lmEsc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+
+function lmStat(t,c){var n=$('lmStat');if(n){n.textContent=t;n.className='lmstat '+(c||'')}
+  var b=$('lmbox');if(b)b.classList.toggle('on',!!LM.on)}
+
+function lmMsg(t,bad){var n=$('lmMsg');if(!n)return;
+  n.className='readout'+(bad?' bad':' on');n.innerHTML=t}
+
+function lmCount(){var n=$('lmCount');if(n)n.textContent=LM.calls?LM.calls+' / '+LM.cap+' calls this page':''}
+
+function lmLive(on){all('[data-lm-live]').forEach(function(n){n.classList.toggle('hidden',!on)})}
+
+function lmErr(code,body){
+  if(code===400&&/API_KEY_INVALID/.test(body))
+    return'That key was rejected. Check you copied the whole string, with no trailing space.';
+  if(code===400)return'Google rejected the request (400). Check the model selection.';
+  if(code===403)
+    return'Key refused. Either the Generative Language API is not enabled on it, or the key is restricted to a different site.';
+  if(code===404)return'That model is not available to this key. Pick another from the list.';
+  if(code===429)
+    return'Rate limit or daily quota reached. The captured output is in use and the lesson continues at full pace.';
+  if(code>=500)return'Google returned a server error. Try once more, then use the capture.';
+  return'Request failed ('+code+'). The captured output is in use.';
+}
+
+/* One call site for the whole page. cb(err,res); err is a display string. */
+function lmCall(prompt,opts,cb){
+  if(!LM.on){cb('No key connected.',null);return}
+  if(LM.calls>=LM.cap){cb('You have used this page\u2019s '+LM.cap+'-call ceiling. Reload to reset it.',null);return}
+  LM.calls++;lmCount();
+  opts=opts||{};
+  var body={contents:[{parts:[{text:prompt}]}]},gc={};
+  if(opts.temperature!=null)gc.temperature=opts.temperature;
+  if(opts.topP!=null)gc.topP=opts.topP;
+  if(opts.topK!=null)gc.topK=opts.topK;
+  gc.maxOutputTokens=opts.maxTokens||512;
+  body.generationConfig=gc;
+  if(opts.system)body.systemInstruction={parts:[{text:opts.system}]};
+  var ctl=('AbortController' in window)?new AbortController():null;
+  var timer=setTimeout(function(){if(ctl)ctl.abort()},opts.timeout||30000);
+  fetch(LMBASE+'/models/'+encodeURIComponent(opts.model||LM.model)+':generateContent',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-goog-api-key':LM.key},
+      body:JSON.stringify(body),
+      signal:ctl?ctl.signal:undefined})
+    .then(function(r){return r.text().then(function(tx){return{code:r.status,tx:tx}})})
+    .then(function(o){clearTimeout(timer);
+      if(o.code!==200){cb(lmErr(o.code,o.tx),null);return}
+      var j;try{j=JSON.parse(o.tx)}catch(e){cb('Unreadable response from Google.',null);return}
+      var c=j.candidates&&j.candidates[0];
+      var parts=(c&&c.content&&c.content.parts)||[];
+      var txt=parts.map(function(p){return p.text||''}).join('').replace(/^\s+|\s+$/g,'');
+      if(!txt){cb('The model returned no text (finish reason: '+((c&&c.finishReason)||'unknown')+').',null);return}
+      cb(null,{text:txt,usage:j.usageMetadata||null,finish:(c&&c.finishReason)||''})})
+    .catch(function(e){clearTimeout(timer);
+      cb(e&&e.name==='AbortError'
+        ?'Timed out after 30 seconds. The captured output is in use.'
+        :'Could not reach Google \u2014 offline, or the network blocks the endpoint.',null)});
+}
+
+/* Validate against the model list rather than a generation call: it costs no
+   generation quota and returns what this key can actually reach, so a model
+   rename upstream does not break the lesson mid-class. */
+function lmConnect(){
+  var f=$('lmKey'),k=f?f.value.replace(/^\s+|\s+$/g,''):'';
+  if(!k){lmStat('Not connected','bad');lmMsg('Paste a key first.',true);return}
+  lmStat('Checking the key\u2026','wait');
+  fetch(LMBASE+'/models',{headers:{'x-goog-api-key':k}})
+    .then(function(r){return r.text().then(function(tx){return{code:r.status,tx:tx}})})
+    .then(function(o){
+      if(o.code!==200){LM.on=false;lmStat('Not connected','bad');lmMsg(lmErr(o.code,o.tx),true);lmLive(false);return}
+      var j={},names=[];try{j=JSON.parse(o.tx)}catch(e){}
+      (j.models||[]).forEach(function(m){
+        var n=String(m.name||'').replace(/^models\//,'');
+        if((m.supportedGenerationMethods||[]).indexOf('generateContent')<0)return;
+        if(n.indexOf('flash')<0)return;
+        if(/vision|embedding|tts|image|audio|live|native/.test(n))return;
+        if(names.indexOf(n)<0)names.push(n)});
+      if(!names.length)names=['gemini-2.5-flash'];
+      names.sort();
+      var sel=$('lmModel');sel.innerHTML='';
+      names.forEach(function(n){var op=el('option',null,n);op.value=n;sel.appendChild(op)});
+      sel.value=names.indexOf('gemini-2.5-flash')>=0?'gemini-2.5-flash':names[0];
+      LM.model=sel.value;LM.key=k;LM.on=true;
+      if(f)f.value='';                       /* off the screen and out of the DOM */
+      lmStat('Connected \u00b7 '+LM.model,'ok');
+      lmMsg('Live. The key is held in memory only and is gone when you reload. '+
+            'Captured outputs stay on the page so you can compare them with what you get.');
+      lmCount();lmLive(true);
+      if(typeof lmOnConnect==='function')lmOnConnect()})
+    .catch(function(){LM.on=false;lmStat('Not connected','bad');
+      lmMsg('Could not reach Google. Captured outputs remain in use.',true);lmLive(false)});
+}
+
+function lmForget(){
+  LM.key='';LM.on=false;
+  var f=$('lmKey');if(f)f.value='';
+  lmStat('Not connected');
+  lmMsg('<span class="nil">Key discarded. Captured outputs are in use.</span>');
+  lmLive(false);
+}
+
+(function(){
+  var t=$('lmToggle');if(!t)return;
+  t.onclick=function(){
+    var b=$('lmBody'),open=!b.classList.toggle('hidden');
+    t.textContent=open?'Hide':'Set up';t.setAttribute('aria-expanded',open?'true':'false')};
+  $('lmConnect').onclick=lmConnect;
+  $('lmForget').onclick=lmForget;
+  $('lmModel').onchange=function(){LM.model=this.value;if(LM.on)lmStat('Connected \u00b7 '+LM.model,'ok')};
+  $('lmKey').onkeydown=function(e){if(e.key==='Enter'||e.keyCode===13){e.preventDefault();lmConnect()}};
+
+  var send=$('lmSend');
+  if(send)send.onclick=function(){
+    var p=$('lmPrompt').value.replace(/^\s+|\s+$/g,'');
+    if(!p){$('lmFreeOut').innerHTML='<span class="dim">Type a prompt first.</span>';return}
+    send.disabled=true;
+    $('lmFreeOut').innerHTML='<span class="dim">Running\u2026</span>';
+    $('lmFreeUse').textContent='';
+    lmCall(p,{temperature:1,maxTokens:700},function(err,res){
+      send.disabled=false;
+      if(err){$('lmFreeOut').innerHTML='<span style="color:var(--warn)">'+lmEsc(err)+'</span>';return}
+      $('lmFreeOut').textContent=res.text;
+      if(res.usage)$('lmFreeUse').textContent=
+        'in '+(res.usage.promptTokenCount||0)+' tokens \u00b7 out '+
+        (res.usage.candidatesTokenCount||0)+' tokens \u00b7 '+LM.model})};
+
+  var clr=$('lmClear');
+  if(clr)clr.onclick=function(){$('lmPrompt').value='';
+    $('lmFreeOut').innerHTML='<span class="dim">Nothing sent yet.</span>';$('lmFreeUse').textContent=''};
+})();
+/* ===== LM:END v1 ===== */
+
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 /* Work-along gates: non-gating completion feedback (pedagogy s1 R10). */
 var secs=all('section.slide'),rail=$('rail'),done={};
@@ -2457,6 +2718,31 @@ $('blGo').onclick=function(){
     '.<div class="rfx">This page stores nothing, uploads nothing, and will not remember this after a reload. Copy these lines into your own notes before you close the tab.</div>';
   mark('g11');
 };
+
+/* ===== LIVE HOOKS, page-specific =====================================
+   Run 4 of section 08: the same probe as the captured runs, issued with no
+   product layers around it. The captured runs stay on the page; this adds a
+   fourth exhibit, it does not replace the runbook table. Prompt is P1 from
+   docs/probe-captures.md, byte-identical so the comparison is exact. */
+var LMP4="What is the current Section 7520 rate and Applicable Federal Rate (AFR) for midterm transactions relevant to structuring an installment sale or grantor trust transaction for a household this month?";
+(function(){
+  var b=$('lmRun4');if(!b)return;
+  b.onclick=function(){
+    b.disabled=true;
+    $('lmOut4').innerHTML='<span class="dim">Running\u2026</span>';$('lmUse4').textContent='';
+    lmCall(LMP4,{temperature:1,maxTokens:700},function(err,res){
+      b.disabled=false;
+      if(err){$('lmOut4').innerHTML='<span style="color:var(--warn)">'+lmEsc(err)+
+        '</span>';lmMsg(lmEsc(err),true);return}
+      $('lmOut4').textContent=res.text;
+      if(res.usage)$('lmUse4').textContent='in '+(res.usage.promptTokenCount||0)+
+        ' tokens \u00b7 out '+(res.usage.candidatesTokenCount||0)+' tokens \u00b7 '+LM.model})};
+})();
+
+function lmOnConnect(){
+  var n=$('lmHint08');
+  if(n)n.textContent='Live. Run 4 below issues the same probe with no product layers around it.';
+}
 
 })();
 </script>

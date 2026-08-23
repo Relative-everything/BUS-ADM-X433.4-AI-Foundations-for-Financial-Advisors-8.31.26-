@@ -284,3 +284,25 @@ Add the indexed exclusion: gross estate at death of **$43.45M + $18.98M ≈ $62.
 | ABA Tax Section, "Grantor Trust Gambits," *The Tax Lawyer* (Fall 2024) | Deathtime treatment of an outstanding note is unsettled; part-gift/part-sale as one approach | **M** — secondary; pagination not verified |
 
 **Not tax or legal advice.** All figures are modeled from stated assumptions on a synthetic case.
+
+P4: bare API, no product layers (Session 0.1 section 08, run 4)
+Settings: Gemini 2.5 Flash via generativelanguage.googleapis.com, temperature 1.0, maxOutputTokens 700, no system instruction, no tools, no history
+Date run: [UNVERIFIED: run this against a real key before the first delivery and paste the verbatim output here]
+Prompt sent (byte-identical to P1, so the comparison against runs 1 and 2 is exact):
+What is the current Section 7520 rate and Applicable Federal Rate (AFR) for midterm transactions relevant to structuring an installment sale or grantor trust transaction for a household this month?
+Output received (verbatim):
+[UNVERIFIED: not yet captured]
+
+Why this run exists. P1 and P1b are the product with one control moved between
+them. P4 is the same question with the product removed: no system prompt, no
+profile instructions, no retrieval, no tools, no conversation. It is the
+negative control for the five-layer frame in section 01. What to point at is
+what is absent -- no citation, no as-of date, and no mechanism by which it could
+know the rate is republished monthly. Run 2 had those because a control put them
+there, not because that model is cleverer than this one.
+
+Note on this capture. Unlike P1 through P3, run 4 renders live in the page when
+a key is connected and is hidden entirely when one is not, so the lesson does
+not depend on this capture the way section 08's runs 1 and 2 depend on theirs.
+Capture it anyway: it is the reference the room compares their own live output
+against, and it dates the behaviour.

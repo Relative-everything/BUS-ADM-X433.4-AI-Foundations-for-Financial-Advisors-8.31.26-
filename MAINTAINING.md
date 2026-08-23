@@ -20,9 +20,24 @@ audit/                Dated audit reports against the lesson-builder protocol
 ```
 
 Each lesson is a single self-contained HTML file with all styles and scripts
-inline. The only permitted external request is Google Fonts. No lesson may use
-localStorage, sessionStorage, indexedDB, or cookies: state lives in JavaScript
-variables and dies on reload.
+inline. No lesson may use localStorage, sessionStorage, indexedDB, or cookies:
+state lives in JavaScript variables and dies on reload.
+
+Two external origins are permitted, and no others:
+
+| Origin | When | Where |
+|---|---|---|
+| `fonts.googleapis.com`, `fonts.gstatic.com` | Page load | Every page |
+| `generativelanguage.googleapis.com` | Runtime only, and only after a reader pastes their own API key | Sessions 0.1 and 1 |
+
+The second is the live model console (`LM:BEGIN` / `LMBOX:BEGIN` /
+`LMSTYLE:BEGIN` fences). It is off by default, every exercise it touches keeps a
+captured fallback that renders when no key is connected or a call fails, and the
+key is held in one JavaScript variable and never stored. **The storage grep in
+the pre-push gate is the regression test for that key handling** — if it ever
+hits, the key is being persisted and the design has been violated. Do not add the
+console to Sessions 2, 3 or 4: their exercises run on students' own client work,
+and the free tier's terms permit Google to train on what is submitted.
 
 ## Publishing
 
@@ -87,10 +102,18 @@ Without the skill, these fallback checks cover the same ground:
 grep -rin "okonkwo" index.html session-*/index.html          # must be empty
 grep -rnE 'localStorage|sessionStorage|indexedDB|document\.cookie' \
   index.html session-*/index.html                            # must be empty
-for f in index.html session-*/index.html; do                 # externals: fonts only
+for f in index.html session-*/index.html; do                 # externals: allowlist
   grep -Eo '<(link|script|img|iframe)[^>]*(href|src)="https?://[^"]+"' "$f" \
     | grep -Ev 'fonts.googleapis|fonts.gstatic'
 done
+# the console's runtime origin, allowed only in 0.1 and 1, and only in JS
+grep -l 'generativelanguage.googleapis.com' index.html session-*/index.html \
+  | grep -Ev 'session-(0\.1|1)/index.html'                    # must be empty
+# the three shared console blocks must stay byte-identical across lessons
+for m in 'LMSTYLE:BEGIN' 'LMBOX:BEGIN' 'LM:BEGIN'; do
+  sed -n "/$m/,/\/\* *LM.*:END\|LMBOX:END/p" session-0.1/index.html | md5sum
+  sed -n "/$m/,/\/\* *LM.*:END\|LMBOX:END/p" session-1/index.html   | md5sum
+done                                                          # pairs must match
 grep -H '<title>' index.html session-*/index.html            # hub and lessons agree
 ```
 
@@ -108,6 +131,51 @@ Edit `assets/tokens.css`, `assets/typography.css`, or `assets/components.css` in
 the skill, then run `restyle_sweep.py <repo>`. Lesson-specific CSS lives after
 the fence and is never touched. A lesson without the fence is outside the sweep
 and will be reported by `--check`.
+
+## The live model console
+
+Sessions 0.1 and 1 carry an optional console that lets a reader paste their own
+Gemini API key and run the page's probes against a live model instead of the
+captured outputs. Rationale, alternatives considered and the pedagogical case are
+in [`docs/live-model-console-plan.md`](docs/live-model-console-plan.md); the
+terms and quota analysis behind the bring-your-own-key choice are in
+[`docs/gemini-live-api-feasibility.md`](docs/gemini-live-api-feasibility.md).
+
+Three fenced blocks, **byte-identical across both lessons**:
+
+| Fence | Where in the file | What |
+|---|---|---|
+| `LMSTYLE:BEGIN v1` | After `/* STYLE:END */`, so the sweep never touches it | Console CSS |
+| `LMBOX:BEGIN v1` | First child of `.wrap` | Console markup |
+| `LM:BEGIN v1` | Inside the main IIFE, after the `all()` helper | Call layer |
+
+Page-specific wiring lives under a `LIVE HOOKS, page-specific` comment near the
+end of the same IIFE. **Session 1 has two `<script>` blocks** — the hooks must go
+in the first one, where `$`, `el` and the console are in scope. Putting them in
+the second gives a silent `$ is not defined` at load.
+
+Rules for changing it:
+
+- Edit one copy, then paste it into the other and confirm the md5 pair in the
+  pre-push gate matches. Bump the version in all three fences on any change.
+- Plain ES5, matching the rest of the corpus. The only exception is `fetch`,
+  which returns a promise, so `.then()` chains are used. No arrow functions, no
+  `const`/`let`, no template literals, no `async`/`await`.
+- Every live element needs a captured fallback that renders when there is no key
+  and when a call fails. A reader who never connects a key must see the lesson
+  exactly as it ran before the console existed.
+- Model output is written with `textContent`, never `innerHTML`. Anything that
+  must be interpolated goes through `lmEsc`.
+- Never commit a key. Google keys are a GitHub secret-scanning partner pattern
+  and are push-protected by default: the push gets blocked or the key is
+  auto-revoked, and you find out mid-class.
+
+The browser test suite in `scripts/test_live_console.js` covers all of this
+against a mocked endpoint. Run it before pushing a console change:
+
+```bash
+NODE_PATH=$(npm root -g) node scripts/test_live_console.js
+```
 
 ## The case spine
 
@@ -145,8 +213,9 @@ Match case-insensitively on the stem so punctuation variants cannot hide:
 
 ## Known follow-ups
 
-- Self-host the three font families to retire the one permitted external
-  request, so a lesson works with no network at all.
+- Self-host the three font families to retire the page-load external request,
+  so a lesson renders with no network at all. The console's runtime request is
+  separate and stays: it only fires on a key the reader supplies.
 - Prose density runs 73 to 89 words per allocated minute against a proposed
   band of 37 to 42. The band is unratified and reported only, but the direction
   is consistent: the sessions carry more words than their minutes support.
