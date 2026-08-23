@@ -4,16 +4,16 @@
  *
  * Run before wiring any rule to it:  node scripts/test-editorial-regions.mjs
  *
- * The load-bearing test is T7. A8's entire correctness rests on the R11
- * exclusion being right, so the classifier must reproduce EDITORIAL.md's
- * declared baseline table exactly. If T7 fails, either the classifier is wrong
- * or the baseline is, and guessing which corrupts A8 permanently — stop and
- * report instead.
+ * The load-bearing test is T7. A8 and A9's correctness rests on the R11
+ * exclusion being right, so the classifier must reproduce the recorded baseline
+ * in scripts/editorial-baseline.json exactly. If T7 fails, either the classifier
+ * is wrong or the baseline is, and guessing which corrupts the ratchets
+ * permanently — stop and report instead.
  */
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { classify, dashPopulation } from './editorial-regions.mjs';
+import { classify, authoredProse } from './editorial-regions.mjs';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LESSONS = ['session-0.1', 'session-1', 'session-2', 'session-3', 'session-4'];
@@ -112,27 +112,21 @@ const t = (id, name, ok, detail = '') => {
 
 /* ------------------------------------------------- T7  THE LOAD-BEARING ONE */
 {
-  /* EDITORIAL.md's declared baseline table, "The eleven regions" section. */
-  const TARGET = {
-    'session-0.1': { literal: 0, entity: 11 },
-    'session-1': { literal: 1, entity: 87 },
-    'session-2': { literal: 2, entity: 69 },
-    'session-3': { literal: 94, entity: 15 },
-    'session-4': { literal: 1, entity: 84 },
-  };
+  /* The baseline file is the single source of truth; the test never hard-codes it. */
+  const TARGET = JSON.parse(readFileSync(join(REPO, 'scripts/editorial-baseline.json'), 'utf8')).A9.files;
   const bad = [], seen = [];
   for (const l of LESSONS) {
     const c = classify(read(l));
-    const pop = dashPopulation(c);
+    const pop = authoredProse(c);
     const literal = (pop.match(/—/g) || []).length;
     const entity = (pop.match(/&mdash;/g) || []).length;
     const want = TARGET[l];
     seen.push(`${l.padEnd(12)} ${String(literal).padStart(3)} literal / ${String(entity).padStart(3)} entity`);
     if (literal !== want.literal || entity !== want.entity) {
-      bad.push(`${l}: got ${literal}/${want.literal ? '' : ''}${entity}, EDITORIAL.md declares ${want.literal}/${want.entity}`);
+      bad.push(`${l}: classifier gives ${literal}/${entity}, baseline records ${want.literal}/${want.entity}`);
     }
   }
-  t('T7', 'R11 exclusion reproduces EDITORIAL.md’s declared A8 baseline exactly',
+  t('T7', 'R11 exclusion reproduces the recorded A9 baseline exactly',
     bad.length === 0, bad.length ? bad.join('\n') : seen.join('\n'));
 }
 
@@ -140,7 +134,7 @@ const t = (id, name, ok, detail = '') => {
 {
   const src = read('session-0.1');
   const c = classify(src);
-  const pop = dashPopulation(c);
+  const pop = authoredProse(c);
   /* Not one of the 28 captured-transcript dashes may survive into the population. */
   const leaked = (c.spans.R10 || []).some(([s, e]) => /[—–]|\\u201[34]/.test(pop.slice(s, e)));
   t('T8', 'Class A2 transcripts and the CASE span leak nothing into the population',

@@ -230,20 +230,31 @@ export function classify(text) {
 }
 
 /**
- * The population A8 and A9 count over.
+ * authoredProse — the population A8 and A9 count over. EDITORIAL.md defines it
+ * once under "authoredProse — the population, defined once".
  *
- * EDITORIAL.md says "R1, with R2-R11 removed". Read literally that also drops
- * R8 (source notes) and R9 (reading blocks), and it does NOT reproduce the
- * declared baseline table. The baseline was measured with R8 and R9 IN and R7
- * (footer entries) OUT, so that is the definition that governs. Recorded here
- * and in editorial-baseline.json rather than left to be rediscovered.
+ * Source notes (R8) and reading blocks (R9) are IN; footer entries (R7) are OUT.
+ * EDITORIAL.md's literal phrase "R1 with R2-R11 removed" would also drop R8 and
+ * R9, and does NOT reproduce the declared A8 baseline. This does. The population
+ * had been under-specified three times before it was named; it is named here and
+ * in editorial-baseline.json so it cannot drift again.
  */
-export function dashPopulation(c) {
+export function authoredProse(c) {
   return c.mask(['R1', 'R8', 'R9']);
+}
+
+/**
+ * quotationScope — A10's population, DELIBERATELY wider than authoredProse.
+ * A quotation guard has to reach footer entries and script literals, so it does
+ * not share A8's population. Stated here because the difference looks like a bug
+ * until you know it is a decision.
+ */
+export function quotationScope(c) {
+  return c.mask(['R1', 'R2', 'R7', 'R8', 'R9']);
 }
 
 export function classifyFile(path) {
   return classify(readFileSync(path, 'utf8'));
 }
 
-export default { classify, classifyFile, dashPopulation, REGIONS };
+export default { classify, classifyFile, authoredProse, quotationScope, REGIONS };
