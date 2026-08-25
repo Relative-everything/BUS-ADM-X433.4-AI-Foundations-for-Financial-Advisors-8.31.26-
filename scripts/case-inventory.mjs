@@ -128,8 +128,12 @@ for (const [label, v, where, expr] of [
   ['trustYear1Dividend', F.trustUnitsAtClose * (F.dividend / F.totalUnits), 'E.7 / E.8', '572 × $5,000'],
   ['year1Excess', 2095236, 'E.7', '$2,860,000 − $764,764'],
   ['interestPerMillion', Math.round(1000000 * F.noteRate), 'E.6', '$1,000,000 × 3.82%'],
-  ['perUnitDividend', F.dividend / F.totalUnits, 'E.2', '$5,000,000 ÷ 1,000'],
+  ['perUnitDividend', F.dividend / F.totalUnits, 'E.2', '$5,000,000 ÷ 1,000'],  /* near-tested below */
 ]) fact(label, 'money', [moneyRx(v), v >= 1000000 ? millionsRx(v) : null], { value: v, where: `${where} — ${expr}` });
+/* $5,000 is a per-unit dividend here and statutory damages under Cal. Penal Code
+   §637.2 three lines away in session-3, and an <input max="5000"> elsewhere. It
+   only counts next to the thing it is a dividend on. Measured, not guessed. */
+for (const f of facts) if (f.key === 'perUnitDividend') f.near = /unit|dividend|LLC|distribut|per share/i;
 
 /* rates and percentages the case states */
 for (const [key, p, where, near] of [
@@ -265,7 +269,11 @@ for (const [key, n, where, near] of [
            context test only asks for "Meg" nearby and a citation sits in a
            sentence about her. A number after a hyphen is part of a citation or
            a range. */
-        new RegExp(`(?<![0-9,.$-])${money(n)}(?![0-9])(?!,[0-9])(?!%)`, 'g'),
+        /* Also excluded: an SVG coordinate (`x:52`) and a form bound
+           (`max="5000"`). session-3's meaning-space map put `x:52` three
+           characters from the words "seed gift", so the context test passed on
+           a number that is a pixel. */
+        new RegExp(`(?<![0-9,.$-])(?<![xyXY]:)(?<!="\\s*)${money(n)}(?![0-9])(?!,[0-9])(?!%)`, 'g'),
         { value: n, where, near });
 
 export { facts };
