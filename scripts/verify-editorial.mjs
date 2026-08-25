@@ -37,13 +37,15 @@ import { classify, authoredProse, quotationScope } from './editorial-regions.mjs
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = JSON.parse(readFileSync(join(REPO, 'scripts/editorial-baseline.json'), 'utf8'));
 
-/* Lessons with the core/appendix/tier architecture. session-0.1 is outside it —
-   EDITORIAL.md D14 is OPEN, and A1-A7 have no population in that file. The skip
-   is declared and dated here rather than left silent. */
+/* Lessons with the core/appendix/tier architecture. session-0.1 is outside it, and
+   as of EDITORIAL.md D20 (2026-08-25) that is settled rather than pending: it is a
+   standalone async bonus lesson with no live time block, so A1-A7 have no
+   population in that file. The skip is declared and reasoned here rather than left
+   silent, and it is A1-A7 ONLY — session-0.1 is in scope for every other rule. */
 const TIERED = ['session-1', 'session-2', 'session-3', 'session-4'];
 const ALL_LESSONS = ['session-0.1', ...TIERED];
 const D14_SKIP = 'session-0.1';
-const D14_REASON = 'D14 OPEN, deferred 2026-08-23 per commit f5bf47b: no appendix, no data-tier, no tier bar';
+const D14_REASON = 'D20 2026-08-25: out of scope for the appendix/tier architecture (standalone async, different delivery mode); no appendix, no data-tier, no tier bar';
 
 const argv = process.argv.slice(2);
 const ADVISORY_ONLY = argv.includes('--advisory-only');
@@ -193,9 +195,24 @@ if (enabled('A3')) {
 }
 
 /* ====================================================================== A4 */
-/* The lede's "The N sections above ... about M minutes" matches the core. */
+/* The appendix panel's core-count sentence matches the core.
+   TWO FORMS, and the second is the one the panel carries after Phase 2 step (f).
+   The divider used to trail the sections, so the sentence read "The N sections
+   ABOVE are the core session"; as a leading contents panel that is false, and
+   the generator writes "The N sections OF the core session run in about M
+   minutes" instead. Both are accepted so a file mid-migration still binds.
+   A PRESENCE FLOOR was added with them: a lesson with an .apxdiv and NO
+   matching sentence is a violation, not a skip. The old code fell through to
+   `continue`, so rewording the lede would have taken A4 from checking four
+   lessons to checking none while still printing PASS. That is the same shape as
+   verify-migration check 20's zero-matches-is-a-PASS, which this repository has
+   already recorded once as a defect. */
 if (enabled('A4')) {
-  let n = 0;
+  let n = 0, seen = 0;
+  const FORMS = [
+    /The\s+(\d+)\s+sections of the core session run in about\s+(\d+)\s+minutes/,
+    /The\s+(\d+)\s+sections above are the core session and run in about\s+(\d+)\s+minutes/,
+  ];
   for (const l of lessonFiles()) {
     if (l === D14_SKIP) { skipped.push(`SKIP  A4   ${l}  ${D14_REASON}`); continue; }
     const s = sections(src(l));
@@ -203,15 +220,21 @@ if (enabled('A4')) {
     if (!div) continue;
     const core = s.filter((x) => !x.apx && !x.apxdiv);
     const sum = core.reduce((a, b) => a + (b.mins || 0), 0);
-    const m = div.body.match(/The\s+(\d+)\s+sections above are the core session and run in about\s+(\d+)\s+minutes/);
-    if (!m) continue;
-    const [, nSec, nMin] = [m[0], Number(m[1]), Number(m[2])];
+    const m = FORMS.map((rx) => div.body.match(rx)).find(Boolean);
+    if (!m) {
+      n++;
+      violation('A4', `${l}/index.html`,
+        'the appendix panel states no core section count or core minute total');
+      continue;
+    }
+    seen++;
+    const nSec = Number(m[1]), nMin = Number(m[2]);
     if (nSec !== core.length || nMin !== sum) {
       n++;
       violation('A4', `${l}/index.html`, `lede claims ${nSec} core sections in ${nMin} min; page has ${core.length} in ${sum}`);
     }
   }
-  if (!n) ran('A4', 'core ledes match their page');
+  if (!n) ran('A4', `${seen} core lede(s) match their page`);
 }
 
 /* ====================================================================== A5 */
@@ -742,7 +765,14 @@ if (enabled('A15')) {
   for (const l of lessonFiles()) {
     const text = src(l);
     const c = classify(text);
-    const chipped = new Set([...text.matchAll(/data-src="(src-[^"]+)"/g)].map((x) => x[1]));
+    /* A footer entry's own terminal chip labels that entry's confidence; it is
+       not a citation of it. Counting it made an orphan undetectable in any
+       lesson using that convention, which was all of session-0.1's twelve keys
+       and, once inject-sources made the convention uniform, would have been all
+       of them. R7 is the footer-entry region, so excluding it is the fix. */
+    const inFooterEntry = (i) => (c.spans.R7 || []).some(([s0, e0]) => i >= s0 && i < e0);
+    const chipped = new Set([...text.matchAll(/data-src="(src-[^"]+)"/g)]
+      .filter((x) => !inFooterEntry(x.index)).map((x) => x[1]));
     for (const [s, e] of (c.spans.R7 || [])) {
       const body = text.slice(s, e);
       const id = (body.match(/id="(src-[^"]+)"/) || [])[1];
@@ -758,6 +788,82 @@ if (enabled('A15')) {
     }
   }
   if (!n) ran('A15', `${seen} footer key(s) each carry a chip or a declared reason`);
+}
+
+/* ===================================================================== A20 */
+/* A footer key whose "Used for:" clause names an on-page claim that currently
+   carries a chip pointing at a DIFFERENT key is a mis-wire, not an orphan.
+
+   This is the actionable half of the warning validate_lesson V4 has been
+   emitting with nobody able to act on it: V4 says "this key is never
+   referenced" and stops. A15 says the same thing and stops. Neither can tell
+   an orphan (a source genuinely cited nowhere) from a mis-wire (a source cited
+   in the wrong place, which leaves its correct key looking orphaned in the same
+   footer). The difference is the whole fix.
+
+   METHOD, and it is deliberately a lead generator rather than an assertion.
+   For each key with no chip anywhere, take the distinctive tokens of its
+   "Used for:" clause - the words a claim about that source would have to use -
+   and look for a chipped sentence carrying a different key that contains
+   enough of them. Report the pair. ADVISE, because "enough of them" is a
+   threshold and a threshold is not a proof; the human decides.
+
+   Validated against the 19 rewires applied in Phase 3 Part 1 before it was
+   committed: it independently proposes the ones whose evidence is a Used-for
+   clause, which is what it is for, and proposes none of the ones whose evidence
+   is a name in the sentence, which A13 already owns. */
+const STOP = new Set(('the a an and or of for to in on at by with from as is are was were '
+  + 'that this these those it its used which what when where who whom whose not no '
+  + 'page claim claims lesson section sessions appendix figure figures data '
+  + 'course file build here there also than then their they them he she his her '
+  + 'one two three four five six seven eight nine ten first second third').split(/\s+/));
+function contentTokens(text) {
+  return [...new Set((text.toLowerCase().match(/[a-z][a-z0-9-]{3,}/g) || [])
+    .filter((w) => !STOP.has(w)))];
+}
+if (enabled('A20')) {
+  let n = 0, seen = 0;
+  for (const l of lessonFiles()) {
+    const text = src(l);
+    const c = classify(text);
+    const chipped = new Set([...text.matchAll(/data-src="(src-[^"]+)"/g)].map((x) => x[1]));
+    /* every chipped sentence, as a container with its keys */
+    const containers = [];
+    for (const rx of [/<p\b[^>]*>[\s\S]*?<\/p>/g, /<li\b[^>]*>[\s\S]*?<\/li>/g,
+                      /cap\s*:\s*'(?:[^'\\]|\\.)*'/g, /<span class="src"[^>]*>[\s\S]*?<\/span>/g]) {
+      for (const m of text.matchAll(rx)) containers.push({ i: m.index, body: m[0] });
+    }
+    for (const [s0, e0] of (c.spans.R7 || [])) {
+      const body = text.slice(s0, e0);
+      const id = (body.match(/id="(src-[^"]+)"/) || [])[1];
+      if (!id || chipped.has(id)) continue;
+      seen++;
+      const used = (body.match(/Used for:\s*([\s\S]*?)(?:<span class="conf|<\/li>)/) || [])[1];
+      if (!used) continue;                       /* no Used-for clause: A15 owns it */
+      const want = contentTokens(used.replace(/<[^>]*>/g, ' '));
+      if (want.length < 3) continue;
+      let best = null;
+      for (const ct of containers) {
+        if (c.regionOf(ct.i) === 'R6' || c.regionOf(ct.i) === 'R7') continue;
+        const keys = [...new Set([...ct.body.matchAll(/data-src="(src-[^"]+)"/g)].map((x) => x[1]))];
+        if (!keys.length || keys.includes(id)) continue;
+        const plain = ct.body.replace(/<[^>]*>/g, ' ').toLowerCase();
+        const hit = want.filter((w) => plain.includes(w));
+        const ratio = hit.length / want.length;
+        if (hit.length >= 3 && ratio >= 0.5 && (!best || hit.length > best.hit.length)) {
+          best = { ct, keys, hit, ratio };
+        }
+      }
+      if (best) {
+        n++;
+        violation('A20', `${l}/index.html:${c.lineAt(best.ct.i)}`,
+          `${id} looks mis-wired rather than orphaned: its "Used for" clause matches this claim `
+          + `on ${best.hit.length}/${want.length} terms (${best.hit.slice(0, 6).join(', ')}),\n`
+          + `           and the claim carries ${best.keys.join(', ')}`);
+      }
+    }
+  }
+  if (!n) ran('A20', `${seen} key(s) with no chip; none matches a claim chipped to another key`);
 }
 
 /* ================================================================ A17-A19 */

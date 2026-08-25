@@ -624,15 +624,7 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
 footer li{margin-bottom:9px;line-height:1.55}
 @media print{#rail,#ovr{display:none}body{background:#fff}.slide{page-break-inside:avoid;padding:20px 0}}
 /* ===== CORE / APPENDIX ARCHITECTURE ===== */
-a.apxlink{display:block;background:var(--gold-bg);border:1.5px dashed var(--gold);border-radius:10px;padding:12px 16px;margin:22px 0 0;text-decoration:none;color:inherit;transition:.15s}
-a.apxlink:hover{border-style:solid}
-a.apxlink+a.apxlink{margin-top:9px}
-a.apxlink .al{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px;font-weight:500}
-a.apxlink b{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:15.5px;font-weight:600;letter-spacing:-.015em}
-a.apxlink .aw{display:block;color:var(--muted);font-size:14px;line-height:1.45;margin-top:3px;font-family:"Source Serif 4",Georgia,serif;text-transform:none;letter-spacing:0}
 section.apxdiv{border-top:3px solid var(--gold)}
-section.apx .apxback{background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:9px 14px;margin:0 0 18px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.05em;line-height:1.6;color:var(--gold)}
-section.apx .apxback a{color:var(--gold);font-weight:500}
 .apxgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:11px;margin-top:20px}
 a.apxcard{display:block;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;transition:.15s}
 a.apxcard:hover{border-color:var(--gold);box-shadow:0 3px 14px rgba(138,106,18,.10)}
@@ -641,7 +633,7 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 #rail button.apxnav .pip{background:var(--gold);opacity:.5}
 #rail button.apxnav{color:var(--gold)}
 #rail button.apxnav.on .pip{background:var(--gold);opacity:1}
-@media print{a.apxlink{display:none}}
+body.core-only #rail button.apxnav:not(.apxidx){display:none}
 .pace{border-color:var(--gold)!important;background:var(--gold-bg)}
 .pace .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:4px}
 .pace .pcell b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--gold)}
@@ -678,10 +670,14 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 #tierbar button:hover{border-color:var(--gold);color:var(--gold)}
 #tierbar button.on{background:var(--gold);border-color:var(--gold);color:#fff}
 #tierbar button.core.on{background:var(--on);border-color:var(--on)}
-section.apx.dim{opacity:.32}
-section.apx.dim .apxback{opacity:.5}
-a.apxcard.dim,a.apxlink.dim{opacity:.3}
-body.core-only section.apx,body.core-only section.apxdiv,body.core-only a.apxlink{display:none}
+section.apx.dim{padding:14px 0;border-bottom:1px dashed var(--line)}
+section.apx.dim>*{display:none}
+section.apx.dim>.apxstub{display:block}
+.apxstub{display:none;background:var(--card);border:1.5px dashed var(--line);border-radius:10px;padding:11px 15px;margin:0}
+.apxstub b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:14px;font-weight:600;letter-spacing:-.01em;color:var(--muted)}
+.apxstub span{display:block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+a.apxcard.dim{opacity:.3}
+body.core-only section.apx{display:none}
 @media print{body.core-only section.apx,body.core-only section.apxdiv{display:none}#tierbar{display:none}}
 table.tbudget{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px}
 table.tbudget th{text-align:left;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);border-bottom:1.5px solid var(--line);padding:7px 9px}
@@ -1073,7 +1069,7 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
     <button data-level="0">Foundational</button>
     <button data-level="1" class="on">+ Standard</button>
     <button data-level="2">+ Advanced</button>
-    <button class="core" data-core>Core only</button>
+    <button class="core on" data-core>Core only</button>
   </div>
   <p class="dim mono" id="tierOut" style="font-size:12px;letter-spacing:.04em;margin:9px 0 0"></p>
 </div>
@@ -1105,6 +1101,22 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
   <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Order all four verification checks before anything is revealed.</div></div>
 
 </section>
+
+<!-- APXPANEL:BEGIN generated-by=scripts/build-appendix.mjs -->
+<section class="slide apxdiv" id="apx" data-nav="Appendix contents">
+  <div class="eyebrow"><span>Appendix &middot; 5 optional sections</span><span class="mins">78 min</span></div>
+  <h2>Appendix contents</h2>
+  <p class="lede">Five optional sections, 78 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
+  <p>The 13 sections of the core session run in about 72 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <div class="apxgrid">
+    <a class="apxcard" href="#s5"><span class="ac">C1 &middot; 16 min &middot; after &sect;03</span><b>Chunk Size and Condition Orphaning</b></a>
+    <a class="apxcard" href="#sHY"><span class="ac">C5 &middot; 16 min &middot; after &sect;03</span><b>Hybrid Search and the Re-ranking Pass</b></a>
+    <a class="apxcard" href="#s8"><span class="ac">C2 &middot; 14 min &middot; after &sect;05</span><b>Grounding Compared With Fine-Tuning</b></a>
+    <a class="apxcard" href="#s11"><span class="ac">C3 &middot; 14 min &middot; after &sect;07</span><b>Note-Taker Adoption Against Note-Taker Satisfaction</b></a>
+    <a class="apxcard" href="#s15"><span class="ac">C4 &middot; 18 min &middot; after &sect;10</span><b>Citation-Backed Output and Verification Effort</b></a>
+  </div>
+</section>
+<!-- APXPANEL:END -->
 
 <section class="slide" id="sCold" data-nav="Cold open">
   <div class="eyebrow"><span>Cold open &middot; standing ritual</span><span class="mins">8 min</span></div>
@@ -1203,10 +1215,64 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
   <p class="src">Corpus is synthetic, drawn from the course case anchor. The Cole household, Cole Precision Components and every document in the set are invented for teaching. No document quoted here states law, and no chunk should be read as a model provision. The ranking arithmetic (IDF weighting, cosine similarity) executes in the page and is auditable in the source.</p>
 
 
-  <a class="apxlink" href="#s5"><span class="al">If there is time &middot; Appendix C1 &middot; 12 min</span><b>Chunk Size and Condition Orphaning</b><span class="aw">Move the chunk boundary and watch a governing condition get separated from the rule it governs. The most concrete retrieval failure in the course, and the one a document-heavy practice needs.</span></a>
 
   <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run all four preset queries, including the two engineered to fail.</div></div>
 
+</section>
+
+<section class="slide apx" id="s5" data-nav="C1 · Chunk size" data-insert-after="s4" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C1 &middot; Chunk Size and Condition Orphaning</b><span>16 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C1 &middot; Mechanism, deeper</span><span class="mins">16 min</span></div>
+  <h2>Chunk Size and Condition Orphaning</h2>
+
+  <p class="big">Chunk size is the only parameter in a retrieval system a non-engineer will ever be asked to choose, and it decides whether a rule arrives with the condition that governs it.</p>
+
+  <p>Anthropic's engineering write-up states the problem in one example: a chunk reads "the company's revenue grew by 3% over the previous quarter," and nothing in that chunk says which company or which quarter. The subject was two paragraphs earlier, in a different chunk. The embedding of the orphaned chunk carries none of it.</p>
+
+  <p>The Cole version is worse, because the orphaned element is not the subject but the <em>trigger</em>. Article VII of the 2014 buy-sell states a valuation formula, and it states it in a sentence that never names the event that invokes it. Severed from the sentence before it, the formula reads as CPC's valuation method. It is not. It is the valuation method for a death, a disability or a withdrawal — none of which is happening here. Drag the slider and watch the trigger separate from the formula.</p>
+
+  <div class="panel" data-task="t-s5" data-comp="parameter-sandbox">
+    <span class="do">Do this now — 5 minutes</span>
+    <h4>Re-chunk Article VII</h4>
+    <p class="hint">The same clause, split at different chunk lengths. Chunks stating a valuation rule with no triggering event attached are flagged. Find the <em>largest</em> chunk size at which orphaning still occurs. Most rooms guess around twenty. Re-derived against this clause, the answer is forty — orphaning stops only when the chunk is large enough to swallow the trigger and the formula together.</p>
+    <label class="fl" for="chSize">Chunk size</label>
+    <input type="range" id="chSize" min="6" max="80" step="2" value="14">
+    <div class="ticks"><span>6 words</span><span id="chNow">14 words</span><span>80 words</span></div>
+    <p style="margin:0 0 8px"><span class="sim">Keyword heuristic &mdash; written for this lesson</span></p>
+    <div id="chOut" class="mpanel"></div>
+    <div class="instrline" id="chFix"></div>
+  </div>
+
+  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em> — the revenue-chunk example and the prepend-context remedy are Anthropic's <span class="conf h" data-src="src-anthropic-ctx">H</span>. Article VII text is synthetic case content and is not a model buy-sell provision. The orphaning detector is a keyword heuristic written for this lesson and will miss cases a real evaluation would catch <span class="conf l" data-src="src-anthropic-ctx">L — heuristic, illustrative</span>.</p>
+
+  <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Find the largest chunk size at which the trigger still separates from the formula.</div></div>
+
+</section>
+
+<section class="slide apx" id="sHY" data-nav="C5 &middot; Hybrid search" data-insert-after="s4" data-tier="advanced">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C5 &middot; Hybrid Search and the Re-ranking Pass</b><span>16 min &middot; advanced &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C5 &middot; Mechanism, deeper</span><span class="mins">16 min</span></div>
+  <h2>Hybrid Search and the Re-ranking Pass</h2>
+
+  <p class="big">&sect;04 gives you a failure rate and a floor. This section is the three engineering changes that move the rate, in the order they pay off, measured on Anthropic&rsquo;s own corpus.</p>
+
+  <p>The baseline is embedding-only retrieval: chunk, embed, rank by cosine similarity, return the top&nbsp;k. Each change below is additive and each is reported separately, so you can see which one your vendor has actually implemented and which one they are describing.</p>
+
+  <div class="panel">
+    <span class="do">Do this now &mdash; 5 minutes</span>
+    <h4>Stage-by-Stage Effect on the Failure Rate</h4>
+    <p class="hint">Failure rate is the share of queries where the correct passage is absent from the top 20 retrieved. Toggle in any order; the readout names what each stage fixes and what it cannot.</p>
+    <div id="hyCtrls" data-task="t-sHY" data-comp="pipeline-lab" class="row"></div>
+    <div class="diagout" id="hyOut"></div>
+  </div>
+
+  <p><strong>Read the last stage carefully.</strong> Re-ranking is the most expensive of the three &mdash; it runs a second model over the candidates &mdash; and it is the one most often sold as the whole product. On these numbers it is worth roughly a third of the total improvement, and it cannot recover a passage that retrieval never surfaced. Nothing downstream fixes a chunk that was not in the candidate set.</p>
+
+  <p><strong>What none of it fixes.</strong> The Article VII failure you produced in &sect;03 was not a ranking miss. The right chunk was retrieved and it was the wrong chunk to answer with, because a valuation formula severed from its triggering event reads as the general rule. Hybrid search returns it faster. It does not know it should not have been used.</p>
+
+  <p class="src"><b>Anthropic (2024, 19 Sep), Contextual Retrieval in AI Systems</b> &mdash; embedding-only baseline 5.7% failure at top-20; contextual embeddings 3.7%; plus contextual BM25 2.9%; plus re-ranking 1.9%. Figures are Anthropic&rsquo;s, measured on their own evaluation corpus by the vendor of the technique <span class="conf m" data-src="src-anthropic-ctx">M &mdash; vendor benchmark</span>. Percentages reproduced verbatim; the ordering commentary is mine.</p>
+
+  <div class="check" data-gate="ga5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Enable all three stages, then say which one your current tool actually runs and how you know.</div></div>
 </section>
 
 <section class="slide" id="s6" data-nav="Retrieval rates">
@@ -1274,9 +1340,33 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
   <p class="src">Vectara (19 Nov 2025), <em>Introducing the Next Generation of Vectara's Hallucination Leaderboard</em> — dataset size, 32K-token length, domain mix, low/high complexity split (3,792 / 3,939), the leaderboard prompt, and the named model rates <span class="conf h" data-src="src-vectara">H</span>. Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools. <em>Journal of Empirical Legal Studies, 22</em>(2), 216 — Lexis+ AI &gt;17%, Westlaw AI-Assisted Research ~33%, GPT-4 43%; tools tested May 2024 <span class="conf h" data-src="src-magesh">H — peer reviewed</span>. Both measure legal and general text, not financial planning documents <span class="conf m" data-src="src-case">M — domain transfer unverified</span>.</p>
 
 
-  <a class="apxlink" href="#s8"><span class="al">If there is time &middot; Appendix C2 &middot; 9 min</span><b>Grounding Compared With Fine-Tuning</b><span class="aw">Why grounding retrieves at query time and fine-tuning does not, and when a firm would ever pay for the second. Take it when someone in the room has been sold fine-tuning.</span></a>
 
   <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Read all four measured rates and name which one your own workflow is exposed to.</div></div>
+
+</section>
+
+<section class="slide apx" id="s8" data-nav="C2 · Grounding vs tuning" data-insert-after="s7" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C2 &middot; Grounding Compared With Fine-Tuning</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C2 &middot; Comparison</span><span class="mins">14 min</span></div>
+  <h2>Grounding Compared With Fine-Tuning</h2>
+
+  <p class="big">Grounding changes what the model reads. Fine-tuning changes what the model is. Advisors are routinely sold the second when they need the first, and the distinguishing question is not accuracy but the cost of being wrong tomorrow.</p>
+
+  <p>Wolfram makes the underlying point without using either term. He observes that it is sufficient to tell the model something once, as part of the prompt, and it will use it — and that this is a clue about what the model is doing, because the alternative would be running a training algorithm and adjusting weights. He also notes the limit: the model can integrate what you tell it only if it rides in a fairly simple way on top of the framework it already has.</p>
+
+  <p>That limit is the honest case for fine-tuning and it is narrower than the sales deck. If your house style and output format are unlike anything in the training corpus, tuning can help. If your <em>facts</em> change — and the Cole file is nothing but facts that change, a discount that needs re-verifying and a buy-sell that needs amending — tuning is the wrong instrument, because facts baked into weights cannot be corrected by editing a document and cannot be cited.</p>
+
+  <div class="panel">
+    <span class="do">Do this now — 4 minutes</span>
+    <h4>Ranking by Cost of a Change</h4>
+    <p class="hint">The 2023 appraisal is re-run on a Tuesday afternoon and the supportable discount changes. Rank these four architectures by how expensive it is to make the assistant reflect that — cheapest first. Click in order; click again to reset.</p>
+    <div id="rankList" class="chiplist"></div>
+    <div id="rankOut" class="mpanel"><span class="hd">Your ordering</span><span class="nil">Click the cheapest to update first.</span></div>
+  </div>
+
+  <p class="src">Wolfram (2023), "Beyond Basic Training" — the tell-it-once observation and the "riding on top of the framework it already has" limit are Wolfram's, reproduced in substance <span class="conf h" data-src="src-wolfram">H</span>. The four-way ranking and its ordering are a design judgement made for this lesson, not a measured result <span class="conf l" data-src="src-wolfram">L — reasoned, not measured</span>.</p>
+
+  <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort every case into grounding or fine-tuning and read the whys you got wrong.</div></div>
 
 </section>
 
@@ -1333,9 +1423,34 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
   <p class="src">Kitces.com (15 Jan 2025), <em>Best AI Notetakers For Financial Advisor Meetings</em>, drawing on Kitces Research on Advisor Productivity (fielded autumn 2024) — the &gt;1:1 prep-and-follow-up ratio, the solo-vs-team adoption pattern, the UHNW drop-off, and the ~4× rate for most-extensive versus most-targeted plans <span class="conf h" data-src="src-kitces-notetakers">H — named research</span>. The excerpt is synthetic case content. "Warren" is the case's estate attorney and is invented. The scoring heuristic is keyword-based <span class="conf l" data-src="src-case">L — heuristic</span>.</p>
 
 
-  <a class="apxlink" href="#s11"><span class="al">If there is time &middot; Appendix C3 &middot; 7 min</span><b>Note-Taker Adoption Against Note-Taker Satisfaction</b><span class="aw">Adoption is high and satisfaction is not. Useful for a room already running a note-taker; skippable for a room deciding whether to.</span></a>
 
   <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Write the CRM note you would want, then read the misses rather than the score.</div></div>
+
+</section>
+
+<section class="slide apx" id="s11" data-nav="C3 · Adoption" data-insert-after="s10" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C3 &middot; Note-Taker Adoption Against Note-Taker Satisfaction</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C3 &middot; Market evidence</span><span class="mins">14 min</span></div>
+  <h2>Note-Taker Adoption Against Note-Taker Satisfaction</h2>
+
+  <p class="big">Rank the category by adoption and rank it by satisfaction and the orders invert. The tool with the highest adoption in Kitces' autumn 2024 data — Zoom's AI Companion, a toggle inside software advisors already pay for — ranked last on advisor satisfaction. The industry-specific tools, at $60–$80 per month or more, ranked highest.</p>
+
+  <p>The explanation is architectural rather than a matter of taste. A meeting-platform note-taker summarises the meeting. An advisor-specific tool writes the note into the CRM, queues the post-meeting tasks, drafts the recap email and prepares the next agenda. Advisors were not rating summary quality; they were rating the four things that happen after the summary.</p>
+
+  <div class="panel" data-task="t-s11" data-comp="estimate-then-reveal">
+    <span class="do">Do this now — 2 minutes</span>
+    <h4>Prediction, Then Reveal</h4>
+    <p class="hint">Before the chart: where did the single most-adopted tool rank on satisfaction? Commit, then reveal.</p>
+    <div class="row" id="predBtns"></div>
+    <div id="predOut" class="mpanel"><span class="hd">Your prediction</span><span class="nil">Commit to an answer.</span></div>
+    <figure id="figSlope" class="keyhide" style="display:none"></figure>
+  </div>
+
+  <p>By 2025 the category had grown to roughly 30% of advisors using some kind of client meeting note tool, with 18 note-takers on the AdvisorTech Map competing for that pool, Jump at 9.7% adoption among standalone tools and no remaining provider above 0.5%. Read that as a procurement warning: you are selecting from a category mid-consolidation, and the switching cost is your historical meeting record.</p>
+
+  <p class="src">Kitces.com (15 Jan 2025) — Zoom AI Companion #1 in adoption and last in satisfaction; industry-specific tools lead satisfaction; $60–$80/month pricing <span class="conf h" data-src="src-kitces-notetakers">H</span>. Kitces.com AdvisorTech columns (Oct and Nov 2025) — Jump + Zocks 12.8% combined, Zoom AI + Fathom 7.6% combined, Jump 9.7% among standalone tools, none of the remainder above 0.5%, 18 note-takers on the map <span class="conf h" data-src="src-kitces-notetakers">H</span>. Kitces AdvisorTech column (Aug 2026) — ~30% of advisors using a client meeting note tool as of the 2025 research <span class="conf h" data-src="src-kitces-notetakers">H</span>. The slopegraph plots ranks, not scores <span class="conf m" data-src="src-kitces-notetakers">M — rank order published, underlying scores not</span>.</p>
+
+  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Name the segment you sit in and whether its adoption rate matches your own.</div></div>
 
 </section>
 
@@ -1460,17 +1575,46 @@ then a list of every element where my answer was thin.</pre>
     <div id="srcOut" class="mpanel"><span class="hd">Your citation set</span><span class="nil">Select at least one source.</span></div>
   </div>
 
-  <p class="src">Assignment terms — three sources minimum, one scholarly preferred, due before Session 5 — are set by the instructor for this cohort. <strong>Schedule conflict flagged:</strong> the published syllabus places this homework before Session 4. The revised date supersedes it for this cohort and the syllabus needs the same edit. The 2024 Regulation S-P amendments are named as a citable source; their compliance dates are <span class="conf m" data-src="src-case">M — not verified in this build</span> and should be confirmed against the adopting release before a student relies on a date. Regulatory and scholarly classifications in the widget are the instructor's, for the purpose of this assignment only.</p>
+  <p class="src">Assignment terms — three sources minimum, one scholarly preferred, due before Session 5 — are set by the instructor for this cohort. <strong>Schedule conflict flagged:</strong> the published syllabus places this homework before Session 4. The revised date supersedes it for this cohort and the syllabus needs the same edit. The 2024 Regulation S-P amendments are named as a citable source; their compliance dates are <span class="conf m" data-src="src-regsp">M — not verified in this build</span> and should be confirmed against the adopting release before a student relies on a date. Regulatory and scholarly classifications in the widget are the instructor's, for the purpose of this assignment only.</p>
 
 
-  <a class="apxlink" href="#s15"><span class="al">If there is time &middot; Appendix C4 &middot; 20 min</span><b>Citation-Backed Output and Verification Effort</b><span class="aw">Whether a citation-backed answer costs less to verify than an unsourced one. Twenty minutes, and it works best after the measurement sections have landed.</span></a>
 
   <div class="check" data-gate="g11"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Select every element your policy needs and read the assembled outline.</div></div>
 
 </section>
 
+<section class="slide apx" id="s15" data-nav="C4 · Discussion" data-insert-after="s14" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C4 &middot; Citation-Backed Output and Verification Effort</b><span>18 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C4 &middot; Discussion</span><span class="mins">18 min</span></div>
+  <h2>Citation-Backed Output and Verification Effort</h2>
+
+  <p class="big">The question: does a citation-backed output make you check more, or check less?</p>
+
+  <p>This divides the room, which is the only reason it is on the schedule. One side holds that a citation is a handle — it gives you something specific to pull on, so you check more and check better. The other holds that a citation is a signal of completed work, and that the presence of a source is read by a busy professional as evidence the source was consulted. Tonight supplies evidence for the second position and you have supplied evidence for the first all evening by finding the Article VII failure yourselves.</p>
+
+  <p>Structure: commit before anyone speaks; two speakers per side, minority first; one complication introduced by the instructor; re-vote with both distributions on screen. A zero delta is a finding, not a failure — it means a position held under evidence.</p>
+
+  <div class="panel" data-task="t-s15" data-comp="sealed-vote-debate">
+    <span class="do">Locked vote — commit before discussion</span>
+    <h4>Vote one</h4>
+    <p class="hint">Your first vote locks. The room distribution stays hidden until after the re-vote. Answer for what you actually do, not what you would recommend.</p>
+    <div class="row" id="voteBtns"></div>
+    <div id="voteOut" class="mpanel"><span class="hd">Vote one</span><span class="nil">Commit to a position.</span></div>
+    <div id="defence" class="mpanel keyhide" style="display:none"></div>
+    <div class="row" id="revoteBtns" style="margin-top:16px"></div>
+    <div id="revoteOut" class="mpanel keyhide" style="display:none"></div>
+  </div>
+
+  <div class="instrline">Instructor: run the same three options as a Zoom poll at each vote so the room distributions are captured alongside the individual deltas this widget records. Decision rule — if fewer than 25% take "check less" on vote one, read the Magesh finding aloud before the defence phase rather than after, or the minority has nothing to defend.</div>
+
+  <p class="src">Magesh et al. (2025) report that the tools tested made claims not supported by the sources they cited, which is the specific failure a reader who trusts the citation will not catch <span class="conf h" data-src="src-magesh">H</span>. Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025), <em>The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects from a Survey of Knowledge Workers</em>, Microsoft Research / CHI 2025 — the Session 5 reading; characterised here only by its title claim of self-reported reductions in cognitive effort <span class="conf m" data-src="src-lee-cognitive">M — full findings not re-verified in this build</span>. No claim is made here about the size or direction of any measured effect on verification behaviour.</p>
+
+  <div class="check" data-gate="ga4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote, defend, absorb the complication, re-vote.</div></div>
+
+</section>
+
 <section class="slide" id="s16" data-nav="Part 1 + handoff">
-  <div class="eyebrow"><span>11 &middot; Close</span><span class="mins">5 min</span></div>
+  <div class="eyebrow"><span>11 &middot; Close</span><span class="mins">7 min</span></div>
   <h2>Part 1 Draft Peer Exchange and the Session 4 Handoff</h2>
 
   <p class="big">Your Part 1 draft outline was due today. The handoff package is due at the end of Session 4 — six days out. The component that fails most often is not the workflow. It is scalability, at 30% the heaviest single weight in Part 1.</p>
@@ -1505,154 +1649,7 @@ then a list of every element where my answer was thin.</pre>
 
   <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Score your Part 1 draft against the rubric and name the one gap you will close before Session 4.</div></div>
 
-</section>
-
-<section class="slide apxdiv" id="apx" data-nav="— APPENDIX —">
-  <div class="eyebrow"><span>Appendix &middot; 4 optional sections</span><span class="mins">48 min</span></div>
-  <h2>Appendix</h2>
-  <p class="lede">Four optional sections. Two deepen the retrieval mechanism, one adds market evidence, one is the long discussion.</p>
-  <p>The 12 sections above are the core session and run in about 64 minutes. Everything below is optional depth. Each appendix section names the two core sections it belongs between and links back to that point, so it can be taken in place during a long session or on its own afterwards. Nothing in the core depends on anything down here.</p>
-  <div class="apxgrid">
-    <a class="apxcard" href="#s5"><span class="ac">C1 &middot; 12 min &middot; after §03</span><b>Chunk Size and Condition Orphaning</b></a>
-    <a class="apxcard" href="#s8"><span class="ac">C2 &middot; 9 min &middot; after §05</span><b>Grounding Compared With Fine-Tuning</b></a>
-    <a class="apxcard" href="#s11"><span class="ac">C3 &middot; 7 min &middot; after §07</span><b>Note-Taker Adoption Against Note-Taker Satisfaction</b></a>
-    <a class="apxcard" href="#s15"><span class="ac">C4 &middot; 20 min &middot; after §10</span><b>Citation-Backed Output and Verification Effort</b></a>
-  </div>
-</section>
-
-<section class="slide apx" id="sHY" data-nav="C5 &middot; Hybrid search" data-insert-after="s4" data-tier="advanced">
-  <div class="eyebrow"><span>Appendix C5 &middot; Mechanism, deeper</span><span class="mins">16 min</span></div>
-  <div class="apxback">Insert between &sect;03 Retrieval and &sect;04 Retrieval rates &mdash; <a href="#s4">back to &sect;03</a> &middot; <a href="#s6">continue to &sect;04 &rarr;</a></div>
-  <h2>Hybrid Search and the Re-ranking Pass</h2>
-
-  <p class="big">&sect;04 gives you a failure rate and a floor. This section is the three engineering changes that move the rate, in the order they pay off, measured on Anthropic&rsquo;s own corpus.</p>
-
-  <p>The baseline is embedding-only retrieval: chunk, embed, rank by cosine similarity, return the top&nbsp;k. Each change below is additive and each is reported separately, so you can see which one your vendor has actually implemented and which one they are describing.</p>
-
-  <div class="panel">
-    <span class="do">Do this now &mdash; 5 minutes</span>
-    <h4>Stage-by-Stage Effect on the Failure Rate</h4>
-    <p class="hint">Failure rate is the share of queries where the correct passage is absent from the top 20 retrieved. Toggle in any order; the readout names what each stage fixes and what it cannot.</p>
-    <div id="hyCtrls" data-task="t-sHY" data-comp="pipeline-lab" class="row"></div>
-    <div class="diagout" id="hyOut"></div>
-  </div>
-
-  <p><strong>Read the last stage carefully.</strong> Re-ranking is the most expensive of the three &mdash; it runs a second model over the candidates &mdash; and it is the one most often sold as the whole product. On these numbers it is worth roughly a third of the total improvement, and it cannot recover a passage that retrieval never surfaced. Nothing downstream fixes a chunk that was not in the candidate set.</p>
-
-  <p><strong>What none of it fixes.</strong> The Article VII failure you produced in &sect;03 was not a ranking miss. The right chunk was retrieved and it was the wrong chunk to answer with, because a valuation formula severed from its triggering event reads as the general rule. Hybrid search returns it faster. It does not know it should not have been used.</p>
-
-  <p class="src"><b>Anthropic (2024, 19 Sep), Contextual Retrieval in AI Systems</b> &mdash; embedding-only baseline 5.7% failure at top-20; contextual embeddings 3.7%; plus contextual BM25 2.9%; plus re-ranking 1.9%. Figures are Anthropic&rsquo;s, measured on their own evaluation corpus by the vendor of the technique <span class="conf m" data-src="src-anthropic-ctx">M &mdash; vendor benchmark</span>. Percentages reproduced verbatim; the ordering commentary is mine.</p>
-
-  <div class="check" data-gate="ga5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Enable all three stages, then say which one your current tool actually runs and how you know.</div></div>
-</section>
-
-<section class="slide apx" id="s5" data-nav="C1 · Chunk size" data-insert-after="s4" data-tier="standard">
-  <div class="eyebrow"><span>Appendix C1 &middot; Mechanism, deeper</span><span class="mins">16 min</span></div>
-  <div class="apxback">Insert between §03 Retrieval and §04 Retrieval rates &mdash; <a href="#s4">back to §03</a> &middot; <a href="#s6">continue to §04 &rarr;</a></div>
-  <h2>Chunk Size and Condition Orphaning</h2>
-
-  <p class="big">Chunk size is the only parameter in a retrieval system a non-engineer will ever be asked to choose, and it decides whether a rule arrives with the condition that governs it.</p>
-
-  <p>Anthropic's engineering write-up states the problem in one example: a chunk reads "the company's revenue grew by 3% over the previous quarter," and nothing in that chunk says which company or which quarter. The subject was two paragraphs earlier, in a different chunk. The embedding of the orphaned chunk carries none of it.</p>
-
-  <p>The Cole version is worse, because the orphaned element is not the subject but the <em>trigger</em>. Article VII of the 2014 buy-sell states a valuation formula, and it states it in a sentence that never names the event that invokes it. Severed from the sentence before it, the formula reads as CPC's valuation method. It is not. It is the valuation method for a death, a disability or a withdrawal — none of which is happening here. Drag the slider and watch the trigger separate from the formula.</p>
-
-  <div class="panel" data-task="t-s5" data-comp="parameter-sandbox">
-    <span class="do">Do this now — 5 minutes</span>
-    <h4>Re-chunk Article VII</h4>
-    <p class="hint">The same clause, split at different chunk lengths. Chunks stating a valuation rule with no triggering event attached are flagged. Find the <em>largest</em> chunk size at which orphaning still occurs. Most rooms guess around twenty. Re-derived against this clause, the answer is forty — orphaning stops only when the chunk is large enough to swallow the trigger and the formula together.</p>
-    <label class="fl" for="chSize">Chunk size</label>
-    <input type="range" id="chSize" min="6" max="80" step="2" value="14">
-    <div class="ticks"><span>6 words</span><span id="chNow">14 words</span><span>80 words</span></div>
-    <p style="margin:0 0 8px"><span class="sim">Keyword heuristic &mdash; written for this lesson</span></p>
-    <div id="chOut" class="mpanel"></div>
-    <div class="instrline" id="chFix"></div>
-  </div>
-
-  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em> — the revenue-chunk example and the prepend-context remedy are Anthropic's <span class="conf h" data-src="src-anthropic-ctx">H</span>. Article VII text is synthetic case content and is not a model buy-sell provision. The orphaning detector is a keyword heuristic written for this lesson and will miss cases a real evaluation would catch <span class="conf l" data-src="src-anthropic-ctx">L — heuristic, illustrative</span>.</p>
-
-  <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Find the largest chunk size at which the trigger still separates from the formula.</div></div>
-
-</section>
-
-<section class="slide apx" id="s8" data-nav="C2 · Grounding vs tuning" data-insert-after="s7" data-tier="foundational">
-  <div class="eyebrow"><span>Appendix C2 &middot; Comparison</span><span class="mins">14 min</span></div>
-  <div class="apxback">Insert between §05 Grounded error and §06 Workflow &mdash; <a href="#s7">back to §05</a> &middot; <a href="#s9">continue to §06 &rarr;</a></div>
-  <h2>Grounding Compared With Fine-Tuning</h2>
-
-  <p class="big">Grounding changes what the model reads. Fine-tuning changes what the model is. Advisors are routinely sold the second when they need the first, and the distinguishing question is not accuracy but the cost of being wrong tomorrow.</p>
-
-  <p>Wolfram makes the underlying point without using either term. He observes that it is sufficient to tell the model something once, as part of the prompt, and it will use it — and that this is a clue about what the model is doing, because the alternative would be running a training algorithm and adjusting weights. He also notes the limit: the model can integrate what you tell it only if it rides in a fairly simple way on top of the framework it already has.</p>
-
-  <p>That limit is the honest case for fine-tuning and it is narrower than the sales deck. If your house style and output format are unlike anything in the training corpus, tuning can help. If your <em>facts</em> change — and the Cole file is nothing but facts that change, a discount that needs re-verifying and a buy-sell that needs amending — tuning is the wrong instrument, because facts baked into weights cannot be corrected by editing a document and cannot be cited.</p>
-
-  <div class="panel">
-    <span class="do">Do this now — 4 minutes</span>
-    <h4>Ranking by Cost of a Change</h4>
-    <p class="hint">The 2023 appraisal is re-run on a Tuesday afternoon and the supportable discount changes. Rank these four architectures by how expensive it is to make the assistant reflect that — cheapest first. Click in order; click again to reset.</p>
-    <div id="rankList" class="chiplist"></div>
-    <div id="rankOut" class="mpanel"><span class="hd">Your ordering</span><span class="nil">Click the cheapest to update first.</span></div>
-  </div>
-
-  <p class="src">Wolfram (2023), "Beyond Basic Training" — the tell-it-once observation and the "riding on top of the framework it already has" limit are Wolfram's, reproduced in substance <span class="conf h" data-src="src-wolfram">H</span>. The four-way ranking and its ordering are a design judgement made for this lesson, not a measured result <span class="conf l" data-src="src-wolfram">L — reasoned, not measured</span>.</p>
-
-  <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort every case into grounding or fine-tuning and read the whys you got wrong.</div></div>
-
-</section>
-
-<section class="slide apx" id="s11" data-nav="C3 · Adoption" data-insert-after="s10" data-tier="foundational">
-  <div class="eyebrow"><span>Appendix C3 &middot; Market evidence</span><span class="mins">14 min</span></div>
-  <div class="apxback">Insert between §07 Note-takers and §08 Consent &mdash; <a href="#s10">back to §07</a> &middot; <a href="#s12">continue to §08 &rarr;</a></div>
-  <h2>Note-Taker Adoption Against Note-Taker Satisfaction</h2>
-
-  <p class="big">Rank the category by adoption and rank it by satisfaction and the orders invert. The tool with the highest adoption in Kitces' autumn 2024 data — Zoom's AI Companion, a toggle inside software advisors already pay for — ranked last on advisor satisfaction. The industry-specific tools, at $60–$80 per month or more, ranked highest.</p>
-
-  <p>The explanation is architectural rather than a matter of taste. A meeting-platform note-taker summarises the meeting. An advisor-specific tool writes the note into the CRM, queues the post-meeting tasks, drafts the recap email and prepares the next agenda. Advisors were not rating summary quality; they were rating the four things that happen after the summary.</p>
-
-  <div class="panel" data-task="t-s11" data-comp="estimate-then-reveal">
-    <span class="do">Do this now — 2 minutes</span>
-    <h4>Prediction, Then Reveal</h4>
-    <p class="hint">Before the chart: where did the single most-adopted tool rank on satisfaction? Commit, then reveal.</p>
-    <div class="row" id="predBtns"></div>
-    <div id="predOut" class="mpanel"><span class="hd">Your prediction</span><span class="nil">Commit to an answer.</span></div>
-    <figure id="figSlope" class="keyhide" style="display:none"></figure>
-  </div>
-
-  <p>By 2025 the category had grown to roughly 30% of advisors using some kind of client meeting note tool, with 18 note-takers on the AdvisorTech Map competing for that pool, Jump at 9.7% adoption among standalone tools and no remaining provider above 0.5%. Read that as a procurement warning: you are selecting from a category mid-consolidation, and the switching cost is your historical meeting record.</p>
-
-  <p class="src">Kitces.com (15 Jan 2025) — Zoom AI Companion #1 in adoption and last in satisfaction; industry-specific tools lead satisfaction; $60–$80/month pricing <span class="conf h" data-src="src-kitces-notetakers">H</span>. Kitces.com AdvisorTech columns (Oct and Nov 2025) — Jump + Zocks 12.8% combined, Zoom AI + Fathom 7.6% combined, Jump 9.7% among standalone tools, none of the remainder above 0.5%, 18 note-takers on the map <span class="conf h" data-src="src-kitces-notetakers">H</span>. Kitces AdvisorTech column (Aug 2026) — ~30% of advisors using a client meeting note tool as of the 2025 research <span class="conf h" data-src="src-kitces-notetakers">H</span>. The slopegraph plots ranks, not scores <span class="conf m" data-src="src-kitces-notetakers">M — rank order published, underlying scores not</span>.</p>
-
-  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Name the segment you sit in and whether its adoption rate matches your own.</div></div>
-
-</section>
-
-<section class="slide apx" id="s15" data-nav="C4 · Discussion" data-insert-after="s14" data-tier="standard">
-  <div class="eyebrow"><span>Appendix C4 &middot; Discussion</span><span class="mins">20 min</span></div>
-  <div class="apxback">Insert between §10 Policy HW and §11 Part 1 + handoff &mdash; <a href="#s14">back to §10</a> &middot; <a href="#s16">continue to §11 &rarr;</a></div>
-  <h2>Citation-Backed Output and Verification Effort</h2>
-
-  <p class="big">The question: does a citation-backed output make you check more, or check less?</p>
-
-  <p>This divides the room, which is the only reason it is on the schedule. One side holds that a citation is a handle — it gives you something specific to pull on, so you check more and check better. The other holds that a citation is a signal of completed work, and that the presence of a source is read by a busy professional as evidence the source was consulted. Tonight supplies evidence for the second position and you have supplied evidence for the first all evening by finding the Article VII failure yourselves.</p>
-
-  <p>Structure: commit before anyone speaks; two speakers per side, minority first; one complication introduced by the instructor; re-vote with both distributions on screen. A zero delta is a finding, not a failure — it means a position held under evidence.</p>
-
-  <div class="panel" data-task="t-s15" data-comp="sealed-vote-debate">
-    <span class="do">Locked vote — commit before discussion</span>
-    <h4>Vote one</h4>
-    <p class="hint">Your first vote locks. The room distribution stays hidden until after the re-vote. Answer for what you actually do, not what you would recommend.</p>
-    <div class="row" id="voteBtns"></div>
-    <div id="voteOut" class="mpanel"><span class="hd">Vote one</span><span class="nil">Commit to a position.</span></div>
-    <div id="defence" class="mpanel keyhide" style="display:none"></div>
-    <div class="row" id="revoteBtns" style="margin-top:16px"></div>
-    <div id="revoteOut" class="mpanel keyhide" style="display:none"></div>
-  </div>
-
-  <div class="instrline">Instructor: run the same three options as a Zoom poll at each vote so the room distributions are captured alongside the individual deltas this widget records. Decision rule — if fewer than 25% take "check less" on vote one, read the Magesh finding aloud before the defence phase rather than after, or the minority has nothing to defend.</div>
-
-  <p class="src">Magesh et al. (2025) report that the tools tested made claims not supported by the sources they cited, which is the specific failure a reader who trusts the citation will not catch <span class="conf h" data-src="src-magesh">H</span>. Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025), <em>The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects from a Survey of Knowledge Workers</em>, Microsoft Research / CHI 2025 — the Session 5 reading; characterised here only by its title claim of self-reported reductions in cognitive effort <span class="conf m" data-src="src-case">M — full findings not re-verified in this build</span>. No claim is made here about the size or direction of any measured effect on verification behaviour.</p>
-
-  <div class="check" data-gate="ga4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote, defend, absorb the complication, re-vote.</div></div>
+  <div class="talk"><span class="th">Closing question &middot; one to three answers, out loud, then we go</span>Tonight’s grounded answer was correctly retrieved, accurately quoted, and materially wrong. Name the point in your own meeting workflow where you would have caught it, and say who is left holding it if nobody does.</div>
 
 </section>
 
@@ -1660,6 +1657,7 @@ then a list of every element where my answer was thin.</pre>
   <h3 style="margin:26px 0 4px;font-size:17px">Instructor minute budget</h3>
   <table class="tbudget" data-timing>
     <thead><tr><th>Section</th><th>Title</th><th>Min</th></tr></thead>
+<!-- APXBUDGET:BEGIN generated-by=scripts/build-appendix.mjs -->
     <tbody>
       <tr><td>BUS ADM X433.4 · Session 3</td><td>Gathering and Documenting Client Information</td><td class="n">5</td></tr>
       <tr><td>Cold open &middot; standing ritual</td><td>The Last Prompt You Sent</td><td class="n">8</td></tr>
@@ -1673,34 +1671,41 @@ then a list of every element where my answer was thin.</pre>
       <tr><td>08 &middot; Obligation</td><td>Recording Consent and the Confidentiality Obligation</td><td class="n">6</td></tr>
       <tr><td>09 &middot; Documentation</td><td>Documenting the Basis for a Recommendation</td><td class="n">6</td></tr>
       <tr><td>10 &middot; Assignment</td><td>The AI Usage Policy Assignment</td><td class="n">4</td></tr>
-      <tr><td>11 &middot; Close</td><td>Part 1 Draft Peer Exchange and the Session 4 Handoff</td><td class="n">5</td></tr>
-      <tr class="apxrow"><td>Appendix C5 &middot; Mechanism, deeper</td><td>Hybrid Search and the Re-ranking Pass</td><td class="n">16</td></tr>
+      <tr><td>11 &middot; Close</td><td>Part 1 Draft Peer Exchange and the Session 4 Handoff</td><td class="n">7</td></tr>
       <tr class="apxrow"><td>Appendix C1 &middot; Mechanism, deeper</td><td>Chunk Size and Condition Orphaning</td><td class="n">16</td></tr>
+      <tr class="apxrow"><td>Appendix C5 &middot; Mechanism, deeper</td><td>Hybrid Search and the Re-ranking Pass</td><td class="n">16</td></tr>
       <tr class="apxrow"><td>Appendix C2 &middot; Comparison</td><td>Grounding Compared With Fine-Tuning</td><td class="n">14</td></tr>
       <tr class="apxrow"><td>Appendix C3 &middot; Market evidence</td><td>Note-Taker Adoption Against Note-Taker Satisfaction</td><td class="n">14</td></tr>
-      <tr class="apxrow"><td>Appendix C4 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">20</td></tr>
+      <tr class="apxrow"><td>Appendix C4 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">18</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 70 + appendix 80; the core alone is the one-hour version</td><td class="n">150</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 72 + appendix 78; the core alone runs 72 minutes, twelve minutes over the hour</td><td class="n">150</td></tr>
     </tbody>
+<!-- APXBUDGET:END -->
   </table>
 
   <h4 style="margin:26px 0 14px">Sources cited in this session</h4>
   <ul>
-    <li id="src-wolfram">Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. Assigned for Session 3: "The Concept of Embeddings" and the opening of "Meaning Space and Semantic Laws of Motion." <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a></li>
-    <li id="src-anthropic-ctx">Anthropic. (2024, September 19). <em>Contextual retrieval in AI systems.</em> <a href="https://www.anthropic.com/engineering/contextual-retrieval">anthropic.com/engineering/contextual-retrieval</a></li>
-    <li id="src-vectara">Vectara. (2025, November 19). <em>Introducing the next generation of Vectara's hallucination leaderboard.</em> <a href="https://www.vectara.com/blog/introducing-the-next-generation-of-vectaras-hallucination-leaderboard">vectara.com</a></li>
-    <li id="src-magesh">Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). Hallucination-free? Assessing the reliability of leading AI legal research tools. <em>Journal of Empirical Legal Studies, 22</em>(2), 216. <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">reglab.stanford.edu</a></li>
-    <li id="src-kitces-notetakers">Kitces.com. (2025, January 15). <em>Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends.</em> <a href="https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/">kitces.com</a></li>
-    <li id="src-kitces-advisortech">Kitces.com. AdvisorTech columns, October 2025, November 2025 and August 2026 (note-taker adoption shares and category consolidation).</li>
-    <li id="src-iskowitz">Iskowitz, C. (2025, July 29). <em>AI notetakers and compliance in wealth management: What firms need to know.</em> WealthTech Today.</li>
-    <li id="src-lee-cognitive">Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025). <em>The impact of generative AI on critical thinking.</em> Microsoft Research; CHI 2025.</li>
-    <li id="src-finra2409">Financial Industry Regulatory Authority. (2024, June 27). <em>Regulatory Notice 24-09.</em></li>
-    <li id="src-secpri">U.S. Securities and Exchange Commission, Division of Examinations. (2025). <em>Examination priorities: Fiscal year 2026</em>, Section VII.</li>
-    <li id="src-wiretap">Cal. Penal Code § 637.2(a)(1), (c); 18 U.S.C. § 2511.</li>
-    <li id="src-case"><b>The Cole household.</b> Synthetic, constructed for this course as a classroom anchor. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Used for: the retrieval corpus, the extraction exercise, the consent items and the documentation exercise. Also covers the illustrative meaning-space map, whose coordinates were assigned rather than learned. <span class="conf l">L &mdash; constructed</span></li>
+<!-- SOURCES:BEGIN v1 -->
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 8568a3165e903a88fc2c6fdf8e8e07b655453576ec73aabcb33e68fd465e247d -->
+      <li id="src-anthropic-ctx">Anthropic. (2024, September 19). <em>Contextual retrieval in AI systems</em>. Anthropic Engineering. <a href="https://www.anthropic.com/engineering/contextual-retrieval">anthropic.com/engineering/contextual-retrieval</a> Used for: the measured retrieval failure rates, the 67% reduction, and the 200,000-token boundary condition. <span class="conf h" data-src="src-anthropic-ctx">H</span></li>
+      <li id="src-finra2409">Financial Industry Regulatory Authority. (2024, June 27). <em>Regulatory Notice 24-09</em>. FINRA. <a href="https://www.finra.org/rules-guidance/notices/24-09">finra.org/rules-guidance/notices/24-09</a> Used for: named in the reading list for the regulatory frame. <span class="conf h" data-src="src-finra2409">H</span></li>
+      <li id="src-iskowitz" data-nochip="background">Iskowitz, C. (2025, July 29). <em>AI notetakers and compliance in wealth management: What firms need to know</em>. WealthTech Today. Used for: assigned reading; no page claim rests on it.</li>
+      <li id="src-kitces-notetakers">Kitces.com. (2025, January 15). <em>Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends</em>. Kitces.com. <a href="https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/">kitces.com</a> Used for: the prep-and-follow-up ratio, the adoption pattern by firm size, and the note-taker satisfaction figures. <span class="conf h" data-src="src-kitces-notetakers">H</span></li>
+      <li id="src-kitces-advisortech" data-nochip="background">Kitces.com. (2026, August). <em>The Latest in Financial AdvisorTech — AdvisorTech columns, October 2025, November 2025 and August 2026</em>. Kitces.com. Used for: named for the reader alongside the adoption figures; no page claim rests on it.</li>
+      <li id="src-lee-cognitive">Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025). <em>The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers</em>. Microsoft Research; CHI 2025. Used for: the title claim of self-reported reductions in cognitive effort, in the Appendix C4 discussion. <span class="conf m" data-src="src-lee-cognitive">M</span></li>
+      <li id="src-magesh">Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-free? Assessing the reliability of leading AI legal research tools</em>. Journal of Empirical Legal Studies 22(2), 216. <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">reglab.stanford.edu</a> Used for: the >17% / ~33% / 43% rates, the claim that tools made statements unsupported by the sources they cited, and the cross-study comparability caveat. <span class="conf h" data-src="src-magesh">H</span></li>
+      <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: the retrieval corpus, the extraction exercise, the consent items and the documentation exercise, and the illustrative meaning-space map whose coordinates were assigned rather than learned. <span class="conf l" data-src="src-case">L</span></li>
+      <li id="src-wiretap">State of California; United States Congress. <em>Cal. Penal Code § 637.2(a)(1), (c); 18 U.S.C. § 2511</em>. Statutory text. Used for: the recording consent obligation and its statutory exposure. <span class="conf h" data-src="src-wiretap">H</span></li>
+      <li id="src-regsp">U.S. Securities and Exchange Commission. (2024). <em>Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments</em>. SEC, adopting release. Used for: named in §10 as a citable source for the AI usage policy assignment; compliance dates are not re-verified in this build and should be confirmed against the adopting release before a student relies on one. <span class="conf h" data-src="src-regsp">H</span></li>
+      <li id="src-secpri">U.S. Securities and Exchange Commission, Division of Examinations. (2025, November 17). <em>Examination priorities: Fiscal year 2026, §VII</em>. SEC. Used for: named in the reading list for the regulatory frame. <span class="conf h" data-src="src-secpri">H</span></li>
+      <li id="src-vectara">Vectara. (2025, November 19). <em>Introducing the next generation of Vectara's hallucination leaderboard</em>. Vectara. <a href="https://www.vectara.com/blog/introducing-the-next-generation-of-vectaras-hallucination-leaderboard">vectara.com</a> Used for: the grounded hallucination rates by model and the length-and-complexity findings. <span class="conf h" data-src="src-vectara">H</span></li>
+      <li id="src-wolfram">Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a> Used for: assigned reading — "The Concept of Embeddings" and the opening of "Meaning Space and Semantic Laws of Motion". <span class="conf h" data-src="src-wolfram">H</span></li>
+<!-- SOURCES:END -->
   </ul>
-  <p style="margin-top:22px">Twelve core sections and four appendix sections. The core runs in about 64 minutes &mdash; the one-hour version &mdash; and the appendix adds 48 more, taken in place at the gold links or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
+<!-- APXNOTE:BEGIN generated-by=scripts/build-appendix.mjs -->
+  <p style="margin-top:22px">The core is 13 sections and runs in about 72 minutes, twelve minutes over the hour. The 5 appendix sections add 78 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
+<!-- APXNOTE:END -->
   <p><strong>No client data.</strong> The Cole household, Cole Precision Components and every document, transcript and figure attributed to them are synthetic and exist only as a classroom anchor. Nothing in this document is legal, tax or compliance advice, and no tax or legal conclusion is asserted anywhere in it.</p>
 
   <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="conf h">H</span> directly verified against the cited source. <span class="conf m">M</span> reported by a secondary source or derived from a stated relationship. <span class="conf l">L</span> illustrative construction, not a published figure.</p>
@@ -1725,7 +1730,9 @@ secs.forEach(function(s){var b=document.createElement('button');
   b.innerHTML='<span class="pip"></span><span class="lbl">'+esc(s.dataset.nav)+'</span>';
   b.onclick=function(){s.scrollIntoView()};rail.appendChild(b)});
 var pips=[].slice.call(rail.querySelectorAll('button'));
-secs.forEach(function(s,i){if(pips[i]&&(s.classList.contains('apx')||s.classList.contains('apxdiv')))pips[i].classList.add('apxnav')});
+secs.forEach(function(s,i){if(!pips[i])return;
+  if(s.classList.contains('apxdiv')){pips[i].classList.add('apxnav');pips[i].classList.add('apxidx')}
+  else if(s.classList.contains('apx')){pips[i].classList.add('apxnav')}});
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
   if(e.isIntersecting){var i=secs.indexOf(e.target);pips.forEach(function(p,j){p.classList.toggle('on',j===i)})}})},
   {rootMargin:'-45% 0px -45% 0px'});secs.forEach(function(s){io.observe(s)})}
@@ -2041,7 +2048,7 @@ barChart($('figHall'),HALL,
   sub:'Rows 1\u20133: legal research questions \u00b7 Rows 4\u20135: long domain documents \u00b7 Row 6: retrieval only',
   padl:210,
   axis:'measured error / hallucination rate \u2014 three separate studies, three different tasks',
-  cap:'Bars are plotted from the array in the page source. Sources, top to bottom: Magesh et al. (2025), <em>J. Empirical Legal Studies</em> 22:216, tools tested May 2024 <span class="conf h" data-src="src-vectara">H</span>; Vectara hallucination leaderboard, 19 Nov 2025, 7,700+ articles up to 32K tokens <span class="conf h" data-src="src-anthropic-ctx">H</span>; Anthropic, 19 Sep 2024 <span class="conf h" data-src="src-anthropic-ctx">H</span>. <strong>These are not directly comparable.</strong> They measure different tasks on different corpora and are placed on one axis to show order of magnitude, not to rank products <span class="conf m" data-src="src-anthropic-ctx">M \u2014 cross-study comparison is illustrative</span>.'});
+  cap:'Bars are plotted from the array in the page source. Sources, top to bottom: Magesh et al. (2025), <em>J. Empirical Legal Studies</em> 22:216, tools tested May 2024 <span class="conf h" data-src="src-magesh">H</span>; Vectara hallucination leaderboard, 19 Nov 2025, 7,700+ articles up to 32K tokens <span class="conf h" data-src="src-vectara">H</span>; Anthropic, 19 Sep 2024 <span class="conf h" data-src="src-anthropic-ctx">H</span>. <strong>These are not directly comparable.</strong> They measure different tasks on different corpora and are placed on one axis to show order of magnitude, not to rank products <span class="conf m" data-src="src-anthropic-ctx">M \u2014 cross-study comparison is illustrative</span>.'});
 
 function showSlope(){
  var F=$('figSlope');if(!F)return;
@@ -2624,16 +2631,17 @@ var HY=[
   upd();
 })();
 
-window.__coreMins=70;
+/* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
+window.__coreMins=72;
+/* APXCORE:END */
 
 /* ===== appendix depth control: tier filter + core-only mode ===== */
 (function(){
   var bar=document.getElementById('tierbar'); if(!bar) return;
   var apx=[].slice.call(document.querySelectorAll('section.apx'));
   var cards=[].slice.call(document.querySelectorAll('a.apxcard'));
-  var links=[].slice.call(document.querySelectorAll('a.apxlink'));
   var ORDER=['foundational','standard','advanced'];
-  var level=1, coreOnly=false;   /* matches the "+ Standard" button marked on in the markup */
+  var level=1, coreOnly=true;    /* core only at load; "+ Standard" is the depth the bar falls back to */
   function minutes(el){var m=el.querySelector('.mins');return m?(parseInt(m.textContent,10)||0):0}
   function idOf(a){var h=a.getAttribute('href')||'';return h.charAt(0)==='#'?h.slice(1):''}
   function apply(){
@@ -2649,11 +2657,11 @@ window.__coreMins=70;
       var sec=document.getElementById(idOf(a));
       a.classList.toggle('dim', !!(sec&&sec.classList.contains('dim')));
     })}
-    sync(cards);sync(links);
+    sync(cards);
     var out=document.getElementById('tierOut');
     if(out){
       out.textContent = coreOnly
-        ? 'Core only \u2014 appendix hidden. This is the one-hour version.'
+        ? 'Core only \u2014 appendix hidden. '+(window.__coreMins||0)+' core minutes.'
         : shown+' of '+apx.length+' appendix sections in scope \u00b7 '+mins+' appendix minutes \u00b7 '+
           (window.__coreMins||0)+' core minutes \u00b7 '+((window.__coreMins||0)+mins)+' total.';
     }
@@ -2691,8 +2699,9 @@ window.__coreMins=70;
       '<div class="pcell"><b>'+(core+apx)+' min</b><span>everything</span></div>'+
     '</div>'+
     '<p>The core runs in about '+core+' minutes and is what always gets taught. In a full '+
-    'block, take appendix sections in place at the gold links; in a short one, skip them and '+
-    'the session still closes properly. Appendix sections are also readable alone afterwards.</p>';
+    'block, raise the appendix depth and take the extra sections in place; in a short one, '+
+    'leave it on core only and the session still closes properly. Appendix sections are also '+
+    'readable alone afterwards.</p>';
 })();
 </script>
 </body>

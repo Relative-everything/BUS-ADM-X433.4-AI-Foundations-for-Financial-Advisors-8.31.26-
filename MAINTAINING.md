@@ -244,6 +244,92 @@ Match case-insensitively on the stem so punctuation variants cannot hide:
    generator says so and names the command to run by hand.
 5. Run the pre-push gate, then commit and push.
 
+## The appendix reflow and its generated regions
+
+`scripts/build-appendix.mjs` owns every place a lesson states a section count or
+a minute figure that a table also computes. Before Phase 2 that figure was
+hand-typed in up to **nine** places per lesson and had drifted apart in every
+one of them: A1 through A5 stood at 23 violations, `session-2` carried a
+student-facing time budget that agreed with none of the other copies, and
+`session-3`'s footer was wrong on all four numbers it gave.
+
+```bash
+node scripts/build-appendix.mjs           # rewrite all four lessons
+node scripts/build-appendix.mjs --check   # exit 1 if a lesson disagrees with its sections
+node scripts/build-appendix.mjs --file session-2/index.html
+```
+
+It is **idempotent**, so `--check` is "run it and diff", which is how a hand-edit
+inside a generated region is detected. Same contract as `verify-case.mjs`: the
+span between the sentinels belongs to the script.
+
+| Region | What it holds | Checked by |
+|---|---|---|
+| `APXPANEL` | `section.apxdiv#apx`, the leading contents panel and its cards | A2, A3, A4, A5 |
+| `APXSTUB` | one per appendix section: what is hidden at the current depth and what it costs | the tier state |
+| `APXBUDGET` | `table.tbudget > tbody`, the instructor minute budget | `validate_lesson` V5, migration 16 |
+| `APXCORE` | `window.__coreMins` | nothing else; this is why it drifted |
+| `APXMAP` | optional. `session-2`'s student-facing time budget | nothing else |
+| `APXNOTE` | optional. `session-3`'s footer paragraph on the shape of the file | nothing else |
+
+**Editing a generated region by hand is a finding, not a merge.** Change the
+section, then re-run. `fill()` throws rather than emitting a template with a
+hole in it, so a missing value is a crash and never a published `{{PLACEHOLDER}}`.
+
+**It never resolves a ratified-parameter conflict.** Where a section's minutes
+disagree with `references/pedagogy.md` s4, it prints the conflict on every run
+and writes the section figure, because that is the only self-consistent thing it
+can do. The open one is in "Known follow-ups" below.
+
+## Sources, the bibliography and the live-data register
+
+`SOURCES.md` is hand-edited at the repo root and is the source of truth for every
+citation in the corpus. Everything else about a source is generated from it.
+
+```bash
+node scripts/build-sources.mjs            # the model, as a report
+node scripts/build-sources.mjs --json     # the model, as JSON
+node scripts/inject-sources.mjs           # write every lesson's footer from it
+node scripts/inject-sources.mjs --check   # report drift, write nothing
+node scripts/verify-sources.mjs           # the hash guard, plus what only it can see
+node scripts/build-bibliography.mjs       # write BIBLIOGRAPHY.md and DATA-PULL.md
+node scripts/build-bibliography.mjs --check
+```
+
+**One record per work, not per citation.** Before `SOURCES.md` existed,
+`src-wolfram` carried four incompatible citations of one essay across four
+lessons. Eight keys diverged that way; seven are arbitrated in `SOURCES.md`'s
+own header and one, `src-aa`, is deliberately **not**, because its three records
+disagree about what the data is rather than how to format it.
+
+**What is hand-edited and what is derived.** A human knows the publisher; only
+the corpus knows the chip count. `total_references` and `cited_by[]` are computed
+on every run and **do not exist as fields**, which is the same discipline that
+put the minute figures behind `build-appendix.mjs`.
+
+**`kind` wires to A15 by construction.** Three of its six values — `authority`,
+`background`, `fabricated` — are exactly A15's `data-nochip` enumeration.
+`build-sources.mjs` reads that list out of `verify-editorial.mjs` and throws if
+they disagree, so the two cannot drift apart by maintenance.
+
+**`verify-sources.mjs` reports the same three failures `verify-case.mjs` reports,
+in the same words** — no sentinels, block was hand-edited, stale against the
+current build — so a maintainer reading a failure does not have to learn a second
+vocabulary. It also reports two things only it can see: a chip pointing at a key
+`SOURCES.md` does not define, and a source a lesson lists but never cites, split
+by whether its kind exempts it.
+
+**`BIBLIOGRAPHY.md` and `DATA-PULL.md` are generated and must never be
+hand-edited.** The next run overwrites them. `DATA-PULL.md` runs one assertion
+that currently fails on purpose: **`pulled_on` ascending implies `index_version`
+non-descending**, which report §3.7's G3 recorded as a note and which `src-aa`
+violates.
+
+**Where a field is unknown, the register says so and the footer omits it.**
+`SOURCES.md` carries `[UNVERIFIED, needs source]`; the rendered lesson footer
+prints nothing rather than a marker; `BIBLIOGRAPHY.md` prints every gap, because
+completeness is what a reader goes there for.
+
 ## The editorial checks
 
 `EDITORIAL.md` is the rules. `scripts/verify-editorial.mjs` is the checker.
@@ -336,6 +422,28 @@ visible and diffable. A human edits it; nothing infers it at runtime.
 - Self-host the three font families to retire the page-load external request,
   so a lesson renders with no network at all. The console's runtime request is
   separate and stays: it only fires on a key the reader supplies.
+- **`validate_lesson.py` V2 matches any `href`, so the documented pre-push gate
+  above has never run clean as written.** Its regex is
+  `(?:href|src)\s*=\s*["'](https?://[^"']+)["']` plus the two `url(...)` forms,
+  which fires on a plain `<a href>`. **An `<a href>` makes no request.** So every
+  footer citation hyperlink is reported as an external request: 6 in
+  `session-1`, 6 in `session-2`, 5 in `session-3`, 5 in `session-4`. The exact
+  failing input, from a clean run on 2026-08-25:
+
+  ```
+  <li id="src-wolfram"><b>Wolfram, S. (2023, 14 February).
+    <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">
+    What Is ChatGPT Doing ...</a></b> ...
+  FAIL  V2   external request outside the fonts exception:
+             https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/
+  ```
+
+  A lesson therefore cannot both cite its sources with a link and pass V2, and
+  `CHANGELOG.md` records adding those links as an improvement. This document's
+  own fallback grep gets it right by matching `<(link|script|img|iframe)` only.
+  **The fix belongs in the skill, not this repo**, alongside C2 below, which is
+  why it is written down here. An earlier handoff listed V2 as fixed; it is not.
+  Do not route around the check and do not edit the skill from this repo.
 - **`validate_lesson.py` C2 must be corrected or retired upstream when A8 and A9
   go hard.** It emits an INFO em-dash count over the raw file, so it includes
   CSS, comments, attribute values and the injected span and misses `\u2014` and
@@ -348,6 +456,27 @@ visible and diffable. A human edits it; nothing infers it at runtime.
 - **27 of 193 confidence chips resolve to the wrong source**, two of them
   off-by-one cascades. Fixing the wiring is a **precondition** for generating any
   bibliography, not a follow-up: a generator run today publishes all 27 as fact.
+- **`session-1`'s named discussion block is 17 minutes and
+  `references/pedagogy.md` s4 says 15.** Until Phase 2 the only copy carrying 15
+  was the appendix index card, and the card was wrong about four other sections,
+  so regenerating the index from the sections overwrote the one figure in that
+  lesson that matched the parameter. `scripts/build-appendix.mjs` now prints the
+  conflict on every run rather than letting the generator settle it by writing
+  last. Two readings and the instructor picks: either the block really is 17 and
+  the parameter is stale, or it is 15 and two minutes go back to `#s8`, which is
+  where the card said they were. `docs/repo-updates-plan.md` s4.7 carries both.
+- **Five sources are listed by a lesson that never cites them**, and none is
+  exempt by kind: `src-google-ptcf` and `src-pricing` in `session-2`,
+  `src-finra2409` and `src-secpri` in `session-3`, `src-finra2409` in
+  `session-4`. Each is either a missing chip or a source that does not belong in
+  that footer. `src-google-ptcf` is the sharpest: `session-2` §03 teaches the
+  Persona-Task-Context-Format framework and cites its source nowhere.
+- **Five moving targets carry no retrieval date at all**, and one of them,
+  `src-synthid`, feeds **eleven** references across two appendices. The others
+  are `src-vectara` (4), `src-owasp` (1), `src-kitces-advisortech` (0) and
+  `src-aa`, whose three retrievals are registered individually because they
+  disagree. Three more are dated to a month with no day. A moving target with no
+  date cannot be re-checked, which is the whole purpose of registering it.
 - **D14 is unanswered.** Is session 0.1 in this term's teaching set? A1–A7 have
   no population in that file and A6 carries a dated skip until it is answered.
 - **48 Part A violations stand, pending the D16 burn-in.** Reported, not fixed;

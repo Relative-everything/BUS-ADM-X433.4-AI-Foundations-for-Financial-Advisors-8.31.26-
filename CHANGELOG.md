@@ -10,6 +10,169 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-08-25 · Sources
+
+### Sessions 0.1-4 · Twenty confidence chips pointed at the wrong source
+
+A confidence chip tells you where a claim came from. Twenty of them named the
+wrong work, and the errors were not random: they came in runs, where a sentence
+naming three sources in order carried the three keys shifted by one.
+
+- **Session 4 credited a securities-privacy rule with Anthropic's terms of
+  service**, credited an SEC official's speech with two watermarking findings and
+  two benchmark scores he never mentioned, and credited FINRA with OWASP's
+  ranking of prompt injection. Its Deloitte and Surfshark fraud figures were
+  swapped onto each other's neighbours.
+- **Session 3's hallucination-rate chart** credited Vectara with Magesh et al.'s
+  legal-research study, and Anthropic with Vectara's leaderboard.
+- **Session 2 credited Google's prompting guide** with a University of Michigan
+  paper on whether personas help.
+- **Ten claims were credited to the Cole household**, which is a synthetic
+  teaching case that has never said anything about Regulation S-P, FINRA's
+  oversight report, or model benchmark scores.
+
+Every rewire is recorded with the evidence for it in `docs/chip-rewiring.md`.
+
+**Nineteen were found by hand and the twentieth by a rule built to find them.**
+The rule reads a source's own "Used for" description and asks whether some other
+claim on the page matches it better than anything currently pointing at it.
+
+### The whole corpus · One source list, and it is now generated
+
+Four lessons cited Wolfram's essay four different ways: two date formats, two
+capitalisations of the title, the publisher named in two of them, and a
+confidence label in two. Seven other sources diverged the same way.
+
+**There is now one record per work**, in `SOURCES.md`, and each lesson's footer
+is written from it. A source cannot be described two ways any more, because
+there is only one description.
+
+- **`BIBLIOGRAPHY.md`** lists every work with its link, author, publication date,
+  date last accessed, how many times the course cites it, and every lesson and
+  section that does. Wolfram appears in eleven sections; a compliance source
+  appears in one.
+- **Where a detail could not be verified, the bibliography says so** rather than
+  leaving a tidy gap. Fifty-three of fifty-seven records have at least one.
+- **`DATA-PULL.md`** lists every figure that moves — prices, benchmark scores,
+  vendor policies, leaderboard positions — with when it was retrieved and which
+  sections would change if it were retrieved again. Twenty-two of the
+  fifty-seven works are moving targets.
+
+### One figure disagrees with itself, and the register now says so out loud
+
+The Artificial Analysis benchmark data appears in three lessons under three
+different version labels. **The later label carries figures identical to the
+unlabelled one, and the earlier label carries figures that differ from both on
+every model they share.** The version is not tracking the data.
+
+Rather than pick one and tidy the appearance, all three retrievals are recorded
+and the register runs a check that fails on exactly this: a later retrieval may
+not carry an earlier version. It fails today.
+
+**Also recorded and deliberately unresolved:** Session 1's §05 price data is
+attributed to Artificial Analysis in five places on the page, and was described
+in planning as coming from a different benchmark entirely. The page cannot say
+which is right, and it is not guessed at.
+
+### What is flagged rather than fixed
+
+- **Ten claims have no source anywhere in their lesson** and are still credited
+  to the teaching case. Among them a named 2024 paper the footer never lists, two
+  statutes, and two model specification sheets.
+- **Five sources are listed by a lesson that never cites them.** The sharpest:
+  Session 2 teaches Google's Persona-Task-Context-Format framework and cites its
+  source nowhere.
+- **Five moving figures have no retrieval date at all**, one of them behind
+  eleven references.
+
+---
+
+## 2026-08-25
+
+### Sessions 1-4 · The appendix reads in place, and the core is what loads
+
+**The single biggest change to how these lessons read since the core/appendix
+split was introduced.** The appendix used to be a block at the end of the file.
+Each of its sections carried a gold bar saying which two core sections it
+belonged between, and each core section carried gold teasers offering the
+sections that followed it. A reader had to jump forward, read, and jump back.
+
+Now every appendix section sits where it belongs, in reading order, immediately
+after the core section it extends. The forty-two pieces of jump-and-return
+furniture are gone: **22 return bars and 20 teasers**, all of which described a
+navigation the reader no longer performs.
+
+- **The page loads on the core.** Previously it loaded with everything visible
+  and the reader could narrow it. The core is what always gets taught, so it is
+  what you get; the depth control adds the appendix back in place, at whichever
+  of the three depths you choose.
+- **The appendix index moved to the front and became a contents panel**, beside
+  the depth control, so what you are skipping and what it would cost are on the
+  page from the first screen rather than two thirds of the way down. It stays
+  visible in core-only mode, and stays out of a core-only printed handout.
+- **Setting a shallower depth now removes a section rather than fading it.**
+  A faded section is one people read anyway. In its place is a one-line card
+  naming the section, its minutes and its depth, so nothing disappears silently
+  and every link into it still lands.
+- **Session 3's Hybrid Search and Session 4's The Thirty-Day Clock now have a
+  way in.** Sixteen minutes of authored material each, with no index card and no
+  link from anywhere on the page since they were added.
+- **A closing question in every lesson**, in the last core section, answerable
+  from that night's core alone.
+
+### Sessions 1-4 · Nine places stated the running time and they disagreed
+
+The core minute figure was hand-typed in up to nine places per lesson. All nine
+are now generated from the sections by `scripts/build-appendix.mjs`, so they
+cannot drift apart again, and two of them had never been checked by anything:
+
+- **Session 2's on-page time budget** credited the appendix's next-token section
+  with 9 minutes against its actual 16, the final-project section with 10 against
+  5, and **had no row at all for the eight-minute cold open** — it predated the
+  ritual.
+- **Session 3's footer** said twelve core sections running 64 minutes with four
+  appendix sections adding 48. The real figures are thirteen, 70, five and 80.
+- **Every lesson's time budget claimed "the core alone is the one-hour
+  version."** Sessions 3 and 4 run 70 minutes. The page now says what the lesson
+  runs, and says it is ten minutes over the hour where it is.
+- The Sampler Lab's index card said 18 minutes; the section says **16**.
+
+### Session 4 · A recall question tested something Session 3 never showed
+
+The Session 3 recall bridge asked students to distinguish grounding from
+fine-tuning. Session 3 teaches that distinction in exactly one place, an
+appendix section — so with the appendix now genuinely optional, the ordinary
+student was about to be asked to recall something they had never been shown.
+
+The item now tests the architecture decision Session 3's **core** does teach:
+for a corpus of nine documents, well under the published threshold, put the whole
+thing in the prompt rather than building retrieval over it. Same slot, same
+depth, same point about being sold the wrong thing.
+
+**Three other places assumed appendix material and were rewritten.** Session 1's
+close listed five things students "built by hand" and all five happened only in
+the appendix; its tier exercise told readers to recall an appendix section by
+name; Session 2's temperature section told readers to pull up responses they had
+generated in an appendix. **Ratified as a standing rule:** a recall bridge tests
+the prior session's core, never its appendix.
+
+### Repository
+
+- **`scripts/build-appendix.mjs`** generates the reflow and every minute copy.
+  Idempotent; `--check` detects a hand-edit inside a generated region.
+- **The editorial checker's hard findings fell from 28 to 5.** The five that
+  remain are the mis-wired confidence chips, which are the next piece of work.
+- **`A4` could have been disarmed by a rewording.** Its check matched one exact
+  sentence and passed silently when that sentence changed. It now accepts both
+  forms and fails when a lesson states no figure at all.
+- Two upstream defects are recorded in `MAINTAINING.md` rather than worked
+  around: the lesson validator reports every footer citation hyperlink as an
+  external network request, which is why the documented pre-push gate has never
+  run clean; and Session 1's discussion block is 17 minutes where the ratified
+  build parameter says 15.
+
+---
+
 ## 2026-08-23
 
 ### Repository · Editorial rules and their checker

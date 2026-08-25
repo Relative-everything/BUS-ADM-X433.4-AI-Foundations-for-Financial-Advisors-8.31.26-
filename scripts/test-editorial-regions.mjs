@@ -103,7 +103,10 @@ const t = (id, name, ok, detail = '') => {
 {
   const src = read('session-1');
   const c = classify(src);
-  const nav = src.indexOf('data-nav="— APPENDIX —"');
+  /* Any data-nav value serves as the R3 probe. This one used to read
+     "— APPENDIX —"; Phase 2 step (f) turned the trailing divider into a leading
+     contents panel and relabelled it, so the probe follows the element. */
+  const nav = src.indexOf('data-nav="Appendix contents"');
   const prose = src.indexOf('Price is never the reason to use the cheap tier');
   t('T6', 'R3 claims attribute values; R1 is the residual that survives',
     nav > 0 && c.regionOf(nav + 12) === 'R3' && prose > 0 && c.regionOf(prose) === 'R1',
