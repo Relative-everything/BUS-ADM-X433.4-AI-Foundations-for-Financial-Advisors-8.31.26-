@@ -404,6 +404,7 @@ explicitly and lives in Part B. They are not averaged.
 | A17 | Every marked vocabulary term has a definition record | R1, R3 | HARD FAIL | not yet built |
 | A18 | Every definition is at most two sentences | source file | HARD FAIL | not yet built |
 | A19 | Every `read more` resolves to a live footer key | source file | HARD FAIL | not yet built |
+| A20 | A footer key whose `Used for:` names a claim chipped to another key is a **mis-wire, not an orphan** | R1, R2, R7 | ADVISE | **clean (0)**, after 20 rewires |
 
 ---
 
@@ -860,16 +861,33 @@ its source's scope. That needs a reader.
 
 **Regions.** R7.
 
+> **POPULATION CORRECTION, 2026-08-25. A footer entry's own terminal chip is no
+> longer counted as a citation of that entry.** The rule built its set of chipped
+> keys over the whole file, so an entry carrying `data-src` pointing at its own
+> id satisfied itself and **made an orphan in that lesson undetectable**. That
+> was all twelve of `session-0.1`'s keys, where the convention is documented in
+> the file; and once `inject-sources.mjs` made the convention uniform — which it
+> had to, because adding a bare chip to `session-3`'s twelve chip-less entries
+> pushed that lesson past `validate_lesson` V4's tolerance of six — it would have
+> been all fifty-seven. R7 is the footer-entry region, so excluding it is the
+> fix. **The rule found five real orphans the moment it could see them.**
+
 **Verdict.** HARD FAIL, once `data-nochip` has been added. Until then, ADVISE.
+**`data-nochip` landed 2026-08-25**, emitted by `scripts/inject-sources.mjs` from
+`SOURCES.md`'s `kind`, and `build-sources.mjs` reads this rule's own enumeration
+out of the checker and throws if the two disagree. The severity decision is
+Phase 7's; the precondition it was waiting on is met.
 
 **Message.**
 ```
 FAIL  A15  session-2/index.html  src-kessler has no chip and no data-nochip reason
 ```
 
-**Currently 23 keys would fire** — 11 in session 2, 5 in session 3, 7 in session 4.
-They are not one problem, which is exactly why the rule is "chip **or** declared
-reason" rather than "chip":
+~~**Currently 23 keys would fire** — 11 in session 2, 5 in session 3, 7 in session
+4.~~ **5 fire as of 2026-08-25**, after Phase 3 wired `data-nochip` from
+`SOURCES.md`'s `kind` field. The five that remain are findings rather than
+missing declarations — see below. They were never one problem, which is exactly
+why the rule is "chip **or** declared reason" rather than "chip":
 
 | `data-nochip` | Meaning | Examples |
 |---|---|---|
@@ -1292,9 +1310,9 @@ Ratified against `docs/editorial-gap-report.md` §11.
 | D5 | **Exempt `CASE.md` wholesale**, and the injected regions as a consequence | Classes B, C2 |
 | D6 | **Every direct quotation and every quoted figure carries a section name.** Bare attributions do not | A12 |
 | D7 | **Deferred.** The §2.3 mapping awaits sign-off. Rule only, no application | A12, B4 |
-| D7b | **Split, against the report's recommendation.** Cascades and declared-synthetic keys are mechanical; the residue is a human read | A13, A14, B5 |
-| D8 | **`SOURCES.md` at repo root, injected on the `CASE.md` pattern.** Not scraping | A19, B5 |
-| D9 | **Chip or declared reason**, machine-readable via `data-nochip` | A15 |
+| D7b | **Split, against the report's recommendation.** Cascades and declared-synthetic keys are mechanical; the residue is a human read | A13, A14, B5. **Mechanical half done 2026-08-25**: A13 and A14 at 0, 20 chips rewired, residue in `docs/chip-rewiring.md` |
+| D8 | **`SOURCES.md` at repo root, injected on the `CASE.md` pattern.** Not scraping | A19, B5. **Landed 2026-08-25**: 57 records, `build-sources` / `inject-sources` / `verify-sources` |
+| D9 | **Chip or declared reason**, machine-readable via `data-nochip` | A15. **Landed 2026-08-25**, emitted from `SOURCES.md`'s `kind` and asserted against A15's own enumeration |
 | D10 | **One source for tooltip and table**, `CASE.md` pattern | A17, A18 |
 | D11 | **Mark the term in prose.** No free-text matching | A17 |
 | D12 | **Deferred.** The instructor prunes the term inventory | — |

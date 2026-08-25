@@ -281,6 +281,55 @@ disagree with `references/pedagogy.md` s4, it prints the conflict on every run
 and writes the section figure, because that is the only self-consistent thing it
 can do. The open one is in "Known follow-ups" below.
 
+## Sources, the bibliography and the live-data register
+
+`SOURCES.md` is hand-edited at the repo root and is the source of truth for every
+citation in the corpus. Everything else about a source is generated from it.
+
+```bash
+node scripts/build-sources.mjs            # the model, as a report
+node scripts/build-sources.mjs --json     # the model, as JSON
+node scripts/inject-sources.mjs           # write every lesson's footer from it
+node scripts/inject-sources.mjs --check   # report drift, write nothing
+node scripts/verify-sources.mjs           # the hash guard, plus what only it can see
+node scripts/build-bibliography.mjs       # write BIBLIOGRAPHY.md and DATA-PULL.md
+node scripts/build-bibliography.mjs --check
+```
+
+**One record per work, not per citation.** Before `SOURCES.md` existed,
+`src-wolfram` carried four incompatible citations of one essay across four
+lessons. Eight keys diverged that way; seven are arbitrated in `SOURCES.md`'s
+own header and one, `src-aa`, is deliberately **not**, because its three records
+disagree about what the data is rather than how to format it.
+
+**What is hand-edited and what is derived.** A human knows the publisher; only
+the corpus knows the chip count. `total_references` and `cited_by[]` are computed
+on every run and **do not exist as fields**, which is the same discipline that
+put the minute figures behind `build-appendix.mjs`.
+
+**`kind` wires to A15 by construction.** Three of its six values — `authority`,
+`background`, `fabricated` — are exactly A15's `data-nochip` enumeration.
+`build-sources.mjs` reads that list out of `verify-editorial.mjs` and throws if
+they disagree, so the two cannot drift apart by maintenance.
+
+**`verify-sources.mjs` reports the same three failures `verify-case.mjs` reports,
+in the same words** — no sentinels, block was hand-edited, stale against the
+current build — so a maintainer reading a failure does not have to learn a second
+vocabulary. It also reports two things only it can see: a chip pointing at a key
+`SOURCES.md` does not define, and a source a lesson lists but never cites, split
+by whether its kind exempts it.
+
+**`BIBLIOGRAPHY.md` and `DATA-PULL.md` are generated and must never be
+hand-edited.** The next run overwrites them. `DATA-PULL.md` runs one assertion
+that currently fails on purpose: **`pulled_on` ascending implies `index_version`
+non-descending**, which report §3.7's G3 recorded as a note and which `src-aa`
+violates.
+
+**Where a field is unknown, the register says so and the footer omits it.**
+`SOURCES.md` carries `[UNVERIFIED, needs source]`; the rendered lesson footer
+prints nothing rather than a marker; `BIBLIOGRAPHY.md` prints every gap, because
+completeness is what a reader goes there for.
+
 ## The editorial checks
 
 `EDITORIAL.md` is the rules. `scripts/verify-editorial.mjs` is the checker.
@@ -416,6 +465,18 @@ visible and diffable. A human edits it; nothing infers it at runtime.
   last. Two readings and the instructor picks: either the block really is 17 and
   the parameter is stale, or it is 15 and two minutes go back to `#s8`, which is
   where the card said they were. `docs/repo-updates-plan.md` s4.7 carries both.
+- **Five sources are listed by a lesson that never cites them**, and none is
+  exempt by kind: `src-google-ptcf` and `src-pricing` in `session-2`,
+  `src-finra2409` and `src-secpri` in `session-3`, `src-finra2409` in
+  `session-4`. Each is either a missing chip or a source that does not belong in
+  that footer. `src-google-ptcf` is the sharpest: `session-2` §03 teaches the
+  Persona-Task-Context-Format framework and cites its source nowhere.
+- **Five moving targets carry no retrieval date at all**, and one of them,
+  `src-synthid`, feeds **eleven** references across two appendices. The others
+  are `src-vectara` (4), `src-owasp` (1), `src-kitces-advisortech` (0) and
+  `src-aa`, whose three retrievals are registered individually because they
+  disagree. Three more are dated to a month with no day. A moving target with no
+  date cannot be re-checked, which is the whole purpose of registering it.
 - **D14 is unanswered.** Is session 0.1 in this term's teaching set? A1–A7 have
   no population in that file and A6 carries a dated skip until it is answered.
 - **48 Part A violations stand, pending the D16 burn-in.** Reported, not fixed;

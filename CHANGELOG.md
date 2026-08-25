@@ -10,6 +10,83 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-08-25 · Sources
+
+### Sessions 0.1-4 · Twenty confidence chips pointed at the wrong source
+
+A confidence chip tells you where a claim came from. Twenty of them named the
+wrong work, and the errors were not random: they came in runs, where a sentence
+naming three sources in order carried the three keys shifted by one.
+
+- **Session 4 credited a securities-privacy rule with Anthropic's terms of
+  service**, credited an SEC official's speech with two watermarking findings and
+  two benchmark scores he never mentioned, and credited FINRA with OWASP's
+  ranking of prompt injection. Its Deloitte and Surfshark fraud figures were
+  swapped onto each other's neighbours.
+- **Session 3's hallucination-rate chart** credited Vectara with Magesh et al.'s
+  legal-research study, and Anthropic with Vectara's leaderboard.
+- **Session 2 credited Google's prompting guide** with a University of Michigan
+  paper on whether personas help.
+- **Ten claims were credited to the Cole household**, which is a synthetic
+  teaching case that has never said anything about Regulation S-P, FINRA's
+  oversight report, or model benchmark scores.
+
+Every rewire is recorded with the evidence for it in `docs/chip-rewiring.md`.
+
+**Nineteen were found by hand and the twentieth by a rule built to find them.**
+The rule reads a source's own "Used for" description and asks whether some other
+claim on the page matches it better than anything currently pointing at it.
+
+### The whole corpus · One source list, and it is now generated
+
+Four lessons cited Wolfram's essay four different ways: two date formats, two
+capitalisations of the title, the publisher named in two of them, and a
+confidence label in two. Seven other sources diverged the same way.
+
+**There is now one record per work**, in `SOURCES.md`, and each lesson's footer
+is written from it. A source cannot be described two ways any more, because
+there is only one description.
+
+- **`BIBLIOGRAPHY.md`** lists every work with its link, author, publication date,
+  date last accessed, how many times the course cites it, and every lesson and
+  section that does. Wolfram appears in eleven sections; a compliance source
+  appears in one.
+- **Where a detail could not be verified, the bibliography says so** rather than
+  leaving a tidy gap. Fifty-three of fifty-seven records have at least one.
+- **`DATA-PULL.md`** lists every figure that moves — prices, benchmark scores,
+  vendor policies, leaderboard positions — with when it was retrieved and which
+  sections would change if it were retrieved again. Twenty-two of the
+  fifty-seven works are moving targets.
+
+### One figure disagrees with itself, and the register now says so out loud
+
+The Artificial Analysis benchmark data appears in three lessons under three
+different version labels. **The later label carries figures identical to the
+unlabelled one, and the earlier label carries figures that differ from both on
+every model they share.** The version is not tracking the data.
+
+Rather than pick one and tidy the appearance, all three retrievals are recorded
+and the register runs a check that fails on exactly this: a later retrieval may
+not carry an earlier version. It fails today.
+
+**Also recorded and deliberately unresolved:** Session 1's §05 price data is
+attributed to Artificial Analysis in five places on the page, and was described
+in planning as coming from a different benchmark entirely. The page cannot say
+which is right, and it is not guessed at.
+
+### What is flagged rather than fixed
+
+- **Ten claims have no source anywhere in their lesson** and are still credited
+  to the teaching case. Among them a named 2024 paper the footer never lists, two
+  statutes, and two model specification sheets.
+- **Five sources are listed by a lesson that never cites them.** The sharpest:
+  Session 2 teaches Google's Persona-Task-Context-Format framework and cites its
+  source nowhere.
+- **Five moving figures have no retrieval date at all**, one of them behind
+  eleven references.
+
+---
+
 ## 2026-08-25
 
 ### Sessions 1-4 · The appendix reads in place, and the core is what loads

@@ -33,7 +33,7 @@ re-derive it.
 |---|---|---|---|
 | **1** | **Phase 0 + narrowed Phase 1** | Premise audit; complexity measurement of sessions 1-4; this file | **done** |
 | **2** | **Phase 2, structure** | sessions 1-4, one pass per file | **done.** Step (b) deleted, not deferred — §13.1 |
-| 3 | Phase 3, sources | all six files | the mis-wired chips first, then `SOURCES.md`, then `BIBLIOGRAPHY.md`, then `DATA-PULL.md` |
+| **3** | **Phase 3, sources** | all six files | **done** — §15. 20 chips rewired, `SOURCES.md` at 57 records, both artifacts generated |
 | 4 | Phase 4, instructor notes | all six files | after Phase 2, because notes are keyed to sections |
 | 5-9 | **Phase 5, prose: REDUCE + analogues + citations + vocabulary marking** | one lesson per chat, parallelisable in worktrees | after Phase 3 (citations need the source keys) |
 | 10 | Phase 6, vocabulary | all six files, **`session-0.1` first** | after Phase 3 (A19 joins the bibliography) |
@@ -2907,3 +2907,122 @@ nothing checked it. Restoring it would restore stale figures. **If a
 segment-level map is wanted back, it is a Phase 5 authoring decision against
 correct figures, not a Phase 3 restoration of incorrect ones.** Recorded here so
 the absence is a decision rather than an oversight.
+
+---
+
+## 15. Phase 3 as executed, 2026-08-25
+
+**§5 is the specification as written before Phase 3 ran. This is what happened,
+and where the two disagree this one governs.**
+
+### 15.1 Part 1 — the count is 39 chips, not 27 and not 29
+
+**Re-derived from the files. This count governs.** §5.2 was right that report
+§3.5 never enumerated its 27 and that its cited evidence sections §3c and §3e do
+not exist; Phase 1 rebuilt it at 29 sites without publishing the list.
+
+| Class | What it is | Count | Disposition |
+|---|---|---|---|
+| **A** | mis-wired onto a key that exists in the same footer | **20** | rewired |
+| **B** | the correct source has no key in that lesson's footer | **11** | flagged; one closed by adding the source |
+| **C** | not a source claim at all | **8** | flagged |
+
+**The difference from 29 is not disagreement about the same things.** This
+enumeration separates three classes the earlier passes did not: eleven claims
+whose correct source is absent from the footer entirely, eight chips that should
+not be confidence chips at all, and the second and third chips on lines where
+only the first was counted. **The full evidence table is
+[`docs/chip-rewiring.md`](chip-rewiring.md)** — every rewire with the footer
+clause or the named entity that justifies it, and every flagged item with the
+reason it could not be resolved.
+
+**A13 and A14 reached 0**, which was Part 2's precondition. §5.1's prediction
+that the mechanical catch was "between 7 and 10 chips" measured at **8**, and
+§5.1's structural blind spot was confirmed: `session-4:1354` carried two wrong
+chips and never failed A13, being below its three-chip floor.
+
+> **A20 was built, and it found the twentieth rewire.** §5.3 recommended it and
+> the recommendation was right. Validated by running it against the pre-rewire
+> corpus through `--root` rather than trusted because it printed PASS: it fired
+> twice, once recovering a rewire the hand pass had found, and once on
+> `session-4:1269`, where an SEC privacy rule was chipping a paragraph entirely
+> about Anthropic's Consumer and Commercial Terms. **The hand pass missed that
+> one.** §5.3 estimated the recovery at 7 further mis-wires; measured, against a
+> corpus already 19 rewires cleaner, it found 1. The estimate was against the
+> uncorrected corpus and is not comparable.
+
+### 15.2 Part 2 — eight divergent keys, not seven, and one refusal
+
+**Eight keys were cited by more than one lesson with materially different text.**
+`src-wolfram` (4 lessons), `src-case` (4), `src-aa` (3), `src-finra2409` (3),
+`src-magesh` (3), `src-pricing` (2), `src-regsp` (2), `src-secpri` (2). Seven are
+arbitrated to one record in `SOURCES.md`'s own header, with what each gave up.
+
+> **`src-aa` was refused, and the refusal is the finding.** Its three records
+> differ in **what they say the data is**, not in how it is formatted: an
+> unversioned pull carrying figures identical to a later `v4.1.1` pull, and an
+> earlier `v4.1` string on the latest date differing from both on every shared
+> model. §5.6 measured this and called it worse than G3 records. Arbitrating it
+> would have published the defect behind a tidier label, so the three retrievals
+> are registered individually and `DATA-PULL.md` asserts against them.
+
+**`kind` wires to A15 by construction**, per the instruction that the two agree
+rather than being maintained in step: `build-sources.mjs` reads A15's own
+`data-nochip` enumeration out of `verify-editorial.mjs` and throws if the
+chip-exempt set differs.
+
+**A15's population was corrected.** A footer entry's terminal chip labels that
+entry's confidence and is not a citation of it, but the rule counted it, so a
+self-labelling chip made an orphan in that lesson undetectable. `session-0.1`
+documents the convention in the file; making it uniform — which was forced by
+`validate_lesson` V4's six-bare-chip tolerance — would have blinded the rule
+corpus-wide. It now excludes R7 and **found five real orphans immediately**.
+
+### 15.3 Part 3 — G3 is an assertion now
+
+`BIBLIOGRAPHY.md` and `DATA-PULL.md` are generated on every run and must never be
+hand-edited. **22 of 57 works are moving targets, feeding 71 of 176 references.**
+
+> **The ordering rule fails, on purpose.** *`pulled_on` ascending implies
+> `index_version` non-descending* is §5.5's rule stated as an assertion. `src-aa`
+> violates it: `session-2` pulled 2026-08 at v4.1.1, `session-4` pulled later on
+> 2026-08-13 at v4.1. **§5.5 predicted "the corpus violates it today, which turns
+> G3 from a note in a report into a failing assertion." It does.**
+
+**§5.5's `model_version` split is implemented as a separation, not a flag.**
+`src-magesh`'s May 2024 tools, `src-kalai`'s DeepSeek-V3 and `src-dahl-fictions`'
+GPT-4 / GPT-3.5 / Llama 2 are historical fixtures listed under their own heading
+and carry no `figure_class: model_version`, because a register that treated them
+as moving targets would silently rewrite the evidence they are.
+
+**The live model roster is counted off the corpus on every run: 215 occurrences
+of fourteen names across five lessons**, per lesson, so "no `Opus 5` reference
+still standing when the course is retaught" resolves to an edit set.
+`session-3` has none; `session-0.1` has 105.
+
+**§5.6 is carried into `DATA-PULL.md` unresolved**, in full, with the evidence
+both ways and the note that fixing the attribution without fixing the versioning
+leaves the same defect behind a tidier label.
+
+### 15.4 What Phase 3 leaves open
+
+1. **Ten claims have no source in their footer and still say `src-case`**, so the
+   page attributes ten external claims to a synthetic household. Among them a
+   named `Zhao et al. (2024)` result with no Zhao key, two statutes, a
+   psychophysics constant and two vendor model cards. `docs/chip-rewiring.md` §3.2.
+2. **Eight chips should not be confidence chips at all** — a figure-label legend,
+   two of the page's own methodological caveats, a declared assumption, and the
+   chip component reused as a category badge. Changing them moves A15, V4 and
+   `verify-migration` check 18 at once. `docs/chip-rewiring.md` §4.
+3. **Five sources are listed by a lesson that never cites them** and are not
+   exempt by kind. `src-google-ptcf` is the sharpest: `session-2` §03 teaches the
+   Persona-Task-Context-Format framework and cites its source nowhere.
+4. **Five moving targets carry no retrieval date**, one of them `src-synthid`
+   with eleven references. Three more are dated to a month with no day.
+5. **`src-aa`'s versioning incoherence** and the livebench attribution, both
+   unresolved by decision.
+6. **A15's severity** is still ADVISE. Its precondition — `data-nochip` — is met,
+   so promoting it is now a Phase 7 decision rather than a blocked one.
+7. **53 of 57 records carry at least one `[UNVERIFIED, needs source]` field.**
+   Most are a missing retrieval date or publisher on a source whose identity is
+   not in doubt; `BIBLIOGRAPHY.md` prints every one.
