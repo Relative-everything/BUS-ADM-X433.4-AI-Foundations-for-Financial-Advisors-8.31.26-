@@ -273,6 +273,15 @@ const MAP = `<!-- APXMAP:BEGIN generated-by=scripts/build-appendix.mjs -->
   <p class="dim" style="font-size:14px">The core alone runs {{CORE_MIN}} minutes, {{HOUR}}. Every section carries its own minute figure on its eyebrow; the full per-section budget is in the footer.</p>
 <!-- APXMAP:END -->`;
 
+/* Another OPTIONAL region, and a ninth copy of the same figures. Only session-3
+   carries a footer paragraph restating the shape of the file, and it was wrong
+   on all four numbers it gave (12 core against 13, 64 minutes against 70, 4
+   appendix against 5, 48 minutes against 80), called 70 minutes "the one-hour
+   version", and sent the reader to the gold teasers that step (e) retires. */
+const NOTE = `<!-- APXNOTE:BEGIN generated-by=scripts/build-appendix.mjs -->
+  <p style="margin-top:22px">The core is {{CORE_N}} sections and runs in about {{CORE_MIN}} minutes, {{HOUR}}. The {{APX_N}} appendix sections add {{APX_MIN}} more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
+<!-- APXNOTE:END -->`;
+
 /* --------------------------------------------------------------- generation */
 
 function replaceRegion(text, name, block, insert) {
@@ -378,6 +387,15 @@ function build(lesson) {
       CORE_N: core.length, CORE_MIN: coreMin,
       APX_N: apx.length, APX_MIN: apxMin,
       TOTAL: coreMin + apxMin, HOUR: hour,
+    }));
+  }
+
+  /* --- APXNOTE, where a lesson carries one ------------------------------ */
+  const rxNote = /<!-- APXNOTE:BEGIN[\s\S]*?<!-- APXNOTE:END -->/;
+  if (rxNote.test(text)) {
+    text = text.replace(rxNote, () => fill(NOTE, {
+      CORE_N: core.length, CORE_MIN: coreMin,
+      APX_N: apx.length, APX_MIN: apxMin, HOUR: hour,
     }));
   }
 
