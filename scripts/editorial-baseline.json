@@ -1,7 +1,7 @@
 {
   "_": "Baselines and severities for scripts/verify-editorial.mjs. Hand-edited; the checker never rewrites it. EDITORIAL.md is the specification, this file is the state the ratchets run against.",
-  "generated_against": "91a0eaf",
-  "as_of": "2026-08-23",
+  "generated_against": "001c395",
+  "as_of": "2026-08-25",
 
   "severity": {
     "_": "One entry per Part A rule, visible and diffable, never inferred at runtime. EDITORIAL.md's exit contract points here. HARD blocks the push; ADVISE prints under the ADVISORY heading and does not; DISABLED prints nothing at all. --advisory-only overrides everything to ADVISE for the D16 burn-in.",
@@ -54,8 +54,8 @@
     "files": {
       "session-0.1": { "literal": 0,  "entity": 7,  "total": 7 },
       "session-1":   { "literal": 1,  "entity": 83, "total": 84 },
-      "session-2":   { "literal": 2,  "entity": 69, "total": 71 },
-      "session-3":   { "literal": 94, "entity": 15, "total": 109 },
+      "session-2":   { "literal": 2,  "entity": 67, "total": 69 },
+      "session-3":   { "literal": 94, "entity": 13, "total": 107 },
       "session-4":   { "literal": 1,  "entity": 84, "total": 85 }
     }
   },
@@ -63,15 +63,15 @@
   "R11": {
     "_": "The corpus-level baseline for byte-shared boilerplate, so it is checked once rather than nowhere. Measured from the canonical copy: R11 spans deduplicated by SHA-256 of their content, so a block shared across four lessons counts once. Not in conflict with the pre-push md5 pairing, which asserts identity ACROSS files; this asserts stability OVER TIME.",
     "population": "mask(R11), deduplicated by content hash across all five lessons",
-    "distinct_blocks": 23,
+    "distinct_blocks": 6,
     "literal": 0,
-    "entity": 23,
-    "total": 23
+    "entity": 6,
+    "total": 6
   },
 
   "session_3_reconciliation": {
     "_": "S-3. Both figures are correct and count different populations. Neither supersedes the other.",
-    "whole_file_entity": 22,
-    "authoredProse_entity": 15
+    "whole_file_entity": 15,
+    "authoredProse_entity": 13
   }
 }
