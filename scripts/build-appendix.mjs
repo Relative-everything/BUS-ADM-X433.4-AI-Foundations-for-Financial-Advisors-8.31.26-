@@ -52,22 +52,41 @@ const ONE = (() => { const i = argv.indexOf('--file'); return i >= 0 ? argv[i + 
    advanced; ties within a tier fall through to existing source order. */
 const TIER_ORDER = ['foundational', 'standard', 'advanced'];
 
-/* references/pedagogy.md §s4, the ratified build parameters. A generator that
-   reads minutes off the sections will happily overwrite a hand-typed figure that
-   was the only copy still matching one of these, which is exactly what happened
-   to session-1's A7 card: it said 15, the parameter says 15, and the section
-   eyebrow and the time budget both say 17. Regenerating made the card agree with
-   the section and buried a parameter violation the drifted index had been
-   masking. So the conflict is printed on every run rather than decided by the
-   fact that a script wrote last. This never blocks: it is an instructor
-   decision, and the two readings are in docs/repo-updates-plan.md §4.7. */
+/* references/pedagogy.md §s4, the ratified build parameters, checked against
+   every section and PRINTED rather than resolved. A generator that reads minutes
+   off the sections will happily overwrite a hand-typed figure that was the only
+   copy still matching one of these — which is what happened to session-1's A7
+   card, and how a parameter violation the drifted index had been masking got
+   buried. The conflict is printed on every run so a script writing last is never
+   what settles it.
+
+   ONE VALUE HERE IS NOT pedagogy.md's. The named discussion block is 20 there
+   and 18 in sessions 2-4 here, under instructor decision DEC-3 (2026-08-25):
+   the closing question step (j) added is paid for out of the block, and
+   pedagogy.md §s4's own rationale is that the block degrades below 15, which 18
+   clears. pedagogy.md lives in the skill, not this repo, so the divergence is
+   recorded rather than propagated — the same handling as validate_lesson's V2
+   and C2. See MAINTAINING.md "Known follow-ups".
+
+   THE PER-SECTION ENVELOPE IS CHECKED HERE BECAUSE NOTHING ELSE CHECKS IT.
+   Neither validate_lesson nor verify-migration nor verify-editorial reads it,
+   and it is the constraint that decided DEC-2: session-1's appendix cannot
+   satisfy 150-with-tolerance-0, the 3-16 envelope and the 15-minute discussion
+   block at once, because A1..A7 with A5 capped at 16 and A7 at 15 sum to 81 and
+   the appendix has to be 83. The two homeless minutes went into the core, to
+   the closing question, under DEC-3. */
 const RATIFIED = {
   'cold-open ritual': { min: 8, match: (s) => /Cold open/i.test(s.eyebrow || '') },
   'named discussion block': {
-    min: (lesson) => (lesson === 'session-1' ? 15 : 20),
+    min: (lesson) => (lesson === 'session-1' ? 15 : 18),
     match: (s) => s.apx && /Discussion/i.test(s.eyebrow || ''),
   },
 };
+
+/* pedagogy.md §s4: "Per-section envelope 3-16 min; the named discussion block is
+   exempt at 20." The discussion blocks are exempted by name above; every other
+   section is bounded here. */
+const ENVELOPE = { lo: 3, hi: 16 };
 const conflicts = [];
 
 /* ------------------------------------------------------------------ template */
@@ -87,10 +106,13 @@ function fill(tpl, vars) {
   return out;
 }
 
-/** English cardinals for the small counts the ledes carry. Numerals above ten. */
+/** English cardinals for the small counts the ledes carry. Numerals above twenty,
+    so "twelve minutes over the hour" does not sit next to "nine minutes over the
+    hour" in the same generated sentence across two lessons. */
 const WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
-  'nine', 'ten'];
-const card = (n) => (n <= 10 ? WORDS[n] : String(n));
+  'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen',
+  'seventeen', 'eighteen', 'nineteen', 'twenty'];
+const card = (n) => (n <= 20 ? WORDS[n] : String(n));
 const Card = (n) => card(n).charAt(0).toUpperCase() + card(n).slice(1);
 
 /* -------------------------------------------------------------------- parse */
@@ -308,13 +330,19 @@ function build(lesson) {
     if (s.mins === null) throw new Error(`${lesson}: #${s.id} has no span.mins`);
     if (!s.title) throw new Error(`${lesson}: #${s.id} has no h1/h2`);
     if (!s.eyebrow) throw new Error(`${lesson}: #${s.id} has no eyebrow`);
+    let exempt = false;
     for (const [name, p] of Object.entries(RATIFIED)) {
       if (!p.match(s)) continue;
+      exempt = true;
       const want = typeof p.min === 'function' ? p.min(lesson) : p.min;
       if (s.mins !== want) {
         conflicts.push(`${lesson} #${s.id}  ${name}: section says ${s.mins} min, `
-          + `references/pedagogy.md §s4 says ${want}`);
+          + `the ratified value is ${want}`);
       }
+    }
+    if (!exempt && (s.mins < ENVELOPE.lo || s.mins > ENVELOPE.hi)) {
+      conflicts.push(`${lesson} #${s.id}  per-section envelope: section says ${s.mins} min, `
+        + `references/pedagogy.md §s4 allows ${ENVELOPE.lo}-${ENVELOPE.hi}`);
     }
   }
 

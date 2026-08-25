@@ -2792,3 +2792,118 @@ else in Phase 2 is either mechanically verified or explicitly flagged.
 8. **`validate_lesson.py` V2**, registered upstream in `MAINTAINING.md` per
    Delta 5. Not this repo's to fix, and the pre-push gate as documented still
    cannot run clean until it is.
+
+---
+
+## 14. The five Phase 2 decisions, closed 2026-08-25
+
+**§13.8 left eight items open. Five are decided here and closed. Three stay
+open and untouched**, with their reasons: the two consecutive-component
+adjacencies (curriculum), `session-2`'s print nondeterminism (fixing it changes
+interaction logic), A21 (a rule firing on the wrong twelve is worse than none),
+and `validate_lesson` V2 (upstream, registered in `MAINTAINING.md`).
+
+### DEC-1 — the rewritten bridge item stands, and the distinction is deferred, not dropped
+
+**Decision: accept `session-4` bridge item 3 as shipped.** Red team (b) was right
+that it tests an adjacent question rather than the same one, and accepting that is
+the trade.
+
+**Reason, logged.** Grounding against fine-tuning is the more practice-relevant
+distinction of the two. But a retrieval bridge is a seven-minute warm-up on the
+prior session's mechanism, and it is the wrong vehicle for a distinction
+`session-3` never taught in its core. Testing it there asked the ordinary student
+to recall something they had not been shown; testing the architecture decision
+`#s6` does teach asks them to recall something they did.
+
+**Where it goes instead. `session-4`'s body, in Phase 5, as a candidate
+injection.** The distinction belongs where there is room to teach it rather than
+seconds to recall it, and `session-4` §03 "What the contract changes" and §04
+"Vendor due diligence" both already turn on where a corpus lives and who can
+delete it. **No promotion of `session-3 #s8`**, which would have cost 14 minutes
+against a core already at its ceiling.
+
+### DEC-2 and DEC-3 — the minute budget, and the constraint that decided it
+
+**The decision as put:** restore `session-1`'s named discussion block to the
+ratified 15 minutes and return the two freed minutes to `#s8`, where the index
+card had recorded them; and pay for each lesson's closing question out of its
+20-minute discussion block, since `pedagogy.md` §s4's own rationale is that the
+block degrades below 15 and 18 clears it.
+
+> **THE TWO DECISIONS DRAW ON THE SAME TWO MINUTES IN `session-1`, AND THE
+> ARITHMETIC SETTLES WHERE THEY GO.** Three ratified parameters bind
+> `session-1`'s appendix at once:
+>
+> | | |
+> |---|---|
+> | 150 allocated, tolerance 0 | the appendix must total **83** against a 67-minute core |
+> | per-section envelope **3-16 min** | `#s8` (A5, the Sampler Lab) is capped at **16** |
+> | named discussion block, **15 in Session 1** | `#s14c` (A7) is capped at **15** |
+>
+> A1 11 + A2 12 + A3 9 + A4 9 + **A5 16** + A6 9 + **A7 15** = **81, not 83.**
+> **The three constraints are jointly unsatisfiable inside that appendix.** Two
+> minutes have nowhere legal to sit, which is why they had been parked on A7 at
+> 17, and why the card still said A5 = 18: **the card predates the envelope cap.**
+> Eight appendix sections across the corpus sit at exactly 16 and none sits above
+> it, so the cap is observed practice, not a dead letter. "Which copy is right"
+> was the wrong question.
+>
+> **DEC-3 supplies the destination DEC-2 could not.** The two minutes move into
+> the core, to the closing question, which is exactly the mechanism DEC-3
+> specifies. Every ratified parameter then holds, and `#s8` stays at 16.
+
+**Applied, all four lessons:**
+
+| lesson | discussion block | closing question | core | appendix | total |
+|---|---|---|---|---|---|
+| `session-1` | `#s14c` 17 → **15** | `#s15` 5 → **7** | 67 → **69** | 83 → **81** | 150 |
+| `session-2` | `#s12d` 20 → **18** | `#s12` 5 → **7** | 67 → **69** | 83 → **81** | 150 |
+| `session-3` | `#s15` 20 → **18** | `#s16` 5 → **7** | 70 → **72** | 80 → **78** | 150 |
+| `session-4` | `#sD` 20 → **18** | `#s9` 5 → **7** | 70 → **72** | 80 → **78** | 150 |
+
+**Two consequences, both flagged, neither resolved here.**
+
+> **(i) `session-3` and `session-4` now sit 2 minutes above D18's ratified
+> ceiling of 70.** Any transfer from an appendix block to a core section raises
+> the core, and those two lessons were already at the ceiling, so no version of
+> DEC-3 avoids this: at 1 minute they would be 71. The band is 60-70 and the only
+> hard time constraint is 150 with tolerance 0, which holds. **The pages say so**
+> — the generated allocation label reads *"Core 72 + appendix 78; the core alone
+> runs 72 minutes, twelve minutes over the hour."* **Recommendation: Phase 5's
+> REDUCE pass, which now owns exactly these two lessons, recovers the two minutes
+> each.** Until it does, D18's ceiling is exceeded and the page is honest about it.
+>
+> **(ii) The named discussion block is 18 in sessions 2-4 and `pedagogy.md` §s4
+> says 20.** DEC-3 authorises the divergence explicitly. `pedagogy.md` lives in
+> the skill, not this repo, so it is **recorded rather than propagated** — the
+> same handling as `validate_lesson`'s V2 and C2. `scripts/build-appendix.mjs`
+> carries 18 as the checked value with DEC-3 named as its authority.
+
+**`build-appendix.mjs` gained the per-section envelope**, because nothing else in
+the suite reads it — not `validate_lesson`, not `verify-migration`, not
+`verify-editorial` — and it is the constraint that decided DEC-2. It prints, never
+blocks, like the rest of the `RATIFIED` table. The 15-vs-17 conflict it had been
+printing on every run since Phase 2 is gone, and no new conflict replaced it.
+
+### DEC-4 — `session-1`'s CFP Board coverage rows
+
+**Row 1 rewritten.** It read *"FINRA 24-09, SEC AI-washing proceedings, the three
+landmines, the disclosure discussion"*, and three of those four are taught only in
+the appendix — FINRA 24-09 and the AI-washing proceedings in **A6**, the
+disclosure discussion in **A7**. To a core-only reader it claimed coverage the
+lesson did not deliver, which is the same defect as the `#s15` summary already
+rewritten in Phase 2. It now reads *"The three confidentiality landmines;
+de-identification as a standard the name alone does not meet; the course rule on
+client data in a build transcript"*, all three of which are core `#s13`.
+
+**Row 2 stands.** Its Monte Carlo clause is appendix-only (A2) and Phase 5 closes
+it by injecting the analogue into core `#s2`, per §6.4.
+
+### DEC-5 — `session-2`'s session map is not restored
+
+**Every number in it was wrong**, it omitted the cold-open ritual entirely, and
+nothing checked it. Restoring it would restore stale figures. **If a
+segment-level map is wanted back, it is a Phase 5 authoring decision against
+correct figures, not a Phase 3 restoration of incorrect ones.** Recorded here so
+the absence is a decision rather than an oversight.
