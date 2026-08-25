@@ -24,8 +24,8 @@ Both forms are declared in `EDITORIAL.md` A16 and enforced by
 | | |
 |---|---|
 | Marked claims | **12** |
-| `[UNCONFIRMED]` | **7** |
-| `[NEEDS SOURCE]` | 5 |
+| `[UNCONFIRMED]` | **8** |
+| `[NEEDS SOURCE]` | 4 |
 | weight `answer` | 1 — An answer key or the correctness of an exercise depends on it. A student is marked right or wrong by it. |
 | weight `exercise` | 2 — A work-along gate or an interaction is built on it. The room does something because of it. |
 | weight `section` | 4 — A whole section's argument rests on it. Remove the claim and the section has no point. |
@@ -76,17 +76,17 @@ the corpus on every run.
 | What would resolve it | Re-read the leaderboard and restate the floor, or drop the superlative and teach the range. The measurement is unchanged; what moved is what it is the best of. The HALL chart array at :2019 labels 3.3% 'Best model, grounded' and this panel teaches the range from it. |
 | Candidate source | Vectara's own hallucination-leaderboard repository, read 2026-08-25: last updated 2026-05-11, HHEM-2.3, 123 models. Every per-model rate this lesson quotes is still on the board, but 3.3% now ranks third and the floor is 1.8%. The cited blog post itself is blocked from this build environment and was not read. — confidence **medium** |
 
-### 3. `session-4/index.html:1454` — `#sW1` — **[NEEDS SOURCE]**
+### 3. `session-4/index.html:1454` — `#sW1` — **[UNCONFIRMED]**
 
-> [NEEDS SOURCE]
+> [UNCONFIRMED]
 
 | | |
 |---|---|
 | File and line | `session-4/index.html:1454` |
 | Section | `#sW1` (`advanced`) |
 | Region | R1 — body prose |
-| Marker | **[NEEDS SOURCE]** |
-| What would resolve it | Attach a psychophysics reference. The 1% is a convention with a wide reported spread, and the widget's own band logic hard-codes it, so the exercise's thresholds move with whatever source is chosen. The hedge that follows it is the accurate part and is what the retrieved literature most clearly supports. |
+| Marker | **[UNCONFIRMED]** |
+| What would resolve it | Attach a psychophysics reference and check the VALUE, not just the attribution. DOWNGRADED from the stronger marker on review: the physics is standard, but no primary text stating 1% in the form this widget uses was retrieved, and the reported spread is wide. The stronger marker asserts somebody checked, and nobody did. The hedge that follows the figure is the accurate part and is what the retrieved literature most clearly supports. |
 | Candidate source | Mantiuk, Models of early perception (Cambridge advanced graphics notes) as the cleanest reachable secondary; Fechner's ~1% threshold contrast is reported in the ophthalmology literature. No primary text was retrieved. — confidence **low** |
 
 ## weight `section`
