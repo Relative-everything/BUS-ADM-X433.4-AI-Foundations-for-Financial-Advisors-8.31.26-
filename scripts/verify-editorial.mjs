@@ -37,13 +37,15 @@ import { classify, authoredProse, quotationScope } from './editorial-regions.mjs
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = JSON.parse(readFileSync(join(REPO, 'scripts/editorial-baseline.json'), 'utf8'));
 
-/* Lessons with the core/appendix/tier architecture. session-0.1 is outside it —
-   EDITORIAL.md D14 is OPEN, and A1-A7 have no population in that file. The skip
-   is declared and dated here rather than left silent. */
+/* Lessons with the core/appendix/tier architecture. session-0.1 is outside it, and
+   as of EDITORIAL.md D20 (2026-08-25) that is settled rather than pending: it is a
+   standalone async bonus lesson with no live time block, so A1-A7 have no
+   population in that file. The skip is declared and reasoned here rather than left
+   silent, and it is A1-A7 ONLY — session-0.1 is in scope for every other rule. */
 const TIERED = ['session-1', 'session-2', 'session-3', 'session-4'];
 const ALL_LESSONS = ['session-0.1', ...TIERED];
 const D14_SKIP = 'session-0.1';
-const D14_REASON = 'D14 OPEN, deferred 2026-08-23 per commit f5bf47b: no appendix, no data-tier, no tier bar';
+const D14_REASON = 'D20 2026-08-25: out of scope for the appendix/tier architecture (standalone async, different delivery mode); no appendix, no data-tier, no tier bar';
 
 const argv = process.argv.slice(2);
 const ADVISORY_ONLY = argv.includes('--advisory-only');

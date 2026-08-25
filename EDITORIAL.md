@@ -46,7 +46,7 @@ may be cited by a future one until it is re-derived.
 
 | Section | Defect |
 |---|---|
-| **§5** complexity rubric | §5.5 states 62 sections / 58 content. Its own enumeration (12 + 19 + 17 + 19 + 19) gives **86 / 82**, corroborated by §10.1. The rubric is **not approved** (D13) and nothing here depends on it |
+| ~~**§5** complexity rubric~~ **RE-DERIVED 2026-08-25, see D19** | §5.5 states 62 sections / 58 content. Its own enumeration (12 + 19 + 17 + 19 + 19) gives **86 / 82**, corroborated by §10.1. Two further defects were found on re-derivation: the 0–4 anchors §5.1 promises are never defined, and its *"weighted, ×5 → 0–100"* normaliser yields 0–20, not 0–100 (the multiplier is ×25). **D19 supersedes D13 and approves the rubric as corrected.** §6 and §7 below are untouched and remain stale |
 | **§6** mechanism-against-application split | §6.1’s normalised table contradicts the detail blocks it embeds — session-0.1 is given a 31 per cent mechanism share in the table and 62 per cent in its own detail; three of the four `<details>` blocks are truncated mid-table. *(Spelled out, not written as a numeral with a per-cent sign: the retired valuation discount was a percentage of exactly this value, `verify-migration.mjs` check 1 matches it lexically, and this file is deliberately NOT in that check’s register list. Do not "fix" it back to a numeral.)* |
 | **§7** prose density | Words ÷ minutes fails to recompute in 7 of 13 rows of §7.4 (e.g. `session-4` `s3`: 732 / 5 = 146.4, printed 143). §7.3's core-to-appendix ratio is stated as 1.25–2.0× where §7.2's own figures give 1.55–2.59×. The band stays unratified (D15) |
 
@@ -505,8 +505,11 @@ appendix they were sent to.
 
 **Regions.** R3.
 
-**Exemptions.** `session-0.1` — see the D14 note under **Open decisions**. The
-exemption is dated and reasoned; it is not a silent skip.
+**Exemptions.** `session-0.1`, and the exemption is **A1 through A7**, not A6
+alone — see **D20**. Reason, as of 2026-08-25: *out of scope for the
+appendix/tier architecture: standalone async, different delivery mode.* It is a
+declared, reasoned skip, not a silent one, and it does **not** exempt
+`session-0.1` from any rule outside A1–A7.
 
 **Verdict.** HARD FAIL.
 
@@ -1257,13 +1260,22 @@ Ratified against `docs/editorial-gap-report.md` §11.
 | D10 | **One source for tooltip and table**, `CASE.md` pattern | A17, A18 |
 | D11 | **Mark the term in prose.** No free-text matching | A17 |
 | D12 | **Deferred.** The instructor prunes the term inventory | — |
-| D13 | **Not approved.** The rubric's population count is wrong. This document does not record it and does not depend on it | known-stale note |
-| D14 | **[OPEN]** — see below | A6 |
+| D13 | **Not approved.** The rubric's population count is wrong. This document does not record it and does not depend on it | **superseded by D19** |
+| D14 | ~~**[OPEN]**~~ **Answered 2026-08-25 — branch (b), with a new reason.** See D20 | A1–A7 |
 | D15 | **Leave the density band unratified.** Report core and appendix separately | known-stale note |
 | D16 | **Advisory burn-in** before the pre-push gate | rollout |
 | D17 | Correct `docs/spine-brief.md`'s opening paragraph. **Not in this task** | follow-ups |
+| **D18** | **The core minute band is 60–70, ratified 2026-08-25.** 150 allocated with tolerance 0 is unchanged and remains the only hard time constraint | `docs/repo-updates-plan.md`, below |
+| **D19** | **Supersedes D13. The §5 rubric is approved as corrected**: true population 86 sections / 82 content, the 0–4 anchors declared, the normaliser fixed at ×25, C5 banded within stratum | `docs/repo-updates-plan.md`, below |
+| **D20** | **Answers D14 as branch (b) with a changed reason.** `session-0.1` is out of scope *for the appendix/tier architecture* — standalone async, different delivery mode. It is **in** scope for every other rule | A1–A7, below |
 
-## D14 is [OPEN] and it was not answered
+## D14 was [OPEN]; it is answered as D20 (2026-08-25)
+
+**The answer is branch (b) — with a reason that is not the one recorded in
+2026-08-23.** The question and both branches are kept below unaltered, because the
+reason a decision changed is worth more than the decision. What follows the two
+branches is the answer.
+
 
 The instruction carried both branches with the note *"delete the branch that does
 not apply"*, and neither was deleted. Per the standing rule for an unanswered
@@ -1306,6 +1318,148 @@ whenever the deferral is.
 **The report's recommendation, standing as the default:** adopt the architecture
 first if 0.1 is taught; otherwise annex it, and say so in this file.
 
+### D20 — the answer, 2026-08-25
+
+**Branch (b), and the deferral is retired rather than extended.** `session-0.1` is
+a standalone bonus lesson outside the taught class, written for a reader with no
+AI background and read alone, asynchronously. It has no live time block to honour,
+so it has no appendix and no tier system, **and that is now correct rather than
+pending.**
+
+The exemption reason changes accordingly:
+
+| | |
+|---|---|
+| **Was** (2026-08-23, commit `f5bf47b`) | *"0.1 is a work in progress and is not needed for this class yet"* |
+| **Is** (2026-08-25) | **out of scope for the appendix/tier architecture: standalone async, different delivery mode** |
+
+Three consequences, each of which someone will otherwise get wrong:
+
+1. **The exemption is A1 through A7, not A6 alone.** The decision table's old
+   "Where it lands" cell said `A6`; the checker has always skipped all seven
+   (`scripts/verify-editorial.mjs:45-46`, `D14_SKIP` / `D14_REASON`, applied at
+   lines 135, 158, 182, 200, 222, 248, 263). A6 was the visible half of a
+   seven-rule skip. The table now says A1–A7.
+2. **"Out of scope" is scoped, and the scope is the architecture.** `session-0.1`
+   remains **in** scope for every rule that is not about the appendix or the tier
+   system — the dash rules, the citation rules, A16, and the vocabulary rules
+   A17–A19 in particular. It carries 50 undefined terms and 7 HIGH-severity
+   blocked exercises against a reader with no instructor in the room, which makes
+   it the **highest**-priority file for the vocabulary work, not an excluded one.
+   An unqualified "0.1 is out of scope" would invert that, and is wrong.
+3. **The exemption stops being dated-and-revisitable and becomes structural.**
+   Branch (b) as written in 2026-08-23 said the skip "is re-examined whenever the
+   deferral is". There is no longer a deferral to re-examine. **B9** — *whether an
+   exemption is still true* — accordingly re-reads D20 against one question and
+   not the old one: *is 0.1 still delivered async, outside the taught block?* If
+   that ever stops being true, branch (a) is back on the table in full.
+
+`validate_lesson.py` **V5** corroborates the delivery-mode reading mechanically:
+`session-0.1` fails it today at *"segments 120, allocated cell 120, target 150"*.
+The 150-minute target is a property of the live evening block. A file with no live
+block cannot satisfy it and should not be asked to.
+
+---
+
+## D18 — the core minute band, ratified 2026-08-25
+
+**The band is 60–70 minutes. `150` allocated with tolerance 0 is unchanged.**
+
+This is recorded as a **new** decision rather than as a supersession, and the
+reason matters: **searched for and not found — no ratified decision anywhere in
+this repository fixes the core at 67–70.** What exists is three different things
+that have been read as though they were one:
+
+| Claim | Where it actually is | What it actually is |
+|---|---|---|
+| 150 allocated minutes, summed exactly, **tolerance 0** | `references/pedagogy.md` §s4, ratified build parameters | **A hard constraint.** Unchanged by this decision |
+| *"The core runs in roughly **60–67** minutes, so a lesson can be taught in a one-hour slot"* | `CHANGELOG.md:464`, the 2026-08-18 entry that ratified the core/appendix architecture | **The statement of intent.** The one-hour promise, and its own floor is 60 |
+| *"The core stays near an hour (**67/67/70/70**)"* | `CHANGELOG.md:423`, a later entry | **A description of the measured state**, not a rule |
+
+`67–70` is the third row. It is what the four lessons happen to sum to, restated
+descriptively in this file (D14's note) and in report §5.5, and hard-coded four
+times as `window.__coreMins` (`session-1:3022`, `session-2:2979`,
+`session-3:2627`, `session-4:3218`). A measurement that has been quoted often
+enough to look like a rule is still a measurement.
+
+**The floor is 60 because the repository chose 60 twice**, before this task
+existed: `CHANGELOG.md:464`'s *"roughly 60–67"*, and commit `f5bf47b`'s own
+words — *"Session 0.1's missing appendix and **the 60-minute core split** are
+deferred"*.
+
+**The ceiling is 70 because 70 is what sessions 3 and 4 already are**, and it is
+recorded here with its cost stated rather than hidden: **at 70 minutes the
+one-hour promise is already exceeded by ten minutes in two of the four lessons.**
+The promise is about not *overrunning* an hour by much; 70 is the tolerated
+practice, not the target. A move that takes a core from 70 toward 60 is an
+improvement against `CHANGELOG.md:464`, not a regression.
+
+**What the band binds.** Where a MOVE from core to appendix would take a lesson's
+core below 60, prefer **REDUCE in place**. The 150 total is untouched by any move
+between core and appendix — the two sum to 150 by construction — so `V5`,
+`verify-migration` check 16 and A4's arithmetic are unaffected in kind. What a
+move *does* change is `window.__coreMins`, which is a hard-coded literal in four
+files and must be re-derived, and the `.apxdiv` lede that **A4** checks.
+
+Sections whose minutes are fixed by ratified build parameters cannot be moved or
+reduced: the **cold-open ritual** (8 min, identical every session), the **named
+discussion block** (20 min; 15 in Session 1) and the **retrieval bridge** (7 min,
+Sessions 2+), all `references/pedagogy.md` §s4. The **per-section envelope of
+3–16 minutes** bounds every REDUCE.
+
+---
+
+## D19 — the §5 complexity rubric, approved as corrected, superseding D13
+
+**D13 refused the rubric because its population was wrong. The population is now
+re-derived, and two further defects were found in the same section. With all three
+corrected the rubric is approved.** Its five weighted components, its two unscored
+routing axes and its stall index were never the problem and are adopted as written.
+
+**Defect 1 — the population, re-derived on disk.**
+
+| | §5.5 says | Measured | |
+|---|---|---|---|
+| Sections, all six files | 62 | **86** | §5.5's own enumeration — 12 + 19 + 17 + 19 + 19 — gives 86. The per-file figures are right; only the sum is wrong |
+| Content sections | 58 | **82** | 86 less the four `section.apxdiv` dividers |
+| Sections, sessions 1–4 | — | **74** | 19 + 17 + 19 + 19 |
+| Content sections, sessions 1–4 | — | **70** | 48 core + 22 appendix |
+
+Corroborated three ways: by this file's RC-4, by A4's recorded core counts of
+11 / 11 / 13 / 13, and by A2's finding of 22 appendix sections against 20 cards.
+
+**Defect 2 — the 0–4 anchors were never written down.** §5.1 states that each
+component is *"scored 0–4 against fixed anchors"* and then defines no anchor for
+any component. As published the rubric is not reproducible: two scorers reading
+§5.1 cannot be relied on to give the same section the same number. The anchors are
+declared in `docs/repo-updates-plan.md` §1.2, together with the corpus figure each
+is grounded in, and scoring returns **raw evidence** that is banded
+deterministically downstream rather than banded by judgement at source.
+
+**Defect 3 — the normaliser does not normalise.** §5.1 says *"weighted, ×5 →
+0–100"*. The weights sum to 1, so a weighted sum of five components each in 0–4 is
+itself in 0–4, and ×5 gives **0–20**. The multiplier that yields 0–100 is **×25**.
+
+**One amendment beyond correcting a defect, and it is a change of method.** C5
+(comprehension pressure, words per allocated minute) is banded **within stratum** —
+core sections against the core distribution, appendix sections against the appendix
+distribution — rather than against the combined corpus. Measured over the 70
+content sections of sessions 1–4, core runs at a mean of **79** words per allocated
+minute against the appendix's **26**, a ratio of **3.0×**, and the two distributions
+barely overlap. Banded together, C5 would score essentially every core section high
+and every appendix section low, making 10 per cent of the rubric a restatement of
+the tier a section already has. §5.3 already reached half of this conclusion —
+*"appendix sections are scored too, but judged against a different bar"* — and this
+applies it to the one component where the strata are not comparable.
+
+*(That 3.0× also does not reproduce §7.3's stated core-to-appendix ratio of
+1.25–2.0× or §7.2's own 1.55–2.59×. §7 remains known-stale under D15 and this
+figure is not offered as a correction to it — the two measurements have different
+populations. Recorded so the divergence is not mistaken for agreement.)*
+
+**What is still not approved.** Report §2.3's Wolfram mapping (D7) and §7's density
+band (D15) are untouched by this decision.
+
 # Follow-ups
 
 Not in scope for this document, recorded so they are not lost.
@@ -1314,8 +1468,8 @@ Not in scope for this document, recorded so they are not lost.
   here is implemented"*; the spine has been implemented since `93904d7`, lives in a
   string literal at `scripts/inject-case.mjs`, and appears in all six HTML files.
   It is the document a future maintainer reads first.
-- **Report §5, §6 and §7 need re-deriving** before any rule cites them. See the
-  known-stale note.
+- ~~**Report §5**~~ **re-derived 2026-08-25 (D19).** **Report §6 and §7 still need
+  re-deriving** before any rule cites them. See the known-stale note.
 - **Report §2.2, §2.3, §1.2, §1.3, §8 and §9.2 carry the numeric defects** listed
   in RC-1 to RC-3 and in the two smaller corrections. This file's figures govern.
 - **`validate_lesson.py` C2** is corrected or retired upstream when A8 and A9 go
