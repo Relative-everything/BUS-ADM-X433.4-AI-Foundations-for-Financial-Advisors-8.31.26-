@@ -438,36 +438,88 @@ core section in their own file — there are no orphans.**
 
 ### 3.3 The distribution
 
-> **PENDING — the scoring pass is still running as this revision is committed.**
-> This section will carry: the score for all 70 content sections; the quartile
-> boundaries; the 75th and 80th percentile cuts side by side; the core and
-> appendix distributions separately, per §5.3; and the reconciliation of the
-> rebuilt undefined-term counts against report §4.1's per-lesson totals.
+> **Provenance of the numbers in §3.3, §3.4 and §3.7.** Every content section of sessions 1-4 was scored, then re-checked by a second agent told to refute rather than confirm. **Adversarial verification is complete for 2 of the four lessons — `session-1`, `session-2`; still outstanding for `session-3`, `session-4`.** **The figures below are therefore provisional and will move.** 22 machine-applicable corrections have been applied; corrections expressed as narrative rather than as a field edit are listed in §12.7 and are **not** in these numbers.
 >
-> **Provisional reconciliation, from the term-map stage only** (these are
-> pre-verification figures and the adversarial pass revises them downward):
+> The verification pass matters more than a footnote suggests: it found the scoring agents **fabricating**. See §12.9.
 
-| lesson | rebuilt, in a content section | report §4.1 "currently undefined" | delta |
+**70 content sections scored — 48 core and 22 appendix — on one absolute scale across sessions 1-4**, per §5.3, with the within-lesson picture reported alongside.
+
+| | n | min | Q1 | median | Q3 (p75) | **p80** | max | mean |
+|---|---|---|---|---|---|---|---|---|
+| **all content sections** | 70 | 10 | 27.8 | 43.8 | 55 | **57.3** | 82.5 | 42.8 |
+| core | 48 | 10 | 27.5 | 43.8 | 55 | 55.8 | 82.5 | 41.6 |
+| appendix | 22 | 13.8 | 30.9 | 45 | 59.4 | 62.3 | 81.3 | 45.5 |
+
+**The cut is the 80th percentile, 57.3, and it flags 14 sections.** Report §5.3 proposed the 75th, which here is **55** and would flag 19. Both are recorded so either can be read off.
+
+**Core and appendix sit almost on top of each other** — medians 43.8 and 45, means 41.6 and 45.5. That is the C5 stratification (§1.2) doing its job: banded against the combined corpus, the appendix would have been pushed systematically below the core by a component measuring density rather than difficulty.
+
+**Per lesson**, which §5.3 requires because the remedy is always lesson-local:
+
+| lesson | sections | mean | max | at or above the cut |
+|---|---|---|---|---|
+| `session-1` | 18 | 42.3 | 72.5 | **3** |
+| `session-2` | 16 | 41.7 | 76.3 | **3** |
+| `session-3` | 18 | 37.1 | 61.3 | **1** |
+| `session-4` | 18 | 50.0 | 82.5 | **7** |
+
+> **The flags do not distribute evenly, and §5.3 called that in advance — but not in this direction.** It expected concentration in `session-1` and in the advanced appendices of sessions 3 and 4. Measured, **`session-4` holds 7 of the 14 and `session-3` holds none at all.** Per §5.3's own instruction that is a finding, not a sampling error.
+>
+> **But do not read `session-3` as easy, because the cut is knife-edge there.** Its highest-scoring section, `#sHY` (C5 · Hybrid search), scores **61.3 against a cut of 57.3** — it misses by **-4.0**. Only 8 sections in the whole corpus sit within five points below the cut, and they do at `s2 s12` and `s1 s10` and `s3 s4` and `s3 s7` and `s4 s10` and `s1 s3` and `s1 s14` and `s3 s16`. **At report §5.3's own proposed 75th percentile (55) the picture changes: 19 sections flag and `session-3` gets 3.** So "`session-3` has none" is a statement about where the line was drawn, not about the lesson.
+>
+> One coincidence worth naming: `session-3 #sHY` is also the section with **zero inbound `href`** that A5 fails on and step (h) exists to fix. **The lesson's hardest section is also its least reachable one.**
+
+**Reconciliation of the rebuilt undefined-term counts against report §4.1**, which is the only external check available on C1 (§12.1):
+
+| lesson | rebuilt, in a content section | report §4.1 | delta |
 |---|---|---|---|
-| `session-1` | 85 | 58 | **+27** |
-| `session-2` | 59 | 56 | +3 |
-| `session-3` | 32 | 37 | **-5** |
-| `session-4` | 103 | 66 | **+37** |
-| **total** | **279** | **217** | **+62 (+29%)** |
+| `session-1` | 86 | 58 | **+28** |
+| `session-2` | 61 | 56 | **+5** |
+| `session-3` | 34 | 37 | **-3** |
+| `session-4` | 105 | 66 | **+39** |
+| **total** | **286** | **217** | **+69** |
 
-> The spread from -14% to +58% is itself a finding: **the rebuild does not
-> reproduce §4.1, and §4.1's per-term records do not exist on disk to arbitrate**
-> (§12.1). Read the deltas as a statement about the inventory's reproducibility,
-> not as a correction to it.
+These are the counts **after** the adversarial pass, taken from each section's verified evidence rather than from the term-map stage. Read the deltas as a statement about the inventory's reproducibility, not as a correction to §4.1 — §4.1's per-term records do not exist on disk to arbitrate.
 
 ### 3.4 At or above the 80th percentile, sorted by stall index
 
-> **PENDING — see §3.3.** This section will carry one row per flagged section
-> with: score, the C1-C5 component breakdown, core or appendix and tier, R1 and
-> R2, position within the core, the stall index, and `hard_because`.
->
-> **`stall index = score × (1 − normalised position within the core)`**, with an
-> appendix section taking its anchor's position (§2.3).
+**stall index = score × (1 − normalised position within the core)**, an appendix section taking its anchor's position (§2.3). A section scoring 80 at position 3 of 11 outranks the same 80 at position 11, because the goal is that a demanding topic caps a lesson rather than stalling its middle.
+
+| stall | score | C1 | C2 | C3 | C4 | C5 | lesson | id | | tier | pos | min | R1 | R2 | hard | section |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **76.3** | 76.3 | 4 | 3 | 2 | 2 | 4 | `s2` | `s0` | **core** | — | 0.00 | 6 | CLOSE | YES | BOTH | Session map |
+| **63.7** | 63.7 | 3 | 3 | 3 | 0 | 3 | `s4` | `s0` | **core** | — | 0.00 | 5 | CLOSE | YES | BOTH | Frame |
+| **58** | 72.5 | 2 | 4 | 2 | 4 | 3 | `s1` | `s4` | apx | advanced | 0.20 | 12 | FAR | YES | IDEA | A2 · Fitting a model |
+| **55** | 82.5 | 4 | 2 | 3 | 4 | 4 | `s4` | `s3` | **core** | — | 0.33 | 5 | CLOSE | NO | BOTH | Tiers |
+| **53** | 66.3 | 3 | 4 | 1 | 3 | 1 | `s1` | `s2` | **core** | — | 0.20 | 7 | FAR | NO | IDEA | Prediction |
+| **52** | 65 | 3 | 2 | 3 | 2 | 3 | `s2` | `s3` | **core** | — | 0.20 | 5 | FAR | YES | BOTH | Temperature |
+| **50.8** | 72.5 | 3 | 2 | 3 | 4 | 3 | `s2` | `s5` | **core** | — | 0.30 | 6 | CLOSE | NO | BOTH | Cost frontier |
+| **45.5** | 65 | 2 | 2 | 3 | 4 | 3 | `s1` | `s8` | apx | advanced | 0.30 | 16 | FAR | YES | BOTH | A5 · SAMPLER LAB |
+| **40.9** | 61.3 | 1 | 4 | 3 | 3 | 1 | `s3` | `sHY` | apx | advanced | 0.33 | 16 | FAR | YES | BOTH | C5 · Hybrid search |
+| **40.6** | 81.3 | 3 | 3 | 3 | 4 | 4 | `s4` | `sW1` | apx | advanced | 0.50 | 16 | FAR | YES | BOTH | D1 · Provenance |
+| **39.4** | 78.8 | 3 | 4 | 2 | 3 | 4 | `s4` | `s5` | **core** | — | 0.50 | 5 | CLOSE | YES | BOTH | Attacks |
+| **31.3** | 62.5 | 2 | 1 | 4 | 3 | 4 | `s4` | `sW2` | apx | advanced | 0.50 | 14 | FAR | YES | BOTH | D2 · Watermark limits |
+| **25** | 75 | 2 | 3 | 4 | 3 | 4 | `s4` | `sWS` | apx | standard | 0.67 | 14 | CLOSE | YES | BOTH | D3 · Source staleness |
+| **23.8** | 71.3 | 3 | 2 | 3 | 3 | 4 | `s4` | `s7` | **core** | — | 0.67 | 5 | CLOSE | YES | BOTH | What it costs |
+
+Raw evidence behind each band: C1 is undefined first-appearances per allocated minute, C2 the worst interaction severity in the section, C3 the count of prerequisites assumed and not restated, C4 distinct notation objects, C5 words per allocated minute within stratum.
+
+| id | C1 count | per min | C2 HIGH | gate blocked | C3 count | C4 count | wpm |
+|---|---|---|---|---|---|---|---|
+| `s2 s0` | 14 | 2.33 | 1 | no | 3 | 3 | 147.7 |
+| `s4 s0` | 10 | 2 | 1 | no | 5 | 0 | 93 |
+| `s1 s4` | 10 | 0.83 | 1 | **yes** | 3 | 7 | 27.9 |
+| `s4 s3` | 16 | 3.2 | 0 | no | 4 | 8 | 146.4 |
+| `s1 s2` | 14 | 2 | 4 | no | 1 | 4 | 52.6 |
+| `s2 s3` | 9 | 1.8 | 0 | **yes** | 4 | 3 | 91 |
+| `s2 s5` | 9 | 1.5 | 0 | **yes** | 4 | 7 | 100.8 |
+| `s1 s8` | 15 | 0.94 | 0 | **yes** | 4 | 12 | 28.3 |
+| `s3 sHY` | 7 | 0.44 | 1 | **yes** | 4 | 5 | 21.6 |
+| `s4 sW1` | 18 | 1.13 | 1 | no | 5 | 9 | 45 |
+| `s4 s5` | 8 | 1.6 | 1 | **yes** | 3 | 4 | 144.8 |
+| `s4 sW2` | 9 | 0.64 | 0 | no | 6 | 4 | 33.5 |
+| `s4 sWS` | 10 | 0.71 | 1 | no | 8 | 6 | 43.2 |
+| `s4 s7` | 8 | 1.6 | 0 | no | 5 | 5 | 112 |
 
 ### 3.5 The MOVE dependency check, as corrected
 
@@ -802,32 +854,170 @@ Three further constraints narrow it again, all measured:
 
 ### 3.7 REDUCE or MOVE, per flagged section
 
-> **PENDING — see §3.3.** This section will carry a verdict and its reasoning for
-> every flagged section, produced by the deterministic routing in §2.3 and §3.6:
+**The routing rules were fixed before any score was read** — R1 selects the
+remedy (§2.3), the immovable set comes from the dependency work (§3.5), and the
+budget comes from D18 (§3.6). What follows is those rules applied, not a fresh
+judgement.
+
+> ## The headline: the budget pays for four to six moves and the corpus offers **one**.
 >
-> - **appendix sections** get a TIER REVIEW verdict, not a MOVE. §5.3: an
->   advanced-tier appendix section scoring high is working as designed; a
->   foundational one scoring high is a candidate to re-tier one level deeper.
-> - **core sections** route on R1: CLOSE to advisory application means **REDUCE**
->   (you cannot move the thing the lesson is for); FAR means **MOVE**, if the
->   section is movable and the minute budget in §3.6 covers it.
-> - **the immovable set**, derived in §3.5 and fixed before any score was read:
+> Of the 14 flagged sections, **6 are appendix sections** and are a
+> tiering question rather than a MOVE. Of the 8 flagged core sections,
+> **3 are immovable** (openers hosting the bridge, the case and check 20's
+> pinned figures, and bridge anchors the next lesson tests) and **4 are
+> CLOSE to advisory application**, which under §5.2 means you cannot move the thing
+> the lesson is for. **One section routes to MOVE.**
 >
->   | lesson | immovable core sections | why |
->   |---|---|---|
->   | `session-1` | `s1`, `sCold`, `s15` | title section carrying check-20 figures; ratified ritual; last core section |
->   | | `s2`, `s5`, `s9`, `s10`, `s13` | a `session-2` bridge item tests each |
->   | `session-2` | `s0`, `sCold`, `s12` | opener carrying bridge, case and check-20 figures; ritual; last core |
->   | | `s10` | **all four** `session-3` bridge items resolve here |
->   | `session-3` | `s1`, `sCold`, `s16` | opener carrying bridge and case; ritual; last core |
->   | | `s4`, `s6`, `s10` | a `session-4` bridge item tests each |
->   | `session-4` | `s0`, `sCold`, `s9` | opener carrying bridge, case and check-20 figures; ritual; last core |
+> The constraint that bites is not the minute budget. It is **R1**: the core of
+> this course is overwhelmingly application, and application does not move.
+
+**Verdicts, by lesson.** Every lesson has at least one flagged section.
+
+#### `session-1` — core 67 min, headroom to the 60 floor **7 min**
+
+| id | score | stall | min | R1 | verdict | reasoning |
+|---|---|---|---|---|---|---|
+| `s4` | 72.5 | 58 | 12 | FAR | TIER REVIEW | an advanced appendix section scoring high is **working as designed** (§5.3) <br> ▸ `hard_because=IDEA` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+| `s2` | 66.3 | 53 | 7 | FAR | **REDUCE** (immovable) | `session-2` bridge item 1 (primary) <br> ▸ `hard_because=IDEA` — a REDUCE here must not simplify the idea into something false (constraint 10) <br> ▸ **no self-check** — consider *adding* one rather than cutting (R2) |
+| `s8` | 65 | 45.5 | 16 | FAR | TIER REVIEW | an advanced appendix section scoring high is **working as designed** (§5.3) <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+
+**Minutes moved: 0 of 7. Core 67 -> 67.**
+
+#### `session-2` — core 67 min, headroom to the 60 floor **7 min**
+
+| id | score | stall | min | R1 | verdict | reasoning |
+|---|---|---|---|---|---|---|
+| `s0` | 76.3 | 76.3 | 6 | CLOSE | **REDUCE** (immovable) | opener: hosts the retrieval bridge, the case introduction and two of check 20's pinned figures <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+| `s3` | 65 | 52 | 5 | FAR | **MOVE** | R1 FAR, movable, within budget. The section's subject is the mechanism that picks a word — an exponent applied to a probability set — even though the three consequence cards draw advisory conclusions from it. <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+| `s5` | 72.5 | 50.8 | 6 | CLOSE | **REDUCE** | R1 CLOSE. It is a purchasing decision — what the practice pays per month, which plan reaches which tier, and which tier decisions are material at the student's own volume. <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) <br> ▸ **no self-check** — consider *adding* one rather than cutting (R2) |
+
+**Minutes moved: 5 of 7. Core 67 -> 62.**
+
+#### `session-3` — core 70 min, headroom to the 60 floor **10 min**
+
+| id | score | stall | min | R1 | verdict | reasoning |
+|---|---|---|---|---|---|---|
+| `sHY` | 61.3 | 40.9 | 16 | FAR | TIER REVIEW | an advanced appendix section scoring high is **working as designed** (§5.3) <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+
+**Minutes moved: 0 of 10. Core 70 -> 70.**
+
+#### `session-4` — core 70 min, headroom to the 60 floor **10 min**
+
+| id | score | stall | min | R1 | verdict | reasoning |
+|---|---|---|---|---|---|---|
+| `s0` | 63.7 | 63.7 | 5 | CLOSE | **REDUCE** (immovable) | opener: hosts the retrieval bridge, the case and two of check 20's pinned figures <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+| `s3` | 82.5 | 55 | 5 | CLOSE | **REDUCE** | R1 CLOSE. Its own thesis is contractual and procurement-facing — 'The tier you subscribe to does not change the model. It changes the contract. For a fiduciary, the contract is the only part that matters' (L1231) — and it closes by putting migration cost, data residency and procurement outside the chart's two axes (L1264). <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) <br> ▸ **no self-check** — consider *adding* one rather than cutting (R2) |
+| `sW1` | 81.3 | 40.6 | 16 | FAR | TIER REVIEW | an advanced appendix section scoring high is **working as designed** (§5.3) <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+| `s5` | 78.8 | 39.4 | 5 | CLOSE | **REDUCE** | R1 CLOSE. The deliverable is an operating control for an assistant that reads client documents and can send mail, and the section's own conclusion is procedural rather than technical — 'out-of-band verification on a channel the requester did not choose, on every disbursement instruction' (L1354). <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+| `sW2` | 62.5 | 31.3 | 14 | FAR | TIER REVIEW | an advanced appendix section scoring high is **working as designed** (§5.3) <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+| `sWS` | 75 | 25 | 14 | CLOSE | TIER REVIEW | scores above the cut while tiered **standard** — candidate to re-tier one level deeper <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+| `s7` | 71.3 | 23.8 | 5 | CLOSE | **REDUCE** | R1 CLOSE. Its stated purpose is to convert a machine property into practice minutes — 'That conversion is the only form in which this argument survives contact with a practice' (L1390) — and the deliverable is a priced verification burden against the adviser's own recorded baseline. <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+
+**Minutes moved: 0 of 10. Core 70 -> 70.**
+
+---
+
+#### The full §5.4 dependency check on the one MOVE: `session-2 #s3` "Temperature"
+
+Run in full, all six parts, because a single candidate deserves the whole check
+rather than a spot inspection.
+
+| # | Check | Result |
+|---|---|---|
+| **1** | Explicit anchors | **FINDING — see below.** `#s3` has one inbound and one outbound relationship, and the inbound one breaks |
+| **2** | Carry-forward | **clear.** No script lives inside `#s3`; nothing binds to it that a move disturbs (§3.5 part 2) |
+| **3** | Retrieval bridges | **clear.** All four of `session-3`'s bridge items resolve to `session-2 #s10`, not to `#s3`. No cross-lesson dependency |
+| **4** | Gate chains | **not applicable.** Struck (§3.5 part 4). `#s3`'s gate conditions only on its own widget state |
+| **5** | Case figures | **clear.** Check 20's three pinned figures live in `#s0`, not `#s3`. A whole-section move cannot break it in any case |
+| **6** | Section numbering | **mechanical.** `#s3` is `session-2` §01; §02-§09 each shift down one. All 29 of the file's `§NN` occurrences are in furniture steps (e) and (g) retire or regenerate, and its four survivors are legal citations |
+
+> ##### FINDING 1 — the one MOVE orphans an appendix anchor
 >
-> **`session-4` has no downstream constraint only because session 5 does not
-> exist yet** — see §12.6 before taking its apparent freedom.
+> **`session-2 #s4` (Appendix B3, standard, 16 min) carries
+> `data-insert-after="s3"`.** Demote `#s3` to the appendix and B3's anchor names an
+> appendix section, which the whole reflow model assumes never happens — every one
+> of the 22 anchors resolves to a core section today (§4.1), and step (a)'s
+> insertion algorithm depends on it.
 >
-> **Whatever this section ends up recommending, Phase 2 step (b) is gated on the
-> instructor approving it.** The MOVE list is a curriculum decision.
+> B3 has to be re-anchored in the same commit. The honest options are to point it
+> at `#sCold` (keeping it beside Temperature) or at `#s5` (the next core section
+> after it today). **Neither is free**, which leads directly to the second finding.
+
+> ##### FINDING 2 — the MOVE collides with the tie-break declared in §4.1
+>
+> Anchor both `#s3` (Temperature) and `#s4` (B3) to `#sCold` and the declared
+> tie-break — **foundational, then standard, then advanced** — orders them by tier,
+> not by dependency. B3 is `standard`. Whatever tier Temperature is given, the
+> tie-break, not the prerequisite, decides which a reader meets first, and **B3
+> builds on temperature.** Give Temperature `advanced` and the reader gets B3
+> first, which is backwards.
+>
+> Three ways out, none of them obviously right: give Temperature `standard` and
+> let source order break the tie (fragile — it makes correctness depend on the
+> thing §4.1 declared a tie-break to stop depending on); anchor B3 to `#s5` so the
+> two never share an anchor (changes B3's reading position); or permit an appendix
+> section to anchor to another appendix section (changes the model for one case).
+>
+> **This is the tie-break's first real test and it fails it.** A rule that orders
+> by depth cannot express a prerequisite. **Flagged for the instructor.**
+
+> ##### FINDING 3 — Phase 5's flagship injection targets the section being demoted
+>
+> `session-2 #s3` **is** the Temperature section — the lesson's §01, titled
+> "Mechanism". The instructor's own named analogue, **Monte Carlo against
+> temperature and sampling**, is the one Phase 5 is told to prioritise (§6.4).
+> Demoting the temperature material to optional depth in the same restructure that
+> injects the flagship analogue into it is at least worth saying out loud.
+>
+> It also removes the word "Mechanism" from `session-2`'s core arc, which is a
+> curriculum change rather than a tiering change.
+
+**Recommendation on the one MOVE: do not take it without a decision on all three.**
+The alternative is a **REDUCE** in place — `#s3` scores **C1 = 3** (9 undefined first-appearances in 5 minutes, 1.8 per minute) and **C2 = 4**, the top band, because its work-along gate is itself blocked. Report §4.2 records its temperature slider as a HIGH-severity blocked exercise turning on `raised to the power 1/T`, `renormalised`, `sharpens the distribution`, `flattens`, `samples`, `distribution`, `deterministic` and `argmax` — and `argmax` occurs **once in the whole file**, in the T = 0 readout, where it carries the section's most important boundary case. **Defining those terms costs nothing structural and addresses 55 per cent of the score.** That is available whichever way the MOVE
+goes, and it is available now.
+
+#### What the routing says about the brief
+
+The brief asks for the top 15-20 per cent of sections by complexity to move into
+the appendix. At the 80th percentile of 70 sections that is **14 sections**. The
+answer this measurement returns is **one**, and the reason is not the minute floor:
+
+| | count | why it cannot move |
+|---|---|---|
+| flagged sections | **14** | |
+| already appendix | **5** | a tiering question, not a MOVE |
+| immovable core | **4** | `s2 s0`, `s1 s2`, `s1 s10`, `s4 s0` — openers hosting bridge, case and check-20 figures, plus two `session-2` bridge anchors |
+| core, R1 CLOSE | **4** | `s2 s5`, `s4 s3`, `s4 s5`, `s4 s7` — §5.2: you cannot move the thing the lesson is for |
+| **core, R1 FAR, movable** | **1** | `s2 s3` |
+
+**All 14 carry `hard_because = BOTH` or `IDEA`** — 12 BOTH and 2 IDEA, none PROSE alone. Under constraint
+10 those are sections where the idea is genuinely hard, and the honest response is
+to say so rather than to simplify them into something false. **Three carry
+`R2 = NO`** — `s2 s5`, `s4 s3`, `s1 s2` — where the remedy is most likely
+**adding a self-check**, not cutting: a hard section with a way to check yourself
+rarely stalls a room, and a hard section without one stalls it every time.
+
+#### Sensitivity: the cut choice changes the MOVE list
+
+Because the routing is deterministic, it can be re-run at the other cut. **It
+changes the answer.**
+
+| cut | flagged | appendix | core | immovable | CLOSE | **FAR and movable** | MOVE list |
+|---|---|---|---|---|---|---|---|
+| **p80 = 61.5** (this task) | 14 | 5 | 9 | 4 | 4 | **1** | `session-2 #s3` (5 min) |
+| p75 = 55 (report §5.3) | 21 | 7 | 14 | 6 | 6 | **2** | `session-2 #s3` (5 min) **+ `session-3 #s7`** "Grounded error" (5 min) |
+
+`session-3 #s7` scores exactly 55 — it *is* the p75 boundary — is FAR from
+advisory application, carries no bridge dependency, and its 5 minutes fit inside
+`session-3`'s 10-minute headroom. **It also has `#s8` (Appendix C2, foundational,
+14 min) anchored to it**, so moving it reproduces FINDING 1 exactly: an appendix
+section left anchored to an appendix section.
+
+**That both candidate MOVEs orphan an appendix anchor is not a coincidence.** A
+core section dense enough to flag is a core section the appendix was built to
+extend, so it tends to be one of the eleven core sections carrying an anchor. **Any
+MOVE list of any length will need an anchor-repair step**, and Phase 2 step (b)
+should be written to include one rather than discovering it per section.
 
 ---
 
@@ -1004,8 +1194,29 @@ for the "after §NN" label. The core lede's N and M that **A4** checks come from
 sum. Emit into sentinels on the `CASE.md` pattern so the next generation is
 diffable and a hand-edit is detectable.
 
-**`window.__coreMins` is the fifth copy of the same number** and must be written
-by the same generator, or it becomes the next A4.
+**The same number is written SEVEN times across each lesson, and the generator
+must write all seven.** Five are checked by something; two are checked by nothing:
+
+| # | Copy | Checked by |
+|---|---|---|
+| 1 | each section's `span.mins` | the source of truth |
+| 2 | `.apxdiv` eyebrow `span.mins` | A3 |
+| 3 | `.apxdiv` lede, "The N sections above … about M minutes" | A4 |
+| 4 | `a.apxcard` "N min" labels | A1 |
+| 5 | **`window.__coreMins`** | **nothing** |
+| 6 | `table.tbudget` numeric rows | `validate_lesson.py` V5, `verify-migration` check 16 |
+| 7 | **`table.tbudget`'s Allocated row label** | **nothing** |
+
+Copy 7 reads *"Core 67 + appendix 83; the core alone is the one-hour version"* and
+is present in all four lessons at 67 / 67 / 70 / 70. It is prose inside a table
+whose arithmetic is checked and whose sentence is not — **and its second clause is
+already false in `session-3` and `session-4`, which overrun the hour by ten
+minutes.** Regenerating it is a D18 correction as much as an A-rule one.
+
+**A MOVE also relocates a `tbudget` row across the core/appendix boundary.** V5 and
+check 16 validate the total, which does not change, so **neither would notice if
+the row stayed in the wrong group.** The generator must place the row from the
+section's class, not carry it forward.
 
 > **A1's repair direction is not obviously "the section wins", and in `session-1`
 > it is wrong.** Measured, card against section, across all 20 cards:
@@ -1738,6 +1949,12 @@ Ranked. A MUST is not a preference and does not yield to convenience.
 `claude/repo-restructure-phase1` at the commit this plan lands on, with no lesson
 file edited.
 
+**Run twice, before and after this session's `EDITORIAL.md` and
+`verify-editorial.mjs` edits. Every exit code is unchanged and every log is
+byte-identical except seven lines** — the `SKIP A1` … `SKIP A7` messages, which
+now print D20's reason instead of D14's. That is the whole diff, and it is the
+intended one.
+
 | Check | Exit | Status |
 |---|---|---|
 | `verify-case.mjs` | **0** | clean |
@@ -1933,32 +2150,203 @@ dependency table would see four clean slots and take them.
 
 ### 12.7 The move-specific red team
 
-> **PENDING — see §3.3.** Four questions are answered here once the MOVE list
-> exists, and each is answered per section rather than in aggregate:
->
-> 1. every section proposed for a move whose downstream references could **not**
->    be fully verified;
-> 2. every retrieval bridge in session N+1 that tests a mechanism a MOVE would
->    demote in session N — the map is already built in §3.5 part 3, so this is a
->    lookup rather than a new measurement;
-> 3. every threshold whose correct answer is a property of text a move would
->    relocate — §3.5 part 6 establishes that this reduces to three hand-checked
->    sites plus the regenerated `§NN` numbering;
-> 4. every scored section where the rubric and a human reading disagree, taken
->    from the adversarial pass's unresolved disagreements.
+Four questions, answered per section rather than in aggregate. **There is one
+MOVE**, so three of the four are short — and that is the finding, not an omission.
 
-### 12.8 Confidence
+#### (a) Sections proposed for a move whose downstream references could not be fully verified
+
+**One candidate, `session-2 #s3`, and its references were verified — but only
+after two false alarms, both of which are worth recording because the next
+session will hit the same two.**
+
+| Suspected reference | Verdict |
+|---|---|
+| `session-2:1680` — `apxcard` label *"B3 · 10 min · **after §01**"* | **furniture.** Regenerated by step (g). (It also says 10 min against B3's 16 — one of A1's twelve) |
+| `session-2:1688`, `:1729`, `:1760` — `.apxback` bars naming §01 | **furniture.** Retired by step (e) |
+| `session-2:2737` — script string *"the majority answer … is the one **the slider below** is built to test. Run it at 0.8"* | **intra-section.** `#stanceVote` is at `session-2:1212`, **inside `#s3` itself** (1205-1253). The string and the slider move together |
+| `session-2:1897` — footer `tbudget` row *"01 · Mechanism │ Temperature and Output Variance │ 5"* | **REAL.** See (c) |
+
+**What was checked and came back clean:** the anchor graph in both directions, the
+carry-forward code half (no script inside `#s3`), the cross-lesson bridges, the
+case figures, and an explicit sweep of every later line in the file for
+`temperature`, `the slider`, `§01` and *"you ran / set / moved"*.
+
+> **The gap I closed while checking, stated because I had not planned to close
+> it.** §3.5 part 6's relative-position sweep ran over **prose only**. Script
+> string literals (region R2) are student-visible and were outside it. A separate
+> sweep of every `<script>` block in all four lessons for *"the slider/panel/chart
+> below"*, *"above"*, *"next section"* and *"earlier section"* returns **no
+> cross-section reference** — every hit is either numeric (*"Target is below
+> 0.02"*, *"Keep tokens above P times…"*) or refers to an element inside the same
+> widget (*"Paste a prompt above first"*, *"Load the scaffold below"*, *"Key
+> below"*). **The class exists and is intra-section throughout.**
+
+#### (b) Retrieval bridges in session N+1 testing a mechanism a MOVE would demote in session N
+
+**None — and the margin is one section.**
+
+The MOVE is `session-2 #s3`. **All four** of `session-3`'s bridge items resolve to
+`session-2 #s10` "Citations", one card per item. Had the routing flagged `#s10`
+instead, a single demotion would have broken an entire lesson's bridge at once.
+`#s10` is in the immovable set for exactly that reason, and it was put there before
+any score was read.
+
+**But one reverse hazard is live today and Phase 2 makes it worse.**
+`session-4`'s bridge item 3 tests grounding against fine-tuning, which `session-3`
+teaches **only** in `#s8` — an appendix section. Today a student can reach it by
+scrolling. **Step (d)'s core-only default removes that route, and the `apxlink`
+teaser that points at it is hidden by the same CSS rule.** This is not caused by a
+MOVE, is not fixed by declining one, and must be resolved in the same commit as
+step (d). Three remedies are in §3.5 part 3; **the instructor picks.**
+
+#### (c) Thresholds whose correct answer is a property of text a move would relocate
+
+**The core minute figure is written in the corpus SEVEN times, and two of the
+seven are checked by nothing.**
+
+| # | Copy | Checked by |
+|---|---|---|
+| 1 | each section's `span.mins` | the source of truth |
+| 2 | `.apxdiv` eyebrow `span.mins` | **A3** |
+| 3 | `.apxdiv` lede, *"The N sections above … run in about M minutes"* | **A4** |
+| 4 | `a.apxcard` "N min" labels | **A1** |
+| 5 | **`window.__coreMins`** | **nothing** |
+| 6 | `table.tbudget` numeric rows | `validate_lesson.py` **V5**, `verify-migration` **check 16** |
+| 7 | **`table.tbudget`'s Allocated row label**, *"Core 67 + appendix 83; the core alone is the one-hour version"* | **nothing** |
+
+Copy 7 is prose inside a table whose *arithmetic* is checked and whose *sentence*
+is not. It exists in all four lessons, correctly valued today at 67 / 67 / 70 / 70
+… and **its second clause is already false**: at 70 minutes, *"the core alone is
+the one-hour version"* overruns by ten minutes in `session-3` and `session-4`. That
+is D18's finding printed on the page.
+
+**A MOVE also relocates a `tbudget` row across the core/appendix boundary.**
+`session-2:1897` is `#s3`'s row, sitting in the core group. Demote `#s3` and the
+row moves to the appendix group. V5 and check 16 validate the **total**, which does
+not change, so **neither would notice if the row stayed where it was.**
+
+**Everything else came back clean**, and §3.5 part 6 has the proof: all 116 `§NN`
+occurrences live in retired or regenerated furniture, every survivor is a legal
+citation, and check 20's three pinned figures are in `#s0`, not `#s3`.
+
+#### (d) Scored sections where the rubric and my own reading disagree
+
+> **The whole MOVE list turns on one R1 judgement, and that judgement is borderline
+> by the scorer's own words.**
+>
+> `session-2 #s3` was scored **R1 = FAR**, with the reasoning: *"The section's
+> subject is the mechanism that picks a word — an exponent applied to a probability
+> set — **even though the three consequence cards draw advisory conclusions from
+> it**."* That concessive clause is the disagreement, written into the evidence by
+> the agent that scored it.
+>
+> Read the other way — a CFP is being taught why the same prompt returns a
+> different answer twice, which is the single most practice-relevant fact about
+> using these tools — `#s3` is **CLOSE**, and **the MOVE list is empty.**
+>
+> **This is the most consequential single cell in the entire measurement**, and it
+> is a judgement, not a count. It belongs to the instructor.
+
+Two further disagreements with the rubric as applied:
+
+- **`session-1 #s2` scores 73.8 and routes to REDUCE-immovable, with
+  `hard_because = IDEA` and `R2 = NO`.** It is the lesson's first real
+  interaction, report §4.2 calls its distribution picker *"the first interaction
+  in the lesson"* with four undefined terms, and its work-along gate is itself
+  blocked. The rubric says reduce it. **My reading is that its problem is
+  vocabulary, not difficulty** — C1 and C2 supply 4 and 4 of its bands while C3 is
+  1 — so Phase 6, not a cut, is its remedy. Recorded because a REDUCE here risks
+  flattening next-token prediction into something false.
+- **`session-3` returns zero flagged sections against `session-4`'s seven — and
+  I nearly reported that as a finding when it is mostly an artifact of the cut.**
+  Its top section, `#sHY`, scores **61.3 against a cut of 61.5**. It misses by
+  **two tenths of a point.** At report §5.3's own proposed 75th percentile,
+  `session-3` flags three. Only two sections in the entire corpus sit within five
+  points below the cut and `#sHY` is one of them.
+
+  What survives as a real question is narrower and sharper: **`session-3`'s C1
+  rebuild is the only one that came back BELOW report §4.1** — 34 against 37,
+  where sessions 1, 2 and 4 came back +35, +4 and +39. For the lesson that
+  carries `cosine similarity`, `IDF`, `tf × ln(1 + N/df)` and `BM25`, a
+  below-anchor undefined-term count is the one result in this table I would want
+  a human to check before trusting. **The low flag count and the low C1 may be
+  the same fact, and if they are, `session-3` is under-scored rather than easy.**
+
+### 12.8 Confidence, and what would change it
 
 | Finding | Confidence | What would change it |
 |---|---|---|
-| **Phase 0 (a), (b), (c)** and D18 / D19 / D20 | **HIGH** | a ratified decision fixing 67-70 that is not in `EDITORIAL.md`, `pedagogy.md`, `MAINTAINING.md` or `CHANGELOG.md` |
-| Population 86 / 82, and 70 content sections in sessions 1-4 | **HIGH** | nothing short of a different definition of "content section" |
-| The minute budget in §3.6 | **HIGH** | it is arithmetic on measured `span.mins` |
-| Dependency parts 1, 4, 5, 6 | **HIGH** | each was tested mechanically and part 4 was refuted three ways |
-| Dependency part 3, the bridge map | **HIGH** on the twelve items and the reverse hazard; **MEDIUM** on the secondary attributions | a second independent mapping disagreeing on which prior section a given item tests |
-| Dependency part 2, carry-forward | **HIGH** on the code half (0 scripts inside sections); **MEDIUM** on the prose half | an exhaustive read for "use what you made earlier" phrasing, which was not done |
-| The verification baseline and its exit codes | **HIGH** | it is a recorded run |
-| Phase 3's chip enumeration | **MEDIUM** | §3.5 does not enumerate its own 27; the 29 is a rebuild |
-| Phase 5's analogue inventory | **MEDIUM** | 57 of 96 bridge sentences are truncated in the source |
-| **The complexity scores** | **MEDIUM** | C1 is 30% of the score and rests on a rebuilt inventory (§12.1) whose ordering basis is a declared choice (§12.2); C3 is the least reproducible component. Phase 6's inventory would settle C1 |
-| **The MOVE list** | **MEDIUM at best, and it is not this plan's to hold** | it is a curriculum decision, gated on the instructor |
+| **Phase 0 (a), (b), (c)**; D18, D19, D20 | **HIGH** | a ratified decision fixing 67-70 that is in none of `EDITORIAL.md`, `pedagogy.md`, `MAINTAINING.md`, `CHANGELOG.md` |
+| Population **86 / 82**, and **70** content sections in sessions 1-4 | **HIGH** | only a different definition of "content section" |
+| The minute budget (§3.6) and the seven copies (§12.7c) | **HIGH** | arithmetic on measured `span.mins`; each copy read off disk |
+| Dependency parts **1, 4, 5, 6** | **HIGH** | part 4 was refuted three ways; part 6's 116 occurrences were classified individually |
+| Dependency part **3**, the bridge map | **HIGH** on the twelve items and the reverse hazard; **MEDIUM** on secondary attributions | a second independent mapping disagreeing on which prior section an item tests |
+| Dependency part **2**, carry-forward | **HIGH** on the code half — 0 scripts inside any section, all 492 lookups bind by id; **MEDIUM** on the prose half | an exhaustive read of all four lessons for "use what you made earlier" phrasing. Done for `#s3` only |
+| The verification baseline and its exit codes (§11) | **HIGH** | it is a recorded run, reproducible by the commands in §11 |
+| Phase 3's chip enumeration | **MEDIUM** | §3.5 does not enumerate its own 27; the 29 is a rebuild, and A13's message cannot resolve its own chip count |
+| Phase 5's analogue inventory | **MEDIUM** | 57 of 96 bridge sentences are truncated mid-sentence in the source |
+| **The complexity scores** | **MEDIUM** | C1 is 30% and rests on a rebuilt inventory (§12.1) under a declared ordering basis (§12.2); C3 is the least reproducible band. **Phase 6's inventory would settle C1 and the scores should be re-derived against it** |
+| **`session-3` scoring zero flagged sections** | **LOW** as a statement about the lesson; **HIGH** as arithmetic | it is a cut artifact — `#sHY` misses by 0.2 and `session-3` flags three at p75. The real question is its C1 rebuild, the only one *below* §4.1, and one human read of §01-§05 against the C1 anchors would settle it |
+| **The choice of cut** | **it is a decision, not a measurement** | this task specified the 80th percentile and report §5.3 proposed the 75th. At p80 the MOVE list is one section; at p75 it is two. Both are computed in §3.7 |
+| **The MOVE list** | **LOW as a recommendation, HIGH as an arithmetic** | the arithmetic — 14 flagged, 5 appendix, 4 immovable, 4 CLOSE, 1 movable — is solid. Whether `#s3` is FAR or CLOSE is a curriculum judgement and it is the instructor's. **Nothing in Phase 2 step (b) should run before that answer** |
+
+**The single thing most worth a human hour**, if only one is available: read
+`session-2 #s3` (lines 1205-1253) and decide whether temperature is mechanism or
+practice. That one cell decides whether this restructure moves one section or
+none.
+
+### 12.9 The measurement caught its own side fabricating
+
+**This is the finding I would least like to report and the one that most needs
+reporting.** The adversarial pass was built to refute the scoring. It did, and
+three of its catches are not judgement calls:
+
+| What | Where |
+|---|---|
+| **A fabricated statistic.** A scorer quoted `session-1` §02's chart readout as *"33.0% of the mass … 3.3%"*. The page computes **23.4%** and **2.3%** from the normalised 1/rank series at `session-1:2313` | `score-session-1-CORE.md` |
+| **A fabricated section reference.** Both `session-1` scorers cite *"gap report §4.3"* roughly ten times. `docs/editorial-gap-report.md` has **§4.1, §4.2 and §4.4, and no §4.3** — the blocked-exercise table is **§4.2 at line 902**. The `session-2` scorer does it six times too | both `session-1` files, `score-session-2-CORE.md` |
+| **Roughly sixty line citations off by 1 to 6**, including one file whose opening claim is that *"every line number below was re-read with `sed -n 'Np'` before it was written down"* | `session-1` and `session-2` files |
+
+**And two method failures that invalidate additivity rather than a single number:**
+
+- **The two strata used different C2 thresholds.** The appendix scorer applied the
+  spec bar literally (*"HIGH = the student cannot begin"*) and downgraded five
+  gap-report HIGHs. The core scorer inherited the gap report's looser bar and
+  returned eight HIGH interactions and three blocked gates. **Under the spec bar
+  almost none of the core HIGHs survive.**
+- **The two strata used different C1 ordering bases.** One re-homed `session-1`'s
+  five hidden `lmbox` terms into core sections; the other kept `lmbox` at reading
+  position 0 and excluded them. **The core and appendix halves of `session-1` are
+  therefore not additive as scored**, and the re-homing was applied inconsistently
+  even within one file.
+
+**What this costs and what it does not.** It costs the scores their claim to be
+reproducible in the strong sense: two competent readers given §2.2's anchors
+produced materially different C2 bands, which is the defect D19 was written to fix
+and did not fully fix. It does **not** cost the structural findings anything — the
+population, the minute budget, the dependency protocol, the bridge map and the
+seven copies were all measured mechanically, by script, against the files, and
+none of them passed through a scoring agent's judgement.
+
+**Three consequences for later phases, and the first is not optional:**
+
+1. **Never carry a line number from this plan into an edit without re-reading the
+   line.** Roughly sixty are wrong by one to six. The section **ids** are reliable;
+   the line numbers are a convenience.
+2. **The C2 threshold has to be settled before any re-score.** §2.2's band 3 says
+   *"the student cannot begin"*; it needs the operational test attached — if the
+   controls plus one sentence of surrounding prose are enough to start, it is not
+   HIGH. That sentence is the whole disagreement.
+3. **The corrections that were expressed as narrative rather than as a field edit
+   are not in the numbers.** They are in the per-lesson verification files in the
+   session working directory, and they are named here rather than quietly averaged
+   in, per D7b's own principle: the residue of a mechanical check is named, not
+   folded.
+
+**This is the fourth instance of the pattern this repository keeps finding in
+itself** — 236 of 322 substitutions that would have corrupted code, 27 chips
+pointing at the wrong source, two rules blind to the case they existed to catch,
+and now a measurement whose heaviest component was scored to two different
+standards by two agents reading the same spec. **The pattern is not carelessness.
+It is that every check here has to be run against the corpus rather than against
+the document describing the corpus.**
