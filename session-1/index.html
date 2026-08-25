@@ -745,15 +745,7 @@ footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:non
 .depthbar i.neg{background:var(--warn)}
 @media print{#rail,#topbar,#caseModal{display:none}body{background:#fff;padding-top:0}.slide{page-break-inside:avoid;padding:18px 0}}
 /* ===== CORE / APPENDIX ARCHITECTURE ===== */
-a.apxlink{display:block;background:var(--gold-bg);border:1.5px dashed var(--gold);border-radius:10px;padding:12px 16px;margin:22px 0 0;text-decoration:none;color:inherit;transition:.15s}
-a.apxlink:hover{border-style:solid}
-a.apxlink+a.apxlink{margin-top:9px}
-a.apxlink .al{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px;font-weight:500}
-a.apxlink b{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:15.5px;font-weight:600;letter-spacing:-.015em}
-a.apxlink .aw{display:block;color:var(--muted);font-size:14px;line-height:1.45;margin-top:3px;font-family:"Source Serif 4",Georgia,serif;text-transform:none;letter-spacing:0}
 section.apxdiv{border-top:3px solid var(--gold)}
-section.apx .apxback{background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:9px 14px;margin:0 0 18px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.05em;line-height:1.6;color:var(--gold)}
-section.apx .apxback a{color:var(--gold);font-weight:500}
 .apxgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:11px;margin-top:20px}
 a.apxcard{display:block;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;transition:.15s}
 a.apxcard:hover{border-color:var(--gold);box-shadow:0 3px 14px rgba(138,106,18,.10)}
@@ -762,7 +754,7 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 #rail button.apxnav .pip{background:var(--gold);opacity:.5}
 #rail button.apxnav{color:var(--gold)}
 #rail button.apxnav.on .pip{background:var(--gold);opacity:1}
-@media print{a.apxlink{display:none}}
+body.core-only #rail button.apxnav:not(.apxidx){display:none}
 .pace{border-color:var(--gold)!important;background:var(--gold-bg)}
 .pace .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:4px}
 .pace .pcell b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--gold)}
@@ -790,10 +782,14 @@ footer ol.srcs li b{color:var(--ink)}
 #tierbar button:hover{border-color:var(--gold);color:var(--gold)}
 #tierbar button.on{background:var(--gold);border-color:var(--gold);color:#fff}
 #tierbar button.core.on{background:var(--on);border-color:var(--on)}
-section.apx.dim{opacity:.32}
-section.apx.dim .apxback{opacity:.5}
-a.apxcard.dim,a.apxlink.dim{opacity:.3}
-body.core-only section.apx,body.core-only section.apxdiv,body.core-only a.apxlink{display:none}
+section.apx.dim{padding:14px 0;border-bottom:1px dashed var(--line)}
+section.apx.dim>*{display:none}
+section.apx.dim>.apxstub{display:block}
+.apxstub{display:none;background:var(--card);border:1.5px dashed var(--line);border-radius:10px;padding:11px 15px;margin:0}
+.apxstub b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:14px;font-weight:600;letter-spacing:-.01em;color:var(--muted)}
+.apxstub span{display:block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+a.apxcard.dim{opacity:.3}
+body.core-only section.apx{display:none}
 @media print{body.core-only section.apx,body.core-only section.apxdiv{display:none}#tierbar{display:none}}
 table.tbudget{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px}
 table.tbudget th{text-align:left;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);border-bottom:1.5px solid var(--line);padding:7px 9px}
@@ -1262,7 +1258,7 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
     <button data-level="0">Foundational</button>
     <button data-level="1" class="on">+ Standard</button>
     <button data-level="2">+ Advanced</button>
-    <button class="core" data-core>Core only</button>
+    <button class="core on" data-core>Core only</button>
   </div>
   <p class="dim mono" id="tierOut" style="font-size:12px;letter-spacing:.04em;margin:9px 0 0"></p>
 </div>
@@ -1289,6 +1285,24 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
   <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Name the one figure in this case you would refuse to accept without re-verification, and say why.<div class="row" style="margin-top:10px"><input type="text" id="s1field" placeholder="e.g. the 30% discount, because nothing in the file supports it" style="max-width:520px"></div></div></div>
  </div>
 </section>
+
+<!-- APXPANEL:BEGIN generated-by=scripts/build-appendix.mjs -->
+<section class="slide apxdiv" id="apx" data-nav="Appendix contents">
+  <div class="eyebrow"><span>Appendix &middot; 7 optional sections</span><span class="mins">83 min</span></div>
+  <h2>Appendix contents</h2>
+  <p class="lede">Seven optional sections, 83 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
+  <p>The 11 sections of the core session run in about 67 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <div class="apxgrid">
+    <a class="apxcard" href="#s3"><span class="ac">A1 &middot; 11 min &middot; after &sect;02</span><b>Counting Works, Then Stops Working</b></a>
+    <a class="apxcard" href="#s4"><span class="ac">A2 &middot; 12 min &middot; after &sect;02</span><b>Fitting a Model by Hand</b></a>
+    <a class="apxcard" href="#s6"><span class="ac">A3 &middot; 9 min &middot; after &sect;03</span><b>Words Laid Out So That Nearby Means Similar</b></a>
+    <a class="apxcard" href="#s7"><span class="ac">A4 &middot; 9 min &middot; after &sect;03</span><b>The Task a Transformer Cannot Reliably Learn</b></a>
+    <a class="apxcard" href="#s8"><span class="ac">A5 &middot; 16 min &middot; after &sect;03</span><b>The Nine Controls Between the Model and Your Answer</b></a>
+    <a class="apxcard" href="#s14"><span class="ac">A6 &middot; 9 min &middot; after &sect;08</span><b>There Is No Separate AI Rulebook</b></a>
+    <a class="apxcard" href="#s14c"><span class="ac">A7 &middot; 17 min &middot; after &sect;09</span><b>Disclosure of AI Use to the Client</b></a>
+  </div>
+</section>
+<!-- APXPANEL:END -->
 
 <section class="slide" id="sCold" data-nav="Cold open">
  <div class="body">
@@ -1363,8 +1377,110 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
  </div>
 
 
-  <a class="apxlink" href="#s3"><span class="al">If there is time &middot; Appendix A1 &middot; 11 min</span><b>Counting Works, Then Stops Working</b><span class="aw">Build the probability table by hand from a corpus, then watch the counting approach die at n=4. The concrete answer to where the numbers come from.</span></a>
-  <a class="apxlink" href="#s4"><span class="al">If there is time &middot; Appendix A2 &middot; 12 min</span><b>Fitting a Model by Hand</b><span class="aw">Drag the knobs until the loss drops. What training actually is, at a scale you can see, plus three guesses at the size of the real thing.</span></a>
+</section>
+
+<section class="slide apx" id="s3" data-nav="A1 · n-grams" data-insert-after="s2" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A1 &middot; Counting Works, Then Stops Working</b><span>11 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+ <div class="body">
+  <div class="eyebrow"><span>Appendix A1 &middot; Mechanism, deeper</span><span class="mins">11 min</span></div>
+  <h2>Counting Works, Then Stops Working</h2>
+  <p class="big">Everything below is computed live from the corpus in the box &mdash; counts from the words in front of you, not figures quoted from anywhere. The corpus is discovery-meeting language from the case.</p>
+
+  <div class="panel" data-task="t-s3" data-comp="parameter-sandbox">
+    <label class="plab" for="corpus">Corpus (edit freely &mdash; every statistic recomputes)</label>
+    <textarea id="corpus" style="min-height:104px"></textarea>
+    <div class="stats" style="margin-top:12px">
+      <div class="stat"><span class="sn">Characters</span><span class="sv" id="cChars">0</span></div>
+      <div class="stat"><span class="sn">Words</span><span class="sv" id="cWords">0</span></div>
+      <div class="stat"><span class="sn">Distinct words</span><span class="sv" id="cUniq">0</span></div>
+      <div class="stat"><span class="sn">Letter pairs</span><span class="sv" id="cBig">0</span></div>
+    </div>
+
+    <span class="plab" style="margin-top:18px">Generate letters using n-gram statistics from this corpus</span>
+    <div class="row">
+      <button class="btn sel mini act" data-ng="1">Order 1</button>
+      <button class="btn sel mini" data-ng="2">Order 2</button>
+      <button class="btn sel mini" data-ng="3">Order 3</button>
+      <button class="btn sel mini" data-ng="4">Order 4</button>
+    </div>
+    <div class="sampler" id="ngOut" style="margin-top:12px;font-size:13.5px;line-height:1.75"><span class="dim">Pick an order.</span></div>
+    <div class="stats"><div class="stat"><span class="sn">Corpus words produced</span><span class="sv" id="ngReal">&mdash;</span></div><div class="stat"><span class="sn">Order</span><span class="sv" id="ngOrd">&mdash;</span></div></div>
+
+    <span class="plab" style="margin-top:18px">Now whole words instead of letters</span>
+    <div class="row">
+      <button class="btn sel mini act" data-wg="1">Independent words</button>
+      <button class="btn sel mini" data-wg="2">Word pairs, from "client"</button>
+      <button class="btn ghost mini" id="wgAgain">Again</button>
+    </div>
+    <div class="sampler" id="wgOut" style="margin-top:12px;font-size:14px;line-height:1.75"><span class="dim">Pick a mode.</span></div>
+  </div>
+
+  <h3>Why you cannot just use longer sequences</h3>
+  <div class="wolf"><span class="wh">From the assigned reading &mdash; his figures</span>About <b>40,000</b> reasonably common English words. A web crawl holds <b>a few hundred billion words</b>; digitised books another <b>hundred billion</b>. But the number of possible 2-grams is already <b>1.6 billion</b>, and 3-grams <b>60 trillion</b>. At 20-word fragments, "the number of possibilities is larger than the number of particles in the universe."</div>
+
+  <div class="panel">
+    <div class="slab"><span>Sequence length, n words</span><b id="nLab">2</b></div>
+    <input type="range" id="nSlide" min="1" max="8" value="2" step="1">
+    <div class="ticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+    <svg class="ch" id="wallCh" viewBox="0 0 700 220" style="margin-top:16px" role="img" aria-label="Possible n-grams against available text"></svg>
+    <div class="readout" id="wallOut"></div>
+  </div>
+
+  <p>Two notches past three and the argument is over. What remains is to build something that estimates the probability of sequences it has never seen.</p>
+
+  <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Generate letters at order 4, run the word-pair mode, then set the slider to the smallest n where possibilities exceed all text ever written.</div></div>
+  <span class="src">All quoted figures: Wolfram (2023). <span class="conf h" data-src="src-wolfram">H</span> &middot; Chart arithmetic is 40,000<sup>n</sup> against a 400 billion word corpus. <span class="conf h" data-src="src-wolfram">H</span></span>
+ </div>
+</section>
+
+<section class="slide apx" id="s4" data-nav="A2 · Fitting a model" data-insert-after="s2" data-tier="advanced">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A2 &middot; Fitting a Model by Hand</b><span>12 min &middot; advanced &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+ <div class="body">
+  <div class="eyebrow"><span>Appendix A2 &middot; Mechanism, deeper</span><span class="mins">12 min</span></div>
+  <h2>Fitting a Model by Hand</h2>
+  <p class="big">Turn the knobs until the curve fits the fall times. You are minimising a loss function by hand &mdash; which is what training does, 175 billion knobs at a time.</p>
+
+  <div class="panel" data-task="t-s4" data-comp="hand-fit-lab">
+    <div class="row" style="margin-bottom:14px">
+      <button class="btn sel mini act" data-mf="lin">a + bx</button>
+      <button class="btn sel mini" data-mf="quad">a + bx + cx&sup2;</button>
+      <button class="btn sel mini" data-mf="sin">a + b/x + c&thinsp;sin(x)</button>
+    </div>
+    <div class="fitgrid">
+      <svg class="ch" id="fitCh" viewBox="0 0 460 290" role="img" aria-label="Fall time against floor with fitted curve"></svg>
+      <div>
+        <div id="fitKnobs"></div>
+        <div class="slab" style="margin-top:16px"><span>Loss</span><b id="lossVal">&mdash;</b></div>
+        <div class="lossbar" id="lossBar"><span style="width:100%"></span></div>
+        <div class="readout" id="fitOut" style="margin-top:14px"></div>
+        <div class="row" style="margin-top:11px"><button class="btn ghost mini" id="fitAuto">Fit it for me</button></div>
+      </div>
+    </div>
+  </div>
+
+  <p>Try the third form. It has as many knobs as the second and cannot fit this data at any setting, because its structure is wrong. The choice of structure is made before any data arrives, and no amount of training rescues a bad one.</p>
+
+  <div class="talk"><span class="th">Planning parallel &mdash; discussion</span>Every Monte Carlo engine you run is a model with knobs: return assumptions, inflation, sequence-of-returns treatment, mortality table. A 91% probability of success is not a measurement. It is the output of a structure someone chose, fitted to assumptions someone set.
+  <ul><li>Which of your planning software's assumptions can you actually name and defend to a client?</li><li>If two engines give Meg 91% and 76% on the same facts, which is wrong &mdash; and how would you find out?</li></ul></div>
+
+  <h3>The size of the thing</h3>
+  <p>Guess first. Guessing badly is the useful part &mdash; nobody has intuition for these numbers.</p>
+  <div class="panel" id="guessPanel"></div>
+
+  <table class="dt tight">
+    <thead><tr><th>Quantity</th><th>GPT-2</th><th>GPT-3 / ChatGPT</th></tr></thead>
+    <tbody>
+      <tr><td>Weights</td><td class="n">&mdash;</td><td class="n">175 billion</td></tr>
+      <tr><td>Embedding vector length</td><td class="n">768</td><td class="n">12,288</td></tr>
+      <tr><td>Attention blocks &times; heads</td><td class="n">12 &times; 12</td><td class="n">96 &times; 96</td></tr>
+      <tr><td>Token vocabulary / whole words</td><td class="n">~50,000</td><td class="n">~50,000 / ~3,000</td></tr>
+    </tbody>
+  </table>
+  <p class="dim" style="font-size:14px">Wolfram's comparison: brains have "about 100 billion neurons" and "maybe 100 trillion connections." He also estimates it takes "a bit less than one neural net weight to carry the information content of a word of training data" &mdash; the model is roughly the size of everything it read, and nothing in it can be looked up.</p>
+
+  <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Get the loss below 0.02, then submit all three scale guesses.</div></div>
+  <span class="src">Fall times computed from t = &radic;(2h/g) at 5-metre spacing &mdash; idealised, as in the article. All model figures quoted from Wolfram (2023). <span class="conf h" data-src="src-wolfram">H</span></span>
+ </div>
 </section>
 
 <section class="slide" id="s5" data-nav="Tokens">
@@ -1404,9 +1520,139 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
  </div>
 
 
-  <a class="apxlink" href="#s6"><span class="al">If there is time &middot; Appendix A3 &middot; 9 min</span><b>Words Laid Out So That Nearby Means Similar</b><span class="aw">Embeddings, in two dimensions. Session 3 rebuilds this properly against a document corpus, so skip it here if Session 3 is close.</span></a>
-  <a class="apxlink" href="#s7"><span class="al">If there is time &middot; Appendix A4 &middot; 9 min</span><b>The Task a Transformer Cannot Reliably Learn</b><span class="aw">Push a bracket sequence until the model assigns real probability to an impossible token. The cleanest proof that fluent and correct are different properties.</span></a>
-  <a class="apxlink" href="#s8"><span class="al">If there is time &middot; Appendix A5 &middot; 18 min</span><b>The Nine Controls Between the Model and Your Answer</b><span class="aw">The full sampler lab. Temperature, top-k, top-p, min-p, typical, repetition and presence penalties, seed. The longest hands-on block in the session and the one a technical room will want.</span></a>
+</section>
+
+<section class="slide apx" id="s6" data-nav="A3 · Meaning space" data-insert-after="s5" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A3 &middot; Words Laid Out So That Nearby Means Similar</b><span>9 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+ <div class="body">
+  <div class="eyebrow"><span>Appendix A3 &middot; Mechanism, deeper</span><span class="mins">9 min</span></div>
+  <h2>Words Laid Out So That Nearby Means Similar</h2>
+
+  <div class="wolf"><span class="wh">From the assigned reading</span>Built by looking at large amounts of text &mdash; he uses <b>5 billion words</b> &mdash; and seeing how similar the environments are in which words appear. "&thinsp;'alligator' and 'crocodile' will often appear almost interchangeably&hellip; But 'turnip' and 'eagle' won't tend to appear in otherwise similar sentences, so they'll be placed far apart."</div>
+
+  <div class="chartbox">
+    <span class="plab">Click a word for its neighbours &mdash; hand-constructed illustration, not a real projection</span>
+    <svg class="ch" id="embCh" viewBox="0 0 700 400" role="img" aria-label="Two-dimensional word layout"></svg>
+    <div class="readout" id="embOut"><span class="nil">Click any word.</span></div>
+  </div>
+
+  <div class="panel" data-task="t-s6" data-comp="commit-first-mcq"><span class="plab">Answer from the layout</span><div class="quiz" id="embQuiz"></div></div>
+
+  <div class="talk"><span class="th">Why this matters for planning &mdash; discussion</span>The planning terms cluster together because they appear in each other's company, not because the model understands them. "Grantor retained annuity trust" and "grantor retained income trust" sit almost on top of each other in embedding space and do very different things. So do "revocable" and "irrevocable" &mdash; one letter of difference, opposite consequences, and the words appear in nearly identical sentences.
+  <ul><li>Where else does our vocabulary pair near-identical language with opposite outcomes? Start with QTIP versus QDOT, or 1035 versus 1031.</li><li>What does that predict about which planning errors these tools will make most often?</li></ul></div>
+
+  <h3>One word, two meanings</h3>
+  <div class="row" id="craneBtns"></div>
+  <div class="readout" id="craneOut" style="margin-top:12px"><span class="nil">Pick a sentence.</span></div>
+  <p class="dim" style="font-size:14.5px">GPT-2 uses vectors of length 768; GPT-3 uses 12,288. What you clicked is two dimensions, hand-placed. No flat picture of a 12,288-dimensional space is faithful.</p>
+
+  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all three questions correctly, then open both senses of "crane".</div></div>
+ </div>
+</section>
+
+<section class="slide apx" id="s7" data-nav="A4 · Counting failure" data-insert-after="s5" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A4 &middot; The Task a Transformer Cannot Reliably Learn</b><span>9 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+ <div class="body">
+  <div class="eyebrow"><span>Appendix A4 &middot; Failure mode</span><span class="mins">9 min</span></div>
+  <h2>The Task a Transformer Cannot Reliably Learn</h2>
+  <p class="big">Wolfram trains a small transformer on a language with exactly one rule: parentheses must balance. It learns it well enough to look right, then fails.</p>
+
+  <div class="wolf"><span class="wh">From the assigned reading &mdash; his figures</span>With 2 attention heads the learning converges after "10 million or so examples." Yet with its "<b>400,000</b> or so laboriously trained weights," it still assigns a <b>15%</b> probability to a closing parenthesis that would leave the sequence unbalanced. And: "even the full current ChatGPT has a hard time correctly matching parentheses in long sequences."</div>
+
+  <div class="panel" data-task="t-s7" data-comp="distribution-picker">
+    <span class="plab">Sequence builder &mdash; the simulated model predicts what comes next</span>
+    <div class="parens" id="parenSeq"></div>
+    <div class="depthbar" id="depthBar"></div>
+    <div class="row" style="margin-top:14px">
+      <button class="btn" data-pk="(">Add&nbsp;&nbsp;(</button>
+      <button class="btn" data-pk=")">Add&nbsp;&nbsp;)</button>
+      <button class="btn ghost mini" id="parenReset">Clear</button>
+      <span class="dim mono" style="font-size:12px">depth <b id="parenDepth">0</b></span>
+    </div>
+    <div class="dist" id="parenDist" style="margin-top:16px"></div>
+    <div class="readout" id="parenOut"></div>
+    <p style="margin-bottom:0"><span class="sim">Simulated shallow model &mdash; confidence degrades with depth, as Wolfram's trained net does</span></p>
+  </div>
+
+  <p>Counting is algorithmic. The network is feed-forward &mdash; "there's no looping or 'going back'" &mdash; so it approximates a counter from local pattern, and the approximation decays with depth.</p>
+  <p class="pull">Anything requiring an exact count across a long document is the failure case, not the edge case.</p>
+
+  <div class="talk"><span class="th">Where this bites in the Cole file &mdash; discussion</span>Every one of these is a counting or reconciliation task inside a long sequence, and every one is a place a fluent answer is least trustworthy:
+  <ul><li>Confirming the 2014 buy-sell formula value, roughly $18,000,000, against the $55,000,000 indicated value, and listing every provision that conflicts</li><li>Checking that the note principal on the draft instrument is $20,020,000 and that it is the same figure on every schedule and exhibit</li><li>Verifying the 30% discount is applied to the $49,500,000 pro-rata value of the 900 non-voting units, giving $34,650,000 and $38,500 a unit, and not to some other base, in each place it appears</li><li>Tracing whether the 2011 powers of attorney were superseded by anything in the 2016 revocable trust restatement</li></ul>
+  Ask the room: which of these have you already delegated to a tool this year, and did you total the numbers yourself?</div>
+
+  <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the sequence to a depth where the model assigns real probability to an invalid token.</div></div>
+ </div>
+</section>
+
+<section class="slide apx" id="s8" data-nav="A5 · SAMPLER LAB" data-insert-after="s5" data-tier="advanced">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A5 &middot; The Nine Controls Between the Model and Your Answer</b><span>16 min &middot; advanced &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+ <div class="body">
+  <div class="eyebrow"><span>Appendix A5 &middot; Lab</span><span class="mins">16 min</span></div>
+  <h2>The Nine Controls Between the Model and Your Answer</h2>
+  <p class="big">The model hands over a probability for every one of about 50,000 tokens. A stack of sampling algorithms then cuts that list down and picks one. Almost nobody using these tools professionally knows they exist.</p>
+
+  <p>Below is the candidate distribution for a prompt about Meg's CPC interest, shaped as the rank<sup>&minus;1</sup> power law from &sect;02. Red bars are cut; green survive.</p>
+
+  <div class="panel" style="padding:18px 20px" data-task="t-s8" data-comp="pipeline-lab">
+    <div class="row" style="margin-bottom:6px"><span class="dim" style="font-size:14px">Prompt:</span><span class="mono" id="labPrompt" style="font-size:13px"></span></div>
+    <div class="pipeline" id="labPipe"></div>
+  </div>
+
+  <div class="lab" id="labMods"></div>
+
+  <div class="labout">
+    <span class="plab">Surviving distribution after the full pipeline</span>
+    <div class="stats" id="labStats"></div>
+    <div class="dist" id="labDist"></div>
+    <div class="row" style="margin-top:8px">
+      <button class="btn" id="labDraw">Draw 12 samples</button>
+      <button class="btn ghost mini" id="labReset">Reset all</button>
+    </div>
+    <div class="draws" id="labDraws"></div>
+  </div>
+  <div class="readout" id="labTarget"></div>
+
+  <table class="dt tight">
+    <thead><tr><th>Sampler</th><th>Rule</th><th>What it is for</th></tr></thead>
+    <tbody>
+      <tr><td>Temperature</td><td class="n">p<sup>1/T</sup></td><td>Flattens or sharpens everything. Below 1 sharpens, above 1 flattens.</td></tr>
+      <tr><td>Dynamic temperature</td><td class="n">T varies with entropy</td><td>Hotter where the model is genuinely unsure, cooler where it is confident.</td></tr>
+      <tr><td>Smoothing factor</td><td class="n">T&middot;exp(&minus;f&middot;log(P/T)&sup2;)</td><td>Suppresses the tail without a hard cutoff.</td></tr>
+      <tr><td>Top K</td><td class="n">keep K highest</td><td>Fixed-size shortlist regardless of confidence.</td></tr>
+      <tr><td>Top P</td><td class="n">keep until &Sigma;p &gt; P</td><td>Shortlist grows when the model is uncertain, shrinks when it is not.</td></tr>
+      <tr><td>Min P</td><td class="n">keep p &gt; P&middot;T<sub>max</sub></td><td>Anything within a fixed ratio of the leader. Robust at high temperature.</td></tr>
+      <tr><td>Top A</td><td class="n">keep p &gt; A&middot;T<sub>max</sub>&sup2;</td><td>Like Min P, tightening faster when the leader dominates.</td></tr>
+      <tr><td>Tail Free Z</td><td class="n">cum. |2nd derivative| &gt; Z</td><td>Cuts where the curve flattens into its tail.</td></tr>
+      <tr><td>Typical P</td><td class="n">rank by |&minus;log p &minus; H|, then Top P</td><td>Keeps tokens whose surprise is near average &mdash; drops the obvious and the bizarre.</td></tr>
+    </tbody>
+  </table>
+
+  <p>The model's probabilities are not the answer. They are the input to a filtering stack somebody configured, usually by default, usually without telling you. These controls are exposed in the API and hidden in chat interfaces &mdash; if your final project runs through an API, you are choosing them whether you know it or not.</p>
+
+  <div class="panel hidden" data-lm-live>
+    <span class="plab">The same control, on a real model</span>
+    <p class="lmnote" style="margin-top:0">The lab above shows you <b>why</b>
+    temperature changes the output, against an illustrative distribution. This
+    shows you <b>that</b> it does, against a live one. Run the same prompt at 0
+    and again near 2. Gemini's temperature and the lab's are the same idea under
+    different implementations, not the same number, so compare the character of
+    the output rather than matching the figures.</p>
+    <label class="plab" for="lmTempP" style="margin-top:14px">Prompt, held constant between runs</label>
+    <textarea id="lmTempP" style="min-height:60px">In one sentence, describe the risk Meg Cole is taking by relying on a 2023 appraisal.</textarea>
+    <div class="row" style="margin-top:12px">
+      <label class="mono dim" for="lmTemp" style="font-size:12px">Temperature</label>
+      <input type="range" id="lmTemp" min="0" max="2" step="0.1" value="1" style="width:200px">
+      <span class="mono" id="lmTempV" style="font-size:13px">1.0</span>
+      <button class="btn mini" id="lmTempRun">Generate</button>
+    </div>
+    <div class="runs" id="lmTempRuns"></div>
+    <span class="lmusage" id="lmTempUse"></span>
+  </div>
+
+  <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Configure the samplers so exactly three tokens survive and the leader holds more than 55% of the surviving mass.</div></div>
+  <span class="src">Algorithms follow the sampler definitions published in <b>artefact2's LLM sampling visualiser</b> (<a href="https://artefact2.github.io/llm-sampling/" style="color:var(--on)">artefact2.github.io/llm-sampling</a>), reimplemented here against an illustrative distribution. Worth running live &mdash; it uses recorded distributions from real models. <span class="conf m" data-src="src-sampling">M</span></span>
+ </div>
 </section>
 
 <section class="slide" id="s9" data-nav="Hallucination">
@@ -1579,7 +1825,37 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
  </div>
 
 
-  <a class="apxlink" href="#s14"><span class="al">If there is time &middot; Appendix A6 &middot; 9 min</span><b>There Is No Separate AI Rulebook</b><span class="aw">The duties that already applied, and the symptom-to-cause map. Session 4 covers this in full, so this is a preview rather than a requirement.</span></a>
+</section>
+
+<section class="slide apx" id="s14" data-nav="A6 · Regulation" data-insert-after="s13" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A6 &middot; There Is No Separate AI Rulebook</b><span>9 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+ <div class="body">
+  <div class="eyebrow"><span>Appendix A6 &middot; Regulation</span><span class="mins">9 min</span></div>
+  <h2>There Is No Separate AI Rulebook</h2>
+  <p class="big">FINRA's rules are technology-neutral. Regulatory Notice 24-09 creates no new obligations &mdash; it confirms the existing ones already reach this.</p>
+
+  <table class="dt tight">
+    <thead><tr><th>Rule</th><th>As applied to AI</th></tr></thead>
+    <tbody>
+      <tr><td>Rule 3110 &mdash; Supervision</td><td>A reasonably designed system addressing technology governance, model risk management, data privacy and integrity, and model reliability and accuracy</td></tr>
+      <tr><td>Rule 2210 &mdash; Communications</td><td>Content standards apply to AI-generated content identically to human-generated content</td></tr>
+      <tr><td>Rules 3110.09, 4511; SEA 17a-4</td><td>AI-generated correspondence must be retained</td></tr>
+      <tr><td>Third-party vendor use</td><td>Obligations apply whether the tool is built in-house or licensed</td></tr>
+    </tbody>
+  </table>
+
+  <p>On 18 March 2024 the SEC settled against two advisers over AI claims: <b>Delphia (USA) Inc.</b>, $225,000, for saying it used client data with machine learning when it had collected the data and never used it that way; and <b>Global Predictions, Inc.</b>, $175,000, for advertising "expert AI driven forecasts" without substantiation. Both censured and ordered to cease and desist, under Advisers Act &sect;206(2), &sect;206(4) and Rules 206(4)-1 and 206(4)-7. Neither case was about a wrong answer. Both were about what the firm said it was doing.</p>
+
+  <h3>When the output is wrong, what went wrong</h3>
+  <div class="panel" data-task="t-s14" data-comp="symptom-diagnoser">
+    <div class="row" id="diagBtns"></div>
+    <div class="readout" id="diagOut"><span class="nil">Select a symptom.</span></div>
+    <div class="slab" style="margin-top:12px"><span>Reviewed</span><b id="diagScore">0 / 6</b></div>
+  </div>
+
+  <div class="check" data-gate="g14"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open at least four symptoms and match each to the section of tonight that explains it.</div></div>
+  <span class="src"><b>FINRA Regulatory Notice 24-09</b>, 27 June 2024, first-party. <span class="conf h" data-src="src-finra2409">H</span> &middot; SEC proceedings announced 18 March 2024, reported consistently across Mayer Brown, Crowell &amp; Moring, White &amp; Case and Cleary. <span class="conf h" data-src="src-finra2409">H</span> &middot; One secondary source reports Delphia at $250,000; the SEC's own announcement and the majority report $225,000.</span>
+ </div>
 </section>
 
 <section class="slide" id="s14b" data-nav="Custom instructions">
@@ -1612,7 +1888,46 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
  </div>
 
 
-  <a class="apxlink" href="#s14c"><span class="al">If there is time &middot; Appendix A7 &middot; 15 min</span><b>Disclosure of AI Use to the Client</b><span class="aw">Sealed vote, argument, re-vote. Needs fifteen uninterrupted minutes and a room willing to disagree out loud.</span></a>
+</section>
+
+<section class="slide apx" id="s14c" data-nav="A7 · Discussion" data-insert-after="s14b" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A7 &middot; Disclosure of AI Use to the Client</b><span>17 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+ <div class="body">
+  <div class="eyebrow"><span>Appendix A7 &middot; Discussion</span><span class="mins">17 min</span></div>
+  <h2>Disclosure of AI Use to the Client</h2>
+  <p class="big">You used a frontier model to summarise the Cole discovery meeting. The summary was accurate and you reviewed it line by line before it went in the file. Does Meg have to be told?</p>
+
+  <div class="phase" id="discPhase"></div>
+
+  <div class="panel" data-task="t-s14c" data-comp="sealed-vote-debate">
+    <span class="plab" id="voteLab">First vote &mdash; commit before anyone speaks</span>
+    <div class="vote" id="vote1"></div>
+    <div class="sealed hidden" id="sealMsg">Vote sealed. Nothing is shown until the second vote is in.</div>
+    <div class="row" style="margin-top:12px"><button class="btn" id="toDefence" disabled>Lock it in &mdash; open defence</button></div>
+  </div>
+
+  <div class="panel hidden" id="defencePanel">
+    <span class="plab">Defence &mdash; two per side, alternating, ninety seconds each. Call the minority first.</span>
+    <div class="sgrid" id="defenceGrid"></div>
+    <div class="inote" style="margin-bottom:0"><span class="ih">Complication &mdash; introduce this once, after both sides have spoken</span>Nothing in FINRA 24-09 requires disclosure of AI use to a client. The Notice says existing rules apply as written. So the question is not what the rule requires. It is what you would want on the record if the summary had been wrong and Meg's counsel asked how the file was produced. Nobody re-speaks after this.</div>
+    <div class="row"><button class="btn" id="toVote2">Open second vote</button></div>
+  </div>
+
+  <div class="panel hidden" id="vote2Panel">
+    <span class="plab">Second vote &mdash; same question, after the argument</span>
+    <div class="vote" id="vote2"></div>
+    <div class="readout" id="discOut"><span class="nil">Cast the second vote.</span></div>
+    <div class="hidden" id="deltaPanel">
+      <span class="plab" style="margin-top:16px">Room tally &mdash; instructor keys in the Zoom poll counts</span>
+      <div id="tallyIn"></div>
+      <div id="deltaBars"></div>
+    </div>
+  </div>
+
+  <p class="dim" style="font-size:14.5px">A zero delta is a finding, not a failure. It means a defensible position held under argument, which is the same epistemic move this course asks you to make about model output.</p>
+
+  <div class="check" data-gate="g16"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote, argue, vote again. Your first vote stays sealed until the second is cast.</div></div>
+ </div>
 </section>
 
 <section class="slide" id="s15" data-nav="Close">
@@ -1672,7 +1987,7 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
   </table>
 
   <p class="pull" style="font-size:clamp(27px,4.6vw,48px);max-width:20ch;margin-top:42px">It predicts. It does not know.</p>
-  <p class="big">You built it by hand: counted letters, hit the combinatorial wall, turned the knobs, cut a distribution nine ways, and watched a network fail to count. Sessions 2 through 5 all follow from that.</p>
+  <p class="big">You did it by hand: placed six tokens one at a time and watched each choice change the next list, asked one question three times and got three different dates, priced a year of it against your own headcount, and sorted this household's facts into what may and may not leave the building. Sessions 2 through 5 all follow from that.</p>
 
   <div class="talk"><span class="th">Handoff to Session 2</span>Session 1 explained why the machine produces what it produces and gave you no way to change it. <b>Session 2 is the first session in which you change the output</b> &mdash; prompt construction is the only control you have that operates before the sampler ever runs.</div>
 
@@ -1684,330 +1999,8 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
     <div class="card"><span class="num">03</span><h4>Tier selection is judgment you defend</h4><p>Capability against cost per task, on your task, not someone else's benchmark.</p></div>
     <div class="card"><span class="num">04</span><h4>You sign the work</h4><p>The tool is not a co-signer, a supervisor, or a defence.</p></div>
   </div>
- </div>
-</section>
 
-<section class="slide apxdiv" id="apx" data-nav="— APPENDIX —">
-  <div class="eyebrow"><span>Appendix &middot; 7 optional sections</span><span class="mins">83 min</span></div>
-  <h2>Appendix</h2>
-  <p class="lede">Seven optional sections. Take them in place if the room is fast, or skip them and keep the core session intact.</p>
-  <p>The 11 sections above are the core session and run in about 63 minutes. Everything below is optional depth. Each appendix section names the two core sections it belongs between and links back to that point, so it can be taken in place during a long session or on its own afterwards. Nothing in the core depends on anything down here.</p>
-  <div class="apxgrid">
-    <a class="apxcard" href="#s3"><span class="ac">A1 &middot; 11 min &middot; after §02</span><b>Counting Works, Then Stops Working</b></a>
-    <a class="apxcard" href="#s4"><span class="ac">A2 &middot; 12 min &middot; after §02</span><b>Fitting a Model by Hand</b></a>
-    <a class="apxcard" href="#s6"><span class="ac">A3 &middot; 9 min &middot; after §03</span><b>Words Laid Out So That Nearby Means Similar</b></a>
-    <a class="apxcard" href="#s7"><span class="ac">A4 &middot; 9 min &middot; after §03</span><b>The Task a Transformer Cannot Reliably Learn</b></a>
-    <a class="apxcard" href="#s8"><span class="ac">A5 &middot; 18 min &middot; after §03</span><b>The Nine Controls Between the Model and Your Answer</b></a>
-    <a class="apxcard" href="#s14"><span class="ac">A6 &middot; 9 min &middot; after §08</span><b>There Is No Separate AI Rulebook</b></a>
-    <a class="apxcard" href="#s14c"><span class="ac">A7 &middot; 15 min &middot; after §09</span><b>Disclosure of AI Use to the Client</b></a>
-  </div>
-</section>
-
-<section class="slide apx" id="s3" data-nav="A1 · n-grams" data-insert-after="s2" data-tier="foundational">
- <div class="body">
-  <div class="eyebrow"><span>Appendix A1 &middot; Mechanism, deeper</span><span class="mins">11 min</span></div>
-  <div class="apxback">Insert between §02 Prediction and §03 Tokens &mdash; <a href="#s2">back to §02</a> &middot; <a href="#s5">continue to §03 &rarr;</a></div>
-  <h2>Counting Works, Then Stops Working</h2>
-  <p class="big">Everything below is computed live from the corpus in the box &mdash; counts from the words in front of you, not figures quoted from anywhere. The corpus is discovery-meeting language from the case.</p>
-
-  <div class="panel" data-task="t-s3" data-comp="parameter-sandbox">
-    <label class="plab" for="corpus">Corpus (edit freely &mdash; every statistic recomputes)</label>
-    <textarea id="corpus" style="min-height:104px"></textarea>
-    <div class="stats" style="margin-top:12px">
-      <div class="stat"><span class="sn">Characters</span><span class="sv" id="cChars">0</span></div>
-      <div class="stat"><span class="sn">Words</span><span class="sv" id="cWords">0</span></div>
-      <div class="stat"><span class="sn">Distinct words</span><span class="sv" id="cUniq">0</span></div>
-      <div class="stat"><span class="sn">Letter pairs</span><span class="sv" id="cBig">0</span></div>
-    </div>
-
-    <span class="plab" style="margin-top:18px">Generate letters using n-gram statistics from this corpus</span>
-    <div class="row">
-      <button class="btn sel mini act" data-ng="1">Order 1</button>
-      <button class="btn sel mini" data-ng="2">Order 2</button>
-      <button class="btn sel mini" data-ng="3">Order 3</button>
-      <button class="btn sel mini" data-ng="4">Order 4</button>
-    </div>
-    <div class="sampler" id="ngOut" style="margin-top:12px;font-size:13.5px;line-height:1.75"><span class="dim">Pick an order.</span></div>
-    <div class="stats"><div class="stat"><span class="sn">Corpus words produced</span><span class="sv" id="ngReal">&mdash;</span></div><div class="stat"><span class="sn">Order</span><span class="sv" id="ngOrd">&mdash;</span></div></div>
-
-    <span class="plab" style="margin-top:18px">Now whole words instead of letters</span>
-    <div class="row">
-      <button class="btn sel mini act" data-wg="1">Independent words</button>
-      <button class="btn sel mini" data-wg="2">Word pairs, from "client"</button>
-      <button class="btn ghost mini" id="wgAgain">Again</button>
-    </div>
-    <div class="sampler" id="wgOut" style="margin-top:12px;font-size:14px;line-height:1.75"><span class="dim">Pick a mode.</span></div>
-  </div>
-
-  <h3>Why you cannot just use longer sequences</h3>
-  <div class="wolf"><span class="wh">From the assigned reading &mdash; his figures</span>About <b>40,000</b> reasonably common English words. A web crawl holds <b>a few hundred billion words</b>; digitised books another <b>hundred billion</b>. But the number of possible 2-grams is already <b>1.6 billion</b>, and 3-grams <b>60 trillion</b>. At 20-word fragments, "the number of possibilities is larger than the number of particles in the universe."</div>
-
-  <div class="panel">
-    <div class="slab"><span>Sequence length, n words</span><b id="nLab">2</b></div>
-    <input type="range" id="nSlide" min="1" max="8" value="2" step="1">
-    <div class="ticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
-    <svg class="ch" id="wallCh" viewBox="0 0 700 220" style="margin-top:16px" role="img" aria-label="Possible n-grams against available text"></svg>
-    <div class="readout" id="wallOut"></div>
-  </div>
-
-  <p>Two notches past three and the argument is over. What remains is to build something that estimates the probability of sequences it has never seen.</p>
-
-  <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Generate letters at order 4, run the word-pair mode, then set the slider to the smallest n where possibilities exceed all text ever written.</div></div>
-  <span class="src">All quoted figures: Wolfram (2023). <span class="conf h" data-src="src-wolfram">H</span> &middot; Chart arithmetic is 40,000<sup>n</sup> against a 400 billion word corpus. <span class="conf h" data-src="src-wolfram">H</span></span>
- </div>
-</section>
-
-<section class="slide apx" id="s4" data-nav="A2 · Fitting a model" data-insert-after="s2" data-tier="advanced">
- <div class="body">
-  <div class="eyebrow"><span>Appendix A2 &middot; Mechanism, deeper</span><span class="mins">12 min</span></div>
-  <div class="apxback">Insert between §02 Prediction and §03 Tokens &mdash; <a href="#s2">back to §02</a> &middot; <a href="#s5">continue to §03 &rarr;</a></div>
-  <h2>Fitting a Model by Hand</h2>
-  <p class="big">Turn the knobs until the curve fits the fall times. You are minimising a loss function by hand &mdash; which is what training does, 175 billion knobs at a time.</p>
-
-  <div class="panel" data-task="t-s4" data-comp="hand-fit-lab">
-    <div class="row" style="margin-bottom:14px">
-      <button class="btn sel mini act" data-mf="lin">a + bx</button>
-      <button class="btn sel mini" data-mf="quad">a + bx + cx&sup2;</button>
-      <button class="btn sel mini" data-mf="sin">a + b/x + c&thinsp;sin(x)</button>
-    </div>
-    <div class="fitgrid">
-      <svg class="ch" id="fitCh" viewBox="0 0 460 290" role="img" aria-label="Fall time against floor with fitted curve"></svg>
-      <div>
-        <div id="fitKnobs"></div>
-        <div class="slab" style="margin-top:16px"><span>Loss</span><b id="lossVal">&mdash;</b></div>
-        <div class="lossbar" id="lossBar"><span style="width:100%"></span></div>
-        <div class="readout" id="fitOut" style="margin-top:14px"></div>
-        <div class="row" style="margin-top:11px"><button class="btn ghost mini" id="fitAuto">Fit it for me</button></div>
-      </div>
-    </div>
-  </div>
-
-  <p>Try the third form. It has as many knobs as the second and cannot fit this data at any setting, because its structure is wrong. The choice of structure is made before any data arrives, and no amount of training rescues a bad one.</p>
-
-  <div class="talk"><span class="th">Planning parallel &mdash; discussion</span>Every Monte Carlo engine you run is a model with knobs: return assumptions, inflation, sequence-of-returns treatment, mortality table. A 91% probability of success is not a measurement. It is the output of a structure someone chose, fitted to assumptions someone set.
-  <ul><li>Which of your planning software's assumptions can you actually name and defend to a client?</li><li>If two engines give Meg 91% and 76% on the same facts, which is wrong &mdash; and how would you find out?</li></ul></div>
-
-  <h3>The size of the thing</h3>
-  <p>Guess first. Guessing badly is the useful part &mdash; nobody has intuition for these numbers.</p>
-  <div class="panel" id="guessPanel"></div>
-
-  <table class="dt tight">
-    <thead><tr><th>Quantity</th><th>GPT-2</th><th>GPT-3 / ChatGPT</th></tr></thead>
-    <tbody>
-      <tr><td>Weights</td><td class="n">&mdash;</td><td class="n">175 billion</td></tr>
-      <tr><td>Embedding vector length</td><td class="n">768</td><td class="n">12,288</td></tr>
-      <tr><td>Attention blocks &times; heads</td><td class="n">12 &times; 12</td><td class="n">96 &times; 96</td></tr>
-      <tr><td>Token vocabulary / whole words</td><td class="n">~50,000</td><td class="n">~50,000 / ~3,000</td></tr>
-    </tbody>
-  </table>
-  <p class="dim" style="font-size:14px">Wolfram's comparison: brains have "about 100 billion neurons" and "maybe 100 trillion connections." He also estimates it takes "a bit less than one neural net weight to carry the information content of a word of training data" &mdash; the model is roughly the size of everything it read, and nothing in it can be looked up.</p>
-
-  <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Get the loss below 0.02, then submit all three scale guesses.</div></div>
-  <span class="src">Fall times computed from t = &radic;(2h/g) at 5-metre spacing &mdash; idealised, as in the article. All model figures quoted from Wolfram (2023). <span class="conf h" data-src="src-wolfram">H</span></span>
- </div>
-</section>
-
-<section class="slide apx" id="s6" data-nav="A3 · Meaning space" data-insert-after="s5" data-tier="foundational">
- <div class="body">
-  <div class="eyebrow"><span>Appendix A3 &middot; Mechanism, deeper</span><span class="mins">9 min</span></div>
-  <div class="apxback">Insert between §03 Tokens and §04 Hallucination &mdash; <a href="#s5">back to §03</a> &middot; <a href="#s9">continue to §04 &rarr;</a></div>
-  <h2>Words Laid Out So That Nearby Means Similar</h2>
-
-  <div class="wolf"><span class="wh">From the assigned reading</span>Built by looking at large amounts of text &mdash; he uses <b>5 billion words</b> &mdash; and seeing how similar the environments are in which words appear. "&thinsp;'alligator' and 'crocodile' will often appear almost interchangeably&hellip; But 'turnip' and 'eagle' won't tend to appear in otherwise similar sentences, so they'll be placed far apart."</div>
-
-  <div class="chartbox">
-    <span class="plab">Click a word for its neighbours &mdash; hand-constructed illustration, not a real projection</span>
-    <svg class="ch" id="embCh" viewBox="0 0 700 400" role="img" aria-label="Two-dimensional word layout"></svg>
-    <div class="readout" id="embOut"><span class="nil">Click any word.</span></div>
-  </div>
-
-  <div class="panel" data-task="t-s6" data-comp="commit-first-mcq"><span class="plab">Answer from the layout</span><div class="quiz" id="embQuiz"></div></div>
-
-  <div class="talk"><span class="th">Why this matters for planning &mdash; discussion</span>The planning terms cluster together because they appear in each other's company, not because the model understands them. "Grantor retained annuity trust" and "grantor retained income trust" sit almost on top of each other in embedding space and do very different things. So do "revocable" and "irrevocable" &mdash; one letter of difference, opposite consequences, and the words appear in nearly identical sentences.
-  <ul><li>Where else does our vocabulary pair near-identical language with opposite outcomes? Start with QTIP versus QDOT, or 1035 versus 1031.</li><li>What does that predict about which planning errors these tools will make most often?</li></ul></div>
-
-  <h3>One word, two meanings</h3>
-  <div class="row" id="craneBtns"></div>
-  <div class="readout" id="craneOut" style="margin-top:12px"><span class="nil">Pick a sentence.</span></div>
-  <p class="dim" style="font-size:14.5px">GPT-2 uses vectors of length 768; GPT-3 uses 12,288. What you clicked is two dimensions, hand-placed. No flat picture of a 12,288-dimensional space is faithful.</p>
-
-  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all three questions correctly, then open both senses of "crane".</div></div>
- </div>
-</section>
-
-<section class="slide apx" id="s7" data-nav="A4 · Counting failure" data-insert-after="s5" data-tier="standard">
- <div class="body">
-  <div class="eyebrow"><span>Appendix A4 &middot; Failure mode</span><span class="mins">9 min</span></div>
-  <div class="apxback">Insert between §03 Tokens and §04 Hallucination &mdash; <a href="#s5">back to §03</a> &middot; <a href="#s9">continue to §04 &rarr;</a></div>
-  <h2>The Task a Transformer Cannot Reliably Learn</h2>
-  <p class="big">Wolfram trains a small transformer on a language with exactly one rule: parentheses must balance. It learns it well enough to look right, then fails.</p>
-
-  <div class="wolf"><span class="wh">From the assigned reading &mdash; his figures</span>With 2 attention heads the learning converges after "10 million or so examples." Yet with its "<b>400,000</b> or so laboriously trained weights," it still assigns a <b>15%</b> probability to a closing parenthesis that would leave the sequence unbalanced. And: "even the full current ChatGPT has a hard time correctly matching parentheses in long sequences."</div>
-
-  <div class="panel" data-task="t-s7" data-comp="distribution-picker">
-    <span class="plab">Sequence builder &mdash; the simulated model predicts what comes next</span>
-    <div class="parens" id="parenSeq"></div>
-    <div class="depthbar" id="depthBar"></div>
-    <div class="row" style="margin-top:14px">
-      <button class="btn" data-pk="(">Add&nbsp;&nbsp;(</button>
-      <button class="btn" data-pk=")">Add&nbsp;&nbsp;)</button>
-      <button class="btn ghost mini" id="parenReset">Clear</button>
-      <span class="dim mono" style="font-size:12px">depth <b id="parenDepth">0</b></span>
-    </div>
-    <div class="dist" id="parenDist" style="margin-top:16px"></div>
-    <div class="readout" id="parenOut"></div>
-    <p style="margin-bottom:0"><span class="sim">Simulated shallow model &mdash; confidence degrades with depth, as Wolfram's trained net does</span></p>
-  </div>
-
-  <p>Counting is algorithmic. The network is feed-forward &mdash; "there's no looping or 'going back'" &mdash; so it approximates a counter from local pattern, and the approximation decays with depth.</p>
-  <p class="pull">Anything requiring an exact count across a long document is the failure case, not the edge case.</p>
-
-  <div class="talk"><span class="th">Where this bites in the Cole file &mdash; discussion</span>Every one of these is a counting or reconciliation task inside a long sequence, and every one is a place a fluent answer is least trustworthy:
-  <ul><li>Confirming the 2014 buy-sell formula value, roughly $18,000,000, against the $55,000,000 indicated value, and listing every provision that conflicts</li><li>Checking that the note principal on the draft instrument is $20,020,000 and that it is the same figure on every schedule and exhibit</li><li>Verifying the 30% discount is applied to the $49,500,000 pro-rata value of the 900 non-voting units, giving $34,650,000 and $38,500 a unit, and not to some other base, in each place it appears</li><li>Tracing whether the 2011 powers of attorney were superseded by anything in the 2016 revocable trust restatement</li></ul>
-  Ask the room: which of these have you already delegated to a tool this year, and did you total the numbers yourself?</div>
-
-  <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the sequence to a depth where the model assigns real probability to an invalid token.</div></div>
- </div>
-</section>
-
-<section class="slide apx" id="s8" data-nav="A5 · SAMPLER LAB" data-insert-after="s5" data-tier="advanced">
- <div class="body">
-  <div class="eyebrow"><span>Appendix A5 &middot; Lab</span><span class="mins">16 min</span></div>
-  <div class="apxback">Insert between §03 Tokens and §04 Hallucination &mdash; <a href="#s5">back to §03</a> &middot; <a href="#s9">continue to §04 &rarr;</a></div>
-  <h2>The Nine Controls Between the Model and Your Answer</h2>
-  <p class="big">The model hands over a probability for every one of about 50,000 tokens. A stack of sampling algorithms then cuts that list down and picks one. Almost nobody using these tools professionally knows they exist.</p>
-
-  <p>Below is the candidate distribution for a prompt about Meg's CPC interest, shaped as the rank<sup>&minus;1</sup> power law from &sect;02. Red bars are cut; green survive.</p>
-
-  <div class="panel" style="padding:18px 20px" data-task="t-s8" data-comp="pipeline-lab">
-    <div class="row" style="margin-bottom:6px"><span class="dim" style="font-size:14px">Prompt:</span><span class="mono" id="labPrompt" style="font-size:13px"></span></div>
-    <div class="pipeline" id="labPipe"></div>
-  </div>
-
-  <div class="lab" id="labMods"></div>
-
-  <div class="labout">
-    <span class="plab">Surviving distribution after the full pipeline</span>
-    <div class="stats" id="labStats"></div>
-    <div class="dist" id="labDist"></div>
-    <div class="row" style="margin-top:8px">
-      <button class="btn" id="labDraw">Draw 12 samples</button>
-      <button class="btn ghost mini" id="labReset">Reset all</button>
-    </div>
-    <div class="draws" id="labDraws"></div>
-  </div>
-  <div class="readout" id="labTarget"></div>
-
-  <table class="dt tight">
-    <thead><tr><th>Sampler</th><th>Rule</th><th>What it is for</th></tr></thead>
-    <tbody>
-      <tr><td>Temperature</td><td class="n">p<sup>1/T</sup></td><td>Flattens or sharpens everything. Below 1 sharpens, above 1 flattens.</td></tr>
-      <tr><td>Dynamic temperature</td><td class="n">T varies with entropy</td><td>Hotter where the model is genuinely unsure, cooler where it is confident.</td></tr>
-      <tr><td>Smoothing factor</td><td class="n">T&middot;exp(&minus;f&middot;log(P/T)&sup2;)</td><td>Suppresses the tail without a hard cutoff.</td></tr>
-      <tr><td>Top K</td><td class="n">keep K highest</td><td>Fixed-size shortlist regardless of confidence.</td></tr>
-      <tr><td>Top P</td><td class="n">keep until &Sigma;p &gt; P</td><td>Shortlist grows when the model is uncertain, shrinks when it is not.</td></tr>
-      <tr><td>Min P</td><td class="n">keep p &gt; P&middot;T<sub>max</sub></td><td>Anything within a fixed ratio of the leader. Robust at high temperature.</td></tr>
-      <tr><td>Top A</td><td class="n">keep p &gt; A&middot;T<sub>max</sub>&sup2;</td><td>Like Min P, tightening faster when the leader dominates.</td></tr>
-      <tr><td>Tail Free Z</td><td class="n">cum. |2nd derivative| &gt; Z</td><td>Cuts where the curve flattens into its tail.</td></tr>
-      <tr><td>Typical P</td><td class="n">rank by |&minus;log p &minus; H|, then Top P</td><td>Keeps tokens whose surprise is near average &mdash; drops the obvious and the bizarre.</td></tr>
-    </tbody>
-  </table>
-
-  <p>The model's probabilities are not the answer. They are the input to a filtering stack somebody configured, usually by default, usually without telling you. These controls are exposed in the API and hidden in chat interfaces &mdash; if your final project runs through an API, you are choosing them whether you know it or not.</p>
-
-  <div class="panel hidden" data-lm-live>
-    <span class="plab">The same control, on a real model</span>
-    <p class="lmnote" style="margin-top:0">The lab above shows you <b>why</b>
-    temperature changes the output, against an illustrative distribution. This
-    shows you <b>that</b> it does, against a live one. Run the same prompt at 0
-    and again near 2. Gemini's temperature and the lab's are the same idea under
-    different implementations, not the same number, so compare the character of
-    the output rather than matching the figures.</p>
-    <label class="plab" for="lmTempP" style="margin-top:14px">Prompt, held constant between runs</label>
-    <textarea id="lmTempP" style="min-height:60px">In one sentence, describe the risk Meg Cole is taking by relying on a 2023 appraisal.</textarea>
-    <div class="row" style="margin-top:12px">
-      <label class="mono dim" for="lmTemp" style="font-size:12px">Temperature</label>
-      <input type="range" id="lmTemp" min="0" max="2" step="0.1" value="1" style="width:200px">
-      <span class="mono" id="lmTempV" style="font-size:13px">1.0</span>
-      <button class="btn mini" id="lmTempRun">Generate</button>
-    </div>
-    <div class="runs" id="lmTempRuns"></div>
-    <span class="lmusage" id="lmTempUse"></span>
-  </div>
-
-  <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Configure the samplers so exactly three tokens survive and the leader holds more than 55% of the surviving mass.</div></div>
-  <span class="src">Algorithms follow the sampler definitions published in <b>artefact2's LLM sampling visualiser</b> (<a href="https://artefact2.github.io/llm-sampling/" style="color:var(--on)">artefact2.github.io/llm-sampling</a>), reimplemented here against an illustrative distribution. Worth running live &mdash; it uses recorded distributions from real models. <span class="conf m" data-src="src-sampling">M</span></span>
- </div>
-</section>
-
-<section class="slide apx" id="s14" data-nav="A6 · Regulation" data-insert-after="s13" data-tier="foundational">
- <div class="body">
-  <div class="eyebrow"><span>Appendix A6 &middot; Regulation</span><span class="mins">9 min</span></div>
-  <div class="apxback">Insert between §08 Confidentiality and §09 Custom instructions &mdash; <a href="#s13">back to §08</a> &middot; <a href="#s14b">continue to §09 &rarr;</a></div>
-  <h2>There Is No Separate AI Rulebook</h2>
-  <p class="big">FINRA's rules are technology-neutral. Regulatory Notice 24-09 creates no new obligations &mdash; it confirms the existing ones already reach this.</p>
-
-  <table class="dt tight">
-    <thead><tr><th>Rule</th><th>As applied to AI</th></tr></thead>
-    <tbody>
-      <tr><td>Rule 3110 &mdash; Supervision</td><td>A reasonably designed system addressing technology governance, model risk management, data privacy and integrity, and model reliability and accuracy</td></tr>
-      <tr><td>Rule 2210 &mdash; Communications</td><td>Content standards apply to AI-generated content identically to human-generated content</td></tr>
-      <tr><td>Rules 3110.09, 4511; SEA 17a-4</td><td>AI-generated correspondence must be retained</td></tr>
-      <tr><td>Third-party vendor use</td><td>Obligations apply whether the tool is built in-house or licensed</td></tr>
-    </tbody>
-  </table>
-
-  <p>On 18 March 2024 the SEC settled against two advisers over AI claims: <b>Delphia (USA) Inc.</b>, $225,000, for saying it used client data with machine learning when it had collected the data and never used it that way; and <b>Global Predictions, Inc.</b>, $175,000, for advertising "expert AI driven forecasts" without substantiation. Both censured and ordered to cease and desist, under Advisers Act &sect;206(2), &sect;206(4) and Rules 206(4)-1 and 206(4)-7. Neither case was about a wrong answer. Both were about what the firm said it was doing.</p>
-
-  <h3>When the output is wrong, what went wrong</h3>
-  <div class="panel" data-task="t-s14" data-comp="symptom-diagnoser">
-    <div class="row" id="diagBtns"></div>
-    <div class="readout" id="diagOut"><span class="nil">Select a symptom.</span></div>
-    <div class="slab" style="margin-top:12px"><span>Reviewed</span><b id="diagScore">0 / 6</b></div>
-  </div>
-
-  <div class="check" data-gate="g14"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open at least four symptoms and match each to the section of tonight that explains it.</div></div>
-  <span class="src"><b>FINRA Regulatory Notice 24-09</b>, 27 June 2024, first-party. <span class="conf h" data-src="src-finra2409">H</span> &middot; SEC proceedings announced 18 March 2024, reported consistently across Mayer Brown, Crowell &amp; Moring, White &amp; Case and Cleary. <span class="conf h" data-src="src-finra2409">H</span> &middot; One secondary source reports Delphia at $250,000; the SEC's own announcement and the majority report $225,000.</span>
- </div>
-</section>
-
-<section class="slide apx" id="s14c" data-nav="A7 · Discussion" data-insert-after="s14b" data-tier="standard">
- <div class="body">
-  <div class="eyebrow"><span>Appendix A7 &middot; Discussion</span><span class="mins">17 min</span></div>
-  <div class="apxback">Insert between §09 Custom instructions and §10 Close &mdash; <a href="#s14b">back to §09</a> &middot; <a href="#s15">continue to §10 &rarr;</a></div>
-  <h2>Disclosure of AI Use to the Client</h2>
-  <p class="big">You used a frontier model to summarise the Cole discovery meeting. The summary was accurate and you reviewed it line by line before it went in the file. Does Meg have to be told?</p>
-
-  <div class="phase" id="discPhase"></div>
-
-  <div class="panel" data-task="t-s14c" data-comp="sealed-vote-debate">
-    <span class="plab" id="voteLab">First vote &mdash; commit before anyone speaks</span>
-    <div class="vote" id="vote1"></div>
-    <div class="sealed hidden" id="sealMsg">Vote sealed. Nothing is shown until the second vote is in.</div>
-    <div class="row" style="margin-top:12px"><button class="btn" id="toDefence" disabled>Lock it in &mdash; open defence</button></div>
-  </div>
-
-  <div class="panel hidden" id="defencePanel">
-    <span class="plab">Defence &mdash; two per side, alternating, ninety seconds each. Call the minority first.</span>
-    <div class="sgrid" id="defenceGrid"></div>
-    <div class="inote" style="margin-bottom:0"><span class="ih">Complication &mdash; introduce this once, after both sides have spoken</span>Nothing in FINRA 24-09 requires disclosure of AI use to a client. The Notice says existing rules apply as written. So the question is not what the rule requires. It is what you would want on the record if the summary had been wrong and Meg's counsel asked how the file was produced. Nobody re-speaks after this.</div>
-    <div class="row"><button class="btn" id="toVote2">Open second vote</button></div>
-  </div>
-
-  <div class="panel hidden" id="vote2Panel">
-    <span class="plab">Second vote &mdash; same question, after the argument</span>
-    <div class="vote" id="vote2"></div>
-    <div class="readout" id="discOut"><span class="nil">Cast the second vote.</span></div>
-    <div class="hidden" id="deltaPanel">
-      <span class="plab" style="margin-top:16px">Room tally &mdash; instructor keys in the Zoom poll counts</span>
-      <div id="tallyIn"></div>
-      <div id="deltaBars"></div>
-    </div>
-  </div>
-
-  <p class="dim" style="font-size:14.5px">A zero delta is a finding, not a failure. It means a defensible position held under argument, which is the same epistemic move this course asks you to make about model output.</p>
-
-  <div class="check" data-gate="g16"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote, argue, vote again. Your first vote stays sealed until the second is cast.</div></div>
+  <div class="talk"><span class="th">Closing question &middot; one to three answers, out loud, then we go</span>A model has just handed you a clean, confident, well-written answer about the Cole discount. Name the one thing tonight said you still cannot conclude from that, and say which part of the machine is the reason.</div>
  </div>
 </section>
 
@@ -2015,6 +2008,7 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
   <h3 style="margin:26px 0 4px;font-size:17px">Instructor minute budget</h3>
   <table class="tbudget" data-timing>
     <thead><tr><th>Section</th><th>Title</th><th>Min</th></tr></thead>
+<!-- APXBUDGET:BEGIN generated-by=scripts/build-appendix.mjs -->
     <tbody>
       <tr><td>BUS ADM X433.4 &middot; Session 1 &middot; 31 August 2026</td><td>How the Machine Works, and What It Costs</td><td class="n">6</td></tr>
       <tr><td>01 &middot; Cold open &middot; standing ritual</td><td>The Last Prompt You Sent</td><td class="n">8</td></tr>
@@ -2036,8 +2030,9 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
       <tr class="apxrow"><td>Appendix A7 &middot; Discussion</td><td>Disclosure of AI Use to the Client</td><td class="n">17</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 67 + appendix 83; the core alone is the one-hour version</td><td class="n">150</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 67 + appendix 83; the core alone runs 67 minutes, seven minutes over the hour</td><td class="n">150</td></tr>
     </tbody>
+<!-- APXBUDGET:END -->
   </table>
 
   <p>BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors &middot; Session 1 &middot; UC Berkeley Extension, Fall 2026 &middot; Instructor: Jared Winkers</p>
@@ -2227,7 +2222,9 @@ var secs=all('section.slide'),rail=$('rail'),done={};
 secs.forEach(function(s){var b=el('button',null,'<span class="pip"></span><span class="lbl">'+s.dataset.nav+'</span>');
   b.onclick=function(){scroll(s)};rail.appendChild(b)});
 var pips=all('button',rail);
-secs.forEach(function(s,i){if(pips[i]&&(s.classList.contains('apx')||s.classList.contains('apxdiv')))pips[i].classList.add('apxnav')});
+secs.forEach(function(s,i){if(!pips[i])return;
+  if(s.classList.contains('apxdiv')){pips[i].classList.add('apxnav');pips[i].classList.add('apxidx')}
+  else if(s.classList.contains('apx')){pips[i].classList.add('apxnav')}});
 /* Non-gating. Marks a work-along cue complete for feedback only; nothing is withheld. */
 function mark(id){if(done[id])return;done[id]=1;
   var c=document.querySelector('[data-gate="'+id+'"]');
@@ -2248,9 +2245,16 @@ document.addEventListener('keydown',function(e){
   var t=(document.activeElement&&document.activeElement.tagName)||'';
   if(t==='TEXTAREA'||t==='INPUT')return;
   if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+    /* Position and step are both derived from geometry rather than from array
+       order. The old form walked secs in array order and took the last index
+       above the midpoint, which is only correct while array order equals page
+       order. Under the static reflow it still would be, but by accident: the
+       first thing that reorders sections at runtime would break it silently. */
+    var ord=secs.slice().sort(function(a,b){
+      return a.getBoundingClientRect().top-b.getBoundingClientRect().top});
     var cur=0,mid=window.innerHeight/2;
-    secs.forEach(function(s,i){if(s.getBoundingClientRect().top<=mid)cur=i});
-    scroll(secs[Math.max(0,Math.min(secs.length-1,cur+(e.key==='ArrowRight'?1:-1)))]);e.preventDefault()}
+    ord.forEach(function(s,i){if(s.getBoundingClientRect().top<=mid)cur=i});
+    scroll(ord[Math.max(0,Math.min(ord.length-1,cur+(e.key==='ArrowRight'?1:-1)))]);e.preventDefault()}
 });
 
 
@@ -2809,7 +2813,7 @@ var TQ=[
  {d:'Tax Planning',t:'Identify the note terms and interest rate the 9-year interest-only note must carry for the sale to the trust to be respected as a sale rather than a part gift.',a:2,
   f:['Correct on tier, and verify every figure. The applicable rate is a published monthly number \u2014 an arbitrary fact with one right answer and twelve plausible wrong ones per year, all of which the model has seen in identical sentences.','Top tier, and it will still hand you a rate in a confident sentence. Applicable rates publish monthly; the model has seen years of them in near-identical language with no signal about which is current.']},
  {d:'Estate Planning',t:'Reconcile the 2014 buy-sell formula value, roughly $18,000,000 on current financials, against the $55,000,000 indicated value for the company, and list every provision of the two documents that conflicts.',a:2,
-  f:['Correct on tier \u2014 and recall Appendix A4. This is the parenthesis problem in a planning document: an exact reconciliation across a long sequence. Extract the provisions with the tool, then compare them yourself. Note also that nothing in this document set creates estate liquidity against an illiquid $55,000,000 position.','This is a reconciliation across a long sequence, the exact case a feed-forward network is worst at. Any tier, and you do the comparison by hand.']}];
+  f:['Correct on tier \u2014 and the tier is not what protects you here. An exact reconciliation across a long document is the shape these models are least reliable at, at any price: the comparison is approximated from local pattern and the approximation decays with length. Extract the provisions with the tool, then compare them yourself. Note also that nothing in this document set creates estate liquidity against an illiquid $55,000,000 position.','This is a reconciliation across a long document, the exact shape these models are least reliable at. Any tier, and you do the comparison by hand.']}];
 var TLABEL=['Haiku-class','Sonnet-class','Opus / Fable-class'];
 (function(){
   var host=$('tierQuiz'),done=0;
@@ -2851,9 +2855,9 @@ var NPI=[
 /* ===== 13 DIAGNOSTIC ===== */
 var DG=[
  {s:'It cited a Code section that does not say what it claimed',c:'It sampled a plausible citation rather than retrieving a real one. Statutory citations are arbitrary facts \u2014 many plausible wrong answers, one right one.',f:'Verify every citation against the primary source before it informs a recommendation. If the tool cannot show you where the text came from, the citation is unverified.'},
- {s:'The same question gave two different answers',c:'Sampling. You built this in \u00a702 and Appendix A5 \u2014 the model draws from a distribution and the sampler decides how far into the tail it may reach.',f:'Run consequential questions more than once. Divergence is a signal of uncertainty even when both answers sound confident.'},
+ {s:'The same question gave two different answers',c:'Sampling. You built this in \u00a702 \u2014 the model draws from a distribution and the sampler decides how far into the tail it may reach.',f:'Run consequential questions more than once. Divergence is a signal of uncertainty even when both answers sound confident.'},
  {s:'It gave a confident applicable federal rate',c:'The scoring rule plus stale training data. Abstention scores like a wrong answer, and years of monthly rates sit in training in near-identical sentences with no signal about which is current.',f:'Treat every rate, date and threshold as unverified. Published figures come from the publisher, not the model.'},
- {s:'It reconciled two documents and missed a conflict',c:'The parenthesis problem. Feed-forward with no loop, so it cannot hold an exact running comparison \u2014 it approximates one from local pattern and the approximation decays with length. The 2014 buy-sell against the 2023 appraisal is exactly this shape.',f:'Never delegate an exact reconciliation. Extract the provisions with the tool, then compare them yourself or in a spreadsheet.'},
+ {s:'It reconciled two documents and missed a conflict',c:'An exact reconciliation across a long document. There is no loop in the machine, so it cannot hold a running comparison \u2014 it approximates one from local pattern and the approximation decays with length. The 2014 buy-sell against the 2023 appraisal is exactly this shape.',f:'Never delegate an exact reconciliation. Extract the provisions with the tool, then compare them yourself or in a spreadsheet.'},
  {s:'It summarised a tense meeting as if everyone agreed',c:'Fluency bias. Coherent narrative is what the objective rewards, and disagreement makes a summary less coherent, so it is smoothed away \u2014 which is how Meg not having told Nathan disappears from a meeting note.',f:'Ask for points of disagreement and unresolved items as a separate output. Never accept a single-narrative summary of a multi-party meeting.'},
  {s:'The bill was far higher than the pricing page implied',c:'Cost is per-token price times tokens consumed. Verbose output, reasoning tokens and long context all move the second number. A tokenizer change moves it too.',f:'Measure tokens on your actual workload. Enable prompt caching where a system prompt repeats \u2014 a cache hit costs 10% of input.'}];
 (function(){
@@ -3019,16 +3023,17 @@ $('blGo').onclick=function(){
   };
 })();
 
+/* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
 window.__coreMins=67;
+/* APXCORE:END */
 
 /* ===== appendix depth control: tier filter + core-only mode ===== */
 (function(){
   var bar=document.getElementById('tierbar'); if(!bar) return;
   var apx=[].slice.call(document.querySelectorAll('section.apx'));
   var cards=[].slice.call(document.querySelectorAll('a.apxcard'));
-  var links=[].slice.call(document.querySelectorAll('a.apxlink'));
   var ORDER=['foundational','standard','advanced'];
-  var level=1, coreOnly=false;   /* matches the "+ Standard" button marked on in the markup */
+  var level=1, coreOnly=true;    /* core only at load; "+ Standard" is the depth the bar falls back to */
   function minutes(el){var m=el.querySelector('.mins');return m?(parseInt(m.textContent,10)||0):0}
   function idOf(a){var h=a.getAttribute('href')||'';return h.charAt(0)==='#'?h.slice(1):''}
   function apply(){
@@ -3044,11 +3049,11 @@ window.__coreMins=67;
       var sec=document.getElementById(idOf(a));
       a.classList.toggle('dim', !!(sec&&sec.classList.contains('dim')));
     })}
-    sync(cards);sync(links);
+    sync(cards);
     var out=document.getElementById('tierOut');
     if(out){
       out.textContent = coreOnly
-        ? 'Core only \u2014 appendix hidden. This is the one-hour version.'
+        ? 'Core only \u2014 appendix hidden. '+(window.__coreMins||0)+' core minutes.'
         : shown+' of '+apx.length+' appendix sections in scope \u00b7 '+mins+' appendix minutes \u00b7 '+
           (window.__coreMins||0)+' core minutes \u00b7 '+((window.__coreMins||0)+mins)+' total.';
     }
@@ -3114,8 +3119,9 @@ function lmOnConnect(){
       '<div class="pcell"><b>'+(core+apx)+' min</b><span>everything</span></div>'+
     '</div>'+
     '<p>The core runs in about '+core+' minutes and is what always gets taught. In a full '+
-    'block, take appendix sections in place at the gold links; in a short one, skip them and '+
-    'the session still closes properly. Appendix sections are also readable alone afterwards.</p>';
+    'block, raise the appendix depth and take the extra sections in place; in a short one, '+
+    'leave it on core only and the session still closes properly. Appendix sections are also '+
+    'readable alone afterwards.</p>';
 
 })();
 </script>

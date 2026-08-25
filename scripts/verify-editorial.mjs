@@ -195,9 +195,24 @@ if (enabled('A3')) {
 }
 
 /* ====================================================================== A4 */
-/* The lede's "The N sections above ... about M minutes" matches the core. */
+/* The appendix panel's core-count sentence matches the core.
+   TWO FORMS, and the second is the one the panel carries after Phase 2 step (f).
+   The divider used to trail the sections, so the sentence read "The N sections
+   ABOVE are the core session"; as a leading contents panel that is false, and
+   the generator writes "The N sections OF the core session run in about M
+   minutes" instead. Both are accepted so a file mid-migration still binds.
+   A PRESENCE FLOOR was added with them: a lesson with an .apxdiv and NO
+   matching sentence is a violation, not a skip. The old code fell through to
+   `continue`, so rewording the lede would have taken A4 from checking four
+   lessons to checking none while still printing PASS. That is the same shape as
+   verify-migration check 20's zero-matches-is-a-PASS, which this repository has
+   already recorded once as a defect. */
 if (enabled('A4')) {
-  let n = 0;
+  let n = 0, seen = 0;
+  const FORMS = [
+    /The\s+(\d+)\s+sections of the core session run in about\s+(\d+)\s+minutes/,
+    /The\s+(\d+)\s+sections above are the core session and run in about\s+(\d+)\s+minutes/,
+  ];
   for (const l of lessonFiles()) {
     if (l === D14_SKIP) { skipped.push(`SKIP  A4   ${l}  ${D14_REASON}`); continue; }
     const s = sections(src(l));
@@ -205,15 +220,21 @@ if (enabled('A4')) {
     if (!div) continue;
     const core = s.filter((x) => !x.apx && !x.apxdiv);
     const sum = core.reduce((a, b) => a + (b.mins || 0), 0);
-    const m = div.body.match(/The\s+(\d+)\s+sections above are the core session and run in about\s+(\d+)\s+minutes/);
-    if (!m) continue;
-    const [, nSec, nMin] = [m[0], Number(m[1]), Number(m[2])];
+    const m = FORMS.map((rx) => div.body.match(rx)).find(Boolean);
+    if (!m) {
+      n++;
+      violation('A4', `${l}/index.html`,
+        'the appendix panel states no core section count or core minute total');
+      continue;
+    }
+    seen++;
+    const nSec = Number(m[1]), nMin = Number(m[2]);
     if (nSec !== core.length || nMin !== sum) {
       n++;
       violation('A4', `${l}/index.html`, `lede claims ${nSec} core sections in ${nMin} min; page has ${core.length} in ${sum}`);
     }
   }
-  if (!n) ran('A4', 'core ledes match their page');
+  if (!n) ran('A4', `${seen} core lede(s) match their page`);
 }
 
 /* ====================================================================== A5 */
