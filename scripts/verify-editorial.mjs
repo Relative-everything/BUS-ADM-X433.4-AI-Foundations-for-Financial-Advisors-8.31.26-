@@ -765,7 +765,14 @@ if (enabled('A15')) {
   for (const l of lessonFiles()) {
     const text = src(l);
     const c = classify(text);
-    const chipped = new Set([...text.matchAll(/data-src="(src-[^"]+)"/g)].map((x) => x[1]));
+    /* A footer entry's own terminal chip labels that entry's confidence; it is
+       not a citation of it. Counting it made an orphan undetectable in any
+       lesson using that convention, which was all of session-0.1's twelve keys
+       and, once inject-sources made the convention uniform, would have been all
+       of them. R7 is the footer-entry region, so excluding it is the fix. */
+    const inFooterEntry = (i) => (c.spans.R7 || []).some(([s0, e0]) => i >= s0 && i < e0);
+    const chipped = new Set([...text.matchAll(/data-src="(src-[^"]+)"/g)]
+      .filter((x) => !inFooterEntry(x.index)).map((x) => x[1]));
     for (const [s, e] of (c.spans.R7 || [])) {
       const body = text.slice(s, e);
       const id = (body.match(/id="(src-[^"]+)"/) || [])[1];
