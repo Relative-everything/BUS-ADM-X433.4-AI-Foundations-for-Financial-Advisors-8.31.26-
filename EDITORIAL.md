@@ -32,6 +32,18 @@ itself. Four figures this document relies on normatively (RC-1 to RC-4) were re-
 rule was written. Where the re-derivation and the report disagree, **the figure
 below governs**.
 
+> **RC-3 AND RC-4 WERE INVALIDATED BY PHASE 2 ON 2026-08-25, AND THEIR
+> RE-DERIVATION IS PHASE 7'S.** Step (e) retired all **22** `.apxback` bars and
+> all **20** `a.apxlink` teasers, so RC-3's Class D count of *"22 `.apxback` + 4
+> nav labels + 12 placeholder cells"* is now **0 + 4 + 12**, and the corpus R11
+> figure fell from 23 distinct blocks to 6 (lowered in
+> `scripts/editorial-baseline.json`, commit `d21f0eb`). Step (g) regenerates the
+> appendix index, so RC-4's cards are no longer hand-typed and its finding that
+> `session-3 #sHY` and `session-4 #sRSP` carry zero inbound `href` is **closed**:
+> both now have a card. Every other count in this document that names `.apxback`,
+> `a.apxlink` or an appendix card is stale in the same way. `docs/repo-updates-plan.md`
+> §9 lists the full Phase 7 re-derivation and §13.5 records what Phase 2 moved.
+
 | | Re-derived | Report says | Verdict |
 |---|---|---|---|
 | **RC-1** Wolfram references already carrying a valid section-level citation | **11 lines**: hub 0, S0.1 0, S1 2, S2 4, S3 5, S4 0 | §2.2 "nine" with a ten-row table; §2.3 "11" | **11.** §2.2's prose is wrong twice — against its own table and against disk |
@@ -360,13 +372,24 @@ of this section, not as a design exercise.**
 Two rules (A12, A13) are ones a script decides most of. Their residue is named
 explicitly and lives in Part B. They are not averaged.
 
+> **"Violated today" was re-derived on 2026-08-25 after Phase 2.** A1 through A5
+> stood at 23 violations and are now **0**: `scripts/build-appendix.mjs`
+> generates the appendix index, the ledes, the eyebrows, the cards and the
+> instructor minute budget from the sections, so those five rules no longer have
+> a hand-typed figure to disagree with. **A4 also changed shape** — it accepts a
+> second lede phrasing, because the trailing divider became a leading contents
+> panel and *"the N sections **above**"* is false of a panel, and it gained a
+> **presence floor**, because without one the rewording would have taken it from
+> checking four lessons to checking none while still printing PASS. The corpus
+> hard count is **5**: A13 ×2 and A14 ×3, all of them Phase 3's.
+
 | # | Rule | Regions | Verdict | Violated today |
 |---|---|---|---|---|
-| A1 | Appendix card minutes match their section | R1 | HARD FAIL | **12 cards** |
-| A2 | Appendix card count matches appendix section count | R1 | HARD FAIL | **2 lessons** |
-| A3 | Appendix eyebrow minute total matches the sections | R1 | HARD FAIL | **3 lessons** |
-| A4 | Core lede section count and minutes match the page | R1 | HARD FAIL | **4 lessons** |
-| A5 | Every appendix section has an inbound `href` | R1 | HARD FAIL | **2 sections** |
+| A1 | Appendix card minutes match their section | R1 | HARD FAIL | ~~12 cards~~ **clean (0)** |
+| A2 | Appendix card count matches appendix section count | R1 | HARD FAIL | ~~2 lessons~~ **clean (0)** |
+| A3 | Appendix eyebrow minute total matches the sections | R1 | HARD FAIL | ~~3 lessons~~ **clean (0)** |
+| A4 | Core lede section count and minutes match the page | R1 | HARD FAIL | ~~4 lessons~~ **clean (4/4)** |
+| A5 | Every appendix section has an inbound `href` | R1 | HARD FAIL | ~~2 sections~~ **clean (22/22)** |
 | A6 | `data-tier` present and in the enumeration | R3 | HARD FAIL | clean |
 | A7 | The tier filter offers every tier value present | R2, R3 | HARD FAIL | clean |
 | A8 | Em-dash form does not drift from the file's baseline | R1 less R11 | HARD FAIL | clean (baseline) |
@@ -375,7 +398,7 @@ explicitly and lives in Part B. They are not averaged.
 | A11 | Wolfram section names come from the locked 17 | R1, R7, R8, R9 | HARD FAIL | clean |
 | A12 | Every direct Wolfram quotation carries a section name | R1, looking out to R7, R8, R9 | ADVISE | **8** |
 | A13 | No off-by-one chip cascade | R1, R2 | HARD FAIL | **2 cascades** |
-| A14 | No declared-synthetic key on an external-work claim | R1, R2 | HARD FAIL | **≥2** |
+| A14 | No declared-synthetic key on an external-work claim | R1, R2 | HARD FAIL | **3** (recorded as ≥2; the checker finds three) |
 | A15 | Every footer key has a chip or a `data-nochip` reason | R7 | HARD FAIL | **23 keys** |
 | A16 | No `UNVERIFIED` / `TODO` / `FIXME` outside its declared register | R1, R2, R7 | HARD FAIL | clean |
 | A17 | Every marked vocabulary term has a definition record | R1, R3 | HARD FAIL | not yet built |
@@ -463,21 +486,36 @@ Session 1 passes.
 
 ### A4 — core lede section count and minutes match the page
 
-**Asserts.** The `.apxdiv` lede sentence *"The N sections above are the core
-session and run in about M minutes"* has N equal to the count of
+**Asserts.** The `.apxdiv` panel states a core section count N and a core minute
+total M, in one of two accepted sentences, with N equal to the count of
 `section.slide` that carry neither `apx` nor `apxdiv`, and M equal to their
-`span.mins` sum.
+`span.mins` sum:
+
+- *"The N sections **of** the core session run in about M minutes"* — what
+  `scripts/build-appendix.mjs` writes, since Phase 2 step (f) made the divider a
+  **leading** contents panel;
+- *"The N sections **above** are the core session and run in about M minutes"* —
+  the pre-Phase-2 form, still accepted so a file mid-migration binds.
+
+**And a presence floor: a lesson with an `.apxdiv` and neither sentence is a
+violation.** Before 2026-08-25 the rule fell through to the next lesson on no
+match, so rewording the lede would have taken A4 from checking four lessons to
+checking none **while still printing PASS**. That is the same shape as
+`verify-migration` check 20's zero-matches-is-a-PASS, which this document already
+records once. A rule that can be disarmed by a rewrite is not a rule.
 
 **Verdict.** HARD FAIL.
 
 **Message.**
 ```
 FAIL  A4  session-3/index.html  lede claims 12 core sections in 64 min; page has 13 in 70
+FAIL  A4  session-3/index.html  the appendix panel states no core section count or core minute total
 ```
 
-**Currently violated in all four lessons**: S1 claims 63 min against 67; S2 claims
+~~**Currently violated in all four lessons**: S1 claims 63 min against 67; S2 claims
 10 sections against 11; S3 claims 12 / 64 against 13 / 70; S4 claims 12 / 67
-against 13 / 70.
+against 13 / 70.~~ **Closed 2026-08-25.** All four sentences are generated from
+the sections and the rule reports `4 core lede(s) match their page`.
 
 ### A5 — every appendix section has an inbound href
 
@@ -1268,6 +1306,7 @@ Ratified against `docs/editorial-gap-report.md` §11.
 | **D18** | **The core minute band is 60–70, ratified 2026-08-25.** 150 allocated with tolerance 0 is unchanged and remains the only hard time constraint | `docs/repo-updates-plan.md`, below |
 | **D19** | **Supersedes D13. The §5 rubric is approved as corrected**: true population 86 sections / 82 content, the 0–4 anchors declared, the normaliser fixed at ×25, C5 banded within stratum | `docs/repo-updates-plan.md`, below |
 | **D20** | **Answers D14 as branch (b) with a changed reason.** `session-0.1` is out of scope *for the appendix/tier architecture* — standalone async, different delivery mode. It is **in** scope for every other rule | A1–A7, below |
+| **D21** | **Every retrieval-bridge item tests material taught in the prior session's CORE.** Ratified 2026-08-25. A durable principle, not a one-time repair | below; candidate Part A rule |
 
 ## D14 was [OPEN]; it is answered as D20 (2026-08-25)
 
@@ -1360,6 +1399,55 @@ The 150-minute target is a property of the live evening block. A file with no li
 block cannot satisfy it and should not be asked to.
 
 ---
+
+## D21 — a bridge item may only test the prior session's core, ratified 2026-08-25
+
+**The decision.** Every item in a retrieval bridge tests material taught in the
+**core** of the prior session. An item whose only teaching source is an appendix
+section of the prior session is a defect, whatever tier that appendix section
+carries.
+
+**The reason, and it is not a preference.** Phase 2 makes two changes that
+interact. Step (d) defaults the tier state to **core only**, and step (e) retires
+the `a.apxlink` teasers that were the only in-prose route into an appendix
+section. Together they make the appendix genuinely opt-in, and most students will
+not opt in. Before those changes a student could reach an appendix section by
+scrolling; after them, an appendix section a student did not choose is an
+appendix section they never saw. Any element that assumes prior teaching and
+resolves into an appendix therefore breaks by default rather than at the margin.
+
+**The instance that forced it.** `session-4`'s bridge item 3 tested grounding
+against fine-tuning. Measured over `session-3`: `fine-tun` occurs at nine places
+and every one of them is inside appendix `#s8` (`data-tier="foundational"`), its
+card, its teaser, its time-budget row, or a syllabus list that states no
+distinction. The core of `session-3` does not teach it anywhere. The item is
+rewritten in Phase 2 to test the architecture decision `session-3`'s core `#s6`
+does teach.
+
+**What the rule does not license.** A rewrite must still test the same mechanism
+at the same depth. Rewriting a bridge item into something easier to answer
+defeats the thing a bridge is for, and is a worse outcome than the defect it
+repairs. Where an item cannot be rewritten without losing what it tests, the
+alternative is to **promote** the source material into the prior session's core,
+with its minute cost stated, and that is an instructor decision rather than an
+editorial one.
+
+**It is mechanically checkable, and it is not built yet.** Once bridge items
+carry a marker and every section carries its core-or-appendix class, the
+assertion is: *for each bridge item in session N, at least one section of session
+N-1 that is not `section.apx` contains the material the item tests.* The hard
+part is the last clause — "contains the material it tests" is a human read today,
+and a first mechanical approximation is a declared per-item source id checked for
+`class` rather than a text search. Recorded as a candidate Part A rule
+(**A21**), deliberately not built in Phase 2: the population is 12 items and a
+rule that fires on the wrong twelve is worse than a rule that does not exist.
+`docs/repo-updates-plan.md` carries the full item-by-item audit that would seed
+it.
+
+**Scope.** Sessions 2, 3 and 4 carry bridges; `session-1` correctly has none.
+The same test applies to Phase 2 step (j)'s closing questions, which must be
+answerable from the core alone, and to any carry-forward artifact a later
+session reads from an earlier one.
 
 ## D18 — the core minute band, ratified 2026-08-25
 

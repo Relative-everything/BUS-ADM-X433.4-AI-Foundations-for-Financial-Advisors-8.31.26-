@@ -4,9 +4,16 @@
 begins by re-reading it and executes from it.** Nothing about a later phase needs
 to survive in a working context while an earlier one runs.
 
-Written 2026-08-25 on branch `claude/repo-restructure-phase1`. Phase 0 and a
-narrowed Phase 1 are complete and recorded below; nothing after Phase 1 has been
-executed and **no lesson file has been edited.**
+Written 2026-08-25 on branch `claude/repo-restructure-phase1`. Phase 0, a
+narrowed Phase 1, and **Phase 2 are complete**. Sessions 1 through 4 have been
+restructured; `session-0.1` is untouched, per D20.
+
+> **READ §13 FIRST IF YOU ARE RESUMING.** Phase 2 executed with six deltas
+> against this file, the largest of which is that **step (b) is deleted, not
+> deferred** — the MOVE list is not a decision anybody still owes. §13 records
+> what changed, what Phase 2 actually shipped, and every question left open. The
+> sections above it are kept as written except where a delta contradicts them,
+> and each such place says so.
 
 Companion documents, in the order a fresh session should read them:
 [`EDITORIAL.md`](../EDITORIAL.md) (the ratified rules and the decision register),
@@ -25,10 +32,10 @@ re-derive it.
 | Chat | Phase | Scope | Gate |
 |---|---|---|---|
 | **1** | **Phase 0 + narrowed Phase 1** | Premise audit; complexity measurement of sessions 1-4; this file | **done** |
-| 2 | Phase 2, structure | sessions 1-4, one pass per file | **gated on instructor approval of the MOVE list in §3.6** |
-| 3 | Phase 3, sources | all six files | the 27 mis-wired chips first, then `SOURCES.md`, then `BIBLIOGRAPHY.md`, then `DATA-PULL.md` |
+| **2** | **Phase 2, structure** | sessions 1-4, one pass per file | **done.** Step (b) deleted, not deferred — §13.1 |
+| 3 | Phase 3, sources | all six files | the mis-wired chips first, then `SOURCES.md`, then `BIBLIOGRAPHY.md`, then `DATA-PULL.md` |
 | 4 | Phase 4, instructor notes | all six files | after Phase 2, because notes are keyed to sections |
-| 5-9 | Phase 5, prose | one lesson per chat, parallelisable in worktrees | after Phase 3 (citations need the source keys) |
+| 5-9 | **Phase 5, prose: REDUCE + analogues + citations + vocabulary marking** | one lesson per chat, parallelisable in worktrees | after Phase 3 (citations need the source keys) |
 | 10 | Phase 6, vocabulary | all six files, **`session-0.1` first** | after Phase 3 (A19 joins the bibliography) |
 | 11 | Phase 7, verify and record | repo-wide | last |
 
@@ -39,9 +46,14 @@ Phase 4 follows Phase 2 because instructor notes are extracted per section, and 
 section that has moved has to be found again. Phase 5 splits by lesson because
 its three edits are lesson-local and nothing crosses a file boundary.
 
-**Phase 2 is gated and the gate is not a formality.** The MOVE list in §3.6 is a
-curriculum decision. It is the instructor's, not this plan's. Phase 2 may run
-steps (a) and (c) through (j) without it; step (b) waits.
+~~**Phase 2 is gated and the gate is not a formality.**~~ **SUPERSEDED 2026-08-25.
+There is no gate, because there is no MOVE list.** Step (b) is deleted rather
+than deferred: Phase 1 returned exactly one MOVE candidate, and the reason it
+returned one was **R1** — the core of this course is overwhelmingly application,
+and application does not move. The REDUCE work that step (b) would have shared a
+pass with moves to **Phase 5**, because drawing a planning analogue *is* the
+reduction mechanism for an application-adjacent section. §13.1 records this in
+full. Nothing in Phase 2 waited on anything.
 
 ---
 
@@ -1069,16 +1081,34 @@ them as literal `§`, so the two lines have different md5s and identical output.
 **That is why no byte-level check ever caught the duplication**, and it is a small
 worked example of the region discipline this repository was built on.
 
-### 4.2 Step (b) — apply the Phase 1 MOVE decisions in the same pass
+### 4.2 Step (b) — ~~apply the Phase 1 MOVE decisions in the same pass~~ DELETED
 
-**GATED.** See §3.6. Nothing in step (b) runs until the instructor has approved
-the MOVE list. Steps (a) and (c) through (j) do not depend on it and may run
-first; if they do, `window.__coreMins` and the regenerated index in step (g) are
-re-derived a second time when (b) lands.
+**DELETED 2026-08-25, not deferred. No section is relocated for complexity
+reasons, in this phase or any later one.** The instruction is recorded here
+rather than removed, because the reason matters more than the deletion.
 
-A MOVE is mechanically: add `apx` to the section's class, add `data-tier`, add
-`data-insert-after` naming the core section it now follows, and place it there.
-A REDUCE changes prose only and must respect the 3-16 minute per-section envelope.
+**Why.** Phase 1 scored 70 content sections and returned **one** MOVE candidate
+that survived four adversarial passes, and §3.7's own headline says what killed
+the rest: *"The constraint that bites is not the minute budget. It is R1: the
+core of this course is overwhelmingly application, and application does not
+move."* Of 14 flagged sections, 5 are already appendix, 4 are immovable openers
+or bridge anchors, and 4 are R1 CLOSE. The single survivor, `session-2 #s3`,
+turns on one borderline R1 judgement (§12.7d), collides with three separate
+things (§3.7 findings 1 to 3), and would demote the section Phase 5 is told to
+inject its flagship analogue into. A restructure whose whole yield is one
+contested section is not a restructure.
+
+**Where the work went.** The REDUCE half moves to **Phase 5** and merges with
+the analogue injection, because **drawing a planning analogue is the reduction
+mechanism for an application-adjacent section**. A section that is hard because
+a CFP has no hook for it is reduced by giving them the hook, not by cutting the
+idea — and §10.3's `hard_because = IDEA` protection says the same thing from the
+other side: all 14 flagged sections carry `IDEA` or `BOTH`, none `PROSE` alone.
+Phase 5 is therefore **"prose pass: REDUCE + analogues + citations + vocabulary
+marking"**, one lesson per chat, and §3.7's per-section verdicts are its input.
+
+**The appendix reflow is unaffected and proceeded.** Step (a) is a reading-order
+change, not a complexity decision, and nothing in it depended on step (b).
 
 ### 4.3 Step (c) — make the tier filter actually remove
 
@@ -1323,6 +1353,7 @@ appendix section after it, in every tier state.
 > Phase 5 is. Phase 5 already includes `session-0.1`. **The instructor decides.**
 
 ### 4.11 Verification per file, before moving to the next
+<!-- As executed: see §13.5 for the measured before-and-after. -->
 
 `verify-browser`, `validate_dom`, no horizontal overflow at 1280px, every `href`
 resolves, print output deterministic, Shift+U still reveals.
@@ -1506,7 +1537,19 @@ behind a tidier label.
 
 ---
 
-## 6. Phase 5 — the prose pass. One lesson at a time, three edits in a single pass
+## 6. Phase 5 — the prose pass. One lesson at a time, FOUR edits in a single pass
+
+> **AMENDED 2026-08-25.** Phase 5 is now **REDUCE + analogues + citations +
+> vocabulary marking**. The REDUCE work arrives from the deleted Phase 2 step (b)
+> (§4.2), and it belongs here rather than there because **drawing a planning
+> analogue is the reduction mechanism for an application-adjacent section**. The
+> two are one edit on the same paragraph, not two passes over it. §3.7's
+> per-section verdicts are Phase 5's input: 14 flagged sections, every one of
+> them carrying `hard_because = IDEA` or `BOTH`, which under §10.3 means the
+> honest remedy is a hook rather than a cut. Three of them carry `R2 = NO`
+> (`s2 #s5`, `s4 #s3`, `s1 #s2`) where §2.3 says the remedy is more likely
+> **adding a self-check** than removing anything.
+
 
 **Three separate passes over the same prose is three times the risk.** Chats 5-9,
 one lesson each, parallelisable in worktrees because nothing crosses a file
@@ -1947,6 +1990,11 @@ Ranked. A MUST is not a preference and does not yield to convenience.
 
 ## 11. The verification surface, and its baseline
 
+> **This section is the PRE-PHASE-2 baseline and is kept as the measurement it
+> was. §13.5 carries the same table measured after Phase 2.** The headline change
+> is `verify-editorial`: **28 hard failures down to 5**.
+
+
 **Every later phase reports exit codes against these.** Measured on
 `claude/repo-restructure-phase1` at the commit this plan lands on, with no lesson
 file edited.
@@ -2361,3 +2409,386 @@ and now a measurement whose heaviest component was scored to two different
 standards by two agents reading the same spec. **The pattern is not carelessness.
 It is that every check here has to be run against the corpus rather than against
 the document describing the corpus.**
+
+---
+
+## 13. Phase 2 as executed, 2026-08-25
+
+**Everything above this section is the specification as written before Phase 2
+ran. This section is what actually happened, and where the two disagree, this
+one governs.** Phase 2 executed under six deltas from the instructor. They are
+recorded first because five of them change what a later phase should expect.
+
+### 13.1 The six deltas, and what each one changed
+
+| # | Delta | Effect |
+|---|---|---|
+| **1** | **No section moves. At all.** Step (b) is **deleted, not deferred** | §4.2 rewritten. The REDUCE work merges into Phase 5 with the analogue injection, because drawing a planning analogue *is* the reduction mechanism for an application-adjacent section. **R1 is why**: the core of this course is application, and application does not move. The appendix reflow proceeded unchanged, being a reading-order change rather than a complexity decision |
+| **2** | **Ratified: every retrieval-bridge item tests the prior session's CORE** | Recorded as **D21** in `EDITORIAL.md`, with its reason and a candidate Part A rule (**A21**). The full audit is §13.2. One item required rewriting |
+| **3** | **D18's cost is a factual error on a student-facing page** | *"The core alone is the one-hour version"* was printed in all four lessons against cores of 67, 67, 70 and 70. Fixed the sentence, not the minutes: every on-page time claim now states what the lesson runs, and where a core exceeds sixty minutes the page says so. Nine copies, §13.4 |
+| **4** | **Carry the Phase 1 corrections into every figure** | Confirmed as a byproduct. The A5 Sampler Lab card now reads **16**, not 18, and `session-1`'s compensating +2/−2 index pair is gone. The ratified 15-minute discussion value was **not** preserved, which is the trade §4.7 predicted — §13.4 F1 |
+| **5** | **Report V2 upstream, do not work around it** | `MAINTAINING.md` "Known follow-ups" now carries `validate_lesson.py` V2 with the specific failing input, alongside the C2 entry. The skill was not edited and the check was not routed around |
+| **6** | **Branch** | All work is on `claude/repo-restructure-phase1`. The harness designation was noted and ignored |
+
+### 13.2 The Delta 2 audit, in full
+
+**Method.** Mechanical, per the standing lesson of §12.9: every dependency was
+located by script over the corpus and classified by the class of the section that
+contains it, not by an agent's reading. Three sweeps: every retrieval-bridge item
+against the prior lesson; every `Appendix [A-D]N` reference outside generated
+furniture; every cross-session and carry-forward phrase
+(`Session N`, `you built / saw / ran / made / generated / captured / wrote`).
+
+#### A. The twelve retrieval-bridge items
+
+| item | tests | prior-session source | core or appendix | verdict |
+|---|---|---|---|---|
+| **s2-1** | what the model produces per step: a distribution over ~50k tokens | `s1 #s2` "The Model Ranks Candidates" + `s1 #s5` (*"About 50,000 tokens exist"*, line 1375) | **CORE** + **CORE** | holds |
+| **s2-2** | $55M against $14M: fluency about a number is not access to it | `s1 #s9` "The Same Question, Asked Three Times" + the case block, which is outside the tier system and always visible | **CORE** | holds |
+| **s2-3** | why tiers rank by cost per finished task, not per token | `s1 #s10`, whose chart axis *is* "Cost per Task" and whose closing line is *"a per-token price cut does not always cut the bill"* | **CORE** | holds |
+| **s2-4** | the three Cole confidentiality landmines | `s1 #s13` "What May Never Be Entered Into a Third-Party Tool", verbatim to its NPI sorter | **CORE** | holds |
+| **s3-1** | existence | `s2 #s10` "Check 01 — Existence" | **CORE** | holds |
+| **s3-2** | says what it is claimed to say | `s2 #s10`, the four-check block | **CORE** | holds |
+| **s3-3** | currency | `s2 #s10` "Check 03 — Currency" | **CORE** | holds |
+| **s3-4** | applicability | `s2 #s10`, *"Existence is the floor of verification and never the ceiling"* | **CORE** | holds |
+| **s4-1** | the grounding qualifier | `s3 #s1` lede, which is the answer verbatim, + `s3 #s4` | **CORE** | holds |
+| **s4-2** | the note-taker pipeline in order | `s3 #s10`, verbatim: *"Transcription, extraction, categorisation, follow-up"* | **CORE** | holds |
+| **s4-3** | **grounding against fine-tuning** | **`s3 #s8`, `data-tier="foundational"`, the only source in the file** | **APPENDIX** | **REWRITTEN** |
+| **s4-4** | what extraction surfaced: $18M against $55M | `s3 #s6`'s prediction widget feedback + `s3 #s4` + the case block | **CORE** | holds |
+
+**Eleven of twelve hold. The evidence for the twelfth**, re-measured this
+session: `fine-tun` occurs in `session-3` at lines 1103, 1277, 1517, 1581, 1583,
+1587, 1599, 1679 and 2145. Lines 1581/1583/1587/1599 are inside `#s8`; 2145 is
+the `ARCH` array whose host `#rankList` is at 1593, **also inside `#s8`**; 1517
+is the appendix card and 1679 the time-budget row; 1103 is a syllabus list that
+states no distinction; and **1277 is the `apxlink` teaser inside core `#s7`,
+which step (e) retires and which `body.core-only` already hid.** The core of
+`session-3` teaches the distinction nowhere.
+
+**The rewrite, and why it is the same mechanism at the same depth.**
+
+> **Was:** *"Grounding versus fine-tuning, for a meeting-prep assistant over the
+> Cole corpus."* → *"Grounding retrieves at query time; fine-tuning changes the
+> weights."*
+>
+> **Now:** *"A meeting-prep assistant over the Cole corpus: nine documents. What
+> did Session 3 say the architecture should be?"* → *"Put the whole corpus in the
+> prompt — retrieval solves a problem this corpus does not have."*
+
+The slot is the same: item 3 of four is the **architecture decision**, between
+item 2's workflow and item 4's case finding. The depth is the same: a
+three-option MCQ whose distractors are plausible conflations and whose feedback
+names the consequence. Every claim in the new item comes from `session-3` core
+`#s6`: the ~200,000-token boundary, the nine-document corpus, the 1.9% measured
+retrieval floor on the vendor's own benchmark, and the closing beat *"a large
+share of the advisory RAG projects sold in 2026 solve a problem the buyer does
+not have"* — which is the same "you are being sold the wrong thing" move that
+made the original worth asking, and which `#s8` line 1583 makes in almost the
+same words. Both distractors are refutable from `#s6` alone.
+
+**No promotion was needed and none was taken.** The alternative — promoting
+`session-3 #s8` into that lesson's core at **14 minutes** against a core already
+at the 70-minute ceiling — is a real trade and was not made, because it is not
+required: `fine-tun` appears in `session-4` **only inside the bridge item
+itself**, so nothing downstream depended on the distinction. Had it been
+required, the promotion and its cost would have been surfaced rather than taken.
+
+#### B. Carry-forward artifacts and cross-session references
+
+**Eighteen cross-lesson references were located and every one resolves to the
+prior session's core.** Listed by site, with the section each depends on:
+`s2` sCold→`s1` sCold; `s2 #s12` and its baseline script ×3 →`s1 #s15`;
+`s2` script→`s1` sCold; `s3 #s1`→`s1 #s2` and `s2 #s3`; `s3` sCold→`s1` sCold;
+`s3 #s13`→`s2 #s8`; `s3 #s16`→`s1 #s15`; `s3 #s7`→`s1 #s9`;
+`s4 #s0`→general; `s4 #s2`→`s1 #s13`; `s4 #s4`→`s3 #s4`/`#s6`;
+`s4 #s6`→`s3` core; `s4 #s7`→`s2 #s8` and `s1 #s15`;
+`s4 #s8`→`s2` core and `s3 #s10`, and it already carries an explicit fallback
+for a student who missed either session. **Nothing in class B needed rewriting.**
+
+#### C. Intra-lesson elements that assumed appendix teaching — four found, three rewritten
+
+| site | what it assumed | class | action |
+|---|---|---|---|
+| `session-1 #s15` (**core**, last section) | *"You built it by hand: counted letters, hit the combinatorial wall, turned the knobs, cut a distribution nine ways, and watched a network fail to count."* All five clauses are appendix: A1 twice, A2, A5, A4. **Zero of five happen in the core** | core → appendix | **rewritten** to four things the core does: place six tokens one at a time, ask one question three times, price a year of it, sort the household's facts |
+| `session-1 #s12` (**core**) tier-quiz feedback | *"Correct on tier — and recall Appendix A4"*, plus *"the parenthesis problem"*, a term A4 alone defines, and *"a feed-forward network"*, a mechanism A4 alone teaches | core → appendix | **rewritten** to carry the mechanism in the sentence instead of the pointer. The answer key is unchanged |
+| `session-1 #s14` (**appendix, foundational**) diagnostic | *"You built this in §02 and Appendix A5"* (A5 is **advanced**, a tier deeper) and *"The parenthesis problem"* (A4 is **standard**) | appendix → deeper appendix | **rewritten**. At Foundational depth both targets are stubbed out |
+| `session-2 #s3` (**core**) | *"Pull up the three responses you generated in Appendix B1."* B1 is foundational appendix; core-only never shows it | core → appendix | **rewritten** to three unconstrained runs of the same prompt the next paragraph then constrains, which makes the before-and-after pair local to the core section that needs it |
+
+#### D. What survives, and is flagged rather than fixed
+
+1. **`session-1 #s15`'s CFP Board coverage table, two rows.** *"Professional
+   Conduct and Regulation | FINRA 24-09, SEC AI-washing proceedings, the three
+   landmines, the disclosure discussion"* — FINRA 24-09 and the AI-washing
+   proceedings are taught only in **A6** (`#s14`, foundational), the disclosure
+   discussion only in **A7** (`#s14c`, standard); only *the three landmines* is
+   core. And *"General Principles | Model assumptions and the Monte Carlo
+   parallel"* — the Monte Carlo parallel is drawn only in **A2** (`#s4`,
+   advanced), per §6.4. **Not rewritten, because which CFP Board domains a lesson
+   claims to touch is a curriculum statement and MUST 5 applies.** Both rows are
+   over-specified rather than false at the domain level: the second clause of
+   each is core. **Recommendation:** Phase 5 owes `session-1 #s2` the Monte Carlo
+   analogue (§6.4), which restores that vehicle to the core and makes row 2 true
+   as written; row 1 needs either a core-only phrasing or a decision that the CE
+   claim is made on the full 150 minutes rather than the core.
+2. **`session-2 #s12d` names Appendix B4.** Both are `standard`, so any depth
+   that shows one shows the other. No break. Recorded so a re-tier of either is
+   known to touch it.
+3. **Three footer `Used for:` clauses name appendix material** —
+   `session-1` `src-sampling` (*"the nine sampler controls"*, A5),
+   `session-4` `src-regsp` (*"the Appendix D5 tabletop"*) and `src-wolfram`. The
+   footer is always visible, so a core-only reader meets a source entry
+   describing material they did not see. **Phase 3 owns the footer** and
+   `SOURCES.md`'s `cited_by[]` will carry section ids that make this checkable.
+4. **One JS comment**, `session-1` *"Appendix A5: the same temperature control
+   the lab simulates"*. Region R5. Accurate description of the code it sits above.
+   Recorded because Phase 4's purge standard says a reader who views source is a
+   reader.
+
+#### E. The closing questions (step j), against the same test
+
+All four are prose in a `.talk` block, carry no `data-task`, and therefore do not
+move `validate_lesson` V6's interaction count.
+
+| lesson | section | question | answerable from |
+|---|---|---|---|
+| `session-1` | `#s15` Close | *"A model has just handed you a clean, confident, well-written answer about the Cole discount. Name the one thing tonight said you still cannot conclude from that, and say which part of the machine is the reason."* | `#s9` **core** (the scoring rule, *"confident tone is not a claim about confidence"*), `#s2` **core** (the sampler), and `#s15`'s own card 01 |
+| `session-2` | `#s12` Final project | *"Your rewritten template just produced a clean, well-sourced answer on the Cole discount. Name the one check you would still run before any of it reaches Meg, and say why the answer looking right is not a reason to skip it."* | `#s10` **core** (the four checks, *"existence is the floor and never the ceiling"*), `#s3` **core** (*"re-asking is not verification"*) |
+| `session-3` | `#s16` Close | *"Tonight's grounded answer was correctly retrieved, accurately quoted, and materially wrong. Name the point in your own meeting workflow where you would have caught it, and say who is left holding it if nobody does."* | `#s7` **core** (*"Grounded. Sourced. Quoted accurately. Materially wrong."*), `#s9` **core** (the five-stage chain and where a human first sees it), `#s13` **core** (the basis you sign) |
+| `session-4` | `#s9` Homework | *"Name one record you will start keeping on Monday morning, and say what it lets you answer eighteen months from now that you could not answer today."* | `#s8` **core** (audit trails and the four-field record), `#s1` **core** (the duties that already applied) |
+
+**None of the four depends on an appendix section.** Confidence that the room can
+answer each is in §13.7.
+
+**One thing the closing questions cost that is not budgeted.** A one-to-three
+person call-and-discuss close is one to two minutes, and no minute was added
+anywhere: the last core sections remain 5 / 5 / 5 / 5 and the 150 total is
+untouched, per the tolerance-0 constraint. **Flagged.** If the close is to be
+timed rather than absorbed, one minute has to come from somewhere in each lesson,
+and that is a minute-budget decision rather than an editorial one.
+
+### 13.3 What shipped, step by step
+
+| step | shipped | note |
+|---|---|---|
+| **(a)** reflow | yes, all four | Plain sibling reorder in the source. `scripts/build-appendix.mjs` does it, idempotently, and refuses to write unless its own split/assemble round-trips byte for byte |
+| **(b)** MOVE | **deleted** | §4.2, §13.1 |
+| **(c)** dim → removal | yes | `section.apx.dim` collapses to a generated `.apxstub` naming the section, its minutes and its tier. The stub keeps the section in flow, so an inbound card link still resolves and still lands — which `display:none` would have broken |
+| **(d)** core-only default | yes | `coreOnly=true` at init, the `on` class on `button.core`, and `section.apxdiv` dropped from the `body.core-only` hide rule but **kept** in the `@media print` one |
+| **(e)** retire the furniture | yes | **22** `.apxback` bars and **20** `a.apxlink` teasers, exactly the counts §4.5 predicted, plus their CSS and the now-dead `@media print{a.apxlink{display:none}}` |
+| **(f)** contents panel | yes | `section.apxdiv#apx` is now the **second** section in every lesson, immediately after the opener that carries `#tierbar`. Relabelled `data-nav="Appendix contents"` |
+| **(g)** generate the index | yes | Nine copies, not seven — §13.4 F2, F3 |
+| **(h)** `#sHY` and `#sRSP` | yes | Fell out of (g). A5 is now 0 |
+| **(i)** nav rail | yes, **plus one fix (d) forced** | Arrow-key navigation in `session-1` now derives both position and step geometrically. And the rail no longer carries a pip for a section core-only hides, which step (d) would otherwise have left pointing at `display:none` |
+| **(j)** closing questions | yes, all four | §13.2 E |
+
+**Two changes step (d) forced that the plan did not anticipate**, both shipped:
+the dead rail pips above, and the tier readout, which said *"Core only — appendix
+hidden. This is the one-hour version."* in all four lessons and now reads the
+figure the generator wrote.
+
+### 13.4 Findings, and the open decisions
+
+> **F1 — the ratified discussion figure was overwritten, as §4.7 predicted, and
+> the generator now refuses to do it silently.** `session-1`'s A7 card said 15,
+> `references/pedagogy.md` §s4 says *"named discussion block 20 min (15 in Session
+> 1)"*, and the section eyebrow and time-budget row both say **17**. Regenerating
+> the index from the sections made the card say 17 and buried a parameter
+> violation the drifted index had been masking. `build-appendix.mjs` carries a
+> `RATIFIED` table and prints the conflict on **every** run, in both modes.
+> **Two readings, and the instructor picks:** the block really is 17 and the
+> parameter is stale, or it is 15 and two minutes go back to `#s8` — which is
+> where the card said they were, since the card had `#s8` at 18 against its
+> section's 16. **Open.** Registered in `MAINTAINING.md`.
+
+> **F2 — there were nine copies of the minute figures, not seven, and the two
+> the plan missed were the two least checked.** §4.7 and §12.7c enumerate seven.
+> Measured: **`session-2` carried an eighth** — a student-facing "Time budget"
+> table in `#s0` that agreed with none of the other copies (Appendix B1 at 9
+> minutes against 16, Final Project Part 1 at 10 against 5) and **omitted the
+> 8-minute cold-open ritual entirely**, which dates it to before that ritual
+> existed. Nothing checked it: `validate_lesson` V5 and `verify-migration` 16
+> both read the `data-timing` table, and this one has no `data-timing`.
+> **`session-3` carried a ninth** — a footer paragraph, *"Twelve core sections
+> and four appendix sections. The core runs in about 64 minutes — the one-hour
+> version — and the appendix adds 48 more, taken in place at the gold links"* —
+> **wrong on all four numbers** (13, 70, 5, 80) and pointing at teasers step (e)
+> retires. Both are now generated regions (`APXMAP`, `APXNOTE`).
+
+> **F3 — the generator, and what it is allowed to do.** Every number in every one
+> of the nine copies is read off the sections. `fill()` throws on an
+> unsubstituted `{{PLACEHOLDER}}` and on an undefined value, so a missing figure
+> is a crash rather than a published hole — MUST 6, and the direct answer to the
+> three hand-edited counts Phase 1 found that had silently stopped matching their
+> tables. `--check` is "run it and diff", which detects a hand-edit inside a
+> generated region.
+
+> **F4 — A4 was one lede-rewording away from checking nothing at all.** Its regex
+> required the literal phrase *"The N sections **above** are the core session"*,
+> which step (f) makes false. On no match the old code fell through to
+> `continue`: rewording would have taken A4 from checking four lessons to
+> checking none **while still printing PASS**. It now accepts both phrasings and
+> carries a **presence floor** — an `.apxdiv` with no core-count sentence is a
+> violation. This is the same shape as `verify-migration` check 20's
+> zero-matches-is-a-PASS, which §3.5 part 5 already recorded once.
+
+> **F5 — the reflow moved `validate_lesson` V6's consecutive-component check, in
+> both directions.** The check reads the first `data-comp` per section in source
+> order, so it is a property of the ordering. Measured: **`session-1`'s
+> pre-existing `work-along-gate` repeat is gone.** **`session-2` gained
+> `multi-column-sorter`** — core `#s8` "The Interview Rewrite" and appendix B4
+> "The Seven-Step Process", adjacent because B4 anchors to `#s8`. **`session-4`
+> gained `commit-first-mcq`** — appendix D3 "Where the Assigned Reading Has Gone
+> Stale" and core `#s8` "Audit Trails", adjacent because D3 anchors to `#s7`.
+> Net across the corpus the check improved, 2 failing lessons to 1. **Open, both
+> new pairs:** re-anchor the appendix section, or re-tag one of the two
+> components. Both are curriculum calls. Note that neither pair is adjacent for a
+> reader at the default core-only depth; the rule is about source order.
+
+> **F6 — `session-2`'s print output is not deterministic, and was not before this
+> work.** Two renders of the unmodified pre-Phase-2 file produce different PDFs.
+> Cause: `runFive()` renders five `Math.random()` draws at load, by design, to
+> show output variance. Sessions 1, 3 and 4 are deterministic. **Not fixed:**
+> changing it is a change to interaction logic, which MUST 3 prohibits.
+> **Recorded as a pre-existing condition, not a Phase 2 regression.**
+
+> **F7 — `session-4`'s D4 card gained three words.** Its `<b>` read *"Whether the
+> Logging Burden Costs More Than the Tool Saves"* while the section's `h2` is
+> *"Discussion: Whether the Logging Burden…"*. The generator writes the `h2`, as
+> the time-budget row already did. Cosmetic, recorded so it is not read as drift.
+
+> **F8 — prose density fell in every lesson, and it is report-only.**
+> `verify-migration` check 17, before → after: `session-1` 8468 → 8333 words
+> (56.5 → 55.6 wpm), `session-2` 10008 → 9842 (66.7 → 65.6), `session-3`
+> 9676 → 9608 (64.5 → 64.1), `session-4` 11034 → 10960 (73.6 → 73.1). Retiring
+> 42 pieces of furniture removes more words than four closing questions add. The
+> band is unratified by D15 and the check reports rather than asserts.
+
+### 13.5 The verification surface, measured before and after
+
+| Check | Before | After | Note |
+|---|---|---|---|
+| `verify-case.mjs` | 0 | **0** | |
+| `verify-migration.mjs` | 0 | **0** | check 20's detail line still reads **6 pinned figure(s)**, so no pinned sentence lost contiguity |
+| `verify-style.mjs` | 0 | **0** | the apx CSS is outside the managed fence and stayed byte-identical across the four lessons |
+| `verify-browser.mjs` | 0 | **0** | zero JS errors, Shift+U still reveals, no horizontal overflow at 1280px, in all five lessons |
+| `inject-case.mjs --check` | 0 | **0** | |
+| `test-editorial-regions.mjs` | 0 | **0** | T6's `data-nav` probe follows the relabelled panel; T7 reads the lowered baseline |
+| **`verify-editorial.mjs`** | **1 — 28 hard** | **1 — 5 hard** | **A1×12, A2×2, A3×3, A4×4, A5×2 all resolved.** The 5 survivors are A13×2 and A14×3, which are Phase 3's |
+| `build-appendix.mjs --check` | n/a | **0** | new |
+| `validate_dom.js` ×5 | 0 | **0** | |
+| `validate_lesson.py` ×5 | 1 | **1** | pre-existing. Per lesson, failures before → after: 0.1 **1→1**, s1 **9→8**, s2 **9→9**, s3 **6→6**, s4 **7→8**. The only movement is F5's V6 line |
+| `restyle_sweep.py --check` | 1 | **1** | *"7 current, 0 stale, 2 without fence"*, unchanged and correct per §11.2 |
+| print determinism | — | **3 of 4** | `session-2` fails and failed before. F6 |
+
+**The `verify-editorial` hard count fell from 28 to 5.** A1 through A5 were 23 of
+the 28 and step (g) resolved all 23, exactly as §4.7 said it would. **The five
+that survive are named:** `A13 session-3:2047`, `A13 session-4:1381`,
+`A14 session-3:1578`, `A14 session-3:1610`, `A14 session-4:1259` — the mis-wired
+chip cascades and the three `src-case` chips, all of which §5.1 assigns to
+Phase 3. **No A-rule survived that step (g) was supposed to close.**
+
+Four ratchets were lowered by hand in their own commit, per `MAINTAINING.md`:
+R11 corpus 23 blocks / 23 dashes → **6 / 6** (the `.apxback` bars were R11);
+A9 `session-2` 69 → **67** entity and `session-3` 15 → **13** (the teasers were
+R1); and the S-3 reconciliation's whole-file figure, re-measured at **15**.
+
+### 13.6 Red team
+
+**Named, not fixed silently. Each item is the answer to one of the six questions
+the brief asked before the final commit.**
+
+**(a) Every element still depending on appendix material after Delta 2.** Four,
+all in §13.2 D, none of them a bridge item or a closing question: `session-1
+#s15`'s two CFP Board rows (flagged, curriculum), `session-2 #s12d`'s reference
+to B4 (same tier, no break), three footer `Used for:` clauses (Phase 3 owns the
+footer), and one JS comment. The sweeps that found them are reproducible:
+`Appendix [A-D]N` outside generated furniture, and appendix section titles or nav
+labels appearing inside a core section.
+
+**(b) Rewritten bridge items where the mechanism drifted.** One item was
+rewritten and **the mechanism did not drift**: same slot (architecture decision,
+third of four), same depth (three-option MCQ, plausible conflations, consequence
+named in the feedback), same rhetorical move (*"you are being sold the wrong
+thing"*). What did change is the **term** the item is keyed to: it now tests
+retrieval-versus-whole-corpus rather than grounding-versus-fine-tuning. Those are
+adjacent architecture questions, not the same one. **The honest statement is that
+the item tests the same faculty on different material**, and if the instructor
+wants the fine-tuning distinction tested specifically, the only route is the
+promotion in §13.2 A and its 14 minutes. **This is the single judgement in the
+Delta 2 work most worth a human minute.**
+
+**(c) Thresholds whose answer is a property of text that changed position.**
+Four found, all re-derived rather than carried forward:
+**V6's consecutive-component rule** — moved in both directions, F5, open;
+**core `§NN` numbering** — re-derived and **identical** in all four lessons
+(`01-10`, `01-09`, `01-11`, `01-11`), because no core section moved and every
+in-prose `§NN` reference lived in furniture step (e) retired or step (g)
+regenerates, exactly as §3.5 part 6 proved in advance;
+**`session-4 #s10`'s *"you will open yours in the next section"*** — verified: the
+next section is still `#sCR`, at every depth, because nothing anchors to `#s10`;
+**the panel lede's *"the depth control above"*** — verified: `#tierbar` precedes
+the panel by byte offset in all four files.
+
+**(d) Regenerated numbers disagreeing with a figure elsewhere on the page.**
+**None.** All nine copies were extracted and compared per lesson: section
+`span.mins` sums, panel eyebrow, panel lede count and minutes, panel lede
+cardinal, card count and card minute sum, `window.__coreMins`, `tbudget` core and
+appendix row sums and its `alloc` row, the `alloc` label sentence, `APXMAP`,
+`APXNOTE`, and the stub minute sum. Every one agrees, in all four lessons, at
+67/83, 67/83, 70/80 and 70/80. The two figures that **changed value** are the
+Delta 4 pair and both are intended: A5's card 18 → **16** and A7's card 15 →
+**17**, the second being F1.
+
+**(e) Closing questions I am not confident the room can answer.** One.
+`session-3`'s asks *"who is left holding it if nobody does"*. The material is in
+core `#s13` (*"A record of what was said is not a record of why you recommended
+what you recommended"*) and in the course's standing card *"You sign the work"*,
+but that card is `session-1`'s, not `session-3`'s, and `session-3`'s core states
+the accountability point less directly than the other three lessons state theirs.
+A room may answer the first clause crisply and stall on the second. **It is
+answerable; it is the least certain of the four.** The other three are keyed to
+sentences a student read that night.
+
+**(f) One further thing worth naming, which the brief did not ask for.**
+`section.apx.dim` now removes rather than dims, and the reader's only route to a
+removed section is the stub and the card. That is a strict improvement over
+`opacity:.32` — §8.3 failure mode 7 is that a dimmed section is one a reader on
+Foundational reads anyway — but it does mean the **tier bar is now load-bearing
+in a way it was not**. A reader who never touches it sees the core and a contents
+panel, which is the intended design; a reader who sets Foundational sees stubs
+where the advanced sections were. Both states were exercised in a real browser
+and both behave. What was not tested is whether a room *notices* the tier bar,
+and that is a classroom observation rather than a check.
+
+### 13.7 Confidence, per lesson, and what would change it
+
+| Lesson | Confidence | What would change it |
+|---|---|---|
+| **`session-1`** | **HIGH** | The mechanical surface is fully verified: reflow, 9 copies, A1-A5 at 0, browser clean, print deterministic, V6 improved. The one soft spot is the `#s15` rewrite, which replaced five appendix claims with four core ones — a reader who thinks *"cut a distribution nine ways"* was load-bearing for the close should say so. The two CFP Board rows are flagged and unresolved |
+| **`session-2`** | **MEDIUM-HIGH** | Everything mechanical is clean, but this lesson carries both open items: the new `multi-column-sorter` adjacency (F5) and the pre-existing print nondeterminism (F6). It also lost the most content — the stale on-page time budget was 2,660 characters — and although every number in it was wrong, **a reader may want the segment-level session map back in some form**, which is a design call rather than a defect |
+| **`session-3`** | **HIGH** | The cleanest of the four. Nothing was rewritten for a dependency, `#sHY` gained the route in that A5 had been failing on for two lessons' worth of work, and the tie-break reversal (C1 before C5) puts the material in the order it builds in. The footer paragraph it lost was wrong on all four numbers |
+| **`session-4`** | **MEDIUM** | The bridge rewrite is here, and it is the one place in Phase 2 where a judgement rather than a measurement decided the outcome — see red team (b). Everything else is clean and verified, and the new `commit-first-mcq` adjacency (F5) is open. **What would raise it to HIGH: an instructor reading the rewritten item 3 against the original and confirming that testing the architecture decision is what that slot is for.** What would lower it: a decision that the fine-tuning distinction has to be tested, which forces the 14-minute promotion |
+
+**Corpus-level, the thing most worth a human hour**, if only one is available:
+read `session-4`'s rewritten bridge item 3 against `session-3 #s6`, and decide
+whether the architecture decision is the right thing for that slot. Everything
+else in Phase 2 is either mechanically verified or explicitly flagged.
+
+### 13.8 What Phase 2 leaves open
+
+1. **F1** — `session-1`'s discussion block: 17 minutes on the section, 15 in the
+   ratified parameter. Instructor picks. Printed on every generator run.
+2. **F5** — two new consecutive-component adjacencies, `session-2` and
+   `session-4`. Re-anchor or re-tag. Both curriculum.
+3. **§13.2 D1** — `session-1 #s15`'s two CFP Board rows over-claim appendix
+   material. Row 2 is closed by Phase 5's Monte Carlo injection into `#s2`; row 1
+   needs a decision.
+4. **§13.2 E** — the closing questions consume one to two minutes that no budget
+   allocates. The 150 total is untouched and the tolerance is 0.
+5. **Red team (b)** — whether the rewritten bridge item 3 tests the right thing.
+6. **F6** — `session-2`'s print nondeterminism, pre-existing, by design.
+7. **A21** — D21 is mechanically checkable and the check is not built. The
+   population is 12 items; §13.2 A is the seed data.
+8. **`validate_lesson.py` V2**, registered upstream in `MAINTAINING.md` per
+   Delta 5. Not this repo's to fix, and the pre-push gate as documented still
+   cannot run clean until it is.
