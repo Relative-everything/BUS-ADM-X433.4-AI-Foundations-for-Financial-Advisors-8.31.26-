@@ -111,7 +111,7 @@ title:          The Cole household
 author:         not applicable
 publisher:      Constructed for this course as a classroom anchor, BUS ADM X433.4
 link:           not applicable
-published:      [UNVERIFIED, needs source]
+published:      not applicable
 last_retrieved: not applicable
 last_verified:  not applicable
 confidence:     L
@@ -336,7 +336,8 @@ link:           https://www.vectara.com/blog/introducing-the-next-generation-of-
 published:      2025-11-19
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: Fetch ATTEMPTED 2026-08-25 and REFUSED before it reached the source: www.vectara.com is not permitted by the build environment's egress policy (HTTP 403 on CONNECT). This is a statement about this environment, NOT about the source — the source is not known to have moved or gone. No date is written, because no retrieval happened. Listed in docs/source-verification-queue.md as instructor work.
+retrieval_note: Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: www.vectara.com is blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited blog post itself was never loaded. A SURROGATE was reachable and was read: Vectara's own hallucination-leaderboard repository, fetched 2026-08-25, last updated 2026-05-11, HHEM-2.3, 123 models. Reading a surrogate is not retrieving the source.
+content_changed: 2026-08-25. THE MEASUREMENTS HOLD; THE SUPERLATIVE IS STALE. Every per-model rate session-3 quotes is still on the live board — Gemini-3-Pro 13.6%, Claude Sonnet 4.5 12.0%, GPT-OSS-120B 14.2%, DeepSeek-R1 11.3%, gemini-2.5-flash-lite 3.3%. But 3.3% is now RANK 3, not the floor; the floor is 1.8%. DEPENDENT LESSON ELEMENTS: session-3's HALL chart array labels 3.3% 'Best model, grounded' at :2010, and the toggle panel teaches the grounded range as '3.3% to above 13%' at :2139. Both are superlatives about a leaderboard that has moved past them; the numbers themselves are unchanged. Separately, this record's `scope` asserts a 32K-token length and a 3,792 / 3,939 complexity split that the reachable artifact does not state — it says '50 words to as long as 24K words' and gives no split. NOT silently updated.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -763,6 +764,24 @@ scope:          NARROW, AND IT WAS READ TOO WIDELY. The speech states that the c
 used_for.session-4: the open regulatory questions and the request for comment
 ```
 
+## src-zhao
+
+```source
+title:          Invisible image watermarks are provably removable using generative AI
+author:         Zhao, X., Zhang, K., Su, Z., Vasan, S., Grishchenko, I., Kruegel, C., Vigna, G., Wang, Y.-X., & Li, L.
+publisher:      Advances in Neural Information Processing Systems (NeurIPS 2024)
+link:           https://arxiv.org/abs/2306.01953
+published:      2024
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: THE PAPER ITSELF WAS NEVER LOADED, so last_retrieved is unresolved. arxiv.org, proceedings.neurips.cc, openreview.net, dl.acm.org and semanticscholar.org are all blocked by the build environment's egress policy (403 on CONNECT). Identity was established on 2026-08-25 from the AUTHORS' OWN REPOSITORY, github.com/XuandongZhao/WatermarkAttacker, which was reachable and returned the official BibTeX and a NeurIPS 2024 badge verbatim, corroborated by six independent search-index entries (arXiv 2306.01953, OpenReview 7hy5fy2OC6, NeurIPS 2024 poster 96428, an ACM DL DOI, a Semantic Scholar record, and the proceedings PDF path). A repository is not the paper and a search index is not a retrieval, so no date is written for either. [UNVERIFIED, needs source] for the proceedings volume and page range.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          The regeneration attack only: add random noise to destroy the embedded signal, then reconstruct the image with a denoiser or a pre-trained diffusion model. Formal proofs plus evaluation against pixel-level schemes; the removal guarantee is proved for watermarks that perturb the image within a bounded distance. It does NOT reach latent- or semantic-binding schemes, and it is NOT the source of the 2026 mutual-information result cited in the same sentence — that is arXiv 2602.20680, which has no key here and was not read.
+used_for.session-4: the regeneration attack on watermarked images in Appendix D2
+```
+
 ## src-owasp
 
 ```source
@@ -773,7 +792,8 @@ link:           https://owasp.org/www-project-top-10-for-large-language-model-ap
 published:      [UNVERIFIED, needs source]
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: Fetch ATTEMPTED 2026-08-25 and REFUSED before it reached the source: owasp.org is not permitted by the build environment's egress policy (HTTP 403 on CONNECT). This is a statement about this environment, NOT about the source — the source is not known to have moved or gone. No date is written, because no retrieval happened. Listed in docs/source-verification-queue.md as instructor work.
+retrieval_note: Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: owasp.org and genai.owasp.org are both blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited page itself was never loaded. A SURROGATE was reachable and was read: the GitHub repository backing that exact project page, fetched 2026-08-25. Reading a surrogate is not retrieving the source and no date is written for one.
+content_changed: 2026-08-25. THE SOURCE HAS MOVED. Established from the project's own GitHub repository, which the blocked page is built from. OWASP's own words describe the cited project page as maintained as a historical archive; active development moved to github.com/GenAI-Security-Project/GenAI-LLM-Top10 and a new edition, OWASP GenAI LLM Top 10 2026, was published 2026-08-04. DEPENDENT LESSON ELEMENTS: session-4 §05's claim that prompt injection is LLM01 SURVIVES the move intact — it is LLM01:2026 Prompt Injection in the new edition, and is now anchorable to a dated edition instead of an undated page. The CITATION does not survive: the `link` field points at an archive. The 'six of ten agentic categories' half of the same sentence is separately UNCONFIRMED — an Agentic Top 10 2026 v1.0 exists (published 2025-12-01) but sits on no reachable host and its category count was not read. NOT silently updated.
 confidence:     H
 kind:           evidence
 moving_target:  true

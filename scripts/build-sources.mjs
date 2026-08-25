@@ -226,19 +226,40 @@ export function assertVerifiedLock(sources, opts = {}) {
   let lock;
   try { lock = JSON.parse(readFileSync(LOCK_PATH, 'utf8')); }
   catch { throw new Error(`sources-verified.lock.json is missing or unreadable. It notarises every last_verified date. Run: node scripts/attest-verified.mjs --init  (interactive terminal required)`); }
-  const moved = [];
+  const moved = [], unsynced = [];
   for (const r of sources.values()) {
     const was = Object.prototype.hasOwnProperty.call(lock.entries || {}, r.key) ? lock.entries[r.key].last_verified : null;
     const now = r.last_verified || '';
-    if (was === null) { moved.push(`${r.key}: not in the lock (last_verified ${JSON.stringify(now)})`); continue; }
+    /* A RECORD THAT ASSERTS NOTHING IS NOT AN ATTESTATION. Adding a source with
+       an empty last_verified, or removing one, claims that nobody read
+       anything, so it does not need a human at a terminal — it needs the lock
+       to be told. That is `--sync`, which runs anywhere and refuses to touch a
+       populated date. Without this the guard would forbid ADDING A SOURCE,
+       which is not what it is for, and a guard that blocks ordinary work is a
+       guard somebody routes around. */
+    if (was === null) {
+      (now === '' || now === 'not applicable' ? unsynced : moved)
+        .push(`${r.key}: not in the lock (last_verified ${JSON.stringify(now)})`);
+      continue;
+    }
     if (was !== now) moved.push(`${r.key}: lock says ${JSON.stringify(was)}, SOURCES.md says ${JSON.stringify(now)}`);
   }
   for (const key of Object.keys(lock.entries || {})) {
-    if (!sources.has(key)) moved.push(`${key}: in the lock but no longer in SOURCES.md`);
+    if (sources.has(key)) continue;
+    (lock.entries[key].last_verified ? moved : unsynced).push(`${key}: in the lock but no longer in SOURCES.md`);
   }
   const digest = verifiedDigest(sources);
-  if (!moved.length && lock.digest !== digest) moved.push(`digest mismatch: lock ${String(lock.digest).slice(0, 16)}, computed ${digest.slice(0, 16)}`);
-  if (opts.explain) return { ok: !moved.length, moved, lock, digest };
+  if (!moved.length && !unsynced.length && lock.digest !== digest) moved.push(`digest mismatch: lock ${String(lock.digest).slice(0, 16)}, computed ${digest.slice(0, 16)}`);
+  if (opts.explain) return { ok: !moved.length && !unsynced.length, moved, unsynced, lock, digest };
+  if (!moved.length && unsynced.length) {
+    throw new Error(
+      'The lock does not know about every record yet.\n' +
+      unsynced.map((m) => '   - ' + m).join('\n') +
+      '\n\n   Every one of these has an EMPTY last_verified, so none of them asserts that a\n' +
+      '   human read anything. Tell the lock:\n' +
+      '       node scripts/attest-verified.mjs --sync\n' +
+      '   It runs anywhere and refuses to touch a populated date.');
+  }
   if (moved.length) {
     throw new Error(
       'REFUSED: last_verified moved without a human attestation.\n' +

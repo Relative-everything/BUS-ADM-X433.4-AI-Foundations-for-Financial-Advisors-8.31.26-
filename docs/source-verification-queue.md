@@ -23,13 +23,13 @@ never-fabricate rule exists to prevent.
 
 | | |
 |---|---|
-| Source records | **57** |
-| `last_verified` **EMPTY** | **53** |
+| Source records | **58** |
+| `last_verified` **EMPTY** | **54** |
 | `last_verified` populated | 1 |
 | `last_verified` *not applicable* (synthetic or fabricated) | 3 |
 | References standing behind an EMPTY `last_verified` | **143** of 176 |
 | Moving targets | 20 |
-| Lock | notarised, digest `d716c1839e256b3c` |
+| Lock | notarised, digest `8d2ab5828563a455` |
 
 
 ## Already attested
@@ -57,10 +57,10 @@ Each one cites the evidence in the repository that records the confirmation.
 | 10 | `src-kitces-notetakers` | Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends | **EMPTY** | **none** | 8 | no | S3 `#s9` · S3 `#s10` · S3 `#s11`×4 · S3 `#s16`×2 |
 | 11 | `src-ctxwindow` | How large is the context window on paid Claude plans? | **EMPTY** | 2026-08-20 | 6 | yes | S0.1 `#s1` · S0.1 `#s4`×4 · S0.1 `#s6` |
 | 12 | `src-magesh` | Hallucination-free? Assessing the reliability of leading AI legal research tools | **EMPTY** | **none** | 6 | no | S2 `#s10` · S3 `#s7` · S3 `#s15` · S3 `#s16` · S4 `#s7` · S4 `#s9` |
-| 13 | `src-daly` | Artificial Intelligence and the Future of Investment Management | **EMPTY** | **none** | 4 | no | S4 `#s1` · S4 `#sW1`×2 · S4 `#sW2` |
-| 14 | `src-models` | Models overview | **EMPTY** | 2026-08-20 | 4 | yes | S0.1 `#s2` · S0.1 `#s3`×2 · S0.1 `#s4` |
-| 15 | `src-pricing` | Pricing | **EMPTY** | 2026-08-25 | 4 | yes | S1 `#s5` · S1 `#s11`×3 |
-| 16 | `src-vectara` | Introducing the next generation of Vectara's hallucination leaderboard | **EMPTY** | **none** | 4 | yes | S3 `#s7` · S3 `#s16`×3 |
+| 13 | `src-models` | Models overview | **EMPTY** | 2026-08-20 | 4 | yes | S0.1 `#s2` · S0.1 `#s3`×2 · S0.1 `#s4` |
+| 14 | `src-pricing` | Pricing | **EMPTY** | 2026-08-25 | 4 | yes | S1 `#s5` · S1 `#s11`×3 |
+| 15 | `src-vectara` | Introducing the next generation of Vectara's hallucination leaderboard | **EMPTY** | **none** | 4 | yes | S3 `#s7` · S3 `#s16`×3 |
+| 16 | `src-daly` | Artificial Intelligence and the Future of Investment Management | **EMPTY** | **none** | 3 | no | S4 `#s1` · S4 `#sW1`×2 |
 | 17 | `src-plugins` | Use plugins in Claude | **EMPTY** | 2026-08-20 | 3 | yes | S0.1 `#s7`×3 |
 | 18 | `src-skills` | What are skills? | **EMPTY** | 2026-08-20 | 3 | yes | S0.1 `#s6` · S0.1 `#s7` · S0.1 `#s9` |
 | 19 | `src-wiretap` | Cal. Penal Code § 637.2(a)(1), (c); 18 U.S.C. § 2511 | **EMPTY** | **none** | 3 | no | S3 `#s12`×3 |
@@ -87,21 +87,22 @@ Each one cites the evidence in the repository that records the confirmation.
 | 40 | `src-secpri` | Examination priorities: Fiscal year 2026, §VII | **EMPTY** | **none** | 1 | no | S4 `#s1` |
 | 41 | `src-surfshark` | 2026 deepfake-loss analysis | **EMPTY** | **none** | 1 | no | S4 `#s5` |
 | 42 | `src-t3-survey` | Software Survey 2026 | **EMPTY** | **none** | 1 | no | S2 `#s9` |
-| 43 | `src-zheng-persona` | When "A Helpful Assistant" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models | **EMPTY** | **none** | 1 | no | S2 `#s6` |
-| 44 | `src-anthropic-fluency` | AI fluency: Frameworks and foundations | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 45 | `src-cve` | CVE-2025-32711 (EchoLeak, CVSS 9.3) and CVE-2025-54135 (CurXecute, CVSS 9.8) | **EMPTY** | **none** | 0 | no | *listed by S4, cited by none* |
-| 46 | `src-davidson` | Estate of William M. Davidson v. Commissioner, T.C. Docket No. 13748-13 | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 47 | `src-google-ptcf` | Gemini for Workspace: Prompting guide 101 | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 48 | `src-hallowell` | Hallowell v. Commissioner, T.C. Memo. 2023-217 | *n/a* | *n/a* | 0 | no | *listed by S4, cited by none* |
-| 49 | `src-irc` | Internal Revenue Code §§ 671, 675, 2036, 2702, 7520 | **EMPTY** | *n/a* | 0 | no | *listed by S2, cited by none* |
-| 50 | `src-iskowitz` | AI notetakers and compliance in wealth management: What firms need to know | **EMPTY** | **none** | 0 | no | *listed by S3, cited by none* |
-| 51 | `src-kessler` | Kessler v. Commissioner, 152 T.C. 88 (2019) | *n/a* | *n/a* | 0 | no | *listed by S2, cited by none* |
-| 52 | `src-kitces-advisortech` | The Latest in Financial AdvisorTech — AdvisorTech columns, October 2025, November 2025 and August 2026 | **EMPTY** | **none** | 0 | yes | *listed by S3, cited by none* |
-| 53 | `src-laplace` | A philosophical essay on probabilities | **EMPTY** | *n/a* | 0 | no | *listed by S2, cited by none* |
-| 54 | `src-morningstar` | AI for advisors: Enhancing client conversations | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 55 | `src-rr200464` | Rev. Rul. 2004-64, 2004-2 C.B. 7 (2004-27 I.R.B. 9) | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 56 | `src-rr8513` | Rev. Rul. 85-13, 1985-1 C.B. 184 | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 57 | `src-woelbing` | Estate of Donald Woelbing v. Commissioner, T.C. Docket No. 30261-13, and Estate of Marion Woelbing v. Commissioner, T.C. Docket No. 30260-13 | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
+| 43 | `src-zhao` | Invisible image watermarks are provably removable using generative AI | **EMPTY** | **none** | 1 | no | S4 `#sW2` |
+| 44 | `src-zheng-persona` | When "A Helpful Assistant" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models | **EMPTY** | **none** | 1 | no | S2 `#s6` |
+| 45 | `src-anthropic-fluency` | AI fluency: Frameworks and foundations | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
+| 46 | `src-cve` | CVE-2025-32711 (EchoLeak, CVSS 9.3) and CVE-2025-54135 (CurXecute, CVSS 9.8) | **EMPTY** | **none** | 0 | no | *listed by S4, cited by none* |
+| 47 | `src-davidson` | Estate of William M. Davidson v. Commissioner, T.C. Docket No. 13748-13 | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
+| 48 | `src-google-ptcf` | Gemini for Workspace: Prompting guide 101 | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
+| 49 | `src-hallowell` | Hallowell v. Commissioner, T.C. Memo. 2023-217 | *n/a* | *n/a* | 0 | no | *listed by S4, cited by none* |
+| 50 | `src-irc` | Internal Revenue Code §§ 671, 675, 2036, 2702, 7520 | **EMPTY** | *n/a* | 0 | no | *listed by S2, cited by none* |
+| 51 | `src-iskowitz` | AI notetakers and compliance in wealth management: What firms need to know | **EMPTY** | **none** | 0 | no | *listed by S3, cited by none* |
+| 52 | `src-kessler` | Kessler v. Commissioner, 152 T.C. 88 (2019) | *n/a* | *n/a* | 0 | no | *listed by S2, cited by none* |
+| 53 | `src-kitces-advisortech` | The Latest in Financial AdvisorTech — AdvisorTech columns, October 2025, November 2025 and August 2026 | **EMPTY** | **none** | 0 | yes | *listed by S3, cited by none* |
+| 54 | `src-laplace` | A philosophical essay on probabilities | **EMPTY** | *n/a* | 0 | no | *listed by S2, cited by none* |
+| 55 | `src-morningstar` | AI for advisors: Enhancing client conversations | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
+| 56 | `src-rr200464` | Rev. Rul. 2004-64, 2004-2 C.B. 7 (2004-27 I.R.B. 9) | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
+| 57 | `src-rr8513` | Rev. Rul. 85-13, 1985-1 C.B. 184 | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
+| 58 | `src-woelbing` | Estate of Donald Woelbing v. Commissioner, T.C. Docket No. 30261-13, and Estate of Marion Woelbing v. Commissioner, T.C. Docket No. 30260-13 | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
 
 
 ---
@@ -122,10 +123,10 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-kitces-notetakers` | https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/ |
 | `src-ctxwindow` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-magesh` | https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/ |
-| `src-daly` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-models` | https://platform.claude.com/docs/en/about-claude/models/overview |
 | `src-pricing` | https://platform.claude.com/docs/en/about-claude/pricing |
 | `src-vectara` | https://www.vectara.com/blog/introducing-the-next-generation-of-vectaras-hallucination-leaderboard |
+| `src-daly` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-plugins` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-skills` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-wiretap` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
@@ -152,6 +153,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-secpri` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-surfshark` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-t3-survey` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
+| `src-zhao` | https://arxiv.org/abs/2306.01953 |
 | `src-zheng-persona` | https://aclanthology.org/2024.findings-emnlp.888/ |
 | `src-anthropic-fluency` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-cve` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
@@ -190,7 +192,7 @@ Fetched in full 2026-08-25 for Phase 3.5. PULL-002 (session-2) carries a PARTIAL
 
 ### `src-vectara`
 
-Fetch ATTEMPTED 2026-08-25 and REFUSED before it reached the source: www.vectara.com is not permitted by the build environment's egress policy (HTTP 403 on CONNECT). This is a statement about this environment, NOT about the source — the source is not known to have moved or gone. No date is written, because no retrieval happened. Listed in docs/source-verification-queue.md as instructor work.
+Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: www.vectara.com is blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited blog post itself was never loaded. A SURROGATE was reachable and was read: Vectara's own hallucination-leaderboard repository, fetched 2026-08-25, last updated 2026-05-11, HHEM-2.3, 123 models. Reading a surrogate is not retrieving the source.
 
 ### `src-charlotin`
 
@@ -198,7 +200,11 @@ PARTIAL DATE. The day was never recorded. The pull captured a count the source i
 
 ### `src-owasp`
 
-Fetch ATTEMPTED 2026-08-25 and REFUSED before it reached the source: owasp.org is not permitted by the build environment's egress policy (HTTP 403 on CONNECT). This is a statement about this environment, NOT about the source — the source is not known to have moved or gone. No date is written, because no retrieval happened. Listed in docs/source-verification-queue.md as instructor work.
+Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: owasp.org and genai.owasp.org are both blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited page itself was never loaded. A SURROGATE was reachable and was read: the GitHub repository backing that exact project page, fetched 2026-08-25. Reading a surrogate is not retrieving the source and no date is written for one.
+
+### `src-zhao`
+
+THE PAPER ITSELF WAS NEVER LOADED, so last_retrieved is unresolved. arxiv.org, proceedings.neurips.cc, openreview.net, dl.acm.org and semanticscholar.org are all blocked by the build environment's egress policy (403 on CONNECT). Identity was established on 2026-08-25 from the AUTHORS' OWN REPOSITORY, github.com/XuandongZhao/WatermarkAttacker, which was reachable and returned the official BibTeX and a NeurIPS 2024 badge verbatim, corroborated by six independent search-index entries (arXiv 2306.01953, OpenReview 7hy5fy2OC6, NeurIPS 2024 poster 96428, an ACM DL DOI, a Semantic Scholar record, and the proceedings PDF path). A repository is not the paper and a search index is not a retrieval, so no date is written for either. [UNVERIFIED, needs source] for the proceedings volume and page range.
 
 ### `src-kitces-advisortech`
 
@@ -218,12 +224,20 @@ entry names the delta and every lesson element that depends on it.
 
 2026-08-25. The page now states that Sonnet 5's $2 / $10 introductory pricing "is now the standard price" and that "the previously scheduled increase to $3/$15 per million input/output tokens on September 1, 2026 will not occur". The 2026-07-28 pull recorded the increase as scheduled. DEPENDENT LESSON ELEMENTS: session-1 §10 table row "Sonnet 5 — from 1 Sep · $3 · $15 · $0.30" at :1727, and the note "Sonnet 5 introductory pricing ends tonight and rises 50% tomorrow" at :1732 — both now state a price rise that the source says will not happen. session-2 §02's "Sonnet 5 lists at $2 in / $10 out per million tokens" at :1380 is UNAFFECTED and is now the standing price. NOT silently updated: Phase 3.5 flags source changes rather than resolving them.
 
+### `src-vectara` — 4 reference(s)
+
+2026-08-25. THE MEASUREMENTS HOLD; THE SUPERLATIVE IS STALE. Every per-model rate session-3 quotes is still on the live board — Gemini-3-Pro 13.6%, Claude Sonnet 4.5 12.0%, GPT-OSS-120B 14.2%, DeepSeek-R1 11.3%, gemini-2.5-flash-lite 3.3%. But 3.3% is now RANK 3, not the floor; the floor is 1.8%. DEPENDENT LESSON ELEMENTS: session-3's HALL chart array labels 3.3% 'Best model, grounded' at :2010, and the toggle panel teaches the grounded range as '3.3% to above 13%' at :2139. Both are superlatives about a leaderboard that has moved past them; the numbers themselves are unchanged. Separately, this record's `scope` asserts a 32K-token length and a 3,792 / 3,939 complexity split that the reachable artifact does not state — it says '50 words to as long as 24K words' and gives no split. NOT silently updated.
+
+### `src-owasp` — 1 reference(s)
+
+2026-08-25. THE SOURCE HAS MOVED. Established from the project's own GitHub repository, which the blocked page is built from. OWASP's own words describe the cited project page as maintained as a historical archive; active development moved to github.com/GenAI-Security-Project/GenAI-LLM-Top10 and a new edition, OWASP GenAI LLM Top 10 2026, was published 2026-08-04. DEPENDENT LESSON ELEMENTS: session-4 §05's claim that prompt injection is LLM01 SURVIVES the move intact — it is LLM01:2026 Prompt Injection in the new edition, and is now anchorable to a dated edition instead of an undated page. The CITATION does not survive: the `link` field points at an archive. The 'six of ten agentic categories' half of the same sentence is separately UNCONFIRMED — an Agentic Top 10 2026 v1.0 exists (published 2025-12-01) but sits on no reachable host and its category count was not read. NOT silently updated.
+
 
 ---
 
 ## What this build could not reach
 
-**4 source host(s) refused the connection before the request reached them.**
+**2 source host(s) refused the connection before the request reached them.**
 This build environment enforces an egress policy; on 2026-08-25 every source host
 except `platform.claude.com` answered **403 to CONNECT**. That is a fact about
 the environment and **not** about the sources: none of them is known to have
@@ -233,6 +247,4 @@ retrieval happened.
 | Key | Refs | Host |
 |---|---|---|
 | `src-synthid` | 11 | *link unknown* |
-| `src-vectara` | 4 | www.vectara.com |
-| `src-owasp` | 1 | owasp.org |
 | `src-kitces-advisortech` | 0 | *link unknown* |

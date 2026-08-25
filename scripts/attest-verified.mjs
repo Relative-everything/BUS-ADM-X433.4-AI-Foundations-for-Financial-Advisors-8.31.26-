@@ -11,6 +11,7 @@
  *
  *   node scripts/attest-verified.mjs                       show the state
  *   node scripts/attest-verified.mjs --init                seed the lock, once
+ *   node scripts/attest-verified.mjs --sync                adopt records that assert nothing
  *   node scripts/attest-verified.mjs --key src-wolfram \
  *        --date 2026-08-23 --evidence "..."                attest, INTERACTIVE ONLY
  *   node scripts/attest-verified.mjs --clear --key src-x   withdraw, INTERACTIVE ONLY
@@ -133,6 +134,44 @@ if (flag('init')) {
   console.log(`      ${populated.length} record(s) carry a verification date; ${sources.size - populated.length} are empty or not applicable.`);
   for (const r of populated) console.log(`      ${r.key}  ${r.last_verified}\n        evidence: ${r.verified_by}`);
   console.log('\n      From here nothing automated can move one of these dates.');
+  process.exit(0);
+}
+
+
+if (flag('sync')) {
+  /* ADOPTING AN EMPTY IS NOT ATTESTING. --sync brings the lock into step with
+     records whose last_verified is empty or "not applicable" — added, renamed
+     or removed sources — and REFUSES if any record carries a date the lock does
+     not already hold. It therefore runs anywhere, including in a generator, in
+     CI and under an agent, without ever being a way to write a verification
+     date. That is the whole distinction this pair exists to hold. */
+  if (!lock) { console.error('FAIL  no lock. Run --init first.'); process.exit(1); }
+  const bad = [];
+  for (const r of sources.values()) {
+    const was = Object.prototype.hasOwnProperty.call(lock.entries, r.key) ? lock.entries[r.key].last_verified : null;
+    const now = r.last_verified || '';
+    if (was === now) continue;
+    if (was === null && (now === '' || now === 'not applicable')) continue;
+    bad.push(`${r.key}: lock ${JSON.stringify(was)} -> SOURCES.md ${JSON.stringify(now)}`);
+  }
+  if (bad.length) {
+    console.error(`REFUSED: --sync adopts records that assert nothing. These carry a verification date the lock does not hold:
+
+${bad.map((b) => '  - ' + b).join('\n')}
+
+  A verification date is moved by a human at a terminal, never by --sync:
+      node scripts/attest-verified.mjs --key <src-key> --date YYYY-MM-DD --evidence "..."`);
+    process.exit(2);
+  }
+  const before = new Set(Object.keys(lock.entries));
+  const after = new Set([...sources.keys()]);
+  const added = [...after].filter((k) => !before.has(k));
+  const gone = [...before].filter((k) => !after.has(k));
+  const l = writeLock(sources, '--sync (records with an empty last_verified only)');
+  console.log(`OK    lock synced  ${Object.keys(l.entries).length} records  digest ${l.digest.slice(0, 16)}`);
+  if (added.length) console.log(`      adopted: ${added.join(', ')}`);
+  if (gone.length) console.log(`      dropped: ${gone.join(', ')}`);
+  if (!added.length && !gone.length) console.log('      nothing to adopt; the lock was already in step.');
   process.exit(0);
 }
 

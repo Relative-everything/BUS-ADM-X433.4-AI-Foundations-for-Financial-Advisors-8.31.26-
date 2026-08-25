@@ -1,7 +1,7 @@
 {
   "note": "NOTARISED. Every last_verified date in SOURCES.md, frozen. build-sources.mjs recomputes this digest on every parse and refuses to build if a date moved. Only scripts/attest-verified.mjs writes this file, and only at an interactive terminal. Do not hand-edit: a hand edit here and a matching hand edit in SOURCES.md is the one thing this pair cannot catch, and it is a lie about a human having read a source.",
-  "updated_by": "seeded by --init from the hand-authored state of SOURCES.md",
-  "digest": "d716c1839e256b3c9ec9703bc67b76e1b6c0407319d22e070c6177b4f1b01c8b",
+  "updated_by": "--sync (records with an empty last_verified only)",
+  "digest": "8d2ab5828563a4558e6e32152ce5ddd5a6a093edabc54b43aa2b8ffae31996bb",
   "entries": {
     "src-aa": {
       "last_verified": "",
@@ -226,6 +226,10 @@
     "src-wolfram": {
       "last_verified": "2026-08-23",
       "verified_by": "EDITORIAL.md, \"Seventeen names. Instructor-verified.\" — the locked 17 section names of this essay, entered 2026-08-23 in commit bd8f458 and enforced by A11. Enumerating the seventeen section names requires having opened the essay."
+    },
+    "src-zhao": {
+      "last_verified": "",
+      "verified_by": ""
     },
     "src-zheng-persona": {
       "last_verified": "",

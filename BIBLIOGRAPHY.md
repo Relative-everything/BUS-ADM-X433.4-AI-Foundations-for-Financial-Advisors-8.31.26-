@@ -5,7 +5,7 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**57 works, 176 references across 5 lessons.** 43 are
+**58 works, 176 references across 5 lessons.** 44 are
 cited by at least one claim; 14 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
@@ -395,8 +395,8 @@ General-purpose models over more than 800,000 verifiable legal questions, 58-88%
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **4** |
-| Cited in | S4 `#s1` · S4 `#sW1` ×2 · S4 `#sW2` |
+| **Total references** | **3** |
+| Cited in | S4 `#s1` · S4 `#sW1` ×2 |
 
 NARROW, AND IT WAS READ TOO WIDELY. The speech states that the core questions remain open — whether an AI tool is marketing, advice or something requiring registration; who is responsible when output is wrong; how it is supervised — and asks for comment rather than announcing an answer. It says NOTHING about watermarking, SynthID, benchmark scores or model token counts, and it was chipped to four such claims before Phase 3 Part 1.
 
@@ -714,7 +714,7 @@ n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using 
 | Author | *not applicable* |
 | Publisher | Constructed for this course as a classroom anchor, BUS ADM X433.4 |
 | Link | *not applicable* |
-| Published | **[UNVERIFIED, needs source]** |
+| Published | *not applicable* |
 | Last retrieved | *not applicable* |
 | Last verified by the instructor | *not applicable* |
 | Confidence | L |
@@ -817,6 +817,25 @@ Dataset size, 32K-token length, domain mix, the low/high complexity split of 3,7
 | Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s1` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s3` · S3 `#s8` ×2 · S4 `#sWS` · S4 `#s8` |
 
 The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D3 is about exactly that.
+
+### Zhao, X., Zhang, K., Su, Z., Vasan, S., Grishchenko, I., Kruegel, C., Vigna, G., Wang, Y.-X., & Li, L.
+
+**Invisible image watermarks are provably removable using generative AI**  
+`src-zhao` · evidence
+
+| | |
+|---|---|
+| Author | Zhao, X., Zhang, K., Su, Z., Vasan, S., Grishchenko, I., Kruegel, C., Vigna, G., Wang, Y.-X., & Li, L. |
+| Publisher | Advances in Neural Information Processing Systems (NeurIPS 2024) |
+| Link | <https://arxiv.org/abs/2306.01953> |
+| Published | 2024 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S4 `#sW2` |
+
+The regeneration attack only: add random noise to destroy the embedded signal, then reconstruct the image with a denoiser or a pre-trained diffusion model. Formal proofs plus evaluation against pixel-level schemes; the removal guarantee is proved for watermarks that perturb the image within a bounded distance. It does NOT reach latent- or semantic-binding schemes, and it is NOT the source of the 2026 mutual-information result cited in the same sentence — that is arXiv 2602.20680, which has no key here and was not read.
 
 ### Zheng, M., Pei, J., Logeswaran, L., Lee, M., & Jurgens, D.
 
