@@ -10,6 +10,103 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-08-25 · Case unification, source dating, unsourced claims
+
+### All six files · Every quantitative case fact now appears once
+
+The Cole household's figures were written out by hand in 182 places across the
+six files, in prose, in answer keys, in chart data and in the feedback strings a
+student reads after answering. Every one of those was a copy that could drift
+away from `CASE.md` without anything noticing, and several already had.
+
+**Five remain, and all five are inside a captured transcript**, which is left
+verbatim because editing a transcript would make it a fabrication.
+
+Everywhere else the figure either comes from the one generated block the case
+modal already carries, is read from it by the exercise code, or is pinned so that
+changing `CASE.md` without changing it fails the build. A lesson may now say
+"Meg's largest asset is her CPC interest"; it may not restate the valuation.
+
+### The same sentence was wrong in four lessons
+
+Sessions 0.1, 1, 3 and 4 all said the structure "moves 900 non-voting LLC units
+to a grantor trust by a $2,002,000 seed gift and a $20,020,000 demand note."
+The gift and the note move **572**. The remaining 328 are bought over five
+years out of the dividend, which is the mechanism the whole five-year schedule
+exists to describe.
+
+### Facts that had drifted, and are now what the case says
+
+- **The 2014 buy-sell is executed, not unsigned.** Session 0.1 called it
+  unsigned twice. It was signed, never amended, and its transfer restrictions
+  are live against the very transfer the proposed structure makes.
+- **Meg did not found the company.** Her father founded it in 1987 and sold it
+  to her in 2016; what she paid is her basis. Three places called her the
+  founder, one of them a revealed answer key.
+- **The note is payable on demand.** Two lessons still described it as a
+  nine-year interest-only note, and one scored a student for writing so. A third
+  called it a balloon.
+- **Nobody is buying the company.** A competitor wrote once in October 2025 and
+  Meg replied that it was not for sale. Four lessons had a strategic buyer
+  expressing informal interest.
+- **The three confidentiality landmines are the three the case file names.**
+  Three lessons carried a different third.
+- **Nothing in the file supports the discount.** Session 4 called the 2023
+  appraisal the evidentiary support for it, 25 lines below its own label saying
+  the appraisal contains no discount study.
+- **There are no seed-gift funds to wire.** The seed gift is 52 units of an LLC.
+
+### Sources · Two dates, and only one of them is yours
+
+Every source record now carries **`last_verified`** and **`last_retrieved`**.
+The first says the instructor read the source and confirmed what this repository
+says about it. The second says a machine fetched it, and when, and nothing about
+whether it is right.
+
+**54 of 58 sources have an empty `last_verified`, and 143 of the 176 citations
+in the course stand behind them.** That is the honest state of the evidence, not
+a backlog. Nothing in this repository can fill that field in: the tool that
+writes it refuses unless a person is at a terminal, and every generator refuses
+to run if the date moves without one.
+
+`docs/source-verification-queue.md` is the work list, sorted so that the source
+eleven claims rest on comes before the one that carries none.
+
+### Sources · What changed underneath the lessons
+
+- **The Sonnet 5 price rise was cancelled.** Session 1 teaches that it "ends
+  tonight and rises 50% tomorrow", on a course dated 31 August. Anthropic's page
+  now says the introductory price is the standard price and the increase will
+  not occur.
+- **The OWASP page cited for prompt injection is now an archive.** The teaching
+  claim survives — prompt injection is still number one — and the citation does
+  not.
+- **Session 3 teaches 3.3% as the best grounded hallucination rate.** It now
+  ranks third; the best is 1.8%.
+
+None of these was silently updated. Each is recorded with what depends on it.
+
+### Zhao et al. (2024) is a real paper
+
+Session 4 names it for the regeneration attack on watermarked images and no
+source entry existed for it. It is real — NeurIPS 2024, and the authors'
+repository carries the citation verbatim — so the source was added and the
+confidence chip, which had been pointing at an SEC speech that says nothing
+about watermarking, now points at the paper.
+
+### Twelve claims are marked, and the marker says which kind of gap it is
+
+`[NEEDS SOURCE]` means the claim is right and a citation has not been attached.
+`[UNCONFIRMED]` means no source corroborates it and the claim itself is in
+question. Seven are `[UNCONFIRMED]`.
+
+The heaviest is in Session 4: the page tells students that nothing they generate
+in the course is watermarked, and Anthropic appears to have begun marking all
+Claude output on 2 August 2026. `docs/unsourced-claims.md` lists all twelve,
+sorted by how much depends on each.
+
+---
+
 ## 2026-08-25 · Sources
 
 ### Sessions 0.1-4 · Twenty confidence chips pointed at the wrong source
