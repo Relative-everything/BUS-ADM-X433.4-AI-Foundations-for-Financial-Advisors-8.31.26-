@@ -153,7 +153,44 @@ for (const [key, p, where, near] of [
   ['ltcgTop', 20, 'D.3', /qualified dividend|long-term|capital gain/i],
   ['niit', 3.8, 'D.3', /net investment|NIIT|1411/i],
   ['charFloor', 0.5, 'PART G', /floor|contribution base|170\(b\)/i],
+  /* ADDED after the first measurement, and the reason is recorded because it
+     changes the baseline. index.html:869 states the Illinois replacement income
+     tax on trusts at 1.5%. It is a CASE.md figure (§D.3, §E.8) that is NOT in
+     case-facts.json, NOT in COLE and NOT in the injected span — a quantitative
+     case fact with no guard anywhere in the corpus — and the first pass had no
+     pattern for it, so the drift surface it sits on was invisible to the
+     measurement. The rest of this block is the same audit run over CASE.md
+     Parts D, G and H for figures the first pass could not see. */
+  ['ilTrustReplacementRate', 1.5, 'D.3 / E.8', /trust|replacement|grantor|Illinois|201\(c\)/i],
+  ['ilCorpRate', 7.0, 'B.3', /Illinois|corporate|201\(b\)/i],
+  ['ilCorpReplacement', 2.5, 'B.3', /Illinois|replacement|corporate/i],
+  ['trustCombinedRate', 6.45, 'E.8', /trust|Illinois|replacement|toggl/i],
+  ['estateTopRate', 40, 'H.6.1', /estate|gift|transfer tax|2001\(c\)/i],
+  ['evEbitda', 6.0, 'C.2', /EBITDA|multiple|EV\/|mid-point/i],
+  ['charSubsidy', 24.06, 'PART G', /charit|subsid|deduct/i],
+  ['itemisedCap', 35, 'PART G', /itemis|itemiz|deduction|cent/i],
+  ['medicareSurtax', 0.9, 'D.3', /Medicare|wages|3101/i],
 ]) fact(key, 'pct', pctRx(p), { value: p, where, near });
+
+/* money CASE.md states that the first pass had no pattern for */
+for (const [key, v, where, near] of [
+  ['annualExclusion', 19000, 'H.6.1', /annual exclusion|donee|2503/i],
+  ['charFloorAmount', 25000, 'PART G', /floor|contribution base/i],
+  ['charDeductible', 55000, 'PART G', /deduct|charit/i],
+  ['charFedBenefit', 19250, 'PART G', /benefit|subsid|charit/i],
+  ['megW2Net', 250650, 'D.3', /W-2|net|after/i],
+  ['inhIraRmd2027', 45249, 'C.3.3', /RMD|2027|distribution/i],
+  ['inhIraRmd2028', 47393, 'C.3.3', /RMD|2028|distribution/i],
+  ['afrShortInterest', 820820, 'H.4', /4\.10|1274|short-term|interest/i],
+  ['deMinimisLoan', 10000, 'H.3', /de minimis|7872/i],
+  ['giftLoanNII', 100000, 'H.3', /net investment|7872|gift.?loan/i],
+  ['revolver', 4000000, 'B.1', /revolv|line of credit|undrawn|debt/i],
+  ['capex', 1850000, 'B.3', /capital expenditure|capex/i],
+  ['netIncome', 5180000, 'B.3', /net income|after tax/i],
+  ['nathanW2', 96000, 'B.5', /Nathan|compensation|W-2/i],
+  ['largestGift', 35000, 'PART G', /charit|largest|organisation|organization/i],
+  ['facilitySqFt', 96000, 'B.1', /sq ft|square feet|facility/i],
+]) fact(key, 'money', [moneyRx(v)], { value: v, where, near });
 
 /* proper nouns and entity names */
 for (const [key, s, where, near] of [

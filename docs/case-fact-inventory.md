@@ -23,11 +23,11 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 1866 | 1566 | 300 |
 | `PINNED` | 7 | 7 | 0 |
-| `UNGUARDED` | 277 | 176 | 101 |
-| **TOTAL** | **2150** | **1749** | **401** |
+| `UNGUARDED` | 244 | 142 | 102 |
+| **TOTAL** | **2117** | **1715** | **402** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
-`176`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
+`142`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
 the target state under the rule *every quantitative case fact appears once,
 injected from `CASE.md`; every other reference to it is qualitative*, so a
 qualitative reference is not drift surface and removing one would be a loss.
@@ -36,25 +36,25 @@ qualitative reference is not drift surface and removing one would be a loss.
 
 | File | Total | Quantitative |
 |---|---:|---:|
-| `index.html` | 3 | 1 |
-| `session-0.1/index.html` | 34 | 24 |
-| `session-1/index.html` | 63 | 45 |
-| `session-2/index.html` | 62 | 43 |
-| `session-3/index.html` | 61 | 32 |
-| `session-4/index.html` | 54 | 31 |
+| `index.html` | 2 | 0 |
+| `session-0.1/index.html` | 16 | 5 |
+| `session-1/index.html` | 53 | 35 |
+| `session-2/index.html` | 60 | 41 |
+| `session-3/index.html` | 60 | 31 |
+| `session-4/index.html` | 53 | 30 |
 
 ## `UNGUARDED`, by region
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R1` | body prose | 177 | 105 |
-| `R2` | script string literal | 90 | 63 |
+| `R1` | body prose | 149 | 76 |
+| `R2` | script string literal | 85 | 58 |
 | `R10` | captured transcript | 5 | 5 |
 | `R3` | attribute value | 2 | 2 |
 | `R8` | source note | 2 | 1 |
 | `R5` | HTML or JS comment | 1 | 0 |
 
-**`R2` carries 63 of the 176 quantitative unguarded references, 35.8%** — answer
+**`R2` carries 58 of the 142 quantitative unguarded references, 40.8%** — answer
 keys, chart data arrays and JS feedback strings. They are inside `<script>`, so
 they are outside the injected span and outside the pins, and a student reads
 every one of them.
@@ -63,51 +63,51 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 101 |
-| `money` | 97 |
-| `pct` | 36 |
-| `count` | 23 |
-| `age` | 17 |
+| `name` | 102 |
+| `money` | 77 |
+| `pct` | 29 |
+| `count` | 20 |
+| `age` | 13 |
 | `date` | 3 |
 
 ## `UNGUARDED`, by fact
 
 | Fact | Count |
 |---|---:|
-| `domicile` | 27 |
-| `discount` | 26 |
-| `cpcValue` | 21 |
+| `domicile` | 28 |
+| `discount` | 19 |
+| `cpcValue` | 18 |
 | `companyAbbr` | 17 |
-| `notePrincipal` | 13 |
 | `companyName` | 12 |
 | `megShort` | 11 |
 | `nathanShort` | 10 |
 | `plantTown` | 9 |
-| `megAge` | 9 |
-| `seedValue` | 9 |
-| `megBasis` | 9 |
-| `nonVotingUnits` | 8 |
+| `notePrincipal` | 9 |
 | `buySellFormula` | 8 |
 | `saleUnits` | 8 |
-| `netWorth` | 6 |
+| `megAge` | 7 |
+| `nonVotingUnits` | 6 |
 | `perUnitDividend` | 6 |
+| `megBasis` | 6 |
 | `residenceTown` | 5 |
-| `perNonVoting` | 5 |
-| `seedUnits` | 5 |
-| `davidAge` | 4 |
+| `seedValue` | 5 |
 | `davidName` | 4 |
 | `afrMid` | 4 |
 | `decedent` | 4 |
-| `ilExclusion` | 3 |
+| `seedUnits` | 4 |
+| `perNonVoting` | 3 |
 | `brokerage` | 3 |
+| `netWorth` | 3 |
 | `noteRate` | 3 |
 | `appraisal2023` | 3 |
 | `inheritedIra` | 2 |
 | `proRataNonVote` | 2 |
 | `techPct` | 2 |
 | `techPositions` | 2 |
+| `davidAge` | 2 |
 | `dividend` | 2 |
 | `purchaseDate` | 2 |
+| `ilExclusion` | 2 |
 | `nathanAge` | 2 |
 | `afrLong` | 1 |
 | `nonVotingAggregate` | 1 |
@@ -129,11 +129,11 @@ not the corpus. Reported, never counted in the drift surface.
 | File | Count |
 |---|---:|
 | `scripts/case-flowchart.html` | 124 |
+| `scripts/case-inventory.mjs` | 116 |
 | `scripts/case-extract.html` | 102 |
-| `scripts/case-inventory.mjs` | 94 |
 | `scripts/case-facts.json` | 80 |
 | `scripts/build-case.mjs` | 62 |
-| `scripts/verify-migration.mjs` | 22 |
+| `scripts/verify-migration.mjs` | 24 |
 | `scripts/inject-case.mjs` | 2 |
 
 ## What this measurement declines to count
@@ -143,28 +143,33 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**411 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**436 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
 | `votingUnits` | 106 |
 | `seedUnits` | 63 |
-| `claireAge` | 46 |
-| `marriedYears` | 45 |
+| `claireAge` | 40 |
+| `marriedYears` | 39 |
 | `employees` | 32 |
 | `nathanAge` | 26 |
 | `megAge` | 24 |
 | `nonVotingUnits` | 19 |
+| `charDeductible` | 18 |
 | `discount` | 17 |
+| `revolver` | 14 |
 | `davidAge` | 10 |
 | `megApplicableAge` | 8 |
 | `nathanShort` | 4 |
 | `techPct` | 3 |
+| `deMinimisLoan` | 3 |
 | `topOrdinary` | 3 |
 | `saleUnits` | 2 |
 | `charFloor` | 2 |
 | `megYear1Units` | 1 |
+| `estateTopRate` | 1 |
+| `itemisedCap` | 1 |
 
 ## Money figures in case context that `CASE.md` does not carry
 
