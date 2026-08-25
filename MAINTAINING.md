@@ -236,7 +236,12 @@ Match case-insensitively on the stem so punctuation variants cannot hide:
 2. Add a card in `index.html`, copying an existing one and removing the `soon`
    class from the anchor.
 3. Add the row to the session table in `README.md`.
-4. Note it in `CHANGELOG.md`.
+4. Note it in `CHANGELOG.md`, then run `python3 scripts/build-changelog.py` and
+   commit both files. The generator regenerates the served page **and** runs
+   the sweep on it, because it writes an empty style fence that only the sweep
+   can fill. Without the sweep the fence is stale and `verify-style.mjs` fails
+   on a page whose source is correct. If the skill is not installed the
+   generator says so and names the command to run by hand.
 5. Run the pre-push gate, then commit and push.
 
 ## The editorial checks
