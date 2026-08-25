@@ -21,13 +21,13 @@ occurrence does not follow fails the check. Everything else can.
 
 | | Total | Quantitative | Qualitative |
 |---|---:|---:|---:|
-| `INJECTED` | 1818 | 1518 | 300 |
-| `PINNED` | 8 | 8 | 0 |
-| `UNGUARDED` | 141 | 37 | 104 |
-| **TOTAL** | **1967** | **1563** | **404** |
+| `INJECTED` | 1794 | 1494 | 300 |
+| `PINNED` | 15 | 15 | 0 |
+| `UNGUARDED` | 109 | 5 | 104 |
+| **TOTAL** | **1918** | **1514** | **404** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
-`37`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
+`5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
 the target state under the rule *every quantitative case fact appears once,
 injected from `CASE.md`; every other reference to it is qualitative*, so a
 qualitative reference is not drift surface and removing one would be a loss.
@@ -38,22 +38,22 @@ qualitative reference is not drift surface and removing one would be a loss.
 |---|---:|---:|
 | `index.html` | 2 | 0 |
 | `session-0.1/index.html` | 16 | 5 |
-| `session-1/index.html` | 20 | 2 |
+| `session-1/index.html` | 18 | 0 |
 | `session-2/index.html` | 20 | 0 |
 | `session-3/index.html` | 30 | 0 |
-| `session-4/index.html` | 53 | 30 |
+| `session-4/index.html` | 23 | 0 |
 
 ## `UNGUARDED`, by region
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R1` | body prose | 97 | 23 |
-| `R2` | script string literal | 37 | 9 |
+| `R1` | body prose | 74 | 0 |
+| `R2` | script string literal | 28 | 0 |
 | `R10` | captured transcript | 5 | 5 |
 | `R5` | HTML or JS comment | 1 | 0 |
 | `R8` | source note | 1 | 0 |
 
-**`R2` carries 9 of the 37 quantitative unguarded references, 24.3%** — answer
+**`R2` carries 0 of the 5 quantitative unguarded references, 0.0%** — answer
 keys, chart data arrays and JS feedback strings. They are inside `<script>`, so
 they are outside the injected span and outside the pins, and a student reads
 every one of them.
@@ -63,11 +63,7 @@ every one of them.
 | Class | Count |
 |---|---:|
 | `name` | 104 |
-| `money` | 21 |
-| `pct` | 9 |
-| `count` | 4 |
-| `age` | 2 |
-| `date` | 1 |
+| `pct` | 5 |
 
 ## `UNGUARDED`, by fact
 
@@ -80,30 +76,12 @@ every one of them.
 | `megShort` | 11 |
 | `plantTown` | 9 |
 | `residenceTown` | 5 |
-| `cpcValue` | 5 |
 | `davidName` | 4 |
 | `afrMid` | 4 |
-| `discount` | 4 |
 | `decedent` | 3 |
-| `notePrincipal` | 3 |
-| `buySellFormula` | 3 |
-| `megBasis` | 2 |
-| `seedValue` | 2 |
-| `appraisal2023` | 2 |
 | `afrLong` | 1 |
-| `inheritedIra` | 1 |
-| `votingUnits` | 1 |
 | `nathanName` | 1 |
-| `netWorth` | 1 |
-| `megAge` | 1 |
-| `nathanAge` | 1 |
-| `nonVotingUnits` | 1 |
-| `inquiryDate` | 1 |
-| `saleUnits` | 1 |
-| `seedUnits` | 1 |
-| `dividend` | 1 |
 | `megNameAlt` | 1 |
-| `ilExclusion` | 1 |
 
 ## Machinery
 
@@ -112,13 +90,12 @@ not the corpus. Reported, never counted in the drift surface.
 
 | File | Count |
 |---|---:|
-| `scripts/case-inventory.mjs` | 119 |
-| `scripts/case-flowchart.html` | 116 |
+| `scripts/case-inventory.mjs` | 118 |
+| `scripts/case-flowchart.html` | 113 |
 | `scripts/case-extract.html` | 101 |
 | `scripts/case-facts.json` | 80 |
 | `scripts/build-case.mjs` | 61 |
-| `scripts/verify-migration.mjs` | 25 |
-| `scripts/inject-case.mjs` | 2 |
+| `scripts/verify-migration.mjs` | 22 |
 
 ## What this measurement declines to count
 
@@ -127,22 +104,27 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**343 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**432 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
-| `votingUnits` | 113 |
-| `claireAge` | 28 |
-| `marriedYears` | 28 |
+| `endowmentIntent` | 79 |
+| `votingUnits` | 58 |
+| `claireAge` | 27 |
+| `marriedYears` | 27 |
+| `tbills` | 26 |
 | `seedUnits` | 26 |
+| `dividend` | 25 |
 | `employees` | 20 |
 | `nonVotingUnits` | 19 |
 | `charDeductible` | 18 |
 | `megAge` | 18 |
 | `discount` | 17 |
 | `nathanAge` | 16 |
-| `revolver` | 13 |
+| `revolver` | 12 |
+| `inheritedIra` | 8 |
+| `david403b` | 8 |
 | `perUnitDividend` | 6 |
 | `deMinimisLoan` | 3 |
 | `davidAge` | 3 |
@@ -154,6 +136,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `techPct` | 2 |
 | `estateTopRate` | 1 |
 | `itemisedCap` | 1 |
+| `inquiryDate` | 1 |
 
 ## Money figures in case context that `CASE.md` does not carry
 

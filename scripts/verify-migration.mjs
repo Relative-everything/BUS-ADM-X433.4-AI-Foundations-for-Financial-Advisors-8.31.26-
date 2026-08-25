@@ -360,6 +360,23 @@ for (const [id, name, rxs] of [
     [/How much of the (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? note does she call/g, 'notePrincipal', 'the demand-note principal'],
     [/Each \$1,000,000 she calls permanently removes \$([0-9,]+) of future interest/g, null, 'interest removed per $1,000,000 called'],
     [/so the gap widens by ([0-9.]+)% of every call/g, 'noteRate', 'the demand-note rate in the recurring question', (v) => Math.round(v * 10000) / 100],
+    /* session-4 §08's two audit exhibits. These CANNOT be generated and cannot
+       go qualitative: the exercise asks whether each is a well-formed record,
+       and a record whose figures are interpolated at render time is not the
+       artifact the student is auditing. They are reproductions of a Session 2
+       prompt and a Session 3 extraction output, and their whole evidentiary
+       point is that they say what they said at the time. So they are pinned:
+       the figures stay literal and a CASE.md change that leaves them behind
+       fails here. This is preference 4 doing the job preference 3 cannot. */
+    [/Explain to a (\d+)-year-old business owner/g, 'megAge', 'the client age in the §08 prompt exhibit', null, ''],
+    [/a sale\s+of ([0-9,]+) non-voting units of a new family LLC/g, 'saleUnits', 'the sale size in the §08 prompt exhibit', null, ' units'],
+    [/grantor trust for a \$([0-9,]+) note payable on demand/g, 'notePrincipal', 'the note principal in the §08 prompt exhibit'],
+    [/preceded by a \$([0-9,]+) seed gift/g, 'seedValue', 'the seed gift in the §08 prompt exhibit'],
+    [/seed gift of ([0-9,]+) units, with a/g, 'seedUnits', 'the seed unit count in the §08 prompt exhibit', null, ' units'],
+    [/units, with a ([0-9]+)%\s+valuation discount claimed/g, 'discount', 'the discount in the §08 prompt exhibit', (v) => Math.round(v * 100)],
+    [/this yields roughly\s+\$([0-9,]+), materially below both/g, 'buySellFormula', 'the buy-sell formula value in the §08 extraction exhibit'],
+    [/materially below both the \$([0-9,]+) concluded in/g, 'appraisal2023', 'the 2023 appraisal in the §08 extraction exhibit'],
+    [/and the \$([0-9,]+) indicated range/g, 'cpcValue', 'the indicated value in the §08 extraction exhibit'],
   ];
   const bad = [], seen = [];
   for (const l of LESSONS) {
@@ -367,12 +384,15 @@ for (const [id, name, rxs] of [
     const a = raw.indexOf('<!-- CASE:BEGIN'), b = raw.indexOf('<!-- CASE:END');
     /* prose only: everything outside the generated region */
     const prose = a >= 0 && b > a ? raw.slice(0, a) + raw.slice(b) : raw;
-    for (const [rx, key, label, xform] of PINS) {
+    for (const [rx, key, label, xform, unit] of PINS) {
       rx.lastIndex = 0; let m;
       while ((m = rx.exec(prose))) {
         const got = Number(m[1].replace(/,/g, ''));
         const want = key ? (xform ? xform(F[key]) : F[key]) : Math.round(1000000 * F.noteRate);
-        const show = (n) => (xform ? `${n}%` : `$${n.toLocaleString('en-US')}`);
+        /* `unit` overrides: a unit count is neither dollars nor per cent. */
+        const show = (n) => (unit !== undefined && unit !== null
+          ? `${n.toLocaleString('en-US')}${unit}`
+          : xform ? `${n}%` : `$${n.toLocaleString('en-US')}`);
         seen.push(`${l}: ${label} = ${show(got)}`);
         if (got !== want) bad.push(`${l}: ${label} reads ${show(got)}, case-facts.json says ${show(want)}`);
       }

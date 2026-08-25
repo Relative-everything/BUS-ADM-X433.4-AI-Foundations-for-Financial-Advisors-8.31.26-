@@ -93,6 +93,19 @@ const fact = (key, klass, rx, opts = {}) =>
   facts.push({ key, klass, rx: [].concat(rx).filter(Boolean), near: opts.near || null,
                value: opts.value !== undefined ? opts.value : F_(key), where: opts.where || '' });
 
+/* Facts whose value collides with something the corpus legitimately counts.
+   Each collision was observed, not anticipated: 1,000,000 is the inherited IRA
+   AND a 1M context window in tokens (session-1:1522); $5M is the dividend AND a
+   portfolio band (session-4:2077). */
+const MONEY_NEAR = {
+  inheritedIra: /IRA|inherited|Hensley|RMD|retirement|beneficiar/i,
+  dividend: /dividend|distribut|CPC|LLC|per unit|trust/i,
+  tbills: /T-bill|Treasury|laddered|balance sheet/i,
+  david403b: /403|David|retirement|balance sheet/i,
+  /* $5M is also the endowment intent AND a de-identification band width. */
+  endowmentIntent: /endow|charit|foundation|Rockford Workforce|gift/i,
+};
+
 /* money — every keyed figure whose separated form is distinctive on its own */
 for (const [key, where] of [
   ['cpcValue', 'C.1'], ['megBasis', 'B.2'], ['revenue', 'B.3'], ['ebitda', 'B.3'],
@@ -116,7 +129,7 @@ for (const [key, where] of [
   const v = F_(key);
   if (typeof v !== 'number') continue;
   /* under $100,000 an un-separated match is coincidence-prone; keep the $ form */
-  fact(key, 'money', [moneyRx(v), v >= 1000000 ? millionsRx(v) : null], { where });
+  fact(key, 'money', [moneyRx(v), v >= 1000000 ? millionsRx(v) : null], { where, near: MONEY_NEAR[key] });
 }
 
 /* money the lessons state that CASE.md derives rather than keys */
@@ -226,7 +239,7 @@ for (const [key, s, where, near] of [
 ]) fact(key, 'name', wordRx(s), { value: s, where, near });
 
 /* dated documents and events */
-for (const [key, s, where] of [
+for (const [key, s, where, near] of [
   ['purchaseDate', '1 July 2016', 'B.2'],
   ['decedentDied', '4 November 2021', 'A.3'],
   ['marriedDate', '21 September 1991', 'A.1'],
@@ -238,11 +251,13 @@ for (const [key, s, where] of [
   ['appraisalDate', '12 September 2023', 'F.7'],
   ['memoDate', '19 February 2026', 'F.8'],
   ['succMemoDate', '12 March 2026', 'F.13'],
-  ['inquiryDate', '8 October 2025', 'F.14'],
+  /* Anthropic's Consumer Terms carry the same date in session-4:1278. A date
+     is only a case date next to the thing it dated. */
+  ['inquiryDate', '8 October 2025', 'F.14', /competitor|inquiry|acquir|CPC|Cole|approach/i],
   ['draftDate', '6 April 2026', 'F.10'],
   ['indicativeDate', '30 June 2026', 'C.2'],
   ['asOfDate', '31 July 2026', 'PART C'],
-]) fact(key, 'date', dateRx(s), { value: s, where });
+]) fact(key, 'date', dateRx(s), { value: s, where, near });
 
 /* counts that are only distinctive in context */
 for (const [key, n, where, near] of [
@@ -273,7 +288,7 @@ for (const [key, n, where, near] of [
            (`max="5000"`). session-3's meaning-space map put `x:52` three
            characters from the words "seed gift", so the context test passed on
            a number that is a pixel. */
-        new RegExp(`(?<![0-9,.$-])(?<![xyXY]:)(?<!="\\s*)${money(n)}(?![0-9])(?!,[0-9])(?!%)`, 'g'),
+        new RegExp(`(?<![0-9,.$*-])(?<![xyXY]:)(?<!="\\s*)${money(n)}(?![0-9])(?!,[0-9])(?!%)`, 'g'),
         { value: n, where, near });
 
 export { facts };
@@ -286,6 +301,15 @@ export const CHECK20_PINS = [
   { rx: /How much of the (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? note does she call/g, key: 'notePrincipal' },
   { rx: /Each \$1,000,000 she calls permanently removes \$([0-9,]+) of future interest/g, key: 'interestPerMillion' },
   { rx: /so the gap widens by ([0-9.]+)% of every call/g, key: 'noteRate' },
+  { rx: /Explain to a (\d+)-year-old business owner/g, key: 'megAge' },
+  { rx: /a sale\s+of ([0-9,]+) non-voting units of a new family LLC/g, key: 'saleUnits' },
+  { rx: /grantor trust for a \$([0-9,]+) note payable on demand/g, key: 'notePrincipal' },
+  { rx: /preceded by a \$([0-9,]+) seed gift/g, key: 'seedValue' },
+  { rx: /seed gift of ([0-9,]+) units, with a/g, key: 'seedUnits' },
+  { rx: /units, with a ([0-9]+)%\s+valuation discount claimed/g, key: 'discount' },
+  { rx: /this yields roughly\s+\$([0-9,]+), materially below both/g, key: 'buySellFormula' },
+  { rx: /materially below both the \$([0-9,]+) concluded in/g, key: 'appraisal2023' },
+  { rx: /and the \$([0-9,]+) indicated range/g, key: 'cpcValue' },
 ];
 
 /** The pin list here must be the pin list there. A silent divergence is the defect. */
