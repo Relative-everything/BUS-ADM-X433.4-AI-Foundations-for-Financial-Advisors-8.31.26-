@@ -12,11 +12,13 @@
     "A13": "HARD", "A14": "HARD",
     "A15": "ADVISE",
     "A16": "HARD",
+    "A20": "ADVISE",
     "A17": "DISABLED", "A18": "DISABLED", "A19": "DISABLED"
   },
   "severity_notes": {
     "A12": "ADVISE until the D7 mapping is signed off. It cannot be hard while the fix requires a mapping nobody has approved.",
     "A15": "ADVISE until data-nochip lands. Hard today would fire on 23 keys that have no way to declare their reason yet.",
+    "A20": "ADVISE by construction, not by burn-in. It matches a Used-for clause against a claim on a token threshold, and a threshold is a lead rather than a proof. Its output is read, never applied unseen.",
     "A17": "DISABLED - the vocabulary feature is not built.",
     "A18": "DISABLED - the vocabulary feature is not built.",
     "A19": "DISABLED - the vocabulary feature is not built."

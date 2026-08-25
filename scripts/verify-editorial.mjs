@@ -783,6 +783,82 @@ if (enabled('A15')) {
   if (!n) ran('A15', `${seen} footer key(s) each carry a chip or a declared reason`);
 }
 
+/* ===================================================================== A20 */
+/* A footer key whose "Used for:" clause names an on-page claim that currently
+   carries a chip pointing at a DIFFERENT key is a mis-wire, not an orphan.
+
+   This is the actionable half of the warning validate_lesson V4 has been
+   emitting with nobody able to act on it: V4 says "this key is never
+   referenced" and stops. A15 says the same thing and stops. Neither can tell
+   an orphan (a source genuinely cited nowhere) from a mis-wire (a source cited
+   in the wrong place, which leaves its correct key looking orphaned in the same
+   footer). The difference is the whole fix.
+
+   METHOD, and it is deliberately a lead generator rather than an assertion.
+   For each key with no chip anywhere, take the distinctive tokens of its
+   "Used for:" clause - the words a claim about that source would have to use -
+   and look for a chipped sentence carrying a different key that contains
+   enough of them. Report the pair. ADVISE, because "enough of them" is a
+   threshold and a threshold is not a proof; the human decides.
+
+   Validated against the 19 rewires applied in Phase 3 Part 1 before it was
+   committed: it independently proposes the ones whose evidence is a Used-for
+   clause, which is what it is for, and proposes none of the ones whose evidence
+   is a name in the sentence, which A13 already owns. */
+const STOP = new Set(('the a an and or of for to in on at by with from as is are was were '
+  + 'that this these those it its used which what when where who whom whose not no '
+  + 'page claim claims lesson section sessions appendix figure figures data '
+  + 'course file build here there also than then their they them he she his her '
+  + 'one two three four five six seven eight nine ten first second third').split(/\s+/));
+function contentTokens(text) {
+  return [...new Set((text.toLowerCase().match(/[a-z][a-z0-9-]{3,}/g) || [])
+    .filter((w) => !STOP.has(w)))];
+}
+if (enabled('A20')) {
+  let n = 0, seen = 0;
+  for (const l of lessonFiles()) {
+    const text = src(l);
+    const c = classify(text);
+    const chipped = new Set([...text.matchAll(/data-src="(src-[^"]+)"/g)].map((x) => x[1]));
+    /* every chipped sentence, as a container with its keys */
+    const containers = [];
+    for (const rx of [/<p\b[^>]*>[\s\S]*?<\/p>/g, /<li\b[^>]*>[\s\S]*?<\/li>/g,
+                      /cap\s*:\s*'(?:[^'\\]|\\.)*'/g, /<span class="src"[^>]*>[\s\S]*?<\/span>/g]) {
+      for (const m of text.matchAll(rx)) containers.push({ i: m.index, body: m[0] });
+    }
+    for (const [s0, e0] of (c.spans.R7 || [])) {
+      const body = text.slice(s0, e0);
+      const id = (body.match(/id="(src-[^"]+)"/) || [])[1];
+      if (!id || chipped.has(id)) continue;
+      seen++;
+      const used = (body.match(/Used for:\s*([\s\S]*?)(?:<span class="conf|<\/li>)/) || [])[1];
+      if (!used) continue;                       /* no Used-for clause: A15 owns it */
+      const want = contentTokens(used.replace(/<[^>]*>/g, ' '));
+      if (want.length < 3) continue;
+      let best = null;
+      for (const ct of containers) {
+        if (c.regionOf(ct.i) === 'R6' || c.regionOf(ct.i) === 'R7') continue;
+        const keys = [...new Set([...ct.body.matchAll(/data-src="(src-[^"]+)"/g)].map((x) => x[1]))];
+        if (!keys.length || keys.includes(id)) continue;
+        const plain = ct.body.replace(/<[^>]*>/g, ' ').toLowerCase();
+        const hit = want.filter((w) => plain.includes(w));
+        const ratio = hit.length / want.length;
+        if (hit.length >= 3 && ratio >= 0.5 && (!best || hit.length > best.hit.length)) {
+          best = { ct, keys, hit, ratio };
+        }
+      }
+      if (best) {
+        n++;
+        violation('A20', `${l}/index.html:${c.lineAt(best.ct.i)}`,
+          `${id} looks mis-wired rather than orphaned: its "Used for" clause matches this claim `
+          + `on ${best.hit.length}/${want.length} terms (${best.hit.slice(0, 6).join(', ')}),\n`
+          + `           and the claim carries ${best.keys.join(', ')}`);
+      }
+    }
+  }
+  if (!n) ran('A20', `${seen} key(s) with no chip; none matches a claim chipped to another key`);
+}
+
 /* ================================================================ A17-A19 */
 /* DISABLED — the vocabulary feature is greenfield. Stubs are here so the feature
    is built against the rules rather than retrofitted to them. A disabled rule
