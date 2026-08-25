@@ -248,6 +248,31 @@ const COREMINS = `/* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
 window.__coreMins={{CORE_MIN}};
 /* APXCORE:END */`;
 
+/* An OPTIONAL region. Only session-2 carries a student-facing time budget in its
+   opener, and it was an eighth copy of the minute figures that agreed with none
+   of the other seven: it credited Appendix B1 with 9 minutes against the
+   section's 16, put Final Project Part 1 at 10 against 5, and omitted the
+   8-minute cold-open ritual entirely. Nothing checked it, because
+   validate_lesson V5 and verify-migration 16 both read the footer's
+   data-timing table and this one has no data-timing attribute. It is now the
+   summary the section actually needs, generated, with the per-section detail
+   left to the footer where it is checked. Emitted only where the sentinel
+   already exists, so this never invents a table in a lesson that has none. */
+const RIGHT = 'text-align:right;font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.09em';
+const MAP = `<!-- APXMAP:BEGIN generated-by=scripts/build-appendix.mjs -->
+  <table>
+    <thead><tr><th>Block</th><th>What it is</th><th class="n">Minutes</th></tr></thead>
+    <tbody>
+      <tr><td>Core</td><td>{{CORE_N}} sections, taught in every room</td><td class="n">{{CORE_MIN}}</td></tr>
+      <tr><td>Appendix</td><td>{{APX_N}} optional sections, taken in place at the depth you set</td><td class="n">{{APX_MIN}}</td></tr>
+      <tr><td colspan="2" style="${RIGHT}">Allocated instructional minutes</td><td class="n"><strong>{{TOTAL}}</strong></td></tr>
+      <tr><td colspan="2" style="${RIGHT}">Break, plus transition and overrun reserve</td><td class="n">30</td></tr>
+      <tr><td colspan="2" style="${RIGHT}">Block total, 6:00 to 9:00 PM</td><td class="n"><strong>180</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="dim" style="font-size:14px">The core alone runs {{CORE_MIN}} minutes, {{HOUR}}. Every section carries its own minute figure on its eyebrow; the full per-section budget is in the footer.</p>
+<!-- APXMAP:END -->`;
+
 /* --------------------------------------------------------------- generation */
 
 function replaceRegion(text, name, block, insert) {
@@ -345,6 +370,16 @@ function build(lesson) {
     if (!rx.test(t)) throw new Error(`${lesson}: cannot find table.tbudget tbody`);
     return t.replace(rx, (_, a) => a + b + '\n');
   });
+
+  /* --- APXMAP, where a lesson carries one ------------------------------- */
+  const rxMap = /<!-- APXMAP:BEGIN[\s\S]*?<!-- APXMAP:END -->/;
+  if (rxMap.test(text)) {
+    text = text.replace(rxMap, () => fill(MAP, {
+      CORE_N: core.length, CORE_MIN: coreMin,
+      APX_N: apx.length, APX_MIN: apxMin,
+      TOTAL: coreMin + apxMin, HOUR: hour,
+    }));
+  }
 
   /* --- APXCORE ---------------------------------------------------------- */
   const coreMinsBlock = fill(COREMINS, { CORE_MIN: coreMin });
