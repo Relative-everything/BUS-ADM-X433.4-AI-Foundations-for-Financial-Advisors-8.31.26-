@@ -438,7 +438,7 @@ core section in their own file — there are no orphans.**
 
 ### 3.3 The distribution
 
-> **Provenance of the numbers in §3.3, §3.4 and §3.7.** Every content section of sessions 1-4 was scored, then re-checked by a second agent told to refute rather than confirm. **Adversarial verification is complete for 2 of the four lessons — `session-1`, `session-2`; still outstanding for `session-3`, `session-4`.** **The figures below are therefore provisional and will move.** 22 machine-applicable corrections have been applied; corrections expressed as narrative rather than as a field edit are listed in §12.7 and are **not** in these numbers.
+> **Provenance of the numbers in §3.3, §3.4 and §3.7.** Every content section of sessions 1-4 was scored, then re-checked by a second agent told to refute rather than confirm. **Adversarial verification is complete for 4 of the four lessons — `session-1`, `session-2`, `session-3`, `session-4`.** All four are folded in. 41 machine-applicable corrections have been applied; corrections expressed as narrative rather than as a field edit are listed in §12.7 and are **not** in these numbers.
 >
 > The verification pass matters more than a footnote suggests: it found the scoring agents **fabricating**. See §12.9.
 
@@ -446,26 +446,26 @@ core section in their own file — there are no orphans.**
 
 | | n | min | Q1 | median | Q3 (p75) | **p80** | max | mean |
 |---|---|---|---|---|---|---|---|---|
-| **all content sections** | 70 | 10 | 27.8 | 43.8 | 55 | **57.3** | 82.5 | 42.8 |
-| core | 48 | 10 | 27.5 | 43.8 | 55 | 55.8 | 82.5 | 41.6 |
-| appendix | 22 | 13.8 | 30.9 | 45 | 59.4 | 62.3 | 81.3 | 45.5 |
+| **all content sections** | 70 | 10 | 27.8 | 43.8 | 54.7 | **55.3** | 76.3 | 41.5 |
+| core | 48 | 10 | 27.5 | 42.5 | 53.1 | 55 | 76.3 | 40.2 |
+| appendix | 22 | 13.8 | 30.9 | 45 | 54.7 | 60 | 75 | 44.2 |
 
-**The cut is the 80th percentile, 57.3, and it flags 14 sections.** Report §5.3 proposed the 75th, which here is **55** and would flag 19. Both are recorded so either can be read off.
+**The cut is the 80th percentile, 55.3, and it flags 14 sections.** Report §5.3 proposed the 75th, which here is **54.7** and would flag 18. Both are recorded so either can be read off.
 
-**Core and appendix sit almost on top of each other** — medians 43.8 and 45, means 41.6 and 45.5. That is the C5 stratification (§1.2) doing its job: banded against the combined corpus, the appendix would have been pushed systematically below the core by a component measuring density rather than difficulty.
+**Core and appendix sit almost on top of each other** — medians 42.5 and 45, means 40.2 and 44.2. That is the C5 stratification (§1.2) doing its job: banded against the combined corpus, the appendix would have been pushed systematically below the core by a component measuring density rather than difficulty.
 
 **Per lesson**, which §5.3 requires because the remedy is always lesson-local:
 
 | lesson | sections | mean | max | at or above the cut |
 |---|---|---|---|---|
-| `session-1` | 18 | 42.3 | 72.5 | **3** |
-| `session-2` | 16 | 41.7 | 76.3 | **3** |
+| `session-1` | 18 | 42.3 | 72.5 | **4** |
+| `session-2` | 16 | 41.7 | 76.3 | **4** |
 | `session-3` | 18 | 37.1 | 61.3 | **1** |
-| `session-4` | 18 | 50.0 | 82.5 | **7** |
+| `session-4` | 18 | 44.9 | 75 | **5** |
 
-> **The flags do not distribute evenly, and §5.3 called that in advance — but not in this direction.** It expected concentration in `session-1` and in the advanced appendices of sessions 3 and 4. Measured, **`session-4` holds 7 of the 14 and `session-3` holds none at all.** Per §5.3's own instruction that is a finding, not a sampling error.
+> **The flags do not distribute evenly, and §5.3 called that in advance — but not in this direction.** It expected concentration in `session-1` and in the advanced appendices of sessions 3 and 4. Measured, **`session-4` holds 5 of the 14 and `session-3` holds none at all.** Per §5.3's own instruction that is a finding, not a sampling error.
 >
-> **But do not read `session-3` as easy, because the cut is knife-edge there.** Its highest-scoring section, `#sHY` (C5 · Hybrid search), scores **61.3 against a cut of 57.3** — it misses by **-4.0**. Only 8 sections in the whole corpus sit within five points below the cut, and they do at `s2 s12` and `s1 s10` and `s3 s4` and `s3 s7` and `s4 s10` and `s1 s3` and `s1 s14` and `s3 s16`. **At report §5.3's own proposed 75th percentile (55) the picture changes: 19 sections flag and `session-3` gets 3.** So "`session-3` has none" is a statement about where the line was drawn, not about the lesson.
+> **But do not read `session-3` as easy, because the cut is knife-edge there.** Its highest-scoring section, `#sHY` (C5 · Hybrid search), scores **61.3 against a cut of 55.3** — it misses by **-6.0**. Only 9 sections in the whole corpus sit within five points below the cut, and they do at `s3 s4` and `s3 s7` and `s4 sW2` and `s4 s10` and `s1 s3` and `s1 s14` and `s3 s16` and `s2 s1` and `s4 s5`. **At report §5.3's own proposed 75th percentile (54.7) the picture changes: 18 sections flag and `session-3` gets 3.** So "`session-3` has none" is a statement about where the line was drawn, not about the lesson.
 >
 > One coincidence worth naming: `session-3 #sHY` is also the section with **zero inbound `href`** that A5 fails on and step (h) exists to fix. **The lesson's hardest section is also its least reachable one.**
 
@@ -476,8 +476,10 @@ core section in their own file — there are no orphans.**
 | `session-1` | 86 | 58 | **+28** |
 | `session-2` | 61 | 56 | **+5** |
 | `session-3` | 34 | 37 | **-3** |
-| `session-4` | 105 | 66 | **+39** |
-| **total** | **286** | **217** | **+69** |
+| `session-4` | 63 | 66 | **-3** |
+| **total** | **244** | **217** | **+27** |
+
+> **This is the single figure the adversarial pass improved most, and it changes what the delta means.** Before correction the rebuild ran **+62** over §4.1 with a spread from −14% to +58%. After it, **three of the four lessons reconcile within five** — `session-2` +5, `session-3` -3, `session-4` -3 — and **`session-1` alone is the outlier at +28**. A general complaint about reproducibility has become **one specific question about one lesson**, which is a far more useful thing to hand an instructor.
 
 These are the counts **after** the adversarial pass, taken from each section's verified evidence rather than from the term-map stage. Read the deltas as a statement about the inventory's reproducibility, not as a correction to §4.1 — §4.1's per-term records do not exist on disk to arbitrate.
 
@@ -488,38 +490,38 @@ These are the counts **after** the adversarial pass, taken from each section's v
 | stall | score | C1 | C2 | C3 | C4 | C5 | lesson | id | | tier | pos | min | R1 | R2 | hard | section |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | **76.3** | 76.3 | 4 | 3 | 2 | 2 | 4 | `s2` | `s0` | **core** | — | 0.00 | 6 | CLOSE | YES | BOTH | Session map |
-| **63.7** | 63.7 | 3 | 3 | 3 | 0 | 3 | `s4` | `s0` | **core** | — | 0.00 | 5 | CLOSE | YES | BOTH | Frame |
 | **58** | 72.5 | 2 | 4 | 2 | 4 | 3 | `s1` | `s4` | apx | advanced | 0.20 | 12 | FAR | YES | IDEA | A2 · Fitting a model |
-| **55** | 82.5 | 4 | 2 | 3 | 4 | 4 | `s4` | `s3` | **core** | — | 0.33 | 5 | CLOSE | NO | BOTH | Tiers |
+| **57.5** | 57.5 | 3 | 2 | 3 | 0 | 3 | `s4` | `s0` | **core** | — | 0.00 | 5 | CLOSE | YES | BOTH | Frame |
 | **53** | 66.3 | 3 | 4 | 1 | 3 | 1 | `s1` | `s2` | **core** | — | 0.20 | 7 | FAR | NO | IDEA | Prediction |
 | **52** | 65 | 3 | 2 | 3 | 2 | 3 | `s2` | `s3` | **core** | — | 0.20 | 5 | FAR | YES | BOTH | Temperature |
 | **50.8** | 72.5 | 3 | 2 | 3 | 4 | 3 | `s2` | `s5` | **core** | — | 0.30 | 6 | CLOSE | NO | BOTH | Cost frontier |
 | **45.5** | 65 | 2 | 2 | 3 | 4 | 3 | `s1` | `s8` | apx | advanced | 0.30 | 16 | FAR | YES | BOTH | A5 · SAMPLER LAB |
 | **40.9** | 61.3 | 1 | 4 | 3 | 3 | 1 | `s3` | `sHY` | apx | advanced | 0.33 | 16 | FAR | YES | BOTH | C5 · Hybrid search |
-| **40.6** | 81.3 | 3 | 3 | 3 | 4 | 4 | `s4` | `sW1` | apx | advanced | 0.50 | 16 | FAR | YES | BOTH | D1 · Provenance |
-| **39.4** | 78.8 | 3 | 4 | 2 | 3 | 4 | `s4` | `s5` | **core** | — | 0.50 | 5 | CLOSE | YES | BOTH | Attacks |
-| **31.3** | 62.5 | 2 | 1 | 4 | 3 | 4 | `s4` | `sW2` | apx | advanced | 0.50 | 14 | FAR | YES | BOTH | D2 · Watermark limits |
-| **25** | 75 | 2 | 3 | 4 | 3 | 4 | `s4` | `sWS` | apx | standard | 0.67 | 14 | CLOSE | YES | BOTH | D3 · Source staleness |
+| **40** | 60 | 1 | 2 | 3 | 4 | 4 | `s4` | `s3` | **core** | — | 0.33 | 5 | CLOSE | NO | BOTH | Tiers |
+| **37.5** | 75 | 3 | 2 | 3 | 4 | 4 | `s4` | `sW1` | apx | advanced | 0.50 | 16 | FAR | YES | BOTH | D1 · Provenance |
+| **28.1** | 56.3 | 3 | 2 | 2 | 3 | 0 | `s1` | `s10` | **core** | — | 0.50 | 5 | CLOSE | YES | BOTH | Frontier |
 | **23.8** | 71.3 | 3 | 2 | 3 | 3 | 4 | `s4` | `s7` | **core** | — | 0.67 | 5 | CLOSE | YES | BOTH | What it costs |
+| **20.4** | 61.2 | 1 | 2 | 4 | 3 | 4 | `s4` | `sWS` | apx | standard | 0.67 | 14 | FAR | YES | BOTH | D3 · Source staleness |
+| **0** | 56.3 | 1 | 2 | 3 | 3 | 4 | `s2` | `s12` | **core** | — | 1.00 | 5 | CLOSE | YES | PROSE | Final project |
 
 Raw evidence behind each band: C1 is undefined first-appearances per allocated minute, C2 the worst interaction severity in the section, C3 the count of prerequisites assumed and not restated, C4 distinct notation objects, C5 words per allocated minute within stratum.
 
 | id | C1 count | per min | C2 HIGH | gate blocked | C3 count | C4 count | wpm |
 |---|---|---|---|---|---|---|---|
 | `s2 s0` | 14 | 2.33 | 1 | no | 3 | 3 | 147.7 |
-| `s4 s0` | 10 | 2 | 1 | no | 5 | 0 | 93 |
 | `s1 s4` | 10 | 0.83 | 1 | **yes** | 3 | 7 | 27.9 |
-| `s4 s3` | 16 | 3.2 | 0 | no | 4 | 8 | 146.4 |
+| `s4 s0` | 10 | 2 | 0 | no | 5 | 0 | 93 |
 | `s1 s2` | 14 | 2 | 4 | no | 1 | 4 | 52.6 |
 | `s2 s3` | 9 | 1.8 | 0 | **yes** | 4 | 3 | 91 |
 | `s2 s5` | 9 | 1.5 | 0 | **yes** | 4 | 7 | 100.8 |
 | `s1 s8` | 15 | 0.94 | 0 | **yes** | 4 | 12 | 28.3 |
 | `s3 sHY` | 7 | 0.44 | 1 | **yes** | 4 | 5 | 21.6 |
-| `s4 sW1` | 18 | 1.13 | 1 | no | 5 | 9 | 45 |
-| `s4 s5` | 8 | 1.6 | 1 | **yes** | 3 | 4 | 144.8 |
-| `s4 sW2` | 9 | 0.64 | 0 | no | 6 | 4 | 33.5 |
-| `s4 sWS` | 10 | 0.71 | 1 | no | 8 | 6 | 43.2 |
+| `s4 s3` | 1 | 0.2 | 0 | no | 4 | 7 | 146.4 |
+| `s4 sW1` | 18 | 1.13 | 0 | no | 5 | 7 | 45 |
+| `s1 s10` | 9 | 1.8 | 0 | no | 2 | 5 | 48 |
 | `s4 s7` | 8 | 1.6 | 0 | no | 5 | 5 | 112 |
+| `s4 sWS` | 1 | 0.07 | 0 | no | 8 | 6 | 43.2 |
+| `s2 s12` | 2 | 0.4 | 0 | no | 4 | 4 | 144.6 |
 
 ### 3.5 The MOVE dependency check, as corrected
 
@@ -861,10 +863,10 @@ judgement.
 
 > ## The headline: the budget pays for four to six moves and the corpus offers **one**.
 >
-> Of the 14 flagged sections, **6 are appendix sections** and are a
-> tiering question rather than a MOVE. Of the 8 flagged core sections,
-> **3 are immovable** (openers hosting the bridge, the case and check 20's
-> pinned figures, and bridge anchors the next lesson tests) and **4 are
+> Of the 14 flagged sections, **5 are appendix sections** and are a
+> tiering question rather than a MOVE. Of the 9 flagged core sections,
+> **5 are immovable** (openers hosting the bridge, the case and check 20's
+> pinned figures, and bridge anchors the next lesson tests) and **3 are
 > CLOSE to advisory application**, which under §5.2 means you cannot move the thing
 > the lesson is for. **One section routes to MOVE.**
 >
@@ -880,6 +882,7 @@ judgement.
 | `s4` | 72.5 | 58 | 12 | FAR | TIER REVIEW | an advanced appendix section scoring high is **working as designed** (§5.3) <br> ▸ `hard_because=IDEA` — a REDUCE here must not simplify the idea into something false (constraint 10) |
 | `s2` | 66.3 | 53 | 7 | FAR | **REDUCE** (immovable) | `session-2` bridge item 1 (primary) <br> ▸ `hard_because=IDEA` — a REDUCE here must not simplify the idea into something false (constraint 10) <br> ▸ **no self-check** — consider *adding* one rather than cutting (R2) |
 | `s8` | 65 | 45.5 | 16 | FAR | TIER REVIEW | an advanced appendix section scoring high is **working as designed** (§5.3) <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+| `s10` | 56.3 | 28.1 | 5 | CLOSE | **REDUCE** (immovable) | `session-2` bridge item 3 (primary) <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
 
 **Minutes moved: 0 of 7. Core 67 -> 67.**
 
@@ -890,6 +893,7 @@ judgement.
 | `s0` | 76.3 | 76.3 | 6 | CLOSE | **REDUCE** (immovable) | opener: hosts the retrieval bridge, the case introduction and two of check 20's pinned figures <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
 | `s3` | 65 | 52 | 5 | FAR | **MOVE** | R1 FAR, movable, within budget. The section's subject is the mechanism that picks a word — an exponent applied to a probability set — even though the three consequence cards draw advisory conclusions from it. <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
 | `s5` | 72.5 | 50.8 | 6 | CLOSE | **REDUCE** | R1 CLOSE. It is a purchasing decision — what the practice pays per month, which plan reaches which tier, and which tier decisions are material at the student's own volume. <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) <br> ▸ **no self-check** — consider *adding* one rather than cutting (R2) |
+| `s12` | 56.3 | 0 | 5 | CLOSE | **REDUCE** (immovable) | last core section; closing question |
 
 **Minutes moved: 5 of 7. Core 67 -> 62.**
 
@@ -905,13 +909,11 @@ judgement.
 
 | id | score | stall | min | R1 | verdict | reasoning |
 |---|---|---|---|---|---|---|
-| `s0` | 63.7 | 63.7 | 5 | CLOSE | **REDUCE** (immovable) | opener: hosts the retrieval bridge, the case and two of check 20's pinned figures <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
-| `s3` | 82.5 | 55 | 5 | CLOSE | **REDUCE** | R1 CLOSE. Its own thesis is contractual and procurement-facing — 'The tier you subscribe to does not change the model. It changes the contract. For a fiduciary, the contract is the only part that matters' (L1231) — and it closes by putting migration cost, data residency and procurement outside the chart's two axes (L1264). <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) <br> ▸ **no self-check** — consider *adding* one rather than cutting (R2) |
-| `sW1` | 81.3 | 40.6 | 16 | FAR | TIER REVIEW | an advanced appendix section scoring high is **working as designed** (§5.3) <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
-| `s5` | 78.8 | 39.4 | 5 | CLOSE | **REDUCE** | R1 CLOSE. The deliverable is an operating control for an assistant that reads client documents and can send mail, and the section's own conclusion is procedural rather than technical — 'out-of-band verification on a channel the requester did not choose, on every disbursement instruction' (L1354). <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
-| `sW2` | 62.5 | 31.3 | 14 | FAR | TIER REVIEW | an advanced appendix section scoring high is **working as designed** (§5.3) <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
-| `sWS` | 75 | 25 | 14 | CLOSE | TIER REVIEW | scores above the cut while tiered **standard** — candidate to re-tier one level deeper <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+| `s0` | 57.5 | 57.5 | 5 | CLOSE | **REDUCE** (immovable) | opener: hosts the retrieval bridge, the case and two of check 20's pinned figures <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+| `s3` | 60 | 40 | 5 | CLOSE | **REDUCE** | R1 CLOSE. Its own thesis is contractual and procurement-facing — 'The tier you subscribe to does not change the model. It changes the contract. For a fiduciary, the contract is the only part that matters' (L1231) — and it closes by putting migration cost, data residency and procurement outside the chart's two axes (L1264). <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) <br> ▸ **no self-check** — consider *adding* one rather than cutting (R2) |
+| `sW1` | 75 | 37.5 | 16 | FAR | TIER REVIEW | an advanced appendix section scoring high is **working as designed** (§5.3) <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
 | `s7` | 71.3 | 23.8 | 5 | CLOSE | **REDUCE** | R1 CLOSE. Its stated purpose is to convert a machine property into practice minutes — 'That conversion is the only form in which this argument survives contact with a practice' (L1390) — and the deliverable is a priced verification burden against the adviser's own recorded baseline. <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
+| `sWS` | 61.2 | 20.4 | 14 | FAR | TIER REVIEW | scores above the cut while tiered **standard** — candidate to re-tier one level deeper <br> ▸ `hard_because=BOTH` — a REDUCE here must not simplify the idea into something false (constraint 10) |
 
 **Minutes moved: 0 of 10. Core 70 -> 70.**
 
@@ -973,8 +975,10 @@ rather than a spot inspection.
 > curriculum change rather than a tiering change.
 
 **Recommendation on the one MOVE: do not take it without a decision on all three.**
-The alternative is a **REDUCE** in place — `#s3` scores **C1 = 3** (9 undefined first-appearances in 5 minutes, 1.8 per minute) and **C2 = 4**, the top band, because its work-along gate is itself blocked. Report §4.2 records its temperature slider as a HIGH-severity blocked exercise turning on `raised to the power 1/T`, `renormalised`, `sharpens the distribution`, `flattens`, `samples`, `distribution`, `deterministic` and `argmax` — and `argmax` occurs **once in the whole file**, in the T = 0 readout, where it carries the section's most important boundary case. **Defining those terms costs nothing structural and addresses 55 per cent of the score.** That is available whichever way the MOVE
-goes, and it is available now.
+The alternative is a **REDUCE in place**, and after the adversarial pass it is the
+stronger option on the evidence. `#s3` scores **C1 = 3** (9 undefined first-appearances in 5 minutes, 1.8 per minute) and **C2 = 2** — the adversarial pass struck its HIGH, finding that the L1225 range input, the L1229 button and the ten labelled bars at L2087-2089 let a student begin. Its 4 unrestated prerequisites and 3 notation objects are what remain.
+
+Report §4.2 records its temperature slider as a blocked exercise turning on `raised to the power 1/T`, `renormalised`, `sharpens the distribution`, `flattens`, `samples`, `distribution`, `deterministic` and `argmax` — and **`argmax` occurs once in the whole file**, in the T = 0 readout, carrying the section's most important boundary case. **Defining those terms is a vocabulary fix, not a structural one, and it reaches 55 per cent of the score's weight.** It is available whichever way the MOVE goes, it costs no minutes, and Phase 6 is going to write those definitions anyway.
 
 #### What the routing says about the brief
 
@@ -997,27 +1001,25 @@ to say so rather than to simplify them into something false. **Three carry
 **adding a self-check**, not cutting: a hard section with a way to check yourself
 rarely stalls a room, and a hard section without one stalls it every time.
 
-#### Sensitivity: the cut choice changes the MOVE list
+#### Sensitivity: what the cut choice costs
 
-Because the routing is deterministic, it can be re-run at the other cut. **It
-changes the answer.**
+Because the routing is deterministic, it can be re-run at the other cut.
 
 | cut | flagged | appendix | core | immovable | CLOSE | **FAR and movable** | MOVE list |
 |---|---|---|---|---|---|---|---|
-| **p80 = 61.5** (this task) | 14 | 5 | 9 | 4 | 4 | **1** | `session-2 #s3` (5 min) |
-| p75 = 55 (report §5.3) | 21 | 7 | 14 | 6 | 6 | **2** | `session-2 #s3` (5 min) **+ `session-3 #s7`** "Grounded error" (5 min) |
+| **p80 = 55.3** (this task) | 14 | 5 | 9 | 5 | 3 | **1** | `s2 #s3` (5 min) |
+| p75 = 54.7 (report §5.3) | 18 | 6 | 12 | 6 | 4 | **2** | `s2 #s3` (5 min) + `s3 #s7` (5 min) |
 
-`session-3 #s7` scores exactly 55 — it *is* the p75 boundary — is FAR from
-advisory application, carries no bridge dependency, and its 5 minutes fit inside
-`session-3`'s 10-minute headroom. **It also has `#s8` (Appendix C2, foundational,
-14 min) anchored to it**, so moving it reproduces FINDING 1 exactly: an appendix
-section left anchored to an appendix section.
 
-**That both candidate MOVEs orphan an appendix anchor is not a coincidence.** A
-core section dense enough to flag is a core section the appendix was built to
-extend, so it tends to be one of the eleven core sections carrying an anchor. **Any
-MOVE list of any length will need an anchor-repair step**, and Phase 2 step (b)
-should be written to include one rather than discovering it per section.
+**The two cuts are 0.6 points apart**, so the choice barely separates them — and it still changes the MOVE list from 1 to 2. That is a property of the distribution, not of the cut: after the adversarial corrections the scores compressed hard (max fell from 85 to 76.3, mean from 44.1 to 41.5), so a great many sections now sit within a point or two of each other and small cut movements swap several at once. **Do not read the flagged list as a ranking with clear daylight between adjacent rows.**
+
+**Both candidate MOVEs orphan an appendix anchor, and that is not a coincidence.**
+A core section dense enough to flag is a core section the appendix was built to
+extend, so it tends to be one of the eleven core sections carrying an anchor.
+`session-3 #s7` has `#s8` (Appendix C2, foundational, 14 min) anchored to it, and
+moving it reproduces FINDING 1 exactly. **Any MOVE list of any length needs an
+anchor-repair step**, and Phase 2 step (b) should be written to include one rather
+than discovering it per section.
 
 ---
 
@@ -2058,12 +2060,13 @@ against it.
 This pass declares the **post-reflow reading order** (§2.4a) because it survives
 Phase 2 step (a), where source order would not.
 
-**The exposure, measured.** Under the reflow order, first appearances attributed
-to appendix sections are: `session-1` **42 of 92**, `session-2` **17 of 59**. In
+**The exposure, measured on the final corrected counts.** Under the reflow order,
+first appearances attributed to appendix sections are `session-1` **41 of 86, which is 48 per cent** and
+`session-2` **17 of 61, which is 28 per cent**. In
 source order every appendix section sits after every core section, so each of
 those attributions either stays put (the term appears nowhere else) or moves to a
-core section (the term also appears there). **Between a quarter and a half of
-`session-1`'s C1 evidence sits on the ordering choice.** That is the single
+core section (the term also appears there). **Almost half of `session-1`'s C1 evidence, and over a quarter of `session-2`'s,
+sits on the ordering choice.** That is the single
 largest methodological lever in the rubric and §5.1 does not mention it exists.
 
 **What would change it:** scoring both orders and reporting the delta. Not done
@@ -2257,20 +2260,27 @@ Two further disagreements with the rubric as applied:
   vocabulary, not difficulty** — C1 and C2 supply 4 and 4 of its bands while C3 is
   1 — so Phase 6, not a cut, is its remedy. Recorded because a REDUCE here risks
   flattening next-token prediction into something false.
-- **`session-3` returns zero flagged sections against `session-4`'s seven — and
-  I nearly reported that as a finding when it is mostly an artifact of the cut.**
-  Its top section, `#sHY`, scores **61.3 against a cut of 61.5**. It misses by
-  **two tenths of a point.** At report §5.3's own proposed 75th percentile,
-  `session-3` flags three. Only two sections in the entire corpus sit within five
-  points below the cut and `#sHY` is one of them.
+- **I twice nearly reported a finding about `session-3` that the next correction
+  erased, and the sequence is worth recording as a caution about this whole
+  table.** On the raw scores `session-3` flagged **zero** sections against
+  `session-4`'s seven, which looked like a strong result about an easy lesson. Its
+  top section, `#sHY`, was in fact **0.2 points** below the cut. After the
+  adversarial corrections deflated the distribution, the cut fell from 61.5 to
+  55.3 and **`#sHY` is flagged** — `session-3` has one. Nothing about `session-3`
+  changed; the *cut* moved underneath it.
 
-  What survives as a real question is narrower and sharper: **`session-3`'s C1
-  rebuild is the only one that came back BELOW report §4.1** — 34 against 37,
-  where sessions 1, 2 and 4 came back +35, +4 and +39. For the lesson that
-  carries `cosine similarity`, `IDF`, `tf × ln(1 + N/df)` and `BM25`, a
-  below-anchor undefined-term count is the one result in this table I would want
-  a human to check before trusting. **The low flag count and the low C1 may be
-  the same fact, and if they are, `session-3` is under-scored rather than easy.**
+  What survives is narrower and I still believe it: **`session-3`'s C1 rebuild is
+  the only one that came back BELOW report §4.1** (34 against 37, where sessions
+  1, 2 and 4 came back +28, +5 and −3 after correction). For the lesson carrying
+  `cosine similarity`, `IDF`, `tf × ln(1 + N/df)` and `BM25`, a below-anchor
+  undefined-term count is the one figure here I would want a human to check. **The
+  low flag count and the low C1 may be the same fact, and if they are, `session-3`
+  is under-scored rather than easy.**
+
+- **The distribution is now compressed enough that adjacency is not meaningful.**
+  The 80th and 75th percentiles sit **0.6 points apart** (55.3 and 54.7) and the
+  MOVE list still changes between them. Treat the flagged list as a set, not as a
+  ranking with daylight between adjacent rows.
 
 ### 12.8 Confidence, and what would change it
 
@@ -2286,8 +2296,9 @@ Two further disagreements with the rubric as applied:
 | Phase 3's chip enumeration | **MEDIUM** | §3.5 does not enumerate its own 27; the 29 is a rebuild, and A13's message cannot resolve its own chip count |
 | Phase 5's analogue inventory | **MEDIUM** | 57 of 96 bridge sentences are truncated mid-sentence in the source |
 | **The complexity scores** | **MEDIUM** | C1 is 30% and rests on a rebuilt inventory (§12.1) under a declared ordering basis (§12.2); C3 is the least reproducible band. **Phase 6's inventory would settle C1 and the scores should be re-derived against it** |
-| **`session-3` scoring zero flagged sections** | **LOW** as a statement about the lesson; **HIGH** as arithmetic | it is a cut artifact — `#sHY` misses by 0.2 and `session-3` flags three at p75. The real question is its C1 rebuild, the only one *below* §4.1, and one human read of §01-§05 against the C1 anchors would settle it |
-| **The choice of cut** | **it is a decision, not a measurement** | this task specified the 80th percentile and report §5.3 proposed the 75th. At p80 the MOVE list is one section; at p75 it is two. Both are computed in §3.7 |
+| **`session-3` being "easy"** | **do not rely on it** | it flagged zero on the raw scores and one after correction, on a cut that moved 6.2 points. The real question is its C1 rebuild, the only one *below* §4.1; one human read of §01-§05 against the C1 anchors would settle it |
+| **The choice of cut** | **it is a decision, not a measurement** | this task specified the 80th percentile and report §5.3 proposed the 75th. They are 0.6 points apart here and the MOVE list still changes from one section to two. Both are computed in §3.7 |
+| **The one MOVE surviving all four adversarial passes** | **MEDIUM-to-HIGH** that it is the only candidate; **LOW** that it should be taken | `session-2 #s3` was the only FAR-and-movable core section before verification and remains so after 41 corrections. Whether it *should* move is the R1 judgement above, and it collides with three separate things (§3.7) |
 | **The MOVE list** | **LOW as a recommendation, HIGH as an arithmetic** | the arithmetic — 14 flagged, 5 appendix, 4 immovable, 4 CLOSE, 1 movable — is solid. Whether `#s3` is FAR or CLOSE is a curriculum judgement and it is the instructor's. **Nothing in Phase 2 step (b) should run before that answer** |
 
 **The single thing most worth a human hour**, if only one is available: read
