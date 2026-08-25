@@ -129,6 +129,10 @@ export function collect() {
     let m;
     while ((m = MARKER.exec(text))) {
       const at = m.index;
+      /* A marker NAMED INSIDE AN ANNOTATION is the annotation talking about
+         markers, not a marked claim. The first annotation written said "do NOT
+         downgrade to [NEEDS SOURCE]" and the register counted it as one. */
+      if (annots.some((x) => at >= x.at && at < x.end)) continue;
       const region = c.regionOf(at);
       const line = text.slice(0, at).split('\n').length;
       const where = `${rel}:${line}`;
