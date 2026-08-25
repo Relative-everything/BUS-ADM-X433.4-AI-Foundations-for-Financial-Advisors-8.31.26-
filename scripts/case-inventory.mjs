@@ -260,7 +260,12 @@ for (const [key, n, where, near] of [
   ['megFirstDistYear', 2037, 'C.3.1', /distribution|RMD/i],
   ['inhIraOuterLimit', 2031, 'C.3.3', /ten-year|inherited|31 December/i],
 ]) fact(key, key.endsWith('Age') || key === 'marriedYears' ? 'age' : 'count',
-        new RegExp(`(?<![0-9,.$])${money(n)}(?![0-9])(?!,[0-9])(?!%)`, 'g'),
+        /* the hyphen in the lookbehind is measured, not cautious: without it,
+           megAge 64 matched "Rev. Rul. 2004-64" twice in session-2, because the
+           context test only asks for "Meg" nearby and a citation sits in a
+           sentence about her. A number after a hyphen is part of a citation or
+           a range. */
+        new RegExp(`(?<![0-9,.$-])${money(n)}(?![0-9])(?!,[0-9])(?!%)`, 'g'),
         { value: n, where, near });
 
 export { facts };
@@ -272,6 +277,7 @@ export const CHECK20_PINS = [
   { rx: /Meg is short (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? a year/g, key: 'steadyGap' },
   { rx: /How much of the (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? note does she call/g, key: 'notePrincipal' },
   { rx: /Each \$1,000,000 she calls permanently removes \$([0-9,]+) of future interest/g, key: 'interestPerMillion' },
+  { rx: /so the gap widens by ([0-9.]+)% of every call/g, key: 'noteRate' },
 ];
 
 /** The pin list here must be the pin list there. A silent divergence is the defect. */

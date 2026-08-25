@@ -67,6 +67,15 @@ export function buildBlock() {
   L.push('   figures from COLE; a number typed into an exercise is the defect this');
   L.push('   prevents. Do not edit inside the sentinels: edit CASE.md and rebuild. */');
   L.push('var COLE=' + JSON.stringify(F) + ';');
+  L.push('/* THE PLACEHOLDER THAT THROWS. Exercise code interpolates a case figure');
+  L.push('   with COLEn / COLEm / COLEp rather than typing it, and a key that does not');
+  L.push('   exist THROWS here instead of rendering the word "undefined" inside a');
+  L.push('   sentence a student is being marked against. A silent placeholder is the');
+  L.push('   defect; a loud one is the guard. verify-browser.mjs catches both. */');
+  L.push('function COLEv(k){if(!COLE.hasOwnProperty(k))throw new Error("COLE: no figure named "+k);return COLE[k]}');
+  L.push('function COLEn(k){return String(COLEv(k))}');
+  L.push('function COLEm(k){return "$"+Number(COLEv(k)).toLocaleString("en-US")}');
+  L.push('function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}');
   L.push('(function(){');
   L.push("  var tabs=[document.getElementById('caseTabFacts'),document.getElementById('caseTabStruct')];");
   L.push("  var panels=[document.getElementById('casePanelFacts'),document.getElementById('casePanelStruct')];");

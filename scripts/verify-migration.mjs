@@ -349,11 +349,17 @@ for (const [id, name, rxs] of [
    figures are literals. Those are the ones that can drift silently when CASE.md
    changes, so each is pinned to its fact here. Add a row whenever a case figure
    is typed into prose rather than generated. */
+/* A pin is [regex, key, label, transform?]. `transform` maps the case-facts
+   value into the form the prose prints, so a PERCENTAGE can be pinned as
+   readily as a dollar amount. Without it, the 3.82% in the recurring question
+   was the only figure on that line with no guard while the three dollar
+   amounts beside it all had one. Added 2026-08-25, Phase 3.5. */
 {
   const PINS = [
     [/Meg is short (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? a year/g, 'steadyGap',    'the steady-state annual shortfall'],
     [/How much of the (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? note does she call/g, 'notePrincipal', 'the demand-note principal'],
     [/Each \$1,000,000 she calls permanently removes \$([0-9,]+) of future interest/g, null, 'interest removed per $1,000,000 called'],
+    [/so the gap widens by ([0-9.]+)% of every call/g, 'noteRate', 'the demand-note rate in the recurring question', (v) => Math.round(v * 10000) / 100],
   ];
   const bad = [], seen = [];
   for (const l of LESSONS) {
@@ -361,13 +367,14 @@ for (const [id, name, rxs] of [
     const a = raw.indexOf('<!-- CASE:BEGIN'), b = raw.indexOf('<!-- CASE:END');
     /* prose only: everything outside the generated region */
     const prose = a >= 0 && b > a ? raw.slice(0, a) + raw.slice(b) : raw;
-    for (const [rx, key, label] of PINS) {
+    for (const [rx, key, label, xform] of PINS) {
       rx.lastIndex = 0; let m;
       while ((m = rx.exec(prose))) {
         const got = Number(m[1].replace(/,/g, ''));
-        const want = key ? F[key] : Math.round(1000000 * F.noteRate);
-        seen.push(`${l}: ${label} = $${got.toLocaleString('en-US')}`);
-        if (got !== want) bad.push(`${l}: ${label} reads $${got.toLocaleString('en-US')}, case-facts.json says $${want.toLocaleString('en-US')}`);
+        const want = key ? (xform ? xform(F[key]) : F[key]) : Math.round(1000000 * F.noteRate);
+        const show = (n) => (xform ? `${n}%` : `$${n.toLocaleString('en-US')}`);
+        seen.push(`${l}: ${label} = ${show(got)}`);
+        if (got !== want) bad.push(`${l}: ${label} reads ${show(got)}, case-facts.json says ${show(want)}`);
       }
     }
   }

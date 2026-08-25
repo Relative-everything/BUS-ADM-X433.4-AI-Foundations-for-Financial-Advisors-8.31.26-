@@ -400,7 +400,7 @@ explicitly and lives in Part B. They are not averaged.
 | A13 | No off-by-one chip cascade | R1, R2 | HARD FAIL | **2 cascades** |
 | A14 | No declared-synthetic key on an external-work claim | R1, R2 | HARD FAIL | **3** (recorded as ≥2; the checker finds three) |
 | A15 | Every footer key has a chip or a `data-nochip` reason | R7 | HARD FAIL | **23 keys** |
-| A16 | No `UNVERIFIED` / `TODO` / `FIXME` outside its declared register | R1, R2, R7 | HARD FAIL | clean |
+| A16 | No `UNVERIFIED` / `NEEDS SOURCE` / `UNCONFIRMED` / `TODO` / `FIXME` outside its declared register | R1, R2, R7, R8 | HARD FAIL | clean |
 | A17 | Every marked vocabulary term has a definition record | R1, R3 | HARD FAIL | not yet built |
 | A18 | Every definition is at most two sentences | source file | HARD FAIL | not yet built |
 | A19 | Every `read more` resolves to a live footer key | source file | HARD FAIL | not yet built |
@@ -904,12 +904,20 @@ claims and have no chip pointing at them.
 deliberately fabricated citations, which is exactly backwards.** That is why
 `validate_lesson.py` V4's reverse-direction warning has never been actionable, and
 why this rule replaces rather than duplicates it.
-## A16 — no UNVERIFIED / TODO / FIXME outside its declared register
+## A16 — no UNVERIFIED / NEEDS SOURCE / UNCONFIRMED / TODO / FIXME outside its declared register
 
-**Asserts.** The markers `UNVERIFIED`, `TODO`, `FIXME` and `XXX` appear only where
-the file declares a convention permitting them.
+**Asserts.** The markers `UNVERIFIED`, `NEEDS SOURCE`, `UNCONFIRMED`, `TODO`,
+`FIXME` and `XXX` appear only where the file declares a convention permitting
+them, and in the exact form the convention declares.
 
-**Regions.** R1, R2, R7.
+**Regions.** R1, R2, R7, **R8**.
+
+> **R8 ADDED 2026-08-25, Phase 3.5.** A source note is exactly where an
+> unsourced claim would sit, so it is exactly where an undeclared marker could
+> hide from a rule that exists to stop markers hiding. The two markers below are
+> placed against claims, and a claim in a `.src` / `.csrc` note was outside the
+> rule's population. Widening it is the smallest change that keeps the rule
+> honest; nothing in R8 fired at the time it was widened.
 
 **The rule is not "no markers".** Session 0.1 carries eight occurrences of
 `[UNVERIFIED, needs source]` across seven lines, and **every one is deliberate**:
@@ -917,13 +925,37 @@ the file's declared standard is to print the marker rather than invent a figure.
 `CASE.md` states the same standard in its header — *"Unverifiable figures are
 marked `[UNVERIFIED — needs source]` rather than filled in."*
 
-So the rule is **register-aware**: the marker must use the declared form
-(`[UNVERIFIED, needs source]` in the lessons, `[UNVERIFIED — needs source]` in
-`CASE.md`), and it must sit in a region the file's convention covers. Session 0.1's
+So the rule is **register-aware**: the marker must use one of the declared forms,
+and it must sit in a region the file's convention covers. Session 0.1's
 eight occurrences sit on seven lines — line 1113 carries two — across four region
 classes: body prose (1113 ×2 and 1115), footer entries (1642, 1645), a JS feedback
 string (2098), and two comments declaring the convention itself (1876, 2090). All
 eight pass. Report §9.2 concern #16 says seven; it counted lines, not occurrences.
+
+### The declared forms
+
+**Four, and the distinctions between them are load-bearing.** A marker outside
+this list fires, which is what makes the list worth keeping.
+
+| Form | Where | What it asserts |
+|---|---|---|
+| `[UNVERIFIED, needs source]` | lessons | the pre-existing register. Session 0.1's eight occurrences and `SOURCES.md`'s unfilled fields |
+| `[UNVERIFIED — needs source]` | `CASE.md` | the same standard, in `CASE.md`'s own punctuation |
+| **`[NEEDS SOURCE]`** | lessons | **the claim is right; a citation has not been attached.** Added 2026-08-25 |
+| **`[UNCONFIRMED]`** | lessons | **no source corroborates it. The claim itself is in question.** Added 2026-08-25 |
+
+> **`[NEEDS SOURCE]` IS THE STRONGER CLAIM AND IT IS THE ONE THAT NEEDS
+> EVIDENCE.** "This is right, it just needs a citation" asserts that somebody
+> checked. Writing it without having checked is the exact failure the
+> never-fabricate rule exists to prevent, and it is invisible: a wrong
+> `[UNCONFIRMED]` gets read and downgraded, a wrong `[NEEDS SOURCE]` gets read
+> and believed. **Default to `[UNCONFIRMED]` whenever you are unsure.**
+> Downgrading later is cheap. Upgrading a claim nobody checked is not a
+> downgrade, it is a fabrication with a timestamp on it.
+
+The two new markers are enumerated in `docs/unsourced-claims.md`, which is
+**generated from the corpus by `scripts/build-unsourced.mjs`** and never
+hand-maintained.
 
 **Verdict.** HARD FAIL.
 
