@@ -51,11 +51,11 @@
   },
 
   "A9": {
-    "_": "Total em dashes over authoredProse. May fall, may not rise. This is how D1 is enforced without needing history. session-0.1 and session-1 are the two files the console-fence decision moved: 7 not 11, and 83 not 87 on the entity count. session-2 falls 67 -> 66 on the entity count, 2026-08-25: Phase 3.5 replaced the sentence that mis-stated the three confidentiality landmines, and its em dash went with it. Lowered by hand under MAINTAINING.md's re-baselining procedure; no dash was added anywhere in the phase.",
+    "_": "Total em dashes over authoredProse. May fall, may not rise. This is how D1 is enforced without needing history. session-0.1 and session-1 are the two files the console-fence decision moved: 7 not 11, and 83 not 87 on the entity count. session-2 falls 67 -> 66 on the entity count, 2026-08-25: Phase 3.5 replaced the sentence that mis-stated the three confidentiality landmines, and its em dash went with it. session-1 falls 83 -> 81 on the entity count, 2026-08-25: Phase 3.6 collapsed session-1 §05's two Sonnet 5 price rows into one after the vendor cancelled the scheduled rise, and the two dashes carrying the date qualifiers through-today and from-1-Sep went with the rows. Both lowered by hand under MAINTAINING.md's re-baselining procedure; no dash was added in either phase.",
     "population": "authoredProse",
     "files": {
       "session-0.1": { "literal": 0,  "entity": 7,  "total": 7 },
-      "session-1":   { "literal": 1,  "entity": 83, "total": 84 },
+      "session-1":   { "literal": 1,  "entity": 81, "total": 82 },
       "session-2":   { "literal": 2,  "entity": 66, "total": 68 },
       "session-3":   { "literal": 94, "entity": 13, "total": 107 },
       "session-4":   { "literal": 1,  "entity": 84, "total": 85 }

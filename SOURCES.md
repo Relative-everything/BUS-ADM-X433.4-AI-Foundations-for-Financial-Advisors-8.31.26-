@@ -187,7 +187,7 @@ published:      not applicable
 last_retrieved: 2026-08-25
 last_verified:
 retrieval_note: Fetched in full 2026-08-25 for Phase 3.5. PULL-002 (session-2) carries a PARTIAL DATE, "2026-08"; it is kept because it is the honest record of what that lesson pulled.
-content_changed: 2026-08-25. The page now states that Sonnet 5's $2 / $10 introductory pricing "is now the standard price" and that "the previously scheduled increase to $3/$15 per million input/output tokens on September 1, 2026 will not occur". The 2026-07-28 pull recorded the increase as scheduled. DEPENDENT LESSON ELEMENTS: session-1 §10 table row "Sonnet 5 — from 1 Sep · $3 · $15 · $0.30" at :1727, and the note "Sonnet 5 introductory pricing ends tonight and rises 50% tomorrow" at :1732 — both now state a price rise that the source says will not happen. session-2 §02's "Sonnet 5 lists at $2 in / $10 out per million tokens" at :1380 is UNAFFECTED and is now the standing price. NOT silently updated: Phase 3.5 flags source changes rather than resolving them.
+content_changed: 2026-08-25. The page now states that Sonnet 5's $2 / $10 introductory pricing "is now the standard price" and that "the previously scheduled increase to $3/$15 per million input/output tokens on September 1, 2026 will not occur". The 2026-07-28 pull recorded the increase as scheduled. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-08-25 in Phase 3.6: session-1 §10's second Sonnet 5 table row and its "rises 50% tomorrow" note both carried the cancelled rise and are gone; the surviving row states $2 / $10 / $0.20 with no date on it. Three script arrays carried the same cancelled figure and were corrected with it — TIERS (§03 cost boxes), PATHS (§06 practice cost) and DPT (§06 document pass), the last two of which also printed the label "Sonnet 5 (from 1 Sep)" on screen. session-2 §02's "Sonnet 5 lists at $2 in / $10 out per million tokens" was UNAFFECTED and is the standing price. Phase 3.5 flagged rather than resolved; Phase 3.6 resolved on instruction.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -196,7 +196,7 @@ recheck_before: every teaching of session-1 §03, §05 and §06
 scope:          Per-token input and output rates by model, cache-hit and batch discounts.
 used_for.session-1: per-token rates, cache and batch discounts, and the Cole document-pass arithmetic
 used_for.session-2: the published rates behind the blended token price
-last_retrieved.session-1: 2026-07-28
+last_retrieved.session-1: 2026-08-25
 figures.session-1: per-token input and output rates, cache-hit and batch discounts
 last_retrieved.session-2: 2026-08
 figures.session-2: the published rates behind the blended token price at a 3:1 input-to-output ratio

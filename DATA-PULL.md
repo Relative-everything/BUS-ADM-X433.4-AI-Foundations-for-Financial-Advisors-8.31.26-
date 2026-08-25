@@ -141,8 +141,8 @@ version string means the version is not tracking the data.
 
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
-| PRICING-001 | S1 | 2026-07-28 | **[UNVERIFIED, needs source]** | per-token input and output rates, cache-hit and batch discounts |
-| PRICING-002 | S2 | 2026-08 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio |
+| PRICING-001 | S2 | 2026-08 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio |
+| PRICING-002 | S1 | 2026-08-25 | **[UNVERIFIED, needs source]** | per-token input and output rates, cache-hit and batch discounts |
 
 ### `src-vectara` — Introducing the next generation of Vectara's hallucination leaderboard
 
@@ -330,12 +330,12 @@ wrong when they go stale.
 | Lesson | Distinct model names in prose | Occurrences |
 |---|---|---|
 | S0.1 | `Fable 5`, `Haiku 4.5`, `Opus 4.7`, `Opus 5`, `Sonnet 5` | 105 |
-| S1 | `Fable 5`, `GPT-5.6`, `Haiku 4.5`, `Kimi K3`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 36 |
+| S1 | `Fable 5`, `GPT-5.6`, `Haiku 4.5`, `Kimi K3`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 34 |
 | S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 43 |
 | S3 | — | 0 |
 | S4 | `DeepSeek V4-Flash`, `Fable 5`, `GPT-5.6`, `Gemini 3.6`, `Grok 4.6`, `Kimi K3`, `Luna`, `Opus 5`, `Sonnet 5` | 34 |
 
-**218 occurrences across 5 lessons.** This count is read off
+**216 occurrences across 5 lessons.** This count is read off
 the corpus on every run, so it cannot go stale the way a typed one would.
 
 
