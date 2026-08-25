@@ -638,15 +638,7 @@ textarea:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on
 .ansk.show{display:block}
 @media print{#rail,.ovr{display:none}body{background:#fff}.slide{page-break-inside:avoid;padding:22px 0}.ansk{display:block}}
 /* ===== CORE / APPENDIX ARCHITECTURE ===== */
-a.apxlink{display:block;background:var(--gold-bg);border:1.5px dashed var(--gold);border-radius:10px;padding:12px 16px;margin:22px 0 0;text-decoration:none;color:inherit;transition:.15s}
-a.apxlink:hover{border-style:solid}
-a.apxlink+a.apxlink{margin-top:9px}
-a.apxlink .al{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px;font-weight:500}
-a.apxlink b{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:15.5px;font-weight:600;letter-spacing:-.015em}
-a.apxlink .aw{display:block;color:var(--muted);font-size:14px;line-height:1.45;margin-top:3px;font-family:"Source Serif 4",Georgia,serif;text-transform:none;letter-spacing:0}
 section.apxdiv{border-top:3px solid var(--gold)}
-section.apx .apxback{background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:9px 14px;margin:0 0 18px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.05em;line-height:1.6;color:var(--gold)}
-section.apx .apxback a{color:var(--gold);font-weight:500}
 .apxgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:11px;margin-top:20px}
 a.apxcard{display:block;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;transition:.15s}
 a.apxcard:hover{border-color:var(--gold);box-shadow:0 3px 14px rgba(138,106,18,.10)}
@@ -655,7 +647,7 @@ a.apxcard b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif
 #rail button.apxnav .pip{background:var(--gold);opacity:.5}
 #rail button.apxnav{color:var(--gold)}
 #rail button.apxnav.on .pip{background:var(--gold);opacity:1}
-@media print{a.apxlink{display:none}}
+body.core-only #rail button.apxnav:not(.apxidx){display:none}
 .pace{border-color:var(--gold)!important;background:var(--gold-bg)}
 .pace .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:4px}
 .pace .pcell b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--gold)}
@@ -696,10 +688,14 @@ footer ol.srcs li b{color:var(--ink)}
 #tierbar button:hover{border-color:var(--gold);color:var(--gold)}
 #tierbar button.on{background:var(--gold);border-color:var(--gold);color:#fff}
 #tierbar button.core.on{background:var(--on);border-color:var(--on)}
-section.apx.dim{opacity:.32}
-section.apx.dim .apxback{opacity:.5}
-a.apxcard.dim,a.apxlink.dim{opacity:.3}
-body.core-only section.apx,body.core-only section.apxdiv,body.core-only a.apxlink{display:none}
+section.apx.dim{padding:14px 0;border-bottom:1px dashed var(--line)}
+section.apx.dim>*{display:none}
+section.apx.dim>.apxstub{display:block}
+.apxstub{display:none;background:var(--card);border:1.5px dashed var(--line);border-radius:10px;padding:11px 15px;margin:0}
+.apxstub b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:14px;font-weight:600;letter-spacing:-.01em;color:var(--muted)}
+.apxstub span{display:block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+a.apxcard.dim{opacity:.3}
+body.core-only section.apx{display:none}
 @media print{body.core-only section.apx,body.core-only section.apxdiv{display:none}#tierbar{display:none}}
 table.tbudget{width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px}
 table.tbudget th{text-align:left;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);border-bottom:1.5px solid var(--line);padding:7px 9px}
@@ -1092,7 +1088,7 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
     <button data-level="0">Foundational</button>
     <button data-level="1" class="on">+ Standard</button>
     <button data-level="2">+ Advanced</button>
-    <button class="core" data-core>Core only</button>
+    <button class="core on" data-core>Core only</button>
   </div>
   <p class="dim mono" id="tierOut" style="font-size:12px;letter-spacing:.04em;margin:9px 0 0"></p>
 </div>
@@ -1133,6 +1129,22 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
   <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all four bridge items before anything is revealed.</div></div>
 
 </section>
+
+<!-- APXPANEL:BEGIN generated-by=scripts/build-appendix.mjs -->
+<section class="slide apxdiv" id="apx" data-nav="Appendix contents">
+  <div class="eyebrow"><span>Appendix &middot; 5 optional sections</span><span class="mins">80 min</span></div>
+  <h2>Appendix contents</h2>
+  <p class="lede">Five optional sections, 80 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
+  <p>The 13 sections of the core session run in about 70 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <div class="apxgrid">
+    <a class="apxcard" href="#sRSP"><span class="ac">D5 &middot; 16 min &middot; after &sect;02</span><b>The Thirty-Day Clock: A Regulation S-P Tabletop</b></a>
+    <a class="apxcard" href="#sW1"><span class="ac">D1 &middot; 16 min &middot; after &sect;05</span><b>Content Provenance and the SynthID Watermark</b></a>
+    <a class="apxcard" href="#sW2"><span class="ac">D2 &middot; 14 min &middot; after &sect;05</span><b>Entropy, Regeneration and the Limits of Watermarking</b></a>
+    <a class="apxcard" href="#sWS"><span class="ac">D3 &middot; 14 min &middot; after &sect;07</span><b>Where the Assigned Reading Has Gone Stale</b></a>
+    <a class="apxcard" href="#sD"><span class="ac">D4 &middot; 20 min &middot; after &sect;10</span><b>Discussion: Whether the Logging Burden Costs More Than the Tool Saves</b></a>
+  </div>
+</section>
+<!-- APXPANEL:END -->
 
 <section class="slide" id="sCold" data-nav="Cold open">
   <div class="eyebrow"><span>Cold open &middot; standing ritual</span><span class="mins">8 min</span></div>
@@ -1223,6 +1235,30 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
 
   <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Tick fields until the panel crosses the line, then name the tick that did it.</div></div>
 
+</section>
+
+<section class="slide apx" id="sRSP" data-nav="D5 &middot; The 30-day clock" data-insert-after="s2" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>D5 &middot; The Thirty-Day Clock: A Regulation S-P Tabletop</b><span>16 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix D5 &middot; Tabletop</span><span class="mins">16 min</span></div>
+  <h2>The Thirty-Day Clock: A Regulation S-P Tabletop</h2>
+
+  <p class="big">&sect;02 states the obligation: notify affected customers as soon as practicable, and no later than thirty days after the firm becomes aware that unauthorised access to sensitive customer information has occurred or is reasonably likely to have occurred. The dangerous word is <em>aware</em>, and most firms have never defined who counts.</p>
+
+  <p>Below is one incident, told as it actually arrives &mdash; out of order, partly by rumour, and through people who do not know they are holding a regulatory trigger. Click the events in the order you think they happened. Then decide which one started the clock.</p>
+
+  <div class="panel">
+    <span class="do">Do this now &mdash; 6 minutes</span>
+    <h4>The Event That Started the Clock</h4>
+    <p class="hint">Pick the single event you would defend to an examiner as the moment the firm became aware. The consequences of each choice are shown after you commit.</p>
+    <div id="rspList" data-task="t-sRSP" data-comp="commit-first-mcq"></div>
+    <div class="diagout" id="rspOut"><span class="cz">Not answered</span>Pick one event.</div>
+  </div>
+
+  <p><strong>Why this belongs in a policy and not in a memory.</strong> Every option below is defensible in the room and only one of them is defensible in an examination, because the standard is what a reasonable firm would have concluded, not what this firm happened to conclude. A policy that names the roles whose knowledge is imputed to the firm &mdash; and requires them to escalate within a stated number of hours &mdash; converts an argument into a date. Your Session 4 homework asks for exactly that clause.</p>
+
+  <p class="src"><b>SEC, Regulation S-P amendments (2024)</b>, adopting release &mdash; incident response program, customer notification as soon as practicable and not later than 30 days after the firm becomes aware, service provider oversight, and recordkeeping. Compliance dates 3 December 2025 (larger entities) and 3 June 2026 (advisers under $1.5 billion) <span class="conf h" data-src="src-case">H</span>. The Cole incident is constructed for this lesson; the awareness analysis is the instructor&rsquo;s reading and is not legal advice <span class="conf l" data-src="src-case">L &mdash; illustrative</span>.</p>
+
+  <div class="check" data-gate="ga5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Commit to one event, read why the others fail, then write the escalation clause your firm would need.</div></div>
 </section>
 
 <section class="slide" id="s3" data-nav="Tiers">
@@ -1353,10 +1389,121 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
   <p><strong>The control is not detection.</strong> Humans spot high-quality synthetic media at close to chance, and detectors lose much of their lab accuracy in the field.<span class="conf m" data-src="src-case">M</span> What works is procedural: out-of-band verification on a channel the requester did not choose, on every disbursement instruction. That control predates deepfakes by decades &mdash; another pre-existing duty doing new work.</p>
 
 
-  <a class="apxlink" href="#sW1"><span class="al">If there is time &middot; Appendix D1 &middot; 9 min</span><b>Content Provenance and the SynthID Watermark</b><span class="aw">How a watermark is hidden in text, images and audio, and the asymmetry that governs whether you can ever rely on one. Deep, self-contained, and the part a technical room will ask about.</span></a>
-  <a class="apxlink" href="#sW2"><span class="al">If there is time &middot; Appendix D2 &middot; 6 min</span><b>Entropy, Regeneration and the Limits of Watermarking</b><span class="aw">Why a watermark survives paraphrase and dies to regeneration, and what a detected signal actually licenses you to conclude. Takes D1 first.</span></a>
 
   <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Write the standing instruction and score it against all five properties.</div></div>
+
+</section>
+
+<section class="slide apx" id="sW1" data-nav="D1 · Provenance" data-insert-after="s5" data-tier="advanced">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>D1 &middot; Content Provenance and the SynthID Watermark</b><span>16 min &middot; advanced &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix D1 &middot; Provenance</span><span class="mins">16 min</span></div>
+  <h2>Content Provenance and the SynthID Watermark</h2>
+  <p class="big">You cannot detect a deepfake by looking at it. Provenance marking is the answer, and it answers a narrower question than most people think.</p>
+
+  <p>Two approaches. <strong>Metadata bindings</strong> attach a signed manifest alongside the content &mdash; C2PA Content Credentials. <strong>In-content watermarks</strong> alter the content itself. SynthID is the second kind, and metadata is separable: manifests are lost when a non-aware tool resaves a file, re-encoding strips them silently, and a screenshot defeats them.<span class="conf h" data-src="src-synthid">H</span></p>
+
+  <div class="matrix" style="background:var(--warn-bg);border-color:#E0C6B4">
+    <h4 style="margin-bottom:8px">A correction to the common framing</h4>
+    <p style="margin:0;max-width:none;font-size:16px">SynthID and C2PA are routinely compared as rivals. The specification says otherwise: C2PA defines a <em>Durable Content Credential</em> as one for which <em>soft bindings</em> exist &mdash; invisible watermarks and perceptual fingerprints letting a stripped manifest be recovered. Watermarking is a component of the C2PA architecture, not its competitor.<span class="conf h" data-src="src-synthid">H</span> If asked to choose between them, the question is malformed.</p>
+  </div>
+
+  <h3 style="margin-top:34px">The asymmetry that governs everything else</h3>
+  <p class="pull">Presence is evidence. Absence is not.</p>
+
+  <p>A valid watermark tells you something. Its absence tells you almost nothing &mdash; the content may predate adoption, the model may not participate, the file may have been stripped. Most authentic content carries no marking, so treating absence as suspicion produces an unusable false-positive rate.<span class="conf h" data-src="src-daly">H</span> Anthropic has not announced SynthID adoption for Claude, so nothing you generate in this course is watermarked.<span class="conf m" data-src="src-daly">M</span></p>
+
+  <h3 style="margin-top:34px">Text: tournament sampling</h3>
+  <p>SynthID adds nothing to the text. It changes which token is selected, running a tournament in which each candidate carries a pseudo-random value seeded by recent context plus a secret key. Detection re-runs the same tournaments: if observed tokens win their brackets far more often than chance allows, the text is watermarked &mdash; no access to the original model needed.<span class="conf h" data-src="src-synthid">H</span></p>
+
+  <div class="diag" data-task="t-sW1" data-comp="parameter-sandbox">
+    <h4 style="margin-bottom:4px">Tournament sampling, one token</h4>
+    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">Eight candidates, three layers. Change the key; the winner changes, the text stays fluent.</p>
+    <div class="row" style="margin-bottom:14px">
+      <button class="btn" id="tsRun">Run tournament</button>
+      <button class="btn sel mini act" id="tsKeyA" data-k="A">Key A</button>
+      <button class="btn sel mini" id="tsKeyB" data-k="B">Key B</button>
+      <button class="btn sel mini" id="tsOff" data-k="OFF">Watermark off</button>
+    </div>
+    <p style="margin:0 0 8px"><span class="sim">Toy hash, m = 3 &mdash; arithmetic made visible</span></p>
+    <div id="tsBoard"></div>
+    <div class="diagout" id="tsOut"><span class="nil">No tournament run yet.</span></div>
+  </div>
+  <p class="srcnote">A simplified but faithful reconstruction of the scheme in Dathathri, See, Ghaisas, Huang, McAdam et al., "Scalable watermarking for identifying large language model outputs," <em>Nature</em> 634:818&ndash;823 (2024). The paper uses multiple watermarking functions g<sub>1</sub>&hellip;g<sub>m</sub> seeded from recent context and a watermarking key; this widget uses m&nbsp;=&nbsp;3 and a toy hash so the arithmetic is visible. Candidate probabilities are illustrative, not measured from any model.<span class="conf m" data-src="src-synthid">M</span></p>
+
+  <h3 style="margin-top:34px">Images and video: perturbation below the perceptual floor</h3>
+  <p>SynthID alters pixels at generation time, spread across the whole image, so cropping leaves enough signal to read. Google states it survives cropping, filters, frame-rate changes and lossy compression.<span class="conf h" data-src="src-synthid">H</span> Amplify it and see.</p>
+
+  <div class="diag">
+    <h4 style="margin-bottom:4px">Perturbation amplifier</h4>
+    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">One synthetic image, one perturbation field, one amplitude control. Difference map amplified 20&times;.</p>
+    <p style="margin:0 0 8px"><span class="sim">Simplified reconstruction &mdash; illustrative probabilities</span></p>
+    <div id="pfCanvases" class="cards" style="margin:0 0 16px"></div>
+    <input type="range" id="pfAmp" min="0" max="40" value="3">
+    <div class="ticks"><span>none</span><span>subtle</span><span>visible</span><span>destructive</span></div>
+    <div class="instrline" id="pfOut"></div>
+  </div>
+  <p class="srcnote"><strong>This is a simulation, not SynthID output.</strong> Google does not publish SynthID's perturbation amplitude, so no slider position corresponds to the real thing. What the widget demonstrates is the perceptual principle the technique relies on: below roughly a 1% luminance change, the human visual system does not reliably register a difference, while a matched-filter detector reading the whole field does. The 1% figure is the Weber fraction for luminance discrimination and varies with adaptation, spatial frequency and image content.<span class="conf m" data-src="src-case">M</span></p>
+
+  <h3 style="margin-top:30px">Audio: hiding in the frequencies you cannot hear</h3>
+  <p>SynthID watermarks audio from Lyria and the NotebookLM podcast feature. Google states it is inaudible and survives added noise, MP3 compression and speed changes.<span class="conf h" data-src="src-synthid">H</span> Same principle, different perceptual system: hearing has ranges of low sensitivity, and a loud sound masks a quieter one. What matters is survival through the air &mdash; the path that synthetic Meg Cole instruction actually travels.</p>
+
+  <h3 style="margin-top:30px">Scale: a figure worth not repeating</h3>
+  <p>Google's Detector announcement cites over 10 billion items watermarked. I/O coverage in May 2026 reports more than 100 billion images and videos. Secondary sources published the same month carry both.<span class="conf l" data-src="src-synthid">L</span> Google's own current page states no figure at all.<span class="conf h" data-src="src-synthid">H</span></p>
+
+  <p class="pull">Ten billion or one hundred billion, reported the same month, from the same company. A tenfold spread.</p>
+
+  <p>The deepfake-loss problem repeating. Say deployment is in the billions and cite the primary announcement you actually read.</p>
+
+  <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Work through all three media and name the one your practice would actually encounter.</div></div>
+
+</section>
+
+<section class="slide apx" id="sW2" data-nav="D2 · Watermark limits" data-insert-after="s5" data-tier="advanced">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>D2 &middot; Entropy, Regeneration and the Limits of Watermarking</b><span>14 min &middot; advanced &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix D2 &middot; Provenance, deeper</span><span class="mins">14 min</span></div>
+  <h2>Entropy, Regeneration and the Limits of Watermarking</h2>
+  <p class="big">Watermark capacity is bounded by how many acceptable outputs exist. Where only one output is correct, there is nowhere to hide a signal.</p>
+
+  <p>Google states it directly: watermark application is less effective on factual responses, because there is less opportunity to augment generation without decreasing accuracy.<span class="conf h" data-src="src-synthid">H</span></p>
+
+  <h3 style="margin-top:30px">The advisor's inversion</h3>
+  <p>The outputs where fabrication does most damage &mdash; the 30% discount, an IRC cite, the $20,020,000 note balance &mdash; are the lowest-entropy outputs and the least watermarkable. What watermarks well is what matters least when wrong.</p>
+
+  <div class="diag" data-task="t-sW2" data-comp="two-bucket-sorter">
+    <h4 style="margin-bottom:4px">Entropy and watermarkability by output type</h4>
+    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">Place each deliverable. Key reveals after all eight.</p>
+    <div id="entChips" class="chiplist" style="margin-bottom:16px"></div>
+    <div class="boxes" id="entBoxes">
+      <div class="lbox" data-b="0"><h4>High entropy &mdash; watermarks well</h4><p>Many acceptable phrasings. Room to bias selection without cost.</p><div class="why" id="e0"></div></div>
+      <div class="lbox" data-b="1"><h4>Low entropy &mdash; watermarks poorly</h4><p>Few acceptable outputs. Biasing selection degrades correctness.</p><div class="why" id="e1"></div></div>
+    </div>
+    <div class="diagout" id="entOut"><span class="nil">Nothing placed yet.</span></div>
+  </div>
+  <div class="ansk" id="entKey"></div>
+
+  <p><strong>Code and structured data are the extreme case.</strong> Change a token and it compiles differently or fails. The remaining slack sits in naming, quoting and whitespace &mdash; and a formatter reprints to a fixed standard, erasing exactly that. Nobody has to attack the watermark; the build pipeline removes it.<span class="conf m" data-src="src-synthid">M</span></p>
+
+  <h3 style="margin-top:30px">Regeneration</h3>
+  <p>Passing a watermarked image through a second generative model re-synthesises it from a model with no knowledge of the key. Zhao et al. (2024) formalised this as a regeneration attack; a 2026 analysis proves mutual information between image and payload approaches zero under sufficient diffusion, with near-zero recovery at preserved visual fidelity.<span class="conf h" data-src="src-daly">H</span></p>
+
+  <p><strong>Not uniformly, and the nuance is the useful part.</strong> Schemes binding the signal to latent representations rather than pixels degrade far less &mdash; one 2026 scheme retains 78.8% bit accuracy and 75% true-positive rate after diffusion purification.<span class="conf m" data-src="src-case">M</span> Treat any single removal percentage as scheme-specific until proven otherwise.</p>
+
+  <p class="srcnote">This session does not teach removal technique and none is given here. The finding matters defensively, and only defensively: it is the reason a compliance procedure must never treat a missing watermark as evidence of authenticity. Sources: Zhao et al. (2024) on regeneration attacks; arXiv 2602.20680 (Feb 2026) for the information-theoretic result; arXiv 2605.01479 for the semantic-binding counterexample. Christ et al. further prove that watermark undetectability requires cryptographic secrecy, so no scheme is secure against an adversary who holds the key.<span class="conf h" data-src="src-synthid">H</span></p>
+
+  <h3 style="margin-top:30px">What a signal licenses you to conclude</h3>
+  <p>Combine a detector result with what you know about the source.</p>
+
+  <div class="diag">
+    <div class="ingrid" style="margin-bottom:16px">
+      <div><label>Detector result</label><div class="row" id="evA"></div></div>
+      <div><label>Source model participates in the scheme?</label><div class="row" id="evB"></div></div>
+    </div>
+    <div class="diagout" id="evOut"><span class="nil">Select one of each.</span></div>
+  </div>
+
+  <p><strong>Regulatory note.</strong> California SB 942 took effect January 2026; EU AI Act Article 50 machine-readable disclosure obligations begin enforcement August 2026.<span class="conf m" data-src="src-case">M</span> Neither is a US federal adviser rule. Verify before relying on either date &mdash; the fastest-moving area covered tonight.</p>
+
+  <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort the entropy cases, then state what a detected signal licenses you to conclude.</div></div>
 
 </section>
 
@@ -1437,9 +1584,41 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
   <p class="srcnote"><strong>What the calculator does and does not know.</strong> It multiplies your figures. The two-minutes-per-citation default is a placeholder you should overwrite with your own measured time, not a published benchmark &mdash; a Code section you can pull in thirty seconds and a private letter ruling you must locate are not the same check.<span class="conf l" data-src="src-regsp">L</span> If you did not record a Session 1 baseline, the fallback figures below the inputs let you run the exercise, and you should treat the output as illustrative rather than as a finding about your practice.</p>
 
 
-  <a class="apxlink" href="#sWS"><span class="al">If there is time &middot; Appendix D3 &middot; 8 min</span><b>Where the Assigned Reading Has Gone Stale</b><span class="aw">Three Wolfram claims from 2023 that no longer describe the frontier, plus the parenthesis mechanism behind the hallucination rate. The course auditing its own syllabus.</span></a>
 
   <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Enter your Session 1 baseline and price the verification burden against it.</div></div>
+
+</section>
+
+<section class="slide apx" id="sWS" data-nav="D3 · Source staleness" data-insert-after="s7" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>D3 &middot; Where the Assigned Reading Has Gone Stale</b><span>14 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix D3 &middot; Source staleness</span><span class="mins">14 min</span></div>
+  <h2>Where the Assigned Reading Has Gone Stale</h2>
+
+  <p class="big">Wolfram is a February 2023 source describing a 2020 model, and it is the reading Sessions 1 through 3 are built on. Three of its structural claims no longer describe the frontier. This section runs the course&rsquo;s own verification discipline against the course&rsquo;s own syllabus.</p>
+
+  <h3>Where the hallucination rate comes from, in one mechanism</h3>
+  <p>Trained on balanced-parenthesis sequences, a small transformer assigns roughly 15% probability to a closing parenthesis at a position where one would necessarily leave the sequence unbalanced. Wolfram: this &ldquo;isn&rsquo;t right, because that would necessarily lead to an unbalanced parenthesis.&rdquo;<span class="conf h" data-src="src-wolfram">H</span> The model is not uncertain about a hard question. It is confidently assigning probability to a provably impossible continuation, because it estimates a distribution over next tokens rather than checking a constraint. A fabricated citation is that same event with a legal authority in place of a bracket. Nothing in the architecture distinguishes them &mdash; which is why the verification burden priced in &sect;07 is structural rather than a defect awaiting a patch.</p>
+
+  <h3 style="margin-top:30px">Commit first</h3>
+  <p>Three claims from the February 2023 reading. Before the table opens: which of them still describes an August 2026 frontier model? Pick one from each row. The key stays shut until all three are answered.</p>
+
+  <div class="quiz" id="staleQuiz" data-task="t-source-staleness" data-comp="commit-first-mcq"></div>
+  <div class="diagout" id="staleOut"><span class="cz">Not scored yet</span>Answer all three to open the comparison.</div>
+
+  <h3 style="margin-top:30px">Three claims that have gone stale</h3>
+  <table>
+    <thead><tr><th>Wolfram, February 2023</th><th>August 2026</th><th>Consequence</th></tr></thead>
+    <tbody>
+      <tr><td>175 billion weights, and every token &ldquo;has to do a calculation involving every single one of these weights.&rdquo;</td><td>Kimi K3 runs 2.8 trillion total parameters with 104 billion active per token &mdash; a mixture-of-experts design activating roughly 3.7%. DeepSeek V4-Flash: 284B total, 13B active.<span class="conf h" data-src="src-case">H</span></td><td>Parameter count no longer predicts cost or latency. Frontier closed models have stopped publishing it.</td></tr>
+      <tr><td>&ldquo;ChatGPT doesn&rsquo;t internally have loops or recompute on data&hellip; each computational element is used only once.&rdquo;</td><td>Reasoning models spend variable output tokens before answering; Artificial Analysis reports tokens and turns per task as first-class metrics. Grok 4.6 finishes long-horizon work in ~53 turns against Opus 5&rsquo;s ~103.<span class="conf h" data-src="src-daly">H</span></td><td>The outer loop Wolfram called absent is now the main cost driver and the main quality dial. It is also why the sticker price understates cost per task in &sect;03.</td></tr>
+      <tr><td>&ldquo;A temperature of 0.8 seems best,&rdquo; as the primary randomness control.</td><td>Vendors now expose effort or reasoning level &mdash; low, high, max &mdash; as the principal control, and several do not expose temperature in the consumer product.<span class="conf m" data-src="src-aa">M</span></td><td>The dial taught in Session 2 may not exist in the interface a student is using.</td></tr>
+    </tbody>
+  </table>
+  <p class="srcnote">Left column from Wolfram (2023), assigned for Sessions 1&ndash;3. Right from Artificial Analysis Intelligence Index v4.1 and vendor model cards, August 2026. Row three is medium confidence: it characterises a moving interface, not a published fact. The point is not that Wolfram was wrong &mdash; it is that a source can be correct, canonical, three years old and stale in specific load-bearing places at once, and you find out which only by checking. That is the same instruction you will write into your firm policy tonight, applied to the syllabus you were handed.</p>
+
+  <div class="talk"><span class="th">The question to put to the room</span>Every citation in your Part 1 package has a date. Which of them is the oldest, and what would have to have changed in the world for it to be wrong now? You have four minutes and you may not open the document to answer.</div>
+
+  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Commit to all three claims before the comparison table opens.</div></div>
 
 </section>
 
@@ -1589,228 +1768,14 @@ for that item. Do not reconstruct a citation from memory.</div>
   <p><strong>If it ran.</strong> Some will. Note the elapsed time and what you did not have to ask about, then run it a second time against a different input than the one the documentation used. Working on the builder's example and working on the next twenty clients are different claims, and only one of them is the criterion.</p>
 
 
-  <a class="apxlink" href="#sD"><span class="al">If there is time &middot; Appendix D4 &middot; 20 min</span><b>Whether the Logging Burden Costs More Than the Tool Saves</b><span class="aw">Twenty minutes, immediately after a room has watched its own packages fail to run. The timing is the point; do not move it earlier.</span></a>
 
   <div class="check" data-gate="g11"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run the package cold for eight minutes, then record the first thing that stopped you.</div></div>
 
 </section>
 
-<section class="slide" id="s9" data-nav="Policy homework">
-  <div class="eyebrow"><span>11 &middot; Assignment</span><span class="mins">5 min</span></div>
-  <h2>Homework: The Firm Artificial Intelligence Use Policy</h2>
-  <p class="big">Draft an AI usage policy for your firm, due before Session 5. This is the last instruction you receive before writing it, so every question the assignment asks was answered somewhere tonight.</p>
-
-  <p>Click each rubric question to see which section answers it and what you may cite. Structured bullets, two pages maximum.</p>
-
-  <div class="diag" data-task="t-s9" data-comp="builder-assembler">
-    <div id="rubricChips" class="chiplist"></div>
-    <div class="diagout" id="rubricOut"><span class="nil">Select a rubric question.</span></div>
-  </div>
-
-  <p><strong>Use the Cole landmines as your worked example.</strong> Your data-boundary section needs one concrete illustration, and the three you classified in &sect;02 &mdash; an undisclosed sale, an unexecuted plan with a claimed discount, and the fact of the relationship &mdash; are already reasoned through with the regulation applied. Substitute your own synthetic facts before the policy leaves your desk.</p>
-
-  <p class="srcnote"><strong>One warning carried forward from &sect;02.</strong> The assignment asks you to define PII. Regulation S-P governs NPI. Define both, state which one your firm's obligations actually run to, and you have turned a terminology collision into the strongest paragraph in the document.</p>
-
-  <h3 style="margin-top:30px">Peer review, before Session 5 and not tonight</h3>
-  <p>Exchange drafts with one classmate &mdash; not your Part 2 pair &mdash; and score theirs on four tests. Bring the score to Session 5. The instrument is deliberately hostile: a policy that cannot survive four questions from a friendly reader will not survive one from an examiner.</p>
-
-  <div class="diag">
-    <div id="peerRows"></div>
-    <div class="diagout" id="peerOut"><span class="nil">No scores entered.</span></div>
-  </div>
-
-  <p class="pull">The tools change. The judgement does not.</p>
-
-  <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Select every element your firm policy needs and read the assembled outline.</div></div>
-
-</section>
-
-<section class="slide apxdiv" id="apx" data-nav="— APPENDIX —">
-  <div class="eyebrow"><span>Appendix &middot; 4 optional sections</span><span class="mins">43 min</span></div>
-  <h2>Appendix</h2>
-  <p class="lede">Four optional sections. Provenance runs deep on watermarking; source staleness turns the course&rsquo;s verification discipline on its own syllabus.</p>
-  <p>The 12 sections above are the core session and run in about 67 minutes. Everything below is optional depth. Each appendix section names the two core sections it belongs between and links back to that point, so it can be taken in place during a long session or on its own afterwards. Nothing in the core depends on anything down here.</p>
-  <div class="apxgrid">
-    <a class="apxcard" href="#sW1"><span class="ac">D1 &middot; 9 min &middot; after §05</span><b>Content Provenance and the SynthID Watermark</b></a>
-    <a class="apxcard" href="#sW2"><span class="ac">D2 &middot; 6 min &middot; after §05</span><b>Entropy, Regeneration and the Limits of Watermarking</b></a>
-    <a class="apxcard" href="#sWS"><span class="ac">D3 &middot; 8 min &middot; after §07</span><b>Where the Assigned Reading Has Gone Stale</b></a>
-    <a class="apxcard" href="#sD"><span class="ac">D4 &middot; 20 min &middot; after §10</span><b>Whether the Logging Burden Costs More Than the Tool Saves</b></a>
-  </div>
-</section>
-
-<section class="slide apx" id="sRSP" data-nav="D5 &middot; The 30-day clock" data-insert-after="s2" data-tier="foundational">
-  <div class="eyebrow"><span>Appendix D5 &middot; Tabletop</span><span class="mins">16 min</span></div>
-  <div class="apxback">Insert between &sect;02 Regulation S-P and &sect;03 Tiers &mdash; <a href="#s2">back to &sect;02</a> &middot; <a href="#s3">continue to &sect;03 &rarr;</a></div>
-  <h2>The Thirty-Day Clock: A Regulation S-P Tabletop</h2>
-
-  <p class="big">&sect;02 states the obligation: notify affected customers as soon as practicable, and no later than thirty days after the firm becomes aware that unauthorised access to sensitive customer information has occurred or is reasonably likely to have occurred. The dangerous word is <em>aware</em>, and most firms have never defined who counts.</p>
-
-  <p>Below is one incident, told as it actually arrives &mdash; out of order, partly by rumour, and through people who do not know they are holding a regulatory trigger. Click the events in the order you think they happened. Then decide which one started the clock.</p>
-
-  <div class="panel">
-    <span class="do">Do this now &mdash; 6 minutes</span>
-    <h4>The Event That Started the Clock</h4>
-    <p class="hint">Pick the single event you would defend to an examiner as the moment the firm became aware. The consequences of each choice are shown after you commit.</p>
-    <div id="rspList" data-task="t-sRSP" data-comp="commit-first-mcq"></div>
-    <div class="diagout" id="rspOut"><span class="cz">Not answered</span>Pick one event.</div>
-  </div>
-
-  <p><strong>Why this belongs in a policy and not in a memory.</strong> Every option below is defensible in the room and only one of them is defensible in an examination, because the standard is what a reasonable firm would have concluded, not what this firm happened to conclude. A policy that names the roles whose knowledge is imputed to the firm &mdash; and requires them to escalate within a stated number of hours &mdash; converts an argument into a date. Your Session 4 homework asks for exactly that clause.</p>
-
-  <p class="src"><b>SEC, Regulation S-P amendments (2024)</b>, adopting release &mdash; incident response program, customer notification as soon as practicable and not later than 30 days after the firm becomes aware, service provider oversight, and recordkeeping. Compliance dates 3 December 2025 (larger entities) and 3 June 2026 (advisers under $1.5 billion) <span class="conf h" data-src="src-case">H</span>. The Cole incident is constructed for this lesson; the awareness analysis is the instructor&rsquo;s reading and is not legal advice <span class="conf l" data-src="src-case">L &mdash; illustrative</span>.</p>
-
-  <div class="check" data-gate="ga5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Commit to one event, read why the others fail, then write the escalation clause your firm would need.</div></div>
-</section>
-
-<section class="slide apx" id="sW1" data-nav="D1 · Provenance" data-insert-after="s5" data-tier="advanced">
-  <div class="eyebrow"><span>Appendix D1 &middot; Provenance</span><span class="mins">16 min</span></div>
-  <div class="apxback">Insert between §05 Attacks and §06 Leaks &mdash; <a href="#s5">back to §05</a> &middot; <a href="#s6">continue to §06 &rarr;</a></div>
-  <h2>Content Provenance and the SynthID Watermark</h2>
-  <p class="big">You cannot detect a deepfake by looking at it. Provenance marking is the answer, and it answers a narrower question than most people think.</p>
-
-  <p>Two approaches. <strong>Metadata bindings</strong> attach a signed manifest alongside the content &mdash; C2PA Content Credentials. <strong>In-content watermarks</strong> alter the content itself. SynthID is the second kind, and metadata is separable: manifests are lost when a non-aware tool resaves a file, re-encoding strips them silently, and a screenshot defeats them.<span class="conf h" data-src="src-synthid">H</span></p>
-
-  <div class="matrix" style="background:var(--warn-bg);border-color:#E0C6B4">
-    <h4 style="margin-bottom:8px">A correction to the common framing</h4>
-    <p style="margin:0;max-width:none;font-size:16px">SynthID and C2PA are routinely compared as rivals. The specification says otherwise: C2PA defines a <em>Durable Content Credential</em> as one for which <em>soft bindings</em> exist &mdash; invisible watermarks and perceptual fingerprints letting a stripped manifest be recovered. Watermarking is a component of the C2PA architecture, not its competitor.<span class="conf h" data-src="src-synthid">H</span> If asked to choose between them, the question is malformed.</p>
-  </div>
-
-  <h3 style="margin-top:34px">The asymmetry that governs everything else</h3>
-  <p class="pull">Presence is evidence. Absence is not.</p>
-
-  <p>A valid watermark tells you something. Its absence tells you almost nothing &mdash; the content may predate adoption, the model may not participate, the file may have been stripped. Most authentic content carries no marking, so treating absence as suspicion produces an unusable false-positive rate.<span class="conf h" data-src="src-daly">H</span> Anthropic has not announced SynthID adoption for Claude, so nothing you generate in this course is watermarked.<span class="conf m" data-src="src-daly">M</span></p>
-
-  <h3 style="margin-top:34px">Text: tournament sampling</h3>
-  <p>SynthID adds nothing to the text. It changes which token is selected, running a tournament in which each candidate carries a pseudo-random value seeded by recent context plus a secret key. Detection re-runs the same tournaments: if observed tokens win their brackets far more often than chance allows, the text is watermarked &mdash; no access to the original model needed.<span class="conf h" data-src="src-synthid">H</span></p>
-
-  <div class="diag" data-task="t-sW1" data-comp="parameter-sandbox">
-    <h4 style="margin-bottom:4px">Tournament sampling, one token</h4>
-    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">Eight candidates, three layers. Change the key; the winner changes, the text stays fluent.</p>
-    <div class="row" style="margin-bottom:14px">
-      <button class="btn" id="tsRun">Run tournament</button>
-      <button class="btn sel mini act" id="tsKeyA" data-k="A">Key A</button>
-      <button class="btn sel mini" id="tsKeyB" data-k="B">Key B</button>
-      <button class="btn sel mini" id="tsOff" data-k="OFF">Watermark off</button>
-    </div>
-    <p style="margin:0 0 8px"><span class="sim">Toy hash, m = 3 &mdash; arithmetic made visible</span></p>
-    <div id="tsBoard"></div>
-    <div class="diagout" id="tsOut"><span class="nil">No tournament run yet.</span></div>
-  </div>
-  <p class="srcnote">A simplified but faithful reconstruction of the scheme in Dathathri, See, Ghaisas, Huang, McAdam et al., "Scalable watermarking for identifying large language model outputs," <em>Nature</em> 634:818&ndash;823 (2024). The paper uses multiple watermarking functions g<sub>1</sub>&hellip;g<sub>m</sub> seeded from recent context and a watermarking key; this widget uses m&nbsp;=&nbsp;3 and a toy hash so the arithmetic is visible. Candidate probabilities are illustrative, not measured from any model.<span class="conf m" data-src="src-synthid">M</span></p>
-
-  <h3 style="margin-top:34px">Images and video: perturbation below the perceptual floor</h3>
-  <p>SynthID alters pixels at generation time, spread across the whole image, so cropping leaves enough signal to read. Google states it survives cropping, filters, frame-rate changes and lossy compression.<span class="conf h" data-src="src-synthid">H</span> Amplify it and see.</p>
-
-  <div class="diag">
-    <h4 style="margin-bottom:4px">Perturbation amplifier</h4>
-    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">One synthetic image, one perturbation field, one amplitude control. Difference map amplified 20&times;.</p>
-    <p style="margin:0 0 8px"><span class="sim">Simplified reconstruction &mdash; illustrative probabilities</span></p>
-    <div id="pfCanvases" class="cards" style="margin:0 0 16px"></div>
-    <input type="range" id="pfAmp" min="0" max="40" value="3">
-    <div class="ticks"><span>none</span><span>subtle</span><span>visible</span><span>destructive</span></div>
-    <div class="instrline" id="pfOut"></div>
-  </div>
-  <p class="srcnote"><strong>This is a simulation, not SynthID output.</strong> Google does not publish SynthID's perturbation amplitude, so no slider position corresponds to the real thing. What the widget demonstrates is the perceptual principle the technique relies on: below roughly a 1% luminance change, the human visual system does not reliably register a difference, while a matched-filter detector reading the whole field does. The 1% figure is the Weber fraction for luminance discrimination and varies with adaptation, spatial frequency and image content.<span class="conf m" data-src="src-case">M</span></p>
-
-  <h3 style="margin-top:30px">Audio: hiding in the frequencies you cannot hear</h3>
-  <p>SynthID watermarks audio from Lyria and the NotebookLM podcast feature. Google states it is inaudible and survives added noise, MP3 compression and speed changes.<span class="conf h" data-src="src-synthid">H</span> Same principle, different perceptual system: hearing has ranges of low sensitivity, and a loud sound masks a quieter one. What matters is survival through the air &mdash; the path that synthetic Meg Cole instruction actually travels.</p>
-
-  <h3 style="margin-top:30px">Scale: a figure worth not repeating</h3>
-  <p>Google's Detector announcement cites over 10 billion items watermarked. I/O coverage in May 2026 reports more than 100 billion images and videos. Secondary sources published the same month carry both.<span class="conf l" data-src="src-synthid">L</span> Google's own current page states no figure at all.<span class="conf h" data-src="src-synthid">H</span></p>
-
-  <p class="pull">Ten billion or one hundred billion, reported the same month, from the same company. A tenfold spread.</p>
-
-  <p>The deepfake-loss problem repeating. Say deployment is in the billions and cite the primary announcement you actually read.</p>
-
-  <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Work through all three media and name the one your practice would actually encounter.</div></div>
-
-</section>
-
-<section class="slide apx" id="sW2" data-nav="D2 · Watermark limits" data-insert-after="s5" data-tier="advanced">
-  <div class="eyebrow"><span>Appendix D2 &middot; Provenance, deeper</span><span class="mins">14 min</span></div>
-  <div class="apxback">Insert between §05 Attacks and §06 Leaks &mdash; <a href="#s5">back to §05</a> &middot; <a href="#s6">continue to §06 &rarr;</a></div>
-  <h2>Entropy, Regeneration and the Limits of Watermarking</h2>
-  <p class="big">Watermark capacity is bounded by how many acceptable outputs exist. Where only one output is correct, there is nowhere to hide a signal.</p>
-
-  <p>Google states it directly: watermark application is less effective on factual responses, because there is less opportunity to augment generation without decreasing accuracy.<span class="conf h" data-src="src-synthid">H</span></p>
-
-  <h3 style="margin-top:30px">The advisor's inversion</h3>
-  <p>The outputs where fabrication does most damage &mdash; the 30% discount, an IRC cite, the $20,020,000 note balance &mdash; are the lowest-entropy outputs and the least watermarkable. What watermarks well is what matters least when wrong.</p>
-
-  <div class="diag" data-task="t-sW2" data-comp="two-bucket-sorter">
-    <h4 style="margin-bottom:4px">Entropy and watermarkability by output type</h4>
-    <p class="dim" style="font-size:14px;margin:0 0 14px;max-width:none">Place each deliverable. Key reveals after all eight.</p>
-    <div id="entChips" class="chiplist" style="margin-bottom:16px"></div>
-    <div class="boxes" id="entBoxes">
-      <div class="lbox" data-b="0"><h4>High entropy &mdash; watermarks well</h4><p>Many acceptable phrasings. Room to bias selection without cost.</p><div class="why" id="e0"></div></div>
-      <div class="lbox" data-b="1"><h4>Low entropy &mdash; watermarks poorly</h4><p>Few acceptable outputs. Biasing selection degrades correctness.</p><div class="why" id="e1"></div></div>
-    </div>
-    <div class="diagout" id="entOut"><span class="nil">Nothing placed yet.</span></div>
-  </div>
-  <div class="ansk" id="entKey"></div>
-
-  <p><strong>Code and structured data are the extreme case.</strong> Change a token and it compiles differently or fails. The remaining slack sits in naming, quoting and whitespace &mdash; and a formatter reprints to a fixed standard, erasing exactly that. Nobody has to attack the watermark; the build pipeline removes it.<span class="conf m" data-src="src-synthid">M</span></p>
-
-  <h3 style="margin-top:30px">Regeneration</h3>
-  <p>Passing a watermarked image through a second generative model re-synthesises it from a model with no knowledge of the key. Zhao et al. (2024) formalised this as a regeneration attack; a 2026 analysis proves mutual information between image and payload approaches zero under sufficient diffusion, with near-zero recovery at preserved visual fidelity.<span class="conf h" data-src="src-daly">H</span></p>
-
-  <p><strong>Not uniformly, and the nuance is the useful part.</strong> Schemes binding the signal to latent representations rather than pixels degrade far less &mdash; one 2026 scheme retains 78.8% bit accuracy and 75% true-positive rate after diffusion purification.<span class="conf m" data-src="src-case">M</span> Treat any single removal percentage as scheme-specific until proven otherwise.</p>
-
-  <p class="srcnote">This session does not teach removal technique and none is given here. The finding matters defensively, and only defensively: it is the reason a compliance procedure must never treat a missing watermark as evidence of authenticity. Sources: Zhao et al. (2024) on regeneration attacks; arXiv 2602.20680 (Feb 2026) for the information-theoretic result; arXiv 2605.01479 for the semantic-binding counterexample. Christ et al. further prove that watermark undetectability requires cryptographic secrecy, so no scheme is secure against an adversary who holds the key.<span class="conf h" data-src="src-synthid">H</span></p>
-
-  <h3 style="margin-top:30px">What a signal licenses you to conclude</h3>
-  <p>Combine a detector result with what you know about the source.</p>
-
-  <div class="diag">
-    <div class="ingrid" style="margin-bottom:16px">
-      <div><label>Detector result</label><div class="row" id="evA"></div></div>
-      <div><label>Source model participates in the scheme?</label><div class="row" id="evB"></div></div>
-    </div>
-    <div class="diagout" id="evOut"><span class="nil">Select one of each.</span></div>
-  </div>
-
-  <p><strong>Regulatory note.</strong> California SB 942 took effect January 2026; EU AI Act Article 50 machine-readable disclosure obligations begin enforcement August 2026.<span class="conf m" data-src="src-case">M</span> Neither is a US federal adviser rule. Verify before relying on either date &mdash; the fastest-moving area covered tonight.</p>
-
-  <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort the entropy cases, then state what a detected signal licenses you to conclude.</div></div>
-
-</section>
-
-<section class="slide apx" id="sWS" data-nav="D3 · Source staleness" data-insert-after="s7" data-tier="standard">
-  <div class="eyebrow"><span>Appendix D3 &middot; Source staleness</span><span class="mins">14 min</span></div>
-  <div class="apxback">Insert between §07 What it costs and §08 Audit trail &mdash; <a href="#s7">back to §07</a> &middot; <a href="#s8">continue to §08 &rarr;</a></div>
-  <h2>Where the Assigned Reading Has Gone Stale</h2>
-
-  <p class="big">Wolfram is a February 2023 source describing a 2020 model, and it is the reading Sessions 1 through 3 are built on. Three of its structural claims no longer describe the frontier. This section runs the course&rsquo;s own verification discipline against the course&rsquo;s own syllabus.</p>
-
-  <h3>Where the hallucination rate comes from, in one mechanism</h3>
-  <p>Trained on balanced-parenthesis sequences, a small transformer assigns roughly 15% probability to a closing parenthesis at a position where one would necessarily leave the sequence unbalanced. Wolfram: this &ldquo;isn&rsquo;t right, because that would necessarily lead to an unbalanced parenthesis.&rdquo;<span class="conf h" data-src="src-wolfram">H</span> The model is not uncertain about a hard question. It is confidently assigning probability to a provably impossible continuation, because it estimates a distribution over next tokens rather than checking a constraint. A fabricated citation is that same event with a legal authority in place of a bracket. Nothing in the architecture distinguishes them &mdash; which is why the verification burden priced in &sect;07 is structural rather than a defect awaiting a patch.</p>
-
-  <h3 style="margin-top:30px">Commit first</h3>
-  <p>Three claims from the February 2023 reading. Before the table opens: which of them still describes an August 2026 frontier model? Pick one from each row. The key stays shut until all three are answered.</p>
-
-  <div class="quiz" id="staleQuiz" data-task="t-source-staleness" data-comp="commit-first-mcq"></div>
-  <div class="diagout" id="staleOut"><span class="cz">Not scored yet</span>Answer all three to open the comparison.</div>
-
-  <h3 style="margin-top:30px">Three claims that have gone stale</h3>
-  <table>
-    <thead><tr><th>Wolfram, February 2023</th><th>August 2026</th><th>Consequence</th></tr></thead>
-    <tbody>
-      <tr><td>175 billion weights, and every token &ldquo;has to do a calculation involving every single one of these weights.&rdquo;</td><td>Kimi K3 runs 2.8 trillion total parameters with 104 billion active per token &mdash; a mixture-of-experts design activating roughly 3.7%. DeepSeek V4-Flash: 284B total, 13B active.<span class="conf h" data-src="src-case">H</span></td><td>Parameter count no longer predicts cost or latency. Frontier closed models have stopped publishing it.</td></tr>
-      <tr><td>&ldquo;ChatGPT doesn&rsquo;t internally have loops or recompute on data&hellip; each computational element is used only once.&rdquo;</td><td>Reasoning models spend variable output tokens before answering; Artificial Analysis reports tokens and turns per task as first-class metrics. Grok 4.6 finishes long-horizon work in ~53 turns against Opus 5&rsquo;s ~103.<span class="conf h" data-src="src-daly">H</span></td><td>The outer loop Wolfram called absent is now the main cost driver and the main quality dial. It is also why the sticker price understates cost per task in &sect;03.</td></tr>
-      <tr><td>&ldquo;A temperature of 0.8 seems best,&rdquo; as the primary randomness control.</td><td>Vendors now expose effort or reasoning level &mdash; low, high, max &mdash; as the principal control, and several do not expose temperature in the consumer product.<span class="conf m" data-src="src-aa">M</span></td><td>The dial taught in Session 2 may not exist in the interface a student is using.</td></tr>
-    </tbody>
-  </table>
-  <p class="srcnote">Left column from Wolfram (2023), assigned for Sessions 1&ndash;3. Right from Artificial Analysis Intelligence Index v4.1 and vendor model cards, August 2026. Row three is medium confidence: it characterises a moving interface, not a published fact. The point is not that Wolfram was wrong &mdash; it is that a source can be correct, canonical, three years old and stale in specific load-bearing places at once, and you find out which only by checking. That is the same instruction you will write into your firm policy tonight, applied to the syllabus you were handed.</p>
-
-  <div class="talk"><span class="th">The question to put to the room</span>Every citation in your Part 1 package has a date. Which of them is the oldest, and what would have to have changed in the world for it to be wrong now? You have four minutes and you may not open the document to answer.</div>
-
-  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Commit to all three claims before the comparison table opens.</div></div>
-
-</section>
-
 <section class="slide apx" id="sD" data-nav="D4 · Discussion" data-insert-after="sCR" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>D4 &middot; Discussion: Whether the Logging Burden Costs More Than the Tool Saves</b><span>20 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
   <div class="eyebrow"><span>Appendix D4 &middot; Discussion</span><span class="mins">20 min</span></div>
-  <div class="apxback">Insert between §10 Cold first run and §11 Policy homework &mdash; <a href="#sCR">back to §10</a> &middot; <a href="#s9">continue to §11 &rarr;</a></div>
   <h2>Discussion: Whether the Logging Burden Costs More Than the Tool Saves</h2>
   <p class="big">You have just watched a workflow fail to run for someone else, and you have just priced verification against your own baseline. The question is whether the compliance apparatus this session specifies leaves any of the saving intact.</p>
 
@@ -1852,11 +1817,44 @@ for that item. Do not reconstruct a citation from memory.</div>
 
 </section>
 
+<section class="slide" id="s9" data-nav="Policy homework">
+  <div class="eyebrow"><span>11 &middot; Assignment</span><span class="mins">5 min</span></div>
+  <h2>Homework: The Firm Artificial Intelligence Use Policy</h2>
+  <p class="big">Draft an AI usage policy for your firm, due before Session 5. This is the last instruction you receive before writing it, so every question the assignment asks was answered somewhere tonight.</p>
+
+  <p>Click each rubric question to see which section answers it and what you may cite. Structured bullets, two pages maximum.</p>
+
+  <div class="diag" data-task="t-s9" data-comp="builder-assembler">
+    <div id="rubricChips" class="chiplist"></div>
+    <div class="diagout" id="rubricOut"><span class="nil">Select a rubric question.</span></div>
+  </div>
+
+  <p><strong>Use the Cole landmines as your worked example.</strong> Your data-boundary section needs one concrete illustration, and the three you classified in &sect;02 &mdash; an undisclosed sale, an unexecuted plan with a claimed discount, and the fact of the relationship &mdash; are already reasoned through with the regulation applied. Substitute your own synthetic facts before the policy leaves your desk.</p>
+
+  <p class="srcnote"><strong>One warning carried forward from &sect;02.</strong> The assignment asks you to define PII. Regulation S-P governs NPI. Define both, state which one your firm's obligations actually run to, and you have turned a terminology collision into the strongest paragraph in the document.</p>
+
+  <h3 style="margin-top:30px">Peer review, before Session 5 and not tonight</h3>
+  <p>Exchange drafts with one classmate &mdash; not your Part 2 pair &mdash; and score theirs on four tests. Bring the score to Session 5. The instrument is deliberately hostile: a policy that cannot survive four questions from a friendly reader will not survive one from an examiner.</p>
+
+  <div class="diag">
+    <div id="peerRows"></div>
+    <div class="diagout" id="peerOut"><span class="nil">No scores entered.</span></div>
+  </div>
+
+  <p class="pull">The tools change. The judgement does not.</p>
+
+  <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Select every element your firm policy needs and read the assembled outline.</div></div>
+
+  <div class="talk"><span class="th">Closing question &middot; one to three answers, out loud, then we go</span>Name one record you will start keeping on Monday morning, and say what it lets you answer eighteen months from now that you could not answer today.</div>
+
+</section>
+
 <footer>
   <div class="wrap" style="padding:0">
   <h3 style="margin:26px 0 4px;font-size:17px">Instructor minute budget</h3>
   <table class="tbudget" data-timing>
     <thead><tr><th>Section</th><th>Title</th><th>Min</th></tr></thead>
+<!-- APXBUDGET:BEGIN generated-by=scripts/build-appendix.mjs -->
     <tbody>
       <tr><td>Session 4 &middot; BUS ADM X433.4</td><td>Compliance, Security and Responsible Use</td><td class="n">5</td></tr>
       <tr><td>Cold open &middot; standing ritual</td><td>The Last Prompt You Sent</td><td class="n">8</td></tr>
@@ -1878,8 +1876,9 @@ for that item. Do not reconstruct a citation from memory.</div>
       <tr class="apxrow"><td>Appendix D4 &middot; Discussion</td><td>Discussion: Whether the Logging Burden Costs More Than the Tool Saves</td><td class="n">20</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 70 + appendix 80; the core alone is the one-hour version</td><td class="n">150</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 70 + appendix 80; the core alone runs 70 minutes, ten minutes over the hour</td><td class="n">150</td></tr>
     </tbody>
+<!-- APXBUDGET:END -->
   </table>
 
     <h3 style="margin-bottom:14px">Sources</h3>
@@ -1936,7 +1935,9 @@ secs.forEach(function(s){var b=document.createElement('button');
   b.innerHTML='<span class="pip"></span><span class="lbl">'+esc(s.dataset.nav)+'</span>';
   b.onclick=function(){s.scrollIntoView()};rail.appendChild(b)});
 var pips=[].slice.call(rail.querySelectorAll('button'));
-secs.forEach(function(s,i){if(pips[i]&&(s.classList.contains('apx')||s.classList.contains('apxdiv')))pips[i].classList.add('apxnav')});
+secs.forEach(function(s,i){if(!pips[i])return;
+  if(s.classList.contains('apxdiv')){pips[i].classList.add('apxnav');pips[i].classList.add('apxidx')}
+  else if(s.classList.contains('apx')){pips[i].classList.add('apxnav')}});
 if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
     var i=secs.indexOf(e.target);pips.forEach(function(p,j){p.classList.toggle('on',j===i)})}})},
@@ -2356,9 +2357,9 @@ var BRIDGE=[
  {q:'The note-taker pipeline, in order.',
   o:['Transcription, extraction, categorization, follow-up','Recording, summarizing, filing','Capture, redact, send'],a:0,
   f:'Four stages, and the confidentiality obligation attaches at the first. Everything downstream inherits whatever was captured at transcription.'},
- {q:'Grounding versus fine-tuning, for a meeting-prep assistant over the Cole corpus.',
-  o:['Grounding retrieves at query time; fine-tuning changes the weights','They are two names for the same technique','Fine-tuning is grounding done at scale'],a:0,
-  f:'Grounding leaves the model untouched and swaps the corpus. Fine-tuning bakes the corpus into the weights, which is why it is the wrong choice for documents that change and for data you may later need to delete.'},
+ {q:'A meeting-prep assistant over the Cole corpus: nine documents. What did Session 3 say the architecture should be?',
+  o:['Put the whole corpus in the prompt \u2014 retrieval solves a problem this corpus does not have','Build the vector index first; retrieval is the stronger design at any corpus size','Chunk smaller and smaller until the retrieval failure rate reaches zero'],a:0,
+  f:'Anthropic publishes the boundary: under roughly 200,000 tokens, about 500 pages, supply the whole corpus and skip retrieval. The Cole set is nine documents. Retrieval is not free either \u2014 the best measured configuration still missed the right chunk 1.9% of the time, on a benchmark built by the vendor of the technique. A large share of the advisory retrieval projects sold in 2026 solve a problem the buyer does not have.'},
  {q:'What did the extraction over the Cole corpus surface that the household did not know?',
   o:['The 2014 buy-sell formula produces roughly $18,000,000, far below the $55,000,000 indicated value','That Nathan knows about the sale','That the trust was executed in 2023'],a:0,
   f:'A document conflict neither party had reconciled. Tonight that same finding becomes the test case for whether your audit trail captured anything usable.'}
@@ -3215,16 +3216,17 @@ var RSP=[
   });
 })();
 
+/* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
 window.__coreMins=70;
+/* APXCORE:END */
 
 /* ===== appendix depth control: tier filter + core-only mode ===== */
 (function(){
   var bar=document.getElementById('tierbar'); if(!bar) return;
   var apx=[].slice.call(document.querySelectorAll('section.apx'));
   var cards=[].slice.call(document.querySelectorAll('a.apxcard'));
-  var links=[].slice.call(document.querySelectorAll('a.apxlink'));
   var ORDER=['foundational','standard','advanced'];
-  var level=1, coreOnly=false;   /* matches the "+ Standard" button marked on in the markup */
+  var level=1, coreOnly=true;    /* core only at load; "+ Standard" is the depth the bar falls back to */
   function minutes(el){var m=el.querySelector('.mins');return m?(parseInt(m.textContent,10)||0):0}
   function idOf(a){var h=a.getAttribute('href')||'';return h.charAt(0)==='#'?h.slice(1):''}
   function apply(){
@@ -3240,11 +3242,11 @@ window.__coreMins=70;
       var sec=document.getElementById(idOf(a));
       a.classList.toggle('dim', !!(sec&&sec.classList.contains('dim')));
     })}
-    sync(cards);sync(links);
+    sync(cards);
     var out=document.getElementById('tierOut');
     if(out){
       out.textContent = coreOnly
-        ? 'Core only \u2014 appendix hidden. This is the one-hour version.'
+        ? 'Core only \u2014 appendix hidden. '+(window.__coreMins||0)+' core minutes.'
         : shown+' of '+apx.length+' appendix sections in scope \u00b7 '+mins+' appendix minutes \u00b7 '+
           (window.__coreMins||0)+' core minutes \u00b7 '+((window.__coreMins||0)+mins)+' total.';
     }
@@ -3282,8 +3284,9 @@ window.__coreMins=70;
       '<div class="pcell"><b>'+(core+apx)+' min</b><span>everything</span></div>'+
     '</div>'+
     '<p>The core runs in about '+core+' minutes and is what always gets taught. In a full '+
-    'block, take appendix sections in place at the gold links; in a short one, skip them and '+
-    'the session still closes properly. Appendix sections are also readable alone afterwards.</p>';
+    'block, raise the appendix depth and take the extra sections in place; in a short one, '+
+    'leave it on core only and the session still closes properly. Appendix sections are also '+
+    'readable alone afterwards.</p>';
 })();
 </script>
 </body>
