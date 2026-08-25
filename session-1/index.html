@@ -1282,7 +1282,7 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
 
   <p class="dim" style="font-size:14.5px">Figure labels: <span class="conf h" data-src="src-case">H</span> primary or first-party &middot; <span class="conf m" data-src="src-sec-ai">M</span> secondary or derived &middot; <span class="conf l" data-src="src-sec-ai">L</span> unverified. Arrow keys navigate. Instructors: <b class="mono">Shift+U</b> unlocks everything.</p>
 
-  <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Name the one figure in this case you would refuse to accept without re-verification, and say why.<div class="row" style="margin-top:10px"><input type="text" id="s1field" placeholder="e.g. the 30% discount, because nothing in the file supports it" style="max-width:520px"></div></div></div>
+  <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Name the one figure in this case you would refuse to accept without re-verification, and say why.<div class="row" style="margin-top:10px"><input type="text" id="s1field" placeholder="e.g. the valuation discount, because nothing in the file supports it" style="max-width:520px"></div></div></div>
  </div>
 </section>
 
@@ -1492,7 +1492,7 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
 
   <div class="panel" data-task="t-s5" data-comp="work-along-gate">
     <label class="plab" for="tokIn">Paste something you would actually send &mdash; a client note, a paragraph of a trust</label>
-    <textarea id="tokIn">Nothing in the file supports the 30% combined discount, no appraiser has been engaged, and a strategic buyer has now expressed informal interest in Cole Precision Components.</textarea>
+    <textarea id="tokIn">Nothing in the file supports the combined valuation discount, no appraiser has been engaged, and a competitor made an unsolicited inquiry about buying Cole Precision Components last October.</textarea>
     <div class="tokstrip" id="tokStrip"></div>
     <div class="stats">
       <div class="stat"><span class="sn">Est. tokens</span><span class="sv" id="tokCount">0</span></div>
@@ -1578,7 +1578,7 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
   <p class="pull">Anything requiring an exact count across a long document is the failure case, not the edge case.</p>
 
   <div class="talk"><span class="th">Where this bites in the Cole file &mdash; discussion</span>Every one of these is a counting or reconciliation task inside a long sequence, and every one is a place a fluent answer is least trustworthy:
-  <ul><li>Confirming the 2014 buy-sell formula value, roughly $18,000,000, against the $55,000,000 indicated value, and listing every provision that conflicts</li><li>Checking that the note principal on the draft instrument is $20,020,000 and that it is the same figure on every schedule and exhibit</li><li>Verifying the 30% discount is applied to the $49,500,000 pro-rata value of the 900 non-voting units, giving $34,650,000 and $38,500 a unit, and not to some other base, in each place it appears</li><li>Tracing whether the 2011 powers of attorney were superseded by anything in the 2016 revocable trust restatement</li></ul>
+  <ul><li>Confirming the 2014 buy-sell formula value against the indicated value of the company, and listing every provision that conflicts</li><li>Checking that the note principal on the draft instrument matches the memorandum, and that it is the same figure on every schedule and exhibit</li><li>Verifying that the combined discount is applied to the pro-rata value of the non-voting units, and not to some other base, in each place it appears</li><li>Tracing whether the 2011 powers of attorney were superseded by anything executed since, and confirming the file holds no later restatement</li></ul>
   Ask the room: which of these have you already delegated to a tool this year, and did you total the numbers yourself?</div>
 
   <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the sequence to a depth where the model assigns real probability to an invalid token.</div></div>
@@ -1981,7 +1981,7 @@ var COLE={"megName":"Margaret \"Meg\" Cole","megDob":"14 March 1962","megAge":64
       <tr><td>Estate Planning</td><td>IDGT sale structure; buy-sell versus appraisal reconciliation; the unresolved discount question</td></tr>
       <tr><td>Retirement Savings and Income</td><td>IRA distributions against a sale year as a multi-step reasoning task</td></tr>
       <tr><td>Investment Planning</td><td>Two concentration problems with opposite liquidity; custodial data reformatting</td></tr>
-      <tr><td>Risk Management and Insurance</td><td>Absence of any life insurance, personal or corporate-owned, against an illiquid $55,000,000 position</td></tr>
+      <tr><td>Risk Management and Insurance</td><td>Absence of any life insurance, personal or corporate-owned, against an illiquid controlling interest in a private company</td></tr>
       <tr><td>Psychology of Financial Planning</td><td>An undisclosed sale, an employee child, and what a summariser does to a disagreement</td></tr>
     </tbody>
   </table>
@@ -2274,9 +2274,9 @@ $('caseModal').onclick=function(e){if(e.target===$('caseModal'))$('caseModal').c
 /* ===== 01 PREDICTION ===== */
 var G2={tok:0,temp:{},ax:0};
 function checkG2(){if(G2.tok&&Object.keys(G2.temp).length>=3&&G2.ax)mark('g2')}
-var S2STEM='The 520 non-voting units sold to the grantor trust were valued at';
+var S2STEM='The '+COLE.saleUnits+' non-voting units sold to the grantor trust were valued at';
 var S2=[
- [['a 30% discount',.33],['$20,020,000',.26],['$38,500 per unit',.19],['fair market value',.13],['a 45% discount',.09]],
+ [['a '+Math.round(COLE.discount*100)+'% discount',.33],['$'+fmt(COLE.notePrincipal),.26],['$'+fmt(COLE.perNonVoting)+' per unit',.19],['fair market value',.13],['a 45% discount',.09]],
  [[', supported by',.31],[', which reflects',.26],['. The appraisal cites',.22],[', although the',.13],[', pending',.08]],
  [['a 2023 appraisal',.34],['lack of control',.25],['lack of marketability',.20],['the attorney\u2019s file',.13],['the 2014 formula',.08]],
  [['that has not been',.30],['and lack of',.27],['dated before',.21],['prepared for',.14],['reviewed by',.08]],
@@ -2608,7 +2608,7 @@ $('parenReset').onclick=function(){pseq=[];parenDraw()};parenDraw();
 /* ===== 07 SAMPLER LAB ===== */
 var LABTOK=['appraised','discounted','sold','gifted','retained','valued','transferred','pledged','frozen','recapitalised','exchanged','loaned','seeded','insured','collared','contributed','deferred','tendered','securitised','swapped','abandoned','forfeited','auctioned','bartered','franchised','tokenised','vaporised','teleported','levitated','summoned'];
 var LABP=(function(){var p=LABTOK.map(function(_,i){return 1/(i+1)});var s=p.reduce(function(a,b){return a+b},0);return p.map(function(v){return v/s})})();
-$('labPrompt').textContent='"Meg\u2019s 900 non-voting LLC units should be ___"';
+$('labPrompt').textContent='"Meg\u2019s '+COLE.nonVotingUnits+' non-voting LLC units should be ___"';
 var SM={
  top_k:{on:false,v:8,min:1,max:30,step:1,name:'Top K',desc:'Keep the K tokens with the highest probability.'},
  tfs_z:{on:false,v:0.95,min:0,max:1,step:0.01,name:'Tail Free Z',desc:'Cut once the cumulative absolute second derivative of the sorted distribution reaches Z.'},
@@ -2805,18 +2805,18 @@ $('adv').addEventListener('input',costUpd);$('mtg').addEventListener('input',cos
 
 /* ===== 11 TIER QUIZ ===== */
 var TQ=[
- {d:'Investment Planning',t:'From the brokerage export, compute the concentration of the three technology names that make up 62% of the $2,500,000 taxable account, and format the result as a one-page allocation table.',a:0,
-  f:['Correct. High volume, zero judgment, and the arithmetic is checkable at a glance \u2014 62% of $2,500,000 is $1,550,000, and either the tool got that or it did not.','This works and you are paying five to ten times what the task needs. There is no judgment here: 62% of $2,500,000 is $1,550,000, and you can verify it in your head.']},
+ {d:'Investment Planning',t:'From the brokerage export, compute the concentration of the three technology names that make up '+Math.round(COLE.techPct*100)+'% of the $'+fmt(COLE.brokerage)+' taxable account, and format the result as a one-page allocation table.',a:0,
+  f:['Correct. High volume, zero judgment, and the arithmetic is checkable at a glance \u2014 '+Math.round(COLE.techPct*100)+'% of $'+fmt(COLE.brokerage)+' is $'+fmt(COLE.techPositions)+', and either the tool got that or it did not.','This works and you are paying five to ten times what the task needs. There is no judgment here: '+Math.round(COLE.techPct*100)+'% of $'+fmt(COLE.brokerage)+' is $'+fmt(COLE.techPositions)+', and you can verify it in your head.']},
  {d:'General Principles',t:'Draft the confirmation email and agenda for next week\u2019s meeting with Meg and David.',a:0,
   f:['Correct. Templated, low-stakes, and you read it before it sends.','Overspecified. The consequence of a poor draft here is that you edit it before sending.']},
  {d:'Psychology of Financial Planning',t:'Summarise a 90-minute meeting in which Meg said, for the first time, that she has not told Nathan she is exploring a sale \u2014 and David reacted.',a:1,
   f:['Correct on tier. The real risk is not capability: a summariser rewards coherent narrative, so it smooths an uncomfortable disclosure and a spousal reaction into a tidy paragraph. Ask separately for unresolved items and points of disagreement \u2014 here the discomfort is the planning finding.','Defensible on tier, but the tier is not the problem. A summariser flattens conflict into consensus, and this meeting is entirely conflict \u2014 Nathan does not know, David reacted, and neither survives a tidy paragraph.']},
- {d:'Retirement Savings and Income',t:'Model the interaction between two distribution clocks \u2014 Meg\u2019s own $3,000,000 IRA, where her applicable age is 75 and the first distribution year is 2037, and the $1,000,000 IRA she inherited from Walter Hensley, which must be emptied by 31 December 2031 with annual RMDs because he died after his required beginning date \u2014 against David\u2019s unclaimed Social Security and a sale year that could land in the top bracket.',a:2,
+ {d:'Retirement Savings and Income',t:'Model the interaction between two distribution clocks \u2014 Meg\u2019s own $'+fmt(COLE.megIra)+' IRA, where her applicable age is '+COLE.megApplicableAge+' and the first distribution year is '+COLE.megFirstDistYear+', and the $'+fmt(COLE.inheritedIra)+' IRA she inherited from '+COLE.decedent+', which must be emptied by '+COLE.inhIraOuterLimit+' with annual RMDs because he died after his required beginning date \u2014 against David\u2019s unclaimed Social Security and a sale year that could land in the top bracket.',a:2,
   f:['Correct. Sustained multi-step reasoning where an error in one year propagates silently through twenty \u2014 and every bracket and threshold in it is an arbitrary fact you verify separately.','This is compounding multi-step reasoning across a bracket-sensitive sale year. Top tier earns its price, and you still check every threshold against the source.']},
- {d:'Tax Planning',t:'Identify the note terms and interest rate the 9-year interest-only note must carry for the sale to the trust to be respected as a sale rather than a part gift.',a:2,
+ {d:'Tax Planning',t:'Identify the note terms and interest rate the demand note must carry for the sale to the trust to be respected as a sale rather than a part gift.',a:2,
   f:['Correct on tier, and verify every figure. The applicable rate is a published monthly number \u2014 an arbitrary fact with one right answer and twelve plausible wrong ones per year, all of which the model has seen in identical sentences.','Top tier, and it will still hand you a rate in a confident sentence. Applicable rates publish monthly; the model has seen years of them in near-identical language with no signal about which is current.']},
- {d:'Estate Planning',t:'Reconcile the 2014 buy-sell formula value, roughly $18,000,000 on current financials, against the $55,000,000 indicated value for the company, and list every provision of the two documents that conflicts.',a:2,
-  f:['Correct on tier \u2014 and the tier is not what protects you here. An exact reconciliation across a long document is the shape these models are least reliable at, at any price: the comparison is approximated from local pattern and the approximation decays with length. Extract the provisions with the tool, then compare them yourself. Note also that nothing in this document set creates estate liquidity against an illiquid $55,000,000 position.','This is a reconciliation across a long document, the exact shape these models are least reliable at. Any tier, and you do the comparison by hand.']}];
+ {d:'Estate Planning',t:'Reconcile the 2014 buy-sell formula value, roughly $'+fmt(COLE.buySellFormula)+' on current financials, against the $'+fmt(COLE.cpcValue)+' indicated value for the company, and list every provision of the two documents that conflicts.',a:2,
+  f:['Correct on tier \u2014 and the tier is not what protects you here. An exact reconciliation across a long document is the shape these models are least reliable at, at any price: the comparison is approximated from local pattern and the approximation decays with length. Extract the provisions with the tool, then compare them yourself. Note also that nothing in this document set creates estate liquidity against an illiquid controlling interest in a private company.','This is a reconciliation across a long document, the exact shape these models are least reliable at. Any tier, and you do the comparison by hand.']}];
 var TLABEL=['Haiku-class','Sonnet-class','Opus / Fable-class'];
 (function(){
   var host=$('tierQuiz'),done=0;
@@ -2835,11 +2835,11 @@ var TLABEL=['Haiku-class','Sonnet-class','Opus / Fable-class'];
 /* ===== 12 NPI ===== */
 var NPI=[
  {t:'That Meg is exploring a sale of CPC',b:0,w:'Landmine 1. Nathan works in CPC operations and has not been told. Entering this into a consumer tool discloses an unannounced transaction in a private company, and the person most affected by it is an employee who does not know.'},
- {t:'The unexecuted transfer plan and the 30% discount being claimed',b:0,w:'Landmine 2. An unexecuted, unfiled position on valuation. Nothing about it is public, it is adverse to the client if it surfaces, and it is exactly the kind of detail that makes a household identifiable to anyone in the same market.'},
+ {t:'The unexecuted transfer plan and the valuation discount being claimed',b:0,w:'Landmine 2. An unexecuted, unfiled position on valuation. Nothing about it is public, it is adverse to the client if it surfaces, and it is exactly the kind of detail that makes a household identifiable to anyone in the same market.'},
  {t:'That Meg Cole is a client of this firm at all',b:0,w:'Landmine 3. The relationship itself is nonpublic personal information. The name alone, with no financial detail attached, is a disclosure.'},
- {t:'"A Midwest aerospace-fastener founder, 64, selling a company appraised at $18M"',b:0,w:'No name, and in a market this narrow it identifies one person. De-identification means removing the combination, not the name.'},
+ {t:'"A Midwest aerospace-fastener owner in her sixties, selling the company she bought from her father"',b:0,w:'No name, and in a market this narrow it identifies one person. De-identification means removing the combination, not the name.'},
  {t:'"How does a sale to an intentionally defective grantor trust work?"',b:1,w:'A general question about a technique, with no client attached. This is most of what you should be using these tools for.'},
- {t:'The applicable federal rate for a 9-year term note this month',b:1,w:'A published rate. Nothing client-specific \u2014 though verify the figure against the source rather than the model.'},
+ {t:'The applicable federal rate for a mid-term note this month',b:1,w:'A published rate. Nothing client-specific \u2014 though verify the figure against the source rather than the model.'},
  {t:'"What factors support a lack-of-marketability discount?"',b:1,w:'A doctrinal question with no facts attached. Safe, and worth asking before you read an appraisal rather than after.'},
  {t:'The current federal estate and gift tax exclusion amount',b:1,w:'A published statutory figure. Verify it independently \u2014 it is an arbitrary fact and it has changed repeatedly.'}];
 (function(){

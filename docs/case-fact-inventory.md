@@ -23,11 +23,11 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 1866 | 1566 | 300 |
 | `PINNED` | 7 | 7 | 0 |
-| `UNGUARDED` | 244 | 142 | 102 |
-| **TOTAL** | **2117** | **1715** | **402** |
+| `UNGUARDED` | 213 | 111 | 102 |
+| **TOTAL** | **2086** | **1684** | **402** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
-`142`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
+`111`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
 the target state under the rule *every quantitative case fact appears once,
 injected from `CASE.md`; every other reference to it is qualitative*, so a
 qualitative reference is not drift surface and removing one would be a loss.
@@ -38,7 +38,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 |---|---:|---:|
 | `index.html` | 2 | 0 |
 | `session-0.1/index.html` | 16 | 5 |
-| `session-1/index.html` | 53 | 35 |
+| `session-1/index.html` | 22 | 4 |
 | `session-2/index.html` | 60 | 41 |
 | `session-3/index.html` | 60 | 31 |
 | `session-4/index.html` | 53 | 30 |
@@ -47,14 +47,14 @@ qualitative reference is not drift surface and removing one would be a loss.
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R1` | body prose | 149 | 76 |
-| `R2` | script string literal | 85 | 58 |
+| `R1` | body prose | 139 | 66 |
+| `R2` | script string literal | 65 | 38 |
 | `R10` | captured transcript | 5 | 5 |
-| `R3` | attribute value | 2 | 2 |
 | `R8` | source note | 2 | 1 |
 | `R5` | HTML or JS comment | 1 | 0 |
+| `R3` | attribute value | 1 | 1 |
 
-**`R2` carries 58 of the 142 quantitative unguarded references, 40.8%** — answer
+**`R2` carries 38 of the 111 quantitative unguarded references, 34.2%** — answer
 keys, chart data arrays and JS feedback strings. They are inside `<script>`, so
 they are outside the injected span and outside the pins, and a student reads
 every one of them.
@@ -64,10 +64,10 @@ every one of them.
 | Class | Count |
 |---|---:|
 | `name` | 102 |
-| `money` | 77 |
-| `pct` | 29 |
-| `count` | 20 |
-| `age` | 13 |
+| `money` | 57 |
+| `pct` | 22 |
+| `count` | 18 |
+| `age` | 11 |
 | `date` | 3 |
 
 ## `UNGUARDED`, by fact
@@ -75,49 +75,44 @@ every one of them.
 | Fact | Count |
 |---|---:|
 | `domicile` | 28 |
-| `discount` | 19 |
-| `cpcValue` | 18 |
 | `companyAbbr` | 17 |
+| `cpcValue` | 14 |
+| `discount` | 14 |
 | `companyName` | 12 |
 | `megShort` | 11 |
-| `nathanShort` | 10 |
+| `nathanShort` | 11 |
 | `plantTown` | 9 |
-| `notePrincipal` | 9 |
-| `buySellFormula` | 8 |
-| `saleUnits` | 8 |
-| `megAge` | 7 |
-| `nonVotingUnits` | 6 |
+| `saleUnits` | 7 |
+| `notePrincipal` | 7 |
 | `perUnitDividend` | 6 |
+| `megAge` | 6 |
 | `megBasis` | 6 |
 | `residenceTown` | 5 |
 | `seedValue` | 5 |
+| `buySellFormula` | 5 |
 | `davidName` | 4 |
 | `afrMid` | 4 |
-| `decedent` | 4 |
+| `nonVotingUnits` | 4 |
 | `seedUnits` | 4 |
-| `perNonVoting` | 3 |
-| `brokerage` | 3 |
+| `decedent` | 3 |
 | `netWorth` | 3 |
 | `noteRate` | 3 |
 | `appraisal2023` | 3 |
-| `inheritedIra` | 2 |
-| `proRataNonVote` | 2 |
-| `techPct` | 2 |
-| `techPositions` | 2 |
 | `davidAge` | 2 |
 | `dividend` | 2 |
 | `purchaseDate` | 2 |
 | `ilExclusion` | 2 |
 | `nathanAge` | 2 |
 | `afrLong` | 1 |
-| `nonVotingAggregate` | 1 |
-| `megIra` | 1 |
-| `megApplicableAge` | 1 |
+| `inheritedIra` | 1 |
+| `votingUnits` | 1 |
 | `marriedYears` | 1 |
 | `employees` | 1 |
 | `totalUnits` | 1 |
 | `noteInterest` | 1 |
 | `nathanName` | 1 |
+| `perNonVoting` | 1 |
+| `proRataNonVote` | 1 |
 | `inquiryDate` | 1 |
 | `megNameAlt` | 1 |
 
@@ -148,12 +143,12 @@ with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
-| `votingUnits` | 106 |
+| `votingUnits` | 109 |
 | `seedUnits` | 63 |
 | `claireAge` | 40 |
 | `marriedYears` | 39 |
 | `employees` | 32 |
-| `nathanAge` | 26 |
+| `nathanAge` | 25 |
 | `megAge` | 24 |
 | `nonVotingUnits` | 19 |
 | `charDeductible` | 18 |
@@ -161,12 +156,12 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `revolver` | 14 |
 | `davidAge` | 10 |
 | `megApplicableAge` | 8 |
-| `nathanShort` | 4 |
-| `techPct` | 3 |
+| `nathanShort` | 3 |
 | `deMinimisLoan` | 3 |
 | `topOrdinary` | 3 |
 | `saleUnits` | 2 |
 | `charFloor` | 2 |
+| `techPct` | 2 |
 | `megYear1Units` | 1 |
 | `estateTopRate` | 1 |
 | `itemisedCap` | 1 |
