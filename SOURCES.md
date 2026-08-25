@@ -135,12 +135,21 @@ confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   benchmark_index
-index_version:  DIVERGENT — unversioned, v4.1.1 and v4.1 across three lessons
+index_version:  divergent, see the three pulls below
 recheck_before: every teaching of session-1 §05, session-2 §02 and session-4 §03
 scope:          A live leaderboard of capability index scores and cost per index task. Every figure drawn from it is a moving target and none of them is stable between terms.
 used_for.session-1: the capability-against-price frontier and the tier comparison
 used_for.session-2: index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5
 used_for.session-4: the frontier chart, the sticker-versus-measured divergence, and the token and turn counts
+retrieved.session-1: 2026-07-28
+index_version.session-1: [UNVERIFIED, needs source]
+figures.session-1: index scores and cost per index task for the frontier chart; the body dates the pull 17 and 24 July and the footer dates it 28 July
+retrieved.session-2: 2026-08
+index_version.session-2: v4.1.1
+figures.session-2: index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5; IDENTICAL to the session-1 pull under a later version string
+retrieved.session-4: 2026-08-13
+index_version.session-4: v4.1
+figures.session-4: Opus 5 61 against 63, Fable 5 60 against 62, Luna cost per task $0.21 against $0.07, token prices 5x apart; DIFFERS from both other pulls on every shared model
 ```
 
 ## src-magesh
@@ -178,6 +187,10 @@ recheck_before: every teaching of session-1 §03, §05 and §06
 scope:          Per-token input and output rates by model, cache-hit and batch discounts.
 used_for.session-1: per-token rates, cache and batch discounts, and the Cole document-pass arithmetic
 used_for.session-2: the published rates behind the blended token price
+retrieved.session-1: 2026-07-28
+figures.session-1: per-token input and output rates, cache-hit and batch discounts
+retrieved.session-2: 2026-08
+figures.session-2: the published rates behind the blended token price at a 3:1 input-to-output ratio
 ```
 
 ## src-finra2409

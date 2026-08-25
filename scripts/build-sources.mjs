@@ -76,6 +76,18 @@ export function parseSources() {
         rec.used_for[lesson] = value.trim();
         continue;
       }
+      /* PER-LESSON LIVE-DATA FIELDS. A moving target retrieved more than once
+         has more than one retrieval to register, and the register is fields on
+         the source record rather than a parallel list. `retrieved.session-2`
+         and `index_version.session-2` are how one work carries three pulls. */
+      const per = field.match(/^(retrieved|index_version|figures)\.(.+)$/);
+      if (per) {
+        const [, f, lesson] = per;
+        if (!LESSONS.includes(lesson)) throw new Error(`SOURCES.md: ${key}: unknown lesson ${lesson}`);
+        (rec.pulls ||= {});
+        (rec.pulls[lesson] ||= {})[f] = value.trim();
+        continue;
+      }
       if (!FIELDS.has(field)) throw new Error(`SOURCES.md: ${key}: unknown field "${field}"`);
       rec[field] = value.trim();
     }
@@ -88,6 +100,12 @@ export function parseSources() {
     rec.moving_target = rec.moving_target === 'true';
     rec.disclose_on_page = rec.disclose_on_page === 'true';
     rec.chip_exempt = CHIP_EXEMPT.includes(rec.kind);
+    if (rec.pulls) {
+      for (const [lesson, p] of Object.entries(rec.pulls)) {
+        if (!rec.used_for[lesson]) throw new Error(`SOURCES.md: ${key} registers a pull for ${lesson} but declares no used_for there`);
+        if (!p.retrieved) throw new Error(`SOURCES.md: ${key}: pull for ${lesson} has no retrieved date`);
+      }
+    }
     if (rec.moving_target && isAbsent(rec.recheck_before)) {
       throw new Error(`SOURCES.md: ${key} is a moving target with no recheck_before`);
     }
