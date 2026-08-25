@@ -112,6 +112,9 @@ node scripts/verify-migration.mjs  # retired facts, allowances, arithmetic, timi
                                    # and the spine drift guard (check 20)
 node scripts/verify-browser.mjs    # DOM, handlers, flowchart, screenshots (Chromium)
 node scripts/verify-style.mjs      # CHECK the managed style fence, see below
+node scripts/case-inventory.mjs --report-check   # the drift surface, and it must
+                                   # not have grown. See "The case-fact drift
+                                   # surface" below.
 ```
 
 **Why `verify-style.mjs` instead of `restyle_sweep.py --check`.** The sweep globs
@@ -292,8 +295,11 @@ node scripts/build-sources.mjs --json     # the model, as JSON
 node scripts/inject-sources.mjs           # write every lesson's footer from it
 node scripts/inject-sources.mjs --check   # report drift, write nothing
 node scripts/verify-sources.mjs           # the hash guard, plus what only it can see
-node scripts/build-bibliography.mjs       # write BIBLIOGRAPHY.md and DATA-PULL.md
+node scripts/build-bibliography.mjs       # write BIBLIOGRAPHY.md, DATA-PULL.md and
+                                          # docs/source-verification-queue.md
 node scripts/build-bibliography.mjs --check
+node scripts/attest-verified.mjs          # the two dating fields, and the lock
+node scripts/build-unsourced.mjs          # write docs/unsourced-claims.md
 ```
 
 **One record per work, not per citation.** Before `SOURCES.md` existed,
@@ -311,6 +317,126 @@ put the minute figures behind `build-appendix.mjs`.
 `background`, `fabricated` — are exactly A15's `data-nochip` enumeration.
 `build-sources.mjs` reads that list out of `verify-editorial.mjs` and throws if
 they disagree, so the two cannot drift apart by maintenance.
+
+## The two dating fields, and the one you may not write
+
+`SOURCES.md` carries **two** dates on every record. They are not interchangeable
+and neither substitutes for the other.
+
+| Field | What it asserts | Who may move it |
+|---|---|---|
+| `last_verified` | **The instructor read the source** and confirmed this repository's claims about it are still accurate. A human attestation. | **The instructor, and nothing else.** |
+| `last_retrieved` | A machine fetched the source. Records **when**, and never that anything is accurate. | Any re-pull. This is what *"update all live data points"* advances. |
+
+**`last_verified` is EMPTY almost everywhere and that is the honest state.** It
+is not a backlog of missing data; it is the measurement. A populated
+`last_verified` asserts that a human read the source, and asserting that without
+evidence is the failure the never-fabricate rule exists to prevent. **Empty is
+the honest value. Do not backfill it with today's date, the commit date, the
+publication date, or the date the source entered the repo.**
+
+The rule is wired, not written down and hoped for. Two mechanisms, and both have
+to be defeated at once for a date to move without a human:
+
+```bash
+node scripts/attest-verified.mjs                 # the state, and the lock
+node scripts/attest-verified.mjs --key src-x \
+     --date 2026-08-25 --evidence "..."          # INTERACTIVE TERMINAL ONLY
+node scripts/attest-verified.mjs --clear --key src-x
+```
+
+1. **The lock.** `scripts/sources-verified.lock.json` notarises every
+   `(key, last_verified)` pair. `build-sources.mjs` recomputes the digest on
+   every parse and **throws** on any difference, naming the keys that moved.
+   Every generator goes through `model()`, so a `last_verified` that moved takes
+   down `build-sources`, `inject-sources`, `build-bibliography` and
+   `verify-sources` together.
+2. **The writer.** `attest-verified.mjs` is the only thing that updates the lock
+   and it **refuses unless stdin is a TTY**. A generator, a CI job, a re-pull
+   and an agent shell all have no TTY and all are refused. `--init` seeds the
+   lock once and refuses to re-seed, so re-seeding is not a way round the gate.
+
+Observed refusing, which is the only reason to believe it: advancing a date
+through the writer exits 2; hand-editing the date into `SOURCES.md` takes all
+four generators to exit 1; re-seeding the lock exits 2.
+
+**A generated verification date is the tool vouching for itself**, which is the
+same defect class as a chip pointing at the wrong source.
+
+### Partial retrieval dates
+
+`last_retrieved` accepts a full `YYYY-MM-DD` or a partial `YYYY-MM`. A partial is
+the honest record of a pull whose day nobody wrote down, and `DATA-PULL.md`
+**reports every one as a precondition failure of the ordering rule** — a month
+cannot be ordered against a day, and that is exactly where `src-aa`'s version
+incoherence hid. For the ordering rule a partial stands at its **earliest
+possible day**, which is a declared reading convention and never a date. No day
+is ever invented.
+
+## The unsourced-claim register
+
+Two markers, and the distinction between them is load-bearing:
+
+| Marker | What it asserts |
+|---|---|
+| `[UNCONFIRMED]` | **No source corroborates it. The claim itself is in question.** |
+| `[NEEDS SOURCE]` | **The claim is right; a citation has not been attached.** |
+
+`[NEEDS SOURCE]` is the **stronger** claim, because it asserts that somebody
+checked. A wrong `[UNCONFIRMED]` gets read and downgraded; a wrong
+`[NEEDS SOURCE]` gets read and believed. **Default to `[UNCONFIRMED]`.**
+
+Both are declared forms under `EDITORIAL.md` A16 and a marker in any other form
+is a hard failure. Each marker carries an adjacent annotation comment, which is
+never rendered:
+
+```html
+<!-- CLAIM weight=exercise resolve="…" candidate="…" confidence=low -->
+… the claim <b>[UNCONFIRMED]</b>
+```
+
+`weight` is the only field typed by hand, because it is the only one the corpus
+cannot see: it says **how much depends on the claim** — `answer`, `exercise`,
+`section`, `claim`, `aside` — and it is the sort order of the register.
+
+```bash
+node scripts/build-unsourced.mjs          # write docs/unsourced-claims.md
+node scripts/build-unsourced.mjs --check  # exit 1 if it would change
+```
+
+A marker with no annotation, an unknown `weight`, or no `resolve="…"` is a
+**hard failure**: a claim in the register that does not say what would resolve it
+is a claim nobody can act on.
+
+## The case-fact drift surface
+
+`scripts/case-inventory.mjs` answers one question repeatably: **how many
+references to a Cole household fact can drift?**
+
+```bash
+node scripts/case-inventory.mjs               # the summary
+node scripts/case-inventory.mjs --full        # every occurrence
+node scripts/case-inventory.mjs --misses      # every occurrence it declined to count
+node scripts/case-inventory.mjs --orphans     # money figures CASE.md does not carry
+node scripts/case-inventory.mjs --report      # write docs/case-fact-inventory.md
+```
+
+| Guard state | Meaning |
+|---|---|
+| `INJECTED` | Inside the `CASE:BEGIN` / `CASE:END` span. Overwritten on the next inject, hash-guarded by `verify-case.mjs`. **Cannot drift.** |
+| `PINNED` | Matched by a `verify-migration.mjs` check-20 regex pin, which asserts it against `case-facts.json`. |
+| `UNGUARDED` | Everything else. **This is the number that has to fall.** |
+
+**The rule the corpus is held to:** *every quantitative case fact appears once,
+injected from `CASE.md`; every other reference to it is qualitative.* A lesson
+may say "Meg's largest asset is her CPC interest". It may not restate the
+valuation. Reconciling twelve copies of a number leaves twelve copies to drift
+again; removing eleven of them removes the drift surface.
+
+Where a figure genuinely has to be a literal — an answer key, a chart data array
+— the injected span defines a JS constant `COLE` holding every keyed figure, so
+`COLE.notePrincipal` beats typing `20020000`. Where even that is impossible, add
+a check-20 pin and register it.
 
 **`verify-sources.mjs` reports the same three failures `verify-case.mjs` reports,
 in the same words** — no sentinels, block was hand-edited, stale against the

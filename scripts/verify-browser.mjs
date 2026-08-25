@@ -57,6 +57,35 @@ for (const rel of LESSONS) {
   console.log(`\n--- ${rel} ---`);
   say(errors.length === 0, `13  zero JS errors on load` + (errors.length ? `\n        ${errors.slice(0, 4).join('\n        ')}` : ''));
 
+  /* COLE INTERPOLATION, and this is the check that makes preference 3 safe.
+     An answer key that reads COLE.notePrincipal instead of typing 20020000
+     cannot drift from CASE.md — but a MISSPELLED key gives `undefined`, which
+     is not a JS error and renders as a word in a sentence a student is being
+     marked against. Reveal everything first (Shift+U is bound later, so the
+     reveal-all handlers are invoked directly), then read the rendered text. */
+  const interp = await page.evaluate(() => {
+    const bad = [];
+    const seen = new Set();
+    document.querySelectorAll('button,[data-gate]').forEach((b) => { try { b.click(); } catch { /* inert */ } });
+    /* script and style bodies are text nodes inside <body>; they are source,
+       not rendered text, and a checker that reads them is reading the code it
+       is meant to be testing the output of. */
+    const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) => (n.parentElement && /^(SCRIPT|STYLE|TEMPLATE)$/.test(n.parentElement.tagName)
+        ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT),
+    });
+    for (let n = walk.nextNode(); n; n = walk.nextNode()) {
+      const t = n.nodeValue;
+      if (!t || !/\b(undefined|NaN)\b/.test(t)) continue;
+      const s = t.replace(/\s+/g, ' ').trim().slice(0, 110);
+      if (seen.has(s)) continue;
+      seen.add(s); bad.push(s);
+    }
+    return bad;
+  });
+  say(interp.length === 0, `13  no "undefined" or "NaN" in rendered text after every control is exercised`
+      + (interp.length ? `\n        ${interp.slice(0, 4).join('\n        ')}` : `  [COLE interpolation resolves]`));
+
   const nonFont = external.filter((u) => !/fonts\.(googleapis|gstatic)\.com/.test(u));
   say(nonFont.length === 0, `14  zero network requests beyond Google Fonts (pedagogy R8)` + (nonFont.length ? `\n        ${nonFont.slice(0, 4).join('\n        ')}` : ` [${external.length} font request(s)]`));
 

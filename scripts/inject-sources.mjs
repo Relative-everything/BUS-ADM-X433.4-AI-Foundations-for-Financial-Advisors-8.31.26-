@@ -85,12 +85,27 @@ export function renderEntry(rec, lesson) {
   if (!isAbsent(rec.publisher)) bits.push(dot(esc(rec.publisher)));
   const d = isAbsent(rec.link) ? null : domain(rec.link);
   if (d) bits.push(`<a href="${rec.link}">${esc(d)}</a>`);
-  /* A retrieval date that is not a date is a divergence the register is
+  /* THE RETRIEVAL DATE, AND ONLY THE RETRIEVAL DATE. `last_retrieved` says a
+     machine fetched the source and when. `last_verified` says the INSTRUCTOR
+     read it, and it does not belong on a student-facing page: it is an
+     instructor attestation and it is reported in docs/source-verification-queue.md.
+     A retrieval date that is not a date is a divergence the register is
      carrying, and it is printed as one rather than as a date. */
-  if (!isAbsent(rec.retrieved)) {
-    bits.push(/^\d{4}-\d{2}/.test(rec.retrieved)
-      ? `Retrieved ${humanDate(rec.retrieved)}.`
-      : dot(`Retrieval date ${esc(rec.retrieved)}`));
+  /* WHERE A WORK WAS PULLED MORE THAN ONCE, THIS LESSON'S FOOTER NAMES THIS
+     LESSON'S PULL. The record's own `last_retrieved` is the most recent
+     retrieval of the work; it is not what this lesson's figures came from.
+     Before Phase 3.5 src-aa printed "Retrieval date divergent across lessons"
+     in all three footers, which told a reader the register was confused but
+     never told them which pull they were looking at. Now each footer says its
+     own date AND says the pulls disagree, which is both facts instead of one. */
+  const pull = rec.pulls && rec.pulls[lesson];
+  const dates = rec.pulls ? [...new Set(Object.values(rec.pulls).map((p) => p.retrieved))] : [];
+  const shown = pull ? pull.retrieved : rec.last_retrieved;
+  if (!isAbsent(shown)) {
+    bits.push(/^\d{4}-\d{2}/.test(shown)
+      ? `Retrieved ${humanDate(shown)}.`
+      : dot(`Retrieval date ${esc(shown)}`));
+    if (dates.length > 1) bits.push(dot('Retrieval dates differ across lessons; see DATA-PULL.md'));
   }
   const used = rec.used_for[lesson];
   if (used) bits.push(`Used for: ${dot(esc(used))}`);

@@ -8,7 +8,7 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**20 of 57 works are moving targets, feeding 83 of
+**20 of 58 works are moving targets, feeding 83 of
 176 references.**
 
 
@@ -16,13 +16,29 @@ in `SOURCES.md` and from the chips the corpus actually carries.
 
 ## The ordering rule
 
-> **`pulled_on` ascending implies `index_version` non-descending.**
+> **`last_retrieved` ascending implies `index_version` non-descending.**
+
+It runs on `last_retrieved` and never on `last_verified`. One records when a
+machine fetched the source; the other records that the instructor read it.
+Only the first can order two pulls of the same work.
+
+**Precondition — every registered retrieval carries a full date.** A month
+cannot be ordered against a day, which is where the `src-aa` incoherence hid.
+
+**PRECONDITION FAILS, 3 times.** Each partial date below is ordered at its
+**earliest possible day** so the rule underneath it still runs. That is a
+reading convention, not a date, and no day is invented.
+
+- src-aa: session-2 retrieved "2026-08" — a month, not a day; ordered at 2026-08-01 for the rule below
+- src-pricing: session-2 retrieved "2026-08" — a month, not a day; ordered at 2026-08-01 for the rule below
+- src-charlotin: last_retrieved "2026-06" — a month, not a day
+
 
 **VIOLATED.** This is report §3.7's G3, stated
 as an assertion instead of a note. A later retrieval carrying an earlier
 version string means the version is not tracking the data.
 
-- src-aa: session-2 pulled 2026-08 at v4.1.1, session-4 pulled later on 2026-08-13 at v4.1 — version went DOWN
+- src-aa: session-2 pulled 2026-08 (partial; earliest 2026-08-01) at v4.1.1, session-4 pulled later on 2026-08-13 at v4.1 — version went DOWN
 
 
 ---
@@ -35,7 +51,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `benchmark_index` |
 | Index version | divergent, see the three pulls below |
-| Retrieved | divergent across lessons, see DATA-PULL.md PULL-001 to PULL-003 |
+| Last retrieved | 2026-08-13 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 §05, session-2 §02 and session-4 §03 |
 | References | 12 |
 | Feeds | S1 `#s10` ×2 · S2 `#s5` ×2 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
@@ -54,7 +71,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendices D1 and D2 |
 | References | 11 |
 | Feeds | S4 `#sW1` ×8 · S4 `#sW2` ×3 |
@@ -65,7 +83,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 9 |
 | Feeds | S0.1 `#s0` · S0.1 `#s5` ×2 · S0.1 `#s6` ×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10` ×2 |
@@ -76,7 +95,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 9 |
 | Feeds | S0.1 `#s1` · S0.1 `#s4` · S0.1 `#s5` ×3 · S0.1 `#s8` ×3 · S0.1 `#s9` |
@@ -87,7 +107,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 8 |
 | Feeds | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3` ×5 · S0.1 `#s9` |
@@ -98,7 +119,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 6 |
 | Feeds | S0.1 `#s1` · S0.1 `#s4` ×4 · S0.1 `#s6` |
@@ -109,7 +131,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `price` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-07-28 |
+| Last retrieved | 2026-08-25 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 §03, §05 and §06 |
 | References | 4 |
 | Feeds | S1 `#s5` · S1 `#s11` ×3 |
@@ -127,7 +150,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `leaderboard_position` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-3 §05 |
 | References | 4 |
 | Feeds | S3 `#s7` · S3 `#s16` ×3 |
@@ -138,7 +162,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 4 |
 | Feeds | S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` |
@@ -149,7 +174,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 3 |
 | Feeds | S0.1 `#s7` ×3 |
@@ -160,7 +186,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 3 |
 | Feeds | S0.1 `#s6` · S0.1 `#s7` · S0.1 `#s9` |
@@ -171,7 +198,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-08-14 |
+| Last retrieved | 2026-08-14 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 §03 and §06 |
 | References | 2 |
 | Feeds | S4 `#s3` · S4 `#s6` |
@@ -182,7 +210,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 2 |
 | Feeds | S0.1 `#s1` · S0.1 `#s6` |
@@ -193,7 +222,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `cumulative_counter` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-06 |
+| Last retrieved | 2026-06 **· PARTIAL, month only** |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-2 §07 |
 | References | 1 |
 | Feeds | S2 `#s10` |
@@ -204,7 +234,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `leaderboard_position` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 §05 |
 | References | 1 |
 | Feeds | S4 `#s5` |
@@ -215,7 +246,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 1 |
 | Feeds | S0.1 `#s7` |
@@ -226,7 +258,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 1 |
 | Feeds | S0.1 `#s7` |
@@ -237,7 +270,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 1 |
 | Feeds | S0.1 `#s7` |
@@ -248,7 +282,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 1 |
 | Feeds | S0.1 `#s2` |
@@ -259,7 +294,8 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `cumulative_counter` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-3 Appendix C3 |
 | References | 0 |
 | Feeds | *nothing on the page* |
@@ -295,11 +331,11 @@ wrong when they go stale.
 |---|---|---|
 | S0.1 | `Fable 5`, `Haiku 4.5`, `Opus 4.7`, `Opus 5`, `Sonnet 5` | 105 |
 | S1 | `Fable 5`, `GPT-5.6`, `Haiku 4.5`, `Kimi K3`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 36 |
-| S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 41 |
+| S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 43 |
 | S3 | — | 0 |
-| S4 | `DeepSeek V4-Flash`, `Fable 5`, `GPT-5.6`, `Gemini 3.6`, `Grok 4.6`, `Kimi K3`, `Luna`, `Opus 5`, `Sonnet 5` | 33 |
+| S4 | `DeepSeek V4-Flash`, `Fable 5`, `GPT-5.6`, `Gemini 3.6`, `Grok 4.6`, `Kimi K3`, `Luna`, `Opus 5`, `Sonnet 5` | 34 |
 
-**215 occurrences across 5 lessons.** This count is read off
+**218 occurrences across 5 lessons.** This count is read off
 the corpus on every run, so it cannot go stale the way a typed one would.
 
 

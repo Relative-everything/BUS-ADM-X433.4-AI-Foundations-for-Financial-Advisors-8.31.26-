@@ -305,8 +305,22 @@ if (enabled('A7')) {
 }
 
 /* ===================================================================== A16 */
-/* UNVERIFIED / TODO / FIXME / XXX only where the file declares a convention.
-   Regions: R1, R2, R7.
+/* UNVERIFIED / NEEDS SOURCE / UNCONFIRMED / TODO / FIXME / XXX only where the
+   file declares a convention, and only in the form it declares.
+   Regions: R1, R2, R7, R8.
+
+   R8 ADDED 2026-08-25 (Phase 3.5). A source note is exactly where an unsourced
+   claim sits, so it is exactly where an undeclared marker could hide from the
+   rule that exists to stop markers hiding. Nothing in R8 fired when it was
+   widened; the widening is prospective.
+
+   TWO MARKERS ADDED 2026-08-25, and the distinction between them is the point:
+     [NEEDS SOURCE]  the claim is right; a citation has not been attached.
+     [UNCONFIRMED]   no source corroborates it. The claim itself is in question.
+   [NEEDS SOURCE] is the STRONGER claim. A wrong [UNCONFIRMED] gets read and
+   downgraded; a wrong [NEEDS SOURCE] gets read and believed. The register
+   cannot tell which one is true — only that the form is declared — so the
+   defaulting rule lives in EDITORIAL.md and in the reviewer, not here.
    TRANSCRIPTION NOTE. EDITORIAL.md says the marker "must use the declared form
    and sit in a region the file's convention covers", and records that session
    0.1's eight occurrences all pass. The declared forms are the two the corpus
@@ -321,20 +335,30 @@ if (enabled('A16')) {
      pass, which is only true under this reading. So UNVERIFIED is matched in
      bracket position and required to carry a declared form; TODO / FIXME / XXX
      are matched bare, because they have no bracket convention to satisfy. */
-  const DECLARED = /^\[UNVERIFIED(?:,|\s*—|\s*-)\s*needs source\]$/;
+  const DECLARED = [
+    /^\[UNVERIFIED(?:,|\s*—|\s*-)\s*needs source\]$/,
+    /^\[NEEDS SOURCE\]$/,
+    /^\[UNCONFIRMED\]$/,
+  ];
+  const FORMS = '[UNVERIFIED, needs source] / [NEEDS SOURCE] / [UNCONFIRMED]';
   let n = 0, seen = 0;
+  const byMarker = { 'UNVERIFIED': 0, 'NEEDS SOURCE': 0, 'UNCONFIRMED': 0 };
   for (const l of lessonFiles()) {
     const text = src(l);
     const c = classify(text);
-    const pop = c.mask(['R1', 'R2', 'R7']);
+    const pop = c.mask(['R1', 'R2', 'R7', 'R8']);
     let m;
-    const bracket = /\[UNVERIFIED[^\]]*\]/g;
+    /* Matched in BRACKET POSITION. The bare word inside a sentence is prose
+       ABOUT verification, not a marker — session-0.1:1642, "Upgraded from
+       UNVERIFIED to H by the verified evidence annex". */
+    const bracket = /\[(?:UNVERIFIED|NEEDS[ _-]?SOURCE|UNCONFIRMED)[^\]]*\]/gi;
     while ((m = bracket.exec(pop))) {
       seen++;
-      if (DECLARED.test(m[0])) continue;
+      const which = /UNVERIFIED/i.test(m[0]) ? 'UNVERIFIED' : /UNCONFIRMED/i.test(m[0]) ? 'UNCONFIRMED' : 'NEEDS SOURCE';
+      if (DECLARED.some((rx) => rx.test(m[0]))) { byMarker[which]++; continue; }
       n++;
       violation('A16', `${l}/index.html:${c.lineAt(m.index)}`,
-        `marker "${m[0]}" is not the declared form [UNVERIFIED, needs source]`);
+        `marker "${m[0]}" is not one of the declared forms ${FORMS}`);
     }
     for (const rx of [/\bTODO\b/g, /\bFIXME\b/g, /\bXXX\b/g]) {
       while ((m = rx.exec(pop))) {
@@ -344,7 +368,8 @@ if (enabled('A16')) {
       }
     }
   }
-  if (!n) ran('A16', `${seen} UNVERIFIED marker(s) use their declared form; no TODO / FIXME / XXX`);
+  if (!n) ran('A16', `${seen} marker(s) use a declared form — ${byMarker.UNVERIFIED} [UNVERIFIED, needs source], `
+    + `${byMarker['NEEDS SOURCE']} [NEEDS SOURCE], ${byMarker.UNCONFIRMED} [UNCONFIRMED]; no TODO / FIXME / XXX`);
 }
 
 

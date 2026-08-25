@@ -91,7 +91,9 @@ author:         Wolfram, S.
 publisher:      Stephen Wolfram Writings
 link:           https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/
 published:      2023-02-14
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:  2026-08-23
+verified_by:    EDITORIAL.md, "Seventeen names. Instructor-verified." — the locked 17 section names of this essay, entered 2026-08-23 in commit bd8f458 and enforced by A11. Enumerating the seventeen section names requires having opened the essay.
 confidence:     H
 kind:           assigned_reading
 moving_target:  false
@@ -109,8 +111,9 @@ title:          The Cole household
 author:         not applicable
 publisher:      Constructed for this course as a classroom anchor, BUS ADM X433.4
 link:           not applicable
-published:      [UNVERIFIED, needs source]
-retrieved:      not applicable
+published:      not applicable
+last_retrieved: not applicable
+last_verified:  not applicable
 confidence:     L
 kind:           case
 moving_target:  false
@@ -130,7 +133,9 @@ author:         Artificial Analysis
 publisher:      Artificial Analysis
 link:           https://artificialanalysis.ai/models
 published:      not applicable
-retrieved:      divergent across lessons, see DATA-PULL.md PULL-001 to PULL-003
+last_retrieved: 2026-08-13
+last_verified:
+retrieval_note: PULL-002 (session-2) carries a PARTIAL DATE, "2026-08". A month cannot be ordered against a day, which is where this record's version incoherence hid. The ordering rule now reports every partial date as a precondition failure AND orders it at its earliest possible day, so the v4.1.1 -> v4.1 regression against PULL-003 still fires.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -141,13 +146,13 @@ scope:          A live leaderboard of capability index scores and cost per index
 used_for.session-1: the capability-against-price frontier and the tier comparison
 used_for.session-2: index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5
 used_for.session-4: the frontier chart, the sticker-versus-measured divergence, and the token and turn counts
-retrieved.session-1: 2026-07-28
+last_retrieved.session-1: 2026-07-28
 index_version.session-1: [UNVERIFIED, needs source]
 figures.session-1: index scores and cost per index task for the frontier chart; the body dates the pull 17 and 24 July and the footer dates it 28 July
-retrieved.session-2: 2026-08
+last_retrieved.session-2: 2026-08
 index_version.session-2: v4.1.1
 figures.session-2: index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5; IDENTICAL to the session-1 pull under a later version string
-retrieved.session-4: 2026-08-13
+last_retrieved.session-4: 2026-08-13
 index_version.session-4: v4.1
 figures.session-4: Opus 5 61 against 63, Fable 5 60 against 62, Luna cost per task $0.21 against $0.07, token prices 5x apart; DIFFERS from both other pulls on every shared model
 ```
@@ -160,7 +165,8 @@ author:         Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., & 
 publisher:      Journal of Empirical Legal Studies 22(2), 216
 link:           https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/
 published:      2025
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -178,7 +184,10 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/about-claude/pricing
 published:      not applicable
-retrieved:      2026-07-28
+last_retrieved: 2026-08-25
+last_verified:
+retrieval_note: Fetched in full 2026-08-25 for Phase 3.5. PULL-002 (session-2) carries a PARTIAL DATE, "2026-08"; it is kept because it is the honest record of what that lesson pulled.
+content_changed: 2026-08-25. The page now states that Sonnet 5's $2 / $10 introductory pricing "is now the standard price" and that "the previously scheduled increase to $3/$15 per million input/output tokens on September 1, 2026 will not occur". The 2026-07-28 pull recorded the increase as scheduled. DEPENDENT LESSON ELEMENTS: session-1 §10 table row "Sonnet 5 — from 1 Sep · $3 · $15 · $0.30" at :1727, and the note "Sonnet 5 introductory pricing ends tonight and rises 50% tomorrow" at :1732 — both now state a price rise that the source says will not happen. session-2 §02's "Sonnet 5 lists at $2 in / $10 out per million tokens" at :1380 is UNAFFECTED and is now the standing price. NOT silently updated: Phase 3.5 flags source changes rather than resolving them.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -187,9 +196,9 @@ recheck_before: every teaching of session-1 §03, §05 and §06
 scope:          Per-token input and output rates by model, cache-hit and batch discounts.
 used_for.session-1: per-token rates, cache and batch discounts, and the Cole document-pass arithmetic
 used_for.session-2: the published rates behind the blended token price
-retrieved.session-1: 2026-07-28
+last_retrieved.session-1: 2026-07-28
 figures.session-1: per-token input and output rates, cache-hit and batch discounts
-retrieved.session-2: 2026-08
+last_retrieved.session-2: 2026-08
 figures.session-2: the published rates behind the blended token price at a 3:1 input-to-output ratio
 ```
 
@@ -201,7 +210,8 @@ author:         Financial Industry Regulatory Authority
 publisher:      FINRA
 link:           https://www.finra.org/rules-guidance/notices/24-09
 published:      2024-06-27
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -219,7 +229,8 @@ author:         U.S. Securities and Exchange Commission
 publisher:      SEC, adopting release
 link:           [UNVERIFIED, needs source]
 published:      2024
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -237,7 +248,8 @@ author:         U.S. Securities and Exchange Commission, Division of Examination
 publisher:      SEC
 link:           [UNVERIFIED, needs source]
 published:      2025-11-17
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -254,7 +266,8 @@ author:         Kalai, A. T., Nachum, O., Vempala, S. S., & Zhang, E.
 publisher:      arXiv:2509.04664, §1 and §1.2
 link:           [UNVERIFIED, needs source]
 published:      2025
-retrieved:      2025-05-11
+last_retrieved: 2025-05-11
+last_verified:
 confidence:     H
 kind:           assigned_reading
 moving_target:  false
@@ -270,7 +283,8 @@ author:         artefact2
 publisher:      GitHub Pages
 link:           https://artefact2.github.io/llm-sampling/
 published:      [UNVERIFIED, needs source]
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -286,7 +300,8 @@ author:         U.S. Securities and Exchange Commission
 publisher:      SEC
 link:           [UNVERIFIED, needs source]
 published:      2024-03-18
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -302,7 +317,8 @@ author:         Anthropic
 publisher:      Anthropic Engineering
 link:           https://www.anthropic.com/engineering/contextual-retrieval
 published:      2024-09-19
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -318,7 +334,10 @@ author:         Vectara
 publisher:      Vectara
 link:           https://www.vectara.com/blog/introducing-the-next-generation-of-vectaras-hallucination-leaderboard
 published:      2025-11-19
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: www.vectara.com is blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited blog post itself was never loaded. A SURROGATE was reachable and was read: Vectara's own hallucination-leaderboard repository, fetched 2026-08-25, last updated 2026-05-11, HHEM-2.3, 123 models. Reading a surrogate is not retrieving the source.
+content_changed: 2026-08-25. THE MEASUREMENTS HOLD; THE SUPERLATIVE IS STALE. Every per-model rate session-3 quotes is still on the live board — Gemini-3-Pro 13.6%, Claude Sonnet 4.5 12.0%, GPT-OSS-120B 14.2%, DeepSeek-R1 11.3%, gemini-2.5-flash-lite 3.3%. But 3.3% is now RANK 3, not the floor; the floor is 1.8%. DEPENDENT LESSON ELEMENTS: session-3's HALL chart array labels 3.3% 'Best model, grounded' at :2010, and the toggle panel teaches the grounded range as '3.3% to above 13%' at :2139. Both are superlatives about a leaderboard that has moved past them; the numbers themselves are unchanged. Separately, this record's `scope` asserts a 32K-token length and a 3,792 / 3,939 complexity split that the reachable artifact does not state — it says '50 words to as long as 24K words' and gives no split. NOT silently updated.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -336,7 +355,8 @@ author:         Kitces.com
 publisher:      Kitces.com
 link:           https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/
 published:      2025-01-15
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -352,7 +372,8 @@ author:         Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S.
 publisher:      Microsoft Research; CHI 2025
 link:           [UNVERIFIED, needs source]
 published:      2025
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -368,7 +389,8 @@ author:         State of California; United States Congress
 publisher:      Statutory text
 link:           [UNVERIFIED, needs source]
 published:      [UNVERIFIED, needs source]
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -385,7 +407,8 @@ author:         Iskowitz, C.
 publisher:      WealthTech Today
 link:           [UNVERIFIED, needs source]
 published:      2025-07-29
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     M
 kind:           background
 moving_target:  false
@@ -401,7 +424,9 @@ author:         Kitces.com
 publisher:      Kitces.com
 link:           [UNVERIFIED, needs source]
 published:      2026-08
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: Fetch ATTEMPTED 2026-08-25 and REFUSED before it reached the source: www.kitces.com is not permitted by the build environment's egress policy (HTTP 403 on CONNECT). This is a statement about this environment, NOT about the source — the source is not known to have moved or gone. No date is written, because no retrieval happened. Listed in docs/source-verification-queue.md as instructor work.
 confidence:     M
 kind:           background
 moving_target:  true
@@ -419,7 +444,8 @@ author:         Laplace, P. S.
 publisher:      Truscott & Emory, Trans.; original work published 1814. Chapter II, "Concerning Probability," pp. 3-8
 link:           [UNVERIFIED, needs source]
 published:      1902
-retrieved:      not applicable
+last_retrieved: not applicable
+last_verified:
 confidence:     H
 kind:           background
 moving_target:  false
@@ -435,7 +461,8 @@ author:         Google
 publisher:      Google
 link:           [UNVERIFIED, needs source]
 published:      2024
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -451,7 +478,8 @@ author:         Zheng, M., Pei, J., Logeswaran, L., Lee, M., & Jurgens, D.
 publisher:      Findings of the Association for Computational Linguistics: EMNLP 2024
 link:           https://aclanthology.org/2024.findings-emnlp.888/
 published:      2024
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -467,7 +495,8 @@ author:         Anthropic
 publisher:      Anthropic
 link:           [UNVERIFIED, needs source]
 published:      2025
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           background
 moving_target:  false
@@ -483,7 +512,8 @@ author:         Dahl, M., Magesh, V., Suzgun, M., & Ho, D. E.
 publisher:      Stanford RegLab / Institute for Human-Centered AI
 link:           [UNVERIFIED, needs source]
 published:      2024
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -499,7 +529,9 @@ author:         Charlotin, D.
 publisher:      HEC Paris
 link:           [UNVERIFIED, needs source]
 published:      not applicable
-retrieved:      2026-06
+last_retrieved: 2026-06
+last_verified:
+retrieval_note: PARTIAL DATE. The day was never recorded. The pull captured a count the source itself dates "as of 9 June 2026" (session-2:1669) and the text entered the repo on 2026-08-15, so the retrieval falls in 2026-06-09..2026-06-30. Not narrowed further, and no day is invented.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -517,7 +549,8 @@ author:         T3 / Inside Information
 publisher:      as summarised in Kitces.com Weekend Reading, March 2026
 link:           [UNVERIFIED, needs source]
 published:      2026-03
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -533,7 +566,8 @@ author:         Kitces.com
 publisher:      as summarised in The Latest in Financial AdvisorTech, Kitces.com
 link:           [UNVERIFIED, needs source]
 published:      2026-08
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -549,7 +583,8 @@ author:         Morningstar
 publisher:      Morningstar
 link:           [UNVERIFIED, needs source]
 published:      2025-10-15
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     M
 kind:           background
 moving_target:  false
@@ -565,7 +600,8 @@ author:         United States Congress
 publisher:      Statutory text
 link:           [UNVERIFIED, needs source]
 published:      not applicable
-retrieved:      not applicable
+last_retrieved: not applicable
+last_verified:
 confidence:     H
 kind:           authority
 moving_target:  false
@@ -581,7 +617,8 @@ author:         Internal Revenue Service
 publisher:      Internal Revenue Bulletin
 link:           [UNVERIFIED, needs source]
 published:      1985
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           authority
 moving_target:  false
@@ -597,7 +634,8 @@ author:         Internal Revenue Service
 publisher:      Internal Revenue Bulletin
 link:           https://www.irs.gov/irb/2004-27_IRB
 published:      2004
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           authority
 moving_target:  false
@@ -613,7 +651,8 @@ author:         United States Tax Court
 publisher:      Tax Court docket
 link:           [UNVERIFIED, needs source]
 published:      2013-12-26
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           authority
 moving_target:  false
@@ -629,7 +668,8 @@ author:         United States Tax Court
 publisher:      Tax Court docket
 link:           [UNVERIFIED, needs source]
 published:      2013-06-14
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     M
 kind:           authority
 moving_target:  false
@@ -645,7 +685,8 @@ author:         not applicable
 publisher:      not applicable
 link:           not applicable
 published:      not applicable
-retrieved:      not applicable
+last_retrieved: not applicable
+last_verified:  not applicable
 confidence:     not applicable
 kind:           fabricated
 moving_target:  false
@@ -662,7 +703,8 @@ author:         not applicable
 publisher:      not applicable
 link:           not applicable
 published:      not applicable
-retrieved:      not applicable
+last_retrieved: not applicable
+last_verified:  not applicable
 confidence:     not applicable
 kind:           fabricated
 moving_target:  false
@@ -679,7 +721,8 @@ author:         Financial Industry Regulatory Authority
 publisher:      FINRA
 link:           [UNVERIFIED, needs source]
 published:      2025-12-09
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -695,7 +738,8 @@ author:         Financial Industry Regulatory Authority
 publisher:      FINRA
 link:           [UNVERIFIED, needs source]
 published:      2026-03-06
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -711,12 +755,31 @@ author:         Daly, B., Director, Division of Investment Management
 publisher:      ICI Winter Board Meeting
 link:           [UNVERIFIED, needs source]
 published:      2026-02-03
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          NARROW, AND IT WAS READ TOO WIDELY. The speech states that the core questions remain open — whether an AI tool is marketing, advice or something requiring registration; who is responsible when output is wrong; how it is supervised — and asks for comment rather than announcing an answer. It says NOTHING about watermarking, SynthID, benchmark scores or model token counts, and it was chipped to four such claims before Phase 3 Part 1.
 used_for.session-4: the open regulatory questions and the request for comment
+```
+
+## src-zhao
+
+```source
+title:          Invisible image watermarks are provably removable using generative AI
+author:         Zhao, X., Zhang, K., Su, Z., Vasan, S., Grishchenko, I., Kruegel, C., Vigna, G., Wang, Y.-X., & Li, L.
+publisher:      Advances in Neural Information Processing Systems (NeurIPS 2024)
+link:           https://arxiv.org/abs/2306.01953
+published:      2024
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: THE PAPER ITSELF WAS NEVER LOADED, so last_retrieved is unresolved. arxiv.org, proceedings.neurips.cc, openreview.net, dl.acm.org and semanticscholar.org are all blocked by the build environment's egress policy (403 on CONNECT). Identity was established on 2026-08-25 from the AUTHORS' OWN REPOSITORY, github.com/XuandongZhao/WatermarkAttacker, which was reachable and returned the official BibTeX and a NeurIPS 2024 badge verbatim, corroborated by six independent search-index entries (arXiv 2306.01953, OpenReview 7hy5fy2OC6, NeurIPS 2024 poster 96428, an ACM DL DOI, a Semantic Scholar record, and the proceedings PDF path). A repository is not the paper and a search index is not a retrieval, so no date is written for either. [UNVERIFIED, needs source] for the proceedings volume and page range.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          The regeneration attack only: add random noise to destroy the embedded signal, then reconstruct the image with a denoiser or a pre-trained diffusion model. Formal proofs plus evaluation against pixel-level schemes; the removal guarantee is proved for watermarks that perturb the image within a bounded distance. It does NOT reach latent- or semantic-binding schemes, and it is NOT the source of the 2026 mutual-information result cited in the same sentence — that is arXiv 2602.20680, which has no key here and was not read.
+used_for.session-4: the regeneration attack on watermarked images in Appendix D2
 ```
 
 ## src-owasp
@@ -727,7 +790,10 @@ author:         OWASP
 publisher:      OWASP
 link:           https://owasp.org/www-project-top-10-for-large-language-model-applications/
 published:      [UNVERIFIED, needs source]
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: owasp.org and genai.owasp.org are both blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited page itself was never loaded. A SURROGATE was reachable and was read: the GitHub repository backing that exact project page, fetched 2026-08-25. Reading a surrogate is not retrieving the source and no date is written for one.
+content_changed: 2026-08-25. THE SOURCE HAS MOVED. Established from the project's own GitHub repository, which the blocked page is built from. OWASP's own words describe the cited project page as maintained as a historical archive; active development moved to github.com/GenAI-Security-Project/GenAI-LLM-Top10 and a new edition, OWASP GenAI LLM Top 10 2026, was published 2026-08-04. DEPENDENT LESSON ELEMENTS: session-4 §05's claim that prompt injection is LLM01 SURVIVES the move intact — it is LLM01:2026 Prompt Injection in the new edition, and is now anchorable to a dated edition instead of an undated page. The CITATION does not survive: the `link` field points at an archive. The 'six of ten agentic categories' half of the same sentence is separately UNCONFIRMED — an Agentic Top 10 2026 v1.0 exists (published 2025-12-01) but sits on no reachable host and its category count was not read. NOT silently updated.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -745,7 +811,8 @@ author:         MITRE / NVD
 publisher:      Public CVE record
 link:           [UNVERIFIED, needs source]
 published:      2025
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           background
 moving_target:  false
@@ -761,7 +828,8 @@ author:         Gartner
 publisher:      Gartner
 link:           [UNVERIFIED, needs source]
 published:      2025
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -777,7 +845,8 @@ author:         Deloitte Center for Financial Services
 publisher:      Deloitte
 link:           [UNVERIFIED, needs source]
 published:      [UNVERIFIED, needs source]
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -793,7 +862,8 @@ author:         Surfshark
 publisher:      Surfshark, as reported by two outlets
 link:           [UNVERIFIED, needs source]
 published:      2026
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     L
 kind:           evidence
 moving_target:  false
@@ -809,7 +879,8 @@ author:         Financial Times
 publisher:      Financial Times
 link:           [UNVERIFIED, needs source]
 published:      2024-05
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -825,7 +896,9 @@ author:         Google DeepMind
 publisher:      Google DeepMind
 link:           [UNVERIFIED, needs source]
 published:      [UNVERIFIED, needs source]
-retrieved:      [UNVERIFIED, needs source]
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: Fetch ATTEMPTED 2026-08-25 and REFUSED before it reached the source: the Google DeepMind host is not permitted by the build environment's egress policy (HTTP 403 on CONNECT). This is a statement about this environment, NOT about the source — the source is not known to have moved or gone. No date is written, because no retrieval happened. Listed in docs/source-verification-queue.md as instructor work.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -843,7 +916,8 @@ author:         Anthropic
 publisher:      Anthropic
 link:           [UNVERIFIED, needs source]
 published:      not applicable
-retrieved:      2026-08-14
+last_retrieved: 2026-08-14
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -861,7 +935,8 @@ author:         Anthropic
 publisher:      support.claude.com article 14503520
 link:           [UNVERIFIED, needs source]
 published:      2026-07-07
-retrieved:      2026-08-20
+last_retrieved: 2026-08-20
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -879,7 +954,8 @@ author:         Anthropic
 publisher:      support.claude.com article 8606394
 link:           [UNVERIFIED, needs source]
 published:      [UNVERIFIED, needs source]
-retrieved:      2026-08-20
+last_retrieved: 2026-08-20
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -897,7 +973,8 @@ author:         Anthropic
 publisher:      support.claude.com article 14328846
 link:           [UNVERIFIED, needs source]
 published:      [UNVERIFIED, needs source]
-retrieved:      2026-08-20
+last_retrieved: 2026-08-20
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -915,7 +992,8 @@ author:         Anthropic
 publisher:      support.claude.com article 8664678
 link:           [UNVERIFIED, needs source]
 published:      [UNVERIFIED, needs source]
-retrieved:      2026-08-20
+last_retrieved: 2026-08-20
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -933,7 +1011,8 @@ author:         Anthropic
 publisher:      support.claude.com article 18031719
 link:           [UNVERIFIED, needs source]
 published:      [UNVERIFIED, needs source]
-retrieved:      2026-08-20
+last_retrieved: 2026-08-20
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -951,7 +1030,8 @@ author:         Anthropic
 publisher:      support.claude.com article 11817273
 link:           [UNVERIFIED, needs source]
 published:      [UNVERIFIED, needs source]
-retrieved:      2026-08-20
+last_retrieved: 2026-08-20
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -969,7 +1049,8 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/about-claude/models/overview
 published:      [UNVERIFIED, needs source]
-retrieved:      2026-08-20
+last_retrieved: 2026-08-20
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -987,7 +1068,8 @@ author:         Anthropic
 publisher:      support.claude.com article 10185728
 link:           [UNVERIFIED, needs source]
 published:      [UNVERIFIED, needs source]
-retrieved:      2026-08-20
+last_retrieved: 2026-08-20
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1005,7 +1087,8 @@ author:         Anthropic
 publisher:      support.claude.com article 13837440
 link:           [UNVERIFIED, needs source]
 published:      [UNVERIFIED, needs source]
-retrieved:      2026-08-20
+last_retrieved: 2026-08-20
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1023,7 +1106,8 @@ author:         Anthropic
 publisher:      support.claude.com article 15363606
 link:           [UNVERIFIED, needs source]
 published:      [UNVERIFIED, needs source]
-retrieved:      2026-08-20
+last_retrieved: 2026-08-20
+last_verified:
 confidence:     L
 kind:           evidence
 moving_target:  true
@@ -1041,7 +1125,8 @@ author:         Anthropic
 publisher:      support.claude.com article 12512176
 link:           [UNVERIFIED, needs source]
 published:      [UNVERIFIED, needs source]
-retrieved:      2026-08-20
+last_retrieved: 2026-08-20
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1059,7 +1144,8 @@ author:         Anthropic
 publisher:      support.claude.com article 11095361
 link:           [UNVERIFIED, needs source]
 published:      [UNVERIFIED, needs source]
-retrieved:      2026-08-20
+last_retrieved: 2026-08-20
+last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true

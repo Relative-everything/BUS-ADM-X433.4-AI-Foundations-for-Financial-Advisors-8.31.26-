@@ -28,7 +28,8 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { model, LESSONS, isAbsent, UNVERIFIED } from './build-sources.mjs';
+import { model, LESSONS, isAbsent, UNVERIFIED, orderableDate, isPartialDate,
+         assertVerifiedLock, FULL_DATE } from './build-sources.mjs';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CHECK = process.argv.includes('--check');
@@ -60,7 +61,7 @@ function bibliography() {
     (isAbsent(a.author) ? a.title : a.author).localeCompare(isAbsent(b.author) ? b.title : b.author));
   const cited = byAuthor.filter((r) => r.total_references > 0);
   const uncited = byAuthor.filter((r) => r.total_references === 0);
-  const withGaps = all.filter((r) => ['author', 'publisher', 'link', 'published', 'retrieved']
+  const withGaps = all.filter((r) => ['author', 'publisher', 'link', 'published', 'last_retrieved']
     .some((f) => isAbsent(r[f]) && r[f] !== 'not applicable'));
 
   const L = [];
@@ -101,7 +102,8 @@ reader comes for completeness, so here the gap is the point.
     L.push(`| Publisher | ${gap(r.publisher)} |`);
     L.push(`| Link | ${isAbsent(r.link) ? gap(r.link) : `<${r.link}>`} |`);
     L.push(`| Published | ${gap(r.published)} |`);
-    L.push(`| Last accessed | ${gap(r.retrieved)} |`);
+    L.push(`| Last retrieved | ${gap(r.last_retrieved)} |`);
+    L.push(`| Last verified by the instructor | ${r.last_verified ? (r.last_verified === 'not applicable' ? '*not applicable*' : `**${r.last_verified}**`) : '**EMPTY** — no evidence in the repo that a human read it'} |`);
     L.push(`| Confidence | ${r.confidence} |`);
     L.push(`| **Total references** | **${r.total_references}** |`);
     const where = r.cited_by
@@ -162,15 +164,28 @@ function dataPull() {
       pulls.push({ key: r.key, lesson, ...p });
     }
   }
-  /* THE ORDERING RULE: pulled_on ascending implies index_version non-descending.
-     The corpus violates it, which is what turns report §3.7 G3 from a note into
-     a failing assertion. */
+  /* THE ORDERING RULE: last_retrieved ascending implies index_version
+     non-descending. It runs on last_retrieved and NEVER on last_verified: one
+     records when a machine fetched the source, the other that a human read it,
+     and only the first can order two pulls of the same work.
+
+     PRECONDITION, and it is the half that was missing. A month is not a day.
+     "2026-08" cannot be ordered against "2026-08-13", and that is exactly where
+     src-aa's version incoherence hid. Every partial date is now reported as a
+     precondition failure in its own right, AND ordered at its earliest possible
+     day so the regression underneath it still fires. A partial date is never
+     silently promoted to a day. */
+  const partials = pulls.filter((p) => isPartialDate(p.retrieved))
+    .map((p) => `${p.key}: ${p.lesson} retrieved "${p.retrieved}" — a month, not a day; ordered at ${orderableDate(p.retrieved)} for the rule below`);
+  for (const r of all) {
+    if (isPartialDate(r.last_retrieved)) partials.push(`${r.key}: last_retrieved "${r.last_retrieved}" — a month, not a day`);
+  }
   const violations = [];
   const byKey = {};
   for (const p of pulls) (byKey[p.key] ||= []).push(p);
   for (const [key, list] of Object.entries(byKey)) {
     const dated = list.filter((p) => /^\d{4}/.test(p.retrieved))
-      .sort((a, b) => a.retrieved.localeCompare(b.retrieved));
+      .sort((a, b) => orderableDate(a.retrieved).localeCompare(orderableDate(b.retrieved)));
     for (let i = 1; i < dated.length; i++) {
       const prev = dated[i - 1], cur = dated[i];
       const pv = (prev.index_version || '').replace(/^v/, '');
@@ -178,8 +193,8 @@ function dataPull() {
       if (!/^\d/.test(pv) || !/^\d/.test(cv)) continue;
       const cmp = pv.localeCompare(cv, undefined, { numeric: true });
       if (cmp > 0) {
-        violations.push(`${key}: ${prev.lesson} pulled ${prev.retrieved} at v${pv}, `
-          + `${cur.lesson} pulled later on ${cur.retrieved} at v${cv} — version went DOWN`);
+        violations.push(`${key}: ${prev.lesson} pulled ${prev.retrieved}${isPartialDate(prev.retrieved) ? ` (partial; earliest ${orderableDate(prev.retrieved)})` : ''} at v${pv}, `
+          + `${cur.lesson} pulled later on ${cur.retrieved}${isPartialDate(cur.retrieved) ? ` (partial; earliest ${orderableDate(cur.retrieved)})` : ''} at v${cv} — version went DOWN`);
       }
     }
   }
@@ -205,7 +220,22 @@ in \`SOURCES.md\` and from the chips the corpus actually carries.
   }));
 
   L.push('\n---\n\n## The ordering rule\n');
-  L.push('> **`pulled_on` ascending implies `index_version` non-descending.**\n');
+  L.push('> **`last_retrieved` ascending implies `index_version` non-descending.**\n');
+  L.push('It runs on `last_retrieved` and never on `last_verified`. One records when a');
+  L.push('machine fetched the source; the other records that the instructor read it.');
+  L.push('Only the first can order two pulls of the same work.\n');
+  L.push('**Precondition — every registered retrieval carries a full date.** A month');
+  L.push('cannot be ordered against a day, which is where the `src-aa` incoherence hid.');
+  if (partials.length) {
+    L.push(`\n**PRECONDITION FAILS, ${partials.length} time${partials.length > 1 ? 's' : ''}.** Each partial date below is ordered at its`);
+    L.push('**earliest possible day** so the rule underneath it still runs. That is a');
+    L.push('reading convention, not a date, and no day is invented.\n');
+    for (const v of partials) L.push(`- ${v}`);
+    L.push('');
+  } else {
+    L.push('\n**Precondition holds.** Every registered retrieval carries a full date.\n');
+  }
+  L.push('');
   if (violations.length) {
     L.push(`**VIOLATED${violations.length > 1 ? `, ${violations.length} times` : ''}.** This is report §3.7's G3, stated`);
     L.push('as an assertion instead of a note. A later retrieval carrying an earlier');
@@ -223,7 +253,8 @@ in \`SOURCES.md\` and from the chips the corpus actually carries.
     L.push('|---|---|');
     L.push(`| Figure class | \`${r.figure_class}\` |`);
     L.push(`| Index version | ${gap(r.index_version)} |`);
-    L.push(`| Retrieved | ${gap(r.retrieved)} |`);
+    L.push(`| Last retrieved | ${gap(r.last_retrieved)}${isPartialDate(r.last_retrieved) ? ' **· PARTIAL, month only**' : ''} |`);
+    L.push(`| Last verified by the instructor | ${r.last_verified || '**EMPTY**'} |`);
     L.push(`| Re-check before | ${r.recheck_before} |`);
     L.push(`| References | ${r.total_references} |`);
     const feeds = r.cited_by.sort((a, b) => a.lesson.localeCompare(b.lesson))
@@ -296,10 +327,152 @@ in \`SOURCES.md\` and from the chips the corpus actually carries.
   return L.join('\n') + '\n';
 }
 
+
+/* ======================================== docs/source-verification-queue.md */
+
+/**
+ * The instructor's work list. GENERATED, never hand-maintained.
+ *
+ * Sorted by REFERENCE COUNT DESCENDING, because a source eleven claims rest on
+ * is worth verifying before one that carries none. The totals sit at the top so
+ * the shape of the gap is the first thing read: how many sources, how many have
+ * never been read by a human, and how many references sit behind them.
+ *
+ * `last_verified` is EMPTY almost everywhere and that is the honest state, not
+ * a backlog of missing data. Nothing in this repository may fill it in; see
+ * scripts/attest-verified.mjs.
+ */
+function verificationQueue() {
+  const rows = all.slice().sort((a, b) =>
+    b.total_references - a.total_references || a.key.localeCompare(b.key));
+  const empty = rows.filter((r) => !r.last_verified);
+  const na = rows.filter((r) => r.last_verified === 'not applicable');
+  const done = rows.filter((r) => r.verified);
+  const emptyRefs = empty.reduce((a, b) => a + b.total_references, 0);
+  const lockState = assertVerifiedLock(sources, { explain: true });
+
+  const L = [];
+  L.push(fill(`# Source verification queue
+
+**Generated from \`SOURCES.md\` by \`scripts/build-bibliography.mjs\`. Do not edit:
+the next run overwrites it.**
+
+This is the instructor's work list, in the order the work is worth doing. A
+source **{{TOPREFS}} claims rest on** is worth verifying before one that carries
+none, so the ordering is **reference count, descending**.
+
+## The two dates, and why only one of them is yours
+
+| Field | What it asserts | Who may move it |
+|---|---|---|
+| \`last_verified\` | **You read the source** and confirmed this repository's claims about it are still accurate. A human attestation. | **You, and nothing else.** No generator, no re-pull, no agent, no automated process. \`scripts/attest-verified.mjs\` is the only writer and it refuses unless it is talking to an interactive terminal. |
+| \`last_retrieved\` | A machine fetched the source. Records **when**, and never that anything is accurate. | Any re-pull. This is what *"update all live data points"* advances. |
+
+**EMPTY is the honest value for \`last_verified\`.** It is not a backlog of
+missing data; it is the measurement. A populated \`last_verified\` asserts that a
+human read the source, and asserting that without evidence is the failure the
+never-fabricate rule exists to prevent.
+
+## Totals
+
+| | |
+|---|---|
+| Source records | **{{N}}** |
+| \`last_verified\` **EMPTY** | **{{EMPTY}}** |
+| \`last_verified\` populated | {{DONE}} |
+| \`last_verified\` *not applicable* (synthetic or fabricated) | {{NA}} |
+| References standing behind an EMPTY \`last_verified\` | **{{EMPTYREFS}}** of {{REFS}} |
+| Moving targets | {{MOVING}} |
+| Lock | {{LOCK}} |
+`, {
+    N: rows.length,
+    EMPTY: empty.length,
+    DONE: done.length,
+    NA: na.length,
+    EMPTYREFS: emptyRefs,
+    REFS: rows.reduce((a, b) => a + b.total_references, 0),
+    MOVING: rows.filter((r) => r.moving_target).length,
+    TOPREFS: rows[0] ? rows[0].total_references : 0,
+    LOCK: lockState.ok ? `notarised, digest \`${lockState.digest.slice(0, 16)}\`` : `**BROKEN** — ${lockState.moved.join('; ')}`,
+  }));
+
+  if (done.length) {
+    L.push('\n## Already attested\n');
+    L.push('Each one cites the evidence in the repository that records the confirmation.\n');
+    for (const r of done) {
+      L.push(`- **\`${r.key}\`** — ${r.last_verified}. ${r.verified_by}`);
+    }
+    L.push('');
+  }
+
+  L.push('\n---\n\n## The queue\n');
+  L.push('| # | Key | Title | `last_verified` | `last_retrieved` | Refs | Moving | Depends on it |');
+  L.push('|---|---|---|---|---|---|---|---|');
+  rows.forEach((r, i) => {
+    const feeds = r.cited_by.slice().sort((a, b) => a.lesson.localeCompare(b.lesson))
+      .map((c) => `${short(c.lesson)} \`#${c.section}\`${c.chips > 1 ? `×${c.chips}` : ''}`).join(' · ');
+    const declared = LESSONS.filter((l) => r.used_for[l]).map(short).join(', ');
+    const lv = r.last_verified === 'not applicable' ? '*n/a*' : (r.last_verified ? `**${r.last_verified}**` : '**EMPTY**');
+    const lr = isAbsent(r.last_retrieved)
+      ? (r.last_retrieved === 'not applicable' ? '*n/a*' : '**none**')
+      : (isPartialDate(r.last_retrieved) ? `${r.last_retrieved} *(month only)*` : r.last_retrieved);
+    L.push(`| ${i + 1} | \`${r.key}\` | ${r.title.replace(/\|/g, '\\|')} | ${lv} | ${lr} | ${r.total_references} | ${r.moving_target ? 'yes' : 'no'} | ${feeds || `*listed by ${declared || 'no lesson'}, cited by none*`} |`);
+  });
+
+  L.push('\n\n---\n\n## Links, for the reading\n');
+  L.push('| Key | Link |');
+  L.push('|---|---|');
+  for (const r of rows) {
+    L.push(`| \`${r.key}\` | ${isAbsent(r.link) ? (r.link === 'not applicable' ? '*not applicable*' : `**${UNVERIFIED}** — find the canonical page before verifying`) : r.link} |`);
+  }
+
+  const notes = rows.filter((r) => r.retrieval_note);
+  if (notes.length) {
+    L.push('\n\n---\n\n## Retrieval notes\n');
+    L.push('What happened the last time somebody tried, and what it does and does not say');
+    L.push('about the source.\n');
+    for (const r of notes) L.push(`### \`${r.key}\`\n\n${r.retrieval_note}\n`);
+  }
+
+  const changed = rows.filter((r) => r.content_changed);
+  L.push('\n\n---\n\n## Sources whose content CHANGED on the last fetch\n');
+  if (changed.length) {
+    L.push('**A fetch that found the source saying something different is a finding, not');
+    L.push('an update.** Nothing below has been silently rewritten in the lessons. Each');
+    L.push('entry names the delta and every lesson element that depends on it.\n');
+    for (const r of changed) L.push(`### \`${r.key}\` — ${r.total_references} reference(s)\n\n${r.content_changed}\n`);
+  } else {
+    L.push('*No source was found to have changed on the last fetch. Note that a source');
+    L.push('nobody could reach is not a source that did not change — see below.*');
+  }
+
+  const unreachable = rows.filter((r) => /ATTEMPTED[\s\S]{0,60}REFUSED/i.test(r.retrieval_note || ''));
+  L.push('\n---\n\n## What this build could not reach\n');
+  if (unreachable.length) {
+    L.push(fill(`**{{U}} source host(s) refused the connection before the request reached them.**
+This build environment enforces an egress policy; on 2026-08-25 every source host
+except \`platform.claude.com\` answered **403 to CONNECT**. That is a fact about
+the environment and **not** about the sources: none of them is known to have
+moved or gone. No \`last_retrieved\` date was written for any of them, because no
+retrieval happened.
+`, { U: unreachable.length }));
+    L.push('| Key | Refs | Host |');
+    L.push('|---|---|---|');
+    for (const r of unreachable) {
+      const host = isAbsent(r.link) ? '*link unknown*' : new URL(r.link).host;
+      L.push(`| \`${r.key}\` | ${r.total_references} | ${host} |`);
+    }
+  } else {
+    L.push('*Every source with a link was reachable on the last run.*');
+  }
+  return L.join('\n') + '\n';
+}
+
 /* ---------------------------------------------------------------------- main */
 
 let drift = 0;
-for (const [name, body] of [['BIBLIOGRAPHY.md', bibliography()], ['DATA-PULL.md', dataPull()]]) {
+for (const [name, body] of [['BIBLIOGRAPHY.md', bibliography()], ['DATA-PULL.md', dataPull()],
+                            ['docs/source-verification-queue.md', verificationQueue()]]) {
   const path = join(REPO, name);
   let before = null;
   try { before = readFileSync(path, 'utf8'); } catch { /* first run */ }
@@ -312,4 +485,4 @@ if (CHECK && drift) {
   console.error(`\n${drift} generated file(s) are stale. Run without --check.`);
   process.exit(1);
 }
-console.log(CHECK ? '\nboth generated files are current' : `\n${drift} file(s) written`);
+console.log(CHECK ? '\nall three generated files are current' : `\n${drift} file(s) written`);

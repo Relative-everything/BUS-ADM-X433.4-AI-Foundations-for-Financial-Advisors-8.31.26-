@@ -5,7 +5,7 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**57 works, 176 references across 5 lessons.** 43 are
+**58 works, 176 references across 5 lessons.** 44 are
 cited by at least one claim; 14 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
@@ -31,7 +31,8 @@ reader comes for completeness, so here the gap is the point.
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/pricing> |
 | Published | *not applicable* |
-| Last accessed | 2026-07-28 |
+| Last retrieved | 2026-08-25 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **4** |
 | Cited in | S1 `#s5` · S1 `#s11` ×3 |
@@ -49,7 +50,8 @@ Per-token input and output rates by model, cache-hit and batch discounts.
 | Publisher | Anthropic Engineering |
 | Link | <https://www.anthropic.com/engineering/contextual-retrieval> |
 | Published | 2024-09-19 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **9** |
 | Cited in | S3 `#s5` ×2 · S3 `#sHY` · S3 `#s6` ×2 · S3 `#s16` ×4 |
@@ -67,7 +69,8 @@ Top-20-chunk retrieval failure rates — baseline 5.7%, contextual embeddings 3.
 | Publisher | Anthropic |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | *not applicable* |
-| Last accessed | 2026-08-14 |
+| Last retrieved | 2026-08-14 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **2** |
 | Cited in | S4 `#s3` · S4 `#s6` |
@@ -85,7 +88,8 @@ Consumer training defaults since 8 October 2025, five-year and 30-day retention,
 | Publisher | support.claude.com article 14503520 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2026-07-07 |
-| Last accessed | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S0.1 `#s7` |
@@ -103,7 +107,8 @@ The label semantics and the eight-row table in section 7. H as of the article's 
 | Publisher | support.claude.com article 8606394 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **6** |
 | Cited in | S0.1 `#s1` · S0.1 `#s4` ×4 · S0.1 `#s6` |
@@ -121,7 +126,8 @@ Window sizes by model, the 500K figure for the 4.x tier in chat and 200K outside
 | Publisher | support.claude.com article 14328846 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S0.1 `#s7` |
@@ -139,7 +145,8 @@ The Customize sidebar and its three tabs, install and enable semantics, director
 | Publisher | support.claude.com article 8664678 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **8** |
 | Cited in | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3` ×5 · S0.1 `#s9` |
@@ -157,7 +164,8 @@ The five effort levels, which models carry the effort selector, extended thinkin
 | Publisher | support.claude.com article 18031719 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S0.1 `#s7` |
@@ -175,7 +183,8 @@ The enumeration of surfaces beyond the chat box, and the attachment path.
 | Publisher | support.claude.com article 11817273 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **9** |
 | Cited in | S0.1 `#s0` · S0.1 `#s5` ×2 · S0.1 `#s6` ×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10` ×2 |
@@ -193,7 +202,8 @@ The two live memory experiences and where each puts its toggles, real-time entry
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/models/overview> |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **4** |
 | Cited in | S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` |
@@ -211,7 +221,8 @@ The four current models, context window sizes (1M for Fable 5, Opus 5 and Sonnet
 | Publisher | support.claude.com article 10185728 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **2** |
 | Cited in | S0.1 `#s1` · S0.1 `#s6` |
@@ -229,7 +240,8 @@ Profile instructions applying account-wide, project instructions, styles as a se
 | Publisher | support.claude.com article 13837440 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **3** |
 | Cited in | S0.1 `#s7` ×3 |
@@ -247,7 +259,8 @@ Plugins on all paid plans, a plugin bundling skills, connectors and sub-agents, 
 | Publisher | support.claude.com article 15363606 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | L |
 | **Total references** | **1** |
 | Cited in | S0.1 `#s2` |
@@ -265,7 +278,8 @@ Plugins on all paid plans, a plugin bundling skills, connectors and sub-agents, 
 | Publisher | support.claude.com article 12512176 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **3** |
 | Cited in | S0.1 `#s6` · S0.1 `#s7` · S0.1 `#s9` |
@@ -283,7 +297,8 @@ Progressive disclosure of skill metadata against skill body, the code-execution 
 | Publisher | support.claude.com article 11095361 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | 2026-08-20 |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **9** |
 | Cited in | S0.1 `#s1` · S0.1 `#s4` · S0.1 `#s5` ×3 · S0.1 `#s8` ×3 · S0.1 `#s9` |
@@ -301,7 +316,8 @@ One to two tool calls for web search on a factual query, five or more tool calls
 | Publisher | GitHub Pages |
 | Link | <https://artefact2.github.io/llm-sampling/> |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S1 `#s8` |
@@ -319,7 +335,8 @@ The nine sampler controls and their interaction. Behaviour reimplemented in Appe
 | Publisher | Artificial Analysis |
 | Link | <https://artificialanalysis.ai/models> |
 | Published | *not applicable* |
-| Last accessed | divergent across lessons, see DATA-PULL.md PULL-001 to PULL-003 |
+| Last retrieved | 2026-08-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **12** |
 | Cited in | S1 `#s10` ×2 · S2 `#s5` ×2 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
@@ -337,7 +354,8 @@ A live leaderboard of capability index scores and cost per index task. Every fig
 | Publisher | HEC Paris |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | *not applicable* |
-| Last accessed | 2026-06 |
+| Last retrieved | 2026-06 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **1** |
 | Cited in | S2 `#s10` |
@@ -355,7 +373,8 @@ A running count of court cases in which fabricated citations were filed. Cumulat
 | Publisher | Stanford RegLab / Institute for Human-Centered AI |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2024 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **2** |
 | Cited in | S2 `#s10` ×2 |
@@ -373,10 +392,11 @@ General-purpose models over more than 800,000 verifiable legal questions, 58-88%
 | Publisher | ICI Winter Board Meeting |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2026-02-03 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **4** |
-| Cited in | S4 `#s1` · S4 `#sW1` ×2 · S4 `#sW2` |
+| **Total references** | **3** |
+| Cited in | S4 `#s1` · S4 `#sW1` ×2 |
 
 NARROW, AND IT WAS READ TOO WIDELY. The speech states that the core questions remain open — whether an AI tool is marketing, advice or something requiring registration; who is responsible when output is wrong; how it is supervised — and asks for comment rather than announcing an answer. It says NOTHING about watermarking, SynthID, benchmark scores or model token counts, and it was chipped to four such claims before Phase 3 Part 1.
 
@@ -391,7 +411,8 @@ NARROW, AND IT WAS READ TOO WIDELY. The speech states that the core questions re
 | Publisher | Deloitte |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **1** |
 | Cited in | S4 `#s5` |
@@ -409,7 +430,8 @@ US GenAI-enabled fraud losses projected from $12.3bn (2023) to $40bn (2027). A P
 | Publisher | FINRA |
 | Link | <https://www.finra.org/rules-guidance/notices/24-09> |
 | Published | 2024-06-27 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **2** |
 | Cited in | S1 `#s14` ×2 |
@@ -427,7 +449,8 @@ FINRA's position that existing rules reach generative AI and that supervision is
 | Publisher | FINRA |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2025-12-09 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S4 `#s1` |
@@ -445,7 +468,8 @@ FINRA's first standalone generative-AI section: enterprise-level supervisory pro
 | Publisher | FINRA |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2026-03-06 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S4 `#s5` |
@@ -463,7 +487,8 @@ A self-regulatory organisation publishing a standalone primer on an attack techn
 | Publisher | Financial Times |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2024-05 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S4 `#s5` |
@@ -481,7 +506,8 @@ Approximately $25 million across 15 transfers. The one deepfake figure the cours
 | Publisher | Gartner |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2025 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **1** |
 | Cited in | S4 `#s5` |
@@ -499,7 +525,8 @@ Approximately $25 million across 15 transfers. The one deepfake figure the cours
 | Publisher | Google DeepMind |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **11** |
 | Cited in | S4 `#sW1` ×8 · S4 `#sW2` ×3 |
@@ -517,7 +544,8 @@ Tournament sampling in text, perturbation in image and video, and the frequency-
 | Publisher | arXiv:2509.04664, §1 and §1.2 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2025 |
-| Last accessed | 2025-05-11 |
+| Last retrieved | 2025-05-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S1 `#s9` |
@@ -535,7 +563,8 @@ Why a model guesses rather than abstains, and the two scoring rules. The model t
 | Publisher | Kitces.com |
 | Link | <https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/> |
 | Published | 2025-01-15 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **8** |
 | Cited in | S3 `#s9` · S3 `#s10` · S3 `#s11` ×4 · S3 `#s16` ×2 |
@@ -553,7 +582,8 @@ Drawing on Kitces Research on Advisor Productivity, fielded autumn 2024: the gre
 | Publisher | as summarised in The Latest in Financial AdvisorTech, Kitces.com |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2026-08 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
 | Cited in | S2 `#s9` ×2 |
@@ -571,7 +601,8 @@ Approximately one hour of note, summary and follow-up work per two-hour client m
 | Publisher | Microsoft Research; CHI 2025 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2025 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **1** |
 | Cited in | S3 `#s15` |
@@ -589,7 +620,8 @@ Characterised on the page ONLY by its title claim of self-reported reductions in
 | Publisher | Journal of Empirical Legal Studies 22(2), 216 |
 | Link | <https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/> |
 | Published | 2025 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **6** |
 | Cited in | S2 `#s10` · S3 `#s7` · S3 `#s15` · S3 `#s16` · S4 `#s7` · S4 `#s9` |
@@ -607,7 +639,8 @@ Over 200 preregistered legal queries, expert hand-scored, against Lexis+ AI, Wes
 | Publisher | OWASP |
 | Link | <https://owasp.org/www-project-top-10-for-large-language-model-applications/> |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S4 `#s5` |
@@ -625,7 +658,8 @@ The LLM01 ranking for prompt injection and the mapping into six of ten agentic c
 | Publisher | Statutory text |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | **[UNVERIFIED, needs source]** |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **3** |
 | Cited in | S3 `#s12` ×3 |
@@ -643,7 +677,8 @@ The two-party consent exposure behind the recording-consent section: the Califor
 | Publisher | Surfshark, as reported by two outlets |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2026 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | L |
 | **Total references** | **1** |
 | Cited in | S4 `#s5` |
@@ -661,7 +696,8 @@ Two outlets citing the same analysis report $2.19bn and $3.7bn. Carried on the p
 | Publisher | as summarised in Kitces.com Weekend Reading, March 2026 |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2026-03 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S2 `#s9` |
@@ -678,8 +714,9 @@ n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using 
 | Author | *not applicable* |
 | Publisher | Constructed for this course as a classroom anchor, BUS ADM X433.4 |
 | Link | *not applicable* |
-| Published | **[UNVERIFIED, needs source]** |
-| Last accessed | *not applicable* |
+| Published | *not applicable* |
+| Last retrieved | *not applicable* |
+| Last verified by the instructor | *not applicable* |
 | Confidence | L |
 | **Total references** | **17** |
 | Cited in | S1 `#s1` · S2 `#s5` ×2 · S2 `#s6` · S3 `#s7` · S3 `#s10` · S3 `#s16` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` ×2 · S4 `#s7` ×2 · S4 `#sWS` |
@@ -697,7 +734,8 @@ Entirely synthetic. Every figure, document and family fact is invented, includin
 | Publisher | SEC, adopting release |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2024 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **10** |
 | Cited in | S3 `#s14` · S4 `#s2` ×7 · S4 `#sRSP` · S4 `#s7` |
@@ -715,7 +753,8 @@ The four obligations — written incident response program, customer notificatio
 | Publisher | SEC |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2024-03-18 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
 | Cited in | S1 `#s1` ×2 |
@@ -733,7 +772,8 @@ The two AI-washing settlements and their penalty amounts. Penalty figures are re
 | Publisher | SEC |
 | Link | **[UNVERIFIED, needs source]** |
 | Published | 2025-11-17 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S4 `#s1` |
@@ -751,7 +791,8 @@ Accuracy of AI representations, training and security controls, and Regulation S
 | Publisher | Vectara |
 | Link | <https://www.vectara.com/blog/introducing-the-next-generation-of-vectaras-hallucination-leaderboard> |
 | Published | 2025-11-19 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **4** |
 | Cited in | S3 `#s7` · S3 `#s16` ×3 |
@@ -769,12 +810,32 @@ Dataset size, 32K-token length, domain mix, the low/high complexity split of 3,7
 | Publisher | Stephen Wolfram Writings |
 | Link | <https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/> |
 | Published | 2023-02-14 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **2026-08-23** |
 | Confidence | H |
 | **Total references** | **16** |
 | Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s1` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s3` · S3 `#s8` ×2 · S4 `#sWS` · S4 `#s8` |
 
 The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D3 is about exactly that.
+
+### Zhao, X., Zhang, K., Su, Z., Vasan, S., Grishchenko, I., Kruegel, C., Vigna, G., Wang, Y.-X., & Li, L.
+
+**Invisible image watermarks are provably removable using generative AI**  
+`src-zhao` · evidence
+
+| | |
+|---|---|
+| Author | Zhao, X., Zhang, K., Su, Z., Vasan, S., Grishchenko, I., Kruegel, C., Vigna, G., Wang, Y.-X., & Li, L. |
+| Publisher | Advances in Neural Information Processing Systems (NeurIPS 2024) |
+| Link | <https://arxiv.org/abs/2306.01953> |
+| Published | 2024 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S4 `#sW2` |
+
+The regeneration attack only: add random noise to destroy the embedded signal, then reconstruct the image with a denoiser or a pre-trained diffusion model. Formal proofs plus evaluation against pixel-level schemes; the removal guarantee is proved for watermarks that perturb the image within a bounded distance. It does NOT reach latent- or semantic-binding schemes, and it is NOT the source of the 2026 mutual-information result cited in the same sentence — that is arXiv 2602.20680, which has no key here and was not read.
 
 ### Zheng, M., Pei, J., Logeswaran, L., Lee, M., & Jurgens, D.
 
@@ -787,7 +848,8 @@ The mechanism of next-token prediction, the temperature passage, tokenisation an
 | Publisher | Findings of the Association for Computational Linguistics: EMNLP 2024 |
 | Link | <https://aclanthology.org/2024.findings-emnlp.888/> |
 | Published | 2024 |
-| Last accessed | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S2 `#s6` |

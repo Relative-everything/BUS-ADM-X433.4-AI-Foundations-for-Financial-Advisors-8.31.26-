@@ -360,7 +360,13 @@ function buildExtract() {
   /* open questions, taken from the sections CASE.md marks Open */
   L.push(`  <p class="case-h">Open in the file, and answered by no session.</p>`);
   L.push(`  <ul class="case-open">`);
-  L.push(`    <li><b>Which rate governs the note.</b> &sect;7872's blended annual rate at ${(F.blendedAnnual * 100).toFixed(2)}%, which the memorandum uses, or &sect;1274's short-term AFR at ${(F.afrShort * 100).toFixed(2)}% for a note issued for property. The difference is ${usd(F.rateSpreadCost)} of interest a year. <b>No controlling authority resolves it.</b></li>`);
+  /* CASE.md §H.4 states the §1274 rate CONDITIONALLY — "A demand note has no
+     stated term, and the statute supplies no term convention for one. | If
+     treated as short-term: 4.10% annual". The extract used to drop the
+     condition, so §1274 read as though it straightforwardly supplies 4.10%,
+     which is the resolution §H.4 says the file does not have. The conditional
+     is the fact. */
+  L.push(`    <li><b>Which rate governs the note.</b> &sect;7872's blended annual rate at ${(F.blendedAnnual * 100).toFixed(2)}%, which the memorandum uses, or &sect;1274's AFR for a note issued for property &mdash; ${(F.afrShort * 100).toFixed(2)}% <b>if</b> a demand note is treated as short-term, which the statute does not say. On that reading the difference is ${usd(F.rateSpreadCost)} of interest a year. <b>No controlling authority resolves it.</b></li>`);
   L.push(`    <li><b>Whether the voting block carries a premium.</b> The memorandum values ${F.votingUnits} units holding sole voting control at pro-rata value with no adjustment.</li>`);
   L.push(`    <li><b>Whether Meg's retained non-voting units carry a discount</b> while she controls the LLC through the voting block. ${usd(F.retainedDiscount)} of the estate reduction depends on the answer.</li>`);
   L.push(`    <li><b>Whether discretionary distributions survive &sect;2036(a)(2).</b> <i>Mirowski</i> turned on mandatory distributions; the draft operating agreement makes them discretionary.</li>`);

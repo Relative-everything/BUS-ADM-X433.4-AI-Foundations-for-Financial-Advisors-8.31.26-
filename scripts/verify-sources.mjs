@@ -76,8 +76,61 @@ if (notExempt.length) {
 }
 
 const gaps = [...sources.values()].filter((r) =>
-  ['author', 'publisher', 'link', 'published', 'retrieved'].some((f) => isAbsent(r[f]) && r[f] !== 'not applicable'));
+  ['author', 'publisher', 'link', 'published', 'last_retrieved'].some((f) => isAbsent(r[f]) && r[f] !== 'not applicable'));
 console.log(`----  ${gaps.length} record(s) carry at least one ${UNVERIFIED} field; BIBLIOGRAPHY.md prints every one`);
+
+/* ---- disclose_on_page, and whether anything acts on it -------------------- */
+/* SOURCES.md declares disclose_on_page as "the page must say so where they
+   appear". build-sources.mjs parses it into a boolean and NOTHING READS IT:
+   inject-sources.mjs renders author, title, publisher, link, retrieval date,
+   used_for and the chip, and never rec.scope. So the flag that mandates a page
+   disclosure has no consumer, and the disclosure it guards reaches the reader
+   only where somebody wrote it into the prose by hand.
+
+   That is how the synthetic-case disclosure came off all four lesson footers
+   when Phase 3 canonicalised src-case: the arbitration kept every clause in the
+   record's `scope`, and the renderer has never emitted `scope`. Nobody chose
+   it; nothing was watching.
+
+   This block does not fix it — restoring a disclosure to four student-facing
+   footers is the instructor's call, not a build's. It MEASURES it, on every
+   run, so the gap cannot go quiet again. */
+const disclosed = [...sources.values()].filter((r) => r.disclose_on_page);
+console.log('');
+console.log(`----  ${disclosed.length} record(s) set disclose_on_page: true`);
+{
+  let unrendered = 0;
+  for (const rec of disclosed) {
+    const lessons = Object.keys(rec.used_for);
+    const missing = lessons.filter((l) => {
+      const text = readFileSync(join(REPO, l, 'index.html'), 'utf8');
+      const li = text.match(new RegExp(`<li id="${rec.key}"[^>]*>([\\s\\S]*?)</li>`));
+      if (!li) return true;
+      /* the rendered entry carries the disclosure only if the scope reached it */
+      const first = (rec.scope || '').split(/\.\s/)[0].slice(0, 40);
+      return first ? !li[1].includes(first) : false;
+    });
+    if (missing.length) unrendered++;
+    /* a `fabricated` record DOES get a generated label — renderEntry emits
+       "<b>Does not exist.</b>" for that kind — so its disclosure is wired even
+       though disclose_on_page is not what wires it. Say which is which. */
+    const wired = rec.kind === 'fabricated' ? '  (but kind=fabricated renders "Does not exist." — labelled by kind, not by this flag)' : '';
+    console.log(`        ${rec.key.padEnd(24)} kind=${rec.kind.padEnd(16)} `
+      + (missing.length ? `scope NOT rendered in ${missing.join(', ')}${wired}` : 'scope rendered in every citing lesson'));
+  }
+  if (unrendered) {
+    console.log(`ADVISE ${unrendered} record(s) declare disclose_on_page: true and the renderer emits no disclosure for them.`);
+    console.log('        The two fabricated records are still labelled — renderEntry emits "Does not');
+    console.log('        exist." off `kind`, and both carry hand-written labels at their point of use.');
+    console.log('        src-case is the one with nothing generated behind it: the synthetic-case');
+    console.log('        disclosure came off all four lesson footers when Phase 3 canonicalised, and');
+    console.log('        the arbitration was not at fault — every clause is still in the record.');
+    console.log('        inject-sources.mjs renderEntry() never emits rec.scope, so the flag has no');
+    console.log('        consumer. Whatever disclosure those pages carry is hand-written prose, not');
+    console.log('        a generated consequence of the flag. INSTRUCTOR DECISION, see');
+    console.log('        docs/repo-updates-plan.md Phase 3.5.');
+  }
+}
 
 console.log(`\nsummary: ${LESSONS.length - fails} of ${LESSONS.length} lessons carry the current SOURCES.md block`);
 process.exit(fails ? 1 : 0);

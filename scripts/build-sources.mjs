@@ -17,6 +17,7 @@
  * waiting to happen.
  */
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -47,9 +48,36 @@ export const isAbsent = (v) => v === undefined || v === null || v === '' || isUn
  * pattern that no longer matches has to be a hard failure, because the damage
  * otherwise surfaces in the generated artifact rather than in the edited file.
  */
-const FIELDS = new Set(['title', 'author', 'publisher', 'link', 'published', 'retrieved',
+const FIELDS = new Set(['title', 'author', 'publisher', 'link', 'published',
+  'last_retrieved', 'last_verified', 'verified_by', 'retrieval_note', 'content_changed',
   'confidence', 'kind', 'moving_target', 'figure_class', 'index_version',
   'recheck_before', 'scope', 'disclose_on_page']);
+
+/* ------------------------------------------------- the two dating fields --
+ * They are not interchangeable and neither substitutes for the other.
+ *
+ *   last_verified   THE INSTRUCTOR read the source and confirmed the repo's
+ *                   claims about it are still accurate. A HUMAN ATTESTATION.
+ *                   Nothing in this repository may write or advance it — see
+ *                   assertVerifiedLock() below and scripts/attest-verified.mjs.
+ *                   EMPTY is the honest value wherever the repo carries no
+ *                   evidence that a human read the source. Empty is not a gap
+ *                   to be filled; it is the measurement.
+ *
+ *   last_retrieved  A MACHINE FETCHED the source. Records WHEN, and never that
+ *                   anything is accurate. This is what "update all live data
+ *                   points" advances.
+ *
+ * A FULL date is YYYY-MM-DD. A PARTIAL date (YYYY-MM) is accepted, because it
+ * is the honest record of a pull whose day nobody wrote down, and REPORTED —
+ * a month cannot be ordered against a day, and that is exactly where src-aa's
+ * version incoherence hid. It is never silently promoted to a day. */
+export const FULL_DATE = /^\d{4}-\d{2}-\d{2}$/;
+export const PARTIAL_DATE = /^\d{4}-\d{2}$/;
+export const isPartialDate = (v) => typeof v === 'string' && PARTIAL_DATE.test(v);
+/** For ordering only: a partial date stands at its EARLIEST possible day.
+ *  Declared, so it is never mistaken for the date itself. */
+export const orderableDate = (v) => (isPartialDate(v) ? v + '-01' : v);
 
 export function parseSources() {
   const text = readFileSync(join(REPO, 'SOURCES.md'), 'utf8');
@@ -64,6 +92,7 @@ export function parseSources() {
     const fence = body.match(/```source\n([\s\S]*?)\n```/);
     if (!fence) throw new Error(`SOURCES.md: ${key} has no \`\`\`source block`);
     const rec = { key, used_for: {} };
+    const present = new Set();
     for (const raw of fence[1].split('\n')) {
       const line = raw.trimEnd();
       if (!line.trim()) continue;
@@ -80,19 +109,51 @@ export function parseSources() {
          has more than one retrieval to register, and the register is fields on
          the source record rather than a parallel list. `retrieved.session-2`
          and `index_version.session-2` are how one work carries three pulls. */
-      const per = field.match(/^(retrieved|index_version|figures)\.(.+)$/);
+      const per = field.match(/^(last_retrieved|index_version|figures)\.(.+)$/);
       if (per) {
         const [, f, lesson] = per;
         if (!LESSONS.includes(lesson)) throw new Error(`SOURCES.md: ${key}: unknown lesson ${lesson}`);
         (rec.pulls ||= {});
-        (rec.pulls[lesson] ||= {})[f] = value.trim();
+        (rec.pulls[lesson] ||= {})[f === 'last_retrieved' ? 'retrieved' : f] = value.trim();
         continue;
       }
       if (!FIELDS.has(field)) throw new Error(`SOURCES.md: ${key}: unknown field "${field}"`);
+      present.add(field);
       rec[field] = value.trim();
     }
     for (const req of ['title', 'kind', 'confidence', 'scope']) {
       if (!rec[req]) throw new Error(`SOURCES.md: ${key} has no ${req}`);
+    }
+    /* BOTH dating fields are required to be PRESENT on every record. Neither is
+       optional and neither substitutes for the other. last_verified may be
+       EMPTY — that is its honest value almost everywhere — but the line must
+       exist, so that an empty attestation is a recorded fact rather than an
+       omission nobody noticed. */
+    for (const req of ['last_retrieved', 'last_verified']) {
+      if (!present.has(req)) throw new Error(`SOURCES.md: ${key} has no ${req} field. Both dating fields are required on every record; last_verified may be empty, but the line must be there.`);
+    }
+    rec.last_verified = rec.last_verified || '';
+    if (rec.last_verified) {
+      if (rec.last_verified === 'not applicable') {
+        if (!['case', 'fabricated'].includes(rec.kind)) {
+          throw new Error(`SOURCES.md: ${key}: last_verified "not applicable" is permitted only for kind case or fabricated, not ${rec.kind}. Leave it EMPTY instead — empty is the honest value.`);
+        }
+      } else if (!FULL_DATE.test(rec.last_verified)) {
+        throw new Error(`SOURCES.md: ${key}: last_verified must be a full YYYY-MM-DD date, "not applicable" for a synthetic or fabricated work, or empty. Got ${JSON.stringify(rec.last_verified)}.`);
+      } else if (!rec.verified_by) {
+        throw new Error(`SOURCES.md: ${key}: last_verified is populated but verified_by is empty. A verification date without its evidence is the tool vouching for itself.`);
+      }
+    }
+    if (rec.verified_by && !rec.last_verified) {
+      throw new Error(`SOURCES.md: ${key}: verified_by is set but last_verified is empty.`);
+    }
+    rec.verified = Boolean(rec.last_verified) && rec.last_verified !== 'not applicable';
+    rec.retrieved_partial = isPartialDate(rec.last_retrieved);
+    /* A fetch that found the source SAYING SOMETHING DIFFERENT is a finding, not
+       an update. The field records the date, the delta, and what on the page
+       depends on it; nothing is silently rewritten on the strength of it. */
+    if (rec.content_changed && !/^\d{4}-\d{2}-\d{2}\b/.test(rec.content_changed)) {
+      throw new Error(`SOURCES.md: ${key}: content_changed must begin with the YYYY-MM-DD of the fetch that found the change.`);
     }
     if (!KINDS.includes(rec.kind)) {
       throw new Error(`SOURCES.md: ${key} has kind "${rec.kind}", not one of ${KINDS.join(' / ')}`);
@@ -103,7 +164,8 @@ export function parseSources() {
     if (rec.pulls) {
       for (const [lesson, p] of Object.entries(rec.pulls)) {
         if (!rec.used_for[lesson]) throw new Error(`SOURCES.md: ${key} registers a pull for ${lesson} but declares no used_for there`);
-        if (!p.retrieved) throw new Error(`SOURCES.md: ${key}: pull for ${lesson} has no retrieved date`);
+        if (!p.retrieved) throw new Error(`SOURCES.md: ${key}: pull for ${lesson} has no last_retrieved date`);
+        p.partial = isPartialDate(p.retrieved);
       }
     }
     if (rec.moving_target && isAbsent(rec.recheck_before)) {
@@ -115,6 +177,101 @@ export function parseSources() {
     out.set(key, rec);
   });
   return out;
+}
+
+
+/* ============================================================ the guard ====
+ * last_verified IS THE INSTRUCTOR'S FIELD AND NOTHING HERE MAY MOVE IT.
+ *
+ * The rule is not a convention, because a convention is a comment an agent can
+ * read and step over. It is wired two ways and both have to be defeated at once
+ * for a date to move without a human:
+ *
+ *   1. THE LOCK. scripts/sources-verified.lock.json carries a digest of every
+ *      (key, last_verified) pair. assertVerifiedLock() recomputes it on every
+ *      parse and THROWS on any difference, naming the keys that moved. Every
+ *      generator in this repo goes through model(), so a last_verified that
+ *      moved takes down build-sources, inject-sources, build-bibliography and
+ *      verify-sources together. There is no path that writes a lesson footer,
+ *      the bibliography, the live-data register or the verification queue while
+ *      a verification date is unaccounted for.
+ *
+ *   2. THE WRITER. scripts/attest-verified.mjs is the only thing that updates
+ *      the lock, and it REFUSES unless it is talking to an interactive
+ *      terminal. A generator, a re-pull, a CI job and an agent shell all have
+ *      no TTY, and all are refused. That is the constraint being observed
+ *      rather than asserted.
+ *
+ * A generated verification date is the tool vouching for itself, which is the
+ * same defect class as a chip pointing at the wrong source.
+ */
+export const LOCK_PATH = join(REPO, 'scripts/sources-verified.lock.json');
+
+/** The canonical text a digest is taken over: one `key=value` line per record, sorted. */
+export function verifiedCanonical(sources) {
+  return [...sources.values()]
+    .map((r) => `${r.key}=${r.last_verified || ''}`)
+    .sort()
+    .join('\n') + '\n';
+}
+export function verifiedDigest(sources) {
+  return createHash('sha256').update(verifiedCanonical(sources), 'utf8').digest('hex');
+}
+
+/**
+ * Throws unless every last_verified in SOURCES.md is the value the lock notarised.
+ * `opts.explain` returns the diff instead of throwing, for the queue generator.
+ */
+export function assertVerifiedLock(sources, opts = {}) {
+  let lock;
+  try { lock = JSON.parse(readFileSync(LOCK_PATH, 'utf8')); }
+  catch { throw new Error(`sources-verified.lock.json is missing or unreadable. It notarises every last_verified date. Run: node scripts/attest-verified.mjs --init  (interactive terminal required)`); }
+  const moved = [], unsynced = [];
+  for (const r of sources.values()) {
+    const was = Object.prototype.hasOwnProperty.call(lock.entries || {}, r.key) ? lock.entries[r.key].last_verified : null;
+    const now = r.last_verified || '';
+    /* A RECORD THAT ASSERTS NOTHING IS NOT AN ATTESTATION. Adding a source with
+       an empty last_verified, or removing one, claims that nobody read
+       anything, so it does not need a human at a terminal — it needs the lock
+       to be told. That is `--sync`, which runs anywhere and refuses to touch a
+       populated date. Without this the guard would forbid ADDING A SOURCE,
+       which is not what it is for, and a guard that blocks ordinary work is a
+       guard somebody routes around. */
+    if (was === null) {
+      (now === '' || now === 'not applicable' ? unsynced : moved)
+        .push(`${r.key}: not in the lock (last_verified ${JSON.stringify(now)})`);
+      continue;
+    }
+    if (was !== now) moved.push(`${r.key}: lock says ${JSON.stringify(was)}, SOURCES.md says ${JSON.stringify(now)}`);
+  }
+  for (const key of Object.keys(lock.entries || {})) {
+    if (sources.has(key)) continue;
+    (lock.entries[key].last_verified ? moved : unsynced).push(`${key}: in the lock but no longer in SOURCES.md`);
+  }
+  const digest = verifiedDigest(sources);
+  if (!moved.length && !unsynced.length && lock.digest !== digest) moved.push(`digest mismatch: lock ${String(lock.digest).slice(0, 16)}, computed ${digest.slice(0, 16)}`);
+  if (opts.explain) return { ok: !moved.length && !unsynced.length, moved, unsynced, lock, digest };
+  if (!moved.length && unsynced.length) {
+    throw new Error(
+      'The lock does not know about every record yet.\n' +
+      unsynced.map((m) => '   - ' + m).join('\n') +
+      '\n\n   Every one of these has an EMPTY last_verified, so none of them asserts that a\n' +
+      '   human read anything. Tell the lock:\n' +
+      '       node scripts/attest-verified.mjs --sync\n' +
+      '   It runs anywhere and refuses to touch a populated date.');
+  }
+  if (moved.length) {
+    throw new Error(
+      'REFUSED: last_verified moved without a human attestation.\n' +
+      moved.map((m) => '   - ' + m).join('\n') +
+      '\n\n   last_verified records that THE INSTRUCTOR read the source and confirmed the\n' +
+      "   repo's claims about it are still accurate. No generator, no re-pull, no agent\n" +
+      '   and no automated process may write or advance it.\n' +
+      '   If a human did the reading, record it at an interactive terminal:\n' +
+      '       node scripts/attest-verified.mjs --key <src-key> --date YYYY-MM-DD --evidence "..."\n' +
+      '   If you are a tool, you are looking for last_retrieved.');
+  }
+  return { ok: true, moved, lock, digest };
 }
 
 /* ------------------------------------------------------- derive, never type */
@@ -187,6 +344,7 @@ export function assertChipExemptMatchesChecker() {
 export function model() {
   const sources = deriveUsage(parseSources());
   assertChipExemptMatchesChecker();
+  assertVerifiedLock(sources);
   return sources;
 }
 

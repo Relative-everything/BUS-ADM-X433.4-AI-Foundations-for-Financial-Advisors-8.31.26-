@@ -61,7 +61,13 @@ const REGISTER = new Set(['CASE.md', 'CHANGELOG.md', 'changelog/index.html',
                              string they search for. Same standing as the spine brief: a record
                              of the retirement, not an assertion of it. Instructor-facing, ships
                              in no lesson. */
-                          'docs/editorial-gap-report.md']);
+                          'docs/editorial-gap-report.md',
+                          /* the plan file's phase records name every retired string they record
+                             the retirement OF — §16's conflict table quotes "nine-year interest-only
+                             balloon" and the rubric that matched on it. Same standing as the spine
+                             brief and the gap report: instructor-facing, ships in no lesson, and a
+                             record that cannot name what it retired is not a record. */
+                          'docs/repo-updates-plan.md']);
 
 /* ---- 1  retired facts purged --------------------------------------------- */
 const NB = String.raw`(?<![0-9,.])`, NA = String.raw`(?![0-9])(?!,[0-9])`;
@@ -90,6 +96,11 @@ const RETIRED = [
   ['spelled thirty-one percent', /thirty[- ]one\s+percent/gi],
   ['spelled 4,968,000', /four\s+million\s+nine\s+hundred\s+sixty\s+eight\s+thousand/gi],
   ['spelled 650,000', /six\s+hundred\s+fifty\s+thousand/gi],
+  /* ADDED 2026-08-25 (Phase 3.5). Part K retires "nine-year interest-only
+     balloon" as one composite row and the target list carried none of its
+     words, so session-2 still described the proposed note as "an interest-only
+     note with a balloon" two migrations later. The note is payable on demand. */
+  ['balloon', /\bballoon\b/gi],
 ];
 {
   const bad = [];
@@ -138,6 +149,27 @@ for (const [id, name, rxs] of [
      /trustDivSteady|dividend|E\.8|steady/i, "the E.8 steady-state dividend share"],
     ['$2,000,000', new RegExp(NB + '(?:2,000,000|2000000)' + NA, 'g'),
      /residence|Barrington|residence"/i, 'the C.1/C.2 residence value'],
+    /* THREE ADDED 2026-08-25 (Phase 3.5), and each was found surviving the v4.0
+       migration because nothing looked for it.
+
+       `$18M` is the same conditional allowance as $18,000,000 and the pattern
+       above cannot see it: session-1 read "a company appraised at $18M", which
+       attaches the buy-sell FORMULA output to the word appraised, in a file
+       whose §H.5 exists to keep three values for one company apart.
+
+       `nine-year` is legitimate ONLY of the 2016 purchase note. session-1 and
+       session-3 both applied it to the proposed note, which is payable on
+       demand, and one of them scored a student for reproducing it.
+
+       `founder` is legitimate ONLY of Walter Hensley. session-1 and session-2
+       applied it to Meg in three places, one a revealed answer key. Part K's
+       list carried `founder stock` and not the bare word. */
+    ['$18M', /(?<![0-9,.])\$18\s*M\b/g,
+     /buy-?sell|formula|buySellFormula/i, 'the F.6 buy-sell formula output, abbreviated'],
+    ['nine-year note', /\b(?:nine|9)[- ]year\b/gi,
+     /2016|Walter|purchase note|installment|mid-term|term note|AFR/i, "the 2016 installment note from Walter Hensley (§B.2), never the proposed demand note"],
+    ['founder', /\bfound(?:er|ed|ing)\b/gi,
+     /Walter|Hensley|1987|did not found|not the founder|incorporat/i, 'Walter Hensley founded the company in 1987 (§A.3, §B.2); Meg bought it in 2016'],
   ];
   const bad = [], seen = {};
   for (const p of LESSONS.map((l) => join(REPO, l))) {
@@ -349,11 +381,34 @@ for (const [id, name, rxs] of [
    figures are literals. Those are the ones that can drift silently when CASE.md
    changes, so each is pinned to its fact here. Add a row whenever a case figure
    is typed into prose rather than generated. */
+/* A pin is [regex, key, label, transform?]. `transform` maps the case-facts
+   value into the form the prose prints, so a PERCENTAGE can be pinned as
+   readily as a dollar amount. Without it, the 3.82% in the recurring question
+   was the only figure on that line with no guard while the three dollar
+   amounts beside it all had one. Added 2026-08-25, Phase 3.5. */
 {
   const PINS = [
     [/Meg is short (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? a year/g, 'steadyGap',    'the steady-state annual shortfall'],
     [/How much of the (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? note does she call/g, 'notePrincipal', 'the demand-note principal'],
     [/Each \$1,000,000 she calls permanently removes \$([0-9,]+) of future interest/g, null, 'interest removed per $1,000,000 called'],
+    [/so the gap widens by ([0-9.]+)% of every call/g, 'noteRate', 'the demand-note rate in the recurring question', (v) => Math.round(v * 10000) / 100],
+    /* session-4 §08's two audit exhibits. These CANNOT be generated and cannot
+       go qualitative: the exercise asks whether each is a well-formed record,
+       and a record whose figures are interpolated at render time is not the
+       artifact the student is auditing. They are reproductions of a Session 2
+       prompt and a Session 3 extraction output, and their whole evidentiary
+       point is that they say what they said at the time. So they are pinned:
+       the figures stay literal and a CASE.md change that leaves them behind
+       fails here. This is preference 4 doing the job preference 3 cannot. */
+    [/Explain to a (\d+)-year-old business owner/g, 'megAge', 'the client age in the §08 prompt exhibit', null, ''],
+    [/a sale\s+of ([0-9,]+) non-voting units of a new family LLC/g, 'saleUnits', 'the sale size in the §08 prompt exhibit', null, ' units'],
+    [/grantor trust for a \$([0-9,]+) note payable on demand/g, 'notePrincipal', 'the note principal in the §08 prompt exhibit'],
+    [/preceded by a \$([0-9,]+) seed gift/g, 'seedValue', 'the seed gift in the §08 prompt exhibit'],
+    [/seed gift of ([0-9,]+) units, with a/g, 'seedUnits', 'the seed unit count in the §08 prompt exhibit', null, ' units'],
+    [/units, with a ([0-9]+)%\s+valuation discount claimed/g, 'discount', 'the discount in the §08 prompt exhibit', (v) => Math.round(v * 100)],
+    [/this yields roughly\s+\$([0-9,]+), materially below both/g, 'buySellFormula', 'the buy-sell formula value in the §08 extraction exhibit'],
+    [/materially below both the \$([0-9,]+) concluded in/g, 'appraisal2023', 'the 2023 appraisal in the §08 extraction exhibit'],
+    [/and the \$([0-9,]+) indicated range/g, 'cpcValue', 'the indicated value in the §08 extraction exhibit'],
   ];
   const bad = [], seen = [];
   for (const l of LESSONS) {
@@ -361,13 +416,17 @@ for (const [id, name, rxs] of [
     const a = raw.indexOf('<!-- CASE:BEGIN'), b = raw.indexOf('<!-- CASE:END');
     /* prose only: everything outside the generated region */
     const prose = a >= 0 && b > a ? raw.slice(0, a) + raw.slice(b) : raw;
-    for (const [rx, key, label] of PINS) {
+    for (const [rx, key, label, xform, unit] of PINS) {
       rx.lastIndex = 0; let m;
       while ((m = rx.exec(prose))) {
         const got = Number(m[1].replace(/,/g, ''));
-        const want = key ? F[key] : Math.round(1000000 * F.noteRate);
-        seen.push(`${l}: ${label} = $${got.toLocaleString('en-US')}`);
-        if (got !== want) bad.push(`${l}: ${label} reads $${got.toLocaleString('en-US')}, case-facts.json says $${want.toLocaleString('en-US')}`);
+        const want = key ? (xform ? xform(F[key]) : F[key]) : Math.round(1000000 * F.noteRate);
+        /* `unit` overrides: a unit count is neither dollars nor per cent. */
+        const show = (n) => (unit !== undefined && unit !== null
+          ? `${n.toLocaleString('en-US')}${unit}`
+          : xform ? `${n}%` : `$${n.toLocaleString('en-US')}`);
+        seen.push(`${l}: ${label} = ${show(got)}`);
+        if (got !== want) bad.push(`${l}: ${label} reads ${show(got)}, case-facts.json says ${show(want)}`);
       }
     }
   }
