@@ -76,7 +76,7 @@ if (notExempt.length) {
 }
 
 const gaps = [...sources.values()].filter((r) =>
-  ['author', 'publisher', 'link', 'published', 'retrieved'].some((f) => isAbsent(r[f]) && r[f] !== 'not applicable'));
+  ['author', 'publisher', 'link', 'published', 'last_retrieved'].some((f) => isAbsent(r[f]) && r[f] !== 'not applicable'));
 console.log(`----  ${gaps.length} record(s) carry at least one ${UNVERIFIED} field; BIBLIOGRAPHY.md prints every one`);
 
 console.log(`\nsummary: ${LESSONS.length - fails} of ${LESSONS.length} lessons carry the current SOURCES.md block`);

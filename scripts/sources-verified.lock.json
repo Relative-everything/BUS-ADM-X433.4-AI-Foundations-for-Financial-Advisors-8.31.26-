@@ -1,0 +1,235 @@
+{
+  "note": "NOTARISED. Every last_verified date in SOURCES.md, frozen. build-sources.mjs recomputes this digest on every parse and refuses to build if a date moved. Only scripts/attest-verified.mjs writes this file, and only at an interactive terminal. Do not hand-edit: a hand edit here and a matching hand edit in SOURCES.md is the one thing this pair cannot catch, and it is a lie about a human having read a source.",
+  "updated_by": "seeded by --init from the hand-authored state of SOURCES.md",
+  "digest": "d716c1839e256b3c9ec9703bc67b76e1b6c0407319d22e070c6177b4f1b01c8b",
+  "entries": {
+    "src-aa": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-ctx": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-fluency": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-terms": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-arup": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-beta": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-case": {
+      "last_verified": "not applicable",
+      "verified_by": ""
+    },
+    "src-charlotin": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-ctxwindow": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-cve": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-dahl-fictions": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-daly": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-davidson": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-deloitte": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-directory": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-effort": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-features": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-finra-inj": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-finra2026": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-finra2409": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-gartner": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-google-ptcf": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-hallowell": {
+      "last_verified": "not applicable",
+      "verified_by": ""
+    },
+    "src-irc": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-iskowitz": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-kalai": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-kessler": {
+      "last_verified": "not applicable",
+      "verified_by": ""
+    },
+    "src-kitces-advisortech": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-kitces-notetakers": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-kitces-productivity": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-laplace": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-lee-cognitive": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-magesh": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-memory": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-models": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-morningstar": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-owasp": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-personalization": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-plugins": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-pricing": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-regsp": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-routing": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-rr200464": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-rr8513": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-sampling": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-sec-ai": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-secpri": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-skills": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-surfshark": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-synthid": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-t3-survey": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-tools3": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-vectara": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-wiretap": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-woelbing": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-wolfram": {
+      "last_verified": "2026-08-23",
+      "verified_by": "EDITORIAL.md, \"Seventeen names. Instructor-verified.\" — the locked 17 section names of this essay, entered 2026-08-23 in commit bd8f458 and enforced by A11. Enumerating the seventeen section names requires having opened the essay."
+    },
+    "src-zheng-persona": {
+      "last_verified": "",
+      "verified_by": ""
+    }
+  }
+}
