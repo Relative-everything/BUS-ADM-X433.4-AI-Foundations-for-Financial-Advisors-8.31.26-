@@ -132,6 +132,8 @@ Every substantive change is recorded in [the changelog](changelog/), newest
 first. Lessons are updated in place, so the page you open is always current and
 there are no version numbers to track.
 
-Maintainers and contributors: see [MAINTAINING.md](MAINTAINING.md).
+Maintainers and contributors: see [MAINTAINING.md](MAINTAINING.md), and
+[EDITORIAL.md](EDITORIAL.md) for the rules the prose in these lessons is
+held to.
 
 Questions about the course: [UNVERIFIED: preferred instructor contact]

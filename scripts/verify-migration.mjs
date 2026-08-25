@@ -55,7 +55,13 @@ const REGISTER = new Set(['CASE.md', 'CHANGELOG.md', 'changelog/index.html',
                              question, so it necessarily quotes it. Same standing as CASE.md
                              Part K: a register of what was removed, not an assertion of it.
                              It is instructor-facing and ships in no lesson. */
-                          'docs/spine-brief.md']);
+                          'docs/spine-brief.md',
+                          /* the editorial gap report's verification-surface section quotes this
+                             file's own check descriptions, which necessarily name every retired
+                             string they search for. Same standing as the spine brief: a record
+                             of the retirement, not an assertion of it. Instructor-facing, ships
+                             in no lesson. */
+                          'docs/editorial-gap-report.md']);
 
 /* ---- 1  retired facts purged --------------------------------------------- */
 const NB = String.raw`(?<![0-9,.])`, NA = String.raw`(?![0-9])(?!,[0-9])`;

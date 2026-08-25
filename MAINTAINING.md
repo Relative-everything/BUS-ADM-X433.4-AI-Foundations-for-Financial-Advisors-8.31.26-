@@ -236,20 +236,138 @@ Match case-insensitively on the stem so punctuation variants cannot hide:
 2. Add a card in `index.html`, copying an existing one and removing the `soon`
    class from the anchor.
 3. Add the row to the session table in `README.md`.
-4. Note it in `CHANGELOG.md`.
+4. Note it in `CHANGELOG.md`, then run `python3 scripts/build-changelog.py` and
+   commit both files. The generator regenerates the served page **and** runs
+   the sweep on it, because it writes an empty style fence that only the sweep
+   can fill. Without the sweep the fence is stale and `verify-style.mjs` fails
+   on a page whose source is correct. If the skill is not installed the
+   generator says so and names the command to run by hand.
 5. Run the pre-push gate, then commit and push.
+
+## The editorial checks
+
+`EDITORIAL.md` is the rules. `scripts/verify-editorial.mjs` is the checker.
+
+**These are ADVISORY and are NOT in the pre-push gate above.** That is decision
+D16: the gate currently runs clean, and adding a checker whose exemption list has
+not yet been tested against a running implementation is how a green gate stops
+meaning anything.
+
+```bash
+node scripts/test-editorial-regions.mjs        # 9 tests. Run before trusting a rule
+node scripts/verify-editorial.mjs              # HARD rules exit 1
+node scripts/verify-editorial.mjs --advisory-only   # burn-in: everything prints, exits 0
+node scripts/verify-editorial.mjs --rules A1,A5     # a subset, while working
+```
+
+### Read this before anything else in this entry: the baseline file
+
+`scripts/editorial-baseline.json` is hand-edited and the checker never rewrites
+it. Four rules are **ratchets** — they do not assert a correct value, they assert
+that a recorded one has not got worse. So the baseline is state, not
+configuration, and it is only meaningful if you know what each figure counts.
+
+| Figure | Counts |
+|---|---|
+| `A8.files` | per lesson, the majority dash form and the minority count over `authoredProse` |
+| `A9.files` | per lesson, total em dashes over `authoredProse` |
+| `R11` | the whole corpus's byte-shared boilerplate, **deduplicated by content hash** so a block shared across four lessons counts once |
+| `populations` | what `authoredProse` and `quotationScope` include, and why they differ |
+
+`authoredProse` is `mask(R1, R8, R9)`. Source notes and reading blocks are in;
+footer entries, attributes, script, CSS, comments, the injected span, captured
+transcripts and byte-shared boilerplate are out. `EDITORIAL.md`'s phrase "R1 with
+R2–R11 removed" read literally would also drop R8 and R9 and does not reproduce
+the recorded numbers — this definition does, and `test-editorial-regions.mjs` T7
+is the proof.
+
+**Re-baselining after a sanctioned cleanup.** A ratchet must be lowered by hand,
+deliberately, or it silently stops catching anything:
+
+1. Make the cleanup. Confirm the change was intended to move a counted figure.
+2. `node scripts/verify-editorial.mjs --rules A8,A9` and read the new numbers off
+   the failure text, or run the classifier directly.
+3. Edit `scripts/editorial-baseline.json` to the **new, lower** figures. Never
+   raise one to make a failure go away — that is the one edit the file exists to
+   prevent.
+4. `node scripts/test-editorial-regions.mjs` must pass; T7 reads the baseline.
+5. Commit the baseline change on its own, so the diff shows exactly which figure
+   moved and by how much.
+
+### The region classifier
+
+`scripts/editorial-regions.mjs` assigns every character offset to one of R1–R11.
+R1 is a residual: what survives after every other region is claimed. Every rule
+names the regions it inspects, because every alarming raw measurement in this
+corpus turned out to be something else once classified — the 1,239 hits for
+`color` are CSS properties, and session 3's 110 literal em dashes are the
+original author's convention.
+
+One recorded limitation: R2 is defined as a script literal "that reaches the
+DOM", which needs data-flow analysis the classifier does not do, so every quoted
+literal inside `<script>` is treated as visible. The over-inclusion is
+one-directional and never misses a string that does render.
+
+### Severity is a config field, not an inference
+
+In `scripts/editorial-baseline.json` under `severity`, one entry per rule,
+visible and diffable. A human edits it; nothing infers it at runtime.
+
+| Rule | Severity | Why |
+|---|---|---|
+| A1–A11, A13, A14, A16 | HARD | mechanical, unambiguous |
+| **A12** | **ADVISE** | until the D7 mapping is signed off. It cannot be hard while the fix needs a mapping nobody has approved |
+| **A15** | **ADVISE** | until `data-nochip` lands. Hard today would fire on 23 keys with no way to declare their reason |
+| **A17–A19** | **DISABLED** | the vocabulary feature is not built. A disabled rule prints nothing at all |
+
+`--advisory-only` overrides every rule to ADVISE and exits 0.
+
+### Promoting it into the pre-push gate
+
+1. Run it advisory-only, outside the gate, and read the output.
+2. Every false positive is an exemption class `EDITORIAL.md` has not yet named.
+   **Add it to `EDITORIAL.md`, not to the code.**
+3. When the exemption list stops changing, move the HARD tier into the gate above.
+4. Rename that block — "The CASE.md v4.0 migration checks" will no longer
+   describe what it contains.
 
 ## Known follow-ups
 
 - Self-host the three font families to retire the page-load external request,
   so a lesson renders with no network at all. The console's runtime request is
   separate and stays: it only fires on a key the reader supplies.
-- Prose density runs 73 to 89 words per allocated minute against a proposed
-  band of 37 to 42. The band is unratified and reported only, but the direction
-  is consistent: the sessions carry more words than their minutes support.
-- Footer sources not yet referenced by any confidence chip, reported as
-  warnings by `validate_lesson` V4. Each is a claim on the page that should
-  carry a chip, or a source that should be retired.
-- Em-dash policy for student-facing lesson copy is open (pedagogy decision
-  D-2026-08-18-2). Existing copy keeps its dashes; files authored since
-  2026-08-20 avoid them. Never run a repo-wide substitution.
+- **`validate_lesson.py` C2 must be corrected or retired upstream when A8 and A9
+  go hard.** It emits an INFO em-dash count over the raw file, so it includes
+  CSS, comments, attribute values and the injected span and misses `\u2014` and
+  `&#8212;` entirely, and its "policy unratified" parenthetical is now wrong
+  because D1 ratifies it. **The fix belongs in the skill, not this repo**, which
+  is exactly why it is written down here.
+- **`docs/spine-brief.md`'s opening paragraph is stale (D17).** It reads
+  "Nothing here is implemented"; the spine has been implemented since `93904d7`
+  and lives in a string literal in `scripts/inject-case.mjs`.
+- **27 of 193 confidence chips resolve to the wrong source**, two of them
+  off-by-one cascades. Fixing the wiring is a **precondition** for generating any
+  bibliography, not a follow-up: a generator run today publishes all 27 as fact.
+- **D14 is unanswered.** Is session 0.1 in this term's teaching set? A1–A7 have
+  no population in that file and A6 carries a dated skip until it is answered.
+- **48 Part A violations stand, pending the D16 burn-in.** Reported, not fixed;
+  fixing them is a separate task with its own approval.
+
+### Closed, and what owns them now
+
+- ~~Prose density runs 73 to 89 words per allocated minute against a proposed
+  band of 37 to 42.~~ **Superseded.** That range is not reproducible by any
+  method; whole-file is 43–63 and the core is 52–84. The band stays unratified
+  by decision D15, and core and appendix are reported separately. See
+  `EDITORIAL.md`'s known-stale note.
+- ~~Footer sources not yet referenced by any confidence chip.~~ **Owned by A15**,
+  which asserts a chip **or** a declared `data-nochip` reason. The blanket
+  version was never actionable: it would demand a confidence chip on the two
+  deliberately fabricated citations, which is backwards.
+- ~~Em-dash policy for student-facing lesson copy is open (pedagogy decision
+  D-2026-08-18-2).~~ **Ratified as D1** in `EDITORIAL.md`: existing copy keeps
+  its dashes, newly authored text uses none, no retrospective sweep. **Owned by
+  A9** (a count ratchet, which is how "no new dashes" is enforced without needing
+  history) and **A8** (form drift). Note that the skill's
+  `references/pedagogy.md` still records the decision as open; the course-level
+  ratification lives here, and the skill is shared across repos.

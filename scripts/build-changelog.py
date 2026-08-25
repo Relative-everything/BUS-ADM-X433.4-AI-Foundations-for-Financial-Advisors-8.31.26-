@@ -12,6 +12,8 @@ bullet lists, tables, bold, inline code, and links.
 import html
 import pathlib
 import re
+import os
+import subprocess
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -151,6 +153,23 @@ __BODY__
 """
 
 
+def find_sweep():
+    """Locate the skill's restyle_sweep.py, or None if the skill is not installed."""
+    P = pathlib.Path
+    env = os.environ.get("LESSON_BUILDER_SKILL")
+    candidates = []
+    if env:
+        candidates.append(P(env) / "scripts" / "restyle_sweep.py")
+    candidates += [
+        P.home() / ".claude/skills/synced/interactive-lesson-builder/scripts/restyle_sweep.py",
+        P.home() / ".claude/skills/interactive-lesson-builder/scripts/restyle_sweep.py",
+    ]
+    for c in candidates:
+        if c.is_file():
+            return c
+    return None
+
+
 def main():
     if not SRC.exists():
         sys.exit(f"missing {SRC}")
@@ -158,6 +177,31 @@ def main():
     OUT.write_text(TEMPLATE.replace("__BODY__", render(SRC.read_text(encoding="utf-8"))),
                    encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)} from {SRC.name}")
+
+    # The template writes an EMPTY managed fence, which only restyle_sweep.py can
+    # fill. Regenerating without sweeping leaves the fence stale and turns
+    # verify-style.mjs red on a page whose source is perfectly correct — a
+    # two-step nobody was enforcing. Run it here so the second step cannot be
+    # forgotten, and say so loudly when the skill is not installed to run it.
+    sweep = find_sweep()
+    if sweep is None:
+        print("WARNING  the style fence in the page just written is EMPTY.")
+        print("         restyle_sweep.py was not found, so it could not be filled.")
+        print("         Install the interactive-lesson-builder skill, or set")
+        print("         LESSON_BUILDER_SKILL, then run:")
+        print(f"           python3 <skill>/scripts/restyle_sweep.py {ROOT}")
+        print("         verify-style.mjs will fail until you do.")
+        return
+    r = subprocess.run([sys.executable, str(sweep), str(ROOT)],
+                       capture_output=True, text=True)
+    tail = [l for l in r.stdout.splitlines() if l.startswith(("WROTE", "summary"))]
+    for l in tail:
+        print(f"  sweep: {l}")
+    if r.returncode not in (0, 1):
+        print(f"WARNING  restyle_sweep.py exited {r.returncode}; check the fence by hand")
+    # exit 1 from the sweep is EXPECTED here: it reports the two generated
+    # fragments that must stay fenceless. verify-style.mjs is the wrapper that
+    # knows that and is the check to trust.
 
 
 if __name__ == "__main__":
