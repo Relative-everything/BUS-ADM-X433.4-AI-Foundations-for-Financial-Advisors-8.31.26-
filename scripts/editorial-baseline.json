@@ -1,79 +1,138 @@
 {
-  "_": "Baselines and severities for scripts/verify-editorial.mjs. Hand-edited; the checker never rewrites it. EDITORIAL.md is the specification, this file is the state the ratchets run against.",
-  "generated_against": "001c395",
-  "as_of": "2026-08-25",
-
-  "severity": {
-    "_": "One entry per Part A rule, visible and diffable, never inferred at runtime. EDITORIAL.md's exit contract points here. HARD blocks the push; ADVISE prints under the ADVISORY heading and does not; DISABLED prints nothing at all. --advisory-only overrides everything to ADVISE for the D16 burn-in.",
-    "A1": "HARD", "A2": "HARD", "A3": "HARD", "A4": "HARD", "A5": "HARD",
-    "A6": "HARD", "A7": "HARD", "A8": "HARD", "A9": "HARD", "A10": "HARD",
-    "A11": "HARD",
-    "A12": "ADVISE",
-    "A13": "HARD", "A14": "HARD",
-    "A15": "ADVISE",
-    "A16": "HARD",
-    "A20": "ADVISE",
-    "A17": "DISABLED", "A18": "DISABLED", "A19": "DISABLED"
+ "_": "Baselines and severities for scripts/verify-editorial.mjs. Hand-edited; the checker never rewrites it. EDITORIAL.md is the specification, this file is the state the ratchets run against.",
+ "generated_against": "001c395",
+ "as_of": "2026-08-25",
+ "severity": {
+  "_": "One entry per Part A rule, visible and diffable, never inferred at runtime. EDITORIAL.md's exit contract points here. HARD blocks the push; ADVISE prints under the ADVISORY heading and does not; DISABLED prints nothing at all. --advisory-only overrides everything to ADVISE for the D16 burn-in.",
+  "A1": "HARD",
+  "A2": "HARD",
+  "A3": "HARD",
+  "A4": "HARD",
+  "A5": "HARD",
+  "A6": "HARD",
+  "A7": "HARD",
+  "A8": "HARD",
+  "A9": "HARD",
+  "A10": "HARD",
+  "A11": "HARD",
+  "A12": "ADVISE",
+  "A13": "HARD",
+  "A14": "HARD",
+  "A15": "ADVISE",
+  "A16": "HARD",
+  "A20": "ADVISE",
+  "A17": "DISABLED",
+  "A18": "DISABLED",
+  "A19": "DISABLED"
+ },
+ "severity_notes": {
+  "A12": "ADVISE until the D7 mapping is signed off. It cannot be hard while the fix requires a mapping nobody has approved.",
+  "A15": "ADVISE until data-nochip lands. Hard today would fire on 23 keys that have no way to declare their reason yet.",
+  "A20": "ADVISE by construction, not by burn-in. It matches a Used-for clause against a claim on a token threshold, and a threshold is a lead rather than a proof. Its output is read, never applied unseen.",
+  "A17": "DISABLED - the vocabulary feature is not built.",
+  "A18": "DISABLED - the vocabulary feature is not built.",
+  "A19": "DISABLED - the vocabulary feature is not built."
+ },
+ "populations": {
+  "authoredProse": {
+   "definition": "mask(R1, R8, R9)",
+   "excludes": [
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R10",
+    "R11"
+   ],
+   "note": "Source notes (R8) and reading blocks (R9) are IN; footer entries (R7) are OUT. EDITORIAL.md's literal phrase 'R1 with R2-R11 removed' would also drop R8 and R9 and does not reproduce the declared A8 table. This definition does. Used by A8 and A9.",
+   "used_by": [
+    "A8",
+    "A9"
+   ]
   },
-  "severity_notes": {
-    "A12": "ADVISE until the D7 mapping is signed off. It cannot be hard while the fix requires a mapping nobody has approved.",
-    "A15": "ADVISE until data-nochip lands. Hard today would fire on 23 keys that have no way to declare their reason yet.",
-    "A20": "ADVISE by construction, not by burn-in. It matches a Used-for clause against a claim on a token threshold, and a threshold is a lead rather than a proof. Its output is read, never applied unseen.",
-    "A17": "DISABLED - the vocabulary feature is not built.",
-    "A18": "DISABLED - the vocabulary feature is not built.",
-    "A19": "DISABLED - the vocabulary feature is not built."
-  },
-
-  "populations": {
-    "authoredProse": {
-      "definition": "mask(R1, R8, R9)",
-      "excludes": ["R2", "R3", "R4", "R5", "R6", "R7", "R10", "R11"],
-      "note": "Source notes (R8) and reading blocks (R9) are IN; footer entries (R7) are OUT. EDITORIAL.md's literal phrase 'R1 with R2-R11 removed' would also drop R8 and R9 and does not reproduce the declared A8 table. This definition does. Used by A8 and A9.",
-      "used_by": ["A8", "A9"]
-    },
-    "quotationScope": {
-      "definition": "mask(R1, R2, R7, R8, R9)",
-      "note": "Deliberately wider than authoredProse. A quotation guard has to reach footer entries and script literals, so A10 does not share A8's population.",
-      "used_by": ["A10"]
-    }
-  },
-
-  "A8": {
-    "_": "Majority form and minority count over authoredProse. The majority form may not change and the minority count may not rise. Unaffected by the console-fence decision: all four disputed dashes are entities in files whose majority is already entity.",
-    "population": "authoredProse",
-    "files": {
-      "session-0.1": { "majority": "entity", "minority_form": "literal", "minority": 0 },
-      "session-1":   { "majority": "entity", "minority_form": "literal", "minority": 1 },
-      "session-2":   { "majority": "entity", "minority_form": "literal", "minority": 2 },
-      "session-3":   { "majority": "literal", "minority_form": "entity", "minority": 15 },
-      "session-4":   { "majority": "entity", "minority_form": "literal", "minority": 1 }
-    }
-  },
-
-  "A9": {
-    "_": "Total em dashes over authoredProse. May fall, may not rise. This is how D1 is enforced without needing history. session-0.1 and session-1 are the two files the console-fence decision moved: 7 not 11, and 83 not 87 on the entity count.",
-    "population": "authoredProse",
-    "files": {
-      "session-0.1": { "literal": 0,  "entity": 7,  "total": 7 },
-      "session-1":   { "literal": 1,  "entity": 83, "total": 84 },
-      "session-2":   { "literal": 2,  "entity": 67, "total": 69 },
-      "session-3":   { "literal": 94, "entity": 13, "total": 107 },
-      "session-4":   { "literal": 1,  "entity": 84, "total": 85 }
-    }
-  },
-
-  "R11": {
-    "_": "The corpus-level baseline for byte-shared boilerplate, so it is checked once rather than nowhere. Measured from the canonical copy: R11 spans deduplicated by SHA-256 of their content, so a block shared across four lessons counts once. Not in conflict with the pre-push md5 pairing, which asserts identity ACROSS files; this asserts stability OVER TIME.",
-    "population": "mask(R11), deduplicated by content hash across all five lessons",
-    "distinct_blocks": 6,
-    "literal": 0,
-    "entity": 6,
-    "total": 6
-  },
-
-  "session_3_reconciliation": {
-    "_": "S-3. Both figures are correct and count different populations. Neither supersedes the other.",
-    "whole_file_entity": 15,
-    "authoredProse_entity": 13
+  "quotationScope": {
+   "definition": "mask(R1, R2, R7, R8, R9)",
+   "note": "Deliberately wider than authoredProse. A quotation guard has to reach footer entries and script literals, so A10 does not share A8's population.",
+   "used_by": [
+    "A10"
+   ]
   }
+ },
+ "A8": {
+  "_": "Majority form and minority count over authoredProse. The majority form may not change and the minority count may not rise. Unaffected by the console-fence decision: all four disputed dashes are entities in files whose majority is already entity.",
+  "population": "authoredProse",
+  "files": {
+   "session-0.1": {
+    "majority": "entity",
+    "minority_form": "literal",
+    "minority": 0
+   },
+   "session-1": {
+    "majority": "entity",
+    "minority_form": "literal",
+    "minority": 1
+   },
+   "session-2": {
+    "majority": "entity",
+    "minority_form": "literal",
+    "minority": 2
+   },
+   "session-3": {
+    "majority": "literal",
+    "minority_form": "entity",
+    "minority": 15
+   },
+   "session-4": {
+    "majority": "entity",
+    "minority_form": "literal",
+    "minority": 1
+   }
+  }
+ },
+ "A9": {
+  "_": "Total em dashes over authoredProse. May fall, may not rise. This is how D1 is enforced without needing history. session-0.1 and session-1 are the two files the console-fence decision moved: 7 not 11, and 83 not 87 on the entity count. session-2 falls 67 -> 66 on the entity count, 2026-08-25: Phase 3.5 replaced the sentence that mis-stated the three confidentiality landmines, and its em dash went with it. Lowered by hand under MAINTAINING.md's re-baselining procedure; no dash was added anywhere in the phase.",
+  "population": "authoredProse",
+  "files": {
+   "session-0.1": {
+    "literal": 0,
+    "entity": 7,
+    "total": 7
+   },
+   "session-1": {
+    "literal": 1,
+    "entity": 83,
+    "total": 84
+   },
+   "session-2": {
+    "literal": 2,
+    "entity": 66,
+    "total": 68
+   },
+   "session-3": {
+    "literal": 94,
+    "entity": 13,
+    "total": 107
+   },
+   "session-4": {
+    "literal": 1,
+    "entity": 84,
+    "total": 85
+   }
+  }
+ },
+ "R11": {
+  "_": "The corpus-level baseline for byte-shared boilerplate, so it is checked once rather than nowhere. Measured from the canonical copy: R11 spans deduplicated by SHA-256 of their content, so a block shared across four lessons counts once. Not in conflict with the pre-push md5 pairing, which asserts identity ACROSS files; this asserts stability OVER TIME.",
+  "population": "mask(R11), deduplicated by content hash across all five lessons",
+  "distinct_blocks": 6,
+  "literal": 0,
+  "entity": 6,
+  "total": 6
+ },
+ "session_3_reconciliation": {
+  "_": "S-3. Both figures are correct and count different populations. Neither supersedes the other.",
+  "whole_file_entity": 15,
+  "authoredProse_entity": 13
+ }
 }
