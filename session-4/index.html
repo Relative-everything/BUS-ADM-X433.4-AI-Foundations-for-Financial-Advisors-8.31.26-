@@ -2489,7 +2489,7 @@ var CORPUS=[
     else if(max>=3){t='ELEVATED \u00b7 client-identifying; a commercial contract is required';cls=''}
     else {t='BASELINE \u00b7 public law only; no client information leaves the firm';cls='has'}
     h+=on.length+' document'+(on.length>1?'s':'')+' selected. Highest sensitivity drives the threshold, not the average.<br><br><strong>'+t+'</strong>';
-    if(max>=5)h+='<br><br>The draft instrument and the appraisal are the two documents in this corpus that would embarrass the firm most on disclosure: one is an unexecuted position, the other is the evidentiary support for a discount that has not been re-verified.';
+    if(max>=5)h+='<br><br>The draft instrument and the appraisal are the two documents in this corpus that would embarrass the firm most on disclosure: one is an unexecuted position, the other is the only valuation in the file and it supports no discount at all.';
     panel.innerHTML=h;panel.className='mpanel '+cls;
   }
   host.addEventListener('change',upd);upd();

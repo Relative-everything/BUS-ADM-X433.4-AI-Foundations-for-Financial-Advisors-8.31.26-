@@ -3026,3 +3026,347 @@ leaves the same defect behind a tidier label.
 7. **53 of 57 records carry at least one `[UNVERIFIED, needs source]` field.**
    Most are a missing retrieval date or publisher on a source whose identity is
    not in doubt; `BIBLIOGRAPHY.md` prints every one.
+
+---
+
+## 16. Phase 3.5 as executed, 2026-08-25
+
+**Phase 3.5 was not in §0's table. It was inserted before Phase 4 because
+instructor notes read case facts aloud, and extracting them from un-unified
+content means unifying twice.** Where this section and anything above it
+disagree, this one governs.
+
+`main` was at **0bdf3c6**, "Merge pull request #7 from
+Relative-everything/claude/repo-restructure-phase1", carrying Phase 3
+(`0e995f0`), Phase 2 (`7c3f855`) and Phase 1 (`7407111`). Work branched from it
+at zero ahead, zero behind.
+
+### 16.1 The unification rule, and the number it moves
+
+> **EVERY QUANTITATIVE CASE FACT APPEARS ONCE, INJECTED FROM `CASE.md`.
+> EVERY OTHER REFERENCE TO IT IS QUALITATIVE.**
+
+Instructor decision, ratified, and structural rather than editorial. A lesson
+may say *"Meg's largest asset is her CPC interest."* It may not restate the
+valuation. Reconciling twelve copies of a number leaves twelve copies to drift
+again; removing eleven of them removes the drift surface.
+
+`scripts/case-inventory.mjs` measures it, so the claim is re-derivable rather
+than asserted, and `docs/case-fact-inventory.md` is generated from it.
+
+| | Before | After |
+|---|---:|---:|
+| `UNGUARDED`, all classes | 283 | 109 |
+| **`UNGUARDED`, quantitative** | **182** | **5** |
+| `PINNED` | 7 | 15 |
+| check 20 pin rows | 3 | 13 |
+
+**All five survivors are inside one captured transcript** at
+`session-0.1:2004`, which is R10 and structurally exempt: editing a transcript
+would make it a fabrication (pedagogy §1 R1 and R5). There is no unguarded
+quantitative case-fact reference anywhere else in the corpus.
+
+**The before figure moved twice during the phase and both moves are recorded.**
+It was first measured at 277 / 176. `index.html:869` states the Illinois
+replacement income tax on trusts at 1.5%, a `CASE.md` §D.3 figure that is not in
+`case-facts.json`, not in `COLE` and not in the injected span — a quantitative
+case fact with no guard of any kind anywhere in the corpus — and the first pass
+had no pattern for it. Twenty-five further patterns were added from the same
+audit over Parts B, D, G and H, giving the 283 / 182 baseline the table uses.
+A measurement that only ever falls is not a measurement.
+
+Nine false-positive classes were also closed, **every one observed on a real
+line rather than anticipated**, and each is commented at the pattern:
+
+| Collision | Where it was seen |
+|---|---|
+| `1M` matching the inherited IRA | "1M context window", session-0.1, ten times |
+| `1,000,000` matching the inherited IRA | a token count, session-1:1522 |
+| `$5M` matching the endowment intent | a de-identification band width, session-4:2077 |
+| `64` matching Meg's age | "Rev. Rul. 2004-64", session-2, twice |
+| `8 October 2025` matching the competitor's letter | the date of Anthropic's Consumer Terms, session-4:1278 |
+| `52` matching the seed units | `x:52`, an SVG coordinate three characters from the words "seed gift" |
+| `5000` matching the per-unit dividend | `max="5000"`, and Cal. Penal Code §637.2 statutory damages |
+| `100` matching the voting units | `COLE.discount*100`, arithmetic inside an interpolation |
+| `30%` matching the discount | project weightings, grading bands, batch discounts |
+
+`--misses` lists every occurrence the context tests decline, so the undercount
+can be judged rather than trusted. The abbreviated millions form requires a
+dollar sign for the same reason. The bias is one-directional throughout: this
+undercounts rather than inventing drift surface.
+
+### 16.2 `COLE` existed, was generated into all six files, and had never been read
+
+The injected span defines a JS constant holding all 102 keyed figures, before
+any lesson script runs, in every file. `inject-case.mjs` says in its own comment
+that *"exercise code reads figures from `COLE`; a number typed into an exercise
+is the defect this prevents."* At the start of this phase
+`grep -o 'COLE\.[A-Za-z]*'` across the corpus returned **zero**.
+
+The mechanism that made preference 3 free was already built, already
+hash-guarded, and unused. Answer keys, chart data arrays and JS feedback strings
+in four lessons read it now.
+
+Three helpers were added to the injected block so all six files get the
+identical implementation: `COLEn`, `COLEm`, `COLEp`. **They throw on an unknown
+key** rather than rendering the word `undefined` into a sentence a student is
+marked against — constraint 8, a generated figure going through a placeholder
+that fails loudly. `verify-browser.mjs` backs them up by exercising every
+control and reading the rendered text for `undefined` and `NaN`, skipping script
+and style bodies so it reads output rather than source. **Observed catching:**
+renaming `COLE.saleUnits` to `COLE.saleUnitz` produces
+`FAIL 13 ... The undefined non-voting units sold to the grantor trust were
+valued at`.
+
+### 16.3 The conflicts, and the one sentence four lessons carried
+
+**Every conflict below is a place a lesson stated a case fact differently from
+`CASE.md`.** They were found by six per-lesson readings against Parts A–H, not
+by the scanner, which matches surface forms and cannot see a wrong label on a
+right number.
+
+| Severity | Where | The conflict |
+|---|---|---|
+| **BLOCKING** | session-0.1:1512, :2877 | *"an unsigned buy-sell"*. §F.6 records the 2014 agreement as **executed and never amended**, and separately as unfunded. Unsigned reverses the fact that matters: its transfer restrictions are live against the very transfer Part E proposes |
+| **BLOCKING** | session-1:2816 | *"the 9-year interest-only note"*. §E.6 makes the note payable in full on demand; Part K retires "nine-year interest-only balloon" **as superseded entirely** |
+| **BLOCKING** | session-2:2229, :2682 | *"a client who founded and still runs a manufacturing company"* and *"a founder-owned manufacturer"*. Walter Hensley founded it in 1987 and sold it to Meg in 2016; the purchase price is her §1012 basis. The second is a revealed answer key |
+| **BLOCKING** | session-3:1423, :2241 | *"Warren wants to keep the nine-year term"*, and a rubric that scored a student for writing `nine`, `9-year`, `warren` or `balloon`. There is no Warren in the case |
+| **BLOCKING** | session-3:1490 | the three confidentiality landmines were not Part J's three. Part J is explicit that there are **exactly three** and names the endowment and the board seat as the third; the page invented one and the real third appeared nowhere in the lesson, while :1664 promises session 4 will name *"which of the three"* |
+| **BLOCKING** | session-4:1116 | the seed gift plus the note move **900** units |
+| **MAJOR** | session-0.1:1059, session-1:1274, session-3:1102, session-4:1116 | **the same sentence in four lessons**: *"moves 900 non-voting LLC units to a grantor trust by a $2,002,000 seed gift and a $20,020,000 demand note"*. They move **572**. The remaining 328 are bought over five years out of the dividend, which is the mechanism §E.7 exists to describe |
+| **MAJOR** | session-1:2840 | *"A Midwest aerospace-fastener founder, 64, selling a company appraised at $18M"*. Two errors: Meg did not found it, and $18,000,000 is the buy-sell **formula** output, not an appraisal. `$18M` also slips past check 4's conditional-allowance test, which matches `18,000,000` and not the abbreviated form |
+| **MAJOR** | session-1:1581 | *"the 2016 revocable trust restatement"*. Part F lists F.1 through F.16 and there is no restatement |
+| **MAJOR** | session-2:1132, :2686 | *"Meg is exploring a sale"*, taught as one of three things that must never reach a consumer tool. §B.6 has her replying that the company was not for sale |
+| **MAJOR** | session-2:1577 | *"The stale document is the buy-sell, not the valuation."* §H.5 deliberately refuses to nominate a reliable pole, and §09 of the same lesson says the honest answer is none of them |
+| **MAJOR** | session-3:1895 | the retrieval corpus's buy-sell chunk gives a **right of first refusal with a descendants'-trust carve-out** where §F.6 gives a **corporate consent gate over every transfer**. Only one of those stops the transfer Part E proposes. **FLAGGED, NOT CHANGED** |
+| **MAJOR** | session-4:1396 | *"wire seed-gift funds to a trust account"*. The seed gift is 52 LLC units; no cash moves in it at all |
+| **MAJOR** | session-4:1676 | the §08 audit exhibit cites *"Buy-Sell Agreement, **Cole Precision Components Inc.**, section 4.2"*. A 2014 instrument cannot carry a name the company did not take until 15 August 2016. **FLAGGED, NOT CHANGED** |
+| MINOR | several | "a strategic buyer has expressed informal interest" in four lessons (there is no buyer: one competitor, one letter, declined); "a discount nobody has re-verified" (presupposes a verification that never happened); the 2023 appraisal called two years old when the same lesson calls it three; the draft trust's substitution power placed in the settlor where §E.3 puts it in a non-adverse party |
+
+**Facts the lessons assert that `CASE.md` does not carry**, deduplicated: document
+word counts and page counts for every item in Part F (instructor estimates under
+a heading reading "Document from this case"); a 90-minute meeting with a
+reaction by David; an annual review, where §A.5 records no investment adviser of
+record; an engagement between the Coles and the student's firm, which every
+lesson assumes and §A.5 denies; and a confidentiality classification of
+individual facts, which Part J supplies only as its own list of three.
+
+### 16.4 Deviations allowed, with the reason
+
+**Four, and all four are qualitative**, which is the point of the rule: a
+qualitative deviation cannot produce a net worth a million dollars apart across
+two lessons.
+
+1. **The three hand-written spine copies stay literal** — session-1:1279,
+   session-2:1138, session-4:1125. They restate the injected spine question,
+   which constraint 9 says to prefer deleting. They are kept because they are
+   guarded (check 20 pins every figure on all three, and the fourth pin was
+   added for the one that was not), because the spine is the instructor's own
+   choice from `docs/spine-brief.md`, and because "Meg is short $522,086 a year"
+   lands harder than "Meg runs an annual shortfall" in the one sentence the
+   course is built around.
+2. **session-4 §08's two audit exhibits stay literal**, and gained nine pins.
+   The exercise asks whether each is a well-formed record; a record whose
+   figures are interpolated at render time is not the artifact being audited.
+3. **The `[UNCONFIRMED]` marker carries a contradicted claim as well as an
+   unsourced one.** The declared pair does not have a "contradicted" state, and
+   inventing a third marker for one case would be worse than using the
+   conservative one. The register entry says so in its note.
+4. **`session-0.1`'s captured transcripts keep every case figure**, including
+   the mid-term AFR advice §H.4 contradicts. Editing a transcript is the
+   fabrication pedagogy §1 R1 forbids. What was added is the label the other two
+   captures already had.
+
+### 16.5 The two markers, and their register
+
+`[NEEDS SOURCE]` — the claim is right; a citation has not been attached.
+`[UNCONFIRMED]` — no source corroborates it. The claim itself is in question.
+
+**`[NEEDS SOURCE]` is the stronger claim and it is the one that needs evidence.**
+A wrong `[UNCONFIRMED]` gets read and downgraded; a wrong `[NEEDS SOURCE]` gets
+read and believed. Twelve claims marked: **7 `[UNCONFIRMED]`, 5 `[NEEDS SOURCE]`**,
+and every one of the five carries a retrieved candidate with a confidence label.
+
+Both forms are declared in `EDITORIAL.md` A16, whose regions gained **R8** —
+a source note is exactly where an unsourced claim sits, so it was exactly where
+an undeclared marker could hide from the rule that exists to stop markers
+hiding. 17 markers now use a declared form, against 6 before.
+`session-0.1`'s eight are untouched.
+
+`docs/unsourced-claims.md` is generated by `scripts/build-unsourced.mjs` and
+sorted by **how much depends on the claim**, not by file order. `weight` is the
+only field typed by hand, because it is the only one the corpus cannot see. A
+marker with no annotation, an unknown weight, or no `resolve=` is a hard
+failure — observed firing.
+
+> **A GAP, RECORDED RATHER THAN CLOSED.** `EDITORIAL.md`'s Part A population is
+> `ALL_LESSONS`, which is `session-0.1` plus the four tiered lessons.
+> `index.html` is not in it. A16 therefore polices the form of every marker in
+> the five lessons and none on the hub, while the generated register lists all
+> twelve. Widening Part A's population is a decision about what `EDITORIAL.md`
+> governs.
+
+### 16.6 The four Phase 3 items
+
+**(a) Zhao et al. (2024) is a real paper whose key was never added.** Not a
+third planted fabrication, and no label went missing. Three lines of evidence,
+none from memory: the authors' own repository was reachable and returned the
+official BibTeX verbatim with a NeurIPS 2024 badge, corroborated by six
+independent search indexes; `session-4:1911`'s footer states *"One deliberate
+fabrication... the only fabricated item in this file"*, so labelling Zhao as one
+would falsify the file's own standing claim; and `docs/chip-rewiring.md` already
+classifies :1487 as Class B, a missing key rather than a missing label.
+`src-zhao` added, and the chip rewired off `src-daly`, whose own record says the
+speech *"says NOTHING about watermarking"*. **`last_retrieved` is unresolved**:
+arxiv.org, the NeurIPS proceedings, OpenReview, the ACM DL and Semantic Scholar
+are all blocked from this build environment, so the paper itself was never
+loaded. A repository is not the paper and a search index is not a retrieval.
+
+**(b) The ten claims credited to `src-case`, reclassified.** Twelve were found;
+the enumeration was off by two in one direction and by three in another (three
+of the "ten `src-case` chips" are `src-daly` chips, and two more claims of the
+same class are not in §3.2 at all).
+
+| Verdict | Count | Which |
+|---|---:|---|
+| **Real source found** | 7 | the SynthID adoption claim (and the source CONTRADICTS it); Kimi K3 and DeepSeek V4-Flash model cards; the Magesh response-length correlation, which **closes** §3.2's open question — the 350/219 word counts are Magesh's and `src-magesh` is already in that footer; SB 942 and EU AI Act Article 50 (and the reclassification **corrects** the SB 942 date); human deepfake detection at chance; Anthropic's 80% system-prompt reduction; Zhao |
+| **`[NEEDS SOURCE]`** | 3 | the Weber fraction at 1%; the 60.6% / 86.5% survival arithmetic, whose inputs are Magesh's and whose arithmetic is the page's own and re-derives exactly; the blended token price, whose "published rates" are `src-pricing`, already in the same footer |
+| **`[UNCONFIRMED]`** | 2 | the 78.8% / 75% scheme; the absence-as-suspicion base-rate argument, which is a syllogism and should carry no chip at all |
+
+**(c) `src-case`'s canonicalisation — what each lesson lost, and the root cause
+is not the arbitration.** No fact changed in any of the four. Every surviving
+`used_for` clause is unchanged or verbatim. What was deleted, uniformly, is one
+class of assertion: **the synthetic disclosure**. Each of the four lost exactly
+one occurrence of the word "synthetic" from the whole file.
+
+| Lesson | Severity | What it lost |
+|---|---|---|
+| session-1 | MINOR | *"Synthetic"* and *"Every figure, document and family fact is invented."* This is the lesson where the reader **meets** the case, and its entry was epistemic rather than bibliographic: it said the case has no external referent to check against, at the point the lesson is training that reflex |
+| session-2 | **MAJOR** | *"Not based on any client, living or dead"* — a denial of a real-world referent, the only place that sentence appears in any lesson page — and *"Labelled as synthetic on every page where it appears"*, a claim about the corpus's own labelling discipline. session-2 is the lesson where students paste case material into live tools |
+| session-3 | **MAJOR** | The finding that inverts the arbitration. session-3's description was chosen because it was **the fullest**, and what was cut is exactly what made it fullest: *"including the 2014 buy-sell, the 2023 appraisal and the meeting transcript"* — the three artifacts session-3 puts through the retrieval corpus and the extraction exercise |
+| session-4 | MINOR | *"Synthetic"* and the chip qualifier. session-4's entry was deliberately minimal because it puts its caveats inline at the point of use |
+
+> **THE ARBITRATION KEPT EVERYTHING. THE RENDERER HAS NEVER EMITTED IT.**
+> `SOURCES.md`'s `src-case` record carries the union of every clause in its
+> `scope`. `inject-sources.mjs`'s `renderEntry()` emits author, title,
+> publisher, link, retrieval date, `used_for` and the chip, and never
+> `rec.scope`. The record also sets `disclose_on_page: true`, whose declared
+> meaning is *"the page must say so where they appear"* — and **nothing reads
+> that field**. `build-sources.mjs` parses it into a boolean with no consumer.
+>
+> `verify-sources.mjs` now reports this on every run. The two fabricated
+> records are still labelled, by `kind` rather than by the flag: `renderEntry`
+> emits **"Does not exist."** for `kind: fabricated`, and both carry
+> hand-written labels at their point of use. `src-case` is the one with nothing
+> generated behind it.
+>
+> **DO NOT REVERT.** The instructor's choice is between rendering `scope` for
+> every record with `disclose_on_page: true` (one change in `renderEntry`,
+> restores the strongest sentence of all four originals to all four lessons at
+> once in one canonical form, and gives the flag a consumer), rendering a short
+> fixed disclosure, or leaving the pages and accepting that the disclosure now
+> lives in surrounding prose — which is defensible for sessions 1, 3 and 4 and
+> **not** for session-2, whose prose says only "built on a synthetic case" and
+> never denies a real-world referent.
+
+### 16.7 Source dating
+
+`retrieved` became **two fields on all 58 records**, both required to be present:
+
+  `last_verified` — THE INSTRUCTOR read the source and confirmed the repo's
+  claims about it are still accurate. A human attestation.
+  `last_retrieved` — A MACHINE FETCHED the source. Records **when**, never that
+  anything is accurate.
+
+**54 of 58 records have an EMPTY `last_verified`, and 143 of 176 references
+stand behind them.** That is the measurement, not a backlog.
+
+**One date is populated and it cites its evidence.** `src-wolfram`, 2026-08-23:
+`EDITORIAL.md` says *"Seventeen names. Instructor-verified."* of the locked
+section list, entered in `bd8f458`, and nobody enumerates seventeen section
+names without opening the essay. **Two records that looked like candidates were
+left EMPTY on purpose.** `docs/evidence-annex-verified.md` records `src-memory`
+as "fetched in full 2026-08-20" — that is a retrieval, not a reading, and the
+field for it is `last_retrieved`. The same annex records `src-plugins` as
+"retrieved via search result content rather than a full page fetch, so
+re-confirm the two starred items"; a document that flags its own thinness is not
+evidence a human verified it.
+
+**The guard is wired, not written down and hoped for**, and both halves have to
+be defeated at once:
+
+1. `scripts/sources-verified.lock.json` notarises every `(key, last_verified)`
+   pair. `build-sources.mjs` recomputes the digest on every parse and throws,
+   naming the keys that moved. Every generator goes through `model()`.
+2. `scripts/attest-verified.mjs` is the only writer of the lock and refuses
+   unless stdin is a TTY. `--init` seeds once and refuses to re-seed. `--sync`
+   adopts records whose `last_verified` is empty or *not applicable* — records
+   that assert nothing, so that adding a source does not require a human — and
+   refuses if any record carries a date the lock does not already hold.
+
+**Observed refusing, four ways:** advancing a date through the writer, exit 2;
+hand-editing the date into `SOURCES.md` and running any of the four generators,
+exit 1 naming the key; re-seeding the lock to cover the tracks, exit 2;
+laundering a hand-edited date through `--sync`, exit 2 naming the key.
+
+**The ordering rule now runs on `last_retrieved`** and never on `last_verified`,
+and **it still catches `src-aa`**. It also gained the precondition it was
+missing: a month is not a day, and `2026-08` could not be ordered against
+`2026-08-13`, which is exactly where the version incoherence hid. All three
+partial dates are now reported as a precondition failure in their own right and
+ordered at their **earliest possible day**, which is a declared reading
+convention and never a date. `session-2`'s v4.1.1 against `session-4`'s later
+v4.1 still fires.
+
+**What actually got fetched.** This build environment's egress policy answered
+**403 to CONNECT for eleven of the twelve source hosts**. Only
+`platform.claude.com` was reachable.
+
+| Source | Finding |
+|---|---|
+| `src-pricing` | **Fetched in full, 2026-08-25, and the CONTENT HAS CHANGED.** The page now says Sonnet 5's $2/$10 introductory pricing *"is now the standard price"* and the 1 September rise to $3/$15 *"will not occur"*. `session-1` §10 carries the superseded reading in a table row at :1727 and a note at :1732 saying the price "rises 50% tomorrow" — on a course dated 8.31.26. **Not silently updated** |
+| `src-owasp` | **THE SOURCE HAS MOVED**, established through the project's own GitHub repository. The cited page is a historical archive; development moved to `GenAI-Security-Project/GenAI-LLM-Top10` and a new edition was published 2026-08-04. The teaching claim SURVIVES — prompt injection is still LLM01, now LLM01:2026 — and the citation does not. **This corrects a note written earlier in the same phase** which said the source "is not known to have moved or gone" |
+| `src-vectara` | **The measurements hold and the superlative is stale.** Every per-model rate `session-3` quotes is still on the live board, but 3.3% now ranks third and the floor is 1.8%. `session-3` labels 3.3% "Best model, grounded" |
+| `src-aa`, `src-synthid`, `src-kitces-advisortech`, and eight more | **Unreachable from this build environment.** A statement about the environment, **not** about the source: none is known to have moved or gone. No date was written for any of them |
+
+`src-aa`'s own `last_retrieved` was the prose *"divergent across lessons"*; it is
+now `2026-08-13`, its latest registered pull. **The divergence did not go
+anywhere**: each footer now names ITS OWN pull date and says the pulls disagree,
+which is both facts where the old footer printed one.
+
+`docs/source-verification-queue.md` is generated on every run: totals first,
+then the queue sorted by reference count descending, then the links, the
+retrieval notes, the content changes, and what this build could not reach.
+
+### 16.8 What Phase 3.5 leaves open
+
+1. **`disclose_on_page` has no consumer**, and the synthetic-case disclosure is
+   off all four lesson footers because of it. §16.6(c) states the three options.
+2. **The `session-3` retrieval corpus's buy-sell chunk** describes a different
+   transfer-restriction mechanism from §F.6, and only one of them stops the
+   transfer Part E proposes. Changing a retrieval corpus changes what the
+   extraction exercise finds and what its rubrics score.
+3. **The `session-4` §08 audit exhibit's anachronistic party name.** The section
+   says two of its six items are "specific in form and defective in substance",
+   so this is either a third designed defect with no label or drift with a
+   pinpoint locator on it.
+4. **`session-1` §10 teaches a price rise the vendor has publicly cancelled**,
+   and the course date is the night before it was supposed to happen.
+5. **`session-3` teaches 3.3% as the grounded floor** and the live board's floor
+   is 1.8%.
+6. **`src-synthid`: eleven references, no link, no publication date, no
+   retrieval date, and no reachable page.** The largest single unverified
+   dependency in the corpus. One `session-4` claim asserts what *"Google's own
+   current page states"*, which no build has ever been in a position to say.
+7. **`EDITORIAL.md` Part A does not cover `index.html`**, so A16 polices no
+   marker on the hub.
+8. **`verify-migration` check 1's grep targets missed two retired framings that
+   survived the v4.0 migration** — the bare word "founder" applied to Meg, in
+   three lessons, and "9-year" / "nine-year" applied to the proposed note, in
+   two. Both are corrected; the check still cannot see either.
+9. **check 4's conditional-allowance test matches `18,000,000` and not `$18M`**,
+   so an abbreviated case figure with the wrong label passed it.
+10. **`index.html:864` says "Every tax and legal characterisation attached to
+    this case is posed as a question, not a holding"**, which the injected
+    extract contradicts twelve lines below on the same screen. Instructor-facing
+    and erring toward more verification, so it is flagged and not changed.

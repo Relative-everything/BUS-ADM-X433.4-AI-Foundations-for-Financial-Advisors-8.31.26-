@@ -817,7 +817,9 @@ Exactly three (PEDAGOGY §5.3.4). Each is a fact a practitioner would not enter 
 | Any framing of the grantor tax as a burden, cost, shortfall, or failure | **It is the burn** — a transfer of value to the trust that consumes no exemption. Present it as the mechanism it is. |
 | Any Meg-inherits-nothing assumption | **Meg holds a $1,000,000 inherited IRA** from Walter Hensley — §C.3.3 |
 
-**Grep targets that must return zero:** `Ohio`, `Dayton`, `QSBS`, `1202`, `founder stock`, `$240,000`, `$4,968,000`, `$650,000`, `31%`, `$7,200,000`, `donor-advised`, `DAF`, `$310,000`, `$4,500,000`, `$30,000,000`, `planning window`, `$385,000`, `$34,265,000`, `$3,850,000`, `99 non-voting`, `1 voting unit`, `31 years`.
+**Grep targets that must return zero:** `Ohio`, `Dayton`, `QSBS`, `1202`, `founder stock`, `$240,000`, `$4,968,000`, `$650,000`, `31%`, `$7,200,000`, `donor-advised`, `DAF`, `$310,000`, `$4,500,000`, `$30,000,000`, `planning window`, `$385,000`, `$34,265,000`, `$3,850,000`, `99 non-voting`, `1 voting unit`, `31 years`, `balloon`.
+
+> **`balloon` added 2026-08-25 (Phase 3.5).** The retired note was a *nine-year interest-only balloon* and that row retires the whole composite, but the target list carried none of its words, so the check could not see the fragment. `session-2` still described the proposed note as *"an interest-only note with a balloon"* two migrations later. The note is payable on demand (§E.6); there is no balloon anywhere in v4.0.
 
 **Conditional allowances — these strings are legitimate in exactly one context each. A migration that deletes them blindly introduces a defect.**
 
@@ -828,6 +830,8 @@ Exactly three (PEDAGOGY §5.3.4). Each is a fact a practitioner would not enter 
 | `$2,000,000` | the residence value at C.1 and C.2 |
 | `$4,500,000` | the trust's steady-state dividend share at E.8 — 900 units × $5,000. **This collides by coincidence with the retired brokerage figure. Check the context, not the string.** |
 | `Ohio`, `Dayton`, `QSBS`, `1202` | this Part K register and the Part N changelog entry recording their removal. Nowhere else, in this file or any other. |
+| `nine-year`, `9-year` | **the 2016 purchase note only** — Meg's installment note to Walter at §B.2, which really was nine years. **Never the proposed note to the trust**, which is payable on demand (§E.6). Added 2026-08-25: `session-1` and `session-3` both still described the proposed note as nine-year, and the target list had no word that would find it. |
+| `founder`, `founded`, `founding` | **of Walter Hensley only** — he incorporated the company in 1987 (§A.3, §B.2). **Never of Meg**, who bought it in 2016 and whose §1012 basis is what she paid. Added 2026-08-25: `founder stock` was on the target list and the bare word was not, so `session-1` and `session-2` carried "founder" of Meg in three places, one of them a revealed answer key. |
 
 ---
 

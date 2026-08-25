@@ -23,8 +23,8 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 1794 | 1494 | 300 |
 | `PINNED` | 15 | 15 | 0 |
-| `UNGUARDED` | 109 | 5 | 104 |
-| **TOTAL** | **1918** | **1514** | **404** |
+| `UNGUARDED` | 110 | 5 | 105 |
+| **TOTAL** | **1919** | **1514** | **405** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -38,7 +38,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 |---|---:|---:|
 | `index.html` | 2 | 0 |
 | `session-0.1/index.html` | 16 | 5 |
-| `session-1/index.html` | 18 | 0 |
+| `session-1/index.html` | 19 | 0 |
 | `session-2/index.html` | 20 | 0 |
 | `session-3/index.html` | 30 | 0 |
 | `session-4/index.html` | 23 | 0 |
@@ -48,7 +48,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
 | `R1` | body prose | 74 | 0 |
-| `R2` | script string literal | 28 | 0 |
+| `R2` | script string literal | 29 | 0 |
 | `R10` | captured transcript | 5 | 5 |
 | `R5` | HTML or JS comment | 1 | 0 |
 | `R8` | source note | 1 | 0 |
@@ -62,7 +62,7 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 104 |
+| `name` | 105 |
 | `pct` | 5 |
 
 ## `UNGUARDED`, by fact
@@ -71,8 +71,8 @@ every one of them.
 |---|---:|
 | `domicile` | 28 |
 | `companyAbbr` | 18 |
+| `nathanShort` | 13 |
 | `companyName` | 12 |
-| `nathanShort` | 12 |
 | `megShort` | 11 |
 | `plantTown` | 9 |
 | `residenceTown` | 5 |
@@ -95,7 +95,7 @@ not the corpus. Reported, never counted in the drift surface.
 | `scripts/case-extract.html` | 101 |
 | `scripts/case-facts.json` | 80 |
 | `scripts/build-case.mjs` | 61 |
-| `scripts/verify-migration.mjs` | 22 |
+| `scripts/verify-migration.mjs` | 29 |
 
 ## What this measurement declines to count
 
@@ -104,7 +104,7 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**432 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**431 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
@@ -119,8 +119,8 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `employees` | 20 |
 | `nonVotingUnits` | 19 |
 | `charDeductible` | 18 |
-| `megAge` | 18 |
 | `discount` | 17 |
+| `megAge` | 17 |
 | `nathanAge` | 16 |
 | `revolver` | 12 |
 | `inheritedIra` | 8 |

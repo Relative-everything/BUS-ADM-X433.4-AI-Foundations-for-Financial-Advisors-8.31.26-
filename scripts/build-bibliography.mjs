@@ -446,7 +446,7 @@ never-fabricate rule exists to prevent.
     L.push('nobody could reach is not a source that did not change — see below.*');
   }
 
-  const unreachable = rows.filter((r) => /Fetch ATTEMPTED .* REFUSED/.test(r.retrieval_note || ''));
+  const unreachable = rows.filter((r) => /ATTEMPTED[\s\S]{0,60}REFUSED/i.test(r.retrieval_note || ''));
   L.push('\n---\n\n## What this build could not reach\n');
   if (unreachable.length) {
     L.push(fill(`**{{U}} source host(s) refused the connection before the request reached them.**

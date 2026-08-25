@@ -237,7 +237,7 @@ entry names the delta and every lesson element that depends on it.
 
 ## What this build could not reach
 
-**2 source host(s) refused the connection before the request reached them.**
+**4 source host(s) refused the connection before the request reached them.**
 This build environment enforces an egress policy; on 2026-08-25 every source host
 except `platform.claude.com` answered **403 to CONNECT**. That is a fact about
 the environment and **not** about the sources: none of them is known to have
@@ -247,4 +247,6 @@ retrieval happened.
 | Key | Refs | Host |
 |---|---|---|
 | `src-synthid` | 11 | *link unknown* |
+| `src-vectara` | 4 | www.vectara.com |
+| `src-owasp` | 1 | owasp.org |
 | `src-kitces-advisortech` | 0 | *link unknown* |
