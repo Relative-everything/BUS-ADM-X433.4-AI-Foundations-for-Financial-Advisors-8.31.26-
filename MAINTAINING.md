@@ -604,8 +604,34 @@ deliberately, or it silently stops catching anything:
    raise one to make a failure go away — that is the one edit the file exists to
    prevent.
 4. `node scripts/test-editorial-regions.mjs` must pass; T7 reads the baseline.
-5. Commit the baseline change on its own, so the diff shows exactly which figure
-   moved and by how much.
+5. **Open a row in `docs/deferred-work.md` in the same commit** (see the rule
+   below).
+6. Commit the baseline change on its own where you can, so the diff shows exactly
+   which figure moved and by how much. **T7 can take that choice away**: it
+   requires the baseline to reproduce the classifier exactly, so a cleanup that
+   moves a counted figure fails T7 until the baseline moves with it. Where that
+   happens the lowering rides in the cleanup's own commit, and step 5 is what
+   keeps it visible.
+
+**STANDING RULE — a lowered count is a row in `docs/deferred-work.md`, in the
+same commit.** Any figure in `scripts/editorial-baseline.json` that goes DOWN
+must be recorded there as a new row, carrying **the delta and the reason**: which
+rule and file, the before and after numbers, and what edit moved them. Not the
+next commit, not the phase write-up. The same commit.
+
+**The reason is that lowering a ratchet spends coverage, and spending it quietly
+is how the ratchet stops meaning anything.** A raised figure is impossible by
+rule; a lowered one is legitimate and therefore invisible, because the check goes
+on passing. The register is the only place a reader can see that the corpus is
+now measured against a slacker bar than it was, and why. Steps 1-4 make the
+lowering correct. This step makes it *reviewable*: a row nobody can defend is a
+lowering that should not have happened.
+
+Three lowerings were made before this rule existed and are recorded
+retroactively as **DW-045**. `scripts/editorial-baseline.json`'s own `A9` note is
+the narrative; the register is the index into it. The narrative is not a
+substitute for the row — it lives in the file being weakened, which is the one
+place a reader checking whether the bar moved would not think to look.
 
 ### The region classifier
 
