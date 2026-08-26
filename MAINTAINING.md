@@ -229,9 +229,22 @@ the hub and the lessons rather than running it across the whole tree.
 | Adaeze | 2026-08-18 | Meg Cole |
 | Ilesanmi | 2026-08-18 | (no equivalent, character removed) |
 | Reyes | 2026-08-18 | Cole |
+| Canvas, the LMS | 2026-08-25 | "the course site" |
 
 Match case-insensitively on the stem so punctuation variants cannot hide:
 `grep -rin okonkwo`.
+
+**Canvas needs one exclusion and the check is worthless without it.** `session-4`
+renders a bitmap through an HTML `<canvas>` element, so `grep -rin canvas`
+returns four legitimate hits there and one in `scripts/build-case.mjs`, where
+"canvas export" names a design tool. The LMS is the capitalised word standing
+alone in prose. Read every hit; do not automate this one.
+
+**Why the name is gone at all.** No lesson may bind the course to one
+submission platform, because the platform is the institution's choice and can
+change between cohorts while the lessons do not. Name the destination in
+platform-neutral words - never an action with no destination at all, which is
+the defect that a careless removal creates.
 
 ## Adding a session
 
