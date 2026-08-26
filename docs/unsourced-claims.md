@@ -23,13 +23,13 @@ Both forms are declared in `EDITORIAL.md` A16 and enforced by
 
 | | |
 |---|---|
-| Marked claims | **12** |
-| `[UNCONFIRMED]` | **8** |
+| Marked claims | **13** |
+| `[UNCONFIRMED]` | **9** |
 | `[NEEDS SOURCE]` | 4 |
 | weight `answer` | 1 — An answer key or the correctness of an exercise depends on it. A student is marked right or wrong by it. |
 | weight `exercise` | 2 — A work-along gate or an interaction is built on it. The room does something because of it. |
 | weight `section` | 4 — A whole section's argument rests on it. Remove the claim and the section has no point. |
-| weight `claim` | 3 — A standalone factual claim in prose. A reader could repeat it to a client. |
+| weight `claim` | 4 — A standalone factual claim in prose. A reader could repeat it to a client. |
 | weight `aside` | 2 — A passing remark. Nothing else on the page leans on it. |
 
 ## The order
@@ -176,7 +176,20 @@ the corpus on every run.
 | What would resolve it | Name the compilations. This lesson's own teaching point three lines down is that published counts disagree, which makes an assertion about what appears on EVERY published list the one claim in the passage that cannot be checked without the list of lists. |
 | Candidate source | none retrieved; the statutory citations beside it are sourced and this sentence is not — confidence **none** |
 
-### 10. `session-4/index.html:1513` — `#sW2` — **[UNCONFIRMED]**
+### 10. `session-4/index.html:1460` — `#sW1` — **[UNCONFIRMED]**
+
+> [UNCONFIRMED]
+
+| | |
+|---|---|
+| File and line | `session-4/index.html:1460` |
+| Section | `#sW1` (`advanced`) |
+| Region | R1 — body prose |
+| Marker | **[UNCONFIRMED]** |
+| What would resolve it | Name the page, or narrow the sentence to the page that was actually read. This asserts what a specific Google page says TODAY, and no build has ever loaded the Google DeepMind SynthID overview it means: the host answers 403 on CONNECT here. src-synthid-text was retrieved on 2026-08-25 and carries no adoption figure either, but it is the text-watermarking page under a different publisher line and cannot stand in for the overview. Read the overview and date the reading, or rewrite the sentence to say which page and when. |
+| Candidate source | ai.google.dev/responsible/docs/safeguards/synthid, retrieved 2026-08-25, states no adoption figure - the right kind of evidence about the wrong page — confidence **medium** |
+
+### 11. `session-4/index.html:1513` — `#sW2` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
@@ -193,7 +206,7 @@ the corpus on every run.
 
 *A passing remark. Nothing else on the page leans on it.*
 
-### 11. `session-4/index.html:1422` — `#sW1` — **[UNCONFIRMED]**
+### 12. `session-4/index.html:1422` — `#sW1` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
@@ -206,7 +219,7 @@ the corpus on every run.
 | What would resolve it | Either find a source that measures the false-positive rate, or remove the confidence chip: this is a base-rate deduction the page makes from a premise it has already established, and a syllogism does not need a citation. It should not stay chipped to an SEC speech that makes no such argument. |
 | Candidate source | C2PA guidance says the corresponding thing qualitatively, reached through secondary blogs only — confidence **low** |
 
-### 12. `session-4/index.html:1498` — `#sW2` — **[UNCONFIRMED]**
+### 13. `session-4/index.html:1498` — `#sW2` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 

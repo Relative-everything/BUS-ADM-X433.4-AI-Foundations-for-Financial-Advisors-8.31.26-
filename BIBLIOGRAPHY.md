@@ -5,7 +5,7 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**58 works, 176 references across 5 lessons.** 44 are
+**59 works, 176 references across 5 lessons.** 45 are
 cited by at least one claim; 14 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
@@ -514,6 +514,25 @@ Approximately $25 million across 15 transfers. The one deepfake figure the cours
 
 62% of organisations experiencing at least one deepfake attack in twelve months, 37% on a live video call. A single vendor survey, n = 302.
 
+### Google
+
+**SynthID: Tools for watermarking and detecting LLM-generated Text**  
+`src-synthid-text` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Google |
+| Publisher | Google (Responsible Generative AI Toolkit) |
+| Link | <https://ai.google.dev/responsible/docs/safeguards/synthid> |
+| Published | 2025-04-09 |
+| Last retrieved | 2026-08-25 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S4 `#sW2` |
+
+TEXT WATERMARKING ONLY. The boundary is load-bearing, because the sibling record `src-synthid` is cited for image, video and audio claims that this page does not reach. What it substantiates, and nothing outside this list: detection is probabilistic and returns watermarked, not watermarked, or uncertain, against two tunable thresholds; the signal survives cropping, changing a few words, and mild paraphrase; detector confidence is greatly reduced by thorough rewriting or by translation; watermarking is less effective on factual responses, because there is less opportunity to augment generation without decreasing accuracy; detector exposure is a three-way deployer choice between fully-private, semi-private and public; the scheme is not designed to stop motivated adversaries; and the underlying technical description is Dathathri et al., Scalable watermarking for identifying large language model outputs, Nature 634:818-823 (2024), https://www.nature.com/articles/s41586-024-08025-4. IT SUBSTANTIATES NO ADOPTION FIGURE AND NO MARKET-SHARE CLAIM, which is the fact that keeps session-4's scale paragraph open rather than closing it.
+
 ### Google DeepMind
 
 **SynthID**  
@@ -528,8 +547,8 @@ Approximately $25 million across 15 transfers. The one deepfake figure the cours
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **11** |
-| Cited in | S4 `#sW1` ×8 · S4 `#sW2` ×3 |
+| **Total references** | **10** |
+| Cited in | S4 `#sW1` ×8 · S4 `#sW2` ×2 |
 
 Tournament sampling in text, perturbation in image and video, and the frequency-domain approach in audio. Adoption is a vendor decision and changes; the mechanism does not.
 

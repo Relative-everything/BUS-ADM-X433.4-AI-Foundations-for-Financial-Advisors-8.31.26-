@@ -8,7 +8,7 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**20 of 58 works are moving targets, feeding 83 of
+**21 of 59 works are moving targets, feeding 83 of
 176 references.**
 
 
@@ -74,8 +74,8 @@ version string means the version is not tracking the data.
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendices D1 and D2 |
-| References | 11 |
-| Feeds | S4 `#sW1` ×8 · S4 `#sW2` ×3 |
+| References | 10 |
+| Feeds | S4 `#sW1` ×8 · S4 `#sW2` ×2 |
 
 ### `src-memory` — Use Claude's chat search and memory to build on previous context
 
@@ -239,6 +239,18 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-4 §05 |
 | References | 1 |
 | Feeds | S4 `#s5` |
+
+### `src-synthid-text` — SynthID: Tools for watermarking and detecting LLM-generated Text
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-08-25 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 Appendix D2 |
+| References | 1 |
+| Feeds | S4 `#sW2` |
 
 ### `src-beta` — Available beta and research preview features
 
