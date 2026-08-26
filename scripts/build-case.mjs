@@ -8,6 +8,8 @@
  *   scripts/case-facts.json      every figure as a keyed value
  *   scripts/case-extract.html    the one-screen modal extract
  *   scripts/case-flowchart.html  Part L, scoped under .cole-flow
+ *   scripts/case-corpus.json     Part O, the session-3 retrieval corpus and the
+ *                                §07 meeting excerpt, captured verbatim
  *
  * A pattern that no longer matches is a hard failure, not a warning. That is
  * the drift detection: CASE.md changed shape and the extract cannot be trusted.
@@ -40,13 +42,15 @@ meta.sentinel_open = meta.sentinel_open.replace(/^"(.*)"$/, '$1');
 meta.sentinel_close = meta.sentinel_close.replace(/^"(.*)"$/, '$1');
 
 /* ---------- section index -------------------------------------------- */
-/* Keys look like "A.1", "E.7", "C.3.3", and "PART L". */
+/* Keys look like "A.1", "E.7", "C.3.3", and "PART L". Part O carries no
+   LETTER.DIGIT subsections on purpose: its chunks must all stay inside one
+   section body so the corpus extractor sees them together. */
 const sections = {};
 {
   let key = '_preamble', buf = [];
   for (const line of CASE.split('\n')) {
-    const part = line.match(/^# PART ([A-N]) —/);
-    const sec  = line.match(/^#{2,4} ([A-N]\.\d+(?:\.\d+)?)\b/);
+    const part = line.match(/^# PART ([A-O]) —/);
+    const sec  = line.match(/^#{2,4} ([A-O]\.\d+(?:\.\d+)?)\b/);
     if (part || sec) {
       sections[key] = buf.join('\n');
       key = part ? `PART ${part[1]}` : sec[1];
@@ -232,6 +236,51 @@ if (problems.length) {
 const facts = { case_id: meta.case_id, case_version: meta.case_version, as_of: meta.as_of_date,
                 generated_by: 'scripts/build-case.mjs', figures: F };
 writeFileSync(join(HERE, 'case-facts.json'), JSON.stringify(facts, null, 2) + '\n');
+
+/* ---------- emit case-corpus.json ------------------------------------- */
+/* PART O. The chunks session-3 ranks, and the §07 meeting excerpt, captured as
+   text rather than described. Every one of these lived as a JavaScript string
+   literal in session-3/index.html until 2026-08-25, where nothing could compare
+   it against the Part it restates; the buy-sell chunk had been stating a
+   different transfer-restriction mechanism from §F.6 for two audits.
+
+   A MISS IS A HARD FAILURE, like every other pattern in this file. The corpus
+   is not optional furniture: session-3 builds a live IDF index over exactly
+   these chunks, so a chunk that silently vanished would change every score in
+   the exercise rather than break it visibly. The count is asserted for the same
+   reason. */
+{
+  const O = sections['PART O'];
+  if (O === undefined) die('CASE.md has no PART O — the retrieval corpus has no section');
+  const corpus = [];
+  for (const m of O.matchAll(/```corpus id=(D\d+)\n([\s\S]*?)\n```/g)) {
+    corpus.push({ id: m[1], t: m[2].replace(/\s*\n\s*/g, ' ').trim() });
+  }
+  const speakers = [];
+  for (const m of O.matchAll(/```speaker who=([A-Za-z]+)\n([\s\S]*?)\n```/g)) {
+    speakers.push({ who: m[1], said: m[2].replace(/\s*\n\s*/g, ' ').trim() });
+  }
+  if (corpus.length !== 10) die(`CASE.md Part O: expected 10 \`\`\`corpus fences, found ${corpus.length}`);
+  if (speakers.length !== 5) die(`CASE.md Part O: expected 5 \`\`\`speaker fences, found ${speakers.length}`);
+  const want = ['D1','D2','D3','D4','D5','D6','D7','D8','D9','D10'];
+  const got = corpus.map((c) => c.id);
+  if (got.join(',') !== want.join(',')) die(`CASE.md Part O: chunk ids are ${got.join(',')}, expected ${want.join(',')} in that order`);
+  const empty = corpus.filter((c) => c.t.length < 40).map((c) => c.id);
+  if (empty.length) die(`CASE.md Part O: chunk(s) ${empty.join(', ')} are shorter than 40 characters`);
+  /* §F.6 gives a corporate consent gate over every transfer. D2 restates it, and
+     the last time it did not, only one of the two stopped the transfer Part E
+     proposes. Anchored on the words rather than on the whole sentence, so a
+     rewording survives and a change of MECHANISM does not. */
+  if (!/consent of the corporation/i.test(corpus[1].t))
+    die('CASE.md Part O: chunk D2 no longer states a consent gate. §F.6 requires corporate consent for any transfer of shares; check the two against each other before changing either.');
+  if (!/transfer restrictions requiring corporate consent/i.test(sections['F.6'] || sections['PART F'] || ''))
+    die('CASE.md §F.6 no longer states transfer restrictions requiring corporate consent, and Part O chunk D2 still does.');
+  writeFileSync(join(HERE, 'case-corpus.json'),
+    JSON.stringify({ case_id: meta.case_id, case_version: meta.case_version,
+                     generated_by: 'scripts/build-case.mjs', source: 'CASE.md PART O',
+                     corpus, transcript: speakers }, null, 2) + '\n');
+  console.log(`OK    case-corpus.json     ${corpus.length} chunks, ${speakers.length} transcript turns  (Part O)`);
+}
 
 /* ---------- emit case-flowchart.html ---------------------------------- */
 const fcRaw = CASE.match(/<!-- CASE:FLOWCHART[^>]*-->([\s\S]*?)<!-- CASE:FLOWCHART END -->/);
