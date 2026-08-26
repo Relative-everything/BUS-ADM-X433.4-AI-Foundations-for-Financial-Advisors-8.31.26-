@@ -1,0 +1,70 @@
+{
+  "case_id": "cole-household",
+  "case_version": "4.0",
+  "generated_by": "scripts/build-case.mjs",
+  "source": "CASE.md PART O",
+  "corpus": [
+    {
+      "id": "D1",
+      "t": "Buy-Sell Agreement, Article VII, Valuation. This Article applies only upon the death, permanent disability, or voluntary withdrawal of a holder of record. The value of the shares shall equal five times the average annual earnings before interest and taxes for the three fiscal years then ended. No appraisal obtained after execution is incorporated by reference."
+    },
+    {
+      "id": "D2",
+      "t": "Buy-Sell Agreement, Article IX, Transfer Restrictions. No holder may transfer stock to any person without the prior written consent of the corporation. Consent is required for every transfer, including a transfer to a trust established by a holder for the benefit of descendants, and may be withheld. A transfer without consent is not effective."
+    },
+    {
+      "id": "D3",
+      "t": "Appraisal report issued 2023. The subject is a one hundred percent controlling and marketable interest in Cole Precision Components. The report concludes a value of thirty eight million dollars. The report contains no discount study and no analysis of lack of control or lack of marketability. The report has not been updated since issuance."
+    },
+    {
+      "id": "D4",
+      "t": "Joint revocable trust, executed 2011. The trust receives the residue of each settlor probate estate and holds it in a marital share and a family share. The trust is revocable during the joint lifetimes of the settlors."
+    },
+    {
+      "id": "D5",
+      "t": "Last will and testament, executed 2011 under Illinois law. The residue of the probate estate passes to the joint revocable trust. The will names the surviving spouse as executor and a descendant as successor executor."
+    },
+    {
+      "id": "D6",
+      "t": "Draft irrevocable trust instrument, unexecuted. The settlor retains a power to substitute assets of equivalent value held in a nonfiduciary capacity. The instrument has not been signed and no trustee has accepted appointment."
+    },
+    {
+      "id": "D7",
+      "t": "Draft promissory note, unexecuted. Principal of twenty million twenty thousand dollars. Interest only at three point eight two percent per annum, payable annually in arrears, with the entire principal payable on demand by the holder. The note is unsecured. No prepayment penalty applies."
+    },
+    {
+      "id": "D8",
+      "t": "Planning memorandum on the proposed transfer. A seed gift of fifty two non-voting units valued at two million two thousand dollars is to be made to the trust before any sale occurs. The memorandum asserts a combined discount of thirty percent for lack of control and lack of marketability on the non-voting units and cites no appraisal. The memorandum is dated and unsigned."
+    },
+    {
+      "id": "D9",
+      "t": "Durable power of attorney, executed 2011. The agent may act on financial matters upon the principal incapacity. The instrument has not been reviewed since execution."
+    },
+    {
+      "id": "D10",
+      "t": "Healthcare directive and living will, executed 2011. The instrument names a healthcare agent and states preferences regarding life sustaining treatment. The instrument has not been reviewed since execution."
+    }
+  ],
+  "transcript": [
+    {
+      "who": "Advisor",
+      "said": "Last time we left the trust sale open. Where has that landed?"
+    },
+    {
+      "who": "Meg",
+      "said": "It has not landed. A competitor wrote to me about buying the company last autumn. Nothing signed, nothing in writing, and Nathan does not know — he is in operations and I am not telling him until there is something to tell."
+    },
+    {
+      "who": "Advisor",
+      "said": "Does that change the timing on the note structure?"
+    },
+    {
+      "who": "Meg",
+      "said": "That is what I need you to tell me. Counsel wants to keep the note callable on demand."
+    },
+    {
+      "who": "David",
+      "said": "I would want the appraisal looked at again before we sign anything. It is three years old and the company is not what it was then."
+    }
+  ]
+}

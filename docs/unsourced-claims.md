@@ -23,13 +23,13 @@ Both forms are declared in `EDITORIAL.md` A16 and enforced by
 
 | | |
 |---|---|
-| Marked claims | **12** |
-| `[UNCONFIRMED]` | **8** |
+| Marked claims | **13** |
+| `[UNCONFIRMED]` | **9** |
 | `[NEEDS SOURCE]` | 4 |
 | weight `answer` | 1 — An answer key or the correctness of an exercise depends on it. A student is marked right or wrong by it. |
 | weight `exercise` | 2 — A work-along gate or an interaction is built on it. The room does something because of it. |
 | weight `section` | 4 — A whole section's argument rests on it. Remove the claim and the section has no point. |
-| weight `claim` | 3 — A standalone factual claim in prose. A reader could repeat it to a client. |
+| weight `claim` | 4 — A standalone factual claim in prose. A reader could repeat it to a client. |
 | weight `aside` | 2 — A passing remark. Nothing else on the page leans on it. |
 
 ## The order
@@ -46,13 +46,13 @@ the corpus on every run.
 
 *An answer key or the correctness of an exercise depends on it. A student is marked right or wrong by it.*
 
-### 1. `session-4/index.html:1621` — `#sWS` — **[NEEDS SOURCE]**
+### 1. `session-4/index.html:1749` — `#sWS` — **[NEEDS SOURCE]**
 
 > [NEEDS SOURCE]
 
 | | |
 |---|---|
-| File and line | `session-4/index.html:1621` |
+| File and line | `session-4/index.html:1749` |
 | Section | `#sWS` (`standard`) |
 | Region | R1 — body prose |
 | Marker | **[NEEDS SOURCE]** |
@@ -63,26 +63,26 @@ the corpus on every run.
 
 *A work-along gate or an interaction is built on it. The room does something because of it.*
 
-### 2. `session-3/index.html:2151` — `#s16` — **[UNCONFIRMED]**
+### 2. `session-3/index.html:2278` — `#s16` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
 | | |
 |---|---|
-| File and line | `session-3/index.html:2151` |
+| File and line | `session-3/index.html:2278` |
 | Section | `#s16` (`core`) |
 | Region | R2 — script string literal |
 | Marker | **[UNCONFIRMED]** |
 | What would resolve it | Re-read the leaderboard and restate the floor, or drop the superlative and teach the range. The measurement is unchanged; what moved is what it is the best of. The HALL chart array at :2019 labels 3.3% 'Best model, grounded' and this panel teaches the range from it. |
 | Candidate source | Vectara's own hallucination-leaderboard repository, read 2026-08-25: last updated 2026-05-11, HHEM-2.3, 123 models. Every per-model rate this lesson quotes is still on the board, but 3.3% now ranks third and the floor is 1.8%. The cited blog post itself is blocked from this build environment and was not read. — confidence **medium** |
 
-### 3. `session-4/index.html:1454` — `#sW1` — **[UNCONFIRMED]**
+### 3. `session-4/index.html:1582` — `#sW1` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
 | | |
 |---|---|
-| File and line | `session-4/index.html:1454` |
+| File and line | `session-4/index.html:1582` |
 | Section | `#sW1` (`advanced`) |
 | Region | R1 — body prose |
 | Marker | **[UNCONFIRMED]** |
@@ -93,13 +93,13 @@ the corpus on every run.
 
 *A whole section's argument rests on it. Remove the claim and the section has no point.*
 
-### 4. `session-4/index.html:1422` — `#sW1` — **[UNCONFIRMED]**
+### 4. `session-4/index.html:1550` — `#sW1` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
 | | |
 |---|---|
-| File and line | `session-4/index.html:1422` |
+| File and line | `session-4/index.html:1550` |
 | Section | `#sW1` (`advanced`) |
 | Region | R1 — body prose |
 | Marker | **[UNCONFIRMED]** |
@@ -107,39 +107,39 @@ the corpus on every run.
 | Candidate source | anthropic.com/news/claude-text-watermark, plus the-decoder and thenextweb reporting of 2 August 2026, all reached through search only: the host is blocked from this build environment and the page itself was never loaded — confidence **medium** |
 | Note | Reported substance: Claude output carries a SynthID-Text watermark and C2PA provenance metadata for models launched from 2 August 2026, applied worldwide. If that holds, this sentence is false and so is what it tells students about their own coursework. |
 
-### 5. `session-2/index.html:1473` — `#s6` — **[NEEDS SOURCE]**
+### 5. `session-2/index.html:1601` — `#s6` — **[NEEDS SOURCE]**
 
 > [NEEDS SOURCE]
 
 | | |
 |---|---|
-| File and line | `session-2/index.html:1473` |
+| File and line | `session-2/index.html:1601` |
 | Section | `#s6` (`core`) |
 | Region | R1 — body prose |
 | Marker | **[NEEDS SOURCE]** |
 | What would resolve it | Add a key for Anthropic's own post and rewire off src-case. Keep the lesson qualitative about which models: the post names Opus 5 and Fable 5 as examples, and 'its two most recent models' is a stronger claim than the source makes. |
 | Candidate source | Shihipar, T. (2026-07-24), The new rules of context engineering for Claude 5 generation models, claude.com blog. Reached through search only; the host was not fetched from this build environment. — confidence **medium** |
 
-### 6. `session-4/index.html:1398` — `#s5` — **[NEEDS SOURCE]**
+### 6. `session-4/index.html:1526` — `#s5` — **[NEEDS SOURCE]**
 
 > [NEEDS SOURCE]
 
 | | |
 |---|---|
-| File and line | `session-4/index.html:1398` |
+| File and line | `session-4/index.html:1526` |
 | Section | `#s5` (`core`) |
 | Region | R1 — body prose |
 | Marker | **[NEEDS SOURCE]** |
 | What would resolve it | Attach the two real sources and drop src-case: a synthetic household cannot evidence a meta-analysis. Check the wording against the pooled figure before chipping it H — 55.54% is near chance and above it for some stimulus types, so 'close to chance' survives and 'at chance' would not. |
 | Candidate source | Diel, Lalgi, Schroter, MacDorman, Teufel and Bauerle (2024), Human performance in detecting deepfakes: a systematic review and meta-analysis of 56 papers, Computers in Human Behavior Reports 16, 100538 — 137 effects, 86,155 participants, pooled accuracy 55.54% — confidence **medium** |
 
-### 7. `session-4/index.html:1555` — `#s7` — **[NEEDS SOURCE]**
+### 7. `session-4/index.html:1683` — `#s7` — **[NEEDS SOURCE]**
 
 > [NEEDS SOURCE]
 
 | | |
 |---|---|
-| File and line | `session-4/index.html:1555` |
+| File and line | `session-4/index.html:1683` |
 | Section | `#s7` (`core`) |
 | Region | R1 — body prose |
 | Marker | **[NEEDS SOURCE]** |
@@ -150,39 +150,52 @@ the corpus on every run.
 
 *A standalone factual claim in prose. A reader could repeat it to a client.*
 
-### 8. `index.html:976` — `#(outside any section)` — **[UNCONFIRMED]**
+### 8. `index.html:1104` — `#(outside any section)` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
 | | |
 |---|---|
-| File and line | `index.html:976` |
+| File and line | `index.html:1104` |
 | Section | `#(outside any section)` |
 | Region | R1 — body prose |
 | Marker | **[UNCONFIRMED]** |
 | What would resolve it | Narrow it to the claim that is true and equally reassuring: every CLIENT example uses one synthetic household. As written it is wrong in both directions. Sessions 1 and 2 are full of examples that are not the Cole household at all, and session-0.1 is a sixth published lesson this sentence does not count. The second sentence is the promise a student actually reads and it is the one worth keeping exact. |
 | Candidate source | the scoped version already stated in session-0.1 — confidence **low** |
 
-### 9. `session-3/index.html:1484` — `#s12` — **[UNCONFIRMED]**
+### 9. `session-3/index.html:1610` — `#s12` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
 | | |
 |---|---|
-| File and line | `session-3/index.html:1484` |
+| File and line | `session-3/index.html:1610` |
 | Section | `#s12` (`core`) |
 | Region | R1 — body prose |
 | Marker | **[UNCONFIRMED]** |
 | What would resolve it | Name the compilations. This lesson's own teaching point three lines down is that published counts disagree, which makes an assertion about what appears on EVERY published list the one claim in the passage that cannot be checked without the list of lists. |
 | Candidate source | none retrieved; the statutory citations beside it are sourced and this sentence is not — confidence **none** |
 
-### 10. `session-4/index.html:1513` — `#sW2` — **[UNCONFIRMED]**
+### 10. `session-4/index.html:1588` — `#sW1` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
 | | |
 |---|---|
-| File and line | `session-4/index.html:1513` |
+| File and line | `session-4/index.html:1588` |
+| Section | `#sW1` (`advanced`) |
+| Region | R1 — body prose |
+| Marker | **[UNCONFIRMED]** |
+| What would resolve it | Name the page, or narrow the sentence to the page that was actually read. This asserts what a specific Google page says TODAY, and no build has ever loaded the Google DeepMind SynthID overview it means: the host answers 403 on CONNECT here. src-synthid-text was retrieved on 2026-08-25 and carries no adoption figure either, but it is the text-watermarking page under a different publisher line and cannot stand in for the overview. Read the overview and date the reading, or rewrite the sentence to say which page and when. |
+| Candidate source | ai.google.dev/responsible/docs/safeguards/synthid, retrieved 2026-08-25, states no adoption figure - the right kind of evidence about the wrong page — confidence **medium** |
+
+### 11. `session-4/index.html:1641` — `#sW2` — **[UNCONFIRMED]**
+
+> [UNCONFIRMED]
+
+| | |
+|---|---|
+| File and line | `session-4/index.html:1641` |
 | Section | `#sW2` (`advanced`) |
 | Region | R1 — body prose |
 | Marker | **[UNCONFIRMED]** |
@@ -193,26 +206,26 @@ the corpus on every run.
 
 *A passing remark. Nothing else on the page leans on it.*
 
-### 11. `session-4/index.html:1422` — `#sW1` — **[UNCONFIRMED]**
+### 12. `session-4/index.html:1550` — `#sW1` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
 | | |
 |---|---|
-| File and line | `session-4/index.html:1422` |
+| File and line | `session-4/index.html:1550` |
 | Section | `#sW1` (`advanced`) |
 | Region | R1 — body prose |
 | Marker | **[UNCONFIRMED]** |
 | What would resolve it | Either find a source that measures the false-positive rate, or remove the confidence chip: this is a base-rate deduction the page makes from a premise it has already established, and a syllogism does not need a citation. It should not stay chipped to an SEC speech that makes no such argument. |
 | Candidate source | C2PA guidance says the corresponding thing qualitatively, reached through secondary blogs only — confidence **low** |
 
-### 12. `session-4/index.html:1498` — `#sW2` — **[UNCONFIRMED]**
+### 13. `session-4/index.html:1626` — `#sW2` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
 | | |
 |---|---|
-| File and line | `session-4/index.html:1498` |
+| File and line | `session-4/index.html:1626` |
 | Section | `#sW2` (`advanced`) |
 | Region | R1 — body prose |
 | Marker | **[UNCONFIRMED]** |

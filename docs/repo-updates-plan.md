@@ -2776,6 +2776,12 @@ else in Phase 2 is either mechanically verified or explicitly flagged.
 
 ### 13.8 What Phase 2 leaves open
 
+> **SUPERSEDED AS A QUEUE, KEPT AS HISTORY.** These eight are rows in
+> `docs/deferred-work.md`, which is the single register from 2026-08-25. Five
+> were closed by §14; the four §14 names as staying open are DW-026 through
+> DW-029. Read the register for current status; read this for what Phase 2
+> found and why.
+
 1. **F1** — `session-1`'s discussion block: 17 minutes on the section, 15 in the
    ratified parameter. Instructor picks. Printed on every generator run.
 2. **F5** — two new consecutive-component adjacencies, `session-2` and
@@ -3005,6 +3011,11 @@ both ways and the note that fixing the attribution without fixing the versioning
 leaves the same defect behind a tidier label.
 
 ### 15.4 What Phase 3 leaves open
+
+> **SUPERSEDED AS A QUEUE, KEPT AS HISTORY.** These seven are rows in
+> `docs/deferred-work.md`, which is the single register from 2026-08-25. Item 1
+> was closed by Phase 3.5 §16.6(b) and item 4's `src-synthid` half is partly
+> closed by Phase 3.6. Read the register for current status.
 
 1. **Ten claims have no source in their footer and still say `src-case`**, so the
    page attributes ten external claims to a synthetic household. Among them a
@@ -3339,6 +3350,11 @@ then the queue sorted by reference count descending, then the links, the
 retrieval notes, the content changes, and what this build could not reach.
 
 ### 16.8 What Phase 3.5 leaves open
+
+> **SUPERSEDED AS A QUEUE, KEPT AS HISTORY.** These ten are rows in
+> `docs/deferred-work.md`, which is the single register from 2026-08-25. Items
+> 2 and 4 were closed by Phase 3.6 and item 6 was partly closed by it; the rest
+> are open there. Read the register for current status.
 
 1. **`disclose_on_page` has no consumer**, and the synthetic-case disclosure is
    off all four lesson footers because of it. §16.6(c) states the three options.

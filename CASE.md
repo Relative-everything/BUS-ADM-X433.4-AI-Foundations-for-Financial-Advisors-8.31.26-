@@ -1127,6 +1127,160 @@ a:hover { color: rgb(46, 125, 91); }
 
 ---
 
+# PART O — RETRIEVAL CORPUS
+
+**These are the chunks `session-3` puts through its retrieval exercise, and they
+are here because they were not.** Until 2026-08-25 they were JavaScript string
+literals inside `session-3/index.html`, describing the same instruments this file
+describes, with nothing checking that the two agreed. They did not. The buy-sell
+chunk gave a right of first refusal with a descendants' trust carved out of it,
+where §F.6 gives a corporate consent gate over every transfer, and only one of
+those stops the transfer Part E proposes. The conflict survived two audits
+because there was no single place a reader would look and see both statements at
+once. There is one now.
+
+**Every chunk names the section it has to agree with.** A chunk stating
+something its named section does not is the same defect as a lesson restating a
+figure: the copy drifts and nothing notices. Edit the section first, then the
+chunk, then run `node scripts/build-case.mjs`.
+
+**These are synthetic excerpts, not model provisions.** No chunk states law and
+none should be read as drafting. They are written in the flattened register a
+retrieval system actually sees, with no possessive apostrophes, no dashes and no
+markup, because the exercise tokenises them and any character that is not in the
+instrument is a term the ranker will score.
+
+> **THE RANKING IS A PROPERTY OF THIS TEXT.** `session-3` builds a live IDF
+> index over these chunks and ranks by cosine similarity, so changing one word
+> here changes the document frequencies and can move every score in the
+> exercise. After any edit, re-run the four preset queries and check the
+> rankings, the displayed scores and the margin flag against what the lesson's
+> own prose says about them. A chunk edit is never only a chunk edit.
+
+## The ten document chunks
+
+### D1. 2014 buy-sell, Article VII, Valuation
+
+Agrees with: **§F.6.** The formula purchase price, and the triggering events it is conditioned on.
+
+```corpus id=D1
+Buy-Sell Agreement, Article VII, Valuation. This Article applies only upon the death, permanent disability, or voluntary withdrawal of a holder of record. The value of the shares shall equal five times the average annual earnings before interest and taxes for the three fiscal years then ended. No appraisal obtained after execution is incorporated by reference.
+```
+
+### D2. 2014 buy-sell, Article IX, Transfer Restrictions
+
+Agrees with: **§F.6.** Transfer restrictions requiring corporate consent for any transfer of shares. **This is the chunk that disagreed.**
+
+```corpus id=D2
+Buy-Sell Agreement, Article IX, Transfer Restrictions. No holder may transfer stock to any person without the prior written consent of the corporation. Consent is required for every transfer, including a transfer to a trust established by a holder for the benefit of descendants, and may be withheld. A transfer without consent is not effective.
+```
+
+### D3. 2023 appraisal report
+
+Agrees with: **§F.7.** Merrit Valuation Advisors, 12 September 2023, $38,000,000, no discount study, never updated.
+
+```corpus id=D3
+Appraisal report issued 2023. The subject is a one hundred percent controlling and marketable interest in Cole Precision Components. The report concludes a value of thirty eight million dollars. The report contains no discount study and no analysis of lack of control or lack of marketability. The report has not been updated since issuance.
+```
+
+### D4. 2011 joint revocable trust
+
+Agrees with: **§F.2.** Cole Joint Revocable Trust, executed 22 March 2011.
+
+```corpus id=D4
+Joint revocable trust, executed 2011. The trust receives the residue of each settlor probate estate and holds it in a marital share and a family share. The trust is revocable during the joint lifetimes of the settlors.
+```
+
+### D5. 2011 last will and testament
+
+Agrees with: **§F.1 and §F.3.** The two 2011 wills, each pouring over to §F.2.
+
+```corpus id=D5
+Last will and testament, executed 2011 under Illinois law. The residue of the probate estate passes to the joint revocable trust. The will names the surviving spouse as executor and a descendant as successor executor.
+```
+
+### D6. Draft irrevocable trust instrument, unexecuted
+
+Agrees with: **§F.10 and §E.3.** The unexecuted 2026 trust draft and its §675(4)(C) substitution power.
+
+```corpus id=D6
+Draft irrevocable trust instrument, unexecuted. The settlor retains a power to substitute assets of equivalent value held in a nonfiduciary capacity. The instrument has not been signed and no trustee has accepted appointment.
+```
+
+### D7. Draft promissory note, unexecuted
+
+Agrees with: **§F.11 and §E.6.** The unexecuted demand note. Principal, rate and demand feature all restate §E.6.
+
+```corpus id=D7
+Draft promissory note, unexecuted. Principal of twenty million twenty thousand dollars. Interest only at three point eight two percent per annum, payable annually in arrears, with the entire principal payable on demand by the holder. The note is unsecured. No prepayment penalty applies.
+```
+
+### D8. Planning memorandum on the proposed transfer
+
+Agrees with: **§F.8, §E.4 and §E.2.** The 19 February 2026 memorandum, the seed gift and the 30% discount.
+
+```corpus id=D8
+Planning memorandum on the proposed transfer. A seed gift of fifty two non-voting units valued at two million two thousand dollars is to be made to the trust before any sale occurs. The memorandum asserts a combined discount of thirty percent for lack of control and lack of marketability on the non-voting units and cites no appraisal. The memorandum is dated and unsigned.
+```
+
+### D9. 2011 durable power of attorney
+
+Agrees with: **§F.4.** Durable powers of attorney for property, executed 22 March 2011.
+
+```corpus id=D9
+Durable power of attorney, executed 2011. The agent may act on financial matters upon the principal incapacity. The instrument has not been reviewed since execution.
+```
+
+### D10. 2011 healthcare directive and living will
+
+Agrees with: **§F.5.** Powers of attorney for health care, executed 22 March 2011.
+
+```corpus id=D10
+Healthcare directive and living will, executed 2011. The instrument names a healthcare agent and states preferences regarding life sustaining treatment. The instrument has not been reviewed since execution.
+```
+
+## The meeting excerpt
+
+`session-3` §07 puts this through its extraction exercise. It is a synthetic
+excerpt and no line of it was spoken by anyone.
+
+> **A CONFLICT WITH §A.5, IMPORTED DELIBERATELY AND NOT RESOLVED.** This excerpt
+> is an advisory meeting with an Advisor speaking, and §A.5 records **no
+> investment adviser of record**. Every lesson assumes an engagement between the
+> Coles and the student's firm; §A.5 denies it. Moving the excerpt here does not
+> settle that, it makes it unavoidable: the denial and the meeting now sit in
+> one file and one register row. Resolving it means either amending §A.5 to
+> record the engagement or rewriting what four lessons assume, and that is a
+> decision about the case rather than about this Part. Nothing here is
+> unsourced; the case contradicts itself, and the contradiction is now where a
+> reader of the case will meet it.
+
+The scoring heuristic at `session-3` §07 runs over **the student's note**, not
+over this text, so the five rubric elements are not a property of these lines.
+What IS a property of these lines is which elements a student can find at all.
+
+```speaker who=Advisor
+Last time we left the trust sale open. Where has that landed?
+```
+
+```speaker who=Meg
+It has not landed. A competitor wrote to me about buying the company last autumn. Nothing signed, nothing in writing, and Nathan does not know — he is in operations and I am not telling him until there is something to tell.
+```
+
+```speaker who=Advisor
+Does that change the timing on the note structure?
+```
+
+```speaker who=Meg
+That is what I need you to tell me. Counsel wants to keep the note callable on demand.
+```
+
+```speaker who=David
+I would want the appraisal looked at again before we sign anything. It is three years old and the company is not what it was then.
+```
+
+---
+
 # PART M — VERIFICATION
 
 **Arithmetic.** Every figure in Parts C, D, E, G, and H was computed independently on 2026-08-23 and reconciles. No figure in this file is drawn from memory.
