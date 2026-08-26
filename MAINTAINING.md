@@ -15,6 +15,7 @@ session-N/index.html  One self-contained lesson per session
 CASE.md               Canonical Cole household case block, the source of truth
 CHANGELOG.md          Human-readable record of every revision
 MAINTAINING.md        This file
+docs/deferred-work.md The single register of open work. Nothing else tracks it
 audit/                Dated audit reports against the lesson-builder protocol
 .nojekyll             Tells GitHub Pages to serve files as-is
 ```
@@ -557,6 +558,25 @@ visible and diffable. A human edits it; nothing infers it at runtime.
    describe what it contains.
 
 ## Known follow-ups
+
+> **`docs/deferred-work.md` IS THE SINGLE DEFERRAL REGISTER. Every open item
+> in this repository is a row in it, and open work is tracked nowhere else.**
+>
+> **The per-phase `§N.8 What Phase N leaves open` sections in
+> `docs/repo-updates-plan.md` point here and do not accumulate their own.**
+> §13.8, §15.4 and §16.8 were folded into the register on 2026-08-25 and are now
+> the history of what each phase found, not a queue. A phase that finds
+> something adds a row; it does not start a fourth list. Three parallel lists is
+> how an item stays open in one of them and closed in another with nothing
+> saying which is true.
+>
+> The bullets below are the pre-register backlog, folded in as DW-029 through
+> DW-032 and DW-037 through DW-040. **Four of them are stale and the register
+> says so** rather than deleting them, so they are not raised again as new: D14
+> is answered as D20, the 48 Part A violations now measure 0 hard and 13
+> advisory, the 27 mis-wired chips were rewired in Phase 3, and `session-1`'s
+> 17-minute discussion block was closed by DEC-2 / DEC-3. Read the register
+> first; read these for the reasoning behind them.
 
 - Self-host the three font families to retire the page-load external request,
   so a lesson renders with no network at all. The console's runtime request is
