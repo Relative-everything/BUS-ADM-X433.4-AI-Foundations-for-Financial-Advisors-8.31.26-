@@ -1260,8 +1260,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h2>The Last Prompt You Sent</h2>
   <p class="big">Not a good one. Not a work one. The last one, whatever it was, pasted exactly as you typed it &mdash; typos, missing context, all of it.</p>
 
-  <div class="rnote"><span class="rh">Instructor note &mdash; the standing ritual</span>This runs identically every session and takes eight minutes. Do not vary it, do not survey the room, and do not collect anything else here. The value is the comparison across five weeks, and that only exists if the instrument does not move.</div>
-
   <div class="ritual" data-task="t-cold-open" data-comp="timed-ritual">
     <label class="rlab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
     <textarea id="coldPrompt" placeholder="Paste it exactly. Do not clean it up &mdash; the typos are the useful part."></textarea>
@@ -1686,7 +1684,6 @@ OUTPUT
 When all four are complete: one paragraph per element, under 90 words each,
 then a list of every element where my answer was thin.</pre>
   <div class="row"><button class="btn" id="copyBtn">Copy prompt</button><span id="copyMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
-  <div class="instrline">Instructor note: the failure to watch for is a student whose assistant drafts on the first turn. That means the model inferred the alternatives. The alternatives are the one thing it cannot know.</div>
 
   <p class="src"><strong>Instructor verification required before teaching.</strong> Part A asks students to identify a planning rationale, and the answer panel is labelled on screen as pending the instructor's verification rather than stated as settled. This lesson does not assert any tax result, does not characterise the operation of any Code section or regulation, and does not state what an examiner would accept. The Cole transaction, its figures and the attorney's proposal are synthetic. Part B teaches the general documentation discipline — that evidence contemporaneous with a transaction is worth more than evidence created afterwards — and deliberately stops short of naming disclosure requirements. Structure restates the Session 3 syllabus bullet on documenting circumstances and the basis for recommendations. Journal of Accountancy (17 Nov 2025), <em>Writing an Effective AI Prompt for an Audit Trail</em>, is the Session 4 reading on the same problem from the audit side.</p>
 
@@ -1739,8 +1736,6 @@ then a list of every element where my answer was thin.</pre>
     <div class="row" id="revoteBtns" style="margin-top:16px"></div>
     <div id="revoteOut" class="mpanel keyhide" style="display:none"></div>
   </div>
-
-  <div class="instrline">Instructor: run the same three options as a Zoom poll at each vote so the room distributions are captured alongside the individual deltas this widget records. Decision rule — if fewer than 25% take "check less" on vote one, read the Magesh finding aloud before the defence phase rather than after, or the minority has nothing to defend.</div>
 
   <p class="src">Magesh et al. (2025) report that the tools tested made claims not supported by the sources they cited, which is the specific failure a reader who trusts the citation will not catch <span class="conf h" data-src="src-magesh">H</span>. Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025), <em>The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects from a Survey of Knowledge Workers</em>, Microsoft Research / CHI 2025 — the Session 5 reading; characterised here only by its title claim of self-reported reductions in cognitive effort <span class="conf m" data-src="src-lee-cognitive">M — full findings not re-verified in this build</span>. No claim is made here about the size or direction of any measured effect on verification behaviour.</p>
 
@@ -2465,7 +2460,7 @@ var QITEMS=[
     b.classList.add('picked');b.classList.add('act');
     var fb=d.querySelector('.qfb');
     fb.className='qfb '+(ok?'right':'wrong');
-    fb.innerHTML=esc(it.fb[k])+(it.split?'<br><br><em>Instructor: this is the item designed to split the room. Poll the three dispositions before revealing.</em>':'');
+    fb.innerHTML=esc(it.fb[k]);
     d.classList.add('done');done++;if(ok)right++;
     S.textContent=done+' of '+QITEMS.length+' answered \u00b7 '+right+' correct';
    }});
@@ -2629,7 +2624,6 @@ function showRevote(){
   h+=moved?'<span class="good">You moved. Say out loud which sentence moved you \u2014 that sentence is the finding, not the vote.</span>'
           :'<span class="good">Zero delta. That is a finding, not a failure: it means a position held under evidence, which is the same epistemic move this course asks you to make about model output.</span>';
  }
- h+='<br><br><span class="hd">Instructor</span><span style="color:#6F7B78">Display both Zoom poll distributions side by side and say nothing about the delta. The room aggregate is the artefact; this widget only records the individual.</span>';
  R.className='mpanel has keyhide';R.innerHTML=h;R.style.display='block';
 }
 (function(){

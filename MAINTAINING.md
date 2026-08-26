@@ -275,18 +275,21 @@ every lesson in the same commit.
 
 ### Standing purge list
 
-Retired names. Any hit in the hub or a lesson is a defect. Historical mentions
-inside `CHANGELOG.md`, its rendered page at `changelog/`, and `audit/` are the
-record of the retirement and are deliberately kept, so scope the purge check to
-the hub and the lessons rather than running it across the whole tree.
+Retired strings. Any hit in the hub or a lesson is a defect. Most are retired
+names; the last row is not a name at all, and the list holds strings rather than
+names because the test is the same either way. Historical mentions inside
+`CHANGELOG.md`, its rendered page at `changelog/`, and `audit/` are the record of
+the retirement and are deliberately kept, so scope the purge check to the hub and
+the lessons rather than running it across the whole tree.
 
-| Name | Retired | Replaced by |
+| String | Retired | Replaced by |
 |---|---|---|
 | Okonkwo (also Okonkwo-Reyes, any dash) | 2026-08-18 | Cole |
 | Adaeze | 2026-08-18 | Meg Cole |
 | Ilesanmi | 2026-08-18 | (no equivalent, character removed) |
 | Reyes | 2026-08-18 | Cole |
 | Canvas, the LMS | 2026-08-25 | "the course site" |
+| instructor note | 2026-08-26 | `instructor-notes/session-N.md`, outside the served pages |
 
 Match case-insensitively on the stem so punctuation variants cannot hide:
 `grep -rin okonkwo`.
@@ -302,6 +305,34 @@ submission platform, because the platform is the institution's choice and can
 change between cohorts while the lessons do not. Name the destination in
 platform-neutral words - never an action with no destination at all, which is
 the defect that a careless removal creates.
+
+**`instructor note` needs one exclusion, and it is not in this repository's
+gift.** Every lesson and the hub carry the line
+
+```
+     --warn rust   = caution, failure states, instructor notes
+```
+
+inside the `STYLE:BEGIN`/`STYLE:END` fence. That fence is a byte-exact copy of
+the skill's `assets/tokens.css`, written by `restyle_sweep.py`, and the string
+lives at `tokens.css:6` and again at `references/design-system.md:26`. The repo's
+own classifier calls those six hits **R4**, the region `EDITORIAL.md` marks
+*never in scope, owned by `verify-style.mjs`*. Hand-editing them makes all six
+files STALE against the skill's assets and `verify-style.mjs` exits 1; the next
+sweep puts the string back. So the purge check is scoped to everything outside
+the fence, and the six hits are routed upstream:
+
+```bash
+for f in index.html session-*/index.html; do
+  awk '/\/\* STYLE:BEGIN/{s=1} /\/\* STYLE:END/{s=0;next} !s' "$f" \
+    | grep -in "instructor note" | sed "s|^|$f:|"
+done                                   # must print nothing
+```
+
+**Why the string is gone at all.** A note addressed to the person teaching is
+not lesson copy, and a reader who views source is a reader. The notes live in
+`instructor-notes/`, one file per lesson, and nothing links them from a served
+page. `index.html` carries no notes file because it never carried a note.
 
 ## Adding a session
 
