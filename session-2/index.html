@@ -1246,7 +1246,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 
   <h3>Retrieval bridge &mdash; Session 1 mechanism</h3>
-  <p>Fourteen days have passed since Session 1. Four questions, ungraded, no notes. Answer each in the box before anything is revealed. Getting one wrong is worth more to you than getting it right, provided you commit to an answer first.</p>
+  <p>Fourteen days have passed since Session 1. Four questions, no notes. Answer each in the box before anything is revealed. Getting one wrong is worth more to you than getting it right, provided you commit to an answer first.</p>
   <div class="panel" id="bridge"></div>
   <div class="row" style="margin-top:-12px">
     <button class="btn ghost mini" id="bridgeReveal">Reveal all four</button>
@@ -1271,7 +1271,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="cards">
     <div class="card"><span class="num">Outcome 01</span><h4>A working model of sampling</h4><p>Why the same prompt returns different text, and what that does to an audit trail.</p></div>
     <div class="card"><span class="num">Outcome 02</span><h4>A tier-selection rule</h4><p>Cost per finished task, benchmarked, rather than cost per token.</p></div>
-    <div class="card"><span class="num">Outcome 03</span><h4>Your submitted prompts, scored and rewritten</h4><p>The three you wrote before being taught a framework, scored element by element and one of them rebuilt in place.</p></div>
+    <div class="card"><span class="num">Outcome 03</span><h4>Your own prompts, scored and rewritten</h4><p>The three you wrote before being taught a framework, scored element by element and one of them rebuilt in place.</p></div>
     <div class="card"><span class="num">Outcome 04</span><h4>A citation verification routine</h4><p>Four checks, in order, applied to tax authority you did not write.</p></div>
   </div>
 
@@ -1293,7 +1293,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="doit">
     <span class="plab">Before we start</span>
     <p><strong>Open the AI tool you subscribed to, in a new tab, now.</strong> Every section below has something to run. You will finish this session with a baseline measurement, a rewritten prompt, a partner's review of your work, and Part 1 assigned.</p>
-    <p><strong>Open your submitted Prompt Engineering homework as well</strong> &mdash; all three templates, your cited techniques, and your discernment statement. You will need the exact text in section 6b.</p>
+    <p><strong>Open the three prompt templates you wrote as well</strong> &mdash; all three templates, your cited techniques, and your discernment statement. You will need the exact text in section 6b.</p>
   </div>
 
 
@@ -1395,8 +1395,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h2>The Last Prompt You Sent</h2>
   <p class="big">Not a good one. Not a work one. The last one, whatever it was, pasted exactly as you typed it &mdash; typos, missing context, all of it.</p>
 
-  <div class="rnote"><span class="rh">Instructor note &mdash; the standing ritual</span>This runs identically every session and takes eight minutes. Do not vary it, do not survey the room, and do not collect anything else here. The value is the comparison across five weeks, and that only exists if the instrument does not move.</div>
-
   <div class="ritual" data-task="t-cold-open" data-comp="timed-ritual">
     <label class="rlab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
     <textarea id="coldPrompt" placeholder="Paste it exactly. Do not clean it up &mdash; the typos are the useful part."></textarea>
@@ -1404,7 +1402,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="rout" id="coldOut"><span class="rnil">Paste something and press the button.</span></div>
   </div>
 
-  <p>Same field, one session on. Session 1 said nothing in this prompt read your intent. Tonight you learn the framework that fixes it, and \u00a704 scores the three templates you submitted against that framework.</p>
+  <p>Same field, one session on. Session 1 said nothing in this prompt read your intent. Tonight you learn the framework that fixes it, and \u00a704 scores the three templates you wrote against that framework.</p>
 
   <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen &mdash; the comparison across sessions is the point.</div></div>
 </section>
@@ -1612,7 +1610,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 <section class="slide" id="s6b" data-nav="Your prompts">
   <div class="eyebrow"><span>04 &middot; Workshop</span><span class="mins">7 min</span></div>
-  <h2>Scoring Your Submitted Prompts Against P.T.C.F</h2>
+  <h2>Scoring Your Own Prompts Against P.T.C.F</h2>
   <div class="verify">
   <span class="vh">Requires instructor verification before it is taught as settled</span>
   Every tax and legal characterisation in this session is posed as a question, not stated as a holding. Verify each against primary authority before answering it in class:
@@ -1625,11 +1623,11 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <em>Kessler v. Commissioner</em> is a deliberately fabricated citation used as exercise material in &sect;05, labelled on the page and in the footer.
 </div>
 
-  <p class="big">You wrote three prompt templates and submitted them before this session. You had not been taught a prompting framework when you wrote them. That was deliberate.</p>
+  <p class="big">You wrote three prompt templates before this session. You had not been taught a prompting framework when you wrote them. That was deliberate.</p>
 
   <p>The sequencing exists so that this comparison is available to you. A framework taught before an attempt is a set of rules you comply with. A framework taught after an attempt is a diagnosis of something you already produced, and the gap between the two versions is yours rather than mine. Wrong first attempts followed by correction outperform being told the right answer first, which is the same finding that governs every prequestion in this file.</p>
 
-  <p>Score each of your three submitted prompts element by element. Then rewrite the weakest one in the editor below. <strong>The rewrite, not the original, is what carries forward</strong> &mdash; into the &sect;08 audit, into the peer review, and into your Part 1 template library.</p>
+  <p>Score each of your three prompts element by element. Then rewrite the weakest one in the editor below. <strong>The rewrite, not the original, is what carries forward</strong> &mdash; into the &sect;08 audit, into the peer review, and into your Part 1 template library.</p>
 
   <div class="panel" data-task="t-s6b" data-comp="multi-column-sorter">
     <div class="row" style="margin-bottom:18px">
@@ -1638,8 +1636,8 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       <button class="btn sel mini" data-hw="2">Prompt 3</button>
       <span class="mono dim" style="font-size:12px" id="hwWhich"></span>
     </div>
-    <label class="plab" for="hwText">Paste the prompt exactly as you submitted it, typos included</label>
-    <textarea id="hwText" placeholder="Paste your submitted prompt here. Do not clean it up first &mdash; the original is the measurement."></textarea>
+    <label class="plab" for="hwText">Paste the prompt exactly as you wrote it, typos included</label>
+    <textarea id="hwText" placeholder="Paste your prompt here. Do not clean it up first &mdash; the original is the measurement."></textarea>
     <div id="hwScore" style="margin-top:20px"></div>
     <div class="out" id="hwVerdict" style="margin-top:16px"></div>
   </div>
@@ -1664,11 +1662,11 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="doit">
     <span class="plab">Group report &mdash; 2 minutes</span>
-    <p>One number and one sentence: which element you scored lowest across all three submitted prompts, and what you had assumed the model already knew.</p>
-    <p>Your discernment statement predicted what each prompt would return. Compare that prediction against what the original actually returned. A prediction that was accurate about a bad output is a different skill from a prompt that produced a good one, and both are graded.</p>
+    <p>One number and one sentence: which element you scored lowest across all three prompts, and what you had assumed the model already knew.</p>
+    <p>Your discernment statement predicted what each prompt would return. Compare that prediction against what the original actually returned. A prediction that was accurate about a bad output is a different skill from a prompt that produced a good one, and both are worth having.</p>
   </div>
 
-  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Score all three submitted prompts element by element, then rewrite the weakest in the editor.</div></div>
+  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Score all three prompts element by element, then rewrite the weakest in the editor.</div></div>
 
 </section>
 
@@ -1722,7 +1720,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   </div>
 
   <h3>Specification Diagnosis on Your Own Prompt</h3>
-  <p>Now paste one of your own submitted prompts, or the buy-sell prompt above. The checker looks for ten specification dimensions that determine whether the output can be verified. It runs entirely in this page; nothing is transmitted.</p>
+  <p>Now paste one of your own prompts, or the buy-sell prompt above. The checker looks for ten specification dimensions that determine whether the output can be verified. It runs entirely in this page; nothing is transmitted.</p>
 
   <div class="panel">
     <label class="plab" for="promptIn">Your prompt</label>
@@ -1947,16 +1945,15 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 <section class="slide" id="s12" data-nav="Final project">
   <div class="eyebrow"><span>09 &middot; Assignment</span><span class="mins">7 min</span></div>
   <h2>Final Project Part 1 and Baseline Capture</h2>
-  <p class="big">Part 1 is assigned now. It is 70% of the final project grade, and the final project is 50% of the course grade &mdash; so this single deliverable is 35% of what you leave with.</p>
+  <p class="big">Part 1 is a scalable AI-enabled workflow for a recurring task in your own practice. The baseline it is measured against cannot be reconstructed once you have used a tool on the task, so it is captured in this room.</p>
 
   <div class="cards">
-    <div class="card"><span class="num">What it is</span><h4>A scalable AI-enabled workflow for a recurring task in your own practice</h4><p>Scalable means two things and both are graded: it works for the next twenty clients rather than the one you built it on, and another advisor can run it without you in the room.</p></div>
-    <div class="card warn"><span class="num">Revised deadline</span><h4>48 hours before Session 4</h4><p>Before Session 4, not at the end of it. A handoff deadline moves 48 hours earlier than the session that distributes the packages, so that yours can be screened and handed out <em>in</em> Session 4. That gives your recipient the whole gap before Session 5 rather than the tail of it.</p></div>
+    <div class="card"><span class="num">What it is</span><h4>A scalable AI-enabled workflow for a recurring task in your own practice</h4><p>Scalable means two things: it works for the next twenty clients rather than the one you built it on, and another advisor can run it without you in the room.</p></div>
     <div class="card"><span class="num">The handoff</span><h4>A single email, body reading only &ldquo;See attached&rdquo;</h4><p>No context in the email. No explanation in the covering note. Everything a classmate needs lives inside the attachments, because that is the test.</p></div>
     <div class="card warn"><span class="num">Two absolute rules</span><h4>Transcript to instructor only. No client data anywhere.</h4><p>The build transcript goes to me and never to your classmate. No real client information appears in the workflow, the package, or the transcript. A transcript containing client nonpublic personal information is both an integrity violation and the exact exposure this course exists to prevent.</p></div>
   </div>
 
-  <p>The single most common way this project loses marks is a missing or invented baseline, so we capture yours before you leave the room. The Session 1 baseline is a required component of the submission and it is graded against in Session 5.</p>
+  <p>A missing or invented baseline is the most common way this project falls apart, so we capture yours before you leave the room.</p>
 
   <div class="panel" data-task="t-s12" data-comp="timed-ritual">
     <span class="plab">Baseline capture &mdash; complete this now</span>
@@ -1972,19 +1969,19 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <div class="out has" id="baseOut" style="margin-top:18px"></div>
     <div class="row" style="margin-top:14px">
       <button class="btn mini" id="baseCopy">Copy baseline record</button>
-      <span class="mono dim" style="font-size:12px">Paste this into your project notes. It is a required element of the Part 1 submission.</span>
+      <span class="mono dim" style="font-size:12px">Paste this into your project notes.</span>
     </div>
   </div>
 
   <h3>Part 1 deliverable checklist</h3>
-  <p>Seven required elements. Tick what you have planned for; the ones left unticked are what you will be missing when the package is due.</p>
+  <p>Seven elements. Tick what you have planned for; the ones left unticked are what you are missing.</p>
 
   <div class="panel">
     <div id="checklist" data-task="t-s10" data-comp="commit-first-mcq"></div>
     <div class="out" id="checkOut" style="margin-top:18px"></div>
   </div>
 
-  <h3>Due before Session 3</h3>
+  <h3>The First Draft</h3>
   <p>A first draft of Part 1: the target task, your model and tier choice with the reason, and your initial prompts. &sect;02 is where the tier reason comes from. This section is where the target task comes from. &sect;04 produced at least one of the initial prompts. You have all three already.</p>
 
   <div class="doit">
@@ -2018,7 +2015,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
       <tr><td>01 &middot; Mechanism</td><td>Temperature and Output Variance</td><td class="n">5</td></tr>
       <tr><td>02 &middot; Economics</td><td>Cost Per Task Versus Cost Per Token</td><td class="n">6</td></tr>
       <tr><td>03 &middot; Framework</td><td>Persona, Task, Context, Format</td><td class="n">6</td></tr>
-      <tr><td>04 &middot; Workshop</td><td>Scoring Your Submitted Prompts Against P.T.C.F</td><td class="n">7</td></tr>
+      <tr><td>04 &middot; Workshop</td><td>Scoring Your Own Prompts Against P.T.C.F</td><td class="n">7</td></tr>
       <tr><td>05 &middot; Diagnostic</td><td>Prompt Specification Triage</td><td class="n">5</td></tr>
       <tr><td>06 &middot; Technique</td><td>The Interview Rewrite</td><td class="n">6</td></tr>
       <tr><td>07 &middot; Verification</td><td>Citation Failure Types on the Cole IDGT Transaction</td><td class="n">8</td></tr>
@@ -2039,7 +2036,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <h4 style="margin-bottom:18px">Sources</h4>
     <ol>
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 28ab015ed622e7e5933b783a8d21378ea3dffee362285e2a234b26fe848c2d49 -->
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 a351929adf64c4e6255c1f86ba49a007ee53077644d332f17a7132c470f88fa5 -->
       <li id="src-pricing">Anthropic. <em>Pricing</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com/docs/en/about-claude/pricing</a> Retrieved 2026, August. Retrieval dates differ across lessons; see DATA-PULL.md. Used for: the published rates behind the blended token price. <span class="conf h" data-src="src-pricing">H</span></li>
       <li id="src-anthropic-fluency" data-nochip="background">Anthropic. (2025). <em>AI fluency: Frameworks and foundations</em>. Anthropic. Used for: assigned reading; no page claim rests on it.</li>
       <li id="src-aa">Artificial Analysis. <em>Artificial Analysis Intelligence Index and cost-per-task figures</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a> Retrieved 2026, August. Retrieval dates differ across lessons; see DATA-PULL.md. Used for: index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5. <span class="conf m" data-src="src-aa">M</span></li>
@@ -2052,7 +2049,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
       <li id="src-laplace" data-nochip="background">Laplace, P. S. (1902). <em>A philosophical essay on probabilities</em>. Truscott &amp; Emory, Trans.; original work published 1814. Chapter II, "Concerning Probability," pp. 3-8. Used for: assigned reading behind Appendix B2; no measured claim rests on it.</li>
       <li id="src-magesh">Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-free? Assessing the reliability of leading AI legal research tools</em>. Journal of Empirical Legal Studies 22(2), 216. <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">reglab.stanford.edu</a> Used for: the measured hallucination rates for legal research tools. <span class="conf h" data-src="src-magesh">H</span></li>
       <li id="src-morningstar" data-nochip="background">Morningstar. (2025, October 15). <em>AI for advisors: Enhancing client conversations</em>. Morningstar. Used for: assigned reading; no page claim rests on it.</li>
-      <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: every worked example, exercise input and discussion prompt. <span class="conf l" data-src="src-case">L</span></li>
+      <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: every worked example, exercise input and discussion prompt. Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
       <li id="src-kessler" data-nochip="fabricated"><b>Does not exist.</b> <em>Kessler v. Commissioner, 152 T.C. 88 (2019)</em>. Used for: exercise material in the §05 citation triage, labelled as fabricated on the page.</li>
       <li id="src-t3-survey">T3 / Inside Information. (2026, March). <em>Software Survey 2026</em>. as summarised in Kitces.com Weekend Reading, March 2026. Used for: the adoption shares in the Appendix B4 adoption-gap discussion. <span class="conf h" data-src="src-t3-survey">H</span></li>
       <li id="src-irc" data-nochip="authority">United States Congress. <em>Internal Revenue Code §§ 671, 675, 2036, 2702, 7520</em>. Statutory text. Used for: named descriptively alongside the case structure; evidences no page claim.</li>
@@ -2716,7 +2713,7 @@ var RUB={
     var v=n>=7?'Handoff-ready. A classmate could run this without asking you a question.'
         :n>=5?'Usable by you, fragile in someone else\u2019s hands. The missing items are exactly what they will email you about.'
         :'Not a template yet. It is a note to yourself that happens to be addressed to a model.';
-    $('rubricOut').textContent='SCORE  '+n+' / 8\n\n'+v+'\n\nThe eight criteria are the same ones the Part 1 handoff is graded against, at a smaller scale. Scalability in this course means it works for the next twenty clients and someone else can run it without you in the room.';
+    $('rubricOut').textContent='SCORE  '+n+' / 8\n\n'+v+'\n\nScalability in this course means it works for the next twenty clients and someone else can run it without you in the room.';
     $('rubricOut').classList.toggle('has',n>=7);
   }
   document.querySelectorAll('[data-tpl]').forEach(function(b){
@@ -2752,11 +2749,11 @@ var PEER=[
     var ks=Object.keys(vals);
     if(ks.length<4){$('peerOut').textContent='Score all four to see the reading.';$('peerOut').classList.remove('has');return}
     var t=ks.reduce(function(a,k){return a+vals[k]},0);
-    var band=t>=10?'Handoff-ready. Tell the author which single criterion cost them the remaining points.'
+    var band=t>=10?'Handoff-ready. Tell the author which single criterion is still missing.'
       :t>=7?'Workable with one fix. Name it precisely \u2014 \u201cadd a line bounding the source\u201d beats \u201cit needs more detail.\u201d'
       :t>=4?'The author can run it and nobody else can. That is the exact failure Part 2 of the final project is designed to expose.'
       :'It did not survive contact with a second person. Better to find that out today than in Session 5.';
-    $('peerOut').textContent='TOTAL  '+t+' / 12\n\n'+band+'\n\nIn Session 5 a failure to run is graded against the builder, not the presenter. The same principle applies here: if it did not work in your hands, that is information about the template.';
+    $('peerOut').textContent='TOTAL  '+t+' / 12\n\n'+band+'\n\nIf it did not work in your hands, that is information about the template.';
     $('peerOut').classList.add('has');
   }
   render();
@@ -2804,7 +2801,7 @@ var CHK=[
     $('checklist').innerHTML=h;
     $('checklist').querySelectorAll('.ck').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-i');st[i]=!st[i];render()}});
     var n=Object.keys(st).filter(function(k){return st[k]}).length;
-    $('checkOut').textContent='PLANNED  '+n+' / 7\n\nHandoff package 15%  \u00b7  Scalability 30%  \u00b7  Iteration and documentation 25%\nDeliverable correctness 25%  \u00b7  Peer feedback 5%\n\nPart 1 is 70% of the project grade; Part 2 is 30%.\nThe finished product alone does not earn full credit on iteration \u2014\nthe transcript has to show what failed on the way there.';
+    $('checkOut').textContent='PLANNED  '+n+' / 7\n\nThe finished product alone is not the point \u2014\nthe transcript has to show what failed on the way there.';
     $('checkOut').classList.toggle('has',n===7);
   }
   render();

@@ -109,6 +109,19 @@ export function renderEntry(rec, lesson) {
   }
   const used = rec.used_for[lesson];
   if (used) bits.push(`Used for: ${dot(esc(used))}`);
+  /* THE DISCLOSURE, AND THE FLAG THAT NOW HAS A CONSUMER. `disclose_on_page`
+     declares "the page must say so where they appear". Until this line it was
+     parsed into a boolean by build-sources.mjs and read by nothing, which is how
+     the synthetic-case disclosure came off four lesson footers when Phase 3
+     canonicalised src-case: the arbitration kept every clause in `scope` and the
+     renderer had never emitted `scope`. Nobody chose it; nothing was watching.
+     See docs/repo-updates-plan.md §16.6(c) and docs/deferred-work.md DW-011.
+
+     `scope` IS EMITTED ONLY BEHIND THE FLAG. A record's scope is the register's
+     own note about what the record covers, and most of them are maintainer-facing;
+     the flag is the declaration that this one is a disclosure the reader is owed.
+     Gate on it, not on the presence of a scope. */
+  if (rec.disclose_on_page === true && !isAbsent(rec.scope)) bits.push(dot(esc(rec.scope)));
 
   const attrs = [`id="${rec.key}"`];
   if (rec.chip_exempt) attrs.push(`data-nochip="${rec.kind}"`);

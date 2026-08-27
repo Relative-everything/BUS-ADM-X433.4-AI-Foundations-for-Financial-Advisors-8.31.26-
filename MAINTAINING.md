@@ -275,18 +275,23 @@ every lesson in the same commit.
 
 ### Standing purge list
 
-Retired names. Any hit in the hub or a lesson is a defect. Historical mentions
-inside `CHANGELOG.md`, its rendered page at `changelog/`, and `audit/` are the
-record of the retirement and are deliberately kept, so scope the purge check to
-the hub and the lessons rather than running it across the whole tree.
+Retired strings. Any hit in the hub or a lesson is a defect. Most are retired
+names; the last row is not a name at all, and the list holds strings rather than
+names because the test is the same either way. Historical mentions inside
+`CHANGELOG.md`, its rendered page at `changelog/`, and `audit/` are the record of
+the retirement and are deliberately kept, so scope the purge check to the hub and
+the lessons rather than running it across the whole tree.
 
-| Name | Retired | Replaced by |
+| String | Retired | Replaced by |
 |---|---|---|
 | Okonkwo (also Okonkwo-Reyes, any dash) | 2026-08-18 | Cole |
 | Adaeze | 2026-08-18 | Meg Cole |
 | Ilesanmi | 2026-08-18 | (no equivalent, character removed) |
 | Reyes | 2026-08-18 | Cole |
 | Canvas, the LMS | 2026-08-25 | "the course site" |
+| instructor note | 2026-08-26 | `instructor-notes/session-N.md`, outside the served pages |
+| **Tier A — grading.** graded · grading · a grade · rubric *(as a course instrument)* · graded component · loses marks · full credit · submit · submitted · submission · turn in · points *(as course credit)* · pass/fail · any weight or percentage of a grade | 2026-08-27 | nothing — deleted. Canvas is the sole authority for grading |
+| **Tier B — between-session obligation.** due · due before Session N · deadline · 48 hours before Session N · before the week is out · ahead of Session N · bring X to Session N · read before Session N · was due today | 2026-08-27 | nothing — deleted, or "Reading for Session N" where the row is a reading list |
 
 Match case-insensitively on the stem so punctuation variants cannot hide:
 `grep -rin okonkwo`.
@@ -303,7 +308,95 @@ change between cohorts while the lessons do not. Name the destination in
 platform-neutral words - never an action with no destination at all, which is
 the defect that a careless removal creates.
 
+**`instructor note` needs one exclusion, and it is not in this repository's
+gift.** Every lesson and the hub carry the line
+
+```
+     --warn rust   = caution, failure states, instructor notes
+```
+
+inside the `STYLE:BEGIN`/`STYLE:END` fence. That fence is a byte-exact copy of
+the skill's `assets/tokens.css`, written by `restyle_sweep.py`, and the string
+lives at `tokens.css:6` and again at `references/design-system.md:26`. The repo's
+own classifier calls those six hits **R4**, the region `EDITORIAL.md` marks
+*never in scope, owned by `verify-style.mjs`*. Hand-editing them makes all six
+files STALE against the skill's assets and `verify-style.mjs` exits 1; the next
+sweep puts the string back. So the purge check is scoped to everything outside
+the fence, and the six hits are routed upstream:
+
+```bash
+for f in index.html session-*/index.html; do
+  awk '/\/\* STYLE:BEGIN/{s=1} /\/\* STYLE:END/{s=0;next} !s' "$f" \
+    | grep -in "instructor note" | sed "s|^|$f:|"
+done                                   # must print nothing
+```
+
+**Why the string is gone at all.** A note addressed to the person teaching is
+not lesson copy, and a reader who views source is a reader. The notes live in
+`instructor-notes/`, one file per lesson, and nothing links them from a served
+page. `index.html` carries no notes file because it never carried a note.
+
+**The six surviving `instructor note` hits do not violate the rule, and here is
+the test that says so.** `index.html:19` and `session-*/index.html:19` (`:24` in
+`session-0.1`) each carry the palette legend line inside the
+`STYLE:BEGIN`/`STYLE:END` fence. The repo's own classifier calls all six **R4**,
+which `EDITORIAL.md` marks *never in scope, owned by `verify-style.mjs`*, and
+which the purge list has never governed. They are byte-identical to the skill's
+`assets/tokens.css:6`, they are restored by `restyle_sweep.py` on every run, and
+hand-editing them makes all six files STALE so `verify-style.mjs` exits 1. The
+fix is upstream and is tracked as **DW-051**. The scoped check above is the one
+that must print nothing; a raw `grep -ri "instructor note"` returning exactly
+those six lines is the expected state, not a defect.
+
+**Tier A and Tier B are why the course-policy strings are gone.** Nothing in this
+repository is graded and it never will be. The repository is a live visual aid a
+room follows during a lecture; **Canvas is the sole authority for dates,
+deadlines, submission and grading**, and it is already built. A sentence here
+asserting a grade, a due date or an obligation is not merely stale — it has no
+standing to make the claim, and two sources of truth for a deadline is worse than
+one wrong one.
+
+**What Tier A and Tier B do NOT reach, because deleting these would break the
+lesson rather than fix it:**
+
+| Kept | Example | Why |
+|---|---|---|
+| In-class instruction | *"Next 10 minutes / You / Open it cold"*, *"Do this now — 6 minutes, in pairs"*, every work-along gate | This is the visual aid working. It is the reason the file exists |
+| A widget's own score | *"SCORE 8 / 8"*, *"TOTAL 12 / 12"*, *"Rubric coverage"* | Feedback computed in the room, not a course grade. A course grade is Canvas's; a diagnostic is the page's |
+| Cross-session pedagogy | retrieval bridges, the case spine's artifact chain, spiral declarations | Ratified constructs. Held open as **DW-050**, not edited piecemeal |
+| Regulatory deadlines | Regulation S-P's 30-day notification clock in `session-4` | A deadline **in the case**, which is the thing being taught |
+| Data-handling rules | *"No client nonpublic personal information may appear in any work you produce in this course"* | A safety rule, not a grading rule. Reworded off "submission", kept in force |
+
+**`session-0.1` is excluded from Tier A and Tier B, permanently, by instructor
+decision, and here is the test that says so.** It is **not part of the current
+offering** — it is a primer for a future course — so the ungraded-repo argument
+above does not reach it: whatever it says about grading is a claim about a course
+that has not been scheduled, not a second source of truth against Canvas. It
+**stays in the repository, stays linked from the hub at `index.html:1045`, and
+stays in every validator population unchanged.**
+
+**MUST NOT be purged**, and the reason is mechanical rather than editorial. Its
+`LMBOX` and `LMSTYLE` fences are byte-paired with `session-1`'s, asserted by the
+md5 loop in the pre-push gate above and counted by `A9b` as shared boilerplate.
+Editing either copy alone breaks the pairing — measured, not assumed: removing
+one clause from `session-1`'s copy raised `A9b` from 6 distinct shared blocks to
+7. So a Tier A or Tier B string inside a fence cannot be purged from one lesson,
+and purging it from both means editing `session-0.1`, which this decision
+forbids. The disposition is held open for a later phase as **DW-057**.
+
+**One Tier A string survives in `session-1` and it is ACCEPTED, not outstanding.**
+`session-1:1349` — *"Nothing is graded on it and nothing breaks without it"* —
+sits inside that `LMBOX` fence. The instructor accepted it as-is on 2026-08-27:
+it **disclaims** grading rather than asserting it, so it is not the defect Tier A
+exists to catch, and editing it would cost the `session-0.1` byte-pairing for no
+gain. **DW-048, closed. Do not re-open it.**
+
 ## Adding a session
+
+> **No session is owed.** The complete set is `index.html` + `session-0.1` +
+> sessions 1-4. **Session 5 is a student presentation meeting and no
+> `session-5/index.html` is owed, now or later** — the number below is a generic
+> example of the next session, not a to-do. Instructor decision, 2026-08-27.
 
 1. Create `session-5/index.html`.
 2. Add a card in `index.html`, copying an existing one and removing the `soon`
@@ -573,8 +666,34 @@ deliberately, or it silently stops catching anything:
    raise one to make a failure go away — that is the one edit the file exists to
    prevent.
 4. `node scripts/test-editorial-regions.mjs` must pass; T7 reads the baseline.
-5. Commit the baseline change on its own, so the diff shows exactly which figure
-   moved and by how much.
+5. **Open a row in `docs/deferred-work.md` in the same commit** (see the rule
+   below).
+6. Commit the baseline change on its own where you can, so the diff shows exactly
+   which figure moved and by how much. **T7 can take that choice away**: it
+   requires the baseline to reproduce the classifier exactly, so a cleanup that
+   moves a counted figure fails T7 until the baseline moves with it. Where that
+   happens the lowering rides in the cleanup's own commit, and step 5 is what
+   keeps it visible.
+
+**STANDING RULE — a lowered count is a row in `docs/deferred-work.md`, in the
+same commit.** Any figure in `scripts/editorial-baseline.json` that goes DOWN
+must be recorded there as a new row, carrying **the delta and the reason**: which
+rule and file, the before and after numbers, and what edit moved them. Not the
+next commit, not the phase write-up. The same commit.
+
+**The reason is that lowering a ratchet spends coverage, and spending it quietly
+is how the ratchet stops meaning anything.** A raised figure is impossible by
+rule; a lowered one is legitimate and therefore invisible, because the check goes
+on passing. The register is the only place a reader can see that the corpus is
+now measured against a slacker bar than it was, and why. Steps 1-4 make the
+lowering correct. This step makes it *reviewable*: a row nobody can defend is a
+lowering that should not have happened.
+
+Three lowerings were made before this rule existed and are recorded
+retroactively as **DW-045**. `scripts/editorial-baseline.json`'s own `A9` note is
+the narrative; the register is the index into it. The narrative is not a
+substitute for the row — it lives in the file being weakened, which is the one
+place a reader checking whether the bar moved would not think to look.
 
 ### The region classifier
 

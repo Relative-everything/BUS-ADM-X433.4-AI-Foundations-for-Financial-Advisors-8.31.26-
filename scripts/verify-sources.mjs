@@ -79,58 +79,78 @@ const gaps = [...sources.values()].filter((r) =>
   ['author', 'publisher', 'link', 'published', 'last_retrieved'].some((f) => isAbsent(r[f]) && r[f] !== 'not applicable'));
 console.log(`----  ${gaps.length} record(s) carry at least one ${UNVERIFIED} field; BIBLIOGRAPHY.md prints every one`);
 
-/* ---- disclose_on_page, and whether anything acts on it -------------------- */
+/* ---- disclose_on_page, and the check that it is what gates the disclosure -- */
 /* SOURCES.md declares disclose_on_page as "the page must say so where they
-   appear". build-sources.mjs parses it into a boolean and NOTHING READS IT:
-   inject-sources.mjs renders author, title, publisher, link, retrieval date,
-   used_for and the chip, and never rec.scope. So the flag that mandates a page
-   disclosure has no consumer, and the disclosure it guards reaches the reader
-   only where somebody wrote it into the prose by hand.
+   appear". Until Phase 4 build-sources.mjs parsed it into a boolean and NOTHING
+   READ IT, so the flag that mandates a page disclosure had no consumer and the
+   disclosure it guards reached the reader only where somebody wrote it into the
+   prose by hand. That is how the synthetic-case disclosure came off all four
+   lesson footers when Phase 3 canonicalised src-case: the arbitration kept every
+   clause in the record's `scope`, and the renderer had never emitted `scope`.
+   Nobody chose it; nothing was watching.
 
-   That is how the synthetic-case disclosure came off all four lesson footers
-   when Phase 3 canonicalised src-case: the arbitration kept every clause in the
-   record's `scope`, and the renderer has never emitted `scope`. Nobody chose
-   it; nothing was watching.
+   inject-sources.mjs renderEntry() NOW EMITS rec.scope, and only when
+   rec.disclose_on_page === true. This block is the check on that gate, and it
+   tests BOTH directions, because a gate that only ever fires open is not a gate:
 
-   This block does not fix it — restoring a disclosure to four student-facing
-   footers is the instructor's call, not a build's. It MEASURES it, on every
-   run, so the gap cannot go quiet again. */
+     1. every record with the flag renders its scope in every citing lesson
+     2. every record without the flag renders no scope anywhere
+
+   Both are hard failures. Direction 1 catches a footer that stopped carrying a
+   disclosure it is owed; direction 2 catches a maintainer-facing scope note
+   leaking onto a student-facing page. Neither can go quiet again.
+
+   docs/repo-updates-plan.md §16.6(c); docs/deferred-work.md DW-011. */
+const footers = new Map(LESSONS.map((l) => [l, readFileSync(join(REPO, l, 'index.html'), 'utf8')]));
+/* The comparison probe is the scope's FIRST SENTENCE, capped, because that is
+   the clause a reader would recognise and it survives the entity escaping the
+   renderer applies to the rest. An empty probe means there is nothing to look
+   for and the record is not testable either way. */
+const probe = (rec) => (rec.scope || '').split(/\.\s/)[0].slice(0, 40).trim();
+const entryFor = (lesson, key) => {
+  const m = (footers.get(lesson) || '').match(new RegExp(`<li id="${key}"[^>]*>([\\s\\S]*?)</li>`));
+  return m ? m[1] : null;
+};
+
 const disclosed = [...sources.values()].filter((r) => r.disclose_on_page);
 console.log('');
 console.log(`----  ${disclosed.length} record(s) set disclose_on_page: true`);
-{
-  let unrendered = 0;
-  for (const rec of disclosed) {
-    const lessons = Object.keys(rec.used_for);
-    const missing = lessons.filter((l) => {
-      const text = readFileSync(join(REPO, l, 'index.html'), 'utf8');
-      const li = text.match(new RegExp(`<li id="${rec.key}"[^>]*>([\\s\\S]*?)</li>`));
-      if (!li) return true;
-      /* the rendered entry carries the disclosure only if the scope reached it */
-      const first = (rec.scope || '').split(/\.\s/)[0].slice(0, 40);
-      return first ? !li[1].includes(first) : false;
-    });
-    if (missing.length) unrendered++;
-    /* a `fabricated` record DOES get a generated label — renderEntry emits
-       "<b>Does not exist.</b>" for that kind — so its disclosure is wired even
-       though disclose_on_page is not what wires it. Say which is which. */
-    const wired = rec.kind === 'fabricated' ? '  (but kind=fabricated renders "Does not exist." — labelled by kind, not by this flag)' : '';
-    console.log(`        ${rec.key.padEnd(24)} kind=${rec.kind.padEnd(16)} `
-      + (missing.length ? `scope NOT rendered in ${missing.join(', ')}${wired}` : 'scope rendered in every citing lesson'));
-  }
-  if (unrendered) {
-    console.log(`ADVISE ${unrendered} record(s) declare disclose_on_page: true and the renderer emits no disclosure for them.`);
-    console.log('        The two fabricated records are still labelled — renderEntry emits "Does not');
-    console.log('        exist." off `kind`, and both carry hand-written labels at their point of use.');
-    console.log('        src-case is the one with nothing generated behind it: the synthetic-case');
-    console.log('        disclosure came off all four lesson footers when Phase 3 canonicalised, and');
-    console.log('        the arbitration was not at fault — every clause is still in the record.');
-    console.log('        inject-sources.mjs renderEntry() never emits rec.scope, so the flag has no');
-    console.log('        consumer. Whatever disclosure those pages carry is hand-written prose, not');
-    console.log('        a generated consequence of the flag. INSTRUCTOR DECISION, see');
-    console.log('        docs/repo-updates-plan.md Phase 3.5.');
+for (const rec of disclosed) {
+  const p = probe(rec);
+  const lessons = Object.keys(rec.used_for);
+  const missing = p ? lessons.filter((l) => {
+    const li = entryFor(l, rec.key);
+    return li === null || !li.includes(p);
+  }) : [];
+  if (!p) {
+    console.log(`FAIL  ${rec.key} sets disclose_on_page: true and carries no scope to disclose`);
+    fails++;
+  } else if (missing.length) {
+    console.log(`FAIL  ${rec.key} declares disclose_on_page: true and its scope is not rendered in ${missing.join(', ')}`);
+    console.log('        renderEntry() emits rec.scope behind that flag, so a footer without it is');
+    console.log('        drift, not a decision. Run scripts/inject-sources.mjs.');
+    fails++;
+  } else {
+    console.log(`OK    ${rec.key.padEnd(24)} kind=${rec.kind.padEnd(16)} scope rendered in ${lessons.join(', ')}`);
   }
 }
+
+/* Direction 2. A record that does NOT set the flag must not have its scope on a
+   page: most scope notes are written to the maintainer, not to the reader. */
+let leaked = 0;
+for (const rec of sources.values()) {
+  if (rec.disclose_on_page) continue;
+  const p = probe(rec);
+  if (!p) continue;
+  for (const lesson of Object.keys(rec.used_for)) {
+    const li = entryFor(lesson, rec.key);
+    if (li && li.includes(p)) {
+      console.log(`FAIL  ${rec.key} does not set disclose_on_page and its scope is rendered in ${lesson}`);
+      fails++; leaked++;
+    }
+  }
+}
+if (!leaked) console.log(`----  0 record(s) render a scope without disclose_on_page: true`);
 
 console.log(`\nsummary: ${LESSONS.length - fails} of ${LESSONS.length} lessons carry the current SOURCES.md block`);
 process.exit(fails ? 1 : 0);

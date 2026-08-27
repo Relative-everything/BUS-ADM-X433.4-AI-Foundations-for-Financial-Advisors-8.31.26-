@@ -47,8 +47,14 @@ chip-exempt set equals the checker's, so the two cannot drift apart:
 > **`fabricated` is not a convenience class.** `src-kessler` and `src-hallowell`
 > are citations invented on purpose so students can fail to catch them. **A
 > confidence chip asserts that a claim is evidenced, and the entire point of
-> these two is that it is not.** Both are `disclose_on_page: true`: the page must
-> say so where they appear, and both do.
+> these two is that it is not.** Both are disclosed on the page and neither uses
+> `disclose_on_page` to do it: `renderEntry()` emits **"Does not exist."** off
+> `kind: fabricated`, ahead of the citation rather than after it, and both carry
+> a hand-written label at their point of use. **Both are therefore
+> `disclose_on_page: false`.** The flag makes the renderer print the record's
+> `scope` verbatim, and their `scope` is written to the maintainer — it ends in
+> an instruction in capitals about chips. That belongs in this register and not
+> in a footer a student reads. `src-case` is the one record the flag is for.
 
 ---
 
@@ -690,7 +696,7 @@ last_verified:  not applicable
 confidence:     not applicable
 kind:           fabricated
 moving_target:  false
-disclose_on_page: true
+disclose_on_page: false
 scope:          A deliberately fabricated citation, appearing in the session-2 §05 triage as exercise material so that students practise failing to catch it. MUST NEVER CARRY A CONFIDENCE CHIP: a chip asserts the claim is evidenced, and the whole point is that it is not.
 used_for.session-2: exercise material in the §05 citation triage, labelled as fabricated on the page
 ```
@@ -708,7 +714,7 @@ last_verified:  not applicable
 confidence:     not applicable
 kind:           fabricated
 moving_target:  false
-disclose_on_page: true
+disclose_on_page: false
 scope:          A deliberately fabricated citation used as exercise material in the session-4 §08 audit-trail classification, labelled on the page where it appears. MUST NEVER CARRY A CONFIDENCE CHIP.
 used_for.session-4: exercise material in the §08 audit-trail classification, labelled as fabricated on the page
 ```
