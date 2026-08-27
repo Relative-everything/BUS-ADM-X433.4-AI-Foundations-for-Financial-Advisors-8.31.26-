@@ -95,7 +95,7 @@ not the corpus. Reported, never counted in the drift surface.
 | `scripts/case-extract.html` | 101 |
 | `scripts/case-facts.json` | 80 |
 | `scripts/build-case.mjs` | 61 |
-| `scripts/verify-migration.mjs` | 29 |
+| `scripts/verify-migration.mjs` | 31 |
 
 ## What this measurement declines to count
 

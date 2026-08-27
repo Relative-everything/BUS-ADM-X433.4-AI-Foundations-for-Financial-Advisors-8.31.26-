@@ -13,6 +13,9 @@
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+/* DW-015: check 1b needs region offsets, so R6 and R10 are excluded by what they
+   ARE rather than by which file they sit in. */
+import { classify } from './editorial-regions.mjs';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LESSONS = ['index.html', 'session-0.1/index.html', 'session-1/index.html',
@@ -119,6 +122,53 @@ const RETIRED = [
   }
   check('1', 'Retired facts purged (Part K list, whole tree, registers excluded)',
         bad.length === 0, bad.slice(0, 12).join('\n'));
+}
+
+/* ---- 1b  retired framings that are only wrong ABOUT A PARTICULAR SUBJECT --- */
+/* DW-015. Check 1 is a blanket ban and check 4 is a permission test, and two
+   framings fall between them. `founder` is correct of Walter Hensley and wrong
+   of Meg; `nine-year` is correct of the 2016 installment note and wrong of the
+   proposed demand note. Neither can go in the RETIRED list, because the word
+   itself is legitimate. Neither is reliably caught by check 4 either: that test
+   passes a match as soon as ANY permitting word appears within 240 characters
+   either side, and a paragraph that discusses Walter's 2016 purchase AND calls
+   Meg the founder contains "Walter" and "2016" and passes.
+
+   This check inverts the question. Instead of asking whether a permitting
+   subject is nearby, it asks whether the FORBIDDEN subject is. Both tests are
+   needed: check 4 catches the use with no legitimate subject anywhere near it,
+   this catches the use sitting right beside the subject it is wrong about.
+
+   R6 and R10 are excluded by offset, not by filename. The injected CASE span is
+   owned by verify-case.mjs, and a captured transcript is verbatim third-party
+   output that may not be edited to satisfy a content rule — session-0.1's AFR
+   captures carry "9-year" inside `base:` strings for exactly that reason. */
+{
+  const MISAPPLIED = [
+    ['founder applied to Meg', /\bfound(?:er|ed|ing)\b/gi, /\bMeg\b|\bMs\.?\s+Cole\b/i,
+     'Walter Hensley founded the company in 1987 (§A.3, §B.2); Meg bought it in 2016'],
+    ['nine-year applied to the proposed note', /\b(?:nine|9)[-\s]year\b/gi,
+     /proposed note|demand note|payable on demand|new note|3\.82/i,
+     'the nine-year term belongs to the 2016 installment note (§B.2); the proposed note is payable on demand'],
+  ];
+  const bad = [];
+  for (const l of LESSONS) {
+    const t = text(join(REPO, l));
+    const c = classify(t);
+    for (const [label, rx, subjRx, why] of MISAPPLIED) {
+      rx.lastIndex = 0;
+      let m;
+      while ((m = rx.exec(t))) {
+        const region = c.regionOf(m.index);
+        if (region === 'R6' || region === 'R10') continue;
+        const around = t.slice(Math.max(0, m.index - 160), m.index + 160);
+        if (!subjRx.test(around)) continue;
+        bad.push(`${l}:${t.slice(0, m.index).split('\n').length}  ${label}  (${why})\n    ...${around.replace(/\s+/g, ' ').slice(90, 250)}...`);
+      }
+    }
+  }
+  check('1b', 'Retired framings not applied to the subject they are wrong about',
+        bad.length === 0, bad.slice(0, 10).join('\n'));
 }
 
 /* ---- 2/3  Ohio, Dayton, QSBS, 1202 --------------------------------------- */
