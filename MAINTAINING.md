@@ -290,6 +290,8 @@ the lessons rather than running it across the whole tree.
 | Reyes | 2026-08-18 | Cole |
 | Canvas, the LMS | 2026-08-25 | "the course site" |
 | instructor note | 2026-08-26 | `instructor-notes/session-N.md`, outside the served pages |
+| **Tier A — grading.** graded · grading · a grade · rubric *(as a course instrument)* · graded component · loses marks · full credit · submit · submitted · submission · turn in · points *(as course credit)* · pass/fail · any weight or percentage of a grade | 2026-08-27 | nothing — deleted. Canvas is the sole authority for grading |
+| **Tier B — between-session obligation.** due · due before Session N · deadline · 48 hours before Session N · before the week is out · ahead of Session N · bring X to Session N · read before Session N · was due today | 2026-08-27 | nothing — deleted, or "Reading for Session N" where the row is a reading list |
 
 Match case-insensitively on the stem so punctuation variants cannot hide:
 `grep -rin okonkwo`.
@@ -333,6 +335,42 @@ done                                   # must print nothing
 not lesson copy, and a reader who views source is a reader. The notes live in
 `instructor-notes/`, one file per lesson, and nothing links them from a served
 page. `index.html` carries no notes file because it never carried a note.
+
+**The six surviving `instructor note` hits do not violate the rule, and here is
+the test that says so.** `index.html:19` and `session-*/index.html:19` (`:24` in
+`session-0.1`) each carry the palette legend line inside the
+`STYLE:BEGIN`/`STYLE:END` fence. The repo's own classifier calls all six **R4**,
+which `EDITORIAL.md` marks *never in scope, owned by `verify-style.mjs`*, and
+which the purge list has never governed. They are byte-identical to the skill's
+`assets/tokens.css:6`, they are restored by `restyle_sweep.py` on every run, and
+hand-editing them makes all six files STALE so `verify-style.mjs` exits 1. The
+fix is upstream and is tracked as **DW-051**. The scoped check above is the one
+that must print nothing; a raw `grep -ri "instructor note"` returning exactly
+those six lines is the expected state, not a defect.
+
+**Tier A and Tier B are why the course-policy strings are gone.** Nothing in this
+repository is graded and it never will be. The repository is a live visual aid a
+room follows during a lecture; **Canvas is the sole authority for dates,
+deadlines, submission and grading**, and it is already built. A sentence here
+asserting a grade, a due date or an obligation is not merely stale — it has no
+standing to make the claim, and two sources of truth for a deadline is worse than
+one wrong one.
+
+**What Tier A and Tier B do NOT reach, because deleting these would break the
+lesson rather than fix it:**
+
+| Kept | Example | Why |
+|---|---|---|
+| In-class instruction | *"Next 10 minutes / You / Open it cold"*, *"Do this now — 6 minutes, in pairs"*, every work-along gate | This is the visual aid working. It is the reason the file exists |
+| A widget's own score | *"SCORE 8 / 8"*, *"TOTAL 12 / 12"*, *"Rubric coverage"* | Feedback computed in the room, not a course grade. A course grade is Canvas's; a diagnostic is the page's |
+| Cross-session pedagogy | retrieval bridges, the case spine's artifact chain, spiral declarations | Ratified constructs. Held open as **DW-050**, not edited piecemeal |
+| Regulatory deadlines | Regulation S-P's 30-day notification clock in `session-4` | A deadline **in the case**, which is the thing being taught |
+| Data-handling rules | *"No client nonpublic personal information may appear in any work you produce in this course"* | A safety rule, not a grading rule. Reworded off "submission", kept in force |
+
+**One Tier A string survives in `session-1` and it is flagged, not fixed.**
+`session-1:1349` sits inside the `LMBOX` console fence, which must stay
+byte-identical with `session-0.1`. Purging it from one copy alone raises `A9b`
+from 6 shared blocks to 7. **DW-048.**
 
 ## Adding a session
 
