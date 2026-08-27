@@ -104,7 +104,7 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**464 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**457 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
@@ -120,9 +120,9 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `employees` | 20 |
 | `charDeductible` | 18 |
 | `megAge` | 18 |
-| `discount` | 17 |
 | `nathanAge` | 13 |
 | `revolver` | 12 |
+| `discount` | 11 |
 | `inheritedIra` | 8 |
 | `david403b` | 8 |
 | `perUnitDividend` | 6 |
@@ -134,7 +134,6 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `charFloor` | 2 |
 | `techPct` | 2 |
 | `estateTopRate` | 1 |
-| `itemisedCap` | 1 |
 | `inquiryDate` | 1 |
 | `megApplicableAge` | 1 |
 
@@ -142,7 +141,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
-| `session-2/index.html:2630` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
+| `session-2/index.html:2629` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,
