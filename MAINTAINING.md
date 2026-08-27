@@ -367,12 +367,36 @@ lesson rather than fix it:**
 | Regulatory deadlines | Regulation S-P's 30-day notification clock in `session-4` | A deadline **in the case**, which is the thing being taught |
 | Data-handling rules | *"No client nonpublic personal information may appear in any work you produce in this course"* | A safety rule, not a grading rule. Reworded off "submission", kept in force |
 
-**One Tier A string survives in `session-1` and it is flagged, not fixed.**
-`session-1:1349` sits inside the `LMBOX` console fence, which must stay
-byte-identical with `session-0.1`. Purging it from one copy alone raises `A9b`
-from 6 shared blocks to 7. **DW-048.**
+**`session-0.1` is excluded from Tier A and Tier B, permanently, by instructor
+decision, and here is the test that says so.** It is **not part of the current
+offering** — it is a primer for a future course — so the ungraded-repo argument
+above does not reach it: whatever it says about grading is a claim about a course
+that has not been scheduled, not a second source of truth against Canvas. It
+**stays in the repository, stays linked from the hub at `index.html:1045`, and
+stays in every validator population unchanged.**
+
+**MUST NOT be purged**, and the reason is mechanical rather than editorial. Its
+`LMBOX` and `LMSTYLE` fences are byte-paired with `session-1`'s, asserted by the
+md5 loop in the pre-push gate above and counted by `A9b` as shared boilerplate.
+Editing either copy alone breaks the pairing — measured, not assumed: removing
+one clause from `session-1`'s copy raised `A9b` from 6 distinct shared blocks to
+7. So a Tier A or Tier B string inside a fence cannot be purged from one lesson,
+and purging it from both means editing `session-0.1`, which this decision
+forbids. The disposition is held open for a later phase as **DW-057**.
+
+**One Tier A string survives in `session-1` and it is ACCEPTED, not outstanding.**
+`session-1:1349` — *"Nothing is graded on it and nothing breaks without it"* —
+sits inside that `LMBOX` fence. The instructor accepted it as-is on 2026-08-27:
+it **disclaims** grading rather than asserting it, so it is not the defect Tier A
+exists to catch, and editing it would cost the `session-0.1` byte-pairing for no
+gain. **DW-048, closed. Do not re-open it.**
 
 ## Adding a session
+
+> **No session is owed.** The complete set is `index.html` + `session-0.1` +
+> sessions 1-4. **Session 5 is a student presentation meeting and no
+> `session-5/index.html` is owed, now or later** — the number below is a generic
+> example of the next session, not a to-do. Instructor decision, 2026-08-27.
 
 1. Create `session-5/index.html`.
 2. Add a card in `index.html`, copying an existing one and removing the `soon`
