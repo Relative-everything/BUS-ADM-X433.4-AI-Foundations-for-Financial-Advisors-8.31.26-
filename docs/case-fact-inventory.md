@@ -104,7 +104,7 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**463 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**464 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
@@ -119,8 +119,8 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `seedUnits` | 20 |
 | `employees` | 20 |
 | `charDeductible` | 18 |
+| `megAge` | 18 |
 | `discount` | 17 |
-| `megAge` | 17 |
 | `nathanAge` | 13 |
 | `revolver` | 12 |
 | `inheritedIra` | 8 |
