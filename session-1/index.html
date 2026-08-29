@@ -1404,6 +1404,11 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 </div>
 <!-- LMBOX:END v1 -->
+
+<div class="talk"><span class="th">Live Walkthrough: Models, Tiers, Projects, and Settings</span>This session opens with a guided on-screen walkthrough of the Claude interface: models, tiers, projects, and settings, in that order. No prior AI experience is assumed, and nothing here asks you to use a control before you have seen it used.</div>
+
+<div class="talk">Before the first exercise, open <b>Case facts</b> in the top bar and review the Cole household.</div>
+
 <!-- 1 -->
 <section class="slide" id="s1" data-nav="Start">
  <div class="body">
@@ -1495,7 +1500,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <p style="margin-bottom:0"><span class="sim">Illustrative distribution &mdash; the article's table is an image and is not reproduced</span></p>
   </div>
 
-  <p>You are the sampler. Each list depended on your last choice, and nothing ever revisited an earlier one. Several paths produce a defensible sentence about the Cole discount; at least one produces a false one, in the same confident register.</p>
+  <p>You just did what the model does: pick one word at a time, never revising an earlier one. Some of those paths produce a false sentence that sounds exactly as confident as a true one.</p>
 
   <h3>Distinct Tokens and Repetition at Three Temperatures</h3>
   <div class="wolf"><span class="wh">From the assigned reading</span>Always picking the highest-ranked word gives "a very 'flat' essay, that never seems to 'show any creativity' (and even sometimes repeats word for word)." A temperature of <b>0.8</b> "seems best" for essays &mdash; and "there's no 'theory' being used here; it's just a matter of what's been found to work in practice."</div>
@@ -1812,7 +1817,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
  <div class="body">
   <div class="eyebrow"><span>04 &middot; Consequence</span><span class="mins">7 min</span></div>
   <h2>The Same Question, Asked Three Times</h2>
-  <p class="big">Everything so far was mechanism. This is what it produces.</p>
+  <p class="big">A system that predicts likely next words has no lookup step for facts, which is why exact recall fails.</p>
 
   <div class="panel" data-task="t-s9" data-comp="work-along-gate">
     <span class="plab">Prompt, issued three separate times</span>
