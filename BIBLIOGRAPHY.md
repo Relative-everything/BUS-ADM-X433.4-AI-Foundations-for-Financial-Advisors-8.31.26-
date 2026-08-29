@@ -9,7 +9,7 @@ read off the chips, never typed.
 cited by at least one claim; 14 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
-**54 records carry at least one field this repository could not verify, and
+**53 records carry at least one field this repository could not verify, and
 every one of them is printed below as `[UNVERIFIED, needs source]` rather than omitted.** The
 rendered footer in a lesson omits an unknown field, because a footer in which
 thirty entries shout about a missing publisher helps nobody. This file is where a
@@ -674,16 +674,16 @@ The LLM01 ranking for prompt injection and the mapping into six of ten agentic c
 | | |
 |---|---|
 | Author | Rohrer, D., Dedrick, R. F., & Stershic, S. |
-| Publisher | Journal of Educational Psychology |
-| Link | **[UNVERIFIED, needs source]** |
+| Publisher | Journal of Educational Psychology, 107(3), 900–908 |
+| Link | <https://doi.org/10.1037/edu0000001> |
 | Published | 2015 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-08-29 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | M |
+| Confidence | H |
 | **Total references** | **1** |
 | Cited in | S1 `#s13` |
 
-Cited ONLY for the design claim that interleaving categories during classification practice beats blocking them, which is what the section 08 deck order does. The paper's identity is well established in the practice literature; it was not retrievable from this build environment, so no figure or effect size from it appears anywhere in the corpus.
+Cited ONLY for the design claim that interleaving categories during classification practice beats blocking them, which is what the section 08 deck order does. Bibliographic identity confirmed 2026-08-29 against three independent listings — the ERIC index record EJ1071568, the publisher's abstract page for doi 10.1037/edu0000001, and the author's own publication list at uweb.cas.usf.edu/~drohrer, which hosts the full text. The full text was not pulled into this build environment, so no figure or effect size from it appears anywhere in the corpus.
 
 ### State of California; United States Congress
 
