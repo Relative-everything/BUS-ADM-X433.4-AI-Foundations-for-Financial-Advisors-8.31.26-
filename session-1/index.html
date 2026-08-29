@@ -1503,7 +1503,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p>You just did what the model does: pick one word at a time, never revising an earlier one. Some of those paths produce a false sentence that sounds exactly as confident as a true one.</p>
 
   <h3>Distinct Tokens and Repetition at Three Temperatures</h3>
-  <div class="wolf"><span class="wh">From the assigned reading</span>Always picking the highest-ranked word gives "a very 'flat' essay, that never seems to 'show any creativity' (and even sometimes repeats word for word)." A temperature of <b>0.8</b> "seems best" for essays &mdash; and "there's no 'theory' being used here; it's just a matter of what's been found to work in practice."</div>
+  <div class="wolf"><span class="wh">From the assigned reading, section "It's Just Adding One Word at a Time"</span>Always picking the highest-ranked word gives "a very 'flat' essay, that never seems to 'show any creativity' (and even sometimes repeats word for word)." A temperature of <b>0.8</b> "seems best" for essays &mdash; and "there's no 'theory' being used here; it's just a matter of what's been found to work in practice."</div>
 
   <div class="panel">
     <div class="row" style="margin-bottom:12px">
@@ -1576,7 +1576,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <h3>Possible Sequences Against Available Text</h3>
-  <div class="wolf"><span class="wh">From the assigned reading &mdash; his figures</span>About <b>40,000</b> reasonably common English words. A web crawl holds <b>a few hundred billion words</b>; digitised books another <b>hundred billion</b>. But the number of possible 2-grams is already <b>1.6 billion</b>, and 3-grams <b>60 trillion</b>. At 20-word fragments, "the number of possibilities is larger than the number of particles in the universe."</div>
+  <div class="wolf"><span class="wh">From the assigned reading &mdash; his figures, section "Where Do the Probabilities Come From?"</span>"In a crawl of the web there might be <b>a few hundred billion</b> words; in books that have been digitized there might be <b>another hundred billion</b> words. But with <b>40,000</b> common words, even the number of possible 2-grams is already <b>1.6 billion</b>&hellip; the number of possible 3-grams is <b>60 trillion</b>. So there's no way we can estimate the probabilities even for all of these from text that's out there. And by the time we get to 'essay fragments' of <b>20 words</b>, the number of possibilities is larger than the number of particles in the universe, so in a sense they could never all be written down."</div>
 
   <div class="panel">
     <div class="slab"><span>Sequence length, n words</span><b id="nLab">2</b></div>
@@ -1646,7 +1646,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>03 &middot; Tokens and price</span><span class="mins">5 min</span></div>
   <h2>Token Counts and the Cost of a Document Pass</h2>
 
-  <div class="wolf"><span class="wh">From the assigned reading</span>About 50,000 tokens exist and only about 3,000 are whole words. Wolfram gives the actual GPT-2 values: <b>"the"</b> is token <b>914</b>, and <b>" cat"</b> &mdash; with the space in front &mdash; is token <b>3542</b>. The space is part of the token.</div>
+  <div class="wolf"><span class="wh">From the assigned reading, sections "The Concept of Embeddings" and "Inside ChatGPT"</span>The Concept of Embeddings: "<b>'the'</b> might be <b>914</b>, and <b>' cat'</b> (with a space before it) might be <b>3542</b>. (And these are the actual numbers used by GPT-2.)" &middot; Inside ChatGPT: "about <b>50,000</b> values that turn into probabilities for different possible next tokens&hellip; only about <b>3000</b> of the tokens are whole words, and the rest are fragments."</div>
 
   <div class="panel" data-task="t-s5" data-comp="work-along-gate">
     <label class="plab" for="tokIn">Paste something you would actually send &mdash; a client note, a paragraph of a trust</label>
@@ -1686,7 +1686,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>Appendix A3 &middot; Mechanism, deeper</span><span class="mins">9 min</span></div>
   <h2>Words Laid Out So That Nearby Means Similar</h2>
 
-  <div class="wolf"><span class="wh">From the assigned reading</span>Built by looking at large amounts of text &mdash; he uses <b>5 billion words</b> &mdash; and seeing how similar the environments are in which words appear. "&thinsp;'alligator' and 'crocodile' will often appear almost interchangeably&hellip; But 'turnip' and 'eagle' won't tend to appear in otherwise similar sentences, so they'll be placed far apart."</div>
+  <div class="wolf"><span class="wh">From the assigned reading, section "The Concept of Embeddings"</span>Built by looking at large amounts of text &mdash; he uses <b>5 billion words</b> &mdash; and seeing how similar the environments are in which words appear. "&thinsp;'alligator' and 'crocodile' will often appear almost interchangeably&hellip; But 'turnip' and 'eagle' won't tend to appear in otherwise similar sentences, so they'll be placed far apart."</div>
 
   <div class="chartbox">
     <span class="plab">Click a word for its neighbours &mdash; hand-constructed illustration, not a real projection</span>
@@ -1715,7 +1715,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h2>The Task a Transformer Cannot Reliably Learn</h2>
   <p class="big">Wolfram trains a small transformer on a language with exactly one rule: parentheses must balance. It learns it well enough to look right, then fails.</p>
 
-  <div class="wolf"><span class="wh">From the assigned reading &mdash; his figures</span>With 2 attention heads the learning converges after "10 million or so examples." Yet with its "<b>400,000</b> or so laboriously trained weights," it still assigns a <b>15%</b> probability to a closing parenthesis that would leave the sequence unbalanced. And: "even the full current ChatGPT has a hard time correctly matching parentheses in long sequences."</div>
+  <div class="wolf"><span class="wh">From the assigned reading &mdash; his figures, section "What Really Lets ChatGPT Work?"</span>With 2 attention heads the learning converges after "10 million or so examples." Yet with its "<b>400,000</b> or so laboriously trained weights," it still assigns a <b>15%</b> probability to a closing parenthesis that would leave the sequence unbalanced. And: "even the full current ChatGPT has a hard time correctly matching parentheses in long sequences."</div>
 
   <div class="panel" data-task="t-s7" data-comp="distribution-picker">
     <span class="plab">Sequence builder &mdash; the simulated model predicts what comes next</span>
