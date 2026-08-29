@@ -104,7 +104,7 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**460 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**461 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
@@ -127,10 +127,10 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `david403b` | 8 |
 | `perUnitDividend` | 6 |
 | `deMinimisLoan` | 4 |
+| `saleUnits` | 3 |
 | `davidAge` | 3 |
 | `topOrdinary` | 3 |
 | `nathanShort` | 2 |
-| `saleUnits` | 2 |
 | `charFloor` | 2 |
 | `techPct` | 2 |
 | `estateTopRate` | 1 |
