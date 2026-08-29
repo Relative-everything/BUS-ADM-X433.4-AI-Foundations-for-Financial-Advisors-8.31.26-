@@ -1400,7 +1400,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>BUS ADM X433.4 &middot; Session 1</span><span class="mins">6 min</span></div>
   <h1>Prediction, Model Tiers, and the Cost of Using Them</h1>
   <p class="lede">Build next-token prediction by hand, then price it against a real planning practice.</p>
-  <p class="dim mono" style="font-size:12.5px;letter-spacing:.06em">Scrolls freely &mdash; nothing is withheld. Answer panels open on an explicit reveal, or all at once with Shift+U.</p>
+  <p class="dim mono" style="font-size:12.5px;letter-spacing:.06em">Answer panels open on an explicit reveal, or all at once with Shift+U.</p>
   <div class="panel pace" data-task="t-s1" data-comp="work-along-gate"><span class="plab">How this session is paced</span><div id="paceOut"></div>
   <div id="tierbar">
     <span class="tl">Appendix depth</span>
@@ -1413,7 +1413,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </div>
 
 
-  <p class="big">Every example, exercise and quiz item in this session and the next three draws from one synthetic household. Open <b>Case facts</b> in the bar above and keep it open.</p>
+  <h3>Cole household case</h3>
 
   <!-- The case block used to appear here AND be cloned into the modal by JS.
        One generated region now lives in the modal between the CASE sentinels,
@@ -1425,7 +1425,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <!-- Recurring question, session 1 angle. See docs/spine-brief.md. -->
-  <div class="talk"><span class="th">The question that runs through every session</span>Meg is short $522,086 a year from year 6, while the structure performs exactly as designed. <b>How much of the $20,020,000 note does she call this year, what does calling it cost her in every year after, and when is a different lever the better answer?</b> Nobody answers it tonight. Tonight you find out why the tool you would reach for to answer it is worst at exactly this shape of problem: a long compounding sequence where every year depends on the last.</div>
+  <div class="talk"><span class="th">The question that runs through every session</span>Meg is short $522,086 a year from year 6, while the structure performs exactly as designed. <b>How much of the $20,020,000 note does she call this year, what does calling it cost her in every year after, and when is a different lever the better answer?</b> Nobody answers it. You find out why the tool you would reach for to answer it is worst at exactly this shape of problem: a long compounding sequence where every year depends on the last.</div>
 
   <p class="dim" style="font-size:14.5px">Figure labels: <span class="conf h" data-src="src-case">H</span> primary or first-party &middot; <span class="conf m" data-src="src-sec-ai">M</span> secondary or derived &middot; <span class="conf l" data-src="src-sec-ai">L</span> unverified. Arrow keys navigate. <b class="mono">Shift+U</b> opens every answer panel at once.</p>
 
@@ -1455,7 +1455,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
  <div class="body">
   <div class="eyebrow"><span>01 &middot; Cold open &middot; standing ritual</span><span class="mins">8 min</span></div>
   <h2>The Last Prompt You Sent</h2>
-  <p class="big">Not a good one. Not a work one. The last one, whatever it was, pasted exactly as you typed it &mdash; typos, missing context, all of it.</p>
+  <p class="big">The last one, whatever it was, pasted exactly as you typed it: typos, missing context, all of it.</p>
 
   <div class="ritual" data-task="t-cold-open" data-comp="timed-ritual">
     <label class="rlab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
@@ -1464,7 +1464,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="rout" id="coldOut"><span class="rnil">Paste something and press the button.</span></div>
   </div>
 
-  <p>Whatever you pasted, you wrote it for a machine that does exactly one thing: assign a probability to every possible next token and pick one. Nothing in it read your intent. The rest of tonight is what that sentence actually means.</p>
+  <p>Whatever you pasted, you wrote it for a machine that does exactly one thing: assign a probability to every possible next token and pick one. Nothing in it read your intent.</p>
  </div>
 
   <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen &mdash; the comparison across sessions is the point.</div></div>
@@ -1478,7 +1478,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="wolf"><span class="wh">From the assigned reading</span>ChatGPT is "just asking over and over again 'given the text so far, what should the next word be?'&thinsp;"&mdash;each time adding a token, "which could be just part of a word."</div>
 
   <div class="panel" data-task="t-s2" data-comp="distribution-picker">
-    <span class="plab">Click a candidate to append it &mdash; the next distribution follows your choice</span>
+    <span class="plab">Click a candidate to add it as the next word; the next distribution follows your choice</span>
     <div class="sampler" id="s2samp"></div>
     <div class="dist" id="s2dist"></div>
     <div class="row"><button class="btn ghost mini" id="s2reset">Start over</button><span class="dim mono" style="font-size:12px">placed: <b id="s2count">0</b> of 6</span></div>
@@ -1515,7 +1515,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="readout" id="plOut"><span class="nil">Switch the axes.</span></div>
   </div>
 
-  <p>Straightness means no natural cutoff &mdash; no rank at which the tail stops mattering. Every control in the lab later is somebody's answer to where to cut anyway.</p>
+  <p>Straightness means no natural cutoff: no rank at which the tail stops mattering.</p>
 
   <div class="check" data-gate="g2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place six tokens, generate at all three temperatures, and switch to log&ndash;log axes.</div></div>
   <span class="src"><b>Wolfram, S. (2023), What Is ChatGPT Doing &hellip; and Why Does It Work?</b> &mdash; opening section. Assigned reading. <span class="conf h" data-src="src-wolfram">H</span></span>
@@ -1570,8 +1570,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <svg class="ch" id="wallCh" viewBox="0 0 700 220" style="margin-top:16px" role="img" aria-label="Possible n-grams against available text"></svg>
     <div class="readout" id="wallOut"></div>
   </div>
-
-  <p>Two notches past three and the argument is over. What remains is to build something that estimates the probability of sequences it has never seen.</p>
 
   <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Generate letters at order 4, run the word-pair mode, then set the slider to the smallest n where possibilities exceed all text ever written.</div></div>
   <span class="src">All quoted figures: Wolfram (2023). <span class="conf h" data-src="src-wolfram">H</span> &middot; Chart arithmetic is 40,000<sup>n</sup> against a 400 billion word corpus. <span class="conf h" data-src="src-wolfram">H</span></span>
@@ -1646,7 +1644,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     </div>
     <span class="plab" style="margin-top:16px">Cost to read this once, per Claude tier</span>
     <div class="costgrid" id="tokCost"></div>
-    <p style="margin-bottom:0"><span class="sim">Teaching approximation &mdash; real tokenisation is model-specific</span></p>
+    <p style="margin-bottom:0"><span class="sim">Approximation: real tokenisation is model-specific</span></p>
   </div>
 
   <table class="dt tight">
@@ -1834,7 +1832,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="pull">Confident tone is not a claim about confidence. It is the output of the scoring rule.</p>
 
   <div class="talk"><span class="th">The planning version &mdash; discussion</span>Ask any frontier model what seed gift a sale to a grantor trust requires, and it will give you a percentage in a confident sentence. The conventional 10% figure is a practitioner rule of thumb, not a statutory or regulatory threshold, and the model has no way to signal that difference &mdash; both appear in the same register, in the same kind of sentence.
-  <ul><li>Which of Meg's questions are arbitrary facts &mdash; a rate, a date, a threshold with one right answer and many plausible wrong ones?</li><li>Which are contested judgments where no answer is retrievable because none exists?</li><li>Sort tonight's case that way. The first list is what you verify line by line. The second is what you never delegate at all.</li></ul></div>
+  <ul><li>Which of Meg's questions are arbitrary facts &mdash; a rate, a date, a threshold with one right answer and many plausible wrong ones?</li><li>Which are contested judgments where no answer is retrievable because none exists?</li><li>Sort this session's case that way. The first list is what you verify line by line. The second is what you never delegate at all.</li></ul></div>
 
   <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Ask three times, then view both scoring rules.</div></div>
   <span class="src"><b>Kalai, A. T., Nachum, O., Vempala, S. S. &amp; Zhang, E. (2025), Why Language Models Hallucinate</b>, arXiv:2509.04664, &sect;1 and &sect;1.2. Model was DeepSeek-V3, accessed 11 May 2025. Assigned reading. <span class="conf h" data-src="src-kalai">H</span> &middot; The three captured dates are that paper's runs. With a key connected the prompt is issued live against whichever model you chose, and what you see is your own observation rather than a sourced claim, so it carries no chip.</span>
@@ -1926,7 +1924,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>07 &middot; Judgment</span><span class="mins">6 min</span></div>
   <h2>Assigning a Tier to Six Tasks From This Case</h2>
   <p class="big">There is no single right answer. There is a defensible answer and an indefensible one, and the difference is whether you can say why.</p>
-  <p>Two of these are worth more than the tier they attract. The concentration calculation looks trivial and is trivial &mdash; and it is the only item here whose output you can verify in your head, which is exactly why it belongs on the cheapest tier. The meeting summary looks like a mid-tier convenience and is the one most likely to destroy information, because the thing worth preserving is a disagreement and coherent prose is what the objective rewards.</p>
   <div class="panel quiz" id="tierQuiz" data-task="t-s12" data-comp="commit-first-mcq"></div>
   <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all six, then name the one task here you would not delegate at any tier.</div></div>
  </div>
@@ -1950,15 +1947,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel" style="border-color:var(--on);border-width:2px">
     <span class="plab">Course rule</span>
     <p class="big" style="margin:0">No real client data or personally identifying information enters any AI tool at any point in this course &mdash; including the build transcript.</p>
-  </div>
-
-  <p>De-identification is not deleting the name. A woman in her sixties selling an aerospace-fastener company in a named metro is one person, and you never typed her name.</p>
-
-  <div class="panel" style="border-color:var(--on);border-width:2px">
-    <span class="plab">What you are looking at, and what you owe</span>
-    <p style="margin-top:0">The Cole household is what a properly constructed synthetic case looks like: internally consistent numbers that reconcile, a real unresolved technical question, documents that genuinely conflict with each other, and no living person behind any of it. It exists so that this course can teach on specifics without anyone's file being at risk.</p>
-    <p><b>The final project builds one of these for your own recurring task.</b> Not a de-identified client &mdash; a constructed household with invented figures that behave like real ones. It is the skill this section is teaching.</p>
-    <p style="margin-bottom:0"><b>No client nonpublic personal information may appear in any work you produce in this course</b> &mdash; not in the workflow, not in the deliverable, and not in the build transcript you hand to a classmate. The transcript is the part people forget. It is also the part that gets read by someone other than me.</p>
   </div>
 
   <div class="check" data-gate="g13"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort all eight, then name which of the three landmines would be hardest to notice yourself mid-draft.</div></div>
@@ -1993,7 +1981,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="slab" style="margin-top:12px"><span>Reviewed</span><b id="diagScore">0 / 6</b></div>
   </div>
 
-  <div class="check" data-gate="g14"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open at least four symptoms and match each to the section of tonight that explains it.</div></div>
+  <div class="check" data-gate="g14"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open at least four symptoms and match each to the section of this session that explains it.</div></div>
   <span class="src"><b>FINRA Regulatory Notice 24-09</b>, 27 June 2024, first-party. <span class="conf h" data-src="src-finra2409">H</span> &middot; SEC proceedings announced 18 March 2024, reported consistently across Mayer Brown, Crowell &amp; Moring, White &amp; Case and Cleary. <span class="conf h" data-src="src-finra2409">H</span> &middot; One secondary source reports Delphia at $250,000; the SEC's own announcement and the majority report $225,000.</span>
  </div>
 </section>
@@ -2111,7 +2099,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     </tbody>
   </table>
 
-  <h3>CFP Board principal knowledge topics touched tonight</h3>
+  <h3>CFP Board principal knowledge topics touched</h3>
   <table class="dt tight">
     <thead><tr><th>Domain</th><th>Where</th></tr></thead>
     <tbody>
@@ -2131,7 +2119,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="talk"><span class="th">Handoff to Session 2</span>Session 1 explained why the machine produces what it produces and gave you no way to change it. <b>Session 2 is the first session in which you change the output</b> &mdash; prompt construction is the only control you have that operates before the sampler ever runs.</div>
 
-  <div class="check" data-gate="g17"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Record your baseline above before you leave. It is the one thing tonight you cannot do later.</div></div>
+  <div class="check" data-gate="g17"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Record your baseline above before you leave. It is the one thing you cannot do later.</div></div>
 
   <div class="cards">
     <div class="card"><span class="num">01</span><h4>Fluency against correctness</h4><p>A well-formed answer and a correct answer look identical.</p></div>
@@ -2140,7 +2128,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="card"><span class="num">04</span><h4>The signature on the work</h4><p>The tool is not a co-signer, a supervisor, or a defence.</p></div>
   </div>
 
-  <div class="talk"><span class="th">Closing question &middot; answer it before you close the page</span>A model has just handed you a clean, confident, well-written answer about the Cole discount. Name the one thing tonight said you still cannot conclude from that, and say which part of the machine is the reason.</div>
+  <div class="talk"><span class="th">Closing question &middot; answer it before you close the page</span>A model has just handed you a clean, confident, well-written answer about the Cole discount. Name the one thing this session said you still cannot conclude from that, and say which part of the machine is the reason.</div>
  </div>
 </section>
 
@@ -2175,7 +2163,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 <!-- APXBUDGET:END -->
   </table>
 
-  <p>BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors &middot; Session 1 &middot; UC Berkeley Extension, Fall 2026 &middot; Instructor: Jared Winkers</p>
+  <p>BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors &middot; Session 1 &middot; UC Berkeley Extension &middot; Instructor: Jared Winkers</p>
   <p>The Cole household is synthetic and constructed for this course as a classroom anchor only. No real client data appears anywhere in this document. Students build the final project on their own recurring task using their own constructed synthetic data.</p>
   <h3 style="margin:22px 0 4px;font-size:17px">Sources cited in this session</h3>
   <ol class="srcs">
@@ -2483,7 +2471,7 @@ function plDraw(mode){
   $('plCh').innerHTML=s;
   $('plOut').className='readout on';
   $('plOut').innerHTML=mode==='lin'
-   ?'<span class="cz">Linear axes</span>The top candidate holds '+(PLP[0]*100).toFixed(1)+'% of the mass; by rank 10 a candidate holds '+(PLP[9]*100).toFixed(1)+'%. Everything past rank 15 looks like zero and is not zero. That tail is where the surprising word \u2014 and the wrong citation \u2014 comes from.'
+   ?'<span class="cz">Linear axes</span>The top candidate holds '+(PLP[0]*100).toFixed(1)+'% of the mass; by rank 10 a candidate holds '+(PLP[9]*100).toFixed(1)+'%. Everything past rank 15 looks like zero and is not zero. That tail is where the surprising word (and the wrong citation) comes from.'
    :'<span class="cz">Log\u2013log axes</span>Now a straight line. That is the n<sup>\u22121</sup> power law Wolfram identifies as characteristic of language. Straight means no natural cutoff \u2014 no rank where the tail stops mattering.';
   if(mode==='log'){G2.ax=1;checkG2()}}
 all('[data-ax]').forEach(function(b){b.onclick=function(){
