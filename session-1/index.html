@@ -2454,7 +2454,16 @@ function checkG2(){if(G2.tok&&Object.keys(G2.temp).length>=3&&G2.ax)mark('g2')}
 var S2STEM='The '+COLE.saleUnits+' non-voting units sold to the grantor trust were valued at';
 var S2=[
  [['a '+Math.round(COLE.discount*100)+'% discount',.33],['$'+fmt(COLE.notePrincipal),.26],['$'+fmt(COLE.perNonVoting)+' per unit',.19],['fair market value',.13],['a 45% discount',.09]],
- [[', supported by',.31],[', which reflects',.26],['. The appraisal cites',.22],[', although the',.13],[', pending',.08]],
+ /* Weights render as integer percentages in the DOM. None may equal a CASE.md
+    Part K grep target, which source-level checks cannot see here because only
+    render-time arithmetic produces the string; verify-browser.mjs drives every
+    step and asserts it, along with each row's rendered percentages summing
+    to one hundred.
+    The top weight rides the live combined discount from the injected COLE
+    constants, so it moves with CASE.md instead of drifting onto a retired
+    value again; if the discount itself moves, the same drive fails on the
+    row sum until the tail is renormalised. */
+ [[', supported by',COLE.discount],[', which reflects',.27],['. The appraisal cites',.22],[', although the',.13],[', pending',.08]],
  [['a 2023 appraisal',.34],['lack of control',.25],['lack of marketability',.20],['the attorney\u2019s file',.13],['the 2014 formula',.08]],
  [['that has not been',.30],['and lack of',.27],['dated before',.21],['prepared for',.14],['reviewed by',.08]],
  [['re-verified',.35],['updated',.27],['challenged',.19],['disclosed',.13],['superseded',.06]],

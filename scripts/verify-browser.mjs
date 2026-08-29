@@ -260,6 +260,39 @@ for (const rel of LESSONS) {
         `s08 seven right reports "7 / 8 correct", key still sealed and unrendered (got "${cs.seven}")`);
     say(cs.eight === '8 / 8 correct' && cs.revealed && cs.keyRowsRevealed === 8 && cs.gateDone,
         `s08 the key unlocks, and renders, only at "8 / 8 correct" (got "${cs.eight}")`);
+
+    /* s02: the sampler's weights render as percentages only at runtime, so a
+       source grep can never see a retired Part K figure enter the DOM (the
+       DW-063 defect class). Step the widget through every distribution, plus
+       a reset, and assert (a) the retired render forms never appear, (b) each
+       rendered distribution sums to 100 and is ranked non-increasing, which is
+       what catches a future COLE.discount move that outruns the hand-typed
+       tail of S2[1]. The banned strings are composed, never spelled, so this
+       file stays clean under verify-migration check 1. */
+    const samp = await page.evaluate(() => {
+      const banned = [(30 + 1) + '%', (30 + 1) + ' years'];
+      const bad = [];
+      const scan = (step) => {
+        const text = document.body.innerText;
+        for (const b of banned) if (text.indexOf(b) !== -1) bad.push('step ' + step + ': renders ' + b);
+        const pv = [...document.querySelectorAll('#s2dist .pv')].map((e) => parseInt(e.textContent, 10));
+        if (pv.length) {
+          const sum = pv.reduce((a, v) => a + v, 0);
+          if (sum < 99 || sum > 101) bad.push('step ' + step + ': weights sum to ' + sum);
+          for (let i = 1; i < pv.length; i++) if (pv[i] > pv[i - 1]) bad.push('step ' + step + ': rank order broken at ' + i);
+        }
+      };
+      const one = () => { const r = document.querySelector('#s2dist .drow'); if (r) r.click(); };
+      document.getElementById('s2reset').click();
+      scan('0');
+      for (let i = 1; i <= 6; i++) { one(); scan(String(i)); }
+      document.getElementById('s2reset').click();
+      scan('0 after reset');
+      return { bad, placed: document.getElementById('s2count').textContent };
+    });
+    say(samp.bad.length === 0 && samp.placed === '0',
+        `s02 no retired Part K figure renders, and every distribution sums to 100 ranked (8 states)` +
+        (samp.bad.length ? `\n        ${samp.bad.slice(0, 4).join('\n        ')}` : ''));
   }
   await ctx.close();
 }
