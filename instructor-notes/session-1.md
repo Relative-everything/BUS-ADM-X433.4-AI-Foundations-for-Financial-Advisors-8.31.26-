@@ -1,4 +1,4 @@
-# Session 1 · How the Machine Works, and What It Costs
+# Session 1 · Prediction, Model Tiers, and the Cost of Using Them
 
 ## s1 (Start)
 

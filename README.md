@@ -80,7 +80,7 @@ Three things worth knowing before you use it:
 
 | # | Title | Link | Date |
 |---|---|---|---|
-| 1 | How the Machine Works, and What It Costs | [session-1](session-1/) | 31 August 2026 |
+| 1 | Prediction, Model Tiers, and the Cost of Using Them | [session-1](session-1/) | 31 August 2026 |
 | 2 | Practical AI Usage in Daily Advisory Workflows | [session-2](session-2/) | 14 September 2026 |
 | 3 | Gathering and Documenting Client Information | [session-3](session-3/) | [UNVERIFIED: session 3 date] |
 | 4 | Compliance, Security and Responsible Use | [session-4](session-4/) | [UNVERIFIED: session 4 date] |
