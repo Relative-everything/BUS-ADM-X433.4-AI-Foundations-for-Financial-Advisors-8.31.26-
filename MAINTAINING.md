@@ -109,6 +109,11 @@ node scripts/build-case.mjs        # CASE.md -> the generated artifacts. Fails
                                    # and recomputes 13 Part M identities.
 node scripts/inject-case.mjs       # rewrite the span between the CASE sentinels
 node scripts/inject-case.mjs --check   # report drift, write nothing
+node scripts/build-cardsort.mjs --check   # the session-1 card-sort deck and key
+                                   # between the CARDSORT sentinels, derived from
+                                   # CASE.md Part J and Part H. Fails when a fact
+                                   # the deck rests on moves, so a CASE.md edit
+                                   # cannot silently orphan the answer key.
 node scripts/verify-case.mjs       # hash every injected block; non-zero on drift
 node scripts/verify-migration.mjs  # retired facts, allowances, arithmetic, timing,
                                    # and the spine drift guard (check 20)

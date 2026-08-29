@@ -800,6 +800,16 @@ table.tbudget tr.nosum td{color:var(--muted);font-style:italic}
 table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border-bottom:none}
 .stamp{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.05em;color:var(--muted);margin:18px 0 0}
 
+/* ---- section 08 card sort, withheld key ---- */
+.cardsort .lbox{opacity:1}
+.cardsort .csheld{display:flex;flex-direction:column;gap:7px;margin-top:10px;min-height:40px;border-top:1px dashed var(--line);padding-top:9px}
+.cardsort .lbox.csover{border-style:dashed;border-color:var(--on)}
+.cardsort .cscard{cursor:grab}
+#csKey:focus{outline:none}
+#csKey .cskrow{font-size:14px;margin:0 0 10px;line-height:1.5;max-width:none}
+#csKey .cskrow b{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase}
+#csKey .cskw{display:block;color:var(--muted);font-size:13.5px}
+
 /* LMSTYLE:BEGIN v1 managed-by=hand keep byte-identical across lessons.
    Live model console. Optional, off by default, no storage of any kind.
    Placed after the restyle fence so the sweep never touches it. */
@@ -1933,16 +1943,30 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
  <div class="body">
   <div class="eyebrow"><span>08 &middot; The line</span><span class="mins">7 min</span></div>
   <h2>What May Never Be Entered Into a Third-Party Tool</h2>
-  <p class="big">Every item is drawn from the Cole file. Three of these eight are the confidentiality landmines this case was built to carry. Sort all eight and find them.</p>
+  <p class="big">Every item is drawn from the Cole file. Three of these eight are the confidentiality landmines this case was built to carry. Drag each card into a bucket, or select a card and place it with the buttons under the deck. Once all eight are placed the check opens, reports a count and nothing else, and the key stays sealed until every card sits in the right bucket.</p>
 
-  <div class="sorter" data-task="t-s13" data-comp="two-bucket-sorter">
-    <div class="chiplist" id="npiChips"></div>
+  <div class="sorter cardsort" data-task="t-s13" data-comp="two-bucket-sorter">
+    <div>
+      <div class="chiplist" id="csDeck" role="group" aria-label="Cards not yet placed"></div>
+      <div class="row" role="group" aria-label="Place the selected card" style="margin-top:12px">
+        <button type="button" class="btn ghost mini" id="csTo0" disabled>Place in: Nonpublic personal information</button>
+        <button type="button" class="btn ghost mini" id="csTo1" disabled>Place in: Not identifying on its own</button>
+      </div>
+    </div>
     <div class="boxes">
-      <div class="lbox bad" data-i="0"><h4>Nonpublic personal information</h4><p>Never enters a third-party AI tool.</p><div class="why" id="whyNpi"></div></div>
-      <div class="lbox" data-i="1"><h4>Not identifying on its own</h4><p>Safe to use in a prompt.</p><div class="why" id="whySafe"></div></div>
+      <div class="lbox bad" data-b="0"><h4>Nonpublic personal information</h4><p>Never enters a third-party AI tool.</p><div class="csheld" id="csHeld0" role="group" aria-label="Cards placed under nonpublic personal information"></div></div>
+      <div class="lbox" data-b="1"><h4>Not identifying on its own</h4><p>Safe to use in a prompt.</p><div class="csheld" id="csHeld1" role="group" aria-label="Cards placed under not identifying on its own"></div></div>
     </div>
   </div>
-  <div class="slab" style="margin-bottom:6px"><span>Sorted</span><b id="npiScore">0 / 8</b></div>
+  <div class="row" style="margin:0 0 6px">
+    <button type="button" class="btn" id="csCheck" disabled>Check my work</button>
+    <span class="dim mono" style="font-size:12px">placed: <b id="csPlaced">0</b> of 8</span>
+    <span class="mono" id="csOut" role="status" aria-live="polite" style="font-size:13px"></span>
+  </div>
+  <div class="panel hidden" id="csKey" tabindex="-1">
+    <span class="plab">The key, and why each card sits where it does</span>
+    <div id="csKeyBody"></div>
+  </div>
 
   <div class="panel" style="border-color:var(--on);border-width:2px">
     <span class="plab">Course rule</span>
@@ -1950,6 +1974,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <div class="check" data-gate="g13"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort all eight, then name which of the three landmines would be hardest to notice yourself mid-draft.</div></div>
+  <span class="src">Deck order interleaves the two categories rather than blocking them: <b>Rohrer, Dedrick &amp; Stershic (2015)</b>, interleaved practice against blocked practice. <span class="conf m" data-src="src-rohrer">M</span></span>
  </div>
 
 
@@ -2168,13 +2193,14 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h3 style="margin:22px 0 4px;font-size:17px">Sources cited in this session</h3>
   <ol class="srcs">
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 8c3ba2a080f016bb817e942066fc3f6405e94af73150cf0e99cab2961f719cf8 -->
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 c10a0b0a4a35828ec4cfb828428cab8c5b0664b4dc12817ab72182040ea6651c -->
       <li id="src-pricing">Anthropic. <em>Pricing</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com/docs/en/about-claude/pricing</a> Retrieved 2026, August 25. Retrieval dates differ across lessons; see DATA-PULL.md. Used for: per-token rates, cache and batch discounts, and the Cole document-pass arithmetic. <span class="conf h" data-src="src-pricing">H</span></li>
       <li id="src-sampling">artefact2. <em>LLM sampling visualiser</em>. GitHub Pages. <a href="https://artefact2.github.io/llm-sampling/">artefact2.github.io/llm-sampling</a> Used for: the nine sampler controls reimplemented in Appendix A5. <span class="conf h" data-src="src-sampling">H</span></li>
       <li id="src-aa">Artificial Analysis. <em>Artificial Analysis Intelligence Index and cost-per-task figures</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a> Retrieved 2026, July 28. Retrieval dates differ across lessons; see DATA-PULL.md. Used for: the capability-against-price frontier and the tier comparison. <span class="conf m" data-src="src-aa">M</span></li>
       <li id="src-finra2409">Financial Industry Regulatory Authority. (2024, June 27). <em>Regulatory Notice 24-09</em>. FINRA. <a href="https://www.finra.org/rules-guidance/notices/24-09">finra.org/rules-guidance/notices/24-09</a> Used for: the position that existing rules apply to generative AI and that supervision is not suspended by the technology. <span class="conf h" data-src="src-finra2409">H</span></li>
       <li id="src-kalai">Kalai, A. T., Nachum, O., Vempala, S. S., &amp; Zhang, E. (2025). <em>Why language models hallucinate</em>. arXiv:2509.04664, §1 and §1.2. Retrieved 2025, May 11. Used for: why a model guesses rather than abstains, and the two scoring rules. <span class="conf h" data-src="src-kalai">H</span></li>
       <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: every worked example in this session and the next three. Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
+      <li id="src-rohrer">Rohrer, D., Dedrick, R. F., &amp; Stershic, S. (2015). <em>Interleaved practice improves mathematics learning</em>. Journal of Educational Psychology. Used for: the interleaved deck order of the section 08 card sort. <span class="conf m" data-src="src-rohrer">M</span></li>
       <li id="src-sec-ai">U.S. Securities and Exchange Commission. (2024, March 18). <em>Enforcement actions against Delphia (USA) Inc. and Global Predictions, Inc.</em> SEC. Used for: the AI-washing settlements and their penalty amounts. <span class="conf m" data-src="src-sec-ai">M</span></li>
       <li id="src-wolfram">Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a> Used for: next-token prediction, the temperature passage, tokens and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. <span class="conf h" data-src="src-wolfram">H</span></li>
 <!-- SOURCES:END -->
@@ -2188,6 +2214,28 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </footer>
 
 </div>
+<!-- CARDSORT:BEGIN cole-household v4.0 -->
+<!-- generated by scripts/build-cardsort.mjs from CASE.md and scripts/case-facts.json · sha256 7953345977d45f0bad1c8f4445c89aee5f1a2535794fa453ab45dc4fd3281d39 · do not edit between the sentinels -->
+<script>
+/* Deck and key for the section 08 card sort. Bucket 0 is nonpublic personal
+   information, bucket 1 is not identifying on its own. Card text reads the
+   injected COLE constants so no case figure is typed here. */
+var CARDSORT=(function(){
+  function usd(n){return '$'+String(n).replace(/\B(?=(\d{3})+(?!\d))/g,',')}
+  function pc(x){var v=Math.round(x*10000)/100;return (v%1===0?String(v):v.toFixed(2))+'%'}
+  return {cards:[
+  {t:'The 2026 blended annual rate on a demand loan: '+pc(COLE.blendedAnnual),b:1,w:'A published rate from a revenue ruling. It attaches to every demand loan in the country, not to this household.'},
+  {t:'A competitor has approached '+COLE.companyAbbr+' about an acquisition, and Nathan has not been told',b:0,w:'The first landmine in the case file. An unannounced approach to a private company, and the person most affected does not know it happened.'},
+  {t:'The federal basic exclusion amount: '+usd(COLE.fedExclusion),b:1,w:'A statutory figure anyone can look up. It says nothing about who is asking.'},
+  {t:'The '+pc(COLE.discount)+' combined discount asserted in the draft memorandum from estate counsel',b:0,w:'The second landmine. A privileged, unfiled valuation position with no appraisal behind it, and adverse to the client if it surfaces.'},
+  {t:'Meg intends a '+usd(COLE.endowmentIntent)+' endowment to the charity she chairs, and its board has not been told',b:0,w:'The third landmine. The intent carries disclosure and conflict questions she has not raised with the board she leads.'},
+  {t:'The section 7520 rate used to value split interests: '+pc(COLE.rate7520),b:1,w:'A published rate from the same monthly ruling series. Verify the figure against the source, not against a model.'},
+  {t:'An owner in her sixties with a precision aerospace-fastener maker in '+COLE.plantTown+', bought from her father',b:0,w:'No name appears, and in a market this narrow the combination identifies one person. De-identification removes the combination, not the name.'},
+  {t:'The Illinois estate tax exclusion: '+usd(COLE.ilExclusion),b:1,w:'A statutory threshold set by state law. Public, and the same for every Illinois estate.'}
+  ]};
+})();
+</script>
+<!-- CARDSORT:END cole-household -->
 <script>
 (function(){
 "use strict";
@@ -2961,28 +3009,69 @@ var TLABEL=['Haiku-class','Sonnet-class','Opus / Fable-class'];
       done++;$('tqScore').textContent=done+' of '+TQ.length+' answered';
       if(done>=TQ.length)mark('g12')}})})})();
 
-/* ===== 12 NPI ===== */
-var NPI=[
- {t:'That Meg is exploring a sale of CPC',b:0,w:'Landmine 1. Nathan works in CPC operations and has not been told. Entering this into a consumer tool discloses an unannounced transaction in a private company, and the person most affected by it is an employee who does not know.'},
- {t:'The unexecuted transfer plan and the valuation discount being claimed',b:0,w:'Landmine 2. An unexecuted, unfiled position on valuation. Nothing about it is public, it is adverse to the client if it surfaces, and it is exactly the kind of detail that makes a household identifiable to anyone in the same market.'},
- {t:'That Meg Cole is a client of this firm at all',b:0,w:'The relationship itself is nonpublic personal information. The name alone, with no financial detail attached, is a disclosure. It is not one of the three landmines the case file carries \u2014 those are Nathan, the privileged strategy, and the endowment Meg intends for the charity she chairs \u2014 it is a fourth, and it comes from the regulation rather than from the file.'},
- {t:'"A Midwest aerospace-fastener owner in her sixties, selling the company she bought from her father"',b:0,w:'No name, and in a market this narrow it identifies one person. De-identification means removing the combination, not the name.'},
- {t:'"How does a sale to an intentionally defective grantor trust work?"',b:1,w:'A general question about a technique, with no client attached. This is most of what you should be using these tools for.'},
- {t:'The applicable federal rate for a mid-term note this month',b:1,w:'A published rate. Nothing client-specific \u2014 though verify the figure against the source rather than the model.'},
- {t:'"What factors support a lack-of-marketability discount?"',b:1,w:'A doctrinal question with no facts attached. Safe, and worth asking before you read an appraisal rather than after.'},
- {t:'The current federal estate and gift tax exclusion amount',b:1,w:'A published statutory figure. Verify it independently \u2014 it is an arbitrary fact and it has changed repeatedly.'}];
+/* ===== 12 CARD SORT ===== */
+/* Deck and key live between the CARDSORT sentinels, generated by
+   scripts/build-cardsort.mjs from CASE.md; this block is behaviour only.
+   The check opens only once all eight cards are placed, writes an aggregate
+   count into #csOut and nothing else: no per-card state may change on a
+   check, or the withheld key leaks. The key panel body stays empty until
+   the unlock or the Shift+U override, so the labelled rows are not sitting
+   in the DOM while the sort is live. */
 (function(){
-  var host=$('npiChips'),solved={};
-  host.innerHTML=NPI.map(function(d,i){return '<button class="chip" data-i="'+i+'">'+d.t+'</button>'}).join('');
-  var boxes=all('.sorter .lbox');
-  all('.chip',host).forEach(function(c){c.onclick=function(){
-    all('.chip',host).forEach(function(x){x.classList.toggle('act',x===c)});
-    c.classList.add('solved');solved[c.dataset.i]=1;
-    var d=NPI[+c.dataset.i];
-    boxes.forEach(function(b,i){b.classList.toggle('lit',i===d.b)});
-    $('whyNpi').textContent=d.b===0?d.w:'';$('whySafe').textContent=d.b===1?d.w:'';
-    var n=Object.keys(solved).length;$('npiScore').textContent=n+' / 8';
-    if(n>=8)mark('g13')}})})();
+  var deck=$('csDeck');if(!deck||typeof CARDSORT==='undefined')return;
+  var N=CARDSORT.cards.length,sel=-1,dragI=-1,keyFilled=false;
+  var held=[$('csHeld0'),$('csHeld1')],toBtns=[$('csTo0'),$('csTo1')];
+  deck.innerHTML=CARDSORT.cards.map(function(d,i){
+    return '<button type="button" class="chip cscard" draggable="true" data-c="'+i+'" aria-pressed="false">'+d.t+'</button>'}).join('');
+  function card(i){return document.querySelector('.cscard[data-c="'+i+'"]')}
+  function placedCount(){var n=0,i;for(i=0;i<N;i++){if(card(i).closest('.lbox'))n++}return n}
+  function fillKey(){if(keyFilled)return;keyFilled=true;
+    $('csKeyBody').innerHTML=CARDSORT.cards.map(function(d){
+      return '<p class="cskrow"><b>'+(d.b===0?'Nonpublic':'Not identifying')+'</b> &middot; '+d.t+'<span class="cskw">'+d.w+'</span></p>'}).join('')}
+  onRevealAll(fillKey);
+  function setSel(i){
+    sel=i;
+    all('.cscard').forEach(function(c){var on=+c.dataset.c===i;
+      c.classList.toggle('act',on);c.setAttribute('aria-pressed',on?'true':'false')});
+    toBtns.forEach(function(b){if(i<0)b.setAttribute('disabled','');else b.removeAttribute('disabled')});
+  }
+  function place(i,b){
+    if(i<0||!card(i))return;
+    held[b].appendChild(card(i));
+    setSel(-1);
+    var n=placedCount();
+    $('csPlaced').textContent=n;
+    /* keep the keyboard user oriented: focus follows the card it just moved */
+    card(i).focus();
+    if(n>=N){$('csCheck').removeAttribute('disabled');mark('g13')}
+  }
+  document.querySelector('.cardsort').addEventListener('click',function(e){
+    var c=e.target.closest('.cscard');if(!c)return;
+    setSel(+c.dataset.c===sel?-1:+c.dataset.c);
+  });
+  toBtns.forEach(function(b,bi){b.onclick=function(){place(sel,bi)}});
+  /* dragI, not the dataTransfer payload, decides what a drop places, so a
+     stray text selection dragged over a bucket cannot re-file a card */
+  document.querySelector('.cardsort').addEventListener('dragstart',function(e){
+    var c=e.target.closest?e.target.closest('.cscard'):null;if(!c)return;
+    dragI=+c.dataset.c;
+    e.dataTransfer.setData('text/plain',c.dataset.c);e.dataTransfer.effectAllowed='move'});
+  document.querySelector('.cardsort').addEventListener('dragend',function(){dragI=-1});
+  all('.cardsort .lbox').forEach(function(box,bi){
+    box.addEventListener('dragover',function(e){e.preventDefault();box.classList.add('csover');e.dataTransfer.dropEffect='move'});
+    box.addEventListener('dragleave',function(){box.classList.remove('csover')});
+    box.addEventListener('drop',function(e){e.preventDefault();box.classList.remove('csover');
+      var i=dragI;dragI=-1;if(i>=0)place(i,bi)});
+  });
+  $('csCheck').onclick=function(){
+    if(placedCount()<N)return;
+    var n=0,i;for(i=0;i<N;i++){var b=card(i).closest('.lbox');
+      if(b&&+b.getAttribute('data-b')===CARDSORT.cards[i].b)n++}
+    $('csOut').textContent=n+' / '+N+' correct';
+    if(n===N&&$('csKey').classList.contains('hidden')){
+      fillKey();$('csKey').classList.remove('hidden');$('csKey').focus()}
+  };
+})();
 
 /* ===== 13 DIAGNOSTIC ===== */
 var DG=[

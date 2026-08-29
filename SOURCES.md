@@ -281,6 +281,23 @@ scope:          Why a model guesses rather than abstains, and the two scoring ru
 used_for.session-1: why a model guesses rather than abstains, and the two scoring rules
 ```
 
+## src-rohrer
+
+```source
+title:          Interleaved practice improves mathematics learning
+author:         Rohrer, D., Dedrick, R. F., & Stershic, S.
+publisher:      Journal of Educational Psychology
+link:           [UNVERIFIED, needs source]
+published:      2015
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          Cited ONLY for the design claim that interleaving categories during classification practice beats blocking them, which is what the section 08 deck order does. The paper's identity is well established in the practice literature; it was not retrievable from this build environment, so no figure or effect size from it appears anywhere in the corpus.
+used_for.session-1: the interleaved deck order of the section 08 card sort
+```
+
 ## src-sampling
 
 ```source

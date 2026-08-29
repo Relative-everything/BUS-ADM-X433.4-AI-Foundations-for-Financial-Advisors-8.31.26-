@@ -201,6 +201,66 @@ for (const rel of LESSONS) {
   say(!overflow, `15  no horizontal page overflow at ${WIDTH}px`);
 
   await page.screenshot({ path: join(SHOT, rel.replace(/\//g, '_') + '.png'), fullPage: false });
+
+  /* session-1 widget drives. The blanket click pass above has already mangled
+     widget state, so these re-load the page and work it through the page's own
+     controls, the way a student would. */
+  if (rel === 'session-1/index.html') {
+    await page.goto(pathToFileURL(join(REPO, rel)).href, { waitUntil: 'load' });
+    await page.waitForTimeout(400);
+
+    /* s08: the card sort withholds its key. The check opens only once all
+       eight are placed, may write the aggregate count and nothing else, and
+       the reveal (panel unhidden AND its rows rendered) is reachable only at
+       8 of 8. */
+    const cs = await page.evaluate(() => {
+      const $ = (id) => document.getElementById(id);
+      const res = {};
+      const key = CARDSORT.cards.map((d) => d.b);
+      res.deck = document.querySelectorAll('.cscard').length;
+      res.hiddenAtLoad = $('csKey').classList.contains('hidden');
+      res.checkClosedAtLoad = $('csCheck').disabled === true;
+      $('csCheck').click();                                  /* must be inert */
+      res.noResultBeforeComplete = $('csOut').textContent === '';
+      const placeVia = (i, b) => {
+        document.querySelector('.cscard[data-c="' + i + '"]').click();
+        $(b === 0 ? 'csTo0' : 'csTo1').click();
+      };
+      const snapshot = () => [...document.querySelectorAll('.cscard')].map((c) =>
+        c.className + '|' + c.getAttribute('aria-pressed') + '|' +
+        (c.closest('.lbox') ? c.closest('.lbox').getAttribute('data-b') : 'deck')).join(';');
+      key.forEach((b, i) => placeVia(i, 1 - b));            /* all eight wrong */
+      res.checkOpenWhenComplete = $('csCheck').disabled === false;
+      const before = snapshot();
+      $('csCheck').click();
+      res.wrong = $('csOut').textContent;
+      res.hiddenAfterWrong = $('csKey').classList.contains('hidden');
+      res.keyRowsAfterWrong = $('csKeyBody').querySelectorAll('.cskrow').length;
+      res.noPerCardMutation = snapshot() === before;
+      key.forEach((b, i) => { if (i > 0) placeVia(i, b); }); /* seven right */
+      $('csCheck').click();
+      res.seven = $('csOut').textContent;
+      res.hiddenAtSeven = $('csKey').classList.contains('hidden');
+      res.keyRowsAtSeven = $('csKeyBody').querySelectorAll('.cskrow').length;
+      placeVia(0, key[0]);                                   /* all eight right */
+      $('csCheck').click();
+      res.eight = $('csOut').textContent;
+      res.revealed = !$('csKey').classList.contains('hidden');
+      res.keyRowsRevealed = $('csKeyBody').querySelectorAll('.cskrow').length;
+      res.gateDone = document.querySelector('[data-gate="g13"]').classList.contains('done');
+      return res;
+    });
+    say(cs.deck === 8 && cs.hiddenAtLoad, `s08 card sort renders 8 cards with the key sealed`);
+    say(cs.checkClosedAtLoad && cs.noResultBeforeComplete && cs.checkOpenWhenComplete,
+        `s08 the check is closed until all 8 are placed, then opens`);
+    say(cs.wrong === '0 / 8 correct' && cs.hiddenAfterWrong && cs.keyRowsAfterWrong === 0,
+        `s08 all-wrong check reports "0 / 8 correct", key sealed and its rows unrendered (got "${cs.wrong}")`);
+    say(cs.noPerCardMutation, `s08 a check changes no per-card class, attribute or position`);
+    say(cs.seven === '7 / 8 correct' && cs.hiddenAtSeven && cs.keyRowsAtSeven === 0,
+        `s08 seven right reports "7 / 8 correct", key still sealed and unrendered (got "${cs.seven}")`);
+    say(cs.eight === '8 / 8 correct' && cs.revealed && cs.keyRowsRevealed === 8 && cs.gateDone,
+        `s08 the key unlocks, and renders, only at "8 / 8 correct" (got "${cs.eight}")`);
+  }
   await ctx.close();
 }
 

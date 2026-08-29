@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**21 of 59 works are moving targets, feeding 83 of
-176 references.**
+**21 of 60 works are moving targets, feeding 83 of
+177 references.**
 
 
 ---
