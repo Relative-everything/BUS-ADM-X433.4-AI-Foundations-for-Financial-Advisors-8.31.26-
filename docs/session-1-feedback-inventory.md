@@ -38,7 +38,7 @@ strings quoted here are expected and are not defects.
 |---|---|---|
 | 1 | String presence | PARTIAL — absent list only, no file:line for present strings |
 | 2 | Date/time buckets | PARTIAL — bucket totals only; see §D-1, arithmetic does not close |
-| 3 | Canvas / LMS | SUPERSEDED by Pass 2 BLOCK A, `acd691f` — **but that SHA is not in this repository, see §F-0.1** |
+| 3 | Canvas / LMS | SUPERSEDED by Pass 2 BLOCK A, `acd691f` — the SHA was absent when §F was measured and landed on `main` 2026-08-29; see §F-0.1's merge note |
 | 4 | Instructor-addressed constructs | **RE-MEASURED 2026-08-29 — see §F-1.** 80 constructs, region-classified |
 | 5 | Grading / final-project residue | PARTIAL — two survivors named |
 | 6 | Title inventory | **FLAT LIST RECORDED 2026-08-29 — see §F-3 and §F-6.** 419 titles; headline corrected |
@@ -319,10 +319,25 @@ docs/deferred-work.md, highest row              DW-057   (not DW-058, not DW-059
 The brief's "A9 for session-1 lowered from 77 to 69" describes a state this tree has
 never been in. **77 is the live figure.** DW-058 and DW-059 do not exist here.
 
+> **MERGE NOTE, 2026-08-29, same day.** Everything above was true of the tree §F was
+> measured against (`9924f11`) and is kept as the record of that measurement. Pass 2
+> then landed on `main` as `acd691f` (PR #11) — it had been running in a parallel
+> session and merged after Pass 3 branched. The Pass 2/Pass 3 merge re-measured A9 on
+> the merged body by executing the classifier: **literal 1 / entity 68 / total 69**,
+> matching the merged baseline. DW-058 and DW-059 now exist and are Pass 2's lowering
+> rows; this branch's runtime retired-fact row was renumbered **DW-063** (see F-2.1).
+
 **F-0.2 · the Tier A/B keep-row example was never deleted.** `MAINTAINING.md:368` cites
 *"No client nonpublic personal information may appear in any work you produce in this
-course"*. The brief says `acd691f` deleted it. It is **live at `session-1:1961`**,
-region R1. Nothing was restored, because nothing was removed. See F-4.
+course"*. The brief says `acd691f` deleted it. It was **live at `session-1:1961`**,
+region R1, when §F was measured. Nothing was restored, because nothing had been removed.
+See F-4.
+
+> **MERGE NOTE, 2026-08-29, same day.** `acd691f` then landed on `main` and **did** delete
+> that sentence, with the whole §08 panel that carried it — the brief's claim was early,
+> not wrong. The keep-row repoint in `MAINTAINING.md` (TASK 6) is unaffected: it already
+> cites the surviving Course rule panel string, and Pass 2's **DW-061** — which recorded
+> the same orphaned example independently — is closed by it.
 
 **F-0.3 · this file is in `docs/`, not `audit/`.** The note above §A says "this file sits
 in `audit/`". It does not, and never has — `git log --all -- audit/session-1-feedback-inventory.md`
@@ -490,7 +505,9 @@ JS-literal survivor and the `23.4%` figure — and the most serious of the three
 are a disclosure gap and a stale weighting, this one is a live Part K violation.
 
 **NOT FIXED HERE.** §02 numbers are RECORD ONLY this pass and constraint 4 forbids touching an
-interactive component. Opened as **DW-058**. The obvious fix is to move the weight off the
+interactive component. Opened as **DW-058**, renumbered **DW-063** on the 2026-08-29 merge
+— Pass 2 landed its A9-lowering row under DW-058 first, and lowering rows keep their
+numbers under the ratchet rule. The obvious fix is to move the weight off the
 banned value and renormalise the list, but that is a widget edit and needs its own pass.
 
 **Why this file does not simply quote the string.** `verify-migration.mjs` excludes registers

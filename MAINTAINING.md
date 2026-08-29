@@ -380,6 +380,15 @@ sentence is **live at `session-1:1961`**, region R1, inside the §08 panel heade
 you are looking at, and what you owe"*. Nothing was restored, because nothing was
 removed.
 
+**Merge note, 2026-08-29, same day.** `acd691f` then landed on `main` (PR #11): Pass 2 had
+been running in a parallel session and merged after the repoint was written. It **did**
+delete the `session-1:1961` sentence, with the whole §08 panel carrying it — so the
+grounds the repoint was requested on became true after the fact. The paragraph above is
+kept as the record of the tree it was written against. The repoint itself is unaffected:
+its cited example is the Course rule panel string, which Pass 2 left untouched, and
+Pass 2's register row **DW-061**, which recorded the same orphaned example independently
+and asked for exactly this repoint or a restore, is closed by it.
+
 The repoint is still right, and stands on its own reasons rather than on the deletion
 that did not happen. The Course rule panel string is the stronger citation: it is the
 rule as the course states it to students, it is duplicated on the hub so the row's
