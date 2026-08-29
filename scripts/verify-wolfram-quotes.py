@@ -117,7 +117,7 @@ def credited_paragraphs(html_path):
     out = []
     for m in re.finditer(r'<p class="dim"[^>]*>(.*?)</p>', src, re.S):
         body = m.group(1)
-        cm = re.search(r'<span class="wh">(.*?)</span>', body, re.S)
+        cm = re.search(r'<span class="(?:wh|src)">(.*?)</span>', body, re.S)
         if not cm:
             continue
         line = src.count("\n", 0, m.start()) + 1
@@ -127,7 +127,7 @@ def credited_paragraphs(html_path):
 
 def spans_in(body):
     """Every double-quoted span in the box, tags removed, split on ellipsis."""
-    text = strip_tags(re.sub(r'<span class="wh">.*?</span>', "", body, flags=re.S))
+    text = strip_tags(re.sub(r'<span class="(?:wh|src)">.*?</span>', "", body, flags=re.S))
     text = html.unescape(text).translate(INVISIBLE)
     found = []
     # Match on the ORIGINAL curly/straight double quotes only - single marks
