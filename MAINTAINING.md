@@ -365,7 +365,27 @@ lesson rather than fix it:**
 | A widget's own score | *"SCORE 8 / 8"*, *"TOTAL 12 / 12"*, *"Rubric coverage"* | Feedback computed in the room, not a course grade. A course grade is Canvas's; a diagnostic is the page's |
 | Cross-session pedagogy | retrieval bridges, the case spine's artifact chain, spiral declarations | Ratified constructs. Held open as **DW-050**, not edited piecemeal |
 | Regulatory deadlines | Regulation S-P's 30-day notification clock in `session-4` | A deadline **in the case**, which is the thing being taught |
-| Data-handling rules | *"No client nonpublic personal information may appear in any work you produce in this course"* | A safety rule, not a grading rule. Reworded off "submission", kept in force |
+| Data-handling rules | *"No real client data or personally identifying information enters any AI tool at any point in this course"* | A safety rule, not a grading rule. Kept in force. Repointed 2026-08-29 — see the note below |
+
+**The Data-handling row was repointed on 2026-08-29, and the supersession is not the
+one it was requested as.** The row previously cited *"No client nonpublic personal
+information may appear in any work you produce in this course"*. It now cites the
+**Course rule panel** string, which is the canonical statement of the same rule and
+appears twice: `index.html:1103` and `session-1:1952`.
+
+The repoint was asked for on the grounds that the previously cited sentence had been
+deleted by commit `acd691f`. **Neither half of that is true in this repository.** There
+is no `acd691f` — `git cat-file -e` fails on it and no branch contains it — and the
+sentence is **live at `session-1:1961`**, region R1, inside the §08 panel headed *"What
+you are looking at, and what you owe"*. Nothing was restored, because nothing was
+removed.
+
+The repoint is still right, and stands on its own reasons rather than on the deletion
+that did not happen. The Course rule panel string is the stronger citation: it is the
+rule as the course states it to students, it is duplicated on the hub so the row's
+example survives any single lesson edit, and it names the actual boundary — what enters
+an AI tool — rather than what appears in produced work. The `session-1:1961` sentence
+remains in force and remains covered by this row; it is simply no longer the example.
 
 **`session-0.1` is excluded from Tier A and Tier B, permanently, by instructor
 decision, and here is the test that says so.** It is **not part of the current

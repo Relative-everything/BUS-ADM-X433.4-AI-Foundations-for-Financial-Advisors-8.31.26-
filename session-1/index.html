@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Session 1 — How the Machine Works, and What It Costs</title>
+<title>Session 1 — Prediction, Model Tiers, and the Cost of Using Them</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -1398,7 +1398,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 <section class="slide" id="s1" data-nav="Start">
  <div class="body">
   <div class="eyebrow"><span>BUS ADM X433.4 &middot; Session 1</span><span class="mins">6 min</span></div>
-  <h1>How the Machine Works, and What It Costs</h1>
+  <h1>Prediction, Model Tiers, and the Cost of Using Them</h1>
   <p class="lede">Build next-token prediction by hand, then price it against a real planning practice.</p>
   <p class="dim mono" style="font-size:12.5px;letter-spacing:.06em">Scrolls freely &mdash; nothing is withheld. Answer panels open on an explicit reveal, or all at once with Shift+U.</p>
   <div class="panel pace" data-task="t-s1" data-comp="work-along-gate"><span class="plab">How this session is paced</span><div id="paceOut"></div>
@@ -1427,7 +1427,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <!-- Recurring question, session 1 angle. See docs/spine-brief.md. -->
   <div class="talk"><span class="th">The question that runs through every session</span>Meg is short $522,086 a year from year 6, while the structure performs exactly as designed. <b>How much of the $20,020,000 note does she call this year, what does calling it cost her in every year after, and when is a different lever the better answer?</b> Nobody answers it tonight. Tonight you find out why the tool you would reach for to answer it is worst at exactly this shape of problem: a long compounding sequence where every year depends on the last.</div>
 
-  <p class="dim" style="font-size:14.5px">Figure labels: <span class="conf h" data-src="src-case">H</span> primary or first-party &middot; <span class="conf m" data-src="src-sec-ai">M</span> secondary or derived &middot; <span class="conf l" data-src="src-sec-ai">L</span> unverified. Arrow keys navigate. Instructors: <b class="mono">Shift+U</b> unlocks everything.</p>
+  <p class="dim" style="font-size:14.5px">Figure labels: <span class="conf h" data-src="src-case">H</span> primary or first-party &middot; <span class="conf m" data-src="src-sec-ai">M</span> secondary or derived &middot; <span class="conf l" data-src="src-sec-ai">L</span> unverified. Arrow keys navigate. <b class="mono">Shift+U</b> opens every answer panel at once.</p>
 
   <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Name the one figure in this case you would refuse to accept without re-verification, and say why.<div class="row" style="margin-top:10px"><input type="text" id="s1field" placeholder="e.g. the valuation discount, because nothing in the file supports it" style="max-width:520px"></div></div></div>
  </div>
@@ -1440,12 +1440,12 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="lede">Seven optional sections, 81 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
   <p>The 11 sections of the core session run in about 69 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
-    <a class="apxcard" href="#s3"><span class="ac">A1 &middot; 11 min &middot; after &sect;02</span><b>Counting Works, Then Stops Working</b></a>
+    <a class="apxcard" href="#s3"><span class="ac">A1 &middot; 11 min &middot; after &sect;02</span><b>N-gram Counting and Its Limits</b></a>
     <a class="apxcard" href="#s4"><span class="ac">A2 &middot; 12 min &middot; after &sect;02</span><b>Fitting a Model by Hand</b></a>
     <a class="apxcard" href="#s6"><span class="ac">A3 &middot; 9 min &middot; after &sect;03</span><b>Words Laid Out So That Nearby Means Similar</b></a>
     <a class="apxcard" href="#s7"><span class="ac">A4 &middot; 9 min &middot; after &sect;03</span><b>The Task a Transformer Cannot Reliably Learn</b></a>
     <a class="apxcard" href="#s8"><span class="ac">A5 &middot; 16 min &middot; after &sect;03</span><b>The Nine Controls Between the Model and Your Answer</b></a>
-    <a class="apxcard" href="#s14"><span class="ac">A6 &middot; 9 min &middot; after &sect;08</span><b>There Is No Separate AI Rulebook</b></a>
+    <a class="apxcard" href="#s14"><span class="ac">A6 &middot; 9 min &middot; after &sect;08</span><b>Existing FINRA Rules as Applied to AI</b></a>
     <a class="apxcard" href="#s14c"><span class="ac">A7 &middot; 15 min &middot; after &sect;09</span><b>Disclosure of AI Use to the Client</b></a>
   </div>
 </section>
@@ -1473,7 +1473,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 <section class="slide" id="s2" data-nav="Prediction">
  <div class="body">
   <div class="eyebrow"><span>02 &middot; Wolfram, &ldquo;It&rsquo;s Just Adding One Word at a Time&rdquo;</span><span class="mins">7 min</span></div>
-  <h2>The Model Ranks Candidates, Then Something Picks One</h2>
+  <h2>Candidate Rankings and the Selection Step</h2>
 
   <div class="wolf"><span class="wh">From the assigned reading</span>ChatGPT is "just asking over and over again 'given the text so far, what should the next word be?'&thinsp;"&mdash;each time adding a token, "which could be just part of a word."</div>
 
@@ -1487,7 +1487,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p>You are the sampler. Each list depended on your last choice, and nothing ever revisited an earlier one. Several paths produce a defensible sentence about the Cole discount; at least one produces a false one, in the same confident register.</p>
 
-  <h3>Always taking the top word produces flat, repetitive text</h3>
+  <h3>Distinct Tokens and Repetition at Three Temperatures</h3>
   <div class="wolf"><span class="wh">From the assigned reading</span>Always picking the highest-ranked word gives "a very 'flat' essay, that never seems to 'show any creativity' (and even sometimes repeats word for word)." A temperature of <b>0.8</b> "seems best" for essays &mdash; and "there's no 'theory' being used here; it's just a matter of what's been found to work in practice."</div>
 
   <div class="panel">
@@ -1505,7 +1505,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     </div>
   </div>
 
-  <h3>The probabilities fall off as a power law</h3>
+  <h3>Probability Plotted Against Candidate Rank</h3>
   <div class="chartbox">
     <div class="row" style="margin-bottom:12px">
       <button class="btn sel mini act" data-ax="lin">Linear axes</button>
@@ -1525,10 +1525,10 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </section>
 
 <section class="slide apx" id="s3" data-nav="A1 · n-grams" data-insert-after="s2" data-tier="foundational">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A1 &middot; Counting Works, Then Stops Working</b><span>11 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A1 &middot; N-gram Counting and Its Limits</b><span>11 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
  <div class="body">
   <div class="eyebrow"><span>Appendix A1 &middot; Mechanism, deeper</span><span class="mins">11 min</span></div>
-  <h2>Counting Works, Then Stops Working</h2>
+  <h2>N-gram Counting and Its Limits</h2>
   <p class="big">Everything below is computed live from the corpus in the box &mdash; counts from the words in front of you, not figures quoted from anywhere. The corpus is discovery-meeting language from the case.</p>
 
   <div class="panel" data-task="t-s3" data-comp="parameter-sandbox">
@@ -1560,7 +1560,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="sampler" id="wgOut" style="margin-top:12px;font-size:14px;line-height:1.75"><span class="dim">Pick a mode.</span></div>
   </div>
 
-  <h3>Why you cannot just use longer sequences</h3>
+  <h3>Possible Sequences Against Available Text</h3>
   <div class="wolf"><span class="wh">From the assigned reading &mdash; his figures</span>About <b>40,000</b> reasonably common English words. A web crawl holds <b>a few hundred billion words</b>; digitised books another <b>hundred billion</b>. But the number of possible 2-grams is already <b>1.6 billion</b>, and 3-grams <b>60 trillion</b>. At 20-word fragments, "the number of possibilities is larger than the number of particles in the universe."</div>
 
   <div class="panel">
@@ -1631,7 +1631,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 <section class="slide" id="s5" data-nav="Tokens">
  <div class="body">
   <div class="eyebrow"><span>03 &middot; Tokens and price</span><span class="mins">5 min</span></div>
-  <h2>A Token Is Not a Word</h2>
+  <h2>Token Counts and the Cost of a Document Pass</h2>
 
   <div class="wolf"><span class="wh">From the assigned reading</span>About 50,000 tokens exist and only about 3,000 are whole words. Wolfram gives the actual GPT-2 values: <b>"the"</b> is token <b>914</b>, and <b>" cat"</b> &mdash; with the space in front &mdash; is token <b>3542</b>. The space is part of the token.</div>
 
@@ -1724,7 +1724,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="talk"><span class="th">Where this bites in the Cole file &mdash; discussion</span>Every one of these is a counting or reconciliation task inside a long sequence, and every one is a place a fluent answer is least trustworthy:
   <ul><li>Confirming the 2014 buy-sell formula value against the indicated value of the company, and listing every provision that conflicts</li><li>Checking that the note principal on the draft instrument matches the memorandum, and that it is the same figure on every schedule and exhibit</li><li>Verifying that the combined discount is applied to the pro-rata value of the non-voting units, and not to some other base, in each place it appears</li><li>Tracing whether the 2011 powers of attorney were superseded by anything executed since, and confirming the file holds no later restatement</li></ul>
-  Ask the room: which of these have you already delegated to a tool this year, and did you total the numbers yourself?</div>
+  Which of these have you already delegated to a tool this year, and did you total the numbers yourself?</div>
 
   <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the sequence to a depth where the model assigns real probability to an invalid token.</div></div>
  </div>
@@ -1815,7 +1815,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="readout" id="kalaiOut"><span class="nil">Press "Ask again" three times.</span></div>
   </div>
 
-  <h3>Why it guesses instead of abstaining</h3>
+  <h3>Two Scoring Rules and the Best Strategy Under Each</h3>
   <div class="panel">
     <div class="row" style="margin-bottom:8px">
       <button class="btn sel mini act" data-sc="binary">Binary scoring</button>
@@ -1825,7 +1825,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       <thead><tr><th class="rh"></th><th>Correct</th><th>Wrong</th><th>Best strategy</th></tr></thead>
       <tbody>
         <tr><td class="rl">Model guesses</td><td id="c11">1</td><td id="c12">0</td><td id="c13">&mdash;</td></tr>
-        <tr><td class="rl">Model abstains</td><td id="c21">0</td><td id="c22">0</td><td id="c23">&mdash;</td></tr>
+        <tr><td class="rl">Model refuses to answer</td><td id="c21">0</td><td id="c22">0</td><td id="c23">&mdash;</td></tr>
       </tbody>
     </table>
     <div class="mverdict" id="scVerdict"></div>
@@ -1968,10 +1968,10 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </section>
 
 <section class="slide apx" id="s14" data-nav="A6 · Regulation" data-insert-after="s13" data-tier="foundational">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A6 &middot; There Is No Separate AI Rulebook</b><span>9 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A6 &middot; Existing FINRA Rules as Applied to AI</b><span>9 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
  <div class="body">
   <div class="eyebrow"><span>Appendix A6 &middot; Regulation</span><span class="mins">9 min</span></div>
-  <h2>There Is No Separate AI Rulebook</h2>
+  <h2>Existing FINRA Rules as Applied to AI</h2>
   <p class="big">FINRA's rules are technology-neutral. Regulatory Notice 24-09 creates no new obligations &mdash; it confirms the existing ones already reach this.</p>
 
   <table class="dt tight">
@@ -1986,7 +1986,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p>On 18 March 2024 the SEC settled against two advisers over AI claims: <b>Delphia (USA) Inc.</b>, $225,000, for saying it used client data with machine learning when it had collected the data and never used it that way; and <b>Global Predictions, Inc.</b>, $175,000, for advertising "expert AI driven forecasts" without substantiation. Both censured and ordered to cease and desist, under Advisers Act &sect;206(2), &sect;206(4) and Rules 206(4)-1 and 206(4)-7. Neither case was about a wrong answer. Both were about what the firm said it was doing.</p>
 
-  <h3>When the output is wrong, what went wrong</h3>
+  <h3>Six Failure Symptoms and Their Likely Causes</h3>
   <div class="panel" data-task="t-s14" data-comp="symptom-diagnoser">
     <div class="row" id="diagBtns"></div>
     <div class="readout" id="diagOut"><span class="nil">Select a symptom.</span></div>
@@ -2012,7 +2012,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       <tr><td>Instructions for one body of work only</td><td class="n">Project instructions</td><td>That project only</td></tr>
     </tbody>
   </table>
-  <p class="dim" style="font-size:14.5px">Changes to account-level preferences apply to <b>new</b> conversations, not the one you are in. If you set them and nothing changes, that is why. Interface labels move between releases &mdash; if the path above does not match what you see, look under Settings first and tell me, because it means this slide needs updating.</p>
+  <p class="dim" style="font-size:14.5px">Changes to account-level preferences apply to <b>new</b> conversations, not the one you are in. If you set them and nothing changes, that is why. Interface labels move between releases &mdash; if the path above does not match what you see, look under Settings first; the path here was accurate when this section was last revised.</p>
 
   <div class="panel" data-task="t-s14b" data-comp="builder-assembler">
     <span class="plab">Draft builder &mdash; select what belongs and the block assembles below</span>
@@ -2022,9 +2022,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <div class="talk"><span class="th">What actually belongs in there &mdash; discussion</span>The instinct is to write a personality description. The useful content is closer to a standing brief: who you are professionally, what you are usually doing, what a good answer looks like, and what you never want.
-  <ul><li>Credential and role, because it changes the register and the assumed floor</li><li>The standing verification requirement &mdash; the single highest-value line for anyone in this room</li><li>What never to include: no client-identifying detail, ever, in a standing instruction that will be attached to every future conversation</li></ul></div>
+  <ul><li>Credential and role, because it changes the register and the assumed floor</li><li>The standing verification requirement &mdash; the single highest-value line for anyone doing this work</li><li>What never to include: no client-identifying detail, ever, in a standing instruction that will be attached to every future conversation</li></ul></div>
 
-  <div class="check" data-gate="g15"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Select at least three elements and read the assembled block. You will refine it for the discussion post.</div></div>
+  <div class="check" data-gate="g15"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Select at least three elements and read the assembled block.</div></div>
  </div>
 
 
@@ -2047,9 +2047,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <div class="panel hidden" id="defencePanel">
-    <span class="plab">Defence &mdash; two per side, alternating, ninety seconds each. Call the minority first.</span>
+    <span class="plab">Defence &mdash; the strongest case for each side, about ninety seconds each</span>
     <div class="sgrid" id="defenceGrid"></div>
-    <div class="inote" style="margin-bottom:0"><span class="ih">Complication &mdash; introduce this once, after both sides have spoken</span>Nothing in FINRA 24-09 requires disclosure of AI use to a client. The Notice says existing rules apply as written. So the question is not what the rule requires. It is what you would want on the record if the summary had been wrong and Meg's counsel asked how the file was produced. Nobody re-speaks after this.</div>
+    <div class="inote" style="margin-bottom:0"><span class="ih">Complication &mdash; read this after you have argued both sides</span>Nothing in FINRA 24-09 requires disclosure of AI use to a client. The Notice says existing rules apply as written. So the question is not what the rule requires. It is what you would want on the record if the summary had been wrong and Meg's counsel asked how the file was produced.</div>
     <div class="row"><button class="btn" id="toVote2">Open second vote</button></div>
   </div>
 
@@ -2134,26 +2134,26 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="check" data-gate="g17"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Record your baseline above before you leave. It is the one thing tonight you cannot do later.</div></div>
 
   <div class="cards">
-    <div class="card"><span class="num">01</span><h4>Fluency is not evidence</h4><p>A well-formed answer and a correct answer look identical.</p></div>
-    <div class="card"><span class="num">02</span><h4>Verification is neither optional nor automatic</h4><p>Every citation checked against the primary source before it informs a recommendation.</p></div>
-    <div class="card"><span class="num">03</span><h4>Tier selection is judgment you defend</h4><p>Capability against cost per task, on your task, not someone else's benchmark.</p></div>
-    <div class="card"><span class="num">04</span><h4>You sign the work</h4><p>The tool is not a co-signer, a supervisor, or a defence.</p></div>
+    <div class="card"><span class="num">01</span><h4>Fluency against correctness</h4><p>A well-formed answer and a correct answer look identical.</p></div>
+    <div class="card"><span class="num">02</span><h4>Citation checks against the primary source</h4><p>Every citation checked against the primary source before it informs a recommendation.</p></div>
+    <div class="card"><span class="num">03</span><h4>Tier selection as documented judgment</h4><p>Capability against cost per task, on your task, not someone else's benchmark.</p></div>
+    <div class="card"><span class="num">04</span><h4>The signature on the work</h4><p>The tool is not a co-signer, a supervisor, or a defence.</p></div>
   </div>
 
-  <div class="talk"><span class="th">Closing question &middot; one to three answers, out loud, then we go</span>A model has just handed you a clean, confident, well-written answer about the Cole discount. Name the one thing tonight said you still cannot conclude from that, and say which part of the machine is the reason.</div>
+  <div class="talk"><span class="th">Closing question &middot; answer it before you close the page</span>A model has just handed you a clean, confident, well-written answer about the Cole discount. Name the one thing tonight said you still cannot conclude from that, and say which part of the machine is the reason.</div>
  </div>
 </section>
 
 <footer>
-  <h3 style="margin:26px 0 4px;font-size:17px">Instructor minute budget</h3>
+  <h3 style="margin:26px 0 4px;font-size:17px">Minutes by section</h3>
   <table class="tbudget" data-timing>
     <thead><tr><th>Section</th><th>Title</th><th>Min</th></tr></thead>
 <!-- APXBUDGET:BEGIN generated-by=scripts/build-appendix.mjs -->
     <tbody>
-      <tr><td>BUS ADM X433.4 &middot; Session 1</td><td>How the Machine Works, and What It Costs</td><td class="n">6</td></tr>
+      <tr><td>BUS ADM X433.4 &middot; Session 1</td><td>Prediction, Model Tiers, and the Cost of Using Them</td><td class="n">6</td></tr>
       <tr><td>01 &middot; Cold open &middot; standing ritual</td><td>The Last Prompt You Sent</td><td class="n">8</td></tr>
-      <tr><td>02 &middot; Wolfram, &ldquo;It&rsquo;s Just Adding One Word at a Time&rdquo;</td><td>The Model Ranks Candidates, Then Something Picks One</td><td class="n">7</td></tr>
-      <tr><td>03 &middot; Tokens and price</td><td>A Token Is Not a Word</td><td class="n">5</td></tr>
+      <tr><td>02 &middot; Wolfram, &ldquo;It&rsquo;s Just Adding One Word at a Time&rdquo;</td><td>Candidate Rankings and the Selection Step</td><td class="n">7</td></tr>
+      <tr><td>03 &middot; Tokens and price</td><td>Token Counts and the Cost of a Document Pass</td><td class="n">5</td></tr>
       <tr><td>04 &middot; Consequence</td><td>The Same Question, Asked Three Times</td><td class="n">7</td></tr>
       <tr><td>05 &middot; Capability against price</td><td>Intelligence Index Plotted Against Cost per Task</td><td class="n">5</td></tr>
       <tr><td>06 &middot; Your firm</td><td>What a Practice Pays in a Year</td><td class="n">7</td></tr>
@@ -2161,12 +2161,12 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       <tr><td>08 &middot; The line</td><td>What May Never Be Entered Into a Third-Party Tool</td><td class="n">7</td></tr>
       <tr><td>09 &middot; Custom instructions</td><td>Where Account-Level Custom Instructions Are Configured</td><td class="n">4</td></tr>
       <tr><td>10 &middot; Close</td><td>The Baseline You Cannot Reconstruct Later</td><td class="n">7</td></tr>
-      <tr class="apxrow"><td>Appendix A1 &middot; Mechanism, deeper</td><td>Counting Works, Then Stops Working</td><td class="n">11</td></tr>
+      <tr class="apxrow"><td>Appendix A1 &middot; Mechanism, deeper</td><td>N-gram Counting and Its Limits</td><td class="n">11</td></tr>
       <tr class="apxrow"><td>Appendix A2 &middot; Mechanism, deeper</td><td>Fitting a Model by Hand</td><td class="n">12</td></tr>
       <tr class="apxrow"><td>Appendix A3 &middot; Mechanism, deeper</td><td>Words Laid Out So That Nearby Means Similar</td><td class="n">9</td></tr>
       <tr class="apxrow"><td>Appendix A4 &middot; Failure mode</td><td>The Task a Transformer Cannot Reliably Learn</td><td class="n">9</td></tr>
       <tr class="apxrow"><td>Appendix A5 &middot; Lab</td><td>The Nine Controls Between the Model and Your Answer</td><td class="n">16</td></tr>
-      <tr class="apxrow"><td>Appendix A6 &middot; Regulation</td><td>There Is No Separate AI Rulebook</td><td class="n">9</td></tr>
+      <tr class="apxrow"><td>Appendix A6 &middot; Regulation</td><td>Existing FINRA Rules as Applied to AI</td><td class="n">9</td></tr>
       <tr class="apxrow"><td>Appendix A7 &middot; Discussion</td><td>Disclosure of AI Use to the Client</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
@@ -3262,10 +3262,15 @@ function lmOnConnect(){
       '<div class="pcell"><b>'+apx+' min</b><span>'+na+' appendix sections</span></div>'+
       '<div class="pcell"><b>'+(core+apx)+' min</b><span>everything</span></div>'+
     '</div>'+
-    '<p>The core runs in about '+core+' minutes and is what always gets taught. In a full '+
-    'block, raise the appendix depth and take the extra sections in place; in a short one, '+
-    'leave it on core only and the session still closes properly. Appendix sections are also '+
-    'readable alone afterwards.</p>';
+    '<p><b>Two ways through this session.</b> The core is '+nc+' sections and about '+core+' '+
+    'minutes. It stands on its own: nothing in the core depends on the appendix, so reading '+
+    'those sections in order gives you the whole argument.</p>'+
+    '<p>The '+na+' appendix sections add '+apx+' minutes of optional depth, '+(core+apx)+' '+
+    'minutes for everything. Each one is placed in the core at the point it belongs rather '+
+    'than at the back of the file, so you can carry straight on into it and then pick up where '+
+    'you left off. The gold cards under Appendix contents link to each one, and the depth '+
+    'control above sets how many are showing; anything hidden leaves a stub naming what it '+
+    'was, so you can always see what you skipped. They also read on their own afterwards.</p>';
 
 })();
 </script>
