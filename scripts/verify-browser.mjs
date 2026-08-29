@@ -201,6 +201,99 @@ for (const rel of LESSONS) {
   say(!overflow, `15  no horizontal page overflow at ${WIDTH}px`);
 
   await page.screenshot({ path: join(SHOT, rel.replace(/\//g, '_') + '.png'), fullPage: false });
+
+  /* session-1 widget drives. The blanket click pass above has already mangled
+     widget state, so these re-load the page and work it through the page's own
+     controls, the way a student would. */
+  if (rel === 'session-1/index.html') {
+    await page.goto(pathToFileURL(join(REPO, rel)).href, { waitUntil: 'load' });
+    await page.waitForTimeout(400);
+
+    /* s08: the card sort withholds its key. The check opens only once all
+       eight are placed, may write the aggregate count and nothing else, and
+       the reveal (panel unhidden AND its rows rendered) is reachable only at
+       8 of 8. */
+    const cs = await page.evaluate(() => {
+      const $ = (id) => document.getElementById(id);
+      const res = {};
+      const key = CARDSORT.cards.map((d) => d.b);
+      res.deck = document.querySelectorAll('.cscard').length;
+      res.hiddenAtLoad = $('csKey').classList.contains('hidden');
+      res.checkClosedAtLoad = $('csCheck').disabled === true;
+      $('csCheck').click();                                  /* must be inert */
+      res.noResultBeforeComplete = $('csOut').textContent === '';
+      const placeVia = (i, b) => {
+        document.querySelector('.cscard[data-c="' + i + '"]').click();
+        $(b === 0 ? 'csTo0' : 'csTo1').click();
+      };
+      const snapshot = () => [...document.querySelectorAll('.cscard')].map((c) =>
+        c.className + '|' + c.getAttribute('aria-pressed') + '|' +
+        (c.closest('.lbox') ? c.closest('.lbox').getAttribute('data-b') : 'deck')).join(';');
+      key.forEach((b, i) => placeVia(i, 1 - b));            /* all eight wrong */
+      res.checkOpenWhenComplete = $('csCheck').disabled === false;
+      const before = snapshot();
+      $('csCheck').click();
+      res.wrong = $('csOut').textContent;
+      res.hiddenAfterWrong = $('csKey').classList.contains('hidden');
+      res.keyRowsAfterWrong = $('csKeyBody').querySelectorAll('.cskrow').length;
+      res.noPerCardMutation = snapshot() === before;
+      key.forEach((b, i) => { if (i > 0) placeVia(i, b); }); /* seven right */
+      $('csCheck').click();
+      res.seven = $('csOut').textContent;
+      res.hiddenAtSeven = $('csKey').classList.contains('hidden');
+      res.keyRowsAtSeven = $('csKeyBody').querySelectorAll('.cskrow').length;
+      placeVia(0, key[0]);                                   /* all eight right */
+      $('csCheck').click();
+      res.eight = $('csOut').textContent;
+      res.revealed = !$('csKey').classList.contains('hidden');
+      res.keyRowsRevealed = $('csKeyBody').querySelectorAll('.cskrow').length;
+      res.gateDone = document.querySelector('[data-gate="g13"]').classList.contains('done');
+      return res;
+    });
+    say(cs.deck === 8 && cs.hiddenAtLoad, `s08 card sort renders 8 cards with the key sealed`);
+    say(cs.checkClosedAtLoad && cs.noResultBeforeComplete && cs.checkOpenWhenComplete,
+        `s08 the check is closed until all 8 are placed, then opens`);
+    say(cs.wrong === '0 / 8 correct' && cs.hiddenAfterWrong && cs.keyRowsAfterWrong === 0,
+        `s08 all-wrong check reports "0 / 8 correct", key sealed and its rows unrendered (got "${cs.wrong}")`);
+    say(cs.noPerCardMutation, `s08 a check changes no per-card class, attribute or position`);
+    say(cs.seven === '7 / 8 correct' && cs.hiddenAtSeven && cs.keyRowsAtSeven === 0,
+        `s08 seven right reports "7 / 8 correct", key still sealed and unrendered (got "${cs.seven}")`);
+    say(cs.eight === '8 / 8 correct' && cs.revealed && cs.keyRowsRevealed === 8 && cs.gateDone,
+        `s08 the key unlocks, and renders, only at "8 / 8 correct" (got "${cs.eight}")`);
+
+    /* s02: the sampler's weights render as percentages only at runtime, so a
+       source grep can never see a retired Part K figure enter the DOM (the
+       DW-063 defect class). Step the widget through every distribution, plus
+       a reset, and assert (a) the retired render forms never appear, (b) each
+       rendered distribution sums to 100 and is ranked non-increasing, which is
+       what catches a future COLE.discount move that outruns the hand-typed
+       tail of S2[1]. The banned strings are composed, never spelled, so this
+       file stays clean under verify-migration check 1. */
+    const samp = await page.evaluate(() => {
+      const banned = [(30 + 1) + '%', (30 + 1) + ' years'];
+      const bad = [];
+      const scan = (step) => {
+        const text = document.body.innerText;
+        for (const b of banned) if (text.indexOf(b) !== -1) bad.push('step ' + step + ': renders ' + b);
+        const pv = [...document.querySelectorAll('#s2dist .pv')].map((e) => parseInt(e.textContent, 10));
+        if (pv.length) {
+          const sum = pv.reduce((a, v) => a + v, 0);
+          if (sum < 99 || sum > 101) bad.push('step ' + step + ': weights sum to ' + sum);
+          for (let i = 1; i < pv.length; i++) if (pv[i] > pv[i - 1]) bad.push('step ' + step + ': rank order broken at ' + i);
+        }
+      };
+      const one = () => { const r = document.querySelector('#s2dist .drow'); if (r) r.click(); };
+      document.getElementById('s2reset').click();
+      scan('0');
+      for (let i = 1; i <= 6; i++) { one(); scan(String(i)); }
+      document.getElementById('s2reset').click();
+      scan('0 after reset');
+      return { bad, placed: document.getElementById('s2count').textContent };
+    });
+    say(samp.bad.length === 0 && samp.placed === '0',
+        `s02 no retired Part K figure renders, and every distribution sums to 100 ranked (8 states)` +
+        (samp.bad.length ? `\n        ${samp.bad.slice(0, 4).join('\n        ')}` : ''));
+  }
   await ctx.close();
 }
 
