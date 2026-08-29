@@ -691,7 +691,31 @@ the recorded numbers — this definition does, and `test-editorial-regions.mjs` 
 is the proof.
 
 **Re-baselining after a sanctioned cleanup.** A ratchet must be lowered by hand,
-deliberately, or it silently stops catching anything:
+deliberately, or it silently stops catching anything.
+
+**STANDING RULE — a recorded baseline is re-recorded only on Jared's explicit
+instruction.** Every figure in `scripts/editorial-baseline.json` is a *recorded*
+value, the `A9` total that `test-editorial-regions.mjs` T7 pins the classifier to
+included. Those figures are re-recorded **only when Jared has asked for it, in
+words, for that figure**. Any movement of a measured figure away from its
+recorded baseline that he did not ask for is a **halt-and-report** condition, and
+it is a halt in BOTH directions:
+
+- A **rise** is impossible by rule already, and stays impossible.
+- A **fall** is not self-service. "The ratchet allows a fall" is a statement
+  about the check, not a licence to re-record the figure; nor does an honest
+  side effect of otherwise sanctioned work make the re-record his decision to
+  skip. A fall he did not ask for halts exactly as a rise would.
+
+Stop before committing. Report the delta — which rule, which file, the before and
+after numbers, and the edit that moved them — and wait for the instruction. The
+steps below are how to re-record a figure **once that instruction exists**; they
+are not authority to decide that it should be re-recorded. If the instruction
+does not come, the resolution is the edit reverted or the work re-scoped, not the
+bar moved. T7 failing is not an exception to this: a red T7 is the report you owe
+Jared, not a licence to green it yourself.
+
+With that instruction in hand:
 
 1. Make the cleanup. Confirm the change was intended to move a counted figure.
 2. `node scripts/verify-editorial.mjs --rules A8,A9` and read the new numbers off
