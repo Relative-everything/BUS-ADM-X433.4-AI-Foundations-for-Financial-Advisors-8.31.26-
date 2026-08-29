@@ -82,7 +82,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | 35 | `src-kalai` | Why language models hallucinate | **EMPTY** | 2025-05-11 | 1 | no | S1 `#s9` |
 | 36 | `src-lee-cognitive` | The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers | **EMPTY** | **none** | 1 | no | S3 `#s15` |
 | 37 | `src-owasp` | Top 10 for LLM Applications and Top 10 for Agentic Applications | **EMPTY** | **none** | 1 | yes | S4 `#s5` |
-| 38 | `src-rohrer` | Interleaved practice improves mathematics learning | **EMPTY** | **none** | 1 | no | S1 `#s13` |
+| 38 | `src-rohrer` | Interleaved practice improves mathematics learning | **EMPTY** | 2026-08-29 | 1 | no | S1 `#s13` |
 | 39 | `src-routing` | Why Claude switched models in your conversation with Fable 5 | **EMPTY** | 2026-08-20 | 1 | yes | S0.1 `#s2` |
 | 40 | `src-sampling` | LLM sampling visualiser | **EMPTY** | **none** | 1 | no | S1 `#s8` |
 | 41 | `src-secpri` | Examination priorities: Fiscal year 2026, §VII | **EMPTY** | **none** | 1 | no | S4 `#s1` |
@@ -150,7 +150,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-kalai` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-lee-cognitive` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-owasp` | https://owasp.org/www-project-top-10-for-large-language-model-applications/ |
-| `src-rohrer` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
+| `src-rohrer` | https://doi.org/10.1037/edu0000001 |
 | `src-routing` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-sampling` | https://artefact2.github.io/llm-sampling/ |
 | `src-secpri` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
