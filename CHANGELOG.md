@@ -10,6 +10,971 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-08-29 · Verbatim quotations, and a rule for the baselines
+
+Branch `claude/dw-067-wolfram-quotes-5zzqxl`, four commits, merged at `e1eab38`.
+
+### Session 1 · Two paraphrases become quotations, and a script says so
+
+Section 03 summarised the assigned article instead of quoting it, and the A1
+n-gram box did the same with its five figures. Both are verbatim spans now. The
+work landed against an instructor-supplied copy of the article: the egress block
+that opened DW-067 in Pass 4 is still in force, so the article arrived as a file
+attached to the task rather than from the web, and it is the sole source for
+every span that landed.
+
+`scripts/verify-wolfram-quotes.py` is what makes that a testable claim rather
+than an assurance. It normalises whitespace, quote forms and HTML entities on
+both sides, splits each quotation at its ellipses, and asserts that every
+fragment is a contiguous substring of the article. The branch ends at **17 spans
+checked, 15 exact, 2 terminal-period, 0 failed.**
+
+The A1 box is two contiguous spans joined by one ellipsis, and the elision falls
+exactly where the article carries an em dash. Splitting the quotation there is
+what keeps all five figures verbatim and keeps a dash out of an attributed
+quotation at the same time, which is the collision A10 exists to catch.
+
+### Session 1 · A misquote found by the script, raised, then repaired
+
+The verifier found one span in the six reading boxes that is not a contiguous
+substring of the article: §02's second box had lost an indefinite article from
+the sentence about what a token can be. The pass that found it had no authority
+to repair a quotation, so it raised **DW-068** and left the box byte-unchanged.
+The next commit restored the missing word and moved the sentence-closing period
+outside the quotation marks, because the article carries a comma at that point
+and leaving the period inside would have traded a dropped word for an added one.
+
+Five of the six credit lines gained the article section their quotation comes
+from in the first commit; the sixth was the flagged box, and it was left alone
+twice on purpose before the last commit of the branch gave it its section name.
+All six carry one now.
+
+A third quotation, in the A2 paragraph, flattens the article's own quotation
+marks around two of its words, so it is not a contiguous substring either. The
+verifier **whitelists** it rather than reporting it clean, which means the run's
+zero failures does not assert that this span was read. That is **DW-069**, and
+it is open.
+
+### Repository · A recorded baseline is re-recorded only on instruction
+
+`MAINTAINING.md`'s re-baselining procedure now opens with a standing rule. Every
+figure in `scripts/editorial-baseline.json` is a *recorded* value, the A9 total
+that `test-editorial-regions.mjs` T7 pins the classifier to included, and those
+figures are re-recorded only when Jared has asked for it, in words, for that
+figure. Any unrequested movement of a measured figure away from its baseline is
+a halt-and-report condition in **both** directions: a rise was already
+impossible by rule, and a fall is not self-service. A red T7 is the report owed,
+not a licence to green it.
+
+The rule exists because this branch had already crossed it. A9 for session-1
+fell **69 to 67** inside the first commit, the two dashes having sat in the §03
+gloss the quotations replaced, and the baseline was lowered by hand in the same
+commit because T7 pins the classifier to the recorded figure and goes red until
+it moves. Nobody asked for that. It was put to Jared after the fact and
+ratified retroactively, so the lowering stands and no revert is owed.
+**67 is the standing pinned figure for session-1** and does not move again
+without his instruction for that figure, in either direction.
+
+### The commits
+
+- **`52b0bc4`** §03's paraphrase becomes two labelled quotations and the A1 box
+  becomes two spans joined at the article's own em dash; five credit lines gain
+  their section; `scripts/verify-wolfram-quotes.py` is added, 177 lines, and
+  every new span verifies exact. A9 session-1 lowered by hand 69 to 67; A12
+  falls from 8 advisories to 7.
+  `session-1/index.html`, `scripts/verify-wolfram-quotes.py` (new),
+  `scripts/editorial-baseline.json`, `docs/deferred-work.md`.
+  **Closes DW-067. Opens DW-068.**
+- **`9bdbd08`** Restores the word dropped from §02's second box and moves that
+  sentence's closing period outside the quotation marks; gives the A2 neuron
+  comparison a credit line naming both of the article sections its two figures
+  come from; adds the standing baseline rule to `MAINTAINING.md` and records the
+  69-to-67 lowering as ratified after the fact.
+  `MAINTAINING.md`, `session-1/index.html`, `scripts/verify-wolfram-quotes.py`,
+  `scripts/editorial-baseline.json`, `docs/deferred-work.md`.
+  **Closes DW-068.**
+- **`8679a7c`** The A2 credit line changes class from `wh` to `src` so it renders
+  through the styled rule and registers as a source note rather than body prose:
+  three A12 advisories clear and the corpus figure falls from 7 to 4, and A11
+  falls from 5 to 3. The verifier's credit-line matcher had located that
+  paragraph by its old class and had silently dropped both of its figures from
+  the run, so the matcher was extended to accept either class and the tally came
+  back to 17 checked.
+  `session-1/index.html`, `scripts/verify-wolfram-quotes.py`,
+  `docs/deferred-work.md`. **Opens DW-069.**
+- **`befe0f3`** The last bare reading-box credit line names its section, copied
+  byte-for-byte out of the box two lines away rather than retyped, so all six
+  reading boxes carry a section name and DW-067's six-label intent is met. A11
+  holds at 3 and A12 at 4, neither forced. `session-1/index.html`,
+  `docs/deferred-work.md`.
+
+Both period-outside-quotes edits and the verifier's matcher extension were made
+against their commits' stated scope and reported for ratification rather than
+assumed. Jared ratified all three on 2026-08-29.
+
+---
+
+## 2026-08-29 · Session 1 Pass 4 · The cold open gets a fixed checklist
+
+Branch `claude/session-1-pass-4-items-8wyomf`, three commits, merged at
+`550945b`.
+
+### Session 1 · A walkthrough anchor and a pointer at the case facts
+
+Two anchor callouts now sit between the live-console fence and the start card,
+in the lesson's teal callout style. The first says the session opens with a
+guided on-screen walkthrough of the model interface and that no prior AI
+experience is assumed. The second is one sentence sending the reader to Case
+facts in the top bar to review the Cole household before the first exercise.
+
+Two paragraphs stopped gesturing and started saying their point. §02's sampler
+paragraph now says the reader has just done what the model does, one word at a
+time with no revision, and that some paths produce a false sentence that sounds
+exactly as confident as a true one. §04's opener drops its rhetorical bridge for
+the fact it was pointing at: a system that predicts likely next words has no
+lookup step for facts, which is why exact recall fails.
+
+### Session 1 · The cold open stops improvising and renders eight fixed checks
+
+Pressing **Analyse what I typed** used to produce a free-form response. It now
+renders a fixed eight-point prompt checklist: an explicit ask, at least 15
+words, a named output format, context beyond the ask, a named audience or role,
+a constraint on length, tone or scope, an example or reference point, and what
+to do when unsure. Every check is deterministic, offline and readable in source,
+a visible word list or a plain measurement, never a relevance score. Each row
+renders a mark **and** the word "present" or "missing", never colour alone, with
+one plain line on why the item matters, and the response closes with *n* of 8
+present. It gates nothing and nothing else on the page reads it.
+
+The eight live in one `COLD_CHECKS` constant, commented as the course-wide
+checklist for the other lessons to copy verbatim. **DW-066** opens the September
+propagation, because until it lands the flagship diverges from the four lessons
+that still run the free-form analyser.
+
+An adversarial read of the diff caught a detection defect before the push: one
+token sat inside a word-boundary group where its trailing full stop could never
+match, so the alternation was rewritten to match it in normal use.
+
+### Session 1 · The start card verifies a choice instead of a keystroke
+
+The work-along drops the any-text-turns-green input. A picker now offers eight
+case figures, every one derived at render time from the injected `COLE`
+constants and never typed, plus an unscored free-text "why" field. Any selection
+is valid, the exercise has no single right answer, and the gate marks on a real
+selection: driven in Chromium, no selection stays incomplete even with why-text
+present, and a selection completes it.
+
+### Session 1 · Two tier-quiz items
+
+The §07 concentration item loses its formatting clause, so the task is the
+computation alone and both feedback strings speak to it. The email item's
+correct answer moves from Haiku-class to Sonnet-class, and both feedback strings
+now teach the judgment behind the move: templated is not the same as low-stakes,
+the draft goes out under your name, and the error a cheaper tier misses costs
+more than the tier saves. The quiz engine and its scoring logic are untouched.
+
+### The commits
+
+- **`af86dcd`** The two anchor callouts and the two prose replacements. New copy
+  carries no dates, no instructor-addressed prose and no em dashes.
+  `session-1/index.html` (+7/-2).
+- **`4a11230`** The eight-check cold open behind `COLD_CHECKS`, and the start
+  card's picker over eight injected case figures.
+  `session-1/index.html` (+54/-15), `docs/deferred-work.md`,
+  `docs/case-fact-inventory.md`. **Opens DW-066 and DW-067.**
+- **`8f7687e`** The two §07 `TQ` key edits. `session-1/index.html` (+4/-4).
+
+DW-067 is the row this pass could not close: egress to the assigned article's
+host is denied by the network policy, and a quotation mark must never wrap text
+that was not read from the source, so nothing was changed and the row records
+what the work would be. `A9` for session-1 holds at 69 across all three commits.
+
+---
+
+## 2026-08-29 · A source verified, and two September rows
+
+Branch `claude/session-1-pages-diagnosis-qifct5`, two commits, merged at
+`67dddda`.
+
+### Sources · The interleaving citation stops being an unverified record
+
+`src-rohrer`'s identity was confirmed against three independent listings: the
+ERIC record, the publisher's abstract page for the DOI, and the author's own
+publication list, which hosts the full text. The record now carries the
+journal's volume, issue and pages, the DOI link, the retrieval date and
+confidence H, and the session-1 footer gains its seventh link.
+
+The full text itself was not pulled and the record's `scope` still says so, so
+no figure and no effect size from the paper enters the corpus. `last_verified`
+stays empty: it is the instructor's attestation, not this tool's, and the lock
+digest proves it did not move.
+
+One consequence is worth naming because it looks like a defect and is not. The
+case-fact inventory's *declined* count rises by one: the page range's first
+figure collides with a case constant, the context test declined it, and the
+undercount is doing its job.
+
+### The register · Two rows dated to the September window
+
+- **DW-064** measures the reveal-override surface. Eight `keydown` handlers
+  across the five session files act on the override with no look at the active
+  element, so a capital U typed into any text input reveals every withheld
+  panel, the §08 card-sort key among them. Two share a guard that arrives too
+  late, six have none, and the hub has none to fix. The fix has to move as one
+  commit across the carrier files, under the shared-construct discipline the
+  register already applies to fences and rituals.
+- **DW-065** sends the newly verified `src-rohrer` upstream. The lesson-builder
+  skill states the interleaving design claim with no citation and the citation
+  now exists at verified/H. The skill is not edited from this repository, so the
+  row records where the fix lands instead of landing it.
+
+### The commits
+
+- **`f6699b0`** `src-rohrer` raised to verified/H with volume, issue, pages,
+  DOI and retrieval date; footer, bibliography and verification queue
+  regenerated behind it. `SOURCES.md`, `BIBLIOGRAPHY.md`,
+  `docs/source-verification-queue.md`, `docs/case-fact-inventory.md`,
+  `session-1/index.html`.
+- **`fee7dee`** Two rows and nothing else. `docs/deferred-work.md` (+2/-0).
+  **Opens DW-064 and DW-065.**
+
+---
+
+## 2026-08-29 · Session 1 §08 becomes a withheld-key card sort
+
+Branch `claude/session-1-card-sort-rebuild-nuzjoz`, two commits, merged at
+`134ccaa`.
+
+### Session 1 · The old sorter told you the answer as you clicked
+
+Chips were plain buttons, each click lit the correct bucket immediately, and the
+score counted clicks. It is replaced rather than patched. Eight cards, each a
+Cole fact, place by drag **or** by a keyboard path: every card is a real button;
+select it, then place it with an explicit per-bucket control, and focus follows
+the placed card so a keyboard reader is never dropped. A placed card stays
+placed and can be moved between buckets, and a foreign drag payload cannot
+re-file a card.
+
+**Check my work** opens only once all eight are placed, then reports an
+aggregate *n* of 8 and nothing else: no per-card class, attribute, ordering or
+ARIA change, so nothing a reader can observe says which cards are wrong. The key
+panel, one line of why per card, is not rendered into the DOM while the sort is
+live. Its rows build only at 8 of 8, or through the labelled override, which
+reaches it through the page's own reveal registry. Free scroll is untouched.
+
+### Session 1 · The key is derived from `CASE.md`, not typed into the lesson
+
+The deck and key live between new `CARDSORT` sentinels written by
+`scripts/build-cardsort.mjs`. The script derives both from `CASE.md` Part J and
+Part H plus `case-facts.json`, and `--check` fails when a fact the deck rests on
+moves, so a `CASE.md` edit breaks a check instead of silently orphaning the
+answer key. Card text reads the injected `COLE` constants at parse time, so no
+case figure is typed into the lesson: the drift surface fell from **107 unguarded
+to 105**, quantitative unchanged at 5.
+
+`verify-browser.mjs` gains a six-assertion drive that reloads the lesson and
+works the sort through its own controls: the check is inert before completeness;
+all-wrong reports 0 of 8 with the key sealed, its rows unrendered and a
+byte-identical per-card snapshot; seven right reports 7 of 8 still sealed; and
+the reveal renders only at 8 of 8.
+
+The section's source note gains the interleaved-classification citation at
+confidence M. The paper was not retrievable from this build environment, so the
+record carries the unverified-retrieval markers rather than an invented link.
+
+### Session 1 · A retired figure that no grep in the repository could see
+
+§02's sampler held a hand-typed weight that render-time arithmetic turned into a
+retired `CASE.md` Part K percentage on the reader's first click, next to the
+retired phrasing's own connector. The source held a decimal; only the widget's
+own arithmetic made the string, so no purge check in the tree could find it.
+
+The weight now reads the injected `COLE.discount`, the live combined discount
+from `CASE.md`, and the row's remaining four weights renormalise to sum 1. The
+value was moved off the source rather than suppressed at display time, so a
+`CASE.md` figure move flows into the widget instead of drifting past it.
+`verify-browser.mjs` drives the widget through all six distributions plus a
+reset and asserts that no Part K render form appears anywhere in the rendered
+text at any step, and that every distribution sums to 100 ranked non-increasing.
+The banned strings are composed at runtime and never spelled in source, so the
+check itself stays clean. Negative-tested against the pre-fix tree, where the
+drive reports the step-1 hit.
+
+### The commits
+
+- **`78053ae`** The withheld-key card sort, `scripts/build-cardsort.mjs` (new,
+  183 lines), the `CARDSORT` sentinels, the six-assertion browser drive, and the
+  interleaving citation. `session-1/index.html` (+118/-29),
+  `scripts/build-cardsort.mjs`, `scripts/verify-browser.mjs`, `SOURCES.md`,
+  `BIBLIOGRAPHY.md`, `MAINTAINING.md`, `docs/source-verification-queue.md`,
+  `docs/case-fact-inventory.md`.
+- **`f26395d`** The sampler weight rides the live discount, and the browser
+  drive that can see a render-time figure. `session-1/index.html` (+10/-1),
+  `scripts/verify-browser.mjs` (+33/-0), `docs/deferred-work.md`.
+  **Closes DW-063.**
+
+A9 for session-1 holds at 69 across both commits and the section keeps its seven
+minutes.
+
+---
+
+## 2026-08-29 · Session 1 Pass 3 · Titles and voice
+
+Branch `claude/session-1-pass-3-titles-voice-6iknz9`, four commits, merged at
+`a3a1551`. This branch ran in parallel with Pass 2 and merged main into itself
+part-way through, so the last commit on it is a reconciliation rather than an
+edit.
+
+### Session 1 · Thirteen titles stop making claims
+
+The page title and twelve measured ACTION or ASSERTION titles are rewritten as
+descriptive noun phrases. Where a widget already named its own content the title
+borrows that name rather than inventing one: the wall chart's `aria-label`, the
+diagnoser's own readout, §10's table.
+
+Every reader of the one title with readers outside its own section moved in the
+same commit. Three of the four generated regions were regenerated with
+`scripts/build-appendix.mjs` rather than hand-edited and `--check` agrees;
+sessions 2, 3 and 4 were not rewritten. The `<title>` keeps its "Session 1"
+prefix and its em dash for two mechanical reasons: the lesson validator reads
+the session number out of it, and that dash is the whole of session-1's A9
+literal population, so retyping it would move a ratchet for nothing.
+
+**`CHANGELOG.md` and `changelog/` were deliberately not updated**, because they
+record what the title was on the day, which is the one thing an updated copy
+would destroy.
+
+### Session 1 · The pacing block starts talking to whoever is reading it
+
+Ten instructor-addressed constructs were rewritten and two deleted. The pacing
+block now describes two paths to a reader instead of telling a teacher what
+always gets taught, and every minute in it is read from the same loop the footer
+table sums: **11 sections and 69 minutes core, 7 and 81 appendix, 150 for
+everything**, none of them restated from prose.
+
+Thirteen more constructs were found and left, each for a stated reason: a
+six-file gate that cannot be fixed in one file, a placeholder byte-paired with
+session-0.1, four generated lines from one template shared by all four lessons,
+and a tally label that cannot be deleted without orphaning the control it names.
+
+### Session 1 · The inventory measures, and finds a defect doing it
+
+The inventory's parts 4, 6 and 8 are measured rather than transcribed, and three
+of the file's own premises turned out to be false. They are corrected in place,
+beside the originals, rather than quietly worked around.
+
+The correction that mattered was the least interesting one: the file is in
+`docs/`, not `audit/`, and `verify-migration.mjs` excludes `audit/` from the
+retired-fact check and does not exclude that path. Writing a Part K retired
+figure into it turned check 1 red on a clean tree, and chasing why is what
+surfaced the §02 sampler defect above: the widget prints every weight as a
+percentage and one of them was the banned value. **The exclusion list was
+deliberately not widened to cover the file.** Opened as **DW-058**, later
+renumbered DW-063 by the merge, and left unfixed because §02 was record-only
+that pass.
+
+One marker stays up honestly. The 59 unexplained hits are not 59 unexplained
+hits: the case span is byte-identical across all six served pages, so any
+population resident in it is a multiple of six, and 59 is prime, which retires a
+whole class of explanations without settling the question.
+
+### The commits
+
+- **`33f771b`** Task 0, committed before any edit: the inventory's measured
+  parts, its three self-corrections, and the render-time retired figure it
+  found. `docs/session-1-feedback-inventory.md` (+934/-10),
+  `docs/deferred-work.md`. **Opens the row later renumbered DW-063.**
+- **`a5ede33`** Thirteen titles, ten voice rewrites and two deletions, with
+  every reader moved in the same commit and the generated regions regenerated.
+  A9 is 77 before and 77 after on all five files, so no ratchet moved and no
+  lowering row is owed. `session-1/index.html` (+43/-38), `MAINTAINING.md`,
+  `index.html`, `README.md`, the per-lesson notes file outside the served pages.
+- **`d023fdb`** Merge of `origin/main` into the branch: Pass 2's deletions meet
+  Pass 3's titles, and the deletions win where they met. It is the one merge in
+  this window that changes the register, and it changes it by one row: Task 0's
+  row is renumbered to **DW-063**, because Pass 2's lowering row had taken
+  DW-058 first.
+- **`77f4cb3`** Reconciliation. No lesson file is touched. Every edit is a dated
+  amendment to a claim the merge made stale, kept beside the original rather
+  than written over it, per the register's own supersession rule. The
+  inventory's two false premises were true of the tree they were measured
+  against and stopped being true the same day, when Pass 2 landed from its
+  parallel session; each gets a merge note saying so. `MAINTAINING.md`,
+  `docs/session-1-feedback-inventory.md`, `docs/deferred-work.md`.
+  **Closes DW-061.**
+
+---
+
+## 2026-08-28 · Session 1 Pass 2 · Deletions and purges only
+
+Branch `claude/session-1-pass-2-deletions-snfy37`, two commits, merged at
+`afaa23a`. No title rewrites, no voice rewrites, no new components, no
+discretionary trimming.
+
+### Session 1 · Nine calendar words and eight em dashes
+
+Block A found nothing to do: the retired platform name had already gone from the
+served pages, and the only remaining hits are the HTML element of the same name
+behind session-4's bitmap widget, which is the exclusion `MAINTAINING.md`
+documents. Zero edits, zero ambiguous hits held back.
+
+Block B purges the eight calendar-locked references it owns, and Block C's
+fourth edit takes a ninth with the sentence carrying it, so none is left in the
+file. Where deleting the word left a grammatical sentence it was deleted; where
+it was load-bearing it became "this session", the calendar-free equivalent the
+repository already uses. Buckets (b), (c) and (d) survive untouched: no citation
+year, retrieval date, data vintage, legal identifier or case fact was edited,
+and neither was the modal "May" in the §08 title nor the physics "Fall time" in
+A2.
+
+Block C applies eleven named edits, none of whose fragments was absent. The §08
+deletion is extended by one line to the panel's closing tag, without which the
+markup would not balance. Block D rewrites five em dashes as punctuation with
+the wording untouched: three colons, one semicolon, and one paired parenthetical
+that becomes round brackets.
+
+### Repository · One lowering, two rows, because they are two kinds of event
+
+A9 falls **77 to 69** on session-1 and the baseline moves with it. The lowering
+is registered as two rows rather than one: **DW-058** for the four dashes
+deleted with the prose that carried them, and **DW-059** for the four punctuated
+away while their sentences stayed. Every prior lowering in this file states that
+none was converted. This is the first that was, and it must not be read as
+another of those.
+
+### The register · Three consequences that no validator sees
+
+A repository-wide check for references to the text the deletion pass removed
+found three, none of them a failure and all three decisions, so they became rows
+rather than edits.
+
+- **DW-060.** `EDITORIAL.md` B3's worked example quotes a §02 label verbatim and
+  argues that four of its terms are undefined at that point. One of the four was
+  removed, so the quotation no longer matches the file and the edit partly
+  answered B3's own complaint. The line reference was already wrong before this
+  pass, so B3's other citations want a re-check too. Rewriting a specification's
+  worked example is not a deletions pass's business.
+- **DW-061.** `MAINTAINING.md`'s keep-list justifies its data-handling row with
+  a sentence Block C's eighth edit deleted. The rule survives, because the panel
+  above it carries the same prohibition in a stronger form and was untouched, so
+  this is a citation defect rather than a safety regression. A keep-list is a
+  ratification, though, and this pass overrode one on an explicit instruction.
+- **DW-062.** The cold-open ritual's opening line still stands in the other four
+  lessons; Block C's third edit took it out of session-1 only. Nothing catches
+  it: the five copies are R1 prose, so no fence pairing, no digest loop, and
+  A8/A9 count dashes rather than compare files. The five were never
+  byte-identical anyway.
+
+### The commits
+
+- **`acd691f`** Blocks A to D. Widget figures re-derived by loading the page in
+  Chromium and reading what it computes, not by reimplementing it; identical on
+  every figure. `session-1/index.html` (+16/-28),
+  `scripts/editorial-baseline.json`, `docs/deferred-work.md`.
+  **Opens DW-058 and DW-059.**
+- **`4bb2f99`** Three rows and nothing else. `docs/deferred-work.md` (+3/-0).
+  **Opens DW-060, DW-061 and DW-062.**
+
+---
+
+## 2026-08-28 · Two direct commits · Notes and the feedback inventory
+
+Two commits by the repository owner, straight onto main rather than through a
+branch.
+
+- **`10fece6`** One line appended to the rebuild-notes file in `audit/`, the
+  same file `182239f` had marked DO NOT USE three days earlier (+1/-0). The
+  commit message describes the notes; the diff is the one line.
+- **`9924f11`** The session-1 feedback inventory arrives, 270 lines, as
+  `docs/session-1-feedback-inventory.md`. It is the input Passes 2, 3 and 4 were
+  worked from, and Pass 3's first commit is the one that re-measured it.
+
+Both are additive; no served page, script or governance document moved.
+
+---
+
+## 2026-08-27 · Phase 4 · The addressed blocks come off the pages
+
+Merged at `f975742`, ten commits. **The branch name is not reproduced here: it
+carries a string the standing purge list retired on 2026-08-26.** `git show
+f975742` names it.
+
+### Sessions 0.1-4 · Fifteen blocks, and what had to be true to count
+
+Fourteen were counted against the post-Phase-3.6 files rather than carried from
+an earlier count, because the sections they key to had moved in Phase 2. A
+fifteenth was found by two independent sweeps, one by string and one by
+structure, neither shown the other's answer, and both returned the same
+objection to an exclusion the first commit had made.
+
+The test was the **addressee**, not the CSS class. Session-0.1 uses the same
+class for ten ordinary reader-facing callouts, and those are lesson prose and
+stay. Eleven blocks were labelled and in R1; three more were marked but not
+labelled, and two of those sit inside JavaScript string literals, which is
+exactly why the brief put script literals in scope.
+
+Four Complication blocks were excluded together, and one of the four was
+mis-sorted on the exclusion's own stated grounds: the other three state a
+substantive fact to the room, this one is nothing but delivery direction, it is
+the only one of the four carrying an explicit addressee marking, and it costs no
+curriculum to remove, because the phase is already defined for readers in the
+table directly above it and the re-vote flow references that table and never the
+panel.
+
+The blocks now live in a new per-lesson directory outside the served pages, one
+file per lesson, fifteen blocks compressed to fourteen bullets with one dropped.
+Bullets never exceed blocks in any file and no block expands into two; the
+longest bullet is 137 characters against a 140 cap; every bullet traces to a
+substring of the block it compresses, and nothing is authored. Section ids live
+in the new files and nowhere else: no anchor, no id and no comment was left
+behind in any lesson.
+
+Two rewrites were changed by adversarial audit. One would have contradicted its
+own lesson's stated requirement if read aloud verbatim, and the disagreement
+between the source block and the lesson is flagged for the instructor rather
+than resolved. The other would have needed data off the page, which the brief
+forbids, so the bullet carries the pre-reveal action in a form usable before you
+know which item it applies to.
+
+### Sessions 1-4 · The repository stops asserting what it cannot assert
+
+The repository is a live visual aid a room follows during a lecture. The course
+platform is the sole authority for scheduling and assessment and is already
+built, so a sentence here asserting either is not stale: it has no standing to
+make the claim. Session-0.1 received zero edits.
+
+| file | Tier A | Tier B | rewrites |
+|---|---|---|---|
+| `index.html` | 1 | 0 | 1 |
+| `session-1` | 6 | 7 | 13 |
+| `session-2` | 17 | 4 | 21 |
+| `session-3` | 3 | 7 | 10 |
+| `session-4` | 8 | 7 | 15 |
+
+Tier A took the weightings wherever they appeared, **including three that
+existed only inside JavaScript output strings** in sessions 2, 3 and 4. A reader
+sees those; a search over prose does not. Tier B took every relative sequence
+reference installed six commits earlier by the calendar conversion, and
+**supersedes that decision**: converting absolute dates into relative sequence
+was right while the repository owned the schedule and is wrong now that it does
+not. DW-047 records the supersession.
+
+Tier C is why the file exists and none of it moved: the in-room instruction, the
+work-along gates, every widget. Tier D was read, enumerated and left alone, and
+**DW-050** holds the open question of whether the sessions must be standalone,
+because that is one decision and not thirty edits.
+
+**One string could not be purged and it is flagged.** It sits inside the console
+fence that must stay byte-identical with session-0.1, which was out of scope.
+The edit was made, measured (it raised A9b from 6 shared blocks to 7) and
+reverted. **DW-048**, later accepted as-is: the sentence *disclaims* rather than
+asserts, so it is not the defect Tier A exists to catch.
+
+Every threshold printed by a widget whose surrounding text changed was
+re-derived by driving the widget in Chromium and reading what the page's own
+code prints. None moved.
+
+### Sources · A flag with no consumer gets one, and a gate fires both ways
+
+`disclose_on_page` had been arbitrated in Phase 3 and never rendered anything.
+`renderEntry()` now emits a record's `scope`, and only when the flag is true, so
+the synthetic-case disclosure Phase 3 canonicalised reaches all four lesson
+footers in one canonical form. Session-2 is the footer this most matters to: its
+prose said only that the case is synthetic and never denied a real-world
+referent.
+
+`verify-sources.mjs` used to *measure* the gap and print an advisory. It now
+tests the gate, and **both directions are hard failures**: every record with the
+flag renders its scope in every citing lesson, and every record without the flag
+renders no scope anywhere. Direction 1 catches a footer that stopped carrying a
+disclosure it is owed; direction 2 catches a maintainer-facing note leaking onto
+a reader-facing page. A gate that only ever fires open is not a gate. Both were
+negative-tested rather than assumed: forcing it shut fails three records,
+forcing it open fails 67.
+
+Direction 2 immediately caught its first case, and it was a merge blocker. The
+flag was also set on the two fabricated records, whose `scope` is written to the
+maintainer and ends in an instruction in capitals, so two lesson footers were
+printing that instruction to readers. The flag is cleared on both. No disclosure
+is lost, because the flag was never what disclosed them.
+
+### Repository · One register, because three lists is how work hides
+
+Three phase sections each recorded what a phase left open and nothing reconciled
+them. `docs/deferred-work.md` consolidates all three into one table, 40 rows at
+its opening: id, phase, description, `file:line`, severity, owner, status.
+
+The design decisions are stated in the file, because a register nobody trusts is
+worse than none. Ids never move and are never reused, so a row can be cited
+across phases. The phase column records who *raised* it, so the file reads as
+history. A row is superseded, never deleted, which is exactly what had happened
+to four bullets that got re-raised by the next person to notice the same thing.
+The description quotes the string and not only the line, because line numbers
+drift on every reflow.
+
+**Consolidating them was the only way to find that four entries had stopped
+being true and were still being read as work.** Every `file:line` in the
+register was checked against the tree rather than copied from the section it
+came from, and five were wrong.
+
+The register later gained a resume-from-cold header (branch, tip SHA, what
+merged and when, what the branch carries, and the next five items in order), an
+honest BLOCKING definition, and its rows back in id order. The BLOCKING
+definition lost a clause it could never reach; the clause is kept struck through
+with the date and the reason rather than deleted, because a severity definition
+that quietly changes shape is worse than one that shows its history.
+
+### Repository · A lowered ratchet is a row, in the same commit
+
+The second standing rule of the phase: any figure in
+`scripts/editorial-baseline.json` that goes **down** opens a row in
+`docs/deferred-work.md` in the same commit, carrying the delta and the reason.
+Raising a figure is already impossible by rule. It is the *lowering* that has no
+natural alarm, because it is legitimate, it is invisible, and the check goes on
+passing afterwards against a slacker bar. The procedure's steps make a lowering
+correct; the row is what makes it reviewable, and a row nobody can defend is a
+lowering that should not have happened.
+
+Step 6's preference that a baseline change be committed on its own now stops
+promising something T7 can take away: T7 requires the baseline to reproduce the
+classifier exactly, so a cleanup that moves a counted figure fails T7 until the
+baseline moves with it. **DW-045** records the three lowerings made before the
+rule existed.
+
+### Repository · A check that asks whether the forbidden subject is nearby
+
+Two words cannot go in the blanket retired list, because the words themselves
+are correct of one subject and wrong of another. They had been put in check 4
+instead, and check 4 is the wrong instrument for them: it passes a match as soon
+as **any** permitting word appears within 240 characters either side, so a
+paragraph that discusses the legitimate subject and also mis-attributes the word
+contains the permitting terms and passes.
+
+New **check 1b** inverts the question. Not "is a permitting subject nearby" but
+"is the forbidden subject nearby", within 160 characters. Both checks are
+needed: 4 catches the use with no legitimate subject anywhere near it, 1b
+catches the use sitting right beside the subject it is wrong about. R6 and R10
+are excluded **by offset, not by filename** (`verify-migration.mjs` imports the
+region classifier for this one purpose), because a captured transcript is
+verbatim third-party output that may not be edited to satisfy a content rule.
+
+Negative-tested in both directions, and there were **no hits on existing
+content**, so no content row was opened and nothing was fixed under cover of a
+checker change.
+
+### The commits
+
+- **`a8eca07`** Fourteen addressed blocks come off five lessons and the label
+  joins the standing purge list; the six style-fence hits are routed upstream
+  rather than hand-edited. A9 lowered in all five files. `MAINTAINING.md`, all
+  five session files, `scripts/editorial-baseline.json`,
+  `docs/unsourced-claims.md`, `docs/case-fact-inventory.md`,
+  `docs/deferred-work.md`. **Opens DW-044.**
+- **`ca829f0`** `disclose_on_page` gets its consumer and `verify-sources.mjs`
+  tests the gate in both directions. `scripts/verify-sources.mjs` (+63/-43),
+  `scripts/inject-sources.mjs`, sessions 1 to 4. **Closes DW-011.**
+- **`93470bb`** The lowered-count rule, and step 6 stops over-promising.
+  `MAINTAINING.md` (+28/-2), `docs/deferred-work.md`. **Opens DW-045.**
+- **`2c71767`** The five per-lesson files outside the served pages, fourteen
+  bullets, one drop, and the fifteenth block found by disagreeing with the
+  previous commit. A9 session-4 entity 83 to 82. Five new files,
+  `session-4/index.html`, `scripts/editorial-baseline.json`,
+  `docs/deferred-work.md`. **Opens DW-046.**
+- **`fc9e9e9`** The two fabricated records stop printing a maintainer directive
+  in a reader-facing footer. `SOURCES.md`, `session-2/index.html`,
+  `session-4/index.html`, `docs/case-fact-inventory.md`.
+- **`95910ec`** The Tier A and Tier B sweep across `index.html` and sessions 1
+  to 4, 60 edits, with every re-derived widget threshold unmoved. A9 session-2
+  entity 65 to 64 and session-3 literal 91 to 86. `index.html`, sessions 1 to 4,
+  `scripts/editorial-baseline.json`, `docs/deferred-work.md`,
+  `docs/case-fact-inventory.md`. **Opens DW-047 to DW-050.**
+- **`ac2e8b6`** The purge list gains the two tiers as string sets, the five
+  classes the rule does *not* reach with an example and a reason for each, and
+  the style-fence exclusion the previous entry left loose. `MAINTAINING.md`
+  (+38/-0), `docs/deferred-work.md`. **Opens DW-051.**
+- **`54a49c7`** Check 1b, and check 4's abbreviated-figure pattern verified by
+  negative test rather than by reading. `scripts/verify-migration.mjs` (+50/-0),
+  `docs/deferred-work.md`, `docs/case-fact-inventory.md`.
+  **Closes DW-015 and DW-016.**
+- **`93cadb4`** The register's front door, the honest BLOCKING definition, five
+  new rows, and all 46 open rows back in id order with nothing renumbered,
+  reworded or dropped. `docs/deferred-work.md` (+41/-3).
+  **Opens DW-052 to DW-056.**
+- **`41e4b84`** Three decisions close: session-0.1 stays, stays linked and is
+  permanently excluded from the two tiers, with two independent reasons and the
+  disposition held for whoever schedules that course; DW-048 accepted as-is; and
+  no session-5 lesson file is owed, now or later, recorded above the "Adding a
+  session" list because that is the one place a later phase would read it as a
+  to-do. DW-056 recounted and found wrong by one in each direction.
+  `MAINTAINING.md` (+28/-4), `docs/deferred-work.md` (+22/-30).
+  **Closes DW-048. Opens DW-057.**
+
+---
+
+## 2026-08-25 · Phase 3.6 · The corrections Phase 3.5 could not make
+
+Branch `claude/phase-3-6-corrections-5jubi0`, eight commits, merged at
+`4674620`.
+
+### Session 1 · A price rise the vendor has cancelled
+
+The source page now states that the introductory pricing is the standard price
+and that the September increase will not occur. Six carriers were inspected and
+edited individually, none by substitution: the two price rows collapse into one;
+the note stops saying the price ends tonight and rises tomorrow and says instead
+that published rates move and a workload is priced against the pricing page
+rather than a remembered number; and three constants were still computing every
+reader's paste, the §06 cost bars and the §06 document-pass readout at the
+cancelled rate.
+
+Nothing downstream needed re-deriving and each was checked rather than assumed:
+the §03 table is at one rate throughout, the ladder is still ten times end to
+end, the document-pass spread is still under $1.50, and every tier is still
+under two dollars a pass.
+
+The retrieval date on the pricing record moves to the pull that establishes the
+standing price, and the three source notes and the vintage line that cite it
+move with it, so the page and the record name the same pull. `last_verified` is
+untouched and the lock is unmoved. The vintage line **splits**: the capability
+figures are still the earlier pull and only pricing moved.
+
+### Sessions 0.1-4 · Every absolute date becomes relative sequence
+
+Every absolute date and term-specific reference across the six lesson files
+becomes relative, so the material survives being taught again without a single
+edit. Each occurrence was read and converted individually and nothing that
+carried sequencing was deleted.
+
+The ratified decision underneath one of them is preserved and is **now stated
+rather than implied by a calendar**: the handoff moves 48 hours earlier than the
+session that distributes the packages, so they are screened before that session
+and handed out inside it. That rule had been carried only by a date plus a
+gloss.
+
+Sessions 3's two occurrences are a **correction, not a conversion**. Both said
+the handoff package was owed at the end of Session 4, six days out. Session 2
+§09 had revised that and says so in the same words, and session 4 §00 and §09
+both record the packages as arriving before that session and being screened
+before it. Session 3 was never updated.
+
+Each idiom was inspected rather than skipped by pattern: three references to a
+weekday are idioms for being back at work and already relative, one is a
+hypothetical rather than a schedule, and session-4's Day 33 / Day 39 is a
+regulatory breach-notification clock. The hub's term label is a label on the
+offering, and removing it would leave the site's vintage unstated while its 2026
+tax parameters stay, so it went to the register instead.
+
+*This decision was superseded two days later.* Phase 4's Tier B sweep removed
+the relative references outright, on the grounds that the repository is not the
+authority for scheduling; DW-047 records the supersession.
+
+### Session 1 · The course platform is named nowhere
+
+The platform appeared by name in exactly two places in the corpus, both in
+session-1 §09 and §10 and both the same discussion assignment. The name is the
+institution's choice and can change between cohorts while the lessons do not, so
+it comes out and the destination stays.
+
+**Removing a platform must not leave an action with nowhere to go**, and the
+audit of the surrounding block found one already in that state before this
+commit: a three-item list of prompt templates, owed, with no destination named
+anywhere in the lesson, while session-2 §00 opens by telling readers to open the
+work they had sent. The instruction was the only silent part, and it now names
+the destination.
+
+Every other hit in the tree was read and none is the platform: five are the HTML
+element of the same name behind a bitmap widget, and the rest name a design
+tool. The standing purge list gains the row **with its exclusion written next to
+it**, because a bare search returns five legitimate hits and the entry says
+explicitly not to automate this one.
+
+### Session 3 · The buy-sell chunk gets the instrument the case has
+
+`CASE.md` §F.6 records the 2014 agreement as requiring corporate consent for any
+transfer. The retrieval corpus carried a right of first refusal with a
+descendants-trust carve-out instead, which is not a paraphrase of the same
+clause but a different instrument: under the corpus version the transfer Part E
+proposes sails through, and under §F.6 it does not move at all without the
+corporation saying yes. The carve-out is not deleted but **inverted**, so the
+descendants trust is now named as a transfer that still needs consent.
+
+The retriever is a live IDF index over the ten chunks, so editing one chunk can
+move every score in the exercise. Every figure was recomputed by **executing the
+page's own functions out of the file**, not by re-implementing them or reasoning
+about them, and every one of the four presets is unchanged to four decimals.
+That is a measured result rather than a lucky one: a first draft moved preset 3
+because one of its words also appears in another chunk and lowered its IDF, and
+a second draft using a different noun put the chunk itself third. Both
+alternatives were measured and rejected.
+
+**Two pre-existing findings were surfaced by the re-derivation and flagged, not
+fixed.** Two places tell readers the 2023 appraisal scored zero and never
+appeared. Both are false and were false before this commit: it ranks third of
+ten and appears in the display. The third copy is inside a scored answer key
+that was out of scope, and fixing the two reachable copies while the key kept
+the wrong figure would put a contradiction inside one lesson where there is
+currently a consistent error.
+
+### Sources · A watermarking page that was actually retrieved
+
+The largest single unverified dependency in the corpus had eleven references, no
+link, no publication date, no retrieval date and no reachable page. A page has
+now been retrieved outside this build environment and supplied with its
+substantiations, and it is recorded as a **new key rather than used to backfill
+the old one**. Its `scope` is an allow-list rather than a description, and the
+record says the boundary is load-bearing: text only, seven substantiations
+enumerated, and no adoption figure or market-share claim among them.
+
+**Exactly one reference was rewired, because exactly one is inside the list.**
+Ten stay open and each was checked against the list rather than assumed: two are
+specification claims the page does not reach; two rest on a paper the page names
+and never restates, and that paper has never been loaded either, so its URL is
+now carried in the record; two are robustness claims about other media where the
+page's robustness claims are about text; one is an adoption paragraph the page
+explicitly substantiates nothing of; and two rest on works that are not this
+page.
+
+One sentence asserts what the vendor's own current page states, and no build has
+ever loaded that page. It now carries the marker in the declared form with an
+annotation naming what would resolve it, and the register picks it up. The claim
+is not deleted: the paragraph around it exists to teach that a tenfold spread
+reported the same month by the same company is a figure worth not repeating.
+
+### Sessions 0.1-4 · The case viewer is one implementation instead of six
+
+A dialog already existed and `verify-browser.mjs` already asserted that it
+opens. What nothing asserted is everything a keyboard reader depends on, and
+that is what was missing: of the six hand-written controllers, four returned
+focus and two did not, and **none of the six trapped it**. Tab walked straight
+out of the dialog into a page the reader could not see.
+
+All six are gone. `scripts/inject-case.mjs` generates one controller into the
+case span, so every lesson gets the identical implementation. Escape, backdrop
+click and the Close button all close it; focus enters on open and cannot leave
+until it closes; focus returns to the control that opened it; the page behind is
+`aria-hidden` while it is open and only the nodes the controller hid are
+unhidden afterwards, so an `aria-hidden` the page set for its own reasons
+survives.
+
+A **new-tab view** that did not exist before is a Blob URL built in the browser
+from the injected span. No new HTML file, no fetch, no CDN, no storage; the
+page's own stylesheet text is copied in as text rather than linked, because a
+link to a font host would be the one request this control exists to avoid.
+
+**Accessibility is asserted, not claimed.** `scripts/test-case-viewer.mjs`
+drives Chromium: 29 assertions per lesson, 174 in all, every one read off the
+rendered page. It tabs past the last stop and past the first and checks where
+focus landed; it presses Escape and reads which element has focus after; it
+opens the Blob document for real with its requests recorded and asserts the
+count is zero. The non-colour requirement is measured as three independent
+channels rather than asserted. One gap is registered rather than hidden: the
+layout CSS is still six hand-written copies with nothing asserting they agree.
+
+### Sessions 0.1-4 · The retrieval corpus becomes a case fact
+
+`CASE.md` gains **Part O**. The ten chunks session-3 ranks and the five turns of
+its §07 meeting excerpt live there, and the lesson reads them from the injected
+span. The brief named three artifacts; all ten chunks moved, because every one
+of them restates a Part F document the same way the buy-sell chunk did, and a
+corpus half-generated and half-hand-written is a worse invariant than either
+end.
+
+`scripts/build-case.mjs` now fails hard if the chunk count or the ids change, if
+a chunk falls under 40 characters, if the consent gate leaves the corpus, or if
+§F.6 stops requiring one. **That last pair is the structural half of the
+promise: the corpus and §F.6 cannot disagree without the build stopping.**
+
+Every preset was re-run through the shipped route rather than the old array and
+every figure is unchanged to four decimals. The drift surface moved in the right
+direction and is generated rather than asserted: unguarded 110 to 107, injected
+1794 to 1812.
+
+One finding was imported rather than resolved. The excerpt is an advisory
+meeting with an Advisor speaking, and §A.5 records no investment adviser of
+record. Moving it into `CASE.md` does not settle that; it makes it unavoidable.
+The conflict is written next to the excerpt in Part O and carried as **DW-041,
+BLOCKING**.
+
+### The commits
+
+- **`cce76a6`** The cancelled price rise, across six carriers, with the vintage
+  line split. A9 session-1 entity 83 to 81. `session-1/index.html`,
+  `SOURCES.md`, `DATA-PULL.md`, `docs/source-verification-queue.md`,
+  `scripts/editorial-baseline.json`.
+- **`5326e5f`** Every absolute date across the six lesson files and the hub
+  becomes relative sequence. A9 session-3 literal 94 to 93. `index.html`, all
+  five session files, `scripts/editorial-baseline.json`.
+- **`92ff1e3`** The platform name comes out of session-1 §09 and §10, the silent
+  instruction gains its destination, and the purge list gains the row with its
+  exclusion. `session-1/index.html`, `MAINTAINING.md` (+13/-0).
+- **`6041e6b`** The §16.3 buy-sell chunk rewritten to §F.6's consent gate, with
+  all four presets re-derived by executing the page. `session-3/index.html`
+  (+1/-1).
+- **`7c3296b`** The retrieved watermarking page recorded as a new key, one
+  reference rewired, ten left open and enumerated by line, and one claim marked.
+  `SOURCES.md`, `BIBLIOGRAPHY.md`, `DATA-PULL.md`, `session-4/index.html`,
+  `scripts/sources-verified.lock.json`, `docs/unsourced-claims.md`,
+  `docs/source-verification-queue.md`.
+- **`53d9a1b`** `docs/deferred-work.md` opens at 40 rows, three parallel lists
+  are superseded as queues and kept as history, and four stale entries are found
+  by the consolidation. `docs/deferred-work.md` (+96/-0), `MAINTAINING.md`,
+  `docs/repo-updates-plan.md`. **Opens DW-001 to DW-040**, the register's whole
+  opening population.
+- **`32f2649`** The one generated case-viewer controller and its Blob new-tab
+  view, `scripts/test-case-viewer.mjs` (new, 231 lines, 174 assertions), and
+  `CASE.md` Part O with the corpus generated into the span. A9 session-3 literal
+  93 to 92, by region change rather than deletion. `CASE.md` (+154/-0),
+  `MAINTAINING.md`, all five session files, `index.html`,
+  `scripts/inject-case.mjs`, `scripts/build-case.mjs`,
+  `scripts/case-corpus.json`, `scripts/test-case-viewer.mjs`,
+  `scripts/editorial-baseline.json`, `docs/case-fact-inventory.md`,
+  `docs/deferred-work.md`, `docs/unsourced-claims.md`.
+  **Opens DW-041, DW-042 and DW-043**, and moves the locators of fourteen
+  existing rows that the rewrite displaced.
+- **`182239f`** Owner commit on the branch: the rebuild-notes file in `audit/`
+  is marked DO NOT USE at its head. No lesson, script or record changed.
+
+---
+
+## 2026-08-25 · Phase 3.5, after the entry that recorded it
+
+Branch `claude/case-unification-7mhzr6`, merged at `7efd595`. The entry below
+this one was written at `ae0cc67`; these two commits landed on the same branch
+afterwards and were merged with it.
+
+### Session 4 · A marker weakened, and the reason written on the annotation
+
+The luminance-discrimination figure was marked as needing a source, on the
+reasoning that the physics is standard. It is. But the marker does not assert
+that the physics is standard, it asserts that **somebody checked this figure**,
+and nobody had: no primary text stating it in the form the widget uses was
+retrieved, the reported spread is wide, and the candidate is a low-confidence
+secondary. It moves to the weaker marker, which is the rule the same
+phase had just written for itself: default to the weaker marker when unsure,
+because a wrong weak marker gets read and discounted while a wrong strong marker
+gets read and believed.
+
+The annotation records the change and the reason, so the next reader knows it
+was reconsidered rather than never considered. The register moves to 12 marked
+claims, 8 weak and 4 strong.
+
+### Repository · A baseline diff that shows which figure moved
+
+The commit that lowered session-2's A9 entity count had reformatted the whole
+file doing it, which is the one thing the re-baselining procedure asks a
+baseline commit not to do. A 207-line diff shows nothing. Same value, same note,
+original layout: against main the file now differs on **two lines**, the figure
+and the note recording why.
+
+### The commits
+
+- **`7bc8e6f`** The marker weakening and its annotation. `session-4/index.html`
+  (+1/-1), `docs/unsourced-claims.md` (+6/-6).
+- **`6eb83a7`** The baseline file's hand formatting restored, reducing the
+  ratchet edit to two lines. `scripts/editorial-baseline.json` (+74/-133).
+
+---
+
 ## 2026-08-25 · Case unification, source dating, unsourced claims
 
 ### All six files · Every quantitative case fact now appears once
