@@ -40,6 +40,70 @@ export function buildBlock() {
   const extract   = readFileSync(join(HERE, 'case-extract.html'), 'utf8').trim();
   const flowchart = readFileSync(join(HERE, 'case-flowchart.html'), 'utf8').trim();
   const F = facts.figures;
+
+  /* THE TWO SHEETS AND THEIR DETAIL LAYER. The fragment carries the two sparse
+     SVG sheets separated by one SHEET-BREAK marker; every figure the sheets no
+     longer draw renders as an HTML table below its sheet, generated HERE from
+     case-facts.json, so each moved figure is derived rather than hand-typed
+     into artwork. The sheets' own labels stay literals in CASE.md Part L; that
+     standing exposure is docs/deferred-work.md DW-070. A vanished marker is
+     drift, not a formatting choice: fail loudly. */
+  const sheets = flowchart.split('<!-- SHEET-BREAK -->');
+  if (sheets.length !== 2) throw new Error('case-flowchart.html: expected one SHEET-BREAK marker between the two sheets, found ' + (sheets.length - 1));
+  const perUnitDiv  = F.dividend / F.totalUnits;
+  const votingVal   = F.votingUnits * F.perVoting;
+  const retainedVal = F.megRetainedNV * F.perNonVoting;
+  const trustShare  = F.trustUnitsAtClose * perUnitDiv;
+  const purchases   = trustShare - F.noteInterest;
+  const unitsBought = (purchases / F.perNonVoting).toFixed(2);
+  const unitsAfter  = (F.trustUnitsAtClose + purchases / F.perNonVoting).toFixed(2);
+  const pctU    = (n) => (n / F.totalUnits * 100).toFixed(1) + '%';
+  const seedPct = (F.seedValue / F.notePrincipal * 100).toFixed(1);
+  const fedPct  = ((F.qualDivRate - F.ilIncomeRate) * 100).toFixed(1);
+  const ratePct = (F.noteRate * 100).toFixed(2);
+
+  const D1 = [];
+  D1.push('<div class="case-detail case-dhide" id="caseDetail1">');
+  D1.push('  <p class="case-h">Sheet 1 detail. The balance sheets and unit arithmetic behind the sparse view.</p>');
+  D1.push('  <table class="dt tight case-t"><tbody>');
+  D1.push(`    <tr><td>Meg after closing · ${F.votingUnits} voting LLC units · ${pctU(F.votingUnits)} of units</td><td class="case-num">${usd(votingVal)}</td></tr>`);
+  D1.push(`    <tr><td>${F.megRetainedNV} non-voting LLC units · ${pctU(F.megRetainedNV)}</td><td class="case-num">${usd(retainedVal)}</td></tr>`);
+  D1.push(`    <tr><td>Units subtotal · ${pctU(F.votingUnits + F.megRetainedNV)} of units</td><td class="case-num">${usd(votingVal + retainedVal)}</td></tr>`);
+  D1.push(`    <tr><td>Demand note receivable from the trust</td><td class="case-num">${usd(F.notePrincipal)}</td></tr>`);
+  D1.push(`    <tr><td><b>Total inside the taxable estate</b></td><td class="case-num"><b>${usd(F.megPostClose)}</b></td></tr>`);
+  D1.push('  </tbody></table>');
+  D1.push(`  <p class="case-dnote">The ${usd(F.estateReduction)} drop from the ${usd(F.cpcValue)} indicated value of CPC is two things: the ${F.trustUnitsAtClose} transferred units left for ${usd(F.belowProRata)} less than pro rata, and the ${F.megRetainedNV} retained non-voting units are now themselves discounted, ${usd(F.retainedDiscount)}.</p>`);
+  D1.push('  <table class="dt tight case-t"><tbody>');
+  D1.push(`    <tr><td>Trust after closing · ${F.trustUnitsAtClose} non-voting LLC units · ${pctU(F.trustUnitsAtClose)}</td><td class="case-num">${usd(F.trustUnitsValue)}</td></tr>`);
+  D1.push(`    <tr><td>Demand note payable to Meg</td><td class="case-num">(${usd(F.notePrincipal)})</td></tr>`);
+  D1.push(`    <tr><td><b>Net trust equity</b></td><td class="case-num"><b>${usd(F.trustEquity)}</b></td></tr>`);
+  D1.push('  </tbody></table>');
+  D1.push(`  <p class="case-dnote">Net equity equals the seed gift; the seed is ${seedPct}% of the note. The note is interest only, payable on demand, at the 2026 blended annual rate of ${ratePct}%. Grantor trust under IRC §§ 671 to 679: Meg is taxed on all trust income.</p>`);
+  D1.push('  <table class="dt tight case-t"><tbody>');
+  D1.push(`    <tr><td>Voting units · ${F.votingUnits} of ${F.totalUnits.toLocaleString('en-US')} · ${usd(F.perVoting)} each</td><td class="case-num">${usd(votingVal)}</td></tr>`);
+  D1.push(`    <tr><td>Non-voting units · ${F.nonVotingUnits} of ${F.totalUnits.toLocaleString('en-US')} · ${usd(F.perNonVoting)} each after the ${Math.round(F.discount * 100)}% combined discount</td><td class="case-num">${usd(F.nonVotingUnits * F.perNonVoting)}</td></tr>`);
+  D1.push('  </tbody></table>');
+  D1.push('</div>');
+
+  const D2 = [];
+  D2.push('<div class="case-detail case-dhide" id="caseDetail2">');
+  D2.push('  <p class="case-h">Sheet 2 detail. Where every year-1 dollar goes.</p>');
+  D2.push('  <table class="dt tight case-t"><tbody>');
+  D2.push(`    <tr><td>Meg · pro-rata distribution on her ${F.megYear1Units} units</td><td class="case-num">${usd(F.megYear1Distrib)}</td></tr>`);
+  D2.push(`    <tr><td>Note interest at ${ratePct}%</td><td class="case-num">${usd(F.noteInterest)}</td></tr>`);
+  D2.push(`    <tr><td>Unit purchase payments from the trust</td><td class="case-num">${usd(purchases)}</td></tr>`);
+  D2.push(`    <tr><td><b>Total cash to Meg · the entire dividend</b></td><td class="case-num"><b>${usd(F.dividend)}</b></td></tr>`);
+  D2.push('  </tbody></table>');
+  D2.push(`  <p class="case-dnote">Tax paid by Meg: ${usd(F.dividendTax)}, at ${fedPct}% federal plus ${(F.ilIncomeRate * 100).toFixed(2)}% Illinois, on all ${usd(F.dividend)} of dividends; the trust is a grantor trust, so its share lands on her return.</p>`);
+  D2.push('  <table class="dt tight case-t"><tbody>');
+  D2.push(`    <tr><td>Trust · distribution received on ${F.trustUnitsAtClose} units · ${pctU(F.trustUnitsAtClose)}</td><td class="case-num">${usd(trustShare)}</td></tr>`);
+  D2.push(`    <tr><td>Note interest paid to Meg</td><td class="case-num">(${usd(F.noteInterest)})</td></tr>`);
+  D2.push(`    <tr><td>Applied to purchase units from Meg</td><td class="case-num">(${usd(purchases)})</td></tr>`);
+  D2.push(`    <tr><td><b>Cash remaining</b></td><td class="case-num"><b>${usd(0)}</b></td></tr>`);
+  D2.push('  </tbody></table>');
+  D2.push(`  <p class="case-dnote">Units purchased in year 1: ${unitsBought} at ${usd(F.perNonVoting)} · units held after year 1: ${unitsAfter}. In years 1 through 4 the entire ${usd(F.dividend)} round-trips to Meg: her ${F.megYear1Units} units draw ${usd(F.megYear1Distrib)} pro rata and the trust passes through its whole ${usd(trustShare)} as interest and unit purchases. The trust first retains cash in year 5.</p>`);
+  D2.push('</div>');
+
   const L = [];
   /* THE VIEWER'S OWN CSS, emitted here rather than added to six hand-written
      copies of the case stylesheet. The .case-* layout rules predate this and
@@ -54,6 +118,19 @@ export function buildBlock() {
   L.push('.case-newtab:hover{background:var(--on-bg)}');
   L.push('.case-newtab:focus-visible{outline:2px solid var(--on);outline-offset:3px}');
   L.push('.case-newtab[hidden]{display:none}');
+  L.push('/* THE DETAIL TOGGLE. Its hiding class is case-scoped on the .case-off');
+  L.push('   precedent: the page-wide Shift+U override strips .hidden, and the');
+  L.push('   detail layer must not be revealable by it. */');
+  L.push('.case-dtl{display:flex;justify-content:flex-end;margin:0 0 12px}');
+  L.push('.case-dtl-btn{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;');
+  L.push('  color:var(--on);background:none;border:1.5px solid var(--on);border-radius:6px;');
+  L.push('  padding:5px 12px;cursor:pointer}');
+  L.push('.case-dtl-btn:hover{background:var(--on-bg)}');
+  L.push('.case-dtl-btn:focus-visible{outline:2px solid var(--on);outline-offset:3px}');
+  L.push('.case-detail{margin:16px 0 24px}');
+  L.push('.case-detail.case-dhide{display:none}');
+  L.push('.case-detail .case-num{text-align:right;font-family:"JetBrains Mono",monospace;white-space:nowrap}');
+  L.push('.case-dnote{font-size:13px;color:var(--muted);margin:10px 2px 18px}');
   L.push('/* NON-COLOUR STATE. The selected tab must not be identifiable by colour');
   L.push('   alone. Three independent channels carry it: a filled rather than hollow');
   L.push('   marker, bold rather than regular weight, and the 2px underline the');
@@ -75,8 +152,12 @@ export function buildBlock() {
   L.push(indent(extract, 4));
   L.push('  </div>');
   L.push('  <div class="case-panel case-off" role="tabpanel" id="casePanelStruct" aria-labelledby="caseTabStruct" tabindex="0">');
-  L.push('    <p class="case-h">Structure and annual cash flow. Sheet 1 is ownership after closing with both balance sheets; Sheet 2 is year-1 cash with ribbon widths proportional to dollars.</p>');
-  L.push(indent(flowchart, 4));
+  L.push('    <p class="case-h">Structure and annual cash flow. Sheet 1 is ownership after closing; Sheet 2 is year-1 cash with every ribbon at one stated scale. Show detail opens the balance sheets and cash tables the sheets summarize.</p>');
+  L.push('    <div class="case-dtl"><button type="button" class="case-dtl-btn" id="caseDetailBtn" aria-expanded="false" aria-controls="caseDetail1 caseDetail2">Show detail</button></div>');
+  L.push(indent(sheets[0].trim(), 4));
+  L.push(indent(D1.join('\n'), 4));
+  L.push(indent(sheets[1].trim(), 4));
+  L.push(indent(D2.join('\n'), 4));
   L.push('  </div>');
   /* The recurring question. Chosen by the instructor from docs/spine-brief.md:
      candidate A as the spine, with candidate C's lever-choice as the closing
@@ -135,6 +216,21 @@ export function buildBlock() {
   L.push("      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var n=1-i;show(n);tabs[n].focus()}");
   L.push('    });');
   L.push('  })(i);');
+  L.push('})();');
+  L.push('/* The detail toggle: one button opens both detail layers. The hiding');
+  L.push('   class is case-scoped (.case-dhide, the .case-off precedent), so the');
+  L.push('   Shift+U override cannot reveal it. The standalone new-tab view');
+  L.push('   removes this control and force-opens the detail instead. */');
+  L.push('(function(){');
+  L.push("  var b=document.getElementById('caseDetailBtn');");
+  L.push("  var d=[document.getElementById('caseDetail1'),document.getElementById('caseDetail2')];");
+  L.push('  if(!b||!d[0]||!d[1])return;');
+  L.push("  b.addEventListener('click',function(){");
+  L.push("    var open=b.getAttribute('aria-expanded')==='true';");
+  L.push("    b.setAttribute('aria-expanded',open?'false':'true');");
+  L.push("    b.textContent=open?'Show detail':'Hide detail';");
+  L.push("    for(var i=0;i<2;i++)d[i].className='case-detail'+(open?' case-dhide':'');");
+  L.push('  });');
   L.push('})();');
 
   /* ------------------------------------------------ the case-facts viewer --
@@ -228,11 +324,16 @@ export function buildBlock() {
   L.push('  function standalone(){');
   L.push("    if(!gen||typeof Blob==='undefined'||!window.URL||!URL.createObjectURL)return null;");
   L.push('    var copy=gen.cloneNode(true),i,n;');
-  L.push("    n=copy.querySelectorAll('.case-tabs,.case-actions');");
+  L.push("    n=copy.querySelectorAll('.case-tabs,.case-actions,.case-dtl');");
   L.push('    for(i=0;i<n.length;i++)n[i].parentNode.removeChild(n[i]);');
   L.push("    n=copy.querySelectorAll('.case-panel');");
   L.push("    for(i=0;i<n.length;i++){n[i].className='case-panel';n[i].removeAttribute('role');");
   L.push("      n[i].removeAttribute('tabindex');n[i].removeAttribute('aria-labelledby')}");
+  L.push('    /* The detail layer opens the way the panels do: its toggle is a dead');
+  L.push('       control without its script, so the control goes and the content');
+  L.push('       stays visible. */');
+  L.push("    n=copy.querySelectorAll('.case-detail');");
+  L.push("    for(i=0;i<n.length;i++)n[i].className='case-detail';");
   L.push("    n=copy.querySelectorAll('script');");
   L.push('    for(i=0;i<n.length;i++)n[i].parentNode.removeChild(n[i]);');
   L.push("    var css='',sheets=document.querySelectorAll('style');");
