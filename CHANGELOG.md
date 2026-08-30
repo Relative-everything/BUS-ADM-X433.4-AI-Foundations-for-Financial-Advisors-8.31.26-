@@ -10,6 +10,61 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-08-30 · The case sheets go sparse, and the ribbon scale becomes true
+
+Branch `claude/case-sheet-redesign`, unmerged on purpose: parked for Jared to
+merge after his first class session, not before.
+
+### Case · Part L redesigned as sparse sheets plus a generated detail layer
+
+The two Structure-tab sheets were dense: every balance-sheet row, ledger line
+and percentage was drawn into the SVG artwork as a hand-typed literal, the
+smallest labels rendered near 5.3 px effective in the modal, and no validator
+tied any drawn figure to CASE.md data. Both sheets are redrawn as sparse
+relational views, at most six dollar figures each, on a 720-unit viewBox whose
+smallest authored text is 12.5 units: the effective minimum in the modal is now
+12.5 px against the roughly 5.3 px the old 1240-unit sheets produced.
+
+Everything the sheets no longer draw moved down, not out. Both balance sheets,
+the year-1 cash ledgers, the unit-price arithmetic and the years-1-through-4
+round-trip note render as HTML tables below each sheet, behind one **Show
+detail** toggle, and `scripts/inject-case.mjs` generates every row from
+`case-facts.json`: the moved figures are derived from CASE.md rather than
+typed into artwork, which the old sheets never had. The toggle is a real
+button with `aria-expanded`, and its hiding class is case-scoped
+(`.case-dhide`, the `.case-off` precedent), so the Shift+U override cannot
+reveal it. The standalone new-tab view removes the control and force-opens
+the detail, the same treatment the tablist already receives, because a toggle
+whose script did not come with it is a dead control.
+
+### Case · The ribbon disproportion is fixed, and the scale is now stated
+
+Sheet 2 claimed three times that ribbon width is proportional to dollars, and
+five of its six flows sat near 5.6 px per million; the *"428 units pro rata ·
+$2,140,000"* ribbon was drawn at `stroke-width="3.5"` where that scale demands
+about 12, and the key paired 3.5 with $2,140,000 directly beside 11.7 for the
+smaller $2,095,236, under the caption *"ribbon width ∝ annual dollars"*. It
+had shipped through every check in the repo, because every check pins the
+sheets as bytes rather than as facts. Every ribbon on the new sheet is drawn
+at exactly 6 px per $1,000,000, tax arrow included, and the sheet caption
+states the scale instead of asserting proportionality in the abstract. The
+class of defect, drawn literals no validator reads, is opened as
+`docs/deferred-work.md` **DW-070**; CASE.md Part N records the correction as
+v4.4.
+
+### Repository · What moved with it
+
+The flowchart fragment's self-version is aligned to v4.0, matching the case
+sentinels and the visible stamp. Both `<desc>` elements are rewritten for the
+new content. `docs/case-fact-inventory.md` was regenerated with
+`case-inventory.mjs --report` on Jared's explicit instruction, since the
+injected block's counts and line offsets moved with the redesign. No case fact
+changed and no figure moved; `editorial-baseline.json` and every recorded
+verifier baseline are untouched, and the full migration-check chain, both
+Chromium suites included, exits clean.
+
+---
+
 ## 2026-08-29 · Verbatim quotations, and a rule for the baselines
 
 Branch `claude/dw-067-wolfram-quotes-5zzqxl`, four commits, merged at `e1eab38`.

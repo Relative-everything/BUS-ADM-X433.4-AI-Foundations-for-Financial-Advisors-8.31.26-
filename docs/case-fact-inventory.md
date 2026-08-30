@@ -21,10 +21,10 @@ occurrence does not follow fails the check. Everything else can.
 
 | | Total | Quantitative | Qualitative |
 |---|---:|---:|---:|
-| `INJECTED` | 1812 | 1494 | 318 |
+| `INJECTED` | 1710 | 1392 | 318 |
 | `PINNED` | 15 | 15 | 0 |
 | `UNGUARDED` | 105 | 5 | 100 |
-| **TOTAL** | **1932** | **1514** | **418** |
+| **TOTAL** | **1830** | **1412** | **418** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -91,11 +91,12 @@ not the corpus. Reported, never counted in the drift surface.
 | File | Count |
 |---|---:|
 | `scripts/case-inventory.mjs` | 118 |
-| `scripts/case-flowchart.html` | 113 |
 | `scripts/case-extract.html` | 101 |
 | `scripts/case-facts.json` | 80 |
 | `scripts/build-case.mjs` | 61 |
+| `scripts/case-flowchart.html` | 48 |
 | `scripts/verify-migration.mjs` | 31 |
+| `scripts/inject-case.mjs` | 3 |
 
 ## What this measurement declines to count
 
@@ -104,30 +105,30 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**461 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**437 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
-| `endowmentIntent` | 79 |
-| `votingUnits` | 59 |
-| `claireAge` | 45 |
-| `marriedYears` | 45 |
-| `tbills` | 26 |
-| `nonVotingUnits` | 26 |
-| `dividend` | 25 |
+| `endowmentIntent` | 67 |
+| `votingUnits` | 47 |
+| `claireAge` | 39 |
+| `marriedYears` | 39 |
+| `tbills` | 32 |
 | `seedUnits` | 20 |
 | `employees` | 20 |
+| `nathanAge` | 19 |
 | `charDeductible` | 18 |
 | `megAge` | 18 |
-| `nathanAge` | 13 |
+| `saleUnits` | 15 |
+| `inheritedIra` | 14 |
+| `david403b` | 14 |
+| `nonVotingUnits` | 14 |
+| `dividend` | 13 |
 | `revolver` | 12 |
 | `discount` | 11 |
-| `inheritedIra` | 8 |
-| `david403b` | 8 |
 | `perUnitDividend` | 6 |
 | `deMinimisLoan` | 4 |
-| `saleUnits` | 3 |
 | `davidAge` | 3 |
 | `topOrdinary` | 3 |
 | `nathanShort` | 2 |
@@ -141,7 +142,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
-| `session-2/index.html:2629` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
+| `session-2/index.html:2606` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,
