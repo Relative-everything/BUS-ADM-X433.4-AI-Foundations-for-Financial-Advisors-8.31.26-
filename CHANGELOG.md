@@ -574,7 +574,7 @@ Every threshold printed by a widget whose surrounding text changed was
 re-derived by driving the widget in Chromium and reading what the page's own
 code prints. None moved.
 
-### Sources · A flag with no consumer gets one, and a gate that fires both ways
+### Sources · A flag with no consumer gets one, and a gate fires both ways
 
 `disclose_on_page` had been arbitrated in Phase 3 and never rendered anything.
 `renderEntry()` now emits a record's `scope`, and only when the flag is true, so
