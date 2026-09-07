@@ -10,6 +10,77 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-03 · The register re-measured, and the queue re-ranked for Session 2
+
+Branch `claude/deferred-work-audit-reprioritize-kh0djg`, two commits. No served
+page, script, baseline, source record or `CASE.md` line changed.
+
+### Repository · Every open row measured against the tree
+
+`docs/deferred-work.md`'s header was written on 2026-08-27, eight merged PRs
+ago, and its queue still pointed at a course that had not started. Session 1
+was taught on 2026-08-31; Session 2 is taught on 2026-09-14. The register's own
+tie-break is proximity to teaching, so the audit re-measured all 55 open rows
+(DW-001 to DW-070) against `main` at `8442160` and re-ranked what remains, with
+the command or the file:line behind every verdict recorded in
+`audit/AUDIT-2026-09-03.md`.
+
+Forty-five rows are still true as written. Seven keep their substance with
+corrected figures, locators or severity: DW-005 (thirteen SynthID chips now, not
+eleven), DW-022 (the `src-aa` divergence is now documented in the record itself),
+DW-024 (56 of 60 empty, not 55 of 59), DW-043 (the six CSS copies agree today;
+the gap is the missing check), DW-055 (its bold sentence was deleted by Pass 2,
+so the four-lesson contradiction is gone and the row drops to MINOR), DW-056
+(ten `.verify` gates by class, not thirteen), and DW-064, which is raised to
+MAJOR after a Chromium reproduction: with focus in any lesson's first text box,
+Shift+U reveals every withheld panel, and `session-2`'s first exercise is that
+box. One row had closed on the tree without being amended: DW-009, the hub
+footer's term label, gone since `a5ede33`. Nineteen rows carried drifted line
+numbers; the quoted string is the locator. DW-007 is re-owned to Claude Code.
+
+### Repository · Sixteen rows the register did not carry
+
+DW-071 to DW-086 open. The ones a student meets: a hub sentence its own
+annotation calls wrong (DW-071); the `session-1` §02 rank-probability chart, a
+constructed harmonic series with no illustrative label (DW-072); eleven marked
+claims with no row, `session-2:1576` among them (DW-073); the instructor-
+addressed pacing block and the in-class deixis that the session-1 passes removed
+and sessions 2 to 4 still carry (DW-074, DW-075); a `session-3` panel label of
+the shape DW-046 removed, holding DW-002's false sentence (DW-076); and the Case
+facts control 92px and 76px off-screen at 380px on the two console-carrying
+pages (DW-077). The repository ones: README's grading sentence and four
+unverified fields (DW-078, DW-079); a verification surface that cannot run from
+a clean clone (DW-080); moving-target sources ageing into September with no
+re-pull owner (DW-081); the plan's unexecuted Phases 5 to 7 (DW-082); two
+changelog defects, this file's newest entry included (DW-083); the 08-29 audit's
+two contested rulings (DW-084); a five-way override label (DW-085); and three
+lists of open work still living outside the register (DW-086).
+
+### Repository · The queue
+
+The header now states the calendar, what is broken on a served page, and a
+ranked sequence in two halves: mechanical fixes that need no decision (DW-064
+with DW-085 first, then DW-071, DW-066 with DW-074, seven minutes-each edits,
+README and the verification paths), and decisions ordered by how many rows each
+unblocks (DW-041, DW-003, DW-050, DW-056, DW-072, DW-021 with DW-073, DW-082,
+the six ratchet records on one ratification, DW-084). The rubric behind the
+order, and where judgement overrode the score, are the audit's §5 to §7.
+
+An adversarial pass over the audit was attempted three times and never returned,
+twice to a usage limit and once to a container restart. The audit says so in
+its §9, and no verdict in it is independently refuted.
+
+### The commits
+
+- **`5b42575`** The audit register and the amended deferred-work register: the
+  new header and queue, dated notes on 41 rows, DW-009 closed, DW-064 raised,
+  DW-007 re-owned, DW-070's phase column filled, sixteen rows opened.
+  `audit/AUDIT-2026-09-03.md` (new), `docs/deferred-work.md`.
+  **Closes DW-009. Opens DW-071 to DW-086.**
+- The second commit is this entry and the regenerated `changelog/index.html`.
+
+---
+
 ## 2026-08-30 · The case sheets go sparse, and the ribbon scale becomes true
 
 Branch `claude/case-sheet-redesign`, unmerged on purpose: parked for Jared to
