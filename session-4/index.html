@@ -709,7 +709,7 @@ table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border
 </head>
 <body>
 <nav id="rail" aria-label="Sections"></nav>
-<div class="ovr" id="ovr">Shift+U · reveal all</div>
+<div class="ovr" id="ovr">Shift+U · reveal all answer panels</div>
 <button id="caseBtn" class="casefab">Case facts</button>
 <div id="caseModal"><div class="inner" id="caseInner">
   <div class="eyebrow"><span>Synthetic case, classroom anchor only</span></div>
@@ -2057,6 +2057,11 @@ if('IntersectionObserver' in window){
 
 /* ---------- instructor override: Shift+U ---------- */
 document.addEventListener('keydown',function(e){
+  /* DW-064. No key bound here fires while a typing surface has focus. Without
+     this the override fired from inside a text box, and a capital U revealed
+     every withheld panel. */
+  var ae=document.activeElement,tg=(ae&&ae.tagName)||'';
+  if(tg==='TEXTAREA'||tg==='INPUT'||(ae&&ae.isContentEditable))return;
   if(e.shiftKey&&(e.key==='U'||e.key==='u')){
     [].slice.call(document.querySelectorAll('.ansk')).forEach(function(a){a.classList.add('show')});
     [].slice.call(document.querySelectorAll('.lbox')).forEach(function(b){b.classList.add('lit')});
@@ -2895,7 +2900,7 @@ var TS_TOK=[
   var meanAbs=sum/(W*H);
   var ctx=cvs.map(function(c){try{return c.getContext('2d')}catch(e){return null}});
   if(ctx.some(function(c){return !c})){
-    host.innerHTML='<div class="card warn"><span class="num">Drawing unavailable</span><p>This widget needs the browser's drawing surface, which this browser or view has not provided. The section reads without it; the point it demonstrates is stated in the paragraph below.</p></div>';
+    host.innerHTML='<div class="card warn"><span class="num">Drawing unavailable</span><p>This widget needs the browser\u2019s drawing surface, which this browser or view has not provided. The section reads without it; the point it demonstrates is stated in the paragraph below.</p></div>';
     out.innerHTML='Perturbation amplifier unavailable in this view.';
     amp.disabled=true;return;
   }
@@ -3283,6 +3288,11 @@ function mark(id){
   var m=c.querySelector('.mk'); if(m)m.textContent='\u2713';
 }
 document.addEventListener('keydown',function(e){
+  /* DW-064. No key bound here fires while a typing surface has focus. Without
+     this the override fired from inside a text box, and a capital U revealed
+     every withheld panel. */
+  var ae=document.activeElement,tg=(ae&&ae.tagName)||'';
+  if(tg==='TEXTAREA'||tg==='INPUT'||(ae&&ae.isContentEditable))return;
   if(e.shiftKey&&(e.key==='U'||e.key==='u')){
     [].slice.call(document.querySelectorAll('[data-gate]')).forEach(function(c){mark(c.dataset.gate)});
   }

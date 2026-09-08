@@ -142,7 +142,7 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding-top:22px;font-si
 <body>
 <div class="wrap">
 <a class="back" href="../">&larr; Course hub</a>
-<div class="eyebrow">BUS ADM X433.4 &middot; UC Berkeley Extension &middot; Fall 2026</div>
+<div class="eyebrow">BUS ADM X433.4 &middot; UC Berkeley Extension</div>
 __BODY__
 <footer>
 <p>Generated from <code>CHANGELOG.md</code> by <code>scripts/build-changelog.py</code>. Regenerate and commit both files whenever the changelog changes.</p>

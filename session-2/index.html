@@ -3029,6 +3029,11 @@ var BSQ=[
 
 /* keyboard: Shift+U reveals every answer panel, for instructor use */
 document.addEventListener('keydown',function(e){
+  /* DW-064. No key bound here fires while a typing surface has focus. Without
+     this the override fired from inside a text box, and a capital U revealed
+     every withheld panel. */
+  var ae=document.activeElement,tg=(ae&&ae.tagName)||'';
+  if(tg==='TEXTAREA'||tg==='INPUT'||(ae&&ae.isContentEditable))return;
   if(e.shiftKey&&(e.key==='U'||e.key==='u')){
     document.querySelectorAll('.qfb,.fbx').forEach(function(x){x.style.display='block'});
     var k=$('sortKey');if(k){k.disabled=false}
@@ -3072,6 +3077,11 @@ function mark(id){
   var m=c.querySelector('.mk'); if(m)m.textContent='\u2713';
 }
 document.addEventListener('keydown',function(e){
+  /* DW-064. No key bound here fires while a typing surface has focus. Without
+     this the override fired from inside a text box, and a capital U revealed
+     every withheld panel. */
+  var ae=document.activeElement,tg=(ae&&ae.tagName)||'';
+  if(tg==='TEXTAREA'||tg==='INPUT'||(ae&&ae.isContentEditable))return;
   if(e.shiftKey&&(e.key==='U'||e.key==='u')){
     [].slice.call(document.querySelectorAll('[data-gate]')).forEach(function(c){mark(c.dataset.gate)});
   }

@@ -1,6 +1,6 @@
 # BUS ADM X433.4, AI Foundations for Financial Advisors
 
-UC Berkeley Extension, Fall 2026. Instructor: Jared Winkers.
+UC Berkeley Extension. Instructor: Jared Winkers.
 
 **Open the course here:** https://relative-everything.github.io/BUS-ADM-X433.4-AI-Foundations-for-Financial-Advisors-8.31.26-/
 
@@ -26,9 +26,11 @@ and disappears when you reload or close it.
 
 That is deliberate: no client information you paste into an exercise can leak
 from a page that is not sending it anywhere. It also means **anything you want
-to keep, you copy into your own notes before you leave the page.** The baseline
-measurement in Session 1 and the prompts you rewrite in Session 2 are graded
-components of the final project, and the page will not remember them for you.
+to keep, you copy into your own notes before you leave the page.** Nothing on
+this site is graded and nothing on it ever will be. The baseline you record and
+the prompts you rewrite are yours to keep, and they are the inputs you bring to
+the final project, so the page not remembering them is the reason to copy them
+out.
 
 ### The one exception, and it is off unless you switch it on
 
@@ -72,19 +74,23 @@ Three things worth knowing before you use it:
 - A control at the top of each lesson filters the appendix by depth
   (foundational, standard, advanced) or hides it entirely for the short
   version.
-- The **Shift+U** label in the top bar is the instructor's reveal-all override.
-  Using it yourself skips the part that does the teaching.
+- The **Shift+U** label on each lesson page is the instructor's reveal-all
+  override. Using it yourself skips the part that does the teaching.
 - Printing works. Print preview gives you a clean copy without the navigation.
 
 ## The sessions
 
-| # | Title | Link | Date |
-|---|---|---|---|
-| 1 | Prediction, Model Tiers, and the Cost of Using Them | [session-1](session-1/) | 31 August 2026 |
-| 2 | Practical AI Usage in Daily Advisory Workflows | [session-2](session-2/) | 14 September 2026 |
-| 3 | Gathering and Documenting Client Information | [session-3](session-3/) | [UNVERIFIED: session 3 date] |
-| 4 | Compliance, Security and Responsible Use | [session-4](session-4/) | [UNVERIFIED: session 4 date] |
-| 5 | Final project | not yet published | [UNVERIFIED: session 5 date] |
+| # | Title | Link |
+|---|---|---|
+| 1 | Prediction, Model Tiers, and the Cost of Using Them | [session-1](session-1/) |
+| 2 | Practical AI Usage in Daily Advisory Workflows | [session-2](session-2/) |
+| 3 | Gathering and Documenting Client Information | [session-3](session-3/) |
+| 4 | Compliance, Security and Responsible Use | [session-4](session-4/) |
+| 5 | Final project | not yet published |
+
+Session dates, deadlines, submission and grading are set by the instructor
+outside this site. Lessons are updated in place across cohorts, so a date
+printed on a page goes stale the day the next cohort starts.
 
 ## The Cole household
 
@@ -135,5 +141,3 @@ there are no version numbers to track.
 Maintainers and contributors: see [MAINTAINING.md](MAINTAINING.md), and
 [EDITORIAL.md](EDITORIAL.md) for the rules the prose in these lessons is
 held to.
-
-Questions about the course: [UNVERIFIED: preferred instructor contact]

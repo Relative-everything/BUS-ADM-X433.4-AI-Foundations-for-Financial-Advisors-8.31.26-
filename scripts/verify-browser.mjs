@@ -6,6 +6,7 @@
  * jsdom cannot).
  *
  *   13  DOM and handlers: handlers bind, Shift+U present and labelled, tabs work
+ *   13b DW-064 negative: Shift+U from inside a text box must reveal nothing
  *   14  flowchart fragment: zero JS errors, zero network requests beyond fonts
  *   14b var() in an SVG presentation attribute: measured, not asserted
  *   15  visual: screenshot at the target width
@@ -295,6 +296,98 @@ for (const rel of LESSONS) {
         (samp.bad.length ? `\n        ${samp.bad.slice(0, 4).join('\n        ')}` : ''));
   }
   await ctx.close();
+}
+
+/* ---------------------------------------------------------------- 13b DW-064
+   The instructor override must not fire from inside a typing surface. The
+   reproduction is audit/AUDIT-2026-09-03.md section 2, driven in Chromium on all
+   five lessons: with focus in the key box (session-0.1, session-1) or the
+   cold-open textarea (session-2 to session-4), Shift+U cleared every .hidden
+   element and marked 12 to 18 gates. session-2's cold-open textarea is the first
+   thing the room types into on 2026-09-14, which is why this is a standing test
+   and not a one-off measurement.
+
+   Each lesson gets its own fresh context: the battery above clicks every button
+   and every gate on the page, so by the end there is nothing withheld left to
+   measure. The signature covers all five reveal mechanisms, because the eight
+   handlers do not share one -- .hidden stripping and gate marking (session-0.1,
+   session-1), .qfb/.fbx display and #sortKey (session-2), body.reveal and
+   .keyhide (session-3), .ansk/.lbox (session-4). */
+const REVEAL_SIGNATURE = () => ({
+  hidden: document.querySelectorAll('.hidden').length,
+  gatesDone: document.querySelectorAll('[data-gate].done').length,
+  anskShown: document.querySelectorAll('.ansk.show').length,
+  lboxLit: document.querySelectorAll('.lbox.lit').length,
+  keyhideShown: [...document.querySelectorAll('.keyhide')].filter((e) => e.style.display === 'block').length,
+  bodyReveal: document.body.classList.contains('reveal'),
+  panelsShown: [...document.querySelectorAll('.qfb,.fbx')].filter((e) => e.style.display === 'block').length,
+  sortKeyOpen: !!(document.getElementById('sortKey') && document.getElementById('sortKey').disabled === false),
+  ovr: ((document.getElementById('ovr') || document.getElementById('pnum') || {}).textContent || '')
+    .replace(/\s+/g, ' ').trim(),
+});
+const TYPING = 'textarea, input[type="text"], input[type="password"], input[type="search"],'
+             + ' input[type="email"], input[type="number"], input:not([type])';
+
+{
+  console.log(`\n--- 13b  Shift+U from inside a text box (DW-064) ---`);
+  for (const rel of LESSONS) {
+    if (rel === 'index.html') {
+      console.log('      13b hub carries no override handler and no answer panels; nothing to guard');
+      continue;
+    }
+    /* The first typing surface on the page, then the cold-open textarea, which is
+       the one a learner reaches first in the run order even where it is not first
+       in the document. */
+    for (const which of ['first', 'coldPrompt']) {
+      const ctx = await browser.newContext({ viewport: { width: WIDTH, height: 1000 } });
+      const page = await ctx.newPage();
+      await page.goto(pathToFileURL(join(REPO, rel)).href, { waitUntil: 'load' });
+      await page.waitForTimeout(400);
+
+      const target = await page.evaluate(([sel, which]) => {
+        /* The first box a reader can actually type into. session-0.1 and
+           session-1 open with the live-model key box, which is inside a panel
+           that is closed at load, so "first in the document" and "first
+           focusable" are not the same element and only the second one is the
+           thing being tested. */
+        const cands = which === 'coldPrompt'
+          ? [document.getElementById('coldPrompt')].filter(Boolean)
+          : [...document.querySelectorAll(sel)];
+        let skipped = 0;
+        for (const el of cands) {
+          el.focus();
+          if (document.activeElement === el) {
+            return { id: el.id || null, tag: el.tagName, value: el.value, skipped, of: cands.length };
+          }
+          skipped++;
+        }
+        return { none: true, of: cands.length };
+      }, [TYPING, which]);
+
+      if (target.none) {
+        console.log(`      13b ${rel} has no focusable ${which} text box (${target.of} candidate(s)); skipped`);
+        await ctx.close();
+        continue;
+      }
+
+      const before = await page.evaluate(REVEAL_SIGNATURE);
+      await page.keyboard.down('Shift'); await page.keyboard.press('KeyU'); await page.keyboard.up('Shift');
+      await page.waitForTimeout(200);
+      const after = await page.evaluate(REVEAL_SIGNATURE);
+      const typed = await page.evaluate((id) => (id ? (document.getElementById(id) || {}).value : null), target.id);
+
+      const moved = Object.keys(before).filter((k) => String(before[k]) !== String(after[k]));
+      say(moved.length === 0,
+          `13b ${rel} Shift+U in #${target.id || target.tag} reveals nothing `
+          + `(.hidden ${before.hidden}, gates ${before.gatesDone} done, badge "${before.ovr}"`
+          + `${target.skipped ? `, ${target.skipped} earlier box(es) unfocusable at load` : ''})`
+          + (moved.length ? `\n        moved: ${moved.map((k) => `${k} ${before[k]} -> ${after[k]}`).join(', ')}` : ''));
+      if (typed !== null && typed !== undefined) {
+        console.log(`      13b the U lands in the box instead: value "${String(typed).slice(-8)}"`);
+      }
+      await ctx.close();
+    }
+  }
 }
 
 /* the flowchart fragment on its own, with no lesson around it */

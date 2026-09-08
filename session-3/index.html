@@ -690,7 +690,7 @@ table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border
 </style></head>
 <body>
 <nav id="rail" aria-label="Sections"></nav>
-<div id="ovr">Shift+U — instructor override</div>
+<div id="ovr">Shift+U — reveal all answer panels</div>
 <button id="caseBtn" class="casefab">Case facts</button>
 <div id="caseModal"><div class="inner" id="caseInner">
   <div class="eyebrow"><span>Synthetic case, classroom anchor only</span></div>
@@ -1844,10 +1844,15 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
   if(e.isIntersecting){var i=secs.indexOf(e.target);pips.forEach(function(p,j){p.classList.toggle('on',j===i)})}})},
   {rootMargin:'-45% 0px -45% 0px'});secs.forEach(function(s){io.observe(s)})}
 document.addEventListener('keydown',function(e){
+  /* DW-064. No key bound here fires while a typing surface has focus. Without
+     this the override fired from inside a text box, and a capital U revealed
+     every withheld panel. */
+  var ae=document.activeElement,tg=(ae&&ae.tagName)||'';
+  if(tg==='TEXTAREA'||tg==='INPUT'||(ae&&ae.isContentEditable))return;
   if(e.shiftKey&&(e.key==='U'||e.key==='u')){
     document.body.classList.toggle('reveal');
     var on=document.body.classList.contains('reveal');
-    $('ovr').textContent=on?'Override ON — all answers revealed':'Shift+U — instructor override';
+    $('ovr').textContent=on?'Override ON — all answers revealed':'Shift+U — reveal all answer panels';
     [].slice.call(document.querySelectorAll('.keyhide')).forEach(function(el){el.style.display=on?'block':'none'});
     if(on){showPairKey();showSlope();showDocKey();showValKey();showDefence();showRevote();}
   }});
@@ -2712,6 +2717,11 @@ function mark(id){
   var m=c.querySelector('.mk'); if(m)m.textContent='\u2713';
 }
 document.addEventListener('keydown',function(e){
+  /* DW-064. No key bound here fires while a typing surface has focus. Without
+     this the override fired from inside a text box, and a capital U revealed
+     every withheld panel. */
+  var ae=document.activeElement,tg=(ae&&ae.tagName)||'';
+  if(tg==='TEXTAREA'||tg==='INPUT'||(ae&&ae.isContentEditable))return;
   if(e.shiftKey&&(e.key==='U'||e.key==='u')){
     [].slice.call(document.querySelectorAll('[data-gate]')).forEach(function(c){mark(c.dataset.gate)});
   }
