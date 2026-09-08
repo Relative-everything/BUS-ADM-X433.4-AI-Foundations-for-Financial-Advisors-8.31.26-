@@ -62,11 +62,22 @@ minutes fit, §08 goes async), a clock-time run order with the baseline capture
 at 6:21 PM and a corrections slot at 6:03 PM, eight decisions with recommended
 defaults, and a per-PR model recommendation with its evidence.
 
-### The commit
+### The commits
 
-- This entry, `audit/AUDIT-2026-09-07.md` (new), `docs/deferred-work.md`, and
-  the regenerated `changelog/index.html`. **Opens DW-087 to DW-098. Raises
-  DW-078.**
+- **`dba2a51`** This entry, `audit/AUDIT-2026-09-07.md` (new),
+  `docs/deferred-work.md`, and the regenerated `changelog/index.html`.
+  **Opens DW-087 to DW-098. Raises DW-078.**
+- **`f34cef0`** The served changelog page gets its style fence back; the
+  build had run without the sweep on its path (DW-080).
+- The third commit, 2026-09-08: the audit's §12 folds in four analysts that
+  returned overnight (protocol fidelity: 3.5 of 32 section-loop moves
+  executed; learner feedback: 24 of 50 terms undefined at first use and a
+  §6b premise false for this cohort; repository status: the S-corporation
+  remark against `CASE.md` §B.1; Session-2 readiness: a sixteen-item
+  line-anchored edit list for PR C). **Opens DW-099 to DW-102. Supersedes
+  DW-026 into DW-094. Amends DW-022, DW-041, DW-050, DW-062, DW-073, DW-087,
+  DW-092, DW-093.** The refutation pass over the spoken claims died to a
+  usage limit twice and is not relaunched; DW-092 stays single-auditor.
 
 ---
 
