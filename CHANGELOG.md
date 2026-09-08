@@ -97,10 +97,14 @@ a learner in writing that nothing on the site is graded. The replacement names
 no session, because the baseline the old sentence assigned to Session 1 was
 never captured there. Under D8 the date column and the contact line are deleted
 rather than filled in, and three lines say where dates and grading live and why
-a date printed on a page goes stale. "Fall 2026" goes from line 3. One residue
-picked up while the file was open: the override badge is described as being on
-each lesson page rather than in the top bar, which is where two of the five keep
-it (DW-078, DW-079, DW-098).
+a date printed on a page goes stale. "Fall 2026" goes from line 3, and from one more
+place: `build-changelog.py` was writing it into the eyebrow of every generated
+changelog page, so closing it on the hub and on README had left this page as the
+last surface on the site carrying a term label. Two residues picked up while
+those files were open: the override badge is described as being on each lesson
+page rather than in the top bar, which is where two of the five keep it, and
+DW-073's "thirteen marked claims" is now twelve, because the hub's marker and
+its annotation came out together (DW-078, DW-079, DW-098, DW-073).
 
 ### Repository · The delivered tag, cut but not published
 
