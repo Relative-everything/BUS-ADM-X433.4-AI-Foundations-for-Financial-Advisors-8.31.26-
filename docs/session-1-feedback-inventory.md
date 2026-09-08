@@ -38,7 +38,7 @@ strings quoted here are expected and are not defects.
 |---|---|---|
 | 1 | String presence | PARTIAL — absent list only, no file:line for present strings |
 | 2 | Date/time buckets | PARTIAL — bucket totals only; see §D-1, arithmetic does not close |
-| 3 | Canvas / LMS | SUPERSEDED by Pass 2 BLOCK A, `acd691f` — the SHA was absent when §F was measured and landed on `main` 2026-08-29; see §F-0.1's merge note |
+| 3 | The LMS by name | SUPERSEDED by Pass 2 BLOCK A, `acd691f` — the SHA was absent when §F was measured and landed on `main` 2026-08-29; see §F-0.1's merge note |
 | 4 | Instructor-addressed constructs | **RE-MEASURED 2026-08-29 — see §F-1.** 80 constructs, region-classified |
 | 5 | Grading / final-project residue | PARTIAL — two survivors named |
 | 6 | Title inventory | **FLAT LIST RECORDED 2026-08-29 — see §F-3 and §F-6.** 419 titles; headline corrected |
@@ -58,7 +58,7 @@ Nine fragments returned ABSENT:
 ```
 graded component of Final Project Part 1
 That is a graded component
-Week 1 Canvas discussion
+Week 1 [LMS] discussion
 Reading due before Session 2
 The question that stays open all four sessions
 Instructor note
@@ -97,7 +97,7 @@ Reported total 845, R6 injected span counted only (228), never quoted.
 Also reported: only 3 of bucket (a) are `Fall 2026`; `session-1:2178` is a
 second copy of DW-009 that no register row names.
 
-### PART 3 — Canvas / LMS — SUPERSEDED
+### PART 3 — The LMS by name — SUPERSEDED
 
 Pass 2 BLOCK A (`acd691f`) found **zero purgeable hits repo-wide**. The
 retirement landed 2026-08-25 and DW-047 finished it. Every survivor is a
@@ -107,7 +107,7 @@ documented exclusion:
 session-4:1575   <div id="pfCanvases">          R3 attribute
 session-4:2885   <canvas> element                R2
 session-4:2891   getContext('2d') fallback       R2
-session-4:2921   "Canvas unavailable" card       R2
+session-4:2921   "Drawing unavailable" card      R2  (label renamed 2026-09-08)
 ```
 
 `grep "\bLMS\b"` over served pages returns nothing. `index.html:1037` —

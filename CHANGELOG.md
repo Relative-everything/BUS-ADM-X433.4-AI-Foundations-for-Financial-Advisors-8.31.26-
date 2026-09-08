@@ -10,6 +10,107 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-08 · The repository stands alone from the submission platform
+
+Branch `claude/session-1-review-session-2-prep-prjqbf`, one commit.
+
+### Repository · No file names the LMS
+
+By instructor decision the repository no longer refers to the platform through
+which assignments are submitted, by name or by role as an authority. The
+2026-08-25 purge row in `MAINTAINING.md` now reads "the LMS by name"; the
+Tier A and Tier B rationale says that dates, deadlines, submission and grading
+are set by the instructor outside this site; the purge check is written as a
+bracketed regex so the pattern does not match itself. `docs/deferred-work.md`
+records the decision in its header, re-states D4 as a page decision (the site
+is the specification of its own assignments) and opens D9 (whether the site
+now carries dates and grade weights itself; recommended no). The superseded
+inventory section in `docs/session-1-feedback-inventory.md`, one note string
+in `scripts/editorial-baseline.json`, and `audit/AUDIT-2026-09-07.md` are
+reworded in place; the audit gains §12.5 recording what moved and what
+remains.
+
+### Session 4 · One label
+
+The drawing widget's fallback card named the HTML element in its heading, in
+a way a reader could mistake for the platform. It now reads "Drawing
+unavailable". The `<canvas>` element, its ids and the design-tool
+"canvas export" comments in `scripts/build-case.mjs` are untouched; they are
+not the platform.
+
+---
+
+## 2026-09-07 · Session 1 measured against the room, and the queue re-cut for Session 2
+
+Branch `claude/session-1-review-session-2-prep-prjqbf`, one commit. No served
+lesson, script, baseline, source record or `CASE.md` line changed.
+
+### Repository · The first delivery audit
+
+`audit/AUDIT-2026-09-07.md` reads the Zoom transcript of Session 1 (2026-08-31,
+174 minutes) against the page the room saw. The lesson page was opened at
+01:18:41 and was on screen for 95.5 minutes; its designed sections ran for
+about 42; 2 of 17 interactions fired. Of ten core sections, two ran as built
+(§02, §03), one ran without an interaction to fire (§05), four were delivered
+as talk without their exercise (the cold open, §07, §08, §09) and three did not
+run (§04, §06, §10). §10 holds the baseline capture the page calls the one
+thing that cannot be reconstructed later. No appendix section ran. The audit
+carries the contiguous timeline, the nineteen-row coverage table, what the
+pages said Session 1 would produce against what it did, and the dependency of
+`session-2`'s retrieval bridge on it: two of its four items retrieve content
+the room never received.
+
+One learner's written feedback after the session (pace, the case, and how to
+test a prompt for a workflow she does not run) and the instructor's reply are
+paraphrased without names; three things in that exchange turned out to be the
+repository's business, and each has a row.
+
+### Repository · Twelve rows, one raised, eleven dated
+
+DW-087 to DW-098 open: the `session-2` lines that presume a Session 1 baseline
+(DW-087); bridge item 4 (DW-088); the assignment specified three ways (DW-089);
+§6b's missing path for a learner with no templates and no clients, answered by
+a fixture pack derived from the injected case corpus (DW-090, with DW-091); the
+corrections owed to the room, provisional until an adversarial verification
+pass returns (DW-092); `session-2`'s prose density and its two adjacent-component
+repeats (DW-093, DW-094); the one-line instructor note (DW-095); the missing
+delivered tag (DW-096); the forty-one minutes of `session-0.1` content delivered
+from the product (DW-097); and README's residue (DW-098). DW-078 rises to
+MAJOR: the instructor has told a learner in writing that nothing on the site
+is graded, and README is now the one surface saying otherwise. Dated notes on
+DW-005, DW-021, DW-041, DW-050, DW-062, DW-064, DW-066, DW-072, DW-073, DW-074
+and DW-075 record what the delivery changed for each.
+
+### Repository · The queue, and the week
+
+The register header now opens with a 2026-09-07 block that keeps the 09-03
+text beneath it. Six pull requests in order (mechanical bundle; the §6b fixture
+pack; Session-2 pre-flight; the run sheet; the record; a Chromium dry run with
+an adversarial read), a time model for 2026-09-14 (44 fixed minutes, a 1.7x
+multiplier on planned core minutes measured from Session 1, 65 planned core
+minutes fit, §08 goes async), a clock-time run order with the baseline capture
+at 6:21 PM and a corrections slot at 6:03 PM, eight decisions with recommended
+defaults, and a per-PR model recommendation with its evidence.
+
+### The commits
+
+- **`dba2a51`** This entry, `audit/AUDIT-2026-09-07.md` (new),
+  `docs/deferred-work.md`, and the regenerated `changelog/index.html`.
+  **Opens DW-087 to DW-098. Raises DW-078.**
+- **`f34cef0`** The served changelog page gets its style fence back; the
+  build had run without the sweep on its path (DW-080).
+- The third commit, 2026-09-08: the audit's §12 folds in four analysts that
+  returned overnight (protocol fidelity: 3.5 of 32 section-loop moves
+  executed; learner feedback: 24 of 50 terms undefined at first use and a
+  §6b premise false for this cohort; repository status: the S-corporation
+  remark against `CASE.md` §B.1; Session-2 readiness: a sixteen-item
+  line-anchored edit list for PR C). **Opens DW-099 to DW-102. Supersedes
+  DW-026 into DW-094. Amends DW-022, DW-041, DW-050, DW-062, DW-073, DW-087,
+  DW-092, DW-093.** The refutation pass over the spoken claims died to a
+  usage limit twice and is not relaunched; DW-092 stays single-auditor.
+
+---
+
 ## 2026-09-03 · The register re-measured, and the queue re-ranked for Session 2
 
 Branch `claude/deferred-work-audit-reprioritize-kh0djg`, two commits. No served
