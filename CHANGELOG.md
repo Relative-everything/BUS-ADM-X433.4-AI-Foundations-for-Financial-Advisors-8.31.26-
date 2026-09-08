@@ -112,6 +112,26 @@ not exist on the remote, and carries the command, the target and the error. The
 target commit is immutable, so cutting it later still freezes the right tree
 (DW-096).
 
+### Repository · Why session-0.1 measures three em dashes and session-1 sixty-seven
+
+Found while establishing that the override badge could not carry one separator
+in all five files. `editorial-regions.mjs` claims its script region with a regex
+over the raw text, before the comment rule runs and with no check that the tag
+is real, and `session-0.1:10` is a comment whose prose warns against
+`<script src>`. That string matches, and the span it opens runs from line 10 to
+line 1016, 79,328 bytes, taking the head, the topbar and every section inside it
+out of the population A8 and A9 measure. The badge at `:550` classifies as a
+script string literal where the same element in the other four lessons is body
+prose. The recorded figure is an honest record of what the classifier measures;
+what is wrong is how little it measures. Left open, because narrowing the regex
+raises a measured count and a rise is impossible by rule, so the fix and its
+re-baseline are one instructed edit (DW-104).
+
+The separator claim itself is now measured rather than argued: unifying on a
+middle dot gives 1/65, 2/63 and 85/12 against baselines of 1/66, 2/64 and 86/12,
+so A9 passes, because a fall is legal to the checker, and T7 fails on three
+files (DW-085).
+
 ### The gate
 
 `verify-browser.mjs` 0 failures over six files and 10 new 13b assertions;
