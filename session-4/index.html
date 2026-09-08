@@ -2895,7 +2895,7 @@ var TS_TOK=[
   var meanAbs=sum/(W*H);
   var ctx=cvs.map(function(c){try{return c.getContext('2d')}catch(e){return null}});
   if(ctx.some(function(c){return !c})){
-    host.innerHTML='<div class="card warn"><span class="num">Drawing unavailable</span><p>This widget needs the browser's drawing surface, which this browser or view has not provided. The section reads without it; the point it demonstrates is stated in the paragraph below.</p></div>';
+    host.innerHTML='<div class="card warn"><span class="num">Drawing unavailable</span><p>This widget needs the browser\u2019s drawing surface, which this browser or view has not provided. The section reads without it; the point it demonstrates is stated in the paragraph below.</p></div>';
     out.innerHTML='Perturbation amplifier unavailable in this view.';
     amp.disabled=true;return;
   }
