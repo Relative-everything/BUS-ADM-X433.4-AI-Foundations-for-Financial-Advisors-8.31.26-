@@ -10,6 +10,122 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-08 · Nine decisions taken, and the mechanical bundle lands
+
+Branch `claude/pr-a-mechanical`, seven commits: the decisions, one repair the
+first validator surfaced, and PR A's five from `audit/AUDIT-2026-09-07.md` §6.
+
+### Repository · All nine decisions answered
+
+The audit put nine decisions to the instructor, each with a recommended default
+and the cost of the alternative. Every default is taken as written and recorded
+as a dated block under the register's amended header, in number order, naming
+what each one releases. The pages are worked in the room at core-only depth
+(D1); DW-041 is recorded in `CASE.md` §A.5 rather than four lessons being
+rewritten (D2); bridge item 4 is replaced with the ten-to-fifteen-turn restart
+rule the room was actually taught (D3); the assignment is three templates and
+nothing else (D4); §08 goes async (D5); the VALOPT constraint lifts after
+2026-09-14 (D6); the corrections slot runs at 6:03 PM, split so the
+chart-dependent items move to §02's opener (D7); README's four `[UNVERIFIED]`
+fields are deleted rather than supplied (D8); and the site does not take on
+dates or grade weights now that no external record holds them by reference (D9).
+PR B was blocked on D4 and PR C on D3, D4 and D5. Both are now unblocked.
+
+### Session 4 · The lesson parses again
+
+`5ef0842` relabelled the drawing widget's fallback card on 2026-09-08 and wrote
+"the browser's drawing surface" into a single-quoted JavaScript string. The
+unescaped apostrophe closed the literal, and Chromium had been reporting
+`SyntaxError: Unexpected identifier 's'` on load ever since. The block that
+failed to parse is 95 KB: every section 04 to 08 widget, the gate marker, and
+both Shift+U handlers. The lesson was serving as a static document.
+
+No text checker could see it, and the one battery that executes the page,
+`verify-browser.mjs`, is recorded as not run at the 09-03 gate and again at the
+09-07 gate. It is the first thing PR A runs. Fixed with the escape the file
+already prefers; the rendered card is unchanged. Opened and closed as DW-103.
+
+### Five lessons · The override stops firing from inside a text box
+
+Eight `keydown` handlers acted on Shift+U with no test of the active element.
+Two of them had a `TEXTAREA`/`INPUT` guard sitting eight lines too low, where it
+protected the arrow keys and never the override; six had none. All eight now
+open with the same guard, ahead of the key test, and it tests `contenteditable`
+as well. `verify-browser.mjs` gains check 13b, which turns the 09-03
+reproduction into a standing negative test: a fresh context per lesson, focus
+into the first box a reader can type into and then into the cold-open textarea,
+Shift+U, and an assertion that none of the five distinct reveal mechanisms
+moved. Session 2's cold-open textarea is the first thing the room types into on
+2026-09-14 (DW-064).
+
+The override badge read five different ways and `session-0.1` had no `#ovr` at
+all. All five now read "reveal all answer panels"; `session-0.1`'s badge takes
+the shared id, with its rule restated in the page's own CSS rather than edited
+into the managed style fence. The separator is still per file, because a single
+one would either raise two A9 baselines, which is impossible by rule, or lower
+three pinned figures, which needs the instructor's instruction. Both residues
+are on the row (DW-085).
+
+### The hub · The client-data claim narrows to the one that is true
+
+`index.html:1081` said every example across all five sessions uses one synthetic
+household, carrying an `[UNCONFIRMED]` marker and a CLAIM annotation that called
+the sentence wrong in both directions. The annotation already held the fix, so
+it is applied: the claim narrows to client examples, and to "these lessons",
+which stops it counting six published pages as five. The promise a student
+actually reads is unchanged. `docs/unsourced-claims.md` is regenerated with the
+marker: 13 marked claims to 12, nine `[UNCONFIRMED]` to eight (DW-071).
+
+### Session 1 · Section 02's rank curve says what it is
+
+The chart is a harmonic series the page generates, and nothing on screen said
+so; the nearest illustrative label belonged to a panel that closes fifteen lines
+above it. On 2026-08-31 the instructor read its figures aloud as measurements,
+which is what moved this from a matter of taste to a live defect. The chartbox
+now carries an illustrative chip, placed below the readout so it is on screen in
+both axis modes, and one caption sentence stating the construction; the log-log
+readout says the curve is drawn from that formula rather than measured from a
+model. No figure changed and `session-1`'s A9 holds at its pinned 67 (DW-072).
+
+### README · No grade, no calendar, no unverified fields
+
+README told a reader that the Session 1 baseline and the Session 2 rewrites are
+graded components of the final project. Nothing here is graded and nothing ever
+will be; README sat outside the 2026-08-27 purge population, so it was the last
+surface saying otherwise, and it became a contradiction when the instructor told
+a learner in writing that nothing on the site is graded. The replacement names
+no session, because the baseline the old sentence assigned to Session 1 was
+never captured there. Under D8 the date column and the contact line are deleted
+rather than filled in, and three lines say where dates and grading live and why
+a date printed on a page goes stale. "Fall 2026" goes from line 3. One residue
+picked up while the file was open: the override badge is described as being on
+each lesson page rather than in the top bar, which is where two of the five keep
+it (DW-078, DW-079, DW-098).
+
+### Repository · The delivered tag, cut but not published
+
+`session-1-delivered-2026-08-31` is cut against `8442160`, the tree live during
+the session. It could not be pushed: GitHub returns 403 on every attempt while
+the same session pushes branches to the same remote, so the credential is scoped
+to `refs/heads`. The row stays open rather than being closed on a tag that does
+not exist on the remote, and carries the command, the target and the error. The
+target commit is immutable, so cutting it later still freezes the right tree
+(DW-096).
+
+### The gate
+
+`verify-browser.mjs` 0 failures over six files and 10 new 13b assertions;
+`verify-editorial.mjs` 16 rules clean, 0 hard, 9 advisory;
+`test-editorial-regions.mjs` 9 passed with every A9 figure unmoved;
+`verify-migration.mjs` 15 passed; `verify-sources.mjs` 5 of 5;
+`inject-case.mjs --check` 6 current; `verify-case.mjs` 6 of 6;
+`case-inventory.mjs --report-check` current; `build-unsourced.mjs --check`
+current, having exited 1 before this branch; `verify-style.mjs` clean with
+`RESTYLE_SWEEP` pointed at the installed skill (DW-080 is the hard-coded path).
+The storage grep and the externals allowlist are both empty.
+
+---
+
 ## 2026-09-08 · The repository stands alone from the submission platform
 
 Branch `claude/session-1-review-session-2-prep-prjqbf`, one commit.
