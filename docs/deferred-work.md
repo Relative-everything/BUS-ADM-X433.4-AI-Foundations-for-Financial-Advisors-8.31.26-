@@ -61,6 +61,27 @@ carries dates and grade weights itself, now that no external record holds them
 by reference (recommended: no; the syllabus carries them and the pages are
 updated in place across cohorts). DW-050 is deliberately deferred past 09-14.
 
+**Decisions 2026-09-08, instructor: defaults.** Every recommended default in
+the audit's §8 is taken as written, so the paragraph above is answered and the
+nine decisions are closed. In number order, with what each one releases. Where
+§8 and §12 differ, the §12 refinement is folded in and marked.
+
+| # | Scope | Decision taken | Releases |
+|---|---|---|---|
+| D1 | the pages themselves | **Work-along in the room, at core-only depth, with the instructor carrying the narration** (pedagogy s3.9). README's "How to use a lesson" stands and the visual-aid framing in the reply to Learner B yields for what happens in the room; the seventeen interactions per page are not dead weight and the final project keeps its baseline and template inputs. The written announcement of §7 (Saturday 09-12, outside this repository) says the site is worked in the room. | governs everything below; PR D is built for it; DW-102's fourth item resolves in README's favour |
+| D2 | DW-041 | **Record the engagement** in `CASE.md` §A.5: one line naming the student's firm as the engaged planner, assets custodied elsewhere. Then regenerate. Four lessons are not rewritten and the drift surface does not grow. | DW-041 (BLOCKING); the full migration chain reruns after the §A.5 line |
+| D3 | DW-088 | **Replace** bridge item 4 with an item on content Session 1 delivered. The text is the audit's §12.4 item 2, at `session-2:2796-2797`: *"Session 1 gave a rule for when to start a new chat instead of continuing a long one. State it and the reason."* Answer: *"After roughly ten to fifteen turns; everything already in the chat is re-sent with every turn, so a long chat costs more and remembers less."* Taught at 01:50 to 01:57 and 02:18 to 02:21, so the "no notes" framing stays honest. | PR C |
+| D4 | DW-089 | **Three templates only**, matching what the room was told aloud on 2026-08-31. §6b drops the cited-techniques and discernment-statement clauses and scores the templates alone; `session-1:2095`, `session-2:1273` and §6b then say one thing. The site is the specification of its own assignments, per the standing-alone decision above. | PR B and PR C; the one-to-one with Learner B |
+| D5 | the Session 2 cut | **Core-only, §08 async.** §08 becomes peer review between sessions; the full page is 150 planned minutes, which is 255 at the 1.7x multiplier and cannot be taught in a 180-minute block. | PR C item 7 (the "a partner's review of your work" reword) and PR D |
+| D6 | DW-003 | **Lift the VALOPT constraint.** DW-001, DW-002 and DW-076 close in one commit before Session 3, and DW-003 with them, its own row having asked for all three together. Not before 2026-09-14 either way. | DW-001, DW-002, DW-003, DW-076, after 2026-09-14 |
+| D7 | the corrections slot | **Yes.** The verified list is delivered at 6:03 PM on 2026-09-14. Per §12.4, the slot carries only the corrections that need no chart on screen (input one fifth of output, cache at 10%, the $10,000 §7872 threshold, the C corporation); the leaderboard and Fable-price corrections move into §02's opener at 6:34 PM where the chart is up. The §5.4 verdicts stay single-auditor: the refutation pass died to a usage limit twice and will not be relaunched. | DW-092, PR D |
+| D8 | DW-079, DW-098 | **Delete the date column and the contact line** from `README.md`. All four `[UNVERIFIED]` fields go rather than being supplied; the site's no-calendar rule reaches README. | PR A, commit 4, with DW-078 |
+| D9 | dates and grade weights on the site | **No.** The syllabus carries them and they stay off the site. A page is updated in place across cohorts, so a date on a page goes stale the day the next cohort starts; the reasoning of `95910ec` stands and is not disturbed by the repository standing alone. | closes the question §12.5 opened; README loses its date column under D8 rather than gaining one |
+
+DW-050 (standalone or spiral) is still deliberately deferred: the audit's §3
+gives the reason, the delivery being a data point of one, and §12.3 gives the
+expiry, after 2026-09-14 and before Session 3's pre-flight.
+
 ---
 
 
