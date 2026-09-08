@@ -451,6 +451,11 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 .depthbar i{flex:1;background:var(--on);border-radius:2px 2px 0 0;min-height:2px;opacity:.75}
 .depthbar i.neg{background:var(--warn)}
 /* STYLE:END */
+/* The override badge. The shared fence styles the template's #pnum; this page
+   now carries the id the other four lessons use (DW-085), so the rule is
+   restated here, byte-identical to session-1's, rather than edited into the
+   managed fence, which restyle_sweep.py owns and would overwrite. */
+#ovr{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--on);white-space:nowrap;font-weight:500;border:1.5px solid var(--on);border-radius:6px;padding:4px 9px}
 /* ===== generated case block, injected by scripts/inject-case.mjs =====
    Layout only. Every figure inside the sentinels comes from CASE.md through
    scripts/case-facts.json; nothing here is a case fact. */
@@ -547,7 +552,7 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 <div id="topbar">
   <span class="ttl">Session 0.1 &middot; Cole household</span>
   <div id="ptrack"></div>
-  <span id="pnum" class="mono">Shift+U &mdash; reveal all</span>
+  <span id="ovr" class="mono">Shift+U &mdash; reveal all answer panels</span>
   <button id="caseBtn">Case facts</button>
 </div>
 <div id="caseModal"><div class="inner" id="caseInner">
@@ -1955,15 +1960,19 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
 /* Keyboard: arrows step sections; Shift+U is the labelled one-way instructor
    override that marks every gate and runs every registered revealer. */
 document.addEventListener('keydown',function(e){
+  /* DW-064. No key bound here fires while a typing surface has focus. The guard
+     used to sit below the Shift+U block, so it protected the arrow keys and never
+     the override: a capital U typed into a text box revealed every withheld panel.
+     It is first now, and it tests contenteditable as well. */
+  var ae=document.activeElement,tg=(ae&&ae.tagName)||'';
+  if(tg==='TEXTAREA'||tg==='INPUT'||(ae&&ae.isContentEditable))return;
   if(e.shiftKey&&(e.key==='U'||e.key==='u')){
     all('[data-gate]').forEach(function(c){mark(c.dataset.gate)});
     all('.hidden').forEach(function(x){x.classList.remove('hidden')});
     REVEALERS.forEach(function(f){try{f()}catch(err){}});
-    $('pnum').textContent='All revealed';return}
+    $('ovr').textContent='All revealed';return}
   /* Escape is the case dialog's, and the dialog's own generated controller
      handles it. It used to be swallowed here, before the controller existed. */
-  var t=(document.activeElement&&document.activeElement.tagName)||'';
-  if(t==='TEXTAREA'||t==='INPUT')return;
   if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
     var cur=0,mid=window.innerHeight/2;
     secs.forEach(function(s,i){if(s.getBoundingClientRect().top<=mid)cur=i});

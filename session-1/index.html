@@ -841,7 +841,7 @@ table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border
 <div id="topbar">
   <span class="ttl">Session 1 &middot; Cole household</span>
   <div id="ptrack"></div>
-  <span id="ovr" class="mono">Shift+U &mdash; reveal all</span>
+  <span id="ovr" class="mono">Shift+U &mdash; reveal all answer panels</span>
   <button id="caseBtn">Case facts</button>
 </div>
 <div id="caseModal"><div class="inner" id="caseInner">
@@ -2397,6 +2397,12 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
   if(e.isIntersecting){var i=secs.indexOf(e.target);pips.forEach(function(p,j){p.classList.toggle('on',j===i)})}})},
   {rootMargin:'-45% 0px -45% 0px'});secs.forEach(function(s){io.observe(s)})}
 document.addEventListener('keydown',function(e){
+  /* DW-064. No key bound here fires while a typing surface has focus. The guard
+     used to sit below the Shift+U block, so it protected the arrow keys and never
+     the override: a capital U typed into a text box revealed every withheld panel.
+     It is first now, and it tests contenteditable as well. */
+  var ae=document.activeElement,tg=(ae&&ae.tagName)||'';
+  if(tg==='TEXTAREA'||tg==='INPUT'||(ae&&ae.isContentEditable))return;
   if(e.shiftKey&&(e.key==='U'||e.key==='u')){
     all('[data-gate]').forEach(function(c){mark(c.dataset.gate)});
     all('.hidden').forEach(function(x){x.classList.remove('hidden')});
@@ -2404,8 +2410,6 @@ document.addEventListener('keydown',function(e){
     $('ovr').textContent='All revealed';return}
   /* Escape is the case dialog's, and the dialog's own generated controller
      handles it. It used to be swallowed here, before the controller existed. */
-  var t=(document.activeElement&&document.activeElement.tagName)||'';
-  if(t==='TEXTAREA'||t==='INPUT')return;
   if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
     /* Position and step are both derived from geometry rather than from array
        order. The old form walked secs in array order and took the last index
