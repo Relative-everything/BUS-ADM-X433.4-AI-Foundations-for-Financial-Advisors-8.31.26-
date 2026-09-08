@@ -10,6 +10,36 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-08 · The repository stands alone from the submission platform
+
+Branch `claude/session-1-review-session-2-prep-prjqbf`, one commit.
+
+### Repository · No file names the LMS
+
+By instructor decision the repository no longer refers to the platform through
+which assignments are submitted, by name or by role as an authority. The
+2026-08-25 purge row in `MAINTAINING.md` now reads "the LMS by name"; the
+Tier A and Tier B rationale says that dates, deadlines, submission and grading
+are set by the instructor outside this site; the purge check is written as a
+bracketed regex so the pattern does not match itself. `docs/deferred-work.md`
+records the decision in its header, re-states D4 as a page decision (the site
+is the specification of its own assignments) and opens D9 (whether the site
+now carries dates and grade weights itself; recommended no). The superseded
+inventory section in `docs/session-1-feedback-inventory.md`, one note string
+in `scripts/editorial-baseline.json`, and `audit/AUDIT-2026-09-07.md` are
+reworded in place; the audit gains §12.5 recording what moved and what
+remains.
+
+### Session 4 · One label
+
+The drawing widget's fallback card named the HTML element in its heading, in
+a way a reader could mistake for the platform. It now reads "Drawing
+unavailable". The `<canvas>` element, its ids and the design-tool
+"canvas export" comments in `scripts/build-case.mjs` are untouched; they are
+not the platform.
+
+---
+
 ## 2026-09-07 · Session 1 measured against the room, and the queue re-cut for Session 2
 
 Branch `claude/session-1-review-session-2-prep-prjqbf`, one commit. No served

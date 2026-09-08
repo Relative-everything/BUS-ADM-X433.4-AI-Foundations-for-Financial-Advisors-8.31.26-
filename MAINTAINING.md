@@ -293,19 +293,24 @@ the lessons rather than running it across the whole tree.
 | Adaeze | 2026-08-18 | Meg Cole |
 | Ilesanmi | 2026-08-18 | (no equivalent, character removed) |
 | Reyes | 2026-08-18 | Cole |
-| Canvas, the LMS | 2026-08-25 | "the course site" |
+| the LMS by name, the platform assignments are submitted through | 2026-08-25 | "the course site" |
 | instructor note | 2026-08-26 | `instructor-notes/session-N.md`, outside the served pages |
-| **Tier A — grading.** graded · grading · a grade · rubric *(as a course instrument)* · graded component · loses marks · full credit · submit · submitted · submission · turn in · points *(as course credit)* · pass/fail · any weight or percentage of a grade | 2026-08-27 | nothing — deleted. Canvas is the sole authority for grading |
+| **Tier A — grading.** graded · grading · a grade · rubric *(as a course instrument)* · graded component · loses marks · full credit · submit · submitted · submission · turn in · points *(as course credit)* · pass/fail · any weight or percentage of a grade | 2026-08-27 | nothing — deleted. Grading is set by the instructor outside this site |
 | **Tier B — between-session obligation.** due · due before Session N · deadline · 48 hours before Session N · before the week is out · ahead of Session N · bring X to Session N · read before Session N · was due today | 2026-08-27 | nothing — deleted, or "Reading for Session N" where the row is a reading list |
 
 Match case-insensitively on the stem so punctuation variants cannot hide:
 `grep -rin okonkwo`.
 
-**Canvas needs one exclusion and the check is worthless without it.** `session-4`
-renders a bitmap through an HTML `<canvas>` element, so `grep -rin canvas`
-returns four legitimate hits there and one in `scripts/build-case.mjs`, where
-"canvas export" names a design tool. The LMS is the capitalised word standing
-alone in prose. Read every hit; do not automate this one.
+**The LMS check needs one exclusion and is worthless without it.** `session-4`
+renders a bitmap through an HTML `<canvas>` element, so a case-insensitive grep
+on the platform's name returns legitimate hits there and one in
+`scripts/build-case.mjs`, where "canvas export" names a design tool. The LMS is
+the capitalised word standing alone in prose. Since 2026-09-08 the name appears
+nowhere in the repository, this file included, by instructor decision: the
+repository stands alone from any submission platform. Run the check as
+`grep -rniE 'c[a]nvas' --include='*.md' --include='*.html' .` (the bracket keeps
+the pattern out of its own results); every hit must be the element, an element
+id, or the design-tool export. Read every hit; do not automate this one.
 
 **Why the name is gone at all.** No lesson may bind the course to one
 submission platform, because the platform is the institution's choice and can
@@ -355,8 +360,9 @@ those six lines is the expected state, not a defect.
 
 **Tier A and Tier B are why the course-policy strings are gone.** Nothing in this
 repository is graded and it never will be. The repository is a live visual aid a
-room follows during a lecture; **Canvas is the sole authority for dates,
-deadlines, submission and grading**, and it is already built. A sentence here
+room follows during a lecture; **dates, deadlines, submission and grading are
+set by the instructor outside this site**, which stands alone from whatever
+platform carries them (decision of 2026-09-08). A sentence here
 asserting a grade, a due date or an obligation is not merely stale — it has no
 standing to make the claim, and two sources of truth for a deadline is worse than
 one wrong one.
@@ -367,7 +373,7 @@ lesson rather than fix it:**
 | Kept | Example | Why |
 |---|---|---|
 | In-class instruction | *"Next 10 minutes / You / Open it cold"*, *"Do this now — 6 minutes, in pairs"*, every work-along gate | This is the visual aid working. It is the reason the file exists |
-| A widget's own score | *"SCORE 8 / 8"*, *"TOTAL 12 / 12"*, *"Rubric coverage"* | Feedback computed in the room, not a course grade. A course grade is Canvas's; a diagnostic is the page's |
+| A widget's own score | *"SCORE 8 / 8"*, *"TOTAL 12 / 12"*, *"Rubric coverage"* | Feedback computed in the room, not a course grade. A course grade is the instructor's; a diagnostic is the page's |
 | Cross-session pedagogy | retrieval bridges, the case spine's artifact chain, spiral declarations | Ratified constructs. Held open as **DW-050**, not edited piecemeal |
 | Regulatory deadlines | Regulation S-P's 30-day notification clock in `session-4` | A deadline **in the case**, which is the thing being taught |
 | Data-handling rules | *"No real client data or personally identifying information enters any AI tool at any point in this course"* | A safety rule, not a grading rule. Kept in force. Repointed 2026-08-29 — see the note below |
@@ -405,7 +411,7 @@ remains in force and remains covered by this row; it is simply no longer the exa
 decision, and here is the test that says so.** It is **not part of the current
 offering** — it is a primer for a future course — so the ungraded-repo argument
 above does not reach it: whatever it says about grading is a claim about a course
-that has not been scheduled, not a second source of truth against Canvas. It
+that has not been scheduled, not a second source of truth against the syllabus. It
 **stays in the repository, stays linked from the hub at `index.html:1045`, and
 stays in every validator population unchanged.**
 
