@@ -47,8 +47,8 @@ naepcjournal.org), so those verdicts are M and say so.
 
 ## 0. Read this first
 
-**The page tells a learner four times that Session 1 did something Session 1
-did not do, and the register schedules only two of the four.** At 6:06 PM the
+**The page makes eight claims about Session 1; seven are false for this cohort,
+and PR C as specified names four of the seven.** At 6:06 PM the
 cold-open analyser's own output reads "Compare this against what you pasted in
 Session 1" (`:3065`); no learner pasted anything on 2026-08-31, the ritual
 having been lectured from the instructor's screen (09-07 §2.2, row 01). At 6:14
@@ -56,11 +56,11 @@ PM the section map says the confidentiality boundary "is the boundary Session 1
 established" (`:1246`), when §08 never ran and the three landmines were never
 named, and Outcome 03 says the templates were written "before being taught a
 framework" (`:1251`), when the eight-point checklist was lectured for eleven
-minutes. Of the eight sites where the page makes a claim about Session 1 (§3.2
-lists them all), PR C as specified repairs four (`:1382`, `:1603`, `:2765`,
-`:2796`) and removes a fifth incidentally. `:1246`, `:1251` and `:3065` are on
-no row and no PR C item. They are S2-02, S2-03 and S2-04, and they are three
-sentences.
+minutes. §3.2 lists all eight sites. PR C repairs `:1382`, `:1603`, `:2765` and
+`:2796` by name; `:3065` disappears only as a side effect of the renderer copy
+in 12.4 item 7, so an implementer who lands item 3 without item 7 leaves it
+standing; and `:1246` and `:1251` survive PR C entirely. Those three are S2-02,
+S2-03 and S2-04, and they are three sentences.
 
 **The §07 answer key teaches four things a learner could repeat and be wrong
 about, and the gate meant to stop that points somewhere else.** The six-item
@@ -128,7 +128,7 @@ edits nothing between the CASE sentinels (`:731-1186`) or the SOURCES sentinels
 
 | id | section | axis | sev | defect | anchor | fix | tag |
 |---|---|---|---|---|---|---|---|
-| S2-01 | s10 | accurate | **BLOCKING** | The §07 live-run prompt describes the Cole transaction as "an installment sale of non-voting **stock**"; `CASE.md` E.1 and E.5 have Meg contribute CPC stock to an LLC and sell 520 non-voting **LLC units**, and I.1 records that §2036(b) "reaches corporate stock; the transferred interests here are LLC units". Learners run the four verification checks against authority for an instrument the case does not use, and §2036(b) is the trap the distinction exists to mark. | `:1812` "What authority supports an installment sale of non-voting stock to an intentionally defective grantor trust" | "an installment sale of non-voting LLC units to an intentionally defective grantor trust". One word. | NEW WORK |
+| S2-01 | s10 | accurate | **BLOCKING** | The §07 live-run prompt describes the Cole transaction as "an installment sale of non-voting **stock**"; `CASE.md` E.1 and E.5 have Meg contribute CPC stock to an LLC and sell 520 non-voting **LLC units**, and I.1 records that §2036(b) "reaches corporate stock; the transferred interests here are LLC units". Learners run the four verification checks against authority for an instrument the case does not use, and §2036(b) is the trap the distinction exists to mark. **Severity is the register's definition applied literally** ("a page states a fact the repo's own source contradicts") and is the auditor's judgement, not a score: it is a one-word defect beside two BLOCKING rows (DW-003, DW-041) that are structural, and the instructor may reasonably record it as MAJOR. It is ranked first on cost as much as on severity, being the cheapest finding in this table. | `:1812` "What authority supports an installment sale of non-voting stock to an intentionally defective grantor trust" | "an installment sale of non-voting LLC units to an intentionally defective grantor trust". One word. | NEW WORK |
 | S2-02 | sCold | accurate | MAJOR | The analyser's readout, the first live output the room sees at 6:06 PM, tells every learner to compare against a Session 1 paste no learner made; the paragraph under the box presumes the same. | `:3065` "Compare this against what you pasted in Session 1"; `:1382` "Same field, one session on." | 12.4 item 3 replaces `:1382-1384`; 12.4 item 7 (DW-066) replaces the renderer with session-1's, whose closing line carries no Session 1 reference. Neither item names `:3065`; the PR C commit body should, so an implementer who lands item 3 without item 7 does not leave it standing. | RIDES-ALONG (PR C) |
 | S2-03 | s0 | accurate | MAJOR | The section map says Session 1 established the confidentiality boundary; §08 never ran and the landmines were never named. DW-088 replaces the bridge item that tests the same content; this prose sentence is on no row. | `:1246` "That is the boundary Session 1 established and Session 4 will test." | "That is the boundary this course draws, and Session 4 will test it." | RIDES-ALONG (PR C) |
 | S2-04 | s0 | accurate | MAJOR | DW-099's false premise at a second site the row does not enumerate: the outcomes card repeats that the three templates were written before any framework was taught. | `:1251` "The three you wrote before being taught a framework" | "The three you wrote before this session, scored element by element and one of them rebuilt in place." Land inside the DW-099 commit. | RIDES-ALONG (PR C) |
