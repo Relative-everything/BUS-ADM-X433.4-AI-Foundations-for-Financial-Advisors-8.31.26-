@@ -10,6 +10,74 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-09 · Session 2's page is audited against its own claims, and the register picks it up
+
+Branch `claude/session-2-page-audit-vlrqj2`, three commits: the audit, two
+corrections to its own record, and twelve register rows. Written five days
+before Session 2 is taught, read-only against `session-2/index.html`.
+
+### Audit · The page measured against what it says it does
+
+`audit/SESSION-2-CONTENT-AUDIT-2026-09-09.md` is the fourth kind of audit this
+repository carries. The 08-20, 08-23 and 08-29 audits measured pages against
+the build protocol; 09-03 measured the register against the tree; 09-07
+measured a page against the room that met it. This one measures a page against
+its own claims before the room arrives, scoring all sixteen sections on
+interactive, accurate and additive and ranking 53 findings worst first rather
+than in page order: 1 BLOCKING, 10 MAJOR, 32 MINOR, 10 HOUSEKEEPING.
+
+Weakest axis is accuracy, at a core mean of 2.36, against an interactive mean
+of 3.36 and an additive mean of 3.73. Eight of eleven core sections carry no
+confidence chip at all. The page
+makes eight claims about Session 1 of which seven are false for this cohort.
+The page defines 15 of its 74 technical terms, against Session 1's 26 of 50.
+Fifteen of its sixteen work-along gates never complete on a learner action, so
+the completion feedback R10 promises fires only for the cold open.
+
+A bottom-up time model over all eleven core sections gives 114 actual minutes
+for 69 planned, 1.66x, which corroborates the 09-07 audit's 1.7x from the
+other direction and adds what the multiplier hides: only 31 of those minutes
+are reading, so a prose trim recovers at most a third of the overrun. The
+09-07 cut holds for §08 going async and fails for §05 first to drop, whose
+stated premise is already contradicted by DW-101.
+
+The scoring design was sixteen independent section readers, two censuses and
+an adversarial refutation of every new finding. Two launches died to usage
+limits, the third and fourth audits in a row to record that failure. Seven core
+sections are single-auditor and the refutation pass did not run; both are
+stated in the audit's §5, along with two agent findings rejected on
+re-derivation and recorded rather than dropped.
+
+### Audit · Two corrections to its own record
+
+Self-review before the merge caught, in the audit's own §0, the defect class
+the audit exists to catch: a Session 1 headline reading "four times ... only
+two of the four" against a paragraph whose own arithmetic gave eight sites. It
+now states the measured figures. The file's one BLOCKING finding gained the
+note that the severity is the register's definition applied literally to a
+one-word defect and that recording it as MAJOR is the instructor's call.
+
+### Register · Twelve rows, DW-105 to DW-116
+
+The audit landed as a document with nothing tracked where the register says
+work is tracked, which is the DW-086 failure and the reason its item (c)
+exists. Nine rows are on `session-2`, headed by DW-105, the page's one
+contradiction of a repo source: §07 sends learners to check authority for a
+sale of non-voting stock where `CASE.md` sells LLC units and records that
+difference as material to §2036(b). Three rows are cross-file items the
+dependency trace surfaced and that belong to other pages, among them DW-113, a
+`session-4` sorter that contradicts `CASE.md` Part J on which three facts are
+the confidentiality landmines. DW-116 indexes the 41 findings that did not need
+rows of their own, with its three tag lists measured rather than asserted.
+
+`verify-migration` check 1 caught one thing on the way in: the word describing
+Davidson's instrument is a retired Cole framing that must return zero tree-wide,
+and this register is not in the excluded set, which is the rule DW-063 states.
+The description was rewritten without it. The gate is green on all fifteen
+checks and no lesson file, figure or generated span was touched.
+
+---
+
 ## 2026-09-08 · Nine decisions taken, and the mechanical bundle lands
 
 Branch `claude/pr-a-mechanical`, seven commits: the decisions, one repair the
