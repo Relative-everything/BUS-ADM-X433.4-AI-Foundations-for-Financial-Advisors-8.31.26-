@@ -475,7 +475,7 @@ span between the sentinels belongs to the script.
 | `APXSTUB` | one per appendix section: what is hidden at the current depth and what it costs | the tier state |
 | `APXBUDGET` | `table.tbudget > tbody`, the instructor minute budget | `validate_lesson` V5, migration 16 |
 | `APXCORE` | `window.__coreMins` | nothing else; this is why it drifted |
-| `APXMAP` | optional. `session-2`'s student-facing time budget | nothing else |
+| `APXMAP` | optional. A student-facing time budget. `session-2` carried the only one until 2026-09-12, when the §00 trim retired it; the template stays in the script, so restoring the sentinel restores the table | nothing else |
 | `APXNOTE` | optional. `session-3`'s footer paragraph on the shape of the file | nothing else |
 
 **Editing a generated region by hand is a finding, not a merge.** Change the

@@ -10,6 +10,27 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-12 · Session 2 §00: the opening block loses its excess wording
+
+Branch `claude/bold-mccarthy-b7nvcf`, one commit. The s0 trim that DW-093 held
+open, done on instruction.
+
+### Session 2 · §00 from 1,037 words to 768
+
+The block from the case heading to the bridge gate ran 892 words and runs 636.
+Cut: the paragraph on the three confidentiality landmines (its two facts, the
+inquiry and that Nathan has not been told, survive as one clause in the asset
+card); the student-facing time budget and its note, so the `APXMAP` region is
+retired from the page, with the pacing panel above and the footer table carrying
+every figure it did; the restatement of the outcomes inside "Before we start";
+and the sentence that called the cards "injected", which they are not. The case
+cards keep every figure and every fact a later section or the spine brief relies
+on, in fewer words; the recurring-question card is byte-identical. The nine-term
+glossary and the outcome cards stand, Outcome 03 shorter. Both em dashes in the
+block stay where they were, so the A9 count is unmoved and no baseline is
+re-recorded. `docs/case-fact-inventory.md` regenerated: the drift surface fell by
+one.
+
 ## 2026-09-12 · Session 2 pre-flight: the page stops saying what is false for this room
 
 Branch `claude/upbeat-galileo-3tbnmw`, eleven commits after the plan. The
