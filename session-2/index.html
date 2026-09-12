@@ -1385,7 +1385,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="rout" id="coldOut"><span class="rnil">Paste something and press the button.</span></div>
   </div>
 
-  <p>Same field, one session on. Session 1 said nothing in this prompt read your intent. Tonight you learn the framework that fixes it, and \u00a704 scores the three templates you wrote against that framework.</p>
+  <p>First run. Keep the result on screen; Session 3 runs the same field and the drift between the two is the measurement.</p>
 
   <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen &mdash; the comparison across sessions is the point.</div></div>
 </section>
@@ -1988,7 +1988,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
 <footer>
   <div class="wrap" style="padding:0">
-  <h3 style="margin:26px 0 4px;font-size:17px">Instructor minute budget</h3>
+  <h3 style="margin:26px 0 4px;font-size:17px">Minutes by section</h3>
   <table class="tbudget" data-timing>
     <thead><tr><th>Section</th><th>Title</th><th>Min</th></tr></thead>
 <!-- APXBUDGET:BEGIN generated-by=scripts/build-appendix.mjs -->
@@ -3049,26 +3049,48 @@ document.addEventListener('keydown',function(e){
   }
 });
 /* ===== family 17: cold-open ritual — identical in every session ===== */
+/* COURSE-WIDE COLD-OPEN CHECKLIST. COLD_CHECKS is the one constant that
+   defines the eight fixed checks: a label, one plain line on why the item
+   matters, and a deterministic, offline detect function d(t). Every rule is
+   readable below: a presence test is a visible word list or a plain
+   measurement, never a relevance score, and there is no threshold. The rows
+   are diagnostic only; nothing else on the page reads them. Sessions 2-4
+   copy this constant and the renderer under it verbatim (register row
+   DW-066). */
+var COLD_CHECKS=[
+ {l:'An explicit ask',w:'A question mark or an opening imperative tells the model what to return; without one it guesses the task as well as the answer.',
+  d:function(t){return /\?/.test(t)||/^\s*(?:\w+[,:]\s+)?(?:please\s+)?(?:write|make|give|list|draft|summarise|summarize|explain|create|find|tell|help|review|compare|analyse|analyze|rewrite|check|generate|outline|describe|calculate|translate|classify|extract|suggest|recommend|plan|edit|fix|improve|assess|evaluate)\b/i.test(t)}},
+ {l:'At least 15 words',w:'Below about fifteen words there is rarely enough signal to tell your task apart from a thousand similar ones.',
+  d:function(t){return (t.match(/\S+/g)||[]).length>=15}},
+ {l:'A named output format',w:'Naming a list, table, email, memo or draft fixes the shape of the answer instead of leaving the model to pick one.',
+  d:function(t){return /\b(list|table|email|e-mail|memo|draft|bullet|bullets|bulleted|outline|summary|report|letter|agenda|template|paragraph|paragraphs|spreadsheet|checklist|headline|slide|slides|script|caption)\b/i.test(t)}},
+ {l:'Context beyond the ask',w:'Background the model cannot infer, the who and the situation, is what separates your answer from a generic one.',
+  d:function(t){return (t.match(/[.!?](\s|$)/g)||[]).length>=2||t.length>180}},
+ {l:'A named audience or role',w:'Saying who is writing or who will read it shifts vocabulary, depth and tone toward that reader.',
+  d:function(t){return /\b(you are|act as|as an? \w+|audience|reader|readers|for my|for our|client|clients|prospect|prospects|board|committee|colleague|colleagues|adviser|advisers|advisor|advisors|planner|planners|attorney|attorneys|accountant|accountants|student|students|beginner|beginners|expert|experts)\b/i.test(t)}},
+ {l:'A constraint on length, tone or scope',w:'A stated limit is the difference between an answer you can use and one you cut down yourself.',
+  d:function(t){return /\b(no more than|at most|under|within|maximum|max|limit|only|brief|briefly|concise|short|long|formal|informal|casual|plain|professional|friendly|neutral|tone|word|words|sentence|sentences|page|pages|paragraph|paragraphs|scope|exclude|excluding|without|avoid|keep it)\b/i.test(t)}},
+ {l:'An example or reference point',w:'One example anchors format and register more reliably than a paragraph of description.',
+  d:function(t){return /\b(for example|e\.g|such as|like this|like the|similar to|based on|modelled on|modeled on|in the style of|sample|example|attached|below|here is|as in|following the)\b/i.test(t)}},
+ {l:'What to do when unsure',w:'Telling it to verify, cite or ask first trades confident guessing for something you can check.',
+  d:function(t){return /\b(verify|cite|citation|citations|source|sources|if unsure|if you are unsure|if you're unsure|not sure|unsure|don't know|do not know|ask me|ask first|ask before|flag|confirm|double-check|check first|uncertain|say so)\b/i.test(t)}}
+];
 (function(){
   var go=document.getElementById('coldGo');if(!go)return;
   go.onclick=function(){
     var box=document.getElementById('coldPrompt'),out=document.getElementById('coldOut');
     var t=box.value.trim();
     if(!t){out.className='rout';out.innerHTML='<span class="rnil">Paste something first.</span>';return}
-    var words=(t.match(/\S+/g)||[]).length,chars=t.length,toks=Math.round(chars/4);
-    var q=(t.match(/\?/g)||[]).length;
-    var imper=/^(write|make|give|list|draft|summari[sz]e|explain|create|find|tell|help)/i.test(t);
-    var hasRole=/\b(you are|act as|as an?|expert|advisor|planner)\b/i.test(t);
-    var hasFmt=/\b(bullet|table|word|paragraph|format|list|tone|concise|short|long)\b/i.test(t);
-    var hasCtx=t.length>180;
-    var have=[];if(hasRole)have.push('a role or framing');if(hasFmt)have.push('an output format');if(hasCtx)have.push('substantial context');
-    var missing=[];if(!hasRole)missing.push('role or framing');if(!hasFmt)missing.push('output format');if(!hasCtx)missing.push('context beyond the ask');
+    var n=0,rows=COLD_CHECKS.map(function(c){
+      var hit=false;try{hit=!!c.d(t)}catch(err){hit=false}
+      if(hit)n++;
+      return '<div style="margin:9px 0 0"><span style="color:var(--'+(hit?'on':'warn')+');font-weight:700">'+
+        (hit?'\u2713 present':'\u2717 missing')+'</span> \u00b7 <b>'+c.l+'</b>'+
+        '<div class="dim" style="font-size:13px;margin-top:2px">'+c.w+'</div></div>';
+    });
     out.className='rout on';
-    out.innerHTML='<span class="rz">'+words+' words \u00b7 '+chars+' characters \u00b7 roughly '+toks+' tokens</span>'+
-      'It is '+(imper?'an imperative':q?'a question':'a statement')+'. '+
-      (have.length?'It carries '+have.join(' and ')+'. ':'It carries none of the usual scaffolding. ')+
-      (missing.length?'It supplies no '+missing.join(', no ')+'.':'It supplies all three.')+
-      '<div class="rfx">No judgement is implied. Compare this against what you pasted in Session 1 \u2014 the drift is the measurement.</div>';
+    out.innerHTML='<span class="rz">Prompt checklist</span>'+rows.join('')+
+      '<div class="rfx"><b>'+n+' of 8 present.</b> Diagnostic only: nothing is scored and nothing unlocks. Keep the text on screen; the comparison across sessions is the point.</div>';
     if(typeof mark==='function')mark('gc');
   };
 })();
@@ -3162,10 +3184,16 @@ window.__coreMins=69;
       '<div class="pcell"><b>'+apx+' min</b><span>'+na+' appendix sections</span></div>'+
       '<div class="pcell"><b>'+(core+apx)+' min</b><span>everything</span></div>'+
     '</div>'+
-    '<p>The core runs in about '+core+' minutes and is what always gets taught. In a full '+
-    'block, raise the appendix depth and take the extra sections in place; in a short one, '+
-    'leave it on core only and the session still closes properly. Appendix sections are also '+
-    'readable alone afterwards.</p>';
+    '<p><b>Two ways through this session.</b> The core is '+nc+' sections and about '+core+' '+
+    'minutes. It stands on its own: nothing in the core depends on the appendix, so reading '+
+    'those sections in order gives you the whole argument.</p>'+
+    '<p>The '+na+' appendix sections add '+apx+' minutes of optional depth, '+(core+apx)+' '+
+    'minutes for everything. Each one is placed in the core at the point it belongs rather '+
+    'than at the back of the file, so you can carry straight on into it and then pick up where '+
+    'you left off. The gold cards under Appendix contents link to each one, and the depth '+
+    'control above sets how many are showing; anything hidden leaves a stub naming what it '+
+    'was, so you can always see what you skipped. They also read on their own afterwards.</p>';
+
 })();
 </script>
 </body>
