@@ -5,11 +5,11 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**60 works, 177 references across 5 lessons.** 46 are
-cited by at least one claim; 14 are listed by a lesson without carrying a
+**61 works, 187 references across 5 lessons.** 48 are
+cited by at least one claim; 13 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
-**53 records carry at least one field this repository could not verify, and
+**54 records carry at least one field this repository could not verify, and
 every one of them is printed below as `[UNVERIFIED, needs source]` rather than omitted.** The
 rendered footer in a lesson omits an unknown field, because a footer in which
 thirty entries shout about a missing publisher helps nobody. This file is where a
@@ -34,8 +34,8 @@ reader comes for completeness, so here the gap is the point.
 | Last retrieved | 2026-08-25 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **4** |
-| Cited in | S1 `#s5` · S1 `#s11` ×3 |
+| **Total references** | **7** |
+| Cited in | S1 `#s5` · S1 `#s11` ×3 · S2 `#s5` ×3 |
 
 Per-token input and output rates by model, cache-hit and batch discounts.
 
@@ -338,8 +338,8 @@ The nine sampler controls and their interaction. Behaviour reimplemented in Appe
 | Last retrieved | 2026-08-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **12** |
-| Cited in | S1 `#s10` ×2 · S2 `#s5` ×2 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
+| **Total references** | **13** |
+| Cited in | S1 `#s10` ×2 · S2 `#s0` · S2 `#s5` ×2 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
 
 A live leaderboard of capability index scores and cost per index task. Every figure drawn from it is a moving target and none of them is stable between terms.
 
@@ -376,8 +376,8 @@ A running count of court cases in which fabricated citations were filed. Cumulat
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S2 `#s10` ×2 |
+| **Total references** | **1** |
+| Cited in | S2 `#s10` |
 
 General-purpose models over more than 800,000 verifiable legal questions, 58-88% hallucination; GPT-4 58%, GPT-3.5 69%, Llama 2 88%. Those three model names are a HISTORICAL FIXTURE: the finding is about those models and updating them to current names would falsify it.
 
@@ -516,6 +516,25 @@ Approximately $25 million across 15 transfers. The one deepfake figure the cours
 
 ### Google
 
+**Gemini for Workspace: Prompting guide 101**  
+`src-google-ptcf` · evidence
+
+| | |
+|---|---|
+| Author | Google |
+| Publisher | Google |
+| Link | **[UNVERIFIED, needs source]** |
+| Published | 2024 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S2 `#s6` |
+
+The Persona-Task-Context-Format framework that session-2 §03 teaches and §04 scores against.
+
+### Google
+
 **SynthID: Tools for watermarking and detecting LLM-generated Text**  
 `src-synthid-text` · evidence · **moving target**
 
@@ -604,8 +623,8 @@ Drawing on Kitces Research on Advisor Productivity, fielded autumn 2024: the gre
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **2** |
-| Cited in | S2 `#s9` ×2 |
+| **Total references** | **4** |
+| Cited in | S2 `#s9` ×2 · S2 `#s12d` · S2 `#s12` |
 
 Approximately one hour of note, summary and follow-up work per two-hour client meeting. The reliance figure travelling with it is reported via Advisor360 and Kitces Research through a secondary aggregator and is directional only.
 
@@ -642,10 +661,29 @@ Characterised on the page ONLY by its title claim of self-reported reductions in
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **6** |
-| Cited in | S2 `#s10` · S3 `#s7` · S3 `#s15` · S3 `#s16` · S4 `#s7` · S4 `#s9` |
+| **Total references** | **7** |
+| Cited in | S2 `#s10` ×2 · S3 `#s7` · S3 `#s15` · S3 `#s16` · S4 `#s7` · S4 `#s9` |
 
 Over 200 preregistered legal queries, expert hand-scored, against Lexis+ AI, Westlaw AI-Assisted Research and GPT-4. Tools tested May 2024 — a historical fixture. The measured rates belong to the tools as they were on that date and must never be "updated".
+
+### OpenAI
+
+**API pricing**  
+`src-openai-pricing` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | OpenAI |
+| Publisher | OpenAI Platform |
+| Link | <https://openai.com/api/pricing/> |
+| Published | *not applicable* |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S2 `#s5` ×2 |
+
+Per-token input and output rates for the GPT-5.6 Sol, Terra and Luna tiers, as carried in session-2's MODELS array.
 
 ### OWASP
 
@@ -737,8 +775,8 @@ Two outlets citing the same analysis report $2.19bn and $3.7bn. Carried on the p
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **1** |
-| Cited in | S2 `#s9` |
+| **Total references** | **2** |
+| Cited in | S2 `#s9` · S2 `#s12d` |
 
 n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using AI search and generative language, 42.9% using AI notetaking.
 
@@ -756,8 +794,8 @@ n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using 
 | Last retrieved | *not applicable* |
 | Last verified by the instructor | *not applicable* |
 | Confidence | L |
-| **Total references** | **17** |
-| Cited in | S1 `#s1` · S2 `#s5` ×2 · S2 `#s6` · S3 `#s7` · S3 `#s10` · S3 `#s16` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` ×2 · S4 `#s7` ×2 · S4 `#sWS` |
+| **Total references** | **14** |
+| Cited in | S1 `#s1` · S3 `#s7` · S3 `#s10` · S3 `#s16` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` ×2 · S4 `#s7` ×2 · S4 `#sWS` |
 
 Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
 
@@ -851,8 +889,8 @@ Dataset size, 32K-token length, domain mix, the low/high complexity split of 3,7
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **2026-08-23** |
 | Confidence | H |
-| **Total references** | **16** |
-| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s1` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s3` · S3 `#s8` ×2 · S4 `#sWS` · S4 `#s8` |
+| **Total references** | **19** |
+| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s0` · S2 `#s1` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s3` · S3 `#s8` ×2 · S4 `#sWS` · S4 `#s8` |
 
 The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D3 is about exactly that.
 
@@ -908,7 +946,6 @@ source that does not belong in that lesson's footer.
 | Source | Kind | Listed by | Exempt? |
 |---|---|---|---|
 | `src-anthropic-fluency` | background | S2 | yes, by kind |
-| `src-google-ptcf` | evidence | S2 | **NO — finding** |
 | `src-hallowell` | fabricated | S4 | yes, by kind |
 | `src-rr8513` | authority | S2 | yes, by kind |
 | `src-rr200464` | authority | S2 | yes, by kind |
@@ -928,7 +965,7 @@ lesson whose footer names it.
 
 | Source | Listed by | Cited in |
 |---|---|---|
-| `src-pricing` | S2 | S1 |
+| `src-case` | S2 | S1, S3, S4 |
 | `src-finra2409` | S3 | S1 |
 | `src-finra2409` | S4 | S1 |
 | `src-secpri` | S3 | S4 |

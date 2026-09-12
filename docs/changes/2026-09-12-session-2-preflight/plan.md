@@ -78,4 +78,5 @@ Status: accepted (taken from the builder's instruction of 2026-09-12; see Flags 
 - `grep -c "Session 1 baseline" session-2/index.html` returns 0; `grep -c "section 6b" session-2/index.html` returns 0.
 
 ## Departures from plan
-(none at acceptance)
+- 2026-09-12, step 5. Adding `src-openai-pricing` made `build-sources.mjs` refuse every generator until the sources lock knew the record; `node scripts/attest-verified.mjs --sync` is the mechanism MAINTAINING.md provides for a record with an empty `last_verified` (it runs without a terminal and touches no populated date), so `scripts/sources-verified.lock.json` changed. `MAINTAINING.md` also makes `BIBLIOGRAPHY.md`, `DATA-PULL.md` and `docs/source-verification-queue.md` generated derivatives of `SOURCES.md`; they were regenerated with `build-bibliography.mjs`. None of the four was named above; all four are the governance-required consequence of the named `SOURCES.md` change. The step 5 commit message said the footers were regenerated in that commit; they were not (the generator threw), and the following commit carries them.
+- 2026-09-12, step 6. The first application aborted on a mis-cased anchor and wrote nothing; the step landed one commit later than planned, after step 9, with the same content.

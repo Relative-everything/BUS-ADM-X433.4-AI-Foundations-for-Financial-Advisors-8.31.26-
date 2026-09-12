@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**21 of 60 works are moving targets, feeding 83 of
-177 references.**
+**22 of 61 works are moving targets, feeding 89 of
+187 references.**
 
 
 ---
@@ -54,8 +54,8 @@ version string means the version is not tracking the data.
 | Last retrieved | 2026-08-13 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 §05, session-2 §02 and session-4 §03 |
-| References | 12 |
-| Feeds | S1 `#s10` ×2 · S2 `#s5` ×2 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
+| References | 13 |
+| Feeds | S1 `#s10` ×2 · S2 `#s0` · S2 `#s5` ×2 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
 
 **Registered retrievals**
 
@@ -113,6 +113,25 @@ version string means the version is not tracking the data.
 | References | 8 |
 | Feeds | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3` ×5 · S0.1 `#s9` |
 
+### `src-pricing` — Pricing
+
+| | |
+|---|---|
+| Figure class | `price` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-08-25 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-1 §03, §05 and §06 |
+| References | 7 |
+| Feeds | S1 `#s5` · S1 `#s11` ×3 · S2 `#s5` ×3 |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| PRICING-001 | S2 | 2026-08 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio |
+| PRICING-002 | S1 | 2026-08-25 | **[UNVERIFIED, needs source]** | per-token input and output rates, cache-hit and batch discounts |
+
 ### `src-ctxwindow` — How large is the context window on paid Claude plans?
 
 | | |
@@ -124,25 +143,6 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-0.1 |
 | References | 6 |
 | Feeds | S0.1 `#s1` · S0.1 `#s4` ×4 · S0.1 `#s6` |
-
-### `src-pricing` — Pricing
-
-| | |
-|---|---|
-| Figure class | `price` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-25 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-1 §03, §05 and §06 |
-| References | 4 |
-| Feeds | S1 `#s5` · S1 `#s11` ×3 |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| PRICING-001 | S2 | 2026-08 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio |
-| PRICING-002 | S1 | 2026-08-25 | **[UNVERIFIED, needs source]** | per-token input and output rates, cache-hit and batch discounts |
 
 ### `src-vectara` — Introducing the next generation of Vectara's hallucination leaderboard
 
@@ -191,6 +191,18 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-0.1 |
 | References | 3 |
 | Feeds | S0.1 `#s6` · S0.1 `#s7` · S0.1 `#s9` |
+
+### `src-openai-pricing` — API pricing
+
+| | |
+|---|---|
+| Figure class | `price` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-2 §02 |
+| References | 2 |
+| Feeds | S2 `#s5` ×2 |
 
 ### `src-anthropic-terms` — Privacy Center and Commercial Terms
 
