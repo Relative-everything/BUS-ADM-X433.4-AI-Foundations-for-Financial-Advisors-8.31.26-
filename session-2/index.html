@@ -1335,7 +1335,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="doit">
     <span class="plab">Live run &mdash; 3 minutes</span>
     <p>In your AI tool, send exactly this and nothing else: <span class="mono">The best thing about AI is its ability to</span></p>
-    <p>Send it three separate times, in three separate chats. Compare the three openings. We will come back to what you got in &sect;01.</p>
+    <p>Send it three separate times, in three separate chats. Compare the three openings and keep them. &sect;01 runs the same comparison with the output space constrained.</p>
   </div>
 
   <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Draw from the distribution until you have seen the same prompt produce three different continuations.</div></div>
@@ -1453,6 +1453,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <span class="plab">Sequence extension &mdash; click a token to append it</span>
     <div class="streamline" id="parenStream"></div>
     <div class="pbars" id="parenBars"></div>
+    <p style="margin:8px 0 0"><span class="sim">Illustrative weights, hand-set to show the failure; they are not a distribution and do not sum to one</span></p>
     <div class="out" id="parenVerdict" style="margin-top:18px"></div>
     <div class="row" style="margin-top:16px">
       <button class="btn sel mini" id="parenReset">Reset</button>
@@ -1472,7 +1473,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p class="pull">The model is not bad at counting because it is undertrained. It is bad at counting because counting is not what it does.</p>
 
-  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the counting task until the model produces a confidently wrong count.</div></div>
+  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the sequence until the predictor offers a closing parenthesis with nothing open, and read the count it never kept.</div></div>
 
 </section>
 
@@ -1777,7 +1778,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
   <div class="chart">
     <div class="ctitle">Advisor adoption of AI tools against reliance on AI-generated recommendations</div>
-    <div class="csub">The profession has already drawn a line, whether or not any individual firm has written it down. Adoption of drafting and capture tools is over half. Reliance on the model's recommendation is close to zero.</div>
+    <div class="csub">The profession has already drawn a line, whether or not any individual firm has written it down. Adoption of AI search and drafting is over half, and notetaking tools are close behind. Reliance on the model's recommendation is close to zero.</div>
     <svg viewBox="0 0 700 250" role="img" aria-label="Bar chart of advisor AI adoption versus reliance"><g id="adoptChart"></g></svg>
     <div class="csrc">Sources: T3 / Inside Information Software Survey 2026, n=2,906 advisors, 95% at fee-only RIA or dually registered firms &mdash; 52.2% using AI search and generative language, 42.9% using AI notetaking <span class="conf h" data-src="src-t3-survey">H</span>. Reliance figure reported via Advisor360 and Kitces Research through a secondary aggregator; treat as directional <span class="conf m" data-src="src-kitces-productivity">M</span>. Kitces Research on Advisor Productivity: approximately one hour of note, summary and follow-up work per two-hour client meeting <span class="conf h" data-src="src-kitces-productivity">H</span>.</div>
   </div>
@@ -1851,7 +1852,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 <section class="slide" id="s11" data-nav="Template audit">
   <div class="eyebrow"><span>08 &middot; Workshop</span><span class="mins">5 min</span></div>
   <h2>Template Audit and Structured Peer Review</h2>
-  <p class="big">Section 6b rebuilt one of your prompts. This section tests whether it is a <em>template</em> — something a second person can run — rather than a prompt that happens to work in your hands.</p>
+  <p class="big">Section 04, the workshop, rebuilt one of your prompts. This section tests whether it is a <em>template</em> — something a second person can run — rather than a prompt that happens to work in your hands.</p>
 
   <p><span class="caseflag">Synthetic case</span> The audit target is a client-explanation template for the Cole IDGT structure: a reusable instrument that takes any closely held business owner facing a sale to a trust and produces an explanation they can act on. Score the version you would hand to a colleague, not the one in your head.</p>
 
@@ -1869,7 +1870,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   </div>
 
   <h3>Part two &mdash; structured peer review</h3>
-  <p>Swap with the person you are paired with. Run <em>their</em> template on the Cole facts, without asking them anything. This is the Session 5 exercise in miniature and it is the fastest way to discover that a template you find obvious is unusable by anyone else.</p>
+  <p>This part runs between sessions: the instructor pairs you after this session, you swap templates, and you run <em>their</em> template on the Cole facts without asking them anything, before Session 3. It is the Session 5 exercise in miniature and the fastest way to discover that a template you find obvious is unusable by anyone else.</p>
 
   <div class="panel">
     <span class="plab">Partner template score &mdash; 0 to 3 on each</span>
@@ -1884,7 +1885,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
 
 
-  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Self-audit one template against the rubric, then swap and run a partner’s on your synthetic case.</div></div>
+  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Self-audit one template against the rubric now; the partner swap runs before Session 3.</div></div>
 
 </section>
 
@@ -1892,7 +1893,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B5 &middot; Specification Cost Against Task Cost</b><span>18 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
   <div class="eyebrow"><span>Appendix B5 &middot; Discussion</span><span class="mins">18 min</span></div>
   <h2>Specification Cost Against Task Cost</h2>
-  <p class="big">The question, stated once and not softened: if a prompt has to be specified as carefully as section 6b required to be reliable, has the tool saved time, or has it moved the work from doing the task to specifying the task?</p>
+  <p class="big">The question, stated once and not softened: if a prompt has to be specified as carefully as section 04, the workshop, required to be reliable, has the tool saved time, or has it moved the work from doing the task to specifying the task?</p>
 
   <p>This is not a rhetorical question with a preferred answer. Both positions are defensible and the room will divide. Commit before anyone speaks.</p>
 
@@ -1906,7 +1907,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <div class="out" id="dVote1Out"></div>
   </div>
 
-  <h3>Phase two &mdash; defence, 8 minutes</h3>
+  <h3>Phase two &mdash; defence, 7 minutes</h3>
   <p>Two speakers per side, alternating, ninety seconds each. <strong>The minority side speaks first</strong> &mdash; they expected to have to defend and are the more prepared for it. Nobody rebuts during this phase.</p>
   <div class="panel tightpad">
     <span class="plab">Speaking timer</span>
@@ -1922,8 +1923,8 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <p>One fact neither side has raised. Nobody who has already spoken speaks again.</p>
   <div class="cards">
     <div class="card gold"><span class="num">Complication</span><h4>The verification time is not optional and it is not amortised</h4><p>&sect;07 timed it on one transaction. Every run of the template on a new client produces new citations, and every one of them needs the same four checks. The template amortises the specification. It does not amortise the verification.</p></div>
-    <div class="card"><span class="num">Already on screen</span><h4>&sect;09 arithmetic</h4><p>A workflow that saves 20 minutes of drafting and adds 12 minutes of citation checking has saved 8. Whoever entered numbers in the baseline widget should read theirs aloud now.</p></div>
-    <div class="card"><span class="num">Already on screen</span><h4>Appendix B4 adoption gap</h4><p>52.2% of advisors use these tools. Roughly 3% rely on the recommendation. The profession is already behaving as though specification and verification are the job.</p></div>
+    <div class="card"><span class="num">Already on screen</span><h4>&sect;09 arithmetic</h4><p>A workflow that saves 20 minutes of drafting and adds 12 minutes of citation checking has saved 8. Whoever recorded a baseline at the start of the session should read theirs aloud now.</p></div>
+    <div class="card"><span class="num">Already on screen</span><h4>Appendix B4 adoption gap</h4><p>52.2% of advisors use these tools <span class="conf h" data-src="src-t3-survey">H</span>. Roughly 3% rely on the recommendation <span class="conf m" data-src="src-kitces-productivity">M</span>. The profession is already behaving as though specification and verification are the job.</p></div>
   </div>
 
   <h3>Phase four &mdash; re-vote, 3 minutes</h3>
@@ -1935,7 +1936,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     </div>
     <div class="out" id="dVote2Out"></div>
     <div class="row" style="margin:6px 0 16px">
-      <span class="mono dim" style="font-size:11.5px">Instructor: room percentage voting &ldquo;time was saved&rdquo;</span>
+      <span class="mono dim" style="font-size:11.5px">Room percentage voting &ldquo;time was saved&rdquo;, from the poll</span>
       <input type="text" id="rm1" value="" placeholder="vote 1 %" inputmode="numeric" style="width:96px">
       <input type="text" id="rm2" value="" placeholder="vote 2 %" inputmode="numeric" style="width:96px">
       <button class="btn ghost mini" id="rmGo">Render both distributions</button>
@@ -1985,7 +1986,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <p>Seven elements. Tick what you have planned for; the ones left unticked are what you are missing.</p>
 
   <div class="panel">
-    <div id="checklist" data-task="t-s10" data-comp="commit-first-mcq"></div>
+    <div id="checklist" data-task="t-s12b" data-comp="work-along-gate"></div>
     <div class="out" id="checkOut" style="margin-top:18px"></div>
   </div>
 
@@ -2005,7 +2006,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <!-- Recurring question, session 2 angle. See docs/spine-brief.md. -->
   <p>The Cole document set is the corpus. The question that follows you into it is the one &sect;07 left open: which document in the folder actually supports the discount the structure claims. The 2023 appraisal concluded a value for the whole company and contains no discount study at all, so the honest answer the folder gives is <em>none of them</em>. Finding that out is the exercise. It is also the first half of the recurring question: before you can advise Meg how much of the note to call, you have to know which document in the folder actually governs the number the whole structure rests on.</p>
 
-  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Record your baseline before you leave. It is the one thing tonight you cannot reconstruct later.</div></div>
+  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Record your baseline before you leave. It is the one thing in this session you cannot reconstruct later.</div></div>
 
   <div class="talk"><span class="th">Closing question &middot; one to three answers, out loud, then we go</span>Your rewritten template just produced a clean, well-sourced answer on the Cole discount. Name the one check you would still run before any of it reaches Meg, and say why the answer looking right is not a reason to skip it.</div>
 
@@ -2142,7 +2143,7 @@ function drawTokens(){
   $('strm').innerHTML='<span class="dim">'+stem+'</span> '+path.join(' ')+(path.length<MAXS?'<span class="cursor">&nbsp;</span>':'');
   $('stepCount').textContent=path.length+' of '+MAXS+' tokens placed';
   var host=$('pbars');host.innerHTML='';
-  if(path.length>=MAXS){host.innerHTML='<div class="out has">Stop token reached. Every word above was chosen because it was a probable continuation. At no point did the process consult anything about whether the sentence is true.</div>';return}
+  if(path.length>=MAXS){host.innerHTML='<div class="out has">Step limit reached at eight tokens. Every word above was chosen because it was a probable continuation. At no point did the process consult anything about whether the sentence is true.</div>';return}
   var cs=cands(lastTok());
   cs.forEach(function(t,ix){
     var b=document.createElement('button');b.className='pbar';
@@ -2181,7 +2182,7 @@ drawTokens();
     g.appendChild(el('text',{x:x+bw*.32,y:y-7,'text-anchor':'middle',class:'dlab b'},(p*100).toFixed(1)));
     g.appendChild(el('text',{x:x+bw*.32,y:T+ph+18,'text-anchor':'middle',class:'alab'},ix+1));
   });
-  g.appendChild(el('text',{x:L+pw/2,y:H-6,'text-anchor':'middle',class:'alab'},'CANDIDATE RANK  ·  TOP TEN OF ROUGHLY 50,000 TOKENS'));
+  g.appendChild(el('text',{x:L+pw/2,y:H-6,'text-anchor':'middle',class:'alab'},'CANDIDATE RANK  ·  TOP TEN OF THE ROUGHLY 50,000 TOKENS IN THE MODELS WOLFRAM DESCRIBES'));
 })();
 
 /* ================= 2 · LAPLACE ================= */
@@ -2193,7 +2194,7 @@ function lap(){
   else{
     if(w)h+='THE QUESTION\n  Does this decedent\u2019s residence permit a full basis\n  adjustment on the jointly held brokerage account?\n\n  Answer set: { yes, no }\n  Cardinality: 1. There is one correct answer.\n  It does not change when you ask again.\n';
     if(w&&m)h+='\n';
-    if(m)h+='THE MODEL\u2019S OUTPUT\n  \u00b7 \u201cYes, under \u00a71014(b)(6)\u201d          p \u2248 0.52\n  \u00b7 \u201cOnly the decedent\u2019s half\u201d        p \u2248 0.31\n  \u00b7 \u201cDepends on titling; see \u00a72040\u201d  p \u2248 0.11\n  \u00b7 four further continuations       p \u2248 0.06\n\n  Cardinality: many. The distribution is over\n  plausible sentences, not over states of the world.\n';
+    if(m)h+='THE MODEL\u2019S OUTPUT  (illustrative answer set, constructed for this page)\n  \u00b7 \u201cYes, under \u00a71014(b)(6)\u201d          p \u2248 0.52\n  \u00b7 \u201cOnly the decedent\u2019s half\u201d        p \u2248 0.31\n  \u00b7 \u201cDepends on titling; see \u00a72040\u201d  p \u2248 0.11\n  \u00b7 four further continuations       p \u2248 0.06\n\n  Cardinality: many. The distribution is over\n  plausible sentences, not over states of the world.\n';
     if(w&&m)h+='\nWHERE THEY MEET\n  Nowhere. The 0.52 is not a 52% chance the answer\n  is yes. It is a statement about the training corpus.\n  Only opening \u00a71014 moves you from one panel to the other.';
   }
   $('lapOut').textContent=h;$('lapOut').classList.toggle('has',w||m);
@@ -2258,6 +2259,7 @@ function drawParen(){
         $('parenVerdict').innerHTML=popen===0?'<strong>Balanced.</strong> The predictor happened to be right. It was right because you tracked the count, not because it did.':'<strong>Unbalanced.</strong> You ended with '+popen+' open parenthes'+(popen===1?'is':'es')+'. The predictor offered END at 15% anyway.';
         $('parenVerdict').classList.add('has');return;
       }
+      if(!o.ok){$('parenVerdict').innerHTML='<strong>Illegal.</strong> The predictor offered a closing parenthesis at 15% with nothing open. Nothing is appended and the count stays at '+popen+'. That 15% is the failure this section is about.';$('parenVerdict').classList.add('has');return}
       pseq.push(o.t);popen+=(o.t==='('?1:-1);drawParen();
     };
     host.appendChild(b);
@@ -2528,7 +2530,7 @@ var STEPS=[
  {n:3,t:'Analysing the current course of action and potential alternatives',k:'draft',
   why:'High volume, structured, and checkable against a source. This is where the measurable time recovery lives and where a verification step pays for itself.'},
  {n:4,t:'Developing the financial planning recommendation(s)',k:'human',
-  why:'This is the judgment your credential, your registration and your liability attach to. Roughly 3% of advisors report relying on AI-generated recommendations, and that figure is the profession\u2019s answer, not an adoption lag.'},
+  why:'This is the judgment your credential, your registration and your liability attach to. Roughly 3% of advisors report relying on AI-generated recommendations <span class="conf m" data-src="src-kitces-productivity">M</span>, and that figure is the profession\u2019s answer, not an adoption lag.'},
  {n:5,t:'Presenting the financial planning recommendation(s)',k:'assist',
   why:'Drafting the explanation, the analogy and the one-page summary: yes. The conversation in which a client absorbs bad news: no.'},
  {n:6,t:'Implementing the financial planning recommendation(s)',k:'assist',
@@ -2580,7 +2582,6 @@ var BUCK=[{k:'draft',t:'AI drafts, planner verifies'},{k:'assist',t:'AI assists 
   var rows=[
    {t:'Using AI search and generative language',v:52.2,c:'var(--plot)'},
    {t:'Using AI notetaking tools',v:42.9,c:'var(--plot)'},
-   {t:'Prior-year figure for generative language use',v:41.8,c:'var(--off)'},
    {t:'Relying on AI-generated recommendations',v:3,c:'var(--plot2)'}
   ];
   rows.forEach(function(r,i){
@@ -2760,7 +2761,7 @@ var PEER=[
     var band=t>=10?'Handoff-ready. Tell the author which single criterion is still missing.'
       :t>=7?'Workable with one fix. Name it precisely \u2014 \u201cadd a line bounding the source\u201d beats \u201cit needs more detail.\u201d'
       :t>=4?'The author can run it and nobody else can. That is the exact failure Part 2 of the final project is designed to expose.'
-      :'It did not survive contact with a second person. Better to find that out today than in Session 5.';
+      :'It did not survive contact with a second person. Better to find that out now than in Session 5.';
     $('peerOut').textContent='TOTAL  '+t+' / 12\n\n'+band+'\n\nIf it did not work in your hands, that is information about the template.';
     $('peerOut').classList.add('has');
   }
@@ -2779,7 +2780,7 @@ function base(){
   o+='Annual hours:      '+(hrs*12).toFixed(0)+'\n';
   o+='Annual cost at $'+r+'/hr: $'+(cost*12).toFixed(0)+'\n\n';
   o+='BREAK-EVEN NOTE\n';
-  o+='A 40% time reduction recovers '+(hrs*12*0.4).toFixed(0)+' hours a year.\n';
+  o+='An illustrative 40% time reduction, an assumption and not a measurement, would recover '+(hrs*12*0.4).toFixed(0)+' hours a year.\n';
   o+='Subtract the verification time you measured in \u00a707 before\n';
   o+='you claim any of it. A workflow that saves 20 minutes of drafting\n';
   o+='and adds 12 minutes of citation checking has saved 8 minutes.';
@@ -2793,7 +2794,7 @@ var CHK=[
  'A one-page explanation: what it does, why AI suits it, where a human stays in the loop (two pages maximum, images on page two)',
  'Setup instructions: tool, subscription tier, inputs and files a classmate needs to run it',
  'The verification steps built into the workflow, and the two failure modes you hit while building',
- 'Your Session 1 baseline time against the AI-assisted time, including any step AI made slower or worse',
+ 'The baseline time you recorded in Session 2 against the AI-assisted time, including any step AI made slower or worse',
  'A data-handling note: which fields would need removing or de-identifying before real client use',
  'The complete build transcript, including the attempts that failed \u2014 to the instructor only, not to your classmate'
 ];
@@ -3056,7 +3057,7 @@ var BSQ=[
         done=true;b.classList.add('on');
         box.querySelectorAll('button').forEach(function(x){x.disabled=true});
         var v=b.getAttribute('data-v');
-        if(which===1){v1=v;$(outId).textContent='Locked. The distribution stays hidden until after the re-vote. Nothing you hear in the next thirteen minutes can change this vote, which is the point of locking it.';}
+        if(which===1){v1=v;$(outId).textContent='Locked. The distribution stays hidden until after the re-vote. Nothing you hear in the next twelve minutes can change this vote, which is the point of locking it.';}
         else{v2=v;$(outId).textContent=v===v1?'Locked. You held your position under the complication. That is a finding, not a failure \u2014 report it as one.':'Locked. You moved. The instructor will ask which specific fact moved you, so have it ready.';}
         $(outId).classList.add('has');
       };
