@@ -1542,9 +1542,11 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h2>Persona, Task, Context, Format</h2>
   <p class="big">Google's prompting guide organises a prompt into four components. The framework is sound and worth adopting. The empirical literature also says that one of the four letters does far less work than the way it is usually taught implies, and knowing which one changes how you spend your effort.</p>
 
-  <p><span class="caseflag">Synthetic case</span> The worked prompt is a real advisory task on the Cole household: explaining the IDGT sale to Meg in language she can act on. Build it below. Each toggle adds one component. Watch what changes in the output, and&mdash;more importantly&mdash;watch what does not.</p>
+  <p><span class="caseflag">Synthetic case</span> The worked prompt is a real advisory task on the Cole household: explaining the IDGT sale, the sale to an intentionally defective grantor trust, to Meg in language she can act on. Build it below. Each toggle adds one component. watch what changes in the output, and&mdash;more importantly&mdash;watch what does not.</p>
 
-  <div class="panel" data-task="t-s6" data-comp="work-along-gate">
+  <p>The eight checks the cold open scores fold into these four letters: the ask and the named format are Task and Format, the audience or role is Persona, and everything else the checks look for is Context. The four names and their order are Google's <span class="conf h" data-src="src-google-ptcf">H</span>.</p>
+
+  <div class="panel" data-task="t-s6" data-comp="builder-assembler">
     <div class="ctrls" style="margin:0 0 20px">
       <label class="tg" id="tgP"><input type="checkbox" id="cbP"><span class="track"><span class="knob"></span></span><span><span class="tl">Persona</span><span class="td">Who the model should write as</span></span></label>
       <label class="tg" id="tgT"><input type="checkbox" id="cbT"><span class="track"><span class="knob"></span></span><span><span class="tl">Task</span><span class="td">The verb and the object</span></span></label>
@@ -1570,7 +1572,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <h3>Where the effort should go instead</h3>
   <table>
-    <thead><tr><th>Component</th><th>What it controls</th><th>Effect on whether the answer is correct</th></tr></thead>
+    <thead><tr><th>Component</th><th>What it controls</th><th>Effect on whether the answer is correct, this course's ranking</th></tr></thead>
     <tbody>
       <tr><td><strong>Persona</strong></td><td>Register, vocabulary, assumed audience</td><td>No reliable effect on objective accuracy</td></tr>
       <tr><td><strong>Task</strong></td><td>Which operation gets performed</td><td>Large &mdash; a wrong verb produces a competent answer to a different question</td></tr>
@@ -1583,12 +1585,12 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="panel tightpad">
     <span class="plab">A related result on prompt length</span>
-    <p style="font-size:15.5px;margin:0"><!-- CLAIM weight=section resolve="Add a key for Anthropic's own post and rewire off src-case. Keep the lesson qualitative about which models: the post names Opus 5 and Fable 5 as examples, and 'its two most recent models' is a stronger claim than the source makes." candidate="Shihipar, T. (2026-07-24), The new rules of context engineering for Claude 5 generation models, claude.com blog. Reached through search only; the host was not fetched from this build environment." confidence=medium -->Anthropic reports removing more than 80 percent of Claude Code's system prompt for its two most recent models without a measurable loss on its coding evaluations. <b>[NEEDS SOURCE]</b><span class="conf m" data-src="src-case">M</span> Longer prompts are not better prompts. Specific prompts are better prompts, and specificity is usually shorter than the padding it replaces.</p>
+    <p style="font-size:15.5px;margin:0">Longer prompts are not better prompts. Specific prompts are better prompts, and specificity is usually shorter than the padding it replaces.</p>
   </div>
 
   <div class="doit">
     <span class="plab">Rebuild of the prompt &mdash; 5 minutes</span>
-    <p>Take the weakest of the three templates you brought today. Identify which of P, T, C, F it is missing. Add the missing components and run it. Keep both versions &mdash; you will need the before-and-after for &sect;08.</p>
+    <p>Take the weakest of the three templates you brought, or the weakest of the three supplied in section 04. Identify which of P, T, C, F it is missing. Add the missing components and run it. Keep both versions &mdash; you will need the before-and-after for the peer review before Session 3.</p>
   </div>
 
   <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Assemble one prompt with all four P.T.C.F elements and read the assembled text back.</div></div>
@@ -2386,7 +2388,7 @@ function ptcf(){
   else{
     o+=s.P?'[Register: measured, professional, second person, no jargon]\n':'[Register: unspecified \u2014 defaults to generic explanatory prose]\n';
     o+=s.C?'[Facts: bounded to the attachment; missing figures will be flagged, not invented]\n':'[Facts: unbounded \u2014 the model will supply plausible figures from nothing]\n';
-    o+=s.F?'[Shape: \u2264150 words, 3 paragraphs, 1 closing question \u2014 all checkable at a glance]\n':'[Shape: unspecified \u2014 expect 400 words, headers, and a bulleted summary]\n';
+    o+=s.F?'[Shape: \u2264200 words, 4 paragraphs, 1 closing sentence \u2014 all checkable at a glance]\n':'[Shape: unspecified \u2014 expect 400 words, headers, and a bulleted summary]\n';
     o+='\nDraft returned. ';
     o+=(s.C&&s.F)?'You can verify this against the attachment in under a minute.':(s.C?'Facts are bounded but the output shape is not, so checking it is a reading exercise.':'Nothing here is checkable without redoing the analysis yourself.');
   }
@@ -2422,9 +2424,7 @@ function ptcf(){
   rows.forEach(function(r,i){
     var y=136+i*34;
     g.appendChild(el('text',{x:14,y:y+4,class:'dlab','font-size':'12.5'},r[0]));
-    g.appendChild(el('rect',{x:400,y:y-11,width:200,height:16,rx:4,fill:'var(--off-bg)'}));
-    g.appendChild(el('rect',{x:400,y:y-11,width:200*r[3],height:16,rx:4,fill:r[2]}));
-    g.appendChild(el('text',{x:610,y:y+4,class:'alab',fill:r[2]},r[1].toUpperCase()));
+    g.appendChild(el('text',{x:400,y:y+4,class:'alab',fill:r[2]},r[1].toUpperCase()));
   });
   g.appendChild(el('text',{x:14,y:224,class:'alab'},'THE USABLE LEVER IS THE ONE YOU CANNOT OPERATE: YOU ONLY KNOW THE BEST ROLE AFTER YOU KNOW THE ANSWER.'));
 })();
