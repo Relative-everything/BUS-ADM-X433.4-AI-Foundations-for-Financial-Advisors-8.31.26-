@@ -1210,7 +1210,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>BUS ADM X433.4 · Session 2</span><span class="mins">6 min</span></div>
   <h1>Practical AI Usage in Daily Advisory Workflows</h1>
   <p class="lede">The model samples a plausible answer. It does not compute the true one. Everything in this session follows from that one sentence.</p>
-  <div class="panel pace" data-task="t-s0" data-comp="retrieval-bridge"><span class="plab">How this session is paced</span><div id="paceOut"></div>
+  <div class="panel pace"><span class="plab">How this session is paced</span><div id="paceOut"></div>
   <div id="tierbar">
     <span class="tl">Appendix depth</span>
     <button data-level="0">Foundational</button>
@@ -1224,32 +1224,38 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <h3>Retrieval bridge &mdash; Session 1 mechanism</h3>
   <p>Fourteen days have passed since Session 1. Four questions, no notes. Answer each in the box before anything is revealed. Getting one wrong is worth more to you than getting it right, provided you commit to an answer first.</p>
-  <div class="panel" id="bridge"></div>
+  <div class="panel" id="bridge" data-task="t-s0" data-comp="retrieval-bridge"></div>
   <div class="row" style="margin-top:-12px">
     <button class="btn ghost mini" id="bridgeReveal">Reveal all four</button>
     <span class="mono dim" style="font-size:12px" id="bridgeCount"></span>
   </div>
+  <div class="csrc" style="margin-top:14px">Item 1: <b>Wolfram, S. (2023)</b>, the vocabulary size and the ranked-candidate mechanism as reported <span class="conf h" data-src="src-wolfram">H</span>. Item 3: <b>Artificial Analysis</b>, cost per index task, Sonnet 5 against Fable 5 at the August pull <span class="conf m" data-src="src-aa">M</span>.</div>
 
   <h3>The Cole household</h3>
   <p><span class="caseflag">Synthetic case &mdash; teaching anchor only</span></p>
-  <p>Every worked example, exercise input and discussion prompt in this course draws on one household. It is entirely fabricated. It is <strong>not</strong> your final-project dataset: you build Part 1 on a real recurring task from your own practice, using your own synthetic or de-identified data. Nobody should build a workflow around the Cole family.</p>
+  <p>Every client example in this course draws on one household. It is entirely fabricated. It is <strong>not</strong> your final-project dataset: you build Part 1 on a real recurring task from your own practice, using your own synthetic or de-identified data. Nobody should build a workflow around the Cole family.</p>
 
   <!-- Card 4 is the recurring question; card 3 carries the Illinois exposure,
        which is a v4.0 fact in scope to be taught. See docs/spine-brief.md. -->
   <div class="cards">
     <div class="card"><span class="num">Household</span><h4>Meg and David Cole, Barrington Hills, Illinois</h4><p>Meg, President and CEO of Cole Precision Components Inc., which she bought from her father. David, retired hospital pharmacist, Social Security not claimed. Long married, both US citizens, <strong>Illinois-domiciled for life</strong>. No liabilities of any kind; the balance sheet is in the case panel.</p></div>
     <div class="card"><span class="num">The asset</span><h4>CPC stock: one asset, most of the estate</h4><p>C-corporation in Rockford making precision aerospace fasteners. It pays its sole shareholder a large dividend every year, under a policy adopted to service a purchase note that has since been satisfied and never revisited. Meg purchased all of the shares from Walter Hensley; she did not found it, so her basis is what she paid. A competitor made an unsolicited written inquiry. No letter of intent has been signed.</p></div>
-    <div class="card gold"><span class="num">The structure</span><h4>Non-voting LLC units moved to a grantor trust</h4><p>A seed gift of non-voting units, then a sale of a much larger block to the same trust for a demand note, interest only. A discount claimed on the non-voting units, <strong>with no appraisal and no appraiser engaged</strong>. And <strong>Illinois imposes its own estate tax</strong> at a threshold that is neither indexed nor portable, which neither spouse has engaged with.</p></div>
+    <div class="card gold"><span class="num">The structure</span><h4>Non-voting LLC units to be moved to a grantor trust</h4><p>A seed gift of non-voting units, then a sale of a much larger block to the same trust for a demand note, interest only. A discount claimed on the non-voting units, <strong>with no appraisal and no appraiser engaged</strong>. And <strong>Illinois imposes its own estate tax</strong> at a threshold that is neither indexed nor portable, which neither spouse has engaged with.</p></div>
     <div class="card warn"><span class="num">The question every session works on</span><h4>How much of the note does she call this year?</h4><p>Meg is short <strong>$522,086</strong> a year from year 6 while the structure performs exactly as designed. Each $1,000,000 she calls permanently removes $38,200 of future interest, so the gap widens by 3.82% of every call. <strong>What does calling it cost her in every year after, and when is a different lever the better answer?</strong> No session answers it.</p></div>
   </div>
 
-  <p>Nathan Cole works in CPC operations. Meg has not told him a competitor approached the company. That fact and the unexecuted plan are two of the three confidentiality landmines the case file carries; the third is the endowment Meg intends for the charity whose board she chairs. The existence of the relationship itself is a fourth, and it comes from the regulation rather than from the file. That is the boundary Session 1 established and Session 4 will test.</p>
+  <p>Nathan Cole works in CPC operations. Meg has not told him a competitor approached the company. That fact and the unexecuted plan are two of the three confidentiality landmines the case file carries; the third is the endowment Meg intends for the charity whose board she chairs. The existence of the relationship itself is a fourth, and it comes from the regulation rather than from the file. That is the boundary this course draws, and Session 4 will test it.</p>
 
   <div class="cards">
     <div class="card"><span class="num">Outcome 01</span><h4>A working model of sampling</h4><p>Why the same prompt returns different text, and what that does to an audit trail.</p></div>
     <div class="card"><span class="num">Outcome 02</span><h4>A tier-selection rule</h4><p>Cost per finished task, benchmarked, rather than cost per token.</p></div>
-    <div class="card"><span class="num">Outcome 03</span><h4>Your own prompts, scored and rewritten</h4><p>The three you wrote before being taught a framework, scored element by element and one of them rebuilt in place.</p></div>
+    <div class="card"><span class="num">Outcome 03</span><h4>Your own prompts, scored and rewritten</h4><p>The three you wrote before this session, or the three supplied in the workshop, scored element by element and one of them rebuilt in place.</p></div>
     <div class="card"><span class="num">Outcome 04</span><h4>A citation verification routine</h4><p>Four checks, in order, applied to tax authority you did not write.</p></div>
+  </div>
+
+  <div class="panel tightpad">
+    <span class="plab">Nine terms this session uses before it defines them</span>
+    <p style="font-size:14.5px;margin:0"><b>Token</b>: the unit a model reads and writes, roughly three quarters of a word; prices and context limits are counted in it. <b>Temperature</b>: the setting that decides how often the model picks a lower-ranked next word instead of the top one. <b>Persona, Task, Context, Format</b>: the four parts of a prompt, who the model writes as, what it does, what it may use, and what shape comes back. <b>Template</b>: a prompt written so that a second person can run it on a new input without asking you anything. <b>Grounded</b>: an answer built only from a named source the model was given to read, so each claim can be checked against that source. <b>Tier</b>: a model size and price class; the choice is made on cost per finished task, not cost per token. <b>Baseline</b>: how long the task takes you today, unassisted, recorded before any tool touches it. <b>IDGT, intentionally defective grantor trust</b>: a trust drafted so that the grantor stays liable for its income tax while the trust, not the grantor, is intended to own what it holds. <b>Non-voting units and a demand note</b>: the LLC interests being sold carry economics but no vote, and the buyer's note can be called for its principal at any time.</p>
   </div>
 
   <h3>Time budget</h3>
@@ -1269,8 +1275,8 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="doit">
     <span class="plab">Before we start</span>
-    <p><strong>Open the AI tool you subscribed to, in a new tab, now.</strong> Every section below has something to run. You will finish this session with a baseline measurement, a rewritten prompt, a partner's review of your work, and Part 1 assigned.</p>
-    <p><strong>Open the three prompt templates you wrote as well</strong> &mdash; all three templates, your cited techniques, and your discernment statement. You will need the exact text in section 6b.</p>
+    <p><strong>Open the AI tool you subscribed to, in a new tab, now.</strong> Every section below has something to run. You will finish this session with a baseline measurement, a rewritten prompt, a template a partner reviews before Session 3, and Part 1 assigned.</p>
+    <p><strong>Open the three prompt templates you wrote as well</strong> &mdash; or use the three supplied in section 04, the workshop. You will need the exact text there.</p>
   </div>
 
 
@@ -2788,13 +2794,13 @@ var CHK=[
 /* ================= 0 · RETRIEVAL BRIDGE (Session 1) ================= */
 var BRIDGE=[
  {q:'Session 1 called the mechanism next-token prediction. In one sentence: what does the model produce at each step, before any word is chosen?',
-  a:'A probability distribution over the whole vocabulary \u2014 roughly 50,000 candidate tokens, each with a number attached. The word you see is a draw from that distribution, not a retrieval from a store of facts.'},
+  a:'A probability distribution over the whole vocabulary \u2014 roughly 50,000 candidate tokens in the models Wolfram describes, each with a number attached. The word you see is a draw from that distribution, not a retrieval from a store of facts.'},
  {q:'Meg\u2019s CPC stock is indicated at '+COLEm('cpcValue')+' against a '+COLEm('megBasis')+' basis. Which of those two numbers could a model state confidently without ever having seen the Cole file, and why does that matter?',
   a:'Both, and neither is grounded. Given a prompt describing an owner-operated manufacturer, plausible values for each are high-probability continuations. Fluency about a number is not access to it. The model has never seen the file.'},
  {q:'Session 1 ranked tiers by cost per finished task rather than cost per token. State the reason in one sentence.',
   a:'Because models differ in how many tokens they burn reaching an answer. A model at one fifth the token price can cost nearly as much per completed task, which makes the price sheet a misleading ranking.'},
- {q:'Name the three facts about the Cole household that may never be entered into a consumer AI tool.',
-  a:'That a competitor approached the company, which she has not told Nathan, who works in the business. The unexecuted IDGT plan and the discount being claimed. And, separately from the file\u2019s own three, the fact that Meg is a client of the firm at all \u2014 the relationship itself is confidential.'}
+ {q:'Session 1 gave a rule for when to start a new chat instead of continuing a long one. State it and the reason.',
+  a:'After roughly ten to fifteen turns; everything already in the chat is re-sent with every turn, so a long chat costs more and remembers less.'}
 ];
 (function(){
   var host=$('bridge'),shown=false;
@@ -3102,6 +3108,8 @@ window.__coreMins=69;
   function idOf(a){var h=a.getAttribute('href')||'';return h.charAt(0)==='#'?h.slice(1):''}
   function apply(){
     document.body.classList.toggle('core-only',coreOnly);
+    [].slice.call(bar.querySelectorAll('button[data-level]')).forEach(function(x){x.classList.toggle('on',!coreOnly&&parseInt(x.dataset.level,10)===level)});
+    [].slice.call(bar.querySelectorAll('button.core')).forEach(function(x){x.classList.toggle('on',coreOnly)});
     var shown=0,mins=0;
     apx.forEach(function(sec){
       var t=sec.dataset.tier||'standard';
