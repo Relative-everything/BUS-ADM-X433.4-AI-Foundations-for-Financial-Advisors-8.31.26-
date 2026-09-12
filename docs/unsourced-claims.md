@@ -107,13 +107,13 @@ the corpus on every run.
 | Candidate source | anthropic.com/news/claude-text-watermark, plus the-decoder and thenextweb reporting of 2 August 2026, all reached through search only: the host is blocked from this build environment and the page itself was never loaded — confidence **medium** |
 | Note | Reported substance: Claude output carries a SynthID-Text watermark and C2PA provenance metadata for models launched from 2 August 2026, applied worldwide. If that holds, this sentence is false and so is what it tells students about their own coursework. |
 
-### 5. `session-2/index.html:1576` — `#s6` — **[NEEDS SOURCE]**
+### 5. `session-2/index.html:1585` — `#s6` — **[NEEDS SOURCE]**
 
 > [NEEDS SOURCE]
 
 | | |
 |---|---|
-| File and line | `session-2/index.html:1576` |
+| File and line | `session-2/index.html:1585` |
 | Section | `#s6` (`core`) |
 | Region | R1 — body prose |
 | Marker | **[NEEDS SOURCE]** |

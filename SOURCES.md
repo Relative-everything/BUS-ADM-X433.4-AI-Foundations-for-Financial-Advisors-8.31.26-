@@ -126,7 +126,7 @@ moving_target:  false
 disclose_on_page: true
 scope:          Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
 used_for.session-1: every worked example in this session and the next three
-used_for.session-2: every worked example, exercise input and discussion prompt
+used_for.session-2: every client example, exercise input and discussion prompt, including the three §04 fixture inputs and their three deliberately weak starter prompts, which are exercise material
 used_for.session-3: the retrieval corpus, the extraction exercise, the consent items and the documentation exercise, and the illustrative meaning-space map whose coordinates were assigned rather than learned
 used_for.session-4: the NPI classification items, the vendor due-diligence set, and the audit-trail exercise
 ```
@@ -180,6 +180,26 @@ scope:          Over 200 preregistered legal queries, expert hand-scored, agains
 used_for.session-2: the measured hallucination rates for legal research tools
 used_for.session-3: the >17% / ~33% / 43% rates, the claim that tools made statements unsupported by the sources they cited, and the cross-study comparability caveat
 used_for.session-4: 17% / 33% / 43% and the response-length correlation
+```
+
+## src-openai-pricing
+
+```source
+title:          API pricing
+author:         OpenAI
+publisher:      OpenAI Platform
+link:           https://openai.com/api/pricing/
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: The GPT-5.6 Sol, Terra and Luna rates in session-2 §02 entered the repository with the 2026-08 pull and no retrieval was recorded for them. openai.com was egress-blocked on 2026-09-12 when this record was written, so the rates are carried at M until the DW-081 re-pull records a retrieval.
+confidence:     M
+kind:           evidence
+moving_target:  true
+figure_class:   price
+recheck_before: every teaching of session-2 §02
+scope:          Per-token input and output rates for the GPT-5.6 Sol, Terra and Luna tiers, as carried in session-2's MODELS array.
+used_for.session-2: the OpenAI rates behind the blended token price and the cost estimator
 ```
 
 ## src-pricing
@@ -714,8 +734,8 @@ confidence:     not applicable
 kind:           fabricated
 moving_target:  false
 disclose_on_page: false
-scope:          A deliberately fabricated citation, appearing in the session-2 §05 triage as exercise material so that students practise failing to catch it. MUST NEVER CARRY A CONFIDENCE CHIP: a chip asserts the claim is evidenced, and the whole point is that it is not.
-used_for.session-2: exercise material in the §05 citation triage, labelled as fabricated on the page
+scope:          A deliberately fabricated citation, appearing in the session-2 §07 triage as exercise material so that students practise failing to catch it. MUST NEVER CARRY A CONFIDENCE CHIP: a chip asserts the claim is evidenced, and the whole point is that it is not.
+used_for.session-2: exercise material in the §07 citation triage, labelled as fabricated on the page
 ```
 
 ## src-hallowell

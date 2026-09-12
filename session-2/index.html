@@ -1479,17 +1479,17 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 <section class="slide" id="s5" data-nav="Cost frontier">
   <div class="eyebrow"><span>02 &middot; Economics</span><span class="mins">6 min</span></div>
   <h2>Cost Per Task Versus Cost Per Token</h2>
-  <p class="big">Every tier comparison you have seen quoted in dollars per million tokens is measuring the wrong thing. Two models at the same token price can differ threefold in what a finished piece of work costs, because they differ in how many tokens they burn to get there.</p>
+  <p class="big">Every tier comparison you have seen quoted in dollars per million tokens is measuring the wrong thing. Two models priced within two dollars of each other per million tokens can differ more than fourfold in what a finished piece of work costs, because they differ in how many tokens they burn to get there.</p>
 
   <p>Artificial Analysis publishes both numbers: a composite Intelligence Index score, and the actual dollar cost of running that benchmark suite through each model. Plot one against the other and the ranking you would have guessed from the price sheet falls apart.</p>
 
   <div class="chart">
     <div class="ctitle">Intelligence Index score against measured cost per benchmark task</div>
     <div class="csub">Higher is better on the vertical axis, cheaper is better on the horizontal. The connected line is the efficient frontier &mdash; the set of models where no other model is both smarter and cheaper. Toggle the frontier and hover any point.</div>
-    <p style="margin:0 0 8px"><span class="sim">Published index and rate cards &mdash; figures move</span></p>
+    <p style="margin:0 0 8px"><span class="dim mono" style="font-size:12px;letter-spacing:.04em">Published index and rate cards &mdash; figures move</span></p>
     <svg viewBox="0 0 700 400" role="img" aria-label="Scatter plot of intelligence index against cost per task"><g id="frontierChart"></g></svg>
     <div class="row" style="margin-top:6px">
-      <button class="btn sel mini act" id="frontToggle">Show efficient frontier</button>
+      <button class="btn sel mini act" id="frontToggle">Hide efficient frontier</button>
       <span class="mono dim" style="font-size:12px" id="frontNote"></span>
     </div>
     <div class="csrc">Source: Artificial Analysis Intelligence Index v4.1.1, max reasoning effort, retrieved August 2026; Anthropic and OpenAI published API rates. Index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5 <span class="conf h" data-src="src-aa">H</span>. Terra and Luna per-task costs derived from Artificial Analysis's stated ~50% and ~80% reductions relative to Sol <span class="conf m" data-src="src-aa">M</span>.</div>
@@ -1497,28 +1497,29 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <h3>Three findings a price sheet hides</h3>
   <div class="cards">
-    <div class="card gold"><span class="num">Finding 01</span><span class="stat">1&#8202;/&#8202;5</span><h4>Token price gap, Sonnet 5 against Fable 5</h4><p>Sonnet 5 lists at $2 in / $10 out per million tokens. Fable 5 lists at $10 / $50. One fifth the price per token.</p></div>
-    <div class="card gold"><span class="num">Finding 02</span><span class="stat">17%</span><h4>Actual gap in cost per finished task</h4><p>$2.29 against $2.75. The cheaper model burns most of the saving on the way to the answer &mdash; it generated 300M tokens across the index suite against a 71M median.</p></div>
-    <div class="card"><span class="num">Finding 03</span><span class="stat">26%</span><h4>Opus 5's cost advantage over Fable 5</h4><p>At a higher index score. The most expensive model per token is not the most capable model, and has not been since late July.</p></div>
+    <div class="card gold"><span class="num">Finding 01</span><span class="stat">1&#8202;/&#8202;5</span><h4>Token price gap, Sonnet 5 against Fable 5</h4><p>Sonnet 5 lists at $2 in / $10 out per million tokens. Fable 5 lists at $10 / $50. One fifth the price per token. <span class="conf h" data-src="src-pricing">H</span></p></div>
+    <div class="card gold"><span class="num">Finding 02</span><span class="stat">17%</span><h4>Actual gap in cost per finished task</h4><p>$2.29 against $2.75. The cheaper model burns most of the saving on the way to the answer &mdash; it generated 300M tokens across the index suite against a 71M median [UNVERIFIED, needs source].</p></div>
+    <div class="card"><span class="num">Finding 03</span><span class="stat">26%</span><h4>Opus 5's cost advantage over Fable 5</h4><p>At a higher index score. The most expensive model per token is not the most capable model.</p></div>
   </div>
 
   <div class="chart">
     <div class="ctitle">Rank by token price against rank by cost per finished task</div>
     <div class="csub">Same seven models, two orderings. Lines that cross are models whose price sheet misdescribes what they cost you. Sonnet 5 moves from second-cheapest to second-most-expensive.</div>
     <svg viewBox="0 0 700 380" role="img" aria-label="Slopegraph comparing rank by token price and rank by cost per task"><g id="slopeChart"></g></svg>
-    <div class="csrc">Blended token price computed at a 3:1 input-to-output ratio from published rates <span class="conf h" data-src="src-case">H</span>. Ratio assumption stated so you can recompute it for your own mix <span class="conf m" data-src="src-case">M</span>.</div>
+    <div class="csrc">Blended token price computed at a 3:1 input-to-output ratio from the published Anthropic rates <span class="conf h" data-src="src-pricing">H</span> and OpenAI rates <span class="conf m" data-src="src-openai-pricing">M</span>. The ratio is this page's assumption, stated so you can recompute it for your own mix.</div>
   </div>
 
-  <div class="panel" data-task="t-s5" data-comp="click-map-explorer">
+  <div class="panel" data-task="t-s5" data-comp="parameter-sandbox">
     <span class="plab">Your own monthly cost estimate</span>
-    <p style="margin-top:0;font-size:15.5px">Enter the volume you expect for the workflow you are building for the final project. The estimator uses a 3:1 input-to-output token ratio and current published rates.</p>
+    <p style="margin-top:0;font-size:15.5px">Enter the volume you expect for the workflow you are building for the final project. The estimator prices input and output separately at the published rates; the default volumes below are a 3:1 ratio you can change.</p>
     <div class="ctrls" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">
       <div><label class="plab" for="volRuns">Runs per month</label><input type="text" id="volRuns" value="80" inputmode="numeric"></div>
       <div><label class="plab" for="volIn">Input tokens per run</label><input type="text" id="volIn" value="6000" inputmode="numeric"></div>
       <div><label class="plab" for="volOut">Output tokens per run</label><input type="text" id="volOut" value="2000" inputmode="numeric"></div>
     </div>
     <div class="out has" id="costOut" style="margin-top:18px"></div>
-    <p class="dim" style="font-size:14px;margin-bottom:0">A subscription changes this arithmetic entirely &mdash; a $20 monthly plan absorbs a great deal of usage before per-token pricing becomes the cheaper route. The point of the estimator is to show which tier decisions are material and which are noise at your volume.</p>
+    <p class="dim" style="font-size:14px;margin-bottom:0">A subscription changes this arithmetic entirely &mdash; a flat monthly plan absorbs a great deal of usage before per-token pricing becomes the cheaper route. The point of the estimator is to show which tier decisions are material and which are noise at your volume.</p>
+    <div class="csrc">Rates: <b>Anthropic</b> pricing page <span class="conf h" data-src="src-pricing">H</span>; <b>OpenAI</b> API pricing <span class="conf m" data-src="src-openai-pricing">M</span>. Both from the August pull; re-check before relying on a figure.</div>
   </div>
 
   <div class="doit">
@@ -1528,7 +1529,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="panel tightpad" style="background:var(--warn-bg);border-color:#E0C6B4">
     <span class="plab" style="color:var(--warn)">Verification required before this slide is relied on</span>
-    <p style="font-size:15px;margin:0">Model tiers and their subscription availability changed four times between June and August 2026. Confirm which tiers your own plan currently reaches at <span class="mono">claude.com/pricing</span> before you build a workflow that depends on one. Benchmark rankings are recomputed continuously and the ordering above has already reversed once.</p>
+    <p style="font-size:15px;margin:0">Model tiers and their subscription availability change between cohorts. Confirm which tiers your own plan currently reaches at <span class="mono">claude.com/pricing</span> before you build a workflow that depends on one. Benchmark rankings are recomputed continuously and can reverse between one pull and the next.</p>
   </div>
 
   <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Estimate your own monthly cost, then find the tier where cost per finished task beats cost per token.</div></div>
@@ -2304,7 +2305,7 @@ function drawFrontier(){
   });
   $('frontNote').textContent='Hollow points are dominated \u2014 another model is both smarter and cheaper.';
 }
-$('frontToggle').onclick=function(){showFront=!showFront;this.classList.toggle('act',showFront);this.textContent=showFront?'Show efficient frontier':'Frontier hidden';drawFrontier()};
+$('frontToggle').onclick=function(){showFront=!showFront;this.classList.toggle('act',showFront);this.textContent=showFront?'Hide efficient frontier':'Show efficient frontier';drawFrontier()};
 drawFrontier();
 
 /* slopegraph */
