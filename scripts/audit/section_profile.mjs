@@ -73,7 +73,7 @@ function hasClass(tag, cls) { const c = attr(tag, 'class'); return !!c && c.spli
 const ACRO_STOP = new Set(['AI','US','U.S.','UK','OK','PM','AM','ID','UC','PDF','HTML','CSS','JS','URL','CEO','CFO',
   'MBA','TV','BUS','ADM','FAQ','GPT','IRS','LLC','IRA','CPC','FINRA','SEC','CFP','JSON','SVG','PT','ET','CT',
   'ILCS','II','III','IV','VI','VII','VIII','IX','XI','XII','QED','NB','PS','RE','CB','ROI','USD','ETF']);
-const CFP_KNOWN = new Set(['IRA','LLC','CEO','CFP','IRS','SEC','FINRA','RMD','AUM','QTIP','GST','QSBS','ILIT','GRAT','ETF','IDGT']);
+const CFP_KNOWN = new Set(['IRA','LLC','CEO','CFP','IRS','SEC','FINRA','RMD','AUM','QTIP','GST','ILIT','GRAT','ETF','IDGT']);
 function termCensus(sectionsText) {
   /* sectionsText: [{id, text}] in document order. First use is file-level. */
   const seen = new Map();
