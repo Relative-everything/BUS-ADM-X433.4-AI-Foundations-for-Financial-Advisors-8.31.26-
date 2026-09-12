@@ -1394,7 +1394,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>01 &middot; Mechanism</span><span class="mins">5 min</span></div>
   <h2>Temperature and Output Variance</h2>
 
-  <div class="panel" style="background:var(--gold-bg);border-color:#DFD3AF" data-task="t-s3" data-comp="parameter-sandbox">
+  <div class="panel" style="background:var(--gold-bg);border-color:#DFD3AF" data-task="t-s3" data-comp="prediction-commit">
     <span class="plab" style="color:var(--gold)">Commit before the content runs</span>
     <p style="margin-top:0;font-size:16px">You send an identical prompt to the same model twice, an hour apart, with no other change. Which is true?</p>
     <div class="vote" id="stanceVote">
@@ -1404,20 +1404,22 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="out" id="stanceOut"></div>
   </div>
 
-  <p class="big">If the model always picked the top-ranked candidate, Wolfram notes, you get flat text that sometimes repeats word for word. Picking lower-ranked candidates sometimes produces more interesting text. The parameter governing how often that happens is called temperature, and Wolfram is explicit that there is no theory behind the value &mdash; 0.8 is simply what has been found to work for essays.</p>
+  <p class="big">If the model always picked the top-ranked candidate, Wolfram notes, you get flat text that sometimes repeats word for word. Picking lower-ranked candidates sometimes produces more interesting text. The parameter governing how often that happens is called temperature, and Wolfram is explicit that there is no theory behind the value &mdash; 0.8 is simply what has been found to work for essays. <span class="conf h" data-src="src-wolfram">H</span></p>
 
   <p>The slider below applies the actual transformation: each candidate's probability is raised to the power 1/T and the set is renormalised. Low T sharpens the distribution toward the leader. High T flattens it. Then the panel samples the same prompt five independent times so you can see the spread.</p>
 
   <div class="panel">
     <span class="plab">Temperature</span>
     <input type="range" id="temp" min="0" max="150" value="80" step="5" aria-label="Temperature">
-    <div class="ticks"><span>0.0 &mdash; deterministic</span><span>0.8 &mdash; Wolfram's essay setting</span><span>1.5 &mdash; degraded</span></div>
+    <div class="ticks"><span>0.0 &mdash; greedy: top bar every time; real APIs still vary</span><span>0.8 &mdash; Wolfram's essay setting</span><span>1.5 &mdash; degraded</span></div>
     <div class="pbars" id="tbars" style="margin-top:22px"></div>
+    <p style="margin:10px 0 0"><span class="sim">Illustrative distribution: ten hand-picked candidates weighted 1/n, not a model's output</span></p>
     <div class="row" style="margin-top:22px">
       <button class="btn mini" id="reroll">Run the same prompt 5 times</button>
       <span class="mono dim" style="font-size:12px" id="tempReadout"></span>
     </div>
     <div class="runs" id="runs"></div>
+    <div class="csrc">Source: <b>Wolfram, S. (2023)</b>, the passage on temperature. The 1/T reweighting is the mechanism as reported; the candidate words and their weights are constructed for this page <span class="conf h" data-src="src-wolfram">H</span>.</div>
   </div>
 
   <h3>Three consequences for an advisory practice</h3>
@@ -2189,7 +2191,7 @@ function chain(T,n){
 }
 function drawT(){
   var T=parseInt($('temp').value,10)/100,w=reweight(T),cs=cands("to"),host=$('tbars');
-  $('tempReadout').textContent='T = '+T.toFixed(2)+(T===0?'  \u00b7 argmax, no sampling':T===0.8?'  \u00b7 Wolfram\u2019s reported essay setting':'');
+  $('tempReadout').textContent='T = '+T.toFixed(2)+(T===0?'  \u00b7 greedy: the top bar every time in this simulation':T===0.8?'  \u00b7 Wolfram\u2019s reported essay setting':'');
   host.innerHTML='';
   cs.forEach(function(t,ix){
     var d=document.createElement('div');d.className='pbar';d.style.cursor='default';
@@ -2209,7 +2211,7 @@ function runFive(){
     d.innerHTML='<span class="rn">run '+(i+1)+'</span><span>'+o+'</span>';host.appendChild(d);
   });
   var note=document.createElement('div');note.className='mono dim';note.style.cssText='font-size:12px;margin-top:6px';
-  note.textContent=uniq+' distinct output'+(uniq===1?'':'s')+' from 5 identical prompts.'+(uniq===1?'  Deterministic \u2014 and, as Wolfram notes, the text goes flat and repetitive.':'  Each is a separate draw from the same distribution.');
+  note.textContent=uniq+' distinct output'+(uniq===1?'':'s')+' from 5 identical prompts.'+(uniq===1?'  Greedy in this simulation; a real API at zero still varies a little. As Wolfram notes, the text goes flat and repetitive.':'  Each is a separate draw from the same distribution.');
   host.appendChild(note);
 }
 $('temp').oninput=drawT;$('reroll').onclick=runFive;drawT();runFive();
@@ -2840,8 +2842,8 @@ var BRIDGE=[
       box.querySelectorAll('button').forEach(function(x){x.disabled=true});
       var v=b.getAttribute('data-v');
       $('stanceOut').textContent=v==='b'
-        ? 'Locked. You took the second position. The next twelve minutes give you the mechanism behind it, and the third consequence card is the part most people have not thought through.'
-        : 'Locked. You took the first position, which is the majority answer in most rooms and is the one the slider below is built to test. Run it at 0.8 and count the distinct outputs before you decide whether the variation is a rounding error.';
+        ? 'Locked. You took the second position. The rest of this section gives you the mechanism behind it, and the third consequence card is the part most people have not thought through.'
+        : 'Locked. You took the first position, which is the one the slider below is built to test. Run it at 0.8 and count the distinct outputs before you decide whether the variation is a rounding error.';
       $('stanceOut').classList.add('has');
     };
   });
