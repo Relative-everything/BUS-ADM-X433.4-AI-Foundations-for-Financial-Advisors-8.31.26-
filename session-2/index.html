@@ -1599,23 +1599,46 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h2>Scoring Your Own Prompts Against P.T.C.F</h2>
   <div class="verify">
   <span class="vh">Requires instructor verification before it is taught as settled</span>
-  Every tax and legal characterisation in this session is posed as a question, not stated as a holding. Verify each against primary authority before answering it in class:
+  The &sect;07 triage key states four authorities as holdings so that citation failure can be taught; nothing else in this session is stated as a holding. Verify each against primary authority before answering it in class:
   <ul>
     <li><strong>IRC &sect; 671 and the grantor-trust rules</strong> as the authority behind the IDGT client explanation built in &sect;03 &mdash; sound as stated, and stated without its limits.</li>
-    <li><strong>Rev. Proc. 2017-34 and Rev. Proc. 2022-32</strong>, cited in the &sect;05 triage as exercise material only; confirm current portability relief before repeating either.</li>
-    <li><strong>IRC &sect;&sect; 1014, 2010, 691 and 7520</strong>, appearing across the triage and citation exercises. Confirm current thresholds and rates against the Code.</li>
+    <li><strong>Rev. Rul. 85-13 and Rev. Rul. 2004-64, Situations 1 to 3</strong>, as the &sect;07 key characterises them, including the conditions the key attaches to Situation 3 (no understanding with the trustee; inclusion still possible from a retained power over the trustee or from creditor-access state law). Confirm against 1985-1 C.B. 184 and 2004-27 I.R.B. before teaching either as settled.</li>
+    <li><strong>Estate of Woelbing and Estate of Davidson</strong>: the &sect;07 key describes each as a stipulated decision with no holding and states the docket dates, the instrument (self-cancelling installment notes in Davidson) and the settlement figures. Confirm the docket facts before repeating them.</li>
+    <li><strong>IRC &sect;&sect; 2036(a)(1), 2036(b), 2038, 2702 and 7520</strong> as the &sect;07 key and the case structure invoke them, including the distinction between corporate stock and LLC units that the &sect;07 live run turns on. Confirm current text against the Code.</li>
+    <li><strong>Portability</strong>: the &sect;05 triage item on electing portability names no authority. Confirm current relief before answering it in class.</li>
     <li><strong>The combined discount</strong> the memorandum asserts for lack of control and lack of marketability. Nothing in this session establishes that it is defensible, and nothing in the case file does either: no appraiser has been engaged, no restricted-stock or pre-IPO study is on file, and the memorandum allocates nothing between the two components.</li>
   </ul>
-  <em>Kessler v. Commissioner</em> is a deliberately fabricated citation used as exercise material in &sect;05, labelled on the page and in the footer.
+  <em>Kessler v. Commissioner</em> is a deliberately fabricated citation used as exercise material in &sect;07, labelled on the page and in the footer.
 </div>
 
-  <p class="big">You wrote three prompt templates before this session. You had not been taught a prompting framework when you wrote them. That was deliberate.</p>
+  <p class="big">You wrote three prompt templates before this session, or you will use the three supplied below. When you wrote yours, you had heard eight checks read aloud and had not seen them rendered, scored or named as a framework. That gap was deliberate.</p>
 
   <p>The sequencing exists so that this comparison is available to you. A framework taught before an attempt is a set of rules you comply with. A framework taught after an attempt is a diagnosis of something you already produced, and the gap between the two versions is yours rather than mine. Wrong first attempts followed by correction outperform being told the right answer first, which is the same finding that governs every prequestion in this file.</p>
 
-  <p>Score each of your three prompts element by element. Then rewrite the weakest one in the editor below. <strong>The rewrite, not the original, is what carries forward</strong> &mdash; into the &sect;08 audit, into the peer review, and into your Part 1 template library.</p>
+  <p>Score each of your three prompts element by element. Then rewrite the weakest one in the editor below. <strong>The rewrite, not the original, is what carries forward</strong> &mdash; into the peer review a partner runs before Session 3, and into your Part 1 template library.</p>
 
-  <div class="panel" data-task="t-s6b" data-comp="multi-column-sorter">
+  <div class="panel tightpad" id="fixtures" style="margin-bottom:18px">
+    <span class="plab">No three templates yet, or nothing to run them on? Use these three</span>
+    <p style="font-size:14.5px;margin:0 0 10px"><span class="caseflag">Synthetic case</span> <span class="sim">Exercise material</span> Three inputs from the Cole file and three starter prompts written to be weak. Each starter is missing two of the four P.T.C.F elements on purpose, so the scorer below has something to score; none is a model to copy. Pick a fixture; the starter loads into the box for the prompt number you are on.</p>
+    <div class="row" style="margin-bottom:10px">
+      <button class="btn sel mini act" data-fx="0">F1 &middot; Client email</button>
+      <button class="btn sel mini" data-fx="1">F2 &middot; Meeting notes</button>
+      <button class="btn sel mini" data-fx="2">F3 &middot; Plan summary</button>
+      <span class="mono dim" style="font-size:12px" id="fxWhich"></span>
+    </div>
+    <span class="plab" id="fxInLabel">The input</span>
+    <div class="out has" id="fxIn"></div>
+    <span class="plab" style="margin-top:12px">The starter prompt, deliberately weak</span>
+    <div class="out has" id="fxPrompt"></div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn mini" id="fxUse">Load it as the prompt to score</button>
+      <button class="btn ghost mini" id="fxCopyIn">Copy the input</button>
+      <span class="mono dim" style="font-size:12px">Then score it below, rewrite it in the editor, and run both on the same input.</span>
+    </div>
+    <p style="font-size:14px;margin:12px 0 0"><b>If you do not run a workflow of your own, five steps:</b> pick a fixture; write or load the prompt; run it in your tool on the fixture; score the output against the facts the fixture contains, all of which are on the Case facts panel; write down what the model assumed that the fixture never said.</p>
+  </div>
+
+  <div class="panel" data-task="t-s6b" data-comp="builder-assembler">
     <div class="row" style="margin-bottom:18px">
       <button class="btn sel mini act" data-hw="0">Prompt 1</button>
       <button class="btn sel mini" data-hw="1">Prompt 2</button>
@@ -1649,7 +1672,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="doit">
     <span class="plab">Group report &mdash; 2 minutes</span>
     <p>One number and one sentence: which element you scored lowest across all three prompts, and what you had assumed the model already knew.</p>
-    <p>Your discernment statement predicted what each prompt would return. Compare that prediction against what the original actually returned. A prediction that was accurate about a bad output is a different skill from a prompt that produced a good one, and both are worth having.</p>
   </div>
 
   <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Score all three prompts element by element, then rewrite the weakest in the editor.</div></div>
@@ -2945,6 +2967,44 @@ var ELEM=[
   }
   $('hwRewrite').oninput=live;live();
   $('hwCopy').onclick=function(){copyTo(this,$('hwRewrite').value)};
+})();
+
+/* ===== 6b fixture pack: three inputs from the injected case and three weak starters
+   (pedagogy R4, R5; DW-090). Every case fact is read from COLEDOCS or a COLE
+   constant at parse time; nothing here is typed. ===== */
+(function(){
+  var host=$('fxIn');if(!host)return;
+  function tline(i){var t=COLEDOCS.transcript[i];return t.who+': '+t.said}
+  var FX=[
+   {n:'F1 \u00b7 Client email',
+    lab:'The input: an advisor\u2019s draft reply to Meg, written badly on purpose',
+    inp:'Hi Meg, following up on the note question. As discussed the structure has you short about '+COLEm('steadyGap')+' a year once it is running as designed, and every dollar of principal you call gives up '+COLEp('noteRate',2)+' of interest for good, so calling more sooner is not free. I think you should probably call some this year but not all, it depends on a few things. Let me know what you think and we can discuss. Also David mentioned the appraisal is old, we should look at that at some point. Thanks',
+    pr:'Rewrite this email so it sounds more professional and reassuring.'},
+   {n:'F2 \u00b7 Meeting notes',
+    lab:'The input: the meeting excerpt from the case file, as five untidy lines',
+    inp:[0,1,2,3,4].map(tline).join('\n'),
+    pr:'You are an experienced wealth advisor with excellent client skills. Turn these notes into a case note.'},
+   {n:'F3 \u00b7 Plan summary',
+    lab:'The input: the planning memorandum chunk and the structure paragraph from the case panel',
+    inp:COLEDOC('D8').t+'\n\nStructure, from the case panel: a seed gift of '+COLEn('seedUnits')+' non-voting units, then a sale of '+COLEn('saleUnits')+' non-voting units to the same trust for a '+COLEm('notePrincipal')+' note payable on demand at '+COLEp('noteRate',2)+', interest only. A '+COLEp('discount',0)+' combined discount is asserted with no appraisal and no appraiser engaged.',
+    pr:'Summarise this for the client in one page.'}
+  ];
+  var cur=0;
+  function show(){
+    var f=FX[cur];
+    $('fxInLabel').textContent=f.lab;host.textContent=f.inp;$('fxPrompt').textContent=f.pr;
+    $('fxWhich').textContent=f.n;
+    document.querySelectorAll('[data-fx]').forEach(function(b){b.classList.toggle('act',b.getAttribute('data-fx')*1===cur)});
+  }
+  document.querySelectorAll('[data-fx]').forEach(function(b){b.onclick=function(){cur=b.getAttribute('data-fx')*1;show()}});
+  $('fxUse').onclick=function(){
+    var box=$('hwText');if(!box)return;
+    box.value=FX[cur].pr;if(box.oninput)box.oninput.call(box);
+    $('fxWhich').textContent=FX[cur].n+' \u00b7 loaded into the box below';
+    box.focus();
+  };
+  $('fxCopyIn').onclick=function(){copyTo(this,FX[cur].inp)};
+  show();
 })();
 
 /* ================= 8 · BUY-SELL INTERVIEW CHECKLIST ================= */
