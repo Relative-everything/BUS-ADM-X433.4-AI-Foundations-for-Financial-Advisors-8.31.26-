@@ -1,6 +1,6 @@
 # Plan: Session 2 pre-flight for 2026-09-14
 From: direct request ("fix what you can before my manual pass tomorrow"). Date: 2026-09-12. Tier: Lite (changes inside an existing surface; every design decision was taken 2026-09-08 as D1 to D9 or specified in `audit/AUDIT-2026-09-07.md` §5.5, §6 and §12.4).
-Status: accepted (taken from the builder's instruction of 2026-09-12; see Flags in handback.md, F-A).
+Status: implemented (acceptance taken from the builder's instruction of 2026-09-12; see handback.md Flags F-5).
 
 ## Reads
 - `docs/audits/session-2-review-2026-09-11.md`: the 140 findings this plan works from, with line anchors at 98e9686.
