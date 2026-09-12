@@ -1691,11 +1691,11 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p class="dim" style="font-size:15.5px">Several of these are designed to be mis-sorted. Read the whole prompt before choosing.</p>
 
-  <div class="panel" id="quiz"></div>
+  <div class="panel" id="quiz" data-task="t-s7" data-comp="commit-first-mcq"></div>
 
   <div class="doit">
     <span class="plab">Discussion &mdash; 3 minutes</span>
-    <p>Item 7 is the one that splits the room every time. Argue it out before you look at the feedback.</p>
+    <p>Item 7 is the one built to split the room. Argue it out before you look at the feedback.</p>
   </div>
 
   <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Triage every prompt in the set and read the feedback on the ones you got wrong.</div></div>
@@ -1717,7 +1717,7 @@ When you have enough to proceed, first list what you still do not know and how y
 The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div>
 
   <h3>The Cole Buy-Sell Agreement</h3>
-  <p><span class="caseflag">Synthetic case</span> The CPC buy-sell agreement was executed in 2014 and never updated. Its formula produces a value far below the range the company is now indicated at, and the file holds three different values for the same company, each from a different date, a different preparer and a different purpose. You want a summary of what it does and where it breaks.</p>
+  <p><span class="caseflag">Synthetic case</span> The buy-sell agreement CPC inherited was executed in 2014 and never updated. Its formula produces a value far below the range the company is now indicated at, and the file holds three different values for the same company, each from a different date, a different preparer and a different purpose. You want a summary of what it does and where it breaks.</p>
   <p>Send the wrapper above with this task, and let the model interview you before it writes anything: <span class="mono">Summarise the 2014 buy-sell agreement for Cole Precision Components and identify where it conflicts with the current planning.</span></p>
   <p>Tick every question the model actually asked you. The instructor reveals the full list afterwards. What matters is not your score but which questions you would not have thought to answer unprompted.</p>
 
@@ -1802,7 +1802,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <div class="ctitle">Measured hallucination rates on verifiable legal research questions</div>
     <div class="csub">Retrieval grounding reduces the rate substantially. It does not approach zero, and the vendors' marketing claims of hallucination-free citation were found to be overstated.</div>
     <svg viewBox="0 0 700 280" role="img" aria-label="Bar chart of hallucination rates by tool type"><g id="hallChart"></g></svg>
-    <div class="csrc">Sources: Dahl, M., Magesh, V., Suzgun, M., &amp; Ho, D. E. (2024). <em>Large Legal Fictions</em> &mdash; general-purpose models, &gt;800,000 verifiable legal questions, 58&ndash;88% hallucination; GPT-4 58%, GPT-3.5 69%, Llama 2 88% <span class="conf h" data-src="src-dahl-fictions">H</span>. Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools</em>, Journal of Empirical Legal Studies &mdash; 202 preregistered queries, Lexis+ AI ~17%, Westlaw AI-Assisted Research ~33% <span class="conf h" data-src="src-dahl-fictions">H</span>. Figures reflect model and tool versions available in 2023&ndash;2024 <span class="conf h" data-src="src-magesh">H</span>.</div>
+    <div class="csrc">Sources: Dahl, M., Magesh, V., Suzgun, M., &amp; Ho, D. E. (2024). <em>Large Legal Fictions</em> &mdash; general-purpose models, &gt;800,000 verifiable legal questions, 58&ndash;88% hallucination; GPT-4 58%, GPT-3.5 69%, Llama 2 88% <span class="conf h" data-src="src-dahl-fictions">H</span>. Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools</em>, Journal of Empirical Legal Studies &mdash; over 200 preregistered queries, Lexis+ AI ~17%, Westlaw AI-Assisted Research ~33% <span class="conf h" data-src="src-magesh">H</span>. Figures reflect model and tool versions available in 2023&ndash;2024 <span class="conf h" data-src="src-magesh">H</span>.</div>
   </div>
 
   <div class="chart">
@@ -1824,7 +1824,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <div class="panel">
     <span class="plab">Citation triage &mdash; classify each</span>
     <p style="margin-top:0;font-size:15.5px">Six items an AI assistant returned when asked what authority supports the Cole IDGT sale. Classify each. All six are exercise material. Do not carry any classification into practice without checking the authority yourself, which is the entire point.</p>
-    <div id="triage" data-task="t-s7" data-comp="multi-column-sorter"></div>
+    <div id="triage" data-task="t-s10c" data-comp="multi-column-sorter"></div>
   </div>
 
   <h3>The verification order</h3>
@@ -1840,7 +1840,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
   <div class="doit">
     <span class="plab">Live run &mdash; 5 minutes</span>
-    <p>Ask your AI tool: <span class="mono">What authority supports an installment sale of non-voting stock to an intentionally defective grantor trust, and what are the principal risks?</span> Then run all four checks on every authority it returns, plus a fifth: for any case, confirm whether it produced an opinion or a stipulated decision. Time yourself.</p>
+    <p>Ask your AI tool: <span class="mono">What authority supports an installment sale of non-voting LLC units to an intentionally defective grantor trust, and what are the principal risks?</span> Then run all four checks on every authority it returns, plus a fifth: for any case, confirm whether it produced an opinion or a stipulated decision. Time yourself.</p>
     <p>That elapsed time is the real cost of the workflow. It belongs in your final project's time comparison, and leaving it out is the most common way these projects overstate their savings.</p>
   </div>
 
@@ -2070,7 +2070,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="conf h">H</span> directly verified against the cited source. <span class="conf m">M</span> reported by a secondary source or derived from a stated relationship. <span class="conf l">L</span> illustrative construction, not a published figure.</p>
     <p style="font-size:13.5px">Nothing in this file is tax or legal advice. Every characterisation of an authority is a teaching illustration built on a synthetic case, and several are deliberately wrong and labelled as such. Verify against the Code, the Bulletin and the docket before any of it informs a recommendation. That instruction is the course.</p>
     <p style="font-size:13.5px">BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors. UC Berkeley Extension. Session 2.</p>
-  <p class="stamp">Last updated 2026-08-20. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
+  <p class="stamp">Last updated 2026-09-12. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
 
   </div>
 </footer>
@@ -2643,13 +2643,13 @@ var CITES=[
  {c:'Rev. Rul. 2004-64, 2004-2 C.B. 7 \u2014 cited for the proposition that Meg\u2019s payment of the income tax on the trust\u2019s income is not an additional gift to her children.',
   a:'sound',w:'Real, current, and correctly characterised. Situation 1 of the ruling holds that the payment is not a gift because the grantor is discharging her own liability, imposed by \u00a7671. This is the authority behind the explanation you built in &sect;03. It is sound as stated \u2014 and it is stated without its condition, which is the next item.'},
  {c:'Rev. Rul. 2004-64 \u2014 cited in support of adding a clause to the draft trust that requires the trustee to reimburse Meg for the income tax she pays, on the basis that the ruling blesses reimbursement.',
-  a:'mis',w:'Real citation, and it holds close to the opposite. Situation 2 of the same ruling holds that where the governing instrument requires reimbursement, the grantor has retained the right to have trust property expended in discharge of her legal obligation, and the full value of the trust is included in her gross estate under \u00a72036(a)(1). Only a discretionary reimbursement power, held by a trustee who is not related or subordinate, avoids that result \u2014 Situation 3. Same document, adjacent paragraphs, opposite outcome. This is what misgrounding looks like when it is expensive.'},
+  a:'mis',w:'Real citation, and it holds close to the opposite. Situation 2 of the same ruling holds that where the governing instrument requires reimbursement, the grantor has retained the right to have trust property expended in discharge of her legal obligation, and the full value of the trust is included in her gross estate under \u00a72036(a)(1). Situation 3 is the discretionary case: a trustee\u2019s discretionary power to reimburse does not by itself cause inclusion, on the condition that there is no understanding, express or implied, between grantor and trustee about how it will be exercised, and inclusion can still follow from other facts, such as a retained power to remove the trustee or state law that exposes the trust to the grantor\u2019s creditors. Same document, adjacent paragraphs, opposite outcome. This is what misgrounding looks like when it is expensive.'},
  {c:'Estate of Donald Woelbing v. Commissioner, T.C. Docket No. 30261-13 \u2014 cited as the Tax Court having upheld an installment sale of non-voting stock to a grantor trust using a defined value clause, with beneficiary guarantees supplying economic substance.',
-  a:'nd',w:'The docket is real, the parties are real, and the Tax Court upheld nothing. The IRS attacked the 2006 sale of Carma Laboratories stock under \u00a72702 and \u00a7\u00a72036/2038 and asserted penalties; the parties settled, and stipulated decisions were entered on 25 and 28 March 2016 finding no additional tax due. A stipulated decision is the parties\u2019 agreement recorded by the court, not the court\u2019s judgment. It carries no precedential weight. Anyone citing Woelbing as a holding is citing a settlement.'},
+  a:'nd',w:'The docket is real, the parties are real, and the Tax Court upheld nothing. The IRS attacked the 2006 sale of Carma Laboratories stock under \u00a72702 and \u00a7\u00a72036/2038 and asserted penalties; the parties settled, and stipulated decisions were entered in both dockets: Donald\u2019s, 30261-13, on 25 March 2016, no additional gift or estate tax due, and Marion\u2019s, 30260-13, on 28 March 2016, no additional gift tax due. A stipulated decision is the parties\u2019 agreement recorded by the court, not the court\u2019s judgment. It carries no precedential weight. Anyone citing Woelbing as a holding is citing a settlement.'},
  {c:'Estate of Davidson v. Commissioner, T.C. Docket No. 13748-13 \u2014 cited as the Tax Court having approved the use of the \u00a77520 mortality tables to value a note where the seller died shortly after the sale.',
-  a:'nd',w:'Same failure, higher stakes. The IRS originally asserted deficiencies of roughly $2.8 billion; a stipulated decision was entered on 6 July 2015 reflecting a settlement of roughly $388 million. There is no opinion. The valuation question the planning community was waiting on was never answered, and the settlement terms do not disclose how it was resolved. Note the structural resemblance to Meg\u2019s facts: an interest-only note payable on demand, drafted while a liquidity event was in view.'},
+  a:'nd',w:'Same failure, higher stakes. The IRS originally asserted deficiencies of roughly $2.8 billion; a stipulated decision was entered on 6 July 2015 reflecting a settlement of roughly $388 million. There is no opinion. The valuation question the planning community was waiting on was never answered, and the settlement terms do not disclose how it was resolved. The consideration was self-cancelling installment notes, and the seller died with principal outstanding, so the estate had to defend the notes\u2019 value after his death. Meg\u2019s note is a different instrument, interest-only and callable on demand, but the question the settlement never answered, what a note is worth in the seller\u2019s estate, is the one her structure will face.'},
  {c:'Kessler v. Commissioner, 152 T.C. 88 (2019) \u2014 cited as holding that a '+COLEp('discount',0)+' combined discount for lack of control and lack of marketability is presumptively reasonable for a non-voting minority interest in a closely held manufacturer.',
-  a:'fab',w:'No such decision exists. It is also the item the reader most wants to be true, which is exactly why it was generated: it answers the question that was asked. There is no presumptively reasonable discount percentage; discounts are questions of fact proved by appraisal. Meg\u2019s 2023 appraisal, never re-verified and now facing a buyer\u2019s expression of interest, is the actual issue and no citation resolves it.'}
+  a:'fab',w:'No such decision exists. It is also the item the reader most wants to be true, which is exactly why it was generated: it answers the question that was asked. There is no presumptively reasonable discount percentage; discounts are questions of fact proved by appraisal. There is no appraisal of the discount in this file: the memorandum asserts the figure and the 2023 report values the whole company with no discount study. That gap is the actual issue, and no citation fills it.'}
 ];
 (function(){
   var host=$('triage'),score=0,done=0;
@@ -3026,10 +3026,10 @@ var BSQ=[
     var h='<span class="plab">Tick each question the model actually asked you</span><div style="display:flex;flex-direction:column;gap:8px;margin-top:11px">';
     BSQ.forEach(function(q,i){
       var on=!!ticked[i];
-      h+='<button class="bq" data-i="'+i+'" style="text-align:left;background:'+(on?'var(--on-bg)':'var(--card)')+';border:1.5px solid '+(on?'var(--on)':'var(--line)')+';border-radius:9px;padding:10px 14px;cursor:pointer;font-family:Source Serif 4,serif;font-size:14.5px;line-height:1.45;color:'+(shown?'var(--ink)':'transparent')+';display:flex;gap:12px;text-shadow:'+(shown?'none':'0 0 9px rgba(22,33,31,.55)')+'"><span style="flex:none;color:'+(on?'var(--on)':'var(--off)')+';font-family:JetBrains Mono,monospace;text-shadow:none">'+(on?'\u2713':'\u25cb')+'</span><span>'+q+'</span></button>';
+      h+='<button class="bq" data-i="'+i+'" style="text-align:left;background:'+(on?'var(--on-bg)':'var(--card)')+';border:1.5px solid '+(on?'var(--on)':'var(--line)')+';border-radius:9px;padding:10px 14px;cursor:pointer;font-family:Source Serif 4,serif;font-size:14.5px;line-height:1.45;color:var(--ink);display:flex;gap:12px"><span style="flex:none;color:'+(on?'var(--on)':'var(--off)')+';font-family:JetBrains Mono,monospace;text-shadow:none">'+(on?'\u2713':'\u25cb')+'</span><span>'+(shown?q:'Question '+(i+1)+' of ten, revealed after you tick')+'</span></button>';
     });
     h+='</div>';
-    if(!shown)h+='<p class="dim" style="font-size:13.5px;margin:14px 0 0">Ten questions are listed and blurred. Tick the ones you were asked from memory of your own run, then reveal. Counting before you read is the measurement; reading first destroys it.</p>';
+    if(!shown)h+='<p class="dim" style="font-size:13.5px;margin:14px 0 0">Ten questions are listed by number only. Tick as many as the model asked you, from memory of your own run, then reveal. Counting before you read is the measurement; reading first destroys it.</p>';
     host.innerHTML=h;
     host.querySelectorAll('.bq').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-i');ticked[i]=!ticked[i];render();count()}});
     count();
