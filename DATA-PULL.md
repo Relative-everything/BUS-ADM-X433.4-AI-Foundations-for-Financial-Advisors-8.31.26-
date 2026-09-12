@@ -9,7 +9,7 @@ appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
 **22 of 61 works are moving targets, feeding 89 of
-187 references.**
+188 references.**
 
 
 ---

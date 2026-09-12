@@ -27,7 +27,7 @@ never-fabricate rule exists to prevent.
 | `last_verified` **EMPTY** | **57** |
 | `last_verified` populated | 1 |
 | `last_verified` *not applicable* (synthetic or fabricated) | 3 |
-| References standing behind an EMPTY `last_verified` | **154** of 187 |
+| References standing behind an EMPTY `last_verified` | **154** of 188 |
 | Moving targets | 22 |
 | Lock | notarised, digest `e3c28a1b68e6efe4` |
 
@@ -46,7 +46,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | # | Key | Title | `last_verified` | `last_retrieved` | Refs | Moving | Depends on it |
 |---|---|---|---|---|---|---|---|
 | 1 | `src-wolfram` | What is ChatGPT doing … and why does it work? | **2026-08-23** | **none** | 19 | no | S1 `#s2` · S1 `#s3`×2 · S1 `#s4` · S1 `#s5`×2 · S2 `#s0` · S2 `#s1`×2 · S2 `#s3`×2 · S2 `#s4` · S3 `#s2`×2 · S3 `#s3` · S3 `#s8`×2 · S4 `#sWS` · S4 `#s8` |
-| 2 | `src-case` | The Cole household | *n/a* | *n/a* | 14 | no | S1 `#s1` · S3 `#s7` · S3 `#s10` · S3 `#s16` · S4 `#s2`×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2`×2 · S4 `#s7`×2 · S4 `#sWS` |
+| 2 | `src-case` | The Cole household | *n/a* | *n/a* | 15 | no | S1 `#s1` · S2 `#s0` · S3 `#s7` · S3 `#s10` · S3 `#s16` · S4 `#s2`×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2`×2 · S4 `#s7`×2 · S4 `#sWS` |
 | 3 | `src-aa` | Artificial Analysis Intelligence Index and cost-per-task figures | **EMPTY** | 2026-08-13 | 13 | yes | S1 `#s10`×2 · S2 `#s0` · S2 `#s5`×2 · S4 `#s3`×5 · S4 `#s7` · S4 `#sWS`×2 |
 | 4 | `src-regsp` | Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments | **EMPTY** | **none** | 10 | no | S3 `#s14` · S4 `#s2`×7 · S4 `#sRSP` · S4 `#s7` |
 | 5 | `src-synthid` | SynthID | **EMPTY** | **none** | 10 | yes | S4 `#sW1`×8 · S4 `#sW2`×2 |
