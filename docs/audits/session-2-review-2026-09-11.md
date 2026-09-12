@@ -248,26 +248,26 @@ Confidence: M (record scopes are the evidence; the survey itself was not retriev
 
 ## 5. Tier 3 (defer): proposed deferred-work rows
 
-No section scored Tier 3. The rows below are the findings in this report that no existing row or 09-09 finding carries; they are proposed regardless of the tier of the section they sit in, so nothing is silently dropped.
+No section scored Tier 3. The rows below are the findings in this report that no existing row or 09-09 finding carries; they are proposed regardless of the tier of the section they sit in, so nothing is silently dropped. (Renumbered 2026-09-12: the ids first printed here, DW-103 to DW-118, collided with DW-103 and DW-104, which PR A had already opened; the register rows opened on 2026-09-12 are DW-105 to DW-114 and cover P-01 to P-16 as the pre-flight handback maps them.)
 
-| Proposed DW | § | Finding ids | One-line description |
+| Proposed (P-nn) | § | Finding ids | One-line description |
 |---|---|---|---|
-| DW-103 | §00 | F-002 | The retrieval bridge has no 7-minute allocation: it shares §00's six minutes with four case cards, four outcome cards, the time budget and the "before we start" block (pedagogy s4, bank family 5). |
-| DW-104 | §00 | F-003 | Bridge item 4's key omits the endowment and substitutes the relationship; CASE.md Part J and the page's own paragraph at 1246 name the endowment as the third landmine. Fold into the D3 replacement. |
-| DW-105 | §00 | F-016 | §00 has no `<h2>`; the `data-nav` "Session map" matches nothing on screen. |
-| DW-106 | §01 | F-037 | `t-s3`/`parameter-sandbox` sits on the stance-vote panel (family 4); the slider panel is untagged. |
-| DW-107 | §01, §03, §07, §02 | F-042, F-069, F-110, F-060 | Sections whose stated doit minutes plus widgets exceed their eyebrow (Part B item 7): §01 4-of-5, §03 5-of-6, §07 5-of-8, §02 4-of-6. Ratify a rule that a doit may not exceed half a section's minutes, or resize. |
-| DW-108 | §01 | F-041 | "Consumer chat tools do not expose T" is a vendor-feature claim with no chip and no as-of date. |
-| DW-109 | B2 | F-028 | Laplace's 1814 argument is paraphrased as fact with no chip; `src-laplace` is `nochip=background`. Decide whether a paraphrase of an assigned reading needs a chip (R2 says every factual claim does). |
-| DW-110 | B3 | F-048 | The illegal closing parenthesis is clickable; the external count reaches -1 and the END verdict prints "-1 open parenthesis". |
-| DW-111 | §03 | F-066 | "What comes back" renders bracketed simulated output with no `.sim` badge. |
-| DW-112 | §04 | F-072, F-074 | The R3 gate sits three sections before the content it gates; the learning-science claim at 1605 carries no chip. |
-| DW-113 | §05 | F-083, F-084 | "Item 7 splits the room every time" is unsourced; items 6 and 7 rest on portability and the 2026 exclusion with no authority named while the §04 gate says Rev. Procs are cited here. |
-| DW-114 | §08, §09 | F-115, F-131 | Unsourced course rules and readings: "below 5 will not survive a handoff"; Kitces (Jan 2025) and Iskowitz (Jul 2025) named with no footer entry. |
-| DW-115 | B5 | F-121 | Three cards sit under "Phase three — complication"; pedagogy s3.7 specifies one. Label the two "already on screen" cards as callbacks, not complications. |
-| DW-116 | file | F-137 | Six designed Zoom polls are owed for Session 2 and one poll mechanism exists (B5's room tally); the run sheet (DW-095, PR D) is where the other five would live. |
-| DW-117 | tooling | FLAG-04 | `validate_dom.js` asserts `#pnum`; the corpus uses `#ovr` since 2026-09-08. Upstream skill defect; both delivered lessons fail DOM mode for it. |
-| DW-118 | tooling | FLAG-03 | `restyle_sweep.py --check` cannot exit 0 in this tree (two documented fragments) and `verify-style.mjs` cannot exit 0 outside the skill's hard-coded path (DW-080); no style check is green in a fresh environment. |
+| P-01 | §00 | F-002 | The retrieval bridge has no 7-minute allocation: it shares §00's six minutes with four case cards, four outcome cards, the time budget and the "before we start" block (pedagogy s4, bank family 5). |
+| P-02 | §00 | F-003 | Bridge item 4's key omits the endowment and substitutes the relationship; CASE.md Part J and the page's own paragraph at 1246 name the endowment as the third landmine. Fold into the D3 replacement. |
+| P-03 | §00 | F-016 | §00 has no `<h2>`; the `data-nav` "Session map" matches nothing on screen. |
+| P-04 | §01 | F-037 | `t-s3`/`parameter-sandbox` sits on the stance-vote panel (family 4); the slider panel is untagged. |
+| P-05 | §01, §03, §07, §02 | F-042, F-069, F-110, F-060 | Sections whose stated doit minutes plus widgets exceed their eyebrow (Part B item 7): §01 4-of-5, §03 5-of-6, §07 5-of-8, §02 4-of-6. Ratify a rule that a doit may not exceed half a section's minutes, or resize. |
+| P-06 | §01 | F-041 | "Consumer chat tools do not expose T" is a vendor-feature claim with no chip and no as-of date. |
+| P-07 | B2 | F-028 | Laplace's 1814 argument is paraphrased as fact with no chip; `src-laplace` is `nochip=background`. Decide whether a paraphrase of an assigned reading needs a chip (R2 says every factual claim does). |
+| P-08 | B3 | F-048 | The illegal closing parenthesis is clickable; the external count reaches -1 and the END verdict prints "-1 open parenthesis". |
+| P-09 | §03 | F-066 | "What comes back" renders bracketed simulated output with no `.sim` badge. |
+| P-10 | §04 | F-072, F-074 | The R3 gate sits three sections before the content it gates; the learning-science claim at 1605 carries no chip. |
+| P-11 | §05 | F-083, F-084 | "Item 7 splits the room every time" is unsourced; items 6 and 7 rest on portability and the 2026 exclusion with no authority named while the §04 gate says Rev. Procs are cited here. |
+| P-12 | §08, §09 | F-115, F-131 | Unsourced course rules and readings: "below 5 will not survive a handoff"; Kitces (Jan 2025) and Iskowitz (Jul 2025) named with no footer entry. |
+| P-13 | B5 | F-121 | Three cards sit under "Phase three — complication"; pedagogy s3.7 specifies one. Label the two "already on screen" cards as callbacks, not complications. |
+| P-14 | file | F-137 | Six designed Zoom polls are owed for Session 2 and one poll mechanism exists (B5's room tally); the run sheet (DW-095, PR D) is where the other five would live. |
+| P-15 | tooling | FLAG-04 | `validate_dom.js` asserts `#pnum`; the corpus uses `#ovr` since 2026-09-08. Upstream skill defect; both delivered lessons fail DOM mode for it. |
+| P-16 | tooling | FLAG-03 | `restyle_sweep.py --check` cannot exit 0 in this tree (two documented fragments) and `verify-style.mjs` cannot exit 0 outside the skill's hard-coded path (DW-080); no style check is green in a fresh environment. |
 
 ## 6. L-chipped claims (with reason)
 

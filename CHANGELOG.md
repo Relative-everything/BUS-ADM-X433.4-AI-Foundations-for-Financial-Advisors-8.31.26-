@@ -10,6 +10,113 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-12 · Session 2 pre-flight: the page stops saying what is false for this room
+
+Branch `claude/upbeat-galileo-3tbnmw`, eleven commits after the plan. The
+review order of 2026-09-11 (`docs/audits/session-2-review-2026-09-11.md`)
+found 140 items; this entry lands the decided and mechanical ones and leaves
+the rest as register rows. The plan and the handback are in
+`docs/changes/2026-09-12-session-2-preflight/`.
+
+### Session 2 · Eight sentences that were false for this cohort
+
+The bridge's fourth item now retrieves the ten-to-fifteen-turn restart rule
+Session 1 taught (D3); its old key also named the wrong third confidentiality
+landmine against `CASE.md` Part J. The section map no longer says Session 1
+established the confidentiality boundary or that the templates were written
+before any framework was taught; the workshop says what is true, that the room
+heard eight checks read aloud and never saw them rendered. The cold-open
+follow-up is a first run, not a comparison with a paste nobody made. The
+checklist and the B5 card refer to the baseline recorded in Session 2. "Section
+6b" is gone from three sentences that named an id no learner sees.
+
+### Session 2 · §07 stops teaching four things a learner could repeat and be wrong about
+
+The live-run prompt asks about non-voting LLC units, which is what the Cole
+structure sells. The Kessler feedback says there is no discount appraisal in
+the file, as `CASE.md` F.7 and the page's own close say. The Rev. Rul. 2004-64
+Situation 3 feedback states the ruling's own conditions rather than a
+related-or-subordinate rule the ruling does not contain, and Davidson is
+described as the self-cancelling installment notes it involved. Both Woelbing
+dockets are named with their dates. The §04 verification block now lists the
+four authorities the key states as holdings, the §2036(b) stock-versus-units
+distinction and the portability item, drops five authorities that were never on
+the page, and locates Kessler in §07. Every one of these is posed to the
+instructor as a question to confirm against the primary text; Situation 3 and
+the two dockets rest on secondary sources.
+
+### Session 2 · The workshop runs for a learner with no templates
+
+The fixture pack of the 09-07 audit's §5.5: three inputs read at parse time
+from the injected case (a badly drafted reply to Meg built from `COLE`
+constants, the Part O meeting excerpt as five untidy lines, the D8 memorandum
+chunk with the structure paragraph), three starter prompts each missing two
+P.T.C.F elements and labelled exercise material on the page and in the footer,
+a five-step procedure, and a button that loads the starter into the scorer. No
+figure is typed; the case-fact drift surface fell by one rather than growing.
+
+### Session 2 · Provenance
+
+The slopegraph's published-rate claim was chipped to the synthetic case; it now
+chips Anthropic's pricing page (H, re-fetched 2026-09-11) and a new
+`src-openai-pricing` record carried at M with its retrieval honestly unrecorded.
+The Google prompting guide, taught since the page was built, has its chip. The
+Anthropic prompt-length sentence with its bold `[NEEDS SOURCE]` is cut: the
+host is unreachable and the 09-07 edit list allowed the cut. The temperature
+bars, the Laplace answer set and the parenthesis predictor say they are
+constructed; the 41.8% adoption row its record does not cover is gone; the
+300M/71M token counts are marked unverified until the re-pull; the case cards
+carry the case's own chip; the Magesh figures chip Magesh. Four unsourced
+clauses in §02 are narrowed to what the chart shows.
+
+### Session 2 · Mechanics
+
+Every interaction is tagged as the family it is (the estimator a sandbox, the
+assemblers assemblers, the vote a commit, the two tick lists gates), §05's quiz
+is tagged and §07's triage no longer borrows its id, and the retrieval-bridge
+tag sits on the bridge. The retagging exposes a §03 to §04 adjacency that was
+always there; it is flagged on DW-094, not fixed. The depth bar lights one
+button at load; the frontier toggle is labelled by state; the buy-sell
+questions are numbered rather than hidden by transparent text; the illegal
+parenthesis is refused instead of taking the count to minus one; B5's four
+phases sum to its eighteen minutes; the simulated P.T.C.F readout matches the
+Format string it claims to satisfy; a nine-term glossary card opens §00. §08
+says it runs between sessions (D5). The footer stamp is current.
+
+### Sessions 2 to 4 · Ritual parity
+
+`COLD_CHECKS` and its renderer are copied byte for byte from Session 1 into
+Sessions 2, 3 and 4 (DW-066), and the reader-addressed pacing block and its
+"Minutes by section" heading likewise (DW-074). Session 0.1's handler has a
+different shape and is untouched; the row says so.
+
+### Repository · Run sheet, register, report
+
+`instructor-notes/session-2.md` is the clock-time run order with the corrections
+slot split as D7 decided, six Zoom polls, and the fixture fallback line
+(DW-095). Fifteen register rows are annotated or closed and ten opened
+(DW-105 to DW-114). The 2026-09-11 review's proposed row numbers collided with
+DW-103 and DW-104, which PR A had already used; they are renumbered P-01 to
+P-16 in that file. The profiler's acronym list carried a retired term the
+migration battery greps for; removed.
+
+### The gate
+
+`test-editorial-regions.mjs` 9 passed and T7 reproduces session-2 at 2 literal
+plus 64 entity em dashes after every commit; `verify-editorial.mjs` 0 hard
+failures and session-2 no longer appears under A15; `verify-case.mjs` 6 of 6;
+`inject-case.mjs --check`, `inject-sources.mjs --check`, `build-appendix.mjs
+--check`, `build-bibliography.mjs --check`, `build-unsourced.mjs --check` (11
+claims), `build-cardsort.mjs --check` and `case-inventory.mjs --report-check`
+all current; `verify-migration.mjs` 15 passed with check 20 pinning session-2's
+three figures. The skill's `validate_lesson.py` still reports V6 (17
+interactions against the 13 to 15 band, and three adjacencies) by design, and
+V2 on the footer hyperlinks by the upstream defect; `validate_dom.js` in DOM
+mode executes with no script errors and marks all sixteen gates, failing only
+its stale `#pnum` assertion. A scratch jsdom drive of every widget path passes.
+
+---
+
 ## 2026-09-08 · Nine decisions taken, and the mechanical bundle lands
 
 Branch `claude/pr-a-mechanical`, seven commits: the decisions, one repair the
