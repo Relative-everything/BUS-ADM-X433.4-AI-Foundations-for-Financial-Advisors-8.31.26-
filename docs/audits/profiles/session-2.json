@@ -1,0 +1,1934 @@
+{
+  "file": "session-2/index.html",
+  "file_bytes": 262586,
+  "file_lines": 3165,
+  "generated_by": "scripts/audit/section_profile.mjs (read-only)",
+  "methods": {
+    "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
+    "prose_words": "words outside tagged interaction roots (static)",
+    "chips": ".conf span with h/m/l class inside the section; resolves = data-src present in footer <li id>",
+    "icap": "component-bank.md v2.0 family index",
+    "exposition": "M heuristic, see each section",
+    "terms": "M heuristic: capitalised acronyms and statute citations, file-level first use, defined if a parenthetical, appositive, copula, or initials expansion sits within 40 words"
+  },
+  "timing": {
+    "rows": {
+      "BUS ADM X433.4 · Session 2": {
+        "title": "Practical AI Usage in Daily Advisory Workflows",
+        "min": 6,
+        "apx": false
+      },
+      "Cold open · standing ritual": {
+        "title": "The Last Prompt You Sent",
+        "min": 8,
+        "apx": false
+      },
+      "01 · Mechanism": {
+        "title": "Temperature and Output Variance",
+        "min": 5,
+        "apx": false
+      },
+      "02 · Economics": {
+        "title": "Cost Per Task Versus Cost Per Token",
+        "min": 6,
+        "apx": false
+      },
+      "03 · Framework": {
+        "title": "Persona, Task, Context, Format",
+        "min": 6,
+        "apx": false
+      },
+      "04 · Workshop": {
+        "title": "Scoring Your Own Prompts Against P.T.C.F",
+        "min": 7,
+        "apx": false
+      },
+      "05 · Diagnostic": {
+        "title": "Prompt Specification Triage",
+        "min": 5,
+        "apx": false
+      },
+      "06 · Technique": {
+        "title": "The Interview Rewrite",
+        "min": 6,
+        "apx": false
+      },
+      "07 · Verification": {
+        "title": "Citation Failure Types on the Cole IDGT Transaction",
+        "min": 8,
+        "apx": false
+      },
+      "08 · Workshop": {
+        "title": "Template Audit and Structured Peer Review",
+        "min": 5,
+        "apx": false
+      },
+      "09 · Assignment": {
+        "title": "Final Project Part 1 and Baseline Capture",
+        "min": 7,
+        "apx": false
+      },
+      "Appendix B1 · Mechanism, deeper": {
+        "title": "Next-Token Probabilities for a Single Prompt",
+        "min": 16,
+        "apx": true
+      },
+      "Appendix B2 · Foundation": {
+        "title": "Laplace on Probability as a Measure of Ignorance",
+        "min": 15,
+        "apx": true
+      },
+      "Appendix B3 · Failure mode": {
+        "title": "Sampling Failure on a Task That Requires Counting",
+        "min": 16,
+        "apx": true
+      },
+      "Appendix B4 · Process": {
+        "title": "The Seven-Step Process and the Delegation Line",
+        "min": 16,
+        "apx": true
+      },
+      "Appendix B5 · Discussion": {
+        "title": "Specification Cost Against Task Cost",
+        "min": 18,
+        "apx": true
+      }
+    },
+    "segments_sum": 150,
+    "allocated_cell": 150,
+    "eyebrow_sum_lesson_sections": 150
+  },
+  "consecutive_family_repeats": {
+    "document_order": [
+      "s1->s2:work-along-gate",
+      "s9->s10:multi-column-sorter"
+    ],
+    "core_only_order": [],
+    "reading_order_all_tiers": [
+      "s1->s2:work-along-gate",
+      "s9->s10:multi-column-sorter"
+    ]
+  },
+  "reading_order_all_tiers": [
+    "s0",
+    "s1",
+    "s2",
+    "sCold",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s6b",
+    "s7",
+    "s8",
+    "s9",
+    "s10",
+    "s11",
+    "s12d",
+    "s12"
+  ],
+  "norms": {
+    "sections": 16,
+    "core_sections": 11,
+    "interactions_per_section": {
+      "median": 1,
+      "range": [
+        0,
+        2
+      ],
+      "mean": 1
+    },
+    "chips_per_100_words": {
+      "median": 0,
+      "range": [
+        0,
+        0.9
+      ],
+      "mean": 0.21
+    },
+    "chips_per_section": {
+      "median": 0,
+      "range": [
+        0,
+        4
+      ],
+      "mean": 1
+    },
+    "sources_per_section": {
+      "median": 0,
+      "range": [
+        0,
+        3
+      ],
+      "mean": 0.69
+    },
+    "words_per_min": {
+      "median": 57.8,
+      "range": [
+        14,
+        121.2
+      ],
+      "mean": 57.46
+    },
+    "prose_words_per_min": {
+      "median": 55.849999999999994,
+      "range": [
+        11.4,
+        119.2
+      ],
+      "mean": 54.03
+    },
+    "exposition_run_min_tagged": {
+      "median": 5.1,
+      "range": [
+        2.6,
+        13.4
+      ],
+      "mean": 6.35
+    },
+    "exposition_run_min_control": {
+      "median": 4.8,
+      "range": [
+        2.2,
+        10.7
+      ],
+      "mean": 5.64
+    },
+    "icap_distribution": {
+      "P": 0,
+      "A": 7,
+      "C": 8,
+      "I": 1
+    },
+    "distinct_families": 9,
+    "sections_with_zero_chips": [
+      "s0",
+      "s2",
+      "sCold",
+      "s3",
+      "s6b",
+      "s7",
+      "s8",
+      "s11",
+      "s12d",
+      "s12"
+    ],
+    "sections_with_zero_interactions": [
+      "s7"
+    ]
+  },
+  "sections": [
+    {
+      "id": "s0",
+      "num": "00",
+      "data_nav": "Session map",
+      "eyebrow": "BUS ADM X433.4 · Session 2",
+      "heading": "Practical AI Usage in Daily Advisory Workflows",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 6,
+      "line_start": 1209,
+      "line_end": 1280,
+      "bytes": 7432,
+      "allocated_min": 6,
+      "words": 727,
+      "prose_words": 715,
+      "words_per_min": 121.2,
+      "prose_words_per_min": 119.2,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s0",
+          "data_comp": "retrieval-bridge",
+          "icap": "C",
+          "line": 1213,
+          "line_end": 1222,
+          "words_inside": 12
+        }
+      ],
+      "families": [
+        "retrieval-bridge"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 5,
+      "gates": [
+        {
+          "id": "g1",
+          "line": 1278,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 3,
+      "exposition": {
+        "longest_run_words_tagged_split": 693,
+        "longest_run_min_tagged_split": 5.7,
+        "longest_run_words_control_split": 639,
+        "longest_run_min_control_split": 5.3,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "X433"
+      ],
+      "dom": {
+        "rendered_words": 871,
+        "rendered_chips": 0,
+        "rendered_controls": 9,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "apx",
+      "num": "TOC",
+      "data_nav": "Appendix contents",
+      "eyebrow": "Appendix · 5 optional sections",
+      "heading": "Appendix contents",
+      "is_toc": true,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": true,
+      "nav_contained_in_heading": true,
+      "timing_row_min": null,
+      "line_start": 1283,
+      "line_end": 1295,
+      "bytes": 1548,
+      "allocated_min": 81,
+      "words": 143,
+      "prose_words": 143,
+      "words_per_min": 1.8,
+      "prose_words_per_min": 1.8,
+      "interactions_count": 0,
+      "interactions": [],
+      "families": [],
+      "icap": {},
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 143,
+        "longest_run_min_tagged_split": 81,
+        "longest_run_words_control_split": 143,
+        "longest_run_min_control_split": 81,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "B1",
+        "§00",
+        "B2",
+        "B3",
+        "§01",
+        "B4",
+        "§06",
+        "B5",
+        "§08"
+      ],
+      "dom": {
+        "rendered_words": 143,
+        "rendered_chips": 0,
+        "rendered_controls": 0,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s1",
+      "num": "B1",
+      "data_nav": "B1 · Next token",
+      "eyebrow": "Appendix B1 · Mechanism, deeper",
+      "heading": "Next-Token Probabilities for a Single Prompt",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "foundational",
+      "insert_after": "s0",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 16,
+      "line_start": 1298,
+      "line_end": 1337,
+      "bytes": 3711,
+      "allocated_min": 16,
+      "words": 344,
+      "prose_words": 334,
+      "words_per_min": 21.5,
+      "prose_words_per_min": 20.9,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s1",
+          "data_comp": "work-along-gate",
+          "icap": "A",
+          "line": 1306,
+          "line_end": 1316,
+          "words_inside": 10
+        }
+      ],
+      "families": [
+        "work-along-gate"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 2,
+      "chips": {
+        "H": 1,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.58,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-wolfram"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 1,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 3,
+      "gates": [
+        {
+          "id": "ga1",
+          "line": 1335,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 3,
+      "exposition": {
+        "longest_run_words_tagged_split": 222,
+        "longest_run_min_tagged_split": 10.3,
+        "longest_run_words_control_split": 213,
+        "longest_run_min_control_split": 9.9,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "§01."
+      ],
+      "dom": {
+        "rendered_words": 372,
+        "rendered_chips": 2,
+        "rendered_controls": 13,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s2",
+      "num": "B2",
+      "data_nav": "B2 · Laplace",
+      "eyebrow": "Appendix B2 · Foundation",
+      "heading": "Laplace on Probability as a Measure of Ignorance",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "foundational",
+      "insert_after": "s0",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 15,
+      "line_start": 1339,
+      "line_end": 1368,
+      "bytes": 3202,
+      "allocated_min": 15,
+      "words": 321,
+      "prose_words": 298,
+      "words_per_min": 21.4,
+      "prose_words_per_min": 19.9,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s2",
+          "data_comp": "work-along-gate",
+          "icap": "A",
+          "line": 1347,
+          "line_end": 1354,
+          "words_inside": 23
+        }
+      ],
+      "families": [
+        "work-along-gate"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 2,
+      "gates": [
+        {
+          "id": "ga2",
+          "line": 1366,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 3,
+      "exposition": {
+        "longest_run_words_tagged_split": 169,
+        "longest_run_min_tagged_split": 7.9,
+        "longest_run_words_control_split": 157,
+        "longest_run_min_control_split": 7.3,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 337,
+        "rendered_chips": 0,
+        "rendered_controls": 2,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "sCold",
+      "num": "Cold",
+      "data_nav": "Cold open",
+      "eyebrow": "Cold open · standing ritual",
+      "heading": "The Last Prompt You Sent",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 8,
+      "line_start": 1370,
+      "line_end": 1385,
+      "bytes": 1358,
+      "allocated_min": 8,
+      "words": 112,
+      "prose_words": 91,
+      "words_per_min": 14,
+      "prose_words_per_min": 11.4,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-cold-open",
+          "data_comp": "timed-ritual",
+          "icap": "C",
+          "line": 1375,
+          "line_end": 1380,
+          "words_inside": 21
+        }
+      ],
+      "families": [
+        "timed-ritual"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 2,
+      "gates": [
+        {
+          "id": "gc",
+          "line": 1384,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 3,
+      "exposition": {
+        "longest_run_words_tagged_split": 76,
+        "longest_run_min_tagged_split": 5.4,
+        "longest_run_words_control_split": 65,
+        "longest_run_min_control_split": 4.6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 111,
+        "rendered_chips": 0,
+        "rendered_controls": 2,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s3",
+      "num": "01",
+      "data_nav": "Temperature",
+      "eyebrow": "01 · Mechanism",
+      "heading": "Temperature and Output Variance",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 5,
+      "line_start": 1387,
+      "line_end": 1434,
+      "bytes": 4188,
+      "allocated_min": 5,
+      "words": 410,
+      "prose_words": 349,
+      "words_per_min": 82,
+      "prose_words_per_min": 69.8,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s3",
+          "data_comp": "parameter-sandbox",
+          "icap": "A",
+          "line": 1391,
+          "line_end": 1399,
+          "words_inside": 61
+        }
+      ],
+      "families": [
+        "parameter-sandbox"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 4,
+      "gates": [
+        {
+          "id": "g2",
+          "line": 1432,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 7,
+      "exposition": {
+        "longest_run_words_tagged_split": 404,
+        "longest_run_min_tagged_split": 4.9,
+        "longest_run_words_control_split": 228,
+        "longest_run_min_control_split": 2.8,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 480,
+        "rendered_chips": 0,
+        "rendered_controls": 4,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s4",
+      "num": "B3",
+      "data_nav": "B3 · Counting failure",
+      "eyebrow": "Appendix B3 · Failure mode",
+      "heading": "Sampling Failure on a Task That Requires Counting",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "standard",
+      "insert_after": "s3",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 16,
+      "line_start": 1436,
+      "line_end": 1469,
+      "bytes": 3301,
+      "allocated_min": 16,
+      "words": 336,
+      "prose_words": 317,
+      "words_per_min": 21,
+      "prose_words_per_min": 19.8,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s4",
+          "data_comp": "work-along-gate",
+          "icap": "A",
+          "line": 1444,
+          "line_end": 1453,
+          "words_inside": 19
+        }
+      ],
+      "families": [
+        "work-along-gate"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 1,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0.3,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-wolfram"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 1,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 1,
+      "gates": [
+        {
+          "id": "ga3",
+          "line": 1467,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 196,
+        "longest_run_min_tagged_split": 9.3,
+        "longest_run_words_control_split": 188,
+        "longest_run_min_control_split": 9,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 435,
+        "rendered_chips": 1,
+        "rendered_controls": 4,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s5",
+      "num": "02",
+      "data_nav": "Cost frontier",
+      "eyebrow": "02 · Economics",
+      "heading": "Cost Per Task Versus Cost Per Token",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 6,
+      "line_start": 1471,
+      "line_end": 1528,
+      "bytes": 6255,
+      "allocated_min": 6,
+      "words": 567,
+      "prose_words": 483,
+      "words_per_min": 94.5,
+      "prose_words_per_min": 80.5,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s5",
+          "data_comp": "click-map-explorer",
+          "icap": "A",
+          "line": 1504,
+          "line_end": 1514,
+          "words_inside": 84
+        }
+      ],
+      "families": [
+        "click-map-explorer"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 4,
+      "chips": {
+        "H": 2,
+        "M": 2,
+        "L": 0
+      },
+      "chips_per_100_words": 0.71,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-aa",
+        "src-case"
+      ],
+      "sources_count": 2,
+      "src_lines": 2,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 2,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 4,
+      "gates": [
+        {
+          "id": "g3",
+          "line": 1526,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 5,
+      "exposition": {
+        "longest_run_words_tagged_split": 358,
+        "longest_run_min_tagged_split": 3.8,
+        "longest_run_words_control_split": 239,
+        "longest_run_min_control_split": 2.5,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "API"
+      ],
+      "dom": {
+        "rendered_words": 718,
+        "rendered_chips": 4,
+        "rendered_controls": 4,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s6",
+      "num": "03",
+      "data_nav": "P·T·C·F",
+      "eyebrow": "03 · Framework",
+      "heading": "Persona, Task, Context, Format",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 6,
+      "line_start": 1530,
+      "line_end": 1586,
+      "bytes": 6153,
+      "allocated_min": 6,
+      "words": 515,
+      "prose_words": 486,
+      "words_per_min": 85.8,
+      "prose_words_per_min": 81,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s6",
+          "data_comp": "work-along-gate",
+          "icap": "A",
+          "line": 1537,
+          "line_end": 1549,
+          "words_inside": 29
+        }
+      ],
+      "families": [
+        "work-along-gate"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 2,
+      "chips": {
+        "H": 1,
+        "M": 1,
+        "L": 0
+      },
+      "chips_per_100_words": 0.39,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-zheng-persona",
+        "src-case"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 1,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 4,
+      "gates": [
+        {
+          "id": "g4",
+          "line": 1584,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [
+        {
+          "marker": "[NEEDS SOURCE]",
+          "line": 1576
+        }
+      ],
+      "em_dashes": 7,
+      "exposition": {
+        "longest_run_words_tagged_split": 413,
+        "longest_run_min_tagged_split": 4.8,
+        "longest_run_words_control_split": 395,
+        "longest_run_min_control_split": 4.6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "IDGT",
+        "EMNLP",
+        "NEEDS",
+        "SOURCE",
+        "§08.",
+        "P.T.C.F"
+      ],
+      "dom": {
+        "rendered_words": 608,
+        "rendered_chips": 2,
+        "rendered_controls": 4,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s6b",
+      "num": "04",
+      "data_nav": "Your prompts",
+      "eyebrow": "04 · Workshop",
+      "heading": "Scoring Your Own Prompts Against P.T.C.F",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 7,
+      "line_start": 1588,
+      "line_end": 1648,
+      "bytes": 5131,
+      "allocated_min": 7,
+      "words": 490,
+      "prose_words": 477,
+      "words_per_min": 70,
+      "prose_words_per_min": 68.1,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s6b",
+          "data_comp": "multi-column-sorter",
+          "icap": "C",
+          "line": 1609,
+          "line_end": 1620,
+          "words_inside": 13
+        }
+      ],
+      "families": [
+        "multi-column-sorter"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 1,
+      "verify_lines": [
+        1591
+      ],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 8,
+      "gates": [
+        {
+          "id": "g5",
+          "line": 1646,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 4,
+      "exposition": {
+        "longest_run_words_tagged_split": 321,
+        "longest_run_min_tagged_split": 4.6,
+        "longest_run_words_control_split": 321,
+        "longest_run_min_control_split": 4.6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "IRC",
+        "§ 671",
+        "§03",
+        "Rev. Proc. 2017-34",
+        "Rev. Proc. 2022-32",
+        "§05",
+        "§ 1014",
+        "IPO"
+      ],
+      "dom": {
+        "rendered_words": 536,
+        "rendered_chips": 0,
+        "rendered_controls": 24,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s7",
+      "num": "05",
+      "data_nav": "Triage",
+      "eyebrow": "05 · Diagnostic",
+      "heading": "Prompt Specification Triage",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 5,
+      "line_start": 1650,
+      "line_end": 1672,
+      "bytes": 1638,
+      "allocated_min": 5,
+      "words": 162,
+      "prose_words": 162,
+      "words_per_min": 32.4,
+      "prose_words_per_min": 32.4,
+      "interactions_count": 0,
+      "interactions": [],
+      "families": [],
+      "icap": {},
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g6",
+          "line": 1670,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 162,
+        "longest_run_min_tagged_split": 5,
+        "longest_run_words_control_split": 162,
+        "longest_run_min_control_split": 5,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 366,
+        "rendered_chips": 0,
+        "rendered_controls": 21,
+        "rendered_hidden_panels": 7
+      }
+    },
+    {
+      "id": "s8",
+      "num": "06",
+      "data_nav": "Interview rewrite",
+      "eyebrow": "06 · Technique",
+      "heading": "The Interview Rewrite",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 6,
+      "line_start": 1674,
+      "line_end": 1727,
+      "bytes": 4226,
+      "allocated_min": 6,
+      "words": 460,
+      "prose_words": 460,
+      "words_per_min": 76.7,
+      "prose_words_per_min": 76.7,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s8",
+          "data_comp": "builder-assembler",
+          "icap": "C",
+          "line": 1693,
+          "line_end": 1693,
+          "words_inside": 0
+        }
+      ],
+      "families": [
+        "builder-assembler"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 5,
+      "gates": [
+        {
+          "id": "g7",
+          "line": 1725,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 302,
+        "longest_run_min_tagged_split": 3.9,
+        "longest_run_words_control_split": 169,
+        "longest_run_min_control_split": 2.2,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 655,
+        "rendered_chips": 0,
+        "rendered_controls": 15,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s9",
+      "num": "B4",
+      "data_nav": "B4 · Seven steps",
+      "eyebrow": "Appendix B4 · Process",
+      "heading": "The Seven-Step Process and the Delegation Line",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "standard",
+      "insert_after": "s8",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 16,
+      "line_start": 1729,
+      "line_end": 1761,
+      "bytes": 3455,
+      "allocated_min": 16,
+      "words": 335,
+      "prose_words": 331,
+      "words_per_min": 20.9,
+      "prose_words_per_min": 20.7,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s9",
+          "data_comp": "multi-column-sorter",
+          "icap": "C",
+          "line": 1737,
+          "line_end": 1745,
+          "words_inside": 4
+        }
+      ],
+      "families": [
+        "multi-column-sorter"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 3,
+      "chips": {
+        "H": 2,
+        "M": 1,
+        "L": 0
+      },
+      "chips_per_100_words": 0.9,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-t3-survey",
+        "src-kitces-productivity"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 1,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 2,
+      "gates": [
+        {
+          "id": "ga4",
+          "line": 1759,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 226,
+        "longest_run_min_tagged_split": 10.8,
+        "longest_run_words_control_split": 225,
+        "longest_run_min_control_split": 10.7,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "T3",
+        "RIA"
+      ],
+      "dom": {
+        "rendered_words": 427,
+        "rendered_chips": 3,
+        "rendered_controls": 12,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s10",
+      "num": "07",
+      "data_nav": "Citations",
+      "eyebrow": "07 · Verification",
+      "heading": "Citation Failure Types on the Cole IDGT Transaction",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 8,
+      "line_start": 1763,
+      "line_end": 1818,
+      "bytes": 7135,
+      "allocated_min": 8,
+      "words": 738,
+      "prose_words": 738,
+      "words_per_min": 92.3,
+      "prose_words_per_min": 92.3,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s7",
+          "data_comp": "multi-column-sorter",
+          "icap": "C",
+          "line": 1796,
+          "line_end": 1796,
+          "words_inside": 0
+        }
+      ],
+      "families": [
+        "multi-column-sorter"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 4,
+      "chips": {
+        "H": 3,
+        "M": 1,
+        "L": 0
+      },
+      "chips_per_100_words": 0.54,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-dahl-fictions",
+        "src-magesh",
+        "src-charlotin"
+      ],
+      "sources_count": 3,
+      "src_lines": 2,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 2,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g8",
+          "line": 1816,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 12,
+      "exposition": {
+        "longest_run_words_tagged_split": 483,
+        "longest_run_min_tagged_split": 5.2,
+        "longest_run_words_control_split": 738,
+        "longest_run_min_control_split": 8,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "HEC"
+      ],
+      "dom": {
+        "rendered_words": 1041,
+        "rendered_chips": 4,
+        "rendered_controls": 24,
+        "rendered_hidden_panels": 6
+      }
+    },
+    {
+      "id": "s11",
+      "num": "08",
+      "data_nav": "Template audit",
+      "eyebrow": "08 · Workshop",
+      "heading": "Template Audit and Structured Peer Review",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 5,
+      "line_start": 1820,
+      "line_end": 1858,
+      "bytes": 2421,
+      "allocated_min": 5,
+      "words": 228,
+      "prose_words": 218,
+      "words_per_min": 45.6,
+      "prose_words_per_min": 43.6,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s11",
+          "data_comp": "work-along-gate",
+          "icap": "A",
+          "line": 1830,
+          "line_end": 1838,
+          "words_inside": 10
+        }
+      ],
+      "families": [
+        "work-along-gate"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 3,
+      "gates": [
+        {
+          "id": "g9",
+          "line": 1856,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 6,
+      "exposition": {
+        "longest_run_words_tagged_split": 117,
+        "longest_run_min_tagged_split": 2.6,
+        "longest_run_words_control_split": 117,
+        "longest_run_min_control_split": 2.6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 422,
+        "rendered_chips": 0,
+        "rendered_controls": 27,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s12d",
+      "num": "B5",
+      "data_nav": "B5 · Discussion",
+      "eyebrow": "Appendix B5 · Discussion",
+      "heading": "Specification Cost Against Task Cost",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "standard",
+      "insert_after": "s11",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 18,
+      "line_start": 1860,
+      "line_end": 1920,
+      "bytes": 5006,
+      "allocated_min": 18,
+      "words": 415,
+      "prose_words": 368,
+      "words_per_min": 23.1,
+      "prose_words_per_min": 20.4,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s12d",
+          "data_comp": "sealed-vote-debate",
+          "icap": "I",
+          "line": 1870,
+          "line_end": 1876,
+          "words_inside": 47
+        }
+      ],
+      "families": [
+        "sealed-vote-debate"
+      ],
+      "icap": {
+        "I": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 9,
+      "gates": [
+        {
+          "id": "ga5",
+          "line": 1918,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 5,
+      "exposition": {
+        "longest_run_words_tagged_split": 308,
+        "longest_run_min_tagged_split": 13.4,
+        "longest_run_words_control_split": 156,
+        "longest_run_min_control_split": 6.8,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "§07",
+        "§09"
+      ],
+      "dom": {
+        "rendered_words": 431,
+        "rendered_chips": 0,
+        "rendered_controls": 9,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s12",
+      "num": "09",
+      "data_nav": "Final project",
+      "eyebrow": "09 · Assignment",
+      "heading": "Final Project Part 1 and Baseline Capture",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 7,
+      "line_start": 1922,
+      "line_end": 1981,
+      "bytes": 6295,
+      "allocated_min": 7,
+      "words": 678,
+      "prose_words": 614,
+      "words_per_min": 96.9,
+      "prose_words_per_min": 87.7,
+      "interactions_count": 2,
+      "interactions": [
+        {
+          "data_task": "t-s12",
+          "data_comp": "timed-ritual",
+          "icap": "C",
+          "line": 1935,
+          "line_end": 1951,
+          "words_inside": 64
+        },
+        {
+          "data_task": "t-s10",
+          "data_comp": "commit-first-mcq",
+          "icap": "C",
+          "line": 1957,
+          "line_end": 1957,
+          "words_inside": 0
+        }
+      ],
+      "families": [
+        "timed-ritual",
+        "commit-first-mcq"
+      ],
+      "icap": {
+        "C": 2
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 5,
+      "gates": [
+        {
+          "id": "g10",
+          "line": 1977,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 4,
+      "exposition": {
+        "longest_run_words_tagged_split": 389,
+        "longest_run_min_tagged_split": 4,
+        "longest_run_words_control_split": 418,
+        "longest_run_min_control_split": 4.3,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "§04"
+      ],
+      "dom": {
+        "rendered_words": 867,
+        "rendered_chips": 0,
+        "rendered_controls": 12,
+        "rendered_hidden_panels": 0
+      }
+    }
+  ],
+  "terms": [
+    {
+      "term": "X433",
+      "kind": "acronym",
+      "first_use_section": "s0",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "BUS ADM  [X433] .4 · Session 2 6 min Practical AI"
+    },
+    {
+      "term": "B1",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "would cost are both on this page.  [B1]  · 16 min · after §00 Next-Token"
+    },
+    {
+      "term": "§00",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "page. B1 · 16 min · after  [§00]  Next-Token Probabilities for a Single Prompt B2"
+    },
+    {
+      "term": "B2",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "§00 Next-Token Probabilities for a Single Prompt  [B2]  · 15 min · after §00 Laplace"
+    },
+    {
+      "term": "B3",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "on Probability as a Measure of Ignorance  [B3]  · 16 min · after §01 Sampling"
+    },
+    {
+      "term": "§01",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Ignorance B3 · 16 min · after  [§01]  Sampling Failure on a Task That Requires"
+    },
+    {
+      "term": "B4",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Failure on a Task That Requires Counting  [B4]  · 16 min · after §06 The"
+    },
+    {
+      "term": "§06",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Counting B4 · 16 min · after  [§06]  The Seven-Step Process and the Delegation Line"
+    },
+    {
+      "term": "B5",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "The Seven-Step Process and the Delegation Line  [B5]  · 18 min · after §08 Specification"
+    },
+    {
+      "term": "§08",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Line B5 · 18 min · after  [§08]  Specification Cost Against Task Cost"
+    },
+    {
+      "term": "§01.",
+      "kind": "citation",
+      "first_use_section": "s1",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "come back to what you got in  [§01.]  · Work along Draw from the distribution"
+    },
+    {
+      "term": "API",
+      "kind": "acronym",
+      "first_use_section": "s5",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "retrieved August 2026; Anthropic and OpenAI published  [API]  rates. Index scores and per-task costs for"
+    },
+    {
+      "term": "IDGT",
+      "kind": "acronym",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": true,
+      "context": "task on the Cole household: explaining the  [IDGT]  sale to Meg in language she can"
+    },
+    {
+      "term": "EMNLP",
+      "kind": "acronym",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Performances of Large Language Models. Findings of  [EMNLP]  2024. Study design and null result as"
+    },
+    {
+      "term": "NEEDS",
+      "kind": "acronym",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "a measurable loss on its coding evaluations. [ [NEEDS]  SOURCE] M Longer prompts are not better"
+    },
+    {
+      "term": "SOURCE",
+      "kind": "acronym",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "measurable loss on its coding evaluations. [NEEDS  [SOURCE] ] M Longer prompts are not better prompts."
+    },
+    {
+      "term": "§08.",
+      "kind": "citation",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "— you will need the before-and-after for  [§08.]  · Work along Assemble one prompt with"
+    },
+    {
+      "term": "P.T.C.F",
+      "kind": "acronym",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "along Assemble one prompt with all four  [P.T.C.F]  elements and read the assembled text back."
+    },
+    {
+      "term": "IRC",
+      "kind": "acronym",
+      "first_use_section": "s6b",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "primary authority before answering it in class:  [IRC]  § 671 and the grantor-trust rules as"
+    },
+    {
+      "term": "§ 671",
+      "kind": "citation",
+      "first_use_section": "s6b",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "authority before answering it in class: IRC  [§ 671]  and the grantor-trust rules as the authority"
+    },
+    {
+      "term": "§03",
+      "kind": "citation",
+      "first_use_section": "s6b",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "behind the IDGT client explanation built in  [§03]  — sound as stated, and stated without"
+    },
+    {
+      "term": "Rev. Proc. 2017-34",
+      "kind": "citation",
+      "first_use_section": "s6b",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "as stated, and stated without its limits.  [Rev. Proc. 2017-34]  and Rev. Proc. 2022-32 , cited in"
+    },
+    {
+      "term": "Rev. Proc. 2022-32",
+      "kind": "citation",
+      "first_use_section": "s6b",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "without its limits. Rev. Proc. 2017-34 and  [Rev. Proc. 2022-32]  , cited in the §05 triage as"
+    },
+    {
+      "term": "§05",
+      "kind": "citation",
+      "first_use_section": "s6b",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Rev. Proc. 2022-32 , cited in the  [§05]  triage as exercise material only; confirm current"
+    },
+    {
+      "term": "§ 1014",
+      "kind": "citation",
+      "first_use_section": "s6b",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "current portability relief before repeating either. IRC § [§ 1014] , 2010, 691 and 7520 , appearing across"
+    },
+    {
+      "term": "IPO",
+      "kind": "acronym",
+      "first_use_section": "s6b",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "appraiser has been engaged, no restricted-stock or pre- [IPO]  study is on file, and the memorandum"
+    },
+    {
+      "term": "T3",
+      "kind": "acronym",
+      "first_use_section": "s9",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "model's recommendation is close to zero. Sources:  [T3]  / Inside Information Software Survey 2026, n=2,906"
+    },
+    {
+      "term": "RIA",
+      "kind": "acronym",
+      "first_use_section": "s9",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Survey 2026, n=2,906 advisors, 95% at fee-only  [RIA]  or dually registered firms — 52.2% using"
+    },
+    {
+      "term": "HEC",
+      "kind": "acronym",
+      "first_use_section": "s10",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Hallucination Cases database, maintained by Damien Charlotin ( [HEC]  Paris), as reported: approximately 200 cases mid-2025,"
+    },
+    {
+      "term": "§07",
+      "kind": "citation",
+      "first_use_section": "s12d",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "not optional and it is not amortised  [§07]  timed it on one transaction. Every run"
+    },
+    {
+      "term": "§09",
+      "kind": "citation",
+      "first_use_section": "s12d",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "not amortise the verification. Already on screen  [§09]  arithmetic A workflow that saves 20 minutes"
+    },
+    {
+      "term": "§02",
+      "kind": "citation",
+      "first_use_section": "s12",
+      "defined_within_40_words": true,
+      "how": "copula",
+      "cfp_baseline_vocabulary": false,
+      "context": "with the reason, and your initial prompts.  [§02]  is where the tier reason comes from."
+    },
+    {
+      "term": "§04",
+      "kind": "citation",
+      "first_use_section": "s12",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "is where the target task comes from.  [§04]  produced at least one of the initial"
+    }
+  ],
+  "footer_source_ids": [
+    "src-pricing",
+    "src-anthropic-fluency",
+    "src-aa",
+    "src-charlotin",
+    "src-dahl-fictions",
+    "src-google-ptcf",
+    "src-rr8513",
+    "src-rr200464",
+    "src-kitces-productivity",
+    "src-laplace",
+    "src-magesh",
+    "src-morningstar",
+    "src-case",
+    "src-kessler",
+    "src-t3-survey",
+    "src-irc",
+    "src-woelbing",
+    "src-davidson",
+    "src-wolfram",
+    "src-zheng-persona"
+  ],
+  "dom": {
+    "mode": "jsdom",
+    "script_errors": [],
+    "body_class_at_load": "core-only"
+  }
+}

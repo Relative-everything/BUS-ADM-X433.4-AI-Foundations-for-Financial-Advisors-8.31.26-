@@ -1210,7 +1210,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>BUS ADM X433.4 · Session 2</span><span class="mins">6 min</span></div>
   <h1>Practical AI Usage in Daily Advisory Workflows</h1>
   <p class="lede">The model samples a plausible answer. It does not compute the true one. Everything in this session follows from that one sentence.</p>
-  <div class="panel pace" data-task="t-s0" data-comp="retrieval-bridge"><span class="plab">How this session is paced</span><div id="paceOut"></div>
+  <div class="panel pace"><span class="plab">How this session is paced</span><div id="paceOut"></div>
   <div id="tierbar">
     <span class="tl">Appendix depth</span>
     <button data-level="0">Foundational</button>
@@ -1224,32 +1224,39 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <h3>Retrieval bridge &mdash; Session 1 mechanism</h3>
   <p>Fourteen days have passed since Session 1. Four questions, no notes. Answer each in the box before anything is revealed. Getting one wrong is worth more to you than getting it right, provided you commit to an answer first.</p>
-  <div class="panel" id="bridge"></div>
+  <div class="panel" id="bridge" data-task="t-s0" data-comp="retrieval-bridge"></div>
   <div class="row" style="margin-top:-12px">
     <button class="btn ghost mini" id="bridgeReveal">Reveal all four</button>
     <span class="mono dim" style="font-size:12px" id="bridgeCount"></span>
   </div>
+  <div class="csrc" style="margin-top:14px">Item 1: <b>Wolfram, S. (2023)</b>, the vocabulary size and the ranked-candidate mechanism as reported <span class="conf h" data-src="src-wolfram">H</span>. Item 3: <b>Artificial Analysis</b>, cost per index task, Sonnet 5 against Fable 5 at the August pull <span class="conf m" data-src="src-aa">M</span>.</div>
 
   <h3>The Cole household</h3>
   <p><span class="caseflag">Synthetic case &mdash; teaching anchor only</span></p>
-  <p>Every worked example, exercise input and discussion prompt in this course draws on one household. It is entirely fabricated. It is <strong>not</strong> your final-project dataset: you build Part 1 on a real recurring task from your own practice, using your own synthetic or de-identified data. Nobody should build a workflow around the Cole family.</p>
+  <p>Every client example in this course draws on one household. It is entirely fabricated. It is <strong>not</strong> your final-project dataset: you build Part 1 on a real recurring task from your own practice, using your own synthetic or de-identified data. Nobody should build a workflow around the Cole family.</p>
 
   <!-- Card 4 is the recurring question; card 3 carries the Illinois exposure,
        which is a v4.0 fact in scope to be taught. See docs/spine-brief.md. -->
   <div class="cards">
     <div class="card"><span class="num">Household</span><h4>Meg and David Cole, Barrington Hills, Illinois</h4><p>Meg, President and CEO of Cole Precision Components Inc., which she bought from her father. David, retired hospital pharmacist, Social Security not claimed. Long married, both US citizens, <strong>Illinois-domiciled for life</strong>. No liabilities of any kind; the balance sheet is in the case panel.</p></div>
     <div class="card"><span class="num">The asset</span><h4>CPC stock: one asset, most of the estate</h4><p>C-corporation in Rockford making precision aerospace fasteners. It pays its sole shareholder a large dividend every year, under a policy adopted to service a purchase note that has since been satisfied and never revisited. Meg purchased all of the shares from Walter Hensley; she did not found it, so her basis is what she paid. A competitor made an unsolicited written inquiry. No letter of intent has been signed.</p></div>
-    <div class="card gold"><span class="num">The structure</span><h4>Non-voting LLC units moved to a grantor trust</h4><p>A seed gift of non-voting units, then a sale of a much larger block to the same trust for a demand note, interest only. A discount claimed on the non-voting units, <strong>with no appraisal and no appraiser engaged</strong>. And <strong>Illinois imposes its own estate tax</strong> at a threshold that is neither indexed nor portable, which neither spouse has engaged with.</p></div>
+    <div class="card gold"><span class="num">The structure</span><h4>Non-voting LLC units to be moved to a grantor trust</h4><p>A seed gift of non-voting units, then a sale of a much larger block to the same trust for a demand note, interest only. A discount claimed on the non-voting units, <strong>with no appraisal and no appraiser engaged</strong>. And <strong>Illinois imposes its own estate tax</strong> at a threshold that is neither indexed nor portable, which neither spouse has engaged with.</p></div>
     <div class="card warn"><span class="num">The question every session works on</span><h4>How much of the note does she call this year?</h4><p>Meg is short <strong>$522,086</strong> a year from year 6 while the structure performs exactly as designed. Each $1,000,000 she calls permanently removes $38,200 of future interest, so the gap widens by 3.82% of every call. <strong>What does calling it cost her in every year after, and when is a different lever the better answer?</strong> No session answers it.</p></div>
   </div>
+  <div class="csrc">Every fact and figure in these four cards is the case file's, as injected into this page; the household is constructed <span class="conf l" data-src="src-case">L</span>.</div>
 
-  <p>Nathan Cole works in CPC operations. Meg has not told him a competitor approached the company. That fact and the unexecuted plan are two of the three confidentiality landmines the case file carries; the third is the endowment Meg intends for the charity whose board she chairs. The existence of the relationship itself is a fourth, and it comes from the regulation rather than from the file. That is the boundary Session 1 established and Session 4 will test.</p>
+  <p>Nathan Cole works in CPC operations. Meg has not told him a competitor approached the company. That fact and the unexecuted plan are two of the three confidentiality landmines the case file carries; the third is the endowment Meg intends for the charity whose board she chairs. The existence of the relationship itself is a fourth, and it comes from the regulation rather than from the file. That is the boundary this course draws, and Session 4 will test it.</p>
 
   <div class="cards">
     <div class="card"><span class="num">Outcome 01</span><h4>A working model of sampling</h4><p>Why the same prompt returns different text, and what that does to an audit trail.</p></div>
     <div class="card"><span class="num">Outcome 02</span><h4>A tier-selection rule</h4><p>Cost per finished task, benchmarked, rather than cost per token.</p></div>
-    <div class="card"><span class="num">Outcome 03</span><h4>Your own prompts, scored and rewritten</h4><p>The three you wrote before being taught a framework, scored element by element and one of them rebuilt in place.</p></div>
+    <div class="card"><span class="num">Outcome 03</span><h4>Your own prompts, scored and rewritten</h4><p>The three you wrote before this session, or the three supplied in the workshop, scored element by element and one of them rebuilt in place.</p></div>
     <div class="card"><span class="num">Outcome 04</span><h4>A citation verification routine</h4><p>Four checks, in order, applied to tax authority you did not write.</p></div>
+  </div>
+
+  <div class="panel tightpad">
+    <span class="plab">Nine terms this session uses before it defines them</span>
+    <p style="font-size:14.5px;margin:0"><b>Token</b>: the unit a model reads and writes, roughly three quarters of a word; prices and context limits are counted in it. <b>Temperature</b>: the setting that decides how often the model picks a lower-ranked next word instead of the top one. <b>Persona, Task, Context, Format</b>: the four parts of a prompt, who the model writes as, what it does, what it may use, and what shape comes back. <b>Template</b>: a prompt written so that a second person can run it on a new input without asking you anything. <b>Grounded</b>: an answer built only from a named source the model was given to read, so each claim can be checked against that source. <b>Tier</b>: a model size and price class; the choice is made on cost per finished task, not cost per token. <b>Baseline</b>: how long the task takes you today, unassisted, recorded before any tool touches it. <b>IDGT, intentionally defective grantor trust</b>: a trust drafted so that the grantor stays liable for its income tax while the trust, not the grantor, is intended to own what it holds. <b>Non-voting units and a demand note</b>: the LLC interests being sold carry economics but no vote, and the buyer's note can be called for its principal at any time.</p>
   </div>
 
   <h3>Time budget</h3>
@@ -1269,8 +1276,8 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="doit">
     <span class="plab">Before we start</span>
-    <p><strong>Open the AI tool you subscribed to, in a new tab, now.</strong> Every section below has something to run. You will finish this session with a baseline measurement, a rewritten prompt, a partner's review of your work, and Part 1 assigned.</p>
-    <p><strong>Open the three prompt templates you wrote as well</strong> &mdash; all three templates, your cited techniques, and your discernment statement. You will need the exact text in section 6b.</p>
+    <p><strong>Open the AI tool you subscribed to, in a new tab, now.</strong> Every section below has something to run. You will finish this session with a baseline measurement, a rewritten prompt, a template a partner reviews before Session 3, and Part 1 assigned.</p>
+    <p><strong>Open the three prompt templates you wrote as well</strong> &mdash; or use the three supplied in section 04, the workshop. You will need the exact text there.</p>
   </div>
 
 
@@ -1329,7 +1336,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="doit">
     <span class="plab">Live run &mdash; 3 minutes</span>
     <p>In your AI tool, send exactly this and nothing else: <span class="mono">The best thing about AI is its ability to</span></p>
-    <p>Send it three separate times, in three separate chats. Compare the three openings. We will come back to what you got in &sect;01.</p>
+    <p>Send it three separate times, in three separate chats. Compare the three openings and keep them. &sect;01 runs the same comparison with the output space constrained.</p>
   </div>
 
   <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Draw from the distribution until you have seen the same prompt produce three different continuations.</div></div>
@@ -1379,7 +1386,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="rout" id="coldOut"><span class="rnil">Paste something and press the button.</span></div>
   </div>
 
-  <p>Same field, one session on. Session 1 said nothing in this prompt read your intent. Tonight you learn the framework that fixes it, and \u00a704 scores the three templates you wrote against that framework.</p>
+  <p>First run. Keep the result on screen; Session 3 runs the same field and the drift between the two is the measurement.</p>
 
   <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen &mdash; the comparison across sessions is the point.</div></div>
 </section>
@@ -1388,7 +1395,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>01 &middot; Mechanism</span><span class="mins">5 min</span></div>
   <h2>Temperature and Output Variance</h2>
 
-  <div class="panel" style="background:var(--gold-bg);border-color:#DFD3AF" data-task="t-s3" data-comp="parameter-sandbox">
+  <div class="panel" style="background:var(--gold-bg);border-color:#DFD3AF" data-task="t-s3" data-comp="prediction-commit">
     <span class="plab" style="color:var(--gold)">Commit before the content runs</span>
     <p style="margin-top:0;font-size:16px">You send an identical prompt to the same model twice, an hour apart, with no other change. Which is true?</p>
     <div class="vote" id="stanceVote">
@@ -1398,20 +1405,22 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="out" id="stanceOut"></div>
   </div>
 
-  <p class="big">If the model always picked the top-ranked candidate, Wolfram notes, you get flat text that sometimes repeats word for word. Picking lower-ranked candidates sometimes produces more interesting text. The parameter governing how often that happens is called temperature, and Wolfram is explicit that there is no theory behind the value &mdash; 0.8 is simply what has been found to work for essays.</p>
+  <p class="big">If the model always picked the top-ranked candidate, Wolfram notes, you get flat text that sometimes repeats word for word. Picking lower-ranked candidates sometimes produces more interesting text. The parameter governing how often that happens is called temperature, and Wolfram is explicit that there is no theory behind the value &mdash; 0.8 is simply what has been found to work for essays. <span class="conf h" data-src="src-wolfram">H</span></p>
 
   <p>The slider below applies the actual transformation: each candidate's probability is raised to the power 1/T and the set is renormalised. Low T sharpens the distribution toward the leader. High T flattens it. Then the panel samples the same prompt five independent times so you can see the spread.</p>
 
   <div class="panel">
     <span class="plab">Temperature</span>
     <input type="range" id="temp" min="0" max="150" value="80" step="5" aria-label="Temperature">
-    <div class="ticks"><span>0.0 &mdash; deterministic</span><span>0.8 &mdash; Wolfram's essay setting</span><span>1.5 &mdash; degraded</span></div>
+    <div class="ticks"><span>0.0 &mdash; greedy: top bar every time; real APIs still vary</span><span>0.8 &mdash; Wolfram's essay setting</span><span>1.5 &mdash; degraded</span></div>
     <div class="pbars" id="tbars" style="margin-top:22px"></div>
+    <p style="margin:10px 0 0"><span class="sim">Illustrative distribution: ten hand-picked candidates weighted 1/n, not a model's output</span></p>
     <div class="row" style="margin-top:22px">
       <button class="btn mini" id="reroll">Run the same prompt 5 times</button>
       <span class="mono dim" style="font-size:12px" id="tempReadout"></span>
     </div>
     <div class="runs" id="runs"></div>
+    <div class="csrc">Source: <b>Wolfram, S. (2023)</b>, the passage on temperature. The 1/T reweighting is the mechanism as reported; the candidate words and their weights are constructed for this page <span class="conf h" data-src="src-wolfram">H</span>.</div>
   </div>
 
   <h3>Three consequences for an advisory practice</h3>
@@ -1445,6 +1454,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <span class="plab">Sequence extension &mdash; click a token to append it</span>
     <div class="streamline" id="parenStream"></div>
     <div class="pbars" id="parenBars"></div>
+    <p style="margin:8px 0 0"><span class="sim">Illustrative weights, hand-set to show the failure; they are not a distribution and do not sum to one</span></p>
     <div class="out" id="parenVerdict" style="margin-top:18px"></div>
     <div class="row" style="margin-top:16px">
       <button class="btn sel mini" id="parenReset">Reset</button>
@@ -1464,24 +1474,24 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p class="pull">The model is not bad at counting because it is undertrained. It is bad at counting because counting is not what it does.</p>
 
-  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the counting task until the model produces a confidently wrong count.</div></div>
+  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the sequence until the predictor offers a closing parenthesis with nothing open, and read the count it never kept.</div></div>
 
 </section>
 
 <section class="slide" id="s5" data-nav="Cost frontier">
   <div class="eyebrow"><span>02 &middot; Economics</span><span class="mins">6 min</span></div>
   <h2>Cost Per Task Versus Cost Per Token</h2>
-  <p class="big">Every tier comparison you have seen quoted in dollars per million tokens is measuring the wrong thing. Two models at the same token price can differ threefold in what a finished piece of work costs, because they differ in how many tokens they burn to get there.</p>
+  <p class="big">Every tier comparison you have seen quoted in dollars per million tokens is measuring the wrong thing. Two models priced within two dollars of each other per million tokens can differ more than fourfold in what a finished piece of work costs, because they differ in how many tokens they burn to get there.</p>
 
   <p>Artificial Analysis publishes both numbers: a composite Intelligence Index score, and the actual dollar cost of running that benchmark suite through each model. Plot one against the other and the ranking you would have guessed from the price sheet falls apart.</p>
 
   <div class="chart">
     <div class="ctitle">Intelligence Index score against measured cost per benchmark task</div>
     <div class="csub">Higher is better on the vertical axis, cheaper is better on the horizontal. The connected line is the efficient frontier &mdash; the set of models where no other model is both smarter and cheaper. Toggle the frontier and hover any point.</div>
-    <p style="margin:0 0 8px"><span class="sim">Published index and rate cards &mdash; figures move</span></p>
+    <p style="margin:0 0 8px"><span class="dim mono" style="font-size:12px;letter-spacing:.04em">Published index and rate cards &mdash; figures move</span></p>
     <svg viewBox="0 0 700 400" role="img" aria-label="Scatter plot of intelligence index against cost per task"><g id="frontierChart"></g></svg>
     <div class="row" style="margin-top:6px">
-      <button class="btn sel mini act" id="frontToggle">Show efficient frontier</button>
+      <button class="btn sel mini act" id="frontToggle">Hide efficient frontier</button>
       <span class="mono dim" style="font-size:12px" id="frontNote"></span>
     </div>
     <div class="csrc">Source: Artificial Analysis Intelligence Index v4.1.1, max reasoning effort, retrieved August 2026; Anthropic and OpenAI published API rates. Index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5 <span class="conf h" data-src="src-aa">H</span>. Terra and Luna per-task costs derived from Artificial Analysis's stated ~50% and ~80% reductions relative to Sol <span class="conf m" data-src="src-aa">M</span>.</div>
@@ -1489,28 +1499,29 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <h3>Three findings a price sheet hides</h3>
   <div class="cards">
-    <div class="card gold"><span class="num">Finding 01</span><span class="stat">1&#8202;/&#8202;5</span><h4>Token price gap, Sonnet 5 against Fable 5</h4><p>Sonnet 5 lists at $2 in / $10 out per million tokens. Fable 5 lists at $10 / $50. One fifth the price per token.</p></div>
-    <div class="card gold"><span class="num">Finding 02</span><span class="stat">17%</span><h4>Actual gap in cost per finished task</h4><p>$2.29 against $2.75. The cheaper model burns most of the saving on the way to the answer &mdash; it generated 300M tokens across the index suite against a 71M median.</p></div>
-    <div class="card"><span class="num">Finding 03</span><span class="stat">26%</span><h4>Opus 5's cost advantage over Fable 5</h4><p>At a higher index score. The most expensive model per token is not the most capable model, and has not been since late July.</p></div>
+    <div class="card gold"><span class="num">Finding 01</span><span class="stat">1&#8202;/&#8202;5</span><h4>Token price gap, Sonnet 5 against Fable 5</h4><p>Sonnet 5 lists at $2 in / $10 out per million tokens. Fable 5 lists at $10 / $50. One fifth the price per token. <span class="conf h" data-src="src-pricing">H</span></p></div>
+    <div class="card gold"><span class="num">Finding 02</span><span class="stat">17%</span><h4>Actual gap in cost per finished task</h4><p>$2.29 against $2.75. The cheaper model burns most of the saving on the way to the answer &mdash; it generated 300M tokens across the index suite against a 71M median [UNVERIFIED, needs source].</p></div>
+    <div class="card"><span class="num">Finding 03</span><span class="stat">26%</span><h4>Opus 5's cost advantage over Fable 5</h4><p>At a higher index score. The most expensive model per token is not the most capable model.</p></div>
   </div>
 
   <div class="chart">
     <div class="ctitle">Rank by token price against rank by cost per finished task</div>
     <div class="csub">Same seven models, two orderings. Lines that cross are models whose price sheet misdescribes what they cost you. Sonnet 5 moves from second-cheapest to second-most-expensive.</div>
     <svg viewBox="0 0 700 380" role="img" aria-label="Slopegraph comparing rank by token price and rank by cost per task"><g id="slopeChart"></g></svg>
-    <div class="csrc">Blended token price computed at a 3:1 input-to-output ratio from published rates <span class="conf h" data-src="src-case">H</span>. Ratio assumption stated so you can recompute it for your own mix <span class="conf m" data-src="src-case">M</span>.</div>
+    <div class="csrc">Blended token price computed at a 3:1 input-to-output ratio from the published Anthropic rates <span class="conf h" data-src="src-pricing">H</span> and OpenAI rates <span class="conf m" data-src="src-openai-pricing">M</span>. The ratio is this page's assumption, stated so you can recompute it for your own mix.</div>
   </div>
 
-  <div class="panel" data-task="t-s5" data-comp="click-map-explorer">
+  <div class="panel" data-task="t-s5" data-comp="parameter-sandbox">
     <span class="plab">Your own monthly cost estimate</span>
-    <p style="margin-top:0;font-size:15.5px">Enter the volume you expect for the workflow you are building for the final project. The estimator uses a 3:1 input-to-output token ratio and current published rates.</p>
+    <p style="margin-top:0;font-size:15.5px">Enter the volume you expect for the workflow you are building for the final project. The estimator prices input and output separately at the published rates; the default volumes below are a 3:1 ratio you can change.</p>
     <div class="ctrls" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">
       <div><label class="plab" for="volRuns">Runs per month</label><input type="text" id="volRuns" value="80" inputmode="numeric"></div>
       <div><label class="plab" for="volIn">Input tokens per run</label><input type="text" id="volIn" value="6000" inputmode="numeric"></div>
       <div><label class="plab" for="volOut">Output tokens per run</label><input type="text" id="volOut" value="2000" inputmode="numeric"></div>
     </div>
     <div class="out has" id="costOut" style="margin-top:18px"></div>
-    <p class="dim" style="font-size:14px;margin-bottom:0">A subscription changes this arithmetic entirely &mdash; a $20 monthly plan absorbs a great deal of usage before per-token pricing becomes the cheaper route. The point of the estimator is to show which tier decisions are material and which are noise at your volume.</p>
+    <p class="dim" style="font-size:14px;margin-bottom:0">A subscription changes this arithmetic entirely &mdash; a flat monthly plan absorbs a great deal of usage before per-token pricing becomes the cheaper route. The point of the estimator is to show which tier decisions are material and which are noise at your volume.</p>
+    <div class="csrc">Rates: <b>Anthropic</b> pricing page <span class="conf h" data-src="src-pricing">H</span>; <b>OpenAI</b> API pricing <span class="conf m" data-src="src-openai-pricing">M</span>. Both from the August pull; re-check before relying on a figure.</div>
   </div>
 
   <div class="doit">
@@ -1520,7 +1531,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="panel tightpad" style="background:var(--warn-bg);border-color:#E0C6B4">
     <span class="plab" style="color:var(--warn)">Verification required before this slide is relied on</span>
-    <p style="font-size:15px;margin:0">Model tiers and their subscription availability changed four times between June and August 2026. Confirm which tiers your own plan currently reaches at <span class="mono">claude.com/pricing</span> before you build a workflow that depends on one. Benchmark rankings are recomputed continuously and the ordering above has already reversed once.</p>
+    <p style="font-size:15px;margin:0">Model tiers and their subscription availability change between cohorts. Confirm which tiers your own plan currently reaches at <span class="mono">claude.com/pricing</span> before you build a workflow that depends on one. Benchmark rankings are recomputed continuously and can reverse between one pull and the next.</p>
   </div>
 
   <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Estimate your own monthly cost, then find the tier where cost per finished task beats cost per token.</div></div>
@@ -1532,9 +1543,11 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h2>Persona, Task, Context, Format</h2>
   <p class="big">Google's prompting guide organises a prompt into four components. The framework is sound and worth adopting. The empirical literature also says that one of the four letters does far less work than the way it is usually taught implies, and knowing which one changes how you spend your effort.</p>
 
-  <p><span class="caseflag">Synthetic case</span> The worked prompt is a real advisory task on the Cole household: explaining the IDGT sale to Meg in language she can act on. Build it below. Each toggle adds one component. Watch what changes in the output, and&mdash;more importantly&mdash;watch what does not.</p>
+  <p><span class="caseflag">Synthetic case</span> The worked prompt is a real advisory task on the Cole household: explaining the IDGT sale, the sale to an intentionally defective grantor trust, to Meg in language she can act on. Build it below. Each toggle adds one component. Watch what changes in the output, and&mdash;more importantly&mdash;watch what does not.</p>
 
-  <div class="panel" data-task="t-s6" data-comp="work-along-gate">
+  <p>The eight checks the cold open scores fold into these four letters: the ask and the named format are Task and Format, the audience or role is Persona, and everything else the checks look for is Context. The four names and their order are Google's <span class="conf h" data-src="src-google-ptcf">H</span>.</p>
+
+  <div class="panel" data-task="t-s6" data-comp="builder-assembler">
     <div class="ctrls" style="margin:0 0 20px">
       <label class="tg" id="tgP"><input type="checkbox" id="cbP"><span class="track"><span class="knob"></span></span><span><span class="tl">Persona</span><span class="td">Who the model should write as</span></span></label>
       <label class="tg" id="tgT"><input type="checkbox" id="cbT"><span class="track"><span class="knob"></span></span><span><span class="tl">Task</span><span class="td">The verb and the object</span></span></label>
@@ -1560,7 +1573,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <h3>Where the effort should go instead</h3>
   <table>
-    <thead><tr><th>Component</th><th>What it controls</th><th>Effect on whether the answer is correct</th></tr></thead>
+    <thead><tr><th>Component</th><th>What it controls</th><th>Effect on whether the answer is correct, this course's ranking</th></tr></thead>
     <tbody>
       <tr><td><strong>Persona</strong></td><td>Register, vocabulary, assumed audience</td><td>No reliable effect on objective accuracy</td></tr>
       <tr><td><strong>Task</strong></td><td>Which operation gets performed</td><td>Large &mdash; a wrong verb produces a competent answer to a different question</td></tr>
@@ -1573,12 +1586,12 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="panel tightpad">
     <span class="plab">A related result on prompt length</span>
-    <p style="font-size:15.5px;margin:0"><!-- CLAIM weight=section resolve="Add a key for Anthropic's own post and rewire off src-case. Keep the lesson qualitative about which models: the post names Opus 5 and Fable 5 as examples, and 'its two most recent models' is a stronger claim than the source makes." candidate="Shihipar, T. (2026-07-24), The new rules of context engineering for Claude 5 generation models, claude.com blog. Reached through search only; the host was not fetched from this build environment." confidence=medium -->Anthropic reports removing more than 80 percent of Claude Code's system prompt for its two most recent models without a measurable loss on its coding evaluations. <b>[NEEDS SOURCE]</b><span class="conf m" data-src="src-case">M</span> Longer prompts are not better prompts. Specific prompts are better prompts, and specificity is usually shorter than the padding it replaces.</p>
+    <p style="font-size:15.5px;margin:0">Longer prompts are not better prompts. Specific prompts are better prompts, and specificity is usually shorter than the padding it replaces.</p>
   </div>
 
   <div class="doit">
     <span class="plab">Rebuild of the prompt &mdash; 5 minutes</span>
-    <p>Take the weakest of the three templates you brought today. Identify which of P, T, C, F it is missing. Add the missing components and run it. Keep both versions &mdash; you will need the before-and-after for &sect;08.</p>
+    <p>Take the weakest of the three templates you brought, or the weakest of the three supplied in section 04. Identify which of P, T, C, F it is missing. Add the missing components and run it. Keep both versions &mdash; you will need the before-and-after for the peer review before Session 3.</p>
   </div>
 
   <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Assemble one prompt with all four P.T.C.F elements and read the assembled text back.</div></div>
@@ -1590,23 +1603,46 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h2>Scoring Your Own Prompts Against P.T.C.F</h2>
   <div class="verify">
   <span class="vh">Requires instructor verification before it is taught as settled</span>
-  Every tax and legal characterisation in this session is posed as a question, not stated as a holding. Verify each against primary authority before answering it in class:
+  The &sect;07 triage key states four authorities as holdings so that citation failure can be taught; nothing else in this session is stated as a holding. Verify each against primary authority before answering it in class:
   <ul>
     <li><strong>IRC &sect; 671 and the grantor-trust rules</strong> as the authority behind the IDGT client explanation built in &sect;03 &mdash; sound as stated, and stated without its limits.</li>
-    <li><strong>Rev. Proc. 2017-34 and Rev. Proc. 2022-32</strong>, cited in the &sect;05 triage as exercise material only; confirm current portability relief before repeating either.</li>
-    <li><strong>IRC &sect;&sect; 1014, 2010, 691 and 7520</strong>, appearing across the triage and citation exercises. Confirm current thresholds and rates against the Code.</li>
+    <li><strong>Rev. Rul. 85-13 and Rev. Rul. 2004-64, Situations 1 to 3</strong>, as the &sect;07 key characterises them, including the conditions the key attaches to Situation 3 (no understanding with the trustee; inclusion still possible from a retained power over the trustee or from creditor-access state law). Confirm against 1985-1 C.B. 184 and 2004-27 I.R.B. before teaching either as settled.</li>
+    <li><strong>Estate of Woelbing and Estate of Davidson</strong>: the &sect;07 key describes each as a stipulated decision with no holding and states the docket dates, the instrument (self-cancelling installment notes in Davidson) and the settlement figures. Confirm the docket facts before repeating them.</li>
+    <li><strong>IRC &sect;&sect; 2036(a)(1), 2036(b), 2038, 2702 and 7520</strong> as the &sect;07 key and the case structure invoke them, including the distinction between corporate stock and LLC units that the &sect;07 live run turns on. Confirm current text against the Code.</li>
+    <li><strong>Portability</strong>: the &sect;05 triage item on electing portability names no authority. Confirm current relief before answering it in class.</li>
     <li><strong>The combined discount</strong> the memorandum asserts for lack of control and lack of marketability. Nothing in this session establishes that it is defensible, and nothing in the case file does either: no appraiser has been engaged, no restricted-stock or pre-IPO study is on file, and the memorandum allocates nothing between the two components.</li>
   </ul>
-  <em>Kessler v. Commissioner</em> is a deliberately fabricated citation used as exercise material in &sect;05, labelled on the page and in the footer.
+  <em>Kessler v. Commissioner</em> is a deliberately fabricated citation used as exercise material in &sect;07, labelled on the page and in the footer.
 </div>
 
-  <p class="big">You wrote three prompt templates before this session. You had not been taught a prompting framework when you wrote them. That was deliberate.</p>
+  <p class="big">You wrote three prompt templates before this session, or you will use the three supplied below. When you wrote yours, you had heard eight checks read aloud and had not seen them rendered, scored or named as a framework. That gap was deliberate.</p>
 
   <p>The sequencing exists so that this comparison is available to you. A framework taught before an attempt is a set of rules you comply with. A framework taught after an attempt is a diagnosis of something you already produced, and the gap between the two versions is yours rather than mine. Wrong first attempts followed by correction outperform being told the right answer first, which is the same finding that governs every prequestion in this file.</p>
 
-  <p>Score each of your three prompts element by element. Then rewrite the weakest one in the editor below. <strong>The rewrite, not the original, is what carries forward</strong> &mdash; into the &sect;08 audit, into the peer review, and into your Part 1 template library.</p>
+  <p>Score each of your three prompts element by element. Then rewrite the weakest one in the editor below. <strong>The rewrite, not the original, is what carries forward</strong> &mdash; into the peer review a partner runs before Session 3, and into your Part 1 template library.</p>
 
-  <div class="panel" data-task="t-s6b" data-comp="multi-column-sorter">
+  <div class="panel tightpad" id="fixtures" style="margin-bottom:18px">
+    <span class="plab">No three templates yet, or nothing to run them on? Use these three</span>
+    <p style="font-size:14.5px;margin:0 0 10px"><span class="caseflag">Synthetic case</span> <span class="sim">Exercise material</span> Three inputs from the Cole file and three starter prompts written to be weak. Each starter is missing two of the four P.T.C.F elements on purpose, so the scorer below has something to score; none is a model to copy. Pick a fixture; the starter loads into the box for the prompt number you are on.</p>
+    <div class="row" style="margin-bottom:10px">
+      <button class="btn sel mini act" data-fx="0">F1 &middot; Client email</button>
+      <button class="btn sel mini" data-fx="1">F2 &middot; Meeting notes</button>
+      <button class="btn sel mini" data-fx="2">F3 &middot; Plan summary</button>
+      <span class="mono dim" style="font-size:12px" id="fxWhich"></span>
+    </div>
+    <span class="plab" id="fxInLabel">The input</span>
+    <div class="out has" id="fxIn"></div>
+    <span class="plab" style="margin-top:12px">The starter prompt, deliberately weak</span>
+    <div class="out has" id="fxPrompt"></div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn mini" id="fxUse">Load it as the prompt to score</button>
+      <button class="btn ghost mini" id="fxCopyIn">Copy the input</button>
+      <span class="mono dim" style="font-size:12px">Then score it below, rewrite it in the editor, and run both on the same input.</span>
+    </div>
+    <p style="font-size:14px;margin:12px 0 0"><b>If you do not run a workflow of your own, five steps:</b> pick a fixture; write or load the prompt; run it in your tool on the fixture; score the output against the facts the fixture contains, all of which are on the Case facts panel; write down what the model assumed that the fixture never said.</p>
+  </div>
+
+  <div class="panel" data-task="t-s6b" data-comp="builder-assembler">
     <div class="row" style="margin-bottom:18px">
       <button class="btn sel mini act" data-hw="0">Prompt 1</button>
       <button class="btn sel mini" data-hw="1">Prompt 2</button>
@@ -1640,7 +1676,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="doit">
     <span class="plab">Group report &mdash; 2 minutes</span>
     <p>One number and one sentence: which element you scored lowest across all three prompts, and what you had assumed the model already knew.</p>
-    <p>Your discernment statement predicted what each prompt would return. Compare that prediction against what the original actually returned. A prediction that was accurate about a bad output is a different skill from a prompt that produced a good one, and both are worth having.</p>
   </div>
 
   <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Score all three prompts element by element, then rewrite the weakest in the editor.</div></div>
@@ -1660,11 +1695,11 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p class="dim" style="font-size:15.5px">Several of these are designed to be mis-sorted. Read the whole prompt before choosing.</p>
 
-  <div class="panel" id="quiz"></div>
+  <div class="panel" id="quiz" data-task="t-s7" data-comp="commit-first-mcq"></div>
 
   <div class="doit">
     <span class="plab">Discussion &mdash; 3 minutes</span>
-    <p>Item 7 is the one that splits the room every time. Argue it out before you look at the feedback.</p>
+    <p>Item 7 is the one built to split the room. Argue it out before you look at the feedback.</p>
   </div>
 
   <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Triage every prompt in the set and read the feedback on the ones you got wrong.</div></div>
@@ -1686,7 +1721,7 @@ When you have enough to proceed, first list what you still do not know and how y
 The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div>
 
   <h3>The Cole Buy-Sell Agreement</h3>
-  <p><span class="caseflag">Synthetic case</span> The CPC buy-sell agreement was executed in 2014 and never updated. Its formula produces a value far below the range the company is now indicated at, and the file holds three different values for the same company, each from a different date, a different preparer and a different purpose. You want a summary of what it does and where it breaks.</p>
+  <p><span class="caseflag">Synthetic case</span> The buy-sell agreement CPC inherited was executed in 2014 and never updated. Its formula produces a value far below the range the company is now indicated at, and the file holds three different values for the same company, each from a different date, a different preparer and a different purpose. You want a summary of what it does and where it breaks.</p>
   <p>Send the wrapper above with this task, and let the model interview you before it writes anything: <span class="mono">Summarise the 2014 buy-sell agreement for Cole Precision Components and identify where it conflicts with the current planning.</span></p>
   <p>Tick every question the model actually asked you. The instructor reveals the full list afterwards. What matters is not your score but which questions you would not have thought to answer unprompted.</p>
 
@@ -1746,7 +1781,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
   <div class="chart">
     <div class="ctitle">Advisor adoption of AI tools against reliance on AI-generated recommendations</div>
-    <div class="csub">The profession has already drawn a line, whether or not any individual firm has written it down. Adoption of drafting and capture tools is over half. Reliance on the model's recommendation is close to zero.</div>
+    <div class="csub">The profession has already drawn a line, whether or not any individual firm has written it down. Adoption of AI search and drafting is over half, and notetaking tools are close behind. Reliance on the model's recommendation is close to zero.</div>
     <svg viewBox="0 0 700 250" role="img" aria-label="Bar chart of advisor AI adoption versus reliance"><g id="adoptChart"></g></svg>
     <div class="csrc">Sources: T3 / Inside Information Software Survey 2026, n=2,906 advisors, 95% at fee-only RIA or dually registered firms &mdash; 52.2% using AI search and generative language, 42.9% using AI notetaking <span class="conf h" data-src="src-t3-survey">H</span>. Reliance figure reported via Advisor360 and Kitces Research through a secondary aggregator; treat as directional <span class="conf m" data-src="src-kitces-productivity">M</span>. Kitces Research on Advisor Productivity: approximately one hour of note, summary and follow-up work per two-hour client meeting <span class="conf h" data-src="src-kitces-productivity">H</span>.</div>
   </div>
@@ -1771,7 +1806,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <div class="ctitle">Measured hallucination rates on verifiable legal research questions</div>
     <div class="csub">Retrieval grounding reduces the rate substantially. It does not approach zero, and the vendors' marketing claims of hallucination-free citation were found to be overstated.</div>
     <svg viewBox="0 0 700 280" role="img" aria-label="Bar chart of hallucination rates by tool type"><g id="hallChart"></g></svg>
-    <div class="csrc">Sources: Dahl, M., Magesh, V., Suzgun, M., &amp; Ho, D. E. (2024). <em>Large Legal Fictions</em> &mdash; general-purpose models, &gt;800,000 verifiable legal questions, 58&ndash;88% hallucination; GPT-4 58%, GPT-3.5 69%, Llama 2 88% <span class="conf h" data-src="src-dahl-fictions">H</span>. Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools</em>, Journal of Empirical Legal Studies &mdash; 202 preregistered queries, Lexis+ AI ~17%, Westlaw AI-Assisted Research ~33% <span class="conf h" data-src="src-dahl-fictions">H</span>. Figures reflect model and tool versions available in 2023&ndash;2024 <span class="conf h" data-src="src-magesh">H</span>.</div>
+    <div class="csrc">Sources: Dahl, M., Magesh, V., Suzgun, M., &amp; Ho, D. E. (2024). <em>Large Legal Fictions</em> &mdash; general-purpose models, &gt;800,000 verifiable legal questions, 58&ndash;88% hallucination; GPT-4 58%, GPT-3.5 69%, Llama 2 88% <span class="conf h" data-src="src-dahl-fictions">H</span>. Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools</em>, Journal of Empirical Legal Studies &mdash; over 200 preregistered queries, Lexis+ AI ~17%, Westlaw AI-Assisted Research ~33% <span class="conf h" data-src="src-magesh">H</span>. Figures reflect model and tool versions available in 2023&ndash;2024 <span class="conf h" data-src="src-magesh">H</span>.</div>
   </div>
 
   <div class="chart">
@@ -1793,7 +1828,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <div class="panel">
     <span class="plab">Citation triage &mdash; classify each</span>
     <p style="margin-top:0;font-size:15.5px">Six items an AI assistant returned when asked what authority supports the Cole IDGT sale. Classify each. All six are exercise material. Do not carry any classification into practice without checking the authority yourself, which is the entire point.</p>
-    <div id="triage" data-task="t-s7" data-comp="multi-column-sorter"></div>
+    <div id="triage" data-task="t-s10c" data-comp="multi-column-sorter"></div>
   </div>
 
   <h3>The verification order</h3>
@@ -1809,7 +1844,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
   <div class="doit">
     <span class="plab">Live run &mdash; 5 minutes</span>
-    <p>Ask your AI tool: <span class="mono">What authority supports an installment sale of non-voting stock to an intentionally defective grantor trust, and what are the principal risks?</span> Then run all four checks on every authority it returns, plus a fifth: for any case, confirm whether it produced an opinion or a stipulated decision. Time yourself.</p>
+    <p>Ask your AI tool: <span class="mono">What authority supports an installment sale of non-voting LLC units to an intentionally defective grantor trust, and what are the principal risks?</span> Then run all four checks on every authority it returns, plus a fifth: for any case, confirm whether it produced an opinion or a stipulated decision. Time yourself.</p>
     <p>That elapsed time is the real cost of the workflow. It belongs in your final project's time comparison, and leaving it out is the most common way these projects overstate their savings.</p>
   </div>
 
@@ -1820,7 +1855,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 <section class="slide" id="s11" data-nav="Template audit">
   <div class="eyebrow"><span>08 &middot; Workshop</span><span class="mins">5 min</span></div>
   <h2>Template Audit and Structured Peer Review</h2>
-  <p class="big">Section 6b rebuilt one of your prompts. This section tests whether it is a <em>template</em> — something a second person can run — rather than a prompt that happens to work in your hands.</p>
+  <p class="big">Section 04, the workshop, rebuilt one of your prompts. This section tests whether it is a <em>template</em> — something a second person can run — rather than a prompt that happens to work in your hands.</p>
 
   <p><span class="caseflag">Synthetic case</span> The audit target is a client-explanation template for the Cole IDGT structure: a reusable instrument that takes any closely held business owner facing a sale to a trust and produces an explanation they can act on. Score the version you would hand to a colleague, not the one in your head.</p>
 
@@ -1838,7 +1873,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   </div>
 
   <h3>Part two &mdash; structured peer review</h3>
-  <p>Swap with the person you are paired with. Run <em>their</em> template on the Cole facts, without asking them anything. This is the Session 5 exercise in miniature and it is the fastest way to discover that a template you find obvious is unusable by anyone else.</p>
+  <p>This part runs between sessions: the instructor pairs you after this session, you swap templates, and you run <em>their</em> template on the Cole facts without asking them anything, before Session 3. It is the Session 5 exercise in miniature and the fastest way to discover that a template you find obvious is unusable by anyone else.</p>
 
   <div class="panel">
     <span class="plab">Partner template score &mdash; 0 to 3 on each</span>
@@ -1853,7 +1888,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
 
 
-  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Self-audit one template against the rubric, then swap and run a partner’s on your synthetic case.</div></div>
+  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Self-audit one template against the rubric now; the partner swap runs before Session 3.</div></div>
 
 </section>
 
@@ -1861,7 +1896,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B5 &middot; Specification Cost Against Task Cost</b><span>18 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
   <div class="eyebrow"><span>Appendix B5 &middot; Discussion</span><span class="mins">18 min</span></div>
   <h2>Specification Cost Against Task Cost</h2>
-  <p class="big">The question, stated once and not softened: if a prompt has to be specified as carefully as section 6b required to be reliable, has the tool saved time, or has it moved the work from doing the task to specifying the task?</p>
+  <p class="big">The question, stated once and not softened: if a prompt has to be specified as carefully as section 04, the workshop, required to be reliable, has the tool saved time, or has it moved the work from doing the task to specifying the task?</p>
 
   <p>This is not a rhetorical question with a preferred answer. Both positions are defensible and the room will divide. Commit before anyone speaks.</p>
 
@@ -1875,7 +1910,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <div class="out" id="dVote1Out"></div>
   </div>
 
-  <h3>Phase two &mdash; defence, 8 minutes</h3>
+  <h3>Phase two &mdash; defence, 7 minutes</h3>
   <p>Two speakers per side, alternating, ninety seconds each. <strong>The minority side speaks first</strong> &mdash; they expected to have to defend and are the more prepared for it. Nobody rebuts during this phase.</p>
   <div class="panel tightpad">
     <span class="plab">Speaking timer</span>
@@ -1891,8 +1926,8 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <p>One fact neither side has raised. Nobody who has already spoken speaks again.</p>
   <div class="cards">
     <div class="card gold"><span class="num">Complication</span><h4>The verification time is not optional and it is not amortised</h4><p>&sect;07 timed it on one transaction. Every run of the template on a new client produces new citations, and every one of them needs the same four checks. The template amortises the specification. It does not amortise the verification.</p></div>
-    <div class="card"><span class="num">Already on screen</span><h4>&sect;09 arithmetic</h4><p>A workflow that saves 20 minutes of drafting and adds 12 minutes of citation checking has saved 8. Whoever entered numbers in the baseline widget should read theirs aloud now.</p></div>
-    <div class="card"><span class="num">Already on screen</span><h4>Appendix B4 adoption gap</h4><p>52.2% of advisors use these tools. Roughly 3% rely on the recommendation. The profession is already behaving as though specification and verification are the job.</p></div>
+    <div class="card"><span class="num">Already on screen</span><h4>&sect;09 arithmetic</h4><p>A workflow that saves 20 minutes of drafting and adds 12 minutes of citation checking has saved 8. Whoever recorded a baseline at the start of the session should read theirs aloud now.</p></div>
+    <div class="card"><span class="num">Already on screen</span><h4>Appendix B4 adoption gap</h4><p>52.2% of advisors use these tools <span class="conf h" data-src="src-t3-survey">H</span>. Roughly 3% rely on the recommendation <span class="conf m" data-src="src-kitces-productivity">M</span>. The profession is already behaving as though specification and verification are the job.</p></div>
   </div>
 
   <h3>Phase four &mdash; re-vote, 3 minutes</h3>
@@ -1904,7 +1939,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     </div>
     <div class="out" id="dVote2Out"></div>
     <div class="row" style="margin:6px 0 16px">
-      <span class="mono dim" style="font-size:11.5px">Instructor: room percentage voting &ldquo;time was saved&rdquo;</span>
+      <span class="mono dim" style="font-size:11.5px">Room percentage voting &ldquo;time was saved&rdquo;, from the poll</span>
       <input type="text" id="rm1" value="" placeholder="vote 1 %" inputmode="numeric" style="width:96px">
       <input type="text" id="rm2" value="" placeholder="vote 2 %" inputmode="numeric" style="width:96px">
       <button class="btn ghost mini" id="rmGo">Render both distributions</button>
@@ -1954,7 +1989,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <p>Seven elements. Tick what you have planned for; the ones left unticked are what you are missing.</p>
 
   <div class="panel">
-    <div id="checklist" data-task="t-s10" data-comp="commit-first-mcq"></div>
+    <div id="checklist" data-task="t-s12b" data-comp="work-along-gate"></div>
     <div class="out" id="checkOut" style="margin-top:18px"></div>
   </div>
 
@@ -1974,7 +2009,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <!-- Recurring question, session 2 angle. See docs/spine-brief.md. -->
   <p>The Cole document set is the corpus. The question that follows you into it is the one &sect;07 left open: which document in the folder actually supports the discount the structure claims. The 2023 appraisal concluded a value for the whole company and contains no discount study at all, so the honest answer the folder gives is <em>none of them</em>. Finding that out is the exercise. It is also the first half of the recurring question: before you can advise Meg how much of the note to call, you have to know which document in the folder actually governs the number the whole structure rests on.</p>
 
-  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Record your baseline before you leave. It is the one thing tonight you cannot reconstruct later.</div></div>
+  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Record your baseline before you leave. It is the one thing in this session you cannot reconstruct later.</div></div>
 
   <div class="talk"><span class="th">Closing question &middot; one to three answers, out loud, then we go</span>Your rewritten template just produced a clean, well-sourced answer on the Cole discount. Name the one check you would still run before any of it reaches Meg, and say why the answer looking right is not a reason to skip it.</div>
 
@@ -1982,7 +2017,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
 <footer>
   <div class="wrap" style="padding:0">
-  <h3 style="margin:26px 0 4px;font-size:17px">Instructor minute budget</h3>
+  <h3 style="margin:26px 0 4px;font-size:17px">Minutes by section</h3>
   <table class="tbudget" data-timing>
     <thead><tr><th>Section</th><th>Title</th><th>Min</th></tr></thead>
 <!-- APXBUDGET:BEGIN generated-by=scripts/build-appendix.mjs -->
@@ -2013,7 +2048,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <h4 style="margin-bottom:18px">Sources</h4>
     <ol>
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 a351929adf64c4e6255c1f86ba49a007ee53077644d332f17a7132c470f88fa5 -->
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 c5ee7d198f34854ec0d9c316888bca4839fffd148d245cd467fee0dbacb7f807 -->
       <li id="src-pricing">Anthropic. <em>Pricing</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com/docs/en/about-claude/pricing</a> Retrieved 2026, August. Retrieval dates differ across lessons; see DATA-PULL.md. Used for: the published rates behind the blended token price. <span class="conf h" data-src="src-pricing">H</span></li>
       <li id="src-anthropic-fluency" data-nochip="background">Anthropic. (2025). <em>AI fluency: Frameworks and foundations</em>. Anthropic. Used for: assigned reading; no page claim rests on it.</li>
       <li id="src-aa">Artificial Analysis. <em>Artificial Analysis Intelligence Index and cost-per-task figures</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a> Retrieved 2026, August. Retrieval dates differ across lessons; see DATA-PULL.md. Used for: index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5. <span class="conf m" data-src="src-aa">M</span></li>
@@ -2026,8 +2061,9 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
       <li id="src-laplace" data-nochip="background">Laplace, P. S. (1902). <em>A philosophical essay on probabilities</em>. Truscott &amp; Emory, Trans.; original work published 1814. Chapter II, "Concerning Probability," pp. 3-8. Used for: assigned reading behind Appendix B2; no measured claim rests on it.</li>
       <li id="src-magesh">Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-free? Assessing the reliability of leading AI legal research tools</em>. Journal of Empirical Legal Studies 22(2), 216. <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">reglab.stanford.edu</a> Used for: the measured hallucination rates for legal research tools. <span class="conf h" data-src="src-magesh">H</span></li>
       <li id="src-morningstar" data-nochip="background">Morningstar. (2025, October 15). <em>AI for advisors: Enhancing client conversations</em>. Morningstar. Used for: assigned reading; no page claim rests on it.</li>
-      <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: every worked example, exercise input and discussion prompt. Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
-      <li id="src-kessler" data-nochip="fabricated"><b>Does not exist.</b> <em>Kessler v. Commissioner, 152 T.C. 88 (2019)</em>. Used for: exercise material in the §05 citation triage, labelled as fabricated on the page.</li>
+      <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: every client example, exercise input and discussion prompt, including the three §04 fixture inputs and their three deliberately weak starter prompts, which are exercise material. Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
+      <li id="src-kessler" data-nochip="fabricated"><b>Does not exist.</b> <em>Kessler v. Commissioner, 152 T.C. 88 (2019)</em>. Used for: exercise material in the §07 citation triage, labelled as fabricated on the page.</li>
+      <li id="src-openai-pricing">OpenAI. <em>API pricing</em>. OpenAI Platform. <a href="https://openai.com/api/pricing/">openai.com/api/pricing</a> Used for: the OpenAI rates behind the blended token price and the cost estimator. <span class="conf m" data-src="src-openai-pricing">M</span></li>
       <li id="src-t3-survey">T3 / Inside Information. (2026, March). <em>Software Survey 2026</em>. as summarised in Kitces.com Weekend Reading, March 2026. Used for: the adoption shares in the Appendix B4 adoption-gap discussion. <span class="conf h" data-src="src-t3-survey">H</span></li>
       <li id="src-irc" data-nochip="authority">United States Congress. <em>Internal Revenue Code §§ 671, 675, 2036, 2702, 7520</em>. Statutory text. Used for: named descriptively alongside the case structure; evidences no page claim.</li>
       <li id="src-woelbing" data-nochip="authority">United States Tax Court. (2013, December 26). <em>Estate of Donald Woelbing v. Commissioner, T.C. Docket No. 30261-13, and Estate of Marion Woelbing v. Commissioner, T.C. Docket No. 30260-13</em>. Tax Court docket. Used for: cited descriptively for its procedural posture; evidences no page claim.</li>
@@ -2039,7 +2075,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="conf h">H</span> directly verified against the cited source. <span class="conf m">M</span> reported by a secondary source or derived from a stated relationship. <span class="conf l">L</span> illustrative construction, not a published figure.</p>
     <p style="font-size:13.5px">Nothing in this file is tax or legal advice. Every characterisation of an authority is a teaching illustration built on a synthetic case, and several are deliberately wrong and labelled as such. Verify against the Code, the Bulletin and the docket before any of it informs a recommendation. That instruction is the course.</p>
     <p style="font-size:13.5px">BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors. UC Berkeley Extension. Session 2.</p>
-  <p class="stamp">Last updated 2026-08-20. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
+  <p class="stamp">Last updated 2026-09-12. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
 
   </div>
 </footer>
@@ -2111,7 +2147,7 @@ function drawTokens(){
   $('strm').innerHTML='<span class="dim">'+stem+'</span> '+path.join(' ')+(path.length<MAXS?'<span class="cursor">&nbsp;</span>':'');
   $('stepCount').textContent=path.length+' of '+MAXS+' tokens placed';
   var host=$('pbars');host.innerHTML='';
-  if(path.length>=MAXS){host.innerHTML='<div class="out has">Stop token reached. Every word above was chosen because it was a probable continuation. At no point did the process consult anything about whether the sentence is true.</div>';return}
+  if(path.length>=MAXS){host.innerHTML='<div class="out has">Step limit reached at eight tokens. Every word above was chosen because it was a probable continuation. At no point did the process consult anything about whether the sentence is true.</div>';return}
   var cs=cands(lastTok());
   cs.forEach(function(t,ix){
     var b=document.createElement('button');b.className='pbar';
@@ -2150,7 +2186,7 @@ drawTokens();
     g.appendChild(el('text',{x:x+bw*.32,y:y-7,'text-anchor':'middle',class:'dlab b'},(p*100).toFixed(1)));
     g.appendChild(el('text',{x:x+bw*.32,y:T+ph+18,'text-anchor':'middle',class:'alab'},ix+1));
   });
-  g.appendChild(el('text',{x:L+pw/2,y:H-6,'text-anchor':'middle',class:'alab'},'CANDIDATE RANK  ·  TOP TEN OF ROUGHLY 50,000 TOKENS'));
+  g.appendChild(el('text',{x:L+pw/2,y:H-6,'text-anchor':'middle',class:'alab'},'CANDIDATE RANK  ·  TOP TEN OF THE ROUGHLY 50,000 TOKENS IN THE MODELS WOLFRAM DESCRIBES'));
 })();
 
 /* ================= 2 · LAPLACE ================= */
@@ -2162,7 +2198,7 @@ function lap(){
   else{
     if(w)h+='THE QUESTION\n  Does this decedent\u2019s residence permit a full basis\n  adjustment on the jointly held brokerage account?\n\n  Answer set: { yes, no }\n  Cardinality: 1. There is one correct answer.\n  It does not change when you ask again.\n';
     if(w&&m)h+='\n';
-    if(m)h+='THE MODEL\u2019S OUTPUT\n  \u00b7 \u201cYes, under \u00a71014(b)(6)\u201d          p \u2248 0.52\n  \u00b7 \u201cOnly the decedent\u2019s half\u201d        p \u2248 0.31\n  \u00b7 \u201cDepends on titling; see \u00a72040\u201d  p \u2248 0.11\n  \u00b7 four further continuations       p \u2248 0.06\n\n  Cardinality: many. The distribution is over\n  plausible sentences, not over states of the world.\n';
+    if(m)h+='THE MODEL\u2019S OUTPUT  (illustrative answer set, constructed for this page)\n  \u00b7 \u201cYes, under \u00a71014(b)(6)\u201d          p \u2248 0.52\n  \u00b7 \u201cOnly the decedent\u2019s half\u201d        p \u2248 0.31\n  \u00b7 \u201cDepends on titling; see \u00a72040\u201d  p \u2248 0.11\n  \u00b7 four further continuations       p \u2248 0.06\n\n  Cardinality: many. The distribution is over\n  plausible sentences, not over states of the world.\n';
     if(w&&m)h+='\nWHERE THEY MEET\n  Nowhere. The 0.52 is not a 52% chance the answer\n  is yes. It is a statement about the training corpus.\n  Only opening \u00a71014 moves you from one panel to the other.';
   }
   $('lapOut').textContent=h;$('lapOut').classList.toggle('has',w||m);
@@ -2183,7 +2219,7 @@ function chain(T,n){
 }
 function drawT(){
   var T=parseInt($('temp').value,10)/100,w=reweight(T),cs=cands("to"),host=$('tbars');
-  $('tempReadout').textContent='T = '+T.toFixed(2)+(T===0?'  \u00b7 argmax, no sampling':T===0.8?'  \u00b7 Wolfram\u2019s reported essay setting':'');
+  $('tempReadout').textContent='T = '+T.toFixed(2)+(T===0?'  \u00b7 greedy: the top bar every time in this simulation':T===0.8?'  \u00b7 Wolfram\u2019s reported essay setting':'');
   host.innerHTML='';
   cs.forEach(function(t,ix){
     var d=document.createElement('div');d.className='pbar';d.style.cursor='default';
@@ -2203,7 +2239,7 @@ function runFive(){
     d.innerHTML='<span class="rn">run '+(i+1)+'</span><span>'+o+'</span>';host.appendChild(d);
   });
   var note=document.createElement('div');note.className='mono dim';note.style.cssText='font-size:12px;margin-top:6px';
-  note.textContent=uniq+' distinct output'+(uniq===1?'':'s')+' from 5 identical prompts.'+(uniq===1?'  Deterministic \u2014 and, as Wolfram notes, the text goes flat and repetitive.':'  Each is a separate draw from the same distribution.');
+  note.textContent=uniq+' distinct output'+(uniq===1?'':'s')+' from 5 identical prompts.'+(uniq===1?'  Greedy in this simulation; a real API at zero still varies a little. As Wolfram notes, the text goes flat and repetitive.':'  Each is a separate draw from the same distribution.');
   host.appendChild(note);
 }
 $('temp').oninput=drawT;$('reroll').onclick=runFive;drawT();runFive();
@@ -2227,6 +2263,7 @@ function drawParen(){
         $('parenVerdict').innerHTML=popen===0?'<strong>Balanced.</strong> The predictor happened to be right. It was right because you tracked the count, not because it did.':'<strong>Unbalanced.</strong> You ended with '+popen+' open parenthes'+(popen===1?'is':'es')+'. The predictor offered END at 15% anyway.';
         $('parenVerdict').classList.add('has');return;
       }
+      if(!o.ok){$('parenVerdict').innerHTML='<strong>Illegal.</strong> The predictor offered a closing parenthesis at 15% with nothing open. Nothing is appended and the count stays at '+popen+'. That 15% is the failure this section is about.';$('parenVerdict').classList.add('has');return}
       pseq.push(o.t);popen+=(o.t==='('?1:-1);drawParen();
     };
     host.appendChild(b);
@@ -2296,7 +2333,7 @@ function drawFrontier(){
   });
   $('frontNote').textContent='Hollow points are dominated \u2014 another model is both smarter and cheaper.';
 }
-$('frontToggle').onclick=function(){showFront=!showFront;this.classList.toggle('act',showFront);this.textContent=showFront?'Show efficient frontier':'Frontier hidden';drawFrontier()};
+$('frontToggle').onclick=function(){showFront=!showFront;this.classList.toggle('act',showFront);this.textContent=showFront?'Hide efficient frontier':'Show efficient frontier';drawFrontier()};
 drawFrontier();
 
 /* slopegraph */
@@ -2353,7 +2390,7 @@ function ptcf(){
   else{
     o+=s.P?'[Register: measured, professional, second person, no jargon]\n':'[Register: unspecified \u2014 defaults to generic explanatory prose]\n';
     o+=s.C?'[Facts: bounded to the attachment; missing figures will be flagged, not invented]\n':'[Facts: unbounded \u2014 the model will supply plausible figures from nothing]\n';
-    o+=s.F?'[Shape: \u2264150 words, 3 paragraphs, 1 closing question \u2014 all checkable at a glance]\n':'[Shape: unspecified \u2014 expect 400 words, headers, and a bulleted summary]\n';
+    o+=s.F?'[Shape: \u2264200 words, 4 paragraphs, 1 closing sentence \u2014 all checkable at a glance]\n':'[Shape: unspecified \u2014 expect 400 words, headers, and a bulleted summary]\n';
     o+='\nDraft returned. ';
     o+=(s.C&&s.F)?'You can verify this against the attachment in under a minute.':(s.C?'Facts are bounded but the output shape is not, so checking it is a reading exercise.':'Nothing here is checkable without redoing the analysis yourself.');
   }
@@ -2389,9 +2426,7 @@ function ptcf(){
   rows.forEach(function(r,i){
     var y=136+i*34;
     g.appendChild(el('text',{x:14,y:y+4,class:'dlab','font-size':'12.5'},r[0]));
-    g.appendChild(el('rect',{x:400,y:y-11,width:200,height:16,rx:4,fill:'var(--off-bg)'}));
-    g.appendChild(el('rect',{x:400,y:y-11,width:200*r[3],height:16,rx:4,fill:r[2]}));
-    g.appendChild(el('text',{x:610,y:y+4,class:'alab',fill:r[2]},r[1].toUpperCase()));
+    g.appendChild(el('text',{x:400,y:y+4,class:'alab',fill:r[2]},r[1].toUpperCase()));
   });
   g.appendChild(el('text',{x:14,y:224,class:'alab'},'THE USABLE LEVER IS THE ONE YOU CANNOT OPERATE: YOU ONLY KNOW THE BEST ROLE AFTER YOU KNOW THE ANSWER.'));
 })();
@@ -2497,7 +2532,7 @@ var STEPS=[
  {n:3,t:'Analysing the current course of action and potential alternatives',k:'draft',
   why:'High volume, structured, and checkable against a source. This is where the measurable time recovery lives and where a verification step pays for itself.'},
  {n:4,t:'Developing the financial planning recommendation(s)',k:'human',
-  why:'This is the judgment your credential, your registration and your liability attach to. Roughly 3% of advisors report relying on AI-generated recommendations, and that figure is the profession\u2019s answer, not an adoption lag.'},
+  why:'This is the judgment your credential, your registration and your liability attach to. Roughly 3% of advisors report relying on AI-generated recommendations <span class="conf m" data-src="src-kitces-productivity">M</span>, and that figure is the profession\u2019s answer, not an adoption lag.'},
  {n:5,t:'Presenting the financial planning recommendation(s)',k:'assist',
   why:'Drafting the explanation, the analogy and the one-page summary: yes. The conversation in which a client absorbs bad news: no.'},
  {n:6,t:'Implementing the financial planning recommendation(s)',k:'assist',
@@ -2549,7 +2584,6 @@ var BUCK=[{k:'draft',t:'AI drafts, planner verifies'},{k:'assist',t:'AI assists 
   var rows=[
    {t:'Using AI search and generative language',v:52.2,c:'var(--plot)'},
    {t:'Using AI notetaking tools',v:42.9,c:'var(--plot)'},
-   {t:'Prior-year figure for generative language use',v:41.8,c:'var(--off)'},
    {t:'Relying on AI-generated recommendations',v:3,c:'var(--plot2)'}
   ];
   rows.forEach(function(r,i){
@@ -2612,13 +2646,13 @@ var CITES=[
  {c:'Rev. Rul. 2004-64, 2004-2 C.B. 7 \u2014 cited for the proposition that Meg\u2019s payment of the income tax on the trust\u2019s income is not an additional gift to her children.',
   a:'sound',w:'Real, current, and correctly characterised. Situation 1 of the ruling holds that the payment is not a gift because the grantor is discharging her own liability, imposed by \u00a7671. This is the authority behind the explanation you built in &sect;03. It is sound as stated \u2014 and it is stated without its condition, which is the next item.'},
  {c:'Rev. Rul. 2004-64 \u2014 cited in support of adding a clause to the draft trust that requires the trustee to reimburse Meg for the income tax she pays, on the basis that the ruling blesses reimbursement.',
-  a:'mis',w:'Real citation, and it holds close to the opposite. Situation 2 of the same ruling holds that where the governing instrument requires reimbursement, the grantor has retained the right to have trust property expended in discharge of her legal obligation, and the full value of the trust is included in her gross estate under \u00a72036(a)(1). Only a discretionary reimbursement power, held by a trustee who is not related or subordinate, avoids that result \u2014 Situation 3. Same document, adjacent paragraphs, opposite outcome. This is what misgrounding looks like when it is expensive.'},
+  a:'mis',w:'Real citation, and it holds close to the opposite. Situation 2 of the same ruling holds that where the governing instrument requires reimbursement, the grantor has retained the right to have trust property expended in discharge of her legal obligation, and the full value of the trust is included in her gross estate under \u00a72036(a)(1). Situation 3 is the discretionary case: a trustee\u2019s discretionary power to reimburse does not by itself cause inclusion, on the condition that there is no understanding, express or implied, between grantor and trustee about how it will be exercised, and inclusion can still follow from other facts, such as a retained power to remove the trustee or state law that exposes the trust to the grantor\u2019s creditors. Same document, adjacent paragraphs, opposite outcome. This is what misgrounding looks like when it is expensive.'},
  {c:'Estate of Donald Woelbing v. Commissioner, T.C. Docket No. 30261-13 \u2014 cited as the Tax Court having upheld an installment sale of non-voting stock to a grantor trust using a defined value clause, with beneficiary guarantees supplying economic substance.',
-  a:'nd',w:'The docket is real, the parties are real, and the Tax Court upheld nothing. The IRS attacked the 2006 sale of Carma Laboratories stock under \u00a72702 and \u00a7\u00a72036/2038 and asserted penalties; the parties settled, and stipulated decisions were entered on 25 and 28 March 2016 finding no additional tax due. A stipulated decision is the parties\u2019 agreement recorded by the court, not the court\u2019s judgment. It carries no precedential weight. Anyone citing Woelbing as a holding is citing a settlement.'},
+  a:'nd',w:'The docket is real, the parties are real, and the Tax Court upheld nothing. The IRS attacked the 2006 sale of Carma Laboratories stock under \u00a72702 and \u00a7\u00a72036/2038 and asserted penalties; the parties settled, and stipulated decisions were entered in both dockets: Donald\u2019s, 30261-13, on 25 March 2016, no additional gift or estate tax due, and Marion\u2019s, 30260-13, on 28 March 2016, no additional gift tax due. A stipulated decision is the parties\u2019 agreement recorded by the court, not the court\u2019s judgment. It carries no precedential weight. Anyone citing Woelbing as a holding is citing a settlement.'},
  {c:'Estate of Davidson v. Commissioner, T.C. Docket No. 13748-13 \u2014 cited as the Tax Court having approved the use of the \u00a77520 mortality tables to value a note where the seller died shortly after the sale.',
-  a:'nd',w:'Same failure, higher stakes. The IRS originally asserted deficiencies of roughly $2.8 billion; a stipulated decision was entered on 6 July 2015 reflecting a settlement of roughly $388 million. There is no opinion. The valuation question the planning community was waiting on was never answered, and the settlement terms do not disclose how it was resolved. Note the structural resemblance to Meg\u2019s facts: an interest-only note payable on demand, drafted while a liquidity event was in view.'},
+  a:'nd',w:'Same failure, higher stakes. The IRS originally asserted deficiencies of roughly $2.8 billion; a stipulated decision was entered on 6 July 2015 reflecting a settlement of roughly $388 million. There is no opinion. The valuation question the planning community was waiting on was never answered, and the settlement terms do not disclose how it was resolved. The consideration was self-cancelling installment notes, and the seller died with principal outstanding, so the estate had to defend the notes\u2019 value after his death. Meg\u2019s note is a different instrument, interest-only and callable on demand, but the question the settlement never answered, what a note is worth in the seller\u2019s estate, is the one her structure will face.'},
  {c:'Kessler v. Commissioner, 152 T.C. 88 (2019) \u2014 cited as holding that a '+COLEp('discount',0)+' combined discount for lack of control and lack of marketability is presumptively reasonable for a non-voting minority interest in a closely held manufacturer.',
-  a:'fab',w:'No such decision exists. It is also the item the reader most wants to be true, which is exactly why it was generated: it answers the question that was asked. There is no presumptively reasonable discount percentage; discounts are questions of fact proved by appraisal. Meg\u2019s 2023 appraisal, never re-verified and now facing a buyer\u2019s expression of interest, is the actual issue and no citation resolves it.'}
+  a:'fab',w:'No such decision exists. It is also the item the reader most wants to be true, which is exactly why it was generated: it answers the question that was asked. There is no presumptively reasonable discount percentage; discounts are questions of fact proved by appraisal. There is no appraisal of the discount in this file: the memorandum asserts the figure and the 2023 report values the whole company with no discount study. That gap is the actual issue, and no citation fills it.'}
 ];
 (function(){
   var host=$('triage'),score=0,done=0;
@@ -2729,7 +2763,7 @@ var PEER=[
     var band=t>=10?'Handoff-ready. Tell the author which single criterion is still missing.'
       :t>=7?'Workable with one fix. Name it precisely \u2014 \u201cadd a line bounding the source\u201d beats \u201cit needs more detail.\u201d'
       :t>=4?'The author can run it and nobody else can. That is the exact failure Part 2 of the final project is designed to expose.'
-      :'It did not survive contact with a second person. Better to find that out today than in Session 5.';
+      :'It did not survive contact with a second person. Better to find that out now than in Session 5.';
     $('peerOut').textContent='TOTAL  '+t+' / 12\n\n'+band+'\n\nIf it did not work in your hands, that is information about the template.';
     $('peerOut').classList.add('has');
   }
@@ -2748,7 +2782,7 @@ function base(){
   o+='Annual hours:      '+(hrs*12).toFixed(0)+'\n';
   o+='Annual cost at $'+r+'/hr: $'+(cost*12).toFixed(0)+'\n\n';
   o+='BREAK-EVEN NOTE\n';
-  o+='A 40% time reduction recovers '+(hrs*12*0.4).toFixed(0)+' hours a year.\n';
+  o+='An illustrative 40% time reduction, an assumption and not a measurement, would recover '+(hrs*12*0.4).toFixed(0)+' hours a year.\n';
   o+='Subtract the verification time you measured in \u00a707 before\n';
   o+='you claim any of it. A workflow that saves 20 minutes of drafting\n';
   o+='and adds 12 minutes of citation checking has saved 8 minutes.';
@@ -2762,7 +2796,7 @@ var CHK=[
  'A one-page explanation: what it does, why AI suits it, where a human stays in the loop (two pages maximum, images on page two)',
  'Setup instructions: tool, subscription tier, inputs and files a classmate needs to run it',
  'The verification steps built into the workflow, and the two failure modes you hit while building',
- 'Your Session 1 baseline time against the AI-assisted time, including any step AI made slower or worse',
+ 'The baseline time you recorded in Session 2 against the AI-assisted time, including any step AI made slower or worse',
  'A data-handling note: which fields would need removing or de-identifying before real client use',
  'The complete build transcript, including the attempts that failed \u2014 to the instructor only, not to your classmate'
 ];
@@ -2788,13 +2822,13 @@ var CHK=[
 /* ================= 0 · RETRIEVAL BRIDGE (Session 1) ================= */
 var BRIDGE=[
  {q:'Session 1 called the mechanism next-token prediction. In one sentence: what does the model produce at each step, before any word is chosen?',
-  a:'A probability distribution over the whole vocabulary \u2014 roughly 50,000 candidate tokens, each with a number attached. The word you see is a draw from that distribution, not a retrieval from a store of facts.'},
+  a:'A probability distribution over the whole vocabulary \u2014 roughly 50,000 candidate tokens in the models Wolfram describes, each with a number attached. The word you see is a draw from that distribution, not a retrieval from a store of facts.'},
  {q:'Meg\u2019s CPC stock is indicated at '+COLEm('cpcValue')+' against a '+COLEm('megBasis')+' basis. Which of those two numbers could a model state confidently without ever having seen the Cole file, and why does that matter?',
   a:'Both, and neither is grounded. Given a prompt describing an owner-operated manufacturer, plausible values for each are high-probability continuations. Fluency about a number is not access to it. The model has never seen the file.'},
  {q:'Session 1 ranked tiers by cost per finished task rather than cost per token. State the reason in one sentence.',
   a:'Because models differ in how many tokens they burn reaching an answer. A model at one fifth the token price can cost nearly as much per completed task, which makes the price sheet a misleading ranking.'},
- {q:'Name the three facts about the Cole household that may never be entered into a consumer AI tool.',
-  a:'That a competitor approached the company, which she has not told Nathan, who works in the business. The unexecuted IDGT plan and the discount being claimed. And, separately from the file\u2019s own three, the fact that Meg is a client of the firm at all \u2014 the relationship itself is confidential.'}
+ {q:'Session 1 gave a rule for when to start a new chat instead of continuing a long one. State it and the reason.',
+  a:'After roughly ten to fifteen turns; everything already in the chat is re-sent with every turn, so a long chat costs more and remembers less.'}
 ];
 (function(){
   var host=$('bridge'),shown=false;
@@ -2834,8 +2868,8 @@ var BRIDGE=[
       box.querySelectorAll('button').forEach(function(x){x.disabled=true});
       var v=b.getAttribute('data-v');
       $('stanceOut').textContent=v==='b'
-        ? 'Locked. You took the second position. The next twelve minutes give you the mechanism behind it, and the third consequence card is the part most people have not thought through.'
-        : 'Locked. You took the first position, which is the majority answer in most rooms and is the one the slider below is built to test. Run it at 0.8 and count the distinct outputs before you decide whether the variation is a rounding error.';
+        ? 'Locked. You took the second position. The rest of this section gives you the mechanism behind it, and the third consequence card is the part most people have not thought through.'
+        : 'Locked. You took the first position, which is the one the slider below is built to test. Run it at 0.8 and count the distinct outputs before you decide whether the variation is a rounding error.';
       $('stanceOut').classList.add('has');
     };
   });
@@ -2938,6 +2972,44 @@ var ELEM=[
   $('hwCopy').onclick=function(){copyTo(this,$('hwRewrite').value)};
 })();
 
+/* ===== 6b fixture pack: three inputs from the injected case and three weak starters
+   (pedagogy R4, R5; DW-090). Every case fact is read from COLEDOCS or a COLE
+   constant at parse time; nothing here is typed. ===== */
+(function(){
+  var host=$('fxIn');if(!host)return;
+  function tline(i){var t=COLEDOCS.transcript[i];return t.who+': '+t.said}
+  var FX=[
+   {n:'F1 \u00b7 Client email',
+    lab:'The input: an advisor\u2019s draft reply to Meg, written badly on purpose',
+    inp:'Hi Meg, following up on the note question. As discussed the structure has you short about '+COLEm('steadyGap')+' a year once it is running as designed, and every dollar of principal you call gives up '+COLEp('noteRate',2)+' of interest for good, so calling more sooner is not free. I think you should probably call some this year but not all, it depends on a few things. Let me know what you think and we can discuss. Also David mentioned the appraisal is old, we should look at that at some point. Thanks',
+    pr:'Rewrite this email so it sounds more professional and reassuring.'},
+   {n:'F2 \u00b7 Meeting notes',
+    lab:'The input: the meeting excerpt from the case file, as five untidy lines',
+    inp:[0,1,2,3,4].map(tline).join('\n'),
+    pr:'You are an experienced wealth advisor with excellent client skills. Turn these notes into a case note.'},
+   {n:'F3 \u00b7 Plan summary',
+    lab:'The input: the planning memorandum chunk and the structure paragraph from the case panel',
+    inp:COLEDOC('D8').t+'\n\nStructure, from the case panel: a seed gift of '+COLEn('seedUnits')+' non-voting units, then a sale of '+COLEn('saleUnits')+' non-voting units to the same trust for a '+COLEm('notePrincipal')+' note payable on demand at '+COLEp('noteRate',2)+', interest only. A '+COLEp('discount',0)+' combined discount is asserted with no appraisal and no appraiser engaged.',
+    pr:'Summarise this for the client in one page.'}
+  ];
+  var cur=0;
+  function show(){
+    var f=FX[cur];
+    $('fxInLabel').textContent=f.lab;host.textContent=f.inp;$('fxPrompt').textContent=f.pr;
+    $('fxWhich').textContent=f.n;
+    document.querySelectorAll('[data-fx]').forEach(function(b){b.classList.toggle('act',b.getAttribute('data-fx')*1===cur)});
+  }
+  document.querySelectorAll('[data-fx]').forEach(function(b){b.onclick=function(){cur=b.getAttribute('data-fx')*1;show()}});
+  $('fxUse').onclick=function(){
+    var box=$('hwText');if(!box)return;
+    box.value=FX[cur].pr;if(box.oninput)box.oninput.call(box);
+    $('fxWhich').textContent=FX[cur].n+' \u00b7 loaded into the box below';
+    box.focus();
+  };
+  $('fxCopyIn').onclick=function(){copyTo(this,FX[cur].inp)};
+  show();
+})();
+
 /* ================= 8 · BUY-SELL INTERVIEW CHECKLIST ================= */
 var BSQ=[
  'Which entity is the agreement between \u2014 the corporation, the shareholders, or both?',
@@ -2957,10 +3029,10 @@ var BSQ=[
     var h='<span class="plab">Tick each question the model actually asked you</span><div style="display:flex;flex-direction:column;gap:8px;margin-top:11px">';
     BSQ.forEach(function(q,i){
       var on=!!ticked[i];
-      h+='<button class="bq" data-i="'+i+'" style="text-align:left;background:'+(on?'var(--on-bg)':'var(--card)')+';border:1.5px solid '+(on?'var(--on)':'var(--line)')+';border-radius:9px;padding:10px 14px;cursor:pointer;font-family:Source Serif 4,serif;font-size:14.5px;line-height:1.45;color:'+(shown?'var(--ink)':'transparent')+';display:flex;gap:12px;text-shadow:'+(shown?'none':'0 0 9px rgba(22,33,31,.55)')+'"><span style="flex:none;color:'+(on?'var(--on)':'var(--off)')+';font-family:JetBrains Mono,monospace;text-shadow:none">'+(on?'\u2713':'\u25cb')+'</span><span>'+q+'</span></button>';
+      h+='<button class="bq" data-i="'+i+'" style="text-align:left;background:'+(on?'var(--on-bg)':'var(--card)')+';border:1.5px solid '+(on?'var(--on)':'var(--line)')+';border-radius:9px;padding:10px 14px;cursor:pointer;font-family:Source Serif 4,serif;font-size:14.5px;line-height:1.45;color:var(--ink);display:flex;gap:12px"><span style="flex:none;color:'+(on?'var(--on)':'var(--off)')+';font-family:JetBrains Mono,monospace;text-shadow:none">'+(on?'\u2713':'\u25cb')+'</span><span>'+(shown?q:'Question '+(i+1)+' of ten, revealed after you tick')+'</span></button>';
     });
     h+='</div>';
-    if(!shown)h+='<p class="dim" style="font-size:13.5px;margin:14px 0 0">Ten questions are listed and blurred. Tick the ones you were asked from memory of your own run, then reveal. Counting before you read is the measurement; reading first destroys it.</p>';
+    if(!shown)h+='<p class="dim" style="font-size:13.5px;margin:14px 0 0">Ten questions are listed by number only. Tick as many as the model asked you, from memory of your own run, then reveal. Counting before you read is the measurement; reading first destroys it.</p>';
     host.innerHTML=h;
     host.querySelectorAll('.bq').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-i');ticked[i]=!ticked[i];render();count()}});
     count();
@@ -2987,7 +3059,7 @@ var BSQ=[
         done=true;b.classList.add('on');
         box.querySelectorAll('button').forEach(function(x){x.disabled=true});
         var v=b.getAttribute('data-v');
-        if(which===1){v1=v;$(outId).textContent='Locked. The distribution stays hidden until after the re-vote. Nothing you hear in the next thirteen minutes can change this vote, which is the point of locking it.';}
+        if(which===1){v1=v;$(outId).textContent='Locked. The distribution stays hidden until after the re-vote. Nothing you hear in the next twelve minutes can change this vote, which is the point of locking it.';}
         else{v2=v;$(outId).textContent=v===v1?'Locked. You held your position under the complication. That is a finding, not a failure \u2014 report it as one.':'Locked. You moved. The instructor will ask which specific fact moved you, so have it ready.';}
         $(outId).classList.add('has');
       };
@@ -3043,26 +3115,48 @@ document.addEventListener('keydown',function(e){
   }
 });
 /* ===== family 17: cold-open ritual — identical in every session ===== */
+/* COURSE-WIDE COLD-OPEN CHECKLIST. COLD_CHECKS is the one constant that
+   defines the eight fixed checks: a label, one plain line on why the item
+   matters, and a deterministic, offline detect function d(t). Every rule is
+   readable below: a presence test is a visible word list or a plain
+   measurement, never a relevance score, and there is no threshold. The rows
+   are diagnostic only; nothing else on the page reads them. Sessions 2-4
+   copy this constant and the renderer under it verbatim (register row
+   DW-066). */
+var COLD_CHECKS=[
+ {l:'An explicit ask',w:'A question mark or an opening imperative tells the model what to return; without one it guesses the task as well as the answer.',
+  d:function(t){return /\?/.test(t)||/^\s*(?:\w+[,:]\s+)?(?:please\s+)?(?:write|make|give|list|draft|summarise|summarize|explain|create|find|tell|help|review|compare|analyse|analyze|rewrite|check|generate|outline|describe|calculate|translate|classify|extract|suggest|recommend|plan|edit|fix|improve|assess|evaluate)\b/i.test(t)}},
+ {l:'At least 15 words',w:'Below about fifteen words there is rarely enough signal to tell your task apart from a thousand similar ones.',
+  d:function(t){return (t.match(/\S+/g)||[]).length>=15}},
+ {l:'A named output format',w:'Naming a list, table, email, memo or draft fixes the shape of the answer instead of leaving the model to pick one.',
+  d:function(t){return /\b(list|table|email|e-mail|memo|draft|bullet|bullets|bulleted|outline|summary|report|letter|agenda|template|paragraph|paragraphs|spreadsheet|checklist|headline|slide|slides|script|caption)\b/i.test(t)}},
+ {l:'Context beyond the ask',w:'Background the model cannot infer, the who and the situation, is what separates your answer from a generic one.',
+  d:function(t){return (t.match(/[.!?](\s|$)/g)||[]).length>=2||t.length>180}},
+ {l:'A named audience or role',w:'Saying who is writing or who will read it shifts vocabulary, depth and tone toward that reader.',
+  d:function(t){return /\b(you are|act as|as an? \w+|audience|reader|readers|for my|for our|client|clients|prospect|prospects|board|committee|colleague|colleagues|adviser|advisers|advisor|advisors|planner|planners|attorney|attorneys|accountant|accountants|student|students|beginner|beginners|expert|experts)\b/i.test(t)}},
+ {l:'A constraint on length, tone or scope',w:'A stated limit is the difference between an answer you can use and one you cut down yourself.',
+  d:function(t){return /\b(no more than|at most|under|within|maximum|max|limit|only|brief|briefly|concise|short|long|formal|informal|casual|plain|professional|friendly|neutral|tone|word|words|sentence|sentences|page|pages|paragraph|paragraphs|scope|exclude|excluding|without|avoid|keep it)\b/i.test(t)}},
+ {l:'An example or reference point',w:'One example anchors format and register more reliably than a paragraph of description.',
+  d:function(t){return /\b(for example|e\.g|such as|like this|like the|similar to|based on|modelled on|modeled on|in the style of|sample|example|attached|below|here is|as in|following the)\b/i.test(t)}},
+ {l:'What to do when unsure',w:'Telling it to verify, cite or ask first trades confident guessing for something you can check.',
+  d:function(t){return /\b(verify|cite|citation|citations|source|sources|if unsure|if you are unsure|if you're unsure|not sure|unsure|don't know|do not know|ask me|ask first|ask before|flag|confirm|double-check|check first|uncertain|say so)\b/i.test(t)}}
+];
 (function(){
   var go=document.getElementById('coldGo');if(!go)return;
   go.onclick=function(){
     var box=document.getElementById('coldPrompt'),out=document.getElementById('coldOut');
     var t=box.value.trim();
     if(!t){out.className='rout';out.innerHTML='<span class="rnil">Paste something first.</span>';return}
-    var words=(t.match(/\S+/g)||[]).length,chars=t.length,toks=Math.round(chars/4);
-    var q=(t.match(/\?/g)||[]).length;
-    var imper=/^(write|make|give|list|draft|summari[sz]e|explain|create|find|tell|help)/i.test(t);
-    var hasRole=/\b(you are|act as|as an?|expert|advisor|planner)\b/i.test(t);
-    var hasFmt=/\b(bullet|table|word|paragraph|format|list|tone|concise|short|long)\b/i.test(t);
-    var hasCtx=t.length>180;
-    var have=[];if(hasRole)have.push('a role or framing');if(hasFmt)have.push('an output format');if(hasCtx)have.push('substantial context');
-    var missing=[];if(!hasRole)missing.push('role or framing');if(!hasFmt)missing.push('output format');if(!hasCtx)missing.push('context beyond the ask');
+    var n=0,rows=COLD_CHECKS.map(function(c){
+      var hit=false;try{hit=!!c.d(t)}catch(err){hit=false}
+      if(hit)n++;
+      return '<div style="margin:9px 0 0"><span style="color:var(--'+(hit?'on':'warn')+');font-weight:700">'+
+        (hit?'\u2713 present':'\u2717 missing')+'</span> \u00b7 <b>'+c.l+'</b>'+
+        '<div class="dim" style="font-size:13px;margin-top:2px">'+c.w+'</div></div>';
+    });
     out.className='rout on';
-    out.innerHTML='<span class="rz">'+words+' words \u00b7 '+chars+' characters \u00b7 roughly '+toks+' tokens</span>'+
-      'It is '+(imper?'an imperative':q?'a question':'a statement')+'. '+
-      (have.length?'It carries '+have.join(' and ')+'. ':'It carries none of the usual scaffolding. ')+
-      (missing.length?'It supplies no '+missing.join(', no ')+'.':'It supplies all three.')+
-      '<div class="rfx">No judgement is implied. Compare this against what you pasted in Session 1 \u2014 the drift is the measurement.</div>';
+    out.innerHTML='<span class="rz">Prompt checklist</span>'+rows.join('')+
+      '<div class="rfx"><b>'+n+' of 8 present.</b> Diagnostic only: nothing is scored and nothing unlocks. Keep the text on screen; the comparison across sessions is the point.</div>';
     if(typeof mark==='function')mark('gc');
   };
 })();
@@ -3102,6 +3196,8 @@ window.__coreMins=69;
   function idOf(a){var h=a.getAttribute('href')||'';return h.charAt(0)==='#'?h.slice(1):''}
   function apply(){
     document.body.classList.toggle('core-only',coreOnly);
+    [].slice.call(bar.querySelectorAll('button[data-level]')).forEach(function(x){x.classList.toggle('on',!coreOnly&&parseInt(x.dataset.level,10)===level)});
+    [].slice.call(bar.querySelectorAll('button.core')).forEach(function(x){x.classList.toggle('on',coreOnly)});
     var shown=0,mins=0;
     apx.forEach(function(sec){
       var t=sec.dataset.tier||'standard';
@@ -3154,10 +3250,16 @@ window.__coreMins=69;
       '<div class="pcell"><b>'+apx+' min</b><span>'+na+' appendix sections</span></div>'+
       '<div class="pcell"><b>'+(core+apx)+' min</b><span>everything</span></div>'+
     '</div>'+
-    '<p>The core runs in about '+core+' minutes and is what always gets taught. In a full '+
-    'block, raise the appendix depth and take the extra sections in place; in a short one, '+
-    'leave it on core only and the session still closes properly. Appendix sections are also '+
-    'readable alone afterwards.</p>';
+    '<p><b>Two ways through this session.</b> The core is '+nc+' sections and about '+core+' '+
+    'minutes. It stands on its own: nothing in the core depends on the appendix, so reading '+
+    'those sections in order gives you the whole argument.</p>'+
+    '<p>The '+na+' appendix sections add '+apx+' minutes of optional depth, '+(core+apx)+' '+
+    'minutes for everything. Each one is placed in the core at the point it belongs rather '+
+    'than at the back of the file, so you can carry straight on into it and then pick up where '+
+    'you left off. The gold cards under Appendix contents link to each one, and the depth '+
+    'control above sets how many are showing; anything hidden leaves a stub naming what it '+
+    'was, so you can always see what you skipped. They also read on their own afterwards.</p>';
+
 })();
 </script>
 </body>

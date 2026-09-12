@@ -1,0 +1,2043 @@
+{
+  "file": "session-1/index.html",
+  "file_bytes": 274696,
+  "file_lines": 3393,
+  "generated_by": "scripts/audit/section_profile.mjs (read-only)",
+  "methods": {
+    "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
+    "prose_words": "words outside tagged interaction roots (static)",
+    "chips": ".conf span with h/m/l class inside the section; resolves = data-src present in footer <li id>",
+    "icap": "component-bank.md v2.0 family index",
+    "exposition": "M heuristic, see each section",
+    "terms": "M heuristic: capitalised acronyms and statute citations, file-level first use, defined if a parenthetical, appositive, copula, or initials expansion sits within 40 words"
+  },
+  "timing": {
+    "rows": {
+      "BUS ADM X433.4 · Session 1": {
+        "title": "Prediction, Model Tiers, and the Cost of Using Them",
+        "min": 6,
+        "apx": false
+      },
+      "01 · Cold open · standing ritual": {
+        "title": "The Last Prompt You Sent",
+        "min": 8,
+        "apx": false
+      },
+      "02 · Wolfram, “It’s Just Adding One Word at a Time”": {
+        "title": "Candidate Rankings and the Selection Step",
+        "min": 7,
+        "apx": false
+      },
+      "03 · Tokens and price": {
+        "title": "Token Counts and the Cost of a Document Pass",
+        "min": 5,
+        "apx": false
+      },
+      "04 · Consequence": {
+        "title": "The Same Question, Asked Three Times",
+        "min": 7,
+        "apx": false
+      },
+      "05 · Capability against price": {
+        "title": "Intelligence Index Plotted Against Cost per Task",
+        "min": 5,
+        "apx": false
+      },
+      "06 · Your firm": {
+        "title": "What a Practice Pays in a Year",
+        "min": 7,
+        "apx": false
+      },
+      "07 · Judgment": {
+        "title": "Assigning a Tier to Six Tasks From This Case",
+        "min": 6,
+        "apx": false
+      },
+      "08 · The line": {
+        "title": "What May Never Be Entered Into a Third-Party Tool",
+        "min": 7,
+        "apx": false
+      },
+      "09 · Custom instructions": {
+        "title": "Where Account-Level Custom Instructions Are Configured",
+        "min": 4,
+        "apx": false
+      },
+      "10 · Close": {
+        "title": "The Baseline You Cannot Reconstruct Later",
+        "min": 7,
+        "apx": false
+      },
+      "Appendix A1 · Mechanism, deeper": {
+        "title": "N-gram Counting and Its Limits",
+        "min": 11,
+        "apx": true
+      },
+      "Appendix A2 · Mechanism, deeper": {
+        "title": "Fitting a Model by Hand",
+        "min": 12,
+        "apx": true
+      },
+      "Appendix A3 · Mechanism, deeper": {
+        "title": "Words Laid Out So That Nearby Means Similar",
+        "min": 9,
+        "apx": true
+      },
+      "Appendix A4 · Failure mode": {
+        "title": "The Task a Transformer Cannot Reliably Learn",
+        "min": 9,
+        "apx": true
+      },
+      "Appendix A5 · Lab": {
+        "title": "The Nine Controls Between the Model and Your Answer",
+        "min": 16,
+        "apx": true
+      },
+      "Appendix A6 · Regulation": {
+        "title": "Existing FINRA Rules as Applied to AI",
+        "min": 9,
+        "apx": true
+      },
+      "Appendix A7 · Discussion": {
+        "title": "Disclosure of AI Use to the Client",
+        "min": 15,
+        "apx": true
+      }
+    },
+    "segments_sum": 150,
+    "allocated_cell": 150,
+    "eyebrow_sum_lesson_sections": 150
+  },
+  "consecutive_family_repeats": {
+    "document_order": [],
+    "core_only_order": [
+      "s5->s9:work-along-gate"
+    ],
+    "reading_order_all_tiers": []
+  },
+  "reading_order_all_tiers": [
+    "s1",
+    "sCold",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8",
+    "s9",
+    "s10",
+    "s11",
+    "s12",
+    "s13",
+    "s14",
+    "s14b",
+    "s14c",
+    "s15"
+  ],
+  "norms": {
+    "sections": 18,
+    "core_sections": 11,
+    "interactions_per_section": {
+      "median": 1,
+      "range": [
+        1,
+        1
+      ],
+      "mean": 1
+    },
+    "chips_per_100_words": {
+      "median": 0.31,
+      "range": [
+        0,
+        1.33
+      ],
+      "mean": 0.43
+    },
+    "chips_per_section": {
+      "median": 1,
+      "range": [
+        0,
+        3
+      ],
+      "mean": 1.11
+    },
+    "sources_per_section": {
+      "median": 1,
+      "range": [
+        0,
+        2
+      ],
+      "mean": 0.72
+    },
+    "words_per_min": {
+      "median": 31.25,
+      "range": [
+        8.8,
+        80.7
+      ],
+      "mean": 35.89
+    },
+    "prose_words_per_min": {
+      "median": 27.85,
+      "range": [
+        0,
+        77.3
+      ],
+      "mean": 30.77
+    },
+    "exposition_run_min_tagged": {
+      "median": 5.9,
+      "range": [
+        2.1,
+        12.8
+      ],
+      "mean": 6.41
+    },
+    "exposition_run_min_control": {
+      "median": 5.2,
+      "range": [
+        2.6,
+        10
+      ],
+      "mean": 5.72
+    },
+    "icap_distribution": {
+      "P": 0,
+      "A": 9,
+      "C": 8,
+      "I": 1
+    },
+    "distinct_families": 12,
+    "sections_with_zero_chips": [
+      "sCold",
+      "s6",
+      "s7",
+      "s12",
+      "s14b",
+      "s14c",
+      "s15"
+    ],
+    "sections_with_zero_interactions": []
+  },
+  "sections": [
+    {
+      "id": "s1",
+      "num": "00",
+      "data_nav": "Start",
+      "eyebrow": "BUS ADM X433.4 · Session 1",
+      "heading": "Prediction, Model Tiers, and the Cost of Using Them",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 6,
+      "line_start": 1390,
+      "line_end": 1426,
+      "bytes": 4137,
+      "allocated_min": 6,
+      "words": 333,
+      "prose_words": 321,
+      "words_per_min": 55.5,
+      "prose_words_per_min": 53.5,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s1",
+          "data_comp": "work-along-gate",
+          "icap": "A",
+          "line": 1396,
+          "line_end": 1405,
+          "words_inside": 12
+        }
+      ],
+      "families": [
+        "work-along-gate"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 3,
+      "chips": {
+        "H": 1,
+        "M": 1,
+        "L": 1
+      },
+      "chips_per_100_words": 0.9,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case",
+        "src-sec-ai"
+      ],
+      "sources_count": 2,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 6,
+      "gates": [
+        {
+          "id": "g1",
+          "line": 1424,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 292,
+        "longest_run_min_tagged_split": 5.3,
+        "longest_run_words_control_split": 279,
+        "longest_run_min_control_split": 5,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "X433"
+      ],
+      "dom": {
+        "rendered_words": 519,
+        "rendered_chips": 3,
+        "rendered_controls": 6,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "apx",
+      "num": "TOC",
+      "data_nav": "Appendix contents",
+      "eyebrow": "Appendix · 7 optional sections",
+      "heading": "Appendix contents",
+      "is_toc": true,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": true,
+      "nav_contained_in_heading": true,
+      "timing_row_min": null,
+      "line_start": 1429,
+      "line_end": 1443,
+      "bytes": 1810,
+      "allocated_min": 81,
+      "words": 163,
+      "prose_words": 163,
+      "words_per_min": 2,
+      "prose_words_per_min": 2,
+      "interactions_count": 0,
+      "interactions": [],
+      "families": [],
+      "icap": {},
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 163,
+        "longest_run_min_tagged_split": 81,
+        "longest_run_words_control_split": 163,
+        "longest_run_min_control_split": 81,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "A1",
+        "§02",
+        "A2",
+        "A3",
+        "§03",
+        "A4",
+        "A5",
+        "A6",
+        "§08",
+        "A7",
+        "§09"
+      ],
+      "dom": {
+        "rendered_words": 163,
+        "rendered_chips": 0,
+        "rendered_controls": 0,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "sCold",
+      "num": "01",
+      "data_nav": "Cold open",
+      "eyebrow": "01 · Cold open · standing ritual",
+      "heading": "The Last Prompt You Sent",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 8,
+      "line_start": 1446,
+      "line_end": 1463,
+      "bytes": 1327,
+      "allocated_min": 8,
+      "words": 101,
+      "prose_words": 80,
+      "words_per_min": 12.6,
+      "prose_words_per_min": 10,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-cold-open",
+          "data_comp": "timed-ritual",
+          "icap": "C",
+          "line": 1452,
+          "line_end": 1457,
+          "words_inside": 21
+        }
+      ],
+      "families": [
+        "timed-ritual"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 2,
+      "gates": [
+        {
+          "id": "gc",
+          "line": 1462,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 2,
+      "exposition": {
+        "longest_run_words_tagged_split": 73,
+        "longest_run_min_tagged_split": 5.8,
+        "longest_run_words_control_split": 62,
+        "longest_run_min_control_split": 4.9,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 100,
+        "rendered_chips": 0,
+        "rendered_controls": 2,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s2",
+      "num": "02",
+      "data_nav": "Prediction",
+      "eyebrow": "02 · Wolfram, “It’s Just Adding One Word at a Time”",
+      "heading": "Candidate Rankings and the Selection Step",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 7,
+      "line_start": 1465,
+      "line_end": 1520,
+      "bytes": 4157,
+      "allocated_min": 7,
+      "words": 323,
+      "prose_words": 291,
+      "words_per_min": 46.1,
+      "prose_words_per_min": 41.6,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s2",
+          "data_comp": "distribution-picker",
+          "icap": "A",
+          "line": 1472,
+          "line_end": 1478,
+          "words_inside": 32
+        }
+      ],
+      "families": [
+        "distribution-picker"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 1,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0.31,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-wolfram"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 2,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 1,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 7,
+      "gates": [
+        {
+          "id": "g2",
+          "line": 1515,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 6,
+      "exposition": {
+        "longest_run_words_tagged_split": 259,
+        "longest_run_min_tagged_split": 5.6,
+        "longest_run_words_control_split": 121,
+        "longest_run_min_control_split": 2.6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 377,
+        "rendered_chips": 1,
+        "rendered_controls": 7,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s3",
+      "num": "A1",
+      "data_nav": "A1 · n-grams",
+      "eyebrow": "Appendix A1 · Mechanism, deeper",
+      "heading": "N-gram Counting and Its Limits",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "foundational",
+      "insert_after": "s2",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 11,
+      "line_start": 1522,
+      "line_end": 1572,
+      "bytes": 4562,
+      "allocated_min": 11,
+      "words": 267,
+      "prose_words": 220,
+      "words_per_min": 24.3,
+      "prose_words_per_min": 20,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s3",
+          "data_comp": "parameter-sandbox",
+          "icap": "A",
+          "line": 1529,
+          "line_end": 1556,
+          "words_inside": 47
+        }
+      ],
+      "families": [
+        "parameter-sandbox"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 2,
+      "chips": {
+        "H": 2,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0.75,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-wolfram"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 1,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 9,
+      "gates": [
+        {
+          "id": "g3",
+          "line": 1569,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 5,
+      "exposition": {
+        "longest_run_words_tagged_split": 211,
+        "longest_run_min_tagged_split": 8.7,
+        "longest_run_words_control_split": 128,
+        "longest_run_min_control_split": 5.3,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 305,
+        "rendered_chips": 2,
+        "rendered_controls": 9,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s4",
+      "num": "A2",
+      "data_nav": "A2 · Fitting a model",
+      "eyebrow": "Appendix A2 · Mechanism, deeper",
+      "heading": "Fitting a Model by Hand",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "advanced",
+      "insert_after": "s2",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 12,
+      "line_start": 1574,
+      "line_end": 1622,
+      "bytes": 4092,
+      "allocated_min": 12,
+      "words": 327,
+      "prose_words": 309,
+      "words_per_min": 27.3,
+      "prose_words_per_min": 25.8,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s4",
+          "data_comp": "hand-fit-lab",
+          "icap": "C",
+          "line": 1581,
+          "line_end": 1597,
+          "words_inside": 18
+        }
+      ],
+      "families": [
+        "hand-fit-lab"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 1,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0.31,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-wolfram"
+      ],
+      "sources_count": 1,
+      "src_lines": 2,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 1,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 4,
+      "gates": [
+        {
+          "id": "g4",
+          "line": 1619,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 8,
+      "exposition": {
+        "longest_run_words_tagged_split": 275,
+        "longest_run_min_tagged_split": 10.1,
+        "longest_run_words_control_split": 261,
+        "longest_run_min_control_split": 9.6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 371,
+        "rendered_chips": 1,
+        "rendered_controls": 10,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s5",
+      "num": "03",
+      "data_nav": "Tokens",
+      "eyebrow": "03 · Tokens and price",
+      "heading": "Token Counts and the Cost of a Document Pass",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 1624,
+      "line_end": 1661,
+      "bytes": 3220,
+      "allocated_min": 5,
+      "words": 225,
+      "prose_words": 165,
+      "words_per_min": 45,
+      "prose_words_per_min": 33,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s5",
+          "data_comp": "work-along-gate",
+          "icap": "A",
+          "line": 1631,
+          "line_end": 1643,
+          "words_inside": 60
+        }
+      ],
+      "families": [
+        "work-along-gate"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 3,
+      "chips": {
+        "H": 2,
+        "M": 1,
+        "L": 0
+      },
+      "chips_per_100_words": 1.33,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-pricing",
+        "src-wolfram"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 1,
+      "gates": [
+        {
+          "id": "g5",
+          "line": 1656,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 4,
+      "exposition": {
+        "longest_run_words_tagged_split": 149,
+        "longest_run_min_tagged_split": 3.3,
+        "longest_run_words_control_split": 135,
+        "longest_run_min_control_split": 3,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "IDGT",
+        "§08."
+      ],
+      "dom": {
+        "rendered_words": 229,
+        "rendered_chips": 3,
+        "rendered_controls": 1,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s6",
+      "num": "A3",
+      "data_nav": "A3 · Meaning space",
+      "eyebrow": "Appendix A3 · Mechanism, deeper",
+      "heading": "Words Laid Out So That Nearby Means Similar",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "foundational",
+      "insert_after": "s5",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 9,
+      "line_start": 1663,
+      "line_end": 1689,
+      "bytes": 2860,
+      "allocated_min": 9,
+      "words": 250,
+      "prose_words": 246,
+      "words_per_min": 27.8,
+      "prose_words_per_min": 27.3,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s6",
+          "data_comp": "commit-first-mcq",
+          "icap": "C",
+          "line": 1677,
+          "line_end": 1677,
+          "words_inside": 4
+        }
+      ],
+      "families": [
+        "commit-first-mcq"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 1,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g6",
+          "line": 1687,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 5,
+      "exposition": {
+        "longest_run_words_tagged_split": 146,
+        "longest_run_min_tagged_split": 5.3,
+        "longest_run_words_control_split": 250,
+        "longest_run_min_control_split": 9,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "QTIP",
+        "QDOT"
+      ],
+      "dom": {
+        "rendered_words": 317,
+        "rendered_chips": 0,
+        "rendered_controls": 11,
+        "rendered_hidden_panels": 3
+      }
+    },
+    {
+      "id": "s7",
+      "num": "A4",
+      "data_nav": "A4 · Counting failure",
+      "eyebrow": "Appendix A4 · Failure mode",
+      "heading": "The Task a Transformer Cannot Reliably Learn",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "standard",
+      "insert_after": "s5",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 9,
+      "line_start": 1691,
+      "line_end": 1724,
+      "bytes": 3567,
+      "allocated_min": 9,
+      "words": 343,
+      "prose_words": 318,
+      "words_per_min": 38.1,
+      "prose_words_per_min": 35.3,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s7",
+          "data_comp": "distribution-picker",
+          "icap": "A",
+          "line": 1700,
+          "line_end": 1713,
+          "words_inside": 25
+        }
+      ],
+      "families": [
+        "distribution-picker"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 3,
+      "gates": [
+        {
+          "id": "g7",
+          "line": 1722,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 6,
+      "exposition": {
+        "longest_run_words_tagged_split": 228,
+        "longest_run_min_tagged_split": 6,
+        "longest_run_words_control_split": 217,
+        "longest_run_min_control_split": 5.7,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 352,
+        "rendered_chips": 0,
+        "rendered_controls": 3,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s8",
+      "num": "A5",
+      "data_nav": "A5 · SAMPLER LAB",
+      "eyebrow": "Appendix A5 · Lab",
+      "heading": "The Nine Controls Between the Model and Your Answer",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "advanced",
+      "insert_after": "s5",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 16,
+      "line_start": 1726,
+      "line_end": 1794,
+      "bytes": 5591,
+      "allocated_min": 16,
+      "words": 455,
+      "prose_words": 454,
+      "words_per_min": 28.4,
+      "prose_words_per_min": 28.4,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s8",
+          "data_comp": "pipeline-lab",
+          "icap": "C",
+          "line": 1735,
+          "line_end": 1738,
+          "words_inside": 1
+        }
+      ],
+      "families": [
+        "pipeline-lab"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 0,
+        "M": 1,
+        "L": 0
+      },
+      "chips_per_100_words": 0.22,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-sampling"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 1,
+      "interactive_controls": 5,
+      "gates": [
+        {
+          "id": "g8",
+          "line": 1791,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 3,
+      "exposition": {
+        "longest_run_words_tagged_split": 364,
+        "longest_run_min_tagged_split": 12.8,
+        "longest_run_words_control_split": 285,
+        "longest_run_min_control_split": 10,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "§02.",
+        "API"
+      ],
+      "dom": {
+        "rendered_words": 613,
+        "rendered_chips": 1,
+        "rendered_controls": 32,
+        "rendered_hidden_panels": 1
+      }
+    },
+    {
+      "id": "s9",
+      "num": "04",
+      "data_nav": "Hallucination",
+      "eyebrow": "04 · Consequence",
+      "heading": "The Same Question, Asked Three Times",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 7,
+      "line_start": 1796,
+      "line_end": 1835,
+      "bytes": 3504,
+      "allocated_min": 7,
+      "words": 309,
+      "prose_words": 269,
+      "words_per_min": 44.1,
+      "prose_words_per_min": 38.4,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s9",
+          "data_comp": "work-along-gate",
+          "icap": "A",
+          "line": 1802,
+          "line_end": 1809,
+          "words_inside": 40
+        }
+      ],
+      "families": [
+        "work-along-gate"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 1,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0.32,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-kalai"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 3,
+      "gates": [
+        {
+          "id": "g9",
+          "line": 1832,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 5,
+      "exposition": {
+        "longest_run_words_tagged_split": 282,
+        "longest_run_min_tagged_split": 6.4,
+        "longest_run_words_control_split": 231,
+        "longest_run_min_control_split": 5.2,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "DD",
+        "MM",
+        "§1",
+        "§1.2."
+      ],
+      "dom": {
+        "rendered_words": 340,
+        "rendered_chips": 1,
+        "rendered_controls": 3,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s10",
+      "num": "05",
+      "data_nav": "Frontier",
+      "eyebrow": "05 · Capability against price",
+      "heading": "Intelligence Index Plotted Against Cost per Task",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 1837,
+      "line_end": 1870,
+      "bytes": 2948,
+      "allocated_min": 5,
+      "words": 208,
+      "prose_words": 0,
+      "words_per_min": 41.6,
+      "prose_words_per_min": 0,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s10",
+          "data_comp": "click-map-explorer",
+          "icap": "A",
+          "line": 1837,
+          "line_end": 1870,
+          "words_inside": null
+        }
+      ],
+      "families": [
+        "click-map-explorer"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 2,
+      "chips": {
+        "H": 2,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0.96,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-aa"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 1,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 1,
+      "gates": [
+        {
+          "id": "g10",
+          "line": 1867,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 208,
+        "longest_run_min_tagged_split": 5,
+        "longest_run_words_control_split": 181,
+        "longest_run_min_control_split": 4.4,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 258,
+        "rendered_chips": 2,
+        "rendered_controls": 1,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s11",
+      "num": "06",
+      "data_nav": "Practice cost",
+      "eyebrow": "06 · Your firm",
+      "heading": "What a Practice Pays in a Year",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 7,
+      "line_start": 1872,
+      "line_end": 1915,
+      "bytes": 3127,
+      "allocated_min": 7,
+      "words": 239,
+      "prose_words": 233,
+      "words_per_min": 34.1,
+      "prose_words_per_min": 33.3,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s11",
+          "data_comp": "parameter-sandbox",
+          "icap": "A",
+          "line": 1877,
+          "line_end": 1892,
+          "words_inside": 6
+        }
+      ],
+      "families": [
+        "parameter-sandbox"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 3,
+      "chips": {
+        "H": 2,
+        "M": 1,
+        "L": 0
+      },
+      "chips_per_100_words": 1.26,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-pricing"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 6,
+      "gates": [
+        {
+          "id": "g11",
+          "line": 1912,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 229,
+        "longest_run_min_tagged_split": 6.7,
+        "longest_run_words_control_split": 166,
+        "longest_run_min_control_split": 4.9,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 345,
+        "rendered_chips": 3,
+        "rendered_controls": 6,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s12",
+      "num": "07",
+      "data_nav": "Tier choice",
+      "eyebrow": "07 · Judgment",
+      "heading": "Assigning a Tier to Six Tasks From This Case",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 6,
+      "line_start": 1917,
+      "line_end": 1925,
+      "bytes": 687,
+      "allocated_min": 6,
+      "words": 53,
+      "prose_words": 53,
+      "words_per_min": 8.8,
+      "prose_words_per_min": 8.8,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s12",
+          "data_comp": "commit-first-mcq",
+          "icap": "C",
+          "line": 1922,
+          "line_end": 1922,
+          "words_inside": 0
+        }
+      ],
+      "families": [
+        "commit-first-mcq"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g12",
+          "line": 1923,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 35,
+        "longest_run_min_tagged_split": 4,
+        "longest_run_words_control_split": 53,
+        "longest_run_min_control_split": 6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 248,
+        "rendered_chips": 0,
+        "rendered_controls": 18,
+        "rendered_hidden_panels": 6
+      }
+    },
+    {
+      "id": "s13",
+      "num": "08",
+      "data_nav": "Confidentiality",
+      "eyebrow": "08 · The line",
+      "heading": "What May Never Be Entered Into a Third-Party Tool",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 7,
+      "line_start": 1927,
+      "line_end": 1966,
+      "bytes": 2954,
+      "allocated_min": 7,
+      "words": 189,
+      "prose_words": 157,
+      "words_per_min": 27,
+      "prose_words_per_min": 22.4,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s13",
+          "data_comp": "two-bucket-sorter",
+          "icap": "C",
+          "line": 1933,
+          "line_end": 1945,
+          "words_inside": 32
+        }
+      ],
+      "families": [
+        "two-bucket-sorter"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 0,
+        "M": 1,
+        "L": 0
+      },
+      "chips_per_100_words": 0.53,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-rohrer"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 1,
+      "interactive_controls": 3,
+      "gates": [
+        {
+          "id": "g13",
+          "line": 1961,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 109,
+        "longest_run_min_tagged_split": 4,
+        "longest_run_words_control_split": 80,
+        "longest_run_min_control_split": 3,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 265,
+        "rendered_chips": 1,
+        "rendered_controls": 11,
+        "rendered_hidden_panels": 1
+      }
+    },
+    {
+      "id": "s14",
+      "num": "A6",
+      "data_nav": "A6 · Regulation",
+      "eyebrow": "Appendix A6 · Regulation",
+      "heading": "Existing FINRA Rules as Applied to AI",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "foundational",
+      "insert_after": "s13",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 9,
+      "line_start": 1968,
+      "line_end": 1997,
+      "bytes": 3007,
+      "allocated_min": 9,
+      "words": 248,
+      "prose_words": 244,
+      "words_per_min": 27.6,
+      "prose_words_per_min": 27.1,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s14",
+          "data_comp": "symptom-diagnoser",
+          "icap": "A",
+          "line": 1988,
+          "line_end": 1992,
+          "words_inside": 4
+        }
+      ],
+      "families": [
+        "symptom-diagnoser"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 2,
+      "chips": {
+        "H": 2,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0.81,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-finra2409"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g14",
+          "line": 1994,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 3,
+      "exposition": {
+        "longest_run_words_tagged_split": 189,
+        "longest_run_min_tagged_split": 6.9,
+        "longest_run_words_control_split": 248,
+        "longest_run_min_control_split": 9,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "SEA",
+        "USA"
+      ],
+      "dom": {
+        "rendered_words": 291,
+        "rendered_chips": 2,
+        "rendered_controls": 6,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s14b",
+      "num": "09",
+      "data_nav": "Custom instructions",
+      "eyebrow": "09 · Custom instructions",
+      "heading": "Where Account-Level Custom Instructions Are Configured",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 4,
+      "line_start": 1999,
+      "line_end": 2029,
+      "bytes": 2712,
+      "allocated_min": 4,
+      "words": 248,
+      "prose_words": 232,
+      "words_per_min": 62,
+      "prose_words_per_min": 58,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s14b",
+          "data_comp": "builder-assembler",
+          "icap": "C",
+          "line": 2015,
+          "line_end": 2020,
+          "words_inside": 16
+        }
+      ],
+      "families": [
+        "builder-assembler"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g15",
+          "line": 2025,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 5,
+      "exposition": {
+        "longest_run_words_tagged_split": 132,
+        "longest_run_min_tagged_split": 2.1,
+        "longest_run_words_control_split": 248,
+        "longest_run_min_control_split": 4,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 253,
+        "rendered_chips": 0,
+        "rendered_controls": 7,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s14c",
+      "num": "A7",
+      "data_nav": "A7 · Discussion",
+      "eyebrow": "Appendix A7 · Discussion",
+      "heading": "Disclosure of AI Use to the Client",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "standard",
+      "insert_after": "s14b",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 15,
+      "line_start": 2031,
+      "line_end": 2069,
+      "bytes": 2849,
+      "allocated_min": 15,
+      "words": 226,
+      "prose_words": 204,
+      "words_per_min": 15.1,
+      "prose_words_per_min": 13.6,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s14c",
+          "data_comp": "sealed-vote-debate",
+          "icap": "I",
+          "line": 2040,
+          "line_end": 2045,
+          "words_inside": 22
+        }
+      ],
+      "families": [
+        "sealed-vote-debate"
+      ],
+      "icap": {
+        "I": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 4,
+      "interactive_controls": 2,
+      "gates": [
+        {
+          "id": "g16",
+          "line": 2067,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 6,
+      "exposition": {
+        "longest_run_words_tagged_split": 165,
+        "longest_run_min_tagged_split": 11,
+        "longest_run_words_control_split": 78,
+        "longest_run_min_control_split": 5.2,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 331,
+        "rendered_chips": 0,
+        "rendered_controls": 14,
+        "rendered_hidden_panels": 4
+      }
+    },
+    {
+      "id": "s15",
+      "num": "10",
+      "data_nav": "Close",
+      "eyebrow": "10 · Close",
+      "heading": "The Baseline You Cannot Reconstruct Later",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 7,
+      "line_start": 2071,
+      "line_end": 2143,
+      "bytes": 6281,
+      "allocated_min": 7,
+      "words": 565,
+      "prose_words": 541,
+      "words_per_min": 80.7,
+      "prose_words_per_min": 77.3,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s15",
+          "data_comp": "timed-ritual",
+          "icap": "C",
+          "line": 2085,
+          "line_end": 2093,
+          "words_inside": 24
+        }
+      ],
+      "families": [
+        "timed-ritual"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 4,
+      "gates": [
+        {
+          "id": "g17",
+          "line": 2132,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 4,
+      "exposition": {
+        "longest_run_words_tagged_split": 512,
+        "longest_run_min_tagged_split": 6.3,
+        "longest_run_words_control_split": 504,
+        "longest_run_min_control_split": 6.2,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "§04"
+      ],
+      "dom": {
+        "rendered_words": 548,
+        "rendered_chips": 0,
+        "rendered_controls": 4,
+        "rendered_hidden_panels": 0
+      }
+    }
+  ],
+  "terms": [
+    {
+      "term": "X433",
+      "kind": "acronym",
+      "first_use_section": "s1",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "BUS ADM  [X433] .4 · Session 1 6 min Prediction, Model"
+    },
+    {
+      "term": "A1",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "would cost are both on this page.  [A1]  · 11 min · after §02 N-gram"
+    },
+    {
+      "term": "§02",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "page. A1 · 11 min · after  [§02]  N-gram Counting and Its Limits A2 ·"
+    },
+    {
+      "term": "A2",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "after §02 N-gram Counting and Its Limits  [A2]  · 12 min · after §02 Fitting"
+    },
+    {
+      "term": "A3",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "after §02 Fitting a Model by Hand  [A3]  · 9 min · after §03 Words"
+    },
+    {
+      "term": "§03",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Hand A3 · 9 min · after  [§03]  Words Laid Out So That Nearby Means"
+    },
+    {
+      "term": "A4",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Laid Out So That Nearby Means Similar  [A4]  · 9 min · after §03 The"
+    },
+    {
+      "term": "A5",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "The Task a Transformer Cannot Reliably Learn  [A5]  · 16 min · after §03 The"
+    },
+    {
+      "term": "A6",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Controls Between the Model and Your Answer  [A6]  · 9 min · after §08 Existing"
+    },
+    {
+      "term": "§08",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Answer A6 · 9 min · after  [§08]  Existing FINRA Rules as Applied to AI"
+    },
+    {
+      "term": "A7",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Existing FINRA Rules as Applied to AI  [A7]  · 15 min · after §09 Disclosure"
+    },
+    {
+      "term": "§09",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "AI A7 · 15 min · after  [§09]  Disclosure of AI Use to the Client"
+    },
+    {
+      "term": "IDGT",
+      "kind": "acronym",
+      "first_use_section": "s5",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": true,
+      "context": "and joint revocable trust ~20,000 $0.10 Draft  [IDGT]  instrument, note, 2014 buy-sell and 2023 appraisal"
+    },
+    {
+      "term": "§08.",
+      "kind": "citation",
+      "first_use_section": "s5",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "constraint. Your duty of care is —  [§08.]  · Work along Replace the sample with"
+    },
+    {
+      "term": "QTIP",
+      "kind": "acronym",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": true,
+      "context": "near-identical language with opposite outcomes? Start with  [QTIP]  versus QDOT, or 1035 versus 1031. What"
+    },
+    {
+      "term": "QDOT",
+      "kind": "acronym",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "with opposite outcomes? Start with QTIP versus  [QDOT] , or 1035 versus 1031. What does that"
+    },
+    {
+      "term": "§02.",
+      "kind": "citation",
+      "first_use_section": "s8",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "as the rank &minus;1 power law from  [§02.]  Red bars are cut; green survive. Prompt:"
+    },
+    {
+      "term": "API",
+      "kind": "acronym",
+      "first_use_section": "s8",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "you. These controls are exposed in the  [API]  and hidden in chat interfaces — if"
+    },
+    {
+      "term": "LLM",
+      "kind": "acronym",
+      "first_use_section": "s8",
+      "defined_within_40_words": true,
+      "how": "parenthetical",
+      "cfp_baseline_vocabulary": false,
+      "context": "follow the sampler definitions published in artefact2's  [LLM]  sampling visualiser ( artefact2.github.io/llm-sampling ), reimplemented here"
+    },
+    {
+      "term": "DD",
+      "kind": "acronym",
+      "first_use_section": "s9",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "birthday? If you know, just respond with  [DD] -MM.\" Ask again Captured runs. Connect a key"
+    },
+    {
+      "term": "MM",
+      "kind": "acronym",
+      "first_use_section": "s9",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "birthday? If you know, just respond with DD- [MM] .\" Ask again Captured runs. Connect a key"
+    },
+    {
+      "term": "§1",
+      "kind": "citation",
+      "first_use_section": "s9",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "(2025), Why Language Models Hallucinate , arXiv:2509.04664,  [§1]  and §1.2. Model was DeepSeek-V3, accessed 11"
+    },
+    {
+      "term": "§1.2.",
+      "kind": "citation",
+      "first_use_section": "s9",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Language Models Hallucinate , arXiv:2509.04664, §1 and  [§1.2.]  Model was DeepSeek-V3, accessed 11 May 2025."
+    },
+    {
+      "term": "V3",
+      "kind": "acronym",
+      "first_use_section": "s9",
+      "defined_within_40_words": true,
+      "how": "appositive",
+      "cfp_baseline_vocabulary": false,
+      "context": ", arXiv:2509.04664, §1 and §1.2. Model was DeepSeek- [V3] , accessed 11 May 2025. Assigned reading. H"
+    },
+    {
+      "term": "SEA",
+      "kind": "acronym",
+      "first_use_section": "s14",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "identically to human-generated content Rules 3110.09, 4511;  [SEA]  17a-4 AI-generated correspondence must be retained Third-party"
+    },
+    {
+      "term": "USA",
+      "kind": "acronym",
+      "first_use_section": "s14",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "against two advisers over AI claims: Delphia ( [USA] ) Inc. , $225,000, for saying it used"
+    },
+    {
+      "term": "§206(2)",
+      "kind": "citation",
+      "first_use_section": "s14",
+      "defined_within_40_words": true,
+      "how": "parenthetical",
+      "cfp_baseline_vocabulary": false,
+      "context": "to cease and desist, under Advisers Act  [§206(2)] , §206(4) and Rules 206(4)-1 and 206(4)-7. Neither"
+    },
+    {
+      "term": "§206(4)",
+      "kind": "citation",
+      "first_use_section": "s14",
+      "defined_within_40_words": true,
+      "how": "parenthetical",
+      "cfp_baseline_vocabulary": false,
+      "context": "cease and desist, under Advisers Act §206(2),  [§206(4)]  and Rules 206(4)-1 and 206(4)-7. Neither case"
+    },
+    {
+      "term": "§04",
+      "kind": "citation",
+      "first_use_section": "s15",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "the unassisted time is gone. Session 2  [§04]  Three prompt templates An email rewriter, a"
+    }
+  ],
+  "footer_source_ids": [
+    "src-pricing",
+    "src-sampling",
+    "src-aa",
+    "src-finra2409",
+    "src-kalai",
+    "src-case",
+    "src-rohrer",
+    "src-sec-ai",
+    "src-wolfram"
+  ],
+  "dom": {
+    "mode": "jsdom",
+    "script_errors": [],
+    "body_class_at_load": "core-only"
+  }
+}

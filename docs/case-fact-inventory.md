@@ -23,8 +23,8 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 1710 | 1392 | 318 |
 | `PINNED` | 15 | 15 | 0 |
-| `UNGUARDED` | 105 | 5 | 100 |
-| **TOTAL** | **1830** | **1412** | **418** |
+| `UNGUARDED` | 104 | 5 | 99 |
+| **TOTAL** | **1829** | **1412** | **417** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -39,7 +39,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `index.html` | 2 | 0 |
 | `session-0.1/index.html` | 16 | 5 |
 | `session-1/index.html` | 17 | 0 |
-| `session-2/index.html` | 20 | 0 |
+| `session-2/index.html` | 19 | 0 |
 | `session-3/index.html` | 27 | 0 |
 | `session-4/index.html` | 23 | 0 |
 
@@ -48,7 +48,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
 | `R1` | body prose | 73 | 0 |
-| `R2` | script string literal | 25 | 0 |
+| `R2` | script string literal | 24 | 0 |
 | `R10` | captured transcript | 5 | 5 |
 | `R5` | HTML or JS comment | 1 | 0 |
 | `R8` | source note | 1 | 0 |
@@ -62,7 +62,7 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 100 |
+| `name` | 99 |
 | `pct` | 5 |
 
 ## `UNGUARDED`, by fact
@@ -72,8 +72,8 @@ every one of them.
 | `domicile` | 29 |
 | `companyAbbr` | 16 |
 | `companyName` | 11 |
-| `nathanShort` | 11 |
 | `megShort` | 10 |
+| `nathanShort` | 10 |
 | `plantTown` | 9 |
 | `residenceTown` | 5 |
 | `davidName` | 4 |
@@ -105,7 +105,7 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**437 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**436 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
@@ -119,7 +119,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `employees` | 20 |
 | `nathanAge` | 19 |
 | `charDeductible` | 18 |
-| `megAge` | 18 |
+| `megAge` | 17 |
 | `saleUnits` | 15 |
 | `inheritedIra` | 14 |
 | `david403b` | 14 |
@@ -142,7 +142,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
-| `session-2/index.html:2606` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
+| `session-2/index.html:2640` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,

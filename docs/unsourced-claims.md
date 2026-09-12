@@ -23,12 +23,12 @@ Both forms are declared in `EDITORIAL.md` A16 and enforced by
 
 | | |
 |---|---|
-| Marked claims | **12** |
+| Marked claims | **11** |
 | `[UNCONFIRMED]` | **8** |
-| `[NEEDS SOURCE]` | 4 |
+| `[NEEDS SOURCE]` | 3 |
 | weight `answer` | 1 — An answer key or the correctness of an exercise depends on it. A student is marked right or wrong by it. |
 | weight `exercise` | 2 — A work-along gate or an interaction is built on it. The room does something because of it. |
-| weight `section` | 4 — A whole section's argument rests on it. Remove the claim and the section has no point. |
+| weight `section` | 3 — A whole section's argument rests on it. Remove the claim and the section has no point. |
 | weight `claim` | 3 — A standalone factual claim in prose. A reader could repeat it to a client. |
 | weight `aside` | 2 — A passing remark. Nothing else on the page leans on it. |
 
@@ -107,20 +107,7 @@ the corpus on every run.
 | Candidate source | anthropic.com/news/claude-text-watermark, plus the-decoder and thenextweb reporting of 2 August 2026, all reached through search only: the host is blocked from this build environment and the page itself was never loaded — confidence **medium** |
 | Note | Reported substance: Claude output carries a SynthID-Text watermark and C2PA provenance metadata for models launched from 2 August 2026, applied worldwide. If that holds, this sentence is false and so is what it tells students about their own coursework. |
 
-### 5. `session-2/index.html:1576` — `#s6` — **[NEEDS SOURCE]**
-
-> [NEEDS SOURCE]
-
-| | |
-|---|---|
-| File and line | `session-2/index.html:1576` |
-| Section | `#s6` (`core`) |
-| Region | R1 — body prose |
-| Marker | **[NEEDS SOURCE]** |
-| What would resolve it | Add a key for Anthropic's own post and rewire off src-case. Keep the lesson qualitative about which models: the post names Opus 5 and Fable 5 as examples, and 'its two most recent models' is a stronger claim than the source makes. |
-| Candidate source | Shihipar, T. (2026-07-24), The new rules of context engineering for Claude 5 generation models, claude.com blog. Reached through search only; the host was not fetched from this build environment. — confidence **medium** |
-
-### 6. `session-4/index.html:1501` — `#s5` — **[NEEDS SOURCE]**
+### 5. `session-4/index.html:1501` — `#s5` — **[NEEDS SOURCE]**
 
 > [NEEDS SOURCE]
 
@@ -133,7 +120,7 @@ the corpus on every run.
 | What would resolve it | Attach the two real sources and drop src-case: a synthetic household cannot evidence a meta-analysis. Check the wording against the pooled figure before chipping it H — 55.54% is near chance and above it for some stimulus types, so 'close to chance' survives and 'at chance' would not. |
 | Candidate source | Diel, Lalgi, Schroter, MacDorman, Teufel and Bauerle (2024), Human performance in detecting deepfakes: a systematic review and meta-analysis of 56 papers, Computers in Human Behavior Reports 16, 100538 — 137 effects, 86,155 participants, pooled accuracy 55.54% — confidence **medium** |
 
-### 7. `session-4/index.html:1658` — `#s7` — **[NEEDS SOURCE]**
+### 6. `session-4/index.html:1658` — `#s7` — **[NEEDS SOURCE]**
 
 > [NEEDS SOURCE]
 
@@ -150,7 +137,7 @@ the corpus on every run.
 
 *A standalone factual claim in prose. A reader could repeat it to a client.*
 
-### 8. `session-3/index.html:1585` — `#s12` — **[UNCONFIRMED]**
+### 7. `session-3/index.html:1585` — `#s12` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
@@ -163,7 +150,7 @@ the corpus on every run.
 | What would resolve it | Name the compilations. This lesson's own teaching point three lines down is that published counts disagree, which makes an assertion about what appears on EVERY published list the one claim in the passage that cannot be checked without the list of lists. |
 | Candidate source | none retrieved; the statutory citations beside it are sourced and this sentence is not — confidence **none** |
 
-### 9. `session-4/index.html:1563` — `#sW1` — **[UNCONFIRMED]**
+### 8. `session-4/index.html:1563` — `#sW1` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
@@ -176,7 +163,7 @@ the corpus on every run.
 | What would resolve it | Name the page, or narrow the sentence to the page that was actually read. This asserts what a specific Google page says TODAY, and no build has ever loaded the Google DeepMind SynthID overview it means: the host answers 403 on CONNECT here. src-synthid-text was retrieved on 2026-08-25 and carries no adoption figure either, but it is the text-watermarking page under a different publisher line and cannot stand in for the overview. Read the overview and date the reading, or rewrite the sentence to say which page and when. |
 | Candidate source | ai.google.dev/responsible/docs/safeguards/synthid, retrieved 2026-08-25, states no adoption figure - the right kind of evidence about the wrong page — confidence **medium** |
 
-### 10. `session-4/index.html:1616` — `#sW2` — **[UNCONFIRMED]**
+### 9. `session-4/index.html:1616` — `#sW2` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
@@ -193,7 +180,7 @@ the corpus on every run.
 
 *A passing remark. Nothing else on the page leans on it.*
 
-### 11. `session-4/index.html:1525` — `#sW1` — **[UNCONFIRMED]**
+### 10. `session-4/index.html:1525` — `#sW1` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
@@ -206,7 +193,7 @@ the corpus on every run.
 | What would resolve it | Either find a source that measures the false-positive rate, or remove the confidence chip: this is a base-rate deduction the page makes from a premise it has already established, and a syllogism does not need a citation. It should not stay chipped to an SEC speech that makes no such argument. |
 | Candidate source | C2PA guidance says the corresponding thing qualitatively, reached through secondary blogs only — confidence **low** |
 
-### 12. `session-4/index.html:1601` — `#sW2` — **[UNCONFIRMED]**
+### 11. `session-4/index.html:1601` — `#sW2` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
