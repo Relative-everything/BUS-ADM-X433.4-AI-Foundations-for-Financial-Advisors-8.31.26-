@@ -1647,6 +1647,16 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <span class="mono dim" style="font-size:12px" id="bsellCount"></span>
   </div>
 
+  <h3>Start a Reverse-Prompting Interview</h3>
+  <p>Pick a starter, copy the kickoff into your own tool, and answer its questions before it writes anything. The questions shown here are the kind a model asks first; yours will differ.</p>
+  <div class="panel" id="rpStart" data-task="t-s8b" data-comp="builder-assembler">
+    <div class="row" id="rpChips" style="margin-bottom:12px"></div>
+    <span class="plab">The kickoff prompt</span>
+    <div class="copybox" id="rpKick"></div>
+    <span class="plab" style="margin-top:14px">What it asks back first <span class="sim">Illustrative: constructed for this page, not a captured run</span></span>
+    <div class="out has" id="rpQs"></div>
+  </div>
+
   <h3>Specification Diagnosis on Your Own Prompt</h3>
   <p>Now paste one of your own prompts, or the buy-sell prompt above. The checker looks for ten specification dimensions that determine whether the output can be verified. It runs entirely in this page; nothing is transmitted.</p>
 
@@ -2999,6 +3009,40 @@ var BSQ=[
   $('bsellReveal').onclick=reveal;
   window.__revealBsell=reveal;
   render();
+})();
+
+/* ===== 8b · REVERSE-PROMPTING STARTERS. [NEW] 2026-09-13, family 15
+   builder-assembler. Five kickoffs and the first questions a model typically
+   asks back, constructed for this page and labelled so. No case data. ===== */
+(function(){
+  var chips=$('rpChips');if(!chips)return;
+  var RP=[
+   {n:'A child\u2019s birthday party',
+    k:'My child\u2019s birthday is in two weeks. Help me plan the party. Before you suggest anything, interview me about their interests, the guest list, the budget, the venue and the date. Ask in one numbered batch, then stop until I answer.',
+    q:['How old is your child, and what are they into right now?','How many guests, and what ages?','Indoors or outdoors, and is there a fallback if the weather turns?','What is the budget range?','Any allergies or dietary needs among the guests?','How much do you want to do yourself, and what would you rather hire out?']},
+   {n:'A client review meeting agenda',
+    k:'Help me build the agenda for an annual review with a long-standing client. Interview me first about what has changed in their life, what they asked about last time, what I need a decision on, and how long we have. One numbered batch, then stop.',
+    q:['What has changed for the client since the last review: family, work, health, a sale, a move?','What did they ask about last time that is still open?','Which decisions do you need from them in this meeting?','Which documents will be on the table?','How long is the meeting, and who attends?','What would make this review a success in your view?']},
+   {n:'A retirement-income letter',
+    k:'Help me write a letter to a client explaining how their retirement income will be drawn. Interview me first about the accounts involved, what they already understand, what worries them, and how long the letter may be. One numbered batch, then stop.',
+    q:['Which kinds of account are in play? No figures yet, just the types.','What does the client already understand about how withdrawals are sequenced?','What is the one worry this letter must answer?','What tone do they respond to: brief and direct, or step by step?','How long may the letter be, and in what format?','Is there anything that must not be put in writing?']},
+   {n:'A family trip',
+    k:'Plan a week-long family trip. Interview me first about who is travelling, the dates, the budget, the pace, and what a good day looks like for each person. One numbered batch, then stop.',
+    q:['Who is travelling, and what ages and mobility?','Which dates, and how flexible are they?','What is the budget, and what does it include?','Fast pace or slow?','One must-see and one must-avoid per person?','How will you get around once you arrive?']},
+   {n:'Choosing between two software vendors',
+    k:'Help me compare two vendors for one recurring task in my practice. Interview me first about what the tool must do, who will use it, what it must connect to, the budget, and the deal-breakers. One numbered batch, then stop.',
+    q:['What job must the tool do, in one sentence?','Who uses it day to day, and how technical are they?','Which systems must it connect to?','What is the budget, and for what contract length?','What is the one thing that rules a vendor out?','How will you judge success after ninety days?']}
+  ];
+  var cur=0;
+  function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+  function show(){
+    var r=RP[cur];
+    chips.innerHTML=RP.map(function(x,i){return '<button class="btn sel mini'+(i===cur?' act':'')+'" data-rp="'+i+'" aria-pressed="'+(i===cur?'true':'false')+'">'+esc(x.n)+'</button>'}).join('');
+    chips.querySelectorAll('[data-rp]').forEach(function(b){b.onclick=function(){cur=b.getAttribute('data-rp')*1;show()}});
+    $('rpKick').innerHTML=esc(r.k)+'<button data-copy="rpKick">Copy</button>';
+    $('rpQs').textContent=r.q.map(function(q,i){return (i+1)+'. '+q}).join('\n');
+  }
+  show();
 })();
 
 /* ================= 12 · DISCUSSION ================= */
