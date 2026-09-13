@@ -159,3 +159,21 @@ await check('JN-027', async (page) => {
   must(k.keyShown && /Score5 of 6|Score\s*5 of 6/.test(k.key.replace(/\n/g, '')), `key after six: shown ${k.keyShown}, text ${k.key.slice(-40)}`);
   must(/6 of 6 placed/.test(k.out), `progress after six reads "${k.out.slice(0, 40)}"`);
 });
+
+/* JN-030: the preset rankings are unchanged (Part O untouched) and the verdict states the appraisal's true rank. */
+await check('JN-030', async (page) => {
+  const rows = await presets(page);
+  const want = [
+    ['#1 D1 score 11.1', '#2 D6 score 5.1', '#3 D3 score 3.3', '#4 D2 score 0.0', '53.8%'],
+    ['#1 D5 score 18.2', '#2 D4 score 17.9', '#3 D1 score 0.0', '#4 D2 score 0.0', '1.7%'],
+    ['#1 D8 score 29.2', '#2 D3 score 8.0', '#3 D7 score 3.8', '#4 D1 score 3.7', '72.8%'],
+    ['#1 D7 score 26.5', '#2 D1 score 0.0', '#3 D2 score 0.0', '#4 D3 score 0.0', '100.0%'],
+  ];
+  rows.forEach((r, i) => want[i].forEach((w, j) => must(r[j] && r[j].startsWith(w), `preset ${i + 1} row ${j + 1}: "${r[j]}" does not start with "${w}"`)));
+  must(/under 12% apart/.test(rows[1][4]), `preset 2 margin line: "${rows[1][4]}"`);
+  await page.click('#qPresets button:nth-child(1)');
+  await page.click('#qVerdict');
+  const v = await page.evaluate(() => document.getElementById('qVer').textContent);
+  must(/ranks third at 3\.3/.test(v) && /Meg and CPC, appear in no passage/.test(v), 'preset 1 verdict does not state the appraisal\'s rank and the absent words');
+  must(!/scores 0\.0|scored 0\.0|scored zero/.test(SRC), 'a "scored zero" sentence survives in the source');
+});
