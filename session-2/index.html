@@ -1431,7 +1431,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="chart">
     <div class="ctitle">Intelligence Index score against measured cost per benchmark task</div>
     <div class="csub">Higher is better on the vertical axis, cheaper is better on the horizontal. The connected line is the efficient frontier &mdash; the set of models where no other model is both smarter and cheaper. Toggle the frontier and hover any point.</div>
-    <p style="margin:0 0 8px"><span class="dim mono" style="font-size:12px;letter-spacing:.04em">Published index and rate cards &mdash; figures move</span></p>
+    <p style="margin:0 0 8px"><span class="dim mono" style="font-size:12px;letter-spacing:.04em">Published index and rate cards, retrieved August 2026</span></p>
     <svg viewBox="0 0 700 400" role="img" aria-label="Scatter plot of intelligence index against cost per task"><g id="frontierChart"></g></svg>
     <div class="row" style="margin-top:6px">
       <button class="btn sel mini act" id="frontToggle">Hide efficient frontier</button>
@@ -1443,7 +1443,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h3>Three findings a price sheet hides</h3>
   <div class="cards">
     <div class="card gold"><span class="num">Finding 01</span><span class="stat">1&#8202;/&#8202;5</span><h4>Token price gap, Sonnet 5 against Fable 5</h4><p>Sonnet 5 lists at $2 in / $10 out per million tokens. Fable 5 lists at $10 / $50. One fifth the price per token. <span class="conf h" data-src="src-pricing">H</span></p></div>
-    <div class="card gold"><span class="num">Finding 02</span><span class="stat">17%</span><h4>Actual gap in cost per finished task</h4><p>$2.29 against $2.75. The cheaper model burns most of the saving on the way to the answer &mdash; it generated 300M tokens across the index suite against a 71M median [UNVERIFIED, needs source].</p></div>
+    <div class="card gold"><span class="num">Finding 02</span><span class="stat">17%</span><h4>Actual gap in cost per finished task</h4><p>$2.29 against $2.75. The cheaper model burns most of the saving on the way to the answer.</p></div>
     <div class="card"><span class="num">Finding 03</span><span class="stat">26%</span><h4>Opus 5's cost advantage over Fable 5</h4><p>At a higher index score. The most expensive model per token is not the most capable model.</p></div>
   </div>
 
@@ -1464,17 +1464,12 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     </div>
     <div class="out has" id="costOut" style="margin-top:18px"></div>
     <p class="dim" style="font-size:14px;margin-bottom:0">A subscription changes this arithmetic entirely &mdash; a flat monthly plan absorbs a great deal of usage before per-token pricing becomes the cheaper route. The point of the estimator is to show which tier decisions are material and which are noise at your volume.</p>
-    <div class="csrc">Rates: <b>Anthropic</b> pricing page <span class="conf h" data-src="src-pricing">H</span>; <b>OpenAI</b> API pricing <span class="conf m" data-src="src-openai-pricing">M</span>. Both from the August pull; re-check before relying on a figure.</div>
+    <div class="csrc">Rates: <b>Anthropic</b> pricing page <span class="conf h" data-src="src-pricing">H</span>; <b>OpenAI</b> API pricing <span class="conf m" data-src="src-openai-pricing">M</span>.</div>
   </div>
 
   <div class="doit">
     <span class="plab">Decision &mdash; 4 minutes</span>
     <p>Name the tier you will use for your final project workflow and the reason in one sentence. Acceptable reasons: measured cost per task, a capability the lower tier failed at, a context-window requirement. Not acceptable: it is the newest, it is the most expensive, it is the default.</p>
-  </div>
-
-  <div class="panel tightpad" style="background:var(--warn-bg);border-color:#E0C6B4">
-    <span class="plab" style="color:var(--warn)">Verification required before this slide is relied on</span>
-    <p style="font-size:15px;margin:0">Model tiers and their subscription availability change between cohorts. Confirm which tiers your own plan currently reaches at <span class="mono">claude.com/pricing</span> before you build a workflow that depends on one. Benchmark rankings are recomputed continuously and can reverse between one pull and the next.</p>
   </div>
 
   <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Estimate your own monthly cost, then find the tier where cost per finished task beats cost per token.</div></div>
