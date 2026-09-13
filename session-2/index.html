@@ -1428,6 +1428,17 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p>Artificial Analysis publishes an Intelligence Index score and the dollar cost of running that benchmark through each model. Plotted together, the price-sheet ranking falls apart.</p>
 
+  <h3>What a task is</h3>
+  <p>A task is one finished unit of work you would otherwise do yourself, priced by every token the model reads and writes to finish it at a quality you accept, retries and reasoning included. Five from an advisory week:</p>
+  <div class="cards">
+    <div class="card"><span class="num">Task</span><h4>A meeting summary from your notes</h4><p>Your rough notes in, a client-ready summary out. One task.</p></div>
+    <div class="card"><span class="num">Task</span><h4>A 40-page trust into one plain-English page</h4><p>Long input, short output. One task, dearer on the input side.</p></div>
+    <div class="card"><span class="num">Task</span><h4>A week of inbound email sorted by urgency</h4><p>Fifty messages, one pass. One task, or fifty small ones; price it the way you run it.</p></div>
+    <div class="card"><span class="num">Task</span><h4>An RMD reminder letter for one household</h4><p>Short input, short output, repeated across the book. The cheapest kind.</p></div>
+    <div class="card"><span class="num">Task</span><h4>Beneficiary designations pulled from a statement PDF</h4><p>Extraction against a document. Judgment-light, checkable line by line.</p></div>
+  </div>
+  <p>Artificial Analysis&rsquo;s task is different: the cost of running its whole benchmark suite once through a model <span class="conf m" data-src="src-aa">M</span>. That ranks models against one another. Your own tasks set the bill.</p>
+
   <div class="chart">
     <div class="ctitle">Intelligence Index score against measured cost per benchmark task</div>
     <div class="csub">Higher is better on the vertical axis, cheaper is better on the horizontal. The connected line is the efficient frontier &mdash; the set of models where no other model is both smarter and cheaper. Toggle the frontier and hover any point.</div>
