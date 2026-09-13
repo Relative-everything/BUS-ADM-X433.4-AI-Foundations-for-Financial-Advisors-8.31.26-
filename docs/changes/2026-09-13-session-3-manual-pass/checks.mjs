@@ -59,3 +59,34 @@ async function presets(page) {
 }
 
 /* ---- checks are appended below as items land ---- */
+
+/* JN-018: the pacing panel is the three timing cells and the four buttons. */
+await check('JN-018', async (page) => {
+  const r = await page.evaluate(() => ({
+    cells: document.querySelectorAll('#paceOut .pcell').length,
+    paras: document.querySelectorAll('#paceOut p').length,
+    tierOut: !!document.getElementById('tierOut'),
+    plab: [...document.querySelectorAll('.pace .plab')].map((x) => x.textContent),
+    buttons: document.querySelectorAll('#tierbar button').length,
+    apx: document.querySelectorAll('section.apx').length,
+    coreOnly: document.body.classList.contains('core-only'),
+    hidden: [...document.querySelectorAll('section.apx')].filter((s) => getComputedStyle(s).display === 'none').length,
+  }));
+  must(r.cells === 3, `${r.cells} timing cells, expected 3`);
+  must(r.paras === 0, `${r.paras} paragraph(s) still in #paceOut`);
+  must(!r.tierOut, '#tierOut readout still present');
+  must(!r.plab.some((t) => /paced/i.test(t)), 'the "How this session is paced" heading still present');
+  must(r.buttons === 4, `${r.buttons} tier buttons, expected 4`);
+  must(r.coreOnly && r.hidden === r.apx && r.apx > 0, `at load core-only=${r.coreOnly}, ${r.hidden} of ${r.apx} appendix sections hidden`);
+  const state = () => page.evaluate(() => ({
+    coreOnly: document.body.classList.contains('core-only'),
+    hidden: [...document.querySelectorAll('section.apx')].filter((s) => getComputedStyle(s).display === 'none').length,
+    apx: document.querySelectorAll('section.apx').length,
+  }));
+  await page.click('#tierbar button[data-level="1"]');
+  const s1 = await state();
+  must(!s1.coreOnly && s1.hidden === 0, `after +Standard, core-only=${s1.coreOnly}, ${s1.hidden} appendix sections still hidden`);
+  await page.click('#tierbar button.core');
+  const s2 = await state();
+  must(s2.coreOnly && s2.hidden === s2.apx, `after Core only, core-only=${s2.coreOnly}, ${s2.hidden} of ${s2.apx} hidden`);
+});

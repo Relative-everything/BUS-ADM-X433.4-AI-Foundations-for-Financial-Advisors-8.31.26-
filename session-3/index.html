@@ -1177,7 +1177,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>BUS ADM X433.4 · Session 3</span><span class="mins">5 min</span></div>
   <h1>Gathering and Documenting Client Information</h1>
   <p class="lede">Grounding makes the model cite your sources. The nearest passage is not always the right one.</p>
-  <div class="panel pace" data-task="t-s1" data-comp="retrieval-bridge"><span class="plab">How this session is paced</span><div id="paceOut"></div>
+  <div class="panel pace" data-task="t-s1" data-comp="retrieval-bridge"><div id="paceOut"></div>
   <div id="tierbar">
     <span class="tl">Appendix depth</span>
     <button data-level="0">Foundational</button>
@@ -1185,7 +1185,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <button data-level="2">+ Advanced</button>
     <button class="core on" data-core>Core only</button>
   </div>
-  <p class="dim mono" id="tierOut" style="font-size:12px;letter-spacing:.04em;margin:9px 0 0"></p>
 </div>
 
 
@@ -2813,13 +2812,6 @@ window.__coreMins=72;
       a.classList.toggle('dim', !!(sec&&sec.classList.contains('dim')));
     })}
     sync(cards);
-    var out=document.getElementById('tierOut');
-    if(out){
-      out.textContent = coreOnly
-        ? 'Core only \u2014 appendix hidden. '+(window.__coreMins||0)+' core minutes.'
-        : shown+' of '+apx.length+' appendix sections in scope \u00b7 '+mins+' appendix minutes \u00b7 '+
-          (window.__coreMins||0)+' core minutes \u00b7 '+((window.__coreMins||0)+mins)+' total.';
-    }
   }
   bar.addEventListener('click',function(e){
     var b=e.target.closest('button'); if(!b) return;
@@ -2852,16 +2844,7 @@ window.__coreMins=72;
       '<div class="pcell"><b>'+core+' min</b><span>'+nc+' core sections</span></div>'+
       '<div class="pcell"><b>'+apx+' min</b><span>'+na+' appendix sections</span></div>'+
       '<div class="pcell"><b>'+(core+apx)+' min</b><span>everything</span></div>'+
-    '</div>'+
-    '<p><b>Two ways through this session.</b> The core is '+nc+' sections and about '+core+' '+
-    'minutes. It stands on its own: nothing in the core depends on the appendix, so reading '+
-    'those sections in order gives you the whole argument.</p>'+
-    '<p>The '+na+' appendix sections add '+apx+' minutes of optional depth, '+(core+apx)+' '+
-    'minutes for everything. Each one is placed in the core at the point it belongs rather '+
-    'than at the back of the file, so you can carry straight on into it and then pick up where '+
-    'you left off. The gold cards under Appendix contents link to each one, and the depth '+
-    'control above sets how many are showing; anything hidden leaves a stub naming what it '+
-    'was, so you can always see what you skipped. They also read on their own afterwards.</p>';
+    '</div>';
 
 })();
 </script>
