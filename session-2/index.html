@@ -1383,16 +1383,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="card warn"><span class="num">Consequence 03</span><h4>Consumer chat tools do not expose T</h4><p>You cannot set temperature in most subscription interfaces. You control variance through the prompt &mdash; by constraining the output space &mdash; not through a setting.</p></div>
   </div>
 
-  <div class="doit">
-    <span class="plab">Comparison &mdash; 4 minutes</span>
-    <p>Send this to your own tool three times, changing nothing between runs: <span class="mono">Write one sentence on the best thing about AI.</span> How different are the three? Ask one person to read all three of theirs aloud.</p>
-    <p>Then run this, which constrains the output space rather than the sampler: <span class="mono">Answer in exactly one sentence, in the form &ldquo;The best thing about AI is its ability to X.&rdquo; Choose X from: reason, retrieve, summarise, generate. Output nothing else.</span> Run it three times. Note how much of the variance disappeared and where it went.</p>
-  </div>
-
-
-
-  <div class="check" data-gate="g2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run the same prompt three times at one temperature, then constrain the output space and run it three more.</div></div>
-
 </section>
 
 <section class="slide apx" id="s4" data-nav="B3 · Counting failure" data-insert-after="s3" data-tier="standard">
