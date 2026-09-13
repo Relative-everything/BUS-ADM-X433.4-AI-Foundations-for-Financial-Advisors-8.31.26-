@@ -338,15 +338,21 @@ await check('JN-034', async (page) => {
 });
 
 
-/* JN-035: each triage explanation is 3 to 6 bullets and renders as a list. */
+/* JN-035: each triage explanation is 3 to 6 bullets and renders as a list.
+   CITES is scoped inside the page's IIFE, so the counts are read from the DOM:
+   one classification per item on a fresh page, then the rendered bullets. */
 await check('JN-035', async (page) => {
-  const lens = await page.evaluate(() => CITES.map((c) => c.w.length));
-  must(lens.length === 6 && lens.every((n) => n >= 3 && n <= 6), `bullet counts ${lens.join(',')}`);
-  const items = await page.$$('#triage > div');
-  must(items.length === 6, `${items.length} triage items`);
-  await items[2].locator('button[data-k="mis"]').click();
-  const r = await items[2].evaluate((d) => ({ li: d.querquerySelectorAll ? -1 : d.querySelectorAll('.fbx li').length, txt: d.querySelector('.fbx').textContent, shown: d.querySelector('.fbx').style.display }));
-  must(r.shown === 'block' && r.li === lens[2], `feedback shows ${r.li} bullets, expected ${lens[2]}`);
+  const items = page.locator('#triage > div:not(.mono)'); /* the seventh div is the running tally */
+  const n = await items.count();
+  must(n === 6, `${n} triage items`);
+  const counts = [];
+  for (let i = 0; i < 6; i++) {
+    await items.nth(i).locator('button[data-k="' + (i === 2 ? 'mis' : 'sound') + '"]').click();
+    counts.push(await items.nth(i).locator('.fbx li').count());
+  }
+  must(counts.every((c) => c >= 3 && c <= 6), `bullet counts ${counts.join(',')}`);
+  const r = await items.nth(2).evaluate((d) => ({ txt: d.querySelector('.fbx').textContent, shown: d.querySelector('.fbx').style.display, paras: d.querySelectorAll('.fbx p').length }));
+  must(r.shown === 'block' && r.paras === 0, 'feedback not shown as a list');
   must(/Correct\./.test(r.txt) && /Situation 3/.test(r.txt) && !/&sect;/.test(r.txt), 'feedback text wrong or entity shown literally');
 });
 
