@@ -652,18 +652,6 @@ body.core-only #rail button.apxnav:not(.apxidx){display:none}
 .verify{border:2px dashed var(--warn);border-radius:11px;padding:15px 18px;margin:20px 0;background:#fff;font-size:14.5px;line-height:1.5}
 .verify .vh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
 .verify ul{margin:7px 0 0;padding-left:19px}.verify li{margin:5px 0}
-/* ===== family 17: standing cold-open ritual — identical in every session ===== */
-.ritual{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:20px 24px;margin:22px 0}
-.ritual .rlab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:9px;font-weight:500}
-.ritual textarea{width:100%;min-height:96px;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.55;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;background:var(--page);color:var(--ink);resize:vertical}
-.ritual textarea:focus{outline:2.5px solid var(--on);outline-offset:2px}
-.rout{margin-top:13px;background:var(--off-bg);border-radius:9px;padding:13px 16px;font-size:14.5px;line-height:1.55}
-.rout.on{background:var(--on-bg)}
-.rout .rz{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:5px;font-weight:500}
-.rout .rnil{color:var(--muted)}
-.rout .rfx{margin-top:9px;padding-top:9px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
-.rnote{background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0;font-size:14px;line-height:1.5}
-.rnote .rh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px;font-weight:500}
 /* ===== family 1: work-along gate (completion feedback only; never withholds) ===== */
 .check{display:flex;gap:13px;align-items:flex-start;background:var(--gold-bg);border:1.5px solid #DFD3AF;border-radius:11px;padding:14px 17px;margin:22px 0}
 .check.done{background:var(--on-bg);border-color:var(--on)}
@@ -1215,7 +1203,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>Appendix &middot; 5 optional sections</span><span class="mins">78 min</span></div>
   <h2>Appendix contents</h2>
   <p class="lede">Five optional sections, 78 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
-  <p>The 13 sections of the core session run in about 72 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <p>The 12 sections of the core session run in about 64 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
     <a class="apxcard" href="#s5"><span class="ac">C1 &middot; 16 min &middot; after &sect;03</span><b>Chunk Size and Condition Orphaning</b></a>
     <a class="apxcard" href="#sHY"><span class="ac">C5 &middot; 16 min &middot; after &sect;03</span><b>Hybrid Search and the Re-ranking Pass</b></a>
@@ -1225,23 +1213,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 </section>
 <!-- APXPANEL:END -->
-
-<section class="slide" id="sCold" data-nav="Cold open">
-  <div class="eyebrow"><span>Cold open &middot; standing ritual</span><span class="mins">8 min</span></div>
-  <h2>The Last Prompt You Sent</h2>
-  <p class="big">Not a good one. Not a work one. The last one, whatever it was, pasted exactly as you typed it &mdash; typos, missing context, all of it.</p>
-
-  <div class="ritual" data-task="t-cold-open" data-comp="timed-ritual">
-    <label class="rlab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
-    <textarea id="coldPrompt" placeholder="Paste it exactly. Do not clean it up &mdash; the typos are the useful part."></textarea>
-    <div class="row" style="margin-top:12px"><button class="btn" id="coldGo">Analyse what I typed</button></div>
-    <div class="rout" id="coldOut"><span class="rnil">Paste something and press the button.</span></div>
-  </div>
-
-  <p>By now the prompt you paste here should look different from the one you pasted in Session 1. Tonight is about the channel the prompt cannot reach: the documents themselves.</p>
-
-  <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen &mdash; the comparison across sessions is the point.</div></div>
-</section>
 
 <section class="slide" id="s2" data-nav="Embeddings">
   <div class="eyebrow"><span>01 &middot; Mechanism</span><span class="mins">5 min</span></div>
@@ -1764,7 +1735,6 @@ then a list of every element where my answer was thin.</pre>
 <!-- APXBUDGET:BEGIN generated-by=scripts/build-appendix.mjs -->
     <tbody>
       <tr><td>BUS ADM X433.4 · Session 3</td><td>Gathering and Documenting Client Information</td><td class="n">5</td></tr>
-      <tr><td>Cold open &middot; standing ritual</td><td>The Last Prompt You Sent</td><td class="n">8</td></tr>
       <tr><td>01 &middot; Mechanism</td><td>Embeddings and the Coordinates of Meaning Space</td><td class="n">5</td></tr>
       <tr><td>02 &middot; The failure this creates</td><td>Distributional Similarity and Referential Difference</td><td class="n">5</td></tr>
       <tr><td>03 &middot; RAG, mechanically</td><td>Retrieval Mechanics: Chunking, Indexing, and Ranking</td><td class="n">6</td></tr>
@@ -1783,7 +1753,7 @@ then a list of every element where my answer was thin.</pre>
       <tr class="apxrow"><td>Appendix C4 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">18</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 72 + appendix 78; the core alone runs 72 minutes, twelve minutes over the hour</td><td class="n">150</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 64 + appendix 78; the core alone runs 64 minutes, four minutes over the hour</td><td class="n">142</td></tr>
     </tbody>
 <!-- APXBUDGET:END -->
   </table>
@@ -1808,7 +1778,7 @@ then a list of every element where my answer was thin.</pre>
 <!-- SOURCES:END -->
   </ul>
 <!-- APXNOTE:BEGIN generated-by=scripts/build-appendix.mjs -->
-  <p style="margin-top:22px">The core is 13 sections and runs in about 72 minutes, twelve minutes over the hour. The 5 appendix sections add 78 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
+  <p style="margin-top:22px">The core is 12 sections and runs in about 64 minutes, four minutes over the hour. The 5 appendix sections add 78 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
 <!-- APXNOTE:END -->
   <p><strong>No client data.</strong> The Cole household, Cole Precision Components and every document, transcript and figure attributed to them are synthetic and exist only as a classroom anchor. Nothing in this document is legal, tax or compliance advice, and no tax or legal conclusion is asserted anywhere in it.</p>
 
@@ -2695,53 +2665,6 @@ var PRD=[
  draw();
 })();
 
-/* ===== family 17: cold-open ritual — identical in every session ===== */
-/* COURSE-WIDE COLD-OPEN CHECKLIST. COLD_CHECKS is the one constant that
-   defines the eight fixed checks: a label, one plain line on why the item
-   matters, and a deterministic, offline detect function d(t). Every rule is
-   readable below: a presence test is a visible word list or a plain
-   measurement, never a relevance score, and there is no threshold. The rows
-   are diagnostic only; nothing else on the page reads them. Sessions 2-4
-   copy this constant and the renderer under it verbatim (register row
-   DW-066). */
-var COLD_CHECKS=[
- {l:'An explicit ask',w:'A question mark or an opening imperative tells the model what to return; without one it guesses the task as well as the answer.',
-  d:function(t){return /\?/.test(t)||/^\s*(?:\w+[,:]\s+)?(?:please\s+)?(?:write|make|give|list|draft|summarise|summarize|explain|create|find|tell|help|review|compare|analyse|analyze|rewrite|check|generate|outline|describe|calculate|translate|classify|extract|suggest|recommend|plan|edit|fix|improve|assess|evaluate)\b/i.test(t)}},
- {l:'At least 15 words',w:'Below about fifteen words there is rarely enough signal to tell your task apart from a thousand similar ones.',
-  d:function(t){return (t.match(/\S+/g)||[]).length>=15}},
- {l:'A named output format',w:'Naming a list, table, email, memo or draft fixes the shape of the answer instead of leaving the model to pick one.',
-  d:function(t){return /\b(list|table|email|e-mail|memo|draft|bullet|bullets|bulleted|outline|summary|report|letter|agenda|template|paragraph|paragraphs|spreadsheet|checklist|headline|slide|slides|script|caption)\b/i.test(t)}},
- {l:'Context beyond the ask',w:'Background the model cannot infer, the who and the situation, is what separates your answer from a generic one.',
-  d:function(t){return (t.match(/[.!?](\s|$)/g)||[]).length>=2||t.length>180}},
- {l:'A named audience or role',w:'Saying who is writing or who will read it shifts vocabulary, depth and tone toward that reader.',
-  d:function(t){return /\b(you are|act as|as an? \w+|audience|reader|readers|for my|for our|client|clients|prospect|prospects|board|committee|colleague|colleagues|adviser|advisers|advisor|advisors|planner|planners|attorney|attorneys|accountant|accountants|student|students|beginner|beginners|expert|experts)\b/i.test(t)}},
- {l:'A constraint on length, tone or scope',w:'A stated limit is the difference between an answer you can use and one you cut down yourself.',
-  d:function(t){return /\b(no more than|at most|under|within|maximum|max|limit|only|brief|briefly|concise|short|long|formal|informal|casual|plain|professional|friendly|neutral|tone|word|words|sentence|sentences|page|pages|paragraph|paragraphs|scope|exclude|excluding|without|avoid|keep it)\b/i.test(t)}},
- {l:'An example or reference point',w:'One example anchors format and register more reliably than a paragraph of description.',
-  d:function(t){return /\b(for example|e\.g|such as|like this|like the|similar to|based on|modelled on|modeled on|in the style of|sample|example|attached|below|here is|as in|following the)\b/i.test(t)}},
- {l:'What to do when unsure',w:'Telling it to verify, cite or ask first trades confident guessing for something you can check.',
-  d:function(t){return /\b(verify|cite|citation|citations|source|sources|if unsure|if you are unsure|if you're unsure|not sure|unsure|don't know|do not know|ask me|ask first|ask before|flag|confirm|double-check|check first|uncertain|say so)\b/i.test(t)}}
-];
-(function(){
-  var go=document.getElementById('coldGo');if(!go)return;
-  go.onclick=function(){
-    var box=document.getElementById('coldPrompt'),out=document.getElementById('coldOut');
-    var t=box.value.trim();
-    if(!t){out.className='rout';out.innerHTML='<span class="rnil">Paste something first.</span>';return}
-    var n=0,rows=COLD_CHECKS.map(function(c){
-      var hit=false;try{hit=!!c.d(t)}catch(err){hit=false}
-      if(hit)n++;
-      return '<div style="margin:9px 0 0"><span style="color:var(--'+(hit?'on':'warn')+');font-weight:700">'+
-        (hit?'\u2713 present':'\u2717 missing')+'</span> \u00b7 <b>'+c.l+'</b>'+
-        '<div class="dim" style="font-size:13px;margin-top:2px">'+c.w+'</div></div>';
-    });
-    out.className='rout on';
-    out.innerHTML='<span class="rz">Prompt checklist</span>'+rows.join('')+
-      '<div class="rfx"><b>'+n+' of 8 present.</b> Diagnostic only: nothing is scored and nothing unlocks. Keep the text on screen; the comparison across sessions is the point.</div>';
-    if(typeof mark==='function')mark('gc');
-  };
-})();
-
 /* ===== family 1: work-along gates — completion feedback only (pedagogy R10) ===== */
 var __done={};
 function mark(id){
@@ -2800,7 +2723,7 @@ var HY=[
 })();
 
 /* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
-window.__coreMins=72;
+window.__coreMins=64;
 /* APXCORE:END */
 
 /* ===== appendix depth control: tier filter + core-only mode ===== */
