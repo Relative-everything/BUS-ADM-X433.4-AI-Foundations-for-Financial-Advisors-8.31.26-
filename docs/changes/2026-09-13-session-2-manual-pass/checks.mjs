@@ -215,6 +215,30 @@ await check('JN-015', async (page) => {
   must(!gone, 'the old number boxes are still on the page');
 });
 
+
+/* JN-020: the builder redraws the premade prompt as levels change and loads it into the editor. */
+await check('JN-020', async (page) => {
+  must(!(await page.evaluate(() => !!document.getElementById('hwText'))), 'the paste box is still on the page');
+  await page.click('#fixtures button[data-fx="1"]');
+  await page.click('#hwScore .scale[data-e="F"] button[data-v="3"]');
+  const r = await page.evaluate(() => {
+    const els = [...document.querySelectorAll('#fxPrompt .pel')];
+    const f = els.find((e) => e.getAttribute('data-k') === 'F');
+    return { n: els.length, ftext: f ? f.textContent : '', fclass: f ? f.className : '', all: document.getElementById('s6b').textContent, which: document.getElementById('fxWhich').textContent };
+  });
+  must(/F2/.test(r.which), 'F2 not selected');
+  must(r.n === 4, `${r.n} elements rendered, expected 4`);
+  must(/Headings: Said, Decided, Open/.test(r.ftext), 'Format level 3 text not rendered');
+  must(/specified and checkable/i.test(r.ftext) && /l3/.test(r.fclass), 'Format element lacks its level label or class');
+  must(!/NaN|undefined/.test(r.all), 'NaN or undefined rendered in #s6b');
+  await page.click('#fxUse');
+  const ed = await page.evaluate(() => document.getElementById('hwRewrite').value);
+  must(/Headings: Said, Decided, Open/.test(ed), 'the editor did not receive the assembled prompt');
+  await page.click('#hwScore .scale[data-e="C"] button[data-v="0"]');
+  const absent = await page.evaluate(() => (document.querySelector('#fxPrompt .pel[data-k="C"]') || {}).textContent || '');
+  must(/no context given/i.test(absent), 'absent level does not render as an absent marker');
+});
+
 await browser.close();
 for (const [id, st, why] of out) console.log(`${id} ${st}${why ? ' ' + why : ''}`);
 const fails = out.filter((r) => r[1] === 'FAIL').length;
