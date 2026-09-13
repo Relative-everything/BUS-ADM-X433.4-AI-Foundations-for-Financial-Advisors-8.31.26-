@@ -119,21 +119,26 @@ await check('JN-004', async (page) => {
     tierOut: !!document.getElementById('tierOut'),
     plab: [...document.querySelectorAll('.pace .plab')].map((x) => x.textContent),
     buttons: document.querySelectorAll('#tierbar button').length,
-    dim0: document.querySelectorAll('section.apx.dim').length,
     apx: document.querySelectorAll('section.apx').length,
+    coreOnly: document.body.classList.contains('core-only'),
+    hidden: [...document.querySelectorAll('section.apx')].filter((s) => getComputedStyle(s).display === 'none').length,
   }));
   must(r.cells === 3, `${r.cells} timing cells, expected 3`);
   must(r.paras === 0, `${r.paras} paragraph(s) still in #paceOut`);
   must(!r.tierOut, '#tierOut readout still present');
   must(!r.plab.some((t) => /paced/i.test(t)), 'the "How this session is paced" heading still present');
   must(r.buttons === 4, `${r.buttons} tier buttons, expected 4`);
-  must(r.dim0 === r.apx && r.apx === 5, `at load ${r.dim0} of ${r.apx} appendix sections dimmed (core only)`);
+  must(r.coreOnly && r.hidden === r.apx && r.apx === 5, `at load core-only=${r.coreOnly}, ${r.hidden} of ${r.apx} appendix sections hidden`);
+  const state = () => page.evaluate(() => ({
+    coreOnly: document.body.classList.contains('core-only'),
+    hidden: [...document.querySelectorAll('section.apx')].filter((s) => getComputedStyle(s).display === 'none').length,
+  }));
   await page.click('#tierbar button[data-level="1"]');
-  const dim1 = await page.evaluate(() => document.querySelectorAll('section.apx.dim').length);
-  must(dim1 === 0, `after +Standard, ${dim1} appendix sections still dimmed`);
+  const s1 = await state();
+  must(!s1.coreOnly && s1.hidden === 0, `after +Standard, core-only=${s1.coreOnly}, ${s1.hidden} appendix sections still hidden`);
   await page.click('#tierbar button.core');
-  const dim2 = await page.evaluate(() => document.querySelectorAll('section.apx.dim').length);
-  must(dim2 === 5, `after Core only, ${dim2} dimmed, expected 5`);
+  const s2 = await state();
+  must(s2.coreOnly && s2.hidden === 5, `after Core only, core-only=${s2.coreOnly}, ${s2.hidden} hidden, expected 5`);
 });
 
 /* JN-005: three bridge items, count and reveal work, keys carry the evidence. */
