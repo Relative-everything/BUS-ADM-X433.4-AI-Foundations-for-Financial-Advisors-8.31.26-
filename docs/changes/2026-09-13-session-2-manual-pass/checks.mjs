@@ -239,6 +239,60 @@ await check('JN-020', async (page) => {
   must(/no context given/i.test(absent), 'absent level does not render as an absent marker');
 });
 
+
+/* JN-023: a question opens on its own click; the button reveals the rest. */
+await check('JN-023', async (page) => {
+  const before = await page.evaluate(() => [...document.querySelectorAll('#bsell .bq span:last-child')].map((x) => x.textContent));
+  must(before.length === 10 && before.every((t) => /Click to reveal/.test(t)), 'questions not hidden at load');
+  await page.click('#bsell .bq[data-i="1"]');
+  const mid = await page.evaluate(() => [...document.querySelectorAll('#bsell .bq span:last-child')].map((x) => x.textContent));
+  must(!/Click to reveal/.test(mid[1]) && mid[1].length > 30, 'the clicked question did not open');
+  must(/Click to reveal/.test(mid[0]) && /Click to reveal/.test(mid[2]), 'other questions opened too');
+  must(/1 of 10 asked/.test(await page.evaluate(() => document.getElementById('bsellCount').textContent)), 'count did not move');
+  await page.click('#bsellReveal');
+  const after = await page.evaluate(() => [...document.querySelectorAll('#bsell .bq span:last-child')].map((x) => x.textContent));
+  must(after.every((t) => !/Click to reveal/.test(t)), 'reveal the rest left a question closed');
+});
+
+/* JN-024: a starter shows its kickoff and at least four questions. */
+await check('JN-024', async (page) => {
+  const n = await page.evaluate(() => document.querySelectorAll('#rpChips button').length);
+  must(n === 5, `${n} starters, expected 5`);
+  await page.click('#rpChips button[data-rp="2"]');
+  const r = await page.evaluate(() => ({ k: document.getElementById('rpKick').textContent, q: document.getElementById('rpQs').textContent }));
+  must(/retirement income/.test(r.k) && /Interview me first/.test(r.k), 'kickoff not shown for the third starter');
+  must(r.q.split('\n').length >= 4, 'fewer than four questions');
+  must(await page.evaluate(() => !!document.querySelector('#rpStart[data-task="t-s8b"][data-comp="builder-assembler"]')), 'root tags missing');
+});
+
+/* JN-029: every label in the hallucination chart lies inside its viewBox, at 1280 and at 380 px. */
+async function chartFits(page) {
+  return page.evaluate(() => {
+    const svg = document.getElementById('hallChart').closest('svg');
+    const [vx, vy, vw, vh] = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
+    const bad = [];
+    svg.querySelectorAll('text').forEach((t) => {
+      const b = t.getBBox(); if (!b.width) return;
+      const m = t.getCTM(); const x0 = b.x * m.a + b.y * m.c + m.e, x1 = (b.x + b.width) * m.a + (b.y + b.height) * m.c + m.e;
+      const y1 = (b.x + b.width) * m.b + (b.y + b.height) * m.d + m.f;
+      if (Math.max(x0, x1) > vx + vw + 2 || y1 > vy + vh + 2) bad.push(t.textContent.slice(0, 40));
+    });
+    const c = svg.parentElement.getBoundingClientRect(), s = svg.getBoundingClientRect();
+    if (s.right > c.right + 1) bad.push('svg wider than its container');
+    return bad;
+  });
+}
+await check('JN-029', async (page) => {
+  const bad = await chartFits(page);
+  must(bad.length === 0, 'outside the frame at 1280: ' + bad.join(' | '));
+  const narrow = await browser.newContext({ viewport: { width: 380, height: 900 } });
+  const p2 = await narrow.newPage();
+  await p2.goto(URL, { waitUntil: 'load' }); await p2.waitForTimeout(300);
+  const bad2 = await chartFits(p2);
+  await narrow.close();
+  must(bad2.length === 0, 'outside the frame at 380: ' + bad2.join(' | '));
+});
+
 await browser.close();
 for (const [id, st, why] of out) console.log(`${id} ${st}${why ? ' ' + why : ''}`);
 const fails = out.filter((r) => r[1] === 'FAIL').length;
