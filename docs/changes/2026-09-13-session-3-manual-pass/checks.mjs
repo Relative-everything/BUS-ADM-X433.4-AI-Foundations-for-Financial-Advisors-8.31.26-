@@ -113,3 +113,21 @@ await check('JN-016', async (page) => {
   await narrow.close();
   must(b.top >= 0 && b.top < 40 && b.hit && b.open && b.right <= 380, `at 380px: top ${b.top}, hit ${b.hit}, open ${b.open}, right ${b.right}`);
 });
+
+/* JN-025: clicking a term draws three connector lines with their distances; the next click redraws. */
+await check('JN-025', async (page) => {
+  const before = await page.evaluate(() => document.querySelectorAll('#mapWrap line.mapln').length);
+  must(before === 0, `${before} connector(s) drawn before any click`);
+  await page.click('#mapWrap g.mp[data-i="0"]');
+  const r = await page.evaluate(() => ({
+    lines: document.querySelectorAll('#mapWrap line.mapln').length,
+    labels: [...document.querySelectorAll('#mapWrap text.mapdist')].map((t) => t.textContent),
+    out: document.getElementById('mapOut').textContent,
+  }));
+  must(r.lines === 3, `${r.lines} connector lines after a click, expected 3`);
+  must(r.labels.length === 3 && r.labels.every((t) => /^\d+\.\d$/.test(t)), `distance labels: ${r.labels.join(', ')}`);
+  for (const t of r.labels) must(r.out.includes(t), `label ${t} not in the readout`);
+  await page.click('#mapWrap g.mp[data-i="8"]');
+  const n = await page.evaluate(() => document.querySelectorAll('#mapWrap line.mapln').length);
+  must(n === 3, `${n} connector lines after the second click, expected 3`);
+});

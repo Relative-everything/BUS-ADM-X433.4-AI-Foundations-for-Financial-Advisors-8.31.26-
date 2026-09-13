@@ -1900,6 +1900,7 @@ var CSNOTE={
  s+='<line x1="'+PX+'" y1="'+PY+'" x2="'+PX+'" y2="'+(VH-32)+'" stroke="#D8DAD4"/>';
  s+='<text x="'+PX+'" y="'+(VH-12)+'" class="chartlab">projected dimension 1</text>';
  s+='<text x="16" y="'+(VH/2)+'" class="chartlab" transform="rotate(-90 16 '+(VH/2)+')" text-anchor="middle">projected dimension 2</text>';
+ s+='<g id="mapLines"></g>';
  TERMS.forEach(function(t,i){
   s+='<g class="mp" data-i="'+i+'" style="cursor:pointer">';
   s+='<circle id="mc'+i+'" cx="'+n1(sx(t.x))+'" cy="'+n1(sy(t.y))+'" r="6" fill="#B9BDB9"/>';
@@ -1910,6 +1911,13 @@ var CSNOTE={
   var a=TERMS[i];
   var d=TERMS.map(function(b,j){return {j:j,n:b.n,cs:b.cs,d:Math.sqrt(Math.pow(a.x-b.x,2)+Math.pow(a.y-b.y,2))}})
     .filter(function(r){return r.j!==i}).sort(function(p,q){return p.d-q.d}).slice(0,3);
+  /* JN-025: a connector from the chosen term to each neighbour, the distance at its midpoint. */
+  var LG=W.querySelector('#mapLines'),ln='';
+  d.forEach(function(r){var b=TERMS[r.j],x1=sx(a.x),y1=sy(a.y),x2=sx(b.x),y2=sy(b.y);
+   ln+='<line class="mapln" x1="'+n1(x1)+'" y1="'+n1(y1)+'" x2="'+n1(x2)+'" y2="'+n1(y2)+'" stroke="#0E5A55" stroke-width="1.6" stroke-dasharray="5 3" opacity="0.85"/>';
+   ln+='<text class="chartval mapdist" x="'+n1((x1+x2)/2)+'" y="'+n1((y1+y2)/2-5)+'" text-anchor="middle" fill="#0E5A55">'+n1(r.d)+'</text>';
+  });
+  if(LG)LG.innerHTML=ln;
   TERMS.forEach(function(t,j){
    var c=$('mc'+j),tx=$('mt'+j);if(!c)return;
    var hit=d.filter(function(r){return r.j===j}).length>0;
