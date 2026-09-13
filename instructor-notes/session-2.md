@@ -82,6 +82,7 @@ Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with 
 
 ### Flow
 - Element: `#cbWrap` copy box, `#bsell` (`t-s8`, `builder-assembler`), the diagnostic `#promptIn`. Opener: "Ask it to ask you questions. You saw me do it building a skill; now it rebuilds your prompt."
+- Say the data rule aloud before anyone pastes into the diagnostic: no real client data and no identifying information enters any AI tool in this course, synthetic or de-identified facts only. The on-page panel that said so is gone by instruction (2026-09-13); the hub and Session 1 still carry the rule.
 - First to drop if behind: show the wrapper, skip the ten-question reveal (three minutes).
 
 ## s10 (§07 Citation failure types, 7:37 PM, 12 min) [9:37 CT]
