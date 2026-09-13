@@ -1203,9 +1203,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>Appendix &middot; 3 optional sections</span><span class="mins">46 min</span></div>
   <h2>Appendix contents</h2>
   <p class="lede">Three optional sections, 46 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
-  <p>The 12 sections of the core session run in about 64 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <p>The 11 sections of the core session run in about 59 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
-    <a class="apxcard" href="#s8"><span class="ac">C2 &middot; 14 min &middot; after &sect;05</span><b>Grounding Compared With Fine-Tuning</b></a>
+    <a class="apxcard" href="#s8"><span class="ac">C2 &middot; 14 min &middot; after &sect;04</span><b>Grounding Compared With Fine-Tuning</b></a>
     <a class="apxcard" href="#s11"><span class="ac">C3 &middot; 14 min &middot; after &sect;07</span><b>Note-Taker Adoption Against Note-Taker Satisfaction</b></a>
     <a class="apxcard" href="#s15"><span class="ac">C4 &middot; 18 min &middot; after &sect;10</span><b>Citation-Backed Output and Verification Effort</b></a>
   </div>
@@ -1298,77 +1298,34 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 </section>
 
-<section class="slide" id="s6" data-nav="Retrieval rates">
-  <div class="eyebrow"><span>04 &middot; Measurement</span><span class="mins">6 min</span></div>
-  <h2>Measured Retrieval Failure Rates</h2>
+<section class="slide" id="s6" data-nav="Grounding limits">
+  <div class="eyebrow"><span>04 &middot; What grounding fixes</span><span class="mins">6 min</span></div>
+  <h2>What Grounding Fixes, and What It Does Not</h2>
 
-  <p class="big">Anthropic measured the retrieval step alone, before any generation, as the share of queries for which the correct chunk was absent from the top twenty returned. The baseline was 5.7%. The best configuration reached 1.9%.</p>
-
-  <p>Two things from that pair. The size: contextual chunks, a lexical index alongside the vector index, and a reranking pass cut failures by two thirds. The floor: 1.9% is not zero — and this is retrieval measured in isolation, on a benchmark built by the vendor of the technique.</p>
-
-  <figure id="figRetr"></figure>
-
-  <p>Those rates describe how often the right chunk is <em>missing</em>. They say nothing about the case where a plausible wrong one is present instead — which is what the Cole file produces, and what you are about to predict.</p>
+  <p class="big">Grounding cuts mistakes. It does not remove them. Two things still go wrong: the right passage is not found, or it is found and the model still writes something it does not say.</p>
 
   <div class="panel" data-task="t-s6" data-comp="prediction-commit">
-    <span class="do">Do this now — 5 minutes</span>
-    <h4>Grounded-Answer Prediction and Your Own Failure Count</h4>
-    <p class="hint">You ask a properly configured, fully grounded assistant, with the entire Cole document set indexed: <em>"What value should we use for Meg's CPC shares in the sale to the trust?"</em> Commit to a prediction before revealing.</p>
-    <div class="row" id="valBtns"></div>
-    <div id="valOut" class="mpanel"><span class="hd">Your prediction</span><span class="nil">Commit to an answer.</span></div>
-    <div id="valKey" class="mpanel keyhide" style="display:none"></div>
-    <p class="hint" style="margin-top:20px">Now the volume arithmetic. Enter the figures for your practice; the output is failed retrievals per year at each published configuration.</p>
-    <div class="ctrls">
-      <div><label class="fl" for="vMeet">Client meetings per year</label><input type="number" id="vMeet" value="220" min="0" max="5000"></div>
-      <div><label class="fl" for="vQ">Grounded queries per meeting</label><input type="number" id="vQ" value="3" min="0" max="200"></div>
-    </div>
-    <div id="vOut" class="mpanel"></div>
+    <span class="do">Do this now: 2 minutes</span>
+    <h4>Commit Before the Numbers</h4>
+    <p class="hint">A well-built tool has your documents and is told to answer only from them. Out of 100 answers, how many still contain something the documents do not support? Commit, then read the measured figures.</p>
+    <div class="row" id="grBtns"></div>
+    <div id="grOut" class="mpanel"><span class="hd">Your prediction</span><span class="nil">Commit to an answer.</span></div>
+    <div id="grKey" class="mpanel keyhide" style="display:none"></div>
   </div>
-
-  <p>Anthropic publishes the boundary condition that matters most for a small firm: under roughly 200,000 tokens — about 500 pages — skip retrieval and put the whole corpus in the prompt. The Cole set is nine documents. A large share of the advisory RAG projects sold in 2026 solve a problem the buyer does not have.</p>
-
-  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em>. Top-20-chunk retrieval failure rate: baseline 5.7%; contextual embeddings 3.7%; contextual embeddings + contextual BM25 2.9%; plus reranking 1.9%. The 67% headline is the 5.7 → 1.9 reduction. The 200,000-token / ~500-page threshold is Anthropic's stated recommendation. <span class="conf h" data-src="src-anthropic-ctx">H — published figures</span>, with the standing caveat that they are vendor-reported benchmarks on codebases, fiction and research papers, not advisory documents <span class="conf m" data-src="src-anthropic-ctx">M — transfer to your corpus unverified</span>. The valuation contradiction is synthetic case content, not a measured result.</p>
-
-  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Predict the failure rate before revealing it, then read the measured figure.</div></div>
-
-</section>
-
-<section class="slide" id="s7" data-nav="Grounded error">
-  <div class="eyebrow"><span>05 &middot; Measurement</span><span class="mins">5 min</span></div>
-  <h2>Measured Hallucination Rates Under Grounding</h2>
-
-  <p class="big">The spiral, stated once: Session 1 was why hallucination happens, tonight is how often it happens under the strongest available remedy, and Session 4 is what it costs you when it happens anyway.</p>
-
-  <p>Retrieval failure is the first error source. The second is the model reading a correctly retrieved passage and still writing something it does not support. Both are measured, and neither agrees with the marketing.</p>
-
-  <p>Vectara's leaderboard is the cleanest measurement of the reading step. The model gets the source document and a prompt telling it to summarise using only that passage, not to infer, not to use internal knowledge. Every advantage granted. In November 2025 Vectara moved to a harder dataset: 7,700+ articles up to 32,000 tokens across law, medicine, finance, education and technology, split evenly between low and high complexity. Rates rose across the board. Gemini-2.5-flash-lite led at 3.3%; Gemini-3-Pro came in at 13.6% and missed the top 25; Claude Sonnet 4.5, GPT-5, GPT-OSS-120B, Grok-4 and DeepSeek-R1 all exceeded 10%.</p>
-
-  <p>Two structural findings alongside the rankings: rates are consistently higher on high-complexity articles, and rise with length. A 2014 buy-sell and a 2023 appraisal sit at the long, high-complexity end of that distribution — not the short news article the earlier benchmark used.</p>
-
-  <p>Stanford supplies the professional-tools measurement. Magesh and colleagues ran the first preregistered evaluation of retrieval-built legal research tools against vendor claims of "hallucination-free" citations. Lexis+ AI hallucinated on more than 17% of queries, Westlaw AI-Assisted Research on roughly 33%, against 43% for GPT-4 ungrounded. Grounding cut the rate by half to three quarters, did not eliminate it, and the vendors' claims were — in the authors' assessment — overstated.</p>
 
   <figure id="figHall"></figure>
 
-  <div class="panel" data-task="t-s7" data-comp="work-along-gate">
-    <span class="do">Do this now — 4 minutes</span>
-    <h4>Conditions and the Measured Hallucination Band</h4>
-    <p class="hint">Toggle the two conditions the published studies actually varied. The panel returns the measured figure for that cell and names the study. Two cells have no published measurement; the panel says so rather than interpolating.</p>
-    <div class="ctrls">
-      <label class="tg" id="tgG"><input type="checkbox" id="cbG"><span class="track"><span class="knob"></span></span><span><span class="tl">Source document supplied</span><span class="td">The model is handed the passage and told to answer only from it.</span></span></label>
-      <label class="tg" id="tgL"><input type="checkbox" id="cbL"><span class="track"><span class="knob"></span></span><span><span class="tl">Long, high-complexity document</span><span class="td">Domain text up to 32K tokens rather than a short news article.</span></span></label>
-    </div>
-    <div id="gOut" data-task="t-s8" data-comp="two-bucket-sorter" class="mpanel"></div>
-  </div>
+  <p>Two measured figures. Anthropic tested the finding step alone: even its best setup failed to surface the right passage for about 2 questions in 100, down from about 6 <span class="conf h" data-src="src-anthropic-ctx">H</span>. Stanford tested the reading step on grounded legal research tools sold as hallucination-free: they still gave unsupported answers on 17% to 33% of questions, against 43% for a general model with no documents <span class="conf h" data-src="src-magesh">H</span>.</p>
 
-  <p class="src">Vectara (19 Nov 2025), <em>Introducing the Next Generation of Vectara's Hallucination Leaderboard</em> — dataset size, 32K-token length, domain mix, low/high complexity split (3,792 / 3,939), the leaderboard prompt, and the named model rates <span class="conf h" data-src="src-vectara">H</span>. Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools. <em>Journal of Empirical Legal Studies, 22</em>(2), 216 — Lexis+ AI &gt;17%, Westlaw AI-Assisted Research ~33%, GPT-4 43%; tools tested May 2024 <span class="conf h" data-src="src-magesh">H — peer reviewed</span>. Both measure legal and general text, not financial planning documents <span class="conf m" data-src="src-case">M — domain transfer unverified</span>.</p>
+  <p>In the Cole file the failure looks like the first preset in §03. The answer is fully cited, quotes Article VII correctly, and is wrong, because that formula is for a death or a disability and not for a sale to a trust. No error message. What catches it is a person who knows the difference.</p>
 
+  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em>: top-20 retrieval failure 5.7% at baseline, 1.9% with contextual embeddings, BM25 and reranking <span class="conf h" data-src="src-anthropic-ctx">H</span>; a vendor benchmark on codebases, fiction and papers, not advisory documents <span class="conf m" data-src="src-anthropic-ctx">M, transfer unverified</span>. Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025), <em>Journal of Empirical Legal Studies, 22</em>(2), 216: Lexis+ AI above 17%, Westlaw AI-Assisted Research about 33%, GPT-4 43%, tools tested May 2024 <span class="conf h" data-src="src-magesh">H, peer reviewed</span>. The Cole example is synthetic <span class="conf l" data-src="src-case">L</span>.</p>
 
-
-  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Read all four measured rates and name which one your own workflow is exposed to.</div></div>
+  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Commit to a number before the reveal, then read the two measured figures.</div></div>
 
 </section>
 
-<section class="slide apx" id="s8" data-nav="C2 · Grounding vs tuning" data-insert-after="s7" data-tier="foundational">
+<section class="slide apx" id="s8" data-nav="C2 · Grounding vs tuning" data-insert-after="s6" data-tier="foundational">
   <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C2 &middot; Grounding Compared With Fine-Tuning</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
   <div class="eyebrow"><span>Appendix C2 &middot; Comparison</span><span class="mins">14 min</span></div>
   <h2>Grounding Compared With Fine-Tuning</h2>
@@ -1681,8 +1638,7 @@ then a list of every element where my answer was thin.</pre>
       <tr><td>01 &middot; Mechanism</td><td>Embeddings and the Coordinates of Meaning Space</td><td class="n">5</td></tr>
       <tr><td>02 &middot; The failure this creates</td><td>Distributional Similarity and Referential Difference</td><td class="n">5</td></tr>
       <tr><td>03 &middot; RAG, mechanically</td><td>Retrieval Mechanics: Chunking, Indexing, and Ranking</td><td class="n">6</td></tr>
-      <tr><td>04 &middot; Measurement</td><td>Measured Retrieval Failure Rates</td><td class="n">6</td></tr>
-      <tr><td>05 &middot; Measurement</td><td>Measured Hallucination Rates Under Grounding</td><td class="n">5</td></tr>
+      <tr><td>04 &middot; What grounding fixes</td><td>What Grounding Fixes, and What It Does Not</td><td class="n">6</td></tr>
       <tr><td>06 &middot; The workflow</td><td>The Advisor Meeting Workflow and Its Failure Propagation</td><td class="n">4</td></tr>
       <tr><td>07 &middot; Architecture</td><td>Note-Taker Architecture and the Extraction Step</td><td class="n">5</td></tr>
       <tr><td>08 &middot; Obligation</td><td>Recording Consent and the Confidentiality Obligation</td><td class="n">6</td></tr>
@@ -1694,7 +1650,7 @@ then a list of every element where my answer was thin.</pre>
       <tr class="apxrow"><td>Appendix C4 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">18</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 64 + appendix 46; the core alone runs 64 minutes, four minutes over the hour</td><td class="n">110</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 59 + appendix 46; the core alone runs 59 minutes, and fits the hour</td><td class="n">105</td></tr>
     </tbody>
 <!-- APXBUDGET:END -->
   </table>
@@ -1719,7 +1675,7 @@ then a list of every element where my answer was thin.</pre>
 <!-- SOURCES:END -->
   </ul>
 <!-- APXNOTE:BEGIN generated-by=scripts/build-appendix.mjs -->
-  <p style="margin-top:22px">The core is 12 sections and runs in about 64 minutes, four minutes over the hour. The 3 appendix sections add 46 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
+  <p style="margin-top:22px">The core is 11 sections and runs in about 59 minutes, and fits the hour. The 3 appendix sections add 46 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
 <!-- APXNOTE:END -->
   <p><strong>No client data.</strong> The Cole household, Cole Precision Components and every document, transcript and figure attributed to them are synthetic and exist only as a classroom anchor. Nothing in this document is legal, tax or compliance advice, and no tax or legal conclusion is asserted anywhere in it.</p>
 
@@ -1809,7 +1765,7 @@ document.addEventListener('keydown',function(e){
     var on=document.body.classList.contains('reveal');
     $('ovr').textContent=on?'Override ON — all answers revealed':'Shift+U — reveal all answer panels';
     [].slice.call(document.querySelectorAll('.keyhide')).forEach(function(el){el.style.display=on?'block':'none'});
-    if(on){REVEALS.forEach(function(f){f()});showSlope();showDocKey();showValKey();showDefence();showRevote();}
+    if(on){REVEALS.forEach(function(f){f()});showSlope();showDocKey();showDefence();showRevote();}
   }});
 
 /* ================= 1. Session 2 retrieval bridge ================= */
@@ -2005,20 +1961,11 @@ var PRESET=[
 })();
 
 /* ===== PRESERVED FROM PRIOR BUILD - data arrays, chart builder, chart calls, slopegraph ===== */
-var RETR=[
- {l:'Baseline embeddings',v:5.7},
- {l:'Contextual embeddings',v:3.7},
- {l:'Contextual embeddings + BM25',v:2.9},
- {l:'Above, plus reranking',v:1.9}
-];
-
 var HALL=[
- {l:'GPT-4, no retrieval',v:43,c:'#9A4B22'},
- {l:'Westlaw AI-AR (RAG)',v:33,c:'#9A4B22'},
- {l:'Lexis+ AI (RAG)',v:17,c:'#8A6A12'},
- {l:'Gemini-3-Pro, grounded',v:13.6,c:'#8A6A12'},
- {l:'Best model, grounded',v:3.3,c:'#0E5A55'},
- {l:'Retrieval step, best config',v:1.9,c:'#0E5A55'}
+ {l:'GPT-4, no documents',v:43,c:'#9A4B22'},
+ {l:'Westlaw AI-AR, grounded',v:33,c:'#9A4B22'},
+ {l:'Lexis+ AI, grounded',v:17,c:'#8A6A12'},
+ {l:'Finding step alone, best setup',v:1.9,c:'#0E5A55'}
 ];
 
 var SLOPE=[
@@ -2047,18 +1994,12 @@ function barChart(el,data,opt){
  el.innerHTML=s+'<figcaption>'+opt.cap+'</figcaption>';
 }
 
-barChart($('figRetr'),RETR.map(function(d,i){return {l:d.l,v:d.v,c:i===0?'#9A4B22':i===3?'#0E5A55':'#6F7B78'}}),
- {title:'Top-20-chunk retrieval failure rate by configuration',
-  sub:'Anthropic internal benchmark, September 2024',
-  axis:'share of queries where the correct chunk was absent from the top 20',
-  cap:'Source: Anthropic, <em>Contextual Retrieval in AI Systems</em>, 19 September 2024. Values plotted from the array <code>[5.7, 3.7, 2.9, 1.9]</code> in the page source. The published 67% headline is the 5.7 \u2192 1.9 reduction. <span class="conf h" data-src="src-anthropic-ctx">H</span> as published; <span class="conf m" data-src="src-anthropic-ctx">M</span> for transfer to an advisory corpus \u2014 the benchmark used codebases, fiction and research papers.'});
-
 barChart($('figHall'),HALL,
- {title:'Measured error rates across four grounding conditions',
-  sub:'Rows 1\u20133: legal research questions \u00b7 Rows 4\u20135: long domain documents \u00b7 Row 6: retrieval only',
-  padl:210,
-  axis:'measured error / hallucination rate \u2014 three separate studies, three different tasks',
-  cap:'Bars are plotted from the array in the page source. Sources, top to bottom: Magesh et al. (2025), <em>J. Empirical Legal Studies</em> 22:216, tools tested May 2024 <span class="conf h" data-src="src-magesh">H</span>; Vectara hallucination leaderboard, 19 Nov 2025, 7,700+ articles up to 32K tokens <span class="conf h" data-src="src-vectara">H</span>; Anthropic, 19 Sep 2024 <span class="conf h" data-src="src-anthropic-ctx">H</span>. <strong>These are not directly comparable.</strong> They measure different tasks on different corpora and are placed on one axis to show order of magnitude, not to rank products <span class="conf m" data-src="src-anthropic-ctx">M \u2014 cross-study comparison is illustrative</span>.'});
+ {title:'Measured error rates, grounded and not',
+  sub:'Rows 1 to 3: legal research questions (Stanford) \u00b7 Row 4: the finding step alone (Anthropic)',
+  padl:230,
+  axis:'answers with an unsupported claim, or questions where the right passage was not found',
+  cap:'Bars are plotted from the array in the page source. Rows 1 to 3: Magesh et al. (2025), <em>J. Empirical Legal Studies</em> 22:216, tools tested May 2024 <span class="conf h" data-src="src-magesh">H</span>. Row 4: Anthropic, 19 Sep 2024, the share of questions where the right passage was absent from the top 20 <span class="conf h" data-src="src-anthropic-ctx">H</span>. Two studies, two tasks, one axis to show the order of magnitude, not to rank products <span class="conf m" data-src="src-magesh">M, cross-study comparison is illustrative</span>.'});
 
 function showSlope(){
  var F=$('figSlope');if(!F)return;
@@ -2081,79 +2022,31 @@ function showSlope(){
  F.style.display='block';
 }
 
-/* ================= 6. Valuation prediction + retrieval chart + estimator ================= */
-var VALOPT=[
- {t:COLEm('cpcValue')+' — the indicated value of the company',k:false,
-  w:'No. That figure is nowhere in the indexed document set. It lives in the appraisal engagement and in your planning software, not in the nine documents you gave the assistant. A grounded assistant cannot return a number it was never shown.'},
- {t:COLEm('appraisal2023')+' less '+COLEp('discount',0)+' — the 2023 appraisal figure',k:false,
-  w:'Plausible, and wrong, for a reason worth more than the answer. The memorandum passage describes a discount on the non-voting units, and the appraisal passage describes no discount at all. Asked about \u201cMeg\u2019s CPC shares,\u201d the appraisal ranked third, sharing only the word \u201cvalue\u201d with the question; the words that matter, Meg and CPC, appear in no passage. The document that holds the answer is nearly invisible to the question that needs it, and no instruction to answer only from the sources can fix a document the model was never handed.'},
- {t:'Five times three-year average EBIT — the 2014 buy-sell formula',k:true,
-  w:'Correct, and you watched it happen in \u00a703. The answer will be fully sourced, will quote Article VII accurately, and will be materially wrong: that formula is the purchase price on a death, a disability or a withdrawal, not the valuation standard for a sale to a trust. It produces roughly '+COLEm('buySellFormula')+' against a '+COLEm('cpcValue')+' indicated value, and nothing on the screen will say so.'},
- {t:'It refuses, because the documents conflict',k:false,
-  w:'This is what you want and not what happens. Nothing in the corpus asserts a conflict, and the retriever surfaces passages by similarity, not by contradiction. Detecting that two documents disagree requires reading both, which is the step retrieval is designed to avoid.'}
+/* ================= 6. What grounding fixes: predict, then the measured figures ================= */
+var GROPT=[
+ {t:'Fewer than 1 in 100',k:false,w:'Not on any published measurement. Even the finding step alone, before the model reads anything, misses the right passage about 2 times in 100 at Anthropic\u2019s best setting.'},
+ {t:'About 1 in 20',k:false,w:'Closer, and still too kind. That is roughly what the finding step alone misses at the baseline setting, 5.7 in 100. Add the reading step and the measured rates climb to 17 and 33 in 100.'},
+ {t:'About 1 in 5, or more',k:true,w:'This is what Stanford measured on grounded legal research tools sold as hallucination-free: 17 to 33 answers in 100 contained something the sources did not support. Grounding roughly halved the ungrounded rate of 43. It did not remove it.'}
 ];
-var valPicked=-1;
-function showValKey(){
- var K=$('valKey');if(!K)return;
- if(valPicked<0&&!document.body.classList.contains('reveal'))return;
- var h='<span class="hd">Published in the case file</span>';
- VALOPT.forEach(function(o){h+=(o.k?'<span class="good">\u2713 ':'<span class="flag">\u2717 ')+esc(o.t)+'</span><br><span style="color:#6F7B78">'+esc(o.w)+'</span><br><br>'});
- h+='<span class="hd">The shape of this failure</span><span class="flag">Grounded. Sourced. Quoted accurately. Materially wrong.</span> There is no error message, no low-confidence signal and no hedge. The only thing that catches it is a human who knows that a buy-sell formula and a transfer valuation are different standards \u2014 which is knowledge the tool does not have and cannot acquire from this corpus.';
- K.className='mpanel has keyhide';K.innerHTML=h;K.style.display='block';
-}
 (function(){
- var B=$('valBtns'),O=$('valOut');
- VALOPT.forEach(function(o,i){
-  var b=document.createElement('button');b.className='btn sel mini';b.type='button';b.textContent=String.fromCharCode(97+i)+')';
-  b.title=o.t;
-  var lab=document.createElement('span');
-  b.textContent=String.fromCharCode(97+i)+'  '+o.t;
+ var B=$('grBtns'),O=$('grOut'),K=$('grKey'),picked=-1;
+ function showKey(){
+  if(picked<0&&!document.body.classList.contains('reveal'))return;
+  var h='<span class="hd">Measured</span>';
+  GROPT.forEach(function(o){h+=(o.k?'<span class="good">\u2713 ':'<span class="flag">\u2717 ')+esc(o.t)+'</span><br><span style="color:#6F7B78">'+esc(o.w)+'</span><br><br>'});
+  h+='<span class="hd">The shape of the failure</span><span class="flag">Grounded. Cited. Quoted accurately. Wrong.</span> There is no error message and no low-confidence signal. What catches it is a person who knows which document should have been there.';
+  K.className='mpanel has keyhide';K.innerHTML=h;K.style.display='block';
+ }
+ GROPT.forEach(function(o,i){
+  var b=document.createElement('button');b.className='btn sel mini';b.type='button';b.textContent=o.t;
   b.onclick=function(){
-   valPicked=i;
-   [].slice.call(B.children).forEach(function(c,j){c.classList.toggle('act',j===i)});
-   O.className='mpanel has';
-   O.innerHTML='<span class="hd">Your prediction</span>'+(o.k?'<span class="good">':'<span class="flag">')+esc(o.t)+'</span>';
-   showValKey();
+   if(picked>=0)return;picked=i;
+   [].slice.call(B.children).forEach(function(c,j){c.classList.toggle('act',j===i);c.disabled=(j!==i)});
+   O.className='mpanel has';O.innerHTML='<span class="hd">Your prediction</span>'+(o.k?'<span class="good">':'<span class="flag">')+esc(o.t)+'</span>';
+   showKey();if(typeof mark==='function')mark('g5');
   };
   B.appendChild(b)});
- B.style.flexDirection='column';B.style.alignItems='stretch';
-})();
-(function(){
- var M=$('vMeet'),Q=$('vQ'),O=$('vOut');
- function draw(){
-  var m=Math.max(0,parseFloat(M.value)||0),q=Math.max(0,parseFloat(Q.value)||0),tot=m*q;
-  var h='<span class="hd">'+n0(tot)+' grounded retrievals per year</span>';
-  if(tot===0){h+='<span class="nil">Enter non-zero volumes.</span>';O.className='mpanel';O.innerHTML=h;return}
-  RETR.forEach(function(r,i){
-   var f=tot*r.v/100;
-   h+=(i===0?'<span class="flag">':i===3?'<span class="good">':'<span>')+n0(f)+' failed retrievals</span> \u2014 '+esc(r.l)+' ('+n1(r.v)+'%)<br>';
-  });
-  var d=tot*(RETR[0].v-RETR[3].v)/100;
-  h+='<br><span class="hd">Reading</span>Best published configuration still leaves <strong>'+n0(tot*RETR[3].v/100)+'</strong> retrievals a year in which the governing passage was never shown to the model. Moving from baseline to best avoids '+n0(d)+' of them. Neither number counts the Article VII case, where the governing passage was absent <em>and</em> a confident substitute was present \u2014 that failure is not in this measurement at all.';
-  O.className='mpanel has';O.innerHTML=h;
- }
- M.addEventListener('input',draw);Q.addEventListener('input',draw);draw();
-})();
-
-/* ================= 7. Toggle matrix ================= */
-(function(){
- var G=$('cbG'),L=$('cbL'),O=$('gOut');
- function draw(){
-  $('tgG').classList.toggle('on',G.checked);$('tgL').classList.toggle('on',L.checked);
-  var h='<span class="hd">Measured figure for this cell</span>';
-  if(!G.checked&&!L.checked){
-   h+='<span class="flag">43%</span> \u2014 GPT-4 with no retrieval, on open-ended legal research questions.<br><span style="color:#6F7B78">Magesh et al. (2025). This is the ungrounded baseline the whole session is measured against.</span>';
-  }else if(!G.checked&&L.checked){
-   h+='<span class="nil">No published measurement isolates this cell.</span><br><span style="color:#6F7B78">Document length is not a variable when no document is supplied. The panel will not interpolate a number here.</span>';
-  }else if(G.checked&&!L.checked){
-   h+='<span class="good">Low single digits</span> on short, simple source documents.<br><span style="color:#6F7B78">Vectara states that on its earlier, shorter dataset frontier models clustered at the top, which is why the dataset was replaced. The precise per-model figures for that earlier dataset are not reproduced here. <span class="conf m" data-src="src-vectara">M</span></span>';
-  }else{
-   /* CLAIM weight=exercise resolve="Re-read the leaderboard and restate the floor, or drop the superlative and teach the range. The measurement is unchanged; what moved is what it is the best of. The HALL chart array at :2019 labels 3.3% 'Best model, grounded' and this panel teaches the range from it." candidate="Vectara's own hallucination-leaderboard repository, read 2026-08-25: last updated 2026-05-11, HHEM-2.3, 123 models. Every per-model rate this lesson quotes is still on the board, but 3.3% now ranks third and the floor is 1.8%. The cited blog post itself is blocked from this build environment and was not read." confidence=medium */
-   h+='<span class="flag">3.3% to above 13%</span> \u2014 source supplied, model instructed not to infer, long high-complexity documents. [UNCONFIRMED]<br><span style="color:#6F7B78">Vectara, 19 Nov 2025: Gemini-2.5-flash-lite 3.3%; Gemini-3-Pro 13.6% and outside the top 25; Claude Sonnet 4.5, GPT-5, GPT-OSS-120B, Grok-4 and DeepSeek-R1 all above 10%. Vectara also reports rates rising with both document length and complexity. A 2014 buy-sell and a 2023 appraisal report sit at this end. <span class="conf h" data-src="src-vectara">H</span></span>';
-  }
-  O.className='mpanel has';O.innerHTML=h;
- }
- G.onchange=draw;L.onchange=draw;draw();
+ REVEALS.push(showKey);
 })();
 
 /* ================= 8. Rank order ================= */
@@ -2600,7 +2493,7 @@ document.addEventListener('keydown',function(e){
 });
 
 /* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
-window.__coreMins=64;
+window.__coreMins=59;
 /* APXCORE:END */
 
 /* ===== appendix depth control: tier filter + core-only mode ===== */

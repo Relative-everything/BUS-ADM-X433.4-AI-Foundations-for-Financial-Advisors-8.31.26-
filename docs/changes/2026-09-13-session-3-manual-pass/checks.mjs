@@ -177,3 +177,17 @@ await check('JN-030', async (page) => {
   must(/ranks third at 3\.3/.test(v) && /Meg and CPC, appear in no passage/.test(v), 'preset 1 verdict does not state the appraisal\'s rank and the absent words');
   must(!/scores 0\.0|scored 0\.0|scored zero/.test(SRC), 'a "scored zero" sentence survives in the source');
 });
+
+/* JN-005: §04 commits before the figures; the key names the measured range; four bars; no NaN. */
+await check('JN-005', async (page) => {
+  must(!/id="s7" data-nav="Grounded error"|VALOPT|figRetr|cbG/.test(SRC), 'the old §04/§05 material survives in the source');
+  const r0 = await page.evaluate(() => ({ n: document.querySelectorAll('#grBtns button').length, key: getComputedStyle(document.getElementById('grKey')).display,
+    bars: document.querySelectorAll('#figHall rect').length }));
+  must(r0.n === 3 && r0.key === 'none' && r0.bars === 4, `before: ${r0.n} options, key ${r0.key}, ${r0.bars} bars`);
+  await page.click('#grBtns button:nth-child(2)');
+  const r = await page.evaluate(() => ({ key: document.getElementById('grKey').textContent, shown: getComputedStyle(document.getElementById('grKey')).display,
+    locked: [...document.querySelectorAll('#grBtns button')].filter((b) => b.disabled).length, all: document.getElementById('s6').textContent }));
+  must(r.shown !== 'none' && /17 to 33/.test(r.key) && /Grounded\. Cited\./.test(r.key), 'key not shown or missing the measured range');
+  must(r.locked === 2, `${r.locked} options locked, expected 2`);
+  must(!/NaN|undefined/.test(r.all), 'NaN or undefined rendered in #s6');
+});
