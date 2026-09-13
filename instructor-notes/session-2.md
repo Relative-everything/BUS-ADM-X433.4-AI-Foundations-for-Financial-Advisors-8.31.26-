@@ -88,10 +88,19 @@ Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with 
 
 ### Flow
 - Instructor-led; one learner runs one check aloud. Element: `#triage` (`t-s10c`, `multi-column-sorter`). Poll P5 before the reveal: "How many of the six citations would you have accepted as authority? 0 to 6."
-- The live-run prompt now names non-voting LLC units. Before this slot, read the §04 verification block: it lists Rev. Rul. 85-13, Rev. Rul. 2004-64 Situations 1 to 3 with the Situation 3 conditions the key states, Woelbing and Davidson, and the §2036(b) stock-versus-units distinction. Confirm each against the primary text before teaching it as settled.
+- The live-run prompt names non-voting LLC units. Before this slot, work through the verification list below; the page no longer carries it.
+
+### Verify before teaching (moved from the page 2026-09-13; the on-page gate is gone by instruction)
+- The §07 triage key states four authorities as holdings so that citation failure can be taught; nothing else in this session is stated as a holding. Check each against primary authority before answering it in class.
+- IRC § 671 and the grantor-trust rules as the authority behind the IDGT client explanation built in §03: sound as stated, and stated without its limits.
+- Rev. Rul. 85-13 and Rev. Rul. 2004-64, Situations 1 to 3, as the §07 key characterises them, including the conditions the key attaches to Situation 3 (no understanding with the trustee; inclusion still possible from a retained power over the trustee or from creditor-access state law). Confirm against 1985-1 C.B. 184 and 2004-27 I.R.B. before teaching either as settled.
+- Estate of Woelbing and Estate of Davidson: the §07 key describes each as a stipulated decision with no holding and states the docket dates, the instrument (self-cancelling installment notes in Davidson) and the settlement figures. Confirm the docket facts before repeating them.
+- IRC §§ 2036(a)(1), 2036(b), 2038, 2702 and 7520 as the §07 key and the case structure invoke them, including the distinction between corporate stock and LLC units that the §07 live run turns on. Confirm current text against the Code.
+- Portability: the §05 triage item on electing portability names no authority. Confirm current relief before answering it in class.
+- The combined discount the memorandum asserts for lack of control and lack of marketability: nothing in this session or the case file establishes that it is defensible; no appraiser has been engaged, no restricted-stock or pre-IPO study is on file, and the memorandum allocates nothing between the two components.
 
 ### Facts
-- Kessler v. Commissioner does not exist; labelled on the page, in the gate and in the footer.
+- Kessler v. Commissioner does not exist; labelled on the page and in the footer as a deliberately fabricated citation used as exercise material.
 - Davidson's consideration was self-cancelling installment notes (M, Stout and Crain's via search 2026-09-11); Woelbing's two stipulated decisions were 25 and 28 March 2016 in dockets 30261-13 and 30260-13 (M, McGuireWoods and The Tax Adviser).
 
 ## s7 (§05 Triage, 7:49 PM, 8 min) [9:49 CT]
