@@ -5,7 +5,7 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**62 works, 188 references across 5 lessons.** 49 are
+**63 works, 193 references across 5 lessons.** 50 are
 cited by at least one claim; 13 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
@@ -53,10 +53,29 @@ Per-token input and output rates by model, cache-hit and batch discounts.
 | Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **1** |
-| Cited in | S2 `#s0` |
+| **Total references** | **2** |
+| Cited in | S2 `#s0` · S2 `#s3` |
 
 What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate.
+
+### Anthropic
+
+**Messages API reference**  
+`src-api-messages` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Platform Docs |
+| Link | <https://platform.claude.com/docs/en/api/messages> |
+| Published | *not applicable* |
+| Last retrieved | 2026-09-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S2 `#s3` |
+
+The temperature parameter's status on current models and the vendor's statement that a setting of zero is not fully deterministic. The page gives the fact, not the mechanism.
 
 ### Anthropic
 
@@ -205,8 +224,8 @@ The enumeration of surfaces beyond the chat box, and the attachment path.
 | Last retrieved | 2026-08-20 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **9** |
-| Cited in | S0.1 `#s0` · S0.1 `#s5` ×2 · S0.1 `#s6` ×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10` ×2 |
+| **Total references** | **10** |
+| Cited in | S0.1 `#s0` · S0.1 `#s5` ×2 · S0.1 `#s6` ×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10` ×2 · S2 `#s3` |
 
 The two live memory experiences and where each puts its toggles, real-time entry writing against a 24-hour synthesis, incognito chats on Enterprise and Team being included in standard data exports and following organisation retention, Owners retaining access for at least 30 days, Team plans having no organisation-level memory controls, the Enterprise org toggle and what disabling it deletes, past-chat search being paid-plans-only and appearing as tool calls, project-scoped search, Enterprise CMEK blocking past-chat search, pause against reset semantics, and deletion of a conversation not deleting the memory generated from it. Upgraded from M to H by the verified evidence annex, section A.
 
@@ -219,13 +238,13 @@ The two live memory experiences and where each puts its toggles, real-time entry
 |---|---|
 | Author | Anthropic |
 | Publisher | Claude Platform Docs |
-| Link | <https://platform.claude.com/docs/en/about-claude/models/overview> |
+| Link | <https://platform.claude.com/docs/en/models/overview> |
 | Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
+| Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **4** |
-| Cited in | S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` |
+| **Total references** | **5** |
+| Cited in | S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` · S2 `#s3` |
 
 The four current models, context window sizes (1M for Fable 5, Opus 5 and Sonnet 5; 200K for Haiku 4.5), which models carry adaptive against extended thinking, and effort defaults. Price per MTok and knowledge cutoffs are carried by this source but are quoted nowhere in the lesson, because no figure for either was recorded at verification.
 
@@ -243,8 +262,8 @@ The four current models, context window sizes (1M for Fable 5, Opus 5 and Sonnet
 | Last retrieved | 2026-08-20 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S0.1 `#s1` · S0.1 `#s6` |
+| **Total references** | **3** |
+| Cited in | S0.1 `#s1` · S0.1 `#s6` · S2 `#s3` |
 
 Profile instructions applying account-wide, project instructions, styles as a separate mechanism, and five projects on the free plan.
 
