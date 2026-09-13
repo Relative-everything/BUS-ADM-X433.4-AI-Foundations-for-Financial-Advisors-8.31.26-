@@ -23,8 +23,8 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 1710 | 1392 | 318 |
 | `PINNED` | 12 | 12 | 0 |
-| `UNGUARDED` | 90 | 5 | 85 |
-| **TOTAL** | **1812** | **1409** | **403** |
+| `UNGUARDED` | 80 | 5 | 75 |
+| **TOTAL** | **1802** | **1409** | **393** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -40,14 +40,14 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `session-0.1/index.html` | 16 | 5 |
 | `session-1/index.html` | 17 | 0 |
 | `session-2/index.html` | 5 | 0 |
-| `session-3/index.html` | 27 | 0 |
+| `session-3/index.html` | 17 | 0 |
 | `session-4/index.html` | 23 | 0 |
 
 ## `UNGUARDED`, by region
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R1` | body prose | 61 | 0 |
+| `R1` | body prose | 51 | 0 |
 | `R2` | script string literal | 23 | 0 |
 | `R10` | captured transcript | 5 | 5 |
 | `R8` | source note | 1 | 0 |
@@ -61,24 +61,24 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 85 |
+| `name` | 75 |
 | `pct` | 5 |
 
 ## `UNGUARDED`, by fact
 
 | Fact | Count |
 |---|---:|
-| `domicile` | 25 |
-| `companyAbbr` | 12 |
-| `megShort` | 10 |
-| `companyName` | 10 |
-| `nathanShort` | 10 |
-| `plantTown` | 8 |
-| `residenceTown` | 4 |
+| `domicile` | 24 |
+| `companyAbbr` | 10 |
+| `megShort` | 9 |
+| `companyName` | 9 |
+| `nathanShort` | 9 |
+| `plantTown` | 7 |
 | `afrMid` | 4 |
-| `davidName` | 3 |
-| `decedent` | 2 |
+| `residenceTown` | 3 |
+| `davidName` | 2 |
 | `afrLong` | 1 |
+| `decedent` | 1 |
 | `megNameAlt` | 1 |
 
 ## Machinery
