@@ -271,11 +271,11 @@ async function chartFits(page) {
     const svg = document.getElementById('hallChart').closest('svg');
     const [vx, vy, vw, vh] = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
     const bad = [];
+    /* getBBox is in the svg's user units, the same units as the viewBox; the
+       <g> carries no transform, so the box compares directly. */
     svg.querySelectorAll('text').forEach((t) => {
       const b = t.getBBox(); if (!b.width) return;
-      const m = t.getCTM(); const x0 = b.x * m.a + b.y * m.c + m.e, x1 = (b.x + b.width) * m.a + (b.y + b.height) * m.c + m.e;
-      const y1 = (b.x + b.width) * m.b + (b.y + b.height) * m.d + m.f;
-      if (Math.max(x0, x1) > vx + vw + 2 || y1 > vy + vh + 2) bad.push(t.textContent.slice(0, 40));
+      if (b.x + b.width > vx + vw + 2 || b.y + b.height > vy + vh + 2 || b.x < vx - 2) bad.push(t.textContent.slice(0, 40) + ` [right ${Math.round(b.x + b.width)}, bottom ${Math.round(b.y + b.height)}]`);
     });
     const c = svg.parentElement.getBoundingClientRect(), s = svg.getBoundingClientRect();
     if (s.right > c.right + 1) bad.push('svg wider than its container');
