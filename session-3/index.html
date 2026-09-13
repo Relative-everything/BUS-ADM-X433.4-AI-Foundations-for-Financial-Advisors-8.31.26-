@@ -1238,11 +1238,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>01 &middot; Mechanism</span><span class="mins">5 min</span></div>
   <h2>Embeddings and the Coordinates of Meaning Space</h2>
 
-  <p class="big">Wolfram's definition is the one to hold: an embedding is a way to represent the essence of something by an array of numbers, with the property that nearby things are represented by nearby numbers. A word embedding lays words out in a meaning space in which words nearby in meaning appear nearby in the space.</p>
+  <p class="big">Wolfram's definition: an embedding turns a word into an array of numbers, and words with similar meanings get nearby numbers.</p>
 
-  <p>Two details matter more than the definition. First, how the arrays are produced: Wolfram measures how similar the <em>environments</em> are in which different words appear, across five billion words of web text. Nothing in that procedure inspects meaning. It inspects company. Second, the arrays are long — 768 numbers per token for GPT-2, 12,288 for GPT-3. Every two-dimensional picture of meaning space is a projection from hundreds or thousands of axes, and projection destroys information.</p>
-
-  <p>The map is hand-built — positions assigned, not learned — but the arithmetic is real. Clicking a term computes Euclidean distance to every other term and ranks them: the same operation a retriever performs, at two dimensions instead of a thousand. Vocabulary from the Cole file.</p>
+  <p>The numbers come from company, not meaning. Wolfram measures how similar the surroundings are in which words appear, across five billion words of web text. Each word becomes a long list of numbers: 768 for GPT-2, 12,288 for GPT-3. The map below is a two-dimensional sketch of that space. Click a term and its three nearest neighbours light up, joined by lines that show the distance. A retrieval tool runs the same nearest-neighbour test on your documents.</p>
 
   <div class="panel" data-task="t-s2" data-comp="click-map-explorer">
     <span class="do">Do this now — 3 minutes</span>
@@ -1253,7 +1251,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div id="mapOut" class="mpanel"><span class="hd">Nearest neighbours</span><span class="nil">Click a term on the map.</span></div>
   </div>
 
-  <p class="src">Wolfram, S. (2023, 14 Feb). <em>What Is ChatGPT Doing … and Why Does It Work?</em> — "The Concept of Embeddings"; "Meaning Space and Semantic Laws of Motion." Definition of embedding, the five-billion-word environment-similarity construction, and the 768 / 12,288 vector lengths are Wolfram's, quoted in substance <span class="conf h" data-src="src-wolfram">H</span>. Map coordinates are illustrative and were assigned for this lesson <span class="conf l" data-src="src-wolfram">L — illustrative, not measured</span>. Distance arithmetic on those coordinates is exact.</p>
+  <p class="src">Wolfram, S. (2023), "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion": the definition, the five-billion-word construction and the 768 / 12,288 lengths are Wolfram's, in substance <span class="conf h" data-src="src-wolfram">H</span>. Map coordinates were assigned for this lesson <span class="conf l" data-src="src-wolfram">L, illustrative</span>; the distances on them are exact.</p>
 
   <div class="check" data-gate="g2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Click at least four terms on the map and find the pair most dangerous to substitute in Meg’s file.</div></div>
 
