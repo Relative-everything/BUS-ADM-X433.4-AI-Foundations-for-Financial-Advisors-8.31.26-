@@ -131,3 +131,31 @@ await check('JN-025', async (page) => {
   const n = await page.evaluate(() => document.querySelectorAll('#mapWrap line.mapln').length);
   must(n === 3, `${n} connector lines after the second click, expected 3`);
 });
+
+/* JN-027: a placed pair is listed under the bucket it was placed in, answered at once; the key opens after the last. */
+await check('JN-027', async (page) => {
+  await page.click('#pairList button:nth-child(1)');          /* alligator / crocodile, key ctx */
+  await page.click('#pairBoxes .bslot:nth-child(3) button.lbox'); /* the third bucket, ref: wrong */
+  const r = await page.evaluate(() => {
+    const ul = document.querySelector('#pairBoxes .bslot:nth-child(3) ul.placed');
+    return { n: ul.children.length, cls: ul.children[0] && ul.children[0].className, txt: ul.textContent,
+      chipDone: document.querySelector('#pairList button:nth-child(1)').classList.contains('done'),
+      keyShown: getComputedStyle(document.getElementById('pairKey')).display !== 'none',
+      out: document.getElementById('pairOut').textContent };
+  });
+  must(r.n === 1 && r.cls === 'flag', `placed list has ${r.n} item(s) with class "${r.cls}"`);
+  must(/alligator/.test(r.txt) && /Belongs under/.test(r.txt) && /Wolfram/.test(r.txt), 'the placed item lacks its text, the right bucket or its why');
+  must(r.chipDone, 'the placed chip is not dimmed');
+  must(!r.keyShown, 'the key opened before the last item');
+  must(/1 of 6 placed/.test(r.out) && /0 right/.test(r.out), `progress reads "${r.out.slice(0, 60)}"`);
+  /* place the remaining five correctly by their bucket order gov, gov, ref, gov, ref */
+  const order = [2, 2, 3, 2, 3];
+  for (let i = 0; i < 5; i++) {
+    await page.click(`#pairList button:nth-child(${i + 2})`);
+    await page.click(`#pairBoxes .bslot:nth-child(${order[i]}) button.lbox`);
+  }
+  const k = await page.evaluate(() => ({ keyShown: getComputedStyle(document.getElementById('pairKey')).display !== 'none',
+    key: document.getElementById('pairKey').textContent, out: document.getElementById('pairOut').textContent }));
+  must(k.keyShown && /Score5 of 6|Score\s*5 of 6/.test(k.key.replace(/\n/g, '')), `key after six: shown ${k.keyShown}, text ${k.key.slice(-40)}`);
+  must(/6 of 6 placed/.test(k.out), `progress after six reads "${k.out.slice(0, 40)}"`);
+});

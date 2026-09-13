@@ -577,6 +577,15 @@ label.fl{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:
 .lbox.lit{border-color:var(--on);background:var(--on-bg);box-shadow:0 0 0 4px rgba(14,90,85,.09)}
 .lbox h4{margin-bottom:3px}
 .lbox p{font-size:13.5px;color:var(--muted);margin:0;max-width:none;line-height:1.45}
+/* ===== shared sorter: placed items listed under their bucket, answered at once (JN-027) ===== */
+.bslot{display:flex;flex-direction:column}
+.placed{list-style:none;margin:0;padding:0 0 0 12px}
+.placed li{margin:6px 0 0;padding:8px 11px;border-radius:8px;background:var(--card);border:1px solid var(--line);font-size:14px;line-height:1.4}
+.placed li.good{border-color:var(--on)}.placed li.flag{border-color:var(--warn)}
+.placed li b{font-family:"JetBrains Mono",monospace;margin-right:7px}
+.placed li.good b{color:var(--on)}.placed li.flag b{color:var(--warn)}
+.placed li span{display:block;color:var(--muted);font-size:12.5px;margin-top:3px;line-height:1.4}
+ul.pts{margin:14px 0;padding-left:22px;max-width:64ch}ul.pts li{margin:6px 0;line-height:1.55}
 
 .quiz .qitem{padding:18px 0;border-bottom:1px solid var(--line)}
 .quiz .qitem:last-child{border-bottom:none}
@@ -1814,6 +1823,53 @@ var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').
 var n1=function(x){return (Math.round(x*10)/10).toFixed(1)};
 var n0=function(x){return Math.round(x).toLocaleString('en-US')};
 
+/* ===== shared sorter (families 12 and 13): click a chip, then a bucket; the
+   chip lands under that bucket with a tick or a cross and its one-line why at
+   once; the full key still opens after the last item. [NEW] against this
+   page's §02 pair sorter at 765dff3, extended for JN-027. Every sorter
+   registers its key with REVEALS so the Shift+U override opens it. ===== */
+var REVEALS=[];
+function mkSorter(cfg){
+ var L=cfg.list,B=cfg.boxes,O=cfg.out,K=cfg.key,items=cfg.items,bk=cfg.buckets;
+ var sel=-1,placed={},score=0;
+ function nameOf(k){for(var i=0;i<bk.length;i++)if(bk[i].k===k)return bk[i].t;return k}
+ function draw(){
+  var done=Object.keys(placed).length;
+  O.className='mpanel'+(done?' has':'');
+  O.innerHTML='<span class="hd">'+esc(cfg.label||'Progress')+'</span>'+done+' of '+items.length+' placed'+(done?' \u00b7 '+score+' right':'')+'.'+
+   (sel>=0?'<br><span class="good">Selected: '+esc(items[sel].t)+'. Now click the bucket it belongs in.</span>':
+    (done<items.length?'<br>Click an item, then the bucket it belongs in.':'<br><span class="good">All placed. The key is below.</span>'));
+ }
+ function showKey(){
+  if(!K)return;
+  if(Object.keys(placed).length<items.length&&!document.body.classList.contains('reveal'))return;
+  var h='<span class="hd">Answer key</span>';
+  items.forEach(function(p,i){var got=placed[i],ok=got===p.k;
+   h+=(got!==undefined?(ok?'<span class="good">\u2713</span> ':'<span class="flag">\u2717</span> '):'\u00b7 ')+esc(p.t)+': '+esc(nameOf(p.k))+
+      '<br><span style="color:#6F7B78">'+esc(p.w)+'</span><br><br>'});
+  h+='<span class="hd">Score</span>'+score+' of '+items.length+(cfg.after?'<br><br>'+cfg.after:'');
+  K.className='mpanel has keyhide';K.innerHTML=h;K.style.display='block';
+ }
+ items.forEach(function(p,i){var b=document.createElement('button');b.className='chip';b.type='button';b.textContent=p.t;
+  b.onclick=function(){if(placed[i]!==undefined)return;sel=i;
+   [].slice.call(L.children).forEach(function(c,j){c.classList.toggle('act',j===i)});draw()};
+  L.appendChild(b)});
+ bk.forEach(function(k){var slot=document.createElement('div');slot.className='bslot';
+  var b=document.createElement('button');b.className='lbox';b.type='button';b.innerHTML='<h4>'+esc(k.t)+'</h4><p>'+esc(k.d)+'</p>';
+  var ul=document.createElement('ul');ul.className='placed';ul.setAttribute('data-k',k.k);
+  b.onclick=function(){
+   if(sel<0)return;var it=items[sel],ok=it.k===k.k;placed[sel]=k.k;if(ok)score++;
+   var li=document.createElement('li');li.className=ok?'good':'flag';
+   li.innerHTML='<b>'+(ok?'\u2713':'\u2717')+'</b>'+esc(it.t)+'<span>'+(ok?'':'Belongs under \u201c'+esc(nameOf(it.k))+'\u201d. ')+esc(it.w)+'</span>';
+   ul.appendChild(li);
+   L.children[sel].classList.remove('act');L.children[sel].classList.add('done');sel=-1;draw();
+   if(Object.keys(placed).length===items.length){showKey();if(cfg.gate&&typeof mark==='function')mark(cfg.gate)}
+  };
+  slot.appendChild(b);slot.appendChild(ul);B.appendChild(slot)});
+ draw();REVEALS.push(showKey);
+ return {showKey:showKey};
+}
+
 /* ---------- rail + instructor override ---------- */
 var secs=[].slice.call(document.querySelectorAll('section.slide')),rail=$('rail');
 secs.forEach(function(s){var b=document.createElement('button');
@@ -1837,7 +1893,7 @@ document.addEventListener('keydown',function(e){
     var on=document.body.classList.contains('reveal');
     $('ovr').textContent=on?'Override ON — all answers revealed':'Shift+U — reveal all answer panels';
     [].slice.call(document.querySelectorAll('.keyhide')).forEach(function(el){el.style.display=on?'block':'none'});
-    if(on){showPairKey();showSlope();showDocKey();showValKey();showDefence();showRevote();}
+    if(on){REVEALS.forEach(function(f){f()});showSlope();showDocKey();showValKey();showDefence();showRevote();}
   }});
 
 /* ================= 1. Session 2 retrieval bridge ================= */
@@ -1939,58 +1995,19 @@ var CSNOTE={
 
 /* ================= 3. Pair sorter ================= */
 var PAIRS=[
- {p:'alligator / crocodile',k:'ctx',w:'Wolfram\u2019s example: interchangeable contexts, different referents.'},
- {p:'voting interest / non-voting interest',k:'gov',w:'Same asset, different governing attribute. The discount exists only for one of them.'},
- {p:'appraised value / formula value',k:'gov',w:'Two valuation standards, each with its own triggering event. This is the pair that reaches Meg\u2019s return.'},
- {p:'the will / the trust',k:'ref',w:'Different instruments performing in identical sentence frames. Both "receive the residue" in the Cole file.'},
- {p:'shall / may',k:'gov',w:'The highest-stakes near-neighbour in any drafted instrument, and the one chunking most often separates from its subject.'},
- {p:'grantor / trustee',k:'ref',w:'Different actors. Retrieval collapses them because they appear in identical sentence frames \u2014 and in the draft IDGT they are nearly the same person.'}
+ {t:'alligator / crocodile',k:'ctx',w:'Wolfram\u2019s example: interchangeable contexts, different referents.'},
+ {t:'voting interest / non-voting interest',k:'gov',w:'Same asset, different governing attribute. The discount exists only for one of them.'},
+ {t:'appraised value / formula value',k:'gov',w:'Two valuation standards, each with its own triggering event. This is the pair that reaches Meg\u2019s return.'},
+ {t:'the will / the trust',k:'ref',w:'Different instruments performing in identical sentence frames. Both "receive the residue" in the Cole file.'},
+ {t:'shall / may',k:'gov',w:'The highest-stakes near-neighbour in any drafted instrument, and the one chunking most often separates from its subject.'},
+ {t:'grantor / trustee',k:'ref',w:'Different actors. Retrieval collapses them because they appear in identical sentence frames \u2014 and in the draft IDGT they are nearly the same person.'}
 ];
 var BUCK=[
  {k:'ctx',t:'Interchangeable context, different referent',d:'They appear in the same sentence frames. Nothing about the swap is detectable from language alone.'},
  {k:'gov',t:'Same subject, different governing condition',d:'The pair describes one topic under two conditions. Retrieval returns the wrong condition.'},
  {k:'ref',t:'Different actors or instruments in the same frame',d:'The sentence pattern is identical; the party or document performing the act is not.'}
 ];
-var pairSel=-1,pairPlaced={},pairScore=0;
-function showPairKey(){
- var K=$('pairKey');if(!K)return;
- if(Object.keys(pairPlaced).length<PAIRS.length&&!document.body.classList.contains('reveal'))return;
- var h='<span class="hd">Answer key</span>';
- PAIRS.forEach(function(p,i){
-  var got=pairPlaced[i],ok=got===p.k;
-  h+=(got?(ok?'<span class="good">\u2713</span> ':'<span class="flag">\u2717</span> '):'\u00b7 ')+esc(p.p)+' \u2014 '+
-     esc(BUCK.filter(function(b){return b.k===p.k})[0].t)+'<br><span style="color:#6F7B78">'+esc(p.w)+'</span><br><br>';
- });
- h+='<span class="hd">Score</span>'+pairScore+' of '+PAIRS.length;
- K.className='mpanel has keyhide';K.innerHTML=h;K.style.display='block';
-}
-(function(){
- var L=$('pairList'),B=$('pairBoxes'),O=$('pairOut');
- PAIRS.forEach(function(p,i){
-  var b=document.createElement('button');b.className='chip';b.type='button';b.textContent=p.p;
-  b.onclick=function(){if(pairPlaced[i]!==undefined)return;pairSel=i;
-   [].slice.call(L.children).forEach(function(c,j){c.classList.toggle('act',j===i)});draw()};
-  L.appendChild(b)});
- BUCK.forEach(function(bk){
-  var b=document.createElement('button');b.className='lbox';b.type='button';
-  b.innerHTML='<h4>'+esc(bk.t)+'</h4><p>'+esc(bk.d)+'</p>';
-  b.onclick=function(){
-   if(pairSel<0)return;
-   pairPlaced[pairSel]=bk.k;if(PAIRS[pairSel].k===bk.k)pairScore++;
-   L.children[pairSel].classList.remove('act');L.children[pairSel].classList.add('done');
-   pairSel=-1;draw();
-   if(Object.keys(pairPlaced).length===PAIRS.length)showPairKey();
-  };
-  B.appendChild(b)});
- function draw(){
-  var done=Object.keys(pairPlaced).length;
-  O.className='mpanel'+(done?' has':'');
-  O.innerHTML='<span class="hd">Progress</span>'+done+' of '+PAIRS.length+' placed.'+
-   (pairSel>=0?'<br><span class="good">Selected: '+esc(PAIRS[pairSel].p)+' \u2014 now choose a bucket.</span>':
-    (done<PAIRS.length?'<br>Select a pair, then choose a bucket.':'<br><span class="good">All placed. Key below.</span>'));
- }
- draw();
-})();
+mkSorter({list:$('pairList'),boxes:$('pairBoxes'),out:$('pairOut'),key:$('pairKey'),items:PAIRS,buckets:BUCK,label:'Progress',gate:'g3'});
 
 /* ================= 4. Retriever over the Cole document set ================= */
 /* THE CORPUS IS NOT WRITTEN HERE ANY MORE. CASE.md PART O holds these ten
