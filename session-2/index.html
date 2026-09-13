@@ -1378,9 +1378,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <h3>Three consequences for an advisory practice</h3>
   <div class="cards">
-    <div class="card"><span class="num">Consequence 01</span><h4>The prompt is not the record</h4><p>At any temperature above zero the same prompt produces different text. An audit trail that stores only the prompt has stored the input to a random process, not the output you relied on.</p></div>
-    <div class="card"><span class="num">Consequence 02</span><h4>Re-asking is not verification</h4><p>Running the query again draws a second sample from the same distribution. Agreement between two samples is evidence about the distribution's shape, not about the tax code.</p></div>
-    <div class="card warn"><span class="num">Consequence 03</span><h4>Consumer chat tools do not expose T</h4><p>You cannot set temperature in most subscription interfaces. You control variance through the prompt &mdash; by constraining the output space &mdash; not through a setting.</p></div>
+    <div class="card"><span class="num">Consequence 01</span><h4>A prompt is not an audit trail</h4><p>The same prompt gives different text on every run, so a file that stores only the prompt cannot show what you relied on. In an annual compliance review that gets flagged. Keep the output you used, with the date and the model.</p></div>
+    <div class="card"><span class="num">Consequence 02</span><h4>Re-asking is not verification</h4><p>Asking again draws a second sample from the same distribution. Two matching answers tell you about the model, not about the tax code.</p></div>
+    <div class="card warn"><span class="num">Consequence 03</span><h4>Control variance with the prompt</h4><p>You cannot set temperature in the chat product, and current Claude models no longer accept it in the API either <span class="conf h" data-src="src-api-messages">H</span>. Constrain the output space instead: name the form, the length and the allowed values, and the spread collapses.</p></div>
   </div>
 
 </section>
