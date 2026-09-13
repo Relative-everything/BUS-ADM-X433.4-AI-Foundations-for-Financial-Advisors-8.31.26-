@@ -1298,29 +1298,34 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>03 &middot; RAG, mechanically</span><span class="mins">6 min</span></div>
   <h2>Retrieval Mechanics: Chunking, Indexing, and Ranking</h2>
 
-  <p class="big">Retrieval-augmented generation is four operations, none of them mysterious. Split the source documents into chunks. Convert each chunk into a vector. At query time, convert the query into a vector by the same procedure and rank the chunks by similarity. Paste the top-ranked chunks into the prompt and instruct the model to answer only from them.</p>
+  <p class="big">Retrieval-augmented generation, RAG for short, makes the model answer from your documents instead of from memory. Four steps, none of them mysterious.</p>
 
-  <p>The advisory use case is in front of you: governing terms spread across a 2011 will, a 2011 trust, a 2014 buy-sell, a 2023 appraisal and two unexecuted drafts, none read end to end this year. The model is not asked to know the Coles. It is asked to read the three paragraphs the ranker handed it. Everything that goes wrong went wrong in the ranking or in the reading.</p>
+  <ul class="pts">
+    <li><b>Split.</b> The documents are cut into short passages.</li>
+    <li><b>Index.</b> Each passage gets a numeric fingerprint, the kind §01 showed.</li>
+    <li><b>Rank.</b> Your question gets the same fingerprint, and the passages closest to it rank highest.</li>
+    <li><b>Answer.</b> The top few passages are pasted into the prompt and the model is told to answer only from them.</li>
+  </ul>
 
-  <p>The retriever is real. It builds an IDF index over ten chunks of the Cole set, weights each term by <code>tf × ln(1 + N/df)</code>, and ranks by cosine similarity. Two of four preset queries are engineered to fail — not a bug, the alligator-and-crocodile property arriving in the valuation question the whole transfer turns on.</p>
+  <p>For the Coles the documents are a 2011 will and trust, a 2014 buy-sell, a 2023 appraisal and two unsigned drafts. The tool is not asked to know the family. It is asked to read the passages the ranker hands it, so everything that goes wrong goes wrong in the ranking or in the reading. Two of the four presets below are built to fail, and nothing on screen says so.</p>
 
   <div class="panel" data-task="t-s4" data-comp="estimate-then-reveal">
     <span class="do">Do this now — 6 minutes</span>
     <h4>The Retriever on the Cole Document Set</h4>
-    <p class="hint">Pick a preset or type your own query. Read the top-ranked chunk and decide, before looking at the verdict, whether an advisor acting on it alone would give Meg correct advice.</p>
-    <p style="margin:0 0 8px"><span class="sim">Live IDF index over ten synthetic chunks</span></p>
+    <p class="hint">Pick a preset or type your own question. Read the top passage and decide, before opening the verdict, whether advice built on it alone would be right for Meg.</p>
+    <p style="margin:0 0 8px"><span class="sim">Live index over ten synthetic passages</span></p>
     <div class="row" id="qPresets" style="margin-bottom:14px"></div>
-    <input type="text" id="qBox" placeholder="or type a query against the Cole document set">
-    <div class="row" style="margin-top:12px"><button class="btn" id="qRun">Rank chunks</button><button class="btn ghost mini" id="qVerdict">Show verdict</button></div>
-    <div id="qOut" class="mpanel"><span class="hd">Ranked chunks</span><span class="nil">Choose a query and rank.</span></div>
+    <input type="text" id="qBox" placeholder="or type a question about the Cole documents">
+    <div class="row" style="margin-top:12px"><button class="btn" id="qRun">Rank the passages</button><button class="btn ghost mini" id="qVerdict">Show verdict</button></div>
+    <div id="qOut" class="mpanel"><span class="hd">Ranked passages</span><span class="nil">Choose a preset and rank.</span></div>
     <div id="qVer" class="mpanel keyhide" style="display:none"></div>
   </div>
 
-  <p class="src">Corpus is synthetic, drawn from the course case anchor. The Cole household, Cole Precision Components and every document in the set are invented for teaching. No document quoted here states law, and no chunk should be read as a model provision. The ranking arithmetic (IDF weighting, cosine similarity) executes in the page and is auditable in the source.</p>
+  <p class="src">The ten passages are synthetic, drawn from the course case; no document quoted here states law <span class="conf l" data-src="src-case">L</span>. The ranking arithmetic runs in the page and can be read in the source.</p>
 
 
 
-  <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run all four preset queries, including the two engineered to fail.</div></div>
+  <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run all four presets, including the two built to fail.</div></div>
 
 </section>
 
@@ -2056,7 +2061,7 @@ var PRESET=[
   b.onclick=function(){cur=i;Q.value=p.q;[].slice.call(P.children).forEach(function(c,j){c.classList.toggle('act',j===i)});run()};
   P.appendChild(b)});
  function run(){
-  var q=Q.value.trim();if(!q){O.className='mpanel';O.innerHTML='<span class="hd">Ranked chunks</span><span class="nil">Enter a query.</span>';return}
+  var q=Q.value.trim();if(!q){O.className='mpanel';O.innerHTML='<span class="hd">Ranked passages</span><span class="nil">Type a question.</span>';return}
   var r=rank(q);
   var h='<span class="hd">Query: '+esc(q)+'</span>';
   r.slice(0,4).forEach(function(x,i){
@@ -2064,19 +2069,19 @@ var PRESET=[
    h+=(i===0?'<span style="color:#16211F;font-weight:500">':'')+'#'+(i+1)+'  '+x.id+'  score '+pct+(i===0?'  \u2190 top-ranked, not necessarily governing</span>':'')+'<br>'+
       '<span style="color:#6F7B78">'+esc(x.t)+'</span><br><br>';
   });
-  if(r[0].s===0){h+='<span class="flag">No chunk shares a scored term with this query. A production system would still return its top three and the model would still answer from them.</span>'}
+  if(r[0].s===0){h+='<span class="flag">No passage shares a word with this question. A real tool would still return its top three and the model would still answer from them.</span>'}
   else{
    var marg=(r[0].s-r[1].s)/r[0].s*100;
    h+='<span class="hd">Margin</span>'+(marg<12
-     ?'<span class="flag">'+n1(marg)+'% \u2014 the top two chunks are separated by less than an eighth of the winning score. A ranking this close is a coin flip the assistant will not disclose.</span>'
-     :'<span class="good">'+n1(marg)+'% \u2014 the winner is clear of the runner-up. A wide margin measures lexical overlap, not correctness.</span>');
+     ?'<span class="flag">'+n1(marg)+'%: the top two passages are under 12% apart. A ranking this close is a coin flip the assistant will not disclose.</span>'
+     :'<span class="good">'+n1(marg)+'%: the winner is well clear. A wide margin measures shared words, not correctness.</span>');
   }
   O.className='mpanel has';O.innerHTML=h;
   V.style.display=document.body.classList.contains('reveal')?'block':'none';
   V.className='mpanel keyhide';V.innerHTML=verd();
  }
  function verd(){
-  if(cur<0)return '<span class="hd">Verdict</span>Free-text query. Judge it yourself: does the top chunk state a rule whose triggering condition your query actually specified?';
+  if(cur<0)return '<span class="hd">Verdict</span>Your own question. Judge it yourself: does the top passage state a rule whose trigger your question actually named?';
   var p=PRESET[cur];
   var lab=p.v==='fail'?'<span class="flag">FAILS \u2014 nearest passage is not the governing passage</span>':
           p.v==='ambig'?'<span class="flag">AMBIGUOUS \u2014 two documents each hold half the answer</span>':
