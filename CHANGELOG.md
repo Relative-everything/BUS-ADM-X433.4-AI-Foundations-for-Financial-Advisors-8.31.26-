@@ -10,6 +10,19 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-13 · Session 2, batch 3: the citation triage explains itself in bullets
+
+Branch `claude/beautiful-maxwell-1bqad4`, one commit (JN-035). The six
+explanations that follow a classification in §07's triage were paragraphs
+of up to 130 words; each is now four or five short lines in plain
+language, opening with Correct or Not this one. No fact moved: the three
+situations of Rev. Rul. 2004-64 and the Situation 3 conditions, the
+Woelbing dockets and dates, Davidson's amounts, date and instrument, and
+the fabricated Kessler citation read as the 09-12 key stated them. The
+renderer builds a list from page-authored strings, which also retires an
+entity the old text renderer displayed literally.
+---
+
 ## 2026-09-13 · Session 2, batch 2: ten sections cut to what the room needs, and four things rebuilt
 
 Branch `claude/beautiful-maxwell-1bqad4`, twenty-nine item commits after the

@@ -112,6 +112,9 @@ $ screenshots  .verify-shots/cups-{1-predict,2-33pct,3-50pct,4-100pct-gap}-{380,
 - F-11. **The run sheet changed in six slots and gained one; reprint it.**
 - F-12. **`docs/spine-brief.md` now describes two things the page no longer carries** (the §00 card and the §09 recurring-question paragraph; DW-050).
 
+## Batch 3 (2026-09-13, after the batch-2 merge)
+One item, JN-035, DONE: §07's six triage explanations are four or five plain bullets each, facts unchanged, rendered as a list. Watch for: click any category on citation 3 and a five-line list opens under Correct or Not this one; no paragraph. T7 unchanged; DOM mode clean; checks.mjs 17 OK.
+
 ## Next session should
 1. Read this file, then `ledger.md`; a further batch of notes appends to `notes-verbatim.md` and continues at JN-035.
 2. If the instructor answers F-2 or F-3, each is a one-line edit plus `node scripts/build-appendix.mjs` for F-3.
