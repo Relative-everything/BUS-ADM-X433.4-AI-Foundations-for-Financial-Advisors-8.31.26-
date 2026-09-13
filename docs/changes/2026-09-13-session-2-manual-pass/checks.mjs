@@ -312,6 +312,7 @@ await check('JN-033', async (page) => {
 
 /* JN-034: Three Cups, the full sequence, readouts exactly 33, 50, 100. */
 await check('JN-034', async (page) => {
+  await page.click('#tierbar button[data-level="0"]'); /* B2 is appendix tier; core-only hides it at load */
   const reads = [];
   const read = async () => { reads.push(await page.evaluate(() => document.getElementById('cupRead').textContent)); };
   must(await page.evaluate(() => document.getElementById('cupStart').disabled && document.getElementById('cupPlay').hidden), 'Start enabled or cups shown before a prediction');
