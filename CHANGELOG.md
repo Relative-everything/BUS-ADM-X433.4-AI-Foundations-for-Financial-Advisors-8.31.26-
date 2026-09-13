@@ -10,6 +10,75 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-13 · Session 2, batch 2: ten sections cut to what the room needs, and four things rebuilt
+
+Branch `claude/beautiful-maxwell-1bqad4`, twenty-nine item commits after the
+batch-2 plan (JN-006 to JN-034), from the instructor's second batch of
+manual-pass notes, given in chat and implemented the same day. Records in
+`docs/changes/2026-09-13-session-2-manual-pass/`.
+
+### Session 2 · §01 to §03 say less and source more
+
+§01's vote now reveals seven plain-language sources of difference between two
+runs of one prompt, sourced to the Messages API reference (new record
+`src-api-messages`, fetched today: temperature is deprecated on current models
+and even zero is not fully deterministic), the context-windows page, the
+models overview (every model ID is a pinned snapshot) and the help-centre
+records on personalisation and memory. Its explanation is a third of its
+length, the comparison exercise is gone, and the three consequence cards are
+shorter, the first about a compliance review and the third a consequence
+rather than a fact. §02 defines a task with five examples from an advisory
+week before it compares costs, loses its decision block, verification panel
+and unverifiable token clause, names Fable 5.1 in Finding 01, and its
+estimator is a personal task mix priced across a routine and a frontier tier
+with constructed token assumptions labelled so. §03's opening paragraphs lose
+a third of their words and its rebuild exercise; the persona evidence stands.
+
+### Session 2 · §04 builds prompts one element at a time
+
+The verification gate leaves the page and its six items move to the run
+sheet. The fixture pack and the paste-and-rank scorer become one builder:
+three premade prompts, each with its Cole input read from the injected case,
+four elements at four levels from absent to specified and checkable, the
+prompt redrawing with each element labelled by name and level; a load button
+hands the assembled version to the rewrite editor, whose scaffold is
+unchanged. Forty-eight element variants are written new and name no case
+figure.
+
+### Session 2 · §05 to §09
+
+§05 loses its discussion block. §06 opens each interview question on the
+click that ticks it, gains five reverse-prompting starters (new root t-s8b),
+names the technique in its title, loses the case restatement and the
+standing-constraint panel (the run sheet says the rule aloud). §07 chips both
+base rates on the sentence (Dahl; Magesh), wraps the chart caption that ran
+over the frame, and says how to check whether a ruling or case is
+superseded. §08's peer review becomes the instructor's live audit, scored
+along by the room, superseding decision D5. §09 keeps its two cards, the
+baseline capture and the checklist; the first draft, the reading list, the
+grounding paragraphs, the work-along and the closing question are gone, the
+reading list and the question carried in the run sheet.
+
+### Session 2 · B2 has Three Cups
+
+A predict-then-reveal click-through (new root t-s2b, family
+estimate-then-reveal): predict, three covered cups at 33%, lift one to 50%,
+lift another to 100%, the prediction drawn against the number reached, the
+constructed-artefact disclosure on the page, play again. The explanation
+paragraph is verbatim from the brief with one H chip to Wolfram.
+
+### Repository
+
+A9 for `session-2` re-recorded from 61 to 40 total (59 to 38 entity) across
+fourteen commits on the instructor's K1 instruction (DW-115, one line each). `SOURCES.md`: new
+`src-api-messages`; session-2 clauses on `src-personalization`, `src-memory`
+and `src-models`, the last re-fetched today at its current address. The run
+sheet carries the §04 verification list, the live-audit slot, the §09 reading
+list and closing question, and the batch-2 changes at the top. Register: the
+batch-2 decisions, rows DW-118 and DW-119, notes on ten rows. Appendix
+regions regenerated for three retitled sections. The interaction count is 19.
+---
+
 ## 2026-09-13 · Session 2: the filler goes, and the bridge asks three things Session 1 taught
 
 Branch `claude/beautiful-maxwell-1bqad4`, five item commits after the plan, from

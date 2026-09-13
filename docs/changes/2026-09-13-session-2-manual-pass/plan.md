@@ -73,7 +73,7 @@ Status: accepted by the builder's instruction, 2026-09-13; implemented per ledge
 None. Every file that changed is named above. Two corrections to the harness's own assertions (JN-001 matched any shiftKey, which the case viewer also uses; JN-004 looked for a dim class the core-only mode never sets) landed inside the item commits they test; neither touched the page. docs/case-fact-inventory.md was regenerated twice, after JN-002 and after JN-005, both named.
 
 ## Batch 2 (2026-09-13, notes lines 43 to 93 of notes-verbatim.md)
-Status: accepted by the builder's instruction ("Here are remaining updates to implement"), K2 pre-accepted as in batch 1. Tier: Lite; the four rebuilds (JN-015, JN-020, JN-024, JN-034) are new elements inside existing sections and are marked [NEW] under R11.
+Status: accepted by the builder's instruction ("Here are remaining updates to implement"), K2 pre-accepted as in batch 1; implemented per ledger.md, 28 DONE and 1 DONE-HUMAN. Departures: the §04 section was retitled to match its new activity, which the note did not ask for (flagged); the bibliography derivatives were regenerated a second time at the end because later chips changed the derived citation counts. Tier: Lite; the four rebuilds (JN-015, JN-020, JN-024, JN-034) are new elements inside existing sections and are marked [NEW] under R11.
 
 ### Additional reads
 - session-2/index.html at 0ceba1c: sections s3, s5, s6, s6b, s7, s8, s10, s11, s12, s2 in full; the scripts for the stance capture, the temperature slider, MODELS and the two charts, the estimator, the PTCF assembler, the fixtures and scorer, the quiz, the buy-sell interview, the hallucination chart, the rubric and peer panels, the checklist and the Laplace toggles, read at the group that edits them.
