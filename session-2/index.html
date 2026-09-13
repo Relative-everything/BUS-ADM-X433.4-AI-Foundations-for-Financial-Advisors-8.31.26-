@@ -1775,7 +1775,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
 <section class="slide" id="s11" data-nav="Template audit">
   <div class="eyebrow"><span>08 &middot; Workshop</span><span class="mins">5 min</span></div>
-  <h2>Template Audit and Structured Peer Review</h2>
+  <h2>Template Audit and Live Audit</h2>
   <p class="big">Section 04, the workshop, rebuilt one of your prompts. This section tests whether it is a <em>template</em> — something a second person can run — rather than a prompt that happens to work in your hands.</p>
 
   <p><span class="caseflag">Synthetic case</span> The audit target is a client-explanation template for the Cole IDGT structure: a reusable instrument that takes any closely held business owner facing a sale to a trust and produces an explanation they can act on. Score the version you would hand to a colleague, not the one in your head.</p>
@@ -1793,23 +1793,16 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <div class="out" id="rubricOut" style="margin-top:18px"></div>
   </div>
 
-  <h3>Part two &mdash; structured peer review</h3>
-  <p>This part runs between sessions: the instructor pairs you after this session, you swap templates, and you run <em>their</em> template on the Cole facts without asking them anything, before Session 3. It is the Session 5 exercise in miniature and the fastest way to discover that a template you find obvious is unusable by anyone else.</p>
+  <h3>Part two &mdash; live audit</h3>
+  <p>The instructor audits one prompt in front of the room: a prepared one, or one of yours if you offer it. Score along on the four criteria below as the audit runs. The reading at the end is the room&rsquo;s verdict, not the author&rsquo;s.</p>
 
   <div class="panel">
-    <span class="plab">Partner template score &mdash; 0 to 3 on each</span>
+    <span class="plab">Live audit score &mdash; 0 to 3 on each</span>
     <div id="peer"></div>
     <div class="out" id="peerOut" style="margin-top:18px"></div>
   </div>
 
-  <div class="doit">
-    <span class="plab">Group report &mdash; 3 minutes</span>
-    <p>One sentence each: the single change that would most improve the template you reviewed. Give it to its author, not to the room.</p>
-  </div>
-
-
-
-  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Self-audit one template against the rubric now; the partner swap runs before Session 3.</div></div>
+  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Self-audit one template against the rubric, then score the live audit as it runs.</div></div>
 
 </section>
 
@@ -1952,7 +1945,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
       <tr><td>05 &middot; Diagnostic</td><td>Prompt Specification Triage</td><td class="n">5</td></tr>
       <tr><td>06 &middot; Technique</td><td>The Interview Rewrite (Reverse Prompting)</td><td class="n">6</td></tr>
       <tr><td>07 &middot; Verification</td><td>Citation Failure Types on the Cole IDGT Transaction</td><td class="n">8</td></tr>
-      <tr><td>08 &middot; Workshop</td><td>Template Audit and Structured Peer Review</td><td class="n">5</td></tr>
+      <tr><td>08 &middot; Workshop</td><td>Template Audit and Live Audit</td><td class="n">5</td></tr>
       <tr><td>09 &middot; Assignment</td><td>Final Project Part 1 and Baseline Capture</td><td class="n">7</td></tr>
       <tr class="apxrow"><td>Appendix B1 &middot; Mechanism, deeper</td><td>Next-Token Probabilities for a Single Prompt</td><td class="n">16</td></tr>
       <tr class="apxrow"><td>Appendix B2 &middot; Foundation</td><td>Laplace on Probability as a Measure of Ignorance</td><td class="n">15</td></tr>
@@ -2723,7 +2716,7 @@ var PEER=[
       :t>=7?'Workable with one fix. Name it precisely \u2014 \u201cadd a line bounding the source\u201d beats \u201cit needs more detail.\u201d'
       :t>=4?'The author can run it and nobody else can. That is the exact failure Part 2 of the final project is designed to expose.'
       :'It did not survive contact with a second person. Better to find that out now than in Session 5.';
-    $('peerOut').textContent='TOTAL  '+t+' / 12\n\n'+band+'\n\nIf it did not work in your hands, that is information about the template.';
+    $('peerOut').textContent='TOTAL  '+t+' / 12\n\n'+band+'\n\nIf it did not work in a second person\u2019s hands, that is information about the template.';
     $('peerOut').classList.add('has');
   }
   render();
