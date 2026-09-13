@@ -167,6 +167,54 @@ await check('JN-005', async (page) => {
   must(!bad, '"undefined" or "NaN" rendered in #s0');
 });
 
+
+/* JN-006: the vote reveals the run-to-run difference list. */
+await check('JN-006', async (page) => {
+  const before = await page.evaluate(() => document.getElementById('stanceList').hidden);
+  must(before === true, 'the list is visible before the vote');
+  await page.click('#stanceVote button[data-v="a"]');
+  const r = await page.evaluate(() => ({ hidden: document.getElementById('stanceList').hidden,
+    n: document.querySelectorAll('#stanceList li').length, text: document.getElementById('stanceList').textContent }));
+  must(!r.hidden, 'the list stayed hidden after the vote');
+  must(r.n >= 6, `${r.n} items, expected at least 6`);
+  for (const w of ['Memory', 'instructions', 'machine', 'sampler', 'version']) must(r.text.includes(w), `list lacks "${w}"`);
+});
+
+/* JN-009: three consequence cards, the first about a compliance review, the third a consequence. */
+await check('JN-009', async (page) => {
+  const r = await page.evaluate(() => { const c = [...document.querySelectorAll('#s3 .cards .card')]; return { n: c.length, t: c.map((x) => x.textContent).join(' | ') }; });
+  must(r.n === 3, `${r.n} cards in #s3`);
+  must(/compliance review/.test(r.t) && /Control variance/.test(r.t), 'card text not updated');
+  must(!/do not expose T/.test(r.t), 'old card 03 heading survives');
+});
+
+/* JN-012: the task definition and five examples render before the frontier chart. */
+await check('JN-012', async (page) => {
+  const r = await page.evaluate(() => {
+    const h = [...document.querySelectorAll('#s5 h3')].find((x) => /What a task is/.test(x.textContent));
+    let grid = h; while (grid && !(grid.classList && grid.classList.contains('cards'))) grid = grid.nextElementSibling;
+    return { h: !!h, n: grid ? grid.querySelectorAll('.card').length : 0, chart: !!document.getElementById('frontierChart') };
+  });
+  must(r.h, 'the "What a task is" heading is missing');
+  must(r.n === 5, `${r.n} task cards, expected 5`);
+  must(r.chart, 'frontier chart missing');
+});
+
+/* JN-015: the estimator redraws with the sliders and names two tiers. */
+await check('JN-015', async (page) => {
+  const t0 = await page.evaluate(() => ({ rows: document.querySelectorAll('#mixOut .mixrow').length, sent: document.querySelector('#mixOut .mixsent').textContent }));
+  must(t0.rows === 4, `${t0.rows} bars, expected 4`);
+  must(/Claude Opus 5/.test(t0.sent) && /Claude Sonnet 5/.test(t0.sent), 'sentence does not name both tiers');
+  const set = (id, v) => page.evaluate(([id, v]) => { const e = document.getElementById(id); e.value = String(v); e.dispatchEvent(new Event('input', { bubbles: true })); }, [id, v]);
+  await set('mxJudge', 90); await set('mxDoc', 8);
+  const t1 = await page.evaluate(() => ({ sent: document.querySelector('#mixOut .mixsent').textContent, all: document.getElementById('mixOut').textContent }));
+  must(t1.sent !== t0.sent, 'the sentence did not change after moving two sliders');
+  must(/^90% of your tasks/.test(t1.sent), `sentence does not start with the judgment share: "${t1.sent.slice(0, 40)}"`);
+  must(!/NaN|undefined/.test(t1.all), 'NaN or undefined rendered');
+  const gone = await page.evaluate(() => !!document.getElementById('volRuns'));
+  must(!gone, 'the old number boxes are still on the page');
+});
+
 await browser.close();
 for (const [id, st, why] of out) console.log(`${id} ${st}${why ? ' ' + why : ''}`);
 const fails = out.filter((r) => r[1] === 'FAIL').length;
