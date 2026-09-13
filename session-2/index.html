@@ -1233,24 +1233,22 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <h3>The Cole household</h3>
   <p><span class="caseflag">Synthetic case &mdash; teaching anchor only</span></p>
-  <p>Every client example in this course draws on one household. It is entirely fabricated. It is <strong>not</strong> your final-project dataset: you build Part 1 on a real recurring task from your own practice, using your own synthetic or de-identified data. Nobody should build a workflow around the Cole family.</p>
+  <p>One fabricated household carries every client example. It is <strong>not</strong> your final-project dataset: Part 1 runs on a real recurring task from your own practice, with your own synthetic or de-identified data.</p>
 
   <!-- Card 4 is the recurring question; card 3 carries the Illinois exposure,
        which is a v4.0 fact in scope to be taught. See docs/spine-brief.md. -->
   <div class="cards">
-    <div class="card"><span class="num">Household</span><h4>Meg and David Cole, Barrington Hills, Illinois</h4><p>Meg, President and CEO of Cole Precision Components Inc., which she bought from her father. David, retired hospital pharmacist, Social Security not claimed. Long married, both US citizens, <strong>Illinois-domiciled for life</strong>. No liabilities of any kind; the balance sheet is in the case panel.</p></div>
-    <div class="card"><span class="num">The asset</span><h4>CPC stock: one asset, most of the estate</h4><p>C-corporation in Rockford making precision aerospace fasteners. It pays its sole shareholder a large dividend every year, under a policy adopted to service a purchase note that has since been satisfied and never revisited. Meg purchased all of the shares from Walter Hensley; she did not found it, so her basis is what she paid. A competitor made an unsolicited written inquiry. No letter of intent has been signed.</p></div>
-    <div class="card gold"><span class="num">The structure</span><h4>Non-voting LLC units to be moved to a grantor trust</h4><p>A seed gift of non-voting units, then a sale of a much larger block to the same trust for a demand note, interest only. A discount claimed on the non-voting units, <strong>with no appraisal and no appraiser engaged</strong>. And <strong>Illinois imposes its own estate tax</strong> at a threshold that is neither indexed nor portable, which neither spouse has engaged with.</p></div>
+    <div class="card"><span class="num">Household</span><h4>Meg and David Cole, Barrington Hills, Illinois</h4><p>Meg runs Cole Precision Components Inc.; David is a retired hospital pharmacist. US citizens, <strong>Illinois-domiciled for life</strong>, no liabilities. Balance sheet in the case panel.</p></div>
+    <div class="card"><span class="num">The asset</span><h4>CPC stock: one asset, most of the estate</h4><p>A Rockford C-corporation paying its sole shareholder a large dividend every year. Meg bought every share from her father, Walter Hensley, so her basis is what she paid. A competitor has made an unsolicited written inquiry; no letter of intent is signed, and Nathan Cole, in CPC operations, has not been told.</p></div>
+    <div class="card gold"><span class="num">The structure</span><h4>Non-voting LLC units to be moved to a grantor trust</h4><p>A seed gift of non-voting units, then a sale of a much larger block to the same trust for an interest-only demand note, at a discount <strong>with no appraisal and no appraiser engaged</strong>. <strong>Illinois imposes its own estate tax</strong> at a threshold neither indexed nor portable; neither spouse has engaged with it.</p></div>
     <div class="card warn"><span class="num">The question every session works on</span><h4>How much of the note does she call this year?</h4><p>Meg is short <strong>$522,086</strong> a year from year 6 while the structure performs exactly as designed. Each $1,000,000 she calls permanently removes $38,200 of future interest, so the gap widens by 3.82% of every call. <strong>What does calling it cost her in every year after, and when is a different lever the better answer?</strong> No session answers it.</p></div>
   </div>
-  <div class="csrc">Every fact and figure in these four cards is the case file's, as injected into this page; the household is constructed <span class="conf l" data-src="src-case">L</span>.</div>
-
-  <p>Nathan Cole works in CPC operations. Meg has not told him a competitor approached the company. That fact and the unexecuted plan are two of the three confidentiality landmines the case file carries; the third is the endowment Meg intends for the charity whose board she chairs. The existence of the relationship itself is a fourth, and it comes from the regulation rather than from the file. That is the boundary this course draws, and Session 4 will test it.</p>
+  <div class="csrc">Every figure in these cards is the case file's; the household is constructed <span class="conf l" data-src="src-case">L</span>.</div>
 
   <div class="cards">
     <div class="card"><span class="num">Outcome 01</span><h4>A working model of sampling</h4><p>Why the same prompt returns different text, and what that does to an audit trail.</p></div>
     <div class="card"><span class="num">Outcome 02</span><h4>A tier-selection rule</h4><p>Cost per finished task, benchmarked, rather than cost per token.</p></div>
-    <div class="card"><span class="num">Outcome 03</span><h4>Your own prompts, scored and rewritten</h4><p>The three you wrote before this session, or the three supplied in the workshop, scored element by element and one of them rebuilt in place.</p></div>
+    <div class="card"><span class="num">Outcome 03</span><h4>Your own prompts, scored and rewritten</h4><p>Three templates, yours or the workshop's, scored element by element; the weakest rebuilt in place.</p></div>
     <div class="card"><span class="num">Outcome 04</span><h4>A citation verification routine</h4><p>Four checks, in order, applied to tax authority you did not write.</p></div>
   </div>
 
@@ -1259,28 +1257,11 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <p style="font-size:14.5px;margin:0"><b>Token</b>: the unit a model reads and writes, roughly three quarters of a word; prices and context limits are counted in it. <b>Temperature</b>: the setting that decides how often the model picks a lower-ranked next word instead of the top one. <b>Persona, Task, Context, Format</b>: the four parts of a prompt, who the model writes as, what it does, what it may use, and what shape comes back. <b>Template</b>: a prompt written so that a second person can run it on a new input without asking you anything. <b>Grounded</b>: an answer built only from a named source the model was given to read, so each claim can be checked against that source. <b>Tier</b>: a model size and price class; the choice is made on cost per finished task, not cost per token. <b>Baseline</b>: how long the task takes you today, unassisted, recorded before any tool touches it. <b>IDGT, intentionally defective grantor trust</b>: a trust drafted so that the grantor stays liable for its income tax while the trust, not the grantor, is intended to own what it holds. <b>Non-voting units and a demand note</b>: the LLC interests being sold carry economics but no vote, and the buyer's note can be called for its principal at any time.</p>
   </div>
 
-  <h3>Time budget</h3>
-<!-- APXMAP:BEGIN generated-by=scripts/build-appendix.mjs -->
-  <table>
-    <thead><tr><th>Block</th><th>What it is</th><th class="n">Minutes</th></tr></thead>
-    <tbody>
-      <tr><td>Core</td><td>11 sections, taught in every room</td><td class="n">69</td></tr>
-      <tr><td>Appendix</td><td>5 optional sections, taken in place at the depth you set</td><td class="n">81</td></tr>
-      <tr><td colspan="2" style="text-align:right;font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.09em">Allocated instructional minutes</td><td class="n"><strong>150</strong></td></tr>
-      <tr><td colspan="2" style="text-align:right;font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.09em">Break, plus transition and overrun reserve</td><td class="n">30</td></tr>
-      <tr><td colspan="2" style="text-align:right;font-family:JetBrains Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.09em">Block total, 6:00 to 9:00 PM</td><td class="n"><strong>180</strong></td></tr>
-    </tbody>
-  </table>
-  <p class="dim" style="font-size:14px">The core alone runs 69 minutes, nine minutes over the hour. Every section carries its own minute figure on its eyebrow; the full per-section budget is in the footer.</p>
-<!-- APXMAP:END -->
-
   <div class="doit">
     <span class="plab">Before we start</span>
-    <p><strong>Open the AI tool you subscribed to, in a new tab, now.</strong> Every section below has something to run. You will finish this session with a baseline measurement, a rewritten prompt, a template a partner reviews before Session 3, and Part 1 assigned.</p>
-    <p><strong>Open the three prompt templates you wrote as well</strong> &mdash; or use the three supplied in section 04, the workshop. You will need the exact text there.</p>
+    <p><strong>Open the AI tool you subscribed to, in a new tab, now.</strong> Every section below has something to run.</p>
+    <p><strong>Open the three prompt templates you wrote</strong> &mdash; or use the three supplied in section 04, the workshop.</p>
   </div>
-
-
 
   <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all four bridge items and commit each before revealing anything.</div></div>
 
