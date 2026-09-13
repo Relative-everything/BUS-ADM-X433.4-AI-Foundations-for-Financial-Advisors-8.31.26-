@@ -1200,13 +1200,11 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 <!-- APXPANEL:BEGIN generated-by=scripts/build-appendix.mjs -->
 <section class="slide apxdiv" id="apx" data-nav="Appendix contents">
-  <div class="eyebrow"><span>Appendix &middot; 5 optional sections</span><span class="mins">78 min</span></div>
+  <div class="eyebrow"><span>Appendix &middot; 3 optional sections</span><span class="mins">46 min</span></div>
   <h2>Appendix contents</h2>
-  <p class="lede">Five optional sections, 78 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
+  <p class="lede">Three optional sections, 46 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
   <p>The 12 sections of the core session run in about 64 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
-    <a class="apxcard" href="#s5"><span class="ac">C1 &middot; 16 min &middot; after &sect;03</span><b>Chunk Size and Condition Orphaning</b></a>
-    <a class="apxcard" href="#sHY"><span class="ac">C5 &middot; 16 min &middot; after &sect;03</span><b>Hybrid Search and the Re-ranking Pass</b></a>
     <a class="apxcard" href="#s8"><span class="ac">C2 &middot; 14 min &middot; after &sect;05</span><b>Grounding Compared With Fine-Tuning</b></a>
     <a class="apxcard" href="#s11"><span class="ac">C3 &middot; 14 min &middot; after &sect;07</span><b>Note-Taker Adoption Against Note-Taker Satisfaction</b></a>
     <a class="apxcard" href="#s15"><span class="ac">C4 &middot; 18 min &middot; after &sect;10</span><b>Citation-Backed Output and Verification Effort</b></a>
@@ -1298,61 +1296,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run all four presets, including the two built to fail.</div></div>
 
-</section>
-
-<section class="slide apx" id="s5" data-nav="C1 · Chunk size" data-insert-after="s4" data-tier="standard">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C1 &middot; Chunk Size and Condition Orphaning</b><span>16 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix C1 &middot; Mechanism, deeper</span><span class="mins">16 min</span></div>
-  <h2>Chunk Size and Condition Orphaning</h2>
-
-  <p class="big">Chunk size is the only parameter in a retrieval system a non-engineer will ever be asked to choose, and it decides whether a rule arrives with the condition that governs it.</p>
-
-  <p>Anthropic's engineering write-up states the problem in one example: a chunk reads "the company's revenue grew by 3% over the previous quarter," and nothing in that chunk says which company or which quarter. The subject was two paragraphs earlier, in a different chunk. The embedding of the orphaned chunk carries none of it.</p>
-
-  <p>The Cole version is worse, because the orphaned element is not the subject but the <em>trigger</em>. Article VII of the 2014 buy-sell states a valuation formula, and it states it in a sentence that never names the event that invokes it. Severed from the sentence before it, the formula reads as CPC's valuation method. It is not. It is the valuation method for a death, a disability or a withdrawal — none of which is happening here. Drag the slider and watch the trigger separate from the formula.</p>
-
-  <div class="panel" data-task="t-s5" data-comp="parameter-sandbox">
-    <span class="do">Do this now — 5 minutes</span>
-    <h4>Re-chunk Article VII</h4>
-    <p class="hint">The same clause, split at different chunk lengths. Chunks stating a valuation rule with no triggering event attached are flagged. Find the <em>largest</em> chunk size at which orphaning still occurs. Most rooms guess around twenty. Re-derived against this clause, the answer is forty — orphaning stops only when the chunk is large enough to swallow the trigger and the formula together.</p>
-    <label class="fl" for="chSize">Chunk size</label>
-    <input type="range" id="chSize" min="6" max="80" step="2" value="14">
-    <div class="ticks"><span>6 words</span><span id="chNow">14 words</span><span>80 words</span></div>
-    <p style="margin:0 0 8px"><span class="sim">Keyword heuristic &mdash; written for this lesson</span></p>
-    <div id="chOut" class="mpanel"></div>
-    <div class="instrline" id="chFix"></div>
-  </div>
-
-  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em> — the revenue-chunk example and the prepend-context remedy are Anthropic's <span class="conf h" data-src="src-anthropic-ctx">H</span>. Article VII text is synthetic case content and is not a model buy-sell provision. The orphaning detector is a keyword heuristic written for this lesson and will miss cases a real evaluation would catch <span class="conf l" data-src="src-anthropic-ctx">L — heuristic, illustrative</span>.</p>
-
-  <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Find the largest chunk size at which the trigger still separates from the formula.</div></div>
-
-</section>
-
-<section class="slide apx" id="sHY" data-nav="C5 &middot; Hybrid search" data-insert-after="s4" data-tier="advanced">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C5 &middot; Hybrid Search and the Re-ranking Pass</b><span>16 min &middot; advanced &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix C5 &middot; Mechanism, deeper</span><span class="mins">16 min</span></div>
-  <h2>Hybrid Search and the Re-ranking Pass</h2>
-
-  <p class="big">&sect;04 gives you a failure rate and a floor. This section is the three engineering changes that move the rate, in the order they pay off, measured on Anthropic&rsquo;s own corpus.</p>
-
-  <p>The baseline is embedding-only retrieval: chunk, embed, rank by cosine similarity, return the top&nbsp;k. Each change below is additive and each is reported separately, so you can see which one your vendor has actually implemented and which one they are describing.</p>
-
-  <div class="panel">
-    <span class="do">Do this now &mdash; 5 minutes</span>
-    <h4>Stage-by-Stage Effect on the Failure Rate</h4>
-    <p class="hint">Failure rate is the share of queries where the correct passage is absent from the top 20 retrieved. Toggle in any order; the readout names what each stage fixes and what it cannot.</p>
-    <div id="hyCtrls" data-task="t-sHY" data-comp="pipeline-lab" class="row"></div>
-    <div class="diagout" id="hyOut"></div>
-  </div>
-
-  <p><strong>Read the last stage carefully.</strong> Re-ranking is the most expensive of the three &mdash; it runs a second model over the candidates &mdash; and it is the one most often sold as the whole product. On these numbers it is worth roughly a third of the total improvement, and it cannot recover a passage that retrieval never surfaced. Nothing downstream fixes a chunk that was not in the candidate set.</p>
-
-  <p><strong>What none of it fixes.</strong> The Article VII failure you produced in &sect;03 was not a ranking miss. The right chunk was retrieved and it was the wrong chunk to answer with, because a valuation formula severed from its triggering event reads as the general rule. Hybrid search returns it faster. It does not know it should not have been used.</p>
-
-  <p class="src"><b>Anthropic (2024, 19 Sep), Contextual Retrieval in AI Systems</b> &mdash; embedding-only baseline 5.7% failure at top-20; contextual embeddings 3.7%; plus contextual BM25 2.9%; plus re-ranking 1.9%. Figures are Anthropic&rsquo;s, measured on their own evaluation corpus by the vendor of the technique <span class="conf m" data-src="src-anthropic-ctx">M &mdash; vendor benchmark</span>. Percentages reproduced verbatim; the ordering commentary is mine.</p>
-
-  <div class="check" data-gate="ga5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Enable all three stages, then say which one your current tool actually runs and how you know.</div></div>
 </section>
 
 <section class="slide" id="s6" data-nav="Retrieval rates">
@@ -1746,14 +1689,12 @@ then a list of every element where my answer was thin.</pre>
       <tr><td>09 &middot; Documentation</td><td>Documenting the Basis for a Recommendation</td><td class="n">6</td></tr>
       <tr><td>10 &middot; Assignment</td><td>The AI Usage Policy Assignment</td><td class="n">4</td></tr>
       <tr><td>11 &middot; Close</td><td>Part 1 Draft Peer Exchange</td><td class="n">7</td></tr>
-      <tr class="apxrow"><td>Appendix C1 &middot; Mechanism, deeper</td><td>Chunk Size and Condition Orphaning</td><td class="n">16</td></tr>
-      <tr class="apxrow"><td>Appendix C5 &middot; Mechanism, deeper</td><td>Hybrid Search and the Re-ranking Pass</td><td class="n">16</td></tr>
       <tr class="apxrow"><td>Appendix C2 &middot; Comparison</td><td>Grounding Compared With Fine-Tuning</td><td class="n">14</td></tr>
       <tr class="apxrow"><td>Appendix C3 &middot; Market evidence</td><td>Note-Taker Adoption Against Note-Taker Satisfaction</td><td class="n">14</td></tr>
       <tr class="apxrow"><td>Appendix C4 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">18</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 64 + appendix 78; the core alone runs 64 minutes, four minutes over the hour</td><td class="n">142</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 64 + appendix 46; the core alone runs 64 minutes, four minutes over the hour</td><td class="n">110</td></tr>
     </tbody>
 <!-- APXBUDGET:END -->
   </table>
@@ -1778,7 +1719,7 @@ then a list of every element where my answer was thin.</pre>
 <!-- SOURCES:END -->
   </ul>
 <!-- APXNOTE:BEGIN generated-by=scripts/build-appendix.mjs -->
-  <p style="margin-top:22px">The core is 12 sections and runs in about 64 minutes, four minutes over the hour. The 5 appendix sections add 78 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
+  <p style="margin-top:22px">The core is 12 sections and runs in about 64 minutes, four minutes over the hour. The 3 appendix sections add 46 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
 <!-- APXNOTE:END -->
   <p><strong>No client data.</strong> The Cole household, Cole Precision Components and every document, transcript and figure attributed to them are synthetic and exist only as a classroom anchor. Nothing in this document is legal, tax or compliance advice, and no tax or legal conclusion is asserted anywhere in it.</p>
 
@@ -2062,33 +2003,6 @@ var PRESET=[
  Q.addEventListener('keydown',function(e){if(e.key==='Enter')run()});
  $('qVerdict').onclick=function(){V.style.display='block';V.className='mpanel has keyhide';V.innerHTML=verd()};
 })();
-
-/* ================= 5. Chunk slider on Article VII ================= */
-var DOC=CORP[0].t;
-(function(){
- var S=$('chSize'),NOW=$('chNow'),O=$('chOut'),F=$('chFix');
- var QUANT=/(five times|three fiscal|value of the shares|shall equal|earnings before interest|average annual)/i;
- var COND=/(death|disability|withdrawal|holder of record|applies only)/i;
- function draw(){
-  var k=parseInt(S.value,10);NOW.textContent=k+' words';
-  var ws=DOC.split(/\s+/),ch=[];
-  for(var i=0;i<ws.length;i+=k){ch.push(ws.slice(i,i+k).join(' '))}
-  var orph=0,h='<span class="hd">'+ch.length+' chunks at '+k+' words each ('+ws.length+'-word clause)</span>';
-  ch.forEach(function(c,i){
-   var bad=QUANT.test(c)&&!COND.test(c);if(bad)orph++;
-   h+=(bad?'<span class="flag">[ORPHANED] ':'<span class="good">[ok] ')+'chunk '+(i+1)+'</span> '+esc(c)+'<br><br>';
-  });
-  h+='<span class="hd">Orphaned chunks</span>'+(orph===0
-    ?'<span class="good">0 of '+ch.length+'. Every chunk stating a valuation rule also states the event that triggers it.</span>'
-    :'<span class="flag">'+orph+' of '+ch.length+' state a valuation rule with no triggering event attached. Retrieved alone, that chunk reads as CPC\u2019s valuation method.</span>');
-  O.className='mpanel'+(orph?'':' has');O.innerHTML=h;
-  F.innerHTML=orph
-   ?'Anthropic\u2019s remedy: before embedding, prepend a model-written sentence placing each chunk in its parent document \u2014 e.g. \u201cThis chunk states the buy-sell purchase price formula, which applies only on death, disability or withdrawal of a holder.\u201d The chunk stays small; the trigger travels with it.'
-   :'At this chunk size the trigger survives. The cost is that each retrieved chunk carries more irrelevant text into a fixed context budget \u2014 which is the trade this parameter actually controls.';
- }
- S.addEventListener('input',draw);draw();
-})();
-
 
 /* ===== PRESERVED FROM PRIOR BUILD - data arrays, chart builder, chart calls, slopegraph ===== */
 var RETR=[
@@ -2684,43 +2598,6 @@ document.addEventListener('keydown',function(e){
     [].slice.call(document.querySelectorAll('[data-gate]')).forEach(function(c){mark(c.dataset.gate)});
   }
 });
-
-/* ================= C5 · hybrid search stage toggles ================= */
-var HY=[
- {k:'ctx', n:'Contextual embeddings', r:3.7, w:'Each chunk gets a short generated preamble naming its document and section before it is embedded. This is what fixes orphaning \u2014 the chunk stops being an anonymous paragraph.'},
- {k:'bm', n:'Contextual BM25', r:2.9, w:'A lexical index runs alongside the vector index. Exact terms \u2014 &ldquo;Article VII&rdquo;, a docket number, a defined term \u2014 stop being approximated by meaning.'},
- {k:'rr', n:'Re-ranking pass', r:1.9, w:'A second model re-scores the candidate set before the top passages are handed over. Expensive, and it can only reorder what retrieval already found.'}
-];
-(function(){
-  var host=$('hyCtrls'),out=$('hyOut');if(!host||!out)return;
-  var on={};
-  HY.forEach(function(h){
-    var b=document.createElement('button');b.className='btn sel mini';b.textContent=h.n;
-    b.onclick=function(){on[h.k]=!on[h.k];b.classList.toggle('act',!!on[h.k]);upd()};
-    host.appendChild(b);
-  });
-  function upd(){
-    var rate=5.7,last=null;
-    if(on.ctx){rate=3.7;last=HY[0]}
-    if(on.ctx&&on.bm){rate=2.9;last=HY[1]}
-    if(on.ctx&&on.bm&&on.rr){rate=1.9;last=HY[2]}
-    if(!on.ctx&&(on.bm||on.rr)){
-      out.className='diagout alarm';
-      out.innerHTML='<span class="cz">Out of order</span>The published figures are cumulative and start with contextual embeddings. '+
-        'Switch that on first \u2014 a lexical index or a re-ranker bolted onto anonymous chunks is not the measurement Anthropic reports.';
-      return;
-    }
-    var cut=Math.round((1-rate/5.7)*100);
-    var h='<span class="cz">Failure rate at top-20</span><strong>'+rate.toFixed(1)+'%</strong> of queries miss the correct passage'+
-          (rate<5.7?' \u2014 down '+cut+'% from the 5.7% embedding-only baseline.':' \u2014 embedding-only baseline, nothing enabled.');
-    if(last)h+='<div class="fx"><strong>'+last.n+'.</strong> '+last.w+'</div>';
-    if(rate===1.9)h+='<div class="fx">All three, and the floor is still 1.9%. One query in fifty-three does not surface the passage that governs, on a benchmark built by the vendor of the technique. Your document set is messier than theirs.</div>';
-    out.className='diagout'+(rate===1.9?' on':'');
-    out.innerHTML=h;
-    if(typeof mark==='function'&&on.ctx&&on.bm&&on.rr)mark('ga5');
-  }
-  upd();
-})();
 
 /* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
 window.__coreMins=64;
