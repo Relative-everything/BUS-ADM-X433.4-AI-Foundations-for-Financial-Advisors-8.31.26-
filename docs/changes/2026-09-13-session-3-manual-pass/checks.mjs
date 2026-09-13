@@ -90,3 +90,26 @@ await check('JN-018', async (page) => {
   const s2 = await state();
   must(s2.coreOnly && s2.hidden === s2.apx, `after Core only, core-only=${s2.coreOnly}, ${s2.hidden} of ${s2.apx} hidden`);
 });
+
+/* JN-016: the Case facts button sits at the top of the viewport and opens the dialog, at 1280 and 380 px. */
+async function caseButtonAt(page) {
+  return page.evaluate(() => {
+    const b = document.getElementById('caseBtn'); const r = b.getBoundingClientRect();
+    const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+    b.click();
+    const open = document.getElementById('caseModal').classList.contains('open');
+    return { top: Math.round(r.top), right: Math.round(r.right), width: innerWidth, hit: hit === b, open };
+  });
+}
+await check('JN-016', async (page) => {
+  const a = await caseButtonAt(page);
+  must(a.top >= 0 && a.top < 40, `button top at ${a.top}px, expected inside the first 40px`);
+  must(a.hit && a.open, `button not the top element at its centre (${a.hit}) or dialog did not open (${a.open})`);
+  must(a.right <= a.width, `button right edge ${a.right} beyond the ${a.width}px viewport`);
+  const narrow = await browser.newContext({ viewport: { width: 380, height: 900 } });
+  const p2 = await narrow.newPage();
+  await p2.goto(URL, { waitUntil: 'load' }); await p2.waitForTimeout(300);
+  const b = await caseButtonAt(p2);
+  await narrow.close();
+  must(b.top >= 0 && b.top < 40 && b.hit && b.open && b.right <= 380, `at 380px: top ${b.top}, hit ${b.hit}, open ${b.open}, right ${b.right}`);
+});
