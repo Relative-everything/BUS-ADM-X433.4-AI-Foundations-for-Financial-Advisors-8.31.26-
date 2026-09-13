@@ -571,6 +571,16 @@ section.slide{scroll-margin-top:46px}
 .nil{color:var(--muted);font-style:italic;font-family:"Source Serif 4",serif}
 
 /* probability bars */
+.mixrow{display:grid;grid-template-columns:170px 1fr auto;gap:10px;align-items:center;margin:6px 0;font-size:13.5px}
+.mixl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.mixbar{display:flex;height:16px;background:var(--off-bg);border-radius:4px;overflow:hidden}
+.mixa{background:var(--on);display:block;height:100%}
+.mixb{background:var(--gold);display:block;height:100%;border-left:2px solid var(--card)}
+.mixv{font-size:12px;white-space:nowrap}
+.mixhead{font-size:12px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+.mixtable{font-size:12px;line-height:1.7;margin-top:12px;color:var(--muted)}
+.mixsent{font-size:15px;margin:12px 0 0}
+@media(max-width:600px){.mixrow{grid-template-columns:1fr;gap:4px}.mixv{white-space:normal}}
 .pbars{display:flex;flex-direction:column;gap:6px;margin:16px 0 0}
 .pbar{display:grid;grid-template-columns:110px 1fr 62px;gap:11px;align-items:center;font-family:"JetBrains Mono",monospace;font-size:12.5px;background:none;border:none;padding:3px 0;cursor:pointer;text-align:left;color:var(--ink);width:100%}
 .pbar:hover .fill{filter:brightness(1.2)}
@@ -1466,18 +1476,19 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <div class="panel" data-task="t-s5" data-comp="parameter-sandbox">
-    <span class="plab">Your own monthly cost estimate</span>
-    <p style="margin-top:0;font-size:15.5px">Enter the volume you expect for the workflow you are building for the final project. The estimator prices input and output separately at the published rates; the default volumes below are a 3:1 ratio you can change.</p>
-    <div class="ctrls" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">
-      <div><label class="plab" for="volRuns">Runs per month</label><input type="text" id="volRuns" value="80" inputmode="numeric"></div>
-      <div><label class="plab" for="volIn">Input tokens per run</label><input type="text" id="volIn" value="6000" inputmode="numeric"></div>
-      <div><label class="plab" for="volOut">Output tokens per run</label><input type="text" id="volOut" value="2000" inputmode="numeric"></div>
+    <span class="plab">Your month, priced</span>
+    <p style="margin-top:0;font-size:15.5px">Set how many of each task you run in a week and how much of the work needs judgment. The page prices every task at the published rates, splits the month between a routine tier and a frontier tier, and redraws as you move.</p>
+    <div class="ctrls" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr))">
+      <div><label class="plab" for="mxSummary">Meeting summaries a week: <span id="mxSummaryV" class="mono">3</span></label><input type="range" id="mxSummary" min="0" max="20" value="3"></div>
+      <div><label class="plab" for="mxDoc">Long documents summarised a week: <span id="mxDocV" class="mono">1</span></label><input type="range" id="mxDoc" min="0" max="10" value="1"></div>
+      <div><label class="plab" for="mxEmail">Inbox triage passes a week: <span id="mxEmailV" class="mono">5</span></label><input type="range" id="mxEmail" min="0" max="10" value="5"></div>
+      <div><label class="plab" for="mxLetter">Client letters a week: <span id="mxLetterV" class="mono">4</span></label><input type="range" id="mxLetter" min="0" max="40" value="4"></div>
+      <div><label class="plab" for="mxJudge">Share of the work that needs judgment: <span id="mxJudgeV" class="mono">30%</span></label><input type="range" id="mxJudge" min="0" max="100" value="30" step="5"></div>
     </div>
-    <div class="out has" id="costOut" style="margin-top:18px"></div>
-    <p class="dim" style="font-size:14px;margin-bottom:0">A subscription changes this arithmetic entirely &mdash; a flat monthly plan absorbs a great deal of usage before per-token pricing becomes the cheaper route. The point of the estimator is to show which tier decisions are material and which are noise at your volume.</p>
-    <div class="csrc">Rates: <b>Anthropic</b> pricing page <span class="conf h" data-src="src-pricing">H</span>; <b>OpenAI</b> API pricing <span class="conf m" data-src="src-openai-pricing">M</span>.</div>
+    <div id="mixOut" style="margin-top:18px"></div>
+    <p style="margin:10px 0 0"><span class="sim">Illustrative token counts per task: constructed for this page, not measured</span></p>
+    <div class="csrc">Rates: <b>Anthropic</b> pricing page, retrieved 13 September 2026 <span class="conf h" data-src="src-pricing">H</span>. Token counts per task are this page&rsquo;s assumptions, shown in the readout so you can replace them with your own.</div>
   </div>
-
 </section>
 
 <section class="slide" id="s6" data-nav="P·T·C·F">
@@ -2304,20 +2315,52 @@ drawFrontier();
   g.appendChild(el('text',{x:350,y:H-14,'text-anchor':'middle',class:'alab',fill:'var(--warn)'},'SONNET 5 FALLS FOUR PLACES  \u00b7  SOL RISES THREE'));
 })();
 
-/* cost estimator */
-function cost(){
-  var r=parseFloat($('volRuns').value)||0,ti=parseFloat($('volIn').value)||0,to=parseFloat($('volOut').value)||0;
-  var rows=MODELS.slice().sort(function(a,b){return (a.i*ti+a.o*to)-(b.i*ti+b.o*to)});
-  var out='MONTHLY API COST AT '+r.toLocaleString()+' RUNS  ('+ti.toLocaleString()+' in / '+to.toLocaleString()+' out per run)\n\n';
-  rows.forEach(function(m){
-    var c=r*(ti/1e6*m.i+to/1e6*m.o);
-    var bar='\u2588'.repeat(Math.max(1,Math.round(c/Math.max(0.01,r*(rows[rows.length-1].i*ti+rows[rows.length-1].o*to)/1e6)*26)));
-    out+=('$'+c.toFixed(2)).padStart(9)+'   '+bar.padEnd(28)+m.n+'\n';
-  });
-  out+='\nSpread from cheapest to dearest: '+(r*(rows[rows.length-1].i*ti/1e6+rows[rows.length-1].o*to/1e6)/Math.max(0.01,r*(rows[0].i*ti/1e6+rows[0].o*to/1e6))).toFixed(1)+'x';
-  $('costOut').textContent=out;
-}
-['volRuns','volIn','volOut'].forEach(function(id){$(id).oninput=cost});cost();
+/* cost estimator: a personal task mix priced across a routine tier and a frontier tier. [NEW] 2026-09-13, family 6 parameter-sandbox */
+(function(){
+  var TASKS=[
+    {id:'mxSummary',n:'Meeting summaries',tin:4000,tout:900},
+    {id:'mxDoc',n:'Long documents',tin:60000,tout:1200},
+    {id:'mxEmail',n:'Inbox triage',tin:9000,tout:600},
+    {id:'mxLetter',n:'Client letters',tin:1500,tout:700}
+  ];
+  function byName(n){for(var i=0;i<MODELS.length;i++){if(MODELS[i].n===n)return MODELS[i]}return null}
+  var ROUTINE=byName('Claude Sonnet 5'),FRONT=byName('Claude Opus 5');
+  var TOP={n:'Claude Fable 5.1',i:10,o:50}; /* pricing page, 2026-09-13 */
+  function price(m,tin,tout){return tin/1e6*m.i+tout/1e6*m.o}
+  function fmt(x){return '$'+x.toFixed(2)}
+  function bar(label,a,b,max,txt){
+    return '<div class="mixrow"><span class="mixl">'+label+'</span><span class="mixbar"><span class="mixa" style="width:'+(a/max*100).toFixed(1)+'%"></span><span class="mixb" style="width:'+(b/max*100).toFixed(1)+'%"></span></span><span class="mixv mono">'+txt+'</span></div>';
+  }
+  function sentence(pct,total,allR,allF,allT){
+    if(pct===0)return 'Everything runs on '+ROUTINE.n+': '+fmt(total)+' a month. The same work on '+FRONT.n+' would be '+fmt(allF)+', and on '+TOP.n+' '+fmt(allT)+'.';
+    if(pct===100)return 'Everything runs on '+FRONT.n+': '+fmt(total)+' a month. The same work on '+ROUTINE.n+' would be '+fmt(allR)+', and on '+TOP.n+' '+fmt(allT)+'.';
+    return pct+'% of your tasks run on '+FRONT.n+' and the rest on '+ROUTINE.n+': '+fmt(total)+' a month. All routine would be '+fmt(allR)+', all frontier '+fmt(allF)+', all '+TOP.n+' '+fmt(allT)+'. The judgment share, not the list price, is what moves the bill.';
+  }
+  function draw(){
+    var pct=parseInt($('mxJudge').value,10),j=pct/100;$('mxJudgeV').textContent=pct+'%';
+    var rows=[],totR=0,totF=0,n=0,allR=0,allF=0,allT=0;
+    TASKS.forEach(function(t){
+      var perWeek=parseInt($(t.id).value,10)||0;$(t.id+'V').textContent=perWeek;
+      var perMonth=Math.round(perWeek*52/12);
+      var cr=price(ROUTINE,t.tin,t.tout),cf=price(FRONT,t.tin,t.tout),ct=price(TOP,t.tin,t.tout);
+      var costR=perMonth*(1-j)*cr,costF=perMonth*j*cf;
+      totR+=costR;totF+=costF;n+=perMonth;allR+=perMonth*cr;allF+=perMonth*cf;allT+=perMonth*ct;
+      rows.push({t:t,perMonth:perMonth,cr:cr,cf:cf,cost:costR+costF});
+    });
+    var total=totR+totF,max=Math.max(total,allR,allF,allT,0.01);
+    var h='<div class="mixhead mono dim">'+n+' tasks a month, priced per task at the published rates</div>';
+    h+=bar('Your blend',totR,totF,max,fmt(total)+' ('+fmt(totR)+' routine + '+fmt(totF)+' judgment)');
+    h+=bar('All on '+ROUTINE.n,allR,0,max,fmt(allR));
+    h+=bar('All on '+FRONT.n,0,allF,max,fmt(allF));
+    h+=bar('All on '+TOP.n,0,allT,max,fmt(allT));
+    h+='<div class="mixtable mono">';
+    rows.forEach(function(r){h+='<div>'+r.t.n+': '+r.perMonth+' a month at '+r.t.tin.toLocaleString()+' in / '+r.t.tout.toLocaleString()+' out; '+fmt(r.cr)+' each routine, '+fmt(r.cf)+' each with judgment; '+fmt(r.cost)+' this month</div>'});
+    h+='</div><p class="mixsent">'+sentence(pct,total,allR,allF,allT)+'</p>';
+    $('mixOut').innerHTML=h;
+  }
+  ['mxSummary','mxDoc','mxEmail','mxLetter','mxJudge'].forEach(function(id){$(id).oninput=draw});
+  draw();
+})();
 
 /* ================= 6 · PTCF ================= */
 var PTCF={
