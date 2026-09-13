@@ -1261,16 +1261,16 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>02 &middot; The failure this creates</span><span class="mins">5 min</span></div>
   <h2>Distributional Similarity and Referential Difference</h2>
 
-  <p class="big">Wolfram's own worked example contains the failure mode. He explains that "alligator" and "crocodile" will often appear almost interchangeably in otherwise similar sentences, and that this is why they are placed near each other, while "turnip" and "eagle" do not appear in similar sentences and are placed far apart.</p>
+  <p class="big">Wolfram's own example holds the failure. "Alligator" and "crocodile" appear almost interchangeably in similar sentences, so they sit close together. "Turnip" and "eagle" do not, so they sit far apart.</p>
 
-  <p>The property being measured is <em>interchangeability of context</em>. Alligators and crocodiles are different animals; the embedding does not encode that they differ, only that people write about them the same way. In the Cole file that is the central hazard, because the governing documents are written in near-identical language and differ in one condition each.</p>
+  <p>The model measures whether two words keep the same company, not whether they mean the same thing. Alligators and crocodiles are different animals. The Cole file has the same hazard: its documents use near-identical language and differ in one condition each.</p>
 
-  <p class="pull">Distributional proximity is the signal. Referential identity is what you needed.</p>
+  <p class="pull">Sounding alike is the signal. Being the same thing is what you needed.</p>
 
   <div class="panel" data-task="t-s3" data-comp="two-bucket-sorter">
     <span class="do">Do this now — 4 minutes</span>
     <h4>Pair Sort: Distributional Similarity Against Reference</h4>
-    <p class="hint">Each pair sits close together in a word-level embedding. Sort each into one of three buckets. The key is withheld until all six are placed.</p>
+    <p class="hint">Each pair sits close together in a word-level embedding. Click a pair, then the bucket it belongs in. The pair lands under that bucket with the answer.</p>
     <div class="sorter">
       <div id="pairList" class="chiplist"></div>
       <div id="pairBoxes" class="boxes"></div>
@@ -1279,7 +1279,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div id="pairKey" class="mpanel keyhide" style="display:none"></div>
   </div>
 
-  <p class="src">Wolfram (2023), "The Concept of Embeddings" — alligator / crocodile and turnip / eagle are Wolfram's examples, reproduced in substance <span class="conf h" data-src="src-wolfram">H</span>. The six pairs are drawn from the Cole document set and the three-bucket taxonomy is constructed for this lesson.</p>
+  <p class="src">Wolfram (2023), "The Concept of Embeddings": alligator / crocodile and turnip / eagle are Wolfram's examples, in substance <span class="conf h" data-src="src-wolfram">H</span>. The six pairs and the three buckets are constructed for this lesson from the Cole document set <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort all six pairs into the three buckets, then open the key and argue with it.</div></div>
 
