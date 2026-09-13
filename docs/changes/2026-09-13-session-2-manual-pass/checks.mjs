@@ -47,7 +47,7 @@ async function check(id, fn) {
 
 /* JN-001: the Shift+U override is gone: no badge, no handler, no effect. */
 await check('JN-001', async (page) => {
-  must(!/shiftKey/.test(SRC), 'source still binds shiftKey');
+  must(!/shiftKey\s*&&\s*\(e\.key===?'U'/.test(SRC), 'source still binds the Shift+U override (the case viewer has its own shiftKey use, which is not it)');
   must(!/id="ovr"/.test(SRC), 'source still carries the #ovr badge');
   const before = await page.evaluate(() => ({
     done: document.querySelectorAll('[data-gate].done').length,

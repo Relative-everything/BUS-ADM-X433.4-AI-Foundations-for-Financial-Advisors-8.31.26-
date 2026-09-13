@@ -134,8 +134,15 @@ for (const rel of LESSONS) {
     bothPanels: !document.getElementById('casePanelFacts').classList.contains('case-off') &&
                 !document.getElementById('casePanelStruct').classList.contains('case-off'),
   }));
+  /* A lesson whose source binds no shiftKey handler carries no override at
+     all (session-2 since 2026-09-13, on the instructor's instruction; DW-116).
+     The two override assertions do not apply there; the case-tab assertion
+     below still does, because pressing the keys must still do nothing. */
+  const hasOverride = /shiftKey\s*&&\s*\(e\.key===?'U'/.test(readFileSync(join(REPO, rel), 'utf8'));
   if (rel === 'index.html') {
     console.log('      13  hub carries no answer panels, so no Shift+U override is expected');
+  } else if (!hasOverride) {
+    console.log(`      13  ${rel} carries no Shift+U override (removed 2026-09-13, DW-116); the two override assertions do not apply`);
   } else {
     say(!!(ovr.label && /shift\s*\+?\s*u/i.test(ovr.label)),
         `13  Shift+U override visibly labelled${ovr.id ? ` (#${ovr.id})` : ''}: "${ovr.label}"`);

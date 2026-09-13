@@ -458,8 +458,8 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 .case-tab.on{color:var(--on);border-bottom-color:var(--on)}
 .case-tab:focus-visible{outline:2px solid var(--on);outline-offset:3px;border-radius:4px}
 .case-panel:focus{outline:none}
-/* Shift+U strips .hidden page-wide by design; the case tabs use their own
-   class so the override cannot reveal both panels at once. */
+/* The case tabs use their own class rather than .hidden, so a page-wide
+   reveal cannot show both panels at once. */
 .case-panel.case-off{display:none}
 .case-lede{font-size:14.5px;color:var(--muted);margin:0 0 14px}
 .case-t{margin:0 0 14px}
@@ -721,7 +721,6 @@ table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border
 <div id="prog"></div>
 <div id="topbar">
   <span class="tb-l">BUS ADM X433.4 &middot; Session 2</span>
-  <span class="tb-r" id="ovr"><kbd>Shift</kbd>+<kbd>U</kbd> &mdash; reveal all answer panels</span>
   <button id="caseBtn">Case facts</button>
 </div>
 <div id="caseModal"><div class="inner" id="caseInner">
@@ -3080,21 +3079,6 @@ var BSQ=[
   $('dDelta').textContent='Both distributions render here after the re-vote.';
 })();
 
-/* keyboard: Shift+U reveals every answer panel, for instructor use */
-document.addEventListener('keydown',function(e){
-  /* DW-064. No key bound here fires while a typing surface has focus. Without
-     this the override fired from inside a text box, and a capital U revealed
-     every withheld panel. */
-  var ae=document.activeElement,tg=(ae&&ae.tagName)||'';
-  if(tg==='TEXTAREA'||tg==='INPUT'||(ae&&ae.isContentEditable))return;
-  if(e.shiftKey&&(e.key==='U'||e.key==='u')){
-    document.querySelectorAll('.qfb,.fbx').forEach(function(x){x.style.display='block'});
-    var k=$('sortKey');if(k){k.disabled=false}
-    if(window.__revealBridge)window.__revealBridge();
-    if(window.__revealBsell)window.__revealBsell();
-    var t=$('ovr');if(t){t.textContent='Override ON \u2014 all answer panels revealed';t.style.color='var(--on)'}
-  }
-});
 /* ===== family 17: cold-open ritual — identical in every session ===== */
 /* COURSE-WIDE COLD-OPEN CHECKLIST. COLD_CHECKS is the one constant that
    defines the eight fixed checks: a label, one plain line on why the item
@@ -3151,16 +3135,6 @@ function mark(id){
   c.classList.add('done');
   var m=c.querySelector('.mk'); if(m)m.textContent='\u2713';
 }
-document.addEventListener('keydown',function(e){
-  /* DW-064. No key bound here fires while a typing surface has focus. Without
-     this the override fired from inside a text box, and a capital U revealed
-     every withheld panel. */
-  var ae=document.activeElement,tg=(ae&&ae.tagName)||'';
-  if(tg==='TEXTAREA'||tg==='INPUT'||(ae&&ae.isContentEditable))return;
-  if(e.shiftKey&&(e.key==='U'||e.key==='u')){
-    [].slice.call(document.querySelectorAll('[data-gate]')).forEach(function(c){mark(c.dataset.gate)});
-  }
-});
 
 /* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
 window.__coreMins=69;
