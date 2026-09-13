@@ -575,6 +575,23 @@ section.slide{scroll-margin-top:46px}
 .pel .pk{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
 .pel.l1{border-color:var(--warn)}.pel.l2{border-color:var(--gold)}.pel.l3{border-color:var(--on)}
 .pel.absent{border-style:dashed;color:var(--muted);font-style:italic}
+.cuprow{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cup{display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--card);border:2px solid var(--line);border-radius:12px;padding:12px 10px;cursor:pointer;min-width:94px;font-family:inherit;color:var(--ink)}
+.cup:disabled{cursor:default}
+.cup:focus-visible{outline:2px solid var(--on);outline-offset:3px}
+.cup .cupart{display:block;height:66px;transition:transform .25s}
+.cup.lifted .cupart{transform:translateY(-8px)}
+.cup.last{border:4px double var(--on)}
+.cup .cupbody{fill:var(--off-bg);stroke:var(--ink);stroke-width:2}
+.cup .cuprim{fill:var(--ink)}
+.cup .coin{fill:var(--gold);stroke:var(--ink);stroke-width:2}
+.cup .empty{display:inline-block;margin-top:26px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.cup .cupl{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.gaprow{display:grid;grid-template-columns:86px 1fr 52px;gap:10px;align-items:center;margin:6px 0;font-size:13px}
+.gapl{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.gapbar{display:block;height:16px;background:var(--off-bg);border-radius:4px;overflow:hidden}
+.gapfill{display:block;height:100%;transition:width .3s}.gapfill.a{background:var(--warn)}.gapfill.b{background:var(--on)}
+@media (prefers-reduced-motion: reduce){.cup .cupart,.gapfill{transition:none}}
 .mixrow{display:grid;grid-template-columns:170px 1fr auto;gap:10px;align-items:center;margin:6px 0;font-size:13.5px}
 .mixl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
 .mixbar{display:flex;height:16px;background:var(--off-bg);border-radius:4px;overflow:hidden}
@@ -1318,6 +1335,36 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     </div>
     <div class="out" id="lapOut"></div>
   </div>
+
+  <h3>Three cups</h3>
+  <div class="panel" id="cups" data-task="t-s2b" data-comp="estimate-then-reveal">
+    <div id="cupPredict">
+      <span class="plab">Predict first</span>
+      <p style="margin:6px 0 10px;font-size:15.5px">A coin is under one of three cups. After you lift two empty cups, what is the chance the coin is under the last one?</p>
+      <div class="row" id="cupOpts">
+        <button class="btn sel mini" data-p="33">33%</button>
+        <button class="btn sel mini" data-p="50">50%</button>
+        <button class="btn sel mini" data-p="66">66%</button>
+        <button class="btn sel mini" data-p="100">100%</button>
+      </div>
+      <div class="row" style="margin-top:12px"><button class="btn mini" id="cupStart" disabled>Start</button><span class="mono dim" style="font-size:12px" id="cupPredNote">Pick one. It locks.</span></div>
+    </div>
+    <div id="cupPlay" hidden>
+      <div class="mono" id="cupRead" style="font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:12px" aria-live="polite">Chance the coin is under any one covered cup: 33%</div>
+      <div class="cuprow" id="cupRow"></div>
+      <p class="dim" id="cupCap" style="font-size:14.5px;margin:12px 0 0;min-height:1.4em">Lift any cup.</p>
+      <div id="cupGap" hidden style="margin-top:14px">
+        <span class="plab">Your prediction against the number you reached</span>
+        <div class="gaprow"><span class="gapl mono">You said</span><span class="gapbar"><span class="gapfill a" id="gapYou"></span></span><span class="mono" id="gapYouV"></span></div>
+        <div class="gaprow"><span class="gapl mono">It reached</span><span class="gapbar"><span class="gapfill b" style="width:100%"></span></span><span class="mono">100%</span></div>
+        <p id="gapNote" style="font-size:15px;margin:10px 0 0"></p>
+        <p class="dim" style="font-size:13.5px;margin:10px 0 0">This demo always places the coin under the cup you do not lift, so everyone reaches the same beat. The chances shown are the correct ones for what you knew at each click.</p>
+      </div>
+      <div class="row" style="margin-top:14px"><button class="btn ghost mini" id="cupShow" hidden>Show coin</button><button class="btn sel mini" id="cupAgain" hidden>Play again</button></div>
+    </div>
+  </div>
+  <p>The coin never moved. Your number moved three times, and each time it moved because what you knew changed. An AI chatbot works the same way, one layer down: it writes each word by guessing what comes next <span class="conf h" data-src="src-wolfram">H</span>, based on what it has read and what you typed. When it sounds certain, that certainty is your number, not the coin. It describes what the model has seen; it does not describe what is under the cup, in the tax code, or on your client&rsquo;s return. Only lifting a cup changes the number. Only opening the source changes the answer.</p>
+  <div class="csrc">The guessing sentence: <b>Wolfram, S. (2023)</b>, &ldquo;It&rsquo;s Just Adding One Word at a Time&rdquo;, the mechanism as reported, not quoted <span class="conf h" data-src="src-wolfram">H</span>. The cups are a constructed demonstration, labelled above.</div>
 
   <p class="pull">Confidence in the output is not evidence about the world. It is evidence about the training data.</p>
 
@@ -2102,6 +2149,66 @@ function lap(){
   $('lapOut').textContent=h;$('lapOut').classList.toggle('has',w||m);
 }
 $('cbWorld').onchange=lap;$('cbModel').onchange=lap;lap();
+
+/* ===== 2b · THREE CUPS. [NEW] 2026-09-13; the predict-then-reveal shape is
+   family 10 estimate-then-reveal (library entry 10, S1 GUESS panel), the cup
+   mechanics are new. Readouts are 33%, 50%, 100% and nothing else; the coin is
+   always under the cup the learner does not lift, and the page says so. ===== */
+(function(){
+  var root=$('cups');if(!root)return;
+  var CUPS=['A','B','C'],pred=null,lifted=0,cupState={};
+  function cupSvg(){return '<svg viewBox="0 0 60 64" width="60" height="64" aria-hidden="true" focusable="false"><path class="cupbody" d="M12 16 H48 L42 56 H18 Z"/><rect class="cuprim" x="8" y="12" width="44" height="6" rx="2"/></svg>'}
+  function coinSvg(){return '<svg viewBox="0 0 60 64" width="60" height="64" aria-hidden="true" focusable="false"><circle class="coin" cx="30" cy="44" r="11"/></svg>'}
+  function label(st){return st==='covered'?'covered':st==='empty'?'empty':st==='coin'?'the coin':'the coin is here'}
+  function readout(){return lifted===0?'33%':lifted===1?'50%':'100%'}
+  function render(){
+    var h='';
+    CUPS.forEach(function(c){
+      var st=cupState[c];
+      h+='<button type="button" class="cup'+(st==='empty'?' lifted':'')+((st==='last'||st==='coin')?' last':'')+'" data-c="'+c+'"'+(st!=='covered'?' disabled':'')+' aria-label="Cup '+c+', '+label(st)+'">'+
+         '<span class="cupart">'+(st==='coin'?coinSvg():(st==='empty'?'<span class="empty">empty</span>':cupSvg()))+'</span>'+
+         '<span class="cupl mono">'+c+' \u00b7 '+label(st)+'</span></button>';
+    });
+    $('cupRow').innerHTML=h;
+    $('cupRow').querySelectorAll('button.cup').forEach(function(b){if(!b.disabled)b.onclick=function(){lift(b.getAttribute('data-c'))}});
+    $('cupRead').textContent='Chance the coin is under any one covered cup: '+readout();
+  }
+  function lift(c){
+    if(cupState[c]!=='covered'||lifted>=2)return;
+    cupState[c]='empty';lifted++;
+    if(lifted===1){$('cupCap').textContent='One cup gone. Two covered, one coin: 50%. Lift another.';}
+    else{
+      CUPS.forEach(function(k){if(cupState[k]==='covered')cupState[k]='last'});
+      $('cupCap').textContent='The coin is here. You never lifted it, and the number still reached 100%.';
+      $('gapYou').style.width=pred+'%';$('gapYouV').textContent=pred+'%';
+      $('gapNote').textContent=pred===100?'You called it. The number reached 100% because two lifts told you where the coin was not.'
+        :'The number moved because what you knew moved. Nothing about the last cup changed.';
+      $('cupGap').hidden=false;$('cupShow').hidden=false;$('cupAgain').hidden=false;
+    }
+    render();
+  }
+  function reset(){
+    pred=null;lifted=0;CUPS.forEach(function(c){cupState[c]='covered'});
+    $('cupOpts').querySelectorAll('button').forEach(function(b){b.disabled=false;b.classList.remove('act');b.setAttribute('aria-pressed','false')});
+    $('cupStart').disabled=true;$('cupPredNote').textContent='Pick one. It locks.';
+    $('cupPlay').hidden=true;$('cupPredict').hidden=false;$('cupGap').hidden=true;$('cupShow').hidden=true;$('cupAgain').hidden=true;
+    $('cupCap').textContent='Lift any cup.';$('gapYou').style.width='0%';
+    render();
+  }
+  $('cupOpts').querySelectorAll('button').forEach(function(b){
+    b.setAttribute('aria-pressed','false');
+    b.onclick=function(){
+      if(pred!==null)return;
+      pred=parseInt(b.getAttribute('data-p'),10);b.classList.add('act');b.setAttribute('aria-pressed','true');
+      $('cupOpts').querySelectorAll('button').forEach(function(x){x.disabled=true});
+      $('cupStart').disabled=false;$('cupPredNote').textContent='Locked at '+pred+'%. Press Start.';
+    };
+  });
+  $('cupStart').onclick=function(){if(pred===null)return;$('cupPlay').hidden=false;render();$('cupRow').querySelector('button.cup').focus()};
+  $('cupShow').onclick=function(){CUPS.forEach(function(k){if(cupState[k]==='last')cupState[k]='coin'});render();$('cupShow').hidden=true};
+  $('cupAgain').onclick=reset;
+  reset();
+})();
 
 /* ================= 3 · TEMPERATURE ================= */
 function reweight(T){
