@@ -571,6 +571,10 @@ section.slide{scroll-margin-top:46px}
 .nil{color:var(--muted);font-style:italic;font-family:"Source Serif 4",serif}
 
 /* probability bars */
+.pel{display:block;padding:7px 11px;margin:5px 0;border-left:3px solid var(--line);border-radius:0 6px 6px 0;background:var(--card)}
+.pel .pk{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.pel.l1{border-color:var(--warn)}.pel.l2{border-color:var(--gold)}.pel.l3{border-color:var(--on)}
+.pel.absent{border-style:dashed;color:var(--muted);font-style:italic}
 .mixrow{display:grid;grid-template-columns:170px 1fr auto;gap:10px;align-items:center;margin:6px 0;font-size:13.5px}
 .mixl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
 .mixbar{display:flex;height:16px;background:var(--off-bg);border-radius:4px;overflow:hidden}
@@ -1544,45 +1548,33 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 </section>
 
-<section class="slide" id="s6b" data-nav="Your prompts">
+<section class="slide" id="s6b" data-nav="Build a prompt">
   <div class="eyebrow"><span>04 &middot; Workshop</span><span class="mins">7 min</span></div>
-  <h2>Scoring Your Own Prompts Against P.T.C.F</h2>
+  <h2>Building Prompts Against P.T.C.F</h2>
   <p class="big">Three starter prompts, each built up one element at a time from absent to specified and checkable. Watch what each step adds.</p>
 
   <p>Then rewrite the weakest of your own three templates in the editor below, or start from one of these. <strong>The rewrite, not the original, is what carries forward</strong> into your Part 1 template library.</p>
 
-  <div class="panel tightpad" id="fixtures" style="margin-bottom:18px">
-    <span class="plab">No three templates yet, or nothing to run them on? Use these three</span>
-    <p style="font-size:14.5px;margin:0 0 10px"><span class="caseflag">Synthetic case</span> <span class="sim">Exercise material</span> Three inputs from the Cole file and three starter prompts written to be weak <span class="conf l" data-src="src-case">L</span>. Each starter is missing two of the four P.T.C.F elements on purpose, so the scorer below has something to score; none is a model to copy. Pick a fixture; the starter loads into the box for the prompt number you are on.</p>
-    <div class="row" style="margin-bottom:10px">
+  <div class="panel" id="fixtures" data-task="t-s6b" data-comp="builder-assembler">
+    <div class="row" style="margin-bottom:12px">
       <button class="btn sel mini act" data-fx="0">F1 &middot; Client email</button>
       <button class="btn sel mini" data-fx="1">F2 &middot; Meeting notes</button>
       <button class="btn sel mini" data-fx="2">F3 &middot; Plan summary</button>
       <span class="mono dim" style="font-size:12px" id="fxWhich"></span>
     </div>
+    <p style="font-size:14.5px;margin:0 0 10px"><span class="caseflag">Synthetic case</span> <span class="sim">Exercise material</span> Three inputs from the Cole file <span class="conf l" data-src="src-case">L</span>. Pick one, then set the level of each element and watch the prompt change.</p>
     <span class="plab" id="fxInLabel">The input</span>
     <div class="out has" id="fxIn"></div>
-    <span class="plab" style="margin-top:12px">The starter prompt, deliberately weak</span>
+    <div class="row" style="margin-top:8px"><button class="btn ghost mini" id="fxCopyIn">Copy the input</button></div>
+    <div id="hwScore" style="margin-top:20px"></div>
+    <span class="plab" style="margin-top:20px">The prompt at these levels</span>
     <div class="out has" id="fxPrompt"></div>
+    <div class="out" id="hwVerdict" style="margin-top:12px"></div>
     <div class="row" style="margin-top:10px">
-      <button class="btn mini" id="fxUse">Load it as the prompt to score</button>
-      <button class="btn ghost mini" id="fxCopyIn">Copy the input</button>
-      <span class="mono dim" style="font-size:12px">Then score it below, rewrite it in the editor, and run both on the same input.</span>
-    </div>
-    <p style="font-size:14px;margin:12px 0 0"><b>If you do not run a workflow of your own, five steps:</b> pick a fixture; write or load the prompt; run it in your tool on the fixture; score the output against the facts the fixture contains, all of which are on the Case facts panel; write down what the model assumed that the fixture never said.</p>
-  </div>
-
-  <div class="panel" data-task="t-s6b" data-comp="builder-assembler">
-    <div class="row" style="margin-bottom:18px">
-      <button class="btn sel mini act" data-hw="0">Prompt 1</button>
-      <button class="btn sel mini" data-hw="1">Prompt 2</button>
-      <button class="btn sel mini" data-hw="2">Prompt 3</button>
+      <button class="btn mini" id="fxUse">Load this version into the editor</button>
       <span class="mono dim" style="font-size:12px" id="hwWhich"></span>
     </div>
-    <label class="plab" for="hwText">Paste the prompt exactly as you wrote it, typos included</label>
-    <textarea id="hwText" placeholder="Paste your prompt here. Do not clean it up first &mdash; the original is the measurement."></textarea>
-    <div id="hwScore" style="margin-top:20px"></div>
-    <div class="out" id="hwVerdict" style="margin-top:16px"></div>
+    <p style="font-size:14px;margin:12px 0 0">To run it: paste the input and the prompt into your own tool, score the output against the facts in the Case facts panel, and write down what the model assumed that the input never said.</p>
   </div>
 
   <h3>Rewrite the weakest of the three</h3>
@@ -1957,7 +1949,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
       <tr><td>01 &middot; Mechanism</td><td>Temperature and Output Variance</td><td class="n">5</td></tr>
       <tr><td>02 &middot; Economics</td><td>Cost Per Task Versus Cost Per Token</td><td class="n">6</td></tr>
       <tr><td>03 &middot; Framework</td><td>Persona, Task, Context, Format</td><td class="n">6</td></tr>
-      <tr><td>04 &middot; Workshop</td><td>Scoring Your Own Prompts Against P.T.C.F</td><td class="n">7</td></tr>
+      <tr><td>04 &middot; Workshop</td><td>Building Prompts Against P.T.C.F</td><td class="n">7</td></tr>
       <tr><td>05 &middot; Diagnostic</td><td>Prompt Specification Triage</td><td class="n">5</td></tr>
       <tr><td>06 &middot; Technique</td><td>The Interview Rewrite</td><td class="n">6</td></tr>
       <tr><td>07 &middot; Verification</td><td>Citation Failure Types on the Cole IDGT Transaction</td><td class="n">8</td></tr>
@@ -2842,59 +2834,104 @@ var BRIDGE=[
   $('stanceOut').textContent='Vote before scrolling. It locks on the first click and cannot be changed.';
 })();
 
-/* ================= 6b · HOMEWORK P.T.C.F AUDIT ================= */
+/* ================= 6b · P.T.C.F BUILDER ================= */
+/* [NEW] 2026-09-13, family 15 builder-assembler. Three premade prompts, four
+   elements, four levels each; the assembled prompt redraws as levels change.
+   Every case fact in the inputs is read from COLEDOCS or a COLE constant at
+   parse time; the element variants name no figure (pedagogy R4, R5). */
 var ELEM=[
  {k:'P',n:'Persona',d:'Who the model writes as, and for whom'},
  {k:'T',n:'Task',d:'One unambiguous operation'},
  {k:'C',n:'Context',d:'Facts available and the boundary on sources'},
  {k:'F',n:'Format',d:'Shape, length and structure of the output'}
 ];
+var LEVELS=['Absent','Gestured at','Specified','Specified and checkable'];
 (function(){
-  var cur=0,texts=['','',''],sc=[{},{},{}];
-  function renderScale(){
+  var host=$('fxIn');if(!host)return;
+  function tline(i){var t=COLEDOCS.transcript[i];return t.who+': '+t.said}
+  var FX=[
+   {n:'F1 \u00b7 Client email',
+    lab:'The input: an advisor\u2019s draft reply to Meg, written badly on purpose',
+    inp:'Hi Meg, following up on the note question. As discussed the structure has you short about '+COLEm('steadyGap')+' a year once it is running as designed, and every dollar of principal you call gives up '+COLEp('noteRate',2)+' of interest for good, so calling more sooner is not free. I think you should probably call some this year but not all, it depends on a few things. Let me know what you think and we can discuss. Also David mentioned the appraisal is old, we should look at that at some point. Thanks',
+    v:{
+     P:['','Sound professional.','You are Meg\u2019s advisor, writing to Meg, who understands her plan but not the note mechanics.','You are Meg\u2019s advisor writing to Meg, a business owner who follows plain English and has not seen the note arithmetic before. Assume nothing she was not told in the draft.'],
+     T:['','Make this email better.','Rewrite this draft email so it says what the draft says, in order, without adding advice.','Rewrite this draft email keeping every figure and every recommendation the draft contains, adding none. List any claim you dropped.'],
+     C:['','Here is the email.','Use only the facts in the draft. If the draft leaves a figure out, say so rather than estimating it.','Use only the facts in the draft below. Do not introduce any figure, date or authority the draft does not contain. If a fact the reader would expect is missing, write MISSING and name it. No client-identifying detail beyond the first name in the draft.'],
+     F:['','Keep it short.','Under 150 words, three short paragraphs, one question at the end.','Under 150 words. Three paragraphs: what the structure does, what a call costs, what we decide next. End with one yes-or-no question. Return the word count on the last line.']
+    }},
+   {n:'F2 \u00b7 Meeting notes',
+    lab:'The input: the meeting excerpt from the case file, as five untidy lines',
+    inp:[0,1,2,3,4].map(tline).join('\n'),
+    v:{
+     P:['','Be a good advisor.','You are the advisor who attended, writing the file note a colleague will read.','You are the advisor who attended, writing for a colleague who was not present and will act on the note without asking you anything.'],
+     T:['','Clean these up.','Turn these five lines into a case note: what was said, what was decided, what is open.','Turn these five lines into a case note with three labelled parts, said, decided and open, and attribute every statement to the speaker named in the lines.'],
+     C:['','Notes attached.','Use only what the five lines say. Do not infer decisions that were not stated.','Use only the five lines below. Do not infer a decision, a figure or a reason that is not stated; list the inferences you were tempted to make as QUESTIONS for the next meeting. No names beyond those in the lines.'],
+     F:['','A short note.','Under 200 words, three headed sections, bullets under each.','Under 200 words. Headings: Said, Decided, Open. Bullets only, each one sentence, each with the speaker in brackets. No bullet without a speaker.']
+    }},
+   {n:'F3 \u00b7 Plan summary',
+    lab:'The input: the planning memorandum chunk and the structure paragraph from the case panel',
+    inp:COLEDOC('D8').t+'\n\nStructure, from the case panel: a seed gift of '+COLEn('seedUnits')+' non-voting units, then a sale of '+COLEn('saleUnits')+' non-voting units to the same trust for a '+COLEm('notePrincipal')+' note payable on demand at '+COLEp('noteRate',2)+', interest only. A '+COLEp('discount',0)+' combined discount is asserted with no appraisal and no appraiser engaged.',
+    v:{
+     P:['','Explain it simply.','You are the planner writing for Meg, who is not a lawyer.','You are the planner writing for Meg, who will read this once, alone, and needs to know what she is being asked to sign and what she is not.'],
+     T:['','Summarise this.','Summarise the memorandum\u2019s proposed structure: the gift, the sale, the note, the discount.','Summarise the memorandum in four labelled parts, gift, sale, note and discount, and end with the one fact the memorandum asserts without support.'],
+     C:['','See the memo.','Use only the memorandum and the structure paragraph. Do not add authorities or figures from elsewhere.','Use only the memorandum and the structure paragraph below. Every figure you state must appear in them, quoted as written. Where the memorandum asserts something without a source, say so in one sentence rather than supplying one. No client-identifying detail beyond what appears in the text.'],
+     F:['','One page.','Under 300 words, four short sections with headings, no jargon left undefined.','Under 300 words. Four headed sections in the order gift, sale, note, discount. Define every technical term at first use in brackets. Close with one sentence beginning The memorandum does not show.']
+    }}
+  ];
+  var cur=0,lv=[{P:1,T:1,C:1,F:1},{P:1,T:1,C:1,F:1},{P:1,T:1,C:1,F:1}];
+  function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+  function tiles(){
     var h='';
     ELEM.forEach(function(e){
       h+='<div class="eltile"><span class="elk">'+e.k+'<span class="dim mono" style="display:block;font-size:10px;letter-spacing:.06em;font-weight:400">'+e.n.toUpperCase()+'</span></span>'+
          '<div><div class="dim" style="font-size:13.5px;margin-bottom:7px">'+e.d+'</div><div class="scale" data-e="'+e.k+'">'+
-         ['Absent','Gestured at','Specified','Specified and checkable'].map(function(l,v){
-           var on=sc[cur][e.k]===v;
-           return '<button data-v="'+v+'" class="'+(on?'on'+(v<2?' lo':''):'')+'">'+l+'</button>';
-         }).join('')+'</div></div></div>';
+         LEVELS.map(function(l,v){var on=lv[cur][e.k]===v;return '<button data-v="'+v+'" class="'+(on?'on'+(v<2?' lo':''):'')+'" aria-pressed="'+(on?'true':'false')+'">'+l+'</button>'}).join('')+
+         '</div></div></div>';
     });
     $('hwScore').innerHTML=h;
     $('hwScore').querySelectorAll('.scale button').forEach(function(b){
-      b.onclick=function(){sc[cur][b.parentNode.getAttribute('data-e')]=b.getAttribute('data-v')*1;renderScale();verdict()};
+      b.onclick=function(){lv[cur][b.parentNode.getAttribute('data-e')]=b.getAttribute('data-v')*1;tiles();prompt()};
     });
-    verdict();
   }
-  function verdict(){
-    var ks=Object.keys(sc[cur]);
-    if(ks.length<4){$('hwVerdict').textContent='Score all four elements for this prompt.';$('hwVerdict').classList.remove('has');return}
-    var tot=ks.reduce(function(a,k){return a+sc[cur][k]},0);
-    var weakest=ELEM.slice().sort(function(a,b){return sc[cur][a.k]-sc[cur][b.k]})[0];
-    var acc=sc[cur].T+sc[cur].C+sc[cur].F;
-    var o='PROMPT '+(cur+1)+'   TOTAL '+tot+' / 12\n';
-    o+='Accuracy-bearing elements (T, C, F only): '+acc+' / 9\n';
-    o+='Weakest element: '+weakest.k+' \u2014 '+weakest.n+'\n\n';
-    if(sc[cur].P>=2 && acc<=4) o+='Persona is your strongest element and the three that carry accuracy are your weakest.\nThat is the single most common pattern in prompts written before a framework,\nand \u00a703 gave you the evidence for why it does not help.\n\n';
-    o+= tot>=9 ? 'This one holds up. Score the other two before choosing which to rewrite.'
-      : tot>=5 ? 'Repairable. Rewriting the weakest element will move it more than rewriting the whole thing.'
-      : 'This is the one to rebuild. Load the scaffold below.';
-    $('hwVerdict').textContent=o;$('hwVerdict').classList.toggle('has',tot>=9);
+  function plain(){
+    var f=FX[cur],out=[];
+    ELEM.forEach(function(e){var t=f.v[e.k][lv[cur][e.k]];if(t)out.push(t)});
+    return out.join('\n\n');
   }
-  document.querySelectorAll('[data-hw]').forEach(function(b){
-    b.onclick=function(){
-      texts[cur]=$('hwText').value;
-      document.querySelectorAll('[data-hw]').forEach(function(x){x.classList.remove('act')});
-      b.classList.add('act');cur=b.getAttribute('data-hw')*1;
-      $('hwText').value=texts[cur];$('hwWhich').textContent='Scoring prompt '+(cur+1);
-      renderScale();
-    };
-  });
-  $('hwText').oninput=function(){texts[cur]=this.value};
-  $('hwWhich').textContent='Scoring prompt 1';
-  renderScale();
+  function prompt(){
+    var f=FX[cur],h='',low=[],acc=0;
+    ELEM.forEach(function(e){
+      var v=lv[cur][e.k],t=f.v[e.k][v];
+      h+='<span class="pel l'+v+(t?'':' absent')+'" data-k="'+e.k+'"><span class="pk">'+e.n+' \u00b7 '+LEVELS[v].toLowerCase()+'</span>'+(t?esc(t):'no '+e.n.toLowerCase()+' given')+'</span>';
+      if(v<2)low.push(e.n.toLowerCase());
+      if(e.k!=='P'&&v>=2)acc++;
+    });
+    $('fxPrompt').innerHTML=h;
+    var o='';
+    if(acc===3&&lv[cur].P>=2)o='All four at specified or better. The three elements that carry accuracy (task, context, format) are pinned down; the model has little left to decide. This is the version to load into the editor.';
+    else if(acc===3)o='Task, context and format are pinned down; persona is '+LEVELS[lv[cur].P].toLowerCase()+'. Persona sets the register, not the correctness, so this prompt is already usable.';
+    else o='Still weak: '+low.join(', ')+'. Whatever you leave at absent or gestured at, the model decides for you.';
+    $('hwVerdict').textContent=o;$('hwVerdict').classList.toggle('has',acc===3);
+  }
+  function show(){
+    var f=FX[cur];
+    $('fxInLabel').textContent=f.lab;host.textContent=f.inp;$('fxWhich').textContent=f.n;$('hwWhich').textContent='';
+    document.querySelectorAll('[data-fx]').forEach(function(b){b.classList.toggle('act',b.getAttribute('data-fx')*1===cur)});
+    tiles();prompt();
+  }
+  document.querySelectorAll('[data-fx]').forEach(function(b){b.onclick=function(){cur=b.getAttribute('data-fx')*1;show()}});
+  $('fxUse').onclick=function(){
+    var box=$('hwRewrite');if(!box)return;
+    box.value=plain();if(box.oninput)box.oninput.call(box);
+    $('hwWhich').textContent=FX[cur].n+' \u00b7 loaded into the editor below';
+    box.focus();
+  };
+  $('fxCopyIn').onclick=function(){copyTo(this,FX[cur].inp)};
+  show();
+})();
 
+/* the rewrite editor and its scaffold, unchanged */
+(function(){
   $('hwScaffold').onclick=function(){
     $('hwRewrite').value=
 '[PERSONA] You are [role], writing for [reader], who [what they know and do not know].\n\n'+
@@ -2937,45 +2974,6 @@ var ELEM=[
   $('hwRewrite').oninput=live;live();
   $('hwCopy').onclick=function(){copyTo(this,$('hwRewrite').value)};
 })();
-
-/* ===== 6b fixture pack: three inputs from the injected case and three weak starters
-   (pedagogy R4, R5; DW-090). Every case fact is read from COLEDOCS or a COLE
-   constant at parse time; nothing here is typed. ===== */
-(function(){
-  var host=$('fxIn');if(!host)return;
-  function tline(i){var t=COLEDOCS.transcript[i];return t.who+': '+t.said}
-  var FX=[
-   {n:'F1 \u00b7 Client email',
-    lab:'The input: an advisor\u2019s draft reply to Meg, written badly on purpose',
-    inp:'Hi Meg, following up on the note question. As discussed the structure has you short about '+COLEm('steadyGap')+' a year once it is running as designed, and every dollar of principal you call gives up '+COLEp('noteRate',2)+' of interest for good, so calling more sooner is not free. I think you should probably call some this year but not all, it depends on a few things. Let me know what you think and we can discuss. Also David mentioned the appraisal is old, we should look at that at some point. Thanks',
-    pr:'Rewrite this email so it sounds more professional and reassuring.'},
-   {n:'F2 \u00b7 Meeting notes',
-    lab:'The input: the meeting excerpt from the case file, as five untidy lines',
-    inp:[0,1,2,3,4].map(tline).join('\n'),
-    pr:'You are an experienced wealth advisor with excellent client skills. Turn these notes into a case note.'},
-   {n:'F3 \u00b7 Plan summary',
-    lab:'The input: the planning memorandum chunk and the structure paragraph from the case panel',
-    inp:COLEDOC('D8').t+'\n\nStructure, from the case panel: a seed gift of '+COLEn('seedUnits')+' non-voting units, then a sale of '+COLEn('saleUnits')+' non-voting units to the same trust for a '+COLEm('notePrincipal')+' note payable on demand at '+COLEp('noteRate',2)+', interest only. A '+COLEp('discount',0)+' combined discount is asserted with no appraisal and no appraiser engaged.',
-    pr:'Summarise this for the client in one page.'}
-  ];
-  var cur=0;
-  function show(){
-    var f=FX[cur];
-    $('fxInLabel').textContent=f.lab;host.textContent=f.inp;$('fxPrompt').textContent=f.pr;
-    $('fxWhich').textContent=f.n;
-    document.querySelectorAll('[data-fx]').forEach(function(b){b.classList.toggle('act',b.getAttribute('data-fx')*1===cur)});
-  }
-  document.querySelectorAll('[data-fx]').forEach(function(b){b.onclick=function(){cur=b.getAttribute('data-fx')*1;show()}});
-  $('fxUse').onclick=function(){
-    var box=$('hwText');if(!box)return;
-    box.value=FX[cur].pr;if(box.oninput)box.oninput.call(box);
-    $('fxWhich').textContent=FX[cur].n+' \u00b7 loaded into the box below';
-    box.focus();
-  };
-  $('fxCopyIn').onclick=function(){copyTo(this,FX[cur].inp)};
-  show();
-})();
-
 /* ================= 8 · BUY-SELL INTERVIEW CHECKLIST ================= */
 var BSQ=[
  'Which entity is the agreement between \u2014 the corporation, the shareholders, or both?',
