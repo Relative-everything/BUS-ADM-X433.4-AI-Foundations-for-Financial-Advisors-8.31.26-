@@ -293,6 +293,49 @@ await check('JN-029', async (page) => {
   must(bad2.length === 0, 'outside the frame at 380: ' + bad2.join(' | '));
 });
 
+
+/* JN-031: the live-audit score still scores, and the peer framing is gone. */
+await check('JN-031', async (page) => {
+  const t = await page.evaluate(() => document.getElementById('s11').textContent);
+  must(!/pairs you after this session/.test(t) && !/Partner template/.test(t) && /Live audit/.test(t), 'peer text survives or live audit missing');
+  for (let i = 0; i < 4; i++) await page.click(`#peer .pv[data-i="${i}"][data-v="3"]`);
+  const out = await page.evaluate(() => document.getElementById('peerOut').textContent);
+  must(/TOTAL  12 \/ 12/.test(out), `scorer did not total: ${out.slice(0, 40)}`);
+});
+
+/* JN-033 and JN-032: §09 keeps the capture and the checklist and nothing below. */
+await check('JN-033', async (page) => {
+  const r = await page.evaluate(() => { const s = document.getElementById('s12'); return { t: s.textContent, cards: s.querySelectorAll('.cards .card').length, cap: !!document.getElementById('baseCopy'), chk: !!document.getElementById('checklist') }; });
+  for (const w of ['The First Draft', 'Reading for Session 3', 'Closing question', 'Two absolute rules', 'What Session 3 does']) must(!r.t.includes(w), `"${w}" still rendered`);
+  must(r.cards === 2 && r.cap && r.chk, 'capture, checklist or the two cards missing');
+});
+
+/* JN-034: Three Cups, the full sequence, readouts exactly 33, 50, 100. */
+await check('JN-034', async (page) => {
+  const reads = [];
+  const read = async () => { reads.push(await page.evaluate(() => document.getElementById('cupRead').textContent)); };
+  must(await page.evaluate(() => document.getElementById('cupStart').disabled && document.getElementById('cupPlay').hidden), 'Start enabled or cups shown before a prediction');
+  await page.click('#cupOpts button[data-p="66"]');
+  must(await page.evaluate(() => [...document.querySelectorAll('#cupOpts button')].every((b) => b.disabled)), 'options did not lock');
+  await page.click('#cupStart'); await read();
+  must(/33%$/.test(reads[0]), `first readout "${reads[0]}"`);
+  const tags = await page.evaluate(() => [...document.querySelectorAll('#cups .cup, #cupOpts > *, #cupStart, #cupShow, #cupAgain')].map((e) => e.tagName));
+  must(tags.every((t) => t === 'BUTTON'), 'a control is not a <button>');
+  await page.click('#cupRow .cup[data-c="B"]'); await read();
+  must(/50%$/.test(reads[1]), `second readout "${reads[1]}"`);
+  must(await page.evaluate(() => document.querySelector('#cupRow .cup[data-c="B"]').disabled), 'lifted cup still interactive');
+  await page.click('#cupRow .cup[data-c="A"]'); await read();
+  must(/100%$/.test(reads[2]), `third readout "${reads[2]}"`);
+  must(!reads.some((r) => /66%/.test(r)), 'a readout showed 66%');
+  const r = await page.evaluate(() => ({ last: document.querySelector('#cupRow .cup[data-c="C"]').className, cap: document.getElementById('cupCap').textContent, gap: document.getElementById('cupGap').hidden, you: document.getElementById('gapYouV').textContent, note: document.getElementById('gapNote').textContent }));
+  must(/last/.test(r.last) && /never lifted it/.test(r.cap), 'last cup not highlighted or captioned');
+  must(!r.gap && r.you === '66%' && /what you knew moved/.test(r.note), 'gap panel wrong');
+  await page.click('#cupShow');
+  must(await page.evaluate(() => !!document.querySelector('#cupRow .cup[data-c="C"] .coin')), 'Show coin did not reveal a coin');
+  await page.click('#cupAgain');
+  must(await page.evaluate(() => document.getElementById('cupPlay').hidden && document.getElementById('cupStart').disabled && ![...document.querySelectorAll('#cupOpts button')].some((b) => b.disabled)), 'Play again did not reset');
+});
+
 await browser.close();
 for (const [id, st, why] of out) console.log(`${id} ${st}${why ? ' ' + why : ''}`);
 const fails = out.filter((r) => r[1] === 'FAIL').length;
