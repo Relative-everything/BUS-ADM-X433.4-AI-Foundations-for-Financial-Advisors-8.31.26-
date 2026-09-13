@@ -9,6 +9,7 @@ Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with 
 - The cold open is the heading, the box and the button. No opening line, no first-run sentence, no work-along.
 - The pacing panel is the four depth buttons and three timing cells; no readout line under the buttons.
 - There is no Shift+U override on this page. Every key is behind its own reveal control.
+- Batch 2 (same day): §01 lists seven sources of run-to-run difference after the vote, its explanation is a third of the length, the comparison exercise is gone and the consequence cards are shorter, the first now about a compliance review. §02 defines a task with five advisory examples, the estimator is a personal task mix across two tiers, and the decision block and the verification panel are gone. §03 is shorter. §04 is a builder: three premade prompts, four elements, four levels each; the paste-and-rank scorer and the fixture pack are gone; the verification gate moved to the §07 slot below. §05 has no discussion block. §06 opens questions one at a time as clicked, adds five reverse-prompting starters, and has no standing-constraint panel (say the rule aloud). §07 chips both base rates on the sentence, its chart caption fits, and Check 03 says how to check currency. §08's peer review is now your live audit (slot below). §09 keeps the two cards, the capture and the checklist; the reading list and the closing question are in the §09 slot below, not on the page. B2 has Three Cups.
 
 ## Standing
 
@@ -52,13 +53,14 @@ Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with 
 - Poll P1 before the on-page vote: "Same prompt to the same model twice, an hour apart. Substantially the same / may differ materially."
 - Element: `#stanceVote` (`t-s3`, `prediction-commit`), then the slider `#temp`. Opener: "You watched me set this to 0, 0.8 and 1.6 two weeks ago. Now you set it."
 - Deliver DW-092 item 4 here. The slider's zero setting now says "greedy: top bar every time; real APIs still vary".
+- After the vote the page lists seven sources of run-to-run difference. Read two aloud, memory and the version, and point at the third consequence card: temperature is not yours to set in the chat product or, on current models, in the API.
 
 ## s5 (§02 Cost per finished task, 6:35 PM, 10 min) [8:35 CT]
 
 ### Flow
 - Deliver DW-092 items 9 and 11 with the chart up.
 - Element: `#frontierChart`, then the estimator (`t-s5`, `parameter-sandbox`). Poll P2 at the tier decision: "Which tier will your final-project workflow use? Sonnet 5 / Opus 5 / Fable 5 / another vendor / undecided."
-- The 300M/71M token counts are marked unverified on the page; do not quote them as measured.
+- Finding 02's token-count clause is gone; quote only the two per-task costs. The estimator is a task mix: move the judgment slider live, the point is the share, not the list price. The index scores and OpenAI rates carry an August date (DW-118).
 
 ## s6 (§03 P.T.C.F, 6:45 PM, 10 min) [8:45 CT]
 
@@ -72,8 +74,7 @@ Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with 
 ## s6b (§04 Score your three templates, 6:55 PM, 15 min) [8:55 CT]
 
 ### Flow
-- Element: `#fixtures`, then the scorer (`t-s6b`, `builder-assembler`) and the editor. Opener: "If you did not write three, or have nothing to run them on, use the three on the page."
-- Fixture fallback: F1 client email, F2 meeting notes, F3 plan summary; each starter prompt is deliberately weak and labelled so. "Load it as the prompt to score" fills the box.
+- Element: the builder `#fixtures` (`t-s6b`, `builder-assembler`), then the editor. Opener: "Three prompts, four dials each. Watch what specified and checkable adds." Take F2, meeting notes, from gestured at to checkable on Format, then on Context; the prompt redraws each time. "Load this version into the editor" hands it to the rewrite editor, whose scaffold is unchanged.
 - 7:10 group report, 2 min. Poll P4 instead of a spoken round if the room is large: "Your weakest element across the three prompts: P / T / C / F."
 
 ## Break (7:12 PM, 15 min, posted as "back at 7:27") [9:12 CT]
@@ -81,32 +82,49 @@ Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with 
 ## s8 (§06 The interview rewrite, 7:27 PM, 10 min) [9:27 CT]
 
 ### Flow
-- Element: `#cbWrap` copy box, `#bsell` (`t-s8`, `builder-assembler`), the diagnostic `#promptIn`. Opener: "Ask it to ask you questions. You saw me do it building a skill; now it rebuilds your prompt."
+- Element: `#cbWrap` copy box, `#bsell` (`t-s8`, `builder-assembler`), the diagnostic `#promptIn`. Opener: "Ask it to ask you questions. You saw me do it building a skill; now it rebuilds your prompt." The ten questions open one at a time as clicked; "Reveal the rest" opens the remainder. The reverse-prompting starters (`#rpStart`, `t-s8b`) are for the async reader unless time allows one.
+- Say the data rule aloud before anyone pastes into the diagnostic: no real client data and no identifying information enters any AI tool in this course, synthetic or de-identified facts only. The on-page panel that said so is gone by instruction (2026-09-13); the hub and Session 1 still carry the rule.
 - First to drop if behind: show the wrapper, skip the ten-question reveal (three minutes).
 
 ## s10 (§07 Citation failure types, 7:37 PM, 12 min) [9:37 CT]
 
 ### Flow
 - Instructor-led; one learner runs one check aloud. Element: `#triage` (`t-s10c`, `multi-column-sorter`). Poll P5 before the reveal: "How many of the six citations would you have accepted as authority? 0 to 6."
-- The live-run prompt now names non-voting LLC units. Before this slot, read the §04 verification block: it lists Rev. Rul. 85-13, Rev. Rul. 2004-64 Situations 1 to 3 with the Situation 3 conditions the key states, Woelbing and Davidson, and the §2036(b) stock-versus-units distinction. Confirm each against the primary text before teaching it as settled.
+- The live-run prompt names non-voting LLC units. Before this slot, work through the verification list below; the page no longer carries it.
+
+### Verify before teaching (moved from the page 2026-09-13; the on-page gate is gone by instruction)
+- The §07 triage key states four authorities as holdings so that citation failure can be taught; nothing else in this session is stated as a holding. Check each against primary authority before answering it in class.
+- IRC § 671 and the grantor-trust rules as the authority behind the IDGT client explanation built in §03: sound as stated, and stated without its limits.
+- Rev. Rul. 85-13 and Rev. Rul. 2004-64, Situations 1 to 3, as the §07 key characterises them, including the conditions the key attaches to Situation 3 (no understanding with the trustee; inclusion still possible from a retained power over the trustee or from creditor-access state law). Confirm against 1985-1 C.B. 184 and 2004-27 I.R.B. before teaching either as settled.
+- Estate of Woelbing and Estate of Davidson: the §07 key describes each as a stipulated decision with no holding and states the docket dates, the instrument (self-cancelling installment notes in Davidson) and the settlement figures. Confirm the docket facts before repeating them.
+- IRC §§ 2036(a)(1), 2036(b), 2038, 2702 and 7520 as the §07 key and the case structure invoke them, including the distinction between corporate stock and LLC units that the §07 live run turns on. Confirm current text against the Code.
+- Portability: the §05 triage item on electing portability names no authority. Confirm current relief before answering it in class.
+- The combined discount the memorandum asserts for lack of control and lack of marketability: nothing in this session or the case file establishes that it is defensible; no appraiser has been engaged, no restricted-stock or pre-IPO study is on file, and the memorandum allocates nothing between the two components.
 
 ### Facts
-- Kessler v. Commissioner does not exist; labelled on the page, in the gate and in the footer.
+- Kessler v. Commissioner does not exist; labelled on the page and in the footer as a deliberately fabricated citation used as exercise material.
 - Davidson's consideration was self-cancelling installment notes (M, Stout and Crain's via search 2026-09-11); Woelbing's two stipulated decisions were 25 and 28 March 2016 in dockets 30261-13 and 30260-13 (M, McGuireWoods and The Tax Adviser).
 
 ## s7 (§05 Triage, 7:49 PM, 8 min) [9:49 CT]
 
 ### Flow
 - Element: `#quiz` (`t-s7`, `commit-first-mcq`). Poll P6 on item 7 before anyone clicks: "Underspecified / Specified, unverifiable / Specified and verifiable."
-- §08 does not run in the room (D5). Announce the pairing for the between-session peer review here, in one sentence.
+- §08 now runs in the room as your live audit at 7:57 PM (below). There is no pairing to announce.
 
-## Reserve (7:57 PM, 25 min) [9:57 CT]
+## s11 (§08 Live audit, 7:57 PM, 8 min, taken from the reserve) [9:57 CT]
 
 ### Flow
-- Q&A and demonstration. The room's best 20 minutes in Session 1 were here; protect them.
+- Element: `#rubric` then `#peer` (`t-s11`, `work-along-gate`). Opener: "One prompt, audited in front of you. Score along on the four criteria."
+- Have one prompt prepared; ask first whether anyone will offer theirs. Run the eight-item self-audit on it aloud, then the room scores the four live-audit criteria 0 to 3 and reads the total.
+- Nothing is shared between classmates and nothing runs between sessions (decision of 2026-09-13, superseding D5).
+
+## Reserve (8:05 PM, 17 min) [10:05 CT]
+
+### Flow
+- Q&A and demonstration. The room's best 20 minutes in Session 1 were here; the live audit took eight of them.
 
 ## s12 (§09 Part 1 and the reading, 8:22 PM, 5 min) [10:22 CT]
 
 ### Flow
-- Element: `#checklist` (`t-s12b`, `work-along-gate`). Announce the Session 3 reading aloud; Session 2's was not announced.
-- Closing question at 8:27, aloud, one to three answers (`.talk` at the end of `#s12`). Stop by 8:50.
+- Element: `#checklist` (`t-s12b`, `work-along-gate`). Announce the Session 3 reading aloud; the page no longer lists it: Wolfram, "The Concept of Embeddings" and the opening of "Meaning Space"; Kitces (January 2025) on AI notetaker adoption and satisfaction; Iskowitz (July 2025) on notetakers and compliance.
+- Closing question at 8:27, aloud, one to three answers; the page no longer carries it: "Your rewritten template just produced a clean, well-sourced answer on the Cole discount. Name the one check you would still run before any of it reaches Meg, and say why the answer looking right is not a reason to skip it." Stop by 8:50.

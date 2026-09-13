@@ -167,6 +167,176 @@ await check('JN-005', async (page) => {
   must(!bad, '"undefined" or "NaN" rendered in #s0');
 });
 
+
+/* JN-006: the vote reveals the run-to-run difference list. */
+await check('JN-006', async (page) => {
+  const before = await page.evaluate(() => document.getElementById('stanceList').hidden);
+  must(before === true, 'the list is visible before the vote');
+  await page.click('#stanceVote button[data-v="a"]');
+  const r = await page.evaluate(() => ({ hidden: document.getElementById('stanceList').hidden,
+    n: document.querySelectorAll('#stanceList li').length, text: document.getElementById('stanceList').textContent }));
+  must(!r.hidden, 'the list stayed hidden after the vote');
+  must(r.n >= 6, `${r.n} items, expected at least 6`);
+  for (const w of ['Memory', 'instructions', 'machine', 'sampler', 'version']) must(r.text.includes(w), `list lacks "${w}"`);
+});
+
+/* JN-009: three consequence cards, the first about a compliance review, the third a consequence. */
+await check('JN-009', async (page) => {
+  const r = await page.evaluate(() => { const c = [...document.querySelectorAll('#s3 .cards .card')]; return { n: c.length, t: c.map((x) => x.textContent).join(' | ') }; });
+  must(r.n === 3, `${r.n} cards in #s3`);
+  must(/compliance review/.test(r.t) && /Control variance/.test(r.t), 'card text not updated');
+  must(!/do not expose T/.test(r.t), 'old card 03 heading survives');
+});
+
+/* JN-012: the task definition and five examples render before the frontier chart. */
+await check('JN-012', async (page) => {
+  const r = await page.evaluate(() => {
+    const h = [...document.querySelectorAll('#s5 h3')].find((x) => /What a task is/.test(x.textContent));
+    let grid = h; while (grid && !(grid.classList && grid.classList.contains('cards'))) grid = grid.nextElementSibling;
+    return { h: !!h, n: grid ? grid.querySelectorAll('.card').length : 0, chart: !!document.getElementById('frontierChart') };
+  });
+  must(r.h, 'the "What a task is" heading is missing');
+  must(r.n === 5, `${r.n} task cards, expected 5`);
+  must(r.chart, 'frontier chart missing');
+});
+
+/* JN-015: the estimator redraws with the sliders and names two tiers. */
+await check('JN-015', async (page) => {
+  const t0 = await page.evaluate(() => ({ rows: document.querySelectorAll('#mixOut .mixrow').length, sent: document.querySelector('#mixOut .mixsent').textContent }));
+  must(t0.rows === 4, `${t0.rows} bars, expected 4`);
+  must(/Claude Opus 5/.test(t0.sent) && /Claude Sonnet 5/.test(t0.sent), 'sentence does not name both tiers');
+  const set = (id, v) => page.evaluate(([id, v]) => { const e = document.getElementById(id); e.value = String(v); e.dispatchEvent(new Event('input', { bubbles: true })); }, [id, v]);
+  await set('mxJudge', 90); await set('mxDoc', 8);
+  const t1 = await page.evaluate(() => ({ sent: document.querySelector('#mixOut .mixsent').textContent, all: document.getElementById('mixOut').textContent }));
+  must(t1.sent !== t0.sent, 'the sentence did not change after moving two sliders');
+  must(/^90% of your tasks/.test(t1.sent), `sentence does not start with the judgment share: "${t1.sent.slice(0, 40)}"`);
+  must(!/NaN|undefined/.test(t1.all), 'NaN or undefined rendered');
+  const gone = await page.evaluate(() => !!document.getElementById('volRuns'));
+  must(!gone, 'the old number boxes are still on the page');
+});
+
+
+/* JN-020: the builder redraws the premade prompt as levels change and loads it into the editor. */
+await check('JN-020', async (page) => {
+  must(!(await page.evaluate(() => !!document.getElementById('hwText'))), 'the paste box is still on the page');
+  await page.click('#fixtures button[data-fx="1"]');
+  await page.click('#hwScore .scale[data-e="F"] button[data-v="3"]');
+  const r = await page.evaluate(() => {
+    const els = [...document.querySelectorAll('#fxPrompt .pel')];
+    const f = els.find((e) => e.getAttribute('data-k') === 'F');
+    return { n: els.length, ftext: f ? f.textContent : '', fclass: f ? f.className : '', all: document.getElementById('s6b').textContent, which: document.getElementById('fxWhich').textContent };
+  });
+  must(/F2/.test(r.which), 'F2 not selected');
+  must(r.n === 4, `${r.n} elements rendered, expected 4`);
+  must(/Headings: Said, Decided, Open/.test(r.ftext), 'Format level 3 text not rendered');
+  must(/specified and checkable/i.test(r.ftext) && /l3/.test(r.fclass), 'Format element lacks its level label or class');
+  must(!/NaN|undefined/.test(r.all), 'NaN or undefined rendered in #s6b');
+  await page.click('#fxUse');
+  const ed = await page.evaluate(() => document.getElementById('hwRewrite').value);
+  must(/Headings: Said, Decided, Open/.test(ed), 'the editor did not receive the assembled prompt');
+  await page.click('#hwScore .scale[data-e="C"] button[data-v="0"]');
+  const absent = await page.evaluate(() => (document.querySelector('#fxPrompt .pel[data-k="C"]') || {}).textContent || '');
+  must(/no context given/i.test(absent), 'absent level does not render as an absent marker');
+});
+
+
+/* JN-023: a question opens on its own click; the button reveals the rest. */
+await check('JN-023', async (page) => {
+  const before = await page.evaluate(() => [...document.querySelectorAll('#bsell .bq span:last-child')].map((x) => x.textContent));
+  must(before.length === 10 && before.every((t) => /Click to reveal/.test(t)), 'questions not hidden at load');
+  await page.click('#bsell .bq[data-i="1"]');
+  const mid = await page.evaluate(() => [...document.querySelectorAll('#bsell .bq span:last-child')].map((x) => x.textContent));
+  must(!/Click to reveal/.test(mid[1]) && mid[1].length > 30, 'the clicked question did not open');
+  must(/Click to reveal/.test(mid[0]) && /Click to reveal/.test(mid[2]), 'other questions opened too');
+  must(/1 of 10 asked/.test(await page.evaluate(() => document.getElementById('bsellCount').textContent)), 'count did not move');
+  await page.click('#bsellReveal');
+  const after = await page.evaluate(() => [...document.querySelectorAll('#bsell .bq span:last-child')].map((x) => x.textContent));
+  must(after.every((t) => !/Click to reveal/.test(t)), 'reveal the rest left a question closed');
+});
+
+/* JN-024: a starter shows its kickoff and at least four questions. */
+await check('JN-024', async (page) => {
+  const n = await page.evaluate(() => document.querySelectorAll('#rpChips button').length);
+  must(n === 5, `${n} starters, expected 5`);
+  await page.click('#rpChips button[data-rp="2"]');
+  const r = await page.evaluate(() => ({ k: document.getElementById('rpKick').textContent, q: document.getElementById('rpQs').textContent }));
+  must(/retirement income/.test(r.k) && /Interview me first/.test(r.k), 'kickoff not shown for the third starter');
+  must(r.q.split('\n').length >= 4, 'fewer than four questions');
+  must(await page.evaluate(() => !!document.querySelector('#rpStart[data-task="t-s8b"][data-comp="builder-assembler"]')), 'root tags missing');
+});
+
+/* JN-029: every label in the hallucination chart lies inside its viewBox, at 1280 and at 380 px. */
+async function chartFits(page) {
+  return page.evaluate(() => {
+    const svg = document.getElementById('hallChart').closest('svg');
+    const [vx, vy, vw, vh] = svg.getAttribute('viewBox').split(/[\s,]+/).map(Number);
+    const bad = [];
+    /* getBBox is in the svg's user units, the same units as the viewBox; the
+       <g> carries no transform, so the box compares directly. */
+    svg.querySelectorAll('text').forEach((t) => {
+      const b = t.getBBox(); if (!b.width) return;
+      if (b.x + b.width > vx + vw + 2 || b.y + b.height > vy + vh + 2 || b.x < vx - 2) bad.push(t.textContent.slice(0, 40) + ` [right ${Math.round(b.x + b.width)}, bottom ${Math.round(b.y + b.height)}]`);
+    });
+    const c = svg.parentElement.getBoundingClientRect(), s = svg.getBoundingClientRect();
+    if (s.right > c.right + 1) bad.push('svg wider than its container');
+    return bad;
+  });
+}
+await check('JN-029', async (page) => {
+  const bad = await chartFits(page);
+  must(bad.length === 0, 'outside the frame at 1280: ' + bad.join(' | '));
+  const narrow = await browser.newContext({ viewport: { width: 380, height: 900 } });
+  const p2 = await narrow.newPage();
+  await p2.goto(URL, { waitUntil: 'load' }); await p2.waitForTimeout(300);
+  const bad2 = await chartFits(p2);
+  await narrow.close();
+  must(bad2.length === 0, 'outside the frame at 380: ' + bad2.join(' | '));
+});
+
+
+/* JN-031: the live-audit score still scores, and the peer framing is gone. */
+await check('JN-031', async (page) => {
+  const t = await page.evaluate(() => document.getElementById('s11').textContent);
+  must(!/pairs you after this session/.test(t) && !/Partner template/.test(t) && /Live audit/.test(t), 'peer text survives or live audit missing');
+  for (let i = 0; i < 4; i++) await page.click(`#peer .pv[data-i="${i}"][data-v="3"]`);
+  const out = await page.evaluate(() => document.getElementById('peerOut').textContent);
+  must(/TOTAL  12 \/ 12/.test(out), `scorer did not total: ${out.slice(0, 40)}`);
+});
+
+/* JN-033 and JN-032: §09 keeps the capture and the checklist and nothing below. */
+await check('JN-033', async (page) => {
+  const r = await page.evaluate(() => { const s = document.getElementById('s12'); return { t: s.textContent, cards: s.querySelectorAll('.cards .card').length, cap: !!document.getElementById('baseCopy'), chk: !!document.getElementById('checklist') }; });
+  for (const w of ['The First Draft', 'Reading for Session 3', 'Closing question', 'Two absolute rules', 'What Session 3 does']) must(!r.t.includes(w), `"${w}" still rendered`);
+  must(r.cards === 2 && r.cap && r.chk, 'capture, checklist or the two cards missing');
+});
+
+/* JN-034: Three Cups, the full sequence, readouts exactly 33, 50, 100. */
+await check('JN-034', async (page) => {
+  await page.click('#tierbar button[data-level="0"]'); /* B2 is appendix tier; core-only hides it at load */
+  const reads = [];
+  const read = async () => { reads.push(await page.evaluate(() => document.getElementById('cupRead').textContent)); };
+  must(await page.evaluate(() => document.getElementById('cupStart').disabled && document.getElementById('cupPlay').hidden), 'Start enabled or cups shown before a prediction');
+  await page.click('#cupOpts button[data-p="66"]');
+  must(await page.evaluate(() => [...document.querySelectorAll('#cupOpts button')].every((b) => b.disabled)), 'options did not lock');
+  await page.click('#cupStart'); await read();
+  must(/33%$/.test(reads[0]), `first readout "${reads[0]}"`);
+  const tags = await page.evaluate(() => [...document.querySelectorAll('#cups .cup, #cupOpts > *, #cupStart, #cupShow, #cupAgain')].map((e) => e.tagName));
+  must(tags.every((t) => t === 'BUTTON'), 'a control is not a <button>');
+  await page.click('#cupRow .cup[data-c="B"]'); await read();
+  must(/50%$/.test(reads[1]), `second readout "${reads[1]}"`);
+  must(await page.evaluate(() => document.querySelector('#cupRow .cup[data-c="B"]').disabled), 'lifted cup still interactive');
+  await page.click('#cupRow .cup[data-c="A"]'); await read();
+  must(/100%$/.test(reads[2]), `third readout "${reads[2]}"`);
+  must(!reads.some((r) => /66%/.test(r)), 'a readout showed 66%');
+  const r = await page.evaluate(() => ({ last: document.querySelector('#cupRow .cup[data-c="C"]').className, cap: document.getElementById('cupCap').textContent, gap: document.getElementById('cupGap').hidden, you: document.getElementById('gapYouV').textContent, note: document.getElementById('gapNote').textContent }));
+  must(/last/.test(r.last) && /never lifted it/.test(r.cap), 'last cup not highlighted or captioned');
+  must(!r.gap && r.you === '66%' && /what you knew moved/.test(r.note), 'gap panel wrong');
+  await page.click('#cupShow');
+  must(await page.evaluate(() => !!document.querySelector('#cupRow .cup[data-c="C"] .coin')), 'Show coin did not reveal a coin');
+  await page.click('#cupAgain');
+  must(await page.evaluate(() => document.getElementById('cupPlay').hidden && document.getElementById('cupStart').disabled && ![...document.querySelectorAll('#cupOpts button')].some((b) => b.disabled)), 'Play again did not reset');
+});
+
 await browser.close();
 for (const [id, st, why] of out) console.log(`${id} ${st}${why ? ' ' + why : ''}`);
 const fails = out.filter((r) => r[1] === 'FAIL').length;

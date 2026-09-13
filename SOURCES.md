@@ -250,6 +250,28 @@ last_retrieved.session-2: 2026-09-13
 figures.session-2: none typed; the keys paraphrase the page's sentences
 ```
 
+## src-api-messages
+
+```source
+title:          Messages API reference
+author:         Anthropic
+publisher:      Claude Platform Docs
+link:           https://platform.claude.com/docs/en/api/messages
+published:      not applicable
+last_retrieved: 2026-09-13
+last_verified:
+retrieval_note: Fetched 2026-09-13 for session-2 §01. The temperature parameter is marked deprecated for models released after Claude Opus 4.6, with 1.0 accepted for backwards compatibility and other values rejected with a 400 error; it defaults to 1.0 and ranges 0.0 to 1.0; the page states that even with temperature of 0.0 the results will not be fully deterministic.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-2 §01
+scope:          The temperature parameter's status on current models and the vendor's statement that a setting of zero is not fully deterministic. The page gives the fact, not the mechanism.
+used_for.session-2: §01's list of what can differ between two runs and the third consequence card
+last_retrieved.session-2: 2026-09-13
+figures.session-2: none typed
+```
+
 ## src-finra2409
 
 ```source
@@ -1124,6 +1146,7 @@ figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          The two live memory experiences and where each puts its toggles, real-time entry writing against a 24-hour synthesis, incognito chats on Enterprise and Team being included in standard data exports and following organisation retention, Owners retaining access for at least 30 days, Team plans having no organisation-level memory controls, the Enterprise org toggle and what disabling it deletes, past-chat search being paid-plans-only and appearing as tool calls, project-scoped search, Enterprise CMEK blocking past-chat search, pause against reset semantics, and deletion of a conversation not deleting the memory generated from it. Upgraded from M to H by the verified evidence annex, section A.
 used_for.session-0.1: the two memory experiences, their toggles and retention semantics, and past-chat search behaviour
+used_for.session-2: §01, memory as a source of run-to-run difference
 ```
 
 ## src-models
@@ -1132,9 +1155,10 @@ used_for.session-0.1: the two memory experiences, their toggles and retention se
 title:          Models overview
 author:         Anthropic
 publisher:      Claude Platform Docs
-link:           https://platform.claude.com/docs/en/about-claude/models/overview
+link:           https://platform.claude.com/docs/en/models/overview
 published:      [UNVERIFIED, needs source]
-last_retrieved: 2026-08-20
+last_retrieved: 2026-09-13
+retrieval_note: Re-fetched 2026-09-13 at the page's current address for session-2 §01. Every Claude model ID is a pinned snapshot, including the dateless IDs from the 4.6 generation on; Fable 5.1 is the current flagship at $10 / $50 per MTok and Fable 5 is listed as a legacy model, still available.
 last_verified:
 confidence:     H
 kind:           evidence
@@ -1143,6 +1167,7 @@ figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          The four current models, context window sizes (1M for Fable 5, Opus 5 and Sonnet 5; 200K for Haiku 4.5), which models carry adaptive against extended thinking, and effort defaults. Price per MTok and knowledge cutoffs are carried by this source but are quoted nowhere in the lesson, because no figure for either was recorded at verification.
 used_for.session-0.1: the four current models, context window sizes, thinking modes, and effort defaults
+used_for.session-2: §01, the pinned-snapshot statement behind the version item in the run-to-run list
 ```
 
 ## src-personalization
@@ -1162,6 +1187,7 @@ figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          Profile instructions applying account-wide, project instructions, styles as a separate mechanism, and five projects on the free plan.
 used_for.session-0.1: profile and project instructions, styles as a separate mechanism, and the free-plan project limit
+used_for.session-2: §01, standing instructions as a source of run-to-run difference
 ```
 
 ## src-plugins

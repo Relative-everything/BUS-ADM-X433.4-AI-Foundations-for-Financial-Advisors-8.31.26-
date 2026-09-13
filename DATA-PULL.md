@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**23 of 62 works are moving targets, feeding 90 of
-188 references.**
+**24 of 63 works are moving targets, feeding 96 of
+198 references.**
 
 
 ---
@@ -53,8 +53,8 @@ version string means the version is not tracking the data.
 | Last retrieved | 2026-08-13 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 §05, session-2 §02 and session-4 §03 |
-| References | 12 |
-| Feeds | S1 `#s10` ×2 · S2 `#s5` ×2 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
+| References | 13 |
+| Feeds | S1 `#s10` ×2 · S2 `#s5` ×3 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
 
 **Registered retrievals**
 
@@ -85,8 +85,8 @@ version string means the version is not tracking the data.
 | Last retrieved | 2026-08-20 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
-| References | 9 |
-| Feeds | S0.1 `#s0` · S0.1 `#s5` ×2 · S0.1 `#s6` ×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10` ×2 |
+| References | 10 |
+| Feeds | S0.1 `#s0` · S0.1 `#s5` ×2 · S0.1 `#s6` ×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10` ×2 · S2 `#s3` |
 
 ### `src-tools3` — When should I use web search, extended thinking, and research?
 
@@ -143,6 +143,18 @@ version string means the version is not tracking the data.
 | References | 6 |
 | Feeds | S0.1 `#s1` · S0.1 `#s4` ×4 · S0.1 `#s6` |
 
+### `src-models` — Models overview
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-0.1 |
+| References | 5 |
+| Feeds | S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` · S2 `#s3` |
+
 ### `src-vectara` — Introducing the next generation of Vectara's hallucination leaderboard
 
 | | |
@@ -155,7 +167,7 @@ version string means the version is not tracking the data.
 | References | 4 |
 | Feeds | S3 `#s7` · S3 `#s16` ×3 |
 
-### `src-models` — Models overview
+### `src-personalization` — Understanding Claude's personalization features
 
 | | |
 |---|---|
@@ -164,8 +176,8 @@ version string means the version is not tracking the data.
 | Last retrieved | 2026-08-20 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
-| References | 4 |
-| Feeds | S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` |
+| References | 3 |
+| Feeds | S0.1 `#s1` · S0.1 `#s6` · S2 `#s3` |
 
 ### `src-plugins` — Use plugins in Claude
 
@@ -191,17 +203,41 @@ version string means the version is not tracking the data.
 | References | 3 |
 | Feeds | S0.1 `#s6` · S0.1 `#s7` · S0.1 `#s9` |
 
-### `src-openai-pricing` — API pricing
+### `src-context-windows` — Context windows
 
 | | |
 |---|---|
-| Figure class | `price` |
+| Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-2 §02 |
+| Re-check before | every teaching of session-2 §00 |
 | References | 2 |
-| Feeds | S2 `#s5` ×2 |
+| Feeds | S2 `#s0` · S2 `#s3` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| CONTEXT-WINDOWS-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed; the keys paraphrase the page's sentences |
+
+### `src-api-messages` — Messages API reference
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-2 §01 |
+| References | 2 |
+| Feeds | S2 `#s3` ×2 |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| API-MESSAGES-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed |
 
 ### `src-anthropic-terms` — Privacy Center and Commercial Terms
 
@@ -215,35 +251,17 @@ version string means the version is not tracking the data.
 | References | 2 |
 | Feeds | S4 `#s3` · S4 `#s6` |
 
-### `src-personalization` — Understanding Claude's personalization features
+### `src-openai-pricing` — API pricing
 
 | | |
 |---|---|
-| Figure class | `vendor_policy` |
+| Figure class | `price` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-0.1 |
-| References | 2 |
-| Feeds | S0.1 `#s1` · S0.1 `#s6` |
-
-### `src-context-windows` — Context windows
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-13 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-2 §00 |
+| Re-check before | every teaching of session-2 §02 |
 | References | 1 |
-| Feeds | S2 `#s0` |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| CONTEXT-WINDOWS-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed; the keys paraphrase the page's sentences |
+| Feeds | S2 `#s5` |
 
 ### `src-charlotin` — AI Hallucination Cases database
 
@@ -372,11 +390,11 @@ wrong when they go stale.
 |---|---|---|
 | S0.1 | `Fable 5`, `Haiku 4.5`, `Opus 4.7`, `Opus 5`, `Sonnet 5` | 105 |
 | S1 | `Fable 5`, `GPT-5.6`, `Haiku 4.5`, `Kimi K3`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 34 |
-| S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 44 |
+| S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 48 |
 | S3 | — | 0 |
 | S4 | `DeepSeek V4-Flash`, `Fable 5`, `GPT-5.6`, `Gemini 3.6`, `Grok 4.6`, `Kimi K3`, `Luna`, `Opus 5`, `Sonnet 5` | 34 |
 
-**217 occurrences across 5 lessons.** This count is read off
+**221 occurrences across 5 lessons.** This count is read off
 the corpus on every run, so it cannot go stale the way a typed one would.
 
 

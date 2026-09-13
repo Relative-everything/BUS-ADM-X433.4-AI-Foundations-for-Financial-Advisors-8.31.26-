@@ -23,8 +23,8 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 1710 | 1392 | 318 |
 | `PINNED` | 12 | 12 | 0 |
-| `UNGUARDED` | 91 | 5 | 86 |
-| **TOTAL** | **1813** | **1409** | **404** |
+| `UNGUARDED` | 90 | 5 | 85 |
+| **TOTAL** | **1812** | **1409** | **403** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -39,7 +39,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `index.html` | 2 | 0 |
 | `session-0.1/index.html` | 16 | 5 |
 | `session-1/index.html` | 17 | 0 |
-| `session-2/index.html` | 6 | 0 |
+| `session-2/index.html` | 5 | 0 |
 | `session-3/index.html` | 27 | 0 |
 | `session-4/index.html` | 23 | 0 |
 
@@ -47,7 +47,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R1` | body prose | 62 | 0 |
+| `R1` | body prose | 61 | 0 |
 | `R2` | script string literal | 23 | 0 |
 | `R10` | captured transcript | 5 | 5 |
 | `R8` | source note | 1 | 0 |
@@ -61,7 +61,7 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 86 |
+| `name` | 85 |
 | `pct` | 5 |
 
 ## `UNGUARDED`, by fact
@@ -69,7 +69,7 @@ every one of them.
 | Fact | Count |
 |---|---:|
 | `domicile` | 25 |
-| `companyAbbr` | 13 |
+| `companyAbbr` | 12 |
 | `megShort` | 10 |
 | `companyName` | 10 |
 | `nathanShort` | 10 |
@@ -103,44 +103,44 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**432 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**444 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
 | `endowmentIntent` | 67 |
-| `votingUnits` | 47 |
-| `claireAge` | 39 |
-| `marriedYears` | 39 |
+| `votingUnits` | 50 |
+| `claireAge` | 40 |
+| `marriedYears` | 40 |
 | `tbills` | 31 |
-| `seedUnits` | 20 |
+| `seedUnits` | 22 |
 | `employees` | 19 |
+| `megAge` | 19 |
 | `nathanAge` | 19 |
 | `charDeductible` | 18 |
-| `megAge` | 17 |
+| `nonVotingUnits` | 15 |
 | `saleUnits` | 15 |
-| `nonVotingUnits` | 14 |
 | `dividend` | 13 |
 | `inheritedIra` | 13 |
 | `david403b` | 13 |
+| `discount` | 12 |
 | `revolver` | 12 |
-| `discount` | 11 |
 | `perUnitDividend` | 6 |
 | `deMinimisLoan` | 4 |
 | `davidAge` | 3 |
 | `topOrdinary` | 3 |
+| `megApplicableAge` | 2 |
 | `nathanShort` | 2 |
 | `charFloor` | 2 |
 | `techPct` | 2 |
 | `estateTopRate` | 1 |
 | `inquiryDate` | 1 |
-| `megApplicableAge` | 1 |
 
 ## Money figures in case context that `CASE.md` does not carry
 
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
-| `session-2/index.html:2581` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
+| `session-2/index.html:2678` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,
