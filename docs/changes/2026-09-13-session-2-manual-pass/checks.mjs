@@ -337,6 +337,19 @@ await check('JN-034', async (page) => {
   must(await page.evaluate(() => document.getElementById('cupPlay').hidden && document.getElementById('cupStart').disabled && ![...document.querySelectorAll('#cupOpts button')].some((b) => b.disabled)), 'Play again did not reset');
 });
 
+
+/* JN-035: each triage explanation is 3 to 6 bullets and renders as a list. */
+await check('JN-035', async (page) => {
+  const lens = await page.evaluate(() => CITES.map((c) => c.w.length));
+  must(lens.length === 6 && lens.every((n) => n >= 3 && n <= 6), `bullet counts ${lens.join(',')}`);
+  const items = await page.$$('#triage > div');
+  must(items.length === 6, `${items.length} triage items`);
+  await items[2].locator('button[data-k="mis"]').click();
+  const r = await items[2].evaluate((d) => ({ li: d.querquerySelectorAll ? -1 : d.querySelectorAll('.fbx li').length, txt: d.querySelector('.fbx').textContent, shown: d.querySelector('.fbx').style.display }));
+  must(r.shown === 'block' && r.li === lens[2], `feedback shows ${r.li} bullets, expected ${lens[2]}`);
+  must(/Correct\./.test(r.txt) && /Situation 3/.test(r.txt) && !/&sect;/.test(r.txt), 'feedback text wrong or entity shown literally');
+});
+
 await browser.close();
 for (const [id, st, why] of out) console.log(`${id} ${st}${why ? ' ' + why : ''}`);
 const fails = out.filter((r) => r[1] === 'FAIL').length;
