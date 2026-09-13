@@ -2,6 +2,14 @@
 
 Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with the D5 and D7 decisions applied. Clock times are Pacific (the block is 6:00 to 9:00 PM); the Central time is in brackets, confirm it is the right second zone before printing. The page is worked in the room at core-only depth (D1). Nothing in this file addresses a learner.
 
+## Changed since the 09-12 run sheet (manual pass, 2026-09-13)
+
+- §00 is the title, the lede, the depth control and the bridge. The case cards, the outcome cards, the glossary and the before-we-start block are gone; nothing on the page introduces the household before the Case facts button and §03.
+- The bridge is three items, all on content delivered 08-31: tokens (which side of the price is dearer), the context window (what travels with a message), the new-chat rule with the two documented reasons in the key. "Reveal all three".
+- The cold open is the heading, the box and the button. No opening line, no first-run sentence, no work-along.
+- The pacing panel is the four depth buttons and three timing cells; no readout line under the buttons.
+- There is no Shift+U override on this page. Every key is behind its own reveal control.
+
 ## Standing
 
 ### Flow
@@ -28,9 +36,9 @@ Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with 
 ## s0 (Retrieval bridge, 6:14 PM, 7 min) [8:14 CT]
 
 ### Flow
-- Element: `#bridge` (`t-s0`, `retrieval-bridge`). Opener: "Four questions, no notes. Wrong and committed beats right and read."
-- Item 4 is now the ten-to-fifteen-turn restart rule (D3). Items 2 and 3 were partly taught; say so if asked.
-- Reveal all four only after the room has typed; the reveal is all-or-nothing on this page.
+- Element: `#bridge` (`t-s0`, `retrieval-bridge`). Opener: "Three questions, no notes. Wrong and committed beats right and read."
+- Item 1, tokens: which side of the price is dearer. The room heard "half" on 08-31 (DW-092 item 2); the key says output is five times input on every current tier, so the 6:03 correction lands again here as retrieval. Item 2, context: what travels with a message; the key says all previous history plus the new message, all billed as input (DW-092 item 10, the box is not the window). Item 3, the new-chat rule: your ten-to-fifteen-turn working rule, and the key names it as a heuristic, then gives the two documented reasons, the re-sent history and the vendor's context-rot statement. All three were taught 08-31 (tokens and price 02:12 to 02:22; memory and chat length 01:49 to 02:01; the restart rule 01:50 to 01:57).
+- Reveal all three only after the room has typed; the reveal is all-or-nothing on this page.
 
 ## s12 (Baseline capture, moved up, 6:21 PM, 5 min) [8:21 CT]
 

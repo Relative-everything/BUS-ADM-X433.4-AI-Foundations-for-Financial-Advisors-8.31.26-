@@ -70,4 +70,4 @@ Status: accepted by the builder's instruction, 2026-09-13; implemented per ledge
 - grep -c "Nine terms" session-2/index.html = 0; grep -c 'data-gate="g1"' = 0; grep -c "Reveal all three" = 1; grep -c shiftKey = 0.
 
 ## Departures from plan
-(none at acceptance)
+None. Every file that changed is named above. Two corrections to the harness's own assertions (JN-001 matched any shiftKey, which the case viewer also uses; JN-004 looked for a dim class the core-only mode never sets) landed inside the item commits they test; neither touched the page. docs/case-fact-inventory.md was regenerated twice, after JN-002 and after JN-005, both named.

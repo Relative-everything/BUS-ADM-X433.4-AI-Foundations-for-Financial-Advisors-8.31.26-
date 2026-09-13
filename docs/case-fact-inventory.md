@@ -23,8 +23,8 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 1710 | 1392 | 318 |
 | `PINNED` | 12 | 12 | 0 |
-| `UNGUARDED` | 92 | 5 | 87 |
-| **TOTAL** | **1814** | **1409** | **405** |
+| `UNGUARDED` | 91 | 5 | 86 |
+| **TOTAL** | **1813** | **1409** | **404** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -39,7 +39,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `index.html` | 2 | 0 |
 | `session-0.1/index.html` | 16 | 5 |
 | `session-1/index.html` | 17 | 0 |
-| `session-2/index.html` | 7 | 0 |
+| `session-2/index.html` | 6 | 0 |
 | `session-3/index.html` | 27 | 0 |
 | `session-4/index.html` | 23 | 0 |
 
@@ -48,7 +48,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
 | `R1` | body prose | 62 | 0 |
-| `R2` | script string literal | 24 | 0 |
+| `R2` | script string literal | 23 | 0 |
 | `R10` | captured transcript | 5 | 5 |
 | `R8` | source note | 1 | 0 |
 
@@ -61,7 +61,7 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 87 |
+| `name` | 86 |
 | `pct` | 5 |
 
 ## `UNGUARDED`, by fact
@@ -69,7 +69,7 @@ every one of them.
 | Fact | Count |
 |---|---:|
 | `domicile` | 25 |
-| `companyAbbr` | 14 |
+| `companyAbbr` | 13 |
 | `megShort` | 10 |
 | `companyName` | 10 |
 | `nathanShort` | 10 |
@@ -140,7 +140,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
-| `session-2/index.html:2586` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
+| `session-2/index.html:2581` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,
