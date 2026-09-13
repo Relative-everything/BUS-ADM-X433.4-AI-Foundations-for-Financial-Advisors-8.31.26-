@@ -1200,12 +1200,11 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 <!-- APXPANEL:BEGIN generated-by=scripts/build-appendix.mjs -->
 <section class="slide apxdiv" id="apx" data-nav="Appendix contents">
-  <div class="eyebrow"><span>Appendix &middot; 3 optional sections</span><span class="mins">46 min</span></div>
+  <div class="eyebrow"><span>Appendix &middot; 2 optional sections</span><span class="mins">32 min</span></div>
   <h2>Appendix contents</h2>
-  <p class="lede">Three optional sections, 46 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
-  <p>The 11 sections of the core session run in about 59 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <p class="lede">Two optional sections, 32 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
+  <p>The 12 sections of the core session run in about 64 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
-    <a class="apxcard" href="#s8"><span class="ac">C2 &middot; 14 min &middot; after &sect;04</span><b>Grounding Compared With Fine-Tuning</b></a>
     <a class="apxcard" href="#s11"><span class="ac">C3 &middot; 14 min &middot; after &sect;07</span><b>Note-Taker Adoption Against Note-Taker Satisfaction</b></a>
     <a class="apxcard" href="#s15"><span class="ac">C4 &middot; 18 min &middot; after &sect;10</span><b>Citation-Backed Output and Verification Effort</b></a>
   </div>
@@ -1325,28 +1324,29 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 </section>
 
-<section class="slide apx" id="s8" data-nav="C2 · Grounding vs tuning" data-insert-after="s6" data-tier="foundational">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C2 &middot; Grounding Compared With Fine-Tuning</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix C2 &middot; Comparison</span><span class="mins">14 min</span></div>
+<section class="slide" id="s7" data-nav="Grounding vs tuning">
+  <div class="eyebrow"><span>05 &middot; Two ways to teach it your file</span><span class="mins">5 min</span></div>
   <h2>Grounding Compared With Fine-Tuning</h2>
 
-  <p class="big">Grounding changes what the model reads. Fine-tuning changes what the model is. Advisors are routinely sold the second when they need the first, and the distinguishing question is not accuracy but the cost of being wrong tomorrow.</p>
+  <p class="big">Grounding changes what the model reads. Fine-tuning changes what the model is. For a planning practice, grounding wins, because your facts change and need citing.</p>
 
-  <p>Wolfram makes the underlying point without using either term. He observes that it is sufficient to tell the model something once, as part of the prompt, and it will use it — and that this is a clue about what the model is doing, because the alternative would be running a training algorithm and adjusting weights. He also notes the limit: the model can integrate what you tell it only if it rides in a fairly simple way on top of the framework it already has.</p>
+  <ul class="pts">
+    <li><b>Grounding.</b> You hand the model the documents each time and tell it to answer from them. Change the file and the next answer changes. Every answer can point at a passage.</li>
+    <li><b>Fine-tuning.</b> The model is retrained on your documents so they live inside it. Change the file and nothing changes until you retrain. Nothing can be cited.</li>
+  </ul>
 
-  <p>That limit is the honest case for fine-tuning and it is narrower than the sales deck. If your house style and output format are unlike anything in the training corpus, tuning can help. If your <em>facts</em> change — and the Cole file is nothing but facts that change, a discount that needs re-verifying and a buy-sell that needs amending — tuning is the wrong instrument, because facts baked into weights cannot be corrected by editing a document and cannot be cited.</p>
+  <p>Wolfram makes the point without either word: tell the model something once, as part of the prompt, and it will use it. The limit he names is that it can only take in what sits simply on top of what it already knows. Your house style might be worth tuning. Your facts are not.</p>
 
-  <div class="panel">
-    <span class="do">Do this now — 4 minutes</span>
-    <h4>Ranking by Cost of a Change</h4>
-    <p class="hint">The 2023 appraisal is re-run on a Tuesday afternoon and the supportable discount changes. Rank these four architectures by how expensive it is to make the assistant reflect that — cheapest first. Click in order; click again to reset.</p>
-    <div id="rankList" class="chiplist"></div>
-    <div id="rankOut" class="mpanel"><span class="hd">Your ordering</span><span class="nil">Click the cheapest to update first.</span></div>
+  <div class="panel" data-task="t-s7" data-comp="commit-first-mcq">
+    <span class="do">Do this now: 2 minutes</span>
+    <h4>The Tuesday Test</h4>
+    <p class="hint">Pick one. The choice locks and the feedback is written for the option you chose.</p>
+    <div class="quiz panel" id="tuneWrap" style="margin:0;border:none;padding:0"></div>
   </div>
 
-  <p class="src">Wolfram (2023), "Beyond Basic Training" — the tell-it-once observation and the "riding on top of the framework it already has" limit are Wolfram's, reproduced in substance <span class="conf h" data-src="src-wolfram">H</span>. The four-way ranking and its ordering are a design judgement made for this lesson, not a measured result <span class="conf l" data-src="src-wolfram">L — reasoned, not measured</span>.</p>
+  <p class="src">Wolfram (2023), "Beyond Basic Training": the tell-it-once observation and the "riding on top of the framework it already has" limit are Wolfram's, in substance <span class="conf h" data-src="src-wolfram">H</span>. Anthropic (19 Sep 2024): under roughly 200,000 tokens, about 500 pages, put the whole corpus in the prompt rather than build retrieval <span class="conf h" data-src="src-anthropic-ctx">H</span>. The comparison itself is a design judgement for this lesson <span class="conf l" data-src="src-wolfram">L</span>.</p>
 
-  <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort every case into grounding or fine-tuning and read the whys you got wrong.</div></div>
+  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer the Tuesday test and read the feedback on the option you chose.</div></div>
 
 </section>
 
@@ -1639,18 +1639,18 @@ then a list of every element where my answer was thin.</pre>
       <tr><td>02 &middot; The failure this creates</td><td>Distributional Similarity and Referential Difference</td><td class="n">5</td></tr>
       <tr><td>03 &middot; RAG, mechanically</td><td>Retrieval Mechanics: Chunking, Indexing, and Ranking</td><td class="n">6</td></tr>
       <tr><td>04 &middot; What grounding fixes</td><td>What Grounding Fixes, and What It Does Not</td><td class="n">6</td></tr>
+      <tr><td>05 &middot; Two ways to teach it your file</td><td>Grounding Compared With Fine-Tuning</td><td class="n">5</td></tr>
       <tr><td>06 &middot; The workflow</td><td>The Advisor Meeting Workflow and Its Failure Propagation</td><td class="n">4</td></tr>
       <tr><td>07 &middot; Architecture</td><td>Note-Taker Architecture and the Extraction Step</td><td class="n">5</td></tr>
       <tr><td>08 &middot; Obligation</td><td>Recording Consent and the Confidentiality Obligation</td><td class="n">6</td></tr>
       <tr><td>09 &middot; Documentation</td><td>Documenting the Basis for a Recommendation</td><td class="n">6</td></tr>
       <tr><td>10 &middot; Assignment</td><td>The AI Usage Policy Assignment</td><td class="n">4</td></tr>
       <tr><td>11 &middot; Close</td><td>Part 1 Draft Peer Exchange</td><td class="n">7</td></tr>
-      <tr class="apxrow"><td>Appendix C2 &middot; Comparison</td><td>Grounding Compared With Fine-Tuning</td><td class="n">14</td></tr>
       <tr class="apxrow"><td>Appendix C3 &middot; Market evidence</td><td>Note-Taker Adoption Against Note-Taker Satisfaction</td><td class="n">14</td></tr>
       <tr class="apxrow"><td>Appendix C4 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">18</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 59 + appendix 46; the core alone runs 59 minutes, and fits the hour</td><td class="n">105</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 64 + appendix 32; the core alone runs 64 minutes, four minutes over the hour</td><td class="n">96</td></tr>
     </tbody>
 <!-- APXBUDGET:END -->
   </table>
@@ -1675,7 +1675,7 @@ then a list of every element where my answer was thin.</pre>
 <!-- SOURCES:END -->
   </ul>
 <!-- APXNOTE:BEGIN generated-by=scripts/build-appendix.mjs -->
-  <p style="margin-top:22px">The core is 11 sections and runs in about 59 minutes, and fits the hour. The 3 appendix sections add 46 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
+  <p style="margin-top:22px">The core is 12 sections and runs in about 64 minutes, four minutes over the hour. The 2 appendix sections add 32 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
 <!-- APXNOTE:END -->
   <p><strong>No client data.</strong> The Cole household, Cole Precision Components and every document, transcript and figure attributed to them are synthetic and exist only as a classroom anchor. Nothing in this document is legal, tax or compliance advice, and no tax or legal conclusion is asserted anywhere in it.</p>
 
@@ -1740,6 +1740,31 @@ function mkSorter(cfg){
   slot.appendChild(b);slot.appendChild(ul);B.appendChild(slot)});
  draw();REVEALS.push(showKey);
  return {showKey:showKey};
+}
+
+/* ===== shared quiz (family 3): options lock on the first pick; feedback is
+   written per option. Harvest anchor: this page's §08 three-way quiz at
+   765dff3, generalised so each item carries its own options. ===== */
+function mkQuiz(host,items,scoreEl,gate){
+ var done=0,right=0;
+ items.forEach(function(it){
+  var d=document.createElement('div');d.className='qitem';
+  var h='<span class="qtext">'+esc(it.q)+'</span><div class="row qbtns">';
+  it.opts.forEach(function(o){h+='<button class="btn sel mini" type="button" data-k="'+o.k+'">'+esc(o.t)+'</button>'});
+  h+='</div><div class="qfb"></div>';d.innerHTML=h;
+  [].slice.call(d.querySelectorAll('.qbtns button')).forEach(function(b){
+   b.onclick=function(){
+    if(d.classList.contains('done'))return;
+    var k=b.dataset.k,ok=(k===it.a);
+    b.classList.add('picked');b.classList.add('act');
+    var fb=d.querySelector('.qfb');fb.className='qfb '+(ok?'right':'wrong');fb.innerHTML=esc(it.fb[k]);
+    d.classList.add('done');done++;if(ok)right++;
+    if(scoreEl)scoreEl.textContent=done+' of '+items.length+' answered \u00b7 '+right+' correct';
+    if(done===items.length&&gate&&typeof mark==='function')mark(gate);
+   }});
+  host.appendChild(d);
+ });
+ if(scoreEl)scoreEl.textContent='0 of '+items.length+' answered';
 }
 
 /* ---------- rail + instructor override ---------- */
@@ -2049,37 +2074,16 @@ var GROPT=[
  REVEALS.push(showKey);
 })();
 
-/* ================= 8. Rank order ================= */
-var ARCH=[
- {t:'The whole Cole document set pasted into the prompt',k:1,w:'Replace the appraisal file. The next run reads the replacement. Anthropic\u2019s own guidance is that under ~200,000 tokens this beats retrieval outright, and nine documents is nowhere near it.'},
- {t:'Retrieval over the Cole document set',k:2,w:'Replace the file, then re-index. Cheap, but there is now a pipeline that can be stale, and staleness is silent \u2014 the assistant will keep citing the 2023 appraisal with full confidence.'},
- {t:'A model fine-tuned on the firm\u2019s documents',k:3,w:'Retrain. The old discount remains in the weights until you do, it cannot be cited, and you cannot point an examiner at the document it came from.'},
- {t:'A general model answering from training data alone',k:4,w:'Not updatable at any price. You cannot correct it; you can only detect the error after it reaches Meg.'}
+/* ================= 8. Grounding compared with fine-tuning: the Tuesday test ================= */
+var TUNE=[
+ {q:'On Tuesday the Cole appraisal is re-run and the supportable discount changes. Which assistant gives the new figure on Wednesday with no engineering work?',
+  opts:[{k:'gr',t:'A grounded assistant that reads the file each time'},{k:'ft',t:'A model fine-tuned on the firm\u2019s documents'},{k:'gen',t:'A general model answering from what it was trained on'}],
+  a:'gr',
+  fb:{gr:'Correct. Replace the appraisal in the file and the next answer reads the replacement, and it can point at the page it came from. Anthropic\u2019s own guidance: under about 200,000 tokens, roughly 500 pages, put the whole file in the prompt rather than build a retrieval pipeline. The Cole set is nine documents.',
+      ft:'No. The old discount stays inside the model until it is retrained, which is a project, not an edit. And when it answers, it cannot cite the document the figure came from, because the figure is no longer in a document.',
+      gen:'No. It was never given the appraisal at all, old or new. Anything it says about the discount is a guess dressed as an answer, and the only way to find out is after it reaches Meg.'}}
 ];
-(function(){
- var L=$('rankList'),O=$('rankOut'),ord=[];
- function draw(){
-  ARCH.forEach(function(a,i){var pos=ord.indexOf(i);
-   L.children[i].classList.toggle('act',pos>=0);
-   L.children[i].firstChild.textContent=(pos>=0?(pos+1)+'. ':'')+a.t});
-  var h='<span class="hd">Your ordering</span>';
-  if(!ord.length){h+='<span class="nil">Click the cheapest to update first.</span>'}
-  else if(ord.length<ARCH.length){h+=ord.length+' of '+ARCH.length+' placed.'}
-  else{
-   var ok=ord.every(function(idx,pos){return ARCH[idx].k===pos+1});
-   h+=(ok?'<span class="good">Matches the ordering this lesson argues for.</span>':'<span class="flag">Differs from the ordering this lesson argues for. The intended order is by cost of a Tuesday-afternoon change, not by capability.</span>')+'<br><br>';
-   ARCH.slice().sort(function(a,b){return a.k-b.k}).forEach(function(a){
-    h+='<span class="good">'+a.k+'.</span> '+esc(a.t)+'<br><span style="color:#6F7B78">'+esc(a.w)+'</span><br><br>'});
-  }
-  O.className='mpanel'+(ord.length?' has':'');O.innerHTML=h;
- }
- ARCH.forEach(function(a,i){
-  var b=document.createElement('button');b.className='chip';b.type='button';
-  b.appendChild(document.createTextNode(a.t));
-  b.onclick=function(){var p=ord.indexOf(i);if(p>=0){ord=[]}else{ord.push(i)}draw()};
-  L.appendChild(b)});
- draw();
-})();
+mkQuiz($('tuneWrap'),TUNE,null,'g6');
 
 /* ================= 9. Workflow chain ================= */
 var CHAIN=[
@@ -2493,7 +2497,7 @@ document.addEventListener('keydown',function(e){
 });
 
 /* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
-window.__coreMins=59;
+window.__coreMins=64;
 /* APXCORE:END */
 
 /* ===== appendix depth control: tier filter + core-only mode ===== */

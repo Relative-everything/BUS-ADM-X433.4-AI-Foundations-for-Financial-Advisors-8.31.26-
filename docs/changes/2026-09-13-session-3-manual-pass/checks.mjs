@@ -40,6 +40,9 @@ async function check(id, fn) {
     await page.goto(URL, { waitUntil: 'load' });
     await page.waitForTimeout(300);
     must(errors.length === 0, 'page error on load: ' + errors.join(' | '));
+    /* the page scrolls smoothly by design; the harness scrolls instantly so a
+       click far down the page does not wait on the animation */
+    await page.addStyleTag({ content: 'html{scroll-behavior:auto!important}' });
     await fn(page);
     out.push([id, 'OK', '']);
   } catch (e) {
@@ -190,4 +193,18 @@ await check('JN-005', async (page) => {
   must(r.shown !== 'none' && /17 to 33/.test(r.key) && /Grounded\. Cited\./.test(r.key), 'key not shown or missing the measured range');
   must(r.locked === 2, `${r.locked} options locked, expected 2`);
   must(!/NaN|undefined/.test(r.all), 'NaN or undefined rendered in #s6');
+});
+
+/* JN-006: §05 is core, its quiz locks on the first pick and answers the option chosen. */
+await check('JN-006', async (page) => {
+  must(!/id="s8"|var ARCH=/.test(SRC), 'appendix C2 or its ranking survives in the source');
+  const core = await page.evaluate(() => { const s = document.getElementById('s7'); return { apx: s.classList.contains('apx'), vis: getComputedStyle(s).display !== 'none', n: s.querySelectorAll('#tuneWrap .qbtns button').length }; });
+  must(!core.apx && core.vis && core.n === 3, `s7 apx=${core.apx}, visible=${core.vis}, ${core.n} options`);
+  await page.click('#tuneWrap .qbtns button[data-k="ft"]');
+  const r = await page.evaluate(() => { const d = document.querySelector('#tuneWrap .qitem'); return { done: d.classList.contains('done'), fb: d.querySelector('.qfb').className, txt: d.querySelector('.qfb').textContent }; });
+  must(r.done && /wrong/.test(r.fb) && /retrained/.test(r.txt), `after picking fine-tuning: done=${r.done}, fb=${r.fb}`);
+  /* the lock is pointer-events:none on the row, so a second pointer click is intercepted by design; dispatch it through the DOM */
+  await page.evaluate(() => document.querySelector('#tuneWrap .qbtns button[data-k="gr"]').click());
+  const again = await page.evaluate(() => document.querySelector('#tuneWrap .qfb').className);
+  must(/wrong/.test(again), 'the item did not lock on the first pick');
 });

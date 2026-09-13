@@ -57,7 +57,7 @@
       "session-0.1": { "literal": 0,  "entity": 3,  "total": 3 },
       "session-1":   { "literal": 1,  "entity": 66, "total": 67 },
       "session-2":   { "literal": 2,  "entity": 38, "total": 40 },
-      "session-3":   { "literal": 55, "entity": 4, "total": 59 },
+      "session-3":   { "literal": 48, "entity": 4, "total": 52 },
       "session-4":   { "literal": 1,  "entity": 82, "total": 83 }
     }
   },
