@@ -22,9 +22,9 @@ occurrence does not follow fails the check. Everything else can.
 | | Total | Quantitative | Qualitative |
 |---|---:|---:|---:|
 | `INJECTED` | 1710 | 1392 | 318 |
-| `PINNED` | 15 | 15 | 0 |
-| `UNGUARDED` | 104 | 5 | 99 |
-| **TOTAL** | **1829** | **1412** | **417** |
+| `PINNED` | 12 | 12 | 0 |
+| `UNGUARDED` | 91 | 5 | 86 |
+| **TOTAL** | **1813** | **1409** | **404** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -39,7 +39,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `index.html` | 2 | 0 |
 | `session-0.1/index.html` | 16 | 5 |
 | `session-1/index.html` | 17 | 0 |
-| `session-2/index.html` | 19 | 0 |
+| `session-2/index.html` | 6 | 0 |
 | `session-3/index.html` | 27 | 0 |
 | `session-4/index.html` | 23 | 0 |
 
@@ -47,10 +47,9 @@ qualitative reference is not drift surface and removing one would be a loss.
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R1` | body prose | 73 | 0 |
-| `R2` | script string literal | 24 | 0 |
+| `R1` | body prose | 62 | 0 |
+| `R2` | script string literal | 23 | 0 |
 | `R10` | captured transcript | 5 | 5 |
-| `R5` | HTML or JS comment | 1 | 0 |
 | `R8` | source note | 1 | 0 |
 
 **`R2` carries 0 of the 5 quantitative unguarded references, 0.0%** — answer
@@ -62,25 +61,24 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 99 |
+| `name` | 86 |
 | `pct` | 5 |
 
 ## `UNGUARDED`, by fact
 
 | Fact | Count |
 |---|---:|
-| `domicile` | 29 |
-| `companyAbbr` | 16 |
-| `companyName` | 11 |
+| `domicile` | 25 |
+| `companyAbbr` | 13 |
 | `megShort` | 10 |
+| `companyName` | 10 |
 | `nathanShort` | 10 |
-| `plantTown` | 9 |
-| `residenceTown` | 5 |
-| `davidName` | 4 |
+| `plantTown` | 8 |
+| `residenceTown` | 4 |
 | `afrMid` | 4 |
-| `decedent` | 3 |
+| `davidName` | 3 |
+| `decedent` | 2 |
 | `afrLong` | 1 |
-| `nathanName` | 1 |
 | `megNameAlt` | 1 |
 
 ## Machinery
@@ -105,7 +103,7 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**435 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**432 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
@@ -114,17 +112,17 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `votingUnits` | 47 |
 | `claireAge` | 39 |
 | `marriedYears` | 39 |
-| `tbills` | 32 |
+| `tbills` | 31 |
 | `seedUnits` | 20 |
 | `employees` | 19 |
 | `nathanAge` | 19 |
 | `charDeductible` | 18 |
 | `megAge` | 17 |
 | `saleUnits` | 15 |
-| `inheritedIra` | 14 |
-| `david403b` | 14 |
 | `nonVotingUnits` | 14 |
 | `dividend` | 13 |
+| `inheritedIra` | 13 |
+| `david403b` | 13 |
 | `revolver` | 12 |
 | `discount` | 11 |
 | `perUnitDividend` | 6 |
@@ -142,7 +140,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
-| `session-2/index.html:2621` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
+| `session-2/index.html:2581` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,

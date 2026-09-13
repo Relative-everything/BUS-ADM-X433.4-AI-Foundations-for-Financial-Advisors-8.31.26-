@@ -5,7 +5,7 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**61 works, 188 references across 5 lessons.** 48 are
+**62 works, 188 references across 5 lessons.** 49 are
 cited by at least one claim; 13 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
@@ -31,13 +31,32 @@ reader comes for completeness, so here the gap is the point.
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/pricing> |
 | Published | *not applicable* |
-| Last retrieved | 2026-08-25 |
+| Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **7** |
-| Cited in | S1 `#s5` · S1 `#s11` ×3 · S2 `#s5` ×3 |
+| **Total references** | **8** |
+| Cited in | S1 `#s5` · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 |
 
 Per-token input and output rates by model, cache-hit and batch discounts.
+
+### Anthropic
+
+**Context windows**  
+`src-context-windows` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Platform Docs |
+| Link | <https://platform.claude.com/docs/en/build-with-claude/context-windows> |
+| Published | *not applicable* |
+| Last retrieved | 2026-09-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S2 `#s0` |
+
+What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate.
 
 ### Anthropic
 
@@ -338,8 +357,8 @@ The nine sampler controls and their interaction. Behaviour reimplemented in Appe
 | Last retrieved | 2026-08-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **13** |
-| Cited in | S1 `#s10` ×2 · S2 `#s0` · S2 `#s5` ×2 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
+| **Total references** | **12** |
+| Cited in | S1 `#s10` ×2 · S2 `#s5` ×2 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
 
 A live leaderboard of capability index scores and cost per index task. Every figure drawn from it is a moving target and none of them is stable between terms.
 
@@ -795,7 +814,7 @@ n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using 
 | Last verified by the instructor | *not applicable* |
 | Confidence | L |
 | **Total references** | **15** |
-| Cited in | S1 `#s1` · S2 `#s0` · S3 `#s7` · S3 `#s10` · S3 `#s16` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` ×2 · S4 `#s7` ×2 · S4 `#sWS` |
+| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s7` · S3 `#s10` · S3 `#s16` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` ×2 · S4 `#s7` ×2 · S4 `#sWS` |
 
 Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
 
@@ -889,8 +908,8 @@ Dataset size, 32K-token length, domain mix, the low/high complexity split of 3,7
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **2026-08-23** |
 | Confidence | H |
-| **Total references** | **19** |
-| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s0` · S2 `#s1` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s3` · S3 `#s8` ×2 · S4 `#sWS` · S4 `#s8` |
+| **Total references** | **18** |
+| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s1` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s3` · S3 `#s8` ×2 · S4 `#sWS` · S4 `#s8` |
 
 The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D3 is about exactly that.
 

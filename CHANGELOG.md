@@ -10,6 +10,61 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-13 · Session 2: the filler goes, and the bridge asks three things Session 1 taught
+
+Branch `claude/beautiful-maxwell-1bqad4`, five item commits after the plan, from
+the instructor's first batch of manual-pass notes, given in chat and implemented
+the same day. The plan, the ledger, the verbatim notes and the per-item browser
+harness are in `docs/changes/2026-09-13-session-2-manual-pass/`, with the kickoff
+prompt that governs the pass.
+
+### Session 2 · §00 is the title, the lede, the depth control and the bridge
+
+The block from the case heading to the bridge's work-along gate is gone (JN-002):
+four case cards, the L chip line, four outcome cards, the nine-term glossary, the
+before-we-start block and the g1 gate. §00 falls from 727 words to 149. The pacing
+panel keeps its four depth buttons and three timing cells and loses its heading,
+its two paragraphs and the state line under the buttons (JN-004). The footer's
+`src-case` entry lost its only chip with the cards, so §04's fixture sentence, the
+one sentence still resting on the case file, carries it.
+
+### Session 2 · The bridge is three items, all delivered on 2026-08-31
+
+Tokens: which side of the price is dearer; output is five times input on every
+current tier. Context: what travels with a message; all previous conversation
+history plus the current message, the system prompt, every message including
+tool results, images and documents, and the tool definitions, all billed as
+input. The new-chat rule: the instructor's ten-to-fifteen-turn working rule with
+the two reasons the vendor documents, the re-sent history and the degradation the
+page calls context rot; the key says which part is a heuristic. Both vendor pages
+were fetched 2026-09-13; `SOURCES.md` gains `src-context-windows`, and
+`src-pricing`'s session-2 retrieval moves to today (JN-005). This supersedes the
+D3 text of item 4 and, by instruction, the four-item parameter for this page.
+
+### Session 2 · The cold open is heading, box, button
+
+The opening line, the first-run sentence and the work-along gate are gone
+(JN-003); the label above the box stays for screen readers. Session 1 had already
+dropped the same opening line (DW-062).
+
+### Session 2 · The Shift+U override is gone
+
+Badge, both handlers and the stale comment (JN-001). Every panel it revealed has
+its own reveal control. `scripts/verify-browser.mjs` scopes its two override
+assertions to lessons that still bind the override; the skill's V8 and DOM-mode
+Shift+U line are red for session-2 by design (DW-116). README no longer says
+every lesson page carries the label.
+
+### Repository
+
+A9 for `session-2` re-recorded 66 to 61 total (64 to 59 entity) across three
+commits on the instructor's instruction (DW-115). `docs/case-fact-inventory.md`
+regenerated as the drift surface fell. `docs/audits/profiles/session-2.json`
+regenerated. The run sheet's §00 slot describes the three items and opens with
+what changed. Register: the 2026-09-13 decisions in the header, rows DW-115 to
+DW-117, dated notes on twelve rows.
+---
+
 ## 2026-09-12 · Session 2 §00: the opening block loses its excess wording
 
 Branch `claude/bold-mccarthy-b7nvcf`, one commit. The s0 trim that DW-093 held

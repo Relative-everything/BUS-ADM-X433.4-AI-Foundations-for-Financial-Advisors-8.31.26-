@@ -8,7 +8,7 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**22 of 61 works are moving targets, feeding 89 of
+**23 of 62 works are moving targets, feeding 90 of
 188 references.**
 
 
@@ -25,12 +25,11 @@ Only the first can order two pulls of the same work.
 **Precondition — every registered retrieval carries a full date.** A month
 cannot be ordered against a day, which is where the `src-aa` incoherence hid.
 
-**PRECONDITION FAILS, 3 times.** Each partial date below is ordered at its
+**PRECONDITION FAILS, 2 times.** Each partial date below is ordered at its
 **earliest possible day** so the rule underneath it still runs. That is a
 reading convention, not a date, and no day is invented.
 
 - src-aa: session-2 retrieved "2026-08" — a month, not a day; ordered at 2026-08-01 for the rule below
-- src-pricing: session-2 retrieved "2026-08" — a month, not a day; ordered at 2026-08-01 for the rule below
 - src-charlotin: last_retrieved "2026-06" — a month, not a day
 
 
@@ -54,8 +53,8 @@ version string means the version is not tracking the data.
 | Last retrieved | 2026-08-13 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 §05, session-2 §02 and session-4 §03 |
-| References | 13 |
-| Feeds | S1 `#s10` ×2 · S2 `#s0` · S2 `#s5` ×2 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
+| References | 12 |
+| Feeds | S1 `#s10` ×2 · S2 `#s5` ×2 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
 
 **Registered retrievals**
 
@@ -101,6 +100,25 @@ version string means the version is not tracking the data.
 | References | 9 |
 | Feeds | S0.1 `#s1` · S0.1 `#s4` · S0.1 `#s5` ×3 · S0.1 `#s8` ×3 · S0.1 `#s9` |
 
+### `src-pricing` — Pricing
+
+| | |
+|---|---|
+| Figure class | `price` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-1 §03, §05 and §06 |
+| References | 8 |
+| Feeds | S1 `#s5` · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| PRICING-001 | S1 | 2026-08-25 | **[UNVERIFIED, needs source]** | per-token input and output rates, cache-hit and batch discounts |
+| PRICING-002 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio; the per-tier input and output rates and the 0.75 rule of thumb quoted in the retrieval bridge |
+
 ### `src-effort` — Change the model, effort, and thinking settings
 
 | | |
@@ -112,25 +130,6 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-0.1 |
 | References | 8 |
 | Feeds | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3` ×5 · S0.1 `#s9` |
-
-### `src-pricing` — Pricing
-
-| | |
-|---|---|
-| Figure class | `price` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-25 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-1 §03, §05 and §06 |
-| References | 7 |
-| Feeds | S1 `#s5` · S1 `#s11` ×3 · S2 `#s5` ×3 |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| PRICING-001 | S2 | 2026-08 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio |
-| PRICING-002 | S1 | 2026-08-25 | **[UNVERIFIED, needs source]** | per-token input and output rates, cache-hit and batch discounts |
 
 ### `src-ctxwindow` — How large is the context window on paid Claude plans?
 
@@ -227,6 +226,24 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-0.1 |
 | References | 2 |
 | Feeds | S0.1 `#s1` · S0.1 `#s6` |
+
+### `src-context-windows` — Context windows
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-2 §00 |
+| References | 1 |
+| Feeds | S2 `#s0` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| CONTEXT-WINDOWS-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed; the keys paraphrase the page's sentences |
 
 ### `src-charlotin` — AI Hallucination Cases database
 
@@ -355,11 +372,11 @@ wrong when they go stale.
 |---|---|---|
 | S0.1 | `Fable 5`, `Haiku 4.5`, `Opus 4.7`, `Opus 5`, `Sonnet 5` | 105 |
 | S1 | `Fable 5`, `GPT-5.6`, `Haiku 4.5`, `Kimi K3`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 34 |
-| S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 43 |
+| S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 44 |
 | S3 | — | 0 |
 | S4 | `DeepSeek V4-Flash`, `Fable 5`, `GPT-5.6`, `Gemini 3.6`, `Grok 4.6`, `Kimi K3`, `Luna`, `Opus 5`, `Sonnet 5` | 34 |
 
-**216 occurrences across 5 lessons.** This count is read off
+**217 occurrences across 5 lessons.** This count is read off
 the corpus on every run, so it cannot go stale the way a typed one would.
 
 

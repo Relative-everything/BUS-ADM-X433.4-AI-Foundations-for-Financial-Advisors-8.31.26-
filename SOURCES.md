@@ -210,9 +210,9 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/about-claude/pricing
 published:      not applicable
-last_retrieved: 2026-08-25
+last_retrieved: 2026-09-13
 last_verified:
-retrieval_note: Fetched in full 2026-08-25 for Phase 3.5. PULL-002 (session-2) carries a PARTIAL DATE, "2026-08"; it is kept because it is the honest record of what that lesson pulled.
+retrieval_note: Fetched in full 2026-08-25 for Phase 3.5, and again in full 2026-09-13 for the session-2 retrieval bridge; the table is unchanged for Sonnet 5, Opus 5 and Fable 5, and the FAQ gives the rule of thumb of one token to about 0.75 words. PULL-002 (session-2) carried a PARTIAL DATE, "2026-08", until the 2026-09-13 pull replaced it.
 content_changed: 2026-08-25. The page now states that Sonnet 5's $2 / $10 introductory pricing "is now the standard price" and that "the previously scheduled increase to $3/$15 per million input/output tokens on September 1, 2026 will not occur". The 2026-07-28 pull recorded the increase as scheduled. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-08-25 in Phase 3.6: session-1 §10's second Sonnet 5 table row and its "rises 50% tomorrow" note both carried the cancelled rise and are gone; the surviving row states $2 / $10 / $0.20 with no date on it. Three script arrays carried the same cancelled figure and were corrected with it — TIERS (§03 cost boxes), PATHS (§06 practice cost) and DPT (§06 document pass), the last two of which also printed the label "Sonnet 5 (from 1 Sep)" on screen. session-2 §02's "Sonnet 5 lists at $2 in / $10 out per million tokens" was UNAFFECTED and is the standing price. Phase 3.5 flagged rather than resolved; Phase 3.6 resolved on instruction.
 confidence:     H
 kind:           evidence
@@ -221,11 +221,33 @@ figure_class:   price
 recheck_before: every teaching of session-1 §03, §05 and §06
 scope:          Per-token input and output rates by model, cache-hit and batch discounts.
 used_for.session-1: per-token rates, cache and batch discounts, and the Cole document-pass arithmetic
-used_for.session-2: the published rates behind the blended token price
+used_for.session-2: the published rates behind the blended token price, and the five-to-one output-to-input price ratio and the 0.75-words-per-token rule of thumb in the retrieval bridge
 last_retrieved.session-1: 2026-08-25
 figures.session-1: per-token input and output rates, cache-hit and batch discounts
-last_retrieved.session-2: 2026-08
-figures.session-2: the published rates behind the blended token price at a 3:1 input-to-output ratio
+last_retrieved.session-2: 2026-09-13
+figures.session-2: the published rates behind the blended token price at a 3:1 input-to-output ratio; the per-tier input and output rates and the 0.75 rule of thumb quoted in the retrieval bridge
+```
+
+## src-context-windows
+
+```source
+title:          Context windows
+author:         Anthropic
+publisher:      Claude Platform Docs
+link:           https://platform.claude.com/docs/en/build-with-claude/context-windows
+published:      not applicable
+last_retrieved: 2026-09-13
+last_verified:
+retrieval_note: Fetched in full 2026-09-13 for the session-2 retrieval bridge. Three sentences carry the lesson's claims. On contents, everything in the request counts toward the context window, the system prompt, every message including tool results, images and documents, and the tool definitions. On accumulation, each turn's input phase contains all previous conversation history plus the current user message, and previous turns are preserved completely. On degradation, as token count grows, accuracy and recall degrade, a phenomenon the page names context rot. The page adds that chat interfaces such as claude.ai can manage the window on a rolling first-in, first-out basis.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-2 §00
+scope:          What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate.
+used_for.session-2: the retrieval bridge's context item and the two reasons behind its new-chat item
+last_retrieved.session-2: 2026-09-13
+figures.session-2: none typed; the keys paraphrase the page's sentences
 ```
 
 ## src-finra2409

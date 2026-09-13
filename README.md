@@ -74,8 +74,8 @@ Three things worth knowing before you use it:
 - A control at the top of each lesson filters the appendix by depth
   (foundational, standard, advanced) or hides it entirely for the short
   version.
-- The **Shift+U** label on each lesson page is the instructor's reveal-all
-  override. Using it yourself skips the part that does the teaching.
+- The **Shift+U** label on the lesson pages that carry it is the instructor's
+  reveal-all override. Using it yourself skips the part that does the teaching.
 - Printing works. Print preview gives you a clean copy without the navigation.
 
 ## The sessions

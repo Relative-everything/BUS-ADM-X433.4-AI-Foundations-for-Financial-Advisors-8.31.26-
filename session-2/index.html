@@ -458,8 +458,8 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 .case-tab.on{color:var(--on);border-bottom-color:var(--on)}
 .case-tab:focus-visible{outline:2px solid var(--on);outline-offset:3px;border-radius:4px}
 .case-panel:focus{outline:none}
-/* Shift+U strips .hidden page-wide by design; the case tabs use their own
-   class so the override cannot reveal both panels at once. */
+/* The case tabs use their own class rather than .hidden, so a page-wide
+   reveal cannot show both panels at once. */
 .case-panel.case-off{display:none}
 .case-lede{font-size:14.5px;color:var(--muted);margin:0 0 14px}
 .case-t{margin:0 0 14px}
@@ -721,7 +721,6 @@ table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border
 <div id="prog"></div>
 <div id="topbar">
   <span class="tb-l">BUS ADM X433.4 &middot; Session 2</span>
-  <span class="tb-r" id="ovr"><kbd>Shift</kbd>+<kbd>U</kbd> &mdash; reveal all answer panels</span>
   <button id="caseBtn">Case facts</button>
 </div>
 <div id="caseModal"><div class="inner" id="caseInner">
@@ -1210,7 +1209,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>BUS ADM X433.4 · Session 2</span><span class="mins">6 min</span></div>
   <h1>Practical AI Usage in Daily Advisory Workflows</h1>
   <p class="lede">The model samples a plausible answer. It does not compute the true one. Everything in this session follows from that one sentence.</p>
-  <div class="panel pace"><span class="plab">How this session is paced</span><div id="paceOut"></div>
+  <div class="panel pace"><div id="paceOut"></div>
   <div id="tierbar">
     <span class="tl">Appendix depth</span>
     <button data-level="0">Foundational</button>
@@ -1218,52 +1217,17 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <button data-level="2">+ Advanced</button>
     <button class="core on" data-core>Core only</button>
   </div>
-  <p class="dim mono" id="tierOut" style="font-size:12px;letter-spacing:.04em;margin:9px 0 0"></p>
 </div>
 
 
-  <h3>Retrieval bridge &mdash; Session 1 mechanism</h3>
-  <p>Fourteen days have passed since Session 1. Four questions, no notes. Answer each in the box before anything is revealed. Getting one wrong is worth more to you than getting it right, provided you commit to an answer first.</p>
+  <h3>Retrieval bridge &mdash; Session 1</h3>
+  <p>Three questions, no notes. Answer each in the box before anything is revealed.</p>
   <div class="panel" id="bridge" data-task="t-s0" data-comp="retrieval-bridge"></div>
   <div class="row" style="margin-top:-12px">
-    <button class="btn ghost mini" id="bridgeReveal">Reveal all four</button>
+    <button class="btn ghost mini" id="bridgeReveal">Reveal all three</button>
     <span class="mono dim" style="font-size:12px" id="bridgeCount"></span>
   </div>
-  <div class="csrc" style="margin-top:14px">Item 1: <b>Wolfram, S. (2023)</b>, the vocabulary size and the ranked-candidate mechanism as reported <span class="conf h" data-src="src-wolfram">H</span>. Item 3: <b>Artificial Analysis</b>, cost per index task, Sonnet 5 against Fable 5 at the August pull <span class="conf m" data-src="src-aa">M</span>.</div>
-
-  <h3>The Cole household</h3>
-  <p><span class="caseflag">Synthetic case &mdash; teaching anchor only</span></p>
-  <p>One fabricated household carries every client example. It is <strong>not</strong> your final-project dataset: Part 1 runs on a real recurring task from your own practice, with your own synthetic or de-identified data.</p>
-
-  <!-- Card 4 is the recurring question; card 3 carries the Illinois exposure,
-       which is a v4.0 fact in scope to be taught. See docs/spine-brief.md. -->
-  <div class="cards">
-    <div class="card"><span class="num">Household</span><h4>Meg and David Cole, Barrington Hills, Illinois</h4><p>Meg runs Cole Precision Components Inc.; David is a retired hospital pharmacist. US citizens, <strong>Illinois-domiciled for life</strong>, no liabilities. Balance sheet in the case panel.</p></div>
-    <div class="card"><span class="num">The asset</span><h4>CPC stock: one asset, most of the estate</h4><p>A Rockford C-corporation paying its sole shareholder a large dividend every year. Meg bought every share from her father, Walter Hensley, so her basis is what she paid. A competitor has made an unsolicited written inquiry; no letter of intent is signed, and Nathan Cole, in CPC operations, has not been told.</p></div>
-    <div class="card gold"><span class="num">The structure</span><h4>Non-voting LLC units to be moved to a grantor trust</h4><p>A seed gift of non-voting units, then a sale of a much larger block to the same trust for an interest-only demand note, at a discount <strong>with no appraisal and no appraiser engaged</strong>. <strong>Illinois imposes its own estate tax</strong> at a threshold neither indexed nor portable; neither spouse has engaged with it.</p></div>
-    <div class="card warn"><span class="num">The question every session works on</span><h4>How much of the note does she call this year?</h4><p>Meg is short <strong>$522,086</strong> a year from year 6 while the structure performs exactly as designed. Each $1,000,000 she calls permanently removes $38,200 of future interest, so the gap widens by 3.82% of every call. <strong>What does calling it cost her in every year after, and when is a different lever the better answer?</strong> No session answers it.</p></div>
-  </div>
-  <div class="csrc">Every figure in these cards is the case file's; the household is constructed <span class="conf l" data-src="src-case">L</span>.</div>
-
-  <div class="cards">
-    <div class="card"><span class="num">Outcome 01</span><h4>A working model of sampling</h4><p>Why the same prompt returns different text, and what that does to an audit trail.</p></div>
-    <div class="card"><span class="num">Outcome 02</span><h4>A tier-selection rule</h4><p>Cost per finished task, benchmarked, rather than cost per token.</p></div>
-    <div class="card"><span class="num">Outcome 03</span><h4>Your own prompts, scored and rewritten</h4><p>Three templates, yours or the workshop's, scored element by element; the weakest rebuilt in place.</p></div>
-    <div class="card"><span class="num">Outcome 04</span><h4>A citation verification routine</h4><p>Four checks, in order, applied to tax authority you did not write.</p></div>
-  </div>
-
-  <div class="panel tightpad">
-    <span class="plab">Nine terms this session uses before it defines them</span>
-    <p style="font-size:14.5px;margin:0"><b>Token</b>: the unit a model reads and writes, roughly three quarters of a word; prices and context limits are counted in it. <b>Temperature</b>: the setting that decides how often the model picks a lower-ranked next word instead of the top one. <b>Persona, Task, Context, Format</b>: the four parts of a prompt, who the model writes as, what it does, what it may use, and what shape comes back. <b>Template</b>: a prompt written so that a second person can run it on a new input without asking you anything. <b>Grounded</b>: an answer built only from a named source the model was given to read, so each claim can be checked against that source. <b>Tier</b>: a model size and price class; the choice is made on cost per finished task, not cost per token. <b>Baseline</b>: how long the task takes you today, unassisted, recorded before any tool touches it. <b>IDGT, intentionally defective grantor trust</b>: a trust drafted so that the grantor stays liable for its income tax while the trust, not the grantor, is intended to own what it holds. <b>Non-voting units and a demand note</b>: the LLC interests being sold carry economics but no vote, and the buyer's note can be called for its principal at any time.</p>
-  </div>
-
-  <div class="doit">
-    <span class="plab">Before we start</span>
-    <p><strong>Open the AI tool you subscribed to, in a new tab, now.</strong> Every section below has something to run.</p>
-    <p><strong>Open the three prompt templates you wrote</strong> &mdash; or use the three supplied in section 04, the workshop.</p>
-  </div>
-
-  <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all four bridge items and commit each before revealing anything.</div></div>
+  <div class="csrc" style="margin-top:14px">Item 1, and the billing clause of item 3: <b>Anthropic, Claude Platform Docs, Pricing</b>, retrieved 13 September 2026 <span class="conf h" data-src="src-pricing">H</span>. Items 2 and 3: <b>Anthropic, Claude Platform Docs, Context windows</b>, retrieved 13 September 2026; each turn&rsquo;s input is all previous conversation history plus the current message, the system prompt, every message including tool results, images and documents, and the tool definitions all count, and as the token count grows accuracy and recall degrade, which the page calls context rot <span class="conf h" data-src="src-context-windows">H</span>. The turn count in item 3 is the instructor&rsquo;s working rule from Session 1, not a published threshold.</div>
 
 </section>
 
@@ -1358,7 +1322,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 <section class="slide" id="sCold" data-nav="Cold open">
   <div class="eyebrow"><span>Cold open &middot; standing ritual</span><span class="mins">8 min</span></div>
   <h2>The Last Prompt You Sent</h2>
-  <p class="big">Not a good one. Not a work one. The last one, whatever it was, pasted exactly as you typed it &mdash; typos, missing context, all of it.</p>
 
   <div class="ritual" data-task="t-cold-open" data-comp="timed-ritual">
     <label class="rlab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
@@ -1366,10 +1329,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="row" style="margin-top:12px"><button class="btn" id="coldGo">Analyse what I typed</button></div>
     <div class="rout" id="coldOut"><span class="rnil">Paste something and press the button.</span></div>
   </div>
-
-  <p>First run. Keep the result on screen; Session 3 runs the same field and the drift between the two is the measurement.</p>
-
-  <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen &mdash; the comparison across sessions is the point.</div></div>
 </section>
 
 <section class="slide" id="s3" data-nav="Temperature">
@@ -1604,7 +1563,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="panel tightpad" id="fixtures" style="margin-bottom:18px">
     <span class="plab">No three templates yet, or nothing to run them on? Use these three</span>
-    <p style="font-size:14.5px;margin:0 0 10px"><span class="caseflag">Synthetic case</span> <span class="sim">Exercise material</span> Three inputs from the Cole file and three starter prompts written to be weak. Each starter is missing two of the four P.T.C.F elements on purpose, so the scorer below has something to score; none is a model to copy. Pick a fixture; the starter loads into the box for the prompt number you are on.</p>
+    <p style="font-size:14.5px;margin:0 0 10px"><span class="caseflag">Synthetic case</span> <span class="sim">Exercise material</span> Three inputs from the Cole file and three starter prompts written to be weak <span class="conf l" data-src="src-case">L</span>. Each starter is missing two of the four P.T.C.F elements on purpose, so the scorer below has something to score; none is a model to copy. Pick a fixture; the starter loads into the box for the prompt number you are on.</p>
     <div class="row" style="margin-bottom:10px">
       <button class="btn sel mini act" data-fx="0">F1 &middot; Client email</button>
       <button class="btn sel mini" data-fx="1">F2 &middot; Meeting notes</button>
@@ -2029,8 +1988,9 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <h4 style="margin-bottom:18px">Sources</h4>
     <ol>
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 c5ee7d198f34854ec0d9c316888bca4839fffd148d245cd467fee0dbacb7f807 -->
-      <li id="src-pricing">Anthropic. <em>Pricing</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com/docs/en/about-claude/pricing</a> Retrieved 2026, August. Retrieval dates differ across lessons; see DATA-PULL.md. Used for: the published rates behind the blended token price. <span class="conf h" data-src="src-pricing">H</span></li>
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 953fda18b05427ebe1bdd8282f0440f421145ba0dde5347604be67fc04248e9d -->
+      <li id="src-pricing">Anthropic. <em>Pricing</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com/docs/en/about-claude/pricing</a> Retrieved 2026, September 13. Retrieval dates differ across lessons; see DATA-PULL.md. Used for: the published rates behind the blended token price, and the five-to-one output-to-input price ratio and the 0.75-words-per-token rule of thumb in the retrieval bridge. <span class="conf h" data-src="src-pricing">H</span></li>
+      <li id="src-context-windows">Anthropic. <em>Context windows</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">platform.claude.com</a> Retrieved 2026, September 13. Used for: the retrieval bridge's context item and the two reasons behind its new-chat item. <span class="conf h" data-src="src-context-windows">H</span></li>
       <li id="src-anthropic-fluency" data-nochip="background">Anthropic. (2025). <em>AI fluency: Frameworks and foundations</em>. Anthropic. Used for: assigned reading; no page claim rests on it.</li>
       <li id="src-aa">Artificial Analysis. <em>Artificial Analysis Intelligence Index and cost-per-task figures</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a> Retrieved 2026, August. Retrieval dates differ across lessons; see DATA-PULL.md. Used for: index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5. <span class="conf m" data-src="src-aa">M</span></li>
       <li id="src-charlotin">Charlotin, D. <em>AI Hallucination Cases database</em>. HEC Paris. Retrieved 2026, June. Used for: the cumulative count of filed fabricated citations. <span class="conf m" data-src="src-charlotin">M</span></li>
@@ -2802,14 +2762,12 @@ var CHK=[
 
 /* ================= 0 · RETRIEVAL BRIDGE (Session 1) ================= */
 var BRIDGE=[
- {q:'Session 1 called the mechanism next-token prediction. In one sentence: what does the model produce at each step, before any word is chosen?',
-  a:'A probability distribution over the whole vocabulary \u2014 roughly 50,000 candidate tokens in the models Wolfram describes, each with a number attached. The word you see is a draw from that distribution, not a retrieval from a store of facts.'},
- {q:'Meg\u2019s CPC stock is indicated at '+COLEm('cpcValue')+' against a '+COLEm('megBasis')+' basis. Which of those two numbers could a model state confidently without ever having seen the Cole file, and why does that matter?',
-  a:'Both, and neither is grounded. Given a prompt describing an owner-operated manufacturer, plausible values for each are high-probability continuations. Fluency about a number is not access to it. The model has never seen the file.'},
- {q:'Session 1 ranked tiers by cost per finished task rather than cost per token. State the reason in one sentence.',
-  a:'Because models differ in how many tokens they burn reaching an answer. A model at one fifth the token price can cost nearly as much per completed task, which makes the price sheet a misleading ranking.'},
- {q:'Session 1 gave a rule for when to start a new chat instead of continuing a long one. State it and the reason.',
-  a:'After roughly ten to fifteen turns; everything already in the chat is re-sent with every turn, so a long chat costs more and remembers less.'}
+ {q:'Session 1 priced models per million tokens and split the price two ways. Which side costs more per token, what you send or what comes back, and by roughly how much?',
+  a:'What comes back. On every current Claude tier the output price is five times the input price: Sonnet 5 is $2 in and $10 out per million tokens, Opus 5 is $5 and $25, Fable 5 is $10 and $50. A token is a piece of text, about three quarters of an English word on the vendor\u2019s own rule of thumb, so a 3,000-word note is roughly 4,000 tokens.'},
+ {q:'Session 1 separated the box you type in from the context window. When you press send, what travels with your new message?',
+  a:'Everything the model can see for that turn, and all of it is billed as input: the standing instructions on the account, every earlier message in the chat, yours and the model\u2019s, any file, image or tool result already in it, and the tool definitions, then your new text. The vendor\u2019s documentation puts it in one line: each turn\u2019s input is all previous conversation history plus the current message. The box is the smallest part of the window.'},
+ {q:'Session 1 gave a rule for when to start a new chat instead of continuing a long one. State the rule, then the two reasons it rests on.',
+  a:'The working rule was ten to fifteen turns. The number is a rule of thumb; the reasons are not. First, every turn re-sends the whole conversation, so the input bill grows with every exchange. Second, the vendor\u2019s documentation states that as the token count grows, accuracy and recall degrade, which it calls context rot. A new chat resets both. Carry over a short summary of what matters, not the transcript.'}
 ];
 (function(){
   var host=$('bridge'),shown=false;
@@ -2824,7 +2782,7 @@ var BRIDGE=[
   host.innerHTML=h;
   function count(){
     var n=0;host.querySelectorAll('textarea').forEach(function(t){if(t.value.trim().length>8)n++});
-    $('bridgeCount').textContent=n+' of 4 answered'+(shown?' \u00b7 revealed':'');
+    $('bridgeCount').textContent=n+' of '+BRIDGE.length+' answered'+(shown?' \u00b7 revealed':'');
   }
   host.querySelectorAll('textarea').forEach(function(t){t.oninput=count});
   function reveal(){
@@ -3080,21 +3038,6 @@ var BSQ=[
   $('dDelta').textContent='Both distributions render here after the re-vote.';
 })();
 
-/* keyboard: Shift+U reveals every answer panel, for instructor use */
-document.addEventListener('keydown',function(e){
-  /* DW-064. No key bound here fires while a typing surface has focus. Without
-     this the override fired from inside a text box, and a capital U revealed
-     every withheld panel. */
-  var ae=document.activeElement,tg=(ae&&ae.tagName)||'';
-  if(tg==='TEXTAREA'||tg==='INPUT'||(ae&&ae.isContentEditable))return;
-  if(e.shiftKey&&(e.key==='U'||e.key==='u')){
-    document.querySelectorAll('.qfb,.fbx').forEach(function(x){x.style.display='block'});
-    var k=$('sortKey');if(k){k.disabled=false}
-    if(window.__revealBridge)window.__revealBridge();
-    if(window.__revealBsell)window.__revealBsell();
-    var t=$('ovr');if(t){t.textContent='Override ON \u2014 all answer panels revealed';t.style.color='var(--on)'}
-  }
-});
 /* ===== family 17: cold-open ritual — identical in every session ===== */
 /* COURSE-WIDE COLD-OPEN CHECKLIST. COLD_CHECKS is the one constant that
    defines the eight fixed checks: a label, one plain line on why the item
@@ -3151,16 +3094,6 @@ function mark(id){
   c.classList.add('done');
   var m=c.querySelector('.mk'); if(m)m.textContent='\u2713';
 }
-document.addEventListener('keydown',function(e){
-  /* DW-064. No key bound here fires while a typing surface has focus. Without
-     this the override fired from inside a text box, and a capital U revealed
-     every withheld panel. */
-  var ae=document.activeElement,tg=(ae&&ae.tagName)||'';
-  if(tg==='TEXTAREA'||tg==='INPUT'||(ae&&ae.isContentEditable))return;
-  if(e.shiftKey&&(e.key==='U'||e.key==='u')){
-    [].slice.call(document.querySelectorAll('[data-gate]')).forEach(function(c){mark(c.dataset.gate)});
-  }
-});
 
 /* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
 window.__coreMins=69;
@@ -3191,13 +3124,6 @@ window.__coreMins=69;
       a.classList.toggle('dim', !!(sec&&sec.classList.contains('dim')));
     })}
     sync(cards);
-    var out=document.getElementById('tierOut');
-    if(out){
-      out.textContent = coreOnly
-        ? 'Core only \u2014 appendix hidden. '+(window.__coreMins||0)+' core minutes.'
-        : shown+' of '+apx.length+' appendix sections in scope \u00b7 '+mins+' appendix minutes \u00b7 '+
-          (window.__coreMins||0)+' core minutes \u00b7 '+((window.__coreMins||0)+mins)+' total.';
-    }
   }
   bar.addEventListener('click',function(e){
     var b=e.target.closest('button'); if(!b) return;
@@ -3230,16 +3156,7 @@ window.__coreMins=69;
       '<div class="pcell"><b>'+core+' min</b><span>'+nc+' core sections</span></div>'+
       '<div class="pcell"><b>'+apx+' min</b><span>'+na+' appendix sections</span></div>'+
       '<div class="pcell"><b>'+(core+apx)+' min</b><span>everything</span></div>'+
-    '</div>'+
-    '<p><b>Two ways through this session.</b> The core is '+nc+' sections and about '+core+' '+
-    'minutes. It stands on its own: nothing in the core depends on the appendix, so reading '+
-    'those sections in order gives you the whole argument.</p>'+
-    '<p>The '+na+' appendix sections add '+apx+' minutes of optional depth, '+(core+apx)+' '+
-    'minutes for everything. Each one is placed in the core at the point it belongs rather '+
-    'than at the back of the file, so you can carry straight on into it and then pick up where '+
-    'you left off. The gold cards under Appendix contents link to each one, and the depth '+
-    'control above sets how many are showing; anything hidden leaves a stub naming what it '+
-    'was, so you can always see what you skipped. They also read on their own afterwards.</p>';
+    '</div>';
 
 })();
 </script>
