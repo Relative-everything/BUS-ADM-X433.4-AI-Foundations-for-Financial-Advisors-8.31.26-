@@ -1643,7 +1643,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
   <div class="panel" id="bsell" data-task="t-s8" data-comp="builder-assembler"></div>
   <div class="row" style="margin-top:-12px">
-    <button class="btn ghost mini" id="bsellReveal">Reveal the questions it should have asked</button>
+    <button class="btn ghost mini" id="bsellReveal">Reveal the rest</button>
     <span class="mono dim" style="font-size:12px" id="bsellCount"></span>
   </div>
 
@@ -2980,13 +2980,13 @@ var BSQ=[
 (function(){
   var host=$('bsell'),shown=false,ticked={};
   function render(){
-    var h='<span class="plab">Tick each question the model actually asked you</span><div style="display:flex;flex-direction:column;gap:8px;margin-top:11px">';
+    var h='<span class="plab">Click each question the model actually asked you; it opens as you click</span><div style="display:flex;flex-direction:column;gap:8px;margin-top:11px">';
     BSQ.forEach(function(q,i){
       var on=!!ticked[i];
-      h+='<button class="bq" data-i="'+i+'" style="text-align:left;background:'+(on?'var(--on-bg)':'var(--card)')+';border:1.5px solid '+(on?'var(--on)':'var(--line)')+';border-radius:9px;padding:10px 14px;cursor:pointer;font-family:Source Serif 4,serif;font-size:14.5px;line-height:1.45;color:var(--ink);display:flex;gap:12px"><span style="flex:none;color:'+(on?'var(--on)':'var(--off)')+';font-family:JetBrains Mono,monospace;text-shadow:none">'+(on?'\u2713':'\u25cb')+'</span><span>'+(shown?q:'Question '+(i+1)+' of ten, revealed after you tick')+'</span></button>';
+      h+='<button class="bq" data-i="'+i+'" style="text-align:left;background:'+(on?'var(--on-bg)':'var(--card)')+';border:1.5px solid '+(on?'var(--on)':'var(--line)')+';border-radius:9px;padding:10px 14px;cursor:pointer;font-family:Source Serif 4,serif;font-size:14.5px;line-height:1.45;color:var(--ink);display:flex;gap:12px"><span style="flex:none;color:'+(on?'var(--on)':'var(--off)')+';font-family:JetBrains Mono,monospace;text-shadow:none">'+(on?'\u2713':'\u25cb')+'</span><span>'+((shown||on)?q:'Question '+(i+1)+' of ten. Click to reveal.')+'</span></button>';
     });
     h+='</div>';
-    if(!shown)h+='<p class="dim" style="font-size:13.5px;margin:14px 0 0">Ten questions are listed by number only. Tick as many as the model asked you, from memory of your own run, then reveal. Counting before you read is the measurement; reading first destroys it.</p>';
+    if(!shown)h+='<p class="dim" style="font-size:13.5px;margin:14px 0 0">Ten questions, listed by number. Click the ones the model asked you and read each as it opens; the button below reveals the rest.</p>';
     host.innerHTML=h;
     host.querySelectorAll('.bq').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-i');ticked[i]=!ticked[i];render();count()}});
     count();
