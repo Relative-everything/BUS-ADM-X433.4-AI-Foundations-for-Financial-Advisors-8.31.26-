@@ -13,6 +13,11 @@
  * summary; exit 1 on any FAIL. Committed with the register before the first
  * page edit, so every check fails until its row lands. Not part of the
  * pre-push gate.
+ *
+ * One addition to the 09-13 pattern: the context aborts every http(s)
+ * request. The page's one external request (Google Fonts) is egress-blocked
+ * here and each load waited about 13 s for it to fail (measured 2026-09-14:
+ * 12,864 ms against 188 ms with the abort); nothing under test needs it.
  */
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -31,6 +36,7 @@ const SRC = readFileSync(FILE, 'utf8');
 
 const browser = await chromium.launch();
 const ctx = await browser.newContext({ viewport: { width: 1280, height: 1000 } });
+await ctx.route(/^https?:\/\//, (r) => r.abort());
 const out = [];
 function must(cond, msg) { if (!cond) throw new Error(msg); }
 
