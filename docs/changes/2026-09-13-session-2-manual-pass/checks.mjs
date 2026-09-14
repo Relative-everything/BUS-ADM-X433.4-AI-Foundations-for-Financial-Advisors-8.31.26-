@@ -356,6 +356,18 @@ await check('JN-035', async (page) => {
   must(/Correct\./.test(r.txt) && /Situation 3/.test(r.txt) && !/&sect;/.test(r.txt), 'feedback text wrong or entity shown literally');
 });
 
+/* JN-036: no verification gate is left on the page; the case dialog still opens and closes. */
+await check('JN-036', async (page) => {
+  const gates = await page.locator('.verify').count();
+  must(gates === 0, `${gates} .verify gate(s) still on the page`);
+  await page.click('#caseBtn');
+  const opened = await page.evaluate(() => /(^|\s)open(\s|$)/.test(document.getElementById('caseModal').className));
+  must(opened, 'case dialog did not open');
+  await page.click('#caseClose');
+  const closed = await page.evaluate(() => !/(^|\s)open(\s|$)/.test(document.getElementById('caseModal').className));
+  must(closed, 'case dialog did not close');
+});
+
 await browser.close();
 for (const [id, st, why] of out) console.log(`${id} ${st}${why ? ' ' + why : ''}`);
 const fails = out.filter((r) => r[1] === 'FAIL').length;
