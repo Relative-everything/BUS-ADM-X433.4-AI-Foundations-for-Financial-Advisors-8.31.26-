@@ -308,3 +308,16 @@ await check('JN-010', async (page) => {
   const r2 = await page.evaluate(() => document.getElementById('quizScore').textContent);
   must(/2 of 4 answered · 1 correct/.test(r2), `score reads "${r2}"`);
 });
+
+/* JN-011: six lines sort into three buckets; the prompt copies; Part A is gone. */
+await check('JN-011', async (page) => {
+  must(!/giftBtns|INSTRUCTOR VERIFICATION REQUIRED|var GIFT=/.test(SRC), 'Part A survives in the source');
+  const r0 = await page.evaluate(() => ({ chips: document.querySelectorAll('#docList button').length, cols: document.querySelectorAll('#docBoxes .bslot').length, pre: /ROLE/.test(document.getElementById('promptBlock').textContent) }));
+  must(r0.chips === 6 && r0.cols === 3 && r0.pre, `chips ${r0.chips}, columns ${r0.cols}, prompt ${r0.pre}`);
+  const cols = [1, 1, 2, 3, 1, 2];
+  for (let i = 0; i < 6; i++) { await page.click(`#docList button:nth-child(${i + 1})`); await page.click(`#docBoxes .bslot:nth-child(${cols[i]}) button.lbox`); }
+  const r = await page.evaluate(() => ({ key: getComputedStyle(document.getElementById('docKey')).display !== 'none', score: document.getElementById('docKey').textContent.replace(/\s+/g, ' ') }));
+  must(r.key && /Score\s*6 of 6/.test(r.score), `key ${r.key}: ${r.score.slice(-80)}`);
+  await page.click('#copyBtn'); await page.waitForTimeout(200);
+  must((await page.evaluate(() => document.getElementById('copyMsg').textContent)).length > 0, 'no copy message');
+});

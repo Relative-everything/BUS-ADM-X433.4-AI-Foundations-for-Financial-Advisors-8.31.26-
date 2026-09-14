@@ -1620,31 +1620,33 @@ If a heading has nothing under it, write "none".</pre>
 </section>
 
 <section class="slide" id="s13" data-nav="Basis">
-  <div class="eyebrow"><span>09 &middot; Documentation</span><span class="mins">6 min</span></div>
-  <h2>Documenting the Basis for a Recommendation</h2>
+  <div class="eyebrow"><span>10 &middot; Documentation</span><span class="mins">6 min</span></div>
+  <h2>Documenting Circumstances and the Basis for a Recommendation</h2>
 
-  <p class="big">A record of what was said is not a record of why you recommended what you recommended. Extraction produces the first. The second must be produced deliberately, and a note-taker structurally cannot generate it, because the alternatives you rejected were never spoken aloud.</p>
+  <p class="big">A record of what was said is not a record of why you recommended what you recommended. The note-taker produces the first. The second you write yourself, because the alternatives you rejected were never spoken aloud.</p>
 
-  <p>Take the live decision in the Cole file. The block of non-voting units at closing is being <em>sold</em> to the trust on a demand note rather than <em>gifted</em> to it. Nobody in the meeting will say why. The reasoning happened between meetings, in the attorney's head and yours, and if it is not written down at the time it is not recoverable later — not because memory fails, but because a reconstruction written after an examination begins is worth approximately nothing.</p>
+  <ul class="pts">
+    <li><b>Circumstances.</b> The client's facts, in their words, dated: what changed, what they asked, what they want.</li>
+    <li><b>Basis.</b> Which options you considered, why you chose this one over each of the others, and what the client said when you presented it.</li>
+    <li><b>Neither.</b> Your reading of what the client feels or wants. An inference is not a record; label it or leave it out.</li>
+  </ul>
 
-  <p>The second half of the exercise is harder and more valuable. If the return supporting this transaction were examined, the discount would have to be defended on the evidence that existed <em>when the transaction closed</em>. The case supplies a 2023 appraisal that concluded a value for the whole company and contains no discount study at all, and no appraiser has been engaged since. There is nothing behind the discount that could be checked, and a competitor has now made an approach nobody has answered. Sort what would help from what would not.</p>
+  <p>Written on the day, the basis is worth keeping. Rebuilt after a question arrives, it is worth almost nothing.</p>
 
   <div class="panel" data-task="t-s13" data-comp="two-bucket-sorter">
-    <span class="do">Do this now — 6 minutes</span>
-    <h4>Part A: the decision · Part B: the evidence</h4>
-    <p class="hint">First commit to the primary planning reason for a sale rather than a gift. Then triage six items of documentation. Both panels reveal on commitment.</p>
-    <div class="row" id="giftBtns" style="margin-bottom:6px"></div>
-    <div id="giftOut" class="mpanel"><span class="hd">Part A</span><span class="nil">Commit to a reason.</span></div>
-    <div style="margin-top:22px" class="sorter">
+    <span class="do">Do this now: 4 minutes</span>
+    <h4>Said, Recommended, or Neither</h4>
+    <p class="hint">Six lines from the Cole review. Place each where it belongs in the file.</p>
+    <div class="sorter">
       <div id="docList" class="chiplist"></div>
       <div id="docBoxes" class="boxes"></div>
     </div>
-    <div id="docOut" class="mpanel"><span class="hd">Part B</span><span class="nil">Select an item, then choose a bucket.</span></div>
+    <div id="docOut" class="mpanel"><span class="hd">Progress</span><span class="nil">Click a line, then a bucket.</span></div>
     <div id="docKey" class="mpanel keyhide" style="display:none"></div>
   </div>
 
-  <p>The prompt below makes the model interrogate you for the missing half rather than write it for you — the interview rewrite from Session 2, pointed at your own reasoning instead of at the client's facts. It is written to refuse to draft until it has the alternatives, which is the only property that matters.</p>
-
+  <h4 style="margin-top:26px">A prompt that builds the basis by asking you</h4>
+  <p>It refuses to draft until it has the alternatives. Copy it into your own tool after a meeting.</p>
   <pre id="promptBlock">ROLE
 You are a compliance reviewer at an SEC-registered investment adviser.
 You do not draft the record. You interrogate me until the record is complete.
@@ -1677,9 +1679,9 @@ When all four are complete: one paragraph per element, under 90 words each,
 then a list of every element where my answer was thin.</pre>
   <div class="row"><button class="btn" id="copyBtn">Copy prompt</button><span id="copyMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
 
-  <p class="src"><strong>Instructor verification required before teaching.</strong> Part A asks students to identify a planning rationale, and the answer panel is labelled on screen as pending the instructor's verification rather than stated as settled. This lesson does not assert any tax result, does not characterise the operation of any Code section or regulation, and does not state what an examiner would accept. The Cole transaction, its figures and the attorney's proposal are synthetic. Part B teaches the general documentation discipline — that evidence contemporaneous with a transaction is worth more than evidence created afterwards — and deliberately stops short of naming disclosure requirements. Structure restates the Session 3 syllabus bullet on documenting circumstances and the basis for recommendations. Journal of Accountancy (17 Nov 2025), <em>Writing an Effective AI Prompt for an Audit Trail</em>, is the Session 4 reading on the same problem from the audit side.</p>
+  <p class="src">Structure restates the Session 3 syllabus item on documenting the client's personal and financial circumstances and the basis for recommendations. The six lines are synthetic case content <span class="conf l" data-src="src-case">L</span>. Nothing here asserts a tax result or states what an examiner would accept.</p>
 
-  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Build the basis entry with the interrogation prompt, then sort what would help from what would not.</div></div>
+  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place the six lines, then copy the prompt and run it on your last meeting.</div></div>
 
 </section>
 
@@ -2466,84 +2468,22 @@ var QITEMS=[
 ];
 mkQuiz($('quizWrap'),QITEMS,$('quizScore'),'g9');
 
-/* ================= 13. Basis: sale-vs-gift + documentation triage ================= */
-var GIFT=[
- {t:'To move future appreciation out of the estate without applying gift tax exclusion to the full pre-discount value, taking a note instead',k:true},
- {t:'To obtain a larger valuation discount than a gift of the same interest would support',k:false},
- {t:'To cause the trust to be treated as a grantor trust',k:false},
- {t:'To start a limitations period running on the transfer',k:false}
-];
-(function(){
- var B=$('giftBtns'),O=$('giftOut');
- GIFT.forEach(function(o,i){
-  var b=document.createElement('button');b.className='btn sel mini';b.type='button';b.textContent=String.fromCharCode(97+i)+'  '+o.t;
-  b.onclick=function(){
-   [].slice.call(B.children).forEach(function(c,j){c.classList.toggle('act',j===i)});
-   var h='<span class="hd">Part A \u2014 your answer</span>'+esc(o.t)+'<br><br>';
-   h+='<span class="hd">Answer panel</span>';
-   h+='<span class="flag">[INSTRUCTOR VERIFICATION REQUIRED \u2014 not resolved on this page]</span><br><br>';
-   h+='<span style="color:#6F7B78">Option (a) is the rationale the attorney gives in the case file, and it is the answer this exercise is scored against. It is recorded here as <em>the reason stated in the engagement</em>, not as a tax conclusion \u2014 this lesson does not assert how any Code section or regulation operates, and the instructor confirms the characterisation live.<br><br>'+
-   'What the exercise is actually testing is not the tax answer. It is whether you can state a reason in a form that survives being read by someone else in three years. \u201cWe sold rather than gifted\u201d is a fact. \u201cWe sold rather than gifted because X, having considered Y and rejected it because Z\u201d is a basis. Only the second one is a record, and only the second one exists if you write it tonight rather than after a notice arrives.</span>';
-   O.className='mpanel has';O.innerHTML=h;
-  };
-  B.appendChild(b)});
- B.style.flexDirection='column';B.style.alignItems='stretch';
-})();
+/* ================= 13. Said, recommended, or neither ================= */
 var DOCI=[
- {t:'An appraisal dated near the transaction, addressing the specific interest transferred',k:'contemp',w:'The evidence has to describe the thing that moved, on the date it moved.'},
- {t:'The 2023 appraisal, never re-verified since issuance',k:'no',w:'It is in the file, it is real, and it describes conditions that may no longer exist. Age is the defect, and the case makes the point that nobody has checked.'},
- {t:'The trust instrument executed, and the seed gift funded, before the sale',k:'contemp',w:'Sequence is a fact about dates. It either happened in that order or it did not, and no later document can change it.'},
- {t:'Corporate records establishing that the transferred interest carries no vote',k:'contemp',w:'The attribute the discount rests on has to be documented independently of the appraisal that priced it.'},
- {t:'A memorandum written after an examination notice arrives, explaining the discount rationale',k:'no',w:'A reconstruction is worth roughly nothing precisely because it was written knowing what it needed to say.'},
- {t:'A narrative summary of the transaction prepared for the client\u2019s own file',k:'later',w:'Useful, client-facing, and genuinely fine to produce afterwards. It communicates the record; it is not the record.'},
- {t:'A dated file note recording that a buyer expressed informal interest, and when',k:'no',w:'This one cuts against the discount rather than supporting it \u2014 and you keep it anyway. Documentation discipline is not the practice of keeping only the helpful facts.'}
+ {t:'Meg: a competitor wrote to me about buying the company last autumn; nothing is signed.',k:'said',w:'A fact, in the client\u2019s words, with its status. This is the record of circumstances.'},
+ {t:'David wants the appraisal looked at again before anything is signed.',k:'said',w:'A request from the client. An action item with an owner, once you give it one.'},
+ {t:'We recommended a sale to the trust rather than a gift, having considered the gift and set it aside for the reason counsel gave; Meg agreed, David wanted the appraisal first.',k:'basis',w:'The recommendation, the alternative considered, the reason, and the client\u2019s response. This is the basis entry, and nobody said it aloud in the meeting.'},
+ {t:'Meg seems anxious about the buyer and probably wants to sell within two years.',k:'none',w:'An inference. Nothing in the transcript says it. If you believe it, label it as your reading; it is not a record.'},
+ {t:'Counsel wants the note kept callable on demand.',k:'said',w:'A third party\u2019s stated position. It belongs in the record because you will be asked to explain it later.'},
+ {t:'We considered waiting for a new appraisal before any transfer and set that aside for now; it stays open on the file.',k:'basis',w:'An alternative considered and the decision about it, with its status. Basis, and the kind of line that only exists if written on the day.'}
 ];
 var DBUCK=[
- {k:'contemp',t:'Must exist at closing',d:'Created at or before the transaction. Cannot be manufactured later.'},
- {k:'later',t:'Useful, and can be produced later',d:'Adds value to the file without being load-bearing on the date of the transfer.'},
- {k:'no',t:'Does not support the discount',d:'Either it is stale, it was created too late to count, or it points the other way.'}
+ {k:'said',t:'What was said',d:'The client\u2019s circumstances and requests, in their words.'},
+ {k:'basis',t:'Why we recommended',d:'Options considered, the reason for the choice, the client\u2019s response.'},
+ {k:'none',t:'Neither',d:'An inference or a guess. Label it or leave it out.'}
 ];
-var docSel=-1,docPlaced={},docScore=0;
-function showDocKey(){
- var K=$('docKey');if(!K)return;
- if(Object.keys(docPlaced).length<DOCI.length&&!document.body.classList.contains('reveal'))return;
- var h='<span class="hd">Answer key</span>';
- DOCI.forEach(function(p,i){
-  var got=docPlaced[i],ok=got===p.k;
-  h+=(got?(ok?'<span class="good">\u2713</span> ':'<span class="flag">\u2717</span> '):'\u00b7 ')+esc(p.t)+' \u2014 '+
-     esc(DBUCK.filter(function(b){return b.k===p.k})[0].t)+'<br><span style="color:#6F7B78">'+esc(p.w)+'</span><br><br>';
- });
- h+='<span class="hd">Score</span>'+docScore+' of '+DOCI.length+
-   '<br><br><span class="hd">The transferable rule</span><span class="good">Four of these seven either exist on the closing date or never exist at all. That is the whole discipline, and it is why a basis record written tonight is worth more than a better one written in three years.</span>';
- K.className='mpanel has keyhide';K.innerHTML=h;K.style.display='block';
-}
-(function(){
- var L=$('docList'),B=$('docBoxes'),O=$('docOut');
- DOCI.forEach(function(p,i){
-  var b=document.createElement('button');b.className='chip';b.type='button';b.textContent=p.t;
-  b.onclick=function(){if(docPlaced[i]!==undefined)return;docSel=i;
-   [].slice.call(L.children).forEach(function(c,j){c.classList.toggle('act',j===i)});draw()};
-  L.appendChild(b)});
- DBUCK.forEach(function(bk){
-  var b=document.createElement('button');b.className='lbox';b.type='button';
-  b.innerHTML='<h4>'+esc(bk.t)+'</h4><p>'+esc(bk.d)+'</p>';
-  b.onclick=function(){
-   if(docSel<0)return;
-   docPlaced[docSel]=bk.k;if(DOCI[docSel].k===bk.k)docScore++;
-   L.children[docSel].classList.remove('act');L.children[docSel].classList.add('done');
-   docSel=-1;draw();
-   if(Object.keys(docPlaced).length===DOCI.length)showDocKey();
-  };
-  B.appendChild(b)});
- function draw(){
-  var done=Object.keys(docPlaced).length;
-  O.className='mpanel'+(done?' has':'');
-  O.innerHTML='<span class="hd">Part B</span>'+done+' of '+DOCI.length+' placed.'+
-   (docSel>=0?'<br><span class="good">Selected: '+esc(DOCI[docSel].t)+' \u2014 now choose a bucket.</span>':
-    (done<DOCI.length?'<br>Select an item, then choose a bucket.':'<br><span class="good">All placed. Key below.</span>'));
- }
- draw();
-})();
+mkSorter({list:$('docList'),boxes:$('docBoxes'),out:$('docOut'),key:$('docKey'),items:DOCI,buckets:DBUCK,label:'Progress',gate:'g10',
+ after:'<span class="good">Two of the six lines are the basis, and neither was spoken in the meeting. A note-taker cannot write them. You can, on the day.</span>'});
 (function(){
  var B=$('copyBtn'),M=$('copyMsg'),P=$('promptBlock');
  B.onclick=function(){
