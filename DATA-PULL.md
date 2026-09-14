@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**24 of 63 works are moving targets, feeding 96 of
-197 references.**
+**24 of 63 works are moving targets, feeding 94 of
+201 references.**
 
 
 ---
@@ -155,17 +155,23 @@ version string means the version is not tracking the data.
 | References | 5 |
 | Feeds | S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` · S2 `#s3` |
 
-### `src-vectara` — Introducing the next generation of Vectara's hallucination leaderboard
+### `src-context-windows` — Context windows
 
 | | |
 |---|---|
-| Figure class | `leaderboard_position` |
+| Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-3 §05 |
+| Re-check before | every teaching of session-2 §00 |
 | References | 4 |
-| Feeds | S3 `#s7` · S3 `#s16` ×3 |
+| Feeds | S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| CONTEXT-WINDOWS-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed; the keys paraphrase the page's sentences |
 
 ### `src-personalization` — Understanding Claude's personalization features
 
@@ -202,24 +208,6 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-0.1 |
 | References | 3 |
 | Feeds | S0.1 `#s6` · S0.1 `#s7` · S0.1 `#s9` |
-
-### `src-context-windows` — Context windows
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-13 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-2 §00 |
-| References | 2 |
-| Feeds | S2 `#s0` · S2 `#s3` |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| CONTEXT-WINDOWS-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed; the keys paraphrase the page's sentences |
 
 ### `src-api-messages` — Messages API reference
 
@@ -346,6 +334,18 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-0.1 |
 | References | 1 |
 | Feeds | S0.1 `#s2` |
+
+### `src-vectara` — Introducing the next generation of Vectara's hallucination leaderboard
+
+| | |
+|---|---|
+| Figure class | `leaderboard_position` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-3 §05 |
+| References | 0 |
+| Feeds | *nothing on the page* |
 
 ### `src-kitces-advisortech` — The Latest in Financial AdvisorTech — AdvisorTech columns, October 2025, November 2025 and August 2026
 

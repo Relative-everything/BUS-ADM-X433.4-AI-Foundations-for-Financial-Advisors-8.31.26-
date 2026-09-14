@@ -1,0 +1,2088 @@
+{
+  "file": "session-3/index.html",
+  "file_bytes": 215836,
+  "file_lines": 2693,
+  "generated_by": "scripts/audit/section_profile.mjs (read-only)",
+  "methods": {
+    "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
+    "prose_words": "words outside tagged interaction roots (static)",
+    "chips": ".conf span with h/m/l class inside the section; resolves = data-src present in footer <li id>",
+    "icap": "component-bank.md v2.0 family index",
+    "exposition": "M heuristic, see each section",
+    "terms": "M heuristic: capitalised acronyms and statute citations, file-level first use, defined if a parenthetical, appositive, copula, or initials expansion sits within 40 words"
+  },
+  "timing": {
+    "rows": {
+      "BUS ADM X433.4 · Session 3": {
+        "title": "Gathering and Documenting Client Information",
+        "min": 5,
+        "apx": false
+      },
+      "01 · Mechanism": {
+        "title": "Embeddings and the Coordinates of Meaning Space",
+        "min": 5,
+        "apx": false
+      },
+      "02 · The failure this creates": {
+        "title": "Distributional Similarity and Referential Difference",
+        "min": 5,
+        "apx": false
+      },
+      "03 · RAG, mechanically": {
+        "title": "Retrieval Mechanics: Chunking, Indexing, and Ranking",
+        "min": 6,
+        "apx": false
+      },
+      "04 · What grounding fixes": {
+        "title": "What Grounding Fixes, and What It Does Not",
+        "min": 6,
+        "apx": false
+      },
+      "05 · Two ways to teach it your file": {
+        "title": "Grounding Compared With Fine-Tuning",
+        "min": 5,
+        "apx": false
+      },
+      "06 · The workflow": {
+        "title": "The Advisor Meeting Workflow: Prep, Capture, Summarise, Follow-Up, Log",
+        "min": 6,
+        "apx": false
+      },
+      "07 · The note-taker": {
+        "title": "How an AI Note-Taker Works, and How to Prompt It",
+        "min": 7,
+        "apx": false
+      },
+      "08 · In the files you already use": {
+        "title": "Claude in Word, Excel and PowerPoint for the Client Review",
+        "min": 5,
+        "apx": false
+      },
+      "09 · Obligation": {
+        "title": "Recording Consent and the Confidentiality Obligation",
+        "min": 6,
+        "apx": false
+      },
+      "10 · Documentation": {
+        "title": "Documenting Circumstances and the Basis for a Recommendation",
+        "min": 6,
+        "apx": false
+      },
+      "11 · Close": {
+        "title": "The Meeting Checklist",
+        "min": 5,
+        "apx": false
+      },
+      "Appendix A1 · Before you buy a retrieval tool": {
+        "title": "Do You Need Retrieval at All?",
+        "min": 14,
+        "apx": true
+      },
+      "Appendix A2 · Prep": {
+        "title": "The Intake Questionnaire, Drafted With AI",
+        "min": 14,
+        "apx": true
+      },
+      "Appendix A3 · The after-meeting check": {
+        "title": "Check the Summary Against the Transcript",
+        "min": 14,
+        "apx": true
+      },
+      "Appendix C3 · Market evidence": {
+        "title": "Note-Taker Adoption Against Note-Taker Satisfaction",
+        "min": 14,
+        "apx": true
+      },
+      "Appendix A5 · Due diligence": {
+        "title": "Five Questions for a Note-Taker Vendor",
+        "min": 9,
+        "apx": true
+      },
+      "Appendix C4 · Discussion": {
+        "title": "Citation-Backed Output and Verification Effort",
+        "min": 18,
+        "apx": true
+      }
+    },
+    "segments_sum": 150,
+    "allocated_cell": 150,
+    "eyebrow_sum_lesson_sections": 150
+  },
+  "consecutive_family_repeats": {
+    "document_order": [],
+    "core_only_order": [],
+    "reading_order_all_tiers": []
+  },
+  "reading_order_all_tiers": [
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "sRag",
+    "s6",
+    "s7",
+    "s9",
+    "sPrep",
+    "s10",
+    "sChk",
+    "s11",
+    "sOff",
+    "s12",
+    "sVend",
+    "s13",
+    "s15",
+    "s16"
+  ],
+  "norms": {
+    "sections": 18,
+    "core_sections": 12,
+    "interactions_per_section": {
+      "median": 1,
+      "range": [
+        1,
+        1
+      ],
+      "mean": 1
+    },
+    "chips_per_100_words": {
+      "median": 0.825,
+      "range": [
+        0,
+        2.05
+      ],
+      "mean": 0.8
+    },
+    "chips_per_section": {
+      "median": 2,
+      "range": [
+        0,
+        6
+      ],
+      "mean": 2
+    },
+    "sources_per_section": {
+      "median": 1,
+      "range": [
+        0,
+        3
+      ],
+      "mean": 1.5
+    },
+    "words_per_min": {
+      "median": 40.2,
+      "range": [
+        12.2,
+        78.2
+      ],
+      "mean": 37.01
+    },
+    "prose_words_per_min": {
+      "median": 30.85,
+      "range": [
+        10.1,
+        73.3
+      ],
+      "mean": 31.51
+    },
+    "exposition_run_min_tagged": {
+      "median": 4.4,
+      "range": [
+        2.5,
+        9.1
+      ],
+      "mean": 5.12
+    },
+    "exposition_run_min_control": {
+      "median": 5.55,
+      "range": [
+        3.6,
+        18
+      ],
+      "mean": 7.6
+    },
+    "icap_distribution": {
+      "P": 0,
+      "A": 3,
+      "C": 14,
+      "I": 1
+    },
+    "distinct_families": 11,
+    "sections_with_zero_chips": [
+      "s1"
+    ],
+    "sections_with_zero_interactions": []
+  },
+  "sections": [
+    {
+      "id": "s1",
+      "num": "00",
+      "data_nav": "Bridge + case",
+      "eyebrow": "BUS ADM X433.4 · Session 3",
+      "heading": "Gathering and Documenting Client Information",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 1179,
+      "line_end": 1205,
+      "bytes": 1572,
+      "allocated_min": 5,
+      "words": 124,
+      "prose_words": 117,
+      "words_per_min": 24.8,
+      "prose_words_per_min": 23.4,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s1",
+          "data_comp": "retrieval-bridge",
+          "icap": "C",
+          "line": 1183,
+          "line_end": 1191,
+          "words_inside": 7
+        }
+      ],
+      "families": [
+        "retrieval-bridge"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 4,
+      "gates": [],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 98,
+        "longest_run_min_tagged_split": 4,
+        "longest_run_words_control_split": 93,
+        "longest_run_min_control_split": 3.8,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "X433"
+      ]
+    },
+    {
+      "id": "apx",
+      "num": "TOC",
+      "data_nav": "Appendix contents",
+      "eyebrow": "Appendix · 6 optional sections",
+      "heading": "Appendix contents",
+      "is_toc": true,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": true,
+      "nav_contained_in_heading": true,
+      "timing_row_min": null,
+      "line_start": 1208,
+      "line_end": 1221,
+      "bytes": 1690,
+      "allocated_min": 83,
+      "words": 146,
+      "prose_words": 146,
+      "words_per_min": 1.8,
+      "prose_words_per_min": 1.8,
+      "interactions_count": 0,
+      "interactions": [],
+      "families": [],
+      "icap": {},
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 146,
+        "longest_run_min_tagged_split": 83,
+        "longest_run_words_control_split": 146,
+        "longest_run_min_control_split": 83,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "A1",
+        "§03",
+        "A2",
+        "§06",
+        "A3",
+        "§07",
+        "C3",
+        "A5",
+        "§09",
+        "C4",
+        "§10"
+      ]
+    },
+    {
+      "id": "s2",
+      "num": "01",
+      "data_nav": "Embeddings",
+      "eyebrow": "01 · Mechanism",
+      "heading": "Embeddings and the Coordinates of Meaning Space",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 5,
+      "line_start": 1224,
+      "line_end": 1245,
+      "bytes": 2114,
+      "allocated_min": 5,
+      "words": 217,
+      "prose_words": 168,
+      "words_per_min": 43.4,
+      "prose_words_per_min": 33.6,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s2",
+          "data_comp": "click-map-explorer",
+          "icap": "A",
+          "line": 1232,
+          "line_end": 1239,
+          "words_inside": 49
+        }
+      ],
+      "families": [
+        "click-map-explorer"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 2,
+      "chips": {
+        "H": 1,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.92,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-wolfram"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g2",
+          "line": 1243,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 2,
+      "exposition": {
+        "longest_run_words_tagged_split": 113,
+        "longest_run_min_tagged_split": 2.6,
+        "longest_run_words_control_split": 217,
+        "longest_run_min_control_split": 5,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": []
+    },
+    {
+      "id": "s3",
+      "num": "02",
+      "data_nav": "Distribution",
+      "eyebrow": "02 · The failure this creates",
+      "heading": "Distributional Similarity and Referential Difference",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 5,
+      "line_start": 1247,
+      "line_end": 1273,
+      "bytes": 2084,
+      "allocated_min": 5,
+      "words": 191,
+      "prose_words": 146,
+      "words_per_min": 38.2,
+      "prose_words_per_min": 29.2,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s3",
+          "data_comp": "two-bucket-sorter",
+          "icap": "C",
+          "line": 1257,
+          "line_end": 1267,
+          "words_inside": 45
+        }
+      ],
+      "families": [
+        "two-bucket-sorter"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 2,
+      "chips": {
+        "H": 1,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 1.05,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-wolfram",
+        "src-case"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g3",
+          "line": 1271,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 97,
+        "longest_run_min_tagged_split": 2.5,
+        "longest_run_words_control_split": 191,
+        "longest_run_min_control_split": 5,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": []
+    },
+    {
+      "id": "s4",
+      "num": "03",
+      "data_nav": "Retrieval",
+      "eyebrow": "03 · RAG, mechanically",
+      "heading": "Retrieval Mechanics: Chunking, Indexing, and Ranking",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 6,
+      "line_start": 1275,
+      "line_end": 1308,
+      "bytes": 2617,
+      "allocated_min": 6,
+      "words": 253,
+      "prose_words": 195,
+      "words_per_min": 42.2,
+      "prose_words_per_min": 32.5,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s4",
+          "data_comp": "estimate-then-reveal",
+          "icap": "C",
+          "line": 1290,
+          "line_end": 1300,
+          "words_inside": 58
+        }
+      ],
+      "families": [
+        "estimate-then-reveal"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.4,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 3,
+      "gates": [
+        {
+          "id": "g4",
+          "line": 1306,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 152,
+        "longest_run_min_tagged_split": 3.6,
+        "longest_run_words_control_split": 198,
+        "longest_run_min_control_split": 4.7,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "§01"
+      ]
+    },
+    {
+      "id": "sRag",
+      "num": "A1",
+      "data_nav": "A1 · Do you need retrieval?",
+      "eyebrow": "Appendix A1 · Before you buy a retrieval tool",
+      "heading": "Do You Need Retrieval at All?",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "foundational",
+      "insert_after": "s4",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 14,
+      "line_start": 1310,
+      "line_end": 1341,
+      "bytes": 2805,
+      "allocated_min": 14,
+      "words": 262,
+      "prose_words": 225,
+      "words_per_min": 18.7,
+      "prose_words_per_min": 16.1,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-sRag",
+          "data_comp": "two-bucket-sorter",
+          "icap": "C",
+          "line": 1325,
+          "line_end": 1335,
+          "words_inside": 37
+        }
+      ],
+      "families": [
+        "two-bucket-sorter"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 4,
+      "chips": {
+        "H": 3,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 1.53,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-context-windows",
+        "src-anthropic-ctx",
+        "src-case"
+      ],
+      "sources_count": 3,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "ga1",
+          "line": 1339,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 158,
+        "longest_run_min_tagged_split": 8.4,
+        "longest_run_words_control_split": 262,
+        "longest_run_min_control_split": 14,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "§04)."
+      ]
+    },
+    {
+      "id": "s6",
+      "num": "04",
+      "data_nav": "Grounding limits",
+      "eyebrow": "04 · What grounding fixes",
+      "heading": "What Grounding Fixes, and What It Does Not",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 6,
+      "line_start": 1343,
+      "line_end": 1368,
+      "bytes": 2871,
+      "allocated_min": 6,
+      "words": 292,
+      "prose_words": 245,
+      "words_per_min": 48.7,
+      "prose_words_per_min": 40.8,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s6",
+          "data_comp": "prediction-commit",
+          "icap": "C",
+          "line": 1349,
+          "line_end": 1356,
+          "words_inside": 47
+        }
+      ],
+      "families": [
+        "prediction-commit"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 6,
+      "chips": {
+        "H": 4,
+        "M": 1,
+        "L": 1
+      },
+      "chips_per_100_words": 2.05,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-anthropic-ctx",
+        "src-magesh",
+        "src-case"
+      ],
+      "sources_count": 3,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g5",
+          "line": 1366,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 247,
+        "longest_run_min_tagged_split": 5.1,
+        "longest_run_words_control_split": 292,
+        "longest_run_min_control_split": 6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "§03.",
+        "BM25"
+      ]
+    },
+    {
+      "id": "s7",
+      "num": "05",
+      "data_nav": "Grounding vs tuning",
+      "eyebrow": "05 · Two ways to teach it your file",
+      "heading": "Grounding Compared With Fine-Tuning",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 1370,
+      "line_end": 1394,
+      "bytes": 2182,
+      "allocated_min": 5,
+      "words": 239,
+      "prose_words": 217,
+      "words_per_min": 47.8,
+      "prose_words_per_min": 43.4,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s7",
+          "data_comp": "commit-first-mcq",
+          "icap": "C",
+          "line": 1383,
+          "line_end": 1388,
+          "words_inside": 22
+        }
+      ],
+      "families": [
+        "commit-first-mcq"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 3,
+      "chips": {
+        "H": 2,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 1.26,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-wolfram",
+        "src-anthropic-ctx"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g6",
+          "line": 1392,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 148,
+        "longest_run_min_tagged_split": 3.1,
+        "longest_run_words_control_split": 239,
+        "longest_run_min_control_split": 5,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": []
+    },
+    {
+      "id": "s9",
+      "num": "06",
+      "data_nav": "Workflow",
+      "eyebrow": "06 · The workflow",
+      "heading": "The Advisor Meeting Workflow: Prep, Capture, Summarise, Follow-Up, Log",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 6,
+      "line_start": 1396,
+      "line_end": 1422,
+      "bytes": 2016,
+      "allocated_min": 6,
+      "words": 206,
+      "prose_words": 161,
+      "words_per_min": 34.3,
+      "prose_words_per_min": 26.8,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s9",
+          "data_comp": "symptom-diagnoser",
+          "icap": "A",
+          "line": 1410,
+          "line_end": 1416,
+          "words_inside": 45
+        }
+      ],
+      "families": [
+        "symptom-diagnoser"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 2,
+      "chips": {
+        "H": 1,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.97,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-kitces-notetakers",
+        "src-case"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g7",
+          "line": 1420,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 104,
+        "longest_run_min_tagged_split": 3,
+        "longest_run_words_control_split": 206,
+        "longest_run_min_control_split": 6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "CRM"
+      ]
+    },
+    {
+      "id": "sPrep",
+      "num": "A2",
+      "data_nav": "A2 · Intake questionnaire",
+      "eyebrow": "Appendix A2 · Prep",
+      "heading": "The Intake Questionnaire, Drafted With AI",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "foundational",
+      "insert_after": "s9",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 14,
+      "line_start": 1424,
+      "line_end": 1452,
+      "bytes": 2430,
+      "allocated_min": 14,
+      "words": 231,
+      "prose_words": 175,
+      "words_per_min": 16.5,
+      "prose_words_per_min": 12.5,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-sPrep",
+          "data_comp": "builder-assembler",
+          "icap": "C",
+          "line": 1437,
+          "line_end": 1446,
+          "words_inside": 56
+        }
+      ],
+      "families": [
+        "builder-assembler"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.43,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 1,
+      "gates": [
+        {
+          "id": "ga2",
+          "line": 1450,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 136,
+        "longest_run_min_tagged_split": 8.2,
+        "longest_run_words_control_split": 171,
+        "longest_run_min_control_split": 10.4,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": []
+    },
+    {
+      "id": "s10",
+      "num": "07",
+      "data_nav": "Note-takers",
+      "eyebrow": "07 · The note-taker",
+      "heading": "How an AI Note-Taker Works, and How to Prompt It",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 7,
+      "line_start": 1454,
+      "line_end": 1497,
+      "bytes": 3903,
+      "allocated_min": 7,
+      "words": 434,
+      "prose_words": 373,
+      "words_per_min": 62,
+      "prose_words_per_min": 53.3,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s10",
+          "data_comp": "spoiler-reveal",
+          "icap": "A",
+          "line": 1468,
+          "line_end": 1478,
+          "words_inside": 61
+        }
+      ],
+      "families": [
+        "spoiler-reveal"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 3,
+      "chips": {
+        "H": 2,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.69,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-kitces-notetakers",
+        "src-case"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 1,
+      "gates": [
+        {
+          "id": "g8",
+          "line": 1495,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 291,
+        "longest_run_min_tagged_split": 4.7,
+        "longest_run_words_control_split": 342,
+        "longest_run_min_control_split": 5.5,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "DECISIONS",
+        "ACTION",
+        "ITEMS",
+        "OPEN",
+        "QUESTIONS",
+        "FACTS",
+        "THAT",
+        "CHANGED",
+        "CASE"
+      ]
+    },
+    {
+      "id": "sChk",
+      "num": "A3",
+      "data_nav": "A3 · Check the summary",
+      "eyebrow": "Appendix A3 · The after-meeting check",
+      "heading": "Check the Summary Against the Transcript",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "foundational",
+      "insert_after": "s10",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 14,
+      "line_start": 1499,
+      "line_end": 1524,
+      "bytes": 2003,
+      "allocated_min": 14,
+      "words": 171,
+      "prose_words": 141,
+      "words_per_min": 12.2,
+      "prose_words_per_min": 10.1,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-sChk",
+          "data_comp": "two-bucket-sorter",
+          "icap": "C",
+          "line": 1508,
+          "line_end": 1518,
+          "words_inside": 30
+        }
+      ],
+      "families": [
+        "two-bucket-sorter"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.58,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "ga6",
+          "line": 1522,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 93,
+        "longest_run_min_tagged_split": 7.6,
+        "longest_run_words_control_split": 171,
+        "longest_run_min_control_split": 14,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": []
+    },
+    {
+      "id": "s11",
+      "num": "C3",
+      "data_nav": "C3 · Adoption",
+      "eyebrow": "Appendix C3 · Market evidence",
+      "heading": "Note-Taker Adoption Against Note-Taker Satisfaction",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "foundational",
+      "insert_after": "s10",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 14,
+      "line_start": 1526,
+      "line_end": 1548,
+      "bytes": 2229,
+      "allocated_min": 14,
+      "words": 188,
+      "prose_words": 160,
+      "words_per_min": 13.4,
+      "prose_words_per_min": 11.4,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s11",
+          "data_comp": "estimate-then-reveal",
+          "icap": "C",
+          "line": 1535,
+          "line_end": 1542,
+          "words_inside": 28
+        }
+      ],
+      "families": [
+        "estimate-then-reveal"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 2,
+      "chips": {
+        "H": 1,
+        "M": 1,
+        "L": 0
+      },
+      "chips_per_100_words": 1.06,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-kitces-notetakers"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "ga3",
+          "line": 1546,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 111,
+        "longest_run_min_tagged_split": 8.3,
+        "longest_run_words_control_split": 188,
+        "longest_run_min_control_split": 14,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": []
+    },
+    {
+      "id": "sOff",
+      "num": "08",
+      "data_nav": "Word, Excel, PowerPoint",
+      "eyebrow": "08 · In the files you already use",
+      "heading": "Claude in Word, Excel and PowerPoint for the Client Review",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 1550,
+      "line_end": 1580,
+      "bytes": 2495,
+      "allocated_min": 5,
+      "words": 275,
+      "prose_words": 242,
+      "words_per_min": 55,
+      "prose_words_per_min": 48.4,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-sOff",
+          "data_comp": "multi-column-sorter",
+          "icap": "C",
+          "line": 1564,
+          "line_end": 1574,
+          "words_inside": 33
+        }
+      ],
+      "families": [
+        "multi-column-sorter"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.36,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g9b",
+          "line": 1578,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 177,
+        "longest_run_min_tagged_split": 3.2,
+        "longest_run_words_control_split": 275,
+        "longest_run_min_control_split": 5,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "DW"
+      ]
+    },
+    {
+      "id": "s12",
+      "num": "09",
+      "data_nav": "Consent",
+      "eyebrow": "09 · Obligation",
+      "heading": "Recording Consent and the Confidentiality Obligation",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 6,
+      "line_start": 1582,
+      "line_end": 1620,
+      "bytes": 3306,
+      "allocated_min": 6,
+      "words": 350,
+      "prose_words": 317,
+      "words_per_min": 58.3,
+      "prose_words_per_min": 52.8,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s12",
+          "data_comp": "commit-first-mcq",
+          "icap": "C",
+          "line": 1608,
+          "line_end": 1614,
+          "words_inside": 33
+        }
+      ],
+      "families": [
+        "commit-first-mcq"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 3,
+      "chips": {
+        "H": 2,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.86,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-wiretap",
+        "src-case"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 1,
+      "verify_lines": [
+        1586
+      ],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g9",
+          "line": 1618,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 258,
+        "longest_run_min_tagged_split": 4.4,
+        "longest_run_words_control_split": 350,
+        "longest_run_min_control_split": 6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "U.S.C",
+        "§ 2511"
+      ]
+    },
+    {
+      "id": "sVend",
+      "num": "A5",
+      "data_nav": "A5 · Vendor questions",
+      "eyebrow": "Appendix A5 · Due diligence",
+      "heading": "Five Questions for a Note-Taker Vendor",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "standard",
+      "insert_after": "s12",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 9,
+      "line_start": 1622,
+      "line_end": 1642,
+      "bytes": 1686,
+      "allocated_min": 9,
+      "words": 126,
+      "prose_words": 93,
+      "words_per_min": 14,
+      "prose_words_per_min": 10.3,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-sVend",
+          "data_comp": "builder-assembler",
+          "icap": "C",
+          "line": 1629,
+          "line_end": 1636,
+          "words_inside": 33
+        }
+      ],
+      "families": [
+        "builder-assembler"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.79,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 1,
+      "gates": [
+        {
+          "id": "ga7",
+          "line": 1640,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 78,
+        "longest_run_min_tagged_split": 5.6,
+        "longest_run_words_control_split": 78,
+        "longest_run_min_control_split": 5.6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": []
+    },
+    {
+      "id": "s13",
+      "num": "10",
+      "data_nav": "Basis",
+      "eyebrow": "10 · Documentation",
+      "heading": "Documenting Circumstances and the Basis for a Recommendation",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 6,
+      "line_start": 1644,
+      "line_end": 1708,
+      "bytes": 3913,
+      "allocated_min": 6,
+      "words": 469,
+      "prose_words": 440,
+      "words_per_min": 78.2,
+      "prose_words_per_min": 73.3,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s13",
+          "data_comp": "two-bucket-sorter",
+          "icap": "C",
+          "line": 1658,
+          "line_end": 1668,
+          "words_inside": 29
+        }
+      ],
+      "families": [
+        "two-bucket-sorter"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.21,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 1,
+      "gates": [
+        {
+          "id": "g10",
+          "line": 1706,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 342,
+        "longest_run_min_tagged_split": 4.4,
+        "longest_run_words_control_split": 410,
+        "longest_run_min_control_split": 5.2,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "ROLE",
+        "TASK",
+        "PROCEDURE",
+        "SELECTION",
+        "REASON",
+        "CLIENT",
+        "RESPONSE",
+        "OUTPUT"
+      ]
+    },
+    {
+      "id": "s15",
+      "num": "C4",
+      "data_nav": "C4 · Discussion",
+      "eyebrow": "Appendix C4 · Discussion",
+      "heading": "Citation-Backed Output and Verification Effort",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "standard",
+      "insert_after": "s13",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 18,
+      "line_start": 1710,
+      "line_end": 1736,
+      "bytes": 2608,
+      "allocated_min": 18,
+      "words": 233,
+      "prose_words": 196,
+      "words_per_min": 12.9,
+      "prose_words_per_min": 10.9,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s15",
+          "data_comp": "sealed-vote-debate",
+          "icap": "I",
+          "line": 1721,
+          "line_end": 1730,
+          "words_inside": 37
+        }
+      ],
+      "families": [
+        "sealed-vote-debate"
+      ],
+      "icap": {
+        "I": 1
+      },
+      "chips_total": 2,
+      "chips": {
+        "H": 1,
+        "M": 1,
+        "L": 0
+      },
+      "chips_per_100_words": 0.86,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-magesh",
+        "src-lee-cognitive"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "ga4",
+          "line": 1734,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 118,
+        "longest_run_min_tagged_split": 9.1,
+        "longest_run_words_control_split": 233,
+        "longest_run_min_control_split": 18,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "§04",
+        "CHI"
+      ]
+    },
+    {
+      "id": "s16",
+      "num": "11",
+      "data_nav": "Checklist + assignments",
+      "eyebrow": "11 · Close",
+      "heading": "The Meeting Checklist",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 1738,
+      "line_end": 1765,
+      "bytes": 2512,
+      "allocated_min": 5,
+      "words": 228,
+      "prose_words": 192,
+      "words_per_min": 45.6,
+      "prose_words_per_min": 38.4,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s16",
+          "data_comp": "builder-assembler",
+          "icap": "C",
+          "line": 1744,
+          "line_end": 1751,
+          "words_inside": 36
+        }
+      ],
+      "families": [
+        "builder-assembler"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.44,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 1,
+      "gates": [
+        {
+          "id": "g12",
+          "line": 1761,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 198,
+        "longest_run_min_tagged_split": 4.3,
+        "longest_run_words_control_split": 165,
+        "longest_run_min_control_split": 3.6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": []
+    }
+  ],
+  "terms": [
+    {
+      "term": "X433",
+      "kind": "acronym",
+      "first_use_section": "s1",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "BUS ADM  [X433] .4 · Session 3 5 min Gathering and"
+    },
+    {
+      "term": "A1",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "would cost are both on this page.  [A1]  · 14 min · after §03 Do"
+    },
+    {
+      "term": "§03",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "page. A1 · 14 min · after  [§03]  Do You Need Retrieval at All? A2"
+    },
+    {
+      "term": "A2",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "§03 Do You Need Retrieval at All?  [A2]  · 14 min · after §06 The"
+    },
+    {
+      "term": "§06",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "All? A2 · 14 min · after  [§06]  The Intake Questionnaire, Drafted With AI A3"
+    },
+    {
+      "term": "A3",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "§06 The Intake Questionnaire, Drafted With AI  [A3]  · 14 min · after §07 Check"
+    },
+    {
+      "term": "§07",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "AI A3 · 14 min · after  [§07]  Check the Summary Against the Transcript C3"
+    },
+    {
+      "term": "C3",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "§07 Check the Summary Against the Transcript  [C3]  · 14 min · after §07 Note-Taker"
+    },
+    {
+      "term": "A5",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "after §07 Note-Taker Adoption Against Note-Taker Satisfaction  [A5]  · 9 min · after §09 Five"
+    },
+    {
+      "term": "§09",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Satisfaction A5 · 9 min · after  [§09]  Five Questions for a Note-Taker Vendor C4"
+    },
+    {
+      "term": "C4",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "§09 Five Questions for a Note-Taker Vendor  [C4]  · 18 min · after §10 Citation-Backed"
+    },
+    {
+      "term": "§10",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Vendor C4 · 18 min · after  [§10]  Citation-Backed Output and Verification Effort"
+    },
+    {
+      "term": "RAG",
+      "kind": "acronym",
+      "first_use_section": "s4",
+      "defined_within_40_words": true,
+      "how": "expansion",
+      "cfp_baseline_vocabulary": false,
+      "context": "03 ·  [RAG] , mechanically 6 min Retrieval Mechanics: Chunking, Indexing,"
+    },
+    {
+      "term": "§01",
+      "kind": "citation",
+      "first_use_section": "s4",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "passage gets a numeric fingerprint, the kind  [§01]  showed. Rank. Your question gets the same"
+    },
+    {
+      "term": "§04).",
+      "kind": "citation",
+      "first_use_section": "sRag",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "step exists, and so do its failures ( [§04).]  Either way, tell it to answer only"
+    },
+    {
+      "term": "§03.",
+      "kind": "citation",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "failure looks like the first preset in  [§03.]  The answer is fully cited, quotes Article"
+    },
+    {
+      "term": "BM25",
+      "kind": "acronym",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "5.7% at baseline, 1.9% with contextual embeddings,  [BM25]  and reranking H ; a vendor benchmark"
+    },
+    {
+      "term": "CRM",
+      "kind": "acronym",
+      "first_use_section": "s9",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "summary. Log. The note lands in the  [CRM]  with the basis for what you recommended."
+    },
+    {
+      "term": "DECISIONS",
+      "kind": "acronym",
+      "first_use_section": "s10",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "under these headings and nothing else: 1.  [DECISIONS]  made in the meeting, each with who"
+    },
+    {
+      "term": "ACTION",
+      "kind": "acronym",
+      "first_use_section": "s10",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "meeting, each with who made it. 2.  [ACTION]  ITEMS, each with an owner and a"
+    },
+    {
+      "term": "ITEMS",
+      "kind": "acronym",
+      "first_use_section": "s10",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "each with who made it. 2. ACTION  [ITEMS] , each with an owner and a date"
+    },
+    {
+      "term": "OPEN",
+      "kind": "acronym",
+      "first_use_section": "s10",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "a date if one was given. 3.  [OPEN]  QUESTIONS the client asked that were not"
+    },
+    {
+      "term": "QUESTIONS",
+      "kind": "acronym",
+      "first_use_section": "s10",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "date if one was given. 3. OPEN  [QUESTIONS]  the client asked that were not answered."
+    },
+    {
+      "term": "FACTS",
+      "kind": "acronym",
+      "first_use_section": "s10",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "client asked that were not answered. 4.  [FACTS]  THAT CHANGED since the last review, in"
+    },
+    {
+      "term": "THAT",
+      "kind": "acronym",
+      "first_use_section": "s10",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "asked that were not answered. 4. FACTS  [THAT]  CHANGED since the last review, in the"
+    },
+    {
+      "term": "CHANGED",
+      "kind": "acronym",
+      "first_use_section": "s10",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "that were not answered. 4. FACTS THAT  [CHANGED]  since the last review, in the client's"
+    },
+    {
+      "term": "CONSTRAINTS",
+      "kind": "acronym",
+      "first_use_section": "s10",
+      "defined_within_40_words": true,
+      "how": "appositive",
+      "cfp_baseline_vocabulary": false,
+      "context": "review, in the client's own words. 5.  [CONSTRAINTS] : anything a named person must not be"
+    },
+    {
+      "term": "CASE",
+      "kind": "acronym",
+      "first_use_section": "s10",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "meeting hour H . The excerpt is  [CASE] .md Part O, rendered from the injected case;"
+    },
+    {
+      "term": "DW",
+      "kind": "acronym",
+      "first_use_section": "sOff",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "help pages from this build (register row  [DW] -121). The three prompts and the six tasks"
+    },
+    {
+      "term": "U.S.C",
+      "kind": "acronym",
+      "first_use_section": "s12",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Verify before teaching either as settled: 18  [U.S.C] . § 2511 as a federal one-party-consent floor,"
+    },
+    {
+      "term": "§ 2511",
+      "kind": "citation",
+      "first_use_section": "s12",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "before teaching either as settled: 18 U.S.C.  [§ 2511]  as a federal one-party-consent floor, with states"
+    },
+    {
+      "term": "ROLE",
+      "kind": "acronym",
+      "first_use_section": "s13",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "into your own tool after a meeting.  [ROLE]  You are a compliance reviewer at an"
+    },
+    {
+      "term": "TASK",
+      "kind": "acronym",
+      "first_use_section": "s13",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "interrogate me until the record is complete.  [TASK]  Build the basis-for-recommendation entry for one recommendation"
+    },
+    {
+      "term": "PROCEDURE",
+      "kind": "acronym",
+      "first_use_section": "s13",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "basis-for-recommendation entry for one recommendation I made.  [PROCEDURE]  Ask me one question at a time."
+    },
+    {
+      "term": "CIRCUMSTANCE",
+      "kind": "acronym",
+      "first_use_section": "s13",
+      "defined_within_40_words": true,
+      "how": "appositive",
+      "cfp_baseline_vocabulary": false,
+      "context": "ask again with a narrower question. 1.  [CIRCUMSTANCE]  - the specific client fact that made"
+    },
+    {
+      "term": "ALTERNATIVES",
+      "kind": "acronym",
+      "first_use_section": "s13",
+      "defined_within_40_words": true,
+      "how": "appositive",
+      "cfp_baseline_vocabulary": false,
+      "context": "and not to a generic household. 2.  [ALTERNATIVES]  - the other courses of action I"
+    },
+    {
+      "term": "SELECTION",
+      "kind": "acronym",
+      "first_use_section": "s13",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "and why it was ruled out. 3.  [SELECTION]  REASON - what made the recommendation preferable"
+    },
+    {
+      "term": "REASON",
+      "kind": "acronym",
+      "first_use_section": "s13",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "why it was ruled out. 3. SELECTION  [REASON]  - what made the recommendation preferable to"
+    },
+    {
+      "term": "CLIENT",
+      "kind": "acronym",
+      "first_use_section": "s13",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "comparison and not as a virtue. 4.  [CLIENT]  RESPONSE - what the client said when"
+    },
+    {
+      "term": "RESPONSE",
+      "kind": "acronym",
+      "first_use_section": "s13",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "and not as a virtue. 4. CLIENT  [RESPONSE]  - what the client said when it"
+    },
+    {
+      "term": "OUTPUT",
+      "kind": "acronym",
+      "first_use_section": "s13",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "is an assertion rather than an observation.  [OUTPUT]  When all four are complete: one paragraph"
+    },
+    {
+      "term": "§04",
+      "kind": "citation",
+      "first_use_section": "s15",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "work, so a busy professional checks less.  [§04]  supplied evidence for the second; you supplied"
+    },
+    {
+      "term": "CHI",
+      "kind": "acronym",
+      "first_use_section": "s15",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "on Critical Thinking , Microsoft Research /  [CHI]  2025, characterised here only by its title"
+    },
+    {
+      "term": "FY2026",
+      "kind": "acronym",
+      "first_use_section": "s16",
+      "defined_within_40_words": true,
+      "how": "parenthetical",
+      "cfp_baseline_vocabulary": false,
+      "context": "for Session 4 Daly (2026) · SEC  [FY2026]  Exam Priorities §VII · Journal of Accountancy"
+    }
+  ],
+  "footer_source_ids": [
+    "src-context-windows",
+    "src-anthropic-ctx",
+    "src-iskowitz",
+    "src-kitces-notetakers",
+    "src-lee-cognitive",
+    "src-magesh",
+    "src-case",
+    "src-wiretap",
+    "src-wolfram"
+  ],
+  "dom": {
+    "mode": "static-only",
+    "note": "jsdom not resolvable; rendered counts not computed"
+  }
+}

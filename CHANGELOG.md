@@ -10,6 +10,89 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-14 · Session 3: rebuilt after §03 for the room it has, and a third shorter before it
+
+Branch `claude/lucid-volta-bi2rfg`, twenty-eight item commits after the plan
+(JN-005 to JN-030), from the instructor's manual-pass notes of 2026-09-13,
+given in chat. The plan, the ledger, the verbatim notes, the per-item browser
+harness and the handback are in `docs/changes/2026-09-13-session-3-manual-pass/`.
+
+### Session 3 · §00 to §03 say less; the mechanism stays
+
+The pacing panel is the four depth buttons and the three timing cells, as on
+Session 2 (JN-018). The opening sentence names Session 3, not tonight
+(JN-019); the household restatement block from the case panel to the first
+work-along is gone (JN-021); the Case facts button sits at the top-right
+(JN-016). §01 is half its length and the meaning map draws a dashed connector
+to each of a term's three nearest neighbours with the distance at the midpoint
+(JN-024, JN-025). §02 keeps Wolfram's alligator and crocodile in fewer words,
+and its sorter lists each pair under the bucket it was placed in, with a tick
+or a cross and its why at once, through one sorter function the whole page now
+shares (JN-026, JN-027). §03 is four bullets, split, index, rank, answer, and
+one paragraph; the term-weighting formula is gone (JN-028, JN-029). The three
+sentences that called the 2023 appraisal's retrieval score zero now say it
+ranks third at 3.3 because it shares only "value" with the question, and that
+Meg and CPC appear in no passage; the four preset rankings are unchanged
+(JN-030; DW-001, DW-002, DW-003 and DW-076 close together under D6).
+
+### Session 3 · No cold open; the bridge opens the session
+
+The cold open, its eight-check analyser and its styles leave this page on
+the instructor's instruction (JN-022, JN-023); the four-item bridge on the
+Session 2 verification order is the opener. Pedagogy s4's ritual parameter
+is deviated from on session-3 by instruction.
+
+### Session 3 · The core after §03 is rebuilt at a beginner's depth
+
+§04, "What grounding fixes, and what it does not", is one section where the
+old measured-retrieval and measured-hallucination sections were two: a
+prediction committed before any figure, then Anthropic's finding-step rate
+(5.7% to 1.9%) and the Stanford grounded-tool rates (17% to 33% against 43%)
+in plain words with one chart; the volume calculator, the four-option
+valuation prediction, the Vectara leaderboard passage and the toggle matrix
+are gone (JN-005). §05, grounding compared with fine-tuning, moves from the
+appendix into the core with Wolfram's tell-it-once observation and the
+Tuesday test, a one-item quiz answered per option (JN-006). §06's workflow
+chain says, for each stage, what the tool does, what you check and what is
+inherited if you skip it (JN-007). §07 opens the note-taker's four stages one
+at a time on the Cole excerpt, says how to use one before, during and after,
+and carries a copy-ready instruction; the keyword note scorer is gone
+(JN-008). §08 is new: Claude in Word, Excel and PowerPoint for the client
+review, one prompt per app, three rules, and a sorter placing six tasks
+against the apps or "not an AI task"; the add-ins are named on the
+instructor's instruction with no reachable vendor page (JN-009, DW-121). §09
+is the two obligations, five vendor questions, a two-item verify block and a
+four-item quiz; the state-count paragraph with its marker, the California
+exposure and the fabricated case item are gone (JN-010). §10 sorts six lines
+from the review as said, recommended or neither and keeps the interrogation
+prompt (JN-011). §11 is a ten-step meeting checklist with a gap readout and a
+copy button, then the three assignment cards; the peer-exchange scorer and
+the AI-usage-policy section's citation widget are gone (JN-012).
+
+### Session 3 · The appendix
+
+C1 (chunk size) and C5 (hybrid search) leave the page (JN-013). Four sections
+are new (JN-014): A1, do you need retrieval at all, on Anthropic's 200,000-
+token guidance and the context-window record; A2, the intake questionnaire
+drafted with AI, a prep-prompt builder; A3, check the summary against the
+transcript, a sorter with two lines written wrong on purpose and labelled so;
+A5, five questions for a note-taker vendor, an email builder. C3 is trimmed
+to the January 2025 article's claims and C4 to its four phases, with no time
+of day named anywhere on the page (JN-020). Core 67 minutes over twelve
+sections, appendix 83 over six; 150 in all.
+
+### Repository
+
+A9 for `session-3` re-recorded from 86 literal / 12 entity (98) to 6 / 3 (9)
+across sixteen commits on the instructor's K1 instruction (DW-120, one line
+each); the majority form stays literal. `SOURCES.md`: session-3 clauses
+updated for `src-wolfram`, `src-case`, `src-kitces-notetakers`, `src-wiretap`;
+removed for `src-vectara`, `src-finra2409`, `src-secpri`, `src-regsp`,
+`src-kitces-advisortech`; added for `src-context-windows`. Footers,
+bibliography, the unsourced-claims register (11 to 9) and the case-fact
+inventory regenerated. Register: the Session 3 decision paragraph, rows
+DW-120 and DW-121, dated notes on nineteen rows. The run sheet is rewritten
+for the new sections. `docs/audits/profiles/session-3.json` is new.
 ## 2026-09-13 · Session 2, batch 3: the triage explains itself in bullets, the case gate leaves the page, and §02 says what a benchmark task is
 
 Branch `claude/beautiful-maxwell-1bqad4`, three commits (JN-035 to
@@ -28,7 +111,6 @@ the shape of that kind and a line on how it is scored, labelled
 illustrative; the kinds are described in general terms and DW-118 lists
 the block for a browser check. Records in
 `docs/changes/2026-09-13-session-2-manual-pass/`.
-
 ---
 
 ## 2026-09-13 · Session 2, batch 2: ten sections cut to what the room needs, and four things rebuilt

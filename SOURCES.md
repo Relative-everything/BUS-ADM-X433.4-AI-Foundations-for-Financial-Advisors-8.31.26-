@@ -106,7 +106,7 @@ moving_target:  false
 scope:          The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D3 is about exactly that.
 used_for.session-1: next-token prediction, the temperature passage, tokens and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison
 used_for.session-2: the sections "It's Just Adding One Word at a Time," "Where Do the Probabilities Come From?," "What Is a Model?," the temperature passage, and the parenthesis-language discussion
-used_for.session-3: assigned reading — "The Concept of Embeddings" and the opening of "Meaning Space and Semantic Laws of Motion"
+used_for.session-3: assigned reading; "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion" in §01 and §02 (the definition, the five-billion-word construction, the 768 and 12,288 lengths, alligator and crocodile); "Beyond Basic Training" in §05 (the tell-it-once observation and its limit)
 used_for.session-4: the reproducibility quote in §08 and the three stale claims in Appendix D3
 ```
 
@@ -127,7 +127,7 @@ disclose_on_page: true
 scope:          Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
 used_for.session-1: every worked example in this session and the next three
 used_for.session-2: every client example, exercise input and discussion prompt, including the three §04 fixture inputs and their three deliberately weak starter prompts, which are exercise material
-used_for.session-3: the retrieval corpus, the extraction exercise, the consent items and the documentation exercise, and the illustrative meaning-space map whose coordinates were assigned rather than learned
+used_for.session-3: the retrieval corpus, the meeting excerpt and the note-taker stage outputs written from it, the consent items, the said-or-recommended lines, the Office tasks, the checklist, the illustrative meaning-space map whose coordinates were assigned rather than learned, and the six summary lines in Appendix A3, two of which are written wrong on purpose and labelled so on the page
 used_for.session-4: the NPI classification items, the vendor due-diligence set, and the audit-trail exercise
 ```
 
@@ -246,6 +246,7 @@ figure_class:   vendor_policy
 recheck_before: every teaching of session-2 §00
 scope:          What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate.
 used_for.session-2: the retrieval bridge's context item and the two reasons behind its new-chat item
+used_for.session-3: what the context window contains, and that everything attached and the conversation so far counts, in Appendix A1
 last_retrieved.session-2: 2026-09-13
 figures.session-2: none typed; the keys paraphrase the page's sentences
 ```
@@ -287,7 +288,6 @@ kind:           evidence
 moving_target:  false
 scope:          FINRA's position that existing rules reach generative AI and that supervision is not suspended by the technology. Creates no new obligations.
 used_for.session-1: the position that existing rules apply to generative AI and that supervision is not suspended by the technology
-used_for.session-3: named in the reading list for the regulatory frame
 used_for.session-4: existing rules apply; technology neutrality
 ```
 
@@ -306,7 +306,6 @@ kind:           evidence
 moving_target:  false
 figure_class:   regulatory_date
 scope:          The four obligations — written incident response program, customer notification no later than 30 days after the firm becomes aware, service provider oversight, recordkeeping — the definition and scope limits of nonpublic personal information, and the compliance dates 3 December 2025 and 3 June 2026.
-used_for.session-3: named in §10 as a citable source for the AI usage policy assignment; compliance dates are not re-verified in this build and should be confirmed against the adopting release before a student relies on one
 used_for.session-4: the four obligations, the definition and scope limits of nonpublic personal information, the 30-day notification clock, and the Appendix D5 tabletop
 ```
 
@@ -324,7 +323,6 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          Accuracy of AI representations, training and security controls, and Regulation S-P as a named examination focus.
-used_for.session-3: named in the reading list for the regulatory frame
 used_for.session-4: accuracy of AI representations, training and security controls, and Regulation S-P as a named focus
 ```
 
@@ -431,7 +429,6 @@ moving_target:  true
 figure_class:   leaderboard_position
 recheck_before: every teaching of session-3 §05
 scope:          Dataset size, 32K-token length, domain mix, the low/high complexity split of 3,792 and 3,939, the leaderboard prompt, and the named per-model rates. A live leaderboard: the named model rates move.
-used_for.session-3: the grounded hallucination rates by model and the length-and-complexity findings
 ```
 
 ## src-kitces-notetakers
@@ -448,7 +445,7 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          Drawing on Kitces Research on Advisor Productivity, fielded autumn 2024: the greater-than-1:1 prep-and-follow-up ratio, the solo-versus-team adoption pattern, the UHNW drop-off, and the roughly fourfold rate for most-extensive against most-targeted plans.
-used_for.session-3: the prep-and-follow-up ratio, the adoption pattern by firm size, and the note-taker satisfaction figures
+used_for.session-3: the prep-and-follow-up ratio (§07), the whole-cycle tooling (§06), and the adoption-against-satisfaction ranking with the $60 to $80 pricing (Appendix C3)
 ```
 
 ## src-lee-cognitive
@@ -483,7 +480,7 @@ kind:           evidence
 moving_target:  false
 figure_class:   regulatory_date
 scope:          The two-party consent exposure behind the recording-consent section: the California private right of action and the federal wiretap statute.
-used_for.session-3: the recording consent obligation and its statutory exposure
+used_for.session-3: the federal one-party consent floor in §09
 ```
 
 ## src-iskowitz
@@ -520,7 +517,6 @@ moving_target:  true
 figure_class:   cumulative_counter
 recheck_before: every teaching of session-3 Appendix C3
 scope:          Note-taker adoption shares and category consolidation. Named for the reader; no page claim currently rests on it.
-used_for.session-3: named for the reader alongside the adoption figures; no page claim rests on it
 ```
 
 ## src-laplace
