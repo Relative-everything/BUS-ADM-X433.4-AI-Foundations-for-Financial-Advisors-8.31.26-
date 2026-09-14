@@ -253,3 +253,16 @@ await check('JN-009', async (page) => {
   must(r.key && /Score\s*6 of 6/.test(r.score), `key shown ${r.key}: ${r.score.slice(-60)}`);
   must(r.placed === '1,2,1,2', `items per column ${r.placed}`);
 });
+
+/* JN-014a: A1 is appendix tier after §03; its six sets sort into two buckets; the key opens after the last. */
+await check('JN-014a', async (page) => {
+  const r0 = await page.evaluate(() => { const s = document.getElementById('sRag'); const prev = s.previousElementSibling; return { apx: s.classList.contains('apx'), tier: s.dataset.tier, hidden: getComputedStyle(s).display === 'none', prevId: prev && prev.id, stub: !!s.querySelector('.apxstub') }; });
+  must(r0.apx && r0.tier === 'foundational' && r0.hidden && r0.stub, `sRag apx=${r0.apx} tier=${r0.tier} hidden-at-load=${r0.hidden} stub=${r0.stub}`);
+  must(r0.prevId === 's4', `sRag follows #${r0.prevId}, expected s4`);
+  await page.click('#tierbar button[data-level="0"]');
+  must(await page.evaluate(() => getComputedStyle(document.getElementById('sRag')).display !== 'none'), 'sRag hidden at Foundational depth');
+  const cols = [1, 1, 2, 2, 1, 2];
+  for (let i = 0; i < 6; i++) { await page.click(`#ragList button:nth-child(${i + 1})`); await page.click(`#ragBoxes .bslot:nth-child(${cols[i]}) button.lbox`); }
+  const r = await page.evaluate(() => ({ key: getComputedStyle(document.getElementById('ragKey')).display !== 'none', score: document.getElementById('ragKey').textContent.replace(/\s+/g, ' ') }));
+  must(r.key && /Score\s*6 of 6/.test(r.score), `key shown ${r.key}: ${r.score.slice(-50)}`);
+});

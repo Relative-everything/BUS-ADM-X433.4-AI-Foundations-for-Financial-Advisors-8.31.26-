@@ -1201,11 +1201,12 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 <!-- APXPANEL:BEGIN generated-by=scripts/build-appendix.mjs -->
 <section class="slide apxdiv" id="apx" data-nav="Appendix contents">
-  <div class="eyebrow"><span>Appendix &middot; 2 optional sections</span><span class="mins">32 min</span></div>
+  <div class="eyebrow"><span>Appendix &middot; 3 optional sections</span><span class="mins">46 min</span></div>
   <h2>Appendix contents</h2>
-  <p class="lede">Two optional sections, 32 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
-  <p>The 12 sections of the core session run in about 64 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <p class="lede">Three optional sections, 46 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
+  <p>The 13 sections of the core session run in about 73 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
+    <a class="apxcard" href="#sRag"><span class="ac">A1 &middot; 14 min &middot; after &sect;03</span><b>Do You Need Retrieval at All?</b></a>
     <a class="apxcard" href="#s11"><span class="ac">C3 &middot; 14 min &middot; after &sect;07</span><b>Note-Taker Adoption Against Note-Taker Satisfaction</b></a>
     <a class="apxcard" href="#s15"><span class="ac">C4 &middot; 18 min &middot; after &sect;10</span><b>Citation-Backed Output and Verification Effort</b></a>
   </div>
@@ -1295,6 +1296,39 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 
   <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run all four presets, including the two built to fail.</div></div>
+
+</section>
+
+<section class="slide apx" id="sRag" data-nav="A1 &middot; Do you need retrieval?" data-insert-after="s4" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A1 &middot; Do You Need Retrieval at All?</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix A1 &middot; Before you buy a retrieval tool</span><span class="mins">14 min</span></div>
+  <h2>Do You Need Retrieval at All?</h2>
+
+  <p class="big">Most planning files fit in one prompt. Anthropic's own guidance: under roughly 200,000 tokens, about 500 pages, put the whole set of documents in and skip retrieval.</p>
+
+  <ul class="pts">
+    <li><b>Paste or attach the documents</b> when the whole set fits. Everything the model needs is in front of it, and nothing has to be found first.</li>
+    <li><b>Use a retrieval tool</b> when the set is far bigger than one prompt: a firm's whole archive, years of email. Then the finding step exists, and so do its failures (&sect;04).</li>
+    <li><b>Either way, tell it to answer only from the documents</b> and to say so when the answer is not in them.</li>
+  </ul>
+
+  <p>The context window is the model's working space for one exchange: everything you attach plus the whole conversation so far, and all of it counts <span class="conf h" data-src="src-context-windows">H</span>.</p>
+
+  <div class="panel" data-task="t-sRag" data-comp="two-bucket-sorter">
+    <span class="do">Do this now: 5 minutes</span>
+    <h4>Fits in One Prompt, or Needs a Retrieval Tool</h4>
+    <p class="hint">Six document sets. Place each. The sizes are rough, and the rule of thumb is about 500 pages.</p>
+    <div class="sorter">
+      <div id="ragList" class="chiplist"></div>
+      <div id="ragBoxes" class="boxes"></div>
+    </div>
+    <div id="ragOut" class="mpanel"><span class="hd">Progress</span><span class="nil">Click a set, then a bucket.</span></div>
+    <div id="ragKey" class="mpanel keyhide" style="display:none"></div>
+  </div>
+
+  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em>: the roughly 200,000-token, about 500-page threshold below which the whole corpus goes in the prompt <span class="conf h" data-src="src-anthropic-ctx">H</span>. Anthropic, <em>Context windows</em>, Claude Platform Docs, fetched 2026-09-13: everything in the request counts toward the window, the conversation so far included <span class="conf h" data-src="src-context-windows">H</span>. The six sets are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+
+  <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six sets, then say which one your own practice is.</div></div>
 
 </section>
 
@@ -1690,17 +1724,19 @@ then a list of every element where my answer was thin.</pre>
       <tr><td>03 &middot; RAG, mechanically</td><td>Retrieval Mechanics: Chunking, Indexing, and Ranking</td><td class="n">6</td></tr>
       <tr><td>04 &middot; What grounding fixes</td><td>What Grounding Fixes, and What It Does Not</td><td class="n">6</td></tr>
       <tr><td>05 &middot; Two ways to teach it your file</td><td>Grounding Compared With Fine-Tuning</td><td class="n">5</td></tr>
-      <tr><td>06 &middot; The workflow</td><td>The Advisor Meeting Workflow and Its Failure Propagation</td><td class="n">4</td></tr>
-      <tr><td>07 &middot; Architecture</td><td>Note-Taker Architecture and the Extraction Step</td><td class="n">5</td></tr>
+      <tr><td>06 &middot; The workflow</td><td>The Advisor Meeting Workflow: Prep, Capture, Summarise, Follow-Up, Log</td><td class="n">6</td></tr>
+      <tr><td>07 &middot; The note-taker</td><td>How an AI Note-Taker Works, and How to Prompt It</td><td class="n">7</td></tr>
+      <tr><td>08 &middot; In the files you already use</td><td>Claude in Word, Excel and PowerPoint for the Client Review</td><td class="n">5</td></tr>
       <tr><td>08 &middot; Obligation</td><td>Recording Consent and the Confidentiality Obligation</td><td class="n">6</td></tr>
       <tr><td>09 &middot; Documentation</td><td>Documenting the Basis for a Recommendation</td><td class="n">6</td></tr>
       <tr><td>10 &middot; Assignment</td><td>The AI Usage Policy Assignment</td><td class="n">4</td></tr>
       <tr><td>11 &middot; Close</td><td>Part 1 Draft Peer Exchange</td><td class="n">7</td></tr>
+      <tr class="apxrow"><td>Appendix A1 &middot; Before you buy a retrieval tool</td><td>Do You Need Retrieval at All?</td><td class="n">14</td></tr>
       <tr class="apxrow"><td>Appendix C3 &middot; Market evidence</td><td>Note-Taker Adoption Against Note-Taker Satisfaction</td><td class="n">14</td></tr>
       <tr class="apxrow"><td>Appendix C4 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">18</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 64 + appendix 32; the core alone runs 64 minutes, four minutes over the hour</td><td class="n">96</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 73 + appendix 46; the core alone runs 73 minutes, thirteen minutes over the hour</td><td class="n">119</td></tr>
     </tbody>
 <!-- APXBUDGET:END -->
   </table>
@@ -1725,7 +1761,7 @@ then a list of every element where my answer was thin.</pre>
 <!-- SOURCES:END -->
   </ul>
 <!-- APXNOTE:BEGIN generated-by=scripts/build-appendix.mjs -->
-  <p style="margin-top:22px">The core is 12 sections and runs in about 64 minutes, four minutes over the hour. The 2 appendix sections add 32 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
+  <p style="margin-top:22px">The core is 13 sections and runs in about 73 minutes, thirteen minutes over the hour. The 3 appendix sections add 46 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
 <!-- APXNOTE:END -->
   <p><strong>No client data.</strong> The Cole household, Cole Precision Components and every document, transcript and figure attributed to them are synthetic and exist only as a classroom anchor. Nothing in this document is legal, tax or compliance advice, and no tax or legal conclusion is asserted anywhere in it.</p>
 
@@ -2034,6 +2070,21 @@ var PRESET=[
  Q.addEventListener('keydown',function(e){if(e.key==='Enter')run()});
  $('qVerdict').onclick=function(){V.style.display='block';V.className='mpanel has keyhide';V.innerHTML=verd()};
 })();
+
+/* ================= 4b. Do you need retrieval at all ================= */
+var RAGI=[
+ {t:'The Cole file: nine documents',k:'fit',w:'Nine documents is nowhere near 500 pages. Attach them all; nothing has to be found first.'},
+ {t:'One 40-page trust instrument',k:'fit',w:'One document. Paste it, ask the question, and ask for the page.'},
+ {t:'Every client file in the firm, about 300 households',k:'ret',w:'Far past one prompt. A retrieval tool finds the passages, and \u00a704\u2019s failure rates apply.'},
+ {t:'Ten years of the firm\u2019s email',k:'ret',w:'Retrieval, and a hard case for it: the same words recur across thousands of threads.'},
+ {t:'This year\u2019s statements for one household, about 60 pages',k:'fit',w:'Fits with room to spare. Attach the statements and the question together.'},
+ {t:'A year of meeting transcripts for one client, about 800 pages',k:'ret',w:'Over the rule of thumb. Either retrieve, or split by meeting and ask one meeting at a time.'}
+];
+var RAGB=[
+ {k:'fit',t:'Fits in one prompt',d:'Under about 500 pages. Attach everything; skip retrieval.'},
+ {k:'ret',t:'Needs a retrieval tool',d:'Far more than one prompt holds. The finding step exists, and so do its misses.'}
+];
+mkSorter({list:$('ragList'),boxes:$('ragBoxes'),out:$('ragOut'),key:$('ragKey'),items:RAGI,buckets:RAGB,label:'Progress',gate:'ga1'});
 
 /* ===== PRESERVED FROM PRIOR BUILD - data arrays, chart builder, chart calls, slopegraph ===== */
 var HALL=[
@@ -2580,7 +2631,7 @@ document.addEventListener('keydown',function(e){
 });
 
 /* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
-window.__coreMins=64;
+window.__coreMins=73;
 /* APXCORE:END */
 
 /* ===== appendix depth control: tier filter + core-only mode ===== */
