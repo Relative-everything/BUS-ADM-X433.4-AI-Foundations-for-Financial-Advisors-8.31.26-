@@ -333,3 +333,18 @@ await check('JN-012', async (page) => {
   await page.click('#ckCopy'); await page.waitForTimeout(200);
   must((await page.evaluate(() => document.getElementById('ckMsg').textContent)).length > 0, 'no copy message');
 });
+
+/* JN-014d: A5 assembles the vendor email from three or more ticked questions; copy works. */
+await check('JN-014d', async (page) => {
+  const r0 = await page.evaluate(() => { const s = document.getElementById('sVend'); return { apx: s.classList.contains('apx'), tier: s.dataset.tier, prev: s.previousElementSibling.id, stub: !!s.querySelector('.apxstub'), q: s.querySelectorAll('#vqList input').length }; });
+  must(r0.apx && r0.tier === 'standard' && r0.prev === 's12' && r0.stub && r0.q === 8, `sVend ${JSON.stringify(r0)}`);
+  await page.click('#tierbar button[data-level="1"]');
+  await page.click('#vqList label:nth-child(1) input'); await page.click('#vqList label:nth-child(4) input');
+  let t = await page.evaluate(() => document.getElementById('vqOut').textContent);
+  must(/at least three/.test(t), 'email assembled with two questions');
+  await page.click('#vqList label:nth-child(5) input');
+  t = await page.evaluate(() => document.getElementById('vqOut').textContent);
+  must(/Subject: Due diligence/.test(t) && /3\. Which other companies/.test(t), `assembled email: ${t.slice(0, 100)}`);
+  await page.click('#vqCopy'); await page.waitForTimeout(200);
+  must((await page.evaluate(() => document.getElementById('vqMsg').textContent)).length > 0, 'no copy message');
+});
