@@ -1450,6 +1450,38 @@ If a heading has nothing under it, write "none".</pre>
 
 </section>
 
+<section class="slide" id="sOff" data-nav="Word, Excel, PowerPoint">
+  <div class="eyebrow"><span>08 &middot; In the files you already use</span><span class="mins">5 min</span></div>
+  <h2>Claude in Word, Excel and PowerPoint for the Client Review</h2>
+
+  <p class="big">The annual review lives in three files: a letter, a cash-flow sheet and a deck. An assistant inside each app reads the open file, takes an instruction in plain words, and proposes the change. You review before it lands.</p>
+
+  <ul class="pts">
+    <li><b>Word, the review letter.</b> "Update last year's letter for this year's figures and the three decisions in the attached meeting summary. Keep the structure. Mark every sentence you changed."</li>
+    <li><b>Excel, the cash-flow table.</b> "Add a 2026 column using the same formulas as the 2025 column, and flag any cell whose value moved more than ten percent."</li>
+    <li><b>PowerPoint, the review deck.</b> "Rebuild the six review slides from the attached summary. One decision per slide, the same template, no new colours."</li>
+  </ul>
+
+  <p>Three rules hold in all three. Give it the source, the meeting summary or the new figures, rather than asking it to remember. Ask for the change marked, not silently made. Check every number against the source before the file goes to the client.</p>
+
+  <div class="panel" data-task="t-sOff" data-comp="multi-column-sorter">
+    <span class="do">Do this now: 3 minutes</span>
+    <h4>Which App, or Not an AI Task at All</h4>
+    <p class="hint">Six review-update tasks. Place each where it belongs. Two belong to no assistant.</p>
+    <div class="sorter">
+      <div id="offList" class="chiplist"></div>
+      <div id="offBoxes" class="boxes"></div>
+    </div>
+    <div id="offOut" class="mpanel"><span class="hd">Progress</span><span class="nil">Click a task, then a column.</span></div>
+    <div id="offKey" class="mpanel keyhide" style="display:none"></div>
+  </div>
+
+  <p class="src">The add-ins are named on the instructor's instruction; the description is the general shape of an in-app assistant and was not checked against the vendor's help pages from this build (register row DW-121). The three prompts and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+
+  <div class="check" data-gate="g9b"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six tasks, then copy one of the three prompts into the app you use most.</div></div>
+
+</section>
+
 <section class="slide" id="s12" data-nav="Consent">
   <div class="eyebrow"><span>08 &middot; Obligation</span><span class="mins">6 min</span></div>
   <h2>Recording Consent and the Confidentiality Obligation</h2>
@@ -2208,6 +2240,24 @@ var CHAIN=[
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fail)}else{fail()}
  };
 })();
+
+/* ================= 10b. Word, Excel, PowerPoint: which app, or not an AI task ================= */
+var OFFI=[
+ {t:'Update the review letter\u2019s figures and the three decisions from the meeting',k:'word',w:'Prose from a source you hand it, with every change marked. The letter\u2019s structure stays yours.'},
+ {t:'Add this year\u2019s column to the cash-flow table using last year\u2019s formulas',k:'excel',w:'A repeatable change to a sheet it can see. Ask it to say which formulas it copied.'},
+ {t:'Rebuild the six review slides from the meeting summary',k:'ppt',w:'The summary is the source; the template is the constraint. One decision per slide keeps it checkable.'},
+ {t:'Decide whether to recommend a sale or a gift of the units',k:'none',w:'A judgment, and the basis for it is what the file needs (\u00a710). An assistant can list the considerations; it cannot own the decision.'},
+ {t:'Flag every cash-flow cell that moved more than ten percent',k:'excel',w:'Arithmetic over the sheet, stated as a rule. Exactly what the Excel assistant is for, and exactly what you then read.'},
+ {t:'Sign off the letter before it goes to the client',k:'none',w:'The check is yours. Every number against its source, every decision against the meeting. Nothing in the app does this for you.'}
+];
+var OFFB=[
+ {k:'word',t:'Word',d:'Text that changes: letters, memos, the plan narrative.'},
+ {k:'excel',t:'Excel',d:'Figures and formulas: tables, projections, comparisons.'},
+ {k:'ppt',t:'PowerPoint',d:'The deck: slides rebuilt from a source, inside a template.'},
+ {k:'none',t:'Not an AI task',d:'A decision, or a check, that is yours.'}
+];
+mkSorter({list:$('offList'),boxes:$('offBoxes'),out:$('offOut'),key:$('offKey'),items:OFFI,buckets:OFFB,label:'Progress',gate:'g9b',
+ after:'<span class="good">The pattern: the assistant changes a file from a source you give it, and you check the result. The decision and the sign-off never move.</span>'});
 
 /* ================= 11. Predict then reveal ================= */
 (function(){

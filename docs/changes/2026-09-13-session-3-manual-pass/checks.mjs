@@ -240,3 +240,16 @@ await check('JN-008', async (page) => {
   const msg = await page.evaluate(() => document.getElementById('ntCopyMsg').textContent);
   must(msg.length > 0, 'no copy message after the copy button');
 });
+
+/* JN-009: the Office section is core, its six tasks sort across four columns, the key opens after the last. */
+await check('JN-009', async (page) => {
+  const r0 = await page.evaluate(() => { const s = document.getElementById('sOff'); return { apx: s.classList.contains('apx'), chips: s.querySelectorAll('#offList button').length, cols: s.querySelectorAll('#offBoxes .bslot').length, txt: s.textContent }; });
+  must(!r0.apx && r0.chips === 6 && r0.cols === 4, `sOff apx=${r0.apx}, ${r0.chips} chips, ${r0.cols} columns`);
+  must(/Word/.test(r0.txt) && /Excel/.test(r0.txt) && /PowerPoint/.test(r0.txt), 'the three apps are not all named');
+  const cols = [1, 2, 3, 4, 2, 4]; /* word, excel, ppt, none, excel, none */
+  for (let i = 0; i < 6; i++) { await page.click(`#offList button:nth-child(${i + 1})`); await page.click(`#offBoxes .bslot:nth-child(${cols[i]}) button.lbox`); }
+  const r = await page.evaluate(() => ({ key: getComputedStyle(document.getElementById('offKey')).display !== 'none', score: document.getElementById('offKey').textContent.replace(/\s+/g, ' '),
+    placed: [...document.querySelectorAll('#offBoxes ul.placed')].map((u) => u.children.length).join(',') }));
+  must(r.key && /Score\s*6 of 6/.test(r.score), `key shown ${r.key}: ${r.score.slice(-60)}`);
+  must(r.placed === '1,2,1,2', `items per column ${r.placed}`);
+});
