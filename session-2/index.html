@@ -1832,9 +1832,9 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
   <div class="panel" data-task="t-s11" data-comp="work-along-gate">
     <div class="row" style="margin-bottom:16px">
-      <button class="btn sel mini act" data-tpl="email">Client explanation, IDGT structure</button>
-      <button class="btn sel mini" data-tpl="note">Case note formatter</button>
-      <button class="btn sel mini" data-tpl="summary">One-page plan summary</button>
+      <button class="btn sel mini act" data-tpl="email" aria-pressed="true">Client explanation, IDGT structure</button>
+      <button class="btn sel mini" data-tpl="note" aria-pressed="false">Case note formatter</button>
+      <button class="btn sel mini" data-tpl="summary" aria-pressed="false">One-page plan summary</button>
     </div>
     <div id="rubric"></div>
     <div class="out" id="rubricOut" style="margin-top:18px"></div>
@@ -2767,8 +2767,8 @@ var RUB={
   }
   document.querySelectorAll('[data-tpl]').forEach(function(b){
     b.onclick=function(){
-      document.querySelectorAll('[data-tpl]').forEach(function(x){x.classList.remove('act')});
-      b.classList.add('act');cur=b.getAttribute('data-tpl');render();
+      document.querySelectorAll('[data-tpl]').forEach(function(x){x.classList.remove('act');x.setAttribute('aria-pressed','false')});
+      b.classList.add('act');b.setAttribute('aria-pressed','true');cur=b.getAttribute('data-tpl');render();
     };
   });
   render();
