@@ -368,6 +368,31 @@ await check('JN-036', async (page) => {
   must(closed, 'case dialog did not close');
 });
 
+/* JN-037: the benchmark-task block: six kinds, each with a prompt and a scoring line, between the five
+   advisory tasks and the frontier chart, chipped M to src-aa and labelled illustrative. */
+await check('JN-037', async (page) => {
+  const r = await page.evaluate(() => {
+    const h3s = [...document.querySelectorAll('#s5 h3')];
+    const h = h3s.find((x) => /What a benchmark task is/.test(x.textContent));
+    const tasks = h3s.find((x) => /^\s*What a task is\s*$/.test(x.textContent));
+    const grid = document.getElementById('benchKinds');
+    const cards = grid ? [...grid.querySelectorAll('.card')] : [];
+    const chart = document.getElementById('frontierChart');
+    const order = !!(h && tasks && chart && (tasks.compareDocumentPosition(h) & 4) && (h.compareDocumentPosition(chart) & 4));
+    const para = h ? h.nextElementSibling : null;
+    const chip = !!(para && para.querySelector('.conf[data-src="src-aa"]'));
+    const sim = !!(grid && grid.nextElementSibling && grid.nextElementSibling.querySelector('.sim'));
+    const prompts = cards.filter((c) => { const p = c.querySelector('.pel'); return p && p.textContent.replace(/^\s*Prompt/, '').trim().length > 40; }).length;
+    const scored = cards.filter((c) => /Scored/.test(c.textContent)).length;
+    return { h: !!h, n: cards.length, order, chip, sim, prompts, scored };
+  });
+  must(r.h, 'the "What a benchmark task is" heading is missing');
+  must(r.n === 6, `${r.n} kind cards, expected 6`);
+  must(r.prompts === 6 && r.scored === 6, `prompts ${r.prompts}, scoring lines ${r.scored}`);
+  must(r.order, 'block is not between the task cards and the frontier chart');
+  must(r.chip && r.sim, 'M chip or illustrative label missing');
+});
+
 await browser.close();
 for (const [id, st, why] of out) console.log(`${id} ${st}${why ? ' ' + why : ''}`);
 const fails = out.filter((r) => r[1] === 'FAIL').length;

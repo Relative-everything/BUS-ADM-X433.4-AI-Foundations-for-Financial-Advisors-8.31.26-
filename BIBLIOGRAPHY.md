@@ -5,7 +5,7 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**63 works, 198 references across 5 lessons.** 50 are
+**63 works, 197 references across 5 lessons.** 50 are
 cited by at least one claim; 13 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
@@ -661,8 +661,8 @@ Drawing on Kitces Research on Advisor Productivity, fielded autumn 2024: the gre
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **4** |
-| Cited in | S2 `#s9` ×2 · S2 `#s12d` · S2 `#s12` |
+| **Total references** | **3** |
+| Cited in | S2 `#s9` ×2 · S2 `#s12d` |
 
 Approximately one hour of note, summary and follow-up work per two-hour client meeting. The reliance figure travelling with it is reported via Advisor360 and Kitces Research through a secondary aggregator and is directional only.
 

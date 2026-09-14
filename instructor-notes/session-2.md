@@ -61,6 +61,7 @@ Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with 
 ### Flow
 - Deliver DW-092 items 9 and 11 with the chart up.
 - Element: `#frontierChart`, then the estimator (`t-s5`, `parameter-sandbox`). Poll P2 at the tier decision: "Which tier will your final-project workflow use? Sonnet 5 / Opus 5 / Fable 5 / another vendor / undecided."
+- The benchmark-task block (`#benchKinds`, six example prompts in the shape of the index's question kinds) is read, not run: point at Kind 06 as the nearest to their week, then go to the chart. The kinds are described in general terms at M and are on the DW-118 re-check list.
 - Finding 02's token-count clause is gone; quote only the two per-task costs. The estimator is a task mix: move the judgment slider live, the point is the share, not the list price. The index scores and OpenAI rates carry an August date (DW-118).
 
 ## s6 (§03 P.T.C.F, 6:45 PM, 10 min) [8:45 CT]
