@@ -221,3 +221,22 @@ await check('JN-007', async (page) => {
   }
   must(await page.evaluate(() => document.querySelector('[data-gate="g7"]').classList.contains('done')), 'g7 not marked after all five stages');
 });
+
+/* JN-008: five turns render; each stage opens on its own click; the instruction copies. */
+await check('JN-008', async (page) => {
+  must(!/var RUB=|noteScore|noteBox/.test(SRC), 'the note-scoring heuristic survives in the source');
+  const r0 = await page.evaluate(() => ({ turns: document.querySelectorAll('#mtgExcerpt strong').length, stages: document.querySelectorAll('#ntStages .ntstage').length,
+    open: [...document.querySelectorAll('#ntStages .ntout')].filter((o) => o.style.display !== 'none').length }));
+  must(r0.turns === 5 && r0.stages === 4 && r0.open === 0, `turns ${r0.turns}, stages ${r0.stages}, open at load ${r0.open}`);
+  await page.click('#ntStages button[data-i="1"]');
+  const r1 = await page.evaluate(() => [...document.querySelectorAll('#ntStages .ntout')].map((o) => o.style.display !== 'none'));
+  must(r1.join() === 'false,true,false,false', `after opening stage 2: ${r1.join()}`);
+  const t = await page.evaluate(() => document.querySelectorAll('#ntStages .ntout')[1].textContent);
+  must(/Kept:/.test(t) && /Nathan/.test(t) && !/undefined/.test(t), 'extraction panel lacks its content');
+  for (const i of [0, 2, 3]) await page.click(`#ntStages button[data-i="${i}"]`);
+  must(await page.evaluate(() => document.querySelector('[data-gate="g8"]').classList.contains('done')), 'g8 not marked after all four stages');
+  await page.click('#ntCopy');
+  await page.waitForTimeout(200);
+  const msg = await page.evaluate(() => document.getElementById('ntCopyMsg').textContent);
+  must(msg.length > 0, 'no copy message after the copy button');
+});

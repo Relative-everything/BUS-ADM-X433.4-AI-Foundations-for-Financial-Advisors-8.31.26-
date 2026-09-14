@@ -586,6 +586,7 @@ label.fl{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:
 .placed li.good b{color:var(--on)}.placed li.flag b{color:var(--warn)}
 .placed li span{display:block;color:var(--muted);font-size:12.5px;margin-top:3px;line-height:1.4}
 ul.pts{margin:14px 0;padding-left:22px;max-width:64ch}ul.pts li{margin:6px 0;line-height:1.55}
+.ntstage{margin-top:10px}.ntstage .ntout{margin-top:8px}
 
 .quiz .qitem{padding:18px 0;border-bottom:1px solid var(--line)}
 .quiz .qitem:last-child{border-bottom:none}
@@ -1379,36 +1380,47 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </section>
 
 <section class="slide" id="s10" data-nav="Note-takers">
-  <div class="eyebrow"><span>07 &middot; Architecture</span><span class="mins">5 min</span></div>
-  <h2>Note-Taker Architecture and the Extraction Step</h2>
+  <div class="eyebrow"><span>07 &middot; The note-taker</span><span class="mins">7 min</span></div>
+  <h2>How an AI Note-Taker Works, and How to Prompt It</h2>
 
-  <p class="big">Transcription, extraction, categorisation, follow-up. Transcription is a solved-enough engineering problem. Extraction is where a language model decides which sentences from ninety minutes of conversation constitute the record, and it carries essentially all of the professional risk.</p>
+  <p class="big">A note-taker does four things in order: it transcribes, it extracts, it categorises, and it drafts the follow-up. The first is nearly solved. The second is where a model decides which sentences from ninety minutes become the record.</p>
 
-  <p>Kitces frames the economics: the average advisor spends more than an hour on prep and follow-up for every hour in client meetings. The prep-and-follow-up load, not the meeting load, caps client capacity. That is the number the category is sold against.</p>
+  <ul class="pts">
+    <li><b>Before the meeting.</b> Get consent to record. Add the tool to the call, or plan to upload the recording afterwards. Tell it what the summary must contain.</li>
+    <li><b>During.</b> Talk. The tool listens and does not need managing.</li>
+    <li><b>After.</b> Read the summary against the transcript before it reaches the client or the file. Then send the recap and log the note.</li>
+  </ul>
 
-  <p>The counterintuitive finding is worth sitting with. Adoption is highest among solo advisors with nobody to delegate to, about a third lower on two-to-three-person teams, higher again on larger teams where the use shifts to keeping absent colleagues informed, and drops off sharply at the ultra-high-net-worth end where revenue per client supports more humans in the room. Advisors producing the most comprehensive plans use these tools at nearly four times the rate of those producing the narrowest. Meg Cole sits in the segment with the lowest adoption and the highest stakes.</p>
+  <p>Kitces measures why the category exists: the average advisor spends more than an hour on prep and follow-up for every hour in client meetings <span class="conf h" data-src="src-kitces-notetakers">H</span>. The tool is sold against that hour.</p>
 
-  <div class="panel" data-task="t-s10" data-comp="timed-ritual">
-    <span class="do">Do this now — 5 minutes</span>
-    <h4>Note Writing and the Extraction Score</h4>
-    <p class="hint">A synthetic excerpt from Meg and David's annual review. Write the CRM note you would want an extraction step to produce. A heuristic scores it against five documentation elements. The heuristic is crude by design — read the misses, not the number.</p>
-    <div class="mpanel has" style="min-height:0"><span class="hd">Synthetic meeting excerpt — Cole annual review, no real client data</span>
-      <!-- The excerpt is CASE.md PART O, rendered from COLEDOCS at load. It was
-           static markup here until 2026-08-25, which is one more copy of the
-           case that nothing compared against the case. -->
+  <div class="panel" data-task="t-s10" data-comp="spoiler-reveal">
+    <span class="do">Do this now: 4 minutes</span>
+    <h4>The Four Stages on the Cole Annual Review</h4>
+    <p class="hint">Read the excerpt, then open each stage to see what it produces. The outputs are written for this lesson to show the shape of each step; a real tool's wording will differ.</p>
+    <div class="mpanel has" style="min-height:0"><span class="hd">Synthetic meeting excerpt, Cole annual review, no real client data</span>
+      <!-- The excerpt is CASE.md PART O, rendered from COLEDOCS at load. -->
       <span id="mtgExcerpt" style="font-family:'Source Serif 4',serif;font-size:15.5px;line-height:1.6;display:block"></span>
     </div>
-    <label class="fl" for="noteBox">Your CRM note</label>
-    <textarea id="noteBox" placeholder="Write the note as you would want it to appear in the client record."></textarea>
-    <div class="row" style="margin-top:12px"><button class="btn" id="noteScore">Score the note</button></div>
-    <div id="noteOut" class="mpanel"><span class="hd">Rubric coverage</span><span class="nil">Write a note, then score it.</span></div>
+    <p style="margin:14px 0 8px"><span class="sim">Stage outputs written for this lesson, illustrative</span></p>
+    <div id="ntStages"></div>
   </div>
 
-  <p class="src">Kitces.com (15 Jan 2025), <em>Best AI Notetakers For Financial Advisor Meetings</em>, drawing on Kitces Research on Advisor Productivity (fielded autumn 2024) — the &gt;1:1 prep-and-follow-up ratio, the solo-vs-team adoption pattern, the UHNW drop-off, and the ~4× rate for most-extensive versus most-targeted plans <span class="conf h" data-src="src-kitces-notetakers">H — named research</span>. The excerpt is synthetic case content and is held in CASE.md Part O, rendered here rather than written here. It presupposes an advisory engagement that CASE.md &sect;A.5 denies; the conflict is recorded at Part O and in docs/deferred-work.md rather than settled in this footer. The scoring heuristic is keyword-based <span class="conf l" data-src="src-case">L — heuristic</span>.</p>
+  <h4 style="margin-top:26px">How to prompt it</h4>
+  <p>Most tools take a standing instruction or a template. Tell it what to extract and what to leave out. Paste this into the tool's instruction field, or into Claude with the transcript attached.</p>
+  <pre id="ntPrompt">Summarise this client meeting for the file. Extract, under these headings and nothing else:
+1. DECISIONS made in the meeting, each with who made it.
+2. ACTION ITEMS, each with an owner and a date if one was given.
+3. OPEN QUESTIONS the client asked that were not answered.
+4. FACTS THAT CHANGED since the last review, in the client's own words.
+5. CONSTRAINTS: anything a named person must not be told.
+Quote the transcript; do not paraphrase a figure. Do not infer what anyone wants.
+Do not record account numbers, dates of birth or identity checks.
+If a heading has nothing under it, write "none".</pre>
+  <div class="row"><button class="btn" id="ntCopy">Copy the instruction</button><span id="ntCopyMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
 
+  <p class="src">Kitces.com (15 Jan 2025), <em>Best AI Notetakers For Financial Advisor Meetings</em>, drawing on Kitces Research on Advisor Productivity (fielded autumn 2024): more than an hour of prep and follow-up per meeting hour <span class="conf h" data-src="src-kitces-notetakers">H</span>. The excerpt is CASE.md Part O, rendered from the injected case; it presupposes an advisory engagement that CASE.md &sect;A.5 denies, recorded there and in the register rather than settled here. The stage outputs and the instruction are written for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
-
-  <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Write the CRM note you would want, then read the misses rather than the score.</div></div>
+  <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open all four stages, then copy the instruction into your own tool.</div></div>
 
 </section>
 
@@ -2144,10 +2156,7 @@ var CHAIN=[
 
 /* ================= 9b. The meeting excerpt ================= */
 /* CASE.md PART O, through COLEDOCS. The five turns are captured text, not a
-   description of them, so the excerpt and the case cannot drift apart. The RUB
-   heuristic below scores the STUDENT'S note and never this text, so none of the
-   five rubric elements is a property of these lines; what IS a property of them
-   is which elements a student can find at all. */
+   description of them, so the excerpt and the case cannot drift apart. */
 (function(){
  var host=$('mtgExcerpt');if(!host)return;
  var h='';
@@ -2157,34 +2166,46 @@ var CHAIN=[
  host.innerHTML=h;
 })();
 
-/* ================= 10. Note scoring ================= */
-var RUB=[
- {n:'The buyer approach, and that nothing is signed',re:/(competitor|approach|acquir|sale|sell|purchas|inquiry|letter|offer)/i,g:'A third party approached the owner about buying the company. Recording the approach without recording that nothing is signed misstates the posture; recording neither loses the meeting.'},
- {n:'The confidentiality constraint on Nathan',re:/(nathan|son|not told|does not know|doesn.t know|confidential|withhold|undisclosed)/i,g:'Meg named a person who must not learn this. That constraint governs who may see the note, which means it belongs in the note \u2014 and it is exactly the sentence a summariser treats as personal colour.'},
- /* Recurring question, session 3 angle: the annual call decision has to be
-    documented, including what it costs next year. See docs/spine-brief.md. */
- {n:'The open question Meg actually asked',re:/(timing|time|window|delay|when|sequence|still open|pending|unresolved|open)/i,g:'An unanswered client question is the most important thing in any note. Here it is the recurring one: how much of the note to call this year, what that costs in every year after, and whether a different lever is the better answer. A note that records the decision without recording its forward cost has documented half of it.'},
- {n:'The attorney position on the note term',re:/(demand|call|note|term|attorney|counsel)/i,g:'Counsel wants the note kept callable on demand. That is a position taken by a third party, and it is the thing you will be asked to explain if the structure is later questioned.'},
- {n:'David\u2019s request to re-verify the appraisal',re:/(apprais|revalu|re-run|rerun|revisit|stale|two years|2023|update the val)/i,g:'A client asked for a specific piece of diligence before signing. This is an action item with an owner and it is the item extraction most often drops as an aside.'}
-];
+/* ================= 10. The four stages, opened one at a time ================= */
+/* The transcription stage quotes COLEDOCS; the other three are written for
+   this lesson to show the shape of each step and are labelled illustrative. */
 (function(){
- var T=$('noteBox'),O=$('noteOut');
- $('noteScore').onclick=function(){
-  var v=T.value.trim();
-  if(v.length<10){O.className='mpanel';O.innerHTML='<span class="hd">Rubric coverage</span><span class="nil">Write a note of at least a sentence.</span>';return}
-  var hit=0,h='<span class="hd">Rubric coverage</span>';
-  RUB.forEach(function(r){
-   var ok=r.re.test(v);if(ok)hit++;
-   h+=(ok?'<span class="good">\u2713 ':'<span class="flag">\u2717 ')+esc(r.n)+'</span>'+(ok?'':'<br><span style="color:#6F7B78">'+esc(r.g)+'</span>')+'<br>';
-  });
-  var wc=v.split(/\s+/).length;
-  h+='<br><span class="hd">Score</span>'+hit+' of 5 elements, '+wc+' words.<br>';
-  if(/\b(seems|appears|probably|likely|presumably|felt that|clearly wants)\b/i.test(v))
-   h+='<span class="flag">Contains inference language. A record states what was said; an inference is your conclusion and belongs in the basis entry, labelled as such.</span><br>';
-  if(hit===5)h+='<span class="good">Full coverage. Now the harder question: which of the five would an extraction step have produced without you? The confidentiality constraint and the unanswered question are the two that never survive summarisation.</span>';
-  else h+='<span style="color:#6F7B78">The elements you missed are the ones an extraction step also tends to miss \u2014 constraints, unanswered questions and second speakers are the three categories summarisation compresses first.</span>';
-  h+='<br><br><span class="hd">Heuristic caveat</span><span style="color:#6F7B78">This scorer is keyword matching. It will credit a note that names the right words in the wrong relation, and it cannot assess accuracy at all. Treat the misses as signal and the hits as unproven.</span>';
-  O.className='mpanel has';O.innerHTML=h;
+ var W=$('ntStages');if(!W)return;
+ var T=COLEDOCS.transcript;
+ function turn(i){return '<strong>'+esc(T[i].who)+':</strong> '+esc(T[i].said)}
+ var STAGES=[
+  {n:'1. Transcription',w:'Speech becomes time-stamped text with a speaker label. Mistakes here are misheard words and swapped speakers; a misheard name becomes a different person in the record.',
+   out:function(){var h='';T.forEach(function(t,i){h+='[0'+i+':'+(i?'4':'0')+'] '+turn(i)+'<br>'});return h}},
+  {n:'2. Extraction',w:'A model picks the sentences that count. This is where the professional risk sits: whatever it drops leaves no trace.',
+   out:function(){return '<span class="good">Kept:</span><br>'+turn(1)+'<br>'+turn(3)+'<br>'+turn(4)+'<br><br><span class="flag">Dropped as conversational:</span> the two Advisor questions, and, in many tools, the clause about Nathan, which reads as personal colour and is the one constraint the file most needs.'}},
+  {n:'3. Categorisation',w:'The kept sentences are sorted under headings. The headings are the ones you gave it; a tool with no instruction picks its own.',
+   out:function(){return '<span class="hd">Decisions</span>none<br><span class="hd">Action items</span>Appraisal to be looked at again before anything is signed (raised by David; no owner assigned)<br><span class="hd">Open questions</span>Whether the approach changes the timing on the note structure (Meg; not answered)<br><span class="hd">Facts that changed</span>An unsolicited approach from a competitor last autumn; nothing signed, nothing in writing<br><span class="hd">Constraints</span>Nathan is not to be told until there is something to tell<br><span class="hd">Third-party position</span>Counsel wants the note kept callable on demand'}},
+  {n:'4. Follow-up',w:'A recap email and a task list are drafted from the categories. Read it as the client will: anything stated as settled is now advice.',
+   out:function(){return '<span class="hd">Draft recap</span>Meg, David, thank you for today. You told us a competitor wrote to you last autumn about buying the company, and that nothing is signed. Counsel prefers the note stay callable on demand. David asked that the appraisal be looked at again before anything is signed; we will arrange that. Still open: whether the approach changes the timing on the note structure.<br><br><span class="hd">Task</span>Arrange the appraisal review. Owner: you. Date: before any document is signed.<br><br><span class="flag">Not in the email:</span> the constraint about Nathan. The email goes to the client; the constraint goes in the file.'}}
+ ];
+ var opened={};
+ STAGES.forEach(function(st,i){
+  var d=document.createElement('div');d.className='ntstage';
+  d.innerHTML='<button class="btn sel mini" type="button" data-i="'+i+'">'+esc(st.n)+'</button>'+
+    '<div class="mpanel keyhide ntout" style="display:none"><span class="hd">What this stage does</span>'+esc(st.w)+'<br><br><span class="hd">What it produces here</span>'+st.out()+'</div>';
+  var b=d.querySelector('button'),o=d.querySelector('.ntout');
+  b.onclick=function(){var on=o.style.display!=='none';o.style.display=on?'none':'block';o.className='mpanel keyhide ntout'+(on?'':' has');b.classList.toggle('act',!on);
+   if(!on){opened[i]=1;if(Object.keys(opened).length===STAGES.length&&typeof mark==='function')mark('g8')}};
+  W.appendChild(d);
+ });
+ REVEALS.push(function(){[].slice.call(W.querySelectorAll('.ntout')).forEach(function(o){o.style.display='block';o.className='mpanel keyhide ntout has'})});
+})();
+(function(){
+ var B=$('ntCopy'),M=$('ntCopyMsg'),P=$('ntPrompt');if(!B)return;
+ B.onclick=function(){
+  var txt=P.textContent;
+  function ok(){M.textContent='Copied.';setTimeout(function(){M.textContent=''},2500)}
+  function fail(){
+   var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();
+   try{document.execCommand('copy');ok()}catch(e){M.textContent='Select the block and copy manually.'}
+   document.body.removeChild(ta);
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fail)}else{fail()}
  };
 })();
 
