@@ -358,3 +358,16 @@ await check('JN-014e', async (page) => {
   const r = await page.evaluate(() => ({ out: document.getElementById('predOut').textContent, fig: getComputedStyle(document.getElementById('figSlope')).display !== 'none', cap: document.querySelector('#figSlope figcaption').textContent }));
   must(/Correct/.test(r.out) && r.fig && !/12\.8%/.test(r.cap), `after predicting last: ${r.out.slice(0, 50)}, fig ${r.fig}`);
 });
+
+/* JN-014f: C4 still runs vote, defence, complication, re-vote; its text names no time of day. */
+await check('JN-014f', async (page) => {
+  const sec = SRC.slice(SRC.indexOf('id="s15"'), SRC.indexOf('id="s16"'));
+  must(!/tonight/i.test(sec), '"tonight" survives in C4');
+  await page.click('#tierbar button[data-level="1"]');
+  await page.click('#voteBtns button:nth-child(3)');
+  const r = await page.evaluate(() => ({ d: getComputedStyle(document.getElementById('defence')).display !== 'none', t: document.getElementById('defence').textContent }));
+  must(r.d && /The complication/.test(r.t) && /ranked third/.test(r.t) && /in §03 and found Article VII/.test(r.t), 'defence panel missing its parts');
+  await page.click('#revoteBtns button:nth-child(1)');
+  const v = await page.evaluate(() => document.getElementById('revoteOut').textContent);
+  must(/You moved/.test(v), `re-vote readout: ${v.slice(0, 60)}`);
+});

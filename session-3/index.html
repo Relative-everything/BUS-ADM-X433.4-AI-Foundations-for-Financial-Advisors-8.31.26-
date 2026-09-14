@@ -1714,12 +1714,12 @@ then a list of every element where my answer was thin.</pre>
 
   <p class="big">The question: does a citation-backed output make you check more, or check less?</p>
 
-  <p>This divides the room, which is the only reason it is on the schedule. One side holds that a citation is a handle — it gives you something specific to pull on, so you check more and check better. The other holds that a citation is a signal of completed work, and that the presence of a source is read by a busy professional as evidence the source was consulted. Tonight supplies evidence for the second position and you have supplied evidence for the first all evening by finding the Article VII failure yourselves.</p>
+  <p>This divides the room. One side: a citation is a handle, something specific to pull on, so you check more. The other: a citation reads as completed work, so a busy professional checks less. &sect;04 supplied evidence for the second; you supplied evidence for the first by finding the Article VII failure yourselves.</p>
 
-  <p>Structure: commit before anyone speaks; two speakers per side, minority first; one complication introduced by the instructor; re-vote with both distributions on screen. A zero delta is a finding, not a failure — it means a position held under evidence.</p>
+  <p>Commit before anyone speaks; two speakers per side, minority first; one complication; re-vote with both distributions on screen. A zero delta is a finding, not a failure.</p>
 
   <div class="panel" data-task="t-s15" data-comp="sealed-vote-debate">
-    <span class="do">Locked vote — commit before discussion</span>
+    <span class="do">Locked vote: commit before discussion</span>
     <h4>Vote one</h4>
     <p class="hint">Your first vote locks. The room distribution stays hidden until after the re-vote. Answer for what you actually do, not what you would recommend.</p>
     <div class="row" id="voteBtns"></div>
@@ -1729,7 +1729,7 @@ then a list of every element where my answer was thin.</pre>
     <div id="revoteOut" class="mpanel keyhide" style="display:none"></div>
   </div>
 
-  <p class="src">Magesh et al. (2025) report that the tools tested made claims not supported by the sources they cited, which is the specific failure a reader who trusts the citation will not catch <span class="conf h" data-src="src-magesh">H</span>. Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025), <em>The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects from a Survey of Knowledge Workers</em>, Microsoft Research / CHI 2025 — the Session 5 reading; characterised here only by its title claim of self-reported reductions in cognitive effort <span class="conf m" data-src="src-lee-cognitive">M — full findings not re-verified in this build</span>. No claim is made here about the size or direction of any measured effect on verification behaviour.</p>
+  <p class="src">Magesh et al. (2025) report that the tools tested made claims not supported by the sources they cited, the failure a reader who trusts the citation will not catch <span class="conf h" data-src="src-magesh">H</span>. Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025), <em>The Impact of Generative AI on Critical Thinking</em>, Microsoft Research / CHI 2025, characterised here only by its title claim of self-reported reductions in cognitive effort <span class="conf m" data-src="src-lee-cognitive">M, full findings not re-verified</span>.</p>
 
   <div class="check" data-gate="ga4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote, defend, absorb the complication, re-vote.</div></div>
 
@@ -2523,10 +2523,10 @@ function showDefence(){
  var D=$('defence');if(!D)return;
  if(v1===null&&!document.body.classList.contains('reveal'))return;
  D.className='mpanel has keyhide';
- D.innerHTML='<span class="hd">Defence phase \u2014 7 to 9 minutes, minority called first</span>'+
-  '<span class="good">If you voted "check more":</span> a citation converts an unfalsifiable claim into a falsifiable one. Before grounding you could only assess plausibility. Now you can open the document. You did exactly this tonight and found Article VII.<br><br>'+
+ D.innerHTML='<span class="hd">Defence phase: 7 to 9 minutes, minority called first</span>'+
+  '<span class="good">If you voted "check more":</span> a citation converts an unfalsifiable claim into a falsifiable one. Before grounding you could only assess plausibility. Now you can open the document. You did exactly this in \u00a703 and found Article VII.<br><br>'+
   '<span class="good">If you voted "check the same":</span> your verification protocol is a property of your process, not of the output format. If it did not change when you adopted the tool, that is a defensible position and the burden is on the other two sides.<br><br>'+
-  '<span class="good">If you voted "check less":</span> the presence of a source is read by a busy professional as evidence the source was consulted. Magesh et al. measured tools making claims their own cited sources did not support \u2014 a failure only visible to someone who opens the citation, which is the thing the citation makes you feel you need not do.<br><br>'+
+  '<span class="good">If you voted "check less":</span> the presence of a source is read by a busy professional as evidence the source was consulted. Magesh et al. measured tools making claims their own cited sources did not support, a failure only visible to someone who opens the citation, which is the thing the citation makes you feel you need not do.<br><br>'+
   '<span class="hd">The complication</span><span class="flag">Every failure you saw in this session was fully cited. Article VII was retrieved accurately and quoted accurately, and the one document that held the right answer, the appraisal, ranked third and was never the passage the model answered from. Not one of those failures would have been caught by opening the citation and confirming the passage says what the model said it says, which is step two of the verification order you ranked at the start of this session. Checking the citation harder would not have helped. Only knowing which document should have been there would.</span>';
  D.style.display='block';
 }
@@ -2538,7 +2538,7 @@ function showRevote(){
  if(v1===null||v2===null){h+='<span class="nil">Both votes required to compute a delta.</span>'}
  else{
   h+='Vote one: '+esc(VOTES[v1].t)+'  \u2192  Vote two: '+esc(VOTES[v2].t)+'<br><br>';
-  h+=moved?'<span class="good">You moved. Say out loud which sentence moved you \u2014 that sentence is the finding, not the vote.</span>'
+  h+=moved?'<span class="good">You moved. Say out loud which sentence moved you; that sentence is the finding, not the vote.</span>'
           :'<span class="good">Zero delta. That is a finding, not a failure: it means a position held under evidence, which is the same epistemic move this course asks you to make about model output.</span>';
  }
  R.className='mpanel has keyhide';R.innerHTML=h;R.style.display='block';
@@ -2552,7 +2552,7 @@ function showRevote(){
    v1=i;
    [].slice.call(B.children).forEach(function(c,j){c.classList.toggle('act',j===i);if(j!==i)c.classList.add('done')});
    O.className='mpanel has';
-   O.innerHTML='<span class="hd">Vote one \u2014 locked</span>'+esc(v.t)+'<br><span style="color:#6F7B78">Locked. You cannot change this one. The room distribution stays hidden until after the re-vote.</span>';
+   O.innerHTML='<span class="hd">Vote one, locked</span>'+esc(v.t)+'<br><span style="color:#6F7B78">Locked. You cannot change this one. The room distribution stays hidden until after the re-vote.</span>';
    showDefence();
   };
   B.appendChild(b)});
