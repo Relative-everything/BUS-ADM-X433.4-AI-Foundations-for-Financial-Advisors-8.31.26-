@@ -1930,7 +1930,7 @@ document.addEventListener('keydown',function(e){
     var on=document.body.classList.contains('reveal');
     $('ovr').textContent=on?'Override ON — all answers revealed':'Shift+U — reveal all answer panels';
     [].slice.call(document.querySelectorAll('.keyhide')).forEach(function(el){el.style.display=on?'block':'none'});
-    if(on){REVEALS.forEach(function(f){f()});showSlope();showDocKey();showDefence();showRevote();}
+    if(on){REVEALS.forEach(function(f){f()});}
   }});
 
 /* ================= 1. Session 2 retrieval bridge ================= */
@@ -1938,7 +1938,7 @@ var BRIDGE=[
  {t:'Confirm the authority exists at all.',k:1,w:'Nothing downstream matters if the citation is invented. This is the cheapest check and the one most often skipped because the citation looks well formed.'},
  {t:'Confirm it says what the model says it says.',k:2,w:'A real authority attached to a claim it does not support is the failure Magesh et al. measured, and it is invisible to anyone who stops at step one.'},
  {t:'Confirm it is still current.',k:3,w:'Supersession is silent. A correct reading of a superseded source produces a confident wrong answer with a verifiable citation.'},
- {t:'Confirm it applies to these facts.',k:4,w:'Last because it is the most expensive and requires the other three to have passed. This is the step tonight is about: the Cole file will hand you a real, current, correctly-read authority that governs a different transaction.'}
+ {t:'Confirm it applies to these facts.',k:4,w:'Last because it is the most expensive and requires the other three to have passed. This is the step this session is about: the Cole file will hand you a real, current, correctly-read authority that governs a different transaction.'}
 ];
 (function(){
  var L=$('bridgeList'),O=$('bridgeOut'),ord=[];
@@ -2412,6 +2412,7 @@ var OFFB=[
 mkSorter({list:$('offList'),boxes:$('offBoxes'),out:$('offOut'),key:$('offKey'),items:OFFI,buckets:OFFB,label:'Progress',gate:'g9b',
  after:'<span class="good">The pattern: the assistant changes a file from a source you give it, and you check the result. The decision and the sign-off never move.</span>'});
 
+REVEALS.push(showSlope);
 /* ================= 11. Predict then reveal ================= */
 (function(){
  var B=$('predBtns'),O=$('predOut'),opts=['First','Middle of the pack','Last'];
@@ -2567,6 +2568,7 @@ function showRevote(){
   RB.appendChild(b)});
 })();
 
+REVEALS.push(showDefence,showRevote);
 /* ================= 16. The meeting checklist ================= */
 var CKL=[
  {g:'Before',t:'Consent to record is asked for and noted, every meeting.'},

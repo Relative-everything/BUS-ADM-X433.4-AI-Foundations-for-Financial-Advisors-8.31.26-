@@ -371,3 +371,20 @@ await check('JN-014f', async (page) => {
   const v = await page.evaluate(() => document.getElementById('revoteOut').textContent);
   must(/You moved/.test(v), `re-vote readout: ${v.slice(0, 60)}`);
 });
+
+/* Override: Shift+U opens every registered key without a script error, and no time of day survives in the source. */
+await check('JN-020', async (page) => {
+  must(!/tonight/i.test(SRC), '"tonight" survives in the source');
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  await page.keyboard.down('Shift'); await page.keyboard.press('KeyU'); await page.keyboard.up('Shift');
+  await page.waitForTimeout(200);
+  must(errors.length === 0, 'Shift+U threw: ' + errors.join(' | '));
+  const r = await page.evaluate(() => ({ reveal: document.body.classList.contains('reveal'),
+    keys: ['pairKey', 'grKey', 'offKey', 'docKey', 'ragKey', 'chkKey', 'figSlope', 'defence', 'revoteOut'].map((id) => [id, getComputedStyle(document.getElementById(id)).display !== 'none']),
+    gates: document.querySelectorAll('[data-gate].done').length, total: document.querySelectorAll('[data-gate]').length }));
+  must(r.reveal, 'body.reveal not set');
+  const closed = r.keys.filter(([, v]) => !v).map(([k]) => k);
+  must(closed.length === 0, 'keys still closed after Shift+U: ' + closed.join(', '));
+  must(r.gates === r.total, `${r.gates} of ${r.total} gates marked`);
+});
