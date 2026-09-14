@@ -1,6 +1,6 @@
 # Plan: Session 2 polish pass (the seams after three deletion batches)
 From: direct request in chat, 2026-09-14 ("Execute attached on session 2", the kickoff in this folder). Date: 2026-09-14. Tier: Lite (every change is inside `session-2/index.html` or a record of one).
-Status: accepted by kickoff P3 (pre-accepted for the FIX class, reserved for PROPOSE), 2026-09-14. Toggles at their defaults: P1 land the small, propose the large; P2 ratchet authorised, falling only; P3 pre-accepted for FIX; P4 single-threaded.
+Status: implemented, 2026-09-14: the 18 page FIX rows landed one commit each (c5e782d to e9bebee), PL-015 in the records commit; 9 PROPOSE rows reported in `recommendations.md`; 9 LEFT-AS-IS rows examined and kept. Accepted by kickoff P3 (pre-accepted for the FIX class, reserved for PROPOSE), 2026-09-14. Toggles at their defaults: P1 land the small, propose the large; P2 ratchet authorised, falling only; P3 pre-accepted for FIX; P4 single-threaded.
 
 ## Reads
 - `docs/changes/2026-09-13-session-2-manual-pass/kickoff-prompt.md`: the governing process; the tooling block, the ripple list, the generated-region rule, the verification gate, the records, the halt list, the report shape.
@@ -68,4 +68,6 @@ The register is the order: P1 FIX rows in page order (PL-005, 009, 010, 016, 018
 - Screenshots at 1280 and 400 px of every edited section in `.verify-shots/`, named by PL id.
 
 ## Departures from plan
-None at acceptance.
+- `checks.mjs` (a named file) aborts every http(s) request in its browser context. Each page load waited about 13 s for the egress-blocked Google Fonts request to fail (measured 12,864 ms against 188 ms with the abort), which put one landing past the four-minute mark; nothing under test needs the request. The 09-13 harness is untouched. Recorded in the commit that carries it (58d9aaa).
+- PL-025 (a named step, `session-2/index.html`): the harness's inside-the-frame assertion failed on the first draft because the caption started at the bar axis (x 250) and ran to about 741 in a 700-unit frame at HEAD as well, an overflow the four-row layout had hidden. The caption now starts at x 14 like the §07 captions; recorded in the row and the commit (f6f0632).
+- No other file changed outside the list above; no baseline moved (T7 at 2 literal / 38 entity after every commit).
