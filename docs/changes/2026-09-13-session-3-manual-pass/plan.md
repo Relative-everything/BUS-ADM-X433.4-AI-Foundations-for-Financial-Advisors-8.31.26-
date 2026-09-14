@@ -1,6 +1,6 @@
 # Plan: Session 3 manual pass, batch 1
 From: direct request (the instructor's notes of 2026-09-13, notes-verbatim.md). Date: 2026-09-13. Tier: Lite (every change is inside an existing lesson surface; the NEW rows introduce interactions from families the page already carries, plus one family it does not, spoiler-reveal, flagged rather than escalated per the kickoff).
-Status: accepted by kickoff K2 (the message reads "read and execute attached" and "Make the updates to each section up to 3, then after 3 totally rebuild"; taken as the "implement these" acceptance the Session 3 kickoff names, and flagged as F-1 in the handback). Ultracode is on for the session; K4 keeps the pass single-threaded (flag F-9 class).
+Status: implemented (records commit and handback follow the item commits). Accepted by kickoff K2 (the message reads "read and execute attached" and "Make the updates to each section up to 3, then after 3 totally rebuild"; taken as the "implement these" acceptance the Session 3 kickoff names, and flagged as F-1 in the handback). Ultracode is on for the session; K4 keeps the pass single-threaded (flag F-9 class).
 
 ## Reads
 - `docs/changes/2026-09-13-session-2-manual-pass/kickoff-prompt.md`, `kickoff-session-3.md`: the governing process and its Session 3 substitutions; the four K toggles at their defaults.
@@ -93,4 +93,11 @@ No figure in the notes is a golden value. Every figure the rebuilt page carries 
 - Chromium: the four preset rankings after JN-030 equal those before (D1 11.1, D6 5.1, D3 3.3, D2 0.0, margin 53.8%; D5 18.2, D4 17.9, margin 1.7% flagged; D8 29.2, D3 8.0, D7 3.8, D1 3.7, margin 72.8%; D7 26.5 then zeros, margin 100%).
 
 ## Departures from plan
-(empty at acceptance)
+- The rebuild of §04 (JN-005) also re-anchored appendix C2 from s7 to s6 in the same commit, because deleting s7 left C2 anchored to a section that no longer existed and `build-appendix.mjs` throws on that; C2 became §05 in the next commit. Inside the named file, needed to complete the step.
+- JN-012 re-anchored C4 from s14 to s13 for the same reason when s14 left the page.
+- One defect of mine landed in 0367298 (JN-011) and was fixed in fb4380a: the Shift+U handler still called the removed documentation key and threw when pressed; the DOM-mode validator reported it on the next four commits and the landing helper did not halt on that line. The helper now halts on a script error, every reveal registers with the one list the handler runs, and checks.mjs JN-020 presses the override and asserts every key opens.
+- The DW-120 lines for JN-024 and JN-013 were first written with the wrong figures (counted by hand) and corrected by amending the unpushed commits; every later line is written from the helper's measured output.
+- One bogus commit (06ca04e, a DW-120 line for an edit that had failed to apply) was dropped with `git reset --hard` before it was pushed; nothing else was in it.
+- V5 (150 minutes) and `build-appendix --check` were red at the Group 3 and Group 4 pushes (96 and 147 minutes) and green from 07d8dd5 (A5) onward; no interim minute figure was faked to hide it.
+- The harness check for JN-020 ran zero checks on its first run because its comment lacked the JN prefix the runner filters on; renamed and run before the records commit (fb4380a carries the check; the rename rides the records commit).
+- Gate ids: A3 and A5 use ga6 and ga7 because ga3 and ga4 belong to C3 and C4, which stay.

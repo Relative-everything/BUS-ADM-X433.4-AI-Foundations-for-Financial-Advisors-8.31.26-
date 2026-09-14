@@ -4,7 +4,7 @@
 the next run overwrites it.**
 
 This is the instructor's work list, in the order the work is worth doing. A
-source **20 claims rest on** is worth verifying before one that carries
+source **25 claims rest on** is worth verifying before one that carries
 none, so the ordering is **reference count, descending**.
 
 ## The two dates, and why only one of them is yours
@@ -27,7 +27,7 @@ never-fabricate rule exists to prevent.
 | `last_verified` **EMPTY** | **59** |
 | `last_verified` populated | 1 |
 | `last_verified` *not applicable* (synthetic or fabricated) | 3 |
-| References standing behind an EMPTY `last_verified` | **157** of 195 |
+| References standing behind an EMPTY `last_verified` | **157** of 202 |
 | Moving targets | 24 |
 | Lock | notarised, digest `d9fb35cf47362579` |
 
@@ -45,33 +45,33 @@ Each one cites the evidence in the repository that records the confirmation.
 
 | # | Key | Title | `last_verified` | `last_retrieved` | Refs | Moving | Depends on it |
 |---|---|---|---|---|---|---|---|
-| 1 | `src-wolfram` | What is ChatGPT doing … and why does it work? | **2026-08-23** | **none** | 20 | no | S1 `#s2` · S1 `#s3`×2 · S1 `#s4` · S1 `#s5`×2 · S2 `#s1`×2 · S2 `#s2`×2 · S2 `#s3`×2 · S2 `#s4` · S3 `#s2`×2 · S3 `#s3` · S3 `#s7`×2 · S4 `#sWS` · S4 `#s8` |
-| 2 | `src-case` | The Cole household | *n/a* | *n/a* | 18 | no | S1 `#s1` · S2 `#s6b` · S3 `#s3` · S3 `#s4` · S3 `#s6` · S3 `#s9` · S3 `#s10` · S3 `#s16` · S4 `#s2`×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2`×2 · S4 `#s7`×2 · S4 `#sWS` |
+| 1 | `src-case` | The Cole household | *n/a* | *n/a* | 25 | no | S1 `#s1` · S2 `#s6b` · S3 `#s3` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s2`×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2`×2 · S4 `#s7`×2 · S4 `#sWS` |
+| 2 | `src-wolfram` | What is ChatGPT doing … and why does it work? | **2026-08-23** | **none** | 20 | no | S1 `#s2` · S1 `#s3`×2 · S1 `#s4` · S1 `#s5`×2 · S2 `#s1`×2 · S2 `#s2`×2 · S2 `#s3`×2 · S2 `#s4` · S3 `#s2`×2 · S3 `#s3` · S3 `#s7`×2 · S4 `#sWS` · S4 `#s8` |
 | 3 | `src-aa` | Artificial Analysis Intelligence Index and cost-per-task figures | **EMPTY** | 2026-08-13 | 13 | yes | S1 `#s10`×2 · S2 `#s5`×3 · S4 `#s3`×5 · S4 `#s7` · S4 `#sWS`×2 |
 | 4 | `src-magesh` | Hallucination-free? Assessing the reliability of leading AI legal research tools | **EMPTY** | **none** | 10 | no | S2 `#s10`×3 · S3 `#s6`×2 · S3 `#s15` · S3 `#s16`×2 · S4 `#s7` · S4 `#s9` |
 | 5 | `src-memory` | Use Claude's chat search and memory to build on previous context | **EMPTY** | 2026-08-20 | 10 | yes | S0.1 `#s0` · S0.1 `#s5`×2 · S0.1 `#s6`×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10`×2 · S2 `#s3` |
-| 6 | `src-regsp` | Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments | **EMPTY** | **none** | 10 | no | S3 `#s14` · S4 `#s2`×7 · S4 `#sRSP` · S4 `#s7` |
-| 7 | `src-synthid` | SynthID | **EMPTY** | **none** | 10 | yes | S4 `#sW1`×8 · S4 `#sW2`×2 |
+| 6 | `src-synthid` | SynthID | **EMPTY** | **none** | 10 | yes | S4 `#sW1`×8 · S4 `#sW2`×2 |
+| 7 | `src-regsp` | Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments | **EMPTY** | **none** | 9 | no | S4 `#s2`×7 · S4 `#sRSP` · S4 `#s7` |
 | 8 | `src-tools3` | When should I use web search, extended thinking, and research? | **EMPTY** | 2026-08-20 | 9 | yes | S0.1 `#s1` · S0.1 `#s4` · S0.1 `#s5`×3 · S0.1 `#s8`×3 · S0.1 `#s9` |
 | 9 | `src-effort` | Change the model, effort, and thinking settings | **EMPTY** | 2026-08-20 | 8 | yes | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3`×5 · S0.1 `#s9` |
-| 10 | `src-kitces-notetakers` | Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends | **EMPTY** | **none** | 8 | no | S3 `#s9` · S3 `#s10` · S3 `#s11`×4 · S3 `#s16`×2 |
-| 11 | `src-pricing` | Pricing | **EMPTY** | 2026-09-13 | 8 | yes | S1 `#s5` · S1 `#s11`×3 · S2 `#s0` · S2 `#s5`×3 |
-| 12 | `src-ctxwindow` | How large is the context window on paid Claude plans? | **EMPTY** | 2026-08-20 | 6 | yes | S0.1 `#s1` · S0.1 `#s4`×4 · S0.1 `#s6` |
-| 13 | `src-anthropic-ctx` | Contextual retrieval in AI systems | **EMPTY** | **none** | 5 | no | S3 `#s6`×3 · S3 `#s7` · S3 `#s16` |
+| 10 | `src-pricing` | Pricing | **EMPTY** | 2026-09-13 | 8 | yes | S1 `#s5` · S1 `#s11`×3 · S2 `#s0` · S2 `#s5`×3 |
+| 11 | `src-kitces-notetakers` | Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends | **EMPTY** | **none** | 7 | no | S3 `#s9` · S3 `#s10`×2 · S3 `#s11`×2 · S3 `#s16`×2 |
+| 12 | `src-anthropic-ctx` | Contextual retrieval in AI systems | **EMPTY** | **none** | 6 | no | S3 `#sRag` · S3 `#s6`×3 · S3 `#s7` · S3 `#s16` |
+| 13 | `src-ctxwindow` | How large is the context window on paid Claude plans? | **EMPTY** | 2026-08-20 | 6 | yes | S0.1 `#s1` · S0.1 `#s4`×4 · S0.1 `#s6` |
 | 14 | `src-models` | Models overview | **EMPTY** | 2026-09-13 | 5 | yes | S0.1 `#s2` · S0.1 `#s3`×2 · S0.1 `#s4` · S2 `#s3` |
-| 15 | `src-kitces-productivity` | Kitces Research on Advisor Productivity | **EMPTY** | **none** | 4 | no | S2 `#s9`×2 · S2 `#s12d` · S2 `#s12` |
-| 16 | `src-daly` | Artificial Intelligence and the Future of Investment Management | **EMPTY** | **none** | 3 | no | S4 `#s1` · S4 `#sW1`×2 |
-| 17 | `src-personalization` | Understanding Claude's personalization features | **EMPTY** | 2026-08-20 | 3 | yes | S0.1 `#s1` · S0.1 `#s6` · S2 `#s3` |
-| 18 | `src-plugins` | Use plugins in Claude | **EMPTY** | 2026-08-20 | 3 | yes | S0.1 `#s7`×3 |
-| 19 | `src-skills` | What are skills? | **EMPTY** | 2026-08-20 | 3 | yes | S0.1 `#s6` · S0.1 `#s7` · S0.1 `#s9` |
-| 20 | `src-wiretap` | Cal. Penal Code § 637.2(a)(1), (c); 18 U.S.C. § 2511 | **EMPTY** | **none** | 3 | no | S3 `#s12`×3 |
+| 15 | `src-context-windows` | Context windows | **EMPTY** | 2026-09-13 | 4 | yes | S2 `#s0` · S2 `#s3` · S3 `#sRag`×2 |
+| 16 | `src-kitces-productivity` | Kitces Research on Advisor Productivity | **EMPTY** | **none** | 4 | no | S2 `#s9`×2 · S2 `#s12d` · S2 `#s12` |
+| 17 | `src-daly` | Artificial Intelligence and the Future of Investment Management | **EMPTY** | **none** | 3 | no | S4 `#s1` · S4 `#sW1`×2 |
+| 18 | `src-personalization` | Understanding Claude's personalization features | **EMPTY** | 2026-08-20 | 3 | yes | S0.1 `#s1` · S0.1 `#s6` · S2 `#s3` |
+| 19 | `src-plugins` | Use plugins in Claude | **EMPTY** | 2026-08-20 | 3 | yes | S0.1 `#s7`×3 |
+| 20 | `src-skills` | What are skills? | **EMPTY** | 2026-08-20 | 3 | yes | S0.1 `#s6` · S0.1 `#s7` · S0.1 `#s9` |
 | 21 | `src-anthropic-terms` | Privacy Center and Commercial Terms | **EMPTY** | 2026-08-14 | 2 | yes | S4 `#s3` · S4 `#s6` |
 | 22 | `src-api-messages` | Messages API reference | **EMPTY** | 2026-09-13 | 2 | yes | S2 `#s3`×2 |
-| 23 | `src-context-windows` | Context windows | **EMPTY** | 2026-09-13 | 2 | yes | S2 `#s0` · S2 `#s3` |
-| 24 | `src-dahl-fictions` | Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models | **EMPTY** | **none** | 2 | no | S2 `#s10`×2 |
-| 25 | `src-finra2409` | Regulatory Notice 24-09 | **EMPTY** | **none** | 2 | no | S1 `#s14`×2 |
-| 26 | `src-sec-ai` | Enforcement actions against Delphia (USA) Inc. and Global Predictions, Inc. | **EMPTY** | **none** | 2 | no | S1 `#s1`×2 |
-| 27 | `src-t3-survey` | Software Survey 2026 | **EMPTY** | **none** | 2 | no | S2 `#s9` · S2 `#s12d` |
+| 23 | `src-dahl-fictions` | Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models | **EMPTY** | **none** | 2 | no | S2 `#s10`×2 |
+| 24 | `src-finra2409` | Regulatory Notice 24-09 | **EMPTY** | **none** | 2 | no | S1 `#s14`×2 |
+| 25 | `src-sec-ai` | Enforcement actions against Delphia (USA) Inc. and Global Predictions, Inc. | **EMPTY** | **none** | 2 | no | S1 `#s1`×2 |
+| 26 | `src-t3-survey` | Software Survey 2026 | **EMPTY** | **none** | 2 | no | S2 `#s9` · S2 `#s12d` |
+| 27 | `src-wiretap` | Cal. Penal Code § 637.2(a)(1), (c); 18 U.S.C. § 2511 | **EMPTY** | **none** | 2 | no | S3 `#s12`×2 |
 | 28 | `src-arup` | Reporting on the Arup deepfake incident | **EMPTY** | **none** | 1 | no | S4 `#s5` |
 | 29 | `src-beta` | Available beta and research preview features | **EMPTY** | 2026-08-20 | 1 | yes | S0.1 `#s7` |
 | 30 | `src-charlotin` | AI Hallucination Cases database | **EMPTY** | 2026-06 *(month only)* | 1 | yes | S2 `#s10` |
@@ -101,12 +101,12 @@ Each one cites the evidence in the repository that records the confirmation.
 | 54 | `src-irc` | Internal Revenue Code §§ 671, 675, 2036, 2702, 7520 | **EMPTY** | *n/a* | 0 | no | *listed by S2, cited by none* |
 | 55 | `src-iskowitz` | AI notetakers and compliance in wealth management: What firms need to know | **EMPTY** | **none** | 0 | no | *listed by S3, cited by none* |
 | 56 | `src-kessler` | Kessler v. Commissioner, 152 T.C. 88 (2019) | *n/a* | *n/a* | 0 | no | *listed by S2, cited by none* |
-| 57 | `src-kitces-advisortech` | The Latest in Financial AdvisorTech — AdvisorTech columns, October 2025, November 2025 and August 2026 | **EMPTY** | **none** | 0 | yes | *listed by S3, cited by none* |
+| 57 | `src-kitces-advisortech` | The Latest in Financial AdvisorTech — AdvisorTech columns, October 2025, November 2025 and August 2026 | **EMPTY** | **none** | 0 | yes | *listed by no lesson, cited by none* |
 | 58 | `src-laplace` | A philosophical essay on probabilities | **EMPTY** | *n/a* | 0 | no | *listed by S2, cited by none* |
 | 59 | `src-morningstar` | AI for advisors: Enhancing client conversations | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
 | 60 | `src-rr200464` | Rev. Rul. 2004-64, 2004-2 C.B. 7 (2004-27 I.R.B. 9) | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
 | 61 | `src-rr8513` | Rev. Rul. 85-13, 1985-1 C.B. 184 | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 62 | `src-vectara` | Introducing the next generation of Vectara's hallucination leaderboard | **EMPTY** | **none** | 0 | yes | *listed by S3, cited by none* |
+| 62 | `src-vectara` | Introducing the next generation of Vectara's hallucination leaderboard | **EMPTY** | **none** | 0 | yes | *listed by no lesson, cited by none* |
 | 63 | `src-woelbing` | Estate of Donald Woelbing v. Commissioner, T.C. Docket No. 30261-13, and Estate of Marion Woelbing v. Commissioner, T.C. Docket No. 30260-13 | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
 
 
@@ -116,33 +116,33 @@ Each one cites the evidence in the repository that records the confirmation.
 
 | Key | Link |
 |---|---|
-| `src-wolfram` | https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/ |
 | `src-case` | *not applicable* |
+| `src-wolfram` | https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/ |
 | `src-aa` | https://artificialanalysis.ai/models |
 | `src-magesh` | https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/ |
 | `src-memory` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
-| `src-regsp` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-synthid` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
+| `src-regsp` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-tools3` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-effort` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
-| `src-kitces-notetakers` | https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/ |
 | `src-pricing` | https://platform.claude.com/docs/en/about-claude/pricing |
-| `src-ctxwindow` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
+| `src-kitces-notetakers` | https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/ |
 | `src-anthropic-ctx` | https://www.anthropic.com/engineering/contextual-retrieval |
+| `src-ctxwindow` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-models` | https://platform.claude.com/docs/en/models/overview |
+| `src-context-windows` | https://platform.claude.com/docs/en/build-with-claude/context-windows |
 | `src-kitces-productivity` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-daly` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-personalization` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-plugins` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-skills` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
-| `src-wiretap` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-anthropic-terms` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-api-messages` | https://platform.claude.com/docs/en/api/messages |
-| `src-context-windows` | https://platform.claude.com/docs/en/build-with-claude/context-windows |
 | `src-dahl-fictions` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-finra2409` | https://www.finra.org/rules-guidance/notices/24-09 |
 | `src-sec-ai` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-t3-survey` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
+| `src-wiretap` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-arup` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-beta` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-charlotin` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
@@ -204,13 +204,13 @@ Fetched in full 2026-08-25 for Phase 3.5, and again in full 2026-09-13 for the s
 
 Re-fetched 2026-09-13 at the page's current address for session-2 §01. Every Claude model ID is a pinned snapshot, including the dateless IDs from the 4.6 generation on; Fable 5.1 is the current flagship at $10 / $50 per MTok and Fable 5 is listed as a legacy model, still available.
 
-### `src-api-messages`
-
-Fetched 2026-09-13 for session-2 §01. The temperature parameter is marked deprecated for models released after Claude Opus 4.6, with 1.0 accepted for backwards compatibility and other values rejected with a 400 error; it defaults to 1.0 and ranges 0.0 to 1.0; the page states that even with temperature of 0.0 the results will not be fully deterministic.
-
 ### `src-context-windows`
 
 Fetched in full 2026-09-13 for the session-2 retrieval bridge. Three sentences carry the lesson's claims. On contents, everything in the request counts toward the context window, the system prompt, every message including tool results, images and documents, and the tool definitions. On accumulation, each turn's input phase contains all previous conversation history plus the current user message, and previous turns are preserved completely. On degradation, as token count grows, accuracy and recall degrade, a phenomenon the page names context rot. The page adds that chat interfaces such as claude.ai can manage the window on a rolling first-in, first-out basis.
+
+### `src-api-messages`
+
+Fetched 2026-09-13 for session-2 §01. The temperature parameter is marked deprecated for models released after Claude Opus 4.6, with 1.0 accepted for backwards compatibility and other values rejected with a 400 error; it defaults to 1.0 and ranges 0.0 to 1.0; the page states that even with temperature of 0.0 the results will not be fully deterministic.
 
 ### `src-charlotin`
 

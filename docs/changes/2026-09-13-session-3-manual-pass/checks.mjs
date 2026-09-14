@@ -372,7 +372,7 @@ await check('JN-014f', async (page) => {
   must(/You moved/.test(v), `re-vote readout: ${v.slice(0, 60)}`);
 });
 
-/* Override: Shift+U opens every registered key without a script error, and no time of day survives in the source. */
+/* JN-020: Shift+U opens every registered key without a script error, and no time of day survives in the source. */
 await check('JN-020', async (page) => {
   must(!/tonight/i.test(SRC), '"tonight" survives in the source');
   const errors = [];
@@ -388,3 +388,9 @@ await check('JN-020', async (page) => {
   must(closed.length === 0, 'keys still closed after Shift+U: ' + closed.join(', '));
   must(r.gates === r.total, `${r.gates} of ${r.total} gates marked`);
 });
+
+await browser.close();
+for (const [id, st, why] of out) console.log(`${id} ${st}${why ? ' ' + why : ''}`);
+const fails = out.filter((r) => r[1] === 'FAIL').length;
+console.log(`summary: ${out.length - fails} OK, ${fails} FAIL`);
+process.exit(fails ? 1 : 0);
