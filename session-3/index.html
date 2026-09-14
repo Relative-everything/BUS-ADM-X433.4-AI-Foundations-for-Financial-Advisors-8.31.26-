@@ -1351,24 +1351,30 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </section>
 
 <section class="slide" id="s9" data-nav="Workflow">
-  <div class="eyebrow"><span>06 &middot; The workflow</span><span class="mins">4 min</span></div>
-  <h2>The Advisor Meeting Workflow and Its Failure Propagation</h2>
+  <div class="eyebrow"><span>06 &middot; The workflow</span><span class="mins">6 min</span></div>
+  <h2>The Advisor Meeting Workflow: Prep, Capture, Summarise, Follow-Up, Log</h2>
 
-  <p class="big">Prep, capture, summarise, follow-up, log. Five stages, drawn as a chain rather than a list because an error introduced at any stage is inherited, silently, by every stage after it — and the log is the one an examiner reads.</p>
+  <p class="big">Five stages, drawn as a chain because a mistake at any stage is inherited by every stage after it, and the log is the one an examiner reads.</p>
 
-  <p>Worth stating to a compliance officer: the only stage a human reliably reads in full is the follow-up email, because the client reads it too. The CRM log is read by nobody until it matters. That is inverted from where the risk sits.</p>
+  <ul class="pts">
+    <li><b>Prep.</b> A grounded assistant reads the file and drafts the agenda and the questions to ask.</li>
+    <li><b>Capture.</b> A note-taker records and transcribes the meeting.</li>
+    <li><b>Summarise.</b> It pulls decisions, action items and open questions out of the transcript.</li>
+    <li><b>Follow-up.</b> The recap email and the tasks go out, drafted from the summary.</li>
+    <li><b>Log.</b> The note lands in the CRM with the basis for what you recommended.</li>
+  </ul>
 
   <div class="panel" data-task="t-s9" data-comp="symptom-diagnoser">
-    <span class="do">Do this now — 4 minutes</span>
-    <h4>Failure Injection into Meg's Annual Review</h4>
-    <p class="hint">Click a stage to inject a plausible failure into the Cole engagement. The chain shows what each downstream stage inherits and where a human would first see it. Note which failures never become visible at all.</p>
+    <span class="do">Do this now: 4 minutes</span>
+    <h4>Click a Stage in Meg and David's Annual Review</h4>
+    <p class="hint">Each stage names what the AI tool does there, the one thing you check before it moves on, and what happens downstream if you skip the check.</p>
     <div id="chainWrap"></div>
-    <div id="chainOut" class="mpanel"><span class="hd">Downstream inheritance</span><span class="nil">Click a stage.</span></div>
+    <div id="chainOut" class="mpanel"><span class="hd">The stage</span><span class="nil">Click a stage.</span></div>
   </div>
 
-  <p class="src">The five-stage workflow is the sequence named in the Session 3 syllabus row. Kitces (15 Jan 2025) documents that leading advisor-specific tools now span the whole cycle — meeting summary, CRM capture, post-meeting tasks, recap email, then the next agenda <span class="conf h" data-src="src-kitces-notetakers">H</span>. Failure content is synthetic case material constructed for this lesson.</p>
+  <p class="src">The five stages are the sequence named in the Session 3 syllabus. Kitces (15 Jan 2025) documents advisor-specific tools spanning the whole cycle: meeting summary, CRM capture, post-meeting tasks, recap email, then the next agenda <span class="conf h" data-src="src-kitces-notetakers">H</span>. The failures are synthetic case material <span class="conf l" data-src="src-case">L</span>.</p>
 
-  <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Inject a failure at every stage and note which ones never become visible to a human.</div></div>
+  <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Click every stage and say which check you already do and which you do not.</div></div>
 
 </section>
 
@@ -2087,46 +2093,52 @@ mkQuiz($('tuneWrap'),TUNE,null,'g6');
 
 /* ================= 9. Workflow chain ================= */
 var CHAIN=[
- {s:'Prep',f:'The grounded prep assistant surfaced Article VII and reported CPC\u2019s valuation method as five times average EBIT.',
-  d:['Capture: you open the review on a valuation basis that governs a death, not a sale.',
-     'Summarise: the wrong basis is now in the transcript, spoken by you, and reads as agreed.',
-     'Follow-up: the recap email restates it to Meg and David.',
-     'Log: the CRM record now contains a valuation standard for the wrong transaction.'],
-  v:'Visible at follow-up \u2014 to David, who already said the appraisal looks stale. Your client is the detector.'},
- {s:'Capture',f:'Recording began four minutes late. Meg\u2019s statement that a competitor approached her about buying the company was never captured.',
-  d:['Summarise: the single most consequential fact of the meeting is absent, and absence produces no error signal.',
-     'Follow-up: the recap looks complete and clean.',
-     'Log: the file shows a review in which nothing changed.'],
+ {s:'Prep',ai:'Reads the Cole file and drafts the agenda: what changed since last year, what is still open, what to ask.',
+  chk:'Read the draft against the file. In \u00a703 the assistant reported the buy-sell formula as the company\u2019s valuation method. It is not.',
+  skip:['Capture: you open the review on the wrong valuation basis, and it is now in the transcript in your voice.',
+        'Follow-up: the recap email repeats it to Meg and David.',
+        'Log: the record carries a valuation rule for the wrong transaction.'],
+  v:'Visible at follow-up, to David, who already said the appraisal looks stale. Your client is the detector.'},
+ {s:'Capture',ai:'Records and transcribes the meeting. Nothing else.',
+  chk:'Consent is given and the recording is running before anyone says anything that matters. In the Cole review it started four minutes late, and Meg\u2019s remark that a competitor had approached her was never captured.',
+  skip:['Summarise: whatever was said before the recording started is not in the transcript, and an absence produces no error.',
+        'Follow-up: the recap looks complete and clean.',
+        'Log: the file shows a review in which nothing changed.'],
   v:'Never visible. Nothing in the chain compares what was said to what was captured.'},
- {s:'Summarise',f:'Extraction dropped David\u2019s request to re-run the 2023 appraisal, classifying it as an aside.',
-  d:['Follow-up: no action item reaches the client.',
-     'Log: no task is created and nobody is assigned to the appraisal.',
-     'Next prep: the next agenda is built from the log, so the request is now permanently gone.'],
-  v:'Never visible, and it compounds \u2014 each cycle rebuilds prep from the degraded log.'},
- {s:'Follow-up',f:'The recap email states the discount as settled rather than as asserted in a memorandum with no appraisal behind it.',
-  d:['Client: Meg reads a settled position and may instruct the attorney to proceed.',
-     'Log: the email is the artefact filed as evidence of what was advised.'],
-  v:'Visible immediately \u2014 to the client, who may act on it before you notice. That is the wrong detector.'},
- {s:'Log',f:'The CRM note records the decision to proceed but not why a sale was chosen over a gift.',
-  d:['Nothing downstream breaks. Every subsequent meeting runs normally.',
-     'Examination: the file shows a transaction with no documented basis, and the reasoning is three years old.'],
-  v:'Visible only at examination, by which point the reasoning is unrecoverable.'}
+ {s:'Summarise',ai:'Pulls decisions, action items and open questions out of the transcript.',
+  chk:'Read the summary against the transcript before it goes anywhere. Extraction dropped David\u2019s request to re-run the appraisal, filed as an aside.',
+  skip:['Follow-up: no action item reaches the client.',
+        'Log: no task is created and nobody owns the appraisal.',
+        'Next prep: the next agenda is built from the log, so the request is gone for good.'],
+  v:'Never visible, and it compounds: each cycle rebuilds prep from the thinner log.'},
+ {s:'Follow-up',ai:'Drafts the recap email and the task list from the summary.',
+  chk:'Every fact in the recap is stated the way it was said: asserted, decided, or still open. The draft stated the discount as settled when the memo only asserts it.',
+  skip:['Client: Meg reads a settled position and may tell the attorney to proceed.',
+        'Log: the email is filed as the record of what was advised.'],
+  v:'Visible at once, to the client, who may act on it before you notice. The wrong detector.'},
+ {s:'Log',ai:'Writes the note into the CRM.',
+  chk:'The note says why, not only what: which alternatives you considered and why this one. The draft recorded the decision to sell and nothing about the gift that was rejected.',
+  skip:['Nothing breaks. Every later meeting runs normally.',
+        'Examination: the file shows a transaction with no documented basis, and the reasoning is three years old.'],
+  v:'Visible only at examination, when the reasoning cannot be rebuilt.'}
 ];
 (function(){
- var W=$('chainWrap'),O=$('chainOut');
+ var W=$('chainWrap'),O=$('chainOut'),seen={};
  var h='<div class="row" style="gap:8px">';
  CHAIN.forEach(function(c,i){h+='<button class="btn sel mini" data-i="'+i+'" type="button">'+esc(c.s)+'</button>'+
    (i<CHAIN.length-1?'<span class="dim" style="font-family:JetBrains Mono,monospace">\u2192</span>':'')});
  h+='</div>';W.innerHTML=h;
  [].slice.call(W.querySelectorAll('button')).forEach(function(b){
   b.onclick=function(){
-   var i=parseInt(b.dataset.i,10),c=CHAIN[i];
+   var i=parseInt(b.dataset.i,10),c=CHAIN[i];seen[i]=1;
    [].slice.call(W.querySelectorAll('button')).forEach(function(x){x.classList.toggle('act',x===b)});
-   var s='<span class="hd">Failure injected at: '+esc(c.s)+'</span><span class="flag">'+esc(c.f)+'</span><br><br><span class="hd">Inherited downstream</span>';
-   c.d.forEach(function(d){s+='\u00b7 '+esc(d)+'<br>'});
-   s+='<br><span class="hd">First human detection</span>'+
-     (c.v.indexOf('Never')===0?'<span class="flag">':'<span class="good">')+esc(c.v)+'</span>';
+   var s='<span class="hd">'+esc(c.s)+': what the tool does</span>'+esc(c.ai)+'<br><br>'+
+     '<span class="hd">What you check before it moves on</span><span class="good">'+esc(c.chk)+'</span><br><br>'+
+     '<span class="hd">If you skip the check</span>';
+   c.skip.forEach(function(d){s+='\u00b7 '+esc(d)+'<br>'});
+   s+='<br><span class="hd">First seen by a person</span>'+(c.v.indexOf('Never')===0?'<span class="flag">':'<span class="good">')+esc(c.v)+'</span>';
    O.className='mpanel has';O.innerHTML=s;
+   if(Object.keys(seen).length===CHAIN.length&&typeof mark==='function')mark('g7');
   }});
 })();
 

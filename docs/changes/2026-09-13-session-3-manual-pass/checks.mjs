@@ -208,3 +208,16 @@ await check('JN-006', async (page) => {
   const again = await page.evaluate(() => document.querySelector('#tuneWrap .qfb').className);
   must(/wrong/.test(again), 'the item did not lock on the first pick');
 });
+
+/* JN-007: each stage panel carries the three parts and no "undefined". */
+await check('JN-007', async (page) => {
+  const n = await page.evaluate(() => document.querySelectorAll('#chainWrap button').length);
+  must(n === 5, `${n} stage buttons, expected 5`);
+  for (let i = 0; i < 5; i++) {
+    await page.click(`#chainWrap button[data-i="${i}"]`);
+    const t = await page.evaluate(() => document.getElementById('chainOut').textContent);
+    must(/what the tool does/.test(t) && /What you check before it moves on/.test(t) && /If you skip the check/.test(t) && /First seen by a person/.test(t), `stage ${i + 1} lacks a part: ${t.slice(0, 80)}`);
+    must(!/undefined|NaN/.test(t), `stage ${i + 1} renders undefined`);
+  }
+  must(await page.evaluate(() => document.querySelector('[data-gate="g7"]').classList.contains('done')), 'g7 not marked after all five stages');
+});
