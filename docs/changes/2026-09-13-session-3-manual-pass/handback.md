@@ -168,7 +168,7 @@ $ screenshots  .verify-shots/JN-*-<section>.png at 1280 px for every changed sec
 ```
 
 The two red lines above, and their state after the handback commit:
-- `verify-migration` check 1 named `ledger.md:26` for the string "31%", which is on the CASE.md Part K retired list (the old discount figure). The ledger and this file now say "a cut of 2,117 words, just under a third"; re-run: 15 passed, 0 failed.
+- `verify-migration` check 1 named `ledger.md:26` for a percentage figure that happens to be the old discount percentage retired under CASE.md Part K (the word-cut share). The ledger and this file now say "a cut of 2,117 words, just under a third"; a first version of this file quoted the string while explaining the fix and was caught by the same check; re-run after that: 15 passed, 0 failed.
 - `case-inventory --report-check` would change because the drift surface fell again after b793f24; regenerated in the handback commit; re-run: current.
 
 By-design red lines, unchanged from the pre-flight and the Session 2 pass: V2 on the footer hyperlinks (DW-029), V6 on the interaction count (18 against 13 to 15; DW-094 pattern, by instruction), `#pnum` in DOM mode (DW-112), `restyle_sweep --check` on the two documented fragments. `verify-sources`' one ADVISE is session-4's `src-finra2409` (DW-021's remaining half). V4's three bare chips are the footer legend.
