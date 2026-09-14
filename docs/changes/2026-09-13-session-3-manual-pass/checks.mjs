@@ -294,3 +294,17 @@ await check('JN-014c', async (page) => {
   must(r.key && /Score\s*6 of 6/.test(r.score), `key ${r.key}: ${r.score.slice(-60)}`);
   must((r.out.match(/Planted error/g) || []).length === 2, 'the two planted errors are not both labelled in the second bucket');
 });
+
+/* JN-010: four items, per-option feedback, the score line; the state count and the fabricated case are gone. */
+await check('JN-010', async (page) => {
+  must(!/Restrepo|UNCONFIRMED\]|637\.2/.test(SRC.slice(SRC.indexOf('id="s12"'), SRC.indexOf('id="s13"'))), 'the fabricated case, the marker or the California sentence survives in §09');
+  const r0 = await page.evaluate(() => ({ n: document.querySelectorAll('#quizWrap .qitem').length, score: document.getElementById('quizScore').textContent,
+    verify: document.querySelectorAll('#s12 .verify li').length, cards: document.querySelectorAll('#s12 .cards .card').length }));
+  must(r0.n === 4 && /0 of 4 answered/.test(r0.score) && r0.verify === 2 && r0.cards === 2, `items ${r0.n}, score "${r0.score}", verify items ${r0.verify}, cards ${r0.cards}`);
+  await page.click('#quizWrap .qitem:nth-child(1) button[data-k="strip"]');
+  const r1 = await page.evaluate(() => { const d = document.querySelector('#quizWrap .qitem'); return { cls: d.querySelector('.qfb').className, txt: d.querySelector('.qfb').textContent, score: document.getElementById('quizScore').textContent }; });
+  must(/wrong/.test(r1.cls) && /Which field would you strip next/.test(r1.txt) && /1 of 4 answered/.test(r1.score), `after a wrong pick: ${r1.cls}, "${r1.score}"`);
+  await page.click('#quizWrap .qitem:nth-child(2) button[data-k="strip"]');
+  const r2 = await page.evaluate(() => document.getElementById('quizScore').textContent);
+  must(/2 of 4 answered · 1 correct/.test(r2), `score reads "${r2}"`);
+});
