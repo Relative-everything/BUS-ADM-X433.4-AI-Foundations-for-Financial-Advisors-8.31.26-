@@ -2995,7 +2995,7 @@ var LEVELS=['Absent','Gestured at','Specified','Specified and checkable'];
   function show(){
     var f=FX[cur];
     $('fxInLabel').textContent=f.lab;host.textContent=f.inp;$('fxWhich').textContent=f.n;$('hwWhich').textContent='';
-    document.querySelectorAll('[data-fx]').forEach(function(b){b.classList.toggle('act',b.getAttribute('data-fx')*1===cur)});
+    document.querySelectorAll('[data-fx]').forEach(function(b){var on=b.getAttribute('data-fx')*1===cur;b.classList.toggle('act',on);b.setAttribute('aria-pressed',on?'true':'false')});
     tiles();prompt();
   }
   document.querySelectorAll('[data-fx]').forEach(function(b){b.onclick=function(){cur=b.getAttribute('data-fx')*1;show()}});
