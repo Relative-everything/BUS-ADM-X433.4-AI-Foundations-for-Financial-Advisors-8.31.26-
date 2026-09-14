@@ -112,7 +112,18 @@ $ screenshots  .verify-shots/cups-{1-predict,2-33pct,3-50pct,4-100pct-gap}-{380,
 - F-11. **The run sheet changed in six slots and gained one; reprint it.**
 - F-12. **`docs/spine-brief.md` now describes two things the page no longer carries** (the §00 card and the §09 recurring-question paragraph; DW-050).
 
+## Batch 3 (2026-09-13 and 09-14, after the batch-2 merge)
+Three items, all DONE; the second and third landed on the 14th.
+- JN-035 (89fd269): §07's six triage explanations are four or five plain bullets each, facts unchanged, rendered as a list. Watch for: click any category on citation 3 and a five-line list opens under Correct or Not this one; no paragraph.
+- JN-036 (f598215): the block your note quoted (the §04 list from IRC § 671 to Kessler) was already off the page, removed by JN-018 and merged in 765dff3; if you still see it, the browser is showing a cached page. The one gate left on the page, under the Case facts dialog with different content (§7872 against §1274, the discount, the two Illinois rates, the Karmazin line), is gone too under your batch-2 instruction to remove every on-page instructor check. Its items are in `instructor-notes/session-2.md` under the §07 slot with the §04 list. Watch for: open Case facts, scroll to the bottom, the Close button follows the case text with no dashed box above it. The other five lessons still carry their copy of that gate (DW-056).
+- JN-037 (22c72db): §02 has a second block after the five advisory tasks, "What a benchmark task is": how the testers measure the chart's cost per task (the same fixed questions to every model at its highest reasoning setting, every answer scored, every token priced at the model's rates; cost, not time), then six cards, one per kind of question the index draws on, each with a prompt and a line on how it is scored. Watch for: six cards, each with a PROMPT block, then the small label saying the prompts were written for the page. The prompts are not the testers' items (flag F-7 below). The kinds are described in general terms and no component evaluation is named; DW-118 lists the block for a browser check against the index's methodology page, which the build environment cannot reach.
+
+Verification: checks.mjs 19 OK (JN-036 and JN-037 added, each passing on its first run); T7 unchanged at 2 literal / 38 entity; DOM mode clean on every commit; verify-editorial 16 rules clean; verify-case 6 of 6; the case viewer test 0 failures; inject-sources and the bibliography derivatives current after regeneration; attest digest matches; the case-fact inventory regenerated after JN-036 (two unguarded name and domicile occurrences fewer, both from the removed gate). The lesson validator's red lines are the known ones (V2 footer hyperlinks, V6 count and adjacency, V8 Shift+U). The full browser suite's result for this batch is in the ledger's last row if it finished before the push, and in the next session's first read if not.
+
+### Flag F-7 (non-blocking)
+The note asked for the exact prompts the testers use. They are the testers' own, several of the sets are held privately, and none could be fetched from here. The page carries one prompt per kind written in the shape of the real ones and labels them so, in the same form §02 already uses for its constructed token counts. If you want a real item quoted, it needs a browser and a citation to the set it comes from.
+
 ## Next session should
-1. Read this file, then `ledger.md`; a further batch of notes appends to `notes-verbatim.md` and continues at JN-035.
+1. Read this file, then `ledger.md`; a further batch of notes appends to `notes-verbatim.md` and continues at JN-038.
 2. If the instructor answers F-2 or F-3, each is a one-line edit plus `node scripts/build-appendix.mjs` for F-3.
 3. Before the Session 3 pre-flight, decide DW-117 (propagate the Session 2 cuts to sessions 3 and 4) and DW-050 (whether Session 2 states the spine's open question at all).

@@ -10,6 +10,7 @@ Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with 
 - The pacing panel is the four depth buttons and three timing cells; no readout line under the buttons.
 - There is no Shift+U override on this page. Every key is behind its own reveal control.
 - Batch 2 (same day): §01 lists seven sources of run-to-run difference after the vote, its explanation is a third of the length, the comparison exercise is gone and the consequence cards are shorter, the first now about a compliance review. §02 defines a task with five advisory examples, the estimator is a personal task mix across two tiers, and the decision block and the verification panel are gone. §03 is shorter. §04 is a builder: three premade prompts, four elements, four levels each; the paste-and-rank scorer and the fixture pack are gone; the verification gate moved to the §07 slot below. §05 has no discussion block. §06 opens questions one at a time as clicked, adds five reverse-prompting starters, and has no standing-constraint panel (say the rule aloud). §07 chips both base rates on the sentence, its chart caption fits, and Check 03 says how to check currency. §08's peer review is now your live audit (slot below). §09 keeps the two cards, the capture and the checklist; the reading list and the closing question are in the §09 slot below, not on the page. B2 has Three Cups.
+- Batch 3 (same day): §07's six triage explanations are four or five plain bullets each. The case dialog no longer carries the verification gate; its items are in the §07 slot below with the others. §02 has a second block, six example prompts in the shape of the benchmark's question kinds, between the five advisory tasks and the frontier chart.
 
 ## Standing
 
@@ -60,6 +61,7 @@ Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with 
 ### Flow
 - Deliver DW-092 items 9 and 11 with the chart up.
 - Element: `#frontierChart`, then the estimator (`t-s5`, `parameter-sandbox`). Poll P2 at the tier decision: "Which tier will your final-project workflow use? Sonnet 5 / Opus 5 / Fable 5 / another vendor / undecided."
+- The benchmark-task block (`#benchKinds`, six example prompts in the shape of the index's question kinds) is read, not run: point at Kind 06 as the nearest to their week, then go to the chart. The kinds are described in general terms at M and are on the DW-118 re-check list.
 - Finding 02's token-count clause is gone; quote only the two per-task costs. The estimator is a task mix: move the judgment slider live, the point is the share, not the list price. The index scores and OpenAI rates carry an August date (DW-118).
 
 ## s6 (§03 P.T.C.F, 6:45 PM, 10 min) [8:45 CT]
@@ -100,6 +102,7 @@ Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with 
 - IRC §§ 2036(a)(1), 2036(b), 2038, 2702 and 7520 as the §07 key and the case structure invoke them, including the distinction between corporate stock and LLC units that the §07 live run turns on. Confirm current text against the Code.
 - Portability: the §05 triage item on electing portability names no authority. Confirm current relief before answering it in class.
 - The combined discount the memorandum asserts for lack of control and lack of marketability: nothing in this session or the case file establishes that it is defensible; no appraiser has been engaged, no restricted-stock or pre-IPO study is on file, and the memorandum allocates nothing between the two components.
+- From the case dialog (its gate is off the page too, batch 3, 2026-09-13; the other five lessons still carry theirs, DW-056): whether §7872's blended annual rate or §1274's applicable federal rate governs a demand note issued in exchange for property (CASE.md §H.4 records no controlling authority); the Illinois estate tax rate table and the adjusted-taxable-gift add-back (both at M); the Illinois replacement income tax on trusts, material to the cost of turning grantor status off (CASE.md §D.3 carries the rate at M). Karmazin, Woelbing and Davidson are flagged in CASE.md Part I as settled or stipulated: they decided nothing and are not authority. Every tax and legal characterisation attached to the case is a question, not a holding; you sign the slide, not the model.
 
 ### Facts
 - Kessler v. Commissioner does not exist; labelled on the page and in the footer as a deliberately fabricated citation used as exercise material.

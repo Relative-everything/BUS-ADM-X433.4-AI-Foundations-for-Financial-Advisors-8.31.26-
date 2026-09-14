@@ -10,6 +10,27 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-13 · Session 2, batch 3: the triage explains itself in bullets, the case gate leaves the page, and §02 says what a benchmark task is
+
+Branch `claude/beautiful-maxwell-1bqad4`, three commits (JN-035 to
+JN-037), the last two landed 2026-09-14. The six explanations that follow
+a classification in §07's triage were paragraphs of up to 130 words; each
+is now four or five short lines in plain language, opening with Correct or
+Not this one, with every date, docket, amount and condition as the 09-12
+key stated them. The verification gate under the Case facts dialog, the
+last one on the page, is gone under the instruction that removed the §04
+gate in batch 2; its items are in the run sheet's §07 verify list, and
+DW-056 records that the other five lessons keep their copy. §02 has a
+second block after the five advisory tasks, "What a benchmark task is":
+how the chart's cost per task is measured, then six cards, one per kind of
+question the index draws on, each with a prompt written for the page in
+the shape of that kind and a line on how it is scored, labelled
+illustrative; the kinds are described in general terms and DW-118 lists
+the block for a browser check. Records in
+`docs/changes/2026-09-13-session-2-manual-pass/`.
+
+---
+
 ## 2026-09-13 · Session 2, batch 2: ten sections cut to what the room needs, and four things rebuilt
 
 Branch `claude/beautiful-maxwell-1bqad4`, twenty-nine item commits after the
