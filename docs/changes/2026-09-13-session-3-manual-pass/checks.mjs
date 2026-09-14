@@ -348,3 +348,13 @@ await check('JN-014d', async (page) => {
   await page.click('#vqCopy'); await page.waitForTimeout(200);
   must((await page.evaluate(() => document.getElementById('vqMsg').textContent)).length > 0, 'no copy message');
 });
+
+/* JN-014e: C3 keeps the prediction and the slopegraph; the AdvisorTech paragraph is gone. */
+await check('JN-014e', async (page) => {
+  const sec = SRC.slice(SRC.indexOf('id="s11"'), SRC.indexOf('id="sOff"'));
+  must(!/AdvisorTech|By 2025 the category/.test(sec), 'the AdvisorTech paragraph survives in C3');
+  await page.click('#tierbar button[data-level="0"]');
+  await page.click('#predBtns button:nth-child(3)');
+  const r = await page.evaluate(() => ({ out: document.getElementById('predOut').textContent, fig: getComputedStyle(document.getElementById('figSlope')).display !== 'none', cap: document.querySelector('#figSlope figcaption').textContent }));
+  must(/Correct/.test(r.out) && r.fig && !/12\.8%/.test(r.cap), `after predicting last: ${r.out.slice(0, 50)}, fig ${r.fig}`);
+});

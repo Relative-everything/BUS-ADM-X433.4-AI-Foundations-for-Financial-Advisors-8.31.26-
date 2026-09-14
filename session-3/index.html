@@ -1528,12 +1528,12 @@ If a heading has nothing under it, write "none".</pre>
   <div class="eyebrow"><span>Appendix C3 &middot; Market evidence</span><span class="mins">14 min</span></div>
   <h2>Note-Taker Adoption Against Note-Taker Satisfaction</h2>
 
-  <p class="big">Rank the category by adoption and rank it by satisfaction and the orders invert. The tool with the highest adoption in Kitces' autumn 2024 data — Zoom's AI Companion, a toggle inside software advisors already pay for — ranked last on advisor satisfaction. The industry-specific tools, at $60–$80 per month or more, ranked highest.</p>
+  <p class="big">Rank the note-taker category by adoption and then by satisfaction and the orders invert. In Kitces' autumn 2024 data the most-adopted tool, Zoom's AI Companion, a toggle inside software advisors already pay for, ranked last on satisfaction. The advisor-specific tools, at $60 to $80 a month or more, ranked highest.</p>
 
-  <p>The explanation is architectural rather than a matter of taste. A meeting-platform note-taker summarises the meeting. An advisor-specific tool writes the note into the CRM, queues the post-meeting tasks, drafts the recap email and prepares the next agenda. Advisors were not rating summary quality; they were rating the four things that happen after the summary.</p>
+  <p>The reason is what happens after the summary. A meeting-platform tool summarises the meeting. An advisor-specific tool writes the note into the CRM, queues the tasks, drafts the recap and prepares the next agenda. Advisors were rating those four steps.</p>
 
   <div class="panel" data-task="t-s11" data-comp="estimate-then-reveal">
-    <span class="do">Do this now — 2 minutes</span>
+    <span class="do">Do this now: 2 minutes</span>
     <h4>Prediction, Then Reveal</h4>
     <p class="hint">Before the chart: where did the single most-adopted tool rank on satisfaction? Commit, then reveal.</p>
     <div class="row" id="predBtns"></div>
@@ -1541,9 +1541,7 @@ If a heading has nothing under it, write "none".</pre>
     <figure id="figSlope" class="keyhide" style="display:none"></figure>
   </div>
 
-  <p>By 2025 the category had grown to roughly 30% of advisors using some kind of client meeting note tool, with 18 note-takers on the AdvisorTech Map competing for that pool, Jump at 9.7% adoption among standalone tools and no remaining provider above 0.5%. Read that as a procurement warning: you are selecting from a category mid-consolidation, and the switching cost is your historical meeting record.</p>
-
-  <p class="src">Kitces.com (15 Jan 2025) — Zoom AI Companion #1 in adoption and last in satisfaction; industry-specific tools lead satisfaction; $60–$80/month pricing <span class="conf h" data-src="src-kitces-notetakers">H</span>. Kitces.com AdvisorTech columns (Oct and Nov 2025) — Jump + Zocks 12.8% combined, Zoom AI + Fathom 7.6% combined, Jump 9.7% among standalone tools, none of the remainder above 0.5%, 18 note-takers on the map <span class="conf h" data-src="src-kitces-notetakers">H</span>. Kitces AdvisorTech column (Aug 2026) — ~30% of advisors using a client meeting note tool as of the 2025 research <span class="conf h" data-src="src-kitces-notetakers">H</span>. The slopegraph plots ranks, not scores <span class="conf m" data-src="src-kitces-notetakers">M — rank order published, underlying scores not</span>.</p>
+  <p class="src">Kitces.com (15 Jan 2025): Zoom AI Companion first in adoption and last in satisfaction; industry-specific tools lead satisfaction; $60 to $80 a month <span class="conf h" data-src="src-kitces-notetakers">H</span>. The slopegraph plots ranks, not scores <span class="conf m" data-src="src-kitces-notetakers">M, rank order published, scores not</span>.</p>
 
   <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Name the segment you sit in and whether its adoption rate matches your own.</div></div>
 
@@ -2200,7 +2198,7 @@ function showSlope(){
   s+='<text x="'+(RX+12)+'" y="'+n1(yy(d.s)+4)+'" class="chartval">'+d.s+'. '+esc(d.n)+'</text>';
  });
  s+='</svg>';
- F.innerHTML=s+'<figcaption>Endpoints are published: Kitces reports Zoom\u2019s AI Companion as #1 in adoption and last in advisor satisfaction, with industry-specific tools leading satisfaction <span class="conf h" data-src="src-kitces-notetakers">H</span>. The two intermediate positions are ordered consistently with that statement but are not individually published <span class="conf m" data-src="src-kitces-notetakers">M \u2014 rank order inferred</span>. By the 2025 Kitces AdvisorTech research the adoption side had itself inverted: Jump and Zocks together at 12.8% against Zoom AI and Fathom at 7.6%. The satisfaction signal led the adoption signal by roughly a year, which is the practical reason to read satisfaction data before procurement rather than after.</figcaption>';
+ F.innerHTML=s+'<figcaption>Endpoints are published: Kitces reports Zoom\u2019s AI Companion as first in adoption and last in advisor satisfaction, with industry-specific tools leading satisfaction <span class="conf h" data-src="src-kitces-notetakers">H</span>. The two middle positions are ordered consistently with that statement but are not individually published <span class="conf m" data-src="src-kitces-notetakers">M, rank order inferred</span>.</figcaption>';
  F.style.display='block';
 }
 
@@ -2425,7 +2423,7 @@ mkSorter({list:$('offList'),boxes:$('offBoxes'),out:$('offOut'),key:$('offKey'),
    O.className='mpanel has';
    O.innerHTML='<span class="hd">Your prediction</span>'+esc(o)+'<br><br><span class="hd">Published result</span>'+
     (ok?'<span class="good">Correct \u2014 last.</span>':'<span class="flag">Last.</span>')+
-    ' The most-adopted tool in the category ranked lowest on advisor satisfaction. Adoption measured convenience; satisfaction measured whether the four post-meeting steps got done.';
+    ' The most-adopted tool ranked lowest on advisor satisfaction. Adoption measured convenience; satisfaction measured whether the four after-meeting steps got done.';
    showSlope();
   };
   B.appendChild(b)});
