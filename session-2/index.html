@@ -3075,7 +3075,6 @@ var BSQ=[
       h+='<button class="bq" data-i="'+i+'" style="text-align:left;background:'+(on?'var(--on-bg)':'var(--card)')+';border:1.5px solid '+(on?'var(--on)':'var(--line)')+';border-radius:9px;padding:10px 14px;cursor:pointer;font-family:Source Serif 4,serif;font-size:14.5px;line-height:1.45;color:var(--ink);display:flex;gap:12px"><span style="flex:none;color:'+(on?'var(--on)':'var(--off)')+';font-family:JetBrains Mono,monospace;text-shadow:none">'+(on?'\u2713':'\u25cb')+'</span><span>'+((shown||on)?q:'Question '+(i+1)+' of ten. Click to reveal.')+'</span></button>';
     });
     h+='</div>';
-    if(!shown)h+='<p class="dim" style="font-size:13.5px;margin:14px 0 0">Ten questions, listed by number. Click the ones the model asked you and read each as it opens; the button below reveals the rest.</p>';
     host.innerHTML=h;
     host.querySelectorAll('.bq').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-i');ticked[i]=!ticked[i];render();count()}});
     count();
