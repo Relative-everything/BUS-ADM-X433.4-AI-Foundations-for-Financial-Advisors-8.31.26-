@@ -591,6 +591,7 @@ ul.pts{margin:14px 0;padding-left:22px;max-width:64ch}ul.pts li{margin:6px 0;lin
 .ckgrid label{display:flex;gap:9px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:10px 12px;font-size:14.5px;line-height:1.4;cursor:pointer}
 .ckgrid label.on{border-color:var(--on);background:var(--on-bg)}.ckgrid input{margin-top:4px;flex:none}
 .ppout{min-height:70px;color:var(--muted)}.ppout.on{color:var(--ink);background:var(--on-bg)}
+.ckrow{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.45;cursor:pointer}.ckrow.on{color:var(--on)}.ckrow input{margin-top:5px;flex:none}
 
 .quiz .qitem{padding:18px 0;border-bottom:1px solid var(--line)}
 .quiz .qitem:last-child{border-bottom:none}
@@ -1208,7 +1209,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>Appendix &middot; 5 optional sections</span><span class="mins">74 min</span></div>
   <h2>Appendix contents</h2>
   <p class="lede">Five optional sections, 74 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
-  <p>The 13 sections of the core session run in about 73 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <p>The 12 sections of the core session run in about 67 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
     <a class="apxcard" href="#sRag"><span class="ac">A1 &middot; 14 min &middot; after &sect;03</span><b>Do You Need Retrieval at All?</b></a>
     <a class="apxcard" href="#sPrep"><span class="ac">A2 &middot; 14 min &middot; after &sect;06</span><b>The Intake Questionnaire, Drafted With AI</b></a>
@@ -1685,31 +1686,7 @@ then a list of every element where my answer was thin.</pre>
 
 </section>
 
-<section class="slide" id="s14" data-nav="Policy HW">
-  <div class="eyebrow"><span>10 &middot; Assignment</span><span class="mins">4 min</span></div>
-  <h2>The AI Usage Policy Assignment</h2>
-
-  <p class="big">Draft an AI usage policy for your firm. Minimum three cited sources, at least one of them scholarly. Every source you need has already appeared in this course.</p>
-
-  <p>The reason this is assigned tonight and read in Session 4 rather than the reverse: Session 4 supplies the regulatory frame, and a policy written before you have it is a policy about tools. A policy written after it is a policy about duties. You have six sessions' worth of material to draw on and no excuse to cite a vendor blog.</p>
-
-  <div class="panel">
-    <span class="do">Do this now — 3 minutes</span>
-    <h4>Your Citation Set for the Policy Assignment</h4>
-    <p class="hint">Select the sources you intend to cite. The panel checks your set against three or more sources with at least one scholarly, and tells you what the set is missing, not just whether it counts.</p>
-    <div id="srcList" data-task="t-s14" data-comp="multi-column-sorter" class="chiplist"></div>
-    <div id="srcOut" class="mpanel"><span class="hd">Your citation set</span><span class="nil">Select at least one source.</span></div>
-  </div>
-
-  <p class="src">The 2024 Regulation S-P amendments are named as a citable source; their compliance dates are <span class="conf m" data-src="src-regsp">M — not verified in this build</span> and should be confirmed against the adopting release before a student relies on a date. Regulatory and scholarly classifications in the widget are the instructor's.</p>
-
-
-
-  <div class="check" data-gate="g11"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Select every element your policy needs and read the assembled outline.</div></div>
-
-</section>
-
-<section class="slide apx" id="s15" data-nav="C4 · Discussion" data-insert-after="s14" data-tier="standard">
+<section class="slide apx" id="s15" data-nav="C4 · Discussion" data-insert-after="s13" data-tier="standard">
   <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C4 &middot; Citation-Backed Output and Verification Effort</b><span>18 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
   <div class="eyebrow"><span>Appendix C4 &middot; Discussion</span><span class="mins">18 min</span></div>
   <h2>Citation-Backed Output and Verification Effort</h2>
@@ -1737,43 +1714,32 @@ then a list of every element where my answer was thin.</pre>
 
 </section>
 
-<section class="slide" id="s16" data-nav="Part 1 + handoff">
-  <div class="eyebrow"><span>11 &middot; Close</span><span class="mins">7 min</span></div>
-  <h2>Part 1 Draft Peer Exchange</h2>
+<section class="slide" id="s16" data-nav="Checklist + assignments">
+  <div class="eyebrow"><span>11 &middot; Close</span><span class="mins">5 min</span></div>
+  <h2>The Meeting Checklist</h2>
 
-  <p class="big">The component of Part 1 that fails most often is not the workflow. It is scalability.</p>
+  <p class="big">What a planner does before, during and after a client meeting so that AI makes the intake and the record faster without making them wrong.</p>
 
-  <p>Scalability has a two-part definition in this course: the workflow works for the next twenty clients and not only the one you built it on, and another advisor can run it without you in the room. Tonight bears on the first half. If your workflow depends on grounding, the twenty-clients test is a retrieval test, and the failure will be a passage that ranked well and did not govern.</p>
-
-  <div class="panel" data-task="t-s16" data-comp="work-along-gate">
-    <span class="do">Do this now — 6 minutes, in pairs</span>
-    <h4>Peer exchange on the draft outlines</h4>
-    <p class="hint">Swap draft task descriptions with one neighbour. Score <em>their</em> draft on four dimensions, then name one specific place the workflow they described would fail on the twenty-first client and not the first. Read both aloud to them.</p>
-    <div id="prWrap"></div>
-    <label class="fl" for="failBox" style="margin-top:14px">Where does it break at client twenty-one?</label>
-    <span class="hint">Not "it might not scale." Name the input that differs, and the step that assumes it does not.</span>
-    <textarea id="failBox" placeholder="At client 21, the workflow assumes … which fails when …"></textarea>
-    <div class="row" style="margin-top:12px"><button class="btn" id="failScore">Check the diagnosis</button></div>
-    <div id="prOut" class="mpanel"><span class="hd">Partner score</span><span class="nil">Score each dimension.</span></div>
+  <div class="panel" data-task="t-s16" data-comp="builder-assembler">
+    <span class="do">Do this now: 3 minutes</span>
+    <h4>Tick What You Already Do</h4>
+    <p class="hint">The readout names the gaps. Copy the list into your own notes; this page keeps nothing.</p>
+    <div id="ckList"></div>
+    <div id="ckOut" class="mpanel"><span class="hd">Your gaps</span><span class="nil">Tick the steps you already do.</span></div>
+    <div class="row" style="margin-top:12px"><button class="btn" id="ckCopy">Copy the checklist</button><span id="ckMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
   </div>
 
   <div class="cards">
-    <div class="card gold"><span class="num">§10</span><h4>AI usage policy for your firm</h4><p>Three sources minimum, one scholarly.</p></div>
-    <div class="card warn"><span class="num">Part 1</span><h4>Final Project Part 1 — handoff package</h4><p>Single email, body reads only "See attached." Everything a classmate needs lives inside the attachments.</p></div>
-    <div class="card"><span class="num">Reading for Session 4</span><h4>Daly (2026) · SEC FY2026 Exam Priorities §VII · Journal of Accountancy (2025)</h4><p>The regulatory frame, and the audit-trail prompt technique that pairs with tonight's basis record.</p></div>
+    <div class="card gold"><span class="num">Assignment</span><h4>AI usage policy for your firm</h4><p>Three cited sources minimum, at least one scholarly. Every source you need has appeared in this course.</p></div>
+    <div class="card warn"><span class="num">Part 1</span><h4>Final Project Part 1, the handoff package</h4><p>Single email, body reads only "See attached." Everything a classmate needs lives inside the attachments.</p></div>
+    <div class="card"><span class="num">Reading for Session 4</span><h4>Daly (2026) &middot; SEC FY2026 Exam Priorities &sect;VII &middot; Journal of Accountancy (2025)</h4><p>The regulatory frame, and the audit-trail prompt technique that pairs with this session's basis record.</p></div>
   </div>
 
-  <p>One item to carry forward. Part 1 sets your Session 1 baseline time against the AI-assisted time, including any step where AI made the work slower or worse. If tonight added a verification step to your workflow — and if you are grounding, it should have — that step is time. Measure it and report it. A package that reports only the speed-up has not been measured; it has been advertised.</p>
+  <p class="src">The checklist is built for this lesson from the sections above <span class="conf l" data-src="src-case">L</span>. The assignment terms are the course's, stated here in one form.</p>
 
-  <p class="pull">Session 4 does what tonight could not: it prices the failure.</p>
+  <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Tick the list, copy it out, and name the one gap you will close before your next client meeting.</div></div>
 
-  <p>Everything tonight was a measurement of how often grounding is wrong. Nothing tonight established what happens to you when it is. Session 4 supplies the part this session structurally cannot reach — the duties that attach when a grounded, well-cited, materially wrong answer reaches a client file, what counts as nonpublic personal information inside these transcripts, which of the three Cole confidentiality landmines a public tool would have already leaked, and what an audit trail has to contain to survive an examination. Tonight you learned that the citation is not the verification. Session 4 is where that stops being an epistemics problem and starts being your problem.</p>
-
-  <p class="src">The two-part definition of "scalable" is taken from the course syllabus, as are the Session 4 readings.</p>
-
-  <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Score your Part 1 draft against the rubric and name the one gap you will close.</div></div>
-
-  <div class="talk"><span class="th">Closing question &middot; one to three answers, out loud, then we go</span>Tonight’s grounded answer was correctly retrieved, accurately quoted, and materially wrong. Name the point in your own meeting workflow where you would have caught it, and say who is left holding it if nobody does.</div>
+  <div class="talk"><span class="th">Closing question &middot; one to three answers, out loud, then we go</span>The grounded answer in &sect;03 was correctly retrieved, accurately quoted, and wrong. Name the point in your own meeting workflow where you would catch it, and say who is left holding it if nobody does.</div>
 
 </section>
 
@@ -1792,10 +1758,9 @@ then a list of every element where my answer was thin.</pre>
       <tr><td>06 &middot; The workflow</td><td>The Advisor Meeting Workflow: Prep, Capture, Summarise, Follow-Up, Log</td><td class="n">6</td></tr>
       <tr><td>07 &middot; The note-taker</td><td>How an AI Note-Taker Works, and How to Prompt It</td><td class="n">7</td></tr>
       <tr><td>08 &middot; In the files you already use</td><td>Claude in Word, Excel and PowerPoint for the Client Review</td><td class="n">5</td></tr>
-      <tr><td>08 &middot; Obligation</td><td>Recording Consent and the Confidentiality Obligation</td><td class="n">6</td></tr>
-      <tr><td>09 &middot; Documentation</td><td>Documenting the Basis for a Recommendation</td><td class="n">6</td></tr>
-      <tr><td>10 &middot; Assignment</td><td>The AI Usage Policy Assignment</td><td class="n">4</td></tr>
-      <tr><td>11 &middot; Close</td><td>Part 1 Draft Peer Exchange</td><td class="n">7</td></tr>
+      <tr><td>09 &middot; Obligation</td><td>Recording Consent and the Confidentiality Obligation</td><td class="n">6</td></tr>
+      <tr><td>10 &middot; Documentation</td><td>Documenting Circumstances and the Basis for a Recommendation</td><td class="n">6</td></tr>
+      <tr><td>11 &middot; Close</td><td>The Meeting Checklist</td><td class="n">5</td></tr>
       <tr class="apxrow"><td>Appendix A1 &middot; Before you buy a retrieval tool</td><td>Do You Need Retrieval at All?</td><td class="n">14</td></tr>
       <tr class="apxrow"><td>Appendix A2 &middot; Prep</td><td>The Intake Questionnaire, Drafted With AI</td><td class="n">14</td></tr>
       <tr class="apxrow"><td>Appendix A3 &middot; The after-meeting check</td><td>Check the Summary Against the Transcript</td><td class="n">14</td></tr>
@@ -1803,7 +1768,7 @@ then a list of every element where my answer was thin.</pre>
       <tr class="apxrow"><td>Appendix C4 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">18</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 73 + appendix 74; the core alone runs 73 minutes, thirteen minutes over the hour</td><td class="n">147</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 67 + appendix 74; the core alone runs 67 minutes, seven minutes over the hour</td><td class="n">141</td></tr>
     </tbody>
 <!-- APXBUDGET:END -->
   </table>
@@ -1828,7 +1793,7 @@ then a list of every element where my answer was thin.</pre>
 <!-- SOURCES:END -->
   </ul>
 <!-- APXNOTE:BEGIN generated-by=scripts/build-appendix.mjs -->
-  <p style="margin-top:22px">The core is 13 sections and runs in about 73 minutes, thirteen minutes over the hour. The 5 appendix sections add 74 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
+  <p style="margin-top:22px">The core is 12 sections and runs in about 67 minutes, seven minutes over the hour. The 5 appendix sections add 74 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
 <!-- APXNOTE:END -->
   <p><strong>No client data.</strong> The Cole household, Cole Precision Components and every document, transcript and figure attributed to them are synthetic and exist only as a classroom anchor. Nothing in this document is legal, tax or compliance advice, and no tax or legal conclusion is asserted anywhere in it.</p>
 
@@ -2498,44 +2463,6 @@ mkSorter({list:$('docList'),boxes:$('docBoxes'),out:$('docOut'),key:$('docKey'),
  };
 })();
 
-/* ================= 14. AI usage policy citation set ================= */
-var SRCS=[
- {t:'FINRA Regulatory Notice 24-09 (2024)',sch:false,pil:'reg'},
- {t:'SEC Division of Examinations, FY2026 Examination Priorities, Section VII',sch:false,pil:'reg'},
- {t:'Regulation S-P, 2024 amendments',sch:false,pil:'reg'},
- {t:'Daly (2026), SEC speech on AI and the future of investment management',sch:false,pil:''},
- {t:'Magesh et al. (2025), Journal of Empirical Legal Studies',sch:true,pil:''},
- {t:'Kalai et al. (2025), Why Language Models Hallucinate',sch:true,pil:''},
- {t:'Lee et al. (2025), CHI 2025, generative AI and critical thinking',sch:true,pil:''},
- {t:'Journal of Accountancy (2025), writing an effective AI prompt for an audit trail',sch:false,pil:''},
- {t:'Iskowitz (2025), AI notetakers and compliance in wealth management',sch:false,pil:''},
- {t:'Kitces.com (2025), best AI notetakers for advisor meetings',sch:false,pil:''}
-];
-(function(){
- var L=$('srcList'),O=$('srcOut'),st=SRCS.map(function(){return false});
- function draw(){
-  var sel=SRCS.filter(function(s,i){return st[i]});
-  var n=sel.length,sch=sel.filter(function(s){return s.sch}).length;
-  var pil=sel.filter(function(s){return s.pil==='reg'}).length;
-  var h='<span class="hd">Your citation set</span>';
-  if(!n){h+='<span class="nil">Select at least one source.</span>';O.className='mpanel';O.innerHTML=h;return}
-  h+=n+' selected \u00b7 '+sch+' scholarly \u00b7 '+pil+' of 3 regulatory pillars<br><br>';
-  h+=(n>=3?'<span class="good">\u2713 Meets the three-source minimum.</span>':'<span class="flag">\u2717 '+(3-n)+' more source'+(3-n===1?'':'s')+' required.</span>')+'<br>';
-  h+=(sch>=1?'<span class="good">\u2713 Includes a scholarly source.</span>':'<span class="flag">\u2717 No scholarly source. Three of the ten listed qualify.</span>')+'<br>';
-  h+=(pil===3?'<span class="good">\u2713 All three regulatory pillars present.</span>':'<span style="color:#6F7B78">'+pil+' of the three regulatory pillars \u2014 FINRA 24-09, the FY2026 exam priorities and the 2024 Reg S-P amendments. Not required, but a firm policy that cites none of them is a policy about tools rather than about duties.</span>')+'<br><br>';
-  h+='<span class="hd">Verdict</span>'+((n>=3&&sch>=1)
-   ?'<span class="good">This set satisfies the assignment. Now check the harder thing: does each source say something your policy actually relies on, or is it there to be counted?</span>'
-   :'<span class="flag">Not yet sufficient.</span>');
-  O.className='mpanel has';O.innerHTML=h;
- }
- SRCS.forEach(function(s,i){
-  var b=document.createElement('button');b.className='chip';b.type='button';
-  b.innerHTML=esc(s.t)+(s.sch?' <span class="conf h" data-src="src-case">scholarly</span>':'');
-  b.onclick=function(){st[i]=!st[i];b.classList.toggle('act',st[i]);draw()};
-  L.appendChild(b)});
- draw();
-})();
-
 /* ================= 15. Vote, defence, re-vote ================= */
 var VOTES=[{k:'more',t:'I check more'},{k:'same',t:'I check the same'},{k:'less',t:'I check less'}];
 var v1=null,v2=null;
@@ -2587,54 +2514,44 @@ function showRevote(){
   RB.appendChild(b)});
 })();
 
-/* ================= 16. Peer exchange instrument ================= */
-var PRD=[
- {n:'Target task is a task, not a topic',hi:'Named a recurring task with a start and an end.',lo:'Named a subject area.'},
- {n:'Model and tier choice is justified',hi:'Gave a reason tied to the task, not to price.',lo:'Stated a tool with no reason.'},
- {n:'A verification step exists and is specific',hi:'Named what is checked, against what, by whom.',lo:'Says outputs are reviewed.'},
- {n:'Would survive the twenty-clients test',hi:'You could run it on a different household without asking the builder anything.',lo:'It is built around one case.'}
+/* ================= 16. The meeting checklist ================= */
+var CKL=[
+ {g:'Before',t:'Consent to record is asked for and noted, every meeting.'},
+ {g:'Before',t:'The note-taker is on the call, or the recording will be uploaded afterwards.'},
+ {g:'Before',t:'The standing instruction tells the tool what to extract and what to leave out.'},
+ {g:'Before',t:'The prep prompt has the file attached and says: answer only from these documents.'},
+ {g:'During',t:'The recording is running before anything substantive is said.'},
+ {g:'After',t:'The summary is read against the transcript before it goes anywhere.'},
+ {g:'After',t:'Every action item has an owner and a date.'},
+ {g:'After',t:'The recap states each point as asserted, decided, or still open.'},
+ {g:'After',t:'The basis entry is written the same day: options considered, the reason, the client\u2019s response.'},
+ {g:'After',t:'Identity checks and account numbers never entered the tool.'}
 ];
 (function(){
- var W=$('prWrap'),O=$('prOut'),sc=PRD.map(function(){return -1}),diag='';
- PRD.forEach(function(d,i){
-  var row=document.createElement('div');row.style.marginBottom='14px';
-  var h='<label class="fl">'+esc(d.n)+'</label><span class="hint">3 = '+esc(d.hi)+' \u00b7 0 = '+esc(d.lo)+'</span><div class="row">';
-  [0,1,2,3].forEach(function(v){h+='<button class="btn sel mini" type="button" data-i="'+i+'" data-v="'+v+'">'+v+'</button>'});
-  h+='</div>';row.innerHTML=h;W.appendChild(row);
+ var L=$('ckList'),O=$('ckOut'),B=$('ckCopy'),M=$('ckMsg');if(!L)return;
+ var on=CKL.map(function(){return false}),grp='';
+ CKL.forEach(function(c,i){
+  if(c.g!==grp){grp=c.g;var h=document.createElement('span');h.className='plab';h.style.marginTop='12px';h.textContent=grp;L.appendChild(h)}
+  var l=document.createElement('label');l.className='ckrow';var b=document.createElement('input');b.type='checkbox';
+  l.appendChild(b);l.appendChild(document.createTextNode(c.t));
+  b.onchange=function(){on[i]=b.checked;l.classList.toggle('on',b.checked);draw()};L.appendChild(l);
  });
- [].slice.call(W.querySelectorAll('button')).forEach(function(b){
-  b.onclick=function(){
-   var i=parseInt(b.dataset.i,10),v=parseInt(b.dataset.v,10);sc[i]=v;
-   [].slice.call(W.querySelectorAll('button[data-i="'+i+'"]')).forEach(function(x){
-    x.classList.toggle('act',parseInt(x.dataset.v,10)===v)});
-   draw();
-  }});
- $('failScore').onclick=function(){
-  var t=$('failBox').value.trim(),wc=t?t.split(/\s+/).length:0;
-  var varies=/(differ|vary|varies|variet|different|unique|edge|missing|absent|format|custodian|entity|state|volume|jurisdic|trust|entity|when|unless)/i.test(t);
-  var step=/(step|prompt|assume|assumes|assumption|template|input|upload|check|review|parse|extract|field)/i.test(t);
-  if(wc<8){diag='<span class="flag">Too short to be a diagnosis. "It might not scale" is a worry, not a finding.</span>'}
-  else if(varies&&step){diag='<span class="good">This is a diagnosis: it names an input that varies and a step that assumes it does not. Read it to your partner verbatim \u2014 that sentence is worth more to them than the four scores above.</span>'}
-  else if(step&&!varies){diag='<span class="flag">You named the step but not what changes at client 21. Which specific input is different for the twenty-first household?</span>'}
-  else if(varies&&!step){diag='<span class="flag">You named what varies but not where the workflow breaks on it. Which step assumes it does not vary?</span>'}
-  else{diag='<span class="flag">Neither a varying input nor a specific step is identified.</span>'}
-  draw();
- };
  function draw(){
-  var scored=sc.filter(function(v){return v>=0}).length;
-  var h='<span class="hd">Partner score</span>';
-  if(scored<PRD.length){h+=scored+' of '+PRD.length+' dimensions scored.'}
-  else{
-   var tot=sc.reduce(function(a,b){return a+b},0);
-   var weakest=sc.indexOf(Math.min.apply(null,sc));
-   var band=tot>=10?'Ready to build the package':tot>=7?'Six days of work remains':tot>=4?'The target task needs rewriting first':'Start over on scope';
-   h+=tot+' of 12 \u2014 '+band+'<br><br><span class="hd">Say this to them, out loud</span><span class="good">\u201cThe weakest dimension is: '+esc(PRD[weakest].n)+'. To move it to a 3 you need: '+esc(PRD[weakest].hi)+'\u201d</span>';
-  }
-  if(diag)h+='<br><br><span class="hd">Client-21 diagnosis</span>'+diag;
-  h+='<br><br><span style="color:#6F7B78">Part 1 weights scalability at 30% and deliverable correctness at 25%. The fourth dimension and the diagnosis both map to scalability. Fix those first.</span>';
-  O.className='mpanel'+(scored||diag?' has':'');O.innerHTML=h;
+  var n=on.filter(Boolean).length,gaps=CKL.filter(function(c,i){return !on[i]});
+  var h='<span class="hd">Your gaps</span>'+n+' of '+CKL.length+' in place.';
+  if(gaps.length){h+='<br><br>';gaps.forEach(function(c){h+='<span class="flag">\u00b7 '+esc(c.g)+': '+esc(c.t)+'</span><br>'})}
+  else h+='<br><br><span class="good">Every step in place. The next thing to check is whether they survive a busy week.</span>';
+  O.className='mpanel'+(n?' has':'');O.innerHTML=h;
+  if(n===CKL.length&&typeof mark==='function')mark('g12');
  }
- draw();
+ B.onclick=function(){
+  var txt='Meeting checklist (Session 3)\n';var g='';
+  CKL.forEach(function(c,i){if(c.g!==g){g=c.g;txt+='\n'+g+'\n'}txt+=(on[i]?'[x] ':'[ ] ')+c.t+'\n'});
+  function ok(){M.textContent='Copied.';setTimeout(function(){M.textContent=''},2500)}
+  function fail(){var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();
+   try{document.execCommand('copy');ok()}catch(e){M.textContent='Select the list and copy manually.'}document.body.removeChild(ta)}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fail)}else{fail()}
+ };
 })();
 
 /* ===== family 1: work-along gates — completion feedback only (pedagogy R10) ===== */
@@ -2658,7 +2575,7 @@ document.addEventListener('keydown',function(e){
 });
 
 /* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
-window.__coreMins=73;
+window.__coreMins=67;
 /* APXCORE:END */
 
 /* ===== appendix depth control: tier filter + core-only mode ===== */

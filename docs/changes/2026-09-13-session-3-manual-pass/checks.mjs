@@ -321,3 +321,15 @@ await check('JN-011', async (page) => {
   await page.click('#copyBtn'); await page.waitForTimeout(200);
   must((await page.evaluate(() => document.getElementById('copyMsg').textContent)).length > 0, 'no copy message');
 });
+
+/* JN-012: the close is the checklist and three cards; s14 is gone; the readout names gaps and the copy works. */
+await check('JN-012', async (page) => {
+  must(!/id="s14"|var SRCS=|var PRD=|weights scalability/.test(SRC), 'the assignment section or the peer scorer survives in the source');
+  const r0 = await page.evaluate(() => { const s = document.getElementById('s16'); return { boxes: s.querySelectorAll('#ckList input').length, cards: s.querySelectorAll('.cards .card').length, out: document.getElementById('ckOut').textContent, talk: !!s.querySelector('.talk') }; });
+  must(r0.boxes === 10 && r0.cards === 3 && r0.talk, `boxes ${r0.boxes}, cards ${r0.cards}, closing question ${r0.talk}`);
+  await page.click('#ckList label:nth-of-type(1) input'); await page.click('#ckList label:nth-of-type(6) input');
+  const r1 = await page.evaluate(() => document.getElementById('ckOut').textContent);
+  must(/2 of 10 in place/.test(r1) && /During: The recording is running/.test(r1) && !/Consent to record is asked/.test(r1), `readout after two ticks: ${r1.slice(0, 90)}`);
+  await page.click('#ckCopy'); await page.waitForTimeout(200);
+  must((await page.evaluate(() => document.getElementById('ckMsg').textContent)).length > 0, 'no copy message');
+});
