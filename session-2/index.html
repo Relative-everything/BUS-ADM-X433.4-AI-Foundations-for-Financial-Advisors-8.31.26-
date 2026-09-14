@@ -1301,7 +1301,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="doit">
     <span class="plab">Live run &mdash; 3 minutes</span>
     <p>In your AI tool, send exactly this and nothing else: <span class="mono">The best thing about AI is its ability to</span></p>
-    <p>Send it three separate times, in three separate chats. Compare the three openings and keep them. &sect;01 runs the same comparison with the output space constrained.</p>
+    <p>Send it three separate times, in three separate chats. Compare the three openings and keep them. &sect;01 explains the difference and how to narrow it.</p>
   </div>
 
   <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Draw from the distribution until you have seen the same prompt produce three different continuations.</div></div>
@@ -1408,7 +1408,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     </div>
   </div>
 
-  <p class="big">Temperature is the dial that decides how often the model picks a lower-ranked next word instead of the top one. At 0 it takes the top word every time and the text goes flat and repetitive. Around 0.8 it reads naturally; Wolfram notes there is no theory behind that number, it is simply what works for essays. <span class="conf h" data-src="src-wolfram">H</span></p>
+  <p class="big">Temperature is the dial that decides how often the model picks a lower-ranked next word instead of the top one. At 0 it takes the top word every time and the text goes flat and repetitive. Around 0.8 it reads naturally; Wolfram notes there is no theory behind that number: it is simply what works for essays. <span class="conf h" data-src="src-wolfram">H</span></p>
 
   <p>Move the slider, then run the same prompt five times and watch the spread.</p>
 
@@ -1474,9 +1474,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 <section class="slide" id="s5" data-nav="Cost frontier">
   <div class="eyebrow"><span>02 &middot; Economics</span><span class="mins">6 min</span></div>
   <h2>Cost Per Task Versus Cost Per Token</h2>
-  <p class="big">Dollars per million tokens measures the wrong thing. Two models priced within two dollars of each other per token can differ fourfold in what a finished piece of work costs, because they burn different numbers of tokens getting there.</p>
+  <p class="big">Dollars per million tokens measures the wrong thing. Two models two dollars apart per million tokens can differ fourfold in what a finished piece of work costs, because they burn different numbers of tokens getting there.</p>
 
-  <p>Artificial Analysis publishes an Intelligence Index score and the dollar cost of running that benchmark through each model. Plotted together, the price-sheet ranking falls apart.</p>
+  <p>Artificial Analysis publishes an Intelligence Index score and the dollar cost of running that benchmark through each model. Plotted together, they scramble the price-sheet ranking.</p>
 
   <h3>What a task is</h3>
   <p>A task is one finished unit of work you would otherwise do yourself, priced by every token the model reads and writes to finish it at a quality you accept, retries and reasoning included. Five from an advisory week:</p>
@@ -1589,7 +1589,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p>Persona still earns its place: it sets the reading level for a client email and the terseness of a case note. It is not the lever for correctness, and a template that is only a persona is an unspecified template.</p>
 
   <div class="panel tightpad">
-    <span class="plab">A related result on prompt length</span>
+    <span class="plab">A related point on prompt length</span>
     <p style="font-size:15.5px;margin:0">Longer prompts are not better prompts. Specific prompts are better prompts, and specificity is usually shorter than the padding it replaces.</p>
   </div>
 
@@ -1686,7 +1686,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
   <h3>The Cole Buy-Sell Agreement</h3>
   <p><span class="caseflag">Synthetic case</span> You want a summary of what the 2014 buy-sell agreement does and where it breaks. Send the wrapper above with this task: <span class="mono">Summarise the 2014 buy-sell agreement for Cole Precision Components and identify where it conflicts with the current planning.</span></p>
-  <p>Click each question the model asked you to reveal it. The ones you would not have thought to answer are the point.</p>
+  <p>The questions it asked back are below. The ones you would not have thought to answer are the point.</p>
 
   <div class="panel" id="bsell" data-task="t-s8" data-comp="builder-assembler"></div>
   <div class="row" style="margin-top:-12px">
@@ -1694,7 +1694,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <span class="mono dim" style="font-size:12px" id="bsellCount"></span>
   </div>
 
-  <h3>Start a Reverse-Prompting Interview</h3>
+  <h3>Start a reverse-prompting interview</h3>
   <p>Pick a starter, copy the kickoff into your own tool, and answer its questions before it writes anything. The questions shown here are the kind a model asks first; yours will differ.</p>
   <div class="panel" id="rpStart" data-task="t-s8b" data-comp="builder-assembler">
     <div class="row" id="rpChips" style="margin-bottom:12px"></div>
@@ -1704,7 +1704,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <div class="out has" id="rpQs"></div>
   </div>
 
-  <h3>Specification Diagnosis on Your Own Prompt</h3>
+  <h3>Specification diagnosis on your own prompt</h3>
   <p>Now paste one of your own prompts, or the buy-sell prompt above. The checker looks for ten specification dimensions that determine whether the output can be verified. It runs entirely in this page; nothing is transmitted.</p>
 
   <div class="panel">
@@ -1750,7 +1750,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <div class="chart">
     <div class="ctitle">Advisor adoption of AI tools against reliance on AI-generated recommendations</div>
     <div class="csub">The profession has already drawn a line, whether or not any individual firm has written it down. Adoption of AI search and drafting is over half, and notetaking tools are close behind. Reliance on the model's recommendation is close to zero.</div>
-    <svg viewBox="0 0 700 250" role="img" aria-label="Bar chart of advisor AI adoption versus reliance"><g id="adoptChart"></g></svg>
+    <svg viewBox="0 0 700 206" role="img" aria-label="Bar chart of advisor AI adoption versus reliance"><g id="adoptChart"></g></svg>
     <div class="csrc">Sources: T3 / Inside Information Software Survey 2026, n=2,906 advisors, 95% at fee-only RIA or dually registered firms &mdash; 52.2% using AI search and generative language, 42.9% using AI notetaking <span class="conf h" data-src="src-t3-survey">H</span>. Reliance figure reported via Advisor360 and Kitces Research through a secondary aggregator; treat as directional <span class="conf m" data-src="src-kitces-productivity">M</span>. Kitces Research on Advisor Productivity: approximately one hour of note, summary and follow-up work per two-hour client meeting <span class="conf h" data-src="src-kitces-productivity">H</span>.</div>
   </div>
 
@@ -1804,7 +1804,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <div class="cards">
     <div class="card"><span class="num">Check 01 &mdash; Existence</span><h4>Does the authority exist</h4><p>Section number, revenue procedure number, case reporter and page. A search against the Code or the reporter settles it. Fifteen seconds.</p></div>
     <div class="card"><span class="num">Check 02 &mdash; Text</span><h4>Does it say what the sentence claims</h4><p>Open it and read the operative language. This is the check that catches misgrounding and the one most often skipped.</p></div>
-    <div class="card"><span class="num">Check 03 &mdash; Currency</span><h4>Is it still operative</h4><p>Amended, superseded, modified by a later revenue procedure, or subject to a sunset. Training data has a cutoff; the Code does not. How to check: for a ruling, later Bulletins list it as modified, superseded or obsoleted; for a case, look for an appeal, a reversal or a later statute. Tax law moves by statute, ruling and court decision, so no source is a permanent record.</p></div>
+    <div class="card"><span class="num">Check 03 &mdash; Currency</span><h4>Is it still operative</h4><p>Amended, superseded, modified by a later revenue procedure, or subject to a sunset. How to check: for a ruling, later Bulletins list it as modified, superseded or obsoleted; for a case, look for an appeal, a reversal or a later statute. Tax law moves by statute, ruling and court decision, so no source is a permanent record.</p></div>
     <div class="card gold"><span class="num">Check 04 &mdash; Applicability</span><h4>Does it reach these facts</h4><p>The provision is real, correctly stated and current, and governs a different fact pattern from your client's. Only you can perform this one.</p></div>
   </div>
 
@@ -1823,7 +1823,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 <section class="slide" id="s11" data-nav="Template audit">
   <div class="eyebrow"><span>08 &middot; Workshop</span><span class="mins">5 min</span></div>
   <h2>Template Audit and Live Audit</h2>
-  <p class="big">Section 04, the workshop, rebuilt one of your prompts. This section tests whether it is a <em>template</em> — something a second person can run — rather than a prompt that happens to work in your hands.</p>
+  <p class="big">&sect;04 rebuilt one of your prompts. This section tests whether it is a <em>template</em> — something a second person can run — rather than a prompt that happens to work in your hands.</p>
 
   <p><span class="caseflag">Synthetic case</span> The audit target is a client-explanation template for the Cole IDGT structure: a reusable instrument that takes any closely held business owner facing a sale to a trust and produces an explanation they can act on. Score the version you would hand to a colleague, not the one in your head.</p>
 
@@ -1832,9 +1832,9 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
   <div class="panel" data-task="t-s11" data-comp="work-along-gate">
     <div class="row" style="margin-bottom:16px">
-      <button class="btn sel mini act" data-tpl="email">Client explanation, IDGT structure</button>
-      <button class="btn sel mini" data-tpl="note">Case note formatter</button>
-      <button class="btn sel mini" data-tpl="summary">One-page plan summary</button>
+      <button class="btn sel mini act" data-tpl="email" aria-pressed="true">Client explanation, IDGT structure</button>
+      <button class="btn sel mini" data-tpl="note" aria-pressed="false">Case note formatter</button>
+      <button class="btn sel mini" data-tpl="summary" aria-pressed="false">One-page plan summary</button>
     </div>
     <div id="rubric"></div>
     <div class="out" id="rubricOut" style="margin-top:18px"></div>
@@ -1857,7 +1857,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B5 &middot; Specification Cost Against Task Cost</b><span>18 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
   <div class="eyebrow"><span>Appendix B5 &middot; Discussion</span><span class="mins">18 min</span></div>
   <h2>Specification Cost Against Task Cost</h2>
-  <p class="big">The question, stated once and not softened: if a prompt has to be specified as carefully as section 04, the workshop, required to be reliable, has the tool saved time, or has it moved the work from doing the task to specifying the task?</p>
+  <p class="big">The question, stated once and not softened: if a reliable prompt has to be specified as carefully as &sect;04 required, has the tool saved time, or has it moved the work from doing the task to specifying the task?</p>
 
   <p>This is not a rhetorical question with a preferred answer. Both positions are defensible and the room will divide. Commit before anyone speaks.</p>
 
@@ -1901,8 +1901,8 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <div class="out" id="dVote2Out"></div>
     <div class="row" style="margin:6px 0 16px">
       <span class="mono dim" style="font-size:11.5px">Room percentage voting &ldquo;time was saved&rdquo;, from the poll</span>
-      <input type="text" id="rm1" value="" placeholder="vote 1 %" inputmode="numeric" style="width:96px">
-      <input type="text" id="rm2" value="" placeholder="vote 2 %" inputmode="numeric" style="width:96px">
+      <input type="text" id="rm1" value="" placeholder="vote 1 %" aria-label="Vote 1, percentage voting time was saved" inputmode="numeric" style="width:96px">
+      <input type="text" id="rm2" value="" placeholder="vote 2 %" aria-label="Vote 2, percentage voting time was saved" inputmode="numeric" style="width:96px">
       <button class="btn ghost mini" id="rmGo">Render both distributions</button>
     </div>
     <div class="tally" id="dTally"></div>
@@ -2477,7 +2477,7 @@ var QZ=[
  {p:'Act as a CFP\u00ae professional with twenty years of ultra-high-net-worth experience, deep expertise in estate planning, and a reputation for clarity. Summarise this client\u2019s tax return.',a:'A',
   f:{A:'Correct, and this is the trap. Fifty words were added and none of them was Task, Context or Format. It is the previous prompt with a costume on.',
      B:'The persona is not a specification. The output shape is still whatever the model picks.',
-     C:'The added length is entirely Persona, which the evidence in &sect;03 says does not move objective accuracy.'}},
+     C:'The added length is entirely Persona, which the evidence in \u00a703 says does not move objective accuracy.'}},
  {p:'From the attached 2025 Form 1040 and schedules, list every line item that changed by more than $10,000 against the 2024 return, as a two-column table, and flag any change I should raise with the client.',a:'C',
   f:{A:'Source, threshold, output shape and the action all appear. This is specified.',
      B:'It is verifiable: open both returns and check the arithmetic. The threshold makes the answer set finite.',
@@ -2493,7 +2493,7 @@ var QZ=[
  {p:'Research whether my client can still elect portability for a spouse who died in 2021, and cite the governing authority.',a:'B',
   f:{A:'It is specific about the question and demands a citation, so it is not underspecified in the ordinary sense.',
      B:'Correct. It names no facts that determine the answer \u2014 estate size, whether a return was filed, whether the estate was under the filing threshold \u2014 and it sets no verification standard for the citation it demands. A citation you did not require to be current is not a check.',
-     C:'A demand for a citation is not a verification procedure. &sect;07 covers the four checks a citation still has to pass.'}},
+     C:'A demand for a citation is not a verification procedure. \u00a707 covers the four checks a citation still has to pass.'}},
  {p:'Give me the 2026 gift tax annual exclusion and the lifetime exclusion amount, with citations.',a:'B',
   f:{A:'It is perfectly specific. That is what makes it dangerous.',
      B:'Correct, and this is the hardest item. It looks like the most verifiable prompt on the list. Both figures are indexed annually, both may post-date the training data, and the prompt gives the model no source to read. It will answer confidently from memory. Specified is not the same as grounded.',
@@ -2630,8 +2630,8 @@ var BUCK=[{k:'draft',t:'AI drafts, planner verifies'},{k:'assist',t:'AI assists 
     g.appendChild(el('rect',{x:x0,y:y,width:BW*(r.v/100),height:22,rx:4,fill:r.c}));
     g.appendChild(el('text',{x:x0+BW*(r.v/100)+9,y:y+16,class:'dlab b','font-size':'13',fill:r.c},r.v+'%'));
   });
-  g.appendChild(el('line',{x1:x0,y1:14,x2:x0,y2:222,class:'axis'}));
-  g.appendChild(el('text',{x:x0,y:240,class:'alab'},'THE GAP BETWEEN ROWS 1 AND 4 IS THE DELEGATION LINE, ALREADY DRAWN IN PRACTICE.'));
+  g.appendChild(el('line',{x1:x0,y1:14,x2:x0,y2:150,class:'axis'}));
+  g.appendChild(el('text',{x:14,y:192,class:'alab'},'THE GAP BETWEEN ROWS 1 AND 3 IS THE DELEGATION LINE, ALREADY DRAWN IN PRACTICE.'));
 })();
 
 /* ================= 10 · CITATIONS ================= */
@@ -2767,15 +2767,15 @@ var RUB={
   }
   document.querySelectorAll('[data-tpl]').forEach(function(b){
     b.onclick=function(){
-      document.querySelectorAll('[data-tpl]').forEach(function(x){x.classList.remove('act')});
-      b.classList.add('act');cur=b.getAttribute('data-tpl');render();
+      document.querySelectorAll('[data-tpl]').forEach(function(x){x.classList.remove('act');x.setAttribute('aria-pressed','false')});
+      b.classList.add('act');b.setAttribute('aria-pressed','true');cur=b.getAttribute('data-tpl');render();
     };
   });
   render();
 })();
 
 var PEER=[
- {t:'Ran without editing',d:'You pasted it in and it produced something, with no changes to the template itself.'},
+ {t:'Ran without editing',d:'Pasted in as written, it produced something, with no change to the template itself.'},
  {t:'Output usable without rewriting',d:'What came back could go to its intended reader after a proofread, not a rebuild.'},
  {t:'Verification step present',d:'The template tells you what to check and against what before the output is used.'},
  {t:'No confidentiality exposure',d:'Nothing in the template invites client-identifying information, and it says so.'}
@@ -2963,7 +2963,7 @@ var LEVELS=['Absent','Gestured at','Specified','Specified and checkable'];
     var h='';
     ELEM.forEach(function(e){
       h+='<div class="eltile"><span class="elk">'+e.k+'<span class="dim mono" style="display:block;font-size:10px;letter-spacing:.06em;font-weight:400">'+e.n.toUpperCase()+'</span></span>'+
-         '<div><div class="dim" style="font-size:13.5px;margin-bottom:7px">'+e.d+'</div><div class="scale" data-e="'+e.k+'">'+
+         '<div><div class="dim" style="font-size:13.5px;margin-bottom:7px">'+e.d+'</div><div class="scale" role="group" aria-label="'+e.n+' level" data-e="'+e.k+'">'+
          LEVELS.map(function(l,v){var on=lv[cur][e.k]===v;return '<button data-v="'+v+'" class="'+(on?'on'+(v<2?' lo':''):'')+'" aria-pressed="'+(on?'true':'false')+'">'+l+'</button>'}).join('')+
          '</div></div></div>';
     });
@@ -2995,7 +2995,7 @@ var LEVELS=['Absent','Gestured at','Specified','Specified and checkable'];
   function show(){
     var f=FX[cur];
     $('fxInLabel').textContent=f.lab;host.textContent=f.inp;$('fxWhich').textContent=f.n;$('hwWhich').textContent='';
-    document.querySelectorAll('[data-fx]').forEach(function(b){b.classList.toggle('act',b.getAttribute('data-fx')*1===cur)});
+    document.querySelectorAll('[data-fx]').forEach(function(b){var on=b.getAttribute('data-fx')*1===cur;b.classList.toggle('act',on);b.setAttribute('aria-pressed',on?'true':'false')});
     tiles();prompt();
   }
   document.querySelectorAll('[data-fx]').forEach(function(b){b.onclick=function(){cur=b.getAttribute('data-fx')*1;show()}});
@@ -3075,7 +3075,6 @@ var BSQ=[
       h+='<button class="bq" data-i="'+i+'" style="text-align:left;background:'+(on?'var(--on-bg)':'var(--card)')+';border:1.5px solid '+(on?'var(--on)':'var(--line)')+';border-radius:9px;padding:10px 14px;cursor:pointer;font-family:Source Serif 4,serif;font-size:14.5px;line-height:1.45;color:var(--ink);display:flex;gap:12px"><span style="flex:none;color:'+(on?'var(--on)':'var(--off)')+';font-family:JetBrains Mono,monospace;text-shadow:none">'+(on?'\u2713':'\u25cb')+'</span><span>'+((shown||on)?q:'Question '+(i+1)+' of ten. Click to reveal.')+'</span></button>';
     });
     h+='</div>';
-    if(!shown)h+='<p class="dim" style="font-size:13.5px;margin:14px 0 0">Ten questions, listed by number. Click the ones the model asked you and read each as it opens; the button below reveals the rest.</p>';
     host.innerHTML=h;
     host.querySelectorAll('.bq').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-i');ticked[i]=!ticked[i];render();count()}});
     count();

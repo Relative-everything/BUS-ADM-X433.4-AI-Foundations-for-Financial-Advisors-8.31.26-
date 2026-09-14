@@ -2,6 +2,12 @@
 
 Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with the D5 and D7 decisions applied. Clock times are Pacific (the block is 6:00 to 9:00 PM); the Central time is in brackets, confirm it is the right second zone before printing. The page is worked in the room at core-only depth (D1). Nothing in this file addresses a learner.
 
+## Changed since the 09-13 run sheet (polish pass, 2026-09-14)
+
+- Nothing that changes a slot: no element id, `data-comp`, opener, poll, minute or reveal moved. Print this sheet as it stands.
+- What the room sees differently, by section. §01: the explanation ends "no theory behind that number: it is simply what works for essays". §02: the lede reads "Two models two dollars apart per million tokens" and the paragraph under it "Plotted together, they scramble the price-sheet ranking". §03: the prompt-length panel is labelled "A related point". §05: the feedback on items 2 and 6 prints the section sign where it printed the literal "&sect;". §06: the two subheadings are sentence case, the buy-sell paragraph reads "The questions it asked back are below", and the panel's hint line under the ten questions is gone (the label and "Reveal the rest" carry the instruction). §07: the Check 03 card no longer repeats "Training data has a cutoff; the Code does not" from the Type 03 card. §08: the section opens "§04 rebuilt one of your prompts" and the first live-audit criterion reads "Pasted in as written, it produced something". B1: the live-run doit points at §01 as it now is. B4: the adoption chart's caption names rows 1 and 3 and sits under the three bars. B5: the question reads "if a reliable prompt has to be specified as carefully as §04 required". Screen-reader-only changes in §04 (named level groups, pressed state on F1 to F3), §08 (pressed state on the three templates) and B5 (names on the two percentage boxes).
+- Two things the page still says that are yours to decide, opened in `docs/changes/2026-09-14-session-2-polish/recommendations.md`: §07's "three of the six items would survive the check most people actually perform" against the triage tally's "Five of the six exist" (PL-026), and the footer's "Last updated 2026-09-12" (PL-034).
+
 ## Changed since the 09-12 run sheet (manual pass, 2026-09-13)
 
 - §00 is the title, the lede, the depth control and the bridge. The case cards, the outcome cards, the glossary and the before-we-start block are gone; nothing on the page introduces the household before the Case facts button and §03.
