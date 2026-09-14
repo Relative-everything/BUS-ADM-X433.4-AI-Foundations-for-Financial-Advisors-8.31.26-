@@ -94,3 +94,7 @@ Here are remainnig updates to implement: 1 - temperature and output variance:
 
 # Batch 3 (2026-09-13, chat), verbatim
 mereged and im workign on session 3, but make a few fixes to session 2: on trhis section ( Citation triage — classify each / Six items an AI assistant returned when asked what authority supports the Cole IDGT sale. Classify each. All six are exercise material. Do not carry any classification into practice without checking the authority yourself, which is the entire point. ) make the explnaations way shorter and make it overall less complex - explanatisno should be 3-6 bulets not huge paragraphs ,make it more simeple remember the students low level
+
+# Batch 3, second note (2026-09-13, chat), as preserved
+The chat message itself is not in the transcript the session kept after its context was compacted; this is the note as the context summary preserved it, with the summary's own elision marked. It is not a verbatim copy.
+Also other updates: remove this entire block of text 'Requires instructor verification before it is taught as settled The §07 triage key states four authorities as holdings … [six items, elided by the summary] … Kessler v. Commissioner is a deliberately fabricated citation used as exercise material in §07, labelled on the page and in the footer.' Then also add a section for defining what a task specifically is in the testing when showing the model comparison, literally give examples of the types of prompts or exact prompts the testers would use to measure time per task.
