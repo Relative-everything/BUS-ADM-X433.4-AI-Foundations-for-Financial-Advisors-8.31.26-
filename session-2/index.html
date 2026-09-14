@@ -2963,7 +2963,7 @@ var LEVELS=['Absent','Gestured at','Specified','Specified and checkable'];
     var h='';
     ELEM.forEach(function(e){
       h+='<div class="eltile"><span class="elk">'+e.k+'<span class="dim mono" style="display:block;font-size:10px;letter-spacing:.06em;font-weight:400">'+e.n.toUpperCase()+'</span></span>'+
-         '<div><div class="dim" style="font-size:13.5px;margin-bottom:7px">'+e.d+'</div><div class="scale" data-e="'+e.k+'">'+
+         '<div><div class="dim" style="font-size:13.5px;margin-bottom:7px">'+e.d+'</div><div class="scale" role="group" aria-label="'+e.n+' level" data-e="'+e.k+'">'+
          LEVELS.map(function(l,v){var on=lv[cur][e.k]===v;return '<button data-v="'+v+'" class="'+(on?'on'+(v<2?' lo':''):'')+'" aria-pressed="'+(on?'true':'false')+'">'+l+'</button>'}).join('')+
          '</div></div></div>';
     });
