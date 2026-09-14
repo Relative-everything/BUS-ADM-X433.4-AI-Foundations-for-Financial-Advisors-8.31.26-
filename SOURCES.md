@@ -150,7 +150,7 @@ index_version:  divergent, see the three pulls below
 recheck_before: every teaching of session-1 §05, session-2 §02 and session-4 §03
 scope:          A live leaderboard of capability index scores and cost per index task. Every figure drawn from it is a moving target and none of them is stable between terms.
 used_for.session-1: the capability-against-price frontier and the tier comparison
-used_for.session-2: index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5
+used_for.session-2: index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5; how the cost per index task is measured and the kinds of question the index draws on, described in general terms
 used_for.session-4: the frontier chart, the sticker-versus-measured divergence, and the token and turn counts
 last_retrieved.session-1: 2026-07-28
 index_version.session-1: [UNVERIFIED, needs source]

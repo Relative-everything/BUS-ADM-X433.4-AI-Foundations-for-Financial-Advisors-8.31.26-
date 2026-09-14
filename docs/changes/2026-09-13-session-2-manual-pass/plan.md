@@ -115,3 +115,35 @@ Group A: JN-006 to JN-015 (§01, §02), push. Group B: JN-016 to JN-021 (§03, �
 - Adding Fable 5.1 to the frontier chart: its index score is unavailable here; a point without a measured cost would be invented.
 - Citing FINRA 4511 or SEC 17a-4 in Consequence 01: no record exists and the hosts are unreachable; the card states the practice consequence without a rule number.
 - Keeping a marker on Finding 02's token counts: the instruction removes disclaimers from §02 and the clause carries no teaching load; deleted instead.
+
+## Batch 3 (2026-09-13 and 09-14, notes lines 96 and 100 of notes-verbatim.md)
+Status: three notes in chat after the batch-2 merge, K2 pre-accepted as before; JN-035 was taken before this section was written, and JN-036 and JN-037 after it. Tier: Lite. Departures: the block the second note quotes was already off the page (JN-018, merged); the item that shares its heading, the case-dialog gate, was removed under the batch-2 instruction and recorded as such rather than as a match. The second note's exact prompts are the testers' own and unreachable; the page carries prompts written in their shape and says so.
+
+### Additional reads
+- session-2/index.html 1218 to 1227 (the case-dialog gate, outside the CASE span, not generated), 1492 to 1501 (the task definition and the Artificial Analysis sentence), the `.pel` and `.sim` rules; instructor-notes/session-2.md, the §07 verify list; SOURCES.md src-aa (scope names no composition); docs/deferred-work.md DW-056, DW-118; scripts/case-inventory.mjs (the inventory counts the gate's name and domicile mentions).
+
+### Files that change (in addition to batches 1 and 2)
+- session-2/index.html: the gate removed; the §02 block added; the SOURCES footer regenerated.
+- instructor-notes/session-2.md: the case-gate items under the §07 verify list; a §02 slot line; a batch-3 line in the changed-since list.
+- SOURCES.md, BIBLIOGRAPHY.md, DATA-PULL.md, docs/source-verification-queue.md: the src-aa session-2 clause and its derivatives.
+- docs/deferred-work.md: DW-056 and DW-118 annotated; a batch-3 decisions paragraph.
+- docs/case-fact-inventory.md: regenerated after JN-036.
+- checks.mjs, ledger.md, handback.md, CHANGELOG.md, changelog/index.html: the records.
+
+### Order of work
+JN-035, then JN-036 (one commit through land.py), then JN-037 (one commit), then the records and the derived inventory in one commit; push after the full gate.
+
+### Golden values
+- JN-036: `.verify` count on the page 0; `#caseModal` gains and loses `open` on `#caseBtn` and `#caseClose`; verify-case 6 of 6; case viewer 0 failures.
+- JN-037: six cards under `#benchKinds`, each with a prompt and a Scored line; the block after the five task cards and before `#frontierChart`; one M chip to src-aa; the `.sim` label; no horizontal overflow at 1280 or 400 px. The physics example's answer is 2 atmospheres (pressure doubles with absolute temperature at fixed volume).
+- T7 for session-2 holds at 2 literal / 38 entity; DOM mode loads with no thrown errors.
+
+### Risks
+- Reading the second note as a request to remove only the quoted block would leave a gate on the page that the batch-2 instruction had already condemned; the ledger records both readings and the one taken.
+- The six question kinds rest on general knowledge of the index at M; the block names no component evaluation, so a change in the index's composition makes it less specific, not wrong. DW-118 lists it for a browser re-check.
+- The inventory script counts the gate's Illinois mentions; forgetting to regenerate it would leave `--report-check` red.
+
+### Rejected options
+- Naming the index's component evaluations: the record does not carry them and the host is unreachable; a name that could not be checked would be a fabricated source.
+- Quoting a published benchmark item as an exact tester prompt: the items are theirs, several sets are held privately, and none could be fetched.
+- Leaving the case-dialog gate because the note quoted the other one: the standing instruction covers every on-page instructor check, and the run sheet already holds the list it belongs in.
