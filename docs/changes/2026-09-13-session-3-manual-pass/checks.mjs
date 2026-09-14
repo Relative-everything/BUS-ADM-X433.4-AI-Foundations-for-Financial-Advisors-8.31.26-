@@ -282,3 +282,15 @@ await check('JN-014b', async (page) => {
   await page.click('#ppCopy'); await page.waitForTimeout(200);
   must((await page.evaluate(() => document.getElementById('ppMsg').textContent)).length > 0, 'no copy message');
 });
+
+/* JN-014c: A3 sorts six summary lines; the two planted errors are marked as such in their whys. */
+await check('JN-014c', async (page) => {
+  const r0 = await page.evaluate(() => { const s = document.getElementById('sChk'); return { apx: s.classList.contains('apx'), tier: s.dataset.tier, prev: s.previousElementSibling.id, stub: !!s.querySelector('.apxstub'), chips: s.querySelectorAll('#chkList button').length, label: /wrong on purpose/.test(s.textContent) }; });
+  must(r0.apx && r0.tier === 'foundational' && r0.prev === 's10' && r0.stub && r0.chips === 6 && r0.label, `sChk ${JSON.stringify(r0)}`);
+  await page.click('#tierbar button[data-level="0"]');
+  const cols = [1, 1, 2, 1, 2, 1];
+  for (let i = 0; i < 6; i++) { await page.click(`#chkList button:nth-child(${i + 1})`); await page.click(`#chkBoxes .bslot:nth-child(${cols[i]}) button.lbox`); }
+  const r = await page.evaluate(() => ({ key: getComputedStyle(document.getElementById('chkKey')).display !== 'none', score: document.getElementById('chkKey').textContent.replace(/\s+/g, ' '), out: document.querySelector('#chkBoxes .bslot:nth-child(2) ul.placed').textContent }));
+  must(r.key && /Score\s*6 of 6/.test(r.score), `key ${r.key}: ${r.score.slice(-60)}`);
+  must((r.out.match(/Planted error/g) || []).length === 2, 'the two planted errors are not both labelled in the second bucket');
+});
