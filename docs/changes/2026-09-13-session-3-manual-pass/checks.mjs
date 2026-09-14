@@ -266,3 +266,19 @@ await check('JN-014a', async (page) => {
   const r = await page.evaluate(() => ({ key: getComputedStyle(document.getElementById('ragKey')).display !== 'none', score: document.getElementById('ragKey').textContent.replace(/\s+/g, ' ') }));
   must(r.key && /Score\s*6 of 6/.test(r.score), `key shown ${r.key}: ${r.score.slice(-50)}`);
 });
+
+/* JN-014b: A2 assembles the prep prompt once a meeting and two areas are chosen; copy works. */
+await check('JN-014b', async (page) => {
+  const r0 = await page.evaluate(() => { const s = document.getElementById('sPrep'); return { apx: s.classList.contains('apx'), tier: s.dataset.tier, prev: s.previousElementSibling.id, stub: !!s.querySelector('.apxstub'), meets: s.querySelectorAll('#ppMeet button').length, areas: s.querySelectorAll('#ppAreas input').length }; });
+  must(r0.apx && r0.tier === 'foundational' && r0.prev === 's9' && r0.stub && r0.meets === 2 && r0.areas === 8, `sPrep ${JSON.stringify(r0)}`);
+  await page.click('#tierbar button[data-level="0"]');
+  await page.click('#ppMeet button:nth-child(2)');
+  await page.click('#ppAreas label:nth-child(1) input');
+  let t = await page.evaluate(() => document.getElementById('ppOut').textContent);
+  must(/at least two areas/.test(t), 'prompt assembled with one area');
+  await page.click('#ppAreas label:nth-child(6) input');
+  t = await page.evaluate(() => document.getElementById('ppOut').textContent);
+  must(/annual review with an existing client/.test(t) && /Personal and family; Estate documents/.test(t) && /ask me up to five questions/.test(t), `assembled prompt: ${t.slice(0, 120)}`);
+  await page.click('#ppCopy'); await page.waitForTimeout(200);
+  must((await page.evaluate(() => document.getElementById('ppMsg').textContent)).length > 0, 'no copy message');
+});

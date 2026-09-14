@@ -587,6 +587,10 @@ label.fl{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:
 .placed li span{display:block;color:var(--muted);font-size:12.5px;margin-top:3px;line-height:1.4}
 ul.pts{margin:14px 0;padding-left:22px;max-width:64ch}ul.pts li{margin:6px 0;line-height:1.55}
 .ntstage{margin-top:10px}.ntstage .ntout{margin-top:8px}
+.ckgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin:12px 0}
+.ckgrid label{display:flex;gap:9px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:10px 12px;font-size:14.5px;line-height:1.4;cursor:pointer}
+.ckgrid label.on{border-color:var(--on);background:var(--on-bg)}.ckgrid input{margin-top:4px;flex:none}
+.ppout{min-height:70px;color:var(--muted)}.ppout.on{color:var(--ink);background:var(--on-bg)}
 
 .quiz .qitem{padding:18px 0;border-bottom:1px solid var(--line)}
 .quiz .qitem:last-child{border-bottom:none}
@@ -1201,12 +1205,13 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 <!-- APXPANEL:BEGIN generated-by=scripts/build-appendix.mjs -->
 <section class="slide apxdiv" id="apx" data-nav="Appendix contents">
-  <div class="eyebrow"><span>Appendix &middot; 3 optional sections</span><span class="mins">46 min</span></div>
+  <div class="eyebrow"><span>Appendix &middot; 4 optional sections</span><span class="mins">60 min</span></div>
   <h2>Appendix contents</h2>
-  <p class="lede">Three optional sections, 46 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
+  <p class="lede">Four optional sections, 60 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
   <p>The 13 sections of the core session run in about 73 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
     <a class="apxcard" href="#sRag"><span class="ac">A1 &middot; 14 min &middot; after &sect;03</span><b>Do You Need Retrieval at All?</b></a>
+    <a class="apxcard" href="#sPrep"><span class="ac">A2 &middot; 14 min &middot; after &sect;06</span><b>The Intake Questionnaire, Drafted With AI</b></a>
     <a class="apxcard" href="#s11"><span class="ac">C3 &middot; 14 min &middot; after &sect;07</span><b>Note-Taker Adoption Against Note-Taker Satisfaction</b></a>
     <a class="apxcard" href="#s15"><span class="ac">C4 &middot; 18 min &middot; after &sect;10</span><b>Citation-Backed Output and Verification Effort</b></a>
   </div>
@@ -1410,6 +1415,36 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="src">The five stages are the sequence named in the Session 3 syllabus. Kitces (15 Jan 2025) documents advisor-specific tools spanning the whole cycle: meeting summary, CRM capture, post-meeting tasks, recap email, then the next agenda <span class="conf h" data-src="src-kitces-notetakers">H</span>. The failures are synthetic case material <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Click every stage and say which check you already do and which you do not.</div></div>
+
+</section>
+
+<section class="slide apx" id="sPrep" data-nav="A2 &middot; Intake questionnaire" data-insert-after="s9" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A2 &middot; The Intake Questionnaire, Drafted With AI</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix A2 &middot; Prep</span><span class="mins">14 min</span></div>
+  <h2>The Intake Questionnaire, Drafted With AI</h2>
+
+  <p class="big">Before a first meeting, or an annual review, the prep stage is a list: what to ask, and what to ask the client to bring. An assistant drafts that list well, as long as no client fact enters the tool to do it.</p>
+
+  <ul class="pts">
+    <li><b>Pick the areas</b> the meeting has to cover. The assistant drafts the questions and the document requests for each.</li>
+    <li><b>Make it ask you first.</b> A prompt that interviews you before drafting produces a questionnaire for this meeting, not a generic one.</li>
+    <li><b>Keep the client out of it.</b> The questionnaire is built before any client fact is typed. The client's answers go in the file, not in the chat.</li>
+  </ul>
+
+  <div class="panel" data-task="t-sPrep" data-comp="builder-assembler">
+    <span class="do">Do this now: 6 minutes</span>
+    <h4>Build the Prep Prompt</h4>
+    <p class="hint">Choose the meeting and at least two areas. The prompt assembles below; copy it into your own tool.</p>
+    <div class="row" id="ppMeet"></div>
+    <div id="ppAreas" class="ckgrid"></div>
+    <pre id="ppOut" class="ppout">Choose a meeting type and at least two areas.</pre>
+    <div class="row"><button class="btn" id="ppCopy">Copy the prompt</button><span id="ppMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
+    <p class="hint" style="margin-top:10px">[Not included, on purpose: any fact about the client. The questionnaire is built before the client's answers exist.]</p>
+  </div>
+
+  <p class="src">The areas follow the Session 3 syllabus item on the client's personal and financial circumstances; the prompt is written for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+
+  <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Build the prompt for your next meeting and copy it out; this page keeps nothing.</div></div>
 
 </section>
 
@@ -1732,11 +1767,12 @@ then a list of every element where my answer was thin.</pre>
       <tr><td>10 &middot; Assignment</td><td>The AI Usage Policy Assignment</td><td class="n">4</td></tr>
       <tr><td>11 &middot; Close</td><td>Part 1 Draft Peer Exchange</td><td class="n">7</td></tr>
       <tr class="apxrow"><td>Appendix A1 &middot; Before you buy a retrieval tool</td><td>Do You Need Retrieval at All?</td><td class="n">14</td></tr>
+      <tr class="apxrow"><td>Appendix A2 &middot; Prep</td><td>The Intake Questionnaire, Drafted With AI</td><td class="n">14</td></tr>
       <tr class="apxrow"><td>Appendix C3 &middot; Market evidence</td><td>Note-Taker Adoption Against Note-Taker Satisfaction</td><td class="n">14</td></tr>
       <tr class="apxrow"><td>Appendix C4 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">18</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 73 + appendix 46; the core alone runs 73 minutes, thirteen minutes over the hour</td><td class="n">119</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 73 + appendix 60; the core alone runs 73 minutes, thirteen minutes over the hour</td><td class="n">133</td></tr>
     </tbody>
 <!-- APXBUDGET:END -->
   </table>
@@ -1761,7 +1797,7 @@ then a list of every element where my answer was thin.</pre>
 <!-- SOURCES:END -->
   </ul>
 <!-- APXNOTE:BEGIN generated-by=scripts/build-appendix.mjs -->
-  <p style="margin-top:22px">The core is 13 sections and runs in about 73 minutes, thirteen minutes over the hour. The 3 appendix sections add 46 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
+  <p style="margin-top:22px">The core is 13 sections and runs in about 73 minutes, thirteen minutes over the hour. The 4 appendix sections add 60 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
 <!-- APXNOTE:END -->
   <p><strong>No client data.</strong> The Cole household, Cole Precision Components and every document, transcript and figure attributed to them are synthetic and exist only as a classroom anchor. Nothing in this document is legal, tax or compliance advice, and no tax or legal conclusion is asserted anywhere in it.</p>
 
@@ -2235,6 +2271,38 @@ var CHAIN=[
    O.className='mpanel has';O.innerHTML=s;
    if(Object.keys(seen).length===CHAIN.length&&typeof mark==='function')mark('g7');
   }});
+})();
+
+/* ================= 9c. The intake questionnaire: a prep prompt built from areas ================= */
+(function(){
+ var M=$('ppMeet'),A=$('ppAreas'),O=$('ppOut'),B=$('ppCopy'),MS=$('ppMsg');if(!M)return;
+ var MEET=[{k:'first',t:'First meeting with a new client'},{k:'review',t:'Annual review with an existing client'}];
+ var AREAS=['Personal and family','Income and employment','Assets and accounts','Liabilities','Insurance','Estate documents','Goals and timing','Concerns and constraints'];
+ var meet=null,on={};
+ function build(){
+  var picked=AREAS.filter(function(a){return on[a]});
+  if(!meet||picked.length<2){O.textContent='Choose a meeting type and at least two areas.';O.className='ppout';return}
+  O.className='ppout on';
+  O.textContent='You are helping a financial planner prepare for a '+meet.t.toLowerCase()+'.\n'+
+   'Draft a questionnaire covering: '+picked.join('; ')+'.\n'+
+   'For each area, list the questions to ask in the meeting and the documents to request beforehand.\n'+
+   'Before you draft, ask me up to five questions about the meeting that would change the list.\n'+
+   'Do not invent any client fact; leave a blank where one is needed.\n'+
+   'Format: one heading per area, the questions as a numbered list, the documents as a checklist.';
+  if(typeof mark==='function')mark('ga2');
+ }
+ MEET.forEach(function(m){var b=document.createElement('button');b.className='btn sel mini';b.type='button';b.textContent=m.t;
+  b.onclick=function(){meet=m;[].slice.call(M.children).forEach(function(c){c.classList.toggle('act',c===b)});build()};M.appendChild(b)});
+ AREAS.forEach(function(a){var l=document.createElement('label');var c=document.createElement('input');c.type='checkbox';
+  l.appendChild(c);l.appendChild(document.createTextNode(a));
+  c.onchange=function(){on[a]=c.checked;l.classList.toggle('on',c.checked);build()};A.appendChild(l)});
+ B.onclick=function(){
+  var txt=O.textContent;
+  function ok(){MS.textContent='Copied.';setTimeout(function(){MS.textContent=''},2500)}
+  function fail(){var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();
+   try{document.execCommand('copy');ok()}catch(e){MS.textContent='Select the block and copy manually.'}document.body.removeChild(ta)}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fail)}else{fail()}
+ };
 })();
 
 /* ================= 9b. The meeting excerpt ================= */
