@@ -11,12 +11,13 @@ section that is worked runs at 1.9x. That is the whole reason the clock below lo
 ## Changed since the previous run sheet (2026-09-17)
 
 - Clock times are fixed. The previous sheet said "the reserve is generous"; at the repository's own
-  1.7x multiplier the 65-minute core runs about 110 actual minutes, so it is not.
+  1.7x multiplier the 62-minute core runs about 105 actual minutes, so it is not.
 - The objective is printed below and is said before 6:19. Two sessions of relying on memory produced
   no objective.
 - A corrections slot at 6:08, three minutes.
 - Four Zoom polls, each with a written decision rule. Build them before the night.
 - Three questions are gated, and only three. They are marked **[GATE]**.
+- §01 and §02 are one section of 7 planned minutes, not two of 5. Both instruments survive.
 - §09 is 4 planned minutes now, not 6. The vendor-questions card is gone; Session 4 owns it.
 - §11 carries the course data rule and a real Part 1 brief.
 - A closing check that produces written answers.
@@ -37,8 +38,8 @@ a recall question.
 | 6:00 | 8 | Housekeeping. Pre-class window closed at 5:58 | | "Canvas and file questions at the break, not now." |
 | 6:08 | 3 | **Corrections slot**, below | none | "Two things I said last time that I have since checked." |
 | 6:11 | 8 | **Objective**, then the retrieval bridge. **WORKED** | `s1` retrieval-bridge | "One thing tonight. Then four checks, no notes. Wrong and committed beats right and read." |
-| 6:19 | 7 | §01 and §02 together, narrated | `s2`, `s3` | "Why the nearest passage is not the right one." |
-| 6:26 | 12 | §03 the retriever, preset 1. **WORKED 1** | `s4` click-map-explorer | "Commit first: which document answers this? Then watch what the retriever does." |
+| 6:19 | 7 | §01 and §02, now one section | `s2` | "Why the nearest passage is not the right one." |
+| 6:26 | 12 | §03 the retriever, preset 1. **WORKED 1** | `s4` estimate-then-reveal | "Commit first: which document answers this? Then watch what the retriever does." |
 | 6:38 | 8 | §04 what grounding fixes. **Poll 2** | `s6` prediction-commit | "Guess before the figures. You are meant to get this wrong." |
 | 6:46 | 6 | §05 grounding against fine-tuning | `s7` commit-first-mcq | "The appraisal is re-run Tuesday. Which assistant reflects it Wednesday with no engineering?" |
 | 6:52 | 8 | §06 the workflow chain | `s9` symptom-diagnoser | "Five stages. A mistake at any one is inherited by every stage after it." |
@@ -141,7 +142,7 @@ who is holding it if nobody does.
 1. §05, narrate the two-column comparison only, skip the Tuesday test. Recovers 4.
 2. §09 to the one-party floor only. Recovers 3.
 3. Q&A reserve from 20 to 12. Recovers 8. Only to protect the closing check.
-4. §01 and §02 narrated in 4 rather than 7. Recovers 3.
+4. The merged §01/§02 narrated in 4 rather than 7, skipping the pair sort. Recovers 3.
 5. §10's sorter demonstrated rather than run. Recovers 4.
 
 **Never drop:** §03's preset 1, §08's silent run, the seven-step sorter, the closing check.
@@ -152,12 +153,15 @@ who is holding it if nobody does.
 Four checks, in order, no notes. Get the room's order before revealing; a wrong committed order is
 the point. The objective is said before the bridge, not after.
 
-### s2 and s3 · §01 and §02, 6:19
-Seven minutes for both. The page still carries them as two sections of five minutes each; deliver
-them narrated, as one movement, and do not run either sorter. A later pass may merge them on the
-page at seven minutes, which changes nothing here.
+### s2 · §01 and §02, merged, 6:19
+One section of seven minutes now, not two of five. Narrate it as one movement. Both instruments are
+still on the page: the meaning map at two minutes and the pair sort at three. Demonstrate them,
+do not hand them to the room; the three worked interactions tonight are §03, §08 and the seven-step
+sorter.
 
-Keep: Wolfram's definition, and alligator against crocodile. That pair does the conceptual work.
+Keep in the narration: Wolfram's definition, the five-billion-word construction, and alligator
+against crocodile. That pair does the conceptual work, and the pair sort's "appraised value against
+formula value" row is §03's failure one section early. Point at it when you reach the retriever.
 
 ### s4 · §03, the retriever, 6:26 · **WORKED 1**
 Run the four presets in order. Preset 1 is the failure the session turns on: say aloud that the
@@ -238,7 +242,6 @@ logging burden attached.
 
 ## What is not yet done
 
-- §01 and §02 are still two sections on the page. Deliver them in seven minutes as one movement.
 - §08's add-in descriptions carry no source. Ten minutes in a browser closes it.
 - §09's verify block is unsigned. Both items are yours.
 - The four polls are not built in Zoom yet.

@@ -1209,7 +1209,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>Appendix &middot; 6 optional sections</span><span class="mins">83 min</span></div>
   <h2>Appendix contents</h2>
   <p class="lede">Six optional sections, 83 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
-  <p>The 12 sections of the core session run in about 65 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <p>The 11 sections of the core session run in about 62 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
     <a class="apxcard" href="#sRag"><span class="ac">A1 &middot; 14 min &middot; after &sect;03</span><b>Do You Need Retrieval at All?</b></a>
     <a class="apxcard" href="#sPrep"><span class="ac">A2 &middot; 14 min &middot; after &sect;06</span><b>The Intake Questionnaire, Drafted With AI</b></a>
@@ -1221,41 +1221,31 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </section>
 <!-- APXPANEL:END -->
 
-<section class="slide" id="s2" data-nav="Embeddings">
-  <div class="eyebrow"><span>01 &middot; Mechanism</span><span class="mins">5 min</span></div>
-  <h2>Embeddings and the Coordinates of Meaning Space</h2>
+<section class="slide" id="s2" data-nav="Meaning space">
+  <div class="eyebrow"><span>01 and 02 &middot; Mechanism</span><span class="mins">7 min</span></div>
+  <h2>Meaning Space, and the Failure It Creates</h2>
 
   <p class="big">Wolfram's definition: an embedding turns a word into an array of numbers, and words with similar meanings get nearby numbers.</p>
 
-  <p>The numbers come from company, not meaning. Wolfram measures how similar the surroundings are in which words appear, across five billion words of web text. Each word becomes a long list of numbers: 768 for GPT-2, 12,288 for GPT-3. The map below is a two-dimensional sketch of that space. Click a term and its three nearest neighbours light up, joined by lines that show the distance. A retrieval tool runs the same nearest-neighbour test on your documents.</p>
+  <p>The numbers come from company, not meaning. Wolfram measures how similar the surroundings are in which words appear, across five billion words of web text, and each word becomes a long list of numbers: 768 for GPT-2, 12,288 for GPT-3. A retrieval tool runs the same nearest-neighbour test on your documents.</p>
+
+  <p>Wolfram's own example holds the failure. "Alligator" and "crocodile" appear in almost interchangeable sentences, so they sit close together; "turnip" and "eagle" do not, so they sit far apart. Alligators and crocodiles are different animals. What was measured is whether two words keep the same company, not whether they refer to the same thing, and the Cole file has exactly that hazard: its documents use near-identical language and differ in one condition each.</p>
+
+  <p class="pull">Sounding alike is the signal. Being the same thing is what you needed.</p>
 
   <div class="panel" data-task="t-s2" data-comp="click-map-explorer">
-    <span class="do">Do this now — 3 minutes</span>
+    <span class="do">Do this now: 2 minutes</span>
     <h4>The Meaning Map</h4>
-    <p class="hint">Click any term. Its three nearest neighbours light up with measured distances. Find the pair that would be most dangerous to substitute for each other in Meg's file.</p>
+    <p class="hint">Click any term. Its three nearest neighbours light up with measured distances.</p>
     <p style="margin:0 0 8px"><span class="sim">Illustrative layout &mdash; coordinates assigned, not learned</span></p>
     <div id="mapWrap"></div>
     <div id="mapOut" class="mpanel"><span class="hd">Nearest neighbours</span><span class="nil">Click a term on the map.</span></div>
   </div>
 
-  <p class="src">Wolfram, S. (2023), "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion": the definition, the five-billion-word construction and the 768 / 12,288 lengths are Wolfram's, in substance <span class="conf h" data-src="src-wolfram">H</span>. Map coordinates were assigned for this lesson <span class="conf l" data-src="src-wolfram">L, illustrative</span>; the distances on them are exact.</p>
-
-  <div class="check" data-gate="g2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Click at least four terms on the map and find the pair most dangerous to substitute in Meg’s file.</div></div>
-
-</section>
-
-<section class="slide" id="s3" data-nav="Distribution">
-  <div class="eyebrow"><span>02 &middot; The failure this creates</span><span class="mins">5 min</span></div>
-  <h2>Distributional Similarity and Referential Difference</h2>
-
-  <p class="big">Wolfram's own example holds the failure. "Alligator" and "crocodile" appear almost interchangeably in similar sentences, so they sit close together. "Turnip" and "eagle" do not, so they sit far apart.</p>
-
-  <p>The model measures whether two words keep the same company, not whether they mean the same thing. Alligators and crocodiles are different animals. The Cole file has the same hazard: its documents use near-identical language and differ in one condition each.</p>
-
-  <p class="pull">Sounding alike is the signal. Being the same thing is what you needed.</p>
+  <div class="check" data-gate="g2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Click at least four terms on the map.</div></div>
 
   <div class="panel" data-task="t-s3" data-comp="two-bucket-sorter">
-    <span class="do">Do this now — 4 minutes</span>
+    <span class="do">Do this now: 3 minutes</span>
     <h4>Pair Sort: Distributional Similarity Against Reference</h4>
     <p class="hint">Each pair sits close together in a word-level embedding. Click a pair, then the bucket it belongs in. The pair lands under that bucket with the answer.</p>
     <div class="sorter">
@@ -1266,7 +1256,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div id="pairKey" class="mpanel keyhide" style="display:none"></div>
   </div>
 
-  <p class="src">Wolfram (2023), "The Concept of Embeddings": alligator / crocodile and turnip / eagle are Wolfram's examples, in substance <span class="conf h" data-src="src-wolfram">H</span>. The six pairs and the three buckets are constructed for this lesson from the Cole document set <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">Wolfram, S. (2023), "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion": the definition, the five-billion-word construction, the 768 / 12,288 lengths and the alligator / crocodile and turnip / eagle examples are Wolfram's, in substance <span class="conf h" data-src="src-wolfram">H</span>. Map coordinates were assigned for this lesson <span class="conf l" data-src="src-wolfram">L, illustrative</span>; the distances on them are exact. The six pairs and the three buckets are constructed for this lesson from the Cole document set <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort all six pairs into the three buckets, then open the key and argue with it.</div></div>
 
@@ -1774,8 +1764,7 @@ then a list of every element where my answer was thin.</pre>
 <!-- APXBUDGET:BEGIN generated-by=scripts/build-appendix.mjs -->
     <tbody>
       <tr><td>BUS ADM X433.4 · Session 3</td><td>Gathering and Documenting Client Information</td><td class="n">5</td></tr>
-      <tr><td>01 &middot; Mechanism</td><td>Embeddings and the Coordinates of Meaning Space</td><td class="n">5</td></tr>
-      <tr><td>02 &middot; The failure this creates</td><td>Distributional Similarity and Referential Difference</td><td class="n">5</td></tr>
+      <tr><td>01 and 02 &middot; Mechanism</td><td>Meaning Space, and the Failure It Creates</td><td class="n">7</td></tr>
       <tr><td>03 &middot; RAG, mechanically</td><td>Retrieval Mechanics: Chunking, Indexing, and Ranking</td><td class="n">6</td></tr>
       <tr><td>04 &middot; What grounding fixes</td><td>What Grounding Fixes, and What It Does Not</td><td class="n">6</td></tr>
       <tr><td>05 &middot; Two ways to teach it your file</td><td>Grounding Compared With Fine-Tuning</td><td class="n">5</td></tr>
@@ -1793,7 +1782,7 @@ then a list of every element where my answer was thin.</pre>
       <tr class="apxrow"><td>Appendix C4 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">18</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 65 + appendix 83; the core alone runs 65 minutes, five minutes over the hour</td><td class="n">148</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 62 + appendix 83; the core alone runs 62 minutes, two minutes over the hour</td><td class="n">145</td></tr>
     </tbody>
 <!-- APXBUDGET:END -->
   </table>
@@ -1814,7 +1803,7 @@ then a list of every element where my answer was thin.</pre>
 <!-- SOURCES:END -->
   </ul>
 <!-- APXNOTE:BEGIN generated-by=scripts/build-appendix.mjs -->
-  <p style="margin-top:22px">The core is 12 sections and runs in about 65 minutes, five minutes over the hour. The 6 appendix sections add 83 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
+  <p style="margin-top:22px">The core is 11 sections and runs in about 62 minutes, two minutes over the hour. The 6 appendix sections add 83 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
 <!-- APXNOTE:END -->
   <p><strong>No client data.</strong> The Cole household, Cole Precision Components and every document, transcript and figure attributed to them are synthetic and exist only as a classroom anchor. Nothing in this document is legal, tax or compliance advice, and no tax or legal conclusion is asserted anywhere in it.</p>
 
@@ -2629,7 +2618,7 @@ document.addEventListener('keydown',function(e){
 });
 
 /* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
-window.__coreMins=65;
+window.__coreMins=62;
 /* APXCORE:END */
 
 /* ===== appendix depth control: tier filter + core-only mode ===== */
