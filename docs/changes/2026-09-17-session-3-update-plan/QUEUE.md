@@ -7,8 +7,8 @@ Written 2026-09-17. Fable resets 2026-09-19. Session 3 is taught 2026-09-21, Ses
 **The Session 3 Fable prompt has no blockers. You can paste it the minute the allowance is back.**
 Nothing in it waits on a decision from you.
 
-But it is one merge plus a polish pass, which is maybe a third of an evening. Two more prompts are
-queued below so the rest of the allowance goes somewhere useful instead of nowhere.
+**Amended 2026-09-17:** the merge that prompt described was done in Opus, so the Session 3 prompt is
+now `FABLE-PROMPT.md`, a single pass that runs to completion. See the run order below.
 
 ## Before Saturday: 35 minutes of your own time
 
@@ -41,9 +41,9 @@ Session 3. Prompts 2 and 3 are unchanged and are for after Monday.
 | 2 | `fable-prompt-2-session-4.md` | Session 4 pre-flight: the cold open you chose, every false Session 1 baseline premise, the grade-weight violation, the duplicate code, the minute arithmetic, and a real run sheet. | 1/2 evening |
 | 3 | `fable-prompt-3-cleanup.md` | Optional. Repository hygiene that helps every future session: self-hosted fonts, the spine decision, the remaining parity divergences. | whatever is left |
 
-**If Prompt 1 is all you get through, Monday is still fine.** The page teaches at 65 planned core
-minutes and the run sheet already delivers §01 and §02 as one seven-minute narrated movement whether
-or not the page merges them.
+**If you run none of them, Monday is still fine.** The page already teaches at 62 planned core
+minutes with the merge done, the run sheet is written against it, and every gate is green. The Fable
+pass is polish on a page that works, not repair on a page that does not.
 
 **If you only get through Prompts 1 and 2, you are in better shape than you have been for either
 prior session**, because Session 4 currently has an 11-line run sheet and the largest core in the
