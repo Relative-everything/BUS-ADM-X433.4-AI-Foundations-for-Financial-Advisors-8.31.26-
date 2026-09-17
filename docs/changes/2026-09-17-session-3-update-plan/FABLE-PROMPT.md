@@ -1,8 +1,12 @@
 # The single Fable prompt
 
-Supersedes `fable-prompt.md`, `fable-prompt-2-session-4.md` and `fable-prompt-3-cleanup.md`, which
-were written when the §01/§02 merge was still outstanding. That merge is done. This is one prompt
-that runs to completion on its own.
+**This is the one to run.** It replaces `fable-prompt.md`, which was written when the §01/§02 merge
+was still outstanding and split the work across sessions. That merge is done, so what remains is one
+continuous pass, and this prompt is written to run to completion without stopping to ask.
+
+The other two prompts in this folder are not superseded and are not for now.
+`fable-prompt-2-session-4.md` is the Session 4 pre-flight, for after Monday; Session 4 is taught
+2026-09-28. `fable-prompt-3-cleanup.md` is repository hygiene with no classroom deadline at all.
 
 **Before you paste it:** merge this branch to `main`, then cut a new branch from `main`.
 

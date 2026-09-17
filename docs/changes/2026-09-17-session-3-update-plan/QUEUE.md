@@ -31,9 +31,13 @@ two and skip the rest until Sunday.**
 Run these in sequence, in separate sessions, on branch `claude/session-3-update-plan-k1xbqs`.
 Each one ends with a handback, so you can stop after any of them and still be in a good state.
 
+**Superseded 2026-09-17.** The §01/§02 merge was done in Opus after this was written, so prompt 1
+below no longer exists. Run `FABLE-PROMPT.md` instead: one prompt, runs to completion, finishes
+Session 3. Prompts 2 and 3 are unchanged and are for after Monday.
+
 | Order | Prompt | What it does | Roughly |
 |---|---|---|---|
-| 1 | `fable-prompt.md` | Merges §01 and §02 into one 7-minute section, then polishes the whole Session 3 page. Lands Session 3 finished. | 1/3 evening |
+| 1 | `FABLE-PROMPT.md` | Polishes the whole Session 3 page, gives the three non-advisors a parallel track, works both audit findings registers, verifies every interaction in a browser. | 1 evening |
 | 2 | `fable-prompt-2-session-4.md` | Session 4 pre-flight: the cold open you chose, every false Session 1 baseline premise, the grade-weight violation, the duplicate code, the minute arithmetic, and a real run sheet. | 1/2 evening |
 | 3 | `fable-prompt-3-cleanup.md` | Optional. Repository hygiene that helps every future session: self-hosted fonts, the spine decision, the remaining parity divergences. | whatever is left |
 
