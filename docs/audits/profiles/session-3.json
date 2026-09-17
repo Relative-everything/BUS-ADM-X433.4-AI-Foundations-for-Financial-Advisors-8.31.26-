@@ -1,7 +1,7 @@
 {
   "file": "session-3/index.html",
-  "file_bytes": 215836,
-  "file_lines": 2693,
+  "file_bytes": 216202,
+  "file_lines": 2696,
   "generated_by": "scripts/audit/section_profile.mjs (read-only)",
   "methods": {
     "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
@@ -60,7 +60,7 @@
       },
       "09 · Obligation": {
         "title": "Recording Consent and the Confidentiality Obligation",
-        "min": 6,
+        "min": 4,
         "apx": false
       },
       "10 · Documentation": {
@@ -104,9 +104,9 @@
         "apx": true
       }
     },
-    "segments_sum": 150,
-    "allocated_cell": 150,
-    "eyebrow_sum_lesson_sections": 150
+    "segments_sum": 148,
+    "allocated_cell": 148,
+    "eyebrow_sum_lesson_sections": 148
   },
   "consecutive_family_repeats": {
     "document_order": [],
@@ -172,9 +172,9 @@
       "median": 40.2,
       "range": [
         12.2,
-        78.2
+        78.3
       ],
-      "mean": 37.01
+      "mean": 39.01
     },
     "prose_words_per_min": {
       "median": 30.85,
@@ -182,23 +182,23 @@
         10.1,
         73.3
       ],
-      "mean": 31.51
+      "mean": 33.36
     },
     "exposition_run_min_tagged": {
-      "median": 4.4,
+      "median": 4.45,
       "range": [
         2.5,
         9.1
       ],
-      "mean": 5.12
+      "mean": 5.04
     },
     "exposition_run_min_control": {
-      "median": 5.55,
+      "median": 5.35,
       "range": [
-        3.6,
+        3.8,
         18
       ],
-      "mean": 7.6
+      "mean": 7.51
     },
     "icap_distribution": {
       "P": 0,
@@ -1215,12 +1215,12 @@
       "timing_row_min": 5,
       "line_start": 1550,
       "line_end": 1580,
-      "bytes": 2495,
+      "bytes": 2473,
       "allocated_min": 5,
-      "words": 275,
-      "prose_words": 242,
-      "words_per_min": 55,
-      "prose_words_per_min": 48.4,
+      "words": 272,
+      "prose_words": 239,
+      "words_per_min": 54.4,
+      "prose_words_per_min": 47.8,
       "interactions_count": 1,
       "interactions": [
         {
@@ -1244,7 +1244,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.36,
+      "chips_per_100_words": 0.37,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -1268,14 +1268,12 @@
       "em_dashes": 0,
       "exposition": {
         "longest_run_words_tagged_split": 177,
-        "longest_run_min_tagged_split": 3.2,
-        "longest_run_words_control_split": 275,
+        "longest_run_min_tagged_split": 3.3,
+        "longest_run_words_control_split": 272,
         "longest_run_min_control_split": 5,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": [
-        "DW"
-      ]
+      "undefined_terms_first_used_here": []
     },
     {
       "id": "s12",
@@ -1289,23 +1287,23 @@
       "insert_after": null,
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
-      "timing_row_min": 6,
+      "timing_row_min": 4,
       "line_start": 1582,
-      "line_end": 1620,
-      "bytes": 3306,
-      "allocated_min": 6,
-      "words": 350,
-      "prose_words": 317,
-      "words_per_min": 58.3,
-      "prose_words_per_min": 52.8,
+      "line_end": 1618,
+      "bytes": 3025,
+      "allocated_min": 4,
+      "words": 313,
+      "prose_words": 280,
+      "words_per_min": 78.3,
+      "prose_words_per_min": 70,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s12",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 1608,
-          "line_end": 1614,
+          "line": 1606,
+          "line_end": 1612,
           "words_inside": 33
         }
       ],
@@ -1321,7 +1319,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.86,
+      "chips_per_100_words": 0.96,
       "chips_unresolved": [],
       "source_keys": [
         "src-wiretap",
@@ -1340,17 +1338,17 @@
       "gates": [
         {
           "id": "g9",
-          "line": 1618,
+          "line": 1616,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 258,
-        "longest_run_min_tagged_split": 4.4,
-        "longest_run_words_control_split": 350,
-        "longest_run_min_control_split": 6,
+        "longest_run_words_tagged_split": 221,
+        "longest_run_min_tagged_split": 2.8,
+        "longest_run_words_control_split": 313,
+        "longest_run_min_control_split": 4,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
@@ -1371,8 +1369,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 9,
-      "line_start": 1622,
-      "line_end": 1642,
+      "line_start": 1620,
+      "line_end": 1640,
       "bytes": 1686,
       "allocated_min": 9,
       "words": 126,
@@ -1385,8 +1383,8 @@
           "data_task": "t-sVend",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1629,
-          "line_end": 1636,
+          "line": 1627,
+          "line_end": 1634,
           "words_inside": 33
         }
       ],
@@ -1418,7 +1416,7 @@
       "gates": [
         {
           "id": "ga7",
-          "line": 1640,
+          "line": 1638,
           "marked_by_component": true
         }
       ],
@@ -1446,8 +1444,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 1644,
-      "line_end": 1708,
+      "line_start": 1642,
+      "line_end": 1706,
       "bytes": 3913,
       "allocated_min": 6,
       "words": 469,
@@ -1460,8 +1458,8 @@
           "data_task": "t-s13",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1658,
-          "line_end": 1668,
+          "line": 1656,
+          "line_end": 1666,
           "words_inside": 29
         }
       ],
@@ -1493,7 +1491,7 @@
       "gates": [
         {
           "id": "g10",
-          "line": 1706,
+          "line": 1704,
           "marked_by_component": false
         }
       ],
@@ -1530,8 +1528,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 18,
-      "line_start": 1710,
-      "line_end": 1736,
+      "line_start": 1708,
+      "line_end": 1734,
       "bytes": 2608,
       "allocated_min": 18,
       "words": 233,
@@ -1544,8 +1542,8 @@
           "data_task": "t-s15",
           "data_comp": "sealed-vote-debate",
           "icap": "I",
-          "line": 1721,
-          "line_end": 1730,
+          "line": 1719,
+          "line_end": 1728,
           "words_inside": 37
         }
       ],
@@ -1578,7 +1576,7 @@
       "gates": [
         {
           "id": "ga4",
-          "line": 1734,
+          "line": 1732,
           "marked_by_component": false
         }
       ],
@@ -1609,22 +1607,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 1738,
-      "line_end": 1765,
-      "bytes": 2512,
+      "line_start": 1736,
+      "line_end": 1768,
+      "bytes": 3183,
       "allocated_min": 5,
-      "words": 228,
-      "prose_words": 192,
-      "words_per_min": 45.6,
-      "prose_words_per_min": 38.4,
+      "words": 311,
+      "prose_words": 275,
+      "words_per_min": 62.2,
+      "prose_words_per_min": 55,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s16",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1744,
-          "line_end": 1751,
+          "line": 1742,
+          "line_end": 1749,
           "words_inside": 36
         }
       ],
@@ -1640,7 +1638,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.44,
+      "chips_per_100_words": 0.32,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -1656,20 +1654,22 @@
       "gates": [
         {
           "id": "g12",
-          "line": 1761,
+          "line": 1764,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 198,
-        "longest_run_min_tagged_split": 4.3,
-        "longest_run_words_control_split": 165,
-        "longest_run_min_control_split": 3.6,
+        "longest_run_words_tagged_split": 281,
+        "longest_run_min_tagged_split": 4.5,
+        "longest_run_words_control_split": 248,
+        "longest_run_min_control_split": 4,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": []
+      "undefined_terms_first_used_here": [
+        "§09."
+      ]
     }
   ],
   "terms": [
@@ -1926,15 +1926,6 @@
       "context": "meeting hour H . The excerpt is  [CASE] .md Part O, rendered from the injected case;"
     },
     {
-      "term": "DW",
-      "kind": "acronym",
-      "first_use_section": "sOff",
-      "defined_within_40_words": false,
-      "how": null,
-      "cfp_baseline_vocabulary": false,
-      "context": "help pages from this build (register row  [DW] -121). The three prompts and the six tasks"
-    },
-    {
       "term": "U.S.C",
       "kind": "acronym",
       "first_use_section": "s12",
@@ -2059,6 +2050,15 @@
       "how": null,
       "cfp_baseline_vocabulary": false,
       "context": "on Critical Thinking , Microsoft Research /  [CHI]  2025, characterised here only by its title"
+    },
+    {
+      "term": "§09.",
+      "kind": "citation",
+      "first_use_section": "s16",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "The seven-element checklist is in Session 2  [§09.]  The two most often missing are the"
     },
     {
       "term": "FY2026",

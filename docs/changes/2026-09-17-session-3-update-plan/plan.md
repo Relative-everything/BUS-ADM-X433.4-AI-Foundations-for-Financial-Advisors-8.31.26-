@@ -328,7 +328,7 @@ genuinely instructive, but it is not "applying a structured delegation framework
 
 | | **A. Hold the line** | **B. Discharge the objective** | **C. Fix the discussion debt** |
 |---|---|---|---|
-| Core planned minutes | 67, unchanged | **59** | 52 |
+| Core planned minutes | 67, unchanged | **61** | 54 |
 | Interactions actually run | 3 | 3 | 2 |
 | Seven-step objective | async only | **taught, in class** | async only |
 | Named discussion (40-min debt) | S4's D4 on 09-28 | **S4's D4 on 09-28** | C4 run on 09-21, 18 min |
@@ -384,7 +384,13 @@ behalf. Swap it in if §08's run collapses.
 | §09 quiz item 1, the re-identification item | inside the 6 | **cut** | (inside) | `session-3:2432` and `session-4:2516` teach the same punchline on the same Cole facts. Session 4 owns it. See §4.6 O1. |
 | Appendix A5, five vendor questions | 9, hidden | stays hidden | 0 | Complementary to Session 4 §04, not duplicative (only 2 of 8 questions overlap), but there is no time. |
 | §04, §05, §06, §07, §10, §11, §00, §03, §08 | unchanged | unchanged | 0 | Syllabus-mandated or load-bearing. |
-| **Core total** | **67** | **59** | **8** | Inside the 58 to 62 target. |
+| **Core total** | **67** | **61** | **6** | Inside the 58 to 62 target. |
+
+**Arithmetic correction, 2026-09-17.** An earlier revision of this table totalled the cut as 8 and
+the result as 59. The itemised recoveries are 3 and 3, so the core lands at **61**, not 59. 61 is
+still inside the target band of §2.3 and above the 59 that observed-admin-at-full-fire affords, which
+is the tightest scenario in that table. If a further 2 planned minutes are wanted later, §5.3's drop
+order takes them from §05 without touching a syllabus row.
 
 Two items the run sheet currently names as first to drop come **off** the drop list: §08's sorter
 (now interaction 2 of 3) and §02's sorter (inside the merged block, carrying the
@@ -892,7 +898,7 @@ binding constraint is not the dependency graph, it is your calendar**: 6.8 hours
 evenings alongside a full-time job.
 
 **If that does not fit, cut in this order.** Drop B6 and B9 to after the session (70 min recovered,
-records only). Drop A7, the §01/§02 merge (60 min), and accept a 62-minute core instead of 59. That
+records only). Drop A7, the §01/§02 merge (60 min), and accept a 64-minute core instead of 61. That
 leaves 277 minutes, about 4.6 hours, and still lands every blocking item. **Do not cut A1, A3, A4 or
 A6**: each one is something the room will be exposed to on the night.
 
