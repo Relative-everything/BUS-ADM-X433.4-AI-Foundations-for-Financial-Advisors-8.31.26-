@@ -108,9 +108,24 @@ Unchanged. Nothing this pass authored contains an em dash in either form.
 **Minutes.** Core 67 to 65, appendix 83 unchanged, total 150 to 148. `build-appendix` regenerated
 the three minute regions and they agree.
 
-Not run here: `validate_lesson.py`, `validate_dom.js`, `restyle_sweep.py` and `verify-browser.mjs`.
-The first three ship with the interactive-lesson-builder skill and run from the skill root; the
-fourth needs Chromium. Their expected state is in `plan.md` Appendix A.1, and the by-design red
+`verify-browser.mjs` was run in Chromium and reports **6 failures, all of them the same line and
+none of them this pass's**:
+
+```
+FAIL  13  zero JS errors on load
+        console: Failed to load resource: net::ERR_CERT_AUTHORITY_INVALID
+```
+
+It fires once on each of the six lesson files, including the four this pass never opened, and the
+resource is the single Google Fonts request that check 14 counts and passes. It is the build
+environment's TLS interception, not a page defect, and it is the condition DW-031 exists to remove
+by self-hosting the three font families. Every substantive assertion in the same run passes: no
+`undefined` or `NaN` in rendered text after every control is exercised, the case modal opens from
+the topbar, Shift+U in `#qBox` reveals nothing, and session-3 has no focusable cold-open text box.
+`test-case-viewer.mjs` reports 0 failures.
+
+Not run here: `validate_lesson.py`, `validate_dom.js` and `restyle_sweep.py`.
+They ship with the interactive-lesson-builder skill and run from the skill root. Their expected state is in `plan.md` Appendix A.1, and the by-design red
 lines are unchanged by this pass: no interaction was added or removed, so V6 stays at 18 against the
 13-to-15 band, and the Shift+U override is untouched, so V8 still passes.
 
