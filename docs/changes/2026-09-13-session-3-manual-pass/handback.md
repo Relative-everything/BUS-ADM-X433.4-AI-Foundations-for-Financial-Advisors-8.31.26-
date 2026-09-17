@@ -19,7 +19,7 @@ Asked: implement the instructor's manual-pass notes of 2026-09-13 on `session-3/
 - §10: said, recommended or neither, over six lines from the review; the interrogation prompt stays. The sale-versus-gift question is gone.
 - §11: a ten-step meeting checklist with a gap readout and a copy button; the three assignment cards; the closing question. The peer-exchange scorer and the AI-usage-policy section are gone.
 - Appendix: C1 and C5 gone; A1 (do you need retrieval), A2 (the intake questionnaire), A3 (check the summary against the transcript), A5 (five questions for a vendor) new; C3 and C4 trimmed.
-- Records: the run sheet rewritten; register decision paragraph, DW-120 and DW-121, notes on nineteen rows; SOURCES.md clauses; one changelog entry; the Session 3 profile.
+- Records: the run sheet rewritten; register decision paragraph, DW-121 and DW-122, notes on nineteen rows; SOURCES.md clauses; one changelog entry; the Session 3 profile.
 
 ## The session against the syllabus
 | Syllabus item | At 765dff3 | After the pass |
@@ -163,7 +163,7 @@ summary: 20 OK, 0 FAIL
 
 $ validate_lesson, the lines filtered above: V2 FAIL x5 (footer citation hyperlinks; DW-029, upstream); V4 PASS 49 chip reference(s) resolve, 9 footer source(s); V5 PASS 150 = 150 = 150; V6 PASS 11 types, PASS no adjacent repeat; V7 PASS Cole present and labelled synthetic, four retired names absent; V8 PASS
 $ Retrieval check: the four presets rank D1 11.1 / D6 5.1 / D3 3.3 / D2 0.0 (margin 53.8%); D5 18.2 / D4 17.9 (1.7%, flagged); D8 29.2 / D3 8.0 / D7 3.8 / D1 3.7 (72.8%); D7 26.5 then zeros (100%), before and after (checks.mjs JN-030; Part O untouched)
-$ T7 figures for session-3, before and after: 86 literal / 12 entity (98) at 765dff3; 6 literal / 3 entity (9) at the end; sixteen lowerings on DW-120
+$ T7 figures for session-3, before and after: 86 literal / 12 entity (98) at 765dff3; 6 literal / 3 entity (9) at the end; sixteen lowerings on DW-122
 $ screenshots  .verify-shots/JN-*-<section>.png at 1280 px for every changed section, and JN-016-head-380.png (git-ignored); scrollWidth at 380 px = 380
 ```
 
@@ -186,7 +186,7 @@ By-design red lines, unchanged from the pre-flight and the Session 2 pass: V2 on
 - [Bugs] `docs/changes/.../checks.mjs` dispatches one click through the DOM (JN-006) where the page's lock is pointer-events:none; documented in the check.
 
 ### Looked for and did not find
-- Em-dash additions: T7 reproduced the recorded figures after every commit; the sixteen falls are instructed (K1) and recorded on DW-120 with before and after; the literal form stays the majority at 6 against 3.
+- Em-dash additions: T7 reproduced the recorded figures after every commit; the sixteen falls are instructed (K1) and recorded on DW-122 with before and after; the literal form stays the majority at 6 against 3.
 - Typed case figures: none in the new text; the excerpt and the corpus read COLEDOCS at parse time; `verify-migration` 15 passed at the end; `case-inventory --report-check` current.
 - Edits inside a generated region: none by hand; `build-appendix` regenerated the regions after every structural commit and reports current; `inject-sources --check` current; `verify-case` 6 of 6.
 - `last_verified` written: none; no new SOURCES.md record; the lock is unchanged.
@@ -221,6 +221,7 @@ By-design red lines, unchanged from the pre-flight and the Session 2 pass: V2 on
 - F-6. **Pedagogy s4 is deviated from on this page in three ways by instruction:** no cold-open ritual (JN-022), no four-item retrieval bridge at 7 minutes (the bridge shares §00's 5), and 18 interaction roots against the 13-to-15 band (V6 red, DW-094 pattern). The Shift+U override stays (not in the notes; DW-117 open).
 - F-7. **The verify block in §09 stays on the page** with two items (the federal floor; the confidentiality duty). Session 2 moved its block to the run sheet by instruction; these notes did not ask. Say "move the §09 verify block to the run sheet" and it lands the JN-018-of-Session-2 way.
 - F-8. **The sale-versus-gift rationale left the page** with old §09's Part A (JN-011); it was the only tax characterisation §10 made and it carried an on-page instructor-verification flag. §10 now asserts no tax result. If you want the question back as a discussion item, it belongs in the run sheet, not on the page.
+- F-16. **The Session 3 A9 register row was renumbered DW-120 to DW-122 when this branch merged `main` on 2026-09-17.** The 2026-09-14 Session 2 polish pass allocated DW-120 independently and reached `main` first, so it keeps the id under the register's never-reuse rule; the Session 3 row is DW-122 and says so in its own text. The sixteen item commits on this branch name DW-120 in their messages and were left as written, so a reader following a commit message to the register lands on the polish row and needs this line to get to the right one. Nothing on any lesson page moved: DW-121, the row `session-3` §08 cites, is unchanged.
 - F-9. **Ultracode was on and the pass ran single-threaded** under K4 and sdlc-loop rule 2, as on 09-12 and 09-13.
 - F-10. **The one defect I introduced** (the override calling a removed key, 0367298 to fb4380a) was caught by the DOM-mode validator and missed by my landing helper for four commits; the helper now halts on that line and the harness presses the override. Recorded in plan.md departures.
 - F-11. **DW-050 (the spine) has lost two more sockets on this page:** the rubric line (S8) and the spiral sentence. Session 3 states the recurring question only in the injected case modal. Said, not decided.

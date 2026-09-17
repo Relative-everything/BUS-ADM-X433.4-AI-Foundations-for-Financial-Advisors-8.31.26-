@@ -10,6 +10,69 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-14 · Session 2 polish: eighteen seams and craft fixes after the three deletion batches, and nine proposals for the instructor
+
+Branch `claude/session-2-execution-314n0n`, eighteen item commits after the
+register (PL-002 to PL-033 by id), one finding each, from a seven-dimension
+survey of the page at 88d89c9: seams the deletion batches left, sentence
+craft, terminology, headings and labels, interaction quality, interaction
+uniqueness, and mechanical correctness. Every figure, name, date, chip and
+citation reads as it did; the em-dash baseline reproduced at 2 literal plus
+38 entity after every commit; every section's word count holds or falls
+(24 words fewer in all); the interaction count holds at 19. Records in
+`docs/changes/2026-09-14-session-2-polish/`: the register of 37 findings
+(18 landed, 9 proposed, 9 examined and kept), the recommendations, the
+harness and the handback.
+
+### Session 2 · §01 to §04
+
+§01's explanation of temperature ends "no theory behind that number: it is
+simply what works for essays" (PL-005). §02's lede reads "Two models two
+dollars apart per million tokens can differ fourfold" (PL-009) and its
+frontier paragraph "Plotted together, they scramble the price-sheet
+ranking" (PL-010). §03's prompt-length panel is labelled a point, not a
+result (PL-016). §04's builder names each level scale as a group for a
+screen reader and marks the selected starter prompt pressed (PL-018,
+PL-019).
+
+### Session 2 · §05 to §08
+
+§05's feedback on items 2 and 6 prints the section sign where it printed
+the literal "&sect;" (PL-020). §06's two subheadings take sentence case
+(PL-021), the buy-sell paragraph reads "The questions it asked back are
+below" instead of a sentence that misparsed and repeated the panel's label
+(PL-022), and the panel's hint line, the third statement of one instruction,
+is gone (PL-023). §07's Check 03 card no longer repeats "Training data has a
+cutoff; the Code does not" from the Type 03 card (PL-027). §08 opens "§04
+rebuilt one of your prompts" rather than "Section 04, the workshop" inside a
+section whose own eyebrow reads Workshop (PL-028); the first live-audit
+criterion reads "Pasted in as written, it produced something", no longer
+addressed to a peer reviewer the 09-13 rebuild retired (PL-029); the three
+template buttons carry a pressed state (PL-030).
+
+### Session 2 · appendix
+
+B1's live-run doit points at what §01 now does, "§01 explains the
+difference and how to narrow it", where it pointed at the comparison
+exercise JN-008 deleted (PL-002). B4's adoption chart lays out for its
+three rows: the caption names rows 1 and 3, the axis ends at the last bar,
+the caption starts at the frame's edge instead of running past it, and the
+frame loses its empty band (PL-025). B5's question reads "if a reliable
+prompt has to be specified as carefully as §04 required" (PL-032) and its
+two room-percentage boxes carry names (PL-033).
+
+### Records
+
+The committed profile is regenerated: it had recorded §02 at 610 words
+from before JN-037 (PL-015). Nine findings are proposed rather than landed
+because each changes a figure, a date, a chip, a family tag, a component
+or page-level CSS, and are ranked in `recommendations.md`; the first two
+are accuracy findings the instructor can settle in a minute each: §07's
+"three of the six items would survive" against its own tally's five, and
+the footer stamp of 2026-09-12. The run sheet carries a "Changed since the
+09-13 run sheet" block and no slot moves.
+
+---
 ## 2026-09-14 · Session 3: rebuilt after §03 for the room it has, and a third shorter before it
 
 Branch `claude/lucid-volta-bi2rfg`, twenty-eight item commits after the plan
@@ -84,14 +147,14 @@ sections, appendix 83 over six; 150 in all.
 ### Repository
 
 A9 for `session-3` re-recorded from 86 literal / 12 entity (98) to 6 / 3 (9)
-across sixteen commits on the instructor's K1 instruction (DW-120, one line
+across sixteen commits on the instructor's K1 instruction (DW-122, one line
 each); the majority form stays literal. `SOURCES.md`: session-3 clauses
 updated for `src-wolfram`, `src-case`, `src-kitces-notetakers`, `src-wiretap`;
 removed for `src-vectara`, `src-finra2409`, `src-secpri`, `src-regsp`,
 `src-kitces-advisortech`; added for `src-context-windows`. Footers,
 bibliography, the unsourced-claims register (11 to 9) and the case-fact
 inventory regenerated. Register: the Session 3 decision paragraph, rows
-DW-120 and DW-121, dated notes on nineteen rows. The run sheet is rewritten
+DW-121 and DW-122, dated notes on nineteen rows. The run sheet is rewritten
 for the new sections. `docs/audits/profiles/session-3.json` is new.
 ## 2026-09-13 · Session 2, batch 3: the triage explains itself in bullets, the case gate leaves the page, and §02 says what a benchmark task is
 

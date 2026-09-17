@@ -96,8 +96,8 @@ No figure in the notes is a golden value. Every figure the rebuilt page carries 
 - The rebuild of §04 (JN-005) also re-anchored appendix C2 from s7 to s6 in the same commit, because deleting s7 left C2 anchored to a section that no longer existed and `build-appendix.mjs` throws on that; C2 became §05 in the next commit. Inside the named file, needed to complete the step.
 - JN-012 re-anchored C4 from s14 to s13 for the same reason when s14 left the page.
 - One defect of mine landed in 0367298 (JN-011) and was fixed in fb4380a: the Shift+U handler still called the removed documentation key and threw when pressed; the DOM-mode validator reported it on the next four commits and the landing helper did not halt on that line. The helper now halts on a script error, every reveal registers with the one list the handler runs, and checks.mjs JN-020 presses the override and asserts every key opens.
-- The DW-120 lines for JN-024 and JN-013 were first written with the wrong figures (counted by hand) and corrected by amending the unpushed commits; every later line is written from the helper's measured output.
-- One bogus commit (06ca04e, a DW-120 line for an edit that had failed to apply) was dropped with `git reset --hard` before it was pushed; nothing else was in it.
+- The DW-122 lines for JN-024 and JN-013 were first written with the wrong figures (counted by hand) and corrected by amending the unpushed commits; every later line is written from the helper's measured output.
+- One bogus commit (06ca04e, a DW-122 line for an edit that had failed to apply) was dropped with `git reset --hard` before it was pushed; nothing else was in it.
 - V5 (150 minutes) and `build-appendix --check` were red at the Group 3 and Group 4 pushes (96 and 147 minutes) and green from 07d8dd5 (A5) onward; no interim minute figure was faked to hide it.
 - The harness check for JN-020 ran zero checks on its first run because its comment lacked the JN prefix the runner filters on; renamed and run before the records commit (fb4380a carries the check; the rename rides the records commit).
 - Gate ids: A3 and A5 use ga6 and ga7 because ga3 and ga4 belong to C3 and C4, which stay.
