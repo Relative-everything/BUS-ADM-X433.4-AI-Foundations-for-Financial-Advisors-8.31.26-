@@ -14,6 +14,30 @@ Every figure is cited to a file and line or to one of the audits. Confidence is 
 
 ---
 
+## 0. Execution status, 2026-09-17
+
+This plan has been partly executed. The branch is merge-ready. See `handback.md` in this folder for
+the full record and `fable-prompt.md` for the one item held back.
+
+| Item | State |
+|---|---|
+| A2 page half, the register-row reference in §08's source line | **Done**, commit `5ce0691` |
+| A8, §09 trimmed from 6 to 4 planned minutes | **Done**, commit `5e60dd5`. One reversal: quiz item 1 stays. See handback §3 |
+| A4, §11 gains the course data rule and a Part 1 brief | **Done**, commit `3962e20` |
+| A5, the run sheet | **Done**, commit `f60428e` |
+| B6, eight stale register rows closed | **Done**, commit `f15d508` |
+| B9, the change folder | **Done**, commit `d2d7bd1` |
+| A9, page greps for the two errata | **Closed with no work owed**, §7.2 |
+| **A7, the §01/§02 merge** | **Held for Fable**, 2026-09-19. `fable-prompt.md` |
+| A1, A3, A6, A10, A11, B3, B4, B5, B8 | **Instructor only.** No model can do them. handback §6 |
+| B1, B2, B7, C1 to C5, Group D | Not started. None blocks 2026-09-21 |
+
+Core planned minutes: **67 to 65** now, and to 62 after the merge. The §09 recovery was 2 rather
+than the 3 in §4.4, because the minute came from the duplicated vendor card instead of the quiz cut
+the plan proposed. T7 unchanged at 6 literal / 3 entity throughout.
+
+---
+
 ## 1. Lead with the premise challenge
 
 You wrote that the cold open is too complex, that students have not used enough AI to have a prompt
