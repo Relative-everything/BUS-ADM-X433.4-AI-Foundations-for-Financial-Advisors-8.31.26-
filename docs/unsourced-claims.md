@@ -23,13 +23,13 @@ Both forms are declared in `EDITORIAL.md` A16 and enforced by
 
 | | |
 |---|---|
-| Marked claims | **11** |
-| `[UNCONFIRMED]` | **8** |
+| Marked claims | **9** |
+| `[UNCONFIRMED]` | **6** |
 | `[NEEDS SOURCE]` | 3 |
 | weight `answer` | 1 — An answer key or the correctness of an exercise depends on it. A student is marked right or wrong by it. |
-| weight `exercise` | 2 — A work-along gate or an interaction is built on it. The room does something because of it. |
+| weight `exercise` | 1 — A work-along gate or an interaction is built on it. The room does something because of it. |
 | weight `section` | 3 — A whole section's argument rests on it. Remove the claim and the section has no point. |
-| weight `claim` | 3 — A standalone factual claim in prose. A reader could repeat it to a client. |
+| weight `claim` | 2 — A standalone factual claim in prose. A reader could repeat it to a client. |
 | weight `aside` | 2 — A passing remark. Nothing else on the page leans on it. |
 
 ## The order
@@ -63,20 +63,7 @@ the corpus on every run.
 
 *A work-along gate or an interaction is built on it. The room does something because of it.*
 
-### 2. `session-3/index.html:2255` — `#s16` — **[UNCONFIRMED]**
-
-> [UNCONFIRMED]
-
-| | |
-|---|---|
-| File and line | `session-3/index.html:2255` |
-| Section | `#s16` (`core`) |
-| Region | R2 — script string literal |
-| Marker | **[UNCONFIRMED]** |
-| What would resolve it | Re-read the leaderboard and restate the floor, or drop the superlative and teach the range. The measurement is unchanged; what moved is what it is the best of. The HALL chart array at :2019 labels 3.3% 'Best model, grounded' and this panel teaches the range from it. |
-| Candidate source | Vectara's own hallucination-leaderboard repository, read 2026-08-25: last updated 2026-05-11, HHEM-2.3, 123 models. Every per-model rate this lesson quotes is still on the board, but 3.3% now ranks third and the floor is 1.8%. The cited blog post itself is blocked from this build environment and was not read. — confidence **medium** |
-
-### 3. `session-4/index.html:1557` — `#sW1` — **[UNCONFIRMED]**
+### 2. `session-4/index.html:1557` — `#sW1` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
@@ -93,7 +80,7 @@ the corpus on every run.
 
 *A whole section's argument rests on it. Remove the claim and the section has no point.*
 
-### 4. `session-4/index.html:1525` — `#sW1` — **[UNCONFIRMED]**
+### 3. `session-4/index.html:1525` — `#sW1` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
@@ -107,7 +94,7 @@ the corpus on every run.
 | Candidate source | anthropic.com/news/claude-text-watermark, plus the-decoder and thenextweb reporting of 2 August 2026, all reached through search only: the host is blocked from this build environment and the page itself was never loaded — confidence **medium** |
 | Note | Reported substance: Claude output carries a SynthID-Text watermark and C2PA provenance metadata for models launched from 2 August 2026, applied worldwide. If that holds, this sentence is false and so is what it tells students about their own coursework. |
 
-### 5. `session-4/index.html:1501` — `#s5` — **[NEEDS SOURCE]**
+### 4. `session-4/index.html:1501` — `#s5` — **[NEEDS SOURCE]**
 
 > [NEEDS SOURCE]
 
@@ -120,7 +107,7 @@ the corpus on every run.
 | What would resolve it | Attach the two real sources and drop src-case: a synthetic household cannot evidence a meta-analysis. Check the wording against the pooled figure before chipping it H — 55.54% is near chance and above it for some stimulus types, so 'close to chance' survives and 'at chance' would not. |
 | Candidate source | Diel, Lalgi, Schroter, MacDorman, Teufel and Bauerle (2024), Human performance in detecting deepfakes: a systematic review and meta-analysis of 56 papers, Computers in Human Behavior Reports 16, 100538 — 137 effects, 86,155 participants, pooled accuracy 55.54% — confidence **medium** |
 
-### 6. `session-4/index.html:1658` — `#s7` — **[NEEDS SOURCE]**
+### 5. `session-4/index.html:1658` — `#s7` — **[NEEDS SOURCE]**
 
 > [NEEDS SOURCE]
 
@@ -137,20 +124,7 @@ the corpus on every run.
 
 *A standalone factual claim in prose. A reader could repeat it to a client.*
 
-### 7. `session-3/index.html:1585` — `#s12` — **[UNCONFIRMED]**
-
-> [UNCONFIRMED]
-
-| | |
-|---|---|
-| File and line | `session-3/index.html:1585` |
-| Section | `#s12` (`core`) |
-| Region | R1 — body prose |
-| Marker | **[UNCONFIRMED]** |
-| What would resolve it | Name the compilations. This lesson's own teaching point three lines down is that published counts disagree, which makes an assertion about what appears on EVERY published list the one claim in the passage that cannot be checked without the list of lists. |
-| Candidate source | none retrieved; the statutory citations beside it are sourced and this sentence is not — confidence **none** |
-
-### 8. `session-4/index.html:1563` — `#sW1` — **[UNCONFIRMED]**
+### 6. `session-4/index.html:1563` — `#sW1` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
@@ -163,7 +137,7 @@ the corpus on every run.
 | What would resolve it | Name the page, or narrow the sentence to the page that was actually read. This asserts what a specific Google page says TODAY, and no build has ever loaded the Google DeepMind SynthID overview it means: the host answers 403 on CONNECT here. src-synthid-text was retrieved on 2026-08-25 and carries no adoption figure either, but it is the text-watermarking page under a different publisher line and cannot stand in for the overview. Read the overview and date the reading, or rewrite the sentence to say which page and when. |
 | Candidate source | ai.google.dev/responsible/docs/safeguards/synthid, retrieved 2026-08-25, states no adoption figure - the right kind of evidence about the wrong page — confidence **medium** |
 
-### 9. `session-4/index.html:1616` — `#sW2` — **[UNCONFIRMED]**
+### 7. `session-4/index.html:1616` — `#sW2` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
@@ -180,7 +154,7 @@ the corpus on every run.
 
 *A passing remark. Nothing else on the page leans on it.*
 
-### 10. `session-4/index.html:1525` — `#sW1` — **[UNCONFIRMED]**
+### 8. `session-4/index.html:1525` — `#sW1` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 
@@ -193,7 +167,7 @@ the corpus on every run.
 | What would resolve it | Either find a source that measures the false-positive rate, or remove the confidence chip: this is a base-rate deduction the page makes from a premise it has already established, and a syllogism does not need a citation. It should not stay chipped to an SEC speech that makes no such argument. |
 | Candidate source | C2PA guidance says the corresponding thing qualitatively, reached through secondary blogs only — confidence **low** |
 
-### 11. `session-4/index.html:1601` — `#sW2` — **[UNCONFIRMED]**
+### 9. `session-4/index.html:1601` — `#sW2` — **[UNCONFIRMED]**
 
 > [UNCONFIRMED]
 

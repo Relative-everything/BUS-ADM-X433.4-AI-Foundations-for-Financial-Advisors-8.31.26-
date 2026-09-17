@@ -23,8 +23,8 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 1710 | 1392 | 318 |
 | `PINNED` | 12 | 12 | 0 |
-| `UNGUARDED` | 88 | 5 | 83 |
-| **TOTAL** | **1810** | **1409** | **401** |
+| `UNGUARDED` | 69 | 5 | 64 |
+| **TOTAL** | **1791** | **1409** | **382** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -40,17 +40,16 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `session-0.1/index.html` | 16 | 5 |
 | `session-1/index.html` | 17 | 0 |
 | `session-2/index.html` | 3 | 0 |
-| `session-3/index.html` | 27 | 0 |
+| `session-3/index.html` | 8 | 0 |
 | `session-4/index.html` | 23 | 0 |
 
 ## `UNGUARDED`, by region
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R1` | body prose | 59 | 0 |
-| `R2` | script string literal | 23 | 0 |
+| `R1` | body prose | 45 | 0 |
+| `R2` | script string literal | 19 | 0 |
 | `R10` | captured transcript | 5 | 5 |
-| `R8` | source note | 1 | 0 |
 
 **`R2` carries 0 of the 5 quantitative unguarded references, 0.0%** — answer
 keys, chart data arrays and JS feedback strings. They are inside `<script>`, so
@@ -61,24 +60,24 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 83 |
+| `name` | 64 |
 | `pct` | 5 |
 
 ## `UNGUARDED`, by fact
 
 | Fact | Count |
 |---|---:|
-| `domicile` | 23 |
-| `companyAbbr` | 12 |
-| `megShort` | 10 |
-| `companyName` | 10 |
-| `nathanShort` | 10 |
-| `plantTown` | 8 |
-| `residenceTown` | 4 |
+| `domicile` | 20 |
+| `megShort` | 8 |
+| `companyName` | 8 |
+| `nathanShort` | 8 |
+| `plantTown` | 7 |
+| `companyAbbr` | 6 |
 | `afrMid` | 4 |
-| `davidName` | 3 |
-| `decedent` | 2 |
+| `residenceTown` | 3 |
+| `davidName` | 2 |
 | `afrLong` | 1 |
+| `decedent` | 1 |
 | `megNameAlt` | 1 |
 
 ## Machinery
@@ -109,29 +108,28 @@ with the text around it, so the undercount can be judged rather than trusted.
 | Declined for | Count |
 |---|---:|
 | `endowmentIntent` | 67 |
-| `votingUnits` | 50 |
+| `votingUnits` | 54 |
 | `claireAge` | 39 |
 | `marriedYears` | 39 |
 | `tbills` | 31 |
 | `seedUnits` | 21 |
-| `employees` | 19 |
-| `megAge` | 19 |
+| `megAge` | 20 |
 | `nathanAge` | 19 |
 | `charDeductible` | 18 |
+| `employees` | 18 |
 | `nonVotingUnits` | 15 |
 | `saleUnits` | 15 |
 | `dividend` | 13 |
 | `inheritedIra` | 13 |
 | `david403b` | 13 |
-| `discount` | 12 |
 | `revolver` | 12 |
-| `perUnitDividend` | 6 |
+| `discount` | 9 |
+| `nathanShort` | 7 |
 | `deMinimisLoan` | 4 |
 | `davidAge` | 3 |
 | `topOrdinary` | 3 |
 | `megApplicableAge` | 2 |
-| `nathanShort` | 2 |
-| `charFloor` | 2 |
+| `perUnitDividend` | 2 |
 | `techPct` | 2 |
 | `estateTopRate` | 1 |
 | `inquiryDate` | 1 |

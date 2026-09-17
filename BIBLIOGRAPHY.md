@@ -5,8 +5,8 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**63 works, 197 references across 5 lessons.** 50 are
-cited by at least one claim; 13 are listed by a lesson without carrying a
+**63 works, 201 references across 5 lessons.** 49 are
+cited by at least one claim; 14 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
 **54 records carry at least one field this repository could not verify, and
@@ -53,8 +53,8 @@ Per-token input and output rates by model, cache-hit and batch discounts.
 | Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S2 `#s0` · S2 `#s3` |
+| **Total references** | **4** |
+| Cited in | S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 |
 
 What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate.
 
@@ -91,8 +91,8 @@ The temperature parameter's status on current models and the vendor's statement 
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **9** |
-| Cited in | S3 `#s5` ×2 · S3 `#sHY` · S3 `#s6` ×2 · S3 `#s16` ×4 |
+| **Total references** | **6** |
+| Cited in | S3 `#sRag` · S3 `#s6` ×3 · S3 `#s7` · S3 `#s16` |
 
 Top-20-chunk retrieval failure rates — baseline 5.7%, contextual embeddings 3.7%, plus contextual BM25 2.9%, plus reranking 1.9% — and the stated ~200,000-token threshold below which the whole corpus beats retrieval. Vendor-reported benchmarks on codebases, fiction and research papers, not advisory documents.
 
@@ -642,8 +642,8 @@ Why a model guesses rather than abstains, and the two scoring rules. The model t
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **8** |
-| Cited in | S3 `#s9` · S3 `#s10` · S3 `#s11` ×4 · S3 `#s16` ×2 |
+| **Total references** | **7** |
+| Cited in | S3 `#s9` · S3 `#s10` ×2 · S3 `#s11` ×2 · S3 `#s16` ×2 |
 
 Drawing on Kitces Research on Advisor Productivity, fielded autumn 2024: the greater-than-1:1 prep-and-follow-up ratio, the solo-versus-team adoption pattern, the UHNW drop-off, and the roughly fourfold rate for most-extensive against most-targeted plans.
 
@@ -699,8 +699,8 @@ Characterised on the page ONLY by its title claim of self-reported reductions in
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **8** |
-| Cited in | S2 `#s10` ×3 · S3 `#s7` · S3 `#s15` · S3 `#s16` · S4 `#s7` · S4 `#s9` |
+| **Total references** | **10** |
+| Cited in | S2 `#s10` ×3 · S3 `#s6` ×2 · S3 `#s15` · S3 `#s16` ×2 · S4 `#s7` · S4 `#s9` |
 
 Over 200 preregistered legal queries, expert hand-scored, against Lexis+ AI, Westlaw AI-Assisted Research and GPT-4. Tools tested May 2024 — a historical fixture. The measured rates belong to the tools as they were on that date and must never be "updated".
 
@@ -775,8 +775,8 @@ Cited ONLY for the design claim that interleaving categories during classificati
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **3** |
-| Cited in | S3 `#s12` ×3 |
+| **Total references** | **2** |
+| Cited in | S3 `#s12` ×2 |
 
 The two-party consent exposure behind the recording-consent section: the California private right of action and the federal wiretap statute.
 
@@ -832,8 +832,8 @@ n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using 
 | Last retrieved | *not applicable* |
 | Last verified by the instructor | *not applicable* |
 | Confidence | L |
-| **Total references** | **15** |
-| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s7` · S3 `#s10` · S3 `#s16` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` ×2 · S4 `#s7` ×2 · S4 `#sWS` |
+| **Total references** | **25** |
+| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s3` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` ×2 · S4 `#s7` ×2 · S4 `#sWS` |
 
 Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
 
@@ -851,8 +851,8 @@ Entirely synthetic. Every figure, document and family fact is invented, includin
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **10** |
-| Cited in | S3 `#s14` · S4 `#s2` ×7 · S4 `#sRSP` · S4 `#s7` |
+| **Total references** | **9** |
+| Cited in | S4 `#s2` ×7 · S4 `#sRSP` · S4 `#s7` |
 
 The four obligations — written incident response program, customer notification no later than 30 days after the firm becomes aware, service provider oversight, recordkeeping — the definition and scope limits of nonpublic personal information, and the compliance dates 3 December 2025 and 3 June 2026.
 
@@ -894,25 +894,6 @@ The two AI-washing settlements and their penalty amounts. Penalty figures are re
 
 Accuracy of AI representations, training and security controls, and Regulation S-P as a named examination focus.
 
-### Vectara
-
-**Introducing the next generation of Vectara's hallucination leaderboard**  
-`src-vectara` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Vectara |
-| Publisher | Vectara |
-| Link | <https://www.vectara.com/blog/introducing-the-next-generation-of-vectaras-hallucination-leaderboard> |
-| Published | 2025-11-19 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **4** |
-| Cited in | S3 `#s7` · S3 `#s16` ×3 |
-
-Dataset size, 32K-token length, domain mix, the low/high complexity split of 3,792 and 3,939, the leaderboard prompt, and the named per-model rates. A live leaderboard: the named model rates move.
-
 ### Wolfram, S.
 
 **What is ChatGPT doing … and why does it work?**  
@@ -928,7 +909,7 @@ Dataset size, 32K-token length, domain mix, the low/high complexity split of 3,7
 | Last verified by the instructor | **2026-08-23** |
 | Confidence | H |
 | **Total references** | **20** |
-| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s1` ×2 · S2 `#s2` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s3` · S3 `#s8` ×2 · S4 `#sWS` · S4 `#s8` |
+| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s1` ×2 · S2 `#s2` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s3` · S3 `#s7` ×2 · S4 `#sWS` · S4 `#s8` |
 
 The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D3 is about exactly that.
 
@@ -989,13 +970,14 @@ source that does not belong in that lesson's footer.
 | `src-rr200464` | authority | S2 | yes, by kind |
 | `src-iskowitz` | background | S3 | yes, by kind |
 | `src-kessler` | fabricated | S2 | yes, by kind |
-| `src-kitces-advisortech` | background | S3 | yes, by kind |
+| `src-kitces-advisortech` | background |  | yes, by kind |
 | `src-laplace` | background | S2 | yes, by kind |
 | `src-cve` | background | S4 | yes, by kind |
 | `src-morningstar` | background | S2 | yes, by kind |
 | `src-irc` | authority | S2 | yes, by kind |
 | `src-woelbing` | authority | S2 | yes, by kind |
 | `src-davidson` | authority | S2 | yes, by kind |
+| `src-vectara` | evidence |  | **NO — finding** |
 
 **Cited elsewhere, listed without a chip here.** The corpus-wide count
 above hides these, because the source is genuinely used — just not in the
@@ -1003,6 +985,4 @@ lesson whose footer names it.
 
 | Source | Listed by | Cited in |
 |---|---|---|
-| `src-finra2409` | S3 | S1 |
 | `src-finra2409` | S4 | S1 |
-| `src-secpri` | S3 | S4 |
