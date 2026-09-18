@@ -2325,7 +2325,20 @@ var CHAIN=[
 
 /* ================= 10. The four stages, opened one at a time ================= */
 /* The transcription stage quotes COLEDOCS; the other three are written for
-   this lesson to show the shape of each step and are labelled illustrative. */
+   this lesson to show the shape of each step and are labelled illustrative.
+   NTSUM is the categorisation stage's output under the instruction below it:
+   the five headings that instruction names and nothing else. §08 copies the
+   same constant onto the clipboard, so the source the room runs its prompts
+   on and the output §07 shows cannot drift apart. */
+var NTSUM=[
+ {h:'Decisions',t:'none'},
+ {h:'Action items',t:'Appraisal to be looked at again before anything is signed (raised by David; no owner assigned)'},
+ {h:'Open questions',t:'Whether the approach changes the timing on the note structure (Meg; not answered)'},
+ {h:'Facts that changed',t:'An unsolicited approach from a competitor last autumn; nothing signed, nothing in writing. Counsel wants the note kept callable on demand.'},
+ {h:'Constraints',t:'Nathan is not to be told until there is something to tell'}
+];
+function ntSumHtml(){return NTSUM.map(function(r){return '<span class="hd">'+esc(r.h)+'</span>'+esc(r.t)}).join('<br>')}
+function ntSumText(){return 'MEETING SUMMARY (synthetic: the Cole annual review, no real client)\n'+NTSUM.map(function(r){return r.h.toUpperCase()+': '+r.t}).join('\n')}
 (function(){
  var W=$('ntStages');if(!W)return;
  var T=COLEDOCS.transcript;
@@ -2334,9 +2347,9 @@ var CHAIN=[
   {n:'1. Transcription',w:'Speech becomes time-stamped text with a speaker label. Mistakes here are misheard words and swapped speakers; a misheard name becomes a different person in the record.',
    out:function(){var h='';T.forEach(function(t,i){h+='[0'+i+':'+(i?'4':'0')+'] '+turn(i)+'<br>'});return h}},
   {n:'2. Extraction',w:'A model picks the sentences that count. This is where the professional risk sits: whatever it drops leaves no trace.',
-   out:function(){return '<span class="good">Kept:</span><br>'+turn(1)+'<br>'+turn(3)+'<br>'+turn(4)+'<br><br><span class="flag">Dropped as conversational:</span> the two Advisor questions, and, in many tools, the clause about Nathan, which reads as personal colour and is the one constraint the file most needs.'}},
-  {n:'3. Categorisation',w:'The kept sentences are sorted under headings. The headings are the ones you gave it; a tool with no instruction picks its own.',
-   out:function(){return '<span class="hd">Decisions</span>none<br><span class="hd">Action items</span>Appraisal to be looked at again before anything is signed (raised by David; no owner assigned)<br><span class="hd">Open questions</span>Whether the approach changes the timing on the note structure (Meg; not answered)<br><span class="hd">Facts that changed</span>An unsolicited approach from a competitor last autumn; nothing signed, nothing in writing<br><span class="hd">Constraints</span>Nathan is not to be told until there is something to tell<br><span class="hd">Third-party position</span>Counsel wants the note kept callable on demand'}},
+   out:function(){return '<span class="good">Kept:</span><br>'+turn(1)+'<br>'+turn(3)+'<br>'+turn(4)+'<br><br><span class="flag">Dropped as conversational:</span> the two Advisor questions, and, in a tool with no standing instruction, the clause about Nathan, which reads as personal colour and is the one constraint the file most needs.'}},
+  {n:'3. Categorisation',w:'The kept sentences are sorted under headings. With the instruction below in place the headings are yours and the constraint about Nathan survives. A tool with no instruction picks its own headings and keeps what it thinks matters.',
+   out:function(){return ntSumHtml()}},
   {n:'4. Follow-up',w:'A recap email and a task list are drafted from the categories. Read it as the client will: anything stated as settled is now advice.',
    out:function(){return '<span class="hd">Draft recap</span>Meg, David, thank you for today. You told us a competitor wrote to you last autumn about buying the company, and that nothing is signed. Counsel prefers the note stay callable on demand. David asked that the appraisal be looked at again before anything is signed; we will arrange that. Still open: whether the approach changes the timing on the note structure.<br><br><span class="hd">Task</span>Arrange the appraisal review. Owner: you. Date: before any document is signed.<br><br><span class="flag">Not in the email:</span> the constraint about Nathan. The email goes to the client; the constraint goes in the file.'}}
  ];
