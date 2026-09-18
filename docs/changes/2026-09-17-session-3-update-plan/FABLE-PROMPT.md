@@ -118,6 +118,11 @@ Give them a parallel track for §06, §07, §08 and §11: the same exercise run 
 they DO have. It belongs in the run sheet as instructor guidance, and where a single sentence on the
 page would carry it without cluttering the section, put it there too.
 
+**You do not know what those three people actually do**, and nothing in the repository records it.
+Write the track against a recurring professional task with a before, a during and an after, which is
+the structure §06 teaches, rather than naming a substitute profession you are guessing at. Then flag
+in the handback that the instructor can sharpen it in one line if he tells you who they are.
+
 This is a judgement call about inclusion, not a mechanical edit. Take it seriously.
 
 ## PHASE 3: work the audit findings
@@ -136,6 +141,16 @@ Your job is to check that the PAGE supports what the run sheet promises, and to 
 not.
 
 ## PHASE 4: the final verification
+
+**Environment first.** Set `NODE_PATH` to the global npm root before running anything, or every
+`node scripts/*.mjs` call fails on a missing jsdom:
+`export NODE_PATH=$(npm root -g)`
+
+**Three validators are not in this repository.** `validate_lesson.py`, `validate_dom.js` and
+`restyle_sweep.py` ship with the interactive-lesson-builder skill and run FROM THE SKILL ROOT with
+the repo passed as an argument. If that skill is not available in this session, say so plainly in
+the handback, run everything else, and do NOT report the run as fully verified. Do not silently skip
+them and do not invent their output. The repo-root gates below all run without the skill.
 
 - Run every gate. Full list in plan.md Appendix A.1.
 - Run the four §03 preset queries in a browser and confirm the rankings and the margin flag are
