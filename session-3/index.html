@@ -1344,7 +1344,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel" data-task="t-s6" data-comp="prediction-commit">
     <span class="do">Do this now: 2 minutes</span>
     <h4>Commit Before the Numbers</h4>
-    <p class="hint">A well-built tool has your documents and is told to answer only from them. Out of 100 answers, how many still contain something the documents do not support? Commit, then read the measured figures.</p>
+    <p class="hint">A well-built tool has your documents and is told to answer only from them. Out of 100 answers, how many still contain something the documents do not support? Commit to a letter in chat, then click it and read the measured figures.</p>
     <div class="row" id="grBtns"></div>
     <div id="grOut" class="mpanel"><span class="hd">Your prediction</span><span class="nil">Commit to an answer.</span></div>
     <div id="grKey" class="mpanel keyhide" style="display:none"></div>
@@ -2222,10 +2222,13 @@ function showSlope(){
 }
 
 /* ================= 6. What grounding fixes: predict, then the measured figures ================= */
+/* The four options are the four options of the Zoom poll that fires here, in
+   the same order and with the same letters, so the poll and the page agree. */
 var GROPT=[
- {t:'Fewer than 1 in 100',k:false,w:'Not on any published measurement. Even the finding step alone, before the model reads anything, misses the right passage about 2 times in 100 at Anthropic\u2019s best setting.'},
+ {t:'Essentially never',k:false,w:'Not on any published measurement. Even the finding step alone, before the model reads anything, misses the right passage about 2 times in 100 at Anthropic\u2019s best setting.'},
  {t:'About 1 in 20',k:false,w:'Closer, and still too kind. That is roughly what the finding step alone misses at the baseline setting, 5.7 in 100. Add the reading step and the measured rates climb to 17 and 33 in 100.'},
- {t:'About 1 in 5, or more',k:true,w:'This is what Stanford measured on grounded legal research tools sold as hallucination-free: 17 to 33 answers in 100 contained something the sources did not support. Grounding roughly halved the ungrounded rate of 43. It did not remove it.'}
+ {t:'About 1 in 5',k:true,w:'This is what Stanford measured on grounded legal research tools sold as hallucination-free: 17 to 33 answers in 100 contained something the sources did not support. Grounding roughly halved the ungrounded rate of 43. It did not remove it.'},
+ {t:'As often as a tool with no documents',k:false,w:'Too harsh, and the safest wrong answer to hold. The model with no documents ran at 43 in 100; grounding cut that to 17 to 33. Roughly halved, not removed.'}
 ];
 (function(){
  var B=$('grBtns'),O=$('grOut'),K=$('grKey'),picked=-1;
@@ -2237,7 +2240,7 @@ var GROPT=[
   K.className='mpanel has keyhide';K.innerHTML=h;K.style.display='block';
  }
  GROPT.forEach(function(o,i){
-  var b=document.createElement('button');b.className='btn sel mini';b.type='button';b.textContent=o.t;
+  var b=document.createElement('button');b.className='btn sel mini';b.type='button';b.textContent='('+String.fromCharCode(97+i)+') '+o.t;
   b.onclick=function(){
    if(picked>=0)return;picked=i;
    [].slice.call(B.children).forEach(function(c,j){c.classList.toggle('act',j===i);c.disabled=(j!==i)});
