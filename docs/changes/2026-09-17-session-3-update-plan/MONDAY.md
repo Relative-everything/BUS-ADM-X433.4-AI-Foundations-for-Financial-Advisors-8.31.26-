@@ -7,7 +7,7 @@ something that takes you ten minutes and removes a risk from the night.
 
 ## Today, 35 minutes
 
-**1. Run §08's three prompts yourself, in Claude. 10 minutes.**
+**1. Run §08's three prompts yourself, in Claude. 10 minutes.** *Superseded 2026-09-18, evening: the outputs are built into §08 as example panels under prompts 1 and 2. No rehearsal is needed.*
 Take the synthetic meeting summary from §07, paste it into Claude, and run the letter prompt, then
 the cash-flow prompt, then the deck prompt. Check each output is something you would actually hand
 to an advisor as an example.

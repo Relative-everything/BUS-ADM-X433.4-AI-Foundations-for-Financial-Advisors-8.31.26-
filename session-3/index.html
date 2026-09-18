@@ -1577,12 +1577,14 @@ If a heading has nothing under it, write "none".</pre>
 Use only what the summary says. State each point as asserted, decided or still open, and present nothing as settled.
 Leave out the CONSTRAINTS line: it goes in the file, not the letter.
 After the letter, list each sentence and the summary line it came from.</pre>
-  <div class="row"><button class="btn" id="offC0">Copy the letter prompt with the summary</button><span id="offM0" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
+  <div class="row"><button class="btn" id="offC0">Copy the letter prompt with the summary</button><button class="btn ghost mini" id="offX0">Example output</button><span id="offM0" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
+  <div id="offE0" class="mpanel keyhide" style="display:none"></div>
 
   <span class="plab" style="margin-top:18px">2 &middot; The task list</span>
   <pre id="offP1">Below is the summary of a client review meeting. Build a table of every action item and open question in it: what, who owns it, by when, and the summary line it comes from.
 Where the summary gives no owner or date, write "not given". Do not add a task the summary does not contain.</pre>
-  <div class="row"><button class="btn" id="offC1">Copy the task prompt with the summary</button><span id="offM1" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
+  <div class="row"><button class="btn" id="offC1">Copy the task prompt with the summary</button><button class="btn ghost mini" id="offX1">Example output</button><span id="offM1" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
+  <div id="offE1" class="mpanel keyhide" style="display:none"></div>
 
   <span class="plab" style="margin-top:18px">3 &middot; The next agenda</span>
   <pre id="offP2">Below is the summary of a client review meeting. Draft the agenda for the next meeting with these clients.
@@ -1602,7 +1604,7 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
 
   <p>What comes back is the test of rule three. Read it against the summary above: every sentence should point at a line, and anything stated as settled that the summary lists as open is the assistant writing advice.</p>
 
-  <p class="src">The three prompts, the summary they run on and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>. The summary is &sect;07's categorisation output, repeated here so the check is against a source on screen. No claim is made here about any particular vendor's in-application assistant; the pattern is the one the three rules describe, and it holds wherever you run it.</p>
+  <p class="src">The three prompts, the summary they run on and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>. The summary is &sect;07's categorisation output, repeated here so the check is against a source on screen. The two example outputs are one model's answers to prompts 1 and 2 on that summary, lightly abridged, so a run that stalls still has something to read against the source <span class="conf l" data-src="src-case">L</span>. No claim is made here about any particular vendor's in-application assistant; the pattern is the one the three rules describe, and it holds wherever you run it.</p>
 
   <div class="check" data-gate="g9b"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six tasks, then run the four steps of the silent run. Synthetic material only; nothing from your own files tonight.</div></div>
 
@@ -2464,8 +2466,35 @@ mkSorter({list:$('offList'),boxes:$('offBoxes'),out:$('offOut'),key:$('offKey'),
  after:'<span class="good">The pattern: the assistant changes a file from a source you give it, and you check the result. The decision and the sign-off never move.</span>'});
 
 /* ===== 10d. The §08 run: three prompts, each copied together with NTSUM ===== */
+/* OFFEX: one model's answers to prompts 1 and 2 on the NTSUM payload, abridged.
+   Illustrative, so the run has a comparison if a learner's own run stalls; the
+   two added commitments in the letter are the thing to point at. */
+var OFFEX=[
+ ['Dear Meg and David,',
+  'Thank you for meeting with us for your annual review. This letter records what was discussed and where each point stands.',
+  'You told us that a competitor approached you last autumn about buying the company. Nothing has been signed and nothing is in writing. We record this as a fact you reported, not as a decision.',
+  'Your counsel wants the note kept callable on demand. We note this as counsel\u2019s stated position; no decision on it was taken.',
+  'David asked that the appraisal be looked at again before anything is signed. This is an open action item. The summary does not record who will do it or by when, and we will confirm both with you.',
+  'One question remains open: whether the competitor\u2019s approach changes the timing on the note structure. It was raised and not answered, and it will be on our next agenda.',
+  'No decisions were made at this meeting.',
+  'Kind regards, [Adviser]',
+  '',
+  'Sentence sources: 1 and 2, FACTS THAT CHANGED. 3, FACTS THAT CHANGED. 4 and 5, ACTION ITEMS (no owner assigned). 6, OPEN QUESTIONS. 7, DECISIONS: none.',
+  '<span class="flag">Not in the summary: \u201cwe will confirm both with you\u201d and \u201cit will be on our next agenda\u201d. Two commitments the assistant added. That is the sentence to catch before the letter goes.</span>'],
+ ['Item: Appraisal to be looked at again before anything is signed. Type: action item. Owner: not given (raised by David). By when: before anything is signed. Source: ACTION ITEMS.',
+  'Item: Whether the approach changes the timing on the note structure. Type: open question. Owner: not given (raised by Meg). By when: not given. Source: OPEN QUESTIONS.',
+  '',
+  '<span class="good">Two rows, three cells reading \u201cnot given\u201d. An assistant that fills those cells has invented an owner or a date.</span>']
+];
 (function(){
  var S=$('sumBlock');if(!S)return;S.innerHTML=ntSumHtml();
+ for(var j=0;j<2;j++)(function(j){
+  var X=$('offX'+j),E=$('offE'+j);if(!X||!E)return;
+  function show(){E.className='mpanel has keyhide';E.style.display='block';
+   E.innerHTML='<span class="hd">Example output, illustrative: one model\u2019s answer to this prompt on this summary, abridged</span>'+OFFEX[j].map(function(l){return l.indexOf('<span')===0?l:esc(l)}).join('<br>')}
+  X.onclick=function(){if(E.style.display==='none')show();else E.style.display='none'};
+  REVEALS.push(show);
+ })(j);
  for(var i=0;i<3;i++)(function(i){
   var B=$('offC'+i),M=$('offM'+i),P=$('offP'+i);if(!B||!P)return;
   B.onclick=function(){

@@ -284,6 +284,9 @@ printed, then: "Four minutes. Nobody talks. Nothing real, the synthetic summary 
 will be doing during the silence and then be quiet. Hold the four minutes; you held the Session 1 break
 to 293 seconds against 300 stated.
 
+Under prompts 1 and 2 there is an Example output button: one model's answer, abridged, for anyone
+whose run stalls and for you to point at afterwards. Nothing needs pre-running.
+
 What comes back: a letter under 200 words, then a list tracing each sentence to a summary line.
 The thing to point at in the harvest is any sentence that states the note's timing or the appraisal
 as settled; both are open in the summary. Prompts 2 and 3, the task table and the next agenda, are
