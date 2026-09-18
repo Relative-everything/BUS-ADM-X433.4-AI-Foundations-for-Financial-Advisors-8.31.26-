@@ -20,12 +20,14 @@ section that is worked runs at 1.9x. That is the whole reason the clock below lo
 - The page's closing block now says what this sheet says: written, in chat, against the objective.
 - §06's chain examples, §07's stage outputs and §03's document sentence were made consistent with
   each other. Nothing you say changes; what the screen shows no longer contradicts itself.
-- Every commit device on the page now has a one-character floor for the room: the bridge's four
-  checks carry letters and render in a scrambled order; every sorter's items and buckets are
-  numbered; every quiz option is lettered; §04's commit has Poll 2's four options with the same
-  letters; §03 lists the ten passages by number before anything is ranked; §06's stages, §07's
-  turns and §11's checklist are numbered. Each slot below says what the room chats and what the
-  answer is.
+- Every commit device on the page now has a one-word floor, said aloud: the bridge's four checks
+  carry letters and render in a scrambled order; every sorter's items and buckets are numbered;
+  every quiz option is lettered; §04's commit has Poll 2's four options with the same letters; §03
+  lists the ten passages by number before anything is ranked; §06's stages, §07's turns and §11's
+  checklist are numbered. Each slot below says the one question to ask and the answer. Nothing
+  depends on anyone answering: if nobody does, say it yourself and move on. Only two things are
+  written all night, the §08 harvest and the closing check, because nobody should have to speak
+  after the silent run and because spoken closing asks returned silence twice.
 - §08 carries the four steps of the silent run in a panel, so the instructions are on screen while
   you are silent.
 - §06 links to Session 2's appendix B4, so the seven-step sorter is one click out and one back.
@@ -65,7 +67,7 @@ the objective.
 |---|---|---|---|---|
 | 6:00 | 8 | Housekeeping. Pre-class window closed at 5:58 | | "Canvas and file questions at the break, not now." |
 | 6:08 | 3 | **Corrections slot**, below | none | "Two things I said last time that I have since checked." |
-| 6:11 | 8 | **Objective**, then the retrieval bridge. **WORKED** | `s1` retrieval-bridge | "One thing tonight. Then four checks: chat the four letters in the order you would run them." |
+| 6:11 | 8 | **Objective**, then the retrieval bridge. **WORKED** | `s1` retrieval-bridge | "One thing tonight. Then four checks: someone give me the four letters in the order you would run them." |
 | 6:19 | 7 | §01 and §02, now one section | `s2` | "Why the nearest passage is not the right one." |
 | 6:26 | 12 | §03 the retriever, preset 1. **WORKED 1** | `s4` estimate-then-reveal | "Commit first: which document answers this? Then watch what the retriever does." |
 | 6:38 | 8 | §04 what grounding fixes. **Poll 2** | `s6` prediction-commit | "Guess before the figures. You are meant to get this wrong." |
@@ -157,11 +159,10 @@ for them at §06, §07 and §11; this is your side of it.
 - **6:11, the objective.** The one sentence above: read "client-meeting workflow" as the meeting
   they pick at §06.
 - **6:52, §06, before you click the stages.** Read the paragraph under the five stages aloud.
-  Then chat, one line, from everyone, nobody speaks: "the meeting you will use tonight". Advisors
-  write "client review". The three write the recurring meeting they write up afterwards: a
-  committee, a case review, a hiring interview, whatever it is. Keep that chat: it is also the
-  first record this course has of what those three actually do, and it is a whole-room commitment
-  that costs one minute.
+  Then ask, once: "Who here does not run client meetings, and what is the recurring meeting you
+  will use tonight?" One answer each, aloud, a few words. If nobody speaks, name the shape yourself
+  (a committee, a case review, a hiring interview) and move on. Write down what they say: it is
+  the first record this course has of what those three actually do.
 - **7:15, §07, at the instruction.** The five headings are for any meeting. Say once: swap the
   word "client" for whoever was in the room and keep the rest. The page says it under the
   instruction.
@@ -212,8 +213,8 @@ who is holding it if nobody does.
 ## Per-slot notes
 
 ### s1 · Bridge, 6:11
-Four checks, in order, no notes. The page lists them A to D in a scrambled order. Chat: the four
-letters in the order you would run them; wait for four lines; click the room's order; a wrong
+Four checks, in order, no notes. The page lists them A to D in a scrambled order. Ask for the four
+letters in the order you would run them; take the first answer offered; click that order; a wrong
 committed order is the point. **The correct order is C A D B**: C exists, A says what it says,
 D still current, B applies to these facts. The objective is said before the bridge, not after. It
 is printed on the page above the bridge, in the panel labelled "Tonight's one thing": read it off
@@ -228,35 +229,35 @@ sorter.
 Keep in the narration: Wolfram's definition, the five-billion-word construction, and alligator
 against crocodile. That pair does the conceptual work, and the pair sort's "appraised value against
 formula value" row is §03's failure one section early. Point at it when you reach the retriever.
-One chat vote in this section, on that row: "pair 3, which bucket, 1, 2 or 3?" The answer is 2,
+One question in this section, on that row: "pair 3, which bucket, 1, 2 or 3?" The answer is 2,
 same subject, different governing condition. Place it, read the why, move on.
 
 ### s4 · §03, the retriever, 6:26 · **WORKED 1**
-The ten passages are listed by number above the presets. Before you rank anything, chat: the
+The ten passages are listed by number above the presets. Before you rank anything, ask for the
 D-number that should answer "what value should we use for Meg's CPC shares". Most will say D3, the
 appraisal; some D1, the buy-sell. Then run the four presets in order. Preset 1 is the failure the session turns on: say aloud that the
 appraisal ranks third at 3.3, sharing only "value" with the question, and that Meg and CPC appear in
 no passage. Preset 2's margin line is the coin-flip case. Poll 3 fires after preset 1, not before.
 
 ### s6 · §04, 6:38
-Fire Poll 2 before the reveal, or take the letter in chat: the page's four options are the poll's
+Fire Poll 2 before the reveal, or just ask for a letter: the page's four options are the poll's
 four, same order, same letters. Click the room's majority on the page; the measured key opens.
 The room usually picks (b). The answer is (c).
 
 ### s7 · §05, 6:46
-The Tuesday test. Chat a, b or c; click the room's letter; the answer is (a). Read the fine-tuning
+The Tuesday test. Ask for a, b or c; click the letter you are given; the answer is (a). Read the fine-tuning
 option's feedback aloud whatever the room picked. First to drop if behind.
 
 ### s9 · §06, 6:52
-Before the stages: the one-line chat harvest for the three non-advisors, in their section above.
-Then a second chat line: the number of the stage whose skipped check is found last. The answer is
+Before the stages: the one question for the three non-advisors, in their section above. Then a
+second question: the number of the stage whose skipped check is found last. The answer is
 5, Log, at examination; 2 and 3 are the ones nobody ever sees, which is worth one sentence when
 you open them. Click every stage, 1 to 5. **[GATE]** at the Log stage. Say once, in one sentence, that everything tonight
 lives inside steps 1, 2 and 7 of the Board's seven-step process, and that nothing tonight touches
 steps 4 and 5, where your credential attaches. That sentence sets up the 7:36 sorter, and the page links to it under the five stages.
 
 ### s10 · §07, 7:15
-The five turns are numbered. Chat: the number of the turn that holds the one thing the file most
+The five turns are numbered. Ask for the number of the turn that holds the one thing the file most
 needs and a tool is most likely to drop. The answer is 2, Meg's first answer, the clause about
 Nathan. Then open the four stages in order. The extraction stage's dropped clause about Nathan is the teaching
 point; the instruction below it is the thing to take home. Stage three's output is the summary the
@@ -316,15 +317,15 @@ The vendor-questions card is gone from this section. Session 4 §04 scores the s
 weights, and appendix A5 carries them as an email builder for the async reader.
 
 ### s13 · §10, 7:57
-Lines and buckets are numbered. After Poll 4a, chat: "line 4, which bucket?" The answer is 3,
+Lines and buckets are numbered. After Poll 4a, ask: "line 4, which bucket?" The answer is 3,
 Neither; it is the inference. **[GATE]** before the key opens. Watch for anyone who sorts the inference line as "said": that is
 the mistake a note-taker makes for you. Name the technique in §10's prompt aloud: it is reverse
 prompting, the interview rewrite, and it is the Session 2 topic that was named but never shown. The
 page names it now, in the heading above the prompt.
 
 ### s16 · §11, 8:05
-Read the course data rule aloud. Do not paraphrase it. The checklist is numbered: chat the number
-of the one gap you will close first. Read three aloud.
+Read the course data rule aloud. Do not paraphrase it. The checklist is numbered: ask for the
+number of the one gap you will close first, two or three answers, then move on.
 
 Then the Part 1 brief: the seven-element checklist lives in Session 2 §09; the two most often
 missing are the baseline time, estimated if it was never timed, against the AI-assisted time, and
