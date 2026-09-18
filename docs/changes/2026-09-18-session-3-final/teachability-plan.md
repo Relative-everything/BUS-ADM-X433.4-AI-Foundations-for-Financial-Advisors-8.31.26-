@@ -22,10 +22,14 @@ machines (§03's retriever, §08's silent run, the seven-step sorter off the Ses
 rest narrated. What this pass changes is what "narrated" means. A narrated section in which the
 room has committed to a letter in chat before the instructor clicks is a worked section for the
 purposes of every audit metric that has failed, at a cost of thirty to forty seconds. That is the
-whole design: **every commit device on the page now has a floor of one character**, typed into
-Zoom chat, before the instructor touches the page. The instructor clicks the room's answer, not
-his own. Nine such commits across the night cost about six minutes of the 23-minute buffer and
-give the next audit nine whole-room commitments to count against a baseline of three.
+whole design: **every commit device on the page now has a floor of one word, said aloud**, before the
+instructor touches the page. The instructor asks one question, counts four, takes any answer, and
+clicks that answer; if nobody speaks he says it himself and moves on, so nothing depends on
+participation. The room talks on Zoom and does not type, so only two things are written all night:
+the §08 harvest, because nobody should have to speak straight after the silent run, and the closing
+check, because spoken closing asks returned silence in both prior sessions. Nine such questions
+cost about six minutes of the 23-minute buffer and give the next audit nine whole-room commitments
+to count against a baseline of three.
 
 Rejected: a fourth learner-run interaction. The arithmetic in `plan.md` §2.4 says three is the
 dose and nothing measured since has moved it.
@@ -234,7 +238,7 @@ in any of them beyond the sorter numbering, which A1 and A3 inherit.
 
 ## 2. The commit-device map for the night
 
-| Clock | Device | What the room types | Answer | Cost |
+| Clock | Device | What the room says (or types, for the two written ones) | Answer | Cost |
 |---|---|---|---|---|
 | 6:08 | Bridge | four letters | C A D B | 1 min |
 | 6:14 | Poll 1, anonymous | a to d | none; the rule decides §05 and §08's length | 1 min |
@@ -242,15 +246,15 @@ in any of them beyond the sorter numbering, which A1 and A3 inherit.
 | 6:26 | §03 index | D1 to D10 | D3 is the expected wrong-ish answer; D1 wins | 45 s |
 | 6:38 | Poll 2 or chat | a to d | (c) | 1 min |
 | 6:46 | §05 | a to c | (a) | 30 s |
-| 6:52 | §06 | the meeting you will use; a stage number | 5 | 1 min |
+| 6:52 | §06 | the three name their meeting, aloud; a stage number | 5 | 1 min |
 | 7:15 | §07 | a turn number | 2 | 30 s |
-| 7:28 | §08 harvest | one line | none | 1 min |
+| 7:28 | §08 harvest | one line, written | none | 1 min |
 | 7:34 | Poll 3 | a to d | (b) | 1 min |
 | 7:52 | §09 item 1 | a to c | (c) | 30 s |
 | 7:57 | Poll 4a; §10 | a to d; a bucket number | 3 | 1.5 min |
 | 8:04 | Poll 4b | a to d | none | 30 s |
 | 8:05 | §11 | a gap number | none | 30 s |
-| 8:32 | Closing check | one line | none | 3 min |
+| 8:32 | Closing check | one line, written | none | 3 min |
 
 Fifteen whole-room commitments against a Session 2 baseline of three, longest gap between them
 under 20 minutes everywhere except the break and the reserve. Added cost about 6 minutes on top of

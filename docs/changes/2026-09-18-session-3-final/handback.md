@@ -475,3 +475,17 @@ at either depth; zero page errors. `checks.mjs`: 31 assertions, 0 failed. V6 did
 14. The chat commits assume a Zoom chat. The async reader is asked to "commit in chat"; the
     page's other wording ("commit first") covers them and no learner reads these pages
     independently by the instructor's own account, but the phrasing is room-first on purpose.
+
+---
+
+## 12. Third pass, same day: spoken, not typed
+
+The instructor said the room talks and will not type, at most one to three chat moments a night,
+and the class must not depend on participation. FF-032 to FF-034: the six page hints that asked
+for a chat commit now ask the room to say the answer; the numbers and letters stay because a spoken
+one-word answer needs them as much as a typed one; the §08 harvest and the closing check are the
+only written moments, on purpose; the run sheet and the aid say at every step that if nobody
+answers he says it and moves on. Verification after the third pass: identical to §11 (repo gates
+green, same seven by-design skill-validator lines, V6 at 18, T7 at 4 / 3, presets identical,
+18 of 18 respond, no overflow at 380px, `checks.mjs` 32 assertions, 0 failed). `origin/main` has
+not moved since `08c92e5`; the branch merges clean.

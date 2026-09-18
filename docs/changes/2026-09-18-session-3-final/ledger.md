@@ -42,3 +42,7 @@ D8 29.2 / D3 8.0 / D7 3.8 / D1 3.7 (72.8%), D7 26.5 then zeros (100%); no horizo
 | FF-029 | T | `instructor-notes/session-3.md` | Every slot carries its chat commit and the answer; the §04 mapping note retired; the S2 link named | reads true against the page | `43635a4` | every slot carries its chat commit and answer | done |
 | FF-030 | T | `instructor-notes/session-3-teaching-aid.htm`, `.pdf`, `.md` | The one-page numbered aid, built from the two audits' measured failure modes | one printed page, 21 steps | `8d1eb07` | .htm, .pdf (1 page), .md | done |
 | FF-031 | T | `docs/changes/2026-09-18-session-3-final/teachability-plan.md` | The module-by-module facilitation analysis and what was done about each | present | `c84d3ac` | | done |
+| FF-032 | T | six hints on the page: `:1204` `:1288` `:1348` `:1413` `:1471` `:1774` | Every commit cue asks the room to say the answer, not type it; the §08 harvest and the closing check stay written | page contains exactly two "in chat" | `de1b0ac` | 2 written moments, 6 spoken | done |
+| FF-033 | T | `instructor-notes/session-3.md` | Every slot's cue is a spoken question with its answer and the no-answer rule | reads true against the page | `0789d4a` | | done |
+| FF-034 | T | `instructor-notes/session-3-teaching-aid.*` | ASK replaces chat except the two written moments; shorter cues, larger type | one page, 21 steps | `d922080` | | done |
+
