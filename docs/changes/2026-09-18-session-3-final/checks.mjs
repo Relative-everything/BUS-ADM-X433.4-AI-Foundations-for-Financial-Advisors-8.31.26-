@@ -60,6 +60,10 @@ say([...d.querySelectorAll('#sOff .plab')].some(e => /silent run/i.test(e.textCo
 say(/^1\. /.test(txt('#ckList label')), 'FF-027', '§11 checklist is numbered');
 say(/Meg Cole owns/.test(txt('#s1')), 'FF-028', '§00 says who the Coles are');
 
+{
+  const x = $('#offX0'); if (x) x.click();
+  say(/Example output, illustrative/.test(txt('#offE0')) && /we will confirm both with you/.test(txt('#offE0')), 'FF-035', '§08 example output opens under prompt 1 and names the added commitments');
+}
 say((html.match(/in chat/g) || []).length === 2, 'FF-032', 'exactly two written moments on the page: the §08 harvest and the closing check');
 say(d.querySelectorAll('[data-comp]').length === 18, 'V6', `18 interaction roots (found ${d.querySelectorAll('[data-comp]').length})`);
 console.log(`\nsummary: ${fails} failed`);

@@ -489,3 +489,26 @@ answers he says it and moves on. Verification after the third pass: identical to
 green, same seven by-design skill-validator lines, V6 at 18, T7 at 4 / 3, presets identical,
 18 of 18 respond, no overflow at 380px, `checks.mjs` 32 assertions, 0 failed). `origin/main` has
 not moved since `08c92e5`; the branch merges clean.
+
+---
+
+## 13. Fourth pass, same day: pre-done for the instructor
+
+The instructor will not pre-run chats and has three to four hours. FF-035 to FF-038: one model's
+answers to §08's prompts 1 and 2 are built into the page as example panels, so the run needs no
+rehearsal and a stalled run has something to read against the summary; six Zoom polls in a
+paste-ready file with four recommended; three Canvas posts drafted from the audits' own verdicts,
+including the seventeen-item corrections post; a verify brief for §09 that names the subsection
+and the standard to open (both hosts are egress-blocked here, so it quotes nothing). Verification
+after the fourth pass: repo gates green (build-bibliography regenerated for the one new case
+reference), same seven by-design skill-validator lines, V6 at 18, T7 at 4 / 3, presets identical,
+18 of 18 respond, no overflow at 380px, `checks.mjs` 33 assertions, 0 failed. `origin/main`
+unmoved.
+
+**Flags added.**
+
+15. The corrections post carries the audits' confidence labels and was not re-verified; the
+    watermark item is deliberately the narrow one. Items 7, 11 and 17 rest on the 2026-09-07 claims
+    audit alone, whose refutation pass never ran.
+16. The verify brief's Standard number (A.9) is from memory, labelled medium; the table of
+    contents settles it in one look.

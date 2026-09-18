@@ -45,4 +45,8 @@ D8 29.2 / D3 8.0 / D7 3.8 / D1 3.7 (72.8%), D7 26.5 then zeros (100%); no horizo
 | FF-032 | T | six hints on the page: `:1204` `:1288` `:1348` `:1413` `:1471` `:1774` | Every commit cue asks the room to say the answer, not type it; the §08 harvest and the closing check stay written | page contains exactly two "in chat" | `de1b0ac` | 2 written moments, 6 spoken | done |
 | FF-033 | T | `instructor-notes/session-3.md` | Every slot's cue is a spoken question with its answer and the no-answer rule | reads true against the page | `0789d4a` | | done |
 | FF-034 | T | `instructor-notes/session-3-teaching-aid.*` | ASK replaces chat except the two written moments; shorter cues, larger type | one page, 21 steps | `d922080` | | done |
+| FF-035 | T | `sOff`, after the copy rows for prompts 1 and 2 | Example-output panels: one model's answer to each prompt on the summary payload, illustrative, chipped; run sheet and MONDAY.md updated | `#offX0` opens `#offE0` naming the added commitments | `6ccdb79` | no pre-run needed | done |
+| FF-036 | T | `instructor-notes/session-3-polls.md` | Six polls, four recommended, paste-ready | file present | `51a69f0` | | done |
+| FF-037 | T | `instructor-notes/session-3-canvas-posts.md` | Three Canvas posts from the audits' verdicts | file present | `2e58088` | one bracketed date to fill | done |
+| FF-038 | T | `instructor-notes/session-3-verify-brief.md` | What to open and what to sign for §09's two items | file present | `e53fcd2` | sources egress-blocked; nothing quoted | done |
 
