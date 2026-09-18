@@ -8,6 +8,21 @@ demonstrated. Everything else is narrated.** Session 1 measured 2 of 17 interact
 and 0 executed by a learner. A section that is read runs at about 1.0x its planned minutes; a
 section that is worked runs at 1.9x. That is the whole reason the clock below looks tight.
 
+## Changed 2026-09-18, the final pass
+
+- The objective is printed on the page, in §00 above the bridge, in the words below. Read it off
+  the screen at 6:11.
+- §08's three prompts run on the §07 summary and nothing else. Each copy button puts the prompt
+  and the synthetic summary on the clipboard together, so the run is: click Copy, paste into
+  Claude, send. The prompts are the follow-up letter, the task table and the next agenda.
+- The three who do not run client meetings have a track. Their section is below, and the page
+  carries one sentence for them at §06, §07 and §11.
+- The page's closing block now says what this sheet says: written, in chat, against the objective.
+- §06's chain examples, §07's stage outputs and §03's document sentence were made consistent with
+  each other. Nothing you say changes; what the screen shows no longer contradicts itself.
+- Poll 2 has four options in Zoom; the page's §04 commit has three. The §04 note below says how to
+  run both.
+
 ## Changed since the previous run sheet (2026-09-17)
 
 - Clock times are fixed. The previous sheet said "the reserve is generous"; at the repository's own
@@ -31,6 +46,10 @@ section that is worked runs at 1.9x. That is the whole reason the clock below lo
 Bloom tier: Evaluate. The closing check at 8:32 assesses it at the same tier. Do not replace it with
 a recall question.
 
+For the three who do not run client meetings, add one sentence, once: "If you do not run client
+meetings, read that as the recurring meeting you will pick at §06." The page says the same under
+the objective.
+
 ## The clock
 
 | Clock | Min | What | Page element | Open it with |
@@ -45,7 +64,7 @@ a recall question.
 | 6:52 | 8 | §06 the workflow chain | `s9` symptom-diagnoser | "Five stages. A mistake at any one is inherited by every stage after it." |
 | **7:00** | **15** | **BREAK. Post "back at 7:15" in chat, Pacific** | | Post the clock time in their zone, not yours. |
 | 7:15 | 9 | §07 the note-taker's four stages | `s10` | "Stage two drops a clause about Nathan. That is the teaching point." |
-| 7:24 | 12 | §08 **silent run, in Claude. WORKED 2** | `sOff` | "Four minutes. Nobody talks. Open Claude, paste the summary, run the letter prompt." |
+| 7:24 | 12 | §08 **silent run, in Claude. WORKED 2** | `sOff` | "Four minutes. Nobody talks. Open Claude. Under prompt 1, click Copy. Paste, send." |
 | 7:36 | 16 | Seven-step delegation sorter, **off the Session 2 page. WORKED 3** | `session-2` `s9`, depth +Standard | "Open last week's page. Appendix depth to Standard. B4." |
 | 7:52 | 5 | §09 consent and confidentiality. **Poll 3** just before | `s12` | "Two obligations: may it be recorded, and what may the vendor see." |
 | 7:57 | 8 | §10 said, recommended or neither. **Poll 4** | `s13` two-bucket-sorter | "Six lines from the meeting. One of them is your inference, not their words." |
@@ -118,6 +137,40 @@ which is where all three of these sit.
 
 Three, not thirty. Nothing else on this page is gated.
 
+## The three who do not run client meetings
+
+Three of eight are not practising advisors. Session 3 is the advisor meeting workflow end to end,
+and until this pass nothing on the page or in this sheet gave them a task of their own. Nothing in
+the repository records what they do, so the track is written to the shape §06 teaches, a recurring
+meeting with a before, a during and an after, not to a profession. The page carries one sentence
+for them at §06, §07 and §11; this is your side of it.
+
+- **6:11, the objective.** The one sentence above: read "client-meeting workflow" as the meeting
+  they pick at §06.
+- **6:52, §06, before you click the stages.** Read the paragraph under the five stages aloud.
+  Then chat, one line, from everyone, nobody speaks: "the meeting you will use tonight". Advisors
+  write "client review". The three write the recurring meeting they write up afterwards: a
+  committee, a case review, a hiring interview, whatever it is. Keep that chat: it is also the
+  first record this course has of what those three actually do, and it is a whole-room commitment
+  that costs one minute.
+- **7:15, §07, at the instruction.** The five headings are for any meeting. Say once: swap the
+  word "client" for whoever was in the room and keep the rest. The page says it under the
+  instruction.
+- **7:24, §08.** No branch. The run is on the synthetic Cole summary for all eight; the prompts say
+  "client review meeting" because that is the case, not anyone's practice. If one of the three
+  asks what it means for them: the same three rules and the same prompts, on the summary of their
+  own meeting, in their own time, synthetic or fully de-identified only.
+- **7:57, §10.** The sorter is reading, no branch. The work-along says "the last meeting you wrote
+  up", which is true for all eight. The basis prompt's ROLE line names an investment adviser; for
+  the three the prompt works unchanged on any recommendation they made in their meeting, and they
+  can change the ROLE line to a reviewer at their own organisation if the adviser framing gets in
+  the way.
+- **8:05, §11.** The checklist hint says to tick it for the meeting they chose. The closing check
+  needs no change: one step of that meeting they would hand to a tool, one they would not.
+
+If you tell the next pass who the three are, one line each, the sentence at §06 can name their
+actual meetings instead of the shape. Until then the shape is the honest version.
+
 ## The closing check, 8:32, written
 
 In chat, not aloud. Two open verbal asks in Session 2 returned silence.
@@ -151,7 +204,8 @@ who is holding it if nobody does.
 
 ### s1 · Bridge, 6:11
 Four checks, in order, no notes. Get the room's order before revealing; a wrong committed order is
-the point. The objective is said before the bridge, not after.
+the point. The objective is said before the bridge, not after. It is printed on the page above the
+bridge, in the panel labelled "Tonight's one thing": read it off the screen.
 
 ### s2 · §01 and §02, merged, 6:19
 One section of seven minutes now, not two of five. Narrate it as one movement. Both instruments are
@@ -169,20 +223,25 @@ appraisal ranks third at 3.3, sharing only "value" with the question, and that M
 no passage. Preset 2's margin line is the coin-flip case. Poll 3 fires after preset 1, not before.
 
 ### s6 · §04, 6:38
-Poll the three options before the reveal; the room usually picks the second.
+Fire Poll 2, four options, before the reveal. Then click the room's majority on the page's
+three-way commit, which maps (a) and (b) to its first two options and (c) and (d) to its third.
+The room usually picks the second.
 
 ### s7 · §05, 6:46
 The Tuesday test. Read the fine-tuning option's feedback aloud whatever the room picked. First to
 drop if behind.
 
 ### s9 · §06, 6:52
+Before the stages: the one-line chat harvest for the three non-advisors, in their section above.
 Click every stage. **[GATE]** at the Log stage. Say once, in one sentence, that everything tonight
 lives inside steps 1, 2 and 7 of the Board's seven-step process, and that nothing tonight touches
 steps 4 and 5, where your credential attaches. That sentence sets up the 7:36 sorter.
 
 ### s10 · §07, 7:15
 Open the four stages in order. The extraction stage's dropped clause about Nathan is the teaching
-point; the instruction below it is the thing to take home.
+point; the instruction below it is the thing to take home. Stage three's output is the summary the
+room runs §08 on, so leave it open on screen when you move on. At the instruction, say once that
+the headings are for any meeting: swap the word "client".
 
 ### sOff · §08, 7:24 · **WORKED 2, and the first silent work this course has ever run**
 **This section no longer names Word, Excel or PowerPoint, and that is deliberate.** It used to
@@ -195,16 +254,27 @@ goes. That holds in any tool.
 The run is in Claude, which every person in the room has because the course requires it, and on
 synthetic material, so the data rule is never in question.
 
-Say it like this: "Four minutes. Nobody talks. Open Claude, paste in the meeting summary from the
-last section, and run the letter prompt on it. Nothing real, the synthetic summary only." Say what
-you will be doing during the silence and then be quiet. Hold the four minutes; you held the Session
-1 break to 293 seconds against 300 stated.
+The three prompts on the page take the §07 summary as their only input, and each copy button puts
+the prompt and the summary on the clipboard together. There is one paste. The summary is also
+printed in the section, so the check afterwards is against a source on screen.
+
+Say it like this: "Four minutes. Nobody talks. Open Claude. On the page, under prompt 1, click
+Copy the letter prompt with the summary. Paste it into Claude and send it. Then read what comes
+back against the summary on the page. Nothing real, the synthetic summary only." Say what you will
+be doing during the silence and then be quiet. Hold the four minutes; you held the Session 1 break
+to 293 seconds against 300 stated.
+
+What comes back: a letter under 200 words, then a list tracing each sentence to a summary line.
+The thing to point at in the harvest is any sentence that states the note's timing or the appraisal
+as settled; both are open in the summary. Prompts 2 and 3, the task table and the next agenda, are
+on the page for anyone who finishes early. Do not assign them.
 
 If someone does have the Office assistant and wants to run it there, that is a bonus, not the
 lesson. Do not spend the room's four minutes troubleshooting one person's licence.
 
-Harvest in chat, one line each: what you asked, and whether what came back was usable. Nobody has to
-speak. That chat is the student-produced artifact to spend in the reserve at 8:12.
+Harvest in chat, one line each: whether what came back was usable, and one sentence it got wrong
+or stated as settled. Nobody has to speak. That chat is the student-produced artifact to spend in
+the reserve at 8:12.
 
 ### session-2 s9 · The seven-step sorter, 7:36 · **WORKED 3**
 Not on this page. Open the Session 2 lesson, set appendix depth to **+ Standard**, section B4.
@@ -229,7 +299,8 @@ weights, and appendix A5 carries them as an email builder for the async reader.
 ### s13 · §10, 7:57
 **[GATE]** before the key opens. Watch for anyone who sorts the inference line as "said": that is
 the mistake a note-taker makes for you. Name the technique in §10's prompt aloud: it is reverse
-prompting, the interview rewrite, and it is the Session 2 topic that was named but never shown.
+prompting, the interview rewrite, and it is the Session 2 topic that was named but never shown. The
+page names it now, in the heading above the prompt.
 
 ### s16 · §11, 8:05
 Read the course data rule aloud. Do not paraphrase it.
@@ -238,7 +309,8 @@ Then the Part 1 brief: the seven-element checklist lives in Session 2 §09; the 
 missing are the recorded baseline against the AI-assisted time and the data-handling note. A
 classmate runs the package cold in Session 4 with no help from the builder.
 
-Then the closing check, written, in chat.
+Then the closing check, written, in chat. The page's closing block now says so and carries both the
+check and the §03 question behind it.
 
 ### s15 · C4, only if the room is 20 minutes ahead at 8:12
 Hidden at core-only depth. Eighteen planned minutes, about 34 actual, which is more than the buffer.
