@@ -1771,7 +1771,7 @@ then a list of every element where my answer was thin.</pre>
   <div class="panel" data-task="t-s16" data-comp="builder-assembler">
     <span class="do">Do this now: 3 minutes</span>
     <h4>Tick What You Already Do</h4>
-    <p class="hint">Tick it for your client meetings, or for the meeting you chose in &sect;06. The readout names the gaps. Copy the list into your own notes; this page keeps nothing.</p>
+    <p class="hint">Tick it for your client meetings, or for the meeting you chose in &sect;06. The readout names the gaps. In chat, the number of the one gap you will close first. Copy the list into your own notes; this page keeps nothing.</p>
     <div id="ckList"></div>
     <div id="ckOut" class="mpanel"><span class="hd">Your gaps</span><span class="nil">Tick the steps you already do.</span></div>
     <div class="row" style="margin-top:12px"><button class="btn" id="ckCopy">Copy the checklist</button><span id="ckMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
@@ -2654,20 +2654,20 @@ var CKL=[
  CKL.forEach(function(c,i){
   if(c.g!==grp){grp=c.g;var h=document.createElement('span');h.className='plab';h.style.marginTop='12px';h.textContent=grp;L.appendChild(h)}
   var l=document.createElement('label');l.className='ckrow';var b=document.createElement('input');b.type='checkbox';
-  l.appendChild(b);l.appendChild(document.createTextNode(c.t));
+  l.appendChild(b);l.appendChild(document.createTextNode((i+1)+'. '+c.t));
   b.onchange=function(){on[i]=b.checked;l.classList.toggle('on',b.checked);draw()};L.appendChild(l);
  });
  function draw(){
-  var n=on.filter(Boolean).length,gaps=CKL.filter(function(c,i){return !on[i]});
+  var n=on.filter(Boolean).length,gaps=[];CKL.forEach(function(c,i){if(!on[i])gaps.push((i+1)+'. '+c.g+': '+c.t)});
   var h='<span class="hd">Your gaps</span>'+n+' of '+CKL.length+' in place.';
-  if(gaps.length){h+='<br><br>';gaps.forEach(function(c){h+='<span class="flag">\u00b7 '+esc(c.g)+': '+esc(c.t)+'</span><br>'})}
+  if(gaps.length){h+='<br><br>';gaps.forEach(function(g){h+='<span class="flag">\u00b7 '+esc(g)+'</span><br>'})}
   else h+='<br><br><span class="good">Every step in place. The next thing to check is whether they survive a busy week.</span>';
   O.className='mpanel'+(n?' has':'');O.innerHTML=h;
   if(n===CKL.length&&typeof mark==='function')mark('g12');
  }
  B.onclick=function(){
   var txt='Meeting checklist (Session 3)\n';var g='';
-  CKL.forEach(function(c,i){if(c.g!==g){g=c.g;txt+='\n'+g+'\n'}txt+=(on[i]?'[x] ':'[ ] ')+c.t+'\n'});
+  CKL.forEach(function(c,i){if(c.g!==g){g=c.g;txt+='\n'+g+'\n'}txt+=(on[i]?'[x] ':'[ ] ')+(i+1)+'. '+c.t+'\n'});
   function ok(){M.textContent='Copied.';setTimeout(function(){M.textContent=''},2500)}
   function fail(){var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();
    try{document.execCommand('copy');ok()}catch(e){M.textContent='Select the list and copy manually.'}document.body.removeChild(ta)}
