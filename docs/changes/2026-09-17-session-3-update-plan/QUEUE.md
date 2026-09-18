@@ -17,14 +17,14 @@ model can do at all.
 
 | # | Do this | Minutes | Why it cannot wait |
 |---|---|---|---|
-| 1 | Open Word, Excel and PowerPoint and confirm Claude's add-in exists in each, reads the open file, and proposes a change you review before it lands. Write down yes or no per app. | 10 | §08 is one of the three interactions the room runs on Monday. If an add-in does not work as described, the silent run fails live and you find out in front of them. Feed the answer into Prompt 1. |
+| 1 | Run §08's three prompts yourself in Claude, against the synthetic §07 summary. Check each output is something you would hand an advisor as an example. | 10 | **Amended 2026-09-18.** This was an Office add-in check. §08 no longer depends on Office, because you do not have it and could neither demo nor verify it. The section teaches the pattern in any tool and the run is in Claude. You still want to have seen the output before eight people do. |
 | 2 | Read anthropic.com/news/claude-text-watermark and write down one line: is Claude output watermarked, and does the watermark identify an account. | 5 | You told the room in Session 1 that it traces to their account. Session 4's page says the opposite and marks itself unconfirmed. Until you have read it, the only safe correction on Monday is the narrow one: it does not identify an account. Feeds Prompt 2. |
 | 3 | Sign or strike §09's two verify items: 18 U.S.C. §2511 as a federal one-party floor, and the confidentiality duty as applied to a documentation vendor. | 20 | You teach recording law Monday from a page that says these need your sign-off first. |
 | 4 | Turn on speaker-labelled Zoom transcripts. | 1 | One checkbox. Every future audit has been running half-blind for two sessions without it. |
 | 5 | Build the four Zoom polls from the run sheet. | 20 | A poll configured live already failed once. These are the only decision rules the course has ever had. |
 
-Items 1 and 2 are the only ones that change what Fable can do. **If you are short on time, do those
-two and skip the rest until Sunday.**
+Item 2 is the only one that changes what Fable can do. Item 1 is now a rehearsal rather than a
+verification, because there is no longer a vendor claim to verify.
 
 ## The run order once Fable is back
 

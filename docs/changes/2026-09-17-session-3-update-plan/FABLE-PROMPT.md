@@ -89,9 +89,20 @@ Fix, in place:
   planning, and beginner in AI. Precise planning jargon is welcome; unexplained AI jargon is not.
 
 Special attention, because it is the only place in the course where a beginner runs AI on their own
-machine with the instructor watching: §08's three app prompts for Word, Excel and PowerPoint. They
-must work first time on a file an advisor already has open, with no setup. Shorter and more concrete
-beats clever. If a prompt would fail on a real file, rewrite it.
+machine with the instructor watching: §08's three prompts.
+
+**Read this before you touch §08.** It used to teach Claude's add-ins inside Word, Excel and
+PowerPoint. That was removed on 2026-09-18 because the instructor has no Office on his machine, so
+he could neither demonstrate it nor verify it, and any learner without the same licence would have
+watched the course's only silent-work interval fail live. The section now teaches the pattern in any
+tool, and the in-class run is in Claude on the synthetic §07 summary. **Do not reintroduce Word,
+Excel, PowerPoint, or any named vendor's in-application assistant.** DW-121 is closed by removal and
+reopening it would put an unverifiable vendor claim back on a student-facing page.
+
+What to do instead: make the three prompts work first time, pasted into a chat, with nothing but the
+§07 summary as input. Shorter and more concrete beats clever. Run each one yourself against that
+summary and check the output is something an advisor would actually use. If a prompt produces
+something vague or something that needs a file it will not have, rewrite it.
 
 Do NOT rewrite §09, §11, the merged §01/§02, or the run sheet wholesale. Each was rebuilt against a
 specific audit finding within the last week and the wording is load-bearing. Fix a real defect if
@@ -130,8 +141,10 @@ not.
 - Run the four §03 preset queries in a browser and confirm the rankings and the margin flag are
   unchanged from the values in the HALT list below.
 - Exercise every interaction in a browser: the bridge, the map, the pair sort, the retriever, the
-  prediction, the Tuesday test, the workflow chain, the note-taker stages, the Office sorter, the
-  consent quiz, the said/recommended/neither sort, the checklist. Report any that do not respond.
+  prediction, the Tuesday test, the workflow chain, the note-taker stages, §08's kind-of-work sorter,
+  the consent quiz, the said/recommended/neither sort, the checklist. Report any that do not respond.
+- Run each of §08's three prompts yourself, in a chat, against the §07 summary, and say whether the
+  output is usable. This is the only exercise the room performs on its own machines.
 - Check the page at 380px width for horizontal overflow.
 - Confirm the run sheet is still true after everything you changed.
 

@@ -1,20 +1,25 @@
 # Between now and Monday
 
-Session 3 is taught Monday 2026-09-21, 6:00 PM Pacific. Today is Thursday 2026-09-17.
+Session 3 is taught Monday 2026-09-21, 6:00 PM Pacific. Written 2026-09-17, amended 2026-09-18.
 
 The page and the run sheet are done. Everything below is either something no model can do, or
 something that takes you ten minutes and removes a risk from the night.
 
-## Thursday or Friday, 35 minutes
+## Today, 35 minutes
 
-**1. Check the three Office add-ins. 10 minutes.**
-Open Word, Excel and PowerPoint. Confirm Claude's add-in exists in each, reads the open file, and
-proposes a change you review before it lands. Write down yes or no per app.
+**1. Run §08's three prompts yourself, in Claude. 10 minutes.**
+Take the synthetic meeting summary from §07, paste it into Claude, and run the letter prompt, then
+the cash-flow prompt, then the deck prompt. Check each output is something you would actually hand
+to an advisor as an example.
 
-Why it cannot wait: §08 is one of the three interactions the room runs. You are going to say "four
-minutes, nobody talks, copy one of these prompts into the app you use most and run it." If an add-in
-does not exist as described, that fails live in front of them. If one fails, drop that bullet from
-§08 and say so.
+This replaces the Office add-in check, which is gone. You have no Office on your machine, so you
+could not have demonstrated it or verified it, and any learner without the same licence would have
+watched the course's only silent-work interval fail live in the four minutes the room is supposed to
+be quiet. §08 now teaches the pattern in any tool and the run is in Claude, which everyone has.
+
+Why it still cannot wait: §08 is one of the three interactions the room runs, and it is the only
+time in the whole course that a beginner runs AI on their own machine with you watching. You want to
+have seen the output before eight people do.
 
 **2. Read the Anthropic watermark page. 5 minutes.**
 anthropic.com/news/claude-text-watermark. Write one line: is Claude output watermarked, and does the
