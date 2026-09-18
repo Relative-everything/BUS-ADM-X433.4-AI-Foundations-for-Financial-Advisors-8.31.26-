@@ -1285,8 +1285,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel" data-task="t-s4" data-comp="estimate-then-reveal">
     <span class="do">Do this now — 6 minutes</span>
     <h4>The Retriever on the Cole Document Set</h4>
-    <p class="hint">Pick a preset or type your own question. Read the top passage and decide, before opening the verdict, whether advice built on it alone would be right for Meg.</p>
+    <p class="hint">Before anything is ranked, commit in chat: the number of the passage you think should win. Then pick a preset or type your own question, read the top passage, and decide, before opening the verdict, whether advice built on it alone would be right for Meg.</p>
     <p style="margin:0 0 8px"><span class="sim">Live index over ten synthetic passages</span></p>
+    <div class="mpanel has" style="min-height:0;margin:0 0 14px"><span class="hd">The ten passages, by number</span><span id="qIndexList" style="display:block;line-height:1.6"></span></div>
     <div class="row" id="qPresets" style="margin-bottom:14px"></div>
     <input type="text" id="qBox" placeholder="or type a question about the Cole documents">
     <div class="row" style="margin-top:12px"><button class="btn" id="qRun">Rank the passages</button><button class="btn ghost mini" id="qVerdict">Show verdict</button></div>
@@ -2106,6 +2107,9 @@ var PRESET=[
 ];
 (function(){
  var P=$('qPresets'),Q=$('qBox'),O=$('qOut'),V=$('qVer'),cur=-1;
+ /* The index is the first sentence of each chunk, read from the injected
+    corpus at load, so it cannot drift from Part O and does not touch it. */
+ var IX=$('qIndexList');if(IX){IX.innerHTML=CORP.map(function(c){return '<b>'+esc(c.id)+'</b> '+esc(String(c.t).split('.')[0])}).join('<br>')}
  PRESET.forEach(function(p,i){
   var b=document.createElement('button');b.className='btn sel mini';b.type='button';
   b.textContent='Preset '+(i+1);
