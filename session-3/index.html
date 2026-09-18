@@ -1858,12 +1858,14 @@ var REVEALS=[];
 function mkSorter(cfg){
  var L=cfg.list,B=cfg.boxes,O=cfg.out,K=cfg.key,items=cfg.items,bk=cfg.buckets;
  var sel=-1,placed={},score=0;
- function nameOf(k){for(var i=0;i<bk.length;i++)if(bk[i].k===k)return bk[i].t;return k}
+ /* Chips and buckets are numbered in the render only, so a room can commit in
+    chat with two digits (item, bucket) before anyone clicks. Data is untouched. */
+ function nameOf(k){for(var i=0;i<bk.length;i++)if(bk[i].k===k)return (i+1)+' \u00b7 '+bk[i].t;return k}
  function draw(){
   var done=Object.keys(placed).length;
   O.className='mpanel'+(done?' has':'');
   O.innerHTML='<span class="hd">'+esc(cfg.label||'Progress')+'</span>'+done+' of '+items.length+' placed'+(done?' \u00b7 '+score+' right':'')+'.'+
-   (sel>=0?'<br><span class="good">Selected: '+esc(items[sel].t)+'. Now click the bucket it belongs in.</span>':
+   (sel>=0?'<br><span class="good">Selected: '+(sel+1)+'. '+esc(items[sel].t)+' Now click the bucket it belongs in.</span>':
     (done<items.length?'<br>Click an item, then the bucket it belongs in.':'<br><span class="good">All placed. The key is below.</span>'));
  }
  function showKey(){
@@ -1871,22 +1873,22 @@ function mkSorter(cfg){
   if(Object.keys(placed).length<items.length&&!document.body.classList.contains('reveal'))return;
   var h='<span class="hd">Answer key</span>';
   items.forEach(function(p,i){var got=placed[i],ok=got===p.k;
-   h+=(got!==undefined?(ok?'<span class="good">\u2713</span> ':'<span class="flag">\u2717</span> '):'\u00b7 ')+esc(p.t)+': '+esc(nameOf(p.k))+
+   h+=(got!==undefined?(ok?'<span class="good">\u2713</span> ':'<span class="flag">\u2717</span> '):'\u00b7 ')+(i+1)+'. '+esc(p.t)+': '+esc(nameOf(p.k))+
       '<br><span style="color:#6F7B78">'+esc(p.w)+'</span><br><br>'});
   h+='<span class="hd">Score</span>'+score+' of '+items.length+(cfg.after?'<br><br>'+cfg.after:'');
   K.className='mpanel has keyhide';K.innerHTML=h;K.style.display='block';
  }
- items.forEach(function(p,i){var b=document.createElement('button');b.className='chip';b.type='button';b.textContent=p.t;
+ items.forEach(function(p,i){var b=document.createElement('button');b.className='chip';b.type='button';b.textContent=(i+1)+'. '+p.t;
   b.onclick=function(){if(placed[i]!==undefined)return;sel=i;
    [].slice.call(L.children).forEach(function(c,j){c.classList.toggle('act',j===i)});draw()};
   L.appendChild(b)});
- bk.forEach(function(k){var slot=document.createElement('div');slot.className='bslot';
-  var b=document.createElement('button');b.className='lbox';b.type='button';b.innerHTML='<h4>'+esc(k.t)+'</h4><p>'+esc(k.d)+'</p>';
+ bk.forEach(function(k,j){var slot=document.createElement('div');slot.className='bslot';
+  var b=document.createElement('button');b.className='lbox';b.type='button';b.innerHTML='<h4>'+(j+1)+' \u00b7 '+esc(k.t)+'</h4><p>'+esc(k.d)+'</p>';
   var ul=document.createElement('ul');ul.className='placed';ul.setAttribute('data-k',k.k);
   b.onclick=function(){
    if(sel<0)return;var it=items[sel],ok=it.k===k.k;placed[sel]=k.k;if(ok)score++;
    var li=document.createElement('li');li.className=ok?'good':'flag';
-   li.innerHTML='<b>'+(ok?'\u2713':'\u2717')+'</b>'+esc(it.t)+'<span>'+(ok?'':'Belongs under \u201c'+esc(nameOf(it.k))+'\u201d. ')+esc(it.w)+'</span>';
+   li.innerHTML='<b>'+(ok?'\u2713':'\u2717')+'</b>'+(sel+1)+'. '+esc(it.t)+'<span>'+(ok?'':'Belongs under \u201c'+esc(nameOf(it.k))+'\u201d. ')+esc(it.w)+'</span>';
    ul.appendChild(li);
    L.children[sel].classList.remove('act');L.children[sel].classList.add('done');sel=-1;draw();
    if(Object.keys(placed).length===items.length){showKey();if(cfg.gate&&typeof mark==='function')mark(cfg.gate)}
