@@ -1543,13 +1543,7 @@ If a heading has nothing under it, write "none".</pre>
 
   <p class="big">The annual review lives in three files: a letter, a cash-flow sheet and a deck. Hand the assistant the source and the file, ask in plain words for the change, and read what comes back before it goes anywhere. The tool you use to do it matters far less than the three rules below.</p>
 
-  <ul class="pts">
-    <li><b>The review letter.</b> "Update last year's letter for this year's figures and the three decisions in the meeting summary below. Keep the structure. Mark every sentence you changed."</li>
-    <li><b>The cash-flow table.</b> "Add a 2026 column using the same formulas as the 2025 column, and flag any cell whose value moved more than ten percent. Say which formulas you copied."</li>
-    <li><b>The review deck.</b> "Draft the six review slides from the summary below. One decision per slide, the same headings as last year, no new sections."</li>
-  </ul>
-
-  <p>Three rules hold for all three, in any tool. Give it the source, the meeting summary or the new figures, rather than asking it to remember. Ask for the change marked, not silently made. Check every number against the source before the file goes to the client.</p>
+  <p>Three rules hold in any tool. Give it the source, the meeting summary or the new figures, rather than asking it to remember. Ask for the change marked, not silently made. Check every number against the source before the file goes to the client.</p>
 
   <div class="panel" data-task="t-sOff" data-comp="multi-column-sorter">
     <span class="do">Do this now: 3 minutes</span>
@@ -1563,9 +1557,34 @@ If a heading has nothing under it, write "none".</pre>
     <div id="offKey" class="mpanel keyhide" style="display:none"></div>
   </div>
 
-  <p class="src">The three prompts and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>. No claim is made here about any particular vendor's in-application assistant; the pattern is the one the three rules describe, and it holds wherever you run it.</p>
+  <h4 style="margin-top:26px">Three prompts that take the summary and nothing else</h4>
+  <p>Your own sources are your own files. Tonight everyone's source is the same one: the summary the note-taker produced in &sect;07, repeated below so it stays on screen while you read what comes back. Each copy button puts the prompt and the summary on your clipboard together, so you paste once.</p>
 
-  <div class="check" data-gate="g9b"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six tasks. Then take the summary from &sect;07, paste it into the assistant you already have open, and run the letter prompt on it. Synthetic material only.</div></div>
+  <div class="mpanel has" style="min-height:0"><span class="hd">The source: the &sect;07 summary, synthetic, no real client</span><span id="sumBlock" style="font-family:'Source Serif 4',serif;font-size:15px;line-height:1.6;display:block"></span></div>
+
+  <span class="plab" style="margin-top:18px">1 &middot; The follow-up letter</span>
+  <pre id="offP0">Below is the summary of a client review meeting. Draft the follow-up letter to the clients from it, under 200 words.
+Use only what the summary says. State each point as asserted, decided or still open, and present nothing as settled.
+Leave out the CONSTRAINTS line: it goes in the file, not the letter.
+After the letter, list each sentence and the summary line it came from.</pre>
+  <div class="row"><button class="btn" id="offC0">Copy the letter prompt with the summary</button><span id="offM0" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
+
+  <span class="plab" style="margin-top:18px">2 &middot; The task list</span>
+  <pre id="offP1">Below is the summary of a client review meeting. Build a table of every action item and open question in it: what, who owns it, by when, and the summary line it comes from.
+Where the summary gives no owner or date, write "not given". Do not add a task the summary does not contain.</pre>
+  <div class="row"><button class="btn" id="offC1">Copy the task prompt with the summary</button><span id="offM1" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
+
+  <span class="plab" style="margin-top:18px">3 &middot; The next agenda</span>
+  <pre id="offP2">Below is the summary of a client review meeting. Draft the agenda for the next meeting with these clients.
+Every open question and every action item becomes an agenda item, in the order you would raise them, with one line each on what has to happen before the meeting.
+Add nothing that is not in the summary. Where the summary says "none", say so.</pre>
+  <div class="row"><button class="btn" id="offC2">Copy the agenda prompt with the summary</button><span id="offM2" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
+
+  <p>What comes back is the test of rule three. Read it against the summary above: every sentence should point at a line, and anything stated as settled that the summary lists as open is the assistant writing advice.</p>
+
+  <p class="src">The three prompts, the summary they run on and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>. The summary is &sect;07's categorisation output, repeated here so the check is against a source on screen. No claim is made here about any particular vendor's in-application assistant; the pattern is the one the three rules describe, and it holds wherever you run it.</p>
+
+  <div class="check" data-gate="g9b"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six tasks. Then copy the letter prompt, paste it into Claude, and read what comes back against the summary. Synthetic material only; nothing from your own files tonight.</div></div>
 
 </section>
 
@@ -2402,7 +2421,7 @@ var OFFI=[
  {t:'Rebuild the six review slides from the meeting summary',k:'ppt',w:'The summary is the source; the template is the constraint. One decision per slide keeps it checkable.'},
  {t:'Decide whether to recommend a sale or a gift of the units',k:'none',w:'A judgment, and the basis for it is what the file needs (\u00a710). An assistant can list the considerations; it cannot own the decision.'},
  {t:'Flag every cash-flow cell that moved more than ten percent',k:'excel',w:'Arithmetic over the sheet, stated as a rule. Exactly what an assistant is for, and exactly what you then read.'},
- {t:'Sign off the letter before it goes to the client',k:'none',w:'The check is yours. Every number against its source, every decision against the meeting. Nothing in the app does this for you.'}
+ {t:'Sign off the letter before it goes to the client',k:'none',w:'The check is yours. Every number against its source, every decision against the meeting. No tool does this for you.'}
 ];
 var OFFB=[
  {k:'word',t:'Prose that changes',d:'Letters, memos, the plan narrative.'},
@@ -2412,6 +2431,21 @@ var OFFB=[
 ];
 mkSorter({list:$('offList'),boxes:$('offBoxes'),out:$('offOut'),key:$('offKey'),items:OFFI,buckets:OFFB,label:'Progress',gate:'g9b',
  after:'<span class="good">The pattern: the assistant changes a file from a source you give it, and you check the result. The decision and the sign-off never move.</span>'});
+
+/* ===== 10d. The §08 run: three prompts, each copied together with NTSUM ===== */
+(function(){
+ var S=$('sumBlock');if(!S)return;S.innerHTML=ntSumHtml();
+ for(var i=0;i<3;i++)(function(i){
+  var B=$('offC'+i),M=$('offM'+i),P=$('offP'+i);if(!B||!P)return;
+  B.onclick=function(){
+   var txt=P.textContent.trim()+'\n\n'+ntSumText();
+   function ok(){M.textContent='Copied, prompt and summary together.';setTimeout(function(){M.textContent=''},3000)}
+   function fail(){var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');ok()}catch(e){M.textContent='Select the prompt and the summary and copy them by hand.'}document.body.removeChild(ta)}
+   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fail)}else{fail()}
+  };
+ })(i);
+})();
 
 REVEALS.push(showSlope);
 /* ================= 11. Predict then reveal ================= */
