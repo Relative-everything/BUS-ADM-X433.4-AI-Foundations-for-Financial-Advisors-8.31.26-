@@ -1,7 +1,7 @@
 {
   "file": "session-3/index.html",
-  "file_bytes": 215477,
-  "file_lines": 2685,
+  "file_bytes": 220871,
+  "file_lines": 2739,
   "generated_by": "scripts/audit/section_profile.mjs (read-only)",
   "methods": {
     "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
@@ -144,7 +144,7 @@
         0,
         2.05
       ],
-      "mean": 0.78
+      "mean": 0.76
     },
     "chips_per_section": {
       "median": 2,
@@ -163,36 +163,36 @@
       "mean": 1.53
     },
     "words_per_min": {
-      "median": 42.2,
+      "median": 44.3,
       "range": [
         12.2,
-        78.3
+        113.2
       ],
-      "mean": 39.76
+      "mean": 45.13
     },
     "prose_words_per_min": {
-      "median": 32.5,
+      "median": 36.6,
       "range": [
         10.1,
-        73.3
+        105.6
       ],
-      "mean": 34.16
+      "mean": 39.38
     },
     "exposition_run_min_tagged": {
-      "median": 4.5,
+      "median": 4.6,
       "range": [
         2.8,
         9.1
       ],
-      "mean": 5.24
+      "mean": 5.35
     },
     "exposition_run_min_control": {
       "median": 5.6,
       "range": [
-        3.8,
+        2.5,
         18
       ],
-      "mean": 7.78
+      "mean": 7.66
     },
     "icap_distribution": {
       "P": 0,
@@ -221,13 +221,13 @@
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
       "line_start": 1179,
-      "line_end": 1205,
-      "bytes": 1572,
+      "line_end": 1210,
+      "bytes": 2084,
       "allocated_min": 5,
-      "words": 124,
-      "prose_words": 117,
-      "words_per_min": 24.8,
-      "prose_words_per_min": 23.4,
+      "words": 190,
+      "prose_words": 183,
+      "words_per_min": 38,
+      "prose_words_per_min": 36.6,
       "interactions_count": 1,
       "interactions": [
         {
@@ -266,15 +266,23 @@
       "markers": [],
       "em_dashes": 1,
       "exposition": {
-        "longest_run_words_tagged_split": 98,
-        "longest_run_min_tagged_split": 4,
-        "longest_run_words_control_split": 93,
-        "longest_run_min_control_split": 3.8,
+        "longest_run_words_tagged_split": 164,
+        "longest_run_min_tagged_split": 4.3,
+        "longest_run_words_control_split": 159,
+        "longest_run_min_control_split": 4.2,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
-        "X433"
-      ]
+        "X433",
+        "§06.",
+        "§11"
+      ],
+      "dom": {
+        "rendered_words": 222,
+        "rendered_chips": 0,
+        "rendered_controls": 8,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "apx",
@@ -289,8 +297,8 @@
       "nav_matches_heading": true,
       "nav_contained_in_heading": true,
       "timing_row_min": null,
-      "line_start": 1208,
-      "line_end": 1221,
+      "line_start": 1213,
+      "line_end": 1226,
       "bytes": 1690,
       "allocated_min": 83,
       "words": 146,
@@ -340,7 +348,13 @@
         "§09",
         "C4",
         "§10"
-      ]
+      ],
+      "dom": {
+        "rendered_words": 146,
+        "rendered_chips": 0,
+        "rendered_controls": 0,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "s2",
@@ -355,8 +369,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 7,
-      "line_start": 1224,
-      "line_end": 1263,
+      "line_start": 1229,
+      "line_end": 1268,
       "bytes": 3496,
       "allocated_min": 7,
       "words": 338,
@@ -369,16 +383,16 @@
           "data_task": "t-s2",
           "data_comp": "click-map-explorer",
           "icap": "A",
-          "line": 1236,
-          "line_end": 1243,
+          "line": 1241,
+          "line_end": 1248,
           "words_inside": 33
         },
         {
           "data_task": "t-s3",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1247,
-          "line_end": 1257,
+          "line": 1252,
+          "line_end": 1262,
           "words_inside": 45
         }
       ],
@@ -413,12 +427,12 @@
       "gates": [
         {
           "id": "g2",
-          "line": 1245,
+          "line": 1250,
           "marked_by_component": false
         },
         {
           "id": "g3",
-          "line": 1261,
+          "line": 1266,
           "marked_by_component": false
         }
       ],
@@ -431,7 +445,13 @@
         "longest_run_min_control_split": 7,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": []
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 439,
+        "rendered_chips": 3,
+        "rendered_controls": 9,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "s4",
@@ -446,22 +466,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 1265,
-      "line_end": 1298,
-      "bytes": 2617,
+      "line_start": 1270,
+      "line_end": 1303,
+      "bytes": 2714,
       "allocated_min": 6,
-      "words": 253,
-      "prose_words": 195,
-      "words_per_min": 42.2,
-      "prose_words_per_min": 32.5,
+      "words": 266,
+      "prose_words": 208,
+      "words_per_min": 44.3,
+      "prose_words_per_min": 34.7,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s4",
           "data_comp": "estimate-then-reveal",
           "icap": "C",
-          "line": 1280,
-          "line_end": 1290,
+          "line": 1285,
+          "line_end": 1295,
           "words_inside": 58
         }
       ],
@@ -477,7 +497,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.4,
+      "chips_per_100_words": 0.38,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -493,22 +513,28 @@
       "gates": [
         {
           "id": "g4",
-          "line": 1296,
+          "line": 1301,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 1,
       "exposition": {
-        "longest_run_words_tagged_split": 152,
-        "longest_run_min_tagged_split": 3.6,
-        "longest_run_words_control_split": 198,
-        "longest_run_min_control_split": 4.7,
+        "longest_run_words_tagged_split": 165,
+        "longest_run_min_tagged_split": 3.7,
+        "longest_run_words_control_split": 211,
+        "longest_run_min_control_split": 4.8,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
         "§01"
-      ]
+      ],
+      "dom": {
+        "rendered_words": 267,
+        "rendered_chips": 1,
+        "rendered_controls": 7,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "sRag",
@@ -523,8 +549,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 14,
-      "line_start": 1300,
-      "line_end": 1331,
+      "line_start": 1305,
+      "line_end": 1336,
       "bytes": 2805,
       "allocated_min": 14,
       "words": 262,
@@ -537,8 +563,8 @@
           "data_task": "t-sRag",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1315,
-          "line_end": 1325,
+          "line": 1320,
+          "line_end": 1330,
           "words_inside": 37
         }
       ],
@@ -572,7 +598,7 @@
       "gates": [
         {
           "id": "ga1",
-          "line": 1329,
+          "line": 1334,
           "marked_by_component": false
         }
       ],
@@ -587,7 +613,13 @@
       },
       "undefined_terms_first_used_here": [
         "§04)."
-      ]
+      ],
+      "dom": {
+        "rendered_words": 332,
+        "rendered_chips": 4,
+        "rendered_controls": 8,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "s6",
@@ -602,8 +634,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 6,
-      "line_start": 1333,
-      "line_end": 1358,
+      "line_start": 1338,
+      "line_end": 1363,
       "bytes": 2871,
       "allocated_min": 6,
       "words": 292,
@@ -616,8 +648,8 @@
           "data_task": "t-s6",
           "data_comp": "prediction-commit",
           "icap": "C",
-          "line": 1339,
-          "line_end": 1346,
+          "line": 1344,
+          "line_end": 1351,
           "words_inside": 47
         }
       ],
@@ -651,7 +683,7 @@
       "gates": [
         {
           "id": "g5",
-          "line": 1356,
+          "line": 1361,
           "marked_by_component": true
         }
       ],
@@ -667,7 +699,13 @@
       "undefined_terms_first_used_here": [
         "§03.",
         "BM25"
-      ]
+      ],
+      "dom": {
+        "rendered_words": 404,
+        "rendered_chips": 9,
+        "rendered_controls": 3,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "s7",
@@ -682,8 +720,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 1360,
-      "line_end": 1384,
+      "line_start": 1365,
+      "line_end": 1389,
       "bytes": 2182,
       "allocated_min": 5,
       "words": 239,
@@ -696,8 +734,8 @@
           "data_task": "t-s7",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 1373,
-          "line_end": 1378,
+          "line": 1378,
+          "line_end": 1383,
           "words_inside": 22
         }
       ],
@@ -730,7 +768,7 @@
       "gates": [
         {
           "id": "g6",
-          "line": 1382,
+          "line": 1387,
           "marked_by_component": false
         }
       ],
@@ -743,7 +781,13 @@
         "longest_run_min_control_split": 5,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": []
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 287,
+        "rendered_chips": 3,
+        "rendered_controls": 3,
+        "rendered_hidden_panels": 1
+      }
     },
     {
       "id": "s9",
@@ -758,22 +802,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 1386,
-      "line_end": 1412,
-      "bytes": 2016,
+      "line_start": 1391,
+      "line_end": 1419,
+      "bytes": 2303,
       "allocated_min": 6,
-      "words": 206,
-      "prose_words": 161,
-      "words_per_min": 34.3,
-      "prose_words_per_min": 26.8,
+      "words": 251,
+      "prose_words": 206,
+      "words_per_min": 41.8,
+      "prose_words_per_min": 34.3,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s9",
           "data_comp": "symptom-diagnoser",
           "icap": "A",
-          "line": 1400,
-          "line_end": 1406,
+          "line": 1407,
+          "line_end": 1413,
           "words_inside": 45
         }
       ],
@@ -789,7 +833,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.97,
+      "chips_per_100_words": 0.8,
       "chips_unresolved": [],
       "source_keys": [
         "src-kitces-notetakers",
@@ -806,22 +850,30 @@
       "gates": [
         {
           "id": "g7",
-          "line": 1410,
+          "line": 1417,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 104,
-        "longest_run_min_tagged_split": 3,
-        "longest_run_words_control_split": 206,
+        "longest_run_words_tagged_split": 149,
+        "longest_run_min_tagged_split": 3.6,
+        "longest_run_words_control_split": 251,
         "longest_run_min_control_split": 6,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
-        "CRM"
-      ]
+        "CRM",
+        "§08",
+        "§11."
+      ],
+      "dom": {
+        "rendered_words": 254,
+        "rendered_chips": 2,
+        "rendered_controls": 5,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "sPrep",
@@ -836,8 +888,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 14,
-      "line_start": 1414,
-      "line_end": 1442,
+      "line_start": 1421,
+      "line_end": 1449,
       "bytes": 2430,
       "allocated_min": 14,
       "words": 231,
@@ -850,8 +902,8 @@
           "data_task": "t-sPrep",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1427,
-          "line_end": 1436,
+          "line": 1434,
+          "line_end": 1443,
           "words_inside": 56
         }
       ],
@@ -883,7 +935,7 @@
       "gates": [
         {
           "id": "ga2",
-          "line": 1440,
+          "line": 1447,
           "marked_by_component": true
         }
       ],
@@ -896,7 +948,13 @@
         "longest_run_min_control_split": 10.4,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": []
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 253,
+        "rendered_chips": 1,
+        "rendered_controls": 11,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "s10",
@@ -911,22 +969,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 7,
-      "line_start": 1444,
-      "line_end": 1487,
-      "bytes": 3903,
+      "line_start": 1451,
+      "line_end": 1494,
+      "bytes": 4042,
       "allocated_min": 7,
-      "words": 434,
-      "prose_words": 373,
-      "words_per_min": 62,
-      "prose_words_per_min": 53.3,
+      "words": 457,
+      "prose_words": 396,
+      "words_per_min": 65.3,
+      "prose_words_per_min": 56.6,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s10",
           "data_comp": "spoiler-reveal",
           "icap": "A",
-          "line": 1458,
-          "line_end": 1468,
+          "line": 1465,
+          "line_end": 1475,
           "words_inside": 61
         }
       ],
@@ -942,7 +1000,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.69,
+      "chips_per_100_words": 0.66,
       "chips_unresolved": [],
       "source_keys": [
         "src-kitces-notetakers",
@@ -959,17 +1017,17 @@
       "gates": [
         {
           "id": "g8",
-          "line": 1485,
+          "line": 1492,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 291,
-        "longest_run_min_tagged_split": 4.7,
-        "longest_run_words_control_split": 342,
-        "longest_run_min_control_split": 5.5,
+        "longest_run_words_tagged_split": 314,
+        "longest_run_min_tagged_split": 4.8,
+        "longest_run_words_control_split": 365,
+        "longest_run_min_control_split": 5.6,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
@@ -982,7 +1040,13 @@
         "THAT",
         "CHANGED",
         "CASE"
-      ]
+      ],
+      "dom": {
+        "rendered_words": 1095,
+        "rendered_chips": 3,
+        "rendered_controls": 5,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "sChk",
@@ -997,8 +1061,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 14,
-      "line_start": 1489,
-      "line_end": 1514,
+      "line_start": 1496,
+      "line_end": 1521,
       "bytes": 2003,
       "allocated_min": 14,
       "words": 171,
@@ -1011,8 +1075,8 @@
           "data_task": "t-sChk",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1498,
-          "line_end": 1508,
+          "line": 1505,
+          "line_end": 1515,
           "words_inside": 30
         }
       ],
@@ -1044,7 +1108,7 @@
       "gates": [
         {
           "id": "ga6",
-          "line": 1512,
+          "line": 1519,
           "marked_by_component": false
         }
       ],
@@ -1057,7 +1121,13 @@
         "longest_run_min_control_split": 14,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": []
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 264,
+        "rendered_chips": 1,
+        "rendered_controls": 8,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "s11",
@@ -1072,8 +1142,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 14,
-      "line_start": 1516,
-      "line_end": 1538,
+      "line_start": 1523,
+      "line_end": 1545,
       "bytes": 2229,
       "allocated_min": 14,
       "words": 188,
@@ -1086,8 +1156,8 @@
           "data_task": "t-s11",
           "data_comp": "estimate-then-reveal",
           "icap": "C",
-          "line": 1525,
-          "line_end": 1532,
+          "line": 1532,
+          "line_end": 1539,
           "words_inside": 28
         }
       ],
@@ -1119,7 +1189,7 @@
       "gates": [
         {
           "id": "ga3",
-          "line": 1536,
+          "line": 1543,
           "marked_by_component": false
         }
       ],
@@ -1132,7 +1202,13 @@
         "longest_run_min_control_split": 14,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": []
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 190,
+        "rendered_chips": 2,
+        "rendered_controls": 3,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "sOff",
@@ -1147,22 +1223,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 5,
-      "line_start": 1540,
-      "line_end": 1570,
-      "bytes": 2626,
+      "line_start": 1547,
+      "line_end": 1596,
+      "bytes": 4965,
       "allocated_min": 5,
-      "words": 307,
-      "prose_words": 269,
-      "words_per_min": 61.4,
-      "prose_words_per_min": 53.8,
+      "words": 566,
+      "prose_words": 528,
+      "words_per_min": 113.2,
+      "prose_words_per_min": 105.6,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-sOff",
           "data_comp": "multi-column-sorter",
           "icap": "C",
-          "line": 1554,
-          "line_end": 1564,
+          "line": 1555,
+          "line_end": 1565,
           "words_inside": 38
         }
       ],
@@ -1178,7 +1254,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.33,
+      "chips_per_100_words": 0.18,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -1190,24 +1266,30 @@
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 0,
+      "interactive_controls": 3,
       "gates": [
         {
           "id": "g9b",
-          "line": 1568,
+          "line": 1594,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 199,
-        "longest_run_min_tagged_split": 3.2,
-        "longest_run_words_control_split": 307,
-        "longest_run_min_control_split": 5,
+        "longest_run_words_tagged_split": 452,
+        "longest_run_min_tagged_split": 4,
+        "longest_run_words_control_split": 288,
+        "longest_run_min_control_split": 2.5,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": []
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 731,
+        "rendered_chips": 1,
+        "rendered_controls": 13,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "s12",
@@ -1222,8 +1304,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 4,
-      "line_start": 1572,
-      "line_end": 1608,
+      "line_start": 1598,
+      "line_end": 1634,
       "bytes": 3025,
       "allocated_min": 4,
       "words": 313,
@@ -1236,8 +1318,8 @@
           "data_task": "t-s12",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 1596,
-          "line_end": 1602,
+          "line": 1622,
+          "line_end": 1628,
           "words_inside": 33
         }
       ],
@@ -1264,7 +1346,7 @@
       "sim_badges": 0,
       "verify_blocks": 1,
       "verify_lines": [
-        1576
+        1602
       ],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
@@ -1272,7 +1354,7 @@
       "gates": [
         {
           "id": "g9",
-          "line": 1606,
+          "line": 1632,
           "marked_by_component": false
         }
       ],
@@ -1288,7 +1370,13 @@
       "undefined_terms_first_used_here": [
         "U.S.C",
         "§ 2511"
-      ]
+      ],
+      "dom": {
+        "rendered_words": 434,
+        "rendered_chips": 3,
+        "rendered_controls": 12,
+        "rendered_hidden_panels": 4
+      }
     },
     {
       "id": "sVend",
@@ -1303,8 +1391,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 9,
-      "line_start": 1610,
-      "line_end": 1630,
+      "line_start": 1636,
+      "line_end": 1656,
       "bytes": 1686,
       "allocated_min": 9,
       "words": 126,
@@ -1317,8 +1405,8 @@
           "data_task": "t-sVend",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1617,
-          "line_end": 1624,
+          "line": 1643,
+          "line_end": 1650,
           "words_inside": 33
         }
       ],
@@ -1350,7 +1438,7 @@
       "gates": [
         {
           "id": "ga7",
-          "line": 1628,
+          "line": 1654,
           "marked_by_component": true
         }
       ],
@@ -1363,7 +1451,13 @@
         "longest_run_min_control_split": 5.6,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": []
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 228,
+        "rendered_chips": 1,
+        "rendered_controls": 9,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "s13",
@@ -1378,22 +1472,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 1632,
-      "line_end": 1696,
-      "bytes": 3913,
+      "line_start": 1658,
+      "line_end": 1722,
+      "bytes": 4032,
       "allocated_min": 6,
-      "words": 469,
-      "prose_words": 440,
-      "words_per_min": 78.2,
-      "prose_words_per_min": 73.3,
+      "words": 487,
+      "prose_words": 458,
+      "words_per_min": 81.2,
+      "prose_words_per_min": 76.3,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s13",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1646,
-          "line_end": 1656,
+          "line": 1672,
+          "line_end": 1682,
           "words_inside": 29
         }
       ],
@@ -1425,16 +1519,16 @@
       "gates": [
         {
           "id": "g10",
-          "line": 1694,
+          "line": 1720,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 342,
+        "longest_run_words_tagged_split": 360,
         "longest_run_min_tagged_split": 4.4,
-        "longest_run_words_control_split": 410,
+        "longest_run_words_control_split": 425,
         "longest_run_min_control_split": 5.2,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
@@ -1447,7 +1541,13 @@
         "CLIENT",
         "RESPONSE",
         "OUTPUT"
-      ]
+      ],
+      "dom": {
+        "rendered_words": 627,
+        "rendered_chips": 1,
+        "rendered_controls": 10,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "s15",
@@ -1462,8 +1562,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 18,
-      "line_start": 1698,
-      "line_end": 1724,
+      "line_start": 1724,
+      "line_end": 1750,
       "bytes": 2608,
       "allocated_min": 18,
       "words": 233,
@@ -1476,8 +1576,8 @@
           "data_task": "t-s15",
           "data_comp": "sealed-vote-debate",
           "icap": "I",
-          "line": 1709,
-          "line_end": 1718,
+          "line": 1735,
+          "line_end": 1744,
           "words_inside": 37
         }
       ],
@@ -1510,7 +1610,7 @@
       "gates": [
         {
           "id": "ga4",
-          "line": 1722,
+          "line": 1748,
           "marked_by_component": false
         }
       ],
@@ -1526,7 +1626,13 @@
       "undefined_terms_first_used_here": [
         "§04",
         "CHI"
-      ]
+      ],
+      "dom": {
+        "rendered_words": 250,
+        "rendered_chips": 2,
+        "rendered_controls": 6,
+        "rendered_hidden_panels": 0
+      }
     },
     {
       "id": "s16",
@@ -1541,23 +1647,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 1726,
-      "line_end": 1758,
-      "bytes": 3183,
+      "line_start": 1752,
+      "line_end": 1784,
+      "bytes": 3456,
       "allocated_min": 5,
-      "words": 311,
-      "prose_words": 275,
-      "words_per_min": 62.2,
-      "prose_words_per_min": 55,
+      "words": 363,
+      "prose_words": 314,
+      "words_per_min": 72.6,
+      "prose_words_per_min": 62.8,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s16",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1732,
-          "line_end": 1739,
-          "words_inside": 36
+          "line": 1758,
+          "line_end": 1765,
+          "words_inside": 49
         }
       ],
       "families": [
@@ -1572,7 +1678,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.32,
+      "chips_per_100_words": 0.28,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -1588,22 +1694,28 @@
       "gates": [
         {
           "id": "g12",
-          "line": 1754,
+          "line": 1780,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 281,
-        "longest_run_min_tagged_split": 4.5,
-        "longest_run_words_control_split": 248,
+        "longest_run_words_tagged_split": 333,
+        "longest_run_min_tagged_split": 4.6,
+        "longest_run_words_control_split": 287,
         "longest_run_min_control_split": 4,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
         "§09."
-      ]
+      ],
+      "dom": {
+        "rendered_words": 473,
+        "rendered_chips": 1,
+        "rendered_controls": 11,
+        "rendered_hidden_panels": 0
+      }
     }
   ],
   "terms": [
@@ -1615,6 +1727,24 @@
       "how": null,
       "cfp_baseline_vocabulary": false,
       "context": "BUS ADM  [X433] .4 · Session 3 5 min Gathering and"
+    },
+    {
+      "term": "§06.",
+      "kind": "citation",
+      "first_use_section": "s1",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "as the recurring meeting you pick in  [§06.]  The closing check in §11 asks exactly"
+    },
+    {
+      "term": "§11",
+      "kind": "citation",
+      "first_use_section": "s1",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "pick in §06. The closing check in  [§11]  asks exactly this. Retrieval bridge — 4"
     },
     {
       "term": "A1",
@@ -1768,6 +1898,24 @@
       "how": null,
       "cfp_baseline_vocabulary": false,
       "context": "summary. Log. The note lands in the  [CRM]  with the basis for what you recommended."
+    },
+    {
+      "term": "§08",
+      "kind": "citation",
+      "first_use_section": "s9",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "says client meeting, here and in §07,  [§08]  and §11. Do this now: 4 minutes"
+    },
+    {
+      "term": "§11.",
+      "kind": "citation",
+      "first_use_section": "s9",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "meeting, here and in §07, §08 and  [§11.]  Do this now: 4 minutes Click a"
     },
     {
       "term": "DECISIONS",
@@ -2016,7 +2164,8 @@
     "src-wolfram"
   ],
   "dom": {
-    "mode": "static-only",
-    "note": "jsdom not resolvable; rendered counts not computed"
+    "mode": "jsdom",
+    "script_errors": [],
+    "body_class_at_load": "core-only"
   }
 }

@@ -23,8 +23,8 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 1710 | 1392 | 318 |
 | `PINNED` | 12 | 12 | 0 |
-| `UNGUARDED` | 69 | 5 | 64 |
-| **TOTAL** | **1791** | **1409** | **382** |
+| `UNGUARDED` | 71 | 5 | 66 |
+| **TOTAL** | **1793** | **1409** | **384** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -40,7 +40,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `session-0.1/index.html` | 16 | 5 |
 | `session-1/index.html` | 17 | 0 |
 | `session-2/index.html` | 3 | 0 |
-| `session-3/index.html` | 8 | 0 |
+| `session-3/index.html` | 10 | 0 |
 | `session-4/index.html` | 23 | 0 |
 
 ## `UNGUARDED`, by region
@@ -48,7 +48,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
 | `R1` | body prose | 45 | 0 |
-| `R2` | script string literal | 19 | 0 |
+| `R2` | script string literal | 21 | 0 |
 | `R10` | captured transcript | 5 | 5 |
 
 **`R2` carries 0 of the 5 quantitative unguarded references, 0.0%** — answer
@@ -60,7 +60,7 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 64 |
+| `name` | 66 |
 | `pct` | 5 |
 
 ## `UNGUARDED`, by fact
@@ -68,9 +68,9 @@ every one of them.
 | Fact | Count |
 |---|---:|
 | `domicile` | 20 |
+| `nathanShort` | 10 |
 | `megShort` | 8 |
 | `companyName` | 8 |
-| `nathanShort` | 8 |
 | `plantTown` | 7 |
 | `companyAbbr` | 6 |
 | `afrMid` | 4 |
@@ -102,7 +102,7 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**441 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**440 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
@@ -124,7 +124,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `david403b` | 13 |
 | `revolver` | 12 |
 | `discount` | 9 |
-| `nathanShort` | 7 |
+| `nathanShort` | 6 |
 | `deMinimisLoan` | 4 |
 | `davidAge` | 3 |
 | `topOrdinary` | 3 |
