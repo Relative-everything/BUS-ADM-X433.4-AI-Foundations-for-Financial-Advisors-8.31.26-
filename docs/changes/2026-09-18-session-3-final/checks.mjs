@@ -14,7 +14,7 @@ let fails = 0;
 const say = (ok, id, s) => { if (!ok) fails++; console.log(`${ok ? 'PASS' : 'FAIL'}  ${id}  ${s}`); };
 
 say(true, 'FF-001', 'the change folder exists and this file runs');
-say(/cut into ten passages/.test(txt('#s4')), 'FF-002', '§03 names the ten passages');
+say(/Ten passages/.test(txt('#s4')), 'FF-002', '§03 names the ten passages');
 say(/Start it four minutes late/.test(html), 'FF-003', '§06 capture check is conditional');
 {
   const b = d.querySelectorAll('#ntStages button');
@@ -36,8 +36,8 @@ say(/Start it four minutes late/.test(html), 'FF-003', '§06 capture check is co
 say([...d.querySelectorAll('#s1 .plab')].some(e => /Tonight/.test(e.textContent)), 'FF-006', 'the objective is printed in §00');
 say(/Closing check/.test(txt('#s16 .talk .th')) && /in chat/.test(txt('#s16 .talk .th')), 'FF-007', '§11 closing block is the written check');
 say(!/baseline you recorded/.test(txt('#s16')), 'FF-008', 'no presupposed baseline capture');
-say(/reverse prompting/.test(txt('#s13')), 'FF-009', '§10 names reverse prompting');
-say(/If you do not run client meetings/.test(txt('#s9')), 'FF-010', '§06 carries the parallel track');
+say(/[Rr]everse prompting/.test(txt('#s13')), 'FF-009', '§10 names reverse prompting');
+say(/No client meetings\?/.test(txt('#s9')), 'FF-010', '§06 carries the parallel track');
 say(/swap "client"/.test(txt('#s10')), 'FF-011', '§07 says how to adapt the instruction');
 say(/meeting you chose/.test(txt('#s16 .hint')), 'FF-012', '§11 hint covers the chosen meeting');
 say(/wrote up/.test(txt('[data-gate="g10"]')), 'FF-013', '§10 work-along does not presuppose a client meeting');

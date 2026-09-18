@@ -1191,17 +1191,22 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </div>
 
 
-  <p class="big">Session 1: the model predicts rather than knows. Session 2: it samples a plausible answer rather than computing the true one. Session 3 covers the standard remedy: hand it your own documents and require it to answer from them. Then it measures how much of the problem that remedy actually removes. The file it works on is the Coles': Meg Cole owns a Rockford aerospace-fastener company and is deciding whether to move most of it into a trust, and the documents are the family's will and trust, the company's buy-sell, an appraisal and the unsigned drafts. The Case facts button at the top has the rest.</p>
+  <ul class="pts">
+    <li><b>Session 1.</b> The model predicts rather than knows.</li>
+    <li><b>Session 2.</b> It samples a plausible answer rather than computing the true one.</li>
+    <li><b>Tonight.</b> Hand it your own documents, require it to answer from them, then measure how much that removes.</li>
+    <li><b>The file.</b> The Coles: Meg Cole owns a Rockford aerospace-fastener company and is deciding whether to move most of it into a trust. Will, trust, buy-sell, appraisal, unsigned drafts. Case facts, top right.</li>
+  </ul>
 
   <div class="panel" style="border-color:var(--on);border-width:2px">
     <span class="plab">Tonight's one thing</span>
-    <p class="big" style="margin:0">By the end of the session you will be able to take any step of your own client-meeting workflow and say whether you would hand it to a tool, and defend the answer on what the tool can actually verify. If you do not run client meetings, read that as the recurring meeting you pick in &sect;06. The closing check in &sect;11 asks exactly this.</p>
+    <p class="big" style="margin:0">By the end of the session you will be able to take any step of your own client-meeting workflow and say whether you would hand it to a tool, and defend the answer on what the tool can actually verify. If you do not run client meetings, read that as the recurring meeting you pick in &sect;06. &sect;11's closing check asks exactly this.</p>
   </div>
 
   <div class="panel">
     <span class="do">Retrieval bridge — 4 minutes</span>
     <h4>Session 2 recall: the citation-verification order</h4>
-    <p class="hint">Four checks, no notes, in the order Session 2 established. Getting it wrong now is more useful than getting it right. Commit first: say the four letters in the order you would run them. Then click them in that order; click again to reset.</p>
+    <p class="hint">Four checks, no notes. Say the four letters in the order you would run them, then click them in that order. Wrong and committed beats right and read. Click again to reset.</p>
     <div id="bridgeList" class="chiplist"></div>
     <div id="bridgeOut" class="mpanel"><span class="hd">Your ordering</span><span class="nil">Click the first check you run.</span></div>
   </div>
@@ -1232,9 +1237,11 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p class="big">Wolfram's definition: an embedding turns a word into an array of numbers, and words with similar meanings get nearby numbers.</p>
 
-  <p>The numbers come from company, not meaning. Wolfram measures how similar the surroundings are in which words appear, across five billion words of web text, and each word becomes a long list of numbers: 768 for GPT-2, 12,288 for GPT-3. A retrieval tool runs the same nearest-neighbour test on your documents.</p>
-
-  <p>Wolfram's own example holds the failure. "Alligator" and "crocodile" appear in almost interchangeable sentences, so they sit close together; "turnip" and "eagle" do not, so they sit far apart. Alligators and crocodiles are different animals. What was measured is whether two words keep the same company, not whether they refer to the same thing, and the Cole file has exactly that hazard: its documents use near-identical language and differ in one condition each.</p>
+  <ul class="pts">
+    <li><b>Company, not meaning.</b> The numbers measure how similar the surroundings are in which words appear, across five billion words of text: 768 per word for GPT-2, 12,288 for GPT-3.</li>
+    <li><b>Wolfram's example.</b> "Alligator" and "crocodile" appear in interchangeable sentences, so they sit close. "Turnip" and "eagle" sit far apart. Alligators and crocodiles are different animals.</li>
+    <li><b>The Cole hazard.</b> The documents use near-identical language and differ in one condition each. Retrieval runs the same nearest-neighbour test on them.</li>
+  </ul>
 
   <p class="pull">Sounding alike is the signal. Being the same thing is what you needed.</p>
 
@@ -1252,7 +1259,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel" data-task="t-s3" data-comp="two-bucket-sorter">
     <span class="do">Do this now: 3 minutes</span>
     <h4>Pair Sort: Distributional Similarity Against Reference</h4>
-    <p class="hint">Each pair sits close together in a word-level embedding. Click a pair, then the bucket it belongs in. The pair lands under that bucket with the answer.</p>
+    <p class="hint">Each pair sits close in a word-level embedding. Click a pair, then its bucket; the answer appears under the bucket.</p>
     <div class="sorter">
       <div id="pairList" class="chiplist"></div>
       <div id="pairBoxes" class="boxes"></div>
@@ -1261,9 +1268,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div id="pairKey" class="mpanel keyhide" style="display:none"></div>
   </div>
 
-  <p class="src">Wolfram, S. (2023), "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion": the definition, the five-billion-word construction, the 768 / 12,288 lengths and the alligator / crocodile and turnip / eagle examples are Wolfram's, in substance <span class="conf h" data-src="src-wolfram">H</span>. Map coordinates were assigned for this lesson <span class="conf l" data-src="src-wolfram">L, illustrative</span>; the distances on them are exact. The six pairs and the three buckets are constructed for this lesson from the Cole document set <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">Wolfram, S. (2023), "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion": the definition, the five-billion-word construction, 768 / 12,288, alligator / crocodile, turnip / eagle <span class="conf h" data-src="src-wolfram">H</span>. Map coordinates assigned for this lesson <span class="conf l" data-src="src-wolfram">L, illustrative</span>; the distances on them are exact. Pairs and buckets constructed from the Cole set <span class="conf l" data-src="src-case">L</span>.</p>
 
-  <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort all six pairs into the three buckets, then open the key and argue with it.</div></div>
+  <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort all six pairs, then open the key and argue with it.</div></div>
 
 </section>
 
@@ -1271,21 +1278,21 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>03 &middot; RAG, mechanically</span><span class="mins">6 min</span></div>
   <h2>Retrieval Mechanics: Chunking, Indexing, and Ranking</h2>
 
-  <p class="big">Retrieval-augmented generation, RAG for short, makes the model answer from your documents instead of from memory. Four steps, none of them mysterious.</p>
+  <p class="big">Retrieval-augmented generation, RAG: the model answers from your documents instead of from memory. Four steps, none of them mysterious.</p>
 
   <ul class="pts">
     <li><b>Split.</b> The documents are cut into short passages.</li>
     <li><b>Index.</b> Each passage gets a numeric fingerprint, the kind §01 showed.</li>
     <li><b>Rank.</b> Your question gets the same fingerprint, and the passages closest to it rank highest.</li>
     <li><b>Answer.</b> The top few passages are pasted into the prompt and the model is told to answer only from them.</li>
+    <li><b>The Cole set.</b> The 2011 will, trust, power of attorney and healthcare directive; the 2014 buy-sell; the 2023 appraisal; an unsigned memo and two unsigned drafts. Ten passages.</li>
+    <li><b>Where it fails.</b> The tool reads only what the ranker hands it, so everything goes wrong in the ranking or in the reading. Two of the four presets are built to fail, and nothing on screen says so.</li>
   </ul>
-
-  <p>For the Coles the documents are the 2011 will, trust, power of attorney and healthcare directive, the 2014 buy-sell, the 2023 appraisal, an unsigned planning memo and two unsigned drafts, cut into ten passages. The tool is not asked to know the family. It is asked to read the passages the ranker hands it, so everything that goes wrong goes wrong in the ranking or in the reading. Two of the four presets below are built to fail, and nothing on screen says so.</p>
 
   <div class="panel" data-task="t-s4" data-comp="estimate-then-reveal">
     <span class="do">Do this now — 6 minutes</span>
     <h4>The Retriever on the Cole Document Set</h4>
-    <p class="hint">Before anything is ranked, say the number of the passage you think should win. Then pick a preset or type your own question, read the top passage, and decide, before opening the verdict, whether advice built on it alone would be right for Meg.</p>
+    <p class="hint">Say the number of the passage you think should win. Pick a preset, read the top passage, then decide before the verdict whether advice built on it alone would be right for Meg.</p>
     <p style="margin:0 0 8px"><span class="sim">Live index over ten synthetic passages</span></p>
     <div class="mpanel has" style="min-height:0;margin:0 0 14px"><span class="hd">The ten passages, by number</span><span id="qIndexList" style="display:block;line-height:1.6"></span></div>
     <div class="row" id="qPresets" style="margin-bottom:14px"></div>
@@ -1295,7 +1302,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div id="qVer" class="mpanel keyhide" style="display:none"></div>
   </div>
 
-  <p class="src">The ten passages are synthetic, drawn from the course case; no document quoted here states law <span class="conf l" data-src="src-case">L</span>. The ranking arithmetic runs in the page and can be read in the source.</p>
+  <p class="src">Ten synthetic passages from the course case; none states law <span class="conf l" data-src="src-case">L</span>. The ranking arithmetic runs in the page source.</p>
 
 
 
@@ -1314,9 +1321,8 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <li><b>Paste or attach the documents</b> when the whole set fits. Everything the model needs is in front of it, and nothing has to be found first.</li>
     <li><b>Use a retrieval tool</b> when the set is far bigger than one prompt: a firm's whole archive, years of email. Then the finding step exists, and so do its failures (&sect;04).</li>
     <li><b>Either way, tell it to answer only from the documents</b> and to say so when the answer is not in them.</li>
+    <li><b>The context window</b> is the model's working space for one exchange: everything you attach plus the whole conversation so far, and all of it counts <span class="conf h" data-src="src-context-windows">H</span>.</li>
   </ul>
-
-  <p>The context window is the model's working space for one exchange: everything you attach plus the whole conversation so far, and all of it counts <span class="conf h" data-src="src-context-windows">H</span>.</p>
 
   <div class="panel" data-task="t-sRag" data-comp="two-bucket-sorter">
     <span class="do">Do this now: 5 minutes</span>
@@ -1340,12 +1346,12 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>04 &middot; What grounding fixes</span><span class="mins">6 min</span></div>
   <h2>What Grounding Fixes, and What It Does Not</h2>
 
-  <p class="big">Grounding cuts mistakes. It does not remove them. Two things still go wrong: the right passage is not found, or it is found and the model still writes something it does not say.</p>
+  <p class="big">Grounding cuts mistakes. It does not remove them. Either the right passage is not found, or it is found and the model still writes something it does not say.</p>
 
   <div class="panel" data-task="t-s6" data-comp="prediction-commit">
     <span class="do">Do this now: 2 minutes</span>
     <h4>Commit Before the Numbers</h4>
-    <p class="hint">A well-built tool has your documents and is told to answer only from them. Out of 100 answers, how many still contain something the documents do not support? Say a letter before anything is clicked, then click it and read the measured figures.</p>
+    <p class="hint">A tool has your documents and answers only from them. Out of 100 answers, how many still contain something the documents do not support? Say a letter, click it, read the measured figures.</p>
     <div class="row" id="grBtns"></div>
     <div id="grOut" class="mpanel"><span class="hd">Your prediction</span><span class="nil">Commit to an answer.</span></div>
     <div id="grKey" class="mpanel keyhide" style="display:none"></div>
@@ -1353,13 +1359,15 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <figure id="figHall"></figure>
 
-  <p>Two measured figures. Anthropic tested the finding step alone: even its best setup failed to surface the right passage for about 2 questions in 100, down from about 6 <span class="conf h" data-src="src-anthropic-ctx">H</span>. Stanford tested the reading step on grounded legal research tools sold as hallucination-free: they still gave unsupported answers on 17% to 33% of questions, against 43% for a general model with no documents <span class="conf h" data-src="src-magesh">H</span>.</p>
+  <ul class="pts">
+    <li><b>The finding step, alone.</b> Anthropic's best setup still missed the right passage for about 2 questions in 100, down from about 6 <span class="conf h" data-src="src-anthropic-ctx">H</span>.</li>
+    <li><b>The reading step.</b> Stanford tested grounded legal research tools sold as hallucination-free: unsupported answers on 17% to 33% of questions, against 43% with no documents <span class="conf h" data-src="src-magesh">H</span>.</li>
+    <li><b>In the Cole file.</b> Preset 1 in §03: fully cited, quotes Article VII correctly, wrong. That formula is for a death or a disability, not a sale to a trust. No error message. Only a person who knows the difference catches it.</li>
+  </ul>
 
-  <p>In the Cole file the failure looks like the first preset in §03. The answer is fully cited, quotes Article VII correctly, and is wrong, because that formula is for a death or a disability and not for a sale to a trust. No error message. What catches it is a person who knows the difference.</p>
+  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em>: top-20 retrieval failure 5.7% at baseline, 1.9% with contextual embeddings, BM25 and reranking <span class="conf h" data-src="src-anthropic-ctx">H</span>; benchmarked on codebases, fiction and papers, not advisory documents <span class="conf m" data-src="src-anthropic-ctx">M, transfer unverified</span>. Magesh et al. (2025), <em>Journal of Empirical Legal Studies, 22</em>(2), 216: Lexis+ AI above 17%, Westlaw AI-Assisted Research about 33%, GPT-4 43%, tested May 2024 <span class="conf h" data-src="src-magesh">H, peer reviewed</span>. The Cole example is synthetic <span class="conf l" data-src="src-case">L</span>.</p>
 
-  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em>: top-20 retrieval failure 5.7% at baseline, 1.9% with contextual embeddings, BM25 and reranking <span class="conf h" data-src="src-anthropic-ctx">H</span>; a vendor benchmark on codebases, fiction and papers, not advisory documents <span class="conf m" data-src="src-anthropic-ctx">M, transfer unverified</span>. Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025), <em>Journal of Empirical Legal Studies, 22</em>(2), 216: Lexis+ AI above 17%, Westlaw AI-Assisted Research about 33%, GPT-4 43%, tools tested May 2024 <span class="conf h" data-src="src-magesh">H, peer reviewed</span>. The Cole example is synthetic <span class="conf l" data-src="src-case">L</span>.</p>
-
-  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Commit to a number before the reveal, then read the two measured figures.</div></div>
+  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Commit before the reveal, then read the figures.</div></div>
 
 </section>
 
@@ -1370,11 +1378,10 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="big">Grounding changes what the model reads. Fine-tuning changes what the model is. For a planning practice, grounding wins, because your facts change and need citing.</p>
 
   <ul class="pts">
-    <li><b>Grounding.</b> You hand the model the documents each time and tell it to answer from them. Change the file and the next answer changes. Every answer can point at a passage.</li>
-    <li><b>Fine-tuning.</b> The model is retrained on your documents so they live inside it. Change the file and nothing changes until you retrain. Nothing can be cited.</li>
+    <li><b>Grounding.</b> Hand it the documents each time. Change the file and the next answer changes, and every answer can point at a passage.</li>
+    <li><b>Fine-tuning.</b> Retrain the model so the documents live inside it. Change the file and nothing changes until you retrain. Nothing can be cited.</li>
+    <li><b>Wolfram's version.</b> Tell the model something once, in the prompt, and it will use it. Your house style might be worth tuning. Your facts are not.</li>
   </ul>
-
-  <p>Wolfram makes the point without either word: tell the model something once, as part of the prompt, and it will use it. The limit he names is that it can only take in what sits simply on top of what it already knows. Your house style might be worth tuning. Your facts are not.</p>
 
   <div class="panel" data-task="t-s7" data-comp="commit-first-mcq">
     <span class="do">Do this now: 2 minutes</span>
@@ -1383,9 +1390,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="quiz panel" id="tuneWrap" style="margin:0;border:none;padding:0"></div>
   </div>
 
-  <p class="src">Wolfram (2023), "Beyond Basic Training": the tell-it-once observation and the "riding on top of the framework it already has" limit are Wolfram's, in substance <span class="conf h" data-src="src-wolfram">H</span>. Anthropic (19 Sep 2024): under roughly 200,000 tokens, about 500 pages, put the whole corpus in the prompt rather than build retrieval <span class="conf h" data-src="src-anthropic-ctx">H</span>. The comparison itself is a design judgement for this lesson <span class="conf l" data-src="src-wolfram">L</span>.</p>
+  <p class="src">Wolfram (2023), "Beyond Basic Training": the tell-it-once observation and the "riding on top of the framework it already has" limit <span class="conf h" data-src="src-wolfram">H</span>. Anthropic (19 Sep 2024): under roughly 200,000 tokens, about 500 pages, put the whole corpus in the prompt <span class="conf h" data-src="src-anthropic-ctx">H</span>. The comparison is a design judgement for this lesson <span class="conf l" data-src="src-wolfram">L</span>.</p>
 
-  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer the Tuesday test and read the feedback on the option you chose.</div></div>
+  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer, then read the feedback on your option.</div></div>
 
 </section>
 
@@ -1393,31 +1400,31 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>06 &middot; The workflow</span><span class="mins">6 min</span></div>
   <h2>The Advisor Meeting Workflow: Prep, Capture, Summarise, Follow-Up, Log</h2>
 
-  <p class="big">Five stages, drawn as a chain because a mistake at any stage is inherited by every stage after it, and the log is the one an examiner reads.</p>
+  <p class="big">Five stages as a chain: a mistake at any stage is inherited by every stage after it, and the log is what an examiner reads.</p>
 
   <ul class="pts">
-    <li><b>Prep.</b> A grounded assistant reads the file and drafts the agenda and the questions to ask.</li>
-    <li><b>Capture.</b> A note-taker records and transcribes the meeting.</li>
-    <li><b>Summarise.</b> It pulls decisions, action items and open questions out of the transcript.</li>
+    <li><b>Prep.</b> A grounded assistant reads the file and drafts the agenda.</li>
+    <li><b>Capture.</b> A note-taker records and transcribes.</li>
+    <li><b>Summarise.</b> Decisions, action items and open questions come out of the transcript.</li>
     <li><b>Follow-up.</b> The recap email and the tasks go out, drafted from the summary.</li>
     <li><b>Log.</b> The note lands in the CRM with the basis for what you recommended.</li>
   </ul>
 
-  <p>If you do not run client meetings, pick a recurring meeting you write up afterwards: a committee, a case review, a hiring interview. It has the same five stages and the same checks. Use it wherever this session says client meeting, here and in &sect;07, &sect;08 and &sect;11.</p>
+  <p>No client meetings? Pick a recurring meeting you write up afterwards: a committee, a case review, a hiring interview. Same five stages, same checks. Use it wherever this session says client meeting.</p>
 
-  <p>Where tonight sits in the seven-step financial planning process, and which of the seven steps a tool may not take, is a sorter on the Session 2 page: <a href="../session-2/index.html#s9">appendix B4</a>, at the Standard depth.</p>
+  <p>Which of the seven planning steps a tool may not take: <a href="../session-2/index.html#s9">Session 2, appendix B4</a>, Standard depth.</p>
 
   <div class="panel" data-task="t-s9" data-comp="symptom-diagnoser">
     <span class="do">Do this now: 4 minutes</span>
     <h4>Click a Stage in Meg and David's Annual Review</h4>
-    <p class="hint">Each stage names what the AI tool does there, the one thing you check before it moves on, and what happens downstream if you skip the check. Before any stage opens, say the number of the stage whose skipped check is found last.</p>
+    <p class="hint">Each stage: what the tool does, the check before it moves on, what skipping costs. Say the number of the stage whose skipped check is found last.</p>
     <div id="chainWrap"></div>
     <div id="chainOut" class="mpanel"><span class="hd">The stage</span><span class="nil">Click a stage.</span></div>
   </div>
 
-  <p class="src">The five stages are the sequence named in the Session 3 syllabus. Kitces (15 Jan 2025) documents advisor-specific tools spanning the whole cycle: meeting summary, CRM capture, post-meeting tasks, recap email, then the next agenda <span class="conf h" data-src="src-kitces-notetakers">H</span>. The failures are synthetic case material <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">The five stages are the Session 3 syllabus sequence. Kitces (15 Jan 2025) documents advisor tools spanning the cycle: summary, CRM capture, tasks, recap, next agenda <span class="conf h" data-src="src-kitces-notetakers">H</span>. The failures are synthetic <span class="conf l" data-src="src-case">L</span>.</p>
 
-  <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Click every stage and say which check you already do and which you do not.</div></div>
+  <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Click every stage. Which check do you already do?</div></div>
 
 </section>
 
@@ -1426,7 +1433,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>Appendix A2 &middot; Prep</span><span class="mins">14 min</span></div>
   <h2>The Intake Questionnaire, Drafted With AI</h2>
 
-  <p class="big">Before a first meeting, or an annual review, the prep stage is a list: what to ask, and what to ask the client to bring. An assistant drafts that list well, as long as no client fact enters the tool to do it.</p>
+  <p class="big">The prep stage is a list: what to ask, and what to ask the client to bring. An assistant drafts it well, as long as no client fact enters the tool to do it.</p>
 
   <ul class="pts">
     <li><b>Pick the areas</b> the meeting has to cover. The assistant drafts the questions and the document requests for each.</li>
@@ -1455,20 +1462,19 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>07 &middot; The note-taker</span><span class="mins">7 min</span></div>
   <h2>How an AI Note-Taker Works, and How to Prompt It</h2>
 
-  <p class="big">A note-taker does four things in order: it transcribes, it extracts, it categorises, and it drafts the follow-up. The first is nearly solved. The second is where a model decides which sentences from ninety minutes become the record.</p>
+  <p class="big">A note-taker transcribes, extracts, categorises and drafts the follow-up. Transcription is nearly solved. Extraction is where a model decides which sentences from ninety minutes become the record.</p>
 
   <ul class="pts">
-    <li><b>Before the meeting.</b> Get consent to record. Add the tool to the call, or plan to upload the recording afterwards. Tell it what the summary must contain.</li>
+    <li><b>Before.</b> Get consent. Add the tool to the call or upload the recording after. Say what the summary must contain.</li>
     <li><b>During.</b> Talk. The tool listens and does not need managing.</li>
     <li><b>After.</b> Read the summary against the transcript before it reaches the client or the file. Then send the recap and log the note.</li>
+    <li><b>Why the category exists.</b> The average advisor spends more than an hour on prep and follow-up per hour in client meetings <span class="conf h" data-src="src-kitces-notetakers">H</span>. The tool is sold against that hour.</li>
   </ul>
-
-  <p>Kitces measures why the category exists: the average advisor spends more than an hour on prep and follow-up for every hour in client meetings <span class="conf h" data-src="src-kitces-notetakers">H</span>. The tool is sold against that hour.</p>
 
   <div class="panel" data-task="t-s10" data-comp="spoiler-reveal">
     <span class="do">Do this now: 4 minutes</span>
     <h4>The Four Stages on the Cole Annual Review</h4>
-    <p class="hint">Read the excerpt and say the number of the turn that holds the one thing the file most needs and a tool is most likely to drop. Then open each stage to see what it produces. The outputs are written for this lesson to show the shape of each step; a real tool's wording will differ.</p>
+    <p class="hint">Say the number of the turn that holds the one thing the file most needs and a tool is most likely to drop. Then open each stage. Outputs are written for this lesson.</p>
     <div class="mpanel has" style="min-height:0"><span class="hd">Synthetic meeting excerpt, Cole annual review, no real client data</span>
       <!-- The excerpt is CASE.md PART O, rendered from COLEDOCS at load. -->
       <span id="mtgExcerpt" style="font-family:'Source Serif 4',serif;font-size:15.5px;line-height:1.6;display:block"></span>
@@ -1478,7 +1484,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <h4 style="margin-top:26px">How to prompt it</h4>
-  <p>Most tools take a standing instruction or a template. Tell it what to extract and what to leave out. Paste this into the tool's instruction field, or into Claude with the transcript attached. The headings are not advisor-specific: for the meeting you chose in &sect;06, swap "client" for whoever was in the room and keep the rest.</p>
+  <p>Paste this into the tool's instruction field, or into Claude with the transcript attached. For the meeting you chose in &sect;06, swap "client" for whoever was in the room and keep the rest.</p>
   <pre id="ntPrompt">Summarise this client meeting for the file. Extract, under these headings and nothing else:
 1. DECISIONS made in the meeting, each with who made it.
 2. ACTION ITEMS, each with an owner and a date if one was given.
@@ -1490,7 +1496,7 @@ Do not record account numbers, dates of birth or identity checks.
 If a heading has nothing under it, write "none".</pre>
   <div class="row"><button class="btn" id="ntCopy">Copy the instruction</button><span id="ntCopyMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
 
-  <p class="src">Kitces.com (15 Jan 2025), <em>Best AI Notetakers For Financial Advisor Meetings</em>, drawing on Kitces Research on Advisor Productivity (fielded autumn 2024): more than an hour of prep and follow-up per meeting hour <span class="conf h" data-src="src-kitces-notetakers">H</span>. The excerpt is CASE.md Part O, rendered from the injected case; it presupposes an advisory engagement that CASE.md &sect;A.5 denies, recorded there and in the register rather than settled here. The stage outputs and the instruction are written for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">Kitces.com (15 Jan 2025), <em>Best AI Notetakers For Financial Advisor Meetings</em>, on Kitces Research on Advisor Productivity (autumn 2024): more than an hour of prep and follow-up per meeting hour <span class="conf h" data-src="src-kitces-notetakers">H</span>. The excerpt is CASE.md Part O; it presupposes an advisory engagement that CASE.md &sect;A.5 denies, recorded there rather than settled here. Stage outputs and the instruction are written for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open all four stages, then copy the instruction into your own tool.</div></div>
 
@@ -1501,9 +1507,7 @@ If a heading has nothing under it, write "none".</pre>
   <div class="eyebrow"><span>Appendix A3 &middot; The after-meeting check</span><span class="mins">14 min</span></div>
   <h2>Check the Summary Against the Transcript</h2>
 
-  <p class="big">The one habit that makes a note-taker safe: before the summary goes anywhere, read each line against the transcript. Two kinds of error hide in a clean-looking summary: a fact the transcript does not contain, and a fact it states differently.</p>
-
-  <p>Below is a summary of the Cole excerpt in &sect;07, written for this lesson. Two of its six lines were written wrong on purpose. Find them.</p>
+  <p class="big">The one habit that makes a note-taker safe: before the summary goes anywhere, read each line against the transcript. Two errors hide in a clean-looking summary: a fact the transcript does not contain, and a fact it states differently.</p>
 
   <div class="panel" data-task="t-sChk" data-comp="two-bucket-sorter">
     <span class="do">Do this now: 6 minutes</span>
@@ -1528,9 +1532,12 @@ If a heading has nothing under it, write "none".</pre>
   <div class="eyebrow"><span>Appendix C3 &middot; Market evidence</span><span class="mins">14 min</span></div>
   <h2>Note-Taker Adoption Against Note-Taker Satisfaction</h2>
 
-  <p class="big">Rank the note-taker category by adoption and then by satisfaction and the orders invert. In Kitces' autumn 2024 data the most-adopted tool, Zoom's AI Companion, a toggle inside software advisors already pay for, ranked last on satisfaction. The advisor-specific tools, at $60 to $80 a month or more, ranked highest.</p>
+  <p class="big">Rank note-takers by adoption, then by satisfaction, and the orders invert.</p>
 
-  <p>The reason is what happens after the summary. A meeting-platform tool summarises the meeting. An advisor-specific tool writes the note into the CRM, queues the tasks, drafts the recap and prepares the next agenda. Advisors were rating those four steps.</p>
+  <ul class="pts">
+    <li><b>Kitces, autumn 2024.</b> The most-adopted tool, Zoom's AI Companion, a toggle inside software advisors already pay for, ranked last on satisfaction. Advisor-specific tools at $60 to $80 a month or more ranked highest.</li>
+    <li><b>Why.</b> A meeting-platform tool summarises the meeting. An advisor-specific tool writes the note into the CRM, queues the tasks, drafts the recap and prepares the next agenda. Advisors were rating those four steps.</li>
+  </ul>
 
   <div class="panel" data-task="t-s11" data-comp="estimate-then-reveal">
     <span class="do">Do this now: 2 minutes</span>
@@ -1551,14 +1558,18 @@ If a heading has nothing under it, write "none".</pre>
   <div class="eyebrow"><span>08 &middot; In the files you already use</span><span class="mins">5 min</span></div>
   <h2>The Client Review, in the Files You Already Have</h2>
 
-  <p class="big">The annual review lives in three files: a letter, a cash-flow sheet and a deck. Hand the assistant the source and the file, ask in plain words for the change, and read what comes back before it goes anywhere. The tool you use to do it matters far less than the three rules below.</p>
+  <p class="big">The annual review lives in three files: a letter, a cash-flow sheet and a deck. Hand the assistant the source, ask in plain words for the change, read what comes back. The tool matters less than three rules.</p>
 
-  <p>Three rules hold in any tool. Give it the source, the meeting summary or the new figures, rather than asking it to remember. Ask for the change marked, not silently made. Check every number against the source before the file goes to the client.</p>
+  <ul class="pts">
+    <li><b>Give it the source.</b> The meeting summary or the new figures, not its memory.</li>
+    <li><b>Ask for the change marked,</b> not silently made.</li>
+    <li><b>Check every number against the source</b> before the file goes to the client.</li>
+  </ul>
 
   <div class="panel" data-task="t-sOff" data-comp="multi-column-sorter">
     <span class="do">Do this now: 3 minutes</span>
     <h4>Which Kind of Work, or Not an AI Task at All</h4>
-    <p class="hint">Six review-update tasks. Place each where it belongs. Two belong to no assistant, in any tool.</p>
+    <p class="hint">Six review-update tasks. Two belong to no assistant, in any tool.</p>
     <div class="sorter">
       <div id="offList" class="chiplist"></div>
       <div id="offBoxes" class="boxes"></div>
@@ -1568,7 +1579,7 @@ If a heading has nothing under it, write "none".</pre>
   </div>
 
   <h4 style="margin-top:26px">Three prompts that take the summary and nothing else</h4>
-  <p>Your own sources are your own files. Tonight everyone's source is the same one: the summary the note-taker produced in &sect;07, repeated below so it stays on screen while you read what comes back. Each copy button puts the prompt and the summary on your clipboard together, so you paste once.</p>
+  <p>Tonight everyone's source is the &sect;07 summary, repeated below. Each Copy button carries the summary with the prompt, so you paste once.</p>
 
   <div class="mpanel has" style="min-height:0"><span class="hd">The source: the &sect;07 summary, synthetic, no real client</span><span id="sumBlock" style="font-family:'Source Serif 4',serif;font-size:15px;line-height:1.6;display:block"></span></div>
 
@@ -1598,15 +1609,13 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
       <li>Open Claude in another tab.</li>
       <li>Under prompt 1, click Copy the letter prompt with the summary.</li>
       <li>Paste into Claude and send.</li>
-      <li>Read what comes back against the summary above. Then, in chat, one line: usable or not, and one sentence it added or stated as settled.</li>
+      <li>Read it against the summary above. Then, in chat, one line: usable or not, and one sentence it added or stated as settled.</li>
     </ol>
   </div>
 
-  <p>What comes back is the test of rule three. Read it against the summary above: every sentence should point at a line, and anything stated as settled that the summary lists as open is the assistant writing advice.</p>
+  <p class="src">The three prompts, the summary and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>. The summary is &sect;07's categorisation output. The two example outputs are one model's answers to prompts 1 and 2 on it, lightly abridged <span class="conf l" data-src="src-case">L</span>. No claim is made about any vendor's in-application assistant; the pattern holds wherever you run it.</p>
 
-  <p class="src">The three prompts, the summary they run on and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>. The summary is &sect;07's categorisation output, repeated here so the check is against a source on screen. The two example outputs are one model's answers to prompts 1 and 2 on that summary, lightly abridged, so a run that stalls still has something to read against the source <span class="conf l" data-src="src-case">L</span>. No claim is made here about any particular vendor's in-application assistant; the pattern is the one the three rules describe, and it holds wherever you run it.</p>
-
-  <div class="check" data-gate="g9b"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six tasks, then run the four steps of the silent run. Synthetic material only; nothing from your own files tonight.</div></div>
+  <div class="check" data-gate="g9b"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six tasks, then run the silent run. Synthetic material only.</div></div>
 
 </section>
 
@@ -1623,28 +1632,28 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
   </ul>
   </div>
 
-  <p class="big">A note-taker is a recording device with a vendor attached. Two obligations follow: may the recording be made at all, and what may the vendor see once it is.</p>
+  <p class="big">A note-taker is a recording device with a vendor attached. Two obligations: may the recording be made, and what may the vendor see.</p>
 
   <ul class="pts">
-    <li><b>Consent.</b> Federal law lets one party to a conversation record it <span class="conf h" data-src="src-wiretap">H</span>. Some states require every party's consent, and the published counts of those states disagree. Ask everyone on the call, every time, and note that you did.</li>
-    <li><b>Confidentiality, and what the vendor holds.</b> The Cole file holds things one person must not learn: a competitor's approach that Nathan has not been told about. A vendor's system is a disclosure to everyone with access to it, so where the file lives, who can open it, how long it is kept and whether it trains a model are contract questions rather than preferences.</li>
+    <li><b>Consent.</b> Federal law lets one party record <span class="conf h" data-src="src-wiretap">H</span>. Some states require every party's consent, and published counts disagree. Ask everyone on the call, every time, and note it.</li>
+    <li><b>Confidentiality.</b> The Cole file holds something Nathan must not learn. A vendor's system is a disclosure to everyone with access: where the file lives, who opens it, how long it is kept, whether it trains a model. Contract terms, not preferences.</li>
   </ul>
 
   <div class="cards">
-    <div class="card gold"><span class="num">Reading</span><h4>Iskowitz (29 Jul 2025)</h4><p>AI Notetakers and Compliance in Wealth Management, WealthTech Today. The compliance framing for this section.</p></div>
+    <div class="card gold"><span class="num">Reading</span><h4>Iskowitz (29 Jul 2025)</h4><p>AI Notetakers and Compliance in Wealth Management, WealthTech Today.</p></div>
   </div>
 
   <div class="panel" data-task="t-s12" data-comp="commit-first-mcq">
     <span class="do">Do this now: 3 minutes</span>
     <h4>What Goes Into the Tool</h4>
-    <p class="hint">Your firm has an approved, contracted documentation vendor. For each item from the Cole engagement, choose: send as is, strip something first, or never.</p>
+    <p class="hint">Your firm has a contracted documentation vendor. For each Cole item: send as is, strip something first, or never.</p>
     <div class="quiz panel" id="quizWrap" style="margin:0;border:none;padding:0"></div>
     <span class="score" id="quizScore"></span>
   </div>
 
-  <p class="src">18 U.S.C. § 2511, the federal one-party floor <span class="conf h" data-src="src-wiretap">H</span>. State rules differ and published counts of all-party states disagree; this lesson adopts no number. Iskowitz, C. (29 Jul 2025), <em>AI Notetakers and Compliance in Wealth Management</em>, WealthTech Today, assigned reading. The four items are synthetic case content <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">18 U.S.C. § 2511, the federal one-party floor <span class="conf h" data-src="src-wiretap">H</span>. State rules differ; this lesson adopts no count. Iskowitz, C. (29 Jul 2025), <em>AI Notetakers and Compliance in Wealth Management</em>, WealthTech Today, assigned reading. The four items are synthetic <span class="conf l" data-src="src-case">L</span>.</p>
 
-  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all four items, then name your own state's rule out loud.</div></div>
+  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all four items. Name your own state's rule.</div></div>
 
 </section>
 
@@ -1674,15 +1683,14 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
   <div class="eyebrow"><span>10 &middot; Documentation</span><span class="mins">6 min</span></div>
   <h2>Documenting Circumstances and the Basis for a Recommendation</h2>
 
-  <p class="big">A record of what was said is not a record of why you recommended what you recommended. The note-taker produces the first. The second you write yourself, because the alternatives you rejected were never spoken aloud.</p>
+  <p class="big">What was said is not why you recommended it. The note-taker produces the first. You write the second, because the alternatives you rejected were never spoken aloud.</p>
 
   <ul class="pts">
-    <li><b>Circumstances.</b> The client's facts, in their words, dated: what changed, what they asked, what they want.</li>
-    <li><b>Basis.</b> Which options you considered, why you chose this one over each of the others, and what the client said when you presented it.</li>
+    <li><b>Circumstances.</b> The client's facts, in their words, dated.</li>
+    <li><b>Basis.</b> The options you considered, why this one over each of the others, and what the client said.</li>
     <li><b>Neither.</b> Your reading of what the client feels or wants. An inference is not a record; label it or leave it out.</li>
+    <li><b>Written on the day,</b> the basis is worth keeping. Rebuilt after a question arrives, almost nothing.</li>
   </ul>
-
-  <p>Written on the day, the basis is worth keeping. Rebuilt after a question arrives, it is worth almost nothing.</p>
 
   <div class="panel" data-task="t-s13" data-comp="two-bucket-sorter">
     <span class="do">Do this now: 4 minutes</span>
@@ -1697,7 +1705,7 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
   </div>
 
   <h4 style="margin-top:26px">A prompt that builds the basis by asking you: the interview rewrite</h4>
-  <p>Session 2 called this reverse prompting: the model interviews you before it drafts. It refuses to draft until it has the alternatives. Copy it into your own tool after a meeting.</p>
+  <p>Reverse prompting, from Session 2: it interviews you before it drafts, and will not draft until it has the alternatives. Copy it into your own tool after a meeting.</p>
   <pre id="promptBlock">ROLE
 You are a compliance reviewer at an SEC-registered investment adviser.
 You do not draft the record. You interrogate me until the record is complete.
@@ -1730,9 +1738,9 @@ When all four are complete: one paragraph per element, under 90 words each,
 then a list of every element where my answer was thin.</pre>
   <div class="row"><button class="btn" id="copyBtn">Copy prompt</button><span id="copyMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
 
-  <p class="src">Structure restates the Session 3 syllabus item on documenting the client's personal and financial circumstances and the basis for recommendations. The six lines are synthetic case content <span class="conf l" data-src="src-case">L</span>. Nothing here asserts a tax result or states what an examiner would accept.</p>
+  <p class="src">Structure follows the Session 3 syllabus item on documenting circumstances and the basis for recommendations. The six lines are synthetic <span class="conf l" data-src="src-case">L</span>. Nothing here asserts a tax result or what an examiner would accept.</p>
 
-  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place the six lines, then copy the prompt and run it on the last meeting you wrote up.</div></div>
+  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place the six lines. Then run the prompt on the last meeting you wrote up.</div></div>
 
 </section>
 
@@ -1743,9 +1751,11 @@ then a list of every element where my answer was thin.</pre>
 
   <p class="big">The question: does a citation-backed output make you check more, or check less?</p>
 
-  <p>This divides the room. One side: a citation is a handle, something specific to pull on, so you check more. The other: a citation reads as completed work, so a busy professional checks less. &sect;04 supplied evidence for the second; you supplied evidence for the first by finding the Article VII failure yourselves.</p>
-
-  <p>Commit before anyone speaks; two speakers per side, minority first; one complication; re-vote with both distributions on screen. A zero delta is a finding, not a failure.</p>
+  <ul class="pts">
+    <li><b>Check more.</b> A citation is a handle, something specific to pull on.</li>
+    <li><b>Check less.</b> A citation reads as completed work, so a busy professional stops there. &sect;04 supplied evidence for this side; you supplied evidence for the other by finding the Article VII failure yourselves.</li>
+    <li><b>The protocol.</b> Commit before anyone speaks; two speakers per side, minority first; one complication; re-vote with both distributions on screen. A zero delta is a finding, not a failure.</li>
+  </ul>
 
   <div class="panel" data-task="t-s15" data-comp="sealed-vote-debate">
     <span class="do">Locked vote: commit before discussion</span>
@@ -1773,7 +1783,7 @@ then a list of every element where my answer was thin.</pre>
   <div class="panel" data-task="t-s16" data-comp="builder-assembler">
     <span class="do">Do this now: 3 minutes</span>
     <h4>Tick What You Already Do</h4>
-    <p class="hint">Tick it for your client meetings, or for the meeting you chose in &sect;06. The readout names the gaps. Say the number of the one gap you will close first. Copy the list into your own notes; this page keeps nothing.</p>
+    <p class="hint">Tick it for your client meetings, or the meeting you chose in &sect;06. The readout names the gaps; say the number of the one you will close first. Copy the list out; this page keeps nothing.</p>
     <div id="ckList"></div>
     <div id="ckOut" class="mpanel"><span class="hd">Your gaps</span><span class="nil">Tick the steps you already do.</span></div>
     <div class="row" style="margin-top:12px"><button class="btn" id="ckCopy">Copy the checklist</button><span id="ckMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
@@ -1786,15 +1796,15 @@ then a list of every element where my answer was thin.</pre>
 
   <div class="cards">
     <div class="card gold"><span class="num">Assignment</span><h4>AI usage policy for your firm</h4><p>Three cited sources minimum, at least one scholarly. Every source you need has appeared in this course.</p></div>
-    <div class="card warn"><span class="num">Part 1</span><h4>Final Project Part 1, the handoff package</h4><p>Single email, body reads only "See attached." Everything a classmate needs lives inside the attachments. The seven-element checklist is in Session 2 &sect;09. The two most often missing are the baseline time for the task, your best estimate if you never timed it, set against the AI-assisted time, and the data-handling note naming what would have to come out before real client use. A classmate runs your package cold in Session 4, with no help from you.</p></div>
-    <div class="card"><span class="num">Reading for Session 4</span><h4>Daly (2026) &middot; SEC FY2026 Exam Priorities &sect;VII &middot; Journal of Accountancy (2025)</h4><p>The regulatory frame, and the audit-trail prompt technique that pairs with this session's basis record.</p></div>
+    <div class="card warn"><span class="num">Part 1</span><h4>Final Project Part 1, the handoff package</h4><p>One email, body "See attached"; everything needed is in the attachments. Seven-element checklist: Session 2 &sect;09. Most often missing: the baseline time (estimated if never timed) against the AI-assisted time, and the data-handling note. A classmate runs it cold in Session 4.</p></div>
+    <div class="card"><span class="num">Reading for Session 4</span><h4>Daly (2026) &middot; SEC FY2026 Exam Priorities &sect;VII &middot; Journal of Accountancy (2025)</h4><p>The regulatory frame and the audit-trail prompt technique.</p></div>
   </div>
 
   <p class="src">The checklist is built for this lesson from the sections above <span class="conf l" data-src="src-case">L</span>. The assignment terms are the course's, stated here in one form.</p>
 
-  <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Tick the list, copy it out, and name the one gap you will close before your next client meeting.</div></div>
+  <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Tick the list, copy it out, name the one gap you will close first.</div></div>
 
-  <div class="talk"><span class="th">Closing check &middot; in chat, one line each, against tonight's one thing</span>One step of your meeting workflow you would hand to a tool tonight, one you would not, and the reason for the second. Then, out loud if there is time: the grounded answer in &sect;03 was correctly retrieved, accurately quoted, and wrong. Name the point in your own workflow where you would catch it, and say who is left holding it if nobody does.</div>
+  <div class="talk"><span class="th">Closing check &middot; in chat, one line each, against tonight's one thing</span>One step of your meeting workflow you would hand to a tool tonight, one you would not, and why. Then, if there is time: the grounded answer in &sect;03 was retrieved and quoted correctly, and wrong. Where in your workflow do you catch it, and who is holding it if nobody does?</div>
 
 </section>
 

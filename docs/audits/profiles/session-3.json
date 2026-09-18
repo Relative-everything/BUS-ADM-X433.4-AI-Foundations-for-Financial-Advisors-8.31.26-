@@ -1,7 +1,7 @@
 {
   "file": "session-3/index.html",
-  "file_bytes": 226981,
-  "file_lines": 2792,
+  "file_bytes": 223110,
+  "file_lines": 2802,
   "generated_by": "scripts/audit/section_profile.mjs (read-only)",
   "methods": {
     "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
@@ -139,12 +139,12 @@
       "mean": 1.06
     },
     "chips_per_100_words": {
-      "median": 0.67,
+      "median": 0.79,
       "range": [
         0,
-        1.99
+        2.52
       ],
-      "mean": 0.75
+      "mean": 0.88
     },
     "chips_per_section": {
       "median": 2,
@@ -163,36 +163,36 @@
       "mean": 1.53
     },
     "words_per_min": {
-      "median": 48.3,
+      "median": 37.7,
       "range": [
-        12.2,
-        128.8
+        10.3,
+        99.2
       ],
-      "mean": 47.98
+      "mean": 39.71
     },
     "prose_words_per_min": {
-      "median": 39.8,
+      "median": 30.2,
       "range": [
-        10.1,
-        121.2
+        8.1,
+        92.6
       ],
-      "mean": 41.46
+      "mean": 34
     },
     "exposition_run_min_tagged": {
       "median": 4.6,
       "range": [
         2.8,
-        9.1
+        9.4
       ],
-      "mean": 5.36
+      "mean": 5.32
     },
     "exposition_run_min_control": {
-      "median": 5.7,
+      "median": 5.6,
       "range": [
-        2.2,
+        2.3,
         18
       ],
-      "mean": 7.65
+      "mean": 7.64
     },
     "icap_distribution": {
       "P": 0,
@@ -221,13 +221,13 @@
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
       "line_start": 1179,
-      "line_end": 1210,
-      "bytes": 2472,
+      "line_end": 1215,
+      "bytes": 2318,
       "allocated_min": 5,
-      "words": 261,
-      "prose_words": 254,
-      "words_per_min": 52.2,
-      "prose_words_per_min": 50.8,
+      "words": 216,
+      "prose_words": 209,
+      "words_per_min": 43.2,
+      "prose_words_per_min": 41.8,
       "interactions_count": 1,
       "interactions": [
         {
@@ -266,10 +266,10 @@
       "markers": [],
       "em_dashes": 1,
       "exposition": {
-        "longest_run_words_tagged_split": 235,
-        "longest_run_min_tagged_split": 4.5,
-        "longest_run_words_control_split": 230,
-        "longest_run_min_control_split": 4.4,
+        "longest_run_words_tagged_split": 190,
+        "longest_run_min_tagged_split": 4.4,
+        "longest_run_words_control_split": 185,
+        "longest_run_min_control_split": 4.3,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
@@ -278,7 +278,7 @@
         "§11"
       ],
       "dom": {
-        "rendered_words": 297,
+        "rendered_words": 252,
         "rendered_chips": 0,
         "rendered_controls": 8,
         "rendered_hidden_panels": 0
@@ -297,8 +297,8 @@
       "nav_matches_heading": true,
       "nav_contained_in_heading": true,
       "timing_row_min": null,
-      "line_start": 1213,
-      "line_end": 1226,
+      "line_start": 1218,
+      "line_end": 1231,
       "bytes": 1690,
       "allocated_min": 83,
       "words": 146,
@@ -369,31 +369,31 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 7,
-      "line_start": 1229,
-      "line_end": 1268,
-      "bytes": 3496,
+      "line_start": 1234,
+      "line_end": 1275,
+      "bytes": 3133,
       "allocated_min": 7,
-      "words": 338,
-      "prose_words": 260,
-      "words_per_min": 48.3,
-      "prose_words_per_min": 37.1,
+      "words": 259,
+      "prose_words": 188,
+      "words_per_min": 37,
+      "prose_words_per_min": 26.9,
       "interactions_count": 2,
       "interactions": [
         {
           "data_task": "t-s2",
           "data_comp": "click-map-explorer",
           "icap": "A",
-          "line": 1241,
-          "line_end": 1248,
+          "line": 1248,
+          "line_end": 1255,
           "words_inside": 33
         },
         {
           "data_task": "t-s3",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1252,
-          "line_end": 1262,
-          "words_inside": 45
+          "line": 1259,
+          "line_end": 1269,
+          "words_inside": 38
         }
       ],
       "families": [
@@ -410,7 +410,7 @@
         "M": 0,
         "L": 2
       },
-      "chips_per_100_words": 0.89,
+      "chips_per_100_words": 1.16,
       "chips_unresolved": [],
       "source_keys": [
         "src-wolfram",
@@ -427,27 +427,27 @@
       "gates": [
         {
           "id": "g2",
-          "line": 1250,
+          "line": 1257,
           "marked_by_component": false
         },
         {
           "id": "g3",
-          "line": 1266,
+          "line": 1273,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 1,
       "exposition": {
-        "longest_run_words_tagged_split": 165,
-        "longest_run_min_tagged_split": 3.4,
-        "longest_run_words_control_split": 338,
+        "longest_run_words_tagged_split": 117,
+        "longest_run_min_tagged_split": 3.2,
+        "longest_run_words_control_split": 259,
         "longest_run_min_control_split": 7,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 444,
+        "rendered_words": 365,
         "rendered_chips": 3,
         "rendered_controls": 9,
         "rendered_hidden_panels": 0
@@ -466,23 +466,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 1270,
-      "line_end": 1304,
-      "bytes": 2989,
+      "line_start": 1277,
+      "line_end": 1311,
+      "bytes": 2788,
       "allocated_min": 6,
-      "words": 286,
-      "prose_words": 208,
-      "words_per_min": 47.7,
-      "prose_words_per_min": 34.7,
+      "words": 242,
+      "prose_words": 175,
+      "words_per_min": 40.3,
+      "prose_words_per_min": 29.2,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s4",
           "data_comp": "estimate-then-reveal",
           "icap": "C",
-          "line": 1285,
-          "line_end": 1296,
-          "words_inside": 78
+          "line": 1292,
+          "line_end": 1303,
+          "words_inside": 67
         }
       ],
       "families": [
@@ -497,7 +497,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.35,
+      "chips_per_100_words": 0.41,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -513,24 +513,24 @@
       "gates": [
         {
           "id": "g4",
-          "line": 1302,
+          "line": 1309,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 1,
       "exposition": {
-        "longest_run_words_tagged_split": 165,
-        "longest_run_min_tagged_split": 3.5,
-        "longest_run_words_control_split": 231,
-        "longest_run_min_control_split": 4.8,
+        "longest_run_words_tagged_split": 144,
+        "longest_run_min_tagged_split": 3.6,
+        "longest_run_words_control_split": 199,
+        "longest_run_min_control_split": 4.9,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
         "§01"
       ],
       "dom": {
-        "rendered_words": 342,
+        "rendered_words": 298,
         "rendered_chips": 1,
         "rendered_controls": 7,
         "rendered_hidden_panels": 0
@@ -549,9 +549,9 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 14,
-      "line_start": 1306,
-      "line_end": 1337,
-      "bytes": 2805,
+      "line_start": 1313,
+      "line_end": 1343,
+      "bytes": 2815,
       "allocated_min": 14,
       "words": 262,
       "prose_words": 225,
@@ -563,8 +563,8 @@
           "data_task": "t-sRag",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1321,
-          "line_end": 1331,
+          "line": 1327,
+          "line_end": 1337,
           "words_inside": 37
         }
       ],
@@ -598,7 +598,7 @@
       "gates": [
         {
           "id": "ga1",
-          "line": 1335,
+          "line": 1341,
           "marked_by_component": false
         }
       ],
@@ -634,23 +634,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 6,
-      "line_start": 1339,
-      "line_end": 1364,
-      "bytes": 2917,
+      "line_start": 1345,
+      "line_end": 1372,
+      "bytes": 2660,
       "allocated_min": 6,
-      "words": 301,
-      "prose_words": 245,
-      "words_per_min": 50.2,
-      "prose_words_per_min": 40.8,
+      "words": 238,
+      "prose_words": 192,
+      "words_per_min": 39.7,
+      "prose_words_per_min": 32,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s6",
           "data_comp": "prediction-commit",
           "icap": "C",
-          "line": 1345,
-          "line_end": 1352,
-          "words_inside": 56
+          "line": 1351,
+          "line_end": 1358,
+          "words_inside": 46
         }
       ],
       "families": [
@@ -665,7 +665,7 @@
         "M": 1,
         "L": 1
       },
-      "chips_per_100_words": 1.99,
+      "chips_per_100_words": 2.52,
       "chips_unresolved": [],
       "source_keys": [
         "src-anthropic-ctx",
@@ -683,25 +683,24 @@
       "gates": [
         {
           "id": "g5",
-          "line": 1362,
+          "line": 1370,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 256,
-        "longest_run_min_tagged_split": 5.1,
-        "longest_run_words_control_split": 301,
+        "longest_run_words_tagged_split": 197,
+        "longest_run_min_tagged_split": 5,
+        "longest_run_words_control_split": 238,
         "longest_run_min_control_split": 6,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
-        "§03.",
         "BM25"
       ],
       "dom": {
-        "rendered_words": 422,
+        "rendered_words": 359,
         "rendered_chips": 9,
         "rendered_controls": 4,
         "rendered_hidden_panels": 0
@@ -720,22 +719,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 1366,
-      "line_end": 1390,
-      "bytes": 2182,
+      "line_start": 1374,
+      "line_end": 1397,
+      "bytes": 1921,
       "allocated_min": 5,
-      "words": 239,
-      "prose_words": 217,
-      "words_per_min": 47.8,
-      "prose_words_per_min": 43.4,
+      "words": 186,
+      "prose_words": 164,
+      "words_per_min": 37.2,
+      "prose_words_per_min": 32.8,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s7",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 1379,
-          "line_end": 1384,
+          "line": 1386,
+          "line_end": 1391,
           "words_inside": 22
         }
       ],
@@ -751,7 +750,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 1.26,
+      "chips_per_100_words": 1.61,
       "chips_unresolved": [],
       "source_keys": [
         "src-wolfram",
@@ -768,22 +767,22 @@
       "gates": [
         {
           "id": "g6",
-          "line": 1388,
+          "line": 1395,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 148,
-        "longest_run_min_tagged_split": 3.1,
-        "longest_run_words_control_split": 239,
+        "longest_run_words_tagged_split": 109,
+        "longest_run_min_tagged_split": 2.9,
+        "longest_run_words_control_split": 186,
         "longest_run_min_control_split": 5,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 292,
+        "rendered_words": 239,
         "rendered_chips": 3,
         "rendered_controls": 3,
         "rendered_hidden_panels": 1
@@ -802,23 +801,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 1392,
-      "line_end": 1422,
-      "bytes": 2627,
+      "line_start": 1399,
+      "line_end": 1429,
+      "bytes": 2215,
       "allocated_min": 6,
-      "words": 300,
-      "prose_words": 239,
-      "words_per_min": 50,
-      "prose_words_per_min": 39.8,
+      "words": 226,
+      "prose_words": 181,
+      "words_per_min": 37.7,
+      "prose_words_per_min": 30.2,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s9",
           "data_comp": "symptom-diagnoser",
           "icap": "A",
-          "line": 1410,
-          "line_end": 1416,
-          "words_inside": 61
+          "line": 1417,
+          "line_end": 1423,
+          "words_inside": 45
         }
       ],
       "families": [
@@ -833,7 +832,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.67,
+      "chips_per_100_words": 0.88,
       "chips_unresolved": [],
       "source_keys": [
         "src-kitces-notetakers",
@@ -850,26 +849,25 @@
       "gates": [
         {
           "id": "g7",
-          "line": 1420,
+          "line": 1427,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 182,
-        "longest_run_min_tagged_split": 3.6,
-        "longest_run_words_control_split": 300,
+        "longest_run_words_tagged_split": 141,
+        "longest_run_min_tagged_split": 3.7,
+        "longest_run_words_control_split": 226,
         "longest_run_min_control_split": 6,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
         "CRM",
-        "§08",
-        "§11."
+        "B4"
       ],
       "dom": {
-        "rendered_words": 303,
+        "rendered_words": 229,
         "rendered_chips": 2,
         "rendered_controls": 5,
         "rendered_hidden_panels": 0
@@ -888,22 +886,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 14,
-      "line_start": 1424,
-      "line_end": 1452,
-      "bytes": 2430,
+      "line_start": 1431,
+      "line_end": 1459,
+      "bytes": 2378,
       "allocated_min": 14,
-      "words": 231,
-      "prose_words": 175,
-      "words_per_min": 16.5,
-      "prose_words_per_min": 12.5,
+      "words": 222,
+      "prose_words": 166,
+      "words_per_min": 15.9,
+      "prose_words_per_min": 11.9,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-sPrep",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1437,
-          "line_end": 1446,
+          "line": 1444,
+          "line_end": 1453,
           "words_inside": 56
         }
       ],
@@ -919,7 +917,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.43,
+      "chips_per_100_words": 0.45,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -935,22 +933,22 @@
       "gates": [
         {
           "id": "ga2",
-          "line": 1450,
+          "line": 1457,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 136,
-        "longest_run_min_tagged_split": 8.2,
-        "longest_run_words_control_split": 171,
-        "longest_run_min_control_split": 10.4,
+        "longest_run_words_tagged_split": 127,
+        "longest_run_min_tagged_split": 8,
+        "longest_run_words_control_split": 162,
+        "longest_run_min_control_split": 10.2,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 253,
+        "rendered_words": 244,
         "rendered_chips": 1,
         "rendered_controls": 11,
         "rendered_hidden_panels": 0
@@ -969,23 +967,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 7,
-      "line_start": 1454,
-      "line_end": 1497,
-      "bytes": 4152,
+      "line_start": 1461,
+      "line_end": 1503,
+      "bytes": 3736,
       "allocated_min": 7,
-      "words": 481,
-      "prose_words": 396,
-      "words_per_min": 68.7,
-      "prose_words_per_min": 56.6,
+      "words": 401,
+      "prose_words": 339,
+      "words_per_min": 57.3,
+      "prose_words_per_min": 48.4,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s10",
           "data_comp": "spoiler-reveal",
           "icap": "A",
-          "line": 1468,
-          "line_end": 1478,
-          "words_inside": 85
+          "line": 1474,
+          "line_end": 1484,
+          "words_inside": 62
         }
       ],
       "families": [
@@ -1000,7 +998,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.62,
+      "chips_per_100_words": 0.75,
       "chips_unresolved": [],
       "source_keys": [
         "src-kitces-notetakers",
@@ -1017,17 +1015,17 @@
       "gates": [
         {
           "id": "g8",
-          "line": 1495,
+          "line": 1501,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 338,
+        "longest_run_words_tagged_split": 279,
         "longest_run_min_tagged_split": 4.9,
-        "longest_run_words_control_split": 389,
-        "longest_run_min_control_split": 5.7,
+        "longest_run_words_control_split": 321,
+        "longest_run_min_control_split": 5.6,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
@@ -1042,7 +1040,7 @@
         "CASE"
       ],
       "dom": {
-        "rendered_words": 1119,
+        "rendered_words": 1039,
         "rendered_chips": 3,
         "rendered_controls": 5,
         "rendered_hidden_panels": 0
@@ -1061,22 +1059,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 14,
-      "line_start": 1499,
-      "line_end": 1524,
-      "bytes": 2003,
+      "line_start": 1505,
+      "line_end": 1528,
+      "bytes": 1845,
       "allocated_min": 14,
-      "words": 171,
-      "prose_words": 141,
-      "words_per_min": 12.2,
-      "prose_words_per_min": 10.1,
+      "words": 144,
+      "prose_words": 114,
+      "words_per_min": 10.3,
+      "prose_words_per_min": 8.1,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-sChk",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1508,
-          "line_end": 1518,
+          "line": 1512,
+          "line_end": 1522,
           "words_inside": 30
         }
       ],
@@ -1092,7 +1090,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.58,
+      "chips_per_100_words": 0.69,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -1108,22 +1106,22 @@
       "gates": [
         {
           "id": "ga6",
-          "line": 1522,
+          "line": 1526,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 93,
+        "longest_run_words_tagged_split": 78,
         "longest_run_min_tagged_split": 7.6,
-        "longest_run_words_control_split": 171,
+        "longest_run_words_control_split": 144,
         "longest_run_min_control_split": 14,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 264,
+        "rendered_words": 237,
         "rendered_chips": 1,
         "rendered_controls": 8,
         "rendered_hidden_panels": 0
@@ -1142,22 +1140,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 14,
-      "line_start": 1526,
-      "line_end": 1548,
-      "bytes": 2229,
+      "line_start": 1530,
+      "line_end": 1555,
+      "bytes": 2219,
       "allocated_min": 14,
-      "words": 188,
-      "prose_words": 160,
-      "words_per_min": 13.4,
-      "prose_words_per_min": 11.4,
+      "words": 175,
+      "prose_words": 147,
+      "words_per_min": 12.5,
+      "prose_words_per_min": 10.5,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s11",
           "data_comp": "estimate-then-reveal",
           "icap": "C",
-          "line": 1535,
-          "line_end": 1542,
+          "line": 1542,
+          "line_end": 1549,
           "words_inside": 28
         }
       ],
@@ -1173,7 +1171,7 @@
         "M": 1,
         "L": 0
       },
-      "chips_per_100_words": 1.06,
+      "chips_per_100_words": 1.14,
       "chips_unresolved": [],
       "source_keys": [
         "src-kitces-notetakers"
@@ -1189,22 +1187,22 @@
       "gates": [
         {
           "id": "ga3",
-          "line": 1546,
+          "line": 1553,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 111,
-        "longest_run_min_tagged_split": 8.3,
-        "longest_run_words_control_split": 188,
+        "longest_run_words_tagged_split": 98,
+        "longest_run_min_tagged_split": 7.8,
+        "longest_run_words_control_split": 175,
         "longest_run_min_control_split": 14,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 190,
+        "rendered_words": 177,
         "rendered_chips": 2,
         "rendered_controls": 3,
         "rendered_hidden_panels": 0
@@ -1223,23 +1221,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 5,
-      "line_start": 1550,
-      "line_end": 1611,
-      "bytes": 5939,
+      "line_start": 1557,
+      "line_end": 1620,
+      "bytes": 5214,
       "allocated_min": 5,
-      "words": 644,
-      "prose_words": 606,
-      "words_per_min": 128.8,
-      "prose_words_per_min": 121.2,
+      "words": 496,
+      "prose_words": 463,
+      "words_per_min": 99.2,
+      "prose_words_per_min": 92.6,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-sOff",
           "data_comp": "multi-column-sorter",
           "icap": "C",
-          "line": 1558,
-          "line_end": 1568,
-          "words_inside": 38
+          "line": 1569,
+          "line_end": 1579,
+          "words_inside": 33
         }
       ],
       "families": [
@@ -1254,7 +1252,7 @@
         "M": 0,
         "L": 2
       },
-      "chips_per_100_words": 0.31,
+      "chips_per_100_words": 0.4,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -1270,22 +1268,22 @@
       "gates": [
         {
           "id": "g9b",
-          "line": 1609,
+          "line": 1618,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 530,
+        "longest_run_words_tagged_split": 407,
         "longest_run_min_tagged_split": 4.1,
-        "longest_run_words_control_split": 288,
-        "longest_run_min_control_split": 2.2,
+        "longest_run_words_control_split": 229,
+        "longest_run_min_control_split": 2.3,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 812,
+        "rendered_words": 664,
         "rendered_chips": 2,
         "rendered_controls": 15,
         "rendered_hidden_panels": 0
@@ -1304,23 +1302,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 4,
-      "line_start": 1613,
-      "line_end": 1649,
-      "bytes": 3025,
+      "line_start": 1622,
+      "line_end": 1658,
+      "bytes": 2673,
       "allocated_min": 4,
-      "words": 313,
-      "prose_words": 280,
-      "words_per_min": 78.3,
-      "prose_words_per_min": 70,
+      "words": 251,
+      "prose_words": 223,
+      "words_per_min": 62.8,
+      "prose_words_per_min": 55.8,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s12",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 1637,
-          "line_end": 1643,
-          "words_inside": 33
+          "line": 1646,
+          "line_end": 1652,
+          "words_inside": 28
         }
       ],
       "families": [
@@ -1335,7 +1333,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.96,
+      "chips_per_100_words": 1.2,
       "chips_unresolved": [],
       "source_keys": [
         "src-wiretap",
@@ -1346,7 +1344,7 @@
       "sim_badges": 0,
       "verify_blocks": 1,
       "verify_lines": [
-        1617
+        1626
       ],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
@@ -1354,16 +1352,16 @@
       "gates": [
         {
           "id": "g9",
-          "line": 1647,
+          "line": 1656,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 221,
+        "longest_run_words_tagged_split": 176,
         "longest_run_min_tagged_split": 2.8,
-        "longest_run_words_control_split": 313,
+        "longest_run_words_control_split": 251,
         "longest_run_min_control_split": 4,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
@@ -1372,7 +1370,7 @@
         "§ 2511"
       ],
       "dom": {
-        "rendered_words": 454,
+        "rendered_words": 392,
         "rendered_chips": 3,
         "rendered_controls": 12,
         "rendered_hidden_panels": 4
@@ -1391,8 +1389,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 9,
-      "line_start": 1651,
-      "line_end": 1671,
+      "line_start": 1660,
+      "line_end": 1680,
       "bytes": 1686,
       "allocated_min": 9,
       "words": 126,
@@ -1405,8 +1403,8 @@
           "data_task": "t-sVend",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1658,
-          "line_end": 1665,
+          "line": 1667,
+          "line_end": 1674,
           "words_inside": 33
         }
       ],
@@ -1438,7 +1436,7 @@
       "gates": [
         {
           "id": "ga7",
-          "line": 1669,
+          "line": 1678,
           "marked_by_component": true
         }
       ],
@@ -1472,22 +1470,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 1673,
-      "line_end": 1737,
-      "bytes": 4032,
+      "line_start": 1682,
+      "line_end": 1745,
+      "bytes": 3815,
       "allocated_min": 6,
-      "words": 487,
-      "prose_words": 458,
-      "words_per_min": 81.2,
-      "prose_words_per_min": 76.3,
+      "words": 448,
+      "prose_words": 419,
+      "words_per_min": 74.7,
+      "prose_words_per_min": 69.8,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s13",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1687,
-          "line_end": 1697,
+          "line": 1695,
+          "line_end": 1705,
           "words_inside": 29
         }
       ],
@@ -1503,7 +1501,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.21,
+      "chips_per_100_words": 0.22,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -1519,17 +1517,17 @@
       "gates": [
         {
           "id": "g10",
-          "line": 1735,
+          "line": 1743,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 360,
-        "longest_run_min_tagged_split": 4.4,
-        "longest_run_words_control_split": 425,
-        "longest_run_min_control_split": 5.2,
+        "longest_run_words_tagged_split": 347,
+        "longest_run_min_tagged_split": 4.6,
+        "longest_run_words_control_split": 397,
+        "longest_run_min_control_split": 5.3,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
@@ -1543,7 +1541,7 @@
         "OUTPUT"
       ],
       "dom": {
-        "rendered_words": 627,
+        "rendered_words": 588,
         "rendered_chips": 1,
         "rendered_controls": 10,
         "rendered_hidden_panels": 0
@@ -1562,22 +1560,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 18,
-      "line_start": 1739,
-      "line_end": 1765,
-      "bytes": 2608,
+      "line_start": 1747,
+      "line_end": 1775,
+      "bytes": 2650,
       "allocated_min": 18,
-      "words": 233,
-      "prose_words": 196,
-      "words_per_min": 12.9,
-      "prose_words_per_min": 10.9,
+      "words": 227,
+      "prose_words": 190,
+      "words_per_min": 12.6,
+      "prose_words_per_min": 10.6,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s15",
           "data_comp": "sealed-vote-debate",
           "icap": "I",
-          "line": 1750,
-          "line_end": 1759,
+          "line": 1760,
+          "line_end": 1769,
           "words_inside": 37
         }
       ],
@@ -1593,7 +1591,7 @@
         "M": 1,
         "L": 0
       },
-      "chips_per_100_words": 0.86,
+      "chips_per_100_words": 0.88,
       "chips_unresolved": [],
       "source_keys": [
         "src-magesh",
@@ -1610,7 +1608,7 @@
       "gates": [
         {
           "id": "ga4",
-          "line": 1763,
+          "line": 1773,
           "marked_by_component": false
         }
       ],
@@ -1618,8 +1616,8 @@
       "em_dashes": 0,
       "exposition": {
         "longest_run_words_tagged_split": 118,
-        "longest_run_min_tagged_split": 9.1,
-        "longest_run_words_control_split": 233,
+        "longest_run_min_tagged_split": 9.4,
+        "longest_run_words_control_split": 227,
         "longest_run_min_control_split": 18,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
@@ -1628,7 +1626,7 @@
         "CHI"
       ],
       "dom": {
-        "rendered_words": 250,
+        "rendered_words": 244,
         "rendered_chips": 2,
         "rendered_controls": 6,
         "rendered_hidden_panels": 0
@@ -1647,23 +1645,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 1767,
-      "line_end": 1799,
-      "bytes": 3508,
+      "line_start": 1777,
+      "line_end": 1809,
+      "bytes": 3163,
       "allocated_min": 5,
-      "words": 374,
-      "prose_words": 314,
-      "words_per_min": 74.8,
-      "prose_words_per_min": 62.8,
+      "words": 310,
+      "prose_words": 255,
+      "words_per_min": 62,
+      "prose_words_per_min": 51,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s16",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1773,
-          "line_end": 1780,
-          "words_inside": 60
+          "line": 1783,
+          "line_end": 1790,
+          "words_inside": 55
         }
       ],
       "families": [
@@ -1678,7 +1676,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.27,
+      "chips_per_100_words": 0.32,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -1694,24 +1692,22 @@
       "gates": [
         {
           "id": "g12",
-          "line": 1795,
+          "line": 1805,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 344,
-        "longest_run_min_tagged_split": 4.6,
-        "longest_run_words_control_split": 287,
-        "longest_run_min_control_split": 3.8,
+        "longest_run_words_tagged_split": 280,
+        "longest_run_min_tagged_split": 4.5,
+        "longest_run_words_control_split": 228,
+        "longest_run_min_control_split": 3.7,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": [
-        "§09."
-      ],
+      "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 487,
+        "rendered_words": 423,
         "rendered_chips": 1,
         "rendered_controls": 11,
         "rendered_hidden_panels": 0
@@ -1735,7 +1731,7 @@
       "defined_within_40_words": false,
       "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "as the recurring meeting you pick in  [§06.]  The closing check in §11 asks exactly"
+      "context": "as the recurring meeting you pick in  [§06.]  §11's closing check asks exactly this. Retrieval"
     },
     {
       "term": "§11",
@@ -1744,7 +1740,7 @@
       "defined_within_40_words": false,
       "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "pick in §06. The closing check in  [§11]  asks exactly this. Retrieval bridge — 4"
+      "context": "the recurring meeting you pick in §06.  [§11] 's closing check asks exactly this. Retrieval bridge"
     },
     {
       "term": "A1",
@@ -1873,22 +1869,13 @@
       "context": "step exists, and so do its failures ( [§04).]  Either way, tell it to answer only"
     },
     {
-      "term": "§03.",
-      "kind": "citation",
-      "first_use_section": "s6",
-      "defined_within_40_words": false,
-      "how": null,
-      "cfp_baseline_vocabulary": false,
-      "context": "failure looks like the first preset in  [§03.]  The answer is fully cited, quotes Article"
-    },
-    {
       "term": "BM25",
       "kind": "acronym",
       "first_use_section": "s6",
       "defined_within_40_words": false,
       "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "5.7% at baseline, 1.9% with contextual embeddings,  [BM25]  and reranking H ; a vendor benchmark"
+      "context": "5.7% at baseline, 1.9% with contextual embeddings,  [BM25]  and reranking H ; benchmarked on codebases,"
     },
     {
       "term": "CRM",
@@ -1900,31 +1887,13 @@
       "context": "summary. Log. The note lands in the  [CRM]  with the basis for what you recommended."
     },
     {
-      "term": "§08",
-      "kind": "citation",
-      "first_use_section": "s9",
-      "defined_within_40_words": false,
-      "how": null,
-      "cfp_baseline_vocabulary": false,
-      "context": "says client meeting, here and in §07,  [§08]  and §11. Where tonight sits in the"
-    },
-    {
-      "term": "§11.",
-      "kind": "citation",
-      "first_use_section": "s9",
-      "defined_within_40_words": false,
-      "how": null,
-      "cfp_baseline_vocabulary": false,
-      "context": "meeting, here and in §07, §08 and  [§11.]  Where tonight sits in the seven-step financial"
-    },
-    {
       "term": "B4",
       "kind": "acronym",
       "first_use_section": "s9",
-      "defined_within_40_words": true,
-      "how": "appositive",
+      "defined_within_40_words": false,
+      "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "sorter on the Session 2 page: appendix  [B4]  , at the Standard depth. Do this"
+      "context": "tool may not take: Session 2, appendix  [B4]  , Standard depth. Do this now: 4"
     },
     {
       "term": "DECISIONS",
@@ -2014,7 +1983,7 @@
       "defined_within_40_words": false,
       "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "meeting hour H . The excerpt is  [CASE] .md Part O, rendered from the injected case;"
+      "context": "meeting hour H . The excerpt is  [CASE] .md Part O; it presupposes an advisory engagement"
     },
     {
       "term": "U.S.C",
@@ -2131,7 +2100,7 @@
       "defined_within_40_words": false,
       "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "work, so a busy professional checks less.  [§04]  supplied evidence for the second; you supplied"
+      "context": "work, so a busy professional stops there.  [§04]  supplied evidence for this side; you supplied"
     },
     {
       "term": "CHI",
@@ -2146,10 +2115,10 @@
       "term": "§09.",
       "kind": "citation",
       "first_use_section": "s16",
-      "defined_within_40_words": false,
-      "how": null,
+      "defined_within_40_words": true,
+      "how": "parenthetical",
       "cfp_baseline_vocabulary": false,
-      "context": "The seven-element checklist is in Session 2  [§09.]  The two most often missing are the"
+      "context": "in the attachments. Seven-element checklist: Session 2  [§09.]  Most often missing: the baseline time (estimated"
     },
     {
       "term": "FY2026",
