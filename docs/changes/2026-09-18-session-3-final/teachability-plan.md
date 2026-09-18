@@ -20,7 +20,7 @@ narrated, and a narrated page gives the room nothing to do with its hands.
 **The dose.** The plan's arithmetic still holds: three interactions run by the room on their own
 machines (§03's retriever, §08's silent run, the seven-step sorter off the Session 2 page), the
 rest narrated. What this pass changes is what "narrated" means. A narrated section in which the
-room has committed to a letter in chat before the instructor clicks is a worked section for the
+room has said a letter aloud before the instructor clicks is a worked section for the
 purposes of every audit metric that has failed, at a cost of thirty to forty seconds. That is the
 whole design: **every commit device on the page now has a floor of one word, said aloud**, before the
 instructor touches the page. The instructor asks one question, counts four, takes any answer, and
@@ -49,7 +49,7 @@ runs the bridge.
 **Floor.** The bridge asked the room to click four checks "in order" on the instructor's screen,
 and the four checks were listed in the correct order top to bottom. A learner had nothing to
 commit to and the answer was on the screen. **Changed (FF-019):** the checks render in a fixed
-scrambled order with a letter each; the room chats four letters; the instructor clicks the room's
+scrambled order with a letter each; the room says four letters; the instructor clicks the room's
 order; the key is C A D B. **Changed (FF-006, FF-028):** the objective is printed on the page in
 the run sheet's words, and one sentence says who the Coles are, with no figure in it, for the
 learner who said the case was beyond her.
@@ -67,7 +67,7 @@ minutes of administration in total). The page cannot fix that. The aid's step 1 
 
 **Floor.** The map is one click on "appraised value" and the confusable-pair note. The pair sort
 was six placements by the instructor while talking. **Changed (FF-020):** every sorter's items and
-buckets are numbered in the render, so one chat vote is possible: "pair 3, bucket 1, 2 or 3?"
+buckets are numbered in the render, so one spoken question is possible: "pair 3, bucket 1, 2 or 3?"
 Answer 2. That is the row that is §03's failure one section early, and the room has now said
 something about it before it sees it fail.
 
@@ -84,7 +84,7 @@ which document answers this?"
 **Floor.** There was nothing to commit to. The ten passages appeared only after ranking, so a
 learner could not name the document she thought should win. **Changed (FF-023):** a D1 to D10
 index, each chunk's first sentence, rendered from the injected corpus above the presets; the hint
-asks for the number in chat before anything is ranked. Most will say D3, the appraisal. Preset 1
+asks for the number aloud before anything is ranked. Most will say D3, the appraisal. Preset 1
 then ranks D1 first and D3 third at 3.3, and the room has a prediction to be wrong against.
 Scores unchanged: the index reads the same data the ranker reads and feeds nothing into it.
 
@@ -101,7 +101,7 @@ comprehension check on this section, eight minutes after the fact, with (a) as t
 **Floor.** The page's commit had three options and the Zoom poll that fires at the same moment had
 four; the run sheet was reconciling them with a mapping. **Changed (FF-022):** the page carries
 Poll 2's four options in the poll's order with the same letters, and feedback written for the
-fourth. The room votes a letter, by poll or in chat; the instructor clicks it; the measured key
+fourth. The room gives a letter, by poll or aloud; the instructor clicks it; the measured key
 opens. Answer (c).
 
 **Exposed to.** The decision rule. Two sessions, five polls, zero rules fired. The aid prints the
@@ -111,7 +111,7 @@ rule on the step and the words "say which you chose".
 
 **As met.** Two bullets, Wolfram's tell-it-once observation, the Tuesday test.
 
-**Floor.** **Changed (FF-021):** quiz options carry letters; chat a, b or c; answer (a). Read the
+**Floor.** **Changed (FF-021):** quiz options carry letters; ask for a, b or c; answer (a). Read the
 fine-tuning feedback aloud whatever the room picked, because the wrong answer's feedback is the
 teaching.
 
@@ -126,8 +126,8 @@ skipping costs, who sees it first.
 buttons are numbered and the hint asks the room to commit, before any opens, to the number of the
 stage whose skipped check is found last. Answer 5, the Log, at examination; stages 2 and 3 are the
 ones nobody ever sees, which is one sentence when they open. **Changed (FF-010):** the paragraph
-for the three non-advisors, and the run sheet's one-line chat harvest, "the meeting you will use
-tonight", which is the first record the course will hold of what those three do. **Changed
+for the three non-advisors, and the run sheet's one spoken question, "the meeting you will use
+tonight", whose answers are the first record the course will hold of what those three do. **Changed
 (FF-003):** the chain's failure examples no longer contradict §07. **Changed (FF-024):** one
 sentence links to Session 2's appendix B4, so the 7:36 sorter is one click out and one back.
 
@@ -202,7 +202,7 @@ verify block is unsigned; the aid says to say so rather than teach the two items
 
 **As met.** Six lines into three buckets, then the basis prompt.
 
-**Floor.** **Changed (FF-020):** numbered lines and buckets; after Poll 4a, chat "line 4, which
+**Floor.** **Changed (FF-020):** numbered lines and buckets; after Poll 4a, ask "line 4, which
 bucket?" Answer 3, Neither; it is the inference, and sorting it as "said" is the mistake a
 note-taker makes for you. **Changed (FF-009):** the prompt is named as reverse prompting, the
 interview rewrite, which closes Session 2's F17 on the page. **Changed (FF-013):** the work-along
@@ -218,7 +218,7 @@ finding, not a failure".
 block.
 
 **Floor.** **Changed (FF-027):** the checklist is numbered and the hint asks for the number of the
-one gap to close first, in chat, which turns "name the gap you will close" into a one-character
+one gap to close first, aloud, which turns "name the gap you will close" into a one-character
 commitment in the slot before the closing check. **Changed (FF-007):** the closing block is the
 written check against the objective, with the §03 question behind it. **Changed (FF-008):** the
 Part 1 card asks for a baseline estimate rather than a recorded one. **Changed (FF-012):** the
@@ -269,7 +269,7 @@ the 09-17 clock, inside the 23-minute buffer.
 | Bridge and ritual skipped | S2 F02 | Step 4, filled black |
 | Lesson file opened at 62.9% | S2 F12 | Steps 3 and 4 are on the page |
 | 36 min Session 1 carryover; 10.5 min fee philosophy; 10 min Session 4 content | S2 F03, F04, F06 | "Not tonight" box, six lines |
-| 70 min between commitments | S2 F05 | A chat or poll on almost every step |
+| 70 min between commitments | S2 F05 | A question or poll on almost every step |
 | Zero silent work, twice | S1 F12, S2 §1.7 move 4 | Step 13: "Silence 4:00" |
 | Poll rules never fired | S1 F13, S2 F25 | Each poll step prints its rule and "say which you chose" |
 | Reformulated questions, self-answered | S1 F08, S2 F28 | GATE defined in the header: ask once, say nothing, count four; three gates in bold |
