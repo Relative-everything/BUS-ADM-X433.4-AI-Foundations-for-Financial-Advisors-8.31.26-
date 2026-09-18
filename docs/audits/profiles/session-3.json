@@ -1,7 +1,7 @@
 {
   "file": "session-3/index.html",
-  "file_bytes": 223901,
-  "file_lines": 2763,
+  "file_bytes": 226981,
+  "file_lines": 2792,
   "generated_by": "scripts/audit/section_profile.mjs (read-only)",
   "methods": {
     "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
@@ -144,7 +144,7 @@
         0,
         1.99
       ],
-      "mean": 0.74
+      "mean": 0.75
     },
     "chips_per_section": {
       "median": 2,
@@ -152,7 +152,7 @@
         0,
         6
       ],
-      "mean": 2.06
+      "mean": 2.12
     },
     "sources_per_section": {
       "median": 1,
@@ -166,17 +166,17 @@
       "median": 48.3,
       "range": [
         12.2,
-        122
+        128.8
       ],
-      "mean": 47.58
+      "mean": 47.98
     },
     "prose_words_per_min": {
       "median": 39.8,
       "range": [
         10.1,
-        114.4
+        121.2
       ],
-      "mean": 41.06
+      "mean": 41.46
     },
     "exposition_run_min_tagged": {
       "median": 4.6,
@@ -189,10 +189,10 @@
     "exposition_run_min_control": {
       "median": 5.7,
       "range": [
-        2.4,
+        2.2,
         18
       ],
-      "mean": 7.66
+      "mean": 7.65
     },
     "icap_distribution": {
       "P": 0,
@@ -1224,13 +1224,13 @@
       "nav_contained_in_heading": true,
       "timing_row_min": 5,
       "line_start": 1550,
-      "line_end": 1609,
-      "bytes": 5450,
+      "line_end": 1611,
+      "bytes": 5939,
       "allocated_min": 5,
-      "words": 610,
-      "prose_words": 572,
-      "words_per_min": 122,
-      "prose_words_per_min": 114.4,
+      "words": 644,
+      "prose_words": 606,
+      "words_per_min": 128.8,
+      "prose_words_per_min": 121.2,
       "interactions_count": 1,
       "interactions": [
         {
@@ -1248,13 +1248,13 @@
       "icap": {
         "C": 1
       },
-      "chips_total": 1,
+      "chips_total": 2,
       "chips": {
         "H": 0,
         "M": 0,
-        "L": 1
+        "L": 2
       },
-      "chips_per_100_words": 0.16,
+      "chips_per_100_words": 0.31,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -1266,28 +1266,28 @@
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 3,
+      "interactive_controls": 5,
       "gates": [
         {
           "id": "g9b",
-          "line": 1607,
+          "line": 1609,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 496,
+        "longest_run_words_tagged_split": 530,
         "longest_run_min_tagged_split": 4.1,
         "longest_run_words_control_split": 288,
-        "longest_run_min_control_split": 2.4,
+        "longest_run_min_control_split": 2.2,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 780,
-        "rendered_chips": 1,
-        "rendered_controls": 13,
+        "rendered_words": 812,
+        "rendered_chips": 2,
+        "rendered_controls": 15,
         "rendered_hidden_panels": 0
       }
     },
@@ -1304,8 +1304,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 4,
-      "line_start": 1611,
-      "line_end": 1647,
+      "line_start": 1613,
+      "line_end": 1649,
       "bytes": 3025,
       "allocated_min": 4,
       "words": 313,
@@ -1318,8 +1318,8 @@
           "data_task": "t-s12",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 1635,
-          "line_end": 1641,
+          "line": 1637,
+          "line_end": 1643,
           "words_inside": 33
         }
       ],
@@ -1346,7 +1346,7 @@
       "sim_badges": 0,
       "verify_blocks": 1,
       "verify_lines": [
-        1615
+        1617
       ],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
@@ -1354,7 +1354,7 @@
       "gates": [
         {
           "id": "g9",
-          "line": 1645,
+          "line": 1647,
           "marked_by_component": false
         }
       ],
@@ -1391,8 +1391,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 9,
-      "line_start": 1649,
-      "line_end": 1669,
+      "line_start": 1651,
+      "line_end": 1671,
       "bytes": 1686,
       "allocated_min": 9,
       "words": 126,
@@ -1405,8 +1405,8 @@
           "data_task": "t-sVend",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1656,
-          "line_end": 1663,
+          "line": 1658,
+          "line_end": 1665,
           "words_inside": 33
         }
       ],
@@ -1438,7 +1438,7 @@
       "gates": [
         {
           "id": "ga7",
-          "line": 1667,
+          "line": 1669,
           "marked_by_component": true
         }
       ],
@@ -1472,8 +1472,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 1671,
-      "line_end": 1735,
+      "line_start": 1673,
+      "line_end": 1737,
       "bytes": 4032,
       "allocated_min": 6,
       "words": 487,
@@ -1486,8 +1486,8 @@
           "data_task": "t-s13",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1685,
-          "line_end": 1695,
+          "line": 1687,
+          "line_end": 1697,
           "words_inside": 29
         }
       ],
@@ -1519,7 +1519,7 @@
       "gates": [
         {
           "id": "g10",
-          "line": 1733,
+          "line": 1735,
           "marked_by_component": false
         }
       ],
@@ -1562,8 +1562,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 18,
-      "line_start": 1737,
-      "line_end": 1763,
+      "line_start": 1739,
+      "line_end": 1765,
       "bytes": 2608,
       "allocated_min": 18,
       "words": 233,
@@ -1576,8 +1576,8 @@
           "data_task": "t-s15",
           "data_comp": "sealed-vote-debate",
           "icap": "I",
-          "line": 1748,
-          "line_end": 1757,
+          "line": 1750,
+          "line_end": 1759,
           "words_inside": 37
         }
       ],
@@ -1610,7 +1610,7 @@
       "gates": [
         {
           "id": "ga4",
-          "line": 1761,
+          "line": 1763,
           "marked_by_component": false
         }
       ],
@@ -1647,8 +1647,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 1765,
-      "line_end": 1797,
+      "line_start": 1767,
+      "line_end": 1799,
       "bytes": 3508,
       "allocated_min": 5,
       "words": 374,
@@ -1661,8 +1661,8 @@
           "data_task": "t-s16",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1771,
-          "line_end": 1778,
+          "line": 1773,
+          "line_end": 1780,
           "words_inside": 60
         }
       ],
@@ -1694,7 +1694,7 @@
       "gates": [
         {
           "id": "g12",
-          "line": 1793,
+          "line": 1795,
           "marked_by_component": true
         }
       ],
