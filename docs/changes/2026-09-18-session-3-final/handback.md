@@ -512,3 +512,17 @@ unmoved.
     audit alone, whose refutation pass never ran.
 16. The verify brief's Standard number (A.9) is from memory, labelled medium; the table of
     contents settles it in one look.
+
+---
+
+## 14. Fifth pass: the page reads as bullets
+
+FF-039. Every section's paragraphs are a thesis line and bullets, the shape Session 2 uses.
+Measured on the core sections' static text: 4,054 to 3,303 words, 18.5% down; on prose outside
+the prompts, the source lines and the verify block: 2,789 to 2,217, 20.5% down. What did not move,
+on purpose: the source lines' citations and every chip; the hints that say how to complete each
+interaction; the three §08 prompts, the §07 instruction and the §10 basis prompt (about 400 words
+of copy-ready artefact); the §09 verify block; the objective and course-rule panels, which are
+spoken verbatim; the closing check. The next cut, if a deeper one is wanted, is those two prompts
+and the two citation-heavy source lines in §04 and §05, and it is a content decision rather than
+an editing one. Verification identical to §13 in every line; C1 density 85.1 wpm (was 89.9).

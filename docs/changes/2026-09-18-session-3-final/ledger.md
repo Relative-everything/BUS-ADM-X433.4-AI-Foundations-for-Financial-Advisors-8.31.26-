@@ -49,4 +49,4 @@ D8 29.2 / D3 8.0 / D7 3.8 / D1 3.7 (72.8%), D7 26.5 then zeros (100%); no horizo
 | FF-036 | T | `instructor-notes/session-3-polls.md` | Six polls, four recommended, paste-ready | file present | `51a69f0` | | done |
 | FF-037 | T | `instructor-notes/session-3-canvas-posts.md` | Three Canvas posts from the audits' verdicts | file present | `2e58088` | one bracketed date to fill | done |
 | FF-038 | T | `instructor-notes/session-3-verify-brief.md` | What to open and what to sign for §09's two items | file present | `e53fcd2` | sources egress-blocked; nothing quoted | done |
-
+| FF-039 | T | every core section and four appendix sections | Paragraphs to bullets; source lines shortened with every chip kept; hints and work-alongs to one line | core static words 4,054 to 3,303; checks 0 failed | `11b8c82` | 18.5% static, 20.5% prose | done |
