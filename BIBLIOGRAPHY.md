@@ -5,7 +5,7 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**63 works, 201 references across 5 lessons.** 49 are
+**63 works, 200 references across 5 lessons.** 49 are
 cited by at least one claim; 14 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
@@ -833,7 +833,7 @@ n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using 
 | Last verified by the instructor | *not applicable* |
 | Confidence | L |
 | **Total references** | **25** |
-| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s3` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` ×2 · S4 `#s7` ×2 · S4 `#sWS` |
+| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` ×2 · S4 `#s7` ×2 · S4 `#sWS` |
 
 Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
 
@@ -908,8 +908,8 @@ Accuracy of AI representations, training and security controls, and Regulation S
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **2026-08-23** |
 | Confidence | H |
-| **Total references** | **20** |
-| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s1` ×2 · S2 `#s2` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s3` · S3 `#s7` ×2 · S4 `#sWS` · S4 `#s8` |
+| **Total references** | **19** |
+| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s1` ×2 · S2 `#s2` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s7` ×2 · S4 `#sWS` · S4 `#s8` |
 
 The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D3 is about exactly that.
 
