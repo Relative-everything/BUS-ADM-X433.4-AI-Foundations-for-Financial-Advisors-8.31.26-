@@ -45,7 +45,7 @@ a recall question.
 | 6:52 | 8 | §06 the workflow chain | `s9` symptom-diagnoser | "Five stages. A mistake at any one is inherited by every stage after it." |
 | **7:00** | **15** | **BREAK. Post "back at 7:15" in chat, Pacific** | | Post the clock time in their zone, not yours. |
 | 7:15 | 9 | §07 the note-taker's four stages | `s10` | "Stage two drops a clause about Nathan. That is the teaching point." |
-| 7:24 | 12 | §08 **silent run in your own tool. WORKED 2** | `sOff` | "Four minutes. Nobody talks. Copy one prompt into the app you use most and run it." |
+| 7:24 | 12 | §08 **silent run, in Claude. WORKED 2** | `sOff` | "Four minutes. Nobody talks. Open Claude, paste the summary, run the letter prompt." |
 | 7:36 | 16 | Seven-step delegation sorter, **off the Session 2 page. WORKED 3** | `session-2` `s9`, depth +Standard | "Open last week's page. Appendix depth to Standard. B4." |
 | 7:52 | 5 | §09 consent and confidentiality. **Poll 3** just before | `s12` | "Two obligations: may it be recorded, and what may the vendor see." |
 | 7:57 | 8 | §10 said, recommended or neither. **Poll 4** | `s13` two-bucket-sorter | "Six lines from the meeting. One of them is your inference, not their words." |
@@ -185,14 +185,23 @@ Open the four stages in order. The extraction stage's dropped clause about Natha
 point; the instruction below it is the thing to take home.
 
 ### sOff · §08, 7:24 · **WORKED 2, and the first silent work this course has ever run**
-The add-ins are named on your word. Confirm the feature descriptions against the vendor's help pages
-before teaching them as current; if one of the three does not exist as described, say so and drop
-that bullet.
+**This section no longer names Word, Excel or PowerPoint, and that is deliberate.** It used to
+assert that Claude has an add-in inside each, on your word, with no source. You do not have Office
+on your machine, so you could neither demo it nor verify it, and any learner without the same
+licence would have watched the silent run fail. The section now teaches the pattern, which is what
+was worth teaching: hand the assistant the source, ask for the change marked, check it before it
+goes. That holds in any tool.
 
-Then: "Four minutes. Nobody talks. Open Word, Excel or PowerPoint, copy one of the three prompts,
-run it on a file you already have. Synthetic or your own non-client work only." Say what you will be
-doing during the silence and then be quiet. Hold the four minutes; you held the Session 1 break to
-293 seconds against 300 stated.
+The run is in Claude, which every person in the room has because the course requires it, and on
+synthetic material, so the data rule is never in question.
+
+Say it like this: "Four minutes. Nobody talks. Open Claude, paste in the meeting summary from the
+last section, and run the letter prompt on it. Nothing real, the synthetic summary only." Say what
+you will be doing during the silence and then be quiet. Hold the four minutes; you held the Session
+1 break to 293 seconds against 300 stated.
+
+If someone does have the Office assistant and wants to run it there, that is a bonus, not the
+lesson. Do not spend the room's four minutes troubleshooting one person's licence.
 
 Harvest in chat, one line each: what you asked, and whether what came back was usable. Nobody has to
 speak. That chat is the student-produced artifact to spend in the reserve at 8:12.
@@ -242,7 +251,6 @@ logging burden attached.
 
 ## What is not yet done
 
-- §08's add-in descriptions carry no source. Ten minutes in a browser closes it.
 - §09's verify block is unsigned. Both items are yours.
 - The four polls are not built in Zoom yet.
 - Speaker-labelled transcripts are not switched on. One checkbox, and every future review depends

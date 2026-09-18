@@ -1537,24 +1537,24 @@ If a heading has nothing under it, write "none".</pre>
 
 </section>
 
-<section class="slide" id="sOff" data-nav="Word, Excel, PowerPoint">
+<section class="slide" id="sOff" data-nav="The client review">
   <div class="eyebrow"><span>08 &middot; In the files you already use</span><span class="mins">5 min</span></div>
-  <h2>Claude in Word, Excel and PowerPoint for the Client Review</h2>
+  <h2>The Client Review, in the Files You Already Have</h2>
 
-  <p class="big">The annual review lives in three files: a letter, a cash-flow sheet and a deck. An assistant inside each app reads the open file, takes an instruction in plain words, and proposes the change. You review before it lands.</p>
+  <p class="big">The annual review lives in three files: a letter, a cash-flow sheet and a deck. Hand the assistant the source and the file, ask in plain words for the change, and read what comes back before it goes anywhere. The tool you use to do it matters far less than the three rules below.</p>
 
   <ul class="pts">
-    <li><b>Word, the review letter.</b> "Update last year's letter for this year's figures and the three decisions in the attached meeting summary. Keep the structure. Mark every sentence you changed."</li>
-    <li><b>Excel, the cash-flow table.</b> "Add a 2026 column using the same formulas as the 2025 column, and flag any cell whose value moved more than ten percent."</li>
-    <li><b>PowerPoint, the review deck.</b> "Rebuild the six review slides from the attached summary. One decision per slide, the same template, no new colours."</li>
+    <li><b>The review letter.</b> "Update last year's letter for this year's figures and the three decisions in the meeting summary below. Keep the structure. Mark every sentence you changed."</li>
+    <li><b>The cash-flow table.</b> "Add a 2026 column using the same formulas as the 2025 column, and flag any cell whose value moved more than ten percent. Say which formulas you copied."</li>
+    <li><b>The review deck.</b> "Draft the six review slides from the summary below. One decision per slide, the same headings as last year, no new sections."</li>
   </ul>
 
-  <p>Three rules hold in all three. Give it the source, the meeting summary or the new figures, rather than asking it to remember. Ask for the change marked, not silently made. Check every number against the source before the file goes to the client.</p>
+  <p>Three rules hold for all three, in any tool. Give it the source, the meeting summary or the new figures, rather than asking it to remember. Ask for the change marked, not silently made. Check every number against the source before the file goes to the client.</p>
 
   <div class="panel" data-task="t-sOff" data-comp="multi-column-sorter">
     <span class="do">Do this now: 3 minutes</span>
-    <h4>Which App, or Not an AI Task at All</h4>
-    <p class="hint">Six review-update tasks. Place each where it belongs. Two belong to no assistant.</p>
+    <h4>Which Kind of Work, or Not an AI Task at All</h4>
+    <p class="hint">Six review-update tasks. Place each where it belongs. Two belong to no assistant, in any tool.</p>
     <div class="sorter">
       <div id="offList" class="chiplist"></div>
       <div id="offBoxes" class="boxes"></div>
@@ -1563,9 +1563,9 @@ If a heading has nothing under it, write "none".</pre>
     <div id="offKey" class="mpanel keyhide" style="display:none"></div>
   </div>
 
-  <p class="src">The add-ins are named on the instructor's instruction; the description is the general shape of an in-app assistant and was not checked against the vendor's help pages from this build. The three prompts and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">The three prompts and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>. No claim is made here about any particular vendor's in-application assistant; the pattern is the one the three rules describe, and it holds wherever you run it.</p>
 
-  <div class="check" data-gate="g9b"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six tasks, then copy one of the three prompts into the app you use most.</div></div>
+  <div class="check" data-gate="g9b"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six tasks. Then take the summary from &sect;07, paste it into the assistant you already have open, and run the letter prompt on it. Synthetic material only.</div></div>
 
 </section>
 
@@ -1770,7 +1770,7 @@ then a list of every element where my answer was thin.</pre>
       <tr><td>05 &middot; Two ways to teach it your file</td><td>Grounding Compared With Fine-Tuning</td><td class="n">5</td></tr>
       <tr><td>06 &middot; The workflow</td><td>The Advisor Meeting Workflow: Prep, Capture, Summarise, Follow-Up, Log</td><td class="n">6</td></tr>
       <tr><td>07 &middot; The note-taker</td><td>How an AI Note-Taker Works, and How to Prompt It</td><td class="n">7</td></tr>
-      <tr><td>08 &middot; In the files you already use</td><td>Claude in Word, Excel and PowerPoint for the Client Review</td><td class="n">5</td></tr>
+      <tr><td>08 &middot; In the files you already use</td><td>The Client Review, in the Files You Already Have</td><td class="n">5</td></tr>
       <tr><td>09 &middot; Obligation</td><td>Recording Consent and the Confidentiality Obligation</td><td class="n">4</td></tr>
       <tr><td>10 &middot; Documentation</td><td>Documenting Circumstances and the Basis for a Recommendation</td><td class="n">6</td></tr>
       <tr><td>11 &middot; Close</td><td>The Meeting Checklist</td><td class="n">5</td></tr>
@@ -2382,19 +2382,19 @@ var CHKB=[
 mkSorter({list:$('chkList'),boxes:$('chkBoxes'),out:$('chkOut'),key:$('chkKey'),items:CHKI,buckets:CHKB,label:'Progress',gate:'ga6',
  after:'<span class="good">Both planted errors are plausible, short and confident. That is what a summariser\u2019s mistakes look like, and why the check is against the transcript and not against your memory of the meeting.</span>'});
 
-/* ================= 10b. Word, Excel, PowerPoint: which app, or not an AI task ================= */
+/* ================= 10b. The client review: which kind of work, or not an AI task ================= */
 var OFFI=[
  {t:'Update the review letter\u2019s figures and the three decisions from the meeting',k:'word',w:'Prose from a source you hand it, with every change marked. The letter\u2019s structure stays yours.'},
  {t:'Add this year\u2019s column to the cash-flow table using last year\u2019s formulas',k:'excel',w:'A repeatable change to a sheet it can see. Ask it to say which formulas it copied.'},
  {t:'Rebuild the six review slides from the meeting summary',k:'ppt',w:'The summary is the source; the template is the constraint. One decision per slide keeps it checkable.'},
  {t:'Decide whether to recommend a sale or a gift of the units',k:'none',w:'A judgment, and the basis for it is what the file needs (\u00a710). An assistant can list the considerations; it cannot own the decision.'},
- {t:'Flag every cash-flow cell that moved more than ten percent',k:'excel',w:'Arithmetic over the sheet, stated as a rule. Exactly what the Excel assistant is for, and exactly what you then read.'},
+ {t:'Flag every cash-flow cell that moved more than ten percent',k:'excel',w:'Arithmetic over the sheet, stated as a rule. Exactly what an assistant is for, and exactly what you then read.'},
  {t:'Sign off the letter before it goes to the client',k:'none',w:'The check is yours. Every number against its source, every decision against the meeting. Nothing in the app does this for you.'}
 ];
 var OFFB=[
- {k:'word',t:'Word',d:'Text that changes: letters, memos, the plan narrative.'},
- {k:'excel',t:'Excel',d:'Figures and formulas: tables, projections, comparisons.'},
- {k:'ppt',t:'PowerPoint',d:'The deck: slides rebuilt from a source, inside a template.'},
+ {k:'word',t:'Prose that changes',d:'Letters, memos, the plan narrative.'},
+ {k:'excel',t:'Figures and formulas',d:'Tables, projections, comparisons.'},
+ {k:'ppt',t:'The deck',d:'Slides drafted from a source, inside your own headings.'},
  {k:'none',t:'Not an AI task',d:'A decision, or a check, that is yours.'}
 ];
 mkSorter({list:$('offList'),boxes:$('offBoxes'),out:$('offOut'),key:$('offKey'),items:OFFI,buckets:OFFB,label:'Progress',gate:'g9b',

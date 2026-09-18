@@ -1,6 +1,6 @@
 {
   "file": "session-3/index.html",
-  "file_bytes": 215355,
+  "file_bytes": 215477,
   "file_lines": 2685,
   "generated_by": "scripts/audit/section_profile.mjs (read-only)",
   "methods": {
@@ -49,7 +49,7 @@
         "apx": false
       },
       "08 · In the files you already use": {
-        "title": "Claude in Word, Excel and PowerPoint for the Client Review",
+        "title": "The Client Review, in the Files You Already Have",
         "min": 5,
         "apx": false
       },
@@ -144,7 +144,7 @@
         0,
         2.05
       ],
-      "mean": 0.79
+      "mean": 0.78
     },
     "chips_per_section": {
       "median": 2,
@@ -168,7 +168,7 @@
         12.2,
         78.3
       ],
-      "mean": 39.35
+      "mean": 39.76
     },
     "prose_words_per_min": {
       "median": 32.5,
@@ -176,7 +176,7 @@
         10.1,
         73.3
       ],
-      "mean": 33.81
+      "mean": 34.16
     },
     "exposition_run_min_tagged": {
       "median": 4.5,
@@ -1137,24 +1137,24 @@
     {
       "id": "sOff",
       "num": "08",
-      "data_nav": "Word, Excel, PowerPoint",
+      "data_nav": "The client review",
       "eyebrow": "08 · In the files you already use",
-      "heading": "Claude in Word, Excel and PowerPoint for the Client Review",
+      "heading": "The Client Review, in the Files You Already Have",
       "is_toc": false,
       "is_appendix": false,
       "tier": null,
       "insert_after": null,
       "nav_matches_heading": false,
-      "nav_contained_in_heading": false,
+      "nav_contained_in_heading": true,
       "timing_row_min": 5,
       "line_start": 1540,
       "line_end": 1570,
-      "bytes": 2473,
+      "bytes": 2626,
       "allocated_min": 5,
-      "words": 272,
-      "prose_words": 239,
-      "words_per_min": 54.4,
-      "prose_words_per_min": 47.8,
+      "words": 307,
+      "prose_words": 269,
+      "words_per_min": 61.4,
+      "prose_words_per_min": 53.8,
       "interactions_count": 1,
       "interactions": [
         {
@@ -1163,7 +1163,7 @@
           "icap": "C",
           "line": 1554,
           "line_end": 1564,
-          "words_inside": 33
+          "words_inside": 38
         }
       ],
       "families": [
@@ -1178,7 +1178,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.37,
+      "chips_per_100_words": 0.33,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -1201,9 +1201,9 @@
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 177,
-        "longest_run_min_tagged_split": 3.3,
-        "longest_run_words_control_split": 272,
+        "longest_run_words_tagged_split": 199,
+        "longest_run_min_tagged_split": 3.2,
+        "longest_run_words_control_split": 307,
         "longest_run_min_control_split": 5,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
