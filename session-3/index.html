@@ -1906,7 +1906,7 @@ function mkQuiz(host,items,scoreEl,gate){
  items.forEach(function(it){
   var d=document.createElement('div');d.className='qitem';
   var h='<span class="qtext">'+esc(it.q)+'</span><div class="row qbtns">';
-  it.opts.forEach(function(o){h+='<button class="btn sel mini" type="button" data-k="'+o.k+'">'+esc(o.t)+'</button>'});
+  it.opts.forEach(function(o,j){h+='<button class="btn sel mini" type="button" data-k="'+o.k+'">('+String.fromCharCode(97+j)+') '+esc(o.t)+'</button>'});
   h+='</div><div class="qfb"></div>';d.innerHTML=h;
   [].slice.call(d.querySelectorAll('.qbtns button')).forEach(function(b){
    b.onclick=function(){
