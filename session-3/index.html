@@ -1201,7 +1201,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel">
     <span class="do">Retrieval bridge — 4 minutes</span>
     <h4>Session 2 recall: the citation-verification order</h4>
-    <p class="hint">Four checks, no notes, in the order Session 2 established. Getting it wrong now is more useful than getting it right. Click in order; click again to reset.</p>
+    <p class="hint">Four checks, no notes, in the order Session 2 established. Getting it wrong now is more useful than getting it right. Commit first, in chat: the four letters in the order you would run them. Then click them in that order; click again to reset.</p>
     <div id="bridgeList" class="chiplist"></div>
     <div id="bridgeOut" class="mpanel"><span class="hd">Your ordering</span><span class="nil">Click the first check you run.</span></div>
   </div>
@@ -1948,18 +1948,21 @@ document.addEventListener('keydown',function(e){
   }});
 
 /* ================= 1. Session 2 retrieval bridge ================= */
+/* Displayed in a fixed scrambled order with a letter each, so the list does not
+   give the answer away top to bottom and the room can commit in chat with four
+   letters before anyone clicks. k is the correct rank; the key sorts by it. */
 var BRIDGE=[
- {t:'Confirm the authority exists at all.',k:1,w:'Nothing downstream matters if the citation is invented. This is the cheapest check and the one most often skipped because the citation looks well formed.'},
- {t:'Confirm it says what the model says it says.',k:2,w:'A real authority attached to a claim it does not support is the failure Magesh et al. measured, and it is invisible to anyone who stops at step one.'},
- {t:'Confirm it is still current.',k:3,w:'Supersession is silent. A correct reading of a superseded source produces a confident wrong answer with a verifiable citation.'},
- {t:'Confirm it applies to these facts.',k:4,w:'Last because it is the most expensive and requires the other three to have passed. This is the step this session is about: the Cole file will hand you a real, current, correctly-read authority that governs a different transaction.'}
+ {l:'A',t:'Confirm it says what the model says it says.',k:2,w:'A real authority attached to a claim it does not support is the failure Magesh et al. measured, and it is invisible to anyone who stops at step one.'},
+ {l:'B',t:'Confirm it applies to these facts.',k:4,w:'Last because it is the most expensive and requires the other three to have passed. This is the step this session is about: the Cole file will hand you a real, current, correctly-read authority that governs a different transaction.'},
+ {l:'C',t:'Confirm the authority exists at all.',k:1,w:'Nothing downstream matters if the citation is invented. This is the cheapest check and the one most often skipped because the citation looks well formed.'},
+ {l:'D',t:'Confirm it is still current.',k:3,w:'Supersession is silent. A correct reading of a superseded source produces a confident wrong answer with a verifiable citation.'}
 ];
 (function(){
  var L=$('bridgeList'),O=$('bridgeOut'),ord=[];
  function draw(){
   BRIDGE.forEach(function(a,i){var pos=ord.indexOf(i);
    L.children[i].classList.toggle('act',pos>=0);
-   L.children[i].firstChild.textContent=(pos>=0?(pos+1)+'. ':'')+a.t});
+   L.children[i].firstChild.textContent=(pos>=0?(pos+1)+'. ':'')+a.l+' \u00b7 '+a.t});
   var h='<span class="hd">Your ordering</span>';
   if(!ord.length){h+='<span class="nil">Click the first check you run.</span>'}
   else if(ord.length<BRIDGE.length){h+=ord.length+' of '+BRIDGE.length+' placed.'}
@@ -1968,13 +1971,13 @@ var BRIDGE=[
    var got=ord.filter(function(idx,pos){return BRIDGE[idx].k===pos+1}).length;
    h+=(ok?'<span class="good">Correct order, 4 of 4.</span>':'<span class="flag">'+got+' of 4 in position. The order is not arbitrary \u2014 each step is only worth running if the one before it passed.</span>')+'<br><br>';
    BRIDGE.slice().sort(function(a,b){return a.k-b.k}).forEach(function(a){
-    h+='<span class="good">'+a.k+'.</span> '+esc(a.t)+'<br><span style="color:#6F7B78">'+esc(a.w)+'</span><br><br>'});
+    h+='<span class="good">'+a.k+'.</span> '+esc(a.l)+' \u00b7 '+esc(a.t)+'<br><span style="color:#6F7B78">'+esc(a.w)+'</span><br><br>'});
   }
   O.className='mpanel'+(ord.length?' has':'');O.innerHTML=h;
  }
  BRIDGE.forEach(function(a,i){
   var b=document.createElement('button');b.className='chip';b.type='button';
-  b.appendChild(document.createTextNode(a.t));
+  b.appendChild(document.createTextNode(a.l+' \u00b7 '+a.t));
   b.onclick=function(){var p=ord.indexOf(i);if(p>=0){ord=[]}else{ord.push(i)}draw()};
   L.appendChild(b)});
  draw();
