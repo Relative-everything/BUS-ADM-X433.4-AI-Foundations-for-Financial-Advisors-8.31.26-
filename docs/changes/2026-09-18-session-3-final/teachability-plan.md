@@ -191,7 +191,7 @@ is the only Blocking finding in either audit.
 **As met.** The verify block, consent and confidentiality, the Iskowitz card, four quiz items.
 
 **Floor.** **Changed (FF-021):** lettered options. Five minutes is item 1 only, the one built to
-split the room: chat a, b or c, reveal (c). Shift+U opens the rest for anyone reading later.
+split the room: ask for a, b or c, reveal (c). Shift+U opens the rest for anyone reading later.
 
 **Exposed to.** The gate: "Whose consent do you actually need on this call?" Count four. And the
 verify block is unsigned; the aid says to say so rather than teach the two items as settled.
@@ -244,7 +244,7 @@ in any of them beyond the sorter numbering, which A1 and A3 inherit.
 | 6:14 | Poll 1, anonymous | a to d | none; the rule decides §05 and §08's length | 1 min |
 | 6:19 | §02 pair sort | 1, 2 or 3 | 2 | 30 s |
 | 6:26 | §03 index | D1 to D10 | D3 is the expected wrong-ish answer; D1 wins | 45 s |
-| 6:38 | Poll 2 or chat | a to d | (c) | 1 min |
+| 6:38 | Poll 2 or ask | a to d | (c) | 1 min |
 | 6:46 | §05 | a to c | (a) | 30 s |
 | 6:52 | §06 | the three name their meeting, aloud; a stage number | 5 | 1 min |
 | 7:15 | §07 | a turn number | 2 | 30 s |
