@@ -306,7 +306,8 @@ page names it now, in the heading above the prompt.
 Read the course data rule aloud. Do not paraphrase it.
 
 Then the Part 1 brief: the seven-element checklist lives in Session 2 §09; the two most often
-missing are the recorded baseline against the AI-assisted time and the data-handling note. A
+missing are the baseline time, estimated if it was never timed, against the AI-assisted time, and
+the data-handling note. A
 classmate runs the package cold in Session 4 with no help from the builder.
 
 Then the closing check, written, in chat. The page's closing block now says so and carries both the
