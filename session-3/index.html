@@ -1468,7 +1468,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel" data-task="t-s10" data-comp="spoiler-reveal">
     <span class="do">Do this now: 4 minutes</span>
     <h4>The Four Stages on the Cole Annual Review</h4>
-    <p class="hint">Read the excerpt, then open each stage to see what it produces. The outputs are written for this lesson to show the shape of each step; a real tool's wording will differ.</p>
+    <p class="hint">Read the excerpt and commit in chat: the number of the turn that holds the one thing the file most needs and a tool is most likely to drop. Then open each stage to see what it produces. The outputs are written for this lesson to show the shape of each step; a real tool's wording will differ.</p>
     <div class="mpanel has" style="min-height:0"><span class="hd">Synthetic meeting excerpt, Cole annual review, no real client data</span>
       <!-- The excerpt is CASE.md PART O, rendered from COLEDOCS at load. -->
       <span id="mtgExcerpt" style="font-family:'Source Serif 4',serif;font-size:15.5px;line-height:1.6;display:block"></span>
@@ -2358,7 +2358,7 @@ var CHAIN=[
  var host=$('mtgExcerpt');if(!host)return;
  var h='';
  COLEDOCS.transcript.forEach(function(t,i){
-  h+=(i?'<br>':'')+'<strong>'+esc(t.who)+':</strong> '+esc(t.said);
+  h+=(i?'<br>':'')+'<strong>'+(i+1)+' \u00b7 '+esc(t.who)+':</strong> '+esc(t.said);
  });
  host.innerHTML=h;
 })();
