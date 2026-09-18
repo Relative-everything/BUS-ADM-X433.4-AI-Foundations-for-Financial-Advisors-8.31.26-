@@ -42,6 +42,24 @@ say(/swap "client"/.test(txt('#s10')), 'FF-011', '§07 says how to adapt the ins
 say(/meeting you chose/.test(txt('#s16 .hint')), 'FF-012', '§11 hint covers the chosen meeting');
 say(/wrote up/.test(txt('[data-gate="g10"]')), 'FF-013', '§10 work-along does not presuppose a client meeting');
 say(!/Office/.test(txt('#src-case')), 'FF-015', 'footer src-case does not name Office');
+
+/* ---- second pass, 2026-09-18: teachability and the chat-commit floor ---- */
+{
+  const bl = [...d.querySelectorAll('#bridgeList button')];
+  say(bl.map(b => b.textContent[0]).join('') === 'ABCD' && [2, 0, 3, 1].every(i => bl[i]) , 'FF-019', 'bridge renders A B C D in scrambled order');
+  [2, 0, 3, 1].forEach(i => bl[i].click());
+  say(/Correct order, 4 of 4/.test(txt('#bridgeOut')), 'FF-019', 'C A D B is the correct order');
+}
+say(/^1\. /.test(txt('#docList button')) && /^1 · /.test(txt('#docBoxes .lbox h4')), 'FF-020', 'sorter chips and buckets are numbered');
+say(/^\(a\) /.test(txt('#tuneWrap .qbtns button')) && /^\(a\) /.test(txt('#quizWrap .qbtns button')), 'FF-021', 'quiz options carry letters');
+say(d.querySelectorAll('#grBtns button').length === 4 && /^\(d\) /.test(d.querySelectorAll('#grBtns button')[3].textContent), 'FF-022', '§04 has four lettered options');
+say(/D10/.test(txt('#qIndexList')) && /D1 Buy-Sell/.test(txt('#qIndexList')), 'FF-023', '§03 lists the ten passages by number');
+say(/^1 Prep/.test(txt('#chainWrap button')) && /session-2\/index\.html#s9$/.test($('#s9 a') ? $('#s9 a').getAttribute('href') : ''), 'FF-024', '§06 stages numbered and B4 linked');
+say(/^1 · Advisor/.test(txt('#mtgExcerpt')), 'FF-025', '§07 turns are numbered');
+say([...d.querySelectorAll('#sOff .plab')].some(e => /silent run/i.test(e.textContent)) && d.querySelectorAll('#sOff ol li').length === 4, 'FF-026', '§08 carries the four-step silent run');
+say(/^1\. /.test(txt('#ckList label')), 'FF-027', '§11 checklist is numbered');
+say(/Meg Cole owns/.test(txt('#s1')), 'FF-028', '§00 says who the Coles are');
+
 say(d.querySelectorAll('[data-comp]').length === 18, 'V6', `18 interaction roots (found ${d.querySelectorAll('[data-comp]').length})`);
 console.log(`\nsummary: ${fails} failed`);
 process.exit(fails ? 1 : 0);
