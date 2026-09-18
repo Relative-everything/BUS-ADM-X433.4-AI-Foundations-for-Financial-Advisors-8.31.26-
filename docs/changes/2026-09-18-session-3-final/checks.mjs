@@ -38,7 +38,7 @@ say(/Closing check/.test(txt('#s16 .talk .th')) && /in chat/.test(txt('#s16 .tal
 say(!/baseline you recorded/.test(txt('#s16')), 'FF-008', 'no presupposed baseline capture');
 say(/reverse prompting/.test(txt('#s13')), 'FF-009', '§10 names reverse prompting');
 say(/If you do not run client meetings/.test(txt('#s9')), 'FF-010', '§06 carries the parallel track');
-say(/swap/.test(txt('#s10')), 'FF-011', '§07 says how to adapt the instruction');
+say(/swap "client"/.test(txt('#s10')), 'FF-011', '§07 says how to adapt the instruction');
 say(/meeting you chose/.test(txt('#s16 .hint')), 'FF-012', '§11 hint covers the chosen meeting');
 say(/wrote up/.test(txt('[data-gate="g10"]')), 'FF-013', '§10 work-along does not presuppose a client meeting');
 say(!/Office/.test(txt('#src-case')), 'FF-015', 'footer src-case does not name Office');
