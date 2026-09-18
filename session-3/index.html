@@ -1405,10 +1405,12 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p>If you do not run client meetings, pick a recurring meeting you write up afterwards: a committee, a case review, a hiring interview. It has the same five stages and the same checks. Use it wherever this session says client meeting, here and in &sect;07, &sect;08 and &sect;11.</p>
 
+  <p>Where tonight sits in the seven-step financial planning process, and which of the seven steps a tool may not take, is a sorter on the Session 2 page: <a href="../session-2/index.html#s9">appendix B4</a>, at the Standard depth.</p>
+
   <div class="panel" data-task="t-s9" data-comp="symptom-diagnoser">
     <span class="do">Do this now: 4 minutes</span>
     <h4>Click a Stage in Meg and David's Annual Review</h4>
-    <p class="hint">Each stage names what the AI tool does there, the one thing you check before it moves on, and what happens downstream if you skip the check.</p>
+    <p class="hint">Each stage names what the AI tool does there, the one thing you check before it moves on, and what happens downstream if you skip the check. Before any stage opens, commit in chat: the number of the stage whose skipped check is found last.</p>
     <div id="chainWrap"></div>
     <div id="chainOut" class="mpanel"><span class="hd">The stage</span><span class="nil">Click a stage.</span></div>
   </div>
@@ -2300,7 +2302,7 @@ var CHAIN=[
 (function(){
  var W=$('chainWrap'),O=$('chainOut'),seen={};
  var h='<div class="row" style="gap:8px">';
- CHAIN.forEach(function(c,i){h+='<button class="btn sel mini" data-i="'+i+'" type="button">'+esc(c.s)+'</button>'+
+ CHAIN.forEach(function(c,i){h+='<button class="btn sel mini" data-i="'+i+'" type="button">'+(i+1)+' '+esc(c.s)+'</button>'+
    (i<CHAIN.length-1?'<span class="dim" style="font-family:JetBrains Mono,monospace">\u2192</span>':'')});
  h+='</div>';W.innerHTML=h;
  [].slice.call(W.querySelectorAll('button')).forEach(function(b){
