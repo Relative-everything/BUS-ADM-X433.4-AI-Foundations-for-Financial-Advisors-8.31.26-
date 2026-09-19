@@ -1,5 +1,7 @@
 # Between now and Monday
 
+**Superseded 2026-09-19 by `instructor-notes/session-3-before-monday.md`, which is the current list.** Kept as the record of the 09-17 state.
+
 Session 3 is taught Monday 2026-09-21, 6:00 PM Pacific. Written 2026-09-17, amended 2026-09-18.
 
 The page and the run sheet are done. Everything below is either something no model can do, or
