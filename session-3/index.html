@@ -1238,7 +1238,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="big">Wolfram's definition: an embedding turns a word into an array of numbers, and words with similar meanings get nearby numbers.</p>
 
   <ul class="pts">
-    <li><b>Company, not meaning.</b> The numbers measure how similar the surroundings are in which words appear, across five billion words of text: 768 per word for GPT-2, 12,288 for GPT-3.</li>
+    <li><b>Company, not meaning.</b> The numbers record which words appear around a word, across five billion words of text: 768 numbers per word for GPT-2, 12,288 for GPT-3.</li>
     <li><b>Wolfram's example.</b> "Alligator" and "crocodile" appear in interchangeable sentences, so they sit close. "Turnip" and "eagle" sit far apart. Alligators and crocodiles are different animals.</li>
     <li><b>The Cole hazard.</b> The documents use near-identical language and differ in one condition each. Retrieval runs the same nearest-neighbour test on them.</li>
   </ul>
@@ -1270,7 +1270,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p class="src">Wolfram, S. (2023), "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion": the definition, the five-billion-word construction, 768 / 12,288, alligator / crocodile, turnip / eagle <span class="conf h" data-src="src-wolfram">H</span>. Map coordinates assigned for this lesson <span class="conf l" data-src="src-wolfram">L, illustrative</span>; the distances on them are exact. Pairs and buckets constructed from the Cole set <span class="conf l" data-src="src-case">L</span>.</p>
 
-  <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort all six pairs, then open the key and argue with it.</div></div>
+  <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Sort all six pairs, then read the key and argue with it.</div></div>
 
 </section>
 
@@ -2013,9 +2013,9 @@ var TERMS=[
  {n:'alligator',x:88,y:39,cs:'wolf',dy:14},{n:'crocodile',x:92,y:31,cs:'wolf',dy:-9}
 ];
 var CSNOTE={
- trust:'One word apart in text, opposite on the only property that matters. Both appear in the Cole file and only one of them is the IDGT.',
- vote:'The entire discount on the transferred interest rests on which of these two it is. A retriever cannot tell them apart from language.',
- val:'Two valuation standards with different triggering events. Substituting one for the other is exactly the failure you are about to watch.',
+ trust:'One word apart in text, opposite on the property that matters: whether the settlor can still undo it. Both appear in the Cole file. The 2011 trust is revocable; the unsigned draft that would hold the units is not, and a retriever cannot tell them apart from language.',
+ vote:'The Cole memo asserts a valuation discount on the non-voting units only. Whether a passage describes a voting or a non-voting interest decides whether that discount applies, and a retriever cannot tell them apart from language.',
+ val:'Two valuation standards, the buy-sell agreement\u2019s formula and the appraiser\u2019s figure, each with its own triggering event. Substituting one for the other is exactly the failure you are about to watch in \u00a703.',
  wolf:'Wolfram\u2019s own example. Two different animals, placed together because people write about them the same way.'};
 (function(){
  var W=$('mapWrap'),O=$('mapOut');
@@ -2067,11 +2067,11 @@ var CSNOTE={
 /* ================= 3. Pair sorter ================= */
 var PAIRS=[
  {t:'alligator / crocodile',k:'ctx',w:'Wolfram\u2019s example: interchangeable contexts, different referents.'},
- {t:'voting interest / non-voting interest',k:'gov',w:'Same asset, different governing attribute. The discount exists only for one of them.'},
- {t:'appraised value / formula value',k:'gov',w:'Two valuation standards, each with its own triggering event. This is the pair that reaches Meg\u2019s return.'},
- {t:'the will / the trust',k:'ref',w:'Different instruments performing in identical sentence frames. Both "receive the residue" in the Cole file.'},
+ {t:'voting interest / non-voting interest',k:'gov',w:'Same asset, different governing attribute. In the Cole file a valuation discount is asserted on the non-voting units only.'},
+ {t:'appraised value / formula value',k:'gov',w:'Two valuation standards, each with its own triggering event. Substitute one for the other and the wrong figure reaches Meg\u2019s gift tax return.'},
+ {t:'the will / the trust',k:'ref',w:'Different instruments performing in identical sentence frames. In the Cole file the will pours its residue into the trust and the trust receives it, so both \u201creceive the residue\u201d.'},
  {t:'shall / may',k:'gov',w:'The highest-stakes near-neighbour in any drafted instrument, and the one chunking most often separates from its subject.'},
- {t:'grantor / trustee',k:'ref',w:'Different actors. Retrieval collapses them because they appear in identical sentence frames \u2014 and in the draft IDGT they are nearly the same person.'}
+ {t:'grantor / trustee',k:'ref',w:'Different actors. Retrieval collapses them because they appear in identical sentence frames.'}
 ];
 var BUCK=[
  {k:'ctx',t:'Interchangeable context, different referent',d:'They appear in the same sentence frames. Nothing about the swap is detectable from language alone.'},
