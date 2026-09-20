@@ -17,7 +17,7 @@ the closing check. Black numbers in the PDF are the steps that must not be skipp
 4. **6:08 BRIDGE.** ASK the four letters, in order. Click the order you are given. Key C A D B.
 5. **6:14 POLL 1**, prompts typed since Session 2. Half or more say none or 1 to 3? Cut §05, §08
    gets 6 min. Say your choice.
-6. **6:19 §01/02**, 7 min. Read the Cole panel in §00 aloud. Click "appraised value". ASK
+6. **6:19 §01/02**, 7 min. Read the four-line Cole panel in §00 aloud. Click "appraised value". ASK
    pair 3, which bucket? 2. Move on.
 7. **6:26 §03 WORKED.** ASK which passage should win? Preset 1. Say: appraisal D3 third at 3.3.
    Verdict. Presets 2, 3, 4 fast.

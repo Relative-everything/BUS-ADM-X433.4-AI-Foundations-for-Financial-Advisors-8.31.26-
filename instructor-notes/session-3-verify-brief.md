@@ -1,4 +1,4 @@
-# §09 verify block: what to open and what to look for, then sign or strike
+# The two §09 recording-law items: what to open, what to look for, and what to say on Monday
 
 Written 2026-09-18, amended 2026-09-19. Session 3 §09 carried a dashed "Requires instructor
 verification" block with two items; the block is off the page since 2026-09-19 (no text on the page
@@ -21,7 +21,7 @@ Penal Code § 637.2 and the lesson does not state California's all-party rule as
 
 **Sign if:** (2)(d) says what the page says. **Strike if:** you read it as narrower than one-party
 consent for a private person recording her own call. Confidence before you read it: high, on the
-audits' and the record's prior verification; the block exists because the rule is that you sign
+audits' and the record's prior verification; the item is on the run sheet because the rule is that you sign
 recording law, not a model.
 
 ## Item 2 · The duty of confidentiality applied to a documentation vendor

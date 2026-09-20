@@ -8,6 +8,29 @@ demonstrated. Everything else is narrated.** Session 1 measured 2 of 17 interact
 and 0 executed by a learner. A section that is read runs at about 1.0x its planned minutes; a
 section that is worked runs at 1.9x. That is the whole reason the clock below looks tight.
 
+## Changed 2026-09-19, the simplify pass
+
+Everything below this block still holds. What moved on the page:
+
+- **Both "Requires instructor verification" blocks are off the page**, the §09 one and the one in the
+  Case facts dialog. Their items are under **Verify before teaching** at the end of this sheet.
+  Nothing on the page speaks to you instead of to the room, and no lesson text names a file or a
+  build script.
+- **§00 carries the Coles in four lines**, in the panel "The Cole file, in four lines" under the
+  opening bullets: the household with David, Nathan and Claire, the plan with the seed gift and the
+  demand note, the documents, and what is new. Read it aloud at 6:19. Every exercise now works
+  without the case study, so nobody has to open Case facts.
+- **§03 prints each preset's question on its button**, so the room can commit to a passage number
+  before the click that ranks it. The hint names the one fact the judgement needs.
+- **§06's question is now "the stage whose skipped check is first seen at an examination"**. The
+  answer is still 5.
+- **§07 stage four flags "we will arrange that"** as a commitment the tool added, and gives the
+  action item no owner, which is what §08 teaches.
+- **§08's silent run tells anyone without Claude, or with a stalled run, to open Example output.**
+- **A2 offers a third meeting type** for the three who do not run client meetings.
+- **The four work-along ticks that never appeared** (the map, the presets, the C3 prediction, the
+  C4 re-vote) now appear when the room finishes each one.
+
 ## Changed 2026-09-18, the final pass
 
 - The objective is printed on the page, in §00 above the bridge, in the words below. Read it off
@@ -202,7 +225,7 @@ who is holding it if nobody does.
   dialog holds the rest for anyone who wants it; nothing on the page needs it.
 
 ### Drop order, first to go at the top
-1. §05, narrate the two-column comparison only, skip the Tuesday test. Recovers 4.
+1. §05, narrate the three bullets only, skip the Tuesday test. Recovers 4.
 2. §09 to the one-party floor only. Recovers 3.
 3. Q&A reserve from 20 to 12. Recovers 8. Only to protect the closing check.
 4. The merged §01/§02 narrated in 4 rather than 7, skipping the pair sort. Recovers 3.
@@ -260,7 +283,8 @@ steps 4 and 5, where your credential attaches. That sentence sets up the 7:36 so
 The five turns are numbered. Ask for the number of the turn that holds the one thing the file most
 needs and a tool is most likely to drop. The answer is 2, Meg's first answer, the clause about
 Nathan. Then open the four stages in order. The extraction stage's dropped clause about Nathan is the teaching
-point; the instruction below it is the thing to take home. Stage three's output is the summary the
+point; the instruction below it is the thing to take home. Stage four now flags "we will arrange that" as a
+commitment the tool added, which is the catch the §08 harvest asks for. Stage three's output is the summary the
 room runs §08 on, so leave it open on screen when you move on. At the instruction, say once that
 the headings are for any meeting: swap the word "client".
 
@@ -295,8 +319,8 @@ on the page for anyone who finishes early. Do not assign them.
 If someone does have the Office assistant and wants to run it there, that is a bonus, not the
 lesson. Do not spend the room's four minutes troubleshooting one person's licence.
 
-Harvest in chat, one line each: whether what came back was usable, and one sentence it got wrong
-or stated as settled. Nobody has to speak. That chat is the student-produced artifact to spend in
+Harvest in chat, one line each: whether what came back was usable, and one sentence it added
+or stated as settled. Those are the words on the page and in the chat line you paste. Nobody has to speak. That chat is the student-produced artifact to spend in
 the reserve at 8:12.
 
 ### session-2 s9 · The seven-step sorter, 7:36 · **WORKED 3**
@@ -310,7 +334,7 @@ The seven CFP Board step names carry no source record yet. Do not present the st
 authoritative until that record exists.
 
 ### s12 · §09, 7:52
-**[GATE]** on consent. Poll the four dispositions before revealing any answer; item 1 is built to
+**[GATE]** on consent. Poll the room on item 1, a to c, before revealing any answer; item 1 is built to
 split the room and it stays in Session 3 deliberately. Session 4 formalises the same insight against
 Regulation S-P; say that this is the version they meet again with the law attached.
 
