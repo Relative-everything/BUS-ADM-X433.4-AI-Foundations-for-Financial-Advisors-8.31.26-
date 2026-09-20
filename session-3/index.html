@@ -1564,7 +1564,7 @@ If a heading has nothing under it, write "none".</pre>
       <div id="offList" class="chiplist"></div>
       <div id="offBoxes" class="boxes"></div>
     </div>
-    <div id="offOut" class="mpanel"><span class="hd">Progress</span><span class="nil">Click a task, then a column.</span></div>
+    <div id="offOut" class="mpanel"><span class="hd">Progress</span><span class="nil">Click a task, then a bucket.</span></div>
     <div id="offKey" class="mpanel keyhide" style="display:none"></div>
   </div>
 
@@ -1598,12 +1598,12 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
     <ol style="margin:0;padding-left:22px;max-width:64ch">
       <li>Open Claude in another tab.</li>
       <li>Under prompt 1, click Copy the letter prompt with the summary.</li>
-      <li>Paste into Claude and send.</li>
+      <li>Paste into Claude and send. No Claude, or a stalled run: click Example output under prompt 1 and read that instead.</li>
       <li>Read it against the summary above. Then, in chat, one line: usable or not, and one sentence it added or stated as settled.</li>
     </ol>
   </div>
 
-  <p class="src">The three prompts, the summary and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>. The summary is &sect;07's categorisation output. The two example outputs are one model's answers to prompts 1 and 2 on it, lightly abridged <span class="conf l" data-src="src-case">L</span>. No claim is made about any vendor's in-application assistant; the pattern holds wherever you run it.</p>
+  <p class="src">The three prompts, the summary and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>. The summary is &sect;07's categorisation output. The two example outputs are one model's answers to prompts 1 and 2 on it, lightly abridged <span class="conf l" data-src="src-case">L</span>. The pattern holds wherever you run it.</p>
 
   <div class="check" data-gate="g9b"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six tasks, then run the silent run. Synthetic material only.</div></div>
 
@@ -2440,10 +2440,10 @@ mkSorter({list:$('chkList'),boxes:$('chkBoxes'),out:$('chkOut'),key:$('chkKey'),
 
 /* ================= 10b. The client review: which kind of work, or not an AI task ================= */
 var OFFI=[
- {t:'Update the review letter\u2019s figures and the three decisions from the meeting',k:'word',w:'Prose from a source you hand it, with every change marked. The letter\u2019s structure stays yours.'},
+ {t:'Update the review letter\u2019s figures and the open points from the meeting',k:'word',w:'Prose from a source you hand it, with every change marked. The letter\u2019s structure stays yours.'},
  {t:'Add this year\u2019s column to the cash-flow table using last year\u2019s formulas',k:'excel',w:'A repeatable change to a sheet it can see. Ask it to say which formulas it copied.'},
- {t:'Rebuild the six review slides from the meeting summary',k:'ppt',w:'The summary is the source; the template is the constraint. One decision per slide keeps it checkable.'},
- {t:'Decide whether to recommend a sale or a gift of the units',k:'none',w:'A judgment, and the basis for it is what the file needs (\u00a710). An assistant can list the considerations; it cannot own the decision.'},
+ {t:'Rebuild the six review slides from the meeting summary',k:'ppt',w:'The summary is the source; the template is the constraint. One summary line per slide keeps it checkable.'},
+ {t:'Decide whether to recommend a sale or a gift to the trust',k:'none',w:'A judgment, and the basis for it is what the file needs (\u00a710). An assistant can list the considerations; it cannot own the decision.'},
  {t:'Flag every cash-flow cell that moved more than ten percent',k:'excel',w:'Arithmetic over the sheet, stated as a rule. Exactly what an assistant is for, and exactly what you then read.'},
  {t:'Sign off the letter before it goes to the client',k:'none',w:'The check is yours. Every number against its source, every decision against the meeting. No tool does this for you.'}
 ];
@@ -2468,7 +2468,7 @@ var OFFEX=[
   'David asked that the appraisal be looked at again before anything is signed. This is an open action item. The summary does not record who will do it or by when, and we will confirm both with you.',
   'One question remains open: whether the competitor\u2019s approach changes the timing on the note structure. It was raised and not answered, and it will be on our next agenda.',
   'No decisions were made at this meeting.',
-  'Kind regards, [Adviser]',
+  'Kind regards, [Advisor]',
   '',
   'Sentence sources: 1 and 2, FACTS THAT CHANGED. 3, FACTS THAT CHANGED. 4 and 5, ACTION ITEMS (no owner assigned). 6, OPEN QUESTIONS. 7, DECISIONS: none.',
   '<span class="flag">Not in the summary: \u201cwe will confirm both with you\u201d and \u201cit will be on our next agenda\u201d. Two commitments the assistant added. That is the sentence to catch before the letter goes.</span>'],
