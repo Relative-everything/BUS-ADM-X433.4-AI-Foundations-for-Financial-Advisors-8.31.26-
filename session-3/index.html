@@ -1362,7 +1362,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <ul class="pts">
     <li><b>The finding step, alone.</b> Anthropic's best setup still missed the right passage for about 2 questions in 100, down from about 6 <span class="conf h" data-src="src-anthropic-ctx">H</span>.</li>
     <li><b>The reading step.</b> Stanford tested grounded legal research tools sold as hallucination-free: unsupported answers on 17% to 33% of questions, against 43% with no documents <span class="conf h" data-src="src-magesh">H</span>.</li>
-    <li><b>In the Cole file.</b> Preset 1 in §03: fully cited, quotes Article VII correctly, wrong. That formula is for a death or a disability, not a sale to a trust. No error message. Only a person who knows the difference catches it.</li>
+    <li><b>In the Cole file.</b> Preset 1 in &sect;03: fully cited, quotes Article VII correctly, wrong. That formula is for a death, a disability or a withdrawal, not a sale to a trust. No error message. Only a person who knows the difference catches it.</li>
   </ul>
 
   <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em>: top-20 retrieval failure 5.7% at baseline, 1.9% with contextual embeddings, BM25 and reranking <span class="conf h" data-src="src-anthropic-ctx">H</span>; benchmarked on codebases, fiction and papers, not advisory documents <span class="conf m" data-src="src-anthropic-ctx">M, transfer unverified</span>. Magesh et al. (2025), <em>Journal of Empirical Legal Studies, 22</em>(2), 216: Lexis+ AI above 17%, Westlaw AI-Assisted Research about 33%, GPT-4 43%, tested May 2024 <span class="conf h" data-src="src-magesh">H, peer reviewed</span>. The Cole example is synthetic <span class="conf l" data-src="src-case">L</span>.</p>
@@ -2180,7 +2180,7 @@ mkSorter({list:$('ragList'),boxes:$('ragBoxes'),out:$('ragOut'),key:$('ragKey'),
 /* ===== PRESERVED FROM PRIOR BUILD - data arrays, chart builder, chart calls, slopegraph ===== */
 var HALL=[
  {l:'GPT-4, no documents',v:43,c:'#9A4B22'},
- {l:'Westlaw AI-AR, grounded',v:33,c:'#9A4B22'},
+ {l:'Westlaw AI-Assisted, grounded',v:33,c:'#9A4B22'},
  {l:'Lexis+ AI, grounded',v:17,c:'#8A6A12'},
  {l:'Finding step alone, best setup',v:1.9,c:'#0E5A55'}
 ];
@@ -2274,7 +2274,7 @@ var TUNE=[
  {q:'On Tuesday the Cole appraisal is re-run and the supportable discount changes. Which assistant gives the new figure on Wednesday with no engineering work?',
   opts:[{k:'gr',t:'A grounded assistant that reads the file each time'},{k:'ft',t:'A model fine-tuned on the firm\u2019s documents'},{k:'gen',t:'A general model answering from what it was trained on'}],
   a:'gr',
-  fb:{gr:'Correct. Replace the appraisal in the file and the next answer reads the replacement, and it can point at the page it came from. Anthropic\u2019s own guidance: under about 200,000 tokens, roughly 500 pages, put the whole file in the prompt rather than build a retrieval pipeline. The Cole set is nine documents.',
+  fb:{gr:'Correct. Replace the appraisal in the file and the next answer reads the replacement, and it can point at the page it came from. Anthropic\u2019s own guidance: under about 200,000 tokens, roughly 500 pages, put the whole file in the prompt rather than use a retrieval tool. The Cole set is nine documents.',
       ft:'No. The old discount stays inside the model until it is retrained, which is a project, not an edit. And when it answers, it cannot cite the document the figure came from, because the figure is no longer in a document.',
       gen:'No. It was never given the appraisal at all, old or new. Anything it says about the discount is a guess dressed as an answer, and the only way to find out is after it reaches Meg.'}}
 ];
