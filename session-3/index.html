@@ -1167,7 +1167,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 <!-- ============ 1 ============ -->
 <section class="slide" id="s1" data-nav="Bridge + case">
-  <div class="eyebrow"><span>BUS ADM X433.4 · Session 3</span><span class="mins">5 min</span></div>
+  <div class="eyebrow"><span>BUS ADM X433.4 &middot; Session 3</span><span class="mins">5 min</span></div>
   <h1>Gathering and Documenting Client Information</h1>
   <p class="lede">Grounding makes the model cite your sources. The nearest passage is not always the right one.</p>
   <div class="panel pace" data-task="t-s1" data-comp="retrieval-bridge"><div id="paceOut"></div>
@@ -1225,7 +1225,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <a class="apxcard" href="#sPrep"><span class="ac">A2 &middot; 14 min &middot; after &sect;06</span><b>The Intake Questionnaire, Drafted With AI</b></a>
     <a class="apxcard" href="#sChk"><span class="ac">A3 &middot; 14 min &middot; after &sect;07</span><b>Check the Summary Against the Transcript</b></a>
     <a class="apxcard" href="#s11"><span class="ac">C3 &middot; 14 min &middot; after &sect;07</span><b>Note-Taker Adoption Against Note-Taker Satisfaction</b></a>
-    <a class="apxcard" href="#sVend"><span class="ac">A5 &middot; 9 min &middot; after &sect;09</span><b>Five Questions for a Note-Taker Vendor</b></a>
+    <a class="apxcard" href="#sVend"><span class="ac">A5 &middot; 9 min &middot; after &sect;09</span><b>Eight Questions for a Note-Taker Vendor</b></a>
     <a class="apxcard" href="#s15"><span class="ac">C4 &middot; 18 min &middot; after &sect;10</span><b>Citation-Backed Output and Verification Effort</b></a>
   </div>
 </section>
@@ -1318,16 +1318,16 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="big">Most planning files fit in one prompt. Anthropic's own guidance: under roughly 200,000 tokens, about 500 pages, put the whole set of documents in and skip retrieval.</p>
 
   <ul class="pts">
-    <li><b>Paste or attach the documents</b> when the whole set fits. Everything the model needs is in front of it, and nothing has to be found first.</li>
-    <li><b>Use a retrieval tool</b> when the set is far bigger than one prompt: a firm's whole archive, years of email. Then the finding step exists, and so do its failures (&sect;04).</li>
-    <li><b>Either way, tell it to answer only from the documents</b> and to say so when the answer is not in them.</li>
-    <li><b>The context window</b> is the model's working space for one exchange: everything you attach plus the whole conversation so far, and all of it counts <span class="conf h" data-src="src-context-windows">H</span>.</li>
+    <li><b>Fits in one prompt.</b> Paste or attach the whole set. Everything the model needs is in front of it, and nothing has to be found first.</li>
+    <li><b>Needs a retrieval tool.</b> A firm's whole archive or years of email is far bigger than one prompt. Then the finding step exists, and so do its failures (&sect;04).</li>
+    <li><b>Either way.</b> Tell it to answer only from the documents and to say so when the answer is not in them.</li>
+    <li><b>The context window.</b> The model's working space for one exchange: everything you attach plus the whole conversation so far, and all of it counts <span class="conf h" data-src="src-context-windows">H</span>.</li>
   </ul>
 
   <div class="panel" data-task="t-sRag" data-comp="two-bucket-sorter">
     <span class="do">Do this now: 5 minutes</span>
     <h4>Fits in One Prompt, or Needs a Retrieval Tool</h4>
-    <p class="hint">Six document sets. Place each. The sizes are rough, and the rule of thumb is about 500 pages.</p>
+    <p class="hint">Six document sets. Place each; the sizes are rough.</p>
     <div class="sorter">
       <div id="ragList" class="chiplist"></div>
       <div id="ragBoxes" class="boxes"></div>
@@ -1338,7 +1338,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em>: the roughly 200,000-token, about 500-page threshold below which the whole corpus goes in the prompt <span class="conf h" data-src="src-anthropic-ctx">H</span>. Anthropic, <em>Context windows</em>, Claude Platform Docs, fetched 2026-09-13: everything in the request counts toward the window, the conversation so far included <span class="conf h" data-src="src-context-windows">H</span>. The six sets are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
-  <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six sets, then say which one your own practice is.</div></div>
+  <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six sets, then say which one is closest to the files you work with.</div></div>
 
 </section>
 
@@ -1522,19 +1522,19 @@ If a heading has nothing under it, write "none".</pre>
 
   <p class="src">The summary lines are written for this lesson from the &sect;07 excerpt; two are wrong on purpose, labelled in the key and in the footer's case entry <span class="conf l" data-src="src-case">L</span>.</p>
 
-  <div class="check" data-gate="ga6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Find both planted errors, then say which one your own tool would have produced.</div></div>
+  <div class="check" data-gate="ga6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Find both planted errors, then say which one you would have let through reading the summary alone.</div></div>
 
 </section>
 
-<section class="slide apx" id="s11" data-nav="C3 · Adoption" data-insert-after="s10" data-tier="foundational">
+<section class="slide apx" id="s11" data-nav="C3 &middot; Adoption" data-insert-after="s10" data-tier="foundational">
   <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C3 &middot; Note-Taker Adoption Against Note-Taker Satisfaction</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
   <div class="eyebrow"><span>Appendix C3 &middot; Market evidence</span><span class="mins">14 min</span></div>
   <h2>Note-Taker Adoption Against Note-Taker Satisfaction</h2>
 
-  <p class="big">Rank note-takers by adoption, then by satisfaction, and the orders invert.</p>
+  <p class="big">Rank note-takers by adoption, then by satisfaction. Do the two orders match?</p>
 
   <ul class="pts">
-    <li><b>Kitces, autumn 2024.</b> The most-adopted tool, Zoom's AI Companion, a toggle inside software advisors already pay for, ranked last on satisfaction. Advisor-specific tools at $60 to $80 a month or more ranked highest.</li>
+    <li><b>Kitces, autumn 2024.</b> The most-adopted tool was Zoom's AI Companion, a toggle inside software advisors already pay for. Advisor-specific tools cost $60 to $80 a month or more.</li>
     <li><b>Why.</b> A meeting-platform tool summarises the meeting. An advisor-specific tool writes the note into the CRM, queues the tasks, drafts the recap and prepares the next agenda. Advisors were rating those four steps.</li>
   </ul>
 
@@ -1549,7 +1549,7 @@ If a heading has nothing under it, write "none".</pre>
 
   <p class="src">Kitces.com (15 Jan 2025): Zoom AI Companion first in adoption and last in satisfaction; industry-specific tools lead satisfaction; $60 to $80 a month <span class="conf h" data-src="src-kitces-notetakers">H</span>. The slopegraph plots ranks, not scores <span class="conf m" data-src="src-kitces-notetakers">M, rank order published, scores not</span>.</p>
 
-  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Name the segment you sit in and whether its adoption rate matches your own.</div></div>
+  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Name the tool you use, if any, and where you would have placed it.</div></div>
 
 </section>
 
@@ -1648,9 +1648,9 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
 </section>
 
 <section class="slide apx" id="sVend" data-nav="A5 &middot; Vendor questions" data-insert-after="s12" data-tier="standard">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A5 &middot; Five Questions for a Note-Taker Vendor</b><span>9 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A5 &middot; Eight Questions for a Note-Taker Vendor</b><span>9 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
   <div class="eyebrow"><span>Appendix A5 &middot; Due diligence</span><span class="mins">9 min</span></div>
-  <h2>Five Questions for a Note-Taker Vendor</h2>
+  <h2>Eight Questions for a Note-Taker Vendor</h2>
 
   <p class="big">The contract either answers these or it does not. Ask before you sign, in writing, and file the answers with the contract.</p>
 
@@ -1665,7 +1665,7 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
 
   <p class="src">The questions are written for this lesson from the confidentiality obligation in &sect;09 <span class="conf l" data-src="src-case">L</span>; Iskowitz (29 Jul 2025) is the assigned reading on the compliance framing. No vendor's answer is asserted here.</p>
 
-  <div class="check" data-gate="ga7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Build the email for the tool you use or are considering, and send it.</div></div>
+  <div class="check" data-gate="ga7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Build the email for a tool you use or might try. Keep it for the day a vendor is on the table.</div></div>
 
 </section>
 
@@ -1734,7 +1734,7 @@ then a list of every element where my answer was thin.</pre>
 
 </section>
 
-<section class="slide apx" id="s15" data-nav="C4 · Discussion" data-insert-after="s13" data-tier="standard">
+<section class="slide apx" id="s15" data-nav="C4 &middot; Discussion" data-insert-after="s13" data-tier="standard">
   <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C4 &middot; Citation-Backed Output and Verification Effort</b><span>18 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
   <div class="eyebrow"><span>Appendix C4 &middot; Discussion</span><span class="mins">18 min</span></div>
   <h2>Citation-Backed Output and Verification Effort</h2>
@@ -1804,7 +1804,7 @@ then a list of every element where my answer was thin.</pre>
     <thead><tr><th>Section</th><th>Title</th><th>Min</th></tr></thead>
 <!-- APXBUDGET:BEGIN generated-by=scripts/build-appendix.mjs -->
     <tbody>
-      <tr><td>BUS ADM X433.4 · Session 3</td><td>Gathering and Documenting Client Information</td><td class="n">5</td></tr>
+      <tr><td>BUS ADM X433.4 &middot; Session 3</td><td>Gathering and Documenting Client Information</td><td class="n">5</td></tr>
       <tr><td>01 and 02 &middot; Mechanism</td><td>Meaning Space, and the Failure It Creates</td><td class="n">7</td></tr>
       <tr><td>03 &middot; RAG, mechanically</td><td>Retrieval Mechanics: Chunking, Indexing, and Ranking</td><td class="n">6</td></tr>
       <tr><td>04 &middot; What grounding fixes</td><td>What Grounding Fixes, and What It Does Not</td><td class="n">6</td></tr>
@@ -1819,7 +1819,7 @@ then a list of every element where my answer was thin.</pre>
       <tr class="apxrow"><td>Appendix A2 &middot; Prep</td><td>The Intake Questionnaire, Drafted With AI</td><td class="n">14</td></tr>
       <tr class="apxrow"><td>Appendix A3 &middot; The after-meeting check</td><td>Check the Summary Against the Transcript</td><td class="n">14</td></tr>
       <tr class="apxrow"><td>Appendix C3 &middot; Market evidence</td><td>Note-Taker Adoption Against Note-Taker Satisfaction</td><td class="n">14</td></tr>
-      <tr class="apxrow"><td>Appendix A5 &middot; Due diligence</td><td>Five Questions for a Note-Taker Vendor</td><td class="n">9</td></tr>
+      <tr class="apxrow"><td>Appendix A5 &middot; Due diligence</td><td>Eight Questions for a Note-Taker Vendor</td><td class="n">9</td></tr>
       <tr class="apxrow"><td>Appendix C4 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">18</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>

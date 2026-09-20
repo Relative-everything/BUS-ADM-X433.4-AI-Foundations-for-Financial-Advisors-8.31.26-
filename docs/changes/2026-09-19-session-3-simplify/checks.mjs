@@ -30,6 +30,7 @@ say(/Suppose your firm/.test(txt('#s12 .hint')) && /son who works/.test(txt('#s1
 say(!/Meg agreed|counsel gave|your own tool/.test(txt('#s13')) && /Copy the prompt/.test(txt('#copyBtn')) && /Cole review/.test(txt('[data-gate="g10"]')), 'SM-017', '§10 agrees with the meeting record and gives a reader without a meeting something to run the prompt on');
 { const c = $('#ckCopy'); if (c) c.click(); say(!/standing instruction/.test(txt('#ckList')) && $('[data-gate="g12"]').classList.contains('done'), 'SM-018', '§11 checklist speaks plainly and the work-along completes on copy'); }
 say(/a death, a disability or a withdrawal/.test(txt('#s6')) && !/AI-AR|retrieval pipeline/.test(html), 'SM-019', '§04 states Article VII as the passage does and the chart label is a name');
+say(/Eight Questions/.test(txt('#sVend h2')) && /Eight Questions/.test(txt('#apx')) && !/segment you sit in|your own practice|your own tool would|orders invert/.test(html) && /ranked last/.test(txt('#s11')) === false, 'SM-020', 'the appendix sections stand for a reader alone and A5 is titled by its count');
 /* SM-ITEMS */
 
 /* ---- standing invariants carried from the 09-18 checks ---- */
