@@ -2668,7 +2668,7 @@ REVEALS.push(showDefence,showRevote);
 var CKL=[
  {g:'Before',t:'Consent to record is asked for and noted, every meeting.'},
  {g:'Before',t:'The note-taker is on the call, or the recording will be uploaded afterwards.'},
- {g:'Before',t:'The standing instruction tells the tool what to extract and what to leave out.'},
+ {g:'Before',t:'The instruction given to the tool says what to extract and what to leave out.'},
  {g:'Before',t:'The prep prompt has the file attached and says: answer only from these documents.'},
  {g:'During',t:'The recording is running before anything substantive is said.'},
  {g:'After',t:'The summary is read against the transcript before it goes anywhere.'},
@@ -2695,6 +2695,7 @@ var CKL=[
   if(n===CKL.length&&typeof mark==='function')mark('g12');
  }
  B.onclick=function(){
+  if(typeof mark==='function')mark('g12');
   var txt='Meeting checklist (Session 3)\n';var g='';
   CKL.forEach(function(c,i){if(c.g!==g){g=c.g;txt+='\n'+g+'\n'}txt+=(on[i]?'[x] ':'[ ] ')+(i+1)+'. '+c.t+'\n'});
   function ok(){M.textContent='Copied.';setTimeout(function(){M.textContent=''},2500)}

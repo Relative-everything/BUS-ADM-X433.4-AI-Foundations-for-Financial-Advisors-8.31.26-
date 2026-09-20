@@ -28,6 +28,7 @@ say(/first seen at an examination/.test(txt('#s9 .hint')) && !/already said/.tes
 { const b = d.querySelectorAll('#ntStages button'); if (b[0]) b[0].click(); if (b[3]) b[3].click(); say(/Meg and David Cole/.test(txt('#s10')) && /\[01:00\]/.test(txt('#ntStages')) && !/Owner: you/.test(txt('#ntStages')) && /Not in the meeting/.test(txt('#ntStages')) && !/your own tool/.test(txt('[data-gate="g8"]')), 'SM-015', '§07 names the speakers, stamps its transcript, and its follow-up obeys the not-given rule'); }
 say(/Suppose your firm/.test(txt('#s12 .hint')) && /son who works/.test(txt('#s12')) && !/split the room|own state's rule/.test(html), 'SM-016', '§09 says who Nathan is and asks nothing the learner cannot answer');
 say(!/Meg agreed|counsel gave|your own tool/.test(txt('#s13')) && /Copy the prompt/.test(txt('#copyBtn')) && /Cole review/.test(txt('[data-gate="g10"]')), 'SM-017', '§10 agrees with the meeting record and gives a reader without a meeting something to run the prompt on');
+{ const c = $('#ckCopy'); if (c) c.click(); say(!/standing instruction/.test(txt('#ckList')) && $('[data-gate="g12"]').classList.contains('done'), 'SM-018', '§11 checklist speaks plainly and the work-along completes on copy'); }
 /* SM-ITEMS */
 
 /* ---- standing invariants carried from the 09-18 checks ---- */
