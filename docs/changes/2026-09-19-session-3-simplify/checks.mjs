@@ -31,6 +31,7 @@ say(!/Meg agreed|counsel gave|your own tool/.test(txt('#s13')) && /Copy the prom
 { const c = $('#ckCopy'); if (c) c.click(); say(!/standing instruction/.test(txt('#ckList')) && $('[data-gate="g12"]').classList.contains('done'), 'SM-018', '§11 checklist speaks plainly and the work-along completes on copy'); }
 say(/a death, a disability or a withdrawal/.test(txt('#s6')) && !/AI-AR|retrieval pipeline/.test(html), 'SM-019', '§04 states Article VII as the passage does and the chart label is a name');
 say(/Eight Questions/.test(txt('#sVend h2')) && /Eight Questions/.test(txt('#apx')) && !/segment you sit in|your own practice|your own tool would|orders invert/.test(html) && /ranked last/.test(txt('#s11')) === false, 'SM-020', 'the appendix sections stand for a reader alone and A5 is titled by its count');
+{ const m = d.querySelectorAll('#mapWrap g.mp'); [0,1,2,3].forEach(i => m[i] && m[i].dispatchEvent(new dom.window.Event('click', {bubbles:true}))); const q = d.querySelectorAll('#qPresets button'); q.forEach(b => b.click()); const p = $('#predBtns button'); if (p) p.click(); const v = $('#voteBtns button'); if (v) v.click(); const r = $('#revoteBtns button'); if (r) r.click(); const done = id => $('[data-gate="' + id + '"]').classList.contains('done'); say(done('g2') && done('g4') && done('ga3') && done('ga4'), 'SM-021', 'the four work-along gates that never flipped now flip on completion'); }
 /* SM-ITEMS */
 
 /* ---- standing invariants carried from the 09-18 checks ---- */

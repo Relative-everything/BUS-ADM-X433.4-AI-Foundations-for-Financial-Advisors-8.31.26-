@@ -1880,7 +1880,7 @@ function mkSorter(cfg){
   var done=Object.keys(placed).length;
   O.className='mpanel'+(done?' has':'');
   O.innerHTML='<span class="hd">'+esc(cfg.label||'Progress')+'</span>'+done+' of '+items.length+' placed'+(done?' \u00b7 '+score+' right':'')+'.'+
-   (sel>=0?'<br><span class="good">Selected: '+(sel+1)+'. '+esc(items[sel].t)+' Now click the bucket it belongs in.</span>':
+   (sel>=0?'<br><span class="good">Selected: '+(sel+1)+'. '+esc(items[sel].t)+'<br>Now click the bucket it belongs in.</span>':
     (done<items.length?'<br>Click an item, then the bucket it belongs in.':'<br><span class="good">All placed. The key is below.</span>'));
  }
  function showKey(){
@@ -2018,7 +2018,7 @@ var CSNOTE={
  val:'Two valuation standards, the buy-sell agreement\u2019s formula and the appraiser\u2019s figure, each with its own triggering event. Substituting one for the other is exactly the failure you are about to watch in \u00a703.',
  wolf:'Wolfram\u2019s own example. Two different animals, placed together because people write about them the same way.'};
 (function(){
- var W=$('mapWrap'),O=$('mapOut');
+ var W=$('mapWrap'),O=$('mapOut'),seen={};
  var VW=720,VH=430,PX=70,PY=34;
  var sx=function(x){return PX+(x/100)*(VW-PX-90)},sy=function(y){return PY+(y/100)*(VH-PY-40)};
  var s='<svg viewBox="0 0 '+VW+' '+VH+'" role="img" aria-label="Illustrative two-dimensional projection of a meaning space over the Cole document vocabulary">';
@@ -2058,6 +2058,7 @@ var CSNOTE={
   h+='<br>'+(flag?'<span class="flag">Confusable pair. '+CSNOTE[a.cs]+'</span>'
     :'<span class="good">No confusable pair in the top three for this term.</span>');
   O.className='mpanel has';O.innerHTML=h;
+  seen[i]=1;if(Object.keys(seen).length>=4&&typeof mark==='function')mark('g2');
  }
  [].slice.call(W.querySelectorAll('.mp')).forEach(function(g){
   g.addEventListener('click',function(){pick(parseInt(g.dataset.i,10))});
@@ -2120,14 +2121,14 @@ var PRESET=[
   w:'Right passage first. Note what the answer will not say: the note is unsigned, which the passage does say, and whether the principal still matches a current appraisal, which no passage says.'}
 ];
 (function(){
- var P=$('qPresets'),Q=$('qBox'),O=$('qOut'),V=$('qVer'),cur=-1;
+ var P=$('qPresets'),Q=$('qBox'),O=$('qOut'),V=$('qVer'),cur=-1,ran={};
  /* The index is the first sentence of each chunk, read from the injected
     corpus at load, so it cannot drift from Part O and does not touch it. */
  var IX=$('qIndexList');if(IX){IX.innerHTML=CORP.map(function(c){return '<b>'+esc(c.id)+'</b> '+esc(String(c.t).split('.')[0])}).join('<br>')}
  PRESET.forEach(function(p,i){
   var b=document.createElement('button');b.className='btn sel mini';b.type='button';
   b.textContent='Preset '+(i+1)+' \u00b7 '+p.q.charAt(0).toUpperCase()+p.q.slice(1);
-  b.onclick=function(){cur=i;Q.value=p.q;[].slice.call(P.children).forEach(function(c,j){c.classList.toggle('act',j===i)});run()};
+  b.onclick=function(){cur=i;ran[i]=1;Q.value=p.q;[].slice.call(P.children).forEach(function(c,j){c.classList.toggle('act',j===i)});run();if(Object.keys(ran).length===PRESET.length&&typeof mark==='function')mark('g4')};
   P.appendChild(b)});
  function run(){
   var q=Q.value.trim();if(!q){O.className='mpanel';O.innerHTML='<span class="hd">Ranked passages</span><span class="nil">Type a question.</span>';return}
@@ -2520,7 +2521,7 @@ REVEALS.push(showSlope);
    O.innerHTML='<span class="hd">Your prediction</span>'+esc(o)+'<br><br><span class="hd">Published result</span>'+
     (ok?'<span class="good">Correct \u2014 last.</span>':'<span class="flag">Last.</span>')+
     ' The most-adopted tool ranked lowest on advisor satisfaction. Adoption measured convenience; satisfaction measured whether the four after-meeting steps got done.';
-   showSlope();
+   showSlope();if(typeof mark==='function')mark('ga3');
   };
   B.appendChild(b)});
 })();
@@ -2658,7 +2659,7 @@ function showRevote(){
    if(v1===null){O.className='mpanel';O.innerHTML='<span class="hd">Vote one</span><span class="flag">Cast the first vote before re-voting.</span>';return}
    v2=i;
    [].slice.call(RB.children).forEach(function(c,j){c.classList.toggle('act',j===i)});
-   showRevote();
+   showRevote();if(typeof mark==='function')mark('ga4');
   };
   RB.appendChild(b)});
 })();
