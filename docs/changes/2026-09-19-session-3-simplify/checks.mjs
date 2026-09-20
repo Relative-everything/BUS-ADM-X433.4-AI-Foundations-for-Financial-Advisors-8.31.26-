@@ -22,6 +22,7 @@ say(!/CASE\.md|lines 3 and 5/.test(txt('#sChk .src')) && /wrong on purpose/.test
 say(!/three decisions|No claim is made|Adviser|then a column/.test(txt('#sOff')) && d.querySelectorAll('#sOff ol li').length === 4 && /Example output under prompt 1/.test(txt('#sOff ol')), 'SM-009', '§08 agrees with its own summary and the silent run has a fallback');
 say(d.querySelectorAll('#ppMeet button').length === 3 && !/\[Not included/.test(txt('#sPrep')) && !/your own tool|your next meeting/.test(txt('#sPrep')), 'SM-010', 'A2 offers a non-client meeting and presupposes no tool or meeting');
 say(/The Cole file, in four lines/.test(txt('#s1')) && /Nathan/.test(txt('#s1')) && /seed gift/.test(txt('#s1')) && /Grounding:/.test(txt('#s1')), 'SM-011', '§00 carries the four-line Cole panel and names grounding');
+say(/also called grounding/.test(txt('#s4')) && /Ten passages/.test(txt('#s4')) && /Preset 1 · What value should we use/.test(txt('#qPresets')) && /selling shares to a trust/.test(txt('#s4 .hint')), 'SM-012', '§03 defines grounding, reconciles nine documents with ten passages, and prints each preset question on its button');
 /* SM-ITEMS */
 
 /* ---- standing invariants carried from the 09-18 checks ---- */

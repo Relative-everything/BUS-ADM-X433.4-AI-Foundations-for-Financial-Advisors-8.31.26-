@@ -1278,21 +1278,21 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>03 &middot; RAG, mechanically</span><span class="mins">6 min</span></div>
   <h2>Retrieval Mechanics: Chunking, Indexing, and Ranking</h2>
 
-  <p class="big">Retrieval-augmented generation, RAG: the model answers from your documents instead of from memory. Four steps, none of them mysterious.</p>
+  <p class="big">Retrieval-augmented generation, RAG, also called grounding: the model answers from your documents instead of from memory. Four steps.</p>
 
   <ul class="pts">
     <li><b>Split.</b> The documents are cut into short passages.</li>
-    <li><b>Index.</b> Each passage gets a numeric fingerprint, the kind §01 showed.</li>
-    <li><b>Rank.</b> Your question gets the same fingerprint, and the passages closest to it rank highest.</li>
+    <li><b>Index.</b> Each passage gets its own embedding, the array of numbers from &sect;01.</li>
+    <li><b>Rank.</b> Your question gets one too, and the passages closest to it rank highest.</li>
     <li><b>Answer.</b> The top few passages are pasted into the prompt and the model is told to answer only from them.</li>
-    <li><b>The Cole set.</b> The 2011 will, trust, power of attorney and healthcare directive; the 2014 buy-sell; the 2023 appraisal; an unsigned memo and two unsigned drafts. Ten passages.</li>
-    <li><b>Where it fails.</b> The tool reads only what the ranker hands it, so everything goes wrong in the ranking or in the reading. Two of the four presets are built to fail, and nothing on screen says so.</li>
+    <li><b>The Cole set.</b> The 2011 will, trust, power of attorney and healthcare directive; the 2014 buy-sell; the 2023 appraisal; an unsigned memo and two unsigned drafts. Nine documents. Ten passages, because the buy-sell gives two.</li>
+    <li><b>Where it fails.</b> The tool reads only what the ranker hands it, so every failure is in the ranking or in the reading, and nothing on screen says which.</li>
   </ul>
 
   <div class="panel" data-task="t-s4" data-comp="estimate-then-reveal">
     <span class="do">Do this now — 6 minutes</span>
     <h4>The Retriever on the Cole Document Set</h4>
-    <p class="hint">Say the number of the passage you think should win. Pick a preset, read the top passage, then decide before the verdict whether advice built on it alone would be right for Meg.</p>
+    <p class="hint">Each preset is a question, printed on its button. Say the number of the passage that should answer it, then click the preset and read the top passage. Before the verdict, decide whether advice built on it alone would be right for Meg, who is selling shares to a trust.</p>
     <p style="margin:0 0 8px"><span class="sim">Live index over ten synthetic passages</span></p>
     <div class="mpanel has" style="min-height:0;margin:0 0 14px"><span class="hd">The ten passages, by number</span><span id="qIndexList" style="display:block;line-height:1.6"></span></div>
     <div class="row" id="qPresets" style="margin-bottom:14px"></div>
@@ -2126,7 +2126,7 @@ var PRESET=[
  var IX=$('qIndexList');if(IX){IX.innerHTML=CORP.map(function(c){return '<b>'+esc(c.id)+'</b> '+esc(String(c.t).split('.')[0])}).join('<br>')}
  PRESET.forEach(function(p,i){
   var b=document.createElement('button');b.className='btn sel mini';b.type='button';
-  b.textContent='Preset '+(i+1);
+  b.textContent='Preset '+(i+1)+' \u00b7 '+p.q.charAt(0).toUpperCase()+p.q.slice(1);
   b.onclick=function(){cur=i;Q.value=p.q;[].slice.call(P.children).forEach(function(c,j){c.classList.toggle('act',j===i)});run()};
   P.appendChild(b)});
  function run(){
