@@ -250,9 +250,9 @@ option's feedback aloud whatever the room picked. First to drop if behind.
 
 ### s9 · §06, 6:52
 Before the stages: the one question for the three non-advisors, in their section above. Then a
-second question: the number of the stage whose skipped check is found last. The answer is
-5, Log, at examination; 2 and 3 are the ones nobody ever sees, which is worth one sentence when
-you open them. Click every stage, 1 to 5. **[GATE]** at the Log stage. Say once, in one sentence, that everything tonight
+second question: the number of the stage whose skipped check is first seen at an examination.
+The answer is 5, Log; 2 and 3 are the ones nobody ever sees, which is worth one sentence when you
+open them. Click every stage, 1 to 5. **[GATE]** at the Log stage. Say once, in one sentence, that everything tonight
 lives inside steps 1, 2 and 7 of the Board's seven-step process, and that nothing tonight touches
 steps 4 and 5, where your credential attaches. That sentence sets up the 7:36 sorter, and the page links to it under the five stages.
 

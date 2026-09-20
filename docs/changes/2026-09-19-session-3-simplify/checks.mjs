@@ -24,6 +24,7 @@ say(d.querySelectorAll('#ppMeet button').length === 3 && !/\[Not included/.test(
 say(/The Cole file, in four lines/.test(txt('#s1')) && /Nathan/.test(txt('#s1')) && /seed gift/.test(txt('#s1')) && /Grounding:/.test(txt('#s1')), 'SM-011', '§00 carries the four-line Cole panel and names grounding');
 say(/also called grounding/.test(txt('#s4')) && /Ten passages/.test(txt('#s4')) && /Preset 1 · What value should we use/.test(txt('#qPresets')) && /selling shares to a trust/.test(txt('#s4 .hint')), 'SM-012', '§03 defines grounding, reconciles nine documents with ten passages, and prints each preset question on its button');
 say(!/IDGT|nearly the same person|reaches Meg’s return/.test(html) && /gift tax return/.test(html), 'SM-013', 'the map notes and pair explanations stand on their own');
+say(/first seen at an examination/.test(txt('#s9 .hint')) && !/already said/.test(html), 'SM-014', '§06 asks a question with one answer and Prep does not presuppose the §07 excerpt');
 /* SM-ITEMS */
 
 /* ---- standing invariants carried from the 09-18 checks ---- */
