@@ -1192,7 +1192,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <span class="plab">The Cole file, in four lines</span>
     <ul class="pts" style="margin:0">
       <li><b>The household.</b> Meg Cole owns all the shares of Cole Precision Components, CPC, a Rockford aerospace-fastener maker, and runs it. David is her husband. Their son Nathan works in the company; their daughter Claire wants no part in owning it.</li>
-      <li><b>The plan, nothing signed.</b> Split the company into voting and non-voting units. Give a small block of non-voting units, the seed gift, to a new irrevocable trust for David's benefit, then sell a much larger block to the same trust for a demand note: interest only, principal callable at any time. A planning memo asserts a valuation discount on the non-voting units; no appraiser has been engaged.</li>
+      <li><b>The plan, nothing signed.</b> Put all the company's shares into a family holding company with voting and non-voting units. Give a small block of non-voting units, the seed gift, to a new irrevocable trust for David's benefit, then sell a much larger block to the same trust for a demand note: interest only, principal callable at any time. A planning memo asserts a valuation discount on the non-voting units; no appraiser has been engaged.</li>
       <li><b>The documents.</b> A 2011 will, joint revocable trust, power of attorney and healthcare directive; a 2014 buy-sell agreement; a 2023 appraisal of the whole company; an unsigned planning memo; unsigned drafts of the trust and the note.</li>
       <li><b>What is new.</b> A competitor has approached Meg about buying the company. Nothing is signed, and Nathan has not been told. David wants the appraisal looked at again before anything is signed.</li>
     </ul>
@@ -1292,7 +1292,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel" data-task="t-s4" data-comp="estimate-then-reveal">
     <span class="do">Do this now — 6 minutes</span>
     <h4>The Retriever on the Cole Document Set</h4>
-    <p class="hint">Each preset is a question, printed on its button. Say the number of the passage that should answer it, then click the preset and read the top passage. Before the verdict, decide whether advice built on it alone would be right for Meg, who is selling shares to a trust.</p>
+    <p class="hint">Each preset is a question, printed on its button. Say the number of the passage that should answer it, then click the preset and read the top passage. Before the verdict, decide whether advice built on it alone would be right for Meg, who is selling part of the company to a trust.</p>
     <p style="margin:0 0 8px"><span class="sim">Live index over ten synthetic passages</span></p>
     <div class="mpanel has" style="min-height:0;margin:0 0 14px"><span class="hd">The ten passages, by number</span><span id="qIndexList" style="display:block;line-height:1.6"></span></div>
     <div class="row" id="qPresets" style="margin-bottom:14px"></div>
@@ -1306,7 +1306,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 
 
-  <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run all four presets, including the two built to fail.</div></div>
+  <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run all four presets, and say your passage number before each click.</div></div>
 
 </section>
 
@@ -2111,13 +2111,13 @@ function rank(q){var qv=vec(q);
  return CORP.map(function(c,i){return {id:c.id,t:c.t,s:cos(qv,CVEC[i])}})
   .sort(function(a,b){return b.s-a.s})}
 var PRESET=[
- {q:'what value should we use for Meg CPC shares',v:'fail',
+ {q:'what value should we use for Meg CPC shares',l:'What value should we use for Meg\u2019s CPC shares?',v:'fail',
   w:'The top passage is Article VII of the 2014 buy-sell. It is real, correctly found and correctly quoted, and it applies only on a death, a disability or a withdrawal. None of those is happening. It is not the valuation rule for a sale to a trust, and nothing on screen says so: the ranker matched \u201cvalue\u201d and \u201cshares\u201d and has no idea what a triggering event is. Second place is the draft trust\u2019s substitution power, there because it contains the word \u201cvalue\u201d in an unrelated sense. The 2023 appraisal, the one document that actually prices the company, ranks third at 3.3: it shares only the word \u201cvalue\u201d with the question, and the words that matter, Meg and CPC, appear in no passage at all. The right document was not beaten. It was barely in the running.'},
- {q:'where does the residue of the probate estate go',v:'ambig',
+ {q:'where does the residue of the probate estate go',l:'Where does the residue of the probate estate go?',v:'ambig',
   w:'The will and the trust both match, and neither is wrong. The will says the residue goes to the trust; the trust says it receives the residue and splits it. Either alone is half the answer. A grounded assistant picks one, cites it, and does not tell you the other half exists.'},
- {q:'what discount was claimed on the non-voting interest',v:'pass',
+ {q:'what discount was claimed on the non-voting interest',l:'What discount was claimed on the non-voting interest?',v:'pass',
   w:'The right passage ranks first with nothing close, because this fact lives in exactly one place in the set. Note which place: the discount is asserted in the planning memo, not in the appraisal, which contains no discount study at all. Uniqueness in the documents, not the quality of the model, made this question safe.'},
- {q:'what are the terms of the promissory note',v:'pass',
+ {q:'what are the terms of the promissory note',l:'What are the terms of the promissory note?',v:'pass',
   w:'Right passage first. Note what the answer will not say: the note is unsigned, which the passage does say, and whether the principal still matches a current appraisal, which no passage says.'}
 ];
 (function(){
@@ -2127,7 +2127,7 @@ var PRESET=[
  var IX=$('qIndexList');if(IX){IX.innerHTML=CORP.map(function(c){return '<b>'+esc(c.id)+'</b> '+esc(String(c.t).split('.')[0])}).join('<br>')}
  PRESET.forEach(function(p,i){
   var b=document.createElement('button');b.className='btn sel mini';b.type='button';
-  b.textContent='Preset '+(i+1)+' \u00b7 '+p.q.charAt(0).toUpperCase()+p.q.slice(1);
+  b.textContent='Preset '+(i+1)+' \u00b7 '+p.l;
   b.onclick=function(){cur=i;ran[i]=1;Q.value=p.q;[].slice.call(P.children).forEach(function(c,j){c.classList.toggle('act',j===i)});run();if(Object.keys(ran).length===PRESET.length&&typeof mark==='function')mark('g4')};
   P.appendChild(b)});
  function run(){

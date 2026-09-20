@@ -39,6 +39,7 @@ say(/stands for every meeting/.test(txt('#s10')) && /no standing instruction/.te
     .replace(/<!--[\s\S]*?-->/g, '').replace(/<[^>]+>/g, ' ');
   say(!/CASE\.md|pedagogy\.md|scripts\/|\.mjs|assignment substrate/.test(body), 'SM-026', 'no file or script name is rendered to a learner anywhere on the page');
 }
+{ const b = [...d.querySelectorAll('#qPresets button')].map(x => x.textContent); say(/Meg’s CPC shares\?$/.test(b[0]) && b.every(t => /\?$/.test(t)), 'SM-027', 'each preset button reads as a question: ' + b[0]); say(/family holding company/.test(txt('#s1')) && !/selling shares to a trust/.test(txt('#s4')), 'SM-027', '§00 and §03 describe the transaction as the case does'); }
 /* SM-ITEMS */
 
 /* ---- standing invariants carried from the 09-18 checks ---- */
