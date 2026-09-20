@@ -138,8 +138,8 @@ run's spend limit stopped it: 72 verdicts, every one a keep except three on find
 everyone's source", refuted) and two on finding 21 (the Log stage's "gift that was rejected",
 refuted). At two concurrent agents in this container, the remaining 321 verifiers would have taken
 most of a day, so the rest were curated by hand against the same ten constraints and the same Cole
-facts, and the finished diff was then reviewed by six independent reviewers with one adversarial
-refuter per finding (§9). The disposition of all 157 is in `findings-disposition.md`: 134 accepted,
+facts, and the finished diff was then put to six independent reviewers with one adversarial refuter per
+finding; §9 is their record. The disposition of all 157 is in `findings-disposition.md`: 134 accepted,
 2 partly, 21 rejected with the reason.
 
 ## 5. Verification
@@ -283,16 +283,82 @@ wording changed (§06) is changed in all four files.
    the bridge order and the option letters; the rest is the 09-18 flag 13.
 6. **The em-dash count in rendered text** (validate_lesson C2) still reads 12, because the `#ovr`
    label, the two timer labels and the JS strings carry them; policy unratified, as before.
-7. **The workflow's spend limit** stopped the verify phase at 78 of 400 agents. §4 says what was
-   done instead. If a fully machine-verified pass is wanted, the script is in the session's
-   workflow folder and resumes from its journal.
+7. **The workflow's spend limit** stopped the finder pass's verify phase at 78 of 400 agents. §4
+   says what was done instead, and §9 is the six-lens review that replaced it.
+9. **The other five lessons still render file and script names** in their own hand-authored regions
+   (the hub, session-0.1, session-1, session-2 and session-4), and four of them still carry the
+   shared verification gate. SM-026 cleared the generated block for all six; the rest is each
+   lesson's own pass.
+10. **The aid and the run sheet disagree on the first three clock times**, aid 6:03 / 6:06 / 6:08
+    against run sheet 6:08 / 6:11. Pre-existing, and the difference is how long housekeeping gets,
+    which is the instructor's call.
+11. **The §09 source line's section sign** was changed from a literal to an entity (SM-016), a
+    rendered no-op inside a citation line, recorded here because constraint 6 asks that citations be
+    touched only for a defect.
 8. **The 09-19 worksheet** (`docs/changes/2026-09-19-session-3-manual-pass/worksheet.md`) was
    updated in place at the five lines the page changed; its `notes-verbatim.md` is still empty,
    which means the manual pass it was written for has not happened.
 
 ## 9. The review of the finished diff
 
-(Filled in below once the six-lens review completes.)
+Six reviewers read the diff at `4f8e35a` through distinct lenses (constraints checked mechanically,
+factual accuracy against the case block and the transcript, the three readers, the instructor
+materials' truth against the page, regression against the 09-18 decisions, and does everything still
+work), returning 73 findings, 53 unique. Each must or should finding went to one adversarial refuter:
+**17 confirmed, 8 refuted, 28 left as optional.** All 31 agents completed.
+
+**What the six said in one line each.** Constraints: sound, the baseline and every frozen region
+verified, one breach left that only the generator could fix. Facts: the §00 panel matches the case
+block line by line, with four smaller inaccuracies. Readers: all 18 interactions are committable
+from the page alone. Truth: every cue and answer checks out, one false line in the drop order.
+Regression: nothing decided on 09-18 is undone. Mechanics: every control responds.
+
+**The 17 confirmed, and what was done.** Twelve items, `SM-026` to `SM-030`.
+
+| Confirmed | Fixed in |
+|---|---|
+| The generated case block still printed CASE.md, its version, `scripts/build-case.mjs` and "the assignment substrate" to a learner (the only **must** on the page) | SM-026, through the generators |
+| The preset buttons printed the raw ranker queries, ungrammatical and uppercased | SM-027, a display field beside the frozen query |
+| "Split the company into voting and non-voting units" misdescribed the plan | SM-027 |
+| The §03 hint said shares where the case says units | SM-027 |
+| The §03 work-along still announced that two presets fail | SM-027 |
+| The will "receives the residue" it sends | SM-028 |
+| Both valuation standards credited with triggering events | SM-028 |
+| §06's Prep check credited §03 with an assistant that reports | SM-028 |
+| §06's Log check named a rejected gift the plan contains | SM-028 |
+| The §10 basis example pointed at a reason instead of stating one | SM-028 |
+| §07 stage 2 referred to an instruction the learner had not met | SM-028 |
+| The sentence meant to define "standing instruction" never used the term | SM-028 |
+| A2's third meeting type read as "prepare for a recurring meeting you write up afterwards", where "you" is Claude | SM-029 |
+| C3's second bullet named the four steps its own prediction asks for | SM-029 |
+| C4 credited the reader with finding Article VII by opening the passage, which its complication denies | SM-029 |
+| The run sheet's first drop named a two-column comparison §05 does not have | SM-030 |
+| The verify brief's title and one sentence still described a block that is gone | SM-030 |
+
+Five optional findings were taken with them because they were a line each: the C3 and C4
+work-alongs, the A5 hint, the A3 synthetic label, the §08 sorter hint, one American spelling and the
+silent-run fragment. The run sheet also gained a **Changed 2026-09-19** block, the thing the
+instructor reads first, and its §07, §08 and §09 slots now match the page.
+
+**The eight refuted**, each for a stated reason: the "also called grounding" gloss (a ledgered
+decision); the defence panel's "opening the top passage" (the advocate's voice, which the
+complication rebuts two panels later); the claim that C4 no longer names a defence (the work-along
+did); the reverse-prompting reference in the run sheet (its antecedent is named twice); removing the
+shared case gate's disclosure (recorded, and the disclosure moved rather than vanished); two bullet
+forms the 09-19 pass had already knowingly retained; and the Shift+U badge, which HALT 9 and the
+README both keep.
+
+**Left as optional, and why.** The aid and the run sheet still give different clock times for the
+first three slots (aid 6:03 / 6:06 / 6:08, run sheet 6:08 / 6:11), which is the instructor's call
+about how long housekeeping gets, not a defect to resolve silently. C3's source line still states
+the adoption result, but it sits below the reveal in reading order. The §06 lede says "the log is
+what an examiner reads", which narrows the new question without answering it. The remaining
+optional findings are in the workflow record.
+
+**Re-verified after the review fixes.** Every gate green, the same seven by-design red lines, T7 at
+4 literal / 3 entity, the four presets identical to the decimal, 18 of 18 interactions responding in
+Chromium with zero page errors, no overflow at 380px, both `checks.mjs` at 0 failed, and no file or
+script name rendered anywhere on the page.
 
 ## 10. What worries me about Monday, in one paragraph
 

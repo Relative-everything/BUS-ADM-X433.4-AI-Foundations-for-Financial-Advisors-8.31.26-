@@ -23,8 +23,8 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 1710 | 1392 | 318 |
 | `PINNED` | 12 | 12 | 0 |
-| `UNGUARDED` | 76 | 5 | 71 |
-| **TOTAL** | **1798** | **1409** | **389** |
+| `UNGUARDED` | 77 | 5 | 72 |
+| **TOTAL** | **1799** | **1409** | **390** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -40,7 +40,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `session-0.1/index.html` | 16 | 5 |
 | `session-1/index.html` | 17 | 0 |
 | `session-2/index.html` | 3 | 0 |
-| `session-3/index.html` | 15 | 0 |
+| `session-3/index.html` | 16 | 0 |
 | `session-4/index.html` | 23 | 0 |
 
 ## `UNGUARDED`, by region
@@ -48,7 +48,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
 | `R1` | body prose | 50 | 0 |
-| `R2` | script string literal | 21 | 0 |
+| `R2` | script string literal | 22 | 0 |
 | `R10` | captured transcript | 5 | 5 |
 
 **`R2` carries 0 of the 5 quantitative unguarded references, 0.0%** — answer
@@ -60,7 +60,7 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 71 |
+| `name` | 72 |
 | `pct` | 5 |
 
 ## `UNGUARDED`, by fact
@@ -72,7 +72,7 @@ every one of them.
 | `megShort` | 9 |
 | `companyName` | 9 |
 | `plantTown` | 8 |
-| `companyAbbr` | 7 |
+| `companyAbbr` | 8 |
 | `afrMid` | 4 |
 | `residenceTown` | 3 |
 | `davidName` | 3 |
@@ -103,7 +103,7 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**442 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**436 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
@@ -115,7 +115,6 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `tbills` | 31 |
 | `seedUnits` | 21 |
 | `megAge` | 21 |
-| `nathanAge` | 19 |
 | `charDeductible` | 18 |
 | `employees` | 18 |
 | `nonVotingUnits` | 15 |
@@ -123,6 +122,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `dividend` | 13 |
 | `inheritedIra` | 13 |
 | `david403b` | 13 |
+| `nathanAge` | 13 |
 | `revolver` | 12 |
 | `discount` | 9 |
 | `nathanShort` | 7 |
