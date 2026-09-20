@@ -1695,7 +1695,7 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
   </div>
 
   <h4 style="margin-top:26px">A prompt that builds the basis by asking you: the interview rewrite</h4>
-  <p>Reverse prompting, from Session 2: it interviews you before it drafts, and will not draft until it has the alternatives. Copy it into your own tool after a meeting.</p>
+  <p>Reverse prompting, from Session 2: it interviews you before it drafts, and will not draft until it has the alternatives. Copy it into Claude after the next meeting you write up.</p>
   <pre id="promptBlock">ROLE
 You are a compliance reviewer at an SEC-registered investment adviser.
 You do not draft the record. You interrogate me until the record is complete.
@@ -1726,11 +1726,11 @@ CONSTRAINTS
 OUTPUT
 When all four are complete: one paragraph per element, under 90 words each,
 then a list of every element where my answer was thin.</pre>
-  <div class="row"><button class="btn" id="copyBtn">Copy prompt</button><span id="copyMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
+  <div class="row"><button class="btn" id="copyBtn">Copy the prompt</button><span id="copyMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
 
   <p class="src">Structure follows the Session 3 syllabus item on documenting circumstances and the basis for recommendations. The six lines are synthetic <span class="conf l" data-src="src-case">L</span>. Nothing here asserts a tax result or what an examiner would accept.</p>
 
-  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place the six lines. Then run the prompt on the last meeting you wrote up.</div></div>
+  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place the six lines. Then run the prompt on the last meeting you wrote up, or on the Cole review with the &sect;07 summary as your memory of it.</div></div>
 
 </section>
 
@@ -2586,7 +2586,7 @@ mkQuiz($('quizWrap'),QITEMS,$('quizScore'),'g9');
 var DOCI=[
  {t:'Meg: a competitor wrote to me about buying the company last autumn; nothing is signed.',k:'said',w:'A fact, in the client\u2019s words, with its status. This is the record of circumstances.'},
  {t:'David wants the appraisal looked at again before anything is signed.',k:'said',w:'A request from the client. An action item with an owner, once you give it one.'},
- {t:'We recommended a sale to the trust rather than a gift, having considered the gift and set it aside for the reason counsel gave; Meg agreed, David wanted the appraisal first.',k:'basis',w:'The recommendation, the alternative considered, the reason, and the client\u2019s response. This is the basis entry, and nobody said it aloud in the meeting.'},
+ {t:'We recommended a sale to the trust rather than an outright gift, having considered the gift and set it aside for the reason noted in the file; Meg asked what it does to the timing, David wanted the appraisal first.',k:'basis',w:'The recommendation, the alternative considered, the reason, and the client\u2019s response. This is the basis entry, and nobody said it aloud in the meeting.'},
  {t:'Meg seems anxious about the buyer and probably wants to sell within two years.',k:'none',w:'An inference. Nothing in the transcript says it. If you believe it, label it as your reading; it is not a record.'},
  {t:'Counsel wants the note kept callable on demand.',k:'said',w:'A third party\u2019s stated position. It belongs in the record because you will be asked to explain it later.'},
  {t:'We considered waiting for a new appraisal before any transfer and set that aside for now; it stays open on the file.',k:'basis',w:'An alternative considered and the decision about it, with its status. Basis, and the kind of line that only exists if written on the day.'}

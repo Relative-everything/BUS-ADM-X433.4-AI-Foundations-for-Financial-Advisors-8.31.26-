@@ -27,6 +27,7 @@ say(!/IDGT|nearly the same person|reaches Meg’s return/.test(html) && /gift ta
 say(/first seen at an examination/.test(txt('#s9 .hint')) && !/already said/.test(html), 'SM-014', '§06 asks a question with one answer and Prep does not presuppose the §07 excerpt');
 { const b = d.querySelectorAll('#ntStages button'); if (b[0]) b[0].click(); if (b[3]) b[3].click(); say(/Meg and David Cole/.test(txt('#s10')) && /\[01:00\]/.test(txt('#ntStages')) && !/Owner: you/.test(txt('#ntStages')) && /Not in the meeting/.test(txt('#ntStages')) && !/your own tool/.test(txt('[data-gate="g8"]')), 'SM-015', '§07 names the speakers, stamps its transcript, and its follow-up obeys the not-given rule'); }
 say(/Suppose your firm/.test(txt('#s12 .hint')) && /son who works/.test(txt('#s12')) && !/split the room|own state's rule/.test(html), 'SM-016', '§09 says who Nathan is and asks nothing the learner cannot answer');
+say(!/Meg agreed|counsel gave|your own tool/.test(txt('#s13')) && /Copy the prompt/.test(txt('#copyBtn')) && /Cole review/.test(txt('[data-gate="g10"]')), 'SM-017', '§10 agrees with the meeting record and gives a reader without a meeting something to run the prompt on');
 /* SM-ITEMS */
 
 /* ---- standing invariants carried from the 09-18 checks ---- */
