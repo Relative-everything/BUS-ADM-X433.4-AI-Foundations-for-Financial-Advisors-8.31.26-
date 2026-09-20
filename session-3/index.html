@@ -1238,7 +1238,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="big">Wolfram's definition: an embedding turns a word into an array of numbers, and words with similar meanings get nearby numbers.</p>
 
   <ul class="pts">
-    <li><b>Company, not meaning.</b> The numbers record which words appear around a word, across five billion words of text: 768 numbers per word for GPT-2, 12,288 for GPT-3.</li>
+    <li><b>Company, not meaning.</b> The numbers are worked out from which words appear around a word, across five billion words of text: 768 numbers per word for GPT-2, 12,288 for GPT-3.</li>
     <li><b>Wolfram's example.</b> "Alligator" and "crocodile" appear in interchangeable sentences, so they sit close. "Turnip" and "eagle" sit far apart. Alligators and crocodiles are different animals.</li>
     <li><b>The Cole hazard.</b> The documents use near-identical language and differ in one condition each. Retrieval runs the same nearest-neighbour test on them.</li>
   </ul>
@@ -1483,7 +1483,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <h4 style="margin-top:26px">How to prompt it</h4>
-  <p>Paste this into the tool's instruction field, where it stands for every meeting, or into Claude with the transcript attached. For the meeting you chose in &sect;06, swap "client" for whoever was in the room and keep the rest.</p>
+  <p>Paste this into the tool's instruction field, where it becomes the standing instruction for every meeting, or into Claude with the transcript attached. For the meeting you chose in &sect;06, swap "client" for whoever was in the room and keep the rest.</p>
   <pre id="ntPrompt">Summarise this client meeting for the file. Extract, under these headings and nothing else:
 1. DECISIONS made in the meeting, each with who made it.
 2. ACTION ITEMS, each with an owner and a date if one was given.
@@ -1568,7 +1568,7 @@ If a heading has nothing under it, write "none".</pre>
   <div class="panel" data-task="t-sOff" data-comp="multi-column-sorter">
     <span class="do">Do this now: 3 minutes</span>
     <h4>Which Kind of Work, or Not an AI Task at All</h4>
-    <p class="hint">Six review-update tasks. Two belong to no assistant, in any tool.</p>
+    <p class="hint">Six review-update tasks. Some belong to no assistant, in any tool.</p>
     <div class="sorter">
       <div id="offList" class="chiplist"></div>
       <div id="offBoxes" class="boxes"></div>
@@ -1607,7 +1607,7 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
     <ol style="margin:0;padding-left:22px;max-width:64ch">
       <li>Open Claude in another tab.</li>
       <li>Under prompt 1, click Copy the letter prompt with the summary.</li>
-      <li>Paste into Claude and send. No Claude, or a stalled run: click Example output under prompt 1 and read that instead.</li>
+      <li>Paste into Claude and send. If you have no Claude, or the run stalls, click Example output under prompt 1 and read that instead.</li>
       <li>Read it against the summary above. Then, in chat, one line: usable or not, and one sentence it added or stated as settled.</li>
     </ol>
   </div>
@@ -2015,7 +2015,7 @@ var TERMS=[
 var CSNOTE={
  trust:'One word apart in text, opposite on the property that matters: whether the settlor can still undo it. Both appear in the Cole file. The 2011 trust is revocable; the unsigned draft that would hold the units is not, and a retriever cannot tell them apart from language.',
  vote:'The Cole memo asserts a valuation discount on the non-voting units only. Whether a passage describes a voting or a non-voting interest decides whether that discount applies, and a retriever cannot tell them apart from language.',
- val:'Two valuation standards, the buy-sell agreement\u2019s formula and the appraiser\u2019s figure, each with its own triggering event. Substituting one for the other is exactly the failure you are about to watch in \u00a703.',
+ val:'Two valuation standards, the buy-sell agreement\u2019s formula and the appraiser\u2019s figure. The formula applies only on a death, a disability or a withdrawal, and substituting it for the appraisal is exactly the failure you are about to watch in \u00a703.',
  wolf:'Wolfram\u2019s own example. Two different animals, placed together because people write about them the same way.'};
 (function(){
  var W=$('mapWrap'),O=$('mapOut'),seen={};
@@ -2069,8 +2069,8 @@ var CSNOTE={
 var PAIRS=[
  {t:'alligator / crocodile',k:'ctx',w:'Wolfram\u2019s example: interchangeable contexts, different referents.'},
  {t:'voting interest / non-voting interest',k:'gov',w:'Same asset, different governing attribute. In the Cole file a valuation discount is asserted on the non-voting units only.'},
- {t:'appraised value / formula value',k:'gov',w:'Two valuation standards, each with its own triggering event. Substitute one for the other and the wrong figure reaches Meg\u2019s gift tax return.'},
- {t:'the will / the trust',k:'ref',w:'Different instruments performing in identical sentence frames. In the Cole file the will pours its residue into the trust and the trust receives it, so both \u201creceive the residue\u201d.'},
+ {t:'appraised value / formula value',k:'gov',w:'Two valuation standards. The buy-sell formula applies only on a death, a disability or a withdrawal; substitute it for the appraisal and the wrong figure reaches Meg\u2019s gift tax return.'},
+ {t:'the will / the trust',k:'ref',w:'Different instruments performing in identical sentence frames. In the Cole file the will pours its residue into the trust and the trust receives it. Both describe the same transfer, so a question about the residue matches either one.'},
  {t:'shall / may',k:'gov',w:'The highest-stakes near-neighbour in any drafted instrument, and the one chunking most often separates from its subject.'},
  {t:'grantor / trustee',k:'ref',w:'Different actors. Retrieval collapses them because they appear in identical sentence frames.'}
 ];
@@ -2284,7 +2284,7 @@ mkQuiz($('tuneWrap'),TUNE,null,'g6');
 /* ================= 9. Workflow chain ================= */
 var CHAIN=[
  {s:'Prep',ai:'Reads the Cole file and drafts the agenda: what changed since last year, what is still open, what to ask.',
-  chk:'Read the draft against the file. In \u00a703 the assistant reported the buy-sell formula as the company\u2019s valuation method. It is not.',
+  chk:'Read the draft against the file. In \u00a703 the retriever put the buy-sell formula first for a question about what the shares are worth, and that formula is not the company\u2019s valuation method.',
   skip:['Capture: you open the review on the wrong valuation basis, and it is now in the transcript in your voice.',
         'Follow-up: the recap email repeats it to Meg and David.',
         'Log: the record carries a valuation rule for the wrong transaction.'],
@@ -2307,7 +2307,7 @@ var CHAIN=[
         'Log: the email is filed as the record of what was advised.'],
   v:'Visible at once, to the client, who may act on it before you notice. The wrong detector.'},
  {s:'Log',ai:'Writes the note into the CRM.',
-  chk:'The note says why, not only what: which alternatives you considered and why this one. A note that records the decision to sell and nothing about the gift that was rejected has no basis in it.',
+  chk:'The note says why, not only what: which alternatives you considered and why this one. A note that records the decision to sell and nothing about the outright gift that was considered and set aside has no basis in it.',
   skip:['Nothing breaks. Every later meeting runs normally.',
         'Examination: the file shows a transaction with no documented basis, and the reasoning is three years old.'],
   v:'Visible only at examination, when the reasoning cannot be rebuilt.'}
@@ -2400,7 +2400,7 @@ function ntSumText(){return 'MEETING SUMMARY (synthetic: the Cole annual review,
   {n:'1. Transcription',w:'Speech becomes time-stamped text with a speaker label. Mistakes here are misheard words and swapped speakers; a misheard name becomes a different person in the record.',
    out:function(){var h='';T.forEach(function(t,i){h+='[0'+i+':00] '+turn(i)+'<br>'});return h}},
   {n:'2. Extraction',w:'A model picks the sentences that count. This is where the professional risk sits: whatever it drops leaves no trace.',
-   out:function(){return '<span class="good">Kept:</span><br>'+turn(1)+'<br>'+turn(3)+'<br>'+turn(4)+'<br><br><span class="flag">Dropped as conversational:</span> the two Advisor questions. In a tool with no standing instruction, the clause about Nathan, their son, goes too: it reads as personal colour, and it is the one constraint the file most needs.'}},
+   out:function(){return '<span class="good">Kept:</span><br>'+turn(1)+'<br>'+turn(3)+'<br>'+turn(4)+'<br><br><span class="flag">Dropped as conversational:</span> the two Advisor questions. In a tool with no standing instruction, the one below that tells it what to keep, the clause about Nathan, their son, goes too: it reads as personal colour, and it is the one constraint the file most needs.'}},
   {n:'3. Categorisation',w:'The kept sentences are sorted under headings. With the instruction below in place the headings are yours and the constraint about Nathan survives. A tool with no instruction picks its own headings and keeps what it thinks matters.',
    out:function(){return ntSumHtml()}},
   {n:'4. Follow-up',w:'A recap email and a task list are drafted from the categories. Read it as the client will: anything stated as settled is now advice.',
@@ -2453,7 +2453,7 @@ var OFFI=[
  {t:'Update the review letter\u2019s figures and the open points from the meeting',k:'word',w:'Prose from a source you hand it, with every change marked. The letter\u2019s structure stays yours.'},
  {t:'Add this year\u2019s column to the cash-flow table using last year\u2019s formulas',k:'excel',w:'A repeatable change to a sheet it can see. Ask it to say which formulas it copied.'},
  {t:'Rebuild the six review slides from the meeting summary',k:'ppt',w:'The summary is the source; the template is the constraint. One summary line per slide keeps it checkable.'},
- {t:'Decide whether to recommend a sale or a gift to the trust',k:'none',w:'A judgment, and the basis for it is what the file needs (\u00a710). An assistant can list the considerations; it cannot own the decision.'},
+ {t:'Decide whether to recommend a sale or a gift to the trust',k:'none',w:'A judgement, and the basis for it is what the file needs (\u00a710). An assistant can list the considerations; it cannot own the decision.'},
  {t:'Flag every cash-flow cell that moved more than ten percent',k:'excel',w:'Arithmetic over the sheet, stated as a rule. Exactly what an assistant is for, and exactly what you then read.'},
  {t:'Sign off the letter before it goes to the client',k:'none',w:'The check is yours. Every number against its source, every decision against the meeting. No tool does this for you.'}
 ];
@@ -2587,7 +2587,7 @@ mkQuiz($('quizWrap'),QITEMS,$('quizScore'),'g9');
 var DOCI=[
  {t:'Meg: a competitor wrote to me about buying the company last autumn; nothing is signed.',k:'said',w:'A fact, in the client\u2019s words, with its status. This is the record of circumstances.'},
  {t:'David wants the appraisal looked at again before anything is signed.',k:'said',w:'A request from the client. An action item with an owner, once you give it one.'},
- {t:'We recommended a sale to the trust rather than an outright gift, having considered the gift and set it aside for the reason noted in the file; Meg asked what it does to the timing, David wanted the appraisal first.',k:'basis',w:'The recommendation, the alternative considered, the reason, and the client\u2019s response. This is the basis entry, and nobody said it aloud in the meeting.'},
+ {t:'We recommended a sale to the trust rather than an outright gift, having considered the gift and set it aside because a sale returns value to Meg as note payments and an outright gift returns none; Meg said the timing was ours to advise on, David wanted the appraisal first.',k:'basis',w:'The recommendation, the alternative considered, the reason, and the client\u2019s response. This is the basis entry, and nobody said it aloud in the meeting.'},
  {t:'Meg seems anxious about the buyer and probably wants to sell within two years.',k:'none',w:'An inference. Nothing in the transcript says it. If you believe it, label it as your reading; it is not a record.'},
  {t:'Counsel wants the note kept callable on demand.',k:'said',w:'A third party\u2019s stated position. It belongs in the record because you will be asked to explain it later.'},
  {t:'We considered waiting for a new appraisal before any transfer and set that aside for now; it stays open on the file.',k:'basis',w:'An alternative considered and the decision about it, with its status. Basis, and the kind of line that only exists if written on the day.'}
