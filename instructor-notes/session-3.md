@@ -197,9 +197,9 @@ who is holding it if nobody does.
 ### Flow
 - Page open at core-only depth. A1, A2, A3, A5, C3 and C4 are for the async reader.
 - Say the data rule aloud before §07's instruction is copied into anyone's tool, and again at §11.
-- The case is explained only in the injected modal now, and one learner wrote after Session 1 that
-  the case was beyond her. Open the Case facts panel once, unprompted, at 6:19 and say in two
-  sentences who the Coles are.
+- The Coles are on the page in four lines, the panel under the bullets in §00, and one learner
+  wrote after Session 1 that the case was beyond her. Read that panel aloud at 6:19. The Case facts
+  dialog holds the rest for anyone who wants it; nothing on the page needs it.
 
 ### Drop order, first to go at the top
 1. §05, narrate the two-column comparison only, skip the Tuesday test. Recovers 4.

@@ -14,7 +14,7 @@ estimates.
 | 4 | Build Zoom Polls 1 to 4. Anonymous on Poll 1. Do not create them live | 15 | `instructor-notes/session-3-polls.md` |
 | 5 | Zoom settings: speaker-labelled transcripts on | 1 | Zoom web portal |
 | 6 | Post Canvas post 1 (the 5:45 window) and post 2 (the corrections). Hold post 3 until after class and fill its one date from the syllabus | 10 | `instructor-notes/session-3-canvas-posts.md` |
-| 7 | Read the two §09 sources and sign or strike the verify block. Until you do, the aid says "unsigned, say so" | 10 | `instructor-notes/session-3-verify-brief.md` |
+| 7 | Read the two §09 sources and check the two law items; they are off the page, in the run sheet under Verify before teaching. Until you do, the aid says "unchecked? say so" | 10 | `instructor-notes/session-3-verify-brief.md` |
 | 8 | Fix the Part 1 due date so the syllabus and Canvas agree. One date, not on any page | 10 | syllabus, Canvas |
 
 ## Monday, 5:45 PM

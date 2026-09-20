@@ -101,7 +101,7 @@ numbered stages.
 **Click.** Stages 1 to 5. The B4 link (it opens Session 2; the sorter is under "+ Standard").
 
 **Ask.** "Who here does not run client meetings, and what meeting will you use tonight?" Then:
-"Which stage's skipped check is found last?" Answer 5. Gate at 5: "Who reads this note, and when?"
+"Which stage's skipped check is first seen at an examination?" Answer 5. Gate at 5: "Who reads this note, and when?"
 
 **Eyes on.** The non-advisor paragraph: is the wording one you would read aloud? Do the five
 stage panels each carry one sentence you will say and nothing you will not? Is "steps 1, 2 and
@@ -162,13 +162,13 @@ Notes:
 
 ## MP-09 · §09, consent and confidentiality · aid step 16 · gate · Poll 3 before
 
-**On screen.** The dashed verify block, thesis, two bullets, the Iskowitz card, four items.
+**On screen.** Thesis, two bullets, the Iskowitz card, four items. The verification block is gone; its two items are in the run sheet.
 
 **Click.** Item 1, each option (reload between). Items 2 to 4 once.
 
 **Ask.** Gate: "Whose consent do you actually need on this call?" Item 1: "a, b or c?" Answer (c).
 
-**Eyes on.** Have you signed or struck the verify block (`instructor-notes/session-3-verify-brief.md`)?
+**Eyes on.** Have you checked the two law items (`instructor-notes/session-3-verify-brief.md`; in the run sheet under Verify before teaching, not on the page)?
 Is the confidentiality bullet true for your firm's policy? Item 1's three feedbacks: is the
 "strip" feedback the one that will move the room?
 
@@ -234,7 +234,7 @@ Notes:
 ## Things to test once, not per section
 
 - Shift+U: every answer panel opens; the case tabs do not both show at once.
-- The Case facts button: two sentences on the Coles you will say at 6:19.
+- The Cole panel in §00, four lines: read it aloud once as you will at 6:19.
 - Every Copy button copies (paste into a text editor).
 - The page at your screen-share zoom: nothing overflows sideways.
 - The Session 2 B4 link from §06 lands on the Session 2 page.
