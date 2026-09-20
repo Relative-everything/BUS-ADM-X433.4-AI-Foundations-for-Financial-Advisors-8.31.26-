@@ -1,9 +1,9 @@
 # Handback: Session 3 simplify pass, 2026-09-19 to 09-20
 
-Branch `claude/adoring-mendel-2luer4`, from `7d9e2fe` (`main` after PR #32). Twenty-six commits,
-none to `main`. Change folder `docs/changes/2026-09-19-session-3-simplify/` with `notes-verbatim.md`
-(the kickoff), `ledger.md` (SM-001 to SM-025), `checks.mjs` (one jsdom assertion per item plus the
-09-18 invariants, 33 assertions, 0 failed), `findings-disposition.md` (all 157 finder results and
+Branch `claude/adoring-mendel-2luer4`, from `7d9e2fe` (`main` after PR #32). 32 commits, none to
+`main`. Change folder `docs/changes/2026-09-19-session-3-simplify/` with `notes-verbatim.md` (the
+kickoff), `ledger.md` (SM-001 to SM-030), `checks.mjs` (one jsdom assertion per item plus the
+09-18 invariants, 40 assertions, 0 failed), `findings-disposition.md` (all 157 finder results and
 what was done with each) and this file.
 
 The page taught on 2026-09-21 is `session-3/index.html` at the branch head: 18 sections, 11 core,
@@ -32,9 +32,9 @@ The kickoff's "with needing" was read as "without needing".
 
 ## 2. What changed and why
 
-Every edit is on `session-3/index.html` unless the row says otherwise. Nothing on `session-1`,
-`session-2`, `session-4`, `session-0.1` or the hub changed; the one generator that ran,
-`build-appendix.mjs`, was run with `--file session-3/index.html`.
+Every edit is on `session-3/index.html` unless the row says otherwise. The other five lessons
+changed in one place only, the shared case block rebuilt by SM-026, where the diff is four strings
+and the content stamp.
 
 | Id | Commit | What changed | Why |
 |---|---|---|---|
