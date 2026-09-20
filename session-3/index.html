@@ -1734,14 +1734,14 @@ then a list of every element where my answer was thin.</pre>
 
   <ul class="pts">
     <li><b>Check more.</b> A citation is a handle, something specific to pull on.</li>
-    <li><b>Check less.</b> A citation reads as completed work, so a busy professional stops there. &sect;04 supplied evidence for this side; you supplied evidence for the other by finding the Article VII failure yourselves.</li>
-    <li><b>The protocol.</b> Commit before anyone speaks; two speakers per side, minority first; one complication; re-vote with both distributions on screen. A zero delta is a finding, not a failure.</li>
+    <li><b>Check less.</b> A citation reads as completed work, so a busy professional stops there. &sect;04 supplied evidence for this side; &sect;03 supplied evidence for the other, where opening the top passage is what exposed the Article VII failure.</li>
+    <li><b>The method.</b> Vote before you read the arguments. Read the case for each side, then the complication, then vote again. A vote that does not move is a finding, not a failure.</li>
   </ul>
 
   <div class="panel" data-task="t-s15" data-comp="sealed-vote-debate">
-    <span class="do">Locked vote: commit before discussion</span>
-    <h4>Vote one</h4>
-    <p class="hint">Your first vote locks. The room distribution stays hidden until after the re-vote. Answer for what you actually do, not what you would recommend.</p>
+    <span class="do">Locked vote: commit before you read the arguments</span>
+    <h4>Vote One</h4>
+    <p class="hint">Your first vote locks. Read the case for each side, then re-vote. Answer for what you actually do, not what you would recommend.</p>
     <div class="row" id="voteBtns"></div>
     <div id="voteOut" class="mpanel"><span class="hd">Vote one</span><span class="nil">Commit to a position.</span></div>
     <div id="defence" class="mpanel keyhide" style="display:none"></div>
@@ -2610,11 +2610,11 @@ function showDefence(){
  var D=$('defence');if(!D)return;
  if(v1===null&&!document.body.classList.contains('reveal'))return;
  D.className='mpanel has keyhide';
- D.innerHTML='<span class="hd">Defence phase: 7 to 9 minutes, minority called first</span>'+
-  '<span class="good">If you voted "check more":</span> a citation converts an unfalsifiable claim into a falsifiable one. Before grounding you could only assess plausibility. Now you can open the document. You did exactly this in \u00a703 and found Article VII.<br><br>'+
+ D.innerHTML='<span class="hd">The case for each side</span>'+
+  '<span class="good">If you voted "check more":</span> a citation converts an unfalsifiable claim into a falsifiable one. Before grounding you could only assess plausibility. Now you can open the document. That is what \u00a703 showed: opening the top passage exposed Article VII.<br><br>'+
   '<span class="good">If you voted "check the same":</span> your verification protocol is a property of your process, not of the output format. If it did not change when you adopted the tool, that is a defensible position and the burden is on the other two sides.<br><br>'+
   '<span class="good">If you voted "check less":</span> the presence of a source is read by a busy professional as evidence the source was consulted. Magesh et al. measured tools making claims their own cited sources did not support, a failure only visible to someone who opens the citation, which is the thing the citation makes you feel you need not do.<br><br>'+
-  '<span class="hd">The complication</span><span class="flag">Every failure you saw in this session was fully cited. Article VII was retrieved accurately and quoted accurately, and the one document that held the right answer, the appraisal, ranked third and was never the passage the model answered from. Not one of those failures would have been caught by opening the citation and confirming the passage says what the model said it says, which is step two of the verification order you ranked at the start of this session. Checking the citation harder would not have helped. Only knowing which document should have been there would.</span>';
+  '<span class="hd">The complication</span><span class="flag">Every failure you saw in this session was fully cited. Article VII was retrieved accurately and quoted accurately, and the one document that prices the company, the appraisal, ranked third and was never the passage the model answered from. Not one of those failures would have been caught by opening the citation and confirming the passage says what the model said it says, which is step two of the verification order you ranked at the start of this session. Checking the citation harder would not have helped. Only knowing which document should have been there would.</span>';
  D.style.display='block';
 }
 function showRevote(){
@@ -2626,7 +2626,7 @@ function showRevote(){
  else{
   h+='Vote one: '+esc(VOTES[v1].t)+'  \u2192  Vote two: '+esc(VOTES[v2].t)+'<br><br>';
   h+=moved?'<span class="good">You moved. Say out loud which sentence moved you; that sentence is the finding, not the vote.</span>'
-          :'<span class="good">Zero delta. That is a finding, not a failure: it means a position held under evidence, which is the same epistemic move this course asks you to make about model output.</span>';
+          :'<span class="good">Zero delta. That is a finding, not a failure: you held a position under evidence, which is what this course asks you to do with model output.</span>';
  }
  R.className='mpanel has keyhide';R.innerHTML=h;R.style.display='block';
 }
@@ -2639,7 +2639,7 @@ function showRevote(){
    v1=i;
    [].slice.call(B.children).forEach(function(c,j){c.classList.toggle('act',j===i);if(j!==i)c.classList.add('done')});
    O.className='mpanel has';
-   O.innerHTML='<span class="hd">Vote one, locked</span>'+esc(v.t)+'<br><span style="color:#6F7B78">Locked. You cannot change this one. The room distribution stays hidden until after the re-vote.</span>';
+   O.innerHTML='<span class="hd">Vote one, locked</span>'+esc(v.t)+'<br><span style="color:#6F7B78">Locked. You cannot change this one. Read the case for each side below, then re-vote.</span>';
    showDefence();
   };
   B.appendChild(b)});

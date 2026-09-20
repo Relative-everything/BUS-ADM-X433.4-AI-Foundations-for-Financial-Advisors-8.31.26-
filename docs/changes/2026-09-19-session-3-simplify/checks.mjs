@@ -18,6 +18,7 @@ say(d.querySelectorAll('.verify').length === 0 && !/Requires instructor verifica
 say(!/pedagogy\.md|build-case\.mjs|verify-case\.mjs|CASE\.md/.test(txt('#caseInner p.dim')), 'SM-004', 'the case dialog lede names no file or script');
 say(!/CASE\.md|settled here/.test(txt('#s10 .src')), 'SM-006', '§07 source line carries no file name or maintainer aside');
 say(!/CASE\.md|lines 3 and 5/.test(txt('#sChk .src')) && /wrong on purpose/.test(txt('#sChk .src')), 'SM-007', 'A3 source line names no file and does not print the answer');
+{ const b = $('#voteBtns button'); if (b) b.click(); say(!/minority|room distribution|7 to 9 minutes|yourselves/.test(txt('#s15')), 'SM-008', 'C4 carries no facilitation stage directions'); }
 /* SM-ITEMS */
 
 /* ---- standing invariants carried from the 09-18 checks ---- */
