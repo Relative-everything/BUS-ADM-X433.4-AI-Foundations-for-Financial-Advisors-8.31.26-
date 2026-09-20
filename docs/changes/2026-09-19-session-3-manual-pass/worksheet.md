@@ -22,7 +22,7 @@ read what the panel says.
 
 **Ask.** "The four letters in the order you would run them." Key C A D B.
 
-**Eyes on.** Is the objective sentence the one you will say, word for word? Is the Coles bullet
+**Eyes on.** Is the objective sentence the one you will say, word for word? Is the four-line Cole panel
 enough for the learner who found the case beyond her? Does the bridge hint read as an instruction
 to a beginner?
 
