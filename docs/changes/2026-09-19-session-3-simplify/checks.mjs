@@ -17,6 +17,7 @@ say(true, 'SM-001', 'the change folder exists and this file runs');
 say(d.querySelectorAll('.verify').length === 0 && !/Requires instructor verification/.test(html), 'SM-002/003', 'no verification gate is left on the page');
 say(!/pedagogy\.md|build-case\.mjs|verify-case\.mjs|CASE\.md/.test(txt('#caseInner p.dim')), 'SM-004', 'the case dialog lede names no file or script');
 say(!/CASE\.md|settled here/.test(txt('#s10 .src')), 'SM-006', '§07 source line carries no file name or maintainer aside');
+say(!/CASE\.md|lines 3 and 5/.test(txt('#sChk .src')) && /wrong on purpose/.test(txt('#sChk .src')), 'SM-007', 'A3 source line names no file and does not print the answer');
 /* SM-ITEMS */
 
 /* ---- standing invariants carried from the 09-18 checks ---- */
