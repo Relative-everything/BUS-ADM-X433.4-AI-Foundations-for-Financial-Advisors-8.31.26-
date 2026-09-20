@@ -21,6 +21,7 @@ say(!/CASE\.md|lines 3 and 5/.test(txt('#sChk .src')) && /wrong on purpose/.test
 { const b = $('#voteBtns button'); if (b) b.click(); say(!/minority|room distribution|7 to 9 minutes|yourselves/.test(txt('#s15')), 'SM-008', 'C4 carries no facilitation stage directions'); }
 say(!/three decisions|No claim is made|Adviser|then a column/.test(txt('#sOff')) && d.querySelectorAll('#sOff ol li').length === 4 && /Example output under prompt 1/.test(txt('#sOff ol')), 'SM-009', '§08 agrees with its own summary and the silent run has a fallback');
 say(d.querySelectorAll('#ppMeet button').length === 3 && !/\[Not included/.test(txt('#sPrep')) && !/your own tool|your next meeting/.test(txt('#sPrep')), 'SM-010', 'A2 offers a non-client meeting and presupposes no tool or meeting');
+say(/The Cole file, in four lines/.test(txt('#s1')) && /Nathan/.test(txt('#s1')) && /seed gift/.test(txt('#s1')) && /Grounding:/.test(txt('#s1')), 'SM-011', '§00 carries the four-line Cole panel and names grounding');
 /* SM-ITEMS */
 
 /* ---- standing invariants carried from the 09-18 checks ---- */

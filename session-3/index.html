@@ -1184,9 +1184,19 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <ul class="pts">
     <li><b>Session 1.</b> The model predicts rather than knows.</li>
     <li><b>Session 2.</b> It samples a plausible answer rather than computing the true one.</li>
-    <li><b>Tonight.</b> Hand it your own documents, require it to answer from them, then measure how much that removes.</li>
-    <li><b>The file.</b> The Coles: Meg Cole owns a Rockford aerospace-fastener company and is deciding whether to move most of it into a trust. Will, trust, buy-sell, appraisal, unsigned drafts. Case facts, top right.</li>
+    <li><b>Tonight.</b> Grounding: hand it your own documents and require it to answer from them. Then measure how much that removes.</li>
+    <li><b>The file.</b> The Coles, in the panel below. The whole file is behind Case facts, top right; nothing on this page needs it.</li>
   </ul>
+
+  <div class="panel">
+    <span class="plab">The Cole file, in four lines</span>
+    <ul class="pts" style="margin:0">
+      <li><b>The household.</b> Meg Cole owns all the shares of Cole Precision Components, CPC, a Rockford aerospace-fastener maker, and runs it. David is her husband. Their son Nathan works in the company; their daughter Claire wants no part in owning it.</li>
+      <li><b>The plan, nothing signed.</b> Split the company into voting and non-voting units. Give a small block of non-voting units, the seed gift, to a new irrevocable trust for David's benefit, then sell a much larger block to the same trust for a demand note: interest only, principal callable at any time. A planning memo asserts a valuation discount on the non-voting units; no appraiser has been engaged.</li>
+      <li><b>The documents.</b> A 2011 will, joint revocable trust, power of attorney and healthcare directive; a 2014 buy-sell agreement; a 2023 appraisal of the whole company; an unsigned planning memo; unsigned drafts of the trust and the note.</li>
+      <li><b>What is new.</b> A competitor has approached Meg about buying the company. Nothing is signed, and Nathan has not been told. David wants the appraisal looked at again before anything is signed.</li>
+    </ul>
+  </div>
 
   <div class="panel" style="border-color:var(--on);border-width:2px">
     <span class="plab">Tonight's one thing</span>
@@ -1195,8 +1205,8 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="panel">
     <span class="do">Retrieval bridge — 4 minutes</span>
-    <h4>Session 2 recall: the citation-verification order</h4>
-    <p class="hint">Four checks, no notes. Say the four letters in the order you would run them, then click them in that order. Wrong and committed beats right and read. Click again to reset.</p>
+    <h4>Session 2 Recall: The Citation-Verification Order</h4>
+    <p class="hint">Four checks from Session 2, no notes. Say the four letters in the order you would run them, then click them in that order. Wrong and committed beats right and read. Click again to reset.</p>
     <div id="bridgeList" class="chiplist"></div>
     <div id="bridgeOut" class="mpanel"><span class="hd">Your ordering</span><span class="nil">Click the first check you run.</span></div>
   </div>
@@ -1960,7 +1970,7 @@ document.addEventListener('keydown',function(e){
    letters before anyone clicks. k is the correct rank; the key sorts by it. */
 var BRIDGE=[
  {l:'A',t:'Confirm it says what the model says it says.',k:2,w:'A real authority attached to a claim it does not support is the failure Magesh et al. measured, and it is invisible to anyone who stops at step one.'},
- {l:'B',t:'Confirm it applies to these facts.',k:4,w:'Last because it is the most expensive and requires the other three to have passed. This is the step this session is about: the Cole file will hand you a real, current, correctly-read authority that governs a different transaction.'},
+ {l:'B',t:'Confirm it applies to these facts.',k:4,w:'Last because it is the most expensive and requires the other three to have passed. This is the step this session is about: the Cole file will hand you a real, current, correctly read authority that governs a different transaction.'},
  {l:'C',t:'Confirm the authority exists at all.',k:1,w:'Nothing downstream matters if the citation is invented. This is the cheapest check and the one most often skipped because the citation looks well formed.'},
  {l:'D',t:'Confirm it is still current.',k:3,w:'Supersession is silent. A correct reading of a superseded source produces a confident wrong answer with a verifiable citation.'}
 ];
