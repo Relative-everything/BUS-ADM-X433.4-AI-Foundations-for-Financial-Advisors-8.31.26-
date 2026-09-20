@@ -33,6 +33,12 @@ say(/a death, a disability or a withdrawal/.test(txt('#s6')) && !/AI-AR|retrieva
 say(/Eight Questions/.test(txt('#sVend h2')) && /Eight Questions/.test(txt('#apx')) && !/segment you sit in|your own practice|your own tool would|orders invert/.test(html) && /ranked last/.test(txt('#s11')) === false, 'SM-020', 'the appendix sections stand for a reader alone and A5 is titled by its count');
 { const m = d.querySelectorAll('#mapWrap g.mp'); [0,1,2,3].forEach(i => m[i] && m[i].dispatchEvent(new dom.window.Event('click', {bubbles:true}))); const q = d.querySelectorAll('#qPresets button'); q.forEach(b => b.click()); const p = $('#predBtns button'); if (p) p.click(); const v = $('#voteBtns button'); if (v) v.click(); const r = $('#revoteBtns button'); if (r) r.click(); const done = id => $('[data-gate="' + id + '"]').classList.contains('done'); say(done('g2') && done('g4') && done('ga3') && done('ga4'), 'SM-021', 'the four work-along gates that never flipped now flip on completion'); }
 say(/stands for every meeting/.test(txt('#s10')) && /no standing instruction/.test(html), 'SM-024', 'the standing instruction is defined where it is introduced and kept where it is used');
+{
+  const body = html.slice(html.indexOf('<body'))
+    .replace(/<script[\s\S]*?<\/script>/g, '').replace(/<style[\s\S]*?<\/style>/g, '')
+    .replace(/<!--[\s\S]*?-->/g, '').replace(/<[^>]+>/g, ' ');
+  say(!/CASE\.md|pedagogy\.md|scripts\/|\.mjs|assignment substrate/.test(body), 'SM-026', 'no file or script name is rendered to a learner anywhere on the page');
+}
 /* SM-ITEMS */
 
 /* ---- standing invariants carried from the 09-18 checks ---- */
