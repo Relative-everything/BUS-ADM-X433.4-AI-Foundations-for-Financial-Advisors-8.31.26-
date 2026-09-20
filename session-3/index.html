@@ -1520,7 +1520,7 @@ If a heading has nothing under it, write "none".</pre>
     <div id="chkKey" class="mpanel keyhide" style="display:none"></div>
   </div>
 
-  <p class="src">The summary lines are written for this lesson from the &sect;07 excerpt; two are wrong on purpose, labelled in the key and in the footer's case entry <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">The summary lines are written for this lesson from the &sect;07 excerpt; two are wrong on purpose, labelled in the key and in the footer's case entry <span class="conf l" data-src="src-case">L</span>. The excerpt itself is synthetic.</p>
 
   <div class="check" data-gate="ga6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Find both planted errors, then say which one you would have let through reading the summary alone.</div></div>
 
@@ -1535,7 +1535,7 @@ If a heading has nothing under it, write "none".</pre>
 
   <ul class="pts">
     <li><b>Kitces, autumn 2024.</b> The most-adopted tool was Zoom's AI Companion, a toggle inside software advisors already pay for. Advisor-specific tools cost $60 to $80 a month or more.</li>
-    <li><b>Why.</b> A meeting-platform tool summarises the meeting. An advisor-specific tool writes the note into the CRM, queues the tasks, drafts the recap and prepares the next agenda. Advisors were rating those four steps.</li>
+    <li><b>What each does.</b> A meeting-platform tool summarises the meeting. An advisor-specific tool writes the note into the CRM, queues the tasks, drafts the recap and prepares the next agenda.</li>
   </ul>
 
   <div class="panel" data-task="t-s11" data-comp="estimate-then-reveal">
@@ -1657,7 +1657,7 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
   <div class="panel" data-task="t-sVend" data-comp="builder-assembler">
     <span class="do">Do this now: 4 minutes</span>
     <h4>Build the Email</h4>
-    <p class="hint">Tick at least three. The email assembles below; copy it and send it before the pilot, not after.</p>
+    <p class="hint">Tick at least three. The email assembles below; copy it out. It goes to a vendor before any pilot, not after.</p>
     <div id="vqList" class="ckgrid"></div>
     <pre id="vqOut" class="ppout">Tick at least three questions.</pre>
     <div class="row"><button class="btn" id="vqCopy">Copy the email</button><span id="vqMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
@@ -1743,7 +1743,7 @@ then a list of every element where my answer was thin.</pre>
 
   <ul class="pts">
     <li><b>Check more.</b> A citation is a handle, something specific to pull on.</li>
-    <li><b>Check less.</b> A citation reads as completed work, so a busy professional stops there. &sect;04 supplied evidence for this side; &sect;03 supplied evidence for the other, where opening the top passage is what exposed the Article VII failure.</li>
+    <li><b>Check less.</b> A citation reads as completed work, so a busy professional stops there. &sect;04 supplied evidence for this side; &sect;03 supplied evidence for the other, where reading the top passage against Meg's sale to a trust is what exposed the Article VII failure.</li>
     <li><b>The method.</b> Vote before you read the arguments. Read the case for each side, then the complication, then vote again. A vote that does not move is a finding, not a failure.</li>
   </ul>
 
@@ -1760,7 +1760,7 @@ then a list of every element where my answer was thin.</pre>
 
   <p class="src">Magesh et al. (2025) report that the tools tested made claims not supported by the sources they cited, the failure a reader who trusts the citation will not catch <span class="conf h" data-src="src-magesh">H</span>. Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025), <em>The Impact of Generative AI on Critical Thinking</em>, Microsoft Research / CHI 2025, characterised here only by its title claim of self-reported reductions in cognitive effort <span class="conf m" data-src="src-lee-cognitive">M, full findings not re-verified</span>.</p>
 
-  <div class="check" data-gate="ga4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote, defend, absorb the complication, re-vote.</div></div>
+  <div class="check" data-gate="ga4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote, read the case for each side, absorb the complication, re-vote.</div></div>
 
 </section>
 
@@ -2335,18 +2335,18 @@ var CHAIN=[
 /* ================= 9c. The intake questionnaire: a prep prompt built from areas ================= */
 (function(){
  var M=$('ppMeet'),A=$('ppAreas'),O=$('ppOut'),B=$('ppCopy'),MS=$('ppMsg');if(!M)return;
- var MEET=[{k:'first',t:'First meeting with a new client'},{k:'review',t:'Annual review with an existing client'},{k:'other',t:'Recurring meeting you write up afterwards'}];
+ var MEET=[{k:'first',t:'First meeting with a new client'},{k:'review',t:'Annual review with an existing client'},{k:'other',t:'Recurring meeting you write up afterwards',p:'recurring meeting that is written up afterwards'}];
  var AREAS=['Personal and family','Income and employment','Assets and accounts','Liabilities','Insurance','Estate documents','Goals and timing','Concerns and constraints'];
  var meet=null,on={};
  function build(){
   var picked=AREAS.filter(function(a){return on[a]});
   if(!meet||picked.length<2){O.textContent='Choose a meeting type and at least two areas.';O.className='ppout';return}
   O.className='ppout on';
-  O.textContent='You are helping a financial planner prepare for a '+meet.t.toLowerCase()+'.\n'+
+  O.textContent='You are helping a financial planner prepare for a '+(meet.p||meet.t.toLowerCase())+'.\n'+
    'Draft a questionnaire covering: '+picked.join('; ')+'.\n'+
    'For each area, list the questions to ask in the meeting and the documents to request beforehand.\n'+
    'Before you draft, ask me up to five questions about the meeting that would change the list.\n'+
-   'Do not invent any client fact; leave a blank where one is needed.\n'+
+   'Do not invent any fact about the people in the meeting; leave a blank where one is needed.\n'+
    'Format: one heading per area, the questions as a numbered list, the documents as a checklist.';
   if(typeof mark==='function')mark('ga2');
  }
