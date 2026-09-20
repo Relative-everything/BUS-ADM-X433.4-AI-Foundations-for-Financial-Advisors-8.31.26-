@@ -13,3 +13,8 @@ gate green and the skill validators at the seven by-design red lines.
 | Id | Anchor | Planned edit | Test | Commit | Result | Status |
 |---|---|---|---|---|---|---|
 | SM-001 | `docs/changes/2026-09-19-session-3-simplify/` | Open the change folder: the kickoff verbatim, this ledger, `checks.mjs` with the standing invariants | `node checks.mjs` runs, 0 failed | | | open |
+| SM-002 | `s12`, "This section characterises recording law and a professional duty. Verify before teaching either as settled" | The §09 verification block leaves the page; its two items go to the run sheet under Verify before teaching | `.verify` count 0 | | | done |
+| SM-003 | `#caseInner`, after `CASE:END`, "Every tax and legal characterisation attached to this case is posed as a question" | The shared case gate leaves the page (Session 2 precedent, DW-056 batch 3); its four items and the Karmazin, Woelbing and Davidson line go to the run sheet | no "Requires instructor verification" on the page | | | done |
+| SM-004 | `#caseInner p.dim`, "Generated from CASE.md, the canonical fact set" | The case dialog's lede stops naming files and scripts and says what the dialog is for | the lede names no file or script | | | done |
+| SM-005 | `instructor-notes/session-3.md`; `docs/deferred-work.md` DW-056, DW-041 | A Verify before teaching section carries every item the two gates held plus the §07 excerpt disclosure; the §09 slot and the not-yet-done list point at it; both register rows carry a dated line | reads true against the page | | | done |
+

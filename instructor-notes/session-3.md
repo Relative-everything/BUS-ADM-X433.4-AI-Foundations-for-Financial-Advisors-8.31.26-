@@ -314,7 +314,7 @@ authoritative until that record exists.
 split the room and it stays in Session 3 deliberately. Session 4 formalises the same insight against
 Regulation S-P; say that this is the version they meet again with the law attached.
 
-The verify block's two items are yours to sign before teaching them as settled.
+The two recording-law items under **Verify before teaching** below are yours to check before you teach them as settled. The page no longer carries them.
 
 The vendor-questions card is gone from this section. Session 4 §04 scores the same questions with
 weights, and appendix A5 carries them as an email builder for the async reader.
@@ -347,9 +347,18 @@ about the delta; the room aggregate is the artefact.
 Otherwise this debt is paid on 2026-09-28 by Session 4's D4, which prices the same argument with the
 logging burden attached.
 
+## Verify before teaching (moved from the page 2026-09-19; the on-page blocks are gone by instruction)
+
+Nothing below is stated as a holding on the page. Check each against primary authority before answering it in class. `session-3-verify-brief.md` names the subsection and the standard to open for the first two.
+
+- **18 U.S.C. § 2511 as a federal one-party-consent floor**, with states free to require every party's consent. §09 says only that federal law lets one party record, that some states require everyone's consent, and that published counts disagree; it adopts no count.
+- **The duty of confidentiality as it applies to handing client content to a documentation vendor**, under your firm's policy and your credentialing body's code. §09 says a vendor's system is a disclosure to everyone with access and that the terms are contract questions; it does not say the disclosure is prohibited. If your firm's policy forbids it outright, say so for your room.
+- **From the case dialog** (its gate is off this page too; the hub, session-0.1, session-1 and session-4 still carry theirs, DW-056): whether §7872's blended annual rate or §1274's applicable federal rate governs a demand note issued in exchange for property (CASE.md §H.4 records no controlling authority); whether the combined lack-of-control and marketability discount the memorandum asserts is supportable (no appraiser engaged, no restricted-stock or pre-IPO study on file); the Illinois estate tax rate table and the adjusted-taxable-gift add-back (both at M); the Illinois replacement income tax on trusts, material to the cost of turning grantor status off (CASE.md §D.3 carries the rate at M). Karmazin, Woelbing and Davidson are flagged in CASE.md Part I as settled or stipulated: they decided nothing and are not authority. Every tax and legal characterisation attached to the case is a question, not a holding; you sign the slide, not the model.
+- **The §07 excerpt** presupposes an advisory engagement that CASE.md §A.5 denies (no adviser of record). Recorded as DW-041 and disclosed here rather than on the page; nothing in the excerpt asserts a tax or legal result.
+
 ## What is not yet done
 
-- §09's verify block is unsigned. Both items are yours.
+- The two §09 items under Verify before teaching are unchecked. Both are yours.
 - The four polls are not built in Zoom yet.
 - Speaker-labelled transcripts are not switched on. One checkbox, and every future review depends
   on it.

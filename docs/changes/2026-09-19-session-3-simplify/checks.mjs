@@ -14,6 +14,8 @@ let fails = 0;
 const say = (ok, id, s) => { if (!ok) fails++; console.log(`${ok ? 'PASS' : 'FAIL'}  ${id}  ${s}`); };
 
 say(true, 'SM-001', 'the change folder exists and this file runs');
+say(d.querySelectorAll('.verify').length === 0 && !/Requires instructor verification/.test(html), 'SM-002/003', 'no verification gate is left on the page');
+say(!/pedagogy\.md|build-case\.mjs|verify-case\.mjs|CASE\.md/.test(txt('#caseInner p.dim')), 'SM-004', 'the case dialog lede names no file or script');
 /* SM-ITEMS */
 
 /* ---- standing invariants carried from the 09-18 checks ---- */
