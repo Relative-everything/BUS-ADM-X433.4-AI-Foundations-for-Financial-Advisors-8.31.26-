@@ -1,7 +1,8 @@
-# §09 verify block: what to open and what to look for, then sign or strike
+# The two §09 recording-law items: what to open, what to look for, and what to say on Monday
 
-Written 2026-09-18. Session 3 §09 carries a dashed "Requires instructor verification" block with
-two items. Both primary sources are egress-blocked from the build environment (law.cornell.edu and
+Written 2026-09-18, amended 2026-09-19. Session 3 §09 carried a dashed "Requires instructor
+verification" block with two items; the block is off the page since 2026-09-19 (no text on the page
+addresses the instructor) and the items live in `session-3.md` under Verify before teaching. Both primary sources are egress-blocked from the build environment (law.cornell.edu and
 cfp.net), so nothing below is quoted; this is the shortest path to your own reading. Twenty minutes
 was the estimate; with the targets named it should be ten.
 
@@ -20,7 +21,7 @@ Penal Code § 637.2 and the lesson does not state California's all-party rule as
 
 **Sign if:** (2)(d) says what the page says. **Strike if:** you read it as narrower than one-party
 consent for a private person recording her own call. Confidence before you read it: high, on the
-audits' and the record's prior verification; the block exists because the rule is that you sign
+audits' and the record's prior verification; the item is on the run sheet because the rule is that you sign
 recording law, not a model.
 
 ## Item 2 · The duty of confidentiality applied to a documentation vendor
@@ -48,5 +49,5 @@ should say so for your room.
 ## When signed
 
 Say on Monday, once, at 7:52: "I have checked both of these against the primary source." Then
-tell the next pass and the dashed block comes off the page. Until then the aid says: "Verify block
-unsigned: say so."
+tell the next pass, so the run sheet's not-yet-done list closes. Until then the aid says: "Law items
+unchecked? Say so."

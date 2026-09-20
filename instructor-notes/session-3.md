@@ -8,6 +8,29 @@ demonstrated. Everything else is narrated.** Session 1 measured 2 of 17 interact
 and 0 executed by a learner. A section that is read runs at about 1.0x its planned minutes; a
 section that is worked runs at 1.9x. That is the whole reason the clock below looks tight.
 
+## Changed 2026-09-19, the simplify pass
+
+Everything below this block still holds. What moved on the page:
+
+- **Both "Requires instructor verification" blocks are off the page**, the §09 one and the one in the
+  Case facts dialog. Their items are under **Verify before teaching** at the end of this sheet.
+  Nothing on the page speaks to you instead of to the room, and no lesson text names a file or a
+  build script.
+- **§00 carries the Coles in four lines**, in the panel "The Cole file, in four lines" under the
+  opening bullets: the household with David, Nathan and Claire, the plan with the seed gift and the
+  demand note, the documents, and what is new. Read it aloud at 6:19. Every exercise now works
+  without the case study, so nobody has to open Case facts.
+- **§03 prints each preset's question on its button**, so the room can commit to a passage number
+  before the click that ranks it. The hint names the one fact the judgement needs.
+- **§06's question is now "the stage whose skipped check is first seen at an examination"**. The
+  answer is still 5.
+- **§07 stage four flags "we will arrange that"** as a commitment the tool added, and gives the
+  action item no owner, which is what §08 teaches.
+- **§08's silent run tells anyone without Claude, or with a stalled run, to open Example output.**
+- **A2 offers a third meeting type** for the three who do not run client meetings.
+- **The four work-along ticks that never appeared** (the map, the presets, the C3 prediction, the
+  C4 re-vote) now appear when the room finishes each one.
+
 ## Changed 2026-09-18, the final pass
 
 - The objective is printed on the page, in §00 above the bridge, in the words below. Read it off
@@ -197,12 +220,12 @@ who is holding it if nobody does.
 ### Flow
 - Page open at core-only depth. A1, A2, A3, A5, C3 and C4 are for the async reader.
 - Say the data rule aloud before §07's instruction is copied into anyone's tool, and again at §11.
-- The case is explained only in the injected modal now, and one learner wrote after Session 1 that
-  the case was beyond her. Open the Case facts panel once, unprompted, at 6:19 and say in two
-  sentences who the Coles are.
+- The Coles are on the page in four lines, the panel under the bullets in §00, and one learner
+  wrote after Session 1 that the case was beyond her. Read that panel aloud at 6:19. The Case facts
+  dialog holds the rest for anyone who wants it; nothing on the page needs it.
 
 ### Drop order, first to go at the top
-1. §05, narrate the two-column comparison only, skip the Tuesday test. Recovers 4.
+1. §05, narrate the three bullets only, skip the Tuesday test. Recovers 4.
 2. §09 to the one-party floor only. Recovers 3.
 3. Q&A reserve from 20 to 12. Recovers 8. Only to protect the closing check.
 4. The merged §01/§02 narrated in 4 rather than 7, skipping the pair sort. Recovers 3.
@@ -250,9 +273,9 @@ option's feedback aloud whatever the room picked. First to drop if behind.
 
 ### s9 · §06, 6:52
 Before the stages: the one question for the three non-advisors, in their section above. Then a
-second question: the number of the stage whose skipped check is found last. The answer is
-5, Log, at examination; 2 and 3 are the ones nobody ever sees, which is worth one sentence when
-you open them. Click every stage, 1 to 5. **[GATE]** at the Log stage. Say once, in one sentence, that everything tonight
+second question: the number of the stage whose skipped check is first seen at an examination.
+The answer is 5, Log; 2 and 3 are the ones nobody ever sees, which is worth one sentence when you
+open them. Click every stage, 1 to 5. **[GATE]** at the Log stage. Say once, in one sentence, that everything tonight
 lives inside steps 1, 2 and 7 of the Board's seven-step process, and that nothing tonight touches
 steps 4 and 5, where your credential attaches. That sentence sets up the 7:36 sorter, and the page links to it under the five stages.
 
@@ -260,7 +283,8 @@ steps 4 and 5, where your credential attaches. That sentence sets up the 7:36 so
 The five turns are numbered. Ask for the number of the turn that holds the one thing the file most
 needs and a tool is most likely to drop. The answer is 2, Meg's first answer, the clause about
 Nathan. Then open the four stages in order. The extraction stage's dropped clause about Nathan is the teaching
-point; the instruction below it is the thing to take home. Stage three's output is the summary the
+point; the instruction below it is the thing to take home. Stage four now flags "we will arrange that" as a
+commitment the tool added, which is the catch the §08 harvest asks for. Stage three's output is the summary the
 room runs §08 on, so leave it open on screen when you move on. At the instruction, say once that
 the headings are for any meeting: swap the word "client".
 
@@ -295,8 +319,8 @@ on the page for anyone who finishes early. Do not assign them.
 If someone does have the Office assistant and wants to run it there, that is a bonus, not the
 lesson. Do not spend the room's four minutes troubleshooting one person's licence.
 
-Harvest in chat, one line each: whether what came back was usable, and one sentence it got wrong
-or stated as settled. Nobody has to speak. That chat is the student-produced artifact to spend in
+Harvest in chat, one line each: whether what came back was usable, and one sentence it added
+or stated as settled. Those are the words on the page and in the chat line you paste. Nobody has to speak. That chat is the student-produced artifact to spend in
 the reserve at 8:12.
 
 ### session-2 s9 · The seven-step sorter, 7:36 · **WORKED 3**
@@ -310,11 +334,11 @@ The seven CFP Board step names carry no source record yet. Do not present the st
 authoritative until that record exists.
 
 ### s12 · §09, 7:52
-**[GATE]** on consent. Poll the four dispositions before revealing any answer; item 1 is built to
+**[GATE]** on consent. Poll the room on item 1, a to c, before revealing any answer; item 1 is built to
 split the room and it stays in Session 3 deliberately. Session 4 formalises the same insight against
 Regulation S-P; say that this is the version they meet again with the law attached.
 
-The verify block's two items are yours to sign before teaching them as settled.
+The two recording-law items under **Verify before teaching** below are yours to check before you teach them as settled. The page no longer carries them.
 
 The vendor-questions card is gone from this section. Session 4 §04 scores the same questions with
 weights, and appendix A5 carries them as an email builder for the async reader.
@@ -347,9 +371,18 @@ about the delta; the room aggregate is the artefact.
 Otherwise this debt is paid on 2026-09-28 by Session 4's D4, which prices the same argument with the
 logging burden attached.
 
+## Verify before teaching (moved from the page 2026-09-19; the on-page blocks are gone by instruction)
+
+Nothing below is stated as a holding on the page. Check each against primary authority before answering it in class. `session-3-verify-brief.md` names the subsection and the standard to open for the first two.
+
+- **18 U.S.C. § 2511 as a federal one-party-consent floor**, with states free to require every party's consent. §09 says only that federal law lets one party record, that some states require everyone's consent, and that published counts disagree; it adopts no count.
+- **The duty of confidentiality as it applies to handing client content to a documentation vendor**, under your firm's policy and your credentialing body's code. §09 says a vendor's system is a disclosure to everyone with access and that the terms are contract questions; it does not say the disclosure is prohibited. If your firm's policy forbids it outright, say so for your room.
+- **From the case dialog** (its gate is off this page too; the hub, session-0.1, session-1 and session-4 still carry theirs, DW-056): whether §7872's blended annual rate or §1274's applicable federal rate governs a demand note issued in exchange for property (CASE.md §H.4 records no controlling authority); whether the combined lack-of-control and marketability discount the memorandum asserts is supportable (no appraiser engaged, no restricted-stock or pre-IPO study on file); the Illinois estate tax rate table and the adjusted-taxable-gift add-back (both at M); the Illinois replacement income tax on trusts, material to the cost of turning grantor status off (CASE.md §D.3 carries the rate at M). Karmazin, Woelbing and Davidson are flagged in CASE.md Part I as settled or stipulated: they decided nothing and are not authority. Every tax and legal characterisation attached to the case is a question, not a holding; you sign the slide, not the model.
+- **The §07 excerpt** presupposes an advisory engagement that CASE.md §A.5 denies (no adviser of record). Recorded as DW-041 and disclosed here rather than on the page; nothing in the excerpt asserts a tax or legal result.
+
 ## What is not yet done
 
-- §09's verify block is unsigned. Both items are yours.
+- The two §09 items under Verify before teaching are unchecked. Both are yours.
 - The four polls are not built in Zoom yet.
 - Speaker-labelled transcripts are not switched on. One checkbox, and every future review depends
   on it.

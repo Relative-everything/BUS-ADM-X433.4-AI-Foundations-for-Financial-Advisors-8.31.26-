@@ -1,0 +1,70 @@
+#!/usr/bin/env node
+/* One DOM assertion per ledger item. Run from the repo root with NODE_PATH at
+   the global npm root: node docs/changes/2026-09-19-session-3-simplify/checks.mjs */
+import { readFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
+const { JSDOM } = require('jsdom');
+const html = readFileSync('session-3/index.html', 'utf8');
+const dom = new JSDOM(html, { runScripts: 'dangerously', pretendToBeVisual: true });
+const d = dom.window.document;
+const $ = (s) => d.querySelector(s);
+const txt = (s) => ($(s) ? $(s).textContent : '');
+let fails = 0;
+const say = (ok, id, s) => { if (!ok) fails++; console.log(`${ok ? 'PASS' : 'FAIL'}  ${id}  ${s}`); };
+
+say(true, 'SM-001', 'the change folder exists and this file runs');
+say(d.querySelectorAll('.verify').length === 0 && !/Requires instructor verification/.test(html), 'SM-002/003', 'no verification gate is left on the page');
+say(!/pedagogy\.md|build-case\.mjs|verify-case\.mjs|CASE\.md/.test(txt('#caseInner p.dim')), 'SM-004', 'the case dialog lede names no file or script');
+say(!/CASE\.md|settled here/.test(txt('#s10 .src')), 'SM-006', '§07 source line carries no file name or maintainer aside');
+say(!/CASE\.md|lines 3 and 5/.test(txt('#sChk .src')) && /wrong on purpose/.test(txt('#sChk .src')), 'SM-007', 'A3 source line names no file and does not print the answer');
+{ const b = $('#voteBtns button'); if (b) b.click(); say(!/minority|room distribution|7 to 9 minutes|yourselves/.test(txt('#s15')), 'SM-008', 'C4 carries no facilitation stage directions'); }
+say(!/three decisions|No claim is made|Adviser|then a column/.test(txt('#sOff')) && d.querySelectorAll('#sOff ol li').length === 4 && /Example output under prompt 1/.test(txt('#sOff ol')), 'SM-009', '§08 agrees with its own summary and the silent run has a fallback');
+say(d.querySelectorAll('#ppMeet button').length === 3 && !/\[Not included/.test(txt('#sPrep')) && !/your own tool|your next meeting/.test(txt('#sPrep')), 'SM-010', 'A2 offers a non-client meeting and presupposes no tool or meeting');
+say(/The Cole file, in four lines/.test(txt('#s1')) && /Nathan/.test(txt('#s1')) && /seed gift/.test(txt('#s1')) && /Grounding:/.test(txt('#s1')), 'SM-011', '§00 carries the four-line Cole panel and names grounding');
+say(/also called grounding/.test(txt('#s4')) && /Ten passages/.test(txt('#s4')) && /Preset 1 · What value should we use/.test(txt('#qPresets')) && /selling part of the company to a trust/.test(txt('#s4 .hint')), 'SM-012', '§03 defines grounding, reconciles nine documents with ten passages, and prints each preset question on its button');
+say(!/IDGT|nearly the same person|reaches Meg’s return/.test(html) && /gift tax return/.test(html), 'SM-013', 'the map notes and pair explanations stand on their own');
+say(/first seen at an examination/.test(txt('#s9 .hint')) && !/already said/.test(html), 'SM-014', '§06 asks a question with one answer and Prep does not presuppose the §07 excerpt');
+{ const b = d.querySelectorAll('#ntStages button'); if (b[0]) b[0].click(); if (b[3]) b[3].click(); say(/Meg and David Cole/.test(txt('#s10')) && /\[01:00\]/.test(txt('#ntStages')) && !/Owner: you/.test(txt('#ntStages')) && /Not in the meeting/.test(txt('#ntStages')) && !/your own tool/.test(txt('[data-gate="g8"]')), 'SM-015', '§07 names the speakers, stamps its transcript, and its follow-up obeys the not-given rule'); }
+say(/Suppose your firm/.test(txt('#s12 .hint')) && /son who works/.test(txt('#s12')) && !/split the room|own state's rule/.test(html), 'SM-016', '§09 says who Nathan is and asks nothing the learner cannot answer');
+say(!/Meg agreed|counsel gave|your own tool/.test(txt('#s13')) && /Copy the prompt/.test(txt('#copyBtn')) && /Cole review/.test(txt('[data-gate="g10"]')), 'SM-017', '§10 agrees with the meeting record and gives a reader without a meeting something to run the prompt on');
+{ const c = $('#ckCopy'); if (c) c.click(); say(/standing instruction/.test(txt('#ckList')) && $('[data-gate="g12"]').classList.contains('done'), 'SM-018', '§11 checklist keeps the standing instruction and the work-along completes on copy'); }
+say(/a death, a disability or a withdrawal/.test(txt('#s6')) && !/AI-AR|retrieval pipeline/.test(html), 'SM-019', '§04 states Article VII as the passage does and the chart label is a name');
+say(/Eight Questions/.test(txt('#sVend h2')) && /Eight Questions/.test(txt('#apx')) && !/segment you sit in|your own practice|your own tool would|orders invert/.test(html) && /ranked last/.test(txt('#s11')) === false, 'SM-020', 'the appendix sections stand for a reader alone and A5 is titled by its count');
+{ const m = d.querySelectorAll('#mapWrap g.mp'); [0,1,2,3].forEach(i => m[i] && m[i].dispatchEvent(new dom.window.Event('click', {bubbles:true}))); const q = d.querySelectorAll('#qPresets button'); q.forEach(b => b.click()); const p = $('#predBtns button'); if (p) p.click(); const v = $('#voteBtns button'); if (v) v.click(); const r = $('#revoteBtns button'); if (r) r.click(); const done = id => $('[data-gate="' + id + '"]').classList.contains('done'); say(done('g2') && done('g4') && done('ga3') && done('ga4'), 'SM-021', 'the four work-along gates that never flipped now flip on completion'); }
+say(/becomes the standing instruction for every meeting/.test(txt('#s10')) && /no standing instruction/.test(html), 'SM-024', 'the standing instruction is defined where it is introduced and kept where it is used');
+{
+  const body = html.slice(html.indexOf('<body'))
+    .replace(/<script[\s\S]*?<\/script>/g, '').replace(/<style[\s\S]*?<\/style>/g, '')
+    .replace(/<!--[\s\S]*?-->/g, '').replace(/<[^>]+>/g, ' ');
+  say(!/CASE\.md|pedagogy\.md|scripts\/|\.mjs|assignment substrate/.test(body), 'SM-026', 'no file or script name is rendered to a learner anywhere on the page');
+}
+{ const b = [...d.querySelectorAll('#qPresets button')].map(x => x.textContent); say(/Meg’s CPC shares\?$/.test(b[0]) && b.every(t => /\?$/.test(t)), 'SM-027', 'each preset button reads as a question: ' + b[0]); say(/family holding company/.test(txt('#s1')) && !/selling shares to a trust/.test(txt('#s4')), 'SM-027', '§00 and §03 describe the transaction as the case does'); }
+say(!/each with its own triggering event|the assistant reported|gift that was rejected|A judgment,|reason noted in the file/.test(html) && /becomes the standing instruction/.test(txt('#s10')), 'SM-028', 'the core sections say what the case and the transcript say');
+{ const m = d.querySelectorAll('#ppMeet button'); if (m[2]) m[2].click(); const c = d.querySelectorAll('#ppAreas input'); [0,1].forEach(i => { c[i].checked = true; c[i].dispatchEvent(new dom.window.Event('change', {bubbles:true})); }); say(/prepare for a recurring meeting that is written up afterwards\./.test(txt('#ppOut')) && !/client fact/.test(txt('#ppOut')), 'SM-029', 'the third meeting type reads as prompt text'); say(!/Advisors were rating|Vote, defend/.test(html) && /reading the top passage against Meg's sale to a trust/.test(txt('#s15')), 'SM-029', 'C3 and C4 no longer answer or stage-direct ahead of the learner (the defence panel keeps its advocate voice, which the complication rebuts)'); }
+/* SM-ITEMS */
+
+/* ---- standing invariants carried from the 09-18 checks ---- */
+say(d.querySelectorAll('[data-comp]').length === 18, 'V6', `18 interaction roots (found ${d.querySelectorAll('[data-comp]').length})`);
+say((html.match(/in chat/g) || []).length === 2, 'FF-032', 'exactly two written moments on the page');
+say(/Meg Cole owns/.test(txt('#s1')), 'FF-028', '§00 says who the Coles are');
+say(/No client meetings\?/.test(txt('#s9')), 'FF-010', '§06 carries the parallel track');
+say(/swap "client"/.test(txt('#s10')), 'FF-011', '§07 says how to adapt the instruction');
+say(/meeting you chose/.test(txt('#s16 .hint')), 'FF-012', '§11 hint covers the chosen meeting');
+say(/wrote up/.test(txt('[data-gate="g10"]')), 'FF-013', '§10 work-along does not presuppose a client meeting');
+say([...d.querySelectorAll('#s1 .plab')].some(e => /Tonight/.test(e.textContent)), 'FF-006', 'the objective is printed in §00');
+say(/Closing check/.test(txt('#s16 .talk .th')) && /in chat/.test(txt('#s16 .talk .th')), 'FF-007', '§11 closing block is the written check');
+say(!/Word|Excel|PowerPoint|Office|add-in/.test(txt('#sOff')), 'FF-005', 'no vendor application named in §08');
+say(/Start it four minutes late/.test(html), 'FF-003', '§06 capture check is conditional');
+{
+  const bl = [...d.querySelectorAll('#bridgeList button')];
+  [2, 0, 3, 1].forEach(i => bl[i] && bl[i].click());
+  say(/Correct order, 4 of 4/.test(txt('#bridgeOut')), 'FF-019', 'C A D B is the correct order');
+}
+say(/D10/.test(txt('#qIndexList')) && /D1 Buy-Sell/.test(txt('#qIndexList')), 'FF-023', '§03 lists the ten passages by number');
+{
+  const x = $('#offX0'); if (x) x.click();
+  say(/Example output, illustrative/.test(txt('#offE0')) && /we will confirm both with you/.test(txt('#offE0')), 'FF-035', '§08 example output opens');
+}
+console.log(`\nsummary: ${fails} failed`);
+process.exit(fails ? 1 : 0);

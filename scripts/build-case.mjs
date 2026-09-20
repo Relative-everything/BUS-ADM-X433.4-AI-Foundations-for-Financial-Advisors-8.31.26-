@@ -377,7 +377,7 @@ function buildExtract() {
   const perUnitDividend = F.dividend / F.totalUnits;
   const L = [];
   L.push(`<div class="case-extract" data-case-version="${esc(meta.case_version)}">`);
-  L.push(`  <p class="case-lede"><b>Synthetic case.</b> No real person, entity, transaction or document. One household runs through all five sessions. It is never the assignment substrate: students build their own work on their own recurring tasks with their own synthetic data.</p>`);
+  L.push(`  <p class="case-lede"><b>Synthetic case.</b> No real person, entity, transaction or document. One household runs through all five sessions. It is never the material for your own work: you build that on your own recurring tasks with your own synthetic data.</p>`);
 
   L.push(`  <table class="dt tight case-t"><tbody>`);
   L.push(`    <tr><td class="case-k"><b>${esc(F.megName)}, ${F.megAge}</b></td><td>${esc(F.megRole.replace(/\.$/, ''))}. Bought all 1,000 CPC shares from her father ${esc(F.decedent)} on 1 July 2016 for ${usd(F.megBasis)}; that purchase price is her basis. She did not found the company and did not inherit the stock.</td></tr>`);
@@ -421,7 +421,7 @@ function buildExtract() {
   L.push(`    <li><b>Whether discretionary distributions survive &sect;2036(a)(2).</b> <i>Mirowski</i> turned on mandatory distributions; the draft operating agreement makes them discretionary.</li>`);
   L.push(`    <li><b>Whether the Illinois exposure is addressed at all.</b> Neither spouse has engaged with it, and the 2011 documents contain no Illinois QTIP direction.</li>`);
   L.push(`  </ul>`);
-  L.push(`  <p class="case-src">Every figure above is generated from <b>CASE.md v${esc(meta.case_version)}</b> by <code>scripts/build-case.mjs</code>. Confidence labels, authorities and the full fact set live there. Cases flagged in CASE.md Part I as settled or stipulated (<i>Karmazin</i>, <i>Woelbing</i>, <i>Davidson</i>) decided nothing and are not authority.</p>`);
+  L.push(`  <p class="case-src">Every figure above belongs to the synthetic case and is the same in every session of the course. <i>Karmazin</i>, <i>Woelbing</i> and <i>Davidson</i> are settled or stipulated: they decided nothing and are not authority.</p>`);
   L.push(`</div>`);
   return L.join('\n') + '\n';
 }

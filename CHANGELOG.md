@@ -10,6 +10,65 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-20 · Session 3 simplify pass: nothing on the page addresses the instructor, and no exercise needs the case study
+
+Branch `claude/adoring-mendel-2luer4`, from `main` after PR #32. Twenty-five ledger items (SM-001 to
+SM-025) in `docs/changes/2026-09-19-session-3-simplify/`, one commit each where a commit is an
+item, with a jsdom check per item in `checks.mjs`, the handback, the ledger and a disposition record
+of all 157 finder results. Core is still 11 sections and 62 planned minutes; the appendix 83; 18
+interaction roots, unchanged; the em-dash baseline reproduced at 4 literal plus 3 entity after every
+commit; the four §03 preset rankings identical to the decimal before and after.
+
+### Session 3 · the two verification blocks are off the page
+
+Both "Requires instructor verification before it is taught as settled" blocks are gone from the
+learner page, the §09 one and the shared case gate inside the Case facts dialog, as Session 2's
+were on 2026-09-13. Their items, the §07 excerpt disclosure and the Karmazin, Woelbing and Davidson
+line now sit under a Verify before teaching heading in `instructor-notes/session-3.md`. The Case
+facts lede no longer names files or scripts; two source lines stop naming CASE.md; Appendix C4's
+facilitation protocol, its timed defence phase and its promised room distribution become a method a
+reader alone can follow.
+
+### Session 3 · every interaction works without the case study
+
+§00 carries "The Cole file, in four lines", figure-free: the household, the plan with the seed gift
+and the demand note, the documents, and what is new. Each §03 preset button prints its question, so
+the room can commit to a passage number before the click that ranks it, and the hint names the one
+fact the judgement needs. The meaning map's notes and the pair sorter's explanations say which trust
+is which and where the discount is asserted, with no IDGT. §06 asks a question with one answer. §07
+names Meg and David Cole in its heading and Nathan as their son, and its follow-up stage obeys the
+not-given rule §08 teaches. §08's sorter agrees with the summary it runs on and the silent run sends
+a learner with no Claude to the example output. §09 says who Nathan is and asks nothing the learner
+cannot answer. §10's basis example agrees with the meeting record. A1, A2, A3, C3 and A5 presuppose
+no practice, tool, client meeting or vendor; A2 offers a recurring meeting you write up afterwards.
+
+### Session 3 · the case block, and the review of the finished diff
+
+The generated case block a learner opens from Case facts stopped naming CASE.md, its version,
+`scripts/build-case.mjs` and "the assignment substrate"; those four strings are generator-side, so
+all six lessons were rebuilt, and in the other five the only changes are those strings and the
+content stamp. Session 3 now names no file and no build script anywhere a learner can read.
+
+Six independent reviewers then read the whole diff, with one adversarial refuter per finding: 17
+confirmed, 8 refuted. The fixes are `SM-026` to `SM-030`. Each §03 preset button prints a written
+question from a display field, leaving the frozen ranker queries untouched; the §00 panel and the
+§03 hint describe the transaction as the case does; the will sends the residue rather than receiving
+it; only the buy-sell formula is credited with triggering events; §06's Log check names the outright
+gift rather than a rejected one; the §10 basis example states its reason instead of pointing at the
+file; A2's third meeting type reads as prompt text; C3 and C4 stop answering their own reveals; and
+the run sheet gains a Changed 2026-09-19 block, with its drop order and its §07, §08 and §09 slots
+corrected.
+
+### Session 3 · mechanics and instructor materials
+
+The four work-along gates that never flipped (the map, the presets, the C3 prediction, the C4
+re-vote) flip on completion; the checklist completes on copy; the transcription stamps read like
+stamps; the sorter progress line no longer runs an item into its instruction. The teaching aid
+(`.htm`, `.md`, one-page `.pdf`), the verify brief, the worksheet and the run sheet say what the page
+says, and `instructor-notes/session-3-before-monday.md` is the simplified list: five things that
+must happen, three worth the time, the Monday setup and the after-class exports. Register: DW-056
+and DW-041 carry a dated line.
+
 ## 2026-09-18 · Session 3 final pass: the page teaches from bullets, the room answers aloud, and the silent run works first time
 
 Branch `claude/session-3-polish-u5wrkk`, merged as PR #31 on 2026-09-19. Thirty-nine ledger

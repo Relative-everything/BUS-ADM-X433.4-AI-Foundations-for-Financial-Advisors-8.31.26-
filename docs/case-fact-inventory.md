@@ -23,8 +23,8 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 1710 | 1392 | 318 |
 | `PINNED` | 12 | 12 | 0 |
-| `UNGUARDED` | 73 | 5 | 68 |
-| **TOTAL** | **1795** | **1409** | **386** |
+| `UNGUARDED` | 77 | 5 | 72 |
+| **TOTAL** | **1799** | **1409** | **390** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -40,15 +40,15 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `session-0.1/index.html` | 16 | 5 |
 | `session-1/index.html` | 17 | 0 |
 | `session-2/index.html` | 3 | 0 |
-| `session-3/index.html` | 12 | 0 |
+| `session-3/index.html` | 16 | 0 |
 | `session-4/index.html` | 23 | 0 |
 
 ## `UNGUARDED`, by region
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R1` | body prose | 47 | 0 |
-| `R2` | script string literal | 21 | 0 |
+| `R1` | body prose | 50 | 0 |
+| `R2` | script string literal | 22 | 0 |
 | `R10` | captured transcript | 5 | 5 |
 
 **`R2` carries 0 of the 5 quantitative unguarded references, 0.0%** — answer
@@ -60,24 +60,25 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 68 |
+| `name` | 72 |
 | `pct` | 5 |
 
 ## `UNGUARDED`, by fact
 
 | Fact | Count |
 |---|---:|
-| `domicile` | 20 |
-| `nathanShort` | 10 |
+| `domicile` | 18 |
+| `nathanShort` | 11 |
 | `megShort` | 9 |
+| `companyName` | 9 |
 | `plantTown` | 8 |
-| `companyName` | 8 |
-| `companyAbbr` | 6 |
+| `companyAbbr` | 8 |
 | `afrMid` | 4 |
 | `residenceTown` | 3 |
-| `davidName` | 2 |
+| `davidName` | 3 |
 | `afrLong` | 1 |
 | `decedent` | 1 |
+| `claireShort` | 1 |
 | `megNameAlt` | 1 |
 
 ## Machinery
@@ -102,7 +103,7 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**441 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**436 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
@@ -114,7 +115,6 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `tbills` | 31 |
 | `seedUnits` | 21 |
 | `megAge` | 21 |
-| `nathanAge` | 19 |
 | `charDeductible` | 18 |
 | `employees` | 18 |
 | `nonVotingUnits` | 15 |
@@ -122,9 +122,10 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `dividend` | 13 |
 | `inheritedIra` | 13 |
 | `david403b` | 13 |
+| `nathanAge` | 13 |
 | `revolver` | 12 |
 | `discount` | 9 |
-| `nathanShort` | 6 |
+| `nathanShort` | 7 |
 | `deMinimisLoan` | 4 |
 | `davidAge` | 3 |
 | `topOrdinary` | 3 |

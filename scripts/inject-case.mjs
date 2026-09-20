@@ -167,7 +167,7 @@ export function buildBlock() {
   L.push('  <div class="case-spine">');
   L.push('    <span class="case-spine-h">The question that runs through every session</span>');
   L.push('    <p class="case-spine-q">Meg is short <b>' + usd(F.steadyGap) + '</b> a year from year 6, while the structure performs exactly as designed. <b>How much of the ' + usd(F.notePrincipal) + ' note does she call this year, what does calling it cost her in every year after, and when is a different lever the better answer?</b></p>');
-  L.push('    <p class="case-spine-n">No session answers it. Every session works on a different part of it. The arithmetic is in the case: each ' + usd(1000000) + ' called permanently removes ' + usd(Math.round(1000000 * F.noteRate)) + ' of future interest, so the gap widens by ' + (F.noteRate * 100).toFixed(2) + '% of every call. CASE.md draws no conclusion about whether the structure is advisable, and neither does this course.</p>');
+  L.push('    <p class="case-spine-n">No session answers it. Every session works on a different part of it. The arithmetic is in the case: each ' + usd(1000000) + ' called permanently removes ' + usd(Math.round(1000000 * F.noteRate)) + ' of future interest, so the gap widens by ' + (F.noteRate * 100).toFixed(2) + '% of every call. Nothing in the case says whether the structure is advisable, and neither does this course.</p>');
   L.push('  </div>');
   L.push('  <p class="case-stamp"><span class="mono">Case v' + facts.case_version + ' ' + '__STAMP__' + '</span></p>');
   L.push('</div>');
@@ -347,7 +347,7 @@ export function buildBlock() {
   L.push("      '.case-panel{display:block}'+");
   L.push("      '</style></head><body><main class=\"case-standalone\">'+");
   L.push("      '<h2 style=\"margin-bottom:6px\">The Cole Household</h2>'+");
-  L.push("      '<p class=\"case-lede\">Synthetic case, classroom anchor only. Generated from CASE.md. '+");
+  L.push("      '<p class=\"case-lede\">Synthetic case, classroom anchor only. '+");
   L.push("      'This tab is a copy of the case block in the lesson you opened it from, '+");
   L.push("      'and it holds nothing the lesson does not.</p>'+");
   L.push("      copy.innerHTML+'</main></body></html>';");

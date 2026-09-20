@@ -17,7 +17,7 @@ the closing check. Black numbers in the PDF are the steps that must not be skipp
 4. **6:08 BRIDGE.** ASK the four letters, in order. Click the order you are given. Key C A D B.
 5. **6:14 POLL 1**, prompts typed since Session 2. Half or more say none or 1 to 3? Cut §05, §08
    gets 6 min. Say your choice.
-6. **6:19 §01/02**, 7 min. Case facts: two sentences on the Coles. Click "appraised value". ASK
+6. **6:19 §01/02**, 7 min. Read the four-line Cole panel in §00 aloud. Click "appraised value". ASK
    pair 3, which bucket? 2. Move on.
 7. **6:26 §03 WORKED.** ASK which passage should win? Preset 1. Say: appraisal D3 third at 3.3.
    Verdict. Presets 2, 3, 4 fast.
@@ -25,7 +25,7 @@ the closing check. Black numbers in the PDF are the steps that must not be skipp
    (a)? Two more minutes on Stanford.
 9. **6:46 §05.** ASK a, b or c. Click it. Answer (a). Read the fine-tuning feedback. First to
    drop.
-10. **6:52 §06.** ASK stage found last? 5. Click 1 to 5. GATE at 5: "Who reads this note, and
+10. **6:52 §06.** ASK stage seen only at examination? 5. Click 1 to 5. GATE at 5: "Who reads this note, and
     when?" Then: tonight is steps 1, 2 and 7.
 11. **7:00 BREAK.** Post "back at 7:15", Pacific. Checkpoint: past §06? If not: §09 to consent
     only, reserve to 12.
@@ -38,7 +38,7 @@ the closing check. Black numbers in the PDF are the steps that must not be skipp
 15. **7:36 TAB 2.** Session 2 page, "+ Standard", B4 sorter. Run it, key, two minutes on steps 2
     and 4. Done by 8:00.
 16. **7:52 §09.** GATE: "Whose consent do you actually need?" Item 1 only. ASK a, b or c. Reveal
-    (c). Verify block unsigned: say so.
+    (c). Law items unchecked? Say so.
 17. **7:57 POLL 4a.** §10. ASK line 4, which bucket? 3. GATE: "Which is your reading, not their
     words?" Key. "Reverse prompting." POLL 4b.
 18. **8:05 §11.** Read the Course rule verbatim. ASK which gap will you close first? Part 1: seven
