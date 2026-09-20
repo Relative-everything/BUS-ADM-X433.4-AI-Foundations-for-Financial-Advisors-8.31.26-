@@ -1483,7 +1483,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <h4 style="margin-top:26px">How to prompt it</h4>
-  <p>Paste this into the tool's instruction field, or into Claude with the transcript attached. For the meeting you chose in &sect;06, swap "client" for whoever was in the room and keep the rest.</p>
+  <p>Paste this into the tool's instruction field, where it stands for every meeting, or into Claude with the transcript attached. For the meeting you chose in &sect;06, swap "client" for whoever was in the room and keep the rest.</p>
   <pre id="ntPrompt">Summarise this client meeting for the file. Extract, under these headings and nothing else:
 1. DECISIONS made in the meeting, each with who made it.
 2. ACTION ITEMS, each with an owner and a date if one was given.
@@ -2400,7 +2400,7 @@ function ntSumText(){return 'MEETING SUMMARY (synthetic: the Cole annual review,
   {n:'1. Transcription',w:'Speech becomes time-stamped text with a speaker label. Mistakes here are misheard words and swapped speakers; a misheard name becomes a different person in the record.',
    out:function(){var h='';T.forEach(function(t,i){h+='[0'+i+':00] '+turn(i)+'<br>'});return h}},
   {n:'2. Extraction',w:'A model picks the sentences that count. This is where the professional risk sits: whatever it drops leaves no trace.',
-   out:function(){return '<span class="good">Kept:</span><br>'+turn(1)+'<br>'+turn(3)+'<br>'+turn(4)+'<br><br><span class="flag">Dropped as conversational:</span> the two Advisor questions. In a tool given no instruction, the clause about Nathan, their son, goes too: it reads as personal colour, and it is the one constraint the file most needs.'}},
+   out:function(){return '<span class="good">Kept:</span><br>'+turn(1)+'<br>'+turn(3)+'<br>'+turn(4)+'<br><br><span class="flag">Dropped as conversational:</span> the two Advisor questions. In a tool with no standing instruction, the clause about Nathan, their son, goes too: it reads as personal colour, and it is the one constraint the file most needs.'}},
   {n:'3. Categorisation',w:'The kept sentences are sorted under headings. With the instruction below in place the headings are yours and the constraint about Nathan survives. A tool with no instruction picks its own headings and keeps what it thinks matters.',
    out:function(){return ntSumHtml()}},
   {n:'4. Follow-up',w:'A recap email and a task list are drafted from the categories. Read it as the client will: anything stated as settled is now advice.',
@@ -2669,7 +2669,7 @@ REVEALS.push(showDefence,showRevote);
 var CKL=[
  {g:'Before',t:'Consent to record is asked for and noted, every meeting.'},
  {g:'Before',t:'The note-taker is on the call, or the recording will be uploaded afterwards.'},
- {g:'Before',t:'The instruction given to the tool says what to extract and what to leave out.'},
+ {g:'Before',t:'The standing instruction tells the tool what to extract and what to leave out.'},
  {g:'Before',t:'The prep prompt has the file attached and says: answer only from these documents.'},
  {g:'During',t:'The recording is running before anything substantive is said.'},
  {g:'After',t:'The summary is read against the transcript before it goes anywhere.'},
