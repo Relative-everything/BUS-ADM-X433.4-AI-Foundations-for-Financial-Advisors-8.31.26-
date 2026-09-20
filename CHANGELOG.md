@@ -42,6 +42,23 @@ a learner with no Claude to the example output. §09 says who Nathan is and asks
 cannot answer. §10's basis example agrees with the meeting record. A1, A2, A3, C3 and A5 presuppose
 no practice, tool, client meeting or vendor; A2 offers a recurring meeting you write up afterwards.
 
+### Session 3 · the case block, and the review of the finished diff
+
+The generated case block a learner opens from Case facts stopped naming CASE.md, its version,
+`scripts/build-case.mjs` and "the assignment substrate"; those four strings are generator-side, so
+all six lessons were rebuilt, and in the other five the only changes are those strings and the
+content stamp. Session 3 now names no file and no build script anywhere a learner can read.
+
+Six independent reviewers then read the whole diff, with one adversarial refuter per finding: 17
+confirmed, 8 refuted. The fixes are `SM-026` to `SM-030`. Each §03 preset button prints a written
+question from a display field, leaving the frozen ranker queries untouched; the §00 panel and the
+§03 hint describe the transaction as the case does; the will sends the residue rather than receiving
+it; only the buy-sell formula is credited with triggering events; §06's Log check names the outright
+gift rather than a rejected one; the §10 basis example states its reason instead of pointing at the
+file; A2's third meeting type reads as prompt text; C3 and C4 stop answering their own reveals; and
+the run sheet gains a Changed 2026-09-19 block, with its drop order and its §07, §08 and §09 slots
+corrected.
+
 ### Session 3 · mechanics and instructor materials
 
 The four work-along gates that never flipped (the map, the presets, the C3 prediction, the C4
