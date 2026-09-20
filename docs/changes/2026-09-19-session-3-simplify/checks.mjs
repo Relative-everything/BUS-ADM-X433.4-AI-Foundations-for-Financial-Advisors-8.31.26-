@@ -26,6 +26,7 @@ say(/also called grounding/.test(txt('#s4')) && /Ten passages/.test(txt('#s4')) 
 say(!/IDGT|nearly the same person|reaches Meg’s return/.test(html) && /gift tax return/.test(html), 'SM-013', 'the map notes and pair explanations stand on their own');
 say(/first seen at an examination/.test(txt('#s9 .hint')) && !/already said/.test(html), 'SM-014', '§06 asks a question with one answer and Prep does not presuppose the §07 excerpt');
 { const b = d.querySelectorAll('#ntStages button'); if (b[0]) b[0].click(); if (b[3]) b[3].click(); say(/Meg and David Cole/.test(txt('#s10')) && /\[01:00\]/.test(txt('#ntStages')) && !/Owner: you/.test(txt('#ntStages')) && /Not in the meeting/.test(txt('#ntStages')) && !/your own tool/.test(txt('[data-gate="g8"]')), 'SM-015', '§07 names the speakers, stamps its transcript, and its follow-up obeys the not-given rule'); }
+say(/Suppose your firm/.test(txt('#s12 .hint')) && /son who works/.test(txt('#s12')) && !/split the room|own state's rule/.test(html), 'SM-016', '§09 says who Nathan is and asks nothing the learner cannot answer');
 /* SM-ITEMS */
 
 /* ---- standing invariants carried from the 09-18 checks ---- */
