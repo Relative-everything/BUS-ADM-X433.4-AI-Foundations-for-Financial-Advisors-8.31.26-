@@ -1426,7 +1426,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="big">The prep stage is a list: what to ask, and what to ask the client to bring. An assistant drafts it well, as long as no client fact enters the tool to do it.</p>
 
   <ul class="pts">
-    <li><b>Pick the areas</b> the meeting has to cover. The assistant drafts the questions and the document requests for each.</li>
+    <li><b>Pick the areas.</b> The assistant drafts the questions and the document requests for each area the meeting has to cover.</li>
     <li><b>Make it ask you first.</b> A prompt that interviews you before drafting produces a questionnaire for this meeting, not a generic one.</li>
     <li><b>Keep the client out of it.</b> The questionnaire is built before any client fact is typed. The client's answers go in the file, not in the chat.</li>
   </ul>
@@ -1434,17 +1434,16 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel" data-task="t-sPrep" data-comp="builder-assembler">
     <span class="do">Do this now: 6 minutes</span>
     <h4>Build the Prep Prompt</h4>
-    <p class="hint">Choose the meeting and at least two areas. The prompt assembles below; copy it into your own tool.</p>
+    <p class="hint">Choose the meeting and at least two areas. The prompt assembles below; copy it into Claude, or whichever assistant you use.</p>
     <div class="row" id="ppMeet"></div>
     <div id="ppAreas" class="ckgrid"></div>
     <pre id="ppOut" class="ppout">Choose a meeting type and at least two areas.</pre>
     <div class="row"><button class="btn" id="ppCopy">Copy the prompt</button><span id="ppMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
-    <p class="hint" style="margin-top:10px">[Not included, on purpose: any fact about the client. The questionnaire is built before the client's answers exist.]</p>
   </div>
 
   <p class="src">The areas follow the Session 3 syllabus item on the client's personal and financial circumstances; the prompt is written for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
-  <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Build the prompt for your next meeting and copy it out; this page keeps nothing.</div></div>
+  <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Build the prompt for the next meeting you will prepare for and copy it out; this page keeps nothing.</div></div>
 
 </section>
 
@@ -2325,7 +2324,7 @@ var CHAIN=[
 /* ================= 9c. The intake questionnaire: a prep prompt built from areas ================= */
 (function(){
  var M=$('ppMeet'),A=$('ppAreas'),O=$('ppOut'),B=$('ppCopy'),MS=$('ppMsg');if(!M)return;
- var MEET=[{k:'first',t:'First meeting with a new client'},{k:'review',t:'Annual review with an existing client'}];
+ var MEET=[{k:'first',t:'First meeting with a new client'},{k:'review',t:'Annual review with an existing client'},{k:'other',t:'Recurring meeting you write up afterwards'}];
  var AREAS=['Personal and family','Income and employment','Assets and accounts','Liabilities','Insurance','Estate documents','Goals and timing','Concerns and constraints'];
  var meet=null,on={};
  function build(){
