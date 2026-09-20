@@ -15,7 +15,7 @@ proposal, and those are welcome too.
 ## MP-00 · §00, the top of the page · aid steps 1 to 4
 
 **On screen.** Title, lede, the pace panel with the depth bar, four bullets (Sessions 1 and 2,
-tonight, the Coles), the panel "Tonight's one thing", the bridge.
+tonight, the file), the panel "The Cole file, in four lines", the panel "Tonight's one thing", the bridge.
 
 **Click.** Bridge chips in the order C A D B, then again to reset. Try a wrong order first and
 read what the panel says.
