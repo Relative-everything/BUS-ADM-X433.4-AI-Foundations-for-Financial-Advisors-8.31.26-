@@ -1390,10 +1390,20 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="big">Grounding changes what the model reads. Fine-tuning changes what the model is. For a planning practice, grounding wins, because your facts change and need citing.</p>
 
   <ul class="pts">
-    <li><b>Grounding.</b> Hand it the documents each time. Change the file and the next answer changes, and every answer can point at a passage.</li>
-    <li><b>Fine-tuning.</b> Retrain the model so the documents live inside it. Change the file and nothing changes until you retrain. Nothing can be cited.</li>
     <li><b>Wolfram's version.</b> Tell the model something once, in the prompt, and it will use it. Your house style might be worth tuning. Your facts are not.</li>
   </ul>
+
+  <div class="panel" data-task="t-s7fig" data-comp="stepped-comparison">
+    <span class="do">Watch this: 1 minute</span>
+    <h4>The Appraisal Is Re-Run on Tuesday</h4>
+    <p class="hint">Same question on Wednesday, two architectures. Step through the week.</p>
+    <div id="tunWrap"></div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn sel mini" id="tunD0" type="button">Monday</button>
+      <button class="btn sel mini" id="tunD1" type="button">Tuesday</button>
+      <button class="btn sel mini" id="tunD2" type="button">Wednesday</button>
+    </div>
+  </div>
 
   <div class="panel" data-task="t-s7" data-comp="commit-first-mcq">
     <span class="do">Do this now: 2 minutes</span>
@@ -2701,6 +2711,73 @@ var CHAIN=[
    try{document.execCommand('copy');ok()}catch(e){MS.textContent='Select the block and copy manually.'}document.body.removeChild(ta)}
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fail)}else{fail()}
  };
+})();
+
+/* ---- §05: grounding against fine-tuning, drawn on one week ---------------
+   Two architectures, the same question on Wednesday. The grounded one reads a
+   tray it does not own; the tuned one has the documents baked in. Tuesday's
+   re-run of the appraisal is the only input that changes. */
+(function(){
+ var W=$('tunWrap'); if(!W) return;
+ var day=0,VW=720,VH=286;
+ var DAYS=['Monday','Tuesday','Wednesday'];
+ function doc(d){return d<1?'2023 appraisal':'2026 appraisal'}
+ function ansG(d){return d<2?'—':'The 2026 figure, with the passage.'}
+ function ansT(d){return d<2?'—':'The 2023 figure: '+COLEm('appraisal2023')+'.'}
+ function box(x,y,w,h,fill,stroke,sw){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="4" fill="'+fill+'" stroke="'+stroke+'" stroke-width="'+(sw||1.4)+'"/>'}
+ function draw(){
+  var s='<svg viewBox="0 0 '+VW+' '+VH+'" role="img" aria-label="The same question asked on Wednesday of a grounded assistant and a fine-tuned one, after the appraisal is re-run on Tuesday. The grounded assistant reads a document tray and answers from the new appraisal with a citation. The fine-tuned model has the documents inside it and still answers from the 2023 appraisal, with nothing to cite.">';
+  /* the week */
+  DAYS.forEach(function(d,i){
+   var x=150+i*180, on=(i===day);
+   s+='<text x="'+x+'" y="18" text-anchor="middle" class="chartlab" style="font-size:10.5px" fill="'+(on?'#0E5A55':'#B9BDB9')+'">'+d.toUpperCase()+'</text>';
+   if(on)s+='<line x1="'+(x-42)+'" y1="24" x2="'+(x+42)+'" y2="24" stroke="#0E5A55" stroke-width="2"/>';
+  });
+  s+='<line x1="60" y1="24" x2="'+(VW-30)+'" y2="24" stroke="#E7E8E4" stroke-width="1"/>';
+
+  /* row A: grounding */
+  var yA=44;
+  s+='<text x="8" y="'+(yA+14)+'" class="chartval" style="font-size:12px" fill="#0E5A55">GROUNDING</text>';
+  s+='<text x="8" y="'+(yA+30)+'" class="chartlab" style="font-size:9.5px">the file stays outside</text>';
+  s+=box(150,yA,116,64,'#FFFFFF','#0E5A55');
+  s+='<text x="208" y="'+(yA+26)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px">document tray</text>';
+  s+=box(160,yA+32,96,22,day>=1?'#E2EDEB':'#F4F4F1',day>=1?'#0E5A55':'#C9CCC5');
+  s+='<text x="208" y="'+(yA+47)+'" text-anchor="middle" class="chartval" style="font-size:11px" fill="'+(day>=1?'#0E5A55':'#6F7B78')+'">'+doc(day)+'</text>';
+  s+='<line x1="268" y1="'+(yA+32)+'" x2="322" y2="'+(yA+32)+'" stroke="#B9BDB9" stroke-width="2" marker-end="url(#tunA)"/>';
+  s+=box(330,yA+6,96,52,'#FFFFFF','#B9BDB9');
+  s+='<text x="378" y="'+(yA+36)+'" text-anchor="middle" class="chartval" style="font-size:12px">model</text>';
+  s+='<line x1="428" y1="'+(yA+32)+'" x2="462" y2="'+(yA+32)+'" stroke="#B9BDB9" stroke-width="2" marker-end="url(#tunA)"/>';
+  s+=box(470,yA+6,240,52,day>=2?'#E2EDEB':'#FFFFFF',day>=2?'#0E5A55':'#E7E8E4');
+  s+='<text x="480" y="'+(yA+27)+'" class="chartlab" style="font-size:9px">Wednesday’s answer</text>';
+  s+='<text x="480" y="'+(yA+44)+'" class="chartval" style="font-size:11px" fill="'+(day>=2?'#0E5A55':'#B9BDB9')+'">'+ansG(day)+'</text>';
+  if(day>=2)s+='<path d="M474 '+(yA+52)+' C 420 '+(yA+92)+', 262 '+(yA+92)+', 208 '+(yA+58)+'" fill="none" stroke="#0E5A55" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#tunG)"/>';
+  if(day>=2)s+='<text x="345" y="'+(yA+100)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px" fill="#0E5A55">a thread back to the passage</text>';
+
+  /* row B: fine-tuning */
+  var yB=176;
+  s+='<line x1="0" y1="'+(yB-14)+'" x2="'+VW+'" y2="'+(yB-14)+'" stroke="#E7E8E4" stroke-width="1"/>';
+  s+='<text x="8" y="'+(yB+14)+'" class="chartval" style="font-size:12px" fill="#9A4B22">FINE-TUNING</text>';
+  s+='<text x="8" y="'+(yB+30)+'" class="chartlab" style="font-size:9.5px">the file is inside</text>';
+  s+=box(330,yB+6,96,52,'#F6EAE2','#9A4B22');
+  s+='<text x="378" y="'+(yB+28)+'" text-anchor="middle" class="chartval" style="font-size:12px" fill="#9A4B22">model</text>';
+  s+='<text x="378" y="'+(yB+44)+'" text-anchor="middle" class="chartlab" style="font-size:8px" fill="#9A4B22">2023 figure baked in</text>';
+  s+='<text x="228" y="'+(yB+58)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px" fill="'+(day>=1?'#9A4B22':'#B9BDB9')+'">'+(day>=1?'the tray changed; this did not':'nothing outside to read')+'</text>';
+  s+='<line x1="428" y1="'+(yB+32)+'" x2="462" y2="'+(yB+32)+'" stroke="#B9BDB9" stroke-width="2" marker-end="url(#tunA)"/>';
+  s+=box(470,yB+6,240,52,day>=2?'#F6EAE2':'#FFFFFF',day>=2?'#9A4B22':'#E7E8E4');
+  s+='<text x="480" y="'+(yB+27)+'" class="chartlab" style="font-size:9px">Wednesday’s answer</text>';
+  s+='<text x="480" y="'+(yB+44)+'" class="chartval" style="font-size:11px" fill="'+(day>=2?'#9A4B22':'#B9BDB9')+'">'+ansT(day)+'</text>';
+  if(day>=2)s+='<text x="590" y="'+(yB+76)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px" fill="#9A4B22">confident, stale, and nothing to cite</text>';
+  s+='<defs><marker id="tunA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B9BDB9"/></marker>'+
+     '<marker id="tunG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0E5A55"/></marker></defs>';
+  s+='</svg>';
+  W.innerHTML=s;
+ }
+ function set(d){day=d;draw();
+  [0,1,2].forEach(function(i){var b=$('tunD'+i);if(b)b.classList.toggle('act',i===d)});
+  if(d===2&&typeof mark==='function')mark('g6');
+ }
+ [0,1,2].forEach(function(i){var b=$('tunD'+i);if(b)b.addEventListener('click',function(){set(i)})});
+ set(0);
 })();
 
 /* ================= 9b. The meeting excerpt ================= */

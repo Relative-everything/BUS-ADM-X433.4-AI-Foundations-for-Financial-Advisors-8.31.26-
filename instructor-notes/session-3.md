@@ -226,7 +226,7 @@ who is holding it if nobody does.
   dialog holds the rest for anyone who wants it; nothing on the page needs it.
 
 ### Drop order, first to go at the top
-1. §05, narrate the three bullets only, skip the Tuesday test. Recovers 4.
+1. §05, step the week figure only, skip the Tuesday test. Recovers 4.
 2. §09 to the one-party floor only. Recovers 3.
 3. §09b to the six page titles read off the screen, no commit poll. Recovers 3.
 4. Q&A reserve from 15 to 8. Recovers 7. Only to protect the closing check.
@@ -270,8 +270,14 @@ four, same order, same letters. Click the room's majority on the page; the measu
 The room usually picks (b). The answer is (c).
 
 ### s7 · §05, 6:46
-The Tuesday test. Ask for a, b or c; click the letter you are given; the answer is (a). Read the fine-tuning
-option's feedback aloud whatever the room picked. First to drop if behind.
+Step the week figure first, three clicks, about a minute: Monday the tray holds the 2023 appraisal,
+Tuesday it is swapped for the 2026 one, Wednesday both architectures answer. The grounded answer
+carries a thread back to the passage; the tuned one is confident, stale and has nothing to cite.
+Say nothing while you click Tuesday. Let them see that the bottom row does not move.
+
+Then the Tuesday test. Ask for a, b or c; click the letter you are given; the answer is (a). Read the
+fine-tuning option's feedback aloud whatever the room picked. First to drop if behind; if you drop
+it, step the figure anyway, it is the part that carries the point.
 
 ### s9 · §06, 6:52
 Before the stages: the one question for the three non-advisors, in their section above. Then a
