@@ -494,10 +494,10 @@ published:      2025-07-29
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
 confidence:     M
-kind:           background
+kind:           assigned_reading
 moving_target:  false
-scope:          Named in session-3's reading list for the compliance framing around note-takers. No claim on the page rests on it.
-used_for.session-3: assigned reading; no page claim rests on it
+scope:          The compliance framing around note-takers: that an AI summary is a firm record however it is stored, the three things examiners are reported to ask for (written AI-use policies, review of output before it becomes the record, vendor risk assessment), the human-review and edit-trail practices, the retention and high-stakes-meeting rules, and the ACA Group 2024 figure of 12%. A trade publication relaying the SEC and FINRA positions rather than quoting rule text, which is why the chip is M and why session-3 quotes no rule text from it.
+used_for.session-3: the six documents in §09b, the 12% figure behind its prediction commit, and the compliance framing in §09
 ```
 
 ## src-kitces-advisortech
