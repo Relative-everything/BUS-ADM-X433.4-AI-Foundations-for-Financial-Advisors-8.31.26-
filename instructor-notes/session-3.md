@@ -34,7 +34,7 @@ Everything below this block still holds. What moved on the page:
 ## Changed 2026-09-18, the final pass
 
 - The objective is printed on the page, in §00 above the bridge, in the words below. Read it off
-  the screen at 6:11.
+  the screen at 6:06.
 - §08's three prompts run on the §07 summary and nothing else. Each copy button puts the prompt
   and the synthetic summary on the clipboard together, so the run is: click Copy, paste into
   Claude, send. The prompts are the follow-up letter, the task table and the next agenda.
@@ -88,9 +88,11 @@ the objective.
 
 | Clock | Min | What | Page element | Open it with |
 |---|---|---|---|---|
-| 6:00 | 8 | Housekeeping. Pre-class window closed at 5:58 | | "Canvas and file questions at the break, not now." |
-| 6:08 | 3 | **Corrections slot**, below | none | "Two things I said last time that I have since checked." |
-| 6:11 | 8 | **Objective**, then the retrieval bridge. **WORKED** | `s1` retrieval-bridge | "One thing tonight. Then four checks: someone give me the four letters in the order you would run them." |
+| 6:00 | 3 | Housekeeping. Pre-class window closed at 5:58 | | "Canvas and file questions at the break, not now." |
+| 6:03 | 3 | **Corrections slot**, below | none | "Two things I said last time that I have since checked." |
+| 6:06 | 2 | **Objective**, read off the page | `s1` "Tonight's one thing" | "One thing tonight." |
+| 6:08 | 6 | **Retrieval bridge. WORKED** | `s1` retrieval-bridge | "Four checks: someone give me the four letters in the order you would run them." |
+| 6:14 | 5 | **Poll 1**, read the distribution, take the branch aloud | | "Since Session 2, how many prompts have you typed?" |
 | 6:19 | 7 | §01 and §02, now one section | `s2` | "Why the nearest passage is not the right one." |
 | 6:26 | 12 | §03 the retriever, preset 1. **WORKED 1** | `s4` estimate-then-reveal | "Commit first: which document answers this? Then watch what the retriever does." |
 | 6:38 | 8 | §04 what grounding fixes. **Poll 2** | `s6` prediction-commit | "Guess before the figures. You are meant to get this wrong." |
@@ -100,7 +102,7 @@ the objective.
 | 7:15 | 9 | §07 the note-taker's four stages | `s10` | "Stage two drops a clause about Nathan. That is the teaching point." |
 | 7:24 | 12 | §08 **silent run, in Claude. WORKED 2** | `sOff` | "Four minutes. Nobody talks. Open Claude. Under prompt 1, click Copy. Paste, send." |
 | 7:36 | 16 | Seven-step delegation sorter, **off the Session 2 page. WORKED 3** | `session-2` `s9`, depth +Standard | "Open last week's page. Appendix depth to Standard. B4." |
-| 7:52 | 5 | §09 consent and confidentiality. **Poll 3** just before | `s12` | "Two obligations: may it be recorded, and what may the vendor see." |
+| 7:52 | 5 | §09 consent and confidentiality. **Poll 6** optional, just before | `s12` | "Two obligations: may it be recorded, and what may the vendor see." |
 | 7:57 | 5 | §09b the six documents. **Commit first** | `sPol` prediction-commit, then the six pages | "Of firms already using AI, how many have written any of this down? Say a letter." |
 | 8:02 | 8 | §10 said, recommended or neither. **Poll 4** | `s13` two-bucket-sorter | "Six lines from the meeting. One of them is your inference, not their words." |
 | 8:10 | 7 | §11 checklist, **course data rule aloud**, Part 1 brief | `s16` | "Before the assignment: no real client data enters any AI tool in this course." |
@@ -180,7 +182,7 @@ the repository records what they do, so the track is written to the shape §06 t
 meeting with a before, a during and an after, not to a profession. The page carries one sentence
 for them at §06, §07 and §11; this is your side of it.
 
-- **6:11, the objective.** The one sentence above: read "client-meeting workflow" as the meeting
+- **6:06, the objective.** The one sentence above: read "client-meeting workflow" as the meeting
   they pick at §06.
 - **6:52, §06, before you click the stages.** Read the paragraph under the five stages aloud.
   Then ask, once: "Who here does not run client meetings, and what is the recurring meeting you
@@ -199,7 +201,7 @@ for them at §06, §07 and §11; this is your side of it.
   the three the prompt works unchanged on any recommendation they made in their meeting, and they
   can change the ROLE line to a reviewer at their own organisation if the adviser framing gets in
   the way.
-- **8:05, §11.** The checklist hint says to tick it for the meeting they chose. The closing check
+- **8:10, §11.** The checklist hint says to tick it for the meeting they chose. The closing check
   needs no change: one step of that meeting they would hand to a tool, one they would not.
 
 If you tell the next pass who the three are, one line each, the sentence at §06 can name their
@@ -237,7 +239,7 @@ who is holding it if nobody does.
 
 ## Per-slot notes
 
-### s1 · Bridge, 6:11
+### s1 · Bridge, 6:08
 Four checks, in order, no notes. The page lists them A to D in a scrambled order. Ask for the four
 letters in the order you would run them; take the first answer offered; click that order; a wrong
 committed order is the point. **The correct order is C A D B**: C exists, A says what it says,
@@ -246,8 +248,10 @@ is printed on the page above the bridge, in the panel labelled "Tonight's one th
 the screen.
 
 ### s2 · §01 and §02, merged, 6:19
-One section of seven minutes now, not two of five. Narrate it as one movement. Both instruments are
-still on the page: the meaning map at two minutes and the pair sort at three. Demonstrate them,
+One section of seven minutes now, not two of five. Narrate it as one movement. The cube at the top
+turns on its own: let it turn while you say the definition, then click "Flatten it to the map
+below" at about the two-minute mark and go straight to the map. The map is at two minutes and the
+pair sort at three, as before. Demonstrate them,
 do not hand them to the room; the three worked interactions tonight are §03, §08 and the seven-step
 sorter.
 
@@ -288,6 +292,10 @@ lives inside steps 1, 2 and 7 of the Board's seven-step process, and that nothin
 steps 4 and 5, where your credential attaches. That sentence sets up the 7:36 sorter, and the page links to it under the five stages.
 
 ### s10 · §07, 7:15
+The funnel above the four stage buttons is the picture of the section: five turns in, three out of
+extraction, the two Advisor questions falling out, and the Nathan clause going with them only when
+there is no standing instruction. Clicking a box in the funnel opens the same panel as the button.
+
 The five turns are numbered. Ask for the number of the turn that holds the one thing the file most
 needs and a tool is most likely to drop. The answer is 2, Meg's first answer, the clause about
 Nathan. Then open the four stages in order. The extraction stage's dropped clause about Nathan is the teaching
@@ -329,7 +337,7 @@ lesson. Do not spend the room's four minutes troubleshooting one person's licenc
 
 Harvest in chat, one line each: whether what came back was usable, and one sentence it added
 or stated as settled. Those are the words on the page and in the chat line you paste. Nobody has to speak. That chat is the student-produced artifact to spend in
-the reserve at 8:12.
+the reserve at 8:17.
 
 ### session-2 s9 · The seven-step sorter, 7:36 · **WORKED 3**
 Not on this page. Open the Session 2 lesson, set appendix depth to **+ Standard**, section B4.
@@ -365,6 +373,8 @@ The gold panel is the Session 4 pointer, not a topic. Read the two items, say th
 or not anyone buys a note-taker, and move on; D5's tabletop next week is where the 30-day clock gets
 run. Do not teach Regulation S-P here.
 
+Shift+U does not open §09b's poll figure or its six pages; click a letter, then click pages.
+
 The chip on the source line is M and it says why: Iskowitz relays the SEC and FINRA positions and
 the page quotes no rule text. If someone asks for the rule, the honest answer is that the reading
 names Rule 204-2 and Rule 3110 and that you have not read either against this section yet.
@@ -376,7 +386,7 @@ the mistake a note-taker makes for you. Name the technique in §10's prompt alou
 prompting, the interview rewrite, and it is the Session 2 topic that was named but never shown. The
 page names it now, in the heading above the prompt.
 
-### s16 · §11, 8:05
+### s16 · §11, 8:10
 Read the course data rule aloud. Do not paraphrase it. The checklist is numbered: ask for the
 number of the one gap you will close first, two or three answers, then move on.
 
@@ -388,7 +398,7 @@ classmate runs the package cold in Session 4 with no help from the builder.
 Then the closing check, written, in chat. The page's closing block now says so and carries both the
 check and the §03 question behind it.
 
-### s15 · C4, only if the room is 20 minutes ahead at 8:17
+### s15 · C4, only if the room is 15 minutes ahead at 8:17
 Hidden at core-only depth. Eighteen planned minutes, about 34 actual, which is more than the buffer.
 Run the three options as a Zoom poll at each vote. If under 25% take "check less" the first time,
 read Magesh before the defence, not after. Show both distributions side by side and say nothing
