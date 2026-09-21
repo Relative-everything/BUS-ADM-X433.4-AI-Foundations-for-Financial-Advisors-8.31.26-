@@ -8,7 +8,7 @@ the break, then the Session 3 page entered at §03. Nothing in this file address
 ASK = one question, aloud, count four; take any answer; if none, say it yourself and go. POLL =
 read the result aloud, say the branch. Only two things are written all night: the §08 harvest and
 the closing check. Black numbers in the PDF are the steps that must not be skipped: 2, 5, 8, 10,
-13, 15, 19. The colour box on each step says what is on screen: Zoom, Tab 1 (Session 3), Tab 2
+13, 15, 19, 20. The colour box on each step says what is on screen: Zoom, Tab 1 (Session 3), Tab 2
 (Session 2), an image, a PDF, the artifact, the Claude chat, or the slide.
 
 1. **6:00 OPEN.** Zoom. "Canvas and file questions at the break." Tokens: output costs 5x input.
@@ -52,8 +52,11 @@ the closing check. Black numbers in the PDF are the steps that must not be skipp
     more? §09b, two pages: ASK which could your firm produce today?
 19. **8:32 CLOSING CHECK.** CHAT one step to hand over, one to keep, why. "The thing I said we
     would cover." Read three aloud. Do not skip.
-20. **8:37 HOMEWORK**, one breath, then stop. Part 1 (date in Canvas). Policy, three sources. Read
-    Daly, SEC §VII, JoA. No real client data.
+20. **8:37 HOMEWORK**, off the page, Tab 1 §11. Say it, do not summarise it. **Due next class:
+    draft an AI usage policy for your firm.** Three cited sources, one scholarly. **Say: "Use the
+    assigned readings to inform the draft"** — Daly (2026), SEC FY2026 Exam Priorities §VII,
+    Journal of Accountancy (2025), listed at the foot of §11. Also Part 1 (date in Canvas). No
+    real client data. Then stop.
 
 **Setup at 5:45:** Tab 1 Session 3, Core only. Tab 2 Session 2, + Standard, at B4. Images: the
 wheel, the Kitces cycle, my cycle. PDFs: the CFP checklist, Stanford at Fig 1. Artifact open,
