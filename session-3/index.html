@@ -1238,10 +1238,22 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="big">Wolfram's definition: an embedding turns a word into an array of numbers, and words with similar meanings get nearby numbers.</p>
 
   <ul class="pts">
-    <li><b>Company, not meaning.</b> The numbers are worked out from which words appear around a word, across five billion words of text: 768 numbers per word for GPT-2, 12,288 for GPT-3.</li>
-    <li><b>Wolfram's example.</b> "Alligator" and "crocodile" appear in interchangeable sentences, so they sit close. "Turnip" and "eagle" sit far apart. Alligators and crocodiles are different animals.</li>
+    <li><b>Company, not meaning.</b> The numbers come from which words appear around a word, across five billion words of text: 768 numbers per word for GPT-2, 12,288 for GPT-3.</li>
     <li><b>The Cole hazard.</b> The documents use near-identical language and differ in one condition each. Retrieval runs the same nearest-neighbour test on them.</li>
   </ul>
+
+  <div class="panel" data-task="t-s2cube" data-comp="rotatable-3d-space">
+    <span class="do">Watch this: 2 minutes</span>
+    <h4>The Space Itself</h4>
+    <p class="hint">Every word in the Cole file, placed by the company it keeps. Drag to turn it. Four pairs are marked: try to find an angle that separates them.</p>
+    <p style="margin:0 0 8px"><span class="sim">3 of 12,288 dimensions; coordinates assigned, not learned</span></p>
+    <div id="cubeWrap"></div>
+    <div class="row" style="margin-top:12px">
+      <button class="btn" id="cubeFlat" type="button">Flatten it to the map below</button>
+      <button class="btn ghost" id="cubeSpin" type="button">Stop turning</button>
+    </div>
+    <div id="cubeOut" class="mpanel"><span class="hd">The four marked pairs</span><span class="nil">Turn the space, then flatten it.</span></div>
+  </div>
 
   <p class="pull">Sounding alike is the signal. Being the same thing is what you needed.</p>
 
@@ -2017,6 +2029,166 @@ var CSNOTE={
  vote:'The Cole memo asserts a valuation discount on the non-voting units only. Whether a passage describes a voting or a non-voting interest decides whether that discount applies, and a retriever cannot tell them apart from language.',
  val:'Two valuation standards, the buy-sell agreement\u2019s formula and the appraiser\u2019s figure. The formula applies only on a death, a disability or a withdrawal, and substituting it for the appraisal is exactly the failure you are about to watch in \u00a703.',
  wolf:'Wolfram\u2019s own example. Two different animals, placed together because people write about them the same way.'};
+/* ========== 2a. The space itself: a rotatable 3-D meaning space ==========
+   Wolfram's feature-space cube, over the Cole document vocabulary. The same
+   eighteen terms as the 2-D map below, at the same x and y, plus a z the map
+   throws away and a cloud of the rest of the file's language for scale. The
+   four confusable pairs sit close on all three axes on purpose: there is no
+   camera angle that separates them, which is the point of the section. */
+(function(){
+ var W=$('cubeWrap'); if(!W) return;
+ var VW=720,VH=430,CX=VW/2,CY=VH/2+8,SC=112,DIST=4.6;
+ /* deterministic noise: the picture is identical every time it is taught */
+ var sd=20260921; function rnd(){sd=(sd*1664525+1013904223)%4294967296;return sd/4294967296}
+ function jt(k){return (rnd()-0.5)*k}
+
+ /* the eighteen named terms, x and y taken from TERMS so that flattening
+    reproduces the map below, z assigned by cluster */
+ var ZC={trustc:0.58,ownc:-0.52,valc:0.14,trfc:-0.16,wolfc:0.80};
+ var CLUS={'revocable trust':'trustc','irrevocable trust':'trustc','grantor trust':'trustc','joint trust':'trustc',
+  'voting interest':'ownc','non-voting interest':'ownc','minority interest':'ownc','controlling interest':'ownc',
+  'appraised value':'valc','formula value':'valc','fair market value':'valc','book value':'valc',
+  'promissory note':'trfc','seed gift':'trfc','buy-sell agreement':'trfc','pour-over will':'trfc',
+  'alligator':'wolfc','crocodile':'wolfc'};
+ var PTS=[];
+ TERMS.forEach(function(t){
+  var c=CLUS[t.n]||'valc';
+  PTS.push({n:t.n,cs:t.cs,lab:!!t.cs,mid:!t.cs,dy:t.dy||0,
+   x:(t.x-50)/50*1.12,y:-(t.y-50)/50*1.12,z:ZC[c]+jt(0.10)});
+ });
+ /* the rest of the file's language, unlabelled, for scale */
+ var FILL={trustc:['settlor','trustee','corpus','remainder','successor trustee','spendthrift','trust protector','distribution standard','beneficiary','power of appointment','trust situs','pour-over','funding','revocation','amendment','decanting','ascertainable standard','crummey notice'],
+  ownc:['membership units','manager','operating agreement','capital account','transfer restriction','right of first refusal','drag-along','tag-along','quorum','distribution','member vote','economic interest','assignee','dissolution','deadlock','purchase option','put right','redemption'],
+  valc:['discount for lack of marketability','minority discount','capitalisation rate','EBITDA','comparable transaction','net asset value','goodwill','tangible book','valuation date','qualified appraiser','enterprise value','earnings multiple','working capital','normalising adjustment','control premium','marketability','appraisal report','fair value'],
+  trfc:['applicable federal rate','demand note','interest only','gift tax return','adequate consideration','installment sale','defective grantor','annual exclusion','basis carryover','step-up','promissory','forgiveness','balloon payment','collateral','guarantee','maturity','principal','accrued interest'],
+  wolfc:['turnip','eagle','heron','parsnip','swallow','radish','kestrel','beetroot']};
+ Object.keys(FILL).forEach(function(c){
+  FILL[c].forEach(function(w){
+   PTS.push({n:w,cs:'',lab:false,
+    x:(c==='trustc'?-0.62:c==='ownc'?-0.60:c==='valc'?0.10:c==='trfc'?0.14:0.80)+jt(0.42),
+    y:(c==='trustc'?0.58:c==='ownc'?-0.42:c==='valc'?0.52:c==='trfc'?-0.46:0.18)+jt(0.42),
+    z:ZC[c]+jt(0.40)});
+  });
+ });
+ /* a thin diffuse scatter so the space reads as a space, not five blobs */
+ for(var i=0;i<130;i++)PTS.push({n:'',cs:'',lab:false,x:jt(1.92),y:jt(1.92),z:jt(1.92)});
+
+ var CUBE=[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]];
+ var EDGES=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+
+ var yaw=-0.62,pitch=0.36,flat=0,spin=true,dragging=false,px=0,py=0;
+ var reduce=false;
+ try{reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+ if(reduce)spin=false;
+
+ function proj(p){
+  var zz=p.z*(1-flat);
+  var cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+  var x1=p.x*cy+zz*sy, z1=-p.x*sy+zz*cy;
+  var y1=p.y*cp-z1*sp, z2=p.y*sp+z1*cp;
+  var s=DIST/(DIST-z2);
+  return {X:CX+x1*s*SC, Y:CY-y1*s*SC, s:s, z:z2};
+ }
+ var PAIRCOL={trust:'#9A4B22',vote:'#9A4B22',val:'#9A4B22',wolf:'#0E5A55'};
+
+ function draw(){
+  var s='<svg viewBox="0 0 '+VW+' '+VH+'" role="img" aria-label="A rotatable three-dimensional projection of the Cole document vocabulary inside a wireframe cube. Words that appear in similar sentences sit near one another. Four marked pairs stay together at every angle.">';
+  s+='<text x="8" y="18" class="chartttl">'+(flat>0.98?'Flattened to two dimensions — the map below':'The Cole document vocabulary, 3 of 12,288 dimensions')+'</text>';
+  /* cube frame, behind the points */
+  var cp=CUBE.map(function(c){return proj({x:c[0]*0.92,y:c[1]*0.92,z:c[2]*0.92})});
+  var fr='';
+  EDGES.forEach(function(e){
+   fr+='<line x1="'+cp[e[0]].X.toFixed(1)+'" y1="'+cp[e[0]].Y.toFixed(1)+'" x2="'+cp[e[1]].X.toFixed(1)+'" y2="'+cp[e[1]].Y.toFixed(1)+'" stroke="#C9CCC5" stroke-width="1" opacity="'+(0.85-flat*0.55).toFixed(2)+'"/>';
+  });
+  s+=fr;
+  /* points, painter's algorithm */
+  var d=PTS.map(function(p){var q=proj(p);q.p=p;return q}).sort(function(a,b){return a.z-b.z});
+  d.forEach(function(q){
+   var p=q.p, near=(q.z+1.9)/3.8, op, r, fill;
+   if(p.lab){
+    fill=p.cs?PAIRCOL[p.cs]:'#6F7B78';
+    r=(p.cs?4.6:3.6)*q.s; op=(0.55+near*0.45).toFixed(2);
+    s+='<circle cx="'+q.X.toFixed(1)+'" cy="'+q.Y.toFixed(1)+'" r="'+r.toFixed(1)+'" fill="'+fill+'" opacity="'+op+'"/>';
+    /* labels carry the 2-D map's own dy nudge, and flip to the inside of the
+       cube on the right-hand half so long names do not run off the frame */
+    var fs=Math.max(9,Math.min(11.5,10*q.s)), right=q.X>CX+40;
+    s+='<text x="'+(q.X+(right?-7:7)*q.s).toFixed(1)+'" y="'+(q.Y+3.5+(p.dy||0)*1.05).toFixed(1)+'" class="chartlab" style="font-size:'+fs.toFixed(1)+'px" text-anchor="'+(right?'end':'start')+'" fill="'+fill+'" opacity="'+op+'">'+esc(p.n)+'</text>';
+   }else if(p.mid){
+    r=3.4*q.s; op=(0.42+near*0.38).toFixed(2);
+    s+='<circle cx="'+q.X.toFixed(1)+'" cy="'+q.Y.toFixed(1)+'" r="'+r.toFixed(1)+'" fill="#6F7B78" opacity="'+op+'"/>';
+   }else{
+    r=2.1*q.s; op=(0.14+near*0.30).toFixed(2);
+    s+='<circle cx="'+q.X.toFixed(1)+'" cy="'+q.Y.toFixed(1)+'" r="'+r.toFixed(1)+'" fill="#6F7B78" opacity="'+op+'"/>';
+   }
+  });
+  s+='<text x="8" y="'+(VH-8)+'" class="chartlab">'+(flat>0.98?'every word now sits where the map below puts it':'drag to turn · '+PTS.length+' words · only the four marked pairs are named here; the map below names the rest')+'</text>';
+  s+='</svg>';
+  W.innerHTML=s;
+ }
+
+ /* the readout: measured separation of the four marked pairs, at this angle */
+ function pairFor(cs){var a=[];PTS.forEach(function(p){if(p.cs===cs)a.push(p)});return a}
+ var PAIRS=[['trust','revocable / irrevocable trust'],['vote','voting / non-voting interest'],['val','appraised / formula value'],['wolf','alligator / crocodile']];
+ function report(){
+  var O=$('cubeOut'); if(!O) return;
+  var h='<span class="hd">Separation on screen, at this angle</span>';
+  PAIRS.forEach(function(pr){
+   var a=pairFor(pr[0]); if(a.length<2) return;
+   var p1=proj(a[0]),p2=proj(a[1]);
+   var px2=Math.sqrt(Math.pow(p1.X-p2.X,2)+Math.pow(p1.Y-p2.Y,2));
+   h+=Math.round(px2)+' px — '+esc(pr[1])+'<br>';
+  });
+  h+='<br><span class="flag">Keep turning: each pair holds that distance at every angle, because each pair is close on all three axes. There is no rotation that pulls them apart. That is not the picture failing — it is what the space is, built from the sentences these words appear in, and those sentences are interchangeable.</span>';
+  O.className='mpanel has';O.innerHTML=h;
+ }
+
+ function render(){draw();report()}
+
+ /* interaction */
+ W.addEventListener('pointerdown',function(e){dragging=true;spin=false;px=e.clientX;py=e.clientY;
+  var b=$('cubeSpin'); if(b)b.textContent='Start turning';
+  if(W.setPointerCapture&&e.pointerId!==undefined){try{W.setPointerCapture(e.pointerId)}catch(err){}}
+  if(typeof mark==='function')mark('g2b');});
+ W.addEventListener('pointermove',function(e){if(!dragging)return;
+  yaw+=(e.clientX-px)*0.009; pitch+=(e.clientY-py)*0.007;
+  pitch=Math.max(-1.2,Math.min(1.2,pitch)); px=e.clientX;py=e.clientY; render();});
+ ['pointerup','pointercancel','pointerleave'].forEach(function(ev){W.addEventListener(ev,function(){dragging=false})});
+ W.style.touchAction='pan-y';W.style.cursor='grab';
+
+ var fb=$('cubeFlat');
+ if(fb)fb.addEventListener('click',function(){
+  var to=flat>0.5?0:1, from=flat, t0=null, D=900;
+  var y0=yaw,p0=pitch;
+  function step(ts){
+   if(t0===null)t0=ts;
+   var k=Math.min(1,(ts-t0)/D), e=k<0.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+   flat=from+(to-from)*e;
+   yaw=y0*(1-e)+(to===1?0:y0)*e; pitch=p0*(1-e)+(to===1?0:p0)*e;
+   render();
+   if(k<1)requestAnimationFrame(step);
+   else{fb.textContent=to===1?'Back to three dimensions':'Flatten it to the map below';
+        if(to===1&&typeof mark==='function')mark('g2b');}
+  }
+  spin=false; var sb=$('cubeSpin'); if(sb)sb.textContent='Start turning';
+  if(reduce){flat=to;yaw=to===1?0:y0;pitch=to===1?0:p0;render();
+   fb.textContent=to===1?'Back to three dimensions':'Flatten it to the map below';
+   if(to===1&&typeof mark==='function')mark('g2b');return;}
+  requestAnimationFrame(step);
+ });
+ var sb=$('cubeSpin');
+ if(sb){sb.textContent=spin?'Stop turning':'Start turning';
+  sb.addEventListener('click',function(){spin=!spin;sb.textContent=spin?'Stop turning':'Start turning';if(spin)requestAnimationFrame(tick)});}
+
+ var last=0;
+ function tick(ts){
+  if(!spin)return;
+  if(ts-last>42){yaw+=0.0045;last=ts;render()}
+  requestAnimationFrame(tick);
+ }
+ render();
+ if(spin)requestAnimationFrame(tick);
+})();
+
 (function(){
  var W=$('mapWrap'),O=$('mapOut'),seen={};
  var VW=720,VH=430,PX=70,PY=34;
