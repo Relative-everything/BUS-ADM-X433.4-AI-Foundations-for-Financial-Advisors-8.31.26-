@@ -80,7 +80,7 @@ Read both distributions aloud. Say that a zero delta is a finding, not a failure
 
 ---
 
-## Poll 5 · 8:12, opening the reserve · optional · ANONYMOUS
+## Poll 5 · 8:17, opening the reserve · optional · ANONYMOUS
 
 ```
 Title: Pace

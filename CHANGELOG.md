@@ -10,6 +10,68 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-21 · Session 3 visual pass: the mechanisms are drawn, the firm's paperwork has a section, and the sorter link opens what it points at
+
+Branch `claude/friendly-albattani-fddv0v`, from `main` after PR #33, the afternoon before the
+session. Six commits. Core is now 12 sections and 67 planned minutes, the appendix 83; the page
+carries seven drawn figures where it carried three; the five minutes the new section takes come
+out of the Q&A reserve, so the run sheet still schedules 157 of 180 and the closing check does
+not move.
+
+### Session 3 · the link to the seven-step sorter opens the depth that reveals it
+
+§06 sends the room to Session 2's appendix B4 with `../session-2/index.html#s9`. The anchor was
+right, but Session 2 boots at core-only depth and `body.core-only section.apx{display:none}` hid
+the target, so the browser landed on a section it could not scroll to. The depth control in
+sessions 1 to 4 now reads the hash on load and on change: an appendix target opens the tier that
+reveals it and is scrolled to, and the scroll repeats on `load` because the charts render after
+the first pass. A core section, an unknown id and an empty hash leave the depth alone.
+
+### Session 3 · §01 gains the space itself
+
+Wolfram's feature-space cube over the Cole vocabulary: 228 words in a wireframe box, the eighteen
+named terms of the 2-D map at the same x and y plus a z the map throws away, drag to turn,
+turning on its own until touched. The four confusable pairs are marked and close on all three
+axes, so no rotation separates them; the readout measures each pair in pixels and says why that
+does not change. "Flatten it to the map below" collapses z and lands on the map's own layout.
+Only the four pairs carry labels. Two prose bullets the picture now carries are gone. Layout is
+seeded, so it is identical each time it is taught; reduced-motion suppresses the idle turn.
+
+### Session 3 · §09b, what the firm must have written down
+
+A new core section between §09 and §10, five minutes. Six pages drawn as pages, each a document
+the firm writes and keeps and the tool does not supply: the AI use policy, review before the
+summary becomes the record, the edit and approval trail, the vendor assessment, a retention rule
+naming transcripts and summaries, and the meetings where the tool stays off. A prediction commit
+opens it on the ACA Group 2024 figure, 12% of financial-services firms using AI having any formal
+risk framework. Regulation S-P's privacy notice and written incident response programme sit in a
+separate panel marked as owed for a different reason and taught in Session 4. `src-iskowitz`
+moves from background to assigned_reading at M, with a scope recording that it relays the SEC and
+FINRA positions rather than quoting rule text; `src-regsp` gains a session-3 line for the
+pointer. Footers regenerated.
+
+### Session 3 · §05, §06 and §07 become diagrams
+
+§05: a Monday, Tuesday, Wednesday stepper. Tuesday the tray's 2023 appraisal is swapped for the
+2026 one; Wednesday the grounded row answers from the new document with a thread back to the
+passage, the tuned row answers from the case's own $38,000,000 with nothing to cite. §06: the
+five stages as nodes and arrows with a dashed return from Log to Prep; a click stains that stage
+and every stage after it and the footer counts them. §07: the four stages as a narrowing funnel,
+five turns in, three out of extraction, the two dropped falling below a dashed line, one labelled
+as the clause about Nathan; a click opens that stage's panel. The bullets each picture replaces
+are gone; the panels, data and gates are unchanged.
+
+### Session 3 · instructor materials and the checks
+
+Run sheet: §09b at 7:57, §10 at 8:02, §11 at 8:10, the reserve at 8:17 and 15 minutes; a per-slot
+note for the new section; Poll 4 retimed; a six-item drop order. Teaching aid: 22 steps, rebuilt
+to one landscape page; the .md matches. Polls sheet retimed. `verify-browser` 14b compared
+rendered pixels against viewBox units and had been carrying allowances of up to 64 per page for
+that reason; it now maps through the svg's own screen matrix, every page measures zero, and the
+allowance is zero. `verify-migration` caught three things this pass introduced and each is fixed
+in place: a retired term in the cube's filler vocabulary, the minute table not yet regenerated
+for §09b, and the S-P chip without a footer entry.
+
 ## 2026-09-20 · Session 3 simplify pass: nothing on the page addresses the instructor, and no exercise needs the case study
 
 Branch `claude/adoring-mendel-2luer4`, from `main` after PR #32. Twenty-five ledger items (SM-001 to

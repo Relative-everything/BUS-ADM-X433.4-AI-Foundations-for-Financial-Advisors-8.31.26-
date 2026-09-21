@@ -307,6 +307,7 @@ moving_target:  false
 figure_class:   regulatory_date
 scope:          The four obligations — written incident response program, customer notification no later than 30 days after the firm becomes aware, service provider oversight, recordkeeping — the definition and scope limits of nonpublic personal information, and the compliance dates 3 December 2025 and 3 June 2026.
 used_for.session-4: the four obligations, the definition and scope limits of nonpublic personal information, the 30-day notification clock, and the Appendix D5 tabletop
+used_for.session-3: the privacy notice, the written incident response programme and the 30-day notification, named in §09b as obligations owed apart from any note-taker and taught in Session 4
 ```
 
 ## src-secpri
