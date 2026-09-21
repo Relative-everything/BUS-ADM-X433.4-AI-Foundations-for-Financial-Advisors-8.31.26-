@@ -2762,7 +2762,25 @@ window.__coreMins=62;
       [].slice.call(bar.querySelectorAll('button[data-level]')).forEach(function(x){x.classList.toggle('on',x===b)}); }
     apply();
   });
+
+  /* A link from another lesson can target an appendix section by id. The
+     core-only filter hides those, so the browser lands on a section it cannot
+     scroll to. Open the depth that reveals the target, then scroll to it. */
+  function revealHash(){
+    var id=(location.hash||'').slice(1); if(!id) return;
+    var sec=document.getElementById(id);
+    if(!sec||!sec.classList.contains('apx')) return;
+    var want=ORDER.indexOf(sec.dataset.tier||'standard'); if(want<0) want=1;
+    if(coreOnly||level<want){ coreOnly=false; level=Math.max(level,want); apply(); }
+    sec.scrollIntoView();
+  }
   apply();
+  revealHash();
+  window.addEventListener('hashchange',revealHash);
+  /* charts render into their containers after this runs and grow the sections
+     above the target, so the first scroll lands short. Repeat once everything
+     has rendered; revealHash is idempotent. */
+  window.addEventListener('load',revealHash);
 })();
 
 })();
