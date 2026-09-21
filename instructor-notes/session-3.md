@@ -101,13 +101,14 @@ the objective.
 | 7:24 | 12 | §08 **silent run, in Claude. WORKED 2** | `sOff` | "Four minutes. Nobody talks. Open Claude. Under prompt 1, click Copy. Paste, send." |
 | 7:36 | 16 | Seven-step delegation sorter, **off the Session 2 page. WORKED 3** | `session-2` `s9`, depth +Standard | "Open last week's page. Appendix depth to Standard. B4." |
 | 7:52 | 5 | §09 consent and confidentiality. **Poll 3** just before | `s12` | "Two obligations: may it be recorded, and what may the vendor see." |
-| 7:57 | 8 | §10 said, recommended or neither. **Poll 4** | `s13` two-bucket-sorter | "Six lines from the meeting. One of them is your inference, not their words." |
-| 8:05 | 7 | §11 checklist, **course data rule aloud**, Part 1 brief | `s16` | "Before the assignment: no real client data enters any AI tool in this course." |
-| 8:12 | 20 | **Q&A and demonstration reserve.** Budgeted, not what is left over | | "Twenty minutes. What do you want to see?" |
+| 7:57 | 5 | §09b the six documents. **Commit first** | `sPol` prediction-commit, then the six pages | "Of firms already using AI, how many have written any of this down? Say a letter." |
+| 8:02 | 8 | §10 said, recommended or neither. **Poll 4** | `s13` two-bucket-sorter | "Six lines from the meeting. One of them is your inference, not their words." |
+| 8:10 | 7 | §11 checklist, **course data rule aloud**, Part 1 brief | `s16` | "Before the assignment: no real client data enters any AI tool in this course." |
+| 8:17 | 15 | **Q&A and demonstration reserve.** Budgeted, not what is left over | | "Fifteen minutes. What do you want to see?" |
 | 8:32 | 5 | **Closing check**, written, against the objective | `s16` closing question | "The thing I said we would cover. In chat, one line each." |
 | 8:37 | 23 | Buffer | | |
 
-Scheduled 157 of 180. Sessions 1 and 2 both ran to about 2:57 of a 3:00 block, so a plan ending at
+Scheduled 157 of 180 (§09b's five minutes come out of the Q&A reserve, 20 to 15, so the total is unchanged). Sessions 1 and 2 both ran to about 2:57 of a 3:00 block, so a plan ending at
 8:37 on paper ends near 8:55 in the room. The buffer is not spare.
 
 ### Checkpoints, readable off a clock
@@ -153,7 +154,7 @@ or decline it aloud; declining aloud still counts.
 | 1 | 6:14 | **Anonymous.** "Since Session 2, how many times have you typed a prompt into any AI tool? (a) none (b) 1 to 3 (c) 4 to 10 (d) more than 10" | If at least half pick (a) or (b): cut §05 and give §08's silent run six minutes instead of four. |
 | 2 | 6:38 | "A grounded assistant that cites your own documents makes things up: (a) essentially never (b) about 1 in 20 answers (c) about 1 in 5 answers (d) as often as an ungrounded one". The page's §04 commit carries the same four, same letters. | If at least 60% pick (a): spend two extra minutes on the Stanford 17 to 33 figures rather than on the Anthropic finding-step rate. |
 | 3 | 7:34 | "The retriever ranked the 2023 appraisal third. The best explanation is: (a) the appraisal is out of date (b) the appraisal shares almost no words with the question (c) the retriever was set to the wrong model (d) the appraisal was not in the corpus" | (a) is the trap: professionally sensible, not the mechanism. If at least 30% pick (a): re-run preset 1 and read the shared-term line aloud before moving on. |
-| 4 | 7:57 | Pair. Before §10's sorter: "Of six lines from a client meeting, how many do you expect to be your inference rather than something said? (a) 0 (b) 1 (c) 2 (d) 3 or more". After: the same question about their own file notes. | Read both distributions. Say out loud that a zero delta is a finding, not a failure. |
+| 4 | 8:02 | Pair. Before §10's sorter: "Of six lines from a client meeting, how many do you expect to be your inference rather than something said? (a) 0 (b) 1 (c) 2 (d) 3 or more". After: the same question about their own file notes. | Read both distributions. Say out loud that a zero delta is a finding, not a failure. |
 
 Poll 1 is the only instrument in the course that measures the thing most worth knowing: whether
 anyone is using AI between sessions.
@@ -193,7 +194,7 @@ for them at §06, §07 and §11; this is your side of it.
   "client review meeting" because that is the case, not anyone's practice. If one of the three
   asks what it means for them: the same three rules and the same prompts, on the summary of their
   own meeting, in their own time, synthetic or fully de-identified only.
-- **7:57, §10.** The sorter is reading, no branch. The work-along says "the last meeting you wrote
+- **8:02, §10.** The sorter is reading, no branch. The work-along says "the last meeting you wrote
   up", which is true for all eight. The basis prompt's ROLE line names an investment adviser; for
   the three the prompt works unchanged on any recommendation they made in their meeting, and they
   can change the ROLE line to a reviewer at their own organisation if the adviser framing gets in
@@ -227,9 +228,10 @@ who is holding it if nobody does.
 ### Drop order, first to go at the top
 1. §05, narrate the three bullets only, skip the Tuesday test. Recovers 4.
 2. §09 to the one-party floor only. Recovers 3.
-3. Q&A reserve from 20 to 12. Recovers 8. Only to protect the closing check.
-4. The merged §01/§02 narrated in 4 rather than 7, skipping the pair sort. Recovers 3.
-5. §10's sorter demonstrated rather than run. Recovers 4.
+3. §09b to the six page titles read off the screen, no commit poll. Recovers 3.
+4. Q&A reserve from 15 to 8. Recovers 7. Only to protect the closing check.
+5. The merged §01/§02 narrated in 4 rather than 7, skipping the pair sort. Recovers 3.
+6. §10's sorter demonstrated rather than run. Recovers 4.
 
 **Never drop:** §03's preset 1, §08's silent run, the seven-step sorter, the closing check.
 
@@ -343,7 +345,25 @@ The two recording-law items under **Verify before teaching** below are yours to 
 The vendor-questions card is gone from this section. Session 4 §04 scores the same questions with
 weights, and appendix A5 carries them as an email builder for the async reader.
 
-### s13 · §10, 7:57
+### sPol · §09b, 7:57
+New this pass, and the one section on the page about the firm rather than the meeting. Run the
+commit poll first: four options, one answer, and the answer is (a), about 1 in 10. The figure is a
+2024 ACA Group survey of financial-services firms already using AI; 12% had any formal AI risk
+framework. Say the number, then open the pages.
+
+Six pages, each one clicked open. Do not read all six aloud: click two, read those, then ask the
+room which of the six their firm could produce today. **That question is the section.** Expect the
+honest answer to be one or none, and say that the honest answer is the common one.
+
+The gold panel is the Session 4 pointer, not a topic. Read the two items, say they are owed whether
+or not anyone buys a note-taker, and move on; D5's tabletop next week is where the 30-day clock gets
+run. Do not teach Regulation S-P here.
+
+The chip on the source line is M and it says why: Iskowitz relays the SEC and FINRA positions and
+the page quotes no rule text. If someone asks for the rule, the honest answer is that the reading
+names Rule 204-2 and Rule 3110 and that you have not read either against this section yet.
+
+### s13 · §10, 8:02
 Lines and buckets are numbered. After Poll 4a, ask: "line 4, which bucket?" The answer is 3,
 Neither; it is the inference. **[GATE]** before the key opens. Watch for anyone who sorts the inference line as "said": that is
 the mistake a note-taker makes for you. Name the technique in §10's prompt aloud: it is reverse
@@ -362,7 +382,7 @@ classmate runs the package cold in Session 4 with no help from the builder.
 Then the closing check, written, in chat. The page's closing block now says so and carries both the
 check and the §03 question behind it.
 
-### s15 · C4, only if the room is 20 minutes ahead at 8:12
+### s15 · C4, only if the room is 20 minutes ahead at 8:17
 Hidden at core-only depth. Eighteen planned minutes, about 34 actual, which is more than the buffer.
 Run the three options as a Zoom poll at each vote. If under 25% take "check less" the first time,
 read Magesh before the defence, not after. Show both distributions side by side and say nothing
