@@ -179,7 +179,17 @@ for (const rel of LESSONS) {
       svg.querySelectorAll('text').forEach((t) => {
         let b; try { b = t.getBBox(); } catch { return; }   /* rendered box, transforms applied */
         if (!b.width && !b.height) return;
-        const m = t.getCTM ? t.getCTM() : null;             /* to the svg user space */
+        /* getCTM() maps to the SVG VIEWPORT (rendered pixels), not to user
+           space, so comparing its output against the viewBox compared two
+           different units and flagged every label past viewBox_width / scale.
+           The matrix that lands in user space is the element's screen matrix
+           relative to the svg's own. getBBox() is already in user space, so
+           with no transform on the element the two agree. */
+        let m = null;
+        try {
+          const st = t.getScreenCTM && t.getScreenCTM(), ss = svg.getScreenCTM && svg.getScreenCTM();
+          if (st && ss) m = ss.inverse().multiply(st);
+        } catch { m = null; }
         const x0 = m ? b.x * m.a + b.y * m.c + m.e : b.x;
         const y0 = m ? b.x * m.b + b.y * m.d + m.f : b.y;
         const x1 = m ? (b.x + b.width) * m.a + (b.y + b.height) * m.c + m.e : b.x + b.width;
@@ -191,14 +201,16 @@ for (const rel of LESSONS) {
     });
     return bad;
   });
-  /* Pre-existing baseline, measured on origin/main before this migration with the
-     identical getBBox+CTM method. These are axis labels and legends in the
-     lessons' own charts, drawn a few px outside the declared viewBox; the charts
-     were not touched by this migration (constraint 7 preserves chart
-     implementations). The check therefore fails on a REGRESSION, not on the
-     standing count, and the standing count is reported either way. */
-  const BASELINE = { 'index.html': 0, 'session-0.1/index.html': 12, 'session-1/index.html': 32,
-                     'session-2/index.html': 64, 'session-3/index.html': 11, 'session-4/index.html': 3 };
+  /* Standing count, re-measured 2026-09-21 after the unit bug above was fixed.
+     The old numbers (0, 12, 32, 64, 11, 3) were inflated 5x to 60x by comparing
+     rendered pixels against viewBox units: every label past viewBox_width over
+     the render scale counted, whether or not it was really outside. In user
+     space every page measures zero, rotated axis labels included, so the
+     allowance is zero and any text genuinely drawn outside its viewBox now
+     fails. The check still fails on a REGRESSION against these numbers, and the
+     standing count is reported either way. */
+  const BASELINE = { 'index.html': 0, 'session-0.1/index.html': 0, 'session-1/index.html': 0,
+                     'session-2/index.html': 0, 'session-3/index.html': 0, 'session-4/index.html': 0 };
   const base = BASELINE[rel] ?? 0;
   say(outside.length <= base,
       `14b SVG text outside viewBox: ${outside.length} (pre-migration baseline ${base}, no regression)` +

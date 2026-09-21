@@ -1491,6 +1491,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       <span id="mtgExcerpt" style="font-family:'Source Serif 4',serif;font-size:15.5px;line-height:1.6;display:block"></span>
     </div>
     <p style="margin:14px 0 8px"><span class="sim">Stage outputs written for this lesson, illustrative</span></p>
+    <div id="ntFunnel"></div>
     <div id="ntStages"></div>
   </div>
 
@@ -2619,23 +2620,55 @@ var CHAIN=[
   v:'Visible only at examination, when the reasoning cannot be rebuilt.'}
 ];
 (function(){
- var W=$('chainWrap'),O=$('chainOut'),seen={};
- var h='<div class="row" style="gap:8px">';
- CHAIN.forEach(function(c,i){h+='<button class="btn sel mini" data-i="'+i+'" type="button">'+(i+1)+' '+esc(c.s)+'</button>'+
-   (i<CHAIN.length-1?'<span class="dim" style="font-family:JetBrains Mono,monospace">\u2192</span>':'')});
- h+='</div>';W.innerHTML=h;
- [].slice.call(W.querySelectorAll('button')).forEach(function(b){
-  b.onclick=function(){
-   var i=parseInt(b.dataset.i,10),c=CHAIN[i];seen[i]=1;
-   [].slice.call(W.querySelectorAll('button')).forEach(function(x){x.classList.toggle('act',x===b)});
-   var s='<span class="hd">'+esc(c.s)+': what the tool does</span>'+esc(c.ai)+'<br><br>'+
-     '<span class="hd">What you check before it moves on</span><span class="good">'+esc(c.chk)+'</span><br><br>'+
-     '<span class="hd">If you skip the check</span>';
-   c.skip.forEach(function(d){s+='\u00b7 '+esc(d)+'<br>'});
-   s+='<br><span class="hd">First seen by a person</span>'+(c.v.indexOf('Never')===0?'<span class="flag">':'<span class="good">')+esc(c.v)+'</span>';
-   O.className='mpanel has';O.innerHTML=s;
-   if(Object.keys(seen).length===CHAIN.length&&typeof mark==='function')mark('g7');
-  }});
+ var W=$('chainWrap'),O=$('chainOut'),seen={},cur=-1;
+ var VW=720,VH=214,R=25,Y=74,X0=62,GAP=146;
+ function cx(i){return X0+i*GAP}
+ function draw(){
+  var s='<svg viewBox="0 0 '+VW+' '+VH+'" role="img" aria-label="The five stages of the advisor meeting workflow drawn as a chain: prep, capture, summarise, follow-up, log, with the log feeding the next meeting’s prep. Selecting a stage marks it and every stage after it, because a mistake at one stage is inherited by all of them.">';
+  s+='<defs><marker id="chArr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B9BDB9"/></marker>'+
+     '<marker id="chArrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9A4B22"/></marker></defs>';
+  /* the connectors, stained when the mistake travels down them */
+  for(var i=0;i<CHAIN.length-1;i++){
+   var bad=(cur>=0&&i>=cur);
+   s+='<line x1="'+(cx(i)+R+4)+'" y1="'+Y+'" x2="'+(cx(i+1)-R-10)+'" y2="'+Y+'" stroke="'+(bad?'#9A4B22':'#B9BDB9')+'" stroke-width="'+(bad?3:2)+'" marker-end="url(#'+(bad?'chArrB':'chArr')+')"/>';
+  }
+  /* the log feeds the next meeting's prep */
+  var lx=cx(CHAIN.length-1),px=cx(0);
+  var LY=Y+R+34;
+  s+='<path d="M'+lx+' '+LY+' C '+lx+' '+(LY+34)+', '+px+' '+(LY+34)+', '+px+' '+LY+'" fill="none" stroke="#D8DAD4" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#chArr)"/>';
+  s+='<text x="'+((lx+px)/2)+'" y="'+(LY+30)+'" class="chartlab" text-anchor="middle">the log is the next meeting’s prep</text>';
+  CHAIN.forEach(function(c,i){
+   var bad=(cur>=0&&i>=cur), isCur=(i===cur), op=seen[i]?1:0.92;
+   var fill=bad?'#F6EAE2':(seen[i]?'#E2EDEB':'#FFFFFF');
+   var stroke=bad?'#9A4B22':'#0E5A55';
+   s+='<g class="chn" data-i="'+i+'" style="cursor:pointer" opacity="'+op+'">';
+   if(isCur)s+='<circle cx="'+cx(i)+'" cy="'+Y+'" r="'+(R+5)+'" fill="none" stroke="#9A4B22" stroke-width="1.4" stroke-dasharray="3 3"/>';
+   s+='<circle cx="'+cx(i)+'" cy="'+Y+'" r="'+R+'" fill="'+fill+'" stroke="'+stroke+'" stroke-width="'+(isCur?3:2)+'"/>';
+   s+='<text x="'+cx(i)+'" y="'+(Y+6)+'" text-anchor="middle" class="chartval" style="font-size:17px" fill="'+stroke+'">'+(i+1)+'</text>';
+   s+='<text x="'+cx(i)+'" y="'+(Y+R+20)+'" text-anchor="middle" class="chartval" style="font-size:13px" fill="'+stroke+'">'+esc(c.s)+'</text>';
+   s+='</g>';
+  });
+  s+='<text x="'+(VW-6)+'" y="26" text-anchor="end" class="chartlab" fill="#6F7B78">what an examiner reads</text>';
+  s+='<line x1="'+cx(CHAIN.length-1)+'" y1="32" x2="'+cx(CHAIN.length-1)+'" y2="'+(Y-R-5)+'" stroke="#D8DAD4" stroke-width="1"/>';
+  if(cur>=0)s+='<text x="8" y="'+(VH-8)+'" class="chartlab" fill="#9A4B22">a mistake at '+esc(CHAIN[cur].s)+' is inherited by '+(CHAIN.length-1-cur)+' later stage'+((CHAIN.length-1-cur)===1?'':'s')+'</text>';
+  else s+='<text x="8" y="'+(VH-8)+'" class="chartlab">click a stage</text>';
+  s+='</svg>';
+  W.innerHTML=s;
+  [].slice.call(W.querySelectorAll('.chn')).forEach(function(g){
+   g.addEventListener('click',function(){pick(parseInt(g.dataset.i,10))});
+  });
+ }
+ function pick(i){
+  var c=CHAIN[i];seen[i]=1;cur=i;draw();
+  var s='<span class="hd">'+esc(c.s)+': what the tool does</span>'+esc(c.ai)+'<br><br>'+
+    '<span class="hd">What you check before it moves on</span><span class="good">'+esc(c.chk)+'</span><br><br>'+
+    '<span class="hd">If you skip the check</span>';
+  c.skip.forEach(function(d){s+='· '+esc(d)+'<br>'});
+  s+='<br><span class="hd">First seen by a person</span>'+(c.v.indexOf('Never')===0?'<span class="flag">':'<span class="good">')+esc(c.v)+'</span>';
+  O.className='mpanel has';O.innerHTML=s;
+  if(Object.keys(seen).length===CHAIN.length&&typeof mark==='function')mark('g7');
+ }
+ draw();
 })();
 
 /* ================= 9c. The intake questionnaire: a prep prompt built from areas ================= */
@@ -2723,6 +2756,68 @@ function ntSumText(){return 'MEETING SUMMARY (synthetic: the Cole annual review,
   W.appendChild(d);
  });
  REVEALS.push(function(){[].slice.call(W.querySelectorAll('.ntout')).forEach(function(o){o.style.display='block';o.className='mpanel keyhide ntout has'})});
+})();
+/* ---- the four stages as a funnel: five turns in, three out ---------------
+   The syllabus writes this bullet as an arrow diagram. Drawn as one, the
+   narrowing at extraction is the whole teaching point and it is visible before
+   anyone opens a panel. Clicking a stage opens that stage's panel below. */
+(function(){
+ var F=$('ntFunnel'); if(!F) return;
+ var VW=720,VH=248,BW=150,GAP=28,X0=10,TOP=44,cur=-1;
+ var ST=[{n:'Transcription',sub:'speech to text',h:78,inn:5,out:5},
+         {n:'Extraction',sub:'what counts',h:64,inn:5,out:3},
+         {n:'Categorisation',sub:'under your headings',h:56,inn:3,out:5},
+         {n:'Follow-up',sub:'recap and tasks',h:48,inn:5,out:1}];
+ function bx(i){return X0+i*(BW+GAP)}
+ function bars(x,n,y,col,w,lab){
+  var s='',bw=w||13,g=5,tot=n*bw+(n-1)*g,sx=x+(BW-tot)/2;
+  for(var k=0;k<n;k++){
+   s+='<rect x="'+(sx+k*(bw+g))+'" y="'+y+'" width="'+bw+'" height="9" rx="1.5" fill="'+col+'"/>';
+   if(lab)s+='<text x="'+(sx+k*(bw+g)+bw/2)+'" y="'+(y-4)+'" text-anchor="middle" class="chartlab" style="font-size:8.5px">'+(k+1)+'</text>';
+  }
+  return s;
+ }
+ function draw(){
+  var s='<svg viewBox="0 0 '+VW+' '+VH+'" role="img" aria-label="The four stages of an AI note-taker drawn as a narrowing funnel. Five turns of the meeting enter transcription and five leave it; three leave extraction, and the two that are dropped fall out of the funnel, one of them the constraint about Nathan.">';
+  s+='<text x="6" y="16" class="chartttl">Five turns in. Three survive extraction.</text>';
+  s+='<text x="6" y="32" class="chartlab">click a stage to open it below</text>';
+  ST.forEach(function(st,i){
+   var x=bx(i), y=TOP+(78-st.h)/2, on=(cur===i), warn=(i===1);
+   var stroke=on?(warn?'#9A4B22':'#0E5A55'):'#C9CCC5';
+   var fill=on?(warn?'#F6EAE2':'#E2EDEB'):'#FFFFFF';
+   s+='<g class="ntf" data-i="'+i+'" style="cursor:pointer">';
+   s+='<rect x="'+x+'" y="'+y+'" width="'+BW+'" height="'+st.h+'" rx="3" fill="'+fill+'" stroke="'+stroke+'" stroke-width="'+(on?2.4:1.4)+'"/>';
+   s+='<text x="'+(x+BW/2)+'" y="'+(y+st.h/2-1)+'" text-anchor="middle" class="chartval" style="font-size:13px" fill="'+(on?stroke:'#16211F')+'">'+(i+1)+'. '+esc(st.n)+'</text>';
+   s+='<text x="'+(x+BW/2)+'" y="'+(y+st.h/2+14)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px">'+esc(st.sub)+'</text>';
+   s+='</g>';
+   /* what leaves this stage */
+   var by=TOP+92;
+   s+=bars(x,st.out,by,warn?'#0E5A55':'#0E5A55',13,i===0);
+   s+='<text x="'+(x+BW/2)+'" y="'+(by+22)+'" text-anchor="middle" class="chartlab" style="font-size:9px">'+st.out+(i===2?' headings out':(i===3?' recap out':' turns out'))+'</text>';
+   if(i<ST.length-1)
+    s+='<line x1="'+(x+BW+4)+'" y1="'+(TOP+40)+'" x2="'+(x+BW+GAP-6)+'" y2="'+(TOP+40)+'" stroke="#B9BDB9" stroke-width="2" marker-end="url(#ntA)"/>';
+  });
+  /* the two that fall out, under extraction */
+  var ex=bx(1), fy=TOP+134;
+  s+='<line x1="'+(ex-6)+'" y1="'+(fy-12)+'" x2="'+(ex+BW+6)+'" y2="'+(fy-12)+'" stroke="#D8DAD4" stroke-width="1" stroke-dasharray="4 3"/>';
+  s+=bars(ex,2,fy,'#9A4B22',13,false);
+  s+='<text x="'+(ex+BW/2)+'" y="'+(fy+24)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px" fill="#9A4B22">2 dropped as conversational</text>';
+  s+='<text x="'+(ex+BW/2)+'" y="'+(fy+37)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px" fill="#9A4B22">one is the clause about Nathan</text>';
+  s+='<text x="'+(bx(3)+BW/2)+'" y="'+(fy+24)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px" fill="#9A4B22">plus one line nobody said</text>';
+  s+='<defs><marker id="ntA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B9BDB9"/></marker></defs>';
+  s+='</svg>';
+  F.innerHTML=s;
+  [].slice.call(F.querySelectorAll('.ntf')).forEach(function(g){
+   g.addEventListener('click',function(){
+    var i=parseInt(g.dataset.i,10); cur=i; draw();
+    var btns=document.querySelectorAll('#ntStages .ntstage button');
+    if(btns[i]){var o=btns[i].parentNode.querySelector('.ntout');
+     if(o&&o.style.display==='none')btns[i].click();
+     btns[i].scrollIntoView({block:'nearest'});}
+   });
+  });
+ }
+ draw();
 })();
 (function(){
  var B=$('ntCopy'),M=$('ntCopyMsg'),P=$('ntPrompt');if(!B)return;
