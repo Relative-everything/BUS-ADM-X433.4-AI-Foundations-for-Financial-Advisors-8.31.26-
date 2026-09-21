@@ -25,7 +25,10 @@ at §03. The instructor materials now describe that night rather than the page's
   Claude chat, the slide), a setup list for 5:45, five checkpoints, a six-item drop order and the
   answers. The three gated questions survive, relocated to the checklist step, the Kitces CRM
   node and §10. The live skill build is hard-boxed at 27 minutes with a stop time and a fallback,
-  against the 19.5 and 50.5 minutes the two audits measured.
+  against the 19.5 and 50.5 minutes the two audits measured. The closing step states the
+  assignment in the syllabus’s own words, draft an AI usage policy for your firm, with the
+  three cited sources and one scholarly requirement, and carries the line to say aloud: use
+  the assigned readings to inform the draft, naming the three at the foot of §11.
 - `session-3.md` gains a block dated today: what moved, which page sections the front half
   covers instead, the timing (159 of 180), and three things to say correctly because they could
   not be verified from the build environment: the Stanford chart's version (three bars, 17, 19
