@@ -8,6 +8,78 @@ demonstrated. Everything else is narrated.** Session 1 measured 2 of 17 interact
 and 0 executed by a learner. A section that is read runs at about 1.0x its planned minutes; a
 section that is worked runs at 1.9x. That is the whole reason the clock below looks tight.
 
+## Changed 2026-09-21, the afternoon of the session: the order as it will be taught
+
+The night runs in the instructor's order, not the page's. Everything below this block is still the
+reference for what each page element does and says; the clock table below it is superseded by the
+one-page aid (`session-3-teaching-aid.pdf`, rebuilt today, 20 steps on five surfaces). What moved,
+and why, so the next pass can read the transcript against a plan that matches it:
+
+- **The seven-step process goes first, 6:08 to 6:25.** The CFP Board wheel as an image, two
+  questions on it (which steps tonight lives in: 1, 2, 7; which two are planner-only: 2 and 4),
+  then Session 2's B4 sorter worked by the room with the key revealed at 6:22 whatever is placed.
+  This is the course Learning Objective that had zero minutes across two sessions (Session 2
+  audit F15, blocking). First in the night is the only slot it cannot be squeezed out of. The
+  wheel on screen supplies the seven step names, which resolves for tonight the caution under
+  "session-2 s9" below; record the graphic's URL in SOURCES.md after class. The retrieval bridge
+  (C A D B) is dropped: the sorter is Session 2 material and does the bridge's job.
+- **The note-taker block, 6:25 to 6:58, on four surfaces in this order:** the CFP Board ethics
+  and generative-AI checklist PDF (headings only; the consent gate fires here; name Standards
+  A.9 Confidentiality and Privacy and A.14 Duties When Selecting, Using, and Recommending
+  Technology), the Kitces full-meeting-cycle image (the same five stages as §06; the "who reads
+  this note, and when" gate fires at the CRM node), then the pipeline artifact
+  (`session-3-notetaker-pipeline.htm`, the repository copy): a 457-word excerpt of the Session 2
+  recording run through transcription, extraction, categorisation, follow-up and human review,
+  with a comprehension question before each output. Its Step 5 is where the portability
+  correction is delivered, in front of the transcript that contains the error and the three
+  outputs that copied it. That is stronger than saying it at 6:03, so the 6:00 open carries only
+  the token multiple and the watermark sentence.
+- **The live skill build, 7:15 to 7:42, after the break, hard-boxed.** Session 1's build ran 19.5
+  minutes and Session 2's 50.5 (F05). Tonight: the prompt is typed before class and not sent; the
+  artifact's Step 0 excerpt is the "provided transcript"; the grounding-against-tuning sentence,
+  the Stanford chart and Poll 2 fill the generation waits (F11); at 7:30 the built skill is run on
+  the same excerpt and asked whether it caught the portability error (it will not: it has the
+  transcript, not the Code, which is the syllabus item "grounding vs. fine-tuning" made concrete);
+  at 7:35 if nothing is built, §07's standing instruction is pasted as the skill body; stop at
+  7:42 in whatever state. This block is the syllabus item "building a grounded meeting-prep
+  assistant" and replaces §05 and §07 on the page.
+- **The instructor's own cycle slide, 7:42 to 7:48**, Detect, Build, Review, Meeting, Close,
+  14.0 hours per cycle. One question: which stage would you hand to a tool tonight. That is the
+  closing check in rehearsal, on a real process. The slide carries the firm's disclaimer footer;
+  nothing on it needs verifying.
+- **The page is entered at §03, not §00**, at 7:48, and worked §03 (preset 1, then Poll 3), §08
+  (the silent run), §10 (the sorter and the interview rewrite), §11 (the course rule, the
+  checklist, Part 1), then the closing check at 8:32 and the homework at 8:37. §00's objective is
+  still read off the page at 6:03. The Cole panel in §00 is not read aloud tonight: §03 is the
+  first Cole exercise and its ten passages name the documents.
+- **Sections the front half covers and the page does not run tonight:** §01/02 (the cube and the
+  pair sort; reserve material only), §04 (Poll 2 and the Stanford chart inside the build), §05
+  (one sentence inside the build), §06 (the Kitces image and the instructor's slide), §07 (the
+  artifact), §09 (the checklist step and its gate), §09b (two of the six pages in the reserve if
+  10 minutes ahead). The three gates all survive, relocated as above.
+- **Scheduled 159 of 180**, ending on paper at 8:39; both prior sessions ran to about 2:57, so
+  the 21 minutes are not spare. Checkpoints: 6:25 sorter key shown, 6:58 break on time, 7:42 build
+  stopped, 8:02 in §08, 8:32 closing check.
+- **Polls.** Poll 1 is built. Build Poll 2 (fires inside the skill build) and Poll 3 (after preset
+  1); N2 and N3 from `session-3-polls.md` if there is time. Polls 4a and 4b become spoken asks.
+  Delete the blank duplicate of Poll 1 in the Zoom portal, or fill it as Poll 2.
+
+Three things to say correctly because they were not verifiable from the build environment:
+
+1. **The Stanford chart.** The figure in the screenshot has three bars: Lexis about 17% and
+   Thomson Reuters about 19% hallucinated, GPT-4 about 43%; and on the incomplete-answer side
+   Thomson Reuters about 62%. High confidence on the bar heights, read off the image. The 33%
+   Westlaw AI-Assisted Research figure that §04 and Session 2 §07 cite is from the revised,
+   four-bar version of the paper (medium confidence on the version history; the PDF is
+   egress-blocked here). Say the numbers on screen; say "the later version added Westlaw at
+   about a third" only as that. One sentence is worth spending on the yellow bars: an incomplete
+   answer is a refusal or a miss, a different failure from a fabrication.
+2. **The CFP Board checklist.** cfp.net is egress-blocked, so its headings are unverified in this
+   repository. Read them off the PDF; do not quote the checklist from memory. The two Standards
+   named above are high confidence from the Code and Standards themselves.
+3. **The Kitces cycle image** is from the article already in the footer as `src-kitces-notetakers`
+   at H; nothing new to verify.
+
 ## Changed 2026-09-19, the simplify pass
 
 Everything below this block still holds. What moved on the page:

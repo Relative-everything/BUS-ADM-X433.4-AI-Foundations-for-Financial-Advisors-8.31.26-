@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en"><head>
+<!-- Instructor-only demonstration, shown in Session 3 (2026-09-21) from a claude.ai
+     artifact; this is the repository copy. Not a lesson: no managed style fence on
+     purpose, and the .htm extension keeps it outside the lesson sweep. The excerpt
+     is the instructor's own Session 2 recording, no learner names, no client data. -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How an AI Note-Taker Works: Transcript to Follow-Up</title>
+<style>
+:root{--paper:#f6f3ec;--ink:#1d1c1a;--mute:#6b665d;--rule:#d8d1c3;--card:#fffdf8;--red:#b3261e;--redbg:#fbe9e7;--blue:#1f4e79;--code:#efeadf;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#161513;--ink:#ece8df;--mute:#a39d91;--rule:#3a3631;--card:#1f1d1a;--red:#ff8a80;--redbg:#3a1f1c;--blue:#8fb8e0;--code:#26231f}}
+:root[data-theme="dark"]{--paper:#161513;--ink:#ece8df;--mute:#a39d91;--rule:#3a3631;--card:#1f1d1a;--red:#ff8a80;--redbg:#3a1f1c;--blue:#8fb8e0;--code:#26231f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:19px/1.5 Charter,"Iowan Old Style","Palatino Linotype",Georgia,serif}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule);display:flex;gap:4px;flex-wrap:wrap;align-items:center;padding:8px 20px;font:600 14px/1 ui-sans-serif,system-ui,sans-serif}
+nav a{color:var(--ink);text-decoration:none;padding:6px 10px;border-radius:4px}
+nav a:hover,nav a:focus-visible{background:var(--code)}
+nav .k{margin-left:auto;color:var(--mute);font-weight:400}
+main{max-width:980px;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:2.1rem;line-height:1.15;margin:0 0 6px}
+.sub{color:var(--mute);margin:0 0 18px;font-size:1rem}
+.pipe{display:flex;flex-wrap:wrap;gap:0;margin:0 0 30px;font:600 15px/1 ui-sans-serif,system-ui,sans-serif}
+.pipe span{padding:10px 14px;border:1px solid var(--rule);background:var(--card)}
+.pipe span+span{border-left:0}
+.pipe b{color:var(--blue);margin-right:6px}
+section{border-top:3px solid var(--ink);padding-top:14px;margin-top:44px}
+.num{font:700 13px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+h2{font-size:1.6rem;margin:6px 0 14px}
+.ask{border-left:6px solid var(--blue);background:var(--card);padding:14px 18px;margin:16px 0;font-size:1.15rem}
+.ask strong{font:700 13px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:6px;color:var(--blue)}
+pre{background:var(--code);border:1px solid var(--rule);padding:14px 16px;overflow-x:auto;font:15px/1.5 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;margin:0}
+.transcript{max-height:62vh;overflow-y:auto}
+.ts{color:var(--mute);user-select:none}
+.label{font:700 12px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:18px 0 6px}
+details{margin-top:16px;border:1px solid var(--rule);background:var(--card)}
+summary{cursor:pointer;padding:12px 16px;font:700 15px/1.2 ui-sans-serif,system-ui,sans-serif;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"\25B6  ";color:var(--blue)}
+details[open] summary::before{content:"\25BC  "}
+summary:focus-visible,nav a:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.out{padding:4px 18px 18px}
+.out p{margin:.5em 0}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font:16px/1.4 ui-sans-serif,system-ui,sans-serif}
+th,td{border-bottom:1px solid var(--rule);padding:7px 9px;text-align:left;vertical-align:top}
+th{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+td.v{font-weight:700;white-space:nowrap}
+.flag{background:var(--redbg);color:var(--red);font-weight:700;padding:1px 5px;border-radius:3px}
+tr.bad td{background:var(--redbg)}
+.mail{background:var(--paper);border:1px solid var(--rule);padding:14px 18px;font:16px/1.5 ui-sans-serif,system-ui,sans-serif}
+.small{font-size:.85rem;color:var(--mute)}
+ol.src{font-size:.85rem;color:var(--mute);padding-left:20px}
+.conf{font:700 12px/1 ui-sans-serif,system-ui,sans-serif;border:1px solid currentColor;padding:1px 4px;border-radius:3px;margin-left:4px}
+</style></head><body>
+<nav aria-label="Steps"><a href="#s0">0 Raw</a><a href="#s1">1 Transcription</a><a href="#s2">2 Extraction</a><a href="#s3">3 Categorization</a><a href="#s4">4 Follow-up</a><a href="#s5">5 Review</a><span class="k">Shift+U opens all outputs</span></nav>
+<main>
+<h1>How an AI Note-Taker Works: Transcript to Follow-Up</h1>
+<p class="sub">Session 3 &middot; Source: Session 2 recording (Sep 14, 2026), 02:20:23 to 02:23:34, 457 words, unedited ASR. No names appear in the excerpt.</p>
+<div class="pipe" aria-label="Pipeline"><span><b>1</b>Transcription</span><span><b>2</b>Extraction</span><span><b>3</b>Categorization</span><span><b>4</b>Follow-up</span><span><b>5</b>Human review</span></div>
+
+<section id="s0">
+<div class="num">Step 0</div><h2>The Raw Transcript</h2>
+<p>This is what every note-taker starts from: a machine transcript (faster-whisper small.en). Treat this 3-minute stretch as a client meeting.</p>
+<div class="label">Excerpt, verbatim</div>
+<pre class="transcript" tabindex="0"><span class="ts">02:20:23.73</span> So here we go.
+<span class="ts">02:20:30.15</span> So I&#x27;m gonna ask it about portability.
+<span class="ts">02:20:34.78</span> This will be interesting too
+<span class="ts">02:20:35.66</span> because I don&#x27;t actually know
+<span class="ts">02:20:36.50</span> the governing authority citation here.
+<span class="ts">02:20:40.18</span> What is portability?
+<span class="ts">02:20:42.38</span> Anybody know what portability is?
+<span class="ts">02:20:46.09</span> Illinois doesn&#x27;t have it, I&#x27;ll tell you that.
+<span class="ts">02:20:52.39</span> Any guess what portability is?
+<span class="ts">02:20:54.75</span> Pretty important to state planning, I&#x27;d say.
+<span class="ts">02:20:56.23</span> It&#x27;s the only reason why.
+<span class="ts">02:20:57.71</span> I&#x27;m gonna cover that.
+<span class="ts">02:21:00.23</span> Has anyone ever heard the word portability
+<span class="ts">02:21:02.23</span> in the context of financial planning?
+<span class="ts">02:21:04.15</span> Yes, does it have to do with real estate?
+<span class="ts">02:21:11.65</span> I&#x27;ve heard it before.
+<span class="ts">02:21:12.49</span> I can&#x27;t remember what it&#x27;s about though.
+<span class="ts">02:21:14.53</span> So portability is the ability to give your surviving spouse
+<span class="ts">02:21:20.77</span> your unused estate tax exemption.
+<span class="ts">02:21:24.61</span> Every American gets $15 million.
+<span class="ts">02:21:28.01</span> I could give a million dollars to each one of you guys
+<span class="ts">02:21:31.45</span> and seven other people, technically slightly more.
+<span class="ts">02:21:34.61</span> but you can give 15 million throughout your lifetime,
+<span class="ts">02:21:38.13</span> totally tax-free.
+<span class="ts">02:21:39.33</span> There&#x27;s no tax on it in America for a citizen.
+<span class="ts">02:21:42.29</span> Once you give your 15 millionth and $1,
+<span class="ts">02:21:45.93</span> you&#x27;re gonna owe 40% tax on that last dollar.
+<span class="ts">02:21:48.57</span> That&#x27;s 40 cents on a dollar.
+<span class="ts">02:21:50.05</span> 40%, it&#x27;s a very high tax rate,
+<span class="ts">02:21:52.93</span> relative to income tax, not relative to history.
+<span class="ts">02:21:55.81</span> So, portability means that if I die
+<span class="ts">02:21:59.45</span> and I only ever gave $5 million away to different people,
+<span class="ts">02:22:02.97</span> I can give my spouse that remaining $10 million of exemption.
+<span class="ts">02:22:08.53</span> So now, even though a normal person can only give away $15 million, my spouse can give
+<span class="ts">02:22:13.97</span> away $25 million because I gave them my $10 million that I didn&#x27;t use.
+<span class="ts">02:22:18.97</span> That is very important because if you don&#x27;t file the final estate tax return in elect
+<span class="ts">02:22:23.97</span> portability, that is permanently lost.
+<span class="ts">02:22:26.81</span> So for anyone who&#x27;s actually working with estate planning clients, portability is very
+<span class="ts">02:22:30.13</span> important to understand and make sure that it is elected
+<span class="ts">02:22:33.89</span> on the final estate tax return.
+<span class="ts">02:22:36.57</span> All right, so I asked Claude, researched it,
+<span class="ts">02:22:40.65</span> and then it gave me a few citations.
+<span class="ts">02:22:43.93</span> So I will say Treasury regulation citation checking
+<span class="ts">02:22:50.38</span> is not something that most of my coworkers do,
+<span class="ts">02:22:53.94</span> but it&#x27;s only I do a ton because I actually use AI.
+<span class="ts">02:22:57.66</span> And before I send an email to an advisor,
+<span class="ts">02:23:00.46</span> I&#x27;m always going to put sources and in the sources email,
+<span class="ts">02:23:04.66</span> I will have links that are links
+<span class="ts">02:23:06.82</span> to not just the government source,
+<span class="ts">02:23:08.30</span> which we&#x27;ll pull up this one,
+<span class="ts">02:23:09.74</span> I&#x27;m just gonna look at it.
+<span class="ts">02:23:12.02</span> Cornell&#x27;s pretty good, tax notes is good,
+<span class="ts">02:23:14.70</span> house.gov occasionally.
+<span class="ts">02:23:18.14</span> IRS publications, I&#x27;ll tell you guys this one,
+<span class="ts">02:23:21.02</span> I will cite IRS publications because I like them.
+<span class="ts">02:23:25.10</span> Those are not law.
+<span class="ts">02:23:26.86</span> If you do something that&#x27;s in an IRS publication,
+<span class="ts">02:23:29.18</span> you cannot turn around and go argue in tax court,
+<span class="ts">02:23:32.18</span> it&#x27;s set it in the publication.
+<span class="ts">02:23:33.98</span> The publication is a summary of the law
+</pre>
+</section>
+
+<section id="s1">
+<div class="num">Step 1</div><h2>Transcription Quality</h2>
+<div class="ask"><strong>Comprehension question</strong>How many words in this excerpt did the machine mishear?</div>
+<div class="label">Prompt 1</div>
+<pre>Below is a raw auto-generated transcript excerpt from a meeting. Do not summarize it yet.
+1. Describe what is defective about it as a record (speaker labels, mishearings, missing context).
+2. List the 5 words or phrases you believe were mis-transcribed and your best guess at the intended word.
+Label each guess with a confidence: high, medium, low.
+[EXCERPT]</pre>
+<details><summary>Output 1</summary><div class="out">
+<p><strong>Defects as a record</strong></p>
+<p>No speaker labels: at least two lines (02:21:04, 02:21:11) read as attendee responses but are indistinguishable from the main speaker. Missing context: "these" and "this one" refer to on-screen material that was not captured, and the citations Claude returned are never read aloud. Fragments with no clear meaning: "It's the only reason why. I'm gonna cover that."</p>
+<div class="wrap"><table><thead><tr><th>Transcript says</th><th>Likely intended</th><th>Conf.</th></tr></thead><tbody>
+<tr><td>important to <u>state</u> planning</td><td>important to <strong>estate</strong> planning</td><td>High</td></tr>
+<tr><td>file the final estate tax return <u>in</u> elect portability</td><td>file ... <strong>and</strong> elect portability</td><td>High</td></tr>
+<tr><td>argue in tax court, <u>it's set it</u> in the publication</td><td><strong>it said it</strong> in the publication</td><td>High</td></tr>
+<tr><td><u>but it's only I do a ton</u></td><td><strong>but I do it a ton</strong></td><td>Medium</td></tr>
+<tr><td>your 15 millionth <u>and $1</u></td><td>your 15 millionth <strong>and first dollar</strong></td><td>Medium</td></tr>
+</tbody></table></div>
+</div></details>
+</section>
+
+<section id="s2">
+<div class="num">Step 2</div><h2>Extraction of Every Number</h2>
+<div class="ask"><strong>Comprehension question</strong>From memory: how many distinct numbers were spoken in those 3 minutes? And was a deadline ever stated?</div>
+<div class="label">Prompt 2</div>
+<pre>From the transcript above, extract every number mentioned: dates, times, dollar amounts, percentages,
+counts, and deadlines. Output one table: Value | What it refers to | Verbatim quote | Confidence.
+Do not add any number that is not in the text. If a value is ambiguous, say so in the confidence column.</pre>
+<details><summary>Output 2</summary><div class="out">
+<div class="wrap"><table><thead><tr><th>Value</th><th>Refers to</th><th>Verbatim quote</th><th>Conf.</th></tr></thead><tbody>
+<tr><td class="v">$15,000,000</td><td>Lifetime exemption per person</td><td>"Every American gets $15 million."</td><td>High</td></tr>
+<tr><td class="v">$1,000,000</td><td>Illustrative gift to each attendee</td><td>"I could give a million dollars to each one of you guys"</td><td>High</td></tr>
+<tr><td class="v">7</td><td>Additional recipients in the example</td><td>"and seven other people"</td><td>Medium: total recipients depends on attendee count, not stated</td></tr>
+<tr><td class="v">$15,000,001</td><td>First dollar over the exemption</td><td>"your 15 millionth and $1"</td><td>Medium: phrasing ambiguous</td></tr>
+<tr><td class="v">40%</td><td>Tax rate above the exemption</td><td>"you're gonna owe 40% tax on that last dollar"</td><td>High</td></tr>
+<tr><td class="v">$0.40</td><td>Tax per dollar (restates 40%)</td><td>"That's 40 cents on a dollar."</td><td>High</td></tr>
+<tr><td class="v">$5,000,000</td><td>Lifetime gifts made by decedent in example</td><td>"I only ever gave $5 million away"</td><td>High</td></tr>
+<tr><td class="v">$10,000,000</td><td>Unused exemption passed to spouse</td><td>"that remaining $10 million of exemption"</td><td>High</td></tr>
+<tr><td class="v">$25,000,000</td><td>Surviving spouse's total giving capacity</td><td>"my spouse can give away $25 million"</td><td>High</td></tr>
+<tr><td class="v">None</td><td>Deadline for the portability election</td><td>No date or time period stated</td><td>High</td></tr>
+</tbody></table></div>
+<p class="small">9 values, 0 dates, 0 deadlines. Internal arithmetic is consistent: 15 &minus; 5 = 10; 15 + 10 = 25.</p>
+</div></details>
+</section>
+
+<section id="s3">
+<div class="num">Step 3</div><h2>Categorization into CRM Buckets</h2>
+<div class="ask"><strong>Comprehension question</strong>One statement in this excerpt is factually wrong. Will the tool flag it in the "Corrections" bucket? Yes or no.</div>
+<div class="label">Prompt 3</div>
+<pre>Sort the content of the transcript into exactly these buckets: Decisions made | Facts stated |
+Open questions | Action items (with owner and date if stated) | Corrections or contradictions.
+Every entry must cite the line it came from. Empty buckets stay empty.</pre>
+<details><summary>Output 3</summary><div class="out">
+<p><strong>Decisions made</strong><br>(none stated)</p>
+<p><strong>Facts stated</strong></p>
+<ol>
+<li>Portability lets a surviving spouse use the decedent's unused estate tax exemption. [02:21:14]</li>
+<li>Each person has a $15 million lifetime exemption; transfers above it are taxed at 40%. [02:21:24, 02:21:42]</li>
+<li>Example: $5M given, $10M unused passes to spouse, spouse can give $25M. [02:21:55 to 02:22:13]</li>
+<li>Illinois does not have portability. [02:20:46]</li>
+<li>If the final estate tax return is not filed electing portability, it is permanently lost. [02:22:18]</li>
+<li>IRS publications are summaries of the law, not law, and cannot be relied on in Tax Court. [02:23:25]</li>
+<li>Useful sources: Cornell, Tax Notes, house.gov. [02:23:12]</li>
+</ol>
+<p><strong>Open questions</strong></p>
+<ol>
+<li>Governing authority citation for portability is unknown to the main speaker. [02:20:34]</li>
+<li>Citations returned by Claude were not read out; unverified. [02:22:36]</li>
+<li>Attendee asked whether portability relates to real estate. [02:21:04] (answered at 02:21:14)</li>
+</ol>
+<p><strong>Action items</strong></p>
+<ol>
+<li>Elect portability on the final estate tax return for estate planning clients. Owner: advisors (inferred). Date: not stated. [02:22:26]</li>
+<li>Check Claude's citations against the government source. Owner: main speaker. Date: in session (inferred). [02:22:36]</li>
+<li>Include source links in emails to advisors. Owner: main speaker. Date: standing practice. [02:22:57]</li>
+</ol>
+<p><strong>Corrections or contradictions</strong><br>(none)</p>
+</div></details>
+</section>
+
+<section id="s4">
+<div class="num">Step 4</div><h2>Follow-Up Email and Task List</h2>
+<div class="ask"><strong>Comprehension question</strong>Does the wrong statement make it into the email that goes to the attendees?</div>
+<div class="label">Prompt 4</div>
+<pre>Using only the buckets above, draft (a) a follow-up email to the attendees and (b) a task list
+with owner and due date. Mark any item where the owner or date is inferred rather than stated.</pre>
+<details><summary>Output 4</summary><div class="out">
+<div class="mail">
+<p><strong>Subject:</strong> Recap: Estate tax portability</p>
+<p>Hi all,</p>
+<p>Thanks for the discussion today. A quick recap:</p>
+<p>Portability lets a surviving spouse use the unused portion of the deceased spouse's estate tax exemption. Each person has a $15 million lifetime exemption, and amounts above it are taxed at 40%. For example, if one spouse used $5 million during life, the remaining $10 million can pass to the survivor, who could then transfer $25 million tax-free.</p>
+<p><span class="flag">Important: portability must be elected on the final estate tax return. If it is not, it is permanently lost.</span></p>
+<p>Two reminders on research: IRS publications summarize the law but are not the law, and any AI-generated citation should be checked against the primary government source before it is relied on.</p>
+<p>Best regards</p>
+</div>
+<div class="wrap" style="margin-top:14px"><table><thead><tr><th>Task</th><th>Owner</th><th>Due</th></tr></thead><tbody>
+<tr><td>Confirm portability election on the final Form 706 for any client with a deceased spouse</td><td>Advisors <em>(inferred)</em></td><td>Not stated</td></tr>
+<tr><td>Verify Claude's portability citations against primary sources</td><td>Main speaker</td><td>In session <em>(inferred)</em></td></tr>
+<tr><td>Add source links to advisor emails</td><td>Main speaker</td><td>Ongoing</td></tr>
+</tbody></table></div>
+</div></details>
+</section>
+
+<section id="s5">
+<div class="num">Step 5</div><h2>Human Review Against Primary Sources</h2>
+<div class="ask"><strong>Comprehension question</strong>Which statement in the excerpt is factually wrong, and how many of the outputs above repeat it?</div>
+<details><summary>Answer</summary><div class="out">
+<div class="wrap"><table><thead><tr><th>Statement</th><th>Verdict</th><th>Source</th></tr></thead><tbody>
+<tr class="bad"><td>"If you don't file the final estate tax return and elect portability, that is permanently lost."</td><td><strong>Wrong as stated.</strong> Estates not otherwise required to file can elect late under a simplified method, on or before the 5th anniversary of death, by filing Form 706 citing Rev. Proc. 2022-32. <span class="conf">H</span></td><td>[1]</td></tr>
+<tr><td>"Every American gets $15 million."</td><td>2026 basic exclusion is $15M per individual, top rate 40%. Correct figure; "every American" is loose shorthand. <span class="conf">H</span> figure, <span class="conf">M</span> wording</td><td>[2]</td></tr>
+</tbody></table></div>
+<p><strong>Spread count: 1 spoken error, 3 downstream copies</strong> (Output 3 Facts #5, Output 3 Action #1, Output 4 email). Output 3 put it under Facts, not Corrections, because nothing in the transcript contradicts it. The note-taker records what was said, not what is true.</p>
+</div></details>
+</section>
+
+<section>
+<p class="small">Provenance: outputs generated by Claude Opus 5 on Sep 21, 2026, from the four prompts exactly as shown, in one sequence. The generator had read the full transcript and was held to reporting only what the excerpt says; a fresh-chat run will vary in wording (temperature) and may differ in which items it catches.</p>
+<ol class="src">
+<li>Journal of Accountancy (2022, Jul.), "Estates can now request late portability election relief for 5 years," summarizing Rev. Proc. 2022-32. journalofaccountancy.com. Verified Sep 21, 2026.</li>
+<li>Morgan Lewis (2025, Oct. 28), "IRS Announces Increased Gift and Estate Tax Exemption Amounts for 2026." morganlewis.com. Verified Sep 21, 2026.</li>
+</ol>
+</section>
+</main>
+<script>
+document.addEventListener('keydown',function(e){
+ if(e.shiftKey&&(e.key==='U'||e.key==='u')&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){
+  var d=document.querySelectorAll('details');var anyClosed=[].some.call(d,function(x){return !x.open});
+  d.forEach(function(x){x.open=anyClosed});}
+});
+</script>
+</body></html>

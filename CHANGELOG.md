@@ -10,6 +10,38 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-21 · Session 3 instructor materials rebuilt for the night as it will be taught
+
+Branch `claude/tender-feynman-p5r3xo`, the afternoon of the session, from `main` after PR #35.
+No lesson page changed. The instructor's plan for the night differs from the run sheet's clock:
+the seven-step process first, a note-taker block on four surfaces outside the page, a live skill
+build after the break, the instructor's own meeting-cycle slide, then the Session 3 page entered
+at §03. The instructor materials now describe that night rather than the page's own order.
+
+### Instructor materials
+
+- `session-3-teaching-aid.htm`, `.pdf` and `.md` rebuilt: 20 steps in clock order, each with a
+  colour box naming what is on screen (Zoom, Tab 1, Tab 2, an image, a PDF, the artifact, the
+  Claude chat, the slide), a setup list for 5:45, five checkpoints, a six-item drop order and the
+  answers. The three gated questions survive, relocated to the checklist step, the Kitces CRM
+  node and §10. The live skill build is hard-boxed at 27 minutes with a stop time and a fallback,
+  against the 19.5 and 50.5 minutes the two audits measured.
+- `session-3.md` gains a block dated today: what moved, which page sections the front half
+  covers instead, the timing (159 of 180), and three things to say correctly because they could
+  not be verified from the build environment: the Stanford chart's version (three bars, 17, 19
+  and 43, against the 33 the page cites from the later version), the CFP Board checklist (headings
+  unverified; Standards A.9 and A.14 named), and the Kitces image (already `src-kitces-notetakers`).
+- `session-3-polls.md` rebuilt: Poll 1 is built, Polls 2 and 3 to build, five new polls written
+  for moments that exist only in tonight's order (seven steps before the sorter, note-taker in
+  the room, the spread count before Step 5, what the skill will catch, your own hours), Polls 4a
+  and 4b demoted to spoken asks under the five-poll ceiling.
+- `session-3-before-monday.md` amended: the aid to reprint, the polls to build, and the 5:45
+  setup list rewritten for the five surfaces.
+- `session-3-notetaker-pipeline.htm` added: the repository copy of the claude.ai artifact shown
+  at 6:34, a 457-word excerpt of the Session 2 recording run through the five note-taker stages,
+  with the portability error and its three downstream copies as the Step 5 reveal. Instructor
+  material, `.htm` so the lesson sweep leaves it alone.
+
 ## 2026-09-21 · Session 3 visual pass: the mechanisms are drawn, the firm's paperwork has a section, and the sorter link opens what it points at
 
 Branch `claude/friendly-albattani-fddv0v`, from `main` after PR #33, the afternoon before the
