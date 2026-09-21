@@ -55,7 +55,7 @@ Question: The retriever ranked the 2023 appraisal third. The best explanation is
 Answer (b). (a) is the trap: professionally sensible, not the mechanism. Rule: if 30% or more pick
 (a), re-run preset 1 and read the shared-term line aloud before moving on.
 
-## Poll 4a · 7:57, before §10's sorter · recommended
+## Poll 4a · 8:02, before §10's sorter · recommended
 
 ```
 Title: Six lines, before
@@ -80,7 +80,7 @@ Read both distributions aloud. Say that a zero delta is a finding, not a failure
 
 ---
 
-## Poll 5 · 8:12, opening the reserve · optional · ANONYMOUS
+## Poll 5 · 8:17, opening the reserve · optional · ANONYMOUS
 
 ```
 Title: Pace

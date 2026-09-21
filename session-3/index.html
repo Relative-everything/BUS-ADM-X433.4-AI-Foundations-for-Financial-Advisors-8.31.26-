@@ -1219,7 +1219,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>Appendix &middot; 6 optional sections</span><span class="mins">83 min</span></div>
   <h2>Appendix contents</h2>
   <p class="lede">Six optional sections, 83 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
-  <p>The 11 sections of the core session run in about 62 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <p>The 12 sections of the core session run in about 67 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
     <a class="apxcard" href="#sRag"><span class="ac">A1 &middot; 14 min &middot; after &sect;03</span><b>Do You Need Retrieval at All?</b></a>
     <a class="apxcard" href="#sPrep"><span class="ac">A2 &middot; 14 min &middot; after &sect;06</span><b>The Intake Questionnaire, Drafted With AI</b></a>
@@ -1238,10 +1238,22 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="big">Wolfram's definition: an embedding turns a word into an array of numbers, and words with similar meanings get nearby numbers.</p>
 
   <ul class="pts">
-    <li><b>Company, not meaning.</b> The numbers are worked out from which words appear around a word, across five billion words of text: 768 numbers per word for GPT-2, 12,288 for GPT-3.</li>
-    <li><b>Wolfram's example.</b> "Alligator" and "crocodile" appear in interchangeable sentences, so they sit close. "Turnip" and "eagle" sit far apart. Alligators and crocodiles are different animals.</li>
+    <li><b>Company, not meaning.</b> The numbers come from which words appear around a word, across five billion words of text: 768 numbers per word for GPT-2, 12,288 for GPT-3.</li>
     <li><b>The Cole hazard.</b> The documents use near-identical language and differ in one condition each. Retrieval runs the same nearest-neighbour test on them.</li>
   </ul>
+
+  <div class="panel" data-task="t-s2cube" data-comp="rotatable-3d-space">
+    <span class="do">Watch this: 2 minutes</span>
+    <h4>The Space Itself</h4>
+    <p class="hint">Every word in the Cole file, placed by the company it keeps. Drag to turn it. Four pairs are marked: try to find an angle that separates them.</p>
+    <p style="margin:0 0 8px"><span class="sim">3 of 12,288 dimensions; coordinates assigned, not learned</span></p>
+    <div id="cubeWrap"></div>
+    <div class="row" style="margin-top:12px">
+      <button class="btn" id="cubeFlat" type="button">Flatten it to the map below</button>
+      <button class="btn ghost" id="cubeSpin" type="button">Stop turning</button>
+    </div>
+    <div id="cubeOut" class="mpanel"><span class="hd">The four marked pairs</span><span class="nil">Turn the space, then flatten it.</span></div>
+  </div>
 
   <p class="pull">Sounding alike is the signal. Being the same thing is what you needed.</p>
 
@@ -1378,10 +1390,20 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="big">Grounding changes what the model reads. Fine-tuning changes what the model is. For a planning practice, grounding wins, because your facts change and need citing.</p>
 
   <ul class="pts">
-    <li><b>Grounding.</b> Hand it the documents each time. Change the file and the next answer changes, and every answer can point at a passage.</li>
-    <li><b>Fine-tuning.</b> Retrain the model so the documents live inside it. Change the file and nothing changes until you retrain. Nothing can be cited.</li>
     <li><b>Wolfram's version.</b> Tell the model something once, in the prompt, and it will use it. Your house style might be worth tuning. Your facts are not.</li>
   </ul>
+
+  <div class="panel" data-task="t-s7fig" data-comp="stepped-comparison">
+    <span class="do">Watch this: 1 minute</span>
+    <h4>The Appraisal Is Re-Run on Tuesday</h4>
+    <p class="hint">Same question on Wednesday, two architectures. Step through the week.</p>
+    <div id="tunWrap"></div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn sel mini" id="tunD0" type="button">Monday</button>
+      <button class="btn sel mini" id="tunD1" type="button">Tuesday</button>
+      <button class="btn sel mini" id="tunD2" type="button">Wednesday</button>
+    </div>
+  </div>
 
   <div class="panel" data-task="t-s7" data-comp="commit-first-mcq">
     <span class="do">Do this now: 2 minutes</span>
@@ -1479,6 +1501,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       <span id="mtgExcerpt" style="font-family:'Source Serif 4',serif;font-size:15.5px;line-height:1.6;display:block"></span>
     </div>
     <p style="margin:14px 0 8px"><span class="sim">Stage outputs written for this lesson, illustrative</span></p>
+    <div id="ntFunnel"></div>
     <div id="ntStages"></div>
   </div>
 
@@ -1644,6 +1667,41 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
   <p class="src">18 U.S.C. &sect; 2511, the federal one-party floor <span class="conf h" data-src="src-wiretap">H</span>. State rules differ; this lesson adopts no count. Iskowitz, C. (29 Jul 2025), <em>AI Notetakers and Compliance in Wealth Management</em>, WealthTech Today, assigned reading. The four items are synthetic <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all four items. Say whether your state needs one party's consent or everyone's; if you do not know, that is the thing to look up.</div></div>
+
+</section>
+
+<section class="slide" id="sPol" data-nav="What must be written down">
+  <div class="eyebrow"><span>09b &middot; The firm's side</span><span class="mins">5 min</span></div>
+  <h2>What the Firm Must Have Written Down</h2>
+
+  <p class="big">A note-taker's summary becomes a firm record the moment it is written. The question at an examination is not which tool you bought. It is what you can produce.</p>
+
+  <div class="panel" data-task="t-sPolQ" data-comp="prediction-commit">
+    <span class="do">Do this now: 1 minute</span>
+    <h4>Commit First</h4>
+    <p class="hint">Of financial-services firms already using AI, what share have any formal AI risk-management framework at all? Say a letter, click it, then read the figure.</p>
+    <div id="polQ" class="row"></div>
+    <div id="polQOut" class="mpanel"><span class="hd">Your prediction</span><span class="nil">Commit to an answer.</span></div>
+  </div>
+
+  <div class="panel" data-task="t-sPol" data-comp="click-document-set">
+    <span class="do">Do this now: 3 minutes</span>
+    <h4>The Six Documents</h4>
+    <p class="hint">Click each page. Every one is something a firm writes once and keeps, not something the tool provides.</p>
+    <div id="polWrap"></div>
+    <div id="polOut" class="mpanel"><span class="hd">What it has to say</span><span class="nil">Click a page.</span></div>
+  </div>
+
+  <p class="pull">The vendor cannot hold any of these for you. Six of six are the firm's.</p>
+
+  <div class="panel" style="border-color:var(--gold);background:var(--gold-bg)">
+    <span class="plab">Two more, owed for a different reason</span>
+    <p style="margin:0">Your firm also owes a <b>privacy notice</b> and a <b>written incident response programme</b>, with customer notification no later than 30 days after the firm becomes aware of an incident, under the 2024 amendments to Regulation S-P <span class="conf h" data-src="src-regsp">H</span>. Those are not note-taker rules. They apply whether or not you ever switch one on, and a note-taker only widens what an incident would reach. Session 4 runs the tabletop.</p>
+  </div>
+
+  <p class="src">Iskowitz, C. (29 Jul 2025), <em>AI Notetakers and Compliance in Wealth Management</em>, WealthTech Today, assigned reading <span class="conf m" data-src="src-iskowitz">M, trade publication</span>: the three things examiners are reported to ask for, the human-review and edit-trail practices, the vendor, retention and high-stakes-meeting rules, and the ACA Group 2024 figure of 12%. The article relays the SEC and FINRA positions rather than quoting the rule text, and no rule text is quoted here. Regulation S-P, 2024 amendments: the written incident response programme and the 30-day notification <span class="conf h" data-src="src-regsp">H</span>, taught in Session 4.</p>
+
+  <div class="check" data-gate="g9b"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open all six pages. Say which one your firm could produce today.</div></div>
 
 </section>
 
@@ -1823,7 +1881,7 @@ then a list of every element where my answer was thin.</pre>
       <tr class="apxrow"><td>Appendix C4 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">18</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 62 + appendix 83; the core alone runs 62 minutes, two minutes over the hour</td><td class="n">145</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 67 + appendix 83; the core alone runs 67 minutes, seven minutes over the hour</td><td class="n">150</td></tr>
     </tbody>
 <!-- APXBUDGET:END -->
   </table>
@@ -1831,10 +1889,10 @@ then a list of every element where my answer was thin.</pre>
   <h4 style="margin:26px 0 14px">Sources cited in this session</h4>
   <ul>
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 d02ba11cd2614936021ee41bea690c3839b5cb8f056692d94141dbf12347ad22 -->
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 bdd5727d9bd17086527ce8f94c6b0d210a756897a1a75c535441cb0952c38ae2 -->
       <li id="src-context-windows">Anthropic. <em>Context windows</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">platform.claude.com</a> Retrieved 2026, September 13. Used for: what the context window contains, and that everything attached and the conversation so far counts, in Appendix A1. <span class="conf h" data-src="src-context-windows">H</span></li>
       <li id="src-anthropic-ctx">Anthropic. (2024, September 19). <em>Contextual retrieval in AI systems</em>. Anthropic Engineering. <a href="https://www.anthropic.com/engineering/contextual-retrieval">anthropic.com/engineering/contextual-retrieval</a> Used for: the measured retrieval failure rates, the 67% reduction, and the 200,000-token boundary condition. <span class="conf h" data-src="src-anthropic-ctx">H</span></li>
-      <li id="src-iskowitz" data-nochip="background">Iskowitz, C. (2025, July 29). <em>AI notetakers and compliance in wealth management: What firms need to know</em>. WealthTech Today. Used for: assigned reading; no page claim rests on it.</li>
+      <li id="src-iskowitz">Iskowitz, C. (2025, July 29). <em>AI notetakers and compliance in wealth management: What firms need to know</em>. WealthTech Today. Used for: the six documents in §09b, the 12% figure behind its prediction commit, and the compliance framing in §09. <span class="conf m" data-src="src-iskowitz">M</span></li>
       <li id="src-kitces-notetakers">Kitces.com. (2025, January 15). <em>Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends</em>. Kitces.com. <a href="https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/">kitces.com</a> Used for: the prep-and-follow-up ratio (§07), the whole-cycle tooling (§06), and the adoption-against-satisfaction ranking with the $60 to $80 pricing (Appendix C3). <span class="conf h" data-src="src-kitces-notetakers">H</span></li>
       <li id="src-lee-cognitive">Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025). <em>The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers</em>. Microsoft Research; CHI 2025. Used for: the title claim of self-reported reductions in cognitive effort, in the Appendix C4 discussion. <span class="conf m" data-src="src-lee-cognitive">M</span></li>
       <li id="src-magesh">Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-free? Assessing the reliability of leading AI legal research tools</em>. Journal of Empirical Legal Studies 22(2), 216. <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">reglab.stanford.edu</a> Used for: the >17% / ~33% / 43% rates, the claim that tools made statements unsupported by the sources they cited, and the cross-study comparability caveat. <span class="conf h" data-src="src-magesh">H</span></li>
@@ -1844,7 +1902,7 @@ then a list of every element where my answer was thin.</pre>
 <!-- SOURCES:END -->
   </ul>
 <!-- APXNOTE:BEGIN generated-by=scripts/build-appendix.mjs -->
-  <p style="margin-top:22px">The core is 11 sections and runs in about 62 minutes, two minutes over the hour. The 6 appendix sections add 83 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
+  <p style="margin-top:22px">The core is 12 sections and runs in about 67 minutes, seven minutes over the hour. The 6 appendix sections add 83 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
 <!-- APXNOTE:END -->
   <p><strong>No client data.</strong> The Cole household, Cole Precision Components and every document, transcript and figure attributed to them are synthetic and exist only as a classroom anchor. Nothing in this document is legal, tax or compliance advice, and no tax or legal conclusion is asserted anywhere in it.</p>
 
@@ -2000,6 +2058,105 @@ var BRIDGE=[
  draw();
 })();
 
+/* ========== 9b. What the firm must have written down ==========
+   Six pages drawn as pages. Each one is a document the firm writes and keeps;
+   the tool supplies none of them. Source: Iskowitz (29 Jul 2025), assigned
+   reading, which reports what examiners ask for and what leading firms do. */
+(function(){
+ var W=$('polWrap'); if(!W) return;
+ var DOCS=[
+  {t:'AI use policy',
+   s:'Which tools are approved, for which meetings, and who may switch one on.',
+   d:'Examiners are reported to ask for written policies governing AI use in client communications and in the advice process. "We use a note-taker" is not a policy; a policy names the tool, the meetings it is allowed in, and the person who decides.',
+   miss:'Nothing to produce when asked what governs the tool.'},
+  {t:'Review before the record',
+   s:'A named person reads every summary against the transcript before it reaches the CRM or the client.',
+   d:'The summary is a firm record whether or not anybody read it. Review is the control that keeps an unreviewed sentence from becoming the record, and it has to be somebody’s named job, not a habit.',
+   miss:'The tool’s mistake is the firm’s statement, and nobody is on the hook for having checked.'},
+  {t:'Edit and approval trail',
+   s:'Who changed the draft, when, and what the raw output said. Both versions kept.',
+   d:'A note that can be edited without the change being tracked is not a clean record. Keep the raw output and the finished version, with the approval timestamped, so the file shows what the tool said and what the adviser decided.',
+   miss:'No way to show the difference between the tool’s words and yours.'},
+  {t:'Vendor assessment',
+   s:'Where the recording and transcript live, who can open them, and whether the vendor may reuse them.',
+   d:'Examiners are reported to ask how third-party tools handle sensitive data and whether confidentiality holds. The answers are contract terms, and the fine print is where a reuse right or a privilege waiver hides.',
+   miss:'You cannot say who else can read the Cole meeting.'},
+  {t:'Retention rule that names these records',
+   s:'Transcripts and summaries, held for the same period as any other advisory communication, and frozen by a litigation hold.',
+   d:'A transcript is subject to the same retention as an email, and a hold reaches it too. Storage location does not change that: in the meeting tool, in the CRM or in a vendor’s cloud, it is the same record.',
+   miss:'Records deleted on the vendor’s schedule rather than the firm’s.'},
+  {t:'The meetings you do not record',
+   s:'Board, investment committee, anything with counsel on the call.',
+   d:'Deciding this once, in writing, is cheaper than deciding it in the moment. A transcript of a deliberation is discoverable, and internal argument reads differently a year later than it did in the room.',
+   miss:'The decision gets made by whoever clicks first.'}
+ ];
+ var VW=720,VH=300,open=[],cur=-1;
+ DOCS.forEach(function(){open.push(false)});
+ function draw(){
+  var s='<svg viewBox="0 0 '+VW+' '+VH+'" role="img" aria-label="Six documents a firm must have written down before an AI note-taker is used in client meetings. Click each page to read what it must contain.">';
+  s+='<text x="6" y="16" class="chartttl">Six documents the firm writes and keeps</text>';
+  var CW=216,CH=112,GX=18,GY=22,X0=10,Y0=34;
+  DOCS.forEach(function(d,i){
+   var cx=X0+(i%3)*(CW+GX), cy=Y0+Math.floor(i/3)*(CH+GY);
+   var on=open[i], sel=(cur===i);
+   var fill=on?'#E2EDEB':'#FFFFFF', stroke=on?'#0E5A55':'#C9CCC5', sw=sel?2.4:(on?1.8:1.2);
+   var F=18; /* folded corner */
+   s+='<g class="pdoc" data-i="'+i+'" style="cursor:pointer">';
+   s+='<path d="M'+cx+' '+cy+' H'+(cx+CW-F)+' L'+(cx+CW)+' '+(cy+F)+' V'+(cy+CH)+' H'+cx+' Z" fill="'+fill+'" stroke="'+stroke+'" stroke-width="'+sw+'"/>';
+   s+='<path d="M'+(cx+CW-F)+' '+cy+' V'+(cy+F)+' H'+(cx+CW)+'" fill="none" stroke="'+stroke+'" stroke-width="'+sw+'"/>';
+   s+='<text x="'+(cx+12)+'" y="'+(cy+24)+'" class="chartlab" style="font-size:10px" fill="'+(on?'#0E5A55':'#B9BDB9')+'">'+(on?'ON FILE':'NOT WRITTEN')+'</text>';
+   /* title, wrapped to two lines */
+   var words=d.t.split(' '),l1='',l2='';
+   words.forEach(function(w){ if((l1+' '+w).trim().length<=22 && !l2) l1=(l1+' '+w).trim(); else l2=(l2+' '+w).trim(); });
+   s+='<text x="'+(cx+12)+'" y="'+(cy+46)+'" class="chartval" style="font-size:13px" fill="'+(on?'#0E5A55':'#16211F')+'">'+esc(l1)+'</text>';
+   if(l2)s+='<text x="'+(cx+12)+'" y="'+(cy+62)+'" class="chartval" style="font-size:13px" fill="'+(on?'#0E5A55':'#16211F')+'">'+esc(l2)+'</text>';
+   /* ruled lines standing in for the body of the page */
+   for(var r=0;r<3;r++)
+    s+='<line x1="'+(cx+12)+'" y1="'+(cy+(l2?76:62)+r*11)+'" x2="'+(cx+CW-(r===2?70:24))+'" y2="'+(cy+(l2?76:62)+r*11)+'" stroke="'+(on?'#9EC4BF':'#E7E8E4')+'" stroke-width="'+(on?2:2)+'"/>';
+   s+='</g>';
+  });
+  s+='</svg>';
+  W.innerHTML=s;
+  [].slice.call(W.querySelectorAll('.pdoc')).forEach(function(g){
+   g.addEventListener('click',function(){pick(parseInt(g.dataset.i,10))});
+  });
+ }
+ function pick(i){
+  var d=DOCS[i]; cur=i; open[i]=true; draw();
+  var O=$('polOut');
+  var n=open.filter(Boolean).length;
+  var h='<span class="hd">'+esc(d.t)+'</span><b>'+esc(d.s)+'</b><br><br>'+esc(d.d)+
+        '<br><br><span class="flag">Missing: '+esc(d.miss)+'</span>';
+  if(n===DOCS.length)h+='<br><br><span class="good">All six open. Not one of them is something a vendor can hand you. The tool is a purchase; these are the firm’s own record of how it is used.</span>';
+  O.className='mpanel has';O.innerHTML=h;
+  if(n===DOCS.length&&typeof mark==='function')mark('g9b');
+ }
+ draw();
+
+ /* the prediction commit */
+ var QOPTS=[['a','about 1 in 10'],['b','about 1 in 3'],['c','about half'],['d','about 3 in 4']];
+ var QR=$('polQ'); if(!QR) return;
+ QR.innerHTML=QOPTS.map(function(o){return '<button class="btn ghost" type="button" data-k="'+o[0]+'">'+o[0]+'. '+esc(o[1])+'</button>'}).join('');
+ var answered=false;
+ [].slice.call(QR.querySelectorAll('button')).forEach(function(b){
+  b.addEventListener('click',function(){
+   if(answered)return; answered=true;
+   var k=b.dataset.k, right=(k==='a');
+   [].slice.call(QR.querySelectorAll('button')).forEach(function(x){x.disabled=true;
+    if(x.dataset.k==='a')x.className='btn';});
+   var O=$('polQOut');
+   O.className='mpanel has';
+   O.innerHTML='<span class="hd">You said '+esc(k)+'</span>'+
+    '<b>About 1 in 10.</b> A 2024 ACA Group survey of financial-services firms using AI found <b>12%</b> had implemented any formal risk-management framework for it '+
+    '<span class="sim" style="margin:0 0 0 4px">single survey, self-reported</span><br><br>'+
+    (right?'<span class="good">Committed and right. ':'<span class="flag">')+
+    'The six pages below are what the other 88% do not have. None of them requires a lawyer to draft, and none of them is supplied by the tool.'+
+    (right?'</span>':'</span>');
+   if(typeof mark==='function')mark('g9b');
+  });
+ });
+})();
+
 /* ================= 2. Meaning space map (Cole vocabulary) ================= */
 var TERMS=[
  {n:'revocable trust',x:14,y:20,cs:'trust',dy:14},{n:'irrevocable trust',x:22,y:16,cs:'trust',dy:-9},
@@ -2017,6 +2174,166 @@ var CSNOTE={
  vote:'The Cole memo asserts a valuation discount on the non-voting units only. Whether a passage describes a voting or a non-voting interest decides whether that discount applies, and a retriever cannot tell them apart from language.',
  val:'Two valuation standards, the buy-sell agreement\u2019s formula and the appraiser\u2019s figure. The formula applies only on a death, a disability or a withdrawal, and substituting it for the appraisal is exactly the failure you are about to watch in \u00a703.',
  wolf:'Wolfram\u2019s own example. Two different animals, placed together because people write about them the same way.'};
+/* ========== 2a. The space itself: a rotatable 3-D meaning space ==========
+   Wolfram's feature-space cube, over the Cole document vocabulary. The same
+   eighteen terms as the 2-D map below, at the same x and y, plus a z the map
+   throws away and a cloud of the rest of the file's language for scale. The
+   four confusable pairs sit close on all three axes on purpose: there is no
+   camera angle that separates them, which is the point of the section. */
+(function(){
+ var W=$('cubeWrap'); if(!W) return;
+ var VW=720,VH=430,CX=VW/2,CY=VH/2+8,SC=112,DIST=4.6;
+ /* deterministic noise: the picture is identical every time it is taught */
+ var sd=20260921; function rnd(){sd=(sd*1664525+1013904223)%4294967296;return sd/4294967296}
+ function jt(k){return (rnd()-0.5)*k}
+
+ /* the eighteen named terms, x and y taken from TERMS so that flattening
+    reproduces the map below, z assigned by cluster */
+ var ZC={trustc:0.58,ownc:-0.52,valc:0.14,trfc:-0.16,wolfc:0.80};
+ var CLUS={'revocable trust':'trustc','irrevocable trust':'trustc','grantor trust':'trustc','joint trust':'trustc',
+  'voting interest':'ownc','non-voting interest':'ownc','minority interest':'ownc','controlling interest':'ownc',
+  'appraised value':'valc','formula value':'valc','fair market value':'valc','book value':'valc',
+  'promissory note':'trfc','seed gift':'trfc','buy-sell agreement':'trfc','pour-over will':'trfc',
+  'alligator':'wolfc','crocodile':'wolfc'};
+ var PTS=[];
+ TERMS.forEach(function(t){
+  var c=CLUS[t.n]||'valc';
+  PTS.push({n:t.n,cs:t.cs,lab:!!t.cs,mid:!t.cs,dy:t.dy||0,
+   x:(t.x-50)/50*1.12,y:-(t.y-50)/50*1.12,z:ZC[c]+jt(0.10)});
+ });
+ /* the rest of the file's language, unlabelled, for scale */
+ var FILL={trustc:['settlor','trustee','corpus','remainder','successor trustee','spendthrift','trust protector','distribution standard','beneficiary','power of appointment','trust situs','pour-over','funding','revocation','amendment','decanting','ascertainable standard','crummey notice'],
+  ownc:['membership units','manager','operating agreement','capital account','transfer restriction','right of first refusal','drag-along','tag-along','quorum','distribution','member vote','economic interest','assignee','dissolution','deadlock','purchase option','put right','redemption'],
+  valc:['discount for lack of marketability','minority discount','capitalisation rate','EBITDA','comparable transaction','net asset value','goodwill','tangible book','valuation date','qualified appraiser','enterprise value','earnings multiple','working capital','normalising adjustment','control premium','marketability','appraisal report','fair value'],
+  trfc:['applicable federal rate','demand note','interest only','gift tax return','adequate consideration','installment sale','defective grantor','annual exclusion','basis carryover','step-up','promissory','forgiveness','balloon payment','collateral','guarantee','maturity','principal','accrued interest'],
+  wolfc:['turnip','eagle','heron','parsnip','swallow','radish','kestrel','beetroot']};
+ Object.keys(FILL).forEach(function(c){
+  FILL[c].forEach(function(w){
+   PTS.push({n:w,cs:'',lab:false,
+    x:(c==='trustc'?-0.62:c==='ownc'?-0.60:c==='valc'?0.10:c==='trfc'?0.14:0.80)+jt(0.42),
+    y:(c==='trustc'?0.58:c==='ownc'?-0.42:c==='valc'?0.52:c==='trfc'?-0.46:0.18)+jt(0.42),
+    z:ZC[c]+jt(0.40)});
+  });
+ });
+ /* a thin diffuse scatter so the space reads as a space, not five blobs */
+ for(var i=0;i<130;i++)PTS.push({n:'',cs:'',lab:false,x:jt(1.92),y:jt(1.92),z:jt(1.92)});
+
+ var CUBE=[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]];
+ var EDGES=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+
+ var yaw=-0.62,pitch=0.36,flat=0,spin=true,dragging=false,px=0,py=0;
+ var reduce=false;
+ try{reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+ if(reduce)spin=false;
+
+ function proj(p){
+  var zz=p.z*(1-flat);
+  var cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+  var x1=p.x*cy+zz*sy, z1=-p.x*sy+zz*cy;
+  var y1=p.y*cp-z1*sp, z2=p.y*sp+z1*cp;
+  var s=DIST/(DIST-z2);
+  return {X:CX+x1*s*SC, Y:CY-y1*s*SC, s:s, z:z2};
+ }
+ var PAIRCOL={trust:'#9A4B22',vote:'#9A4B22',val:'#9A4B22',wolf:'#0E5A55'};
+
+ function draw(){
+  var s='<svg viewBox="0 0 '+VW+' '+VH+'" role="img" aria-label="A rotatable three-dimensional projection of the Cole document vocabulary inside a wireframe cube. Words that appear in similar sentences sit near one another. Four marked pairs stay together at every angle.">';
+  s+='<text x="8" y="18" class="chartttl">'+(flat>0.98?'Flattened to two dimensions — the map below':'The Cole document vocabulary, 3 of 12,288 dimensions')+'</text>';
+  /* cube frame, behind the points */
+  var cp=CUBE.map(function(c){return proj({x:c[0]*0.92,y:c[1]*0.92,z:c[2]*0.92})});
+  var fr='';
+  EDGES.forEach(function(e){
+   fr+='<line x1="'+cp[e[0]].X.toFixed(1)+'" y1="'+cp[e[0]].Y.toFixed(1)+'" x2="'+cp[e[1]].X.toFixed(1)+'" y2="'+cp[e[1]].Y.toFixed(1)+'" stroke="#C9CCC5" stroke-width="1" opacity="'+(0.85-flat*0.55).toFixed(2)+'"/>';
+  });
+  s+=fr;
+  /* points, painter's algorithm */
+  var d=PTS.map(function(p){var q=proj(p);q.p=p;return q}).sort(function(a,b){return a.z-b.z});
+  d.forEach(function(q){
+   var p=q.p, near=(q.z+1.9)/3.8, op, r, fill;
+   if(p.lab){
+    fill=p.cs?PAIRCOL[p.cs]:'#6F7B78';
+    r=(p.cs?4.6:3.6)*q.s; op=(0.55+near*0.45).toFixed(2);
+    s+='<circle cx="'+q.X.toFixed(1)+'" cy="'+q.Y.toFixed(1)+'" r="'+r.toFixed(1)+'" fill="'+fill+'" opacity="'+op+'"/>';
+    /* labels carry the 2-D map's own dy nudge, and flip to the inside of the
+       cube on the right-hand half so long names do not run off the frame */
+    var fs=Math.max(9,Math.min(11.5,10*q.s)), right=q.X>CX+40;
+    s+='<text x="'+(q.X+(right?-7:7)*q.s).toFixed(1)+'" y="'+(q.Y+3.5+(p.dy||0)*1.05).toFixed(1)+'" class="chartlab" style="font-size:'+fs.toFixed(1)+'px" text-anchor="'+(right?'end':'start')+'" fill="'+fill+'" opacity="'+op+'">'+esc(p.n)+'</text>';
+   }else if(p.mid){
+    r=3.4*q.s; op=(0.42+near*0.38).toFixed(2);
+    s+='<circle cx="'+q.X.toFixed(1)+'" cy="'+q.Y.toFixed(1)+'" r="'+r.toFixed(1)+'" fill="#6F7B78" opacity="'+op+'"/>';
+   }else{
+    r=2.1*q.s; op=(0.14+near*0.30).toFixed(2);
+    s+='<circle cx="'+q.X.toFixed(1)+'" cy="'+q.Y.toFixed(1)+'" r="'+r.toFixed(1)+'" fill="#6F7B78" opacity="'+op+'"/>';
+   }
+  });
+  s+='<text x="8" y="'+(VH-8)+'" class="chartlab">'+(flat>0.98?'every word now sits where the map below puts it':'drag to turn · '+PTS.length+' words · only the four marked pairs are named here; the map below names the rest')+'</text>';
+  s+='</svg>';
+  W.innerHTML=s;
+ }
+
+ /* the readout: measured separation of the four marked pairs, at this angle */
+ function pairFor(cs){var a=[];PTS.forEach(function(p){if(p.cs===cs)a.push(p)});return a}
+ var PAIRS=[['trust','revocable / irrevocable trust'],['vote','voting / non-voting interest'],['val','appraised / formula value'],['wolf','alligator / crocodile']];
+ function report(){
+  var O=$('cubeOut'); if(!O) return;
+  var h='<span class="hd">Separation on screen, at this angle</span>';
+  PAIRS.forEach(function(pr){
+   var a=pairFor(pr[0]); if(a.length<2) return;
+   var p1=proj(a[0]),p2=proj(a[1]);
+   var px2=Math.sqrt(Math.pow(p1.X-p2.X,2)+Math.pow(p1.Y-p2.Y,2));
+   h+=Math.round(px2)+' px — '+esc(pr[1])+'<br>';
+  });
+  h+='<br><span class="flag">Keep turning: each pair holds that distance at every angle, because each pair is close on all three axes. There is no rotation that pulls them apart. That is not the picture failing — it is what the space is, built from the sentences these words appear in, and those sentences are interchangeable.</span>';
+  O.className='mpanel has';O.innerHTML=h;
+ }
+
+ function render(){draw();report()}
+
+ /* interaction */
+ W.addEventListener('pointerdown',function(e){dragging=true;spin=false;px=e.clientX;py=e.clientY;
+  var b=$('cubeSpin'); if(b)b.textContent='Start turning';
+  if(W.setPointerCapture&&e.pointerId!==undefined){try{W.setPointerCapture(e.pointerId)}catch(err){}}
+  if(typeof mark==='function')mark('g2b');});
+ W.addEventListener('pointermove',function(e){if(!dragging)return;
+  yaw+=(e.clientX-px)*0.009; pitch+=(e.clientY-py)*0.007;
+  pitch=Math.max(-1.2,Math.min(1.2,pitch)); px=e.clientX;py=e.clientY; render();});
+ ['pointerup','pointercancel','pointerleave'].forEach(function(ev){W.addEventListener(ev,function(){dragging=false})});
+ W.style.touchAction='pan-y';W.style.cursor='grab';
+
+ var fb=$('cubeFlat');
+ if(fb)fb.addEventListener('click',function(){
+  var to=flat>0.5?0:1, from=flat, t0=null, D=900;
+  var y0=yaw,p0=pitch;
+  function step(ts){
+   if(t0===null)t0=ts;
+   var k=Math.min(1,(ts-t0)/D), e=k<0.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+   flat=from+(to-from)*e;
+   yaw=y0*(1-e)+(to===1?0:y0)*e; pitch=p0*(1-e)+(to===1?0:p0)*e;
+   render();
+   if(k<1)requestAnimationFrame(step);
+   else{fb.textContent=to===1?'Back to three dimensions':'Flatten it to the map below';
+        if(to===1&&typeof mark==='function')mark('g2b');}
+  }
+  spin=false; var sb=$('cubeSpin'); if(sb)sb.textContent='Start turning';
+  if(reduce){flat=to;yaw=to===1?0:y0;pitch=to===1?0:p0;render();
+   fb.textContent=to===1?'Back to three dimensions':'Flatten it to the map below';
+   if(to===1&&typeof mark==='function')mark('g2b');return;}
+  requestAnimationFrame(step);
+ });
+ var sb=$('cubeSpin');
+ if(sb){sb.textContent=spin?'Stop turning':'Start turning';
+  sb.addEventListener('click',function(){spin=!spin;sb.textContent=spin?'Stop turning':'Start turning';if(spin)requestAnimationFrame(tick)});}
+
+ var last=0;
+ function tick(ts){
+  if(!spin)return;
+  if(ts-last>42){yaw+=0.0045;last=ts;render()}
+  requestAnimationFrame(tick);
+ }
+ render();
+ if(spin)requestAnimationFrame(tick);
+})();
+
 (function(){
  var W=$('mapWrap'),O=$('mapOut'),seen={};
  var VW=720,VH=430,PX=70,PY=34;
@@ -2313,23 +2630,55 @@ var CHAIN=[
   v:'Visible only at examination, when the reasoning cannot be rebuilt.'}
 ];
 (function(){
- var W=$('chainWrap'),O=$('chainOut'),seen={};
- var h='<div class="row" style="gap:8px">';
- CHAIN.forEach(function(c,i){h+='<button class="btn sel mini" data-i="'+i+'" type="button">'+(i+1)+' '+esc(c.s)+'</button>'+
-   (i<CHAIN.length-1?'<span class="dim" style="font-family:JetBrains Mono,monospace">\u2192</span>':'')});
- h+='</div>';W.innerHTML=h;
- [].slice.call(W.querySelectorAll('button')).forEach(function(b){
-  b.onclick=function(){
-   var i=parseInt(b.dataset.i,10),c=CHAIN[i];seen[i]=1;
-   [].slice.call(W.querySelectorAll('button')).forEach(function(x){x.classList.toggle('act',x===b)});
-   var s='<span class="hd">'+esc(c.s)+': what the tool does</span>'+esc(c.ai)+'<br><br>'+
-     '<span class="hd">What you check before it moves on</span><span class="good">'+esc(c.chk)+'</span><br><br>'+
-     '<span class="hd">If you skip the check</span>';
-   c.skip.forEach(function(d){s+='\u00b7 '+esc(d)+'<br>'});
-   s+='<br><span class="hd">First seen by a person</span>'+(c.v.indexOf('Never')===0?'<span class="flag">':'<span class="good">')+esc(c.v)+'</span>';
-   O.className='mpanel has';O.innerHTML=s;
-   if(Object.keys(seen).length===CHAIN.length&&typeof mark==='function')mark('g7');
-  }});
+ var W=$('chainWrap'),O=$('chainOut'),seen={},cur=-1;
+ var VW=720,VH=214,R=25,Y=74,X0=62,GAP=146;
+ function cx(i){return X0+i*GAP}
+ function draw(){
+  var s='<svg viewBox="0 0 '+VW+' '+VH+'" role="img" aria-label="The five stages of the advisor meeting workflow drawn as a chain: prep, capture, summarise, follow-up, log, with the log feeding the next meeting’s prep. Selecting a stage marks it and every stage after it, because a mistake at one stage is inherited by all of them.">';
+  s+='<defs><marker id="chArr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B9BDB9"/></marker>'+
+     '<marker id="chArrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9A4B22"/></marker></defs>';
+  /* the connectors, stained when the mistake travels down them */
+  for(var i=0;i<CHAIN.length-1;i++){
+   var bad=(cur>=0&&i>=cur);
+   s+='<line x1="'+(cx(i)+R+4)+'" y1="'+Y+'" x2="'+(cx(i+1)-R-10)+'" y2="'+Y+'" stroke="'+(bad?'#9A4B22':'#B9BDB9')+'" stroke-width="'+(bad?3:2)+'" marker-end="url(#'+(bad?'chArrB':'chArr')+')"/>';
+  }
+  /* the log feeds the next meeting's prep */
+  var lx=cx(CHAIN.length-1),px=cx(0);
+  var LY=Y+R+34;
+  s+='<path d="M'+lx+' '+LY+' C '+lx+' '+(LY+34)+', '+px+' '+(LY+34)+', '+px+' '+LY+'" fill="none" stroke="#D8DAD4" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#chArr)"/>';
+  s+='<text x="'+((lx+px)/2)+'" y="'+(LY+30)+'" class="chartlab" text-anchor="middle">the log is the next meeting’s prep</text>';
+  CHAIN.forEach(function(c,i){
+   var bad=(cur>=0&&i>=cur), isCur=(i===cur), op=seen[i]?1:0.92;
+   var fill=bad?'#F6EAE2':(seen[i]?'#E2EDEB':'#FFFFFF');
+   var stroke=bad?'#9A4B22':'#0E5A55';
+   s+='<g class="chn" data-i="'+i+'" style="cursor:pointer" opacity="'+op+'">';
+   if(isCur)s+='<circle cx="'+cx(i)+'" cy="'+Y+'" r="'+(R+5)+'" fill="none" stroke="#9A4B22" stroke-width="1.4" stroke-dasharray="3 3"/>';
+   s+='<circle cx="'+cx(i)+'" cy="'+Y+'" r="'+R+'" fill="'+fill+'" stroke="'+stroke+'" stroke-width="'+(isCur?3:2)+'"/>';
+   s+='<text x="'+cx(i)+'" y="'+(Y+6)+'" text-anchor="middle" class="chartval" style="font-size:17px" fill="'+stroke+'">'+(i+1)+'</text>';
+   s+='<text x="'+cx(i)+'" y="'+(Y+R+20)+'" text-anchor="middle" class="chartval" style="font-size:13px" fill="'+stroke+'">'+esc(c.s)+'</text>';
+   s+='</g>';
+  });
+  s+='<text x="'+(VW-6)+'" y="26" text-anchor="end" class="chartlab" fill="#6F7B78">what an examiner reads</text>';
+  s+='<line x1="'+cx(CHAIN.length-1)+'" y1="32" x2="'+cx(CHAIN.length-1)+'" y2="'+(Y-R-5)+'" stroke="#D8DAD4" stroke-width="1"/>';
+  if(cur>=0)s+='<text x="8" y="'+(VH-8)+'" class="chartlab" fill="#9A4B22">a mistake at '+esc(CHAIN[cur].s)+' is inherited by '+(CHAIN.length-1-cur)+' later stage'+((CHAIN.length-1-cur)===1?'':'s')+'</text>';
+  else s+='<text x="8" y="'+(VH-8)+'" class="chartlab">click a stage</text>';
+  s+='</svg>';
+  W.innerHTML=s;
+  [].slice.call(W.querySelectorAll('.chn')).forEach(function(g){
+   g.addEventListener('click',function(){pick(parseInt(g.dataset.i,10))});
+  });
+ }
+ function pick(i){
+  var c=CHAIN[i];seen[i]=1;cur=i;draw();
+  var s='<span class="hd">'+esc(c.s)+': what the tool does</span>'+esc(c.ai)+'<br><br>'+
+    '<span class="hd">What you check before it moves on</span><span class="good">'+esc(c.chk)+'</span><br><br>'+
+    '<span class="hd">If you skip the check</span>';
+  c.skip.forEach(function(d){s+='· '+esc(d)+'<br>'});
+  s+='<br><span class="hd">First seen by a person</span>'+(c.v.indexOf('Never')===0?'<span class="flag">':'<span class="good">')+esc(c.v)+'</span>';
+  O.className='mpanel has';O.innerHTML=s;
+  if(Object.keys(seen).length===CHAIN.length&&typeof mark==='function')mark('g7');
+ }
+ draw();
 })();
 
 /* ================= 9c. The intake questionnaire: a prep prompt built from areas ================= */
@@ -2362,6 +2711,73 @@ var CHAIN=[
    try{document.execCommand('copy');ok()}catch(e){MS.textContent='Select the block and copy manually.'}document.body.removeChild(ta)}
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fail)}else{fail()}
  };
+})();
+
+/* ---- §05: grounding against fine-tuning, drawn on one week ---------------
+   Two architectures, the same question on Wednesday. The grounded one reads a
+   tray it does not own; the tuned one has the documents baked in. Tuesday's
+   re-run of the appraisal is the only input that changes. */
+(function(){
+ var W=$('tunWrap'); if(!W) return;
+ var day=0,VW=720,VH=286;
+ var DAYS=['Monday','Tuesday','Wednesday'];
+ function doc(d){return d<1?'2023 appraisal':'2026 appraisal'}
+ function ansG(d){return d<2?'—':'The 2026 figure, with the passage.'}
+ function ansT(d){return d<2?'—':'The 2023 figure: '+COLEm('appraisal2023')+'.'}
+ function box(x,y,w,h,fill,stroke,sw){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="4" fill="'+fill+'" stroke="'+stroke+'" stroke-width="'+(sw||1.4)+'"/>'}
+ function draw(){
+  var s='<svg viewBox="0 0 '+VW+' '+VH+'" role="img" aria-label="The same question asked on Wednesday of a grounded assistant and a fine-tuned one, after the appraisal is re-run on Tuesday. The grounded assistant reads a document tray and answers from the new appraisal with a citation. The fine-tuned model has the documents inside it and still answers from the 2023 appraisal, with nothing to cite.">';
+  /* the week */
+  DAYS.forEach(function(d,i){
+   var x=150+i*180, on=(i===day);
+   s+='<text x="'+x+'" y="18" text-anchor="middle" class="chartlab" style="font-size:10.5px" fill="'+(on?'#0E5A55':'#B9BDB9')+'">'+d.toUpperCase()+'</text>';
+   if(on)s+='<line x1="'+(x-42)+'" y1="24" x2="'+(x+42)+'" y2="24" stroke="#0E5A55" stroke-width="2"/>';
+  });
+  s+='<line x1="60" y1="24" x2="'+(VW-30)+'" y2="24" stroke="#E7E8E4" stroke-width="1"/>';
+
+  /* row A: grounding */
+  var yA=44;
+  s+='<text x="8" y="'+(yA+14)+'" class="chartval" style="font-size:12px" fill="#0E5A55">GROUNDING</text>';
+  s+='<text x="8" y="'+(yA+30)+'" class="chartlab" style="font-size:9.5px">the file stays outside</text>';
+  s+=box(150,yA,116,64,'#FFFFFF','#0E5A55');
+  s+='<text x="208" y="'+(yA+26)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px">document tray</text>';
+  s+=box(160,yA+32,96,22,day>=1?'#E2EDEB':'#F4F4F1',day>=1?'#0E5A55':'#C9CCC5');
+  s+='<text x="208" y="'+(yA+47)+'" text-anchor="middle" class="chartval" style="font-size:11px" fill="'+(day>=1?'#0E5A55':'#6F7B78')+'">'+doc(day)+'</text>';
+  s+='<line x1="268" y1="'+(yA+32)+'" x2="322" y2="'+(yA+32)+'" stroke="#B9BDB9" stroke-width="2" marker-end="url(#tunA)"/>';
+  s+=box(330,yA+6,96,52,'#FFFFFF','#B9BDB9');
+  s+='<text x="378" y="'+(yA+36)+'" text-anchor="middle" class="chartval" style="font-size:12px">model</text>';
+  s+='<line x1="428" y1="'+(yA+32)+'" x2="462" y2="'+(yA+32)+'" stroke="#B9BDB9" stroke-width="2" marker-end="url(#tunA)"/>';
+  s+=box(470,yA+6,240,52,day>=2?'#E2EDEB':'#FFFFFF',day>=2?'#0E5A55':'#E7E8E4');
+  s+='<text x="480" y="'+(yA+27)+'" class="chartlab" style="font-size:9px">Wednesday’s answer</text>';
+  s+='<text x="480" y="'+(yA+44)+'" class="chartval" style="font-size:11px" fill="'+(day>=2?'#0E5A55':'#B9BDB9')+'">'+ansG(day)+'</text>';
+  if(day>=2)s+='<path d="M474 '+(yA+52)+' C 420 '+(yA+92)+', 262 '+(yA+92)+', 208 '+(yA+58)+'" fill="none" stroke="#0E5A55" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#tunG)"/>';
+  if(day>=2)s+='<text x="345" y="'+(yA+100)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px" fill="#0E5A55">a thread back to the passage</text>';
+
+  /* row B: fine-tuning */
+  var yB=176;
+  s+='<line x1="0" y1="'+(yB-14)+'" x2="'+VW+'" y2="'+(yB-14)+'" stroke="#E7E8E4" stroke-width="1"/>';
+  s+='<text x="8" y="'+(yB+14)+'" class="chartval" style="font-size:12px" fill="#9A4B22">FINE-TUNING</text>';
+  s+='<text x="8" y="'+(yB+30)+'" class="chartlab" style="font-size:9.5px">the file is inside</text>';
+  s+=box(330,yB+6,96,52,'#F6EAE2','#9A4B22');
+  s+='<text x="378" y="'+(yB+28)+'" text-anchor="middle" class="chartval" style="font-size:12px" fill="#9A4B22">model</text>';
+  s+='<text x="378" y="'+(yB+44)+'" text-anchor="middle" class="chartlab" style="font-size:8px" fill="#9A4B22">2023 figure baked in</text>';
+  s+='<text x="228" y="'+(yB+58)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px" fill="'+(day>=1?'#9A4B22':'#B9BDB9')+'">'+(day>=1?'the tray changed; this did not':'nothing outside to read')+'</text>';
+  s+='<line x1="428" y1="'+(yB+32)+'" x2="462" y2="'+(yB+32)+'" stroke="#B9BDB9" stroke-width="2" marker-end="url(#tunA)"/>';
+  s+=box(470,yB+6,240,52,day>=2?'#F6EAE2':'#FFFFFF',day>=2?'#9A4B22':'#E7E8E4');
+  s+='<text x="480" y="'+(yB+27)+'" class="chartlab" style="font-size:9px">Wednesday’s answer</text>';
+  s+='<text x="480" y="'+(yB+44)+'" class="chartval" style="font-size:11px" fill="'+(day>=2?'#9A4B22':'#B9BDB9')+'">'+ansT(day)+'</text>';
+  if(day>=2)s+='<text x="590" y="'+(yB+76)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px" fill="#9A4B22">confident, stale, and nothing to cite</text>';
+  s+='<defs><marker id="tunA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B9BDB9"/></marker>'+
+     '<marker id="tunG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0E5A55"/></marker></defs>';
+  s+='</svg>';
+  W.innerHTML=s;
+ }
+ function set(d){day=d;draw();
+  [0,1,2].forEach(function(i){var b=$('tunD'+i);if(b)b.classList.toggle('act',i===d)});
+  if(d===2&&typeof mark==='function')mark('g6');
+ }
+ [0,1,2].forEach(function(i){var b=$('tunD'+i);if(b)b.addEventListener('click',function(){set(i)})});
+ set(0);
 })();
 
 /* ================= 9b. The meeting excerpt ================= */
@@ -2417,6 +2833,68 @@ function ntSumText(){return 'MEETING SUMMARY (synthetic: the Cole annual review,
   W.appendChild(d);
  });
  REVEALS.push(function(){[].slice.call(W.querySelectorAll('.ntout')).forEach(function(o){o.style.display='block';o.className='mpanel keyhide ntout has'})});
+})();
+/* ---- the four stages as a funnel: five turns in, three out ---------------
+   The syllabus writes this bullet as an arrow diagram. Drawn as one, the
+   narrowing at extraction is the whole teaching point and it is visible before
+   anyone opens a panel. Clicking a stage opens that stage's panel below. */
+(function(){
+ var F=$('ntFunnel'); if(!F) return;
+ var VW=720,VH=248,BW=150,GAP=28,X0=10,TOP=44,cur=-1;
+ var ST=[{n:'Transcription',sub:'speech to text',h:78,inn:5,out:5},
+         {n:'Extraction',sub:'what counts',h:64,inn:5,out:3},
+         {n:'Categorisation',sub:'under your headings',h:56,inn:3,out:5},
+         {n:'Follow-up',sub:'recap and tasks',h:48,inn:5,out:1}];
+ function bx(i){return X0+i*(BW+GAP)}
+ function bars(x,n,y,col,w,lab){
+  var s='',bw=w||13,g=5,tot=n*bw+(n-1)*g,sx=x+(BW-tot)/2;
+  for(var k=0;k<n;k++){
+   s+='<rect x="'+(sx+k*(bw+g))+'" y="'+y+'" width="'+bw+'" height="9" rx="1.5" fill="'+col+'"/>';
+   if(lab)s+='<text x="'+(sx+k*(bw+g)+bw/2)+'" y="'+(y-4)+'" text-anchor="middle" class="chartlab" style="font-size:8.5px">'+(k+1)+'</text>';
+  }
+  return s;
+ }
+ function draw(){
+  var s='<svg viewBox="0 0 '+VW+' '+VH+'" role="img" aria-label="The four stages of an AI note-taker drawn as a narrowing funnel. Five turns of the meeting enter transcription and five leave it; three leave extraction, and the two that are dropped fall out of the funnel, one of them the constraint about Nathan.">';
+  s+='<text x="6" y="16" class="chartttl">Five turns in. Three survive extraction.</text>';
+  s+='<text x="6" y="32" class="chartlab">click a stage to open it below</text>';
+  ST.forEach(function(st,i){
+   var x=bx(i), y=TOP+(78-st.h)/2, on=(cur===i), warn=(i===1);
+   var stroke=on?(warn?'#9A4B22':'#0E5A55'):'#C9CCC5';
+   var fill=on?(warn?'#F6EAE2':'#E2EDEB'):'#FFFFFF';
+   s+='<g class="ntf" data-i="'+i+'" style="cursor:pointer">';
+   s+='<rect x="'+x+'" y="'+y+'" width="'+BW+'" height="'+st.h+'" rx="3" fill="'+fill+'" stroke="'+stroke+'" stroke-width="'+(on?2.4:1.4)+'"/>';
+   s+='<text x="'+(x+BW/2)+'" y="'+(y+st.h/2-1)+'" text-anchor="middle" class="chartval" style="font-size:13px" fill="'+(on?stroke:'#16211F')+'">'+(i+1)+'. '+esc(st.n)+'</text>';
+   s+='<text x="'+(x+BW/2)+'" y="'+(y+st.h/2+14)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px">'+esc(st.sub)+'</text>';
+   s+='</g>';
+   /* what leaves this stage */
+   var by=TOP+92;
+   s+=bars(x,st.out,by,warn?'#0E5A55':'#0E5A55',13,i===0);
+   s+='<text x="'+(x+BW/2)+'" y="'+(by+22)+'" text-anchor="middle" class="chartlab" style="font-size:9px">'+st.out+(i===2?' headings out':(i===3?' recap out':' turns out'))+'</text>';
+   if(i<ST.length-1)
+    s+='<line x1="'+(x+BW+4)+'" y1="'+(TOP+40)+'" x2="'+(x+BW+GAP-6)+'" y2="'+(TOP+40)+'" stroke="#B9BDB9" stroke-width="2" marker-end="url(#ntA)"/>';
+  });
+  /* the two that fall out, under extraction */
+  var ex=bx(1), fy=TOP+134;
+  s+='<line x1="'+(ex-6)+'" y1="'+(fy-12)+'" x2="'+(ex+BW+6)+'" y2="'+(fy-12)+'" stroke="#D8DAD4" stroke-width="1" stroke-dasharray="4 3"/>';
+  s+=bars(ex,2,fy,'#9A4B22',13,false);
+  s+='<text x="'+(ex+BW/2)+'" y="'+(fy+24)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px" fill="#9A4B22">2 dropped as conversational</text>';
+  s+='<text x="'+(ex+BW/2)+'" y="'+(fy+37)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px" fill="#9A4B22">one is the clause about Nathan</text>';
+  s+='<text x="'+(bx(3)+BW/2)+'" y="'+(fy+24)+'" text-anchor="middle" class="chartlab" style="font-size:9.5px" fill="#9A4B22">plus one line nobody said</text>';
+  s+='<defs><marker id="ntA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#B9BDB9"/></marker></defs>';
+  s+='</svg>';
+  F.innerHTML=s;
+  [].slice.call(F.querySelectorAll('.ntf')).forEach(function(g){
+   g.addEventListener('click',function(){
+    var i=parseInt(g.dataset.i,10); cur=i; draw();
+    var btns=document.querySelectorAll('#ntStages .ntstage button');
+    if(btns[i]){var o=btns[i].parentNode.querySelector('.ntout');
+     if(o&&o.style.display==='none')btns[i].click();
+     btns[i].scrollIntoView({block:'nearest'});}
+   });
+  });
+ }
+ draw();
 })();
 (function(){
  var B=$('ntCopy'),M=$('ntCopyMsg'),P=$('ntPrompt');if(!B)return;
@@ -2762,7 +3240,25 @@ window.__coreMins=62;
       [].slice.call(bar.querySelectorAll('button[data-level]')).forEach(function(x){x.classList.toggle('on',x===b)}); }
     apply();
   });
+
+  /* A link from another lesson can target an appendix section by id. The
+     core-only filter hides those, so the browser lands on a section it cannot
+     scroll to. Open the depth that reveals the target, then scroll to it. */
+  function revealHash(){
+    var id=(location.hash||'').slice(1); if(!id) return;
+    var sec=document.getElementById(id);
+    if(!sec||!sec.classList.contains('apx')) return;
+    var want=ORDER.indexOf(sec.dataset.tier||'standard'); if(want<0) want=1;
+    if(coreOnly||level<want){ coreOnly=false; level=Math.max(level,want); apply(); }
+    sec.scrollIntoView();
+  }
   apply();
+  revealHash();
+  window.addEventListener('hashchange',revealHash);
+  /* charts render into their containers after this runs and grow the sections
+     above the target, so the first scroll lands short. Repeat once everything
+     has rendered; revealHash is idempotent. */
+  window.addEventListener('load',revealHash);
 })();
 
 })();

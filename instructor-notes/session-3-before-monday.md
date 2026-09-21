@@ -1,7 +1,9 @@
 # Session 3: what is left before Monday 2026-09-21, 6:00 PM Pacific
 
-Written 2026-09-20, after the simplify pass on branch `claude/adoring-mendel-2luer4`. Everything the
-page could carry is on it: the Coles are explained in four lines at the top, every exercise works
+Written 2026-09-20 after the simplify pass; amended 2026-09-21 for the visual pass on branch
+`claude/friendly-albattani-fddv0v`, which added §09b (what the firm must have written down), the
+rotatable meaning space in §01, and a fix so the link to Session 2's B4 sorter opens the depth that
+reveals it. Everything the page could carry is on it: the Coles are explained in four lines at the top, every exercise works
 without the case study, and nothing on the page speaks to you instead of to the room. What is left
 needs your GitHub, your Zoom, your Canvas or your printer. Minutes are estimates.
 
@@ -10,7 +12,7 @@ needs your GitHub, your Zoom, your Canvas or your printer. Minutes are estimates
 | # | Do | Min | Where |
 |---|---|---|---|
 | 1 | Merge the branch to `main`. Then open Session 3 on the course site and look for the panel "The Cole file, in four lines" under the opening bullets. Not there? GitHub Pages has not published; wait ten minutes and reload | 5 | GitHub, then the course site |
-| 2 | Print the teaching aid, landscape, one page. It changed at steps 6, 10 and 16, so an older print is wrong | 1 | `instructor-notes/session-3-teaching-aid.pdf` |
+| 2 | Print the teaching aid, landscape, one page. **It changed again on 2026-09-21**: a new step 17 (§09b, the six documents), everything after it renumbered and retimed, and a six-item drop order. An older print is wrong | 1 | `instructor-notes/session-3-teaching-aid.pdf` |
 | 3 | Build Zoom Polls 1 to 4, anonymous on Poll 1. Do not create them live | 15 | `instructor-notes/session-3-polls.md` |
 | 4 | Zoom settings: speaker-labelled transcripts on | 1 | Zoom web portal |
 | 5 | Read 18 U.S.C. § 2511(2)(d) and the CFP Board's confidentiality standard. The two items are in the run sheet under Verify before teaching; they are no longer on the page. Until you have read them, say so at 7:52 | 10 | `instructor-notes/session-3-verify-brief.md` |
