@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**24 of 63 works are moving targets, feeding 94 of
-201 references.**
+**25 of 67 works are moving targets, feeding 90 of
+212 references.**
 
 
 ---
@@ -44,38 +44,6 @@ version string means the version is not tracking the data.
 
 ## Moving targets
 
-### `src-aa` — Artificial Analysis Intelligence Index and cost-per-task figures
-
-| | |
-|---|---|
-| Figure class | `benchmark_index` |
-| Index version | divergent, see the three pulls below |
-| Last retrieved | 2026-08-13 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-1 §05, session-2 §02 and session-4 §03 |
-| References | 13 |
-| Feeds | S1 `#s10` ×2 · S2 `#s5` ×3 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| AA-001 | S1 | 2026-07-28 | **[UNVERIFIED, needs source]** | index scores and cost per index task for the frontier chart; the body dates the pull 17 and 24 July and the footer dates it 28 July |
-| AA-002 | S2 | 2026-08 | v4.1.1 | index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5; IDENTICAL to the session-1 pull under a later version string |
-| AA-003 | S4 | 2026-08-13 | v4.1 | Opus 5 61 against 63, Fable 5 60 against 62, Luna cost per task $0.21 against $0.07, token prices 5x apart; DIFFERS from both other pulls on every shared model |
-
-### `src-synthid` — SynthID
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 Appendices D1 and D2 |
-| References | 10 |
-| Feeds | S4 `#sW1` ×8 · S4 `#sW2` ×2 |
-
 ### `src-memory` — Use Claude's chat search and memory to build on previous context
 
 | | |
@@ -87,6 +55,18 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-0.1 |
 | References | 10 |
 | Feeds | S0.1 `#s0` · S0.1 `#s5` ×2 · S0.1 `#s6` ×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10` ×2 · S2 `#s3` |
+
+### `src-effort` — Change the model, effort, and thinking settings
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-0.1 |
+| References | 9 |
+| Feeds | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3` ×5 · S0.1 `#s9` · S4 `#sWS` |
 
 ### `src-tools3` — When should I use web search, extended thinking, and research?
 
@@ -119,17 +99,37 @@ version string means the version is not tracking the data.
 | PRICING-001 | S1 | 2026-08-25 | **[UNVERIFIED, needs source]** | per-token input and output rates, cache-hit and batch discounts |
 | PRICING-002 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio; the per-tier input and output rates and the 0.75 rule of thumb quoted in the retrieval bridge |
 
-### `src-effort` — Change the model, effort, and thinking settings
+### `src-claude-marks` — How Claude marks AI-generated content
 
 | | |
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
+| Last retrieved | 2026-09-25 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-0.1 |
+| Re-check before | every teaching of session-4 Appendices D1 and D2 |
 | References | 8 |
-| Feeds | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3` ×5 · S0.1 `#s9` |
+| Feeds | S4 `#s1` · S4 `#sW1` ×4 · S4 `#sW2` ×3 |
+
+### `src-aa` — Artificial Analysis Intelligence Index and cost-per-task figures
+
+| | |
+|---|---|
+| Figure class | `benchmark_index` |
+| Index version | divergent, see the three pulls below |
+| Last retrieved | 2026-08-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-1 §05, session-2 §02 and session-4 Appendix D3 |
+| References | 6 |
+| Feeds | S1 `#s10` ×2 · S2 `#s5` ×3 · S4 `#sWS` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| AA-001 | S1 | 2026-07-28 | **[UNVERIFIED, needs source]** | index scores and cost per index task for the frontier chart; the body dates the pull 17 and 24 July and the footer dates it 28 July |
+| AA-002 | S2 | 2026-08 | v4.1.1 | index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5; IDENTICAL to the session-1 pull under a later version string |
+| AA-003 | S4 | 2026-08-13 | v4.1 | none typed since 2026-09-25; the frontier and divergence charts left the page with the rebuild |
 
 ### `src-ctxwindow` — How large is the context window on paid Claude plans?
 
@@ -173,6 +173,48 @@ version string means the version is not tracking the data.
 |---|---|---|---|---|
 | CONTEXT-WINDOWS-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed; the keys paraphrase the page's sentences |
 
+### `src-synthid-text` — SynthID: Tools for watermarking and detecting LLM-generated Text
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-08-25 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 Appendices D1 and D2 |
+| References | 4 |
+| Feeds | S4 `#sW1` ×2 · S4 `#sW2` ×2 |
+
+### `src-api-messages` — Messages API reference
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-2 §01 |
+| References | 3 |
+| Feeds | S2 `#s3` ×2 · S4 `#sWS` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| API-MESSAGES-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed |
+
+### `src-anthropic-terms` — Privacy Center and Commercial Terms
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-08-14 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 3 |
+| Feeds | S4 `#s3` ×3 |
+
 ### `src-personalization` — Understanding Claude's personalization features
 
 | | |
@@ -209,36 +251,6 @@ version string means the version is not tracking the data.
 | References | 3 |
 | Feeds | S0.1 `#s6` · S0.1 `#s7` · S0.1 `#s9` |
 
-### `src-api-messages` — Messages API reference
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-13 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-2 §01 |
-| References | 2 |
-| Feeds | S2 `#s3` ×2 |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| API-MESSAGES-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed |
-
-### `src-anthropic-terms` — Privacy Center and Commercial Terms
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-14 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 and §06 |
-| References | 2 |
-| Feeds | S4 `#s3` · S4 `#s6` |
-
 ### `src-openai-pricing` — API pricing
 
 | | |
@@ -262,30 +274,6 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-2 §07 |
 | References | 1 |
 | Feeds | S2 `#s10` |
-
-### `src-owasp` — Top 10 for LLM Applications and Top 10 for Agentic Applications
-
-| | |
-|---|---|
-| Figure class | `leaderboard_position` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §05 |
-| References | 1 |
-| Feeds | S4 `#s5` |
-
-### `src-synthid-text` — SynthID: Tools for watermarking and detecting LLM-generated Text
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-25 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 Appendix D2 |
-| References | 1 |
-| Feeds | S4 `#sW2` |
 
 ### `src-beta` — Available beta and research preview features
 
@@ -359,6 +347,30 @@ version string means the version is not tracking the data.
 | References | 0 |
 | Feeds | *nothing on the page* |
 
+### `src-owasp` — Top 10 for LLM Applications and Top 10 for Agentic Applications
+
+| | |
+|---|---|
+| Figure class | `leaderboard_position` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | no lesson cites this record since the 2026-09-25 session-4 rebuild |
+| References | 0 |
+| Feeds | *nothing on the page* |
+
+### `src-synthid` — SynthID
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | no lesson cites this record since the 2026-09-25 session-4 rebuild |
+| References | 0 |
+| Feeds | *nothing on the page* |
+
 
 ---
 
@@ -392,9 +404,9 @@ wrong when they go stale.
 | S1 | `Fable 5`, `GPT-5.6`, `Haiku 4.5`, `Kimi K3`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 34 |
 | S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 48 |
 | S3 | — | 0 |
-| S4 | `DeepSeek V4-Flash`, `Fable 5`, `GPT-5.6`, `Gemini 3.6`, `Grok 4.6`, `Kimi K3`, `Luna`, `Opus 5`, `Sonnet 5` | 34 |
+| S4 | — | 0 |
 
-**221 occurrences across 5 lessons.** This count is read off
+**187 occurrences across 5 lessons.** This count is read off
 the corpus on every run, so it cannot go stale the way a typed one would.
 
 
