@@ -5,8 +5,8 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**67 works, 243 references across 5 lessons.** 48 are
-cited by at least one claim; 19 are listed by a lesson without carrying a
+**67 works, 245 references across 5 lessons.** 49 are
+cited by at least one claim; 18 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
 **57 records carry at least one field this repository could not verify, and
@@ -723,6 +723,25 @@ Characterised on the page ONLY by its title claim of self-reported reductions in
 
 Over 200 preregistered legal queries, expert hand-scored, against Lexis+ AI, Westlaw AI-Assisted Research and GPT-4. Tools tested May 2024 — a historical fixture. The measured rates belong to the tools as they were on that date and must never be "updated".
 
+### MITRE / NVD
+
+**CVE-2025-32711 (EchoLeak, CVSS 9.3)**  
+`src-cve` · evidence
+
+| | |
+|---|---|
+| Author | MITRE / NVD |
+| Publisher | Public CVE record |
+| Link | **[UNVERIFIED, needs source]** |
+| Published | 2025 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **2** |
+| Cited in | S4 `#s5` ×2 |
+
+Identifier, score and mechanism of EchoLeak, verified against the public record: one crafted email could make Microsoft 365 Copilot send internal data out with no click. Kind was background until 2026-09-25, when the §05 bullet stating that mechanism was found resting on it unchipped (A20); it is now the chip on that claim. CurXecute (CVE-2025-54135) left the title with the rebuild that took it off the page.
+
 ### OpenAI
 
 **API pricing**  
@@ -955,7 +974,6 @@ source that does not belong in that lesson's footer.
 | `src-kessler` | fabricated | S2 | yes, by kind |
 | `src-kitces-advisortech` | background |  | yes, by kind |
 | `src-laplace` | background | S2 | yes, by kind |
-| `src-cve` | background | S4 | yes, by kind |
 | `src-morningstar` | background | S2 | yes, by kind |
 | `src-owasp` | evidence |  | **NO — finding** |
 | `src-surfshark` | evidence |  | **NO — finding** |
