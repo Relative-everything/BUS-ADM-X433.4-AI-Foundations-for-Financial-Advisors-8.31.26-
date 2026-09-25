@@ -31,7 +31,7 @@ at load the page carries 6,367 against 6,440, now around a figure in every secti
   right one.
 - **Cold open.** Four prompts fall onto one "checks passed" track; Test 2 splits it into two lanes
   and D, the most checks, sinks into "names a client". Every missing check on a card is really
-  missing (D 5 of 8, C 4, A 3, B 2).
+  missing (D 5 of 8, C 4, A 3, B 1).
 - **§01.** Nine items stack under three lanes; "What binds you?" drops the four AI-named items
   through the floor. No US securities rule was written for AI.
 - **§02.** Clean Prompt D and watch a crowd of dots: with the name and company gone, the town
@@ -78,8 +78,9 @@ at load the page carries 6,367 against 6,440, now around a figure in every secti
 
 Six-lens adversarial review of the assembled page (accuracy, cross-section consistency, a
 beginner alone, visual coherence, accessibility and performance, text load): 105 findings, each
-verified by the section's fixer before any change and confirmed by an independent checker. A
-final verification pass found seven more; all fixed. Every repo gate is green except the known
+verified by the section's fixer before any change and confirmed by an independent checker. Three
+final verifiers (accuracy, a learner and a designer, robustness and accessibility) found 18 more,
+none high; all fixed. Every repo gate is green except the known
 red set (the certificate error in `verify-browser`, V2 footer links, the V6 band, `#pnum`, two
 unfenced fragments).
 

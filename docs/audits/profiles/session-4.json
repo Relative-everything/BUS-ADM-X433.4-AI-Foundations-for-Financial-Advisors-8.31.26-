@@ -1,7 +1,7 @@
 {
   "file": "session-4/index.html",
-  "file_bytes": 612598,
-  "file_lines": 9825,
+  "file_bytes": 613408,
+  "file_lines": 9836,
   "generated_by": "scripts/audit/section_profile.mjs (read-only)",
   "methods": {
     "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
@@ -168,7 +168,7 @@
         12.4,
         60.6
       ],
-      "mean": 31.4
+      "mean": 31.42
     },
     "prose_words_per_min": {
       "median": 23,
@@ -218,8 +218,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 6,
-      "line_start": 3263,
-      "line_end": 3320,
+      "line_start": 3266,
+      "line_end": 3323,
       "bytes": 3217,
       "allocated_min": 6,
       "words": 189,
@@ -232,8 +232,8 @@
           "data_task": "t-s0",
           "data_comp": "retrieval-bridge",
           "icap": "C",
-          "line": 3277,
-          "line_end": 3283,
+          "line": 3280,
+          "line_end": 3286,
           "words_inside": 20
         }
       ],
@@ -265,7 +265,7 @@
       "gates": [
         {
           "id": "g1",
-          "line": 3318,
+          "line": 3321,
           "marked_by_component": false
         }
       ],
@@ -301,8 +301,8 @@
       "nav_matches_heading": true,
       "nav_contained_in_heading": true,
       "timing_row_min": null,
-      "line_start": 3323,
-      "line_end": 3336,
+      "line_start": 3326,
+      "line_end": 3339,
       "bytes": 1673,
       "allocated_min": 83,
       "words": 152,
@@ -372,8 +372,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 8,
-      "line_start": 3339,
-      "line_end": 3383,
+      "line_start": 3342,
+      "line_end": 3386,
       "bytes": 3161,
       "allocated_min": 8,
       "words": 182,
@@ -386,8 +386,8 @@
           "data_task": "t-cold-open",
           "data_comp": "timed-ritual",
           "icap": "C",
-          "line": 3344,
-          "line_end": 3374,
+          "line": 3347,
+          "line_end": 3377,
           "words_inside": 78
         }
       ],
@@ -419,7 +419,7 @@
       "gates": [
         {
           "id": "gc",
-          "line": 3382,
+          "line": 3385,
           "marked_by_component": true
         }
       ],
@@ -436,7 +436,7 @@
         "§04."
       ],
       "dom": {
-        "rendered_words": 321,
+        "rendered_words": 320,
         "rendered_chips": 2,
         "rendered_controls": 11,
         "rendered_hidden_panels": 0
@@ -455,8 +455,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 3385,
-      "line_end": 3430,
+      "line_start": 3388,
+      "line_end": 3433,
       "bytes": 4021,
       "allocated_min": 5,
       "words": 208,
@@ -469,8 +469,8 @@
           "data_task": "t-s1",
           "data_comp": "multi-column-sorter",
           "icap": "C",
-          "line": 3391,
-          "line_end": 3418,
+          "line": 3394,
+          "line_end": 3421,
           "words_inside": 60
         }
       ],
@@ -508,7 +508,7 @@
       "gates": [
         {
           "id": "g2",
-          "line": 3428,
+          "line": 3431,
           "marked_by_component": true
         }
       ],
@@ -542,8 +542,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 3432,
-      "line_end": 3465,
+      "line_start": 3435,
+      "line_end": 3468,
       "bytes": 3154,
       "allocated_min": 6,
       "words": 220,
@@ -556,8 +556,8 @@
           "data_task": "t-s2",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 3438,
-          "line_end": 3453,
+          "line": 3441,
+          "line_end": 3456,
           "words_inside": 67
         }
       ],
@@ -591,7 +591,7 @@
       "gates": [
         {
           "id": "g3",
-          "line": 3463,
+          "line": 3466,
           "marked_by_component": true
         }
       ],
@@ -628,8 +628,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 14,
-      "line_start": 3467,
-      "line_end": 3501,
+      "line_start": 3470,
+      "line_end": 3504,
       "bytes": 3038,
       "allocated_min": 14,
       "words": 248,
@@ -642,8 +642,8 @@
           "data_task": "t-sRSP",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 3474,
-          "line_end": 3490,
+          "line": 3477,
+          "line_end": 3493,
           "words_inside": 66
         }
       ],
@@ -676,7 +676,7 @@
       "gates": [
         {
           "id": "ga5",
-          "line": 3500,
+          "line": 3503,
           "marked_by_component": true
         }
       ],
@@ -710,8 +710,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 12,
-      "line_start": 3503,
-      "line_end": 3552,
+      "line_start": 3506,
+      "line_end": 3555,
       "bytes": 3355,
       "allocated_min": 12,
       "words": 161,
@@ -724,8 +724,8 @@
           "data_task": "t-sAnon",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 3510,
-          "line_end": 3542,
+          "line": 3513,
+          "line_end": 3545,
           "words_inside": 43
         }
       ],
@@ -758,7 +758,7 @@
       "gates": [
         {
           "id": "ga6",
-          "line": 3551,
+          "line": 3554,
           "marked_by_component": true
         }
       ],
@@ -792,8 +792,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 6,
-      "line_start": 3554,
-      "line_end": 3593,
+      "line_start": 3557,
+      "line_end": 3596,
       "bytes": 3110,
       "allocated_min": 6,
       "words": 199,
@@ -806,8 +806,8 @@
           "data_task": "t-s3",
           "data_comp": "parameter-sandbox",
           "icap": "A",
-          "line": 3560,
-          "line_end": 3581,
+          "line": 3563,
+          "line_end": 3584,
           "words_inside": 61
         }
       ],
@@ -840,7 +840,7 @@
       "gates": [
         {
           "id": "g4",
-          "line": 3591,
+          "line": 3594,
           "marked_by_component": true
         }
       ],
@@ -876,8 +876,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 3595,
-      "line_end": 3629,
+      "line_start": 3598,
+      "line_end": 3632,
       "bytes": 2819,
       "allocated_min": 5,
       "words": 198,
@@ -890,8 +890,8 @@
           "data_task": "t-s4",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 3601,
-          "line_end": 3618,
+          "line": 3604,
+          "line_end": 3621,
           "words_inside": 58
         }
       ],
@@ -925,7 +925,7 @@
       "gates": [
         {
           "id": "g5",
-          "line": 3627,
+          "line": 3630,
           "marked_by_component": true
         }
       ],
@@ -959,8 +959,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 3631,
-      "line_end": 3688,
+      "line_start": 3634,
+      "line_end": 3691,
       "bytes": 4028,
       "allocated_min": 6,
       "words": 257,
@@ -973,8 +973,8 @@
           "data_task": "t-s5",
           "data_comp": "prediction-commit",
           "icap": "C",
-          "line": 3637,
-          "line_end": 3660,
+          "line": 3640,
+          "line_end": 3663,
           "words_inside": 71
         }
       ],
@@ -1008,7 +1008,7 @@
       "gates": [
         {
           "id": "g6",
-          "line": 3686,
+          "line": 3689,
           "marked_by_component": true
         }
       ],
@@ -1044,8 +1044,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 14,
-      "line_start": 3690,
-      "line_end": 3750,
+      "line_start": 3693,
+      "line_end": 3753,
       "bytes": 5726,
       "allocated_min": 14,
       "words": 314,
@@ -1058,8 +1058,8 @@
           "data_task": "t-sW1",
           "data_comp": "parameter-sandbox",
           "icap": "A",
-          "line": 3697,
-          "line_end": 3716,
+          "line": 3700,
+          "line_end": 3719,
           "words_inside": 57
         }
       ],
@@ -1093,7 +1093,7 @@
       "gates": [
         {
           "id": "ga1",
-          "line": 3748,
+          "line": 3751,
           "marked_by_component": true
         }
       ],
@@ -1129,8 +1129,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 12,
-      "line_start": 3752,
-      "line_end": 3798,
+      "line_start": 3755,
+      "line_end": 3801,
       "bytes": 3846,
       "allocated_min": 12,
       "words": 262,
@@ -1143,8 +1143,8 @@
           "data_task": "t-sW2",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 3759,
-          "line_end": 3771,
+          "line": 3762,
+          "line_end": 3774,
           "words_inside": 40
         }
       ],
@@ -1178,7 +1178,7 @@
       "gates": [
         {
           "id": "ga2",
-          "line": 3796,
+          "line": 3799,
           "marked_by_component": true
         }
       ],
@@ -1212,13 +1212,13 @@
       "nav_matches_heading": true,
       "nav_contained_in_heading": true,
       "timing_row_min": 5,
-      "line_start": 3800,
-      "line_end": 3838,
-      "bytes": 3459,
+      "line_start": 3803,
+      "line_end": 3841,
+      "bytes": 3470,
       "allocated_min": 5,
-      "words": 236,
+      "words": 238,
       "prose_words": 155,
-      "words_per_min": 47.2,
+      "words_per_min": 47.6,
       "prose_words_per_min": 31,
       "interactions_count": 1,
       "interactions": [
@@ -1226,9 +1226,9 @@
           "data_task": "t-s6",
           "data_comp": "estimate-then-reveal",
           "icap": "C",
-          "line": 3806,
-          "line_end": 3818,
-          "words_inside": 81
+          "line": 3809,
+          "line_end": 3821,
+          "words_inside": 83
         }
       ],
       "families": [
@@ -1243,7 +1243,7 @@
         "M": 1,
         "L": 2
       },
-      "chips_per_100_words": 2.12,
+      "chips_per_100_words": 2.1,
       "chips_unresolved": [],
       "source_keys": [
         "src-case",
@@ -1260,22 +1260,22 @@
       "gates": [
         {
           "id": "g7",
-          "line": 3836,
+          "line": 3839,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 217,
+        "longest_run_words_tagged_split": 219,
         "longest_run_min_tagged_split": 4.6,
-        "longest_run_words_control_split": 168,
+        "longest_run_words_control_split": 170,
         "longest_run_min_control_split": 3.6,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 330,
+        "rendered_words": 332,
         "rendered_chips": 5,
         "rendered_controls": 14,
         "rendered_hidden_panels": 0
@@ -1294,8 +1294,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 13,
-      "line_start": 3840,
-      "line_end": 3864,
+      "line_start": 3843,
+      "line_end": 3867,
       "bytes": 2160,
       "allocated_min": 13,
       "words": 161,
@@ -1308,8 +1308,8 @@
           "data_task": "t-sWS",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 3847,
-          "line_end": 3854,
+          "line": 3850,
+          "line_end": 3857,
           "words_inside": 43
         }
       ],
@@ -1345,7 +1345,7 @@
       "gates": [
         {
           "id": "ga3",
-          "line": 3862,
+          "line": 3865,
           "marked_by_component": true
         }
       ],
@@ -1379,8 +1379,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 5,
-      "line_start": 3866,
-      "line_end": 3924,
+      "line_start": 3869,
+      "line_end": 3927,
       "bytes": 3815,
       "allocated_min": 5,
       "words": 303,
@@ -1393,8 +1393,8 @@
           "data_task": "t-s7",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 3872,
-          "line_end": 3894,
+          "line": 3875,
+          "line_end": 3897,
           "words_inside": 88
         }
       ],
@@ -1427,7 +1427,7 @@
       "gates": [
         {
           "id": "g8",
-          "line": 3922,
+          "line": 3925,
           "marked_by_component": true
         }
       ],
@@ -1468,8 +1468,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 10,
-      "line_start": 3926,
-      "line_end": 3979,
+      "line_start": 3929,
+      "line_end": 3982,
       "bytes": 3529,
       "allocated_min": 10,
       "words": 282,
@@ -1482,8 +1482,8 @@
           "data_task": "t-sCR",
           "data_comp": "symptom-diagnoser",
           "icap": "A",
-          "line": 3932,
-          "line_end": 3959,
+          "line": 3935,
+          "line_end": 3962,
           "words_inside": 125
         }
       ],
@@ -1515,7 +1515,7 @@
       "gates": [
         {
           "id": "g9",
-          "line": 3977,
+          "line": 3980,
           "marked_by_component": true
         }
       ],
@@ -1554,8 +1554,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 18,
-      "line_start": 3981,
-      "line_end": 4062,
+      "line_start": 3984,
+      "line_end": 4065,
       "bytes": 6186,
       "allocated_min": 18,
       "words": 326,
@@ -1568,8 +1568,8 @@
           "data_task": "t-sD",
           "data_comp": "sealed-vote-debate",
           "icap": "I",
-          "line": 3988,
-          "line_end": 4051,
+          "line": 3991,
+          "line_end": 4054,
           "words_inside": 198
         }
       ],
@@ -1601,7 +1601,7 @@
       "gates": [
         {
           "id": "ga4",
-          "line": 4060,
+          "line": 4063,
           "marked_by_component": true
         }
       ],
@@ -1637,8 +1637,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 4064,
-      "line_end": 4117,
+      "line_start": 4067,
+      "line_end": 4120,
       "bytes": 3389,
       "allocated_min": 5,
       "words": 219,
@@ -1651,8 +1651,8 @@
           "data_task": "t-s9",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 4070,
-          "line_end": 4098,
+          "line": 4073,
+          "line_end": 4101,
           "words_inside": 51
         }
       ],
@@ -1688,7 +1688,7 @@
       "gates": [
         {
           "id": "g10",
-          "line": 4113,
+          "line": 4116,
           "marked_by_component": true
         }
       ],

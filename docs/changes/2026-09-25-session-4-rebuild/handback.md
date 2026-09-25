@@ -22,11 +22,11 @@ picture, not one with a chart beside the text.
 | Build, per section | designer, adversarial critic, builder, independent reviewer, finisher where scores fell under 8 | 17 of 17 pass the section lint, jsdom and Chromium checks at 1280 and 380 |
 | Whole-page review | six lenses: accuracy, cross-section consistency, a beginner alone, visual coherence, accessibility and performance, text load | 105 findings, 3 high |
 | Fix round | each section's fixer verified its findings first; an independent checker confirmed each fix | all 17 confirmed |
-| Final verification | a fresh accuracy pass on everything the fix round changed | 7 more, all fixed |
+| Final verification | three fresh verifiers on the assembled page: accuracy of everything the fix round changed; a beginner and a designer working every section at 1280 and 380; robustness and accessibility (three random click orders, Shift+U on and off, resizes mid-animation, keyboard, reduced motion, print) | 18 more (7, 8 and 3; none high), all fixed; no page errors, no duplicate ids, no stranded focus |
 
 The three high findings, all fixed: §03 had started its training switch off, which read as the
 consumer default (it is on, five years); the cold open showed "no ask" on two prompts that plainly
-ask (the prompt wording now matches the unchanged Session 1 checks, and D still leads 5 of 8); §02
+ask (the prompt wording now matches the unchanged Session 1 checks: D 5, C 4, A 3, B 1); §02
 and D6 disagreed about a value left in a prompt.
 
 ### What to look at on screen (click paths)

@@ -20,8 +20,9 @@ room works. What you will notice:
 - **Each section has one picture that moves because of a click**, and the words shrank around it:
   visible words after working every section fell 23%. The per-slot notes below are rewritten for
   the figures; the numbers you say aloud are in them.
-- **The cold open's scores changed by one.** B now asks with a question mark, so it passes the ask
-  check: A 3, B 2, C 4, D 5. D still leads and is still the one you could not paste in.
+- **The cold open's prompts changed slightly.** B now asks with a question mark about "someone",
+  and C opens with its request, so every check the page marks is really there or really missing:
+  A 3, B 1, C 4, D 5. D still leads and is still the one you could not paste in.
 - **§03 opens on the consumer default.** Pick A and sixty rust squares fill the calendar (five
   years); flip the switch off and one square is left (30 days).
 - **The Shift+U hint is hidden until you press Shift+U.** The shortcut works as before; switching
@@ -226,7 +227,7 @@ once. Click stops 1 to 4 if there is time; stop 4 lists all four questions, the 
 Poll 1, then click the most-picked card; its token lands on the track at its score. **Test 1 ·
 check all four**, then **Test 2 · could you paste it in?**: the track splits, and D, the most
 checks, sinks into "names a client". Say the scores off the comparison panel: **D 5, C 4, A 3,
-B 2**. The line to land: "Whether a prompt is good and whether it is allowed are separate tests."
+B 1**. The line to land: "Whether a prompt is good and whether it is allowed are separate tests."
 "Now try one of your own" appears after Test 2; do not run it on screen.
 
 ### s1 · §01, 6:22

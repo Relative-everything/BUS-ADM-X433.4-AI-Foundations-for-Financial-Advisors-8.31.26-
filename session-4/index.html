@@ -811,6 +811,8 @@ body:not(.reveal) #ovr{display:none}
 /* Phones: the case button moves to the bottom corner, smaller, off the reading line. */
 @media (max-width:640px){#caseBtn.casefab{top:auto;bottom:12px;right:10px;padding:6px 9px;font-size:9.5px;box-shadow:0 2px 8px rgba(0,0,0,.12)}}
 @media (max-width:560px){.slide .mpanel{padding:14px 16px}}
+/* phones: the Case facts button sits bottom right; keep a focused control clear of it */
+@media (max-width:640px){html{scroll-padding-bottom:64px}}
 /* ===== s0 ===== */
 /* s0 · retrieval bridge, then the zoom-out frame. Every selector is scoped to #s0; every new class is s0-. */
 #s0 .s0-frame{border-color:var(--on);border-width:2px}
@@ -1253,7 +1255,7 @@ body:not(.reveal) #ovr{display:none}
 #sRSP .pin{cursor:pointer}
 #sRSP .head{fill:var(--card);stroke:var(--ink);stroke-width:1.5;transition:fill .25s,stroke .25s}
 #sRSP .pin:hover .head{stroke-width:2.5}
-#sRSP .num{fill:var(--ink);font-weight:600;font-size:12.5px}
+#sRSP .num{fill:var(--ink);font-weight:600;font-size:14px}
 #sRSP .pin.you .head{fill:var(--gold);stroke:var(--gold)}
 #sRSP .pin.you .num{fill:var(--card)}
 #sRSP .pin.ok .head{fill:var(--on);stroke:var(--on)}
@@ -2362,8 +2364,8 @@ body:not(.reveal) #ovr{display:none}
 #s7 .sheet{fill:var(--card);stroke:var(--off);stroke-width:1.5;transition:opacity .25s}
 #s7 .sheet.off{opacity:0}
 #s7 .fold{fill:var(--off-bg);stroke:var(--line);stroke-width:1.5}
-#s7 .tabt{font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:700;letter-spacing:.06em;fill:var(--ink)}
-#s7 .nm{font-family:"Bricolage Grotesque",sans-serif;font-size:13px;font-weight:600;fill:var(--ink)}
+#s7 .tabt{font-family:"JetBrains Mono",monospace;font-size:14px;font-weight:700;letter-spacing:.06em;fill:var(--ink)}
+#s7 .nm{font-family:"Bricolage Grotesque",sans-serif;font-size:14px;font-weight:600;fill:var(--ink)}
 #s7 .plus{font-family:"Source Serif 4",serif;font-style:italic;font-size:15px;fill:var(--muted)}
 #s7 .rw{fill:var(--card);stroke:var(--line);stroke-width:1.5;transition:fill .2s,stroke .2s}
 #s7 .rw.on{stroke:var(--on)}
@@ -2784,6 +2786,7 @@ body:not(.reveal) #ovr{display:none}
   #s9 .s9pfoot{padding:10px 12px 18px}
   #s9 .s9gates{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+#s9{overflow-x:clip}
 </style></head>
 <body>
 <nav id="rail" aria-label="Sections"></nav>
@@ -3350,8 +3353,8 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       <div class="cfigcol">
         <div id="coldFig" class="cfig"></div>
         <div class="row ctests" role="group" aria-label="The two tests">
-          <button class="btn ghost mini" id="coldRank" type="button">Test 1 &middot; check all four</button>
-          <button class="btn mini" id="coldAll" type="button">Test 2 &middot; could you paste it in?</button>
+          <button class="btn mini" id="coldRank" type="button">Test 1 &middot; check all four</button>
+          <button class="btn ghost mini" id="coldAll" type="button">Test 2 &middot; could you paste it in?</button>
         </div>
       </div>
     </div>
@@ -3812,7 +3815,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="row"><button class="btn" id="mmLock" type="button">Lock my guess</button><button class="btn ghost" id="mmRun" type="button">Run 100 memos</button><button class="btn ghost" id="mmCheck" type="button" disabled>Check every answer</button></div>
     <p class="s6sim"><span class="sim">A simulation: made-up memos, answers drawn at random <span class="conf l" data-src="src-case">L</span></span></p>
     <div class="mmfig"><div id="mmGrid" class="mmgrid"></div><div id="mmSky"></div></div>
-    <p class="cap" id="mmKey"><span class="kit"><i class="ksw" data-sw="clean"></i>one memo, a line per answer</span><span class="kit"><i class="ksw" data-sw="hit"></i>carries a wrong answer</span><span class="kit"><i class="ksw" data-sw="caught"></i>&#10003; checked</span></p>
+    <p class="cap" id="mmKey"><span class="kit"><i class="ksw" data-sw="clean"></i>one memo, a line per answer</span><span class="kit"><i class="ksw" data-sw="hit"></i>carries a wrong answer</span><span class="kit"><i class="ksw" data-sw="caught"></i>&#10003; caught by checking</span></p>
     <div id="mmOut" class="mpanel" aria-live="polite"><span class="hd">Result</span><span class="nil">Drag to your guess, lock it, then run.</span></div>
     <div class="row" id="mmCtl" role="group" aria-label="Change the rate or the memo length" style="margin-top:12px"></div>
   </div>
@@ -4277,9 +4280,12 @@ function mkQuiz(host,items,scoreEl,gate,onDone){
 function copyText(txt,msg){
  function said(t){if(msg){msg.textContent=t;setTimeout(function(){msg.textContent=''},2500)}}
  function fallback(){
+  var prev=document.activeElement;
   try{var ta=document.createElement('textarea');ta.value=txt;ta.setAttribute('readonly','');
    ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();
-   var ok=document.execCommand('copy');document.body.removeChild(ta);said(ok?'Copied.':'Select the text and copy it by hand.')}
+   var ok=document.execCommand('copy');document.body.removeChild(ta);
+   if(prev&&prev.focus)try{prev.focus({preventScroll:true})}catch(_){}
+   said(ok?'Copied.':'Select the text and copy it by hand.')}
   catch(e){said('Select the text and copy it by hand.')}
  }
  try{
@@ -4447,13 +4453,13 @@ if(!host||!out||!zb||!dg)return;
 
 var STOPS=[
  {w:'In',q:'What may go in?',ex:'can a client’s name (the rust line) go in the prompt?',core:['gc','g3'],
-  links:[['sCold','Cold open','gc'],['s2','02 Client data','g3']],apx:[['sRSP','D5','ga5'],['sAnon','D6','ga6']]},
+  links:[['sCold','Cold open','gc'],['s2','§02 Client data','g3']],apx:[['sRSP','D5','ga5'],['sAnon','D6','ga6']]},
  {w:'Where',q:'Where does it go?',ex:'does a copy (the dashed card) stay on their server, and for how long?',core:['g4','g5'],
-  links:[['s3','03 Where it goes','g4'],['s4','04 Vetting a tool','g5']],apx:[]},
+  links:[['s3','§03 Where it goes','g4'],['s4','§04 Vetting a tool','g5']],apx:[]},
  {w:'Check',q:'How do you check what comes out?',ex:'who checks the answer before the client sees it?',core:['g6','g7'],
-  links:[['s5','05 Attacks','g6'],['s6','06 What checking costs','g7']],apx:[['sW1','D1','ga1'],['sW2','D2','ga2'],['sWS','D3','ga3']]},
+  links:[['s5','§05 Attacks','g6'],['s6','§06 What checking costs','g7']],apx:[['sW1','D1','ga1'],['sW2','D2','ga2'],['sWS','D3','ga3']]},
  {w:'Keep',q:'What record do you keep?',ex:'could an examiner re-check it later?',core:['g8','g9'],
-  links:[['s7','07 The record','g8'],['sCR','08 Handoff test','g9']],apx:[['sD','D4','ga4']]}
+  links:[['s7','§07 The record','g8'],['sCR','§08 Handoff test','g9']],apx:[['sD','D4','ga4']]}
 ];
 var ROWS=[['Predicts','rather than knows'],['Samples','same prompt, new answer'],['Reads your file','and can still be wrong']];
 var PILLS=[[36,64,72,'1 IN',48,97],[144,64,102,'2 WHERE',156,233],[279,64,102,'3 CHECK',291,368],[170,236,93,'4 KEEP',182,255]];
@@ -4622,7 +4628,7 @@ function render(){
  if(zt===0){out.className='mpanel';
   out.innerHTML='<span class="hd">Inside the model</span><span class="nil">Press Zoom out.</span>';return}
  if(step<0){out.className='mpanel';
-  out.innerHTML='<span class="hd">Around the model</span>One question at each stop; the rules you already follow (<a href="#s1">01</a>) apply at all four. ✓ marks a stop you have worked through.<br><span class="nil">Click stop 1.</span>';return}
+  out.innerHTML='<span class="hd">Around the model</span>One question at each stop; the rules you already follow (<a href="#s1">§01</a>) apply at all four. ✓ marks a stop you have worked through.<br><span class="nil">Click stop 1.</span>';return}
  var S=STOPS[step];
  var h='<span class="hd">Stop '+(step+1)+' · '+esc(S.w)+'</span><span class="s0q">'+esc(S.q)+'</span><span class="kw">For example: '+esc(S.ex)+'</span>';
  h+='<span class="s0map">Answered in: '+S.links.map(lk).join(' · ');
@@ -4724,7 +4730,7 @@ try{
 }catch(e){}
 var COLDP=[
  {l:'A',t:'write an email to my clients about the market drop this week',send:true,mark:'my clients',tag:'✓ no client named',why:'No client named. Its output is still a firm email: review it first (§01).'},
- {l:'B',t:'what is a grantor trust and why would a client want one?',send:true,mark:'a client',tag:'✓ a general question',why:'A general question.'},
+ {l:'B',t:'what is a grantor trust and why would someone want one?',send:true,mark:'someone',tag:'✓ a general question',why:'A general question.'},
  {l:'C',t:'Help me get ready for a review meeting next week with a retired couple who are nervous about running out of money. Tell me if you’re not sure about anything.',
   send:true,mark:'a retired couple',tag:'✓ could be thousands',why:'“A retired couple” fits thousands.'},
  {l:'D',t:PROMPT_D,send:false,tag:'✗ names the client',why:'Names the client. §02 takes it apart.'}
@@ -4847,7 +4853,9 @@ function place(i,delay){
   var cmn=cards[i].querySelector('.cmn');if(cmn)cmn.textContent=n+' of 8';
   cls(cards[i],'placed',true);
   placed[i]=1;cls(svg,'some',true);
-  if(placed.join('')==='1111'){ranked=true;cls(svg,'ranked',true)}
+  if(placed.join('')==='1111'){ranked=true;cls(svg,'ranked',true);
+    /* Test 1 done: Test 2 becomes the next thing to press */
+    var r1=$('coldRank'),r2=$('coldAll');if(r1)r1.classList.add('ghost');if(r2)r2.classList.remove('ghost')}
   aria();
 }
 
@@ -5142,8 +5150,10 @@ function blockPaint(i){
  var B=blk[i],j=placed[i],tj=laneOf(RULES[i].k),ok=(j===tj),rv=!!rev[i];
  var g=B.g,k=RULES[i].k;
  tog(g,'s1old',k==='old');tog(g,'s1gd',k==='guide');tog(g,'s1ai',k==='ai');
- tog(g,'s1ok',!rv&&ok);tog(g,'s1bad',!rv&&!ok);tog(g,'s1rev',rv);
- var gl=rv?'·':(ok?'✓':'✗');
+ /* in the binds view a tile says whether it binds you; placement scoring stays on the list */
+ var judged=!rv&&!filt;
+ tog(g,'s1ok',judged&&ok);tog(g,'s1bad',judged&&!ok);tog(g,'s1rev',rv&&!filt);
+ var gl=filt?(k==='old'?'✓':'·'):(rv?'·':(ok?'✓':'✗'));
  B.gly.textContent=gl;
  B.t1c.textContent=gl+' '+(i+1)+' '+RULES[i].c;
  B.t2.textContent=(!rv&&!ok&&!filt)?'goes in '+(tj+1):RULES[i].h;
@@ -5372,6 +5382,7 @@ if(BIND)BIND.onclick=function(){
  filt=!filt;if(!filt)wasOpen=true;
  showKey();
  BIND.textContent=filt?'Show all nine again':'What binds you?';
+ for(var bi=0;bi<N;bi++)if(placed[bi]!==undefined||rev[bi])blockPaint(bi);
  applyFilter();readout();
 };
 
@@ -6172,17 +6183,17 @@ try{
   }
   zb.forEach(function(b,i){b.onclick=function(){setZoom(i+1)}});
 
-  function showCard(i){
+  function showCard(i,last){
     mode='card';
     zb.forEach(function(b){b.classList.remove('act');b.setAttribute('aria-pressed','false')});
     var c=CARDS[i],j;
-    if(i===7)line(STOPS[1].slots,['e1','e1','e1','e1'],'Card 8: the real notes');
+    if(i===7)line(STOPS[1].slots,['e1','e1','e1','e1'],(last?'Last stamped: card 8':'Card 8')+', the real notes:');
     else{
       /* a disguise is shown among the other disguises (where it gives her away, as §02's
          meter agrees); a replacement is shown in an otherwise clean prompt */
       var dz=c.k==='still',base=dz?STOPS[2]:STOPS[3],sl=base.slots.slice(),cl=[];sl[c.s]=c.sl;
       for(j=0;j<4;j++)cl.push(j===c.s?((dz?'e2':'e3')+' cur'):(dz?'e2 dim':'e3 dim'));
-      line(sl,cl,'Card '+(i+1)+(dz?', among the other disguises:':', in an otherwise clean prompt:'));
+      line(sl,cl,(last?'Last stamped: card ':'Card ')+(i+1)+(dz?', among the other disguises:':', in an otherwise clean prompt:'));
     }
     halo.setAttribute('cx',TP[i][0]);halo.setAttribute('cy',TP[i][1]);halo.classList.add('on');
     paint(c.st);
@@ -6244,7 +6255,7 @@ try{
     ch.setAttribute('aria-label',(c.b?'Card '+(i+1)+': '+c.b+' to '+c.a:'Card '+(i+1)+': '+c.a)+'. Stamped, '+(ok?'right':'wrong')+'. Click to see it on the map.');
     toks[i].classList.add('on');
     if(i<7)REGS[c.k==='still'?'r':'t'].classList.add('seen');
-    showCard(i);
+    showCard(i,true);
     cur=next(i);renderDesk();syncChips();
     var all=nPlaced()===CARDS.length;
     cardSay(i);
@@ -8702,7 +8713,7 @@ var SL=['PROMPT AS SENT','MODEL AND SETTING','SOURCE, QUOTED','WHO DECIDED, WHEN
 var ST={on:'ON FILE',part:'PARTIAL',miss:'MISSING',nf:'NOT FOUND'};
 var SW={on:'on file',part:'partial',miss:'missing',nf:'not found'};
 var REC=[
- {n:'CRM note',k:'no',s:['miss','miss','miss','part'],v:['(nothing)','(nothing)','(nothing)','CRM paste time only'],stop:'Holes in all four slots.',
+ {n:'CRM note',k:'no',s:['miss','miss','miss','part'],v:['(nothing)','(nothing)','(nothing)','CRM paste time only'],stop:'Three slots empty; slot 4 holds only a paste time.',
   w:'Only the answer, pasted in: the timestamp says when someone pasted, not what produced it.'},
  {n:'Signed memo',k:'no',s:['on','part','on','on'],v:['full prompt text','“Claude”','clause quoted, with page','named and dated'],stop:'Hole at slot 2: which Claude?',
   w:'“Claude” is a family of models: nobody can re-run the one you used.'},
