@@ -10,6 +10,82 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-25 · Session 4 made graphic: every section is now a figure you work
+
+Branch `claude/amazing-curie-xz0s73`, after PR #37 (the text rebuild) merged. The instructor asked
+for Session 4 to be rebuilt in the mode of the most graphic, least text-based sections of Sessions
+1 to 3: "creative interactive memorable experiences ... vs mainly text", erring towards more
+interaction. Change folder `docs/changes/2026-09-25-session-4-rebuild/` (ledger S4R-024 to
+S4R-030, `checks.mjs` now 36 assertions). Minutes, sections and tiers are unchanged: core 11 and
+67, appendix 6 and 83, 150 in all.
+
+**What moved, measured.** A graphic-richness audit scored the text rebuild 2.6 of 10 with no SVG
+figure in any lesson section; 16 of 17 sections now carry a labelled SVG figure and §09's is an
+HTML policy page. Visible words after working every interaction fell from 9,810 to 7,548 (−23%);
+at load the page carries 6,367 against 6,440, now around a figure in every section.
+
+### Session 4 · the figures, section by section
+
+- **§00.** Zoom out from the three sessions inside the model to the four stops around it (in,
+  where, check, keep); the prompt card walks the stops once. A wrong recall answer now shows the
+  right one.
+- **Cold open.** Four prompts fall onto one "checks passed" track; Test 2 splits it into two lanes
+  and D, the most checks, sinks into "names a client". Every missing check on a card is really
+  missing (D 5 of 8, C 4, A 3, B 1).
+- **§01.** Nine items stack under three lanes; "What binds you?" drops the four AI-named items
+  through the floor. No US securities rule was written for AI.
+- **§02.** Clean Prompt D and watch a crowd of dots: with the name and company gone, the town
+  column and the trade row still cross on one dot.
+- **D5.** Pick the moment the firm became aware; a 30-day bar unrolls against the defensible one,
+  and the difference is hatched ("six days late").
+- **D6.** A zoom dial from exact to deleted, and a stamp desk: a disguise still gives her away, a
+  replacement hides her and still helps, and a cleaned prompt goes only into a vetted tool.
+- **§03.** One map, the firm on one side and the vendor on the other: on a consumer plan the
+  training switch starts on, and the retention calendar is a wall of 60 months; off, one.
+- **§04.** A vendor's safe with six locks; what goes in sets which must shut, only an answer on
+  paper shuts one, and every open lock writes a line of the email to the vendor. The vendor's 72
+  hours run from becoming aware of a breach.
+- **§05.** An agent trace through an inbox, an x-ray that shows the white-on-white line, and a
+  video call where the only safe move is the number already on file.
+- **D1.** A keyed knockout bracket picks each word; then be the detector on a 24-word email and
+  see the same words read differently under the wrong key.
+- **D2.** Where a mark can hide (many ways to say it) and where it cannot (one right answer); then
+  one paragraph through five histories, with "no mark found" proving nothing.
+- **§06.** Lock a guess, run 100 memos, watch a skyline climb against it; then a tower of your own
+  minutes, drafting, checking and the record, against the time without AI.
+- **D3.** Two 2023 claims whose words stay fixed while the tool under them changes.
+- **§07.** Six records through an examiner's scanner: four slots, ON FILE or a hole; record 6 is
+  complete and its case does not exist.
+- **§08.** Two runners on one package: you, cold, stall at the first gap; the builder, with
+  memory, glides through.
+- **D4.** A balance loaded with your §06 minutes: vote, read both cases, add the complication
+  (setup shared across deliverables), vote again.
+- **§09.** A policy page that assembles from your picks and is stamped clause by clause: checkable,
+  or too vague to check.
+
+### Page-wide
+
+- One figure kit (SVG built once and updated in place, so transitions play), one numbered badge,
+  one stamp, one constructed-material label that no longer looks like the time chip.
+- Answer keys in the reading face; the Shift+U hint shows only while the override is on, and
+  switching it off keeps the keys a learner earned.
+- Quiz state for screen readers; focus handed on after controls that disable themselves;
+  reduced motion jumps to end states.
+- The Case facts button sits in the bottom corner on phones and is hidden in print; the mono face
+  loads the weights the stamps use.
+
+### How it was checked
+
+Six-lens adversarial review of the assembled page (accuracy, cross-section consistency, a
+beginner alone, visual coherence, accessibility and performance, text load): 105 findings, each
+verified by the section's fixer before any change and confirmed by an independent checker. Three
+final verifiers (accuracy, a learner and a designer, robustness and accessibility) found 18 more,
+none high; all fixed. Every repo gate is green except the known
+red set (the certificate error in `verify-browser`, V2 footer links, the V6 band, `#pnum`, two
+unfenced fragments).
+
+---
+
 ## 2026-09-25 · Session 4 rebuilt: short bullets, an exercise in every section, and every exercise runs without the case file
 
 Branch `claude/amazing-curie-xz0s73`, from `main` after PR #36, three days before the session.

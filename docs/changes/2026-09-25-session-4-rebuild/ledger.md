@@ -40,3 +40,27 @@ rows below say what changed per section, and `checks.mjs` proves each one.
 | S4R-021 | `scripts/editorial-baseline.json`, DW-124 | A9 for session-4 re-recorded 1 / 82 / 83 to 1 / 2 / 3; DW-005, DW-021 and DW-117 annotated | A.2 landing procedure | T7 9 of 9 | done |
 | S4R-022 | `instructor-notes/session-4.md` | Run sheet rebuilt: objective, clock, checkpoints, correction, five polls, three gates, relay, closing check, drop order, per-slot notes, verify list | FP2 task 7 | sections present | done |
 | S4R-023 | `CHANGELOG.md`, `changelog/`, derived registers | Changelog entry and page; bibliography, data pull, queue, unsourced register, case inventory, profile regenerated | Process | every `--check` current | done |
+
+## The graphic rebuild, same day (S4R-024 onward)
+
+The instructor's second ask (typing corrected; verbatim in `notes-verbatim.md`): "analyze the most graphic and interactive, least text based
+sections of the other session - try to recreate that type of sections in session 4 as much as
+possible - creative interactive memorable experiences in the session vs mainly text, go on the
+more interactive more creative end and end with a polished interactive webpage for education".
+PR #37 had already merged the text rebuild (S4R-001 to S4R-023), so these rows ride a new pull
+request from the same branch.
+
+Baseline for these rows: Session 4 averaged 2.6 of 10 on a graphic-richness audit and carried no
+SVG figure in any lesson section; visible words after working every interaction, 9,810 (Playwright
+`innerText`, the regression click path, 1280 wide).
+
+| Id | Anchor | What changed | Why (rule, note or finding) | Test | Status |
+|---|---|---|---|---|---|
+| S4R-024 | every section | Each section rebuilt around one graphic, interactive figure, designed from two concepts harvested from the twelve most graphic widgets of Sessions 0.1 to 3 (anchors by file and line), then critiqued, built, and reviewed on its own. 16 of 17 sections carry a labelled SVG figure; §09's figure is an HTML policy page that stamps each clause | The ask above; R11 (every implementation traces to a harvest anchor) | `checks.mjs` S4R-024; all 17 gates flip from their own figures | done |
+| S4R-025 | shared script | One small figure kit (`sv`, `svt`, `svgRoot`, `reduced`, `tween`) that builds SVG nodes once and updates them in place, so transitions play; `S4STATE` carries the §06 minutes to D4's balance; the quiz exposes the locked answer (`aria-pressed`) and announces its feedback; switching the override off closes only what it opened | Session 2's innerHTML rebuilds are why its lifts never animate; review lens: accessibility | S4R-025, S4R-027 | done |
+| S4R-026 | shared CSS | One constructed-material label (outlined, so it no longer looks like the rust time chip), one numbered badge, one stamp; answer keys in the reading face; the Shift+U hint shows only while the override is on; the Case facts button moves to the bottom corner on phones and is hidden in print; sorter buckets at full strength (the carried Session 3 stylesheet set them to 45% and never reset it); the mono face loads 600 and 700 | Review lens: visual coherence (17 authors' worth of badge, stamp and label variants) | fonts request and quiz checks, S4R-026 | done |
+| S4R-027 | whole page | Six-lens adversarial review of the assembled page: 105 findings. Each section's fixer verified its findings before changing anything; an independent checker then confirmed each fix and hunted regressions. The three high ones: §03 opens on the consumer training default again (on, five years); the cold open's prompts are worded so every missing check is really missing (D still leads, 5 of 8); §02 and D6 agree about a value left in a prompt | Review, 2026-09-25 | `checksec`, `testsec` ok on all 17; `checks.mjs` 36 of 36; three final verifiers found 18 more (none high), all fixed | done |
+| S4R-028 | whole page | Visible words after working every interaction: 9,810 to 7,548 (−23%); the heaviest answer keys cut hardest (§07 −64%, §01 −50%, D2 −35%). At load the page carries 6,367 words against 6,440, with a figure in every section | Notes: "a visual aid, not a book" (13+ times) | Playwright count, both pages | done |
+| S4R-029 | `SOURCES.md` | Wolfram's Session 4 usage line names the one-pass description D3 now paraphrases | Review lens: accuracy | `verify-sources --check` | done |
+| S4R-030 | run sheet, changelog, handback, generated registers | Run sheet's click paths and numbers rewritten for the figures; changelog entry; handback addendum; bibliography, data pull, queue, case inventory and profile regenerated | Process | every `--check` current | done |
+

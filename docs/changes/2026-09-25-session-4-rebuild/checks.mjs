@@ -83,5 +83,18 @@ click($('#tsRun')); click($('#tsKeyB')); click($('#tsOff'));
 say($$('[data-gate]').filter((g) => !g.classList.contains('done')).length === 0, 'GATES', 'not flipped: ' + ($$('[data-gate]').filter((g) => !g.classList.contains('done')).map((g) => g.dataset.gate).join(' ') || 'none'));
 say($$('[data-gate]').every((g) => g.classList.contains('done')), 'ALL', `all ${$$('[data-gate]').length} work-along gates flipped by their interactions`);
 say($$('[data-task]').length === 17 && new Set($$('[data-comp]').map((e) => e.dataset.comp)).size === 11, 'V6', '17 interaction roots, 11 component types');
+/* ---- the graphic rebuild (S4R-024 onward) ---- */
+{ const secs = $$('section.slide').filter((x) => x.id && x.id !== 'apx');
+  const withFig = secs.filter((x) => [...x.querySelectorAll('svg')].some((g) => g.getAttribute('aria-label') || g.getAttribute('role') === 'group'));
+  say(secs.length === 17 && withFig.length >= 16, 'S4R-024', `every section is a figure: ${withFig.length} of 17 carry a labelled SVG (s9's policy page is HTML)`); }
+say([...$$('#bridgeQuiz .qitem')].every((q) => q.querySelectorAll('button[aria-pressed="true"]').length === 1) && [...$$('#bridgeQuiz .qfb')].every((f) => f.getAttribute('aria-live') === 'polite'),
+  'S4R-025', 'the recall quiz tells a screen reader which answer locked, and announces its feedback');
+say(!/claude-(opus|sonnet|haiku|fable)-\d/i.test(lessonText) && /JetBrains\+Mono:wght@400;500;600;700/.test(html),
+  'S4R-026', 'no model identifier typed as lesson content; the mono face loads the weights the stamps use');
+{ click($('#s1Binds')); const key = $('#ruleKey'); const was = key && key.style.display === 'block';
+  const U = () => d.body.dispatchEvent(new w.KeyboardEvent('keydown', { key: 'U', shiftKey: true, bubbles: true }));
+  U(); U();
+  say(was && key.style.display === 'block', 'S4R-027', 'switching the override off keeps an answer key the learner earned'); }
+
 console.log(`\n${fails ? fails + ' failed' : '0 failed'}`);
 process.exit(fails ? 1 : 0);
