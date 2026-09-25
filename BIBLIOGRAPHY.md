@@ -5,11 +5,11 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**63 works, 201 references across 5 lessons.** 49 are
-cited by at least one claim; 14 are listed by a lesson without carrying a
+**67 works, 212 references across 5 lessons.** 48 are
+cited by at least one claim; 19 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
-**54 records carry at least one field this repository could not verify, and
+**57 records carry at least one field this repository could not verify, and
 every one of them is printed below as `[UNVERIFIED, needs source]` rather than omitted.** The
 rendered footer in a lesson omits an unknown field, because a footer in which
 thirty entries shout about a missing publisher helps nobody. This file is where a
@@ -72,8 +72,8 @@ What the context window contains, how turns accumulate, that all of it is counte
 | Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S2 `#s3` ×2 |
+| **Total references** | **3** |
+| Cited in | S2 `#s3` ×2 · S4 `#sWS` |
 
 The temperature parameter's status on current models and the vendor's statement that a setting of zero is not fully deterministic. The page gives the fact, not the mechanism.
 
@@ -98,6 +98,25 @@ Top-20-chunk retrieval failure rates — baseline 5.7%, contextual embeddings 3.
 
 ### Anthropic
 
+**How Claude marks AI-generated content**  
+`src-claude-marks` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Help Center, support.claude.com article 16266773 |
+| Link | <https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content> |
+| Published | *not applicable* |
+| Last retrieved | 2026-09-25 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **8** |
+| Cited in | S4 `#s1` · S4 `#sW1` ×4 · S4 `#sW2` ×3 |
+
+Supported Claude models launched on or after 2 August 2026 mark generated text with an imperceptible watermark, and earlier models are being added with all covered by 2 December 2026. Marks apply across the API, the Claude apps, Claude Code and wherever Claude is offered. Supported files Claude generates, such as PNG and JPEG images, carry signed C2PA provenance metadata. Detection is available only to organisations eligible under EU law, such as regulators, law enforcement, media, fact-checkers, researchers and educational organisations. A mark may persist through copying and some editing; heavy paraphrase or translation can make it undetectable. A detected mark signals that the content may have been processed by Claude and is not fully conclusive; the lack of a detected mark does not mean the content was not AI-generated or processed. The page, as read, describes no account or user identifier in the mark; that is a reading of an absence and is chipped M wherever it is used.
+
+### Anthropic
+
 **Privacy Center and Commercial Terms**  
 `src-anthropic-terms` · evidence · **moving target**
 
@@ -110,8 +129,8 @@ Top-20-chunk retrieval failure rates — baseline 5.7%, contextual embeddings 3.
 | Last retrieved | 2026-08-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S4 `#s3` · S4 `#s6` |
+| **Total references** | **3** |
+| Cited in | S4 `#s3` ×3 |
 
 Consumer training defaults since 8 October 2025, five-year and 30-day retention, the commercial-side no-training default, Zero Data Retention eligibility, and Claude Code's local 30-day transcript retention. Every one of these is a term a vendor can change without notice.
 
@@ -186,8 +205,8 @@ The Customize sidebar and its three tabs, install and enable semantics, director
 | Last retrieved | 2026-08-20 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **8** |
-| Cited in | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3` ×5 · S0.1 `#s9` |
+| **Total references** | **9** |
+| Cited in | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3` ×5 · S0.1 `#s9` · S4 `#sWS` |
 
 The five effort levels, which models carry the effort selector, extended thinking not being disableable in Claude on Opus 5, xhigh requiring Opus 4.7 or newer, the rule that a change applies starting with Claude's next response, and admin role gating of models and effort levels.
 
@@ -376,10 +395,48 @@ The nine sampler controls and their interaction. Behaviour reimplemented in Appe
 | Last retrieved | 2026-08-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **13** |
-| Cited in | S1 `#s10` ×2 · S2 `#s5` ×3 · S4 `#s3` ×5 · S4 `#s7` · S4 `#sWS` ×2 |
+| **Total references** | **6** |
+| Cited in | S1 `#s10` ×2 · S2 `#s5` ×3 · S4 `#sWS` |
 
 A live leaderboard of capability index scores and cost per index task. Every figure drawn from it is a moving target and none of them is stable between terms.
+
+### CFP Board
+
+**Generative AI Ethics Guide: A Checklist for Upholding the Code and Standards**  
+`src-cfp-genai` · evidence
+
+| | |
+|---|---|
+| Author | CFP Board |
+| Publisher | Certified Financial Planner Board of Standards, Inc. |
+| Link | <https://www.cfp.net/ethics/compliance-resources/2025/02/generative-ai-ethics-guide> |
+| Published | 2025-02 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **3** |
+| Cited in | S4 `#s2` ×2 · S4 `#sAnon` |
+
+A checklist for CFP professionals using generative AI: safeguard confidentiality, including using pseudonyms and anonymisation to remove confidential information before uploading; verify the accuracy of output; confirm the platform stores output in compliance with recordkeeping rules; confirm the vendor commits to notice of data breaches; and keep professional judgment with the professional.
+
+### CFP Board
+
+**Code of Ethics and Standards of Conduct**  
+`src-cfp-code` · evidence
+
+| | |
+|---|---|
+| Author | CFP Board |
+| Publisher | Certified Financial Planner Board of Standards, Inc. |
+| Link | **[UNVERIFIED, needs source]** |
+| Published | 2019 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S4 `#s4` ×2 |
+
+Standard A.14, Duties When Selecting, Using, or Recommending Technology: a CFP professional must exercise reasonable care and judgment when selecting, using or recommending technology in providing professional services. Standard A.9, Confidentiality and Privacy.
 
 ### Charlotin, D.
 
@@ -433,29 +490,10 @@ General-purpose models over more than 800,000 verifiable legal questions, 58-88%
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **3** |
-| Cited in | S4 `#s1` · S4 `#sW1` ×2 |
+| **Total references** | **2** |
+| Cited in | S4 `#s1` ×2 |
 
 NARROW, AND IT WAS READ TOO WIDELY. The speech states that the core questions remain open — whether an AI tool is marketing, advice or something requiring registration; who is responsible when output is wrong; how it is supervised — and asks for comment rather than announcing an answer. It says NOTHING about watermarking, SynthID, benchmark scores or model token counts, and it was chipped to four such claims before Phase 3 Part 1.
-
-### Deloitte Center for Financial Services
-
-**Generative-AI fraud projection**  
-`src-deloitte` · evidence
-
-| | |
-|---|---|
-| Author | Deloitte Center for Financial Services |
-| Publisher | Deloitte |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | M |
-| **Total references** | **1** |
-| Cited in | S4 `#s5` |
-
-US GenAI-enabled fraud losses projected from $12.3bn (2023) to $40bn (2027). A PROJECTION, NOT A MEASUREMENT, and the page says so.
 
 ### Financial Industry Regulatory Authority
 
@@ -471,8 +509,8 @@ US GenAI-enabled fraud losses projected from $12.3bn (2023) to $40bn (2027). A P
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S1 `#s14` ×2 |
+| **Total references** | **4** |
+| Cited in | S1 `#s14` ×2 · S4 `#s1` ×2 |
 
 FINRA's position that existing rules reach generative AI and that supervision is not suspended by the technology. Creates no new obligations.
 
@@ -490,8 +528,8 @@ FINRA's position that existing rules reach generative AI and that supervision is
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **1** |
-| Cited in | S4 `#s1` |
+| **Total references** | **4** |
+| Cited in | S4 `#s1` ×2 · S4 `#s7` ×2 |
 
 FINRA's first standalone generative-AI section: enterprise-level supervisory processes, controls for hallucinations, bias, cybersecurity and threat-actor use, ongoing human monitoring, and novel oversight for agents that can act or transact.
 
@@ -509,8 +547,8 @@ FINRA's first standalone generative-AI section: enterprise-level supervisory pro
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **1** |
-| Cited in | S4 `#s5` |
+| **Total references** | **2** |
+| Cited in | S4 `#s5` ×2 |
 
 A self-regulatory organisation publishing a standalone primer on an attack technique, which is the evidence for the claim that prompt injection has left the research literature.
 
@@ -528,29 +566,10 @@ A self-regulatory organisation publishing a standalone primer on an attack techn
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **1** |
-| Cited in | S4 `#s5` |
+| **Total references** | **2** |
+| Cited in | S4 `#s5` ×2 |
 
 Approximately $25 million across 15 transfers. The one deepfake figure the course endorses putting in front of a client.
-
-### Gartner
-
-**Survey of 302 security leaders**  
-`src-gartner` · evidence
-
-| | |
-|---|---|
-| Author | Gartner |
-| Publisher | Gartner |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | 2025 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | M |
-| **Total references** | **1** |
-| Cited in | S4 `#s5` |
-
-62% of organisations experiencing at least one deepfake attack in twelve months, 37% on a live video call. A single vendor survey, n = 302.
 
 ### Google
 
@@ -585,29 +604,29 @@ The Persona-Task-Context-Format framework that session-2 §03 teaches and §04 s
 | Last retrieved | 2026-08-25 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **1** |
-| Cited in | S4 `#sW2` |
+| **Total references** | **4** |
+| Cited in | S4 `#sW1` ×2 · S4 `#sW2` ×2 |
 
 TEXT WATERMARKING ONLY. The boundary is load-bearing, because the sibling record `src-synthid` is cited for image, video and audio claims that this page does not reach. What it substantiates, and nothing outside this list: detection is probabilistic and returns watermarked, not watermarked, or uncertain, against two tunable thresholds; the signal survives cropping, changing a few words, and mild paraphrase; detector confidence is greatly reduced by thorough rewriting or by translation; watermarking is less effective on factual responses, because there is less opportunity to augment generation without decreasing accuracy; detector exposure is a three-way deployer choice between fully-private, semi-private and public; the scheme is not designed to stop motivated adversaries; and the underlying technical description is Dathathri et al., Scalable watermarking for identifying large language model outputs, Nature 634:818-823 (2024), https://www.nature.com/articles/s41586-024-08025-4. IT SUBSTANTIATES NO ADOPTION FIGURE AND NO MARKET-SHARE CLAIM, which is the fact that keeps session-4's scale paragraph open rather than closing it.
 
-### Google DeepMind
+### Iskowitz, C.
 
-**SynthID**  
-`src-synthid` · evidence · **moving target**
+**AI notetakers and compliance in wealth management: What firms need to know**  
+`src-iskowitz` · assigned_reading
 
 | | |
 |---|---|
-| Author | Google DeepMind |
-| Publisher | Google DeepMind |
+| Author | Iskowitz, C. |
+| Publisher | WealthTech Today |
 | Link | **[UNVERIFIED, needs source]** |
-| Published | **[UNVERIFIED, needs source]** |
+| Published | 2025-07-29 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **10** |
-| Cited in | S4 `#sW1` ×8 · S4 `#sW2` ×2 |
+| **Total references** | **2** |
+| Cited in | S3 `#sPol` · S3 `#s16` |
 
-Tournament sampling in text, perturbation in image and video, and the frequency-domain approach in audio. Adoption is a vendor decision and changes; the mechanism does not.
+The compliance framing around note-takers: that an AI summary is a firm record however it is stored, the three things examiners are reported to ask for (written AI-use policies, review of output before it becomes the record, vendor risk assessment), the human-review and edit-trail practices, the retention and high-stakes-meeting rules, and the ACA Group 2024 figure of 12%. A trade publication relaying the SEC and FINRA positions rather than quoting rule text, which is why the chip is M and why session-3 quotes no rule text from it.
 
 ### Kalai, A. T., Nachum, O., Vempala, S. S., & Zhang, E.
 
@@ -699,8 +718,8 @@ Characterised on the page ONLY by its title claim of self-reported reductions in
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **10** |
-| Cited in | S2 `#s10` ×3 · S3 `#s6` ×2 · S3 `#s15` · S3 `#s16` ×2 · S4 `#s7` · S4 `#s9` |
+| **Total references** | **11** |
+| Cited in | S2 `#s10` ×3 · S3 `#s6` ×2 · S3 `#s15` · S3 `#s16` ×2 · S4 `#s6` ×3 |
 
 Over 200 preregistered legal queries, expert hand-scored, against Lexis+ AI, Westlaw AI-Assisted Research and GPT-4. Tools tested May 2024 — a historical fixture. The measured rates belong to the tools as they were on that date and must never be "updated".
 
@@ -722,25 +741,6 @@ Over 200 preregistered legal queries, expert hand-scored, against Lexis+ AI, Wes
 | Cited in | S2 `#s5` |
 
 Per-token input and output rates for the GPT-5.6 Sol, Terra and Luna tiers, as carried in session-2's MODELS array.
-
-### OWASP
-
-**Top 10 for LLM Applications and Top 10 for Agentic Applications**  
-`src-owasp` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | OWASP |
-| Publisher | OWASP |
-| Link | <https://owasp.org/www-project-top-10-for-large-language-model-applications/> |
-| Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **1** |
-| Cited in | S4 `#s5` |
-
-The LLM01 ranking for prompt injection and the mapping into six of ten agentic categories. The ranking is revised between editions, so the position is a moving target even though the finding is not.
 
 ### Rohrer, D., Dedrick, R. F., & Stershic, S.
 
@@ -780,25 +780,6 @@ Cited ONLY for the design claim that interleaving categories during classificati
 
 The two-party consent exposure behind the recording-consent section: the California private right of action and the federal wiretap statute.
 
-### Surfshark
-
-**2026 deepfake-loss analysis**  
-`src-surfshark` · evidence
-
-| | |
-|---|---|
-| Author | Surfshark |
-| Publisher | Surfshark, as reported by two outlets |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | 2026 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | L |
-| **Total references** | **1** |
-| Cited in | S4 `#s5` |
-
-Two outlets citing the same analysis report $2.19bn and $3.7bn. Carried on the page as an unresolved disagreement rather than a resolved figure, which is why its confidence is L.
-
 ### T3 / Inside Information
 
 **Software Survey 2026**  
@@ -832,8 +813,8 @@ n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using 
 | Last retrieved | *not applicable* |
 | Last verified by the instructor | *not applicable* |
 | Confidence | L |
-| **Total references** | **26** |
-| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` ×2 · S4 `#s7` ×2 · S4 `#sWS` |
+| **Total references** | **28** |
+| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s7` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s2` · S4 `#sRSP` · S4 `#sAnon` · S4 `#s3` · S4 `#s4` · S4 `#s5` · S4 `#sW2` · S4 `#s7` · S4 `#sCR` · S4 `#sD` · S4 `#s9` |
 
 Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
 
@@ -851,10 +832,10 @@ Entirely synthetic. Every figure, document and family fact is invented, includin
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **9** |
-| Cited in | S4 `#s2` ×7 · S4 `#sRSP` · S4 `#s7` |
+| **Total references** | **10** |
+| Cited in | S3 `#sPol` ×2 · S4 `#s2` ×4 · S4 `#sRSP` ×2 · S4 `#s4` ×2 |
 
-The four obligations — written incident response program, customer notification no later than 30 days after the firm becomes aware, service provider oversight, recordkeeping — the definition and scope limits of nonpublic personal information, and the compliance dates 3 December 2025 and 3 June 2026.
+The four obligations of the 2024 amendments: a written incident response program; customer notification no later than 30 days after the firm becomes aware; service provider oversight, including the service provider's notice to the firm within 72 hours of becoming aware of a breach; and recordkeeping. The definition and scope limits of nonpublic personal information at 17 CFR 248.3, including the fact that an individual is a customer and information disclosed in a manner indicating the individual is a customer. The compliance dates 3 December 2025 and 3 June 2026.
 
 ### U.S. Securities and Exchange Commission
 
@@ -870,10 +851,29 @@ The four obligations — written incident response program, customer notificatio
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **2** |
-| Cited in | S1 `#s1` ×2 |
+| **Total references** | **4** |
+| Cited in | S1 `#s1` ×2 · S4 `#s1` ×2 |
 
 The two AI-washing settlements and their penalty amounts. Penalty figures are reported at two values across sources; the page states the majority figure.
+
+### U.S. Securities and Exchange Commission
+
+**Withdrawal of proposed regulatory actions, including Conflicts of Interest Associated with the Use of Predictive Data Analytics (S7-12-23)**  
+`src-sec-withdraw` · evidence
+
+| | |
+|---|---|
+| Author | U.S. Securities and Exchange Commission |
+| Publisher | SEC |
+| Link | <https://www.sec.gov/rules-regulations/2025/06/s7-12-23> |
+| Published | 2025-06-12 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S4 `#s1` |
+
+That the SEC withdrew its 2023 proposal on conflicts of interest from predictive data analytics used by broker-dealers and investment advisers, on 12 June 2025, together with thirteen other proposals; any future rule would need a new proposal.
 
 ### U.S. Securities and Exchange Commission, Division of Examinations
 
@@ -889,8 +889,8 @@ The two AI-washing settlements and their penalty amounts. Penalty figures are re
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **1** |
-| Cited in | S4 `#s1` |
+| **Total references** | **2** |
+| Cited in | S4 `#s1` ×2 |
 
 Accuracy of AI representations, training and security controls, and Regulation S-P as a named examination focus.
 
@@ -908,29 +908,10 @@ Accuracy of AI representations, training and security controls, and Regulation S
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **2026-08-23** |
 | Confidence | H |
-| **Total references** | **19** |
-| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s1` ×2 · S2 `#s2` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s7` ×2 · S4 `#sWS` · S4 `#s8` |
+| **Total references** | **17** |
+| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s1` ×2 · S2 `#s2` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s7` · S4 `#sWS` |
 
 The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D3 is about exactly that.
-
-### Zhao, X., Zhang, K., Su, Z., Vasan, S., Grishchenko, I., Kruegel, C., Vigna, G., Wang, Y.-X., & Li, L.
-
-**Invisible image watermarks are provably removable using generative AI**  
-`src-zhao` · evidence
-
-| | |
-|---|---|
-| Author | Zhao, X., Zhang, K., Su, Z., Vasan, S., Grishchenko, I., Kruegel, C., Vigna, G., Wang, Y.-X., & Li, L. |
-| Publisher | Advances in Neural Information Processing Systems (NeurIPS 2024) |
-| Link | <https://arxiv.org/abs/2306.01953> |
-| Published | 2024 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **1** |
-| Cited in | S4 `#sW2` |
-
-The regeneration attack only: add random noise to destroy the embedded signal, then reconstruct the image with a denoiser or a pre-trained diffusion model. Formal proofs plus evaluation against pixel-level schemes; the removal guarantee is proved for watermarks that perturb the image within a bounded distance. It does NOT reach latent- or semantic-binding schemes, and it is NOT the source of the 2026 mutual-information result cited in the same sentence — that is arXiv 2602.20680, which has no key here and was not read.
 
 ### Zheng, M., Pei, J., Logeswaran, L., Lee, M., & Jurgens, D.
 
@@ -965,24 +946,21 @@ source that does not belong in that lesson's footer.
 | Source | Kind | Listed by | Exempt? |
 |---|---|---|---|
 | `src-anthropic-fluency` | background | S2 | yes, by kind |
+| `src-deloitte` | evidence |  | **NO — finding** |
+| `src-gartner` | evidence |  | **NO — finding** |
+| `src-synthid` | evidence |  | **NO — finding** |
 | `src-hallowell` | fabricated | S4 | yes, by kind |
 | `src-rr8513` | authority | S2 | yes, by kind |
 | `src-rr200464` | authority | S2 | yes, by kind |
-| `src-iskowitz` | background | S3 | yes, by kind |
 | `src-kessler` | fabricated | S2 | yes, by kind |
 | `src-kitces-advisortech` | background |  | yes, by kind |
 | `src-laplace` | background | S2 | yes, by kind |
 | `src-cve` | background | S4 | yes, by kind |
 | `src-morningstar` | background | S2 | yes, by kind |
+| `src-owasp` | evidence |  | **NO — finding** |
+| `src-surfshark` | evidence |  | **NO — finding** |
 | `src-irc` | authority | S2 | yes, by kind |
 | `src-woelbing` | authority | S2 | yes, by kind |
 | `src-davidson` | authority | S2 | yes, by kind |
 | `src-vectara` | evidence |  | **NO — finding** |
-
-**Cited elsewhere, listed without a chip here.** The corpus-wide count
-above hides these, because the source is genuinely used — just not in the
-lesson whose footer names it.
-
-| Source | Listed by | Cited in |
-|---|---|---|
-| `src-finra2409` | S4 | S1 |
+| `src-zhao` | evidence |  | **NO — finding** |

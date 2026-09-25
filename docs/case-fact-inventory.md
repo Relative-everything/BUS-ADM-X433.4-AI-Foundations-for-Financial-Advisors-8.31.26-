@@ -22,9 +22,9 @@ occurrence does not follow fails the check. Everything else can.
 | | Total | Quantitative | Qualitative |
 |---|---:|---:|---:|
 | `INJECTED` | 1710 | 1392 | 318 |
-| `PINNED` | 12 | 12 | 0 |
-| `UNGUARDED` | 77 | 5 | 72 |
-| **TOTAL** | **1799** | **1409** | **390** |
+| `PINNED` | 2 | 2 | 0 |
+| `UNGUARDED` | 75 | 5 | 70 |
+| **TOTAL** | **1787** | **1399** | **388** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -41,14 +41,14 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `session-1/index.html` | 17 | 0 |
 | `session-2/index.html` | 3 | 0 |
 | `session-3/index.html` | 16 | 0 |
-| `session-4/index.html` | 23 | 0 |
+| `session-4/index.html` | 21 | 0 |
 
 ## `UNGUARDED`, by region
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R1` | body prose | 50 | 0 |
-| `R2` | script string literal | 22 | 0 |
+| `R1` | body prose | 45 | 0 |
+| `R2` | script string literal | 25 | 0 |
 | `R10` | captured transcript | 5 | 5 |
 
 **`R2` carries 0 of the 5 quantitative unguarded references, 0.0%** — answer
@@ -60,26 +60,25 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 72 |
+| `name` | 70 |
 | `pct` | 5 |
 
 ## `UNGUARDED`, by fact
 
 | Fact | Count |
 |---|---:|
-| `domicile` | 18 |
-| `nathanShort` | 11 |
-| `megShort` | 9 |
-| `companyName` | 9 |
-| `plantTown` | 8 |
-| `companyAbbr` | 8 |
+| `domicile` | 13 |
+| `nathanShort` | 12 |
+| `megShort` | 11 |
+| `plantTown` | 10 |
+| `companyName` | 8 |
+| `companyAbbr` | 7 |
+| `davidName` | 5 |
 | `afrMid` | 4 |
-| `residenceTown` | 3 |
-| `davidName` | 3 |
+| `residenceTown` | 2 |
 | `afrLong` | 1 |
 | `decedent` | 1 |
 | `claireShort` | 1 |
-| `megNameAlt` | 1 |
 
 ## Machinery
 
@@ -103,43 +102,41 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**436 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**415 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
-| `endowmentIntent` | 67 |
-| `votingUnits` | 54 |
-| `claireAge` | 39 |
-| `marriedYears` | 39 |
-| `tbills` | 31 |
-| `seedUnits` | 21 |
+| `endowmentIntent` | 66 |
+| `votingUnits` | 48 |
+| `tbills` | 33 |
+| `claireAge` | 33 |
+| `marriedYears` | 33 |
+| `seedUnits` | 23 |
 | `megAge` | 21 |
 | `charDeductible` | 18 |
 | `employees` | 18 |
-| `nonVotingUnits` | 15 |
+| `nonVotingUnits` | 16 |
+| `inheritedIra` | 15 |
+| `david403b` | 15 |
 | `saleUnits` | 15 |
-| `dividend` | 13 |
-| `inheritedIra` | 13 |
-| `david403b` | 13 |
 | `nathanAge` | 13 |
+| `dividend` | 12 |
 | `revolver` | 12 |
-| `discount` | 9 |
-| `nathanShort` | 7 |
-| `deMinimisLoan` | 4 |
-| `davidAge` | 3 |
-| `topOrdinary` | 3 |
-| `megApplicableAge` | 2 |
+| `nathanShort` | 9 |
+| `discount` | 8 |
 | `perUnitDividend` | 2 |
-| `techPct` | 2 |
+| `deMinimisLoan` | 2 |
+| `megApplicableAge` | 1 |
 | `estateTopRate` | 1 |
-| `inquiryDate` | 1 |
+| `davidAge` | 1 |
 
 ## Money figures in case context that `CASE.md` does not carry
 
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
 | `session-2/index.html:2678` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
+| `session-4/index.html:2527` | UNGUARDED | $400,000 | )}); })(); var DF=[ {q:'A video call. It looks and sounds like Meg. She asks you to wire 〈$400,000〉 from her brokerage account to a new account today, |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,
