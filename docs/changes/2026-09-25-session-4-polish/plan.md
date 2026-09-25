@@ -39,6 +39,7 @@ assertion per row a DOM check can prove.
 | P4 | Secondary widgets that do not carry the section's point are cut, not restyled | §08's mini route and slot-to-station tags; §02's "Show what is left" |
 | P5 | Reader-facing words only: no file names, no register vocabulary, no "this build", no "this file" | the ask's exemplar |
 | P6 | An empty readout is one muted line, not a grey box. Every readout keeps its place in the DOM and its live region; until it has something to say it drops the box, the 110 px minimum height and the heading | 17 grey boxes on a fresh page hold only an instruction the hint already gave |
+| P7 | A control that cannot be used yet is not shown yet; each appears when the step before it is done | §05, §06, D5, §01 and §07 showed disabled or not-yet-meaningful controls from load |
 
 ## 2. What changes, by section
 
@@ -47,7 +48,7 @@ assertion per row a DOM check can prove.
 | §00 | hint that repeats the Zoom out button removed |
 | Cold open | dashed label removed; the bullet shortened to the one idea (well written is a different test from safe to send) |
 | §01 | the "(or open a lane…)" aside removed; the figure's idle caption blank until the first placement |
-| §02 | "Show what is left" removed (the meter and its count already say what is left) |
+| §02 | dashed label removed. "Show what is left" was planned for removal and **kept**: the meter counts what is left but only this button names it, so it is the one way out for a learner stuck at Possibly |
 | D5 | hint shortened; dashed label removed |
 | D6 | dashed label removed |
 | §03 | vague hint removed; dashed label removed |
