@@ -1363,7 +1363,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p class="pull">The rule you are looking for does not exist. The duty you are looking for has existed since 1940.</p>
 
-  <p class="src">FINRA (2024), Regulatory Notice 24-09 <span class="conf h" data-src="src-finra2409">H</span>. FINRA (2025), 2026 Annual Regulatory Oversight Report <span class="conf h" data-src="src-finra2026">H</span>. SEC Division of Examinations (2025), Fiscal Year 2026 Examination Priorities <span class="conf h" data-src="src-secpri">H</span>. SEC (2024), settled actions against Delphia and Global Predictions <span class="conf m" data-src="src-sec-ai">M</span>. Daly (2026), remarks to the ICI Winter Board Meeting <span class="conf h" data-src="src-daly">H</span>. SEC (2025), withdrawal of the predictive data analytics proposal <span class="conf m" data-src="src-sec-withdraw">M</span>. Anthropic (2026), on the EU rule behind Claude's watermark <span class="conf h" data-src="src-claude-marks">H</span>.</p>
+  <p class="src">FINRA (2024), Regulatory Notice 24-09 <span class="conf h" data-src="src-finra2409">H</span>. FINRA (2025), 2026 Annual Regulatory Oversight Report <span class="conf h" data-src="src-finra2026">H</span>. SEC Division of Examinations (2025), Fiscal Year 2026 Examination Priorities <span class="conf h" data-src="src-secpri">H</span>. SEC (2024), settled actions against Delphia and Global Predictions <span class="conf m" data-src="src-sec-ai">M</span>. Daly (2026), remarks to the ICI Winter Board Meeting <span class="conf h" data-src="src-daly">H</span>. SEC (2025), withdrawal of the predictive data analytics proposal <span class="conf m" data-src="src-sec-withdraw">M</span>. Anthropic (2026), on the EU rule behind Claude's watermark <span class="conf m" data-src="src-claude-marks">M</span>.</p>
 
   <div class="check" data-gate="g2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all nine, then read the key.</div></div>
 
@@ -2768,7 +2768,7 @@ var MF=[
 (function(){
   var host=$('mfList'),out=$('mfOut');if(!host||!out)return;
   var st={};
-  MF.forEach(function(t,i){var l=document.createElement('label');l.className='ckrow';l.innerHTML='<input type="checkbox" data-i="'+i+'"><span><b>'+esc(t[0])+'.</b> '+esc(t[1])+'</span>';host.appendChild(l)});
+  MF.forEach(function(t,i){var l=document.createElement('label');l.className='ckrow';l.innerHTML='<input type="checkbox" data-i="'+i+'"><span><b>'+esc(t[0])+':</b> '+esc(t[1])+'</span>';host.appendChild(l)});
   function draw(){
     var miss=MF.filter(function(t,i){return !st[i]}),n=MF.length-miss.length;
     [].slice.call(host.querySelectorAll('label')).forEach(function(l,i){l.classList.toggle('on',!!st[i])});

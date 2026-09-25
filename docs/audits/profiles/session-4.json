@@ -480,8 +480,8 @@
       },
       "chips_total": 12,
       "chips": {
-        "H": 9,
-        "M": 3,
+        "H": 8,
+        "M": 4,
         "L": 0
       },
       "chips_per_100_words": 4.21,
@@ -1828,7 +1828,7 @@
       "defined_within_40_words": false,
       "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "proposal M . Anthropic (2026), on the  [EU]  rule behind Claude's watermark H . ·"
+      "context": "proposal M . Anthropic (2026), on the  [EU]  rule behind Claude's watermark M . ·"
     },
     {
       "term": "NPI",
