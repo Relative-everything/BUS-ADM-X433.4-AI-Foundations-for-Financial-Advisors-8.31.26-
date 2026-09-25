@@ -2531,6 +2531,9 @@ body:not(.reveal) #ovr{display:none}
 #sCR .cr-tok.b circle{fill:var(--on)}
 #sCR .cr-hit{fill:transparent;pointer-events:all;cursor:pointer}
 #sCR .cr-hit:hover{fill:var(--off-bg);fill-opacity:.35}
+#sCR .cr-hit:focus{outline:none}
+#sCR .cr-hit:focus-visible{fill:var(--off-bg);fill-opacity:.35;stroke:var(--on);stroke-width:2}
+#sCR .cr-hit.act{fill:var(--warn-bg);fill-opacity:.5}
 
 /* second beat: the box */
 #sCR #mfLine{position:sticky;top:0;z-index:1;background:var(--card);padding:6px 0 4px}
@@ -2563,14 +2566,17 @@ body:not(.reveal) #ovr{display:none}
 @media (prefers-reduced-motion: reduce){
  #sCR .cr-fig *,#sCR .cr-mini *,#sCR .slot{transition:none!important;animation:none!important}
 }
-/* wide: the readout moves beside the figure, under the chips, so the two
-   columns balance; the DOM order (figure, readout, chips) stays for phones */
+/* wide: the readout and the Show the gaps button sit beside the figure; the
+   DOM order (figure, readout, button) stays for phones. The seven stations are
+   the only picker since S4P: the list of seven sentences that repeated them is
+   gone, and each station's sentence is its accessible name and heads the
+   readout. */
 @media (min-width:1080px){
  #sCR .crgrid{grid-template-columns:minmax(0,360px) minmax(0,1fr);grid-template-rows:auto 1fr}
  #sCR .crfigcol{display:contents}
  #sCR #crFig{grid-column:1;grid-row:1 / span 2}
- #sCR .crcol{grid-column:2;grid-row:1}
- #sCR .crfigcol #stuckOut{grid-column:2;grid-row:2;margin-top:0}
+ #sCR .crfigcol #stuckOut{grid-column:2;grid-row:1;margin-top:0}
+ #sCR .crcol{grid-column:2;grid-row:2}
 }
 /* ===== sD ===== */
 /* ================= D4 · the minutes scale ================= */
@@ -2792,6 +2798,23 @@ body:not(.reveal) #ovr{display:none}
    and no number: it is exercise material, not a source. */
 footer ol.srcs li.fab{list-style:none;margin-top:14px;padding-top:12px;border-top:1px dashed var(--off)}
 footer ol.srcs li.fab b{color:var(--warn)}
+/* P6. An empty readout is one muted line, not a grey box. It keeps its place
+   and its live region; until it has something to say it drops the box, the
+   110px minimum and the heading, so a fresh page is not a column of empty
+   panels repeating the hint above them. */
+.slide .mpanel:has(> .nil){background:transparent;min-height:0;padding:0;margin-top:12px}
+.slide .mpanel:has(> .nil) > .hd{display:none}
+/* P7. A control that cannot be used yet is not shown yet: each appears when
+   the step before it is done, so a fresh section shows one next action. */
+#s1 .s1act:has(#s1Binds:disabled){display:none}
+#s5:not(.s5ran) .s5xr,#s5:not(.s5ran) .s5fixes{display:none}
+#s6 #mmCtl:not(.on),#s6 #mmCheck:not(.live){display:none}
+#s7 #recCite:disabled,#s7 #recAsk:disabled{display:none}
+#sRSP:not(.rspgo) .rspcl{display:none}
+/* the six locks are the lock picker now; they take the keyboard focus ring */
+#s4 .s4-pl{cursor:pointer}
+#s4 .s4-pl:focus{outline:none}
+#s4 .s4-pl:focus-visible .s4-ring{stroke:var(--on);stroke-width:3}
 </style></head>
 <body>
 <nav id="rail" aria-label="Sections"></nav>
@@ -3294,7 +3317,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <span class="plab">Session 4's one thing</span>
     <span class="do">Do this now: 2 minutes</span>
     <h4>Zoom Out: Four Stops Around the Model</h4>
-    <p class="hint">Zoom out, then open each stop.</p>
     <div class="s0-stage">
       <div class="s0-figcol">
         <div id="s0Fig" class="s0-fig"></div>
@@ -3352,7 +3374,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel coldopen" data-task="t-cold-open" data-comp="timed-ritual">
     <span class="do">Do this now: 3 minutes</span>
     <p class="hint">There is no wrong pick.</p>
-    <span class="sim">Written for this lesson &middot; D's client is synthetic <span class="conf l" data-src="src-case">L</span></span>
     <div class="cgrid">
       <div id="coldPicks" class="cpick" role="group" aria-label="Four prompts: pick the one you would have sent"></div>
       <div class="cfigcol">
@@ -3382,7 +3403,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <ul class="pts">
-    <li><b>Two tests.</b> Session 1's eight checks, then Session 4's: could you paste it in at all? Passing one does not pass the other, and which tool it may go into is §04.</li>
+    <li><b>Two different tests.</b> Session 1&rsquo;s eight checks ask whether a prompt is well written. Session 4 asks whether you may send it at all. Passing one tells you nothing about the other.</li>
   </ul>
 
   <p class="src">Prompts written for this lesson; D's client is synthetic. The eight checks are the Session 1 checklist, run as simple word tests <span class="conf l" data-src="src-case">L</span>.</p>
@@ -3412,7 +3433,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       </div>
       <span id="s1GuessNote" aria-live="polite">Pick one. It locks.</span>
     </div>
-    <p class="hint">Click an item, then its lane (or open a lane, then click its items).</p>
+    <p class="hint">Click an item, then its lane.</p>
     <div class="sorter s1sort">
       <div id="ruleBoxes" class="boxes"></div>
       <div id="ruleList" class="chiplist"></div>
@@ -3453,7 +3474,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     </div>
     <div class="s2lay">
       <div class="s2doc"><span class="plab">Prompt D, from the cold open</span><div id="redText" class="redact"></div></div>
-      <div class="s2fig"><p class="s2cap"><span class="sim">Illustrative crowd <span class="conf l" data-src="src-case">L</span></span></p><div id="redFig"></div></div>
+      <div class="s2fig"><div id="redFig"></div></div>
     </div>
     <div id="redOut" class="mpanel" aria-live="polite"></div>
     <div class="row s2row"><button class="btn" id="redCopy" type="button">Copy the clean prompt</button><button class="btn ghost mini" id="redMiss" type="button">Show what is left</button><button class="btn ghost mini" id="redReset" type="button">Start again</button><span id="redMsg" class="dim cmsg" aria-live="polite"></span></div>
@@ -3482,8 +3503,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel" data-task="t-sRSP" data-comp="commit-first-mcq">
     <span class="do">Do this now: 10 minutes</span>
     <h4>Which Event Started the Clock?</h4>
-    <p class="hint">Five moments from one leak. Which one made the firm aware? Your first pick is recorded; later picks only move the clock.</p>
-    <p class="rspsim"><span class="sim">Constructed incident <span class="conf l" data-src="src-case">L</span></span></p>
+    <p class="hint">Five moments from one leak: which one made the firm aware? Your first pick is the one that counts.</p>
     <div id="rspFig"></div>
     <div id="rspOut" class="mpanel" aria-live="polite"><span class="hd">Your pick</span><span class="nil">Pick 1 to 5 on the timeline or in the list below.</span></div>
     <div id="rspList"></div>
@@ -3519,7 +3539,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <span class="do">Do this now: 8 minutes</span>
     <h4>Disguise, Replace or Delete?</h4>
     <p class="hint">Click notches 1 to 4, then stamp each card.</p>
-    <div class="anSimRow"><span class="sim">Synthetic client &middot; where she lands is a judgement <span class="conf l" data-src="src-case">L</span></span></div>
     <div class="anStage">
       <div class="anCol">
         <span class="plab anStep">Step 1 &middot; Zoom out</span>
@@ -3568,7 +3587,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel" data-task="t-s3" data-comp="parameter-sandbox">
     <span class="do">Do this now: 4 minutes</span>
     <h4>Same Model, Different Contract</h4>
-    <p class="hint">What changes, and what never does?</p>
     <div class="s3wrap">
       <div class="s3ctl">
         <span class="plab">1 &middot; Pick a plan</span>
@@ -3576,7 +3594,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
         <div id="trainBtns" class="s3swrow"><button type="button" id="trainSw" class="s3sw" role="switch" aria-checked="false" aria-disabled="true" aria-describedby="trainWhy"><span class="s3track"><span class="s3knob"></span></span><span class="s3swl">Training on your chats</span><b class="s3sws m">NO PLAN</b></button></div>
         <p id="trainWhy" class="s3why" aria-live="polite"></p>
       </div>
-      <div id="planFig" class="s3fig"><span class="sim">Map drawn for this lesson <span class="conf l" data-src="src-case">L</span></span></div>
+      <div id="planFig" class="s3fig"></div>
       <div id="planOut" class="mpanel s3doc" aria-live="polite"><span class="hd">The contract</span><span class="nil">Pick a plan: A, B or C.</span></div>
       <div class="s3step2">
         <span class="plab">2 &middot; Six places to check</span>
@@ -3610,12 +3628,10 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <span class="do">Do this now: 3 minutes</span>
     <h4>Six Locks, One Tool</h4>
     <p class="hint">Pick what would go in, then answer each lock for one tool you use. Don&rsquo;t know leaves a lock open.</p>
-    <p class="s4-simp"><span class="sim">Locks and sample tool: this lesson&rsquo;s checklist <span class="conf l" data-src="src-case">L</span></span></p>
     <div id="vPay" class="s4-pays" role="group" aria-label="What would go in"></div>
     <div class="s4-stage">
       <div class="s4-fig" id="vSafe"></div>
       <div class="s4-side">
-        <div id="vTabs" class="s4-tabs" role="group" aria-label="Pick a lock"></div>
         <div id="vRows" class="s4-rows"></div>
         <div class="row s4-tools"><button type="button" class="btn ghost mini" id="vSample" aria-pressed="false">Try a sample tool</button><span id="vMode" class="s4-mode" aria-live="polite"></span></div>
         <div id="vOut" class="mpanel" aria-live="polite"><span class="hd">Verdict</span><span class="nil">Pick what goes in first: A, B or C.</span></div>
@@ -3630,7 +3646,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <li><b>CFP Board Standard A.14.</b> Take reasonable care when you select, use or recommend technology <span class="conf m" data-src="src-cfp-code">M</span>.</li>
   </ul>
 
-  <p class="src">SEC (2024), Regulation S-P amendments: service provider oversight and the 72-hour notice to the firm <span class="conf h" data-src="src-regsp">H</span>. CFP Board, Code of Ethics and Standards of Conduct, Standard A.14 <span class="conf m" data-src="src-cfp-code">M</span>. The six locks, which data needs which, the sample tool and the Don&rsquo;t-know rule are this lesson&rsquo;s <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">SEC (2024), Regulation S-P amendments: service provider oversight and the 72-hour notice to the firm <span class="conf h" data-src="src-regsp">H</span>. CFP Board, Code of Ethics and Standards of Conduct, Standard A.14 <span class="conf m" data-src="src-cfp-code">M</span>. The six locks, which data needs which, and the sample tool are this lesson&rsquo;s checklist <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all six, then copy what you still need to ask.</div></div>
 
@@ -3646,7 +3662,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <span class="do">Do this now: 4 minutes</span>
     <h4>The Inbox Test</h4>
     <p class="hint">Your assistant can read your email and files, and send email. You ask: &ldquo;Summarise today&rsquo;s emails.&rdquo; Will it do anything else, a or b?</p>
-    <p class="s5simp"><span class="sim">A simulation: no model runs here <span class="conf l" data-src="src-case">L</span></span></p>
     <div class="s5stage">
       <div class="s5inbox">
         <div id="injMail"></div>
@@ -3671,7 +3686,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <span class="do">Then this: 2 minutes</span>
     <h4>The Video Call</h4>
     <p class="hint">Your client Meg is on a video call with an urgent request. What do you do: a, b, c or d?</p>
-    <p class="s5simp"><span class="sim">A constructed call <span class="conf l" data-src="src-case">L</span></span></p>
     <div class="s5call">
       <div class="s5tilebox">
         <div id="dfTile" class="s5figbox"></div>
@@ -3689,7 +3703,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <li><b>Seeing is not proof.</b> In 2024 the engineering firm Arup lost about $25 million after an employee joined a video call on which the finance chief and colleagues were deepfakes <span class="conf h" data-src="src-arup">H</span>.</li>
   </ul>
 
-  <p class="src">FINRA (2026), Understanding Generative AI and Prompt Injection Fundamentals <span class="conf h" data-src="src-finra-inj">H</span>. CVE-2025-32711 (EchoLeak), public vulnerability record <span class="conf h" data-src="src-cve">H</span>. Financial Times reporting on Arup, May 2024 <span class="conf h" data-src="src-arup">H</span>. The inbox and the call are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">FINRA (2026), Understanding Generative AI and Prompt Injection Fundamentals <span class="conf h" data-src="src-finra-inj">H</span>. CVE-2025-32711 (EchoLeak), public vulnerability record <span class="conf h" data-src="src-cve">H</span>. Financial Times reporting on Arup, May 2024 <span class="conf h" data-src="src-arup">H</span>. The inbox, the assistant&rsquo;s run and the video call are simulated for this lesson: no model runs on this page <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Predict, run the assistant, then x-ray email 3.</div></div>
 
@@ -3706,7 +3720,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <span class="do">Do this now: 4 minutes</span>
     <h4>One Word, Three Rounds</h4>
     <p class="hint">A secret key tosses a coin for each word, each round. Run it, then swap the key: does the email still read naturally?</p>
-    <p style="margin:0 0 8px"><span class="sim">Simplified: toy coins, made-up likelihoods <span class="conf l" data-src="src-case">L</span></span></p>
     <div class="tsstage">
       <div class="row tsrow" role="group" aria-label="Run and choose the secret key">
         <button class="btn" id="tsRun" type="button">Run the knockout</button>
@@ -3727,7 +3740,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <span class="do">Then this: 3 minutes</span>
     <h4>Only the Right Key Shows the Mark</h4>
     <p class="hint">Key A wrote this email: you saw it pick helpful. Now be the detector: pick the key you hold, starting with 1.</p>
-    <p style="margin:0 0 8px"><span class="sim">Toy detector, 24 words <span class="conf l" data-src="src-case">L</span></span></p>
     <div id="tsMail" class="tsmail"></div>
     <p class="tslegend" aria-hidden="true"><span class="tsd1"></span>the key gave this word a 1 <span class="tsd0"></span>a 0</p>
     <div class="tsmeter" role="img" aria-label="Meter from 0 to 24 words that got a 1 from the key. Chance is about 12. 13 or fewer: no mark found. 14 to 17: uncertain. 18 or more: mark found. Each reading you take stays pinned under the bar.">
@@ -3751,7 +3763,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <li><b>What a mark says.</b> The text may have passed through Claude; Anthropic's page describes no account or user in the mark <span class="conf m" data-src="src-claude-marks">M</span>.</li>
   </ul>
 
-  <p class="src">Anthropic, How Claude marks AI-generated content, Claude Help Center, retrieved 25 September 2026 <span class="conf h" data-src="src-claude-marks">H</span>. Google, SynthID Text: a detector answers watermarked, not watermarked or uncertain, against two thresholds <span class="conf h" data-src="src-synthid-text">H</span>; the knockout is the scheme it names, Dathathri and colleagues in Nature, simplified here to three rounds and toy coins <span class="conf m" data-src="src-synthid-text">M</span>. The email, words, likelihoods, coins, tie rule, counts and cut-offs are made up for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">Anthropic, How Claude marks AI-generated content, Claude Help Center, retrieved 25 September 2026 <span class="conf h" data-src="src-claude-marks">H</span>. Google, SynthID Text: a detector answers watermarked, not watermarked or uncertain, against two thresholds <span class="conf h" data-src="src-synthid-text">H</span>; the knockout is the scheme it names, Dathathri and colleagues in Nature, simplified here to three rounds and toy coins <span class="conf m" data-src="src-synthid-text">M</span>. The email, the words and their likelihoods, the coins and the detector&rsquo;s cut-offs are made up for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run the knockout with Key A, Key B and the watermark off.</div></div>
 
@@ -3768,7 +3780,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <span class="do">Do this now: 5 minutes</span>
     <h4>Where Can a Mark Hide?</h4>
     <p class="hint">Click an item, then its bucket: many ways to say it, or one right answer?</p>
-    <p style="margin:0 0 8px"><span class="sim">Constructed samples; where the mark lands is illustrative <span class="conf l" data-src="src-case">L</span></span></p>
     <div id="entList" class="chiplist" role="group" aria-label="Eight outputs to sort"></div>
     <div class="s2grid">
       <div id="entBoxes" class="boxes"></div>
@@ -3782,7 +3793,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <span class="do">Then this: 3 minutes</span>
     <h4>What Does No Mark Prove?</h4>
     <p class="hint">One paragraph the AI wrote. Click steps 1 to 5 and watch the stamp: the tag beside it never changes.</p>
-    <p style="margin:0 0 8px"><span class="sim">Constructed: one paragraph, five histories, a generic detector <span class="conf l" data-src="src-case">L</span></span></p>
     <div class="evstage">
       <div id="evFig"></div>
       <div class="row" id="evSteps" role="group" aria-label="History of the paragraph"></div>
@@ -3818,7 +3828,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <label class="fl" for="mmGuess">Your guess: <span id="mmGuessVal">20</span> of 100</label>
     <input type="range" id="mmGuess" min="0" max="100" value="20">
     <div class="row"><button class="btn" id="mmLock" type="button">Lock my guess</button><button class="btn ghost" id="mmRun" type="button">Run 100 memos</button><button class="btn ghost" id="mmCheck" type="button" disabled>Check every answer</button></div>
-    <p class="s6sim"><span class="sim">A simulation: made-up memos, answers drawn at random <span class="conf l" data-src="src-case">L</span></span></p>
     <div class="mmfig"><div id="mmGrid" class="mmgrid"></div><div id="mmSky"></div></div>
     <p class="cap" id="mmKey"><span class="kit"><i class="ksw" data-sw="clean"></i>one memo, a line per answer</span><span class="kit"><i class="ksw" data-sw="hit"></i>carries a wrong answer</span><span class="kit"><i class="ksw" data-sw="caught"></i>&#10003; caught by checking</span></p>
     <div id="mmOut" class="mpanel" aria-live="polite"><span class="hd">Result</span><span class="nil">Drag to your guess, lock it, then run.</span></div>
@@ -3839,7 +3848,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <li><b>Errors add up, and each answer costs a check:</b> a wrong one looks right until you open it.</li>
   </ul>
 
-  <p class="src">Magesh, Surani, Dahl, Suzgun, Manning and Ho (2025), Journal of Empirical Legal Studies 22(2), 216: the 17%, 33% and 43% rates, per question <span class="conf h" data-src="src-magesh">H, peer reviewed</span>. The memo counts treat each answer as an independent draw, which real errors are not <span class="conf m" data-src="src-magesh">M, derived</span>. The 100 memos are made-up draws; the first is fixed to match the 17% average <span class="conf l" data-src="src-case">L</span>. Starting deliverable values are placeholders.</p>
+  <p class="src">Magesh, Surani, Dahl, Suzgun, Manning and Ho (2025), Journal of Empirical Legal Studies 22(2), 216: the 17%, 33% and 43% rates, per question <span class="conf h" data-src="src-magesh">H, peer reviewed</span>. The memo counts treat each answer as an independent draw, which real errors are not <span class="conf m" data-src="src-magesh">M, derived</span>. The 100 memos are simulated: made-up draws, the first fixed to match the 17% average <span class="conf l" data-src="src-case">L</span>. The pricer&rsquo;s starting values are examples; use your own.</p>
 
   <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Lock a guess, run the memos, then price one deliverable of your own.</div></div>
 
@@ -3856,7 +3865,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <span class="do">Do this now: 5 minutes</span>
     <h4>Still True of the Tool You Use?</h4>
     <p class="hint">Call both claims first. Then drag each one to now and watch what changes: the sentence, or the tool.</p>
-    <p class="wsSim"><span class="sim">Drawings made for this page: loop count and bar lengths are illustrative <span class="conf l" data-src="src-case">L</span></span></p>
     <div class="quiz" id="staleQuiz" style="margin:0;border:none;padding:0"></div>
     <div id="staleKey" class="mpanel keyhide" style="display:none" aria-live="polite"></div>
   </div>
@@ -3865,7 +3873,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <li><b>Staleness hides in an assumption:</b> that your tool has the dial, or answers straight away.</li>
   </ul>
 
-  <p class="src">Wolfram (2023), "It's Just Adding One Word at a Time": the temperature passage and its one-pass description of the model <span class="conf h" data-src="src-wolfram">H</span>. Anthropic, Messages API reference, retrieved 13 September 2026: temperature on current models <span class="conf h" data-src="src-api-messages">H</span>. Anthropic, Change the model, effort, and thinking settings, retrieved 20 August 2026 <span class="conf h" data-src="src-effort">H</span>. Artificial Analysis, tokens and turns per task as reported measures <span class="conf m" data-src="src-aa">M</span>.</p>
+  <p class="src">Wolfram (2023), "It's Just Adding One Word at a Time": the temperature passage and its one-pass description of the model <span class="conf h" data-src="src-wolfram">H</span>. Anthropic, Messages API reference, retrieved 13 September 2026: temperature on current models <span class="conf h" data-src="src-api-messages">H</span>. Anthropic, Change the model, effort, and thinking settings, retrieved 20 August 2026 <span class="conf h" data-src="src-effort">H</span>. Artificial Analysis, tokens and turns per task as reported measures <span class="conf m" data-src="src-aa">M</span>. The two drawings are illustrative, made for this page <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Call both claims before you drag either one to now.</div></div>
 
@@ -3880,8 +3888,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel" data-task="t-s7" data-comp="two-bucket-sorter">
     <span class="do">Do this now: 3 minutes</span>
     <h4>Could an Examiner Re-Check It?</h4>
-    <p class="hint">Six records sit in a stack. Read the four slots on the top one: could an examiner re-check it, A or B?</p>
-    <span class="sim">Six records constructed for this lesson <span class="conf l" data-src="src-case">L</span></span>
+    <p class="hint">Read the four slots on the top record. Could an examiner re-check it: A or B?</p>
     <div id="recList" class="tabs" role="group" aria-label="The six records"></div>
     <div class="s7stage">
       <div id="recFig"></div>
@@ -3925,7 +3932,7 @@ citation from memory.</pre>
     <li><b>Why examiners care.</b> FINRA's 2026 report expects firms to supervise how AI is used, with added oversight, including logging, for AI agents that act or transact <span class="conf h" data-src="src-finra2026">H</span>.</li>
   </ul>
 
-  <p class="src">FINRA (2025), 2026 Annual Regulatory Oversight Report: supervision and agent oversight <span class="conf h" data-src="src-finra2026">H</span>. The six records are constructed for this lesson <span class="conf l" data-src="src-case">L</span>. <em>Hallowell v. Commissioner</em> is invented for this exercise.</p>
+  <p class="src">FINRA (2025), 2026 Annual Regulatory Oversight Report: supervision and agent oversight <span class="conf h" data-src="src-finra2026">H</span>. The six records are constructed for this lesson <span class="conf l" data-src="src-case">L</span>. The case cited in record 6, <em>Hallowell v. Commissioner</em>, is invented for this exercise.</p>
 
   <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>File all six records in A or B.</div></div>
 
@@ -3940,7 +3947,7 @@ citation from memory.</pre>
   <div class="panel" data-task="t-sCR" data-comp="symptom-diagnoser">
     <span class="do">Do this now: 8 minutes</span>
     <h4>Run a Package Cold</h4>
-    <p class="hint">Follow the README using only the card, and ask nobody (in class, use the package you were given). Where did you first stop? Click it.</p>
+    <p class="hint">Follow the README using only this card, and ask nobody. Where did you first stop? Click it.</p>
     <p style="margin:0 0 8px"><span class="sim">Sample package, gaps on purpose <span class="conf l" data-src="src-case">L</span></span></p>
     <div id="pkgText" class="pkg">
       <div class="pkghd"><b>HANDOFF PACKAGE</b>: Quarterly review email drafter <span class="pkgatt">Attached: README, prompt.txt</span></div>
@@ -3955,12 +3962,10 @@ citation from memory.</pre>
     <div class="crgrid">
       <div class="crfigcol">
         <div id="crFig"></div>
-        <div id="stuckOut" class="mpanel" aria-live="polite"><span class="hd">First stop</span><span class="nil">Click a station, or the first thing that stopped you.</span></div>
+        <div id="stuckOut" class="mpanel" aria-live="polite"><span class="hd">First stop</span><span class="nil">Click the station where you first stopped.</span></div>
       </div>
       <div class="crcol">
-        <span class="plab">The first thing that stopped you</span>
-        <div id="stuckList" class="stuck" role="group" aria-label="The first thing that stopped you"></div>
-        <div class="row" style="margin-top:12px"><button class="btn ghost mini" id="pkgGaps" type="button">Show the gaps · run the builder</button></div>
+        <div class="row"><button class="btn ghost mini" id="pkgGaps" type="button">Show the gaps · run the builder</button></div>
       </div>
     </div>
     <div id="pkgKey" class="mpanel keyhide" style="display:none" aria-live="polite"></div>
@@ -3970,7 +3975,6 @@ citation from memory.</pre>
     <span class="do">Then this: 2 minutes</span>
     <h4>Pack Yours: Seven Slots</h4>
     <p class="hint">Tick what your own package holds, or will hold. Where would a stranger stop first?</p>
-    <div id="mfLine"></div>
     <div class="box"><span class="lid">Your handoff package (Part 1 of the final project)</span><div id="mfList" role="group" aria-label="The seven parts of your handoff package"></div></div>
     <div id="mfOut" class="mpanel" aria-live="polite"></div>
   </div>
@@ -3980,7 +3984,7 @@ citation from memory.</pre>
     <li><b>If it ran,</b> run it again on a different input. The builder's example and the next client are different claims.</li>
   </ul>
 
-  <p class="src">The scalability standard is the course's own statement of Part 1. The sample package, its five gaps, the route and the slot-to-station map are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">The handoff test restates the course&rsquo;s scalability standard for Part 1. The sample package and its five gaps are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run a package, then click the first thing that stopped you.</div></div>
 
@@ -4003,7 +4007,6 @@ citation from memory.</pre>
         <p class="sdlab">1 &middot; Vote. It cannot be changed.</p>
         <div id="voteBtns" class="sdvote" role="group" aria-label="First vote"></div>
         <div class="sdends" aria-hidden="true"><span class="bw">&#9664; burden wins</span><span class="sw2">saving wins &#9654;</span></div>
-        <p class="sdsim"><span class="sim">Illustrative setup and what-ifs <span class="conf l" data-src="src-case">L</span></span></p>
         <div id="sdFig" class="sdfig"></div>
       </div>
 
@@ -4063,7 +4066,7 @@ citation from memory.</pre>
     <li><b>Your numbers decide it.</b> Try &times;4: the tipping point moves out, or vanishes once checking eats the whole saving.</li>
   </ul>
 
-  <p class="src">The proposition, both cases, the complication, the setup minutes, the sharing counts and the what-if multipliers are constructed for this lesson <span class="conf l" data-src="src-case">L</span>. The other minutes are yours, carried from &sect;06.</p>
+  <p class="src">The proposition, the two cases, the complication and the what-if figures are constructed for this lesson <span class="conf l" data-src="src-case">L</span>; the other minutes are yours, carried from &sect;06.</p>
 
   <div class="check" data-gate="ga4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote, read both cases and the complication, then vote again.</div></div>
 
@@ -4105,16 +4108,12 @@ citation from memory.</pre>
     <div class="row" style="margin-top:12px"><button class="btn" id="polCopy" type="button">Copy the outline</button><span id="polMsg" class="dim cmsg"></span></div>
   </div>
 
-  <ul class="pts">
-    <li><b>Test your own draft.</b> Could a new hire name an allowed tool, find what never goes in, and find who hears of a leak, and how fast?</li>
-  </ul>
-
   <div class="panel" style="border-color:var(--on);border-width:2px">
     <span class="plab">Course rule</span>
     <p class="big" style="margin:0">No real client data enters any AI tool in this course.</p>
   </div>
 
-  <div class="cards"><div class="card gold"><span class="num">Assignment</span><h4>AI Use Policy for Your Firm</h4><p>Two pages at most, in bullets, with three or more sources, one scholarly.</p></div></div>
+  <div class="cards"><div class="card gold"><span class="num">Assignment</span><h4>AI Use Policy for Your Firm</h4><p>Two pages at most, in bullets, with three or more sources, one scholarly. Then test it: could a new hire name an allowed tool, find what never goes in, and find who hears of a leak, and how fast?</p></div></div>
 
   <p class="src">Clauses constructed for this lesson, each tagged with the section that teaches it <span class="conf l" data-src="src-case">L</span>. Clause 1: FINRA Regulatory Notice 24-09 <span class="conf h" data-src="src-finra2409">H</span>. Clauses 2 and 4: SEC, Regulation S-P amendments (2024) <span class="conf h" data-src="src-regsp">H</span>. Readings: Daly (2026) <span class="conf h" data-src="src-daly">H</span>; SEC FY2026 Exam Priorities &sect;VII <span class="conf h" data-src="src-secpri">H</span>.</p>
 
@@ -5146,7 +5145,7 @@ var cn=[],cc=[];
  cn.push(svt(svg,colX(c)+58,280,'0 items','s1n','middle'));
  cc.push(svt(svg,colX(c)+58,296,'placed','s1nc','middle'));
 });
-var cons=svt(svg,180,322,'Each item you place drops onto a stack.','s1cons','middle');
+var cons=svt(svg,180,322,'','s1cons','middle');
 
 function tog(el,c,on){if(el&&el.classList)el.classList.toggle(c,!!on)}
 
@@ -5198,7 +5197,7 @@ function figText(){
   cc[c].textContent=filt?'bind you':'placed';
  });
  cons.textContent=filt?'All four naming AI fell. Five stand.':
-  (n===0?'Each item you place drops onto a stack.':(n<N?'Placed '+n+' of 9.':'All nine placed. Press What binds you?'));
+  (n===0?'':(n<N?'Placed '+n+' of 9.':'All nine placed. Press What binds you?'));
  var lab='Three stacks, one per lane. Lane 1, a rule written for AI, holds '+laneItems(0)+
   '; lane 2, a duty you already have, holds '+laneItems(1)+'; lane 3, guidance or a proposal, holds '+laneItems(2)+'.';
  if(guess!==null)lab+=' Your guess: '+(guess>=5?'5 or more':guess)+'.';
@@ -5943,6 +5942,8 @@ function paintOut(){
 function pick(i,fromChip){
  ensureBucket();
  if(st.c<0){st.c=i;if(typeof mark==='function')mark('ga5');st.ans=false}
+ /* part 2, the clause, opens once an event is committed (P7) */
+ var sec=$('sRSP');if(sec)sec.classList.add('rspgo');
  if(st.c>=0&&st.ans)st.ans=false;
  var same=(st.s===i&&st.rev);
  st.s=i;st.seen[i]=1;st.rev=true;
@@ -6015,6 +6016,7 @@ if(copyB)copyB.onclick=function(){
 /* ---------- Shift+U: snap to the answer and fill the clause ---------- */
 REVEALS.push(function(){
  ensureBucket();
+ var sec=$('sRSP');if(sec)sec.classList.add('rspgo');
  if(st.c<0){st.ans=true;st.rev=true;st.s=D;paintChips();paintPins();paintOut();render(false)}
  else{st.rev=true;paintChips();paintPins();render(false)}
  for(var s=0;s<3;s++)if(st.sl[s]<0)st.sl[s]=0;
@@ -6678,7 +6680,7 @@ VPAY.forEach(function(v,k){
 /* ---------- B. the safe ---------- */
 var root=null,pls=[],doc=null,docg=null,slot=null,badge=null,bgt=null,door=null,stp=null,stpR=null,ttl=null,v1=null,v2=null,p1=null,p2=null;
 if(host){
- root=svgRoot(host,360,326,'A safe with six numbered locks and a slot on top.','s4-svg');
+ root=svgRoot(host,360,326,'A safe with six numbered locks and a slot on top.','s4-svg','group');
  var defs=sv('defs',null,root),cp=sv('clipPath',{id:'s4clip'},defs);
  sv('rect',{x:0,y:0,width:360,height:98},cp);
  ttl=svt(root,8,20,'The vendor’s safe','s4-ttl');
@@ -6698,7 +6700,11 @@ if(host){
   var st=svt(g,cx+22,by+19,'','s4-st');
   svt(g,cx,by+43,v.l,'s4-ll','middle');
   sv('rect',{x:cx-20,y:by+48,width:40,height:3,rx:1.5,'class':'s4-cur'},g);
+  /* the locks are the only lock picker (S4P: the row of six tabs that
+     repeated them is gone), so each is a real keyboard button */
+  g.setAttribute('tabindex','0');g.setAttribute('role','button');g.setAttribute('aria-pressed','false');
   g.addEventListener('click',function(){select(i)});
+  g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '||e.key==='Spacebar'){e.preventDefault();select(i)}});
   pls.push({g:g,st:st});
  });
  var dc=sv('g',{'clip-path':'url(#s4clip)'},root);
@@ -6844,7 +6850,11 @@ function draw(){
    tog(el,'s4-y',a==='y');tog(el,'s4-n',a==='n');tog(el,'s4-u',a==='u');
    tog(el,'need',nd);tog(el,'skip',sk);tog(el,'cur',cu);
   });
-  if(pls[i])pls[i].st.textContent=a?GL[a]:'';
+  if(pls[i]){
+   pls[i].st.textContent=a?GL[a]:'';
+   pls[i].g.setAttribute('aria-pressed',cu?'true':'false');
+   pls[i].g.setAttribute('aria-label','Lock '+(i+1)+', '+VQ[i].l+': '+stateWord(i)+'.'+(nd?' Needed.':sk?' Not needed.':''));
+  }
   if(tabB[i]){
    tabB[i].tg.textContent=a?GL[a]:'';
    tabB[i].b.setAttribute('aria-pressed',cu?'true':'false');
@@ -7211,6 +7221,7 @@ try{
     tried[fix]=1;markFixes();labelFixes();
     if(guess)lockPred();
     if(fixLab)fixLab.textContent='It could send, so it sent. Try a fix:';
+    var sec=$('s5');if(sec)sec.classList.add('s5ran');
   }
 
   /* ---------- readout ---------- */
@@ -7763,7 +7774,7 @@ function paint(i,sorted){
    R.strip.style.transform='translateY(30px)';
    cls(R.p[0],'x');cls(R.p[1],'mid');cls(R.p[2],'x');
    R.fan.setAttribute('aria-label','Row '+(j+1)+': not sorted yet');
-   R.srt.textContent='Row '+(j+1)+' reads: '+d[1]+'.';
+   R.srt.textContent='Row '+(j+1)+' reads: '+d[1].replace(/\.$/,'')+'.';
    meter.push('?');
   }else if(isO){
    R.el.className='rw os';
@@ -7771,7 +7782,7 @@ function paint(i,sorted){
    R.strip.style.transform='translateY(0)';
    cls(R.p[0],'on');cls(R.p[1],'on');cls(R.p[2],'on');
    R.fan.setAttribute('aria-label','Row '+(j+1)+': three equally good wordings');
-   R.srt.textContent='Row '+(j+1)+' reads: '+d[2]+'. One of three equally good wordings.';
+   R.srt.textContent='Row '+(j+1)+' reads: '+d[2].replace(/\.$/,'')+'. One of three equally good wordings.';
    meter.push('<span class="on">●</span>');open++;
   }else{
    R.el.className='rw fx';
@@ -7779,7 +7790,7 @@ function paint(i,sorted){
    R.strip.style.transform='translateY(30px)';
    cls(R.p[0],'x');cls(R.p[1],'one');cls(R.p[2],'bad');
    R.fan.setAttribute('aria-label','Row '+(j+1)+': one right value; a changed value is wrong');
-   R.srt.textContent='Row '+(j+1)+' reads: '+d[1]+'. One right value; a changed one would be wrong.';
+   R.srt.textContent='Row '+(j+1)+' reads: '+d[1].replace(/\.$/,'')+'. One right value; a changed one would be wrong.';
    meter.push('<span class="off">○</span>');
   }
  });
@@ -8159,6 +8170,7 @@ var chips=[],lessB,moreB,nB;
 })();
 function ctlState(){
   var on=runs>0;
+  ctl.classList.toggle('on',on);if(chkB)chkB.classList.toggle('live',on);
   chips.forEach(function(b){b.disabled=!on});
   lessB.disabled=!on||n<=1;moreB.disabled=!on||n>=10;
 }
@@ -8258,10 +8270,10 @@ paintGuess();paintState(0);
    are new. Writes S4STATE.s6 (minutes) at load and on every input; D4 reads it. */
 var COST=[
  {k:'base',l:'Minutes without AI',h:'Keep 90 if you have never timed it',min:10,max:240,v:90},
- {k:'ai',l:'Minutes with AI, drafting',h:'Prompting and editing the draft',min:5,max:120,v:20},
- {k:'n',l:'Answers or citations to check',h:'Each one opened and read',min:0,max:20,v:5},
- {k:'per',l:'Minutes to check each one',h:'A Code section is quick; a ruling you must find is not',min:1,max:15,v:3},
- {k:'rec',l:'Minutes to keep the record',h:'The record from §07',min:0,max:15,v:4}
+ {k:'ai',l:'Minutes with AI, drafting',h:'',min:5,max:120,v:20},
+ {k:'n',l:'Answers or citations to check',h:'',min:0,max:20,v:5},
+ {k:'per',l:'Minutes to check each one',h:'',min:1,max:15,v:3},
+ {k:'rec',l:'Minutes to keep the record (§07)',h:'',min:0,max:15,v:4}
 ];
 var host=$('costIn'),fig=$('costFig'),out=$('costOut'),say=$('costSay');if(!host||!out||!fig)return;
 var v={},prevN=5,dropT=null,sayT=null,said='';
@@ -8348,7 +8360,7 @@ function draw(quiet){
 COST.forEach(function(c){
   v[c.k]=c.v;
   var d=document.createElement('div');d.className='sl';
-  d.innerHTML='<label class="fl" for="cs_'+c.k+'">'+esc(c.l)+': <span id="cv_'+c.k+'">'+c.v+'</span></label><span class="hint">'+esc(c.h)+'</span>'+
+  d.innerHTML='<label class="fl" for="cs_'+c.k+'">'+esc(c.l)+': <span id="cv_'+c.k+'">'+c.v+'</span></label>'+(c.h?'<span class="hint">'+esc(c.h)+'</span>':'')+
     '<input type="range" id="cs_'+c.k+'" min="'+c.min+'" max="'+c.max+'" value="'+c.v+'">';
   host.appendChild(d);
   var inp=d.querySelector('input');
@@ -8998,8 +9010,8 @@ function sy(i){return 116+58*i}
 
 /* ================= beat 1: the cold run ================= */
 function coldRun(){
- var host=$('crFig'),list=$('stuckList'),out=$('stuckOut'),gapsBtn=$('pkgGaps'),key=$('pkgKey');
- if(!list||!out)return;
+ var host=$('crFig'),out=$('stuckOut'),gapsBtn=$('pkgGaps'),key=$('pkgKey');
+ if(!host||!out)return;
  var LABEL='Two runners on the same seven-station route through a handoff package. Track A is you, running cold with the package only; track B is the builder, who also has their memory. Choosing where you first stopped drops a barrier on track A and greys every station after it; Show the gaps drops the sample\'s five barriers on track A while the builder passes the same five stations, each labelled with what the builder simply knows.';
  var st={stop:-1,rev:false,bRan:false};
  var STEP=reduced()?0:240,BASE=reduced()?0:300;
@@ -9009,17 +9021,13 @@ function coldRun(){
     station gap (58 units) per STEP, so every change lands as the token arrives */
  function tAt(y0,y1){return Math.round(Math.abs(y1-y0)/58*STEP)}
 
+ /* the seven stations are the picker: each hit area is a keyboard button
+    named by its full sentence */
  var chips=[];
- STUCK.forEach(function(s,i){
-  var b=document.createElement('button');b.type='button';b.className='chip';b.setAttribute('aria-pressed','false');
-  b.innerHTML='<span class="nb">'+(i+1)+'</span> '+esc(s);
-  b.onclick=function(){pick(i)};
-  list.appendChild(b);chips.push(b);
- });
 
  var F=null;
  if(host){
-  var svg=svgRoot(host,320,540,LABEL,'cr-fig','img');
+  var svg=svgRoot(host,320,540,LABEL,'cr-fig','group');
   F={A:[],An:[],Aname:[],Aq:[],bar:[],B:[],bub:[]};
   svt(svg,6,20,'One package, two runners','cr-ttl');
   svt(svg,XA,42,'A · YOU, COLD','cr-lane','middle');
@@ -9068,8 +9076,10 @@ function coldRun(){
   F.cap2=svt(svg,6,528,'','cr-cap2');
   for(var h=0;h<7;h++){
    (function(i){
-    var r=sv('rect',{x:0,y:sy(i)-29,width:150,height:58,'class':'cr-hit'},svg);
-    r.addEventListener('click',function(){if(chips[i])chips[i].click()});
+    var r=sv('rect',{x:0,y:sy(i)-29,width:150,height:58,'class':'cr-hit',tabindex:'0',role:'button','aria-pressed':'false','aria-label':'Station '+(i+1)+', '+NAME[i]+': '+STUCK[i]},svg);
+    r.addEventListener('click',function(){pick(i)});
+    r.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '||e.key==='Spacebar'){e.preventDefault();pick(i)}});
+    chips.push(r);
    })(h);
   }
  }
@@ -9143,8 +9153,8 @@ function coldRun(){
   var note='';
   if(st.rev)note=isGap(i)?'<br><span class="sg">✗ In the sample: one of its five gaps.</span>':(i===0?'<br><span class="sg ok">In the sample: not a gap. The README names prompt.txt first.</span>':'');
   out.className='mpanel has';
-  if(i<6)out.innerHTML='<span class="hd">First stop · '+(i+1)+' '+esc(NAME[i])+' · '+esc(CAT[i])+' gap</span>'+esc(FIX[i])+note+'<br><span class="kw">Log only this stop, in one sentence: what were you trying to do?</span>';
-  else out.innerHTML='<span class="hd">First stop · none · 7 Done</span>'+esc(FIX[6]);
+  if(i<6)out.innerHTML='<span class="hd">First stop · '+(i+1)+' '+esc(NAME[i])+' · '+esc(CAT[i])+' gap</span><b>'+esc(STUCK[i])+'.</b> '+esc(FIX[i])+note+'<br><span class="kw">Log only this stop, in one sentence: what were you trying to do?</span>';
+  else out.innerHTML='<span class="hd">First stop · none · 7 Done</span><b>'+esc(STUCK[6])+'.</b> '+esc(FIX[6]);
  }
  function pick(i){
   var prev=st.stop;st.stop=i;
@@ -9203,8 +9213,7 @@ function packBox(){
  var tiles=[];
  SL.forEach(function(s,i){
   var b=document.createElement('button');b.type='button';b.className='slot';b.setAttribute('aria-pressed','false');
-  var route=s.r.length?'opens '+s.r.map(function(k){return '<b class="rd">'+(k+1)+'</b>'}).join(''):'<span class="offr">off the route</span>';
-  b.innerHTML='<span class="st">'+esc(s.n)+'</span><span class="sd">'+esc(s.d)+'</span><span class="sfoot"><span class="ss">○ EMPTY</span><span class="sr">'+route+'</span></span>';
+  b.innerHTML='<span class="st">'+esc(s.n)+'</span><span class="sd">'+esc(s.d)+'</span><span class="sfoot"><span class="ss">○ EMPTY</span></span>';
   b.onclick=function(){
    on[i]=!on[i];
    b.classList.add('pop');

@@ -139,7 +139,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
 | `session-2/index.html:2678` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
-| `session-4/index.html:7268` | UNGUARDED | $400,000 | =$('dfChan'),say=$('dfSay'),dBtns=$('dfBtns'),dOut=$('dfOut'); var DF={ say0:'“Wire 〈$400,000〉 from my brokerage account to a new account today. Keep  |
+| `session-4/index.html:7279` | UNGUARDED | $400,000 | =$('dfChan'),say=$('dfSay'),dBtns=$('dfBtns'),dOut=$('dfOut'); var DF={ say0:'“Wire 〈$400,000〉 from my brokerage account to a new account today. Keep  |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,

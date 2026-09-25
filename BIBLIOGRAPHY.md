@@ -5,7 +5,7 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**67 works, 245 references across 5 lessons.** 49 are
+**67 works, 230 references across 5 lessons.** 49 are
 cited by at least one claim; 18 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
@@ -832,8 +832,8 @@ n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using 
 | Last retrieved | *not applicable* |
 | Last verified by the instructor | *not applicable* |
 | Confidence | L |
-| **Total references** | **49** |
-| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s7` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCold` ×2 · S4 `#s2` ×2 · S4 `#sRSP` ×2 · S4 `#sAnon` ×2 · S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#s5` ×3 · S4 `#sW1` ×3 · S4 `#sW2` ×3 · S4 `#s6` ×2 · S4 `#sWS` · S4 `#s7` ×2 · S4 `#sCR` ×2 · S4 `#sD` ×2 · S4 `#s9` |
+| **Total references** | **34** |
+| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s7` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCold` · S4 `#s2` · S4 `#sRSP` · S4 `#sAnon` · S4 `#s3` · S4 `#s4` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` · S4 `#s6` · S4 `#sWS` · S4 `#s7` · S4 `#sCR` ×2 · S4 `#sD` · S4 `#s9` |
 
 Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
 

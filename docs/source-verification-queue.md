@@ -4,7 +4,7 @@
 the next run overwrites it.**
 
 This is the instructor's work list, in the order the work is worth doing. A
-source **49 claims rest on** is worth verifying before one that carries
+source **34 claims rest on** is worth verifying before one that carries
 none, so the ordering is **reference count, descending**.
 
 ## The two dates, and why only one of them is yours
@@ -27,7 +27,7 @@ never-fabricate rule exists to prevent.
 | `last_verified` **EMPTY** | **63** |
 | `last_verified` populated | 1 |
 | `last_verified` *not applicable* (synthetic or fabricated) | 3 |
-| References standing behind an EMPTY `last_verified` | **179** of 245 |
+| References standing behind an EMPTY `last_verified` | **179** of 230 |
 | Moving targets | 25 |
 | Lock | notarised, digest `a293f68e14a33669` |
 
@@ -45,7 +45,7 @@ Each one cites the evidence in the repository that records the confirmation.
 
 | # | Key | Title | `last_verified` | `last_retrieved` | Refs | Moving | Depends on it |
 |---|---|---|---|---|---|---|---|
-| 1 | `src-case` | The Cole household | *n/a* | *n/a* | 49 | no | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s7` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff`×2 · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCold`×2 · S4 `#s2`×2 · S4 `#sRSP`×2 · S4 `#sAnon`×2 · S4 `#s3`×2 · S4 `#s4`×2 · S4 `#s5`×3 · S4 `#sW1`×3 · S4 `#sW2`×3 · S4 `#s6`×2 · S4 `#sWS` · S4 `#s7`×2 · S4 `#sCR`×2 · S4 `#sD`×2 · S4 `#s9` |
+| 1 | `src-case` | The Cole household | *n/a* | *n/a* | 34 | no | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s7` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff`×2 · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCold` · S4 `#s2` · S4 `#sRSP` · S4 `#sAnon` · S4 `#s3` · S4 `#s4` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` · S4 `#s6` · S4 `#sWS` · S4 `#s7` · S4 `#sCR`×2 · S4 `#sD` · S4 `#s9` |
 | 2 | `src-wolfram` | What is ChatGPT doing … and why does it work? | **2026-08-23** | **none** | 17 | no | S1 `#s2` · S1 `#s3`×2 · S1 `#s4` · S1 `#s5`×2 · S2 `#s1`×2 · S2 `#s2`×2 · S2 `#s3`×2 · S2 `#s4` · S3 `#s2`×2 · S3 `#s7` · S4 `#sWS` |
 | 3 | `src-magesh` | Hallucination-free? Assessing the reliability of leading AI legal research tools | **EMPTY** | **none** | 12 | no | S2 `#s10`×3 · S3 `#s6`×2 · S3 `#s15` · S3 `#s16`×2 · S4 `#s6`×3 · S4 `#s9` |
 | 4 | `src-regsp` | Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments | **EMPTY** | **none** | 12 | no | S3 `#sPol`×2 · S4 `#s2`×3 · S4 `#sRSP`×3 · S4 `#s4`×2 · S4 `#s9`×2 |

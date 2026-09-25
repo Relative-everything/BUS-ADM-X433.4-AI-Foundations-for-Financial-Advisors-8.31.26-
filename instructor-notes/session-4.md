@@ -215,7 +215,9 @@ Never drop: the cold open, §02, the cold run, the closing check.
 
 ## Per-slot notes
 
-Rewritten 2026-09-25 evening for the figures. Button labels are the page's own.
+Rewritten 2026-09-25 evening for the figures, and updated the same night for the polish pass
+(fewer controls on screen: a step's controls appear once the step before it is done). Button
+labels are the page's own.
 
 ### s0 · Bridge, 6:08
 Three recall items, answers **b, c, a**; say the letter, then click. A wrong letter turns rust and
@@ -251,14 +253,15 @@ to tick after class.
 
 ### s4 · §04, 6:46
 Pick **C · Client file**, then answer the locks for the consumer plan you use: lock 1, the
-business contract, is No, and the file bounces off the shut slot with "✗ Stop". Click **B** and
+business contract, is No, and the file bounces off the shut slot with "✗ Stop". To jump to a
+lock, click it in the safe (the row of numbered tabs is gone). Click **B** and
 **A** for their verdicts, then show the email the open locks wrote. The 72 hours run from the
 vendor becoming aware of a breach. Standard A.14 is on the page at medium confidence (see Verify).
 
 ### s5 · §05, 6:53
 Poll 3. Click the majority letter; it locks. **Run the assistant**: three estate files cross the
-firm's wall, and the summary ends "I also forwarded 3 files". **Sweep the x-ray**: the white
-line in email 3 appears. Gate 2, then show fixes 1 (a warning: not a lock), 2 (approve each
+firm's wall, and the summary ends "I also forwarded 3 files". The x-ray and the fixes appear
+only now. **Sweep the x-ray**: the white line in email 3 appears. Gate 2, then show fixes 1 (a warning: not a lock), 2 (approve each
 send: held) and 3 (only what it needs: nothing leaves). Video call: (a) first if the room wants
 it, then **(c)**, the number on file: "I never called you." One sentence on Arup.
 
@@ -266,8 +269,8 @@ it, then **(c)**, the number on file: "I never called you." One sentence on Arup
 See the Part 1 relay section above.
 
 ### sCR · §08 cold run, 7:20 · **WORKED 3**
-Eight minutes silent, then each runner clicks the first thing that stopped them (a list line or a
-station) and writes one sentence in chat: "stopped at: ... because ...". Their token shudders at
+Eight minutes silent, then each runner clicks the station on the route where they first stopped
+(the list of seven sentences is gone; each station's sentence heads the readout) and writes one sentence in chat: "stopped at: ... because ...". Their token shudders at
 that stop. **Show the gaps · run the builder** after the harvest: five barriers drop on the
 sample, and the builder's token glides past every one from memory. Nobody fixes anything
 tonight; that is Session 5.
