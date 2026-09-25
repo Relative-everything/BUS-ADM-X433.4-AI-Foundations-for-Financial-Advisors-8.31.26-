@@ -107,7 +107,7 @@ scope:          The mechanism of next-token prediction, the temperature passage,
 used_for.session-1: next-token prediction, the temperature passage, tokens and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison
 used_for.session-2: the sections "It's Just Adding One Word at a Time," "Where Do the Probabilities Come From?," "What Is a Model?," the temperature passage, and the parenthesis-language discussion
 used_for.session-3: assigned reading; "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion" in §01 and §02 (the definition, the five-billion-word construction, the 768 and 12,288 lengths, alligator and crocodile); "Beyond Basic Training" in §05 (the tell-it-once observation and its limit)
-used_for.session-4: the temperature passage, from "It's Just Adding One Word at a Time", in Appendix D3
+used_for.session-4: the temperature passage, from "It's Just Adding One Word at a Time", and the one-pass, no-loops description of the model, both in Appendix D3
 ```
 
 ## src-case
