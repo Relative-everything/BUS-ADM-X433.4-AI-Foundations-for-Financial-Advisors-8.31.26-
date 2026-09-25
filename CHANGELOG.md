@@ -10,6 +10,110 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-25 · Session 4 rebuilt: short bullets, an exercise in every section, and every exercise runs without the case file
+
+Branch `claude/amazing-curie-xz0s73`, from `main` after PR #36, three days before the session.
+The instructor asked for the analysis of Sessions 1 to 3 and his own revision notes to be applied
+to a whole rebuild of Session 4, which must stand alone outside the class. Change folder
+`docs/changes/2026-09-25-session-4-rebuild/` (plan, ledger S4R-001 to S4R-023, `checks.mjs`,
+handback). Core 11 sections and 67 planned minutes (was 13 and 72), appendix 6 and 83 (was 5 and
+78), 150 in all. Page prose 7,140 words to 3,293; core prose 4,821 to 2,207.
+
+### Session 4 · what the page now teaches, section by section
+
+- **§00.** Title, lede, the pacing cells and depth buttons with no prose, four bullets placing
+  Session 4 after Sessions 1 to 3, the Coles in two lines labelled synthetic, the objective as
+  "Session 4's one thing", and a three-item bridge on Session 3's core (the note-taker's stages,
+  the nearest passage not being the right one, grounding against tuning). The case panel, the
+  recurring-question panel, the outcome cards and the Part 1 status note are gone.
+- **Cold open.** Choose one of four beginner prompts, one click, the same eight checks; "Compare
+  all four" shows that the best-scoring prompt, D, names a client and could never be sent. The
+  instructor's decision of 2026-09-17. An optional paste box stays under the four.
+- **§01 No AI rulebook.** FINRA's technology-neutral position, the 2026 FINRA report and SEC exam
+  priorities, the two 2024 AI-washing penalties under the Marketing Rule, and Director Daly's open
+  questions; a nine-item sorter (a rule written for AI, a duty you already have, guidance or a
+  proposal) that answers each item as it lands.
+- **§02 What counts as client data.** NPI in plain words, the Session 3 re-identification item
+  reframed as a callback with Regulation S-P as its authority, and the CFP Board's advice; the room
+  cleans Prompt D phrase by phrase while a meter reads Yes, Probably, Possibly or No, then copies
+  the clean prompt.
+- **§03 Where your prompt goes.** Plan and training switch drive a retention bar (five years
+  against 30 days), plus six settings to check, copied out as a to-do list. The leaderboard and
+  sticker-price charts are gone; Session 2 owns model economics.
+- **§04 Vetting a tool.** Regulation S-P's service-provider oversight and 72-hour notice, CFP
+  Board Standard A.14, and six yes, no or don't-know questions whose required set depends on what
+  goes in; the unanswered ones assemble into questions to send the vendor.
+- **§05 Attacks.** A simulated inbox with a hidden line in email 3: predict, run the assistant,
+  reveal the line. EchoLeak and FINRA's prompt-injection primer; then a deepfake video-call
+  decision with Arup as the one hard number.
+- **§06 What checking costs.** Stanford's per-question error rates, a locked guess, then 100
+  randomly drawn memos (the count changes every run, the average does not), and a slider panel that
+  prices one of the learner's own deliverables against their estimate of the time without AI,
+  defaulting to 90.
+- **§07 The record.** Four fields at minimum; six records sorted by whether an examiner could
+  re-check them, one citing an invented case labelled in the key and the footer; a record block
+  whose model and date lines the learner fills in, because a model cannot reliably report either.
+- **§08 The handoff test.** The seven-part Part 1 checklist and a sample package with five gaps on
+  purpose, run cold, logging the first thing that stopped you. The relay table and the pairing draw
+  moved to the run sheet.
+- **§09 The policy.** Six questions a firm AI use policy must answer, each with a strong and a weak
+  clause; the chosen clauses assemble a copyable outline; four self-test questions; the course data
+  rule; the assignment card; a written closing check.
+- **Appendix.** D5 the 30-day clock (instructions now match the single pick; the counsel option is
+  six days late, not three weeks); D6 replace, don't just delete (new); D1 how a text watermark
+  works; D2 what a watermark can and cannot prove; D3 when a source goes stale (two sourced claims,
+  the comparison opening only after both are committed); D4 the discussion, with both cases and the
+  complication on the page for a learner alone.
+
+### Session 4 · what was wrong and is now fixed
+
+- **A false claim.** D1 said nothing generated with Claude is watermarked. Anthropic's help-centre
+  page, fetched 2026-09-25, says supported Claude models launched from 2 August 2026 mark their
+  output, all models by 2 December 2026. Corrected, with the page as a new source.
+- **A false premise, eleven times.** No Session 1 baseline was ever captured; every reference now
+  asks for an estimate, with 90 minutes as the default.
+- **A grade weight.** "It is worth 30% of Part 1" is gone; nothing on the page states a date,
+  deadline, grade or weight.
+- **Text addressed to the instructor.** Two verification blocks, an instructor-verification note,
+  nine unconfirmed-claim markers and the first-person asides left the page; the items to check are
+  in the run sheet.
+- **Code defects.** The duplicate `var NPI` and its live listener, the §01 key that miscounted
+  ("seven of nine"), the stuck log that could not select an earlier item, a vendor verdict that
+  ignored what was going in, a dead reveal hook, two Shift+U listeners, a rubric map pointing at
+  the wrong sections and a pairing demo for fourteen people. Sixteen of eighteen work-along ticks
+  never fired; all seventeen now fire on completion.
+- **Contradictions with the case.** "Meg is exploring a sale" became what the case says: a
+  competitor wrote and Meg said the company is not for sale. The buy-sell clause is the valuation
+  article, not "section 4.2".
+- **A units error.** Stanford measured error rates per question; §06 now applies them per answer,
+  not per citation.
+
+### Sources
+
+- New: `src-claude-marks` (Anthropic, How Claude marks AI-generated content, H),
+  `src-cfp-genai` (CFP Board Generative AI Ethics Guide, M, not retrievable from the build),
+  `src-cfp-code` (CFP Board Standard A.14, M, the same), `src-sec-withdraw` (the SEC's June 2025
+  withdrawal of the predictive data analytics proposal, M). Lock synced; no `last_verified` moved.
+- Newly cited by Session 4: `src-finra2409` (closes the half of DW-021 that was Session 4's),
+  `src-sec-ai`, `src-api-messages`, `src-effort`.
+- No longer cited by Session 4: `src-gartner`, `src-deloitte`, `src-surfshark`, `src-zhao`,
+  `src-owasp`, `src-synthid`. The records stay.
+- Regenerated: the Session 4 footer, `BIBLIOGRAPHY.md`, `DATA-PULL.md`,
+  `docs/source-verification-queue.md`, `docs/unsourced-claims.md` (now empty corpus-wide),
+  `docs/case-fact-inventory.md`, `docs/audits/profiles/session-4.json`.
+
+### Register
+
+- A9 for `session-4` re-recorded 83 to 3 (DW-124); ratification by the instructor is asked for in
+  the handback. DW-005, DW-021 and DW-117 carry dated notes closing their Session 4 halves.
+
+### Instructor materials
+
+- `instructor-notes/session-4.md` rebuilt as a run sheet: the objective, a clock from 6:00 with the
+  break at 7:00, checkpoints, one correction, five polls with decision rules, three gated questions,
+  the Part 1 relay and pairing method, a written closing check, a drop order, per-slot notes and a
+  Verify before teaching list. It schedules the D4 discussion, 18 minutes, for the first time.
+
 ## 2026-09-21 · Session 3 instructor materials rebuilt for the night as it will be taught
 
 Branch `claude/tender-feynman-p5r3xo`, the afternoon of the session, from `main` after PR #35.
