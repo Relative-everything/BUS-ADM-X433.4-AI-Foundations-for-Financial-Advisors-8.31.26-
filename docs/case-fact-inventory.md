@@ -102,12 +102,12 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**541 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**542 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
-| `votingUnits` | 90 |
+| `votingUnits` | 91 |
 | `endowmentIntent` | 66 |
 | `claireAge` | 50 |
 | `marriedYears` | 50 |
@@ -139,7 +139,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
 | `session-2/index.html:2678` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
-| `session-4/index.html:7264` | UNGUARDED | $400,000 | =$('dfChan'),say=$('dfSay'),dBtns=$('dfBtns'),dOut=$('dfOut'); var DF={ say0:'“Wire 〈$400,000〉 from my brokerage account to a new account today. Keep  |
+| `session-4/index.html:7279` | UNGUARDED | $400,000 | =$('dfChan'),say=$('dfSay'),dBtns=$('dfBtns'),dOut=$('dfOut'); var DF={ say0:'“Wire 〈$400,000〉 from my brokerage account to a new account today. Keep  |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,

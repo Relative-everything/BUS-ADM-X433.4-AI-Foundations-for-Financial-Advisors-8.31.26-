@@ -48,7 +48,9 @@ say(!$('#frontierHost') && !$('#divergeHost') && $$('#planBtns button').length =
 { const L = () => $$('#recList .chip'), B = () => $$('#recBoxes .lbox'); [1,1,1,1,0,0].forEach((b, i) => { click(L()[i]); click(B()[b]); });
   say(/invented for this exercise/.test(txt('#recKey')) && /you fill in/.test(txt('#recBlock')) && done('g8') && /Hallowell/.test(txt('#s7 .src')),
     'S4R-010', '§07: six records sorted, the invented case named in the key and the source line, the block leaves model and date to you'); }
-{ const s = $$('#stuckList .chip'); click(s[5]); click(s[1]);
+/* 2026-09-25 polish (S4P): the list of seven sentences left the page; the
+   seven stations in the figure are the picker now, named by the same sentences */
+{ const s = $$('#crFig .cr-hit'); click(s[5]); click(s[1]);
   say(s[1].classList.contains('act') && !s[5].classList.contains('act') && /Setup gap/i.test(txt('#stuckOut')) && done('g9') && /HANDOFF PACKAGE/.test(txt('#pkgText')) && !/30%/.test(lessonText),
     'S4R-011', '§08: a sample package anyone can run; an earlier pick can replace a later one; no grade weight'); }
 { for (let i = 0; i < 6; i++) click($('#polRows button[data-q="' + i + '"]'));

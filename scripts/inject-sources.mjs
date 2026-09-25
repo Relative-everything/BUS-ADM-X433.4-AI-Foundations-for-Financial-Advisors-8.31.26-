@@ -75,10 +75,19 @@ const dot = (s) => (/[.?!]\s*$/.test(String(s).replace(/<[^>]+>\s*$/, '')) ? s :
 
 /** One <li>, rendered from the record plus this lesson's used_for clause. */
 export function renderEntry(rec, lesson) {
+  /* A FABRICATED CITATION IS SET APART, NOT LISTED AS IF IT WERE A SOURCE.
+     The reader meets the label first, then the citation, then one plain
+     sentence saying where it is planted. It carries no "Used for:", no
+     retrieval date and no chip, because it supports nothing, and buildBlock()
+     sorts it after every real source. Until 2026-09-25 it rendered as
+     "Does not exist. <citation>. Used for: exercise material in …", which read
+     as a broken bibliography entry written to a maintainer. */
+  if (rec.kind === 'fabricated') {
+    const where = rec.used_for[lesson];
+    if (!where) throw new Error(`${rec.key}: a fabricated record needs a used_for.${lesson} clause saying where it is planted`);
+    return `      <li id="${rec.key}" data-nochip="fabricated" class="fab"><b>Not a real source.</b> <em>${esc(rec.title)}</em> was invented for ${dot(esc(where))}</li>`;
+  }
   const bits = [];
-  /* A fabricated citation leads with the fact that it is one. The reader meets
-     the label before the citation, not after it. */
-  if (rec.kind === 'fabricated') bits.push('<b>Does not exist.</b>');
   if (!isAbsent(rec.author)) bits.push(dot(esc(rec.author)));
   const title = `<em>${esc(rec.title)}</em>`;
   bits.push(isAbsent(rec.published) ? dot(title) : `(${humanDate(rec.published)}). ${dot(title)}`);
@@ -97,7 +106,9 @@ export function renderEntry(rec, lesson) {
      Before Phase 3.5 src-aa printed "Retrieval date divergent across lessons"
      in all three footers, which told a reader the register was confused but
      never told them which pull they were looking at. Now each footer says its
-     own date AND says the pulls disagree, which is both facts instead of one. */
+     own date AND says the pulls disagree, which is both facts instead of one.
+     The sentence names no repository file: a student reads it. The register
+     detail lives in DATA-PULL.md, which is where a maintainer goes for it. */
   const pull = rec.pulls && rec.pulls[lesson];
   const dates = rec.pulls ? [...new Set(Object.values(rec.pulls).map((p) => p.retrieved))] : [];
   const shown = pull ? pull.retrieved : rec.last_retrieved;
@@ -105,7 +116,7 @@ export function renderEntry(rec, lesson) {
     bits.push(/^\d{4}-\d{2}/.test(shown)
       ? `Retrieved ${humanDate(shown)}.`
       : dot(`Retrieval date ${esc(shown)}`));
-    if (dates.length > 1) bits.push(dot('Retrieval dates differ across lessons; see DATA-PULL.md'));
+    if (dates.length > 1) bits.push(dot('Other sessions cite other retrievals of this page'));
   }
   const used = rec.used_for[lesson];
   if (used) bits.push(`Used for: ${dot(esc(used))}`);
@@ -135,9 +146,10 @@ export function renderEntry(rec, lesson) {
 
 /** The whole injected block for one lesson: every source that lesson declares. */
 export function buildBlock(sources, lesson) {
+  const fab = (r) => (r.kind === 'fabricated' ? 1 : 0);
   const mine = [...sources.values()]
     .filter((r) => r.used_for[lesson])
-    .sort((a, b) => (a.author || a.title).localeCompare(b.author || b.title));
+    .sort((a, b) => fab(a) - fab(b) || (a.author || a.title).localeCompare(b.author || b.title));
   if (!mine.length) throw new Error(`SOURCES.md declares no source for ${lesson}`);
   return mine.map((r) => renderEntry(r, lesson)).join('\n');
 }

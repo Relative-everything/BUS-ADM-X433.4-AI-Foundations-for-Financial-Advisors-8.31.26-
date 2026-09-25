@@ -48,9 +48,13 @@ chip-exempt set equals the checker's, so the two cannot drift apart:
 > are citations invented on purpose so students can fail to catch them. **A
 > confidence chip asserts that a claim is evidenced, and the entire point of
 > these two is that it is not.** Both are disclosed on the page and neither uses
-> `disclose_on_page` to do it: `renderEntry()` emits **"Does not exist."** off
-> `kind: fabricated`, ahead of the citation rather than after it, and both carry
-> a hand-written label at their point of use. **Both are therefore
+> `disclose_on_page` to do it: `renderEntry()` emits **"Not a real source."** off
+> `kind: fabricated`, ahead of the citation rather than after it, followed by
+> "was invented for" and the lesson's `used_for` clause, and sorts the entry after
+> every real source (until 2026-09-25 it read "Does not exist. … Used for:
+> exercise material in …"). So a fabricated record's `used_for` clause is a
+> reader-facing phrase that completes that sentence. Both also carry a
+> hand-written label at their point of use. **Both are therefore
 > `disclose_on_page: false`.** The flag makes the renderer print the record's
 > `scope` verbatim, and their `scope` is written to the maintainer — it ends in
 > an instruction in capitals about chips. That belongs in this register and not
@@ -107,7 +111,7 @@ scope:          The mechanism of next-token prediction, the temperature passage,
 used_for.session-1: next-token prediction, the temperature passage, tokens and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison
 used_for.session-2: the sections "It's Just Adding One Word at a Time," "Where Do the Probabilities Come From?," "What Is a Model?," the temperature passage, and the parenthesis-language discussion
 used_for.session-3: assigned reading; "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion" in §01 and §02 (the definition, the five-billion-word construction, the 768 and 12,288 lengths, alligator and crocodile); "Beyond Basic Training" in §05 (the tell-it-once observation and its limit)
-used_for.session-4: the temperature passage, from "It's Just Adding One Word at a Time", and the one-pass, no-loops description of the model, both in Appendix D3
+used_for.session-4: the temperature passage in "It's Just Adding One Word at a Time" and the one-pass, no-loops description of the model (Appendix D3)
 ```
 
 ## src-case
@@ -128,7 +132,7 @@ scope:          Entirely synthetic. Every figure, document and family fact is in
 used_for.session-1: every worked example in this session and the next three
 used_for.session-2: every client example, exercise input and discussion prompt, including the three §04 fixture inputs and their three deliberately weak starter prompts, which are exercise material
 used_for.session-3: the retrieval corpus, the meeting excerpt and the note-taker stage outputs written from it, the consent items, the said-or-recommended lines, the six review-update tasks and the three prompts in §08 with the summary they run on, the checklist, the illustrative meaning-space map whose coordinates were assigned rather than learned, and the six summary lines in Appendix A3, two of which are written wrong on purpose and labelled so on the page
-used_for.session-4: the cold-open prompts, the prompt cleaned in §02, the redaction and replacement items, the settings list, the vendor questions, the inbox and the video call, the six audit records, the sample handoff package, the Appendix D5 incident, the D2 items, the D4 cases and the policy clauses, all constructed for this lesson
+used_for.session-4: every client, prompt, message, record, incident and sample package in this session's exercises, all written for this lesson
 ```
 
 ## src-aa
@@ -151,7 +155,7 @@ recheck_before: every teaching of session-1 §05, session-2 §02 and session-4 A
 scope:          A live leaderboard of capability index scores and cost per index task. Every figure drawn from it is a moving target and none of them is stable between terms.
 used_for.session-1: the capability-against-price frontier and the tier comparison
 used_for.session-2: index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5; how the cost per index task is measured and the kinds of question the index draws on, described in general terms
-used_for.session-4: tokens and turns per task as reported measures, in Appendix D3; no figure typed
+used_for.session-4: benchmarks now reporting tokens and turns per task (Appendix D3)
 last_retrieved.session-1: 2026-07-28
 index_version.session-1: [UNVERIFIED, needs source]
 figures.session-1: index scores and cost per index task for the frontier chart; the body dates the pull 17 and 24 July and the footer dates it 28 July
@@ -179,7 +183,7 @@ moving_target:  false
 scope:          Over 200 preregistered legal queries, expert hand-scored, against Lexis+ AI, Westlaw AI-Assisted Research and GPT-4. Tools tested May 2024 — a historical fixture. The measured rates belong to the tools as they were on that date and must never be "updated".
 used_for.session-2: the measured hallucination rates for legal research tools
 used_for.session-3: the >17% / ~33% / 43% rates, the claim that tools made statements unsupported by the sources they cited, and the cross-study comparability caveat
-used_for.session-4: the 17%, 33% and 43% per-question rates in §06, and the independent-draw arithmetic built on them
+used_for.session-4: the 17%, 33% and 43% per-question error rates behind the 100-memo simulation (§06)
 ```
 
 ## src-openai-pricing
@@ -271,7 +275,7 @@ scope:          The temperature parameter's status on current models and the ven
 used_for.session-2: §01's list of what can differ between two runs and the third consequence card
 last_retrieved.session-2: 2026-09-13
 figures.session-2: none typed
-used_for.session-4: that the temperature setting is deprecated on current Claude models, in Appendix D3
+used_for.session-4: temperature, deprecated on current Claude models (Appendix D3)
 ```
 
 ## src-finra2409
@@ -289,7 +293,7 @@ kind:           evidence
 moving_target:  false
 scope:          FINRA's position that existing rules reach generative AI and that supervision is not suspended by the technology. Creates no new obligations.
 used_for.session-1: the position that existing rules apply to generative AI and that supervision is not suspended by the technology
-used_for.session-4: the position that FINRA's rules are technology neutral and apply to generative AI, creating no new requirement, in §01
+used_for.session-4: FINRA's position that its rules are technology neutral and that its AI notice adds no new requirement (§01)
 ```
 
 ## src-regsp
@@ -307,7 +311,7 @@ kind:           evidence
 moving_target:  false
 figure_class:   regulatory_date
 scope:          The four obligations of the 2024 amendments: a written incident response program; customer notification no later than 30 days after the firm becomes aware; service provider oversight, including the service provider's notice to the firm within 72 hours of becoming aware of a breach; and recordkeeping. The definition and scope limits of nonpublic personal information at 17 CFR 248.3, including the fact that an individual is a customer and information disclosed in a manner indicating the individual is a customer. The compliance dates 3 December 2025 and 3 June 2026.
-used_for.session-4: the definition of nonpublic personal information and the information it treats as identifying in §02, service provider oversight and the 72-hour notice to the firm in §04, the 30-day customer notice in Appendix D5, and the incident response programme
+used_for.session-4: what counts as nonpublic personal information (§02); vendor oversight and the vendor's 72-hour notice to the firm (§04); the 30-day client notice and the incident response programme (Appendix D5)
 used_for.session-3: the privacy notice, the written incident response programme and the 30-day notification, named in §09b as obligations owed apart from any note-taker and taught in Session 4
 ```
 
@@ -325,7 +329,7 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          Accuracy of AI representations, training and security controls, and Regulation S-P as a named examination focus.
-used_for.session-4: that the fiscal 2026 examination priorities name AI and Regulation S-P, in §01
+used_for.session-4: the fiscal 2026 examination priorities naming AI and Regulation S-P (§01)
 ```
 
 ## src-kalai
@@ -394,7 +398,7 @@ kind:           evidence
 moving_target:  false
 scope:          The two AI-washing settlements and their penalty amounts. Penalty figures are reported at two values across sources; the page states the majority figure.
 used_for.session-1: the AI-washing settlements and their penalty amounts
-used_for.session-4: the two AI-washing penalties and the Marketing Rule as the rule broken, in §01
+used_for.session-4: the two AI-washing penalties under the Marketing Rule (§01)
 ```
 
 ## src-anthropic-ctx
@@ -778,7 +782,7 @@ kind:           fabricated
 moving_target:  false
 disclose_on_page: false
 scope:          A deliberately fabricated citation, appearing in the session-2 §07 triage as exercise material so that students practise failing to catch it. MUST NEVER CARRY A CONFIDENCE CHIP: a chip asserts the claim is evidenced, and the whole point is that it is not.
-used_for.session-2: exercise material in the §07 citation triage, labelled as fabricated on the page
+used_for.session-2: the §07 citation triage, where it is one of the citations to check and the page labels it as fabricated
 ```
 
 ## src-hallowell
@@ -795,8 +799,8 @@ confidence:     not applicable
 kind:           fabricated
 moving_target:  false
 disclose_on_page: false
-scope:          A deliberately fabricated citation used as exercise material in the session-4 §08 audit-trail classification, labelled on the page where it appears. MUST NEVER CARRY A CONFIDENCE CHIP.
-used_for.session-4: exercise material in the §07 audit-record sorter, labelled as invented on the page and in the answer key
+scope:          A deliberately fabricated citation used as exercise material in the session-4 §07 record sorter (record 6), labelled in the answer key and the section's source line. MUST NEVER CARRY A CONFIDENCE CHIP.
+used_for.session-4: the §07 exercise, where it is the case cited in record 6 and the answer key names it as invented
 ```
 
 ## src-finra2026
@@ -813,7 +817,7 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          FINRA's first standalone generative-AI section: enterprise-level supervisory processes, controls for hallucinations, bias, cybersecurity and threat-actor use, ongoing human monitoring, and novel oversight for agents that can act or transact.
-used_for.session-4: generative AI's own section in the 2026 report (§01), and supervision with added oversight and logging for agents that act or transact (§07)
+used_for.session-4: generative AI's section in the 2026 report (§01); supervision, with added oversight and logging for AI agents that act or transact (§07)
 ```
 
 ## src-finra-inj
@@ -830,7 +834,7 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          A self-regulatory organisation publishing a standalone primer on an attack technique, which is the evidence for the claim that prompt injection has left the research literature.
-used_for.session-4: that FINRA published a primer on prompt injection in March 2026, in §05
+used_for.session-4: FINRA's March 2026 primer on prompt injection (§05)
 ```
 
 ## src-daly
@@ -847,7 +851,7 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          NARROW, AND IT WAS READ TOO WIDELY. The speech states that the core questions remain open — whether an AI tool is marketing, advice or something requiring registration; who is responsible when output is wrong; how it is supervised — and asks for comment rather than announcing an answer. It says NOTHING about watermarking, SynthID, benchmark scores or model token counts, and it was chipped to four such claims before Phase 3 Part 1.
-used_for.session-4: the open questions on responsibility and supervision and the request for comment, in §01
+used_for.session-4: the open questions on responsibility and supervision for AI output (§01)
 ```
 
 ## src-zhao
@@ -890,7 +894,7 @@ scope:          The LLM01 ranking for prompt injection and the mapping into six 
 ## src-cve
 
 ```source
-title:          CVE-2025-32711 (EchoLeak, CVSS 9.3) and CVE-2025-54135 (CurXecute, CVSS 9.8)
+title:          CVE-2025-32711 (EchoLeak, CVSS 9.3)
 author:         MITRE / NVD
 publisher:      Public CVE record
 link:           [UNVERIFIED, needs source]
@@ -898,10 +902,10 @@ published:      2025
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
 confidence:     H
-kind:           background
+kind:           evidence
 moving_target:  false
-scope:          Identifiers, scores and mechanism verified against the public record. The lesson drawn from them is the instructor's, and no page claim currently carries this key.
-used_for.session-4: named for the reader as the public record behind EchoLeak in §05; the lesson drawn is the instructor's
+scope:          Identifier, score and mechanism of EchoLeak, verified against the public record: one crafted email could make Microsoft 365 Copilot send internal data out with no click. Kind was background until 2026-09-25, when the §05 bullet stating that mechanism was found resting on it unchipped (A20); it is now the chip on that claim. CurXecute (CVE-2025-54135) left the title with the rebuild that took it off the page.
+used_for.session-4: the public vulnerability record for EchoLeak (§05)
 ```
 
 ## src-gartner
@@ -966,7 +970,7 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          Approximately $25 million across 15 transfers. The one deepfake figure the course endorses putting in front of a client.
-used_for.session-4: the Arup incident figure in §05
+used_for.session-4: the Arup deepfake video-call loss (§05)
 ```
 
 ## src-synthid
@@ -1005,7 +1009,7 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4 Appendices D1 and D2
 scope:          TEXT WATERMARKING ONLY. The boundary is load-bearing, because the sibling record `src-synthid` is cited for image, video and audio claims that this page does not reach. What it substantiates, and nothing outside this list: detection is probabilistic and returns watermarked, not watermarked, or uncertain, against two tunable thresholds; the signal survives cropping, changing a few words, and mild paraphrase; detector confidence is greatly reduced by thorough rewriting or by translation; watermarking is less effective on factual responses, because there is less opportunity to augment generation without decreasing accuracy; detector exposure is a three-way deployer choice between fully-private, semi-private and public; the scheme is not designed to stop motivated adversaries; and the underlying technical description is Dathathri et al., Scalable watermarking for identifying large language model outputs, Nature 634:818-823 (2024), https://www.nature.com/articles/s41586-024-08025-4. IT SUBSTANTIATES NO ADOPTION FIGURE AND NO MARKET-SHARE CLAIM, which is the fact that keeps session-4's scale paragraph open rather than closing it.
-used_for.session-4: watermarking being less effective on factual responses (Appendix D2), and the tournament mechanism by way of the Nature paper the page names (Appendix D1)
+used_for.session-4: watermarks working less well on factual answers, and the three results a detector can return (Appendix D2); the published scheme behind the knockout figure (Appendix D1)
 ```
 
 ## src-claude-marks
@@ -1025,7 +1029,7 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4 Appendices D1 and D2
 scope:          Supported Claude models launched on or after 2 August 2026 mark generated text with an imperceptible watermark, and earlier models are being added with all covered by 2 December 2026. Marks apply across the API, the Claude apps, Claude Code and wherever Claude is offered. Supported files Claude generates, such as PNG and JPEG images, carry signed C2PA provenance metadata. Detection is available only to organisations eligible under EU law, such as regulators, law enforcement, media, fact-checkers, researchers and educational organisations. A mark may persist through copying and some editing; heavy paraphrase or translation can make it undetectable. A detected mark signals that the content may have been processed by Claude and is not fully conclusive; the lack of a detected mark does not mean the content was not AI-generated or processed. The page, as read, describes no account or user identifier in the mark; that is a reading of an absence and is chipped M wherever it is used.
-used_for.session-4: the Claude watermark facts in Appendices D1 and D2, and the EU rule named in the §01 sorter
+used_for.session-4: which Claude models mark their text, who can check a mark and what it shows (Appendices D1 and D2); the EU marking rule in the §01 sorter
 ```
 
 ## src-cfp-genai
@@ -1043,7 +1047,7 @@ confidence:     M
 kind:           evidence
 moving_target:  false
 scope:          A checklist for CFP professionals using generative AI: safeguard confidentiality, including using pseudonyms and anonymisation to remove confidential information before uploading; verify the accuracy of output; confirm the platform stores output in compliance with recordkeeping rules; confirm the vendor commits to notice of data breaches; and keep professional judgment with the professional.
-used_for.session-4: pseudonyms and removing identifying details before upload, in §02 and Appendix D6
+used_for.session-4: using pseudonyms and removing identifying details before upload (§02, Appendix D6)
 ```
 
 ## src-cfp-code
@@ -1061,7 +1065,7 @@ confidence:     M
 kind:           evidence
 moving_target:  false
 scope:          Standard A.14, Duties When Selecting, Using, or Recommending Technology: a CFP professional must exercise reasonable care and judgment when selecting, using or recommending technology in providing professional services. Standard A.9, Confidentiality and Privacy.
-used_for.session-4: Standard A.14 as the professional duty behind vendor review, in §04
+used_for.session-4: Standard A.14, reasonable care in selecting and using technology (§04)
 ```
 
 ## src-sec-withdraw
@@ -1079,7 +1083,7 @@ confidence:     M
 kind:           evidence
 moving_target:  false
 scope:          That the SEC withdrew its 2023 proposal on conflicts of interest from predictive data analytics used by broker-dealers and investment advisers, on 12 June 2025, together with thirteen other proposals; any future rule would need a new proposal.
-used_for.session-4: the withdrawn proposal placed in the guidance-or-proposal bucket of the §01 sorter
+used_for.session-4: the withdrawn 2023 predictive data analytics proposal (§01 sorter)
 ```
 
 ## src-anthropic-terms
@@ -1098,7 +1102,7 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4 §03
 scope:          Consumer training defaults since 8 October 2025, five-year and 30-day retention, the commercial-side no-training default, Zero Data Retention eligibility, and Claude Code's local 30-day transcript retention. Every one of these is a term a vendor can change without notice.
-used_for.session-4: the consumer training switch, five-year and 30-day retention, and the commercial exclusion from training, in §03
+used_for.session-4: the consumer training switch, five-year and 30-day retention, and the business plans' exclusion from training (§03)
 ```
 
 ## src-beta
@@ -1175,7 +1179,7 @@ figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          The five effort levels, which models carry the effort selector, extended thinking not being disableable in Claude on Opus 5, xhigh requiring Opus 4.7 or newer, the rule that a change applies starting with Claude's next response, and admin role gating of models and effort levels.
 used_for.session-0.1: the five effort levels, the selector availability, the next-response rule, and admin role gating
-used_for.session-4: effort levels as the setting a user changes, in Appendix D3
+used_for.session-4: effort as the setting you change on current models (Appendix D3)
 ```
 
 ## src-features

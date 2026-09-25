@@ -10,6 +10,54 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-25 · Session 4 polished: sources that read like sources, and less around each figure
+
+Branch `claude/hopeful-newton-hjt0f4`, after PR #38 merged. The instructor asked for a full
+professional polish, for things "like this that were missed" to be fixed, naming the footer entry
+*"Does not exist. Hallowell v. Commissioner, T.C. Memo. 2023-217. Used for: exercise material in
+the §07 audit-record sorter, labelled as invented on the page and in the answer key."*, and for
+each section to be simplified a bit while keeping the interactivity. Change folder
+`docs/changes/2026-09-25-session-4-polish/` (ledger S4P-001 to S4P-012, `checks.mjs` 19
+assertions). Minutes, sections, tiers and gates are unchanged.
+
+**Measured at load, every appendix shown, 1280 px.** Instruction labels 90 to 64 (−29%);
+visible controls 223 to 202 (−9%); words 6,562 to 6,085 (−7%); page height 34,661 to 32,382 px
+(−7%). Fourteen empty readouts drop from a 110 px grey box to one muted line.
+
+### Session 4 · sources
+
+- **The invented case is set apart.** It sorts after every real source and reads *"Not a real
+  source. Hallowell v. Commissioner, T.C. Memo. 2023-217 was invented for the §07 exercise, where
+  it is the case cited in record 6 and the answer key names it as invented."* The footer paragraph
+  that repeated it is gone.
+- **Every source says what it supports and where**, in the reader's words: no "no figure typed",
+  no "the lesson drawn is the instructor's", no repository file names, no "this build".
+- **EchoLeak is chipped to its CVE record**, which it rested on unchipped; CurXecute, off the page
+  since the rebuild and its score unverified, leaves the citation.
+
+### Session 4 · each section, simplified
+
+- **One provenance statement per section.** The dashed "constructed for this lesson" labels
+  repeated the source line in 16 places; they are gone, and the source line now carries what two
+  of them said (D3's drawings are illustrative; §05's inbox and call are simulated). The one
+  label kept marks §08's deliberately gapped package.
+- **Each step's controls appear when the step before is done**: §05's x-ray and fixes after the
+  assistant runs, §06's rate, length and Check every answer after the first run, D5's clause
+  after an event is committed, and the §01 and §07 finale buttons only when they can be pressed.
+- **§04.** The six lock tabs repeated the six locks; the locks in the safe are now the keyboard
+  buttons.
+- **§08.** The seven stations on the route are the picker; the list of seven sentences that
+  repeated them is gone, and each sentence names its station and heads the readout. Pack yours
+  loses its mini route and route tags.
+- **Wording.** Hints that repeated a button are gone (§00, §03), asides are cut (§01, §08), the
+  cold open's bullet is one idea, §09's self-test joins the assignment card, four of §06's five
+  slider notes go, and D2's doubled full stop is fixed.
+
+### Sessions 1 and 2 · footer, the same defect
+
+- Session 2's *Kessler* entry takes the same "Not a real source" form, and the Artificial
+  Analysis and pricing entries in Sessions 1 and 2 no longer point a student at `DATA-PULL.md`.
+
 ## 2026-09-25 · Session 4 made graphic: every section is now a figure you work
 
 Branch `claude/amazing-curie-xz0s73`, after PR #37 (the text rebuild) merged. The instructor asked
