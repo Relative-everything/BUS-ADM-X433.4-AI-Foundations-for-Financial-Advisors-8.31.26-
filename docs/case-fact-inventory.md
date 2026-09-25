@@ -23,8 +23,8 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 1710 | 1392 | 318 |
 | `PINNED` | 2 | 2 | 0 |
-| `UNGUARDED` | 75 | 5 | 70 |
-| **TOTAL** | **1787** | **1399** | **388** |
+| `UNGUARDED` | 69 | 5 | 64 |
+| **TOTAL** | **1781** | **1399** | **382** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -41,14 +41,14 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `session-1/index.html` | 17 | 0 |
 | `session-2/index.html` | 3 | 0 |
 | `session-3/index.html` | 16 | 0 |
-| `session-4/index.html` | 21 | 0 |
+| `session-4/index.html` | 15 | 0 |
 
 ## `UNGUARDED`, by region
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R1` | body prose | 45 | 0 |
-| `R2` | script string literal | 25 | 0 |
+| `R1` | body prose | 41 | 0 |
+| `R2` | script string literal | 23 | 0 |
 | `R10` | captured transcript | 5 | 5 |
 
 **`R2` carries 0 of the 5 quantitative unguarded references, 0.0%** — answer
@@ -60,21 +60,21 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 70 |
+| `name` | 64 |
 | `pct` | 5 |
 
 ## `UNGUARDED`, by fact
 
 | Fact | Count |
 |---|---:|
-| `domicile` | 13 |
-| `nathanShort` | 12 |
-| `megShort` | 11 |
-| `plantTown` | 10 |
+| `megShort` | 13 |
+| `domicile` | 12 |
+| `nathanShort` | 11 |
 | `companyName` | 8 |
 | `companyAbbr` | 7 |
-| `davidName` | 5 |
+| `plantTown` | 6 |
 | `afrMid` | 4 |
+| `davidName` | 3 |
 | `residenceTown` | 2 |
 | `afrLong` | 1 |
 | `decedent` | 1 |
@@ -102,41 +102,44 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**415 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**540 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
+| `votingUnits` | 90 |
 | `endowmentIntent` | 66 |
-| `votingUnits` | 48 |
+| `claireAge` | 50 |
+| `marriedYears` | 50 |
 | `tbills` | 33 |
-| `claireAge` | 33 |
-| `marriedYears` | 33 |
-| `seedUnits` | 23 |
-| `megAge` | 21 |
+| `seedUnits` | 30 |
+| `employees` | 28 |
+| `nonVotingUnits` | 26 |
+| `megAge` | 23 |
 | `charDeductible` | 18 |
-| `employees` | 18 |
-| `nonVotingUnits` | 16 |
+| `saleUnits` | 17 |
 | `inheritedIra` | 15 |
 | `david403b` | 15 |
-| `saleUnits` | 15 |
-| `nathanAge` | 13 |
+| `nathanAge` | 15 |
 | `dividend` | 12 |
 | `revolver` | 12 |
+| `discount` | 11 |
 | `nathanShort` | 9 |
-| `discount` | 8 |
+| `estateTopRate` | 4 |
+| `davidAge` | 4 |
+| `megApplicableAge` | 3 |
+| `ltcgTop` | 3 |
 | `perUnitDividend` | 2 |
 | `deMinimisLoan` | 2 |
-| `megApplicableAge` | 1 |
-| `estateTopRate` | 1 |
-| `davidAge` | 1 |
+| `custConcentration` | 1 |
+| `megRetainedNV` | 1 |
 
 ## Money figures in case context that `CASE.md` does not carry
 
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
 | `session-2/index.html:2678` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
-| `session-4/index.html:2527` | UNGUARDED | $400,000 | )}); })(); var DF=[ {q:'A video call. It looks and sounds like Meg. She asks you to wire 〈$400,000〉 from her brokerage account to a new account today, |
+| `session-4/index.html:7253` | UNGUARDED | $400,000 | =$('dfChan'),say=$('dfSay'),dBtns=$('dfBtns'),dOut=$('dfOut'); var DF={ say0:'“Wire 〈$400,000〉 from my brokerage account to a new account today. Keep  |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,

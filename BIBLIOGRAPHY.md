@@ -5,7 +5,7 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**67 works, 212 references across 5 lessons.** 48 are
+**67 works, 243 references across 5 lessons.** 48 are
 cited by at least one claim; 19 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
@@ -110,8 +110,8 @@ Top-20-chunk retrieval failure rates — baseline 5.7%, contextual embeddings 3.
 | Last retrieved | 2026-09-25 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **8** |
-| Cited in | S4 `#s1` · S4 `#sW1` ×4 · S4 `#sW2` ×3 |
+| **Total references** | **10** |
+| Cited in | S4 `#s1` · S4 `#sW1` ×5 · S4 `#sW2` ×3 · S4 `#s9` |
 
 Supported Claude models launched on or after 2 August 2026 mark generated text with an imperceptible watermark, and earlier models are being added with all covered by 2 December 2026. Marks apply across the API, the Claude apps, Claude Code and wherever Claude is offered. Supported files Claude generates, such as PNG and JPEG images, carry signed C2PA provenance metadata. Detection is available only to organisations eligible under EU law, such as regulators, law enforcement, media, fact-checkers, researchers and educational organisations. A mark may persist through copying and some editing; heavy paraphrase or translation can make it undetectable. A detected mark signals that the content may have been processed by Claude and is not fully conclusive; the lack of a detected mark does not mean the content was not AI-generated or processed. The page, as read, describes no account or user identifier in the mark; that is a reading of an absence and is chipped M wherever it is used.
 
@@ -414,8 +414,8 @@ A live leaderboard of capability index scores and cost per index task. Every fig
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **3** |
-| Cited in | S4 `#s2` ×2 · S4 `#sAnon` |
+| **Total references** | **4** |
+| Cited in | S4 `#s2` ×2 · S4 `#sAnon` ×2 |
 
 A checklist for CFP professionals using generative AI: safeguard confidentiality, including using pseudonyms and anonymisation to remove confidential information before uploading; verify the accuracy of output; confirm the platform stores output in compliance with recordkeeping rules; confirm the vendor commits to notice of data breaches; and keep professional judgment with the professional.
 
@@ -490,8 +490,8 @@ General-purpose models over more than 800,000 verifiable legal questions, 58-88%
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S4 `#s1` ×2 |
+| **Total references** | **3** |
+| Cited in | S4 `#s1` ×2 · S4 `#s9` |
 
 NARROW, AND IT WAS READ TOO WIDELY. The speech states that the core questions remain open — whether an AI tool is marketing, advice or something requiring registration; who is responsible when output is wrong; how it is supervised — and asks for comment rather than announcing an answer. It says NOTHING about watermarking, SynthID, benchmark scores or model token counts, and it was chipped to four such claims before Phase 3 Part 1.
 
@@ -509,8 +509,8 @@ NARROW, AND IT WAS READ TOO WIDELY. The speech states that the core questions re
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **4** |
-| Cited in | S1 `#s14` ×2 · S4 `#s1` ×2 |
+| **Total references** | **5** |
+| Cited in | S1 `#s14` ×2 · S4 `#s1` ×2 · S4 `#s9` |
 
 FINRA's position that existing rules reach generative AI and that supervision is not suspended by the technology. Creates no new obligations.
 
@@ -604,8 +604,8 @@ The Persona-Task-Context-Format framework that session-2 §03 teaches and §04 s
 | Last retrieved | 2026-08-25 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **4** |
-| Cited in | S4 `#sW1` ×2 · S4 `#sW2` ×2 |
+| **Total references** | **5** |
+| Cited in | S4 `#sW1` ×2 · S4 `#sW2` ×3 |
 
 TEXT WATERMARKING ONLY. The boundary is load-bearing, because the sibling record `src-synthid` is cited for image, video and audio claims that this page does not reach. What it substantiates, and nothing outside this list: detection is probabilistic and returns watermarked, not watermarked, or uncertain, against two tunable thresholds; the signal survives cropping, changing a few words, and mild paraphrase; detector confidence is greatly reduced by thorough rewriting or by translation; watermarking is less effective on factual responses, because there is less opportunity to augment generation without decreasing accuracy; detector exposure is a three-way deployer choice between fully-private, semi-private and public; the scheme is not designed to stop motivated adversaries; and the underlying technical description is Dathathri et al., Scalable watermarking for identifying large language model outputs, Nature 634:818-823 (2024), https://www.nature.com/articles/s41586-024-08025-4. IT SUBSTANTIATES NO ADOPTION FIGURE AND NO MARKET-SHARE CLAIM, which is the fact that keeps session-4's scale paragraph open rather than closing it.
 
@@ -718,8 +718,8 @@ Characterised on the page ONLY by its title claim of self-reported reductions in
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **11** |
-| Cited in | S2 `#s10` ×3 · S3 `#s6` ×2 · S3 `#s15` · S3 `#s16` ×2 · S4 `#s6` ×3 |
+| **Total references** | **12** |
+| Cited in | S2 `#s10` ×3 · S3 `#s6` ×2 · S3 `#s15` · S3 `#s16` ×2 · S4 `#s6` ×3 · S4 `#s9` |
 
 Over 200 preregistered legal queries, expert hand-scored, against Lexis+ AI, Westlaw AI-Assisted Research and GPT-4. Tools tested May 2024 — a historical fixture. The measured rates belong to the tools as they were on that date and must never be "updated".
 
@@ -813,8 +813,8 @@ n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using 
 | Last retrieved | *not applicable* |
 | Last verified by the instructor | *not applicable* |
 | Confidence | L |
-| **Total references** | **28** |
-| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s7` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s2` · S4 `#sRSP` · S4 `#sAnon` · S4 `#s3` · S4 `#s4` · S4 `#s5` · S4 `#sW2` · S4 `#s7` · S4 `#sCR` · S4 `#sD` · S4 `#s9` |
+| **Total references** | **49** |
+| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s7` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCold` ×2 · S4 `#s2` ×2 · S4 `#sRSP` ×2 · S4 `#sAnon` ×2 · S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#s5` ×3 · S4 `#sW1` ×3 · S4 `#sW2` ×3 · S4 `#s6` ×2 · S4 `#sWS` · S4 `#s7` ×2 · S4 `#sCR` ×2 · S4 `#sD` ×2 · S4 `#s9` |
 
 Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
 
@@ -832,8 +832,8 @@ Entirely synthetic. Every figure, document and family fact is invented, includin
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **10** |
-| Cited in | S3 `#sPol` ×2 · S4 `#s2` ×4 · S4 `#sRSP` ×2 · S4 `#s4` ×2 |
+| **Total references** | **12** |
+| Cited in | S3 `#sPol` ×2 · S4 `#s2` ×3 · S4 `#sRSP` ×3 · S4 `#s4` ×2 · S4 `#s9` ×2 |
 
 The four obligations of the 2024 amendments: a written incident response program; customer notification no later than 30 days after the firm becomes aware; service provider oversight, including the service provider's notice to the firm within 72 hours of becoming aware of a breach; and recordkeeping. The definition and scope limits of nonpublic personal information at 17 CFR 248.3, including the fact that an individual is a customer and information disclosed in a manner indicating the individual is a customer. The compliance dates 3 December 2025 and 3 June 2026.
 
@@ -889,8 +889,8 @@ That the SEC withdrew its 2023 proposal on conflicts of interest from predictive
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S4 `#s1` ×2 |
+| **Total references** | **3** |
+| Cited in | S4 `#s1` ×2 · S4 `#s9` |
 
 Accuracy of AI representations, training and security controls, and Regulation S-P as a named examination focus.
 

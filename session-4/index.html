@@ -5482,7 +5482,7 @@ try{
   /* everything on the grid sits in one group, 20 units down, under the key line */
   var gG=sv('g',{transform:'translate(0 20)'},svg);
   var bandT=sv('rect',{x:30,y:142,width:320,height:184,'class':'s2band'},gG);
-  var bandR=sv('rect',{x:26,y:144,width:328,height:180,'class':'s2band'},gG);
+  var bandR=sv('rect',{x:26,y:144,width:164*2,height:180,'class':'s2band'},gG);
   var j,i;
   for(j=0;j<=6;j++){var gx=r2(GX+CW*j);sv('line',{x1:gx,y1:GY,x2:gx,y2:GY+CH*5,'class':'s2grid'},gG)}
   for(i=0;i<=5;i++){var gy=GY+CH*i;sv('line',{x1:GX,y1:gy,x2:GX+320,y2:gy,'class':'s2grid'},gG)}
@@ -7657,7 +7657,7 @@ var ITEMS=[
   r:[['f','=B2/C2','=B2*C2']],
   v:'Change one symbol and it calculates something else. Little room for a mark.'},
  {c:'Allocation percentages',t:'A table of allocation percentages',k:1,m:1,
-  r:[['f','Stocks 60%','Stocks 61%'],['f','Bonds 35%','Bonds 34%'],['f','Cash 5%','Cash 6%']],
+  r:[['f','Stocks 60%','Stocks 61%'],['f','Bonds 30%','Bonds 29%'],['f','Cash 10%','Cash 11%']],
   v:'Nudge one digit and the table is wrong. Little room for a mark.'},
  {c:'Report-building code',t:'A few lines of code that build client reports',k:1,m:1,
   r:[['f','report(sum(fees))','report(max(fees))']],
