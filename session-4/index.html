@@ -3374,7 +3374,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <ul class="pts">
-    <li><b>Two tests.</b> Session 1's eight checks, then Session 4's: could you paste it in? Passing one does not pass the other.</li>
+    <li><b>Two tests.</b> Session 1's eight checks, then Session 4's: could you paste it in at all? Passing one does not pass the other, and which tool it may go into is §04.</li>
   </ul>
 
   <p class="src">Prompts written for this lesson; D's client is synthetic. The eight checks are the Session 1 checklist, run as simple word tests <span class="conf l" data-src="src-case">L</span>.</p>
@@ -3419,7 +3419,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <ul class="pts">
     <li><b>FINRA agrees:</b> its rules are technology neutral, and its AI notice adds no requirement <span class="conf h" data-src="src-finra2409">H</span>.</li>
-    <li><b>Examiners are looking:</b> FINRA's 2026 report <span class="conf h" data-src="src-finra2026">H</span> and the SEC's 2026 priorities <span class="conf h" data-src="src-secpri">H</span> name AI; the SEC fined two advisers $225,000 and $175,000 for claiming AI they did not use, under the Marketing Rule <span class="conf m" data-src="src-sec-ai">M</span>.</li>
+    <li><b>Regulators are looking:</b> FINRA's 2026 report <span class="conf h" data-src="src-finra2026">H</span> and the SEC's 2026 priorities <span class="conf h" data-src="src-secpri">H</span> name AI; the SEC fined two advisers $225,000 and $175,000 for claiming AI they did not use, under the Marketing Rule <span class="conf m" data-src="src-sec-ai">M</span>.</li>
     <li><b>Some questions are open:</b> in February 2026 the SEC's Director of Investment Management called responsibility and supervision for wrong AI output unsettled <span class="conf h" data-src="src-daly">H</span>.</li>
   </ul>
 
@@ -3618,7 +3618,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <ul class="pts">
-    <li><b>Regulation S-P, 2024 amendments.</b> Your firm must oversee its vendors, and they must tell the firm of a breach within 72 hours <span class="conf h" data-src="src-regsp">H</span>.</li>
+    <li><b>Regulation S-P, 2024 amendments.</b> Your firm must oversee its vendors, and each vendor must tell the firm within 72 hours of becoming aware of a breach <span class="conf h" data-src="src-regsp">H</span>.</li>
     <li><b>CFP Board Standard A.14.</b> Take reasonable care when you select, use or recommend technology <span class="conf m" data-src="src-cfp-code">M</span>.</li>
   </ul>
 
@@ -3754,7 +3754,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>Appendix D2 &middot; Watermark limits</span><span class="mins">12 min</span></div>
   <h2>What a Watermark Can and Cannot Prove</h2>
 
-  <p class="big">A found mark is a hint, not proof. No mark is not evidence of anything <span class="conf h" data-src="src-claude-marks">H</span>. One published kind of text watermark hides in which words the AI picks <span class="conf m" data-src="src-synthid-text">M, simplified</span>.</p>
+  <p class="big">A found mark is a hint, not proof. A missing mark never shows a person wrote it <span class="conf h" data-src="src-claude-marks">H</span>. One published kind of text watermark hides in which words the AI picks <span class="conf m" data-src="src-synthid-text">M, simplified</span>.</p>
 
   <div class="panel" data-task="t-sW2" data-comp="two-bucket-sorter">
     <span class="do">Do this now: 5 minutes</span>
@@ -4800,7 +4800,7 @@ for(var s=0;s<=8;s++){
   axn.push(svt(svg,X(s),265,String(s),'axn','middle'));
 }
 svt(svg,8,286,'TEST 1 · CHECKS PASSED, OUT OF 8','axc');
-var best=svt(svg,X(4)-12,49,'▼ best safe to paste','best','start');
+var best=svt(svg,X(4)-12,49,'▼ best, no client','best','start');
 var tok=COLDP.map(function(p){
   var g=sv('g',{'class':'tok '+(p.send?'ok':'bad'),'data-l':p.l},svg);
   try{g.style.transform=tr(38,40)}catch(e){}
@@ -4940,7 +4940,7 @@ function stageSentence(){
   if(!split){var ti=topN();return COLDP[ti].l+' passes the most checks: '+nOf(ti)+' of 8. Next: Test 2.'}
   var p=COLDP[picked],s;
   if(!p.send)s='You picked '+p.l+': the most checks, and you could not paste it in.';
-  else if(picked===bestN())s='You picked '+p.l+': fewer checks than '+COLDP[topN()].l+', and the best one safe to paste in.';
+  else if(picked===bestN())s='You picked '+p.l+': fewer checks than '+COLDP[topN()].l+', and the best one that names no client.';
   else s='You picked '+p.l+': it names no client, and passes '+nOf(picked)+' of 8.';
   return s;
 }
@@ -5247,7 +5247,7 @@ function readout(){
   O.innerHTML='<span class="hd">What binds you</span><b>All four items that name AI fell:</b> guidance binds nobody, and the EU law is not a US rule. '+
    '<b>The five duties you already had still stand</b>, and each already reaches your AI work.'+
    (guess!==null?' You guessed '+(guess>=5?'5 or more':guess)+'. Actual: 0.'+(guess===0?' Spot on.':''):'')+
-   '<br><br>No federal securities rule was written for AI. The duty you are looking for has existed since 1940.';
+   '<br><br>No US securities rule was written for AI. The duty you are looking for has existed since 1940.';
   return;
  }
  h='<span class="hd">Progress</span>';
@@ -6071,7 +6071,7 @@ try{
   var ZOOMTXT=[null,
     '1 · Exact. Name, age, town and value: only she fits. Click 2.',
     '2 · Disguised. Every detail changed, and she barely moved: initials and “about” still point to her.',
-    '3 · Replaced. A role, a range, a region: she is hidden, the model keeps what it needs, and this version can go in.',
+    '3 · Replaced. A role, a range, a region: she is hidden, and the model keeps what it needs. Only into a tool your firm has vetted (§04).',
     '4 · Deleted. Hidden, but the model has nothing to plan with. Safe, but useless.'];
   var AFTER='Every disguise gives her away; every replacement hides her and still helps. Check the whole prompt too: details you leave in can add up to one person, like a trade plus a town (§02).';
   var VSH={safe:'safe to paste',still:'gives her away'};
@@ -6589,7 +6589,7 @@ var VQ=[
  {l:'Contract',q:'Did your firm sign a business contract for this tool?',ask:'Can our firm sign a business agreement for this tool, rather than using consumer terms?'},
  {l:'No training',q:'Does the contract say your content is not used to train models?',ask:'Does the contract exclude training on our content? Please point to the clause.'},
  {l:'Retention',q:'Is retention in writing: 30 days or less, or deleted on request?',ask:'How long do you keep our inputs and outputs, and can we have them deleted on request?'},
- {l:'72h notice',q:'Does the contract say the vendor tells your firm within 72 hours of a breach?',ask:'Will you notify our firm within 72 hours of a breach affecting our data? Please point to the clause.'},
+ {l:'72h notice',q:'Does the contract say the vendor tells your firm within 72 hours of becoming aware of a breach?',ask:'Will you notify our firm within 72 hours of becoming aware of a breach affecting our data? Please point to the clause.'},
  {l:'Export',q:'Can you export prompts and outputs to keep as firm records?',ask:'Can we export prompts and outputs, with dates, to keep in our own records?'},
  {l:'Audit',q:'Has your firm read the vendor’s independent security audit report?',ask:'Can you send your most recent independent security audit report, such as a SOC 2 Type II?'}
 ];
@@ -7200,7 +7200,7 @@ try{
 
   /* ---------- readout ---------- */
   var HD='<span class="hd">What the assistant returned</span>';
-  function msg(t){out.className='mpanel';out.innerHTML=HD+'<span class="flag">'+esc(t)+'</span>'}
+  function msg(t){out.className='mpanel';out.innerHTML='<span class="hd">Not yet</span><span class="flag">'+esc(t)+'</span>'}
   function writeOut(){
     var h=HD;
     if(!ran){out.className='mpanel';out.innerHTML=h+'<span class="nil">'+(guess?'Nothing yet: run the assistant.':'Nothing yet: pick a or b, then run it.')+'</span>';return}
@@ -9579,7 +9579,7 @@ try{
    freshly written nodes only. */
 var POL=[
  {q:'Why does the policy exist?',s:'§01',o:[
-   {l:'Our existing duties apply to AI in full.',t:'No securities rule was written for AI; {our existing duties apply to it in full} ({FINRA Regulatory Notice 24-09}).',g:1,st:'Duty + authority',n:''},
+   {l:'Our existing duties apply to AI in full.',t:'No US securities rule was written for AI; {our existing duties apply to it in full} ({FINRA Regulatory Notice 24-09}).',g:1,st:'Duty + authority',n:''},
    {l:'To promote the responsible and ethical use of AI.',t:'^To promote the responsible and ethical use of AI^ across the firm.',g:0,st:'Vague: nothing to check',n:''}]},
  {q:'What is PII, and what may never go in?',s:'§02 · §03 · §04',o:[
    {l:'Staff must use appropriate care with confidential client data.',t:'Staff ^must use appropriate care^ with confidential client data.',g:0,st:'Care is not a line',n:''},
@@ -9594,7 +9594,7 @@ var POL=[
    {l:'Undisclosed AI use leads to disciplinary action.',t:'Undisclosed AI use will result in ^disciplinary action^.',g:0,st:'A penalty, no record',n:''},
    {l:'A four-part record for every AI-assisted deliverable.',t:'Every AI-assisted client deliverable keeps a four-part record: {prompt}, {model and setting}, {quoted sources}, {the decision, named and dated}. No record is a records failure.',g:1,st:'Four-part record',n:''}]},
  {q:'Who is responsible?',s:'§01',o:[
-   {l:'The person who sends the work.',t:'{The person who sends the work} is responsible for it: not the tool, not the vendor, not a committee.',g:1,st:'One owner, unhedged',n:'Regulators still call this open (§01), so your policy settles it.'},
+   {l:'The person who sends the work.',t:'{The person who sends the work} is responsible for it: not the tool, not the vendor, not a committee.',g:1,st:'One owner, unhedged',n:'The SEC’s Director of Investment Management called this open in 2026 (§01), so your policy settles it.'},
    {l:'Shared by the user, the vendor and the AI committee.',t:'Responsibility is ^shared by the user, the vendor and the AI committee^.',g:0,st:'Shared means no owner',n:''}]}
 ];
 var rows=$('polRows'),read=$('polRead');if(!rows||!read)return;
