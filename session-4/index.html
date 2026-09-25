@@ -2078,30 +2078,6 @@ document.addEventListener('keydown',function(e){
       [].slice.call(document.querySelectorAll('[data-gate]')).forEach(function(c){mark(c.dataset.gate)});
     }
   }});
-
-/* ================= s0 · Session 3 retrieval bridge =================
-   Three items, each taught in Session 3's core (EDITORIAL D21): the note-taker
-   stages (§07), grounding's limit (§03 and §04), grounding against tuning (§05).
-   Answer letters vary so the room cannot learn the position. */
-var BRIDGE=[
- {q:'1. An AI note-taker works in four stages. In which order?',
-  opts:[{k:'x',t:'Extraction, transcription, follow-up, categorisation'},{k:'r',t:'Transcription, extraction, categorisation, follow-up'},{k:'y',t:'Transcription, categorisation, extraction, follow-up'}],a:'r',
-  fb:{x:'Nothing can be extracted before there is text. Transcription comes first: speech to words, then the facts pulled out, then sorted, then the follow-up drafted.',
-      r:'Right. Speech becomes text, facts are pulled from the text, the facts are sorted into categories, and the follow-up is drafted from the sorted facts. A mistake early is inherited by every stage after it.',
-      y:'Close. Facts have to be pulled out of the transcript before they can be sorted, so extraction comes before categorisation.'}},
- {q:'2. A grounded tool answers from your file and quotes the passage it used. The quote is real. Is the answer right?',
-  opts:[{k:'y',t:'Yes: a real quote means a right answer'},{k:'n',t:'No: grounded tools always misquote'},{k:'r',t:'Not necessarily: the nearest passage can be the wrong one'}],a:'r',
-  fb:{y:'The quote can be real and still answer a different question. In Session 3 the tool quoted the buy-sell’s valuation clause correctly, and that clause covers a death, a disability or a withdrawal, not a sale to a trust.',
-      n:'Too strong. Grounding cuts errors a great deal. The failure is quieter: the passage is real, quoted correctly, and not the one the question needed.',
-      r:'Right. The tool ranks passages by how alike they sound. Sounding like the question is not the same as answering it, and only someone who knows the difference catches it.'}},
- {q:'3. The appraisal is re-run on Tuesday. On Wednesday you ask what the company is worth. Which setup gives the new number?',
-  opts:[{k:'r',t:'A grounded tool reading the current file'},{k:'t',t:'A model fine-tuned on last month’s file'},{k:'b',t:'Both, equally'}],a:'r',
-  fb:{r:'Right. Grounding changes what the model reads, so it reads Tuesday’s appraisal on Wednesday. Your facts change; that is why grounding suits a planning practice.',
-      t:'Tuning changes what the model is, and it was tuned before Tuesday. It still gives last month’s number, fluently.',
-      b:'Only one of them has seen Tuesday’s appraisal. Tuning bakes facts in at a point in time; grounding reads the file as it is now.'}}
-];
-mkQuiz($('bridgeQuiz'),BRIDGE,$('bridgeScore'),'g1');
-
 /* ================= s2 phrases, defined first: the cold open's prompt D is built from them ================= */
 var RED=(function(){
   var v=Math.round(COLEv('cpcValue')/1000000);
@@ -2131,7 +2107,33 @@ var RED=(function(){
    {t:'Use bullet points.',safe:'A format instruction. Keep it.'}
   ];
 })();
-
+/* ----- section s0 ----- */
+try{
+/* ================= s0 · Session 3 retrieval bridge =================
+   Three items, each taught in Session 3's core (EDITORIAL D21): the note-taker
+   stages (§07), grounding's limit (§03 and §04), grounding against tuning (§05).
+   Answer letters vary so the room cannot learn the position. */
+var BRIDGE=[
+ {q:'1. An AI note-taker works in four stages. In which order?',
+  opts:[{k:'x',t:'Extraction, transcription, follow-up, categorisation'},{k:'r',t:'Transcription, extraction, categorisation, follow-up'},{k:'y',t:'Transcription, categorisation, extraction, follow-up'}],a:'r',
+  fb:{x:'Nothing can be extracted before there is text. Transcription comes first: speech to words, then the facts pulled out, then sorted, then the follow-up drafted.',
+      r:'Right. Speech becomes text, facts are pulled from the text, the facts are sorted into categories, and the follow-up is drafted from the sorted facts. A mistake early is inherited by every stage after it.',
+      y:'Close. Facts have to be pulled out of the transcript before they can be sorted, so extraction comes before categorisation.'}},
+ {q:'2. A grounded tool answers from your file and quotes the passage it used. The quote is real. Is the answer right?',
+  opts:[{k:'y',t:'Yes: a real quote means a right answer'},{k:'n',t:'No: grounded tools always misquote'},{k:'r',t:'Not necessarily: the nearest passage can be the wrong one'}],a:'r',
+  fb:{y:'The quote can be real and still answer a different question. In Session 3 the tool quoted the buy-sell’s valuation clause correctly, and that clause covers a death, a disability or a withdrawal, not a sale to a trust.',
+      n:'Too strong. Grounding cuts errors a great deal. The failure is quieter: the passage is real, quoted correctly, and not the one the question needed.',
+      r:'Right. The tool ranks passages by how alike they sound. Sounding like the question is not the same as answering it, and only someone who knows the difference catches it.'}},
+ {q:'3. The appraisal is re-run on Tuesday. On Wednesday you ask what the company is worth. Which setup gives the new number?',
+  opts:[{k:'r',t:'A grounded tool reading the current file'},{k:'t',t:'A model fine-tuned on last month’s file'},{k:'b',t:'Both, equally'}],a:'r',
+  fb:{r:'Right. Grounding changes what the model reads, so it reads Tuesday’s appraisal on Wednesday. Your facts change; that is why grounding suits a planning practice.',
+      t:'Tuning changes what the model is, and it was tuned before Tuesday. It still gives last month’s number, fluently.',
+      b:'Only one of them has seen Tuesday’s appraisal. Tuning bakes facts in at a point in time; grounding reads the file as it is now.'}}
+];
+mkQuiz($('bridgeQuiz'),BRIDGE,$('bridgeScore'),'g1');
+}catch(err){try{console.warn("section s0 failed:",err&&err.message)}catch(_){}}
+/* ----- section sCold ----- */
+try{
 /* ================= sCold · cold open, choose one of four =================
    The instructor's 2026-09-17 decision (QUEUE.md): the room picks one of four
    beginner prompts and the eight COLD_CHECKS render against it. One click, no
@@ -2202,7 +2204,9 @@ var coldPicked=-1;
     if(typeof mark==='function')mark('gc');
   };
 })();
-
+}catch(err){try{console.warn("section sCold failed:",err&&err.message)}catch(_){}}
+/* ----- section s1 ----- */
+try{
 /* ================= s1 · rule, old duty, or guidance ================= */
 var RULES=[
  {t:'Regulation S-P: protect client information, and tell clients within 30 days of a breach',k:'old',
@@ -2231,7 +2235,9 @@ var RBUCK=[
 ];
 mkSorter({list:$('ruleList'),boxes:$('ruleBoxes'),out:$('ruleOut'),key:$('ruleKey'),items:RULES,buckets:RBUCK,label:'Progress',gate:'g2',
   after:'Bucket 1 holds one item: a European law aimed at AI companies. Everything that binds you as a US advisor was written before AI, and five of the nine items are duties you already have.'});
-
+}catch(err){try{console.warn("section s1 failed:",err&&err.message)}catch(_){}}
+/* ----- section s2 ----- */
+try{
 /* ================= s2 · clean prompt D =================
    Each phrase is a button. A risky phrase is swapped for its placeholder; a
    safe phrase stays and says why. The meter reads the combination, because
@@ -2290,7 +2296,9 @@ mkSorter({list:$('ruleList'),boxes:$('ruleBoxes'),out:$('ruleOut'),key:$('ruleKe
   };
   draw();
 })();
-
+}catch(err){try{console.warn("section s2 failed:",err&&err.message)}catch(_){}}
+/* ----- section sRSP ----- */
+try{
 /* ================= D5 · Regulation S-P awareness tabletop ================= */
 var RSP=[
  {t:'Day 0, 2:20 pm. A paralegal notices the shared meeting-notes folder for the Cole engagement is set to “anyone with the link”. She fixes the setting and mentions it to nobody.',
@@ -2326,7 +2334,9 @@ var RSP=[
   });
   REVEALS.push(function(){if(!locked)show(1)});
 })();
-
+}catch(err){try{console.warn("section sRSP failed:",err&&err.message)}catch(_){}}
+/* ----- section sAnon ----- */
+try{
 /* ================= D6 · replace, don't just delete ================= */
 var ANON=(function(){
   var v=Math.round(COLEv('cpcValue')/1000000);
@@ -2344,7 +2354,9 @@ var ANON=(function(){
 mkSorter({list:$('anonList'),boxes:$('anonBoxes'),out:$('anonOut'),key:$('anonKey'),items:ANON,
   buckets:[{k:'safe',t:'Safe to paste',d:'Tells the model what it needs, and nobody who she is.'},{k:'still',t:'Still gives her away',d:'Someone who knows the market, or the tool itself, could work out who it is.'}],
   label:'Progress',gate:'ga6',after:'Check the whole prompt too. Four safe replacements can still add up to one person (§02).'});
-
+}catch(err){try{console.warn("section sAnon failed:",err&&err.message)}catch(_){}}
+/* ----- section s3 ----- */
+try{
 /* ================= s3 · plan, switch, retention bars ================= */
 var PLANS=[
  {k:'free',t:'Claude Free, Pro or Max',personal:true},
@@ -2422,7 +2434,9 @@ var SETS=[
   };
   draw();
 })();
-
+}catch(err){try{console.warn("section s3 failed:",err&&err.message)}catch(_){}}
+/* ----- section s4 ----- */
+try{
 /* ================= s4 · vendor scorecard, verdict moves with each answer =================
    [NEW] builder-assembler: the artifact is the list of questions still owed
    by the vendor. The payload sets which questions are required. */
@@ -2479,7 +2493,9 @@ var VPAY=[
   };
   draw();
 })();
-
+}catch(err){try{console.warn("section s4 failed:",err&&err.message)}catch(_){}}
+/* ----- section s5 ----- */
+try{
 /* ================= s5 · the inbox test (prediction-commit) ================= */
 var MAIL=[
  {f:'Custodian',s:'Quarterly statements are ready',b:'Your clients’ third-quarter statements are available in the portal.'},
@@ -2532,7 +2548,9 @@ var DF=[
       d:'If her email is compromised, the confirmation comes from the attacker too.'}}
 ];
 mkQuiz($('dfQuiz'),DF,null,null);
-
+}catch(err){try{console.warn("section s5 failed:",err&&err.message)}catch(_){}}
+/* ----- section sW1 ----- */
+try{
 /* ================= D1 · tournament sampling (SynthID-Text) =================
    Harvested from this page's earlier tournament widget; labels simplified. */
 var TS_TOK=[
@@ -2585,7 +2603,9 @@ var TS_TOK=[
     $(id).onclick=function(){key=this.dataset.k;['tsKeyA','tsKeyB','tsOff'].forEach(function(j){$(j).classList.toggle('act',j===id)});go()};
   });
 })();
-
+}catch(err){try{console.warn("section sW1 failed:",err&&err.message)}catch(_){}}
+/* ----- section sW2 ----- */
+try{
 /* ================= D2 · entropy sorter + what a result licenses ================= */
 var ENT=[
  {t:'A client email explaining a Roth conversion',k:'hi',w:'Hundreds of acceptable phrasings. Room to carry a mark at no cost to accuracy.'},
@@ -2624,7 +2644,9 @@ mkSorter({list:$('entList'),boxes:$('entBoxes'),out:$('entOut'),key:$('entKey'),
   }
   pick(A,'a');pick(B,'b');
 })();
-
+}catch(err){try{console.warn("section sW2 failed:",err&&err.message)}catch(_){}}
+/* ----- section s6 ----- */
+try{
 /* ================= s6 · 100 memos (estimate-then-reveal) =================
    Each memo draws N answers, each wrong with probability p, independently. The
    grid is a fresh random draw on every run, so no two runs look alike. */
@@ -2706,7 +2728,9 @@ var COST=[
   }
   draw();
 })();
-
+}catch(err){try{console.warn("section s6 failed:",err&&err.message)}catch(_){}}
+/* ----- section sWS ----- */
+try{
 /* ================= D3 · source staleness, commit first ================= */
 var STALE=[
  {q:'1. Wolfram, 2023: temperature is the setting that controls how random the output is, and 0.8 works well for essays. Still true of the tool you use?',
@@ -2734,7 +2758,9 @@ var STALE=[
   mkQuiz(host,STALE,null,'ga3',function(){done=true;showKey()});
   REVEALS.push(showKey);
 })();
-
+}catch(err){try{console.warn("section sWS failed:",err&&err.message)}catch(_){}}
+/* ----- section s7 ----- */
+try{
 /* ================= s7 · could an examiner re-check it? ================= */
 var REC=[
  {t:'The client email pasted into the CRM note. No prompt, no model, no date except the CRM’s own timestamp.',k:'no',
@@ -2754,7 +2780,9 @@ mkSorter({list:$('recList'),boxes:$('recBoxes'),out:$('recOut'),key:$('recKey'),
   buckets:[{k:'yes',t:'An examiner could re-check it',d:'Someone else could re-run it and see why you decided what you did.'},{k:'no',t:'An examiner could not',d:'Something needed to re-run it or read it is missing.'}],
   label:'Progress',gate:'g8',after:'Four of six fail. Record 2 had a signature and no model; record 3 had everything but the quoted text. Record 6 passes, and its case was invented for this exercise: a record is not a check.'});
 (function(){var c=$('recCopy');if(c)c.onclick=function(){copyText($('recBlock').textContent,$('recMsg'))}})();
-
+}catch(err){try{console.warn("section s7 failed:",err&&err.message)}catch(_){}}
+/* ----- section sCR ----- */
+try{
 /* ================= sCR · package completeness + the cold run ================= */
 var MF=[
  ['The workflow','prompts, instructions or skill, the tool and model, supporting files'],
@@ -2810,7 +2838,9 @@ var STUCK=[
   }
   gaps.onclick=showGaps;REVEALS.push(showGaps);
 })();
-
+}catch(err){try{console.warn("section sCR failed:",err&&err.message)}catch(_){}}
+/* ----- section sD ----- */
+try{
 /* ================= D4 · sealed vote, both cases, complication, re-vote ================= */
 var VOTE=[['a','Agree: the burden costs more than the tool saves'],['b','Lean agree'],['c','Lean disagree'],['d','Disagree: the saving survives easily']];
 (function(){
@@ -2850,7 +2880,9 @@ var VOTE=[['a','Agree: the burden costs more than the tool saves'],['b','Lean ag
   REVEALS.push(showCases,showTwist);
   draw();
 })();
-
+}catch(err){try{console.warn("section sD failed:",err&&err.message)}catch(_){}}
+/* ----- section s9 ----- */
+try{
 /* ================= s9 · the policy outline ================= */
 var POL=[
  {q:'Why does the policy exist?',s:'§01',o:[
@@ -2902,7 +2934,7 @@ var POL=[
   $('polCopy').onclick=function(){copyText(text(),$('polMsg'));if(Object.keys(pick).length===6&&typeof mark==='function')mark('g10')};
   draw();
 })();
-
+}catch(err){try{console.warn("section s9 failed:",err&&err.message)}catch(_){}}
 /* ===== family 17: cold-open ritual, identical in every session ===== */
 /* COURSE-WIDE COLD-OPEN CHECKLIST. COLD_CHECKS is the one constant that
    defines the eight fixed checks: a label, one plain line on why the item
