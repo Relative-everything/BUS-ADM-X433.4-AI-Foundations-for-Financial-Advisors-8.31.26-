@@ -5,6 +5,10 @@ core-only depth, switched to **+ Standard** once, for the D4 discussion. Nothing
 addresses a learner. Written 2026-09-25 against the rebuilt page (branch
 `claude/amazing-curie-xz0s73`, `docs/changes/2026-09-25-session-4-rebuild/`).
 
+**Print `session-4-teaching-aid.pdf`**, two landscape pages, built 2026-09-27: page 1 is this
+clock as 19 steps with the answers inline; page 2 is the rule key for §01's nine items (when each
+passed, what it does, whom it binds, and whether it names AI). This sheet stays the full version.
+
 **The one thing that is different this week: three interactions are run by the room, and
 everything else is narrated.** The three are the cold-open pick, the §02 clean-up of Prompt D,
 and the cold run of a Part 1 package. The measured multipliers still hold: a section that is read
@@ -404,6 +408,24 @@ answering it in class.
   (CASE.md §D.3 carries the rate at M). Karmazin, Woelbing and Davidson are flagged in CASE.md
   Part I as settled or stipulated: they decided nothing and are not authority. Nothing tonight
   asks any of these.
+- **New on 2026-09-27, from the fact-check behind the teaching aid's page 2** (web search only;
+  the regulators' sites refused the build, so each point is M unless marked).
+  - **The EU Digital Omnibus is in force.** It is Regulation (EU) 2026/1744, in force 27 July 2026.
+    Article 50(2) marking applies from 2 August 2026 to systems placed on the market from that
+    date; systems already on the market have until 2 December 2026. That is Anthropic's own
+    2 December date.
+  - **Anthropic's detector is open to more than regulators and researchers.** The help page, which
+    was opened (H), also names enterprises that the AI Act obliges to verify marking. Marking
+    applies worldwide. The corrections line still holds: nothing on the page says the mark names
+    an account.
+  - **The 72-hour notice binds the firm, not the vendor.** The firm's policies, and its contracts,
+    must require the vendor to report within 72 hours.
+  - **FINRA Regulatory Notice 26-14, 9 July 2026**, proposes replacing the principal's
+    pre-approval of retail communications under Rule 2210 with a risk-based standard, citing
+    generative AI. Comments closed 11 September 2026. Not adopted.
+  - **No SEC or FINRA rule says prompts and outputs are records.** FINRA's 2026 oversight report
+    suggests keeping prompt and output logs. The SEC's spring 2026 agenda lists amendments to the
+    scope of electronic communications under Rule 204-2.
 
 ## What is not yet done
 
