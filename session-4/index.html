@@ -1560,6 +1560,17 @@ body:not(.reveal) #ovr{display:none}
 #s3 .s3set small{display:block;font:400 11.5px "JetBrains Mono",monospace;color:var(--muted);margin-top:3px;line-height:1.35}
 #s3 .s3set.ok{border-color:var(--on);background:var(--on-bg)}
 #s3 .s3set:focus-visible{outline:2.5px solid var(--on);outline-offset:3px}
+/* 2026-09-27: four vendors, and the six places as leaks */
+#s3 .s3vend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:6px 0 10px}
+#s3 .s3vend .btn{justify-content:center;text-align:center;padding:9px 4px;min-width:0;font-weight:700;letter-spacing:.04em}
+#s3 .s3set{position:relative;padding-right:78px}
+#s3 .s3w{position:absolute;top:9px;right:10px;font:600 9.5px "JetBrains Mono",monospace;letter-spacing:.09em;color:var(--gold);border:1px dashed var(--gold);border-radius:4px;padding:2px 5px;line-height:1.2}
+#s3 .s3set.ok .s3w{color:var(--on);border-color:var(--on);border-style:solid}
+#s3 .s3cell.kk{fill:var(--gold);stroke:var(--gold);transform:scale(1)}
+#s3 .s3cell.kr{fill:var(--warn-bg);stroke:var(--warn);stroke-dasharray:2 2;transform:scale(1)}
+#s3 .s3cell.kq{fill:var(--card);stroke:var(--gold);stroke-dasharray:3 2;transform:scale(1)}
+#s3 .s3val.g{fill:var(--gold)}
+#s3 .s3cite{display:block;margin-top:8px;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted)}
 /* ===== s4 ===== */
 /* ================= s4 · the vendor's safe ================= */
 /* A. three cards: one column with the badge on the right on a phone, three
@@ -1861,6 +1872,42 @@ body:not(.reveal) #ovr{display:none}
 #s5 .s5qs.off{opacity:0}
 #s5 .s5q{font:700 20px "Bricolage Grotesque",sans-serif;fill:var(--muted)}
 @media (min-width:900px){#s5 #injFig{position:sticky;top:16px}}
+/* 2026-09-27: four attacks, one wall (untimed recap) */
+#s5 .s5bstage{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;align-items:start}
+#s5 .s5bside{min-width:0}
+#s5 #atkBtns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:4px}
+#s5 #atkBtns .btn{justify-content:flex-start;text-align:left;gap:8px;padding:9px 10px}
+#s5 #atkBtns .btn .nb{width:20px;height:20px;font-size:11px}
+#s5 #atkBtns .btn.act .nb{background:var(--card);border-color:var(--card);color:var(--on)}
+#s5 .s5ac{fill:var(--muted);transition:fill .25s}
+#s5 .s5an{font:700 14px "JetBrains Mono",monospace;fill:var(--card)}
+#s5 .s5bk{font:500 12px "JetBrains Mono",monospace;fill:var(--muted);transition:fill .25s}
+#s5 .s5bar{fill:none;stroke:var(--off);stroke-width:2;transition:stroke .25s,stroke-width .25s}
+#s5 .s5bh{fill:var(--off);transition:fill .25s}
+#s5 .s5bg{fill:var(--card);stroke:var(--line);stroke-width:1.5;transition:fill .25s,stroke .25s}
+#s5 .s5bgb{stroke:var(--on);stroke-width:3;opacity:0;transition:opacity .25s}
+#s5 .s5bgl{font:500 12px "JetBrains Mono",monospace;fill:var(--muted);transition:fill .25s}
+#s5 .s5bt{fill:var(--card);stroke:var(--line);stroke-width:1.5;transition:stroke .25s}
+#s5 .s5btt{font:600 13px "Bricolage Grotesque",sans-serif;fill:var(--ink)}
+#s5 .s5bx{font:700 16px "JetBrains Mono",monospace;fill:var(--warn);opacity:0;transition:opacity .25s}
+#s5 .s5arow{transition:opacity .25s}
+#s5 .s5board.live .s5arow:not(.on){opacity:.4}
+#s5 .s5arow.on .s5ac{fill:var(--warn)}
+#s5 .s5arow.on .s5bk{fill:var(--warn)}
+#s5 .s5arow.on .s5bar{stroke:var(--warn);stroke-width:3}
+#s5 .s5arow.on .s5bh{fill:var(--warn)}
+#s5 .s5arow.on .s5bg{fill:var(--on-bg);stroke:var(--on);stroke-width:2}
+#s5 .s5arow.on .s5bgb{opacity:1}
+#s5 .s5arow.on .s5bgl{fill:var(--on);font-weight:700}
+#s5 .s5arow.on .s5bt{stroke:var(--on);stroke-width:2}
+#s5 .s5arow.on .s5bx{opacity:1}
+#s5 .s5arow.on.nogate .s5bg{fill:var(--card);stroke:var(--warn);stroke-dasharray:4 3}
+#s5 .s5arow.on.nogate .s5bgb{opacity:0}
+#s5 .s5arow.on.nogate .s5bgl{fill:var(--warn)}
+#s5 .s5arow.on.nogate .s5bx{opacity:0}
+#s5 .s5arow.on.nogate .s5bt{stroke:var(--warn);stroke-dasharray:4 3}
+#s5 .s5arow.on.nogate .s5bar2{opacity:1}
+#s5 .s5bar2{fill:none;stroke:var(--warn);stroke-width:3;stroke-dasharray:5 4;opacity:0;transition:opacity .25s}
 
 @media (max-width:480px){#s5 .panel{padding:18px 12px}}
 @media (prefers-reduced-motion: reduce){#s5 *{transition:none!important;animation:none!important}}
@@ -3582,39 +3629,40 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>03 &middot; The contract</span><span class="mins">6 min</span></div>
   <h2>Where Your Prompt Goes</h2>
 
-  <p class="big">The plan you pay for does not change the model. It changes the contract: who may train on what you type, how long it is kept, and who signed.</p>
+  <p class="big">The plan you pay for does not change the model. It changes the contract: who may train on what you type, how long it is kept, and who signed. The split is the same at all four big vendors.</p>
 
   <div class="panel" data-task="t-s3" data-comp="parameter-sandbox">
     <span class="do">Do this now: 4 minutes</span>
     <h4>Same Model, Different Contract</h4>
     <div class="s3wrap">
       <div class="s3ctl">
-        <span class="plab">1 &middot; Pick a plan</span>
+        <span class="plab">1 &middot; Pick your vendor, then a plan</span>
+        <div id="vendBtns" class="s3vend" role="group" aria-label="Vendor"></div>
         <div id="planBtns" class="cpick s3plans" role="group" aria-label="Plan"></div>
         <div id="trainBtns" class="s3swrow"><button type="button" id="trainSw" class="s3sw" role="switch" aria-checked="false" aria-disabled="true" aria-describedby="trainWhy"><span class="s3track"><span class="s3knob"></span></span><span class="s3swl">Training on your chats</span><b class="s3sws m">NO PLAN</b></button></div>
         <p id="trainWhy" class="s3why" aria-live="polite"></p>
       </div>
       <div id="planFig" class="s3fig"></div>
-      <div id="planOut" class="mpanel s3doc" aria-live="polite"><span class="hd">The contract</span><span class="nil">Pick a plan: A, B or C.</span></div>
+      <div id="planOut" class="mpanel s3doc" aria-live="polite"><span class="hd">The contract</span><span class="nil">Pick a vendor, then a plan: A, B or C.</span></div>
       <div class="s3step2">
-        <span class="plab">2 &middot; Six places to check</span>
-        <p class="hint">Tick the ones you have checked in your own AI tool in the last 90 days.</p>
-        <div id="setList" class="s3sets" role="group" aria-label="Six places to check"></div>
-        <div id="setOut" class="mpanel" aria-live="polite"></div>
-        <div class="row" style="margin-top:12px"><button class="btn" id="setCopy" type="button">Copy my to-do list</button><span id="setMsg" class="dim cmsg"></span></div>
+        <span class="plab">2 &middot; Six places it leaks from</span>
+        <p class="hint">Open each place: what leaked there, and what to check in your own tool.</p>
+        <div id="setList" class="s3sets" role="group" aria-label="Six places it leaks from"></div>
+        <div id="setOut" class="mpanel" aria-live="polite"><span class="hd">Where it leaked</span><span class="nil">Open a place: 1 to 6.</span></div>
+        <div class="row" style="margin-top:12px"><button class="btn" id="setCopy" type="button">Copy the six checks</button><span id="setMsg" class="dim cmsg"></span></div>
       </div>
     </div>
   </div>
 
   <ul class="pts">
-    <li><b>A &middot; Claude Free, Pro and Max:</b> training is a switch in your privacy settings. On: kept up to five years. Off: 30 days <span class="conf h" data-src="src-anthropic-terms">H</span>.</li>
-    <li><b>B, C &middot; Team, Enterprise and the API:</b> the contract excludes training, and standard retention is 30 days <span class="conf h" data-src="src-anthropic-terms">H</span>.</li>
-    <li><b>Other vendors:</b> same split, their own numbers.</li>
+    <li><b>Personal plans start with the switch on</b> at all four: Claude&rsquo;s training switch <span class="conf h" data-src="src-anthropic-terms">H</span>, ChatGPT&rsquo;s Improve the model for everyone <span class="conf m" data-src="src-openai-data">M</span>, Copilot&rsquo;s model training on text <span class="conf m" data-src="src-ms-copilot">M</span>, Gemini&rsquo;s Keep Activity <span class="conf m" data-src="src-gemini-privacy">M</span>. Off is a setting you change.</li>
+    <li><b>Business plans exclude training</b> at all four, and your firm signed: Claude Team, Enterprise and the API keep chats 30 days <span class="conf h" data-src="src-anthropic-terms">H</span>; ChatGPT Business and Enterprise <span class="conf m" data-src="src-openai-data">M</span>, Microsoft 365 Copilot with a work account <span class="conf m" data-src="src-ms-copilot-edp">M</span> and Gemini in Google Workspace <span class="conf m" data-src="src-gemini-workspace">M</span> put how long in the contract, which &sect;04 asks for.</li>
+    <li><b>What differs is how long a personal plan keeps it:</b> five years, until you delete it, 18 months, or 72 hours once Gemini&rsquo;s switch is off. The calendar shows each.</li>
   </ul>
 
-  <p class="src">Anthropic, Privacy Center and Commercial Terms, retrieved 14 August 2026: the consumer training switch, five-year and 30-day retention, and the commercial exclusion from training <span class="conf h" data-src="src-anthropic-terms">H</span>. The map and the six places to check on it are drawn for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">Anthropic, Privacy Center and Commercial Terms, retrieved 14 August 2026 <span class="conf h" data-src="src-anthropic-terms">H</span>. OpenAI, How your data is used to improve model performance <span class="conf m" data-src="src-openai-data">M</span>. Microsoft, Privacy FAQ for Microsoft Copilot <span class="conf m" data-src="src-ms-copilot">M</span> and Enterprise data protection in Microsoft 365 Copilot <span class="conf m" data-src="src-ms-copilot-edp">M</span>. Google, Gemini Apps Privacy Hub <span class="conf m" data-src="src-gemini-privacy">M</span> and Generative AI in Google Workspace Privacy Hub <span class="conf m" data-src="src-gemini-workspace">M</span>. The leaks: Wiz Research (2025) on DeepSeek <span class="conf m" data-src="src-deepseek">M</span>; TechCrunch (2025) on shared ChatGPT chats in search results <span class="conf m" data-src="src-chatgpt-index">M</span>; Tom&rsquo;s Guide (2025) on the Meta AI feed <span class="conf m" data-src="src-meta-feed">M</span>; CVE-2025-32711 <span class="conf h" data-src="src-cve">H</span>. Vendor terms change without notice: check the page before you rely on a number. The map and the six places on it are drawn for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
-  <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Pick your plan and watch the squares, then tick the places you have checked.</div></div>
+  <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Pick your vendor and plan and watch the squares, then open the six places.</div></div>
 
 </section>
 
@@ -3622,7 +3670,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>04 &middot; Vendor oversight</span><span class="mins">5 min</span></div>
   <h2>Six Locks Before Client Data Goes In</h2>
 
-  <p class="big">Every AI tool is a vendor holding whatever you give it. The data decides which of six locks must be shut first, and only an answer on paper shuts one.</p>
+  <p class="big">Every AI tool is a vendor holding whatever you give it. Approved means its answers are on paper: the data decides which of six locks must be shut first, and only an answer on paper shuts one.</p>
 
   <div class="panel" data-task="t-s4" data-comp="builder-assembler">
     <span class="do">Do this now: 3 minutes</span>
@@ -3697,13 +3745,26 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div id="dfOut" class="mpanel" aria-live="polite"><span class="hd">Your answer</span><span class="nil">Say a letter, then click it.</span></div>
   </div>
 
+  <div class="panel s5board" id="atkBoard">
+    <span class="plab">Four attacks, one wall</span>
+    <h4>Which Gate Stops Each One?</h4>
+    <p class="hint">Click an attack. Three you can run on this page; the fourth no page can simulate, so it carries the evidence instead.</p>
+    <div class="s5bstage">
+      <div id="atkFig" class="s5figbox"></div>
+      <div class="s5bside">
+        <div id="atkBtns" role="group" aria-label="Four attacks"></div>
+        <div id="atkOut" class="mpanel" aria-live="polite"><span class="hd">The attack</span><span class="nil">Click 1 to 4.</span></div>
+      </div>
+    </div>
+  </div>
+
   <ul class="pts">
     <li><b>It has happened.</b> EchoLeak, 2025: one email with hidden instructions could make Microsoft 365 Copilot send internal data out, with no click <span class="conf h" data-src="src-cve">H</span>. FINRA published a primer on this attack, prompt injection, in March 2026 <span class="conf h" data-src="src-finra-inj">H</span>.</li>
     <li><b>Access, not wording, is the defence.</b> Connect only what the task needs, and approve before it sends, pays or deletes.</li>
     <li><b>Seeing is not proof.</b> In 2024 the engineering firm Arup lost about $25 million after an employee joined a video call on which the finance chief and colleagues were deepfakes <span class="conf h" data-src="src-arup">H</span>.</li>
   </ul>
 
-  <p class="src">FINRA (2026), Understanding Generative AI and Prompt Injection Fundamentals <span class="conf h" data-src="src-finra-inj">H</span>. CVE-2025-32711 (EchoLeak), public vulnerability record <span class="conf h" data-src="src-cve">H</span>. Financial Times reporting on Arup, May 2024 <span class="conf h" data-src="src-arup">H</span>. The inbox, the assistant&rsquo;s run and the video call are simulated for this lesson: no model runs on this page <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">FINRA (2026), Understanding Generative AI and Prompt Injection Fundamentals <span class="conf h" data-src="src-finra-inj">H</span>. CVE-2025-32711 (EchoLeak), public vulnerability record <span class="conf h" data-src="src-cve">H</span>. Financial Times reporting on Arup, May 2024 <span class="conf h" data-src="src-arup">H</span>. Anthropic (2026), Detecting and countering misuse of AI: September 2026 <span class="conf h" data-src="src-anthropic-threat">H</span>. Google Threat Intelligence Group (2025), Advances in threat actor usage of AI tools <span class="conf m" data-src="src-gtig-ai">M</span>. SEC (2025), FY2026 examination priorities &sect;VII, on AI and polymorphic malware <span class="conf m" data-src="src-secpri">M</span>. The inbox, the assistant&rsquo;s run, the video call and the four-attack board are simulated for this lesson: no model runs on this page <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Predict, run the assistant, then x-ray email 3.</div></div>
 
@@ -3911,7 +3972,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel">
     <span class="do">Take this with you</span>
     <h4>The Record Block</h4>
-    <p class="hint">Paste it after any research prompt. Fill in the first three lines yourself: a model cannot reliably report its own name or today&rsquo;s date.</p>
+    <p class="hint">Paste it after any research prompt. Fill in the first three lines yourself, and the last one once you have read the answer: a model cannot reliably report its own name, today&rsquo;s date, or what you decided.</p>
 <pre id="recBlock">MODEL AND SETTING: (you fill in)
 DATE: (you fill in)
 PREPARED BY: (you fill in)
@@ -3924,15 +3985,20 @@ WOULD CHANGE: the one fact that, if different, would
   change your answer.
 If you cannot quote a source word for word, write
 NO SOURCE RETRIEVED for that item. Do not rebuild a
-citation from memory.</pre>
+citation from memory.
+
+DECISION: (you fill in, after reading: what you did
+  with this answer, and when)</pre>
     <div class="row"><button class="btn" id="recCopy" type="button">Copy the block</button><span id="recMsg" class="dim cmsg"></span></div>
   </div>
 
   <ul class="pts">
     <li><b>Why examiners care.</b> FINRA's 2026 report expects firms to supervise how AI is used, with added oversight, including logging, for AI agents that act or transact <span class="conf h" data-src="src-finra2026">H</span>.</li>
+    <li><b>Three things the file holds:</b> the prompt, the output, and the decision. The four slots above and the block&rsquo;s last line are those three, with a source you can re-open.</li>
+    <li><b>Reading for this section.</b> Journal of Accountancy (2025), <em>Writing an effective AI prompt for an audit</em>, is the reading behind the record block <span class="conf m" data-src="src-joa-prompt">M</span>.</li>
   </ul>
 
-  <p class="src">FINRA (2025), 2026 Annual Regulatory Oversight Report: supervision and agent oversight <span class="conf h" data-src="src-finra2026">H</span>. The six records are constructed for this lesson <span class="conf l" data-src="src-case">L</span>. The case cited in record 6, <em>Hallowell v. Commissioner</em>, is invented for this exercise.</p>
+  <p class="src">FINRA (2025), 2026 Annual Regulatory Oversight Report: supervision and agent oversight <span class="conf h" data-src="src-finra2026">H</span>. Journal of Accountancy (2025), Writing an effective AI prompt for an audit <span class="conf m" data-src="src-joa-prompt">M</span>. The six records are constructed for this lesson <span class="conf l" data-src="src-case">L</span>. The case cited in record 6, <em>Hallowell v. Commissioner</em>, is invented for this exercise.</p>
 
   <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>File all six records in A or B.</div></div>
 
@@ -4158,27 +4224,38 @@ citation from memory.</pre>
     <p style="max-width:74ch;font-size:14.5px">Every external figure carries a confidence label. <strong>H</strong>: checked directly against the named source. <strong>M</strong>: reported by a secondary source, derived from a stated relationship, or taken from a summary of a page that could not be opened directly. <strong>L</strong>: an illustration constructed for this lesson, not a published figure.</p>
     <ol class="srcs">
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 d5ef373aec80b3b2c9c7e61cb8a3740078dfd692a4dc0ece69290ab4b061ff7f -->
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 a95cc6f7756fb16d8ba0a4894f67fc853c673db5765dd992566c8b8ca5d72a05 -->
+      <li id="src-joa-prompt">(2025, November). <em>Writing an effective AI prompt for an audit</em>. Journal of Accountancy, A&amp;A Focus newsletter (AICPA). <a href="https://www.journalofaccountancy.com/newsletters/a-a-focus/writing-an-effective-ai-prompt-for-an-audit/">journalofaccountancy.com</a> Used for: the assigned reading behind the record block (§07). <span class="conf m" data-src="src-joa-prompt">M</span></li>
       <li id="src-api-messages">Anthropic. <em>Messages API reference</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/api/messages">platform.claude.com/docs/en/api/messages</a> Retrieved 2026, September 13. Used for: temperature, deprecated on current Claude models (Appendix D3). <span class="conf h" data-src="src-api-messages">H</span></li>
       <li id="src-claude-marks">Anthropic. <em>How Claude marks AI-generated content</em>. Claude Help Center, support.claude.com article 16266773. <a href="https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content">support.claude.com</a> Retrieved 2026, September 25. Used for: which Claude models mark their text, who can check a mark and what it shows (Appendices D1 and D2); the EU marking rule in the §01 sorter. <span class="conf h" data-src="src-claude-marks">H</span></li>
       <li id="src-anthropic-terms">Anthropic. <em>Privacy Center and Commercial Terms</em>. Anthropic. Retrieved 2026, August 14. Used for: the consumer training switch, five-year and 30-day retention, and the business plans' exclusion from training (§03). <span class="conf h" data-src="src-anthropic-terms">H</span></li>
       <li id="src-effort">Anthropic. <em>Change the model, effort, and thinking settings</em>. support.claude.com article 8664678. Retrieved 2026, August 20. Used for: effort as the setting you change on current models (Appendix D3). <span class="conf h" data-src="src-effort">H</span></li>
+      <li id="src-anthropic-threat">Anthropic. (2026, September). <em>Detecting and countering misuse of AI: September 2026</em>. Anthropic. <a href="https://www.anthropic.com/threat-intelligence-report-september-2026">anthropic.com</a> Retrieved 2026, September 27. Used for: an espionage group's agents watching security tools for detections of their malware and rebuilding it until undetected (§05). <span class="conf h" data-src="src-anthropic-threat">H</span></li>
       <li id="src-aa">Artificial Analysis. <em>Artificial Analysis Intelligence Index and cost-per-task figures</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a> Retrieved 2026, August 13. Other sessions cite other retrievals of this page. Used for: benchmarks now reporting tokens and turns per task (Appendix D3). <span class="conf m" data-src="src-aa">M</span></li>
       <li id="src-cfp-genai">CFP Board. (2025, February). <em>Generative AI Ethics Guide: A Checklist for Upholding the Code and Standards</em>. Certified Financial Planner Board of Standards, Inc. <a href="https://www.cfp.net/ethics/compliance-resources/2025/02/generative-ai-ethics-guide">cfp.net</a> Used for: using pseudonyms and removing identifying details before upload (§02, Appendix D6). <span class="conf m" data-src="src-cfp-genai">M</span></li>
       <li id="src-cfp-code">CFP Board. (2019). <em>Code of Ethics and Standards of Conduct</em>. Certified Financial Planner Board of Standards, Inc. Used for: Standard A.14, reasonable care in selecting and using technology (§04). <span class="conf m" data-src="src-cfp-code">M</span></li>
-      <li id="src-daly">Daly, B., Director, Division of Investment Management. (2026, February 3). <em>Artificial Intelligence and the Future of Investment Management</em>. ICI Winter Board Meeting. Used for: the open questions on responsibility and supervision for AI output (§01). <span class="conf h" data-src="src-daly">H</span></li>
+      <li id="src-daly">Daly, B., Director, Division of Investment Management. (2026, February 3). <em>Artificial Intelligence and the Future of Investment Management</em>. ICI Winter Board Meeting. <a href="https://www.sec.gov/newsroom/speeches-statements/daly-020326-artificial-intelligence-future-investment-management-remarks-investment-company-institute-ici-winter">sec.gov</a> Used for: the open questions on responsibility and supervision for AI output (§01). <span class="conf h" data-src="src-daly">H</span></li>
       <li id="src-finra2409">Financial Industry Regulatory Authority. (2024, June 27). <em>Regulatory Notice 24-09</em>. FINRA. <a href="https://www.finra.org/rules-guidance/notices/24-09">finra.org/rules-guidance/notices/24-09</a> Used for: FINRA's position that its rules are technology neutral and that its AI notice adds no new requirement (§01). <span class="conf h" data-src="src-finra2409">H</span></li>
       <li id="src-finra2026">Financial Industry Regulatory Authority. (2025, December 9). <em>2026 Annual Regulatory Oversight Report</em>. FINRA. Used for: generative AI's section in the 2026 report (§01); supervision, with added oversight and logging for AI agents that act or transact (§07). <span class="conf h" data-src="src-finra2026">H</span></li>
       <li id="src-finra-inj">Financial Industry Regulatory Authority. (2026, March 6). <em>Understanding Generative AI and Prompt Injection Fundamentals</em>. FINRA. Used for: FINRA's March 2026 primer on prompt injection (§05). <span class="conf h" data-src="src-finra-inj">H</span></li>
       <li id="src-arup">Financial Times. (2024, May). <em>Reporting on the Arup deepfake incident</em>. Financial Times. Used for: the Arup deepfake video-call loss (§05). <span class="conf h" data-src="src-arup">H</span></li>
       <li id="src-synthid-text">Google. (2025, April 9). <em>SynthID: Tools for watermarking and detecting LLM-generated Text</em>. Google (Responsible Generative AI Toolkit). <a href="https://ai.google.dev/responsible/docs/safeguards/synthid">ai.google.dev/responsible/docs/safeguards/synthid</a> Retrieved 2026, August 25. Used for: watermarks working less well on factual answers, and the three results a detector can return (Appendix D2); the published scheme behind the knockout figure (Appendix D1). <span class="conf h" data-src="src-synthid-text">H</span></li>
+      <li id="src-gemini-privacy">Google. <em>Gemini Apps Privacy Hub</em>. Gemini Apps Help, answer 13594961. <a href="https://support.google.com/gemini/answer/13594961">support.google.com/gemini/answer/13594961</a> Used for: Gemini's Keep Activity default, the 18-month auto-delete, human review and the three-year keep of reviewed chats, and 72 hours with the switch off (§03). <span class="conf m" data-src="src-gemini-privacy">M</span></li>
+      <li id="src-gemini-workspace">Google. <em>Generative AI in Google Workspace Privacy Hub</em>. Google Workspace Help, answer 15706919. <a href="https://support.google.com/a/answer/15706919">support.google.com/a/answer/15706919</a> Used for: Workspace prompts not used to train models and not reviewed by humans (§03). <span class="conf m" data-src="src-gemini-workspace">M</span></li>
+      <li id="src-gtig-ai">Google Threat Intelligence Group. (2025, November 5). <em>GTIG AI Threat Tracker: Advances in threat actor usage of AI tools</em>. Google. <a href="https://services.google.com/fh/files/misc/advances-in-threat-actor-usage-of-ai-tools-en.pdf">services.google.com</a> Used for: a program that asked a model to rewrite its own code every hour (§05). <span class="conf m" data-src="src-gtig-ai">M</span></li>
       <li id="src-magesh">Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-free? Assessing the reliability of leading AI legal research tools</em>. Journal of Empirical Legal Studies 22(2), 216. <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">reglab.stanford.edu</a> Used for: the 17%, 33% and 43% per-question error rates behind the 100-memo simulation (§06). <span class="conf h" data-src="src-magesh">H</span></li>
+      <li id="src-ms-copilot">Microsoft. <em>Privacy FAQ for Microsoft Copilot</em>. Microsoft Support. <a href="https://support.microsoft.com/en-us/microsoft-copilot/privacy-faq-for-microsoft-copilot">support.microsoft.com</a> Used for: Copilot's personal-account training default, the opt-out setting, and the 18-month history (§03). <span class="conf m" data-src="src-ms-copilot">M</span></li>
+      <li id="src-ms-copilot-edp">Microsoft. <em>Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat</em>. Microsoft Learn. <a href="https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection">learn.microsoft.com</a> Used for: prompts and responses under a work account are not used to train the foundation models (§03). <span class="conf m" data-src="src-ms-copilot-edp">M</span></li>
       <li id="src-cve">MITRE / NVD. (2025). <em>CVE-2025-32711 (EchoLeak, CVSS 9.3)</em>. Public CVE record. Used for: the public vulnerability record for EchoLeak (§05). <span class="conf h" data-src="src-cve">H</span></li>
       <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: every client, prompt, message, record, incident and sample package in this session's exercises, all written for this lesson. Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
+      <li id="src-openai-data">OpenAI. <em>How your data is used to improve model performance</em>. OpenAI Help Center, article 5722486. <a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance">help.openai.com</a> Used for: ChatGPT's consumer training switch and its default, keeping until you delete, and the business plans' exclusion from training (§03). <span class="conf m" data-src="src-openai-data">M</span></li>
+      <li id="src-chatgpt-index">TechCrunch. (2025, July 31). <em>Your public ChatGPT queries are getting indexed by Google and other search engines</em>. TechCrunch. <a href="https://techcrunch.com/2025/07/31/your-public-chatgpt-queries-are-getting-indexed-by-google-and-other-search-engines">techcrunch.com</a> Used for: shared ChatGPT chats appearing in Google search results, and the option's withdrawal (§03). <span class="conf m" data-src="src-chatgpt-index">M</span></li>
+      <li id="src-meta-feed">Tom's Guide. (2025, June). <em>Meta AI's discover feed is full of revealing personal info: here's how to protect your privacy</em>. Tom's Guide. <a href="https://www.tomsguide.com/computing/online-security/meta-ais-discover-feed-is-full-of-revealing-personal-info-heres-how-to-protect-your-privacy">tomsguide.com</a> Used for: the Meta AI app's Share button posting private chats to a public feed (§03). <span class="conf m" data-src="src-meta-feed">M</span></li>
       <li id="src-regsp">U.S. Securities and Exchange Commission. (2024). <em>Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments</em>. SEC, adopting release. Used for: what counts as nonpublic personal information (§02); vendor oversight and the vendor's 72-hour notice to the firm (§04); the 30-day client notice and the incident response programme (Appendix D5). <span class="conf h" data-src="src-regsp">H</span></li>
       <li id="src-sec-ai">U.S. Securities and Exchange Commission. (2024, March 18). <em>Enforcement actions against Delphia (USA) Inc. and Global Predictions, Inc.</em> SEC. Used for: the two AI-washing penalties under the Marketing Rule (§01). <span class="conf m" data-src="src-sec-ai">M</span></li>
       <li id="src-sec-withdraw">U.S. Securities and Exchange Commission. (2025, June 12). <em>Withdrawal of proposed regulatory actions, including Conflicts of Interest Associated with the Use of Predictive Data Analytics (S7-12-23)</em>. SEC. <a href="https://www.sec.gov/rules-regulations/2025/06/s7-12-23">sec.gov/rules-regulations/2025/06/s7-12-23</a> Used for: the withdrawn 2023 predictive data analytics proposal (§01 sorter). <span class="conf m" data-src="src-sec-withdraw">M</span></li>
-      <li id="src-secpri">U.S. Securities and Exchange Commission, Division of Examinations. (2025, November 17). <em>Examination priorities: Fiscal year 2026, §VII</em>. SEC. Used for: the fiscal 2026 examination priorities naming AI and Regulation S-P (§01). <span class="conf h" data-src="src-secpri">H</span></li>
+      <li id="src-secpri">U.S. Securities and Exchange Commission, Division of Examinations. (2025, November 17). <em>Examination priorities: Fiscal year 2026, §VII</em>. SEC. Used for: the fiscal 2026 examination priorities naming AI and Regulation S-P (§01); its line on training and security controls for AI and polymorphic malware (§05). <span class="conf h" data-src="src-secpri">H</span></li>
+      <li id="src-deepseek">Wiz Research. (2025, January 29). <em>Wiz Research uncovers exposed DeepSeek database leaking sensitive information, including chat history</em>. Wiz blog. <a href="https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak">wiz.io</a> Used for: the DeepSeek database left open with over a million log lines, chat history included (§03). <span class="conf m" data-src="src-deepseek">M</span></li>
       <li id="src-wolfram">Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a> Used for: the temperature passage in "It's Just Adding One Word at a Time" and the one-pass, no-loops description of the model (Appendix D3). <span class="conf h" data-src="src-wolfram">H</span></li>
       <li id="src-hallowell" data-nochip="fabricated" class="fab"><b>Not a real source.</b> <em>Hallowell v. Commissioner, T.C. Memo. 2023-217</em> was invented for the §07 exercise, where it is the case cited in record 6 and the answer key names it as invented.</li>
 <!-- SOURCES:END -->
@@ -4187,7 +4264,7 @@ citation from memory.</pre>
   <p style="font-size:13.5px">The Cole household is synthetic and constructed for this course as a classroom anchor only. No real client data appears anywhere in this document. Students build the final project on their own recurring task using their own constructed synthetic data.</p>
 
   <p style="font-size:13.5px">Figures that move &mdash; model prices, capability benchmarks, regulatory dates &mdash; carry an as-of date where they appear. Verify every benchmark, price and compliance date against the primary source before relying on it outside this classroom.</p>
-  <p class="stamp">Session 4. Last updated 2026-09-25. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
+  <p class="stamp">Session 4. Last updated 2026-09-27. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
 
   </div>
 </footer>
@@ -6298,60 +6375,109 @@ try{
 /* ----- section s3 ----- */
 try{
 (function(){
-/* ================= s3 · One Square or Sixty =================
-   One map, built once and updated in place. Three plan tiles move the contract
-   page between You and Your firm; the training switch (live on A only) opens the
-   valve and floods the CHATS KEPT calendar from one month to sixty. The model box
-   never changes. Six HTML buttons drive the numbered badges on the map.
-   Anchors (R11): session-3 L804-806 (dashed boundary, caps label each side);
-   session-3 L2719-2783 (stepper where one row alone reacts: the calendar);
-   session-0.1 L2518-2541 (ctxLegal: a control stays visible, disabled, reason
-   printed); session-2 CSS L553-563, JS L2412-2441 (.tg track and knob, here a
-   real button with role switch); session-3 L2840-2898 (figure mirrored by real
-   buttons, hover and focus mirror); session-3 L2098-2136 (NOT WRITTEN to ON FILE
-   stamps: dashed gold badge to solid teal tick); session-2 L578-594, L1330-1356,
-   L2153-2211 (Three Cups: aria-pressed, state by word and shape, CSS transform).
-   [NEW]: contract page sliding You to Your firm, the solid sixty-square flood and
-   drain with row labels lighting, the packet flying into the unchanged model. */
-  var pb=$('planBtns'),sw=$('trainSw'),why=$('trainWhy'),host=$('planFig'),out=$('planOut'),
+/* ================= s3 · One Square or Sixty, at four vendors =================
+   One map, built once and updated in place. A vendor row (Claude, ChatGPT,
+   Copilot, Gemini) names the plans, the switch and the numbers; three plan
+   tiles move the contract page between You and Your firm; the training switch
+   (live on A only) opens the valve and fills the CHATS KEPT calendar with the
+   vendor's own number. The model box never changes. Six HTML buttons drive the
+   numbered badges on the map, and each opens the leak that happened at that
+   place. Anchors (R11) as the 2026-09-25 build; [NEW] 2026-09-27: the vendor
+   row, the per-vendor calendar (five years; until you delete; 18 months, with
+   reviewed chats drawn to 36; 72 hours; or the contract's number, drawn as
+   dashed squares), and the six places as leaks, one incident each. */
+  var vb=$('vendBtns'),pb=$('planBtns'),sw=$('trainSw'),why=$('trainWhy'),host=$('planFig'),out=$('planOut'),
       setHost=$('setList'),setOut=$('setOut'),copyBtn=$('setCopy');
   if(!pb||!host||!out)return;
 
-  var PLANS=[
-    {k:'A',n:'Free, Pro, Max',full:'Claude Free, Pro or Max',tag:'personal'},
-    {k:'B',n:'Team, Enterprise',full:'Team or Enterprise',tag:'business'},
-    {k:'C',n:'The API',full:'The API',tag:'business'}
+  /* Each vendor: the three plan names (short for the tile, full for the card),
+     the switch's own name in its settings, and what is kept in each state.
+     sq = monthly squares on the calendar (1 = a month or less; -1 = the
+     contract says); rv = squares a reviewed chat can reach; lab = the words. */
+  var VEND=[
+    {k:'Claude',chip:'<span class="conf h" data-src="src-anthropic-terms">H</span>',sw:'Training on your chats',
+     A:['Free, Pro, Max','Claude Free, Pro or Max'],B:['Team, Enterprise','Claude Team or Enterprise'],C:['The Claude API','The Claude API'],
+     on:{sq:60,lab:'UP TO 5 YEARS',say:'Kept up to five years; may train future models.'},
+     off:{sq:1,lab:'30 DAYS',say:'Kept 30 days. Switch on: five years, and training.'},
+     biz:{sq:1,lab:'30 DAYS',say:'No training. Standard retention: 30 days.'},
+     api:{sq:1,lab:'30 DAYS',say:'No training. Standard retention: 30 days.'}},
+    {k:'ChatGPT',chip:'<span class="conf m" data-src="src-openai-data">M</span>',sw:'Improve the model for everyone',
+     A:['Free, Plus, Pro','ChatGPT Free, Plus or Pro'],B:['Business, Enterprise','ChatGPT Business or Enterprise'],C:['The OpenAI API','The OpenAI API'],
+     on:{sq:60,lab:'UNTIL YOU DELETE',say:'Kept until you delete it; may train future models. A deleted chat leaves within 30 days.'},
+     off:{sq:60,lab:'UNTIL YOU DELETE',say:'Still kept until you delete it. The switch stops training, not keeping.'},
+     biz:{sq:-1,lab:'IN THE CONTRACT',say:'Not used for training. How long it is kept: in the contract, which §04 asks for.'},
+     api:{sq:-1,lab:'IN THE CONTRACT',say:'Not used for training. How long it is kept: in the contract, which §04 asks for.'}},
+    {k:'Copilot',chip:'<span class="conf m" data-src="src-ms-copilot">M</span>',sw:'Model training on text',
+     A:['Copilot, personal','Copilot with a personal Microsoft account'],B:['Microsoft 365 Copilot','Microsoft 365 Copilot with a work account'],C:['Azure OpenAI','Azure OpenAI, the API'],
+     on:{sq:18,lab:'18 MONTHS',say:'History kept 18 months; may train models unless you opt out.'},
+     off:{sq:18,lab:'18 MONTHS',say:'Still kept 18 months. The switch stops training, not keeping.'},
+     biz:{sq:-1,lab:'IN THE CONTRACT',say:'Enterprise data protection: prompts and answers are not used to train. How long: in the contract, which §04 asks for.'},
+     api:{sq:-1,lab:'IN THE CONTRACT',say:'Business terms your firm signs. Training and keeping: in the contract, which §04 asks for.',ns:true}},
+    {k:'Gemini',chip:'<span class="conf m" data-src="src-gemini-privacy">M</span>',sw:'Keep Activity',
+     A:['Gemini app, personal','the Gemini app with a personal Google account'],B:['Gemini in Workspace','Gemini in Google Workspace'],C:['The Gemini API','The Gemini API'],
+     on:{sq:18,rv:36,lab:'18 MONTHS',say:'Kept 18 months by default (3 or 36 to choose); used to improve models, and people may read chats. A chat a reviewer read is kept up to three years.'},
+     off:{sq:1,lab:'72 HOURS',say:'Kept 72 hours; not used to train.'},
+     biz:{sq:-1,lab:'IN THE CONTRACT',say:'Not used to train, and no human review. How long: in the contract, which §04 asks for.'},
+     api:{sq:-1,lab:'IN THE CONTRACT',say:'Business terms your firm signs. Training and keeping: in the contract, which §04 asks for.',ns:true}}
   ];
+  var PLANS=[{k:'A',tag:'personal'},{k:'B',tag:'business'},{k:'C',tag:'business'}];
+  /* The six places, each with its syllabus word and the leak that happened there. */
   var SETS=[
-    {n:'Training switch',s:'in your privacy settings',full:'The training switch in your privacy settings'},
-    {n:'Chat history',s:'how long it is kept; old chats deleted?',full:'How long your chat history is kept, and whether you delete old chats'},
-    {n:'Memory',s:'what it remembers between chats',full:'Memory: what the tool remembers about you between chats'},
-    {n:'Shared links',s:'links to chats you created',full:'Shared links to chats you have created'},
-    {n:'Connected apps',s:'email, calendar, file storage',full:'Connected apps: email, calendar, file storage'},
-    {n:'Note-takers, extensions',s:'anything that can read your screen',full:'Meeting note-takers and browser extensions that can read your screen'}
+    {n:'Training switch',s:'in your privacy settings',w:'THE DEFAULT',full:'The training switch in your privacy settings: is it off?',
+     ev:'On when you signed up, at all four vendors’ personal plans. Nobody leaked it: you agreed to it. Pick each vendor above and read plan A.'},
+    {n:'Chat history',s:'the vendor’s logs of it',w:'LOGS',full:'How long chat history is kept, and whether old chats are deleted',
+     ev:'DeepSeek, January 2025: a database left open to the internet held over a million lines of logs, chat history included, until researchers reported it.',chip:'<span class="conf m" data-src="src-deepseek">M</span>'},
+    {n:'Memory',s:'what it carries between chats',w:'MEMORY',full:'Memory: what the tool remembers about you between chats',
+     ev:'No leak needed. Memory carries what you said into later chats on purpose, so a client detail saved once can surface in a chat about someone else.'},
+    {n:'Shared links',s:'and the caches that copy them',w:'CACHES',full:'Shared links to chats you have created',
+     ev:'ChatGPT, July 2025: chats shared with a “discoverable” box ticked appeared in Google search results. The option was withdrawn; a copy a search engine has made is the search engine’s.',chip:'<span class="conf m" data-src="src-chatgpt-index">M</span>'},
+    {n:'Connected apps',s:'connectors to email, files, calendar',w:'CONNECTORS',full:'Connected apps: email, calendar, file storage',
+     ev:'EchoLeak, 2025: one crafted email made Microsoft 365 Copilot send internal data out through its own connection to email, with no click. §05 runs it.',chip:'<span class="conf h" data-src="src-cve">H</span>'},
+    {n:'Uncovered features',s:'share feeds, note-takers, extensions',w:'FEATURES',full:'Features nobody covered: share feeds, meeting note-takers, browser extensions',
+     ev:'Meta AI app, June 2025: a Share button posted private chats to a public feed, and many people had not realised their chats were public.',chip:'<span class="conf m" data-src="src-meta-feed">M</span>'}
   ];
-  var plan=-1,train=true,chk=[false,false,false,false,false,false];
+  var vend=0,plan=-1,train=true,chk=[false,false,false,false,false,false],lastOpen=-1;
   var pingT=null,pkTw=null;
-  function kept(){return plan<0?'none':(plan===0&&train?'5y':'30')}
+  function V(){return VEND[vend]}
+  function planName(i,full){return V()[PLANS[i].k][full?1:0]}
+  /* what the calendar draws for the current vendor, plan and switch */
+  function state(){
+    if(plan<0)return {sq:0,rv:0,lab:'PICK A PLAN',cls:'m',say:'',hot:false};
+    var v=V(),s=plan===0?(train?v.on:v.off):(plan===1?v.biz:v.api),hot=(plan===0&&train);
+    return {sq:s.sq,rv:s.rv||0,lab:s.lab,say:s.say,hot:hot,ns:!!s.ns,cls:hot?'w':(s.sq<0?'q':(s.sq<=1?'o':'k'))};
+  }
 
-  /* ---------- 1. plan tiles ---------- */
+  /* ---------- 1. vendors and plan tiles ---------- */
+  var vtiles=[];
+  if(vb)VEND.forEach(function(v,i){
+    var b=document.createElement('button');b.type='button';b.className='btn sel mini';
+    b.setAttribute('aria-pressed','false');b.textContent=v.k;
+    b.onclick=function(){setVend(i)};
+    vb.appendChild(b);vtiles.push(b);
+  });
   var tiles=[];
   PLANS.forEach(function(p,i){
     var b=document.createElement('button');b.type='button';
     b.setAttribute('aria-pressed','false');
-    b.setAttribute('aria-label','Plan '+p.k+': '+p.full+', '+p.tag);
-    b.innerHTML='<b>'+p.k+'</b><span class="n">'+esc(p.n)+'</span><i class="s3tag">'+esc(p.tag)+'</i>';
+    b.innerHTML='<b>'+p.k+'</b><span class="n"></span><i class="s3tag">'+esc(p.tag)+'</i>';
     b.onclick=function(){setPlan(i)};
     pb.appendChild(b);tiles.push(b);
   });
+  function nameTiles(){
+    tiles.forEach(function(t,i){
+      t.querySelector('.n').textContent=planName(i);
+      t.setAttribute('aria-label','Plan '+PLANS[i].k+': '+planName(i,true)+', '+PLANS[i].tag);
+    });
+    var l=sw.querySelector('.s3swl');if(l)l.textContent=V().sw;
+  }
 
-  /* ---------- 2. the six places to check ---------- */
+  /* ---------- 2. the six places ---------- */
   var setBtns=[];
   if(setHost)SETS.forEach(function(s,k){
     var b=document.createElement('button');b.type='button';b.className='s3set';
     b.setAttribute('aria-pressed','false');
-    b.innerHTML='<b class="nb guess">'+(k+1)+'</b><span class="t">'+esc(s.n)+'<small>'+esc(s.s)+'</small></span>';
-    b.onclick=function(){toggleSet(k)};
+    b.innerHTML='<b class="nb guess">'+(k+1)+'</b><span class="t">'+esc(s.n)+'<small>'+esc(s.s)+'</small></span><i class="s3w">'+esc(s.w)+'</i>';
+    b.onclick=function(){openSet(k)};
     b.addEventListener('mouseenter',function(){hi(k,true)});
     b.addEventListener('mouseleave',function(){hi(k,document.activeElement===b)});
     b.addEventListener('focus',function(){hi(k,true)});
@@ -6366,7 +6492,7 @@ try{
   /* boundary */
   sv('line',{x1:116,y1:6,x2:116,y2:318,'class':'s3bnd'},svg);
   svt(svg,108,20,'YOUR SIDE','s3cap','end');
-  svt(svg,124,20,'THE VENDOR','s3cap','start');
+  var vendCap=svt(svg,124,20,'THE VENDOR','s3cap','start');
   /* laptop */
   sv('rect',{x:14,y:40,width:72,height:54,rx:5,'class':'s3lap'},svg);
   sv('rect',{x:23,y:52,width:48,height:5,rx:2,'class':'s3ln'},svg);
@@ -6403,7 +6529,7 @@ try{
   var rows=[],cells=[],r,c;
   for(r=0;r<5;r++)rows.push(svt(svg,132,190+23*r,'Y'+(r+1),'s3lab s3row','start'));
   for(r=0;r<5;r++)for(c=0;c<12;c++)cells.push(sv('rect',{x:156+21.5*c,y:176+23*r,width:18,height:18,rx:3,'class':'s3cell'},svg));
-  svt(svg,132,312,'1 square = 1 month','s3lab','start');
+  var legend=svt(svg,132,312,'1 square = 1 month','s3lab','start');
   /* your firm */
   var firm=sv('g',{'class':'s3firmg'},svg);
   sv('path',{d:'M8 186 L52 168 L96 186 Z','class':'s3firm'},firm);
@@ -6432,18 +6558,20 @@ try{
   function nChk(){var n=0;for(var i=0;i<6;i++)if(chk[i])n++;return n}
 
   function label(){
-    var s='Map of where your prompt goes: from your laptop, across the line, to the vendor’s model, which is the same in plans A, B and C. ';
-    if(plan<0)s+='No plan picked yet. ';
-    else if(plan===0)s+='Plan A: you signed with a click; your firm signed nothing. ';
-    else s+='Plan '+PLANS[plan].k+': your firm signed the contract. ';
-    if(plan>=0)s+=(kept()==='5y')?'Training valve open: chats may train future models. Chats kept up to five years: 60 of 60 monthly squares filled. ':
-      'Training valve shut. Chats kept 30 days: 1 of 60 monthly squares filled. ';
-    s+=nChk()+' of 6 places marked checked.';
-    svg.setAttribute('aria-label',s);
+    var s=state(),v=V();
+    var t='Map of where your prompt goes: from your laptop, across the line, to '+v.k+'’s model, which is the same in plans A, B and C. ';
+    if(plan<0)t+='No plan picked yet. ';
+    else if(plan===0)t+='Plan A: you signed with a click; your firm signed nothing. ';
+    else t+='Plan '+PLANS[plan].k+': your firm signed the contract. ';
+    if(plan>=0)t+=(s.hot?'Training valve open: chats may train future models. ':'Training valve shut. ')+
+      'Chats kept: '+s.lab.toLowerCase()+(s.sq>=0?', '+s.sq+' of 60 monthly squares filled. ':', drawn as dashed squares. ');
+    t+=nChk()+' of 6 places opened.';
+    svg.setAttribute('aria-label',t);
   }
 
+  var CELL={w:'k5',o:'k30',k:'kk',q:'kq'};
   function drawAll(prev,base){
-    var k=kept(),open=(k==='5y'),red=reduced(),i,d;
+    var s=state(),red=reduced(),i,d,open=s.hot,cc=CELL[s.cls]||'';
     base=base||0;
     /* valve and tank */
     tog(branch,'open',open);
@@ -6451,27 +6579,21 @@ try{
     tog(tank,'hot',open);tog(tk1,'hot',open);tog(tk2,'hot',open);
     if(plan<0)setVal(valveStat,'','');else setVal(valveStat,open?'OPEN':'SHUT',open?'w':'o');
     /* how long */
-    if(k==='none')setVal(keptVal,'PICK A PLAN','m');
-    else if(open)setVal(keptVal,'UP TO 5 YEARS','w');
-    else setVal(keptVal,'30 DAYS','o');
-    /* calendar */
+    setVal(keptVal,s.lab,s.cls==='q'||s.cls==='k'?'g':s.cls);
+    vendCap.textContent='THE VENDOR · '+V().k.toUpperCase();
+    /* calendar: fill forward when the number grows, drain back when it shrinks */
+    var pn=prev?Math.max(0,prev.sq):0,nn=Math.max(0,s.sq),grow=nn>pn;
     for(i=0;i<60;i++){
+      var on=(s.sq<0)?true:(i<nn),rv=(s.rv>0&&i>=nn&&i<s.rv);
       if(red)d=0;
-      else if(open&&prev!=='5y')d=base+i*9;
-      else if(prev==='5y'&&!open)d=base+(59-i)*6;
+      else if(grow&&on&&i>=pn)d=base+(i-pn)*9;
+      else if(!grow&&!on&&i<pn)d=base+(pn-1-i)*6;
       else d=base;
       cells[i].style.transitionDelay=d+'ms';
-      tog(cells[i],'k5',open);
-      tog(cells[i],'k30',k==='30'&&i===0);
+      cells[i].setAttribute('class','s3cell'+(on?' '+cc:(rv?' kr':'')));
     }
-    for(r=0;r<5;r++){
-      if(red)d=0;
-      else if(open&&prev!=='5y')d=base+r*12*9;
-      else if(prev==='5y'&&!open)d=base+(59-r*12)*6;
-      else d=0;
-      rows[r].style.transitionDelay=d+'ms';
-      tog(rows[r],'hot',open);
-    }
+    for(r=0;r<5;r++){rows[r].style.transitionDelay=(red?0:base+r*12*9)+'ms';tog(rows[r],'hot',open&&(s.sq<0||nn>r*12))}
+    legend.textContent=s.rv?'dashed: 36 months if read':(s.sq<0?'the contract says how many':'1 square = 1 month');
     /* who signed */
     tog(firm,'party',plan>0);
     if(plan<0)setVal(firmStat,'','');
@@ -6490,38 +6612,47 @@ try{
       st.className='s3sws'+(plan!==0?' m':(train?' w':''));
     }
     if(why){
+      var v=V();
       if(plan<0)why.textContent='Pick a plan first.';
-      else if(plan===0)why.textContent=train?'Flip it off. How many squares go dark?':'Off: one square left, 30 days. Flip it back on.';
-      else why.textContent='No switch on '+PLANS[plan].k+': the contract already excludes training. Try A.';
+      else if(plan===0)why.textContent=train?'Flip it off. What happens to the squares?':
+        (v.off.sq===v.on.sq?'Off: still '+v.off.lab.toLowerCase()+'. Training stops; keeping does not. Flip it back on.':'Off: '+v.off.lab.toLowerCase()+'. Flip it back on.');
+      else why.textContent='No switch on '+planName(plan)+': the contract already excludes training. Try A.';
     }
     /* the contract card */
     if(plan<0){
       out.className='mpanel s3doc';
-      out.innerHTML='<span class="hd">The contract</span><span class="nil">Pick a plan: A, B or C.</span>';
+      out.innerHTML='<span class="hd">The contract</span><span class="nil">Pick a vendor, then a plan: A, B or C.</span>';
     }else{
-      var p=PLANS[plan],h='<span class="hd">'+p.k+' · '+esc(p.full)+' · '+p.tag+'</span>';
-      if(plan===0){
-        h+=train?'<span class="flag">Kept up to five years; may train future models.</span>':
-          'Kept 30 days. Switch on: five years, and training.';
-        h+='<br><span class="flag">Client information: not here. Your firm signed nothing.</span>';
-      }else{
-        h+='No training. Standard retention: 30 days.<br><span class="good">Client information: possible, once your firm vets the tool (§04, next).</span>';
-      }
+      var p=PLANS[plan],h='<span class="hd">'+p.k+' · '+esc(planName(plan,true))+' · '+p.tag+'</span>';
+      h+=open?'<span class="flag">'+esc(s.say)+'</span>':esc(s.say);
+      h+='<br>'+(plan===0?'<span class="flag">Client information: not here. Your firm signed nothing.</span>':
+        '<span class="good">Client information: possible, once your firm vets the tool (§04, next).</span>');
+      if(!s.ns)h+='<br><span class="s3cite">'+esc(V().k)+'’s own terms '+V().chip+'</span>';
       out.className='mpanel has s3doc'+(plan===0?' s3a':' s3b');
       out.innerHTML=h;
     }
     label();
   }
 
+  function pingModel(){
+    if(pingT)clearTimeout(pingT);
+    modelTag.classList.add('ping');
+    pingT=setTimeout(function(){modelTag.classList.remove('ping');pingT=null},900);
+  }
+  function setVend(i){
+    var prev=state();vend=i;
+    vtiles.forEach(function(b,j){b.classList.toggle('act',j===i);b.setAttribute('aria-pressed',String(j===i))});
+    nameTiles();
+    drawAll(prev,0);
+    if(plan>=0)pingModel();
+  }
   function setPlan(i){
-    var prev=kept();plan=i;
+    var prev=state();plan=i;
     tiles.forEach(function(t,j){t.classList.toggle('act',j===i);t.setAttribute('aria-pressed',String(j===i))});
     drawAll(prev,300);
     if(typeof mark==='function')mark('g4');
     /* the model never changes: ping its tag */
-    if(pingT)clearTimeout(pingT);
-    modelTag.classList.add('ping');
-    pingT=setTimeout(function(){modelTag.classList.remove('ping');pingT=null},900);
+    pingModel();
     /* the prompt flies from the laptop into the model */
     if(pkTw)pkTw.stop();
     if(reduced()){pk.style.opacity='0';return}
@@ -6532,48 +6663,50 @@ try{
   }
   function setTrain(on){
     if(plan!==0)return;
-    var prev=kept();train=!!on;drawAll(prev,0);
+    var prev=state();train=!!on;drawAll(prev,0);
   }
   sw.onclick=function(){setTrain(!train)};
 
-  /* ---------- the six places ---------- */
+  /* ---------- the six places: open one, read the leak, keep the check ---------- */
   function hi(k,on){if(bdg[k])tog(bdg[k],'hi',on)}
   function drawSets(){
     if(!setOut)return;
-    var left=[],i;
-    for(i=0;i<6;i++)if(!chk[i])left.push(String(i+1));
-    if(!left.length){
-      setOut.className='mpanel has';
-      setOut.innerHTML='<span class="hd">To check: 0 of 6</span><span class="good">All six checked.</span> Put the next check in your calendar.';
-    }else{
+    var n=nChk();
+    if(lastOpen<0){
       setOut.className='mpanel';
-      setOut.innerHTML='<span class="hd">To check: '+left.length+' of 6</span>Left: '+esc(left.join(', '))+'. Copy the list below.';
+      setOut.innerHTML='<span class="hd">Where it leaked</span><span class="nil">Open a place: 1 to 6.</span>';
+      label();return;
     }
+    var s=SETS[lastOpen];
+    setOut.className='mpanel has';
+    setOut.innerHTML='<span class="hd">'+(lastOpen+1)+' · '+esc(s.w)+' · '+esc(s.n)+'</span>'+esc(s.ev)+(s.chip?' '+s.chip:'')+
+      '<br><span class="good">Check in your tool: '+esc(s.full)+'.</span>'+
+      '<br><span class="dim">'+n+' of 6 opened'+(n<6?'.':'. Copy the six checks below.')+'</span>';
     label();
   }
-  function toggleSet(k){
-    chk[k]=!chk[k];
-    var b=setBtns[k];
-    if(b){
-      b.setAttribute('aria-pressed',String(chk[k]));
-      b.classList.toggle('ok',chk[k]);
-      var d=b.querySelector('b');if(d){d.textContent=chk[k]?'✓':String(k+1);d.className='nb '+(chk[k]?'ok':'guess')}
+  function openSet(k){
+    lastOpen=k;
+    if(!chk[k]){
+      chk[k]=true;
+      var b=setBtns[k];
+      if(b){
+        b.setAttribute('aria-pressed','true');b.classList.add('ok');
+        var d=b.querySelector('b');if(d){d.textContent='✓';d.className='nb ok'}
+      }
+      tog(bdg[k],'ok',true);
+      bdt[k].setAttribute('class','s3bn ok');bdt[k].textContent='✓';
     }
-    tog(bdg[k],'ok',chk[k]);
-    bdt[k].setAttribute('class','s3bn'+(chk[k]?' ok':''));
-    bdt[k].textContent=chk[k]?'✓':String(k+1);
     drawSets();
   }
   if(copyBtn)copyBtn.onclick=function(){
-    var t=[],i;
-    for(i=0;i<6;i++)if(!chk[i])t.push('- '+SETS[i].full);
-    copyText(t.length?'AI settings to check\n'+t.join('\n'):'AI settings: all six checked.',$('setMsg'));
+    var t=SETS.map(function(s,i){return '- '+(i+1)+' '+s.w+': '+s.full});
+    copyText('Six AI settings to check\n'+t.join('\n'),$('setMsg'));
   };
 
-  /* Shift+U: land on the five-year wall; never ticks the six places */
-  REVEALS.push(function(){if(plan!==0)setPlan(0);if(!train)setTrain(true)});
+  /* Shift+U: land on Claude's five-year wall; never opens the six places */
+  REVEALS.push(function(){if(vend!==0)setVend(0);if(plan!==0)setPlan(0);if(!train)setTrain(true)});
 
-  drawAll('none',0);
+  setVend(0);
   drawSets();
 })();
 }catch(err){try{console.warn("section s3 failed:",err&&err.message)}catch(_){}}
@@ -7403,6 +7536,86 @@ try{
   });
 })();
 }catch(err){try{console.warn("section s5 failed:",err&&err.message)}catch(_){}}
+/* ----- section s5 · four attacks, one wall ----- */
+try{
+(function(){
+/* Untimed recap figure. Four attack rows cross one wall into the firm; clicking
+   an attack lights its path, the gate on the wall that stops it, and what it
+   was reaching for. Row 4, AI-written malware, is the one the page cannot
+   simulate: its gate is ordinary hygiene, so it is drawn dashed and the readout
+   carries the evidence instead. Built once, updated in place (figure kit). */
+  var host=$('atkFig'),btns=$('atkBtns'),out=$('atkOut'),board=$('atkBoard');
+  if(!host||!btns||!out)return;
+  var ATK=[
+    {n:'Prompt injection',sub:'a hidden line',t:'the assistant',g:['least access,','approve each send'],
+     what:'A line hidden in what the assistant reads becomes an instruction it follows: email 3 above.',
+     ev:'FINRA published a primer on it in March 2026 <span class="conf h" data-src="src-finra-inj">H</span>.',
+     gate:'Less access, and approval before it sends, pays or deletes. A warning in the prompt is not a lock.'},
+    {n:'Data exfiltration',sub:'files out',t:'your files',g:['connect only what','the task needs'],
+     what:'Data leaves through a connection the assistant already holds: the three estate files above, sent with no click.',
+     ev:'EchoLeak, 2025: one email did this to Microsoft 365 Copilot <span class="conf h" data-src="src-cve">H</span>.',
+     gate:'Connect only what the task needs. What the assistant cannot reach, it cannot send.'},
+    {n:'Deepfake',sub:'a fake face',t:'you',g:['hang up; call the','number on file'],
+     what:'A face and voice that are not the client’s, on a line the caller chose: the video call above.',
+     ev:'Arup, 2024: about $25 million after a video call of deepfaked colleagues <span class="conf h" data-src="src-arup">H</span>.',
+     gate:'A line the caller did not choose: hang up and call the number on file.'},
+    {n:'AI-written malware',sub:'self-rewriting code',t:'your laptop',g:['updates, no files','you did not expect'],nogate:true,
+     what:'Malicious code an attacker writes or rewrites with a model until nothing detects it. No page can simulate it.',
+     ev:'Anthropic, September 2026: an espionage group’s agents watched security tools for detections of their own malware and rebuilt it until it was not detected <span class="conf h" data-src="src-anthropic-threat">H</span>. '+
+        'Google, November 2025: a program that asked a model to rewrite its own code every hour <span class="conf m" data-src="src-gtig-ai">M</span>. '+
+        'The SEC’s FY2026 exam priorities name AI and polymorphic malware among the security controls examiners test <span class="conf m" data-src="src-secpri">M</span>.',
+     gate:'Nothing new: updates, no files you did not expect, and your firm’s security team. AI cut the attacker’s cost; your defence did not change.'}
+  ];
+  var cur=-1,rowsG=[];
+  var svg=svgRoot(host,420,250,'Four attacks crossing one wall into your firm, each with the gate that stops it. None selected.','s5fig','group');
+  svt(svg,14,24,'OUTSIDE','s5zl','start');
+  sv('rect',{x:168,y:8,width:244,height:236,rx:10,'class':'s5zone'},svg);
+  svt(svg,404,24,'YOUR FIRM','s5zl','end');
+  ATK.forEach(function(a,i){
+    var y=62+50*i,g=sv('g',{'class':'s5arow'+(a.nogate?' nogate':''),role:'button',tabindex:'0','aria-pressed':'false'},svg);
+    g.setAttribute('aria-label',(i+1)+', '+a.n+': reaches '+a.t+'; gate: '+a.g.join(' '));
+    sv('circle',{cx:38,cy:y,r:13,'class':'s5ac'},g);
+    svt(g,38,y+5,String(i+1),'s5an','middle');
+    svt(g,60,y+4,a.sub,'s5bk','start');
+    sv('line',{x1:60,y1:y+14,x2:160,y2:y+14,'class':'s5bar'},g);
+    sv('path',{d:'M158 '+(y+9)+' L168 '+(y+14)+' L158 '+(y+19)+' Z','class':'s5bh'},g);
+    /* the gate on the wall */
+    sv('rect',{x:160,y:y-16,width:16,height:36,rx:4,'class':'s5bg'},g);
+    sv('line',{x1:168,y1:y-12,x2:168,y2:y+16,'class':'s5bgb'},g);
+    /* past the gate: what it reaches, dashed only when the gate is not a lock */
+    sv('line',{x1:176,y1:y+14,x2:324,y2:y+14,'class':'s5bar2'},g);
+    svt(g,172,y+2,'✗','s5bx','start');
+    svt(g,186,y-5,a.g[0],'s5bgl','start');
+    svt(g,186,y+8,a.g[1],'s5bgl','start');
+    sv('rect',{x:326,y:y-14,width:84,height:32,rx:8,'class':'s5bt'},g);
+    svt(g,368,y+6,a.t,'s5btt','middle');
+    g.addEventListener('click',function(){pick(i)});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(i)}});
+    rowsG.push(g);
+  });
+  var tiles=[];
+  ATK.forEach(function(a,i){
+    var b=document.createElement('button');b.type='button';b.className='btn sel mini';
+    b.setAttribute('aria-pressed','false');
+    b.innerHTML='<span class="nb">'+(i+1)+'</span>'+esc(a.n);
+    b.onclick=function(){pick(i)};
+    btns.appendChild(b);tiles.push(b);
+  });
+  function pick(i){
+    cur=i;
+    if(board)board.classList.add('live');
+    rowsG.forEach(function(g,j){g.classList.toggle('on',j===i);g.setAttribute('aria-pressed',String(j===i))});
+    tiles.forEach(function(b,j){b.classList.toggle('act',j===i);b.setAttribute('aria-pressed',String(j===i))});
+    var a=ATK[i];
+    svg.setAttribute('aria-label','Four attacks crossing one wall into your firm. Selected: '+(i+1)+', '+a.n+', reaching '+a.t+'; the gate: '+a.g.join(' ')+(a.nogate?'. This gate is ordinary hygiene, not a lock.':'.'));
+    out.className='mpanel has';
+    out.innerHTML='<span class="hd">'+(i+1)+' · '+esc(a.n)+'</span>'+esc(a.what)+
+      '<br><b>It happened.</b> '+a.ev+
+      '<br><b>The gate.</b> '+esc(a.gate);
+  }
+  REVEALS.push(function(){if(cur<0)pick(3)});
+})();
+}catch(err){try{console.warn("section s5 board failed:",err&&err.message)}catch(_){}}
 /* ----- section sW1 ----- */
 try{
 /* ================= D1 · how a text watermark works =================

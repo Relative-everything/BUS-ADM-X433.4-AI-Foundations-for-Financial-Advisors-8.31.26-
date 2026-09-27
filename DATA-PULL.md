@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**25 of 67 works are moving targets, feeding 93 of
-230 references.**
+**30 of 78 works are moving targets, feeding 108 of
+264 references.**
 
 
 ---
@@ -185,6 +185,30 @@ version string means the version is not tracking the data.
 |---|---|---|---|---|
 | CONTEXT-WINDOWS-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed; the keys paraphrase the page's sentences |
 
+### `src-anthropic-terms` — Privacy Center and Commercial Terms
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-08-14 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 4 |
+| Feeds | S4 `#s3` ×3 · S4 `#s9` |
+
+### `src-openai-data` — How your data is used to improve model performance
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 4 |
+| Feeds | S4 `#s3` ×3 · S4 `#s9` |
+
 ### `src-api-messages` — Messages API reference
 
 | | |
@@ -202,18 +226,6 @@ version string means the version is not tracking the data.
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
 | API-MESSAGES-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed |
-
-### `src-anthropic-terms` — Privacy Center and Commercial Terms
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-14 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
-| References | 3 |
-| Feeds | S4 `#s3` ×3 |
 
 ### `src-personalization` — Understanding Claude's personalization features
 
@@ -250,6 +262,54 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-0.1 |
 | References | 3 |
 | Feeds | S0.1 `#s6` · S0.1 `#s7` · S0.1 `#s9` |
+
+### `src-ms-copilot` — Privacy FAQ for Microsoft Copilot
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 3 |
+| Feeds | S4 `#s3` ×2 · S4 `#s9` |
+
+### `src-gemini-privacy` — Gemini Apps Privacy Hub
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 3 |
+| Feeds | S4 `#s3` ×2 · S4 `#s9` |
+
+### `src-ms-copilot-edp` — Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 2 |
+| Feeds | S4 `#s3` ×2 |
+
+### `src-gemini-workspace` — Generative AI in Google Workspace Privacy Hub
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 2 |
+| Feeds | S4 `#s3` ×2 |
 
 ### `src-openai-pricing` — API pricing
 
