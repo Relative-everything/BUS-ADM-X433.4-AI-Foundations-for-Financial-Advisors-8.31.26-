@@ -11,6 +11,32 @@ and the cold run of a Part 1 package. The measured multipliers still hold: a sec
 runs about 1.0x its planned minutes, a section that is worked runs about 1.9x. The clock below is
 built on that.
 
+## What changed on 2026-09-27: the page now covers the whole syllabus line list
+
+Branch `claude/vigilant-noether-7ep3ev`, `docs/changes/2026-09-27-session-4-syllabus/`. Same
+sections, minutes, gates and polls. What you will notice:
+
+- **§03 has a vendor row above the plans: Claude, ChatGPT, Copilot, Gemini.** Plan A at each
+  opens with that vendor's own switch on (Training on your chats; Improve the model for everyone;
+  Model training on text; Keep Activity) and the calendar shows that vendor's number: five years,
+  until you delete, 18 months (Copilot), 18 months with 18 dashed squares for reviewed chats
+  (Gemini). Off: 30 days, still until you delete, still 18 months, 72 hours. Plans B and C at the
+  three other vendors draw the calendar as dashed squares: "in the contract", which §04 asks for.
+  Only Claude's figures are chipped H; the other three vendors' pages could not be opened and
+  their figures are M, from search summaries. See Verify.
+- **§03's six places are six leaks now.** Each card carries its syllabus word (the default, logs,
+  memory, caches, connectors, features) and opening it names the incident: DeepSeek's open
+  database, shared ChatGPT chats in Google, EchoLeak, the Meta AI feed. The copy button copies the
+  six checks whatever was opened.
+- **§05 ends with an untimed board: four attacks, one wall.** Prompt injection, data
+  exfiltration (named for the first time), deepfake, AI-written malware. Click one and its path
+  to what it reaches lights, with the gate that stops it. Row 4 is the one the page cannot
+  simulate; its gate is ordinary hygiene, drawn dashed, and its readout carries the evidence.
+- **§07's record block ends with a DECISION line**, and the Journal of Accountancy reading is
+  named under the section at M (the article could not be opened; the page claims nothing about
+  what it says).
+- **§04's thesis says what approved means**: the six answers are on paper.
+
 ## What changed again, 2026-09-25 evening: every section is a figure
 
 After PR #37 merged, the page was rebuilt a second time in the mode of the most graphic sections
@@ -140,7 +166,7 @@ One aloud. Say it with its confidence label.
 | Poll | When | Question | Options | Decision rule |
 |---|---|---|---|---|
 | 1 | 6:14 | Which of the four would you have sent? | A, B, C, D | Click the most-picked letter first. If anyone picked D, click D second and say "hold that thought for §02". If nobody did, click D yourself. |
-| 2 | 6:39 | Which plan do you use for AI today? | Free, Pro or Max; Team or Enterprise; my firm's own tool; the API; none | If a majority are on a personal plan, spend the minutes on the switch and the bars. If most are on a firm tool, go straight to the six settings. |
+| 2 | 6:39 | Which AI tool, and which plan, do you use today? | Claude, ChatGPT, Copilot or Gemini, then: a personal plan; a plan my firm signed; the API; none | Click the most-picked vendor first, then its plan A. If a majority are on a personal plan, spend the minutes on the switch and the calendar at that vendor. If most are on a firm tool, click B and go to the six leaks. |
 | 3 | 6:53 | Before it runs: what will the assistant do? | a, b | If half or more pick (a), run it without comment and let the output land. If most pick (b), ask one (a) voter why before you run it. |
 | 4 | 7:47 | First vote: the full record costs more time than the AI saves | a agree, b lean agree, c lean disagree, d disagree | Show the distribution. The minority side speaks first. |
 | 5 | 8:00 | Second vote, after the complication | the same four | Show both distributions side by side. Report the change; a zero change is a finding, not a failure. |
@@ -246,10 +272,15 @@ meter goes Probably, Possibly, No; at No the crowd reads "dozens". **Copy the cl
 paste it in chat. D5 and D6 follow this section at Foundational depth; skip both tonight.
 
 ### s3 · §03, 6:39
-Poll 2 first. Click **A · Free, Pro, Max**: sixty rust squares, five years, "Your firm signed
-nothing". Click the switch off: one square, 30 days. Click **B**: the contract page slides to the
-firm, no switch. The line to land: "Same model, different contract." The six places are theirs
-to tick after class.
+Poll 2 first, and click the room's vendor in the row above the plans. At **Claude**, **A · Free,
+Pro, Max**: sixty rust squares, five years, "Your firm signed nothing". Switch off: one square,
+30 days. At **ChatGPT**, A: sixty squares either way, "until you delete"; the switch stops
+training, not keeping. At **Gemini**, A: 18 rust squares and 18 dashed ("36 months if read");
+off: one square, 72 hours. At **Copilot**, A: 18 squares either way. Click **B** at any vendor:
+the contract page slides to the firm, no switch; at the three other vendors the calendar goes
+dashed, "in the contract". The line to land: "Same model, different contract, at all four." Then
+the six leaks: open **2 · LOGS** (DeepSeek) and **5 · CONNECTORS** (EchoLeak, which §05 runs);
+the other four are theirs after class. Every non-Claude number is M (see Verify).
 
 ### s4 · §04, 6:46
 Pick **C · Client file**, then answer the locks for the consumer plan you use: lock 1, the
@@ -263,7 +294,11 @@ Poll 3. Click the majority letter; it locks. **Run the assistant**: three estate
 firm's wall, and the summary ends "I also forwarded 3 files". The x-ray and the fixes appear
 only now. **Sweep the x-ray**: the white line in email 3 appears. Gate 2, then show fixes 1 (a warning: not a lock), 2 (approve each
 send: held) and 3 (only what it needs: nothing leaves). Video call: (a) first if the room wants
-it, then **(c)**, the number on file: "I never called you." One sentence on Arup.
+it, then **(c)**, the number on file: "I never called you." One sentence on Arup. If there is a
+minute: the board **Four attacks, one wall** under the call. Click **4 · AI-written malware**: the
+one attack no page can simulate, its gate drawn dashed because it is ordinary hygiene, and the
+Anthropic and Google cases in the readout. Say the SEC line: the FY2026 priorities name AI and
+polymorphic malware among the security controls examiners test (M, see Verify).
 
 ### Relay, 7:15
 See the Part 1 relay section above.
@@ -286,8 +321,10 @@ minutes each: costs 14 more.
 One record at a time: the room says A or B, then **Next record ▸**. Records 1 to 4 are B (Gate 3
 on record 3, the summary), 5 and 6 are A. Then **Last step · Check record 6's citation**: slot 3,
 *Hallowell v. Commissioner*, turns NOT FOUND. "Complete is not correct." Copy the record block
-and point out the first three lines are theirs to fill: a model cannot reliably report its own
-name or the date.
+and point out the first three lines are theirs to fill, and the last one, DECISION, after they
+have read the answer: a model cannot reliably report its own name, the date, or what they
+decided. The Journal of Accountancy reading is named under the section; the page claims nothing
+about its content because the article could not be opened from the build.
 
 ### sD · D4, 7:46
 Set depth to **+ Standard**; D4 appears after §08. Poll 4 is the sealed vote; click the
@@ -332,7 +369,32 @@ answering it in class.
   vendor can change these without notice, and privacy.claude.com could not be re-read from the
   build on 2026-09-25.
 - **The FY2026 exam priorities** name AI and Regulation S-P. The SEC's fiscal year ends
-  2026-09-30, two days after class; the FY2027 priorities may follow.
+  2026-09-30, two days after class; the FY2027 priorities may follow. New on 2026-09-27: §05's
+  board quotes §VII as naming "AI and polymorphic malware attacks" among the training and
+  security controls examiners review. That line is at M, from several consistent law-firm
+  summaries; sec.gov could not be opened. Read §VII before you say it.
+- **The three other vendors' terms** (§03, 2026-09-27), all at M because help.openai.com,
+  support.microsoft.com, learn.microsoft.com and support.google.com are egress-blocked from the
+  build: ChatGPT's "Improve the model for everyone" on by default for Free, Plus and Pro, chats
+  kept until deleted, deleted chats gone within 30 days, Business and Enterprise excluded from
+  training; Copilot with a personal Microsoft account may train unless you opt out under "Model
+  training on text", history 18 months by default, enterprise data protection under a work
+  account; Gemini's "Keep Activity" on by default, 18-month auto-delete, human reviewers, reviewed
+  chats kept up to three years, 72 hours with the switch off, Workspace not trained on and not
+  reviewed. Open each vendor's page before class; the numbers move without notice.
+- **The four leaks** (§03, 2026-09-27), three at M: DeepSeek's open database (Wiz Research,
+  January 2025), shared ChatGPT chats in Google results (TechCrunch, July 2025), the Meta AI
+  Discover feed (Tom's Guide, June 2025; the original reporting would be the better citation).
+  EchoLeak is H on its CVE record.
+- **AI-written malware** (§05, 2026-09-27): Anthropic's September 2026 threat report was fetched
+  through a summariser and the quoted sentence came back verbatim (H, but read the case). Google's
+  November 2025 tracker (PROMPTFLUX rewriting its own code through the Gemini API, experimental) is
+  at M; services.google.com could not be opened.
+- **The Journal of Accountancy reading** (§07): the syllabus calls it "Writing an Effective AI
+  Prompt for an Audit Trail"; the page's own title, as search returns it, is "Writing an effective
+  AI prompt for an audit", November 2025, author not captured. journalofaccountancy.com could not
+  be opened, so nothing on the page characterises it. Read it and decide whether §07 should say
+  what it recommends.
 - **From the case dialog** (its gate is off this page too, as on Sessions 2 and 3): whether
   §7872's blended annual rate or §1274's applicable federal rate governs a demand note issued in
   exchange for property (CASE.md §H.4 records no controlling authority); whether the combined
@@ -349,3 +411,4 @@ answering it in class.
 - The corrections line rests on a page fetched through a summariser; read it yourself first.
 - The pairing list is not drawn, and the packages are not screened.
 - Speaker-labelled transcripts: confirm they are still on.
+- Poll 2 now asks the vendor as well as the plan; rebuild it.
