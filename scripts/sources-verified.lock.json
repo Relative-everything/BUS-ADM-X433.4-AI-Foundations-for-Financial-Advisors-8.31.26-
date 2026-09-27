@@ -1,7 +1,7 @@
 {
   "note": "NOTARISED. Every last_verified date in SOURCES.md, frozen. build-sources.mjs recomputes this digest on every parse and refuses to build if a date moved. Only scripts/attest-verified.mjs writes this file, and only at an interactive terminal. Do not hand-edit: a hand edit here and a matching hand edit in SOURCES.md is the one thing this pair cannot catch, and it is a lie about a human having read a source.",
   "updated_by": "--sync (records with an empty last_verified only)",
-  "digest": "a293f68e14a3366965395c50909b3996ee5920c09ed7776ab4b38ea2ebb63eaf",
+  "digest": "cb015c4d521257177d997459f218f49212ec426442914725afe514c81c79d58d",
   "entries": {
     "src-aa": {
       "last_verified": "",
@@ -16,6 +16,10 @@
       "verified_by": ""
     },
     "src-anthropic-terms": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-threat": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -47,6 +51,10 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-chatgpt-index": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-claude-marks": {
       "last_verified": "",
       "verified_by": ""
@@ -72,6 +80,10 @@
       "verified_by": ""
     },
     "src-davidson": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-deepseek": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -107,7 +119,19 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-gemini-privacy": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-gemini-workspace": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-google-ptcf": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-gtig-ai": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -120,6 +144,10 @@
       "verified_by": ""
     },
     "src-iskowitz": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-joa-prompt": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -159,11 +187,27 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-meta-feed": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-models": {
       "last_verified": "",
       "verified_by": ""
     },
     "src-morningstar": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-ms-copilot": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-ms-copilot-edp": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-openai-data": {
       "last_verified": "",
       "verified_by": ""
     },

@@ -5,11 +5,11 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**67 works, 230 references across 5 lessons.** 49 are
+**78 works, 264 references across 5 lessons.** 60 are
 cited by at least one claim; 18 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
-**57 records carry at least one field this repository could not verify, and
+**67 records carry at least one field this repository could not verify, and
 every one of them is printed below as `[UNVERIFIED, needs source]` rather than omitted.** The
 rendered footer in a lesson omits an unknown field, because a footer in which
 thirty entries shout about a missing publisher helps nobody. This file is where a
@@ -129,8 +129,8 @@ Supported Claude models launched on or after 2 August 2026 mark generated text w
 | Last retrieved | 2026-08-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **3** |
-| Cited in | S4 `#s3` ×3 |
+| **Total references** | **4** |
+| Cited in | S4 `#s3` ×3 · S4 `#s9` |
 
 Consumer training defaults since 8 October 2025, five-year and 30-day retention, the commercial-side no-training default, Zero Data Retention eligibility, and Claude Code's local 30-day transcript retention. Every one of these is a term a vendor can change without notice.
 
@@ -362,6 +362,25 @@ Progressive disclosure of skill metadata against skill body, the code-execution 
 
 One to two tool calls for web search on a factual query, five or more tool calls over one to three minutes for research, and the combined behaviour of the two.
 
+### Anthropic
+
+**Detecting and countering misuse of AI: September 2026**  
+`src-anthropic-threat` · evidence
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Anthropic |
+| Link | <https://www.anthropic.com/threat-intelligence-report-september-2026> |
+| Published | 2026-09 |
+| Last retrieved | 2026-09-27 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **2** |
+| Cited in | S4 `#s5` · S4 `#s9` |
+
+Anthropic's fourth threat-intelligence report, covering misuse disrupted between December 2025 and August 2026 across seven harm areas. The case the lesson uses (GTG-20006, assessed as a Russian espionage actor) had AI agents watch security products for detections of its deployed malware and rebuild the malware until it evaded them. The lesson names no group and quotes no tradecraft beyond that sentence.
+
 ### artefact2
 
 **LLM sampling visualiser**  
@@ -485,7 +504,7 @@ General-purpose models over more than 800,000 verifiable legal questions, 58-88%
 |---|---|
 | Author | Daly, B., Director, Division of Investment Management |
 | Publisher | ICI Winter Board Meeting |
-| Link | **[UNVERIFIED, needs source]** |
+| Link | <https://www.sec.gov/newsroom/speeches-statements/daly-020326-artificial-intelligence-future-investment-management-remarks-investment-company-institute-ici-winter> |
 | Published | 2026-02-03 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
@@ -547,8 +566,8 @@ FINRA's first standalone generative-AI section: enterprise-level supervisory pro
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S4 `#s5` ×2 |
+| **Total references** | **3** |
+| Cited in | S4 `#s5` ×2 · S4 `#s9` |
 
 A self-regulatory organisation publishing a standalone primer on an attack technique, which is the evidence for the claim that prompt injection has left the research literature.
 
@@ -566,8 +585,8 @@ A self-regulatory organisation publishing a standalone primer on an attack techn
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S4 `#s5` ×2 |
+| **Total references** | **3** |
+| Cited in | S4 `#s5` ×2 · S4 `#s9` |
 
 Approximately $25 million across 15 transfers. The one deepfake figure the course endorses putting in front of a client.
 
@@ -608,6 +627,63 @@ The Persona-Task-Context-Format framework that session-2 §03 teaches and §04 s
 | Cited in | S4 `#sW1` ×2 · S4 `#sW2` ×3 |
 
 TEXT WATERMARKING ONLY. The boundary is load-bearing, because the sibling record `src-synthid` is cited for image, video and audio claims that this page does not reach. What it substantiates, and nothing outside this list: detection is probabilistic and returns watermarked, not watermarked, or uncertain, against two tunable thresholds; the signal survives cropping, changing a few words, and mild paraphrase; detector confidence is greatly reduced by thorough rewriting or by translation; watermarking is less effective on factual responses, because there is less opportunity to augment generation without decreasing accuracy; detector exposure is a three-way deployer choice between fully-private, semi-private and public; the scheme is not designed to stop motivated adversaries; and the underlying technical description is Dathathri et al., Scalable watermarking for identifying large language model outputs, Nature 634:818-823 (2024), https://www.nature.com/articles/s41586-024-08025-4. IT SUBSTANTIATES NO ADOPTION FIGURE AND NO MARKET-SHARE CLAIM, which is the fact that keeps session-4's scale paragraph open rather than closing it.
+
+### Google
+
+**Gemini Apps Privacy Hub**  
+`src-gemini-privacy` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Google |
+| Publisher | Gemini Apps Help, answer 13594961 |
+| Link | <https://support.google.com/gemini/answer/13594961> |
+| Published | *not applicable* |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **3** |
+| Cited in | S4 `#s3` ×2 · S4 `#s9` |
+
+With a personal Google account, Gemini Apps Activity ("Keep Activity") is on by default; activity is used to improve Google's models and may be read by trained reviewers. Activity auto-deletes after 18 months by default, with 3 or 36 months selectable. A conversation a reviewer has read is kept for up to three years even if the person deletes their activity. With the setting off, chats are kept up to 72 hours and not used to train models unless the person sends feedback. Google's own page warns against entering confidential information.
+
+### Google
+
+**Generative AI in Google Workspace Privacy Hub**  
+`src-gemini-workspace` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Google |
+| Publisher | Google Workspace Help, answer 15706919 |
+| Link | <https://support.google.com/a/answer/15706919> |
+| Published | *not applicable* |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S4 `#s3` ×2 |
+
+For Workspace accounts with Gemini, prompts, generated content and Workspace data are not used to train models outside the customer's domain without permission, are not reviewed by humans, and are not used for advertising; the Cloud Data Processing Addendum governs.
+
+### Google Threat Intelligence Group
+
+**GTIG AI Threat Tracker: Advances in threat actor usage of AI tools**  
+`src-gtig-ai` · evidence
+
+| | |
+|---|---|
+| Author | Google Threat Intelligence Group |
+| Publisher | Google |
+| Link | <https://services.google.com/fh/files/misc/advances-in-threat-actor-usage-of-ai-tools-en.pdf> |
+| Published | 2025-11-05 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S4 `#s5` · S4 `#s9` |
+
+PROMPTFLUX, a VBScript dropper that called the Gemini API to request obfuscated rewrites of its own source code, described as experimental and not yet able to do real damage; PROMPTSTEAL, which generated commands through a hosted model; and the report's statement that, for the first time, malware families used large language models during execution. Google disabled the associated API access.
 
 ### Iskowitz, C.
 
@@ -723,6 +799,44 @@ Characterised on the page ONLY by its title claim of self-reported reductions in
 
 Over 200 preregistered legal queries, expert hand-scored, against Lexis+ AI, Westlaw AI-Assisted Research and GPT-4. Tools tested May 2024 — a historical fixture. The measured rates belong to the tools as they were on that date and must never be "updated".
 
+### Microsoft
+
+**Privacy FAQ for Microsoft Copilot**  
+`src-ms-copilot` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Microsoft |
+| Publisher | Microsoft Support |
+| Link | <https://support.microsoft.com/en-us/microsoft-copilot/privacy-faq-for-microsoft-copilot> |
+| Published | *not applicable* |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **3** |
+| Cited in | S4 `#s3` ×2 · S4 `#s9` |
+
+With a personal Microsoft account, conversations may be used to train Microsoft's generative AI models unless the person opts out under "Model training on text"; the opt-out is not the default, and takes effect across systems within 30 days. Conversation history is kept 18 months by default unless deleted sooner. Some users and regions are excluded from training by the vendor's own rules.
+
+### Microsoft
+
+**Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat**  
+`src-ms-copilot-edp` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Microsoft |
+| Publisher | Microsoft Learn |
+| Link | <https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection> |
+| Published | *not applicable* |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S4 `#s3` ×2 |
+
+Signed in with a work or school account, prompts and responses fall under enterprise data protection: the same contractual terms as Exchange mail and SharePoint files, encrypted at rest and in transit, and not used to train the underlying foundation models.
+
 ### MITRE / NVD
 
 **CVE-2025-32711 (EchoLeak, CVSS 9.3)**  
@@ -737,8 +851,8 @@ Over 200 preregistered legal queries, expert hand-scored, against Lexis+ AI, Wes
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S4 `#s5` ×2 |
+| **Total references** | **5** |
+| Cited in | S4 `#s3` · S4 `#s5` ×2 · S4 `#s9` ×2 |
 
 Identifier, score and mechanism of EchoLeak, verified against the public record: one crafted email could make Microsoft 365 Copilot send internal data out with no click. Kind was background until 2026-09-25, when the §05 bullet stating that mechanism was found resting on it unchipped (A20); it is now the chip on that claim. CurXecute (CVE-2025-54135) left the title with the rebuild that took it off the page.
 
@@ -760,6 +874,25 @@ Identifier, score and mechanism of EchoLeak, verified against the public record:
 | Cited in | S2 `#s5` |
 
 Per-token input and output rates for the GPT-5.6 Sol, Terra and Luna tiers, as carried in session-2's MODELS array.
+
+### OpenAI
+
+**How your data is used to improve model performance**  
+`src-openai-data` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | OpenAI |
+| Publisher | OpenAI Help Center, article 5722486 |
+| Link | <https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance> |
+| Published | *not applicable* |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **4** |
+| Cited in | S4 `#s3` ×3 · S4 `#s9` |
+
+On the Free, Plus and Pro plans the "Improve the model for everyone" setting is on by default and can be switched off under Data controls. ChatGPT Business (formerly Team), Enterprise, Edu and the API are not used for training by default. Chats stay in the account until deleted; a deleted chat is removed from OpenAI's systems within 30 days; temporary chats are kept up to 30 days and not used for training. Every one of these is a term the vendor can change without notice.
 
 ### Rohrer, D., Dedrick, R. F., & Stershic, S.
 
@@ -818,6 +951,25 @@ The two-party consent exposure behind the recording-consent section: the Califor
 
 n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using AI search and generative language, 42.9% using AI notetaking.
 
+### TechCrunch
+
+**Your public ChatGPT queries are getting indexed by Google and other search engines**  
+`src-chatgpt-index` · evidence
+
+| | |
+|---|---|
+| Author | TechCrunch |
+| Publisher | TechCrunch |
+| Link | <https://techcrunch.com/2025/07/31/your-public-chatgpt-queries-are-getting-indexed-by-google-and-other-search-engines> |
+| Published | 2025-07-31 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S4 `#s3` · S4 `#s9` |
+
+Conversations shared from ChatGPT with the "make this chat discoverable" box ticked appeared in Google search results in late July 2025; OpenAI removed the option within days. The lesson uses it as the "caches" leak: a copy a search engine has made is the search engine's, whatever the vendor does next. The count of indexed chats (reported as about 4,500) is not stated on the page.
+
 ### The Cole household
 
 **The Cole household**  
@@ -836,6 +988,25 @@ n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using 
 | Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s7` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCold` · S4 `#s2` · S4 `#sRSP` · S4 `#sAnon` · S4 `#s3` · S4 `#s4` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` · S4 `#s6` · S4 `#sWS` · S4 `#s7` · S4 `#sCR` ×2 · S4 `#sD` · S4 `#s9` |
 
 Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
+
+### Tom's Guide
+
+**Meta AI's discover feed is full of revealing personal info: here's how to protect your privacy**  
+`src-meta-feed` · evidence
+
+| | |
+|---|---|
+| Author | Tom's Guide |
+| Publisher | Tom's Guide |
+| Link | <https://www.tomsguide.com/computing/online-security/meta-ais-discover-feed-is-full-of-revealing-personal-info-heres-how-to-protect-your-privacy> |
+| Published | 2025-06 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S4 `#s3` · S4 `#s9` |
+
+The Meta AI app's Discover feed showed conversations people had shared with a Share button, many of them plainly private (medical, legal, financial, tied to real names), with little warning that sharing meant publishing. The lesson uses it as the "uncovered features" leak: a feature nobody's policy covered.
 
 ### U.S. Securities and Exchange Commission
 
@@ -908,10 +1079,29 @@ That the SEC withdrew its 2023 proposal on conflicts of interest from predictive
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **3** |
-| Cited in | S4 `#s1` ×2 · S4 `#s9` |
+| **Total references** | **5** |
+| Cited in | S4 `#s1` ×2 · S4 `#s5` · S4 `#s9` ×2 |
 
-Accuracy of AI representations, training and security controls, and Regulation S-P as a named examination focus.
+§VII, Risk Areas Impacting Various Market Participants. Information security and operational resiliency, including ransomware, data loss prevention, incident response and the 2024 amendments to Regulation S-P; emerging financial technology and AI, including the accuracy of AI representations and a review of training and security controls for risks from AI and polymorphic malware attacks.
+
+### Wiz Research
+
+**Wiz Research uncovers exposed DeepSeek database leaking sensitive information, including chat history**  
+`src-deepseek` · evidence
+
+| | |
+|---|---|
+| Author | Wiz Research |
+| Publisher | Wiz blog |
+| Link | <https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak> |
+| Published | 2025-01-29 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S4 `#s3` · S4 `#s9` |
+
+A publicly reachable ClickHouse database belonging to DeepSeek held over a million lines of log streams, including chat history, API keys and back-end details, with no authentication. Wiz disclosed it and DeepSeek secured it promptly. The lesson uses it as the "logs" leak: the vendor's own record of what was typed.
 
 ### Wolfram, S.
 
@@ -931,6 +1121,25 @@ Accuracy of AI representations, training and security controls, and Regulation S
 | Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s1` ×2 · S2 `#s2` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s7` · S4 `#sWS` |
 
 The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D3 is about exactly that.
+
+### Writing an effective AI prompt for an audit
+
+**Writing an effective AI prompt for an audit**  
+`src-joa-prompt` · assigned_reading
+
+| | |
+|---|---|
+| Author | **[UNVERIFIED, needs source]** |
+| Publisher | Journal of Accountancy, A&A Focus newsletter (AICPA) |
+| Link | <https://www.journalofaccountancy.com/newsletters/a-a-focus/writing-an-effective-ai-prompt-for-an-audit/> |
+| Published | 2025-11 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S4 `#s7` ×2 |
+
+The assigned reading for §07, from the Journal of Accountancy's A&A Focus series on AI in audit work. Its content is not characterised anywhere in the lesson.
 
 ### Zheng, M., Pei, J., Logeswaran, L., Lee, M., & Jurgens, D.
 

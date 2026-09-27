@@ -10,6 +10,67 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-27 · Session 4 covers the syllabus line list: four vendors, six leaks, four attacks, the third reading
+
+Branch `claude/vigilant-noether-7ep3ev`, after PR #39 merged. The instructor asked for Session 4 to be
+analysed, section by section, against the syllabus's eleven lines for the session and for simplicity
+and understandability, for every section to be updated as needed while keeping the creativity and
+moving away from "click to display text" where possible, and for a merge-ready result with a manual
+review list. Change folder `docs/changes/2026-09-27-session-4-syllabus/` (ledger S4S-001 to S4S-019,
+`checks.mjs` 19 assertions). Minutes, sections, tiers and all 17 gates are unchanged.
+
+**The audit, in one line each.** Eight of the eleven syllabus lines were covered; three were not
+(the four named platforms and their consumer tiers; AI-written malware; the Journal of Accountancy
+reading) and two were half covered (where the leaks happen had no leak on the page; data exfiltration
+was shown but never named). Of seventeen sections, fifteen already work as figures; two were
+click-to-text, the §00 retrieval bridge (a shared construct, left as is) and §03's six places.
+
+### Session 4 · §03, four vendors
+
+- **A vendor row above the plan tiles: Claude, ChatGPT, Copilot, Gemini.** The plan names, the
+  switch's own name (Training on your chats; Improve the model for everyone; Model training on text;
+  Keep Activity) and the calendar all read the vendor. Personal plans start with the switch on at all
+  four; what is kept differs: five years, until you delete it, 18 months, or 18 months with reviewed
+  chats drawn to 36 and 72 hours once the switch is off. Business plans exclude training at all four;
+  Claude's 30 days stays H, and the other three draw the calendar as dashed squares, "in the contract",
+  which §04's locks ask for.
+- **Only Claude's figures are H.** help.openai.com, support.microsoft.com, learn.microsoft.com and
+  support.google.com could not be opened from the build, so the other vendors' figures are M with a
+  retrieval note on each record and a Verify item in the run sheet.
+
+### Session 4 · §03, six leaks
+
+- **The six places to check are six leaks now**, each carrying its syllabus word (the default, logs,
+  memory, caches, connectors, features). Opening one names the incident that happened there:
+  DeepSeek's open database (January 2025), shared ChatGPT chats in Google results (July 2025),
+  EchoLeak, and the Meta AI Discover feed (June 2025), with a chip each. The copy button copies the
+  six checks whatever was opened.
+
+### Session 4 · §05, four attacks
+
+- **An untimed board after the two beats: four attacks, one wall.** Prompt injection, data
+  exfiltration (named on the page for the first time), deepfake and AI-written malware, each a
+  keyboard-operable row; clicking one lights its path to what it reaches and the gate that stops it.
+  Row 4 is the one no page can simulate: its gate is ordinary hygiene, drawn dashed, and its readout
+  carries the evidence: Anthropic's September 2026 threat report (H, fetched), Google's November 2025
+  tracker (M), and the SEC's FY2026 §VII line naming AI and polymorphic malware (M).
+
+### Session 4 · §04 and §07
+
+- **§04's thesis says what approved means**: the six answers are on paper.
+- **§07's record block ends with a DECISION line**, so the file holds prompt, output and decision; the
+  Journal of Accountancy reading is named under the section and in the footer at M, with no claim
+  about its content, because the article could not be opened.
+
+### Sources
+
+- **Eleven new records**, all with the retrieval note pattern `src-cfp-genai` set: OpenAI, Microsoft
+  (two), Google (two), Wiz Research, TechCrunch, Tom's Guide, Anthropic's threat report, Google's
+  threat tracker, and the Journal of Accountancy. `src-daly` gains its sec.gov link; `src-secpri`'s
+  scope now says what §VII holds and carries a second use.
+
+---
+
 ## 2026-09-25 · Session 4 polished: sources that read like sources, and less around each figure
 
 Branch `claude/hopeful-newton-hjt0f4`, after PR #38 merged. The instructor asked for a full

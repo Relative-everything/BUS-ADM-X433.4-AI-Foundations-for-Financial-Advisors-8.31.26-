@@ -328,8 +328,9 @@ last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
-scope:          Accuracy of AI representations, training and security controls, and Regulation S-P as a named examination focus.
-used_for.session-4: the fiscal 2026 examination priorities naming AI and Regulation S-P (§01)
+retrieval_note: sec.gov is egress-blocked from the build (2026-09-27). §VII's contents in scope are as reported by several consistent law-firm and compliance-firm summaries of the 17 November 2025 release; the record's H stands on the earlier verification of the AI and Regulation S-P focus, and the §05 use of the polymorphic-malware line is chipped M on the page for that reason.
+scope:          §VII, Risk Areas Impacting Various Market Participants. Information security and operational resiliency, including ransomware, data loss prevention, incident response and the 2024 amendments to Regulation S-P; emerging financial technology and AI, including the accuracy of AI representations and a review of training and security controls for risks from AI and polymorphic malware attacks.
+used_for.session-4: the fiscal 2026 examination priorities naming AI and Regulation S-P (§01); its line on training and security controls for AI and polymorphic malware (§05)
 ```
 
 ## src-kalai
@@ -843,10 +844,11 @@ used_for.session-4: FINRA's March 2026 primer on prompt injection (§05)
 title:          Artificial Intelligence and the Future of Investment Management
 author:         Daly, B., Director, Division of Investment Management
 publisher:      ICI Winter Board Meeting
-link:           [UNVERIFIED, needs source]
+link:           https://www.sec.gov/newsroom/speeches-statements/daly-020326-artificial-intelligence-future-investment-management-remarks-investment-company-institute-ici-winter
 published:      2026-02-03
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: The link is the sec.gov address the search engine returned on 2026-09-27 for this title, date and venue (Manalapan, Florida, delivered virtually). sec.gov is egress-blocked from the build, so the page itself was not re-read; the scope below stands on the earlier verification.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1336,4 +1338,212 @@ figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          One to two tool calls for web search on a factual query, five or more tool calls over one to three minutes for research, and the combined behaviour of the two.
 used_for.session-0.1: the tool-call counts and durations for web search against research
+```
+
+## src-openai-data
+
+```source
+title:          How your data is used to improve model performance
+author:         OpenAI
+publisher:      OpenAI Help Center, article 5722486
+link:           https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. help.openai.com and openai.com are egress-blocked from this build environment (2026-09-27). The figures in scope come from search-engine summaries of this article and of "Chat and file retention in ChatGPT" (article 8983778), which is why the confidence is M. Read both pages before teaching the numbers.
+confidence:     M
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 §03
+scope:          On the Free, Plus and Pro plans the "Improve the model for everyone" setting is on by default and can be switched off under Data controls. ChatGPT Business (formerly Team), Enterprise, Edu and the API are not used for training by default. Chats stay in the account until deleted; a deleted chat is removed from OpenAI's systems within 30 days; temporary chats are kept up to 30 days and not used for training. Every one of these is a term the vendor can change without notice.
+used_for.session-4: ChatGPT's consumer training switch and its default, keeping until you delete, and the business plans' exclusion from training (§03)
+```
+
+## src-ms-copilot
+
+```source
+title:          Privacy FAQ for Microsoft Copilot
+author:         Microsoft
+publisher:      Microsoft Support
+link:           https://support.microsoft.com/en-us/microsoft-copilot/privacy-faq-for-microsoft-copilot
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. support.microsoft.com is egress-blocked from this build environment (2026-09-27). The figures in scope come from search-engine summaries of this FAQ and of "Conversation history in Microsoft Copilot", which is why the confidence is M. Read both pages before teaching the numbers.
+confidence:     M
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 §03
+scope:          With a personal Microsoft account, conversations may be used to train Microsoft's generative AI models unless the person opts out under "Model training on text"; the opt-out is not the default, and takes effect across systems within 30 days. Conversation history is kept 18 months by default unless deleted sooner. Some users and regions are excluded from training by the vendor's own rules.
+used_for.session-4: Copilot's personal-account training default, the opt-out setting, and the 18-month history (§03)
+```
+
+## src-ms-copilot-edp
+
+```source
+title:          Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat
+author:         Microsoft
+publisher:      Microsoft Learn
+link:           https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. learn.microsoft.com is egress-blocked from this build environment (2026-09-27). The substance in scope comes from search-engine summaries of the page, which is why the confidence is M.
+confidence:     M
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 §03
+scope:          Signed in with a work or school account, prompts and responses fall under enterprise data protection: the same contractual terms as Exchange mail and SharePoint files, encrypted at rest and in transit, and not used to train the underlying foundation models.
+used_for.session-4: prompts and responses under a work account are not used to train the foundation models (§03)
+```
+
+## src-gemini-privacy
+
+```source
+title:          Gemini Apps Privacy Hub
+author:         Google
+publisher:      Gemini Apps Help, answer 13594961
+link:           https://support.google.com/gemini/answer/13594961
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. support.google.com is egress-blocked from this build environment (2026-09-27). The figures in scope come from search-engine summaries of this hub and of "Manage and delete your activity in Gemini Apps" (answer 13278892), which is why the confidence is M. Read both pages before teaching the numbers.
+confidence:     M
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 §03
+scope:          With a personal Google account, Gemini Apps Activity ("Keep Activity") is on by default; activity is used to improve Google's models and may be read by trained reviewers. Activity auto-deletes after 18 months by default, with 3 or 36 months selectable. A conversation a reviewer has read is kept for up to three years even if the person deletes their activity. With the setting off, chats are kept up to 72 hours and not used to train models unless the person sends feedback. Google's own page warns against entering confidential information.
+used_for.session-4: Gemini's Keep Activity default, the 18-month auto-delete, human review and the three-year keep of reviewed chats, and 72 hours with the switch off (§03)
+```
+
+## src-gemini-workspace
+
+```source
+title:          Generative AI in Google Workspace Privacy Hub
+author:         Google
+publisher:      Google Workspace Help, answer 15706919
+link:           https://support.google.com/a/answer/15706919
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. support.google.com is egress-blocked from this build environment (2026-09-27). The substance in scope comes from search-engine summaries of the page, which is why the confidence is M.
+confidence:     M
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 §03
+scope:          For Workspace accounts with Gemini, prompts, generated content and Workspace data are not used to train models outside the customer's domain without permission, are not reviewed by humans, and are not used for advertising; the Cloud Data Processing Addendum governs.
+used_for.session-4: Workspace prompts not used to train models and not reviewed by humans (§03)
+```
+
+## src-deepseek
+
+```source
+title:          Wiz Research uncovers exposed DeepSeek database leaking sensitive information, including chat history
+author:         Wiz Research
+publisher:      Wiz blog
+link:           https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak
+published:      2025-01-29
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. wiz.io is egress-blocked from this build environment (2026-09-27). The facts in scope come from search-engine summaries of the post and of the reporting that cited it (TechCrunch, The Register, SecurityWeek, 30 January 2025), which is why the confidence is M.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          A publicly reachable ClickHouse database belonging to DeepSeek held over a million lines of log streams, including chat history, API keys and back-end details, with no authentication. Wiz disclosed it and DeepSeek secured it promptly. The lesson uses it as the "logs" leak: the vendor's own record of what was typed.
+used_for.session-4: the DeepSeek database left open with over a million log lines, chat history included (§03)
+```
+
+## src-chatgpt-index
+
+```source
+title:          Your public ChatGPT queries are getting indexed by Google and other search engines
+author:         TechCrunch
+publisher:      TechCrunch
+link:           https://techcrunch.com/2025/07/31/your-public-chatgpt-queries-are-getting-indexed-by-google-and-other-search-engines
+published:      2025-07-31
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. techcrunch.com is egress-blocked from this build environment (2026-09-27). The facts in scope come from search-engine summaries of this article and of Search Engine Land's and Search Engine Journal's reporting of the same days, which is why the confidence is M.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          Conversations shared from ChatGPT with the "make this chat discoverable" box ticked appeared in Google search results in late July 2025; OpenAI removed the option within days. The lesson uses it as the "caches" leak: a copy a search engine has made is the search engine's, whatever the vendor does next. The count of indexed chats (reported as about 4,500) is not stated on the page.
+used_for.session-4: shared ChatGPT chats appearing in Google search results, and the option's withdrawal (§03)
+```
+
+## src-meta-feed
+
+```source
+title:          Meta AI's discover feed is full of revealing personal info: here's how to protect your privacy
+author:         Tom's Guide
+publisher:      Tom's Guide
+link:           https://www.tomsguide.com/computing/online-security/meta-ais-discover-feed-is-full-of-revealing-personal-info-heres-how-to-protect-your-privacy
+published:      2025-06
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. The article's own headline uses a dash where this record uses a colon, so that the injected footer adds no em dash to the lesson. The facts in scope come from search-engine summaries of this article and of the Mozilla Foundation's campaign page on the same feed (June 2025), which is why the confidence is M. A stronger citation (the original reporting) is a review-list item.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          The Meta AI app's Discover feed showed conversations people had shared with a Share button, many of them plainly private (medical, legal, financial, tied to real names), with little warning that sharing meant publishing. The lesson uses it as the "uncovered features" leak: a feature nobody's policy covered.
+used_for.session-4: the Meta AI app's Share button posting private chats to a public feed (§03)
+```
+
+## src-anthropic-threat
+
+```source
+title:          Detecting and countering misuse of AI: September 2026
+author:         Anthropic
+publisher:      Anthropic
+link:           https://www.anthropic.com/threat-intelligence-report-september-2026
+published:      2026-09
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Retrieved 2026-09-27 through a summarising fetch, not read whole. The passage the lesson rests on was returned verbatim: "If their monitoring AI agents identified that any of their deployed malware was detected by a security product, agents would then set about the process of autonomously modifying and rebuilding the malware to evade the existing detections." Read the report before teaching the case.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          Anthropic's fourth threat-intelligence report, covering misuse disrupted between December 2025 and August 2026 across seven harm areas. The case the lesson uses (GTG-20006, assessed as a Russian espionage actor) had AI agents watch security products for detections of its deployed malware and rebuild the malware until it evaded them. The lesson names no group and quotes no tradecraft beyond that sentence.
+used_for.session-4: an espionage group's agents watching security tools for detections of their malware and rebuilding it until undetected (§05)
+```
+
+## src-gtig-ai
+
+```source
+title:          GTIG AI Threat Tracker: Advances in threat actor usage of AI tools
+author:         Google Threat Intelligence Group
+publisher:      Google
+link:           https://services.google.com/fh/files/misc/advances-in-threat-actor-usage-of-ai-tools-en.pdf
+published:      2025-11-05
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. services.google.com and cloud.google.com are egress-blocked from this build environment (2026-09-27). The facts in scope come from search-engine summaries of the report and of the reporting on its release (The Hacker News, BleepingComputer, Infosecurity Magazine, 5 November 2025), which is why the confidence is M.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          PROMPTFLUX, a VBScript dropper that called the Gemini API to request obfuscated rewrites of its own source code, described as experimental and not yet able to do real damage; PROMPTSTEAL, which generated commands through a hosted model; and the report's statement that, for the first time, malware families used large language models during execution. Google disabled the associated API access.
+used_for.session-4: a program that asked a model to rewrite its own code every hour (§05)
+```
+
+## src-joa-prompt
+
+```source
+title:          Writing an effective AI prompt for an audit
+author:         [UNVERIFIED, needs source]
+publisher:      Journal of Accountancy, A&A Focus newsletter (AICPA)
+link:           https://www.journalofaccountancy.com/newsletters/a-a-focus/writing-an-effective-ai-prompt-for-an-audit/
+published:      2025-11
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. journalofaccountancy.com is egress-blocked from this build environment (2026-09-27). The syllabus lists this reading as "Writing an Effective AI Prompt for an Audit Trail"; the page's own title, as the search engine returns it, is the one recorded here, and the November 2025 date is from the same summary. The article was not read, so the lesson claims nothing about what it says: it names it as the assigned reading behind the record block and no more.
+confidence:     M
+kind:           assigned_reading
+moving_target:  false
+scope:          The assigned reading for §07, from the Journal of Accountancy's A&A Focus series on AI in audit work. Its content is not characterised anywhere in the lesson.
+used_for.session-4: the assigned reading behind the record block (§07)
 ```
