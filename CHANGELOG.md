@@ -30,7 +30,16 @@ not AI is used).
   vendor; a half dot where a twin rule does the same job), whether it names AI, the page's own line
   to say, and the trap where one exists. Below the table: which rows bind which registration, the
   other authorities the page names, and the answers to the questions most likely to come.
-- `session-4.md` points to the aid.
+- **Page 2's dates were checked by web search on 2026-09-27.** The regulators' own sites refused
+  the build's connection, so every point rests on search results and law-firm summaries and is
+  labelled H, M or L; only Anthropic's help page was opened. Four findings changed what the aid
+  says. The EU Digital Omnibus (Regulation (EU) 2026/1744) gives tools already on the market
+  until 2 December 2026 to mark their output. The 72-hour notice binds the firm, through its
+  vendor contract, not the vendor. Anthropic's detector is also open to firms the AI Act obliges
+  to check. FINRA has proposed replacing Rule 2210's pre-approval of retail communications
+  (Regulatory Notice 26-14, not adopted).
+- `session-4.md` points to the aid, and its Verify list carries those four findings and the
+  records question.
 
 ---
 
