@@ -5,6 +5,10 @@ core-only depth, switched to **+ Standard** once, for the D4 discussion. Nothing
 addresses a learner. Written 2026-09-25 against the rebuilt page (branch
 `claude/amazing-curie-xz0s73`, `docs/changes/2026-09-25-session-4-rebuild/`).
 
+**Print `session-4-teaching-aid.pdf`**, two landscape pages, built 2026-09-27: page 1 is this
+clock as 19 steps with the answers inline; page 2 is the rule key for §01's nine items (when each
+passed, what it does, whom it binds, and whether it names AI). This sheet stays the full version.
+
 **The one thing that is different this week: three interactions are run by the room, and
 everything else is narrated.** The three are the cold-open pick, the §02 clean-up of Prompt D,
 and the cold run of a Part 1 package. The measured multipliers still hold: a section that is read

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 4 teaching aid</title>
+<!-- Instructor-only. Not a lesson: no managed style fence on purpose, and the
+     .htm extension keeps it outside the lesson sweep. Print landscape, two pages.
+     Page 1 is the run of show; page 2 is the rule key. Source of the printed PDF
+     beside it. Built 2026-09-27 from instructor-notes/session-4.md and the §01
+     sorter on session-4/index.html. -->
+<style>
+@page{size:letter landscape;margin:0.3in}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:#111;font-family:Helvetica,Arial,system-ui,sans-serif}
+.page{width:10.4in;height:7.9in;padding:0.02in 0.05in;overflow:hidden;position:relative}
+.page+.page{break-before:page;page-break-before:always}
+.top{display:flex;justify-content:space-between;align-items:baseline;border-bottom:3px solid #111;padding-bottom:2px;margin-bottom:4px;white-space:nowrap}
+.top h1{font-size:15px;margin:0;letter-spacing:.02em}
+.top .r{font-size:10.2px;color:#222;margin-left:14px}
+.top .r b{color:#111}
+
+/* clock ribbon: 6:00 to 9:00, one unit per minute */
+.rib{position:relative;height:0.34in;margin:2px 0 6px}
+.rib .bar{position:absolute;left:0;right:0;top:0;height:0.2in;display:flex;border:1.5px solid #111;border-radius:3px;overflow:hidden}
+.rib .seg{height:100%;border-right:1px solid #fff;font-size:8px;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap;letter-spacing:.02em}
+.rib .seg.p{background:#1f4e79}
+.rib .seg.z{background:#555}
+.rib .seg.k{background:#111}
+.rib .seg.b{background:#fff;color:#111;background-image:repeating-linear-gradient(135deg,#fff 0 4px,#ddd 4px 8px)}
+.rib .seg.f{background:#fff;color:#777}
+.rib .tk{position:absolute;top:0.2in;font-size:8.6px;font-weight:800;transform:translateX(-50%);white-space:nowrap}
+.rib .tk:before{content:"";position:absolute;left:50%;top:-4px;margin-left:-4px;border:4px solid transparent;border-bottom:5px solid #b3261e;border-top:0}
+.rib .tk{color:#b3261e;padding-top:2px}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 0.22in}
+.half{font-size:9.4px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#555;border-bottom:1.5px solid #111;padding-bottom:1px;margin-bottom:1px}
+.step{display:grid;grid-template-columns:0.42in 0.34in 0.56in 1fr;align-items:start;padding:3px 0 3px;border-bottom:1px solid #d9d9d9;min-height:0.44in}
+.step .t{font-size:12px;color:#444;font-weight:700;padding-top:5px;letter-spacing:.02em}
+.step .n{width:0.3in;height:0.3in;border:2.2px solid #111;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:800;margin-top:1px}
+.step.key .n{background:#111;color:#fff}
+.step .w{font-size:8.4px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:#1f4e79;border-radius:3px;padding:3px 2px;margin:4px 5px 0 0;text-align:center;line-height:1.1}
+.step .w.zm{background:#333}
+.step .a{font-size:14.2px;font-weight:800;line-height:1.14;letter-spacing:-.005em}
+.step .c{font-size:11px;line-height:1.28;color:#222;margin-top:2px}
+.step .c b{font-weight:800}
+.ans{display:inline-block;background:#fff3b0;border:1.2px solid #b08900;border-radius:3px;padding:0 4px;font-weight:800;color:#111}
+.tag{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.05em;border:1.4px solid #111;border-radius:3px;padding:0 4px;margin-right:2px;text-transform:uppercase;vertical-align:1px}
+.tag.g{background:#111;color:#fff}
+.tag.gate{background:#b3261e;border-color:#b3261e;color:#fff}
+.stop{color:#b3261e;font-weight:800}
+
+.boxes{display:grid;grid-template-columns:1.15fr 0.8fr 1fr 1.25fr;gap:0.09in;margin-top:6px}
+.box{border:2px solid #111;border-radius:6px;padding:4px 7px;font-size:10px;line-height:1.27}
+.box h3{margin:0 0 2px;font-size:10px;letter-spacing:.06em;text-transform:uppercase}
+.box.no{border-style:dashed}
+.box ul{margin:0;padding-left:12px}
+.box li{margin:0}
+.box h3+ul{margin-bottom:0}
+.box ul+h3{margin-top:3px}
+
+/* ---------- page 2 · rule key ---------- */
+.lead{display:grid;grid-template-columns:1fr auto;gap:0.14in;align-items:stretch;margin:2px 0 5px}
+.lead .big{font-size:13.4px;font-weight:800;line-height:1.22;border-left:6px solid #111;padding:2px 0 2px 8px}
+.lead .big span{font-weight:400;color:#333}
+.legend{font-size:9.4px;line-height:1.35;border:1.5px solid #111;border-radius:5px;padding:3px 7px;white-space:nowrap}
+.legend b{font-weight:800}
+.key{width:100%;border-collapse:collapse;table-layout:fixed}
+.key th{font-size:8.6px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;text-align:left;border-bottom:2px solid #111;padding:1px 4px 2px;color:#333;vertical-align:bottom}
+.key th.d{text-align:center;padding:1px 0 2px;font-size:8px;letter-spacing:.02em;line-height:1.05}
+.key td{border-bottom:1px solid #d0d0d0;padding:2.5px 4px;vertical-align:top;font-size:10px;line-height:1.24}
+.key td.d{text-align:center;vertical-align:middle;padding:0;font-size:15px;line-height:1}
+.key tr.lane td{border-bottom:1.5px solid #111;padding:3px 4px 1px;font-size:9.2px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.key tr.lane td span{font-weight:400;letter-spacing:0;text-transform:none;color:#333;font-size:9.6px}
+.key tr.l2 td:first-child{border-left:6px solid #1f4e79}
+.key tr.l3 td:first-child{border-left:6px solid #9a9a9a}
+.key tr.l1 td:first-child{border-left:6px solid #b3261e}
+.key tr.lane.l2 td{color:#1f4e79}.key tr.lane.l3 td{color:#555}.key tr.lane.l1 td{color:#b3261e}
+.rn{font-size:12.4px;font-weight:800;line-height:1.1}
+.rn .no{display:inline-block;width:15px;height:15px;border-radius:50%;background:#111;color:#fff;font-size:9.4px;text-align:center;line-height:15px;margin-right:3px;vertical-align:1px}
+.cite{font-size:8.8px;color:#444;display:block;margin-top:1px}
+.wh b{font-weight:800}
+.say{font-weight:800}
+.trap{display:block;margin-top:1px;color:#7a1712}
+.trap:before{content:"TRAP ";font-size:8px;font-weight:800;letter-spacing:.06em;background:#b3261e;color:#fff;border-radius:2px;padding:0 3px;margin-right:3px;vertical-align:1px}
+.pill{display:inline-block;font-size:8.2px;font-weight:800;letter-spacing:.04em;border-radius:3px;padding:1px 4px;text-transform:uppercase;line-height:1.15;text-align:center}
+.pill.gen{background:#1f4e79;color:#fff}
+.pill.name{background:#fff;color:#111;border:1.4px dashed #111}
+.pill.bind{background:#b3261e;color:#fff}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;border:1.6px solid #111;vertical-align:middle}
+.dot.f{background:#111}
+.dot.h{background:linear-gradient(90deg,#111 50%,#fff 50%)}
+.dot.o{border-color:#bbb}
+.conf{font-size:7.8px;font-weight:800;border:1px solid #777;border-radius:2px;padding:0 2px;color:#444;vertical-align:1px;margin-left:2px}
+.foot{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:0.09in;margin-top:5px}
+</style>
+</head>
+<body>
+
+<!-- ======================= PAGE 1 · RUN OF SHOW ======================= -->
+<section class="page" id="p1">
+<div class="top">
+  <h1>SESSION 4 · MON 9/28 · 6:00 TO 9:00 PT · RUN OF SHOW</h1>
+  <div class="r"><b>ASK</b> = count four, then answer it yourself. &nbsp;<b>Yellow</b> = the answer. &nbsp;<b>Black</b> = never drop. &nbsp;<b>GATE</b> = never skip.</div>
+</div>
+
+<div class="rib" aria-label="The night as a bar, one unit per minute">
+  <div class="bar">
+    <div class="seg z" style="flex:14">OPEN</div>
+    <div class="seg k" style="flex:8">COLD</div>
+    <div class="seg p" style="flex:7">§01</div>
+    <div class="seg k" style="flex:10">§02</div>
+    <div class="seg p" style="flex:7">§03</div>
+    <div class="seg p" style="flex:7">§04</div>
+    <div class="seg p" style="flex:7">§05</div>
+    <div class="seg b" style="flex:15">BREAK</div>
+    <div class="seg z" style="flex:5"></div>
+    <div class="seg k" style="flex:12">COLD RUN</div>
+    <div class="seg p" style="flex:7">§06</div>
+    <div class="seg p" style="flex:7">§07</div>
+    <div class="seg p" style="flex:18">D4 DEBATE</div>
+    <div class="seg p" style="flex:8">§09</div>
+    <div class="seg z" style="flex:13">RESERVE</div>
+    <div class="seg k" style="flex:5"></div>
+    <div class="seg f" style="flex:30">BUFFER, NOT SPARE</div>
+  </div>
+  <div class="tk" style="left:33.33%">7:00 break</div>
+  <div class="tk" style="left:51.11%">7:32 run done</div>
+  <div class="tk" style="left:63.89%">7:55 D4 or cut</div>
+  <div class="tk" style="left:80.56%">8:25 close</div>
+</div>
+
+<div class="cols">
+<div>
+  <div class="half">Before the break · Tab 1, Core only</div>
+  <div class="step"><div class="t">6:00</div><div class="n">1</div><div class="w zm">Zoom</div><div><div class="a">OPEN. "Setup questions at the break, not now."</div><div class="c">Pre-class window closed at 5:58.</div></div></div>
+  <div class="step"><div class="t">6:03</div><div class="n">2</div><div class="w zm">Zoom</div><div><div class="a">CORRECTION. "The watermark does not name your account."</div><div class="c">Claude marks text from <b>2 Aug 2026</b>, all models by <b>2 Dec</b>. Only EU-eligible bodies can check.</div></div></div>
+  <div class="step key"><div class="t">6:06</div><div class="n">3</div><div class="w">§00</div><div><div class="a">OBJECTIVE. Read "Session 4's one thing."</div><div class="c">Four stops: <b>In · Where · Check · Keep.</b> Non-advisors: "any recurring task at work."</div></div></div>
+  <div class="step"><div class="t">6:08</div><div class="n">4</div><div class="w">§00</div><div><div class="a">BRIDGE. Three letters, said aloud, then click.</div><div class="c"><span class="ans">b · c · a</span> Then <b>Zoom out</b>: the model inside four stops.</div></div></div>
+  <div class="step key"><div class="t">6:14</div><div class="n">5</div><div class="w">Cold</div><div><div class="a"><span class="tag g">poll 1</span> Which would you have sent? Test 1, Test 2.</div><div class="c"><span class="ans">D 5 · C 4 · A 3 · B 1</span> D sinks. "Good and allowed are separate tests."</div></div></div>
+  <div class="step"><div class="t">6:22</div><div class="n">6</div><div class="w">§01</div><div><div class="a"><span class="tag">ask</span> How many AI rules bind you? Guess, sort.</div><div class="c">Lanes <b>2 = 1-5 · 3 = 6-8 · 1 = 9</b> <span class="ans">0</span> "The duty has existed since 1940." <b>Page 2.</b></div></div></div>
+  <div class="step key"><div class="t">6:29</div><div class="n">7</div><div class="w">§02</div><div><div class="a"><span class="tag gate">gate 1</span> "Name gone. What still points to her?"</div><div class="c"><span class="ans">trade + town: fastener maker, Rockford</span> "Reg S-P is the rule behind it." Copy to chat.</div></div></div>
+  <div class="step"><div class="t">6:39</div><div class="n">8</div><div class="w">§03</div><div><div class="a"><span class="tag g">poll 2</span> Vendor, then plan A. Flip the switch.</div><div class="c">Claude <span class="ans">5 yrs · off 30 days</span> "Same model, different contract." Open leaks <b>2</b> and <b>5</b>.</div></div></div>
+  <div class="step"><div class="t">6:46</div><div class="n">9</div><div class="w">§04</div><div><div class="a">SIX LOCKS. C · Client file, consumer plan.</div><div class="c">Lock 1 <span class="ans">No → Stop</span> Vendor tells firm in <b>72 h</b>. Standard A.14.</div></div></div>
+  <div class="step"><div class="t">6:53</div><div class="n">10</div><div class="w">§05</div><div><div class="a"><span class="tag g">poll 3</span> <span class="tag gate">gate 2</span> "Better wording, or less access?"</div><div class="c"><span class="ans">less access + approve each send</span> Call: <b>(c)</b>, "I never called you." <span class="stop">Stop 7:00.</span></div></div></div>
+</div>
+<div>
+  <div class="half">After the break · the room runs one thing</div>
+  <div class="step"><div class="t">7:00</div><div class="n">11</div><div class="w zm">Zoom</div><div><div class="a">BREAK. Post "back at 7:15 Pacific."</div><div class="c">Their clock time, not yours.</div></div></div>
+  <div class="step"><div class="t">7:15</div><div class="n">12</div><div class="w zm">Zoom</div><div><div class="a">RELAY. "You run someone else's, not your own."</div><div class="c">Next name down. Forward intact. Real data or none? <b>Sample package.</b></div></div></div>
+  <div class="step key"><div class="t">7:20</div><div class="n">13</div><div class="w">§08</div><div><div class="a">COLD RUN, SILENT. "Eight minutes. Nobody talks."</div><div class="c"><span class="tag g">chat</span> "stopped at ... because ..." Show the gaps: <span class="ans">5</span> No fixes: Session 5. <span class="stop">Stop 7:32.</span></div></div></div>
+  <div class="step"><div class="t">7:32</div><div class="n">14</div><div class="w">§06</div><div><div class="a"><span class="tag">ask</span> Of 100 memos, how many carry a wrong answer?</div><div class="c"><span class="ans">about 61</span> At 33%: <b>86</b>. Priced: <b>90 vs 39, saves 51</b>; 20 checks: saves 6.</div></div></div>
+  <div class="step"><div class="t">7:39</div><div class="n">15</div><div class="w">§07</div><div><div class="a"><span class="tag gate">gate 3</span> Record 3: "Could an examiner re-check it?"</div><div class="c"><span class="ans">No: a summary repeats its error</span> 1-4 B, 5-6 A. Record 6: "Complete is not correct."</div></div></div>
+  <div class="step"><div class="t">7:46</div><div class="n">16</div><div class="w">D4</div><div><div class="a"><span class="tag g">poll 4</span> "Does the record cost more than the tool saves?"</div><div class="c">+ Standard. Minority first, 2 a side, 90 s. Min 11: <b>once per workflow</b> <span class="ans">41 · tips at 3</span> <span class="tag g">poll 5</span></div></div></div>
+  <div class="step"><div class="t">8:04</div><div class="n">17</div><div class="w">§09</div><div><div class="a">POLICY. Course data rule, read verbatim.</div><div class="c">Rows <span class="ans">a b a b b a</span> Copy outline. 2 pages, bullets, 3 sources, 1 scholarly.</div></div></div>
+  <div class="step"><div class="t">8:12</div><div class="n">18</div><div class="w zm">Zoom</div><div><div class="a">RESERVE, 13 min. "What do you want to see?"</div><div class="c">Budgeted, not leftover. Start from the cold-run chat.</div></div></div>
+  <div class="step key"><div class="t">8:25</div><div class="n">19</div><div class="w zm">Chat</div><div><div class="a">CLOSING CHECK. <span class="tag g">chat</span> one task: In, Where, Check, Keep?</div><div class="c">Read three aloud. No "keep"? Say so, kindly; name §07. <b>Do not skip.</b></div></div></div>
+</div>
+</div>
+
+<div class="boxes">
+  <div class="box"><h3>Setup at 5:45</h3><ul><li><b>Tab 1</b> Session 4, Core only, at §00</li><li><b>Polls</b> 1 to 5 built · Poll 2 has the vendor</li><li><b>Pairing</b> drawn · packages screened for real data</li><li><b>Chat lines</b> break, cold run, closing · speaker labels on</li><li>Read support.claude.com watermark page</li></ul></div>
+  <div class="box"><h3>Checkpoints</h3><ul><li><b>7:00</b> through §05</li><li><b>7:32</b> cold run logged</li><li><b>7:55</b> D4 started, or cut it</li><li><b>8:25</b> closing check</li></ul><h3>After</h3><ul><li>Transcript, chat, polls: 24 h</li></ul></div>
+  <div class="box"><h3>Drop order if late</h3><ul><li>1 §04: read the six, no scoring</li><li>2 §07: gate on record 3 only</li><li>3 §06: 100 memos, no pricing</li><li>4 D4: vote, twist, re-vote</li><li>5 §03: plan and switch only</li></ul><h3>Never drop</h3><ul><li>Cold open · §02 · cold run · close</li></ul></div>
+  <div class="box no"><h3>Not tonight</h3><ul><li>D5, D6 (Foundational) · D1, D2 watermark depth</li><li>Leaks 1, 3, 4, 6: theirs after class</li><li>Fixing anyone's package: Session 5</li><li>Vendor numbers other than Claude's are <b>M</b>: say "as of their page"</li><li>Any rule question you cannot answer from page 2: "I'll check it"</li></ul></div>
+</div>
+</section>
+
+<!-- ======================= PAGE 2 · THE RULE KEY ======================= -->
+<section class="page" id="p2">
+<div class="top">
+  <h1>SESSION 4 · THE RULE KEY · §01'S NINE, IN SORTER ORDER</h1>
+  <div class="r"><b>H / M / L</b> = how sure the date or reading is. &nbsp;Row number = the item's number on the page.</div>
+</div>
+
+<div class="lead">
+  <div class="big">No US securities rule was written for AI. Every duty in blue existed before AI and reaches AI work unchanged.<br><span>Which ones are yours is set by your registration (adviser, broker-dealer, both), not by the CFP marks. The marks add CFP Board's Code on top.</span></div>
+  <div class="legend"><b>Binds you?</b> &nbsp;<span class="dot f"></span> yes, this rule &nbsp;<span class="dot h"></span> a twin rule does the same job &nbsp;<span class="dot o"></span> no<br><b>RIA</b> investment adviser &nbsp;<b>BD</b> broker-dealer (FINRA) &nbsp;<b>CFP</b> the marks alone &nbsp;<b>Vendor</b> the AI company<br><span class="pill gen">General</span> a duty you already have &nbsp;<span class="pill name">Names AI</span> binds nobody &nbsp;<span class="pill bind">AI law</span> names AI and binds</div>
+</div>
+
+<table class="key">
+<colgroup><col style="width:1.72in"><col style="width:1.22in"><col style="width:2.3in"><col style="width:0.33in"><col style="width:0.33in"><col style="width:0.33in"><col style="width:0.4in"><col style="width:0.7in"><col></colgroup>
+<thead><tr><th>Rule</th><th>Passed · in force</th><th>What it does</th><th class="d">RIA</th><th class="d">BD</th><th class="d">CFP</th><th class="d">Vendor</th><th>AI?</th><th>Say it · the trap</th></tr></thead>
+<tbody>
+<tr class="lane l2"><td colspan="9">Lane 2 · A duty you already have <span>· items 1 to 5 · binds you, written before AI</span></td></tr>
+
+<tr class="l2"><td><div class="rn"><span class="no">1</span>Regulation S-P</div><span class="cite">SEC · 17 CFR Part 248</span></td>
+<td class="wh"><b>@@RSP_WHEN@@</b></td>
+<td>Protect client nonpublic personal information (NPI). Since 2024: a written breach plan, <b>clients told within 30 days</b>, <b>vendors tell the firm within 72 h</b>, vendor oversight.</td>
+<td class="d"><span class="dot f"></span></td><td class="d"><span class="dot f"></span></td><td class="d"><span class="dot h"></span></td><td class="d"><span class="dot o"></span></td>
+<td><span class="pill gen">General</span></td>
+<td><span class="say">"Pasting client data into a tool is a disclosure to a third party."</span> It needs an exception: a contract limiting the vendor's use. A consumer plan has none. @@RSP_TRAP@@</td></tr>
+
+<tr class="l2"><td><div class="rn"><span class="no">2</span>Fiduciary duty</div><span class="cite">Investment Advisers Act §206 · 15 USC 80b-6</span></td>
+<td class="wh"><b>@@IAA_WHEN@@</b></td>
+<td>Duty of <b>care</b> (best interest, a reasonable basis, monitoring) and <b>loyalty</b> (no undisclosed conflicts), for all advice.</td>
+<td class="d"><span class="dot f"></span></td><td class="d"><span class="dot h"></span></td><td class="d"><span class="dot h"></span></td><td class="d"><span class="dot o"></span></td>
+<td><span class="pill gen">General</span></td>
+<td><span class="say">"The duty attaches to the advice, not to the tool that drafted it."</span> An AI answer you did not check is advice with no reasonable basis. @@IAA_TWIN@@</td></tr>
+
+<tr class="l2"><td><div class="rn"><span class="no">3</span>FINRA Rule 3110</div><span class="cite">Supervision</span></td>
+<td class="wh"><b>@@3110_WHEN@@</b></td>
+<td>The firm keeps a supervisory system and written procedures reasonably designed to catch violations; principals review the work.</td>
+<td class="d"><span class="dot h"></span></td><td class="d"><span class="dot f"></span></td><td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td>
+<td><span class="pill gen">General</span></td>
+<td><span class="say">"Work your staff do with AI is still their work."</span> <span class="trap">It is a binding rule, not guidance, and it is the rule 24-09 points at. @@3110_TWIN@@</span></td></tr>
+
+<tr class="l2"><td><div class="rn"><span class="no">4</span>FINRA Rule 2210</div><span class="cite">Communications with the public</span></td>
+<td class="wh"><b>@@2210_WHEN@@</b></td>
+<td>Every communication fair, balanced, not misleading. <b>Retail</b> pieces (25+ retail investors in 30 days) need a principal's <b>pre-approval</b>; <b>correspondence</b> is reviewed and kept.</td>
+<td class="d"><span class="dot h"></span></td><td class="d"><span class="dot f"></span></td><td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td>
+<td><span class="pill gen">General</span></td>
+<td><span class="say">"An email the AI drafted is a firm communication."</span> <span class="trap">One client email is correspondence: reviewed and archived, but no pre-approval required. The page's "approval" fits retail pieces. @@2210_TWIN@@</span></td></tr>
+
+<tr class="l2"><td><div class="rn"><span class="no">5</span>Books and records</div><span class="cite">@@REC_CITE@@</span></td>
+<td class="wh"><b>@@REC_WHEN@@</b></td>
+<td>Keep what supports advice and every business communication, retrievable. @@REC_DOES@@</td>
+<td class="d"><span class="dot f"></span></td><td class="d"><span class="dot f"></span></td><td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td>
+<td><span class="pill gen">General</span></td>
+<td><span class="say">"A prompt and output that support advice are records."</span> <span class="trap">Settled for what reaches the client. For internal prompts it is a prudent reading, not a holding: say "treat as". @@REC_TRAP@@</span></td></tr>
+
+<tr class="lane l3"><td colspan="9">Lane 3 · Guidance or a proposal <span>· items 6 to 8 · names AI, binds nobody</span></td></tr>
+
+<tr class="l3"><td><div class="rn"><span class="no">6</span>FINRA Notice 24-09</div><span class="cite">Regulatory Notice, on generative AI</span></td>
+<td class="wh"><b>@@2409_WHEN@@</b></td>
+<td>Reminds member firms that the existing rules apply to generative AI. Technology neutral. <b>No new requirement.</b></td>
+<td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td>
+<td><span class="pill name">Names AI</span></td>
+<td><span class="say">"It creates no new requirement. It says the existing rules apply."</span> <span class="trap">Naming AI does not make it binding. It is a signpost to rows 3, 4 and 5. @@2409_LIST@@</span></td></tr>
+
+<tr class="l3"><td><div class="rn"><span class="no">7</span>SEC exam priorities, FY2026</div><span class="cite">Division of Examinations, §VII</span></td>
+<td class="wh"><b>@@PRI_WHEN@@</b></td>
+<td>What examiners will test in the fiscal year: @@PRI_DOES@@</td>
+<td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td>
+<td><span class="pill name">Names AI</span></td>
+<td><span class="say">"It creates no duty. It tells you which existing duties get checked."</span> @@PRI_TRAP@@</td></tr>
+
+<tr class="l3"><td><div class="rn"><span class="no">8</span>SEC predictive data analytics proposal</div><span class="cite">File S7-12-23</span></td>
+<td class="wh"><b>@@PDA_WHEN@@</b></td>
+<td>Would have made advisers and broker-dealers find and neutralise conflicts of interest in AI and predictive tools used with investors.</td>
+<td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td>
+<td><span class="pill name">Named AI</span></td>
+<td><span class="say">"The one US proposal that would have named the technology. Withdrawn: it binds nobody."</span> @@PDA_TRAP@@</td></tr>
+
+<tr class="lane l1"><td colspan="9">Lane 1 · A rule written for AI <span>· item 9 · names AI, binds someone, not you</span></td></tr>
+
+<tr class="l1"><td><div class="rn"><span class="no">9</span>EU AI Act, Article 50</div><span class="cite">Regulation (EU) 2024/1689</span></td>
+<td class="wh"><b>@@EU_WHEN@@</b></td>
+<td>AI providers must mark AI-made output in a machine-readable way; deployers must label deepfakes.</td>
+<td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td><td class="d"><span class="dot o"></span></td><td class="d"><span class="dot f"></span></td>
+<td><span class="pill bind">AI law</span></td>
+<td><span class="say">"Binding law that names AI. Not a US securities rule."</span> It is why Claude's watermark switched on 2 Aug 2026. @@EU_TRAP@@</td></tr>
+</tbody>
+</table>
+
+<div class="foot">
+  <div class="box"><h3>Who you are → which rows are yours</h3><ul>
+    <li><b>Adviser rep of an SEC-registered RIA</b>: 1, 2, 5 · plus the Marketing Rule and the compliance-programme rule</li>
+    <li><b>Registered rep of a broker-dealer</b>: 1, 3, 4, 5 · plus Reg BI in place of 2</li>
+    <li><b>Dual registrant</b>: 1 to 5, all of them</li>
+    <li><b>State-registered adviser</b>: 2, 5 (state rules) · @@STATE@@</li>
+    <li><b>CFP marks, any of the above</b>: add the Code: A.1 fiduciary, @@CFP_STD@@</li>
+    <li><b>The three non-advisors</b>: none by registration; the employer's policy and data rules</li>
+  </ul></div>
+  <div class="box"><h3>Also named on the page tonight</h3><ul>
+    @@ALSO@@
+  </ul></div>
+  <div class="box"><h3>If you are asked</h3><ul>
+    @@ASKED@@
+  </ul></div>
+</div>
+</section>
+
+
+</body>
+</html>

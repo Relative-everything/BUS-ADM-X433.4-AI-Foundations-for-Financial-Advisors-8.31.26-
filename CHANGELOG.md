@@ -10,6 +10,30 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-27 · Session 4 teaching aid: the run of show and the rule key, two pages
+
+Branch `claude/gracious-mendel-dqnpal`, from `main` after PR #40. No lesson page changed. The
+instructor asked for a teaching aid for Session 4 in the style of Session 3's, simpler and easier
+to read at a glance, on two pages: the run of show, and a key to the rules the session teaches
+(when each passed, what it does, and whether it binds AI work or is a duty that holds whether or
+not AI is used).
+
+### Instructor materials
+
+- `session-4-teaching-aid.htm`, `.pdf` and `.md`. **Page 1** is the run sheet's clock as 19
+  steps, split at the break, with a bar across the top drawing the night to scale (one unit per
+  minute) and its four checkpoints. Each step carries one spoken line and its answer in a yellow
+  box, so the Answers box Session 3's aid needed is gone. Black numbers are the four steps never
+  dropped plus the objective; the three gates are red. **Page 2** takes §01's nine sorter items in
+  the page's order, grouped by lane, with the date each passed and came into force, what it does in
+  one line, a dot matrix of whom it binds (adviser, broker-dealer, the CFP marks alone, the AI
+  vendor; a half dot where a twin rule does the same job), whether it names AI, the page's own line
+  to say, and the trap where one exists. Below the table: which rows bind which registration, the
+  other authorities the page names, and the answers to the questions most likely to come.
+- `session-4.md` points to the aid.
+
+---
+
 ## 2026-09-27 · Session 4 covers the syllabus line list: four vendors, six leaks, four attacks, the third reading
 
 Branch `claude/vigilant-noether-7ep3ev`, after PR #39 merged. The instructor asked for Session 4 to be
