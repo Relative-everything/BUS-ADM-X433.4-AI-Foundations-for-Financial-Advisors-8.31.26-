@@ -1,6 +1,6 @@
 # Session 4 rule key and companion reference, from the 27 September round
 
-Plain-text copy of `session-4-teaching-aid.pdf`, for a phone. The PDF is the one to print: two
+Plain-text copy of `session-4-rule-key.pdf`, for a phone. The PDF is the one to print: two
 landscape pages, the run of show and the rule key. Built 2026-09-27 from `session-4.md` (the run
 sheet, which stays the full version) and the §01 sorter on the Session 4 page. Nothing in this
 file addresses a learner.
