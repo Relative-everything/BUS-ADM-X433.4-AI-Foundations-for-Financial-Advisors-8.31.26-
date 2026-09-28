@@ -34,13 +34,14 @@ out.
 
 ### The one exception, and it is off unless you switch it on
 
-Sessions 0.1 and 1 have an optional box at the top marked **Live model**. Leave
-it alone and those pages behave like every other: they transmit nothing, and the
-model outputs you see are real runs that were captured and dated in advance.
+Sessions 0.1 and 1 have an optional box at the top marked **Live model**, and
+Session 4 has one marked **Live API**. Leave it alone and those pages behave like
+every other: they transmit nothing, and the model outputs you see are real runs
+that were captured and dated in advance.
 
 Paste your own free Gemini API key into it and the exercises call a live model
 instead, so you watch it happen rather than read a recording. Then, and only
-then, those two pages send something: whatever is in the box you pressed the
+then, those three pages send something: whatever is in the box you pressed the
 button on, to Google, over the connection your key authorises. Your key is held
 in one JavaScript variable, is never stored, never appears in a link, and is
 gone the moment you reload.
@@ -51,10 +52,11 @@ Three things worth knowing before you use it:
   with no key. Nothing is graded on it.
 - **Do not send client information through it.** Google's terms for the free
   tier let it use what you submit to improve its products, and let human
-  reviewers read it. Every prompt on those two pages is a public fact or
-  synthetic Cole household data that is already published on this site. That is
-  why the box is on those pages and not on the ones built around your own
-  practice.
+  reviewers read it. Every prompt on those three pages is a public fact or
+  synthetic Cole household data that is already published on this site; Session
+  4's box starts from the de-identified Prompt D that page builds, and exists to
+  show what one API request contains. That is why the box is on those pages and
+  not on the ones built around your own practice.
 - **Check before you trust it.** The pages are static and their source is
   readable. View Source, or open the Network tab in your browser's developer
   tools, and confirm for yourself that the only address they send to is

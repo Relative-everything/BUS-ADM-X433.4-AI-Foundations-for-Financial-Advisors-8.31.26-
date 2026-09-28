@@ -30,7 +30,7 @@ Two external origins are permitted, and no others:
 | Origin | When | Where |
 |---|---|---|
 | `fonts.googleapis.com`, `fonts.gstatic.com` | Page load | Every page |
-| `generativelanguage.googleapis.com` | Runtime only, and only after a reader pastes their own API key | Sessions 0.1 and 1 |
+| `generativelanguage.googleapis.com` | Runtime only, and only after a reader pastes their own API key | Sessions 0.1, 1 and 4 |
 
 The second is the live model console (`LM:BEGIN` / `LMBOX:BEGIN` /
 `LMSTYLE:BEGIN` fences). It is off by default, every exercise it touches keeps a
@@ -38,8 +38,12 @@ captured fallback that renders when no key is connected or a call fails, and the
 key is held in one JavaScript variable and never stored. **The storage grep in
 the pre-push gate is the regression test for that key handling** — if it ever
 hits, the key is being persisted and the design has been violated. Do not add the
-console to Sessions 2, 3 or 4: their exercises run on students' own client work,
-and the free tier's terms permit Google to train on what is submitted.
+console to Sessions 2 or 3: their exercises run on students' own client work,
+and the free tier's terms permit Google to train on what is submitted. Session 4
+carries it since 2026-09-27 for one reason, to show the request itself: its box
+(`LMBOX-S4:BEGIN v1`, a page-specific variant of the shared box markup) sends
+only what the reader types, starts from the synthetic clean Prompt D, and says on
+its face that a free key is the training tier.
 
 ## Publishing
 
@@ -148,14 +152,18 @@ for f in index.html session-*/index.html; do                 # externals: allowl
   grep -Eo '<(link|script|img|iframe)[^>]*(href|src)="https?://[^"]+"' "$f" \
     | grep -Ev 'fonts.googleapis|fonts.gstatic'
 done
-# the console's runtime origin, allowed only in 0.1 and 1, and only in JS
+# the console's runtime origin, allowed only in 0.1, 1 and 4, and only in JS
 grep -l 'generativelanguage.googleapis.com' index.html session-*/index.html \
-  | grep -Ev 'session-(0\.1|1)/index.html'                    # must be empty
+  | grep -Ev 'session-(0\.1|1|4)/index.html'                  # must be empty
 # the three shared console blocks must stay byte-identical across lessons
 for m in 'LMSTYLE:BEGIN' 'LMBOX:BEGIN' 'LM:BEGIN'; do
   sed -n "/$m/,/\/\* *LM.*:END\|LMBOX:END/p" session-0.1/index.html | md5sum
   sed -n "/$m/,/\/\* *LM.*:END\|LMBOX:END/p" session-1/index.html   | md5sum
 done                                                          # pairs must match
+# session-4 shares the style and the call layer, not the box
+for m in 'LMSTYLE:BEGIN' 'LM:BEGIN'; do
+  sed -n "/$m/,/\/\* *LM.*:END/p" session-4/index.html | md5sum
+done                                                          # must equal the pairs above
 grep -H '<title>' index.html session-*/index.html            # hub and lessons agree
 ```
 
@@ -176,20 +184,23 @@ and will be reported by `--check`.
 
 ## The live model console
 
-Sessions 0.1 and 1 carry an optional console that lets a reader paste their own
+Sessions 0.1, 1 and 4 carry an optional console that lets a reader paste their own
 Gemini API key and run the page's probes against a live model instead of the
-captured outputs. Rationale, alternatives considered and the pedagogical case are
+captured outputs (Session 4's shows the request itself, then sends it). Rationale, alternatives considered and the pedagogical case are
 in [`docs/live-model-console-plan.md`](docs/live-model-console-plan.md); the
 terms and quota analysis behind the bring-your-own-key choice are in
 [`docs/gemini-live-api-feasibility.md`](docs/gemini-live-api-feasibility.md).
 
-Three fenced blocks, **byte-identical across both lessons**:
+Three fenced blocks, **byte-identical across Sessions 0.1 and 1**. Session 4
+carries the first and the third byte-identical, and its own box under
+`LMBOX-S4:BEGIN v1`, because its copy teaches the request rather than a probe;
+the element ids the call layer binds are the same in all three:
 
 | Fence | Where in the file | What |
 |---|---|---|
 | `LMSTYLE:BEGIN v1` | After `/* STYLE:END */`, so the sweep never touches it | Console CSS |
 | `LMBOX:BEGIN v1` | First child of `.wrap` | Console markup |
-| `LM:BEGIN v1` | Inside the main IIFE, after the `all()` helper | Call layer |
+| `LM:BEGIN v1` | Inside the main IIFE, after the `all()` helper (Session 4 defines `all()` and `el()` just above the block) | Call layer |
 
 Page-specific wiring lives under a `LIVE HOOKS, page-specific` comment near the
 end of the same IIFE. **Session 1 has two `<script>` blocks** — the hooks must go

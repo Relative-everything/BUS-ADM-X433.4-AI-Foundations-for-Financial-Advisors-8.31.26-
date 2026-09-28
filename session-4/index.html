@@ -1422,7 +1422,9 @@ body:not(.reveal) #ovr{display:none}
 #sAnon .anStamps .btn{flex:1 1 auto}
 #sAnon .anStamps .btn.anX{color:var(--warn);border-color:var(--warn);background:var(--card)}
 #sAnon .anStamps .btn.anX:hover{background:var(--warn-bg)}
-#sAnon .anDesk.fin{display:none}
+#sAnon .anDesk.fin .anCard{min-height:0}
+#sAnon .anDesk.fin #anonStampS,#sAnon .anDesk.fin #anonStampX{display:none}
+#sAnon .anStamps #anonReset{flex:0 0 auto;margin-left:auto}
 #sAnon .anStamps .btn:focus-visible{outline:2.5px solid var(--ink);outline-offset:3px}
 
 /* chips: the progress strip */
@@ -3606,6 +3608,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
           <div class="anStamps">
             <button type="button" class="btn" id="anonStampS">&#10003; 1 &middot; Safe to paste</button>
             <button type="button" class="btn ghost anX" id="anonStampX">&#10007; 2 &middot; Still gives her away</button>
+            <button type="button" class="btn ghost mini" id="anonReset">Start again</button>
           </div>
         </div>
         <div id="anonList" role="group" aria-label="Cards 1 to 8"></div>
@@ -3853,24 +3856,27 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel">
     <span class="do">Then this: 3 minutes</span>
     <h4>What Does No Mark Prove?</h4>
-    <p class="hint">One paragraph the AI wrote. Click steps 1 to 5 and watch the stamp: the tag beside it never changes.</p>
+    <p class="hint">One paragraph the AI wrote. A detector answers with one of three words: mark found, uncertain, no mark found. Click steps 1 to 5 and watch the stamp: the tag beside it never changes.</p>
     <div class="evstage">
       <div id="evFig"></div>
       <div class="row" id="evSteps" role="group" aria-label="History of the paragraph"></div>
       <div id="evOut" class="mpanel" aria-live="polite"><span class="hd">What the result tells you</span><span class="nil">Pick a step.</span></div>
     </div>
     <div id="evFileRow" hidden>
-      <p class="evq">A detector result reaches you. What goes in the file?</p>
+      <p class="evq">Step 5 reads NO MARK FOUND on a paragraph you watched the AI write. If a result like this ever reaches you, what do you write in the file?</p>
       <div class="row" id="evFile" role="group" aria-label="What goes in the file"></div>
     </div>
   </div>
 
   <ul class="pts">
+    <li><b>You will not run the detector.</b> The key stays with the vendor. Text detection is a private preview, open only to organisations eligible under EU law <span class="conf h" data-src="src-claude-marks">H</span>.</li>
+    <li><b>What you can check</b>: a file, not text. The free Claude Content Checker at claude.com/check-content reads whether a file carries a Claude-issued Content Credential, a signed label that says the file was processed by Claude <span class="conf h" data-src="src-claude-marks">H</span>. A screenshot strips the label, so treat a label as a hint too <span class="conf h" data-src="src-claude-marks">H</span>.</li>
+    <li><b>What you keep instead</b>: your own record of what you ran and decided (§07). A mark, found or not, never replaces it.</li>
     <li><b>Facts leave less room.</b> Google's text watermark works less well on factual answers, where there are fewer good ways to say the same thing <span class="conf h" data-src="src-synthid-text">H</span>.</li>
     <li><b>Rewording washes it out.</b> Heavy paraphrase or translation can make Claude's mark undetectable <span class="conf h" data-src="src-claude-marks">H</span>.</li>
   </ul>
 
-  <p class="src">Anthropic, How Claude marks AI-generated content, retrieved 25 September 2026: copying, editing, paraphrase, translation, and what a found or missing mark means <span class="conf h" data-src="src-claude-marks">H</span>. Google, SynthID Text: weaker on factual responses, survives a few changed words, and three possible detector results <span class="conf h" data-src="src-synthid-text">H</span>. The eight samples, the five histories and the detector result at each step are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">Anthropic, How Claude marks AI-generated content, retrieved 25 September 2026: copying, editing, paraphrase, translation, what a found or missing mark means, who may run text detection, and the Content Checker for files <span class="conf h" data-src="src-claude-marks">H</span>. Google, SynthID Text: weaker on factual responses, survives a few changed words, and three possible detector results <span class="conf h" data-src="src-synthid-text">H</span>. The eight samples, the five histories and the detector result at each step are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all eight, then take the paragraph to step 5.</div></div>
 
@@ -3898,7 +3904,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel">
     <span class="do">Then this: 2 minutes</span>
     <h4>Price One of Your Own Deliverables</h4>
-    <p class="hint">Price something you produce often. Each answer you check adds a brick.</p>
+    <p class="hint">Price something you produce often. Checking means opening the source behind each answer, the grounded answer from Session 3. The record is the file an examiner can re-check, &sect;07.</p>
     <div class="costwrap"><div id="costIn" class="sliders"></div><div id="costFig"></div></div>
     <div id="costOut" class="mpanel"></div>
     <p id="costSay" class="s6sr" aria-live="polite"></p>
@@ -6136,7 +6142,7 @@ try{
      region as a drawn answer key; the document flying into AI TOOL. */
 (function(){
   var fig=$('anonFig'),lineEl=$('anonLine'),out=$('anonOut'),zoomH=$('anonZoom'),cardEl=$('anonCard'),
-      listH=$('anonList'),boxH=$('anonBoxes'),keyEl=$('anonKey'),stS=$('anonStampS'),stX=$('anonStampX');
+      listH=$('anonList'),boxH=$('anonBoxes'),keyEl=$('anonKey'),stS=$('anonStampS'),stX=$('anonStampX'),stR=$('anonReset');
   if(!fig||!lineEl||!out||!zoomH||!cardEl||!listH||!boxH||!keyEl||!stS||!stX)return;
 
   var v=Math.round(COLEv('cpcValue')/1000000),age=COLEn('megAge'),town=COLEv('plantTown'),stt=COLEv('companyState');
@@ -6300,10 +6306,11 @@ try{
     }
     cardEl.classList.remove('deal');reflow();cardEl.classList.add('deal');
   }
+  function chipLabel(i){var c=CARDS[i];return c.b?'Card '+(i+1)+': '+c.b+' to '+c.a:'Card '+(i+1)+': '+c.a}
   var chips=CARDS.map(function(c,i){
     var b=document.createElement('button');b.type='button';b.className='chip';
     b.textContent=(i+1)+' · '+c.sh;
-    b.setAttribute('aria-label',c.b?'Card '+(i+1)+': '+c.b+' to '+c.a:'Card '+(i+1)+': '+c.a);
+    b.setAttribute('aria-label',chipLabel(i));
     b.setAttribute('aria-pressed','false');
     b.onclick=function(){pick(i)};
     listH.appendChild(b);return b;
@@ -6335,7 +6342,7 @@ try{
     UL[k].appendChild(li);
     var ch=chips[i];ch.classList.add('done');ch.classList.add(ok?'anOk':'anNo');ch.classList.remove('act');
     ch.textContent=(ok?'✓ ':'✗ ')+(i+1)+' · '+c.sh;
-    ch.setAttribute('aria-label',(c.b?'Card '+(i+1)+': '+c.b+' to '+c.a:'Card '+(i+1)+': '+c.a)+'. Stamped, '+(ok?'right':'wrong')+'. Click to see it on the map.');
+    ch.setAttribute('aria-label',chipLabel(i)+'. Stamped, '+(ok?'right':'wrong')+'. Click to see it on the map.');
     toks[i].classList.add('on');
     if(i<7)REGS[c.k==='still'?'r':'t'].classList.add('seen');
     showCard(i,true);
@@ -6358,6 +6365,22 @@ try{
     h+=esc(AFTER);
     keyEl.className='mpanel has keyhide';keyEl.innerHTML=h;
   }
+
+  /* ---------- start again: every piece of state back to a fresh load, so the room can run it twice ---------- */
+  function restart(){
+    cur=0;placed={};score=0;
+    BK.forEach(function(k){var ul=UL[k.k];while(ul.firstChild)ul.removeChild(ul.firstChild)});
+    chips.forEach(function(b,i){b.className='chip';b.textContent=(i+1)+' · '+CARDS[i].sh;b.setAttribute('aria-label',chipLabel(i));b.setAttribute('aria-pressed','false')});
+    stS.disabled=false;stX.disabled=false;$('anonDesk').classList.remove('fin');
+    keyEl.className='mpanel keyhide';keyEl.innerHTML='';keyEl.removeAttribute('tabindex');keyEl.setAttribute('style','display:none');
+    toks.forEach(function(t){t.classList.remove('on')});
+    ['r','g','t'].forEach(function(k){REGS[k].classList.remove('seen');REGS[k].classList.remove('here')});
+    halo.setAttribute('cx',TP[0][0]);halo.setAttribute('cy',TP[0][1]);
+    ring.classList.remove('ping');curSt='';
+    setZoom(1);
+    renderDesk();syncChips();
+  }
+  if(stR)stR.onclick=restart;
 
   REVEALS.push(function(){
     fillKey();keyEl.style.display='block';
@@ -7880,21 +7903,21 @@ var ITEMS=[
  {c:'Roth conversion email',t:'A client email explaining a Roth conversion',k:0,
   r:[['o','Converting now','A conversion now','Converting today'],['o','could lower','may reduce','might cut'],['o','your later tax.','your future tax.','tax you owe later.']],
   v:'Still reads right. The mark hid in 3 word choices.'},
- {c:'Meeting summary',t:'A meeting summary paragraph',k:0,
-  r:[['o','We reviewed','We discussed','We went over'],['o','your goals','your priorities','your plans'],['o','and next steps.','and actions.','and to-dos.']],
-  v:'Still reads right. The mark hid in 3 word choices.'},
- {c:'Seminar headline',t:'A headline for a client seminar',k:0,
-  r:[['o','Plan for','Prepare for','Get ready for'],['o','a calm','a confident','a secure'],['o','retirement','next chapter','life after work']],
-  v:'Still reads right. The mark hid in 3 word choices.'},
- {c:'Allocation reasoning',t:'The reasoning paragraph behind an allocation',k:0,
-  r:[['o','Given your','With your','Based on your'],['f','20-year horizon,','25-year horizon,'],['o','we favour stocks.','we lean to stocks.','stocks suit you.']],
-  v:'The words carry the mark. The number stays put: change it and the advice changes.'},
  {c:'Tax Code section number',t:'An Internal Revenue Code section number',k:1,m:1,
   r:[['f','IRC § 408A','IRC § 409A']],
   v:'Change one character and it is wrong. Little room for a mark.'},
+ {c:'Meeting summary',t:'A meeting summary paragraph',k:0,
+  r:[['o','We reviewed','We discussed','We went over'],['o','your goals','your priorities','your plans'],['o','and next steps.','and actions.','and to-dos.']],
+  v:'Still reads right. The mark hid in 3 word choices.'},
  {c:'RMD formula',t:'A spreadsheet formula for a required minimum distribution',k:1,m:1,
   r:[['f','=B2/C2','=B2*C2']],
   v:'Change one symbol and it calculates something else. Little room for a mark.'},
+ {c:'Allocation reasoning',t:'The reasoning paragraph behind an allocation',k:0,
+  r:[['o','Given your','With your','Based on your'],['f','20-year horizon,','25-year horizon,'],['o','we favour stocks.','we lean to stocks.','stocks suit you.']],
+  v:'The words carry the mark. The number stays put: change it and the advice changes.'},
+ {c:'Seminar headline',t:'A headline for a client seminar',k:0,
+  r:[['o','Plan for','Prepare for','Get ready for'],['o','a calm','a confident','a secure'],['o','retirement','next chapter','life after work']],
+  v:'Still reads right. The mark hid in 3 word choices.'},
  {c:'Allocation percentages',t:'A table of allocation percentages',k:1,m:1,
   r:[['f','Stocks 60%','Stocks 61%'],['f','Bonds 30%','Bonds 29%'],['f','Cash 10%','Cash 11%']],
   v:'Nudge one digit and the table is wrong. Little room for a mark.'},
@@ -8085,8 +8108,8 @@ function showKey(){
  var all=count()===N;
  if(!all&&!document.body.classList.contains('reveal'))return;
  var h='<span class="hd">Answer key</span>'+
-  '<b>1 · Many ways to say it:</b> 1, 2, 3, 4 (the words in 4, not its number).<br>'+
-  '<b>2 · One right answer:</b> 5, 6, 7, 8.<br>'+
+  '<b>1 · Many ways to say it:</b> 1, 3, 5, 6 (the words in 5, not its number).<br>'+
+  '<b>2 · One right answer:</b> 2, 4, 7, 8.<br>'+
   '<span class="good">A mark can show up in bucket 1 and barely in bucket 2, yet bucket 2 is what a client or an examiner acts on.</span>';
  KEY.className='mpanel has keyhide';KEY.innerHTML=h;KEY.style.display='block';
 }
@@ -8110,9 +8133,9 @@ var H=[
  {b:'5 · Translated',h:'TRANSLATED',n:'translated',l:[['Convertir ahora',0],['puede reducir',0],['sus impuestos futuros.',0]],st:'NO MARK FOUND',sc:'st-none',rel:['≠','ne'],
   o:'<span class="flag">No mark found, yet the model wrote the original.</span> No mark proves nothing.'}
 ];
-var FILE={a:['a · Written by a person','<span class="flag">✗ Nothing here shows a person wrote it. You watched the model write the original.</span>'],
- b:['b · Not made with AI','<span class="flag">✗ No mark is not evidence of anything. The model wrote the original.</span>'],
- c:['c · No mark found; nothing more','<span class="good">✓ Record what the check returned, and nothing more.</span>']};
+var FILE={a:['a · A person wrote it','<span class="flag">✗ No. You watched the AI write it. A missing mark never shows a person wrote it.</span>'],
+ b:['b · It was not made with AI','<span class="flag">✗ No. The AI wrote it and the detector still found nothing. A missing mark proves nothing.</span>'],
+ c:['c · Checked: no mark found. Nothing more.','<span class="good">✓ Yes. Write down what the check returned, and nothing more.</span>']};
 if(!FIG||!STEPS||!EO||!FR||!FB)return;
 
 var svg=svgRoot(FIG,360,236,'One paragraph the model wrote.','evsvg');
@@ -8482,11 +8505,11 @@ paintGuess();paintState(0);
    and the session-1 .costbars. The bricks, the saved ghost and the over outline
    are new. Writes S4STATE.s6 (minutes) at load and on every input; D4 reads it. */
 var COST=[
- {k:'base',l:'Minutes without AI',h:'Keep 90 if you have never timed it',min:10,max:240,v:90},
- {k:'ai',l:'Minutes with AI, drafting',h:'',min:5,max:120,v:20},
- {k:'n',l:'Answers or citations to check',h:'',min:0,max:20,v:5},
- {k:'per',l:'Minutes to check each one',h:'',min:1,max:15,v:3},
- {k:'rec',l:'Minutes to keep the record (§07)',h:'',min:0,max:15,v:4}
+ {k:'base',l:'Minutes it takes you today, no AI',h:'Keep 90 if you have never timed it',min:10,max:240,v:90},
+ {k:'ai',l:'Minutes to draft it with AI',h:'',min:5,max:120,v:20},
+ {k:'n',l:'Answers you must open and check: facts, numbers, citations',h:'',min:0,max:20,v:5},
+ {k:'per',l:'Minutes to check one answer',h:'',min:1,max:15,v:3},
+ {k:'rec',l:'Minutes to fill in the record (§07)',h:'',min:0,max:15,v:4}
 ];
 var host=$('costIn'),fig=$('costFig'),out=$('costOut'),say=$('costSay');if(!host||!out||!fig)return;
 var v={},prevN=5,dropT=null,sayT=null,said='';
@@ -8556,6 +8579,7 @@ function draw(quiet){
     (save>0?'Still saves '+save+' minutes.':(save===0?'Breaks even.':'Costs '+(-save)+' minutes more.')));
   /* readout */
   var o='<span class="hd">One deliverable</span>',second='<br>Checking is '+chk+' of your '+tot+' minutes with AI, and it grows with every answer.';
+  if(v.rec>0&&v.rec<=v.ai&&v.rec<=chk)second+=' The record is the smallest bar; checking is the one that grows.';
   if(save>0)o+='<span class="good"><b>Still saves '+save+' minutes</b></span> of '+v.base+'.';
   else if(save===0)o+='<span class="flag"><b>Breaks even.</b></span> Checking and the record ate the whole saving.';
   else o+='<span class="flag"><b>Costs '+(-save)+' minutes more</b></span> than doing it without AI.';
