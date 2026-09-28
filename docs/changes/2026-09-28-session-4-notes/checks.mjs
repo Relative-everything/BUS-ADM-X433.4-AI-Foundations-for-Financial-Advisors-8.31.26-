@@ -107,6 +107,27 @@ say(/Minutes it takes you today, no AI/.test(txt('#costIn')) && /Answers you mus
   copied = ''; click($('#recSkillCopy'));
   say(/^---\nname: research-record\ndescription: /.test(skill) && /DECISION/.test(skill) && /name: research-record/.test(copied) && $('#s7 [data-src="src-agent-skills"]'), 'S4N-036', '§07: the record block as a skill has front matter, keeps DECISION, copies, and cites the skill format'); }
 
+/* ---- D1 keys, images, EU; §01 item 9; D5 clocks, plan, cases ---- */
+{ const steps = $$('#sW1 .tsStep');
+  say(steps.length === 3 && /Press 1, 2, 3 in order/.test(txt('#sW1')) && /13 or fewer: no mark/.test(txt('#sW1 .tsmzone')) && /Key A: the key that wrote it/.test(txt('#tsLampA')), 'S4N-037', 'D1 beat 2: three-step strip, the counting hint, zone words and the renamed keys');
+  click($('#tsLampA')); click($('#tsLampB')); click($('#tsLampR'));
+  say(steps.every((e) => e.classList.contains('on')) && /15 of 24/.test(txt('#tsLampOut')) && /You will never hold the key/.test(txt('#tsLampOut')) && $('#tsLampOut [data-src="src-claude-marks"]'), 'S4N-037b', 'D1 beat 2: after 1, 2, 3 every step is lit and the readout closes with the sentence about the key');
+  say($('#imgFig svg') && $('#imPix') && $('#imLab') && /Images Carry Two Kinds of Mark/.test(txt('#sW1')), 'S4N-038', 'D1 beat 3: the chart image with its two mark toggles and three attacks');
+  click($('#imShot'));
+  const o = txt('#imgOut');
+  say(/Still there: a screenshot copies the pixels/.test(o) && /Gone: a screenshot is a new file/.test(o) && $('#imgOut [data-src="src-synthid"]') && $('#imgOut [data-src="src-claude-marks"]'), 'S4N-038b', 'D1 beat 3: a screenshot keeps the pixel mark and strips the label, each chipped');
+  say(/Why EU law is on this page/.test(txt('#sW1 .talk')) && $('#sW1 .talk [data-src="src-eu-ai-act"]') && /wherever Claude is offered, worldwide/.test(txt('#sW1 .talk')), 'S4N-039', 'D1: the EU callout with the Article 50 line and the worldwide line');
+  say(/AI-made text and images must carry a machine-readable mark/.test(html) && /It binds the vendor selling in Europe, not a US adviser/.test(html), 'S4N-039b', '§01 item 9 reworded: binds the vendor, not the adviser'); }
+{ say($('#clkFig svg') && $('#clkDay') && $$('#sRSP .clkjump button').length === 3 && /The Clocks That Are Law/.test(txt('#sRSP')), 'S4N-040', 'D5 beat 2: the day slider, three jumps and the clock figure');
+  click($('#sRSP .clkjump button[data-day="30"]'));
+  const rng = $('#clkDay'); rng.value = '30'; rng.dispatchEvent(new w.Event('input', { bubbles: true }));
+  const c = txt('#clkOut');
+  say(/Ran out on day 3/.test(c) && /Ran out on day 30: your firm/.test(c) && /inconclusive investigation does not excuse/.test(c) && /Illinois has no hard end/.test(c) && $('#clkOut [data-src="src-regsp"]') && $('#clkOut [data-src="src-il-pipa"]') && $('#clkOut [data-src="src-state-breach"]'), 'S4N-040b', 'D5 beat 2: at day 30 the readout names each expired clock with its consequence, chipped');
+  say(/What the Plan Must Say/.test(txt('#sRSP')) && /1 ASSESS/.test(txt('#irpBlock')) && /2 CONTAIN AND CONTROL/.test(txt('#irpBlock')) && /3 NOTIFY/.test(txt('#irpBlock')) && $('#irpCopy'), 'S4N-040c', 'D5: the plan skeleton carries the three procedures and the four notice contents with a copy button');
+  click($('#caseBtns button[data-case="0"]')); click($('#caseBtns button[data-case="1"]'));
+  const k = txt('#caseOut');
+  say(/LATE · EQUIFAX, 2017: 40 days/.test(k) && /IN TIME · CAPITAL ONE, 2019: 10 days/.test(k) && /Uber, 2016/.test(k) && /30 days did not govern these companies/.test(k) && $('#caseOut [data-src="src-equifax"]') && $('#caseOut [data-src="src-capitalone"]') && $('#caseOut [data-src="src-uber-doj"]'), 'S4N-040d', 'D5 beat 3: both real clocks drop with their dates, days, consequences and chips, and the readout says the rule did not govern them'); }
+
 /* ---- sources and documents ---- */
 { const need = ['src-claude-pricing', 'src-anthropic-dpa', 'src-anthropic-retention', 'src-fbi-ic3-2025', 'src-uae-voice', 'src-sg-deepfake-2026', 'src-ascii-smuggling', 'src-il-pipa', 'src-equifax', 'src-capitalone', 'src-eu-ai-act', 'src-agent-skills', 'src-anthropic-agents'];
   const missing = need.filter((k) => !d.getElementById(k));

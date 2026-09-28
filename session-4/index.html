@@ -1367,6 +1367,85 @@ body:not(.reveal) #ovr{display:none}
 }
 #sRSP .axl{paint-order:stroke;stroke:var(--card);stroke-width:5px;stroke-linejoin:round;letter-spacing:.04em}
 #sRSP .blab.you{stroke-width:6px}
+
+/* Part 3: the plan skeleton under the clause */
+#sRSP .irp{margin-top:22px;padding-top:18px;border-top:1.5px dashed var(--line)}
+#sRSP .irp pre{margin:12px 0 0;font-size:12.5px;line-height:1.65}
+#sRSP .mpanel .rfl{display:block;margin:4px 0}
+
+/* Beat 2: the clocks that are law */
+#sRSP .clkctl{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;margin:6px 0 0}
+#sRSP .clkctl label{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+#sRSP .clkctl input[type=range]{margin:8px 0;min-width:0}
+#sRSP .clknum{font-family:"JetBrains Mono",monospace;font-size:15px;font-weight:600;min-width:64px;text-align:right;color:var(--gold)}
+#sRSP .clkjump{margin-top:2px}
+#sRSP .clkjump .btn:focus-visible{outline:2.5px solid var(--on);outline-offset:3px}
+#sRSP .clksvg{width:100%;height:auto;display:block;margin:10px 0 4px}
+#sRSP .clab{font-size:14px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round}
+#sRSP .nar .clab{font-size:13px}
+#sRSP .cbar{fill:none;stroke:var(--off);stroke-width:1.5}
+#sRSP .cbar.soft{stroke-dasharray:4 3}
+#sRSP .carr{fill:var(--off)}
+#sRSP .cfill{fill:var(--on-bg);stroke:var(--on);stroke-width:1.5;transition:fill .25s,stroke .25s}
+#sRSP .cfill.out{fill:var(--warn-bg);stroke:var(--warn)}
+#sRSP .cfill.ask{fill:var(--gold-bg);stroke:var(--gold)}
+#sRSP .cend{stroke:var(--ink);stroke-width:2;transition:stroke .25s}
+#sRSP .cend.out{stroke:var(--warn)}
+#sRSP .cstat{font-size:13px;font-weight:600;fill:var(--muted);paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round;letter-spacing:.03em}
+#sRSP .nar .cstat{font-size:12px}
+#sRSP .cstat.out{fill:var(--warn)}
+#sRSP .cstat.ask{fill:var(--gold)}
+#sRSP .cnote{font-size:13px;fill:var(--muted);letter-spacing:.03em}
+#sRSP .nar .cnote{font-size:12px}
+#sRSP .cq{font-size:13px;font-style:italic;fill:var(--muted);transition:fill .25s}
+#sRSP .nar .cq{font-size:12px}
+#sRSP .cq.on{fill:var(--gold);font-weight:600}
+#sRSP .cmark{fill:var(--card);stroke:var(--gold);stroke-width:1.5;transition:fill .25s}
+#sRSP .cmark.on{fill:var(--gold)}
+#sRSP .cqstem{stroke:var(--gold);stroke-width:1.5;stroke-dasharray:2 3}
+#sRSP .ctoday{stroke:var(--gold);stroke-width:2;stroke-dasharray:4 3}
+#sRSP .ctlab{font-size:13px;font-weight:700;fill:var(--gold);paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round}
+#sRSP .clkkey{display:flex;flex-wrap:wrap;gap:6px 18px;margin:6px 0 0;padding:0;list-style:none;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted)}
+#sRSP .clkkey li{display:flex;align-items:center;gap:7px}
+#sRSP .clkkey i{display:inline-block;flex:none;width:16px;height:10px;border-radius:2px;border:1.5px solid var(--on);background:var(--on-bg)}
+#sRSP .clkkey i.soft{border-style:dashed}
+
+/* Beat 3: two real clocks */
+#sRSP .caserow .btn:focus-visible{outline:2.5px solid var(--on);outline-offset:3px}
+#sRSP .caserow .btn[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+#sRSP .caserow .btn.late[aria-pressed="true"]{background:var(--warn);border-color:var(--warn)}
+#sRSP .caserow .btn.ok[aria-pressed="true"]{background:var(--on);border-color:var(--on)}
+#sRSP .casesvg{width:100%;height:auto;display:block;margin:10px 0 4px}
+#sRSP .klab{font-size:14px;font-weight:600;fill:var(--ink);paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round}
+#sRSP .nar .klab{font-size:13px}
+#sRSP .k30{stroke:var(--gold);stroke-width:2;stroke-dasharray:4 3}
+#sRSP .k30l{font-size:12px;font-weight:600;fill:var(--gold);letter-spacing:.06em;paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round}
+#sRSP .kph rect{fill:none;stroke:var(--off);stroke-width:1.5;stroke-dasharray:4 3}
+#sRSP .kph text{fill:var(--muted);letter-spacing:.04em;font-size:13px}
+#sRSP .nar .kph text{font-size:12px}
+#sRSP .kph{transition:opacity .3s}
+#sRSP .kph.gone{opacity:0}
+#sRSP .kbar{fill:var(--on-bg);stroke:var(--on);stroke-width:1.5}
+#sRSP .kbar.late{fill:var(--warn-bg);stroke:var(--warn)}
+#sRSP .kover{stroke:var(--warn);stroke-width:1.5}
+#sRSP .kdays{font-size:15px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--card);stroke-width:4px;stroke-linejoin:round;opacity:0;transition:opacity .25s}
+#sRSP .kdays.vis{opacity:1}
+#sRSP .kdays.late{fill:var(--warn)}
+#sRSP .kdays.ok{fill:var(--on)}
+#sRSP .kstamp{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(1.9);transition:transform .22s cubic-bezier(.2,1.6,.4,1),opacity .12s}
+#sRSP .kstamp.on{opacity:1;transform:scale(1)}
+#sRSP .kstamp rect{fill:var(--card);stroke-width:2.5}
+#sRSP .kstamp text{font-size:14px;font-weight:700;letter-spacing:.12em}
+#sRSP .kstamp.late rect{stroke:var(--warn);stroke-dasharray:5 3}
+#sRSP .kstamp.late text{fill:var(--warn)}
+#sRSP .kstamp.ok rect{stroke:var(--on)}
+#sRSP .kstamp.ok text{fill:var(--on)}
+
+@media (max-width:560px){
+  #sRSP .clkctl{grid-template-columns:minmax(0,1fr) auto}
+  #sRSP .clkctl label{grid-column:1 / -1}
+  #sRSP .clknum{min-width:0}
+}
 /* ===== sAnon ===== */
 /* ===== sAnon · where does she land? ===== */
 #sAnon .anSimRow{margin:0 0 6px}
@@ -2196,13 +2275,14 @@ body:not(.reveal) #ovr{display:none}
 #sW1 .tsmt{position:absolute;top:0;bottom:0;border-left:2px solid var(--muted)}
 #sW1 .tsmt.t1{left:58.333%}
 #sW1 .tsmt.t2{left:75%}
-#sW1 .tsmzone{position:relative;height:18px;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted);margin-top:3px}
-#sW1 .tsmzone span{position:absolute;top:0;transform:translateX(-50%);font-size:15px;line-height:18px}
-#sW1 .tsmzone .z0{left:29%}
-#sW1 .tsmzone .z1{left:66.667%}
-#sW1 .tsmzone .z2{left:87.5%}
-#sW1 .tsmzone .ze0{left:0;transform:none;font-size:11px}
-#sW1 .tsmzone .ze1{left:auto;right:0;transform:none;font-size:11px}
+#sW1 .tsmends{display:flex;justify-content:space-between;font-family:"JetBrains Mono",monospace;font-size:11px;line-height:1.2;color:var(--muted);margin-top:3px}
+/* zone words under the bar: the three verdicts in the same proportions as the bar */
+#sW1 .tsmzone{display:grid;grid-template-columns:7fr 2fr 3fr;gap:4px;font-family:"JetBrains Mono",monospace;font-size:11.5px;line-height:1.25;margin-top:4px}
+#sW1 .tsmzone span{display:block;text-align:center;padding:5px 4px;border-radius:6px;border:1.5px dashed var(--off);color:var(--muted);background:var(--card);transition:box-shadow .25s,background .25s}
+#sW1 .tsmzone .z1{color:var(--gold);border-color:var(--gold);border-style:dotted}
+#sW1 .tsmzone .z2{color:var(--on);border-color:var(--on);border-style:solid}
+#sW1 .tsmzone span.cur{font-weight:700;box-shadow:0 0 0 2px var(--ink)}
+@media (max-width:700px){#sW1 .tsmzone{grid-template-columns:minmax(0,1fr)} #sW1 .tsmzone span{text-align:left}}
 #sW1 #tsLampOut{margin-top:14px}
 #sW1 .tslegend{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);margin:-4px 0 12px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
 #sW1 .tsd1,#sW1 .tsd0{display:inline-block;width:9px;height:9px;border-radius:50%;box-sizing:border-box}
@@ -2219,9 +2299,70 @@ body:not(.reveal) #ovr{display:none}
 #sW1 .tspin.cur{color:var(--ink);font-weight:700}
 #sW1 .tspin.cur .nb{background:var(--ink);border-color:var(--ink);color:#fff}
 #sW1 .tspin.cur::before{background:var(--ink)}
+/* the three-step strip above the meter: cards light as each numbered step is pressed */
+#sW1 .tsSteps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 16px}
+#sW1 .tsStep{display:flex;align-items:flex-start;gap:8px;background:var(--card);border:1.5px dashed var(--line);border-radius:8px;padding:8px 10px;font-family:"JetBrains Mono",monospace;font-size:12px;line-height:1.4;color:var(--muted);transition:border-color .25s,background .25s,color .25s,box-shadow .25s}
+#sW1 .tsStep .nb{margin-top:1px}
+#sW1 .tsStep b{font-weight:700;color:inherit}
+#sW1 .tsStep.on{color:var(--ink);border-style:solid}
+#sW1 .tsStep.on .nb{background:var(--ink);border-color:var(--ink);color:#fff}
+#sW1 .tsStep.on.ok{border-color:var(--on);background:var(--on-bg)}
+#sW1 .tsStep.on.ok b{color:var(--on)}
+#sW1 .tsStep.on.mid{border-color:var(--gold);background:var(--gold-bg)}
+#sW1 .tsStep.on.mid b{color:var(--gold)}
+#sW1 .tsStep.on.no{border-color:var(--off);background:var(--off-bg)}
+#sW1 .tsStep.cur{box-shadow:0 0 0 2px var(--ink)}
+@media (max-width:700px){#sW1 .tsSteps{grid-template-columns:minmax(0,1fr)}}
+#sW1 .tslamps .btn.mini{white-space:normal;text-align:left;line-height:1.35;display:inline-flex;align-items:center;gap:7px}
+@media (max-width:560px){#sW1 .tslamps .btn.mini{flex:1 1 100%}}
+
+/* ===== D1 · Beat 3: images carry two kinds of mark ===== */
+#sW1 .imstage{display:grid;gap:14px}
+#sW1 #imgFig svg{width:100%;height:auto;max-width:420px;display:block}
+#sW1 .imctl .plab{margin-bottom:8px}
+#sW1 .imctl .row+.plab{margin-top:14px}
+#sW1 #imgOut{margin-top:0}
+@media (min-width:900px){
+  #sW1 .imstage{grid-template-columns:minmax(0,420px) minmax(0,1fr);grid-template-areas:"fig ctl" "fig out";grid-template-rows:auto 1fr;column-gap:26px;align-items:start}
+  #sW1 #imgFig{grid-area:fig}
+  #sW1 .imctl{grid-area:ctl}
+  #sW1 #imgOut{grid-area:out}
+}
+#sW1 .imfig text{font-family:"JetBrains Mono",monospace}
+#sW1 .imframe{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+#sW1 .imfile{font-size:11px;fill:var(--muted);letter-spacing:.04em}
+#sW1 .imtitle{font-size:12.5px;font-weight:700;fill:var(--ink)}
+#sW1 .imsub,#sW1 .imq{font-size:11px;fill:var(--muted)}
+#sW1 .imaxis{stroke:var(--line);stroke-width:1.5}
+#sW1 .imbar{fill:var(--on);opacity:.75}
+#sW1 .imdot{fill:var(--gold)}
+#sW1 .imdots{opacity:0;transition:opacity .3s}
+#sW1 .imdots.on{opacity:.9}
+#sW1 .imblk{fill:var(--ink);opacity:.08}
+#sW1 .imblocks{opacity:0;transition:opacity .3s}
+#sW1 .imblocks.on{opacity:1}
+#sW1 .imcrop{opacity:0;transition:opacity .3s}
+#sW1 .imcrop.on{opacity:1}
+#sW1 .imcrop .sh{fill:var(--page);opacity:.82}
+#sW1 .imcrop .win{fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:6 4}
+#sW1 .imshot{fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:6 4;opacity:0;transition:opacity .3s}
+#sW1 .imshot.on{opacity:1}
+#sW1 .imtag{transition:opacity .3s}
+#sW1 .imtag rect{fill:var(--on-bg);stroke:var(--on);stroke-width:1.5}
+#sW1 .imtag text{font-size:11px;font-weight:700;fill:var(--on)}
+#sW1 .imtag.kept rect{stroke-dasharray:4 3}
+#sW1 .imtag.off{opacity:0}
+#sW1 .imghost{opacity:0;transition:opacity .3s}
+#sW1 .imghost.on{opacity:1}
+#sW1 .imghost rect{fill:var(--card);stroke:var(--warn);stroke-width:1.5;stroke-dasharray:4 3}
+#sW1 .imghost text{font-size:11px;font-weight:700;fill:var(--warn)}
+#sW1 .imrow{display:block;margin-top:8px}
+#sW1 .imrow.good{color:var(--on)}
+#sW1 .imrow.kw{color:var(--muted)}
+#sW1 #imgOut .s4stamp{margin:0 8px 4px 0}
 @media (prefers-reduced-motion: reduce){
   #sW1 .tsblank.land,#sW1 .tw.swap{animation:none}
-  #sW1 .tsp,#sW1 .tscoin,#sW1 .tsleaf,#sW1 .tsdirect,#sW1 .tsmbar i,#sW1 .tw,#sW1 .tw::after,#sW1 .tsmpins{transition:none}
+  #sW1 .tsp,#sW1 .tscoin,#sW1 .tsleaf,#sW1 .tsdirect,#sW1 .tsmbar i,#sW1 .tw,#sW1 .tw::after,#sW1 .tsmpins,#sW1 .tsStep,#sW1 .tsmzone span,#sW1 .imdots,#sW1 .imblocks,#sW1 .imcrop,#sW1 .imshot,#sW1 .imtag,#sW1 .imghost{transition:none}
 }
 /* ===== sW2 ===== */
 /* ===== D2 · Beat 1: the sorter and the reel bench ===== */
@@ -3873,16 +4014,82 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       <div id="rspClause" class="rspcx" aria-live="polite"></div>
       <div id="rspFb" class="rspfb" aria-live="polite"></div>
       <div class="row rspcopy"><button type="button" class="btn" id="rspCopy">Copy the clause</button><span id="rspMsg" class="rspmsg" aria-live="polite"></span></div>
+      <div class="irp">
+        <h4>What the Plan Must Say</h4>
+        <p class="hint">The rule requires a written programme with three procedures, in this order <span class="conf h" data-src="src-regsp">H</span>. Your clause goes in as the first line once all three parts are picked.</p>
+<pre id="irpBlock">ESCALATION: (your clause, from the builder above)
+
+The written programme must have procedures to:
+1 ASSESS the nature and scope of the incident, and
+  identify the systems and the types of customer
+  information involved. Owner: (you fill in)
+2 CONTAIN AND CONTROL it, to prevent further
+  unauthorised access or use. Owner: (you fill in)
+3 NOTIFY each affected individual: as soon as
+  practicable, no later than 30 days after the firm
+  becomes aware. Owner: (you fill in)
+
+The notice to each client must:
+[ ] describe the incident in general terms and the
+    type of sensitive customer information involved
+[ ] give the date, estimated date or date range,
+    if it can reasonably be determined
+[ ] give the firm&rsquo;s contact information
+[ ] recommend reviewing account statements and
+    considering a fraud alert and free credit reports
+
+An inconclusive investigation does not excuse the
+notice. Keep the record of the investigation and
+its basis.</pre>
+        <div class="row rspcopy"><button type="button" class="btn" id="irpCopy">Copy the plan skeleton</button><span id="irpMsg" class="rspmsg" aria-live="polite"></span></div>
+      </div>
     </div>
+  </div>
+
+  <div class="panel">
+    <span class="do">Then this: 3 minutes</span>
+    <h4>The Clocks That Are Law</h4>
+    <p class="hint">Drag the day. Each clock turns rust the day it runs out. Every bar counts from the day its holder became aware.</p>
+    <div class="clkctl">
+      <label for="clkDay">Days since awareness</label>
+      <input type="range" id="clkDay" min="0" max="45" step="1" value="0" aria-valuetext="Day 0">
+      <b class="clknum" id="clkNum" aria-hidden="true">Day 0</b>
+    </div>
+    <div class="row clkjump" role="group" aria-label="Jump to a day">
+      <button type="button" class="btn sel mini" data-day="3">Day 3</button>
+      <button type="button" class="btn sel mini" data-day="30">Day 30</button>
+      <button type="button" class="btn sel mini" data-day="45">Day 45</button>
+    </div>
+    <div id="clkFig"></div>
+    <ul class="clkkey" aria-label="The four clocks and their sources">
+      <li><i></i>Vendor to your firm, 72 hours <span class="conf h" data-src="src-regsp">H</span></li>
+      <li><i></i>Your firm to clients, 30 days <span class="conf h" data-src="src-regsp">H</span></li>
+      <li><i class="soft"></i>Illinois, without unreasonable delay <span class="conf h" data-src="src-il-pipa">H</span></li>
+      <li><i></i>Colorado, Florida, Washington 30 days; Maryland 45; Texas 60 <span class="conf m" data-src="src-state-breach">M</span></li>
+    </ul>
+    <div id="clkOut" class="mpanel" aria-live="polite"><span class="hd">Day 0 since awareness</span><span class="nil">Nothing has run out. Drag the day.</span></div>
+  </div>
+
+  <div class="panel">
+    <span class="do">Then this: 2 minutes</span>
+    <h4>Two Real Clocks</h4>
+    <p class="hint">Two breaches, counted from the day the company knew. Click each.</p>
+    <div class="row caserow" id="caseBtns" role="group" aria-label="Two cases">
+      <button type="button" class="btn sel mini" data-case="0" aria-pressed="false">Equifax, 2017</button>
+      <button type="button" class="btn sel mini" data-case="1" aria-pressed="false">Capital One, 2019</button>
+    </div>
+    <div id="caseFig"></div>
+    <div id="caseOut" class="mpanel" aria-live="polite"><span class="hd">Two real clocks</span><span class="nil">Click a case. Its bar drops from the day the company knew.</span></div>
   </div>
 
   <ul class="pts">
     <li><b>Sooner if you can.</b> The rule says as soon as practicable, and no later than 30 days after the firm becomes aware that sensitive client information was, or is reasonably likely to have been, reached without authorisation <span class="conf h" data-src="src-regsp">H</span>.</li>
     <li><b>Aware comes before confirmed.</b> In this incident, counting from counsel’s letter feels careful and lands six days late.</li>
     <li><b>The fix is one clause.</b> Name who must report, the hours they have, and who owns the date.</li>
+    <li><b>Three procedures, then four contents.</b> Assess, contain and control, notify. The notice says what happened, when, whom to call, and what to watch <span class="conf h" data-src="src-regsp">H</span>.</li>
   </ul>
 
-  <p class="src">SEC (2024), Regulation S-P amendments: the incident response programme, the 30-day customer notice and the 72-hour notice a service provider owes the firm <span class="conf h" data-src="src-regsp">H</span>. The incident, and the reading of when the firm became aware, are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">SEC (2024), Regulation S-P amendments: the incident response programme, the 30-day customer notice and the 72-hour notice a service provider owes the firm <span class="conf h" data-src="src-regsp">H</span>. Illinois Personal Information Protection Act, 815 ILCS 530/10: notice without unreasonable delay, and to the Attorney General above 500 residents <span class="conf h" data-src="src-il-pipa">H</span>; other states&rsquo; day counts from aggregator sources <span class="conf m" data-src="src-state-breach">M</span>. Equifax <span class="conf h" data-src="src-equifax">H</span>, Capital One <span class="conf h" data-src="src-capitalone">H</span> and Uber <span class="conf h" data-src="src-uber-doj">H</span>: days counted from the date each company knew. The incident, and the reading of when the firm became aware, are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="ga5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Commit to one event, then write the escalation clause your firm would need.</div></div>
 </section>
@@ -4156,22 +4363,51 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel">
     <span class="do">Then this: 3 minutes</span>
     <h4>Only the Right Key Shows the Mark</h4>
-    <p class="hint">Key A wrote this email: you saw it pick helpful. Now be the detector: pick the key you hold, starting with 1.</p>
+    <p class="hint">Key A wrote this email. A detector is just someone counting: with the key that wrote it, most words show a 1. With any other key, the count is chance. Press 1, 2, 3 in order.</p>
     <div id="tsMail" class="tsmail"></div>
     <p class="tslegend" aria-hidden="true"><span class="tsd1"></span>the key gave this word a 1 <span class="tsd0"></span>a 0</p>
-    <div class="tsmeter" role="img" aria-label="Meter from 0 to 24 words that got a 1 from the key. Chance is about 12. 13 or fewer: no mark found. 14 to 17: uncertain. 18 or more: mark found. Each reading you take stays pinned under the bar.">
+    <div class="tsSteps" role="list" aria-label="The three readings, in order">
+      <div class="tsStep ok" id="tsStep1" role="listitem"><span class="nb">1</span><span>Same key &rarr; count the 1s &rarr; 19 of 24 &rarr; <b>MARK FOUND</b></span></div>
+      <div class="tsStep no" id="tsStep2" role="listitem"><span class="nb">2</span><span>Wrong key &rarr; different coins &rarr; 11 of 24 &rarr; <b>chance</b></span></div>
+      <div class="tsStep mid" id="tsStep3" role="listitem"><span class="nb">3</span><span>Right key, rewritten &rarr; 15 of 24 &rarr; <b>UNCERTAIN</b></span></div>
+    </div>
+    <div class="tsmeter" role="img" aria-label="Meter from 0 to 24 words that got a 1 from the key. Chance is about 12. 13 or fewer: no mark. 14 to 17: uncertain. 18 or more: mark. Each reading you take stays pinned under the bar.">
       <div class="tsmcount" id="tsCount" aria-hidden="true"></div><div class="tsmchance"><span>chance &asymp; 12</span></div>
       <div class="tsmbar"><i id="tsFill"></i><b class="tsmmid"></b><b class="tsmt t1"></b><b class="tsmt t2"></b></div>
+      <div class="tsmends" aria-hidden="true"><span>0</span><span>24</span></div>
       <div class="tsmpins" id="tsPins" aria-hidden="true"></div>
-      <div class="tsmzone"><span class="ze0">0</span><span class="z0">&#9675;</span><span class="z1">?</span><span class="z2">&#10003;</span><span class="ze1">24</span></div>
+      <div class="tsmzone" aria-hidden="true"><span class="z0">&#9675; 13 or fewer: no mark</span><span class="z1">? 14 to 17: uncertain</span><span class="z2">&#10003; 18 or more: mark</span></div>
     </div>
-    <span class="plab">The detector holds</span>
-    <div class="row" role="group" aria-label="What the detector holds">
-      <button class="btn sel mini" id="tsLampA" type="button" aria-pressed="false"><span class="nb">1</span> Key A</button>
-      <button class="btn sel mini" id="tsLampB" type="button" aria-pressed="false"><span class="nb">2</span> Key B</button>
-      <button class="btn sel mini" id="tsLampR" type="button" aria-pressed="false"><span class="nb">3</span> Key A, heavy rewrite</button>
+    <span class="plab">Press in order</span>
+    <div class="row tslamps" role="group" aria-label="Which key the detector holds, in order">
+      <button class="btn sel mini" id="tsLampA" type="button" aria-pressed="false"><span class="nb">1</span> Key A: the key that wrote it</button>
+      <button class="btn sel mini" id="tsLampB" type="button" aria-pressed="false"><span class="nb">2</span> Key B: a different key</button>
+      <button class="btn sel mini" id="tsLampR" type="button" aria-pressed="false"><span class="nb">3</span> Key A, after a heavy rewrite</button>
     </div>
-    <div id="tsLampOut" class="mpanel" aria-live="polite"><span class="hd">Detector</span><span class="nil">Pick what the detector holds.</span></div>
+    <div id="tsLampOut" class="mpanel" aria-live="polite"><span class="hd">Detector</span><span class="nil">Press 1.</span></div>
+  </div>
+
+  <div class="panel">
+    <span class="do">Then this: 2 minutes</span>
+    <h4>Images Carry Two Kinds of Mark</h4>
+    <p class="hint">One chart, two marks. Toggle each, then try to remove it.</p>
+    <div class="imstage">
+      <div id="imgFig"></div>
+      <div class="imctl">
+        <span class="plab">The two marks</span>
+        <div class="row" role="group" aria-label="Which marks the image carries">
+          <button class="btn sel mini act" id="imPix" type="button" aria-pressed="true">Pixel mark (SynthID)</button>
+          <button class="btn sel mini act" id="imLab" type="button" aria-pressed="true">Label (Content Credentials)</button>
+        </div>
+        <span class="plab">Try to remove them</span>
+        <div class="row" role="group" aria-label="Three things done to the image; press one again to undo it">
+          <button class="btn sel mini" id="imCrop" type="button" aria-pressed="false">Crop</button>
+          <button class="btn sel mini" id="imShot" type="button" aria-pressed="false">Screenshot</button>
+          <button class="btn sel mini" id="imComp" type="button" aria-pressed="false">Compress</button>
+        </div>
+      </div>
+      <div id="imgOut" class="mpanel" aria-live="polite"><span class="hd">What survives</span><span class="nil">Toggle a mark, or press Crop, Screenshot or Compress.</span></div>
+    </div>
   </div>
 
   <ul class="pts">
@@ -4180,7 +4416,14 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <li><b>What a mark says.</b> The text may have passed through Claude; Anthropic's page describes no account or user in the mark <span class="conf m" data-src="src-claude-marks">M</span>.</li>
   </ul>
 
-  <p class="src">Anthropic, How Claude marks AI-generated content, Claude Help Center, retrieved 25 September 2026 <span class="conf h" data-src="src-claude-marks">H</span>. Google, SynthID Text: a detector answers watermarked, not watermarked or uncertain, against two thresholds <span class="conf h" data-src="src-synthid-text">H</span>; the knockout is the scheme it names, Dathathri and colleagues in Nature, simplified here to three rounds and toy coins <span class="conf m" data-src="src-synthid-text">M</span>. The email, the words and their likelihoods, the coins and the detector&rsquo;s cut-offs are made up for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+  <div class="talk"><span class="th">Why EU law is on this page</span>
+    <ul>
+      <li>The EU AI Act&rsquo;s Article 50 requires machine-readable marks on AI-made text and images from 2 August 2026. It binds providers on the EU market, not a US adviser <span class="conf m" data-src="src-eu-ai-act">M</span>.</li>
+      <li>Claude marks output &ldquo;wherever Claude is offered, worldwide&rdquo;, and Anthropic signed the Article 50(2) code of practice. So a US adviser&rsquo;s Claude text carries a mark it cannot check <span class="conf h" data-src="src-claude-marks">H</span>.</li>
+    </ul>
+  </div>
+
+  <p class="src">Anthropic, How Claude marks AI-generated content, Claude Help Center, retrieved 25 September 2026 <span class="conf h" data-src="src-claude-marks">H</span>. Google, SynthID Text: a detector answers watermarked, not watermarked or uncertain, against two thresholds <span class="conf h" data-src="src-synthid-text">H</span>; the knockout is the scheme it names, Dathathri and colleagues in Nature, simplified here to three rounds and toy coins <span class="conf m" data-src="src-synthid-text">M</span>. Google DeepMind, SynthID: a change to the pixels of an image that the eye cannot see <span class="conf m" data-src="src-synthid">M</span>. Regulation (EU) 2024/1689, Article 50: machine-readable marks, applying from 2 August 2026 <span class="conf m" data-src="src-eu-ai-act">M</span>. The email, the words and their likelihoods, the coins and the detector&rsquo;s cut-offs, and the chart image with its two marks and three attacks, are made up for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run the knockout with Key A, Key B and the watermark off.</div></div>
 
@@ -5749,8 +5992,8 @@ var RULES=[
  {t:'The SEC’s 2023 proposal on predictive data analytics',k:'guide',
   w:'The one proposal that would have named the technology. The SEC withdrew it in June 2025, so it binds nobody.',
   s:'8 Proposal',h:'withdrawn',c:'Proposal'},
- {t:'The EU AI Act’s rule that AI-made content be marked as such',k:'ai',
-  w:'Binding EU law that names AI. It is not a US securities rule. Claude’s watermark is in Appendix D1.',
+ {t:'The EU AI Act: AI-made text and images must carry a machine-readable mark',k:'ai',
+  w:'Binding EU law that names AI. It binds the vendor selling in Europe, not a US adviser. It is why Claude’s text carries a mark: Appendix D1.',
   s:'9 EU AI Act',h:'EU law',c:'EU Act'}
 ];
 var RBUCK=[
@@ -6686,7 +6929,7 @@ function build(b){
  render(false);
 }
 function want(){var w=fig.clientWidth||0;return {w:w,b:(w>0&&w<560)?'n':'w'}}
-function checkBucket(){var k=want();if(k.w>0&&k.b!==bucket)build(k.b)}
+function checkBucket(){var k=want();if(k.w>0&&k.b!==bucket){build(k.b);clkBuild(k.b);caseBuild(k.b)}}
 function ensureBucket(){if(!G){build(want().b);return}checkBucket()}
 
 /* ---------- geometry for the current state ---------- */
@@ -6850,6 +7093,7 @@ function slot(s){
 }
 function paintClause(){
  if(clause)clause.innerHTML='<span class="hd">Escalation clause</span>'+slot(0)+' who sees signs that client information was reached without authorisation reports it within '+slot(1)+'. Each report records the time the signs were first seen. '+slot(2)+' owns the start date and the 30-day notice.';
+ paintPlan();
  if(!fbx)return;
  var h='',n=0,good=0;
  for(var s=0;s<3;s++){
@@ -6901,12 +7145,267 @@ REVEALS.push(function(){
  paintSlots();paintClause();paintPins();
 });
 
+/* ---------- Part 3: the plan skeleton; the clause goes in as its first line ---------- */
+var irp=$('irpBlock'),irpCopy=$('irpCopy'),irpMsg=$('irpMsg');
+var PLAN_TAIL=['',
+ 'The written programme must have procedures to:',
+ '1 ASSESS the nature and scope of the incident, and',
+ '  identify the systems and the types of customer',
+ '  information involved. Owner: (you fill in)',
+ '2 CONTAIN AND CONTROL it, to prevent further',
+ '  unauthorised access or use. Owner: (you fill in)',
+ '3 NOTIFY each affected individual: as soon as',
+ '  practicable, no later than 30 days after the firm',
+ '  becomes aware. Owner: (you fill in)',
+ '',
+ 'The notice to each client must:',
+ '[ ] describe the incident in general terms and the',
+ '    type of sensitive customer information involved',
+ '[ ] give the date, estimated date or date range,',
+ '    if it can reasonably be determined',
+ '[ ] give the firm’s contact information',
+ '[ ] recommend reviewing account statements and',
+ '    considering a fraud alert and free credit reports',
+ '',
+ 'An inconclusive investigation does not excuse the',
+ 'notice. Keep the record of the investigation and',
+ 'its basis.'].join('\n');
+function planDone(){return st.sl[0]>=0&&st.sl[1]>=0&&st.sl[2]>=0}
+function planText(){return 'ESCALATION: '+(planDone()?'✓ '+plainS():'(your clause, from the builder above)')+'\n'+PLAN_TAIL}
+function paintPlan(){if(irp)irp.textContent=planText()}
+if(irpCopy)irpCopy.onclick=function(){copyText('WHAT THE PLAN MUST SAY\n'+planText(),irpMsg)};
+
+/* ---------- Beat 2: the clocks that are law. One SVG, built per width bucket,
+   updated in place as the day slider moves; the readout lists what has run out. ---------- */
+var clkHost=$('clkFig'),clkOut=$('clkOut'),clkRng=$('clkDay'),clkNum=$('clkNum');
+var CK=null,ckDay=0,ctw=null;
+var CLK=[
+ {name:'VENDOR TO YOUR FIRM · 72 HOURS',end:3},
+ {name:'YOUR FIRM TO CLIENTS · 30 DAYS',end:30},
+ {name:'ILLINOIS · WITHOUT UNREASONABLE DELAY',end:-1},
+ {name:'COLORADO, FLORIDA, WASHINGTON · 30 DAYS',end:30}];
+var CLK_ARIA='Four clock bars on a day axis from 0 to 45, with a moving day line. 72 hours, vendor to your firm. 30 days, your firm to clients. Illinois, without unreasonable delay, no hard end, with a marker at day 30. Colorado, Florida and Washington 30 days; Maryland 45; Texas 60.';
+function diamond(cx,cy,r){return 'M'+cx+' '+(cy-r)+' L'+(cx+r)+' '+cy+' L'+cx+' '+(cy+r)+' L'+(cx-r)+' '+cy+' Z'}
+function clkBuild(b){
+ if(!clkHost)return;
+ if(ctw){ctw.stop();ctw=null}
+ var old=clkHost.querySelectorAll('svg');for(var o=0;o<old.length;o++)old[o].parentNode.removeChild(old[o]);
+ var nar=(b==='n'),W=nar?360:720,L=nar?18:24,R=nar?34:44,FS=nar?12:13;
+ function X(d){return L+Math.max(0,Math.min(d,45))*(W-L-R)/45}
+ var ROWS=nar?[{ly:36,by:42},{ly:88,by:94},{ly:140,by:146},{ly:228,by:234}]:[{ly:36,by:42},{ly:88,by:94},{ly:140,by:146},{ly:214,by:220}];
+ var QY=nar?[182,198]:[184],NOTEY=nar?268:0,AX=nar?284:258,H=nar?314:288;
+ var svg=svgRoot(clkHost,W,H,CLK_ARIA,'clksvg'+(nar?' nar':''));
+ /* axis */
+ sv('line',{x1:X(0),y1:AX,x2:X(45),y2:AX,'class':'axis'},svg);
+ for(var d=0;d<=45;d+=5)sv('line',{x1:X(d),y1:AX,x2:X(d),y2:AX+5,'class':'axis'},svg);
+ [0,10,20,30,40].forEach(function(n){svt(svg,X(n),AX+20,String(n),'rtx axl','middle')});
+ svt(svg,X(45),AX-8,'DAY','rtx axl','end');
+ /* the moving day line */
+ var today=sv('line',{x1:X(0),y1:22,x2:X(0),y2:AX,'class':'ctoday'},svg);
+ /* four rows */
+ var rows=CLK.map(function(c,i){
+  var r=ROWS[i],soft=c.end<0,endX=soft?X(45):X(c.end);
+  svt(svg,L,r.ly,c.name,'rtx clab');
+  var g=sv('g',null,svg);
+  sv('rect',{x:X(0),y:r.by,width:endX-X(0),height:20,rx:4,'class':'cbar'+(soft?' soft':'')},g);
+  var fill=sv('rect',{x:X(0),y:r.by,width:0,height:20,rx:4,'class':'cfill'},g);
+  var endT=null,mark=null,q=[];
+  if(soft){
+   sv('path',{d:'M'+(endX+2)+' '+(r.by+1)+' L'+(endX+13)+' '+(r.by+10)+' L'+(endX+2)+' '+(r.by+19)+' Z','class':'carr'},g);
+   sv('line',{x1:X(30),y1:r.by+20,x2:X(30),y2:QY[0]-12,'class':'cqstem'},g);
+   mark=sv('path',{d:diamond(X(30),r.by+10,7),'class':'cmark'},g);
+   if(nar){q=[svt(svg,X(45),QY[0],'would an examiner call','rtx cq','end'),svt(svg,X(45),QY[1],'this delay reasonable?','rtx cq','end')]}
+   else q=[svt(svg,X(45),QY[0],'would an examiner call this delay reasonable?','rtx cq','end')];
+  }else endT=sv('line',{x1:endX,y1:r.by-4,x2:endX,y2:r.by+24,'class':'cend'},g);
+  var inside=(endX-X(0))>=150;
+  var stat=svt(svg,inside?X(0)+6:endX+8,r.by+14,'','rtx cstat');
+  if(i===3){if(nar)svt(svg,L,NOTEY,'MARYLAND 45 · TEXAS 60','rtx cnote');else svt(svg,endX+8,r.by+14,'MARYLAND 45 · TEXAS 60','rtx cnote')}
+  return {c:c,fill:fill,endT:endT,stat:stat,mark:mark,q:q,endX:endX};
+ });
+ var tlab=svt(svg,X(0),14,'DAY 0','rtx ctlab','middle');
+ CK={svg:svg,nar:nar,W:W,L:L,FS:FS,X:X,today:today,tlab:tlab,rows:rows};
+ clkPaint(false);
+}
+function clkStat(c,d){
+ if(c.end<0)return d>=30?'? DAY '+d+' AND COUNTING':'DAY '+d+' · NO HARD END';
+ if(d>=c.end)return '✗ RAN OUT · DAY '+c.end;
+ var left=c.end-d;return left+(left===1?' DAY LEFT':' DAYS LEFT');
+}
+function clkPaint(withOut){
+ var d=ckDay;
+ if(CK){
+  var X=CK.X;
+  sN(CK.today,'x1',X(d));sN(CK.today,'x2',X(d));
+  var est=6*CK.FS*0.62,cx=Math.max(CK.L+est/2,Math.min(CK.W-est/2-2,X(d)));
+  sN(CK.tlab,'x',cx);txt(CK.tlab,'DAY '+d);
+  CK.rows.forEach(function(r){
+   var c=r.c,soft=c.end<0,out=!soft&&d>=c.end,ask=soft&&d>=30;
+   sN(r.fill,'width',soft?X(d)-X(0):X(Math.min(d,c.end))-X(0));
+   r.fill.setAttribute('class','cfill'+(out?' out':'')+(ask?' ask':''));
+   r.stat.setAttribute('class','rtx cstat'+(out?' out':'')+(ask?' ask':''));
+   txt(r.stat,clkStat(c,d));
+   if(r.endT)r.endT.setAttribute('class','cend'+(out?' out':''));
+   if(r.mark)r.mark.setAttribute('class','cmark'+(ask?' on':''));
+   r.q.forEach(function(t){t.setAttribute('class','rtx cq'+(ask?' on':''))});
+  });
+  var gone=[];
+  if(d>=3)gone.push('the vendor’s 72 hours');
+  if(d>=30)gone.push('your firm’s 30 days and the 30-day states');
+  if(d>=45)gone.push('Maryland’s 45');
+  CK.svg.setAttribute('aria-label',CLK_ARIA+' Day '+d+'. '+(gone.length?'Run out: '+gone.join('; ')+'.':'Nothing has run out.')+(d>=30?' Illinois: no hard end; would an examiner call this delay reasonable?':''));
+ }
+ if(withOut&&clkOut){
+  clkOut.className='mpanel'+(d>0?' has':'');
+  clkOut.innerHTML=clkText(d);
+ }
+}
+function clkText(d){
+ var ran=[],run=[];
+ if(d>=3)ran.push('<span class="rfl"><b class="flag">✗ Ran out on day 3: the vendor’s 72 hours to tell your firm.</b> Miss it and your firm still owes the client notice; contracting the task out does not move it <span class="conf h" data-src="src-regsp">H</span>.</span>');
+ else run.push('the vendor’s 72 hours (ends day 3)');
+ if(d>=30)ran.push('<span class="rfl"><b class="flag">✗ Ran out on day 30: your firm’s 30 days to tell clients.</b> Miss it and there is no cover: an inconclusive investigation does not excuse the notice, and the firm keeps a record of the investigation and its basis <span class="conf h" data-src="src-regsp">H</span>.</span>');
+ else run.push('your firm’s 30 days (ends day 30; sooner if practicable)');
+ if(d>=30)ran.push('<span class="rfl"><b class="flag">✗ Ran out on day 30: Colorado, Florida and Washington.</b> Maryland allows 45'+(d>=45?', gone today too':'')+'; Texas 60 <span class="conf m" data-src="src-state-breach">M</span>.</span>');
+ else run.push('the 30-day states (Maryland 45, Texas 60)');
+ var n=ran.length,h='<span class="hd">Day '+d+' since awareness · '+(n?n+' of 3 hard clocks '+(n===1?'has':'have')+' run out':'nothing has run out')+'</span>';
+ h+=ran.join('');
+ if(run.length)h+='<span class="rfl"><b class="good">✓ Still running:</b> '+run.join('; ')+'.</span>';
+ h+=d>=30?'<span class="rfl"><b class="mb">? Illinois has no hard end.</b> Would an examiner call this delay reasonable? The Act says the most expedient time possible and without unreasonable delay; above 500 Illinois residents, the Attorney General is told too <span class="conf h" data-src="src-il-pipa">H</span>.</span>'
+  :'<span class="rfl"><b>· Illinois: no hard end.</b> The most expedient time possible and without unreasonable delay; above 500 Illinois residents, the Attorney General is told too <span class="conf h" data-src="src-il-pipa">H</span>.</span>';
+ return h;
+}
+function clkSync(){
+ if(clkRng){clkRng.value=String(ckDay);clkRng.setAttribute('aria-valuetext','Day '+ckDay)}
+ if(clkNum)clkNum.textContent='Day '+ckDay;
+}
+function clkGo(target){
+ ensureBucket();
+ if(ctw){ctw.stop();ctw=null}
+ if(!(target>=0&&target<=45))return;
+ var from=ckDay,dd=target-from;
+ if(dd===0){clkSync();clkPaint(true);return}
+ ctw=tween(Math.min(900,150+Math.abs(dd)*16),function(k){ckDay=Math.round(from+dd*k);clkSync();clkPaint(false)},function(){ctw=null;ckDay=target;clkSync();clkPaint(true)});
+}
+if(clkRng){
+ var onRng=function(){
+  if(ctw){ctw.stop();ctw=null}
+  var v=parseInt(clkRng.value,10);if(!(v>=0&&v<=45))v=0;
+  ckDay=v;clkSync();ensureBucket();clkPaint(true);
+ };
+ clkRng.addEventListener('input',onRng);clkRng.addEventListener('change',onRng);
+}
+[].slice.call(document.querySelectorAll('#sRSP .clkjump button[data-day]')).forEach(function(b){
+ b.onclick=function(){clkGo(parseInt(b.getAttribute('data-day'),10))};
+});
+
+/* ---------- Beat 3: two real clocks, dropped on a 0 to 60 day axis against the 30-day line ---------- */
+var caseHost=$('caseFig'),caseOut=$('caseOut'),caseBtns=$('caseBtns');
+var CS=null,csSeen=[false,false],ktw=[null,null];
+var CASES=[
+ {name:'EQUIFAX, 2017',days:40,late:true,knew:'29 July 2017',told:'7 September 2017',
+  fol:'About 147 million people. A settlement of at least $575 million, up to $700 million, with the FTC, the CFPB and the states in July 2019; GAO and congressional reports followed.'},
+ {name:'CAPITAL ONE, 2019',days:10,late:false,knew:'19 July 2019 (a tip came on 17 July)',told:'29 July 2019',
+  fol:'About 100 million US and 6 million Canadian applicants. The FBI was engaged on day 1. An $80 million OCC penalty in August 2020, and a $190 million class settlement.'}];
+var CASE_ARIA='Two case bars on a day axis from 0 to 60 against a dashed line at 30 days. Equifax, 2017: 40 days, late. Capital One, 2019: 10 days, in time.';
+function caseBuild(b){
+ if(!caseHost)return;
+ for(var j=0;j<2;j++)if(ktw[j]){ktw[j].stop();ktw[j]=null}
+ var old=caseHost.querySelectorAll('svg');for(var o=0;o<old.length;o++)old[o].parentNode.removeChild(old[o]);
+ var nar=(b==='n'),W=nar?360:720,L=nar?18:24,R=nar?16:24;
+ function X(d){return L+Math.max(0,Math.min(d,60))*(W-L-R)/60}
+ var ROWS=[{ly:30,by:38},{ly:96,by:104}],AX=150,H=180;
+ var svg=svgRoot(caseHost,W,H,CASE_ARIA,'casesvg'+(nar?' nar':''));
+ var defs=sv('defs',null,svg);
+ var p=sv('pattern',{id:'caseHW',patternUnits:'userSpaceOnUse',width:6,height:6,patternTransform:'rotate(45)'},defs);
+ sv('rect',{x:0,y:0,width:6,height:6,'class':'hwb'},p);sv('line',{x1:3,y1:0,x2:3,y2:6,'class':'hwl'},p);
+ sv('line',{x1:X(0),y1:AX,x2:X(60),y2:AX,'class':'axis'},svg);
+ for(var d=0;d<=60;d+=5)sv('line',{x1:X(d),y1:AX,x2:X(d),y2:AX+5,'class':'axis'},svg);
+ [0,10,20,30,40,50].forEach(function(n){svt(svg,X(n),AX+20,String(n),'rtx axl','middle')});
+ svt(svg,X(60),AX-8,'DAY','rtx axl','end');
+ sv('line',{x1:X(30),y1:14,x2:X(30),y2:AX,'class':'k30'},svg);
+ svt(svg,X(30)+6,AX-8,'THE 30-DAY LINE','rtx k30l');
+ var rows=CASES.map(function(c,i){
+  var r=ROWS[i];
+  svt(svg,L,r.ly,c.name,'rtx klab');
+  var ph=sv('g',{'class':'kph'},svg);
+  sv('rect',{x:X(0),y:r.by,width:X(60)-X(0),height:22,rx:4},ph);svt(ph,X(0)+8,r.by+15,'CLICK THE CASE TO DROP ITS BAR','rtx');
+  var bar=sv('rect',{x:X(0),y:r.by,width:0,height:22,rx:4,'class':'kbar'+(c.late?' late':'')},svg);
+  var over=sv('rect',{x:X(30),y:r.by,width:0,height:22,fill:'url(#caseHW)','class':'kover'},svg);
+  var days=svt(svg,X(0)+8,r.by+16,'','rtx kdays'+(c.late?' late':' ok'));
+  var sw=Math.round((c.late?4:7)*10.5+22);
+  var so=sv('g',{transform:'translate('+(W-R-52)+' '+(r.ly-5)+') rotate(-3)'},svg);
+  var stamp=sv('g',{'class':'kstamp'+(c.late?' late':' ok')},so);
+  sv('rect',{x:-sw/2,y:-13,width:sw,height:26,rx:4},stamp);
+  svt(stamp,0,5,c.late?'LATE':'IN TIME','rtx','middle');
+  return {c:c,ph:ph,bar:bar,over:over,days:days,stamp:stamp};
+ });
+ CS={svg:svg,nar:nar,X:X,rows:rows};
+ for(var i=0;i<2;i++)if(csSeen[i])caseDrop(i,false);
+ caseAria();
+}
+function caseAria(){
+ if(!CS)return;
+ var a=CASE_ARIA;
+ if(csSeen[0])a+=' Equifax bar shown: day 0 to day 40, 10 days past the line, stamped late.';
+ if(csSeen[1])a+=' Capital One bar shown: day 0 to day 10, 20 days before the line, stamped in time.';
+ CS.svg.setAttribute('aria-label',a);
+}
+function caseDrop(i,animate){
+ if(!CS)return;
+ var c=CASES[i],r=CS.rows[i],X=CS.X,target=X(c.days)-X(0);
+ if(ktw[i]){ktw[i].stop();ktw[i]=null}
+ tg(r.ph,'gone',true);tg(r.stamp,'on',false);tg(r.days,'vis',false);txt(r.days,'');
+ function step(k){var w=target*k;sN(r.bar,'width',w);sN(r.over,'width',c.late?Math.max(0,X(0)+w-X(30)):0)}
+ function done(){ktw[i]=null;step(1);txt(r.days,c.days+' DAYS');sN(r.days,'x',X(c.days)+8);tg(r.days,'vis',true);tg(r.stamp,'on',true)}
+ if(!animate){done();return}
+ ktw[i]=tween(650,step,done);
+}
+function paintCaseBtns(){
+ if(!caseBtns)return;
+ [].slice.call(caseBtns.querySelectorAll('button[data-case]')).forEach(function(b){
+  var i=parseInt(b.getAttribute('data-case'),10),on=(i===0||i===1)&&!!csSeen[i];
+  b.setAttribute('aria-pressed',on?'true':'false');
+  tg(b,'late',on&&CASES[i].late);tg(b,'ok',on&&!CASES[i].late);
+ });
+}
+function caseLine(i){
+ var c=CASES[i];
+ return '<span class="rfl"><b class="'+(c.late?'flag':'good')+'">'+(c.late?'✗ LATE · ':'✓ IN TIME · ')+esc(c.name)+': '+c.days+' days.</b> Knew '+esc(c.knew)+'; told the public '+esc(c.told)+'. What followed: '+esc(c.fol)+' '+(i===0?'<span class="conf h" data-src="src-equifax">H</span>':'<span class="conf h" data-src="src-capitalone">H</span>')+'</span>';
+}
+function paintCaseOut(){
+ if(!caseOut)return;
+ if(!(csSeen[0]||csSeen[1])){caseOut.className='mpanel';caseOut.innerHTML='<span class="hd">Two real clocks</span><span class="nil">Click a case. Its bar drops from the day the company knew.</span>';return}
+ var h='<span class="hd">'+(csSeen[0]&&csSeen[1]?'Two real clocks':'One real clock')+' · counted from the day the company knew</span>';
+ for(var i=0;i<2;i++)if(csSeen[i])h+=caseLine(i);
+ h+='<span class="rfl"><b class="mb">Uber, 2016: a year, and a conviction.</b> The security chief paid the hackers $100,000 and hid it; he was convicted of obstruction and misprision in October 2022 <span class="conf h" data-src="src-uber-doj">H</span>.</span>';
+ h+='<span class="rfl">Regulation S-P’s 30 days did not govern these companies. What they show is the principle that does govern you: count from the day you knew.</span>';
+ caseOut.className='mpanel has';caseOut.innerHTML=h;
+}
+if(caseBtns){
+ [].slice.call(caseBtns.querySelectorAll('button[data-case]')).forEach(function(b){
+  b.onclick=function(){
+   var i=parseInt(b.getAttribute('data-case'),10);if(!(i===0||i===1))return;
+   ensureBucket();
+   csSeen[i]=true;paintCaseBtns();caseDrop(i,true);caseAria();paintCaseOut();
+  };
+ });
+}
+
+/* ---------- Shift+U for the new beats: day 45, both bars down, plan filled ---------- */
+REVEALS.push(function(){
+ ensureBucket();
+ if(ctw){ctw.stop();ctw=null}
+ ckDay=45;clkSync();clkPaint(true);
+ csSeen=[true,true];paintCaseBtns();caseDrop(0,false);caseDrop(1,false);caseAria();paintCaseOut();
+ paintPlan();
+});
+
 /* ---------- width buckets: never rebuild inside the observer callback ---------- */
 function later(ms){if(timer)clearTimeout(timer);timer=setTimeout(function(){timer=null;checkBucket()},ms)}
 if(window.ResizeObserver){try{new ResizeObserver(function(){later(60)}).observe(fig)}catch(err){window.addEventListener('resize',function(){later(150)})}}
 else window.addEventListener('resize',function(){later(150)});
 
-build('w');
+build('w');clkBuild('w');caseBuild('w');
 paintChips();paintClause();
 if(window.requestAnimationFrame)window.requestAnimationFrame(function(){checkBucket()});
 })();
@@ -9017,10 +9516,13 @@ try{
     [1,3,4,6,7,9,11,13,14,16,17,18,20,22,23]
   ];
   var LOUT=[
-    '<span class="hd">Detector reads</span><span class="s4stamp ok">✓ Mark found</span> 19 of 24 words got a 1 from Key A. Chance gives about 12.',
-    '<span class="hd">Detector reads</span><span class="s4stamp gap">○ No mark found</span> The same words, yet only 11 of 24: chance. Helpful now gets a 0. To the wrong key it is an ordinary email.',
-    '<span class="hd">Detector reads</span><span class="s4stamp mid">? Uncertain</span> After a heavy rewrite, 15 of 24: the signal fades towards chance. Heavy rewriting or translation can make a mark undetectable <span class="conf h" data-src="src-claude-marks">H</span>.'
+    '<span class="hd">Step 1 · Key A, the key that wrote it</span><span class="s4stamp ok">✓ Mark found</span> Count the 1s: 19 of 24. Chance is about 12. Far above chance, so this key wrote it.',
+    '<span class="hd">Step 2 · Key B, a different key</span><span class="s4stamp gap">○ No mark found</span> Same words, different coins: 11 of 24. That is chance. To the wrong key this is an ordinary email.',
+    '<span class="hd">Step 3 · Key A, after a heavy rewrite</span><span class="s4stamp mid">? Uncertain</span> Right key, new words: 15 of 24. The count sinks towards chance. A heavy rewrite or a translation can make a mark undetectable <span class="conf h" data-src="src-claude-marks">H</span>.'
   ];
+  var LDONE='<br><span class="good">You will never hold the key: only organisations eligible under EU law can run this check <span class="conf h" data-src="src-claude-marks">H</span>.</span>';
+  var STEP=[$('tsStep1'),$('tsStep2'),$('tsStep3')],ZONE={};
+  (function(){var z=document.querySelector('#sW1 .tsmzone');if(!z)return;ZONE.no=z.querySelector('.z0');ZONE.mid=z.querySelector('.z1');ZONE.ok=z.querySelector('.z2')})();
   function verdict(n){return n>=18?'ok':(n>=14?'mid':'no')}
   /* every reading stays pinned under the bar, so 19 and 11 on the same words sit side by side [NEW] */
   var pins=$('tsPins'),PIN=[],seen={};
@@ -9048,15 +9550,91 @@ try{
       s.className='tw '+(set[q]?'hit':'miss');
       if(changed&&!reduced()){void s.offsetWidth;s.classList.add('swap')}
     });
-    var c=HITS[n].length;
-    if(fill){fill.style.width=(c/24*100).toFixed(3)+'%';fill.className=verdict(c)}
+    var c=HITS[n].length,v=verdict(c);
+    if(fill){fill.style.width=(c/24*100).toFixed(3)+'%';fill.className=v}
     var cnt=$('tsCount');if(cnt)cnt.textContent=c+' of 24';
     seen[n]=1;
     PIN.forEach(function(e,q){cls(e,'on',!!seen[q]);cls(e,'cur',q===n)});if(pins)cls(pins,'on',true);
+    STEP.forEach(function(e,q){if(!e)return;cls(e,'on',!!seen[q]);cls(e,'cur',q===n)});
+    ['no','mid','ok'].forEach(function(k){if(ZONE[k])cls(ZONE[k],'cur',k===v)});
     LB.forEach(function(b,q){if(!b)return;cls(b,'act',q===n);b.setAttribute('aria-pressed',q===n?'true':'false')});
-    if(lout){lout.className='mpanel has';lout.innerHTML=LOUT[n]}
+    var pressed=(seen[0]?1:0)+(seen[1]?1:0)+(seen[2]?1:0);
+    if(lout){lout.className='mpanel has';lout.innerHTML=LOUT[n]+(pressed<3?'<br><span class="kw">Pressed '+pressed+' of 3.'+(n<2&&!seen[n+1]?' Now press '+(n+2)+'.':'')+'</span>':LDONE)}
   }
   LB.forEach(function(b,q){if(b)b.onclick=function(){lamp(q)}});
+
+  /* ---------- Beat 3: one chart image, two kinds of mark ----------
+     The picture is a bar chart drawn once. The pixel mark is a dot pattern over
+     every pixel; the label is a tag pinned to the frame edge. Crop shades what
+     is cut away, compress lays blocks over the picture, screenshot draws a new
+     file around the old one: the dots stay in all three, the tag survives only
+     while the file keeps its metadata. */
+  var imHost=$('imgFig'),imOut=$('imgOut'),imPix=$('imPix'),imLab=$('imLab');
+  var IMB={crop:$('imCrop'),shot:$('imShot'),comp:$('imComp')};
+  var im={pix:true,lab:true,atk:'none',used:false},imRender=null;
+  if(imHost&&imOut){
+    var coName='';try{coName=COLEv('companyName')}catch(e){}
+    if(!coName)coName='Cole Precision Components';
+    var isvg=svgRoot(imHost,380,250,'A chart image inside a file frame. The pixel mark shows as faint dots across the picture. The label shows as a signed tag pinned to the frame edge. Crop, screenshot and compress change the picture, and the readout says which mark survives.','imfig');
+    var idefs=sv('defs',null,isvg);
+    var pat=sv('pattern',{id:'sW1dots',width:14,height:14,patternUnits:'userSpaceOnUse'},idefs);
+    sv('circle',{cx:4,cy:4,r:1.6,'class':'imdot'},pat);
+    sv('circle',{cx:11,cy:11,r:1.6,'class':'imdot'},pat);
+    var pb=sv('pattern',{id:'sW1blocks',width:16,height:16,patternUnits:'userSpaceOnUse'},idefs);
+    sv('rect',{x:0,y:0,width:8,height:8,'class':'imblk'},pb);
+    sv('rect',{x:8,y:8,width:8,height:8,'class':'imblk'},pb);
+    var shot=sv('rect',{x:3,y:8,width:374,height:236,rx:11,'class':'imshot'},isvg);
+    sv('rect',{x:10,y:24,width:360,height:206,rx:8,'class':'imframe'},isvg);
+    var imFile=svt(isvg,12,17,'image file','imfile','start');
+    var pic=sv('g',{'class':'impic'},isvg);
+    svt(pic,28,52,coName,'imtitle','start');
+    svt(pic,28,68,'fastener orders, four quarters','imsub','start');
+    sv('line',{x1:40,y1:200,x2:340,y2:200,'class':'imaxis'},pic);
+    var BH=[70,96,84,120],BX=[60,130,200,270];
+    for(i=0;i<4;i++){sv('rect',{x:BX[i],y:200-BH[i],width:44,height:BH[i],rx:3,'class':'imbar'},pic);svt(pic,BX[i]+22,217,'Q'+(i+1),'imq','middle')}
+    var blocks=sv('rect',{x:12,y:26,width:356,height:202,rx:7,fill:'url(#sW1blocks)','class':'imblocks'},isvg);
+    var dots=sv('rect',{x:12,y:26,width:356,height:202,rx:7,fill:'url(#sW1dots)','class':'imdots'},isvg);
+    var crop=sv('g',{'class':'imcrop'},isvg);
+    [[12,26,356,44],[12,70,88,130],[276,70,92,130],[12,200,356,28]].forEach(function(r){sv('rect',{x:r[0],y:r[1],width:r[2],height:r[3],'class':'sh'},crop)});
+    sv('rect',{x:100,y:70,width:176,height:130,'class':'win'},crop);
+    svt(crop,188,243,'the part the crop keeps','imq','middle');
+    var tag=sv('g',{'class':'imtag'},isvg);
+    sv('rect',{x:206,y:13,width:164,height:22,rx:5},tag);
+    svt(tag,288,28,'✓ Made with AI · signed','','middle');
+    var ghost=sv('g',{'class':'imghost'},isvg);
+    sv('rect',{x:206,y:13,width:164,height:22,rx:5},ghost);
+    svt(ghost,288,28,'✗ no label','','middle');
+    var imText=function(){
+      var a=im.atk,h='<span class="hd">'+(a==='none'?'Two kinds of mark':(a==='crop'?'After a crop':(a==='shot'?'After a screenshot':'After compression')))+'</span>';
+      if(!im.pix)h+='<span class="imrow"><span class="s4stamp gap">○ pixel mark</span> Off: nothing hidden in the pixels.</span>';
+      else if(a==='none')h+='<span class="imrow"><span class="s4stamp ok">✓ pixel mark</span> On: a change to the pixels that the eye cannot see, the way Google&rsquo;s SynthID marks an image <span class="conf m" data-src="src-synthid">M</span>.</span>';
+      else if(a==='shot')h+='<span class="imrow"><span class="s4stamp ok">✓ pixel mark</span> Still there: a screenshot copies the pixels, and the mark is in the pixels <span class="conf m" data-src="src-synthid">M</span>.</span>';
+      else h+='<span class="imrow"><span class="s4stamp ok">✓ pixel mark</span> Still there: it is in the pixels, and the pixels remain <span class="conf m" data-src="src-synthid">M</span>.</span>';
+      if(!im.lab)h+='<span class="imrow"><span class="s4stamp gap">○ label</span> Off: no signed metadata on the file.</span>';
+      else if(a==='none')h+='<span class="imrow"><span class="s4stamp ok">✓ label</span> On: files Claude makes carry a signed Content Credential, and the free Claude Content Checker at claude.com/check-content checks a file, not text <span class="conf h" data-src="src-claude-marks">H</span>.</span>';
+      else if(a==='shot')h+='<span class="imrow"><span class="s4stamp bad">✗ label</span> Gone: a screenshot is a new file of pixels only, and the metadata stays behind <span class="conf h" data-src="src-claude-marks">H</span>.</span>';
+      else h+='<span class="imrow"><span class="s4stamp mid">? label</span> Kept only if the app keeps the metadata: re-saving or a change of format strips it <span class="conf h" data-src="src-claude-marks">H</span>.</span>';
+      if(im.pix&&im.lab&&a==='shot')h+='<span class="imrow good">One mark lives in the pixels, the other in the file. Only the pixel mark outlives a screenshot.</span>';
+      else if(a==='none')h+='<span class="imrow kw">Now press Crop, Screenshot or Compress.</span>';
+      return h;
+    };
+    imRender=function(){
+      var a=im.atk;
+      cls(dots,'on',im.pix);
+      cls(crop,'on',a==='crop');cls(blocks,'on',a==='comp');cls(shot,'on',a==='shot');
+      cls(tag,'off',!(im.lab&&a!=='shot'));cls(tag,'kept',im.lab&&(a==='crop'||a==='comp'));
+      cls(ghost,'on',im.lab&&a==='shot');
+      imFile.textContent=a==='shot'?'new image file: pixels only':(a==='crop'?'image file, cropped':(a==='comp'?'image file, compressed':'image file'));
+      if(imPix){cls(imPix,'act',im.pix);imPix.setAttribute('aria-pressed',im.pix?'true':'false')}
+      if(imLab){cls(imLab,'act',im.lab);imLab.setAttribute('aria-pressed',im.lab?'true':'false')}
+      ['crop','shot','comp'].forEach(function(k){var b=IMB[k];if(!b)return;cls(b,'act',a===k);b.setAttribute('aria-pressed',a===k?'true':'false')});
+      if(im.used){imOut.className='mpanel has';imOut.innerHTML=imText()}
+    };
+    if(imPix)imPix.onclick=function(){im.pix=!im.pix;im.used=true;imRender()};
+    if(imLab)imLab.onclick=function(){im.lab=!im.lab;im.used=true;imRender()};
+    ['crop','shot','comp'].forEach(function(k){if(IMB[k])IMB[k].onclick=function(){im.atk=(im.atk===k?'none':k);im.used=true;imRender()}});
+    imRender();
+  }
 
   /* ---------- Shift+U: jump to the end state ---------- */
   REVEALS.push(function(){
@@ -9068,7 +9646,8 @@ try{
     blank.textContent=TOK[res.champ].t;
     out.className='mpanel has';out.innerHTML=readout();
     show(last());finish();
-    if(lit<0)lamp(0);
+    [0,1,2].forEach(function(q){if(!seen[q])lamp(q)});
+    if(imRender){im.pix=true;im.lab=true;im.atk='shot';im.used=true;imRender()}
   });
 })();
 }catch(err){try{console.warn("section sW1 failed:",err&&err.message)}catch(_){}}
