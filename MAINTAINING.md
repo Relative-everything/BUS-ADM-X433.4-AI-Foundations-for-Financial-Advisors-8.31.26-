@@ -156,13 +156,15 @@ done
 grep -l 'generativelanguage.googleapis.com' index.html session-*/index.html \
   | grep -Ev 'session-(0\.1|1|4)/index.html'                  # must be empty
 # the three shared console blocks must stay byte-identical across lessons
-for m in 'LMSTYLE:BEGIN' 'LMBOX:BEGIN' 'LM:BEGIN'; do
-  sed -n "/$m/,/\/\* *LM.*:END\|LMBOX:END/p" session-0.1/index.html | md5sum
-  sed -n "/$m/,/\/\* *LM.*:END\|LMBOX:END/p" session-1/index.html   | md5sum
+# (each fence is opened and closed by its own versioned marker; the earlier
+# form of this check matched no closing line and ran to the end of the file)
+for m in 'LMSTYLE' 'LMBOX' 'LM'; do
+  sed -n "/$m:BEGIN v1/,/$m:END v1/p" session-0.1/index.html | md5sum
+  sed -n "/$m:BEGIN v1/,/$m:END v1/p" session-1/index.html   | md5sum
 done                                                          # pairs must match
 # session-4 shares the style and the call layer, not the box
-for m in 'LMSTYLE:BEGIN' 'LM:BEGIN'; do
-  sed -n "/$m/,/\/\* *LM.*:END/p" session-4/index.html | md5sum
+for m in 'LMSTYLE' 'LM'; do
+  sed -n "/$m:BEGIN v1/,/$m:END v1/p" session-4/index.html | md5sum
 done                                                          # must equal the pairs above
 grep -H '<title>' index.html session-*/index.html            # hub and lessons agree
 ```

@@ -446,6 +446,39 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 .depthbar i{flex:1;background:var(--on);border-radius:2px 2px 0 0;min-height:2px;opacity:.75}
 .depthbar i.neg{background:var(--warn)}
 /* STYLE:END */
+/* LMSTYLE:BEGIN v1 managed-by=hand keep byte-identical across lessons.
+   Live model console. Optional, off by default, no storage of any kind.
+   Placed after the restyle fence so the sweep never touches it. */
+.lm{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 30px}
+.lm.on{border-color:var(--on)}
+.lmhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.lmhead .plab{margin:0}
+.lmstat{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-right:auto}
+.lmstat.ok{color:var(--on)}
+.lmstat.bad{color:var(--warn)}
+.lmstat.wait{color:var(--gold)}
+.lmnote{font-size:13.5px;line-height:1.66;color:var(--muted);margin:13px 0 0}
+.lmnote b{color:var(--ink);font-weight:600}
+.lmnote.warn{color:var(--warn)}
+.lmnote.warn b{color:var(--warn)}
+.lmkey{width:100%;margin-top:6px;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.6;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:11px 13px}
+.lmkey:focus{outline:none;border-color:var(--on)}
+.lmsel{padding:7px 9px;border:1.5px solid var(--line);border-radius:7px;background:var(--card);color:var(--ink);font-family:"JetBrains Mono",monospace;font-size:12px}
+.lmdiv{border-top:1px solid var(--line);margin:18px 0 0;padding-top:16px}
+.lmtag{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);margin-left:7px}
+.lmtag.cap{color:var(--muted)}
+.lmusage{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;color:var(--muted);margin-top:9px;display:block}
+.lmout{white-space:pre-wrap}
+@media print{#lmbox{display:none}}
+/* LMSTYLE:END v1 */
+/* Session 4 console extras, page-specific: the request pane and the §03 pointer */
+.lmreq{margin:12px 0 0;padding:12px 14px;border-radius:9px;background:var(--off-bg);font:12.5px/1.55 "JetBrains Mono",monospace;white-space:pre-wrap;word-break:break-word;color:var(--ink)}
+.lmreq[hidden]{display:none}
+#lmbox textarea{width:100%;min-height:110px;padding:11px 13px;border:1.5px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink);font:14px/1.6 "Bricolage Grotesque",sans-serif;resize:vertical}
+#lmbox textarea:focus{outline:none;border-color:var(--on)}
+#lmbox .btn.act{background:var(--on);color:#fff;border-color:var(--on)}
+.s3api{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+.s3api .hint{max-width:none;margin-top:4px}
 /* ===== generated case block, injected by scripts/inject-case.mjs =====
    Layout only. Every figure inside the sentinels comes from CASE.md through
    scripts/case-facts.json; nothing here is a case fact. */
@@ -3339,6 +3372,77 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
      the same content in its own tab. Edit scripts/inject-case.mjs. -->
 <div class="wrap">
 
+<!-- LMBOX-S4:BEGIN v1 Session 4's own copy of the console box. The call layer
+     and the style are the shared v1 fences, byte identical with Sessions 0.1
+     and 1; only this markup differs, because this page teaches the request
+     itself. The element ids the shared call layer binds (lmStat, lmToggle,
+     lmBody, lmKey, lmConnect, lmForget, lmModel, lmCount, lmMsg, lmPrompt,
+     lmSend, lmClear, lmFreeOut, lmFreeUse) are the same. No key is stored
+     anywhere: one JS variable, gone on reload. -->
+<div id="lmbox" class="lm">
+  <div class="lmhead">
+    <span class="plab">Live API, optional</span>
+    <span class="lmstat" id="lmStat">Not connected</span>
+    <button class="btn ghost mini" id="lmToggle" aria-expanded="false" aria-controls="lmBody">Set up</button>
+  </div>
+
+  <div class="hidden" id="lmBody">
+    <p class="lmnote">Plan C on the map in &sect;03 is the API: a key, one request, one reply,
+    and nothing else. Every exercise on this page works without a key. Connect one and
+    this box shows the exact request that leaves your laptop, sends it, and counts the
+    tokens that come back.</p>
+
+    <p class="lmnote"><b>Check the page before you paste anything into it.</b>
+    This file is static and its source is readable: View Source, or the Network tab in
+    your browser&rsquo;s developer tools. The only address it ever sends to is
+    <span class="mono">generativelanguage.googleapis.com</span>. Your key is held in one
+    JavaScript variable, is never written to storage, never appears in a link, and is
+    gone the moment you reload. Checking that yourself, rather than taking this
+    paragraph&rsquo;s word for it, is the habit this session is about.</p>
+
+    <p class="lmnote warn"><b>A free key is plan A, not plan C.</b> Google&rsquo;s terms
+    for the free tier let it use what you submit to improve its products, and let human
+    reviewers read it <span class="conf m" data-src="src-gemini-api-terms">M</span>. Only a paid key is the contract tier; and the free quota is small and must be checked in your own console <span class="conf l" data-src="src-gemini-ratelimits">L</span>. Send nothing here that is
+    not already public or synthetic: the Cole prompts on this page are both.</p>
+
+    <label class="plab" for="lmKey" style="margin-top:16px">Gemini API key, free, from <span class="mono">aistudio.google.com/apikey</span></label>
+    <input type="password" id="lmKey" class="lmkey" autocomplete="off" spellcheck="false" autocapitalize="off" autocorrect="off" placeholder="Paste the key here. It is not saved.">
+
+    <div class="row" style="margin-top:12px">
+      <button class="btn mini" id="lmConnect">Connect</button>
+      <button class="btn sel mini" id="lmForget">Forget the key</button>
+      <select id="lmModel" class="lmsel" aria-label="Model"><option value="gemini-2.5-flash">gemini-2.5-flash</option></select>
+      <span class="mono dim" style="font-size:11.5px" id="lmCount"></span>
+    </div>
+
+    <div class="readout" id="lmMsg" style="margin-top:14px" aria-live="polite"><span class="nil">No key connected. The request below can still be read; nothing is sent.</span></div>
+
+    <div class="lmdiv">
+      <span class="plab">One request, and everything in it</span>
+      <p class="lmnote" style="margin-top:0">The prompt starts as the clean Prompt D from
+      &sect;02, synthetic and already on this page. Press 1 to see the whole request, then,
+      with a key connected, 2 to send it.</p>
+      <label class="plab" for="lmPrompt" style="margin-top:12px">Prompt</label>
+      <textarea id="lmPrompt" placeholder="Anything the room can see on screen."></textarea>
+      <div class="row" style="margin-top:12px">
+        <button class="btn sel mini" id="lmShowReq" type="button" aria-pressed="false">1 &middot; See the request</button>
+        <button class="btn mini hidden" id="lmSend" data-lm-live>2 &middot; Send</button>
+        <button class="btn sel mini" id="lmClear">Clear</button>
+        <span class="mono dim" style="font-size:11.5px">Temperature 1.0 &middot; up to 700 tokens back</span>
+      </div>
+      <pre id="lmReq" class="lmreq" aria-live="polite" hidden></pre>
+      <div class="lmdiv hidden" data-lm-live>
+        <span class="plab">The reply</span>
+        <div class="sampler lmout" id="lmFreeOut" style="margin-top:8px;font-size:13.5px;line-height:1.75"><span class="dim">Nothing sent yet.</span></div>
+        <span class="lmusage" id="lmFreeUse"></span>
+        <span class="lmusage" id="lmCost"></span>
+        <span class="lmusage">Claude API prices from claude.com/pricing <span class="conf h" data-src="src-claude-pricing">H</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- LMBOX-S4:END v1 -->
+
 <!-- ============ 0 ============ -->
 <section class="slide" id="s0" data-nav="Bridge + frame">
   <div class="eyebrow"><span>BUS ADM X433.4 &middot; Session 4</span><span class="mins">6 min</span></div>
@@ -4281,6 +4385,159 @@ DECISION: (you fill in, after reading: what you did
 "use strict";
 var $=function(id){return document.getElementById(id)};
 var esc=function(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
+/* the two helpers the shared console block expects, as Sessions 0.1 and 1 define them */
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+function all(s,r){return [].slice.call((r||document).querySelectorAll(s))}
+
+/* ===== LM:BEGIN v1 =====================================================
+   Live model console. Keep byte-identical across lessons; bump the version
+   in this fence on any change and diff the two blocks before pushing.
+
+   Contract, and the reason each line is the way it is:
+     - The key lives in LM.key and nowhere else. No storage, no URL, never
+       written into the DOM. The storage grep in MAINTAINING.md is the
+       regression test for this.
+     - Every caller passes a captured fallback. A failed or absent live call
+       must leave the lesson exactly as it runs with no key.
+     - Plain ES5, one exception: fetch returns a promise, so .then() chains
+       are used. No arrow functions, no const/let, no template literals.
+   ====================================================================== */
+var LMBASE='https://generativelanguage.googleapis.com/v1beta';
+var LM={key:'',model:'gemini-2.5-flash',on:false,calls:0,cap:40};
+
+function lmEsc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+
+function lmStat(t,c){var n=$('lmStat');if(n){n.textContent=t;n.className='lmstat '+(c||'')}
+  var b=$('lmbox');if(b)b.classList.toggle('on',!!LM.on)}
+
+function lmMsg(t,bad){var n=$('lmMsg');if(!n)return;
+  n.className='readout'+(bad?' bad':' on');n.innerHTML=t}
+
+function lmCount(){var n=$('lmCount');if(n)n.textContent=LM.calls?LM.calls+' / '+LM.cap+' calls this page':''}
+
+function lmLive(on){all('[data-lm-live]').forEach(function(n){n.classList.toggle('hidden',!on)})}
+
+function lmErr(code,body){
+  if(code===400&&/API_KEY_INVALID/.test(body))
+    return'That key was rejected. Check you copied the whole string, with no trailing space.';
+  if(code===400)return'Google rejected the request (400). Check the model selection.';
+  if(code===403)
+    return'Key refused. Either the Generative Language API is not enabled on it, or the key is restricted to a different site.';
+  if(code===404)return'That model is not available to this key. Pick another from the list.';
+  if(code===429)
+    return'Rate limit or daily quota reached. The captured output is in use and the lesson continues at full pace.';
+  if(code>=500)return'Google returned a server error. Try once more, then use the capture.';
+  return'Request failed ('+code+'). The captured output is in use.';
+}
+
+/* One call site for the whole page. cb(err,res); err is a display string. */
+function lmCall(prompt,opts,cb){
+  if(!LM.on){cb('No key connected.',null);return}
+  if(LM.calls>=LM.cap){cb('You have used this page\u2019s '+LM.cap+'-call ceiling. Reload to reset it.',null);return}
+  LM.calls++;lmCount();
+  opts=opts||{};
+  var body={contents:[{parts:[{text:prompt}]}]},gc={};
+  if(opts.temperature!=null)gc.temperature=opts.temperature;
+  if(opts.topP!=null)gc.topP=opts.topP;
+  if(opts.topK!=null)gc.topK=opts.topK;
+  gc.maxOutputTokens=opts.maxTokens||512;
+  body.generationConfig=gc;
+  if(opts.system)body.systemInstruction={parts:[{text:opts.system}]};
+  var ctl=('AbortController' in window)?new AbortController():null;
+  var timer=setTimeout(function(){if(ctl)ctl.abort()},opts.timeout||30000);
+  fetch(LMBASE+'/models/'+encodeURIComponent(opts.model||LM.model)+':generateContent',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-goog-api-key':LM.key},
+      body:JSON.stringify(body),
+      signal:ctl?ctl.signal:undefined})
+    .then(function(r){return r.text().then(function(tx){return{code:r.status,tx:tx}})})
+    .then(function(o){clearTimeout(timer);
+      if(o.code!==200){cb(lmErr(o.code,o.tx),null);return}
+      var j;try{j=JSON.parse(o.tx)}catch(e){cb('Unreadable response from Google.',null);return}
+      var c=j.candidates&&j.candidates[0];
+      var parts=(c&&c.content&&c.content.parts)||[];
+      var txt=parts.map(function(p){return p.text||''}).join('').replace(/^\s+|\s+$/g,'');
+      if(!txt){cb('The model returned no text (finish reason: '+((c&&c.finishReason)||'unknown')+').',null);return}
+      cb(null,{text:txt,usage:j.usageMetadata||null,finish:(c&&c.finishReason)||''})})
+    .catch(function(e){clearTimeout(timer);
+      cb(e&&e.name==='AbortError'
+        ?'Timed out after 30 seconds. The captured output is in use.'
+        :'Could not reach Google \u2014 offline, or the network blocks the endpoint.',null)});
+}
+
+/* Validate against the model list rather than a generation call: it costs no
+   generation quota and returns what this key can actually reach, so a model
+   rename upstream does not break the lesson mid-class. */
+function lmConnect(){
+  var f=$('lmKey'),k=f?f.value.replace(/^\s+|\s+$/g,''):'';
+  if(!k){lmStat('Not connected','bad');lmMsg('Paste a key first.',true);return}
+  lmStat('Checking the key\u2026','wait');
+  fetch(LMBASE+'/models',{headers:{'x-goog-api-key':k}})
+    .then(function(r){return r.text().then(function(tx){return{code:r.status,tx:tx}})})
+    .then(function(o){
+      if(o.code!==200){LM.on=false;lmStat('Not connected','bad');lmMsg(lmErr(o.code,o.tx),true);lmLive(false);return}
+      var j={},names=[];try{j=JSON.parse(o.tx)}catch(e){}
+      (j.models||[]).forEach(function(m){
+        var n=String(m.name||'').replace(/^models\//,'');
+        if((m.supportedGenerationMethods||[]).indexOf('generateContent')<0)return;
+        if(n.indexOf('flash')<0)return;
+        if(/vision|embedding|tts|image|audio|live|native/.test(n))return;
+        if(names.indexOf(n)<0)names.push(n)});
+      if(!names.length)names=['gemini-2.5-flash'];
+      names.sort();
+      var sel=$('lmModel');sel.innerHTML='';
+      names.forEach(function(n){var op=el('option',null,n);op.value=n;sel.appendChild(op)});
+      sel.value=names.indexOf('gemini-2.5-flash')>=0?'gemini-2.5-flash':names[0];
+      LM.model=sel.value;LM.key=k;LM.on=true;
+      if(f)f.value='';                       /* off the screen and out of the DOM */
+      lmStat('Connected \u00b7 '+LM.model,'ok');
+      lmMsg('Live. The key is held in memory only and is gone when you reload. '+
+            'Captured outputs stay on the page so you can compare them with what you get.');
+      lmCount();lmLive(true);
+      if(typeof lmOnConnect==='function')lmOnConnect()})
+    .catch(function(){LM.on=false;lmStat('Not connected','bad');
+      lmMsg('Could not reach Google. Captured outputs remain in use.',true);lmLive(false)});
+}
+
+function lmForget(){
+  LM.key='';LM.on=false;
+  var f=$('lmKey');if(f)f.value='';
+  lmStat('Not connected');
+  lmMsg('<span class="nil">Key discarded. Captured outputs are in use.</span>');
+  lmLive(false);
+}
+
+(function(){
+  var t=$('lmToggle');if(!t)return;
+  t.onclick=function(){
+    var b=$('lmBody'),open=!b.classList.toggle('hidden');
+    t.textContent=open?'Hide':'Set up';t.setAttribute('aria-expanded',open?'true':'false')};
+  $('lmConnect').onclick=lmConnect;
+  $('lmForget').onclick=lmForget;
+  $('lmModel').onchange=function(){LM.model=this.value;if(LM.on)lmStat('Connected \u00b7 '+LM.model,'ok')};
+  $('lmKey').onkeydown=function(e){if(e.key==='Enter'||e.keyCode===13){e.preventDefault();lmConnect()}};
+
+  var send=$('lmSend');
+  if(send)send.onclick=function(){
+    var p=$('lmPrompt').value.replace(/^\s+|\s+$/g,'');
+    if(!p){$('lmFreeOut').innerHTML='<span class="dim">Type a prompt first.</span>';return}
+    send.disabled=true;
+    $('lmFreeOut').innerHTML='<span class="dim">Running\u2026</span>';
+    $('lmFreeUse').textContent='';
+    lmCall(p,{temperature:1,maxTokens:700},function(err,res){
+      send.disabled=false;
+      if(err){$('lmFreeOut').innerHTML='<span style="color:var(--warn)">'+lmEsc(err)+'</span>';return}
+      $('lmFreeOut').textContent=res.text;
+      if(res.usage)$('lmFreeUse').textContent=
+        'in '+(res.usage.promptTokenCount||0)+' tokens \u00b7 out '+
+        (res.usage.candidatesTokenCount||0)+' tokens \u00b7 '+LM.model})};
+
+  var clr=$('lmClear');
+  if(clr)clr.onclick=function(){$('lmPrompt').value='';
+    $('lmFreeOut').innerHTML='<span class="dim">Nothing sent yet.</span>';$('lmFreeUse').textContent=''};
+})();
+/* ===== LM:END v1 ===== */
+
 
 /* ---------- global guard: one failing widget must not kill the rest ---------- */
 window.addEventListener('error',function(e){
@@ -10056,6 +10313,90 @@ window.__coreMins=67;
      has rendered; revealHash is idempotent. */
   window.addEventListener('load',revealHash);
 })();
+
+/* ===== LIVE HOOKS, page-specific =====================================
+   Session 4 teaches the request itself, so the hooks are about what leaves
+   the laptop, not about a probe:
+   1  See the request: the exact HTTP request the shared call layer sends,
+      key masked, readable with or without a key.
+   2  A cost line under the reply: the tokens that came back, priced at the
+      Claude API's smallest model so the room sees tokens become dollars.
+   3  §03's ladder panel: a pointer to the box, its live status, and a button
+      that loads the clean Prompt D from §02.
+   Nothing here stores anything, and nothing runs unless a reader presses a
+   button. The default prompt is the clean Prompt D: synthetic, and already
+   on this page. Plain ES5. */
+var LM_PRICE={inp:1,out:5,note:'the smallest Claude model, $1 in and $5 out per million tokens'};
+var LM_DEFAULT_PROMPT='Summarise this for my notes: [the client], in her sixties, owns [her company], a manufacturer in the Midwest worth tens of millions. A competitor wrote asking to buy the company. She said no, and [her son], who works there, doesn’t know about the letter. What should I raise at our next meeting? Use bullet points.';
+function lmCleanPrompt(){
+  var st=(typeof S4STATE==='object')?S4STATE:null;
+  if(st&&st.s2done&&st.s2clean)return String(st.s2clean);
+  return LM_DEFAULT_PROMPT;
+}
+(function(){
+  var req=$('lmReq'),show=$('lmShowReq'),pr=$('lmPrompt'),cost=$('lmCost');
+  if(!req||!show||!pr)return;
+  if(!pr.value)pr.value=lmCleanPrompt();
+  function mask(){
+    var dots='';for(var i=0;i<12;i++)dots+='•';
+    return LM.on?'x-goog-api-key: '+dots+'   (your key, sent as a header, never in the address)':'x-goog-api-key: (no key connected)';
+  }
+  function build(){
+    var p=pr.value.replace(/^\s+|\s+$/g,'')||'(empty prompt)';
+    var body={contents:[{parts:[{text:p}]}],generationConfig:{temperature:1,maxOutputTokens:700}};
+    return 'POST https://generativelanguage.googleapis.com/v1beta/models/'+LM.model+':generateContent\n'+
+      'Content-Type: application/json\n'+mask()+'\n\n'+
+      JSON.stringify(body,null,2)+'\n\n'+
+      'That is the whole request. No memory, no settings, no account, no history: what plan C sends is what you can read here.';
+  }
+  var open=false;
+  show.onclick=function(){
+    open=!open;
+    req.hidden=!open;req.textContent=open?build():'';
+    show.setAttribute('aria-pressed',open?'true':'false');show.classList.toggle('act',open);
+  };
+  pr.addEventListener('input',function(){if(open)req.textContent=build()});
+  var sel=$('lmModel');if(sel)sel.addEventListener('change',function(){if(open)req.textContent=build()});
+  /* the cost line rides on the shared send handler: watch the usage span it writes */
+  var use=$('lmFreeUse');
+  if(cost&&use&&window.MutationObserver){
+    new MutationObserver(function(){
+      var m=use.textContent.match(/in (\d+) tokens[^0-9]*out (\d+) tokens/);
+      if(!m){cost.textContent='';return}
+      var tin=+m[1],tout=+m[2],usd=tin/1e6*LM_PRICE.inp+tout/1e6*LM_PRICE.out;
+      cost.textContent='The same tokens through '+LM_PRICE.note+': about $'+usd.toFixed(5)+'. The free tier charges nothing and is paid for with your data.';
+    }).observe(use,{childList:true,characterData:true,subtree:true});
+  }
+})();
+
+/* §03's ladder panel: the API as a thing you can read, then send */
+(function(){
+  var host=$('s3api');if(!host)return;
+  host.className='s3api';
+  host.innerHTML='<span class="plab">Plan C, live</span>'+
+    '<p class="hint">The API is a request you can read. The Live API box at the top of this page shows one, then sends it: a key, a prompt, a reply, and nothing else.</p>'+
+    '<div class="row"><button type="button" class="btn ghost mini" id="s3apiGo">Open the Live API box</button>'+
+    '<button type="button" class="btn ghost mini" id="s3apiLoad">Load the clean Prompt D</button>'+
+    '<span id="s3apiStat" class="dim cmsg" aria-live="polite">Not connected</span></div>';
+  function openBox(){
+    var b=$('lmBody'),t=$('lmToggle'),box=$('lmbox');
+    if(b&&b.classList.contains('hidden')&&t)t.click();
+    if(box&&box.scrollIntoView)box.scrollIntoView({behavior:reduced()?'auto':'smooth',block:'start'});
+  }
+  $('s3apiGo').onclick=function(){openBox();var k=$('lmKey');if(k&&!LM.on)try{k.focus({preventScroll:true})}catch(e){}};
+  $('s3apiLoad').onclick=function(){
+    var pr=$('lmPrompt');if(pr){pr.value=lmCleanPrompt();try{pr.dispatchEvent(new Event('input'))}catch(e){}}
+    openBox();
+  };
+  var st=$('lmStat'),mine=$('s3apiStat');
+  function mirror(){if(st&&mine)mine.textContent=st.textContent}
+  mirror();
+  if(st&&window.MutationObserver)new MutationObserver(mirror).observe(st,{childList:true,characterData:true,subtree:true});
+})();
+
+function lmOnConnect(){
+  var s=$('s3apiStat');if(s)s.textContent='Connected · '+LM.model;
+}
 
 })();
 </script>

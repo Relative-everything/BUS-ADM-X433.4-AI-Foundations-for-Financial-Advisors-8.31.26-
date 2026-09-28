@@ -284,6 +284,9 @@ async function connect(page, key) {
       makeRoute({ answers: ['Cold output.', 'Hot output.'], seen }));
     await blockFonts(page); await page.goto(url('session-1/index.html'), {waitUntil:'domcontentloaded'});
     await connect(page, 'GOODKEY');
+    // A5 is an appendix section: show every depth first, or the range is not visible
+    await page.evaluate(() => { const b = document.querySelector('#tierbar [data-level="2"]'); if (b) b.click(); });
+    await page.waitForTimeout(150);
     await page.locator('#lmTemp').fill('0');
     await page.click('#lmTempRun'); await page.waitForTimeout(250);
     await page.locator('#lmTemp').fill('1.8');
@@ -321,7 +324,7 @@ async function connect(page, key) {
   {
     const page = await browser.newPage();
     const errs = []; page.on('pageerror', e => errs.push(e.message));
-    const reqs = []; page.on('request', r => { if (/googleapis/.test(r.url())) reqs.push(r.url()); });
+    const reqs = []; page.on('request', r => { if (/generativelanguage\.googleapis\.com/.test(r.url())) reqs.push(r.url()); });
     await blockFonts(page); await page.goto(url('session-4/index.html'), {waitUntil:'domcontentloaded'});
     await page.waitForTimeout(300);
     ok('s4: no JS errors on load', errs.length === 0, errs.join('|'));
