@@ -8,6 +8,12 @@ gates, the relay, the per-slot notes for each figure, and the verify list. Nothi
 addresses a learner. Rewritten 2026-09-28 against the page as rebuilt that day (branch
 `claude/gracious-cray-2k4fkc`, `docs/changes/2026-09-28-session-4-notes/`).
 
+**Print `session-4-teaching-aid.pdf`**, now three landscape pages (built 2026-09-28), with the rule
+key beside it (`session-4-rule-key.pdf`, two pages from the 27 September round): its page 1 is
+this clock as 19 steps with the answers inline; its page 2 is the rule key for §01's nine items
+(when each passed, what it does, whom it binds, and whether it names AI). This sheet stays the
+full version.
+
 ## What changed on 2026-09-28: the instructor's notes, implemented
 
 Same sections, minutes, tiers and 17 gates. Fourteen things are new on the page and three are new
@@ -532,6 +538,24 @@ answering it in class.
 - **The legality of the work-along** (demo A): the verdict on page 2 of the aid rests on the rule
   text as reported by three publishers each (§248.10, .13, .14, .15, Standard A.9); the one thing
   only you can check is your own firm's manual on personal-account use and external display.
+- **New on 2026-09-27, from the fact-check behind the rule key's page 2** (`session-4-rule-key.pdf`;
+  web search only; the regulators' sites refused the build, so each point is M unless marked).
+  - **The EU Digital Omnibus is in force.** It is Regulation (EU) 2026/1744, in force 27 July 2026.
+    Article 50(2) marking applies from 2 August 2026 to systems placed on the market from that
+    date; systems already on the market have until 2 December 2026. That is Anthropic's own
+    2 December date.
+  - **Anthropic's detector is open to more than regulators and researchers.** The help page, which
+    was opened (H), also names enterprises that the AI Act obliges to verify marking. Marking
+    applies worldwide. The corrections line still holds: nothing on the page says the mark names
+    an account.
+  - **The 72-hour notice binds the firm, not the vendor.** The firm's policies, and its contracts,
+    must require the vendor to report within 72 hours.
+  - **FINRA Regulatory Notice 26-14, 9 July 2026**, proposes replacing the principal's
+    pre-approval of retail communications under Rule 2210 with a risk-based standard, citing
+    generative AI. Comments closed 11 September 2026. Not adopted.
+  - **No SEC or FINRA rule says prompts and outputs are records.** FINRA's 2026 oversight report
+    suggests keeping prompt and output logs. The SEC's spring 2026 agenda lists amendments to the
+    scope of electronic communications under Rule 204-2.
 
 ## What is not yet done
 

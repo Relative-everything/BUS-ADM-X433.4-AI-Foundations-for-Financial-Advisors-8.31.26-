@@ -207,4 +207,6 @@ Priorities FY2026, §VII (November 2025); then Daly's 3 February 2026 remarks. V
 teaching: the four other vendors' pages (M); the FINRA prompt-injection primer's wording (M); the
 state day counts (M); whether your firm's manual permits personal-account use even with
 de-identified text; whether the university records the Zoom. Do not say on the page's authority:
-the Gemini app's own SynthID image check; any OpenAI dates; "loop engineering" as a term.
+the Gemini app's own SynthID image check; any OpenAI dates; "loop engineering" as a term. The
+rule key (session-4-rule-key.pdf, two pages from the 27 September round): the nine §01 items with
+the date each passed, whom each binds, and five likely questions.
