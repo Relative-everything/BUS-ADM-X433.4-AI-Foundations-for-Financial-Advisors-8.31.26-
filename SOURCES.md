@@ -891,6 +891,7 @@ moving_target:  true
 figure_class:   leaderboard_position
 recheck_before: no lesson cites this record since the 2026-09-25 session-4 rebuild
 scope:          The LLM01 ranking for prompt injection and the mapping into six of ten agentic categories. The ranking is revised between editions, so the position is a moving target even though the finding is not.
+used_for.session-4: least privilege and human approval for high-risk actions as the fixes that hold against prompt injection (§05)
 ```
 
 ## src-cve
@@ -940,6 +941,7 @@ confidence:     M
 kind:           evidence
 moving_target:  false
 scope:          US GenAI-enabled fraud losses projected from $12.3bn (2023) to $40bn (2027). A PROJECTION, NOT A MEASUREMENT, and the page says so.
+used_for.session-4: the projected scale of generative-AI fraud, labelled a projection on the four-attack board (§05)
 ```
 
 ## src-surfshark
@@ -992,6 +994,7 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: no lesson cites this record since the 2026-09-25 session-4 rebuild
 scope:          Tournament sampling in text, perturbation in image and video, and the frequency-domain approach in audio. Adoption is a vendor decision and changes; the mechanism does not.
+used_for.session-4: the pixel-level image watermark that survives a screenshot (Appendix D1)
 ```
 
 ## src-synthid-text
@@ -2145,4 +2148,188 @@ kind:           authority
 moving_target:  false
 scope:          Providers of AI systems that generate synthetic audio, image, video or text must ensure the output is marked in a machine-readable format and detectable as artificially generated; deployers of deepfakes must disclose them; the obligations apply from 2 August 2026 and bind providers placing systems on the EU market and deployers in the EU.
 used_for.session-4: why a US adviser's Claude text carries a mark it cannot check (§01 sorter, Appendix D1)
+```
+
+## src-claude-memory
+
+```source
+title:          Bringing memory to teams at work
+author:         Anthropic
+publisher:      claude.com blog
+link:           https://claude.com/blog/memory
+published:      2025-09-11
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the Help Center article on chat search and memory (11817273), which states that memory is saved as a set of topics as you chat.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 Appendix D3
+scope:          Memory came to Team and Enterprise plans on 11 September 2025 and to Pro and Max on 23 October 2025; Claude saves memory as a set of individual topics as you chat rather than summarising afterwards.
+used_for.session-4: the memory card in the then-and-now deck (Appendix D3)
+```
+
+## src-anthropic-ctx-eng
+
+```source
+title:          Effective context engineering for AI agents
+author:         Rajasekaran, P., Dixon, E., Ryan, C., & Hadfield, J.
+publisher:      Anthropic Engineering
+link:           https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+published:      2025-09-29
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the current prompting best-practices page, which still says a role in the system prompt focuses behaviour and tone.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          "Context engineering refers to the set of strategies for curating and maintaining the optimal set of tokens (information) during LLM inference": what the model sees, its tools, its notes and what it retrieves, rather than the wording of one prompt.
+used_for.session-4: the prompt-engineering card in the then-and-now deck (Appendix D3)
+```
+
+## src-anthropic-thinking
+
+```source
+title:          Claude 3.7 Sonnet and Claude Code
+author:         Anthropic
+publisher:      Anthropic
+link:           https://www.anthropic.com/news/claude-3-7-sonnet
+published:      2025-02-24
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the current prompting best-practices page, which describes manual step-by-step prompting as a fallback for when thinking is off.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          Visible, extended step-by-step thinking arrived on 24 February 2025; by 2026 thinking is built in and adaptive, and "think step by step" is a fallback when it is off.
+used_for.session-4: the chain-of-thought card in the then-and-now deck (Appendix D3)
+```
+
+## src-anthropic-mcp
+
+```source
+title:          Introducing the Model Context Protocol
+author:         Anthropic
+publisher:      Anthropic
+link:           https://www.anthropic.com/news/model-context-protocol
+published:      2024-11-25
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the web search post of 20 March 2025 and the integrations post of 1 May 2025 on claude.com, both opened.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          A standard for connecting assistants to the systems where data lives (November 2024); web search with direct citations in Claude (March 2025); integrations and advanced research across internal and external sources (May 2025): grounding built in rather than a retrieval pipeline you build.
+used_for.session-4: the grounding card in the then-and-now deck (Appendix D3)
+```
+
+## src-anthropic-context
+
+```source
+title:          Context windows
+author:         Anthropic
+publisher:      Claude Platform Docs
+link:           https://platform.claude.com/docs/en/build-with-claude/context-windows
+published:      not applicable
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the models overview and the 2023 announcements of 100K (11 May 2023) and 200K (21 November 2023) context windows and the 1M announcement of 12 August 2025, all on anthropic.com or claude.com.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 Appendix D3
+scope:          9,000 tokens in March 2023, 100,000 in May 2023, 200,000 in November 2023, one million by default on current models, about 555,000 words; and "As token count grows, accuracy and recall degrade, a phenomenon known as context rot."
+used_for.session-4: the context-window card and the context-rot card in the then-and-now deck (Appendix D3)
+```
+
+## src-anthropic-agents
+
+```source
+title:          Building effective agents
+author:         Schluntz, E., & Zhang, B.
+publisher:      Anthropic Engineering
+link:           https://www.anthropic.com/engineering/building-effective-agents
+published:      2024-12-19
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the Agent SDK post of 29 September 2025 on claude.com and the tool-use documentation, whose section on the agentic loop was also opened. No source opened uses the phrase "loop engineering"; Anthropic's words are "in a loop", "the agent loop" and "the agentic loop".
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          Agents "are typically just LLMs using tools based on environmental feedback in a loop"; the feedback loop is gather context, take action, verify work, repeat; the API documentation names the pattern the agentic loop.
+used_for.session-4: the loop cards in the then-and-now deck and the second stale claim's current guidance (Appendix D3)
+```
+
+## src-advisers-204-2
+
+```source
+title:          Books and records to be maintained by investment advisers, 17 CFR 275.204-2
+author:         U.S. Securities and Exchange Commission
+publisher:      Code of Federal Regulations
+link:           https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.204-2
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. ecfr.gov, law.cornell.edu and govinfo.gov are egress-blocked from this build environment (2026-09-27). The rule's citation is certain; its wording as stated in scope is from the maintainer's knowledge of the rule and is why the confidence is M. Read paragraph (a)(7) and paragraph (e)(1) before teaching them as settled.
+confidence:     M
+kind:           authority
+moving_target:  false
+scope:          Paragraph (a)(7): originals of written communications received and copies of those sent relating to any recommendation made or proposed or any advice given or proposed; paragraph (e)(1): kept for not less than five years from the end of the fiscal year of the last entry, the first two years in an appropriate office of the adviser.
+used_for.session-4: the rule behind the prompt-as-sent slot of the record (§07)
+```
+
+## src-finra-4511
+
+```source
+title:          FINRA Rule 4511, General Requirements, and Exchange Act Rule 17a-4
+author:         Financial Industry Regulatory Authority
+publisher:      FINRA Rulebook
+link:           https://www.finra.org/rules-guidance/rulebooks/finra-rules/4511
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. finra.org is egress-blocked from this build environment (2026-09-27). The rules' citations are certain; the periods in scope are from the maintainer's knowledge and are why the confidence is M. A broker-dealer's correspondence period differs from an adviser's, so the page never states one number for both.
+confidence:     M
+kind:           authority
+moving_target:  false
+scope:          Members must make and preserve books and records under FINRA rules, the Exchange Act and its rules, in a format consistent with Exchange Act Rule 17a-4; records with no stated period are kept at least six years; correspondence under Rule 17a-4(b)(4) for three years, the first two in an easily accessible place.
+used_for.session-4: the broker-dealer counterpart of the books-and-records rule (§07)
+```
+
+## src-advisers-fiduciary
+
+```source
+title:          Commission Interpretation Regarding Standard of Conduct for Investment Advisers, Release IA-5248
+author:         U.S. Securities and Exchange Commission
+publisher:      SEC
+link:           https://www.sec.gov/rules-regulations/2019/06/commission-interpretation-regarding-standard-conduct-investment-advisers
+published:      2019-06-05
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. sec.gov is egress-blocked from this build environment (2026-09-27). The release's existence, date and number are certain; the characterisation in scope is from the maintainer's knowledge and is why the confidence is M.
+confidence:     M
+kind:           authority
+moving_target:  false
+scope:          The fiduciary duty of care under the Advisers Act includes a duty to provide advice that is in the client's best interest, with a reasonable basis for it, which is why the source behind an AI-assisted answer belongs in the file.
+used_for.session-4: the duty behind the source-quoted slot of the record (§07)
+```
+
+## src-advisers-206-4-7
+
+```source
+title:          Compliance procedures and practices, 17 CFR 275.206(4)-7
+author:         U.S. Securities and Exchange Commission
+publisher:      Code of Federal Regulations
+link:           https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.206(4)-7
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. ecfr.gov and law.cornell.edu are egress-blocked from this build environment (2026-09-27). The rule's citation is certain; the wording in scope is from the maintainer's knowledge and is why the confidence is M.
+confidence:     M
+kind:           authority
+moving_target:  false
+scope:          A registered adviser must adopt and implement written policies and procedures reasonably designed to prevent violations, review them no less than annually, and designate a chief compliance officer; the AI-use policy and the record of its annual review are themselves required records.
+used_for.session-4: the rule behind the who-decided slot of the record and the annual review of the AI-use policy (§07)
 ```

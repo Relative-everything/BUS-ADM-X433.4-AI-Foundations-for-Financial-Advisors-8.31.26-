@@ -1,7 +1,7 @@
 {
   "note": "NOTARISED. Every last_verified date in SOURCES.md, frozen. build-sources.mjs recomputes this digest on every parse and refuses to build if a date moved. Only scripts/attest-verified.mjs writes this file, and only at an interactive terminal. Do not hand-edit: a hand edit here and a matching hand edit in SOURCES.md is the one thing this pair cannot catch, and it is a lie about a human having read a source.",
   "updated_by": "--sync (records with an empty last_verified only)",
-  "digest": "e310327d353d81fad141c1b909839d6795eb626c938085b9d776d220c96bae82",
+  "digest": "cb5f277761afb142d2f00cf83cbb6693d66c11762850cbde5e123e128bea1d6e",
   "entries": {
     "src-0din-gemini": {
       "last_verified": "",
@@ -11,7 +11,23 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-advisers-204-2": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-advisers-206-4-7": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-advisers-fiduciary": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-agent-skills": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-agents": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -23,7 +39,15 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-anthropic-context": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-anthropic-ctx": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-ctx-eng": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -39,11 +63,19 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-anthropic-mcp": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-anthropic-retention": {
       "last_verified": "",
       "verified_by": ""
     },
     "src-anthropic-terms": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-thinking": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -96,6 +128,10 @@
       "verified_by": ""
     },
     "src-claude-marks": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-memory": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -168,6 +204,10 @@
       "verified_by": ""
     },
     "src-ferrari": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-finra-4511": {
       "last_verified": "",
       "verified_by": ""
     },
