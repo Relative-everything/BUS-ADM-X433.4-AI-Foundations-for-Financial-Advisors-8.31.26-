@@ -28,12 +28,13 @@ red text = stop by that time.
    Act; CFP A.9 and A.14. Your AI policy is a supervision document. (Page 3, E2.)
 8. **6:26 §02 WORKED.** Ask the guess, click A. Room calls phrases until the meter reads No. Copy
    the clean prompt into chat. GATE 1: "name and company gone: what still points to her?" Trade
-   plus town. Then The Harder Ones: guess how many of the nine phrases still point to her (7);
-   $55 million; 180 employees; Barrington Hills; the father's sale. NEVER SKIP.
+   plus town. POLL 2 if picked, then The Harder Ones: guess how many of the nine phrases still
+   point to her (7); $55 million; 180 employees; Barrington Hills; the father's sale. NEVER SKIP.
 9. **6:36 DEMO A, live work-along:** de-identify the transcript (page 2, A). Synthetic Cole
    transcript in a Workspace Google Doc → clean it live → banker test → training switch OFF on
    screen → three questions in personal Claude. STOP 6:46. NEVER SKIP.
-10. **6:46 §03.** POLL 2: vendor and plan. Click the room's vendor, then A: sixty rust squares.
+10. **6:46 §03.** POLL 3: your vendor, then whose name is on the agreement. Click the room's
+    vendor, then A: sixty rust squares.
     Switch off: one square. B: the contract slides to the firm. Leaks 2 LOGS, 5 CONNECTORS.
     Then the ladder: rungs 1 to 6, the door opens on the firm side only; Climb all. (Run flow:
     page 2, F.)
@@ -47,36 +48,40 @@ red text = stop by that time.
 14. **7:21 §08 COLD RUN, SILENT.** "Eight minutes. Nobody talks." Each runner clicks the station
     where they stopped; chat: "stopped at … because …". Then Show the gaps. Nobody fixes anything.
     STOP 7:33. NEVER SKIP.
-15. **7:33 §04.** Pick C · Client file. Answer the locks for the tool you use. Copy the email to
+15. **7:33 §04.** POLL 4 if picked: who signs? Pick C · Client file. Answer the locks for the tool you use. Copy the email to
     the vendor: it is a real email now. Then What the Clause Looks Like: lock 2 is Anthropic's own
     sentence; lock 4: their 48 hours beats the 72 the rule makes you require. Copy the sample
     contract.
 16. **7:40 LECTURE 3.** Approved means on paper. Vendor due diligence is custodian due diligence.
     An officer with authority signs, never you. The vendor becomes your service provider under
     Reg S-P. (Page 3, E3.)
-17. **7:42 §05.** POLL 3: a or b. Run the assistant: three files leave. Sweep the x-ray. How it
+17. **7:42 §05.** POLL 5: a or b. Run the assistant: three files leave. Sweep the x-ray. How it
     hid 1 to 4. GATE 2: "wording or access?" Fixes 1 (not a lock), 2, 3 with the skill language;
     Copy the skill block. Video call → (c); the bill. Board: 4 plus the scale. NEVER SKIP.
 18. **7:52 DEMO B, live:** hidden text in a doc, pasted into Claude (page 3, B). Either way: "it
     read it."
-19. **7:56 D5.** Depth → Foundational. Pick the event: 2, the log read. Close the clause. The
+19. **7:56 D5.** POLL 6: the latest lawful day, 30. Depth → Foundational. Pick the event: 2, the
+    log read. Close the clause. The
     Clocks That Are Law: drag the day past 3 and 30. Two Real Clocks: Equifax 40 days late, Capital
     One 10 in time. STORY: the advisor you know who had a breach. (Page 2, G.)
 20. **8:04 §06.** Guess, Lock my guess, Run 100 memos: 61. Then 33%: about 86. Check every answer:
     500 opened for 85. Pricer at defaults: 90 → 39, still saves 51; drag answers to 20: saves 6.
 21. **8:09 §07.** Six records, A or B, one at a time. GATE 3, record 3: a summary cannot be
-    re-checked. Check record 6's citation: NOT FOUND. Why slot 1 to 4: no rule lists the four;
+    re-checked. POLL 7 if picked: can an examiner re-check it? Check record 6's citation: NOT
+    FOUND. Why slot 1 to 4: no rule lists the four;
     the rules require the record. As a skill, then copy.
 22. **8:15 DEMO C, live:** the watermark and the Content Checker (page 3, C). D1 knockout: Key A,
     Key B, off. A PNG made in Claude → claude.com/check-content → screenshot it → the credential
     is gone.
 23. **8:21 D3.** Depth → + Standard. Call both claims, drag each to now. Flip the Cards. Card 1:
     temperature is deprecated; effort replaces it. Card 8: the agent loop.
-24. **8:25 D4 SHORT.** POLL 4, the sealed vote → the scale. The complication at minute 6. POLL 5.
+24. **8:25 D4 SHORT.** POLL 8, the sealed vote → the scale. The complication at minute 6. POLL 8
+    again.
     Both distributions on screen. Ten minutes, not eighteen.
 25. **8:35 §09.** Course rule aloud. Six clauses: a, b, a, b, b, a. Copy the outline. Assignment:
     two pages, bullets, three sources, one scholarly.
-26. **8:41 CLOSING CHECK, written.** Chat, one line each: in, where, check, keep. Read three aloud.
+26. **8:41 CLOSING CHECK, written.** POLL 9: what changes first. Then chat, one line each: in,
+    where, check, keep. Read three aloud.
     A line with no keep: name §07. NEVER SKIP.
 27. **8:46 HOMEWORK,** one breath. Part 1; the policy; the three readings. No real client data.
     End 8:49; eleven minutes of buffer.
@@ -85,7 +90,8 @@ red text = stop by that time.
 text file (never in the page until 6:55). Tab 2 a Workspace Google Doc with the synthetic Cole
 transcript. Tab 3 personal Claude, Privacy settings open, training switch visible. Tab 4 a doc with
 white 0-point text. Tab 5 claude.com/check-content plus a PNG made in Claude and a screenshot of
-it. Polls 1 to 5 built; three chat lines ready; speaker labels on.
+it. Your four or five polls built from the nine in `session-4-polls.md` (recommended 1, 3, 5, 6,
+9; section P below); three chat lines ready; speaker labels on.
 
 **Not tonight.** D6 on the page (the demo covers it); D2 beyond one sentence; model tiers, token
 prices, cost per task; the API beyond one request and one reply; anything with a real client in it.
@@ -99,8 +105,8 @@ vote, complication, re-vote (saves 4). **Never drop:** cold open, §02, demo A, 
 closing check.
 
 **Answers.** Bridge b, c, a. Cold open D 5, C 4, A 3, B 1. §01 binds you: 0. §02 harder ones: all
-7 point to her. §03 Claude A: 5 years on, 30 days off. §05 poll 3: b; the call: c. §06: 61, then
-about 86. §07: B B B B A A; record 6 NOT FOUND. §09: a b a b b a. D5: event 2, Day 33; Equifax 40
+7 point to her. §03 Claude A: 5 years on, 30 days off. §05 poll 5: b; the call: c. §06: 61, then
+about 86. Poll 6: 30 days. §07: B B B B A A; record 6 NOT FOUND. §09: a b a b b a. D5: event 2, Day 33; Equifax 40
 days, Capital One 10.
 
 ## Page 2 and 3: the live segments
@@ -183,6 +189,17 @@ hackers, a criminal conviction for the security chief. None was under Reg S-P's 
 principle, count from awareness, is what they show. STORY: the advisor you know who had a breach
 recently; tell it here, no name, no firm; end on which day their clock started and who owned the
 date.
+
+**P · Polls, nine written out in `session-4-polls.md`; run four or five.** 1 (6:12, cold open):
+which of the four prompts would you have sent; lands D. 2 (6:26, §02): what do you do to a
+transcript before it goes in; lands "replace the names and every fact that points to her".
+3 (6:46, §03): your vendor, then whose name is on the agreement; habits check, click the majority.
+4 (7:33, §04): who signs the agreement with the vendor; lands "an officer with authority".
+5 (7:42, §05): what comes back, a or b; lands b. 6 (7:56, D5): the latest lawful day to tell the
+client; lands 30 days from the day you knew. 7 (8:09, §07): can an examiner re-check "used AI to
+draft; reviewed and sent"; lands no. 8 (8:25, D4): the proposition, agree or disagree, launched
+twice. 9 (8:41, closing): which one thing changes first; habits check, their pick is their keep
+line.
 
 **H · For you.** Three readings: FINRA Regulatory Notice 24-09 (June 2024); the generative AI
 section of FINRA's 2026 Annual Regulatory Oversight Report (December 2025); SEC Examination
