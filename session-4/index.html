@@ -1622,6 +1622,67 @@ body:not(.reveal) #ovr{display:none}
 #s3 .s3cell.kq{fill:var(--card);stroke:var(--gold);stroke-dasharray:3 2;transform:scale(1)}
 #s3 .s3val.g{fill:var(--gold)}
 #s3 .s3cite{display:block;margin-top:8px;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted)}
+/* ---------- beat 2, 2026-09-27: the ladder. Personal (gold) against firm (teal):
+   a price tag over each column, the CLIENT FILE door at the top of each, six
+   rungs between them, and THE SAME MODEL bar under both ---------- */
+#s3 .s3lad{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:6px}
+#s3 .s3ladfig,#s3 .s3ladside{min-width:0}
+#s3 .s3ladfig{padding:0;border:0;margin:0}
+#s3 .s3ladside .plab{margin-bottom:8px}
+#s3 .s3ladfig svg{display:block;width:100%;height:auto;max-width:540px;margin:0 auto}
+@media (min-width:900px){#s3 .s3lad{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);column-gap:26px;align-items:start}}
+#s3 .s3rungs{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin:0 0 10px}
+#s3 .s3rung{padding-right:108px}
+#s3 .s3rung.s3door{border-style:dashed}
+#s3 .s3rung.s3door.ok{border-style:solid}
+#s3 .s3pf{position:absolute;top:50%;right:10px;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+#s3 .s3pf i{font:600 9.5px "JetBrains Mono",monospace;font-style:normal;letter-spacing:.06em;color:var(--muted);border:1px dashed var(--off);border-radius:4px;padding:2px 5px;line-height:1.2;white-space:nowrap;transition:color .2s,border-color .2s,background .2s}
+#s3 .s3pf i.no{color:var(--warn);border-color:var(--warn)}
+#s3 .s3pf i.ok{color:var(--on);border-color:var(--on);border-style:solid;background:var(--on-bg)}
+#s3 .s3pf i.if{color:var(--gold);border-color:var(--gold);background:var(--gold-bg)}
+#s3 .s3ladrow{margin:0 0 10px}
+#s3 #ladOut{margin-top:0}
+#s3 #ladOut .cond{color:var(--gold);font-weight:600}
+/* the figure: captions, price tags, doors, rails, rungs, cells */
+#s3 .s3capp{fill:var(--gold)}
+#s3 .s3capf{fill:var(--on)}
+#s3 .s3tag{stroke-width:2;stroke-linejoin:round}
+#s3 .s3tag.p{fill:var(--gold-bg);stroke:var(--gold)}
+#s3 .s3tag.f{fill:var(--on-bg);stroke:var(--on)}
+#s3 .s3hole{fill:var(--card);stroke-width:1.5}
+#s3 .s3hole.p{stroke:var(--gold)}
+#s3 .s3hole.f{stroke:var(--on)}
+#s3 .s3tt{font:400 11px "JetBrains Mono",monospace;fill:var(--ink)}
+#s3 .s3tt.b{font-weight:700;font-size:11.5px;letter-spacing:.06em}
+#s3 .s3tt.p{fill:var(--gold)}
+#s3 .s3tt.f{fill:var(--on)}
+#s3 .s3tt.w{fill:var(--warn)}
+#s3 .s3rail{stroke:var(--off);stroke-width:4;stroke-linecap:round}
+#s3 .s3lr{fill:var(--card);stroke:var(--off);stroke-width:2;transition:stroke .25s}
+#s3 .s3lr.ok{stroke:var(--on)}
+#s3 .s3lrn{font:600 11.5px "JetBrains Mono",monospace;letter-spacing:.05em;fill:var(--muted);transition:fill .25s}
+#s3 .s3lrn.ok{fill:var(--ink)}
+#s3 .s3lc{fill:var(--card);stroke:var(--line);stroke-width:1.5;stroke-dasharray:4 3;transition:fill .3s,stroke .3s}
+#s3 .s3lc.no{stroke:var(--warn)}
+#s3 .s3lc.ok{fill:var(--on-bg);stroke:var(--on);stroke-dasharray:none}
+#s3 .s3lc.if{fill:var(--gold-bg);stroke:var(--gold)}
+#s3 .s3lct{font:600 11.5px "JetBrains Mono",monospace;letter-spacing:.04em;fill:var(--muted);transition:fill .3s}
+#s3 .s3lct.no{fill:var(--warn)}
+#s3 .s3lct.ok{fill:var(--on)}
+#s3 .s3lct.if{fill:var(--gold)}
+#s3 .s3dr{fill:var(--card);stroke-width:2;stroke-linejoin:round;transition:fill .3s}
+#s3 .s3dr.p{stroke:var(--gold)}
+#s3 .s3dr.f{stroke:var(--on)}
+#s3 .s3dg.open .s3dr{fill:var(--on-bg)}
+#s3 .s3leaf{fill:var(--off-bg);stroke:var(--off);stroke-width:1.5;transform-box:fill-box;transform-origin:left center;transition:transform .45s}
+#s3 .s3dg.open .s3leaf{transform:scaleX(.08)}
+#s3 .s3knob{fill:var(--ink);transition:opacity .3s}
+#s3 .s3dg.open .s3knob{opacity:0}
+#s3 .s3dt{font:700 10.5px "JetBrains Mono",monospace;letter-spacing:.08em;fill:var(--ink)}
+#s3 .s3ds{font:700 12px "JetBrains Mono",monospace;letter-spacing:.04em;fill:var(--muted);transition:fill .3s}
+#s3 .s3ds.no{fill:var(--warn)}
+#s3 .s3ds.ok{fill:var(--on)}
+@media (prefers-reduced-motion:reduce){#s3 .s3ladder *{transition:none!important;animation:none!important}}
 /* ===== s4 ===== */
 /* ================= s4 · the vendor's safe ================= */
 /* A. three cards: one column with the badge on the right on a phone, three
@@ -2489,15 +2550,40 @@ body:not(.reveal) #ovr{display:none}
 #sWS .wsN{color:var(--ink)}
 #sWS .wsAsk{font-family:"Bricolage Grotesque",sans-serif;font-size:18px;font-weight:600;line-height:1.35;color:var(--ink);margin:16px 0 6px;max-width:none}
 #sWS .wsYou{color:var(--gold);margin:0;max-width:none}
+/* what to do instead: one line under the verdict, in the card readout and in the key */
+#sWS .wsDo{display:block;margin-top:6px;padding-left:9px;border-left:3px solid var(--on);color:var(--ink)}
+
+/* the then-versus-now deck: eight flip cards. Both faces share one grid cell, so a
+   card is as tall as its taller face and nothing is measured; the inner turns in 3D
+   and each face hides its back. State is the .on class and aria-pressed. */
+#sWS .wsFlipBar{display:flex;gap:10px 14px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin:0 0 12px}
+#sWS .wsFlipCount{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+#sWS .wsFlipCount.all{color:var(--on);font-weight:600}
+#sWS .wsFlipGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;align-items:stretch}
+#sWS .wsFlip{display:block;width:100%;min-width:0;margin:0;padding:0;background:none;border:none;border-radius:12px;text-align:left;cursor:pointer;font:inherit;color:inherit;perspective:1100px;-webkit-tap-highlight-color:transparent}
+#sWS .wsFlip:focus-visible{outline:2.5px solid var(--on);outline-offset:3px}
+#sWS .wsIn{display:grid;grid-template-columns:minmax(0,1fr);height:100%;border-radius:12px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+#sWS .wsFace{grid-area:1/1;display:block;min-width:0;padding:11px 13px 13px 14px;border:1.5px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;background:var(--gold-bg);font-size:14.5px;line-height:1.45;color:var(--ink);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+#sWS .wsBack{border-left-color:var(--on);background:var(--on-bg);transform:rotateY(180deg)}
+#sWS .wsFlip.on .wsIn{transform:rotateY(180deg)}
+#sWS .wsFlip:hover .wsFace{border-color:var(--ink);border-left-color:var(--gold)}
+#sWS .wsFlip:hover .wsBack{border-left-color:var(--on)}
+#sWS .wsTagRow{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+#sWS .wsTag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;padding:2px 7px;border-radius:4px;color:var(--gold);background:var(--card)}
+#sWS .wsBack .wsTag{color:#fff;background:var(--on)}
+#sWS .wsNum{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+#sWS .wsLine{display:block}
+#sWS .wsLine .conf{margin-left:2px}
 
 @media(max-width:560px){
  #sWS #staleQuiz .qitem{padding:10px 8px}
+ #sWS .wsFace{font-size:14px;padding:10px 11px 12px 12px}
  #sWS .wsQuote{padding:10px 12px 24px;font-size:16px}
  #sWS .wsRow{grid-template-columns:1fr;gap:0}
  #sWS .wsStamp{font-size:11px;letter-spacing:.08em;padding:3px 8px}
 }
 @media(prefers-reduced-motion:reduce){
- #sWS .wsStamp.on,#sWS .wsOut,#sWS .wsAns .wsBox{transition:none}
+ #sWS .wsStamp.on,#sWS .wsOut,#sWS .wsAns .wsBox,#sWS .wsIn{transition:none}
  #sWS .wsTime.wsLive .wsEnd[data-to="1"]{animation:none}
 }
 /* ===== s7 ===== */
@@ -2628,6 +2714,15 @@ body:not(.reveal) #ovr{display:none}
 #s7 #recBoxes .lbox h4 .nw{white-space:nowrap}
 /* Next record: between the trays in the DOM (it is only shown while B is locked), drawn under both */
 #s7 #recNext{grid-column:1/-1;order:3;justify-self:start}
+/* why each slot: four small buttons under the file; the pressed one outlines its slot */
+#s7 .s7figcol{min-width:0}
+#s7 #recWhy{max-width:480px;margin:8px auto 4px;gap:8px;justify-content:center}
+@media (min-width:820px){#s7 #recWhy{margin:8px 0 4px;justify-content:flex-start}}
+#s7 .whyhl{fill:none;stroke:var(--on);stroke-width:2.5;opacity:0;transition:opacity .2s}
+#s7 .whyhl.show{opacity:1}
+/* the record block: prompt view or skill view, one at a time */
+#s7 #recView{margin:4px 0 14px}
+#s7 #recSkill{margin-top:4px}
 /* ===== sCR ===== */
 /* ===== sCR · the handoff test ===== */
 /* package card */
@@ -3872,13 +3967,30 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     </div>
   </div>
 
+  <div class="panel">
+    <span class="do">Then this: 3 minutes</span>
+    <h4>Personal or Firm Account: What Each Lock Adds</h4>
+    <p class="hint">Click each step. Watch which column it lights, and what the door at the top does.</p>
+    <div class="s3lad">
+      <div id="ladFig" class="s3ladfig"></div>
+      <div class="s3ladside">
+        <span class="plab">Six steps up, then the door</span>
+        <div id="ladList" class="s3rungs" role="group" aria-label="Six steps, then the door"></div>
+        <div class="row s3ladrow"><button type="button" class="btn ghost mini" id="ladAll">Climb all</button><span id="ladProg" class="dim cmsg" aria-live="polite">0 of 6 steps seen.</span></div>
+        <div id="ladOut" class="mpanel" aria-live="polite"><span class="hd">What the step adds</span><span class="nil">Click a step: 1 to 6.</span></div>
+      </div>
+    </div>
+    <div id="s3api"></div>
+  </div>
+
   <ul class="pts">
     <li><b>Personal plans start with the switch on</b> at all four: Claude&rsquo;s training switch <span class="conf h" data-src="src-anthropic-terms">H</span>, ChatGPT&rsquo;s Improve the model for everyone <span class="conf m" data-src="src-openai-data">M</span>, Copilot&rsquo;s model training on text <span class="conf m" data-src="src-ms-copilot">M</span>, Gemini&rsquo;s Keep Activity <span class="conf m" data-src="src-gemini-privacy">M</span>. Off is a setting you change.</li>
     <li><b>Business plans exclude training</b> at all four, and your firm signed: Claude Team, Enterprise and the API keep chats 30 days <span class="conf h" data-src="src-anthropic-terms">H</span>; ChatGPT Business and Enterprise <span class="conf m" data-src="src-openai-data">M</span>, Microsoft 365 Copilot with a work account <span class="conf m" data-src="src-ms-copilot-edp">M</span> and Gemini in Google Workspace <span class="conf m" data-src="src-gemini-workspace">M</span> put how long in the contract, which &sect;04 asks for.</li>
     <li><b>What differs is how long a personal plan keeps it:</b> five years, until you delete it, 18 months, or 72 hours once Gemini&rsquo;s switch is off. The calendar shows each.</li>
+    <li><b>The plan buys the contract, not the model.</b> Personal: Claude Pro at $20 a month <span class="conf h" data-src="src-claude-pricing">H</span>, your click, training on unless you switch it off <span class="conf h" data-src="src-anthropic-terms">H</span>. Firm: Team or Enterprise seats plus the API <span class="conf h" data-src="src-claude-pricing">H</span>, your firm&rsquo;s signature, no training <span class="conf h" data-src="src-anthropic-terms">H</span>, retention in writing <span class="conf h" data-src="src-anthropic-retention">H</span>, an audit report on request <span class="conf h" data-src="src-anthropic-dpa">H</span>.</li>
   </ul>
 
-  <p class="src">Anthropic, Privacy Center and Commercial Terms, retrieved 14 August 2026 <span class="conf h" data-src="src-anthropic-terms">H</span>. OpenAI, How your data is used to improve model performance <span class="conf m" data-src="src-openai-data">M</span>. Microsoft, Privacy FAQ for Microsoft Copilot <span class="conf m" data-src="src-ms-copilot">M</span> and Enterprise data protection in Microsoft 365 Copilot <span class="conf m" data-src="src-ms-copilot-edp">M</span>. Google, Gemini Apps Privacy Hub <span class="conf m" data-src="src-gemini-privacy">M</span> and Generative AI in Google Workspace Privacy Hub <span class="conf m" data-src="src-gemini-workspace">M</span>. The leaks: Wiz Research (2025) on DeepSeek <span class="conf m" data-src="src-deepseek">M</span>; TechCrunch (2025) on shared ChatGPT chats in search results <span class="conf m" data-src="src-chatgpt-index">M</span>; Tom&rsquo;s Guide (2025) on the Meta AI feed <span class="conf m" data-src="src-meta-feed">M</span>; CVE-2025-32711 <span class="conf h" data-src="src-cve">H</span>. Vendor terms change without notice: check the page before you rely on a number. The map and the six places on it are drawn for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">Anthropic, Privacy Center and Commercial Terms, retrieved 14 August 2026 <span class="conf h" data-src="src-anthropic-terms">H</span>. OpenAI, How your data is used to improve model performance <span class="conf m" data-src="src-openai-data">M</span>. Microsoft, Privacy FAQ for Microsoft Copilot <span class="conf m" data-src="src-ms-copilot">M</span> and Enterprise data protection in Microsoft 365 Copilot <span class="conf m" data-src="src-ms-copilot-edp">M</span>. Google, Gemini Apps Privacy Hub <span class="conf m" data-src="src-gemini-privacy">M</span> and Generative AI in Google Workspace Privacy Hub <span class="conf m" data-src="src-gemini-workspace">M</span>. The leaks: Wiz Research (2025) on DeepSeek <span class="conf m" data-src="src-deepseek">M</span>; TechCrunch (2025) on shared ChatGPT chats in search results <span class="conf m" data-src="src-chatgpt-index">M</span>; Tom&rsquo;s Guide (2025) on the Meta AI feed <span class="conf m" data-src="src-meta-feed">M</span>; CVE-2025-32711 <span class="conf h" data-src="src-cve">H</span>. Vendor terms change without notice: check the page before you rely on a number. The map and the six places on it are drawn for this lesson <span class="conf l" data-src="src-case">L</span>. The ladder&rsquo;s steps: Anthropic, Plans and pricing, claude.com, retrieved 27 September 2026 <span class="conf h" data-src="src-claude-pricing">H</span>; Anthropic, Consumer Terms, effective 8 October 2025, and Commercial Terms, effective 17 June 2025 <span class="conf h" data-src="src-anthropic-terms">H</span>; Anthropic, API and data retention, Claude Platform Docs <span class="conf h" data-src="src-anthropic-retention">H</span>; Anthropic, Data Processing Addendum, effective 24 February 2025 <span class="conf h" data-src="src-anthropic-dpa">H</span>; Anthropic, What certifications has Anthropic obtained?, Claude Help Center <span class="conf h" data-src="src-anthropic-certs">H</span>.</p>
 
   <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Pick your vendor and plan and watch the squares, then open the six places.</div></div>
 
@@ -4177,11 +4289,22 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div id="staleKey" class="mpanel keyhide" style="display:none" aria-live="polite"></div>
   </div>
 
+  <div class="panel">
+    <span class="do">Then this: 3 minutes</span>
+    <h4>2023 or Now: Flip the Cards</h4>
+    <p class="hint">Eight things people were told in 2023. Click a card to flip it to the current guidance.</p>
+    <div class="row wsFlipBar">
+      <span class="wsFlipCount" id="flipCount" aria-live="polite">0 of 8 flipped</span>
+      <button type="button" class="btn ghost mini" id="flipAll" aria-pressed="false">Flip all</button>
+    </div>
+    <div id="flipGrid" class="wsFlipGrid" role="group" aria-label="Eight cards. The front of each is what people were told in 2023; the back is the current guidance."></div>
+  </div>
+
   <ul class="pts">
     <li><b>Staleness hides in an assumption:</b> that your tool has the dial, or answers straight away.</li>
   </ul>
 
-  <p class="src">Wolfram (2023), "It's Just Adding One Word at a Time": the temperature passage and its one-pass description of the model <span class="conf h" data-src="src-wolfram">H</span>. Anthropic, Messages API reference, retrieved 13 September 2026: temperature on current models <span class="conf h" data-src="src-api-messages">H</span>. Anthropic, Change the model, effort, and thinking settings, retrieved 20 August 2026 <span class="conf h" data-src="src-effort">H</span>. Artificial Analysis, tokens and turns per task as reported measures <span class="conf m" data-src="src-aa">M</span>. The two drawings are illustrative, made for this page <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">Wolfram (2023), "It's Just Adding One Word at a Time": the temperature passage and its one-pass description of the model <span class="conf h" data-src="src-wolfram">H</span>. Anthropic, Messages API reference, retrieved 13 September 2026: temperature on current models <span class="conf h" data-src="src-api-messages">H</span>. Anthropic, Change the model, effort, and thinking settings, retrieved 20 August 2026 <span class="conf h" data-src="src-effort">H</span>. Artificial Analysis, tokens and turns per task as reported measures <span class="conf m" data-src="src-aa">M</span>. The two drawings are illustrative, made for this page <span class="conf l" data-src="src-case">L</span>. Anthropic pages opened 27 September 2026, one behind each card of the deck: memory in the Claude app <span class="conf h" data-src="src-claude-memory">H</span>; context engineering <span class="conf h" data-src="src-anthropic-ctx-eng">H</span>; thinking, built in since February 2025 <span class="conf h" data-src="src-anthropic-thinking">H</span>; the Model Context Protocol, web search and integrations <span class="conf h" data-src="src-anthropic-mcp">H</span>; context windows and context rot <span class="conf h" data-src="src-anthropic-context">H</span>; Agent Skills <span class="conf h" data-src="src-agent-skills">H</span>; building effective agents and the agent loop, December 2024 <span class="conf h" data-src="src-anthropic-agents">H</span>.</p>
 
   <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Call both claims before you drag either one to now.</div></div>
 
@@ -4199,7 +4322,15 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <p class="hint">Read the four slots on the top record. Could an examiner re-check it: A or B?</p>
     <div id="recList" class="tabs" role="group" aria-label="The six records"></div>
     <div class="s7stage">
-      <div id="recFig"></div>
+      <div class="s7figcol">
+        <div id="recFig"></div>
+        <div id="recWhy" class="row" role="group" aria-label="Why each slot is on the file">
+          <button class="btn sel mini" type="button" aria-pressed="false">Why slot 1</button>
+          <button class="btn sel mini" type="button" aria-pressed="false">Why slot 2</button>
+          <button class="btn sel mini" type="button" aria-pressed="false">Why slot 3</button>
+          <button class="btn sel mini" type="button" aria-pressed="false">Why slot 4</button>
+        </div>
+      </div>
       <div class="s7side">
         <div id="recBoxes" class="boxes">
           <div class="bslot"><button class="lbox" type="button" data-k="yes"><h4>A &middot; Could <span class="nw">re-check it</span></h4><p>Everything needed is on file.</p></button><ul class="placed" data-k="yes" aria-label="Tray A"></ul></div>
@@ -4219,7 +4350,12 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel">
     <span class="do">Take this with you</span>
     <h4>The Record Block</h4>
-    <p class="hint">Paste it after any research prompt. Fill in the first three lines yourself, and the last one once you have read the answer: a model cannot reliably report its own name, today&rsquo;s date, or what you decided.</p>
+    <p class="hint">Paste it after any research prompt. Fill in the first three lines yourself, and the last one once you have read the answer: a model cannot reliably report its own name, today&rsquo;s date, or what you decided. As a skill it is the same text in a skill file: a name, a description of what it does and when to use it, then the instructions, which the model loads when needed <span class="conf h" data-src="src-agent-skills">H</span>.</p>
+    <div class="row" id="recView" role="group" aria-label="Show the record block as">
+      <button class="btn sel mini act" id="recViewPB" type="button" aria-pressed="true">As a prompt block</button>
+      <button class="btn sel mini" id="recViewSB" type="button" aria-pressed="false">As a skill</button>
+    </div>
+    <div id="recViewP">
 <pre id="recBlock">MODEL AND SETTING: (you fill in)
 DATE: (you fill in)
 PREPARED BY: (you fill in)
@@ -4237,10 +4373,42 @@ citation from memory.
 DECISION: (you fill in, after reading: what you did
   with this answer, and when)</pre>
     <div class="row"><button class="btn" id="recCopy" type="button">Copy the block</button><span id="recMsg" class="dim cmsg"></span></div>
+    </div>
+    <div id="recViewS" style="display:none">
+<pre id="recSkill">---
+name: research-record
+description: Adds the record block after a research answer, with sources quoted word for word, the claims not verified, the one fact that would change the answer, and a decision line left blank. Use it after any research question whose answer may go in a client file.
+---
+
+# Research record
+
+Start with three lines and leave them blank. Do not fill
+them in: you cannot reliably report your own name,
+today&rsquo;s date, or what the person decided.
+MODEL AND SETTING: (the person fills in)
+DATE: (the person fills in)
+PREPARED BY: (the person fills in)
+
+After the answer, add three lists:
+SOURCES: for each authority relied on, quote the
+  operative sentence word for word and say where it is.
+NOT VERIFIED: every claim not supported by a quote above.
+WOULD CHANGE: the one fact that, if different, would
+  change the answer.
+If you cannot quote a source word for word, write
+NO SOURCE RETRIEVED for that item. Do not rebuild a
+citation from memory.
+
+End with one line, left blank:
+DECISION: (the person fills in, after reading: what they
+  did with this answer, and when)</pre>
+    <div class="row"><button class="btn" id="recSkillCopy" type="button">Copy the skill</button><span id="recSkillMsg" class="dim cmsg"></span></div>
+    </div>
   </div>
 
   <ul class="pts">
     <li><b>Why examiners care.</b> FINRA's 2026 report expects firms to supervise how AI is used, with added oversight, including logging, for AI agents that act or transact <span class="conf h" data-src="src-finra2026">H</span>.</li>
+    <li><b>Where the four come from.</b> No rule lists these four. Slot 1 is books and records: written communications relating to advice, kept five years under Advisers Act Rule 204-2 <span class="conf m" data-src="src-advisers-204-2">M</span>, or three years for a broker-dealer&rsquo;s correspondence under FINRA Rule 4511 and Exchange Act Rule 17a-4 <span class="conf m" data-src="src-finra-4511">M</span>. Slot 2 is supervision: FINRA expects firms to supervise AI use, with logging for agents that act or transact <span class="conf h" data-src="src-finra2026">H</span>, under the existing supervision rule <span class="conf h" data-src="src-finra2409">H</span>. Slot 3 is the duty of care: advice needs a reasonable basis the adviser can show <span class="conf m" data-src="src-advisers-fiduciary">M</span>. Slot 4 is the compliance programme: written policies, an annual review, and the AI-use policy as a record in its own right <span class="conf m" data-src="src-advisers-206-4-7">M</span>.</li>
     <li><b>Three things the file holds:</b> the prompt, the output, and the decision. The four slots above and the block&rsquo;s last line are those three, with a source you can re-open.</li>
     <li><b>Reading for this section.</b> Journal of Accountancy (2025), <em>Writing an effective AI prompt for an audit</em>, is the reading behind the record block <span class="conf m" data-src="src-joa-prompt">M</span>.</li>
   </ul>
@@ -7358,6 +7526,208 @@ try{
 
   setVend(0);
   drawSets();
+
+  /* ---------- beat 2, 2026-09-27: the ladder. Personal (gold) against firm (teal).
+     One SVG built once: a price tag over each column, the CLIENT FILE door at the
+     top of each, six rungs between them and THE SAME MODEL bar under both. Six
+     HTML buttons, and the door as a seventh, drive the rungs: a click lights the
+     side that has the lock and writes the readout. The firm door opens only once
+     all six are seen; the personal door never does. ---------- */
+  (function(){
+    var lHost=$('ladFig'),lList=$('ladList'),lOut=$('ladOut'),lAll=$('ladAll'),lProg=$('ladProg');
+    if(!lHost||!lList||!lOut)return;
+    /* n name; s the rung's word on the figure; sub the button's second line;
+       is what it is; stops what it stops; who which plan has it; pk the personal
+       side's state (if = only once you flip the switch, no = not there); p and f
+       the two lines of the readout; pc and fc the two cells on the figure; pb the
+       button's own YOU tag; chip the source. Facts: the ladder rungs record. */
+    var RUNGS=[
+      {n:'Training off',s:'TRAINING OFF',sub:'nothing you type trains a future model',
+       is:'Your chats are not used to train a future model.',
+       stops:'a client’s facts surfacing in a future model.',
+       who:'your firm, by contract; you, only once you flip the switch.',
+       pk:'if',p:'only if you switch it off. The default is on unless you opted out at signup.',pc:'✓ ONLY IF OFF',pb:'YOU ✓ IF OFF',
+       f:'off by contract.',fc:'✓ BY CONTRACT',
+       chip:'<span class="conf h" data-src="src-anthropic-terms">H</span>'},
+      {n:'Retention in writing',s:'RETENTION',sub:'how long chats are kept, on paper',
+       is:'How long the vendor keeps your chats is written down.',
+       stops:'a breach or a subpoena a year later finding your prompts.',
+       who:'your firm only.',
+       pk:'no',p:'30 days if training is off, five years if it is on. The switch decides.',pc:'✗ 5 YEARS IF ON',pb:'YOU ✗',
+       f:'30 days standard on the API; Enterprise sets its own, 30 days at minimum; Zero Data Retention by arrangement.',fc:'✓ 30 DAYS',
+       chip:'<span class="conf h" data-src="src-anthropic-retention">H</span>'},
+      {n:'A contract the firm signs',s:'THE CONTRACT',sub:'an authorised officer, not you',
+       is:'The vendor answers to your firm, on paper.',
+       stops:'the vendor being a stranger rather than your firm’s service provider under Regulation S-P.',
+       who:'your firm only.',
+       pk:'no',p:'you clicked; your firm signed nothing.',pc:'✗ YOU CLICKED',pb:'YOU ✗',
+       f:'an authorised officer accepts the Commercial Terms and the Data Processing Addendum.',fc:'✓ OFFICER SIGNS',
+       chip:'<span class="conf h" data-src="src-anthropic-terms">H</span> <span class="conf h" data-src="src-regsp">H</span>'},
+      {n:'Audit report on request',s:'AUDIT REPORT',sub:'proof of its security, not a promise',
+       is:'The vendor shows its audit report when your firm asks.',
+       stops:'taking the vendor’s word for its security.',
+       who:'your firm only.',
+       pk:'no',p:'none.',pc:'✗ NONE',pb:'YOU ✗',
+       f:'a SOC 2 report on written request; SOC 2 Type II, ISO 27001 and ISO 42001 held.',fc:'✓ SOC 2 REPORT',
+       chip:'<span class="conf h" data-src="src-anthropic-dpa">H</span> <span class="conf h" data-src="src-anthropic-certs">H</span>'},
+      {n:'SSO, admin controls, audit logs',s:'SSO · LOGS',sub:'who asked what, and when',
+       is:'Your firm decides who gets in, and can see who asked what.',
+       stops:'a leaver keeping access, and the examiner’s question, who asked what and when, having no answer.',
+       who:'your firm only.',
+       pk:'no',p:'none.',pc:'✗ NONE',pb:'YOU ✗',
+       f:'Team has SSO and admin controls; Enterprise adds role-based access, SCIM and audit logs.',fc:'✓ SSO + LOGS',
+       chip:'<span class="conf h" data-src="src-claude-pricing">H</span>'},
+      {n:'Breach notice in hours',s:'BREACH NOTICE',sub:'the vendor must tell your firm',
+       is:'The vendor must tell your firm about a breach within a set number of hours.',
+       stops:'learning of a breach from a client.',
+       who:'your firm only.',
+       pk:'no',p:'none promised to you.',pc:'✗ NONE PROMISED',pb:'YOU ✗',
+       f:'48 hours in the Data Processing Addendum, against the 72 hours Regulation S-P makes your firm require.',fc:'✓ 48 HOURS',
+       chip:'<span class="conf h" data-src="src-anthropic-dpa">H</span> <span class="conf h" data-src="src-regsp">H</span>'}
+    ];
+    var lBtns=[],seen=[false,false,false,false,false,false],climbT=[],i,cy;
+    function nSeen(){var n=0,k;for(k=0;k<6;k++)if(seen[k])n++;return n}
+    function cls(el,c){el.setAttribute('class',c)}
+
+    /* ---------- the buttons: six rungs, then the door ---------- */
+    function wire(b,k){
+      b.addEventListener('mouseenter',function(){hiR(k,true)});
+      b.addEventListener('mouseleave',function(){hiR(k,document.activeElement===b)});
+      b.addEventListener('focus',function(){hiR(k,true)});
+      b.addEventListener('blur',function(){hiR(k,false)});
+    }
+    RUNGS.forEach(function(r,k){
+      var b=document.createElement('button');b.type='button';b.className='s3set s3rung';
+      b.setAttribute('aria-pressed','false');
+      b.innerHTML='<b class="nb guess">'+(k+1)+'</b><span class="t">'+esc(r.n)+'<small>'+esc(r.sub)+'</small></span><span class="s3pf"><i class="p">YOU ·</i><i class="f">FIRM ·</i></span>';
+      b.onclick=function(){see(k)};
+      wire(b,k);
+      lList.appendChild(b);lBtns.push(b);
+    });
+    var dBtn=document.createElement('button');dBtn.type='button';dBtn.className='s3set s3rung s3door';
+    dBtn.setAttribute('aria-pressed','false');
+    dBtn.innerHTML='<b class="nb guess">7</b><span class="t">Client file may go in?<small>the door at the top of the ladder</small></span><span class="s3pf"><i class="p no">YOU ✗</i><i class="f">FIRM ·</i></span>';
+    dBtn.onclick=function(){seeDoor()};
+    wire(dBtn,6);
+    lList.appendChild(dBtn);
+
+    /* ---------- the figure (viewBox 420 x 412), every node built once ---------- */
+    var svg=svgRoot(null,420,412,'Ladder: a personal account against a firm account.','s3ladder');
+    lHost.appendChild(svg);
+    svt(svg,106,17,'PERSONAL','s3cap s3capp','middle');
+    svt(svg,326,17,'FIRM','s3cap s3capf','middle');
+    /* price tags */
+    function tag(x0,k,lines){
+      var g=sv('g',null,svg);
+      sv('path',{d:'M'+(x0+12)+' 26 H'+(x0+192)+' V102 H'+(x0+12)+' L'+x0+' 64 Z','class':'s3tag '+k},g);
+      sv('circle',{cx:x0+16,cy:64,r:3,'class':'s3hole '+k},g);
+      lines.forEach(function(l){svt(g,x0+26,l[0],l[1],'s3tt'+(l[2]?' '+l[2]:''),'start')});
+    }
+    tag(4,'p',[[41,'CLAUDE PRO','b p'],[55,'$20 a month'],[69,'$17 on annual billing'],[97,'YOU CLICKED','b w']]);
+    tag(224,'f',[[41,'TEAM · ENTERPRISE','b f'],[55,'from $20 a seat a month'],[69,'plus the API, from $1 in'],[83,'per million tokens'],[97,'YOUR FIRM SIGNED','b f']]);
+    /* the doors */
+    function door(x0,k){
+      var g=sv('g',{'class':'s3dg'},svg);
+      sv('rect',{x:x0,y:112,width:132,height:48,rx:5,'class':'s3dr '+k},g);
+      sv('rect',{x:x0+5,y:117,width:122,height:38,rx:3,'class':'s3leaf'},g);
+      sv('circle',{cx:x0+116,cy:136,r:2.6,'class':'s3knob'},g);
+      svt(g,x0+66,131,'CLIENT FILE','s3dt','middle');
+      return {g:g,st:svt(g,x0+66,150,'','s3ds','middle')};
+    }
+    var dP=door(4,'p'),dF=door(284,'f');
+    /* rails, then the rungs over them */
+    sv('line',{x1:142,y1:124,x2:142,y2:372,'class':'s3rail'},svg);
+    sv('line',{x1:278,y1:124,x2:278,y2:372,'class':'s3rail'},svg);
+    function rung(y,num,name){
+      var g=sv('g',null,svg);
+      var bar=sv('rect',{x:140,y:y-12,width:140,height:24,rx:6,'class':'s3lr'},g);
+      var b=sv('circle',{cx:155,cy:y,r:11,'class':'s3bdg'},g);
+      var t=svt(g,155,y+6,String(num),'s3bn','middle');
+      var nm=svt(g,172,y+4,name,'s3lrn','start');
+      return {bar:bar,b:b,t:t,nm:nm};
+    }
+    function cell(x0,y){
+      return {r:sv('rect',{x:x0,y:y-12,width:132,height:24,rx:6,'class':'s3lc'},svg),t:svt(svg,x0+66,y+4,'?','s3lct','middle')};
+    }
+    var R7=rung(136,7,'CLIENT FILE?'),rg=[],pc=[],fc=[];
+    for(i=0;i<6;i++){cy=184+32*(5-i);rg.push(rung(cy,i+1,RUNGS[i].s));pc.push(cell(4,cy));fc.push(cell(284,cy))}
+    /* the same model under both */
+    sv('rect',{x:4,y:372,width:412,height:34,rx:8,'class':'s3model'},svg);
+    svt(svg,210,394,'THE SAME MODEL','s3name','middle');
+
+    function hiR(k,on){var b=k<6?rg[k].b:R7.b;if(b)b.classList.toggle('hi',!!on)}
+    function light(k){
+      var r=RUNGS[k];
+      cls(pc[k].r,'s3lc '+r.pk);cls(pc[k].t,'s3lct '+r.pk);pc[k].t.textContent=r.pc;
+      cls(fc[k].r,'s3lc ok');cls(fc[k].t,'s3lct ok');fc[k].t.textContent=r.fc;
+      cls(rg[k].bar,'s3lr ok');cls(rg[k].b,'s3bdg ok');cls(rg[k].t,'s3bn ok');rg[k].t.textContent='✓';cls(rg[k].nm,'s3lrn ok');
+    }
+    function pop(k){
+      var b=rg[k].b;if(reduced())return;
+      b.classList.add('hi');setTimeout(function(){b.classList.remove('hi')},450);
+    }
+    function doors(){
+      var n=nSeen(),all=n===6,f=dBtn.querySelector('.s3pf .f'),d=dBtn.querySelector('b');
+      dP.st.textContent='✗ SHUT';cls(dP.st,'s3ds no');
+      dF.g.classList.toggle('open',all);
+      dF.st.textContent=all?'✓ OPEN':'SHUT · '+n+' OF 6';cls(dF.st,'s3ds'+(all?' ok':''));
+      cls(R7.bar,'s3lr'+(all?' ok':''));cls(R7.b,'s3bdg'+(all?' ok':''));cls(R7.t,'s3bn'+(all?' ok':''));R7.t.textContent=all?'✓':'7';cls(R7.nm,'s3lrn'+(all?' ok':''));
+      if(f){f.className='f'+(all?' ok':'');f.textContent=all?'FIRM ✓':'FIRM ·'}
+      if(d){d.textContent=all?'✓':'7';d.className=all?'nb ok':'nb guess'}
+      dBtn.classList.toggle('ok',all);
+    }
+    function prog(){var n=nSeen();if(lProg)lProg.textContent=n+' of 6 steps seen'+(n===6?'. The firm door opens.':'.')}
+    function label(){
+      var n=nSeen();
+      svg.setAttribute('aria-label','Ladder of six steps between a personal account, Claude Pro at $20 a month that you clicked, and a firm account, Team or Enterprise seats plus the API that your firm signed. Both stand on the same model. '+n+' of 6 steps seen. Personal door: shut. Firm door: '+(n===6?'open.':'shut until all six are seen.'));
+    }
+    function readout(k){
+      var r=RUNGS[k],n=nSeen();
+      var h='<span class="hd">'+(k+1)+' · '+esc(r.n)+'</span>'+esc(r.is)+
+        '<br><b>Stops:</b> '+esc(r.stops)+
+        '<br><b>Who has it:</b> '+esc(r.who)+
+        '<br><span class="'+(r.pk==='if'?'cond':'flag')+'">Personal: '+esc(r.p)+'</span>'+
+        '<br><span class="good">Firm: '+esc(r.f)+'</span> '+r.chip+
+        '<br><span class="dim">'+n+' of 6 steps seen.'+(n===6?' The firm door opens: client data possible once §04’s six answers are on paper. Personal: public or de-identified prompts only (§02).':' Climb on: '+(6-n)+' to go.')+'</span>';
+      lOut.className='mpanel has';lOut.innerHTML=h;
+    }
+    function seeDoor(){
+      var n=nSeen(),all=n===6;
+      dBtn.setAttribute('aria-pressed','true');
+      var h='<span class="hd">7 · Client file may go in?</span>'+
+        '<span class="flag">Personal: never. Public or de-identified prompts only (§02).</span><br>'+
+        (all?'<span class="good">Firm: client data possible once §04’s six answers are on paper.</span><br><span class="dim">Same model on both sides. The plan bought the contract, and the contract opens the door.</span>':
+          '<span class="dim">Firm: shut until all six steps are seen, '+n+' of 6 so far. Same model on both sides; the plan buys the contract.</span>');
+      lOut.className='mpanel has';lOut.innerHTML=h;
+      label();
+    }
+    function see(k){
+      if(!seen[k]){
+        seen[k]=true;
+        var b=lBtns[k],d=b.querySelector('b'),p=b.querySelector('.s3pf .p'),f=b.querySelector('.s3pf .f');
+        b.setAttribute('aria-pressed','true');b.classList.add('ok');
+        if(d){d.textContent='✓';d.className='nb ok'}
+        if(p){p.className='p '+RUNGS[k].pk;p.textContent=RUNGS[k].pb}
+        if(f){f.className='f ok';f.textContent='FIRM ✓'}
+        light(k);pop(k);
+      }
+      doors();prog();readout(k);label();
+    }
+    /* Climb all: one rung at a time, or all at once when reduced or revealed */
+    function stopClimb(){climbT.forEach(function(t){clearTimeout(t)});climbT=[]}
+    function climbAll(instant){
+      stopClimb();
+      var left=[],k;for(k=0;k<6;k++)if(!seen[k])left.push(k);
+      if(!left.length){seeDoor();return}
+      var d=(instant||reduced())?0:420;
+      if(!d){left.forEach(function(j){see(j)});seeDoor();return}
+      left.forEach(function(j,q){climbT.push(setTimeout(function(){see(j)},d*(q+1)))});
+      climbT.push(setTimeout(function(){seeDoor()},d*(left.length+1)));
+    }
+    if(lAll)lAll.onclick=function(){climbAll(false)};
+    REVEALS.push(function(){climbAll(true)});
+    doors();prog();label();
+  })();
 })();
 }catch(err){try{console.warn("section s3 failed:",err&&err.message)}catch(_){}}
 /* ----- section s4 ----- */
@@ -9456,11 +9826,13 @@ try{
  var OPTS=[['y','(a) Still true'],['r','(b) Stale now'],['x','(c) Never true']];
  var CL=[
   {q:'Temperature sets how random the output is. 0.8 works well for essays.',
-   now:'Temperature is deprecated on current Claude models: they accept only 1.0 and reject other values. Effort, low to max, is what you set.',
+   now:'Temperature is deprecated on current Claude models: only 1.0 is accepted, any other value is rejected. What you set instead is effort (low, medium, high, xhigh, max) and adaptive thinking, where the model decides how much to think; most models default to high effort. In the Claude app the same control is the effort selector, and thinking cannot be switched off on the newest models.',
+   'do':'What to do instead: for an essay-style task, leave effort at its default, high, and write the brief well. There is no dial to set.',
    then:'True when written: Wolfram reported 0.8 as the setting that works for essays.',
    aria:'Claim 1 drawn as a temperature dial from 0 to 1.0 with its needle at 0.8, the essay setting. Moved to now, the dial greys out, the needle is held at 1.0 with a padlock, and a five-level effort selector appears beside it.'},
   {q:'The model answers in one pass: no loops, each part of itself used once.',
-   now:'Reasoning models think before they answer, and that thinking counts towards the cost. Benchmarks now report tokens and turns per task.',
+   now:'Reasoning models think before they answer, and current models run in a loop: gather context, take action with a tool, verify, repeat. Benchmarks report tokens and turns per task.',
+   'do':'What to do instead: plan for the loop, not for one answer. Let it think, let it act with a tool and check the result, then read the whole run, not just the last line. Count tokens and turns per task, as the benchmarks do.',
    then:'True when written: the model Wolfram described answered in one pass.',
    aria:'Claim 2 drawn as a straight path from prompt to answer, one pass. Moved to now, a thinking loop appears on the path before the answer, and the thinking share of the cost bar grows.'}
  ];
@@ -9637,7 +10009,8 @@ try{
    if(!defer)slam(c,true);
    marks(c);
    setOut(c,'<span class="hd">What changed</span>'+esc(CL[c.i-1].now)+
-    (c.call?'<br><span class="'+(c.call==='r'?'good':'flag')+'">'+esc(VERD[c.call])+'</span>':''),true);
+    (c.call?'<br><span class="'+(c.call==='r'?'good':'flag')+'">'+esc(VERD[c.call])+'</span>':'')+
+    '<span class="wsDo">'+esc(CL[c.i-1]['do'])+'</span>',true);
    refreshKey();
   }else if(era==='then'&&c.revealed){
    c.stamp.className='wsStamp then';c.stamp.textContent='True when written';
@@ -9739,8 +10112,8 @@ try{
   var a=cards[0],b=cards[1];if(!a||!b)return;
   var h='<span class="hd">Source check</span><div class="wsLab">'+
    row('Source','Wolfram, February 2023')+
-   row('1 · Temperature',a.revealed?'<span class="flag">✗ Stale now: held at 1.0; effort is what you set</span>':'<span class="nil">○ Drag claim 1 to now</span>')+
-   row('2 · Answers in one pass',b.revealed?'<span class="flag">✗ Stale now: reasoning models think first</span>':'<span class="nil">○ Drag claim 2 to now</span>');
+   row('1 · Temperature',a.revealed?'<span class="flag">✗ Stale now: held at 1.0; effort is what you set</span><span class="wsDo">'+esc(CL[0]['do'])+'</span>':'<span class="nil">○ Drag claim 1 to now</span>')+
+   row('2 · Answers in one pass',b.revealed?'<span class="flag">✗ Stale now: it thinks first, then runs the agent loop</span><span class="wsDo">'+esc(CL[1]['do'])+'</span>':'<span class="nil">○ Drag claim 2 to now</span>');
   if(a.revealed&&b.revealed&&a.call&&b.call){
    var n=(a.call==='r'?1:0)+(b.call==='r'?1:0);
    h+=row('Your calls','<span class="'+(n===2?'good':'wsN')+'">'+n+' of 2 held</span>');
@@ -9767,6 +10140,70 @@ try{
   fillKey();key.className='mpanel has keyhide';key.style.display='block';
  });
 })();
+
+/* ---------- the then-versus-now deck: eight flip cards ----------
+   Each card is one button holding both faces. The .on class turns it; aria-pressed,
+   aria-hidden on the faces and the count line are set at once, motion only follows.
+   Flip all sets every card in one synchronous pass and staggers only the turn, with
+   a transition delay, so a click that lands mid-turn never fights a timer. The
+   Shift+U override flips every card to now. */
+(function(){
+ var grid=$('flipGrid'),all=$('flipAll'),cnt=$('flipCount');if(!grid||!all||!cnt)return;
+ var DECK=[
+  {a:'Set temperature about 0.8 for essays. <span class="conf h" data-src="src-wolfram">H</span>',
+   b:'No dial. Temperature is deprecated; effort and adaptive thinking replace it. <span class="conf h" data-src="src-api-messages">H</span> <span class="conf h" data-src="src-effort">H</span>'},
+  {a:'The model remembers nothing between chats.',
+   b:'Claude remembers. Memory came to Team and Enterprise on 11 September 2025 and to Pro and Max on 23 October 2025. The app saves memory as a set of topics as you chat, on by default on consumer plans. <span class="conf h" data-src="src-claude-memory">H</span>'},
+  {a:'Prompt engineering: give it a role and the right words.',
+   b:'Context engineering: curate everything the model sees, its tools, its notes, what it retrieves. A role still sets tone, not accuracy. <span class="conf h" data-src="src-anthropic-ctx-eng">H</span>'},
+  {a:'Add &ldquo;think step by step&rdquo;.',
+   b:'Reasoning is built in, since February 2025. Manual step-by-step prompting is a fallback for when thinking is off. <span class="conf h" data-src="src-anthropic-thinking">H</span>'},
+  {a:'To ground it, build your own retrieval pipeline.',
+   b:'Grounding is built in: connectors through the Model Context Protocol (November 2024), web search with citations (March 2025), integrations and research (May 2025). <span class="conf h" data-src="src-anthropic-mcp">H</span>'},
+  {a:'The context window is a few thousand tokens.',
+   b:'9,000 tokens in March 2023; 100,000 in May 2023; 200,000 in November 2023; one million by default on current models, about 555,000 words. More is not free: accuracy and recall degrade as the count grows, which the docs call context rot. <span class="conf h" data-src="src-anthropic-context">H</span>'},
+  {a:'Copy and paste into a chat box.',
+   b:'Agents act: computer use (October 2024), Claude Code (2025), Agent Skills (October 2025), folders of instructions the model loads when needed. <span class="conf h" data-src="src-agent-skills">H</span> <span class="conf h" data-src="src-anthropic-agents">H</span>'},
+  {a:'One prompt, one answer.',
+   b:'The agent loop: LLMs using tools based on environmental feedback in a loop, Anthropic&rsquo;s words from December 2024. Gather context, act with a tool, verify, repeat. The docs call it the agentic loop. <span class="conf h" data-src="src-anthropic-agents">H</span>'}
+ ];
+ var N=DECK.length,cards=[];
+ function face(cls,tag,n,html){
+  return '<span class="wsFace '+cls+'"><span class="wsTagRow"><span class="wsTag">'+tag+'</span><span class="wsNum">card '+n+' <span aria-hidden="true">&#8635;</span></span></span><span class="wsLine">'+html+'</span></span>';
+ }
+ function set(c,on,k){
+  c.on=!!on;
+  c.inn.style.transitionDelay=k?(k*45)+'ms':'';
+  c.el.classList.toggle('on',c.on);
+  c.el.setAttribute('aria-pressed',c.on?'true':'false');
+  c.front.setAttribute('aria-hidden',c.on?'true':'false');
+  c.back.setAttribute('aria-hidden',c.on?'false':'true');
+ }
+ function nOn(){var n=0,i;for(i=0;i<cards.length;i++)if(cards[i].on)n++;return n}
+ function count(){
+  var n=nOn(),done=n===N;
+  cnt.textContent=n+' of '+N+' flipped'+(done?' · all eight aged':'');
+  cnt.classList.toggle('all',done);
+  all.textContent=done?'Flip all back':'Flip all';
+  all.setAttribute('aria-pressed',done?'true':'false');
+ }
+ DECK.forEach(function(d,i){
+  var b=document.createElement('button');b.type='button';b.className='wsFlip';b.setAttribute('aria-pressed','false');
+  b.innerHTML='<span class="wsIn">'+face('wsFront','2023',i+1,d.a)+face('wsBack','NOW',i+1,d.b)+'</span>';
+  grid.appendChild(b);
+  var c={el:b,on:false,inn:b.querySelector('.wsIn'),front:b.querySelector('.wsFront'),back:b.querySelector('.wsBack')};
+  c.back.setAttribute('aria-hidden','true');
+  b.addEventListener('click',function(){set(c,!c.on,0);count()});
+  cards.push(c);
+ });
+ all.addEventListener('click',function(){
+  var to=nOn()<N;
+  cards.forEach(function(c,i){set(c,to,i)});
+  count();
+ });
+ count();
+ REVEALS.push(function(){cards.forEach(function(c,i){set(c,true,i)});count()});
+})();
 }catch(err){try{console.warn("section sWS failed:",err&&err.message)}catch(_){}}
 /* ----- section s7 ----- */
 try{
@@ -9780,6 +10217,17 @@ try{
    ("Reproducibility is not correctness"), shared mkSorter (lands at once). */
 var host=$('recFig'),L=$('recList'),BX=$('recBoxes'),O=$('recOut'),K=$('recKey'),ASK=$('recAsk'),CITE=$('recCite'),NX=$('recNext');
 var cp=$('recCopy');if(cp)cp.onclick=function(){copyText($('recBlock').textContent,$('recMsg'))};
+var cps=$('recSkillCopy');if(cps)cps.onclick=function(){var p=$('recSkill');if(p)copyText(p.textContent,$('recSkillMsg'))};
+/* the record block, as a prompt block or as a skill file: one view at a time */
+var VP=$('recViewP'),VS=$('recViewS'),VPB=$('recViewPB'),VSB=$('recViewSB');
+function skillView(on){
+ if(VP)VP.style.display=on?'none':'';
+ if(VS)VS.style.display=on?'':'none';
+ if(VPB){VPB.setAttribute('aria-pressed',on?'false':'true');VPB.classList.toggle('act',!on)}
+ if(VSB){VSB.setAttribute('aria-pressed',on?'true':'false');VSB.classList.toggle('act',!!on)}
+}
+if(VPB)VPB.onclick=function(){skillView(false)};
+if(VSB)VSB.onclick=function(){skillView(true)};
 if(!host||!L||!BX||!O)return;
 
 var SL=['PROMPT AS SENT','MODEL AND SETTING','SOURCE, QUOTED','WHO DECIDED, WHEN'];
@@ -9847,6 +10295,7 @@ for(var k=0;k<4;k++){
  o.rp=sv('g',{'class':'rp'},gF);
  sv('rect',{x:230,y:y0+4,width:98,height:24,rx:12},o.rp);
  o.rpt=svt(o.rp,279,y0+21,'','','middle');
+ o.wh=sv('rect',{x:13,y:y0-2,width:322,height:54,rx:9,'class':'whyhl'},gF);
  R.push(o);
 }
 var scan=sv('rect',{x:16,y:88,width:316,height:4,rx:2,'class':'scan'},svg);
@@ -9857,6 +10306,27 @@ sv('rect',{'class':'out',x:170,y:11,width:184,height:38,rx:5},stamp);
 sv('rect',{'class':'in',x:175,y:16,width:174,height:28,rx:3},stamp);
 var stT=svt(stamp,262,36,'RE-CHECKABLE',null,'middle');
 var stop=svt(svg,8,350,'Could an examiner re-check it?','stop ask');
+
+/* ---------- why each slot: the rule behind it; the filing state is untouched ---------- */
+var WHY=[
+ 'Books and records. Advisers Act Rule 204-2(a)(7): originals and copies of written communications relating to any recommendation made or advice given, kept five years, the first two in an appropriate office of the adviser <span class="conf m" data-src="src-advisers-204-2">M</span>. A broker-dealer keeps correspondence three years under FINRA Rule 4511 and Exchange Act Rule 17a-4 <span class="conf m" data-src="src-finra-4511">M</span>. The prompt and the answer are that communication.',
+ 'Supervision. FINRA’s 2026 report expects firms to supervise how AI is used, with added oversight, including logging, for AI agents that act or transact <span class="conf h" data-src="src-finra2026">H</span>. Regulatory Notice 24-09: the existing supervision rule, FINRA Rule 3110, reaches AI tools <span class="conf h" data-src="src-finra2409">H</span>. Nobody can supervise a tool the record does not name.',
+ 'Duty of care. Under the Advisers Act, advice must have a reasonable basis the adviser can show <span class="conf m" data-src="src-advisers-fiduciary">M</span>. A quoted clause is that basis. A summary repeats whatever the model misread.',
+ 'Compliance programme. Advisers Act Rule 206(4)-7 requires written policies and procedures and an annual review, and the AI-use policy with its review record is itself a required record <span class="conf m" data-src="src-advisers-206-4-7">M</span>. A name and a date are what that review reads.'
+];
+var NOLIST='No rule lists these four. The rules require the record and the basis for advice; these four are what makes it re-checkable.';
+var WHYROW=$('recWhy'),WB=WHYROW?[].slice.call(WHYROW.querySelectorAll('button')):[];
+var keep={c:O.className,h:O.innerHTML},whyOn=-1;
+function whyOff(){whyOn=-1;WB.forEach(function(b){b.setAttribute('aria-pressed','false');b.classList.remove('act')});R.forEach(function(o){cls(o.wh,'whyhl')})}
+function why(k){
+ if(whyOn===k){whyOff();O.className=keep.c;O.innerHTML=keep.h;return}
+ whyOff();whyOn=k;
+ WB.forEach(function(b,j){b.setAttribute('aria-pressed',j===k?'true':'false');b.classList.toggle('act',j===k)});
+ cls(R[k].wh,'whyhl show');
+ O.className='mpanel has';
+ O.innerHTML='<span class="hd">Why slot '+(k+1)+' · '+esc(SL[k])+'</span>'+WHY[k]+'<br>'+esc(NOLIST);
+}
+WB.forEach(function(b,j){b.onclick=function(){why(j)}});
 
 function delay(el,ms){if(el&&el.style)el.style.transitionDelay=ms+'ms'}
 /* an instant paint cancels any fade still running (a stamp waiting on its
@@ -9918,7 +10388,7 @@ function paint(i,mode,instant){
 
 /* ---------- readout ---------- */
 function prog(){var n=nFiled();return 'Progress · '+n+' of 6 filed'+(nYou?' · '+nRight+' right':'')}
-function say(h,body){O.className='mpanel has';O.innerHTML='<span class="hd">'+esc(h)+'</span>'+body}
+function say(h,body){whyOff();O.className='mpanel has';O.innerHTML='<span class="hd">'+esc(h)+'</span>'+body;keep={c:O.className,h:O.innerHTML}}
 function nextLine(){return view>=0?'Next record ▸ brings up record '+(view+1)+'.':'All six filed. Last step: check record 6’s citation.'}
 function reviewSay(i){var f=filed[i],r=REC[i];if(!f)return;
  var g=f.ok===true?'<span class="good">✓ You filed it in '+tray(f.k)+'. Right.</span>':(f.ok===false?'<span class="flag">✗ You said '+tray(f.k)+'. It belongs in '+tray(r.k)+'.</span>':'· The examiner filed it in '+tray(f.k)+'.');
