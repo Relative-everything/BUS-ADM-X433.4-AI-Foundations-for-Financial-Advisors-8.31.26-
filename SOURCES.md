@@ -263,7 +263,7 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/api/messages
 published:      not applicable
-last_retrieved: 2026-09-13
+last_retrieved: 2026-09-27
 last_verified:
 retrieval_note: Fetched 2026-09-13 for session-2 §01. The temperature parameter is marked deprecated for models released after Claude Opus 4.6, with 1.0 accepted for backwards compatibility and other values rejected with a 400 error; it defaults to 1.0 and ranges 0.0 to 1.0; the page states that even with temperature of 0.0 the results will not be fully deterministic.
 confidence:     H
@@ -271,7 +271,7 @@ kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-2 §01
-scope:          The temperature parameter's status on current models and the vendor's statement that a setting of zero is not fully deterministic. The page gives the fact, not the mechanism.
+scope:          The Messages API reference as read on 2026-09-27: temperature is marked deprecated ("Models released after Claude Opus 4.6 do not support setting temperature. A value of 1.0 will be accepted for backwards compatibility, all other values will be rejected with a 400 error"); the effort parameter ("How much effort the model should put into its response") takes low, medium, high, xhigh or max; thinking can be enabled with a token budget, disabled, or adaptive, where the model decides.
 used_for.session-2: §01's list of what can differ between two runs and the third consequence card
 last_retrieved.session-2: 2026-09-13
 figures.session-2: none typed
@@ -891,6 +891,7 @@ moving_target:  true
 figure_class:   leaderboard_position
 recheck_before: no lesson cites this record since the 2026-09-25 session-4 rebuild
 scope:          The LLM01 ranking for prompt injection and the mapping into six of ten agentic categories. The ranking is revised between editions, so the position is a moving target even though the finding is not.
+used_for.session-4: least privilege and human approval for high-risk actions as the fixes that hold against prompt injection (§05)
 ```
 
 ## src-cve
@@ -940,6 +941,7 @@ confidence:     M
 kind:           evidence
 moving_target:  false
 scope:          US GenAI-enabled fraud losses projected from $12.3bn (2023) to $40bn (2027). A PROJECTION, NOT A MEASUREMENT, and the page says so.
+used_for.session-4: the projected scale of generative-AI fraud, labelled a projection on the four-attack board (§05)
 ```
 
 ## src-surfshark
@@ -992,6 +994,7 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: no lesson cites this record since the 2026-09-25 session-4 rebuild
 scope:          Tournament sampling in text, perturbation in image and video, and the frequency-domain approach in audio. Adoption is a vendor decision and changes; the mechanism does not.
+used_for.session-4: the pixel-level image watermark that survives a screenshot (Appendix D1)
 ```
 
 ## src-synthid-text
@@ -1022,15 +1025,15 @@ author:         Anthropic
 publisher:      Claude Help Center, support.claude.com article 16266773
 link:           https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content
 published:      not applicable
-last_retrieved: 2026-09-25
+last_retrieved: 2026-09-27
 last_verified:
-retrieval_note: Fetched 2026-09-25 from this build environment for the session-4 rebuild, through a summarising fetch rather than a raw read, so every statement below is the page's substance, not its wording. It corrects the earlier session-4 claim that nothing generated with Claude is watermarked: supported Claude models now mark their output.
+retrieval_note: Opened directly on 2026-09-25 and again, in full, on 2026-09-27, together with the Claude Content Checker page at claude.com/check-content. Quotations below are the pages' own words.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4 Appendices D1 and D2
-scope:          Supported Claude models launched on or after 2 August 2026 mark generated text with an imperceptible watermark, and earlier models are being added with all covered by 2 December 2026. Marks apply across the API, the Claude apps, Claude Code and wherever Claude is offered. Supported files Claude generates, such as PNG and JPEG images, carry signed C2PA provenance metadata. Detection is available only to organisations eligible under EU law, such as regulators, law enforcement, media, fact-checkers, researchers and educational organisations. A mark may persist through copying and some editing; heavy paraphrase or translation can make it undetectable. A detected mark signals that the content may have been processed by Claude and is not fully conclusive; the lack of a detected mark does not mean the content was not AI-generated or processed. The page, as read, describes no account or user identifier in the mark; that is a reading of an absence and is chipped M wherever it is used.
+scope:          Claude models launched in the EU on or after 2 August 2026 mark generated text with an imperceptible watermark at launch, earlier models are being added with all covered by 2 December 2026, and marking applies "to output from supported models wherever Claude is offered, worldwide". Files Claude makes (PNG, JPG, SVG, MP4, audio) carry signed Content Credentials following the C2PA standard. Text watermark detection is in private preview, "available to eligible organizations as required under EU law (such as regulators, law enforcement, media, fact-checkers, independent researchers, educational organizations, and EU civil society groups)" and to enterprises with their own Article 50 obligations, through a registration form. A detected mark "tells you that the content may have been processed by Claude" and does not confirm full provenance; "Lack of a detected mark doesn't mean the content wasn't AI-generated or processed": heavy editing, paraphrase, translation, very short passages, or metadata stripped "through format conversion, re-saving, screenshots, or other means". The free Claude Content Checker checks a file, in the browser, for a Claude-issued credential; "The tool does not check text." Anthropic signed the EU AI Act Article 50(2) Code of Practice on Transparency of AI-Generated Content. The page describes no account or user identifier in the mark; that is a reading of an absence and is chipped M wherever it is used.
 used_for.session-4: which Claude models mark their text, who can check a mark and what it shows (Appendices D1 and D2); the EU marking rule in the §01 sorter
 ```
 
@@ -1091,19 +1094,20 @@ used_for.session-4: the withdrawn 2023 predictive data analytics proposal (§01 
 ## src-anthropic-terms
 
 ```source
-title:          Privacy Center and Commercial Terms
+title:          Consumer Terms of Service, Commercial Terms of Service and Privacy Policy
 author:         Anthropic
-publisher:      Anthropic
-link:           [UNVERIFIED, needs source]
+publisher:      Anthropic, anthropic.com/legal
+link:           https://www.anthropic.com/legal/commercial-terms
 published:      not applicable
-last_retrieved: 2026-08-14
+last_retrieved: 2026-09-27
 last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4 §03
-scope:          Consumer training defaults since 8 October 2025, five-year and 30-day retention, the commercial-side no-training default, Zero Data Retention eligibility, and Claude Code's local 30-day transcript retention. Every one of these is a term a vendor can change without notice.
+scope:          Consumer plans: Anthropic may use chats "including training our models, unless you opt out of training through your account settings"; retention five years if training is allowed, 30 days if not; the Consumer Terms are a contract between the individual and Anthropic. Commercial plans (Team, Enterprise, the API): "Anthropic may not train models on Customer Content from Services" (Section B); the Customer "retains all rights to its Inputs, and owns its Outputs" (Section B); Confidential Information may be used only to exercise rights and perform obligations under the Terms and is destroyed promptly on request (Sections E.2, E.4); the Terms are an agreement between Anthropic and the organisation the signer represents, and nobody may accept for an organisation without legal authority to bind it.
+retrieval_note: Opened directly on 2026-09-27: the Commercial Terms (effective 17 June 2025), the Consumer Terms (effective 8 October 2025), the Privacy Policy (effective 10 September 2026) and the 28 August 2025 news post on the consumer training change. The consumer-side retention figures (five years if training is allowed, 30 days if not) are stated in the news post and on the Claude Code data-usage page; privacy.claude.com itself could not be opened. Earlier retrieval 2026-08-14.
 used_for.session-4: the consumer training switch, five-year and 30-day retention, and the business plans' exclusion from training (§03)
 ```
 
@@ -1546,4 +1550,778 @@ kind:           assigned_reading
 moving_target:  false
 scope:          The assigned reading for §07, from the Journal of Accountancy's A&A Focus series on AI in audit work. Its content is not characterised anywhere in the lesson.
 used_for.session-4: the assigned reading behind the record block (§07)
+```
+
+## src-claude-pricing
+
+```source
+title:          Plans and pricing
+author:         Anthropic
+publisher:      claude.com
+link:           https://claude.com/pricing
+published:      not applicable
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the Help Center articles on the Max plan (11049741) and on Enterprise seats (13393991) and the Claude Enterprise solutions page. The Max 20x figure is on the Help Center article, not the pricing page. Prices move without notice.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_pricing
+recheck_before: every teaching of session-4 §03
+scope:          Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from $100 a month for five times Pro usage, $200 for twenty times. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, September 2026: from $1 in and $5 out for the smallest model to $10 in and $50 out for the largest.
+used_for.session-4: the personal and firm price tags and what Team and Enterprise add, on the ladder (§03); the per-token line in the live API box
+```
+
+## src-anthropic-retention
+
+```source
+title:          API and data retention
+author:         Anthropic
+publisher:      Claude Platform Docs
+link:           https://platform.claude.com/docs/en/manage-claude/api-and-data-retention
+published:      not applicable
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the Help Center articles on custom retention for Enterprise plans (10440198) and on retention for covered models (15425996, effective 9 June 2026) and the Claude Code data-usage page. Two Anthropic pages differ on the Enterprise chat default (30 days standard against "indefinitely unless a custom period is set"); the lesson states only what both agree on.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 §03
+scope:          Standard retention on the API is 30 days; Enterprise organisations can set a custom retention period, 30 days at minimum; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years.
+used_for.session-4: the retention rung of the ladder and the retention clause of the contract view (§03, §04)
+```
+
+## src-anthropic-dpa
+
+```source
+title:          Data Processing Addendum
+author:         Anthropic
+publisher:      Anthropic, anthropic.com/legal
+link:           https://www.anthropic.com/legal/data-processing-addendum
+published:      2025-02-24
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, three reads, consistent. Incorporated by reference into the Commercial Terms (Section C, Data Privacy). Quotations in scope are the document's own words.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 §04
+scope:          Section G.1: "Anthropic will notify Customer in writing without undue delay, but in any event within 48 hours, after becoming aware of any Security Breach." Section H.1: within thirty days of termination or expiration, on request, return a copy of all Customer Data or provide self-service functionality to do the same, and delete all copies. Section F.1: "Upon Customer's written request, and subject to the confidentiality obligations set forth in the Agreement, Anthropic will provide Customer with such audit reports or certificates applicable to the Services (e.g., SOC 2 report), to the extent available". Section C.3: reasonable prior notice of a new subprocessor and fifteen days to object. Section B.2: processing only to provide or maintain the Services and on the Customer's documented instructions.
+used_for.session-4: the breach-notice, export and audit clauses of the contract view (§04) and the matching rungs of the ladder (§03)
+```
+
+## src-anthropic-certs
+
+```source
+title:          What certifications has Anthropic obtained?
+author:         Anthropic
+publisher:      Claude Help Center, support.claude.com article 10015870
+link:           https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained
+published:      not applicable
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27 (the article says it was last updated 16 March 2026), with the HIPAA-ready Enterprise plans article (13296973) and the January 2025 news post on ISO 42001. The Trust Portal itself is egress-blocked from this build.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 §03 and §04
+scope:          SOC 2 Type I and Type II; ISO 27001:2022; ISO/IEC 42001:2023; a HIPAA-ready configuration with a Business Associate Agreement, available on Enterprise plans and accepted by the organisation's primary owner; compliance documents requested through the Trust Portal.
+used_for.session-4: the audit rung of the ladder and the audit clause of the contract view (§03, §04)
+```
+
+## src-anthropic-aup
+
+```source
+title:          Usage Policy
+author:         Anthropic
+publisher:      Anthropic, anthropic.com/legal
+link:           https://www.anthropic.com/legal/aup
+published:      2025-09-15
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4
+scope:          Use cases related to financial decisions, including investment advice, are treated as high-risk: a qualified professional must review the content or decision before it goes out, and the user must disclose that AI helped produce the advice. The policy also prohibits sharing personal information without consent.
+```
+
+## src-gemini-api-terms
+
+```source
+title:          Gemini API Additional Terms of Service
+author:         Google
+publisher:      Google AI for Developers, ai.google.dev
+link:           https://ai.google.dev/gemini-api/terms
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. ai.google.dev is egress-blocked from this build environment (2026-09-27). The wording in scope appears verbatim in search snippets of the page itself and in two independent mirrors of the terms (Simon Willison, October 2024; ScanCode LicenseDB, 2025). Read the page before class; Google changes it.
+confidence:     M
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4
+scope:          On the unpaid services (Google AI Studio and the free API quota), Google uses submitted content and generated responses "to provide, improve, and develop Google products and services and machine learning technologies", and "human reviewers may read, annotate, and process your API input and output"; on the paid services, prompts and responses are not used to improve products.
+used_for.session-4: why a free key is the training tier and a paid key is the contract tier (§03, and the Live API box above §00)
+```
+
+## src-gemini-ratelimits
+
+```source
+title:          Rate limits
+author:         Google
+publisher:      Google AI for Developers, ai.google.dev
+link:           https://ai.google.dev/gemini-api/docs/rate-limits
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. ai.google.dev is egress-blocked from this build environment (2026-09-27), and the secondary sources disagree (250 requests a day for an older flash model against about 20 for the newer ones, after Google cut free quotas in December 2025 and moved to per-project limits). No number is printed on the page.
+confidence:     L
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4
+scope:          The free tier's request limits are small, were cut in December 2025, and are now set per project; the only reliable figure is the one in your own AI Studio console.
+used_for.session-4: the one line saying the free quota is small and must be checked in your own console (§00, in the Live API box above it)
+```
+
+## src-uae-voice
+
+```source
+title:          Fraudsters cloned company director's voice in $35 million heist, police find
+author:         Brewster, T.
+publisher:      Forbes
+link:           https://www.forbes.com/sites/thomasbrewster/2021/10/14/huge-bank-fraud-uses-deep-fake-voice-tech-to-steal-millions/
+published:      2021-10-14
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. forbes.com is egress-blocked from this build environment (2026-09-27). Cross-checked against search snippets from Dark Reading, Unite.AI, SingularityHub and Interesting Engineering (October 2021), all consistent on the amount, the year and the court filing Forbes reported.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          In early 2020 a bank branch manager in the UAE authorised transfers of $35 million after a phone call from a cloned voice of a company director he knew, backed by forged emails about an acquisition; the case surfaced in a 2021 court document.
+used_for.session-4: the second bar on the bill: a voice alone, $35 million (§05)
+```
+
+## src-uk-voice
+
+```source
+title:          A voice deepfake was used to scam a CEO out of $243,000
+author:         Damiani, J.
+publisher:      Forbes
+link:           https://www.forbes.com/sites/jessedamiani/2019/09/03/a-voice-deepfake-was-used-to-scam-a-ceo-out-of-243000/
+published:      2019-09-03
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. forbes.com is egress-blocked from this build environment (2026-09-27). The case was first reported by the Wall Street Journal on 30 August 2019 citing the insurer Euler Hermes; cross-checked against Gizmodo, CBC and Avast. The call was not recorded, so the AI attribution rests on the insurer's assessment.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          In March 2019 the chief executive of a UK energy firm wired €220,000, about $243,000, to a Hungarian account after a phone call that mimicked his German parent company chief's voice.
+```
+
+## src-sg-deepfake-2025
+
+```source
+title:          Finance director in Singapore transfers S$670,000 to scammers who used deepfake to impersonate company's executives
+author:         Mothership
+publisher:      Mothership.sg
+link:           https://mothership.sg/2025/04/finance-director-scammed-deepfake/
+published:      2025-04
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. mothership.sg and police.gov.sg are egress-blocked from this build environment (2026-09-27). The primary source is the Singapore Police Force news release of 7 April 2025 on the joint recovery with the Hong Kong Police Force; cross-checked against HRD Asia, Fortune (25 April 2025) and The Straits Times.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          On 24 to 26 March 2025 a finance director joined a Zoom call with deepfakes of the chief executive and other executives and sent about US$499,000 (S$670,000) to a mule account; police in Singapore and Hong Kong traced and withheld it.
+```
+
+## src-sg-deepfake-2026
+
+```source
+title:          Fake Zoom call with PM Wong: police release deepfake footage of scam that caused victim to hand over S$4.9 million
+author:         Mothership
+publisher:      Mothership.sg
+link:           https://mothership.sg/2026/05/pm-wong-zoom-deepfake-scam/
+published:      2026-05-16
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. mothership.sg is egress-blocked from this build environment (2026-09-27). Cross-checked against search snippets from the South China Morning Post, The Star (Malaysia), Malay Mail, VnExpress International and Fintech News Singapore, all consistent on the amount and the dates; the Singapore Police Force released the deepfake footage on 16 May 2026.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          In May 2026 a Singapore businessman transferred S$4.9 million, about US$3.8 million, to a scammer-controlled corporate account after a Zoom call with deepfakes of the Prime Minister, the President and a minister; he realised on 14 May 2026. Nothing stopped it.
+used_for.session-4: the third bar on the bill: a private individual, a video call with officials (§05)
+```
+
+## src-ferrari
+
+```source
+title:          Ferrari deepfake attempt: scammer foiled by security question about CEO Benedetto Vigna
+author:         Fortune
+publisher:      Fortune
+link:           https://fortune.com/2024/07/27/ferrari-deepfake-attempt-scammer-security-question-ceo-benedetto-vigna-cybersecurity-ai
+published:      2024-07-27
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. fortune.com is egress-blocked from this build environment (2026-09-27). First reported by Bloomberg on 26 July 2024; cross-checked against MIT Sloan Management Review, Jalopnik and the AI Incident Database.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          In July 2024 a Ferrari executive received messages and then a call carrying a cloned voice of the chief executive about a confidential acquisition; he asked which book the chief executive had recommended days earlier, and the caller hung up. Nothing was lost.
+```
+
+## src-fbi-ic3-2025
+
+```source
+title:          Cryptocurrency and AI scams bilk Americans of billions: 2025 Internet Crime Report
+author:         Federal Bureau of Investigation
+publisher:      FBI, Internet Crime Complaint Center
+link:           https://www.fbi.gov/news/press-releases/cryptocurrency-and-ai-scams-bilk-americans-of-billions
+published:      2026-04-07
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. fbi.gov and ic3.gov are egress-blocked from this build environment (2026-09-27). Figures are consistent across search snippets of the FBI press release and of SpyCloud, SecureWorld, Paubox, Abnormal, McDonald Hopkins and Alston & Bird. The report is at ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          For 2025: 1,008,597 complaints and $20.877 billion in reported losses, up 26% on 2024; business email compromise $3.05 billion from 24,768 complaints; the report's first AI section counts 22,364 complaints that named AI, about $893 million, which the FBI calls an undercount because victims must recognise AI to report it.
+used_for.session-4: the bill's caption and the deepfake row's scale line (§05)
+```
+
+## src-fbi-ic3-2024
+
+```source
+title:          FBI releases annual Internet Crime Report: 2024
+author:         Federal Bureau of Investigation
+publisher:      FBI, Internet Crime Complaint Center
+link:           https://www.fbi.gov/news/press-releases/fbi-releases-annual-internet-crime-report
+published:      2025-04-23
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. fbi.gov is egress-blocked from this build environment (2026-09-27). Figures consistent across search snippets of the FBI press release, CyberScoop, Cybersecurity Dive, SecureWorld and Nacha.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          For 2024: 859,532 complaints and $16.6 billion in reported losses, a record at the time; business email compromise $2.77 billion from 21,442 complaints.
+```
+
+## src-forcedleak
+
+```source
+title:          ForcedLeak: AI agent risks exposed in Salesforce Agentforce
+author:         Noma Security
+publisher:      Noma Security
+link:           https://noma.security/blog/forcedleak-agent-risks-exposed-in-salesforce-agentforce
+published:      2025-09
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. noma.security is egress-blocked from this build environment (2026-09-27). Cross-checked against The Hacker News, Dark Reading and Security Affairs (September 2025), consistent on the CVSS score, the mechanism and the $5 domain.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          A prompt injection through a web-to-lead form let Salesforce's Agentforce agent send CRM data to an expired allow-listed domain the researchers bought for $5; CVSS 9.4; fixed by Salesforce on 8 September 2025.
+```
+
+## src-drift
+
+```source
+title:          Cybersecurity alert: Salesloft Drift AI supply chain attack
+author:         Financial Industry Regulatory Authority
+publisher:      FINRA
+link:           https://www.finra.org/rules-guidance/guidance/salesloft-drift-AI-supply-chain-attack
+published:      2025-09
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. finra.org is egress-blocked from this build environment (2026-09-27). The incident is described consistently by AppOmni, WTW, TechRadar and Paubox (August and September 2025), citing Google Threat Intelligence's count of more than 700 affected organisations.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          In August 2025 stolen OAuth tokens from the Drift AI chatbot's Salesforce integration let an attacker export data from more than 700 organisations; the standing connector token bypassed multi-factor authentication; tokens were revoked on 20 August 2025. FINRA issued a cybersecurity alert to member firms.
+used_for.session-4: the connector breach on the exfiltration row of the four-attack board (§05)
+```
+
+## src-ibm-breach-2026
+
+```source
+title:          IBM study: one in four malicious breaches are AI-enabled, costing companies $6 million on average
+author:         IBM
+publisher:      IBM Newsroom
+link:           https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average
+published:      2026-07-29
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. newsroom.ibm.com is egress-blocked from this build environment (2026-09-27). Figures consistent across search snippets of the IBM release, Infosecurity Magazine, Security Boulevard, ASIS Security Management and Cybersecurity Dive. Supersedes the 2025 edition's $4.44 million and $10.22 million.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   survey
+recheck_before: every teaching of session-4 §05
+scope:          Cost of a Data Breach Report 2026, 602 organisations, breaches March 2025 to February 2026: global average $4.99 million, US average $11.5 million; one in four malicious breaches AI-enabled, at $6 million on average; shadow AI in 43% of AI-related breaches.
+used_for.session-4: the scale line on the exfiltration row of the four-attack board (§05)
+```
+
+## src-anthropic-threat-aug25
+
+```source
+title:          Detecting and countering misuse of AI: August 2025
+author:         Anthropic
+publisher:      Anthropic
+link:           https://www.anthropic.com/news/detecting-countering-misuse-aug-2025
+published:      2025-08-27
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27. Cross-checked against Malwarebytes, Forrester and Halcyon, which report the demand range as $75,000 to $500,000. No payment figure is public.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          One actor used Claude Code to automate reconnaissance, credential harvesting, intrusion and extortion against at least 17 organisations, including healthcare, emergency services, government and religious institutions; "Ransom demands sometimes exceeded $500,000." Demands, not measured losses.
+used_for.session-4: the scale line on the AI-written malware row of the four-attack board (§05)
+```
+
+## src-0din-gemini
+
+```source
+title:          Phishing for Gemini
+author:         Figueroa, M.
+publisher:      Mozilla 0Din
+link:           https://0din.ai/blog/phishing-for-gemini
+published:      2025-07
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. 0din.ai is egress-blocked from this build environment (2026-09-27). The mechanism is described consistently in search snippets of the disclosure's coverage and in Microsoft's Defender documentation on prompt-injection protection, which names white-on-white text and zero-size fonts among the techniques it scans for.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          An email styled with HTML and CSS to set the font size to zero and the colour to white carried an instruction that Gemini for Workspace followed when the recipient asked it to summarise the email.
+used_for.session-4: white text and zero-size fonts as hiding techniques (§05)
+```
+
+## src-unit42-ipi
+
+```source
+title:          Fooling AI agents: web-based indirect prompt injection observed in the wild
+author:         Palo Alto Networks Unit 42
+publisher:      Palo Alto Networks
+link:           https://unit42.paloaltonetworks.com/ai-agent-prompt-injection/
+published:      2026-03-03
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. unit42.paloaltonetworks.com is egress-blocked from this build environment (2026-09-27). The counts in scope come from the Cloud Security Alliance's research note on the report and from search snippets of the report itself.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          Twenty-two payload techniques observed in real web content, from zero-size fonts and off-screen text to encoded payloads that assemble themselves at runtime; most framed as an authority override of the assistant's instructions.
+used_for.session-4: hidden HTML, off-screen and zero-size text seen in the wild (§05)
+```
+
+## src-ascii-smuggling
+
+```source
+title:          Microsoft Copilot: from prompt injection to data exfiltration of your emails
+author:         Rehberger, J.
+publisher:      Embrace The Red
+link:           https://embracethered.com/blog/posts/2024/m365-copilot-prompt-injection-tool-invocation-and-data-exfil-using-ascii-smuggling/
+published:      2024-08-26
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. embracethered.com is egress-blocked from this build environment (2026-09-27). The technique was first shown by Riley Goodside on 11 January 2024; cross-checked against The Hacker News, SC Media, Cisco and Keysight, and Microsoft's fix in August 2024.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          Unicode tag characters carry letters the screen never draws, so an instruction can sit inside ordinary-looking text invisibly; used to make Microsoft 365 Copilot exfiltrate email content until Microsoft fixed it.
+used_for.session-4: invisible characters as a hiding technique (§05)
+```
+
+## src-trailofbits-image
+
+```source
+title:          Weaponizing image scaling against production AI systems
+author:         Trail of Bits
+publisher:      Trail of Bits blog
+link:           https://blog.trailofbits.com/2025/08/21/weaponizing-image-scaling-against-production-ai-systems/
+published:      2025-08-21
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. blog.trailofbits.com is egress-blocked from this build environment (2026-09-27). Cross-checked against BleepingComputer and SecurityWeek (August 2025) and Brave's October 2025 disclosure of faint text in screenshots read by AI browsers.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          Images that look benign at full size reveal an instruction once the AI platform downscales them, so a multimodal model reads text the human never saw; the authors recommend explicit confirmation for sensitive tool actions when embedded text is detected.
+used_for.session-4: text inside an image as a hiding technique (§05)
+```
+
+## src-safebreach-gemini
+
+```source
+title:          Invitation is all you need: hacking Gemini
+author:         SafeBreach Labs, with Tel Aviv University and Technion researchers
+publisher:      SafeBreach
+link:           https://www.safebreach.com/blog/invitation-is-all-you-need-hacking-gemini/
+published:      2025-08
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. safebreach.com is egress-blocked from this build environment (2026-09-27). Presented at Black Hat USA in August 2025 after disclosure to Google on 22 February 2025; cross-checked against The Register, TechRepublic and Bitdefender.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          Instructions inside a Google Calendar invite hijacked Gemini for Workspace, in one case firing later on an innocent "thanks"; Google added confirmation prompts for sensitive actions.
+```
+
+## src-nikkei-papers
+
+```source
+title:          'Positive review only': researchers hide AI prompts in papers
+author:         Nikkei Asia
+publisher:      Nikkei Asia
+link:           https://asia.nikkei.com/business/technology/artificial-intelligence/positive-review-only-researchers-hide-ai-prompts-in-papers
+published:      2025-07
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. asia.nikkei.com is egress-blocked from this build environment (2026-09-27). Cross-checked against the arXiv follow-up study (2507.06185, which found 18 papers), Smithsonian Magazine and Duke University's analysis of about 200,000 CVs.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          Hidden prompts such as "give a positive review only", in white or microscopic text, found in 17 preprints from 14 institutions; about 1% of 200,000 real CVs analysed by Duke carried similar injections.
+```
+
+## src-anthropic-injection
+
+```source
+title:          Mitigating the risk of prompt injections in browser use
+author:         Anthropic
+publisher:      Anthropic
+link:           https://www.anthropic.com/news/prompt-injection-defenses
+published:      2025-11-24
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the Claude for Chrome pilot post on claude.com and the computer-use tool's security section in the platform docs.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 §05
+scope:          "A 1% attack success rate, while a significant improvement, still represents meaningful risk"; the platform docs warn that "Claude will follow commands found in content even when they conflict with your instructions"; Claude for Chrome "asks users before taking high-risk actions like publishing, purchasing, or sharing personal data".
+used_for.session-4: why a warning is not a lock and an approval step is (§05)
+```
+
+## src-agent-skills
+
+```source
+title:          Agent Skills overview
+author:         Anthropic
+publisher:      Claude Platform Docs
+link:           https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
+published:      not applicable
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 §07
+scope:          A skill is a folder with a SKILL.md file: YAML front matter with a required name (at most 64 characters, lowercase letters, numbers and hyphens) and a required description (non-empty, at most 1,024 characters, saying what the skill does and when to use it), then the instructions in markdown. Custom skills upload in the Claude app's settings on Pro, Max, Team and Enterprise plans.
+used_for.session-4: the skill form of the record block (§07) and of the inbox fixes (§05)
+```
+
+## src-il-pipa
+
+```source
+title:          Personal Information Protection Act, 815 ILCS 530/10
+author:         Illinois General Assembly
+publisher:      Illinois Compiled Statutes
+link:           https://ilga.gov/documents/legislation/ilcs/documents/081505300K10.htm
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. ilga.gov is egress-blocked from this build environment (2026-09-27). The statutory wording in scope appears in search snippets of the statute and of Justia, the Illinois Attorney General's guidance page and a Hogan Lovells summary, all consistent.
+confidence:     H
+kind:           authority
+moving_target:  false
+scope:          Notice to affected Illinois residents "in the most expedient time possible and without unreasonable delay"; notice to the Attorney General when more than 500 Illinois residents are affected by a single breach.
+used_for.session-4: the state clock in the clocks-that-are-law figure (Appendix D5)
+```
+
+## src-state-breach
+
+```source
+title:          Data breach notification laws: a 50-state survey, 2026 edition
+author:         Privacy Rights Clearinghouse
+publisher:      Privacy Rights Clearinghouse
+link:           https://privacyrights.org/resources-tools/reports/data-breach-notification-laws-50-state-survey-2026-edition
+published:      2026
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. privacyrights.org is egress-blocked from this build environment (2026-09-27), and the day counts in scope come from aggregated search snippets of several survey sites rather than from each statute, which is why the confidence is M.
+confidence:     M
+kind:           evidence
+moving_target:  true
+figure_class:   survey
+recheck_before: every teaching of session-4 Appendix D5
+scope:          Hard consumer-notice deadlines in some states: Colorado, Florida and Washington 30 days from discovery; Maryland 45; Texas 60. Most states add a regulator filing above a headcount threshold.
+used_for.session-4: the hard-count states on the clocks figure (Appendix D5)
+```
+
+## src-equifax
+
+```source
+title:          Data protection: actions taken by Equifax and federal agencies in response to the 2017 breach (GAO-18-559)
+author:         U.S. Government Accountability Office
+publisher:      GAO
+link:           https://www.gao.gov/products/gao-18-559
+published:      2018-08-30
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. gao.gov is egress-blocked from this build environment (2026-09-27). The dates and figures in scope are consistent across search snippets of the GAO report, the FTC's July 2019 settlement release, the CFPB's release, the House Oversight Committee's December 2018 report and EPIC.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          Equifax discovered the breach on 29 July 2017 and announced it on 7 September 2017, about 147 million US consumers affected; the July 2019 settlement with the FTC, the CFPB and the states was at least $575 million and up to $700 million.
+used_for.session-4: the late clock in the two real clocks figure (Appendix D5)
+```
+
+## src-capitalone
+
+```source
+title:          2019 Capital One cyber incident: what happened
+author:         Capital One
+publisher:      Capital One
+link:           https://www.capitalone.com/digital/facts2019/
+published:      2019-07-29
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. capitalone.com is egress-blocked from this build environment (2026-09-27). Dates and figures consistent across search snippets of Capital One's page, CBS News and SiliconANGLE (August 2020, the $80 million OCC penalty), Banking Dive and the Department of Justice's case page.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          Tipped on 17 July 2019, Capital One determined on 19 July 2019 that an intrusion had occurred, contacted the FBI, and announced it publicly on 29 July 2019; about 100 million US and 6 million Canadian applicants affected; an $80 million OCC penalty in August 2020 and a $190 million class settlement.
+used_for.session-4: the in-time clock in the two real clocks figure (Appendix D5)
+```
+
+## src-uber-doj
+
+```source
+title:          Former chief security officer of Uber sentenced to three years' probation for covering up data breach
+author:         U.S. Department of Justice, Northern District of California
+publisher:      Department of Justice
+link:           https://www.justice.gov/usao-ndca/pr/former-chief-security-officer-uber-sentenced-three-years-probation-covering-data
+published:      2023-05-04
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. justice.gov is egress-blocked from this build environment (2026-09-27). Consistent across search snippets of the DOJ release and of BakerHostetler, Norton Rose Fulbright, Arnold & Porter and SC Media.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          A November 2016 breach of about 57 million records was concealed for a year; the chief security officer arranged a $100,000 payment to the hackers under a bug-bounty nondisclosure agreement; he was convicted in October 2022 of obstruction of justice and misprision of a felony and sentenced in May 2023 to three years' probation and a $50,000 fine.
+used_for.session-4: the one-year clock and the conviction (Appendix D5)
+```
+
+## src-eu-ai-act
+
+```source
+title:          Regulation (EU) 2024/1689 (the Artificial Intelligence Act), Article 50, transparency obligations
+author:         European Parliament and Council
+publisher:      Official Journal of the European Union, EUR-Lex
+link:           https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+published:      2024-07-12
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. eur-lex.europa.eu is egress-blocked from this build environment (2026-09-27). The application date of 2 August 2026, the machine-readable marking duty and the Article 50(2) code of practice are corroborated by Anthropic's own page on how Claude marks content, which was opened; the Regulation's text was not, which is why the confidence is M.
+confidence:     M
+kind:           authority
+moving_target:  false
+scope:          Providers of AI systems that generate synthetic audio, image, video or text must ensure the output is marked in a machine-readable format and detectable as artificially generated; deployers of deepfakes must disclose them; the obligations apply from 2 August 2026 and bind providers placing systems on the EU market and deployers in the EU.
+used_for.session-4: why a US adviser's Claude text carries a mark it cannot check (§01 sorter, Appendix D1)
+```
+
+## src-claude-memory
+
+```source
+title:          Bringing memory to teams at work
+author:         Anthropic
+publisher:      claude.com blog
+link:           https://claude.com/blog/memory
+published:      2025-09-11
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the Help Center article on chat search and memory (11817273), which states that memory is saved as a set of topics as you chat.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 Appendix D3
+scope:          Memory came to Team and Enterprise plans on 11 September 2025 and to Pro and Max on 23 October 2025; Claude saves memory as a set of individual topics as you chat rather than summarising afterwards.
+used_for.session-4: the memory card in the then-and-now deck (Appendix D3)
+```
+
+## src-anthropic-ctx-eng
+
+```source
+title:          Effective context engineering for AI agents
+author:         Rajasekaran, P., Dixon, E., Ryan, C., & Hadfield, J.
+publisher:      Anthropic Engineering
+link:           https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+published:      2025-09-29
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the current prompting best-practices page, which still says a role in the system prompt focuses behaviour and tone.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          "Context engineering refers to the set of strategies for curating and maintaining the optimal set of tokens (information) during LLM inference": what the model sees, its tools, its notes and what it retrieves, rather than the wording of one prompt.
+used_for.session-4: the prompt-engineering card in the then-and-now deck (Appendix D3)
+```
+
+## src-anthropic-thinking
+
+```source
+title:          Claude 3.7 Sonnet and Claude Code
+author:         Anthropic
+publisher:      Anthropic
+link:           https://www.anthropic.com/news/claude-3-7-sonnet
+published:      2025-02-24
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the current prompting best-practices page, which describes manual step-by-step prompting as a fallback for when thinking is off.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          Visible, extended step-by-step thinking arrived on 24 February 2025; by 2026 thinking is built in and adaptive, and "think step by step" is a fallback when it is off.
+used_for.session-4: the chain-of-thought card in the then-and-now deck (Appendix D3)
+```
+
+## src-anthropic-mcp
+
+```source
+title:          Introducing the Model Context Protocol
+author:         Anthropic
+publisher:      Anthropic
+link:           https://www.anthropic.com/news/model-context-protocol
+published:      2024-11-25
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the web search post of 20 March 2025 and the integrations post of 1 May 2025 on claude.com, both opened.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          A standard for connecting assistants to the systems where data lives (November 2024); web search with direct citations in Claude (March 2025); integrations and advanced research across internal and external sources (May 2025): grounding built in rather than a retrieval pipeline you build.
+used_for.session-4: the grounding card in the then-and-now deck (Appendix D3)
+```
+
+## src-anthropic-context
+
+```source
+title:          Context windows
+author:         Anthropic
+publisher:      Claude Platform Docs
+link:           https://platform.claude.com/docs/en/build-with-claude/context-windows
+published:      not applicable
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the models overview and the 2023 announcements of 100K (11 May 2023) and 200K (21 November 2023) context windows and the 1M announcement of 12 August 2025, all on anthropic.com or claude.com.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4 Appendix D3
+scope:          9,000 tokens in March 2023, 100,000 in May 2023, 200,000 in November 2023, one million by default on current models, about 555,000 words; and "As token count grows, accuracy and recall degrade, a phenomenon known as context rot."
+used_for.session-4: the context-window card and the context-rot card in the then-and-now deck (Appendix D3)
+```
+
+## src-anthropic-agents
+
+```source
+title:          Building effective agents
+author:         Schluntz, E., & Zhang, B.
+publisher:      Anthropic Engineering
+link:           https://www.anthropic.com/engineering/building-effective-agents
+published:      2024-12-19
+last_retrieved: 2026-09-27
+last_verified:
+retrieval_note: Opened directly on 2026-09-27, with the Agent SDK post of 29 September 2025 on claude.com and the tool-use documentation, whose section on the agentic loop was also opened. No source opened uses the phrase "loop engineering"; Anthropic's words are "in a loop", "the agent loop" and "the agentic loop".
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          Agents "are typically just LLMs using tools based on environmental feedback in a loop"; the feedback loop is gather context, take action, verify work, repeat; the API documentation names the pattern the agentic loop.
+used_for.session-4: the loop cards in the then-and-now deck and the second stale claim's current guidance (Appendix D3)
+```
+
+## src-advisers-204-2
+
+```source
+title:          Books and records to be maintained by investment advisers, 17 CFR 275.204-2
+author:         U.S. Securities and Exchange Commission
+publisher:      Code of Federal Regulations
+link:           https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.204-2
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. ecfr.gov, law.cornell.edu and govinfo.gov are egress-blocked from this build environment (2026-09-27). The rule's citation is certain; its wording as stated in scope is from the maintainer's knowledge of the rule and is why the confidence is M. Read paragraph (a)(7) and paragraph (e)(1) before teaching them as settled.
+confidence:     M
+kind:           authority
+moving_target:  false
+scope:          Paragraph (a)(7): originals of written communications received and copies of those sent relating to any recommendation made or proposed or any advice given or proposed; paragraph (e)(1): kept for not less than five years from the end of the fiscal year of the last entry, the first two years in an appropriate office of the adviser.
+used_for.session-4: the rule behind the prompt-as-sent slot of the record (§07)
+```
+
+## src-finra-4511
+
+```source
+title:          FINRA Rule 4511, General Requirements, and Exchange Act Rule 17a-4
+author:         Financial Industry Regulatory Authority
+publisher:      FINRA Rulebook
+link:           https://www.finra.org/rules-guidance/rulebooks/finra-rules/4511
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. finra.org is egress-blocked from this build environment (2026-09-27). The rules' citations are certain; the periods in scope are from the maintainer's knowledge and are why the confidence is M. A broker-dealer's correspondence period differs from an adviser's, so the page never states one number for both.
+confidence:     M
+kind:           authority
+moving_target:  false
+scope:          Members must make and preserve books and records under FINRA rules, the Exchange Act and its rules, in a format consistent with Exchange Act Rule 17a-4; records with no stated period are kept at least six years; correspondence under Rule 17a-4(b)(4) for three years, the first two in an easily accessible place.
+used_for.session-4: the broker-dealer counterpart of the books-and-records rule (§07)
+```
+
+## src-advisers-fiduciary
+
+```source
+title:          Commission Interpretation Regarding Standard of Conduct for Investment Advisers, Release IA-5248
+author:         U.S. Securities and Exchange Commission
+publisher:      SEC
+link:           https://www.sec.gov/rules-regulations/2019/06/commission-interpretation-regarding-standard-conduct-investment-advisers
+published:      2019-06-05
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. sec.gov is egress-blocked from this build environment (2026-09-27). The release's existence, date and number are certain; the characterisation in scope is from the maintainer's knowledge and is why the confidence is M.
+confidence:     M
+kind:           authority
+moving_target:  false
+scope:          The fiduciary duty of care under the Advisers Act includes a duty to provide advice that is in the client's best interest, with a reasonable basis for it, which is why the source behind an AI-assisted answer belongs in the file.
+used_for.session-4: the duty behind the source-quoted slot of the record (§07)
+```
+
+## src-advisers-206-4-7
+
+```source
+title:          Compliance procedures and practices, 17 CFR 275.206(4)-7
+author:         U.S. Securities and Exchange Commission
+publisher:      Code of Federal Regulations
+link:           https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.206(4)-7
+published:      not applicable
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. ecfr.gov and law.cornell.edu are egress-blocked from this build environment (2026-09-27). The rule's citation is certain; the wording in scope is from the maintainer's knowledge and is why the confidence is M.
+confidence:     M
+kind:           authority
+moving_target:  false
+scope:          A registered adviser must adopt and implement written policies and procedures reasonably designed to prevent violations, review them no less than annually, and designate a chief compliance officer; the AI-use policy and the record of its annual review are themselves required records.
+used_for.session-4: the rule behind the who-decided slot of the record and the annual review of the AI-use policy (§07)
 ```

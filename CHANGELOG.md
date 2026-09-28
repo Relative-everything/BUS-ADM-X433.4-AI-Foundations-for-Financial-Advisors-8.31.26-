@@ -10,6 +10,106 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-28 · Session 4 against the instructor's update notes: the live API box, harder identifiers, the clause, the bill, the ladder, the clocks, the flip deck, the record's sources, and a teaching aid
+
+Branch `claude/gracious-cray-2k4fkc`, after PR #40 merged. The instructor's notes asked for every
+[VERIFY] item re-verified, every [DECIDE] item decided, a cybersecurity and SynthID strand, the
+Gemini API box at the top of the page as on other sessions, personal against enterprise accounts made
+plain, more and harder identifiers, a real email from §04's copy button, hiding techniques and skill
+language in §05, breach-plan language and a famous breach in D5, a reset in D6, plainer pricer
+language in §06, current guidance in D3, the record's sources in §07, and a colour-coded teaching aid.
+Change folder `docs/changes/2026-09-28-session-4-notes/` (ledger S4N-001 to S4N-041, `checks.mjs`
+47 assertions). Minutes, sections, tiers and all 17 gates are unchanged.
+
+**Measured at load, every appendix shown, 1280 px.** Visible controls 214 to 275 (+29%); words 6,702
+to 8,815 (+32%), almost all of it inside new readouts, rung buttons, card fronts and the plan
+skeleton rather than paragraphs; chips 130 to 229; footer sources 33 to 70. Bullets under each
+section grew by at most one line.
+
+### Session 4 · the Live API box
+
+- **The box sits first on the page, collapsed, as on Sessions 0.1 and 1.** The style and call-layer
+  fences are byte-identical with those lessons; only the box's copy is Session 4's, because this page
+  teaches the request itself. "1 · See the request" prints the one endpoint, the masked key header and
+  the prompt as JSON with or without a key; "2 · Send" appears only once a key is connected; a cost
+  line under each reply prices the same tokens at the smallest Claude model. The prompt starts as the
+  clean Prompt D from §02 and follows the room's own clean text once §02 has been finished.
+- **A free key is plan A, not plan C**, said on the box's face and chipped to Google's API terms.
+  `MAINTAINING.md` records the exception to the rule that kept the console off Sessions 2 to 4, and its
+  terms; the fence md5 check is rewritten with exact versioned markers; the acceptance suite covers the
+  three lessons (86 cases).
+
+### Session 4 · §02, §03, §04
+
+- **§02, The Harder Ones.** A case note with no name left: nine phrases, seven of them
+  quasi-identifiers (her title, her exact age, the headcount, the dated purchase from her father,
+  the $55 million value, her husband's former profession, the village they live in). The room
+  guesses how many it takes, the guess locks, and a people-who-fit figure with seven sieves narrows
+  the crowd until nothing points to her; the competitor's letter and the task stay.
+- **§03, Personal or Firm Account.** Six rungs between Claude Pro at $20 a month, which you clicked,
+  and Team or Enterprise, which your firm signed: training off, retention in writing, a contract the
+  firm signs, an audit report on request, SSO and audit logs, breach notice in hours. The client-file
+  door at the top opens only on the firm side, and only after all six. Every rung is chipped to
+  Anthropic's price page, terms, retention page, DPA or certifications page, opened 27 September 2026.
+  The panel ends with the Plan C pointer to the box.
+- **§04, the bug and the clause.** "Copy email to vendor" copied the verdict sentence; it now drafts an
+  email with a subject line and one question per open lock. A second beat, What the Clause Looks Like,
+  fills a contract page one lock at a time with Anthropic's own sentence where verified (verbatim
+  labelled verbatim, paraphrase labelled paraphrase), who it binds, and for lock 4 the DPA's 48 hours
+  against Regulation S-P's 72.
+
+### Session 4 · §05
+
+- **How it hid.** White text, zero-size font, invisible characters, an image: four techniques, each
+  re-rendering the x-ray of email 3 and naming its real case (Mozilla 0Din, Unit 42, ASCII smuggling,
+  Trail of Bits).
+- **Skill language per fix**, printed in a copyable block and labelled as written for this lesson;
+  each verdict names the guidance it rests on (FINRA, OWASP, Anthropic).
+- **The bill after the call**: Arup $25.6 million, a UAE bank $35 million, Singapore $3.8 million,
+  each with three or more independent publishers behind it, and the FBI's 2025 caption. The
+  four-attack board gains a scale line per attack, each figure tagged measured, demanded or projected.
+
+### Session 4 · §06, §07
+
+- **§06** keeps the memo simulation (arithmetic re-verified: 61, 86, 94) and puts the pricer in class
+  words: minutes today with no AI, answers you must open and check, the grounded answer from
+  Session 3, the record.
+- **§07, where the four come from.** Four Why slot buttons: books and records (Rule 204-2; FINRA 4511
+  and 17a-4 for a broker-dealer), supervision (FINRA's 2026 report, Notice 24-09), the duty of care,
+  the compliance programme (Rule 206(4)-7), and the plain sentence that no rule lists the four. The
+  record block can be shown as a skill, with front matter and its own copy button.
+
+### Session 4 · Appendices
+
+- **D1.** "Only the right key shows the mark" now counts aloud: a three-step strip, zone words under
+  the meter, the keys renamed, and the closing sentence that only organisations eligible under EU law
+  can run the check. A third beat, Images Carry Two Kinds of Mark: a pixel mark that survives a
+  screenshot and a signed label that does not. The EU callout says why EU law is on the page; §01's
+  item 9 says the same in one line.
+- **D2.** The eight outputs alternate prose and number; the detector question says what "no mark
+  found" means; the bullets say what a CFP can check (a file, with the Claude Content Checker) and
+  cannot (text), and that their own record is the check that works.
+- **D3.** Both claims carry the guidance opened today (only 1.0 accepted; effort and adaptive thinking;
+  the agent loop) with a what-to-do line; eight flip cards put 2023 against now from Anthropic's own
+  pages. "Loop engineering" is not printed, because no source uses it.
+- **D5.** The clocks that are law on a day slider (72 hours, 30 days, Illinois, the 30-day states);
+  the written plan's three procedures and four notice contents under the clause builder, the room's
+  clause as its first line; two real clocks, Equifax at 40 days and Capital One at 10, against the
+  30-day line, with what followed and the sentence that the rule did not govern them.
+- **D6** gains Start again.
+
+### Sources and instructor materials
+
+- **42 new records**, three updated; every incident on the page rests on three or more independent
+  publishers and every Anthropic figure on a page opened 27 September 2026. Eight verified records
+  that the page does not cite stay in `SOURCES.md` without a Session 4 use.
+- **A three-page colour-coded teaching aid** (`instructor-notes/session-4-teaching-aid.htm`, `.pdf`,
+  `.md`): the clock as a colour bar, one row per slot with STOP, ASK, CLICK and SAY cues, the §03 run
+  flow, the D5 cue, the live work-along with its legality verdict, three outside-repo demos, the drop
+  order. The run sheet carries the same clock.
+
+---
+
 ## 2026-09-27 · Session 4 teaching aid: the run of show and the rule key, two pages
 
 Branch `claude/gracious-mendel-dqnpal`, from `main` after PR #40. No lesson page changed. The

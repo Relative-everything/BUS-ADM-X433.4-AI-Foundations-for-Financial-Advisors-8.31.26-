@@ -1,4 +1,4 @@
-/* Browser acceptance suite for the live model console in Sessions 0.1 and 1.
+/* Browser acceptance suite for the live model console in Sessions 0.1, 1 and 4.
  *
  *   NODE_PATH=$(npm root -g) node scripts/test_live_console.js
  *
@@ -284,6 +284,9 @@ async function connect(page, key) {
       makeRoute({ answers: ['Cold output.', 'Hot output.'], seen }));
     await blockFonts(page); await page.goto(url('session-1/index.html'), {waitUntil:'domcontentloaded'});
     await connect(page, 'GOODKEY');
+    // A5 is an appendix section: show every depth first, or the range is not visible
+    await page.evaluate(() => { const b = document.querySelector('#tierbar [data-level="2"]'); if (b) b.click(); });
+    await page.waitForTimeout(150);
     await page.locator('#lmTemp').fill('0');
     await page.click('#lmTempRun'); await page.waitForTimeout(250);
     await page.locator('#lmTemp').fill('1.8');
@@ -317,8 +320,54 @@ async function connect(page, key) {
   }
 
   // =====================================================================
-  console.log('\n--- M. rendered copy sanity (both lessons) ---');
-  for (const lesson of ['session-0.1/index.html', 'session-1/index.html']) {
+  console.log('\n--- N. session-4, NO KEY: the request is readable, nothing is sent ---');
+  {
+    const page = await browser.newPage();
+    const errs = []; page.on('pageerror', e => errs.push(e.message));
+    const reqs = []; page.on('request', r => { if (/generativelanguage\.googleapis\.com/.test(r.url())) reqs.push(r.url()); });
+    await blockFonts(page); await page.goto(url('session-4/index.html'), {waitUntil:'domcontentloaded'});
+    await page.waitForTimeout(300);
+    ok('s4: no JS errors on load', errs.length === 0, errs.join('|'));
+    ok('s4: console present', await page.locator('#lmbox').count() === 1);
+    ok('s4: collapsed by default', await page.locator('#lmBody').evaluate(n => n.classList.contains('hidden')));
+    ok('s4: status reads Not connected', (await page.locator('#lmStat').textContent()).trim() === 'Not connected');
+    ok('s4: live-only blocks hidden',
+      await page.locator('[data-lm-live]').evaluateAll(ns => ns.every(n => n.classList.contains('hidden'))));
+    await page.click('#lmToggle'); await page.waitForTimeout(80);
+    const pre = await page.locator('#lmPrompt').inputValue();
+    ok('s4: prompt starts as the clean Prompt D (no client name)', /the client/.test(pre) && !/Meg Cole/.test(pre), pre.slice(0, 60));
+    await page.click('#lmShowReq'); await page.waitForTimeout(80);
+    const req = await page.locator('#lmReq').textContent();
+    ok('s4: the request names the one endpoint', /generativelanguage\.googleapis\.com\/v1beta\/models\/.+:generateContent/.test(req));
+    ok('s4: the request says no key is connected', /no key connected/.test(req));
+    ok('s4: the request carries the prompt as JSON', /"contents"/.test(req) && /the client/.test(req));
+    ok('s4: nothing was sent to Google', reqs.length === 0, reqs.join('|'));
+    await page.close();
+  }
+
+  // =====================================================================
+  console.log('\n--- O. session-4 live: masked key, send, tokens, no key in the DOM ---');
+  {
+    const page = await browser.newPage();
+    const seen = [];
+    await page.route('**generativelanguage.googleapis.com/**', makeRoute({ answers: ['MOCK reply for the room'], seen }));
+    await blockFonts(page); await page.goto(url('session-4/index.html'), {waitUntil:'domcontentloaded'});
+    await connect(page, 'GOODKEY');
+    ok('s4: connected', (await page.locator('#lmStat').textContent()).includes('Connected'));
+    await page.click('#lmShowReq'); await page.waitForTimeout(80);
+    const req = await page.locator('#lmReq').textContent();
+    ok('s4: the key is masked in the shown request', /\u2022{6,}/.test(req) && !/GOODKEY/.test(req));
+    await page.click('#lmSend'); await page.waitForTimeout(300);
+    ok('s4: reply rendered', (await page.locator('#lmFreeOut').textContent()).includes('MOCK reply'));
+    ok('s4: the body sent is the prompt shown', seen.length === 1 && /the client/.test(seen[0].contents[0].parts[0].text));
+    ok('s4: token counts shown', /in 11 tokens .* out 7 tokens/.test(await page.locator('#lmFreeUse').textContent()));
+    ok('s4: the key never reaches the DOM', !(await page.content()).includes('GOODKEY'));
+    await page.close();
+  }
+
+  // =====================================================================
+  console.log('\n--- M. rendered copy sanity (all three lessons) ---');
+  for (const lesson of ['session-0.1/index.html', 'session-1/index.html', 'session-4/index.html']) {
     const page = await browser.newPage();
     await blockFonts(page);
     await page.goto(url(lesson), { waitUntil: 'domcontentloaded' });

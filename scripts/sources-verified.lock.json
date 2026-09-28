@@ -1,9 +1,45 @@
 {
   "note": "NOTARISED. Every last_verified date in SOURCES.md, frozen. build-sources.mjs recomputes this digest on every parse and refuses to build if a date moved. Only scripts/attest-verified.mjs writes this file, and only at an interactive terminal. Do not hand-edit: a hand edit here and a matching hand edit in SOURCES.md is the one thing this pair cannot catch, and it is a lie about a human having read a source.",
   "updated_by": "--sync (records with an empty last_verified only)",
-  "digest": "cb015c4d521257177d997459f218f49212ec426442914725afe514c81c79d58d",
+  "digest": "cb5f277761afb142d2f00cf83cbb6693d66c11762850cbde5e123e128bea1d6e",
   "entries": {
+    "src-0din-gemini": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-aa": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-advisers-204-2": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-advisers-206-4-7": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-advisers-fiduciary": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-agent-skills": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-agents": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-aup": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-certs": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-context": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -11,7 +47,27 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-anthropic-ctx-eng": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-dpa": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-anthropic-fluency": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-injection": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-mcp": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-retention": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -19,7 +75,15 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-anthropic-thinking": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-anthropic-threat": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-threat-aug25": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -31,7 +95,15 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-ascii-smuggling": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-beta": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-capitalone": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -56,6 +128,14 @@
       "verified_by": ""
     },
     "src-claude-marks": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-memory": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-pricing": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -95,11 +175,39 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-drift": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-effort": {
       "last_verified": "",
       "verified_by": ""
     },
+    "src-equifax": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-eu-ai-act": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-fbi-ic3-2024": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-fbi-ic3-2025": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-features": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-ferrari": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-finra-4511": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -115,11 +223,23 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-forcedleak": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-gartner": {
       "last_verified": "",
       "verified_by": ""
     },
+    "src-gemini-api-terms": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-gemini-privacy": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-gemini-ratelimits": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -137,6 +257,14 @@
     },
     "src-hallowell": {
       "last_verified": "not applicable",
+      "verified_by": ""
+    },
+    "src-ibm-breach-2026": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-il-pipa": {
+      "last_verified": "",
       "verified_by": ""
     },
     "src-irc": {
@@ -207,6 +335,10 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-nikkei-papers": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-openai-data": {
       "last_verified": "",
       "verified_by": ""
@@ -251,6 +383,10 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-safebreach-gemini": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-sampling": {
       "last_verified": "",
       "verified_by": ""
@@ -267,7 +403,19 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-sg-deepfake-2025": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-sg-deepfake-2026": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-skills": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-state-breach": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -288,6 +436,26 @@
       "verified_by": ""
     },
     "src-tools3": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-trailofbits-image": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-uae-voice": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-uber-doj": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-uk-voice": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-unit42-ipi": {
       "last_verified": "",
       "verified_by": ""
     },

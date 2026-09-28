@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**30 of 78 works are moving targets, feeding 108 of
-264 references.**
+**43 of 120 works are moving targets, feeding 170 of
+389 references.**
 
 
 ---
@@ -50,11 +50,35 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-25 |
+| Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendices D1 and D2 |
+| References | 18 |
+| Feeds | S4 `#s1` · S4 `#sW1` ×6 · S4 `#sW2` ×6 · S4 `#s9` ×5 |
+
+### `src-anthropic-terms` — Consumer Terms of Service, Commercial Terms of Service and Privacy Policy
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-27 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 14 |
+| Feeds | S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#s9` ×6 |
+
+### `src-effort` — Change the model, effort, and thinking settings
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-08-20 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-0.1 |
 | References | 10 |
-| Feeds | S4 `#s1` · S4 `#sW1` ×5 · S4 `#sW2` ×3 · S4 `#s9` |
+| Feeds | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3` ×5 · S0.1 `#s9` · S4 `#sWS` · S4 `#s9` |
 
 ### `src-memory` — Use Claude's chat search and memory to build on previous context
 
@@ -68,17 +92,17 @@ version string means the version is not tracking the data.
 | References | 10 |
 | Feeds | S0.1 `#s0` · S0.1 `#s5` ×2 · S0.1 `#s6` ×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10` ×2 · S2 `#s3` |
 
-### `src-effort` — Change the model, effort, and thinking settings
+### `src-anthropic-dpa` — Data Processing Addendum
 
 | | |
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
+| Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-0.1 |
-| References | 9 |
-| Feeds | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3` ×5 · S0.1 `#s9` · S4 `#sWS` |
+| Re-check before | every teaching of session-4 §04 |
+| References | 10 |
+| Feeds | S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#s9` ×6 |
 
 ### `src-tools3` — When should I use web search, extended thinking, and research?
 
@@ -167,6 +191,30 @@ version string means the version is not tracking the data.
 | References | 5 |
 | Feeds | S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` · S2 `#s3` |
 
+### `src-claude-pricing` — Plans and pricing
+
+| | |
+|---|---|
+| Figure class | `vendor_pricing` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-27 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 5 |
+| Feeds | S4 `#(footer)` · S4 `#s3` ×3 · S4 `#s9` |
+
+### `src-anthropic-retention` — API and data retention
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-27 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 5 |
+| Feeds | S4 `#s3` ×2 · S4 `#s4` · S4 `#s9` ×2 |
+
 ### `src-context-windows` — Context windows
 
 | | |
@@ -185,17 +233,35 @@ version string means the version is not tracking the data.
 |---|---|---|---|---|
 | CONTEXT-WINDOWS-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed; the keys paraphrase the page's sentences |
 
-### `src-anthropic-terms` — Privacy Center and Commercial Terms
+### `src-api-messages` — Messages API reference
 
 | | |
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-14 |
+| Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
+| Re-check before | every teaching of session-2 §01 |
 | References | 4 |
-| Feeds | S4 `#s3` ×3 · S4 `#s9` |
+| Feeds | S2 `#s3` ×2 · S4 `#sWS` · S4 `#s9` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| API-MESSAGES-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed |
+
+### `src-synthid` — SynthID
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | no lesson cites this record since the 2026-09-25 session-4 rebuild |
+| References | 4 |
+| Feeds | S4 `#sW1` · S4 `#s9` ×3 |
 
 ### `src-openai-data` — How your data is used to improve model performance
 
@@ -208,24 +274,6 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-4 §03 |
 | References | 4 |
 | Feeds | S4 `#s3` ×3 · S4 `#s9` |
-
-### `src-api-messages` — Messages API reference
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-13 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-2 §01 |
-| References | 3 |
-| Feeds | S2 `#s3` ×2 · S4 `#sWS` |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| API-MESSAGES-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed |
 
 ### `src-personalization` — Understanding Claude's personalization features
 
@@ -287,6 +335,42 @@ version string means the version is not tracking the data.
 | References | 3 |
 | Feeds | S4 `#s3` ×2 · S4 `#s9` |
 
+### `src-agent-skills` — Agent Skills overview
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-27 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §07 |
+| References | 3 |
+| Feeds | S4 `#sWS` · S4 `#s7` · S4 `#s9` |
+
+### `src-state-breach` — Data breach notification laws: a 50-state survey, 2026 edition
+
+| | |
+|---|---|
+| Figure class | `survey` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 Appendix D5 |
+| References | 3 |
+| Feeds | S4 `#sRSP` ×2 · S4 `#s9` |
+
+### `src-owasp` — Top 10 for LLM Applications and Top 10 for Agentic Applications
+
+| | |
+|---|---|
+| Figure class | `leaderboard_position` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | no lesson cites this record since the 2026-09-25 session-4 rebuild |
+| References | 2 |
+| Feeds | S4 `#s9` ×2 |
+
 ### `src-ms-copilot-edp` — Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat
 
 | | |
@@ -310,6 +394,42 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-4 §03 |
 | References | 2 |
 | Feeds | S4 `#s3` ×2 |
+
+### `src-anthropic-certs` — What certifications has Anthropic obtained?
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-27 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 and §04 |
+| References | 2 |
+| Feeds | S4 `#s3` · S4 `#s9` |
+
+### `src-claude-memory` — Bringing memory to teams at work
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-27 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 Appendix D3 |
+| References | 2 |
+| Feeds | S4 `#sWS` · S4 `#s9` |
+
+### `src-anthropic-context` — Context windows
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-27 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 Appendix D3 |
+| References | 2 |
+| Feeds | S4 `#sWS` · S4 `#s9` |
 
 ### `src-openai-pricing` — API pricing
 
@@ -383,6 +503,54 @@ version string means the version is not tracking the data.
 | References | 1 |
 | Feeds | S0.1 `#s2` |
 
+### `src-gemini-api-terms` — Gemini API Additional Terms of Service
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 |
+| References | 1 |
+| Feeds | S4 `#(footer)` |
+
+### `src-gemini-ratelimits` — Rate limits
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 |
+| References | 1 |
+| Feeds | S4 `#(footer)` |
+
+### `src-ibm-breach-2026` — IBM study: one in four malicious breaches are AI-enabled, costing companies $6 million on average
+
+| | |
+|---|---|
+| Figure class | `survey` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §05 |
+| References | 1 |
+| Feeds | S4 `#s9` |
+
+### `src-anthropic-injection` — Mitigating the risk of prompt injections in browser use
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-27 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §05 |
+| References | 1 |
+| Feeds | S4 `#s9` |
+
 ### `src-vectara` — Introducing the next generation of Vectara's hallucination leaderboard
 
 | | |
@@ -407,27 +575,15 @@ version string means the version is not tracking the data.
 | References | 0 |
 | Feeds | *nothing on the page* |
 
-### `src-owasp` — Top 10 for LLM Applications and Top 10 for Agentic Applications
-
-| | |
-|---|---|
-| Figure class | `leaderboard_position` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | no lesson cites this record since the 2026-09-25 session-4 rebuild |
-| References | 0 |
-| Feeds | *nothing on the page* |
-
-### `src-synthid` — SynthID
+### `src-anthropic-aup` — Usage Policy
 
 | | |
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | no lesson cites this record since the 2026-09-25 session-4 rebuild |
+| Re-check before | every teaching of session-4 |
 | References | 0 |
 | Feeds | *nothing on the page* |
 
