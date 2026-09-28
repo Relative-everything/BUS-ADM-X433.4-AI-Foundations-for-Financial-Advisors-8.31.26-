@@ -42,9 +42,10 @@ section grew by at most one line.
 ### Session 4 · §02, §03, §04
 
 - **§02, The Harder Ones.** A case note with no name left: nine phrases, seven of them
-  quasi-identifiers ($55 million, Rockford, aerospace fasteners, 64, a son in the business, a
-  competitor's letter, a date). The room guesses how many it takes, the guess locks, and a
-  people-who-fit figure with seven sieves narrows the crowd until nothing points to her.
+  quasi-identifiers (her title, her exact age, the headcount, the dated purchase from her father,
+  the $55 million value, her husband's former profession, the village they live in). The room
+  guesses how many it takes, the guess locks, and a people-who-fit figure with seven sieves narrows
+  the crowd until nothing points to her; the competitor's letter and the task stay.
 - **§03, Personal or Firm Account.** Six rungs between Claude Pro at $20 a month, which you clicked,
   and Team or Enterprise, which your firm signed: training off, retention in writing, a contract the
   firm signs, an audit report on request, SSO and audit logs, breach notice in hours. The client-file
