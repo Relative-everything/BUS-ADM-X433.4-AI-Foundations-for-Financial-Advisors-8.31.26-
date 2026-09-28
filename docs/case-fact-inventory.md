@@ -23,11 +23,11 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 1710 | 1392 | 318 |
 | `PINNED` | 2 | 2 | 0 |
-| `UNGUARDED` | 69 | 5 | 64 |
-| **TOTAL** | **1781** | **1399** | **382** |
+| `UNGUARDED` | 81 | 6 | 75 |
+| **TOTAL** | **1793** | **1400** | **393** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
-`5`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
+`6`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
 the target state under the rule *every quantitative case fact appears once,
 injected from `CASE.md`; every other reference to it is qualitative*, so a
 qualitative reference is not drift surface and removing one would be a loss.
@@ -41,17 +41,19 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `session-1/index.html` | 17 | 0 |
 | `session-2/index.html` | 3 | 0 |
 | `session-3/index.html` | 16 | 0 |
-| `session-4/index.html` | 15 | 0 |
+| `session-4/index.html` | 27 | 1 |
 
 ## `UNGUARDED`, by region
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R1` | body prose | 41 | 0 |
-| `R2` | script string literal | 23 | 0 |
+| `R1` | body prose | 42 | 0 |
+| `R2` | script string literal | 31 | 1 |
 | `R10` | captured transcript | 5 | 5 |
+| `R7` | footer source entry | 2 | 0 |
+| `R8` | source note | 1 | 0 |
 
-**`R2` carries 0 of the 5 quantitative unguarded references, 0.0%** — answer
+**`R2` carries 1 of the 6 quantitative unguarded references, 16.7%** — answer
 keys, chart data arrays and JS feedback strings. They are inside `<script>`, so
 they are outside the injected span and outside the pins, and a student reads
 every one of them.
@@ -60,17 +62,18 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 64 |
+| `name` | 75 |
 | `pct` | 5 |
+| `money` | 1 |
 
 ## `UNGUARDED`, by fact
 
 | Fact | Count |
 |---|---:|
+| `domicile` | 22 |
 | `megShort` | 13 |
-| `domicile` | 12 |
 | `nathanShort` | 11 |
-| `companyName` | 8 |
+| `companyName` | 9 |
 | `companyAbbr` | 7 |
 | `plantTown` | 6 |
 | `afrMid` | 4 |
@@ -79,6 +82,7 @@ every one of them.
 | `afrLong` | 1 |
 | `decedent` | 1 |
 | `claireShort` | 1 |
+| `votingBlockDividend` | 1 |
 
 ## Machinery
 
@@ -102,25 +106,25 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**544 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**567 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
-| `votingUnits` | 91 |
+| `votingUnits` | 95 |
 | `endowmentIntent` | 66 |
-| `claireAge` | 50 |
-| `marriedYears` | 50 |
-| `tbills` | 33 |
+| `claireAge` | 52 |
+| `marriedYears` | 52 |
+| `tbills` | 34 |
+| `employees` | 31 |
 | `seedUnits` | 30 |
-| `employees` | 28 |
-| `nonVotingUnits` | 26 |
-| `megAge` | 24 |
+| `nonVotingUnits` | 28 |
+| `megAge` | 27 |
 | `charDeductible` | 18 |
-| `saleUnits` | 17 |
+| `saleUnits` | 18 |
 | `nathanAge` | 17 |
-| `inheritedIra` | 15 |
-| `david403b` | 15 |
+| `inheritedIra` | 16 |
+| `david403b` | 16 |
 | `dividend` | 12 |
 | `revolver` | 12 |
 | `discount` | 11 |
@@ -131,7 +135,9 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `ltcgTop` | 3 |
 | `perUnitDividend` | 2 |
 | `deMinimisLoan` | 2 |
+| `giftLoanNII` | 2 |
 | `custConcentration` | 1 |
+| `inquiryDate` | 1 |
 | `megRetainedNV` | 1 |
 
 ## Money figures in case context that `CASE.md` does not carry
@@ -139,7 +145,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
 | `session-2/index.html:2678` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
-| `session-4/index.html:7412` | UNGUARDED | $400,000 | =$('dfChan'),say=$('dfSay'),dBtns=$('dfBtns'),dOut=$('dfOut'); var DF={ say0:'“Wire 〈$400,000〉 from my brokerage account to a new account today. Keep  |
+| `session-4/index.html:9083` | UNGUARDED | $400,000 | fBtns'),dOut=$('dfOut'),bill=$('dfBill'),barsHost=$('dfBars'); var DF={ say0:'“Wire 〈$400,000〉 from my brokerage account to a new account today. Keep  |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,

@@ -55,4 +55,14 @@ twelve of fifteen research lanes.
 | S4N-038 | `#sW1` beat 3 | Two kinds of image mark: a label in the file (stripped by a screenshot) and a mark in the pixels (survives one); the Content Checker for files | E.D1 "image watermarking" | S4N-038 | done |
 | S4N-039 | `#sW1`, `#s1` item 9 | The EU callout: the rule binds the vendor, and is why Claude's text carries a mark; §01 item 9 reworded the same way | E.§1 [DECIDE], E.D1 [DECIDE] | S4N-039 | done |
 | S4N-040 | `#sRSP` | D5: the clocks that are law on a day slider; the written plan's three parts; two real clocks, Equifax (40 days) and Capital One (10 days); black and white wording | E.D5 "breach plan language", "famous breach example", "trigger citations" | S4N-040 | done |
-| S4N-041 | `CHANGELOG.md`, `changelog/index.html` | Entry dated 2026-09-28; page rebuilt | Process | `build-changelog.py` | pending |
+| S4N-041 | `CHANGELOG.md`, `changelog/index.html` | Entry dated 2026-09-28; page rebuilt, its style fence restored from a lesson's because the sweep is not installed here | Process | `build-changelog.py` | done |
+| S4N-042 | `SOURCES.md` | Eight verified records the page does not cite lose their Session 4 use (editorial A15); two Gemini records' uses name their section | `verify-editorial` A15; polish S4P-002 | `verify-editorial`; polish checks | done |
+| S4N-043 | `#s2 .pts`, `#s5` HOWN | Two phrases the earlier folders assert restored inside the new text (the Session 3 callback; White text on a white background) | rebuild S4R-005, S4R-008 | rebuild checks | done |
+
+## Measured at close
+
+Same method as the baseline: visible words 6,702 to 8,815 (+32%, inside the new interactives; see
+the handback), controls 214 to 275 (+29%), chips 130 to 229, footer sources 33 to 70, page height
+37,464 to 46,001 px; at 380 px no overflow. Minutes, sections, tiers and gates unchanged. All four
+change folders' `checks.mjs` at 0 failed; the console suite 86 of 86; every gate as listed in the
+handback.

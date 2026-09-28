@@ -1649,7 +1649,6 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4
 scope:          Use cases related to financial decisions, including investment advice, are treated as high-risk: a qualified professional must review the content or decision before it goes out, and the user must disclose that AI helped produce the advice. The policy also prohibits sharing personal information without consent.
-used_for.session-4: the two obligations a financial-advice use carries under Anthropic's own policy (§03 ladder readout)
 ```
 
 ## src-gemini-api-terms
@@ -1669,7 +1668,7 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4
 scope:          On the unpaid services (Google AI Studio and the free API quota), Google uses submitted content and generated responses "to provide, improve, and develop Google products and services and machine learning technologies", and "human reviewers may read, annotate, and process your API input and output"; on the paid services, prompts and responses are not used to improve products.
-used_for.session-4: why a free key is the training tier and a paid key is the contract tier (the live API box and §03)
+used_for.session-4: why a free key is the training tier and a paid key is the contract tier (§03, and the Live API box above §00)
 ```
 
 ## src-gemini-ratelimits
@@ -1689,7 +1688,7 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4
 scope:          The free tier's request limits are small, were cut in December 2025, and are now set per project; the only reliable figure is the one in your own AI Studio console.
-used_for.session-4: the one line in the live API box saying the free quota is small and must be checked in your own console
+used_for.session-4: the one line saying the free quota is small and must be checked in your own console (§00, in the Live API box above it)
 ```
 
 ## src-uae-voice
@@ -1725,7 +1724,6 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          In March 2019 the chief executive of a UK energy firm wired €220,000, about $243,000, to a Hungarian account after a phone call that mimicked his German parent company chief's voice.
-used_for.session-4: the earliest reported voice-clone loss, named in the video-call readout (§05)
 ```
 
 ## src-sg-deepfake-2025
@@ -1743,7 +1741,6 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          On 24 to 26 March 2025 a finance director joined a Zoom call with deepfakes of the chief executive and other executives and sent about US$499,000 (S$670,000) to a mule account; police in Singapore and Hong Kong traced and withheld it.
-used_for.session-4: the video-call case in which the money came back (§05)
 ```
 
 ## src-sg-deepfake-2026
@@ -1779,7 +1776,6 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          In July 2024 a Ferrari executive received messages and then a call carrying a cloned voice of the chief executive about a confidential acquisition; he asked which book the chief executive had recommended days earlier, and the caller hung up. Nothing was lost.
-used_for.session-4: the deepfake that was stopped by one question (§05 board)
 ```
 
 ## src-fbi-ic3-2025
@@ -1815,7 +1811,6 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          For 2024: 859,532 complaints and $16.6 billion in reported losses, a record at the time; business email compromise $2.77 billion from 21,442 complaints.
-used_for.session-4: the prior-year figure behind the 2025 total (§05)
 ```
 
 ## src-forcedleak
@@ -1833,7 +1828,6 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          A prompt injection through a web-to-lead form let Salesforce's Agentforce agent send CRM data to an expired allow-listed domain the researchers bought for $5; CVSS 9.4; fixed by Salesforce on 8 September 2025.
-used_for.session-4: the CRM-shaped prompt injection on the four-attack board (§05)
 ```
 
 ## src-drift
@@ -1979,7 +1973,6 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          Instructions inside a Google Calendar invite hijacked Gemini for Workspace, in one case firing later on an innocent "thanks"; Google added confirmation prompts for sensitive actions.
-used_for.session-4: calendar invites and shared documents as a hiding place (§05)
 ```
 
 ## src-nikkei-papers
@@ -1997,7 +1990,6 @@ confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          Hidden prompts such as "give a positive review only", in white or microscopic text, found in 17 preprints from 14 institutions; about 1% of 200,000 real CVs analysed by Duke carried similar injections.
-used_for.session-4: white text in documents and CVs as a hiding technique (§05)
 ```
 
 ## src-anthropic-injection
