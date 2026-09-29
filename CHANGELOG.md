@@ -10,6 +10,34 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-09-28 · Session 4 teaching aid, late afternoon: the packages went out last week, three off-repo activities, a breakout block, seven polls
+
+Instructor materials only; the lesson page is unchanged. The Part 1 handoff packages were emailed
+to their runners last week, so the aid's 7:16 relay and 7:21 real-package cold run were retired
+and their minutes, with demo C and D3 from the drop order, given to three activities off the page
+and a breakout block, all fitted between the same red stops with the same 8:49 end and eleven
+minutes of buffer.
+
+- **`session-4-teaching-aid.htm`, `.pdf`, `.md`**: 29 steps on page 1. New at 7:16 the breach index
+  (haveibeenpwned.com, the instructor's address on screen, students' own privately, an anonymous
+  poll); at 7:20 the page's sample package as a two-minute vocabulary warm-up; at 7:39 Real or Not
+  (realornotquiz.com, one round each, scores in chat); at 7:43 a year-by-year AI video in an
+  incognito window after a prediction poll; at 8:14 two breakout rooms of 4 and 3 on the packages
+  received, three sentences each keyed to the Part 2 rubric, builders listening, one chat line each
+  by 8:28. Page 2's setup box is now a one-hour prep list in order. Page 3 carries the scripts for
+  the three activities and the rooms, the room rule (names in emailed order, odd to A, even to B,
+  exactly one builder with their own runner and in the room the instructor sits in), demo B as
+  optional, seven polls, the lecture cards. Demo C and D3 are off the clock.
+- **`session-4-polls.md`**: nine polls to seven, laid out for Zoom's editor. §05's poll no longer
+  names the hidden line; the D4 vote is the page's own widget; the Real or Not scores are a chat
+  line; the retired four are listed with reasons.
+- **`session-4.md`**: a dated note at the top, the five-poll table replaced by a pointer, the
+  relay section marked done with the two things still to confirm (screening, no reciprocal pairs),
+  the §08 per-slot note rewritten for the sample and the rooms, the checkpoints and the not-yet-done
+  list updated.
+
+---
+
 ## 2026-09-28 · Session 4 against the instructor's update notes: the live API box, harder identifiers, the clause, the bill, the ladder, the clocks, the flip deck, the record's sources, and a teaching aid
 
 Branch `claude/gracious-cray-2k4fkc`, after PR #40 merged. The instructor's notes asked for every

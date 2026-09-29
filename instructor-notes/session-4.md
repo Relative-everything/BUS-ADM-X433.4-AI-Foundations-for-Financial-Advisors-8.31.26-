@@ -14,6 +14,27 @@ this clock as 19 steps with the answers inline; its page 2 is the rule key for �
 (when each passed, what it does, whom it binds, and whether it names AI). This sheet stays the
 full version.
 
+## What changed on 2026-09-28, late afternoon: the packages went out last week
+
+The teaching aid was rewritten for the night as it will actually run. The Part 1 packages were
+emailed to their runners last week, so the 7:16 relay and the 7:21 real-package cold run below are
+retired: the run happened at their desks, and tonight logs it. Their 17 minutes, plus demo C and D3
+from the drop order, pay for three off-repo activities and a breakout block:
+
+- **7:16 the breach index** (haveibeenpwned.com; your address on screen, theirs privately, an
+  anonymous poll), then **7:20 the page's sample package**, two minutes, for the station vocabulary.
+- **7:39 Real or Not** (realornotquiz.com, one round each, scores in chat) and **7:43 the
+  year-by-year AI video** in an incognito window with sound shared, after a prediction poll, both
+  inside §05 before The Video Call.
+- **8:14 the rooms**, two of 4 and 3, on the packages they received: three sentences each, keyed to
+  the Part 2 rubric; builders listen and write; one chat line each by 8:28. The room rule: names in
+  emailed order, odd to A, even to B; exactly one builder sits with their own runner, in A, with you.
+- **Seven polls** replace the nine; `session-4-polls.md` is rewritten. The five-poll table below is
+  retired. End 8:49; eleven minutes of buffer.
+
+Everything else on this sheet stands where the aid does not contradict it; where they differ, the
+aid is the clock.
+
 ## What changed on 2026-09-28: the instructor's notes, implemented
 
 Same sections, minutes, tiers and 17 gates. Fourteen things are new on the page and three are new
@@ -181,9 +202,9 @@ page 3). Scheduled 169 of 180.
 |---|---|
 | **6:46** | Demo A, the work-along, is done. If it is not, cut the three questions to one. |
 | **7:02** | The break has started or the night is already lost. |
-| **7:33** | The cold run is done and logged. It only works once, cold. |
-| **8:25** | D4 has begun, short: vote, complication, re-vote. |
-| **8:41** | The closing check starts, whatever is unfinished. |
+| **7:24** | §04 has started; the breach index and the sample are done. |
+| **8:15** | The rooms are open; the harvest is in the main chat by 8:28, one post per runner. Anything said in a room is not on the recording; the chat post is the record. |
+| **8:42** | The closing check starts, whatever is unfinished. |
 
 ## The corrections slot, 6:03
 
@@ -199,15 +220,14 @@ One aloud. Say it with its confidence label.
    Read the page yourself before you say it: support.claude.com, "How Claude marks AI-generated
    content". Appendix D1 carries the detail if anyone asks.
 
-## The five polls. Build them in Zoom before the night
+## The polls
 
-| Poll | When | Question | Options | Decision rule |
-|---|---|---|---|---|
-| 1 | 6:12 | Which of the four would you have sent? | A, B, C, D | Click the most-picked letter first. If anyone picked D, click D second and say "hold that thought for §02". If nobody did, click D yourself. |
-| 2 | 6:46 | Which AI tool, and which plan, do you use today? | Claude, ChatGPT, Copilot or Gemini, then: a personal plan; a plan my firm signed; the API; none | Click the most-picked vendor first, then its plan A. If a majority are on a personal plan, spend the minutes on the switch and the calendar at that vendor. If most are on a firm tool, click B and go to the six leaks. |
-| 3 | 7:42 | Before it runs: what will the assistant do? | a, b | If half or more pick (a), run it without comment and let the output land. If most pick (b), ask one (a) voter why before you run it. |
-| 4 | 8:26 | First vote: the full record costs more time than the AI saves | a agree, b lean agree, c lean disagree, d disagree | Show the distribution. The minority side speaks first. |
-| 5 | 8:33 | Second vote, after the complication | the same four | Show both distributions side by side. Report the change; a zero change is a finding, not a failure. |
+Seven, written out to paste into Zoom's editor in `session-4-polls.md` (rewritten 2026-09-28,
+late afternoon): 1 cold open at 6:12; 2 §03 vendor and agreement at 6:46; 3 the breach index,
+anonymous, at 7:16; 4 §05 the assistant at 7:33 (A or B, without naming the hidden line); 5 the
+year-by-year video's prediction at 7:43; 6 D5 the latest lawful day at 7:55; 7 closing at 8:42.
+The D4 vote is the page's own widget, launched twice on the page; the Real or Not scores at 7:39
+are a chat line.
 
 ## The three gated questions
 
@@ -237,10 +257,14 @@ own work". Say the one sentence under the objective and nothing more.
 Written, not spoken: spoken closing asks returned silence twice. Read three aloud. If a line has
 no "what do you keep", say so, kindly, and name §07.
 
-## Part 1 relay and the pairing, 7:16
+## Part 1 handoff, sent by email last week (the 7:16 relay is retired)
 
-This came off the page because a learner working alone cannot do it. What the page used to say, now
-yours to say:
+The packages went to their runners by email last week, so the relay below is done and 7:16 holds
+the breach index instead (aid, page 3, X1). Two things in this section still need doing or
+confirming: that every package was screened for real client data before it went out, and that
+nobody runs their own or their runner's package (no reciprocal pairs, as the syllabus requires).
+The pairing list, in emailed order, is also the room list at 8:14: odd positions to Room A, even to
+Room B. What the page used to say, kept for the record:
 
 - **Before class:** each learner emailed you one message with every file attached and a body
   reading only "See attached". You read each package as received and screened every attachment
@@ -369,12 +393,15 @@ $25.6 million and the FBI's $893 million; demands above $500,000 with no paid fi
 ### Relay, 7:16
 See the Part 1 relay section above.
 
-### sCR · §08 cold run, 7:21 · **WORKED 3**
-Eight minutes silent, then each runner clicks the station on the route where they first stopped
-(the list of seven sentences is gone; each station's sentence heads the readout) and writes one sentence in chat: "stopped at: ... because ...". Their token shudders at
-that stop. **Show the gaps · run the builder** after the harvest: five barriers drop on the
-sample, and the builder's token glides past every one from memory. Nobody fixes anything
-tonight; that is Session 5.
+### sCR · §08 sample, 7:20 (the real-package cold run is retired; the rooms are at 8:14)
+Two minutes silent on the page's sample package, then each person clicks the station on the route
+where they first stopped (each station's sentence heads the readout). **Show the gaps · run the
+builder**: five barriers drop on the sample, and the builder's token glides past every one from
+memory. Land: "Say the station, not the feeling." That is the vocabulary for the rooms at 8:14,
+where each runner says where the package they received stopped, on what input, the one design
+choice they cannot explain and what they will ask their AI, and their first change. Builders fix
+nothing tonight: Part 1 is submitted. Runners' first change is Part 2's 30% and is theirs this
+week. **Pack Yours: Seven Slots** is skipped; Part 1 is in.
 
 ### s6 · §06, 8:04
 Ask for a guess, drag to it, **Lock my guess**, **Run 100 memos**: the skyline climbs 17, 31, 43,
@@ -559,7 +586,12 @@ answering it in class.
 
 ## What is not yet done
 
-- The five polls are not built in Zoom (Poll 2 asks the vendor as well as the plan).
+- The seven polls are not built in Zoom (`session-4-polls.md`; Poll 3 anonymous).
+- The two rooms are not built (at the break, from the numbered pairing list); the room prompt and
+  the harvest template are not yet in the chat-lines file; the chat log is to be exported after
+  class within 24 hours.
+- realornotquiz.com, haveibeenpwned.com and the year-by-year video have not been opened on your
+  machine; each needs one dry run, and the video needs share-sound tested.
 - Demo A's Google Doc (the synthetic transcript), demo B's white-text doc, and demo C's PNG plus its
   screenshot are not made; a free Gemini key for the box is not created (make it on a throwaway
   Google account; it is plan A).
@@ -567,6 +599,6 @@ answering it in class.
   on showing client material to a class; the verdict on page 2 of the aid assumes it forbids the
   first unless it says otherwise.
 - The corrections line rests on a page fetched through a summariser; read it yourself first.
-- The pairing list is not drawn, and the packages are not screened.
+- The packages went out last week; confirm they were screened for real client data before they
+  went, and that no two students run each other's package.
 - Speaker-labelled transcripts: confirm they are still on.
-- Poll 2 now asks the vendor as well as the plan; rebuild it.
