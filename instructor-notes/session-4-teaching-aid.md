@@ -52,9 +52,10 @@ chat harvest; a black number = never skip; red text = stop by that time.
     (page 2, G).
 23. **8:03 §06.** 61; 33%: about 86; Check every answer; the pricer.
 24. **8:08 §07.** Six records, GATE 3 on record 3; record 6 NOT FOUND; Why slot 1 to 4; As a skill.
-25. **8:14 BREAKOUT.** Say the three sentences and the builder rule; Open All Rooms 8:15; timer
-    closes them 8:24; one chat line each by 8:28; read two; save chat. STOP 8:29. NEVER SKIP the
-    harvest. (page 3, R)
+25. **8:14 BREAKOUT.** They open the package in the room: three minutes silent on the one-page
+    guide, then three sentences each (it is for; it needs, and do I have it; which of in, where,
+    check, keep it answers). Open 8:15; timer 8:24; one chat line each by 8:28; read two; save
+    chat. STOP 8:29. NEVER SKIP the harvest. (page 3, R)
 26. **8:29 D4 SHORT.** + Standard. Vote on the page, both cases in one breath, the complication,
     vote again. Eight minutes.
 27. **8:37 §09.** Course rule aloud; a, b, a, b, b, a; Copy the outline. Add clause 7 aloud:
@@ -134,17 +135,23 @@ incognito, sound shared; play it once, no commentary; a login wall means the sav
 describe the last frame and move on. Show the poll: "most of you named a year already behind us."
 Then the page's video call: "Seeing is not proof. The callback is the control."
 
-**R · 8:14 · 15 min · The rooms, dead simple.** Before class: names in emailed order, 1 to 7; odd
-to Room A (4), even to Room B (3); the only builder with their own runner is #1 with #7, in A; #7
-speaks last, #1 writes; absentee: number from the name after the gap. At the break: Create 2,
-Assign manually, move automatically on, allow return on, close after 9 min, Notify me off,
-countdown 60 s, do not open; paste the prompt and the template. 8:14 say: three sentences each,
-where it stopped and on what input, the one choice you cannot explain and what you will ask your
-AI, your first change; builders listen and write; type nothing in the room; one line each in this
-chat when back; no client names. 8:15 Open; stay in main 60 s; join A; do not visit B. 8:24 timer
-closes. 8:25 harvest, one post each; read two; name the station. 8:28 land: "slide three of your
-Session 5 talk." Save chat. 8:29 D4. Fallback: a round robin, 60 s each, same sentences, same
-harvest.
+**R · 8:14 · 15 min · The rooms, dead simple: they open the package in the room.** Before class:
+names in emailed order, 1 to 7; odd to Room A (4), even to Room B (3); the only builder with their
+own runner is #1 with #7, in A; #7 speaks last, #1 writes; absentee: number from the name after
+the gap. At the break: Create 2, Assign manually, move automatically on, allow return on, close
+after 9 min, Notify me off, countdown 60 s, do not open; paste the prompt and the template. 8:14
+say: "Most of you have not opened your package. Good: you open it in the room, cold, and that is
+the test. Three minutes silent: find the email, open the one-page guide only, answer three things
+for yourself. Then round the room, ninety seconds each: It is for ___. It needs ___ (tool, tier,
+inputs), which I have / do not have. Of in, where, check, keep, the guide answers ___; the first
+thing I would ask the builder is ___. Cannot find it in a minute? The same three sentences about
+your own package, read as a stranger would. Builders listen, write, do not answer. Type nothing in
+the room; one line each in this chat when back; no client names." 8:15 Open; stay in main 60 s;
+join A; do not visit B. 8:24 timer closes. 8:25 harvest, one post each: `[Builder]'s package ·
+for: … · needs: … (have / don't) · guide answers: in / where / check / keep · first ask: …`; read
+two; count the ticks. 8:28 land: "The four questions you just asked of a classmate's guide are the
+four an examiner asks of yours; what it did not answer is the runner's Part 2 diagnosis and the
+builder's Part 1 gap." Save chat. 8:29 D4. Fallback: a round robin, 60 s each, same sentences.
 
 **B · 7:51 · 4 min · if time · Hidden text.** Tab 7, the doc with the white line; paste into
 Claude, "Summarise this in three bullets"; obeyed or flagged, it read it; back to §05, fix 3.

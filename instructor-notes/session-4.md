@@ -26,8 +26,10 @@ from the drop order, pay for three off-repo activities and a breakout block:
 - **7:39 Real or Not** (realornotquiz.com, one round each, scores in chat) and **7:43 the
   year-by-year AI video** in an incognito window with sound shared, after a prediction poll, both
   inside §05 before The Video Call.
-- **8:14 the rooms**, two of 4 and 3, on the packages they received: three sentences each, keyed to
-  the Part 2 rubric; builders listen and write; one chat line each by 8:28. The room rule: names in
+- **8:14 the rooms**, two of 4 and 3: they open the package they received in the room, cold, three
+  minutes silent on the one-page guide, then three sentences each (what it is for; what it needs
+  and whether they have it; which of in, where, check and keep the guide answers, and the first
+  thing they would ask the builder); builders listen and write; one chat line each by 8:28. The room rule: names in
   emailed order, odd to A, even to B; exactly one builder sits with their own runner, in A, with you.
 - **Seven polls** replace the nine; `session-4-polls.md` is rewritten. The five-poll table below is
   retired. End 8:49; eleven minutes of buffer.
@@ -398,8 +400,11 @@ Two minutes silent on the page's sample package, then each person clicks the sta
 where they first stopped (each station's sentence heads the readout). **Show the gaps · run the
 builder**: five barriers drop on the sample, and the builder's token glides past every one from
 memory. Land: "Say the station, not the feeling." That is the vocabulary for the rooms at 8:14,
-where each runner says where the package they received stopped, on what input, the one design
-choice they cannot explain and what they will ask their AI, and their first change. Builders fix
+where each runner opens the package they received, cold, in the room: three minutes silent on the
+one-page guide, then three sentences each (what it is for; what it needs and whether they have it;
+which of in, where, check and keep the guide answers, and the first thing they would ask the
+builder). Anyone who cannot find their package in a minute says the same three sentences about
+their own package, read as a stranger would. Builders fix
 nothing tonight: Part 1 is submitted. Runners' first change is Part 2's 30% and is theirs this
 week. **Pack Yours: Seven Slots** is skipped; Part 1 is in.
 
