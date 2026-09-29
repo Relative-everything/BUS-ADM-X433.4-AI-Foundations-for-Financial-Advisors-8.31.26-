@@ -28,8 +28,7 @@ from the drop order, pay for three off-repo activities and a breakout block:
   inside §05 before The Video Call.
 - **8:14 the rooms**, two of 4 and 3: they open the package they received in the room, cold, three
   minutes silent on the one-page guide, then three sentences each (what it is for; what it needs
-  and whether they have it; which of in, where, check and keep the guide answers, and the first
-  thing they would ask the builder); builders listen and write; one chat line each by 8:28. The room rule: names in
+  and whether they have it; the client it would get wrong, and why); builders listen and write; one chat line each by 8:28. The room rule: names in
   emailed order, odd to A, even to B; exactly one builder sits with their own runner, in A, with you.
 - **Seven polls** replace the nine; `session-4-polls.md` is rewritten. The five-poll table below is
   retired. End 8:49; eleven minutes of buffer.
@@ -402,8 +401,8 @@ builder**: five barriers drop on the sample, and the builder's token glides past
 memory. Land: "Say the station, not the feeling." That is the vocabulary for the rooms at 8:14,
 where each runner opens the package they received, cold, in the room: three minutes silent on the
 one-page guide, then three sentences each (what it is for; what it needs and whether they have it;
-which of in, where, check and keep the guide answers, and the first thing they would ask the
-builder). Anyone who cannot find their package in a minute says the same three sentences about
+the client it would get wrong, and why). That client is the runner's first test input this week:
+Part 2's Diagnosis asks for the specific input that breaks it. Anyone who cannot find their package in a minute says the same three sentences about
 their own package, read as a stranger would. Builders fix
 nothing tonight: Part 1 is submitted. Runners' first change is Part 2's 30% and is theirs this
 week. **Pack Yours: Seven Slots** is skipped; Part 1 is in.

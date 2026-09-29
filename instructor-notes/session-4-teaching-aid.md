@@ -53,8 +53,8 @@ chat harvest; a black number = never skip; red text = stop by that time.
 23. **8:03 §06.** 61; 33%: about 86; Check every answer; the pricer.
 24. **8:08 §07.** Six records, GATE 3 on record 3; record 6 NOT FOUND; Why slot 1 to 4; As a skill.
 25. **8:14 BREAKOUT.** They open the package in the room: three minutes silent on the one-page
-    guide, then three sentences each (it is for; it needs, and do I have it; which of in, where,
-    check, keep it answers). Open 8:15; timer 8:24; one chat line each by 8:28; read two; save
+    guide, then three sentences each (it is for; it needs, and do I have it; the client it would
+    get wrong). Open 8:15; timer 8:24; one chat line each by 8:28; read two; save
     chat. STOP 8:29. NEVER SKIP the harvest. (page 3, R)
 26. **8:29 D4 SHORT.** + Standard. Vote on the page, both cases in one breath, the complication,
     vote again. Eight minutes.
@@ -143,15 +143,13 @@ after 9 min, Notify me off, countdown 60 s, do not open; paste the prompt and th
 say: "Most of you have not opened your package. Good: you open it in the room, cold, and that is
 the test. Three minutes silent: find the email, open the one-page guide only, answer three things
 for yourself. Then round the room, ninety seconds each: It is for ___. It needs ___ (tool, tier,
-inputs), which I have / do not have. Of in, where, check, keep, the guide answers ___; the first
-thing I would ask the builder is ___. Cannot find it in a minute? The same three sentences about
+inputs), which I have / do not have. It would get it wrong for a client who ___, because ___. Cannot find it in a minute? The same three sentences about
 your own package, read as a stranger would. Builders listen, write, do not answer. Type nothing in
 the room; one line each in this chat when back; no client names." 8:15 Open; stay in main 60 s;
 join A; do not visit B. 8:24 timer closes. 8:25 harvest, one post each: `[Builder]'s package ·
-for: … · needs: … (have / don't) · guide answers: in / where / check / keep · first ask: …`; read
-two; count the ticks. 8:28 land: "The four questions you just asked of a classmate's guide are the
-four an examiner asks of yours; what it did not answer is the runner's Part 2 diagnosis and the
-builder's Part 1 gap." Save chat. 8:29 D4. Fallback: a round robin, 60 s each, same sentences.
+for: … · needs: … (have / don't) · gets wrong: a client who … because …`; read two. 8:28 land:
+"The client you just named is the first input you run this week. If it breaks, that is your Part 2
+diagnosis, and it is graded against the builder, not you." Save chat. 8:29 D4. Fallback: a round robin, 60 s each, same sentences.
 
 **B · 7:51 · 4 min · if time · Hidden text.** Tab 7, the doc with the white line; paste into
 Claude, "Summarise this in three bullets"; obeyed or flagged, it read it; back to §05, fix 3.

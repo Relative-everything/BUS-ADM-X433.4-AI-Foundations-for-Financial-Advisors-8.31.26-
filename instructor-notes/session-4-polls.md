@@ -139,4 +139,4 @@ line is the assignment."
 
 - **7:39 Real or Not**: each person posts their score from realornotquiz.com as a number.
 - **8:25 the rooms**: one post each, the template pasted at the break:
-  `[Builder]'s package · for: … · needs: … (have / don't) · guide answers: in / where / check / keep · first ask: …`
+  `[Builder]'s package · for: … · needs: … (have / don't) · gets wrong: a client who … because …`
