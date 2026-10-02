@@ -22,7 +22,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
-export const LESSONS = ['session-0.1', 'session-1', 'session-2', 'session-3', 'session-4'];
+export const LESSONS = ['session-0.1', 'session-1', 'session-2', 'session-3', 'session-4', 'session-5'];
 
 /* The three kinds that are exempt from carrying a confidence chip, and that A15
    accepts as a data-nochip reason. THIS LIST IS ASSERTED AGAINST THE CHECKER'S

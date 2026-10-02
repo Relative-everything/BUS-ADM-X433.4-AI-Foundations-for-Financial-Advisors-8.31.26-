@@ -42,7 +42,8 @@ const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const F = JSON.parse(readFileSync(join(REPO, 'scripts/case-facts.json'), 'utf8')).figures;
 
 export const LESSONS = ['index.html', 'session-0.1/index.html', 'session-1/index.html',
-                        'session-2/index.html', 'session-3/index.html', 'session-4/index.html'];
+                        'session-2/index.html', 'session-3/index.html', 'session-4/index.html',
+                        'session-5/index.html'];
 /* Generators and checkers hold case values on purpose: they are the machinery.
    Inventoried, reported separately, and never counted in the lesson total. */
 const MACHINERY = ['scripts/case-facts.json', 'scripts/case-extract.html',

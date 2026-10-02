@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 5 teaching aid</title>
+<!-- Instructor-only. Not a lesson: no managed style fence on purpose, and the
+     .htm extension keeps it outside the lesson sweep. Print landscape, two
+     pages. Source of the printed PDF beside it. Written 2026-10-02 for Monday
+     2026-10-05, 6:00 to 9:00 PM Pacific, against the page as built that day
+     (branch claude/practical-fermi-5g0sm0). Nothing in this file addresses a
+     learner. The stylesheet is Session 4's aid's, unchanged. -->
+<style>
+@page{size:letter landscape;margin:0.26in}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:#111;font-family:Helvetica,Arial,system-ui,sans-serif}
+.page{width:10.48in;height:7.98in;padding:0.02in 0.04in;overflow:hidden;page-break-after:always;position:relative}
+.page:last-child{page-break-after:auto}
+.top{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #111;padding-bottom:3px;margin-bottom:4px;gap:10px}
+.top h1{font-size:14px;margin:0;letter-spacing:.02em;white-space:nowrap}
+.legend{display:flex;gap:5px;flex-wrap:wrap;align-items:center;font-size:9.4px;justify-content:flex-end}
+.legend .k{display:inline-flex;align-items:center;gap:4px;border:1.3px solid #111;border-radius:4px;padding:1px 5px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;font-size:8.4px;white-space:nowrap}
+.legend .k i{display:inline-block;width:10px;height:10px;border-radius:2px}
+:root{--repo:#1f4e79;--lec:#b3261e;--demo:#2e6b3a;--poll:#6b3fa0;--gate:#111;--stop:#c8102e;--brk:#8a6d00;--api:#0b6e6b}
+.k.repo i{background:var(--repo)}.k.lec i{background:var(--lec)}.k.demo i{background:var(--demo)}.k.poll i{background:var(--poll)}.k.gate i{background:var(--gate)}.k.stop i{background:var(--stop)}.k.brk i{background:var(--brk)}.k.api i{background:var(--api)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 0.18in}
+.step{display:grid;grid-template-columns:0.38in 0.28in 0.58in 1fr;align-items:start;padding:1px 0 1px 0;border-bottom:1px solid #dcdcdc;min-height:0.28in;border-left:6px solid #bbb;padding-left:4px}
+.step.repo{border-left-color:var(--repo)}.step.lec{border-left-color:var(--lec)}.step.demo{border-left-color:var(--demo)}.step.poll{border-left-color:var(--poll)}.step.brk{border-left-color:var(--brk)}.step.api{border-left-color:var(--api)}
+.step .t{font-size:10.4px;color:#333;font-weight:800;padding-top:3px;font-variant-numeric:tabular-nums}
+.step .n{width:0.25in;height:0.25in;border:2px solid #111;border-radius:50%;display:grid;place-items:center;font-size:11.5px;font-weight:800;margin-top:1px;background:#fff}
+.step.key .n{background:#111;color:#fff}
+.step .w{font-size:7.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:#666;border-radius:3px;padding:3px 2px;margin:3px 5px 0 0;text-align:center;line-height:1.1}
+.step.repo .w{background:var(--repo)}.step.lec .w{background:var(--lec)}.step.demo .w{background:var(--demo)}.step.poll .w{background:var(--poll)}.step.brk .w{background:var(--brk)}.step.api .w{background:var(--api)}
+.step .a{font-size:11.6px;font-weight:800;line-height:1.1;letter-spacing:-.005em}
+.step .c{font-size:9.2px;line-height:1.18;color:#222;margin-top:1px}
+.step .c b{font-weight:800}
+.tag{display:inline-block;font-size:8.2px;font-weight:800;letter-spacing:.05em;border:1.3px solid #111;border-radius:3px;padding:0 4px;margin-right:2px;text-transform:uppercase;vertical-align:1px;background:#fff}
+.tag.g{background:#111;color:#fff}
+.tag.poll{background:var(--poll);color:#fff;border-color:var(--poll)}
+.tag.chat{border-color:var(--poll);color:var(--poll)}
+.tag.p2{border-color:var(--demo);color:var(--demo)}
+.stop{color:var(--stop);font-weight:800}
+.lec b{color:var(--lec)}
+.boxes{display:grid;grid-template-columns:1.25fr 0.95fr 0.8fr 1fr 1.15fr;gap:0.07in;margin:0 0 6px}
+.box{border:2px solid #111;border-radius:6px;padding:3px 6px;font-size:9.1px;line-height:1.22}
+.box h3{margin:0 0 1px;font-size:9.1px;letter-spacing:.06em;text-transform:uppercase}
+.box.no{border-style:dashed}
+.box ul{margin:0;padding-left:11px}
+.box li{margin:0}
+/* page 2 */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 0.16in}
+.seg{border:2px solid #111;border-radius:7px;padding:5px 8px;margin-bottom:5px;font-size:9.8px;line-height:1.24;border-left-width:8px;break-inside:avoid}
+.seg.demo{border-color:var(--demo)}.seg.api{border-color:var(--api)}.seg.lec{border-color:var(--lec)}.seg.repo{border-color:var(--repo)}.seg.gate{border-color:#111}
+.seg h2{margin:0 0 2px;font-size:11.8px;letter-spacing:.01em}
+.seg h2 .w{display:inline-block;font-size:8px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#fff;background:#666;border-radius:3px;padding:2px 5px;margin-right:5px;vertical-align:2px}
+.seg.demo h2 .w{background:var(--demo)}.seg.api h2 .w{background:var(--api)}.seg.lec h2 .w{background:var(--lec)}.seg.repo h2 .w{background:var(--repo)}.seg.gate h2 .w{background:#111}
+.seg ol,.seg ul{margin:1px 0 0;padding-left:14px}
+.seg li{margin:0 0 1px}
+.seg .verdict{display:inline-block;border:1.6px solid #111;border-radius:3px;padding:0 5px;font-weight:800;font-size:8.8px;letter-spacing:.04em;text-transform:uppercase;margin:1px 3px 1px 0}
+.seg .verdict.no{border-color:var(--stop);color:var(--stop)}
+.seg .verdict.ok{border-color:var(--demo);color:var(--demo)}
+.say{font-style:italic;color:#222}
+.mono{font-family:"Courier New",monospace;font-size:8.8px;background:#f1f1f1;border-radius:3px;padding:0 3px}
+</style>
+</head>
+<body>
+<!-- PAGE 1: the flow -->
+<div class="page">
+  <div class="top">
+    <h1>SESSION 5 · MON 10/5 · 6:00 TO 9:00 PT · THE FLOW, TOP TO BOTTOM</h1>
+    <div class="legend">
+      <span class="k repo"><i></i>Repo: work the page</span>
+      <span class="k lec"><i></i>Lecture: you, 2 min</span>
+      <span class="k demo"><i></i>Presentations</span>
+      <span class="k poll"><i></i>Poll / chat</span>
+      <span class="k gate"><i></i>Black number: never skip</span>
+      <span class="k stop"><i></i>Red: stop by</span>
+    </div>
+  </div>
+  <div class="cols">
+  <div>
+    <div class="step"><div class="t">6:00</div><div class="n">1</div><div class="w">Zoom</div><div><div class="a">OPEN. "Setup questions at the break."</div><div class="c">Correction: <b>the AI-search reading could not be opened from the build</b>; the page carries one recommendation from it at medium confidence (who-what-where). Say what else it says if you have read it.</div></div></div>
+    <div class="step repo key"><div class="t">6:03</div><div class="n">2</div><div class="w repo">§00</div><div><div class="a">OBJECTIVE. Read "Session 5's one thing" off the page: explain it, break it, improve it, say what stays yours.</div><div class="c">Non-advisors: "the workflow you were handed is still someone's recurring task." The Coles in two lines, aloud.</div></div></div>
+    <div class="step repo"><div class="t">6:05</div><div class="n">3</div><div class="w repo">§00</div><div><div class="a">BRIDGE: three letters, all <b>b</b> by content (positions vary). Then <b>Advance the model</b> three times.</div><div class="c">The box changes, the ring of five does not. Click <b>5 Hand it over</b>; read the one thing.</div></div></div>
+    <div class="step poll key"><div class="t">6:09</div><div class="n">4</div><div class="w poll">Cold open</div><div><div class="a"><span class="tag poll">poll 1</span> Then or Now? Click <b>Then</b>, <b>Test 1 · check both</b>, <b>Test 2 · could you send it?</b></div><div class="c">Then 3 of 8 and names the client; Now 8 of 8. Land: "good and allowed are two tests; the course is the gap between Then and Now."</div></div></div>
+    <div class="step repo"><div class="t">6:17</div><div class="n">5</div><div class="w repo">§01</div><div><div class="a">Pin <b>A</b>, drag to today: deprecated, days to go. Drag past 30 Nov: <b>retired, requests fail</b>. Pin <b>C</b>: untested.</div><div class="c">Tick three, <b>Copy the maintenance card</b>. Land: "the calendar is public, the notice is 60 days; no test set, no use for either."</div></div></div>
+    <div class="step repo key"><div class="t">6:22</div><div class="n">6</div><div class="w repo">§02 worked</div><div><div class="a">Tag the five choices. <b>Model tier</b> and <b>Data handling</b>: NOT STATED. Verification: WEAK. <b>Copy the explanation</b>.</div><div class="c">"Minute one of every talk tonight is these four lines." The figure writes the two questions for the builder.</div></div></div>
+    <div class="step poll key"><div class="t">6:28</div><div class="n">7</div><div class="w poll">§03 worked</div><div><div class="a"><span class="tag poll">poll 2</span> which break? <b>Lock my prediction</b>, <b>Run all six</b>: 2, 4, 5 broke.</div><div class="c"><span class="tag g">gate 1</span> "Which break was not the model's fault?" Input 5: it repeated what it was given. Land: "the input is the finding."</div></div></div>
+    <div class="step repo"><div class="t">6:33</div><div class="n">8</div><div class="w repo">§04</div><div><div class="a">Three rows, the room calls a or b; checkable: NOT IN NOTE · CONFLICT heading · the README step with the eight-digit test.</div><div class="c">3 of 6 becomes 6 of 6. <b>Copy the change note</b>. Land: "a model cannot be careful; it can follow a rule you can test."</div></div></div>
+    <div class="step lec"><div class="t">6:38</div><div class="n">9</div><div class="w lec">Lecture 1</div><div><div class="a lec"><b>What to listen for in the next hour.</b> <span class="tag p2">page 2, L1</span></div><div class="c">Four things per talk: what it is made of, the input that broke it, the change and its proof, what stays human. <span class="stop">STOP 6:40.</span></div></div></div>
+    <div class="step demo key"><div class="t">6:40</div><div class="n">10</div><div class="w demo">Block 1</div><div><div class="a">PRESENTATIONS 1 to 4. Ten minutes each: six, the builder's two, your questions. <span class="tag p2">page 2, P</span></div><div class="c">Stop a presenter at seven minutes, kindly. <span class="tag g">gate 2</span> to each builder: "what did they understand that you never wrote down?"</div></div></div>
+    <div class="step brk"><div class="t">7:20</div><div class="n">11</div><div class="w brk">Break</div><div><div class="a">BREAK. Post "back at 7:35 Pacific" in chat.</div><div class="c">Post the clock time in their zone, not yours. <span class="stop">Break starts by 7:20</span> or block 2 runs into §05.</div></div></div>
+  </div>
+  <div>
+    <div class="step demo key"><div class="t">7:35</div><div class="n">12</div><div class="w demo">Block 2</div><div><div class="a">PRESENTATIONS 5 to 8. Same rules. <span class="tag p2">page 2, P</span></div><div class="c">A presenter who could not run it presents where it stopped: valid, and the finding is about the package. <span class="stop">STOP 8:15.</span></div></div></div>
+    <div class="step poll"><div class="t">8:15</div><div class="n">13</div><div class="w poll">§05</div><div><div class="a"><span class="tag poll">poll 3</span> how much faster? <b>Lock my guess</b>, <b>Reveal the four trials</b>: +40, +25.1, +14, and <b>minus 19</b>.</div><div class="c">METR aloud: "they believed plus 20; they were minus 19." Then the room's sliders at the defaults: saves 45 a time, 6 hours a month. Land: "felt faster is not faster; time it."</div></div></div>
+    <div class="step repo"><div class="t">8:20</div><div class="n">14</div><div class="w repo">§06</div><div><div class="a">Click <b>Note-taker</b> (42.9% of 2,906; 14 tools, first time tracked) and <b>AI search</b> (8% against 15%; who-what-where).</div><div class="c">Four answers each: In, Where, Check, Keep. Tick the room's stack. Land: "the questions do not change."</div></div></div>
+    <div class="step repo"><div class="t">8:25</div><div class="n">15</div><div class="w repo">§07</div><div><div class="a">Eight moments, the room calls 1 or 2: tool 1, 4, 6, 8; you 2, 3, 5, 7. Then <b>Show what the surveys found</b>.</div><div class="c">32% advice, 21% relationship, 11% returns; Vanguard's half; the CFP exam's 7%. Land: "the judgments are the fee."</div></div></div>
+    <div class="step repo"><div class="t">8:30</div><div class="n">16</div><div class="w repo">§08</div><div><div class="a">Two commits, both <b>b</b>. <span class="tag g">gate 3</span> "which confidence predicted more checking?" Yourself: plus 0.26; the tool: minus 0.69.</div><div class="c">The two sliders, then <b>Seal it</b>: one line each in chat, the five principles open.</div></div></div>
+    <div class="step lec"><div class="t">8:35</div><div class="n">17</div><div class="w lec">Lecture 2</div><div><div class="a lec"><b>The tools change; the judgment does not.</b> <span class="tag p2">page 2, L2</span></div><div class="c">Two minutes: the calendar in §01 against the ring in §00. <span class="stop">STOP 8:37.</span></div></div></div>
+    <div class="step poll key"><div class="t">8:37</div><div class="n">18</div><div class="w poll">Closing</div><div><div class="a">CLOSING CHECK, written. <span class="tag chat">chat</span> one line each: explain, break, improve, keep.</div><div class="c">Read three aloud. A line with no "stays yours": name §07.</div></div></div>
+    <div class="step poll"><div class="t">8:42</div><div class="n">19</div><div class="w poll">E5 if time</div><div><div class="a"><span class="tag poll">poll 4</span> sealed vote → <b>2 · Weigh both cases</b> → <b>3 · The complication</b> → <span class="tag poll">poll 4</span> again → <b>4 · Vote again</b>.</div><div class="c">Depth → <b>+ Standard</b>. If no time, one sentence: "the two pans may be one pan."</div></div></div>
+    <div class="step"><div class="t">8:50</div><div class="n">20</div><div class="w">Zoom</div><div><div class="a">CLOSE. Improved versions back to each builder; where the course materials live; thanks.</div><div class="c">End 8:52; eight minutes of buffer.</div></div></div>
+  </div>
+  </div>
+</div>
+
+<!-- PAGE 2: around the flow -->
+<div class="page">
+  <div class="top">
+    <h1>SESSION 5 · PAGE 2 · SETUP, THE PRESENTATIONS, THE LECTURE CARDS, THE ANSWERS</h1>
+    <div class="legend"><span class="k demo"><i></i>Presentations</span><span class="k lec"><i></i>Lecture card</span><span class="k repo"><i></i>Run flow</span><span class="k gate"><i></i>Cue</span></div>
+  </div>
+  <div class="boxes">
+    <div class="box"><h3>Setup at 5:45</h3><ul><li><b>Tab 1</b> Session 5, Core only, depth bar at + Standard for E5 later</li><li><b>Tab 2</b> the pairing list from Session 4: who presents whose package</li><li>Four polls built from <span class="mono">session-5-polls.md</span></li><li>Three chat lines ready: the break time, the closing check, the one-thing line</li><li>Speaker labels on; a visible clock</li></ul></div>
+    <div class="box no"><h3>Not tonight</h3><ul><li>Live demonstrations of any workflow</li><li>E1 to E4 on the page (theirs, after)</li><li>Vendor names for note-takers or CRMs</li><li>Any date, weight or platform</li><li>Anything with a real client in it</li></ul></div>
+    <div class="box"><h3>Checkpoints</h3><ul><li><b>6:40</b> §04 done, presenter 1 on</li><li><b>7:20</b> block 1 done, break</li><li><b>8:15</b> block 2 done</li><li><b>8:37</b> closing check</li></ul></div>
+    <div class="box"><h3>Drop order if late</h3><ul><li>1 §06 to one tool (saves 3)</li><li>2 E5 to the one sentence (saves 8)</li><li>3 §04 to one row (saves 3)</li><li>4 §05 to the reveal only (saves 2)</li><li><b>Never drop:</b> objective, cold open, §02, §03, the presentations, the closing check</li></ul></div>
+    <div class="box"><h3>Answers</h3><ul><li>Bridge: all b · cold open: Then 3, Now 8 · §01: retired after 30 Nov</li><li>§03: 2, 4, 5 broke · §04: 6 of 6 when all checkable</li><li>§05: +40, +25.1, +14, minus 19 (believed +20) · §07: tool 1 4 6 8, you 2 3 5 7</li><li>§08: b, b · E5: no right answer</li></ul></div>
+  </div>
+  <div class="two">
+  <div>
+    <div class="seg demo"><h2><span class="w">P · 6:40 and 7:35 · 40 min each</span>The presentations: eight, ten minutes each</h2>
+      <ol>
+        <li><b>Order.</b> The pairing list from Session 4: nobody presents their own package and no two present each other's. Call the next name while the builder is still answering.</li>
+        <li><b>Six minutes, five beats</b> (E1 is their rehearsal): what it does and the problem; the design choices (tool, tier, prompt structure, checks); where it worked and the input that broke it; what they changed and why; one thing they take. Stop at seven minutes.</li>
+        <li><b>The builder's two minutes</b> (E4's order): understood first, missed second, what the package never said last. <span class="tag g">gate 2</span> "What did they understand that you never wrote down?"</li>
+        <li><b>Your two to four questions</b>, at least one to the builder: "Which input would you add to the test set?" · "Which model and date is in the record?" · "What stays yours in this workflow?" · to the builder: "What did the runner try that you did not anticipate?"</li>
+        <li><b>Could not run it.</b> A presenter who could not run it from the documents presents exactly where it stopped. Valid; the finding is about the package. Session 4's seven stations are the vocabulary.</li>
+        <li><b>No live demonstrations.</b> If someone offers, "the talk is the evidence; the transcript is with me."</li>
+      </ol>
+    </div>
+    <div class="seg lec"><h2><span class="w">L1 · 6:38 · 2 min</span>What to listen for in the next hour</h2>
+      <ul>
+        <li><b>Four things per talk</b>, the four the page just taught: what it is made of (§02), the input that broke it (§03), the change and the input that proves it (§04), and what the builder kept human.</li>
+        <li><b>Listen for the tier.</b> If a presenter names a model and the package did not, that is a package gap, not a presenter error; say so at the builder's turn.</li>
+        <li><b>The question you will ask every time:</b> "which input would you add to the test set?"</li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div class="seg lec"><h2><span class="w">L2 · 8:35 · 2 min</span>The tools change; the judgment does not</h2>
+      <ul>
+        <li><b>§01's calendar</b> against <b>§00's ring</b>: every model on the calendar has a date; none of the five stops does. Sonnet 4.5 was deprecated two days after Session 4; the four questions did not change that night.</li>
+        <li><b>What the course leaves them:</b> the eight checks (Session 1), the four parts of a prompt (2), the opened source (3), in-where-check-keep (4), and the handoff test (5). Say the five in one breath.</li>
+        <li><b>The one sentence to a client</b> (E5's output): what you do that the tool does not. Ask two people for theirs.</li>
+      </ul>
+    </div>
+    <div class="seg repo"><h2><span class="w">F · §01 run flow</span>Click every pin, then drag</h2>
+      <ul>
+        <li><b>A</b>, today: deprecated since 30 Sep, retirement 30 Nov, replacement named. Drag past 30 Nov: retired; "requests to retired models will fail".</li>
+        <li><b>B</b>: active, not sooner than 28 Sep 2027; "still write the date you tested it".</li>
+        <li><b>C</b>: runs on whatever is current, untested. Then the three tiles and the copy.</li>
+      </ul>
+    </div>
+    <div class="seg gate"><h2><span class="w">G · cues</span>Three gated questions and the closing line</h2>
+      <ul>
+        <li><span class="tag g">gate 1</span> §03: "which break was not the model's fault?" Input 5.</li>
+        <li><span class="tag g">gate 2</span> each builder: "what did they understand that you never wrote down?"</li>
+        <li><span class="tag g">gate 3</span> §08: "which confidence predicted more checking?" Yourself.</li>
+        <li><b>Closing check, written:</b> explain, break, improve, keep. Read three aloud.</li>
+      </ul>
+    </div>
+    <div class="seg demo"><h2><span class="w">H · for you</span>Verify before teaching</h2>
+      <ul>
+        <li>Open Anthropic's model deprecations page once (the §01 calendar, H). Everything else external on the page is M and listed in the run sheet's Verify section: the four trials, Morningstar, Vanguard, the CFP exam weight, the planning agent, Pew, OpenAI, the Kitces reading.</li>
+        <li>Lee et al. (§08, E5) was opened in full: Table 4's coefficients and §5.1's shares.</li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</div>
+</body>
+</html>

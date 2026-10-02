@@ -42,7 +42,7 @@ const BASE = JSON.parse(readFileSync(join(REPO, 'scripts/editorial-baseline.json
    standalone async bonus lesson with no live time block, so A1-A7 have no
    population in that file. The skip is declared and reasoned here rather than left
    silent, and it is A1-A7 ONLY — session-0.1 is in scope for every other rule. */
-const TIERED = ['session-1', 'session-2', 'session-3', 'session-4'];
+const TIERED = ['session-1', 'session-2', 'session-3', 'session-4', 'session-5'];
 const ALL_LESSONS = ['session-0.1', ...TIERED];
 const D14_SKIP = 'session-0.1';
 const D14_REASON = 'D20 2026-08-25: out of scope for the appendix/tier architecture (standalone async, different delivery mode); no appendix, no data-tier, no tier bar';

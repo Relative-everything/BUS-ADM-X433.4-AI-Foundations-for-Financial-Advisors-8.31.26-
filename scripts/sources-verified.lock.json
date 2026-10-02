@@ -1,7 +1,7 @@
 {
   "note": "NOTARISED. Every last_verified date in SOURCES.md, frozen. build-sources.mjs recomputes this digest on every parse and refuses to build if a date moved. Only scripts/attest-verified.mjs writes this file, and only at an interactive terminal. Do not hand-edit: a hand edit here and a matching hand edit in SOURCES.md is the one thing this pair cannot catch, and it is a lie about a human having read a source.",
   "updated_by": "--sync (records with an empty last_verified only)",
-  "digest": "cb5f277761afb142d2f00cf83cbb6693d66c11762850cbde5e123e128bea1d6e",
+  "digest": "22c5080a01b00d593d491df805b796e3759ba4ddf52dc065e59ec5e651beff88",
   "entries": {
     "src-0din-gemini": {
       "last_verified": "",
@@ -48,6 +48,14 @@
       "verified_by": ""
     },
     "src-anthropic-ctx-eng": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-deprecation-commitments": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-deprecations": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -103,6 +111,10 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-brynjolfsson": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-capitalone": {
       "last_verified": "",
       "verified_by": ""
@@ -116,6 +128,10 @@
       "verified_by": ""
     },
     "src-cfp-genai": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-cfp-psychology": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -164,6 +180,10 @@
       "verified_by": ""
     },
     "src-deepseek": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-dellacqua": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -267,6 +287,10 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-investmentnews-t3-2026": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-irc": {
       "last_verified": "",
       "verified_by": ""
@@ -288,6 +312,10 @@
       "verified_by": ""
     },
     "src-kitces-advisortech": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-kitces-aisearch": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -319,11 +347,19 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-metr-2025": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-models": {
       "last_verified": "",
       "verified_by": ""
     },
     "src-morningstar": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-morningstar-fired": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -339,6 +375,10 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-noy-zhang": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-openai-data": {
       "last_verified": "",
       "verified_by": ""
@@ -347,11 +387,19 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-openai-retire-4o": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-owasp": {
       "last_verified": "",
       "verified_by": ""
     },
     "src-personalization": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-pew-ai-summaries": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -364,6 +412,10 @@
       "verified_by": ""
     },
     "src-regsp": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-rightcapital-iris": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -456,6 +508,10 @@
       "verified_by": ""
     },
     "src-unit42-ipi": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-vanguard-alpha": {
       "last_verified": "",
       "verified_by": ""
     },

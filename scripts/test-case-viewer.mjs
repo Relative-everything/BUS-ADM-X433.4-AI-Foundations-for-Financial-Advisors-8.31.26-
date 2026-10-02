@@ -27,7 +27,8 @@ const chromium = (pw.chromium || pw.default.chromium);
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LESSONS = ['index.html', 'session-0.1/index.html', 'session-1/index.html',
-                 'session-2/index.html', 'session-3/index.html', 'session-4/index.html'];
+                 'session-2/index.html', 'session-3/index.html', 'session-4/index.html',
+                 'session-5/index.html'];
 
 let fails = 0;
 const say = (ok, s, detail) => {

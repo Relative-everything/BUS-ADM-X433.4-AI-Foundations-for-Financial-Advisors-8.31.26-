@@ -47,7 +47,8 @@ const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CHECK = process.argv.includes('--check');
 const OUT = join(REPO, 'docs/unsourced-claims.md');
 const LESSONS = ['index.html', 'session-0.1/index.html', 'session-1/index.html',
-                 'session-2/index.html', 'session-3/index.html', 'session-4/index.html'];
+                 'session-2/index.html', 'session-3/index.html', 'session-4/index.html',
+                 'session-5/index.html'];
 
 /** How far back from a marker its annotation may sit. */
 const ANNOT_WINDOW = 900;
