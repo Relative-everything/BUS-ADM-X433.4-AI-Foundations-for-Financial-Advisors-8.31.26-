@@ -688,6 +688,12 @@ if (enabled('A13')) {
     const text = src(l);
     const c = classify(text);
     const names = footerSurnames(text, c);
+    /* A name that several footer entries carry (Anthropic, once a lesson cites
+       three of its pages) cannot place any of them in an order, so it is not a
+       mention. Added 2026-10-02 when session-5 §01 cited two Anthropic pages in
+       one source line and the test read the tie as a shift. */
+    const shared = new Map();
+    for (const ns of names.values()) for (const nm of ns) shared.set(nm, (shared.get(nm) || 0) + 1);
     const containers = [];
     for (const m of text.matchAll(/<p\b[^>]*>[\s\S]*?<\/p>/g)) containers.push([m.index, m.index + m[0].length]);
     for (const m of text.matchAll(/cap\s*:\s*'(?:[^'\\]|\\.)*'/g)) containers.push([m.index, m.index + m[0].length]);
@@ -701,6 +707,7 @@ if (enabled('A13')) {
       const mentions = [];
       for (const [id, ns] of names) {
         for (const nm of ns) {
+          if (shared.get(nm) > 1) continue;
           const i = plain.search(new RegExp(`\\b${nm}\\b`));
           if (i >= 0) { mentions.push({ id, nm, i }); break; }
         }

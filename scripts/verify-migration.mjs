@@ -110,6 +110,10 @@ const RETIRED = [
   const bad = [];
   for (const p of ALL) {
     const r = rel(p); if (isRegister(r)) continue;
+    /* Binary files are not prose: a compressed byte run can spell a retired
+       figure by chance (the session-5 teaching-aid PDF did, 2026-10-02). The
+       PDFs' text is the .htm beside each one, which this scan does read. */
+    if (/\.(pdf|png|jpe?g|gif|webp|woff2?|ttf|ico)$/i.test(r)) continue;
     const t = text(p);
     for (const [label, rx] of RETIRED) {
       rx.lastIndex = 0;

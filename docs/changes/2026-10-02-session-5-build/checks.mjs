@@ -7,7 +7,10 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const { JSDOM } = require('jsdom');
 const html = readFileSync('session-5/index.html', 'utf8');
-const dom = new JSDOM(html, { runScripts: 'dangerously', pretendToBeVisual: true });
+/* The page is loaded with prefers-reduced-motion so every tween lands in the same tick
+   the click does; the assertions then read final states, not frames. */
+const noMotion = () => ({ matches: true, addListener() {}, removeListener() {}, addEventListener() {}, removeEventListener() {} });
+const dom = new JSDOM(html, { runScripts: 'dangerously', pretendToBeVisual: true, beforeParse(win) { win.matchMedia = noMotion; } });
 const w = dom.window, d = w.document;
 const $ = (s) => d.querySelector(s);
 const $$ = (s) => [...d.querySelectorAll(s)];
@@ -51,11 +54,11 @@ say(existsSync('instructor-notes/session-5.md') && existsSync('instructor-notes/
 { const qs = $$('#bridgeQuiz .qitem');
   qs.forEach((q) => { const b = [...q.querySelectorAll('.qbtns button')].find((x) => x.dataset.k === 'r' || /^\(b\)/.test(x.textContent)); click(b || q.querySelector('.qbtns button')); });
   say(qs.length === 3 && done('g1'), 'S5B-010', '§00: three recall items; answering all marks g1');
-  const before = $$('#s0Doors button').map((b) => b.textContent).join('|');
+  const before = $$('#s0Stops button').map((b) => b.textContent).join('|');
   click($('#s0Adv')); click($('#s0Adv')); click($('#s0Adv'));
-  const after = $$('#s0Doors button').map((b) => b.textContent).join('|');
+  const after = $$('#s0Stops button').map((b) => b.textContent).join('|');
   say(before === after && /ring did not|five are yours/i.test(txt('#s0Out')), 'S5B-011', '§00: advancing the model leaves the five stops unchanged and says so');
-  $$('#s0Doors button').forEach((b) => click(b));
+  $$('#s0Stops button').forEach((b) => click(b));
   say(/explain it, break it, improve it/i.test(txt('#s0Out')), 'S5B-011', '§00: all five stops seen writes the one-thing sentence'); }
 
 /* ---- cold open ---- */
@@ -139,7 +142,7 @@ say(existsSync('instructor-notes/session-5.md') && existsSync('instructor-notes/
   say(/42\.9%/.test(txt('#s6Out')) && /14/.test(txt('#s6Out')) && /In/.test(txt('#s6Out')) && /Keep/.test(txt('#s6Out')), 'S5B-027', '§06: the note-taker card carries the survey shares and the four questions');
   click(tools[4]);
   say(done('g7') && /8%/.test(txt('#s6Out')) && /15%/.test(txt('#s6Out')), 'S5B-027', '§06: AI search carries the Pew rates; two tools mark g7');
-  say(!/Jump|Zocks|Zeplyn|Wealthbox|Redtail|RightCapital/.test(txt('#s6')), 'S5B-027', '§06: no vendor is named in the section text'); }
+  say(!/Jump|Zocks|Zeplyn|Wealthbox|Redtail|RightCapital/.test(txt('#s6 .panel') + txt('#s6 ul.pts') + txt('#s6 p.big')), 'S5B-027', '§06: no vendor is named outside the source line'); }
 
 /* ---- §07 ---- */
 { const chips = $$('#s7List .chip'), boxes = $$('#s7Boxes .lbox');
@@ -155,7 +158,7 @@ say(existsSync('instructor-notes/session-5.md') && existsSync('instructor-notes/
   click(v1[1]); click($('#e5Cases'));
   say($$('#e5Out [data-src="src-lee-cognitive"]').length >= 1 && $$('#e5Out [data-src="src-morningstar-fired"]').length >= 1, 'S5B-030', 'E5: the six cards carry their chips');
   click($('#e5Twist')); click($('#e5Again')); click($$('#e5Vote2 button')[2]);
-  say(done('ga5') && /vote/i.test(txt('#e5Out')), 'S5B-030', 'E5: the second vote marks ga5'); }
+  say(done('ga5') && /vote/i.test(txt('#e5Out') + txt('#e5Out2')), 'S5B-030', 'E5: the second vote marks ga5'); }
 
 /* ---- §08 ---- */
 { const qs = $$('#s8Quiz .qitem');

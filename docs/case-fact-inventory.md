@@ -21,10 +21,10 @@ occurrence does not follow fails the check. Everything else can.
 
 | | Total | Quantitative | Qualitative |
 |---|---:|---:|---:|
-| `INJECTED` | 1710 | 1392 | 318 |
+| `INJECTED` | 1995 | 1624 | 371 |
 | `PINNED` | 2 | 2 | 0 |
-| `UNGUARDED` | 81 | 6 | 75 |
-| **TOTAL** | **1793** | **1400** | **393** |
+| `UNGUARDED` | 87 | 6 | 81 |
+| **TOTAL** | **2084** | **1632** | **452** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `6`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -42,12 +42,13 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `session-2/index.html` | 3 | 0 |
 | `session-3/index.html` | 16 | 0 |
 | `session-4/index.html` | 27 | 1 |
+| `session-5/index.html` | 6 | 0 |
 
 ## `UNGUARDED`, by region
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R1` | body prose | 42 | 0 |
+| `R1` | body prose | 48 | 0 |
 | `R2` | script string literal | 31 | 1 |
 | `R10` | captured transcript | 5 | 5 |
 | `R7` | footer source entry | 2 | 0 |
@@ -62,7 +63,7 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 75 |
+| `name` | 81 |
 | `pct` | 5 |
 | `money` | 1 |
 
@@ -71,11 +72,11 @@ every one of them.
 | Fact | Count |
 |---|---:|
 | `domicile` | 22 |
-| `megShort` | 13 |
-| `nathanShort` | 11 |
-| `companyName` | 9 |
-| `companyAbbr` | 7 |
-| `plantTown` | 6 |
+| `megShort` | 14 |
+| `nathanShort` | 13 |
+| `companyName` | 10 |
+| `companyAbbr` | 8 |
+| `plantTown` | 7 |
 | `afrMid` | 4 |
 | `davidName` | 3 |
 | `residenceTown` | 2 |
@@ -106,33 +107,35 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**569 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**685 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
-| `votingUnits` | 95 |
-| `endowmentIntent` | 66 |
-| `claireAge` | 53 |
-| `marriedYears` | 53 |
-| `tbills` | 34 |
-| `employees` | 31 |
-| `seedUnits` | 30 |
-| `nonVotingUnits` | 28 |
-| `megAge` | 27 |
-| `charDeductible` | 18 |
-| `saleUnits` | 18 |
-| `nathanAge` | 17 |
-| `inheritedIra` | 16 |
-| `david403b` | 16 |
-| `dividend` | 12 |
-| `revolver` | 12 |
-| `discount` | 11 |
-| `nathanShort` | 9 |
-| `estateTopRate` | 4 |
+| `votingUnits` | 101 |
+| `endowmentIntent` | 77 |
+| `claireAge` | 61 |
+| `marriedYears` | 61 |
+| `tbills` | 39 |
+| `seedUnits` | 38 |
+| `employees` | 38 |
+| `nonVotingUnits` | 35 |
+| `megAge` | 33 |
+| `nathanAge` | 24 |
+| `saleUnits` | 23 |
+| `charDeductible` | 21 |
+| `inheritedIra` | 18 |
+| `david403b` | 18 |
+| `discount` | 15 |
+| `dividend` | 14 |
+| `revolver` | 14 |
+| `estateTopRate` | 12 |
+| `nathanShort` | 11 |
+| `ltcgTop` | 6 |
+| `corpRate` | 6 |
 | `davidAge` | 4 |
+| `ilCorpRate` | 4 |
 | `megApplicableAge` | 3 |
-| `ltcgTop` | 3 |
 | `perUnitDividend` | 2 |
 | `deMinimisLoan` | 2 |
 | `giftLoanNII` | 2 |

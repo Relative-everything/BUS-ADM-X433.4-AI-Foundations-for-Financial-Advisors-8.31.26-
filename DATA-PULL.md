@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**43 of 120 works are moving targets, feeding 170 of
-389 references.**
+**46 of 134 works are moving targets, feeding 179 of
+461 references.**
 
 
 ---
@@ -65,8 +65,8 @@ version string means the version is not tracking the data.
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 §03 |
-| References | 14 |
-| Feeds | S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#s9` ×6 |
+| References | 15 |
+| Feeds | S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#s9` ×6 · S5 `#s6` |
 
 ### `src-effort` — Change the model, effort, and thinking settings
 
@@ -214,6 +214,18 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-4 §03 |
 | References | 5 |
 | Feeds | S4 `#s3` ×2 · S4 `#s4` · S4 `#s9` ×2 |
+
+### `src-anthropic-deprecations` — Model deprecations
+
+| | |
+|---|---|
+| Figure class | `vendor lifecycle schedule` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-02 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | each teaching of Session 5 |
+| References | 5 |
+| Feeds | S5 `#s1` ×3 · S5 `#sE2` ×2 |
 
 ### `src-context-windows` — Context windows
 
@@ -431,6 +443,18 @@ version string means the version is not tracking the data.
 | References | 2 |
 | Feeds | S4 `#sWS` · S4 `#s9` |
 
+### `src-openai-retire-4o` — Retiring GPT-4o and other ChatGPT models
+
+| | |
+|---|---|
+| Figure class | `vendor lifecycle schedule` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | each teaching of Session 5 |
+| References | 2 |
+| Feeds | S5 `#s1` ×2 |
+
 ### `src-openai-pricing` — API pricing
 
 | | |
@@ -551,6 +575,18 @@ version string means the version is not tracking the data.
 | References | 1 |
 | Feeds | S4 `#s9` |
 
+### `src-rightcapital-iris` — RightCapital launches Iris, the first planning-focused AI agent designed to transform the financial planning process
+
+| | |
+|---|---|
+| Figure class | `vendor product claim` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | each teaching of Session 5 |
+| References | 1 |
+| Feeds | S5 `#s6` |
+
 ### `src-vectara` — Introducing the next generation of Vectara's hallucination leaderboard
 
 | | |
@@ -621,8 +657,9 @@ wrong when they go stale.
 | S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 48 |
 | S3 | — | 0 |
 | S4 | — | 0 |
+| S5 | `Sonnet 5` | 6 |
 
-**187 occurrences across 5 lessons.** This count is read off
+**193 occurrences across 6 lessons.** This count is read off
 the corpus on every run, so it cannot go stale the way a typed one would.
 
 
