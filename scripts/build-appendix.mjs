@@ -41,7 +41,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
-const LESSONS = ['session-1', 'session-2', 'session-3', 'session-4'];
+const LESSONS = ['session-1', 'session-2', 'session-3', 'session-4', 'session-5'];
 
 const argv = process.argv.slice(2);
 const CHECK = argv.includes('--check');

@@ -112,6 +112,7 @@ used_for.session-1: next-token prediction, the temperature passage, tokens and t
 used_for.session-2: the sections "It's Just Adding One Word at a Time," "Where Do the Probabilities Come From?," "What Is a Model?," the temperature passage, and the parenthesis-language discussion
 used_for.session-3: assigned reading; "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion" in §01 and §02 (the definition, the five-billion-word construction, the 768 and 12,288 lengths, alligator and crocodile); "Beyond Basic Training" in §05 (the tell-it-once observation and its limit)
 used_for.session-4: the temperature passage in "It's Just Adding One Word at a Time" and the one-pass, no-loops description of the model (Appendix D3)
+used_for.session-5: the temperature passage in "It's Just Adding One Word at a Time", behind the sampled-differently failure type (Appendix E3)
 ```
 
 ## src-case
@@ -133,6 +134,7 @@ used_for.session-1: every worked example in this session and the next three
 used_for.session-2: every client example, exercise input and discussion prompt, including the three §04 fixture inputs and their three deliberately weak starter prompts, which are exercise material
 used_for.session-3: the retrieval corpus, the meeting excerpt and the note-taker stage outputs written from it, the consent items, the said-or-recommended lines, the six review-update tasks and the three prompts in §08 with the summary they run on, the checklist, the illustrative meaning-space map whose coordinates were assigned rather than learned, and the six summary lines in Appendix A3, two of which are written wrong on purpose and labelled so on the page
 used_for.session-4: every client, prompt, message, record, incident and sample package in this session's exercises, all written for this lesson
+used_for.session-5: the sample meeting-prep package and its six inputs (§02 to §04, Appendices E1, E2 and E4), the two cold-open prompts, the eight meeting moments built from the injected transcript (§07), and the five-session frame (§00), all written for this lesson
 ```
 
 ## src-aa
@@ -184,6 +186,7 @@ scope:          Over 200 preregistered legal queries, expert hand-scored, agains
 used_for.session-2: the measured hallucination rates for legal research tools
 used_for.session-3: the >17% / ~33% / 43% rates, the claim that tools made statements unsupported by the sources they cited, and the cross-study comparability caveat
 used_for.session-4: the 17%, 33% and 43% per-question error rates behind the 100-memo simulation (§06)
+used_for.session-5: the wrong-passage and unsupported-citation failure types (Appendix E3)
 ```
 
 ## src-openai-pricing
@@ -313,6 +316,7 @@ figure_class:   regulatory_date
 scope:          The four obligations of the 2024 amendments: a written incident response program; customer notification no later than 30 days after the firm becomes aware; service provider oversight, including the service provider's notice to the firm within 72 hours of becoming aware of a breach; and recordkeeping. The definition and scope limits of nonpublic personal information at 17 CFR 248.3, including the fact that an individual is a customer and information disclosed in a manner indicating the individual is a customer. The compliance dates 3 December 2025 and 3 June 2026.
 used_for.session-4: what counts as nonpublic personal information (§02); vendor oversight and the vendor's 72-hour notice to the firm (§04); the 30-day client notice and the incident response programme (Appendix D5)
 used_for.session-3: the privacy notice, the written incident response programme and the 30-day notification, named in §09b as obligations owed apart from any note-taker and taught in Session 4
+used_for.session-5: the service-provider reading behind the Where question for a note-taker or a CRM automation (§06)
 ```
 
 ## src-secpri
@@ -348,6 +352,7 @@ kind:           assigned_reading
 moving_target:  false
 scope:          Why a model guesses rather than abstains, and the two scoring rules. The model tested was DeepSeek-V3 on 11 May 2025 — a historical fixture; the finding is about that model on that date.
 used_for.session-1: why a model guesses rather than abstains, and the two scoring rules
+used_for.session-5: why a model fills a missing field with a plausible guess rather than saying the field is missing (§03, Appendix E3)
 ```
 
 ## src-rohrer
@@ -461,16 +466,18 @@ used_for.session-3: the prep-and-follow-up ratio (§07), the whole-cycle tooling
 ```source
 title:          The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers
 author:         Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., & Wilson, N.
-publisher:      Microsoft Research; CHI 2025
-link:           [UNVERIFIED, needs source]
-published:      2025
-last_retrieved: [UNVERIFIED, needs source]
+publisher:      Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI '25), ACM, Yokohama, 26 April to 1 May 2025, 23 pages; doi 10.1145/3706598.3713778. Author's version hosted by Microsoft Research
+link:           https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf
+published:      2025-04
+last_retrieved: 2026-10-02
 last_verified:
-confidence:     M
+retrieval_note: OPENED IN FULL on 2026-10-02 (the Microsoft Research PDF, 23 pages, text extracted and read). Until that date this record carried the link as unverified and the confidence at M, because the 2026-08 build characterised the paper by its title alone. Session 3's Appendix C4 still uses only the title claim; Session 5 uses the measured findings below. The regression coefficients are the non-standardised figures in the paper's Table 4.
+confidence:     H
 kind:           evidence
 moving_target:  false
-scope:          Characterised on the page ONLY by its title claim of self-reported reductions in cognitive effort. No claim is made about the size or direction of any measured effect on verification behaviour, and its full findings were not re-verified in this build.
+scope:          A survey of 319 knowledge workers who shared 936 first-hand examples of using a generative AI tool at work (374 creation, 303 information, 259 advice; 309 of 319 used ChatGPT). Critical thinking was self-reported as enacted in 555 of the 936 examples (59.29%). In the mixed-effects models, confidence in the tool predicted less enacted critical thinking (coefficient -0.69, p < 0.001) and less perceived effort in five of six Bloom activities; confidence in oneself predicted more (0.26, p = 0.026) and more effort in applying and evaluating. Examples reporting less effort with the tool: 72% knowledge, 79% comprehension, 69% application, 72% analysis, 76% synthesis, 55% evaluation. Three qualitative shifts: from information gathering to information verification, from problem-solving to response integration, from task execution to task stewardship. Self-reported, cross-sectional, not a measure of accuracy.
 used_for.session-3: the title claim of self-reported reductions in cognitive effort, in the Appendix C4 discussion
+used_for.session-5: the survey's size and design, the finding that confidence in the tool predicts less critical thinking and self-confidence more, the share of examples reporting less effort, and the three shifts (§08, Appendix E5)
 ```
 
 ## src-wiretap
@@ -559,6 +566,7 @@ kind:           evidence
 moving_target:  false
 scope:          The Persona-Task-Context-Format framework that session-2 §03 teaches and §04 scores against.
 used_for.session-2: the Persona-Task-Context-Format framework taught in §03 and scored in §04
+used_for.session-5: the Persona, Task, Context and Format names used to tag the sample prompt (§02)
 ```
 
 ## src-zheng-persona
@@ -647,6 +655,7 @@ kind:           evidence
 moving_target:  false
 scope:          n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using AI search and generative language, 42.9% using AI notetaking.
 used_for.session-2: the adoption shares in the Appendix B4 adoption-gap discussion
+used_for.session-5: the 42.9% note-taking and 52.2% AI-search adoption shares among 2,906 advisors (§06)
 ```
 
 ## src-kitces-productivity
@@ -909,6 +918,7 @@ kind:           evidence
 moving_target:  false
 scope:          Identifier, score and mechanism of EchoLeak, verified against the public record: one crafted email could make Microsoft 365 Copilot send internal data out with no click. Kind was background until 2026-09-25, when the §05 bullet stating that mechanism was found resting on it unchipped (A20); it is now the chip on that claim. CurXecute (CVE-2025-54135) left the title with the rebuild that took it off the page.
 used_for.session-4: the public vulnerability record for EchoLeak (§05)
+used_for.session-5: the did-what-the-text-said failure type, EchoLeak (Appendix E3)
 ```
 
 ## src-gartner
@@ -1109,6 +1119,7 @@ recheck_before: every teaching of session-4 §03
 scope:          Consumer plans: Anthropic may use chats "including training our models, unless you opt out of training through your account settings"; retention five years if training is allowed, 30 days if not; the Consumer Terms are a contract between the individual and Anthropic. Commercial plans (Team, Enterprise, the API): "Anthropic may not train models on Customer Content from Services" (Section B); the Customer "retains all rights to its Inputs, and owns its Outputs" (Section B); Confidential Information may be used only to exercise rights and perform obligations under the Terms and is destroyed promptly on request (Sections E.2, E.4); the Terms are an agreement between Anthropic and the organisation the signer represents, and nobody may accept for an organisation without legal authority to bind it.
 retrieval_note: Opened directly on 2026-09-27: the Commercial Terms (effective 17 June 2025), the Consumer Terms (effective 8 October 2025), the Privacy Policy (effective 10 September 2026) and the 28 August 2025 news post on the consumer training change. The consumer-side retention figures (five years if training is allowed, 30 days if not) are stated in the news post and on the Claude Code data-usage page; privacy.claude.com itself could not be opened. Earlier retrieval 2026-08-14.
 used_for.session-4: the consumer training switch, five-year and 30-day retention, and the business plans' exclusion from training (§03)
+used_for.session-5: the consumer training default behind the chat assistant's Where answer (§06)
 ```
 
 ## src-beta
@@ -2324,4 +2335,262 @@ kind:           authority
 moving_target:  false
 scope:          A registered adviser must adopt and implement written policies and procedures reasonably designed to prevent violations, review them no less than annually, and designate a chief compliance officer; the AI-use policy and the record of its annual review are themselves required records.
 used_for.session-4: the rule behind the who-decided slot of the record and the annual review of the AI-use policy (§07)
+```
+
+## src-anthropic-deprecations
+
+```source
+title:          Model deprecations
+author:         Anthropic
+publisher:      Claude Platform Docs
+link:           https://platform.claude.com/docs/en/about-claude/model-deprecations
+published:      2026-09-30
+last_retrieved: 2026-10-02
+last_verified:
+retrieval_note: OPENED on 2026-10-02 (platform.claude.com is reachable from this build). The published date is the page's most recent deprecation announcement (Claude Sonnet 4.5, 30 September 2026); the page is updated in place with every announcement.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor lifecycle schedule
+recheck_before: each teaching of Session 5
+scope:          Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §01 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current models carry a not-sooner-than date. Dates are for Anthropic-operated platforms; partner platforms set their own.
+used_for.session-5: the lifecycle terms, the 60 days' notice, the retirement dates on the calendar and the sentence that requests to retired models fail (§01); the advice to test the replacement before the retirement date (Appendix E2)
+```
+
+## src-anthropic-deprecation-commitments
+
+```source
+title:          Commitments on model deprecation and preservation
+author:         Anthropic
+publisher:      Anthropic, research and alignment pages
+link:           https://www.anthropic.com/research/deprecation-commitments
+published:      2025-11-04
+last_retrieved: 2026-10-02
+last_verified:
+retrieval_note: OPENED on 2026-10-02 (anthropic.com is reachable from this build).
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          Anthropic commits to preserving the weights of all publicly released models, and of models deployed for significant internal use, for at least the lifetime of the company; states that retiring past models is currently necessary to make new models available because serving cost scales roughly linearly with the number of models served; and describes a post-deployment report and interview for each deprecated model. No claim about any adviser's workflow rests on it.
+used_for.session-5: that model weights are preserved and that retiring models is currently necessary to serve new ones (§01)
+```
+
+## src-openai-retire-4o
+
+```source
+title:          Retiring GPT-4o and other ChatGPT models
+author:         OpenAI
+publisher:      OpenAI Help Center, article 20001051
+link:           https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models
+published:      2026-01
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. help.openai.com and openai.com are egress-blocked from this build environment (2026-10-02). The facts in scope come from the search engine's summary of the article and from three consistent reports (YourStory; Gigazine, 30 January 2026; letsdatascience), plus TechCrunch and Tom's Guide (April 2025) for the GPT-4 retirement, which is why the confidence is M. Open the article before saying a date aloud.
+confidence:     M
+kind:           evidence
+moving_target:  true
+figure_class:   vendor lifecycle schedule
+recheck_before: each teaching of Session 5
+scope:          GPT-4 was removed from ChatGPT on 30 April 2025, replaced as the default by GPT-4o. GPT-4o, GPT-4.1, GPT-4.1 mini and o4-mini were retired from ChatGPT on 13 February 2026, with conversations moved to newer defaults; the models remained available in the API. One line on the page, to show the retirement cycle is vendor-wide.
+used_for.session-5: the ChatGPT retirements of GPT-4 and GPT-4o, one line beside Anthropic's calendar (§01)
+```
+
+## src-noy-zhang
+
+```source
+title:          Experimental evidence on the productivity effects of generative artificial intelligence
+author:         Noy, S., & Zhang, W.
+publisher:      Science, July 2023 (MIT Department of Economics)
+link:           https://www.science.org/doi/10.1126/science.adh2586
+published:      2023-07
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. science.org and the NBER conference copy are egress-blocked from this build environment (2026-10-02). The figures in scope are the ones every summary found repeats (Stanford SCALE's publication listing, Marginal Revolution, Gulf News, the IT-Daily report), which is why the confidence is M. Volume and page numbers are not recorded because they were not read off the article.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          453 college-educated professionals given occupation-specific, incentivised writing tasks, half randomly given access to ChatGPT. Average time fell about 40% and graded output quality rose about 18%; the gap between weaker and stronger writers narrowed. A writing-task trial, not a planning one; stated as such on the page.
+used_for.session-5: the 40% less time and 18% higher quality bars in the four-trial figure (§05)
+```
+
+## src-dellacqua
+
+```source
+title:          Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality
+author:         Dell'Acqua, F., McFowland III, E., Mollick, E., Lifshitz-Assaf, H., Kellogg, K., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K.
+publisher:      Harvard Business School working paper, September 2023; also on SSRN
+link:           https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321
+published:      2023-09
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. hbs.edu and ssrn.com are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (Computing, beSpacific, Silicon Canals, the TFT summary, the Brainscape card set), which is why the confidence is M. The working-paper number is not recorded because it was not read off the paper.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          758 Boston Consulting Group consultants, about 7% of the firm's individual contributors, randomised to no AI, GPT-4, or GPT-4 with a prompting overview, on 18 realistic consulting tasks. Inside the model's capability frontier the AI group completed 12.2% more tasks, 25.1% faster, at more than 40% higher rated quality. On a task chosen to sit outside the frontier, consultants using AI were 19 percentage points less likely to produce a correct answer than the control group. The jagged-frontier framing: tasks that look alike to a person can sit on opposite sides of what the model can do.
+used_for.session-5: the 25% faster, 12% more tasks and 40% quality bars, and the 19-point penalty outside the frontier (§05, Appendix E5)
+```
+
+## src-brynjolfsson
+
+```source
+title:          Generative AI at work
+author:         Brynjolfsson, E., Li, D., & Raymond, L.
+publisher:      The Quarterly Journal of Economics 140(2), 889 to 942, 2025; doi 10.1093/qje/qjae044. First circulated as NBER Working Paper 31161, April 2023
+link:           https://www.nber.org/papers/w31161
+published:      2025
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. nber.org, arxiv.org and academic.oup.com are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (the NBER abstract as the search engine returns it, IDEAS/RePEc, the SSRN listing, the arXiv listing), which is why the confidence is M.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          5,179 customer-support agents at a software firm, with a generative-AI assistant rolled out in stages. Issues resolved per hour rose 14% on average, 34% for the least experienced and least skilled agents, with little measurable effect on the most experienced; the authors read the tool as spreading the practices of the best workers. A support-centre trial, stated as such on the page.
+used_for.session-5: the 14% average and 34% novice bars in the four-trial figure (§05)
+```
+
+## src-metr-2025
+
+```source
+title:          Measuring the impact of early-2025 AI on experienced open-source developer productivity
+author:         METR (Model Evaluation and Threat Research)
+publisher:      METR, blog
+link:           https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/
+published:      2025-07-10
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. metr.org is egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across five reports found (The Decoder, eWeek, diginomica, letsdatascience, the Harvard tagteam feed of the post), which is why the confidence is M.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          A randomised trial with 16 experienced open-source developers on 246 real tasks from their own repositories, each task randomly assigned to AI allowed or not (mainly Cursor with Claude 3.5 and 3.7 Sonnet). With AI the tasks took 19% longer. Before the study the developers expected to be 24% faster; afterwards they believed they had been about 20% faster. The perception gap, not the coding, is what the page teaches.
+used_for.session-5: the 19% slower bar and the expected and believed speed-ups beside it (§05)
+```
+
+## src-morningstar-fired
+
+```source
+title:          Why do investors fire their financial advisor?
+author:         Lamas, S., & Labotka, D.
+publisher:      Morningstar, behavioural research
+link:           [UNVERIFIED, needs source]
+published:      2023
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. morningstar.com is egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across four reports found (Financial Advisor magazine, InsuranceNewsNet, Institutional Investor's RIA Intel, the IFA Magazine podcast with both authors); the reports give the sample as 184 investors in one and 185 in another, and the page says "about 185". The exact title and publication date were not read off the report, so both are recorded as the reports give them, which is why the confidence is M.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          Three Morningstar surveys in 2021 and 2022, about 3,000 responses, of which 184 to 185 investors had fired an advisor. Reasons, as shares of responses: quality of advice and services 32%, quality of the relationship 21%, cost 17%, returns 11%, comfort handling finances alone 10%, communication 9%. The authors' reading: the top two reasons are the advice and the relationship, not performance or fees.
+used_for.session-5: the shares of reasons investors gave for firing an advisor (§07, Appendix E5)
+```
+
+## src-vanguard-alpha
+
+```source
+title:          Putting a value on your value: Quantifying Vanguard Advisor's Alpha
+author:         Kinniry, F. M., Jaconetti, C. M., DiJoseph, M. A., Walker, D. J., & Quinn, M. C.
+publisher:      The Vanguard Group, research paper (2022 update)
+link:           [UNVERIFIED, needs source]
+published:      2022
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          Vanguard's framework attributes about 3 percentage points a year of potential net value to an adviser following its best practices, of which behavioural coaching, keeping clients to their plan in fearful or greedy markets, is the largest single module at about 150 basis points, roughly half.
+used_for.session-5: the about-3% figure and behavioural coaching as about half of it (§07, Appendix E5)
+```
+
+## src-cfp-psychology
+
+```source
+title:          CFP Board adds Psychology of Financial Planning to exam requirements
+author:         CFP Board
+publisher:      CFP Board, news release, March 2021
+link:           https://www.cfp.net/news/2021/03/cfp-board-adds-psychology-of-financial-planning-to-exam-requirements
+published:      2021-03
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. cfp.net is egress-blocked from this build environment (2026-10-02). The facts in scope come from the search engine's summary of the release and from Institutional Investor's RIA Intel report, which agree, which is why the confidence is M.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          The 2021 practice analysis added Psychology of Financial Planning as the eighth principal knowledge domain, weighted at 7% of the CFP exam from the March 2022 administration; the domain covers client and planner attitudes, values and biases, behavioural finance, sources of money conflict, and principles of counselling.
+used_for.session-5: the domain's existence and its 7% weight (§07)
+```
+
+## src-rightcapital-iris
+
+```source
+title:          RightCapital launches Iris, the first planning-focused AI agent designed to transform the financial planning process
+author:         RightCapital
+publisher:      ACCESS Newswire, press release, 23 June 2026
+link:           https://www.accessnewswire.com/newsroom/en/business-and-professional-services/rightcapital-launches-iristm-the-first-planning-focused-ai-agent-designed-to-transform-the-fin-1180326
+published:      2026-06-23
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. accessnewswire.com and rightcapital.com are egress-blocked from this build environment (2026-10-02). The facts in scope are consistent across four reports found (InvestmentNews, WealthManagement.com, Pulse 2.0, the Eagle-Tribune syndication of the release), which is why the confidence is M. A vendor's description of its own product; the page uses it as one example of a planning-software agent, not as an endorsement.
+confidence:     M
+kind:           evidence
+moving_target:  true
+figure_class:   vendor product claim
+recheck_before: each teaching of Session 5
+scope:          A planning-software agent that reads the client's plan data inside the software, flags anomalies, runs retirement simulations and explains results, offered on the Premium and Platinum plans at no added cost; preceded by a document-import feature the vendor says cuts manual data entry by 70% or more.
+used_for.session-5: one example of a planning-software agent that reads the client file (§06)
+```
+
+## src-pew-ai-summaries
+
+```source
+title:          Google users are less likely to click on links when an AI summary appears in the results
+author:         Pew Research Center
+publisher:      Pew Research Center, short read, 22 July 2025
+link:           https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/
+published:      2025-07-22
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. pewresearch.org is egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across five reports found (The Register, TheWrap, PPC Land, AI Weekly, Gigazine), which is why the confidence is M.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          68,879 Google searches by 900 US adults in March 2025, from a panel that shared its browsing data. Users clicked a traditional result on 8% of visits when an AI summary appeared and 15% when it did not; a link inside the summary itself was clicked on 1% of such visits; users ended their session on 26% of pages with a summary against 16% without.
+used_for.session-5: the 8% against 15% click rates behind the AI-search tool card (§06)
+```
+
+## src-kitces-aisearch
+
+```source
+title:          Ways advisors can optimize for AI search (AI SEO)
+author:         [UNVERIFIED, needs source]
+publisher:      Kitces.com, Nerd's Eye View
+link:           https://www.kitces.com/blog/artificial-intelligence-ai-search-engine-optimization-seo-financial-advisor-marketing-content-strategy/
+published:      2025-11-17
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. kitces.com is egress-blocked from this build environment (2026-10-02), both for the container's proxy and for the fetch tool. The syllabus lists the reading as "Ways Advisors Can Optimize for AI Search with a Marketing Strategy Refresh"; the title recorded here is the one the search engine returns for the URL. The one recommendation on the page is the one the search engine's summary of the article repeats; nothing else from the article is characterised.
+confidence:     M
+kind:           assigned_reading
+moving_target:  false
+scope:          The assigned reading for Session 5 on how prospects now find advisers through AI answers rather than search listings. The page carries one recommendation from it: establish a who-what-where (name and firm, niche, place) and repeat it consistently across platforms, because models and search engines rely on recognisable, repeated patterns.
+used_for.session-5: the assigned reading, and its who-what-where recommendation on the AI-search tool card (§06)
+```
+
+## src-investmentnews-t3-2026
+
+```source
+title:          AI moves from novelty to backbone as advisors reshape their fintech stacks
+author:         InvestmentNews
+publisher:      InvestmentNews, reporting the 2026 T3 / Inside Information Software Survey
+link:           https://investmentnews.com/fintech/ai-moves-from-novelty-to-backbone-as-advisors-reshape-fintech-stacks/265643
+published:      2026-03
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. investmentnews.com is egress-blocked from this build environment (2026-10-02). The facts in scope are consistent across three reports found (InvestmentNews, a vendor's release about the same survey, the dwealth Advisor Tech Talk column of 17 March 2026), which is why the confidence is M. The survey's headline shares are held separately at H in src-t3-survey.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          In the 2026 survey, AI note-taking appeared as a tracked category for the first time, with 14 solutions, and the survey's co-producer called its adoption curve one of the fastest tracked; the survey also found that AI tools had not displaced the established providers in CRM, planning and portfolio software, so advisers were using AI as a supplement to their stack.
+used_for.session-5: the 14 note-taking tools tracked for the first time, and AI as a supplement to the established stack (§06)
 ```

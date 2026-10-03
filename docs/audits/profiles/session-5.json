@@ -1,0 +1,1798 @@
+{
+  "file": "session-5/index.html",
+  "file_bytes": 482512,
+  "file_lines": 7167,
+  "generated_by": "scripts/audit/section_profile.mjs (read-only)",
+  "methods": {
+    "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
+    "prose_words": "words outside tagged interaction roots (static)",
+    "chips": ".conf span with h/m/l class inside the section; resolves = data-src present in footer <li id>",
+    "icap": "component-bank.md v2.0 family index",
+    "exposition": "M heuristic, see each section",
+    "terms": "M heuristic: capitalised acronyms and statute citations, file-level first use, defined if a parenthetical, appositive, copula, or initials expansion sits within 40 words"
+  },
+  "timing": {
+    "rows": {
+      "BUS ADM X433.4 · Session 5": {
+        "title": "Final Project and Advisor Use Case Deep Dive",
+        "min": 5,
+        "apx": false
+      },
+      "Cold open · standing ritual": {
+        "title": "Then and Now: Two Prompts",
+        "min": 8,
+        "apx": false
+      },
+      "01 · The tools change": {
+        "title": "The Model Your Workflow Runs On Will Retire",
+        "min": 5,
+        "apx": false
+      },
+      "02 · Explain it": {
+        "title": "Read a Stranger's Package Like an Examiner",
+        "min": 6,
+        "apx": false
+      },
+      "03 · Break it": {
+        "title": "Six Inputs: Which Ones Break It?",
+        "min": 5,
+        "apx": false
+      },
+      "04 · Improve it": {
+        "title": "A Change You Can Defend",
+        "min": 5,
+        "apx": false
+      },
+      "05 · Measure it": {
+        "title": "Felt Faster Is Not Faster",
+        "min": 5,
+        "apx": false
+      },
+      "06 · New tools": {
+        "title": "New Tools, the Same Four Questions",
+        "min": 5,
+        "apx": false
+      },
+      "07 · What stays human": {
+        "title": "The Cole Meeting: Eight Moments",
+        "min": 5,
+        "apx": false
+      },
+      "08 · The reading": {
+        "title": "Trust the Tool, Think Less?",
+        "min": 5,
+        "apx": false
+      },
+      "Appendix E2 · Maintenance": {
+        "title": "Swap the Model, Keep the Test Set",
+        "min": 14,
+        "apx": true
+      },
+      "Appendix E3 · Failure types": {
+        "title": "Five Ways It Broke, Sessions 1 to 4",
+        "min": 12,
+        "apx": true
+      },
+      "Appendix E4 · The builder's turn": {
+        "title": "The Builder's Two Minutes",
+        "min": 10,
+        "apx": true
+      },
+      "Appendix E1 · Rehearsal": {
+        "title": "Six Minutes, Five Beats",
+        "min": 12,
+        "apx": true
+      },
+      "Appendix E5 · Discussion": {
+        "title": "Discussion: As the Tool Does the Analysis, Does Your Value Move to the Relationship?",
+        "min": 18,
+        "apx": true
+      }
+    },
+    "segments_sum": 120,
+    "allocated_cell": 120,
+    "eyebrow_sum_lesson_sections": 120
+  },
+  "consecutive_family_repeats": {
+    "document_order": [],
+    "core_only_order": [],
+    "reading_order_all_tiers": []
+  },
+  "reading_order_all_tiers": [
+    "s0",
+    "sCold",
+    "s1",
+    "sE2",
+    "s2",
+    "s3",
+    "sE3",
+    "s4",
+    "sE4",
+    "sE1",
+    "s5",
+    "s6",
+    "s7",
+    "sE5",
+    "s8"
+  ],
+  "norms": {
+    "sections": 15,
+    "core_sections": 10,
+    "interactions_per_section": {
+      "median": 1,
+      "range": [
+        1,
+        1
+      ],
+      "mean": 1
+    },
+    "chips_per_100_words": {
+      "median": 1.76,
+      "range": [
+        0.38,
+        3.32
+      ],
+      "mean": 1.67
+    },
+    "chips_per_section": {
+      "median": 4,
+      "range": [
+        1,
+        10
+      ],
+      "mean": 4.6
+    },
+    "sources_per_section": {
+      "median": 2,
+      "range": [
+        1,
+        8
+      ],
+      "mean": 2.93
+    },
+    "words_per_min": {
+      "median": 43.2,
+      "range": [
+        17.6,
+        79.8
+      ],
+      "mean": 41.57
+    },
+    "prose_words_per_min": {
+      "median": 32.4,
+      "range": [
+        9.6,
+        59.2
+      ],
+      "mean": 31.25
+    },
+    "exposition_run_min_tagged": {
+      "median": 4.6,
+      "range": [
+        4.2,
+        14.9
+      ],
+      "mean": 6.64
+    },
+    "exposition_run_min_control": {
+      "median": 3.4,
+      "range": [
+        1.7,
+        12
+      ],
+      "mean": 4.6
+    },
+    "icap_distribution": {
+      "P": 0,
+      "A": 3,
+      "C": 11,
+      "I": 1
+    },
+    "distinct_families": 13,
+    "sections_with_zero_chips": [],
+    "sections_with_zero_interactions": []
+  },
+  "sections": [
+    {
+      "id": "s0",
+      "num": "00",
+      "data_nav": "Bridge + frame",
+      "eyebrow": "BUS ADM X433.4 · Session 5",
+      "heading": "Final Project and Advisor Use Case Deep Dive",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 2551,
+      "line_end": 2614,
+      "bytes": 3879,
+      "allocated_min": 5,
+      "words": 264,
+      "prose_words": 244,
+      "words_per_min": 52.8,
+      "prose_words_per_min": 48.8,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s0",
+          "data_comp": "retrieval-bridge",
+          "icap": "C",
+          "line": 2565,
+          "line_end": 2571,
+          "words_inside": 20
+        }
+      ],
+      "families": [
+        "retrieval-bridge"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.38,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 10,
+      "gates": [
+        {
+          "id": "g1",
+          "line": 2612,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 225,
+        "longest_run_min_tagged_split": 4.3,
+        "longest_run_words_control_split": 167,
+        "longest_run_min_control_split": 3.2,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "X433"
+      ],
+      "dom": {
+        "rendered_words": 426,
+        "rendered_chips": 1,
+        "rendered_controls": 19,
+        "rendered_hidden_panels": 3
+      }
+    },
+    {
+      "id": "apx",
+      "num": "TOC",
+      "data_nav": "Appendix contents",
+      "eyebrow": "Appendix · 5 optional sections",
+      "heading": "Appendix contents",
+      "is_toc": true,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": true,
+      "nav_contained_in_heading": true,
+      "timing_row_min": null,
+      "line_start": 2617,
+      "line_end": 2629,
+      "bytes": 1528,
+      "allocated_min": 66,
+      "words": 144,
+      "prose_words": 144,
+      "words_per_min": 2.2,
+      "prose_words_per_min": 2.2,
+      "interactions_count": 0,
+      "interactions": [],
+      "families": [],
+      "icap": {},
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 144,
+        "longest_run_min_tagged_split": 66,
+        "longest_run_words_control_split": 144,
+        "longest_run_min_control_split": 66,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "E2",
+        "§01",
+        "E3",
+        "§03",
+        "E4",
+        "§04",
+        "E1",
+        "E5",
+        "§07"
+      ],
+      "dom": {
+        "rendered_words": 144,
+        "rendered_chips": 0,
+        "rendered_controls": 0,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "sCold",
+      "num": "Cold",
+      "data_nav": "Cold open",
+      "eyebrow": "Cold open · standing ritual",
+      "heading": "Then and Now: Two Prompts",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 8,
+      "line_start": 2632,
+      "line_end": 2686,
+      "bytes": 3733,
+      "allocated_min": 8,
+      "words": 224,
+      "prose_words": 134,
+      "words_per_min": 28,
+      "prose_words_per_min": 16.8,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-cold-open",
+          "data_comp": "timed-ritual",
+          "icap": "C",
+          "line": 2637,
+          "line_end": 2676,
+          "words_inside": 90
+        }
+      ],
+      "families": [
+        "timed-ritual"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.45,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 8,
+      "gates": [
+        {
+          "id": "gc",
+          "line": 2685,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 184,
+        "longest_run_min_tagged_split": 6.6,
+        "longest_run_words_control_split": 97,
+        "longest_run_min_control_split": 3.5,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 346,
+        "rendered_chips": 1,
+        "rendered_controls": 10,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s1",
+      "num": "01",
+      "data_nav": "The tools change",
+      "eyebrow": "01 · The tools change",
+      "heading": "The Model Your Workflow Runs On Will Retire",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 2688,
+      "line_end": 2757,
+      "bytes": 7081,
+      "allocated_min": 5,
+      "words": 399,
+      "prose_words": 265,
+      "words_per_min": 79.8,
+      "prose_words_per_min": 53,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s1",
+          "data_comp": "parameter-sandbox",
+          "icap": "A",
+          "line": 2693,
+          "line_end": 2725,
+          "words_inside": 134
+        }
+      ],
+      "families": [
+        "parameter-sandbox"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 9,
+      "chips": {
+        "H": 5,
+        "M": 2,
+        "L": 2
+      },
+      "chips_per_100_words": 2.26,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-anthropic-deprecations",
+        "src-case",
+        "src-anthropic-deprecation-commitments",
+        "src-openai-retire-4o"
+      ],
+      "sources_count": 4,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 11,
+      "gates": [
+        {
+          "id": "g2",
+          "line": 2756,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 362,
+        "longest_run_min_tagged_split": 4.5,
+        "longest_run_words_control_split": 134,
+        "longest_run_min_control_split": 1.7,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "API"
+      ],
+      "dom": {
+        "rendered_words": 421,
+        "rendered_chips": 9,
+        "rendered_controls": 11,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "sE2",
+      "num": "E2",
+      "data_nav": "E2 · The test set",
+      "eyebrow": "Appendix E2 · Maintenance",
+      "heading": "Swap the Model, Keep the Test Set",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "standard",
+      "insert_after": "s1",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 14,
+      "line_start": 2759,
+      "line_end": 2803,
+      "bytes": 3603,
+      "allocated_min": 14,
+      "words": 246,
+      "prose_words": 177,
+      "words_per_min": 17.6,
+      "prose_words_per_min": 12.6,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-sE2",
+          "data_comp": "pipeline-lab",
+          "icap": "C",
+          "line": 2766,
+          "line_end": 2784,
+          "words_inside": 69
+        }
+      ],
+      "families": [
+        "pipeline-lab"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 4,
+      "chips": {
+        "H": 2,
+        "M": 0,
+        "L": 2
+      },
+      "chips_per_100_words": 1.63,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case",
+        "src-anthropic-deprecations"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 5,
+      "gates": [
+        {
+          "id": "ga2",
+          "line": 2802,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 193,
+        "longest_run_min_tagged_split": 11,
+        "longest_run_words_control_split": 108,
+        "longest_run_min_control_split": 6.1,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 390,
+        "rendered_chips": 4,
+        "rendered_controls": 8,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s2",
+      "num": "02",
+      "data_nav": "Explain it",
+      "eyebrow": "02 · Explain it",
+      "heading": "Read a Stranger's Package Like an Examiner",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 6,
+      "line_start": 2805,
+      "line_end": 2852,
+      "bytes": 3781,
+      "allocated_min": 6,
+      "words": 227,
+      "prose_words": 173,
+      "words_per_min": 37.8,
+      "prose_words_per_min": 28.8,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s2",
+          "data_comp": "click-map-explorer",
+          "icap": "A",
+          "line": 2811,
+          "line_end": 2833,
+          "words_inside": 54
+        }
+      ],
+      "families": [
+        "click-map-explorer"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 4,
+      "chips": {
+        "H": 2,
+        "M": 0,
+        "L": 2
+      },
+      "chips_per_100_words": 1.76,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case",
+        "src-google-ptcf"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 1,
+      "gates": [
+        {
+          "id": "g3",
+          "line": 2851,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 187,
+        "longest_run_min_tagged_split": 4.9,
+        "longest_run_words_control_split": 121,
+        "longest_run_min_control_split": 3.2,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "HANDOFF",
+        "PACKAGE",
+        "README"
+      ],
+      "dom": {
+        "rendered_words": 549,
+        "rendered_chips": 4,
+        "rendered_controls": 14,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s3",
+      "num": "03",
+      "data_nav": "Break it",
+      "eyebrow": "03 · Break it",
+      "heading": "Six Inputs: Which Ones Break It?",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 5,
+      "line_start": 2854,
+      "line_end": 2887,
+      "bytes": 2638,
+      "allocated_min": 5,
+      "words": 219,
+      "prose_words": 162,
+      "words_per_min": 43.8,
+      "prose_words_per_min": 32.4,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s3",
+          "data_comp": "prediction-commit",
+          "icap": "C",
+          "line": 2860,
+          "line_end": 2876,
+          "words_inside": 57
+        }
+      ],
+      "families": [
+        "prediction-commit"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 4,
+      "chips": {
+        "H": 2,
+        "M": 0,
+        "L": 2
+      },
+      "chips_per_100_words": 1.83,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case",
+        "src-kalai"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 2,
+      "gates": [
+        {
+          "id": "g4",
+          "line": 2886,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 187,
+        "longest_run_min_tagged_split": 4.3,
+        "longest_run_words_control_split": 151,
+        "longest_run_min_control_split": 3.4,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 594,
+        "rendered_chips": 4,
+        "rendered_controls": 8,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "sE3",
+      "num": "E3",
+      "data_nav": "E3 · Failure types",
+      "eyebrow": "Appendix E3 · Failure types",
+      "heading": "Five Ways It Broke, Sessions 1 to 4",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "foundational",
+      "insert_after": "s3",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 12,
+      "line_start": 2889,
+      "line_end": 2920,
+      "bytes": 2846,
+      "allocated_min": 12,
+      "words": 223,
+      "prose_words": 186,
+      "words_per_min": 18.6,
+      "prose_words_per_min": 15.5,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-sE3",
+          "data_comp": "multi-column-sorter",
+          "icap": "C",
+          "line": 2896,
+          "line_end": 2909,
+          "words_inside": 37
+        }
+      ],
+      "families": [
+        "multi-column-sorter"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 7,
+      "chips": {
+        "H": 6,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 3.14,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-kalai",
+        "src-wolfram",
+        "src-magesh",
+        "src-cve",
+        "src-case"
+      ],
+      "sources_count": 5,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "ga3",
+          "line": 2919,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 173,
+        "longest_run_min_tagged_split": 9.3,
+        "longest_run_words_control_split": 223,
+        "longest_run_min_control_split": 12,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "CVE"
+      ],
+      "dom": {
+        "rendered_words": 427,
+        "rendered_chips": 7,
+        "rendered_controls": 15,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s4",
+      "num": "04",
+      "data_nav": "Improve it",
+      "eyebrow": "04 · Improve it",
+      "heading": "A Change You Can Defend",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 2922,
+      "line_end": 2961,
+      "bytes": 2655,
+      "allocated_min": 5,
+      "words": 228,
+      "prose_words": 171,
+      "words_per_min": 45.6,
+      "prose_words_per_min": 34.2,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s4",
+          "data_comp": "builder-assembler",
+          "icap": "C",
+          "line": 2928,
+          "line_end": 2942,
+          "words_inside": 57
+        }
+      ],
+      "families": [
+        "builder-assembler"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.44,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 1,
+      "gates": [
+        {
+          "id": "g5",
+          "line": 2960,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 199,
+        "longest_run_min_tagged_split": 4.4,
+        "longest_run_words_control_split": 119,
+        "longest_run_min_control_split": 2.6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "PASS",
+        "FAIL",
+        "NOTE"
+      ],
+      "dom": {
+        "rendered_words": 514,
+        "rendered_chips": 1,
+        "rendered_controls": 7,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "sE4",
+      "num": "E4",
+      "data_nav": "E4 · The builder's two minutes",
+      "eyebrow": "Appendix E4 · The builder's turn",
+      "heading": "The Builder's Two Minutes",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "foundational",
+      "insert_after": "s4",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 10,
+      "line_start": 2963,
+      "line_end": 3010,
+      "bytes": 3602,
+      "allocated_min": 10,
+      "words": 227,
+      "prose_words": 145,
+      "words_per_min": 22.7,
+      "prose_words_per_min": 14.5,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-sE4",
+          "data_comp": "commit-first-mcq",
+          "icap": "C",
+          "line": 2970,
+          "line_end": 2999,
+          "words_inside": 82
+        }
+      ],
+      "families": [
+        "commit-first-mcq"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 2,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 2
+      },
+      "chips_per_100_words": 0.88,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 4,
+      "gates": [
+        {
+          "id": "ga4",
+          "line": 3009,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 176,
+        "longest_run_min_tagged_split": 7.8,
+        "longest_run_words_control_split": 112,
+        "longest_run_min_control_split": 4.9,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 301,
+        "rendered_chips": 2,
+        "rendered_controls": 4,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "sE1",
+      "num": "E1",
+      "data_nav": "E1 · Rehearsal",
+      "eyebrow": "Appendix E1 · Rehearsal",
+      "heading": "Six Minutes, Five Beats",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "standard",
+      "insert_after": "s4",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 12,
+      "line_start": 3012,
+      "line_end": 3056,
+      "bytes": 3562,
+      "allocated_min": 12,
+      "words": 249,
+      "prose_words": 179,
+      "words_per_min": 20.8,
+      "prose_words_per_min": 14.9,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-sE1",
+          "data_comp": "timed-ritual",
+          "icap": "C",
+          "line": 3018,
+          "line_end": 3036,
+          "words_inside": 70
+        }
+      ],
+      "families": [
+        "timed-ritual"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.4,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case"
+      ],
+      "sources_count": 1,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 4,
+      "gates": [
+        {
+          "id": "ga1",
+          "line": 3055,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 206,
+        "longest_run_min_tagged_split": 9.9,
+        "longest_run_words_control_split": 95,
+        "longest_run_min_control_split": 4.6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "§02"
+      ],
+      "dom": {
+        "rendered_words": 304,
+        "rendered_chips": 1,
+        "rendered_controls": 4,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s5",
+      "num": "05",
+      "data_nav": "Measure it",
+      "eyebrow": "05 · Measure it",
+      "heading": "Felt Faster Is Not Faster",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 3058,
+      "line_end": 3096,
+      "bytes": 3778,
+      "allocated_min": 5,
+      "words": 287,
+      "prose_words": 233,
+      "words_per_min": 57.4,
+      "prose_words_per_min": 46.6,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s5",
+          "data_comp": "estimate-then-reveal",
+          "icap": "C",
+          "line": 3063,
+          "line_end": 3075,
+          "words_inside": 54
+        }
+      ],
+      "families": [
+        "estimate-then-reveal"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 7,
+      "chips": {
+        "H": 0,
+        "M": 6,
+        "L": 1
+      },
+      "chips_per_100_words": 2.44,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-metr-2025",
+        "src-dellacqua",
+        "src-noy-zhang",
+        "src-brynjolfsson",
+        "src-case"
+      ],
+      "sources_count": 5,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 3,
+      "gates": [
+        {
+          "id": "g6",
+          "line": 3095,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 253,
+        "longest_run_min_tagged_split": 4.4,
+        "longest_run_words_control_split": 212,
+        "longest_run_min_control_split": 3.7,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 426,
+        "rendered_chips": 7,
+        "rendered_controls": 11,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s6",
+      "num": "06",
+      "data_nav": "New tools",
+      "eyebrow": "06 · New tools",
+      "heading": "New Tools, the Same Four Questions",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": 5,
+      "line_start": 3098,
+      "line_end": 3147,
+      "bytes": 4990,
+      "allocated_min": 5,
+      "words": 301,
+      "prose_words": 228,
+      "words_per_min": 60.2,
+      "prose_words_per_min": 45.6,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s6",
+          "data_comp": "symptom-diagnoser",
+          "icap": "A",
+          "line": 3103,
+          "line_end": 3121,
+          "words_inside": 73
+        }
+      ],
+      "families": [
+        "symptom-diagnoser"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 10,
+      "chips": {
+        "H": 3,
+        "M": 6,
+        "L": 1
+      },
+      "chips_per_100_words": 3.32,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-t3-survey",
+        "src-kitces-aisearch",
+        "src-anthropic-terms",
+        "src-regsp",
+        "src-investmentnews-t3-2026",
+        "src-rightcapital-iris",
+        "src-pew-ai-summaries",
+        "src-case"
+      ],
+      "sources_count": 8,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 10,
+      "gates": [
+        {
+          "id": "g7",
+          "line": 3146,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 268,
+        "longest_run_min_tagged_split": 4.5,
+        "longest_run_words_control_split": 170,
+        "longest_run_min_control_split": 2.8,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "CRM"
+      ],
+      "dom": {
+        "rendered_words": 331,
+        "rendered_chips": 10,
+        "rendered_controls": 10,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s7",
+      "num": "07",
+      "data_nav": "What stays human",
+      "eyebrow": "07 · What stays human",
+      "heading": "The Cole Meeting: Eight Moments",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 3149,
+      "line_end": 3185,
+      "bytes": 2919,
+      "allocated_min": 5,
+      "words": 216,
+      "prose_words": 181,
+      "words_per_min": 43.2,
+      "prose_words_per_min": 36.2,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s7",
+          "data_comp": "two-bucket-sorter",
+          "icap": "C",
+          "line": 3154,
+          "line_end": 3165,
+          "words_inside": 35
+        }
+      ],
+      "families": [
+        "two-bucket-sorter"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 6,
+      "chips": {
+        "H": 0,
+        "M": 5,
+        "L": 1
+      },
+      "chips_per_100_words": 2.78,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-morningstar-fired",
+        "src-cfp-psychology",
+        "src-vanguard-alpha",
+        "src-case"
+      ],
+      "sources_count": 4,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 1,
+      "gates": [
+        {
+          "id": "g8",
+          "line": 3184,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 182,
+        "longest_run_min_tagged_split": 4.2,
+        "longest_run_words_control_split": 130,
+        "longest_run_min_control_split": 3,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 459,
+        "rendered_chips": 6,
+        "rendered_controls": 11,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "sE5",
+      "num": "E5",
+      "data_nav": "E5 · Discussion",
+      "eyebrow": "Appendix E5 · Discussion",
+      "heading": "Discussion: As the Tool Does the Analysis, Does Your Value Move to the Relationship?",
+      "is_toc": false,
+      "is_appendix": true,
+      "tier": "standard",
+      "insert_after": "s7",
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 18,
+      "line_start": 3187,
+      "line_end": 3238,
+      "bytes": 4658,
+      "allocated_min": 18,
+      "words": 338,
+      "prose_words": 173,
+      "words_per_min": 18.8,
+      "prose_words_per_min": 9.6,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-sE5",
+          "data_comp": "sealed-vote-debate",
+          "icap": "I",
+          "line": 3194,
+          "line_end": 3227,
+          "words_inside": 165
+        }
+      ],
+      "families": [
+        "sealed-vote-debate"
+      ],
+      "icap": {
+        "I": 1
+      },
+      "chips_total": 7,
+      "chips": {
+        "H": 2,
+        "M": 4,
+        "L": 1
+      },
+      "chips_per_100_words": 2.07,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-morningstar-fired",
+        "src-lee-cognitive",
+        "src-vanguard-alpha",
+        "src-dellacqua",
+        "src-case"
+      ],
+      "sources_count": 5,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 3,
+      "interactive_controls": 3,
+      "gates": [
+        {
+          "id": "ga5",
+          "line": 3237,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 279,
+        "longest_run_min_tagged_split": 14.9,
+        "longest_run_words_control_split": 210,
+        "longest_run_min_control_split": 11.2,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "CHI"
+      ],
+      "dom": {
+        "rendered_words": 350,
+        "rendered_chips": 7,
+        "rendered_controls": 11,
+        "rendered_hidden_panels": 3
+      }
+    },
+    {
+      "id": "s8",
+      "num": "08",
+      "data_nav": "The reading",
+      "eyebrow": "08 · The reading",
+      "heading": "Trust the Tool, Think Less?",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 3240,
+      "line_end": 3301,
+      "bytes": 5288,
+      "allocated_min": 5,
+      "words": 382,
+      "prose_words": 296,
+      "words_per_min": 76.4,
+      "prose_words_per_min": 59.2,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-s8",
+          "data_comp": "commit-first-mcq",
+          "icap": "C",
+          "line": 3246,
+          "line_end": 3270,
+          "words_inside": 86
+        }
+      ],
+      "families": [
+        "commit-first-mcq"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 5,
+      "chips": {
+        "H": 4,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 1.31,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-lee-cognitive",
+        "src-case"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 4,
+      "gates": [
+        {
+          "id": "g9",
+          "line": 3300,
+          "marked_by_component": false
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 351,
+        "longest_run_min_tagged_split": 4.6,
+        "longest_run_words_control_split": 239,
+        "longest_run_min_control_split": 3.1,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 473,
+        "rendered_chips": 5,
+        "rendered_controls": 10,
+        "rendered_hidden_panels": 2
+      }
+    }
+  ],
+  "terms": [
+    {
+      "term": "X433",
+      "kind": "acronym",
+      "first_use_section": "s0",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "BUS ADM  [X433] .4 · Session 5 5 min Final Project"
+    },
+    {
+      "term": "E2",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "would cost are both on this page.  [E2]  · 14 min · after §01 Swap"
+    },
+    {
+      "term": "§01",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "page. E2 · 14 min · after  [§01]  Swap the Model, Keep the Test Set"
+    },
+    {
+      "term": "E3",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Swap the Model, Keep the Test Set  [E3]  · 12 min · after §03 Five"
+    },
+    {
+      "term": "§03",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Set E3 · 12 min · after  [§03]  Five Ways It Broke, Sessions 1 to"
+    },
+    {
+      "term": "E4",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Ways It Broke, Sessions 1 to 4  [E4]  · 10 min · after §04 The"
+    },
+    {
+      "term": "§04",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "4 E4 · 10 min · after  [§04]  The Builder's Two Minutes E1 · 12"
+    },
+    {
+      "term": "E1",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "· after §04 The Builder's Two Minutes  [E1]  · 12 min · after §04 Six"
+    },
+    {
+      "term": "E5",
+      "kind": "acronym",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "· after §04 Six Minutes, Five Beats  [E5]  · 18 min · after §07 Discussion:"
+    },
+    {
+      "term": "§07",
+      "kind": "citation",
+      "first_use_section": "apx",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Beats E5 · 18 min · after  [§07]  Discussion: As the Tool Does the Analysis,"
+    },
+    {
+      "term": "§07)",
+      "kind": "citation",
+      "first_use_section": "s1",
+      "defined_within_40_words": true,
+      "how": "parenthetical",
+      "cfp_baseline_vocabulary": false,
+      "context": "was tested in the record (Session 4,  [§07)]  Missing 2 A dated test set five"
+    },
+    {
+      "term": "API",
+      "kind": "acronym",
+      "first_use_section": "s1",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "February 2026; the models stayed in the  [API]  M . Anthropic, Model deprecations, platform.claude.com, opened"
+    },
+    {
+      "term": "HANDOFF",
+      "kind": "acronym",
+      "first_use_section": "s2",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "empty. Sample package, gaps on purpose L  [HANDOFF]  PACKAGE : README prompt.txt sample-input.txt, de-identified Design"
+    },
+    {
+      "term": "PACKAGE",
+      "kind": "acronym",
+      "first_use_section": "s2",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Sample package, gaps on purpose L HANDOFF  [PACKAGE]  : README prompt.txt sample-input.txt, de-identified Design board:"
+    },
+    {
+      "term": "README",
+      "kind": "acronym",
+      "first_use_section": "s2",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "gaps on purpose L HANDOFF PACKAGE :  [README]  prompt.txt sample-input.txt, de-identified Design board: five choices"
+    },
+    {
+      "term": "CVE",
+      "kind": "acronym",
+      "first_use_section": "sE3",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "(2025) on unsupported citations H ; EchoLeak,  [CVE] -2025-32711, on hidden instructions H . The ten"
+    },
+    {
+      "term": "PASS",
+      "kind": "acronym",
+      "first_use_section": "s4",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "the six inputs re-run. Re-run board ✓  [PASS]  the brief is right ✗ FAIL it"
+    },
+    {
+      "term": "FAIL",
+      "kind": "acronym",
+      "first_use_section": "s4",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "✓ PASS the brief is right ✗  [FAIL]  it carries the broken line Re-run 3"
+    },
+    {
+      "term": "NOT",
+      "kind": "acronym",
+      "first_use_section": "s4",
+      "defined_within_40_words": true,
+      "how": "expansion",
+      "cfp_baseline_vocabulary": false,
+      "context": "is a claim; “the brief now says  [NOT]  IN NOTE on the input that made"
+    },
+    {
+      "term": "IN",
+      "kind": "acronym",
+      "first_use_section": "s4",
+      "defined_within_40_words": true,
+      "how": "expansion",
+      "cfp_baseline_vocabulary": false,
+      "context": "a claim; “the brief now says NOT  [IN]  NOTE on the input that made it"
+    },
+    {
+      "term": "NOTE",
+      "kind": "acronym",
+      "first_use_section": "s4",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "claim; “the brief now says NOT IN  [NOTE]  on the input that made it invent"
+    },
+    {
+      "term": "§02",
+      "kind": "citation",
+      "first_use_section": "sE1",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Beat Talk through the meeting-prep brief from  [§02]  to §04, or your own. Press Next"
+    },
+    {
+      "term": "METR",
+      "kind": "acronym",
+      "first_use_section": "s5",
+      "defined_within_40_words": true,
+      "how": "parenthetical",
+      "cfp_baseline_vocabulary": false,
+      "context": "(2025), Quarterly Journal of Economics M .  [METR]  (2025), Measuring the impact of early-2025 AI"
+    },
+    {
+      "term": "CRM",
+      "kind": "acronym",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "New Tools, the Same Four Questions Note-takers,  [CRM]  automations, planning agents, and the model your"
+    },
+    {
+      "term": "T3",
+      "kind": "acronym",
+      "first_use_section": "s6",
+      "defined_within_40_words": true,
+      "how": "parenthetical",
+      "cfp_baseline_vocabulary": false,
+      "context": "vendors as service providers M, applied .  [T3]  / Inside Information (2026), Software Survey, as"
+    },
+    {
+      "term": "CHI",
+      "kind": "acronym",
+      "first_use_section": "sE5",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "reported M . Lee and colleagues (2025),  [CHI] , opened in full H . The scale"
+    }
+  ],
+  "footer_source_ids": [
+    "src-kitces-aisearch",
+    "src-anthropic-terms",
+    "src-anthropic-deprecations",
+    "src-anthropic-deprecation-commitments",
+    "src-brynjolfsson",
+    "src-cfp-psychology",
+    "src-dellacqua",
+    "src-google-ptcf",
+    "src-investmentnews-t3-2026",
+    "src-kalai",
+    "src-vanguard-alpha",
+    "src-morningstar-fired",
+    "src-lee-cognitive",
+    "src-magesh",
+    "src-metr-2025",
+    "src-cve",
+    "src-case",
+    "src-noy-zhang",
+    "src-openai-retire-4o",
+    "src-pew-ai-summaries",
+    "src-rightcapital-iris",
+    "src-t3-survey",
+    "src-regsp",
+    "src-wolfram"
+  ],
+  "dom": {
+    "mode": "jsdom",
+    "script_errors": [],
+    "body_class_at_load": "core-only"
+  }
+}

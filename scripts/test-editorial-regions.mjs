@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url';
 import { classify, authoredProse } from './editorial-regions.mjs';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
-const LESSONS = ['session-0.1', 'session-1', 'session-2', 'session-3', 'session-4'];
+const LESSONS = ['session-0.1', 'session-1', 'session-2', 'session-3', 'session-4', 'session-5'];
 const read = (f) => readFileSync(join(REPO, f, 'index.html'), 'utf8');
 
 let pass = 0, fail = 0;

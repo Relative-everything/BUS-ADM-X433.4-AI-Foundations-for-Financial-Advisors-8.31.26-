@@ -42,7 +42,7 @@ const BASE = JSON.parse(readFileSync(join(REPO, 'scripts/editorial-baseline.json
    standalone async bonus lesson with no live time block, so A1-A7 have no
    population in that file. The skip is declared and reasoned here rather than left
    silent, and it is A1-A7 ONLY — session-0.1 is in scope for every other rule. */
-const TIERED = ['session-1', 'session-2', 'session-3', 'session-4'];
+const TIERED = ['session-1', 'session-2', 'session-3', 'session-4', 'session-5'];
 const ALL_LESSONS = ['session-0.1', ...TIERED];
 const D14_SKIP = 'session-0.1';
 const D14_REASON = 'D20 2026-08-25: out of scope for the appendix/tier architecture (standalone async, different delivery mode); no appendix, no data-tier, no tier bar';
@@ -688,6 +688,12 @@ if (enabled('A13')) {
     const text = src(l);
     const c = classify(text);
     const names = footerSurnames(text, c);
+    /* A name that several footer entries carry (Anthropic, once a lesson cites
+       three of its pages) cannot place any of them in an order, so it is not a
+       mention. Added 2026-10-02 when session-5 §01 cited two Anthropic pages in
+       one source line and the test read the tie as a shift. */
+    const shared = new Map();
+    for (const ns of names.values()) for (const nm of ns) shared.set(nm, (shared.get(nm) || 0) + 1);
     const containers = [];
     for (const m of text.matchAll(/<p\b[^>]*>[\s\S]*?<\/p>/g)) containers.push([m.index, m.index + m[0].length]);
     for (const m of text.matchAll(/cap\s*:\s*'(?:[^'\\]|\\.)*'/g)) containers.push([m.index, m.index + m[0].length]);
@@ -701,6 +707,7 @@ if (enabled('A13')) {
       const mentions = [];
       for (const [id, ns] of names) {
         for (const nm of ns) {
+          if (shared.get(nm) > 1) continue;
           const i = plain.search(new RegExp(`\\b${nm}\\b`));
           if (i >= 0) { mentions.push({ id, nm, i }); break; }
         }

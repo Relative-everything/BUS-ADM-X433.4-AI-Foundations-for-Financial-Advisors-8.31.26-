@@ -10,6 +10,90 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-10-03 · Session 5 built: the final class as a page, fifteen gated sections in 120 minutes around the student presentations
+
+Branch `claude/practical-fermi-5g0sm0`, after PR #42 merged. The syllabus row for Session 5 (Final
+Project and Advisor Use Case Deep Dive: the tools change, the judgment does not; peer presentations
+of a classmate's workflow; builder response and peer review; CRM automations, planning support and
+note-taking; counselling, values and the relationship of trust; AI-assisted time against the Session
+1 baseline; keeping a workflow alive as models retire; Lee and colleagues (2025) and the Kitces AI
+search reading) is the section map. The class is shorter because the students present, so the page is
+120 minutes (core 54, appendix 66) against the other lessons' 150. Change folder
+`docs/changes/2026-10-02-session-5-build/` (ledger S5B-001 to S5B-040, `checks.mjs` 57 assertions,
+`section-tests/` 961 assertions, `handback.md` with the Session 4 comparison).
+
+**Measured at load, every appendix shown, 1280 px, against Session 4.** Sections 15 (17); interaction
+families 13 (11), none repeated in adjacent sections; gates 15 (17), all ticked by Shift+U; visible
+controls 149 (277); words 8,120 (11,544), 67.7 a minute against 77.0; chips 92 (221); footer sources
+24 (70); every section's main click moves a figure. The handback says where the page is below Session
+4 and why.
+
+### Session 5 · the page
+
+- **The shell is Session 4's**: head, managed style fence (byte-identical), generic page CSS, body
+  chrome, case modal and injected CASE span, tier bar, appendix panel, the generated budget and
+  sources regions, the script kit. Only the sections are new.
+- **§00** opens with three Session 4 recalls, then Five Sessions, One Judgment: a ring of five stops
+  around a model box that advances through generations and never changes the ring; all five seen
+  writes Session 5's one thing.
+- **Cold open, Then and Now**: two prompts about one synthetic client scored on the eight Session 1
+  checks (3 and 8 of 8) on one track, then the test the checks cannot see: which could be sent. A
+  second beat scores the learner's own oldest and latest prompt the same way.
+- **§01** draws Anthropic's own deprecation calendar (opened 2 October 2026, H) as bars from July
+  2025 to December 2027; pin the sample workflow to the model it named, its replacement, or whatever
+  the app picks, and drag the day: RUNS, DEPRECATED, FAILS, ACTIVE, CHECK, RUNS UNTESTED. A
+  three-line maintenance card copies with the dated source.
+- **§02, §03, §04 and E1, E2, E4 share one sample workflow**, the meeting-prep brief, held in one
+  script block and never retyped: §02 tags its phrases to five design choices and two slots stay
+  empty; §03 predicts and runs six inputs, three break (the gap, the conflict, the identifiers); §04
+  picks one fix per break and only the checkable one re-stamps the board from 3 of 6 to 6 of 6, and
+  the change note writes itself.
+- **§05** guesses, locks and reveals four timed trials (writing, consulting, support, coding; all M),
+  with METR's felt-against-timed line, then times one task of the learner's own on four sliders.
+- **§06** puts five tools on the advisor's desk (chat, note-taker, CRM automation, planning agent, AI
+  search); a click lights a tool's data path and Session 4's four stops fill along it with that
+  tool's answers; AI search runs the other way, from the firm's public pages to a prospect's question.
+- **§07** sorts eight moments of the Cole meeting into a tool can draft it or only you; a trust bar
+  fills; three survey bars (Morningstar, Vanguard, CFP Board; M) draw on one press.
+- **§08** commits two answers before Lee and colleagues (2025, H, opened in full) answers, reads two
+  confidence sliders against the paper's coefficients, seals one line to carry, and closes on the
+  five principles and the four stops.
+- **Appendices**: E1 a real six-minute clock against five planned beats; E2 the five §03 inputs run
+  against three models, the replacement failing on format until a one-line fix, ship or hold; E3 ten
+  failures from Sessions 1 to 5 sorted into five kinds; E4 the builder's two minutes, five presenter
+  sentences called against a filling dial; E5 the discussion as a balance scale: sealed vote, six
+  evidence weights, the complication that moves two to the pivot as explained advice, a second vote.
+
+### Quality-control pass before merge
+
+- **Every figure re-checked against its record, two of them against the live source again**: Anthropic's
+  deprecation page (ten retirement dates, the 60-day notice, both quoted sentences, Sonnet 5.5 as the
+  replacement, the not-sooner-than date) and the Lee paper (the six activity shares and the three
+  coefficients) agree with the page.
+- **The callbacks to Sessions 1 to 4 now use those pages' own words**: four of E3's ten failures, two of
+  §00's recall options, two of §08's five principles, the cold open's cleaning reference and §06's
+  approval line were reworded after reading the earlier pages; the eight checks were confirmed to be
+  Session 1's own cold-open analyser.
+- **Small consistency fixes**: §02's answer key stamps the check WEAK as the board does; E5's
+  Morningstar card uses the record's category name.
+- **Phone width**: the five widest figures scroll sideways inside their box instead of shrinking.
+
+### Sources, gates and records
+
+- **14 new `SOURCES.md` records** (two Anthropic pages at H; twelve at M with what would raise each,
+  DW-126), `src-lee-cognitive` raised to H with the PDF opened in full, nine existing records given a
+  Session 5 use; the lock synced; the footers of Sessions 3 and 5 regenerated.
+- **Every generator and checker enumerates five lessons**; the first editorial baseline for
+  `session-5` is recorded from the page as built (DW-125, to ratify); the hub card is published; the
+  README row and console note; `MAINTAINING.md` records the 2026-08-27 decision and its supersession.
+- **Two verification rules refined for false positives, documented in place**: A13's ordered shift
+  test ignores a name several footer entries share (Anthropic, three pages); the retired-facts scan
+  skips binary files after the teaching-aid PDF's bytes spelled a retired percentage.
+- **Instructor materials**: a run sheet with the two presentation blocks and three gated questions,
+  four polls, a two-page colour-coded teaching aid.
+
+---
+
 ## 2026-09-28 · Session 4 against the instructor's update notes: the live API box, harder identifiers, the clause, the bill, the ladder, the clocks, the flip deck, the record's sources, and a teaching aid
 
 Branch `claude/gracious-cray-2k4fkc`, after PR #40 merged. The instructor's notes asked for every

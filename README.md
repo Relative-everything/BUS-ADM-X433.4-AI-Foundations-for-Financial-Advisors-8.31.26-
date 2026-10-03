@@ -35,8 +35,8 @@ out.
 ### The one exception, and it is off unless you switch it on
 
 Sessions 0.1 and 1 have an optional box at the top marked **Live model**, and
-Session 4 has one marked **Live API**. Leave it alone and those pages behave like
-every other: they transmit nothing, and the model outputs you see are real runs
+Session 4 has one marked **Live API**. Session 5 has neither: its exercises run on
+your own work. Leave the box alone and those pages behave like every other: they transmit nothing, and the model outputs you see are real runs
 that were captured and dated in advance.
 
 Paste your own free Gemini API key into it and the exercises call a live model
@@ -88,7 +88,7 @@ Three things worth knowing before you use it:
 | 2 | Practical AI Usage in Daily Advisory Workflows | [session-2](session-2/) |
 | 3 | Gathering and Documenting Client Information | [session-3](session-3/) |
 | 4 | Compliance, Security and Responsible Use | [session-4](session-4/) |
-| 5 | Final project | not yet published |
+| 5 | Final Project and Advisor Use Case Deep Dive | [session-5](session-5/) |
 
 Session dates, deadlines, submission and grading are set by the instructor
 outside this site. Lessons are updated in place across cohorts, so a date

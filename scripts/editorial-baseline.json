@@ -46,7 +46,8 @@
       "session-1":   { "majority": "entity", "minority_form": "literal", "minority": 1 },
       "session-2":   { "majority": "entity", "minority_form": "literal", "minority": 2 },
       "session-3":   { "majority": "literal", "minority_form": "entity", "minority": 15 },
-      "session-4":   { "majority": "entity", "minority_form": "literal", "minority": 1 }
+      "session-4":   { "majority": "entity", "minority_form": "literal", "minority": 1 },
+      "session-5":   { "majority": "entity", "minority_form": "literal", "minority": 1 }
     }
   },
 
@@ -58,7 +59,8 @@
       "session-1":   { "literal": 1,  "entity": 66, "total": 67 },
       "session-2":   { "literal": 2,  "entity": 38, "total": 40 },
       "session-3":   { "literal": 4, "entity": 3, "total": 7 },
-      "session-4":   { "literal": 1,  "entity": 2,  "total": 3 }
+      "session-4":   { "literal": 1,  "entity": 2,  "total": 3 },
+      "session-5":   { "literal": 1,  "entity": 2,  "total": 3 }
     }
   },
 

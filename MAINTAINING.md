@@ -446,12 +446,17 @@ gain. **DW-048, closed. Do not re-open it.**
 
 ## Adding a session
 
-> **No session is owed.** The complete set is `index.html` + `session-0.1` +
-> sessions 1-4. **Session 5 is a student presentation meeting and no
-> `session-5/index.html` is owed, now or later** — the number below is a generic
-> example of the next session, not a to-do. Instructor decision, 2026-08-27.
+> **The complete set is `index.html` + `session-0.1` + sessions 1-5.** On
+> 2026-08-27 the instructor decided that Session 5 was a student presentation
+> meeting and no `session-5/index.html` was owed. **On 2026-10-02 the instructor
+> asked for the page** (kickoff in `docs/changes/2026-10-02-session-5-build/`),
+> and the later decision supersedes the earlier one: Session 5 is built at about
+> 80% of the other sessions' allocated minutes (54 core + 66 appendix = 120)
+> because student presentations shorten the class, and its logistics live in
+> `instructor-notes/session-5.md`, not on the page. No further session is owed;
+> the steps below are the record of how a session is added.
 
-1. Create `session-5/index.html`.
+1. Create `session-N/index.html`.
 2. Add a card in `index.html`, copying an existing one and removing the `soon`
    class from the anchor.
 3. Add the row to the session table in `README.md`.
@@ -473,7 +478,7 @@ student-facing time budget that agreed with none of the other copies, and
 `session-3`'s footer was wrong on all four numbers it gave.
 
 ```bash
-node scripts/build-appendix.mjs           # rewrite all four lessons
+node scripts/build-appendix.mjs           # rewrite all five lessons
 node scripts/build-appendix.mjs --check   # exit 1 if a lesson disagrees with its sections
 node scripts/build-appendix.mjs --file session-2/index.html
 ```

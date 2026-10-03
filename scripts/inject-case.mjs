@@ -20,7 +20,8 @@ import { fileURLToPath } from 'node:url';
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = join(HERE, '..');
 export const LESSONS = ['index.html', 'session-0.1/index.html', 'session-1/index.html',
-                        'session-2/index.html', 'session-3/index.html', 'session-4/index.html'];
+                        'session-2/index.html', 'session-3/index.html', 'session-4/index.html',
+                        'session-5/index.html'];
 
 const facts  = JSON.parse(readFileSync(join(HERE, 'case-facts.json'), 'utf8'));
 const corpus = JSON.parse(readFileSync(join(HERE, 'case-corpus.json'), 'utf8'));
