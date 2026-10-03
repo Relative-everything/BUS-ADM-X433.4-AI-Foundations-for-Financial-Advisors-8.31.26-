@@ -1033,6 +1033,9 @@ body:not(.reveal) #ovr{display:none}
 #s1 .s1-blank{flex:1;border-bottom:1.5px dotted var(--muted);height:1em}
 #s1 .s1-pline.on .s1-blank{border-bottom-color:var(--on)}
 #s1 .s1-pline .s5stamp{font-size:9.5px;padding:2px 6px}
+
+/* phone width: the calendar scrolls sideways inside its box rather than shrinking past legibility */
+@media (max-width:600px){#s1 .s1-fig{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}#s1 .s1-fig svg{min-width:580px}}
 /* ===== sE2 ===== */
 /* ===== sE2 · Swap the model, keep the test set: five tiles, a model box, five slots ===== */
 
@@ -1129,6 +1132,9 @@ body:not(.reveal) #ovr{display:none}
 @media(prefers-reduced-motion:reduce){
  #sE2 .sE2-tile,#sE2 .sE2-box,#sE2 .sE2-bscore,#sE2 .sE2-slot,#sE2 .sE2-pill,#sE2 .sE2-stamp,#sE2 .sE2-stampbox{transition:none}
 }
+
+/* phone width: the test set scrolls sideways inside its box rather than shrinking past legibility */
+@media (max-width:600px){#sE2 #e2Fig{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}#sE2 #e2Fig svg{min-width:520px}}
 /* ===== s2 ===== */
 /* ===== s2 ===== */
 /* ===== s2 · read a stranger's package like an examiner ===== */
@@ -1353,6 +1359,9 @@ body:not(.reveal) #ovr{display:none}
 @media (prefers-reduced-motion: reduce){
   #s3 .s3-ring,#s3 .s3-card,#s3 .s3-nbc,#s3 .s3-nbt,#s3 .s3-belt,#s3 .s3-arrow,#s3 .s3-tok,#s3 .s3-page,#s3 .s3-fold,#s3 .s3-stamp,#s3 .s3-cap{transition:none}
 }
+
+/* phone width: the six briefs scroll sideways inside their box rather than shrinking past legibility */
+@media (max-width:600px){#s3 #s3Fig{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}#s3 #s3Fig svg{min-width:540px}}
 /* ===== sE3 ===== */
 /* ===== sE3 ===== */
 /* ================= sE3 · five ways it broke: ten failures, five lanes, one tally ================= */
@@ -1841,6 +1850,9 @@ body:not(.reveal) #ovr{display:none}
 #s6 .s6-mine .btn{text-transform:none;letter-spacing:0;font-size:12.5px}
 #s6 .s6-tk{display:inline-block;width:1em;margin-right:4px;opacity:.25}
 #s6 .s6-mine .btn.act .s6-tk{opacity:1}
+
+/* phone width: the desk scrolls sideways inside its box rather than shrinking past legibility */
+@media (max-width:600px){#s6 .s6-fig{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}#s6 .s6-fig svg{min-width:560px}}
 /* ===== s7 ===== */
 /* ===== s7 ===== */
 /* ================= s7 · the Cole meeting, eight moments ================= */
@@ -1978,6 +1990,9 @@ body:not(.reveal) #ovr{display:none}
 #sE5 .sE5-ptr.second path{fill:var(--card);stroke:var(--ink);stroke-width:2;stroke-dasharray:3 2}
 #sE5 .sE5-ptrt{font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:600;fill:var(--ink)}
 #sE5 .sE5-cap{font-family:"JetBrains Mono",monospace;font-size:11px;fill:var(--muted)}
+
+/* phone width: the scale scrolls sideways inside its box rather than shrinking past legibility */
+@media (max-width:600px){#sE5 .sE5-fig{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}#sE5 .sE5-fig svg{min-width:480px}}
 /* ===== s8 ===== */
 /* ===== s8 ===== */
 /* beat 1: the two locked questions sit side by side on a laptop, one under the other on a phone */
@@ -3280,9 +3295,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       <span class="s8-mine" id="s8Mine" hidden></span>
       <ol class="s8-five">
         <li><span class="nb ok">1</span><span><span class="s8-tag">Session 1</span>It predicts; it does not know.</span></li>
-        <li><span class="nb ok">2</span><span><span class="s8-tag">Session 2</span>The ask is the only control you have before the sampler runs.</span></li>
+        <li><span class="nb ok">2</span><span><span class="s8-tag">Session 2</span>It samples a plausible answer rather than computing the true one; which one you got is a fact about that draw.</span></li>
         <li><span class="nb ok">3</span><span><span class="s8-tag">Session 3</span>Grounded means it cites your file, and the nearest passage is not always the right one.</span></li>
-        <li><span class="nb ok">4</span><span><span class="s8-tag">Session 4</span>No AI rulebook: what goes in, where it goes, how you check, what you keep.</span></li>
+        <li><span class="nb ok">4</span><span><span class="s8-tag">Session 4</span>Four stops around the model: what goes in, where it goes, how you check, what you keep.</span></li>
         <li><span class="nb ok">5</span><span><span class="s8-tag">Session 5</span>A workflow is finished when a stranger can run it and you can measure the result.</span></li>
       </ol>
     </div>
@@ -3666,8 +3681,8 @@ try{
 /* ---- beat 1: the bridge ---- */
 var BRIDGE=[
  {q:'1. Your firm signed nothing: you clicked Accept on a personal plan. By default, what happens to what you type?',
-  opts:[{k:'x',t:'It is deleted when the chat ends.'},{k:'r',t:'It may be used to train the model and kept for years unless you switch training off.'},{k:'y',t:'Nothing is kept on a personal plan.'}],a:'r',
-  fb:{x:'Not quite: (b). Session 4’s calendar: on a personal plan the training switch starts on, and what you type can be kept for years.',
+  opts:[{k:'x',t:'It is deleted when the chat ends.'},{k:'r',t:'Your click is the contract: it may be used for training and kept, at some vendors for years, unless you switch training off.'},{k:'y',t:'Nothing is kept on a personal plan.'}],a:'r',
+  fb:{x:'Not quite: (b). Session 4, §03: the plan changes the contract, not the model; on a personal plan the training switch starts on, and the calendar of how long each vendor keeps it runs to five years.',
       r:'Right: the plan buys the contract, not the model. Off, the copy is kept about a month; on, for years.',
       y:'Not quite: (b). The personal plan is the one your firm never signed; the switch is yours to find.'}},
  {q:'2. Her name and her company’s name are gone from the prompt. What can still point to her?',
@@ -3676,7 +3691,7 @@ var BRIDGE=[
       r:'Right: an aerospace-fastener maker in one town is one company. Facts that are not names add up.',
       y:'Not quite: (b). An account number is one identifier; a trade and a town together are another.'}},
  {q:'3. An examiner asks to re-check a memo a year on. Which record lets them?',
-  opts:[{k:'x',t:'A CRM note: used AI to draft; reviewed and sent.'},{k:'r',t:'The full prompt, the full model name, the date and the full output.'},{k:'y',t:'A summary of the answer in your own words.'}],a:'r',
+  opts:[{k:'x',t:'A CRM note: used AI to draft; reviewed and sent.'},{k:'r',t:'The answer itself, with the model and setting, the date, who prepared it, and what you decided.'},{k:'y',t:'A summary of the answer in your own words.'}],a:'r',
   fb:{x:'Not quite: (b). The note says AI was used; it lets nobody re-run anything.',
       r:'Right: complete is not correct, but it can be re-checked. A summary repeats your reading of it.',
       y:'Not quite: (b). If the model misread the clause, your summary repeats its error.'}}
@@ -4025,7 +4040,7 @@ if(go&&tThen&&tNow&&mout)go.onclick=function(){
 function lockMine(which){
   [mY,mN].forEach(function(b){if(!b)return;var on=(b===which);b.classList.toggle('act',on);b.setAttribute('aria-pressed',on?'true':'false');if(!on)b.setAttribute('aria-disabled','true')});
 }
-if(mY)mY.onclick=function(){if(mY.getAttribute('aria-disabled')==='true')return;lockMine(mY);if(mAns)mAns.textContent='Then it cannot go in as written. Session 4’s §02 shows how to clean it: replace, do not just delete.'};
+if(mY)mY.onclick=function(){if(mY.getAttribute('aria-disabled')==='true')return;lockMine(mY);if(mAns)mAns.textContent='Then it cannot go in as written. Session 4’s §02 and Appendix D6 show how to clean it: replace the details, do not just delete them.'};
 if(mN)mN.onclick=function(){if(mN.getAttribute('aria-disabled')==='true')return;lockMine(mN);if(mAns)mAns.textContent='Then both pass the test the eight checks cannot see.'};
 
 REVEALS.push(function(){try{pick(0);test1();test2()}catch(e){}});
@@ -4645,7 +4660,8 @@ function showKey(){
  var STATE={full:'COMPLETE',half:'HALF',none:'NOT STATED'},SC={full:'ok',half:'mid',none:'gap'};
  var h='<span class="hd">Answer key · the five design choices</span>';
  P.choices.forEach(function(c,i){
-  h+='<b>'+(i+1)+' · '+esc(c.n)+'</b> <span class="s5stamp '+(SC[c.state]||'gap')+'">'+(STATE[c.state]||'NOT STATED')+'</span><br><span class="kw">'+esc(c.why)+'</span><br><br>';
+  var stLabel=c.k==='verify'&&c.state==='half'?'WEAK':(STATE[c.state]||'NOT STATED');
+  h+='<b>'+(i+1)+' · '+esc(c.n)+'</b> <span class="s5stamp '+(SC[c.state]||'gap')+'">'+stLabel+'</span><br><span class="kw">'+esc(c.why)+'</span><br><br>';
  });
  h+='Two questions for the builder: which model and tier did you test it on, and what do I remove from a real note before I paste it?';
  key.className='mpanel has keyhide';key.innerHTML=h;key.style.display='block';
@@ -5084,22 +5100,22 @@ var ITEMS=[
   w:'Nothing was wrong with the question. Each run draws a new answer.'},
  {t:'Session 2: a confident citation to a case that does not exist',k:'guess',
   w:'A plausible-looking authority filled the slot where a real one should be.'},
- {t:'Session 3: the buy-sell clause quoted correctly, but it covered death and disability, not a sale to a trust',k:'passage',
-  w:'A real quote, from the nearest passage, answering a different question.'},
+ {t:'Session 3: the grounded answer quoted Article VII of the buy-sell correctly, but that formula is for a death, a disability or a withdrawal, not a sale to a trust',k:'passage',
+  w:'A real quote, from the nearest passage, answering a different question. No error message; only a person who knows the difference catches it.'},
  {t:'Session 4: the email assistant forwarded three estate files because a hidden line told it to',k:'obey',
   w:'Text is text to a model; the hidden line read as an instruction.'},
  {t:'Session 5: the brief carried the client’s name and account number into the output',k:'carry',
   w:'The model did nothing wrong with the data. It repeated what it was given.'},
- {t:'Session 3: a legal research tool cited a real document that did not say what the answer claimed',k:'passage',
-  w:'The document existed; the support did not. Open the source.'},
- {t:'Session 3: a meeting summary said the client agreed, when the transcript shows she said she would think about it',k:'guess',
-  w:'A summariser smooths a hesitation into a decision because that is the likelier sentence.'},
+ {t:'Session 3: a grounded legal research tool, sold as hallucination-free, gave an answer its own documents did not support',k:'passage',
+  w:'The document existed; the support did not. Open the source behind the answer.'},
+ {t:'Session 3: a clean-looking meeting summary carried a fact the transcript does not contain',k:'guess',
+  w:'The summariser wrote the likelier sentence where the transcript had none. Read each line against the transcript before it goes anywhere.'},
  {t:'Session 5: the appraisal line was missing from the note and the brief gave a valuation anyway',k:'guess',
   w:'A gap, filled. The §04 fix gives the model a word to write instead.'},
  {t:'Session 5: the CRM line and the pasted email disagreed, and the brief picked one',k:'carry',
   w:'The conflict was in the input. The brief passed one half through and dropped the other.'},
- {t:'Session 2: the same prompt an hour later, a different answer, and the prompt stored as the record',k:'sample',
-  w:'The prompt is the input to a random draw, not the output you relied on.'}
+ {t:'Session 2: an identical prompt sent twice, an hour apart, and two materially different answers',k:'sample',
+  w:'Which one you got is a fact about that draw, not about the question. The prompt alone is no record of the answer you relied on.'}
 ];
 var N=ITEMS.length,NB=BK.length;
 var AFTER='The fix differs by kind: a rule to write for a gap, a record for a draw, the source opened for a passage, the input cleaned for a carry, less access for an instruction.';
@@ -6361,7 +6377,7 @@ var TOOLS=[
  {n:'CRM automation',src:2,
   q:['The meeting’s tasks and notes, written back by a tool that acts without you.',
      'The CRM vendor and the model behind it; the same service-provider duties'+chip('src-regsp','M','applied')+'.',
-     'An approval step before anything is sent to a client (Session 4, §05, fix 2).',
+     'An approval step before it sends, pays or deletes (Session 4, §05: access, not wording, is the defence).',
      'The log of what the automation did and who approved it.'],
   nw:'The survey found established CRM and planning tools still dominant, with AI as a supplement rather than a replacement'+chip('src-investmentnews-t3-2026','M')+'.'},
  {n:'Planning-software agent',src:1,
@@ -6732,7 +6748,7 @@ var CARDS=[
  {pan:'rel',t:'Vanguard puts about half of an adviser’s potential value in behavioural coaching',c:chip('src-vanguard-alpha','M'),w:'coaching'},
  {pan:'rel',t:'Among investors who fired an adviser, 21% named the relationship',c:chip('src-morningstar-fired','M'),w:'21%'},
  {pan:'rel',t:'§07’s four moments no tool can draft',c:'',w:'4 moments'},
- {pan:'ana',t:'The top reason for firing was the quality of the advice, 32%',c:chip('src-morningstar-fired','M'),w:'32%'},
+ {pan:'ana',t:'The top reason for firing was the quality of advice and services, 32%',c:chip('src-morningstar-fired','M'),w:'32%'},
  {pan:'ana',t:'Outside the model’s frontier, consultants with AI were 19 points less likely to be right, and could not tell',c:chip('src-dellacqua','M'),w:'19 pts'},
  {pan:'ana',t:'In the survey of 319 knowledge workers, confidence in the tool predicted less critical thinking; the judgment does not delegate',c:chip('src-lee-cognitive','H'),w:'319'}
 ];

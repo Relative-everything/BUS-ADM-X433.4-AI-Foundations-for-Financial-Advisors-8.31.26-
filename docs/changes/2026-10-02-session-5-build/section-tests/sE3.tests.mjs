@@ -57,7 +57,7 @@ function placeByLane($$, click, i, lane) { click($$('#e3List .chip')[i]); click(
   /* the sorter at rest */
   const chips = $$('#e3List .chip');
   say(chips.length === 10 && chips.every((c) => c.tagName === 'BUTTON' && c.getAttribute('type') === 'button' && c.getAttribute('aria-pressed') === 'false' && !c.disabled), 'E3-010', 'ten chips, real buttons, none pressed, none disabled');
-  say(/^1\. Session 1: one question asked three times, three different dates back$/.test(chips[0].textContent) && /^5\. Session 5: the brief carried the client’s name and account number into the output$/.test(chips[4].textContent) && /^10\. Session 2: the same prompt an hour later, a different answer, and the prompt stored as the record$/.test(chips[9].textContent),
+  say(/^1\. Session 1: one question asked three times, three different dates back$/.test(chips[0].textContent) && /^5\. Session 5: the brief carried the client’s name and account number into the output$/.test(chips[4].textContent) && /^10\. Session 2: an identical prompt sent twice, an hour apart, and two materially different answers$/.test(chips[9].textContent),
     'E3-011', 'the chips carry the ten failures in the spec\'s order, numbered');
   const lboxes = $$('#e3Boxes .lbox');
   const titles = lboxes.map((b) => b.querySelector('h4').textContent);

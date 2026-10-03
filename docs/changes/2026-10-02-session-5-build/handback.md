@@ -2,8 +2,9 @@
 
 Branch `claude/practical-fermi-5g0sm0`, from `c8b87b7` (`main` after PR #42). The final class is
 shorter because the students present. The ask is in `notes-verbatim.md`; the premise challenges and
-the section map in `plan.md`; one row per change in `ledger.md` (S5B-001 to S5B-040); 57 DOM
-assertions in `checks.mjs`; 961 section assertions in `section-tests/`.
+the section map in `plan.md`; one row per change in `ledger.md` (S5B-001 to S5B-046); 57 DOM
+assertions in `checks.mjs`; 961 section assertions in `section-tests/`. Section 8 records the
+quality-control pass made before the merge request.
 
 ## Summary, quantified
 
@@ -18,15 +19,15 @@ comparable.
 | Interaction families (distinct `data-comp`) | 11 | **13** | no family repeated in adjacent sections |
 | Gates, all ticked by Shift+U on a fresh page | 17 | 15 | |
 | Visible controls | 277 | 149 | 1.85 to 1.24 (67%) |
-| Visible words | 11,544 | 8,107 | 77.0 to 67.6 (88%) |
-| Words after Shift+U | 14,983 | 12,198 | |
+| Visible words | 11,544 | 8,120 | 77.0 to 67.7 (88%) |
+| Words after Shift+U | 14,983 | 12,295 | |
 | Chips | 221 | 92 | 1.47 to 0.77; per 100 words 1.91 to 1.13 |
 | Footer sources | 70 | 24 | |
 | SVG figures | 28 | 16 (§08's bars are HTML) | per section 1.65 to 1.07 |
 | Sections whose main click moves a figure | 16 of 17 | **15 of 15** | |
 | `aria-live` readouts | 58 | 42 | |
 | Copy buttons | 9 | 5 | |
-| File size | 789 KB | 483 KB | |
+| File size | 789 KB | 484 KB | |
 | Change-folder DOM assertions | 47 | 57, plus 961 section assertions | |
 
 **Where Session 5 is at least as good as Session 4:** the architecture (one gated interaction per
@@ -56,13 +57,13 @@ the source line only).
 
 | Section | Min | Family | Gate | Controls | Words | Chips | Figures | What the main click does |
 |---|---:|---|---|---:|---:|---:|---:|---|
-| §00 Final Project and Advisor Use Case Deep Dive | 5 | retrieval-bridge | g1 | 19 | 458 | 1 | 1 | three Session 4 recalls lock; the five-stop ring advances its model box |
+| §00 Final Project and Advisor Use Case Deep Dive | 5 | retrieval-bridge | g1 | 19 | 468 | 1 | 1 | three Session 4 recalls lock; the five-stop ring advances its model box |
 | Cold open: Then and Now, Two Prompts | 8 | timed-ritual | gc | 4 | 346 | 1 | 1 | two prompts land on a 0 to 8 track; Test 2 splits the track and sinks the one that names the client |
 | §01 The Model Your Workflow Runs On Will Retire | 5 | parameter-sandbox | g2 | 11 | 521 | 9 | 1 | a day slider moves a cursor across Anthropic's calendar; the pinned workflow's stamp changes |
 | E2 Swap the Model, Keep the Test Set | 14 | pipeline-lab | ga2 | 5 | 438 | 4 | 1 | five inputs travel through the model box and stamp their slots |
 | §02 Read a Stranger's Package Like an Examiner | 6 | click-map-explorer | g3 | 14 | 602 | 4 | 1 | tagged phrases fill a five-row design board; two rows stay empty |
 | §03 Six Inputs: Which Ones Break It? | 5 | prediction-commit | g4 | 8 | 389 | 4 | 1 | six briefs draw and stamp against the locked prediction |
-| E3 Five Ways It Broke, Sessions 1 to 4 | 12 | multi-column-sorter | ga3 | 20 | 479 | 7 | 1 | ten failures stack into five lanes |
+| E3 Five Ways It Broke, Sessions 1 to 4 | 12 | multi-column-sorter | ga3 | 20 | 482 | 7 | 1 | ten failures stack into five lanes |
 | §04 A Change You Can Defend | 5 | builder-assembler | g5 | 7 | 572 | 1 | 1 | a fix re-stamps the six-input board; the change note writes itself |
 | E4 The Builder's Two Minutes | 10 | commit-first-mcq | ga4 | 3 | 315 | 2 | 1 | each call fills a sector of the two-minute dial |
 | E1 Six Minutes, Five Beats | 12 | timed-ritual | ga1 | 4 | 342 | 1 | 1 | a real clock fills the beats against the plan |
@@ -177,3 +178,24 @@ opened from this build. Nothing on the page states a figure its record does not 
 | `verify-browser` | 100 pass; 7 "zero JS errors on load" red on every page from the proxy certificate (§5) |
 | `verify-style` | cannot run here: the restyle skill is not installed; the fence is byte-identical to Session 4's |
 | Em and en dashes in the authored body | 0; the three literal dashes on the page are the `<title>` and the generated regions |
+
+## 8. The final quality-control pass (2026-10-03)
+
+Method: the whole page rendered with every answer revealed and read section by section (11,537
+words); every number on it compared with the `scope` field of its record; the two records the page
+leans on hardest re-opened from this build and compared line by line; every "Session N" callback
+compared with the text of that session's page; the phone-width screenshots of every section read.
+
+| Area | Finding | Action |
+|---|---|---|
+| Anthropic's deprecation page (live, 2026-10-03) | All ten retirement dates, the 60-day notice, "Requests to retired models will fail", the testing advice, Sonnet 5.5 as Sonnet 4.5's replacement and its not-sooner-than date agree with §01 and E2 | none needed |
+| Lee and colleagues (2025), re-opened | 319, 936, 59.29%, minus 0.69, 0.26 and the six activity shares (72, 79, 69, 72, 76, 55%) agree with §08 | none needed |
+| The 22 other records | Every figure on the page is inside its record's scope; E5's Morningstar card said "quality of the advice" where the record says "quality of advice and services" | reworded |
+| Callbacks to Sessions 1 to 4 | Four of E3's ten failures paraphrased earlier exercises in words those pages do not use (one invented a quotation about the transcript); §00's recall options 1(b) and 3(b) did not match Session 4 §03 and §07; §08's Session 2 principle was a Session 1 sentence and its Session 4 principle used a phrase Session 4 does not; the cold open pointed to §02 for advice that lives in Appendix D6; §06 cited "§05, fix 2", which does not exist | all reworded to the earlier pages' own words (S5B-042, S5B-043) |
+| The eight checks | Session 1's cold-open analyser carries the same eight checks as this page's cold open; Session 4 and this page shorten the labels | attribution confirmed, no change |
+| §02 | The answer key stamped the verification choice HALF while the board stamps it WEAK | key now reads WEAK |
+| Phone width | The calendar, the desk, the six briefs, the test set and the scale shrank below legibility at 380 px (Session 4's figures do the same) | the five figures scroll sideways inside their box; the page never overflows |
+| Everything else read | No typos found; register, chips and gates as designed; the run sheet, polls and aid still match the page | none needed |
+
+After the pass: `checks.mjs` 57 of 57, section tests 961 of 961, click-through clean at both widths,
+every repository gate green, the hub, README and changelog current.

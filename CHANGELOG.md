@@ -24,7 +24,7 @@ search reading) is the section map. The class is shorter because the students pr
 
 **Measured at load, every appendix shown, 1280 px, against Session 4.** Sections 15 (17); interaction
 families 13 (11), none repeated in adjacent sections; gates 15 (17), all ticked by Shift+U; visible
-controls 149 (277); words 8,107 (11,544), 67.6 a minute against 77.0; chips 92 (221); footer sources
+controls 149 (277); words 8,120 (11,544), 67.7 a minute against 77.0; chips 92 (221); footer sources
 24 (70); every section's main click moves a figure. The handback says where the page is below Session
 4 and why.
 
@@ -63,6 +63,20 @@ controls 149 (277); words 8,107 (11,544), 67.6 a minute against 77.0; chips 92 (
   failures from Sessions 1 to 5 sorted into five kinds; E4 the builder's two minutes, five presenter
   sentences called against a filling dial; E5 the discussion as a balance scale: sealed vote, six
   evidence weights, the complication that moves two to the pivot as explained advice, a second vote.
+
+### Quality-control pass before merge
+
+- **Every figure re-checked against its record, two of them against the live source again**: Anthropic's
+  deprecation page (ten retirement dates, the 60-day notice, both quoted sentences, Sonnet 5.5 as the
+  replacement, the not-sooner-than date) and the Lee paper (the six activity shares and the three
+  coefficients) agree with the page.
+- **The callbacks to Sessions 1 to 4 now use those pages' own words**: four of E3's ten failures, two of
+  §00's recall options, two of §08's five principles, the cold open's cleaning reference and §06's
+  approval line were reworded after reading the earlier pages; the eight checks were confirmed to be
+  Session 1's own cold-open analyser.
+- **Small consistency fixes**: §02's answer key stamps the check WEAK as the board does; E5's
+  Morningstar card uses the record's category name.
+- **Phone width**: the five widest figures scroll sideways inside their box instead of shrinking.
 
 ### Sources, gates and records
 

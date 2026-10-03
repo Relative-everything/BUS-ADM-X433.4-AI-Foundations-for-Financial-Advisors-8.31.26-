@@ -81,11 +81,11 @@ const GENS = ['a 2023 model', 'a 2025 model', 'a 2026 model', 'the next one'];
       stems[1] === '2. Her name and her company’s name are gone from the prompt. What can still point to her?' &&
       stems[2] === '3. An examiner asks to re-check a memo a year on. Which record lets them?', 'S0-023', 'the three stems are the spec\'s');
   const opt = (i, j) => items[i].querySelectorAll('.qbtns button')[j].textContent;
-  say(opt(0, 0) === '(a) It is deleted when the chat ends.' && opt(0, 1) === '(b) It may be used to train the model and kept for years unless you switch training off.' && opt(0, 2) === '(c) Nothing is kept on a personal plan.',
+  say(opt(0, 0) === '(a) It is deleted when the chat ends.' && opt(0, 1) === '(b) Your click is the contract: it may be used for training and kept, at some vendors for years, unless you switch training off.' && opt(0, 2) === '(c) Nothing is kept on a personal plan.',
     'S0-024', 'Q1 options (a), (b), (c) as the spec');
   say(opt(1, 0) === '(a) Nothing: without a name she is anonymous.' && opt(1, 1) === '(b) Her trade and her town together.' && opt(1, 2) === '(c) Only her account number.',
     'S0-025', 'Q2 options as the spec');
-  say(opt(2, 0) === '(a) A CRM note: used AI to draft; reviewed and sent.' && opt(2, 1) === '(b) The full prompt, the full model name, the date and the full output.' && opt(2, 2) === '(c) A summary of the answer in your own words.',
+  say(opt(2, 0) === '(a) A CRM note: used AI to draft; reviewed and sent.' && opt(2, 1) === '(b) The answer itself, with the model and setting, the date, who prepared it, and what you decided.' && opt(2, 2) === '(c) A summary of the answer in your own words.',
     'S0-026', 'Q3 options as the spec');
   say(txt('#bridgeScore') === '0 of 3 answered' && $('#bridgeScore').getAttribute('aria-live') === 'polite', 'S0-027', 'the score line starts at 0 of 3 and is live');
   const gate = $('#s0 .check[data-gate="g1"]');
@@ -96,7 +96,7 @@ const GENS = ['a 2023 model', 'a 2025 model', 'a 2026 model', 'the next one'];
   const fb1 = items[0].querySelector('.qfb');
   say(items[0].classList.contains('done') && q1[0].getAttribute('aria-pressed') === 'true' && q1[1].getAttribute('aria-disabled') === 'true' && q1[2].getAttribute('aria-disabled') === 'true',
     'S0-030', 'Q1 locks on the first pick: aria-pressed on the pick, the others aria-disabled');
-  say(fb1.classList.contains('wrong') && fb1.textContent === 'Not quite: (b). Session 4’s calendar: on a personal plan the training switch starts on, and what you type can be kept for years.', 'S0-031', 'Q1 (a) gets its written feedback');
+  say(fb1.classList.contains('wrong') && fb1.textContent === 'Not quite: (b). Session 4, §03: the plan changes the contract, not the model; on a personal plan the training switch starts on, and the calendar of how long each vendor keeps it runs to five years.', 'S0-031', 'Q1 (a) gets its written feedback');
   say(q1[0].classList.contains('s0bad') && !q1[0].classList.contains('s0ok') && q1[1].classList.contains('s0key') && !q1[2].classList.contains('s0key'), 'S0-032', 'a wrong pick gets s0bad (rust, cross) and the right option gets s0key (dashed ring, tick)');
   click(q1[1]);
   say(q1[1].getAttribute('aria-pressed') === 'false' && !q1[1].classList.contains('picked') && fb1.classList.contains('wrong') && txt('#bridgeScore') === '1 of 3 answered · 0 right', 'S0-033', 'a second click on Q1 is ignored; the score reads 1 of 3 answered, 0 right');
