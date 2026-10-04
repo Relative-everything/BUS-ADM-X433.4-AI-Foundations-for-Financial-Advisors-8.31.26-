@@ -19,8 +19,8 @@ and seven manipulative beats on one shared Pointer Events kit replace them; ever
 click the item, then click the place. A core section was added for the enterprise ask (how a firm
 hosts fifteen skills, agents and workflows in one repository and ships them to every desk), so the
 page is 125 minutes (core 59, appendix 66). Change folder
-`docs/changes/2026-10-04-session-5-interactivity/` (ledger S5I-001 to S5I-020, `checks.mjs` 32
-assertions, `drags.mjs` 30 real pointer drags, `interactivity.mjs` the five-tier measure,
+`docs/changes/2026-10-04-session-5-interactivity/` (ledger S5I-001 to S5I-021, `checks.mjs` 32
+assertions, `drags.mjs` 36 Chromium assertions with 22 real pointer drags, `interactivity.mjs` the five-tier measure,
 `handback.md` with the comparison and the source re-check).
 
 **Measured at load, 1280 px, against Session 4 and the page before.** Pointer-drag items 47 (Session
@@ -67,7 +67,10 @@ handback says where the page is still below Session 4 and why.
   the marker moves by an attribute transform and emphasis is fill-opacity on rectangles.
 - Found in Chromium after the build and fixed: the §06 stop icons were pinned at the figure's
   origin by a CSS transform; two §01 step labels, one §04 station line and the §08 rank labels
-  overran their columns.
+  overran their columns. Zoomed renders then showed six more, all fixed: §06's stop labels
+  colliding and crossing rows, §04's token resting on station text and its stamp overrunning its
+  box, §07's lock over a policy line, its route entries overlapping, a desk tag wider than its box
+  and a heading crossing a desk. `drags.mjs` now asserts the rendered layout of those figures.
 
 ### Session 5 · instructor materials and the repository
 

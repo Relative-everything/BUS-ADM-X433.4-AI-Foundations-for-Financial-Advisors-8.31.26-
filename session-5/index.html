@@ -2038,7 +2038,7 @@ svg [data-drop].drop-over{stroke:var(--on);stroke-width:3;fill:var(--on-bg)}
 #sLib .sLib-route.on{fill:var(--on);font-weight:700}
 #sLib .sLib-ans{fill:var(--on-bg);stroke:var(--on);stroke-width:1.5;opacity:0;transition:opacity .3s}
 #sLib .sLib-ans.on{opacity:1}
-#sLib .sLib-anst{font-family:"JetBrains Mono",monospace;font-size:8.5px;font-weight:700;letter-spacing:.06em;fill:var(--on);opacity:0;transition:opacity .3s}
+#sLib .sLib-anst{font-family:"JetBrains Mono",monospace;font-size:7.5px;font-weight:700;letter-spacing:.06em;fill:var(--on);opacity:0;transition:opacity .3s}
 #sLib .sLib-anst.on{opacity:1}
 #sLib #libOut .r{display:block;margin:6px 0 0;font-family:"Source Serif 4",Georgia,serif;font-size:14px;line-height:1.5;opacity:0;transform:translateY(4px);transition:opacity .3s,transform .3s}
 #sLib #libOut .r.on{opacity:1;transform:none}
@@ -6255,7 +6255,7 @@ function showKey(){
 }
 /* ---------- the improved version, running: five stations and one token (2026-10-04) ---------- */
 var FLOW=[
-  ['README step 2','[the client]|no account numbers'],
+  ['README','step 2: [the client]|no account numbers'],
   ['prompt.txt','NOT IN NOTE|CONFLICT'],
   ['the brief','three headings|bullets, no table'],
   ['the test','eight-digit number?|reject'],
@@ -6266,7 +6266,7 @@ function fcx(i){return FX0+i*(FSW+FSG)+FSW/2}
 function buildFlow(){
   if(fsvg||!flowHost)return;
   fsvg=svgRoot(flowHost,600,124,'The improved version running: README step 2, prompt.txt, the brief, the test, the record. A token travels the five stations.','s4-fsvg','img');
-  sv('line',{x1:fcx(0),y1:FY+FSH/2,x2:fcx(4),y2:FY+FSH/2,'class':'s4-frail'},fsvg);
+  sv('line',{x1:fcx(0),y1:16,x2:fcx(4),y2:16,'class':'s4-frail'},fsvg);   /* the track runs above the stations, never across their text */
   FLOW.forEach(function(f,i){
     var x=FX0+i*(FSW+FSG),g=sv('g',{'class':'s4-fst'},fsvg);
     sv('rect',{x:x,y:FY,width:FSW,height:FSH,rx:8,'class':'s4-fbox'},g);
@@ -6276,9 +6276,9 @@ function buildFlow(){
     if(ls[1])svt(g,x+FSW/2,FY+49,ls[1],'s4-ft2','middle');
     fst.push(g);
   });
-  ftok=sv('circle',{cx:fcx(0),cy:FY+FSH/2,r:7,'class':'s4-ftok'},fsvg);
+  ftok=sv('circle',{cx:fcx(0),cy:16,r:6,'class':'s4-ftok'},fsvg);
   fstamp=sv('g',{'class':'s4-fstamp'},fsvg);
-  sv('rect',{x:300-78,y:98,width:156,height:20,rx:4},fstamp);
+  sv('rect',{x:300-116,y:98,width:232,height:20,rx:4},fstamp);
   svt(fstamp,300,112,'6 OF 6 \u00b7 READY TO HAND OVER','','middle');
 }
 function paintFlow(k){
@@ -7201,7 +7201,7 @@ var TOOLS=[
   nw:'The survey found established CRM and planning tools still dominant, with AI as a supplement rather than a replacement'+chip('src-investmentnews-t3-2026','M')+'.',
   wrong:{you:'An automation acts on the file without you: that is its use and its risk.',meet:'It reads the record of the meeting in the file, not the room.',pub:'Nothing public is in a CRM record.',
          plan:'The CRM is a vendor under contract; the chat plan is a different question.',index:'Client records go to the CRM vendor’s servers, under a contract, never into a public index.'}},
- {n:'Planning-software agent',src:'file',dst:'vendor',
+ {n:'Planning-software agent',f:'Planning agent',src:'file',dst:'vendor',
   q:['The client’s whole plan file, already inside the software.',
      'Inside the planning vendor’s existing contract; ask whether the agent’s model is covered by it.',
      'Re-run the simulation yourself and compare; an agent that explains a result is not a check of it.',
@@ -7234,7 +7234,7 @@ TOOLS.forEach(function(t,i){
  o.w1=sv('path',{d:'M'+(LX+LW)+' '+cy+' L'+TX+' '+cy,'class':'s6-wire'},svg);
  o.w2=sv('path',{d:'M'+(TX+TW)+' '+cy+' L'+RX+' '+cy,'class':'s6-wire'},svg);
  o.box=sv('rect',{x:TX,y:y,width:TW,height:BH,rx:7,'class':'s6-tool'},svg);
- svt(svg,TX+12,cy+4,(i+1)+' · '+t.n,'s6-toolt');
+ svt(svg,TX+12,cy+4,(i+1)+' · '+(t.f||t.n),'s6-toolt');   /* the figure label; the readout and the key use the full name */
  o.tick=svt(svg,TX+TW-10,cy+4,'✓','s6-tick','end');
  function port(kind,x,w){
   var r=sv('rect',{x:x,y:y,width:w,height:BH,rx:7,'class':'s6-port '+kind,role:'button',tabindex:'0','data-drop':'','aria-pressed':'false'},svg);
@@ -7253,15 +7253,16 @@ function stopG(kind){
  var w=sv('g',{'class':'s6-stopw'},svg),p0=stopPos(0)[kind];
  w.setAttribute('transform','translate('+p0[0]+' '+p0[1]+')');
  var g=sv('g',{'class':'s6-stop'},w);
- if(kind===0){sv('rect',{x:-7,y:-10,width:14,height:20,rx:3,'class':'g'},g);sv('circle',{cx:3,cy:1,r:1.6,'class':'gd'},g)}
- else if(kind===1){sv('rect',{x:-9,y:-9,width:18,height:18,rx:2,'class':'g'},g);sv('rect',{x:-5,y:-5,width:4,height:4,'class':'gd'},g);sv('rect',{x:1,y:-5,width:4,height:4,'class':'gd'},g);sv('rect',{x:-5,y:1,width:4,height:4,'class':'gd'},g);sv('rect',{x:1,y:1,width:4,height:4,'class':'gd'},g)}
- else if(kind===2){sv('circle',{cx:-2,cy:-2,r:7,'class':'g'},g);sv('line',{x1:3,y1:3,x2:9,y2:9,'class':'gl'},g)}
- else {sv('rect',{x:-10,y:-6,width:20,height:13,rx:2,'class':'g'},g);sv('line',{x1:-4,y1:0.5,x2:4,y2:0.5,'class':'gl'},g)}
- svt(g,0,-15,QN[kind],'s6-stopt','middle');
+ if(kind===0){sv('rect',{x:-5,y:-8,width:10,height:16,rx:2.5,'class':'g'},g);sv('circle',{cx:2.5,cy:1,r:1.3,'class':'gd'},g)}
+ else if(kind===1){sv('rect',{x:-7,y:-7,width:14,height:14,rx:2,'class':'g'},g);sv('rect',{x:-4,y:-4,width:3,height:3,'class':'gd'},g);sv('rect',{x:1,y:-4,width:3,height:3,'class':'gd'},g);sv('rect',{x:-4,y:1,width:3,height:3,'class':'gd'},g);sv('rect',{x:1,y:1,width:3,height:3,'class':'gd'},g)}
+ else if(kind===2){sv('circle',{cx:-1.5,cy:-1.5,r:5.5,'class':'g'},g);sv('line',{x1:2.5,y1:2.5,x2:7,y2:7,'class':'gl'},g)}
+ else {sv('rect',{x:-8,y:-5,width:16,height:10,rx:2,'class':'g'},g);sv('line',{x1:-3,y1:0.5,x2:3,y2:0.5,'class':'gl'},g)}
+ /* In and Where sit on the two wires with the label above; Check and Keep sit in the gap under the tool with the label beside, so no label meets another row (2026-10-04) */
+ if(kind<2)svt(g,0,-13,QN[kind],'s6-stopt','middle');else svt(g,11,3.5,QN[kind],'s6-stopt','start');
  return {w:w,g:g};
 }
 var stops=[0,1,2,3].map(stopG),timers=[];
-function stopPos(i){var cy=ty(i)+BH/2;return [[LX+LW+18,cy],[RX-18,cy],[TX+TW+(RX-TX-TW)/2,cy],[LX+LW/2,cy-28]]}
+function stopPos(i){var cy=ty(i)+BH/2;return [[LX+LW+25,cy],[TX+TW+25,cy],[TX+12,cy+30],[TX+82,cy+30]]}
 
 /* ---------- state ---------- */
 var held=null,cur=-1,gated=false;
@@ -7433,19 +7434,19 @@ svt(svg,PX,12,'THE POLICY · MANAGED','sLib-h');
 var pol=sv('rect',{x:PX,y:PY,width:PW,height:96,rx:9,'class':'sLib-pol'},svg);
 sv('rect',{x:PX+PW-30,y:PY+8,width:18,height:14,rx:2,'class':'sLib-lock'},svg);
 sv('path',{d:'M'+(PX+PW-26)+' '+(PY+8)+' v-5 a5 5 0 0 1 10 0 v5','class':'sLib-lock'},svg);
-[['marketplaces','the firm’s only'],['plugins','15 enabled'],['models','2 approved'],['updates','automatic']].forEach(function(l,i){
+[['marketplaces','2 allowed'],['plugins','15 enabled'],['models','2 approved'],['updates','automatic']].forEach(function(l,i){
  var t=svt(svg,PX+10,PY+24+i*17,'','sLib-pl');
  var b=sv('tspan',{'font-weight':'700'},t);b.textContent=l[0]+': ';
  var c=sv('tspan',null,t);c.textContent=l[1];
 });
 /* the assistant */
-var AX=250,AW=184,AY=140,AH=134;
-svt(svg,AX,AY-6,'THE ASSISTANT · EVERY DESK TYPES HERE','sLib-h');
+var AX=250,AW=184,AY=140,AH=96;
+svt(svg,AX,AY-6,'THE ASSISTANT · EVERY DESK','sLib-h');
 var asst=sv('rect',{x:AX,y:AY,width:AW,height:AH,rx:9,'class':'sLib-asst'},svg);
 svt(svg,AX+10,AY+18,'chat','sLib-at');
 var apl=[svt(svg,AX+10,AY+36,'','sLib-ap'),svt(svg,AX+10,AY+49,'','sLib-ap'),svt(svg,AX+10,AY+62,'','sLib-ap')];
-var routeT=[0,1,2,3,4,5,6,7,8].map(function(i){return svt(svg,AX+10+(i%3)*58,AY+86+Math.floor(i/3)*14,'','sLib-route')});
 svt(svg,AX,AY+AH+22,'the route, in order','sLib-h');
+var routeT=[0,1,2,3,4,5,6,7,8].map(function(i){return svt(svg,AX,AY+AH+36+i*11.5,'','sLib-route')});   /* one step a line under its heading (2026-10-04) */
 /* the desks */
 var DX=470,DY=18;
 svt(svg,DX,12,'SIX DESKS','sLib-h');
@@ -7457,7 +7458,7 @@ for(var di=0;di<DESKS;di++){
  sv('rect',{x:x+34,y:y+52,width:24,height:5,rx:1,'class':'sLib-desk'},g);
  svt(g,x+8,y+14,'adviser '+(di+1),'sLib-dn');
  var v=svt(g,x+8,y+30,'library '+vtxt(deskV[di]),'sLib-dv');
- var ans=sv('rect',{x:x+8,y:y+36,width:76,height:11,rx:2,'class':'sLib-ans'},g);
+ var ans=sv('rect',{x:x+3,y:y+36,width:86,height:11,rx:2,'class':'sLib-ans'},g);
  var at=svt(g,x+46,y+44.5,'ANSWER + RECORD','sLib-anst','middle');
  deskEls.push({r:r,v:v,ans:ans,at:at,cx:x,cy:y+26});
 }

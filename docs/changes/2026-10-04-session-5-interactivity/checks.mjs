@@ -91,7 +91,7 @@ say(existsSync('docs/changes/2026-10-04-session-5-interactivity/plan.md') && exi
 { const { $, $$, click, txt } = load();
   say(!$('#s4Note') && !$('#s4Copy') && $('#s4FlowWrap').hidden && $$('#s4 .panel').length === 1, 'S5I-007', '§04: the travelling note and its copy button are gone; the strip waits hidden');
   $$('#s4Rows .s4-opt[data-c="1"]').forEach((b) => click(b));
-  say(!$('#s4FlowWrap').hidden && $$('#s4Flow .s4-fst').length === 5 && $$('#s4Flow .s4-fst.lit').length === 5 && /READY TO HAND OVER/.test(txt('#s4Flow')) && /README step 2/.test(txt('#s4Flow')) && /eight-digit number/.test(txt('#s4Flow')), 'S5I-007', '§04: three checkable fixes run the improved version across five stations to a stamp'); }
+  say(!$('#s4FlowWrap').hidden && $$('#s4Flow .s4-fst').length === 5 && $$('#s4Flow .s4-fst.lit').length === 5 && /READY TO HAND OVER/.test(txt('#s4Flow')) && /README/.test(txt('#s4Flow')) && /step 2: \[the client\]/.test(txt('#s4Flow')) && /eight-digit number/.test(txt('#s4Flow')), 'S5I-007', '§04: three checkable fixes run the improved version across five stations to a stamp'); }
 
 /* ---- §05 ---- */
 { const { $, $$, click, txt, input } = load();

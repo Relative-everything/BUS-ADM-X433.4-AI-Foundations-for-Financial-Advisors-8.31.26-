@@ -3,7 +3,8 @@
 Branch `claude/vibrant-hypatia-8iabd0`, from `9325811` (`main` after PR #43). The ask is in
 `notes-verbatim.md`; the preference model read from Sessions 1 to 4's revision history, the premise
 challenges and the five-tier measure are in `plan.md`; one row per change in `ledger.md` (S5I-001
-to S5I-020); 32 DOM assertions in `checks.mjs`; 30 real pointer drags in `drags.mjs`; the measure in
+to S5I-021); 32 DOM assertions in `checks.mjs`; 36 Chromium assertions in `drags.mjs` (22 real pointer
+drags and the rendered layout of §04, §06 and §07); the measure in
 `interactivity.mjs`. The 2026-10-02 folder's 57 checks and 962 section assertions still run against
 the page and pass.
 
@@ -152,6 +153,8 @@ each chipped to the Claude Code page that documents them.
   opened, and that one only in the source line and the key.
 - The Session 4 page was not touched; its numbers above are the comparison, not a to-do.
 - `verify-browser` rule 13 was not patched around; the failure is the container's, not the page's.
+- After the first commit, zoomed renders of every rebuilt figure were read by eye; the nine collisions
+  they showed (S5I-018, S5I-021) were fixed and are now asserted on rendered boxes in `drags.mjs`.
 
 ## 6. What you still need to do before class
 
@@ -169,7 +172,7 @@ each chipped to the Claude Code page that documents them.
 | Check | Result |
 |---|---|
 | `node docs/changes/2026-10-04-session-5-interactivity/checks.mjs` | 32 of 32 |
-| `node docs/changes/2026-10-04-session-5-interactivity/drags.mjs` (Chromium, 1280 and 380) | 30 of 30: every drag beat by real pointer, a wrong drop bounces, the stop icons sit inside the figure, the click path still works, no error, no overflow |
+| `node docs/changes/2026-10-04-session-5-interactivity/drags.mjs` (Chromium, 1280 and 380) | 36 of 36: every drag beat by real pointer, a wrong drop bounces, the stop icons sit inside the figure, no two labels overlap in §04, §06 or §07 and no marker rests on text, the click path still works, no error, no overflow |
 | `node docs/changes/2026-10-02-session-5-build/checks.mjs` | 57 of 57 (edits dated, DW-129) |
 | `section-tests/run-all.mjs session-5/index.html` | 962 assertions, 0 failed |
 | `clickall.mjs` (Chromium, 1280 and 380, Shift+U on and off) | clean; 34 screenshots |

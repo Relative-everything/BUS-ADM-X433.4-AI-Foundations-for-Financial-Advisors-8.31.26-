@@ -135,7 +135,7 @@ const inputOf = (k) => INPUTS.find((it) => it.fix === k);
   const key = $('#s4Key');
   say(key.style.display === 'block' && key.classList.contains('has') && FIXES.every((f) => key.textContent.includes(f.check) && key.textContent.includes(f.title)), 'S4-056', 'the key opens with the three checkable fixes in full');
   say(!$('#s4FlowWrap').hidden && $$('#s4Flow .s4-fst').length === 5 && $$('#s4Flow .s4-fst.lit').length >= 1, 'S4-057', 'three checkable fixes: the improved version starts running across five stations');
-  say(/README step 2/.test(txt('#s4Flow')) && /NOT IN NOTE/.test(txt('#s4Flow')) && /CONFLICT/.test(txt('#s4Flow')) && /eight-digit number/.test(txt('#s4Flow')) && /record/.test(txt('#s4Flow')) && /READY TO HAND OVER/.test(txt('#s4Flow')), 'S4-058', 'the five stations name the README step, the two rules, the brief, the test and the record, and the stamp reads ready to hand over');
+  say(/README/.test(txt('#s4Flow')) && /step 2: \[the client\]/.test(txt('#s4Flow')) && /NOT IN NOTE/.test(txt('#s4Flow')) && /CONFLICT/.test(txt('#s4Flow')) && /eight-digit number/.test(txt('#s4Flow')) && /record/.test(txt('#s4Flow')) && /READY TO HAND OVER/.test(txt('#s4Flow')), 'S4-058', 'the five stations name the README step, the two rules, the brief, the test and the record, and the stamp reads ready to hand over');
 
   /* the strip (the copy button left with the note) */
   const fsvg = $('#s4Flow svg');

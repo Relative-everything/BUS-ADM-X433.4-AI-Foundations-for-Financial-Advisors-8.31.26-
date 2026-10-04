@@ -35,6 +35,19 @@ for (const width of [1280, 380]) {
     await page.mouse.move(b.x, b.y); await page.mouse.up(); await page.waitForTimeout(150);
   };
   const txt = (sel) => page.evaluate((s) => { const e = document.querySelector(s); return e ? e.textContent.replace(/\s+/g, ' ').trim() : ''; }, sel);
+  /* Layout assertions that only a real renderer can make: visible texts in a figure must not overlap one another,
+     and a marker must not sit on a box it does not belong to. Boxes are compared in CSS pixels with a 0.5 px slack. */
+  const layout = (root) => page.evaluate((r) => {
+    const R = document.querySelector(r); const vis = (el) => { const cs = getComputedStyle(el); let o = 1, e = el; while (e && e !== R) { o *= parseFloat(getComputedStyle(e).opacity || '1'); e = e.parentElement; } return cs.visibility !== 'hidden' && cs.display !== 'none' && o > 0.05; };
+    const box = (el) => { const b = el.getBoundingClientRect(); return { x0: b.left + 0.5, y0: b.top + 0.5, x1: b.right - 0.5, y1: b.bottom - 0.5, w: b.width, h: b.height, el }; };
+    const hit = (a, b) => a.x0 < b.x1 && b.x0 < a.x1 && a.y0 < b.y1 && b.y0 < a.y1;
+    const texts = [...R.querySelectorAll('text')].filter((t) => t.textContent.trim() && vis(t)).map(box).filter((b) => b.w > 1 && b.h > 1);
+    const clashes = [];
+    for (let i = 0; i < texts.length; i++) for (let j = i + 1; j < texts.length; j++) if (hit(texts[i], texts[j])) clashes.push(texts[i].el.textContent.trim().slice(0, 24) + ' × ' + texts[j].el.textContent.trim().slice(0, 24));
+    return { texts: texts.length, clashes };
+  }, root);
+  const inside = (innerSel, outerSel) => page.evaluate(([i, o]) => { const a = document.querySelector(i).getBoundingClientRect(), b = document.querySelector(o).getBoundingClientRect(); return a.left >= b.left - 0.5 && a.right <= b.right + 0.5 && a.top >= b.top - 0.5 && a.bottom <= b.bottom + 0.5; }, [innerSel, outerSel]);
+  const apart = (aSel, bSel) => page.evaluate(([x, y]) => { const A = [...document.querySelectorAll(x)].map((e) => e.getBoundingClientRect()), B = [...document.querySelectorAll(y)].map((e) => e.getBoundingClientRect()); const hit = (a, b) => a.left + 0.5 < b.right && b.left + 0.5 < a.right && a.top + 0.5 < b.bottom && b.top + 0.5 < a.bottom; return !A.some((a) => B.some((b) => hit(a, b))); }, [aSel, bSel]);
   const has = (sel) => page.evaluate((s) => !!document.querySelector(s), sel);
 
   /* §01: a gate onto the gate slot, a rule onto the quality slot */
@@ -63,9 +76,26 @@ for (const width of [1280, 380]) {
   const stop = await page.evaluate(() => { const g = document.querySelector('#s6Fig .s6-stopw'); const r = g.getBoundingClientRect(); const svg = document.querySelector('#s6Fig svg').getBoundingClientRect(); return { inside: r.x >= svg.x && r.y >= svg.y && r.right <= svg.right && r.bottom <= svg.bottom, shown: !!document.querySelector('#s6Fig .s6-stop.show') }; });
   say(stop.inside && stop.shown, width, 'D-06c', '§06: the first stop icon sits inside the figure, shown, after the wiring');
 
+  await page.evaluate(() => { const c = (e) => e.dispatchEvent(new MouseEvent('click', { bubbles: true })); const L = (i) => document.querySelectorAll('#s6Fig .s6-port.src')[i], Rp = (i) => document.querySelectorAll('#s6Fig .s6-port.dst')[i];
+    [[0, 'you', 'plan'], [2, 'file', 'vendor'], [3, 'file', 'vendor'], [4, 'pub', 'index']].forEach(([i, sk, dk]) => { c(document.querySelector('#s6Src [data-k="' + sk + '"]')); c(L(i)); c(document.querySelector('#s6Dst [data-k="' + dk + '"]')); c(Rp(i)); }); });
+  await page.waitForTimeout(400);
+  const l6 = await layout('#s6Fig');
+  say(l6.clashes.length === 0 && l6.texts >= 30 && (await apart('#s6Fig .s6-stopw', '#s6Fig .s6-port, #s6Fig .s6-tool')), width, 'D-06d', `§06: with all five wired, no two labels overlap and no stop icon sits on a port or a tool (${l6.texts} texts${l6.clashes.length ? '; ' + l6.clashes.join(', ') : ''})`);
+
+  /* §04: the improved run; the token rests off the text and the stamp holds its words */
+  await page.evaluate(() => document.querySelectorAll('#s4Rows .s4-opt[data-c="1"]').forEach((b) => b.click()));
+  await page.waitForTimeout(3000);
+  const l4 = await layout('#s4Flow');
+  say(l4.clashes.length === 0 && (await apart('#s4Flow .s4-ftok', '#s4Flow .s4-ft1, #s4Flow .s4-ft2')) && (await inside('#s4Flow .s4-fstamp text', '#s4Flow .s4-fstamp rect')), width, 'D-04', `§04: the token rests clear of the station text and the stamp text sits inside its box${l4.clashes.length ? ' (' + l4.clashes.join(', ') + ')' : ''}`);
+
   /* §07: the unapproved plugin onto the policy */
   await drag('#libProps .sLib-prop', '#libPPolicy', 1, 0);
   say(/blocked by enterprise policy/.test(await txt('#libGovOut')), width, 'D-07', '§07: the unapproved plugin dragged onto the policy is refused in the documentation’s words');
+  await page.evaluate(() => document.querySelectorAll('#libPicks button')[1].click());
+  await page.waitForTimeout(2600);
+  const l7 = await layout('#libFig');
+  const routeN = await page.evaluate(() => [...document.querySelectorAll('#libFig .sLib-route.on')].length);
+  say(l7.clashes.length === 0 && routeN >= 5 && (await inside('#libFig .sLib-anst.on', '#libFig .sLib-ans.on')) && (await apart('#libFig .sLib-lock', '#libFig .sLib-pl')), width, 'D-07b', `§07: after the transcript question, ${routeN} route lines, no label overlaps another, the desk tag sits in its box, the lock sits clear of the policy lines${l7.clashes.length ? ' (' + l7.clashes.join(', ') + ')' : ''}`);
 
   /* §08: a moment into a bucket, then a reason to the top */
   await drag('#s7List .chip', '#s7Boxes .lbox', 0, 0);
