@@ -56,8 +56,9 @@ const GENS = ['a 2023 model', 'a 2025 model', 'a 2026 model', 'the next one'];
   say(panels.length === 4 && panels[0].classList.contains('pace') && panels[1].getAttribute('data-task') === 't-s0' && panels[2].classList.contains('s0-frame') && /The Coles, in two lines/.test(panels[3].textContent),
     'S0-006', 'four panels in order: pace, bridge (the data-task root), frame, the Coles');
   const pace = txt('#paceOut');
-  say(/54 min\s*10 core sections/.test(pace) && /66 min\s*5 appendix sections/.test(pace) && /120 min\s*everything/.test(pace), 'S0-007', '#paceOut renders 54 min / 10 core sections, 66 min / 5 appendix sections, 120 min / everything');
-  say($$('#paceOut .pgrid .pcell').length === 3 && $$('#paceOut .pcell b').map((b) => b.textContent).join('|') === '54 min|66 min|120 min', 'S0-008', 'the pacing readout uses the house pgrid/pcell markup with the three totals');
+  /* 2026-10-04 (S5I-002): 11 core sections, 59 minutes, 125 in all */
+  say(/59 min\s*11 core sections/.test(pace) && /66 min\s*5 appendix sections/.test(pace) && /125 min\s*everything/.test(pace), 'S0-007', '#paceOut renders 59 min / 11 core sections, 66 min / 5 appendix sections, 125 min / everything');
+  say($$('#paceOut .pgrid .pcell').length === 3 && $$('#paceOut .pcell b').map((b) => b.textContent).join('|') === '59 min|66 min|125 min', 'S0-008', 'the pacing readout uses the house pgrid/pcell markup with the three totals');
   const tb = $$('#tierbar button');
   say(tb.length === 4 && tb.map((b) => b.textContent).join('|') === 'Foundational|+ Standard|+ Advanced|Core only', 'S0-009', '#tierbar has the four buttons with the exact Session 4 labels');
   say(tb[0].getAttribute('data-level') === '0' && tb[1].getAttribute('data-level') === '1' && tb[2].getAttribute('data-level') === '2' && tb[3].hasAttribute('data-core') && tb[3].classList.contains('core') && !tb[3].hasAttribute('data-level'),

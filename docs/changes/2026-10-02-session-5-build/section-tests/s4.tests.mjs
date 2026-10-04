@@ -63,9 +63,10 @@ const inputOf = (k) => INPUTS.find((it) => it.fix === k);
   say(big === 'Three inputs broke the brief. For each, two fixes sound reasonable. Only the ones a reader can check change the result.' && big.split(/\s+/).length < 30, 'S4-005', 'the thesis line is the spec\'s and under 30 words (' + big.split(/\s+/).length + ')');
   const roots = $$('#s4 [data-task]');
   say(roots.length === 1 && roots[0].getAttribute('data-task') === 't-s4' && roots[0].getAttribute('data-comp') === 'builder-assembler', 'S4-006', 'exactly one data-task root, t-s4, family builder-assembler');
-  say(/Do this now: 3 minutes/.test(txt('#s4 .panel[data-task] .do')) && txt('#s4 .panel[data-task] h4') === 'Pick One Fix Per Break' && /Both fixes sound like good advice\. Pick one per row and watch the six inputs re-run\./.test(txt('#s4 .panel[data-task] .hint')),
+  /* 2026-10-04 (docs/changes/2026-10-04-session-5-interactivity, S5I-007): the travelling note left; the improved version runs across five stations inside the board panel */
+  say(/Do this now: 4 minutes/.test(txt('#s4 .panel[data-task] .do')) && txt('#s4 .panel[data-task] h4') === 'Pick One Fix Per Break' && /Both fixes sound like good advice\. Pick one per row and watch the six inputs re-run\./.test(txt('#s4 .panel[data-task] .hint')),
     'S4-007', 'beat 1 carries its Do-this-now line, heading and hint');
-  say(/Then this: 2 minutes/.test(txt('#s4 .panel:not([data-task]) .do')) && /The Note That Travels With the Improved Version/.test(txt('#s4 .panel:not([data-task]) h4')), 'S4-008', 'beat 2 carries its Then-this line and heading');
+  say($$('#s4 .panel').length === 1 && !!$('#s4FlowWrap') && $('#s4FlowWrap').hidden && /How the improved version runs/.test(txt('#s4FlowWrap')), 'S4-008', 'one panel; the run strip waits hidden inside it');
 
   /* the rows, from S5FIXES in order */
   const rows = $$('#s4Rows .s4-row');
@@ -94,9 +95,7 @@ const inputOf = (k) => INPUTS.find((it) => it.fix === k);
   say(out.getAttribute('aria-live') === 'polite' && /3 of 6 inputs pass as the package stands/.test(txt('#s4Out')) && !out.classList.contains('has'), 'S4-027', 'the readout is live and waits for a pick');
   const gate = $('#s4 .check[data-gate="g5"]');
   say(!!gate && !gate.classList.contains('done') && !$('#s4Key').style.display.includes('block'), 'S4-028', 'the gate g5 is open and the key hidden at load');
-  const note = $('#s4Note');
-  say(note.getAttribute('aria-live') === 'polite' && /Change note: Meeting-prep brief/.test(txt('#s4Note')) && (txt('#s4Note').match(/Changed:/g) || []).length === 3 && /Re-tested on all six inputs: 3 of 6\. 3 of 3 rows still have no fix picked\./.test(txt('#s4Note')),
-    'S4-029', 'the note renders from S5PKG and the three rows at load, with its honest last line');
+  say(!!$('#s4Flow') && $$('#s4Flow svg').length === 0 && !!$('#s4Again') && $('#s4Again').textContent === 'Run it again', 'S4-029', 'the strip is not drawn until it is needed; the run-again button is in place');
 
   /* row 1: the vague pick */
   click(vagueBtn(0));
@@ -109,7 +108,7 @@ const inputOf = (k) => INPUTS.find((it) => it.fix === k);
   say(/3 of 6 inputs pass\./.test(txt('#s4Out')) && /1 ✗ The missing appraisal: option a, too vague\./.test(txt('#s4Out')) && txt('#s4Out').includes(FIXES[0].whyVague) && /2 rows still to pick\./.test(txt('#s4Out')),
     'S4-033', 'the readout names the pick, its letter, the verdict and the why');
   say(!gate.classList.contains('done'), 'S4-034', 'one pick does not mark the gate');
-  say(!/NOT IN NOTE/.test(txt('#s4Note')) && txt('#s4Note').includes('The new rule: ' + FIXES[0].vague), 'S4-035', 'the note carries the vague rule and no NOT IN NOTE while the gap fix is vague');
+  say($('#s4FlowWrap').hidden, 'S4-035', 'the strip stays hidden while a fix is vague');
 
   /* row 1: change the pick to the checkable one */
   click(checkBtn(0));
@@ -120,8 +119,7 @@ const inputOf = (k) => INPUTS.find((it) => it.fix === k);
   say(tile('in2').querySelector('.s4-tbad').classList.contains('gone') && tile('in2').querySelector('.s4-tnow').textContent === 'now: NOT IN NOTE' && tile('in2').querySelector('.s4-tnow').classList.contains('on'),
     'S4-043', 'the broken line is struck through and the tile writes "now: NOT IN NOTE", read from the rule');
   say(/^4 of 6 pass$/.test(txt('#s4Fig .s4-cnt')) && /4 of 6 pass/.test(svg.getAttribute('aria-label')), 'S4-044', 'the counter and aria-label read 4 of 6');
-  say(/NOT IN NOTE/.test(txt('#s4Note')) && txt('#s4Note').includes('Changed: The missing appraisal. Why: The same note with the appraisal sentence removed. The new rule: If a fact is not in the note, write NOT IN NOTE in its place. Never estimate a value.'),
-    'S4-045', 'the note includes NOT IN NOTE once the gap fix is checkable, in the spec\'s sentence shape');
+  say($('#s4FlowWrap').hidden && /4 of 6 pass/.test(txt('#s4Fig .s4-cnt')), 'S4-045', 'one checkable fix is not yet the improved version: the strip stays hidden at 4 of 6');
 
   /* rows 2 and 3 */
   click(checkBtn(1));
@@ -136,19 +134,20 @@ const inputOf = (k) => INPUTS.find((it) => it.fix === k);
   say(gate.classList.contains('done') && gate.querySelector('.mk').textContent === '✓', 'S4-055', 'three picks: the gate g5 ticks');
   const key = $('#s4Key');
   say(key.style.display === 'block' && key.classList.contains('has') && FIXES.every((f) => key.textContent.includes(f.check) && key.textContent.includes(f.title)), 'S4-056', 'the key opens with the three checkable fixes in full');
-  say(/Re-tested on all six inputs: 6 of 6\./.test(txt('#s4Note')) && $('#s4Note .s4-nl').classList.contains('ok') && !/too vague/.test(txt('#s4Note')), 'S4-057', 'the note\'s last line reads 6 of 6');
-  say(txt('#s4Note').includes('Changed: The two stories. Why: The note plus a pasted email that says sale talks have started. The new rule: If two statements in the note conflict, quote both under a heading CONFLICT and do not resolve it.'), 'S4-058', 'row 2 of the note is assembled from the data');
+  say(!$('#s4FlowWrap').hidden && $$('#s4Flow .s4-fst').length === 5 && $$('#s4Flow .s4-fst.lit').length >= 1, 'S4-057', 'three checkable fixes: the improved version starts running across five stations');
+  say(/README step 2/.test(txt('#s4Flow')) && /NOT IN NOTE/.test(txt('#s4Flow')) && /CONFLICT/.test(txt('#s4Flow')) && /eight-digit number/.test(txt('#s4Flow')) && /record/.test(txt('#s4Flow')) && /READY TO HAND OVER/.test(txt('#s4Flow')), 'S4-058', 'the five stations name the README step, the two rules, the brief, the test and the record, and the stamp reads ready to hand over');
 
-  /* copy */
-  const copyB = $('#s4Copy'), msg = $('#s4Msg');
-  say(!!copyB && copyB.textContent === 'Copy the change note' && copyB.getAttribute('type') === 'button' && msg.classList.contains('cmsg') && msg.getAttribute('aria-live') === 'polite', 'S4-060', 'the copy button and its live message span are in place');
-  click(copyB);
-  await wait(30);
-  const copied = copiedText();
-  say(/^Change note: Meeting-prep brief\n/.test(copied) && /NOT IN NOTE/.test(copied) && /CONFLICT/.test(copied) && /\[the client\]/.test(copied) && /Re-tested on all six inputs: 6 of 6\.\n$/.test(copied), 'S4-061', 'copy writes the whole note to the clipboard, head to last line');
-  say((copied.match(/^Changed: /gm) || []).length === 3 && copied.split('\n').every((l) => !/undefined|NaN/.test(l)), 'S4-062', 'the copied note has three Changed lines and no undefined');
-  say(msg.textContent === 'Copied.' && !/Copied with/.test(txt('#s4Out')), 'S4-063', 'the message says Copied. and the readout raises no flag when all rows are picked');
-  say(!/—|&mdash;|–|&ndash;/.test(copied), 'S4-064', 'no em or en dash in the copied text');
+  /* the strip (the copy button left with the note) */
+  const fsvg = $('#s4Flow svg');
+  say(!!fsvg && fsvg.getAttribute('role') === 'img' && /^0 0 600 \d+$/.test(fsvg.getAttribute('viewBox')) && $$('#s4Flow svg').length === 1, 'S4-060', 'the strip is one viewBox SVG, role img, built once');
+  say(!$('#s4Copy') && !$('#s4Note'), 'S4-061', 'no copy button and no travelling note remain');
+  await wait(2700);
+  say($$('#s4Flow .s4-fst.lit').length === 5 && /READY TO HAND OVER/.test(txt('#s4Flow')), 'S4-059', 'after the run every station is lit and the stamp shows');
+  click($('#s4Again'));
+  await wait(60);
+  say(!$('#s4FlowWrap').hidden && $$('#s4Flow svg').length === 1, 'S4-062', 'Run it again replays on the same SVG');
+  say(!/undefined|NaN/.test(txt('#s4Flow')) && $$('#s4Flow .s4-ftok').length === 1, 'S4-063', 'one token, no undefined in the strip');
+  say(!/—|&mdash;|–|&ndash;/.test(txt('#s4Flow')), 'S4-064', 'no em or en dash in the strip');
 
   /* change row 2 back to vague: the figure keeps showing the truth */
   click(vagueBtn(1));
@@ -156,7 +155,7 @@ const inputOf = (k) => INPUTS.find((it) => it.fix === k);
   say(tile('in4').classList.contains('fail') && stampOf('in4') === '✗ FAIL' && tile('in4').querySelector('.s4-tnow').textContent === '' && !tile('in4').querySelector('.s4-tbad').classList.contains('gone'), 'S4-070', 'swapping a row back to vague returns its input to ✗ and un-strikes the line');
   say(/^5 of 6 pass$/.test(txt('#s4Fig .s4-cnt')) && !svg.classList.contains('all') && !out.classList.contains('has'), 'S4-071', 'the counter drops to 5 of 6');
   say(/Swap row 2: pick the other option\./.test(txt('#s4Out')) && /5 of 6 inputs pass\./.test(txt('#s4Out')), 'S4-072', 'the readout says which row to swap');
-  say(/Re-tested on all six inputs: 5 of 6, see the rows still marked too vague\./.test(txt('#s4Note')) && $('#s4Note .s4-nl').classList.contains('bad'), 'S4-073', 'the note\'s last line names the rows still too vague');
+  say($('#s4FlowWrap').hidden, 'S4-073', 'the strip hides again when a row goes back to vague');
   say(gate.classList.contains('done'), 'S4-074', 'the gate stays ticked');
 
   /* chips, dashes, forbidden words, a11y */
@@ -170,7 +169,7 @@ const inputOf = (k) => INPUTS.find((it) => it.fix === k);
   say($$('#s4 ul.pts li').length === 3 && /A model cannot be careful\./.test(txt('#s4 ul.pts')) && /Some fixes are not prompt fixes\./.test(txt('#s4 ul.pts')) && /Defend the change with the input\./.test(txt('#s4 ul.pts')), 'S4-085', 'three bullets with the spec\'s leads');
   say($$('#s4 ul.pts li').every((li) => (li.textContent.match(/[.!?](\s|$)/g) || []).length <= 2), 'S4-086', 'each bullet is at most two sentences');
   say(/The fixes, the inputs and the re-runs are constructed for this lesson/.test(txt('#s4 p.src')), 'S4-087', 'the source line says the material is constructed');
-  say(/Pick one fix for each of the three breaks, then copy the change note\./.test(txt('#s4 .check .ct')), 'S4-088', 'the gate text is the spec\'s');
+  say(/Pick one fix for each of the three breaks, then watch the improved version run\./.test(txt('#s4 .check .ct')), 'S4-088', 'the gate text is the spec\'s (2026-10-04 wording)');
   const prose = ['#s4 p.big', '#s4 .hint', '#s4 ul.pts', '#s4 p.src', '#s4 .check .ct', '#s4 .s4-figlab', '#s4 .s4-figkey'].map((s) => $$(s).map((e) => e.textContent).join(' ')).join(' ').replace(/\s+/g, ' ').trim().split(' ').length;
   say(prose < 180, 'S4-089', 'static prose outside the interactions is under 180 words (' + prose + ')');
   say($$('#s4 .hint').every((h) => h.textContent.split(/\s+/).length <= 20), 'S4-090', 'each hint is one line');
@@ -187,10 +186,8 @@ const inputOf = (k) => INPUTS.find((it) => it.fix === k);
   say(/^3 of 6 pass$/.test(txt('#s4Fig .s4-cnt')) && ['in2', 'in4', 'in5'].every((id) => tile(id).classList.contains('fail') && stampOf(id) === '✗ FAIL'), 'S4-101', 'the board still reads 3 of 6 with all three inputs failing');
   say(/Swap rows 1, 2 and 3: pick the other option in each\./.test(txt('#s4Out')) && !$('#s4Out').classList.contains('has'), 'S4-102', 'the readout asks for all three rows to be swapped');
   say($('#s4Key').style.display === 'block', 'S4-103', 'the key opens after three picks of any quality');
-  say(/Re-tested on all six inputs: 3 of 6, see the rows still marked too vague\./.test(txt('#s4Note')) && !/NOT IN NOTE/.test(txt('#s4Note')), 'S4-104', 'the note is honest: 3 of 6, no NOT IN NOTE');
-  click($('#s4Copy'));
-  await wait(30);
-  say(!/Copied with/.test(txt('#s4Out')), 'S4-105', 'copying with three picks raises no unpicked flag');
+  say($('#s4FlowWrap').hidden && !$('#s4Flow svg'), 'S4-104', 'three vague picks: the strip never ran');
+  say(!/Copied with/.test(txt('#s4Out')) && !$('#s4Copy'), 'S4-105', 'no copy flag can appear: there is no copy button');
   say(!/\b(undefined|NaN)\b/.test(txt('#s4')), 'S4-106', 'no undefined or NaN');
   say(errs.length === 0, 'S4-107', 'zero window errors');
 }
@@ -198,13 +195,11 @@ const inputOf = (k) => INPUTS.find((it) => it.fix === k);
 /* ================= run 3: copy before all picks, and the §03 line ================= */
 {
   const { errs, $, txt, click, checkBtn } = load({ inject: 'S5STATE.s3={broke:["in2","in4","in5"],called:2};' });
-  click($('#s4Copy'));
-  await wait(30);
-  say(/Copied with 3 of 3 rows unpicked\. Pick all three, then copy again\./.test(txt('#s4Out')), 'S4-110', 'copying with nothing picked flags the unpicked rows');
+  say(!$('#s4Copy') && /3 of 6 inputs pass as the package stands/.test(txt('#s4Out')), 'S4-110', 'with nothing picked the readout waits (the copy flag went with the copy button)');
   click(checkBtn(2));
   await wait(50);
   say(/You found 2 of the three in §03\./.test(txt('#s4Out')), 'S4-111', 'when §03 was run, the readout\'s first line reports the §03 result');
-  say(!/Copied with/.test(txt('#s4Out')), 'S4-112', 'a pick clears the copy flag');
+  say(!/Copied with/.test(txt('#s4Out')) && $('#s4FlowWrap').hidden, 'S4-112', 'one pick: no flag, and the strip waits');
   say(!$('#s4 .check[data-gate="g5"]').classList.contains('done'), 'S4-113', 'one pick does not mark the gate');
   say(errs.length === 0, 'S4-114', 'zero window errors');
 }
@@ -217,7 +212,7 @@ const inputOf = (k) => INPUTS.find((it) => it.fix === k);
   say($$('#s4Rows button[data-c="1"]').every((b) => b.classList.contains('act') && b.classList.contains('ok') && b.getAttribute('aria-pressed') === 'true') && $$('#s4Rows button[data-c="0"]').every((b) => !b.classList.contains('act')), 'S4-121', 'the override picks the checkable option in every row');
   say(/^6 of 6 pass$/.test(txt('#s4Fig .s4-cnt')) && ['in2', 'in4', 'in5'].every((id) => tile(id).classList.contains('pass') && stampOf(id) === '✓ PASS'), 'S4-122', 'the board reads 6 of 6 under the override');
   say($('#s4 .check[data-gate="g5"]').classList.contains('done') && $('#s4Key').style.display === 'block' && $('#s4Key').classList.contains('has'), 'S4-123', 'the gate ticks and the key opens');
-  say(/6 of 6\. Each change names a word a reader can search for/.test(txt('#s4Out')) && /Re-tested on all six inputs: 6 of 6\./.test(txt('#s4Note')), 'S4-124', 'readout and note read the finished state');
+  say(/6 of 6\. Each change names a word a reader can search for/.test(txt('#s4Out')) && !$('#s4FlowWrap').hidden && $$('#s4Flow .s4-fst.lit').length === 5, 'S4-124', 'readout and strip read the finished state under the override');
   say($$('#s4 .s4-vd .s5stamp.ok').length === 3, 'S4-125', 'all three rows are stamped CHECKABLE');
   say(errs.length === 0, 'S4-126', 'zero window errors under the override' + (errs.length ? ': ' + errs.slice(0, 3).join(' | ') : ''));
   /* reduced motion: a pick lands at once, no shake class */

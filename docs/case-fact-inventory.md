@@ -107,22 +107,22 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**686 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**691 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
 | `votingUnits` | 101 |
 | `endowmentIntent` | 77 |
-| `claireAge` | 61 |
-| `marriedYears` | 61 |
+| `claireAge` | 64 |
+| `marriedYears` | 64 |
 | `tbills` | 39 |
-| `seedUnits` | 38 |
+| `seedUnits` | 39 |
 | `employees` | 38 |
 | `nonVotingUnits` | 35 |
-| `megAge` | 33 |
-| `saleUnits` | 24 |
+| `megAge` | 34 |
 | `nathanAge` | 24 |
+| `saleUnits` | 23 |
 | `charDeductible` | 21 |
 | `inheritedIra` | 18 |
 | `david403b` | 18 |
@@ -131,11 +131,11 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `revolver` | 14 |
 | `estateTopRate` | 12 |
 | `nathanShort` | 11 |
-| `ltcgTop` | 6 |
-| `corpRate` | 6 |
+| `ltcgTop` | 7 |
 | `davidAge` | 4 |
-| `ilCorpRate` | 4 |
+| `corpRate` | 4 |
 | `megApplicableAge` | 3 |
+| `ilCorpRate` | 3 |
 | `perUnitDividend` | 2 |
 | `deMinimisLoan` | 2 |
 | `giftLoanNII` | 2 |

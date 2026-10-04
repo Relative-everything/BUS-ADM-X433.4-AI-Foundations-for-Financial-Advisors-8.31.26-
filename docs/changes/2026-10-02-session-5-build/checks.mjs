@@ -28,11 +28,12 @@ say(true, 'S5B-001', 'the change folder exists and this file runs');
 /* ---- the shell ---- */
 { const secs = $$('section.slide'), core = secs.filter((s) => !s.classList.contains('apx') && !s.classList.contains('apxdiv')), apx = secs.filter((s) => s.classList.contains('apx'));
   const mins = (list) => list.reduce((a, s) => a + parseInt((s.querySelector('.mins') || {}).textContent || '0', 10), 0);
-  say(core.length === 10 && mins(core) === 54 && apx.length === 5 && mins(apx) === 66 && w.__coreMins === 54 && /54 min/.test(txt('#paceOut')),
-    'S5B-002', `the shell: 10 core sections / 54 min, 5 appendix / 66 min, __coreMins 54, the pacing readout (found ${core.length}/${mins(core)} and ${apx.length}/${mins(apx)})`);
+  /* 2026-10-04 (docs/changes/2026-10-04-session-5-interactivity, S5I-002): §07 One Repository, Every Desk joined the core, 10/54 became 11/59 */
+  say(core.length === 11 && mins(core) === 59 && apx.length === 5 && mins(apx) === 66 && w.__coreMins === 59 && /59 min/.test(txt('#paceOut')),
+    'S5B-002', `the shell: 11 core sections / 59 min, 5 appendix / 66 min, __coreMins 59, the pacing readout (found ${core.length}/${mins(core)} and ${apx.length}/${mins(apx)})`);
   say($$('#tierbar button').length === 4 && $('#caseBtn') && /CASE:BEGIN cole-household v4\.0/.test(html) && /SOURCES:BEGIN v1/.test(html) && /APXBUDGET:BEGIN/.test(html) && /APXPANEL:BEGIN/.test(html),
     'S5B-002', 'tier bar, case button, and the four generated regions are present');
-  say($$('[data-task]').length === 15 && $$('[data-gate]').length === 15, 'S5B-002', `15 interaction roots and 15 gates (found ${$$('[data-task]').length} / ${$$('[data-gate]').length})`); }
+  say($$('[data-task]').length === 16 && $$('[data-gate]').length === 16, 'S5B-002', `16 interaction roots and 16 gates (found ${$$('[data-task]').length} / ${$$('[data-gate]').length})`); }
 
 /* ---- the lists and the lock (file-level) ---- */
 say(/'session-5'/.test(readFileSync('scripts/build-appendix.mjs', 'utf8')) && /'session-5'/.test(readFileSync('scripts/verify-editorial.mjs', 'utf8')) && /session-5\/index\.html/.test(readFileSync('scripts/verify-migration.mjs', 'utf8')),
@@ -79,7 +80,8 @@ say(existsSync('instructor-notes/session-5.md') && existsSync('instructor-notes/
   say(/Retired/i.test(txt('#s1Out')) && /Requests to retired models will fail/.test(txt('#s1Out')) && done('g2'), 'S5B-014', '§01: past 30 November reads retired with the vendor\'s sentence; the gate marks');
   click(pins[1]); say(/Active/i.test(txt('#s1Out')) && /28 September 2027/.test(txt('#s1Out')), 'S5B-014', '§01: pin B reads active with its not-sooner-than date');
   click(pins[2]); say(/whatever is current|untested/i.test(txt('#s1Out')), 'S5B-014', '§01: pin C reads untested');
-  copied = ''; click($('#s1Copy')); say(/Model and date tested/.test(copied), 'S5B-015', '§01: the maintenance card copies'); }
+  /* 2026-10-04: the maintenance card became The Gate and the Rubric (S5I-004); the copy now carries the two lines */
+  copied = ''; click($('#s1Copy')); say(/two newest generations/.test(copied) && /five checks/.test(copied), 'S5B-015', '§01: the gate and rubric lines copy'); }
 
 /* ---- E2 ---- */
 { const models = $$('#e2Models button'); click(models[0]); click($('#e2Run'));
@@ -119,7 +121,8 @@ say(existsSync('instructor-notes/session-5.md') && existsSync('instructor-notes/
   const rows = $$('#s4Rows > *');
   rows.forEach((r) => { const opts = [...r.querySelectorAll('button')]; const check = opts.find((b) => /NOT IN NOTE|CONFLICT|README step 2/.test(b.textContent)); click(check || opts[0]); });
   say(done('g5') && /6 of 6/.test(txt('#s4Fig') + txt('#s4Out')), 'S5B-021', '§04: three checkable picks read 6 of 6 and mark g5');
-  copied = ''; click($('#s4Copy')); say(/NOT IN NOTE/.test(copied), 'S5B-022', '§04: the change note copies with the rule'); }
+  /* 2026-10-04 (S5I-007): the travelling note left; when all three fixes are checkable the improved version runs across five stations */
+  say(!$('#s4FlowWrap').hidden && $$('#s4Flow .s4-fst').length === 5 && $$('#s4Flow .s4-fst.lit').length === 5 && /READY TO HAND OVER/.test(txt('#s4Flow')), 'S5B-022', '§04: the improved version runs across five lit stations and stamps ready to hand over'); }
 
 /* ---- E4 ---- */
 { for (let i = 0; i < 5; i++) { const opts = $$('#sE4 .btn.sel').filter((b) => !b.disabled && b.getAttribute('aria-disabled') !== 'true' && /Understood|Missed|package failed/i.test(b.textContent)); click(opts[0]); click($('#e4Next')); }
@@ -138,20 +141,24 @@ say(existsSync('instructor-notes/session-5.md') && existsSync('instructor-notes/
   say(/Saves 45 minutes/.test(txt('#s5MyOut')) && /6 hours/.test(txt('#s5MyOut')), 'S5B-026', '§05: the defaults read saves 45 minutes a time and 6 hours a month'); }
 
 /* ---- §06 ---- */
-{ const tools = $$('#s6Tools button'); click(tools[1]);
-  say(/42\.9%/.test(txt('#s6Out')) && /14/.test(txt('#s6Out')) && /In/.test(txt('#s6Out')) && /Keep/.test(txt('#s6Out')), 'S5B-027', '§06: the note-taker card carries the survey shares and the four questions');
-  click(tools[4]);
-  say(done('g7') && /8%/.test(txt('#s6Out')) && /15%/.test(txt('#s6Out')), 'S5B-027', '§06: AI search carries the Pew rates; two tools mark g7');
+/* 2026-10-04 (S5I-009): §06 is Wire the Desk; a tool opens when both its ports are right, by drag or by chip-then-port */
+{ const L = (i) => $$('#s6Fig .s6-port.src')[i], R = (i) => $$('#s6Fig .s6-port.dst')[i];
+  const wire = (i, sk, dk) => { click($('#s6Src [data-k="' + sk + '"]')); click(L(i)); click($('#s6Dst [data-k="' + dk + '"]')); click(R(i)); };
+  wire(1, 'meet', 'vendor');
+  say(/42\.9%/.test(txt('#s6Out')) && /14/.test(txt('#s6Out')) && /In/.test(txt('#s6Out')) && /Keep/.test(txt('#s6Out')), 'S5B-027', '§06: the wired note-taker carries the survey shares and the four questions');
+  wire(0, 'you', 'plan'); wire(2, 'file', 'vendor'); wire(3, 'file', 'vendor'); wire(4, 'pub', 'index');
+  say(done('g7') && /8%/.test(txt('#s6Out')) && /15%/.test(txt('#s6Out')) && $$('#s6Fig .s6-wire.lit').length === 10, 'S5B-027', '§06: all five wired marks g7; AI search, wired last, carries the Pew rates');
   say(!/Jump|Zocks|Zeplyn|Wealthbox|Redtail|RightCapital/.test(txt('#s6 .panel') + txt('#s6 ul.pts') + txt('#s6 p.big')), 'S5B-027', '§06: no vendor is named outside the source line'); }
 
 /* ---- §07 ---- */
 { const chips = $$('#s7List .chip'), boxes = $$('#s7Boxes .lbox');
   const key = ['tool', 'you', 'you', 'tool', 'you', 'tool', 'you', 'tool'];
   chips.forEach((c, i) => { click(c); click(boxes[key[i] === 'tool' ? 0 : 1]); });
-  say(chips.length === 8 && done('g8') && /Four drafts/.test(txt('#s7Fig') + txt('#s7Out') + txt('#s7Key')), 'S5B-028', '§07: eight moments placed marks g8 with the closing caption');
-  click($('#s7Show'));
-  say(/32%/.test(txt('#s7FactOut')) && /21%/.test(txt('#s7FactOut')) && /7%/.test(txt('#s7FactOut')), 'S5B-029', '§07: the three survey facts show');
-  say(!/\$\s?\d/.test(txt('#s7')), 'S5B-028', '§07: no dollar figure in the section'); }
+  say(chips.length === 8 && done('g8') && /Four drafts/.test(txt('#s7Fig') + txt('#s7Out') + txt('#s7Key')), 'S5B-028', '§08: eight moments placed marks g8 with the closing caption');
+  /* 2026-10-04 (S5I-010): the three bars became Rank the Reasons; the facts show after a lock and a reveal */
+  click($('#s7RankLock')); click($('#s7Show'));
+  say(/32%/.test(txt('#s7FactOut')) && /21%/.test(txt('#s7FactOut')) && /7%/.test(txt('#s7FactOut')) && /of 6 in place/.test(txt('#s7RankFig')), 'S5B-029', '§08: the three survey facts show after the ranking is locked and revealed');
+  say(!/\$\s?\d/.test(txt('#s7')), 'S5B-028', '§08: no dollar figure in the section'); }
 
 /* ---- E5 ---- */
 { const v1 = $$('#e5Vote1 button'); say($('#e5Cases') && ($('#e5Cases').hidden || $('#e5Cases').classList.contains('hidden') || $('#e5Cases').style.display === 'none' || $('#e5Cases').disabled), 'S5B-030', 'E5: the cases button waits for the first vote');
@@ -179,7 +186,7 @@ say(existsSync('instructor-notes/session-5.md') && existsSync('instructor-notes/
   const dom2 = new JSDOM(html, { runScripts: 'dangerously', pretendToBeVisual: true });
   dom2.window.addEventListener('error', (e) => errs.push(String(e.error || e.message)));
   dom2.window.document.dispatchEvent(new dom2.window.KeyboardEvent('keydown', { key: 'U', shiftKey: true, bubbles: true }));
-  say(errs.length === 0 && dom2.window.document.querySelectorAll('.check.done').length === 15, 'S5B-034', 'a fresh page: Shift+U ticks all 15 gates with no error'); }
+  say(errs.length === 0 && dom2.window.document.querySelectorAll('.check.done').length === 16, 'S5B-034', 'a fresh page: Shift+U ticks all 16 gates with no error'); }
 
 console.log(`\nsummary: ${fails ? fails + ' failed' : 'all passed'}`);
 process.exit(fails ? 1 : 0);

@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**46 of 134 works are moving targets, feeding 179 of
-461 references.**
+**52 of 140 works are moving targets, feeding 195 of
+480 references.**
 
 
 ---
@@ -221,7 +221,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor lifecycle schedule` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-02 |
+| Last retrieved | 2026-10-04 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
 | References | 5 |
@@ -286,6 +286,30 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-4 §03 |
 | References | 4 |
 | Feeds | S4 `#s3` ×3 · S4 `#s9` |
+
+### `src-claude-code-skills` — Skills
+
+| | |
+|---|---|
+| Figure class | `vendor product documentation` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-04 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | each teaching of Session 5 |
+| References | 4 |
+| Feeds | S5 `#s1` ×2 · S5 `#sLib` ×2 |
+
+### `src-claude-code-settings` — Settings files and precedence
+
+| | |
+|---|---|
+| Figure class | `vendor product documentation` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-04 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | each teaching of Session 5 |
+| References | 4 |
+| Feeds | S5 `#s1` ×2 · S5 `#sLib` ×2 |
 
 ### `src-personalization` — Understanding Claude's personalization features
 
@@ -371,6 +395,30 @@ version string means the version is not tracking the data.
 | References | 3 |
 | Feeds | S4 `#sRSP` ×2 · S4 `#s9` |
 
+### `src-anthropic-models-overview` — Models overview
+
+| | |
+|---|---|
+| Figure class | `vendor model lineup` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-04 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | each teaching of Session 5 |
+| References | 3 |
+| Feeds | S5 `#s1` ×3 |
+
+### `src-claude-code-org` — Manage Claude Code plugins for your organization
+
+| | |
+|---|---|
+| Figure class | `vendor product documentation` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-04 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | each teaching of Session 5 |
+| References | 3 |
+| Feeds | S5 `#sLib` ×3 |
+
 ### `src-owasp` — Top 10 for LLM Applications and Top 10 for Agentic Applications
 
 | | |
@@ -443,17 +491,17 @@ version string means the version is not tracking the data.
 | References | 2 |
 | Feeds | S4 `#sWS` · S4 `#s9` |
 
-### `src-openai-retire-4o` — Retiring GPT-4o and other ChatGPT models
+### `src-claude-code-marketplace` — Create a marketplace
 
 | | |
 |---|---|
-| Figure class | `vendor lifecycle schedule` |
+| Figure class | `vendor product documentation` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-04 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
 | References | 2 |
-| Feeds | S5 `#s1` ×2 |
+| Feeds | S5 `#sLib` ×2 |
 
 ### `src-openai-pricing` — API pricing
 
@@ -575,6 +623,18 @@ version string means the version is not tracking the data.
 | References | 1 |
 | Feeds | S4 `#s9` |
 
+### `src-openai-retire-4o` — Retiring GPT-4o and other ChatGPT models
+
+| | |
+|---|---|
+| Figure class | `vendor lifecycle schedule` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | each teaching of Session 5 |
+| References | 1 |
+| Feeds | S5 `#s1` |
+
 ### `src-rightcapital-iris` — RightCapital launches Iris, the first planning-focused AI agent designed to transform the financial planning process
 
 | | |
@@ -586,6 +646,18 @@ version string means the version is not tracking the data.
 | Re-check before | each teaching of Session 5 |
 | References | 1 |
 | Feeds | S5 `#s6` |
+
+### `src-claude-code-host` — Host and maintain a marketplace
+
+| | |
+|---|---|
+| Figure class | `vendor product documentation` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-04 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | each teaching of Session 5 |
+| References | 1 |
+| Feeds | S5 `#sLib` |
 
 ### `src-vectara` — Introducing the next generation of Vectara's hallucination leaderboard
 
@@ -657,9 +729,9 @@ wrong when they go stale.
 | S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 48 |
 | S3 | — | 0 |
 | S4 | — | 0 |
-| S5 | `Sonnet 5` | 6 |
+| S5 | `Fable 5`, `Haiku 4.5`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sonnet 5` | 33 |
 
-**193 occurrences across 6 lessons.** This count is read off
+**220 occurrences across 6 lessons.** This count is read off
 the corpus on every run, so it cannot go stale the way a typed one would.
 
 

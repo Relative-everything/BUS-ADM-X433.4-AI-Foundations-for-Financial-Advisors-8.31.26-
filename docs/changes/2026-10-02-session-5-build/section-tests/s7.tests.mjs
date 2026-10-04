@@ -67,13 +67,14 @@ function load(reduced = true) {
   say(errs.length === 0, 'S7-001', 'the page loads with zero window errors' + (errs.length ? ': ' + errs.slice(0, 3).join(' | ') : ''));
   const sec = $('#s7');
   say(!!sec && sec.getAttribute('data-nav') === 'What stays human' && sec.classList.contains('slide') && !sec.classList.contains('apx'), 'S7-002', 'section #s7 is a core slide with data-nav "What stays human"');
-  say(/07 · What stays human/.test(txt('#s7 .eyebrow')) && txt('#s7 .eyebrow .mins').trim() === '5 min' && txt('#s7 h2') === 'The Cole Meeting: Eight Moments', 'S7-003', 'eyebrow, minutes and title as the spec says');
+  /* 2026-10-04 (docs/changes/2026-10-04-session-5-interactivity, S5I-002, S5I-010): the eyebrow reads 08 after the new §07; beat 2 ranks the six reasons */
+  say(/08 · What stays human/.test(txt('#s7 .eyebrow')) && txt('#s7 .eyebrow .mins').trim() === '5 min' && txt('#s7 h2') === 'The Cole Meeting: Eight Moments', 'S7-003', 'eyebrow, minutes and title as the spec says');
   const big = txt('#s7 p.big').trim();
   say(big === 'Eight moments from one client meeting. A tool can draft some of them. The ones it cannot are where the relationship is made or lost.' && big.split(/\s+/).length < 30, 'S7-004', 'the thesis line is the spec\'s and under 30 words (' + big.split(/\s+/).length + ')');
   const roots = $$('#s7 [data-task]');
   say(roots.length === 1 && roots[0].getAttribute('data-task') === 't-s7' && roots[0].getAttribute('data-comp') === 'two-bucket-sorter', 'S7-005', 'exactly one data-task root, t-s7, family two-bucket-sorter');
   say(txt('#s7 .panel[data-task] .do').trim() === 'Do this now: 3 minutes' && txt('#s7 .panel[data-task] h4') === 'Tool, or Only You?' && /Click a moment, then the bucket\. The meeting on the right fills in as you go\./.test(txt('#s7 .panel[data-task] .hint')), 'S7-006', 'the root panel carries its Do-this-now line, heading and hint');
-  say(/Then this: 2 minutes/.test(txt('#s7 .panel:not([data-task]) .do')) && /What Clients Say When They Leave/.test(txt('#s7 .panel:not([data-task]) h4')), 'S7-007', 'beat 2 carries its Then-this line and heading');
+  say(/Then this: 2 minutes/.test(txt('#s7 .panel:not([data-task]) .do')) && /Rank the Reasons Clients Leave/.test(txt('#s7 .panel:not([data-task]) h4')), 'S7-007', 'beat 2 carries its Then-this line and heading');
 
   /* the sorter */
   const chips = P.chips(), boxes = P.boxes();
@@ -95,7 +96,7 @@ function load(reduced = true) {
   say(!!$('#s7Fig .s7-track') && $$('#s7Fig .s7-notch').length === 3 && P.fillH() === 0 && P.trust() === '0 of 4' && $('#s7Fig .s7-tl').textContent === 'TRUST', 'S7-024', 'the trust line: a track with three notch marks (four steps), empty, reading 0 of 4');
   say(P.hd() === 'THE MEETING · 0 OF 8 PLACED' && P.cap().textContent === CAP && !/show/.test(P.cap().getAttribute('class')), 'S7-025', 'the header reads 0 of 8 and the closing caption is built but not shown');
   const gate = $('#s7 .check[data-gate="g8"]');
-  say(!!gate && !gate.classList.contains('done') && /Place all eight moments\./.test(txt('#s7 .check .ct')), 'S7-026', 'the gate g8 exists with the spec\'s text and is not ticked at load');
+  say(!!gate && !gate.classList.contains('done') && /Place all eight moments, then rank the six reasons and lock\./.test(txt('#s7 .check .ct')), 'S7-026', 'the gate g8 exists with the spec\'s text and is not ticked at load');
 
   /* select a moment: the node lights before any bucket is clicked */
   click(chips[0]);
@@ -155,28 +156,33 @@ function load(reduced = true) {
   say(P.hd() === 'THE MEETING · 8 OF 8 PLACED' && $$('#s7Boxes ul.placed li').length === 8, 'S7-090', 'clicks after completion change nothing');
 
   /* beat 2: the three bars */
-  const fsvg = $('#s7Facts svg'), segs = $$('#s7Facts .s7-seg');
-  say(!!fsvg && fsvg.getAttribute('role') === 'img' && /^0 0 520 \d+$/.test(fsvg.getAttribute('viewBox')) && /Empty until drawn/.test(fsvg.getAttribute('aria-label')), 'S7-100', 'the facts figure is one viewBox SVG, role img, described as empty until drawn');
-  say($$('#s7Facts .s7-fl').length === 3 && /MORNINGSTAR/.test($$('#s7Facts .s7-fl')[0].textContent) && /VANGUARD/.test($$('#s7Facts .s7-fl')[1].textContent) && /CFP BOARD/.test($$('#s7Facts .s7-fl')[2].textContent), 'S7-101', 'three labelled rows: Morningstar, Vanguard, CFP Board');
-  say($$('#s7Facts .s7-ft').length === 3 && segs.length === 6 && segs.every((r) => +r.getAttribute('width') === 0), 'S7-102', 'three tracks and six segments, every segment at width 0 before the press');
-  say($$('#s7Facts .s7-fv').every((t) => !/show/.test(t.getAttribute('class'))) && $$('#s7Facts .s7-fc').every((t) => !/show/.test(t.getAttribute('class'))), 'S7-103', 'no value or caption is shown before the press');
+  /* beat 2: rank the six reasons, lock, reveal (2026-10-04) */
+  const items = () => $$('#s7Rank .s7-ri'), orderK = () => items().map((l) => l.getAttribute('data-k'));
+  const fsvg = $('#s7RankFig svg');
+  say(!!fsvg && fsvg.getAttribute('role') === 'img' && /^0 0 420 \d+$/.test(fsvg.getAttribute('viewBox')) && /Your order, most common first/.test(fsvg.getAttribute('aria-label')), 'S7-100', 'the rank figure is one viewBox SVG, role img, describing your order');
+  say(items().length === 6 && orderK().join() === 'cost,ret,comm,rel,alone,advice' && items().every((l) => l.hasAttribute('data-drag') && l.hasAttribute('data-drop')), 'S7-101', 'six reasons in a starting order that is not the answer, each draggable and a drop target');
+  say($$('#s7RankFig .s7-rbar').every((r) => +r.getAttribute('width') === 0) && $$('#s7RankFig .s7-rp').every((t) => !/show/.test(t.getAttribute('class'))), 'S7-102', 'no bar has width and no share shows before the reveal');
   const show = $('#s7Show');
-  say(!!show && show.getAttribute('type') === 'button' && show.textContent === 'Show what the surveys found' && !$('#s7FactOut').classList.contains('has') && $('#s7FactOut').getAttribute('aria-live') === 'polite', 'S7-104', 'the Show button and an empty, aria-live readout');
+  say(!!show && show.disabled && !!$('#s7RankLock') && !$('#s7FactOut').classList.contains('has') && $('#s7FactOut').getAttribute('aria-live') === 'polite', 'S7-103', 'Show waits for the lock; the readout is live and empty');
+  const up = (k) => click(items().find((l) => l.getAttribute('data-k') === k).querySelector('[data-mv="-1"]'));
+  for (let i = 0; i < 5; i++) up('advice'); up('rel'); up('rel');
+  say(orderK().join() === 'advice,cost,rel,ret,comm,alone' && items()[0].querySelector('.s7-rn').textContent === '1' && items()[5].querySelector('.s7-rn').textContent === '6', 'S7-104', 'the arrow buttons reorder the list and renumber it');
+  click($('#s7RankLock'));
+  say(!show.disabled && $('#s7RankLock').disabled && items().every((l) => l.classList.contains('locked')) && items().every((l) => [...l.querySelectorAll('button')].every((b) => b.disabled)), 'S7-110', 'Lock freezes the list and enables Show');
   click(show);
-  const wid = segs.map((r) => +r.getAttribute('width'));
-  say(wid.every((x) => x > 0), 'S7-110', '#s7Show draws the bars: every segment has width');
-  say(wid[0] > wid[1] && wid[1] > wid[2] && wid[2] > wid[3] && near(wid[0] / wid[3], 32 / 11, 0.2) && near(wid[4] / wid[5], 50 / 7, 0.6), 'S7-111', 'segment widths follow the shares (32 > 21 > 17 > 11; about half; 7%)');
-  say($$('#s7Facts .s7-fv').map((t) => t.textContent).join('|') === '32%|21%|17%|11%|about half|7%' && $$('#s7Facts .s7-fv').every((t) => /show/.test(t.getAttribute('class'))), 'S7-112', 'the value labels read 32%, 21%, 17%, 11%, about half, 7% and are shown');
-  say($$('#s7Facts .s7-fk').map((t) => t.textContent).join('|') === 'advice and services|relationship|cost|returns|other|behavioural coaching|everything else|Psychology of Financial Planning|the rest of the exam', 'S7-113', 'the segment keys name what each bar part is');
-  say($$('#s7Facts .s7-fc').every((t) => /show/.test(t.getAttribute('class'))) && $$('#s7Facts .s7-fc').every((t) => t.textContent.length <= 70), 'S7-114', 'six captions shown, each short enough to fit the bar width');
+  const wid = $$('#s7RankFig .s7-rbar').map((r) => +r.getAttribute('width'));
+  say(wid.every((x) => x > 0) && wid[0] > wid[1] && wid[1] > wid[2] && wid[2] > wid[3] && wid[3] > wid[4] && wid[4] > wid[5], 'S7-111', 'the bars grow in the survey order 32 > 21 > 17 > 11 > 10 > 9');
+  say($$('#s7RankFig .s7-rp').map((t) => t.textContent).join('|') === '32%|21%|17%|11%|10%|9%' && $$('#s7RankFig .s7-rp').every((t) => /show/.test(t.getAttribute('class'))), 'S7-112', 'the shares read 32, 21, 17, 11, 10, 9 and show');
+  say(/2 of 6 in place/.test(txt('#s7RankFig .s7-rsc')) && $$('#s7RankFig .s7-ryou.ok').length === 2 && items().filter((l) => l.classList.contains('ok')).length === 2 && items().filter((l) => l.classList.contains('off')).length === 4, 'S7-113', 'two reasons in place (advice first and returns fourth); the list marks each item right or off');
+  say($$('#s7RankFig .s7-ryou').every((t) => /you said \d(st|nd|rd|th)/.test(t.textContent)), 'S7-114', 'every row says where you ranked it');
   const fo = txt('#s7FactOut');
   say($('#s7FactOut').classList.contains('has') && /32%/.test(fo) && /21%/.test(fo) && /7%/.test(fo) && /17%/.test(fo) && /11%/.test(fo), 'S7-115', 'the readout contains 32%, 21% and 7% (and 17%, 11%)');
   say(/about 185 investors/.test(fo) && /about 3% a year/.test(fo) && /behavioural coaching/.test(fo) && /since 2022/.test(fo) && /principal knowledge domain/.test(fo), 'S7-116', 'the readout carries the three facts as the spec words them');
-  say(/The top two reasons clients leave are the advice and the relationship\. A tool can draft toward the first\. Only you hold the second\./.test(fo), 'S7-117', 'the readout closes with the spec\'s line');
+  say(/The top two were the advice and the relationship, not returns or cost\./.test(fo) && /A tool can draft toward the first reason\. Only you hold the second\./.test(fo), 'S7-117', 'the readout names the top two and closes with the line');
   say($('#s7FactOut [data-src="src-morningstar-fired"]') && $('#s7FactOut [data-src="src-vanguard-alpha"]') && $('#s7FactOut [data-src="src-cfp-psychology"]'), 'S7-118', 'each fact in the readout carries its chip');
-  say(show.textContent === 'Draw them again' && /32% named the quality of advice/.test(fsvg.getAttribute('aria-label')), 'S7-119', 'the button offers to draw again and the figure\'s aria-label now reads the numbers');
+  say(show.disabled && /survey’s order/i.test(fsvg.getAttribute('aria-label')) && /32%/.test(fsvg.getAttribute('aria-label')), 'S7-119', 'Show locks after the reveal and the figure\'s aria-label reads the numbers');
   click(show);
-  say(segs.every((r) => +r.getAttribute('width') > 0) && $$('#s7Facts .s7-fv').every((t) => /show/.test(t.getAttribute('class'))), 'S7-120', 'a second press redraws cleanly');
+  say(wid.join() === $$('#s7RankFig .s7-rbar').map((r) => +r.getAttribute('width')).join(), 'S7-120', 'a second press changes nothing');
 
   /* text, chips, dashes, forbidden words, case figures */
   const secTxt = txt('#s7'), outer = sec.outerHTML;
@@ -244,10 +250,10 @@ function load(reduced = true) {
   await sleep(750);
   say(near(P.fillH(), NOTCH) && mid <= NOTCH + 0.6, 'S7-180', 'animated: the trust fill rises to one notch (' + P.fillH().toFixed(1) + ')');
   say($('#s7Fig .s7-plus').style.opacity === '0', 'S7-181', 'animated: the +1 marker has faded out at the end');
-  click($('#s7Show'));
-  await sleep(950);
-  const wid = $$('#s7Facts .s7-seg').map((r) => +r.getAttribute('width'));
-  say(wid.every((x) => x > 0) && wid[0] > wid[1] && $$('#s7Facts .s7-fv').every((t) => /show/.test(t.getAttribute('class'))), 'S7-182', 'animated: the bars reach their widths and the labels appear when the tween ends');
+  click($('#s7RankLock')); click($('#s7Show'));
+  await sleep(700);
+  const wid = $$('#s7RankFig .s7-rbar').map((r) => +r.getAttribute('width'));
+  say(wid.every((x) => x > 0) && wid[0] > wid[1] && $$('#s7RankFig .s7-rp').every((t) => /show/.test(t.getAttribute('class'))), 'S7-182', 'animated: the bars have their widths and the shares show after the reveal');
   say(errs.length === 0, 'S7-183', 'zero window errors with animation');
 }
 
@@ -255,7 +261,7 @@ function load(reduced = true) {
 {
   const { errs, txt, $$ } = load();
   say(!/\b(undefined|NaN)\b/.test(txt('#s7')), 'S7-190', 'the untouched section prints no undefined or NaN');
-  say($$('#s7List .chip').length === 8 && $$('#s7Boxes .lbox').length === 2 && $$('#s7Fig svg').length === 1 && $$('#s7Facts svg').length === 1, 'S7-191', 'eight chips, two buckets, two figures on the untouched page');
+  say($$('#s7List .chip').length === 8 && $$('#s7Boxes .lbox').length === 2 && $$('#s7Fig svg').length === 1 && $$('#s7RankFig svg').length === 1, 'S7-191', 'eight chips, two buckets, two figures on the untouched page');
   say(errs.length === 0, 'S7-192', 'zero errors on the untouched page');
 }
 
