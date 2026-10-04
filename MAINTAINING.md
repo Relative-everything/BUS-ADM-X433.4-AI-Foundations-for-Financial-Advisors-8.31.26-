@@ -451,7 +451,8 @@ gain. **DW-048, closed. Do not re-open it.**
 > meeting and no `session-5/index.html` was owed. **On 2026-10-02 the instructor
 > asked for the page** (kickoff in `docs/changes/2026-10-02-session-5-build/`),
 > and the later decision supersedes the earlier one: Session 5 is built at about
-> 80% of the other sessions' allocated minutes (54 core + 66 appendix = 120)
+> 83% of the other sessions' allocated minutes (59 core + 66 appendix = 125,
+> after the 2026-10-04 interactivity pass added §07, the firm's skill library)
 > because student presentations shorten the class, and its logistics live in
 > `instructor-notes/session-5.md`, not on the page. No further session is owed;
 > the steps below are the record of how a session is added.

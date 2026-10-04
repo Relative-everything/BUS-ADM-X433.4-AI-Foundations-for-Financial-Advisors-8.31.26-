@@ -97,15 +97,16 @@ const noBad = (s) => !/\b(undefined|NaN)\b/.test(s) && !/[—–]/.test(s);
   const { $, $$, txt, cls, click, input, done, copied, errs } = load();
   const pins = $$('#s1Pins button');
   say(pins.length === 3 && pins.every((b) => b.getAttribute('aria-pressed') === 'false'), 'P-001', 'three pins, none pressed');
-  say($('#s1Day').value === '458' && txt('#s1DayVal') === '2 October 2026' && $('#s1Day').getAttribute('aria-valuetext') === '2 October 2026', 'P-002', 'the slider starts on 2 October 2026 and says so');
+  /* 2026-10-04 (S5I-004): the calendar was redrawn from the pages re-opened that day: today is 4 October, 21 rows, short dates in a right-hand column */
+  say($('#s1Day').value === '460' && txt('#s1DayVal') === '4 October 2026' && $('#s1Day').getAttribute('aria-valuetext') === '4 October 2026', 'P-002', 'the slider starts on 4 October 2026 and says so');
   say(/Pin the workflow first/.test(txt('#s1Out')) && !$('#s1Out').classList.contains('has'), 'P-003', 'the status waits for a pin');
   const svg = $('#s1Fig svg');
-  say(!!svg && $$('#s1Fig .s1-row').length === 10 && $$('#s1Fig .s1-dep').length === 1 && /61 days’ notice/.test(txt('#s1Fig')) && /not sooner than 28 September 2027/.test(txt('#s1Fig')), 'P-004', 'ten rows, one deprecation band, the notice and the not-sooner-than date');
-  say(/30 November 2026/.test(txt('#s1Fig')) && /5 January 2026/.test(txt('#s1Fig')) && /21 July 2025/.test(txt('#s1Fig')), 'P-005', 'retirement dates print on the rows');
+  say(!!svg && $$('#s1Fig .s1-row').length === 21 && $$('#s1Fig .s1-dep').length === 1 && /61 days’ notice/.test(txt('#s1Fig')) && /28 Sep 2027/.test(txt('#s1Fig')) && /15 Oct 2026/.test(txt('#s1Fig')) && $$('#s1Fig .s1-lab.lineup').length === 4 && $$('#s1Fig .s1-lab.leg').length === 8, 'P-004', 'twenty-one rows, one deprecation band, the notice, the not-sooner-than dates, four lineup and eight legacy labels');
+  say(/30 Nov 2026/.test(txt('#s1Fig')) && /5 Jan 2026/.test(txt('#s1Fig')) && /21 Jul 2025/.test(txt('#s1Fig')), 'P-005', 'retirement dates print on the rows');
   say(!/show/.test(cls($('#s1Fig .s1-cardg'))), 'P-006', 'the workflow card is hidden before a pin');
   click(pins[0]);
   say(/show/.test(cls($('#s1Fig .s1-cardg'))) && /dep/.test(cls($('#s1Fig .s1-cardg'))) && txt('#s1Fig .s1-stamp') === 'DEPRECATED', 'P-007', 'pin A on 2 October 2026: the card rides and reads DEPRECATED');
-  say(/Deprecated since 30 September 2026/.test(txt('#s1Out')) && /59 days away/.test(txt('#s1Out')) && $$('#s1Out .conf[data-src="src-anthropic-deprecations"]').length === 1 && /Status · A · 2 October 2026/.test(txt('#s1Out')), 'P-008', 'the status counts 59 days to retirement, chipped to the deprecations page');
+  say(/Deprecated since 30 September 2026/.test(txt('#s1Out')) && /57 days away/.test(txt('#s1Out')) && $$('#s1Out .conf[data-src="src-anthropic-deprecations"]').length === 1 && /Status · A · 4 October 2026/.test(txt('#s1Out')), 'P-008', 'the status counts 57 days to retirement on 4 October, chipped to the deprecations page');
   say(!done('g2'), 'P-009', 'a pin alone leaves g2 open');
   input($('#s1Day'), 300);
   say(txt('#s1Fig .s1-stamp') === 'RUNS' && /Running/.test(txt('#s1Out')) && txt('#s1DayVal') === '27 April 2026' && done('g2'), 'P-010', 'dragging to 27 April 2026 reads RUNS and ticks g2');
@@ -114,7 +115,7 @@ const noBad = (s) => !/\b(undefined|NaN)\b/.test(s) && !/[—–]/.test(s);
   click($('#s1Jump button[data-jump="dep"]'));
   say(txt('#s1DayVal') === '30 September 2026' && txt('#s1Fig .s1-stamp') === 'DEPRECATED' && /61 days away/.test(txt('#s1Out')), 'P-012', 'Deprecation jump: 61 days to retirement');
   click(pins[1]);
-  say(txt('#s1Fig .s1-stamp') === 'ACTIVE' && /Not retired sooner than 28 September 2027/.test(txt('#s1Out')) && pins[1].getAttribute('aria-pressed') === 'true' && pins[0].getAttribute('aria-pressed') === 'false', 'P-013', 'pin B: ACTIVE, with the not-sooner-than date');
+  say(txt('#s1Fig .s1-stamp') === 'ACTIVE' && /not retired sooner than 28 September 2027/.test(txt('#s1Out')) && $$('#s1Out .conf[data-src="src-anthropic-models-overview"]').length === 1 && pins[1].getAttribute('aria-pressed') === 'true' && pins[0].getAttribute('aria-pressed') === 'false', 'P-013', 'pin B: ACTIVE, with the not-sooner-than date');
   click($('#s1Jump button[data-jump="nst"]'));
   say(txt('#s1Fig .s1-stamp') === 'CHECK' && /not-sooner-than date has passed/.test(txt('#s1Out')), 'P-014', 'pin B on its own date: CHECK');
   click(pins[2]);
@@ -124,17 +125,20 @@ const noBad = (s) => !/\b(undefined|NaN)\b/.test(s) && !/[—–]/.test(s);
   input($('#s1Day'), 913);
   say(txt('#s1DayVal') === '31 December 2027', 'P-017', 'the last day is 31 December 2027');
   /* beat 2 */
-  const tiles = $$('#s1Card .s1-tile');
-  say(tiles.length === 3 && tiles.every((t) => t.getAttribute('aria-pressed') === 'false') && /Tick what your workflow already carries/.test(txt('#s1CardOut')), 'P-018', 'three card lines, none ticked');
-  click(tiles[0]);
-  say(tiles[0].getAttribute('aria-pressed') === 'true' && /1 of 3 on the card/.test(txt('#s1CardOut')) && $$('#s1Paper .s1-pline')[0].classList.contains('on') && $$('#s1Paper .s1-pline .s5stamp')[0].textContent === 'On the card' && $$('#s1Paper .s1-pline .s5stamp')[1].textContent === 'Missing', 'P-019', 'one tick: the paper line fills, the others read Missing');
-  click(tiles[1]); click(tiles[2]);
-  say(/3 of 3 on the card/.test(txt('#s1CardOut')) && /hand over after the model changes/.test(txt('#s1CardOut')), 'P-020', 'three of three closes the card');
-  click(tiles[2]);
-  say(/2 of 3/.test(txt('#s1CardOut')) && tiles[2].getAttribute('aria-pressed') === 'false', 'P-021', 'a tick undoes');
+  /* 2026-10-04: the maintenance card was replaced by The Gate and the Rubric (docs/changes/2026-10-04-session-5-interactivity, S5I-004);
+     P-018 to P-022 now assert that beat, through the click path the drag shares */
+  const rules = $$('#s1 .s1-rule');
+  say(rules.length === 5 && rules.every((r) => r.getAttribute('aria-pressed') === 'false') && /Both slots are empty/.test(txt('#s1GenLab')) && $('#s1Adv').disabled, 'P-018', 'five rules in the tray, two empty slots, Advance disabled');
+  click($('#s1Gates [data-k="two"]')); click($('#s1SlotQual'));
+  say(/is a model gate; this slot takes a quality rule/.test(txt('#s1GOut')) && !$('#s1SlotQual').classList.contains('filled'), 'P-019', 'a gate dropped on the quality slot bounces with a why');
+  click($('#s1SlotGate')); click($('#s1Quals [data-k="score"]')); click($('#s1SlotQual'));
+  say($('#s1SlotGate').classList.contains('filled') && $('#s1SlotQual').classList.contains('filled') && !$('#s1Adv').disabled && /Ready: B with 2/.test(txt('#s1GenLab')), 'P-020', 'both slots filled enables Advance the model');
+  click($('#s1Adv')); click($('#s1Adv')); click($('#s1Adv')); click($('#s1Adv'));
+  const stamps = $$('#s1GFig .s1-gstamp.on text').map((t) => t.textContent);
+  say(stamps.join('|') === 'STOPPED|RUNS|SHIPPED 5 OF 5|RUNS|SHIPPED 5 OF 5|STOPPED|HELD 4 OF 5' && $('#s1Adv').disabled && $$('#s1GKey tbody tr').length === 6, 'P-021', 'B with 2 across four generations: two stops with reasons, one hold with the check named, no failure; the six-pair key opens');
   click($('#s1Copy'));
   const c = copied();
-  say(/^MAINTENANCE CARD: Meeting-prep brief/.test(c) && (c.match(/^\d\. /gm) || []).length === 3 && /\[on the card\]/.test(c) && /Model deprecations \(platform\.claude\.com\), opened 2 October 2026/.test(c) && $('#s1CopyMsg').getAttribute('aria-live') === 'polite', 'P-022', 'the copied card has three numbered lines, the ticks and the dated source');
+  say(/two newest generations/.test(c) && /five checks/.test(c) && /opened 4 October 2026/.test(c), 'P-022', 'Copy the two lines carries the gate, the rubric and the dated source');
   say(noBad(txt('#s1')) && noBad(svg.getAttribute('aria-label')) && !/claude-[a-z0-9-]+-\d{8}/.test(html.slice(html.indexOf('id="s1"'), html.indexOf('id="sE2"'))), 'P-023', 'no undefined, NaN, dash or API model id in the section');
   say(errs.length === 0, 'P-024', 'zero window errors' + (errs.length ? ': ' + errs.slice(0, 2).join(' | ') : ''));
 }
@@ -144,45 +148,48 @@ const noBad = (s) => !/\b(undefined|NaN)\b/.test(s) && !/[—–]/.test(s);
   say(errs.length === 0, 'P-026', 'zero errors under the override'); }
 
 /* ================= §06 ================= */
+/* 2026-10-04 (docs/changes/2026-10-04-session-5-interactivity, S5I-009): §06 is Wire the Desk. These tests drive
+   the click path (chip, then port), which is the same place() the pointer drag calls. */
 {
   const { $, $$, txt, cls, click, key, done, errs } = load({ reduced: true });
-  const tools = $$('#s6Tools button'), hits = $$('#s6Fig .s6-hit');
-  say(tools.length === 5 && hits.length === 5 && hits.every((h) => h.getAttribute('role') === 'button' && h.getAttribute('tabindex') === '0' && h.getAttribute('aria-pressed') === 'false'), 'T-001', 'five tool buttons and five keyboard-reachable figure targets');
-  say(/Click a tool|Pick a tool|tool/i.test(txt('#s6Out')) && !$('#s6Out').classList.contains('has') && $$('#s6Fig .s6-stop').length === 4 && $$('#s6Fig .s6-stop.show').length === 0, 'T-002', 'the readout waits; the four stops are drawn but hidden');
-  click(tools[1]);
+  const chips = $$('#s6 .s6-chip'), L = (i) => $$('#s6Fig .s6-port.src')[i], R = (i) => $$('#s6Fig .s6-port.dst')[i];
+  const wire = (i, sk, dk) => { click($('#s6Src [data-k="' + sk + '"]')); click(L(i)); click($('#s6Dst [data-k="' + dk + '"]')); click(R(i)); };
+  say(chips.length === 7 && $$('#s6Fig .s6-port').length === 10 && $$('#s6Fig .s6-port').every((p) => p.getAttribute('role') === 'button' && p.getAttribute('tabindex') === '0' && p.getAttribute('aria-pressed') === 'false' && p.hasAttribute('data-drop')) && chips.every((c) => c.hasAttribute('data-drag')), 'T-001', 'seven chips to drag and ten keyboard-reachable ports to drop them on');
+  say(/Nothing wired yet/.test(txt('#s6Out')) && !$('#s6Out').classList.contains('has') && $$('#s6Fig .s6-stop').length === 4 && $$('#s6Fig .s6-stop.show').length === 0 && /0 of 5 wired/.test(txt('#s6Fig .s6-cnt')), 'T-002', 'the readout waits; the four stops are drawn but hidden; 0 of 5 wired');
+  click($('#s6Src [data-k="file"]')); click(L(1));
+  say(/✗ Note-taker and The client file/.test(txt('#s6Out')) && /Still in hand/.test(txt('#s6Out')) && L(1).getAttribute('aria-pressed') === 'false' && $('#s6Src [data-k="file"]').getAttribute('aria-pressed') === 'true', 'T-003', 'a wrong source bounces off the port with a why and stays in hand');
+  wire(1, 'meet', 'vendor');
   const o1 = txt('#s6Out');
-  say(/Tool 2 · Note-taker/.test(o1) && $$('#s6Out .q').length === 4 && /What may go in\?/.test(o1) && /Where does it go\?/.test(o1) && /How do you check it\?/.test(o1) && /What do you keep\?/.test(o1), 'T-003', 'the note-taker writes the four questions');
-  say(/42\.9%/.test(o1) && /2,906 advisers/.test(o1) && /14 tools/.test(o1) && $$('#s6Out .conf[data-src="src-t3-survey"]').length === 1 && $$('#s6Out .conf[data-src="src-investmentnews-t3-2026"]').length === 1 && $$('#s6Out .conf[data-src="src-regsp"]').length === 1, 'T-004', 'the survey facts carry their chips');
-  say(/lit/.test(cls($$('#s6Fig .s6-path')[1])) && $$('#s6Fig .s6-path.dim').length === 4 && /lit/.test(cls($$('#s6Fig .s6-box.tool')[1])) && hits[1].getAttribute('aria-pressed') === 'true', 'T-005', 'the note-taker path lights and the other four dim');
-  say($$('#s6Fig .s6-stop.show.fill').length === 4 && $$('#s6Out .q.on').length === 4, 'T-006', 'under reduced motion the four stops fill at once');
-  say(/1 of 5 tools opened/.test(o1) && !done('g7') && tools[1].classList.contains('act'), 'T-007', 'one tool opened, the gate waits');
-  key(hits[4], 'Enter');
+  say(/Tool 2 · Note-taker · wired/.test(o1) && $$('#s6Out .q').length === 4 && /What may go in\?/.test(o1) && /Where does it go\?/.test(o1) && /How do you check it\?/.test(o1) && /What do you keep\?/.test(o1), 'T-004', 'the wired note-taker writes the four questions');
+  say(/42\.9%/.test(o1) && /2,906 advisers/.test(o1) && /14 tools/.test(o1) && $$('#s6Out .conf[data-src="src-t3-survey"]').length === 1 && $$('#s6Out .conf[data-src="src-investmentnews-t3-2026"]').length === 1 && $$('#s6Out .conf[data-src="src-regsp"]').length === 1, 'T-005', 'the survey facts carry their chips');
+  say($$('#s6Fig .s6-wire.lit').length === 2 && /lit/.test(cls($$('#s6Fig .s6-tool')[1])) && L(1).getAttribute('aria-pressed') === 'true' && R(1).getAttribute('aria-pressed') === 'true' && /filled/.test(cls(L(1))), 'T-006', 'both wires light, the tool box lights, both ports read filled');
+  say($$('#s6Fig .s6-stop.show').length === 4 && $$('#s6Out .q.on').length === 4, 'T-007', 'under reduced motion the four stops show at once and the four answers are on');
+  say(/1 of 5 tools wired/.test(o1) && /1 of 5 wired/.test(txt('#s6Fig .s6-cnt')) && !done('g7'), 'T-008', 'one tool wired, the gate waits');
+  click($('#s6Src [data-k="pub"]')); key(L(4), 'Enter'); click($('#s6Dst [data-k="index"]')); key(R(4), 'Enter');
   const o2 = txt('#s6Out');
-  say(/Tool 5 · AI search/.test(o2) && /8% of visits against 15%/.test(o2) && $$('#s6Out .conf[data-src="src-pew-ai-summaries"]').length === 1 && $$('#s6Out .conf[data-src="src-kitces-aisearch"]').length === 1, 'T-008', 'Enter on the figure opens AI search with the Pew rates');
-  say(/show/.test(cls($('#s6Fig .s6-prospect'))) && !/lit/.test(cls($$('#s6Fig .s6-box')[4])) , 'T-009', 'AI search shows the prospect\'s question and skips the vendor box');
-  say(/2 of 5 tools opened/.test(o2) && /the four questions did not change; the answers did/.test(o2) && done('g7') && tools[1].classList.contains('seen') && !tools[1].classList.contains('act'), 'T-010', 'two tools opened ticks g7 and marks the first as seen');
-  click(tools[4]); click(tools[4]);
-  say(/2 of 5 tools opened/.test(txt('#s6Out')), 'T-011', 'reopening a tool does not double count');
-  click(tools[3]);
-  say(/Tool 4 · Planning-software agent/.test(txt('#s6Out')) && /one vendor launched a planning agent in June 2026/i.test(txt('#s6Out')) && !/RightCapital|Jump|Zocks|Zeplyn|Wealthbox|Redtail/.test(txt('#s6 .panel') + txt('#s6 ul.pts')), 'T-012', 'the planning agent names no vendor in the panels');
-  click(tools[0]); click(tools[2]);
-  say(/5 of 5 tools opened/.test(txt('#s6Out')), 'T-013', 'all five open');
-  const mine = $$('#s6Mine button');
-  say(mine.length === 5 && /Tick the tools you use/.test(txt('#s6MineOut')) && $$('#s6Fig .s6-badge.show').length === 0, 'T-014', 'the stack starts empty');
-  click(mine[1]); click(mine[4]);
-  say(/2 of 5 in your stack/.test(txt('#s6MineOut')) && $$('#s6Fig .s6-badge.show').length === 2 && mine[1].getAttribute('aria-pressed') === 'true', 'T-015', 'two ticks badge two tools on the figure');
-  click(mine[1]);
-  say(/1 of 5 in your stack/.test(txt('#s6MineOut')) && $$('#s6Fig .s6-badge.show').length === 1, 'T-016', 'a tick undoes');
+  say(/Tool 5 · AI search · wired/.test(o2) && /8% of visits against 15%/.test(o2) && $$('#s6Out .conf[data-src="src-pew-ai-summaries"]').length === 1 && $$('#s6Out .conf[data-src="src-kitces-aisearch"]').length === 1, 'T-009', 'Enter on a port places the held chip: AI search wires from the keyboard');
+  say(/show/.test(cls($('#s6Fig .s6-prospect'))), 'T-010', 'AI search shows the prospect\'s question');
+  say(/2 of 5 tools wired/.test(o2) && /the four questions did not change; the answers did/.test(o2), 'T-011', 'two tools wired: the line about the questions');
+  click($('#s6Dst [data-k="vendor"]')); click(L(2));
+  say(/goes on a right port/.test(txt('#s6Out')) && L(2).getAttribute('aria-pressed') === 'false', 'T-012', 'a destination dropped on a left port bounces with the kind named');
+  wire(3, 'file', 'vendor');
+  say(/Tool 4 · Planning-software agent/.test(txt('#s6Out')) && /one vendor launched a planning agent in June 2026/i.test(txt('#s6Out')) && !/RightCapital|Jump|Zocks|Zeplyn|Wealthbox|Redtail/.test(txt('#s6 .panel') + txt('#s6 ul.pts')), 'T-013', 'the planning agent names no vendor outside the source line');
+  wire(0, 'you', 'plan'); wire(2, 'file', 'vendor');
+  say(/5 of 5 wired/.test(txt('#s6Fig .s6-cnt')) && done('g7') && $('#s6Key').style.display === 'block' && $$('#s6Key .s6-kl').length === 6, 'T-014', 'all five wired: the gate ticks and the key lists the five tools');
+  say($$('#s6Src .s6-chip').every((c) => c.classList.contains('spent')) && $$('#s6Dst .s6-chip').every((c) => c.classList.contains('spent')), 'T-015', 'every chip reads spent once every tool that takes it is wired');
+  click(L(1));
+  say(/Tool 2 · Note-taker · wired/.test(txt('#s6Out')), 'T-016', 'clicking a wired tool\'s port reopens its four answers');
   say(noBad(txt('#s6')) && noBad($('#s6Fig svg').getAttribute('aria-label')), 'T-017', 'no undefined, NaN or dash');
   say(errs.length === 0, 'T-018', 'zero window errors' + (errs.length ? ': ' + errs.slice(0, 2).join(' | ') : ''));
 }
-{ const { $$, txt, done, shiftU, click, errs } = load();
-  click($$('#s6Tools button')[0]);
-  say($$('#s6Fig .s6-stop.show').length === 4 && $$('#s6Fig .s6-stop.show.fill').length === 0, 'T-019', 'with motion the stops appear first and fill later');
+{ const { $, $$, txt, done, shiftU, click, errs } = load();
+  const L = (i) => $$('#s6Fig .s6-port.src')[i], R = (i) => $$('#s6Fig .s6-port.dst')[i];
+  click($('#s6Src [data-k="you"]')); click(L(0)); click($('#s6Dst [data-k="plan"]')); click(R(0));
+  say($$('#s6Fig .s6-stop.show').length === 0 && /Tool 1 · Chat assistant · wired/.test(txt('#s6Out')), 'T-019', 'with motion the readout writes first and the stops follow');
   await sleep(1000);
-  say($$('#s6Fig .s6-stop.show.fill').length === 4 && $$('#s6Out .q.on').length === 4, 'T-020', 'after a second all four have filled');
+  say($$('#s6Fig .s6-stop.show').length === 4 && $$('#s6Out .q.on').length === 4, 'T-020', 'after a second all four stops show');
   shiftU();
-  say(done('g7') && /5 of 5 tools opened/.test(txt('#s6Out')), 'T-021', 'Shift+U opens every tool');
+  say(done('g7') && /5 of 5 wired/.test(txt('#s6Fig .s6-cnt')), 'T-021', 'Shift+U wires every tool');
   say(errs.length === 0, 'T-022', 'zero errors with motion'); }
 
 /* ================= E5 ================= */

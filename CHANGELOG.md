@@ -10,6 +10,79 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-10-04 · Session 5 rebuilt for interactivity: seven drag beats, the firm's library, the gate and the scorecard, measured against Session 4
+
+Branch `claude/vibrant-hypatia-8iabd0`, after PR #43 merged. The instructor's rule, written down for
+the first time: a click that only shows text is not interactivity; dragging shapes, dropping items
+into selections and displays that change are. The page's four beats that were only that are gone,
+and seven manipulative beats on one shared Pointer Events kit replace them; every drag also works as
+click the item, then click the place. A core section was added for the enterprise ask (how a firm
+hosts fifteen skills, agents and workflows in one repository and ships them to every desk), so the
+page is 125 minutes (core 59, appendix 66). Change folder
+`docs/changes/2026-10-04-session-5-interactivity/` (ledger S5I-001 to S5I-021, `checks.mjs` 32
+assertions, `drags.mjs` 36 Chromium assertions with 22 real pointer drags, `interactivity.mjs` the five-tier measure,
+`handback.md` with the comparison and the source re-check).
+
+**Measured at load, 1280 px, against Session 4 and the page before.** Pointer-drag items 47 (Session
+4: 0; before: 0); drop targets 31 (0; 0); sections with a drag interaction 6 of 16 (0 of 17; 0 of
+15); beats that only show text 0 (2; 4); visible controls 193 (277; 149), 1.54 a minute against
+1.85 and 1.24; words 9,546 (11,544; 8,120); chips 117 (221; 92); footer sources 30 (70; 24). The
+handback says where the page is still below Session 4 and why.
+
+### Session 5 · the page
+
+- **A shared drag kit** (`mkDrag`): Pointer Events, a six-pixel threshold, a ghost clone, live
+  hit-testing against the drop targets, the hovered target marked, a drop outside bounced with a
+  why; the sorter kit gained the same drag, so E3 and §08 drag without new code.
+- **§01 The tools change**: the calendar carries the current lineup (Fable 5.1, Opus 5.5, Sonnet
+  5.5, Haiku 4.5) and eight legacy models with their not-sooner-than dates, from Anthropic's models
+  overview and deprecation pages opened 4 October 2026. The maintenance card is replaced by The Gate
+  and the Scorecard: drag one of three model gates and one of two quality rules onto the skill card,
+  then advance the model across four generations; the gate stamps RUNS, STOPPED or FAILS and the
+  scorecard SHIPPED 5 OF 5 or HELD with the failed check named; the two lines copy with the dated
+  source. The instructor's own rule, run only on the two newest generations, is gate B.
+- **§02 Explain it first** gained the handoff package: eight loose files (three prompt PDFs, a docx,
+  a spreadsheet, a sample note, an email, a chat link) dragged into README, zip or out; the three
+  PDFs merge into one prompt.txt; a meter reads before and after.
+- **§03 Break it**: the result readout and the answer key cut by about half (227 to 117 and 232 to
+  118 words); the mechanic unchanged.
+- **§04 Improve it**: the travelling note and its copy button removed; three checkable fixes now run
+  the improved version through five stations to READY TO HAND OVER.
+- **§05 Measure it**: each trial names its task, people, tool, what was measured and who gained
+  most; the four with-and-without sliders unchanged.
+- **§06 Wire the Desk** replaces five tool buttons and the Your stack ticks: drag what each tool
+  reads and where it goes onto the ports beside five tools; a right pair lights the wires and writes
+  the four Session 4 answers; a wrong pair shakes and says why.
+- **§07 One Repository, Every Desk (new)**: an invented firm's fifteen skills, agents and workflows
+  in one repository and six desks; four adviser questions, or a typed one, route through the
+  gatekeeper, de-identify, the matching skills and the record-writer without naming any; Push an
+  update takes every desk to v1.5; three proposals dragged onto the repository, the policy or a desk
+  (a new skill is a row in review, an unapproved plugin is blocked by enterprise policy, an older
+  model is refused by the settings lock). Five Claude Code documentation pages opened 4 October
+  2026 carry the mechanics; the firm is labelled invented.
+- **§08 What stays human** (was §07): the eight moments drag into their buckets; Rank the Reasons
+  replaces the three button-drawn bars: six reasons dragged into order, locked, then the survey's
+  order drawn beside the learner's.
+- **§09 The reading** (was §08): the confidence sliders no longer blur or fatten the text mid-slide;
+  the marker moves by an attribute transform and emphasis is fill-opacity on rectangles.
+- Found in Chromium after the build and fixed: the §06 stop icons were pinned at the figure's
+  origin by a CSS transform; two §01 step labels, one §04 station line and the §08 rank labels
+  overran their columns. Zoomed renders then showed six more, all fixed: §06's stop labels
+  colliding and crossing rows, §04's token resting on station text and its stamp overrunning its
+  box, §07's lock over a policy line, its route entries overlapping, a desk tag wider than its box
+  and a heading crossing a desk. `drags.mjs` now asserts the rendered layout of those figures.
+
+### Session 5 · instructor materials and the repository
+
+- `instructor-notes/session-5.md`, `session-5-polls.md` and the teaching aid (`.htm`, `.pdf`, `.md`)
+  rewritten to the new clock: §07 at 8:25, the closing check at 8:42, Poll 4 at 8:47, close 8:52.
+- `SOURCES.md`: six new records at H (the models overview and five Claude Code pages), the
+  deprecations record re-opened, four trial records given task lines, a dated re-check sentence on
+  every blocked record; the lock synced; the hub card and `MAINTAINING.md` updated;
+  `docs/deferred-work.md` DW-128 to DW-130.
+- The 2026-10-02 folder's `checks.mjs` and five section-test files edited where they pinned a beat
+  this pass replaced, each edit dated and tied to its S5I row.
+
 ## 2026-10-03 · Session 5 built: the final class as a page, fifteen gated sections in 120 minutes around the student presentations
 
 Branch `claude/practical-fermi-5g0sm0`, after PR #42 merged. The syllabus row for Session 5 (Final

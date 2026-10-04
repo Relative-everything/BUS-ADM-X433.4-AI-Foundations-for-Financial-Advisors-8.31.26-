@@ -5,7 +5,7 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**134 works, 461 references across 6 lessons.** 111 are
+**140 works, 480 references across 6 lessons.** 117 are
 cited by at least one claim; 23 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
@@ -601,13 +601,13 @@ A standard for connecting assistants to the systems where data lives (November 2
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/model-deprecations> |
 | Published | 2026-09-30 |
-| Last retrieved | 2026-10-02 |
+| Last retrieved | 2026-10-04 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **5** |
 | Cited in | S5 `#s1` ×3 · S5 `#sE2` ×2 |
 
-Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §01 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current models carry a not-sooner-than date. Dates are for Anthropic-operated platforms; partner platforms set their own.
+Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §01 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027. Dates are for Anthropic-operated platforms; partner platforms set their own.
 
 ### Anthropic
 
@@ -623,10 +623,124 @@ Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecat
 | Last retrieved | 2026-10-02 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S5 `#s1` ×2 |
+| **Total references** | **1** |
+| Cited in | S5 `#s1` |
 
 Anthropic commits to preserving the weights of all publicly released models, and of models deployed for significant internal use, for at least the lifetime of the company; states that retiring past models is currently necessary to make new models available because serving cost scales roughly linearly with the number of models served; and describes a post-deployment report and interview for each deprecated model. No claim about any adviser's workflow rests on it.
+
+### Anthropic
+
+**Models overview**  
+`src-anthropic-models-overview` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Platform Docs |
+| Link | <https://platform.claude.com/docs/en/about-claude/models/overview> |
+| Published | 2026 |
+| Last retrieved | 2026-10-04 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **3** |
+| Cited in | S5 `#s1` ×3 |
+
+The current lineup of four models (Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 4.5) with each one's retirement commitment (not sooner than 1 September 2027, 22 September 2027, 28 September 2027 and 15 October 2026), and the eight legacy models still available (Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6). The page recommends Opus 5.5 for most workloads. No price or benchmark from it is on the page.
+
+### Anthropic
+
+**Skills**  
+`src-claude-code-skills` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Code documentation, code.claude.com |
+| Link | <https://code.claude.com/docs/en/skills> |
+| Published | 2026 |
+| Last retrieved | 2026-10-04 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **4** |
+| Cited in | S5 `#s1` ×2 · S5 `#sLib` ×2 |
+
+A skill is a folder holding a SKILL.md file whose frontmatter names the skill and describes what it does and when to use it; the assistant decides from that description when to apply the skill, so a user's ordinary request can trigger it without naming it, and a user can also invoke it by name. Skills live in a personal folder, a project folder, a plugin, or the managed settings directory an organisation deploys, where enterprise skills take precedence. The frontmatter can pin or restrict the model a skill runs on (the model field) and set tools and effort.
+
+### Anthropic
+
+**Create a marketplace**  
+`src-claude-code-marketplace` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Code documentation, code.claude.com |
+| Link | <https://code.claude.com/docs/en/plugin-marketplaces> |
+| Published | 2026 |
+| Last retrieved | 2026-10-04 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **2** |
+| Cited in | S5 `#sLib` ×2 |
+
+A plugin marketplace is a directory or repository with a .claude-plugin/marketplace.json file listing plugins and where to fetch each; pushed to a git host, anyone with access registers it with one command and installs plugins from it; the repository can be private; an administrator can require it on every machine. Plugins can hold skills, and a plugin's skills appear under the plugin's name.
+
+### Anthropic
+
+**Manage Claude Code plugins for your organization**  
+`src-claude-code-org` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Code documentation, code.claude.com |
+| Link | <https://code.claude.com/docs/en/plugins/org> |
+| Published | 2026 |
+| Last retrieved | 2026-10-04 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **3** |
+| Cited in | S5 `#sLib` ×3 |
+
+Managed settings (a managed-settings file, an MDM policy, or server-managed settings from the organisation's console) decide which plugins are installed and allowed on every machine, and users cannot override them. extraKnownMarketplaces registers a marketplace on each machine and enabledPlugins names the plugins to install from it; after the settings reach a machine the plugins install at the start of the user's next session. autoUpdate on the marketplace entry keeps it and its plugins refreshing in the background. strictKnownMarketplaces is an allow-list of marketplace sources and blockedMarketplaces a block-list; adding a source outside the list fails with a message containing "is blocked by enterprise policy".
+
+### Anthropic
+
+**Host and maintain a marketplace**  
+`src-claude-code-host` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Code documentation, code.claude.com |
+| Link | <https://code.claude.com/docs/en/plugins/host-marketplace> |
+| Published | 2026 |
+| Last retrieved | 2026-10-04 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S5 `#sLib` |
+
+A marketplace can be hosted on GitHub, another git host, a hosted catalogue URL or a shared directory; users receive changes through background auto-update once it is turned on for the marketplace, or when they run the update command; a user gets a new copy of a plugin only when its version changes, so a release is a version bump or an omitted version that tracks commits. Access to a private repository follows the user's own git credentials.
+
+### Anthropic
+
+**Settings files and precedence**  
+`src-claude-code-settings` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Code documentation, code.claude.com |
+| Link | <https://code.claude.com/docs/en/settings> |
+| Published | 2026 |
+| Last retrieved | 2026-10-04 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **4** |
+| Cited in | S5 `#s1` ×2 · S5 `#sLib` ×2 |
+
+Managed settings sit above every other level (command line, project, shared project, user) and nothing a user sets overrides them, apart from a few security-sensitive exceptions. A managed model sets the model a session starts with; the lock on which models may be used is availableModels, which constrains the model picker, the command-line flag and the model key in a user's own files, and a managed list applies as-is.
 
 ### artefact2
 
@@ -702,7 +816,7 @@ In early 2020 a bank branch manager in the UAE authorised transfers of $35 milli
 | **Total references** | **1** |
 | Cited in | S5 `#s5` |
 
-5,179 customer-support agents at a software firm, with a generative-AI assistant rolled out in stages. Issues resolved per hour rose 14% on average, 34% for the least experienced and least skilled agents, with little measurable effect on the most experienced; the authors read the tool as spreading the practices of the best workers. A support-centre trial, stated as such on the page.
+5,179 customer-support agents doing live text-chat support for a Fortune 500 software firm's small-business customers, with a generative-AI assistant that suggested replies and documentation links (which the agent could use or ignore) rolled out in stages. Issues resolved per hour rose 14% on average, 34% for the least experienced and least skilled agents, with little measurable effect on the most experienced; the authors read the tool as spreading the practices of the best workers. A support-centre trial, stated as such on the page.
 
 ### Capital One
 
@@ -854,7 +968,7 @@ NARROW, AND IT WAS READ TOO WIDELY. The speech states that the core questions re
 | **Total references** | **3** |
 | Cited in | S5 `#s5` ×2 · S5 `#sE5` |
 
-758 Boston Consulting Group consultants, about 7% of the firm's individual contributors, randomised to no AI, GPT-4, or GPT-4 with a prompting overview, on 18 realistic consulting tasks. Inside the model's capability frontier the AI group completed 12.2% more tasks, 25.1% faster, at more than 40% higher rated quality. On a task chosen to sit outside the frontier, consultants using AI were 19 percentage points less likely to produce a correct answer than the control group. The jagged-frontier framing: tasks that look alike to a person can sit on opposite sides of what the model can do.
+758 Boston Consulting Group consultants, about 7% of the firm's individual contributors, randomised to no AI, GPT-4, or GPT-4 with a prompting overview, on 18 realistic consulting tasks. The 18 inside-the-frontier tasks were built around a new footwear product (idea generation, market segmentation, a memo, marketing copy); the outside-the-frontier task was a brand recommendation that required interview notes and a spreadsheet to be read together. Inside the model's capability frontier the AI group completed 12.2% more tasks, 25.1% faster, at more than 40% higher rated quality, with below-average consultants gaining 43% in quality and above-average 17%. On the task outside the frontier, consultants using AI were 19 percentage points less likely to produce a correct answer than the control group. The jagged-frontier framing: tasks that look alike to a person can sit on opposite sides of what the model can do.
 
 ### Deloitte Center for Financial Services
 
@@ -1424,7 +1538,7 @@ Over 200 preregistered legal queries, expert hand-scored, against Lexis+ AI, Wes
 | **Total references** | **2** |
 | Cited in | S5 `#s5` ×2 |
 
-A randomised trial with 16 experienced open-source developers on 246 real tasks from their own repositories, each task randomly assigned to AI allowed or not (mainly Cursor with Claude 3.5 and 3.7 Sonnet). With AI the tasks took 19% longer. Before the study the developers expected to be 24% faster; afterwards they believed they had been about 20% faster. The perception gap, not the coding, is what the page teaches.
+A randomised trial with 16 experienced open-source developers, each years into the repository they worked on, on 246 real tasks from those repositories (bug fixes, features, refactors), each task randomly assigned to AI allowed or not (mainly Cursor Pro with Claude 3.5 and 3.7 Sonnet, early 2025). With AI the tasks took 19% longer. Before the study the developers expected to be 24% faster; afterwards they believed they had been about 20% faster. The perception gap, not the coding, is what the page teaches.
 
 ### Microsoft
 
@@ -1519,7 +1633,7 @@ In May 2026 a Singapore businessman transferred S$4.9 million, about US$3.8 mill
 | **Total references** | **1** |
 | Cited in | S5 `#s5` |
 
-453 college-educated professionals given occupation-specific, incentivised writing tasks, half randomly given access to ChatGPT. Average time fell about 40% and graded output quality rose about 18%; the gap between weaker and stronger writers narrowed. A writing-task trial, not a planning one; stated as such on the page.
+453 college-educated professionals (marketers, grant writers, consultants, data analysts, human-resource professionals, managers) given two occupation-specific, incentivised, mid-level professional writing tasks (a press release, a short report, an analysis plan, a delicate email), half randomly given access to ChatGPT for the second. Average time fell about 40% and output quality, graded blind by professionals in the same occupations, rose about 18%; the gap between weaker and stronger writers narrowed. A writing-task trial, not a planning one; stated as such on the page.
 
 ### OpenAI
 
@@ -1573,8 +1687,8 @@ On the Free, Plus and Pro plans the "Improve the model for everyone" setting is 
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **2** |
-| Cited in | S5 `#s1` ×2 |
+| **Total references** | **1** |
+| Cited in | S5 `#s1` |
 
 GPT-4 was removed from ChatGPT on 30 April 2025, replaced as the default by GPT-4o. GPT-4o, GPT-4.1, GPT-4.1 mini and o4-mini were retired from ChatGPT on 13 February 2026, with conversations moved to newer defaults; the models remained available in the API. One line on the page, to show the retirement cycle is vendor-wide.
 
@@ -1820,8 +1934,8 @@ Conversations shared from ChatGPT with the "make this chat discoverable" box tic
 | Last retrieved | *not applicable* |
 | Last verified by the instructor | *not applicable* |
 | Confidence | L |
-| **Total references** | **56** |
-| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s7` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCold` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#sAnon` · S4 `#s3` · S4 `#s4` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` · S4 `#s6` · S4 `#sWS` · S4 `#s7` · S4 `#sCR` ×2 · S4 `#sD` · S4 `#s9` ×2 · S5 `#s0` · S5 `#sCold` · S5 `#s1` ×2 · S5 `#sE2` ×2 · S5 `#s2` ×2 · S5 `#s3` ×2 · S5 `#sE3` · S5 `#s4` · S5 `#sE4` ×2 · S5 `#sE1` · S5 `#s5` · S5 `#s6` · S5 `#s7` · S5 `#sE5` · S5 `#s8` |
+| **Total references** | **60** |
+| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s7` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCold` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#sAnon` · S4 `#s3` · S4 `#s4` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` · S4 `#s6` · S4 `#sWS` · S4 `#s7` · S4 `#sCR` ×2 · S4 `#sD` · S4 `#s9` ×2 · S5 `#s0` · S5 `#sCold` · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#s2` ×3 · S5 `#s3` ×2 · S5 `#sE3` · S5 `#s4` · S5 `#sE4` ×2 · S5 `#sE1` · S5 `#s5` · S5 `#s6` · S5 `#sLib` ×2 · S5 `#s7` · S5 `#sE5` · S5 `#s8` |
 
 Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
 

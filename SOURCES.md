@@ -650,6 +650,7 @@ link:           [UNVERIFIED, needs source]
 published:      2026-03
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: As summarised by Kitces.com Weekend Reading, March 2026. Re-checked 2026-10-04: kitces.com, investmentnews.com and dwealth.news were egress-blocked from this build; a fresh search returned 2,906 responses, 52.2%, 42.9% and 14 note-taking tools, unchanged.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -2345,16 +2346,16 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/about-claude/model-deprecations
 published:      2026-09-30
-last_retrieved: 2026-10-02
+last_retrieved: 2026-10-04
 last_verified:
-retrieval_note: OPENED on 2026-10-02 (platform.claude.com is reachable from this build). The published date is the page's most recent deprecation announcement (Claude Sonnet 4.5, 30 September 2026); the page is updated in place with every announcement.
+retrieval_note: OPENED on 2026-10-02 and RE-OPENED on 2026-10-04 (platform.claude.com is reachable from this build). On 2026-10-04 every date the page carried on 2026-10-02 was unchanged; the not-sooner-than dates of the current and legacy models were added to the scope for the §01 calendar's new rows. The published date is the page's most recent deprecation announcement (Claude Sonnet 4.5, 30 September 2026); the page is updated in place with every announcement.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor lifecycle schedule
 recheck_before: each teaching of Session 5
-scope:          Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §01 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current models carry a not-sooner-than date. Dates are for Anthropic-operated platforms; partner platforms set their own.
-used_for.session-5: the lifecycle terms, the 60 days' notice, the retirement dates on the calendar and the sentence that requests to retired models fail (§01); the advice to test the replacement before the retirement date (Appendix E2)
+scope:          Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §01 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027. Dates are for Anthropic-operated platforms; partner platforms set their own.
+used_for.session-5: the lifecycle terms, the 60 days' notice, the retirement and not-sooner-than dates on the calendar, the sentence that requests to retired models fail, and the lifecycle states in The Gate and the Scorecard (§01); the advice to test the replacement before the retirement date (Appendix E2)
 ```
 
 ## src-anthropic-deprecation-commitments
@@ -2385,7 +2386,7 @@ link:           https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and
 published:      2026-01
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. help.openai.com and openai.com are egress-blocked from this build environment (2026-10-02). The facts in scope come from the search engine's summary of the article and from three consistent reports (YourStory; Gigazine, 30 January 2026; letsdatascience), plus TechCrunch and Tom's Guide (April 2025) for the GPT-4 retirement, which is why the confidence is M. Open the article before saying a date aloud.
+retrieval_note: NOT RETRIEVED. help.openai.com and openai.com are egress-blocked from this build environment (2026-10-02). The facts in scope come from the search engine's summary of the article and from three consistent reports (YourStory; Gigazine, 30 January 2026; letsdatascience), plus TechCrunch and Tom's Guide (April 2025) for the GPT-4 retirement, which is why the confidence is M. Still blocked on 2026-10-04. Open the article before saying a date aloud.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -2405,11 +2406,11 @@ link:           https://www.science.org/doi/10.1126/science.adh2586
 published:      2023-07
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. science.org and the NBER conference copy are egress-blocked from this build environment (2026-10-02). The figures in scope are the ones every summary found repeats (Stanford SCALE's publication listing, Marginal Revolution, Gulf News, the IT-Daily report), which is why the confidence is M. Volume and page numbers are not recorded because they were not read off the article.
+retrieval_note: NOT RETRIEVED. science.org and the NBER conference copy are egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as was economics.mit.edu). The figures in scope are the ones every summary found repeats (Stanford SCALE's publication listing, Marginal Revolution, Gulf News, the IT-Daily report), which is why the confidence is M. The task and occupation lines added on 2026-10-04 come from the same consistent summaries. Volume and page numbers are not recorded because they were not read off the article.
 confidence:     M
 kind:           evidence
 moving_target:  false
-scope:          453 college-educated professionals given occupation-specific, incentivised writing tasks, half randomly given access to ChatGPT. Average time fell about 40% and graded output quality rose about 18%; the gap between weaker and stronger writers narrowed. A writing-task trial, not a planning one; stated as such on the page.
+scope:          453 college-educated professionals (marketers, grant writers, consultants, data analysts, human-resource professionals, managers) given two occupation-specific, incentivised, mid-level professional writing tasks (a press release, a short report, an analysis plan, a delicate email), half randomly given access to ChatGPT for the second. Average time fell about 40% and output quality, graded blind by professionals in the same occupations, rose about 18%; the gap between weaker and stronger writers narrowed. A writing-task trial, not a planning one; stated as such on the page.
 used_for.session-5: the 40% less time and 18% higher quality bars in the four-trial figure (§05)
 ```
 
@@ -2423,11 +2424,11 @@ link:           https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321
 published:      2023-09
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. hbs.edu and ssrn.com are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (Computing, beSpacific, Silicon Canals, the TFT summary, the Brainscape card set), which is why the confidence is M. The working-paper number is not recorded because it was not read off the paper.
+retrieval_note: NOT RETRIEVED. hbs.edu and ssrn.com are egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04). The figures in scope are consistent across the reports found (Computing, beSpacific, Silicon Canals, the TFT summary, the Brainscape card set), which is why the confidence is M. The task descriptions and the below- and above-average split added on 2026-10-04 come from the same consistent reports. The working-paper number is not recorded because it was not read off the paper.
 confidence:     M
 kind:           evidence
 moving_target:  false
-scope:          758 Boston Consulting Group consultants, about 7% of the firm's individual contributors, randomised to no AI, GPT-4, or GPT-4 with a prompting overview, on 18 realistic consulting tasks. Inside the model's capability frontier the AI group completed 12.2% more tasks, 25.1% faster, at more than 40% higher rated quality. On a task chosen to sit outside the frontier, consultants using AI were 19 percentage points less likely to produce a correct answer than the control group. The jagged-frontier framing: tasks that look alike to a person can sit on opposite sides of what the model can do.
+scope:          758 Boston Consulting Group consultants, about 7% of the firm's individual contributors, randomised to no AI, GPT-4, or GPT-4 with a prompting overview, on 18 realistic consulting tasks. The 18 inside-the-frontier tasks were built around a new footwear product (idea generation, market segmentation, a memo, marketing copy); the outside-the-frontier task was a brand recommendation that required interview notes and a spreadsheet to be read together. Inside the model's capability frontier the AI group completed 12.2% more tasks, 25.1% faster, at more than 40% higher rated quality, with below-average consultants gaining 43% in quality and above-average 17%. On the task outside the frontier, consultants using AI were 19 percentage points less likely to produce a correct answer than the control group. The jagged-frontier framing: tasks that look alike to a person can sit on opposite sides of what the model can do.
 used_for.session-5: the 25% faster, 12% more tasks and 40% quality bars, and the 19-point penalty outside the frontier (§05, Appendix E5)
 ```
 
@@ -2441,11 +2442,11 @@ link:           https://www.nber.org/papers/w31161
 published:      2025
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. nber.org, arxiv.org and academic.oup.com are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (the NBER abstract as the search engine returns it, IDEAS/RePEc, the SSRN listing, the arXiv listing), which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. nber.org, arxiv.org and academic.oup.com are egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04). The figures in scope are consistent across the reports found (the NBER abstract as the search engine returns it, IDEAS/RePEc, the SSRN listing, the arXiv listing), which is why the confidence is M. The setting and tool lines added on 2026-10-04 come from the same reports.
 confidence:     M
 kind:           evidence
 moving_target:  false
-scope:          5,179 customer-support agents at a software firm, with a generative-AI assistant rolled out in stages. Issues resolved per hour rose 14% on average, 34% for the least experienced and least skilled agents, with little measurable effect on the most experienced; the authors read the tool as spreading the practices of the best workers. A support-centre trial, stated as such on the page.
+scope:          5,179 customer-support agents doing live text-chat support for a Fortune 500 software firm's small-business customers, with a generative-AI assistant that suggested replies and documentation links (which the agent could use or ignore) rolled out in stages. Issues resolved per hour rose 14% on average, 34% for the least experienced and least skilled agents, with little measurable effect on the most experienced; the authors read the tool as spreading the practices of the best workers. A support-centre trial, stated as such on the page.
 used_for.session-5: the 14% average and 34% novice bars in the four-trial figure (§05)
 ```
 
@@ -2459,11 +2460,11 @@ link:           https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-de
 published:      2025-07-10
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. metr.org is egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across five reports found (The Decoder, eWeek, diginomica, letsdatascience, the Harvard tagteam feed of the post), which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. metr.org is egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as were the secondary hosts tried). The figures in scope are consistent across five reports found (The Decoder, eWeek, diginomica, letsdatascience, the Harvard tagteam feed of the post), which is why the confidence is M. The task line added on 2026-10-04 comes from the same reports.
 confidence:     M
 kind:           evidence
 moving_target:  false
-scope:          A randomised trial with 16 experienced open-source developers on 246 real tasks from their own repositories, each task randomly assigned to AI allowed or not (mainly Cursor with Claude 3.5 and 3.7 Sonnet). With AI the tasks took 19% longer. Before the study the developers expected to be 24% faster; afterwards they believed they had been about 20% faster. The perception gap, not the coding, is what the page teaches.
+scope:          A randomised trial with 16 experienced open-source developers, each years into the repository they worked on, on 246 real tasks from those repositories (bug fixes, features, refactors), each task randomly assigned to AI allowed or not (mainly Cursor Pro with Claude 3.5 and 3.7 Sonnet, early 2025). With AI the tasks took 19% longer. Before the study the developers expected to be 24% faster; afterwards they believed they had been about 20% faster. The perception gap, not the coding, is what the page teaches.
 used_for.session-5: the 19% slower bar and the expected and believed speed-ups beside it (§05)
 ```
 
@@ -2477,12 +2478,12 @@ link:           [UNVERIFIED, needs source]
 published:      2023
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. morningstar.com is egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across four reports found (Financial Advisor magazine, InsuranceNewsNet, Institutional Investor's RIA Intel, the IFA Magazine podcast with both authors); the reports give the sample as 184 investors in one and 185 in another, and the page says "about 185". The exact title and publication date were not read off the report, so both are recorded as the reports give them, which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. morningstar.com is egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across four reports found (Financial Advisor magazine, InsuranceNewsNet, Institutional Investor's RIA Intel, the IFA Magazine podcast with both authors); the reports give the sample as 184 investors in one and 185 in another, and the page says "about 185". Re-checked 2026-10-04: morningstar.com and the secondary hosts were still blocked; a fresh search returned the same six shares and 184 investors. The exact title and publication date were not read off the report, so both are recorded as the reports give them, which is why the confidence is M.
 confidence:     M
 kind:           evidence
 moving_target:  false
 scope:          Three Morningstar surveys in 2021 and 2022, about 3,000 responses, of which 184 to 185 investors had fired an advisor. Reasons, as shares of responses: quality of advice and services 32%, quality of the relationship 21%, cost 17%, returns 11%, comfort handling finances alone 10%, communication 9%. The authors' reading: the top two reasons are the advice and the relationship, not performance or fees.
-used_for.session-5: the shares of reasons investors gave for firing an advisor (§07, Appendix E5)
+used_for.session-5: the six reasons and their shares, which the learner ranks before the reveal (§08), and the first two in the discussion (Appendix E5)
 ```
 
 ## src-vanguard-alpha
@@ -2495,12 +2496,12 @@ link:           [UNVERIFIED, needs source]
 published:      2022
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee.
+retrieval_note: NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee. Re-checked 2026-10-04: vanguard.ca, Vanguard's own host for the infographic, was blocked; a fresh search returned about 3% and 150 basis points unchanged.
 confidence:     M
 kind:           evidence
 moving_target:  false
 scope:          Vanguard's framework attributes about 3 percentage points a year of potential net value to an adviser following its best practices, of which behavioural coaching, keeping clients to their plan in fearful or greedy markets, is the largest single module at about 150 basis points, roughly half.
-used_for.session-5: the about-3% figure and behavioural coaching as about half of it (§07, Appendix E5)
+used_for.session-5: the about-3% figure and behavioural coaching as about half of it (§08, Appendix E5)
 ```
 
 ## src-cfp-psychology
@@ -2513,12 +2514,12 @@ link:           https://www.cfp.net/news/2021/03/cfp-board-adds-psychology-of-fi
 published:      2021-03
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. cfp.net is egress-blocked from this build environment (2026-10-02). The facts in scope come from the search engine's summary of the release and from Institutional Investor's RIA Intel report, which agree, which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. cfp.net is egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as was institutionalinvestor.com). The facts in scope come from the search engine's summary of the release and from Institutional Investor's RIA Intel report, which agree, which is why the confidence is M.
 confidence:     M
 kind:           evidence
 moving_target:  false
 scope:          The 2021 practice analysis added Psychology of Financial Planning as the eighth principal knowledge domain, weighted at 7% of the CFP exam from the March 2022 administration; the domain covers client and planner attitudes, values and biases, behavioural finance, sources of money conflict, and principles of counselling.
-used_for.session-5: the domain's existence and its 7% weight (§07)
+used_for.session-5: the domain's existence and its 7% weight (§08)
 ```
 
 ## src-rightcapital-iris
@@ -2531,7 +2532,7 @@ link:           https://www.accessnewswire.com/newsroom/en/business-and-professi
 published:      2026-06-23
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. accessnewswire.com and rightcapital.com are egress-blocked from this build environment (2026-10-02). The facts in scope are consistent across four reports found (InvestmentNews, WealthManagement.com, Pulse 2.0, the Eagle-Tribune syndication of the release), which is why the confidence is M. A vendor's description of its own product; the page uses it as one example of a planning-software agent, not as an endorsement.
+retrieval_note: NOT RETRIEVED. accessnewswire.com and rightcapital.com are egress-blocked from this build environment (2026-10-02; unchanged on 2026-10-04). The facts in scope are consistent across four reports found (InvestmentNews, WealthManagement.com, Pulse 2.0, the Eagle-Tribune syndication of the release), which is why the confidence is M. A vendor's description of its own product; the page uses it as one example of a planning-software agent, not as an endorsement.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -2551,7 +2552,7 @@ link:           https://www.pewresearch.org/short-reads/2025/07/22/google-users-
 published:      2025-07-22
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. pewresearch.org is egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across five reports found (The Register, TheWrap, PPC Land, AI Weekly, Gigazine), which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. pewresearch.org is egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as was theregister.com). The figures in scope are consistent across five reports found (The Register, TheWrap, PPC Land, AI Weekly, Gigazine), which is why the confidence is M.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2569,7 +2570,7 @@ link:           https://www.kitces.com/blog/artificial-intelligence-ai-search-en
 published:      2025-11-17
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. kitces.com is egress-blocked from this build environment (2026-10-02), both for the container's proxy and for the fetch tool. The syllabus lists the reading as "Ways Advisors Can Optimize for AI Search with a Marketing Strategy Refresh"; the title recorded here is the one the search engine returns for the URL. The one recommendation on the page is the one the search engine's summary of the article repeats; nothing else from the article is characterised.
+retrieval_note: NOT RETRIEVED. kitces.com is egress-blocked from this build environment (2026-10-02, and again on 2026-10-04), both for the container's proxy and for the fetch tool. The syllabus lists the reading as "Ways Advisors Can Optimize for AI Search with a Marketing Strategy Refresh"; the title recorded here is the one the search engine returns for the URL. The one recommendation on the page is the one the search engine's summary of the article repeats; nothing else from the article is characterised.
 confidence:     M
 kind:           assigned_reading
 moving_target:  false
@@ -2587,10 +2588,130 @@ link:           https://investmentnews.com/fintech/ai-moves-from-novelty-to-back
 published:      2026-03
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. investmentnews.com is egress-blocked from this build environment (2026-10-02). The facts in scope are consistent across three reports found (InvestmentNews, a vendor's release about the same survey, the dwealth Advisor Tech Talk column of 17 March 2026), which is why the confidence is M. The survey's headline shares are held separately at H in src-t3-survey.
+retrieval_note: NOT RETRIEVED. investmentnews.com is egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as was dwealth.news). The facts in scope are consistent across three reports found (InvestmentNews, a vendor's release about the same survey, the dwealth Advisor Tech Talk column of 17 March 2026), which is why the confidence is M. The survey's headline shares are held separately at H in src-t3-survey.
 confidence:     M
 kind:           evidence
 moving_target:  false
 scope:          In the 2026 survey, AI note-taking appeared as a tracked category for the first time, with 14 solutions, and the survey's co-producer called its adoption curve one of the fastest tracked; the survey also found that AI tools had not displaced the established providers in CRM, planning and portfolio software, so advisers were using AI as a supplement to their stack.
 used_for.session-5: the 14 note-taking tools tracked for the first time, and AI as a supplement to the established stack (§06)
+```
+
+## src-anthropic-models-overview
+
+```source
+title:          Models overview
+author:         Anthropic
+publisher:      Claude Platform Docs
+link:           https://platform.claude.com/docs/en/about-claude/models/overview
+published:      2026
+last_retrieved: 2026-10-04
+last_verified:
+retrieval_note: OPENED on 2026-10-04 (platform.claude.com is reachable from this build). The page carries no publication date of its own; it is updated in place with each model release, so the year is recorded and the retrieval date is the one to read.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor model lineup
+recheck_before: each teaching of Session 5
+scope:          The current lineup of four models (Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 4.5) with each one's retirement commitment (not sooner than 1 September 2027, 22 September 2027, 28 September 2027 and 15 October 2026), and the eight legacy models still available (Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6). The page recommends Opus 5.5 for most workloads. No price or benchmark from it is on the page.
+used_for.session-5: the four current models and the eight legacy ones on the §01 calendar, and the lineup sentence in §01's bullets and status readout
+```
+
+## src-claude-code-skills
+
+```source
+title:          Skills
+author:         Anthropic
+publisher:      Claude Code documentation, code.claude.com
+link:           https://code.claude.com/docs/en/skills
+published:      2026
+last_retrieved: 2026-10-04
+last_verified:
+retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). The documentation is updated in place; the retrieval date is the one to read.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor product documentation
+recheck_before: each teaching of Session 5
+scope:          A skill is a folder holding a SKILL.md file whose frontmatter names the skill and describes what it does and when to use it; the assistant decides from that description when to apply the skill, so a user's ordinary request can trigger it without naming it, and a user can also invoke it by name. Skills live in a personal folder, a project folder, a plugin, or the managed settings directory an organisation deploys, where enterprise skills take precedence. The frontmatter can pin or restrict the model a skill runs on (the model field) and set tools and effort.
+used_for.session-5: that a skill is one described file, that the description is what triggers it, that an organisation can distribute skills centrally, and that a skill file can name its model (§01 bullets; §07 One Repository, Every Desk)
+```
+
+## src-claude-code-marketplace
+
+```source
+title:          Create a marketplace
+author:         Anthropic
+publisher:      Claude Code documentation, code.claude.com
+link:           https://code.claude.com/docs/en/plugin-marketplaces
+published:      2026
+last_retrieved: 2026-10-04
+last_verified:
+retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor product documentation
+recheck_before: each teaching of Session 5
+scope:          A plugin marketplace is a directory or repository with a .claude-plugin/marketplace.json file listing plugins and where to fetch each; pushed to a git host, anyone with access registers it with one command and installs plugins from it; the repository can be private; an administrator can require it on every machine. Plugins can hold skills, and a plugin's skills appear under the plugin's name.
+used_for.session-5: the repository card in §07: one catalogue file, one git repository, the add-and-install step
+```
+
+## src-claude-code-org
+
+```source
+title:          Manage Claude Code plugins for your organization
+author:         Anthropic
+publisher:      Claude Code documentation, code.claude.com
+link:           https://code.claude.com/docs/en/plugins/org
+published:      2026
+last_retrieved: 2026-10-04
+last_verified:
+retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor product documentation
+recheck_before: each teaching of Session 5
+scope:          Managed settings (a managed-settings file, an MDM policy, or server-managed settings from the organisation's console) decide which plugins are installed and allowed on every machine, and users cannot override them. extraKnownMarketplaces registers a marketplace on each machine and enabledPlugins names the plugins to install from it; after the settings reach a machine the plugins install at the start of the user's next session. autoUpdate on the marketplace entry keeps it and its plugins refreshing in the background. strictKnownMarketplaces is an allow-list of marketplace sources and blockedMarketplaces a block-list; adding a source outside the list fails with a message containing "is blocked by enterprise policy".
+used_for.session-5: the policy card, the push-an-update beat and two of the three proposals in §07
+```
+
+## src-claude-code-host
+
+```source
+title:          Host and maintain a marketplace
+author:         Anthropic
+publisher:      Claude Code documentation, code.claude.com
+link:           https://code.claude.com/docs/en/plugins/host-marketplace
+published:      2026
+last_retrieved: 2026-10-04
+last_verified:
+retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor product documentation
+recheck_before: each teaching of Session 5
+scope:          A marketplace can be hosted on GitHub, another git host, a hosted catalogue URL or a shared directory; users receive changes through background auto-update once it is turned on for the marketplace, or when they run the update command; a user gets a new copy of a plugin only when its version changes, so a release is a version bump or an omitted version that tracks commits. Access to a private repository follows the user's own git credentials.
+used_for.session-5: how an update travels from the repository to the desks in §07
+```
+
+## src-claude-code-settings
+
+```source
+title:          Settings files and precedence
+author:         Anthropic
+publisher:      Claude Code documentation, code.claude.com
+link:           https://code.claude.com/docs/en/settings
+published:      2026
+last_retrieved: 2026-10-04
+last_verified:
+retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor product documentation
+recheck_before: each teaching of Session 5
+scope:          Managed settings sit above every other level (command line, project, shared project, user) and nothing a user sets overrides them, apart from a few security-sensitive exceptions. A managed model sets the model a session starts with; the lock on which models may be used is availableModels, which constrains the model picker, the command-line flag and the model key in a user's own files, and a managed list applies as-is.
+used_for.session-5: that a firm can lock the list of models any session may use (§01 bullets; the third proposal in §07)
 ```

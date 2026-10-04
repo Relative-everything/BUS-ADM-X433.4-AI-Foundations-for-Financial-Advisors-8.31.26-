@@ -39,7 +39,8 @@ function load() {
   say(errs.length === 0, 'S8-001', 'the page loads with zero window errors' + (errs.length ? ': ' + errs.slice(0, 3).join(' | ') : ''));
   const sec = $('#s8');
   say(!!sec && sec.getAttribute('data-nav') === 'The reading' && sec.classList.contains('slide') && !sec.classList.contains('apx'), 'S8-002', 'section #s8 is a core slide with data-nav "The reading"');
-  say(/08 · The reading/.test(txt('#s8 .eyebrow')) && /5 min/.test(txt('#s8 .eyebrow .mins')) && txt('#s8 h2') === 'Trust the Tool, Think Less?', 'S8-003', 'eyebrow, minutes and title as the spec says');
+  /* 2026-10-04 (S5I-002, S5I-011): the eyebrow reads 09 after the new §07; the marker moves by an SVG transform attribute and emphasis sits on rectangles only, which is the blur fix */
+  say(/09 · The reading/.test(txt('#s8 .eyebrow')) && /5 min/.test(txt('#s8 .eyebrow .mins')) && txt('#s8 h2') === 'Trust the Tool, Think Less?', 'S8-003', 'eyebrow, minutes and title as the spec says');
   const big = txt('#s8 p.big').trim();
   say(/^The assigned paper asked 319 knowledge workers/.test(big) && big.split(/\s+/).length < 30, 'S8-004', 'the thesis line is the spec\'s and under 30 words (' + big.split(/\s+/).length + ')');
   const roots = $$('#s8 [data-task]');
@@ -105,31 +106,31 @@ function load() {
   say(rects.length === 6 && rects[1] > rects[0] && rects[5] < rects[2] && rects.every((h) => h > 0) && rects[1] - rects[5] >= 12, 'S8-034', 'band B bar heights follow the shares (79 tallest, 55 shortest, a visible spread)');
   say(/likely to skip the check/.test(svgText) && /likely to check/.test(svgText) && /you · even/.test(svgText), 'S8-035', 'band C: the line is labelled at both ends and the marker reads "you · even" at 5 and 5');
   const you = $('#s8Fig .s8-you'), fill = $('#s8Fig .s8-fill');
-  const pos0 = you.style.transform;
-  say(/translate\(0px/.test(pos0) && fill.style.transform === 'scaleX(0)' && /s8-mid/.test(svg.getAttribute('class')), 'S8-036', 'at 5 and 5 the marker sits on the centre, the fill is scaleX(0), the zone class is mid');
+  const pos0 = (you.getAttribute('transform')||'');
+  say(/translate\(0 0\)/.test(pos0) && fill.style.transform === 'scaleX(0)' && /s8-mid/.test(svg.getAttribute('class')), 'S8-036', 'at 5 and 5 the marker sits on the centre, the fill is scaleX(0), the zone class is mid');
   say(/Move either slider/.test(txt('#s8Out')) && !out.classList.contains('has'), 'S8-037', 'the readout waits for a slider before it reads');
 
   slide(tool, 9); slide(me, 2);
   say(txt('#s8ToolVal') === '9' && txt('#s8SelfVal') === '2' && tool.getAttribute('aria-valuetext') === '9 of 10', 'S8-040', 'slider values and aria-valuetext follow the input');
-  say(new RegExp(`^translate\\(${-7 * UNIT}px,\\s?0px\\)$`).test(you.style.transform) && fill.style.transform === 'scaleX(-7)' && /s8-skip/.test(svg.getAttribute('class')) && /you · skip/.test(svg.textContent),
+  say(new RegExp(`^translate\\(${-7 * UNIT} 0\\)$`).test((you.getAttribute('transform')||'')) && fill.style.transform === 'scaleX(-7)' && /s8-skip/.test(svg.getAttribute('class')) && /you · skip/.test(svg.textContent),
     'S8-041', 'tool 9, self 2: the marker moves left by 7 units, the fill mirrors left, the zone is skip and the marker says so');
   say(out.classList.contains('has') && /Trust in the tool high, confidence in yourself low: the survey’s pattern for the least checking\./.test(txt('#s8Out')) && /Session 4’s record and Session 3’s opened source/.test(txt('#s8Out')) && /Tool 9 of 10 · Yourself 2 of 10/.test(txt('#s8Out')),
     'S8-042', 'the readout gives the least-checking reading with both values');
   say(/at the least checking: tool 9 of 10, yourself 2 of 10/.test(svg.getAttribute('aria-label')), 'S8-043', 'the aria-label follows the sliders');
-  say(gTool(d).style.opacity === '0.94' && gMe(d).style.opacity === '0.52' && $('#s8Fig .s8-strip').style.opacity === '0.94', 'S8-044', 'the tool bar and the activity strip come forward with trust in the tool; the self bar steps back');
+  say($('#s8Fig .s8-rust .s8-rect').style.fillOpacity === '0.94' && $('#s8Fig .s8-teal .s8-rect').style.fillOpacity === '0.52' && [...$$('#s8Fig .s8-strip rect')].every((r) => r.style.fillOpacity === '0.94') && gTool(d).style.opacity === '' && gMe(d).style.opacity === '', 'S8-044', 'the tool bar and the activity strip come forward with trust in the tool (fill-opacity on the rectangles, never on the groups that hold text); the self bar steps back');
   slide(tool, 1); slide(me, 10);
-  say(new RegExp(`^translate\\(${9 * UNIT}px,\\s?0px\\)$`).test(you.style.transform) && fill.style.transform === 'scaleX(9)' && /s8-check/.test(svg.getAttribute('class')) && /you · check/.test(svg.textContent),
+  say(new RegExp(`^translate\\(${9 * UNIT} 0\\)$`).test((you.getAttribute('transform')||'')) && fill.style.transform === 'scaleX(9)' && /s8-check/.test(svg.getAttribute('class')) && /you · check/.test(svg.textContent),
     'S8-045', 'tool 1, self 10: the marker moves right by 9 units, the zone is check');
   say(/Confidence in yourself high, trust in the tool low: the survey’s pattern for the most checking\./.test(txt('#s8Out')) && /Tool 1 of 10 · Yourself 10 of 10/.test(txt('#s8Out')), 'S8-046', 'the opposite reading');
   slide(tool, 6); slide(me, 4);
-  say(new RegExp(`^translate\\(${-2 * UNIT}px,\\s?0px\\)$`).test(you.style.transform) && /s8-mid/.test(svg.getAttribute('class')) && /Both about even: the survey’s middle\./.test(txt('#s8Out')) && /you · even/.test(svg.textContent), 'S8-047', 'tool 6, self 4: the middle reading, still "even" on the marker');
+  say(new RegExp(`^translate\\(${-2 * UNIT} 0\\)$`).test((you.getAttribute('transform')||'')) && /s8-mid/.test(svg.getAttribute('class')) && /Both about even: the survey’s middle\./.test(txt('#s8Out')) && /you · even/.test(svg.textContent), 'S8-047', 'tool 6, self 4: the middle reading, still "even" on the marker');
   tool.value = 'abc'; tool.dispatchEvent(new (load().w.Event)('input', { bubbles: true }));
-  say(!/NaN|undefined/.test(txt('#s8')) && !/NaN|undefined/.test(svg.getAttribute('aria-label')) && /translate\(-?\d+px/.test(you.style.transform), 'S8-048', 'a bad slider value never prints NaN or undefined');
+  say(!/NaN|undefined/.test(txt('#s8')) && !/NaN|undefined/.test(svg.getAttribute('aria-label')) && /translate\(-?\d+ 0\)/.test((you.getAttribute('transform')||'')), 'S8-048', 'a bad slider value never prints NaN or undefined');
   slide(tool, 10); slide(me, 0);
   const lx = +$('#s8Fig .s8-track').getAttribute('x1'), rx = +$('#s8Fig .s8-track').getAttribute('x2');
-  say(new RegExp(`^translate\\(${-10 * UNIT}px,\\s?0px\\)$`).test(you.style.transform) && 280 - 10 * UNIT === lx && 280 + 10 * UNIT === rx && rx + 50 <= 560 && lx - 50 >= 0, 'S8-049', 'the extremes land exactly on the line ends, and the marker label has room inside the viewBox at both ends');
+  say(new RegExp(`^translate\\(${-10 * UNIT} 0\\)$`).test((you.getAttribute('transform')||'')) && 280 - 10 * UNIT === lx && 280 + 10 * UNIT === rx && rx + 50 <= 560 && lx - 50 >= 0, 'S8-049', 'the extremes land exactly on the line ends, and the marker label has room inside the viewBox at both ends');
   const marks = [];
-  for (const [t, s] of [[0, 0], [10, 10], [3, 7], [7, 3], [2, 5]]) { slide(tool, t); slide(me, s); marks.push(you.style.transform); }
+  for (const [t, s] of [[0, 0], [10, 10], [3, 7], [7, 3], [2, 5]]) { slide(tool, t); slide(me, s); marks.push((you.getAttribute('transform')||'')); }
   say(new Set(marks).size === 4 && marks[0] === marks[1], 'S8-038', 'equal pairs share one position; different gaps give different positions');
 
   /* beat 3: seal, then the five */
