@@ -47,8 +47,8 @@ changed on any page, and no em dash was added or removed from lesson prose.
 
 - **Each of the three bridge questions has its own Lock and reveal**: it locks that answer box and
   opens that key, so the commit-then-reveal order holds per question. *Reveal all three* locks every
-  box first (DW-114). Each box and button is tied to its question for screen readers. The run sheet
-  says so.
+  box first (DW-114); the run sheet says so. Each box and button is tied to its question for screen
+  readers.
 - **§00's navigation label reads Retrieval bridge**, the heading on screen (DW-106).
 - **§04's level tiles wrap at phone width**, so the page no longer scrolls sideways at 380 px
   (DW-119).
@@ -76,8 +76,9 @@ changed on any page, and no em dash was added or removed from lesson prose.
 
 - **`docs/deferred-work.md` re-cut for a taught course.** A 2026-10-11 header that wins over the
   three earlier ones, now kept as history; a Closed table; 9 rows closed that were already closed
-  on the tree, 5 superseded by later decisions, DW-041 re-owned, and 34 rows added (DW-131 to
-  DW-164), most for deferrals the Session 3, 4 and 5 passes recorded only in their own folders. A
+  on the tree, 5 superseded by later decisions, DW-041 re-owned, and 35 rows added (DW-131 to
+  DW-165): deferrals the Session 3, 4 and 5 passes recorded only in their own folders, checks that
+  were red, the register's own defects, and what Wave 2 and its review found and did not fix. A
   five-lens review of the pass reopened DW-092: the Session 1 corrections were never delivered in
   class.
 - **`verify-case.mjs` now asserts the seven copies of the lesson-local case-viewer layout agree**

@@ -1,11 +1,15 @@
 #!/usr/bin/env node
-/* One assertion per ledger row a static or DOM check can prove. Run from the repo root with NODE_PATH
-   at a node_modules holding jsdom:
+/* Assertions for the ledger rows a static, DOM or small behavioural check can cover (not every row).
+   Run from the repo root with NODE_PATH at a node_modules holding jsdom:
      NODE_PATH=$(npm root -g) node docs/changes/2026-10-11-deferred-work-catchup/checks.mjs
-   Layout at 380 px (DW-077, DW-119) and the Session 5 figure geometry (DW-131) need a real browser:
-   scripts/verify-browser.mjs and docs/changes/2026-10-04-session-5-interactivity/drags.mjs measure
-   them. This file pins the source that produces them, so a revert is caught without a browser. */
-import { readFileSync, existsSync } from 'node:fs';
+   Layout at 380 px (DW-077, DW-119) needs a real browser and no committed script measures it: the
+   ledger's figures came from one-off Playwright runs. The Session 5 figure geometry (DW-131) is
+   measured by docs/changes/2026-10-04-session-5-interactivity/drags.mjs. This file pins the source
+   that produces each, so a revert of that source is caught without a browser. */
+import { readFileSync, existsSync, mkdtempSync, symlinkSync, rmSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import { tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
@@ -41,7 +45,7 @@ say(existsSync(`${FOLDER}/plan.md`) && existsSync(`${FOLDER}/ledger.md`) && exis
   say(cells.every((n) => n === 7), 'DWC-001', 'every row has seven cells once escaped pipes are discounted (no code span breaks a table)');
   say(/\n## Where things stand, 2026-10-11\n/.test(t) && /\n## Where things stood, 2026-09-03 to 2026-09-14 \(history, kept as written\)\n/.test(t), 'DWC-001', 'the 2026-10-11 header wins; the earlier blocks are kept as history');
   const row = (id) => (t.match(new RegExp(`^\\| ${id} \\|.*$`, 'm')) || [''])[0];
-  say(/\| open \|$/.test(row('DW-092')) && /Reopened after the catch-up's review/.test(row('DW-092')), 'DWC-002', 'DW-092 is open again: the Session 1 corrections were never delivered'); }
+  say(/\| open \|$/.test(row('DW-092')) && /Reopened after the catch-up's review/.test(row('DW-092')), 'DWC-030', 'DW-092 is open again: the 2026-09-14 corrections slot did not run and no record says the backlog was delivered'); }
 
 /* ---- DW-041, CASE.md 4.5 (Wave 3, DWC-008) ---- */
 { const c = read('CASE.md');
@@ -57,7 +61,7 @@ say(existsSync(`${FOLDER}/plan.md`) && existsSync(`${FOLDER}/ledger.md`) && exis
 }
 { const css = (f) => { const h = read(f); const i = h.indexOf('/* DW-077.'); return i < 0 ? '' : h.slice(i, h.indexOf('}}', i) + 2); };
   const a = css('session-0.1/index.html'), b = css('session-1/index.html');
-  say(a && a === b && /630px on session-0\.1, 615px on\s+session-1/.test(a) && /sessions 4 and 5 hide theirs only until it is used/.test(a) && /@media \(max-width:720px\)\{#ovr\{display:none\}#topbar \.ttl\{min-width:0;overflow:hidden;text-overflow:ellipsis\}#caseBtn\{flex:none\}\}/.test(a), 'DWC-012', 'session-0.1 and session-1 carry one byte-identical DW-077 rule and comment');
+  say(a && a === b && /630px on session-0\.1, 615px on\s+session-1/.test(a) && /sessions 4 and 5 show theirs only while the override is on/.test(a) && /@media \(max-width:720px\)\{#ovr\{display:none\}#topbar \.ttl\{min-width:0;overflow:hidden;text-overflow:ellipsis\}#caseBtn\{flex:none\}\}/.test(a), 'DWC-012', 'session-0.1 and session-1 carry one byte-identical DW-077 rule and comment');
   for (const f of ['session-0.1/index.html', 'session-1/index.html']) {
     const h = read(f), s = h.indexOf('/* STYLE:END */'), i = h.indexOf('/* DW-077.');
     say(s > 0 && i > s, 'DWC-012', `${f}: the rule sits after the managed STYLE fence`); } }
@@ -82,7 +86,9 @@ say(existsSync(`${FOLDER}/plan.md`) && existsSync(`${FOLDER}/ledger.md`) && exis
 
 /* ---- session-5 (DWC-016) ---- */
 { const h = read('session-5/index.html');
-  say(/FY=26,FSH=62;/.test(h) && /var W=680,H=382;/.test(h) && /AY\+AH\+34\+i\*13/.test(h), 'DWC-016', 'session-5: the §04 station boxes and the §07 figure keep the pitches that clear the web fonts'); }
+  const pins = [/FY=26,FSH=62;/, /svt\(g,x\+FSW\/2,FY\+20,/, /FY\+\(ls\.length>1\?36:42\)/, /FY\+51\.5,ls\[1\]/, /var W=680,H=382;/, /svt\(svg,AX\+10,AY\+51,'','sLib-ap'\),svt\(svg,AX\+10,AY\+66,/, /AY\+AH\+34\+i\*13/];
+  const miss = pins.filter((r) => !r.test(h));
+  say(miss.length === 0, 'DWC-016', `session-5: the §04 box height and line pitches, the §07 question and route pitches and the viewBox height are as DW-131 left them${miss.length ? ' (missing ' + miss.map(String).join(', ') + ')' : ''}`); }
 
 /* ---- stamps (DWC-017) ---- */
 { const want = { 'index.html': '2026-10-04', 'session-1/index.html': '2026-10-11', 'session-2/index.html': '2026-10-11', 'session-3/index.html': '2026-10-02', 'session-4/index.html': '2026-09-28', 'session-5/index.html': '2026-10-11' };
@@ -90,16 +96,28 @@ say(existsSync(`${FOLDER}/plan.md`) && existsSync(`${FOLDER}/ledger.md`) && exis
   say(bad.length === 0, 'DWC-017', `the six stamps read as set on 2026-10-11${bad.length ? ' (differs: ' + bad.map((b) => b[0]).join(', ') + ')' : ''}; a later edit should move its page's stamp`); }
 
 /* ---- the review's script fixes (DWC-032 to DWC-034) ---- */
-{ const vc = read('scripts/verify-case.mjs'), bu = read('scripts/build-unsourced.mjs'), bc = read('scripts/build-changelog.py');
-  say(/realpathSync/.test(vc) && /function invokedDirectly\(\)/.test(vc) && /duplicated here:/.test(vc), 'DWC-032', 'verify-case: real-path main guard, duplicates reported');
-  say(/const CONVENTION_COMMENTS = \{\s*'session-0\.1\/index\.html': \[\s*'sections print \[UNVERIFIED, needs source\] where the teaching wants the',\s*'says \[UNVERIFIED, needs source\] rather than inventing one\. \*\/',\s*\],\s*\};/.test(bu), 'DWC-033', 'build-unsourced: the not-a-claim exemption is pinned to the two convention lines');
-  say(/RESTYLE_SWEEP/.test(bc.slice(bc.indexOf('def find_sweep'), bc.indexOf('def main'))), 'DWC-034', 'build-changelog: find_sweep() reads RESTYLE_SWEEP, as verify-style does'); }
+{ const bu = read('scripts/build-unsourced.mjs'), bc = read('scripts/build-changelog.py');
+  /* Behavioural: run verify-case through a symlink to this checkout; the guard as first written did nothing there. */
+  const tmp = mkdtempSync(join(tmpdir(), 'dwc032-')); const link = join(tmp, 'repo');
+  let viaLink = '';
+  try { symlinkSync(resolve('.'), link, 'dir'); viaLink = spawnSync(process.execPath, [join(link, 'scripts/verify-case.mjs')], { cwd: link, encoding: 'utf8' }).stdout || ''; } finally { rmSync(tmp, { recursive: true, force: true }); }
+  say(/summary: \d+ of \d+ lessons carry the current CASE\.md/.test(viaLink) && /layout: /.test(viaLink), 'DWC-032', 'verify-case runs its checks when invoked through a symlinked path');
+  say(/duplicated here:/.test(read('scripts/verify-case.mjs')), 'DWC-032', 'verify-case has a duplicate report (presence only; the behaviour was proved by mutation on scratch copies)');
+  say(/const CONVENTION_COMMENTS = \{\s*'session-0\.1\/index\.html': \[\s*'sections print \[UNVERIFIED, needs source\] where the teaching wants the',\s*'says \[UNVERIFIED, needs source\] rather than inventing one\. \*\/',\s*\],\s*\};/.test(bu) && /\(CONVENTION_COMMENTS\[rel\] \|\| \[\]\)\.includes\(lineText\(text, at\)\)/.test(bu),
+    'DWC-033', 'build-unsourced declares the two pinned convention lines and the exemption tests the marker line against them (presence; behaviour proved by mutation)');
+  /* Behavioural: find_sweep() must return RESTYLE_SWEEP's file when it is set, as verify-style does. */
+  const tmp2 = mkdtempSync(join(tmpdir(), 'dwc034-')); const fake = join(tmp2, 'restyle_sweep.py');
+  let picked = '';
+  try { spawnSync('touch', [fake]); picked = (spawnSync('python3', ['-I', '-c', "import importlib.util as u,sys; s=u.spec_from_file_location('bc', sys.argv[1]); m=u.module_from_spec(s); s.loader.exec_module(m); print(m.find_sweep())", resolve('scripts/build-changelog.py')], { env: { ...process.env, RESTYLE_SWEEP: fake, LESSON_BUILDER_SKILL: '' }, encoding: 'utf8' }).stdout || '').trim(); } finally { rmSync(tmp2, { recursive: true, force: true }); }
+  say(picked === fake, 'DWC-034', `build-changelog's find_sweep() returns RESTYLE_SWEEP's file when it is set${picked === fake ? '' : ' (got ' + (picked || 'nothing') + ')'}`); }
 
 /* ---- the changelog page (DWC-028) ---- */
 { const fence = (h) => { const m = h.match(/\/\* STYLE:BEGIN[^\n]*\n[\s\S]*?\/\* STYLE:END \*\//); return m ? createHash('md5').update(m[0]).digest('hex') : ''; };
   const page = read('changelog/index.html');
   say(fence(page) && fence(page) === fence(read('index.html')), 'DWC-028', 'changelog/index.html carries the corpus style fence, not the empty one build-changelog.py writes without the skill');
-  say(/<h2>2026-10-11 · The deferred-work register catches up/.test(page) && !/\*\*/.test(page.slice(page.indexOf('<h2>2026-10-11'), page.indexOf('<hr>', page.indexOf('<h2>2026-10-11')))), 'DWC-028', 'the 2026-10-11 entry is rendered with no raw markdown'); }
+  const entry = page.slice(page.indexOf('<h2>2026-10-11'), page.indexOf('<hr>', page.indexOf('<h2>2026-10-11')));
+  say(/<h2>2026-10-11 · The deferred-work register catches up/.test(page) && !/\*\*|`|(?<![\w*])\*[^*\s]|\]\(/.test(entry), 'DWC-028', 'the 2026-10-11 entry is rendered with no raw markdown (bold, code, emphasis or link syntax)');
+  say(/All six were behind/.test(entry) && /§05's price chip/.test(entry) && /35 rows added \(DW-131 to DW-165\)/.test(entry), 'DWC-038', 'the served entry carries the review\'s corrections: all six stamps, §05, 35 rows'); }
 
 console.log(`\nsummary: ${fails === 0 ? 'all passed' : fails + ' failed'}`);
 process.exit(fails ? 1 : 0);

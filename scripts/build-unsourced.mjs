@@ -42,10 +42,11 @@
  * comments declaring the convention itself", both script comments in
  * session-0.1. Those two lines, pinned by their exact text in
  * CONVENTION_COMMENTS, are listed as not claims, and only while the marker's
- * whole line sits inside a script comment. Any other marker in a script comment,
- * in session-0.1 or anywhere else, needs a CLAIM annotation like any other, so
- * a new comment, or a lexer that mistakes a string for a comment, fails loudly
- * instead of exempting a claim.
+ * whole line sits inside a script comment. Any other marker in a script comment
+ * is not exempt: outside session-0.1 it needs a CLAIM annotation like any other
+ * and fails without one; in session-0.1 an unannotated [UNVERIFIED, needs
+ * source] becomes a LEGACY_UNANNOTATED row. So a new comment, or a lexer that
+ * mistakes a string for a comment, lists a claim or fails, never exempts one.
  * In the six lessons A16 counts every kind and all pass; the register lists
  * the not-claims separately, so its totals still add up.
  *
@@ -131,8 +132,10 @@ const LEGACY_UNANNOTATED = {
  * convention itself"; both are in session-0.1 (frozen, DW-057). They are pinned
  * by their trimmed text, so the set does not grow when a comment is added or
  * when the lexer reads a string as a comment: any other line falls through to
- * the annotation check. If a pinned line is reworded, it falls through too and
- * the run says so, which is the prompt to update this list.
+ * the annotation check. If a pinned line is reworded, it falls through too and,
+ * in session-0.1, silently becomes a no-weight legacy claim: only the tally
+ * (claims up one, not-claims down one) and --check's WOULD CHANGE show it. When
+ * that happens, update this list.
  */
 const CONVENTION_COMMENTS = {
   'session-0.1/index.html': [

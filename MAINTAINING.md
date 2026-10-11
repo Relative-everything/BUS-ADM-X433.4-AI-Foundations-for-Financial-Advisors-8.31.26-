@@ -264,16 +264,16 @@ resolves it.
 **A `checks.mjs` pins the page its own pass produced, so a later sanctioned
 pass can turn an older folder red.** That red is history, not a regression.
 **A lesson's regression set is every folder whose `checks.mjs` still passes in
-full on the page; a folder turned red by a later sanctioned pass is the record
-of what its own pass left.** Measured
+full on the page (Session 3 is the exception below); a folder turned red by a
+later sanctioned pass is the record of what its own pass left.** Measured
 2026-10-11 with `NODE_PATH=$(npm root -g)`:
 
 | Lesson | Regression set | 2026-10-11 |
 |---|---|---|
 | `session-0.1`, `session-1` | `2026-10-11-deferred-work-catchup` | all passed |
 | `session-2` | `2026-09-13-session-2-manual-pass`, `2026-09-14-session-2-polish`, `2026-10-11-deferred-work-catchup` | 19 OK; 18 OK; all passed |
-| `session-3` | `2026-09-19-session-3-simplify` | **1 failed**: *"V6 18 interaction roots (found 22)"* |
-| `session-4` | `2026-09-28-session-4-notes` | 0 failed |
+| `session-3` | `2026-09-19-session-3-simplify` except its V6 line, `2026-10-11-deferred-work-catchup` | **1 failed**: *"V6 18 interaction roots (found 22)"*; all passed |
+| `session-4` | `2026-09-25-session-4-rebuild`, `2026-09-25-session-4-polish`, `2026-09-27-session-4-syllabus`, `2026-09-28-session-4-notes`, `2026-10-11-deferred-work-catchup` | 0 failed in each; all passed |
 | `session-5` | `2026-10-02-session-5-build` with its section tests, `2026-10-04-session-5-interactivity` (`checks.mjs` and `drags.mjs`), `2026-10-11-deferred-work-catchup` | all passed; 962 assertions, 0 failed; 36 of 36 |
 
 Red against later Session 3 passes, and therefore history:
@@ -798,9 +798,11 @@ marker in an undeclared form there, using A16's own pattern. Two kinds of marker
 are listed but are not claims: a marker named inside a CLAIM annotation, and a
 marker on one of the two script-comment lines in `session-0.1` that A16 names as
 declaring the convention, pinned by their exact text in `CONVENTION_COMMENTS`.
-A marker in any other script comment, in `session-0.1` or anywhere else, needs a
-CLAIM annotation like any claim, so a new comment, or a lexer that mistakes a
-string for a comment, fails loudly instead of exempting a claim. `session-0.1` is frozen (DW-057) and its markers predate the CLAIM
+A marker in any other script comment is never exempt: outside `session-0.1` it
+needs a CLAIM annotation like any claim and fails without one; in `session-0.1`
+an unannotated `[UNVERIFIED, needs source]` is listed as a legacy, no-weight
+claim and any other form fails. So a new comment, or a lexer that mistakes a
+string for a comment, lists a claim or fails; it never exempts one. `session-0.1` is frozen (DW-057) and its markers predate the CLAIM
 convention, so it is the one file in `LEGACY_UNANNOTATED` allowed to carry the
 old form without an annotation; those rows have no weight and sit in their own
 section. Anywhere else an unannotated marker of any form is the usual hard

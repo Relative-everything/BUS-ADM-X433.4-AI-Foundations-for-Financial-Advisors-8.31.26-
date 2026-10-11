@@ -422,7 +422,8 @@ most of Wave 5's reading moves off the instructor's desk and only the attestatio
 ## 10. Corrections after the review, 2026-10-11
 
 Added after Waves 1 to 3 landed and a five-lens adversarial review read them (`handback.md`). The
-sections above are kept as approved; where they and this section differ, this section wins.
+sections above are kept as approved, apart from three locator corrections made in place on
+2026-10-11 (§3e DW-043, §3f DW-075, §4 DW-155); where they and this section differ, this section wins.
 
 - **§3a, DW-092.** It was not closed on the tree. The corrections slot did not run on 2026-09-14
   and no later record says the backlog was delivered; DW-092 is open again, owned by the
@@ -443,12 +444,14 @@ sections above are kept as approved; where they and this section differ, this se
 - **§6, D-01.** Wave 3 did not use the default text. It recorded the engagement with no start date,
   because §A.6's January 2026 intake names no party and a 2026 date would be a new case fact. The
   remaining question: date the engagement 2026 (from that intake), or leave it undated.
-- **§6, D-21 (new).** DW-092, DW-150, DW-152 and DW-157 are the course's carry-overs to the next
-  cohort: the corrections owed to this cohort (was Post 2 posted?), the off-site obligations, the
-  Session 2 audit's page-bearing findings, and whether Session 1's §00, §01 and §07 are rebuilt.
+- **§6, D-21 (new).** DW-092, DW-150, DW-152, DW-157 and DW-160 are the course's carry-overs to the
+  next cohort: the corrections owed to this cohort (was Post 2 posted?), the off-site obligations,
+  the Session 2 audit's page-bearing findings, whether Session 1's §00, §01 and §07 are rebuilt, and
+  which Session 4 rule-key document to print.
   Recommended default: post any undelivered corrections now; carry the rest into the next cohort's
   first pre-flight.
-- **§2.** Wave 1's commit and this plan's first commit were red on `verify-migration` check 1 and
-  3 through a quoted session-3 line number that the check reads as the retired IRC section; `f89a2ce` repaired both. Merge
-  the branch whole, or squash it, rather than cherry-picking the early commits.
+- **§2.** Wave 1's commit, this plan's first commit and the commit that first added this section
+  (`6ff8d41`) were red on `verify-migration` checks 1 and 3 through a quoted session-3 line number
+  that the checks read as the retired IRC section; `f89a2ce` repaired the first two and `70ab02e`
+  the third. Merge the branch whole, or squash it, rather than cherry-picking commits.
 

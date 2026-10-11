@@ -1,7 +1,7 @@
 # Handback: deferred-work catch-up, Waves 1 to 3, 2026-10-11
 
 Branch `claude/magical-thompson-yhaivm`. `plan.md` is what was approved; `ledger.md` lists every change
-(DWC-001 to DWC-037); `checks.mjs` pins them. This file says what landed, what the review found, and
+(DWC-001 to DWC-038); `checks.mjs` pins the ones a static or DOM check can cover. This file says what landed, what the review found, and
 what is left for you.
 
 ## 1. What landed
@@ -42,7 +42,9 @@ told to refute it before anything was changed. Of 49 findings, 31 were blocking 
 - **Register text the tree contradicts**: two builder calls listed as instructor decisions, a Poll 2
   mismatch that had been fixed on 2026-09-18 (and a D-16 default that would have re-created it), a
   wrong DEC-3 destination, wrong counts in about a dozen notes, and three code spans that broke the
-  table on GitHub. Each is corrected by a dated note, not by rewriting the row.
+  table on GitHub. The notes are corrected by dated notes, not by rewriting the row; the header's decisions table was
+edited in place, and the three code spans were fixed by escaping their pipes inside DW-004, DW-068
+and DW-121.
 
 **What it found and this pass did not fix** (rows opened): DW-162 (`drags.mjs` cannot report which
 fonts it measured), DW-163 (Session 5 §07's route list drops steps past nine, so a typed question can
@@ -51,9 +53,10 @@ same symlink guard defect). Nits left as they are: the case-layout check does no
 media>` attribute, CSS nesting or a rule after `CASE:END` (documented); the classifier's R2 bug in
 session-0.1's head comment (DW-104).
 
-**Two commits on this branch are red on `verify-migration`**: `5d755f4` and `cd5d93e` quote a
-session-3 line number the retired-fact check reads as an IRC section. `f89a2ce` repaired both. Merge
-the branch whole or squash it.
+**Three commits on this branch are red on `verify-migration` checks 1 and 3**: `5d755f4` and `cd5d93e`
+quote a session-3 line number the retired-fact check reads as an IRC section, and `f89a2ce` repaired
+both; `6ff8d41`'s plan §10 quoted the same kind of string, and `70ab02e` repaired it. Merge the
+branch whole or squash it.
 
 ## 3. What is yours
 
