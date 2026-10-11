@@ -86,7 +86,7 @@ CPC's plant, workforce, and Meg's office are in **Rockford, Illinois**. Meg comm
 |---|---|---|
 | Estate counsel | Corbin & Reyes LLP, Chicago | 2011; re-engaged January 2026 |
 | CPA | Halvorsen Group, Rockford | 2016 |
-| Investment adviser | *(none — assets held direct at a custodian)* | — |
+| Financial planner and investment adviser | *The student's firm*: the practice every lesson places the reader in. A planning engagement; the assets stay held direct at a custodian, so the firm has no custody | Current; the case fixes no start date |
 | Business valuation | Merrit Valuation Advisors — 2023 engagement only, not currently engaged | 2023 |
 | Transaction advisory | Lakeshore Industrial Partners — preliminary, no engagement letter signed | 2026 |
 | Insurance | *(none)* | — |
@@ -1125,16 +1125,13 @@ Healthcare directive and living will, executed 2011. The instrument names a heal
 `session-3` §07 puts this through its extraction exercise. It is a synthetic
 excerpt and no line of it was spoken by anyone.
 
-> **A CONFLICT WITH §A.5, IMPORTED DELIBERATELY AND NOT RESOLVED.** This excerpt
-> is an advisory meeting with an Advisor speaking, and §A.5 records **no
-> investment adviser of record**. Every lesson assumes an engagement between the
-> Coles and the student's firm; §A.5 denies it. Moving the excerpt here does not
-> settle that, it makes it unavoidable: the denial and the meeting now sit in
-> one file and one register row. Resolving it means either amending §A.5 to
-> record the engagement or rewriting what four lessons assume, and that is a
-> decision about the case rather than about this Part. Nothing here is
-> unsourced; the case contradicts itself, and the contradiction is now where a
-> reader of the case will meet it.
+> **Resolved 2026-10-11 (DW-041, CASE.md 4.5).** Until this date §A.5 recorded no
+> investment adviser of record while this excerpt has an Advisor speaking and every
+> lesson assumes an engagement between the Coles and the student's firm. The
+> instructor's decision of 2026-09-08 (D2) was to record the engagement, and §A.5
+> now names the student's firm as the engaged planner, with the assets still held
+> direct at a custodian. The Advisor in these lines is that firm. No line of the
+> excerpt changed.
 
 The scoring heuristic at `session-3` §07 runs over **the student's note**, not
 over this text, so the five rubric elements are not a property of these lines.
@@ -1189,6 +1186,7 @@ Load-bearing identities, checkable by hand:
 
 | Version | Date | Change |
 |---|---|---|
+| **4.5** | **2026-10-11** | **§A.5 and the Part O note only; no figure moved and no other fact changed.** §A.5 recorded *"Investment adviser: (none — assets held direct at a custodian)"* while every lesson places the reader as the Coles' planner and the Part O meeting excerpt has an Advisor speaking (`docs/deferred-work.md` DW-041, BLOCKING since Phase 3.6). The instructor decided on 2026-09-08 (D2) to record the engagement rather than rewrite four lessons; the decision went unexecuted until the 2026-10-11 deferred-work catch-up. §A.5 now names the student's firm as financial planner and investment adviser, a planning engagement with the assets still held direct at a custodian and no start date fixed by the case. The Part O conflict note is replaced by a dated resolution. §A.5 is not in the generated extract, so no lesson's injected block changed and `case_version` stays 4.0, as it did at 4.3 and 4.4. |
 | **4.4** | **2026-08-30** | **Part L redesigned: sparse default sheets, one ribbon scale, detail moved to generated tables. No case fact changed and no figure moved.** The two sheets now carry at most six dollar figures each; every remaining figure, both balance sheets, the year-1 cash ledgers and the unit arithmetic render as HTML tables below each sheet, generated from `case-facts.json` by `scripts/inject-case.mjs` behind one Show detail toggle, so the moved figures are derived from this file rather than hand-typed into artwork. **One proportionality defect in the v4.1 artwork corrected:** Sheet 2 stated three times that ribbon width is proportional to dollars, and five of its six flow widths sat near 5.6 px per million, but the $2,140,000 pro-rata ribbon was drawn at stroke-width 3.5 where that scale demands about 12, and the key paired the two errors side by side under the caption *"ribbon width ∝ annual dollars"*. Every ribbon now sits at exactly 6 px per $1,000,000, the scale is stated in the sheet caption, and the trust return ribbon draws interest plus purchases as one $2,860,000 flow. The fragment self-version is aligned to v4.0, matching the case sentinels and the visible stamp, and both `<desc>` elements are rewritten for the new content. The literal-figure exposure that let the ribbon defect ship is opened as `docs/deferred-work.md` DW-070. |
 | **4.3** | **2026-08-25** | **Part K only; no fact changed and no figure moved.** Phase 3.5 found two retired framings that survived the v4.0 migration because the grep-target list had no word that would find them. **`balloon` added to the targets:** Part K retires *"nine-year interest-only balloon"* as one composite row, so none of its words was searchable on its own, and `session-2` still described the proposed note as *"an interest-only note with a balloon"* two migrations later. The note is payable in full on demand (§E.6). **`nine-year` / `9-year` and `founder` / `founded` / `founding` added as CONDITIONAL ALLOWANCES rather than targets**, because each is legitimate exactly once and a blind purge would introduce a defect: the 2016 installment note from Walter really was nine years (§B.2), and Walter really did found the company in 1987 (§A.3). The list carried `founder stock` and not the bare word, which is how *"founder"* reached three lessons, one of them a revealed answer key. `verify-migration.mjs` checks 1 and 4 carry all three, and check 4 also gained `$18M`, because its `$18,000,000` pattern matches the separated form only and `session-1` read *"a company appraised at $18M"* — the buy-sell formula output wearing the word "appraised", in a file whose §H.5 exists to keep three values for one company apart. |
 | **4.2** | **2026-08-23** | **Part L Sheet 2 accessible description corrected.** The `<desc id="d2">` element still carried the pre-4.1 narrative after the 4.1 artwork corrections were applied to the visible SVG: it stated that the $1,640,000 attributable to Meg's 328 retained non-voting units was retained in the LLC, and that Meg receives $3,360,000 in total. Both are the defects 4.1 records as resolved, and $3,360,000 is a Part K retired figure, so Part L contradicted both Part K and its own Sheet 2 artwork. The description now states pro-rata distribution, $2,140,000 to Meg on her 428 units, and the $5,000,000 year-1 round trip, matching the visible SVG and the identity at Part M. No visible figure changed; no other Part is affected. Screen-reader users were the only audience receiving the superseded numbers. |

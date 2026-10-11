@@ -2,6 +2,10 @@
 
 Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with the D5 and D7 decisions applied. Clock times are Pacific (the block is 6:00 to 9:00 PM); the Central time is in brackets, confirm it is the right second zone before printing. The page is worked in the room at core-only depth (D1). Nothing in this file addresses a learner.
 
+## Changed since the 09-14 class (deferred-work catch-up, 2026-10-11)
+
+- s0, the retrieval bridge: each item now has its own "Lock and reveal", which locks that box and opens its key; "Reveal all three" locks every box first (DW-114). The s0 Flow line below records how the page worked when it was taught.
+
 ## Changed since the 09-13 run sheet (polish pass, 2026-09-14)
 
 - Nothing that changes a slot: no element id, `data-comp`, opener, poll, minute or reveal moved. Print this sheet as it stands.
@@ -46,7 +50,7 @@ Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with 
 ### Flow
 - Element: `#bridge` (`t-s0`, `retrieval-bridge`). Opener: "Three questions, no notes. Wrong and committed beats right and read."
 - Item 1, tokens: which side of the price is dearer. The room heard "half" on 08-31 (DW-092 item 2); the key says output is five times input on every current tier, so the 6:03 correction lands again here as retrieval. Item 2, context: what travels with a message; the key says all previous history plus the new message, all billed as input (DW-092 item 10, the box is not the window). Item 3, the new-chat rule: your ten-to-fifteen-turn working rule, and the key names it as a heuristic, then gives the two documented reasons, the re-sent history and the vendor's context-rot statement. All three were taught 08-31 (tokens and price 02:12 to 02:22; memory and chat length 01:49 to 02:01; the restart rule 01:50 to 01:57).
-- Reveal all three only after the room has typed; the reveal is all-or-nothing on this page.
+- Reveal all three only after the room has typed; the reveal is all-or-nothing on this page. *(As taught on 2026-09-14; see the 2026-10-11 change above.)*
 
 ## s12 (Baseline capture, moved up, 6:21 PM, 5 min) [8:21 CT]
 

@@ -10,6 +10,130 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-10-11 · The deferred-work register catches up with a taught course, and seven live-page defects close
+
+Branch `claude/magical-thompson-yhaivm`, after PR #44 merged. Change folder
+`docs/changes/2026-10-11-deferred-work-catchup/` (`plan.md`, `ledger.md`). The course was taught
+between 2026-08-31 and 2026-10-05; this pass measured every open row of `docs/deferred-work.md`
+against the tree and worked the three waves the instructor approved: the register, the live-page
+and tooling fixes that needed no decision, and DW-041. No figure, chip confidence or teaching claim
+changed on any page, and no em dash was added or removed from lesson prose.
+
+### All lessons · the footer stamps
+
+- **Each page's Last updated stamp now names its last content change** (DW-140). All six were
+  behind: the hub read 2026-10-02 (last changed 2026-10-04), Session 1 2026-08-20 (2026-09-25),
+  Session 2 2026-09-12 (2026-09-25), Session 3 2026-09-21 (2026-10-02), Session 4 2026-09-27
+  (2026-09-28), Session 5 2026-10-02 (2026-10-04). Sessions 1, 2 and 5 read 2026-10-11 because they
+  changed today. How the stamps stay right is the instructor's
+  decision (D-05 in the plan).
+
+### Sessions 0.1 and 1 · the top bar on a phone
+
+- **At 380 px the Case facts button sat past the right edge** (630 px on Session 0.1, 615 px on
+  Session 1) because the Shift+U badge is the widest item in the bar (DW-077). Below 720 px the
+  badge is now hidden whether or not the override is on, and the title truncates before the button
+  can move; the panels still open. The desktop bar is unchanged.
+
+### Session 1 · two sentences
+
+- **§05's price chip (Capability against price) now resolves to the Anthropic pricing page** the
+  sentence names, not to the leaderboard (DW-007).
+- **The note on Session 2's workshop** says what it does: it builds up three starter prompts, then
+  has you rewrite the weakest of the three you wrote, or one of its starters if you have none
+  (DW-091).
+
+### Session 2 · the retrieval bridge and two layout fixes
+
+- **Each of the three bridge questions has its own Lock and reveal**: it locks that answer box and
+  opens that key, so the commit-then-reveal order holds per question. *Reveal all three* locks every
+  box first (DW-114); the run sheet says so. Each box and button is tied to its question for screen
+  readers.
+- **§00's navigation label reads Retrieval bridge**, the heading on screen (DW-106).
+- **§04's level tiles wrap at phone width**, so the page no longer scrolls sideways at 380 px
+  (DW-119).
+
+### Session 5 · two figures at the web font's real size
+
+- **§04's station text and §07's route labels now clear the web fonts' full line height** (DW-131).
+  The 2026-10-04 pass measured its drag checks in a container where Google Fonts failed to load, so
+  they ran on narrower fallback fonts; with the fonts a learner gets, the checks' text boxes
+  touched and three of 36 failed. The §04 station boxes are four units taller, the line pitches of
+  the §04 stations and the §07 question and route lines are wider, and the §07 figure is ten units
+  taller. All 36 checks pass with the web fonts and without them.
+
+### Case · CASE.md 4.5
+
+- **§A.5 records the engagement every lesson assumes** (DW-041, BLOCKING since Phase 3.6). It
+  recorded no investment adviser, with the assets held direct at a custodian, while the Part O
+  meeting excerpt has
+  an Advisor speaking. The instructor decided on 2026-09-08 to record the engagement; it now names
+  the student's firm as financial planner and investment adviser, a planning engagement, the assets
+  still held direct at a custodian. The Part O conflict note becomes a dated resolution. §A.5 is not
+  in the generated extract, so no lesson's case block changed.
+
+### Repository · the register, the checks, the record
+
+- **`docs/deferred-work.md` re-cut for a taught course.** A 2026-10-11 header that wins over the
+  three earlier ones, now kept as history; a Closed table; 9 rows closed that were already closed
+  on the tree, 5 superseded by later decisions, DW-041 re-owned, and 40 rows added (DW-131 to
+  DW-170): deferrals the Session 3, 4 and 5 passes recorded only in their own folders, checks that
+  were red, the register's own defects, and what Wave 2 and its reviews found and did not fix. A
+  five-lens review of the pass reopened DW-092: the Session 1 corrections were never delivered in
+  class.
+- **`verify-case.mjs` now asserts the seven copies of the lesson-local case-viewer layout agree**
+  (20 rules), which nothing checked before (DW-043).
+- **`verify-style.mjs` and `build-changelog.py` find the restyle sweep the same way**, from
+  `RESTYLE_SWEEP`, then `LESSON_BUILDER_SKILL`, then the home directory; `verify-style.mjs` names
+  every path it tried when none exists (DW-080). MAINTAINING documents both variables (DW-112), the jsdom the
+  change-folder checks need (DW-132), and that an older change folder's checks pin the page its
+  pass produced, so a later pass can turn them red (DW-133).
+- **`docs/unsourced-claims.md` now lists Session 0.1's four `[UNVERIFIED, needs source]` claims**,
+  a form the generator did not read, and the two markers in script comments as not claims (DW-135).
+- **The per-section profiles in `docs/audits/profiles/` are regenerated** for all six lessons with
+  their DOM measurements; Session 0.1 has one for the first time (DW-134).
+- **`docs/changes/2026-09-21-session-3-visual-pass/ledger.md` is reconstructed** from the commit
+  bodies, because that pass opened no change folder (DW-137). The 2026-10-04 handback gains an
+  errata section (DW-155).
+- **README's sentence on legal characterisations is true of every page again** (DW-141): the
+  verification blocks it described left Sessions 2 to 4 by instruction.
+- **Stale statements corrected with dated notes**: `docs/spine-brief.md` (DW-032), two sentences of
+  `docs/repo-updates-plan.md` (DW-033, DW-102), MAINTAINING's superseded follow-ups struck through
+  (DW-102), two copies of an old skill path (DW-080).
+
+### The review of this pass
+
+Waves 1 to 3 were read by a five-lens adversarial review (Session 5, the pages, the scripts, the
+documents, the register), each serious finding re-run by a second reviewer before anything changed,
+and the text written in answer was then fact-checked again. What it changed, beyond the corrections
+already folded into the bullets above:
+
+- **DW-092 reopened.** The corrections slot for Session 1 did not run on 2026-09-14, and no record
+  says the backlog was delivered; whether the Canvas post went up is the instructor's to confirm.
+- **Three checks that failed open now fail closed.** `verify-case.mjs` did nothing when run through
+  a symlinked path; `build-unsourced.mjs` could exempt a real string its lexer misread as a
+  comment; `build-changelog.py` ignored `RESTYLE_SWEEP`. Each was proved on scratch copies.
+- **The register's own text**: about thirty dated corrections, two builder calls moved out of the
+  header's table of instructor decisions, a Poll 2 default withdrawn that would have broken a page
+  and poll that already agree, and nine new rows for what the reviews found and this pass did not
+  fix (DW-162 to DW-170).
+- **The catch-up's own checks**: `docs/changes/2026-10-11-deferred-work-catchup/checks.mjs` pins
+  the register's integrity, CASE 4.5, each page change and the three script fixes, two of them by
+  running the script.
+
+### Corrections to earlier entries
+
+The file's rule keeps old entries as written, so two corrections are recorded here (DW-083).
+
+- **The 2026-08-30 entry** (*The case sheets go sparse, and the ribbon scale becomes true*) says its
+  branch was *"unmerged on purpose: parked for Jared to merge after his first class session"*. PR
+  #18 merged it as `8442160` on 2026-08-30 at 10:13 -0500, the day before Session 1.
+- **PR #17 has no entry.** It merged as `dc8f109` on 2026-08-29 and carried `605d34d` (the
+  changelog caught up with nine merged phases, one entry each) and `3585d0e` (the provenance audit
+  became a register in `audit/`).
+
+---
+
 ## 2026-10-04 · Session 5 rebuilt for interactivity: seven drag beats, the firm's library, the gate and the scorecard, measured against Session 4
 
 Branch `claude/vibrant-hypatia-8iabd0`, after PR #43 merged. The instructor's rule, written down for

@@ -185,3 +185,40 @@ each chipped to the Claude Code page that documents them.
 | `verify-browser` | rule 14b (SVG text outside its viewBox) 0 on all seven pages after S5I-018; rule 13 ("zero JS errors on load") red on all seven pages, the hub and the unchanged lessons included: the container's proxy answers fonts.googleapis.com with an untrusted certificate (`net::ERR_CERT_AUTHORITY_INVALID`); the page loads no other external resource |
 | `verify-style` | cannot run here (the restyle skill is not installed); the fence is byte-identical to Session 4's |
 | Em and en dashes, course-policy words in the authored body | 0; the S5B-033 scan and S5I-013 |
+
+## Errata, 2026-10-11
+
+Added on 2026-10-11 by the deferred-work catch-up (register row DW-155,
+`docs/changes/2026-10-11-deferred-work-catchup/`). This folder is history, so `plan.md` and
+`ledger.md` are left as written; this note records where the folder disagrees with itself and
+which reading is right. Nothing on the page changes.
+
+1. **The §01 beat's name.** `plan.md:111` (the §01 row of the section map) says the maintenance
+   card is *"replaced by The Gate and the Rubric"*. The page and the rest of this folder say
+   Scorecard: the beat's heading is `<h4>The Gate and the Scorecard</h4>` at
+   `session-5/index.html:2978`, and `handback.md:61` and `ledger.md:19` (S5I-004) name *"The Gate
+   and the Scorecard"*. **Scorecard is right.** The word rubric is kept off the page because the
+   course-policy word scan bans it (S5B-033, `docs/changes/2026-10-02-session-5-build/checks.mjs:184`);
+   whether the page should carry the instructor's word is register row DW-130. The same pass also
+   left the old name in a code comment in the earlier folder's checks,
+   `docs/changes/2026-10-02-session-5-build/checks.mjs:83` (*"the maintenance card became The Gate
+   and the Rubric (S5I-004)"*); it is a comment, not page text, and the scan does not read it.
+   The register cites `plan.md:148` for this; the line is `plan.md:111`.
+2. **The interaction-family count.** `plan.md:104` says the section map after the change has
+   *"Interaction families: 13 distinct"*. `handback.md:29` gives 13 for the page before the pass
+   and 12 after, and `ledger.md:17` (S5I-002) says *"12 interaction families"*. **12 is right for
+   the page after the pass; 13 was the page before it.** The plan's own table (`plan.md:109` to
+   `:124`) and its reading-order list (`plan.md:129` to `:130`) name 12 distinct families; the 13
+   at `:104` matches the page before the pass, not the map beneath it. The pass removed
+   `symptom-diagnoser` (the `t-s6` root; §06 was rebuilt as Wire the Desk, `builder-assembler`)
+   and added §07 as a second `pipeline-lab`, so it lost one family and added none.
+
+   How it was measured on 2026-10-11: the same expression `interactivity.mjs` uses (the size of
+   the set of `data-comp` values on the `[data-task]` roots), run in jsdom on the committed page
+   at three points. At `9325811` (this pass's base): 15 roots, 13 distinct. At `59bc0cb` (this
+   pass) and at `e8d2cee` (the polish commit; the page's next change, the 2026-10-11 Wave 2 layout fix for DW-131, moved the §04 and §07 line pitches, the §04 station-box height (58 to 62 units), the §07 figure height and the footer stamp, and no `data-comp` root): 16 roots,
+   12 distinct, namely `builder-assembler` 2, `click-map-explorer` 1, `commit-first-mcq` 2,
+   `estimate-then-reveal` 1, `multi-column-sorter` 1, `parameter-sandbox` 1, `pipeline-lab` 2,
+   `prediction-commit` 1, `retrieval-bridge` 1, `sealed-vote-debate` 1, `timed-ritual` 2,
+   `two-bucket-sorter` 1. A plain count of `data-comp="..."` attributes in the file gives the same
+   16 and 12.

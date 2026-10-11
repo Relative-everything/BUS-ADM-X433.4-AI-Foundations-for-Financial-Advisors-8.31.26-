@@ -1,0 +1,1342 @@
+{
+  "file": "session-0.1/index.html",
+  "file_bytes": 269611,
+  "file_lines": 3148,
+  "generated_by": "scripts/audit/section_profile.mjs (read-only)",
+  "methods": {
+    "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
+    "prose_words": "words outside tagged interaction roots (static)",
+    "chips": ".conf span with h/m/l class inside the section; resolves = data-src present in footer <li id>",
+    "icap": "component-bank.md v2.0 family index",
+    "exposition": "M heuristic, see each section",
+    "terms": "M heuristic: capitalised acronyms and statute citations, file-level first use, defined if a parenthetical, appositive, copula, or initials expansion sits within 40 words"
+  },
+  "timing": {
+    "rows": {
+      "0": {
+        "title": "Cold open: paste it, then name what you assumed",
+        "min": 8,
+        "apx": false
+      },
+      "1": {
+        "title": "One inference, five layers",
+        "min": 7,
+        "apx": false
+      },
+      "2": {
+        "title": "Four models, on the numbers",
+        "min": 10,
+        "apx": false
+      },
+      "3": {
+        "title": "Two dials people conflate: effort and thinking",
+        "min": 10,
+        "apx": false
+      },
+      "4": {
+        "title": "The context window inspector",
+        "min": 16,
+        "apx": false
+      },
+      "5": {
+        "title": "The retrieval ladder: nothing, search, research",
+        "min": 9,
+        "apx": false
+      },
+      "6": {
+        "title": "What persists, and what dies with the tab",
+        "min": 10,
+        "apx": false
+      },
+      "7": {
+        "title": "Skills, connectors, plugins",
+        "min": 10,
+        "apx": false
+      },
+      "8": {
+        "title": "Live: one prompt, three configurations",
+        "min": 10,
+        "apx": false
+      },
+      "9": {
+        "title": "Read the output, infer the configuration",
+        "min": 8,
+        "apx": false
+      },
+      "10": {
+        "title": "Discussion: which controls does this firm turn off?",
+        "min": 15,
+        "apx": false
+      },
+      "11": {
+        "title": "Baseline capture and what 0.2 answers",
+        "min": 7,
+        "apx": false
+      }
+    },
+    "segments_sum": 120,
+    "allocated_cell": 120,
+    "eyebrow_sum_lesson_sections": 120
+  },
+  "consecutive_family_repeats": {
+    "document_order": [],
+    "core_only_order": [],
+    "reading_order_all_tiers": []
+  },
+  "reading_order_all_tiers": [
+    "s0",
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8",
+    "s9",
+    "s10",
+    "s11"
+  ],
+  "norms": {
+    "sections": 12,
+    "core_sections": 12,
+    "interactions_per_section": {
+      "median": 1,
+      "range": [
+        1,
+        2
+      ],
+      "mean": 1.17
+    },
+    "chips_per_100_words": {
+      "median": 1.0350000000000001,
+      "range": [
+        0,
+        2.19
+      ],
+      "mean": 1
+    },
+    "chips_per_section": {
+      "median": 4,
+      "range": [
+        0,
+        8
+      ],
+      "mean": 4
+    },
+    "sources_per_section": {
+      "median": 2.5,
+      "range": [
+        0,
+        6
+      ],
+      "mean": 2.58
+    },
+    "words_per_min": {
+      "median": 44.8,
+      "range": [
+        25.4,
+        69.5
+      ],
+      "mean": 44.9
+    },
+    "prose_words_per_min": {
+      "median": 38.85,
+      "range": [
+        17.8,
+        66.9
+      ],
+      "mean": 36.9
+    },
+    "exposition_run_min_tagged": {
+      "median": 6.1,
+      "range": [
+        3.6,
+        9
+      ],
+      "mean": 6.63
+    },
+    "exposition_run_min_control": {
+      "median": 7.5,
+      "range": [
+        4.3,
+        10.9
+      ],
+      "mean": 7.56
+    },
+    "icap_distribution": {
+      "P": 1,
+      "A": 2,
+      "C": 8,
+      "I": 1,
+      "unknown-family": 2
+    },
+    "distinct_families": 12,
+    "sections_with_zero_chips": [
+      "s11"
+    ],
+    "sections_with_zero_interactions": []
+  },
+  "sections": [
+    {
+      "id": "s0",
+      "num": "00",
+      "data_nav": "Cold open",
+      "eyebrow": "BUS ADM X433.4 · Session 0.1",
+      "heading": "The last prompt you sent",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": null,
+      "line_start": 1113,
+      "line_end": 1175,
+      "bytes": 5920,
+      "allocated_min": 8,
+      "words": 556,
+      "prose_words": 535,
+      "words_per_min": 69.5,
+      "prose_words_per_min": 66.9,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-coldopen",
+          "data_comp": "timed-ritual",
+          "icap": "C",
+          "line": 1163,
+          "line_end": 1168,
+          "words_inside": 21
+        }
+      ],
+      "families": [
+        "timed-ritual"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 1,
+      "chips": {
+        "H": 1,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0.18,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-memory"
+      ],
+      "sources_count": 1,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 2,
+      "gates": [
+        {
+          "id": "g0",
+          "line": 1174,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 379,
+        "longest_run_min_tagged_split": 5.5,
+        "longest_run_words_control_split": 390,
+        "longest_run_min_control_split": 5.6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "X433",
+        "SURFACE"
+      ],
+      "dom": {
+        "rendered_words": 550,
+        "rendered_chips": 1,
+        "rendered_controls": 2,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s1",
+      "num": "01",
+      "data_nav": "Five layers",
+      "eyebrow": "01 · Frame",
+      "heading": "One inference, five layers",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": null,
+      "line_start": 1183,
+      "line_end": 1222,
+      "bytes": 3978,
+      "allocated_min": 7,
+      "words": 367,
+      "prose_words": 215,
+      "words_per_min": 52.4,
+      "prose_words_per_min": 30.7,
+      "interactions_count": 2,
+      "interactions": [
+        {
+          "data_task": "t-case",
+          "data_comp": "case-modal-spine",
+          "icap": "P",
+          "line": 1187,
+          "line_end": 1198,
+          "words_inside": 143
+        },
+        {
+          "data_task": "t-frame-predict",
+          "data_comp": "prediction-commit",
+          "icap": "C",
+          "line": 1203,
+          "line_end": 1207,
+          "words_inside": 9
+        }
+      ],
+      "families": [
+        "case-modal-spine",
+        "prediction-commit"
+      ],
+      "icap": {
+        "P": 1,
+        "C": 1
+      },
+      "chips_total": 4,
+      "chips": {
+        "H": 4,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 1.09,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-ctxwindow",
+        "src-personalization",
+        "src-tools3",
+        "src-effort"
+      ],
+      "sources_count": 4,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 1,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g1",
+          "line": 1221,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 190,
+        "longest_run_min_tagged_split": 3.6,
+        "longest_run_words_control_split": 367,
+        "longest_run_min_control_split": 7,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 419,
+        "rendered_chips": 4,
+        "rendered_controls": 2,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s2",
+      "num": "02",
+      "data_nav": "Four models",
+      "eyebrow": "02 · Content",
+      "heading": "Four models, on the numbers",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": null,
+      "line_start": 1231,
+      "line_end": 1262,
+      "bytes": 3681,
+      "allocated_min": 10,
+      "words": 437,
+      "prose_words": 437,
+      "words_per_min": 43.7,
+      "prose_words_per_min": 43.7,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-model-tier",
+          "data_comp": "commit-first-mcq",
+          "icap": "C",
+          "line": 1256,
+          "line_end": 1256,
+          "words_inside": 0
+        }
+      ],
+      "families": [
+        "commit-first-mcq"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 3,
+      "chips": {
+        "H": 2,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.69,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-models",
+        "src-effort",
+        "src-routing"
+      ],
+      "sources_count": 3,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g2",
+          "line": 1261,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [
+        {
+          "marker": "[UNVERIFIED, needs source]",
+          "line": 1249
+        },
+        {
+          "marker": "[UNVERIFIED, needs source]",
+          "line": 1249
+        },
+        {
+          "marker": "[UNVERIFIED, needs source]",
+          "line": 1251
+        }
+      ],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 345,
+        "longest_run_min_tagged_split": 7.9,
+        "longest_run_words_control_split": 437,
+        "longest_run_min_control_split": 10,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "UNVERIFIED"
+      ],
+      "dom": {
+        "rendered_words": 590,
+        "rendered_chips": 3,
+        "rendered_controls": 20,
+        "rendered_hidden_panels": 5
+      }
+    },
+    {
+      "id": "s3",
+      "num": "03",
+      "data_nav": "Effort and thinking",
+      "eyebrow": "03 · Content",
+      "heading": "Two dials people conflate: effort and thinking",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": null,
+      "line_start": 1274,
+      "line_end": 1305,
+      "bytes": 3561,
+      "allocated_min": 10,
+      "words": 319,
+      "prose_words": 233,
+      "words_per_min": 31.9,
+      "prose_words_per_min": 23.3,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-effort-dial",
+          "data_comp": "parameter-sandbox",
+          "icap": "A",
+          "line": 1288,
+          "line_end": 1299,
+          "words_inside": 86
+        }
+      ],
+      "families": [
+        "parameter-sandbox"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 7,
+      "chips": {
+        "H": 6,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 2.19,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-effort",
+        "src-models"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 1,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 1,
+      "gates": [
+        {
+          "id": "g3",
+          "line": 1304,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 183,
+        "longest_run_min_tagged_split": 5.7,
+        "longest_run_words_control_split": 170,
+        "longest_run_min_control_split": 5.3,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "API"
+      ],
+      "dom": {
+        "rendered_words": 383,
+        "rendered_chips": 7,
+        "rendered_controls": 6,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s4",
+      "num": "04",
+      "data_nav": "Context inspector",
+      "eyebrow": "04 · Flagship",
+      "heading": "The context window inspector",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": null,
+      "line_start": 1332,
+      "line_end": 1389,
+      "bytes": 6057,
+      "allocated_min": 16,
+      "words": 592,
+      "prose_words": 289,
+      "words_per_min": 37,
+      "prose_words_per_min": 18.1,
+      "interactions_count": 2,
+      "interactions": [
+        {
+          "data_task": "t-ctx-inspector",
+          "data_comp": "ctx-inspector",
+          "icap": "unknown-family",
+          "line": 1348,
+          "line_end": 1375,
+          "words_inside": 198
+        },
+        {
+          "data_task": "t-ctx-budget-guess",
+          "data_comp": "ctx-inspector",
+          "icap": "unknown-family",
+          "line": 1377,
+          "line_end": 1383,
+          "words_inside": 105
+        }
+      ],
+      "families": [
+        "ctx-inspector"
+      ],
+      "icap": {
+        "unknown-family": 2
+      },
+      "chips_total": 6,
+      "chips": {
+        "H": 3,
+        "M": 2,
+        "L": 1
+      },
+      "chips_per_100_words": 1.01,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-tools3",
+        "src-ctxwindow",
+        "src-models"
+      ],
+      "sources_count": 3,
+      "src_lines": 2,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 1,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 1,
+      "gates": [
+        {
+          "id": "g4",
+          "line": 1388,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 213,
+        "longest_run_min_tagged_split": 5.8,
+        "longest_run_words_control_split": 403,
+        "longest_run_min_control_split": 10.9,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 1182,
+        "rendered_chips": 10,
+        "rendered_controls": 42,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s5",
+      "num": "05",
+      "data_nav": "Retrieval ladder",
+      "eyebrow": "05 · Content",
+      "heading": "The retrieval ladder: nothing, search, research",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": null,
+      "line_start": 1398,
+      "line_end": 1427,
+      "bytes": 3345,
+      "allocated_min": 9,
+      "words": 377,
+      "prose_words": 339,
+      "words_per_min": 41.9,
+      "prose_words_per_min": 37.7,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-retrieval-ladder",
+          "data_comp": "estimate-then-reveal",
+          "icap": "C",
+          "line": 1404,
+          "line_end": 1408,
+          "words_inside": 38
+        }
+      ],
+      "families": [
+        "estimate-then-reveal"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 5,
+      "chips": {
+        "H": 5,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 1.33,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-tools3",
+        "src-memory"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g5",
+          "line": 1426,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 337,
+        "longest_run_min_tagged_split": 8,
+        "longest_run_words_control_split": 377,
+        "longest_run_min_control_split": 9,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "RIA"
+      ],
+      "dom": {
+        "rendered_words": 402,
+        "rendered_chips": 5,
+        "rendered_controls": 4,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s6",
+      "num": "06",
+      "data_nav": "What persists",
+      "eyebrow": "06 · Content",
+      "heading": "What persists, and what dies with the tab",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": null,
+      "line_start": 1443,
+      "line_end": 1471,
+      "bytes": 4105,
+      "allocated_min": 10,
+      "words": 472,
+      "prose_words": 433,
+      "words_per_min": 47.2,
+      "prose_words_per_min": 43.3,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-persistence-sort",
+          "data_comp": "two-bucket-sorter",
+          "icap": "C",
+          "line": 1454,
+          "line_end": 1460,
+          "words_inside": 39
+        }
+      ],
+      "families": [
+        "two-bucket-sorter"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 5,
+      "chips": {
+        "H": 5,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 1.06,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-memory",
+        "src-personalization",
+        "src-ctxwindow",
+        "src-skills"
+      ],
+      "sources_count": 4,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g6",
+          "line": 1470,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 293,
+        "longest_run_min_tagged_split": 6.2,
+        "longest_run_words_control_split": 472,
+        "longest_run_min_control_split": 10,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "FLAG",
+        "D6"
+      ],
+      "dom": {
+        "rendered_words": 538,
+        "rendered_chips": 5,
+        "rendered_controls": 12,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s7",
+      "num": "07",
+      "data_nav": "Skills, connectors, plugins",
+      "eyebrow": "07 · Content",
+      "heading": "Skills, connectors, plugins: three things people call the same thing",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": true,
+      "timing_row_min": null,
+      "line_start": 1483,
+      "line_end": 1516,
+      "bytes": 4353,
+      "allocated_min": 10,
+      "words": 484,
+      "prose_words": 400,
+      "words_per_min": 48.4,
+      "prose_words_per_min": 40,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-pack-sort",
+          "data_comp": "multi-column-sorter",
+          "icap": "C",
+          "line": 1491,
+          "line_end": 1500,
+          "words_inside": 84
+        }
+      ],
+      "families": [
+        "multi-column-sorter"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 8,
+      "chips": {
+        "H": 8,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 1.65,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-directory",
+        "src-skills",
+        "src-plugins",
+        "src-features",
+        "src-memory",
+        "src-beta"
+      ],
+      "sources_count": 6,
+      "src_lines": 2,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 2,
+      "gates": [
+        {
+          "id": "g7",
+          "line": 1515,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 392,
+        "longest_run_min_tagged_split": 8.1,
+        "longest_run_words_control_split": 391,
+        "longest_run_min_control_split": 8.1,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 715,
+        "rendered_chips": 8,
+        "rendered_controls": 20,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s8",
+      "num": "08",
+      "data_nav": "Live demo",
+      "eyebrow": "08 · Demo",
+      "heading": "Live: one prompt, three configurations",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": null,
+      "line_start": 1530,
+      "line_end": 1596,
+      "bytes": 5558,
+      "allocated_min": 10,
+      "words": 562,
+      "prose_words": 523,
+      "words_per_min": 56.2,
+      "prose_words_per_min": 52.3,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-config-card",
+          "data_comp": "builder-assembler",
+          "icap": "C",
+          "line": 1588,
+          "line_end": 1593,
+          "words_inside": 39
+        }
+      ],
+      "families": [
+        "builder-assembler"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 3,
+      "chips": {
+        "H": 2,
+        "M": 0,
+        "L": 1
+      },
+      "chips_per_100_words": 0.53,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-tools3"
+      ],
+      "sources_count": 1,
+      "src_lines": 2,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 3,
+      "interactive_controls": 3,
+      "gates": [
+        {
+          "id": "g8",
+          "line": 1595,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 1,
+      "exposition": {
+        "longest_run_words_tagged_split": 505,
+        "longest_run_min_tagged_split": 9,
+        "longest_run_words_control_split": 242,
+        "longest_run_min_control_split": 4.3,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "OFF",
+        "ON"
+      ],
+      "dom": {
+        "rendered_words": 634,
+        "rendered_chips": 3,
+        "rendered_controls": 17,
+        "rendered_hidden_panels": 3
+      }
+    },
+    {
+      "id": "s9",
+      "num": "09",
+      "data_nav": "Output forensics",
+      "eyebrow": "09 · Assessment",
+      "heading": "Inferring the Configuration From the Output",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": null,
+      "line_start": 1608,
+      "line_end": 1627,
+      "bytes": 2072,
+      "allocated_min": 8,
+      "words": 203,
+      "prose_words": 142,
+      "words_per_min": 25.4,
+      "prose_words_per_min": 17.8,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-output-forensics",
+          "data_comp": "symptom-diagnoser",
+          "icap": "A",
+          "line": 1616,
+          "line_end": 1621,
+          "words_inside": 61
+        }
+      ],
+      "families": [
+        "symptom-diagnoser"
+      ],
+      "icap": {
+        "A": 1
+      },
+      "chips_total": 4,
+      "chips": {
+        "H": 4,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 1.97,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-tools3",
+        "src-effort",
+        "src-memory",
+        "src-skills"
+      ],
+      "sources_count": 4,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g9",
+          "line": 1626,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 135,
+        "longest_run_min_tagged_split": 5.3,
+        "longest_run_words_control_split": 203,
+        "longest_run_min_control_split": 8,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 242,
+        "rendered_chips": 4,
+        "rendered_controls": 6,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "s10",
+      "num": "10",
+      "data_nav": "Discussion",
+      "eyebrow": "10 · Discussion",
+      "heading": "Which Controls a Firm Turns Off",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": null,
+      "line_start": 1642,
+      "line_end": 1703,
+      "bytes": 5693,
+      "allocated_min": 15,
+      "words": 589,
+      "prose_words": 395,
+      "words_per_min": 39.3,
+      "prose_words_per_min": 26.3,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-controls-debate",
+          "data_comp": "sealed-vote-debate",
+          "icap": "I",
+          "line": 1660,
+          "line_end": 1697,
+          "words_inside": 194
+        }
+      ],
+      "families": [
+        "sealed-vote-debate"
+      ],
+      "icap": {
+        "I": 1
+      },
+      "chips_total": 2,
+      "chips": {
+        "H": 2,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0.34,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-memory"
+      ],
+      "sources_count": 1,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 1,
+      "verify_lines": [
+        1648
+      ],
+      "svg_charts": 0,
+      "hidden_answer_panels": 4,
+      "interactive_controls": 4,
+      "gates": [
+        {
+          "id": "g10",
+          "line": 1702,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 335,
+        "longest_run_min_tagged_split": 8.5,
+        "longest_run_words_control_split": 271,
+        "longest_run_min_control_split": 6.9,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "R3"
+      ],
+      "dom": {
+        "rendered_words": 669,
+        "rendered_chips": 2,
+        "rendered_controls": 16,
+        "rendered_hidden_panels": 4
+      }
+    },
+    {
+      "id": "s11",
+      "num": "11",
+      "data_nav": "Baseline and close",
+      "eyebrow": "11 · Ritual",
+      "heading": "Baseline capture, and what 0.2 answers",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": null,
+      "line_start": 1714,
+      "line_end": 1747,
+      "bytes": 3160,
+      "allocated_min": 7,
+      "words": 321,
+      "prose_words": 299,
+      "words_per_min": 45.9,
+      "prose_words_per_min": 42.7,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-baseline",
+          "data_comp": "timed-ritual",
+          "icap": "C",
+          "line": 1720,
+          "line_end": 1731,
+          "words_inside": 22
+        }
+      ],
+      "families": [
+        "timed-ritual"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 0,
+      "chips": {
+        "H": 0,
+        "M": 0,
+        "L": 0
+      },
+      "chips_per_100_words": 0,
+      "chips_unresolved": [],
+      "source_keys": [],
+      "sources_count": 0,
+      "src_lines": 0,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 4,
+      "gates": [
+        {
+          "id": "g11",
+          "line": 1746,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 274,
+        "longest_run_min_tagged_split": 6,
+        "longest_run_words_control_split": 259,
+        "longest_run_min_control_split": 5.6,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 320,
+        "rendered_chips": 0,
+        "rendered_controls": 4,
+        "rendered_hidden_panels": 0
+      }
+    }
+  ],
+  "terms": [
+    {
+      "term": "X433",
+      "kind": "acronym",
+      "first_use_section": "s0",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "BUS ADM  [X433] .4 · Session 0.1 8 min The Control"
+    },
+    {
+      "term": "SURFACE",
+      "kind": "acronym",
+      "first_use_section": "s0",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "lesson lives in one JavaScript array called  [SURFACE]  , near the top of the script,"
+    },
+    {
+      "term": "UNVERIFIED",
+      "kind": "acronym",
+      "first_use_section": "s2",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "it. On screen, where a figure belongs: [ [UNVERIFIED] , needs source] for price per MTok, and"
+    },
+    {
+      "term": "API",
+      "kind": "acronym",
+      "first_use_section": "s3",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "requires Opus 4.7 or newer. On the  [API]  and in Claude Code it defaults to"
+    },
+    {
+      "term": "RIA",
+      "kind": "acronym",
+      "first_use_section": "s5",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "rung 1, and it matters for an  [RIA]  specifically: on Enterprise plans with customer-managed keys,"
+    },
+    {
+      "term": "FLAG",
+      "kind": "acronym",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "The pairing was kept deliberately (spec s4  [FLAG] -1, frozen decision D6) rather than swapped for"
+    },
+    {
+      "term": "D6",
+      "kind": "acronym",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "kept deliberately (spec s4 FLAG-1, frozen decision  [D6] ) rather than swapped for a different mechanism,"
+    },
+    {
+      "term": "OFF",
+      "kind": "acronym",
+      "first_use_section": "s8",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Sonnet 5 / medium / web search  [OFF]  Show the captured run 1 output Run"
+    },
+    {
+      "term": "ON",
+      "kind": "acronym",
+      "first_use_section": "s8",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "Sonnet 5 / medium / web search  [ON]  Show the captured run 2 output Run"
+    },
+    {
+      "term": "R3",
+      "kind": "acronym",
+      "first_use_section": "s10",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "the slide, not the model (pedagogy.md s1  [R3] ). First vote, commit before anyone speaks Vote"
+    },
+    {
+      "term": "IT",
+      "kind": "acronym",
+      "first_use_section": "s10",
+      "defined_within_40_words": true,
+      "how": "expansion",
+      "cfp_baseline_vocabulary": false,
+      "context": "A is a training-and-supervision policy wearing an  [IT] -control costume, and that is a fact position"
+    }
+  ],
+  "footer_source_ids": [
+    "src-beta",
+    "src-ctxwindow",
+    "src-directory",
+    "src-effort",
+    "src-features",
+    "src-memory",
+    "src-models",
+    "src-personalization",
+    "src-plugins",
+    "src-routing",
+    "src-skills",
+    "src-tools3"
+  ],
+  "dom": {
+    "mode": "jsdom",
+    "script_errors": [],
+    "body_class_at_load": ""
+  }
+}

@@ -34,8 +34,8 @@ reader comes for completeness, so here the gap is the point.
 | Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **8** |
-| Cited in | S1 `#s5` · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 |
+| **Total references** | **9** |
+| Cited in | S1 `#s5` · S1 `#s10` · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 |
 
 Per-token input and output rates by model, cache-hit and batch discounts.
 
@@ -775,8 +775,8 @@ The nine sampler controls and their interaction. Behaviour reimplemented in Appe
 | Last retrieved | 2026-08-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **6** |
-| Cited in | S1 `#s10` ×2 · S2 `#s5` ×3 · S4 `#sWS` |
+| **Total references** | **5** |
+| Cited in | S1 `#s10` · S2 `#s5` ×3 · S4 `#sWS` |
 
 A live leaderboard of capability index scores and cost per index task. Every figure drawn from it is a moving target and none of them is stable between terms.
 

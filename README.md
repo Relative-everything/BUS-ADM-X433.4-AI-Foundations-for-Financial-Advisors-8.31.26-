@@ -130,9 +130,9 @@ themselves to the standard they teach.
 
 This is course material for a continuing-education class. Nothing in this
 repository or on the live site is legal, tax, investment, or compliance advice.
-Legal and regulatory characterisations in the lessons sit behind a verification
-block precisely because they require checking against primary authority before
-anyone teaches or acts on them.
+Legal and regulatory characterisations in the lessons are questions to verify,
+not holdings: each one needs checking against primary authority before anyone
+teaches or acts on it.
 
 ## Revision history
 

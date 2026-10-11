@@ -2014,7 +2014,7 @@ Exit 1 on any failure. **Nothing prose-level.** Two of its checks are explicitly
 
 | # | Assertion | Kind |
 |---|---|---|
-| S-0 | `restyle_sweep.py` exists at `/root/.claude/skills/synced/interactive-lesson-builder/scripts/restyle_sweep.py` (overridable via `RESTYLE_SWEEP`) | environment |
+| S-0 | `restyle_sweep.py` exists at `/root/.claude/skills/synced/interactive-lesson-builder/scripts/restyle_sweep.py` (overridable via `RESTYLE_SWEEP`) [2026-10-11: the skill now resolves through `RESTYLE_SWEEP`, `LESSON_BUILDER_SKILL` or the home-relative candidates; see MAINTAINING.md.] | environment |
 | S-1 | Zero lesson documents STALE against the skill's `assets/*.css` payload | stylistic (CSS) |
 | S-2 | The set of fenceless files == exactly `{scripts/case-extract.html, scripts/case-flowchart.html}`. A third fenceless file fails; a *missing* expected fenceless file also fails (renamed, or a fence was added) | structural |
 

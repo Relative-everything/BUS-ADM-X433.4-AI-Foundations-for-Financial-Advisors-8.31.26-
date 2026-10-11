@@ -522,10 +522,12 @@ section.slide{scroll-margin-top:46px}
 .editor:focus{border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on-bg)}
 .eltile{display:grid;grid-template-columns:74px 1fr;gap:13px;align-items:center;background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:11px 14px;margin-bottom:8px}
 .eltile .elk{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:15px}
-.scale{display:flex;gap:5px}
+.scale{display:flex;flex-wrap:wrap;gap:5px}
 .scale button{flex:1;font-family:"JetBrains Mono",monospace;font-size:11px;padding:7px 0;border-radius:6px;border:1.5px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer}
 .scale button.on{background:var(--on);border-color:var(--on);color:#fff}
 .scale button.on.lo{background:var(--warn);border-color:var(--warn)}
+/* §00 retrieval bridge: a box locks when its key is revealed (DW-114, S2-25) */
+#bridge textarea[readonly]{background:var(--page);border-style:dashed;cursor:default}
 .vote{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:20px 0}
 .vote button{padding:18px 16px;border-radius:11px;border:2px solid var(--line);background:var(--card);cursor:pointer;text-align:left;font-family:"Source Serif 4",serif;font-size:15.5px;line-height:1.45;color:var(--ink)}
 .vote button.on{border-color:var(--on);background:var(--on-bg)}
@@ -1225,7 +1227,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 <div class="wrap">
 
 <!-- ============ 0 ============ -->
-<section class="slide" id="s0" data-nav="Session map">
+<section class="slide" id="s0" data-nav="Retrieval bridge">
   <div class="eyebrow"><span>BUS ADM X433.4 · Session 2</span><span class="mins">6 min</span></div>
   <h1>Practical AI Usage in Daily Advisory Workflows</h1>
   <p class="lede">The model samples a plausible answer. It does not compute the true one. Everything in this session follows from that one sentence.</p>
@@ -2020,7 +2022,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="conf h">H</span> directly verified against the cited source. <span class="conf m">M</span> reported by a secondary source or derived from a stated relationship. <span class="conf l">L</span> illustrative construction, not a published figure.</p>
     <p style="font-size:13.5px">Nothing in this file is tax or legal advice. Every characterisation of an authority is a teaching illustration built on a synthetic case, and several are deliberately wrong and labelled as such. Verify against the Code, the Bulletin and the docket before any of it informs a recommendation. That instruction is the course.</p>
     <p style="font-size:13.5px">BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors. UC Berkeley Extension. Session 2.</p>
-  <p class="stamp">Last updated 2026-09-12. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
+  <p class="stamp">Last updated 2026-10-11. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
 
   </div>
 </footer>
@@ -2866,27 +2868,40 @@ var BRIDGE=[
  {q:'Session 1 gave a rule for when to start a new chat instead of continuing a long one. State the rule, then the two reasons it rests on.',
   a:'The working rule was ten to fifteen turns. The number is a rule of thumb; the reasons are not. First, every turn re-sends the whole conversation, so the input bill grows with every exchange. Second, the vendor\u2019s documentation states that as the token count grows, accuracy and recall degrade, which it calls context rot. A new chat resets both. Carry over a short summary of what matters, not the transcript.'}
 ];
+/* Commit, then reveal (DW-114, S2-25): each item has its own control, and
+   pressing it locks that item's box (readOnly) before its key is shown, so an
+   answer cannot be edited after the key is seen. The control then shows or
+   hides the key; the box stays locked. "Reveal all three" is the instructor's
+   path: it locks every box first, then shows every key. */
 (function(){
-  var host=$('bridge'),shown=false;
+  var host=$('bridge');
   var h='';
   BRIDGE.forEach(function(b,i){
     h+='<div style="padding:'+(i?'18px':'2px')+' 0 18px;border-bottom:'+(i<BRIDGE.length-1?'1px solid var(--line)':'none')+'">'+
        '<span class="plab">Recall '+(i+1)+'</span>'+
-       '<p style="margin:0 0 11px;font-size:15.5px">'+b.q+'</p>'+
-       '<textarea data-b="'+i+'" style="min-height:66px" placeholder="Answer from memory. No notes, no searching."></textarea>'+
-       '<div class="bans" data-b="'+i+'" style="display:none;font-size:14.5px;line-height:1.55;margin-top:11px;padding:11px 14px;border-radius:7px;background:var(--on-bg);color:#0A423F"></div></div>';
+       '<p id="bq'+i+'" style="margin:0 0 11px;font-size:15.5px">'+b.q+'</p>'+
+       '<textarea data-b="'+i+'" aria-labelledby="bq'+i+'" style="min-height:66px" placeholder="Answer from memory. No notes, no searching."></textarea>'+
+       '<div class="row" style="margin-top:9px"><button type="button" class="btn ghost mini" data-rv="'+i+'" aria-expanded="false" aria-controls="bans'+i+'" aria-describedby="bq'+i+'">Lock and reveal</button></div>'+
+       '<div class="bans" id="bans'+i+'" data-b="'+i+'" style="display:none;font-size:14.5px;line-height:1.55;margin-top:11px;padding:11px 14px;border-radius:7px;background:var(--on-bg);color:#0A423F"></div></div>';
   });
   host.innerHTML=h;
+  var tas=host.querySelectorAll('textarea'),keys=host.querySelectorAll('.bans'),rvs=host.querySelectorAll('button[data-rv]');
   function count(){
-    var n=0;host.querySelectorAll('textarea').forEach(function(t){if(t.value.trim().length>8)n++});
-    $('bridgeCount').textContent=n+' of '+BRIDGE.length+' answered'+(shown?' \u00b7 revealed':'');
+    var n=0,r=0;tas.forEach(function(t){if(t.value.trim().length>8)n++;if(t.readOnly)r++});
+    $('bridgeCount').textContent=n+' of '+BRIDGE.length+' answered'+(r===BRIDGE.length?' \u00b7 revealed':r?' \u00b7 '+r+' revealed':'');
   }
-  host.querySelectorAll('textarea').forEach(function(t){t.oninput=count});
+  tas.forEach(function(t){t.oninput=count});
+  function show(i,open){
+    tas[i].readOnly=true;
+    if(open)keys[i].textContent=BRIDGE[i].a;
+    keys[i].style.display=open?'block':'none';
+    rvs[i].setAttribute('aria-expanded',open?'true':'false');
+    rvs[i].textContent=open?'Hide answer':'Show answer';
+  }
+  rvs.forEach(function(b,i){b.onclick=function(){show(i,b.getAttribute('aria-expanded')!=='true');count()}});
   function reveal(){
-    shown=true;
-    host.querySelectorAll('.bans').forEach(function(d){
-      d.style.display='block';d.textContent=BRIDGE[d.getAttribute('data-b')*1].a;
-    });
+    tas.forEach(function(t){t.readOnly=true});
+    for(var i=0;i<BRIDGE.length;i++)show(i,true);
     count();
   }
   $('bridgeReveal').onclick=reveal;

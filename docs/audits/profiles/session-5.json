@@ -1,7 +1,7 @@
 {
   "file": "session-5/index.html",
-  "file_bytes": 482512,
-  "file_lines": 7167,
+  "file_bytes": 586022,
+  "file_lines": 8394,
   "generated_by": "scripts/audit/section_profile.mjs (read-only)",
   "methods": {
     "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
@@ -53,12 +53,17 @@
         "min": 5,
         "apx": false
       },
-      "07 · What stays human": {
+      "07 · The firm’s library": {
+        "title": "One Repository, Every Desk",
+        "min": 5,
+        "apx": false
+      },
+      "08 · What stays human": {
         "title": "The Cole Meeting: Eight Moments",
         "min": 5,
         "apx": false
       },
-      "08 · The reading": {
+      "09 · The reading": {
         "title": "Trust the Tool, Think Less?",
         "min": 5,
         "apx": false
@@ -89,9 +94,9 @@
         "apx": true
       }
     },
-    "segments_sum": 120,
-    "allocated_cell": 120,
-    "eyebrow_sum_lesson_sections": 120
+    "segments_sum": 125,
+    "allocated_cell": 125,
+    "eyebrow_sum_lesson_sections": 125
   },
   "consecutive_family_repeats": {
     "document_order": [],
@@ -111,13 +116,14 @@
     "sE1",
     "s5",
     "s6",
+    "sLib",
     "s7",
     "sE5",
     "s8"
   ],
   "norms": {
-    "sections": 15,
-    "core_sections": 10,
+    "sections": 16,
+    "core_sections": 11,
     "interactions_per_section": {
       "median": 1,
       "range": [
@@ -127,20 +133,20 @@
       "mean": 1
     },
     "chips_per_100_words": {
-      "median": 1.76,
+      "median": 1.73,
       "range": [
         0.38,
-        3.32
+        3.14
       ],
-      "mean": 1.67
+      "mean": 1.66
     },
     "chips_per_section": {
-      "median": 4,
+      "median": 5,
       "range": [
         1,
-        10
+        15
       ],
-      "mean": 4.6
+      "mean": 5.5
     },
     "sources_per_section": {
       "median": 2,
@@ -148,47 +154,47 @@
         1,
         8
       ],
-      "mean": 2.93
+      "mean": 3.31
     },
     "words_per_min": {
-      "median": 43.2,
+      "median": 47.5,
       "range": [
         17.6,
-        79.8
+        125.8
       ],
-      "mean": 41.57
+      "mean": 49.94
     },
     "prose_words_per_min": {
-      "median": 32.4,
+      "median": 37.599999999999994,
       "range": [
         9.6,
-        59.2
+        96.2
       ],
-      "mean": 31.25
+      "mean": 37.69
     },
     "exposition_run_min_tagged": {
       "median": 4.6,
       "range": [
-        4.2,
+        4.3,
         14.9
       ],
-      "mean": 6.64
+      "mean": 6.52
     },
     "exposition_run_min_control": {
-      "median": 3.4,
+      "median": 3.3499999999999996,
       "range": [
-        1.7,
+        2,
         12
       ],
-      "mean": 4.6
+      "mean": 4.49
     },
     "icap_distribution": {
       "P": 0,
-      "A": 3,
-      "C": 11,
+      "A": 2,
+      "C": 13,
       "I": 1
     },
-    "distinct_families": 13,
+    "distinct_families": 12,
     "sections_with_zero_chips": [],
     "sections_with_zero_interactions": []
   },
@@ -206,8 +212,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 2551,
-      "line_end": 2614,
+      "line_start": 2799,
+      "line_end": 2862,
       "bytes": 3879,
       "allocated_min": 5,
       "words": 264,
@@ -220,8 +226,8 @@
           "data_task": "t-s0",
           "data_comp": "retrieval-bridge",
           "icap": "C",
-          "line": 2565,
-          "line_end": 2571,
+          "line": 2813,
+          "line_end": 2819,
           "words_inside": 20
         }
       ],
@@ -253,7 +259,7 @@
       "gates": [
         {
           "id": "g1",
-          "line": 2612,
+          "line": 2860,
           "marked_by_component": false
         }
       ],
@@ -270,7 +276,7 @@
         "X433"
       ],
       "dom": {
-        "rendered_words": 426,
+        "rendered_words": 436,
         "rendered_chips": 1,
         "rendered_controls": 19,
         "rendered_hidden_panels": 3
@@ -289,8 +295,8 @@
       "nav_matches_heading": true,
       "nav_contained_in_heading": true,
       "timing_row_min": null,
-      "line_start": 2617,
-      "line_end": 2629,
+      "line_start": 2865,
+      "line_end": 2877,
       "bytes": 1528,
       "allocated_min": 66,
       "words": 144,
@@ -337,7 +343,7 @@
         "§04",
         "E1",
         "E5",
-        "§07"
+        "§08"
       ],
       "dom": {
         "rendered_words": 144,
@@ -359,8 +365,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 8,
-      "line_start": 2632,
-      "line_end": 2686,
+      "line_start": 2880,
+      "line_end": 2934,
       "bytes": 3733,
       "allocated_min": 8,
       "words": 224,
@@ -373,8 +379,8 @@
           "data_task": "t-cold-open",
           "data_comp": "timed-ritual",
           "icap": "C",
-          "line": 2637,
-          "line_end": 2676,
+          "line": 2885,
+          "line_end": 2924,
           "words_inside": 90
         }
       ],
@@ -406,7 +412,7 @@
       "gates": [
         {
           "id": "gc",
-          "line": 2685,
+          "line": 2933,
           "marked_by_component": true
         }
       ],
@@ -440,23 +446,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 2688,
-      "line_end": 2757,
-      "bytes": 7081,
+      "line_start": 2936,
+      "line_end": 3023,
+      "bytes": 9976,
       "allocated_min": 5,
-      "words": 399,
-      "prose_words": 265,
-      "words_per_min": 79.8,
-      "prose_words_per_min": 53,
+      "words": 629,
+      "prose_words": 481,
+      "words_per_min": 125.8,
+      "prose_words_per_min": 96.2,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s1",
           "data_comp": "parameter-sandbox",
           "icap": "A",
-          "line": 2693,
-          "line_end": 2725,
-          "words_inside": 134
+          "line": 2941,
+          "line_end": 2974,
+          "words_inside": 148
         }
       ],
       "families": [
@@ -465,51 +471,54 @@
       "icap": {
         "A": 1
       },
-      "chips_total": 9,
+      "chips_total": 15,
       "chips": {
-        "H": 5,
-        "M": 2,
-        "L": 2
+        "H": 11,
+        "M": 1,
+        "L": 3
       },
-      "chips_per_100_words": 2.26,
+      "chips_per_100_words": 2.38,
       "chips_unresolved": [],
       "source_keys": [
         "src-anthropic-deprecations",
+        "src-anthropic-models-overview",
         "src-case",
+        "src-claude-code-skills",
+        "src-claude-code-settings",
         "src-anthropic-deprecation-commitments",
         "src-openai-retire-4o"
       ],
-      "sources_count": 4,
+      "sources_count": 7,
       "src_lines": 1,
-      "sim_badges": 0,
+      "sim_badges": 1,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 11,
+      "interactive_controls": 17,
       "gates": [
         {
           "id": "g2",
-          "line": 2756,
+          "line": 3022,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 362,
-        "longest_run_min_tagged_split": 4.5,
-        "longest_run_words_control_split": 134,
-        "longest_run_min_control_split": 1.7,
+        "longest_run_words_tagged_split": 576,
+        "longest_run_min_tagged_split": 4.6,
+        "longest_run_words_control_split": 247,
+        "longest_run_min_control_split": 2,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
-        "API"
+        "SKILL"
       ],
       "dom": {
-        "rendered_words": 421,
-        "rendered_chips": 9,
-        "rendered_controls": 11,
+        "rendered_words": 697,
+        "rendered_chips": 15,
+        "rendered_controls": 17,
         "rendered_hidden_panels": 0
       }
     },
@@ -526,8 +535,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 14,
-      "line_start": 2759,
-      "line_end": 2803,
+      "line_start": 3025,
+      "line_end": 3069,
       "bytes": 3603,
       "allocated_min": 14,
       "words": 246,
@@ -540,8 +549,8 @@
           "data_task": "t-sE2",
           "data_comp": "pipeline-lab",
           "icap": "C",
-          "line": 2766,
-          "line_end": 2784,
+          "line": 3032,
+          "line_end": 3050,
           "words_inside": 69
         }
       ],
@@ -574,7 +583,7 @@
       "gates": [
         {
           "id": "ga2",
-          "line": 2802,
+          "line": 3068,
           "marked_by_component": true
         }
       ],
@@ -608,22 +617,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 6,
-      "line_start": 2805,
-      "line_end": 2852,
-      "bytes": 3781,
+      "line_start": 3071,
+      "line_end": 3140,
+      "bytes": 6043,
       "allocated_min": 6,
-      "words": 227,
-      "prose_words": 173,
-      "words_per_min": 37.8,
-      "prose_words_per_min": 28.8,
+      "words": 347,
+      "prose_words": 293,
+      "words_per_min": 57.8,
+      "prose_words_per_min": 48.8,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s2",
           "data_comp": "click-map-explorer",
           "icap": "A",
-          "line": 2811,
-          "line_end": 2833,
+          "line": 3077,
+          "line_end": 3099,
           "words_inside": 54
         }
       ],
@@ -633,13 +642,13 @@
       "icap": {
         "A": 1
       },
-      "chips_total": 4,
+      "chips_total": 5,
       "chips": {
         "H": 2,
         "M": 0,
-        "L": 2
+        "L": 3
       },
-      "chips_per_100_words": 1.76,
+      "chips_per_100_words": 1.44,
       "chips_unresolved": [],
       "source_keys": [
         "src-case",
@@ -647,26 +656,26 @@
       ],
       "sources_count": 2,
       "src_lines": 1,
-      "sim_badges": 1,
+      "sim_badges": 2,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 1,
+      "interactive_controls": 4,
       "gates": [
         {
           "id": "g3",
-          "line": 2851,
+          "line": 3139,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 187,
-        "longest_run_min_tagged_split": 4.9,
-        "longest_run_words_control_split": 121,
-        "longest_run_min_control_split": 3.2,
+        "longest_run_words_tagged_split": 307,
+        "longest_run_min_tagged_split": 5.3,
+        "longest_run_words_control_split": 140,
+        "longest_run_min_control_split": 2.4,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
@@ -675,9 +684,9 @@
         "README"
       ],
       "dom": {
-        "rendered_words": 549,
-        "rendered_chips": 4,
-        "rendered_controls": 14,
+        "rendered_words": 700,
+        "rendered_chips": 5,
+        "rendered_controls": 25,
         "rendered_hidden_panels": 0
       }
     },
@@ -694,8 +703,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 5,
-      "line_start": 2854,
-      "line_end": 2887,
+      "line_start": 3142,
+      "line_end": 3175,
       "bytes": 2638,
       "allocated_min": 5,
       "words": 219,
@@ -708,8 +717,8 @@
           "data_task": "t-s3",
           "data_comp": "prediction-commit",
           "icap": "C",
-          "line": 2860,
-          "line_end": 2876,
+          "line": 3148,
+          "line_end": 3164,
           "words_inside": 57
         }
       ],
@@ -742,7 +751,7 @@
       "gates": [
         {
           "id": "g4",
-          "line": 2886,
+          "line": 3174,
           "marked_by_component": true
         }
       ],
@@ -757,7 +766,7 @@
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 594,
+        "rendered_words": 482,
         "rendered_chips": 4,
         "rendered_controls": 8,
         "rendered_hidden_panels": 0
@@ -776,8 +785,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 12,
-      "line_start": 2889,
-      "line_end": 2920,
+      "line_start": 3177,
+      "line_end": 3208,
       "bytes": 2846,
       "allocated_min": 12,
       "words": 223,
@@ -790,8 +799,8 @@
           "data_task": "t-sE3",
           "data_comp": "multi-column-sorter",
           "icap": "C",
-          "line": 2896,
-          "line_end": 2909,
+          "line": 3184,
+          "line_end": 3197,
           "words_inside": 37
         }
       ],
@@ -827,7 +836,7 @@
       "gates": [
         {
           "id": "ga3",
-          "line": 2919,
+          "line": 3207,
           "marked_by_component": false
         }
       ],
@@ -844,7 +853,7 @@
         "CVE"
       ],
       "dom": {
-        "rendered_words": 427,
+        "rendered_words": 434,
         "rendered_chips": 7,
         "rendered_controls": 15,
         "rendered_hidden_panels": 0
@@ -863,23 +872,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 2922,
-      "line_end": 2961,
-      "bytes": 2655,
+      "line_start": 3210,
+      "line_end": 3246,
+      "bytes": 2471,
       "allocated_min": 5,
-      "words": 228,
-      "prose_words": 171,
-      "words_per_min": 45.6,
-      "prose_words_per_min": 34.2,
+      "words": 210,
+      "prose_words": 145,
+      "words_per_min": 42,
+      "prose_words_per_min": 29,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s4",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 2928,
-          "line_end": 2942,
-          "words_inside": 57
+          "line": 3216,
+          "line_end": 3235,
+          "words_inside": 65
         }
       ],
       "families": [
@@ -894,7 +903,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.44,
+      "chips_per_100_words": 0.48,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -910,17 +919,17 @@
       "gates": [
         {
           "id": "g5",
-          "line": 2960,
+          "line": 3245,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 199,
-        "longest_run_min_tagged_split": 4.4,
-        "longest_run_words_control_split": 119,
-        "longest_run_min_control_split": 2.6,
+        "longest_run_words_tagged_split": 181,
+        "longest_run_min_tagged_split": 4.3,
+        "longest_run_words_control_split": 138,
+        "longest_run_min_control_split": 3.3,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
@@ -929,7 +938,7 @@
         "NOTE"
       ],
       "dom": {
-        "rendered_words": 514,
+        "rendered_words": 406,
         "rendered_chips": 1,
         "rendered_controls": 7,
         "rendered_hidden_panels": 0
@@ -948,8 +957,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 10,
-      "line_start": 2963,
-      "line_end": 3010,
+      "line_start": 3248,
+      "line_end": 3295,
       "bytes": 3602,
       "allocated_min": 10,
       "words": 227,
@@ -962,8 +971,8 @@
           "data_task": "t-sE4",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 2970,
-          "line_end": 2999,
+          "line": 3255,
+          "line_end": 3284,
           "words_inside": 82
         }
       ],
@@ -995,7 +1004,7 @@
       "gates": [
         {
           "id": "ga4",
-          "line": 3009,
+          "line": 3294,
           "marked_by_component": true
         }
       ],
@@ -1029,8 +1038,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 12,
-      "line_start": 3012,
-      "line_end": 3056,
+      "line_start": 3297,
+      "line_end": 3341,
       "bytes": 3562,
       "allocated_min": 12,
       "words": 249,
@@ -1043,8 +1052,8 @@
           "data_task": "t-sE1",
           "data_comp": "timed-ritual",
           "icap": "C",
-          "line": 3018,
-          "line_end": 3036,
+          "line": 3303,
+          "line_end": 3321,
           "words_inside": 70
         }
       ],
@@ -1076,7 +1085,7 @@
       "gates": [
         {
           "id": "ga1",
-          "line": 3055,
+          "line": 3340,
           "marked_by_component": true
         }
       ],
@@ -1112,8 +1121,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 3058,
-      "line_end": 3096,
+      "line_start": 3343,
+      "line_end": 3381,
       "bytes": 3778,
       "allocated_min": 5,
       "words": 287,
@@ -1126,8 +1135,8 @@
           "data_task": "t-s5",
           "data_comp": "estimate-then-reveal",
           "icap": "C",
-          "line": 3063,
-          "line_end": 3075,
+          "line": 3348,
+          "line_end": 3360,
           "words_inside": 54
         }
       ],
@@ -1163,7 +1172,7 @@
       "gates": [
         {
           "id": "g6",
-          "line": 3095,
+          "line": 3380,
           "marked_by_component": true
         }
       ],
@@ -1197,30 +1206,30 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 5,
-      "line_start": 3098,
-      "line_end": 3147,
-      "bytes": 4990,
+      "line_start": 3383,
+      "line_end": 3430,
+      "bytes": 4926,
       "allocated_min": 5,
-      "words": 301,
-      "prose_words": 228,
-      "words_per_min": 60.2,
-      "prose_words_per_min": 45.6,
+      "words": 353,
+      "prose_words": 214,
+      "words_per_min": 70.6,
+      "prose_words_per_min": 42.8,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s6",
-          "data_comp": "symptom-diagnoser",
-          "icap": "A",
-          "line": 3103,
-          "line_end": 3121,
-          "words_inside": 73
+          "data_comp": "builder-assembler",
+          "icap": "C",
+          "line": 3388,
+          "line_end": 3419,
+          "words_inside": 139
         }
       ],
       "families": [
-        "symptom-diagnoser"
+        "builder-assembler"
       ],
       "icap": {
-        "A": 1
+        "C": 1
       },
       "chips_total": 10,
       "chips": {
@@ -1228,7 +1237,7 @@
         "M": 6,
         "L": 1
       },
-      "chips_per_100_words": 3.32,
+      "chips_per_100_words": 2.83,
       "chips_unresolved": [],
       "source_keys": [
         "src-t3-survey",
@@ -1247,38 +1256,124 @@
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 10,
+      "interactive_controls": 7,
       "gates": [
         {
           "id": "g7",
-          "line": 3146,
+          "line": 3429,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 268,
-        "longest_run_min_tagged_split": 4.5,
-        "longest_run_words_control_split": 170,
-        "longest_run_min_control_split": 2.8,
+        "longest_run_words_tagged_split": 303,
+        "longest_run_min_tagged_split": 4.3,
+        "longest_run_words_control_split": 214,
+        "longest_run_min_control_split": 3,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
         "CRM"
       ],
       "dom": {
-        "rendered_words": 331,
+        "rendered_words": 414,
         "rendered_chips": 10,
-        "rendered_controls": 10,
+        "rendered_controls": 7,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
+      "id": "sLib",
+      "num": "07",
+      "data_nav": "The firm's library",
+      "eyebrow": "07 · The firm’s library",
+      "heading": "One Repository, Every Desk",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 3432,
+      "line_end": 3482,
+      "bytes": 5802,
+      "allocated_min": 5,
+      "words": 463,
+      "prose_words": 352,
+      "words_per_min": 92.6,
+      "prose_words_per_min": 70.4,
+      "interactions_count": 1,
+      "interactions": [
+        {
+          "data_task": "t-sLib",
+          "data_comp": "pipeline-lab",
+          "icap": "C",
+          "line": 3437,
+          "line_end": 3455,
+          "words_inside": 111
+        }
+      ],
+      "families": [
+        "pipeline-lab"
+      ],
+      "icap": {
+        "C": 1
+      },
+      "chips_total": 12,
+      "chips": {
+        "H": 10,
+        "M": 0,
+        "L": 2
+      },
+      "chips_per_100_words": 2.59,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-case",
+        "src-claude-code-skills",
+        "src-claude-code-marketplace",
+        "src-claude-code-org",
+        "src-claude-code-settings",
+        "src-claude-code-host"
+      ],
+      "sources_count": 6,
+      "src_lines": 1,
+      "sim_badges": 1,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 6,
+      "gates": [
+        {
+          "id": "gl",
+          "line": 3481,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 411,
+        "longest_run_min_tagged_split": 4.4,
+        "longest_run_words_control_split": 252,
+        "longest_run_min_control_split": 2.7,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [],
+      "dom": {
+        "rendered_words": 603,
+        "rendered_chips": 12,
+        "rendered_controls": 13,
         "rendered_hidden_panels": 0
       }
     },
     {
       "id": "s7",
-      "num": "07",
+      "num": "08",
       "data_nav": "What stays human",
-      "eyebrow": "07 · What stays human",
+      "eyebrow": "08 · What stays human",
       "heading": "The Cole Meeting: Eight Moments",
       "is_toc": false,
       "is_appendix": false,
@@ -1287,23 +1382,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 3149,
-      "line_end": 3185,
-      "bytes": 2919,
+      "line_start": 3484,
+      "line_end": 3523,
+      "bytes": 3481,
       "allocated_min": 5,
-      "words": 216,
-      "prose_words": 181,
-      "words_per_min": 43.2,
-      "prose_words_per_min": 36.2,
+      "words": 256,
+      "prose_words": 214,
+      "words_per_min": 51.2,
+      "prose_words_per_min": 42.8,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s7",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 3154,
-          "line_end": 3165,
-          "words_inside": 35
+          "line": 3489,
+          "line_end": 3500,
+          "words_inside": 42
         }
       ],
       "families": [
@@ -1318,7 +1413,7 @@
         "M": 5,
         "L": 1
       },
-      "chips_per_100_words": 2.78,
+      "chips_per_100_words": 2.34,
       "chips_unresolved": [],
       "source_keys": [
         "src-morningstar-fired",
@@ -1333,28 +1428,28 @@
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 1,
+      "interactive_controls": 2,
       "gates": [
         {
           "id": "g8",
-          "line": 3184,
+          "line": 3522,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 182,
-        "longest_run_min_tagged_split": 4.2,
-        "longest_run_words_control_split": 130,
-        "longest_run_min_control_split": 3,
+        "longest_run_words_tagged_split": 222,
+        "longest_run_min_tagged_split": 4.3,
+        "longest_run_words_control_split": 135,
+        "longest_run_min_control_split": 2.6,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 459,
+        "rendered_words": 471,
         "rendered_chips": 6,
-        "rendered_controls": 11,
+        "rendered_controls": 24,
         "rendered_hidden_panels": 0
       }
     },
@@ -1371,8 +1466,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 18,
-      "line_start": 3187,
-      "line_end": 3238,
+      "line_start": 3525,
+      "line_end": 3576,
       "bytes": 4658,
       "allocated_min": 18,
       "words": 338,
@@ -1385,8 +1480,8 @@
           "data_task": "t-sE5",
           "data_comp": "sealed-vote-debate",
           "icap": "I",
-          "line": 3194,
-          "line_end": 3227,
+          "line": 3532,
+          "line_end": 3565,
           "words_inside": 165
         }
       ],
@@ -1422,7 +1517,7 @@
       "gates": [
         {
           "id": "ga5",
-          "line": 3237,
+          "line": 3575,
           "marked_by_component": true
         }
       ],
@@ -1447,9 +1542,9 @@
     },
     {
       "id": "s8",
-      "num": "08",
+      "num": "09",
       "data_nav": "The reading",
-      "eyebrow": "08 · The reading",
+      "eyebrow": "09 · The reading",
       "heading": "Trust the Tool, Think Less?",
       "is_toc": false,
       "is_appendix": false,
@@ -1458,22 +1553,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 3240,
-      "line_end": 3301,
-      "bytes": 5288,
+      "line_start": 3578,
+      "line_end": 3639,
+      "bytes": 5350,
       "allocated_min": 5,
-      "words": 382,
-      "prose_words": 296,
-      "words_per_min": 76.4,
-      "prose_words_per_min": 59.2,
+      "words": 393,
+      "prose_words": 307,
+      "words_per_min": 78.6,
+      "prose_words_per_min": 61.4,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s8",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 3246,
-          "line_end": 3270,
+          "line": 3584,
+          "line_end": 3608,
           "words_inside": 86
         }
       ],
@@ -1489,7 +1584,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 1.31,
+      "chips_per_100_words": 1.27,
       "chips_unresolved": [],
       "source_keys": [
         "src-lee-cognitive",
@@ -1506,22 +1601,22 @@
       "gates": [
         {
           "id": "g9",
-          "line": 3300,
+          "line": 3638,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 351,
+        "longest_run_words_tagged_split": 362,
         "longest_run_min_tagged_split": 4.6,
-        "longest_run_words_control_split": 239,
-        "longest_run_min_control_split": 3.1,
+        "longest_run_words_control_split": 250,
+        "longest_run_min_control_split": 3.2,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 473,
+        "rendered_words": 484,
         "rendered_chips": 5,
         "rendered_controls": 10,
         "rendered_hidden_panels": 2
@@ -1608,34 +1703,25 @@
       "defined_within_40_words": false,
       "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "· after §04 Six Minutes, Five Beats  [E5]  · 18 min · after §07 Discussion:"
+      "context": "· after §04 Six Minutes, Five Beats  [E5]  · 18 min · after §08 Discussion:"
     },
     {
-      "term": "§07",
+      "term": "§08",
       "kind": "citation",
       "first_use_section": "apx",
       "defined_within_40_words": false,
       "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "Beats E5 · 18 min · after  [§07]  Discussion: As the Tool Does the Analysis,"
+      "context": "Beats E5 · 18 min · after  [§08]  Discussion: As the Tool Does the Analysis,"
     },
     {
-      "term": "§07)",
-      "kind": "citation",
-      "first_use_section": "s1",
-      "defined_within_40_words": true,
-      "how": "parenthetical",
-      "cfp_baseline_vocabulary": false,
-      "context": "was tested in the record (Session 4,  [§07)]  Missing 2 A dated test set five"
-    },
-    {
-      "term": "API",
+      "term": "SKILL",
       "kind": "acronym",
       "first_use_section": "s1",
       "defined_within_40_words": false,
       "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "February 2026; the models stayed in the  [API]  M . Anthropic, Model deprecations, platform.claude.com, opened"
+      "context": "hold and name the check that failed  [SKILL] .md · meeting-prep brief name: meeting-prep-brief description: a"
     },
     {
       "term": "HANDOFF",
@@ -1689,7 +1775,7 @@
       "defined_within_40_words": false,
       "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "✓ PASS the brief is right ✗  [FAIL]  it carries the broken line Re-run 3"
+      "context": "✓ PASS the brief is right ✗  [FAIL]  it carries the broken line How the"
     },
     {
       "term": "NOT",
@@ -1769,6 +1855,12 @@
     "src-anthropic-terms",
     "src-anthropic-deprecations",
     "src-anthropic-deprecation-commitments",
+    "src-anthropic-models-overview",
+    "src-claude-code-skills",
+    "src-claude-code-marketplace",
+    "src-claude-code-org",
+    "src-claude-code-host",
+    "src-claude-code-settings",
     "src-brynjolfsson",
     "src-cfp-psychology",
     "src-dellacqua",

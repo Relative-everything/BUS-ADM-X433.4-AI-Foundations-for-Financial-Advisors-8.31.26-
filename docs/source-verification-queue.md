@@ -54,16 +54,16 @@ Each one cites the evidence in the repository that records the confirmation.
 | 7 | `src-anthropic-dpa` | Data Processing Addendum | **EMPTY** | 2026-09-27 | 10 | yes | S4 `#s3`×2 · S4 `#s4`×2 · S4 `#s9`×6 |
 | 8 | `src-effort` | Change the model, effort, and thinking settings | **EMPTY** | 2026-08-20 | 10 | yes | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3`×5 · S0.1 `#s9` · S4 `#sWS` · S4 `#s9` |
 | 9 | `src-memory` | Use Claude's chat search and memory to build on previous context | **EMPTY** | 2026-08-20 | 10 | yes | S0.1 `#s0` · S0.1 `#s5`×2 · S0.1 `#s6`×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10`×2 · S2 `#s3` |
-| 10 | `src-tools3` | When should I use web search, extended thinking, and research? | **EMPTY** | 2026-08-20 | 9 | yes | S0.1 `#s1` · S0.1 `#s4` · S0.1 `#s5`×3 · S0.1 `#s8`×3 · S0.1 `#s9` |
-| 11 | `src-pricing` | Pricing | **EMPTY** | 2026-09-13 | 8 | yes | S1 `#s5` · S1 `#s11`×3 · S2 `#s0` · S2 `#s5`×3 |
+| 10 | `src-pricing` | Pricing | **EMPTY** | 2026-09-13 | 9 | yes | S1 `#s5` · S1 `#s10` · S1 `#s11`×3 · S2 `#s0` · S2 `#s5`×3 |
+| 11 | `src-tools3` | When should I use web search, extended thinking, and research? | **EMPTY** | 2026-08-20 | 9 | yes | S0.1 `#s1` · S0.1 `#s4` · S0.1 `#s5`×3 · S0.1 `#s8`×3 · S0.1 `#s9` |
 | 12 | `src-cve` | CVE-2025-32711 (EchoLeak, CVSS 9.3) | **EMPTY** | **none** | 7 | no | S4 `#s3` · S4 `#s5`×2 · S4 `#s9`×3 · S5 `#sE3` |
 | 13 | `src-finra2409` | Regulatory Notice 24-09 | **EMPTY** | **none** | 7 | no | S1 `#s14`×2 · S4 `#s1`×2 · S4 `#s7` · S4 `#s9`×2 |
 | 14 | `src-kitces-notetakers` | Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends | **EMPTY** | **none** | 7 | no | S3 `#s9` · S3 `#s10`×2 · S3 `#s11`×2 · S3 `#s16`×2 |
 | 15 | `src-lee-cognitive` | The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers | **EMPTY** | 2026-10-02 | 7 | no | S3 `#s15` · S5 `#sE5`×2 · S5 `#s8`×4 |
-| 16 | `src-aa` | Artificial Analysis Intelligence Index and cost-per-task figures | **EMPTY** | 2026-08-13 | 6 | yes | S1 `#s10`×2 · S2 `#s5`×3 · S4 `#sWS` |
-| 17 | `src-anthropic-ctx` | Contextual retrieval in AI systems | **EMPTY** | **none** | 6 | no | S3 `#sRag` · S3 `#s6`×3 · S3 `#s7` · S3 `#s16` |
-| 18 | `src-ctxwindow` | How large is the context window on paid Claude plans? | **EMPTY** | 2026-08-20 | 6 | yes | S0.1 `#s1` · S0.1 `#s4`×4 · S0.1 `#s6` |
-| 19 | `src-finra2026` | 2026 Annual Regulatory Oversight Report | **EMPTY** | **none** | 6 | no | S4 `#s1`×2 · S4 `#s7`×3 · S4 `#s9` |
+| 16 | `src-anthropic-ctx` | Contextual retrieval in AI systems | **EMPTY** | **none** | 6 | no | S3 `#sRag` · S3 `#s6`×3 · S3 `#s7` · S3 `#s16` |
+| 17 | `src-ctxwindow` | How large is the context window on paid Claude plans? | **EMPTY** | 2026-08-20 | 6 | yes | S0.1 `#s1` · S0.1 `#s4`×4 · S0.1 `#s6` |
+| 18 | `src-finra2026` | 2026 Annual Regulatory Oversight Report | **EMPTY** | **none** | 6 | no | S4 `#s1`×2 · S4 `#s7`×3 · S4 `#s9` |
+| 19 | `src-aa` | Artificial Analysis Intelligence Index and cost-per-task figures | **EMPTY** | 2026-08-13 | 5 | yes | S1 `#s10` · S2 `#s5`×3 · S4 `#sWS` |
 | 20 | `src-anthropic-deprecations` | Model deprecations | **EMPTY** | 2026-10-04 | 5 | yes | S5 `#s1`×3 · S5 `#sE2`×2 |
 | 21 | `src-anthropic-retention` | API and data retention | **EMPTY** | 2026-09-27 | 5 | yes | S4 `#s3`×2 · S4 `#s4` · S4 `#s9`×2 |
 | 22 | `src-arup` | Reporting on the Arup deepfake incident | **EMPTY** | **none** | 5 | no | S4 `#s5`×2 · S4 `#s9`×3 |
@@ -202,16 +202,16 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-anthropic-dpa` | https://www.anthropic.com/legal/data-processing-addendum |
 | `src-effort` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-memory` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
-| `src-tools3` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-pricing` | https://platform.claude.com/docs/en/about-claude/pricing |
+| `src-tools3` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-cve` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-finra2409` | https://www.finra.org/rules-guidance/notices/24-09 |
 | `src-kitces-notetakers` | https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/ |
 | `src-lee-cognitive` | https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf |
-| `src-aa` | https://artificialanalysis.ai/models |
 | `src-anthropic-ctx` | https://www.anthropic.com/engineering/contextual-retrieval |
 | `src-ctxwindow` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-finra2026` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
+| `src-aa` | https://artificialanalysis.ai/models |
 | `src-anthropic-deprecations` | https://platform.claude.com/docs/en/about-claude/model-deprecations |
 | `src-anthropic-retention` | https://platform.claude.com/docs/en/manage-claude/api-and-data-retention |
 | `src-arup` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
@@ -732,7 +732,7 @@ THE PAPER ITSELF WAS NEVER LOADED, so last_retrieved is unresolved. arxiv.org, p
 an update.** Nothing below has been silently rewritten in the lessons. Each
 entry names the delta and every lesson element that depends on it.
 
-### `src-pricing` — 8 reference(s)
+### `src-pricing` — 9 reference(s)
 
 2026-08-25. The page now states that Sonnet 5's $2 / $10 introductory pricing "is now the standard price" and that "the previously scheduled increase to $3/$15 per million input/output tokens on September 1, 2026 will not occur". The 2026-07-28 pull recorded the increase as scheduled. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-08-25 in Phase 3.6: session-1 §10's second Sonnet 5 table row and its "rises 50% tomorrow" note both carried the cancelled rise and are gone; the surviving row states $2 / $10 / $0.20 with no date on it. Three script arrays carried the same cancelled figure and were corrected with it — TIERS (§03 cost boxes), PATHS (§06 practice cost) and DPT (§06 document pass), the last two of which also printed the label "Sonnet 5 (from 1 Sep)" on screen. session-2 §02's "Sonnet 5 lists at $2 in / $10 out per million tokens" was UNAFFECTED and is the standing price. Phase 3.5 flagged rather than resolved; Phase 3.6 resolved on instruction.
 

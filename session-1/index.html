@@ -505,6 +505,13 @@ section.slide{padding:clamp(44px,6vw,74px) 0;border-bottom:1px solid var(--line)
 #ptrack{flex:1}
 #caseBtn{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:none;border:1.5px solid var(--on);color:var(--on);border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap}
 #caseBtn:hover{background:var(--on-bg)}
+/* DW-077. The Shift+U badge is the widest item in the topbar. At 380px it
+   pushed Case facts past the right edge (630px on session-0.1, 615px on
+   session-1); up to about 670px it crowded the button into the right padding.
+   Below 720px the badge is hidden, override on or off (the panels still open);
+   sessions 4 and 5 show theirs only while the override is on. The title truncates
+   before the button can move. Kept identical in session-0.1 and session-1. */
+@media (max-width:720px){#ovr{display:none}#topbar .ttl{min-width:0;overflow:hidden;text-overflow:ellipsis}#caseBtn{flex:none}}
 #caseModal{position:fixed;inset:0;background:rgba(22,33,31,.45);z-index:70;display:none;overflow:auto;padding:60px 16px}
 #caseModal.open{display:block}
 #caseModal .inner{max-width:840px;margin:0 auto;background:var(--card);border-radius:14px;padding:30px 34px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
@@ -1865,7 +1872,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="dim" style="font-size:14.5px">Ten times from cheapest to most expensive inside one vendor. Published rates move, and every figure in this table is one a vendor can change without asking you: price a workload against the pricing page, not against a number you remember. Cache hits cost 10% of input; batch is 50% on both sides. Claude 4.7 and later also produce roughly 30% more tokens for the same text &mdash; a per-token price cut does not always cut the bill.</p>
 
   <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Set the budget below $1.00 and identify the best model still available.</div></div>
-  <span class="src"><b>Artificial Analysis</b>, 17 and 24 July 2026. <span class="conf h" data-src="src-aa">H</span> &middot; Opus 5 and GPT-5.6 Terra omitted: cost per index task unpublished, not estimated. &middot; Prices: <b>Anthropic Claude Platform Docs</b>, 25 August 2026. First-party. <span class="conf h" data-src="src-aa">H</span></span>
+  <span class="src"><b>Artificial Analysis</b>, 17 and 24 July 2026. <span class="conf h" data-src="src-aa">H</span> &middot; Opus 5 and GPT-5.6 Terra omitted: cost per index task unpublished, not estimated. &middot; Prices: <b>Anthropic Claude Platform Docs</b>, 25 August 2026. First-party. <span class="conf h" data-src="src-pricing">H</span></span>
  </div>
 </section>
 
@@ -2095,7 +2102,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <div class="cards">
-    <div class="card"><span class="num">Session 2 &sect;04</span><h4>Three prompt templates</h4><p>An email rewriter, a case-note formatter, a one-page plan summary generator. Session 2 &sect;04 works from the three you write.</p></div>
+    <div class="card"><span class="num">Session 2 &sect;04</span><h4>Three prompt templates</h4><p>An email rewriter, a case-note formatter, a one-page plan summary generator. Session 2 &sect;04 builds up three starter prompts, then has you rewrite the weakest of the three you write, or one of its starters if you have none.</p></div>
     <div class="card gold"><span class="num">&sect;09</span><h4>Account-level custom instructions</h4><p>&sect;09 shows you where they are configured.</p></div>
   </div>
 
@@ -2195,7 +2202,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="conf h">H</span> directly verified against the cited source. <span class="conf m">M</span> reported by a secondary source or derived from a stated relationship. <span class="conf l">L</span> illustrative construction, not a published figure.</p>
 
-  <p class="stamp">Last updated 2026-08-20. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
+  <p class="stamp">Last updated 2026-10-11. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
 </footer>
 
 </div>

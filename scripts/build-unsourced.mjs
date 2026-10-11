@@ -20,6 +20,36 @@
  * downgraded; a wrong [NEEDS SOURCE] gets read and believed. Default to
  * [UNCONFIRMED] whenever you are unsure.
  *
+ * AND THE PRE-EXISTING FORM, read since 2026-10-11 (DW-135). EDITORIAL.md A16
+ * also declares [UNVERIFIED, needs source] for lessons: the older register, in
+ * which a page prints the marker rather than invent a figure. session-0.1
+ * carries six. Until DW-135 this script matched only the two markers above, so
+ * A16 reported markers this register never listed. It now reads exactly the
+ * forms A16 declares, in A16's regions (R1, R2, R7, R8 of
+ * scripts/editorial-regions.mjs).
+ *
+ * ONE FILE MORE THAN A16. A16 reads session-0.1 and sessions 1 to 5
+ * (verify-editorial.mjs ALL_LESSONS); this register also reads the hub,
+ * index.html, as it did before DW-135. Whether A16 should read the hub is an
+ * open instructor decision (DW-014), so the two populations are counted apart:
+ * the Totals table prints A16's population, which reconciles with the count A16
+ * prints, and the hub's, which A16 never sees. Because nothing else checks the
+ * hub's markers, this script fails an undeclared bracket form there itself
+ * (A16_BRACKET below), the check A16 makes in the six lessons.
+ *
+ * NOT EVERY MARKER IS A MARKED CLAIM. A marker named inside a CLAIM annotation
+ * is the annotation talking about markers. And EDITORIAL.md A16 names "two
+ * comments declaring the convention itself", both script comments in
+ * session-0.1. Those two lines, pinned by their exact text in
+ * CONVENTION_COMMENTS, are listed as not claims, and only while the marker's
+ * whole line sits inside a script comment. Any other marker in a script comment
+ * is not exempt: outside session-0.1 it needs a CLAIM annotation like any other
+ * and fails without one; in session-0.1 an unannotated [UNVERIFIED, needs
+ * source] becomes a LEGACY_UNANNOTATED row. So a new comment, or a lexer that
+ * mistakes a string for a comment, lists a claim or fails, never exempts one.
+ * In the six lessons A16 counts every kind and all pass; the register lists
+ * the not-claims separately, so its totals still add up.
+ *
  * HOW A MARKER CARRIES ITS METADATA. The student sees the short marker and
  * nothing else. Everything this register needs rides in an adjacent annotation
  * comment, which is R5 and never rendered:
@@ -67,8 +97,67 @@ const WEIGHTS = [
 const WEIGHT_ORDER = Object.fromEntries(WEIGHTS.map(([w], i) => [w, i]));
 const CONFIDENCES = ['high', 'medium', 'low', 'none'];
 
-const MARKER = /\[(NEEDS SOURCE|UNCONFIRMED)\]/g;
+/* The forms verify-editorial.mjs A16 declares (its DECLARED list), and no
+   others. In the six lessons A16 fails any other bracket form, so this script
+   need not; in the hub, which A16 does not read, this script does it with
+   A16's own bracket pattern (A16_BRACKET). Keep the lists in step. The
+   UNVERIFIED alternation is A16's: comma, em dash (written \u2014 here) or
+   hyphen before "needs source". */
+const MARKER = /\[(NEEDS SOURCE|UNCONFIRMED|UNVERIFIED(?:,|\s*\u2014|\s*-)\s*needs source)\]/g;
+const DECLARED_FORM = new RegExp(`^${MARKER.source}$`);
+const A16_BRACKET = /\[(?:UNVERIFIED|NEEDS[ _-]?SOURCE|UNCONFIRMED)[^\]]*\]/gi;
+const KEY = (form) => (form.startsWith('UNVERIFIED') ? 'UNVERIFIED' : form);
+/* A16's regions, so the register and the rule count the same markers. */
+const POPULATION = ['R1', 'R2', 'R7', 'R8'];
+/* The files A16 reads (verify-editorial.mjs ALL_LESSONS). Every other file in
+   LESSONS is read here only, and gets the bracket-form check here. */
+const A16_FILES = new Set(['session-0.1/index.html', 'session-1/index.html', 'session-2/index.html',
+                           'session-3/index.html', 'session-4/index.html', 'session-5/index.html']);
 const ANNOT = /(?:<!--|\/\*)\s*CLAIM\s+([\s\S]*?)(?:-->|\*\/)/g;
+
+/**
+ * LEGACY_UNANNOTATED: the files allowed to carry [UNVERIFIED, needs source]
+ * WITHOUT a CLAIM annotation, and why. Anywhere else an unannotated marker of
+ * any form is the usual hard failure. The CLAIM convention dates from
+ * 2026-08-25; markers older than it, on a page nobody may edit, are listed in
+ * their own section rather than failed or dropped.
+ */
+const LEGACY_UNANNOTATED = {
+  'session-0.1/index.html': 'session-0.1 is frozen by instructor decision (DW-057), and its markers predate the CLAIM convention of 2026-08-25',
+};
+
+/**
+ * CONVENTION_COMMENTS: the exact script-comment lines that may carry a marker
+ * that is not a claim. EDITORIAL.md A16 names "two comments declaring the
+ * convention itself"; both are in session-0.1 (frozen, DW-057). They are pinned
+ * by their trimmed text, so the set does not grow when a comment is added or
+ * when the lexer reads a string as a comment: any other line falls through to
+ * the annotation check. If a pinned line is reworded, it falls through too and,
+ * in session-0.1, silently becomes a no-weight legacy claim: only the tally
+ * (claims up one, not-claims down one) and --check's WOULD CHANGE show it. When
+ * that happens, update this list.
+ */
+const CONVENTION_COMMENTS = {
+  'session-0.1/index.html': [
+    'sections print [UNVERIFIED, needs source] where the teaching wants the',
+    'says [UNVERIFIED, needs source] rather than inventing one. */',
+  ],
+};
+/** The marker's own source line, trimmed. */
+function lineText(text, at) {
+  const ls = text.lastIndexOf('\n', at - 1) + 1;
+  let le = text.indexOf('\n', at); if (le < 0) le = text.length;
+  return text.slice(ls, le).trim();
+}
+
+/** True when every non-blank character on the marker's line lies inside the token. */
+function wholeLineIn(text, at, loc) {
+  const ls = text.lastIndexOf('\n', at - 1) + 1;
+  let le = text.indexOf('\n', at); if (le < 0) le = text.length;
+  const line = text.slice(ls, le);
+  const first = ls + line.search(/\S/), last = ls + line.trimEnd().length - 1;
+  return first >= loc.s && last < loc.e;
+}
 
 const problems = [];
 
@@ -94,33 +183,162 @@ function sectionIndexer(text) {
   };
 }
 
+/**
+ * The <script> elements of a page, as [bodyStart, bodyEnd] offsets. HTML
+ * comments are blanked first: session-0.1's head comment mentions "<script src>"
+ * in prose, and a bare regex would open a script there and run it to the first
+ * real </script>, 1,000 lines down.
+ */
+function scriptBodies(text) {
+  const blanked = text.replace(/<!--[\s\S]*?-->/g, (m) => m.replace(/[^\n]/g, ' '));
+  const out = [];
+  for (const m of blanked.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script\s*>/gi)) {
+    const s = m.index + m[0].indexOf('>') + 1;
+    out.push([s, s + m[1].length]);
+  }
+  return out;
+}
+
+/**
+ * Lex one script body far enough to tell a comment from a string literal from
+ * code: [kind, start, end] spans for every comment and every string literal.
+ * Regex literals are skipped by the usual rule (a slash after an operator, an
+ * opening bracket or a keyword starts one; after a value it divides), so a quote
+ * inside a regex cannot open a phantom string. A ")" counts as a value unless it
+ * closes the head of an if / while / for / with, after which a slash opens a
+ * regex: `if (x) /'/.test(s)` is a regex, `(a + b) / 2` a division. A template
+ * literal is lexed in pieces: each `${` hands back to code until its own "}",
+ * so a backtick or a quote inside the substitution cannot end the template.
+ *
+ * Still a lexer, not a parser: `a++ / 2` or an object literal followed by a
+ * division would read the slash as a regex. That is why the not-a-claim
+ * exemption for comments is held to two pinned lines (see CONVENTION_COMMENTS):
+ * a lexer that loses its place costs a hard failure, never a silent exemption.
+ */
+function lexScript(text, s, e) {
+  const out = [];
+  const parens = [], braces = [];      /* parens: closes a control head? braces: 't' = a template's ${ */
+  let i = s, prev = '';
+  /* From the opening delimiter (a backtick, or the "}" of a substitution) to the
+     closing backtick or the next "${"; pushes the piece, returns where to go on. */
+  const template = (from) => {
+    let j = from + 1;
+    while (j < e) {
+      if (text[j] === '\\') { j += 2; continue; }
+      if (text[j] === '`') { out.push(['string', from, j + 1]); prev = 'v'; return j + 1; }
+      if (text[j] === '$' && text[j + 1] === '{') { out.push(['string', from, j + 2]); braces.push('t'); prev = '{'; return j + 2; }
+      j++;
+    }
+    out.push(['string', from, e]); return e;
+  };
+  while (i < e) {
+    const ch = text[i], nx = text[i + 1];
+    if (ch === '/' && nx === '*') {
+      const j = text.indexOf('*/', i + 2), k = j < 0 || j > e ? e : j + 2;
+      out.push(['comment', i, k]); i = k; continue;
+    }
+    if (ch === '/' && nx === '/') {
+      let j = text.indexOf('\n', i); if (j < 0 || j > e) j = e;
+      out.push(['comment', i, j]); i = j; continue;
+    }
+    if (ch === '`') { i = template(i); continue; }
+    if (ch === '"' || ch === "'") {
+      let j = i + 1;
+      while (j < e && text[j] !== ch && text[j] !== '\n') j += text[j] === '\\' ? 2 : 1;
+      out.push(['string', i, Math.min(j + 1, e)]); i = j + 1; prev = 'v'; continue;
+    }
+    if (ch === '/') {
+      const word = /(?:^|[^\w$])(return|typeof|case|do|else|in|of|instanceof|new|delete|void|throw)\s*$/.test(text.slice(Math.max(s, i - 12), i));
+      if (!prev || /[(,=:[!&|?{};+\-*%<>~^]/.test(prev) || word) {
+        let j = i + 1, cls = false;
+        while (j < e && text[j] !== '\n') {
+          const c2 = text[j];
+          if (c2 === '\\') { j += 2; continue; }
+          if (c2 === '[') cls = true; else if (c2 === ']') cls = false; else if (c2 === '/' && !cls) break;
+          j++;
+        }
+        i = j + 1; prev = 'v'; continue;
+      }
+    }
+    if (ch === '(') parens.push(/(?:^|[^\w$.])(?:if|while|for|with)\s*$/.test(text.slice(Math.max(s, i - 8), i)));
+    if (ch === '{') braces.push('b');
+    if (ch === '}' && braces.pop() === 't') { i = template(i); continue; }
+    if (ch === ')') { prev = parens.pop() ? ';' : 'v'; i++; continue; }
+    if (!/\s/.test(ch)) prev = /[\w$\]]/.test(ch) ? 'v' : ch;
+    i++;
+  }
+  return out;
+}
+
+/** Where a marker sits: html, or inside a script as a comment, a string or code. */
+function locator(text) {
+  const bodies = scriptBodies(text);
+  const lexed = bodies.map(([s, e]) => lexScript(text, s, e));
+  return (at) => {
+    const k = bodies.findIndex(([s, e]) => at >= s && at < e);
+    if (k < 0) return { kind: 'html' };
+    const tok = lexed[k].find(([, s, e]) => at >= s && at < e);
+    return tok ? { kind: tok[0], s: tok[1], e: tok[2] } : { kind: 'code', s: bodies[k][0], e: bodies[k][1] };
+  };
+}
+
+const ENTITIES = (s) => s
+  .replace(/&mdash;/g, '—').replace(/&ndash;/g, '–').replace(/&middot;/g, '·')
+  .replace(/&sect;/g, '§').replace(/&nbsp;/g, ' ')
+  .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n))
+  .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+  .replace(/&amp;/g, '&');
+
+/* Block boundaries end a claim; inline tags (<b>, <em>, a chip's <span>) do not. */
+const BLOCK = /<\/?(?:p|div|li|ul|ol|dl|dt|dd|td|th|tr|table|h[1-6]|section|article|aside|blockquote|figure|figcaption|details|summary|header|footer|main|nav|br|hr|script|style)\b[^>]*>/gi;
+const PIN = '\u0000';
+
+/** The one sentence around the PIN in a cleaned string. */
+function sentenceAt(raw) {
+  const t = raw.replace(/\s+/g, ' ').trim();
+  const i = t.indexOf(PIN);
+  const s = t.lastIndexOf('. ', i) + 1;
+  let e = t.indexOf('. ', i);
+  e = e < 0 ? t.length : e + 1;
+  return t.slice(Math.max(0, s), e).replace(PIN, '').trim() || t.replace(PIN, '');
+}
+
 /** The sentence the marker sits in, cleaned of tags, as the claim verbatim. */
-function claimText(text, at) {
-  const from = Math.max(0, at - 700);
-  let before = text.slice(from, at);
-  let after = text.slice(at, at + 700);
-  const cut = before.lastIndexOf('>');
-  if (cut >= 0) before = before.slice(cut + 1);
-  const end = after.indexOf('<');
+function claimText(text, at, loc) {
+  if (loc.kind === 'string' || loc.kind === 'comment' || loc.kind === 'code') {
+    const raw = text.slice(loc.s, at) + PIN + text.slice(at, loc.e);
+    const body = loc.kind === 'string'
+      ? raw.replace(/^[`'"}]/, '').replace(/(?:\$\{|[`'"])$/, '').replace(/\\u([0-9a-f]{4})/gi, (_, h) => String.fromCharCode(parseInt(h, 16))).replace(/\\(.)/g, '$1')
+      : loc.kind === 'comment' ? raw.replace(/^\/[*/]/, '').replace(/\*\/$/, '').replace(/^\s*\*(?!\/)/gm, '') : raw;
+    return sentenceAt(ENTITIES(body));
+  }
+  let before = text.slice(Math.max(0, at - 2000), at);
+  let after = text.slice(at, at + 2000);
+  let cut = -1;
+  for (const m of before.matchAll(BLOCK)) cut = m.index + m[0].length;
+  if (cut >= 0) before = before.slice(cut);
+  const end = after.search(BLOCK);
   if (end >= 0) after = after.slice(0, end);
-  const raw = (before + after)
-    .replace(/&mdash;/g, '—').replace(/&ndash;/g, '–').replace(/&middot;/g, '·')
-    .replace(/&sect;/g, '§').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ')
-    .replace(/\\u2014/g, '—').replace(/\\'/g, "'")
-    .replace(/\s+/g, ' ').trim();
-  /* one sentence around the marker, not a paragraph */
-  const i = raw.indexOf('[');
-  const s = raw.lastIndexOf('. ', i) + 1;
-  let e = raw.indexOf('. ', i);
-  if (e < 0) e = raw.length; else e += 1;
-  return raw.slice(Math.max(0, s), e).trim() || raw;
+  return sentenceAt(ENTITIES((before + PIN + after).replace(/<[^>]*>/g, '')));
 }
 
 export function collect() {
-  const rows = [];
+  const rows = [], notClaims = [];
+  let population = 0, hub = 0;
   for (const rel of LESSONS) {
     const text = readFileSync(join(REPO, rel), 'utf8');
     const c = classify(text);
+    const pop = c.mask(POPULATION);
+    /* A16's bracket-form check, for a file A16 does not read. */
+    if (!A16_FILES.has(rel)) {
+      for (const b of pop.matchAll(A16_BRACKET)) {
+        if (!DECLARED_FORM.test(b[0])) {
+          problems.push(`${rel}:${c.lineAt(b.index)}  marker "${b[0]}" is not one of the declared forms `
+            + '[UNVERIFIED, needs source] / [NEEDS SOURCE] / [UNCONFIRMED] (A16 does not read this file, so this script checks it)');
+        }
+      }
+    }
+    const where = locator(text);
     const whereIs = sectionIndexer(text);
     const annots = [];
     ANNOT.lastIndex = 0;
@@ -128,51 +346,75 @@ export function collect() {
     while ((a = ANNOT.exec(text))) annots.push({ at: a.index, end: a.index + a[0].length, fields: parseAnnot(a[1]) });
     MARKER.lastIndex = 0;
     let m;
-    while ((m = MARKER.exec(text))) {
+    while ((m = MARKER.exec(pop))) {
+      if (A16_FILES.has(rel)) population++; else hub++;
       const at = m.index;
+      const form = m[0], marker = KEY(m[1]);
+      const line = c.lineAt(at);
+      const here = `${rel}:${line}`;
       /* A marker NAMED INSIDE AN ANNOTATION is the annotation talking about
          markers, not a marked claim. The first annotation written said "do NOT
          downgrade to [NEEDS SOURCE]" and the register counted it as one. */
-      if (annots.some((x) => at >= x.at && at < x.end)) continue;
+      if (annots.some((x) => at >= x.at && at < x.end)) { notClaims.push({ file: rel, line, form, why: 'named inside a CLAIM annotation', text: '' }); continue; }
+      const loc = where(at);
+      /* A marker in a script comment is the comment declaring the convention
+         only on one of the pinned CONVENTION_COMMENTS lines, and only while
+         that whole line is inside the comment. Anything else falls through to
+         the annotation check. */
+      if (loc.kind === 'comment' && (CONVENTION_COMMENTS[rel] || []).includes(lineText(text, at)) && wholeLineIn(text, at, loc)) {
+        notClaims.push({ file: rel, line, form, why: 'a script comment declaring the convention', text: claimText(text, at, loc) });
+        continue;
+      }
       const region = c.regionOf(at);
-      const line = text.slice(0, at).split('\n').length;
-      const where = `${rel}:${line}`;
-      /* an annotation declaring the convention is not a claim */
+      /* A script literal renders wherever the code puts it, which the source
+         order does not say: the last <section> before a <script> at the foot
+         of the page is not where its strings appear. So no section is claimed. */
+      const sec = loc.kind === 'html' ? whereIs(at) : null;
+      const base = {
+        file: rel, line, region, marker, form,
+        section: loc.kind !== 'html' ? '' : sec ? sec.id : '(outside any section)',
+        tier: sec ? (sec.tier || 'core') : '',
+        claim: claimText(text, at, loc),
+      };
       const near = annots.filter((x) => x.end <= at && at - x.end <= ANNOT_WINDOW).pop();
       if (!near) {
-        problems.push(`${where}  [${m[1]}] has no CLAIM annotation within ${ANNOT_WINDOW} chars before it`);
+        if (marker === 'UNVERIFIED' && LEGACY_UNANNOTATED[rel]) {
+          rows.push({ ...base, weight: '', legacy: LEGACY_UNANNOTATED[rel], resolve: '', candidate: '', confidence: '', note: '' });
+          continue;
+        }
+        problems.push(`${here}  ${form} has no CLAIM annotation within ${ANNOT_WINDOW} chars before it`);
         continue;
       }
       const f = near.fields;
       if (!f.weight || !(f.weight in WEIGHT_ORDER)) {
-        problems.push(`${where}  CLAIM weight ${JSON.stringify(f.weight || '')} is not one of ${Object.keys(WEIGHT_ORDER).join(' / ')}`);
+        problems.push(`${here}  CLAIM weight ${JSON.stringify(f.weight || '')} is not one of ${Object.keys(WEIGHT_ORDER).join(' / ')}`);
         continue;
       }
-      if (!f.resolve) { problems.push(`${where}  CLAIM has no resolve="…" — a claim nobody can act on is not a register entry`); continue; }
+      if (!f.resolve) { problems.push(`${here}  CLAIM has no resolve="…" — a claim nobody can act on is not a register entry`); continue; }
       if (f.candidate && !CONFIDENCES.includes(f.confidence || '')) {
-        problems.push(`${where}  CLAIM names a candidate source but confidence is ${JSON.stringify(f.confidence || '')}, not one of ${CONFIDENCES.join(' / ')}`);
+        problems.push(`${here}  CLAIM names a candidate source but confidence is ${JSON.stringify(f.confidence || '')}, not one of ${CONFIDENCES.join(' / ')}`);
         continue;
       }
-      const sec = whereIs(at);
       rows.push({
-        file: rel, line, region, marker: m[1],
-        section: sec ? sec.id : '(outside any section)',
-        tier: sec ? (sec.tier || 'core') : '',
-        claim: claimText(text, at),
+        ...base, legacy: '',
         weight: f.weight, resolve: f.resolve,
         candidate: f.candidate || '', confidence: f.confidence || '',
         note: f.note || '',
       });
     }
   }
-  rows.sort((x, y) => WEIGHT_ORDER[x.weight] - WEIGHT_ORDER[y.weight] ||
-                      (x.marker === y.marker ? 0 : x.marker === 'UNCONFIRMED' ? -1 : 1) ||
+  const MARKER_ORDER = { UNCONFIRMED: 0, 'NEEDS SOURCE': 1, UNVERIFIED: 2 };
+  rows.sort((x, y) => (x.legacy ? 1 : 0) - (y.legacy ? 1 : 0) ||
+                      (WEIGHT_ORDER[x.weight] ?? 99) - (WEIGHT_ORDER[y.weight] ?? 99) ||
+                      MARKER_ORDER[x.marker] - MARKER_ORDER[y.marker] ||
                       x.file.localeCompare(y.file) || x.line - y.line);
-  return rows;
+  return { rows, notClaims, population, hub };
 }
 
-function render(rows) {
+function render({ rows, notClaims, population, hub }) {
   const byMarker = (k) => rows.filter((r) => r.marker === k).length;
+  const legacy = rows.filter((r) => r.legacy);
+  const weighted = rows.filter((r) => !r.legacy);
   const L = [];
   L.push('# Unsourced claims');
   L.push('');
@@ -180,20 +422,27 @@ function render(rows) {
   L.push('Do not edit: the next run overwrites it.** To add an entry, mark the claim in');
   L.push('the lesson. To remove one, attach the source and delete the marker.');
   L.push('');
-  L.push('## The two markers');
+  L.push('## The markers');
   L.push('');
   L.push('| Marker | What it asserts |');
   L.push('|---|---|');
   L.push('| **`[UNCONFIRMED]`** | **No source corroborates it. The claim itself is in question.** |');
   L.push('| **`[NEEDS SOURCE]`** | **The claim is right; a citation has not been attached.** |');
+  L.push('| `[UNVERIFIED, needs source]` | The pre-existing form, older than the two above: the page prints the marker rather than invent a figure. D23 introduced the two above for new marks on 2026-08-25. |');
   L.push('');
   L.push('`[NEEDS SOURCE]` is the **stronger** claim, because it asserts that somebody');
   L.push('checked. A wrong `[UNCONFIRMED]` gets read and downgraded; a wrong');
   L.push('`[NEEDS SOURCE]` gets read and believed. **The default is `[UNCONFIRMED]`**,');
   L.push('and moving an entry the other way is a decision with evidence behind it.');
   L.push('');
-  L.push('Both forms are declared in `EDITORIAL.md` A16 and enforced by');
-  L.push('`scripts/verify-editorial.mjs`; a marker in any other form is a hard failure.');
+  L.push('All three forms are declared in `EDITORIAL.md` A16 and enforced by');
+  L.push('`scripts/verify-editorial.mjs` in `session-0.1` and sessions 1 to 5; a marker');
+  L.push('in any other form is a hard failure. This register reads the regions A16');
+  L.push('reads (body prose, script, footer source entries and source notes: R1, R2, R7');
+  L.push('and R8) in those six lessons, and the hub (`index.html`) as well, which A16');
+  L.push('does not read. The totals count the two apart: A16\'s population reconciles');
+  L.push('with the marker count A16 prints, and the hub\'s is extra. In the hub this');
+  L.push('script fails a marker in an undeclared form itself, since A16 never sees it.');
   L.push('');
   L.push('## Totals');
   L.push('');
@@ -202,10 +451,16 @@ function render(rows) {
   L.push(`| Marked claims | **${rows.length}** |`);
   L.push(`| \`[UNCONFIRMED]\` | **${byMarker('UNCONFIRMED')}** |`);
   L.push(`| \`[NEEDS SOURCE]\` | ${byMarker('NEEDS SOURCE')} |`);
+  L.push(`| \`[UNVERIFIED, needs source]\` | ${byMarker('UNVERIFIED')} |`);
   for (const [w, meaning] of WEIGHTS) {
     const n = rows.filter((r) => r.weight === w).length;
-    if (n) L.push(`| weight \`${w}\` | ${n} — ${meaning} |`);
+    if (n) L.push(`| weight \`${w}\` | ${n}: ${meaning} |`);
   }
+  if (legacy.length) L.push(`| no weight | ${legacy.length}: the pre-existing form with no CLAIM annotation, listed in its own section below |`);
+  L.push(`| Markers that are not claims | ${notClaims.length} |`);
+  L.push(`| **A16's population** | **${population}**: the markers in \`session-0.1\` and sessions 1 to 5, the count A16 prints |`);
+  L.push(`| The hub, \`index.html\` | ${hub}: read here, not by A16 |`);
+  L.push(`| **All markers read** | **${population + hub}**: ${rows.length} marked claim(s) and ${notClaims.length} marker(s) that are not claims |`);
   L.push('');
   L.push('## The order');
   L.push('');
@@ -215,7 +470,7 @@ function render(rows) {
   L.push('typed by hand; file, line, section, region and the claim text are read out of');
   L.push('the corpus on every run.');
   L.push('');
-  if (!rows.length) {
+  if (!rows.length && !notClaims.length) {
     L.push('---');
     L.push('');
     L.push('*No marked claims. Either every claim carries a source, or nobody has looked.*');
@@ -223,8 +478,31 @@ function render(rows) {
   }
   L.push('---');
   L.push('');
-  let lastWeight = null;
-  rows.forEach((r, i) => {
+  const cell = (t) => t.replace(/\|/g, '\\|');
+  let lastWeight = null, n = 0;
+  const entry = (r) => {
+    L.push(`### ${++n}. \`${r.file}:${r.line}\` · ${r.section ? `\`#${r.section}\`` : 'script'} · **${r.form}**`);
+    L.push('');
+    L.push(`> ${r.claim}`);
+    L.push('');
+    L.push('| | |');
+    L.push('|---|---|');
+    L.push(`| File and line | \`${r.file}:${r.line}\` |`);
+    L.push(r.section ? `| Section | \`#${r.section}\`${r.tier ? ` (\`${r.tier}\`)` : ''} |`
+      : '| Section | *not derivable: a script literal renders wherever the code puts it* |');
+    L.push(`| Region | ${r.region}: ${REGIONS[r.region] || '?'} |`);
+    L.push(`| Marker | **${r.form}** |`);
+    if (r.legacy) {
+      L.push('| What would resolve it | *not annotated* |');
+      L.push(`| Why it has no annotation | ${cell(r.legacy)} |`);
+    } else {
+      L.push(`| What would resolve it | ${r.resolve} |`);
+      L.push(`| Candidate source | ${r.candidate ? `${r.candidate}, confidence **${r.confidence}**` : '*none*'} |`);
+    }
+    if (r.note) L.push(`| Note | ${r.note} |`);
+    L.push('');
+  };
+  for (const r of weighted) {
     if (r.weight !== lastWeight) {
       lastWeight = r.weight;
       const meaning = WEIGHTS.find(([w]) => w === r.weight)[1];
@@ -233,43 +511,66 @@ function render(rows) {
       L.push(`*${meaning}*`);
       L.push('');
     }
-    L.push(`### ${i + 1}. \`${r.file}:${r.line}\` — \`#${r.section}\` — **[${r.marker}]**`);
+    entry(r);
+  }
+  if (legacy.length) {
+    L.push('## no weight: the pre-existing form, unannotated');
     L.push('');
-    L.push(`> ${r.claim}`);
+    L.push('*These use `[UNVERIFIED, needs source]` and carry no CLAIM annotation, so');
+    L.push('they have no authored weight and say nothing about what would resolve them.');
+    L.push('The files allowed to carry them, and why, are named in');
+    L.push('`scripts/build-unsourced.mjs` (`LEGACY_UNANNOTATED`); an unannotated marker');
+    L.push('anywhere else is a hard failure. Annotating one gives it a weight and moves');
+    L.push('it into the sections above.*');
     L.push('');
-    L.push('| | |');
-    L.push('|---|---|');
-    L.push(`| File and line | \`${r.file}:${r.line}\` |`);
-    L.push(`| Section | \`#${r.section}\`${r.tier ? ` (\`${r.tier}\`)` : ''} |`);
-    L.push(`| Region | ${r.region} — ${REGIONS[r.region] || '?'} |`);
-    L.push(`| Marker | **[${r.marker}]** |`);
-    L.push(`| What would resolve it | ${r.resolve} |`);
-    L.push(`| Candidate source | ${r.candidate ? `${r.candidate} — confidence **${r.confidence}**` : '*none*'} |`);
-    if (r.note) L.push(`| Note | ${r.note} |`);
+    for (const r of legacy) entry(r);
+  }
+  if (notClaims.length) {
+    L.push('## Markers that are not claims');
     L.push('');
-  });
+    L.push('*Each one talks about the marker convention instead of marking a claim: a');
+    L.push('whole line of a script comment in `session-0.1` declaring the convention');
+    L.push('(`EDITORIAL.md` A16, "two comments declaring the convention itself"), or a');
+    L.push('marker named inside a CLAIM annotation. A marker in a script comment in any');
+    L.push('other file needs a CLAIM annotation like any claim. Listed so the totals add');
+    L.push('up; nothing here needs a source.*');
+    L.push('');
+    L.push('| File and line | Marker | Where it sits | The sentence |');
+    L.push('|---|---|---|---|');
+    for (const x of notClaims) {
+      L.push(`| \`${x.file}:${x.line}\` | ${x.form} | ${x.why} | ${x.text ? cell(x.text) : ''} |`);
+    }
+    L.push('');
+  }
   return L.join('\n') + '\n';
 }
 
 /* ---------------------------------------------------------------------- main */
 
 if (process.argv[1] && process.argv[1].endsWith('build-unsourced.mjs')) {
-  const rows = collect();
+  const found = collect();
+  const { rows } = found;
   if (problems.length) {
     console.error(`FAIL  build-unsourced.mjs found ${problems.length} marker(s) that cannot enter the register:`);
     for (const p of problems) console.error('   - ' + p);
     console.error('\n      Every marker carries an adjacent annotation:');
     console.error('        <!-- CLAIM weight=<answer|exercise|section|claim|aside> resolve="…" [candidate="…" confidence=<high|medium|low|none>] -->');
+    console.error('      Only the files in LEGACY_UNANNOTATED may carry an unannotated');
+    console.error('      [UNVERIFIED, needs source], and only because they cannot be edited.');
+    console.error('      A marker in a script comment is exempt only on one of the two lines');
+    console.error('      pinned in CONVENTION_COMMENTS; anywhere else it needs the annotation.');
     console.error('      A claim in the register that does not say what would resolve it is a');
     console.error('      claim nobody can act on.');
     process.exit(1);
   }
-  const body = render(rows);
+  const body = render(found);
   let before = null;
   try { before = readFileSync(OUT, 'utf8'); } catch { /* first run */ }
-  if (before === body) { console.log(`current       docs/unsourced-claims.md  (${rows.length} marked claim(s))`); process.exit(0); }
+  const tally = `${rows.length} marked claim(s), ${found.notClaims.length} not a claim; A16 population ${found.population}, hub ${found.hub}`;
+  if (before === body) { console.log(`current       docs/unsourced-claims.md  (${tally})`); process.exit(0); }
   if (CHECK) { console.error('WOULD CHANGE  docs/unsourced-claims.md'); process.exit(1); }
   writeFileSync(OUT, body);
-  console.log(`written       docs/unsourced-claims.md  ${rows.length} marked claim(s), `
-    + `${rows.filter((r) => r.marker === 'UNCONFIRMED').length} UNCONFIRMED / ${rows.filter((r) => r.marker === 'NEEDS SOURCE').length} NEEDS SOURCE`);
+  console.log(`written       docs/unsourced-claims.md  ${tally}; `
+    + `${rows.filter((r) => r.marker === 'UNCONFIRMED').length} UNCONFIRMED / ${rows.filter((r) => r.marker === 'NEEDS SOURCE').length} NEEDS SOURCE / `
+    + `${rows.filter((r) => r.marker === 'UNVERIFIED').length} UNVERIFIED`);
 }

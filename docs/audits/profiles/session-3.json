@@ -1,7 +1,7 @@
 {
   "file": "session-3/index.html",
-  "file_bytes": 224298,
-  "file_lines": 2794,
+  "file_bytes": 259613,
+  "file_lines": 3292,
   "generated_by": "scripts/audit/section_profile.mjs (read-only)",
   "methods": {
     "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
@@ -58,6 +58,11 @@
         "min": 4,
         "apx": false
       },
+      "09b · The firm's side": {
+        "title": "What the Firm Must Have Written Down",
+        "min": 5,
+        "apx": false
+      },
       "10 · Documentation": {
         "title": "Documenting Circumstances and the Basis for a Recommendation",
         "min": 6,
@@ -99,9 +104,9 @@
         "apx": true
       }
     },
-    "segments_sum": 145,
-    "allocated_cell": 145,
-    "eyebrow_sum_lesson_sections": 145
+    "segments_sum": 150,
+    "allocated_cell": 150,
+    "eyebrow_sum_lesson_sections": 150
   },
   "consecutive_family_repeats": {
     "document_order": [],
@@ -123,23 +128,24 @@
     "sOff",
     "s12",
     "sVend",
+    "sPol",
     "s13",
     "s15",
     "s16"
   ],
   "norms": {
-    "sections": 17,
-    "core_sections": 11,
+    "sections": 18,
+    "core_sections": 12,
     "interactions_per_section": {
       "median": 1,
       "range": [
         1,
-        2
+        3
       ],
-      "mean": 1.06
+      "mean": 1.22
     },
     "chips_per_100_words": {
-      "median": 0.76,
+      "median": 0.785,
       "range": [
         0,
         2.5
@@ -152,55 +158,56 @@
         0,
         6
       ],
-      "mean": 2.12
+      "mean": 2.17
     },
     "sources_per_section": {
-      "median": 1,
+      "median": 1.5,
       "range": [
         0,
         3
       ],
-      "mean": 1.53
+      "mean": 1.61
     },
     "words_per_min": {
-      "median": 38.5,
+      "median": 40.8,
       "range": [
         10.5,
         101
       ],
-      "mean": 41.76
+      "mean": 42.87
     },
     "prose_words_per_min": {
-      "median": 30.2,
+      "median": 29.7,
       "range": [
         8.4,
         94.4
       ],
-      "mean": 35.88
+      "mean": 35.69
     },
     "exposition_run_min_tagged": {
       "median": 4.7,
       "range": [
-        2.3,
+        2.2,
         9.1
       ],
-      "mean": 5.32
+      "mean": 5.14
     },
     "exposition_run_min_control": {
-      "median": 5.9,
+      "median": 5.25,
       "range": [
         2.3,
         18
       ],
-      "mean": 7.71
+      "mean": 7.26
     },
     "icap_distribution": {
       "P": 0,
       "A": 3,
-      "C": 14,
-      "I": 1
+      "C": 15,
+      "I": 1,
+      "unknown-family": 3
     },
-    "distinct_families": 11,
+    "distinct_families": 14,
     "sections_with_zero_chips": [
       "s1"
     ],
@@ -370,37 +377,47 @@
       "nav_contained_in_heading": true,
       "timing_row_min": 7,
       "line_start": 1234,
-      "line_end": 1275,
-      "bytes": 3131,
+      "line_end": 1287,
+      "bytes": 3767,
       "allocated_min": 7,
-      "words": 260,
-      "prose_words": 189,
-      "words_per_min": 37.1,
-      "prose_words_per_min": 27,
-      "interactions_count": 2,
+      "words": 291,
+      "prose_words": 162,
+      "words_per_min": 41.6,
+      "prose_words_per_min": 23.1,
+      "interactions_count": 3,
       "interactions": [
+        {
+          "data_task": "t-s2cube",
+          "data_comp": "rotatable-3d-space",
+          "icap": "unknown-family",
+          "line": 1245,
+          "line_end": 1256,
+          "words_inside": 58
+        },
         {
           "data_task": "t-s2",
           "data_comp": "click-map-explorer",
           "icap": "A",
-          "line": 1248,
-          "line_end": 1255,
+          "line": 1260,
+          "line_end": 1267,
           "words_inside": 33
         },
         {
           "data_task": "t-s3",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1259,
-          "line_end": 1269,
+          "line": 1271,
+          "line_end": 1281,
           "words_inside": 38
         }
       ],
       "families": [
+        "rotatable-3d-space",
         "click-map-explorer",
         "two-bucket-sorter"
       ],
       "icap": {
+        "unknown-family": 1,
         "A": 1,
         "C": 1
       },
@@ -410,7 +427,7 @@
         "M": 0,
         "L": 2
       },
-      "chips_per_100_words": 1.15,
+      "chips_per_100_words": 1.03,
       "chips_unresolved": [],
       "source_keys": [
         "src-wolfram",
@@ -418,38 +435,38 @@
       ],
       "sources_count": 2,
       "src_lines": 1,
-      "sim_badges": 1,
+      "sim_badges": 2,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 0,
+      "interactive_controls": 2,
       "gates": [
         {
           "id": "g2",
-          "line": 1257,
+          "line": 1269,
           "marked_by_component": true
         },
         {
           "id": "g3",
-          "line": 1273,
+          "line": 1285,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 1,
       "exposition": {
-        "longest_run_words_tagged_split": 118,
-        "longest_run_min_tagged_split": 3.2,
-        "longest_run_words_control_split": 260,
-        "longest_run_min_control_split": 7,
+        "longest_run_words_tagged_split": 99,
+        "longest_run_min_tagged_split": 2.4,
+        "longest_run_words_control_split": 167,
+        "longest_run_min_control_split": 4,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 366,
+        "rendered_words": 485,
         "rendered_chips": 3,
-        "rendered_controls": 9,
+        "rendered_controls": 11,
         "rendered_hidden_panels": 0
       }
     },
@@ -466,8 +483,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 1277,
-      "line_end": 1311,
+      "line_start": 1289,
+      "line_end": 1323,
       "bytes": 2905,
       "allocated_min": 6,
       "words": 262,
@@ -480,8 +497,8 @@
           "data_task": "t-s4",
           "data_comp": "estimate-then-reveal",
           "icap": "C",
-          "line": 1292,
-          "line_end": 1303,
+          "line": 1304,
+          "line_end": 1315,
           "words_inside": 87
         }
       ],
@@ -513,7 +530,7 @@
       "gates": [
         {
           "id": "g4",
-          "line": 1309,
+          "line": 1321,
           "marked_by_component": true
         }
       ],
@@ -549,8 +566,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 14,
-      "line_start": 1313,
-      "line_end": 1343,
+      "line_start": 1325,
+      "line_end": 1355,
       "bytes": 2775,
       "allocated_min": 14,
       "words": 255,
@@ -563,8 +580,8 @@
           "data_task": "t-sRag",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1327,
-          "line_end": 1337,
+          "line": 1339,
+          "line_end": 1349,
           "words_inside": 29
         }
       ],
@@ -598,7 +615,7 @@
       "gates": [
         {
           "id": "ga1",
-          "line": 1341,
+          "line": 1353,
           "marked_by_component": false
         }
       ],
@@ -634,8 +651,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 6,
-      "line_start": 1345,
-      "line_end": 1372,
+      "line_start": 1357,
+      "line_end": 1384,
       "bytes": 2678,
       "allocated_min": 6,
       "words": 240,
@@ -648,8 +665,8 @@
           "data_task": "t-s6",
           "data_comp": "prediction-commit",
           "icap": "C",
-          "line": 1351,
-          "line_end": 1358,
+          "line": 1363,
+          "line_end": 1370,
           "words_inside": 46
         }
       ],
@@ -683,7 +700,7 @@
       "gates": [
         {
           "id": "g5",
-          "line": 1370,
+          "line": 1382,
           "marked_by_component": true
         }
       ],
@@ -719,29 +736,39 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 1374,
-      "line_end": 1397,
-      "bytes": 1921,
+      "line_start": 1386,
+      "line_end": 1420,
+      "bytes": 2324,
       "allocated_min": 5,
-      "words": 186,
-      "prose_words": 164,
-      "words_per_min": 37.2,
-      "prose_words_per_min": 32.8,
-      "interactions_count": 1,
+      "words": 174,
+      "prose_words": 118,
+      "words_per_min": 34.8,
+      "prose_words_per_min": 23.6,
+      "interactions_count": 2,
       "interactions": [
+        {
+          "data_task": "t-s7fig",
+          "data_comp": "stepped-comparison",
+          "icap": "unknown-family",
+          "line": 1396,
+          "line_end": 1407,
+          "words_inside": 34
+        },
         {
           "data_task": "t-s7",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 1386,
-          "line_end": 1391,
+          "line": 1409,
+          "line_end": 1414,
           "words_inside": 22
         }
       ],
       "families": [
+        "stepped-comparison",
         "commit-first-mcq"
       ],
       "icap": {
+        "unknown-family": 1,
         "C": 1
       },
       "chips_total": 3,
@@ -750,41 +777,42 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 1.61,
+      "chips_per_100_words": 1.72,
       "chips_unresolved": [],
       "source_keys": [
         "src-wolfram",
-        "src-anthropic-ctx"
+        "src-anthropic-ctx",
+        "src-case"
       ],
-      "sources_count": 2,
+      "sources_count": 3,
       "src_lines": 1,
-      "sim_badges": 0,
+      "sim_badges": 1,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 0,
+      "interactive_controls": 3,
       "gates": [
         {
           "id": "g6",
-          "line": 1395,
-          "marked_by_component": false
+          "line": 1418,
+          "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 109,
-        "longest_run_min_tagged_split": 2.9,
-        "longest_run_words_control_split": 186,
-        "longest_run_min_control_split": 5,
+        "longest_run_words_tagged_split": 77,
+        "longest_run_min_tagged_split": 2.2,
+        "longest_run_words_control_split": 94,
+        "longest_run_min_control_split": 2.7,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 239,
+        "rendered_words": 244,
         "rendered_chips": 3,
-        "rendered_controls": 3,
+        "rendered_controls": 6,
         "rendered_hidden_panels": 1
       }
     },
@@ -801,8 +829,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 1399,
-      "line_end": 1429,
+      "line_start": 1422,
+      "line_end": 1452,
       "bytes": 2244,
       "allocated_min": 6,
       "words": 231,
@@ -815,8 +843,8 @@
           "data_task": "t-s9",
           "data_comp": "symptom-diagnoser",
           "icap": "A",
-          "line": 1417,
-          "line_end": 1423,
+          "line": 1440,
+          "line_end": 1446,
           "words_inside": 50
         }
       ],
@@ -849,7 +877,7 @@
       "gates": [
         {
           "id": "g7",
-          "line": 1427,
+          "line": 1450,
           "marked_by_component": true
         }
       ],
@@ -867,9 +895,9 @@
         "B4"
       ],
       "dom": {
-        "rendered_words": 234,
+        "rendered_words": 247,
         "rendered_chips": 2,
-        "rendered_controls": 5,
+        "rendered_controls": 0,
         "rendered_hidden_panels": 0
       }
     },
@@ -886,8 +914,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 14,
-      "line_start": 1431,
-      "line_end": 1458,
+      "line_start": 1454,
+      "line_end": 1481,
       "bytes": 2263,
       "allocated_min": 14,
       "words": 212,
@@ -900,8 +928,8 @@
           "data_task": "t-sPrep",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1444,
-          "line_end": 1452,
+          "line": 1467,
+          "line_end": 1475,
           "words_inside": 41
         }
       ],
@@ -933,7 +961,7 @@
       "gates": [
         {
           "id": "ga2",
-          "line": 1456,
+          "line": 1479,
           "marked_by_component": true
         }
       ],
@@ -967,9 +995,9 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 7,
-      "line_start": 1460,
-      "line_end": 1502,
-      "bytes": 3685,
+      "line_start": 1483,
+      "line_end": 1526,
+      "bytes": 3715,
       "allocated_min": 7,
       "words": 395,
       "prose_words": 331,
@@ -981,8 +1009,8 @@
           "data_task": "t-s10",
           "data_comp": "spoiler-reveal",
           "icap": "A",
-          "line": 1473,
-          "line_end": 1483,
+          "line": 1496,
+          "line_end": 1507,
           "words_inside": 64
         }
       ],
@@ -1015,7 +1043,7 @@
       "gates": [
         {
           "id": "g8",
-          "line": 1500,
+          "line": 1524,
           "marked_by_component": true
         }
       ],
@@ -1039,7 +1067,7 @@
         "CHANGED"
       ],
       "dom": {
-        "rendered_words": 1074,
+        "rendered_words": 1123,
         "rendered_chips": 3,
         "rendered_controls": 5,
         "rendered_hidden_panels": 0
@@ -1058,8 +1086,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 14,
-      "line_start": 1504,
-      "line_end": 1527,
+      "line_start": 1528,
+      "line_end": 1551,
       "bytes": 1864,
       "allocated_min": 14,
       "words": 147,
@@ -1072,8 +1100,8 @@
           "data_task": "t-sChk",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1511,
-          "line_end": 1521,
+          "line": 1535,
+          "line_end": 1545,
           "words_inside": 30
         }
       ],
@@ -1105,7 +1133,7 @@
       "gates": [
         {
           "id": "ga6",
-          "line": 1525,
+          "line": 1549,
           "marked_by_component": false
         }
       ],
@@ -1139,8 +1167,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 14,
-      "line_start": 1529,
-      "line_end": 1554,
+      "line_start": 1553,
+      "line_end": 1578,
       "bytes": 2151,
       "allocated_min": 14,
       "words": 167,
@@ -1153,8 +1181,8 @@
           "data_task": "t-s11",
           "data_comp": "estimate-then-reveal",
           "icap": "C",
-          "line": 1541,
-          "line_end": 1548,
+          "line": 1565,
+          "line_end": 1572,
           "words_inside": 28
         }
       ],
@@ -1186,7 +1214,7 @@
       "gates": [
         {
           "id": "ga3",
-          "line": 1552,
+          "line": 1576,
           "marked_by_component": true
         }
       ],
@@ -1220,8 +1248,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 5,
-      "line_start": 1556,
-      "line_end": 1619,
+      "line_start": 1580,
+      "line_end": 1643,
       "bytes": 5254,
       "allocated_min": 5,
       "words": 505,
@@ -1234,8 +1262,8 @@
           "data_task": "t-sOff",
           "data_comp": "multi-column-sorter",
           "icap": "C",
-          "line": 1568,
-          "line_end": 1578,
+          "line": 1592,
+          "line_end": 1602,
           "words_inside": 33
         }
       ],
@@ -1267,7 +1295,7 @@
       "gates": [
         {
           "id": "g9b",
-          "line": 1617,
+          "line": 1641,
           "marked_by_component": false
         }
       ],
@@ -1301,8 +1329,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 4,
-      "line_start": 1621,
-      "line_end": 1648,
+      "line_start": 1645,
+      "line_end": 1672,
       "bytes": 2233,
       "allocated_min": 4,
       "words": 212,
@@ -1315,8 +1343,8 @@
           "data_task": "t-s12",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 1636,
-          "line_end": 1642,
+          "line": 1660,
+          "line_end": 1666,
           "words_inside": 28
         }
       ],
@@ -1349,7 +1377,7 @@
       "gates": [
         {
           "id": "g9",
-          "line": 1646,
+          "line": 1670,
           "marked_by_component": false
         }
       ],
@@ -1385,8 +1413,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 9,
-      "line_start": 1650,
-      "line_end": 1670,
+      "line_start": 1674,
+      "line_end": 1694,
       "bytes": 1726,
       "allocated_min": 9,
       "words": 137,
@@ -1399,8 +1427,8 @@
           "data_task": "t-sVend",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1657,
-          "line_end": 1664,
+          "line": 1681,
+          "line_end": 1688,
           "words_inside": 36
         }
       ],
@@ -1432,7 +1460,7 @@
       "gates": [
         {
           "id": "ga7",
-          "line": 1668,
+          "line": 1692,
           "marked_by_component": true
         }
       ],
@@ -1454,6 +1482,100 @@
       }
     },
     {
+      "id": "sPol",
+      "num": null,
+      "data_nav": "What must be written down",
+      "eyebrow": "09b · The firm's side",
+      "heading": "What the Firm Must Have Written Down",
+      "is_toc": false,
+      "is_appendix": false,
+      "tier": null,
+      "insert_after": null,
+      "nav_matches_heading": false,
+      "nav_contained_in_heading": false,
+      "timing_row_min": 5,
+      "line_start": 1696,
+      "line_end": 1729,
+      "bytes": 3019,
+      "allocated_min": 5,
+      "words": 298,
+      "prose_words": 228,
+      "words_per_min": 59.6,
+      "prose_words_per_min": 45.6,
+      "interactions_count": 2,
+      "interactions": [
+        {
+          "data_task": "t-sPolQ",
+          "data_comp": "prediction-commit",
+          "icap": "C",
+          "line": 1702,
+          "line_end": 1708,
+          "words_inside": 37
+        },
+        {
+          "data_task": "t-sPol",
+          "data_comp": "click-document-set",
+          "icap": "unknown-family",
+          "line": 1710,
+          "line_end": 1716,
+          "words_inside": 33
+        }
+      ],
+      "families": [
+        "prediction-commit",
+        "click-document-set"
+      ],
+      "icap": {
+        "C": 1,
+        "unknown-family": 1
+      },
+      "chips_total": 3,
+      "chips": {
+        "H": 2,
+        "M": 1,
+        "L": 0
+      },
+      "chips_per_100_words": 1.01,
+      "chips_unresolved": [],
+      "source_keys": [
+        "src-regsp",
+        "src-iskowitz"
+      ],
+      "sources_count": 2,
+      "src_lines": 1,
+      "sim_badges": 0,
+      "verify_blocks": 0,
+      "verify_lines": [],
+      "svg_charts": 0,
+      "hidden_answer_panels": 0,
+      "interactive_controls": 0,
+      "gates": [
+        {
+          "id": "g9c",
+          "line": 1727,
+          "marked_by_component": true
+        }
+      ],
+      "markers": [],
+      "em_dashes": 0,
+      "exposition": {
+        "longest_run_words_tagged_split": 220,
+        "longest_run_min_tagged_split": 3.7,
+        "longest_run_words_control_split": 298,
+        "longest_run_min_control_split": 5,
+        "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
+      },
+      "undefined_terms_first_used_here": [
+        "ACA"
+      ],
+      "dom": {
+        "rendered_words": 334,
+        "rendered_chips": 3,
+        "rendered_controls": 4,
+        "rendered_hidden_panels": 0
+      }
+    },
+    {
       "id": "s13",
       "num": "10",
       "data_nav": "Basis",
@@ -1466,8 +1588,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 1672,
-      "line_end": 1735,
+      "line_start": 1731,
+      "line_end": 1794,
       "bytes": 3902,
       "allocated_min": 6,
       "words": 464,
@@ -1480,8 +1602,8 @@
           "data_task": "t-s13",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 1685,
-          "line_end": 1695,
+          "line": 1744,
+          "line_end": 1754,
           "words_inside": 29
         }
       ],
@@ -1513,7 +1635,7 @@
       "gates": [
         {
           "id": "g10",
-          "line": 1733,
+          "line": 1792,
           "marked_by_component": false
         }
       ],
@@ -1556,8 +1678,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 18,
-      "line_start": 1737,
-      "line_end": 1765,
+      "line_start": 1796,
+      "line_end": 1824,
       "bytes": 2719,
       "allocated_min": 18,
       "words": 247,
@@ -1570,8 +1692,8 @@
           "data_task": "t-s15",
           "data_comp": "sealed-vote-debate",
           "icap": "I",
-          "line": 1750,
-          "line_end": 1759,
+          "line": 1809,
+          "line_end": 1818,
           "words_inside": 39
         }
       ],
@@ -1604,7 +1726,7 @@
       "gates": [
         {
           "id": "ga4",
-          "line": 1763,
+          "line": 1822,
           "marked_by_component": true
         }
       ],
@@ -1641,8 +1763,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 1767,
-      "line_end": 1799,
+      "line_start": 1826,
+      "line_end": 1858,
       "bytes": 3163,
       "allocated_min": 5,
       "words": 310,
@@ -1655,8 +1777,8 @@
           "data_task": "t-s16",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1773,
-          "line_end": 1780,
+          "line": 1832,
+          "line_end": 1839,
           "words_inside": 55
         }
       ],
@@ -1688,7 +1810,7 @@
       "gates": [
         {
           "id": "g12",
-          "line": 1795,
+          "line": 1854,
           "marked_by_component": true
         }
       ],
@@ -1991,6 +2113,15 @@
       "context": "strip something first, or never. 18 U.S.C.  [§ 2511] , the federal one-party floor H . State"
     },
     {
+      "term": "ACA",
+      "kind": "acronym",
+      "first_use_section": "sPol",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "vendor, retention and high-stakes-meeting rules, and the  [ACA]  Group 2024 figure of 12%. The article"
+    },
+    {
       "term": "ROLE",
       "kind": "acronym",
       "first_use_section": "s13",
@@ -2126,6 +2257,7 @@
     "src-magesh",
     "src-case",
     "src-wiretap",
+    "src-regsp",
     "src-wolfram"
   ],
   "dom": {

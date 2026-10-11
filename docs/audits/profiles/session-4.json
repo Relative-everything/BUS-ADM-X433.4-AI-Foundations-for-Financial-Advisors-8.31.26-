@@ -1,7 +1,7 @@
 {
   "file": "session-4/index.html",
-  "file_bytes": 613408,
-  "file_lines": 9836,
+  "file_bytes": 789373,
+  "file_lines": 12031,
   "generated_by": "scripts/audit/section_profile.mjs (read-only)",
   "methods": {
     "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
@@ -139,60 +139,60 @@
       "mean": 1
     },
     "chips_per_100_words": {
-      "median": 2.48,
+      "median": 2.32,
       "range": [
-        0.53,
-        5.77
+        0.32,
+        6.07
       ],
-      "mean": 2.36
+      "mean": 2.54
     },
     "chips_per_section": {
+      "median": 10,
+      "range": [
+        1,
+        30
+      ],
+      "mean": 8.76
+    },
+    "sources_per_section": {
       "median": 5,
       "range": [
         1,
-        12
+        15
       ],
-      "mean": 5.35
-    },
-    "sources_per_section": {
-      "median": 2,
-      "range": [
-        1,
-        7
-      ],
-      "mean": 2.71
+      "mean": 5.18
     },
     "words_per_min": {
-      "median": 31.5,
+      "median": 40,
       "range": [
-        12.4,
-        60.6
+        12.8,
+        147.2
       ],
-      "mean": 31.42
+      "mean": 45.42
     },
     "prose_words_per_min": {
-      "median": 23,
+      "median": 29.6,
       "range": [
-        7.1,
-        43
+        6.8,
+        130.6
       ],
-      "mean": 22.21
+      "mean": 36.19
     },
     "exposition_run_min_tagged": {
-      "median": 5.5,
+      "median": 5.6,
       "range": [
-        4,
+        4.3,
         15.3
       ],
-      "mean": 7.25
+      "mean": 7.56
     },
     "exposition_run_min_control": {
-      "median": 3.6,
+      "median": 4.3,
       "range": [
-        2.3,
-        13
+        1.7,
+        12
       ],
-      "mean": 5.64
+      "mean": 5.26
     },
     "icap_distribution": {
       "P": 0,
@@ -218,22 +218,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 6,
-      "line_start": 3266,
-      "line_end": 3323,
-      "bytes": 3217,
+      "line_start": 3778,
+      "line_end": 3834,
+      "bytes": 3162,
       "allocated_min": 6,
-      "words": 189,
-      "prose_words": 169,
-      "words_per_min": 31.5,
-      "prose_words_per_min": 28.2,
+      "words": 183,
+      "prose_words": 163,
+      "words_per_min": 30.5,
+      "prose_words_per_min": 27.2,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s0",
           "data_comp": "retrieval-bridge",
           "icap": "C",
-          "line": 3280,
-          "line_end": 3286,
+          "line": 3792,
+          "line_end": 3798,
           "words_inside": 20
         }
       ],
@@ -249,7 +249,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 0.53,
+      "chips_per_100_words": 0.55,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -265,24 +265,24 @@
       "gates": [
         {
           "id": "g1",
-          "line": 3321,
+          "line": 3832,
           "marked_by_component": false
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 149,
+        "longest_run_words_tagged_split": 143,
         "longest_run_min_tagged_split": 4.7,
         "longest_run_words_control_split": 103,
-        "longest_run_min_control_split": 3.3,
+        "longest_run_min_control_split": 3.4,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
         "X433"
       ],
       "dom": {
-        "rendered_words": 334,
+        "rendered_words": 328,
         "rendered_chips": 1,
         "rendered_controls": 18,
         "rendered_hidden_panels": 3
@@ -301,8 +301,8 @@
       "nav_matches_heading": true,
       "nav_contained_in_heading": true,
       "timing_row_min": null,
-      "line_start": 3326,
-      "line_end": 3339,
+      "line_start": 3837,
+      "line_end": 3850,
       "bytes": 1673,
       "allocated_min": 83,
       "words": 152,
@@ -372,13 +372,13 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 8,
-      "line_start": 3342,
-      "line_end": 3386,
-      "bytes": 3161,
+      "line_start": 3853,
+      "line_end": 3896,
+      "bytes": 3048,
       "allocated_min": 8,
-      "words": 182,
+      "words": 173,
       "prose_words": 104,
-      "words_per_min": 22.8,
+      "words_per_min": 21.6,
       "prose_words_per_min": 13,
       "interactions_count": 1,
       "interactions": [
@@ -386,9 +386,9 @@
           "data_task": "t-cold-open",
           "data_comp": "timed-ritual",
           "icap": "C",
-          "line": 3347,
-          "line_end": 3377,
-          "words_inside": 78
+          "line": 3858,
+          "line_end": 3887,
+          "words_inside": 69
         }
       ],
       "families": [
@@ -397,20 +397,20 @@
       "icap": {
         "C": 1
       },
-      "chips_total": 2,
+      "chips_total": 1,
       "chips": {
         "H": 0,
         "M": 0,
-        "L": 2
+        "L": 1
       },
-      "chips_per_100_words": 1.1,
+      "chips_per_100_words": 0.58,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
       ],
       "sources_count": 1,
       "src_lines": 1,
-      "sim_badges": 1,
+      "sim_badges": 0,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
@@ -419,25 +419,23 @@
       "gates": [
         {
           "id": "gc",
-          "line": 3385,
+          "line": 3895,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 148,
-        "longest_run_min_tagged_split": 6.5,
+        "longest_run_words_tagged_split": 139,
+        "longest_run_min_tagged_split": 6.4,
         "longest_run_words_control_split": 73,
-        "longest_run_min_control_split": 3.2,
+        "longest_run_min_control_split": 3.4,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": [
-        "§04."
-      ],
+      "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 320,
-        "rendered_chips": 2,
+        "rendered_words": 311,
+        "rendered_chips": 1,
         "rendered_controls": 11,
         "rendered_hidden_panels": 0
       }
@@ -455,13 +453,13 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 3388,
-      "line_end": 3433,
-      "bytes": 4021,
+      "line_start": 3898,
+      "line_end": 3943,
+      "bytes": 3982,
       "allocated_min": 5,
-      "words": 208,
+      "words": 200,
       "prose_words": 148,
-      "words_per_min": 41.6,
+      "words_per_min": 40,
       "prose_words_per_min": 29.6,
       "interactions_count": 1,
       "interactions": [
@@ -469,9 +467,9 @@
           "data_task": "t-s1",
           "data_comp": "multi-column-sorter",
           "icap": "C",
-          "line": 3394,
-          "line_end": 3421,
-          "words_inside": 60
+          "line": 3904,
+          "line_end": 3931,
+          "words_inside": 52
         }
       ],
       "families": [
@@ -486,7 +484,7 @@
         "M": 4,
         "L": 0
       },
-      "chips_per_100_words": 5.77,
+      "chips_per_100_words": 6,
       "chips_unresolved": [],
       "source_keys": [
         "src-finra2409",
@@ -508,22 +506,22 @@
       "gates": [
         {
           "id": "g2",
-          "line": 3431,
+          "line": 3941,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 189,
+        "longest_run_words_tagged_split": 181,
         "longest_run_min_tagged_split": 4.5,
         "longest_run_words_control_split": 148,
-        "longest_run_min_control_split": 3.6,
+        "longest_run_min_control_split": 3.7,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 361,
+        "rendered_words": 346,
         "rendered_chips": 12,
         "rendered_controls": 19,
         "rendered_hidden_panels": 0
@@ -542,23 +540,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 3435,
-      "line_end": 3468,
-      "bytes": 3154,
+      "line_start": 3945,
+      "line_end": 3994,
+      "bytes": 4951,
       "allocated_min": 6,
-      "words": 220,
-      "prose_words": 153,
-      "words_per_min": 36.7,
-      "prose_words_per_min": 25.5,
+      "words": 302,
+      "prose_words": 238,
+      "words_per_min": 50.3,
+      "prose_words_per_min": 39.7,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s2",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 3441,
-          "line_end": 3456,
-          "words_inside": 67
+          "line": 3951,
+          "line_end": 3966,
+          "words_inside": 64
         }
       ],
       "families": [
@@ -573,7 +571,7 @@
         "M": 3,
         "L": 2
       },
-      "chips_per_100_words": 3.18,
+      "chips_per_100_words": 2.32,
       "chips_unresolved": [],
       "source_keys": [
         "src-case",
@@ -582,26 +580,26 @@
       ],
       "sources_count": 3,
       "src_lines": 1,
-      "sim_badges": 1,
+      "sim_badges": 0,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 5,
+      "interactive_controls": 13,
       "gates": [
         {
           "id": "g3",
-          "line": 3466,
+          "line": 3992,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 188,
-        "longest_run_min_tagged_split": 5.1,
-        "longest_run_words_control_split": 123,
-        "longest_run_min_control_split": 3.4,
+        "longest_run_words_tagged_split": 270,
+        "longest_run_min_tagged_split": 5.4,
+        "longest_run_words_control_split": 147,
+        "longest_run_min_control_split": 2.9,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
@@ -609,9 +607,9 @@
         "§ 248.3"
       ],
       "dom": {
-        "rendered_words": 326,
+        "rendered_words": 505,
         "rendered_chips": 7,
-        "rendered_controls": 17,
+        "rendered_controls": 34,
         "rendered_hidden_panels": 0
       }
     },
@@ -628,23 +626,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 14,
-      "line_start": 3470,
-      "line_end": 3504,
-      "bytes": 3038,
+      "line_start": 3996,
+      "line_end": 4095,
+      "bytes": 7419,
       "allocated_min": 14,
-      "words": 248,
-      "prose_words": 182,
-      "words_per_min": 17.7,
-      "prose_words_per_min": 13,
+      "words": 593,
+      "prose_words": 354,
+      "words_per_min": 42.4,
+      "prose_words_per_min": 25.3,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-sRSP",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 3477,
-          "line_end": 3493,
-          "words_inside": 66
+          "line": 4003,
+          "line_end": 4047,
+          "words_inside": 239
         }
       ],
       "families": [
@@ -653,47 +651,55 @@
       "icap": {
         "C": 1
       },
-      "chips_total": 5,
+      "chips_total": 15,
       "chips": {
-        "H": 3,
-        "M": 0,
-        "L": 2
+        "H": 12,
+        "M": 2,
+        "L": 1
       },
-      "chips_per_100_words": 2.02,
+      "chips_per_100_words": 2.53,
       "chips_unresolved": [],
       "source_keys": [
         "src-regsp",
+        "src-il-pipa",
+        "src-state-breach",
+        "src-equifax",
+        "src-capitalone",
+        "src-uber-doj",
         "src-case"
       ],
-      "sources_count": 2,
+      "sources_count": 7,
       "src_lines": 1,
-      "sim_badges": 1,
+      "sim_badges": 0,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 1,
+      "interactive_controls": 8,
       "gates": [
         {
           "id": "ga5",
-          "line": 3503,
+          "line": 4094,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 195,
-        "longest_run_min_tagged_split": 11,
-        "longest_run_words_control_split": 132,
-        "longest_run_min_control_split": 7.5,
+        "longest_run_words_tagged_split": 540,
+        "longest_run_min_tagged_split": 12.7,
+        "longest_run_words_control_split": 212,
+        "longest_run_min_control_split": 5,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": [],
+      "undefined_terms_first_used_here": [
+        "ASSESS",
+        "NOTIFY"
+      ],
       "dom": {
-        "rendered_words": 411,
-        "rendered_chips": 5,
-        "rendered_controls": 12,
+        "rendered_words": 806,
+        "rendered_chips": 15,
+        "rendered_controls": 19,
         "rendered_hidden_panels": 0
       }
     },
@@ -710,13 +716,13 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 12,
-      "line_start": 3506,
-      "line_end": 3555,
-      "bytes": 3355,
+      "line_start": 4097,
+      "line_end": 4146,
+      "bytes": 3284,
       "allocated_min": 12,
-      "words": 161,
+      "words": 154,
       "prose_words": 118,
-      "words_per_min": 13.4,
+      "words_per_min": 12.8,
       "prose_words_per_min": 9.8,
       "interactions_count": 1,
       "interactions": [
@@ -724,9 +730,9 @@
           "data_task": "t-sAnon",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 3513,
-          "line_end": 3545,
-          "words_inside": 43
+          "line": 4104,
+          "line_end": 4136,
+          "words_inside": 36
         }
       ],
       "families": [
@@ -735,47 +741,47 @@
       "icap": {
         "C": 1
       },
-      "chips_total": 4,
+      "chips_total": 3,
       "chips": {
         "H": 0,
         "M": 2,
-        "L": 2
+        "L": 1
       },
-      "chips_per_100_words": 2.48,
+      "chips_per_100_words": 1.95,
       "chips_unresolved": [],
       "source_keys": [
-        "src-case",
-        "src-cfp-genai"
+        "src-cfp-genai",
+        "src-case"
       ],
       "sources_count": 2,
       "src_lines": 1,
-      "sim_badges": 1,
+      "sim_badges": 0,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 6,
+      "interactive_controls": 7,
       "gates": [
         {
           "id": "ga6",
-          "line": 3554,
+          "line": 4145,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 115,
-        "longest_run_min_tagged_split": 8.6,
-        "longest_run_words_control_split": 76,
-        "longest_run_min_control_split": 5.7,
+        "longest_run_words_tagged_split": 108,
+        "longest_run_min_tagged_split": 8.4,
+        "longest_run_words_control_split": 74,
+        "longest_run_min_control_split": 5.8,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 267,
-        "rendered_chips": 4,
-        "rendered_controls": 16,
+        "rendered_words": 260,
+        "rendered_chips": 3,
+        "rendered_controls": 17,
         "rendered_hidden_panels": 0
       }
     },
@@ -792,23 +798,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 6,
-      "line_start": 3557,
-      "line_end": 3596,
-      "bytes": 3110,
+      "line_start": 4148,
+      "line_end": 4204,
+      "bytes": 7112,
       "allocated_min": 6,
-      "words": 199,
-      "prose_words": 138,
-      "words_per_min": 33.2,
-      "prose_words_per_min": 23,
+      "words": 494,
+      "prose_words": 432,
+      "words_per_min": 82.3,
+      "prose_words_per_min": 72,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s3",
           "data_comp": "parameter-sandbox",
           "icap": "A",
-          "line": 3563,
-          "line_end": 3584,
-          "words_inside": 61
+          "line": 4154,
+          "line_end": 4175,
+          "words_inside": 62
         }
       ],
       "families": [
@@ -817,49 +823,65 @@
       "icap": {
         "A": 1
       },
-      "chips_total": 5,
+      "chips_total": 30,
       "chips": {
-        "H": 3,
-        "M": 0,
-        "L": 2
+        "H": 15,
+        "M": 14,
+        "L": 1
       },
-      "chips_per_100_words": 2.51,
+      "chips_per_100_words": 6.07,
       "chips_unresolved": [],
       "source_keys": [
+        "src-anthropic-terms",
+        "src-openai-data",
+        "src-ms-copilot",
+        "src-gemini-privacy",
+        "src-ms-copilot-edp",
+        "src-gemini-workspace",
+        "src-claude-pricing",
+        "src-anthropic-retention",
+        "src-anthropic-dpa",
+        "src-deepseek",
+        "src-chatgpt-index",
+        "src-meta-feed",
+        "src-cve",
         "src-case",
-        "src-anthropic-terms"
+        "src-anthropic-certs"
       ],
-      "sources_count": 2,
+      "sources_count": 15,
       "src_lines": 1,
-      "sim_badges": 1,
+      "sim_badges": 0,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 2,
+      "interactive_controls": 3,
       "gates": [
         {
           "id": "g4",
-          "line": 3594,
+          "line": 4202,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 163,
-        "longest_run_min_tagged_split": 4.9,
-        "longest_run_words_control_split": 106,
-        "longest_run_min_control_split": 3.2,
+        "longest_run_words_tagged_split": 448,
+        "longest_run_min_tagged_split": 5.4,
+        "longest_run_words_control_split": 353,
+        "longest_run_min_control_split": 4.3,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
-        "PLAN"
+        "PLAN",
+        "API",
+        "§04",
+        "CVE"
       ],
       "dom": {
-        "rendered_words": 267,
-        "rendered_chips": 5,
-        "rendered_controls": 11,
+        "rendered_words": 714,
+        "rendered_chips": 30,
+        "rendered_controls": 25,
         "rendered_hidden_panels": 0
       }
     },
@@ -876,23 +898,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 3598,
-      "line_end": 3632,
-      "bytes": 2819,
+      "line_start": 4206,
+      "line_end": 4256,
+      "bytes": 4331,
       "allocated_min": 5,
-      "words": 198,
-      "prose_words": 140,
-      "words_per_min": 39.6,
-      "prose_words_per_min": 28,
+      "words": 316,
+      "prose_words": 267,
+      "words_per_min": 63.2,
+      "prose_words_per_min": 53.4,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s4",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 3604,
-          "line_end": 3621,
-          "words_inside": 58
+          "line": 4212,
+          "line_end": 4227,
+          "words_inside": 49
         }
       ],
       "families": [
@@ -901,48 +923,51 @@
       "icap": {
         "C": 1
       },
-      "chips_total": 6,
+      "chips_total": 11,
       "chips": {
-        "H": 2,
+        "H": 8,
         "M": 2,
-        "L": 2
+        "L": 1
       },
-      "chips_per_100_words": 3.03,
+      "chips_per_100_words": 3.48,
       "chips_unresolved": [],
       "source_keys": [
-        "src-case",
+        "src-anthropic-terms",
+        "src-anthropic-dpa",
         "src-regsp",
-        "src-cfp-code"
+        "src-cfp-code",
+        "src-case",
+        "src-anthropic-retention"
       ],
-      "sources_count": 3,
+      "sources_count": 6,
       "src_lines": 1,
-      "sim_badges": 1,
+      "sim_badges": 0,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 2,
+      "interactive_controls": 3,
       "gates": [
         {
           "id": "g5",
-          "line": 3630,
+          "line": 4254,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 158,
-        "longest_run_min_tagged_split": 4,
-        "longest_run_words_control_split": 106,
-        "longest_run_min_control_split": 2.7,
+        "longest_run_words_tagged_split": 269,
+        "longest_run_min_tagged_split": 4.3,
+        "longest_run_words_control_split": 174,
+        "longest_run_min_control_split": 2.8,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 440,
-        "rendered_chips": 6,
-        "rendered_controls": 29,
+        "rendered_words": 587,
+        "rendered_chips": 11,
+        "rendered_controls": 30,
         "rendered_hidden_panels": 0
       }
     },
@@ -959,23 +984,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 3634,
-      "line_end": 3691,
-      "bytes": 4028,
+      "line_start": 4258,
+      "line_end": 4334,
+      "bytes": 5729,
       "allocated_min": 6,
-      "words": 257,
-      "prose_words": 186,
-      "words_per_min": 42.8,
-      "prose_words_per_min": 31,
+      "words": 350,
+      "prose_words": 277,
+      "words_per_min": 58.3,
+      "prose_words_per_min": 46.2,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s5",
           "data_comp": "prediction-commit",
           "icap": "C",
-          "line": 3640,
-          "line_end": 3663,
-          "words_inside": 71
+          "line": 4264,
+          "line_end": 4289,
+          "words_inside": 73
         }
       ],
       "families": [
@@ -984,50 +1009,56 @@
       "icap": {
         "C": 1
       },
-      "chips_total": 7,
+      "chips_total": 11,
       "chips": {
-        "H": 4,
-        "M": 0,
-        "L": 3
+        "H": 8,
+        "M": 2,
+        "L": 1
       },
-      "chips_per_100_words": 2.72,
+      "chips_per_100_words": 3.14,
       "chips_unresolved": [],
       "source_keys": [
-        "src-case",
+        "src-fbi-ic3-2025",
+        "src-cve",
         "src-finra-inj",
-        "src-arup"
+        "src-arup",
+        "src-anthropic-threat",
+        "src-gtig-ai",
+        "src-secpri",
+        "src-case"
       ],
-      "sources_count": 3,
+      "sources_count": 8,
       "src_lines": 1,
-      "sim_badges": 2,
+      "sim_badges": 0,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 3,
+      "interactive_controls": 4,
       "gates": [
         {
           "id": "g6",
-          "line": 3689,
+          "line": 4332,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 235,
-        "longest_run_min_tagged_split": 5.5,
-        "longest_run_words_control_split": 187,
-        "longest_run_min_control_split": 4.4,
+        "longest_run_words_tagged_split": 328,
+        "longest_run_min_tagged_split": 5.6,
+        "longest_run_words_control_split": 272,
+        "longest_run_min_control_split": 4.7,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
-        "CVE"
+        "FBI",
+        "FY2026"
       ],
       "dom": {
-        "rendered_words": 463,
-        "rendered_chips": 7,
-        "rendered_controls": 13,
+        "rendered_words": 674,
+        "rendered_chips": 14,
+        "rendered_controls": 22,
         "rendered_hidden_panels": 0
       }
     },
@@ -1044,23 +1075,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 14,
-      "line_start": 3693,
-      "line_end": 3753,
-      "bytes": 5726,
+      "line_start": 4336,
+      "line_end": 4430,
+      "bytes": 8588,
       "allocated_min": 14,
-      "words": 314,
-      "prose_words": 257,
-      "words_per_min": 22.4,
-      "prose_words_per_min": 18.4,
+      "words": 502,
+      "prose_words": 451,
+      "words_per_min": 35.9,
+      "prose_words_per_min": 32.2,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-sW1",
           "data_comp": "parameter-sandbox",
           "icap": "A",
-          "line": 3700,
-          "line_end": 3719,
-          "words_inside": 57
+          "line": 4343,
+          "line_end": 4361,
+          "words_inside": 51
         }
       ],
       "families": [
@@ -1069,50 +1100,55 @@
       "icap": {
         "A": 1
       },
-      "chips_total": 10,
+      "chips_total": 12,
       "chips": {
-        "H": 4,
-        "M": 3,
-        "L": 3
+        "H": 5,
+        "M": 6,
+        "L": 1
       },
-      "chips_per_100_words": 3.18,
+      "chips_per_100_words": 2.39,
       "chips_unresolved": [],
       "source_keys": [
-        "src-case",
         "src-claude-marks",
-        "src-synthid-text"
+        "src-eu-ai-act",
+        "src-synthid-text",
+        "src-synthid",
+        "src-case"
       ],
-      "sources_count": 3,
+      "sources_count": 5,
       "src_lines": 1,
-      "sim_badges": 2,
+      "sim_badges": 0,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 7,
+      "interactive_controls": 12,
       "gates": [
         {
           "id": "ga1",
-          "line": 3751,
+          "line": 4428,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 272,
-        "longest_run_min_tagged_split": 12.1,
-        "longest_run_words_control_split": 164,
-        "longest_run_min_control_split": 7.3,
+        "longest_run_words_tagged_split": 460,
+        "longest_run_min_tagged_split": 12.8,
+        "longest_run_words_control_split": 272,
+        "longest_run_min_control_split": 7.6,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
+        "MARK",
+        "FOUND",
+        "UNCERTAIN",
         "EU"
       ],
       "dom": {
-        "rendered_words": 351,
-        "rendered_chips": 10,
-        "rendered_controls": 7,
+        "rendered_words": 561,
+        "rendered_chips": 12,
+        "rendered_controls": 12,
         "rendered_hidden_panels": 0
       }
     },
@@ -1129,23 +1165,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 12,
-      "line_start": 3755,
-      "line_end": 3801,
-      "bytes": 3846,
+      "line_start": 4432,
+      "line_end": 4479,
+      "bytes": 4517,
       "allocated_min": 12,
-      "words": 262,
-      "prose_words": 222,
-      "words_per_min": 21.8,
-      "prose_words_per_min": 18.5,
+      "words": 386,
+      "prose_words": 355,
+      "words_per_min": 32.2,
+      "prose_words_per_min": 29.6,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-sW2",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 3762,
-          "line_end": 3774,
-          "words_inside": 40
+          "line": 4439,
+          "line_end": 4450,
+          "words_inside": 31
         }
       ],
       "families": [
@@ -1154,13 +1190,13 @@
       "icap": {
         "C": 1
       },
-      "chips_total": 9,
+      "chips_total": 10,
       "chips": {
-        "H": 5,
+        "H": 8,
         "M": 1,
-        "L": 3
+        "L": 1
       },
-      "chips_per_100_words": 3.44,
+      "chips_per_100_words": 2.59,
       "chips_unresolved": [],
       "source_keys": [
         "src-claude-marks",
@@ -1169,7 +1205,7 @@
       ],
       "sources_count": 3,
       "src_lines": 1,
-      "sim_badges": 2,
+      "sim_badges": 0,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
@@ -1178,23 +1214,25 @@
       "gates": [
         {
           "id": "ga2",
-          "line": 3799,
+          "line": 4477,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 201,
-        "longest_run_min_tagged_split": 9.2,
-        "longest_run_words_control_split": 262,
+        "longest_run_words_tagged_split": 325,
+        "longest_run_min_tagged_split": 10.1,
+        "longest_run_words_control_split": 386,
         "longest_run_min_control_split": 12,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": [],
+      "undefined_terms_first_used_here": [
+        "§07)."
+      ],
       "dom": {
-        "rendered_words": 412,
-        "rendered_chips": 9,
+        "rendered_words": 539,
+        "rendered_chips": 10,
         "rendered_controls": 18,
         "rendered_hidden_panels": 0
       }
@@ -1212,23 +1250,23 @@
       "nav_matches_heading": true,
       "nav_contained_in_heading": true,
       "timing_row_min": 5,
-      "line_start": 3803,
-      "line_end": 3841,
-      "bytes": 3470,
+      "line_start": 4481,
+      "line_end": 4518,
+      "bytes": 3455,
       "allocated_min": 5,
-      "words": 238,
-      "prose_words": 155,
-      "words_per_min": 47.6,
-      "prose_words_per_min": 31,
+      "words": 249,
+      "prose_words": 175,
+      "words_per_min": 49.8,
+      "prose_words_per_min": 35,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s6",
           "data_comp": "estimate-then-reveal",
           "icap": "C",
-          "line": 3809,
-          "line_end": 3821,
-          "words_inside": 83
+          "line": 4487,
+          "line_end": 4498,
+          "words_inside": 74
         }
       ],
       "families": [
@@ -1237,21 +1275,21 @@
       "icap": {
         "C": 1
       },
-      "chips_total": 5,
+      "chips_total": 4,
       "chips": {
         "H": 2,
         "M": 1,
-        "L": 2
+        "L": 1
       },
-      "chips_per_100_words": 2.1,
+      "chips_per_100_words": 1.61,
       "chips_unresolved": [],
       "source_keys": [
-        "src-case",
-        "src-magesh"
+        "src-magesh",
+        "src-case"
       ],
       "sources_count": 2,
       "src_lines": 1,
-      "sim_badges": 1,
+      "sim_badges": 0,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
@@ -1260,23 +1298,25 @@
       "gates": [
         {
           "id": "g7",
-          "line": 3839,
+          "line": 4516,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 219,
+        "longest_run_words_tagged_split": 230,
         "longest_run_min_tagged_split": 4.6,
-        "longest_run_words_control_split": 170,
+        "longest_run_words_control_split": 181,
         "longest_run_min_control_split": 3.6,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
-      "undefined_terms_first_used_here": [],
+      "undefined_terms_first_used_here": [
+        "§07."
+      ],
       "dom": {
-        "rendered_words": 332,
-        "rendered_chips": 5,
+        "rendered_words": 344,
+        "rendered_chips": 4,
         "rendered_controls": 14,
         "rendered_hidden_panels": 0
       }
@@ -1294,23 +1334,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 13,
-      "line_start": 3843,
-      "line_end": 3867,
-      "bytes": 2160,
+      "line_start": 4520,
+      "line_end": 4554,
+      "bytes": 3490,
       "allocated_min": 13,
-      "words": 161,
-      "prose_words": 118,
-      "words_per_min": 12.4,
-      "prose_words_per_min": 9.1,
+      "words": 239,
+      "prose_words": 209,
+      "words_per_min": 18.4,
+      "prose_words_per_min": 16.1,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-sWS",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 3850,
-          "line_end": 3857,
-          "words_inside": 43
+          "line": 4527,
+          "line_end": 4533,
+          "words_inside": 30
         }
       ],
       "families": [
@@ -1319,50 +1359,57 @@
       "icap": {
         "C": 1
       },
-      "chips_total": 5,
+      "chips_total": 12,
       "chips": {
-        "H": 3,
+        "H": 10,
         "M": 1,
         "L": 1
       },
-      "chips_per_100_words": 3.11,
+      "chips_per_100_words": 5.02,
       "chips_unresolved": [],
       "source_keys": [
-        "src-case",
         "src-wolfram",
         "src-api-messages",
         "src-effort",
-        "src-aa"
+        "src-aa",
+        "src-case",
+        "src-claude-memory",
+        "src-anthropic-ctx-eng",
+        "src-anthropic-thinking",
+        "src-anthropic-mcp",
+        "src-anthropic-context",
+        "src-agent-skills",
+        "src-anthropic-agents"
       ],
-      "sources_count": 5,
+      "sources_count": 12,
       "src_lines": 1,
-      "sim_badges": 1,
+      "sim_badges": 0,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 0,
+      "interactive_controls": 1,
       "gates": [
         {
           "id": "ga3",
-          "line": 3865,
+          "line": 4552,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 123,
-        "longest_run_min_tagged_split": 9.9,
-        "longest_run_words_control_split": 161,
-        "longest_run_min_control_split": 13,
+        "longest_run_words_tagged_split": 201,
+        "longest_run_min_tagged_split": 10.9,
+        "longest_run_words_control_split": 145,
+        "longest_run_min_control_split": 7.9,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [],
       "dom": {
-        "rendered_words": 242,
-        "rendered_chips": 5,
-        "rendered_controls": 12,
+        "rendered_words": 588,
+        "rendered_chips": 23,
+        "rendered_controls": 21,
         "rendered_hidden_panels": 0
       }
     },
@@ -1379,23 +1426,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 5,
-      "line_start": 3869,
-      "line_end": 3927,
-      "bytes": 3815,
+      "line_start": 4556,
+      "line_end": 4663,
+      "bytes": 7837,
       "allocated_min": 5,
-      "words": 303,
-      "prose_words": 215,
-      "words_per_min": 60.6,
-      "prose_words_per_min": 43,
+      "words": 736,
+      "prose_words": 653,
+      "words_per_min": 147.2,
+      "prose_words_per_min": 130.6,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s7",
           "data_comp": "two-bucket-sorter",
           "icap": "C",
-          "line": 3875,
-          "line_end": 3897,
-          "words_inside": 88
+          "line": 4562,
+          "line_end": 4591,
+          "words_inside": 83
         }
       ],
       "families": [
@@ -1404,54 +1451,59 @@
       "icap": {
         "C": 1
       },
-      "chips_total": 4,
+      "chips_total": 12,
       "chips": {
-        "H": 2,
-        "M": 0,
-        "L": 2
+        "H": 5,
+        "M": 6,
+        "L": 1
       },
-      "chips_per_100_words": 1.32,
+      "chips_per_100_words": 1.63,
       "chips_unresolved": [],
       "source_keys": [
-        "src-case",
-        "src-finra2026"
+        "src-agent-skills",
+        "src-finra2026",
+        "src-advisers-204-2",
+        "src-finra-4511",
+        "src-finra2409",
+        "src-advisers-fiduciary",
+        "src-advisers-206-4-7",
+        "src-joa-prompt",
+        "src-case"
       ],
-      "sources_count": 2,
+      "sources_count": 9,
       "src_lines": 1,
-      "sim_badges": 1,
+      "sim_badges": 0,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
       "hidden_answer_panels": 0,
-      "interactive_controls": 6,
+      "interactive_controls": 13,
       "gates": [
         {
           "id": "g8",
-          "line": 3925,
+          "line": 4661,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 271,
-        "longest_run_min_tagged_split": 4.5,
-        "longest_run_words_control_split": 142,
-        "longest_run_min_control_split": 2.3,
+        "longest_run_words_tagged_split": 704,
+        "longest_run_min_tagged_split": 4.8,
+        "longest_run_words_control_split": 245,
+        "longest_run_min_control_split": 1.7,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
         "SOURCES",
         "NOT",
         "VERIFIED",
-        "WOULD",
-        "SOURCE",
-        "RETRIEVED"
+        "WOULD"
       ],
       "dom": {
-        "rendered_words": 340,
-        "rendered_chips": 4,
-        "rendered_controls": 12,
+        "rendered_words": 773,
+        "rendered_chips": 12,
+        "rendered_controls": 19,
         "rendered_hidden_panels": 0
       }
     },
@@ -1468,23 +1520,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 10,
-      "line_start": 3929,
-      "line_end": 3982,
-      "bytes": 3529,
+      "line_start": 4665,
+      "line_end": 4715,
+      "bytes": 3225,
       "allocated_min": 10,
-      "words": 282,
-      "prose_words": 157,
-      "words_per_min": 28.2,
-      "prose_words_per_min": 15.7,
+      "words": 261,
+      "prose_words": 153,
+      "words_per_min": 26.1,
+      "prose_words_per_min": 15.3,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-sCR",
           "data_comp": "symptom-diagnoser",
           "icap": "A",
-          "line": 3935,
-          "line_end": 3962,
-          "words_inside": 125
+          "line": 4671,
+          "line_end": 4696,
+          "words_inside": 108
         }
       ],
       "families": [
@@ -1499,7 +1551,7 @@
         "M": 0,
         "L": 2
       },
-      "chips_per_100_words": 0.71,
+      "chips_per_100_words": 0.77,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
@@ -1515,29 +1567,30 @@
       "gates": [
         {
           "id": "g9",
-          "line": 3980,
+          "line": 4713,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 238,
-        "longest_run_min_tagged_split": 8.4,
-        "longest_run_words_control_split": 163,
-        "longest_run_min_control_split": 5.8,
+        "longest_run_words_tagged_split": 217,
+        "longest_run_min_tagged_split": 8.3,
+        "longest_run_words_control_split": 146,
+        "longest_run_min_control_split": 5.6,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
+        "README",
         "HANDOFF",
         "PACKAGE",
         "SUMMARY",
         "CLIENT"
       ],
       "dom": {
-        "rendered_words": 462,
+        "rendered_words": 361,
         "rendered_chips": 2,
-        "rendered_controls": 15,
+        "rendered_controls": 8,
         "rendered_hidden_panels": 0
       }
     },
@@ -1554,23 +1607,23 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 18,
-      "line_start": 3984,
-      "line_end": 4065,
-      "bytes": 6186,
+      "line_start": 4717,
+      "line_end": 4797,
+      "bytes": 6010,
       "allocated_min": 18,
-      "words": 326,
-      "prose_words": 128,
-      "words_per_min": 18.1,
-      "prose_words_per_min": 7.1,
+      "words": 316,
+      "prose_words": 123,
+      "words_per_min": 17.6,
+      "prose_words_per_min": 6.8,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-sD",
           "data_comp": "sealed-vote-debate",
           "icap": "I",
-          "line": 3991,
-          "line_end": 4054,
-          "words_inside": 198
+          "line": 4724,
+          "line_end": 4786,
+          "words_inside": 193
         }
       ],
       "families": [
@@ -1579,20 +1632,20 @@
       "icap": {
         "I": 1
       },
-      "chips_total": 2,
+      "chips_total": 1,
       "chips": {
         "H": 0,
         "M": 0,
-        "L": 2
+        "L": 1
       },
-      "chips_per_100_words": 0.61,
+      "chips_per_100_words": 0.32,
       "chips_unresolved": [],
       "source_keys": [
         "src-case"
       ],
       "sources_count": 1,
       "src_lines": 1,
-      "sim_badges": 1,
+      "sim_badges": 0,
       "verify_blocks": 0,
       "verify_lines": [],
       "svg_charts": 0,
@@ -1601,25 +1654,25 @@
       "gates": [
         {
           "id": "ga4",
-          "line": 4063,
+          "line": 4795,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 278,
+        "longest_run_words_tagged_split": 268,
         "longest_run_min_tagged_split": 15.3,
-        "longest_run_words_control_split": 210,
-        "longest_run_min_control_split": 11.6,
+        "longest_run_words_control_split": 205,
+        "longest_run_min_control_split": 11.7,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
         "§06."
       ],
       "dom": {
-        "rendered_words": 350,
-        "rendered_chips": 2,
+        "rendered_words": 340,
+        "rendered_chips": 1,
         "rendered_controls": 18,
         "rendered_hidden_panels": 0
       }
@@ -1637,22 +1690,22 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 5,
-      "line_start": 4067,
-      "line_end": 4120,
-      "bytes": 3389,
+      "line_start": 4799,
+      "line_end": 4848,
+      "bytes": 3334,
       "allocated_min": 5,
-      "words": 219,
-      "prose_words": 168,
-      "words_per_min": 43.8,
-      "prose_words_per_min": 33.6,
+      "words": 218,
+      "prose_words": 167,
+      "words_per_min": 43.6,
+      "prose_words_per_min": 33.4,
       "interactions_count": 1,
       "interactions": [
         {
           "data_task": "t-s9",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 4073,
-          "line_end": 4101,
+          "line": 4805,
+          "line_end": 4833,
           "words_inside": 51
         }
       ],
@@ -1668,7 +1721,7 @@
         "M": 0,
         "L": 1
       },
-      "chips_per_100_words": 2.28,
+      "chips_per_100_words": 2.29,
       "chips_unresolved": [],
       "source_keys": [
         "src-case",
@@ -1688,27 +1741,26 @@
       "gates": [
         {
           "id": "g10",
-          "line": 4116,
+          "line": 4844,
           "marked_by_component": true
         }
       ],
       "markers": [],
       "em_dashes": 0,
       "exposition": {
-        "longest_run_words_tagged_split": 193,
+        "longest_run_words_tagged_split": 192,
         "longest_run_min_tagged_split": 4.4,
-        "longest_run_words_control_split": 145,
+        "longest_run_words_control_split": 144,
         "longest_run_min_control_split": 3.3,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
       "undefined_terms_first_used_here": [
         "FIRM",
         "USE",
-        "POLICY",
-        "FY2026"
+        "POLICY"
       ],
       "dom": {
-        "rendered_words": 373,
+        "rendered_words": 372,
         "rendered_chips": 5,
         "rendered_controls": 13,
         "rendered_hidden_panels": 0
@@ -1816,15 +1868,6 @@
       "context": "Stale D4 · 18 min · after  [§08]  Discussion: Does the Record Cost More Than"
     },
     {
-      "term": "§04.",
-      "kind": "citation",
-      "first_use_section": "sCold",
-      "defined_within_40_words": false,
-      "how": null,
-      "cfp_baseline_vocabulary": false,
-      "context": "which tool it may go into is  [§04.]  Prompts written for this lesson; D's client"
-    },
-    {
       "term": "ICI",
       "kind": "acronym",
       "first_use_section": "s1",
@@ -1861,13 +1904,67 @@
       "context": "M . SEC, Regulation S-P, 17 CFR  [§ 248.3] : nonpublic personal information, and the information it"
     },
     {
+      "term": "ESCALATION",
+      "kind": "acronym",
+      "first_use_section": "sRSP",
+      "defined_within_40_words": true,
+      "how": "parenthetical",
+      "cfp_baseline_vocabulary": false,
+      "context": "line once all three parts are picked.  [ESCALATION] : (your clause, from the builder above) The"
+    },
+    {
+      "term": "ASSESS",
+      "kind": "acronym",
+      "first_use_section": "sRSP",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "written programme must have procedures to: 1  [ASSESS]  the nature and scope of the incident,"
+    },
+    {
+      "term": "CONTAIN",
+      "kind": "acronym",
+      "first_use_section": "sRSP",
+      "defined_within_40_words": true,
+      "how": "parenthetical",
+      "cfp_baseline_vocabulary": false,
+      "context": "information involved. Owner: (you fill in) 2  [CONTAIN]  AND CONTROL it, to prevent further unauthorised"
+    },
+    {
+      "term": "AND",
+      "kind": "acronym",
+      "first_use_section": "sRSP",
+      "defined_within_40_words": true,
+      "how": "parenthetical",
+      "cfp_baseline_vocabulary": false,
+      "context": "involved. Owner: (you fill in) 2 CONTAIN  [AND]  CONTROL it, to prevent further unauthorised access"
+    },
+    {
+      "term": "CONTROL",
+      "kind": "acronym",
+      "first_use_section": "sRSP",
+      "defined_within_40_words": true,
+      "how": "parenthetical",
+      "cfp_baseline_vocabulary": false,
+      "context": "Owner: (you fill in) 2 CONTAIN AND  [CONTROL]  it, to prevent further unauthorised access or"
+    },
+    {
+      "term": "NOTIFY",
+      "kind": "acronym",
+      "first_use_section": "sRSP",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "or use. Owner: (you fill in) 3  [NOTIFY]  each affected individual: as soon as practicable,"
+    },
+    {
       "term": "NO",
       "kind": "acronym",
       "first_use_section": "s3",
       "defined_within_40_words": true,
       "how": "expansion",
       "cfp_baseline_vocabulary": false,
-      "context": "Pick a plan Training on your chats  [NO]  PLAN Map drawn for this lesson L"
+      "context": "then a plan Training on your chats  [NO]  PLAN The contract Pick a vendor, then"
     },
     {
       "term": "PLAN",
@@ -1876,25 +1973,88 @@
       "defined_within_40_words": false,
       "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "a plan Training on your chats NO  [PLAN]  Map drawn for this lesson L The"
+      "context": "a plan Training on your chats NO  [PLAN]  The contract Pick a vendor, then a"
     },
     {
       "term": "API",
       "kind": "acronym",
       "first_use_section": "s3",
-      "defined_within_40_words": true,
-      "how": "appositive",
+      "defined_within_40_words": false,
+      "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "B, C · Team, Enterprise and the  [API] : the contract excludes training, and standard retention"
+      "context": "firm signed: Claude Team, Enterprise and the  [API]  keep chats 30 days H ; ChatGPT"
+    },
+    {
+      "term": "§04",
+      "kind": "citation",
+      "first_use_section": "s3",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "put how long in the contract, which  [§04]  asks for. What differs is how long"
     },
     {
       "term": "CVE",
+      "kind": "acronym",
+      "first_use_section": "s3",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "on the Meta AI feed M ;  [CVE] -2025-32711 H . Vendor terms change without notice:"
+    },
+    {
+      "term": "DPA",
+      "kind": "acronym",
+      "first_use_section": "s4",
+      "defined_within_40_words": true,
+      "how": "expansion",
+      "cfp_baseline_vocabulary": false,
+      "context": "H and its Data Processing Addendum, the  [DPA]  H . Each label says verbatim or"
+    },
+    {
+      "term": "FBI",
       "kind": "acronym",
       "first_use_section": "s5",
       "defined_within_40_words": false,
       "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "Prompt Injection Fundamentals H . EchoLeak is  [CVE] -2025-32711 in the public vulnerability record. Financial Times"
+      "context": "click it. Real money, real video calls  [FBI] , 2025: cyber-enabled crime cost $20.9 billion; 22,364"
+    },
+    {
+      "term": "FY2026",
+      "kind": "acronym",
+      "first_use_section": "s5",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "of AI tools M . SEC (2025),  [FY2026]  examination priorities §VII, on AI and polymorphic"
+    },
+    {
+      "term": "MARK",
+      "kind": "acronym",
+      "first_use_section": "sW1",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "the 1s → 19 of 24 →  [MARK]  FOUND 2 Wrong key → different coins"
+    },
+    {
+      "term": "FOUND",
+      "kind": "acronym",
+      "first_use_section": "sW1",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "1s → 19 of 24 → MARK  [FOUND]  2 Wrong key → different coins →"
+    },
+    {
+      "term": "UNCERTAIN",
+      "kind": "acronym",
+      "first_use_section": "sW1",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "key, rewritten → 15 of 24 →  [UNCERTAIN]  chance &asymp; 12 0 24 ○ 13"
     },
     {
       "term": "EU",
@@ -1906,22 +2066,31 @@
       "context": "H . Who can check. Only organisations  [EU]  law makes eligible, such as regulators, researchers"
     },
     {
+      "term": "§07).",
+      "kind": "citation",
+      "first_use_section": "sW2",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "record of what you ran and decided ( [§07).]  A mark, found or not, never replaces"
+    },
+    {
+      "term": "§07.",
+      "kind": "citation",
+      "first_use_section": "s6",
+      "defined_within_40_words": false,
+      "how": null,
+      "cfp_baseline_vocabulary": false,
+      "context": "is the file an examiner can re-check,  [§07.]  The rate. Stanford tested legal research tools"
+    },
+    {
       "term": "MODEL",
       "kind": "acronym",
       "first_use_section": "s7",
       "defined_within_40_words": true,
       "how": "parenthetical",
       "cfp_baseline_vocabulary": false,
-      "context": "report its own name or today’s date.  [MODEL]  AND SETTING: (you fill in) DATE: (you"
-    },
-    {
-      "term": "AND",
-      "kind": "acronym",
-      "first_use_section": "s7",
-      "defined_within_40_words": true,
-      "how": "parenthetical",
-      "cfp_baseline_vocabulary": false,
-      "context": "its own name or today’s date. MODEL  [AND]  SETTING: (you fill in) DATE: (you fill"
+      "context": "As a prompt block As a skill  [MODEL]  AND SETTING: (you fill in) DATE: (you"
     },
     {
       "term": "SETTING",
@@ -1930,7 +2099,7 @@
       "defined_within_40_words": true,
       "how": "parenthetical",
       "cfp_baseline_vocabulary": false,
-      "context": "own name or today’s date. MODEL AND  [SETTING] : (you fill in) DATE: (you fill in)"
+      "context": "prompt block As a skill MODEL AND  [SETTING] : (you fill in) DATE: (you fill in)"
     },
     {
       "term": "DATE",
@@ -1939,7 +2108,7 @@
       "defined_within_40_words": true,
       "how": "parenthetical",
       "cfp_baseline_vocabulary": false,
-      "context": "date. MODEL AND SETTING: (you fill in)  [DATE] : (you fill in) PREPARED BY: (you fill"
+      "context": "skill MODEL AND SETTING: (you fill in)  [DATE] : (you fill in) PREPARED BY: (you fill"
     },
     {
       "term": "PREPARED",
@@ -2008,8 +2177,8 @@
       "term": "SOURCE",
       "kind": "acronym",
       "first_use_section": "s7",
-      "defined_within_40_words": false,
-      "how": null,
+      "defined_within_40_words": true,
+      "how": "parenthetical",
       "cfp_baseline_vocabulary": false,
       "context": "a source word for word, write NO  [SOURCE]  RETRIEVED for that item. Do not rebuild"
     },
@@ -2017,19 +2186,28 @@
       "term": "RETRIEVED",
       "kind": "acronym",
       "first_use_section": "s7",
-      "defined_within_40_words": false,
-      "how": null,
+      "defined_within_40_words": true,
+      "how": "parenthetical",
       "cfp_baseline_vocabulary": false,
       "context": "source word for word, write NO SOURCE  [RETRIEVED]  for that item. Do not rebuild a"
+    },
+    {
+      "term": "DECISION",
+      "kind": "acronym",
+      "first_use_section": "s7",
+      "defined_within_40_words": true,
+      "how": "parenthetical",
+      "cfp_baseline_vocabulary": false,
+      "context": "Do not rebuild a citation from memory.  [DECISION] : (you fill in, after reading: what you"
     },
     {
       "term": "README",
       "kind": "acronym",
       "first_use_section": "sCR",
-      "defined_within_40_words": true,
-      "how": "parenthetical",
+      "defined_within_40_words": false,
+      "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "minutes Run a Package Cold Follow the  [README]  using only the card, and ask nobody"
+      "context": "minutes Run a Package Cold Follow the  [README]  using only this card, and ask nobody."
     },
     {
       "term": "HANDOFF",
@@ -2074,7 +2252,7 @@
       "defined_within_40_words": false,
       "how": null,
       "cfp_baseline_vocabulary": false,
-      "context": "The other minutes are yours, carried from  [§06.]  · Work along Vote, read both cases"
+      "context": "the other minutes are yours, carried from  [§06.]  · Work along Vote, read both cases"
     },
     {
       "term": "FIRM",
@@ -2102,40 +2280,79 @@
       "how": null,
       "cfp_baseline_vocabulary": false,
       "context": "firm · draft 1 FIRM AI USE  [POLICY]  Examiner 0 of 6 can be checked"
-    },
-    {
-      "term": "FY2026",
-      "kind": "acronym",
-      "first_use_section": "s9",
-      "defined_within_40_words": false,
-      "how": null,
-      "cfp_baseline_vocabulary": false,
-      "context": ". Readings: Daly (2026) H ; SEC  [FY2026]  Exam Priorities §VII H . · Work"
     }
   ],
   "footer_source_ids": [
+    "src-joa-prompt",
     "src-api-messages",
     "src-claude-marks",
     "src-anthropic-terms",
     "src-effort",
+    "src-anthropic-threat",
+    "src-claude-pricing",
+    "src-anthropic-retention",
+    "src-anthropic-dpa",
+    "src-anthropic-certs",
+    "src-anthropic-threat-aug25",
+    "src-anthropic-injection",
+    "src-agent-skills",
+    "src-claude-memory",
+    "src-anthropic-thinking",
+    "src-anthropic-mcp",
+    "src-anthropic-context",
     "src-aa",
+    "src-uae-voice",
+    "src-capitalone",
     "src-cfp-genai",
     "src-cfp-code",
     "src-daly",
+    "src-deloitte",
+    "src-eu-ai-act",
+    "src-fbi-ic3-2025",
+    "src-0din-gemini",
     "src-finra2409",
     "src-finra2026",
     "src-finra-inj",
+    "src-drift",
+    "src-finra-4511",
     "src-arup",
     "src-synthid-text",
+    "src-gemini-privacy",
+    "src-gemini-workspace",
+    "src-gemini-api-terms",
+    "src-gemini-ratelimits",
+    "src-synthid",
+    "src-gtig-ai",
+    "src-ibm-breach-2026",
+    "src-il-pipa",
     "src-magesh",
+    "src-ms-copilot",
+    "src-ms-copilot-edp",
     "src-cve",
+    "src-sg-deepfake-2026",
     "src-case",
-    "src-hallowell",
+    "src-openai-data",
+    "src-owasp",
+    "src-unit42-ipi",
+    "src-state-breach",
+    "src-anthropic-ctx-eng",
+    "src-ascii-smuggling",
+    "src-anthropic-agents",
+    "src-chatgpt-index",
+    "src-meta-feed",
+    "src-trailofbits-image",
+    "src-uber-doj",
+    "src-equifax",
     "src-regsp",
     "src-sec-ai",
     "src-sec-withdraw",
+    "src-advisers-204-2",
+    "src-advisers-fiduciary",
+    "src-advisers-206-4-7",
     "src-secpri",
-    "src-wolfram"
+    "src-deepseek",
+    "src-wolfram",
+    "src-hallowell"
   ],
   "dom": {
     "mode": "jsdom",

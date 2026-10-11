@@ -107,15 +107,15 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**691 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**693 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
 | `votingUnits` | 101 |
 | `endowmentIntent` | 77 |
-| `claireAge` | 64 |
-| `marriedYears` | 64 |
+| `claireAge` | 65 |
+| `marriedYears` | 65 |
 | `tbills` | 39 |
 | `seedUnits` | 39 |
 | `employees` | 38 |
@@ -147,7 +147,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
-| `session-2/index.html:2678` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
+| `session-2/index.html:2680` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
 | `session-4/index.html:9083` | UNGUARDED | $400,000 | fBtns'),dOut=$('dfOut'),bill=$('dfBill'),barsHost=$('dfBars'); var DF={ say0:'“Wire 〈$400,000〉 from my brokerage account to a new account today. Keep  |
 
 Checked against every keyed figure in `case-facts.json` and every value this

@@ -3709,7 +3709,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p style="font-size:13.5px">The Cole household is synthetic and constructed for this course as a classroom anchor only. No real client data appears anywhere in this document. Students build the final project on their own recurring task using their own constructed synthetic data.</p>
 
   <p style="font-size:13.5px">Figures that move &mdash; model prices, capability benchmarks, regulatory dates &mdash; carry an as-of date where they appear. Verify every benchmark, price and compliance date against the primary source before relying on it outside this classroom.</p>
-  <p class="stamp">Session 5. Last updated 2026-10-02. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
+  <p class="stamp">Session 5. Last updated 2026-10-11. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
 
   </div>
 </footer>
@@ -6261,7 +6261,7 @@ var FLOW=[
   ['the test','eight-digit number?|reject'],
   ['the record','model, date|output, decision']
 ];
-var fsvg=null,fst=[],ftok=null,fstamp=null,ftw=null,FX0=10,FSW=108,FSG=10,FY=26,FSH=58;
+var fsvg=null,fst=[],ftok=null,fstamp=null,ftw=null,FX0=10,FSW=108,FSG=10,FY=26,FSH=62;
 function fcx(i){return FX0+i*(FSW+FSG)+FSW/2}
 function buildFlow(){
   if(fsvg||!flowHost)return;
@@ -6270,10 +6270,10 @@ function buildFlow(){
   FLOW.forEach(function(f,i){
     var x=FX0+i*(FSW+FSG),g=sv('g',{'class':'s4-fst'},fsvg);
     sv('rect',{x:x,y:FY,width:FSW,height:FSH,rx:8,'class':'s4-fbox'},g);
-    svt(g,x+FSW/2,FY+22,String(i+1)+' \u00b7 '+f[0],'s4-ft1','middle');
+    svt(g,x+FSW/2,FY+20,String(i+1)+' \u00b7 '+f[0],'s4-ft1','middle');   /* line pitch clears the web fonts' full ascent and descent (2026-10-11) */
     var ls=f[1].split('|');
-    svt(g,x+FSW/2,FY+(ls.length>1?36:40),ls[0],'s4-ft2','middle');
-    if(ls[1])svt(g,x+FSW/2,FY+49,ls[1],'s4-ft2','middle');
+    svt(g,x+FSW/2,FY+(ls.length>1?36:42),ls[0],'s4-ft2','middle');
+    if(ls[1])svt(g,x+FSW/2,FY+51.5,ls[1],'s4-ft2','middle');
     fst.push(g);
   });
   ftok=sv('circle',{cx:fcx(0),cy:16,r:6,'class':'s4-ftok'},fsvg);
@@ -7412,7 +7412,7 @@ function clearT(){timers.forEach(function(t){clearTimeout(t)});timers=[]}
 function later(fn,ms){if(reduced())fn();else timers.push(setTimeout(fn,ms))}
 
 /* ---------- the figure, built once ---------- */
-var W=680,H=372;
+var W=680,H=382;
 var svg=svgRoot(fig,W,H,'','sLib-svg','img');
 var RX=10,RW=208,RY=18;
 svt(svg,RX,12,'THE REPOSITORY','sLib-h');
@@ -7444,9 +7444,9 @@ var AX=250,AW=184,AY=140,AH=96;
 svt(svg,AX,AY-6,'THE ASSISTANT · EVERY DESK','sLib-h');
 var asst=sv('rect',{x:AX,y:AY,width:AW,height:AH,rx:9,'class':'sLib-asst'},svg);
 svt(svg,AX+10,AY+18,'chat','sLib-at');
-var apl=[svt(svg,AX+10,AY+36,'','sLib-ap'),svt(svg,AX+10,AY+49,'','sLib-ap'),svt(svg,AX+10,AY+62,'','sLib-ap')];
-svt(svg,AX,AY+AH+22,'the route, in order','sLib-h');
-var routeT=[0,1,2,3,4,5,6,7,8].map(function(i){return svt(svg,AX,AY+AH+36+i*11.5,'','sLib-route')});   /* one step a line under its heading (2026-10-04) */
+var apl=[svt(svg,AX+10,AY+36,'','sLib-ap'),svt(svg,AX+10,AY+51,'','sLib-ap'),svt(svg,AX+10,AY+66,'','sLib-ap')];
+svt(svg,AX,AY+AH+20,'the route, in order','sLib-h');
+var routeT=[0,1,2,3,4,5,6,7,8].map(function(i){return svt(svg,AX,AY+AH+34+i*13,'','sLib-route')});   /* one step a line under its heading (2026-10-04); 13-unit pitch clears the web font's ascent and descent (2026-10-11) */
 /* the desks */
 var DX=470,DY=18;
 svt(svg,DX,12,'SIX DESKS','sLib-h');
