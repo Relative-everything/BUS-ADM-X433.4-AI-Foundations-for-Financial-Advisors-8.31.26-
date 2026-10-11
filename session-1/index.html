@@ -506,11 +506,11 @@ section.slide{padding:clamp(44px,6vw,74px) 0;border-bottom:1px solid var(--line)
 #caseBtn{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:none;border:1.5px solid var(--on);color:var(--on);border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap}
 #caseBtn:hover{background:var(--on-bg)}
 /* DW-077. The Shift+U badge is the widest item in the topbar. At 380px it
-   pushed Case facts past the right edge (to 630px), and up to about 670px it
-   crowded the button into the bar's right padding. Below 720px the badge is
-   hidden (sessions 4 and 5 keep theirs hidden until revealed) and the title
-   truncates before the button can move. Kept identical in session-0.1 and
-   session-1. */
+   pushed Case facts past the right edge (630px on session-0.1, 615px on
+   session-1); up to about 670px it crowded the button into the right padding.
+   Below 720px the badge is hidden, override on or off (the panels still open);
+   sessions 4 and 5 hide theirs only until it is used. The title truncates
+   before the button can move. Kept identical in session-0.1 and session-1. */
 @media (max-width:720px){#ovr{display:none}#topbar .ttl{min-width:0;overflow:hidden;text-overflow:ellipsis}#caseBtn{flex:none}}
 #caseModal{position:fixed;inset:0;background:rgba(22,33,31,.45);z-index:70;display:none;overflow:auto;padding:60px 16px}
 #caseModal.open{display:block}
@@ -2102,7 +2102,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <div class="cards">
-    <div class="card"><span class="num">Session 2 &sect;04</span><h4>Three prompt templates</h4><p>An email rewriter, a case-note formatter, a one-page plan summary generator. Session 2 &sect;04 works from the three you write, or from its three starter prompts if you have none.</p></div>
+    <div class="card"><span class="num">Session 2 &sect;04</span><h4>Three prompt templates</h4><p>An email rewriter, a case-note formatter, a one-page plan summary generator. Session 2 &sect;04 builds up three starter prompts, then has you rewrite the weakest of the three you write, or one of its starters if you have none.</p></div>
     <div class="card gold"><span class="num">&sect;09</span><h4>Account-level custom instructions</h4><p>&sect;09 shows you where they are configured.</p></div>
   </div>
 

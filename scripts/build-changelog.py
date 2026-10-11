@@ -154,12 +154,27 @@ __BODY__
 
 
 def find_sweep():
-    """Locate the skill's restyle_sweep.py, or None if the skill is not installed."""
+    """Locate the skill's restyle_sweep.py, or None if the skill is not installed.
+
+    The same order as scripts/verify-style.mjs, so the two scripts cannot
+    disagree about which copy of the skill they ran (DW-080). First match wins,
+    and a candidate counts only if it is a file:
+
+      1. RESTYLE_SWEEP          a direct path to restyle_sweep.py
+      2. LESSON_BUILDER_SKILL   the skill root; scripts/restyle_sweep.py under it
+      3. ~/.claude/skills/synced/interactive-lesson-builder/scripts/restyle_sweep.py
+      4. ~/.claude/skills/interactive-lesson-builder/scripts/restyle_sweep.py
+
+    Keep this list in step with CANDIDATES in verify-style.mjs.
+    """
     P = pathlib.Path
-    env = os.environ.get("LESSON_BUILDER_SKILL")
     candidates = []
-    if env:
-        candidates.append(P(env) / "scripts" / "restyle_sweep.py")
+    sweep = os.environ.get("RESTYLE_SWEEP")
+    if sweep:
+        candidates.append(P(sweep))
+    skill = os.environ.get("LESSON_BUILDER_SKILL")
+    if skill:
+        candidates.append(P(skill) / "scripts" / "restyle_sweep.py")
     candidates += [
         P.home() / ".claude/skills/synced/interactive-lesson-builder/scripts/restyle_sweep.py",
         P.home() / ".claude/skills/interactive-lesson-builder/scripts/restyle_sweep.py",
@@ -188,7 +203,8 @@ def main():
         print("WARNING  the style fence in the page just written is EMPTY.")
         print("         restyle_sweep.py was not found, so it could not be filled.")
         print("         Install the interactive-lesson-builder skill, or set")
-        print("         LESSON_BUILDER_SKILL, then run:")
+        print("         RESTYLE_SWEEP (the path of restyle_sweep.py) or")
+        print("         LESSON_BUILDER_SKILL (the skill root), then run:")
         print(f"           python3 <skill>/scripts/restyle_sweep.py {ROOT}")
         print("         verify-style.mjs will fail until you do.")
         return

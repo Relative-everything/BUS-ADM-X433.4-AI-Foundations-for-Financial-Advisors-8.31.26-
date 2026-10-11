@@ -436,7 +436,13 @@ sections above are kept as approved; where they and this section differ, this se
   strings are generated for sessions 1 to 5 only (DW-146). The case for leaving the strings is
   weaker than D-15 says.
 - **§6, D-16.** *Rebuild Poll 2 to three options* is withdrawn: the page and the poll already agree
-  on four options since 2026-09-18 (DW-148).
+  on four options since 2026-09-18 (DW-148). The four open Decide blocks of DW-144 are §04's
+  named approved-tool example, §01's quoted Daly and SEC sentences with the FY2027 swap, §02's
+  compliance-officer confirmation, and §00's click-to-text bridge; *keep as shipped* no longer fits
+  the FY2027 swap, because the SEC's fiscal year 2026 ended on 2026-09-30.
+- **§6, D-01.** Wave 3 did not use the default text. It recorded the engagement with no start date,
+  because §A.6's January 2026 intake names no party and a 2026 date would be a new case fact. The
+  remaining question: date the engagement 2026 (from that intake), or leave it undated.
 - **§6, D-21 (new).** DW-092, DW-150, DW-152 and DW-157 are the course's carry-overs to the next
   cohort: the corrections owed to this cohort (was Post 2 posted?), the off-site obligations, the
   Session 2 audit's page-bearing findings, and whether Session 1's §00, §01 and §07 are rebuilt.

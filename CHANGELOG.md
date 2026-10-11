@@ -21,47 +21,52 @@ changed on any page, and no em dash was added or removed from lesson prose.
 
 ### All lessons · the footer stamps
 
-- **Each page's Last updated stamp now names its last content change** (DW-140). Five of six were
-  behind: the hub read 2026-10-02 (last changed 2026-10-04), Session 1 2026-08-20, Session 2
-  2026-09-12, Session 3 2026-09-21 (2026-10-02), Session 4 2026-09-27 (2026-09-28). Sessions 1, 2
-  and 5 read 2026-10-11 because they changed today. How the stamps stay right is the instructor's
+- **Each page's Last updated stamp now names its last content change** (DW-140). All six were
+  behind: the hub read 2026-10-02 (last changed 2026-10-04), Session 1 2026-08-20 (2026-09-25),
+  Session 2 2026-09-12 (2026-09-25), Session 3 2026-09-21 (2026-10-02), Session 4 2026-09-27
+  (2026-09-28), Session 5 2026-10-02 (2026-10-04). Sessions 1, 2 and 5 read 2026-10-11 because they
+  changed today. How the stamps stay right is the instructor's
   decision (D-05 in the plan).
 
 ### Sessions 0.1 and 1 · the top bar on a phone
 
 - **At 380 px the Case facts button sat past the right edge** (630 px on Session 0.1, 615 px on
   Session 1) because the Shift+U badge is the widest item in the bar (DW-077). Below 720 px the
-  badge is hidden, as Sessions 4 and 5 keep theirs hidden until it is used, and the title truncates
-  before the button can move. The desktop bar is unchanged.
+  badge is now hidden whether or not the override is on, and the title truncates before the button
+  can move; the panels still open. The desktop bar is unchanged.
 
 ### Session 1 · two sentences
 
-- **§10's price chip now resolves to the Anthropic pricing page** the sentence names, not to the
-  leaderboard (DW-007).
-- **The note on Session 2's workshop** says it works from the three prompts you wrote, or from its
-  three starter prompts if you have none (DW-091).
+- **§05's price chip (Capability against price) now resolves to the Anthropic pricing page** the
+  sentence names, not to the leaderboard (DW-007).
+- **The note on Session 2's workshop** says what it does: it builds up three starter prompts, then
+  has you rewrite the weakest of the three you wrote, or one of its starters if you have none
+  (DW-091).
 
 ### Session 2 · the retrieval bridge and two layout fixes
 
 - **Each of the three bridge questions has its own Lock and reveal**: it locks that answer box and
   opens that key, so the commit-then-reveal order holds per question. *Reveal all three* locks every
-  box first (DW-114). The run sheet says so.
+  box first (DW-114). Each box and button is tied to its question for screen readers. The run sheet
+  says so.
 - **§00's navigation label reads Retrieval bridge**, the heading on screen (DW-106).
-- **§04's level tiles wrap at phone width**, so the page no longer scrolls two pixels sideways at
-  380 px (DW-119).
+- **§04's level tiles wrap at phone width**, so the page no longer scrolls sideways at 380 px
+  (DW-119).
 
 ### Session 5 · two figures at the web font's real size
 
-- **§04's station text and §07's route labels no longer overlap** (DW-131). The 2026-10-04 pass
-  measured its drag checks in a container where Google Fonts failed to load, so they ran on
-  narrower fallback fonts; with the fonts a learner gets, three of 36 checks failed. The line pitches
-  of the §04 stations and the §07 question and route lines now clear the fonts' height, and the
-  §07 figure is ten units taller. All 36 checks pass with the web fonts and without them.
+- **§04's station text and §07's route labels now clear the web fonts' full line height** (DW-131).
+  The 2026-10-04 pass measured its drag checks in a container where Google Fonts failed to load, so
+  they ran on narrower fallback fonts; with the fonts a learner gets, the checks' text boxes
+  touched and three of 36 failed. The §04 station boxes are four units taller, the line pitches of
+  the §04 stations and the §07 question and route lines are wider, and the §07 figure is ten units
+  taller. All 36 checks pass with the web fonts and without them.
 
 ### Case · CASE.md 4.5
 
-- **§A.5 records the engagement every lesson assumes** (DW-041, BLOCKING since Phase 3.6). It read
-  *Investment adviser: none, assets held direct at a custodian* while the Part O meeting excerpt has
+- **§A.5 records the engagement every lesson assumes** (DW-041, BLOCKING since Phase 3.6). It
+  recorded no investment adviser, with the assets held direct at a custodian, while the Part O
+  meeting excerpt has
   an Advisor speaking. The instructor decided on 2026-09-08 to record the engagement; it now names
   the student's firm as financial planner and investment adviser, a planning engagement, the assets
   still held direct at a custodian. The Part O conflict note becomes a dated resolution. §A.5 is not
@@ -70,14 +75,16 @@ changed on any page, and no em dash was added or removed from lesson prose.
 ### Repository · the register, the checks, the record
 
 - **`docs/deferred-work.md` re-cut for a taught course.** A 2026-10-11 header that wins over the
-  three earlier ones, now kept as history; a Closed table; 10 rows closed that were already closed
-  on the tree, 5 superseded by later decisions, DW-041 re-owned, and 28 rows added (DW-131 to
-  DW-158) for deferrals the Session 3, 4 and 5 passes recorded only in their own folders.
+  three earlier ones, now kept as history; a Closed table; 9 rows closed that were already closed
+  on the tree, 5 superseded by later decisions, DW-041 re-owned, and 34 rows added (DW-131 to
+  DW-164), most for deferrals the Session 3, 4 and 5 passes recorded only in their own folders. A
+  five-lens review of the pass reopened DW-092: the Session 1 corrections were never delivered in
+  class.
 - **`verify-case.mjs` now asserts the seven copies of the lesson-local case-viewer layout agree**
   (20 rules), which nothing checked before (DW-043).
-- **`verify-style.mjs` finds the restyle sweep the way `build-changelog.py` does**, from
-  `RESTYLE_SWEEP`, then `LESSON_BUILDER_SKILL`, then the home directory, and names every path it
-  tried when none exists (DW-080). MAINTAINING documents both variables (DW-112), the jsdom the
+- **`verify-style.mjs` and `build-changelog.py` find the restyle sweep the same way**, from
+  `RESTYLE_SWEEP`, then `LESSON_BUILDER_SKILL`, then the home directory; `verify-style.mjs` names
+  every path it tried when none exists (DW-080). MAINTAINING documents both variables (DW-112), the jsdom the
   change-folder checks need (DW-132), and that an older change folder's checks pin the page its
   pass produced, so a later pass can turn them red (DW-133).
 - **`docs/unsourced-claims.md` now lists Session 0.1's four `[UNVERIFIED, needs source]` claims**,

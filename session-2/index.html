@@ -2879,9 +2879,9 @@ var BRIDGE=[
   BRIDGE.forEach(function(b,i){
     h+='<div style="padding:'+(i?'18px':'2px')+' 0 18px;border-bottom:'+(i<BRIDGE.length-1?'1px solid var(--line)':'none')+'">'+
        '<span class="plab">Recall '+(i+1)+'</span>'+
-       '<p style="margin:0 0 11px;font-size:15.5px">'+b.q+'</p>'+
-       '<textarea data-b="'+i+'" style="min-height:66px" placeholder="Answer from memory. No notes, no searching."></textarea>'+
-       '<div class="row" style="margin-top:9px"><button type="button" class="btn ghost mini" data-rv="'+i+'" aria-expanded="false" aria-controls="bans'+i+'">Lock and reveal</button></div>'+
+       '<p id="bq'+i+'" style="margin:0 0 11px;font-size:15.5px">'+b.q+'</p>'+
+       '<textarea data-b="'+i+'" aria-labelledby="bq'+i+'" style="min-height:66px" placeholder="Answer from memory. No notes, no searching."></textarea>'+
+       '<div class="row" style="margin-top:9px"><button type="button" class="btn ghost mini" data-rv="'+i+'" aria-expanded="false" aria-controls="bans'+i+'" aria-describedby="bq'+i+'">Lock and reveal</button></div>'+
        '<div class="bans" id="bans'+i+'" data-b="'+i+'" style="display:none;font-size:14.5px;line-height:1.55;margin-top:11px;padding:11px 14px;border-radius:7px;background:var(--on-bg);color:#0A423F"></div></div>';
   });
   host.innerHTML=h;

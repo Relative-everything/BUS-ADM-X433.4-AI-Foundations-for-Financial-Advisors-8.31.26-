@@ -1,6 +1,6 @@
 {
   "file": "session-1/index.html",
-  "file_bytes": 276055,
+  "file_bytes": 276164,
   "file_lines": 3418,
   "generated_by": "scripts/audit/section_profile.mjs (read-only)",
   "methods": {
@@ -174,17 +174,17 @@
       "median": 31.25,
       "range": [
         8.8,
-        82.1
+        83.4
       ],
-      "mean": 35.97
+      "mean": 36.04
     },
     "prose_words_per_min": {
       "median": 27.85,
       "range": [
         0,
-        78.7
+        80
       ],
-      "mean": 30.84
+      "mean": 30.92
     },
     "exposition_run_min_tagged": {
       "median": 5.9,
@@ -1695,12 +1695,12 @@
       "timing_row_min": 7,
       "line_start": 2078,
       "line_end": 2150,
-      "bytes": 6333,
+      "bytes": 6380,
       "allocated_min": 7,
-      "words": 575,
-      "prose_words": 551,
-      "words_per_min": 82.1,
-      "prose_words_per_min": 78.7,
+      "words": 584,
+      "prose_words": 560,
+      "words_per_min": 83.4,
+      "prose_words_per_min": 80,
       "interactions_count": 1,
       "interactions": [
         {
@@ -1745,9 +1745,9 @@
       "markers": [],
       "em_dashes": 4,
       "exposition": {
-        "longest_run_words_tagged_split": 522,
+        "longest_run_words_tagged_split": 531,
         "longest_run_min_tagged_split": 6.4,
-        "longest_run_words_control_split": 514,
+        "longest_run_words_control_split": 523,
         "longest_run_min_control_split": 6.3,
         "method": "M: words between interaction roots (tagged) / between any interactive control, pro rata to allocated minutes"
       },
@@ -1755,7 +1755,7 @@
         "§04"
       ],
       "dom": {
-        "rendered_words": 558,
+        "rendered_words": 567,
         "rendered_chips": 0,
         "rendered_controls": 4,
         "rendered_hidden_panels": 0

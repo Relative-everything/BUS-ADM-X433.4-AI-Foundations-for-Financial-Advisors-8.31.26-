@@ -18,10 +18,13 @@ checked. A wrong `[UNCONFIRMED]` gets read and downgraded; a wrong
 and moving an entry the other way is a decision with evidence behind it.
 
 All three forms are declared in `EDITORIAL.md` A16 and enforced by
-`scripts/verify-editorial.mjs`; a marker in any other form is a hard failure.
-This register reads the population A16 reads (body prose, script, footer
-source entries and source notes: regions R1, R2, R7 and R8), so the totals
-below reconcile with the marker count A16 prints.
+`scripts/verify-editorial.mjs` in `session-0.1` and sessions 1 to 5; a marker
+in any other form is a hard failure. This register reads the regions A16
+reads (body prose, script, footer source entries and source notes: R1, R2, R7
+and R8) in those six lessons, and the hub (`index.html`) as well, which A16
+does not read. The totals count the two apart: A16's population reconciles
+with the marker count A16 prints, and the hub's is extra. In the hub this
+script fails a marker in an undeclared form itself, since A16 never sees it.
 
 ## Totals
 
@@ -33,7 +36,9 @@ below reconcile with the marker count A16 prints.
 | `[UNVERIFIED, needs source]` | 4 |
 | no weight | 4: the pre-existing form with no CLAIM annotation, listed in its own section below |
 | Markers that are not claims | 2 |
-| **A16's population** | **6**: 4 marked claim(s) and 2 marker(s) that are not claims |
+| **A16's population** | **6**: the markers in `session-0.1` and sessions 1 to 5, the count A16 prints |
+| The hub, `index.html` | 0: read here, not by A16 |
+| **All markers read** | **6**: 4 marked claim(s) and 2 marker(s) that are not claims |
 
 ## The order
 
@@ -108,11 +113,12 @@ it into the sections above.*
 
 ## Markers that are not claims
 
-*A16 counts these and they pass. Each one talks about the marker convention
-instead of marking a claim: a script comment declaring the convention
+*Each one talks about the marker convention instead of marking a claim: a
+whole line of a script comment in `session-0.1` declaring the convention
 (`EDITORIAL.md` A16, "two comments declaring the convention itself"), or a
-marker named inside a CLAIM annotation. Listed so the totals reconcile with
-A16; nothing here needs a source.*
+marker named inside a CLAIM annotation. A marker in a script comment in any
+other file needs a CLAIM annotation like any claim. Listed so the totals add
+up; nothing here needs a source.*
 
 | File and line | Marker | Where it sits | The sentence |
 |---|---|---|---|

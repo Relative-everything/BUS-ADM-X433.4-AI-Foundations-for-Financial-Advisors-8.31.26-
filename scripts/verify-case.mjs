@@ -22,10 +22,13 @@
  * dropped and whitespace is normalised, so re-indenting a rule is not drift;
  * changing a value, a selector or the order of the rules is. #caseBtn.casefab is
  * not a .case-* rule and is NOT in the set: its position differs between
- * lessons today.
+ * lessons today. The comparison is a multiset one, so a rule pasted in twice is
+ * reported as a duplicate, not as a reordering; and a reference set with no
+ * rules in it fails, because seven empty sets agree with each other about
+ * nothing (the window moved, or the rules were deleted everywhere at once).
  */
-import { readFileSync } from 'node:fs';
-import { dirname, join, resolve } from 'node:path';
+import { readFileSync, realpathSync } from 'node:fs';
+import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { LESSONS, buildBlock, OPEN, CLOSE, sha256, facts } from './inject-case.mjs';
 
@@ -122,11 +125,18 @@ export function caseLayoutRules(text) {
   return { rules };
 }
 
+/** How many times each rule occurs, in first-seen order. */
+const tally = (rules) => rules.reduce((m, r) => m.set(r, (m.get(r) || 0) + 1), new Map());
+
 /**
  * compareCaseLayout({ file: text }): group the lessons by their rule set. The
  * largest group is the reference (ties go to the first file named); every file
  * outside it is reported with what it has that the reference does not, and
- * the reverse.
+ * the reverse. The diff counts copies (a multiset diff): a rule the reference
+ * has once and this file has twice is `duplicated`, not a reordering, and the
+ * reverse is `fewer`. `reordered` is true only when the two lists hold exactly
+ * the same rules the same number of times. `empty` is true when the reference
+ * has no rules at all, which the caller fails.
  */
 export function compareCaseLayout(texts) {
   const files = Object.keys(texts);
@@ -141,20 +151,45 @@ export function compareCaseLayout(texts) {
   const ranked = [...groups.values()].sort((x, y) => y.length - x.length);
   const refFiles = ranked[0] || [];
   const ref = refFiles.length ? per[refFiles[0]] : { rules: [], digest: '' };
+  const refN = tally(ref.rules);
   const differ = [];
   for (const f of files) {
     if (!per[f] || per[f].digest === ref.digest) continue;
-    const here = per[f].rules;
-    const onlyHere = here.filter((r) => !ref.rules.includes(r));
-    const missing = ref.rules.filter((r) => !here.includes(r));
-    differ.push({ file: f, count: here.length, onlyHere, missing,
-                  reordered: !onlyHere.length && !missing.length });
+    const here = per[f].rules, hereN = tally(here);
+    const onlyHere = [], missing = [], duplicated = [], fewer = [];
+    for (const [r, n] of hereN) {
+      const k = refN.get(r) || 0;
+      if (!k) onlyHere.push(r);
+      else if (n > k) duplicated.push({ rule: r, here: n, ref: k });
+    }
+    for (const [r, k] of refN) {
+      const n = hereN.get(r) || 0;
+      if (!n) missing.push(r);
+      else if (k > n) fewer.push({ rule: r, here: n, ref: k });
+    }
+    differ.push({ file: f, count: here.length, onlyHere, missing, duplicated, fewer,
+                  reordered: !onlyHere.length && !missing.length && !duplicated.length && !fewer.length });
   }
-  return { ref: { files: refFiles, count: ref.rules.length, digest: ref.digest }, differ, errors };
+  return { ref: { files: refFiles, count: ref.rules.length, digest: ref.digest },
+           empty: refFiles.length > 0 && ref.rules.length === 0, differ, errors };
 }
 
 /* ---------------------------------------------------------------- main -- */
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+/* Run as a script, not when imported. Both sides are compared as REAL paths:
+   Node gives import.meta.url as the real path of the entry module, while
+   argv[1] keeps the path as typed, so through a symlinked checkout, home or
+   /tmp a plain comparison was false and the whole check printed nothing and
+   exited 0. If argv[1] cannot be resolved, the file name decides, so a guard
+   that cannot tell errs towards running the check rather than skipping it. */
+function invokedDirectly() {
+  const arg = process.argv[1];
+  if (!arg) return false;                     /* node -e, a REPL: imported, not run */
+  const self = fileURLToPath(import.meta.url);
+  try { return realpathSync(arg) === realpathSync(self); }
+  catch { return basename(arg) === basename(self); }
+}
+
+if (invokedDirectly()) {
   const { body: expected } = buildBlock();
   const expectedHash = sha256(expected);
   let fails = 0;
@@ -187,18 +222,26 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   /* 4. the hand-written half of the viewer (DW-043) */
   const lay = compareCaseLayout(texts);
   for (const e of lay.errors) console.log(`FAIL  layout  ${e.file}  ${e.error}`);
+  if (lay.empty) {
+    console.log(`FAIL  layout  ${lay.ref.files.join(', ')}  carry no lesson-local .case-* rule at all between "${STYLE_END}" and CASE:BEGIN`);
+    console.log('        an empty set agrees with every other empty set, so it proves nothing: the window moved, or the rules were deleted everywhere');
+  }
+  const copies = (x) => `(${x.here} cop${x.here === 1 ? 'y' : 'ies'} here, ${x.ref} in the reference)`;
   for (const d of lay.differ) {
     console.log(`FAIL  layout  ${d.file}  its ${d.count} lesson-local .case-* rule(s) differ from the ${lay.ref.count} in ${lay.ref.files.join(', ')}`);
     if (d.reordered) console.log('        same rules, different order (order decides the cascade)');
     for (const r of d.onlyHere.slice(0, 4)) console.log(`        only here:     ${r}`);
     for (const r of d.missing.slice(0, 4)) console.log(`        missing here:  ${r}`);
-    const more = Math.max(0, d.onlyHere.length - 4) + Math.max(0, d.missing.length - 4);
+    for (const x of d.duplicated.slice(0, 4)) console.log(`        duplicated here: ${x.rule}  ${copies(x)}`);
+    for (const x of d.fewer.slice(0, 4)) console.log(`        fewer copies here: ${x.rule}  ${copies(x)}`);
+    const more = [d.onlyHere, d.missing, d.duplicated, d.fewer].reduce((n, xs) => n + Math.max(0, xs.length - 4), 0);
     if (more) console.log(`        ... and ${more} more`);
   }
-  const layoutFails = lay.errors.length + lay.differ.length;
+  const bad = [...lay.errors.map((x) => x.file), ...(lay.empty ? lay.ref.files : []), ...lay.differ.map((x) => x.file)];
+  const layoutFails = bad.length;
   if (layoutFails) {
-    console.log(`layout: ${layoutFails} of ${LESSONS.length} lessons differ in their lesson-local .case-* rules: `
-      + `${[...lay.errors, ...lay.differ].map((x) => x.file).join(', ')}`);
+    console.log(`layout: ${layoutFails} of ${LESSONS.length} lessons ${lay.empty ? 'carry no lesson-local .case-* rules or differ in them' : 'differ in their lesson-local .case-* rules'}: `
+      + `${bad.join(', ')}`);
     console.log('        A viewer layout rule is edited in every lesson or in none; a new one goes in scripts/inject-case.mjs.');
   } else {
     console.log(`layout: the ${lay.ref.count} lesson-local .case-* rules agree in all ${LESSONS.length} lessons  sha256 ${lay.ref.digest.slice(0, 16)}`);

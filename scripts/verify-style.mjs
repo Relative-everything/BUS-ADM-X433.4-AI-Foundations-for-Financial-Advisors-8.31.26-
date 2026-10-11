@@ -32,9 +32,10 @@ import { fileURLToPath } from 'node:url';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 
-/* WHERE THE SWEEP IS. Resolved the way scripts/build-changelog.py find_sweep()
- * resolves it, so the two scripts cannot disagree about which copy of the skill
- * they ran (DW-080). First match wins:
+/* WHERE THE SWEEP IS. Resolved in the order scripts/build-changelog.py
+ * find_sweep() uses, so the two scripts cannot disagree about which copy of the
+ * skill they ran (DW-080). Keep the two lists in step. First match wins, and a
+ * candidate counts only if it is a file:
  *
  *   1. RESTYLE_SWEEP                 a direct path to restyle_sweep.py
  *   2. LESSON_BUILDER_SKILL          the skill root; scripts/restyle_sweep.py under it
@@ -57,10 +58,10 @@ const FOUND = CANDIDATES.find(([, p]) => isFile(p));
 const SWEEP = FOUND && FOUND[1];
 
 /* A variable that is set but names nothing is almost always a typo. Say so
-   rather than let a later candidate stand in for it unannounced. */
-for (const [from, p] of FOUND ? CANDIDATES : []) {
-  if (from === FOUND[0]) break;
-  if (from === 'RESTYLE_SWEEP' || from === 'LESSON_BUILDER_SKILL') {
+   every time, whether a later candidate stands in for it, an earlier one
+   already won, or nothing resolves (then the WARN comes before the FAIL list). */
+for (const [from, p] of CANDIDATES) {
+  if ((from === 'RESTYLE_SWEEP' || from === 'LESSON_BUILDER_SKILL') && !isFile(p)) {
     console.error(`WARN  ${from} is set but ${p} is not a file`);
   }
 }
