@@ -6,8 +6,8 @@ Resume rule (RUNBOOK A.1.6): read `RUNBOOK.md` (A.0 first), this file, `DECISION
 |---|---|---|---|---|---|
 | init (A.1) | done | 2026-10-11 | 2026-10-11 | `f0bf929` | n/a |
 | 0 | done | 2026-10-11 | 2026-10-11 | (P0 commit) | all exit 0 except `verify-style` (skill absent) and `verify-wolfram-quotes` (no article copy); P0 report §1 |
-| 1 | pending | | | | |
-| 2 | pending | | | | |
+| 1 | done | 2026-10-11 | 2026-10-11 | (P1 commit) | verify-facts --report 0; verify-facts (gate) 0; P0 validators unchanged |
+| 2 | in progress | 2026-10-11 | | | draft only |
 | 3 | pending | | | | |
 | 4a | pending | | | | |
 | 4b | pending | | | | |
@@ -39,3 +39,13 @@ Branch `next-term-2027` created from `main` at `da7b003` (PR #45 merged 2026-10-
 **Deferred-work rows on lessons, CASE.md or case scripts:** 71 open rows listed in report §5; the register was not edited.
 
 **Contradictions with the plan:** report §7 (ten items). The important ones: the local `main` ref lagged `origin/main` and the branch was re-based (D-017); `verify-case` has a layout check the runbook does not know; the runbook's marker form is undeclared under A16; the LMS name already appears in instructor-authored files outside served pages; the `claude` CLI is available for recaptures; primary government hosts are unreachable (R7 governs).
+
+## Phase 1: FACTS registry and validator
+
+**Built:** `facts/FACTS.json` (43 records), `facts/build-facts-md.mjs` (generates `facts/FACTS.md`, idempotent, `--check`), `scripts/verify-facts.mjs` (checks (a) retired strings over hub, lessons, `cases/*.html` when present, instructor notes; (b) high-volatility records past their window, 14 days each-session / 180 days term-start, relative to `--as-of`; (c) dangling `data-fact="<id>"` and `FACTS:<id>` citations; `--report`, `--session N`). `MAINTAINING.md`: `facts/` in the layout; the volatile-fact check and the week-before ritual in the pre-push gate.
+
+**Seeding:** the 34 runbook seed records plus the Phase 5 corrections were verified by ten research agents (two rounds, D-018). 43 records: 11 at H (every platform.claude.com, claude.com, support.claude.com and anthropic.com page fetched in full; the MCP blog; the Lee 2025 PDF; the context-window page), 31 at M (primary-domain search excerpts, host unreachable), 1 at L (`leaderboard-snapshot-arena`, secondary roundup only). **Downgrades from the seed's H:** `claude-consumer-retention` (M; the toggle's default is a GAP the page does not state), every regulation, state, adoption and leaderboard record (M, unreachable hosts), `leaderboard-snapshot-arena` (L). **Seed corrections found:** `sec-pda-withdrawal` release number is 34-103247 (the seed's 34-103244 is an unrelated NYSE notice); `colorado-sb26-189` took effect on signature (2027-01-01 is when the key duties begin); `cfp-genai-guide` URL and "not a binding standard" wording; the Max-plan help article id (11049741, not 11049744); OpenAI images now carry SynthID as well as C2PA and OpenAI text watermarking is EU-only / API opt-in; Arena renamed 2026-01-28; the Utah bill lineage (SB 149 2024, SB 226 2025, sunset 2027-07-01); Kitces notetakers date unconfirmed. **Added beyond the seed:** `claude-cache-and-batch-pricing`, `claude-model-ids-and-retirements`, `openai-provenance`, `aa-index-definition`, `sec-ai-washing-enforcement`, `kitces-notetakers-2025`, `openai-hallucination-paper`, `lee-2025-critical-thinking`, `irc-7872-thresholds`, `navajo-written-form`, `zero-shot-definition`, `portability-late-election`.
+
+**`--report` hit list on the current pages:** zero retired-value hits after one false positive was withdrawn ("200K context window" describes Haiku 4.5 truthfully in session-0.1, so the string is not registered). No page cites a FACTS id yet (Phase 5 adds `data-fact` chips). The Fall 2026 spoken errors are, as the runbook anticipated, mostly not in the repo text; Phase 5 reads each page's model names, prices and plan facts against the registry rather than relying on the retired-string scan.
+
+**Validators:** `verify-facts --report` exit 0; `verify-facts` exit 0; `verify-case`, `verify-migration` (15 passed after two register-naming slips in the draft and FACTS.md were reworded), `verify-sources`, `build-appendix --check`, `verify-editorial` unchanged from P0.

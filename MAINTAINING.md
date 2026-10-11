@@ -17,6 +17,8 @@ CASE.md               Canonical Cole household case block, the source of truth
 CHANGELOG.md          Human-readable record of every revision
 MAINTAINING.md        This file
 docs/deferred-work.md The single register of open work. Nothing else tracks it
+facts/FACTS.json      The volatile-fact registry: model names, prices, plans,
+                      leaderboards, regulation dates. FACTS.md is generated from it
 audit/                Dated audit reports against the lesson-builder protocol
 .nojekyll             Tells GitHub Pages to serve files as-is
 ```
@@ -131,6 +133,35 @@ RESTYLE_SWEEP=/path/to/restyle_sweep.py python3 scripts/build-changelog.py
 
 `validate_dom.js` needs jsdom, which is not a repository dependency: see
 "Change-folder checks, and jsdom" below.
+
+**The volatile-fact check runs with the gate, with or without the skill.**
+`facts/FACTS.json` is the single source of truth for every volatile fact a page
+or an instructor note states: model names and ids, API and plan prices, plan
+features, leaderboard figures, regulation and guidance dates. Each record carries
+the value, its source, the date it was last read, an H/M/L/GAP confidence, a
+volatility, a re-verify window and the retired strings that must not appear on a
+served page. `scripts/verify-facts.mjs` fails on (a) any retired string in the
+hub, a lesson, a case page or an instructor note, (b) a high-volatility record
+whose `retrieved` date is older than its window relative to `--as-of` (14 days
+for `each-session`, 180 for `term-start`), and (c) a `data-fact="<id>"` chip or a
+`FACTS:<id>` note citing an id the registry does not hold. `--report` lists
+everything and exits 0; `--session N` narrows the scope to one session's files.
+
+```bash
+node scripts/verify-facts.mjs                       # the gate: exit 1 on a, b or c
+node scripts/verify-facts.mjs --report              # every hit, exit 0
+node facts/build-facts-md.mjs                       # FACTS.json -> FACTS.md (generated; never hand-edit FACTS.md)
+node facts/build-facts-md.mjs --check               # exit 1 if FACTS.md is stale
+```
+
+**The week-before-each-session ritual.** Run
+`node scripts/verify-facts.mjs --as-of <session date> --session <N>`. For every
+record it lists as stale, re-open the source, correct `value` and `statement`
+if they moved (moving the old value into `retired_values`), set `retrieved` to
+the day you read it, regenerate `FACTS.md`, and re-run the Phase 5 sweep on the
+pages the record's `applies_to` names. Commit `FACTS.json` and `FACTS.md`
+together. A record whose source is unreachable keeps its confidence at M or L
+and says so in `notes`; nothing is filled from memory (PEDAGOGY §1.11).
 
 **Red by design for `session-2`.** The Shift+U override was removed from
 `session-2` by instruction (DW-116), so the page has no `#ovr`, the override's
