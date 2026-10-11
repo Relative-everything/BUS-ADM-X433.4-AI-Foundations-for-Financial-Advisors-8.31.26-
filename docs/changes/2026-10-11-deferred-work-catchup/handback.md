@@ -1,7 +1,7 @@
 # Handback: deferred-work catch-up, Waves 1 to 3, 2026-10-11
 
 Branch `claude/magical-thompson-yhaivm`. `plan.md` is what was approved; `ledger.md` lists every change
-(DWC-001 to DWC-038); `checks.mjs` pins the ones a static or DOM check can cover. This file says what landed, what the review found, and
+(DWC-001 to DWC-039); `checks.mjs` pins the ones a static or DOM check can cover. This file says what landed, what the review found, and
 what is left for you.
 
 ## 1. What landed
@@ -15,7 +15,7 @@ what is left for you.
 | record | `83f6ba5` | Wave 2's closures in the register; DW-159 to DW-161. |
 | review | this commit and the two before it | The review's corrections and fixes (section 2). |
 
-Register after the pass: 165 rows, 81 open, 66 closed, 18 superseded. Every id appears once
+Register after the pass: 170 rows, 86 open, 66 closed, 18 superseded. Every id appears once
 (`checks.mjs` DWC-001).
 
 ## 2. The review
@@ -49,7 +49,7 @@ and DW-121.
 **What it found and this pass did not fix** (rows opened): DW-162 (`drags.mjs` cannot report which
 fonts it measured), DW-163 (Session 5 §07's route list drops steps past nine, so a typed question can
 hide the record-writer), DW-164 (§07 wires cross desk 3's labels), DW-165 (`inject-case.mjs` has the
-same symlink guard defect). Nits left as they are: the case-layout check does not see a `<style
+same symlink guard defect), and, before the merge, DW-166 to DW-170 for the findings left unfixed. Nits left as they are, now each a row: the case-layout check does not see a `<style
 media>` attribute, CSS nesting or a rule after `CASE:END` (documented); the classifier's R2 bug in
 session-0.1's head comment (DW-104).
 

@@ -76,9 +76,9 @@ changed on any page, and no em dash was added or removed from lesson prose.
 
 - **`docs/deferred-work.md` re-cut for a taught course.** A 2026-10-11 header that wins over the
   three earlier ones, now kept as history; a Closed table; 9 rows closed that were already closed
-  on the tree, 5 superseded by later decisions, DW-041 re-owned, and 35 rows added (DW-131 to
-  DW-165): deferrals the Session 3, 4 and 5 passes recorded only in their own folders, checks that
-  were red, the register's own defects, and what Wave 2 and its review found and did not fix. A
+  on the tree, 5 superseded by later decisions, DW-041 re-owned, and 40 rows added (DW-131 to
+  DW-170): deferrals the Session 3, 4 and 5 passes recorded only in their own folders, checks that
+  were red, the register's own defects, and what Wave 2 and its reviews found and did not fix. A
   five-lens review of the pass reopened DW-092: the Session 1 corrections were never delivered in
   class.
 - **`verify-case.mjs` now asserts the seven copies of the lesson-local case-viewer layout agree**
@@ -100,6 +100,26 @@ changed on any page, and no em dash was added or removed from lesson prose.
 - **Stale statements corrected with dated notes**: `docs/spine-brief.md` (DW-032), two sentences of
   `docs/repo-updates-plan.md` (DW-033, DW-102), MAINTAINING's superseded follow-ups struck through
   (DW-102), two copies of an old skill path (DW-080).
+
+### The review of this pass
+
+Waves 1 to 3 were read by a five-lens adversarial review (Session 5, the pages, the scripts, the
+documents, the register), each serious finding re-run by a second reviewer before anything changed,
+and the text written in answer was then fact-checked again. What it changed, beyond the corrections
+already folded into the bullets above:
+
+- **DW-092 reopened.** The corrections slot for Session 1 did not run on 2026-09-14, and no record
+  says the backlog was delivered; whether the Canvas post went up is the instructor's to confirm.
+- **Three checks that failed open now fail closed.** `verify-case.mjs` did nothing when run through
+  a symlinked path; `build-unsourced.mjs` could exempt a real string its lexer misread as a
+  comment; `build-changelog.py` ignored `RESTYLE_SWEEP`. Each was proved on scratch copies.
+- **The register's own text**: about thirty dated corrections, two builder calls moved out of the
+  header's table of instructor decisions, a Poll 2 default withdrawn that would have broken a page
+  and poll that already agree, and nine new rows for what the reviews found and this pass did not
+  fix (DW-162 to DW-170).
+- **The catch-up's own checks**: `docs/changes/2026-10-11-deferred-work-catchup/checks.mjs` pins
+  the register's integrity, CASE 4.5, each page change and the three script fixes, two of them by
+  running the script.
 
 ### Corrections to earlier entries
 

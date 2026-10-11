@@ -117,7 +117,7 @@ say(existsSync(`${FOLDER}/plan.md`) && existsSync(`${FOLDER}/ledger.md`) && exis
   say(fence(page) && fence(page) === fence(read('index.html')), 'DWC-028', 'changelog/index.html carries the corpus style fence, not the empty one build-changelog.py writes without the skill');
   const entry = page.slice(page.indexOf('<h2>2026-10-11'), page.indexOf('<hr>', page.indexOf('<h2>2026-10-11')));
   say(/<h2>2026-10-11 · The deferred-work register catches up/.test(page) && !/\*\*|`|(?<![\w*])\*[^*\s]|\]\(/.test(entry), 'DWC-028', 'the 2026-10-11 entry is rendered with no raw markdown (bold, code, emphasis or link syntax)');
-  say(/All six were behind/.test(entry) && /§05's price chip/.test(entry) && /35 rows added \(DW-131 to DW-165\)/.test(entry), 'DWC-038', 'the served entry carries the review\'s corrections: all six stamps, §05, 35 rows'); }
+  say(/All six were behind/.test(entry) && /§05's price chip/.test(entry) && /40 rows added \(DW-131 to DW-170\)/.test(entry) && /The review of this pass/.test(entry), 'DWC-038', 'the served entry carries the review\'s corrections and section: all six stamps, §05, 40 rows'); }
 
 console.log(`\nsummary: ${fails === 0 ? 'all passed' : fails + ' failed'}`);
 process.exit(fails ? 1 : 0);
