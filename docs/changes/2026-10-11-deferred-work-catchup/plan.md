@@ -418,3 +418,31 @@ serves. Nothing in this environment reached the Pages host; the Cowork prompt's 
 footer checks are the test. Second: that the six egress-blocked hosts stay blocked for the
 instructor's own sessions; if a cloud environment can reach irs.gov and artificialanalysis.ai,
 most of Wave 5's reading moves off the instructor's desk and only the attestation stays there.
+
+## 10. Corrections after the review, 2026-10-11
+
+Added after Waves 1 to 3 landed and a five-lens adversarial review read them (`handback.md`). The
+sections above are kept as approved; where they and this section differ, this section wins.
+
+- **§3a, DW-092.** It was not closed on the tree. The corrections slot did not run on 2026-09-14
+  and no later record says the backlog was delivered; DW-092 is open again, owned by the
+  instructor, and carries the three spoken mismatches that were recorded only on DW-041. So §3a
+  closes 9 rows, not 10.
+- **§4, DW-131.** The web fonts are Bricolage Grotesque, Source Serif 4 and JetBrains Mono, not
+  Inter, and D-04's failing pairs were station lines, not the token and stamp. §7's second step for
+  DW-131, a font-abort in `drags.mjs`, was not taken: it would measure fallback metrics a learner
+  never sees. DW-162 asks for the check to report which fonts it measured instead.
+- **§6, D-15.** Only the retrieval-date format reaches frozen session-0.1; the appendix and minutes
+  strings are generated for sessions 1 to 5 only (DW-146). The case for leaving the strings is
+  weaker than D-15 says.
+- **§6, D-16.** *Rebuild Poll 2 to three options* is withdrawn: the page and the poll already agree
+  on four options since 2026-09-18 (DW-148).
+- **§6, D-21 (new).** DW-092, DW-150, DW-152 and DW-157 are the course's carry-overs to the next
+  cohort: the corrections owed to this cohort (was Post 2 posted?), the off-site obligations, the
+  Session 2 audit's page-bearing findings, and whether Session 1's §00, §01 and §07 are rebuilt.
+  Recommended default: post any undelivered corrections now; carry the rest into the next cohort's
+  first pre-flight.
+- **§2.** Wave 1's commit and this plan's first commit were red on `verify-migration` check 1 and
+  3 through a quoted line number (`IRC 1202` read from a locator); `f89a2ce` repaired both. Merge
+  the branch whole, or squash it, rather than cherry-picking the early commits.
+

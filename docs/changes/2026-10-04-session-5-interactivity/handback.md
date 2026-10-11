@@ -216,7 +216,7 @@ which reading is right. Nothing on the page changes.
    How it was measured on 2026-10-11: the same expression `interactivity.mjs` uses (the size of
    the set of `data-comp` values on the `[data-task]` roots), run in jsdom on the committed page
    at three points. At `9325811` (this pass's base): 15 roots, 13 distinct. At `59bc0cb` (this
-   pass) and at `e8d2cee` (the polish commit; the page's next change, the 2026-10-11 Wave 2 layout fix for DW-131, moved only §04 and §07 line pitches and the §07 figure height, no `data-comp` root): 16 roots,
+   pass) and at `e8d2cee` (the polish commit; the page's next change, the 2026-10-11 Wave 2 layout fix for DW-131, moved the §04 and §07 line pitches, the §04 station-box height (58 to 62 units), the §07 figure height and the footer stamp, and no `data-comp` root): 16 roots,
    12 distinct, namely `builder-assembler` 2, `click-map-explorer` 1, `commit-first-mcq` 2,
    `estimate-then-reveal` 1, `multi-column-sorter` 1, `parameter-sandbox` 1, `pipeline-lab` 2,
    `prediction-commit` 1, `retrieval-bridge` 1, `sealed-vote-debate` 1, `timed-ritual` 2,

@@ -6,7 +6,8 @@ catch-up for register row DW-137 (`docs/changes/2026-10-11-deferred-work-catchup
 commit bodies and the two `CHANGELOG.md` entries dated 2026-09-21. Every cell in the last column quotes a commit body or the changelog, with the source named; nothing in that column
 is paraphrased. Some quotes record what was left open and some what a later commit fixed; the open items are
 gathered, quoted, in the last section. Where a commit body states nothing as open, the cell says so. Line numbers are as
-of `f89a2ce` (2026-10-11).
+of `f89a2ce` (2026-10-11); the catch-up's own changelog entry then added lines at the top of `CHANGELOG.md`,
+so find the two 2026-09-21 entries there by their dated headings.
 
 ## What the pass was
 
@@ -59,7 +60,7 @@ Ids run SV-001 upward, one per substantive change, in commit order.
 
 ## What the pass left open, in one place
 
-The five items the register row names, each quoted from its source, with what the tree shows on
+The three open items the register row names (the 12%, the two characterisations, the Reg S-P panel), plus two changes it records (the promotion and the core minutes), each quoted from its source, with what the tree shows on
 2026-10-11. The readings are the instructor's (DW-137).
 
 | Item | Quoted from | State on 2026-10-11 |
