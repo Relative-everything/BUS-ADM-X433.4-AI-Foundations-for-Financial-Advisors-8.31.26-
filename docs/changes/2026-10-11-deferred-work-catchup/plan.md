@@ -149,7 +149,7 @@ PL-013).
 *Corpus-level decisions:* DW-050 (standalone or spiral; expiry passed 09-21; the rebuilt pages
 adopted "callbacks without obligations" de facto, ten surviving callback sites in s3/s4/s5),
 DW-056 (4 `.verify` gates left: hub `:989`, 0.1 `:1019`, `:1641`, s1 `:1308`; none closed by a
-human reading), DW-075 (session-3's four real "tonight" sites `:1187`, `:1202`, `:1605`, `:1856`;
+human reading), DW-075 (session-3's four real "tonight" sites `:1187`, §00's *"Tonight's one thing"*, `:1605`, `:1856`;
 s4/s5 hits are identifiers and prompt text, not deixis), DW-054 (narrowed to `session-0.1:1686`,
 `:1728`), DW-057 (frozen 0.1, nothing owed), DW-130 (scorecard vs rubric, nothing owed).
 
