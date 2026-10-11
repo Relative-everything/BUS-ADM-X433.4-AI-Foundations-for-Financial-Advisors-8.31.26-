@@ -125,7 +125,7 @@ unrecorded and that was a false alarm.)
 | DW-106 | session-2 §00 has no `<h2>`; `data-nav="Session map"` matches nothing | 2 min |
 | DW-119 | `session-2:525` `.scale{display:flex;gap:5px}` no `flex-wrap`; 382 px at 380 | 2 min + measure |
 | DW-077 | no 380 px rule in 0.1 or s1; `#caseBtn` right edge 630 / 615 px at 380 today; mirror session-5's lesson-local `@media (max-width:640px)` at `session-5:811`, outside the STYLE fence, both files one commit | 20 min |
-| DW-043 | seven copies of 17 lesson-local `.case-*` rules agree (md5 `6477aaf7`); the check does not exist; row figures stale (six files, 20 rules) | 30 min |
+| DW-043 | seven copies of 20 lesson-local `.case-*` rules agree (*17* and md5 `6477aaf7` as first written counted single-line rules only; corrected 2026-10-11); the check does not exist; row figures stale (six files, 20 rules) | 30 min |
 | DW-114 S2-25 | `session-2:2886` `reveal()` shows all three; no textarea lock | 20 min |
 | DW-032 | `docs/spine-brief.md:3` "Nothing here is implemented" | 1 min |
 | DW-033 | `docs/repo-updates-plan.md:2806` "Three stay open" then four | 1 min |
@@ -209,7 +209,7 @@ definitions; owner per what the work needs.
 | DW-152 | The Session 2 pedagogical audit (`audit/PEDAGOGICAL-AUDIT-SESSION-2-2026-09-14.md`) is cited nowhere in the register; of its findings the page-bearing ones have no row: F10/FS-3 (session-2 prints no objective and no closing check), F23 (per-token economics taught to a flat-rate cohort, bears on §02), C07/C08 (backdoor-Roth letter provenance; whether Haiku runs Research, the model-selection trap item), F08 (no-client-data rule not restated at the Part 1 assignment). The delivery-only findings (F01-F07, F11-F13, F24-F28, F30) are recorded as read, not rowed | the audit `:514-516`; the 09-18 handback `:300-335` | MINOR | instructor | session-2 |
 | DW-153 | F02 and F01 of that audit: the retrieval bridge and cold open did not run on 09-14; DW-050 and DW-062 were waiting on exactly that second data point and neither row records the answer ("nothing ran") | the audit F01, F02 | HOUSEKEEPING | Claude Code (annotate) | no |
 | DW-154 | Teaching aids built before the last page edit: session-4 aid and rule-key PDFs at `0244094`, page edited again at `be54621` the same day; session-5 aid at `59bc0cb`, page at `e8d2cee` (layout only). Low risk, unrecorded | `instructor-notes/session-{4,5}-*.pdf` | HOUSEKEEPING | Claude Code (rebuild) | no |
-| DW-155 | The 10-04 folder's own inconsistencies: `plan.md:148` "The Gate and the Rubric" vs the page's Scorecard; family counts 13 / 12 / 12 across `plan.md:104`, `handback.md:29`, `ledger.md:17` | the folder | HOUSEKEEPING | Claude Code | no |
+| DW-155 | The 10-04 folder's own inconsistencies: `plan.md:111` "The Gate and the Rubric" (first written as `:148`; corrected 2026-10-11) vs the page's Scorecard; family counts 13 / 12 / 12 across `plan.md:104`, `handback.md:29`, `ledger.md:17` | the folder | HOUSEKEEPING | Claude Code | no |
 | DW-156 | The register itself: 33 `closed` and 9 `superseded` rows sit inside the `## Open` table (no `## Closed` section); DW-121, DW-127, DW-129 `closed` under Open; stale figures inside open rows (DW-043 six files / 20 rules / `563230ac`; DW-056 thirteen gates; DW-075 counts; DW-107 enumeration; DW-019 `recheck_before`) | `docs/deferred-work.md` | HOUSEKEEPING | Claude Code | no |
 
 Two things the sweeps found that are **not** rows: verify-browser rule 13 (fonts certificate)

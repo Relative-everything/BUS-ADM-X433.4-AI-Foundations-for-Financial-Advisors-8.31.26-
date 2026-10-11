@@ -46,7 +46,7 @@ Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with 
 ### Flow
 - Element: `#bridge` (`t-s0`, `retrieval-bridge`). Opener: "Three questions, no notes. Wrong and committed beats right and read."
 - Item 1, tokens: which side of the price is dearer. The room heard "half" on 08-31 (DW-092 item 2); the key says output is five times input on every current tier, so the 6:03 correction lands again here as retrieval. Item 2, context: what travels with a message; the key says all previous history plus the new message, all billed as input (DW-092 item 10, the box is not the window). Item 3, the new-chat rule: your ten-to-fifteen-turn working rule, and the key names it as a heuristic, then gives the two documented reasons, the re-sent history and the vendor's context-rot statement. All three were taught 08-31 (tokens and price 02:12 to 02:22; memory and chat length 01:49 to 02:01; the restart rule 01:50 to 01:57).
-- Reveal all three only after the room has typed; the reveal is all-or-nothing on this page.
+- Reveal only after the room has typed. Each item has its own "Lock and reveal", which locks that box and opens its key; "Reveal all three" locks every box first (changed 2026-10-11, DW-114).
 
 ## s12 (Baseline capture, moved up, 6:21 PM, 5 min) [8:21 CT]
 

@@ -104,6 +104,25 @@ version string means the version is not tracking the data.
 | References | 10 |
 | Feeds | S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#s9` ×6 |
 
+### `src-pricing` — Pricing
+
+| | |
+|---|---|
+| Figure class | `price` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-1 §03, §05 and §06 |
+| References | 9 |
+| Feeds | S1 `#s5` · S1 `#s10` · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| PRICING-001 | S1 | 2026-08-25 | **[UNVERIFIED, needs source]** | per-token input and output rates, cache-hit and batch discounts |
+| PRICING-002 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio; the per-tier input and output rates and the 0.75 rule of thumb quoted in the retrieval bridge |
+
 ### `src-tools3` — When should I use web search, extended thinking, and research?
 
 | | |
@@ -116,45 +135,6 @@ version string means the version is not tracking the data.
 | References | 9 |
 | Feeds | S0.1 `#s1` · S0.1 `#s4` · S0.1 `#s5` ×3 · S0.1 `#s8` ×3 · S0.1 `#s9` |
 
-### `src-pricing` — Pricing
-
-| | |
-|---|---|
-| Figure class | `price` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-13 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-1 §03, §05 and §06 |
-| References | 8 |
-| Feeds | S1 `#s5` · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| PRICING-001 | S1 | 2026-08-25 | **[UNVERIFIED, needs source]** | per-token input and output rates, cache-hit and batch discounts |
-| PRICING-002 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio; the per-tier input and output rates and the 0.75 rule of thumb quoted in the retrieval bridge |
-
-### `src-aa` — Artificial Analysis Intelligence Index and cost-per-task figures
-
-| | |
-|---|---|
-| Figure class | `benchmark_index` |
-| Index version | divergent, see the three pulls below |
-| Last retrieved | 2026-08-13 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-1 §05, session-2 §02 and session-4 Appendix D3 |
-| References | 6 |
-| Feeds | S1 `#s10` ×2 · S2 `#s5` ×3 · S4 `#sWS` |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| AA-001 | S1 | 2026-07-28 | **[UNVERIFIED, needs source]** | index scores and cost per index task for the frontier chart; the body dates the pull 17 and 24 July and the footer dates it 28 July |
-| AA-002 | S2 | 2026-08 | v4.1.1 | index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5; IDENTICAL to the session-1 pull under a later version string |
-| AA-003 | S4 | 2026-08-13 | v4.1 | none typed since 2026-09-25; the frontier and divergence charts left the page with the rebuild |
-
 ### `src-ctxwindow` — How large is the context window on paid Claude plans?
 
 | | |
@@ -166,6 +146,26 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-0.1 |
 | References | 6 |
 | Feeds | S0.1 `#s1` · S0.1 `#s4` ×4 · S0.1 `#s6` |
+
+### `src-aa` — Artificial Analysis Intelligence Index and cost-per-task figures
+
+| | |
+|---|---|
+| Figure class | `benchmark_index` |
+| Index version | divergent, see the three pulls below |
+| Last retrieved | 2026-08-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-1 §05, session-2 §02 and session-4 Appendix D3 |
+| References | 5 |
+| Feeds | S1 `#s10` · S2 `#s5` ×3 · S4 `#sWS` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| AA-001 | S1 | 2026-07-28 | **[UNVERIFIED, needs source]** | index scores and cost per index task for the frontier chart; the body dates the pull 17 and 24 July and the footer dates it 28 July |
+| AA-002 | S2 | 2026-08 | v4.1.1 | index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5; IDENTICAL to the session-1 pull under a later version string |
+| AA-003 | S4 | 2026-08-13 | v4.1 | none typed since 2026-09-25; the frontier and divergence charts left the page with the rebuild |
 
 ### `src-synthid-text` — SynthID: Tools for watermarking and detecting LLM-generated Text
 

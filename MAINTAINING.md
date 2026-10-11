@@ -102,6 +102,39 @@ node scripts/validate_dom.js <repo>/session-N/index.html      # needs jsdom
 python3 scripts/restyle_sweep.py <repo>                       # WRITE the fence
 ```
 
+**Where this repo looks for the skill.** Two scripts here call the skill's
+`restyle_sweep.py`, and both resolve it the same way; the first match wins:
+
+| Order | Set by | Resolves to |
+|---|---|---|
+| 1 | `RESTYLE_SWEEP` (read by `verify-style.mjs` only) | the path of `restyle_sweep.py` itself |
+| 2 | `LESSON_BUILDER_SKILL` | the skill root, with `scripts/restyle_sweep.py` under it |
+| 3 | the home directory | `~/.claude/skills/synced/interactive-lesson-builder/scripts/restyle_sweep.py` |
+| 4 | the home directory | `~/.claude/skills/interactive-lesson-builder/scripts/restyle_sweep.py` |
+
+`scripts/verify-style.mjs` exits 1 when none resolves, naming every path it
+tried and both variables, and warns when a variable is set but names nothing.
+`scripts/build-changelog.py` still writes its page and warns that the page's
+style fence is empty. Synced skills have lived under a uuid-prefixed directory
+on some hosts, which is what the variables are for:
+
+```bash
+LESSON_BUILDER_SKILL=/path/to/interactive-lesson-builder node scripts/verify-style.mjs
+RESTYLE_SWEEP=/path/to/restyle_sweep.py node scripts/verify-style.mjs
+```
+
+`validate_dom.js` needs jsdom, which is not a repository dependency: see
+"Change-folder checks, and jsdom" below.
+
+**Red by design for `session-2`.** The Shift+U override was removed from
+`session-2` by instruction (DW-116), so the page has no `#ovr`, the override's
+label; its chrome carries `id="prog"`, the progress bar, and no label at all.
+`validate_dom.js` asserted `#pnum` when it was last run here, the label's name
+before the corpus renamed it `#ovr` (DW-112). An upstream fix that asserts
+`#ovr` instead will still be red for `session-2`, by design, as are
+`validate_lesson.py` V8 and the DOM-mode Shift+U line (DW-116). Read those
+lines as known, not as regressions.
+
 ## The CASE.md v4.0 migration checks
 
 These live in this repo, not the skill, and all exit 0. Run them from the repo
@@ -118,7 +151,9 @@ node scripts/build-cardsort.mjs --check   # the session-1 card-sort deck and key
                                    # CASE.md Part J and Part H. Fails when a fact
                                    # the deck rests on moves, so a CASE.md edit
                                    # cannot silently orphan the answer key.
-node scripts/verify-case.mjs       # hash every injected block; non-zero on drift
+node scripts/verify-case.mjs       # hash every injected block, and assert the
+                                   # lesson-local .case-* layout rules agree in
+                                   # all seven lessons; non-zero on drift
 node scripts/verify-migration.mjs  # retired facts, allowances, arithmetic, timing,
                                    # and the spine drift guard (check 20)
 node scripts/verify-browser.mjs    # DOM, handlers, flowchart, screenshots (Chromium)
@@ -140,7 +175,30 @@ giving them a fence would embed the whole stylesheet in every lesson six times.
 The wrapper asserts something stricter than the raw sweep: every lesson document
 must be current, **and** the only fenceless files in the tree must be exactly
 those two fragments. A third fenceless file fails it. Use the raw sweep to
-*write* the fence; use the wrapper to *check* it.
+*write* the fence; use the wrapper to *check* it. The wrapper finds the sweep
+through `RESTYLE_SWEEP`, `LESSON_BUILDER_SKILL` or the home-relative candidates,
+in the order the pre-push gate above sets out.
+
+**Two more scripts in `scripts/`, and why neither is in the list above.**
+
+- **`scripts/verify-wolfram-quotes.py` checks quotations.** It byte-verifies
+  every quoted span in `session-1`'s `div.wolf` reading boxes against the
+  assigned article, Wolfram (2023): each span, split at its ellipses, must be a
+  contiguous substring of the article once whitespace, quote forms and HTML
+  entities are normalised on both sides, and it reports the article section each
+  span lands in. **Its input is a plain-text copy of the article, passed as
+  `argv[1]`, and no copy is in the tree**, so it cannot run from a clean clone.
+  Run it with a copy whenever a `div.wolf` quotation changes; it exits 0 only
+  when every span verifies. It is the check behind DW-067 and DW-069.
+
+  ```bash
+  python3 scripts/verify-wolfram-quotes.py <article.txt> [session-1/index.html]
+  ```
+
+- **`scripts/state_space.py` is not a check.** It enumerates the legal
+  configuration space of Session 0.1's context inspector under six sourced
+  constraints and prints its size against the naive grid, and the coverage a
+  50-cell hand-written lookup would give. It asserts nothing and exits 0.
 
 Without the skill, these fallback checks cover the same ground:
 
@@ -168,6 +226,63 @@ for m in 'LMSTYLE' 'LM'; do
 done                                                          # must equal the pairs above
 grep -H '<title>' index.html session-*/index.html            # hub and lessons agree
 ```
+
+## Change-folder checks, and jsdom
+
+Every pass on a lesson since 2026-09-12 leaves a folder,
+`docs/changes/<date>-<pass>/`, and most carry a `checks.mjs` asserting the page
+state that pass produced. None is in the pre-push gate.
+
+**jsdom is not a repository dependency, and most of this verification needs
+it:** every `checks.mjs` from `2026-09-18-session-3-final` on, the Session 5
+section tests (`docs/changes/2026-10-02-session-5-build/section-tests/run-all.mjs`,
+962 assertions on 2026-10-11), the skill's `validate_dom.js`, and the `dom`
+block of `scripts/audit/section_profile.mjs`. Without it the checks stop with
+`Cannot find module 'jsdom'`; the profiler runs on, but records
+`dom.mode: static-only` and computes no rendered counts. Install it once,
+globally, and point Node at it:
+
+```bash
+npm i -g jsdom
+NODE_PATH=$(npm root -g) node docs/changes/2026-10-04-session-5-interactivity/checks.mjs
+NODE_PATH=$(npm root -g) node docs/changes/2026-10-02-session-5-build/section-tests/run-all.mjs
+NODE_PATH=$(npm root -g) node scripts/audit/section_profile.mjs session-5/index.html   # writes docs/audits/profiles/
+```
+
+The three oldest harnesses (`2026-09-13-session-2-manual-pass`,
+`2026-09-13-session-3-manual-pass` and `2026-09-14-session-2-polish`) drive
+Chromium through Playwright instead, resolved the way `scripts/verify-browser.mjs`
+resolves it.
+
+**A `checks.mjs` pins the page its own pass produced, so a later sanctioned
+pass can turn an older folder red.** That red is history, not a regression.
+**The regression set is the newest folder per lesson that carries a
+`checks.mjs`; older folders are the record of what each pass left.** Measured
+2026-10-11 with `NODE_PATH=$(npm root -g)`:
+
+| Lesson | Regression set | 2026-10-11 |
+|---|---|---|
+| `session-2` | `2026-09-14-session-2-polish` | 18 OK, 0 FAIL |
+| `session-3` | `2026-09-19-session-3-simplify` | **1 failed**: *"V6 18 interaction roots (found 22)"* |
+| `session-4` | `2026-09-28-session-4-notes` | 0 failed |
+| `session-5` | `2026-10-04-session-5-interactivity`, and the section tests under `2026-10-02-session-5-build` | all passed; 962 assertions, 0 failed |
+
+Red against later Session 3 passes, and therefore history:
+
+| Folder | 2026-10-11 | Failing ids | Turned red by |
+|---|---|---|---|
+| `2026-09-13-session-3-manual-pass` | 13 OK, 7 FAIL | JN-005, JN-007, JN-009, JN-010, JN-014b, JN-014f, JN-020 | the 2026-09-17 to 09-20 passes: already 13 / 7 at `08684f9` |
+| `2026-09-18-session-3-final` | 2 failed | FF-024, V6 | the 2026-09-21 visual pass: FF-024 at `285adf0`, V6 from `c06592a` |
+| `2026-09-19-session-3-simplify` | 1 failed | V6 | the 2026-09-21 visual pass |
+
+**Session 3 is the exception today.** Its newest folder with checks is
+`2026-09-19-session-3-simplify`, and its one failure is the 2026-09-21 visual
+pass (DW-137), which left no `checks.mjs` of its own. The folder passes in full
+against `08684f9`, the last Session 3 commit before that pass; `c06592a`,
+`9f1518a` and `3711104` take V6 from 18 roots to 22. Until a later Session 3
+pass writes checks or re-pins V6, read that V6 line as history and every other
+assertion in the folder as the regression set. A pass that changes a lesson
+writes its own `checks.mjs`, which then becomes that lesson's regression set.
 
 ## Shared styling
 
@@ -258,9 +373,30 @@ that opened it; the page behind is `aria-hidden` while it is open and only the
 nodes the controller hid are unhidden after; and the selected tab is marked
 three ways that are not colour, plus `aria-selected`.
 
-**The lessons still carry the `.case-*` layout CSS in six copies**, because it
-predates this and the viewer's own rules are emitted into the span instead. A
-new rule goes in `inject-case.mjs`; do not add one to the six.
+**The lessons still carry the `.case-*` layout CSS in seven copies** (the hub,
+`session-0.1` and sessions 1 to 5), because it predates this and the viewer's
+own rules are emitted into the span instead. A new rule goes in
+`inject-case.mjs`; do not add one to the seven.
+
+**`scripts/verify-case.mjs` asserts the seven copies agree** (DW-043). It reads
+every `<style>` body between `/* STYLE:END */` and the `CASE:BEGIN` sentinel,
+drops comments, normalises whitespace, keeps each rule any of whose selectors
+names a `.case-*` class, and compares the ordered list across the seven files.
+Re-indenting is not drift; a changed value, selector, rule order or `@media`
+wrapper is. A file that differs from the largest group fails, by name, with the
+rules only it has and the rules it lacks:
+
+```
+FAIL  layout  session-3/index.html  its 20 lesson-local .case-* rule(s) differ from the 20 in index.html, ...
+        only here:     .case-src{font-size:14px;color:var(--muted);margin:16px 0 0}
+        missing here:  .case-src{font-size:13px;color:var(--muted);margin:16px 0 0}
+```
+
+On 2026-10-11 the seven agree on 20 rules. `#caseBtn.casefab` is outside the
+set, being no `.case-*` rule: today the button sits bottom right in the hub,
+`session-0.1`, 1 and 2 and top right in 3 to 5, and the narrow-screen rules
+that move it are lesson-local. A layout change to the viewer is made in all
+seven lessons in one commit, or moved into `inject-case.mjs`.
 
 ## The retrieval corpus lives in CASE.md
 
@@ -630,6 +766,21 @@ A marker with no annotation, an unknown `weight`, or no `resolve="…"` is a
 **hard failure**: a claim in the register that does not say what would resolve it
 is a claim nobody can act on.
 
+**The register also reads the pre-existing form, `[UNVERIFIED, needs source]`**
+(DW-135). `EDITORIAL.md` A16 declares it for lessons, and until 2026-10-11 the
+generator matched only the two markers above, so A16 reported six markers in
+`session-0.1` that the register never listed. It now reads exactly the forms A16
+declares, over exactly A16's population (regions R1, R2, R7 and R8), and its
+Totals table reconciles with the count A16 prints. Two kinds of marker are
+listed but are not claims: a marker in a script comment, which is the comment
+declaring the convention (A16's own reading), and a marker named inside a CLAIM
+annotation. `session-0.1` is frozen (DW-057) and its markers predate the CLAIM
+convention, so it is the one file in `LEGACY_UNANNOTATED` allowed to carry the
+old form without an annotation; those rows have no weight and sit in their own
+section. Anywhere else an unannotated marker of any form is the usual hard
+failure. **Regenerate the register after any edit to a lesson that moves a
+marker's line.**
+
 ## The case-fact drift surface
 
 `scripts/case-inventory.mjs` answers one question repeatably: **how many
@@ -830,9 +981,10 @@ visible and diffable. A human edits it; nothing infers it at runtime.
 >
 > The bullets below are the pre-register backlog, folded in as DW-029 through
 > DW-032 and DW-037 through DW-040. **Four of them are stale and the register
-> says so** rather than deleting them, so they are not raised again as new: D14
+> says so** (struck through below on 2026-10-11) rather than deleting them, so
+> they are not raised again as new: D14
 > is answered as D20, the 48 Part A violations now measure 0 hard and 13
-> advisory, the 27 mis-wired chips were rewired in Phase 3, and `session-1`'s
+> advisory (0 hard and 2 advisory on 2026-10-11), the 27 mis-wired chips were rewired in Phase 3, and `session-1`'s
 > 17-minute discussion block was closed by DEC-2 / DEC-3. Read the register
 > first; read these for the reasoning behind them.
 
@@ -867,13 +1019,15 @@ visible and diffable. A human edits it; nothing infers it at runtime.
   `&#8212;` entirely, and its "policy unratified" parenthetical is now wrong
   because D1 ratifies it. **The fix belongs in the skill, not this repo**, which
   is exactly why it is written down here.
-- **`docs/spine-brief.md`'s opening paragraph is stale (D17).** It reads
+- ~~**`docs/spine-brief.md`'s opening paragraph is stale (D17).** It reads
   "Nothing here is implemented"; the spine has been implemented since `93904d7`
-  and lives in a string literal in `scripts/inject-case.mjs`.
-- **27 of 193 confidence chips resolve to the wrong source**, two of them
+  and lives in a string literal in `scripts/inject-case.mjs`.~~
+  Fixed 2026-10-11: DW-032 (the brief's opening now says the spine is implemented).
+- ~~**27 of 193 confidence chips resolve to the wrong source**, two of them
   off-by-one cascades. Fixing the wiring is a **precondition** for generating any
-  bibliography, not a follow-up: a generator run today publishes all 27 as fact.
-- **`session-1`'s named discussion block is 17 minutes and
+  bibliography, not a follow-up: a generator run today publishes all 27 as fact.~~
+  Superseded: DW-039 (Phase 3 rewired them; A13 and A15 measure the chips on every run).
+- ~~**`session-1`'s named discussion block is 17 minutes and
   `references/pedagogy.md` s4 says 15.** Until Phase 2 the only copy carrying 15
   was the appendix index card, and the card was wrong about four other sections,
   so regenerating the index from the sections overwrote the one figure in that
@@ -881,7 +1035,8 @@ visible and diffable. A human edits it; nothing infers it at runtime.
   conflict on every run rather than letting the generator settle it by writing
   last. Two readings and the instructor picks: either the block really is 17 and
   the parameter is stale, or it is 15 and two minutes go back to `#s8`, which is
-  where the card said they were. `docs/repo-updates-plan.md` s4.7 carries both.
+  where the card said they were. `docs/repo-updates-plan.md` s4.7 carries both.~~
+  Superseded: DW-040 (closed by DEC-2 / DEC-3: restored to 15, the two minutes returned to `#s8`).
 - **Five sources are listed by a lesson that never cites them**, and none is
   exempt by kind: `src-google-ptcf` and `src-pricing` in `session-2`,
   `src-finra2409` and `src-secpri` in `session-3`, `src-finra2409` in
@@ -894,10 +1049,12 @@ visible and diffable. A human edits it; nothing infers it at runtime.
   `src-aa`, whose three retrievals are registered individually because they
   disagree. Three more are dated to a month with no day. A moving target with no
   date cannot be re-checked, which is the whole purpose of registering it.
-- **D14 is unanswered.** Is session 0.1 in this term's teaching set? A1–A7 have
-  no population in that file and A6 carries a dated skip until it is answered.
-- **48 Part A violations stand, pending the D16 burn-in.** Reported, not fixed;
-  fixing them is a separate task with its own approval.
+- ~~**D14 is unanswered.** Is session 0.1 in this term's teaching set? A1–A7 have
+  no population in that file and A6 carries a dated skip until it is answered.~~
+  Superseded: DW-037 (`EDITORIAL.md` answers it as D20, 2026-08-25).
+- ~~**48 Part A violations stand, pending the D16 burn-in.** Reported, not fixed;
+  fixing them is a separate task with its own approval.~~
+  Superseded: DW-038 (re-measure with `node scripts/verify-editorial.mjs` before re-raising).
 
 ### Closed, and what owns them now
 

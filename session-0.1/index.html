@@ -456,6 +456,13 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
    restated here, byte-identical to session-1's, rather than edited into the
    managed fence, which restyle_sweep.py owns and would overwrite. */
 #ovr{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--on);white-space:nowrap;font-weight:500;border:1.5px solid var(--on);border-radius:6px;padding:4px 9px}
+/* DW-077. The Shift+U badge is the widest item in the topbar. At 380px it
+   pushed Case facts past the right edge (to 630px), and up to about 670px it
+   crowded the button into the bar's right padding. Below 720px the badge is
+   hidden (sessions 4 and 5 keep theirs hidden until revealed) and the title
+   truncates before the button can move. Kept identical in session-0.1 and
+   session-1. */
+@media (max-width:720px){#ovr{display:none}#topbar .ttl{min-width:0;overflow:hidden;text-overflow:ellipsis}#caseBtn{flex:none}}
 /* ===== generated case block, injected by scripts/inject-case.mjs =====
    Layout only. Every figure inside the sentinels comes from CASE.md through
    scripts/case-facts.json; nothing here is a case fact. */

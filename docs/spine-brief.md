@@ -1,7 +1,12 @@
 # Spine brief
 
-**Collected for the instructor. Nothing here is implemented, and nothing here is
-a decision.** CASE.md Part K retires the four-session framing question and
+**Collected for the instructor. ~~Nothing here is implemented, and nothing here is
+a decision.~~** *[2026-10-11: no longer true. The instructor chose candidate A as
+the spine, with candidate C's lever choice as its closing clause, and it has been
+implemented since `93904d7` (2026-08-23): the question lives in a string literal
+in `scripts/inject-case.mjs` and reaches every lesson through the injected case
+block. The rest of this brief is the material that choice was made from, kept as
+it was written.]* CASE.md Part K retires the four-session framing question and
 forbids reintroducing it in any form. It supplies no replacement. This document
 assembles the material a replacement needs and proposes three candidates. The
 choice is the instructor's.
@@ -432,3 +437,5 @@ supply a better answer. It was an instruction to supply a better question.
 
 The three candidates above are candidates. None is implemented. The `VOID: needs
 replacement` markers stay in the source until the instructor picks one.
+*[2026-10-11: superseded; see the note at the top. Candidate A, with C's closing
+clause, is implemented in `scripts/inject-case.mjs`.]*

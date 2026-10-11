@@ -1,7 +1,7 @@
 {
   "file": "session-2/index.html",
-  "file_bytes": 281526,
-  "file_lines": 3302,
+  "file_bytes": 283533,
+  "file_lines": 3335,
   "generated_by": "scripts/audit/section_profile.mjs (read-only)",
   "methods": {
     "words": "validate_lesson.py C1 token rule over section source with script/style/comments stripped (static)",
@@ -218,7 +218,7 @@
     {
       "id": "s0",
       "num": "00",
-      "data_nav": "Session map",
+      "data_nav": "Retrieval bridge",
       "eyebrow": "BUS ADM X433.4 · Session 2",
       "heading": "Practical AI Usage in Daily Advisory Workflows",
       "is_toc": false,
@@ -228,9 +228,9 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 6,
-      "line_start": 1228,
-      "line_end": 1252,
-      "bytes": 1936,
+      "line_start": 1230,
+      "line_end": 1254,
+      "bytes": 1941,
       "allocated_min": 6,
       "words": 149,
       "prose_words": 149,
@@ -242,8 +242,8 @@
           "data_task": "t-s0",
           "data_comp": "retrieval-bridge",
           "icap": "C",
-          "line": 1245,
-          "line_end": 1245,
+          "line": 1247,
+          "line_end": 1247,
           "words_inside": 0
         }
       ],
@@ -287,9 +287,9 @@
         "X433"
       ],
       "dom": {
-        "rendered_words": 239,
+        "rendered_words": 246,
         "rendered_chips": 2,
-        "rendered_controls": 8,
+        "rendered_controls": 11,
         "rendered_hidden_panels": 0
       }
     },
@@ -306,8 +306,8 @@
       "nav_matches_heading": true,
       "nav_contained_in_heading": true,
       "timing_row_min": null,
-      "line_start": 1255,
-      "line_end": 1267,
+      "line_start": 1257,
+      "line_end": 1269,
       "bytes": 1548,
       "allocated_min": 81,
       "words": 143,
@@ -376,8 +376,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 16,
-      "line_start": 1270,
-      "line_end": 1309,
+      "line_start": 1272,
+      "line_end": 1311,
       "bytes": 3733,
       "allocated_min": 16,
       "words": 346,
@@ -390,8 +390,8 @@
           "data_task": "t-s1",
           "data_comp": "work-along-gate",
           "icap": "A",
-          "line": 1278,
-          "line_end": 1288,
+          "line": 1280,
+          "line_end": 1290,
           "words_inside": 10
         }
       ],
@@ -423,7 +423,7 @@
       "gates": [
         {
           "id": "ga1",
-          "line": 1307,
+          "line": 1309,
           "marked_by_component": false
         }
       ],
@@ -457,8 +457,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 15,
-      "line_start": 1311,
-      "line_end": 1370,
+      "line_start": 1313,
+      "line_end": 1372,
       "bytes": 6390,
       "allocated_min": 15,
       "words": 545,
@@ -471,16 +471,16 @@
           "data_task": "t-s2",
           "data_comp": "work-along-gate",
           "icap": "A",
-          "line": 1319,
-          "line_end": 1326,
+          "line": 1321,
+          "line_end": 1328,
           "words_inside": 23
         },
         {
           "data_task": "t-s2b",
           "data_comp": "estimate-then-reveal",
           "icap": "C",
-          "line": 1329,
-          "line_end": 1354,
+          "line": 1331,
+          "line_end": 1356,
           "words_inside": 92
         }
       ],
@@ -514,7 +514,7 @@
       "gates": [
         {
           "id": "ga2",
-          "line": 1368,
+          "line": 1370,
           "marked_by_component": false
         }
       ],
@@ -548,8 +548,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 8,
-      "line_start": 1372,
-      "line_end": 1382,
+      "line_start": 1374,
+      "line_end": 1384,
       "bytes": 755,
       "allocated_min": 8,
       "words": 31,
@@ -562,8 +562,8 @@
           "data_task": "t-cold-open",
           "data_comp": "timed-ritual",
           "icap": "C",
-          "line": 1376,
-          "line_end": 1381,
+          "line": 1378,
+          "line_end": 1383,
           "words_inside": 21
         }
       ],
@@ -621,8 +621,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 5,
-      "line_start": 1384,
-      "line_end": 1436,
+      "line_start": 1386,
+      "line_end": 1438,
       "bytes": 5501,
       "allocated_min": 5,
       "words": 526,
@@ -635,8 +635,8 @@
           "data_task": "t-s3",
           "data_comp": "prediction-commit",
           "icap": "C",
-          "line": 1388,
-          "line_end": 1409,
+          "line": 1390,
+          "line_end": 1411,
           "words_inside": 264
         }
       ],
@@ -703,8 +703,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 16,
-      "line_start": 1438,
-      "line_end": 1472,
+      "line_start": 1440,
+      "line_end": 1474,
       "bytes": 3507,
       "allocated_min": 16,
       "words": 362,
@@ -717,8 +717,8 @@
           "data_task": "t-s4",
           "data_comp": "work-along-gate",
           "icap": "A",
-          "line": 1446,
-          "line_end": 1456,
+          "line": 1448,
+          "line_end": 1458,
           "words_inside": 37
         }
       ],
@@ -750,7 +750,7 @@
       "gates": [
         {
           "id": "ga3",
-          "line": 1470,
+          "line": 1472,
           "marked_by_component": false
         }
       ],
@@ -784,8 +784,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 6,
-      "line_start": 1474,
-      "line_end": 1543,
+      "line_start": 1476,
+      "line_end": 1545,
       "bytes": 10709,
       "allocated_min": 6,
       "words": 1074,
@@ -798,8 +798,8 @@
           "data_task": "t-s5",
           "data_comp": "parameter-sandbox",
           "icap": "A",
-          "line": 1529,
-          "line_end": 1542,
+          "line": 1531,
+          "line_end": 1544,
           "words_inside": 111
         }
       ],
@@ -863,8 +863,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 6,
-      "line_start": 1545,
-      "line_end": 1596,
+      "line_start": 1547,
+      "line_end": 1598,
       "bytes": 4901,
       "allocated_min": 6,
       "words": 427,
@@ -877,8 +877,8 @@
           "data_task": "t-s6",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1554,
-          "line_end": 1566,
+          "line": 1556,
+          "line_end": 1568,
           "words_inside": 29
         }
       ],
@@ -942,8 +942,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 7,
-      "line_start": 1598,
-      "line_end": 1652,
+      "line_start": 1600,
+      "line_end": 1654,
       "bytes": 3875,
       "allocated_min": 7,
       "words": 271,
@@ -956,8 +956,8 @@
           "data_task": "t-s6b",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1605,
-          "line_end": 1625,
+          "line": 1607,
+          "line_end": 1627,
           "words_inside": 86
         }
       ],
@@ -989,7 +989,7 @@
       "gates": [
         {
           "id": "g5",
-          "line": 1650,
+          "line": 1652,
           "marked_by_component": false
         }
       ],
@@ -1028,8 +1028,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 5,
-      "line_start": 1654,
-      "line_end": 1671,
+      "line_start": 1656,
+      "line_end": 1673,
       "bytes": 1486,
       "allocated_min": 5,
       "words": 141,
@@ -1042,8 +1042,8 @@
           "data_task": "t-s7",
           "data_comp": "commit-first-mcq",
           "icap": "C",
-          "line": 1667,
-          "line_end": 1667,
+          "line": 1669,
+          "line_end": 1669,
           "words_inside": 0
         }
       ],
@@ -1073,7 +1073,7 @@
       "gates": [
         {
           "id": "g6",
-          "line": 1669,
+          "line": 1671,
           "marked_by_component": false
         }
       ],
@@ -1107,8 +1107,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 6,
-      "line_start": 1673,
-      "line_end": 1730,
+      "line_start": 1675,
+      "line_end": 1732,
       "bytes": 4051,
       "allocated_min": 6,
       "words": 405,
@@ -1121,16 +1121,16 @@
           "data_task": "t-s8",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1691,
-          "line_end": 1691,
+          "line": 1693,
+          "line_end": 1693,
           "words_inside": 0
         },
         {
           "data_task": "t-s8b",
           "data_comp": "builder-assembler",
           "icap": "C",
-          "line": 1699,
-          "line_end": 1705,
+          "line": 1701,
+          "line_end": 1707,
           "words_inside": 17
         }
       ],
@@ -1160,7 +1160,7 @@
       "gates": [
         {
           "id": "g7",
-          "line": 1728,
+          "line": 1730,
           "marked_by_component": false
         }
       ],
@@ -1194,8 +1194,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 16,
-      "line_start": 1732,
-      "line_end": 1764,
+      "line_start": 1734,
+      "line_end": 1766,
       "bytes": 3490,
       "allocated_min": 16,
       "words": 341,
@@ -1208,8 +1208,8 @@
           "data_task": "t-s9",
           "data_comp": "multi-column-sorter",
           "icap": "C",
-          "line": 1740,
-          "line_end": 1748,
+          "line": 1742,
+          "line_end": 1750,
           "words_inside": 4
         }
       ],
@@ -1242,7 +1242,7 @@
       "gates": [
         {
           "id": "ga4",
-          "line": 1762,
+          "line": 1764,
           "marked_by_component": false
         }
       ],
@@ -1279,8 +1279,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 8,
-      "line_start": 1766,
-      "line_end": 1821,
+      "line_start": 1768,
+      "line_end": 1823,
       "bytes": 7413,
       "allocated_min": 8,
       "words": 776,
@@ -1293,8 +1293,8 @@
           "data_task": "t-s10c",
           "data_comp": "multi-column-sorter",
           "icap": "C",
-          "line": 1799,
-          "line_end": 1799,
+          "line": 1801,
+          "line_end": 1801,
           "words_inside": 0
         }
       ],
@@ -1328,7 +1328,7 @@
       "gates": [
         {
           "id": "g8",
-          "line": 1819,
+          "line": 1821,
           "marked_by_component": false
         }
       ],
@@ -1364,8 +1364,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 5,
-      "line_start": 1823,
-      "line_end": 1854,
+      "line_start": 1825,
+      "line_end": 1856,
       "bytes": 2176,
       "allocated_min": 5,
       "words": 196,
@@ -1378,8 +1378,8 @@
           "data_task": "t-s11",
           "data_comp": "work-along-gate",
           "icap": "A",
-          "line": 1833,
-          "line_end": 1841,
+          "line": 1835,
+          "line_end": 1843,
           "words_inside": 10
         }
       ],
@@ -1409,7 +1409,7 @@
       "gates": [
         {
           "id": "g9",
-          "line": 1852,
+          "line": 1854,
           "marked_by_component": false
         }
       ],
@@ -1445,8 +1445,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": false,
       "timing_row_min": 18,
-      "line_start": 1856,
-      "line_end": 1916,
+      "line_start": 1858,
+      "line_end": 1918,
       "bytes": 5238,
       "allocated_min": 18,
       "words": 418,
@@ -1459,8 +1459,8 @@
           "data_task": "t-s12d",
           "data_comp": "sealed-vote-debate",
           "icap": "I",
-          "line": 1866,
-          "line_end": 1872,
+          "line": 1868,
+          "line_end": 1874,
           "words_inside": 47
         }
       ],
@@ -1493,7 +1493,7 @@
       "gates": [
         {
           "id": "ga5",
-          "line": 1914,
+          "line": 1916,
           "marked_by_component": false
         }
       ],
@@ -1530,8 +1530,8 @@
       "nav_matches_heading": false,
       "nav_contained_in_heading": true,
       "timing_row_min": 7,
-      "line_start": 1918,
-      "line_end": 1956,
+      "line_start": 1920,
+      "line_end": 1958,
       "bytes": 3079,
       "allocated_min": 7,
       "words": 233,
@@ -1544,16 +1544,16 @@
           "data_task": "t-s12",
           "data_comp": "timed-ritual",
           "icap": "C",
-          "line": 1930,
-          "line_end": 1946,
+          "line": 1932,
+          "line_end": 1948,
           "words_inside": 64
         },
         {
           "data_task": "t-s12b",
           "data_comp": "work-along-gate",
           "icap": "A",
-          "line": 1952,
-          "line_end": 1952,
+          "line": 1954,
+          "line_end": 1954,
           "words_inside": 0
         }
       ],
@@ -1838,14 +1838,14 @@
     "src-magesh",
     "src-morningstar",
     "src-case",
-    "src-kessler",
     "src-openai-pricing",
     "src-t3-survey",
     "src-irc",
     "src-woelbing",
     "src-davidson",
     "src-wolfram",
-    "src-zheng-persona"
+    "src-zheng-persona",
+    "src-kessler"
   ],
   "dom": {
     "mode": "jsdom",

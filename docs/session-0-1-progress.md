@@ -17,6 +17,8 @@ The repo has no validators, scaffolder, or sweep. All four ship in the skill:
 
     SK=/root/.claude/skills/synced/interactive-lesson-builder
 
+[2026-10-11: the skill now resolves through `RESTYLE_SWEEP`, `LESSON_BUILDER_SKILL` or the home-relative candidates; see MAINTAINING.md.]
+
 Every command runs `python3 $SK/scripts/<tool> .` or `node $SK/scripts/<tool>`,
 with this repo as the positional argument. jsdom is installed at `$SK/node_modules`
 so `validate_dom.js` resolves it and runs in DOM mode. Browser tooling for

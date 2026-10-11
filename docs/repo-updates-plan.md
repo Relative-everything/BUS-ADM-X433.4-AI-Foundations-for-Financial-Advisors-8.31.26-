@@ -34,7 +34,7 @@ re-derive it.
 | **1** | **Phase 0 + narrowed Phase 1** | Premise audit; complexity measurement of sessions 1-4; this file | **done** |
 | **2** | **Phase 2, structure** | sessions 1-4, one pass per file | **done.** Step (b) deleted, not deferred — §13.1 |
 | **3** | **Phase 3, sources** | all six files | **done** — §15. 20 chips rewired, `SOURCES.md` at 57 records, both artifacts generated |
-| 4 | Phase 4, instructor notes | all six files | after Phase 2, because notes are keyed to sections |
+| 4 | Phase 4, instructor notes | all six files | after Phase 2, because notes are keyed to sections. *[2026-10-11: done. PR #10 executed it, merged 2026-08-27 as `f975742`; this row was not updated when it landed.]* |
 | 5-9 | **Phase 5, prose: REDUCE + analogues + citations + vocabulary marking** | one lesson per chat, parallelisable in worktrees | after Phase 3 (citations need the source keys) |
 | 10 | Phase 6, vocabulary | all six files, **`session-0.1` first** | after Phase 3 (A19 joins the bibliography) |
 | 11 | Phase 7, verify and record | repo-wide | last |
@@ -2808,6 +2808,9 @@ open and untouched**, with their reasons: the two consecutive-component
 adjacencies (curriculum), `session-2`'s print nondeterminism (fixing it changes
 interaction logic), A21 (a rule firing on the wrong twelve is worse than none),
 and `validate_lesson` V2 (upstream, registered in `MAINTAINING.md`).
+*[2026-10-11 correction: the sentence names four, not three. All four were
+carried into `docs/deferred-work.md` as DW-026 to DW-029; read their current
+state there.]*
 
 ### DEC-1 — the rewritten bridge item stands, and the distinction is deferred, not dropped
 
