@@ -1,0 +1,636 @@
+Repo updates: 
+NO EM dashes anywhere - remove every em dash in the entire repo and put a clear ban on ever adding them anywhere. Make it impossible for any future claude code update to add an em dash anywhere in the repo without it being clearly flagged and removed immediately. 
+End every session with a simple question that reinforces thej core concept of that session that anyone in the class can answer based on what we learned that night - i will end each class by calling on 1-3 people to answer this and we end on that discussion. 
+Think of trying to reduce the AI complexity by 10-20% across the entire 4 lessons built and apply more financial planning and comparisons ot financial planning software wherevery possible - ex. In the lesson 1 comparing model statistically distribution to monte carlo is a great way to bridge the gap between ai and monte carlo which planners may be more fmialr with as CFPs. The target of this class is CFP students who watn to use AI in their practice - not experts in machine learning taking an AI class. Keep this in mind when rewroking the entire repo. 
+Remove instructor notes across the entire repo - instead now have a separate document called “instructor notes” that accompanies every single lesson . when i am teaching i wouldh ave these up on another screen. These notes should be ALWAYS bullet points - super consise, real;ly just facts, flow of presentation, and sources/direct quotes from sources and direct facts/statistics that i would read and explain to students to accentuate my points where appropriate - students shold NEVER see “isntructor note” on the live build website since the notes are only for me as the creator. 
+Create a new document in the repo called “bibliography” - ensure every single lesson citation and bibliography ties back to this source document that tracks every single reference acroso teh entire repo, date last accessed for data, and every lesson that references thjat source (ex. Wolfram will likely be first here -- it should show the link to the article, article publish date, author, and then it should have a listing of total references -- which for wolfram will be dozens, and it should list each section that references it - so for the SEC compliance sources, only section 4 would reference that, but for wolfram every section would reference it so it would say sections .1, 1, 2, 3, 4,and 5
+New document added that would be a master level check - potentially tied to hte bibliography. It would constantly browse every single live data point in te course and list them all, then i could just use a simple claude code command for this “data pull .md” document to rerun all the data pulls against live sources, recatalouge them all with dates, and then take the estep of updating every single lesson in the repo that has live data
+An example here is in the session 1, section 5 “capability against price” graph - it shows the price per task data from livebench.ai as of July 2026 -- -but i need this data point logged and tracked so that when i reteach this class in April 2027 I just need to tell claude code “uipdate all live data points” and it would reread livebench.ai cost per task rankings and update this live interactive graph. 
+This could potentially be tied into the bibliograph 
+Essetnially this needs to be aa repo wide listing of all live data points in teh entire course so that i can do a full repo live data audit regularly at least every semester to ensure i am not showing any stale data and to make updates easy when new AI models are release since i don't want any data permanently locked to a current model (ex. I don't want opus 5 references still appearing in 2 years when we are on opus 7 or higher). 
+Appendix format: 
+If possible without breaking the code, make the appendix move around based on selection - if i select the full advanced lesson then the appendix should be moved to its appropriate location in the full lesson. This would replace the click to navigate and jump around lesso nstyle. So now instead of current format it would be: 
+Base core only lesson appears by default, but i have the how the lesson is paced box in the top right i can click on to pull up
+The entire appendix is present on the page but at the very bottom, just like now
+After i click on the lesson pacing box - then i can select foundational standard advanced or core only 
+If i select advanced, then the page would reorder sections - moving teh appendix sections up on the page where they are appropriate - NOT just jumping me around the page on navigation 
+Ideally i just click “advanced” and now i can go straight down the page - no need ot jump up/down to the appendix between sdesssions 
+Only execute this if feasible to not break lesson - i would rather have a working lesson i jump around in than an appendix that when i hit advanced it breaks and does not reorder correctly. 
+Every time that Wolfram is ever referenced or quoted, and it should be done often when possible, that quote or reference should be directly tied to its locating the the entire article. The only possible reference sections are listed below, this list can be locked as it is verified direct from the website. Every time wolfram is quoted it must be followed by a citation like “(Where Do the Probabilities Come From?, https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)” so a student can directly reference the reading to learn more about this learning section 
+WOLFRAM REFERNCE LIST OF SECTIONS:
+It's Just Adding One Word at a Time
+Where Do the Probabilities Come From?
+What Is a Model?
+Models for Human-Like Tasks
+Neural Nets
+Machine Learning, and the Training of Neural Nets
+The Practice and Lore of Neural Net Training
+"Surely a Network That's Big Enough Can Do Anything!"
+The Concept of Embeddings
+Inside ChatGPT
+The Training of ChatGPT
+Beyond Basic Training
+What Really Lets ChatGPT Work?
+Meaning Space and Semantic Laws of Motion
+Semantic Grammar and the Power of Computational Language
+So ... What Is ChatGPT Doing, and Why Does It Work?
+Thanks
+Add a “vocabulary” box explaining what jargon and vocab are (ex. Linear axes and Log–log axes in lesson 1 - these should be defined since most people have no idea what linear vs log log is) - whenever usign complex math or ai jargon like this there should be a “vocab” box explaining exactly what vocab is being used in that specific section of the lesson. Ideally also have a “total vocab” box at the bottom of every single lesson appendix that lists all vocab/jargon anywhere in the lesson, a simple definition, and how to learn more. 
+Consider every single interactive activity as almost standalone - if an individual layman could not possibly complete the interactive portion of any lesson section because the jargon/vocab is present then everything must be define with a box or a little (?) click/hover over icon so that each lesson section could be done by someone with zero knowledge or they had just clicked on that lesson for the first time - the vocab is there to explain what everything is and avoid someone giving up early because they don't understand oine section. 
+Example: “N-gram” is vocab, you could explain by referencing “2--grams” and how wolfram gives those as letter pairs - Q and U are a 2-gram and U is always after Q.”. This is how i remember but is just one example of vocab - vocab should help students understand that word, why it exists, and how potentially to apply elsewhere, but vocab should always be ultra concise, ideally never more than 2 sentences for a word and if it could be done in just a few synonyms even better 
+Have tiny (?) question marks above every single vocab word on every lesson - hover over that and it gives a very concise vocab definition. Then at the end of every lesson have a vocab listing after any remaining appendix slides if they are there and that final vocabl listing would be a big table with all vocab used in that lesson, definitions, and a link to read more about that specific vocab word to ensure comprehension. All these links should be included in teh total bibliography. 
+
+Cole Household (more in the cole household facts chat in curriculum dev proj): 
+All following updates are for the cole household case facts across the entire repo and all associated problems - make sure each instance referencing the cole family is updated and analyze if a single reference can be linked to for all lessons now and future to make updates easier in a single place. Anything not changed can remain the same -- but ensure the full household makes logical sense so no new changes would contradict existing information  :
+Update this across the entire repo, after listing all locations the case study is referenced or located and then confirm each was updated wit ha count. 
+List all locations that the cole household is referenced in the entire repo - consider if there is any way to have these link to a single set of golden reference case facts instead of being imbedded on each page - if i make 1 change to the case I want to be certain it is reflected across the entire curriculum. 
+Cole household - make them live in Illinois 
+Make David cole age 63 and not having started social security yet 
+Make Meg age 64 not started social security 
+Update meg to having purchased the CPC stock from her father 10 years ago -- not founder issue
+Keep meg/david married and having been married for a long time - but IL domicile now. 
+Make balance sheet value of CPC stock $55M instead of $18M -- put the assumption that it is paying $5M/yr of qualified dividends as well. Put taxable brokerage at $2.5M, cash on hand at $1.5M, Tbills at $1M. Otherwise keep same and keep the tech concentration 
+Update recurring thread: 
+Attorney is recommending meg put the majority of her shares in the c corp into a family llc and structure it as a 99% non-voting 1% voting stock for a 30% valuation discount through lack of marketability and lack of control, then make a taxable gift to her IDGT (10% of the newly formed family llc) as a seed gift, then use that seed to buy the rest of the family llc just leaving the 1% of voting shares within Meg’s estate and revocable trust ownership. This would be a demand note and the trust would use the c corp dividends to make the note payments when the dividends are paid. THen the estate pays the taxes for the trust and excess dividends are used to buy more and more discounted shares of the family LLC over time unti lthe trust owns all 99% of the non voting shares having bought them at a discount using dividend payments and making minimum demand note payments unless the estate needs cashflow in which case the note is paid down. 
+Try to make even a simple viisualization of what is happening in the recurring thread for students to understand.-  potentially a very simple visual based estate flowcahrt that can be opened up if they click the top right “case facts” button. 
+Update documents - keep the 2014 buy sell with a $18M value but keep current FMV of business at $55M as said above. 
+Update charitable - assume no DAF owned today, they are giving $80k/yr of cash to their favorite charities. Say that meg chairs the dayton nonprofit and wants to endow it with $5M  at some time in her life but is still discussing this with David.
+Remove “The question that stays open all four sessions “Is the planning window still open now that a buyer has expressed interest, and does a 2023 appraisal still support a 31% discount today? Nobody answers this tonight. Every session returns to it.”
+Remove or replace all consultspeak, MECE action titles, or assertion-evidence structure with literal descriptive titles that are clear and simple for the student, no salesly action language across the entire repo 
+Update all the “open planning questions” to be more focused on the estate transfer with IDGT, adding SLAT provision and how to do that best without reciprocity, the maintenance of the demand note and how to ensure it is followed, how the estate covers the liquidity needed to pay taxes on the large dividends in IDGT annually, and how to best fund the $5M endowment that meg wants to make. Also the main one is how to transition the business to successors and if nathan should take over vs strategic buyer externally 
+
+
+Lesson 1: 
+Replace the title (How the Machine Works, and What It Costs”) with “Prediction, Model Tiers, and the Cost of Using Them “ 
+Remove or replace all consultspeak, MECE action titles, or assertion-evidence structure with literal descriptive titles that are clear and simple for the student, no salesly action language across the entire repo 
+
+
+The very first thing I will do in this lesson is open up a new tab with my own claude while  I screen share and go through eac individual input to claude - add a clear note for this where it is almost like a section but it just says something to the affect of “live claude demo showing how to use all models/teirs/settings/plugins/projects/skills/etc” but in a much cleaner professional way - basically at hte start of class i assume all students know zero about ai or claude and that i have to show them how to even send a prompt before we get started. 
+The second thing i will do in the first class period after i go through how to work claude is then work thortuhg the cole household using the top right box where i click to expand the household - perhaps add a note to review the cole household after i go through hte claude setup 
+Other notes on lesson 1:
+Remove “The question that stays open all four sessions “Is the planning window still open now that a buyer has expressed interest, and does a 2023 appraisal still support a 31% discount today? Nobody answers this tonight. Every session returns to it.”
+In the “work along Name the one figure in this case you would refuse to accept without re-verification, and say why.” - try to rework this so it actually checks if the words entered are relevant to the case study, instead of turning green after anything is typed in. 
+This lesson is meant for the student to view - all text should be studente oriented, nothing should be framed to me aas the person prompting claude to build it - it should be language that would be similar to real educational professional websites like khan academy or skilljar or brilliant
+Example: the session pacing block at the top of page everyone sees is addressed to the instruction - “The core runs in about 67 minutes and is what always gets taught. In a full block, take appendix sections in place at the gold links; in a short one, skip them and the session still closes properly”. This should either be addressed to the student so they can choose the length they want, or it should be hidden with a simple button to reveal just like hte case facts top or shift+U notes on the top right of the page. 
+Example: remove “Instructor note — classroom anchor only
+The Cole household is a teaching anchor. Students build the final project on a real recurring task from their own practice using their own synthetic or de-identified data. Say this out loud here so nobody builds a final-project workflow around Cole.” 
+Remove dates from all lessons and the entire repo except the name of the repo having 8.31.26 in it. I want this to be an entirely repeatable iterative workflow for my classes - there is no need to lock lessons to arbitrary dates when i will be using these lessons for many semesters
+Remove “Scrolls freely — nothing is withheld. Answer panels open on an explicit reveal, or all at once with Shift+U.” - I know this, it uses an em dash with should NEVER happen, and i don't want students to see this text. 
+Remove: “Every example, exercise and quiz item in this session and the next three draws from one synthetic household. Open Case facts in the bar above and keep it open.” - replace it with a more simple title of “Cole household case” or similar to keep the lesson straightforward but also to not promise unverified things (that the whole lesson is based on this one household - hard to confirm if i ever change case facts)
+Redo the “cold open last prompt you sent” - This language is an example of the bad action language to avoid (“Not a good one. Not a work one. The last one, whatever it was, pasted exactly as you typed it — typos, missing context, all of it.”). Just keep this simple- put the last prompt you sent in and the webpage should just check for a few basic things - was it a question, length, did you define output, and perhaps 3-5 other things and then it should show a green check or a red x next ot each .Basically you should identify the core 5-10 things that make a good prompt and then for each cold open and pasted prompt it should show the same good/bad checklist so that students can clearly see their progress - instead of the current one. Also remove all the exces text around this item like: “Whatever you pasted, you wrote it for a machine that does exactly one thing: assign a probability to every possible next token and pick one. Nothing in it read your intent. The rest of tonight is what that sentence actually means.” - this text should be just “Whatever you pasted, you wrote it for a machine that does exactly one thing: assign a probability to every possible next token and pick one. Nothing in it read your intent.” and ideally shorter than that. 
+NO references to “tonight” or “today” or “august 2026” - this course should be time agnostic and repeatable for any future class, so no specific time references should be made at all. Even in the case study do not reference specific current annual numbers (ex. 2026 IRA contribution max of $7500) since i want this course repeatable and reusable for a long time. 
+On 02 · Wolfram, “It’s Just Adding One Word at a Time”
+Make sure this section is updated with the new case facts numbers 
+It is good to quote the source - do more of that when possible, but ALWAYS attribute the direct quote to the section of the reading. 
+Simplify language - instead of “Click a candidate to append it” replace append with “add as the next word”. Whenever language can be made more simple for students it should be - priority is understanding not elitisim of vocabulary. 
+Try to make thjis paragraph shorter and more simple for students to understand “You are the sampler. Each list depended on your last choice, and nothing ever revisited an earlier one. Several paths produce a defensible sentence about the Cole discount; at least one produces a false one, in the same confident register.” 
+Make sure to cite all wolfram quotes (like "a very 'flat' essay, that never seems to 'show any creativity' (and even sometimes repeats word for word))
+On the generate 40 tokens interactive activity - add a list of total possible words known so that students can see how a temp of 0 vs .8 vs 1.6 selects more of the possible words - I think this is helpful, but if confusing or useless you can skip it. 
+Add a “vocabulary” box explaining what Linear axes and Log–log axes are - whenever usign complex math or ai jargon like this there should be a “vocab” box explaining exactly what vocab is being used in that specific section of the lesson. Ideally also have a “total vocab” box at the bottom of every single lesson appendix that lists all vocab/jargon anywhere in the lesson, a simple definition, and how to learn more. 
+More vocab is needed in the box below the graph - and REMOVE THE EM DASHES HERE “ The top candidate holds 23.4% of the mass; by rank 10 a candidate holds 2.3%. Everything past rank 15 looks like zero and is not zero. That tail is where the surprising word — and the wrong citation — comes from.” vocab what the mass is, what is a tail, etc
+Remove “Every control in the lab later is somebody's answer to where to cut anyway.” that is too action title styled i don't like it 
+On the graph try to add perhaps a zoom in box or a measurement showing the non-zero probability of the right tail candidate tokens - maybe show like .000152435% if i hover over that dot on the chart to make this more interactive and visually showing the low odds at the long tails instead  of just saying it “The top candidate holds 23.4% of the mass; by rank 10 a candidate holds 2.3%. Everything past rank 15 looks like zero and is not zero. That tail is where the surprising word — and the wrong citation — comes from.” also remove these em dashes
+On Appendix A1 · Mechanism, deeper:
+Vocabulary must be implemented here - corpus, N-gram, letter pairs, etc. define all . 
+Make it more clear what order 1 vs order 2 vs order 3 is doing - when i click a box it should be obvious what is changing and why. What is the difference between each of these? Can hover-over text explain this? 
+Replace this with an actual exact quote from Wolfram that applies, this is not a quote direct from the source: “From the assigned reading — his figures About 40,000 reasonably common English words. A web crawl holds a few hundred billion words; digitised books another hundred billion. But the number of possible 2-grams is already 1.6 billion, and 3-grams 60 trillion. At 20-word fragments, "the number of possibilities is larger than the number of particles in the universe."  use https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/
+If you could find the numbers on ohw many 2-gram word pairs there are in chinese vs english that would be an interesting addition note on this appendix section when looking at hte slider to show ngram of 1-8 words and how the curoff is 60 trillion possibilities 
+Remove this or simplify to more direct factual language: “Two notches past three and the argument is over. What remains is to build something that estimates the probability of sequences it has never seen.” 
+
+
+
+
+ON Appendix A2 · Mechanism, deeper
+This is good but way too complex for the first lesson - break down every single part of this, potentially splitting into 2 sections entirely. Explain what is the “A” variable, what is the “BX” variable etc. a full listing of each input vairalbe, what it is, where it comes from, how ti applies to ai, etc - this needs to be a foolproof section. IT is very complex to look at such a formula for students, so it needs to be broken down into more simple steps
+This is a big flag session - make sure this is marked in analysis audit ont heupdates, i will return here and make sure it is simple and broken out apprporately - think of explaining every single variable, toggle, interaction, etc. What is “fitting” and why is it used? Etc. full explanation. 
+So so complex here - ex give vocab on “Weights in the ChatGPT (GPT-3) neural net and Length of one embedding vector in GPT-3” just think - this is the first ever lesson, and it is already talking about neural nets and vector embedding, which are topics for a lesson 5+ level for artificial intelligence. 
+ 
+On “03 · Tokens and price”
+REMOVE this text and replace with a direct quote from the wolfram reading “About 50,000 tokens exist and only about 3,000 are whole words. Wolfram gives the actual GPT-2 values: "the" is token 914, and " cat" — with the space in front — is token 3542. The space is part of the token.”. This is an example of terribly written text that is addressing the wrong person - you should never talk about wolfram in that phrasing in the course, you should just give the quote and attribute it to wolfram using the citation. If he says it, then show that by giving the quote Do not paraphrase and then attribute, quotes should be used whenever possible
+Overall this section is very good
+Change from “Teaching approximation — real tokenisation is model-specific” - remove “teaching” and just say approximation, but also remove the em dash. 
+Make sure the token counts for the case content are coming from the case.md file since that is the source of truth for the case study of this course
+On “04 · Consequence”
+Replace “ Everything so far was mechanism. This is what it produces.” with something more direct/factual description, ie. this is what the statistical apporixmation of a birthday is - but that is why it fails. Or just a direct citation of a source expliaining why exact data recall is not ideal for AI models. 
+Where it says “Why it guesses instead of abstaining” replace abstaining with some easier word like why it guesses instead of refusing to answer. 
+Determin if there is any way to input an example zebra puzzle or other ai logic puzzle like how livebench.ai tests ai - this would be great ot have students try and attempt for themselves and then click on the answer and it would give students partial credit for a partial logic puzzle answer - instead of hte current interaction of just clicking one toggle and reading, this would be far better
+Include an update on this in the audit of this session updates and call it out specifically to remind me to revisit 
+Remove the instructor notes if still present. 
+Find a way to work in an integration with the new case study detail if possible 
+On “05 · Capability against price”
+The title of “Intelligence Index Plotted Against Cost per Task” is very good, an example of a high quality descriptive title instead of the poor quality action titles. 
+Add in vocab that is extremely clear with multiple examples - what exactly is a “task” in ai measurement terms. Think of how CFPs would consider a task - they would think a fully rewritten email or draft plan is a task, but only if done correctly. Explain how tasks are quantify in ai model analysis and how they may differ from the colloquial idea of a layperson hearing the word “task completed”. 
+Try to link this to the livebench .ai live sources and ranking of cost per task - then whenever i run a full lesson update it would repull all the livebench ai model ranking, and the newest measured cost per task instead of just using these stale numbers constantly 
+This is a key update - remind me of progress here. 
+Try to use some kind of live data or highly cited research study into hte “value of the best” and how if you could have a 50% higher confidence level or to go form 95% confidence level on data validity to 99% is worth many more times than just a 4% updcharge in price. Essentially - sometimes a task needs the extra knowledge that is unattainable in lower level models and when that level of accuracy, reasoning, etc is needed then the cost of the model can certainly justify payhing for it - i don't want students to get oo caught up on cost per task and then think they should never use fable. Some kind of clear example showing how fable can think better and be sued for tasks that sonnet should not be used for to clearly show why people pay more fro a “compelted tasK” - this builds on defining a task, since most students again will not know the ai model training definitona nd just think of a colloquial definition 
+If possible, add in the input/output pricing on the top chat gpt models and gemini so students can see price omcaprison to claude - if not published yo ucan leave these out. 
+
+
+On “06 · Your firm”
+Make this more clear on what usage is implied by meetings per week - are you saying that at 1 advisor and 2 meetings per week if the advisor only uses haiku they spend $4.78 and if they only use fable they spend $48 or is it saying per meeting there is an assumed amount of all 4 models used in some way and that is summed up to compare against a pro or max 5x subscription? If you could make it “prompts per day” instead of meetings per week that would likely be a better measure for students to understand since everyone preps for meetings differently. 
+Add in a “total API cost” under teh subscritpoosn of how much in pure overall API spend the usage would cost if allocated into a single department budget. 
+this section should clearly show: Cost of ai scales as number of usesres rand usage rate of users increases, there are plans from claude for a set amount of usage and they can be a good deal if you use enough ai. But also make usre there is a text box or clearly stated fact - that enterprise claude can have ZDR and other privacy audit tracking that team claude with seats does not offer. In my own practice this is a huge considratoin - we would save money on claude teams, but we use the claude enterprise usage based pricing firmwide since it has better audit security for finance. 
+If there was a way to show the total maoutn of tokens used for each model assumed per advisor usage that would be better - just hink of a truly creative interactive graphic vs linearly sliding bars that just grow at a steady rate is less interactive or lower creativity and less engaging 
+Try to cut text in this section by at least 30% - lots more text and paragraphs here than other sections, too much to read since i will be presenting this in class. Do not remove so much that a solo student could not work though the entire lesson independently without an instructor to hjelp - all lesson should always be solvable without an instructor so students can learn independently .
+
+
+On 07 · Judgment”
+Remove this “Two of these are worth more than the tier they attract. The concentration calculation looks trivial and is trivial — and it is the only item here whose output you can verify in your head, which is exactly why it belongs on the cheapest tier. The meeting summary looks like a mid-tier convenience and is the one most likely to destroy information, because the thing worth preserving is a disagreement and coherent prose is what the objective rewards” - this is way way too much text to proceed the activity. The whole point of interactive sections is that the student learn by doing - not by reading huge blocks of text 
+Perhaps make more simple this “From the brokerage export, compute the concentration of the three technology names that make up 62% of the $4,500,000 taxable account, and format the result as a one-page allocation table.” - I would argue creating a clean and good looking allocation table makes this more complex than haiku and sonnet is better. Drop the table or change answer. 
+Same with the next one “Draft the confirmation email and agenda for next week’s meeting with Meg and David.” -  i would always use sonnet or higher for email client communication. Haiku may miss a factual error sonnet catches and client communication is always high stakes regardless of how templated the email is - I am still responsible for content.
+Maybe make this teachable - have haiku be one option and i will explain why i would use sonnet or higher for UHNW clients 
+On “08 · The line”
+Make sure all of these items are tied direct to the case.md details live 
+The interactivity says to ‘sort” the items but the items canot be moved - fix this interactivity of the section: 
+Either make it so all 8 boxes can be arranged, then you can click ona “check my work” box and it would tell you how many /8 you got right - then you have ot keep reordering them until you have all 8 correct. This way it wont show just the 1 you got wrong, i want students to get all 8 correct before knowing 1 error. Then they also get towork backwards if they move something and it goes from ⅞ t o 6/8 they will know they got another one wrong. 
+Ideally have this interaction be card sorting - have Non public and not idetnifying as 2 primary boxes and then all of the 8 info items in a card stack where i drag/drop each card inot the primary boxes and it either flashes green and keeps it there or it flashes red and pushes the card i dragged  back over on top of the stack and i have to redrag it to the correct section 
+Key update on how this was resolved - make sure ot surface clearly how this interafctivity was reworked 
+Remove all this text, it is bloat with little to offer -= if ther is some reason to keep it, you can keep a maximum of 3 sentences: “De-identification is not deleting the name. A 64-year-old woman selling an aerospace-fastener company in a named metro is one person, and you never typed her name.
+What you are looking at, and what you owe
+The Cole household is what a properly constructed synthetic case looks like: internally consistent numbers that reconcile, a real unresolved technical question, documents that genuinely conflict with each other, and no living person behind any of it. It exists so that this course can teach on specifics without anyone's file being at risk.
+Your final project requires you to build one of these for your own recurring task. Not a de-identified client — a constructed household with invented figures that behave like real ones. That is a graded component, and it is the skill this section is teaching.No client nonpublic personal information may appear in any submission in this course — not in the workflow, not in the deliverable, and not in the build transcript you hand to a classmate. The transcript is the part people forget. It is also the part that gets read by someone other than me.” - remove all this text
+On “09 · Setup for Thursday”
+REMOVE the reference to “thursday” - no specific dates days or times (ie “tonight”) should ever be referenced in teh entire course repo or any lessons 
+Remove “The Week 1 Canvas discussion asks you to build these by the Thursday after this class. This is the only place in the course that shows you where they live.” and remove all other references to canvas - this entire repo and course should standalone without the canvas contentl. 
+This is a great section to build mock system instructions - but way too many words, reduce word count by ~40% without losing meaning. Remove all the canvas references and that should help with word count reduction. 
+On “10 · Close” 
+Update the record it to “buidl a prompt for a skill” -  take the task minutes and output inputs and turn that into a prompt telling claude to help them build a skill around tihs process - basically you are having them write a good prompt by answering component questions in seperate boxes, then combine their answers into one well written prompt they put into claude before next section and then they have already built 1 draft skill by session 2. 
+After makin this update - remove the reference to the final project “This number is a graded component of Final Project Part 1. It is the denominator every efficiency claim you make is measured against, and it cannot be reconstructed later — once you have used a tool on the task, the unassisted time is gone” 
+Remove all the content around “Also due
+Three prompt templates
+An email rewriter, a case-note formatter, a one-page plan summary generator.
+
+
+By Thursday
+Account-level custom instructions
+Built and posted to the Week 1 Canvas discussion. §09 shows you where they are configured.
+
+
+Reading due before Session 2	Portion
+Laplace (1902 / 1814)	Ch. II, "Concerning Probability," pp. 3–8
+Wolfram (2023)	The passage on temperature — you have now used it
+Google (2024), Prompting Guide 101	pp. 3–6, 60–70, two of the nine role examples
+Anthropic (2025), AI Fluency · Morningstar (2025), AI for Advisors	Fun” All of this should be removed - you can keep a “reccomended additional reading here” but do not reference specific homework in canvas - since the course in github is a meant to be standalone without canvas homoewrok needed, never reference canvas or the homework for that sweek or any kind of specific time section.
+Keep the CFP board knowledge topics touched on - that is a good closer section 
+ On “Appendix A3 · Mechanism, deeper” 
+
+
+SECTION 2: “ Practical AI Usage in Daily Advisory Workflows”
+
+Overall updates:
+Remove the “shift + U” to reveal - there is nothing hidden anymore 
+Try to ensure the lesson and all text/content is well aligned with hte syllabus topics for this lesson AND the homework (part 1 of teh finmal project --creating a workflow) - I really want students to leave lesso n2 understanding workflows/skills and practical daily ai usage more, so that is the core goal for theser updates is alinging the lesson with the follopwipng syllabus notes/readings and prepping students for the homework: 
+FROM SYTLLABUS: 
+Practical AI Usage in Daily Advisory Workflows:
+
+
+
+
+Principle: the model samples a plausible answer; it does not compute the true one.
+Laplace’s demon and the origin of probability.
+Prompting frameworks (Persona–Task–Context–Format), advisor templates, and structured peer review.
+Where AI-assisted analysis fits in the seven-step financial planning process, and where it does not.
+The interview rewrite: let the AI ask you questions first.
+Temperature: why the same prompt gives different answers.
+Client intake, onboarding, and advisor communications.
+Researching and applying current tax law to a client's facts; verifying every citation against primary source authority.
+
+
+
+
+Laplace (1902/1814) — Chapter II, “Concerning Probability,” pp. 3–8.
+Wolfram (2023) — the passage on “temperature.”
+Google (2024), Prompting Guide 101 — pp. 3–6, 60–70, and two of the nine role examples.
+Anthropic (2025), AI Fluency: Frameworks and Foundations.
+Morningstar (2025), AI for Advisors: Enhancing Client Conversations.
+Homework Due: Create 3 prompt templates that could be used to rewrite advisor-client communications (email rewriter, case note formatting, one page plan summary generator, etc). 
+
+
+Final Project Part 1 is assigned this session”
+Remove ALL of this worthless/chaff text: 
+“The Cole household
+Synthetic case — teaching anchor only
+
+
+One fabricated household carries every client example. It is not your final-project dataset: Part 1 runs on a real recurring task from your own practice, with your own synthetic or de-identified data.
+
+
+Household
+Meg and David Cole, Barrington Hills, Illinois
+Meg runs Cole Precision Components Inc.; David is a retired hospital pharmacist. US citizens, Illinois-domiciled for life, no liabilities. Balance sheet in the case panel.
+
+
+The asset
+CPC stock: one asset, most of the estate
+A Rockford C-corporation paying its sole shareholder a large dividend every year. Meg bought every share from her father, Walter Hensley, so her basis is what she paid. A competitor has made an unsolicited written inquiry; no letter of intent is signed, and Nathan Cole, in CPC operations, has not been told.
+
+
+The structure
+Non-voting LLC units to be moved to a grantor trust
+A seed gift of non-voting units, then a sale of a much larger block to the same trust for an interest-only demand note, at a discount with no appraisal and no appraiser engaged. Illinois imposes its own estate tax at a threshold neither indexed nor portable; neither spouse has engaged with it.
+
+
+The question every session works on
+How much of the note does she call this year?
+Meg is short $522,086 a year from year 6 while the structure performs exactly as designed. Each $1,000,000 she calls permanently removes $38,200 of future interest, so the gap widens by 3.82% of every call. What does calling it cost her in every year after, and when is a different lever the better answer? No session answers it.
+
+
+Every figure in these cards is the case file's; the household is constructed L.
+Outcome 01
+A working model of sampling
+Why the same prompt returns different text, and what that does to an audit trail.
+
+
+Outcome 02
+A tier-selection rule
+Cost per finished task, benchmarked, rather than cost per token.
+
+
+Outcome 03
+Your own prompts, scored and rewritten
+Three templates, yours or the workshop's, scored element by element; the weakest rebuilt in place.
+
+
+Outcome 04
+A citation verification routine
+Four checks, in order, applied to tax authority you did not write.
+
+
+Nine terms this session uses before it defines them
+Token: the unit a model reads and writes, roughly three quarters of a word; prices and context limits are counted in it. Temperature: the setting that decides how often the model picks a lower-ranked next word instead of the top one. Persona, Task, Context, Format: the four parts of a prompt, who the model writes as, what it does, what it may use, and what shape comes back. Template: a prompt written so that a second person can run it on a new input without asking you anything. Grounded: an answer built only from a named source the model was given to read, so each claim can be checked against that source. Tier: a model size and price class; the choice is made on cost per finished task, not cost per token. Baseline: how long the task takes you today, unassisted, recorded before any tool touches it. IDGT, intentionally defective grantor trust: a trust drafted so that the grantor stays liable for its income tax while the trust, not the grantor, is intended to own what it holds. Non-voting units and a demand note: the LLC interests being sold carry economics but no vote, and the buyer's note can be called for its principal at any time.
+
+
+Before we start
+Open the AI tool you subscribed to, in a new tab, now. Every section below has something to run.
+
+
+Open the three prompt templates you wrote — or use the three supplied in section 04, the workshop.
+
+
+·
+Work along
+Answer all four bridge items and commit each before revealing anything.”
+Change “the last prompt you sent” box - it should JUST say: the last prompt you sent> (box for input)>analyze what ZI typed. Remove all of this text: 
+First run. Keep the result on screen; Session 3 runs the same field and the drift between the two is the measurement.
+
+
+·
+Work along
+Paste your last prompt and run the analysis. Keep it on screen — the comparison across sessions is the point.
+
+
+APPENDIX BOX : 
+On the appendix box that starts with “how this session is paced” - remove all the text excet the interactive buttons of foundations/standard/advanced/core only and the estaimted timing per the 11 core/5 appendix/everything. So this how the session is paced box should cut ALL of this text: 
+“Two ways through this session. The core is 11 sections and about 69 minutes. It stands on its own: nothing in the core depends on the appendix, so reading those sections in order gives you the whole argument.The 5 appendix sections add 81 minutes of optional depth, 150 minutes for everything. Each one is placed in the core at the point it belongs rather than at the back of the file, so you can carry straight on into it and then pick up where you left off. The gold cards under Appendix contents link to each one, and the depth control above sets how many are showing; anything hidden leaves a stub naming what it was, so you can always see what you skipped. They also read on their own afterwards. Core only — appendix hidden. 69 core minutes”
+
+
+Retrieval bridge: 
+Either completely remove OR Totally redo this and replace all the questions, only have 3 questions - focus on the topics I covered specifically in lesson 1 per hte transcript 
+1 question on tokens - either what they cost or just what are they 
+1 question on context - what gets sent along with the text int he context window of a prompt 
+1 question on when to start a new chat - make sure this actually has evidence to support why/when to start a new chat 
+1 - temperature and output variance: 
+The section Commit before the content runs is good BUT needs these changes: 
+After you select the options, it should list out all the possible differences between running the same prompt in teh same model an hour apart: 
+Any other memory changes on the account 
+The hardware the prompt is run on itself change 
+Any other context provided 
+Etc
+Really just list all the possible things that could influence the same prompt/model evne just 60 min apart so students have clear examples after they click on their choice of the 2 optinos 
+Try to reduce this text by at Lest 50% ideally 75%, simplify - this is currently too much jargon or too advanced for the average student in the class, the current tier of complexity is at least 100% if not 2-300% higher than where students are now based on their feedback: 
+TEXT TO REDUCE “If the model always picked the top-ranked candidate, Wolfram notes, you get flat text that sometimes repeats word for word. Picking lower-ranked candidates sometimes produces more interesting text. The parameter governing how often that happens is called temperature, and Wolfram is explicit that there is no theory behind the value — 0.8 is simply what has been found to work for essays. H
+
+
+The slider below applies the actual transformation: each candidate's probability is raised to the power 1/T and the set is renormalised. Low T sharpens the distribution toward the leader. High T flattens it. Then the panel samples the same prompt five independent times so you can see the spread.” 
+Rewrite this section, I like the 3 cards, but totally remove the comparison 4 minutes - this is way too much text and a bad activity idea since students wont undestnad how to do it: 
+Totally delete this text: 
+“Comparison — 4 minutes
+Send this to your own tool three times, changing nothing between runs: Write one sentence on the best thing about AI. How different are the three? Ask one person to read all three of theirs aloud.
+
+
+Then run this, which constrains the output space rather than the sampler: Answer in exactly one sentence, in the form “The best thing about AI is its ability to X.” Choose X from: reason, retrieve, summarise, generate. Output nothing else. Run it three times. Note how much of the variance disappeared and where it went.
+
+
+·
+Work along
+Run the same prompt three times at one temperature, then constrain the output space and run it three more.”
+Then update this text, change consequence 1 to be more FINRA/SEC compliance specific (ie. Having a prompt is not an audit trail and would be flagged in the annual compliance review), 2 is great, change consequence 3 since that is just a fact not a consequence, also try ot shorten all 3 of them: 
+“Consequence 01
+The prompt is not the record
+At any temperature above zero the same prompt produces different text. An audit trail that stores only the prompt has stored the input to a random process, not the output you relied on.
+
+
+Consequence 02
+Re-asking is not verification
+Running the query again draws a second sample from the same distribution. Agreement between two samples is evidence about the distribution's shape, not about the tax code.
+
+
+Consequence 03
+Consumer chat tools do not expose T
+You cannot set temperature in most subscription interfaces. You control variance through the prompt — by constraining the output space — not through a setting”
+Section 2: economics 
+Try to reduce wordcount in thai section without losing meaning -= the first 2 paragraphs especially should be reduced. The content is good, but this is meant as a visual aid not a book the students read themselves. 
+REMOVE all references to “verification needed” - do not add disclaimers here, that is what the bibliography file in the repo is for.
+Most important thing - ADD IN CLEAR EXAMPELS OF EXACTLY WHAT A “completed tasK” actually is defined as, ideally if you could use examples that people/stuendts in wealth management would understand that is best. We cannot keep talking about cost per task without clearly defining what a task is in ai comparison. 
+Remove all this extra text: 
+“Decision — 4 minutes
+Name the tier you will use for your final project workflow and the reason in one sentence. Acceptable reasons: measured cost per task, a capability the lower tier failed at, a context-window requirement. Not acceptable: it is the newest, it is the most expensive, it is the default.
+
+
+Verification required before this slide is relied on
+Model tiers and their subscription availability change between cohorts. Confirm which tiers your own plan currently reaches at claude.com/pricing before you build a workflow that depends on one. Benchmark rankings are recomputed continuously and can reverse between one pull and the next.
+
+
+·
+Work along
+Estimate your own monthly cost, then find the tier where cost per finished task beats cost per token” 
+Reverify all the numbers in this section in terms of token pricing/outputs against livebench and other updated sources - ensure that all models available as of 9/13/26 are updated 
+Update the “Your own monthly cost estimate”: -- it is not good interactgivitgy because it just basically changes the number. Make some new version of interactively showing teh cost per month, ideally ussing a blend of models. Maybe the slider bars could be in terms of “complex to simple” or repeatable vs undefined? Make the interactive more custom to the person and make it more approachable, and ensure whenever students interact wit the page it should be unique and changing - not just showing different numbers over a static graph. 
+3 - framework (persona task context format) 
+This section is very good, but reduce word count by 20-50% - ideally reduce the first 3 paragraphs most, Keep almost all of “what the evidence says about persona” - that is a greate teaching opportunity 
+Remove all of this text: 
+“Rebuild of the prompt — 5 minutes
+Take the weakest of the three templates you brought, or the weakest of the three supplied in section 04. Identify which of P, T, C, F it is missing. Add the missing components and run it. Keep both versions — you will need the before-and-after for the peer review before Session 3.
+
+
+·
+Work along
+Assemble one prompt with all four P.T.C.F elements and read the assembled text back” 
+
+
+4- workshop: 
+REMOVE all instructor checks/disclamers like this “Requires instructor verification before it is taught as settled” 
+
+
+Remove all this text: 
+“When you wrote yours, you had heard eight checks read aloud and had not seen them rendered, scored or named as a framework. That gap was deliberate.
+
+
+The sequencing exists so that this comparison is available to you. A framework taught before an attempt is a set of rules you comply with. A framework taught after an attempt is a diagnosis of something you already produced, and the gap between the two versions is yours rather than mine. Wrong first attempts followed by correction outperform being told the right answer first, which is the same finding that governs every prequestion in this file.
+Requires instructor verification before it is taught as settled
+The §07 triage key states four authorities as holdings so that citation failure can be taught; nothing else in this session is stated as a holding. Verify each against primary authority before answering it in class:
+IRC § 671 and the grantor-trust rules as the authority behind the IDGT client explanation built in §03 — sound as stated, and stated without its limits.
+Rev. Rul. 85-13 and Rev. Rul. 2004-64, Situations 1 to 3, as the §07 key characterises them, including the conditions the key attaches to Situation 3 (no understanding with the trustee; inclusion still possible from a retained power over the trustee or from creditor-access state law). Confirm against 1985-1 C.B. 184 and 2004-27 I.R.B. before teaching either as settled.
+Estate of Woelbing and Estate of Davidson: the §07 key describes each as a stipulated decision with no holding and states the docket dates, the instrument (self-cancelling installment notes in Davidson) and the settlement figures. Confirm the docket facts before repeating them.
+IRC §§ 2036(a)(1), 2036(b), 2038, 2702 and 7520 as the §07 key and the case structure invoke them, including the distinction between corporate stock and LLC units that the §07 live run turns on. Confirm current text against the Code.
+Portability: the §05 triage item on electing portability names no authority. Confirm current relief before answering it in class.
+The combined discount the memorandum asserts for lack of control and lack of marketability. Nothing in this session establishes that it is defensible, and nothing in the case file does either: no appraiser has been engaged, no restricted-stock or pre-IPO study is on file, and the memorandum allocates nothing between the two components.
+Kessler v. Commissioner is a deliberately fabricated citation used as exercise material in §07, labelled on the page and in the footer” 
+Ideally redo this interactivity in this section - instead of just providing 3 prompts, make it so the 3 prompts can be clicked on and you can highlight the section of each of the 3 example prompts that are PCTF 
+In the section with “Prompt 1
+Prompt 2
+Prompt 3
+Scoring prompt 1
+Paste the prompt exactly as you wrote it, typos included” 
+Make it so that instead of you ranking the prompts, it shows the 3 prompts that were premade from above -- as you click on absent>gestered at > specified>specificeda nd checkable it will change the prompts themselves. So basically i want this to be like the students can click on each level of absent >sp[ecific/checkable for each of PTCF and see how the prompt is build one step at a time, and what gesteured at for a format may look like vs specific and checkable for format,. 
+Basically update the whole interactivity of the “scoring” section to be building prompts step by step using the 3 premade example prompts, but making versions of the prompts with 4 different levels of PTCF so the students cna clearly see versions of bad/absent and then click through to see the changes that get them to specific/checkable 
+The interactive “rewrite hte weakerst” is great- especially preloading teh scafflord is very good. 
+5 -diagnostic 
+Delete this text: 
+“Discussion — 3 minutes
+Item 7 is the one built to split the room. Argue it out before you look at the feedback.” 
+Other than that. This one is good -- perhaps rethink questions but overall no big changes needed here 
+6 - technique: the interview rewrite
+FIX this interactive tick each question -= -when i click on each one it just highlights green and wont reveal until i clujck the bottom button that says reveal the questions - fix this so it reveals them one by one as i click, not all at once from the bottom button .
+Consider either replacing this section or adding 1 more interactive item: 
+Create a reverse prompting interactive section where you can click on different creative question ideas to start a reverse prompting interview where the model helps you write your own prophet
+Perhaps have a few short prompts that kick off this questioning (“my child is having a birthday in 2 weeks, help me plan the party starting with questioning me to learn about their interests and atenedees” and others like that) 
+You can keep the name, but in parentheses add “reverse prompting” since that is the name of modelinterview to create a prompt 
+The example prompt is good, but again this is way too much text for a visual aid, reduce by at least 50% of text, ideally remove the restatement of the cole synthetic case facts: 
+“The Cole Buy-Sell Agreement
+Synthetic case The buy-sell agreement CPC inherited was executed in 2014 and never updated. Its formula produces a value far below the range the company is now indicated at, and the file holds three different values for the same company, each from a different date, a different preparer and a different purpose. You want a summary of what it does and where it breaks” 
+Remove this text: “ Standing constraint
+No real client data and no personal identifying information enters any AI tool at any point in this course, including the box above and including your final project transcript. Synthetic or fully de-identified facts only” 
+7 - verification 
+Give a direct source for this claim or remove it: 
+“Purpose-built retrieval-grounded research products from LexisNexis and Thomson Reuters — sold on the claim that retrieval eliminates the problem — hallucinated on between 17 and 33 percent.” 
+Fix the html since this text is displayed outside the box, it is running over the margin: “ VENDOR MARKETING AT THE TIME CLAIMED “100% HALLUCINATION-FREE LINKED CITATIONS.” THE STUDY FOUND THE CLAIM OVERSTATED” 
+This section is way too advanced, but it is needed the “Citation triage — classify each” 
+I will plan to just use 2-3 of these to show students how i actually verify ai citations - but going find the exact sentence that the citation states and then ensuring it is relevant. I
+I would plan to follow the 4 failure typeds process to teach them - though clarifying how to check if tax law is superseded would be useful, I may use that as an opportunity to teach that tax law is constantly changing and based on court cases so no 100% perfect recrod exists. 
+
+
+8 - workshipo template audit 
+Remove this - remember the repo stands alone and is indepdent of canvas, so do not refer to canvas assignemtnms: 
+“This part runs between sessions: the instructor pairs you after this session, you swap templates, and you run their template on the Cole facts without asking them anything, before Session 3. It is the Session 5 exercise in miniature and the fastest way to discover that a template you find obvious is unusable by anyone else.” 
+The entire “stuctured peer review” section should be redone: 
+Instead of peer review it will be me the instructor running a live audit on a prompt in class - i will have one prepared but will ask the students if they want ot provide me one to review 
+We are NOT going to run this in class, so remove the text that revers to sharing prompts with classmates during session 2 class 
+
+
+9 assignment -- 
+Shorten this significantly: 
+You can keep what it is/handoff but remove the two absolute rules ‘
+Keep part 1 deliverable checklist 
+Delete all of the first draft and all text below: 
+“The First Draft
+A first draft of Part 1: the target task, your model and tier choice with the reason, and your initial prompts. §02 is where the tier reason comes from. This section is where the target task comes from. §04 produced at least one of the initial prompts. You have all three already.
+
+
+Reading for Session 3
+Wolfram — “The Concept of Embeddings” and the opening of “Meaning Space.” Kitces (January 2025) on AI notetaker adoption and satisfaction. Iskowitz (July 2025) on notetakers and compliance.
+
+
+What Session 3 does that this session could not
+Everything in this file has treated the model as a closed system. You improved the output by improving the prompt, because the prompt was the only channel available. §06 made that explicit: the model cannot see the Cole file, so what you type is the entire evidentiary record.
+
+
+Session 3 opens that channel. Grounding lets the model read the actual documents — the 2011 wills, the 2014 buy-sell, the 2023 appraisal, the unexecuted trust instrument — and cite the passages it used. That solves the problem this session could only work around, and it introduces a failure this session could not produce: an answer that is fully sourced, correctly attributed to a real document in your own corpus, and materially wrong, because the passage retrieved was the nearest one rather than the right one.
+
+
+The Cole document set is the corpus. The question that follows you into it is the one §07 left open: which document in the folder actually supports the discount the structure claims. The 2023 appraisal concluded a value for the whole company and contains no discount study at all, so the honest answer the folder gives is none of them. Finding that out is the exercise. It is also the first half of the recurring question: before you can advise Meg how much of the note to call, you have to know which document in the folder actually governs the number the whole structure rests on.
+
+
+·
+Work along
+Record your baseline before you leave. It is the one thing in this session you cannot reconstruct later.
+Closing question · one to three answers, out loud, then we go
+Your rewritten template just produced a clean, well-sourced answer on the Cole discount. Name the one check you would still run before any of it reaches Meg, and say why the answer looking right is not a reason to skip it.” 
+Appendix B 2 - laplace : 
+Keep the 2 objective side by side, but then add a new interactiv element in this section as described below here: 
+Task: Add one interactive element, "Three Cups," to the Laplace section of session-2/index.html, implementing Block 0 Option A of the attached draft as a click-through instead of live props. Include one short explanation paragraph tying it to the Session 2 AI principle. Behaviour (4 clicks, in this order): 1. PREDICT. Before Start, one question with four buttons: "After you lift two empty cups, what is the chance the coin is under the last one?" Options: 33%, 50%, 66%, 100%. Selection locks. (Correct: 100%. 66% is the additive error; 33% is "nothing changed"; 50% is "stopped after one lift.") 2. START. Three identical closed cups appear, labelled A, B, C. Readout above them: "Chance the coin is under any one covered cup: 33%". 3. LIFT ONE. Student clicks any cup. It shows empty. Readout updates to 50%. Lifted cup becomes non-interactive. 4. LIFT ANOTHER. Student clicks either remaining cup. It shows empty. Readout updates to 100%. The last cup stays covered, visibly highlighted, with the caption "The coin is here. You never lifted it, and the number still reached 100%." A "Show coin" control is optional; if present it is the 5th click and reveals the coin under the last cup. 5. GAP REVEAL. Show the student's prediction from step 1 beside the actual final value (100%), rendered as a visible gap, not text only (pedagogy s3.3). If they chose 66% or 33%, one line: "The number moved because what you knew moved. Nothing about the last cup changed." 6. DISCLOSURE, shown after step 4 on the page: "This demo always places the coin under the cup you do not lift, so everyone reaches the same beat. The chances shown are the correct ones for what you knew at each click." (Constructed artefact, labelled on page.) 7. RESET. A "Play again" control returns to step 1 with the prediction cleared. Explanation paragraph, placed directly beneath the element, verbatim: "The coin never moved. Your number moved three times, and each time it moved because what you knew changed. An AI chatbot works the same way, one layer down: it writes each word by guessing what comes next, based on what it has read and what you typed. When it sounds certain, that certainty is your number, not the coin. It describes what the model has seen; it does not describe what is under the cup, in the tax code, or on your client's return. Only lifting a cup changes the number. Only opening the source changes the answer." Attach one .conf chip [H] to the sentence "it writes each word by guessing what comes next" with data-src resolving to the Wolfram (2023) footer entry, assigned section "It's Just Adding One Word at a Time". Do not quote Wolfram. Constraints (ranked, MUST > SHOULD > PREFERRED): 1. MUST: readout values are exactly 33%, 50%, 100%. Never 66%. 2. MUST: plain ES5 IIFE, no framework, no build step, no external dependency, no browser storage (pedagogy R8, R9, R12). State lives in JS variables. 3. MUST: keyboard-reachable. Cups and buttons are <button> elements, not divs with click handlers. Visible focus states. Lifted/covered/highlighted states are conveyed by text and shape, not colour alone (s7). 4. MUST: root carries data-task="t-<next unused n>" and data-comp="<family slug for prediction + gap reveal>". Every .conf chip has a data-src resolving to a footer <li id="src-...">. 5. MUST: harvest from component-library.md where a matching family exists; anything written new is marked [NEW] (R11). 6. MUST: no section gating. The element does not lock, hide, or block anything after it (R10). 7. SHOULD: the prediction step (step 1) is retained. It is what lifts the element from Active to Constructive (s3.1). If the user later asks to drop it, the element still counts as an interaction but no longer as a Constructive one; say so in the report. 8. SHOULD: the three cups fit at 380px width without horizontal scroll. 9. PREFERRED: cup lift is a simple CSS transform, no animation library, no images. A cup drawn in inline SVG or CSS shapes is fine. Timing: this element replaces the live-props version of Option A inside the same 3-minute opener budget. Do not change the section's minute allocation. If the Laplace section does not yet exist in the timing table, stop and report; do not absorb 15 minutes silently. Must pass before commit: python3 scripts/validate_lesson.py session-2/index.html --case <CaseName> --purge "<RetiredNames>" --require-timing --require-tagging node scripts/validate_dom.js session-2/index.html python3 scripts/restyle_sweep.py <repo> --check All exit 0. Then a Playwright screenshot of the element in all four states (predict, 33%, 50%, 100% with gap reveal) at 380px and 1024px. Out of scope: every other section of session-2/index.html; the timing table except as noted; assets/*.css; the footer except the one Wolfram entry if it does not already exist; any other session file. Report back: (1) the data-task id and data-comp slug used; (2) whether the element was harvested or [NEW], and from which library entry; (3) new interaction count for the session and distinct component types, with any consecutive same-type repeat named; (4) validator commands with output; (5) screenshot paths; (6) any timing-table change; (7) anything in the draft you could not implement as specified. 
+
+
+
+
+SESSION 3 UPDATES: 
+
+
+Overall: 
+Reevaluate the entire session against the actual syllabus and readings recommended, ideally also look at my claude history on the class and just how simplistic questions students are asking (some have sent in less thant 20 prompts to ai ever) - after section 3 once chunking is brought up the whole lesson becomes too advanced and not on target for what i am trying to teach students here. This session is supposed to be about applying actual ai tools - it goes way too deep in to weightings/chunking and complex ai topics not applicable for the class. Review these syllabus items and especially review the assignedreading, redo the full repo after section 3 (based on my notes below). Make the updates to each section up to 3, then after 3 totally rebuild the remaining interactive elements to redo this lesso and make it way more simple for beginners and align directly with the syllabus objectives for class 3. Make some of the sections just describe how to evene use an ai notetaker, what it is doing, how to rpomtp it, explain how to use claude in word/excel/pptx for client review updates. RAG should be covered , but at a way way higher level than currently -- the complexity in the current session is closer to a ~7-8/10 and the students understanding level is now only around a 2-3/10, so complexity needs to come down in the entire session 3, and the content needs to be redone to focus directly on applying ai models and tools at gathering and documenting client informaotin for a meeting of aclinet with a wealth management professional/CFP -- what does that CFP need to know to make the meeting and intake process efficient using AI? Make sure it alings with this content straight from the syllabus describing session 3: 
+Session 3: Gathering and Documenting Client Information:
+
+
+
+
+Principle: grounding makes it cite your sources, but the nearest passage is not always the right one.
+How AI note-takers work: transcription → extraction → categorization → follow-up.
+Evaluating documentation tools against the planner's confidentiality obligation.
+Security considerations for meeting recordings.
+Documenting the client's personal and financial circumstances and the basis for recommendations.
+Building a grounded meeting-prep assistant: grounding vs. fine-tuning.
+The advisor meeting workflow: prep → capture → summarize → follow-up → log.
+What is RAG and use case in an advisory practice
+Wolfram (2023) — “The Concept of Embeddings” and the opening of “Meaning Space.”
+Kitces.com (2025, Jan. 15), Best AI Notetakers for Financial Advisor Meetings.
+Iskowitz (2025), AI Notetakers and Compliance in Wealth Management.”
+Fix this session so that the coel case facts button to toggle show it is on the top of the page - currently there is no way ot show the case facts from the session 3 page 
+Way too much text - remove at least 25-40% of the total text (NOT counting any text contained within interactive elements), just remove text in the massivme paragraphs of text all over the p[age;. This is just chaff to be removed. Remove asm much text as possible without losing meaning - focus on direct data/ wolfram claims, and simplfiynig those things to for students. 
+Appendix: 
+On the appendix box that starts with “how this session is paced” - remove all the text excet the interactive buttons of foundations/standard/advanced/core only and the estaimted timing per the 11 core/5 appendix/everything. So this how the session is paced box should cut ALL of this text: 
+“Two ways through this session. The core is 13 sections and about 72 minutes. It stands on its own: nothing in the core depends on the appendix, so reading those sections in order gives you the whole argument. The 5 appendix sections add 78 minutes of optional depth, 150 minutes for everything. Each one is placed in the core at the point it belongs rather than at the back of the file, so you can carry straight on into it and then pick up where you left off. The gold cards under Appendix contents link to each one, and the depth control above sets how many are showing; anything hidden leaves a stub naming what it was, so you can always see what you skipped. They also read on their own afterwards.”
+Retrieval: 
+Remove “tonight” from this text and replace with “session 3” - remembverf this repo should standalone individual from tehj canvas or class, so no reference to specific dates or time: 
+“Tonight covers the standard remedy — hand it your own documents and require it to answer from them — and measures how much of the problem that remedy actually removes.” 
+Household: 
+Remove all this text from the body, iti s restatinge the case study: 
+“Same household as every other session. The retrieval corpus, the meeting transcript, the consent items and the documentation exercise all draw from the Cole document set.
+
+
+Course case — synthetic
+The Cole household
+Meg Cole is the sole owner of Cole Precision Components, which she bought from her father Walter Hensley in 2016. What she paid is her basis; she did not found the company. CPC is the great majority of the household balance sheet. David Cole is retired. Barrington Hills, Illinois, and the plant is in Rockford. A competitor sent one unsolicited written inquiry, Meg replied that the company was not for sale, and Nathan, who works in CPC operations, has not been told it arrived. The live transaction: the non-voting units of a new LLC move to a grantor trust [a trust drafted so its income is taxed to the grantor while the assets sit outside the estate] in three steps, a seed gift, then a sale on a demand note, then annual purchases out of the dividend, at a combined discount the file supports with no appraisal at all.
+
+
+Classroom anchor only. Part 1 is built on a real recurring task from your own practice, using your own synthetic or de-identified data. Do not build it around the Coles — your handoff partner would already know every input.
+
+
+The corpus for the next three sections: 2011 wills pouring over to a joint revocable trust, the 2014 buy-sell, the 2023 appraisal, and the unexecuted IDGT instrument and note. Retrieval will fail on it twice, in two different ways, and neither failure will look like one on screen.
+
+
+Case facts are reproduced from the course case anchor and are fully synthetic. No real firm, household, entity or client data appears anywhere in this file. Session 3 syllabus row: grounding principle; note-taker architecture; documentation tools against the confidentiality obligation; recording security; documenting circumstances and basis; grounding vs. fine-tuning; the prep → capture → summarise → follow-up → log workflow; RAG in an advisory practice. Assigned reading: Wolfram (2023), "The Concept of Embeddings" and the opening of "Meaning Space"; Kitces (15 Jan 2025); Iskowitz (29 Jul 2025).
+
+
+·
+Work along
+Order all four verification checks before anything is revealed”
+Cold open
+Totally remove for this session , the reranking the 4 items is good enough
+Delete all of this: ‘
+“”Cold open · standing ritual
+8 min
+The Last Prompt You Sent
+Not a good one. Not a work one. The last one, whatever it was, pasted exactly as you typed it — typos, missing context, all of it.
+
+
+Paste your last prompt, verbatim, from any tool and any context
+Paste it exactly. Do not clean it up — the typos are the useful part.
+
+
+Analyse what I typed
+Paste something and press the button.
+By now the prompt you paste here should look different from the one you pasted in Session 1. Tonight is about the channel the prompt cannot reach: the documents themselves.
+
+
+·
+Work along
+Paste your last prompt and run the analysis. Keep it on screen — the comparison across sessions is the point” 
+
+
+1 - mechanism
+Good section, but way too much text, reduce text in this section by at least 50% and try to keep meaning, keep facts/data and citations from wolfram along with simple explanation sledding into the meaning map so people understand the map
+Consider adding line connectors to the meaning map to make it more obvious the connection between words 
+
+
+2 - the failure this creates/distributional similarity 
+Again - reduce the paragrpahs of text here by 30-60% and keep meaning. The many examples are great (turnip/eagle, alligator/crocdile_), just make more concise since this is a visual aid not a full reading. 
+The intearctive sorting is good, but the html needs fixed. When i click on one item and then click on teh sectio nit belongs to, it should list that item under the section;. Currently when i click an item it just greys that out and then only shows me right/wrong after i select all of them 
+3- RAG mechanically/Retreival mechanisms 
+Again - reduce words - there are 3 full paragraphs of text here when there should be 1 at most, and ideally no paragraph just bullets conciseley stating the concepts for quick intake
+Remove the formula for setting weights - this is far too advanced for this class/students 
+SECTION 3 Restated after big update round: 
+
+
+
+
+Session 4: 
+
+Overall: 
+In all these updates DO NOT make the session more text heavy - keep the same level of interactiviety at minimum, think creatively how to add or make the below changes to the repo without losing interatvitiy and certainly do not jjsut add more text with clickable boxes, creative and memorable interactive sections are priority - i would rather much more simple content with more interaction sections vs exhaustively detailed and comprehensive content that is all text and boring interactions . look at my prior rounds of updates ot understand what i like and dislike and how to remove text/add bullets/make it more concise where possible and focus on interactiv elements 
+Need some things in there on cybersecurity/synth ID - -perhaps i do a worked example live of synth ID showing them generation embedded weioghtings make the watermark 
+I want to show them API usage somehow - ideally just add teh gemin free api to teh session 4 lesson as the add in at the top like the other secession with api add in, Ill spend 5-10 minutes explaingin API accessso they know what it is at least ‘
+Update hte teaching aid document for sessi on 4 - i will try to mainly teach out of the repo, so the sequence should show that and remind me of the core things i need to do in each section that are not in the repo. I don't want to read off the screen i want to read teaching aid and that gives me ideas to lecture while interruption the season work, so i go to sessio n4 section 1 > do interactiv ehtml, lecture on its application for a few minutes> section 2 >lecture >sectikon 3>etc. I need to fill 3 hours but i want it good content the while time. Ideally the teaching aid is a couple bullets of lecture ideas/notes for each one, keep this super simple for me to 100% understand the lecture points and ideally use lecture points to tie the repo back to CFP planning since hte repo is very heavy on ai its elf and less on how to use ai in planning 
+Mkae sure there is a section or the session overall clearly displanys differences between personal claude (ie. $20/mth) and enterprise (seat price + API pricing) and how securfity changes between them - really focus on exactly what security an enterprise account has, perhaps a checklist and showing how secure each think (ZDR/SOC 2 ) makes it and visualize where each astep adds security vs the personal account and how yo ucan use client data on a full secured enterprise plan - section 3 does this a bit, but make it dead obvious so students clearly understsand enterprise vs personal 
+Recommend me 3 concise pieces of reading so i have a complete understanding of the regulatory landscape i will be teaching in this section 
+In the output teaching aid second page also detail a work along live work in the class where i would take a client trtanscrip case notes, clean it manually to remove any NPI on a google doc i screenshare, and hten i use a personal ai account to run some simple question on anonymized data -- only confirm if this is legal and allowed, then add the teaching segment for it in teh teaching aid so i can run live 
+Think of 2-3 other outside repo teaching segments i can run as a live demo of doing somtetihn out side the repo just to mix it up, think of lesson sequence and how to space these out to avoid a boring lecture for whole lesson . 
+The thoruhg--line of the simple sentence i like a lot: “Meg Cole, 64, owns a Rockford aerospace-fastener maker worth $55 million. A competitor wrote asking to buy it.” - make sure when doing all these update sthat this kind of continuity continues in the session 4 repo, just where i want changes try to adjust this to those requisites and add/shorten but keep the core the same so student get famiialr while working throug hte lesson 4. 
+
+Section 1: which ai rules bind you
+Why does thai mention an EU AI act law? That is seemingly not applicable to US CFPs, but if it is applicable keep it, if not replace or remove 
+
+
+Sectino 2: NPI:
+Really good section already - the only thing is perhaps using more examples for NPI and perhaps a few harder ones that are not quite propert nours -- ex the $55M number is a great example of a harer one to catch. The visual on this section is  amazing almost perfect , just add al little more content and make this one longer since it is so good. 
+Section 3: the contract
+This is very good - but reverify every claim in it for all models and setting s and ensure this section is very strongly cited since it iwill cover a lot of vital information
+I recommended claude to students and this class uses claude, so focus on claude but it is great ot have the other models there do not remove any of them but just know claudei s priority 
+Make sure the teaching aid doc uhas a simple flow of how i should do this section , i would think click though each mode land all optinos one at a time ot show differences 
+Since it mentions a contact, consider a new section that shows an enterprise claude or gpt contract, what goes into the contract who signs, what binds them, and how does having a contract change their FINRA duties 
+Appendix D5: tabletop:
+Consider showing an example langauge of the breach plan and what needs to be included there. 
+Give a historical example of a famous data breac hand how they correctly or incorrectly applied these legal principals to alter clients 
+In the teaching aid remind me of an advisor story - i know someone who had a data breach recently 
+If saying a specific trigger requires addressing it, give citation on precedent or why legally that step is the latest you could report and why the next deadline would breach legal duty. 
+I want this section blakc/white so studetnst actually learn something, even if simplistic, vs the grey area. 
+
+
+Appendix D6 · De-identifying
+Add a “reset” button here i can click to reset this section to let me run it again easily without reloading the whole page 
+Vendor oversig 4: 
+This might achieve the contetract detail i mentioned wanting above, consider if that is still neded or if this secito covers that goal already. I like this section 
+The “copy email to vendor” just copies “All six questions are answered yes. Keep the documents that show it.” - fix this and either make it draft an email or perhaps it would draft a sample contract that is ultra simplified (just a few sentences) that shows each sentence how language for each of the 6 items on this section might look in a real contract wit hanthreopic 
+5 - -threats hidden intrstuments: 
+The hidden text s good, perhaps have 1--2 ways they hide text actually listed there (ie. white text or embedded text) - think of the most creative ways like text embedded in images or strange ways email hackers get commands to run on ai assistants checking email 
+For the fixes explain how i would add thait - perhaps for each fix show example prompt language i would have in teh skill or prompt i run for the email check and how that language pprevents prompt injecting and other common techniques 
+Video call - try to find exact real life examples with dollar amounts lost to scams like this with a fake video call, i know students will not believe this is a real risk so use real life evidence to ensure it is front and center. Do not make up a source for this - cross chek at least 3 independent sources to ensure the scam example used is a real case. 
+Maybe the evidence part is covered in the “four attacks, one wall” - think of what is needed in addition and if any changes are needed or this evidence is enough . ideally list $ cost of damages for each as well to gfive students idea of scale 
+Appendix d1 - watermarks 
+Good, but if possible add another part to this section that shows how they watermark bot images and text, not just text 
+One word three rounds - great, very understandable
+Only the right key shows the mark - this is very confusing and not simple enoujgh for students to understand. Make ti more dead obviosu and very clear what is going on here and how each key differs and the heavy rewrite impact. 
+If the watermarks are why the eu law is above, make that a clear callout of why eu law applies for students in this cfp class 
+
+
+Appendix D2 watermark limits 
+Mix up answer order - 1-4 and 4-8should vary between many ways/one right answer, now it is 4 in a row of each so not much guessing to do there 
+Change this wording "A detector result reaches you. What goes in the file?” - make it more clear, what is a detector result, did you find the pattern or not and if so what does that mean. Also does this make sense ? users would seemingly not be able to tell if it has a mark or not, s is this relevant? Make sure this is relevant for CFPs and understanding the mark, don't tell them to check for watermarks since they wont have the key to know 
+06 · The verification burden
+Make sure this calculator is correct - perhaps this is an area to sho w the API partially, maybe not. 
+Price own deliverable is very good - make the language a bit more simple if possible, keep the record vs document audited grounded answers or something liek that using language and vocab taught in the class students are more likely to understand 
+Appendix D3 · Source staleness
+
+Good section - but when something is stale give updated guidance, if temp is no longer a good setting then explain which effort level is best for essays using claude so students can understand old vs new guidec. E
+Even better would be adding another subsection in D3 to show a listing of a few items that were widely accepted guidance in 2023 vs new guidance in sept 2026 or around 2026 to show broadly how the ai landscape has evolved just since 2023 perhaps explain loop engineering vs prompt engineering here as well 
+07 · The record
+Explain where these 4 items are sourced from - what documentation says that these are all needed for rerun examination checks? What is the minum needed 
+Perhaps show how a skill can be made to contain these items with a simple copy/paste block students could take and input to skills tot ensure they keep logs of data for future examinations - looks like this exists now,m so just consider if it needs updates by researching any updated legal guidance nad ensuriugn accuracy citations in this section 
+
+
+
+Session 5: 
+
+Overall feedback:
+Reaanalyze the session html - interactivity that is juts clicking a button to display text is almost not even c olunted as interacgtivity. Being able to drag shapes/ change displays with clicking/ drag/drop items in a selction/etc those are interactions. If i click 1,2 ,3 and each click is just revealing text that is not interactive it is just clickthrough and that is not what i conciser interactive. Redo the interactive y of session 5 making it much more creative and unique - moreso thant session 4, quantify differences and ensure creative interatcity is a priority in the session 5 repo while keeping accuracy and educational quality high. 
+ADD IN A section to this that shows a “enterprise” (or name it something more approcpiarte) skill/workflwo setup. 	
+This should be a simple imagine or visualization showing hwo you can host skkills/agents/workflows in github and centrally update those and let employees use them wit happroved plugins. Showing students a much more advanced form of their final project where they built a simple workflow,m now this would be educating them on how a real firm may do this at enterprise level with 10-15 detailed high quality skills nd agents to execute tehm all orchestrated through normal claude chat interface that employes use and employees don't even need ot know or understand the skills, they just trigger based on the prompts employees sent. Showing hte visualization of this centralized and updated repo fo skills shared to employes is the goal of one thing to add to teh sessio n5 content. 
+01 · The tools change
+Make this more useful and ideally naming more updated models 
+Make it very clear how you can write better skills that do not rly on a single model, instead checking output quality against a rubric vs locked to a model. 
+Include how you can make skills or rules that force model selection and if a non approved model is selected it can stop or intentionalyl hinder the run/limit info output. (ex., my tax research skill checks the most recent claude model releases and only allows a run on the 2 most recen gens t allow me t ime to update since i approve current + future gen models, and only have ot update at each model release) 
+Either remove hte maintainc card or rework this session to be more interactive 
+02 · Explain it
+This is good 
+A lot of the student handoff packages were 5-6 separate files instead of a clean readme.txt + .zip of anything else. Some students had prompts that were split in 3 files (prompt 1, prompt 2, prompt 3 all PDF). Ideally update this a bit to show the difference of a great handoff package (readme + .zip) vs a bad one (lots of scattered/seperated files) 
+03 · Break it
+This is fine, but way too much text and the interaction is just displaying text. Text is fine since this section is on breaking a text based skill, but make this just more concise especially the result/answer key - it is way too much text to be useful on screen during class, reduce this section text by 30% , mainly from answer key and result sections. 
+04 · Improve it
+Good, remove “The Note That Travels With the Improved Version” and either change to a visualization of how the updated skiill/workflow runs or just remove and don't replace ot make more concise 
+05 · Measure it
+Recheck all the original sources and in the reply to this chat on the updates give the sources again and make sure that these citations are right. If the information is accurate ,this section is good, but it is continue on info accuracy 
+IF possible give more specificso n exactly what the tasks measured were instead of generics
+The how long with and without ai on your own is good, i will use that to discuss slop grenades and risk of overdoing ai 
+06 · New tools
+This is almost entirely just clicking to reveal text - not interactive. Teh “your stack” section is worthless, remove or completerely replace it, literally it is just a checklist with nothing additive. Rethink this whole section to be memorable and interactive ,not just click to revbeal text 
+08 · The reading
+Great section - only thing to fix is that the slider bars blur the text in “set your tow confidences”. Fix this so text does not blur or get all weird/fatter when the slider bar setting is near the middle  
