@@ -443,6 +443,6 @@ sections above are kept as approved; where they and this section differ, this se
   Recommended default: post any undelivered corrections now; carry the rest into the next cohort's
   first pre-flight.
 - **§2.** Wave 1's commit and this plan's first commit were red on `verify-migration` check 1 and
-  3 through a quoted line number (`IRC 1202` read from a locator); `f89a2ce` repaired both. Merge
+  3 through a quoted session-3 line number that the check reads as the retired IRC section; `f89a2ce` repaired both. Merge
   the branch whole, or squash it, rather than cherry-picking the early commits.
 
