@@ -12,7 +12,7 @@ Resume rule (RUNBOOK A.1.6): read `RUNBOOK.md` (A.0 first), this file, `DECISION
 | 4a | done | 2026-10-12 | 2026-10-12 | (P4a commit) | none required; register built from eight scans; `verify-migration` unchanged from Phase 3 (1c and 4 red: the v4 prose the register now lists) |
 | 4b | done | 2026-10-12 | 2026-10-12 | (P4b commit) | verify-case 0 · verify-migration 1 (session-0.1 only, Phase 8) · verify-sources 0 · verify-facts 0 · verify-editorial 0 · test-editorial 1 (T7 ratchet fall, documented) · test-case-viewer 0 · verify-browser 0 · live-console 0 · verify-style 1 (env) |
 | 5 | done | 2026-10-12 | 2026-10-12 | (P5 commit) | verify-facts 0 · verify-sources 0 · verify-case 0 · verify-migration 1 (session-0.1 only) · verify-editorial 0 · test-editorial 1 (T7) · test-case-viewer 0 · verify-browser 0 · live-console 0 · verify-style 1 (env) |
-| 6a | pending | | | | |
+| 6a | done | 2026-10-12 | 2026-10-12 | (P6a commit) | none required; proposal tables sum to 150 (125) per session |
 | 6b | pending | | | | |
 | 7 | pending | | | | |
 | 8 | pending | | | | |
@@ -186,3 +186,18 @@ New FACTS record: `claude-tokenizer-4-7` (H, primary page fetched 2026-10-12: Cl
 Chips per lesson after the sweep (`data-fact` attributes): session-1 25, session-2 11, session-3 13, session-4 56, session-5 14, hub 0 (no volatile statement outside the generated span); instructor notes carry 100 `FACTS:` citations.
 
 Left as labelled snapshots, for the deferred-work register (D-042): the Session 1 July 2026 frontier scatter and the Session 2 August 2026 cost-frontier chart (per-task costs FACTS does not hold), the OpenAI per-token rates on Session 2 (M), src-aa `index_version.session-1` still `[UNVERIFIED, needs source]`, src-kalai's `last_retrieved` (a run date, not a retrieval), the EU AI Act and state-law dates on Session 4 and in the Session 4 notes (not in FACTS, left as written), the retention-toggle default sentence on Session 4 (FACTS says the privacy page does not state the default).
+
+## Phase 6a: section drop and add proposals
+
+`docs/next-term/P6-section-proposals.md`: per-session tables with every row marked ACCEPT-HYPOTHESIS, MODIFIED, REJECTED or NEW and tied to an evidence row; R3 applied in DECISIONS D-043 to D-046 (the file accepted as written; Session 5's bridge at 5 minutes flagged; Laplace kept as advanced appendix; `sVend` deleted and Session 5's `s8` folded into `s5`).
+
+| Session | Core before | Core after | Appendix before | Appendix after | Total | New core | New appendix | Deleted |
+|---|---:|---:|---:|---:|---:|---|---|---|
+| 1 | 69 | 60 | 81 | 90 | 150 | sCase | none | none |
+| 2 | 69 | 63 | 81 | 87 | 150 | sCase | sZ, sDel | none |
+| 3 | 67 | 61 | 83 | 89 | 150 | sCase | none | sVend |
+| 4 | 67 | 60 | 83 | 90 | 150 | sCase | sAud | none |
+| 5 | 59 | 45 | 66 | 80 | 125 | sCase | sE6 | s8 (folded into s5) |
+
+Shared moves: the cold-open ritual becomes the case opener from `cases/case-N.html` (10 min, core), the named discussion moves into core at 15 min, the retrieval bridge takes 7 min in core (Session 5 keeps 5). Every core keeps at least six interactions, at least six component types with no two alike consecutively, one commit-before-reveal activity and one case link.
+
