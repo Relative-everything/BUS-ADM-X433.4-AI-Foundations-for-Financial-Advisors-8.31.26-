@@ -27,7 +27,7 @@ around it:
   training tier (plan A) and a paid key the contract tier (plan C). The prompt starts as the clean
   Prompt D. Page 2, D of the aid is the six-minute script.
 - **§02 has a second card, The Harder Ones.** Seven phrases that are not names (a title, an exact
-  age, a headcount, a dated family sale, $55 million, a spouse's profession, a village) with a
+  age, a senior community, a dated graduation, years married, a spouse's profession, a town) with a
   locking guess (how many of the nine numbered phrases still point to her: all seven) and a
   people-who-fit figure whose sieves dissolve as phrases are replaced.
 - **§03 has a ladder under the map: Personal or Firm Account.** Six rungs (training off, retention
@@ -130,8 +130,9 @@ The page was rebuilt whole. What you will notice:
   **Verify before teaching** at the end of this sheet.
 - **The cold open is choose-one-of-four.** Your decision of 2026-09-17. Four beginner prompts,
   one click, the same eight checks. Prompt D scores highest (5 of 8) and is the one nobody could
-  send: it names Meg, her age, her company, its value and the letter Nathan has not been told
-  about. §02 reopens it. An optional paste box sits under the four, off the one-click path.
+  send: it names Meg, her age, her employer, her town, her husband's job and the card debt her
+  daughter asked them not to tell her brother about. §02 reopens it. An optional paste box sits
+  under the four, off the one-click path.
 - **No Session 1 baseline is presupposed anywhere.** §06 asks for "your best estimate, or keep 90".
   The Part 1 checklist says "your best estimate if you never timed it". The D4 discussion asks for
   the §06 figure.
@@ -213,10 +214,10 @@ One aloud. Say it with its confidence label.
 
 Each is asked, answered by the room or by you, and not skipped. Nothing else is gated.
 
-1. **[GATE 1] §02, 6:31.** "Her name is gone, the company name is gone. What is still left that
-   points to her?" Answer: the trade and the town together, "an aerospace-fastener maker in
-   Rockford". It is the Session 3 insight; say "you found this last week, Regulation S-P is the
-   rule behind it".
+1. **[GATE 1] §02, 6:31.** "Her name is gone, her employer's name is gone. What is still left that
+   points to her?" Answer: the job and the town together, "a nurse manager at a hospital system
+   in Naperville". It is the Session 3 insight (uniqueness lives in the combination, not in any one
+   field); say "you found this last week, Regulation S-P is the rule behind it".
 2. **[GATE 2] §05, 7:48.** "What stops this attack: better wording in the prompt, or less access
    for the assistant?" Answer: less access, and an approval step before it sends anything.
 3. **[GATE 3] §07, 8:12.** "Record 3: full prompt, full model name, date, full output, the clause
@@ -299,18 +300,20 @@ lane 1 takes 9. **What binds you?**: the four items that name AI drop through th
 0. The pull line: "The duty you are looking for has existed since 1940."
 
 ### s2 · §02, 6:26 · **WORKED 2**
-Ask the guess aloud first ("name and company gone: still one person?"), click **A**; the name and
-company are replaced for you. Gate 1 now: the town column and the trade row still cross on her
-dot, "likely one person". Then the room calls phrases: the trade, Rockford, her son Nathan. The
-meter goes Probably, Possibly, No; at No the crowd reads "dozens". **Copy the clean prompt** and
+Ask the guess aloud first ("name and employer gone: still one person?"), click **A**; the name and
+employer are replaced for you. Gate 1 now: the town column (Naperville) and the job row (nurse
+manager) still cross on her dot, "likely one person". Then the room calls phrases: the job,
+Naperville, her daughter Emma. The meter goes Probably, Possibly, No; at No the crowd reads
+"dozens". **Copy the clean prompt** and
 paste it in chat. D5 and D6 follow this section at Foundational depth; D6 is skipped (demo A covers it) and D5 runs at 7:56.
 
 **2026-09-28, beat 2, The Harder Ones.** After the copy: "Names gone. How many of these nine
 phrases still point to her?" Room guesses 0 to 5+; click it (it locks). Then call phrases: 1 her
-title, 2 the exact age, 3 the 180 employees, 4 the 2016 sale from her father, 5 $55 million, 6 the
-retired pharmacist, 7 Barrington Hills. The big number goes 1 person, a handful, dozens, hundreds,
-thousands, anyone; seven sieves dissolve. Answer: all seven. The two unnumbered-looking phrases (the
-competitor's letter, the task) are safe to keep. **Copy the clean note**; **Start again** resets it.
+title, 2 the exact age (58), 3 her mother's senior community in Wheaton, 4 the daughter graduating
+in May 2027, 5 married 29 years, 6 the husband's job (a senior mechanical engineer), 7 Naperville.
+The big number goes 1 person, a handful, dozens, hundreds, thousands, anyone; seven sieves
+dissolve. Answer: all seven. The two unnumbered-looking phrases (the husband's division news, the
+task) are safe to keep. **Copy the clean note**; **Start again** resets it.
 
 ### s3 · §03, 6:46
 Poll 2 first, and click the room's vendor in the row above the plans. At **Claude**, **A · Free,
@@ -347,7 +350,7 @@ DPA's 48 hours, verbatim, against the rule's 72), then any other. The contract p
 lock and signs when all six are read. **Copy the sample contract** for the room.
 
 ### s5 · §05, 7:42
-Poll 3. Click the majority letter; it locks. **Run the assistant**: three estate files cross the
+Poll 3. Click the majority letter; it locks. **Run the assistant**: three Cole files cross the
 firm's wall, and the summary ends "I also forwarded 3 files". The x-ray and the fixes appear
 only now. **Sweep the x-ray**: the white line in email 3 appears. Gate 2, then show fixes 1 (a warning: not a lock), 2 (approve each
 send: held) and 3 (only what it needs: nothing leaves). Video call: (a) first if the room wants
@@ -506,15 +509,10 @@ answering it in class.
   AI prompt for an audit", November 2025, author not captured. journalofaccountancy.com could not
   be opened, so nothing on the page characterises it. Read it and decide whether §07 should say
   what it recommends.
-- **From the case dialog** (its gate is off this page too, as on Sessions 2 and 3): whether
-  §7872's blended annual rate or §1274's applicable federal rate governs a demand note issued in
-  exchange for property (CASE.md §H.4 records no controlling authority); whether the combined
-  lack-of-control and marketability discount the memorandum asserts is supportable (no appraiser
-  engaged, no restricted-stock or pre-IPO study on file); the Illinois estate tax rate table and
-  the adjusted-taxable-gift add-back (both at M); the Illinois replacement income tax on trusts
-  (CASE.md §D.3 carries the rate at M). Karmazin, Woelbing and Davidson are flagged in CASE.md
-  Part I as settled or stipulated: they decided nothing and are not authority. Nothing tonight
-  asks any of these.
+- **From the case dialog** (its gate is off this page too, as on Sessions 2 and 3): the Illinois
+  estate tax exclusion of $4,000,000, not indexed and not portable between spouses, with Form 700
+  due nine months after a death when the estate is above it, is carried at M in CASE.md §E.2 and
+  §H.4. Nothing tonight asks it.
 
 - **New on 2026-09-28, the ladder and the clause view (§03, §04).** Every Anthropic figure was
   read on 2026-09-27 from claude.com/pricing, the Commercial Terms, the Data Processing Addendum,

@@ -142,8 +142,8 @@ Button labels are the page's own. Where a step says drag, clicking the item and 
 does the same thing.
 
 ### s0 · Opener, 6:03
-Three recall items, answers **b, b, b** by content (the personal plan trains by default; the trade
-and the town; the full prompt, model, date and output). Then **Advance the model** three times:
+Three recall items, answers **b, b, b** by content (the personal plan trains by default; her job
+and her town together; the full prompt, model, date and output). Then **Advance the model** three times:
 the centre box changes, the ring of five does not. Click **5 Hand it over** and read the one
 thing. The Coles in two lines are on the page.
 
@@ -178,7 +178,7 @@ tonight is these four lines. And the package that let a stranger run yours was o
 zip, not eight attachments."
 
 ### s3 · §03, 6:28 · **WORKED 3**
-POLL 2, lock the room's three, **Run all six**. Broke: 2 (invented a value), 4 (picked one story),
+POLL 2, lock the room's three, **Run all six**. Broke: 2 (invented a care cost), 4 (picked one story),
 5 (carried the name and account number). GATE 1. Land: "The input is the finding." The result
 panel is now one line per break; the key is one line per input.
 

@@ -233,9 +233,12 @@ const RETIRED_V4 = [
   ['Cole Joint Revocable Trust', /Cole Joint Revocable Trust/g], ['Rockford Workforce', /Rockford Workforce/g], ['FBO Margaret Cole', /FBO Margaret Cole/g],
   ['AS9100D', /AS9100D/g], ['ITAR', /\bITAR\b/g], ['DDTC', /\bDDTC\b/g], ['NAICS 332722', /332722/g],
   ['credit-shelter', /credit[- ]shelter/gi], ['QTIP', /\bQTIP\b/g], ['Article VII', /Article VII\b/g], ['Article IX', /Article IX\b/g],
+  /* The two dates below carry a lookbehind and a word boundary: SOURCES.md states Anthropic's
+     Consumer Terms effective date and the Haiku 3.5 retirement date, which are true sentences
+     that share the v4 memorandum and letter dates (D-035); \b stops 28 October matching 8 October. */
   ['1 July 2016', /1 July 2016/g], ['4 November 2021', /4 November 2021/g], ['30 May 2014', /30 May 2014/g], ['22 March 2011', /22 March 2011/g],
-  ['12 September 2023', /12 September 2023/g], ['19 February 2026', /19 February 2026/g], ['12 March 2026', /12 March 2026/g],
-  ['8 October 2025', /8 October 2025/g], ['6 April 2026', /6 April 2026/g], ['30 June 2026', /30 June 2026/g], ['31 July 2026', /31 July 2026/g],
+  ['12 September 2023', /12 September 2023/g], ['19 February 2026', /(?<!Haiku 3\.5 )\b19 February 2026/g], ['12 March 2026', /12 March 2026/g],
+  ['8 October 2025', /(?<!effective )\b8 October 2025/g], ['6 April 2026', /6 April 2026/g], ['30 June 2026', /30 June 2026/g], ['31 July 2026', /31 July 2026/g],
   ['21 September 1991', /21 September 1991/g], ['3 February 1987', /3 February 1987/g],
   ['Mirowski', /Mirowski/g], ['Karmazin', /Karmazin/g], ['Woelbing', /Woelbing/g], ['Davidson', /\bDavidson\b/g],
   ['IRC 1274', /(?:§\s*|IRC\s*§?\s*|[Ss]ection\s+)1274\b/g], ['IRC 7520', /(?:§\s*|IRC\s*§?\s*|[Ss]ection\s+)7520\b/g],
@@ -602,9 +605,18 @@ for (const [id, name, rxs] of [
     [/in pre-tax accounts, (?:<(?:b|strong)>)?([0-9.]+)%(?:<\/(?:b|strong)>)? of what they have/g, 'preTaxPct', 'the pre-tax share in the recurring question', (v) => v],
     [/Meg (\d{4}) to \d{4}, David \d{4} to \d{4}\./g, 'megWindowStart', 'the first year of Meg\'s window in the recurring question', null, ''],
     [/the 24% bracket has \$([0-9,]+) of room in 2026/g, 'bracketRoom', 'the 24% bracket room in the recurring question'],
-    /* Phase 4b adds a pin here for every v5 figure a lesson types into prose
-       rather than reading from COLE; the v4 session-4 §08 exhibit pins were
-       retired with the exhibits they pinned. */
+    /* Phase 4b (2026-10-12): the v5 figures a lesson types into prose rather
+       than reading from COLE. Ages and years are not pinned (too short to be
+       unambiguous); dollar amounts and percentages are. */
+    [/They hold \$([0-9,]+) of investable assets/g, 'investable', 'the investable total in the session-1 case panel'],
+    [/([0-9.]+)% of it in pre-tax accounts/g, 'preTaxPct', 'the pre-tax share in the session-1 case panel', (v) => v],
+    [/concentration is computed on the taxable account \(\$([0-9,]+) of \$[0-9,]+\)/g, 'esppValue', 'the Dunmore position in the session-1 appendix bullet'],
+    [/concentration is computed on the taxable account \(\$[0-9,]+ of \$([0-9,]+)\)/g, 'brokerage', 'the taxable account in the session-1 appendix bullet'],
+    [/\(2% of \$([0-9,]+)\)/g, 'investable', 'the investable total behind the 2% figure in the session-1 appendix bullet'],
+    [/Dunmore position at ([0-9.]+)% of the taxable account/g, 'esppPct', 'the concentration share in the session-1 CFP table', (v) => v],
+    [/taxable account but ([0-9]+)% of investable assets/g, 'allocEspp', 'the investable share in the session-1 CFP table', (v) => v],
+    [/about \$([0-9,]+) of card debt/g, 'emmaDebt', 'Emma\'s card debt in the session-3 case panel'],
+    [/credit card debt of about \$([0-9,]+)/g, 'emmaDebt', 'Emma\'s card debt in the session-3 note excerpt'],
   ];
 
   const bad = [], seen = [];

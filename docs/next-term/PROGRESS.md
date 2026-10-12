@@ -10,7 +10,7 @@ Resume rule (RUNBOOK A.1.6): read `RUNBOOK.md` (A.0 first), this file, `DECISION
 | 2 | done | 2026-10-11 | 2026-10-12 | (P2 commit) | none required; `build-case.mjs` (v5 rewrite, run with `CASE_PATH`) recomputes 67 identities against the draft, all agree |
 | 3 | done | 2026-10-12 | 2026-10-12 | (P3 commit) | build-case 0 · inject-case --check 0 · build-cardsort --check 0 · verify-case 0 · verify-style 1 (env) · verify-migration 1 (1c and 4 only: v4 lesson prose) · case-inventory --report-check 0 · test-case-viewer 1 (V9 on three lessons: v4 `COLE` keys in lesson code, D-030) · verify-browser 1 (same cause) |
 | 4a | done | 2026-10-12 | 2026-10-12 | (P4a commit) | none required; register built from eight scans; `verify-migration` unchanged from Phase 3 (1c and 4 red: the v4 prose the register now lists) |
-| 4b | pending | | | | |
+| 4b | done | 2026-10-12 | 2026-10-12 | (P4b commit) | verify-case 0 · verify-migration 1 (session-0.1 only, Phase 8) · verify-sources 0 · verify-facts 0 · verify-editorial 0 · test-editorial 1 (T7 ratchet fall, documented) · test-case-viewer 0 · verify-browser 0 · live-console 0 · verify-style 1 (env) |
 | 5 | pending | | | | |
 | 6a | pending | | | | |
 | 6b | pending | | | | |
@@ -116,3 +116,39 @@ REPLACE-EXERCISE proposals, all accepted under R2 (D-032):
 Also found: five SOURCES.md records only v4 Session 2 cited (D-034); two check-1c false positives from an unanchored date regex (D-035); session-1, session-2 and session-4 each read retired `COLE` keys that throw at load (the Phase 3 reds, D-030), listed first in each work order.
 
 Scratch: the scan workflow and its raw result are in the session scratchpad (`p4/scan-workflow.js`, `p4/scan-run.json`); the register is the committed form.
+
+## Phase 4b: migrate the references
+
+Eight Sonnet editors (one per file group, lessons first, then hub and notes; 2.42M tokens, 702 tool uses, 50 minutes) applied the register, then the orchestrator regenerated every generated region and ran the battery. No section was added, dropped, retimed or renamed; every lesson's section ids, data-nav titles, minutes and `tbudget` table are unchanged (build-appendix --check 0 on every file).
+
+| File group | KEEP-NAME | REWRITE-V5 | REPLACE-EXERCISE | DELETE | RECAPTURE | Arithmetic recomputed | Thresholds re-derived | NEEDS INSTRUCTOR REDESIGN |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| session-1 | 23 | 66 | 3 | 8 | 0 | 10 | 6 | 0 |
+| session-2 | 4 | 17 | 35 | 0 | 1 | 10 | 8 | 0 |
+| session-3 | 27 | 104 | 8 | 1 | 11 | 18 | 13 | 0 |
+| session-4 | 18 | 74 | 0 | 4 | 0 | 12 | 8 | 0 |
+| session-5 | 12 | 29 | 0 | 0 | 0 | 8 | 7 | 0 |
+| hub-readme-sources | 17 | 14 | 0 | 13 | 0 | 6 | 5 | 0 |
+| notes-s2-s3 | 11 | 41 | 4 | 16 | 1 | 10 | 11 | 0 |
+| notes-s4-s5 | 19 | 54 | 0 | 4 | 0 | 11 | 7 | 0 |
+
+RECAPTURE outcomes: session-2 `t-s8` (the questions the model asks back about the 2024 memo) re-run through `scripts/recapture.mjs`, labelled `claude-sonnet-5-5`, 2026-10-12; session-3 `offP0` (follow-up letter) and `offP1` (task list) re-run on the v5 NTSUM payload, labelled `claude-sonnet-5-5`, 2026-10-12, with the "not given" cell count and the planted-sentence check recounted from the real output; docs/probe-captures.md `P1`, `P1b`, `P2`, `P3`, `P4` deferred to Phase 8 with the banner rewritten to say so (D-033). No section needed instructor redesign.
+
+Orchestrator steps after the editors: `attest-verified.mjs --sync` (five v4-only records dropped, four authority records adopted), inject-sources and build-bibliography (every footer regenerated), the nine check-20 pins the editors asked for (session-1 case panel, appendix bullet and CFP table; session-3 case panel and excerpt) in both `verify-migration.mjs` and `case-inventory.mjs` (13 pins, all agree), four `kind: authority` SOURCES.md records for the authorities the v5 citation triage names (D-039), EDITORIAL.md's `authority` example row, the recapture helper documented in MAINTAINING.md, and the three stale instructor-note PDFs re-rendered from their .htm with headless Chromium (D-037). The verify-migration date-regex anchors (D-035) are in this commit.
+
+| Validator | Exit | Reading |
+|---|---:|---|
+| build-case, inject-case (--check), build-cardsort (--check), build-appendix (--check) | 0 | generated regions current on all seven files |
+| verify-case | 0 | 7 of 7 lessons carry the current v5.0 block |
+| verify-migration | 1 | 1c: session-0.1 76 hits, every other served file 0 (was 468 across 23 files); 4: session-0.1 only (two §7872 lines); every other check PASS; check 20: 13 pins agree |
+| verify-sources, build-bibliography, attest-verified | 0 | 139 records, footers current |
+| case-inventory, --report-check, build-unsourced --check | 0 | reports current |
+| verify-facts | 0 | clean (chips arrive in Phase 5) |
+| verify-editorial | 0 | 17 rules clean, 0 hard failures, 2 pre-existing advisories |
+| test-editorial-regions | 1 | T7 only: the A9 em-dash baseline fell (session-1 66 to 65, session-2 38 to 37) because rewritten v4 copy carried dashes; reported, not re-baselined (A.0.3 item 8, D-038) |
+| test-case-viewer | 0 | V1 to V9 pass on all seven files (the Phase 3 V9 reds are gone) |
+| verify-browser | 0 | 13, 13b, 14, 14b, 15 pass on all seven files (a 14b label-outside-viewBox reading on session-5 appeared once mid-run and did not reproduce on the committed tree) |
+| test_live_console | 0 | session-1 parts A and K pass (the Phase 3 red is gone) |
+| verify-style | 1 | environment: the lesson-builder skill is absent (A.0.4) |
+
+Handoffs recorded by the editors (not 4b work): Phase 5 corrections register rows the editors saw (the 2021-death-inside-the-five-year-window claim in session-2 §05 and the session-3 notes lapses in 2026); Phase 10 rewrites the instructor run sheets (dates, clock times, the session-3 presets, NTSUM and six-turn funnel are described from this report); Phase 8 owns session-0.1 and the probe re-runs; session-4-polls.md "five of eight identifiers" and session-5-polls.md option 4 wording are pre-existing and left for Phase 10.

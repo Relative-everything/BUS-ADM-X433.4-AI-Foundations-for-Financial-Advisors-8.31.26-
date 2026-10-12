@@ -52,15 +52,17 @@ version of the paper. Say the numbers that are on screen.
 ## Poll 3 · 8:00, after §03 preset 1 · build
 
 ```
-Title: The appraisal
-Question: The retriever ranked the 2023 appraisal third. The best explanation is:
-(a) The appraisal is out of date
-(b) The appraisal shares almost no words with the question
+Title: The plan description
+Question: The retriever ranked the 2024 memo (D7) above the 2026 plan description (D3). The best explanation is:
+(a) A memo outranks a plan description
+(b) The memo repeats more of the question's words
 (c) The retriever was set to the wrong model
-(d) The appraisal was not in the corpus
+(d) The plan description was not in the corpus
 ```
-Answer (b). (a) is the trap: professionally sensible, not the mechanism. Rule: if 30% or more pick
-(a), re-run preset 1 and read the shared-term line aloud before moving on.
+Answer (b). (a) is the trap: it sounds like a rule about document types, and the ranker has none.
+The memo holds all five scored words of preset 1's question; the plan description holds four,
+because it says "permitted" where the question says "permit". Rule: if 30% or more pick (a),
+re-run preset 1 and read the shared-term line aloud before moving on.
 
 ---
 
@@ -173,7 +175,7 @@ pages. Spoken "am I going too fast?" returned silence twice.
 
 ```
 Title: What goes into the tool
-Question: A meeting transcript with every name, company and figure removed. It still describes the sole owner of a precision aerospace fastener maker in a named Illinois metro area who is fielding interest from a buyer. Into your contracted documentation vendor:
+Question: A meeting transcript with every name, company and figure removed. It still describes a senior engineer at a material-handling manufacturer in a named Illinois metro area whose division is quietly under evaluation for sale, and his wife, a nurse manager at the local hospital system. Into your contracted documentation vendor:
 (a) Send as is
 (b) Strip something first
 (c) Never, into any tool

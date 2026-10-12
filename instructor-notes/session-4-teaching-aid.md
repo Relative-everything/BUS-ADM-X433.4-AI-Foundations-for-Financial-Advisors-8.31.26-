@@ -27,9 +27,10 @@ red text = stop by that time.
 7. **6:24 LECTURE 2.** The duty you already have. Reg S-P is a privacy rule from 2000; the 1940
    Act; CFP A.9 and A.14. Your AI policy is a supervision document. (Page 3, E2.)
 8. **6:26 §02 WORKED.** Ask the guess, click A. Room calls phrases until the meter reads No. Copy
-   the clean prompt into chat. GATE 1: "name and company gone: what still points to her?" Trade
+   the clean prompt into chat. GATE 1: "name and employer gone: what still points to her?" Job
    plus town. POLL 2 if picked, then The Harder Ones: guess how many of the nine phrases still
-   point to her (7); $55 million; 180 employees; Barrington Hills; the father's sale. NEVER SKIP.
+   point to her (7); the exact age; the Wheaton community; the 2027 graduation; married 29 years;
+   Naperville. NEVER SKIP.
 9. **6:36 DEMO A, live work-along:** de-identify the transcript (page 2, A). Synthetic Cole
    transcript in a Workspace Google Doc → clean it live → banker test → training switch OFF on
    screen → three questions in personal Claude. STOP 6:46. NEVER SKIP.
@@ -119,18 +120,21 @@ CONDITIONS.
    client transaction, .15 the client's specific consent); CFP Standard A.9 has no teaching
    exception; a Zoom recording makes the share permanent. "So this is the Cole transcript, and the
    real one never leaves my firm."
-2. Tab 2: the five turns of the Cole meeting in a Workspace Google Doc. Read one aloud. ASK: "What
-   here points to a person?" (Nathan, operations, the competitor's letter, the appraisal, the note.)
-3. Clean it live. Replace, do not delete: [the client], [her son, who works there], [a buyer], [an
-   appraisal three years old], [the note]. Keep every fact the advice turns on.
-4. The banker test: "Could a Rockford banker name this family from what is left?" If yes, replace
+2. Tab 2: the six turns of the Cole meeting in a Workspace Google Doc. Read one aloud. ASK: "What
+   here points to a person?" (Her mother's care team, Emma's fourteen thousand, David's division,
+   the form that names his mother.)
+3. Clean it live. Replace, do not delete: [the client], [her daughter, a college senior], [her
+   mother's community], [her husband's employer], [the 2009 form]. Keep every fact the advice
+   turns on.
+4. The banker test: "Could a Naperville banker name this family from what is left?" If yes, replace
    more. This is D6 in one question.
 5. Tab 3: personal Claude, Privacy settings on screen: the training switch is off; say the numbers:
    five years if it is on, 30 days if it is off. "This is plan A on the §03 map. My firm signed
    nothing."
 6. Three questions, pasted with the cleaned text: "What should I raise at the next meeting?" ·
-   "What does keeping the note callable on demand risk?" · "Which of these needs the appraisal
-   updated first?" Read one answer; say what you would check before it reaches the client.
+   "What does a 2009 beneficiary form that names a parent who has died risk?" · "Which of these
+   needs the Roth numbers re-run first?" Read one answer; say what you would check before it
+   reaches the client.
 7. Close with the two conditions the class must carry home: cleaned before pasting, by you,
    off-screen; and your firm's written procedures permit personal-account use at all, which many do
    not. "If in doubt, the firm's Team or Enterprise seat, or nothing."

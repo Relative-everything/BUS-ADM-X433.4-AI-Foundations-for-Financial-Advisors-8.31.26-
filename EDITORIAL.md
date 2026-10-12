@@ -892,7 +892,7 @@ why the rule is "chip **or** declared reason" rather than "chip":
 | `data-nochip` | Meaning | Examples |
 |---|---|---|
 | `fabricated` | Planted as exercise material and labelled as such. **Must never carry a confidence chip** — a chip asserts the claim is evidenced, and the point is that it is not | `src-kessler`, `src-hallowell` |
-| `authority` | Legal authority cited descriptively, travelling with the case rather than evidencing a page claim | `src-irc`, `src-rr8513`, `src-rr200464`, `src-woelbing`, `src-davidson` |
+| `authority` | Legal authority cited descriptively, travelling with the case rather than evidencing a page claim | `src-secure2-107`, `src-td10001`, `src-irs-590b`, `src-irs-8606` (the v4 examples `src-irc`, `src-rr8513`, `src-rr200464`, `src-woelbing`, `src-davidson` were retired with CASE.md v5.0 on 2026-10-12) |
 | `background` | Assigned or background reading with no on-page claim | `src-laplace`, `src-anthropic-fluency`, `src-morningstar`, `src-lee-cognitive` |
 
 Anything left after those three declarations is a genuinely lost chip and must be

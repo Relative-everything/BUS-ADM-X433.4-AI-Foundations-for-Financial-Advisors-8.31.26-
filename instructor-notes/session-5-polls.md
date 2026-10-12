@@ -19,7 +19,7 @@ to open and close the discussion.
 
 ### Poll 2 · 6:28 · §03, before the run
 **Question:** Six inputs are about to run through the meeting-prep brief. Which do you think break it? Pick up to three.
-**Answers:** 1 · The sample note / 2 · Appraisal sentence removed / 3 · Two years of notes pasted in / 4 · A pasted email that contradicts the CRM / 5 · A real note with name and account number / 6 · The facts as a table
+**Answers:** 1 · The sample note / 2 · Care-cost sentence removed / 3 · Two years of notes pasted in / 4 · A pasted email that contradicts the CRM / 5 · A real note with name and account number / 6 · The facts as a table
 **Lands:** 2, 4, 5 ✓.
 **Say on the result:** "Three broke, in three different ways: a gap filled, a conflict resolved in silence, and client data carried straight through. The input that breaks it is the finding."
 

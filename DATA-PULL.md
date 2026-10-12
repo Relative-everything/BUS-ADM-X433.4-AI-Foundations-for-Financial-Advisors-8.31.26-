@@ -8,7 +8,7 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**52 of 140 works are moving targets, feeding 195 of
+**54 of 139 works are moving targets, feeding 195 of
 480 references.**
 
 
@@ -694,6 +694,42 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-4 |
 | References | 0 |
 | Feeds | *nothing on the page* |
+
+### `src-irs-590b` — Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)
+
+| | |
+|---|---|
+| Figure class | `none` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | any teaching of session-2 §s10 |
+| References | 0 |
+| Feeds | *nothing on the page* |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| IRS-590B-001 | S2 | 2026-10-12 | **[UNVERIFIED, needs source]** | none |
+
+### `src-irs-8606` — Form 8606, Nondeductible IRAs, and its instructions
+
+| | |
+|---|---|
+| Figure class | `none` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | any teaching of session-2 §s10 |
+| References | 0 |
+| Feeds | *nothing on the page* |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| IRS-8606-001 | S2 | 2026-10-12 | **[UNVERIFIED, needs source]** | none |
 
 
 ---

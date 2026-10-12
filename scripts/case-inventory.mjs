@@ -272,6 +272,16 @@ export const CHECK20_PINS = [
   { rx: /in pre-tax accounts, (?:<(?:b|strong)>)?([0-9.]+)%(?:<\/(?:b|strong)>)? of what they have/g, key: 'preTaxPct' },
   { rx: /Meg (\d{4}) to \d{4}, David \d{4} to \d{4}\./g, key: 'megWindowStart' },
   { rx: /the 24% bracket has \$([0-9,]+) of room in 2026/g, key: 'bracketRoom' },
+  /* Phase 4b (2026-10-12): v5 figures typed into lesson prose; keep in step with verify-migration.mjs */
+  { rx: /They hold \$([0-9,]+) of investable assets/g, key: 'investable' },
+  { rx: /([0-9.]+)% of it in pre-tax accounts/g, key: 'preTaxPct' },
+  { rx: /concentration is computed on the taxable account \(\$([0-9,]+) of \$[0-9,]+\)/g, key: 'esppValue' },
+  { rx: /concentration is computed on the taxable account \(\$[0-9,]+ of \$([0-9,]+)\)/g, key: 'brokerage' },
+  { rx: /\(2% of \$([0-9,]+)\)/g, key: 'investable' },
+  { rx: /Dunmore position at ([0-9.]+)% of the taxable account/g, key: 'esppPct' },
+  { rx: /taxable account but ([0-9]+)% of investable assets/g, key: 'allocEspp' },
+  { rx: /about \$([0-9,]+) of card debt/g, key: 'emmaDebt' },
+  { rx: /credit card debt of about \$([0-9,]+)/g, key: 'emmaDebt' },
 ];
 
 /** The pin list here must be the pin list there. A silent divergence is the defect. */

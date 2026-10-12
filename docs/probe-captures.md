@@ -1,15 +1,24 @@
 # Probe captures for Session 0.1
 
-> **Superseded by CASE.md v4.0 (2026-08-23).** Every capture in this file was
-> run before the v4.0 rebuild and models the pre-v4.0 fact set: an Ohio domicile
-> with no state estate tax, a smaller balance sheet, and unit and seed figures
-> that no longer exist. Under v4.0 the Coles are lifelong Illinois residents, the
-> company is in Rockford, and Illinois taxes estates above $4,000,000 with no
-> portability, which changes the direction of the state-tax rows below. The
-> captures are **left verbatim on purpose**: editing a transcript would make it a
-> fabrication (pedagogy.md s1 R1 and R5). Re-run them against v4.0 before any
-> figure here is taught, and do not read the parameter tables as current case
-> facts.
+> **Superseded by CASE.md v5.0 (2026-10-11, adopted in Phase 3 of the
+> next-term-2027 run).** Every capture in this file was run on 2026-08-22,
+> before the v4.0 rebuild of 2026-08-23, so each one was made against the v3
+> case: an Ohio domicile, a $30,000,000 estate and a family business. CASE.md
+> v4.0 replaced that household the next day, and v5.0 has since replaced v4.0
+> with a different household altogether, a pre-retiree couple in Naperville,
+> Illinois, with no business, no trust and no sale (CASE.md Part A and Part K).
+> The P3 block also carries hand corrections made on 2026-08-23 toward v4.0
+> (Ohio to Illinois), labelled where they appear; they are not v5.0 facts
+> either. Illinois taxes estates above $4,000,000 with no portability (CASE.md
+> section E.2), which is the direction the Ohio rows below get wrong. P4 was
+> never captured and is a placeholder.
+>
+> The captures are **left verbatim on purpose**: editing a transcript would
+> make it a fabrication (pedagogy.md s1 R1 and R5). The re-runs against v5.0
+> are pending the Session 0.1 rebuild (docs/next-term/DECISIONS.md D-033), and
+> each capture is replaced by its re-run when that run is made; after that this
+> banner is deleted or reduced to a pointer. Until then do not teach any figure
+> here and do not read the parameter tables as case facts.
 P1: factual, cutoff-sensitive (Cole rate lookup)
 Settings: Sonnet 5, effort medium, web search OFF, thinking off
 Date run: 2026-08-22

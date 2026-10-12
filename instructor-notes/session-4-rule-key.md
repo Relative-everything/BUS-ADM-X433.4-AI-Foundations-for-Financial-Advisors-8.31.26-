@@ -23,8 +23,8 @@ never skipped.
    D sinks. "Good and allowed are separate tests."
 6. **6:22 §01.** ASK how many AI rules bind you? Guess, sort. Lanes 2 = 1-5, 3 = 6-8, 1 = 9.
    **0**. "The duty has existed since 1940." Page 2.
-7. **6:29 §02.** GATE 1: "Name gone. What still points to her?" **The trade and the town: a
-   fastener maker in Rockford.** "Reg S-P is the rule behind it." Copy the clean prompt to chat.
+7. **6:29 §02.** GATE 1: "Name gone. What still points to her?" **The job and the town: a
+   nurse manager in Naperville.** "Reg S-P is the rule behind it." Copy the clean prompt to chat.
 8. **6:39 §03.** POLL 2. Vendor, then plan A, flip the switch. Claude **5 years, off 30 days**.
    "Same model, different contract." Open leaks 2 and 5.
 9. **6:46 §04.** Six locks. C, client file, consumer plan. Lock 1 **No, Stop**. The firm's contract makes the

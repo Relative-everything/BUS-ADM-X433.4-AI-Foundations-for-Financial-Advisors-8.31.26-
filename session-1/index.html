@@ -1253,16 +1253,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </script>
 <!-- CASE:END cole-household -->
 
-  <div class="verify"><span class="vh">Requires instructor verification before it is taught as settled</span>
-  Every tax and legal characterisation attached to this case is posed as a question, not a holding. Verify before teaching any of it as settled:
-  <ul>
-    <li>Whether &sect;7872's blended annual rate or &sect;1274's applicable federal rate governs a demand note issued in exchange for property. CASE.md &sect;H.4 records no controlling authority.</li>
-    <li>Whether the combined lack-of-control and marketability discount the memorandum asserts is supportable. No appraiser has been engaged, and the file holds no restricted-stock study and no pre-IPO study.</li>
-    <li>The Illinois estate tax rate table and the adjusted-taxable-gift add-back, both carried at <b>[M]</b>.</li>
-    <li>The Illinois replacement income tax on trusts, material to the cost of turning grantor status off. CASE.md &sect;D.3 carries the rate at <b>[M]</b>.</li>
-  </ul>
-  <b>Karmazin</b>, <b>Woelbing</b> and <b>Davidson</b> are flagged in CASE.md Part I as settled or stipulated. They decided nothing and are not authority.
-  The instructor signs the slide, not the model (pedagogy.md s1 R3).</div>
   <div class="row" style="margin-top:18px"><button class="btn ghost" id="caseClose">Close</button></div>
 </div></div>
 <nav id="rail" aria-label="Sections"></nav>
@@ -1359,13 +1349,13 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
        One generated region now lives in the modal between the CASE sentinels,
        so this file holds exactly one copy. scripts/verify-case.mjs enforces it. -->
   <div class="panel" style="border-color:var(--on)">
-    <span class="plab">The Cole household &middot; synthetic &middot; Rockford and Barrington Hills, Illinois</span>
-    <p style="margin:10px 0 0">Meg Cole owns all of Cole Precision Components, a Rockford aerospace-fastener maker she bought from her father Walter Hensley in 2016. She did not found it, and what she paid is her basis. David is retired and has not claimed Social Security. CPC is the great majority of the household balance sheet, and the proposed structure moves most of a new holding LLC's non-voting units to a grantor trust in three steps: a seed gift, then a sale on a demand note, then annual purchases out of the dividend. Nothing in it has been executed. Every figure is in <b>Case facts</b>.</p>
-    <p class="dim" style="font-size:14.5px;margin:12px 0 0">The full fact set, the structure flowchart, the open questions and the instructor verification gate are behind <b>Case facts</b> in the bar above. Open it and keep it open.</p>
+    <span class="plab">The Cole household &middot; synthetic &middot; Naperville, Illinois</span>
+    <p style="margin:10px 0 0">Meg Cole, 58, is a nurse manager at Northlake Regional Health System and plans to stop at 60, in mid-2028. David, 59, is a senior mechanical engineer at Dunmore Industrial Equipment and plans to stop at 62, in late 2029. Neither has claimed Social Security. They hold $2,446,000 of investable assets, 70.3% of it in pre-tax accounts, and face the years between the last paycheck and the first required distribution. Nothing has been decided. Every figure is in <b>Case facts</b>.</p>
+    <p class="dim" style="font-size:14.5px;margin:12px 0 0">The full fact set, the household map and the timeline, and the open questions are behind <b>Case facts</b> in the bar above. Open it and keep it open.</p>
   </div>
 
   <!-- Recurring question, session 1 angle. See docs/spine-brief.md. -->
-  <div class="talk"><span class="th">The question that runs through every session</span>Meg is short $522,086 a year from year 6, while the structure performs exactly as designed. <b>How much of the $20,020,000 note does she call this year, what does calling it cost her in every year after, and when is a different lever the better answer?</b> Nobody answers it. You find out why the tool you would reach for to answer it is worst at exactly this shape of problem: a long compounding sequence where every year depends on the last.</div>
+  <div class="talk"><span class="th">The question that runs through every session</span>The Coles hold $1,720,000 in pre-tax accounts, 70.3% of what they have, and a window of years with no paycheck and no required distribution: Meg 2029 to 2042, David 2030 to 2041. <b>How much do they convert to Roth, in which years, when the federal bracket is one price and the Medicare premium two years later is the other?</b> Nobody answers it. You find out why the tool you would reach for to answer it is worst at exactly this shape of problem: a long sequence where every year's answer depends on the years before it.</div>
 
   <p class="dim" style="font-size:14.5px">Figure labels: <span class="conf h" data-src="src-case">H</span> primary or first-party &middot; <span class="conf m" data-src="src-sec-ai">M</span> secondary or derived &middot; <span class="conf l" data-src="src-sec-ai">L</span> unverified. Arrow keys navigate. <b class="mono">Shift+U</b> opens every answer panel at once.</p>
 
@@ -1577,8 +1567,8 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="wolf"><span class="wh">From the assigned reading, sections "The Concept of Embeddings" and "Inside ChatGPT"</span>The Concept of Embeddings: "<b>'the'</b> might be <b>914</b>, and <b>' cat'</b> (with a space before it) might be <b>3542</b>. (And these are the actual numbers used by GPT-2.)" &middot; Inside ChatGPT: "about <b>50,000</b> values that turn into probabilities for different possible next tokens&hellip; only about <b>3000</b> of the tokens are whole words, and the rest are fragments."</div>
 
   <div class="panel" data-task="t-s5" data-comp="work-along-gate">
-    <label class="plab" for="tokIn">Paste something you would actually send &mdash; a client note, a paragraph of a trust</label>
-    <textarea id="tokIn">Nothing in the file supports the combined valuation discount, no appraiser has been engaged, and a competitor made an unsolicited inquiry about buying Cole Precision Components last October.</textarea>
+    <label class="plab" for="tokIn">Paste something you would actually send &mdash; a client note, a paragraph of a will</label>
+    <textarea id="tokIn">Nothing in the file shows that the 2024 conversion memo was reviewed after the January 2026 plan amendment, and the conversion it recommended was never made.</textarea>
     <div class="tokstrip" id="tokStrip"></div>
     <div class="stats">
       <div class="stat"><span class="sn">Est. tokens</span><span class="sv" id="tokCount">0</span></div>
@@ -1594,15 +1584,15 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <thead><tr><th>Document from this case</th><th>Approx. tokens</th><th>Into Opus 5</th></tr></thead>
     <tbody>
       <tr><td>Discovery meeting notes (3,000 words)</td><td class="n">~4,000</td><td class="n">$0.02</td></tr>
-      <tr><td>2011 wills and joint revocable trust</td><td class="n">~20,000</td><td class="n">$0.10</td></tr>
-      <tr><td>Draft IDGT instrument, note, 2014 buy-sell and 2023 appraisal</td><td class="n">~125,000</td><td class="n">$0.63</td></tr>
-      <tr><td>Entire Cole file, full 1M context window</td><td class="n">1,000,000</td><td class="n">$5.00</td></tr>
+      <tr><td>2011 wills and powers of attorney (about 12,000 words)</td><td class="n">~16,000</td><td class="n">$0.08</td></tr>
+      <tr><td>Plan description, 2024 Roth memo, 2009 beneficiary form and residency agreement (about 60,000 words)</td><td class="n">~80,000</td><td class="n">$0.40</td></tr>
+      <tr><td>A full 1M-token context window, for scale</td><td class="n">1,000,000</td><td class="n">$5.00</td></tr>
     </tbody>
   </table>
-  <p>The whole file costs five dollars to read. Cost is not the constraint. Your duty of care is &mdash; &sect;08.</p>
+  <p>A full million-token window costs five dollars to read. Cost is not the constraint. Your duty of care is &mdash; &sect;08.</p>
 
   <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Replace the sample with your own writing, at least 40 tokens.</div></div>
-  <span class="src">Prices and context window: <b>Anthropic, Claude Platform Docs &mdash; Pricing</b>, retrieved 25 August 2026. First-party. <span class="conf h" data-src="src-pricing">H</span> &middot; Token IDs and vocabulary figures: Wolfram (2023). <span class="conf h" data-src="src-wolfram">H</span> &middot; Word-to-token rows derived at 0.75 words per token. <span class="conf m" data-src="src-wolfram">M</span></span>
+  <span class="src">Prices and context window: <b>Anthropic, Claude Platform Docs &mdash; Pricing</b>, retrieved 25 August 2026. First-party. <span class="conf h" data-src="src-pricing">H</span> &middot; Token IDs and vocabulary figures: Wolfram (2023). <span class="conf h" data-src="src-wolfram">H</span> &middot; Word-to-token rows derived at 0.75 words per token from instructor-set word counts for the synthetic documents. <span class="conf m" data-src="src-wolfram">M</span></span>
  </div>
 
 
@@ -1625,7 +1615,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel" data-task="t-s6" data-comp="commit-first-mcq"><span class="plab">Answer from the layout</span><div class="quiz" id="embQuiz"></div></div>
 
   <div class="talk"><span class="th">Why this matters for planning &mdash; discussion</span>The planning terms cluster together because they appear in each other's company, not because the model understands them. "Grantor retained annuity trust" and "grantor retained income trust" sit almost on top of each other in embedding space and do very different things. So do "revocable" and "irrevocable" &mdash; one letter of difference, opposite consequences, and the words appear in nearly identical sentences.
-  <ul><li>Where else does our vocabulary pair near-identical language with opposite outcomes? Start with QTIP versus QDOT, or 1035 versus 1031.</li><li>What does that predict about which planning errors these tools will make most often?</li></ul></div>
+  <ul><li>Where else does our vocabulary pair near-identical language with opposite outcomes? Start with a Roth conversion versus a Roth contribution, or 1035 versus 1031.</li><li>What does that predict about which planning errors these tools will make most often?</li></ul></div>
 
   <h3>One word, two meanings</h3>
   <div class="row" id="craneBtns"></div>
@@ -1664,7 +1654,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="pull">Anything requiring an exact count across a long document is the failure case, not the edge case.</p>
 
   <div class="talk"><span class="th">Where this bites in the Cole file &mdash; discussion</span>Every one of these is a counting or reconciliation task inside a long sequence, and every one is a place a fluent answer is least trustworthy:
-  <ul><li>Confirming the 2014 buy-sell formula value against the indicated value of the company, and listing every provision that conflicts</li><li>Checking that the note principal on the draft instrument matches the memorandum, and that it is the same figure on every schedule and exhibit</li><li>Verifying that the combined discount is applied to the pro-rata value of the non-voting units, and not to some other base, in each place it appears</li><li>Tracing whether the 2011 powers of attorney were superseded by anything executed since, and confirming the file holds no later restatement</li></ul>
+  <ul><li>Confirming the 2024 Roth conversion memo against the January 2026 plan summary, and listing every provision that conflicts</li><li>Checking that the $210,000 rollover IRA balance is the same figure on the statement, the beneficiary form summary and the balance sheet</li><li>Verifying that the 16.8% concentration is computed on the taxable account ($60,500 of $360,000), not on investable assets (2% of $2,446,000), in each place it appears</li><li>Tracing whether the 2011 powers of attorney were superseded by anything executed since, and confirming the file holds no later restatement</li></ul>
   Which of these have you already delegated to a tool this year, and did you total the numbers yourself?</div>
 
   <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the sequence to a depth where the model assigns real probability to an invalid token.</div></div>
@@ -1678,7 +1668,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h2>The Nine Controls Between the Model and Your Answer</h2>
   <p class="big">The model hands over a probability for every one of about 50,000 tokens. A stack of sampling algorithms then cuts that list down and picks one. Almost nobody using these tools professionally knows they exist.</p>
 
-  <p>Below is the candidate distribution for a prompt about Meg's CPC interest, shaped as the rank<sup>&minus;1</sup> power law from &sect;02. Red bars are cut; green survive.</p>
+  <p>Below is the candidate distribution for a prompt about David&rsquo;s rollover IRA, shaped as the rank<sup>&minus;1</sup> power law from &sect;02. Red bars are cut; green survive.</p>
 
   <div class="panel" style="padding:18px 20px" data-task="t-s8" data-comp="pipeline-lab">
     <div class="row" style="margin-bottom:6px"><span class="dim" style="font-size:14px">Prompt:</span><span class="mono" id="labPrompt" style="font-size:13px"></span></div>
@@ -1725,7 +1715,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     different implementations, not the same number, so compare the character of
     the output rather than matching the figures.</p>
     <label class="plab" for="lmTempP" style="margin-top:14px">Prompt, held constant between runs</label>
-    <textarea id="lmTempP" style="min-height:60px">In one sentence, describe the risk Meg Cole is taking by relying on a 2023 appraisal.</textarea>
+    <textarea id="lmTempP" style="min-height:60px">In one sentence, describe the risk the Coles take by relying on a 2024 Roth conversion memo that a 2026 plan amendment contradicts.</textarea>
     <div class="row" style="margin-top:12px">
       <label class="mono dim" for="lmTemp" style="font-size:12px">Temperature</label>
       <input type="range" id="lmTemp" min="0" max="2" step="0.1" value="1" style="width:200px">
@@ -1774,7 +1764,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p class="pull">Confident tone is not a claim about confidence. It is the output of the scoring rule.</p>
 
-  <div class="talk"><span class="th">The planning version &mdash; discussion</span>Ask any frontier model what seed gift a sale to a grantor trust requires, and it will give you a percentage in a confident sentence. The conventional 10% figure is a practitioner rule of thumb, not a statutory or regulatory threshold, and the model has no way to signal that difference &mdash; both appear in the same register, in the same kind of sentence.
+  <div class="talk"><span class="th">The planning version &mdash; discussion</span>Ask any frontier model at what age a person born in 1968 must start required minimum distributions, and it will give you a number in a confident sentence. That age has one right answer, the model has seen several earlier versions of it in near-identical sentences, and it has no way to signal which one applies. Now ask how much the Coles should convert to Roth. The sentence is just as confident, and there is no answer to retrieve, because that is a judgment the case leaves open.
   <ul><li>Which of Meg's questions are arbitrary facts &mdash; a rate, a date, a threshold with one right answer and many plausible wrong ones?</li><li>Which are contested judgments where no answer is retrievable because none exists?</li><li>Sort this session's case that way. The first list is what you verify line by line. The second is what you never delegate at all.</li></ul></div>
 
   <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Ask three times, then view both scoring rules.</div></div>
@@ -1798,7 +1788,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="readout" id="frontOut"></div>
   </div>
 
-  <p>The dashed line connects models no other model beats on capability and price at once. Going from $2.75 to $1.04 per task costs one index point; going to $0.31 costs six. Whether six points matters depends on whether you are drafting Meg's meeting agenda or reading the 2023 appraisal.</p>
+  <p>The dashed line connects models no other model beats on capability and price at once. Going from $2.75 to $1.04 per task costs one index point; going to $0.31 costs six. Whether six points matters depends on whether you are drafting Meg's meeting agenda or reading the 2024 Roth conversion memo against the 2026 plan.</p>
   <p class="pull">Paying for the top of the leaderboard is a decision, not a default.</p>
 
   <table class="dt tight">
@@ -1840,7 +1830,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <h3>What one pass over the Cole file costs</h3>
-  <p>Different question, and the more useful one. Not what the firm spends in a year &mdash; what a single piece of work costs. Read the draft IDGT instrument, the promissory note, the 2014 buy-sell and the 2023 appraisal together, roughly 125,000 tokens in, and produce an 8,000-token issues memo.</p>
+  <p>Different question, and the more useful one. Not what the firm spends in a year &mdash; what a single piece of work costs. Read the plan description, the 2024 Roth memo, the 2009 beneficiary form and the residency agreement together, roughly 80,000 tokens in, and produce an 8,000-token issues memo.</p>
   <div class="panel">
     <div class="row" style="margin-bottom:12px">
       <span class="dim" style="font-size:14px">Tier:</span>
@@ -1852,7 +1842,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="stats" id="dpStats"></div>
     <div class="readout" id="dpOut"></div>
   </div>
-  <p>Run every tier. The spread across the whole ladder is under a dollar and fifty cents for the same piece of work. On this household, at any plausible fee, the cost of the model is not a line item you would ever discuss. The cost of getting the discount wrong is.</p>
+  <p>Run every tier. The spread across the whole ladder is $1.08 for the same piece of work: $1.20 on the top tier less $0.12 on the bottom one. On this household, at any plausible fee, the cost of the model is not a line item you would ever discuss. The cost of missing the conflict between the 2024 memo and the 2026 plan is.</p>
   <p class="pull">Price is never the reason to use the cheap tier. Fitness for the task is.</p>
 
   <p>At the defaults, metered Opus costs less than half of five Pro subscriptions. That is not an argument for the API. The subscription buys the interface, the file handling and the projects, and removes the need to build anything. Most of this room should be on subscriptions. Knowing why is the point.</p>
@@ -2063,12 +2053,12 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <tbody>
       <tr><td>Professional Conduct and Regulation</td><td>The three confidentiality landmines; de-identification as a standard the name alone does not meet; the course rule on client data in a build transcript</td></tr>
       <tr><td>General Principles</td><td>Model assumptions and the Monte Carlo parallel; tier selection as documented judgment</td></tr>
-      <tr><td>Tax Planning</td><td>Note terms and applicable rate as the arbitrary-fact example; basis and discount tracing across a long document</td></tr>
-      <tr><td>Estate Planning</td><td>IDGT sale structure; buy-sell versus appraisal reconciliation; the unresolved discount question</td></tr>
-      <tr><td>Retirement Savings and Income</td><td>IRA distributions against a sale year as a multi-step reasoning task</td></tr>
-      <tr><td>Investment Planning</td><td>Two concentration problems with opposite liquidity; custodial data reformatting</td></tr>
-      <tr><td>Risk Management and Insurance</td><td>Absence of any life insurance, personal or corporate-owned, against an illiquid controlling interest in a private company</td></tr>
-      <tr><td>Psychology of Financial Planning</td><td>An undisclosed sale, an employee child, and what a summariser does to a disagreement</td></tr>
+      <tr><td>Tax Planning</td><td>IRMAA thresholds and the required beginning age as the arbitrary-fact example; denominator tracing across a long document</td></tr>
+      <tr><td>Estate Planning</td><td>Beneficiary-designation tracing; the 2024 memo against the 2026 plan; the unresolved Roth conversion question</td></tr>
+      <tr><td>Retirement Savings and Income</td><td>Two distribution clocks, the conversion window and the ten-year rule on Ruth&rsquo;s IRA, as a multi-step reasoning task</td></tr>
+      <tr><td>Investment Planning</td><td>One concentration problem, the Dunmore position at 16.8% of the taxable account but 2% of investable assets; custodial data reformatting</td></tr>
+      <tr><td>Risk Management and Insurance</td><td>A parent&rsquo;s assisted-living cost raised in a meeting, against a household with no long-term care coverage</td></tr>
+      <tr><td>Psychology of Financial Planning</td><td>A parent&rsquo;s care costs, two spouses who disagree, and what a summariser does to a disagreement</td></tr>
     </tbody>
   </table>
 
@@ -2086,7 +2076,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="card"><span class="num">04</span><h4>The signature on the work</h4><p>The tool is not a co-signer, a supervisor, or a defence.</p></div>
   </div>
 
-  <div class="talk"><span class="th">Closing question &middot; answer it before you close the page</span>A model has just handed you a clean, confident, well-written answer about the Cole discount. Name the one thing this session said you still cannot conclude from that, and say which part of the machine is the reason.</div>
+  <div class="talk"><span class="th">Closing question &middot; answer it before you close the page</span>A model has just handed you a clean, confident, well-written answer about how much the Coles should convert to Roth. Name the one thing this session said you still cannot conclude from that, and say which part of the machine is the reason.</div>
  </div>
 </section>
 
@@ -2126,13 +2116,13 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h3 style="margin:22px 0 4px;font-size:17px">Sources cited in this session</h3>
   <ol class="srcs">
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 30da4857a0317fb28a935766da5e535c341a8eac945938bc1b6687e641577eaa -->
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 620bd0a60f1d0ac8c8fc4ff7789157f506b9555976e6919008e01a206cc60153 -->
       <li id="src-pricing">Anthropic. <em>Pricing</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com/docs/en/about-claude/pricing</a> Retrieved 2026, August 25. Other sessions cite other retrievals of this page. Used for: per-token rates, cache and batch discounts, and the Cole document-pass arithmetic. <span class="conf h" data-src="src-pricing">H</span></li>
       <li id="src-sampling">artefact2. <em>LLM sampling visualiser</em>. GitHub Pages. <a href="https://artefact2.github.io/llm-sampling/">artefact2.github.io/llm-sampling</a> Used for: the nine sampler controls reimplemented in Appendix A5. <span class="conf h" data-src="src-sampling">H</span></li>
       <li id="src-aa">Artificial Analysis. <em>Artificial Analysis Intelligence Index and cost-per-task figures</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a> Retrieved 2026, July 28. Other sessions cite other retrievals of this page. Used for: the capability-against-price frontier and the tier comparison. <span class="conf m" data-src="src-aa">M</span></li>
       <li id="src-finra2409">Financial Industry Regulatory Authority. (2024, June 27). <em>Regulatory Notice 24-09</em>. FINRA. <a href="https://www.finra.org/rules-guidance/notices/24-09">finra.org/rules-guidance/notices/24-09</a> Used for: the position that existing rules apply to generative AI and that supervision is not suspended by the technology. <span class="conf h" data-src="src-finra2409">H</span></li>
       <li id="src-kalai">Kalai, A. T., Nachum, O., Vempala, S. S., &amp; Zhang, E. (2025). <em>Why language models hallucinate</em>. arXiv:2509.04664, §1 and §1.2. Retrieved 2025, May 11. Used for: why a model guesses rather than abstains, and the two scoring rules. <span class="conf h" data-src="src-kalai">H</span></li>
-      <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: every worked example in this session and the next three. Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
+      <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: every worked example in this session and the next three. Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
       <li id="src-rohrer">Rohrer, D., Dedrick, R. F., &amp; Stershic, S. (2015). <em>Interleaved practice improves mathematics learning</em>. Journal of Educational Psychology, 107(3), 900–908. <a href="https://doi.org/10.1037/edu0000001">doi.org/10.1037/edu0000001</a> Retrieved 2026, August 29. Used for: the interleaved deck order of the section 08 card sort. <span class="conf h" data-src="src-rohrer">H</span></li>
       <li id="src-sec-ai">U.S. Securities and Exchange Commission. (2024, March 18). <em>Enforcement actions against Delphia (USA) Inc. and Global Predictions, Inc.</em> SEC. Used for: the AI-washing settlements and their penalty amounts. <span class="conf m" data-src="src-sec-ai">M</span></li>
       <li id="src-wolfram">Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a> Used for: next-token prediction, the temperature passage, tokens and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. <span class="conf h" data-src="src-wolfram">H</span></li>
@@ -2389,14 +2379,14 @@ document.addEventListener('keydown',function(e){
    selection. The "why" field is free text and is not scored. */
 (function(){var p=$('s1pick');if(!p)return;
   var OPTS=[
-    'the '+Math.round(COLE.discount*100)+'% combined discount asserted with no appraisal behind it',
-    'the $'+fmt(COLE.cpcValue)+' indicated value for the company',
-    'the $'+fmt(COLE.appraisal2023)+' concluded value in the appraisal on file',
-    'the $'+fmt(COLE.buySellFormula)+' buy-sell formula value on current financials',
-    'the '+(COLE.noteRate*100).toFixed(2)+'% rate the draft demand note carries',
+    'the '+COLE.preTaxPct+'% share of investable assets held in pre-tax accounts',
+    'the $'+fmt(COLE.bracketRoom)+' of room left in the '+COLE.marginalRate+'% bracket',
+    'the '+COLE.esppPct+'% share of the taxable account held in Dunmore stock',
+    'the '+COLE.megWindowStart+' to '+COLE.megWindowEnd+' Roth conversion window for Meg',
+    'the $'+fmt(COLE.ruthAssistedBase)+' a month assisted-living base rate at Maple Court',
     'the $'+fmt(COLE.netWorth)+' household net worth total',
-    'the '+Math.round(COLE.techPct*100)+'% technology concentration in the brokerage account',
-    'the $'+fmt(COLE.steadyGap)+' gap the structure leaves at steady state'];
+    'the $'+fmt(COLE.davidRollover)+' balance of David\u2019s rollover IRA',
+    'the '+COLE.riskGap+'-point gap between the two risk scores'];
   p.innerHTML='<option value="">Choose a figure</option>'+OPTS.map(function(t,i){
     return '<option value="'+(i+1)+'">'+t+'</option>'}).join('');
   p.addEventListener('change',function(){if(p.value)mark('g1')});
@@ -2405,29 +2395,30 @@ document.addEventListener('keydown',function(e){
 /* ===== 01 PREDICTION ===== */
 var G2={tok:0,temp:{},ax:0};
 function checkG2(){if(G2.tok&&Object.keys(G2.temp).length>=3&&G2.ax)mark('g2')}
-var S2STEM='The '+COLE.saleUnits+' non-voting units sold to the grantor trust were valued at';
+var S2STEM='The beneficiary form on David\u2019s rollover IRA, signed '+COLE.rolloverFormDate+', names';
 var S2=[
- [['a '+Math.round(COLE.discount*100)+'% discount',.33],['$'+fmt(COLE.notePrincipal),.26],['$'+fmt(COLE.perNonVoting)+' per unit',.19],['fair market value',.13],['a 45% discount',.09]],
+ [['Meg',.38],['his mother Dorothy',.24],['his estate',.17],['his children',.13],['no one',.08]],
  /* Weights render as integer percentages in the DOM. None may equal a CASE.md
     Part K grep target, which source-level checks cannot see here because only
     render-time arithmetic produces the string; verify-browser.mjs drives every
     step and asserts it, along with each row's rendered percentages summing
-    to one hundred.
-    The top weight rides the live combined discount from the injected COLE
-    constants, so it moves with CASE.md instead of drifting onto a retired
-    value again; if the discount itself moves, the same drive fails on the
-    row sum until the tail is renormalised. */
- [[', supported by',COLE.discount],[', which reflects',.27],['. The appraisal cites',.22],[', although the',.13],[', pending',.08]],
- [['a 2023 appraisal',.34],['lack of control',.25],['lack of marketability',.20],['the attorney\u2019s file',.13],['the 2014 formula',.08]],
- [['that has not been',.30],['and lack of',.27],['dated before',.21],['prepared for',.14],['reviewed by',.08]],
- [['re-verified',.35],['updated',.27],['challenged',.19],['disclosed',.13],['superseded',.06]],
- [['this year.',.34],['since a buyer appeared.',.27],['at all.',.20],['by counsel.',.13],['since 2023.',.06]]
+    to one hundred and ranked in order. The weights are typed, not read from
+    COLE: they are the teaching device (a spouse is the likeliest name on an
+    IRA form, so the true word sits second), not a case figure. The most likely
+    path reads as a confident, false sentence. The true one is also on the
+    page: the second-ranked word in each row, except the third-ranked word
+    in the second row. */
+ [[' as primary beneficiary',.36],[' as sole beneficiary',.27],[' with no contingent',.18],[' as trustee',.11],[' for life',.08]],
+ [[', and the form',.34],[', but the form',.27],[', so the form',.19],[', although the form',.12],[', while the form',.08]],
+ [['was',.35],['has not been',.27],['is never',.18],['remains',.12],['cannot be',.08]],
+ [['confirmed',.34],['updated',.27],['reviewed',.19],['challenged',.12],['replaced',.08]],
+ [['this year.',.33],['since March 2021.',.27],['at all.',.20],['by counsel.',.12],['by the custodian.',.08]]
 ];
 var s2i=0,s2path=[];
 function s2draw(){
   var h='<span class="stem">'+S2STEM+'</span> ';
   s2path.forEach(function(t,i){h+='<span class="tok'+(i===s2path.length-1?' fresh':'')+'">'+t+'</span> '});
-  if(s2i>=S2.length)h+='<span class="dim">\u2014 six placed. Some paths produce a true sentence about the Cole discount. Some produce a false one. Nothing in the process checked which.</span>';
+  if(s2i>=S2.length)h+='<span class="dim">\u2014 six placed. Some paths produce a true sentence about David\u2019s rollover IRA. Some produce a false one. Nothing in the process checked which.</span>';
   $('s2samp').innerHTML=h;
   var d=$('s2dist');d.innerHTML='';$('s2count').textContent=s2i;
   if(s2i>=S2.length){G2.tok=1;checkG2();return}
@@ -2437,7 +2428,7 @@ function s2draw(){
     r.onclick=function(){s2path.push(opts[i][0]);s2i++;s2draw()};d.appendChild(r)})}
 $('s2reset').onclick=function(){s2i=0;s2path=[];s2draw()};s2draw();
 
-var T3=['the','trust','position','and','basis','estate','of','tax','plan','account','review','a','to','income','risk','gain','gift','value','in','asset'];
+var T3=['the','roth','position','and','basis','estate','of','tax','plan','account','review','a','to','income','risk','gain','conversion','value','in','asset'];
 var T3P=(function(){var p=T3.map(function(_,i){return 1/(i+1)});var s=p.reduce(function(a,b){return a+b},0);return p.map(function(v){return v/s})})();
 var t3T=0;
 function temper(ps,T){if(T<=0.001){var m=Math.max.apply(null,ps);return ps.map(function(p){return p===m?1:0})}
@@ -2490,7 +2481,7 @@ all('[data-ax]').forEach(function(b){b.onclick=function(){
 plDraw('lin');
 
 /* ===== 02 N-GRAMS + WALL ===== */
-var CORPUS="The client built the company and the client now holds the position that funds the plan. The planner asks what the client wants the money to do before the planner asks what the money can do. A trust holds the interest for a beneficiary under terms the grantor set. The basis matters because the gain is measured from it. A discount is a claim about value and a claim about value must be supported. The appraisal is a document and the document has a date. A gift removes the asset from the estate and starts a clock. The plan is not the document. The plan is the set of decisions the client makes and the discipline to hold to them when the market moves against the plan. The planner documents the reason for every recommendation so that another planner can follow the reasoning and a regulator can review it. The client owns the plan and the planner owns the process that produced it.";
+var CORPUS="The client plans to stop working in a few years and the client now holds the accounts that fund the plan. The planner asks what the client wants the money to do before the planner asks what the money can do. A conversion moves money from one tax year to another and the window for a conversion is short. The basis matters because the gain is measured from it. A beneficiary form is a document and the document has a date. A will names a guardian for children who have grown. The plan is not the document. The plan is the set of decisions the client makes and the discipline to hold to them when the market moves against the plan. The planner documents the reason for every recommendation so that another planner can follow the reasoning and a regulator can review it. The client owns the plan and the planner owns the process that produced it.";
 $('corpus').value=CORPUS;
 var LS={},BG={},WU={},WB={},clean='';
 function build(){
@@ -2672,7 +2663,7 @@ var EMB=[
  {w:'excavator',x:174,y:64,g:'m'},{w:'bulldozer',x:136,y:90,g:'m'},{w:'winch',x:202,y:106,g:'m'},
  {w:'revocable',x:296,y:204,g:'p'},{w:'irrevocable',x:312,y:220,g:'p'},
  {w:'GRAT',x:366,y:184,g:'p'},{w:'GRIT',x:382,y:196,g:'p'},
- {w:'QTIP',x:412,y:230,g:'p'},{w:'QDOT',x:428,y:242,g:'p'},
+ {w:'conversion',x:412,y:230,g:'p'},{w:'contribution',x:428,y:242,g:'p'},
  {w:'trustee',x:332,y:256,g:'p'},{w:'remainder',x:398,y:268,g:'p'}];
 (function(){
   var C={r:'var(--on)',b:'var(--gold)',v:'var(--warn)',m:'#4A6572',p:'var(--on)'},s='';
@@ -2692,7 +2683,7 @@ var EQ=[
   f:['Correct \u2014 his canonical near pair, because the two are substitutable in a sentence.','Wolfram uses alligator and crocodile precisely because they are substitutable in a sentence.']},
  {t:'Which pair does he give as the example of words placed far apart?',o:['eagle and hawk','turnip and eagle','GRAT and GRIT'],a:1,
   f:['Correct. Neither appears in the environments the other does, so nothing pulls them together.','His example is turnip and eagle \u2014 words that never appear in otherwise similar sentences.']},
- {t:'Which planning pair sits closest together while doing nearly opposite things?',o:['revocable and irrevocable','trustee and remainder','QTIP and GRAT'],a:0,
+ {t:'Which planning pair sits closest together while doing nearly opposite things?',o:['revocable and irrevocable','trustee and remainder','conversion and GRAT'],a:0,
   f:['Correct, and this is the danger. One letter apart, near-identical surrounding sentences, opposite consequences for estate inclusion, creditor protection and basis step-up.','Revocable and irrevocable is the pair. Near-identical context, opposite consequences \u2014 the model has nothing pulling them apart.']}];
 (function(){
   var host=$('embQuiz');
@@ -2746,9 +2737,9 @@ all('[data-pk]').forEach(function(b){b.onclick=function(){pseq.push(b.dataset.pk
 $('parenReset').onclick=function(){pseq=[];parenDraw()};parenDraw();
 
 /* ===== 07 SAMPLER LAB ===== */
-var LABTOK=['appraised','discounted','sold','gifted','retained','valued','transferred','pledged','frozen','recapitalised','exchanged','loaned','seeded','insured','collared','contributed','deferred','tendered','securitised','swapped','abandoned','forfeited','auctioned','bartered','franchised','tokenised','vaporised','teleported','levitated','summoned'];
+var LABTOK=['converted','rolled','reviewed','updated','retitled','confirmed','removed','distributed','deferred','named','withdrawn','reported','transferred','consolidated','taxed','split','retained','inherited','claimed','amended','reissued','closed','frozen','liquidated','pledged','abandoned','vaporised','teleported','levitated','summoned'];
 var LABP=(function(){var p=LABTOK.map(function(_,i){return 1/(i+1)});var s=p.reduce(function(a,b){return a+b},0);return p.map(function(v){return v/s})})();
-$('labPrompt').textContent='"Meg\u2019s '+COLE.nonVotingUnits+' non-voting LLC units should be ___"';
+$('labPrompt').textContent='"David\u2019s $'+fmt(COLE.davidRollover)+' rollover IRA should be ___"';
 var SM={
  top_k:{on:false,v:8,min:1,max:30,step:1,name:'Top K',desc:'Keep the K tokens with the highest probability.'},
  tfs_z:{on:false,v:0.95,min:0,max:1,step:0.01,name:'Tail Free Z',desc:'Cut once the cumulative absolute second derivative of the sorted distribution reaches Z.'},
@@ -2944,19 +2935,22 @@ function costUpd(){
 $('adv').addEventListener('input',costUpd);$('mtg').addEventListener('input',costUpd);costUpd();
 
 /* ===== 11 TIER QUIZ ===== */
+/* The taxable brokerage account is the index funds plus the Dunmore position:
+   COLE.brokerageFunds + COLE.esppValue, which is the case's $360,000. */
+var BROK=COLE.brokerageFunds+COLE.esppValue;
 var TQ=[
- {d:'Investment Planning',t:'From the brokerage export, compute the concentration of the three technology names that make up '+Math.round(COLE.techPct*100)+'% of the $'+fmt(COLE.brokerage)+' taxable account.',a:0,
-  f:['Correct. One computation, zero judgment: '+Math.round(COLE.techPct*100)+'% of $'+fmt(COLE.brokerage)+' is $'+fmt(COLE.techPositions)+', checkable at a glance, and either the tool got that or it did not.','This works and you are paying five to ten times what the task needs. There is no judgment in the computation: '+Math.round(COLE.techPct*100)+'% of $'+fmt(COLE.brokerage)+' is $'+fmt(COLE.techPositions)+', and you can verify it in your head.']},
+ {d:'Investment Planning',t:'From the brokerage export, compute the concentration of the Dunmore stock: '+fmt(COLE.esppShares)+' shares at $'+COLE.esppPrice+' against the $'+fmt(BROK)+' taxable account.',a:0,
+  f:['Correct. One computation, zero judgment: '+fmt(COLE.esppShares)+' shares at $'+COLE.esppPrice+' is $'+fmt(COLE.esppValue)+', which is '+COLE.esppPct+'% of $'+fmt(BROK)+', checkable at a glance, and either the tool got that or it did not.','This works and you are paying five to ten times what the task needs. There is no judgment in the computation: '+fmt(COLE.esppShares)+' shares at $'+COLE.esppPrice+' is $'+fmt(COLE.esppValue)+', which is '+COLE.esppPct+'% of $'+fmt(BROK)+', and you can verify it with a calculator.']},
  {d:'General Principles',t:'Draft the confirmation email and agenda for next week\u2019s meeting with Meg and David.',a:1,
   f:['Correct. Templated is not the same as low-stakes: the draft goes out under your name, you answer for every factual detail in it, and the error a cheaper tier misses costs more than the tier saves.','Templated is not the same as low-stakes. The draft goes out under your name, you answer for every factual detail in it, and the error a cheaper tier misses costs more than the tier saves; a mid-tier draft you read before sending is the match.']},
- {d:'Psychology of Financial Planning',t:'Summarise a 90-minute meeting in which Meg said, for the first time, that she has not told Nathan she is exploring a sale \u2014 and David reacted.',a:1,
-  f:['Correct on tier. The real risk is not capability: a summariser rewards coherent narrative, so it smooths an uncomfortable disclosure and a spousal reaction into a tidy paragraph. Ask separately for unresolved items and points of disagreement \u2014 here the discomfort is the planning finding.','Defensible on tier, but the tier is not the problem. A summariser flattens conflict into consensus, and this meeting is entirely conflict \u2014 Nathan does not know, David reacted, and neither survives a tidy paragraph.']},
- {d:'Retirement Savings and Income',t:'Model the interaction between two distribution clocks \u2014 Meg\u2019s own $'+fmt(COLE.megIra)+' IRA, where her applicable age is '+COLE.megApplicableAge+' and the first distribution year is '+COLE.megFirstDistYear+', and the $'+fmt(COLE.inheritedIra)+' IRA she inherited from '+COLE.decedent+', which must be emptied by '+COLE.inhIraOuterLimit+' with annual RMDs because he died after his required beginning date \u2014 against David\u2019s unclaimed Social Security and a sale year that could land in the top bracket.',a:2,
-  f:['Correct. Sustained multi-step reasoning where an error in one year propagates silently through twenty \u2014 and every bracket and threshold in it is an arbitrary fact you verify separately.','This is compounding multi-step reasoning across a bracket-sensitive sale year. Top tier earns its price, and you still check every threshold against the source.']},
- {d:'Tax Planning',t:'Identify the note terms and interest rate the demand note must carry for the sale to the trust to be respected as a sale rather than a part gift.',a:2,
-  f:['Correct on tier, and verify every figure. The applicable rate is a published monthly number \u2014 an arbitrary fact with one right answer and twelve plausible wrong ones per year, all of which the model has seen in identical sentences.','Top tier, and it will still hand you a rate in a confident sentence. Applicable rates publish monthly; the model has seen years of them in near-identical language with no signal about which is current.']},
- {d:'Estate Planning',t:'Reconcile the 2014 buy-sell formula value, roughly $'+fmt(COLE.buySellFormula)+' on current financials, against the $'+fmt(COLE.cpcValue)+' indicated value for the company, and list every provision of the two documents that conflicts.',a:2,
-  f:['Correct on tier \u2014 and the tier is not what protects you here. An exact reconciliation across a long document is the shape these models are least reliable at, at any price: the comparison is approximated from local pattern and the approximation decays with length. Extract the provisions with the tool, then compare them yourself. Note also that nothing in this document set creates estate liquidity against an illiquid controlling interest in a private company.','This is a reconciliation across a long document, the exact shape these models are least reliable at. Any tier, and you do the comparison by hand.']}];
+ {d:'Psychology of Financial Planning',t:'Summarise a 90-minute meeting in which Meg said, for the first time, that her mother\u2019s care team expects Ruth to need assisted living within a year, and David pushed back on what it would do to stopping at '+COLE.davidRetireAge+'.',a:1,
+  f:['Correct on tier. The real risk is not capability: a summariser rewards coherent narrative, so it smooths an uncomfortable disclosure and a spousal reaction into a tidy paragraph. Ask separately for unresolved items and points of disagreement. Here the disagreement is the planning finding: Ruth\u2019s care and a stop at '+COLE.davidRetireAge+' compete for the same money.','Defensible on tier, but the tier is not the problem. A summariser flattens conflict into consensus, and this meeting is mostly conflict: Meg raised Ruth, David reacted, the two goals compete, and none of that survives a tidy paragraph.']},
+ {d:'Retirement Savings and Income',t:'Model the interaction between two distribution clocks: Meg\u2019s own $'+fmt(COLE.meg403b)+' 403(b), where her applicable age is '+COLE.megApplicableAge+' and the first distribution year is '+COLE.megFirstDistYear+', and the $'+fmt(COLE.ruthIra)+' IRA she would inherit from Ruth, which must be emptied by 31 December of the tenth year after Ruth\u2019s death, with annual distributions in years one to nine because Ruth is past her required beginning date. Set both against David\u2019s unclaimed Social Security and a conversion year that could land in a higher bracket.',a:2,
+  f:['Correct. Sustained multi-step reasoning where an error in one year propagates silently through a dozen years or more, and every bracket and threshold in it is an arbitrary fact you verify separately.','This is compounding multi-step reasoning across a bracket-sensitive conversion year. Top tier earns its price, and you still check every threshold against the source.']},
+ {d:'Tax Planning',t:'Work out which IRMAA tier a conversion in '+COLE.davidIrmaaLookback+' puts David in for his Medicare Part B premium two years later, and the premium at that tier.',a:2,
+  f:['Correct on tier, and verify every figure. The tier bounds and premiums are published annual numbers, an arbitrary fact with one right answer and many plausible wrong ones, and the model has seen several years of them in near-identical sentences.','Top tier, and it will still hand you a threshold in a confident sentence. The bounds publish every year; the model has seen years of them in near-identical language with no signal about which is current.']},
+ {d:'Estate Planning',t:'Reconcile the '+COLE.memoDate+' Roth conversion memo, which says the Dunmore plan does not permit in-plan conversion, against the summary plan description amended '+COLE.spdAmended+', and list every provision of the two documents that conflicts.',a:2,
+  f:['Correct on tier \u2014 and the tier is not what protects you here. An exact reconciliation across a long document is the shape these models are least reliable at, at any price: the comparison is approximated from local pattern and the approximation decays with length. Extract the provisions with the tool, then compare them yourself. Note also that the memo predates the plan amendment, so an answer grounded on the memo alone is fully sourced and materially wrong.','This is a reconciliation across a long document, the exact shape these models are least reliable at. Any tier, and you do the comparison by hand.']}];
 var TLABEL=['Haiku-class','Sonnet-class','Opus / Fable-class'];
 (function(){
   var host=$('tierQuiz'),done=0;
@@ -3040,9 +3034,9 @@ var TLABEL=['Haiku-class','Sonnet-class','Opus / Fable-class'];
 var DG=[
  {s:'It cited a Code section that does not say what it claimed',c:'It sampled a plausible citation rather than retrieving a real one. Statutory citations are arbitrary facts \u2014 many plausible wrong answers, one right one.',f:'Verify every citation against the primary source before it informs a recommendation. If the tool cannot show you where the text came from, the citation is unverified.'},
  {s:'The same question gave two different answers',c:'Sampling. You built this in \u00a702 \u2014 the model draws from a distribution and the sampler decides how far into the tail it may reach.',f:'Run consequential questions more than once. Divergence is a signal of uncertainty even when both answers sound confident.'},
- {s:'It gave a confident applicable federal rate',c:'The scoring rule plus stale training data. Abstention scores like a wrong answer, and years of monthly rates sit in training in near-identical sentences with no signal about which is current.',f:'Treat every rate, date and threshold as unverified. Published figures come from the publisher, not the model.'},
- {s:'It reconciled two documents and missed a conflict',c:'An exact reconciliation across a long document. There is no loop in the machine, so it cannot hold a running comparison \u2014 it approximates one from local pattern and the approximation decays with length. The 2014 buy-sell against the 2023 appraisal is exactly this shape.',f:'Never delegate an exact reconciliation. Extract the provisions with the tool, then compare them yourself or in a spreadsheet.'},
- {s:'It summarised a tense meeting as if everyone agreed',c:'Fluency bias. Coherent narrative is what the objective rewards, and disagreement makes a summary less coherent, so it is smoothed away \u2014 which is how Meg not having told Nathan disappears from a meeting note.',f:'Ask for points of disagreement and unresolved items as a separate output. Never accept a single-narrative summary of a multi-party meeting.'},
+ {s:'It gave a confident Medicare premium threshold',c:'The scoring rule plus stale training data. Abstention scores like a wrong answer, and years of annual thresholds sit in training in near-identical sentences with no signal about which is current.',f:'Treat every rate, date and threshold as unverified. Published figures come from the publisher, not the model.'},
+ {s:'It reconciled two documents and missed a conflict',c:'An exact reconciliation across a long document. There is no loop in the machine, so it cannot hold a running comparison \u2014 it approximates one from local pattern and the approximation decays with length. The 2024 Roth memo against the 2026 plan amendment is exactly this shape.',f:'Never delegate an exact reconciliation. Extract the provisions with the tool, then compare them yourself or in a spreadsheet.'},
+ {s:'It summarised a tense meeting as if everyone agreed',c:'Fluency bias. Coherent narrative is what the objective rewards, and disagreement makes a summary less coherent, so it is smoothed away \u2014 which is how David\u2019s reaction to the cost of Ruth\u2019s care disappears from a meeting note.',f:'Ask for points of disagreement and unresolved items as a separate output. Never accept a single-narrative summary of a multi-party meeting.'},
  {s:'The bill was far higher than the pricing page implied',c:'Cost is per-token price times tokens consumed. Verbose output, reasoning tokens and long context all move the second number. A tokenizer change moves it too.',f:'Measure tokens on your actual workload. Enable prompt caching where a system prompt repeats \u2014 a cache hit costs 10% of input.'}];
 (function(){
   var seen={};
@@ -3058,17 +3052,21 @@ var DG=[
 
 /* ===== 10b COLE DOCUMENT PASS ===== */
 var DPT=[['Haiku 4.5',1,5],['Sonnet 5',2,10],['Opus 5',5,25],['Fable 5',10,50]];
+/* One shared constant for the pass: 60,000 words of the four documents at 0.75
+   words per token is 80,000 tokens in; the issues memo is 8,000 tokens out.
+   The s5 table row, the s11 prose and this panel all state the same pair. */
+var DPIN=80000,DPOUT=8000;
 var dpSeen={};
 function dpDraw(k){
-  var t=DPT[k],cin=125000/1e6*t[1],cout=8000/1e6*t[2],tot=cin+cout;
+  var t=DPT[k],cin=DPIN/1e6*t[1],cout=DPOUT/1e6*t[2],tot=cin+cout;
   $('dpStats').innerHTML=
-   '<div class="stat"><span class="sn">Input 125,000 tok</span><span class="sv">$'+cin.toFixed(3)+'</span></div>'+
-   '<div class="stat"><span class="sn">Output 8,000 tok</span><span class="sv">$'+cout.toFixed(3)+'</span></div>'+
+   '<div class="stat"><span class="sn">Input '+DPIN.toLocaleString('en-US')+' tok</span><span class="sv">$'+cin.toFixed(3)+'</span></div>'+
+   '<div class="stat"><span class="sn">Output '+DPOUT.toLocaleString('en-US')+' tok</span><span class="sv">$'+cout.toFixed(3)+'</span></div>'+
    '<div class="stat hit"><span class="sn">One full pass</span><span class="sv">$'+tot.toFixed(2)+'</span></div>'+
    '<div class="stat"><span class="sn">Ten passes</span><span class="sv">$'+(tot*10).toFixed(2)+'</span></div>';
-  var cheapest=125000/1e6*1+8000/1e6*5;
+  var cheapest=DPIN/1e6*DPT[0][1]+DPOUT/1e6*DPT[0][2];
   $('dpOut').className='readout on';
-  $('dpOut').innerHTML='<span class="cz">'+t[0]+'</span>Reading the draft IDGT instrument, the note, the 2014 buy-sell and the 2023 appraisal together and writing an issues memo costs <b>$'+tot.toFixed(2)+'</b> on this tier'+
+  $('dpOut').innerHTML='<span class="cz">'+t[0]+'</span>Reading the plan description, the 2024 memo, the 2009 beneficiary form and the residency agreement together and writing an issues memo costs <b>$'+tot.toFixed(2)+'</b> on this tier'+
     (k===0?'. That is the floor.':' \u2014 '+(tot/cheapest).toFixed(1)+'\u00d7 the cheapest tier, and still under two dollars.')+
     ' With prompt caching the input side drops to a tenth on every pass after the first, because those four documents do not change between questions.';
   dpSeen[k]=1;if(Object.keys(dpSeen).length>=4)mark('g11');
@@ -3079,7 +3077,7 @@ dpDraw(0);
 
 /* ===== 14 CUSTOM INSTRUCTIONS BUILDER ===== */
 var CIOPT=[
- {k:'role',l:'Credential and role',v:'I am a CERTIFIED FINANCIAL PLANNER\u2122 professional working with high-net-worth households on estate, tax and retirement planning.'},
+ {k:'role',l:'Credential and role',v:'I am a CERTIFIED FINANCIAL PLANNER\u2122 professional working with pre-retiree households on retirement income, tax and estate planning.'},
  {k:'verify',l:'Standing verification requirement',v:'Never state a statute, rate, threshold or case as settled without telling me it needs verification. Label anything you cannot verify as unverified rather than omitting the caveat.'},
  {k:'conf',l:'Confidence labelling',v:'Label material claims H, M or L for confidence, and name the source you are relying on.'},
  {k:'fmt',l:'Default output format',v:'Default to structured bullets and tables over long prose. Lead with the answer, then the reasoning.'},

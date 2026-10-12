@@ -53,27 +53,22 @@ confidence I have in the correction. Two of them I will also say aloud on Monday
    together. High.
 7. **Input is not cheap "because they train on it".** Commercial and API data is not used for
    training. Per the 2026-09-07 claims audit.
-8. **The squeeze, freeze and burn paper.** The author I named does not exist. The paper is Marvin
-   E. Blum's, in the NAEPC Journal of Estate & Tax Planning, issue 7. Per the claims audit.
-9. **Fable is exactly twice the per-token price of Opus, not "over twice" or "six times".** High.
-10. **The input box is not the context window.** The window is everything sent with each message,
-    including the whole conversation so far. High.
-11. **Two leaderboards were conflated.** The Intelligence Index is Artificial Analysis's, not
+8. **Fable is exactly twice the per-token price of Opus, not "over twice" or "six times".** High.
+9. **The input box is not the context window.** The window is everything sent with each message,
+   including the whole conversation so far. High.
+10. **Two leaderboards were conflated.** The Intelligence Index is Artificial Analysis's, not
     LiveBench's. Medium.
-12. **Navajo has a written form**, standardised since the late 1930s. The point I was making
+11. **Navajo has a written form**, standardised since the late 1930s. The point I was making
     stands: it is a low-resource language for these models because little of it is digitised.
     High.
-13. **The Cole company is a C corporation.** I described the trust's income as S-corporation
-    pass-through. It is not: CPC has never made an S election and the "burn" runs on dividends.
-    High, from the case file.
-14. **FP Alpha is an AI-driven platform, not a deterministic calculator.** Its own tax-return
+12. **FP Alpha is an AI-driven platform, not a deterministic calculator.** Its own tax-return
     reading routes low-confidence extractions to human reviewers, which is the discernment point
     I was making, not a counter-example to it. High.
-15. **The eCFR is at ecfr.gov, not .com**, and it carries Treasury regulations (26 CFR); the Code
+13. **The eCFR is at ecfr.gov, not .com**, and it carries Treasury regulations (26 CFR); the Code
     itself is 26 U.S.C. Two bodies of authority I ran together. High.
-16. **The known-knowns 2x2 is not Anthropic's.** It predates them by decades. Medium on the
+14. **The known-knowns 2x2 is not Anthropic's.** It predates them by decades. Medium on the
     attribution history, high that it is not Anthropic's.
-17. **The Session 1 probability-against-rank curve was illustrative, not measured.** Per the
+15. **The Session 1 probability-against-rank curve was illustrative, not measured.** Per the
     claims audit.
 
 If you spot anything else, say so. Being called out is the point.

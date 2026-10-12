@@ -271,6 +271,29 @@ done                                                          # must equal the p
 grep -H '<title>' index.html session-*/index.html            # hub and lessons agree
 ```
 
+### Re-capturing a model output (`scripts/recapture.mjs`)
+
+A lesson that shows a captured model output (session-2 `#bsell`, session-3
+`OFFEX`, the Session 0.1 probe captures) labels it with the model that produced
+it and the date. When the case or the prompt changes, the capture is re-run,
+never edited by hand, through the helper added for the 2027 term:
+
+```bash
+node scripts/recapture.mjs --prompt <file> --model claude-sonnet-5-5   # prints a label line, then the answer verbatim
+node scripts/recapture.mjs --prompt <file> --model <id> --json          # the raw CLI JSON instead
+```
+
+It runs the `claude` CLI non-interactively (`-p`, JSON output) and prints
+`# model <id> · captured <date> · prompt sha256 <12 hex>` from what the CLI
+reported, then the answer. **The label on the page is the model id the helper
+printed**, never a name typed from memory and never the identity of whatever
+session is doing the editing: the CLI's reported model is the only fact the page
+can stand behind. Run it from a directory outside the repository so no project
+file is read as context. If the CLI is unavailable, the page keeps the old
+capture's structure with the labelled text "Capture pending re-run against the
+v5 case" and the deferred-work register gets a row (D-033 in
+`docs/next-term/DECISIONS.md` records the five probe captures deferred this way).
+
 ## Change-folder checks, and jsdom
 
 Nearly every pass on a lesson since 2026-09-12 left a folder,

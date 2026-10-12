@@ -97,8 +97,13 @@ printed on a page goes stale the day the next cohort starts.
 ## The Cole household
 
 Every worked example, exercise input and discussion prompt in the course draws
-on one client household: Meg and David Cole of Barrington Hills, Illinois,
-whose company is in Rockford. The Cole household
+on one client household: Meg and David Cole of Naperville, Illinois, two W-2
+earners in their late fifties (a nurse manager and a senior mechanical
+engineer) with $2,446,000 of investable assets, a mortgage, two children, and
+Meg's mother Ruth in a senior living community. One question runs through all
+five sessions and no session answers it: how much should the Coles convert to
+Roth, and in which years, between the day the second paycheck stops and the day
+required minimum distributions begin? The Cole household
 is **entirely synthetic**. It was constructed for this course, it is labelled as
 synthetic in every lesson that presents it, and it is not derived from, based
 on, or de-identified from any real household.

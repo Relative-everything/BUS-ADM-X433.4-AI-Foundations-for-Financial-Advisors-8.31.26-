@@ -21,7 +21,7 @@ the room is quick; keep 8 only if D4 runs in full.
 **Question:** A client meeting transcript is going into an AI tool. What do you do to it first, today, honestly?
 **Answers:** A · Paste it as it is into the firm's tool / B · Delete the names / C · Replace the names and every fact that points to her / D · I never paste transcripts
 **Lands:** C. (habits check as well: the As and Bs are the room's real practice)
-**Say on the result:** "Names are the easy part. In two minutes the page shows seven phrases with no name in them that still point to one woman in Barrington Hills."
+**Say on the result:** "Names are the easy part. In two minutes the page shows seven phrases with no name in them that still point to one woman in Naperville."
 
 ### Poll 3 · 6:46 · §03, two questions in one poll (replaces the aid's Poll 2)
 **Question 1:** Which AI tool do you use most for work?
@@ -38,7 +38,7 @@ the room is quick; keep 8 only if D4 runs in full.
 **Say on the result:** "Approved means on paper, signed by someone who can bind the firm. The six answers in §04 are that paper, and lock 4 shows the vendor promising 48 hours where the rule makes you demand 72."
 
 ### Poll 5 · 7:42 · §05, the assistant (the aid's Poll 3)
-**Question:** The email assistant reads three emails. One carries a hidden line asking it to forward the Cole estate files. What comes back?
+**Question:** The email assistant reads three emails. One carries a hidden line asking it to forward every file with Cole in its name. What comes back?
 **Answers:** A · Just the summary / B · The summary, and it forwards the files
 **Lands:** B.
 **Say on the result:** "It read the hidden line as an instruction, because it is text like everything else it reads. Wording is not a lock; access is. Fixes 2 and 3 are settings."

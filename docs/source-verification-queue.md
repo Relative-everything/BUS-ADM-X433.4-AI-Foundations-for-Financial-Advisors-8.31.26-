@@ -23,13 +23,13 @@ never-fabricate rule exists to prevent.
 
 | | |
 |---|---|
-| Source records | **140** |
-| `last_verified` **EMPTY** | **136** |
+| Source records | **139** |
+| `last_verified` **EMPTY** | **135** |
 | `last_verified` populated | 1 |
 | `last_verified` *not applicable* (synthetic or fabricated) | 3 |
 | References standing behind an EMPTY `last_verified` | **400** of 480 |
-| Moving targets | 52 |
-| Lock | notarised, digest `9a264af4627fb8ad` |
+| Moving targets | 54 |
+| Lock | notarised, digest `b2668529e6170c8c` |
 
 
 ## Already attested
@@ -164,27 +164,26 @@ Each one cites the evidence in the repository that records the confirmation.
 | 117 | `src-zheng-persona` | When "A Helpful Assistant" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models | **EMPTY** | **none** | 1 | no | S2 `#s6` |
 | 118 | `src-anthropic-aup` | Usage Policy | **EMPTY** | 2026-09-27 | 0 | yes | *listed by no lesson, cited by none* |
 | 119 | `src-anthropic-fluency` | AI fluency: Frameworks and foundations | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 120 | `src-davidson` | Estate of William M. Davidson v. Commissioner, T.C. Docket No. 13748-13 | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 121 | `src-fbi-ic3-2024` | FBI releases annual Internet Crime Report: 2024 | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 122 | `src-ferrari` | Ferrari deepfake attempt: scammer foiled by security question about CEO Benedetto Vigna | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 123 | `src-forcedleak` | ForcedLeak: AI agent risks exposed in Salesforce Agentforce | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 124 | `src-gartner` | Survey of 302 security leaders | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 125 | `src-hallowell` | Hallowell v. Commissioner, T.C. Memo. 2023-217 | *n/a* | *n/a* | 0 | no | *listed by S4, cited by none* |
-| 126 | `src-irc` | Internal Revenue Code §§ 671, 675, 2036, 2702, 7520 | **EMPTY** | *n/a* | 0 | no | *listed by S2, cited by none* |
+| 120 | `src-fbi-ic3-2024` | FBI releases annual Internet Crime Report: 2024 | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 121 | `src-ferrari` | Ferrari deepfake attempt: scammer foiled by security question about CEO Benedetto Vigna | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 122 | `src-forcedleak` | ForcedLeak: AI agent risks exposed in Salesforce Agentforce | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 123 | `src-gartner` | Survey of 302 security leaders | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 124 | `src-hallowell` | Hallowell v. Commissioner, T.C. Memo. 2023-217 | *n/a* | *n/a* | 0 | no | *listed by S4, cited by none* |
+| 125 | `src-irs-590b` | Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs) | **EMPTY** | 2026-10-12 | 0 | yes | *listed by S2, cited by none* |
+| 126 | `src-irs-8606` | Form 8606, Nondeductible IRAs, and its instructions | **EMPTY** | 2026-10-12 | 0 | yes | *listed by S2, cited by none* |
 | 127 | `src-kessler` | Kessler v. Commissioner, 152 T.C. 88 (2019) | *n/a* | *n/a* | 0 | no | *listed by S2, cited by none* |
 | 128 | `src-kitces-advisortech` | The Latest in Financial AdvisorTech — AdvisorTech columns, October 2025, November 2025 and August 2026 | **EMPTY** | **none** | 0 | yes | *listed by no lesson, cited by none* |
 | 129 | `src-laplace` | A philosophical essay on probabilities | **EMPTY** | *n/a* | 0 | no | *listed by S2, cited by none* |
 | 130 | `src-morningstar` | AI for advisors: Enhancing client conversations | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
 | 131 | `src-nikkei-papers` | 'Positive review only': researchers hide AI prompts in papers | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 132 | `src-rr200464` | Rev. Rul. 2004-64, 2004-2 C.B. 7 (2004-27 I.R.B. 9) | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 133 | `src-rr8513` | Rev. Rul. 85-13, 1985-1 C.B. 184 | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 134 | `src-safebreach-gemini` | Invitation is all you need: hacking Gemini | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 135 | `src-sg-deepfake-2025` | Finance director in Singapore transfers S$670,000 to scammers who used deepfake to impersonate company's executives | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 136 | `src-surfshark` | 2026 deepfake-loss analysis | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 132 | `src-safebreach-gemini` | Invitation is all you need: hacking Gemini | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 133 | `src-secure2-107` | SECURE 2.0 Act of 2022, section 107 (increase in age for required beginning date) | **EMPTY** | 2026-10-12 | 0 | no | *listed by S2, cited by none* |
+| 134 | `src-sg-deepfake-2025` | Finance director in Singapore transfers S$670,000 to scammers who used deepfake to impersonate company's executives | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 135 | `src-surfshark` | 2026 deepfake-loss analysis | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 136 | `src-td10001` | Required Minimum Distributions, T.D. 10001, 89 FR 58886 (final regulations under IRC § 401(a)(9)) | **EMPTY** | 2026-10-12 | 0 | no | *listed by S2, cited by none* |
 | 137 | `src-uk-voice` | A voice deepfake was used to scam a CEO out of $243,000 | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
 | 138 | `src-vectara` | Introducing the next generation of Vectara's hallucination leaderboard | **EMPTY** | **none** | 0 | yes | *listed by no lesson, cited by none* |
-| 139 | `src-woelbing` | Estate of Donald Woelbing v. Commissioner, T.C. Docket No. 30261-13, and Estate of Marion Woelbing v. Commissioner, T.C. Docket No. 30260-13 | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 140 | `src-zhao` | Invisible image watermarks are provably removable using generative AI | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 139 | `src-zhao` | Invisible image watermarks are provably removable using generative AI | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
 
 
 ---
@@ -312,26 +311,25 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-zheng-persona` | https://aclanthology.org/2024.findings-emnlp.888/ |
 | `src-anthropic-aup` | https://www.anthropic.com/legal/aup |
 | `src-anthropic-fluency` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
-| `src-davidson` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-fbi-ic3-2024` | https://www.fbi.gov/news/press-releases/fbi-releases-annual-internet-crime-report |
 | `src-ferrari` | https://fortune.com/2024/07/27/ferrari-deepfake-attempt-scammer-security-question-ceo-benedetto-vigna-cybersecurity-ai |
 | `src-forcedleak` | https://noma.security/blog/forcedleak-agent-risks-exposed-in-salesforce-agentforce |
 | `src-gartner` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-hallowell` | *not applicable* |
-| `src-irc` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
+| `src-irs-590b` | https://www.irs.gov/publications/p590b |
+| `src-irs-8606` | https://www.irs.gov/forms-pubs/about-form-8606 |
 | `src-kessler` | *not applicable* |
 | `src-kitces-advisortech` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-laplace` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-morningstar` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-nikkei-papers` | https://asia.nikkei.com/business/technology/artificial-intelligence/positive-review-only-researchers-hide-ai-prompts-in-papers |
-| `src-rr200464` | https://www.irs.gov/irb/2004-27_IRB |
-| `src-rr8513` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-safebreach-gemini` | https://www.safebreach.com/blog/invitation-is-all-you-need-hacking-gemini/ |
+| `src-secure2-107` | https://www.congress.gov/bill/117th-congress/house-bill/2617 |
 | `src-sg-deepfake-2025` | https://mothership.sg/2025/04/finance-director-scammed-deepfake/ |
 | `src-surfshark` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
+| `src-td10001` | https://www.govinfo.gov/content/pkg/FR-2024-07-19/html/2024-14542.htm |
 | `src-uk-voice` | https://www.forbes.com/sites/jessedamiani/2019/09/03/a-voice-deepfake-was-used-to-scam-a-ceo-out-of-243000/ |
 | `src-vectara` | https://www.vectara.com/blog/introducing-the-next-generation-of-vectaras-hallucination-leaderboard |
-| `src-woelbing` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-zhao` | https://arxiv.org/abs/2306.01953 |
 
 
@@ -694,6 +692,14 @@ NOT RETRIEVED. fortune.com is egress-blocked from this build environment (2026-0
 
 NOT RETRIEVED. noma.security is egress-blocked from this build environment (2026-09-27). Cross-checked against The Hacker News, Dark Reading and Security Affairs (September 2025), consistent on the CVSS score, the mechanism and the $5 domain.
 
+### `src-irs-590b`
+
+Title verified 2026-10-12 from the IRS Form 8606 instructions (which cite it) found by web search; irs.gov is not reachable from the build container, so the current edition was not fetched.
+
+### `src-irs-8606`
+
+Scope verified 2026-10-12 from the 2022 to 2025 instruction texts found by web search (nondeductible contributions, distributions with basis, conversions to Roth IRAs, Roth distributions); irs.gov is not reachable from the build container, so the current form was not fetched.
+
 ### `src-kitces-advisortech`
 
 Fetch ATTEMPTED 2026-08-25 and REFUSED before it reached the source: www.kitces.com is not permitted by the build environment's egress policy (HTTP 403 on CONNECT). This is a statement about this environment, NOT about the source — the source is not known to have moved or gone. No date is written, because no retrieval happened. Listed in docs/source-verification-queue.md as instructor work.
@@ -706,9 +712,17 @@ NOT RETRIEVED. asia.nikkei.com is egress-blocked from this build environment (20
 
 NOT RETRIEVED. safebreach.com is egress-blocked from this build environment (2026-09-27). Presented at Black Hat USA in August 2025 after disclosure to Google on 22 February 2025; cross-checked against The Register, TechRepublic and Bitdefender.
 
+### `src-secure2-107`
+
+Citation and effect verified 2026-10-12 from three secondary summaries (Milliman, Foley, Kilpatrick Townsend) found by web search; congress.gov is not reachable from the build container, so the statutory text itself was not fetched. Applicable age 73 for those born 1951 to 1959 and 75 for 1960 and later; the 1959 cohort was clarified by the May 2023 chairs' letter and the July 2024 proposed regulations.
+
 ### `src-sg-deepfake-2025`
 
 NOT RETRIEVED. mothership.sg and police.gov.sg are egress-blocked from this build environment (2026-09-27). The primary source is the Singapore Police Force news release of 7 April 2025 on the joint recovery with the Hong Kong Police Force; cross-checked against HRD Asia, Fortune (25 April 2025) and The Straits Times.
+
+### `src-td10001`
+
+Verified 2026-10-12 from the GovInfo Federal Register listing, the IRS newsroom release (IR-2024-190) and the Journal of Accountancy report found by web search: issued 18 July 2024, published 19 July 2024, effective 17 September 2024, applying to calendar years beginning on or after 1 January 2025; companion proposed regulations REG-103529-23 issued the same day. The GovInfo page itself was not fetched from the build container.
 
 ### `src-uk-voice`
 

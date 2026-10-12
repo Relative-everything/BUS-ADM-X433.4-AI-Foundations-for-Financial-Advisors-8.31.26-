@@ -89,15 +89,16 @@ Everything below this block still holds. What moved on the page:
   Nothing on the page speaks to you instead of to the room, and no lesson text names a file or a
   build script.
 - **§00 carries the Coles in four lines**, in the panel "The Cole file, in four lines" under the
-  opening bullets: the household with David, Nathan and Claire, the plan with the seed gift and the
-  demand note, the documents, and what is new. Read it aloud at 6:19. Every exercise now works
-  without the case study, so nobody has to open Case facts.
+  opening bullets: the household with Meg and David, Emma and Ryan, and Meg's mother Ruth; the
+  question, nothing decided, with David's in-plan Roth conversion set against the 2024 memo that
+  says the plan does not allow it; the documents; and what is new. Read it aloud at 6:19. Every
+  exercise now works without the case study, so nobody has to open Case facts.
 - **§03 prints each preset's question on its button**, so the room can commit to a passage number
   before the click that ranks it. The hint names the one fact the judgement needs.
 - **§06's question is now "the stage whose skipped check is first seen at an examination"**. The
   answer is still 5.
-- **§07 stage four flags "we will arrange that"** as a commitment the tool added, and gives the
-  action item no owner, which is what §08 teaches.
+- **§07 stage four flags "send you the revised numbers next week"** as a commitment the tool
+  added, and leaves the conversion re-run with no date, which is what §08 teaches.
 - **§08's silent run tells anyone without Claude, or with a stalled run, to open Example output.**
 - **A2 offers a third meeting type** for the three who do not run client meetings.
 - **The four work-along ticks that never appeared** (the map, the presets, the C3 prediction, the
@@ -168,10 +169,10 @@ the objective.
 | 6:19 | 7 | §01 and §02, now one section | `s2` | "Why the nearest passage is not the right one." |
 | 6:26 | 12 | §03 the retriever, preset 1. **WORKED 1** | `s4` estimate-then-reveal | "Commit first: which document answers this? Then watch what the retriever does." |
 | 6:38 | 8 | §04 what grounding fixes. **Poll 2** | `s6` prediction-commit | "Guess before the figures. You are meant to get this wrong." |
-| 6:46 | 6 | §05 grounding against fine-tuning | `s7` commit-first-mcq | "The appraisal is re-run Tuesday. Which assistant reflects it Wednesday with no engineering?" |
+| 6:46 | 6 | §05 grounding against fine-tuning | `s7` commit-first-mcq | "On Tuesday David files a new beneficiary form for the rollover IRA. Which assistant gives the new beneficiary on Wednesday with no engineering?" |
 | 6:52 | 8 | §06 the workflow chain | `s9` symptom-diagnoser | "Five stages. A mistake at any one is inherited by every stage after it." |
 | **7:00** | **15** | **BREAK. Post "back at 7:15" in chat, Pacific** | | Post the clock time in their zone, not yours. |
-| 7:15 | 9 | §07 the note-taker's four stages | `s10` | "Stage two drops a clause about Nathan. That is the teaching point." |
+| 7:15 | 9 | §07 the note-taker's four stages | `s10` | "Stage two drops the two clauses that mark a confidence. That is the teaching point." |
 | 7:24 | 12 | §08 **silent run, in Claude. WORKED 2** | `sOff` | "Four minutes. Nobody talks. Open Claude. Under prompt 1, click Copy. Paste, send." |
 | 7:36 | 16 | Seven-step delegation sorter, **off the Session 2 page. WORKED 3** | `session-2` `s9`, depth +Standard | "Open last week's page. Appendix depth to Standard. B4." |
 | 7:52 | 5 | §09 consent and confidentiality. **Poll 6** optional, just before | `s12` | "Two obligations: may it be recorded, and what may the vendor see." |
@@ -227,7 +228,7 @@ or decline it aloud; declining aloud still counts.
 |---|---|---|---|
 | 1 | 6:14 | **Anonymous.** "Since Session 2, how many times have you typed a prompt into any AI tool? (a) none (b) 1 to 3 (c) 4 to 10 (d) more than 10" | If at least half pick (a) or (b): cut §05 and give §08's silent run six minutes instead of four. |
 | 2 | 6:38 | "A grounded assistant that cites your own documents makes things up: (a) essentially never (b) about 1 in 20 answers (c) about 1 in 5 answers (d) as often as an ungrounded one". The page's §04 commit carries the same four, same letters. | If at least 60% pick (a): spend two extra minutes on the Stanford 17 to 33 figures rather than on the Anthropic finding-step rate. |
-| 3 | 7:34 | "The retriever ranked the 2023 appraisal third. The best explanation is: (a) the appraisal is out of date (b) the appraisal shares almost no words with the question (c) the retriever was set to the wrong model (d) the appraisal was not in the corpus" | (a) is the trap: professionally sensible, not the mechanism. If at least 30% pick (a): re-run preset 1 and read the shared-term line aloud before moving on. |
+| 3 | 7:34 | "The retriever ranked the 2024 memo (D7) above the 2026 plan description (D3). The best explanation is: (a) a memo outranks a plan description (b) the memo repeats more of the question's words (c) the retriever was set to the wrong model (d) the plan description was not in the corpus" | (a) is the trap: it sounds like a rule about document types, and the ranker has none. The mechanism is (b): the memo holds all five scored words of the question, the plan description four. If at least 30% pick (a): re-run preset 1 and read the shared-term line aloud before moving on. |
 | 4 | 8:02 | Pair. Before §10's sorter: "Of six lines from a client meeting, how many do you expect to be your inference rather than something said? (a) 0 (b) 1 (c) 2 (d) 3 or more". After: the same question about their own file notes. | Read both distributions. Say out loud that a zero delta is a finding, not a failure. |
 
 Poll 1 is the only instrument in the course that measures the thing most worth knowing: whether
@@ -328,17 +329,21 @@ do not hand them to the room; the three worked interactions tonight are §03, §
 sorter.
 
 Keep in the narration: Wolfram's definition, the five-billion-word construction, and alligator
-against crocodile. That pair does the conceptual work, and the pair sort's "appraised value against
-formula value" row is §03's failure one section early. Point at it when you reach the retriever.
-One question in this section, on that row: "pair 3, which bucket, 1, 2 or 3?" The answer is 2,
-same subject, different governing condition. Place it, read the why, move on.
+against crocodile. That pair does the conceptual work, and the pair sort's "in-plan Roth conversion
+against IRA Roth conversion" row (pair 2) is §03's failure one section early. Point at it when you
+reach the retriever. One question in this section, on that row: "pair 2, which bucket, 1, 2 or 3?"
+The answer is 2, same subject, different governing condition. Place it, read the why, move on.
 
 ### s4 · §03, the retriever, 6:26 · **WORKED 1**
 The ten passages are listed by number above the presets. Before you rank anything, ask for the
-D-number that should answer "what value should we use for Meg's CPC shares". Most will say D3, the
-appraisal; some D1, the buy-sell. Then run the four presets in order. Preset 1 is the failure the session turns on: say aloud that the
-appraisal ranks third at 3.3, sharing only "value" with the question, and that Meg and CPC appear in
-no passage. Preset 2's margin line is the coin-flip case. Poll 3 fires after preset 1, not before.
+D-number that should answer "does the Dunmore 401(k) permit a Roth conversion?". Most will say D3,
+the 2026 plan description; some D7, the 2024 memo. Then run the four presets in order. Preset 1 is
+the failure the session turns on: say aloud that the memo (D7) ranks first at 42.6, above the plan
+description (D3) at 24.8, on shared words ("permit" is in the memo; the plan description says
+"permitted"), and that the ranker has no dates and cannot tell which document is current. Preset 2's
+margin line is the coin-flip case: the same two documents, 31.9 against 31.4, 1.5% apart. Presets 3
+and 4 pass, and each leaves a gap the ranking cannot see: D6 gives a base rate and no total, and D4
+names Dorothy Cole with nothing saying she has died. Poll 3 fires after preset 1, not before.
 
 ### s6 · §04, 6:38
 Fire Poll 2 before the reveal, or just ask for a letter: the page's four options are the poll's
@@ -346,9 +351,10 @@ four, same order, same letters. Click the room's majority on the page; the measu
 The room usually picks (b). The answer is (c).
 
 ### s7 · §05, 6:46
-Step the week figure first, three clicks, about a minute: Monday the tray holds the 2023 appraisal,
-Tuesday it is swapped for the 2026 one, Wednesday both architectures answer. The grounded answer
-carries a thread back to the passage; the tuned one is confident, stale and has nothing to cite.
+Step the week figure first, three clicks, about a minute: Monday the tray holds the 2009 beneficiary
+form, Tuesday it is swapped for a replacement (hypothetical, not in the Cole file), Wednesday both
+architectures answer. The grounded answer carries a thread back to the passage; the tuned one is
+confident, stale, still names Dorothy Cole and has nothing to cite.
 Say nothing while you click Tuesday. Let them see that the bottom row does not move.
 
 Then the Tuesday test. Ask for a, b or c; click the letter you are given; the answer is (a). Read the
@@ -364,15 +370,18 @@ lives inside steps 1, 2 and 7 of the Board's seven-step process, and that nothin
 steps 4 and 5, where your credential attaches. That sentence sets up the 7:36 sorter, and the page links to it under the five stages.
 
 ### s10 · §07, 7:15
-The funnel above the four stage buttons is the picture of the section: five turns in, three out of
-extraction, the two Advisor questions falling out, and the Nathan clause going with them only when
-there is no standing instruction. Clicking a box in the funnel opens the same panel as the button.
+The funnel above the four stage buttons is the picture of the section: six turns in, five out of
+extraction, the Advisor's opening question falling out, and the two clauses that mark a confidence
+going with it only when there is no standing instruction. Clicking a box in the funnel opens the
+same panel as the button.
 
-The five turns are numbered. Ask for the number of the turn that holds the one thing the file most
-needs and a tool is most likely to drop. The answer is 2, Meg's first answer, the clause about
-Nathan. Then open the four stages in order. The extraction stage's dropped clause about Nathan is the teaching
-point; the instruction below it is the thing to take home. Stage four now flags "we will arrange that" as a
-commitment the tool added, which is the catch the §08 harvest asks for. Stage three's output is the summary the
+The six turns are numbered. Ask for the number of the turn that holds the one thing the file most
+needs and a tool is most likely to drop. The answer is 3, David's: "stays in this room" marks his
+employer's confidential news. Meg's turn 2 carries the other, the clause that Emma's debt is not
+to be shared with Ryan or her grandmother. Then open the four stages in order. The extraction stage's two
+dropped clauses are the teaching point; the instruction below it is the thing to take home. Stage
+four now flags "send you the revised numbers next week" as a commitment the tool added, which is the
+catch the §08 harvest asks for. Stage three's output is the summary the
 room runs §08 on, so leave it open on screen when you move on. At the instruction, say once that
 the headings are for any meeting: swap the word "client".
 
@@ -396,12 +405,13 @@ printed, then: "Four minutes. Nobody talks. Nothing real, the synthetic summary 
 will be doing during the silence and then be quiet. Hold the four minutes; you held the Session 1 break
 to 293 seconds against 300 stated.
 
-Under prompts 1 and 2 there is an Example output button: one model's answer, abridged, for anyone
-whose run stalls and for you to point at afterwards. Nothing needs pre-running.
+Under prompts 1 and 2 there is an Example output button: one model's answer, verbatim, for anyone
+whose run stalls and for you to point at afterwards. The page labels each with the model that
+produced it and the date it was captured. Nothing needs pre-running.
 
 What comes back: a letter under 200 words, then a list tracing each sentence to a summary line.
-The thing to point at in the harvest is any sentence that states the note's timing or the appraisal
-as settled; both are open in the summary. Prompts 2 and 3, the task table and the next agenda, are
+The thing to point at in the harvest is any sentence that states the Roth conversion amount or
+David's retirement date as settled; both are open in the summary. Prompts 2 and 3, the task table and the next agenda, are
 on the page for anyone who finishes early. Do not assign them.
 
 If someone does have the Office assistant and wants to run it there, that is a bonus, not the
@@ -485,8 +495,8 @@ Nothing below is stated as a holding on the page. Check each against primary aut
 
 - **18 U.S.C. § 2511 as a federal one-party-consent floor**, with states free to require every party's consent. §09 says only that federal law lets one party record, that some states require everyone's consent, and that published counts disagree; it adopts no count.
 - **The duty of confidentiality as it applies to handing client content to a documentation vendor**, under your firm's policy and your credentialing body's code. §09 says a vendor's system is a disclosure to everyone with access and that the terms are contract questions; it does not say the disclosure is prohibited. If your firm's policy forbids it outright, say so for your room.
-- **From the case dialog** (its gate is off this page too; the hub, session-0.1, session-1 and session-4 still carry theirs, DW-056): whether §7872's blended annual rate or §1274's applicable federal rate governs a demand note issued in exchange for property (CASE.md §H.4 records no controlling authority); whether the combined lack-of-control and marketability discount the memorandum asserts is supportable (no appraiser engaged, no restricted-stock or pre-IPO study on file); the Illinois estate tax rate table and the adjusted-taxable-gift add-back (both at M); the Illinois replacement income tax on trusts, material to the cost of turning grantor status off (CASE.md §D.3 carries the rate at M). Karmazin, Woelbing and Davidson are flagged in CASE.md Part I as settled or stipulated: they decided nothing and are not authority. Every tax and legal characterisation attached to the case is a question, not a holding; you sign the slide, not the model.
-- **The §07 excerpt** presupposed an advisory engagement that CASE.md §A.5 denied until 2026-10-11. §A.5 now records the student's firm as the engaged planner (DW-041 closed, CASE.md 4.5), so the excerpt and the case agree; nothing in the excerpt asserts a tax or legal result.
+- **From the case dialog** (its gate is off this page too; the hub, session-0.1, session-1 and session-4 still carry theirs, DW-056): the Illinois estate tax exclusion, $4,000,000, a threshold not a credit, not indexed, with no portability (CASE.md §E.2, §H.4, at M). Every tax and legal characterisation attached to the case is a question, not a holding; you sign the slide, not the model.
+- **The §07 excerpt** presupposes an advisory engagement. DW-041 is closed: CASE.md 5.0 §A.5 carries the student's firm as planner of record, and the §O meeting excerpt is its first annual review, so the excerpt and the case agree; nothing in the excerpt asserts a tax or legal result.
 
 ## What is not yet done
 

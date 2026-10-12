@@ -129,7 +129,7 @@ confidence:     L
 kind:           case
 moving_target:  false
 disclose_on_page: true
-scope:          Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
+scope:          Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead.
 used_for.session-1: every worked example in this session and the next three
 used_for.session-2: every client example, exercise input and discussion prompt, including the three §04 fixture inputs and their three deliberately weak starter prompts, which are exercise material
 used_for.session-3: the retrieval corpus, the meeting excerpt and the note-taker stage outputs written from it, the consent items, the said-or-recommended lines, the six review-update tasks and the three prompts in §08 with the summary they run on, the checklist, the illustrative meaning-space map whose coordinates were assigned rather than learned, and the six summary lines in Appendix A3, two of which are written wrong on purpose and labelled so on the page
@@ -693,91 +693,6 @@ scope:          Assigned reading for session-2. No page claim rests on it.
 used_for.session-2: assigned reading; no page claim rests on it
 ```
 
-## src-irc
-
-```source
-title:          Internal Revenue Code §§ 671, 675, 2036, 2702, 7520
-author:         United States Congress
-publisher:      Statutory text
-link:           [UNVERIFIED, needs source]
-published:      not applicable
-last_retrieved: not applicable
-last_verified:
-confidence:     H
-kind:           authority
-moving_target:  false
-scope:          Referenced descriptively as the sections the Cole structure turns on. Verify against the current Code before relying on any characterisation in the corpus. No page claim is evidenced by it.
-used_for.session-2: named descriptively alongside the case structure; evidences no page claim
-```
-
-## src-rr8513
-
-```source
-title:          Rev. Rul. 85-13, 1985-1 C.B. 184
-author:         Internal Revenue Service
-publisher:      Internal Revenue Bulletin
-link:           [UNVERIFIED, needs source]
-published:      1985
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-confidence:     H
-kind:           authority
-moving_target:  false
-scope:          A transfer of assets between a grantor and a grantor trust is not recognised as a sale for federal income tax purposes. Existence and holding verified against IRS materials citing the ruling and the published text. Travels with the case; evidences no page claim.
-used_for.session-2: cited descriptively in the citation-verification exercise; evidences no page claim
-```
-
-## src-rr200464
-
-```source
-title:          Rev. Rul. 2004-64, 2004-2 C.B. 7 (2004-27 I.R.B. 9)
-author:         Internal Revenue Service
-publisher:      Internal Revenue Bulletin
-link:           https://www.irs.gov/irb/2004-27_IRB
-published:      2004
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-confidence:     H
-kind:           authority
-moving_target:  false
-scope:          The grantor's payment of income tax on grantor-trust income is not a gift (Situation 1); a governing instrument that requires reimbursement causes inclusion of the full trust value under § 2036(a)(1) (Situation 2); a trustee's discretion to reimburse does not by itself cause inclusion (Situation 3). Verified against the Internal Revenue Bulletin text.
-used_for.session-2: cited descriptively in the citation-verification exercise; evidences no page claim
-```
-
-## src-woelbing
-
-```source
-title:          Estate of Donald Woelbing v. Commissioner, T.C. Docket No. 30261-13, and Estate of Marion Woelbing v. Commissioner, T.C. Docket No. 30260-13
-author:         United States Tax Court
-publisher:      Tax Court docket
-link:           [UNVERIFIED, needs source]
-published:      2013-12-26
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-confidence:     H
-kind:           authority
-moving_target:  false
-scope:          Petitions filed 26 December 2013; stipulated decisions entered 25 and 28 March 2016; no opinion issued; NO PRECEDENTIAL VALUE. Procedural posture verified against contemporaneous practitioner reporting. The teaching point is the posture, not a holding.
-used_for.session-2: cited descriptively for its procedural posture; evidences no page claim
-```
-
-## src-davidson
-
-```source
-title:          Estate of William M. Davidson v. Commissioner, T.C. Docket No. 13748-13
-author:         United States Tax Court
-publisher:      Tax Court docket
-link:           [UNVERIFIED, needs source]
-published:      2013-06-14
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-confidence:     M
-kind:           authority
-moving_target:  false
-scope:          Petition filed 14 June 2013; stipulated decision entered 6 July 2015; no opinion issued. The IRS originally asserted deficiencies of approximately $2.8 billion; the reported settlement is approximately $388 million in estate, gift and GST tax. Posture is H; the settlement figures are reported by a single valuation-practice source and are M.
-used_for.session-2: cited descriptively for its procedural posture; evidences no page claim
-```
-
 ## src-kessler
 
 ```source
@@ -792,8 +707,8 @@ confidence:     not applicable
 kind:           fabricated
 moving_target:  false
 disclose_on_page: false
-scope:          A deliberately fabricated citation, appearing in the session-2 §07 triage as exercise material so that students practise failing to catch it. MUST NEVER CARRY A CONFIDENCE CHIP: a chip asserts the claim is evidenced, and the whole point is that it is not.
-used_for.session-2: the §07 citation triage, where it is one of the citations to check and the page labels it as fabricated
+scope:          A deliberately fabricated citation, appearing in the session-2 §07 citation triage as exercise material so that students practise failing to catch it. Its invented holding is that no excise tax applies to a missed required minimum distribution when the owner relied on an adviser's written statement of the starting age; the real rule is the excise tax of IRC §4974(a), 25% of the shortfall and 10% if corrected in the correction window (CASE.md §F.4). MUST NEVER CARRY A CONFIDENCE CHIP: a chip asserts the claim is evidenced, and the whole point is that it is not.
+used_for.session-2: the §07 citation triage on the required minimum distribution age, where it is one of the six citations to check and the page labels it as fabricated
 ```
 
 ## src-hallowell
@@ -2714,4 +2629,96 @@ figure_class:   vendor product documentation
 recheck_before: each teaching of Session 5
 scope:          Managed settings sit above every other level (command line, project, shared project, user) and nothing a user sets overrides them, apart from a few security-sensitive exceptions. A managed model sets the model a session starts with; the lock on which models may be used is availableModels, which constrains the model picker, the command-line flag and the model key in a user's own files, and a managed list applies as-is.
 used_for.session-5: that a firm can lock the list of models any session may use (§01 bullets; the third proposal in §07)
+```
+
+## src-secure2-107
+
+```source
+title:          SECURE 2.0 Act of 2022, section 107 (increase in age for required beginning date)
+author:         United States Congress
+publisher:      Division T of the Consolidated Appropriations Act, 2023, Pub. L. 117-328
+link:           https://www.congress.gov/bill/117th-congress/house-bill/2617
+published:      2022-12-29
+last_retrieved: 2026-10-12
+last_verified:
+retrieval_note: Citation and effect verified 2026-10-12 from three secondary summaries (Milliman, Foley, Kilpatrick Townsend) found by web search; congress.gov is not reachable from the build container, so the statutory text itself was not fetched. Applicable age 73 for those born 1951 to 1959 and 75 for 1960 and later; the 1959 cohort was clarified by the May 2023 chairs' letter and the July 2024 proposed regulations.
+content_changed:
+confidence:     M
+kind:           authority
+moving_target:  false
+figure_class:   none
+recheck_before: any teaching of session-2 §s10
+scope:          The statutory source of the applicable age for required minimum distributions; named as a citation inside the session-2 citation-triage items, evidencing no page claim.
+used_for.session-2: named as a cited authority in the citation-triage items (sound citation; also the planted mis-citation that attributes the wrong age to it)
+last_retrieved.session-2: 2026-10-12
+figures.session-2: none (the item text carries the applicable ages; the case facts carry Meg's and David's years)
+```
+
+## src-td10001
+
+```source
+title:          Required Minimum Distributions, T.D. 10001, 89 FR 58886 (final regulations under IRC § 401(a)(9))
+author:         Department of the Treasury, Internal Revenue Service
+publisher:      Federal Register
+link:           https://www.govinfo.gov/content/pkg/FR-2024-07-19/html/2024-14542.htm
+published:      2024-07-19
+last_retrieved: 2026-10-12
+last_verified:
+retrieval_note: Verified 2026-10-12 from the GovInfo Federal Register listing, the IRS newsroom release (IR-2024-190) and the Journal of Accountancy report found by web search: issued 18 July 2024, published 19 July 2024, effective 17 September 2024, applying to calendar years beginning on or after 1 January 2025; companion proposed regulations REG-103529-23 issued the same day. The GovInfo page itself was not fetched from the build container.
+content_changed:
+confidence:     H
+kind:           authority
+moving_target:  false
+figure_class:   none
+recheck_before: any teaching of session-2 §s10
+scope:          The 2024 final regulations on required minimum distributions, Treas. Reg. §§ 1.401(a)(9)-1 to -9; named as a citation inside the session-2 citation-triage items.
+used_for.session-2: named as a cited authority in the citation-triage items
+last_retrieved.session-2: 2026-10-12
+figures.session-2: none
+```
+
+## src-irs-590b
+
+```source
+title:          Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)
+author:         Internal Revenue Service
+publisher:      Internal Revenue Service
+link:           https://www.irs.gov/publications/p590b
+published:      annual
+last_retrieved: 2026-10-12
+last_verified:
+retrieval_note: Title verified 2026-10-12 from the IRS Form 8606 instructions (which cite it) found by web search; irs.gov is not reachable from the build container, so the current edition was not fetched.
+content_changed:
+confidence:     M
+kind:           authority
+moving_target:  true
+figure_class:   none
+recheck_before: any teaching of session-2 §s10
+scope:          The IRS publication on IRA distributions, including required minimum distributions and Roth IRA distribution rules; named as a citation inside the session-2 citation-triage items.
+used_for.session-2: named as a cited authority in the citation-triage items
+last_retrieved.session-2: 2026-10-12
+figures.session-2: none
+```
+
+## src-irs-8606
+
+```source
+title:          Form 8606, Nondeductible IRAs, and its instructions
+author:         Internal Revenue Service
+publisher:      Internal Revenue Service
+link:           https://www.irs.gov/forms-pubs/about-form-8606
+published:      annual
+last_retrieved: 2026-10-12
+last_verified:
+retrieval_note: Scope verified 2026-10-12 from the 2022 to 2025 instruction texts found by web search (nondeductible contributions, distributions with basis, conversions to Roth IRAs, Roth distributions); irs.gov is not reachable from the build container, so the current form was not fetched.
+content_changed:
+confidence:     M
+kind:           authority
+moving_target:  true
+figure_class:   none
+recheck_before: any teaching of session-2 §s10
+scope:          The form on which a Roth conversion and any IRA basis are reported; named as a citation inside the session-2 citation-triage items.
+used_for.session-2: named as a cited authority in the citation-triage items
+last_retrieved.session-2: 2026-10-12
+figures.session-2: none
 ```

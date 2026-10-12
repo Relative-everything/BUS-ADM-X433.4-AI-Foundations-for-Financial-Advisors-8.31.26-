@@ -5,11 +5,11 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**140 works, 480 references across 6 lessons.** 117 are
-cited by at least one claim; 23 are listed by a lesson without carrying a
+**139 works, 480 references across 6 lessons.** 117 are
+cited by at least one claim; 22 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
-**105 records carry at least one field this repository could not verify, and
+**100 records carry at least one field this repository could not verify, and
 every one of them is printed below as `[UNVERIFIED, needs source]` rather than omitted.** The
 rendered footer in a lesson omits an unknown field, because a footer in which
 thirty entries shout about a missing publisher helps nobody. This file is where a
@@ -1937,7 +1937,7 @@ Conversations shared from ChatGPT with the "make this chat discoverable" box tic
 | **Total references** | **60** |
 | Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s7` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCold` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#sAnon` · S4 `#s3` · S4 `#s4` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` · S4 `#s6` · S4 `#sWS` · S4 `#s7` · S4 `#sCR` ×2 · S4 `#sD` · S4 `#s9` ×2 · S5 `#s0` · S5 `#sCold` · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#s2` ×3 · S5 `#s3` ×2 · S5 `#sE3` · S5 `#s4` · S5 `#sE4` ×2 · S5 `#sE1` · S5 `#s5` · S5 `#s6` · S5 `#sLib` ×2 · S5 `#s7` · S5 `#sE5` · S5 `#s8` |
 
-Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
+Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead.
 
 ### Tom's Guide
 
@@ -2259,12 +2259,13 @@ source that does not belong in that lesson's footer.
 | `src-anthropic-fluency` | background | S2 | yes, by kind |
 | `src-anthropic-aup` | evidence |  | **NO — finding** |
 | `src-uk-voice` | evidence |  | **NO — finding** |
+| `src-td10001` | authority | S2 | yes, by kind |
 | `src-fbi-ic3-2024` | evidence |  | **NO — finding** |
 | `src-ferrari` | evidence |  | **NO — finding** |
 | `src-gartner` | evidence |  | **NO — finding** |
 | `src-hallowell` | fabricated | S4 | yes, by kind |
-| `src-rr8513` | authority | S2 | yes, by kind |
-| `src-rr200464` | authority | S2 | yes, by kind |
+| `src-irs-590b` | authority | S2 | yes, by kind |
+| `src-irs-8606` | authority | S2 | yes, by kind |
 | `src-kessler` | fabricated | S2 | yes, by kind |
 | `src-kitces-advisortech` | background |  | yes, by kind |
 | `src-laplace` | background | S2 | yes, by kind |
@@ -2274,8 +2275,6 @@ source that does not belong in that lesson's footer.
 | `src-forcedleak` | evidence |  | **NO — finding** |
 | `src-safebreach-gemini` | evidence |  | **NO — finding** |
 | `src-surfshark` | evidence |  | **NO — finding** |
-| `src-irc` | authority | S2 | yes, by kind |
-| `src-woelbing` | authority | S2 | yes, by kind |
-| `src-davidson` | authority | S2 | yes, by kind |
+| `src-secure2-107` | authority | S2 | yes, by kind |
 | `src-vectara` | evidence |  | **NO — finding** |
 | `src-zhao` | evidence |  | **NO — finding** |

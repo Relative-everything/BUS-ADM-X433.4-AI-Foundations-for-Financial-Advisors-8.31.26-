@@ -38,10 +38,11 @@ the closing check. Black numbers in the PDF are the steps that must not be skipp
     records what was said." Stop 7:42.
 12. **7:42 MY CYCLE.** Slide. ASK which stage would you hand to a tool tonight? Take two. "That is
     the closing question. Hold your answer." Then Tab 1, Core only.
-13. **7:48 §03 WORKED.** Tab 1. ASK which passage should win? Preset 1. Say: appraisal D3 third at
-    3.3, shares only "value". Right, quoted, wrong. Presets 2, 3, 4 fast. "This is RAG."
-14. **8:00 POLL 3.** Why did the appraisal rank third? (b). 30% or more said (a)? Re-run preset 1,
-    read the shared-term line.
+13. **7:48 §03 WORKED.** Tab 1. ASK which passage should win? Preset 1. Say: memo D7 first at 42.6,
+    plan description D3 second at 24.8, on shared words; the ranker has no dates. Right, quoted,
+    wrong. Presets 2, 3, 4 fast. "This is RAG."
+14. **8:00 POLL 3.** Why did the memo outrank the plan description? (b). 30% or more said (a)?
+    Re-run preset 1, read the shared-term line.
 15. **8:02 §08 WORKED, SILENT.** Tab 1. Read the four steps on the page. "Four minutes. Nobody
     talks. Synthetic only." Silence 4:00. CHAT harvest. Read two aloud.
 16. **8:14 §10.** Tab 1. ASK line 4, which bucket? 3, Neither. GATE: "Which is your reading, not
