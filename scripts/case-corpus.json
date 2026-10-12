@@ -1,70 +1,74 @@
 {
   "case_id": "cole-household",
-  "case_version": "4.0",
+  "case_version": "5.0",
   "generated_by": "scripts/build-case.mjs",
   "source": "CASE.md PART O",
   "corpus": [
     {
       "id": "D1",
-      "t": "Buy-Sell Agreement, Article VII, Valuation. This Article applies only upon the death, permanent disability, or voluntary withdrawal of a holder of record. The value of the shares shall equal five times the average annual earnings before interest and taxes for the three fiscal years then ended. No appraisal obtained after execution is incorporated by reference."
+      "t": "Annual review notes, 14 November 2025, Harlan Beck. Clients Meg and David Cole. Retirement targets unchanged, Meg at 60 in 2028 and David at 62 in 2029. Combined retirement and brokerage balances about 2.3 million. Discussed Emma finishing school in 2027 and Ryan starting in 2029. Meg raised her mother Ruth and the cost of assisted living. Roth conversion deferred again to a year with lower income. Beneficiary forms not reviewed this year. Adviser retiring, file to transfer to new firm in January."
     },
     {
       "id": "D2",
-      "t": "Buy-Sell Agreement, Article IX, Transfer Restrictions. No holder may transfer stock to any person without the prior written consent of the corporation. Consent is required for every transfer, including a transfer to a trust established by a holder for the benefit of descendants, and may be withheld. A transfer without consent is not effective."
+      "t": "Investment Policy Statement, September 2024. Objective moderate growth. Target allocation 60 percent equities and 40 percent fixed income and cash, rebalanced annually. No single security above 5 percent of total investable assets. Risk profile recorded for David Cole as moderate growth. Time horizon to first withdrawal approximately five years. Policy to be reviewed at each annual meeting and signed again on any change in circumstances."
     },
     {
       "id": "D3",
-      "t": "Appraisal report issued 2023. The subject is a one hundred percent controlling and marketable interest in Cole Precision Components. The report concludes a value of thirty eight million dollars. The report contains no discount study and no analysis of lack of control or lack of marketability. The report has not been updated since issuance."
+      "t": "Dunmore Industrial Equipment 401k Plan, Summary Plan Description, amended 1 January 2026. Participants may make pre tax and Roth elective deferrals. Effective 1 January 2026 participants may convert all or part of their pre tax account to a designated Roth account within the plan, an in plan Roth conversion, which is irrevocable and taxable in the year of conversion. After tax non Roth contributions are not permitted. The plan accepts rollover contributions from individual retirement accounts and other eligible plans. Loans are permitted. Pre tax amounts are not distributable in service before age 59 and one half except for hardship."
     },
     {
       "id": "D4",
-      "t": "Joint revocable trust, executed 2011. The trust receives the residue of each settlor probate estate and holds it in a marital share and a family share. The trust is revocable during the joint lifetimes of the settlors."
+      "t": "Individual Retirement Account Beneficiary Designation. Account owner David Cole. Account type rollover traditional IRA. Primary beneficiary Dorothy Cole, relationship mother, 100 percent. Contingent beneficiary none designated. If no named beneficiary survives the account owner the account is payable to the account owner estate under the custodial agreement. Signed 11 May 2009. No later designation on file."
     },
     {
       "id": "D5",
-      "t": "Last will and testament, executed 2011 under Illinois law. The residue of the probate estate passes to the joint revocable trust. The will names the surviving spouse as executor and a descendant as successor executor."
+      "t": "Social Security Statement, David Cole, 2026. Estimated monthly retirement benefit at age 62 is 2436 dollars, at full retirement age 67 is 3480 dollars, at age 70 is 4315 dollars. Social Security Statement, Margaret Cole, 2026. Estimated monthly retirement benefit at age 62 is 2037 dollars, at full retirement age 67 is 2910 dollars, at age 70 is 3608 dollars. Estimates assume continued earnings at the current level until claiming and are stated in today dollars."
     },
     {
       "id": "D6",
-      "t": "Draft irrevocable trust instrument, unexecuted. The settlor retains a power to substitute assets of equivalent value held in a nonfiduciary capacity. The instrument has not been signed and no trustee has accepted appointment."
+      "t": "Maple Court Senior Living Residency Agreement, resident Ruth Alder, effective 1 March 2023. Independent living apartment, monthly fee 4650 dollars, adjusted annually. Transfer to assisted living upon the recommendation of the community care team and the resident or her agent, at the then current assisted living base rate, presently 7900 dollars per month, plus care level charges assessed after evaluation. Thirty days notice to terminate. Agent under power of attorney Margaret Cole."
     },
     {
       "id": "D7",
-      "t": "Draft promissory note, unexecuted. Principal of twenty million twenty thousand dollars. Interest only at three point eight two percent per annum, payable annually in arrears, with the entire principal payable on demand by the holder. The note is unsecured. No prepayment penalty applies."
+      "t": "Memorandum, 3 October 2024, Harlan Beck to Meg and David Cole, Roth conversion. Recommend converting 150000 dollars of the rollover IRA to Roth before year end 2024 while both are working, because the Dunmore 401k plan does not permit in plan Roth conversion and the rollover IRA is the only pre tax balance that can be converted now. Conversion is taxable at 24 percent federal and is not taxed by Illinois. Not acted on as of the November 2025 review."
     },
     {
       "id": "D8",
-      "t": "Planning memorandum on the proposed transfer. A seed gift of fifty two non-voting units valued at two million two thousand dollars is to be made to the trust before any sale occurs. The memorandum asserts a combined discount of thirty percent for lack of control and lack of marketability on the non-voting units and cites no appraisal. The memorandum is dated and unsigned."
+      "t": "Bright Start 529 College Savings Plan, statement period ending 31 December 2026. Account owner Margaret Cole. Successor owner David Cole. Beneficiary Ryan Cole. Balance 38000 dollars. Contributions this year 6000 dollars by automatic monthly investment of 500 dollars. Age based portfolio. Illinois taxpayers may deduct contributions up to 20000 dollars for a married couple filing jointly."
     },
     {
       "id": "D9",
-      "t": "Durable power of attorney, executed 2011. The agent may act on financial matters upon the principal incapacity. The instrument has not been reviewed since execution."
+      "t": "Mortgage statement, December 2026. Borrowers David Cole and Margaret Cole. Property in Naperville Illinois. Original loan 214000 dollars dated November 2022, fixed rate 3.10 percent, term 180 months, maturity November 2037. Principal balance 165200 dollars. Monthly principal and interest payment 1488 dollars. Escrow for property tax and insurance billed separately."
     },
     {
       "id": "D10",
-      "t": "Healthcare directive and living will, executed 2011. The instrument names a healthcare agent and states preferences regarding life sustaining treatment. The instrument has not been reviewed since execution."
+      "t": "Last Will and Testament of Margaret Cole, executed 17 May 2011. I give my entire estate to my husband David Cole if he survives me, otherwise to my children in equal shares, each share to be distributed outright at age 25. If my children are minors at my death I appoint my brother Tom Alder as guardian of their persons and estates. I appoint David Cole as personal representative and Tom Alder as successor. No trust is created under this will."
     }
   ],
   "transcript": [
     {
       "who": "Advisor",
-      "said": "Last time we left the trust sale open. Where has that landed?"
+      "said": "Before the numbers, anything that has changed since January?"
     },
     {
       "who": "Meg",
-      "said": "It has not landed. A competitor wrote to me about buying the company last autumn. Nothing signed, nothing in writing, and Nathan does not know — he is in operations and I am not telling him until there is something to tell."
-    },
-    {
-      "who": "Advisor",
-      "said": "Does that change the timing on the note structure?"
-    },
-    {
-      "who": "Meg",
-      "said": "That is what I need you to tell me. Counsel wants to keep the note callable on demand."
+      "said": "Two things. My mother's care team says she may need the assisted living wing within a year, which is about three thousand more a month than she pays now, and she cannot carry that for long on her own. And Emma told us she has about fourteen thousand of credit card debt. She does not want Ryan or her grandmother to know. We are deciding whether to pay it off before she starts work in August."
     },
     {
       "who": "David",
-      "said": "I would want the appraisal looked at again before we sign anything. It is three years old and the company is not what it was then."
+      "said": "And one from me that stays in this room. My division is being looked at for a sale next year. I may be offered a package. It could move my date up two years, and it takes the group life and the health plan with it."
+    },
+    {
+      "who": "Advisor",
+      "said": "Understood, and those stay in the file, not in any tool. On the plan itself: your new summary plan description allows in-plan Roth conversion as of January, which the 2024 memo in your file said was not possible. I want to re-run the conversion analysis on that basis. I also need the beneficiary form on your rollover IRA, David. The copy we have is from 2009 and it names your mother."
+    },
+    {
+      "who": "David",
+      "said": "I had no idea. I will pull the current form this week. And yes, re-run the Roth numbers, but with the sale scenario in it, not just the 2029 plan."
+    },
+    {
+      "who": "Meg",
+      "said": "One more. Ryan's 529 is at five hundred a month. If college is 2029, is that enough, and does the Illinois deduction change if we put in more?"
     }
   ]
 }

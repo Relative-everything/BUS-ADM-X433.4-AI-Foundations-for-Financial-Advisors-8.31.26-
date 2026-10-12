@@ -12,8 +12,9 @@ browsing the course want [README.md](README.md).
 ```
 index.html            Course hub, the URL students bookmark
 session-N/index.html  One self-contained lesson per session
-CASE.md               Canonical Cole household case block, the source of truth
-                      Part O holds session-3's retrieval corpus and meeting excerpt
+CASE.md               Canonical Cole household case block (v5.0, the pre-retiree
+                      household), the source of truth. Part O holds session-3's
+                      retrieval corpus and meeting excerpt; Part L the two sheets
 CHANGELOG.md          Human-readable record of every revision
 MAINTAINING.md        This file
 docs/deferred-work.md The single register of open work. Nothing else tracks it
@@ -172,20 +173,26 @@ before the corpus renamed it `#ovr` (DW-112). An upstream fix that asserts
 `validate_lesson.py` V8 and the DOM-mode Shift+U line (DW-116). Read those
 lines as known, not as regressions.
 
-## The CASE.md v4.0 migration checks
+## The CASE.md v5.0 migration checks
 
 These live in this repo, not the skill, and all exit 0. Run them from the repo
 root after any edit to `CASE.md` or to a lesson.
 
 ```bash
 node scripts/build-case.mjs        # CASE.md -> the generated artifacts. Fails
-                                   # loudly if a figure it looks for has moved,
-                                   # and recomputes 13 Part M identities.
+                                   # loudly if a table row or label it looks for
+                                   # has moved, and recomputes the Part M
+                                   # identities (67 at v5.0). CASE_PATH=<file>
+                                   # runs it against a draft without touching
+                                   # CASE.md's artifacts' meaning: it still writes
+                                   # scripts/case-*.json, so run it on CASE.md after.
 node scripts/inject-case.mjs       # rewrite the span between the CASE sentinels
 node scripts/inject-case.mjs --check   # report drift, write nothing
 node scripts/build-cardsort.mjs --check   # the session-1 card-sort deck and key
                                    # between the CARDSORT sentinels, derived from
-                                   # CASE.md Part J and Part H. Fails when a fact
+                                   # CASE.md Part J (the three landmines and the
+                                   # identifying combination) and Parts E and I
+                                   # (four published parameters). Fails when a fact
                                    # the deck rests on moves, so a CASE.md edit
                                    # cannot silently orphan the answer key.
 node scripts/verify-case.mjs       # hash every injected block, and assert the
@@ -471,11 +478,20 @@ stops requiring one.
 
 ## The case spine
 
-The Cole household is the canonical case, ratified 2026-08-18. `CASE.md` holds
-the authoritative block and its figures. Session 1 introduces it in full;
-Sessions 2 through 4 carry shorter recall summaries, and every figure in those
-summaries must match `CASE.md`. Changing a figure means changing `CASE.md` and
-every lesson in the same commit.
+The Cole household is the canonical case, ratified 2026-08-18 and replaced
+whole on 2026-10-11 as **v5.0**: the name stayed and every fact changed
+(PEDAGOGY §5.7, §13.2 R9). v5 is a mainstream pre-retiree household in
+Naperville, Illinois: Meg Cole, 58, a nurse manager, and David Cole, 59, a
+mechanical engineer, about $2,446,000 of investable assets (70% pre-tax), a
+mortgage, two children, Meg's mother Ruth, two 2011 wills and one stale
+beneficiary designation. Its unresolved question is the Roth conversion window.
+`CASE.md` holds the authoritative block and its figures; the injected span
+carries the Facts tab, the Map tab (Part L's two sheets) and the `COLE`
+constant, and every lesson reads figures from `COLE` rather than typing them.
+Changing a figure means changing `CASE.md`, running `build-case.mjs` and
+`inject-case.mjs`, and re-deriving any lesson threshold that depends on it
+(PEDAGOGY §8, derived thresholds), in the same commit. The v4 household (the
+founder-owner and the trust sale) is retired; its every fact is a Part K row.
 
 ### Standing purge list
 
@@ -492,6 +508,7 @@ the lessons rather than running it across the whole tree.
 | Adaeze | 2026-08-18 | Meg Cole |
 | Ilesanmi | 2026-08-18 | (no equivalent, character removed) |
 | Reyes | 2026-08-18 | Cole |
+| **The v4 Cole facts** (CASE.md v5.0 Part K): Cole Precision Components, CPC, Hensley, Walter, Claire, Nathan, Whitaker, Barrington Hills, Rockford, Winnebago, Lakeshore, Merrit, Ostrander, Corbin, Halvorsen, Cole Family Holdings, the Irrevocable Trust, IDGT, SLAT, grantor trust, installment sale, seed gift, demand note, the burn, non-voting, voting unit, aerospace, fastener, buy-sell, appraisal, endowment, and every v4 dollar figure and authority Part K lists (`verify-migration.mjs` check 1 carries the regexes) | 2026-10-11 | the v5 household: Naperville, Northlake Regional Health System, Dunmore Industrial Equipment, Ruth Alder, Emma and Ryan |
 | the LMS by name, the platform assignments are submitted through | 2026-08-25 | "the course site" |
 | instructor note | 2026-08-26 | `instructor-notes/session-N.md`, outside the served pages |
 | **Tier A — grading.** graded · grading · a grade · rubric *(as a course instrument)* · graded component · loses marks · full credit · submit · submitted · submission · turn in · points *(as course credit)* · pass/fail · any weight or percentage of a grade | 2026-08-27 | nothing — deleted. Grading is set by the instructor outside this site |

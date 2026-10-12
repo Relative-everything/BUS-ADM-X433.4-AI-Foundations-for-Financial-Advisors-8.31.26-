@@ -8,7 +8,7 @@ Resume rule (RUNBOOK A.1.6): read `RUNBOOK.md` (A.0 first), this file, `DECISION
 | 0 | done | 2026-10-11 | 2026-10-11 | (P0 commit) | all exit 0 except `verify-style` (skill absent) and `verify-wolfram-quotes` (no article copy); P0 report §1 |
 | 1 | done | 2026-10-11 | 2026-10-11 | (P1 commit) | verify-facts --report 0; verify-facts (gate) 0; P0 validators unchanged |
 | 2 | done | 2026-10-11 | 2026-10-12 | (P2 commit) | none required; `build-case.mjs` (v5 rewrite, run with `CASE_PATH`) recomputes 67 identities against the draft, all agree |
-| 3 | pending | | | | |
+| 3 | done | 2026-10-12 | 2026-10-12 | (P3 commit) | build-case 0 · inject-case --check 0 · build-cardsort --check 0 · verify-case 0 · verify-style 1 (env) · verify-migration 1 (1c and 4 only: v4 lesson prose) · case-inventory --report-check 0 · test-case-viewer 1 (V9 on three lessons: v4 `COLE` keys in lesson code, D-030) · verify-browser 1 (same cause) |
 | 4a | pending | | | | |
 | 4b | pending | | | | |
 | 5 | pending | | | | |
@@ -65,3 +65,25 @@ Branch `next-term-2027` created from `main` at `da7b003` (PR #45 merged 2026-10-
 **R1 self-review:** a separate Sonnet reviewer read the draft against the four R1 checks and returned 18 blocking and 31 minor findings (D-029). All were applied: the NIIT, payroll, Illinois and estate figures were recomputed (the HSA cafeteria-plan FICA exclusion and the 529 subtraction now applied; Meg's group life included), six Part K v4 figures corrected against the v4 file, about 90 grep targets added, labels and pointers added where an external rule stood bare, David's first Social Security month corrected to September 2029, Ryan made a sophomore, the Parts reordered, the D2 and D3 corpus tokens cleaned, the Sheet 1 and Sheet 2 label overruns fixed. The v5 `build-case.mjs` then recomputed 67 identities against the draft with every one agreeing.
 
 **Impact table:** `CASE-v5-impact.md` (about 12 hours of Phase 3 script work, about 20 of Phase 4 prose work).
+
+## Phase 3: adopt CASE v5.0 through the case pipeline
+
+**Done.** `CASE.md` is the v5.0 draft, copied not paraphrased. `scripts/build-case.mjs` rewritten (table-row capture; 269 keyed figures; 67 Part M identities recomputed; Part O asserts the D3 against D7 conflict, D4's deceased beneficiary and six speaker turns; Part L asserts one SHEET-BREAK and two sheets; `CASE_PATH` runs it on a draft; `CASE_DEBUG` lists every miss at once). `scripts/inject-case.mjs`: the Facts tab, the Map tab (two sheets with the balance sheet by owner and the clock table behind Show detail), the `COLE` constant, `COLEDOCS`, and the recurring question (the pre-tax total and share, the two windows, the 24% bracket room) rewritten for v5; the opening sentinel is now found by case id at any version (D-031); the symlink main guard fixed (DW-165). `scripts/build-cardsort.mjs`: the §08 deck re-derived from the three v5 landmines, the identifying combination and four published parameters (D-024). `scripts/verify-migration.mjs`: new check 1c (the Part K v4 layer, about 190 strings, over the served surface: hub, lessons, cases, instructor notes, README, SOURCES; D-025); check 1b carries two v5 framings; check 4 carries the v5 allowances; check 7's composed figures and check 11's 28 identities are v5; check 20 pins the four figures of the recurring question. `scripts/case-inventory.mjs`: the v5 fact list (186 facts) and the pin transcription. `scripts/verify-browser.mjs`: the stamp regex reads `Case v5.0`. `MAINTAINING.md`: the migration-checks heading is v5.0, the case-spine paragraph is v5, the layout line and the purge list carry the v4 layer.
+
+**Generated and injected:** `case-facts.json`, `case-corpus.json` (10 chunks, 6 turns), `case-extract.html` (4,456 bytes, stamp 83c3c03), `case-flowchart.html`; the v5 span written into all seven files (`inject-case --check`: 7 current, stamp 732dd65); the CARDSORT deck in session-1; `docs/case-fact-inventory.md` regenerated (UNGUARDED 55, 12 quantitative, against v5 facts; not comparable with the v4 count and re-baselined by the swap); `docs/unsourced-claims.md` regenerated (line numbers moved with the span).
+
+**Exit codes:** build-case 0 · inject-case --check 0 · build-cardsort --check 0 · verify-case 0 (7 of 7 carry the v5.0 block; 20 layout rules agree) · verify-migration **1** · case-inventory --report-check 0 · verify-style **1** (skill absent) · test-case-viewer **1** · verify-browser **1** · test_live_console **1** · verify-sources 0 · inject-sources --check 0 · build-unsourced --check 0 (after regeneration) · build-appendix --check 0 · verify-facts 0 · test-editorial-regions 0 · verify-editorial 0 (0 hard, 2 advisory) · attest-verified 0.
+
+**Expected failures, all owned by Phase 4 (v4 lesson prose and code outside the span):**
+
+| Check | Where | Count or cause |
+|---|---|---|
+| verify-migration 1c | index.html 4 · session-0.1 76 · session-1 69 · session-2 55 · session-3 106 · session-4 27 · session-5 31 · README.md 2 · SOURCES.md 13 · instructor-notes: session-2.md 17, session-3.md 25, session-3-polls.md 7, session-3-canvas-posts.md 1, session-3-teaching-aid .md 2 and .htm 2, session-4.md 12, session-4-polls.md 1, session-4-rule-key .md 2 and .htm 2, session-4-teaching-aid .md 6 and .htm 7, session-5-polls.md 1 | 468 v4 strings on the served surface |
+| verify-migration 4 | index.html 1 · session-0.1 2 · session-1 1 · session-4 2 | `$1,000,000` outside its v5 context (the v4 inherited IRA and 403(b), the v4 ribbon scale) |
+| test-case-viewer V9 | session-1 (`toLocaleString` on an undefined `COLE` key), session-2 (`COLEv('saleUnits')`), session-3 (`COLEv('cpcValue')`) | lesson code reading retired keys; V1 to V8 pass in all seven files (D-030) |
+| verify-browser 13 | session-1 (the same load error; the script then aborts on the page's card sort) | same cause |
+| test_live_console | session-1 part A (the same load error, then a timeout) | same cause |
+
+**Card-sort decision:** the deck still fits v5 (D-024); no replacement deck proposed.
+
+**MAINTAINING.md diff:** heading "The CASE.md v5.0 migration checks"; the `build-case` and `build-cardsort` comments; the layout line; the case-spine paragraph; one purge-list row for the v4 layer.

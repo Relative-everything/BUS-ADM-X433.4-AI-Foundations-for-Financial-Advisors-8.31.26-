@@ -21,13 +21,13 @@ occurrence does not follow fails the check. Everything else can.
 
 | | Total | Quantitative | Qualitative |
 |---|---:|---:|---:|
-| `INJECTED` | 1995 | 1624 | 371 |
-| `PINNED` | 2 | 2 | 0 |
-| `UNGUARDED` | 87 | 6 | 81 |
-| **TOTAL** | **2084** | **1632** | **452** |
+| `INJECTED` | 2737 | 2044 | 693 |
+| `PINNED` | 0 | 0 | 0 |
+| `UNGUARDED` | 55 | 12 | 43 |
+| **TOTAL** | **2792** | **2056** | **736** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
-`6`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
+`12`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
 the target state under the rule *every quantitative case fact appears once,
 injected from `CASE.md`; every other reference to it is qualitative*, so a
 qualitative reference is not drift surface and removing one would be a loss.
@@ -37,24 +37,24 @@ qualitative reference is not drift surface and removing one would be a loss.
 | File | Total | Quantitative |
 |---|---:|---:|
 | `index.html` | 2 | 0 |
-| `session-0.1/index.html` | 16 | 5 |
-| `session-1/index.html` | 17 | 0 |
-| `session-2/index.html` | 3 | 0 |
-| `session-3/index.html` | 16 | 0 |
-| `session-4/index.html` | 27 | 1 |
-| `session-5/index.html` | 6 | 0 |
+| `session-0.1/index.html` | 7 | 0 |
+| `session-1/index.html` | 12 | 1 |
+| `session-2/index.html` | 2 | 1 |
+| `session-3/index.html` | 3 | 0 |
+| `session-4/index.html` | 25 | 7 |
+| `session-5/index.html` | 4 | 3 |
 
 ## `UNGUARDED`, by region
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R1` | body prose | 48 | 0 |
-| `R2` | script string literal | 31 | 1 |
-| `R10` | captured transcript | 5 | 5 |
+| `R2` | script string literal | 30 | 8 |
+| `R1` | body prose | 19 | 1 |
+| `R4` | CSS | 3 | 3 |
 | `R7` | footer source entry | 2 | 0 |
 | `R8` | source note | 1 | 0 |
 
-**`R2` carries 1 of the 6 quantitative unguarded references, 16.7%** — answer
+**`R2` carries 8 of the 12 quantitative unguarded references, 66.7%** — answer
 keys, chart data arrays and JS feedback strings. They are inside `<script>`, so
 they are outside the injected span and outside the pins, and a student reads
 every one of them.
@@ -63,27 +63,28 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 81 |
-| `pct` | 5 |
-| `money` | 1 |
+| `name` | 43 |
+| `count` | 6 |
+| `age` | 3 |
+| `money` | 2 |
+| `pct` | 1 |
 
 ## `UNGUARDED`, by fact
 
 | Fact | Count |
 |---|---:|
-| `domicile` | 22 |
+| `domicile` | 24 |
 | `megShort` | 14 |
-| `nathanShort` | 13 |
-| `companyName` | 10 |
-| `companyAbbr` | 8 |
-| `plantTown` | 7 |
-| `afrMid` | 4 |
 | `davidName` | 3 |
-| `residenceTown` | 2 |
-| `afrLong` | 1 |
-| `decedent` | 1 |
-| `claireShort` | 1 |
-| `votingBlockDividend` | 1 |
+| `riskGap` | 3 |
+| `megRiskScore` | 3 |
+| `megRetireAge` | 2 |
+| `megLossTolerance` | 1 |
+| `ruthShort` | 1 |
+| `emmaShort` | 1 |
+| `david401kRoth` | 1 |
+| `megAge` | 1 |
+| `megTermLife` | 1 |
 
 ## Machinery
 
@@ -92,13 +93,13 @@ not the corpus. Reported, never counted in the drift surface.
 
 | File | Count |
 |---|---:|
-| `scripts/case-inventory.mjs` | 118 |
-| `scripts/case-extract.html` | 101 |
-| `scripts/case-facts.json` | 80 |
-| `scripts/build-case.mjs` | 61 |
-| `scripts/case-flowchart.html` | 48 |
-| `scripts/verify-migration.mjs` | 31 |
-| `scripts/inject-case.mjs` | 3 |
+| `scripts/case-facts.json` | 155 |
+| `scripts/case-inventory.mjs` | 88 |
+| `scripts/build-case.mjs` | 75 |
+| `scripts/case-extract.html` | 61 |
+| `scripts/case-flowchart.html` | 55 |
+| `scripts/verify-migration.mjs` | 18 |
+| `scripts/inject-case.mjs` | 14 |
 
 ## What this measurement declines to count
 
@@ -107,48 +108,52 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**693 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**1191 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
-| `votingUnits` | 101 |
-| `endowmentIntent` | 77 |
-| `claireAge` | 65 |
-| `marriedYears` | 65 |
-| `tbills` | 39 |
-| `seedUnits` | 39 |
-| `employees` | 38 |
-| `nonVotingUnits` | 35 |
-| `megAge` | 34 |
-| `nathanAge` | 24 |
-| `saleUnits` | 23 |
-| `charDeductible` | 21 |
-| `inheritedIra` | 18 |
-| `david403b` | 18 |
-| `discount` | 15 |
-| `dividend` | 14 |
-| `revolver` | 14 |
-| `estateTopRate` | 12 |
-| `nathanShort` | 11 |
-| `ltcgTop` | 7 |
-| `davidAge` | 4 |
-| `corpRate` | 4 |
+| `ryanAge` | 486 |
+| `megRetireAge` | 153 |
+| `davidRetireAge` | 94 |
+| `riskGap` | 62 |
+| `tomAge` | 60 |
+| `emmaAge` | 58 |
+| `davidRiskScore` | 44 |
+| `megAge` | 41 |
+| `megRiskScore` | 27 |
+| `marriedYears` | 17 |
+| `delayedCredit` | 16 |
+| `earlyReduction` | 15 |
+| `megSs62` | 14 |
+| `davidLossTolerance` | 9 |
+| `rmdExciseTax` | 9 |
+| `ruthAge` | 8 |
+| `megRoth` | 7 |
+| `propertyTax` | 7 |
+| `travel` | 7 |
+| `umbrella` | 7 |
+| `asOfDate` | 7 |
+| `davidAge` | 7 |
+| `ipsEquity` | 7 |
+| `rmdExciseCorrected` | 6 |
+| `megLossTolerance` | 5 |
+| `tomShort` | 4 |
+| `davidNewsMonth` | 4 |
 | `megApplicableAge` | 3 |
-| `ilCorpRate` | 3 |
-| `perUnitDividend` | 2 |
-| `deMinimisLoan` | 2 |
-| `giftLoanNII` | 2 |
-| `custConcentration` | 1 |
-| `inquiryDate` | 1 |
-| `megRetainedNV` | 1 |
+| `marginalRate` | 2 |
+| `allocFixed` | 2 |
+| `rothPct` | 2 |
+| `ryanShort` | 1 |
 
 ## Money figures in case context that `CASE.md` does not carry
 
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
-| `session-2/index.html:2680` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
-| `session-4/index.html:9083` | UNGUARDED | $400,000 | fBtns'),dOut=$('dfOut'),bill=$('dfBill'),barsHost=$('dfBars'); var DF={ say0:'“Wire 〈$400,000〉 from my brokerage account to a new account today. Keep  |
+| `session-1/index.html:1368` | UNGUARDED | $522,086 | s="talk"><span class="th">The question that runs through every session</span>Meg is short 〈$522,086〉 a year from year 6, while the structure performs  |
+| `session-1/index.html:1368` | UNGUARDED | $20,020,000 | a year from year 6, while the structure performs exactly as designed. <b>How much of the 〈$20,020,000〉 note does she call this year, what does calling |
+| `session-2/index.html:2621` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'Rev. Rul. 85-13, 1985- |
+| `session-4/index.html:9024` | UNGUARDED | $400,000 | fBtns'),dOut=$('dfOut'),bill=$('dfBill'),barsHost=$('dfBars'); var DF={ say0:'“Wire 〈$400,000〉 from my brokerage account to a new account today. Keep  |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,

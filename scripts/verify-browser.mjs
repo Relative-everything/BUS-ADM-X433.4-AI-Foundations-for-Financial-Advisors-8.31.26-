@@ -115,7 +115,7 @@ for (const rel of LESSONS) {
   say(modal.ok && modal.structVisible && modal.factsHidden, `13  Structure tab switches panels`);
   say(modal.svgs === 2 && modal.titles === 2 && modal.descs === 2,
       `14  flowchart: ${modal.svgs} SVG, ${modal.titles} <title>, ${modal.descs} <desc> preserved`);
-  say(/^Case v4\.0 [0-9a-f]{7}$/.test(modal.stamp), `13  version stamp rendered: "${modal.stamp}"`);
+  say(/^Case v5\.0 [0-9a-f]{7}$/.test(modal.stamp), `13  version stamp rendered: "${modal.stamp}"`);
   say(modal.focusable === true, `13  Structure tab is keyboard reachable (tabIndex 0 when selected)`);
 
   /* Shift+U override */

@@ -9,8 +9,8 @@
  *
  * The derivation rule, stated once:
  *   - a Part J confidentiality landmine            -> bucket 0 (nonpublic)
- *   - the no-name identifying combination (A/B)    -> bucket 0 (nonpublic)
- *   - a published rate or statutory amount (Part H)-> bucket 1 (not identifying)
+ *   - the no-name identifying combination (Part J) -> bucket 0 (nonpublic)
+ *   - a published parameter (Parts E and I)        -> bucket 1 (not identifying)
  *
  * The emitted block carries NO figure literals: card text is built at page
  * parse time from the injected COLE constants, so the case-fact drift surface
@@ -63,64 +63,53 @@ const jItems = [...partJ.matchAll(/^\d+\.\s+\*\*[^*]+\*\*(.*)$/gm)].map((m) => m
 need(jItems.length === 3, `Part J numbered items: expected 3, found ${jItems.length}`);
 const [J1, J2, J3] = jItems.length === 3 ? jItems : ['', '', ''];
 
-/* ---- the facts each card presupposes ---- */
-need(/Nathan/.test(J1) && /does not know|has not been told|has not seen/.test(J1), 'landmine 1 no longer turns on what Nathan has not been told');
-need(/competitor|approached/.test(J1), 'landmine 1 no longer involves the competitor approach');
-need(/unsolicited written inquiry/.test(sec('B.6')) && /Nathan has not been told/.test(sec('B.6')), 'B.6 no longer records the untold inquiry');
-need(/privileged|attorney memorandum/.test(J2) && /discount/.test(J2), 'landmine 2 is no longer the privileged discount position');
-need(/Attorney-client privileged/.test(sec('PART F')), 'F.8 is no longer marked privileged');
-need(/endow/.test(J3) && /board has not been told/i.test(J3), 'landmine 3 is no longer the untold endowment intent');
-need(/\*\*Chair\*\*/.test(sec('PART G')), 'Part G no longer records the chair role');
-need(sec('PART G').includes(usd(F.endowmentIntent)), 'the endowment figure has left Part G');
-need(F.megAge >= 60 && F.megAge <= 69, `the "in her sixties" card is stale: megAge is ${F.megAge}`);
-need(/Precision aerospace fasteners/.test(sec('B.1')), 'B.1 no longer states the aerospace-fastener business line');
-need(sec('B.1').includes(F.plantTown), 'B.1 no longer places the business in the plant town');
-need(/Meg purchases all 1,000 shares from Walter/.test(sec('B.2')), 'B.2 no longer records the purchase from Walter');
-need(/Meg's father/.test(sec('A.3')), 'A.3 no longer records Walter as her father');
-need(sec('H.3').includes(pc(F.blendedAnnual)), 'H.3 no longer carries the blended annual rate the card renders');
-need(sec('H.2').includes(pc(F.rate7520)), 'H.2 no longer carries the 7520 rate the card renders');
-need(sec('H.6.1').includes(usd(F.fedExclusion)), 'H.6.1 no longer carries the federal exclusion the card renders');
-need(sec('H.6.2').includes(usd(F.ilExclusion)), 'H.6.2 no longer carries the Illinois exclusion the card renders');
-
-/* Part K guard: the deck renders percentages; none may equal a retired one.
- * The retired form is composed, never spelled, so this file stays clean under
- * verify-migration check 1, which greps every non-register file in the tree. */
-const RETIRED_PCT = (30 + 1) + '%';
-for (const [k, v] of [['discount', F.discount], ['blendedAnnual', F.blendedAnnual], ['rate7520', F.rate7520]]) {
-  need(pc(v) !== RETIRED_PCT, `${k} renders as the retired Part K percentage; the deck may not carry it`);
-}
+/* ---- the facts each card presupposes (v5.0) ---- */
+need(/David's employer/.test(J1) && /in confidence/.test(J1) && /sale or consolidation/.test(J1), 'landmine 1 no longer turns on David\'s confidential employer news');
+need(/In November 2026 David was told, in confidence/.test(sec('B.2')), 'B.2 no longer records the confidential notice');
+need(/Ruth's loan to Tom/.test(J2) && /\$25,000/.test(J2) && /asked Meg not to raise it/.test(J2), 'landmine 2 is no longer Ruth\'s undocumented loan to Tom');
+need(/Ruth lent Tom \*\*\$25,000\*\*/.test(sec('A.3')), 'A.3 no longer records the loan');
+need(/Emma's debt/.test(J3) && /\$14,000/.test(J3) && /asked them not to tell/.test(J3), 'landmine 3 is no longer Emma\'s confidential debt');
+need(/identifying combination/.test(partJ) && /nurse manager/.test(partJ) && /mechanical engineer/.test(partJ), 'Part J no longer states the identifying combination');
+need(F.megAge >= 55 && F.megAge <= 59 && F.davidAge >= 55 && F.davidAge <= 59, `the "late fifties" card is stale: ages are ${F.megAge} and ${F.davidAge}`);
+need(sec('E.1').includes(usd(F.stdDeduction)), 'E.1 no longer carries the standard deduction the card renders');
+need(sec('E.1').includes(usd(F.deferralLimit)), 'E.1 no longer carries the deferral limit the card renders');
+need(sec('E.2').includes(pc(F.ilRate / 100)), 'E.2 no longer carries the Illinois rate the card renders');
+need(sec('E.2').includes(usd(F.ilExclusion)), 'E.2 no longer carries the Illinois estate exclusion the card renders');
 
 /* every COLE key the emitted block reads must exist in case-facts.json */
-const KEYS = ['blendedAnnual', 'companyAbbr', 'fedExclusion', 'discount', 'endowmentIntent', 'rate7520', 'plantTown', 'ilExclusion'];
+const KEYS = ['stdDeduction', 'deferralLimit', 'ilRate', 'ilExclusion', 'ruthLoanToTom', 'emmaDebt', 'residenceTown', 'ruthTown', 'marriedYears'];
 for (const k of KEYS) need(F[k] !== undefined && F[k] !== null && F[k] !== '', `case-facts.json no longer carries ${k}`);
 
 /* ---- the deck: id, bucket class, card expression, one-line why ----
  * Order interleaves the two buckets (no run longer than 2), which is the
  * property the Rohrer, Dedrick & Stershic (2015) citation on the section
- * rests on: interleaved classification practice, not blocked practice. */
+ * rests on: interleaved classification practice, not blocked practice.
+ * Bucket 0 is nonpublic personal information (the three Part J landmines and
+ * the identifying combination); bucket 1 is a published parameter from Parts E
+ * and I that attaches to every household, not this one. */
 const BUCKET = { landmine: 0, combination: 0, published: 1 };
 const DECK = [
-  { id: 'blended-rate', cls: 'published',
-    t: "'The 2026 blended annual rate on a demand loan: '+pc(COLE.blendedAnnual)",
-    w: 'A published rate from a revenue ruling. It attaches to every demand loan in the country, not to this household.' },
-  { id: 'landmine-nathan', cls: 'landmine',
-    t: "'A competitor has approached '+COLE.companyAbbr+' about an acquisition, and Nathan has not been told'",
-    w: 'The first landmine in the case file. An unannounced approach to a private company, and the person most affected does not know it happened.' },
-  { id: 'fed-exclusion', cls: 'published',
-    t: "'The federal basic exclusion amount: '+usd(COLE.fedExclusion)",
-    w: 'A statutory figure anyone can look up. It says nothing about who is asking.' },
-  { id: 'landmine-privilege', cls: 'landmine',
-    t: "'The '+pc(COLE.discount)+' combined discount asserted in the draft memorandum from estate counsel'",
-    w: 'The second landmine. A privileged, unfiled valuation position with no appraisal behind it, and adverse to the client if it surfaces.' },
-  { id: 'landmine-endowment', cls: 'landmine',
-    t: "'Meg intends a '+usd(COLE.endowmentIntent)+' endowment to the charity she chairs, and its board has not been told'",
-    w: 'The third landmine. The intent carries disclosure and conflict questions she has not raised with the board she leads.' },
-  { id: 'rate-7520', cls: 'published',
-    t: "'The section 7520 rate used to value split interests: '+pc(COLE.rate7520)",
-    w: 'A published rate from the same monthly ruling series. Verify the figure against the source, not against a model.' },
+  { id: 'std-deduction', cls: 'published',
+    t: "'The 2026 standard deduction for a married couple filing jointly: '+usd(COLE.stdDeduction)",
+    w: 'A published figure from an IRS revenue procedure. It attaches to every joint return in the country, not to this household.' },
+  { id: 'landmine-employer', cls: 'landmine',
+    t: "'David has been told, in confidence, that his division may be sold next year and his position eliminated'",
+    w: 'The first landmine in the case file. His employer\'s confidential plans, and the fact that moves his retirement date and his health coverage.' },
+  { id: 'deferral-limit', cls: 'published',
+    t: "'The 2026 elective deferral limit for a 401(k) or 403(b): '+usd(COLE.deferralLimit)",
+    w: 'A statutory limit anyone can look up. It says nothing about who is asking.' },
+  { id: 'landmine-loan', cls: 'landmine',
+    t: "'Ruth lent her son '+usd(COLE.ruthLoanToTom)+' in 2024, undocumented, and asked Meg not to raise it with him'",
+    w: 'The second landmine. A third party\'s financial information, learned through a power of attorney, that the client asked to keep inside the engagement.' },
+  { id: 'landmine-debt', cls: 'landmine',
+    t: "'Emma carries about '+usd(COLE.emmaDebt)+' of credit-card debt and asked her parents not to tell her brother or grandmother'",
+    w: 'The third landmine. An adult child\'s debt, disclosed in confidence, and the reason one of the stated goals just changed.' },
+  { id: 'il-rate', cls: 'published',
+    t: "'The Illinois individual income tax rate: '+pc(COLE.ilRate/100)",
+    w: 'A flat statutory rate. Public, and the same for every Illinois taxpayer.' },
   { id: 'combination', cls: 'combination',
-    t: "'An owner in her sixties with a precision aerospace-fastener maker in '+COLE.plantTown+', bought from her father'",
-    w: 'No name appears, and in a market this narrow the combination identifies one person. De-identification removes the combination, not the name.' },
+    t: "'A nurse manager at a hospital system near '+COLE.residenceTown+' and a senior mechanical engineer at a material-handling manufacturer, married '+COLE.marriedYears+' years, with a mother in a senior community in '+COLE.ruthTown",
+    w: 'No name appears, and in a market this narrow the combination identifies one household. De-identification removes the combination, not the name.' },
   { id: 'il-exclusion', cls: 'published',
     t: "'The Illinois estate tax exclusion: '+usd(COLE.ilExclusion)",
     w: 'A statutory threshold set by state law. Public, and the same for every Illinois estate.' },
@@ -151,7 +140,7 @@ ${cardLines.join(',\n')}
 })();
 </scr` + `ipt>`;
 
-const OPEN = '<!-- CARDSORT:BEGIN cole-household v4.0 -->';
+const OPEN = '<!-- CARDSORT:BEGIN cole-household v5.0 -->';
 const CLOSE = '<!-- CARDSORT:END cole-household -->';
 const sha256 = (s) => createHash('sha256').update(s, 'utf8').digest('hex');
 const region = OPEN + '\n' +
@@ -166,7 +155,9 @@ if (problems.length) {
 
 const check = process.argv.includes('--check');
 const text = readFileSync(LESSON, 'utf8');
-const a = text.indexOf(OPEN), b = text.indexOf(CLOSE);
+/* the opening sentinel is found by case id, any version, so a version change rewrites it */
+const om = text.match(/<!-- CARDSORT:BEGIN cole-household v[0-9.]+ -->/);
+const a = om ? om.index : -1, b = text.indexOf(CLOSE);
 if (a < 0 || b < 0 || b < a) {
   console.error('FAIL  no CARDSORT sentinels in session-1/index.html');
   process.exit(1);
