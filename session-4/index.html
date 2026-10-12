@@ -1122,7 +1122,7 @@ body:not(.reveal) #ovr{display:none}
   #s2 .s2ring.pulse,#s2 .redact .seg.wipe::before{animation:none}
 }
 
-/* beat 2, the harder ones: seven sieves, one per identifying phrase, and a big label */
+/* beat 2, the harder ones: eight sieves, one per phrase to change, and a big label */
 #s2 .s2guess .btn.sel.pick{background:var(--gold-bg);color:var(--ink);border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
 #s2 .s2guess .btn.pick[disabled]{opacity:1}
 #s2 .s2big{font-family:"Bricolage Grotesque",sans-serif;font-size:40px;font-weight:700;fill:var(--ink);letter-spacing:-.01em}
@@ -3727,7 +3727,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel" data-task="t-s2" data-comp="builder-assembler">
     <span class="do">Do this now: 3 minutes</span>
     <h4>Debrief Your Hotspot: Hide Her in the Crowd</h4>
-    <p class="hint">Which fields did you miss on the case page? Guess, then click each phrase that points to her until the meter reads No.</p>
+    <p class="hint">Which fields did you miss on the case page? Guess, then click each phrase that points to her until the meter reads No. A confidence is not replaced: click the whole sentence and it comes out.</p>
     <div class="s2guess" role="group" aria-label="Your guess">
       <span class="s2gq">Remove only her name and employer. Can someone still find her?</span>
       <div class="row"><button type="button" class="btn sel mini" id="redGuessY" aria-pressed="false">A &middot; Yes, likely still one person<span class="s2gm"></span></button><button type="button" class="btn sel mini" id="redGuessN" aria-pressed="false">B &middot; No, she is hidden<span class="s2gm"></span></button></div>
@@ -3744,9 +3744,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel">
     <span class="do">Then this: 2 minutes</span>
     <h4>The Harder Ones: No Names Left</h4>
-    <p class="hint">Her name and employer are already gone from this case note. Guess how many phrases still point to her, then click each one.</p>
+    <p class="hint">Her name and employer are already gone from this case note. Guess how many phrases still point to her or are a confidence, then click each one.</p>
     <div class="s2guess" role="group" aria-label="Your guess">
-      <span class="s2gq">How many of the numbered phrases still point to her?</span>
+      <span class="s2gq">How many of the numbered phrases still point to her or are a confidence?</span>
       <div class="row" id="redGuess2"><button type="button" class="btn sel mini" data-g="0" aria-pressed="false">0<span class="s2gm"></span></button><button type="button" class="btn sel mini" data-g="1" aria-pressed="false">1<span class="s2gm"></span></button><button type="button" class="btn sel mini" data-g="2" aria-pressed="false">2<span class="s2gm"></span></button><button type="button" class="btn sel mini" data-g="3" aria-pressed="false">3<span class="s2gm"></span></button><button type="button" class="btn sel mini" data-g="4" aria-pressed="false">4<span class="s2gm"></span></button><button type="button" class="btn sel mini" data-g="5+" aria-pressed="false">5+<span class="s2gm"></span></button></div>
     </div>
     <div class="s2lay">
@@ -3758,7 +3758,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <ul class="pts">
-    <li><b>What the hotspot hunted.</b> Three confidences, none of them a name: David&rsquo;s division is being evaluated for sale or consolidation in 2027, Meg&rsquo;s mother lent her brother Tom $25,000 and asked Meg not to raise it, and Emma carries about $14,000 of card debt <span class="conf l" data-src="src-case">L</span>. With every name gone, the jobs, the town and the family still point to one household.</li>
+    <li><b>What the hotspot hunted.</b> Three confidences, none of them a name: David&rsquo;s division is being evaluated for sale or consolidation in 2027, Meg&rsquo;s mother lent her brother Tom $25,000 and asked Meg not to raise it, and Emma carries about $14,000 of card debt <span class="conf l" data-src="src-case">L</span>. With every name gone, the jobs, the town and the family still point to one household. A confidence is a different problem from a name: in Prompt D the two that appear, David&rsquo;s division and Emma&rsquo;s debt, are not replaced but removed as whole sentences, because a confidence never enters a tool, with or without the names (Part J). The question they motivated stays.</li>
     <li><b>Names are the easy part.</b> You met the next one in Session 3: a hospital role plus a husband&rsquo;s job points to one household with no name. Facts that are not names add up: a daughter&rsquo;s graduation year, an age plus a family shape. Regulation S-P covers what identifies her, not only her name <span class="conf m" data-src="src-regsp">M, applied</span>.</li>
     <li><b>Being your client counts on its own.</b> A name anyone can look up, like her employer&rsquo;s, shows she is your client once it sits in a prompt about her <span class="conf h" data-src="src-regsp">H</span>.</li>
     <li><b>The CFP Board's advice.</b> Pseudonyms for names; strip identifying details before you upload <span class="conf m" data-src="src-cfp-genai" data-fact="cfp-genai-guide">M</span>.</li>
@@ -5106,11 +5106,15 @@ document.addEventListener('keydown',function(e){
     }
   }});
 /* ================= s2 phrases, defined first: prompt D, the clean prompt D and the Live API box are built from them =================
-   Each keyed phrase (k) is one identifier; r is its placeholder; w says why it identifies; f, where
+   Each keyed phrase (k) is one item the student must handle; r is its placeholder; w says why; f, where
    present, is the short form the crowd figure prints (the full phrase is too long for its clue list).
-   The unkeyed phrases are the instruction, the situation and the question, which identify nobody.
+   A keyed phrase with rm:true is a confidence (CASE.md Part J). It is never replaced: the whole sentence
+   is removed, so the clean prompt carries nothing of it. Seven keyed phrases are identifiers and two are
+   removals, nine in all. The unkeyed phrases are the instruction, the question and the format line,
+   which identify nobody and are kept.
    Case figures and plan facts are read from COLE (scripts/case-facts.json); the client's name, her
    daughter's first name, the unit and the 2027 sale are typed because the file carries no key for them. */
+var CONF_WHY='A confidence (Part J). It never enters a tool, with or without the names: remove the sentence, keep the question it motivates.';
 var RED=(function(){
   /* the husband's employer without the trailing ", Inc.", so the sentence can end on it */
   var dEmp=COLEv('davidEmployer').replace(/,? Inc\.$/,'');
@@ -5129,17 +5133,27 @@ var RED=(function(){
    {p:', whose husband is '},
    {t:'a '+COLEv('davidRole').toLowerCase()+' at '+dEmp,f:'engineer',k:'husband',r:'an engineer',w:'A second person’s job is an identifier too. With the role or the town, it leaves a handful.'},
    {p:'. '},
-   {t:'Her husband was told in confidence that his division may be sold in 2027',safe:'Keep it: once the names, employer and town are gone, this is the situation, not the person.'},
-   {p:', and '},
-   {t:'their daughter Emma',f:'daughter Emma',k:'daughter',r:'their daughter',w:'A family member’s name is an identifier too.'},
-   {p:', '},
-   {t:'who has about '+COLEm('emmaDebt')+' of card debt, doesn’t want her brother told.',safe:'Keep it: the fact the advice turns on. It identifies nobody once the names are gone.'},
+   {t:'Her husband was told in confidence that his division may be sold in 2027.',k:'sale',rm:true,r:'',w:CONF_WHY},
+   {p:' They have '},
+   {t:'a daughter, Emma',f:'daughter Emma',k:'daughter',r:'a daughter',w:'A family member’s name is an identifier too.'},
+   {p:'. '},
+   {t:'Emma has about '+COLEm('emmaDebt')+' of card debt and doesn’t want her brother told.',k:'debt',rm:true,r:'',w:CONF_WHY},
    {p:' '},
    {t:'What should I raise at our next meeting?',safe:'The question. It identifies nobody.'},
    {p:' '},
    {t:'Use bullet points.',safe:'A format instruction. Keep it.'}
   ];
 })();
+/* One assembler for the clean prompt, shared by beat 1, beat 2 and the Live API box, so there is no second literal to drift.
+   A replaced phrase becomes its placeholder, a removed sentence becomes nothing, and the gap it leaves is closed. */
+function redShown(s){return s.rm?'[removed]':'['+s.r+']'}
+function redJoin(list,isOn){
+  return list.map(function(s){
+    if(s.p!==undefined)return s.p;
+    if(s.k&&isOn(s.k))return s.rm?'':'['+s.r+']';
+    return s.t;
+  }).join('').replace(/ {2,}/g,' ').replace(/^ +| +$/g,'');
+}
 /* ----- section s0 ----- */
 try{
 /* ================= s0 · Session 3 retrieval bridge, then the zoom-out frame =================
@@ -5940,13 +5954,17 @@ try{
    - [NEW] the crosshair: a town column band and a role row band that sweep
      open when their phrase is replaced; the five-line clue list; the gap
      caption. The dots are nurse managers: a column is a town, a row a job
-     title, a big dot a household with an engineer husband. */
+     title, a big dot a household with an engineer husband.
+   - The two confidences (sale, debt) are not crowd clues: they are removed as whole
+     sentences (CASE.md Part J), so pass(), count() and CLUES do not read them. They
+     gate the pass state instead: level() reads No only when both are out, and that
+     is what marks g3, sets S4STATE.s2done and lets the clean prompt be copied. */
 (function(){
   var host=$('redText'),out=$('redOut'),key=$('redKey'),fig=$('redFig');
   if(!host||!out||!fig)return;
   var SEG={},TOT=0;
   RED.forEach(function(s){if(s.k){SEG[s.k]=s;TOT++}});
-  if(!SEG.name||!SEG.employer||!SEG.town||!SEG.role||!SEG.husband||!SEG.age||!SEG.daughter)return;
+  if(!SEG.name||!SEG.employer||!SEG.town||!SEG.role||!SEG.husband||!SEG.age||!SEG.daughter||!SEG.sale||!SEG.debt)return;
 
   var rep={},kept={},guess='',prevLv=-1,note='',line='Guess first, or click a phrase.',pulseT=null;
   var segs=[],num=0;
@@ -5954,10 +5972,10 @@ try{
   /* ---------- the prompt card: built once, never rebuilt ---------- */
   function paint(b,wipe){
     var s=b._s,on=!!rep[s.k];
-    b._st.textContent=on?'['+s.r+']':s.t;
+    b._st.textContent=on?redShown(s):s.t;
     if(on)b.classList.add('rep');else b.classList.remove('rep');
     b.setAttribute('aria-pressed',on?'true':'false');
-    b.setAttribute('aria-label',on?b._n+'. Replaced with '+s.r+'. Click to put it back.':b._n+'. '+s.t);
+    b.setAttribute('aria-label',on?b._n+'. '+(s.rm?'Removed.':'Replaced with '+s.r+'.')+' Click to put it back.':b._n+'. '+s.t);
     if(on&&wipe&&!reduced()){
       clearTimeout(b._wt);b.classList.remove('wipe');void b.offsetWidth;b.classList.add('wipe');
       b._wt=setTimeout(function(){b.classList.remove('wipe')},400);
@@ -5983,11 +6001,10 @@ try{
     if(left('role')&&left('town'))return [1,'Probably. A '+SEG.role.f+(left('employer')?' at that hospital system':'')+' in that town is likely one person.'];
     if(left('daughter'))return [2,'Possibly. A daughter named Emma narrows it fast.'];
     if(left('husband')&&(left('role')||left('town')))return [2,'Possibly. The husband’s job plus the role or town leaves a handful.'];
-    return [3,'No. Nothing left points to her. The situation survives; the person does not.'];
+    if(left('sale')||left('debt'))return [2,'Possibly. A confidence is still in the prompt. It never enters a tool, with or without the names.'];
+    return [3,'No. Nothing left points to her, and no confidence is left in. The question survives; the person does not.'];
   }
-  function text(){
-    return RED.map(function(s){if(s.p!==undefined)return s.p;return (s.k&&rep[s.k])?'['+s.r+']':s.t}).join('');
-  }
+  function text(){return redJoin(RED,function(k){return rep[k]})}
   function nRep(){var n=0;RED.forEach(function(s){if(s.k&&rep[s.k])n++});return n}
 
   /* ---------- the crowd: seeded, built once ---------- */
@@ -6081,8 +6098,8 @@ try{
 
   function missHTML(){
     var h='<span class="hd">What is left, and why it matters</span>',any=false;
-    RED.forEach(function(s){if(s.k&&!rep[s.k]){any=true;h+='<span class="flag">✗</span> '+esc(s.t)+'<br><span class="kw">'+esc(s.w)+' Replace with: ['+esc(s.r)+']</span><br><br>'}});
-    if(!any)h+='<span class="good">Every identifying phrase is replaced.</span> Age and her husband’s job alone would not find her; hiding them costs the advice nothing.';
+    RED.forEach(function(s){if(s.k&&!rep[s.k]){any=true;h+='<span class="flag">✗</span> '+esc(s.t)+'<br><span class="kw">'+esc(s.w)+(s.rm?'':' Replace with: ['+esc(s.r)+']')+'</span><br><br>'}});
+    if(!any)h+='<span class="good">Every identifying phrase is replaced and both confidences are out.</span> Age and her husband’s job alone would not find her; hiding them costs the advice nothing.';
     return h;
   }
   function showMiss(){if(!key)return;key.className='mpanel has keyhide';key.innerHTML=missHTML();key.style.display='block'}
@@ -6121,7 +6138,7 @@ try{
     var labs=['Yes','Probably','Possibly','No'],cl=['y','p','q','n'];
     var h='<span class="hd">Could someone tell who this is?</span><div class="lvl" aria-hidden="true">';
     labs.forEach(function(l,q){h+='<span class="'+cl[q]+(q===L?' on':'')+'">'+l+'</span>'});
-    h+='</div><span class="s2lt">'+esc(lv[1])+'</span><span class="kw s2fit">Who fits: '+b+' · '+nRep()+' of '+TOT+' replaced</span>'+(note?'<span class="s2note">'+note+'</span>':'');
+    h+='</div><span class="s2lt">'+esc(lv[1])+'</span><span class="kw s2fit">Who fits: '+b+' · '+nRep()+' of '+TOT+' replaced or removed</span>'+(note?'<span class="s2note">'+note+'</span>':'');
     out.className='mpanel'+(L===3?' has':'');out.innerHTML=h;
     if(key&&key.style.display==='block')key.innerHTML=missHTML();
     if(L===3&&typeof mark==='function')mark('g3');
@@ -6140,14 +6157,15 @@ try{
     }
     var b4=snap();rep[s.k]=!rep[s.k];paint(b,true);var af=snap();
     if(rep[s.k]){
-      note='<span class="good">Replaced.</span> '+esc(s.w);
-      line=(b4.L<3&&af.L===3)?'Replaced: she vanishes into the crowd.':
+      note='<span class="good">'+(s.rm?'Removed.':'Replaced.')+'</span> '+esc(s.w);
+      line=s.rm?(af.L===3?'Removed. Nothing left points to her.':'Removed. The crowd did not move.'):
+        (b4.L<3&&af.L===3)?'Replaced: she vanishes into the crowd.':
         af.L===0?'Replaced. Her name is still there.':
         af.L===1?'Replaced. Role + town still find her.':
         af.n>b4.n?'Replaced: the crowd grows.':'Replaced. The crowd did not move.';
     }else{
       note='Put back: “'+esc(s.t)+'”'+(af.L===3?'. With the rest hidden, it does not find her.':'');
-      line=af.n<b4.n?'Put back: the crowd shrinks.':'Put back.';
+      line=s.rm?'Put back. A confidence is in the prompt again.':af.n<b4.n?'Put back: the crowd shrinks.':'Put back.';
     }
     draw(false);
   }
@@ -6192,18 +6210,19 @@ try{
   };
   REVEALS.push(function(){
     segs.forEach(function(b){if(b._s.k){rep[b._s.k]=true;paint(b,false)}});
-    line='Every identifying phrase replaced.';note='';
+    line='Every phrase replaced or removed.';note='';
     draw(false);showMiss();
   });
   draw(false);
 })();
 /* ================= s2 · beat 2: the harder ones, no names left =================
    The same click-to-replace card as beat 1, built from RED2: seven phrases that
-   point to her without a proper noun, then two safe ones. No crowd this time.
-   The figure is a row of seven sieves, one per identifying phrase, that dissolve
-   as their phrase is replaced, under a big label for how many people fit the
-   note as it stands. The counts are illustrative. The guess locks on the first
-   pick; the gap shows once the last phrase is replaced. No new gate: the
+   point to her without a proper noun, one confidence that comes out as a whole
+   sentence (CASE.md Part J), then one safe task. No crowd this time.
+   The figure is a row of eight sieves, one per phrase to change, that dissolve
+   as their phrase is replaced or removed, under a big label for how many people
+   fit the note as it stands. The counts are illustrative. The guess locks on the
+   first pick; the gap shows once the last phrase is handled. No new gate: the
    section's gate stays on beat 1. */
 (function(){
   var host=$('redText2'),out=$('redOut2'),fig=$('redFig2');
@@ -6224,24 +6243,25 @@ try{
      {p:'. They live in '},
      {t:COLEv('residenceTown'),k:'home',r:'a suburb',w:'A named town, next to the other clues, narrows the field.'},
      {p:'. '},
-     {t:'Her husband was told in confidence that his division may be sold in 2027.',safe:'Keep it: the situation, not the person.'},
+     {t:'Her husband was told in confidence that his division may be sold in 2027.',k:'sale',rm:true,r:'',w:CONF_WHY},
      {p:' '},
      {t:'Prepare three questions on the Roth conversion for the next meeting.',safe:'Keep it: the task.'}
   ];
   var KEYS=[],TOT=0;
   RED2.forEach(function(s){if(s.k){KEYS.push(s.k);TOT++}});
-  if(TOT!==7)return;
-  var FINAL='No. Nothing left points to her, and the task survives.';
+  if(TOT!==8)return;
+  var TOTW=['no','one','two','three','four','five','six','seven','eight','nine','ten'][TOT];
+  var FINAL='No. Nothing left points to her, no confidence is left in, and the task survives.';
   var rep={},guess='',shown=false,line='Guess first, or click a phrase.',note='',segs=[],num=0,popT=null;
   function cls(el,name,on){if(on)el.classList.add(name);else el.classList.remove(name)}
 
   /* ---------- the note card: built once, never rebuilt ---------- */
   function paint(b,wipe){
     var s=b._s,on=!!rep[s.k];
-    b._st.textContent=on?'['+s.r+']':s.t;
+    b._st.textContent=on?redShown(s):s.t;
     if(on)b.classList.add('rep');else b.classList.remove('rep');
     b.setAttribute('aria-pressed',on?'true':'false');
-    b.setAttribute('aria-label',on?b._n+'. Replaced with '+s.r+'. Click to put it back.':b._n+'. '+s.t);
+    b.setAttribute('aria-label',on?b._n+'. '+(s.rm?'Removed.':'Replaced with '+s.r+'.')+' Click to put it back.':b._n+'. '+s.t);
     if(on&&wipe&&!reduced()){
       clearTimeout(b._wt);b.classList.remove('wipe');void b.offsetWidth;b.classList.add('wipe');
       b._wt=setTimeout(function(){b.classList.remove('wipe')},400);
@@ -6261,22 +6281,21 @@ try{
     host.appendChild(b);segs.push(b);
   });
   function nRep(){var n=0;KEYS.forEach(function(k){if(rep[k])n++});return n}
-  function text(){
-    return RED2.map(function(s){if(s.p!==undefined)return s.p;return (s.k&&rep[s.k])?'['+s.r+']':s.t}).join('');
-  }
-  function fitLabel(n){return n>=6?'1 person':n===5?'a handful':n===4?'dozens':n===3?'hundreds':n>=1?'thousands':'anyone'}
+  function text(){return redJoin(RED2,function(k){return rep[k]})}
+  /* the label by phrases left, out of eight: the top two keep it at one person, then each phrase gone widens it */
+  function fitLabel(n){return n>=7?'1 person':n===6?'a handful':n===5?'dozens':n===4?'hundreds':n>=1?'thousands':'anyone'}
   function gLabel(g){return g==='5+'?'5 or more':g}
 
-  /* ---------- the figure: seven sieves and a big label, built once ---------- */
+  /* ---------- the figure: eight sieves and a big label, built once ---------- */
   var svg=svgRoot(fig,360,204,'Illustrative count of people who fit the note.','s2svg2');
   svt(svg,8,20,'People who fit','s2t');
   var hc=svt(svg,352,20,'','s2hc','end');
   var gPop=sv('g',{'class':'s2pop'},svg);
   var big=svt(gPop,180,100,'','s2big','middle');
   svt(svg,180,124,'fit the note as it stands','s2key','middle');
-  var FUN=[];
+  var FUN=[],FSTEP=Math.min(46,292/(KEYS.length-1));
   KEYS.forEach(function(k,i){
-    var gp=sv('g',{transform:'translate('+(42+46*i)+' 152)'},svg);
+    var gp=sv('g',{transform:'translate('+(Math.round((34+FSTEP*i)*100)/100)+' 152)'},svg);
     var n=svt(gp,0,-9,String(i+1),'s2fn','middle');
     var g=sv('g',{'class':'s2fun'},gp);
     sv('path',{d:'M-15 0 L15 0 L3 16 L3 26 L-3 26 L-3 16 Z','class':'s2fb'},g);
@@ -6300,9 +6319,9 @@ try{
     });
   }
   function gapHTML(){
-    if(!guess)return 'No guess made. The answer: '+TOT+', all seven.';
-    if(guess==='5+')return '<span class="good">Your guess: 5 or more. Right.</span> The answer: '+TOT+', all seven.';
-    return '<span class="flag">Your guess: '+esc(guess)+'.</span> The answer: '+TOT+', all seven. You were '+(TOT-Number(guess))+' short.';
+    if(!guess)return 'No guess made. The answer: '+TOT+', all '+TOTW+'.';
+    if(guess==='5+')return '<span class="good">Your guess: 5 or more. Right.</span> The answer: '+TOT+', all '+TOTW+'.';
+    return '<span class="flag">Your guess: '+esc(guess)+'.</span> The answer: '+TOT+', all '+TOTW+'. You were '+(TOT-Number(guess))+' short.';
   }
   function onGuess(b){
     if(guess)return;
@@ -6312,7 +6331,7 @@ try{
       x.disabled=true;
       if(x===b){x.classList.add('pick');x.setAttribute('aria-pressed','true');var tg=x.querySelector('.s2gm');if(tg)tg.textContent=' · picked'}
     });
-    if(TOT-nRep()>0){line='Your guess: '+gLabel(guess)+'. Now click each phrase that still points to her.';note=''}
+    if(TOT-nRep()>0){line='Your guess: '+gLabel(guess)+'. Now click each phrase that still points to her, and each confidence.';note=''}
     draw(false);
     if(segs[0])try{segs[0].focus({preventScroll:true})}catch(e){}
   }
@@ -6323,12 +6342,12 @@ try{
     var n=nRep(),leftN=TOT-n,done=leftN===0,lab=fitLabel(leftN),ln=done?FINAL:line;
     FUN.forEach(function(f){var off=!!rep[f.k];cls(f.g,'off',off);cls(f.n,'off',off);cls(f.w,'off',off)});
     if(big.textContent!==lab){big.textContent=lab;if(popIt)pop()}
-    big.setAttribute('class','s2big '+(leftN>=5?'hot':done?'cool':''));
+    big.setAttribute('class','s2big '+(leftN>=6?'hot':done?'cool':''));
     hc.textContent=done?'NO CLUE LEFT':'● '+leftN+(leftN===1?' CLUE':' CLUES')+' LEFT';
     hc.setAttribute('class','s2hc '+(done?'cool':'hot'));
-    svg.setAttribute('aria-label','Illustrative count of people who fit the note. Seven sieves, one per identifying phrase; '+leftN+' still in place. Now: '+lab+' fit.');
+    svg.setAttribute('aria-label','Illustrative count of people who fit the note. '+TOTW.charAt(0).toUpperCase()+TOTW.slice(1)+' sieves, one per phrase to change; '+leftN+' still in place. Now: '+lab+' fit.');
     if(done&&!shown){shown=true;reveal()}
-    var h='<span class="hd">Could someone tell who this is?</span><span class="s2lt">'+esc(ln)+'</span><span class="kw s2fit">People who fit: '+lab+' · '+n+' of '+TOT+' replaced</span>';
+    var h='<span class="hd">Could someone tell who this is?</span><span class="s2lt">'+esc(ln)+'</span><span class="kw s2fit">People who fit: '+lab+' · '+n+' of '+TOT+' replaced or removed</span>';
     if(note)h+='<span class="s2note">'+note+'</span>';
     if(done)h+='<span class="s2note">'+gapHTML()+'</span>';
     out.className='mpanel'+(done?' has':'');out.innerHTML=h;
@@ -6343,13 +6362,13 @@ try{
       draw(false);return;
     }
     rep[s.k]=!rep[s.k];paint(b,true);
-    var leftN=TOT-nRep();
+    var leftN=TOT-nRep(),vb=s.rm?'Removed.':'Replaced.';
     if(rep[s.k]){
-      note='<span class="good">Replaced.</span> '+esc(s.w);
-      line=leftN===1?'Replaced. One phrase still points to her.':'Replaced. '+leftN+' phrases still point to her.';
+      note='<span class="good">'+vb+'</span> '+esc(s.w);
+      line=leftN===1?vb+' One phrase is left to change.':vb+' '+leftN+' phrases are left to change.';
     }else{
       note='Put back: “'+esc(s.t)+'”';
-      line=leftN===1?'Put back. One phrase points to her again.':'Put back. '+leftN+' phrases point to her.';
+      line=leftN===1?'Put back. One phrase has to change.':'Put back. '+leftN+' phrases have to change.';
     }
     draw(true);
   }
@@ -6357,7 +6376,7 @@ try{
   /* ---------- buttons ---------- */
   if($('redCopy2'))$('redCopy2').onclick=function(){
     var leftN=TOT-nRep();
-    if(leftN>0){$('redMsg2').textContent='Not yet: '+leftN+(leftN===1?' phrase still points':' phrases still point')+' to her.';return}
+    if(leftN>0){$('redMsg2').textContent='Not yet: '+leftN+(leftN===1?' phrase has':' phrases have')+' to change or come out.';return}
     copyText(text(),$('redMsg2'));
   };
   if($('redReset2'))$('redReset2').onclick=function(){
@@ -6910,7 +6929,7 @@ try{
     if(tag){var t=document.createElement('span');t.className='anTag';t.textContent=tag;lineEl.appendChild(t)}
     function S(i){var e=document.createElement('span');e.className='anS '+cls[i];e.textContent=slots[i];lineEl.appendChild(e)}
     function T(x){lineEl.appendChild(document.createTextNode(x))}
-    S(0);T(', ');S(1);T(', ');S(2);T(' ');S(3);T('. Her husband was told his division may be sold in 2027. What should I raise?');
+    S(0);T(', ');S(1);T(', ');S(2);T(' ');S(3);T('. What should I raise?');
   }
 
   /* ---------- readout ---------- */
@@ -11423,8 +11442,8 @@ window.__coreMins=60;
    button. The default prompt is the clean Prompt D: synthetic, and already
    on this page. Plain ES5. */
 var LM_PRICE={inp:0.1,out:0.5,note:'the smallest Claude model, $0.10 in and $0.50 out per million tokens for a prompt up to 100K tokens <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-haiku-5-5 claude-output-input-ratio">H</span>'};
-/* the clean Prompt D: every identifying phrase of RED replaced by its placeholder, which is the string section 02 copies once the meter reads No. Derived, so there is no second literal to drift. */
-var LM_DEFAULT_PROMPT=RED.map(function(s){return s.p!==undefined?s.p:(s.k?'['+s.r+']':s.t)}).join('');
+/* the clean Prompt D: every identifying phrase of RED replaced by its placeholder and both confidences removed, which is the string section 02 copies once the meter reads No. Derived through redJoin, so there is no second literal to drift. */
+var LM_DEFAULT_PROMPT=redJoin(RED,function(){return true});
 function lmCleanPrompt(){
   var st=(typeof S4STATE==='object')?S4STATE:null;
   if(st&&st.s2done&&st.s2clean)return String(st.s2clean);

@@ -14,7 +14,7 @@ Resume rule (RUNBOOK A.1.6): read `RUNBOOK.md` (A.0 first), this file, `DECISION
 | 5 | done | 2026-10-12 | 2026-10-12 | (P5 commit) | verify-facts 0 · verify-sources 0 · verify-case 0 · verify-migration 1 (session-0.1 only) · verify-editorial 0 · test-editorial 1 (T7) · test-case-viewer 0 · verify-browser 0 · live-console 0 · verify-style 1 (env) |
 | 6a | done | 2026-10-12 | 2026-10-12 | (P6a commit) | none required; proposal tables sum to 150 (125) per session |
 | 6b | done | 2026-10-12 | 2026-10-12 | (P6b commit) | build-appendix --check 0 · verify-case 0 · verify-migration 1 (session-0.1 only) · verify-facts 0 · verify-editorial 1 (A9 R11 corpus ratchet, D-048) · test-editorial 1 (T7) · test-case-viewer 0 · verify-browser 0 · live-console 0 · verify-style 1 (env) |
-| 7 | pending | | | | |
+| 7 | done | 2026-10-12 | 2026-10-12 | (P7 commit) | verify-case 0 (12 files) · test-case-viewer 0 · verify-browser 0 · verify-sources 0 · verify-facts 0 · verify-migration 1 (session-0.1 only) · verify-editorial 1 (A9 R11) · live-console 0 · verify-style 1 (env) |
 | 8 | pending | | | | |
 | 9 | pending | | | | |
 | 10 | pending | | | | |
@@ -228,3 +228,33 @@ Every lesson: the cold-open ritual replaced in its slot by `sCase` (prediction-c
 | verify-style | 1 | environment |
 
 Handoffs: Phase 7 builds each case page to match its `sCase` commit and key (session-2's four statements A to D; session-3's six comparison rows; session-5's five-step workflow and the "first break" answer); Phase 9 rewrites session-2 `s12`'s one-item checklist and the package text; Phase 10 rewrites the instructor run sheets for the new numbering, the predicted split for session-1 `s14c`, and the retired `sCold`; session-4's LMBOX-S4 console text cites old section numbers (editable only with the fence version bumped: deferred-work row).
+
+## Phase 7: the case pages
+
+One Sonnet builder wrote `cases/case-1.html` as the pattern (with the model `readme.txt` in the twelve-heading package spec), then four builders wrote cases 2 to 5 from it (2.28M tokens, 642 tool uses, 87 minutes). Every page: the case-file identity (oxblood header band, file-tab strip, document panels, print stylesheet), the same chrome, STYLE fence (byte-identical to the lessons), `#caseBtn` and `#caseModal` as the lessons, six sections (brief, your call first, the deliverable, how it was built, check, continue), commit-then-reveal with no gating, keyboard reachable, Google Fonts the only external origin, no storage, ES5. Every deliverable was captured through `scripts/recapture.mjs` and is labelled with the model id the CLI reported and the date; each page shows the first plain-request failure and the standing instruction that fixed it.
+
+| Page | Minutes | Sections | Captures | FACTS ids cited | Screenshot |
+|---|---:|---|---|---:|---|
+| case-1 | 25 | brief 3; commit 7; deliverable 5; built 6; check 3; next 1 | 5 runs, all claude-sonnet-5-5 (case-5 also claude-sonnet-4-5-20250929 as the pre-change baseline), 2026-10-12 | 8 | scratchpad p7/shots/case-1.png |
+| case-2 | 25 | brief 3; commit 7; deliverable 5; built 6; check 3; next 1 | 3 runs, all claude-sonnet-5-5 (case-5 also claude-sonnet-4-5-20250929 as the pre-change baseline), 2026-10-12 | 6 | scratchpad p7/shots/case-2.png |
+| case-3 | 25 | brief 3; commit 7; deliverable 5; built 6; check 3; next 1 | 6 runs, all claude-sonnet-5-5 (case-5 also claude-sonnet-4-5-20250929 as the pre-change baseline), 2026-10-12 | 7 | scratchpad p7/shots/case-3.png |
+| case-4 | 26 | brief 3; commit 8; deliverable 5; built 6; check 3; next 1 | 6 runs, all claude-sonnet-5-5 (case-5 also claude-sonnet-4-5-20250929 as the pre-change baseline), 2026-10-12 | 12 | scratchpad p7/shots/case-4.png |
+| case-5 | 25 | brief 3; commit 7; deliverable 5; built 6; check 3; next 1 | 6 runs, all claude-sonnet-5-5 (case-5 also claude-sonnet-4-5-20250929 as the pre-change baseline), 2026-10-12 | 6 | scratchpad p7/shots/case-5.png |
+
+The orchestrator then: taught the pipeline the case pages (`inject-case`, `verify-case`, `test-case-viewer`, `verify-browser` and `verify-migration` list them; `build-sources` knows the keys `case-1` to `case-5` and `pagePath()` maps every key to its page for `inject-sources`, `verify-sources` and `build-bibliography`), filled the generated CASE and SOURCES spans, exempted case pages from the lesson-only interaction floor (check 9) and labelled their missing time-budget table (check 16) with the reason printed (D-050), added the Illinois retirement-income subtraction record (D-052), inserted the "Case files" strip on the hub, documented the case pages in MAINTAINING.md, and had one Sonnet agent align two lessons with their case pages where they disagreed (D-051): session-3 `#sCase`'s six verdicts now read the Case 3 capture (rows 1, 3, 6 match; row 2 kept out of the tool by design; rows 4, 5 differ), and session-4 `#s2`'s de-identification exercise removes the two confidences as whole sentences under CASE.md Part J (beat 1: 9 keyed items, beat 2: 8; the clean Prompt D and `LM_DEFAULT_PROMPT` carry no confidence; the Appendix D1 zoom prompt likewise).
+
+| Validator | Exit | Reading |
+|---|---:|---|
+| inject-case, verify-case, inject-case --check | 0 | 12 of 12 pages carry the v5.0 block; the 20 `.case-*` layout rules agree in all 12 |
+| attest-verified --sync, inject-sources, build-bibliography, verify-sources | 0 | 151 records; footers current on 11 pages (six lessons, five cases) |
+| test-case-viewer | 0 | V1 to V9 on all 12 pages |
+| verify-browser | 0 | 13, 13b, 14, 14b, 15 on all 12 pages |
+| verify-migration | 1 | 1c and 4 on session-0.1 only; 9 and 16 PASS with the case-page exemptions printed; 18 and 20 PASS |
+| verify-facts | 0 | clean; the case pages cite 34 distinct FACTS ids between them |
+| case-inventory --report-check, build-unsourced --check | 0 | reports current |
+| verify-editorial, test-editorial-regions | 1 | the A9 R11 corpus ratchet only (D-048); case pages are outside A1 to A7 like session-0.1 |
+| test_live_console | 0 | 86 passed (session-4's console reads the new clean Prompt D) |
+| verify-style | 1 | environment |
+
+Known gaps for the deferred-work register: no script checks that a lesson's `#sCase` and its case page agree (facts, key, verdict rows); case-4's `gemini-plans` chip has no SOURCES record (no record for the Gemini subscriptions page); the case-5 maintenance log's pre-change baseline ran on `claude-sonnet-4-5-20250929`, whose retirement is 2026-11-30, so the log is a dated record; every capture is dated 2026-10-12 against a case as-of date of 2026-12-31 (the pages say so).
+

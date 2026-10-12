@@ -28,7 +28,8 @@ const chromium = (pw.chromium || pw.default.chromium);
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LESSONS = ['index.html', 'session-0.1/index.html', 'session-1/index.html',
                  'session-2/index.html', 'session-3/index.html', 'session-4/index.html',
-                 'session-5/index.html'];
+                 'session-5/index.html',
+                 'cases/case-1.html', 'cases/case-2.html', 'cases/case-3.html', 'cases/case-4.html', 'cases/case-5.html'];
 const SHOT = process.env.SHOT_DIR || join(REPO, '.verify-shots');
 const WIDTH = 1280;
 mkdirSync(SHOT, { recursive: true });
@@ -212,7 +213,8 @@ for (const rel of LESSONS) {
      standing count is reported either way. */
   const BASELINE = { 'index.html': 0, 'session-0.1/index.html': 0, 'session-1/index.html': 0,
                      'session-2/index.html': 0, 'session-3/index.html': 0, 'session-4/index.html': 0,
-                     'session-5/index.html': 0 };
+                     'session-5/index.html': 0, 'cases/case-1.html': 0, 'cases/case-2.html': 0,
+                     'cases/case-3.html': 0, 'cases/case-4.html': 0, 'cases/case-5.html': 0 };
   const base = BASELINE[rel] ?? 0;
   say(outside.length <= base,
       `14b SVG text outside viewBox: ${outside.length} (pre-migration baseline ${base}, no regression)` +

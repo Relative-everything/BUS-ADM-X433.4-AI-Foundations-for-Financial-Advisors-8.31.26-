@@ -23,8 +23,8 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 2737 | 2044 | 693 |
 | `PINNED` | 8 | 8 | 0 |
-| `UNGUARDED` | 169 | 45 | 124 |
-| **TOTAL** | **2914** | **2097** | **817** |
+| `UNGUARDED` | 175 | 45 | 130 |
+| **TOTAL** | **2920** | **2097** | **823** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
 `45`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
@@ -39,17 +39,18 @@ qualitative reference is not drift surface and removing one would be a loss.
 | `index.html` | 5 | 1 |
 | `session-0.1/index.html` | 7 | 0 |
 | `session-1/index.html` | 29 | 10 |
-| `session-2/index.html` | 20 | 8 |
+| `session-2/index.html` | 24 | 8 |
 | `session-3/index.html` | 67 | 10 |
-| `session-4/index.html` | 29 | 9 |
+| `session-4/index.html` | 31 | 9 |
 | `session-5/index.html` | 12 | 7 |
 
 ## `UNGUARDED`, by region
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R2` | script string literal | 104 | 20 |
-| `R1` | body prose | 58 | 21 |
+| `R2` | script string literal | 105 | 20 |
+| `R1` | body prose | 59 | 21 |
+| `R7` | footer source entry | 4 | 0 |
 | `R3` | attribute value | 3 | 0 |
 | `R4` | CSS | 3 | 3 |
 | `R8` | source note | 1 | 1 |
@@ -63,7 +64,7 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 124 |
+| `name` | 130 |
 | `money` | 18 |
 | `age` | 13 |
 | `date` | 10 |
@@ -74,8 +75,8 @@ every one of them.
 
 | Fact | Count |
 |---|---:|
-| `emmaShort` | 23 |
-| `domicile` | 18 |
+| `emmaShort` | 25 |
+| `domicile` | 22 |
 | `ryanShort` | 15 |
 | `ruthShort` | 13 |
 | `davidEmployerShort` | 13 |
@@ -134,7 +135,7 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**1180 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**1181 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
@@ -142,7 +143,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `ryanAge` | 479 |
 | `megRetireAge` | 148 |
 | `davidRetireAge` | 96 |
-| `riskGap` | 61 |
+| `riskGap` | 62 |
 | `tomAge` | 60 |
 | `emmaAge` | 58 |
 | `davidRiskScore` | 50 |
@@ -178,7 +179,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
-| `index.html:935` | UNGUARDED | $64,200 | 35 ILCS 405). CASE.md &sect;H.4 puts the Coles at $3,935,800 with life insurance counted, 〈$64,200〉 below it, and states no conclusion.</li> <li>The f |
+| `index.html:938` | UNGUARDED | $64,200 | 35 ILCS 405). CASE.md &sect;H.4 puts the Coles at $3,935,800 with life insurance counted, 〈$64,200〉 below it, and states no conclusion.</li> <li>The f |
 | `session-3/index.html:2956` | UNGUARDED | $3,000 | KI=[ {t:'Meg’s mother’s care team says she may need assisted living within a year, about 〈$3,000〉 a month more than she pays now.',k:'in',w:'Meg’s fir |
 | `session-3/index.html:3002` | UNGUARDED | $3,000 | 's mother\'s care team says she may need the assisted living wing within a year, at about 〈$3,000〉 a month more than she pays now. The new summary pla |
 | `session-5/index.html:3937` | UNGUARDED | $3,000 | o name, no employer, no town. The one case figure it types is the meeting's own "about 〈$3,000〉 a month more" (CASE.md A.3, Part O), as spoken; the fi |

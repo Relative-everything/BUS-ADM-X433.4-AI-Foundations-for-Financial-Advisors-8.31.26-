@@ -135,6 +135,11 @@ used_for.session-2: every client example, exercise input and discussion prompt, 
 used_for.session-3: the retrieval corpus, the meeting excerpt and the note-taker stage outputs written from it, the consent items, the said-or-recommended lines, the six review-update tasks and the three prompts in §05 with the summary they run on, the checklist, the illustrative meaning-space map whose coordinates were assigned rather than learned, and the six summary lines in Appendix C6, two of which are written wrong on purpose and labelled so on the page
 used_for.session-4: every client, prompt, message, record, incident and sample package in this session's exercises, all written for this lesson
 used_for.session-5: the sample meeting-prep package and its six inputs (Appendices E1, E2, E4, E7, E8 and E9), the Case 5 opener's five-step documented workflow and the one-pager it drafts (§01), the eight meeting moments built from the injected transcript (§04), and the five-session frame (§00), all written for this lesson
+used_for.case-1: the household, the intake pack, the two drafts and every figure checked against the case file, all written for this page and synthetic
+used_for.case-3: the household, the six-turn transcript and the three passages cut from it before it reached the tool, the two prompts and the checked list, the model's task list and email, the advisor's corrected versions, the seventeen statements checked against the turns, the second-look prompt, the six comparison rows and the five sentences in the check, all written for this page and synthetic
+used_for.case-2: the household facts behind the page, the exercise draft's four statements, the advisor's log, the pack and the prompts, all written for this page and synthetic
+used_for.case-4: the household, the review prep note, its de-identified copy and key, the three packs, the vendor and incident scenarios and every figure checked against the case file, all written for this page and synthetic
+used_for.case-5: the household file read from Parts C, D and F, the five-step workflow and its SKILL.md, the one-pager, the four log rows and the counts in them, the ten statements checked and the four next-step options in the check, all written for this page and synthetic
 ```
 
 ## src-aa
@@ -236,6 +241,11 @@ figures.session-2: the published rates behind the blended token price at a 3:1 i
 used_for.session-4: the per-million-token API price of the smallest Claude model, $0.10 in and $0.50 out for a prompt up to 100K tokens, on the firm tag of the ladder (Appendix D2) and in the cost line under the live API box
 last_retrieved.session-4: 2026-10-11
 figures.session-4: input $0.10 and output $0.50 per million tokens for prompts up to 100K tokens, output at five times input (FACTS claude-api-price-haiku-5-5 and claude-output-input-ratio, read in full 2026-10-11)
+used_for.case-1: the Haiku 5.5, Sonnet 5.5 and Opus 5.5 input and output rates in the tier table, and the five-to-one output-to-input ratio behind the cost estimate for the two drafts
+used_for.case-3: the Haiku 5.5, Sonnet 5.5 and Opus 5.5 input and output rates in the tier table, and the five-to-one output-to-input ratio behind the cost estimate for the two drafts
+used_for.case-2: the Haiku 5.5, Sonnet 5.5 and Opus 5.5 input and output rates, and the five-to-one output-to-input ratio, behind the cost estimate for the three captures
+used_for.case-4: the Haiku 5.5, Sonnet 5.5 and Opus 5.5 input and output rates, and the five-to-one output-to-input ratio, behind the cost estimate for the three captures
+used_for.case-5: the Haiku 5.5, Sonnet 5.5 and Opus 5.5 input and output rates in the tier table, and the five-to-one output-to-input ratio behind the per-draft cost estimate
 ```
 
 ## src-context-windows
@@ -999,6 +1009,7 @@ kind:           evidence
 moving_target:  false
 scope:          A checklist for CFP professionals using generative AI: safeguard confidentiality, including using pseudonyms and anonymisation to remove confidential information before uploading; verify the accuracy of output; confirm the platform stores output in compliance with recordkeeping rules; confirm the vendor commits to notice of data breaches; and keep professional judgment with the professional.
 used_for.session-4: using pseudonyms and removing identifying details before upload (§03, Appendix D1)
+used_for.case-4: pseudonyms, and confidential information removed, before upload, behind the plan matrix and the replacement step
 ```
 
 ## src-cfp-code
@@ -1058,6 +1069,7 @@ scope:          Consumer plans: Anthropic may use chats "including training our 
 retrieval_note: Opened directly on 2026-09-27: the Commercial Terms (effective 17 June 2025), the Consumer Terms (effective 8 October 2025), the Privacy Policy (effective 10 September 2026) and the 28 August 2025 news post on the consumer training change. The consumer-side retention figures (five years if training is allowed, 30 days if not) are stated in the news post and on the Claude Code data-usage page; privacy.claude.com itself could not be opened. Earlier retrieval 2026-08-14.
 used_for.session-4: the consumer training switch, five-year and 30-day retention, and the business plans' exclusion from training (Appendix D2)
 used_for.session-5: the consumer training default behind the chat assistant's Where answer (Appendix E10)
+used_for.case-4: the consumer training default and the business plans' exclusion from training under the Commercial Terms, behind the second commit question and the vendor table
 ```
 
 ## src-beta
@@ -1206,6 +1218,11 @@ figures.session-1: context window of 1M tokens on Fable 5.1, Opus 5.5, Sonnet 5.
 used_for.session-4: the 1M-token context window of the current Claude models, on the context-window card of the then-and-now deck (Appendix D6)
 last_retrieved.session-4: 2026-10-11
 figures.session-4: 1M tokens of context on the current Claude models, about 555,000 words (FACTS claude-context-window, read in full 2026-10-11)
+used_for.case-1: the words-per-token rule of thumb, about 555,000 words to the million tokens, behind the cost estimate for the two drafts
+used_for.case-3: the words-per-token rule of thumb, about 555,000 words to the million tokens, behind the cost estimate for the two drafts
+used_for.case-2: the words-per-token rule of thumb, about 555,000 words to the million tokens, behind the cost estimate for the three captures
+used_for.case-4: the words-per-token rule of thumb, about 555,000 words to the million tokens, behind the cost estimate for the three captures
+used_for.case-5: the words-per-token rule of thumb, about 555,000 words to the million tokens, behind the per-draft cost estimate
 ```
 
 ## src-personalization
@@ -1322,6 +1339,7 @@ figure_class:   vendor_policy
 recheck_before: every teaching of session-4 §03
 scope:          On the Free, Plus and Pro plans the "Improve the model for everyone" setting is on by default and can be switched off under Data controls. ChatGPT Business (formerly Team), Enterprise, Edu and the API are not used for training by default. Chats stay in the account until deleted; a deleted chat is removed from OpenAI's systems within 30 days; temporary chats are kept up to 30 days and not used for training. Every one of these is a term the vendor can change without notice.
 used_for.session-4: ChatGPT's consumer training switch and its default, keeping until you delete, and the business plans' exclusion from training (Appendix D2)
+used_for.case-4: ChatGPT's consumer training setting and the business plans' exclusion from training, in the vendor table of the reveal
 ```
 
 ## src-ms-copilot
@@ -1382,6 +1400,7 @@ figure_class:   vendor_policy
 recheck_before: every teaching of session-4 §03
 scope:          With a personal Google account, Gemini Apps Activity ("Keep Activity") is on by default; activity is used to improve Google's models and may be read by trained reviewers. Activity auto-deletes after 18 months by default, with 3 or 36 months selectable. A conversation a reviewer has read is kept for up to three years even if the person deletes their activity. With the setting off, chats are kept up to 72 hours and not used to train models unless the person sends feedback. Google's own page warns against entering confidential information.
 used_for.session-4: Gemini's Keep Activity default, the 18-month auto-delete, human review and the three-year keep of reviewed chats, and 72 hours with the switch off (Appendix D2)
+used_for.case-4: the Gemini Apps Activity default, the 18-month auto-delete and the 72 hours with the switch off, in the vendor table of the reveal
 ```
 
 ## src-gemini-workspace
@@ -1402,6 +1421,7 @@ figure_class:   vendor_policy
 recheck_before: every teaching of session-4 §03
 scope:          For Workspace accounts with Gemini, prompts, generated content and Workspace data are not used to train models outside the customer's domain without permission, are not reviewed by humans, and are not used for advertising; the Cloud Data Processing Addendum governs.
 used_for.session-4: Workspace prompts not used to train models and not reviewed by humans (Appendix D2)
+used_for.case-4: Workspace prompts not used to train models and not reviewed by humans, in the vendor table of the reveal
 ```
 
 ## src-deepseek
@@ -1535,6 +1555,8 @@ last_retrieved.session-1: 2026-10-11
 figures.session-1: Pro $20 per month billed monthly; Max 5x $100 and Max 20x $200 (FACTS claude-plans, read in full 2026-10-11)
 last_retrieved.session-4: 2026-10-11
 figures.session-4: Pro $20 a month or $17 a month on annual billing; Team and Enterprise from $20 a seat a month billed annually (FACTS claude-plans, read in full 2026-10-11)
+used_for.case-1: the Pro plan price named in the workflow readme
+used_for.case-4: the Claude plan prices in the vendor table of the reveal (Free, Pro, Max, Team, Enterprise) and the Team Standard seat price behind the vendor paragraph
 ```
 
 ## src-anthropic-retention
@@ -1575,6 +1597,7 @@ figure_class:   vendor_policy
 recheck_before: every teaching of session-4 §04
 scope:          Section G.1: "Anthropic will notify Customer in writing without undue delay, but in any event within 48 hours, after becoming aware of any Security Breach." Section H.1: within thirty days of termination or expiration, on request, return a copy of all Customer Data or provide self-service functionality to do the same, and delete all copies. Section F.1: "Upon Customer's written request, and subject to the confidentiality obligations set forth in the Agreement, Anthropic will provide Customer with such audit reports or certificates applicable to the Services (e.g., SOC 2 report), to the extent available". Section C.3: reasonable prior notice of a new subprocessor and fifteen days to object. Section B.2: processing only to provide or maintain the Services and on the Customer's documented instructions.
 used_for.session-4: the breach-notice, export and audit clauses of the contract view (Appendix D3) and the matching rungs of the ladder (Appendix D2)
+used_for.case-4: the 48-hour breach notice in the Data Processing Addendum, in the vendor table of the reveal and in the list of human decisions
 ```
 
 ## src-anthropic-certs
@@ -2012,6 +2035,7 @@ confidence:     H
 kind:           authority
 moving_target:  false
 scope:          Notice to affected Illinois residents "in the most expedient time possible and without unreasonable delay"; notice to the Attorney General when more than 500 Illinois residents are affected by a single breach.
+used_for.case-4: the Illinois notice standard and the Attorney General notice above 500 residents, in the list of human decisions
 ```
 
 ## src-state-breach
@@ -2316,6 +2340,11 @@ last_retrieved.session-5: 2026-10-12
 figures.session-5: the retirement and not-sooner-than date of every row on the §02 calendar, Haiku 5.5 (7 October 2027) added and Haiku 4.5 (15 October 2026) moved to the legacy rows; Sonnet 4.5 deprecated 30 September 2026 and retiring 30 November 2026 with Sonnet 5.5 as the replacement; at least 60 days of notice (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12)
 last_retrieved.session-1: 2026-10-11
 figures.session-1: model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11)
+used_for.case-1: that claude-sonnet-5-5 is a current model id with an earliest retirement date of 2027-09-28, behind the model label on the two drafts and the re-run note
+used_for.case-3: that claude-sonnet-5-5 is a current model id with an earliest retirement date of 2027-09-28, behind the model label on the two drafts and the re-run note
+used_for.case-2: that claude-sonnet-5-5 is a current model id with an earliest retirement date of 2027-09-28, behind the model label on the email and the re-run note
+used_for.case-4: that claude-sonnet-5-5 is a current model id with an earliest retirement date of 2027-09-28, behind the model label on the note, the vendor paragraph and the timeline, and the re-run note
+used_for.case-5: that claude-sonnet-4-5-20250929 was deprecated on 30 September 2026 and is listed to retire on 30 November 2026, that Anthropic names claude-sonnet-5-5 as its replacement, the earliest retirement dates of claude-haiku-5-5, claude-sonnet-5-5 and claude-opus-5-5 in the tier table, and the sentence that requests to retired models will fail
 ```
 
 ## src-anthropic-deprecation-commitments
@@ -2726,6 +2755,7 @@ figures.session-3: the two compliance dates, the 30-day and 72-hour clocks (FACT
 used_for.session-4: the 30-day customer notice, the 72-hour notice a service provider owes the firm, the written incident response programme and the compliance dates 3 December 2025 and 3 June 2026, so the rule is in force for every covered firm (Appendices D2 and D3, §07, §04)
 last_retrieved.session-4: 2026-10-11
 figures.session-4: the 30-day and 72-hour clocks, the two compliance dates, and the absence of a 24-hour clock for telling a chief compliance officer (FACTS reg-sp-compliance, read 2026-10-11)
+used_for.case-4: the 30-day customer notice, the 72-hour notice a service provider owes the firm and the absence of a 24-hour clock for the chief compliance officer, behind the third commit question, the timeline and the failure the check catches
 ```
 
 ## src-secure2-107
@@ -2749,6 +2779,7 @@ scope:          The statutory source of the applicable age for required minimum 
 used_for.session-2: named as a cited authority in the citation-triage items (sound citation; also the planted mis-citation that attributes the wrong age to it)
 last_retrieved.session-2: 2026-10-12
 figures.session-2: none (the item text carries the applicable ages; the case facts carry Meg's and David's years)
+used_for.case-2: the section named in statement D of the exercise draft, and in the log rows for the planted age 73 and the corrected age 75, with the 1951 to 1959 and 1960 cohorts
 ```
 
 ## src-td10001
@@ -2772,6 +2803,7 @@ scope:          The 2024 final regulations on required minimum distributions, Tr
 used_for.session-2: named as a cited authority in the citation-triage items
 last_retrieved.session-2: 2026-10-12
 figures.session-2: none
+used_for.case-2: the final regulations named beside SECURE 2.0 section 107 for the corrected age 75, in the log's corrected-D row
 ```
 
 ## src-irs-590b
@@ -2795,6 +2827,7 @@ scope:          The IRS publication on IRA distributions, including required min
 used_for.session-2: named as a cited authority in the citation-triage items
 last_retrieved.session-2: 2026-10-12
 figures.session-2: none
+used_for.case-2: the publication named for the 1 April timing of the first distribution, in the log's timing row and in the corrected statement D of the email
 ```
 
 ## src-irs-8606
@@ -2818,6 +2851,7 @@ scope:          The form on which a Roth conversion and any IRA basis are report
 used_for.session-2: named as a cited authority in the citation-triage items
 last_retrieved.session-2: 2026-10-12
 figures.session-2: none
+used_for.case-2: the IRS form page linked in the log's row for statement B, the conversion tax rule
 ```
 
 ## src-aa-leaderboard
@@ -2976,6 +3010,8 @@ figures.session-4: the five-year and 30-day retention (FACTS claude-consumer-ret
 used_for.session-5: the five-year and 30-day retention under the training setting, in the retrieval bridge's first question (§00) and the chat assistant's Where answer (Appendix E10)
 last_retrieved.session-5: 2026-10-11
 figures.session-5: up to five years with the training setting on, 30 days with it off (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11); no default stated
+used_for.case-1: how long a personal plan keeps conversations under the training setting, beside the readme's data-handling note
+used_for.case-4: how long a personal Claude plan keeps conversations under the training setting, in the vendor table of the reveal and behind the vendor paragraph
 ```
 
 ## src-openai-provenance
@@ -3020,4 +3056,28 @@ scope:          ISS survey, n = 466, fielded June 2025: 48% of U.S. advisors use
 used_for.session-4: the share of RIAs that say their firm has no written AI policy, where the AI use policy is introduced (§07)
 last_retrieved.session-4: 2026-10-11
 figures.session-4: 78% of RIAs with no written AI policy, 35% at regional, independent and bank firms, n = 466, fielded June 2025 (FACTS adoption-iss-policy, from primary-domain snippets read 2026-10-11)
+```
+
+## src-il-retirement-subtraction
+
+```source
+title:          Illinois Income Tax Act, 35 ILCS 5/203(a)(2)(F): the subtraction for federally taxed retirement income
+author:         Illinois General Assembly
+publisher:      Illinois Compiled Statutes
+link:           https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=003500050K203
+published:      not applicable
+last_retrieved: 2026-10-12
+last_verified:
+retrieval_note: Verified 2026-10-12 by web search from a tax-preparation guide (TaxSlayer, Form IL-1040 line 5) and Illinois Department of Revenue general information letters as summarised by a rulings aggregator (IT 10-0025-GIL, IT 15-0008-GIL on a rollover to a Roth IRA, IT 23-0005-GIL): the subtraction reaches amounts included in federal income under IRC 402(a), 402(c), 403(a), 403(b), 406(a), 407(a) and 408, so a conversion from a qualified plan or IRA is subtractable to the extent included in federal AGI; general information letters are not binding on the Department. ilga.gov is not reachable from the build container, so the statutory text itself was not fetched.
+content_changed:
+confidence:     M
+kind:           authority
+moving_target:  false
+figure_class:   none
+recheck_before: any teaching of session-2 and case-2
+scope:          The Illinois provision behind CASE.md E.3's treatment of a Roth conversion as federally taxed and subtracted on the Illinois return; named as a citation inside the session-2 citation-triage items and the case-2 verification log, evidencing no page claim of its own.
+used_for.session-2: named as a cited authority in the Case 2 opener's statement about the Illinois subtraction
+used_for.case-2: the Illinois row of the citation verification log
+last_retrieved.session-2: 2026-10-12
+figures.session-2: none
 ```

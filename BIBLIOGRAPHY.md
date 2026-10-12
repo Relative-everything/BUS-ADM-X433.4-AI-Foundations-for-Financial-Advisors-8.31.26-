@@ -5,8 +5,8 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**150 works, 542 references across 6 lessons.** 123 are
-cited by at least one claim; 27 are listed by a lesson without carrying a
+**151 works, 643 references across 11 lessons.** 128 are
+cited by at least one claim; 23 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
 **102 records carry at least one field this repository could not verify, and
@@ -34,8 +34,8 @@ reader comes for completeness, so here the gap is the point.
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **13** |
-| Cited in | S1 `#s5` ×2 · S1 `#s10` ×2 · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 · S4 `#s3` · S4 `#sCR` |
+| **Total references** | **34** |
+| Cited in | case-1 `#built` ×5 · case-2 `#built` ×4 · case-3 `#built` ×4 · case-4 `#built` ×4 · case-5 `#built` ×4 · S1 `#s5` ×2 · S1 `#s10` ×2 · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 · S4 `#s3` · S4 `#sCR` |
 
 Per-token input and output rates by model, cache-hit and batch discounts.
 
@@ -262,8 +262,8 @@ The two live memory experiences and where each puts its toggles, real-time entry
 | Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **10** |
-| Cited in | S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 · S4 `#sCR` |
+| **Total references** | **15** |
+| Cited in | case-1 `#built` · case-2 `#built` · case-3 `#built` · case-4 `#built` · case-5 `#built` · S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 · S4 `#sCR` |
 
 The four current models, context window sizes (1M for Fable 5, Opus 5 and Sonnet 5; 200K for Haiku 4.5), which models carry adaptive against extended thinking, and effort defaults. Price per MTok and knowledge cutoffs are carried by this source but are quoted nowhere in the lesson, because no figure for either was recorded at verification.
 
@@ -395,8 +395,8 @@ Anthropic's fourth threat-intelligence report, covering misuse disrupted between
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **8** |
-| Cited in | S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
+| **Total references** | **10** |
+| Cited in | case-1 `#built` · case-4 `#built` · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
 
 Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from $100 a month for five times Pro usage, $200 for twenty times. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, October 2026: from $0.10 in and $0.50 out for the smallest model, for prompts up to 100K tokens, to $10 in and $50 out for the largest (FACTS claude-api-price-haiku-5-5 and claude-api-price-fable-5-1).
 
@@ -433,8 +433,8 @@ Standard retention on the API is 30 days; Enterprise organisations can set a cus
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **10** |
-| Cited in | S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#sCR` ×6 |
+| **Total references** | **11** |
+| Cited in | case-4 `#built` · S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#sCR` ×6 |
 
 Section G.1: "Anthropic will notify Customer in writing without undue delay, but in any event within 48 hours, after becoming aware of any Security Breach." Section H.1: within thirty days of termination or expiration, on request, return a copy of all Customer Data or provide self-service functionality to do the same, and delete all copies. Section F.1: "Upon Customer's written request, and subject to the confidentiality obligations set forth in the Agreement, Anthropic will provide Customer with such audit reports or certificates applicable to the Services (e.g., SOC 2 report), to the extent available". Section C.3: reasonable prior notice of a new subprocessor and fifteen days to object. Section B.2: processing only to provide or maintain the Services and on the Customer's documented instructions.
 
@@ -604,8 +604,8 @@ A standard for connecting assistants to the systems where data lives (November 2
 | Last retrieved | 2026-10-12 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **15** |
-| Cited in | S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#sCase` ×2 · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#sE6` ×4 |
+| **Total references** | **51** |
+| Cited in | case-1 `#deliverable` ×3 · case-1 `#built` ×2 · case-2 `#deliverable` ×2 · case-2 `#built` ×2 · case-3 `#deliverable` ×5 · case-3 `#built` ×2 · case-4 `#deliverable` ×4 · case-4 `#built` ×3 · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable` ×4 · case-5 `#built` ×5 · case-5 `#next` ×2 · S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#sCase` ×2 · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#sE6` ×4 |
 
 Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §02 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current and legacy models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027, Haiku 5.5 7 October 2027. Dates are for Anthropic-operated platforms; partner platforms set their own.
 
@@ -775,8 +775,8 @@ Future Claude models generate text that contains a statistical watermark, announ
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **5** |
-| Cited in | S4 `#s3` ×2 · S4 `#sCR` ×2 · S5 `#s0` |
+| **Total references** | **6** |
+| Cited in | case-1 `#built` · S4 `#s3` ×2 · S4 `#sCR` ×2 · S5 `#s0` |
 
 With the model training setting ("Help improve Claude") on, de-identified data may be kept up to five years in training pipelines; with it off, a deleted conversation is removed from back-end storage within 30 days. Exceptions the page names: flagged content up to 2 years, safety classifier scores up to 7 years, and thumbs-up or thumbs-down feedback, which keeps the whole conversation up to 5 years. Applies to Free, Pro and Max accounts, not to Team, Enterprise or the API.
 
@@ -946,8 +946,8 @@ In early 2020 a bank branch manager in the UAE authorised transfers of $35 milli
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **4** |
-| Cited in | S4 `#s2` ×2 · S4 `#sAnon` ×2 |
+| **Total references** | **5** |
+| Cited in | case-4 `#built` · S4 `#s2` ×2 · S4 `#sAnon` ×2 |
 
 A checklist for CFP professionals using generative AI: safeguard confidentiality, including using pseudonyms and anonymisation to remove confidential information before uploading; verify the accuracy of output; confirm the platform stores output in compliance with recordkeeping rules; confirm the vendor commits to notice of data breaches; and keep professional judgment with the professional.
 
@@ -1083,6 +1083,25 @@ NARROW, AND IT WAS READ TOO WIDELY. The speech states that the core questions re
 | Cited in | S4 `#sCR` |
 
 US GenAI-enabled fraud losses projected from $12.3bn (2023) to $40bn (2027). A PROJECTION, NOT A MEASUREMENT, and the page says so.
+
+### Department of the Treasury, Internal Revenue Service
+
+**Required Minimum Distributions, T.D. 10001, 89 FR 58886 (final regulations under IRC § 401(a)(9))**  
+`src-td10001` · authority
+
+| | |
+|---|---|
+| Author | Department of the Treasury, Internal Revenue Service |
+| Publisher | Federal Register |
+| Link | <https://www.govinfo.gov/content/pkg/FR-2024-07-19/html/2024-14542.htm> |
+| Published | 2024-07-19 |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | case-2 `#deliverable` |
+
+The 2024 final regulations on required minimum distributions, Treas. Reg. §§ 1.401(a)(9)-1 to -9; named as a citation inside the session-2 citation-triage items.
 
 ### European Parliament and Council
 
@@ -1426,6 +1445,25 @@ PROMPTFLUX, a VBScript dropper that called the Gemini API to request obfuscated 
 
 Cost of a Data Breach Report 2026, 602 organisations, breaches March 2025 to February 2026: global average $4.99 million, US average $11.5 million; one in four malicious breaches AI-enabled, at $6 million on average; shadow AI in 43% of AI-related breaches.
 
+### Illinois General Assembly
+
+**Personal Information Protection Act, 815 ILCS 530/10**  
+`src-il-pipa` · authority
+
+| | |
+|---|---|
+| Author | Illinois General Assembly |
+| Publisher | Illinois Compiled Statutes |
+| Link | <https://ilga.gov/documents/legislation/ilcs/documents/081505300K10.htm> |
+| Published | *not applicable* |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | case-4 `#built` |
+
+Notice to affected Illinois residents "in the most expedient time possible and without unreasonable delay"; notice to the Attorney General when more than 500 Illinois residents are affected by a single breach.
+
 ### Internal Revenue Service
 
 **Late portability elections under Rev. Proc. 2022-32 (IRB 2022-30)**  
@@ -1444,6 +1482,44 @@ Cost of a Data Breach Report 2026, 602 organisations, breaches March 2025 to Feb
 | Cited in | S2 `#s7` |
 
 The simplified method for a late portability election: an estate not required to file under IRC 6018(a) may elect portability on a complete Form 706 filed on or before the fifth anniversary of death, which supersedes the second anniversary in Rev. Proc. 2017-34; later relief only by private letter ruling under Treas. Reg. 301.9100-3.
+
+### Internal Revenue Service
+
+**Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)**  
+`src-irs-590b` · authority · **moving target**
+
+| | |
+|---|---|
+| Author | Internal Revenue Service |
+| Publisher | Internal Revenue Service |
+| Link | <https://www.irs.gov/publications/p590b> |
+| Published | annual |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | case-2 `#deliverable` |
+
+The IRS publication on IRA distributions, including required minimum distributions and Roth IRA distribution rules; named as a citation inside the session-2 citation-triage items.
+
+### Internal Revenue Service
+
+**Form 8606, Nondeductible IRAs, and its instructions**  
+`src-irs-8606` · authority · **moving target**
+
+| | |
+|---|---|
+| Author | Internal Revenue Service |
+| Publisher | Internal Revenue Service |
+| Link | <https://www.irs.gov/forms-pubs/about-form-8606> |
+| Published | annual |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | case-2 `#deliverable` |
+
+The form on which a Roth conversion and any IRA basis are reported; named as a citation inside the session-2 citation-triage items.
 
 ### InvestmentNews
 
@@ -2067,8 +2143,8 @@ Conversations shared from ChatGPT with the "make this chat discoverable" box tic
 | Last retrieved | *not applicable* |
 | Last verified by the instructor | *not applicable* |
 | Confidence | L |
-| **Total references** | **70** |
-| Cited in | S1 `#s1` · S1 `#sCase` · S2 `#sCase` · S2 `#s6b` · S2 `#sZ` · S2 `#sDel` · S3 `#sCase` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` ×2 · S3 `#sPrep` · S3 `#s7` · S3 `#s9` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCase` ×2 · S4 `#s2` ×3 · S4 `#sAnon` · S4 `#s3` · S4 `#s4` · S4 `#sRSP` · S4 `#s7` · S4 `#s5` · S4 `#s6` · S4 `#sWS` · S4 `#sAud` · S4 `#sW1` · S4 `#sW2` · S4 `#sD` · S4 `#s9` · S4 `#sCR` ×4 · S5 `#s0` · S5 `#sCase` · S5 `#s1` ×3 · S5 `#sE3` · S5 `#sE4` ×2 · S5 `#sE2` ×2 · S5 `#sE6` ×2 · S5 `#s2` ×3 · S5 `#s3` ×2 · S5 `#s4` · S5 `#sE1` · S5 `#s5` · S5 `#s7` · S5 `#s6` · S5 `#sLib` ×2 · S5 `#sE5` |
+| **Total references** | **93** |
+| Cited in | case-1 `#brief` · case-1 `#commit` · case-1 `#deliverable` · case-1 `#built` · case-2 `#brief` · case-2 `#commit` · case-2 `#deliverable` ×2 · case-2 `#built` · case-3 `#brief` · case-3 `#commit` · case-3 `#deliverable` · case-3 `#built` · case-4 `#brief` · case-4 `#commit` · case-4 `#deliverable` · case-4 `#built` · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable` ×2 · case-5 `#built` · case-5 `#next` · S1 `#s1` · S1 `#sCase` · S2 `#sCase` · S2 `#s6b` · S2 `#sZ` · S2 `#sDel` · S3 `#sCase` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` ×2 · S3 `#sPrep` · S3 `#s7` · S3 `#s9` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCase` ×2 · S4 `#s2` ×3 · S4 `#sAnon` · S4 `#s3` · S4 `#s4` · S4 `#sRSP` · S4 `#s7` · S4 `#s5` · S4 `#s6` · S4 `#sWS` · S4 `#sAud` · S4 `#sW1` · S4 `#sW2` · S4 `#sD` · S4 `#s9` · S4 `#sCR` ×4 · S5 `#s0` · S5 `#sCase` · S5 `#s1` ×3 · S5 `#sE3` · S5 `#sE4` ×2 · S5 `#sE2` ×2 · S5 `#sE6` ×2 · S5 `#s2` ×3 · S5 `#s3` ×2 · S5 `#s4` · S5 `#sE1` · S5 `#s5` · S5 `#s7` · S5 `#s6` · S5 `#sLib` ×2 · S5 `#sE5` |
 
 Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead.
 
@@ -2238,8 +2314,8 @@ A registered adviser must adopt and implement written policies and procedures re
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **18** |
-| Cited in | S3 `#sPol` ×2 · S4 `#s4` ×3 · S4 `#sRSP` ×6 · S4 `#s9` · S4 `#sCR` ×6 |
+| **Total references** | **22** |
+| Cited in | case-4 `#deliverable` ×2 · case-4 `#built` ×2 · S3 `#sPol` ×2 · S4 `#s4` ×3 · S4 `#sRSP` ×6 · S4 `#s9` · S4 `#sCR` ×6 |
 
 The compliance dates of the 2024 amendments, 3 December 2025 for larger entities and 3 June 2026 for smaller entities; the written incident response program; customer notice as soon as practicable and no later than 30 days after the firm becomes aware of unauthorized access to or use of customer information; and the 72-hour notice a service provider owes the firm.
 
@@ -2261,6 +2337,25 @@ The compliance dates of the 2024 amendments, 3 December 2025 for larger entities
 | Cited in | S3 `#sPol` · S3 `#s16` · S4 `#s1` ×3 · S4 `#s7` · S4 `#s5` · S4 `#sAud` ×2 · S4 `#s9` ×2 · S4 `#sCR` ×3 |
 
 §VII, Risk Areas Impacting Various Market Participants. Information security and operational resiliency, including ransomware, data loss prevention, incident response and the 2024 amendments to Regulation S-P; emerging financial technology and AI, including the accuracy of AI representations and a review of training and security controls for risks from AI and polymorphic malware attacks.
+
+### United States Congress
+
+**SECURE 2.0 Act of 2022, section 107 (increase in age for required beginning date)**  
+`src-secure2-107` · authority
+
+| | |
+|---|---|
+| Author | United States Congress |
+| Publisher | Division T of the Consolidated Appropriations Act, 2023, Pub. L. 117-328 |
+| Link | <https://www.congress.gov/bill/117th-congress/house-bill/2617> |
+| Published | 2022-12-29 |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **3** |
+| Cited in | case-2 `#deliverable` ×3 |
+
+The statutory source of the applicable age for required minimum distributions; named as a citation inside the session-2 citation-triage items, evidencing no page claim.
 
 ### Ways advisors can optimize for AI search (AI SEO)
 
@@ -2374,14 +2469,11 @@ source that does not belong in that lesson's footer.
 | `src-anthropic-aup` | evidence |  | **NO — finding** |
 | `src-capitalone` | evidence |  | **NO — finding** |
 | `src-uk-voice` | evidence |  | **NO — finding** |
-| `src-td10001` | authority | S2 | yes, by kind |
 | `src-fbi-ic3-2024` | evidence |  | **NO — finding** |
 | `src-ferrari` | evidence |  | **NO — finding** |
 | `src-gartner` | evidence |  | **NO — finding** |
 | `src-hallowell` | fabricated | S4 | yes, by kind |
-| `src-il-pipa` | authority |  | yes, by kind |
-| `src-irs-590b` | authority | S2 | yes, by kind |
-| `src-irs-8606` | authority | S2 | yes, by kind |
+| `src-il-retirement-subtraction` | authority | S2, case-2 | yes, by kind |
 | `src-kessler` | fabricated | S2 | yes, by kind |
 | `src-kitces-advisortech` | background |  | yes, by kind |
 | `src-laplace` | background | S2 | yes, by kind |
@@ -2394,6 +2486,21 @@ source that does not belong in that lesson's footer.
 | `src-surfshark` | evidence |  | **NO — finding** |
 | `src-uber-doj` | evidence |  | **NO — finding** |
 | `src-equifax` | evidence |  | **NO — finding** |
-| `src-secure2-107` | authority | S2 | yes, by kind |
 | `src-vectara` | evidence |  | **NO — finding** |
 | `src-zhao` | evidence |  | **NO — finding** |
+
+**Cited elsewhere, listed without a chip here.** The corpus-wide count
+above hides these, because the source is genuinely used — just not in the
+lesson whose footer names it.
+
+| Source | Listed by | Cited in |
+|---|---|---|
+| `src-anthropic-terms` | case-4 | S4, S5 |
+| `src-openai-data` | case-4 | S4 |
+| `src-gemini-privacy` | case-4 | S4 |
+| `src-gemini-workspace` | case-4 | S4 |
+| `src-secure2-107` | S2 | case-2 |
+| `src-td10001` | S2 | case-2 |
+| `src-irs-590b` | S2 | case-2 |
+| `src-irs-8606` | S2 | case-2 |
+| `src-claude-privacy-training` | case-4 | case-1, S4, S5 |

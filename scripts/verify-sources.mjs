@@ -19,7 +19,7 @@
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { model, LESSONS, isAbsent, UNVERIFIED } from './build-sources.mjs';
+import { model, LESSONS, isAbsent, UNVERIFIED, pagePath } from './build-sources.mjs';
 import { OPEN, CLOSE, sha256, buildBlock } from './inject-sources.mjs';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -27,7 +27,7 @@ const sources = model();
 let fails = 0;
 
 for (const lesson of LESSONS) {
-  const text = readFileSync(join(REPO, lesson, 'index.html'), 'utf8');
+  const text = readFileSync(join(REPO, pagePath(lesson)), 'utf8');
   const a = text.indexOf(OPEN), b = text.indexOf(CLOSE);
   if (a < 0 || b < 0) { console.log(`FAIL  ${lesson}  no sentinels`); fails++; continue; }
   const region = text.slice(a + OPEN.length, b);
@@ -101,7 +101,7 @@ console.log(`----  ${gaps.length} record(s) carry at least one ${UNVERIFIED} fie
    leaking onto a student-facing page. Neither can go quiet again.
 
    docs/repo-updates-plan.md §16.6(c); docs/deferred-work.md DW-011. */
-const footers = new Map(LESSONS.map((l) => [l, readFileSync(join(REPO, l, 'index.html'), 'utf8')]));
+const footers = new Map(LESSONS.map((l) => [l, readFileSync(join(REPO, pagePath(l)), 'utf8')]));
 /* The comparison probe is the scope's FIRST SENTENCE, capped, because that is
    the clause a reader would recognise and it survives the entity escaping the
    renderer applies to the rest. An empty probe means there is nothing to look

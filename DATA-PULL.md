@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**61 of 150 works are moving targets, feeding 239 of
-542 references.**
+**61 of 151 works are moving targets, feeding 307 of
+643 references.**
 
 
 ---
@@ -44,6 +44,47 @@ version string means the version is not tracking the data.
 
 ## Moving targets
 
+### `src-anthropic-deprecations` — Model deprecations
+
+| | |
+|---|---|
+| Figure class | `vendor lifecycle schedule` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | each teaching of Session 5 |
+| References | 51 |
+| Feeds | case-1 `#deliverable` ×3 · case-1 `#built` ×2 · case-2 `#deliverable` ×2 · case-2 `#built` ×2 · case-3 `#deliverable` ×5 · case-3 `#built` ×2 · case-4 `#deliverable` ×4 · case-4 `#built` ×3 · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable` ×4 · case-5 `#built` ×5 · case-5 `#next` ×2 · S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#sCase` ×2 · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#sE6` ×4 |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| ANTHROPIC-DEPRECATIONS-001 | S3 | 2026-10-11 | **[UNVERIFIED, needs source]** | the id claude-sonnet-5-5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11) |
+| ANTHROPIC-DEPRECATIONS-002 | S2 | 2026-10-11 | **[UNVERIFIED, needs source]** | model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5, and the id claude-sonnet-5-5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11) |
+| ANTHROPIC-DEPRECATIONS-003 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11) |
+| ANTHROPIC-DEPRECATIONS-004 | S5 | 2026-10-12 | **[UNVERIFIED, needs source]** | the retirement and not-sooner-than date of every row on the §02 calendar, Haiku 5.5 (7 October 2027) added and Haiku 4.5 (15 October 2026) moved to the legacy rows; Sonnet 4.5 deprecated 30 September 2026 and retiring 30 November 2026 with Sonnet 5.5 as the replacement; at least 60 days of notice (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12) |
+
+### `src-pricing` — Pricing
+
+| | |
+|---|---|
+| Figure class | `price` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-1 §03, §05 and §06 |
+| References | 34 |
+| Feeds | case-1 `#built` ×5 · case-2 `#built` ×4 · case-3 `#built` ×4 · case-4 `#built` ×4 · case-5 `#built` ×4 · S1 `#s5` ×2 · S1 `#s10` ×2 · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 · S4 `#s3` · S4 `#sCR` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| PRICING-001 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | per-token input and output rates for Haiku 5.5 (tiered at 100K tokens), Sonnet 5.5, Opus 5.5 and Fable 5.1; output at five times input on every listed model; cache-read multipliers (0.1x default, 0.05x Opus 5.5 and Sonnet 5.5, 0.025x Fable 5.1), cache-write multipliers and the 50% Batch API discount; all from FACTS claude-api-price-* , claude-output-input-ratio and claude-cache-and-batch-pricing, read in full 2026-10-11 |
+| PRICING-002 | S2 | 2026-10-11 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio; the Sonnet 5.5, Opus 5.5 and Fable 5.1 input and output rates in the cost estimator and the retrieval bridge, and output at five times input (FACTS claude-api-price-sonnet-5-5, claude-api-price-opus-5-5, claude-api-price-fable-5-1 and claude-output-input-ratio, read in full 2026-10-11) |
+| PRICING-003 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | input $0.10 and output $0.50 per million tokens for prompts up to 100K tokens, output at five times input (FACTS claude-api-price-haiku-5-5 and claude-output-input-ratio, read in full 2026-10-11) |
+
 ### `src-claude-marks` — How Claude marks AI-generated content
 
 | | |
@@ -68,46 +109,38 @@ version string means the version is not tracking the data.
 | References | 16 |
 | Feeds | S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#sCR` ×7 · S5 `#s6` |
 
-### `src-anthropic-deprecations` — Model deprecations
+### `src-models` — Models overview
 
 | | |
 |---|---|
-| Figure class | `vendor lifecycle schedule` |
+| Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-12 |
+| Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | each teaching of Session 5 |
+| Re-check before | every teaching of session-0.1 |
 | References | 15 |
-| Feeds | S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#sCase` ×2 · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#sE6` ×4 |
+| Feeds | case-1 `#built` · case-2 `#built` · case-3 `#built` · case-4 `#built` · case-5 `#built` · S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 · S4 `#sCR` |
 
 **Registered retrievals**
 
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
-| ANTHROPIC-DEPRECATIONS-001 | S3 | 2026-10-11 | **[UNVERIFIED, needs source]** | the id claude-sonnet-5-5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11) |
-| ANTHROPIC-DEPRECATIONS-002 | S2 | 2026-10-11 | **[UNVERIFIED, needs source]** | model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5, and the id claude-sonnet-5-5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11) |
-| ANTHROPIC-DEPRECATIONS-003 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11) |
-| ANTHROPIC-DEPRECATIONS-004 | S5 | 2026-10-12 | **[UNVERIFIED, needs source]** | the retirement and not-sooner-than date of every row on the §02 calendar, Haiku 5.5 (7 October 2027) added and Haiku 4.5 (15 October 2026) moved to the legacy rows; Sonnet 4.5 deprecated 30 September 2026 and retiring 30 November 2026 with Sonnet 5.5 as the replacement; at least 60 days of notice (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12) |
+| MODELS-001 | S2 | 2026-10-11 | **[UNVERIFIED, needs source]** | 1M tokens of context on the current Claude models, and 1M tokens as roughly 555,000 English words on the current tokenizer (FACTS claude-context-window, read in full 2026-10-11) |
+| MODELS-002 | S3 | 2026-10-11 | **[UNVERIFIED, needs source]** | 1M tokens of context on the current Claude models (FACTS claude-context-window, read in full 2026-10-11) |
+| MODELS-003 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | context window of 1M tokens on Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-context-window, read in full 2026-10-11) |
+| MODELS-004 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | 1M tokens of context on the current Claude models, about 555,000 words (FACTS claude-context-window, read in full 2026-10-11) |
 
-### `src-pricing` — Pricing
+### `src-anthropic-dpa` — Data Processing Addendum
 
 | | |
 |---|---|
-| Figure class | `price` |
+| Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-11 |
+| Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-1 §03, §05 and §06 |
-| References | 13 |
-| Feeds | S1 `#s5` ×2 · S1 `#s10` ×2 · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 · S4 `#s3` · S4 `#sCR` |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| PRICING-001 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | per-token input and output rates for Haiku 5.5 (tiered at 100K tokens), Sonnet 5.5, Opus 5.5 and Fable 5.1; output at five times input on every listed model; cache-read multipliers (0.1x default, 0.05x Opus 5.5 and Sonnet 5.5, 0.025x Fable 5.1), cache-write multipliers and the 50% Batch API discount; all from FACTS claude-api-price-* , claude-output-input-ratio and claude-cache-and-batch-pricing, read in full 2026-10-11 |
-| PRICING-002 | S2 | 2026-10-11 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio; the Sonnet 5.5, Opus 5.5 and Fable 5.1 input and output rates in the cost estimator and the retrieval bridge, and output at five times input (FACTS claude-api-price-sonnet-5-5, claude-api-price-opus-5-5, claude-api-price-fable-5-1 and claude-output-input-ratio, read in full 2026-10-11) |
-| PRICING-003 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | input $0.10 and output $0.50 per million tokens for prompts up to 100K tokens, output at five times input (FACTS claude-api-price-haiku-5-5 and claude-output-input-ratio, read in full 2026-10-11) |
+| Re-check before | every teaching of session-4 §04 |
+| References | 11 |
+| Feeds | case-4 `#built` · S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#sCR` ×6 |
 
 ### `src-effort` — Change the model, effort, and thinking settings
 
@@ -133,38 +166,24 @@ version string means the version is not tracking the data.
 | References | 10 |
 | Feeds | S0.1 `#s0` · S0.1 `#s5` ×2 · S0.1 `#s6` ×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10` ×2 · S2 `#s3` |
 
-### `src-models` — Models overview
+### `src-claude-pricing` — Plans and pricing
 
 | | |
 |---|---|
-| Figure class | `vendor_policy` |
+| Figure class | `vendor_pricing` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-13 |
+| Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-0.1 |
+| Re-check before | every teaching of session-4 §03 |
 | References | 10 |
-| Feeds | S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 · S4 `#sCR` |
+| Feeds | case-1 `#built` · case-4 `#built` · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
 
 **Registered retrievals**
 
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
-| MODELS-001 | S2 | 2026-10-11 | **[UNVERIFIED, needs source]** | 1M tokens of context on the current Claude models, and 1M tokens as roughly 555,000 English words on the current tokenizer (FACTS claude-context-window, read in full 2026-10-11) |
-| MODELS-002 | S3 | 2026-10-11 | **[UNVERIFIED, needs source]** | 1M tokens of context on the current Claude models (FACTS claude-context-window, read in full 2026-10-11) |
-| MODELS-003 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | context window of 1M tokens on Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-context-window, read in full 2026-10-11) |
-| MODELS-004 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | 1M tokens of context on the current Claude models, about 555,000 words (FACTS claude-context-window, read in full 2026-10-11) |
-
-### `src-anthropic-dpa` — Data Processing Addendum
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §04 |
-| References | 10 |
-| Feeds | S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#sCR` ×6 |
+| CLAUDE-PRICING-001 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | Pro $20 per month billed monthly; Max 5x $100 and Max 20x $200 (FACTS claude-plans, read in full 2026-10-11) |
+| CLAUDE-PRICING-002 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | Pro $20 a month or $17 a month on annual billing; Team and Enterprise from $20 a seat a month billed annually (FACTS claude-plans, read in full 2026-10-11) |
 
 ### `src-tools3` — When should I use web search, extended thinking, and research?
 
@@ -177,25 +196,6 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-0.1 |
 | References | 9 |
 | Feeds | S0.1 `#s1` · S0.1 `#s4` · S0.1 `#s5` ×3 · S0.1 `#s8` ×3 · S0.1 `#s9` |
-
-### `src-claude-pricing` — Plans and pricing
-
-| | |
-|---|---|
-| Figure class | `vendor_pricing` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
-| References | 8 |
-| Feeds | S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| CLAUDE-PRICING-001 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | Pro $20 per month billed monthly; Max 5x $100 and Max 20x $200 (FACTS claude-plans, read in full 2026-10-11) |
-| CLAUDE-PRICING-002 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | Pro $20 a month or $17 a month on annual billing; Team and Enterprise from $20 a seat a month billed annually (FACTS claude-plans, read in full 2026-10-11) |
 
 ### `src-context-windows` — Context windows
 
@@ -247,6 +247,25 @@ version string means the version is not tracking the data.
 | References | 6 |
 | Feeds | S0.1 `#s1` · S0.1 `#s4` ×4 · S0.1 `#s6` |
 
+### `src-claude-privacy-training` — Is my data used for model training?
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 6 |
+| Feeds | case-1 `#built` · S4 `#s3` ×2 · S4 `#sCR` ×2 · S5 `#s0` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| CLAUDE-PRIVACY-TRAINING-001 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | the five-year and 30-day retention (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11) |
+| CLAUDE-PRIVACY-TRAINING-002 | S5 | 2026-10-11 | **[UNVERIFIED, needs source]** | up to five years with the training setting on, 30 days with it off (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11); no default stated |
+
 ### `src-aa` — Artificial Analysis Intelligence Index and cost-per-task figures
 
 | | |
@@ -290,25 +309,6 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-4 §03 |
 | References | 5 |
 | Feeds | S4 `#s3` ×2 · S4 `#s4` · S4 `#sCR` ×2 |
-
-### `src-claude-privacy-training` — Is my data used for model training?
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-11 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
-| References | 5 |
-| Feeds | S4 `#s3` ×2 · S4 `#sCR` ×2 · S5 `#s0` |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| CLAUDE-PRIVACY-TRAINING-001 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | the five-year and 30-day retention (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11) |
-| CLAUDE-PRIVACY-TRAINING-002 | S5 | 2026-10-11 | **[UNVERIFIED, needs source]** | up to five years with the training setting on, 30 days with it off (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11); no default stated |
 
 ### `src-api-messages` — Messages API reference
 
@@ -796,6 +796,42 @@ version string means the version is not tracking the data.
 | References | 1 |
 | Feeds | S5 `#sLib` |
 
+### `src-irs-590b` — Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)
+
+| | |
+|---|---|
+| Figure class | `none` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | any teaching of session-2 §s10 |
+| References | 1 |
+| Feeds | case-2 `#deliverable` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| IRS-590B-001 | S2 | 2026-10-12 | **[UNVERIFIED, needs source]** | none |
+
+### `src-irs-8606` — Form 8606, Nondeductible IRAs, and its instructions
+
+| | |
+|---|---|
+| Figure class | `none` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | any teaching of session-2 §s10 |
+| References | 1 |
+| Feeds | case-2 `#deliverable` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| IRS-8606-001 | S2 | 2026-10-12 | **[UNVERIFIED, needs source]** | none |
+
 ### `src-aa-index` — Intelligence Index methodology
 
 | | |
@@ -862,42 +898,6 @@ version string means the version is not tracking the data.
 | References | 0 |
 | Feeds | *nothing on the page* |
 
-### `src-irs-590b` — Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)
-
-| | |
-|---|---|
-| Figure class | `none` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-12 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | any teaching of session-2 §s10 |
-| References | 0 |
-| Feeds | *nothing on the page* |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| IRS-590B-001 | S2 | 2026-10-12 | **[UNVERIFIED, needs source]** | none |
-
-### `src-irs-8606` — Form 8606, Nondeductible IRAs, and its instructions
-
-| | |
-|---|---|
-| Figure class | `none` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-12 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | any teaching of session-2 §s10 |
-| References | 0 |
-| Feeds | *nothing on the page* |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| IRS-8606-001 | S2 | 2026-10-12 | **[UNVERIFIED, needs source]** | none |
-
 
 ---
 
@@ -933,8 +933,13 @@ wrong when they go stale.
 | S3 | — | 0 |
 | S4 | — | 0 |
 | S5 | `Fable 5`, `Haiku 4.5`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sonnet 5` | 32 |
+| case-1 | `Opus 5`, `Sonnet 5` | 10 |
+| case-2 | `Opus 5`, `Sonnet 5` | 7 |
+| case-3 | `Opus 5`, `Sonnet 5` | 7 |
+| case-4 | `Opus 5`, `Sonnet 5` | 7 |
+| case-5 | `Opus 5`, `Sonnet 5` | 7 |
 
-**241 occurrences across 6 lessons.** This count is read off
+**279 occurrences across 11 lessons.** This count is read off
 the corpus on every run, so it cannot go stale the way a typed one would.
 
 

@@ -294,6 +294,37 @@ capture's structure with the labelled text "Capture pending re-run against the
 v5 case" and the deferred-work register gets a row (D-033 in
 `docs/next-term/DECISIONS.md` records the five probe captures deferred this way).
 
+## The case pages (`cases/case-N.html`)
+
+Added for the 2027 term (Phase 7 of `docs/next-term/RUNBOOK.md`). Each is one
+self-contained file a student opens before Session N: case brief, the commit
+("your call first"), the finished deliverable captured from a model and labelled
+with the model id and date the `claude` CLI reported, how it was built (prompts,
+tier, checks, one failure caught, the human-judgment points; case-1 carries the
+model `readme.txt`), a check, and the link into the lesson's opener `#sCase`.
+
+What the pipeline does with them:
+
+- `scripts/inject-case.mjs` LESSONS lists them, so they carry the injected case
+  block and the viewer; `verify-case.mjs` and `test-case-viewer.mjs` check them
+  with the lessons (12 files).
+- `scripts/build-sources.mjs` knows the keys `case-1` to `case-5` and maps every
+  key to its page through `pagePath()`; a record cites a case page with
+  `used_for.case-N`, and `inject-sources.mjs` writes the footer. Every reader of
+  `LESSONS` that opens a page goes through `pagePath()`.
+- `verify-browser.mjs`, `verify-migration.mjs` (with a zero baseline for the
+  `var()` count) and `verify-facts.mjs` scan them. Two lesson parameters do not
+  apply and say so in their output: the 13-interaction floor (check 9: a case page
+  is built around one commit and one check) and the time-budget table (check 16:
+  minutes sit on the eyebrows, no allocation row). They are outside `build-appendix.mjs`
+  and outside EDITORIAL A1 to A7 (no core/appendix split), like `session-0.1`.
+- The hub lists them in the "Case files" strip; each lesson's top bar links its case.
+
+The lesson's `#sCase` opener and the case page must tell the same story: the same
+facts to rank, the same key, the same verdict rows. When a case page's captured
+output changes, re-read the lesson's opener; nothing checks the two mechanically
+yet (deferred-work row).
+
 ## Change-folder checks, and jsdom
 
 Nearly every pass on a lesson since 2026-09-12 left a folder,
@@ -315,6 +346,7 @@ npm i -g jsdom
 NODE_PATH=$(npm root -g) node docs/changes/2026-10-04-session-5-interactivity/checks.mjs
 NODE_PATH=$(npm root -g) node docs/changes/2026-10-02-session-5-build/section-tests/run-all.mjs
 NODE_PATH=$(npm root -g) node scripts/audit/section_profile.mjs session-5/index.html   # writes docs/audits/profiles/
+`cases/case-1.html` to `cases/case-5.html`: the case-file pages (2027 term), one per session, opened before class; same chrome and style fence as the lessons, their own case-file identity, and the generated CASE and SOURCES spans.
 ```
 
 The three oldest harnesses (`2026-09-13-session-2-manual-pass`,

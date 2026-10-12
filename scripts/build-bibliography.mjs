@@ -29,7 +29,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { model, LESSONS, isAbsent, UNVERIFIED, orderableDate, isPartialDate,
-         assertVerifiedLock, FULL_DATE } from './build-sources.mjs';
+         assertVerifiedLock, FULL_DATE, pagePath } from './build-sources.mjs';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CHECK = process.argv.includes('--check');
@@ -298,7 +298,7 @@ in \`SOURCES.md\` and from the chips the corpus actually carries.
   L.push('|---|---|---|');
   let total = 0;
   for (const lesson of LESSONS) {
-    const text = readFileSync(join(REPO, lesson, 'index.html'), 'utf8');
+    const text = readFileSync(join(REPO, pagePath(lesson)), 'utf8');
     const hits = [...text.matchAll(MODELS)].map((m) => m[1]);
     total += hits.length;
     const distinct = [...new Set(hits)].sort();

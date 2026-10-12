@@ -20,7 +20,8 @@ import { classify } from './editorial-regions.mjs';
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LESSONS = ['index.html', 'session-0.1/index.html', 'session-1/index.html',
                  'session-2/index.html', 'session-3/index.html', 'session-4/index.html',
-                 'session-5/index.html'];
+                 'session-5/index.html',
+                 'cases/case-1.html', 'cases/case-2.html', 'cases/case-3.html', 'cases/case-4.html', 'cases/case-5.html'];
 const F = JSON.parse(readFileSync(join(REPO, 'scripts/case-facts.json'), 'utf8')).figures;
 const CASE = readFileSync(join(REPO, 'CASE.md'), 'utf8');
 
@@ -433,7 +434,10 @@ for (const [id, name, rxs] of [
     const secs = [...t.matchAll(/<section\b[^>]*>([\s\S]*?)<\/section>/g)];
     const empty = secs.filter((s) => !/data-task=/.test(s[1])).length;
     rows.push(`${l.padEnd(24)} distinct interactions ${String(tasks.size).padStart(3)}   sections ${String(secs.length).padStart(3)}   sections with no interaction ${empty}`);
-    if (l !== 'index.html' && tasks.size < 13) bad.push(`${l}: ${tasks.size} interactions, floor is 13`);
+    /* Case pages (cases/*.html, 2027 term) are 20 to 30 minutes of student work built
+       around one commit and one check (PEDAGOGY 5.6); the 13-interaction floor is a
+       lesson parameter and does not apply to them. They are still counted above. */
+    if (l !== 'index.html' && !/^cases\//.test(l) && tasks.size < 13) bad.push(`${l}: ${tasks.size} interactions, floor is 13`);
   }
   check('9', 'Interaction floor of 13 per lesson (hub exempt, no padding applied)',
         bad.length === 0, bad.length ? bad.join('\n') : rows.join('\n'));
@@ -521,7 +525,8 @@ for (const [id, name, rxs] of [
      either way. verify-browser.mjs measures whether it actually renders. */
   const VAR_BASELINE = { 'index.html': 0, 'session-0.1/index.html': 8, 'session-1/index.html': 7,
                          'session-2/index.html': 0, 'session-3/index.html': 0, 'session-4/index.html': 0,
-                         'scripts/case-flowchart.html': 0 };
+                         'scripts/case-flowchart.html': 0, 'cases/case-1.html': 0, 'cases/case-2.html': 0,
+                         'cases/case-3.html': 0, 'cases/case-4.html': 0, 'cases/case-5.html': 0 };
   const varsBy = {};
   for (const b of bad) { const f = b.split(':')[0]; if (/var\(/.test(b)) varsBy[f] = (varsBy[f] || 0) + 1; }
   const regress = Object.entries(varsBy).filter(([f, n]) => n > (VAR_BASELINE[f] ?? 0));
@@ -538,7 +543,7 @@ for (const [id, name, rxs] of [
   for (const l of LESSONS) {
     const t = readFileSync(join(REPO, l), 'utf8');
     const tbl = t.match(/<table class="tbudget"[\s\S]*?<\/table>/);
-    if (!tbl) { rows.push(`${l.padEnd(24)} no time-budget table`); continue; }
+    if (!tbl) { rows.push(`${l.padEnd(24)} ${/^cases\//.test(l) ? 'no time-budget table (case page: minutes sit on the eyebrows, no allocation row)' : 'no time-budget table'}`); continue; }
     const seg = [...tbl[0].matchAll(/<tr(?![^>]*class="[^"]*(?:nosum|alloc)[^"]*")[^>]*>[\s\S]*?<td[^>]*class="[^"]*n[^"]*"[^>]*>\s*(\d+)\s*</g)].map((m) => Number(m[1]));
     const alloc = tbl[0].match(/<tr[^>]*class="[^"]*alloc[^"]*"[^>]*>[\s\S]*?(\d+)\s*<\/td>/);
     const sum = seg.reduce((a, b) => a + b, 0);
