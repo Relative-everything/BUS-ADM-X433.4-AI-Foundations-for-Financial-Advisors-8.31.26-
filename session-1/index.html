@@ -505,6 +505,20 @@ section.slide{padding:clamp(44px,6vw,74px) 0;border-bottom:1px solid var(--line)
 #ptrack{flex:1}
 #caseBtn{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:none;border:1.5px solid var(--on);color:var(--on);border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap}
 #caseBtn:hover{background:var(--on-bg)}
+/* Case 1 button. Matches #caseBtn; an anchor, because the case page is a page. */
+.casebtn{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;line-height:normal;background:none;border:1.5px solid var(--on);color:var(--on);border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap;text-decoration:none}
+.casebtn:hover{background:var(--on-bg)}
+@media (max-width:720px){.casebtn{flex:none}}
+a.btn{text-decoration:none;display:inline-block}
+.inl{color:var(--on);border-bottom:1px solid var(--line);text-decoration:none}
+.casego{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:20px 0}
+.chip.caserank{position:relative;padding-left:50px}
+.caserank .crk{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;border:1.5px solid var(--off);display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:500;color:var(--on)}
+.caserank.act .crk{background:var(--on);border-color:var(--on);color:#fff}
+.gloss{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px 26px;margin:6px 0 0}
+.gloss div{font-size:14.5px;line-height:1.45}
+.gloss dt{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:600;font-size:15px;letter-spacing:-.01em}
+.gloss dd{margin:2px 0 0;color:var(--muted)}
 /* DW-077. The Shift+U badge is the widest item in the topbar. At 380px it
    pushed Case facts past the right edge (630px on session-0.1, 615px on
    session-1); up to about 670px it crowded the button into the right padding.
@@ -807,7 +821,7 @@ table.tbudget tr.nosum td{color:var(--muted);font-style:italic}
 table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border-bottom:none}
 .stamp{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.05em;color:var(--muted);margin:18px 0 0}
 
-/* ---- section 08 card sort, withheld key ---- */
+/* ---- section 04 card sort, withheld key ---- */
 .cardsort .lbox{opacity:1}
 .cardsort .csheld{display:flex;flex-direction:column;gap:7px;margin-top:10px;min-height:40px;border-top:1px dashed var(--line);padding-top:9px}
 .cardsort .lbox.csover{border-style:dashed;border-color:var(--on)}
@@ -849,6 +863,7 @@ table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border
   <span class="ttl">Session 1 &middot; Cole household</span>
   <div id="ptrack"></div>
   <span id="ovr" class="mono">Shift+U &mdash; reveal all answer panels</span>
+  <a class="casebtn" href="../cases/case-1.html">Case 1</a>
   <button id="caseBtn">Case facts</button>
 </div>
 <div id="caseModal"><div class="inner" id="caseInner">
@@ -1320,14 +1335,12 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </div>
 <!-- LMBOX:END v1 -->
 
-<div class="talk"><span class="th">Live Walkthrough: Models, Tiers, Projects, and Settings</span>This session opens with a guided on-screen walkthrough of the Claude interface: models, tiers, projects, and settings, in that order. No prior AI experience is assumed, and nothing here asks you to use a control before you have seen it used.</div>
-
-<div class="talk">Before the first exercise, open <b>Case facts</b> in the top bar and review the Cole household.</div>
+<div class="talk"><span class="th">Open the case first</span>Open <b>Case 1</b> in the top bar before anything else: the finished intake summary and letter this session starts from. <b>Case facts</b> beside it holds every figure of the Cole household if you need one. Anyone who has not opened the case page commits to the same two questions in section 01, in about two minutes.</div>
 
 <!-- 1 -->
 <section class="slide" id="s1" data-nav="Start">
  <div class="body">
-  <div class="eyebrow"><span>BUS ADM X433.4 &middot; Session 1</span><span class="mins">6 min</span></div>
+  <div class="eyebrow"><span>BUS ADM X433.4 &middot; Session 1</span><span class="mins">4 min</span></div>
   <h1>Prediction, Model Tiers, and the Cost of Using Them</h1>
   <p class="lede">Build next-token prediction by hand, then price it against a real planning practice.</p>
   <p class="dim mono" style="font-size:12.5px;letter-spacing:.06em">Answer panels open on an explicit reveal, or all at once with Shift+U.</p>
@@ -1342,67 +1355,92 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p class="dim mono" id="tierOut" style="font-size:12px;letter-spacing:.04em;margin:9px 0 0"></p>
 </div>
 
-
-  <h3>Cole household case</h3>
-
-  <!-- The case block used to appear here AND be cloned into the modal by JS.
-       One generated region now lives in the modal between the CASE sentinels,
-       so this file holds exactly one copy. scripts/verify-case.mjs enforces it. -->
-  <div class="panel" style="border-color:var(--on)">
-    <span class="plab">The Cole household &middot; synthetic &middot; Naperville, Illinois</span>
-    <p style="margin:10px 0 0">Meg Cole, 58, is a nurse manager at Northlake Regional Health System and plans to stop at 60, in mid-2028. David, 59, is a senior mechanical engineer at Dunmore Industrial Equipment and plans to stop at 62, in late 2029. Neither has claimed Social Security. They hold $2,446,000 of investable assets, 70.3% of it in pre-tax accounts, and face the years between the last paycheck and the first required distribution. Nothing has been decided. Every figure is in <b>Case facts</b>.</p>
-    <p class="dim" style="font-size:14.5px;margin:12px 0 0">The full fact set, the household map and the timeline, and the open questions are behind <b>Case facts</b> in the bar above. Open it and keep it open.</p>
-  </div>
-
-  <!-- Recurring question, session 1 angle. See docs/spine-brief.md. -->
-  <div class="talk"><span class="th">The question that runs through every session</span>The Coles hold $1,720,000 in pre-tax accounts, 70.3% of what they have, and a window of years with no paycheck and no required distribution: Meg 2029 to 2042, David 2030 to 2041. <b>How much do they convert to Roth, in which years, when the federal bracket is one price and the Medicare premium two years later is the other?</b> Nobody answers it. You find out why the tool you would reach for to answer it is worst at exactly this shape of problem: a long sequence where every year's answer depends on the years before it.</div>
+  <div class="talk"><span class="th">Objective</span>By the end of this session you can name what you cannot conclude from a fluent, confident model answer, and the part of the machine that is the reason. You work in your own account, not on a demo.</div>
 
   <p class="dim" style="font-size:14.5px">Figure labels: <span class="conf h" data-src="src-case">H</span> primary or first-party &middot; <span class="conf m" data-src="src-sec-ai">M</span> secondary or derived &middot; <span class="conf l" data-src="src-sec-ai">L</span> unverified. Arrow keys navigate. <b class="mono">Shift+U</b> opens every answer panel at once.</p>
 
-  <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Pick the one figure in this case you would refuse to accept without re-verification, and say why. Any choice is defensible; the reason is the exercise.<div class="row" style="margin-top:10px"><select id="s1pick" aria-label="Case figure you would re-verify first" style="max-width:520px;width:100%;font-family:&quot;JetBrains Mono&quot;,monospace;font-size:13.5px;line-height:1.6;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:11px 13px"><option value="">Choose a figure</option></select></div><div class="row" style="margin-top:10px"><input type="text" id="s1why" placeholder="Why that one? Free text, not scored." style="max-width:520px"></div></div></div>
+  <div class="panel" id="gloss">
+    <span class="plab">Glossary &middot; the twelve terms this session uses</span>
+    <dl class="gloss">
+      <div><dt>Token</dt><dd>A word or word fragment: the unit a model reads and writes.</dd></div>
+      <div><dt>Next-token prediction</dt><dd>The model's one operation: score every possible next token, given the text so far.</dd></div>
+      <div><dt>Probability distribution</dt><dd>The list of candidate next tokens, each with a chance attached.</dd></div>
+      <div><dt>Sampling</dt><dd>The step that picks one token from that list.</dd></div>
+      <div><dt>Temperature</dt><dd>The setting that decides how often sampling picks below the top-ranked candidate.</dd></div>
+      <div><dt>Hallucination</dt><dd>A fluent, confident statement that is false.</dd></div>
+      <div><dt>Model tier</dt><dd>A size and price level within one vendor's models, such as Haiku 5.5 or Opus 5.5.</dd></div>
+      <div><dt>Context window</dt><dd>All the text the model can reference when it writes a response, the response included. <span class="conf h" data-src="src-context-windows" data-fact="context-window-definition">H</span></dd></div>
+      <div><dt>Project</dt><dd>A Claude workspace with its own instructions, applied only to the conversations inside it.</dd></div>
+      <div><dt>Custom instructions</dt><dd>Standing text that shapes every new conversation on your account.</dd></div>
+      <div><dt>Skill</dt><dd>A saved set of instructions that Claude loads when a task calls for it.</dd></div>
+      <div><dt>Nonpublic personal information (NPI)</dt><dd>Client information that never enters a third-party AI tool in this course.</dd></div>
+    </dl>
+  </div>
+
+  <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open your own Claude account in another tab and choose the plan it is on. Section 05 runs in that account and says where your plan changes a step.<div class="row" style="margin-top:10px"><select id="s1plan" aria-label="The plan your Claude account is on" style="max-width:520px;width:100%;font-family:&quot;JetBrains Mono&quot;,monospace;font-size:13.5px;line-height:1.6;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:11px 13px"><option value="">Choose your plan</option><option value="free">Free</option><option value="pro">Pro</option><option value="max5">Max 5x</option><option value="max20">Max 20x</option><option value="team">Team</option><option value="ent">Enterprise</option><option value="other">Another assistant, not Claude</option><option value="none">No account yet</option></select></div><p class="dim" id="s1planOut" role="status" aria-live="polite" style="font-size:14px;margin:10px 0 0">No account yet? The <a class="inl" href="../session-0.1/index.html">setup page</a> walks through opening one.</p></div></div>
  </div>
 </section>
 
 <!-- APXPANEL:BEGIN generated-by=scripts/build-appendix.mjs -->
 <section class="slide apxdiv" id="apx" data-nav="Appendix contents">
-  <div class="eyebrow"><span>Appendix &middot; 7 optional sections</span><span class="mins">81 min</span></div>
+  <div class="eyebrow"><span>Appendix &middot; 10 optional sections</span><span class="mins">90 min</span></div>
   <h2>Appendix contents</h2>
-  <p class="lede">Seven optional sections, 81 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
-  <p>The 11 sections of the core session run in about 69 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <p class="lede">Ten optional sections, 90 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
+  <p>The 8 sections of the core session run in about 60 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
     <a class="apxcard" href="#s3"><span class="ac">A1 &middot; 11 min &middot; after &sect;02</span><b>N-gram Counting and Its Limits</b></a>
-    <a class="apxcard" href="#s4"><span class="ac">A2 &middot; 12 min &middot; after &sect;02</span><b>Fitting a Model by Hand</b></a>
-    <a class="apxcard" href="#s6"><span class="ac">A3 &middot; 9 min &middot; after &sect;03</span><b>Words Laid Out So That Nearby Means Similar</b></a>
-    <a class="apxcard" href="#s7"><span class="ac">A4 &middot; 9 min &middot; after &sect;03</span><b>The Task a Transformer Cannot Reliably Learn</b></a>
-    <a class="apxcard" href="#s8"><span class="ac">A5 &middot; 16 min &middot; after &sect;03</span><b>The Nine Controls Between the Model and Your Answer</b></a>
-    <a class="apxcard" href="#s14"><span class="ac">A6 &middot; 9 min &middot; after &sect;08</span><b>Existing FINRA Rules as Applied to AI</b></a>
-    <a class="apxcard" href="#s14c"><span class="ac">A7 &middot; 15 min &middot; after &sect;09</span><b>Disclosure of AI Use to the Client</b></a>
+    <a class="apxcard" href="#s5"><span class="ac">A2 &middot; 5 min &middot; after &sect;02</span><b>Token Counts and the Cost of a Document Pass</b></a>
+    <a class="apxcard" href="#s6"><span class="ac">A3 &middot; 9 min &middot; after &sect;02</span><b>Words Laid Out So That Nearby Means Similar</b></a>
+    <a class="apxcard" href="#s7"><span class="ac">A4 &middot; 9 min &middot; after &sect;02</span><b>The Task a Transformer Cannot Reliably Learn</b></a>
+    <a class="apxcard" href="#s4"><span class="ac">A5 &middot; 12 min &middot; after &sect;02</span><b>Fitting a Model by Hand</b></a>
+    <a class="apxcard" href="#s8"><span class="ac">A6 &middot; 16 min &middot; after &sect;02</span><b>The Nine Controls Between the Model and Your Answer</b></a>
+    <a class="apxcard" href="#s10"><span class="ac">A7 &middot; 6 min &middot; after &sect;03</span><b>Tiers, Leaderboards, and the Other Assistants</b></a>
+    <a class="apxcard" href="#s11"><span class="ac">A8 &middot; 7 min &middot; after &sect;03</span><b>What a Practice Pays in a Year</b></a>
+    <a class="apxcard" href="#s12"><span class="ac">A9 &middot; 6 min &middot; after &sect;03</span><b>Assigning a Tier to Six Tasks From This Case</b></a>
+    <a class="apxcard" href="#s14"><span class="ac">A10 &middot; 9 min &middot; after &sect;04</span><b>Existing FINRA Rules as Applied to AI</b></a>
   </div>
 </section>
 <!-- APXPANEL:END -->
 
-<section class="slide" id="sCold" data-nav="Cold open">
+<section class="slide" id="sCase" data-nav="Case 1">
  <div class="body">
-  <div class="eyebrow"><span>01 &middot; Cold open &middot; standing ritual</span><span class="mins">8 min</span></div>
-  <h2>The Last Prompt You Sent</h2>
-  <p class="big">The last one, whatever it was, pasted exactly as you typed it: typos, missing context, all of it.</p>
+  <div class="eyebrow"><span>01 &middot; Case 1: Intake summary and risk-profile letter</span><span class="mins">10 min</span></div>
+  <h2>The Intake Summary and the Letter on Two Risk Profiles</h2>
+  <p class="big">In January 2026 the firm met Meg and David Cole for intake, and each answered the same twelve-question risk questionnaire. The file now holds the intake notes, the account statements, the estate documents and a prior adviser&rsquo;s memo. The finished deliverable is a one-page intake summary and a plain-language letter that explains the couple&rsquo;s two risk profiles and how the firm will reconcile them, drafted with an AI model and checked by the advisor.</p>
 
-  <div class="ritual" data-task="t-cold-open" data-comp="timed-ritual">
-    <label class="rlab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
-    <textarea id="coldPrompt" placeholder="Paste it exactly. Do not clean it up &mdash; the typos are the useful part."></textarea>
-    <div class="row" style="margin-top:12px"><button class="btn" id="coldGo">Analyse what I typed</button></div>
-    <div class="rout" id="coldOut"><span class="rnil">Paste something and press the button.</span></div>
+  <div class="casego"><a class="btn" href="../cases/case-1.html">Open Case 1: the finished summary and the letter</a><span class="dim mono" style="font-size:12px">The page asks the same two questions. Skipped it? Commit here.</span></div>
+
+  <div class="panel" style="background:var(--gold-bg);border-color:#DFD3AF" data-task="t-case" data-comp="prediction-commit">
+    <span class="plab" style="color:var(--gold)">Commit before the finished version opens &middot; guessing wrong is the design</span>
+    <h4 style="margin:4px 0 8px">1. Rank the three intake facts that most change the plan</h4>
+    <p class="dim" style="font-size:14.5px;margin:0 0 10px">Select three, in rank order. Select a ranked fact again to remove it.</p>
+    <div class="chiplist" id="caseFacts" role="group" aria-label="Eight intake facts. Select three in rank order."></div>
+    <p class="dim mono" style="font-size:12px;margin:10px 0 0">ranked: <b id="caseRanked">0</b> of 3</p>
+    <h4 style="margin:18px 0 8px">2. Predict how Meg&rsquo;s and David&rsquo;s risk scores compare</h4>
+    <div class="vote" id="caseVote" role="group" aria-label="Predicted direction of the two risk scores"></div>
+    <div class="row" style="margin-top:12px"><button type="button" class="btn" id="caseCommit" disabled>Commit both answers</button><span class="mono dim" id="caseMsg" role="status" aria-live="polite" style="font-size:12px">Rank three facts and pick one prediction.</span></div>
   </div>
 
-  <p>Whatever you pasted, you wrote it for a machine that does exactly one thing: assign a probability to every possible next token and pick one. Nothing in it read your intent.</p>
- </div>
+  <div class="panel hidden" id="caseReveal" tabindex="-1">
+    <span class="plab">The reveal</span>
+    <div class="readout" id="caseOut"><span class="nil">Commit both answers first.</span></div>
+    <div class="dist" id="caseScores"></div>
+    <div class="readout" id="caseNotes"></div>
+    <span class="plab" style="margin-top:18px">Room tally for question 2 &middot; the instructor keys in the Zoom poll counts</span>
+    <div class="row" id="caseTallyIn"></div>
+    <div class="dist" id="caseTallyBars"></div>
+  </div>
 
-  <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Paste your last prompt and run the analysis. Keep it on screen &mdash; the comparison across sessions is the point.</div></div>
+  <p class="big">The question the Coles keep asking is how much to convert to Roth and in which years, and this session shows why the tool you would reach for is worst at exactly that shape of problem: a long sequence in which each year&rsquo;s answer depends on the years before it.</p>
+
+  <div class="check" data-gate="gcase"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Rank three facts, pick a prediction, commit, and read the reveal against your own answers.</div></div>
+  <span class="src">Every fact above is in the Cole case file (Parts A, C, F, G and H), synthetic by construction. <span class="conf l" data-src="src-case">L</span></span>
+ </div>
 </section>
 
 <section class="slide" id="s2" data-nav="Prediction">
  <div class="body">
-  <div class="eyebrow"><span>02 &middot; Wolfram, &ldquo;It&rsquo;s Just Adding One Word at a Time&rdquo;</span><span class="mins">7 min</span></div>
+  <div class="eyebrow"><span>02 &middot; Wolfram, &ldquo;It&rsquo;s Just Adding One Word at a Time&rdquo;</span><span class="mins">6 min</span></div>
   <h2>Candidate Rankings and the Selection Step</h2>
 
   <div class="wolf"><span class="wh">From the assigned reading, section "It's Just Adding One Word at a Time"</span>ChatGPT is "just asking over and over again 'given the text so far, what should the next word be?'&thinsp;"&mdash;each time adding a token, "which could be just a part of a word".</div>
@@ -1445,10 +1483,6 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="readout" id="plOut"><span class="nil">Switch the axes.</span></div>
     <p style="margin-bottom:0"><span class="sim">Illustrative curve: constructed, not a measurement</span></p>
   </div>
-
-  <p>The curve is generated by this page as probability proportional to 1/n over forty candidates and then normalised, so it is the shape Wolfram describes rather than a distribution he or anyone else measured, and every percentage it prints is a property of that formula.</p>
-
-  <p>Straightness means no natural cutoff: no rank at which the tail stops mattering.</p>
 
   <div class="check" data-gate="g2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place six tokens, generate at all three temperatures, and switch to log&ndash;log axes.</div></div>
   <span class="src"><b>Wolfram, S. (2023), What Is ChatGPT Doing &hellip; and Why Does It Work?</b> &mdash; opening section. Assigned reading. <span class="conf h" data-src="src-wolfram">H</span></span>
@@ -1509,10 +1543,114 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
  </div>
 </section>
 
-<section class="slide apx" id="s4" data-nav="A2 · Fitting a model" data-insert-after="s2" data-tier="advanced">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A2 &middot; Fitting a Model by Hand</b><span>12 min &middot; advanced &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+<section class="slide apx" id="s5" data-nav="A2 · Tokens" data-insert-after="s2" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A2 &middot; Token Counts and the Cost of a Document Pass</b><span>5 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
  <div class="body">
-  <div class="eyebrow"><span>Appendix A2 &middot; Mechanism, deeper</span><span class="mins">12 min</span></div>
+  <div class="eyebrow"><span>Appendix A2 &middot; Tokens and price</span><span class="mins">5 min</span></div>
+  <h2>Token Counts and the Cost of a Document Pass</h2>
+
+  <div class="wolf"><span class="wh">From the assigned reading, sections "The Concept of Embeddings" and "Inside ChatGPT"</span>The Concept of Embeddings: "<b>'the'</b> might be <b>914</b>, and <b>' cat'</b> (with a space before it) might be <b>3542</b>. (And these are the actual numbers used by GPT-2.)" &middot; Inside ChatGPT: "about <b>50,000</b> values that turn into probabilities for different possible next tokens&hellip; only about <b>3000</b> of the tokens are whole words, and the rest are fragments."</div>
+
+  <div class="panel" data-task="t-s5" data-comp="work-along-gate">
+    <label class="plab" for="tokIn">Paste something you would actually send &mdash; a client note, a paragraph of a will</label>
+    <textarea id="tokIn">Nothing in the file shows that the 2024 conversion memo was reviewed after the January 2026 plan amendment, and the conversion it recommended was never made.</textarea>
+    <div class="tokstrip" id="tokStrip"></div>
+    <div class="stats">
+      <div class="stat"><span class="sn">Est. tokens</span><span class="sv" id="tokCount">0</span></div>
+      <div class="stat"><span class="sn">Words</span><span class="sv" id="tokWords">0</span></div>
+      <div class="stat"><span class="sn">Tokens / word</span><span class="sv" id="tokRatio">&mdash;</span></div>
+    </div>
+    <span class="plab" style="margin-top:16px">Cost to read this once, per Claude tier</span>
+    <div class="costgrid" id="tokCost"></div>
+    <p style="margin-bottom:0"><span class="sim">Approximation: real tokenisation is model-specific</span></p>
+  </div>
+
+  <table class="dt tight">
+    <thead><tr><th>Document from this case</th><th>Approx. tokens</th><th>Into Opus 5.5, input only</th></tr></thead>
+    <tbody>
+      <tr><td>Discovery meeting notes (3,000 words)</td><td class="n">~5,400</td><td class="n">$0.02</td></tr>
+      <tr><td>2011 wills and powers of attorney (about 12,000 words)</td><td class="n">~21,600</td><td class="n">$0.09</td></tr>
+      <tr><td>Plan description, 2024 Roth memo, 2009 beneficiary form and residency agreement (about 60,000 words)</td><td class="n">~108,000</td><td class="n">$0.43</td></tr>
+      <tr><td>A full 1M-token context window, for scale</td><td class="n">1,000,000</td><td class="n">$4.00</td></tr>
+    </tbody>
+  </table>
+  <p>Filling a 1M-token context window with input costs four dollars on Opus 5.5. Cost is not the constraint. Your duty of care is the constraint, and &sect;04 is where it starts.</p>
+  <p>The <b>context window</b> is all the text the model can reference when it generates a response, the response itself included: the system prompt, every message and document in the request, the tool definitions, and the output, extended thinking included. It is not the box you type in. On the current Claude models it holds up to 1M tokens. <span class="conf h" data-src="src-context-windows" data-fact="context-window-definition">H</span> <span class="conf h" data-src="src-models" data-fact="claude-context-window">H</span></p>
+
+  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Replace the sample with your own writing, at least 40 tokens.</div></div>
+  <span class="src">Prices: <b>Anthropic, Claude Platform Docs &mdash; Pricing</b>, retrieved 11 October 2026. First-party. <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-opus-5-5">H</span> &middot; Token IDs and vocabulary figures: Wolfram (2023). <span class="conf h" data-src="src-wolfram">H</span> &middot; Word-to-token rows derived at about 1.8 tokens per word, the rate of roughly 555,000 English words per million tokens on the current tokenizer, from instructor-set word counts for the synthetic documents. <span class="conf h" data-src="src-context-windows" data-fact="claude-context-window">H</span> <span class="conf h" data-src="src-pricing" data-fact="claude-tokenizer-4-7">H</span></span>
+ </div>
+
+
+</section>
+
+<section class="slide apx" id="s6" data-nav="A3 · Meaning space" data-insert-after="s2" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A3 &middot; Words Laid Out So That Nearby Means Similar</b><span>9 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+ <div class="body">
+  <div class="eyebrow"><span>Appendix A3 &middot; Mechanism, deeper</span><span class="mins">9 min</span></div>
+  <h2>Words Laid Out So That Nearby Means Similar</h2>
+
+  <div class="wolf"><span class="wh">From the assigned reading, section "The Concept of Embeddings"</span>Built by looking at large amounts of text &mdash; he uses <b>5 billion words</b> &mdash; and seeing how similar the environments are in which words appear. "&thinsp;'alligator' and 'crocodile' will often appear almost interchangeably&hellip; But 'turnip' and 'eagle' won't tend to appear in otherwise similar sentences, so they'll be placed far apart."</div>
+
+  <div class="chartbox">
+    <span class="plab">Click a word for its neighbours &mdash; hand-constructed illustration, not a real projection</span>
+    <svg class="ch" id="embCh" viewBox="0 0 700 400" role="img" aria-label="Two-dimensional word layout"></svg>
+    <div class="readout" id="embOut"><span class="nil">Click any word.</span></div>
+  </div>
+
+  <div class="panel" data-task="t-s6" data-comp="commit-first-mcq"><span class="plab">Answer from the layout</span><div class="quiz" id="embQuiz"></div></div>
+
+  <div class="talk"><span class="th">Why this matters for planning &mdash; discussion</span>The planning terms cluster together because they appear in each other's company, not because the model understands them. "Grantor retained annuity trust" and "grantor retained income trust" sit almost on top of each other in embedding space and do very different things. So do "revocable" and "irrevocable" &mdash; one letter of difference, opposite consequences, and the words appear in nearly identical sentences.
+  <ul><li>Where else does our vocabulary pair near-identical language with opposite outcomes? Start with a Roth conversion versus a Roth contribution, or 1035 versus 1031.</li><li>What does that predict about which planning errors these tools will make most often?</li></ul></div>
+
+  <h3>One word, two meanings</h3>
+  <div class="row" id="craneBtns"></div>
+  <div class="readout" id="craneOut" style="margin-top:12px"><span class="nil">Pick a sentence.</span></div>
+  <p class="dim" style="font-size:14.5px">GPT-2 uses vectors of length 768; GPT-3 uses 12,288. What you clicked is two dimensions, hand-placed. No flat picture of a 12,288-dimensional space is faithful.</p>
+
+  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all three questions correctly, then open both senses of "crane".</div></div>
+ </div>
+</section>
+
+<section class="slide apx" id="s7" data-nav="A4 · Counting failure" data-insert-after="s2" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A4 &middot; The Task a Transformer Cannot Reliably Learn</b><span>9 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+ <div class="body">
+  <div class="eyebrow"><span>Appendix A4 &middot; Failure mode</span><span class="mins">9 min</span></div>
+  <h2>The Task a Transformer Cannot Reliably Learn</h2>
+  <p class="big">Wolfram trains a small transformer on a language with exactly one rule: parentheses must balance. It learns it well enough to look right, then fails.</p>
+
+  <div class="wolf"><span class="wh">From the assigned reading &mdash; his figures, section "What Really Lets ChatGPT Work?"</span>With 2 attention heads the learning converges after "10 million or so examples." Yet with its "<b>400,000</b> or so laboriously trained weights," it still assigns a <b>15%</b> probability to a closing parenthesis that would leave the sequence unbalanced. And: "even the full current ChatGPT has a hard time correctly matching parentheses in long sequences."</div>
+
+  <div class="panel" data-task="t-s7" data-comp="distribution-picker">
+    <span class="plab">Sequence builder &mdash; the simulated model predicts what comes next</span>
+    <div class="parens" id="parenSeq"></div>
+    <div class="depthbar" id="depthBar"></div>
+    <div class="row" style="margin-top:14px">
+      <button class="btn" data-pk="(">Add&nbsp;&nbsp;(</button>
+      <button class="btn" data-pk=")">Add&nbsp;&nbsp;)</button>
+      <button class="btn ghost mini" id="parenReset">Clear</button>
+      <span class="dim mono" style="font-size:12px">depth <b id="parenDepth">0</b></span>
+    </div>
+    <div class="dist" id="parenDist" style="margin-top:16px"></div>
+    <div class="readout" id="parenOut"></div>
+    <p style="margin-bottom:0"><span class="sim">Simulated shallow model &mdash; confidence degrades with depth, as Wolfram's trained net does</span></p>
+  </div>
+
+  <p>Counting is algorithmic. The network is feed-forward &mdash; "there's no looping or 'going back'" &mdash; so it approximates a counter from local pattern, and the approximation decays with depth.</p>
+  <p class="pull">Anything requiring an exact count across a long document is the failure case, not the edge case.</p>
+
+  <div class="talk"><span class="th">Where this bites in the Cole file &mdash; discussion</span>Every one of these is a counting or reconciliation task inside a long sequence, and every one is a place a fluent answer is least trustworthy:
+  <ul><li>Confirming the 2024 Roth conversion memo against the January 2026 plan summary, and listing every provision that conflicts</li><li>Checking that the $210,000 rollover IRA balance is the same figure on the statement, the beneficiary form summary and the balance sheet</li><li>Verifying that the 16.8% concentration is computed on the taxable account ($60,500 of $360,000), not on investable assets (2% of $2,446,000), in each place it appears</li><li>Tracing whether the 2011 powers of attorney were superseded by anything executed since, and confirming the file holds no later restatement</li></ul>
+  Which of these have you already delegated to a tool this year, and did you total the numbers yourself?</div>
+
+  <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the sequence to a depth where the model assigns real probability to an invalid token.</div></div>
+ </div>
+</section>
+
+<section class="slide apx" id="s4" data-nav="A5 · Fitting a model" data-insert-after="s2" data-tier="advanced">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A5 &middot; Fitting a Model by Hand</b><span>12 min &middot; advanced &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+ <div class="body">
+  <div class="eyebrow"><span>Appendix A5 &middot; Mechanism, deeper</span><span class="mins">12 min</span></div>
   <h2>Fitting a Model by Hand</h2>
   <p class="big">Turn the knobs until the curve fits the fall times. You are minimising a loss function by hand &mdash; which is what training does, 175 billion knobs at a time.</p>
 
@@ -1559,113 +1697,10 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
  </div>
 </section>
 
-<section class="slide" id="s5" data-nav="Tokens">
+<section class="slide apx" id="s8" data-nav="A6 · SAMPLER LAB" data-insert-after="s2" data-tier="advanced">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A6 &middot; The Nine Controls Between the Model and Your Answer</b><span>16 min &middot; advanced &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
  <div class="body">
-  <div class="eyebrow"><span>03 &middot; Tokens and price</span><span class="mins">5 min</span></div>
-  <h2>Token Counts and the Cost of a Document Pass</h2>
-
-  <div class="wolf"><span class="wh">From the assigned reading, sections "The Concept of Embeddings" and "Inside ChatGPT"</span>The Concept of Embeddings: "<b>'the'</b> might be <b>914</b>, and <b>' cat'</b> (with a space before it) might be <b>3542</b>. (And these are the actual numbers used by GPT-2.)" &middot; Inside ChatGPT: "about <b>50,000</b> values that turn into probabilities for different possible next tokens&hellip; only about <b>3000</b> of the tokens are whole words, and the rest are fragments."</div>
-
-  <div class="panel" data-task="t-s5" data-comp="work-along-gate">
-    <label class="plab" for="tokIn">Paste something you would actually send &mdash; a client note, a paragraph of a will</label>
-    <textarea id="tokIn">Nothing in the file shows that the 2024 conversion memo was reviewed after the January 2026 plan amendment, and the conversion it recommended was never made.</textarea>
-    <div class="tokstrip" id="tokStrip"></div>
-    <div class="stats">
-      <div class="stat"><span class="sn">Est. tokens</span><span class="sv" id="tokCount">0</span></div>
-      <div class="stat"><span class="sn">Words</span><span class="sv" id="tokWords">0</span></div>
-      <div class="stat"><span class="sn">Tokens / word</span><span class="sv" id="tokRatio">&mdash;</span></div>
-    </div>
-    <span class="plab" style="margin-top:16px">Cost to read this once, per Claude tier</span>
-    <div class="costgrid" id="tokCost"></div>
-    <p style="margin-bottom:0"><span class="sim">Approximation: real tokenisation is model-specific</span></p>
-  </div>
-
-  <table class="dt tight">
-    <thead><tr><th>Document from this case</th><th>Approx. tokens</th><th>Into Opus 5.5, input only</th></tr></thead>
-    <tbody>
-      <tr><td>Discovery meeting notes (3,000 words)</td><td class="n">~5,400</td><td class="n">$0.02</td></tr>
-      <tr><td>2011 wills and powers of attorney (about 12,000 words)</td><td class="n">~21,600</td><td class="n">$0.09</td></tr>
-      <tr><td>Plan description, 2024 Roth memo, 2009 beneficiary form and residency agreement (about 60,000 words)</td><td class="n">~108,000</td><td class="n">$0.43</td></tr>
-      <tr><td>A full 1M-token context window, for scale</td><td class="n">1,000,000</td><td class="n">$4.00</td></tr>
-    </tbody>
-  </table>
-  <p>Filling a 1M-token context window with input costs four dollars on Opus 5.5. Cost is not the constraint. Your duty of care is &mdash; &sect;08.</p>
-  <p>The <b>context window</b> is all the text the model can reference when it generates a response, the response itself included: the system prompt, every message and document in the request, the tool definitions, and the output, extended thinking included. It is not the box you type in. On the current Claude models it holds up to 1M tokens. <span class="conf h" data-src="src-context-windows" data-fact="context-window-definition">H</span> <span class="conf h" data-src="src-models" data-fact="claude-context-window">H</span></p>
-
-  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Replace the sample with your own writing, at least 40 tokens.</div></div>
-  <span class="src">Prices: <b>Anthropic, Claude Platform Docs &mdash; Pricing</b>, retrieved 11 October 2026. First-party. <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-opus-5-5">H</span> &middot; Token IDs and vocabulary figures: Wolfram (2023). <span class="conf h" data-src="src-wolfram">H</span> &middot; Word-to-token rows derived at about 1.8 tokens per word, the rate of roughly 555,000 English words per million tokens on the current tokenizer, from instructor-set word counts for the synthetic documents. <span class="conf h" data-src="src-context-windows" data-fact="claude-context-window">H</span> <span class="conf h" data-src="src-pricing" data-fact="claude-tokenizer-4-7">H</span></span>
- </div>
-
-
-</section>
-
-<section class="slide apx" id="s6" data-nav="A3 · Meaning space" data-insert-after="s5" data-tier="foundational">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A3 &middot; Words Laid Out So That Nearby Means Similar</b><span>9 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
- <div class="body">
-  <div class="eyebrow"><span>Appendix A3 &middot; Mechanism, deeper</span><span class="mins">9 min</span></div>
-  <h2>Words Laid Out So That Nearby Means Similar</h2>
-
-  <div class="wolf"><span class="wh">From the assigned reading, section "The Concept of Embeddings"</span>Built by looking at large amounts of text &mdash; he uses <b>5 billion words</b> &mdash; and seeing how similar the environments are in which words appear. "&thinsp;'alligator' and 'crocodile' will often appear almost interchangeably&hellip; But 'turnip' and 'eagle' won't tend to appear in otherwise similar sentences, so they'll be placed far apart."</div>
-
-  <div class="chartbox">
-    <span class="plab">Click a word for its neighbours &mdash; hand-constructed illustration, not a real projection</span>
-    <svg class="ch" id="embCh" viewBox="0 0 700 400" role="img" aria-label="Two-dimensional word layout"></svg>
-    <div class="readout" id="embOut"><span class="nil">Click any word.</span></div>
-  </div>
-
-  <div class="panel" data-task="t-s6" data-comp="commit-first-mcq"><span class="plab">Answer from the layout</span><div class="quiz" id="embQuiz"></div></div>
-
-  <div class="talk"><span class="th">Why this matters for planning &mdash; discussion</span>The planning terms cluster together because they appear in each other's company, not because the model understands them. "Grantor retained annuity trust" and "grantor retained income trust" sit almost on top of each other in embedding space and do very different things. So do "revocable" and "irrevocable" &mdash; one letter of difference, opposite consequences, and the words appear in nearly identical sentences.
-  <ul><li>Where else does our vocabulary pair near-identical language with opposite outcomes? Start with a Roth conversion versus a Roth contribution, or 1035 versus 1031.</li><li>What does that predict about which planning errors these tools will make most often?</li></ul></div>
-
-  <h3>One word, two meanings</h3>
-  <div class="row" id="craneBtns"></div>
-  <div class="readout" id="craneOut" style="margin-top:12px"><span class="nil">Pick a sentence.</span></div>
-  <p class="dim" style="font-size:14.5px">GPT-2 uses vectors of length 768; GPT-3 uses 12,288. What you clicked is two dimensions, hand-placed. No flat picture of a 12,288-dimensional space is faithful.</p>
-
-  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all three questions correctly, then open both senses of "crane".</div></div>
- </div>
-</section>
-
-<section class="slide apx" id="s7" data-nav="A4 · Counting failure" data-insert-after="s5" data-tier="standard">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A4 &middot; The Task a Transformer Cannot Reliably Learn</b><span>9 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
- <div class="body">
-  <div class="eyebrow"><span>Appendix A4 &middot; Failure mode</span><span class="mins">9 min</span></div>
-  <h2>The Task a Transformer Cannot Reliably Learn</h2>
-  <p class="big">Wolfram trains a small transformer on a language with exactly one rule: parentheses must balance. It learns it well enough to look right, then fails.</p>
-
-  <div class="wolf"><span class="wh">From the assigned reading &mdash; his figures, section "What Really Lets ChatGPT Work?"</span>With 2 attention heads the learning converges after "10 million or so examples." Yet with its "<b>400,000</b> or so laboriously trained weights," it still assigns a <b>15%</b> probability to a closing parenthesis that would leave the sequence unbalanced. And: "even the full current ChatGPT has a hard time correctly matching parentheses in long sequences."</div>
-
-  <div class="panel" data-task="t-s7" data-comp="distribution-picker">
-    <span class="plab">Sequence builder &mdash; the simulated model predicts what comes next</span>
-    <div class="parens" id="parenSeq"></div>
-    <div class="depthbar" id="depthBar"></div>
-    <div class="row" style="margin-top:14px">
-      <button class="btn" data-pk="(">Add&nbsp;&nbsp;(</button>
-      <button class="btn" data-pk=")">Add&nbsp;&nbsp;)</button>
-      <button class="btn ghost mini" id="parenReset">Clear</button>
-      <span class="dim mono" style="font-size:12px">depth <b id="parenDepth">0</b></span>
-    </div>
-    <div class="dist" id="parenDist" style="margin-top:16px"></div>
-    <div class="readout" id="parenOut"></div>
-    <p style="margin-bottom:0"><span class="sim">Simulated shallow model &mdash; confidence degrades with depth, as Wolfram's trained net does</span></p>
-  </div>
-
-  <p>Counting is algorithmic. The network is feed-forward &mdash; "there's no looping or 'going back'" &mdash; so it approximates a counter from local pattern, and the approximation decays with depth.</p>
-  <p class="pull">Anything requiring an exact count across a long document is the failure case, not the edge case.</p>
-
-  <div class="talk"><span class="th">Where this bites in the Cole file &mdash; discussion</span>Every one of these is a counting or reconciliation task inside a long sequence, and every one is a place a fluent answer is least trustworthy:
-  <ul><li>Confirming the 2024 Roth conversion memo against the January 2026 plan summary, and listing every provision that conflicts</li><li>Checking that the $210,000 rollover IRA balance is the same figure on the statement, the beneficiary form summary and the balance sheet</li><li>Verifying that the 16.8% concentration is computed on the taxable account ($60,500 of $360,000), not on investable assets (2% of $2,446,000), in each place it appears</li><li>Tracing whether the 2011 powers of attorney were superseded by anything executed since, and confirming the file holds no later restatement</li></ul>
-  Which of these have you already delegated to a tool this year, and did you total the numbers yourself?</div>
-
-  <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the sequence to a depth where the model assigns real probability to an invalid token.</div></div>
- </div>
-</section>
-
-<section class="slide apx" id="s8" data-nav="A5 · SAMPLER LAB" data-insert-after="s5" data-tier="advanced">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A5 &middot; The Nine Controls Between the Model and Your Answer</b><span>16 min &middot; advanced &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
- <div class="body">
-  <div class="eyebrow"><span>Appendix A5 &middot; Lab</span><span class="mins">16 min</span></div>
+  <div class="eyebrow"><span>Appendix A6 &middot; Lab</span><span class="mins">16 min</span></div>
   <h2>The Nine Controls Between the Model and Your Answer</h2>
   <p class="big">The model hands over a probability for every one of about 50,000 tokens. A stack of sampling algorithms then cuts that list down and picks one. Almost nobody using these tools professionally knows they exist.</p>
 
@@ -1734,7 +1769,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 <section class="slide" id="s9" data-nav="Hallucination">
  <div class="body">
-  <div class="eyebrow"><span>04 &middot; Consequence</span><span class="mins">7 min</span></div>
+  <div class="eyebrow"><span>03 &middot; Consequence</span><span class="mins">6 min</span></div>
   <h2>The Same Question, Asked Three Times</h2>
   <p class="big">A system that predicts likely next words has no lookup step for facts, which is why exact recall fails.</p>
 
@@ -1765,18 +1800,21 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p class="pull">Confident tone is not a claim about confidence. It is the output of the scoring rule.</p>
 
-  <div class="talk"><span class="th">The planning version &mdash; discussion</span>Ask any frontier model at what age a person born in 1968 must start required minimum distributions, and it will give you a number in a confident sentence. That age has one right answer, the model has seen several earlier versions of it in near-identical sentences, and it has no way to signal which one applies. Now ask how much the Coles should convert to Roth. The sentence is just as confident, and there is no answer to retrieve, because that is a judgment the case leaves open.
-  <ul><li>Which of Meg's questions are arbitrary facts &mdash; a rate, a date, a threshold with one right answer and many plausible wrong ones?</li><li>Which are contested judgments where no answer is retrievable because none exists?</li><li>Sort this session's case that way. The first list is what you verify line by line. The second is what you never delegate at all.</li></ul></div>
+  <p class="dim" style="font-size:14.5px">This is the first rung of a three-step ladder: why it happens (this session), how often it happens against a real corpus (Session 3), and what it costs you (Session 4).</p>
+
+  <div class="talk"><span class="th">The planning version</span>Ask any frontier model at what age a person born in 1968 must start required minimum distributions, and it will give you a number in a confident sentence. That age has one right answer, the model has seen several earlier versions of it in near-identical sentences, and it has no way to signal which one applies. Now ask how much the Coles should convert to Roth. The sentence is just as confident, and there is no answer to retrieve, because that is a judgment the case leaves open.
+  <ul><li>Sort Meg's questions into arbitrary facts, which have one right answer and many plausible wrong ones, and contested judgments, which have none to retrieve. The first list you verify line by line. The second you never delegate at all.</li></ul></div>
 
   <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Ask three times, then view both scoring rules.</div></div>
   <span class="src"><b>Kalai, A. T., Nachum, O., Vempala, S. S. &amp; Zhang, E. (2025), Why Language Models Hallucinate</b>, arXiv:2509.04664, &sect;1 and &sect;1.2. Model was DeepSeek-V3, accessed 11 May 2025. Assigned reading. <span class="conf h" data-src="src-kalai" data-fact="openai-hallucination-paper">H</span> &middot; The three captured dates are that paper's runs. With a key connected the prompt is issued live against whichever model you chose, and what you see is your own observation rather than a sourced claim, so it carries no chip.</span>
  </div>
 </section>
 
-<section class="slide" id="s10" data-nav="Frontier" data-task="t-s10" data-comp="click-map-explorer">
+<section class="slide apx" id="s10" data-nav="A7 · Tiers and leaderboards" data-insert-after="s9" data-tier="standard" data-task="t-s10" data-comp="click-map-explorer">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A7 &middot; Tiers, Leaderboards, and the Other Assistants</b><span>6 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
  <div class="body">
-  <div class="eyebrow"><span>05 &middot; Capability against price</span><span class="mins">5 min</span></div>
-  <h2>Intelligence Index Plotted Against Cost per Task</h2>
+  <div class="eyebrow"><span>Appendix A7 &middot; Capability against price</span><span class="mins">6 min</span></div>
+  <h2>Tiers, Leaderboards, and the Other Assistants</h2>
 
   <div class="chartbox">
     <span class="plab">Artificial Analysis Intelligence Index against cost per index task, July 2026 pull</span>
@@ -1816,14 +1854,33 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </table>
   <p class="dim" style="font-size:14.5px">At the up-to-100K-token rate, input runs from $0.10 to $10 per million tokens across the four tiers: a hundredfold spread inside one vendor. Output tokens cost five times input tokens on every listed Claude model. A cache read costs 0.1x base input by default, 0.05x on Opus 5.5 and Sonnet 5.5, and 0.025x on Fable 5.1; a cache write costs 1.25x for five minutes or 2x for an hour; the Batch API takes 50% off input and output. Haiku 5.5 is the only current model priced by prompt length: a prompt over 100K tokens, counting every input token, is priced per request at the higher rate. Published rates move, and every figure in this table is one a vendor can change without asking you: price a workload against the pricing page, not against a number you remember. Claude 4.7 and later also produce roughly 30% more tokens for the same text, so a per-token price cut does not always cut the bill. <span class="conf h" data-src="src-pricing" data-fact="claude-tokenizer-4-7">H</span></p>
 
+  <h3>The Other Assistants, on the Figures on File</h3>
+  <div class="card">
+    <span class="num">ChatGPT, Gemini, Copilot, Perplexity and Grok, set beside Claude</span>
+    <table class="dt tight">
+      <thead><tr><th>Assistant</th><th>What this page holds on file</th></tr></thead>
+      <tbody>
+        <tr><td>Claude</td><td>Free $0; Pro $20 a month, or $17 a month billed annually; Max 5x $100; Max 20x $200. <span class="conf h" data-src="src-claude-pricing" data-fact="claude-plans">H</span></td></tr>
+        <tr><td>ChatGPT</td><td>The GPT-6 family (Astra, Sol, Luna) and GPT-6.1 Sol. Free $0, Go $8 in the US, Plus $20, Pro from $100 a month. Consumer content may be used for training unless you turn off &ldquo;Improve the model for everyone&rdquo;; Business, Enterprise, Edu and the API are not used for training by default. <span class="conf m" data-fact="openai-models-and-plans openai-consumer-training-default">M</span></td></tr>
+        <tr><td>Gemini</td><td>Google AI Plus $4.99, Google AI Pro $19.99, Google AI Ultra $99.99 (5x) or $199.99 (20x) a month. <span class="conf m" data-fact="gemini-plans">M</span></td></tr>
+        <tr><td>Copilot</td><td>No plan or price figure on file.</td></tr>
+        <tr><td>Perplexity</td><td>No plan or price figure on file.</td></tr>
+        <tr><td>Grok</td><td>No plan or price figure on file.</td></tr>
+      </tbody>
+    </table>
+    <p>Where this page holds no figure it states none. Read each vendor&rsquo;s own pricing page and its data-use terms before you rely on either.</p>
+    <span class="src">ChatGPT and Gemini figures were read on 11 October 2026 through search listings of the vendors&rsquo; own pages, not from the pages themselves, which is why they carry M. Per-plan model assignments are provisional, so none are stated.</span>
+  </div>
+
   <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Set the budget below $1.00 and identify the best model still available.</div></div>
   <span class="src"><b>Artificial Analysis</b>, scatter data pulled 17 and 24 July 2026. <span class="conf m" data-src="src-aa">M</span> &middot; In that pull Opus 5 and GPT-5.6 Terra were omitted: cost per index task unpublished, not estimated. &middot; Prices: <b>Anthropic Claude Platform Docs</b>, 11 October 2026. First-party. <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-haiku-5-5 claude-api-price-sonnet-5-5 claude-api-price-opus-5-5 claude-api-price-fable-5-1 claude-output-input-ratio claude-cache-and-batch-pricing">H</span> &middot; Model names: <b>Anthropic Claude Platform Docs, Model deprecations</b>, 11 October 2026. First-party. <span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span> &middot; The leaderboard figures were read through search listings of each leaderboard&rsquo;s own site, not from the live boards, and the Arena pair comes from one secondary roundup, which is why it carries the lowest label.</span>
  </div>
 </section>
 
-<section class="slide" id="s11" data-nav="Practice cost">
+<section class="slide apx" id="s11" data-nav="A8 · Practice cost" data-insert-after="s9" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A8 &middot; What a Practice Pays in a Year</b><span>7 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
  <div class="body">
-  <div class="eyebrow"><span>06 &middot; Your firm</span><span class="mins">7 min</span></div>
+  <div class="eyebrow"><span>Appendix A8 &middot; Your firm</span><span class="mins">7 min</span></div>
   <h2>What a Practice Pays in a Year</h2>
 
   <div class="panel" data-task="t-s11" data-comp="parameter-sandbox">
@@ -1866,9 +1923,10 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
  </div>
 </section>
 
-<section class="slide" id="s12" data-nav="Tier choice">
+<section class="slide apx" id="s12" data-nav="A9 · Tier choice" data-insert-after="s9" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A9 &middot; Assigning a Tier to Six Tasks From This Case</b><span>6 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
  <div class="body">
-  <div class="eyebrow"><span>07 &middot; Judgment</span><span class="mins">6 min</span></div>
+  <div class="eyebrow"><span>Appendix A9 &middot; Judgment</span><span class="mins">6 min</span></div>
   <h2>Assigning a Tier to Six Tasks From This Case</h2>
   <p class="big">There is no single right answer. There is a defensible answer and an indefensible one, and the difference is whether you can say why.</p>
   <div class="panel quiz" id="tierQuiz" data-task="t-s12" data-comp="commit-first-mcq"></div>
@@ -1878,9 +1936,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 <section class="slide" id="s13" data-nav="Confidentiality">
  <div class="body">
-  <div class="eyebrow"><span>08 &middot; The line</span><span class="mins">7 min</span></div>
+  <div class="eyebrow"><span>04 &middot; The line</span><span class="mins">5 min</span></div>
   <h2>What May Never Be Entered Into a Third-Party Tool</h2>
-  <p class="big">Every item is drawn from the Cole file. Three of these eight are the confidentiality landmines this case was built to carry. Drag each card into a bucket, or select a card and place it with the buttons under the deck. Once all eight are placed the check opens, reports a count and nothing else, and the key stays sealed until every card sits in the right bucket.</p>
+  <p class="big">Every item comes from the Cole file, and three of the eight are the confidentiality landmines. Place each card in a bucket by dragging it, or select it and use the buttons under the deck. The check reports a count and nothing else; the key opens only when every card is right.</p>
 
   <div class="sorter cardsort" data-task="t-s13" data-comp="two-bucket-sorter">
     <div>
@@ -1917,10 +1975,10 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 </section>
 
-<section class="slide apx" id="s14" data-nav="A6 · Regulation" data-insert-after="s13" data-tier="foundational">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A6 &middot; Existing FINRA Rules as Applied to AI</b><span>9 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+<section class="slide apx" id="s14" data-nav="A10 · Regulation" data-insert-after="s13" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A10 &middot; Existing FINRA Rules as Applied to AI</b><span>9 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
  <div class="body">
-  <div class="eyebrow"><span>Appendix A6 &middot; Regulation</span><span class="mins">9 min</span></div>
+  <div class="eyebrow"><span>Appendix A10 &middot; Regulation</span><span class="mins">9 min</span></div>
   <h2>Existing FINRA Rules as Applied to AI</h2>
   <p class="big">FINRA's rules are technology-neutral. Regulatory Notice 24-09 creates no new obligations &mdash; it confirms the existing ones already reach this.</p>
 
@@ -1948,42 +2006,58 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
  </div>
 </section>
 
-<section class="slide" id="s14b" data-nav="Custom instructions">
+<section class="slide" id="s14b" data-nav="Your own account">
  <div class="body">
-  <div class="eyebrow"><span>09 &middot; Custom instructions</span><span class="mins">4 min</span></div>
-  <h2>Where Account-Level Custom Instructions Are Configured</h2>
-  <p class="big">This is the only place in the course that shows you where account-level custom instructions live.</p>
+  <div class="eyebrow"><span>05 &middot; Your own account</span><span class="mins">10 min</span></div>
+  <h2>Your Own Account: Instructions and One Skill</h2>
+  <p class="big">Four settings, set in your own account, each one chosen by the room. The task is the Case 1 task: turn the Cole intake notes into a one-page intake summary and a plain-language letter on the two risk profiles. Only the synthetic Cole material goes in, and no client detail ever does.</p>
+
+  <div class="panel" data-task="t-s14b" data-comp="builder-assembler">
+    <span class="plab">Account builder &middot; the instructor reads each option aloud, the room picks, you click it here and make the same change in your account</span>
+
+    <h4>Step 1 &middot; Model picker</h4>
+    <div class="vote" id="acModel" role="group" aria-label="Step 1, choose a model"></div>
+    <p class="dim" style="font-size:14.5px;margin:0 0 6px">Which tiers your picker lists depends on the plan: Free includes Sonnet and Haiku, Pro adds Opus and reaches Fable through usage credits, and Max and Team Premium carry Fable at half of the weekly limits. <span class="conf h" data-src="src-claude-pricing" data-fact="claude-plans">H</span></p>
+
+    <h4 style="margin-top:22px">Step 2 &middot; A project</h4>
+    <div class="vote" id="acProject" role="group" aria-label="Step 2, choose a project"></div>
+
+    <h4 style="margin-top:22px">Step 3 &middot; Custom instructions</h4>
+    <p class="dim" style="font-size:14.5px;margin:0 0 6px">Select at least three elements. The instructor reads each one aloud first.</p>
+    <div class="ci" id="ciOpts"></div>
+
+    <h4 style="margin-top:22px">Step 4 &middot; One skill</h4>
+    <div class="vote" id="acSkill" role="group" aria-label="Step 4, choose a skill"></div>
+
+    <span class="plab" style="margin-top:22px">The block your choices assemble</span>
+    <div class="sampler lmout" id="ciOut" style="font-size:13px;line-height:1.7"><span class="dim">Choose an option in each step. The block assembles here.</span></div>
+    <div class="row"><span class="dim mono" style="font-size:12px">steps done: <b id="ciCount">0</b> of 4</span></div>
+  </div>
+
+  <div class="rnote"><span class="rh">How a skill is added</span>Zip the skill folder and upload the ZIP. Skills are available on Free, Pro, Max, Team and Enterprise, and the upload needs the &ldquo;Code execution and file creation&rdquo; setting on: under Settings &rsaquo; Capabilities on a personal plan, and an organization policy on Team and Enterprise, where an administrator turns it on, not you. <span class="conf h" data-fact="claude-skills-format">H</span></div>
 
   <table class="dt tight">
     <thead><tr><th>What you want</th><th>Where it is set</th><th>Scope</th></tr></thead>
     <tbody>
-      <tr><td>Standing instructions about you and how you want responses &mdash; role, context, format, tone</td><td class="n">Settings &rsaquo; Profile</td><td>Every new conversation on your account</td></tr>
+      <tr><td>Standing instructions about you and how you want responses: role, context, format, tone</td><td class="n">Settings &rsaquo; Profile</td><td>Every new conversation on your account</td></tr>
       <tr><td>Writing style specifically</td><td class="n">Style selector in the conversation</td><td>Selected per conversation</td></tr>
       <tr><td>Instructions for one body of work only</td><td class="n">Project instructions</td><td>That project only</td></tr>
     </tbody>
   </table>
-  <p class="dim" style="font-size:14.5px">Changes to account-level preferences apply to <b>new</b> conversations, not the one you are in. If you set them and nothing changes, that is why. Interface labels move between releases &mdash; if the path above does not match what you see, look under Settings first; the path here was accurate when this section was last revised.</p>
+  <p class="dim" style="font-size:14.5px">Changes to account-level preferences apply to <b>new</b> conversations, not the one you are in. If you set them and nothing changes, that is why. Interface labels move between releases, so if the path above does not match what you see, look under Settings first; the path here was accurate when this section was last revised.</p>
 
-  <div class="panel" data-task="t-s14b" data-comp="builder-assembler">
-    <span class="plab">Draft builder &mdash; select what belongs and the block assembles below</span>
-    <div class="ci" id="ciOpts"></div>
-    <div class="sampler" id="ciOut" style="font-size:13px;line-height:1.7"><span class="dim">Select at least three elements.</span></div>
-    <div class="row"><span class="dim mono" style="font-size:12px">selected: <b id="ciCount">0</b></span></div>
-  </div>
+  <div class="talk"><span class="th">What actually belongs in there</span>The instinct is to write a personality description. The useful content is closer to a standing brief: who you are professionally, what you are usually doing, what a good answer looks like, and what you never want.
+  <ul><li>Credential and role, because it changes the register and the assumed floor</li><li>The standing verification requirement, the single highest-value line for anyone doing this work</li><li>What never to include: no client-identifying detail, ever, in a standing instruction that will be attached to every future conversation</li></ul></div>
 
-  <div class="talk"><span class="th">What actually belongs in there &mdash; discussion</span>The instinct is to write a personality description. The useful content is closer to a standing brief: who you are professionally, what you are usually doing, what a good answer looks like, and what you never want.
-  <ul><li>Credential and role, because it changes the register and the assumed floor</li><li>The standing verification requirement &mdash; the single highest-value line for anyone doing this work</li><li>What never to include: no client-identifying detail, ever, in a standing instruction that will be attached to every future conversation</li></ul></div>
+  <div class="rnote"><span class="rh">Depth, if there is time</span>What a token is, and what one pass over the Cole documents costs on each tier: <a class="inl" href="#s5">A2 &middot; Token Counts and the Cost of a Document Pass</a> (5 min).</div>
 
-  <div class="check" data-gate="g15"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Select at least three elements and read the assembled block.</div></div>
+  <div class="check" data-gate="g15"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Choose an option in all four steps, then make the same four changes in your own account.</div></div>
  </div>
-
-
 </section>
 
-<section class="slide apx" id="s14c" data-nav="A7 · Discussion" data-insert-after="s14b" data-tier="standard">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A7 &middot; Disclosure of AI Use to the Client</b><span>15 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+<section class="slide" id="s14c" data-nav="Discussion">
  <div class="body">
-  <div class="eyebrow"><span>Appendix A7 &middot; Discussion</span><span class="mins">15 min</span></div>
+  <div class="eyebrow"><span>06 &middot; Discussion</span><span class="mins">15 min</span></div>
   <h2>Disclosure of AI Use to the Client</h2>
   <p class="big">You used a frontier model to summarise the Cole discovery meeting. The summary was accurate and you reviewed it line by line before it went in the file. Does Meg have to be told?</p>
 
@@ -1999,7 +2073,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel hidden" id="defencePanel">
     <span class="plab">Defence &mdash; the strongest case for each side, about ninety seconds each</span>
     <div class="sgrid" id="defenceGrid"></div>
-    <div class="inote" style="margin-bottom:0"><span class="ih">Complication &mdash; read this after you have argued both sides</span>Nothing in FINRA 24-09 requires disclosure of AI use to a client. The Notice says existing rules apply as written. So the question is not what the rule requires. It is what you would want on the record if the summary had been wrong and Meg's counsel asked how the file was produced.</div>
+    <div class="inote" style="margin-bottom:0"><span class="ih">Complication &mdash; read this after you have argued both sides</span>Nothing in FINRA 24-09 requires disclosure of AI use to a client. The Notice says existing rules apply as written. So the question is not what the rule requires. It is what you would want on the record if the summary had been wrong and Meg's counsel asked how the file was produced.<span id="discFact"></span></div>
     <div class="row"><button class="btn" id="toVote2">Open second vote</button></div>
   </div>
 
@@ -2022,75 +2096,26 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 <section class="slide" id="s15" data-nav="Close">
  <div class="body">
-  <div class="eyebrow"><span>10 &middot; Close</span><span class="mins">7 min</span></div>
-  <h2>The Baseline You Cannot Reconstruct Later</h2>
+  <div class="eyebrow"><span>07 &middot; Close</span><span class="mins">4 min</span></div>
+  <h2>The Closing Check on a Confident Answer</h2>
+  <p class="pull" style="font-size:clamp(27px,4.6vw,48px);max-width:20ch;margin-top:30px">It predicts. It does not know.</p>
+  <p class="big">You did it by hand: placed six tokens one at a time and watched each choice change the next list, asked one question three times and got three different dates, sorted this household&rsquo;s facts into what may and may not leave the building, and set up your own account for the Case 1 task. Sessions 2 through 5 all follow from that.</p>
 
-  <div class="bigask">
-    <span class="req">Capture it before you leave the room</span>
-    <h3>Efficiency Baseline</h3>
-    <p style="margin-top:10px">Name one recurring advisory task you perform at least weekly. Perform it once, <b>unassisted</b>, start to finish, and time it.</p>
-    <ol>
-      <li>The task, in one line.</li>
-      <li>Elapsed minutes, unassisted.</li>
-      <li>One line describing the output the task produces.</li>
-    </ol>
-    <div class="panel" style="background:#fff;margin:14px 0 0" data-task="t-s15" data-comp="timed-ritual">
-      <div class="sgrid">
-        <div><span class="plab">The task</span><input type="text" id="blTask" placeholder="e.g. quarterly review prep for one household"></div>
-        <div><span class="plab">Unassisted minutes</span><input type="text" id="blMin" placeholder="e.g. 47"></div>
-      </div>
-      <div style="margin-top:12px"><span class="plab">The output it produces</span><input type="text" id="blOut" placeholder="e.g. a two-page agenda and a funded-status summary"></div>
-      <div class="row" style="margin-top:12px"><button class="btn" id="blGo">Record it</button></div>
-      <div class="readout" id="blMsg"><span class="nil">Fill all three, then record. This page does not store it &mdash; write it down.</span></div>
-    </div>
-    <p class="warn2">This number is the denominator every efficiency claim you make is measured against, and it cannot be reconstructed later &mdash; once you have used a tool on the task, the unassisted time is gone.</p>
+  <div class="panel" data-task="t-s15" data-comp="timed-ritual">
+    <span class="plab">Closing check &middot; two minutes, in writing, then compare</span>
+    <p style="margin-top:0">A model has just handed you a clean, confident, well-written answer about how much the Coles should convert to Roth. Name the one thing this session said you still cannot conclude from that, and say which part of the machine is the reason.</p>
+    <textarea id="closeAns" aria-label="Your answer to the closing check" placeholder="One or two sentences, in your own words."></textarea>
+    <div class="row" style="margin-top:12px"><button type="button" class="btn" id="closeGo">Compare with the key</button></div>
+    <div class="readout" id="closeOut"><span class="nil">Write your answer first, then open the key.</span></div>
   </div>
 
-  <div class="cards">
-    <div class="card"><span class="num">Session 2 &sect;04</span><h4>Three prompt templates</h4><p>An email rewriter, a case-note formatter, a one-page plan summary generator. Session 2 &sect;04 builds up three starter prompts, then has you rewrite the weakest of the three you write, or one of its starters if you have none.</p></div>
-    <div class="card gold"><span class="num">&sect;09</span><h4>Account-level custom instructions</h4><p>&sect;09 shows you where they are configured.</p></div>
-  </div>
+  <div class="talk"><span class="th">Handoff to Session 2</span>Session 1 explained why the machine produces what it produces and gave you no way to change it. <b>Session 2 is the first session in which you change the output</b>: prompt construction is the only control you have that operates before the sampler ever runs.</div>
 
-  <table class="dt tight">
-    <thead><tr><th>Reading for Session 2</th><th>Portion</th></tr></thead>
-    <tbody>
-      <tr><td>Laplace (1902 / 1814)</td><td>Ch. II, "Concerning Probability," pp. 3&ndash;8</td></tr>
-      <tr><td>Wolfram (2023)</td><td>The passage on temperature &mdash; you have now used it</td></tr>
-      <tr><td>Google (2024), Prompting Guide 101</td><td>pp. 3&ndash;6, 60&ndash;70, two of the nine role examples</td></tr>
-      <tr><td>Anthropic (2025), AI Fluency &middot; Morningstar (2025), AI for Advisors</td><td>Full</td></tr>
-    </tbody>
-  </table>
+  <div class="check" data-gate="g17"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Write your answer to the closing check, then compare it with the key.</div></div>
 
-  <h3>CFP Board principal knowledge topics touched</h3>
-  <table class="dt tight">
-    <thead><tr><th>Domain</th><th>Where</th></tr></thead>
-    <tbody>
-      <tr><td>Professional Conduct and Regulation</td><td>The three confidentiality landmines; de-identification as a standard the name alone does not meet; the course rule on client data in a build transcript</td></tr>
-      <tr><td>General Principles</td><td>Model assumptions and the Monte Carlo parallel; tier selection as documented judgment</td></tr>
-      <tr><td>Tax Planning</td><td>IRMAA thresholds and the required beginning age as the arbitrary-fact example; denominator tracing across a long document</td></tr>
-      <tr><td>Estate Planning</td><td>Beneficiary-designation tracing; the 2024 memo against the 2026 plan; the unresolved Roth conversion question</td></tr>
-      <tr><td>Retirement Savings and Income</td><td>Two distribution clocks, the conversion window and the ten-year rule on Ruth&rsquo;s IRA, as a multi-step reasoning task</td></tr>
-      <tr><td>Investment Planning</td><td>One concentration problem, the Dunmore position at 16.8% of the taxable account but 2% of investable assets; custodial data reformatting</td></tr>
-      <tr><td>Risk Management and Insurance</td><td>A parent&rsquo;s assisted-living cost raised in a meeting, against a household with no long-term care coverage</td></tr>
-      <tr><td>Psychology of Financial Planning</td><td>A parent&rsquo;s care costs, two spouses who disagree, and what a summariser does to a disagreement</td></tr>
-    </tbody>
-  </table>
-
-  <p class="pull" style="font-size:clamp(27px,4.6vw,48px);max-width:20ch;margin-top:42px">It predicts. It does not know.</p>
-  <p class="big">You did it by hand: placed six tokens one at a time and watched each choice change the next list, asked one question three times and got three different dates, priced a year of it against your own headcount, and sorted this household's facts into what may and may not leave the building. Sessions 2 through 5 all follow from that.</p>
-
-  <div class="talk"><span class="th">Handoff to Session 2</span>Session 1 explained why the machine produces what it produces and gave you no way to change it. <b>Session 2 is the first session in which you change the output</b> &mdash; prompt construction is the only control you have that operates before the sampler ever runs.</div>
-
-  <div class="check" data-gate="g17"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Record your baseline above before you leave. It is the one thing you cannot do later.</div></div>
-
-  <div class="cards">
-    <div class="card"><span class="num">01</span><h4>Fluency against correctness</h4><p>A well-formed answer and a correct answer look identical.</p></div>
-    <div class="card"><span class="num">02</span><h4>Citation checks against the primary source</h4><p>Every citation checked against the primary source before it informs a recommendation.</p></div>
-    <div class="card"><span class="num">03</span><h4>Tier selection as documented judgment</h4><p>Capability against cost per task, on your task, not someone else's benchmark.</p></div>
-    <div class="card"><span class="num">04</span><h4>The signature on the work</h4><p>The tool is not a co-signer, a supervisor, or a defence.</p></div>
-  </div>
-
-  <div class="talk"><span class="th">Closing question &middot; answer it before you close the page</span>A model has just handed you a clean, confident, well-written answer about how much the Coles should convert to Roth. Name the one thing this session said you still cannot conclude from that, and say which part of the machine is the reason.</div>
+<!-- READINGS:BEGIN s2 -->
+<div class="card" data-readings="s2"><span class="num">Reading for Session 2</span><p class="dim">Filled before the term starts.</p></div>
+<!-- READINGS:END -->
  </div>
 </section>
 
@@ -2100,27 +2125,27 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <thead><tr><th>Section</th><th>Title</th><th>Min</th></tr></thead>
 <!-- APXBUDGET:BEGIN generated-by=scripts/build-appendix.mjs -->
     <tbody>
-      <tr><td>BUS ADM X433.4 &middot; Session 1</td><td>Prediction, Model Tiers, and the Cost of Using Them</td><td class="n">6</td></tr>
-      <tr><td>01 &middot; Cold open &middot; standing ritual</td><td>The Last Prompt You Sent</td><td class="n">8</td></tr>
-      <tr><td>02 &middot; Wolfram, &ldquo;It&rsquo;s Just Adding One Word at a Time&rdquo;</td><td>Candidate Rankings and the Selection Step</td><td class="n">7</td></tr>
-      <tr><td>03 &middot; Tokens and price</td><td>Token Counts and the Cost of a Document Pass</td><td class="n">5</td></tr>
-      <tr><td>04 &middot; Consequence</td><td>The Same Question, Asked Three Times</td><td class="n">7</td></tr>
-      <tr><td>05 &middot; Capability against price</td><td>Intelligence Index Plotted Against Cost per Task</td><td class="n">5</td></tr>
-      <tr><td>06 &middot; Your firm</td><td>What a Practice Pays in a Year</td><td class="n">7</td></tr>
-      <tr><td>07 &middot; Judgment</td><td>Assigning a Tier to Six Tasks From This Case</td><td class="n">6</td></tr>
-      <tr><td>08 &middot; The line</td><td>What May Never Be Entered Into a Third-Party Tool</td><td class="n">7</td></tr>
-      <tr><td>09 &middot; Custom instructions</td><td>Where Account-Level Custom Instructions Are Configured</td><td class="n">4</td></tr>
-      <tr><td>10 &middot; Close</td><td>The Baseline You Cannot Reconstruct Later</td><td class="n">7</td></tr>
+      <tr><td>BUS ADM X433.4 &middot; Session 1</td><td>Prediction, Model Tiers, and the Cost of Using Them</td><td class="n">4</td></tr>
+      <tr><td>01 &middot; Case 1: Intake summary and risk-profile letter</td><td>The Intake Summary and the Letter on Two Risk Profiles</td><td class="n">10</td></tr>
+      <tr><td>02 &middot; Wolfram, &ldquo;It&rsquo;s Just Adding One Word at a Time&rdquo;</td><td>Candidate Rankings and the Selection Step</td><td class="n">6</td></tr>
+      <tr><td>03 &middot; Consequence</td><td>The Same Question, Asked Three Times</td><td class="n">6</td></tr>
+      <tr><td>04 &middot; The line</td><td>What May Never Be Entered Into a Third-Party Tool</td><td class="n">5</td></tr>
+      <tr><td>05 &middot; Your own account</td><td>Your Own Account: Instructions and One Skill</td><td class="n">10</td></tr>
+      <tr><td>06 &middot; Discussion</td><td>Disclosure of AI Use to the Client</td><td class="n">15</td></tr>
+      <tr><td>07 &middot; Close</td><td>The Closing Check on a Confident Answer</td><td class="n">4</td></tr>
       <tr class="apxrow"><td>Appendix A1 &middot; Mechanism, deeper</td><td>N-gram Counting and Its Limits</td><td class="n">11</td></tr>
-      <tr class="apxrow"><td>Appendix A2 &middot; Mechanism, deeper</td><td>Fitting a Model by Hand</td><td class="n">12</td></tr>
+      <tr class="apxrow"><td>Appendix A2 &middot; Tokens and price</td><td>Token Counts and the Cost of a Document Pass</td><td class="n">5</td></tr>
       <tr class="apxrow"><td>Appendix A3 &middot; Mechanism, deeper</td><td>Words Laid Out So That Nearby Means Similar</td><td class="n">9</td></tr>
       <tr class="apxrow"><td>Appendix A4 &middot; Failure mode</td><td>The Task a Transformer Cannot Reliably Learn</td><td class="n">9</td></tr>
-      <tr class="apxrow"><td>Appendix A5 &middot; Lab</td><td>The Nine Controls Between the Model and Your Answer</td><td class="n">16</td></tr>
-      <tr class="apxrow"><td>Appendix A6 &middot; Regulation</td><td>Existing FINRA Rules as Applied to AI</td><td class="n">9</td></tr>
-      <tr class="apxrow"><td>Appendix A7 &middot; Discussion</td><td>Disclosure of AI Use to the Client</td><td class="n">15</td></tr>
+      <tr class="apxrow"><td>Appendix A5 &middot; Mechanism, deeper</td><td>Fitting a Model by Hand</td><td class="n">12</td></tr>
+      <tr class="apxrow"><td>Appendix A6 &middot; Lab</td><td>The Nine Controls Between the Model and Your Answer</td><td class="n">16</td></tr>
+      <tr class="apxrow"><td>Appendix A7 &middot; Capability against price</td><td>Tiers, Leaderboards, and the Other Assistants</td><td class="n">6</td></tr>
+      <tr class="apxrow"><td>Appendix A8 &middot; Your firm</td><td>What a Practice Pays in a Year</td><td class="n">7</td></tr>
+      <tr class="apxrow"><td>Appendix A9 &middot; Judgment</td><td>Assigning a Tier to Six Tasks From This Case</td><td class="n">6</td></tr>
+      <tr class="apxrow"><td>Appendix A10 &middot; Regulation</td><td>Existing FINRA Rules as Applied to AI</td><td class="n">9</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 69 + appendix 81; the core alone runs 69 minutes, nine minutes over the hour</td><td class="n">150</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 60 + appendix 90; the core alone runs 60 minutes, and fits the hour</td><td class="n">150</td></tr>
     </tbody>
 <!-- APXBUDGET:END -->
   </table>
@@ -2130,23 +2155,23 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h3 style="margin:22px 0 4px;font-size:17px">Sources cited in this session</h3>
   <ol class="srcs">
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 999987d72d1a78bac27bcab28325f0bfa1d0ed6de79a88691db333f0e47780f8 -->
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 47aa3d030b161261ed875355b33ce39f23efdf23bf6e9b90d2caeb40e17efe4e -->
       <li id="src-pricing">Anthropic. <em>Pricing</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com/docs/en/about-claude/pricing</a> Retrieved 2026, October 11. Used for: per-token rates for the four current Claude models, the five-to-one output-to-input price ratio, cache and batch discounts, and the Cole document-pass arithmetic. <span class="conf h" data-src="src-pricing">H</span></li>
-      <li id="src-context-windows">Anthropic. <em>Context windows</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">platform.claude.com</a> Retrieved 2026, October 11. Used for: the definition of the context window, all the text the model can reference when generating a response, the response itself included, which is not the box you type in (§03). <span class="conf h" data-src="src-context-windows">H</span></li>
-      <li id="src-models">Anthropic. <em>Models overview</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/models/overview">platform.claude.com/docs/en/models/overview</a> Retrieved 2026, October 11. Used for: the 1M-token context window of the current Claude models (§03). <span class="conf h" data-src="src-models">H</span></li>
-      <li id="src-claude-pricing">Anthropic. <em>Plans and pricing</em>. claude.com. <a href="https://claude.com/pricing">claude.com/pricing</a> Retrieved 2026, October 11. Used for: the Pro and Max subscription prices set against metered API cost in the practice-cost comparison (§06). <span class="conf h" data-src="src-claude-pricing">H</span></li>
-      <li id="src-anthropic-deprecations">Anthropic. (2026, September 30). <em>Model deprecations</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">platform.claude.com/docs/en/about-claude/model-deprecations</a> Retrieved 2026, October 11. Other sessions cite other retrievals of this page. Used for: the names of the four current Claude models in the tier table (§05). <span class="conf h" data-src="src-anthropic-deprecations">H</span></li>
-      <li id="src-arena-board">Arena. <em>Text leaderboard</em>. arena.ai. <a href="https://arena.ai/leaderboard/chat/text">arena.ai/leaderboard/chat/text</a> Retrieved 2026, October 11. Used for: what Arena measures and the first two places on its text leaderboard, Gemini 4 Argon 1,525 (preliminary) and Claude Opus 5.5 1,507, snapshot dated 8 October 2026 (§05). <span class="conf l" data-src="src-arena-board">L</span></li>
-      <li id="src-arena-rename">Arena. (2026, January 28). <em>LMArena is now Arena</em>. arena.ai. <a href="https://arena.ai/blog/lmarena-is-now-arena">arena.ai/blog/lmarena-is-now-arena</a> Retrieved 2026, October 11. Used for: the name Arena, with one parenthetical "formerly LMArena" at first mention (§05). <span class="conf m" data-src="src-arena-rename">M</span></li>
-      <li id="src-sampling">artefact2. <em>LLM sampling visualiser</em>. GitHub Pages. <a href="https://artefact2.github.io/llm-sampling/">artefact2.github.io/llm-sampling</a> Used for: the nine sampler controls reimplemented in Appendix A5. <span class="conf h" data-src="src-sampling">H</span></li>
+      <li id="src-context-windows">Anthropic. <em>Context windows</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">platform.claude.com</a> Retrieved 2026, October 11. Used for: the definition of the context window, all the text the model can reference when generating a response, the response itself included, which is not the box you type in (Appendix A2). <span class="conf h" data-src="src-context-windows">H</span></li>
+      <li id="src-models">Anthropic. <em>Models overview</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/models/overview">platform.claude.com/docs/en/models/overview</a> Retrieved 2026, October 11. Used for: the 1M-token context window of the current Claude models (Appendix A2). <span class="conf h" data-src="src-models">H</span></li>
+      <li id="src-claude-pricing">Anthropic. <em>Plans and pricing</em>. claude.com. <a href="https://claude.com/pricing">claude.com/pricing</a> Retrieved 2026, October 11. Used for: the Pro and Max subscription prices set against metered API cost in the practice-cost comparison (Appendix A8). <span class="conf h" data-src="src-claude-pricing">H</span></li>
+      <li id="src-anthropic-deprecations">Anthropic. (2026, September 30). <em>Model deprecations</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">platform.claude.com/docs/en/about-claude/model-deprecations</a> Retrieved 2026, October 11. Other sessions cite other retrievals of this page. Used for: the names of the four current Claude models in the tier table (Appendix A7). <span class="conf h" data-src="src-anthropic-deprecations">H</span></li>
+      <li id="src-arena-board">Arena. <em>Text leaderboard</em>. arena.ai. <a href="https://arena.ai/leaderboard/chat/text">arena.ai/leaderboard/chat/text</a> Retrieved 2026, October 11. Used for: what Arena measures and the first two places on its text leaderboard, Gemini 4 Argon 1,525 (preliminary) and Claude Opus 5.5 1,507, snapshot dated 8 October 2026 (Appendix A7). <span class="conf l" data-src="src-arena-board">L</span></li>
+      <li id="src-arena-rename">Arena. (2026, January 28). <em>LMArena is now Arena</em>. arena.ai. <a href="https://arena.ai/blog/lmarena-is-now-arena">arena.ai/blog/lmarena-is-now-arena</a> Retrieved 2026, October 11. Used for: the name Arena, with one parenthetical "formerly LMArena" at first mention (Appendix A7). <span class="conf m" data-src="src-arena-rename">M</span></li>
+      <li id="src-sampling">artefact2. <em>LLM sampling visualiser</em>. GitHub Pages. <a href="https://artefact2.github.io/llm-sampling/">artefact2.github.io/llm-sampling</a> Used for: the nine sampler controls reimplemented in Appendix A6. <span class="conf h" data-src="src-sampling">H</span></li>
       <li id="src-aa">Artificial Analysis. <em>Artificial Analysis Intelligence Index and cost-per-task figures</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a> Retrieved 2026, July 28. Other sessions cite other retrievals of this page. Used for: the capability-against-price frontier and the tier comparison. <span class="conf m" data-src="src-aa">M</span></li>
-      <li id="src-aa-leaderboard">Artificial Analysis. <em>Language model leaderboard, Intelligence Index</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/leaderboards/models">artificialanalysis.ai/leaderboards/models</a> Retrieved 2026, October 11. Used for: the current Intelligence Index snapshot beside the July scatter (§05): Claude Opus 5.5 (Max) 58, Claude Sonnet 5.5 (Max) 56, GPT-6 Astra (Max) 53, Gemini 4 Argon (High) 53, about 7 October 2026. <span class="conf m" data-src="src-aa-leaderboard">M</span></li>
-      <li id="src-aa-index">Artificial Analysis. <em>Intelligence Index methodology</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index">artificialanalysis.ai</a> Retrieved 2026, October 11. Used for: what the Intelligence Index measures, version 4.3.2 (§05). <span class="conf m" data-src="src-aa-index">M</span></li>
+      <li id="src-aa-leaderboard">Artificial Analysis. <em>Language model leaderboard, Intelligence Index</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/leaderboards/models">artificialanalysis.ai/leaderboards/models</a> Retrieved 2026, October 11. Used for: the current Intelligence Index snapshot beside the July scatter (Appendix A7): Claude Opus 5.5 (Max) 58, Claude Sonnet 5.5 (Max) 56, GPT-6 Astra (Max) 53, Gemini 4 Argon (High) 53, about 7 October 2026. <span class="conf m" data-src="src-aa-leaderboard">M</span></li>
+      <li id="src-aa-index">Artificial Analysis. <em>Intelligence Index methodology</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index">artificialanalysis.ai</a> Retrieved 2026, October 11. Used for: what the Intelligence Index measures, version 4.3.2 (Appendix A7). <span class="conf m" data-src="src-aa-index">M</span></li>
       <li id="src-finra2409">Financial Industry Regulatory Authority. (2024, June 27). <em>Regulatory Notice 24-09</em>. FINRA. <a href="https://www.finra.org/rules-guidance/notices/24-09">finra.org/rules-guidance/notices/24-09</a> Used for: the position that existing rules apply to generative AI and that supervision is not suspended by the technology, and that the notice is still published with no rescission, beside FINRA's 2026 Annual Regulatory Oversight Report and its Generative AI section. <span class="conf h" data-src="src-finra2409">H</span></li>
       <li id="src-kalai">Kalai, A. T., Nachum, O., Vempala, S. S., &amp; Zhang, E. (2025). <em>Why language models hallucinate</em>. arXiv:2509.04664, §1 and §1.2. Retrieved 2025, May 11. Used for: why a model guesses rather than abstains, and the two scoring rules. <span class="conf h" data-src="src-kalai">H</span></li>
-      <li id="src-livebench">LiveBench. <em>LiveBench leaderboard and question releases</em>. livebench.ai. <a href="https://livebench.ai/">livebench.ai</a> Retrieved 2026, October 11. Used for: what LiveBench measures and its latest question release, LiveBench-2026-06-25 (§05). <span class="conf m" data-src="src-livebench">M</span></li>
+      <li id="src-livebench">LiveBench. <em>LiveBench leaderboard and question releases</em>. livebench.ai. <a href="https://livebench.ai/">livebench.ai</a> Retrieved 2026, October 11. Used for: what LiveBench measures and its latest question release, LiveBench-2026-06-25 (Appendix A7). <span class="conf m" data-src="src-livebench">M</span></li>
       <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: every worked example in this session and the next three. Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
-      <li id="src-rohrer">Rohrer, D., Dedrick, R. F., &amp; Stershic, S. (2015). <em>Interleaved practice improves mathematics learning</em>. Journal of Educational Psychology, 107(3), 900–908. <a href="https://doi.org/10.1037/edu0000001">doi.org/10.1037/edu0000001</a> Retrieved 2026, August 29. Used for: the interleaved deck order of the section 08 card sort. <span class="conf h" data-src="src-rohrer">H</span></li>
+      <li id="src-rohrer">Rohrer, D., Dedrick, R. F., &amp; Stershic, S. (2015). <em>Interleaved practice improves mathematics learning</em>. Journal of Educational Psychology, 107(3), 900–908. <a href="https://doi.org/10.1037/edu0000001">doi.org/10.1037/edu0000001</a> Retrieved 2026, August 29. Used for: the interleaved deck order of the section 04 card sort. <span class="conf h" data-src="src-rohrer">H</span></li>
       <li id="src-sec-ai">U.S. Securities and Exchange Commission. (2024, March 18). <em>Enforcement actions against Delphia (USA) Inc. and Global Predictions, Inc.</em> SEC. <a href="https://www.sec.gov/newsroom/press-releases/2024-36">sec.gov/newsroom/press-releases/2024-36</a> Used for: the AI-washing settlements and their penalty amounts. <span class="conf m" data-src="src-sec-ai">M</span></li>
       <li id="src-wolfram">Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a> Used for: next-token prediction, the temperature passage, tokens and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. <span class="conf h" data-src="src-wolfram">H</span></li>
 <!-- SOURCES:END -->
@@ -2396,24 +2421,102 @@ document.addEventListener('keydown',function(e){
    into the span now, so all six files run one implementation with focus trapped
    while the dialog is open and returned when it closes. Nothing about the case
    dialog is written in this file any more. */
-/* Case-figure picker. Options derive from the injected COLE constants at
-   render time; no case figure is typed here. Any selection is valid, the
-   exercise has no single right answer, so the gate marks on a real
-   selection. The "why" field is free text and is not scored. */
-(function(){var p=$('s1pick');if(!p)return;
-  var OPTS=[
-    'the '+COLE.preTaxPct+'% share of investable assets held in pre-tax accounts',
-    'the $'+fmt(COLE.bracketRoom)+' of room left in the '+COLE.marginalRate+'% bracket',
-    'the '+COLE.esppPct+'% share of the taxable account held in Dunmore stock',
-    'the '+COLE.megWindowStart+' to '+COLE.megWindowEnd+' Roth conversion window for Meg',
-    'the $'+fmt(COLE.ruthAssistedBase)+' a month assisted-living base rate at Maple Court',
-    'the $'+fmt(COLE.netWorth)+' household net worth total',
-    'the $'+fmt(COLE.davidRollover)+' balance of David\u2019s rollover IRA',
-    'the '+COLE.riskGap+'-point gap between the two risk scores'];
-  p.innerHTML='<option value="">Choose a figure</option>'+OPTS.map(function(t,i){
-    return '<option value="'+(i+1)+'">'+t+'</option>'}).join('');
-  p.addEventListener('change',function(){if(p.value)mark('g1')});
+/* Account check. Any plan is a valid answer, so the gate marks on a real
+   choice. Nothing is stored: the line under the select is the only output. */
+(function(){var p=$('s1plan'),o=$('s1planOut');if(!p)return;
+  var LINE={
+   none:'No account yet. Watch the screen for section 05, then open one from the <a class="inl" href="../session-0.1/index.html">setup page</a>.',
+   other:'Another assistant. The four steps in section 05 have equivalents there; map each one as the room goes.'};
+  p.addEventListener('change',function(){if(!p.value)return;
+    o.innerHTML=LINE[p.value]||'Noted on this screen only. Section 05 flags the steps your plan changes.';
+    mark('g1')});
 })();
+
+/* ===== 01 CASE 1 OPENER: rank three intake facts, predict the scores, commit, reveal =====
+   prediction-commit. Every figure is read from COLE; the notes beside each
+   fact restate CASE.md and draw no conclusion the case file does not draw.
+   The commit locks on the button, the reveal opens after it, and nothing is
+   withheld from Shift+U. */
+var CASEF=[
+ {t:COLE.preTaxPct+'% of the investable assets sit in pre-tax accounts',
+  w:'Every dollar of it is ordinary income to someone in some year, which is the fact the Roth question turns on.'},
+ {t:'The beneficiary form on David’s '+COLEm('davidRollover')+' rollover IRA names '+COLE.dorothyName+', who died '+COLE.dorothyDied+', and no one else',
+  w:'The form is dated '+COLE.rolloverFormDate+' and, with no surviving beneficiary, pays to the estate by default. Neither spouse has engaged with it, which is why an intake can miss it.'},
+ {t:'Meg stops work at '+COLE.megRetireAge+' in '+COLE.megRetireYear+' and David at '+COLE.davidRetireAge+' in '+COLE.davidRetireYear,
+  w:'The years between the last paycheck and the first required distribution are the conversion window: Meg '+COLE.megWindowStart+' to '+COLE.megWindowEnd+', David '+COLE.davidWindowStart+' to '+COLE.davidWindowEnd+'.'},
+ {t:COLE.ruthName+', '+COLE.ruthAge+', may need assisted living at a base rate of '+COLEm('ruthAssistedBase')+' a month, and neither spouse has long-term care coverage',
+  w:'Her independent-living fee is '+COLEm('ruthMonthlyFee')+' a month today. Being ready for her is one of the household’s five stated goals.'},
+ {t:'The Dunmore stock is '+COLE.esppPct+'% of the taxable account',
+  w:'It is '+COLE.allocEspp+'% of investable assets, inside the '+COLE.ipsMaxPosition+'% policy limit, so the limit and the account tell different stories.'},
+ {t:'The wills and powers of attorney date from '+COLE.willsDate+' and name '+COLE.guardian+' as guardian of children, one of whom is now an adult',
+  w:'They also name a successor agent who has died, and there is no trust.'},
+ {t:'The prior adviser’s memo of '+COLE.memoDate+' says the Dunmore plan does not permit in-plan Roth conversion',
+  w:'The plan summary amended '+COLE.spdAmended+' permits it. The memo is signed and sourced, and it is wrong about the plan now.'},
+ {t:'Group life cover ends when each paycheck does, and Meg’s '+COLEm('megTermLife')+' term policy ends in '+COLE.megTermEnds,
+  w:'The household’s cover falls away on the same clock as the income. Meg’s individual term policy lapses two years into her retirement.'}];
+var CASEV=[
+ {k:'A',t:'Close together: within 10 points of each other'},
+ {k:'B',t:'Meg scores higher: she tolerates more risk than David, by 10 points or more'},
+ {k:'C',t:'David scores higher: he tolerates more risk than Meg, by 10 points or more'}];
+(function(){
+  var host=$('caseFacts');if(!host)return;
+  var rank=[],vote=null,locked=false;
+  var gap=COLE.davidRiskScore-COLE.megRiskScore,truth=Math.abs(gap)<10?'A':(gap<0?'B':'C');
+  host.innerHTML=CASEF.map(function(f,i){
+    return '<button type="button" class="chip caserank" data-f="'+i+'" aria-pressed="false"><span class="crk"></span><span>'+f.t+'</span></button>'}).join('');
+  $('caseVote').innerHTML=CASEV.map(function(o){
+    return '<button type="button" class="vopt" data-cv="'+o.k+'" aria-pressed="false"><span class="vk">'+o.k+'</span><span>'+o.t+'</span></button>'}).join('');
+  function paint(){
+    all('.caserank',host).forEach(function(b){var r=rank.indexOf(+b.dataset.f);
+      b.classList.toggle('act',r>=0);b.setAttribute('aria-pressed',r>=0?'true':'false');
+      b.querySelector('.crk').textContent=r>=0?String(r+1):''});
+    all('[data-cv]',$('caseVote')).forEach(function(b){var on=b.dataset.cv===vote;
+      b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false')});
+    $('caseRanked').textContent=rank.length;
+    var ready=rank.length===3&&vote!==null;
+    $('caseCommit').disabled=locked||!ready;
+    $('caseMsg').textContent=locked?'Committed. The reveal is open below.':(ready?'Ready. Commit both answers.':'Rank three facts and pick one prediction.')}
+  function tally(){
+    var c={},s=0;CASEV.forEach(function(o){var el=document.querySelector('[data-ct="'+o.k+'"]');
+      c[o.k]=Math.max(0,parseFloat(el&&el.value)||0);s+=c[o.k]});
+    $('caseTallyBars').innerHTML=s?CASEV.map(function(o){var p=c[o.k]/s*100;
+      return '<div class="drow'+(o.k===truth?' keep':'')+'"><span>'+o.k+(o.k===truth?' (the scores)':'')+'</span><span class="dbar"><span style="width:'+p.toFixed(1)+'%"></span></span><span class="pv">'+p.toFixed(0)+'%</span></div>'}).join(''):''}
+  function reveal(committed){
+    var ms=COLE.megRiskScore,ds=COLE.davidRiskScore,d='';
+    if(committed){
+      var ok=vote===truth;
+      d+='<span class="cz">Your commitment</span><b>Your three, in rank order</b><ol style="margin:6px 0 10px;padding-left:20px">'+
+        rank.map(function(i){return '<li>'+CASEF[i].t+'</li>'}).join('')+'</ol>'+
+        '<b>Your prediction, '+vote+':</b> '+(ok?'right.':'not this time.')+' Meg scored '+ms+' and David '+ds+', '+Math.abs(gap)+' points apart.'}
+    else d+='<span class="cz">The scores</span>Meg scored '+ms+' and David '+ds+', '+Math.abs(gap)+' points apart.';
+    $('caseOut').className='readout on';$('caseOut').innerHTML=d;
+    $('caseScores').innerHTML=
+      '<div class="drow keep"><span>Meg</span><span class="dbar"><span style="width:'+ms+'%"></span></span><span class="pv">'+ms+'</span></div>'+
+      '<div class="drow keep"><span>David</span><span class="dbar"><span style="width:'+ds+'%"></span></span><span class="pv">'+ds+'</span></div>';
+    var n='<span class="cz">What the file says</span>Meg is '+COLE.megRiskBand+' and David is '+COLE.davidRiskBand+': three bands apart. The largest one-year loss each would tolerate before wanting to change the plan is '+
+      COLE.megLossTolerance+'% for Meg and '+COLE.davidLossTolerance+'% for David. The couple had never discussed it before the intake meeting.';
+    var pick=committed?rank:CASEF.map(function(_,i){return i});
+    n+='<ul style="margin:10px 0 0;padding-left:20px">'+pick.map(function(i){return '<li>'+CASEF[i].w+'</li>'}).join('')+'</ul>'+
+      '<div class="fx">The finished summary is one page, so it had to choose what leads. Open it and compare its lead with '+(committed?'your three':'this list')+'.</div>';
+    $('caseNotes').className='readout on';$('caseNotes').innerHTML=n;
+    $('caseReveal').classList.remove('hidden');tally()}
+  host.addEventListener('click',function(e){
+    var b=e.target.closest('.caserank');if(!b||locked)return;
+    var i=+b.dataset.f,pos=rank.indexOf(i);
+    if(pos>=0)rank.splice(pos,1);else if(rank.length<3)rank.push(i);
+    paint()});
+  $('caseVote').addEventListener('click',function(e){
+    var b=e.target.closest('[data-cv]');if(!b||locked)return;
+    vote=b.dataset.cv;paint()});
+  $('caseCommit').onclick=function(){
+    if(locked||rank.length<3||vote===null)return;
+    locked=true;reveal(true);paint();mark('gcase');
+    if($('caseReveal').scrollIntoView)$('caseReveal').scrollIntoView()};
+  $('caseTallyIn').innerHTML=CASEV.map(function(o){
+    return '<label class="mono dim" style="font-size:12px">'+o.k+' <input type="text" inputmode="numeric" data-ct="'+o.k+'" placeholder="0" style="width:70px" aria-label="Poll count for option '+o.k+'"></label>'}).join('');
+  all('[data-ct]').forEach(function(i){i.addEventListener('input',tally)});
+  onRevealAll(function(){if(!locked)reveal(false)});
+  paint()})();
 
 /* ===== 01 PREDICTION ===== */
 var G2={tok:0,temp:{},ax:0};
@@ -3099,32 +3202,84 @@ all('[data-dp]').forEach(function(b){b.onclick=function(){
   all('[data-dp]').forEach(function(x){x.classList.toggle('act',x===b)});dpDraw(+b.dataset.dp)}});
 dpDraw(0);
 
-/* ===== 14 CUSTOM INSTRUCTIONS BUILDER ===== */
+/* ===== 14 YOUR OWN ACCOUNT: model, project, custom instructions, one skill =====
+   builder-assembler. The instructor reads each option aloud, the room picks,
+   and the block below assembles from the picks. Nothing is stored and nothing
+   leaves the page. Model names are the four in facts/FACTS.json. */
 var CIOPT=[
- {k:'role',l:'Credential and role',v:'I am a CERTIFIED FINANCIAL PLANNER\u2122 professional working with pre-retiree households on retirement income, tax and estate planning.'},
+ {k:'role',l:'Credential and role',v:'I am a CERTIFIED FINANCIAL PLANNER™ professional working with pre-retiree households on retirement income, tax and estate planning.'},
  {k:'verify',l:'Standing verification requirement',v:'Never state a statute, rate, threshold or case as settled without telling me it needs verification. Label anything you cannot verify as unverified rather than omitting the caveat.'},
  {k:'conf',l:'Confidence labelling',v:'Label material claims H, M or L for confidence, and name the source you are relying on.'},
  {k:'fmt',l:'Default output format',v:'Default to structured bullets and tables over long prose. Lead with the answer, then the reasoning.'},
  {k:'push',l:'Push back on me',v:'Challenge a flawed premise before answering it. If my question rests on an error, say so first.'},
  {k:'noflat',l:'Preserve disagreement',v:'When summarising a discussion, list points of disagreement and unresolved items separately. Do not smooth conflict into consensus.'},
- {k:'noclient',l:'No client detail (what NOT to include)',v:'[Do not put any client-identifying detail in a standing instruction \u2014 it attaches to every future conversation.]'}
+ {k:'noclient',l:'No client detail (what NOT to include)',v:'[Do not put any client-identifying detail in a standing instruction: it attaches to every future conversation.]'}
 ];
+var ACCT={
+ model:[
+  {l:'Haiku 5.5',t:'The smallest and cheapest tier. Enough for reformatting text you already trust.',
+   w:'the smallest tier suits reformatting text you already trust, and both pieces here carry figures you answer for.'},
+  {l:'Sonnet 5.5',t:'The mid tier. It matches a draft you read before it goes out, which both pieces are.',
+   w:'the mid tier matches a draft you read before it goes out.'},
+  {l:'Opus 5.5',t:'The upper tier. Built for long multi-step reasoning, which a summary and a letter rarely need.',
+   w:'the upper tier is built for long multi-step reasoning; this task is extraction and plain-language drafting, so you pay for reach you will not use.'},
+  {l:'Fable 5.1',t:'The top tier. Reached through usage credits or a higher plan, and priced to match.',
+   w:'the top tier costs the most, and this task does not use what it adds.'}],
+ project:[
+  {l:'One project for this task',t:'Instructions for the intake summary and the letter, and nothing else. Project instructions apply to that project only.',
+   act:'Create a project named "Intake summary".',
+   instr:'Produce a one-page household intake summary. Mark every figure with the document it came from. List open questions. Make no recommendation.'},
+  {l:'One project for the household',t:'Every Cole task shares one set of instructions. Broader, and it drifts as the tasks differ.',
+   act:'Create a project named "Cole household".',
+   instr:'Work only from the synthetic Cole material pasted into the conversation. Mark every figure with its source. Flag any document older than the latest plan change.'},
+  {l:'No project',t:'One conversation, with the instructions pasted in each time. Nothing carries to the next conversation.',
+   act:'Stay in a plain conversation.',
+   instr:'Paste the task instructions at the top of the conversation.'}],
+ skill:[
+  {l:'intake-summary',t:'One page. The facts that most change the plan lead, each figure carries its source line, open questions are listed, and there is no recommendation.',
+   name:'intake-summary',desc:'Use when turning intake notes into a one-page household summary.',
+   steps:['Lead with the facts that most change the plan.','Give each figure its source document and line.','List open questions and missing documents.','Make no recommendation.']},
+  {l:'risk-profile-letter',t:'Each score and band in one sentence, in the clients’ own words, then how the firm will reconcile the two, in language a client need not look up.',
+   name:'risk-profile-letter',desc:'Use when explaining two risk scores to a couple in plain language.',
+   steps:['State each score and band in one sentence.','Quote each person’s own stated reason.','Say how the firm will reconcile the two without choosing for them.','Avoid any term a client would need to look up.']},
+  {l:'figure-check',t:'Recompute each total, trace each figure to its document, and return a list of what cannot be traced, not a corrected draft.',
+   name:'figure-check',desc:'Use before any draft goes in the client file.',
+   steps:['Recompute every total from its parts.','Trace each figure to the document it came from.','List every figure that cannot be traced.','Return the list, not a corrected draft.']}]};
 (function(){
-  var sel={};
+  var sel={},A={model:-1,project:-1,skill:-1};
+  function group(host,key){
+    $(host).innerHTML=ACCT[key].map(function(o,i){
+      return '<button type="button" class="vopt" data-o="'+i+'" aria-pressed="false"><span class="vk">'+'ABCD'.charAt(i)+'</span><span><b>'+o.l+'</b>: '+o.t+'</span></button>'}).join('');
+    all('[data-o]',$(host)).forEach(function(b){b.onclick=function(){
+      A[key]=+b.dataset.o;
+      all('[data-o]',$(host)).forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on?'true':'false')});
+      draw()}})}
+  function draw(){
+    var keys=CIOPT.filter(function(o){return sel[o.k]}),n=0,parts=['ACCOUNT SETUP FOR THE CASE 1 TASK (synthetic Cole material only)'];
+    if(A.model>=0){var m=ACCT.model[A.model];n++;
+      parts.push('1. MODEL\nOpen the model picker and choose '+m.l+'.\nWhy: '+m.w)}
+    if(A.project>=0){var p=ACCT.project[A.project];n++;
+      parts.push('2. PROJECT\n'+p.act+'\nProject instructions: '+p.instr)}
+    if(keys.length>=3){n++;
+      parts.push('3. CUSTOM INSTRUCTIONS (they apply to new conversations)\n'+keys.map(function(o){return o.v}).join('\n\n'))}
+    if(A.skill>=0){var s=ACCT.skill[A.skill];n++;
+      parts.push('4. SKILL\nSKILL.md\nname: '+s.name+'\ndescription: '+s.desc+'\nsteps:\n'+s.steps.map(function(x,i){return (i+1)+'. '+x}).join('\n'))}
+    $('ciCount').textContent=n;
+    if(!n){$('ciOut').innerHTML='<span class="dim">Choose an option in each step. The block assembles here.</span>';return}
+    $('ciOut').textContent=parts.join('\n\n');
+    if(n===4)mark('g15')}
+  group('acModel','model');group('acProject','project');group('acSkill','skill');
   $('ciOpts').innerHTML=CIOPT.map(function(o){
     return '<label data-ci="'+o.k+'"><input type="checkbox">'+o.l+'</label>'}).join('');
-  function draw(){
-    var keys=CIOPT.filter(function(o){return sel[o.k]});
-    $('ciCount').textContent=keys.length;
-    if(keys.length<3){$('ciOut').innerHTML='<span class="dim">Select at least three elements.</span>';return}
-    $('ciOut').textContent=keys.map(function(o){return o.v}).join('\n\n');
-    mark('g15');
-  }
   all('[data-ci]').forEach(function(l){
     var c=l.querySelector('input');
     c.onchange=function(){sel[l.dataset.ci]=c.checked;l.classList.toggle('on',c.checked);draw()};});
   draw();
 })();
+
+/* Discussion complication, re-cut for the v5 case: a number from the file on screen. */
+(function(){var e=$('discFact');if(!e)return;
+  e.textContent=' The Cole file already holds a document like that: the prior adviser\u2019s memo of '+COLE.memoDate+' recommends converting '+COLEm('memoConversion')+' because the Dunmore plan does not permit in-plan conversion, and the plan summary amended '+COLE.spdAmended+' says it does. A fluent summary has no way to tell the next reader which sentence a person checked.'})();
 
 /* ===== 15 DISCUSSION: SEALED VOTE -> DEFENCE -> REVOTE ===== */
 var DOPT=[
@@ -3193,66 +3348,23 @@ var DEF={
   });
 })();
 
-/* ===== 16 BASELINE ===== */
-$('blGo').onclick=function(){
-  var t=$('blTask').value.trim(),m=parseFloat($('blMin').value),o=$('blOut').value.trim();
-  if(!t||!o||!(m>0)){$('blMsg').className='readout bad';
-    $('blMsg').innerHTML='<span class="cz">Incomplete</span>All three are required, and the minutes must be a number. A baseline without an output description cannot be compared later.';return}
-  $('blMsg').className='readout on';
-  $('blMsg').innerHTML='<span class="cz">Recorded &mdash; write this down now</span><b>'+t.replace(/</g,'&lt;')+'</b> &mdash; '+m+' minutes unassisted, producing '+o.replace(/</g,'&lt;')+
-    '.<div class="fx">At '+m+' minutes weekly that is '+Math.round(m*46/60)+' hours a year on one task. This page stores nothing. Copy these three lines somewhere you keep your own notes.</div>';
-  mark('g17');
-};
-
-/* ===== family 17: cold-open ritual — identical in every session ===== */
-/* COURSE-WIDE COLD-OPEN CHECKLIST. COLD_CHECKS is the one constant that
-   defines the eight fixed checks: a label, one plain line on why the item
-   matters, and a deterministic, offline detect function d(t). Every rule is
-   readable below: a presence test is a visible word list or a plain
-   measurement, never a relevance score, and there is no threshold. The rows
-   are diagnostic only; nothing else on the page reads them. Sessions 2-4
-   copy this constant and the renderer under it verbatim (register row
-   DW-066). */
-var COLD_CHECKS=[
- {l:'An explicit ask',w:'A question mark or an opening imperative tells the model what to return; without one it guesses the task as well as the answer.',
-  d:function(t){return /\?/.test(t)||/^\s*(?:\w+[,:]\s+)?(?:please\s+)?(?:write|make|give|list|draft|summarise|summarize|explain|create|find|tell|help|review|compare|analyse|analyze|rewrite|check|generate|outline|describe|calculate|translate|classify|extract|suggest|recommend|plan|edit|fix|improve|assess|evaluate)\b/i.test(t)}},
- {l:'At least 15 words',w:'Below about fifteen words there is rarely enough signal to tell your task apart from a thousand similar ones.',
-  d:function(t){return (t.match(/\S+/g)||[]).length>=15}},
- {l:'A named output format',w:'Naming a list, table, email, memo or draft fixes the shape of the answer instead of leaving the model to pick one.',
-  d:function(t){return /\b(list|table|email|e-mail|memo|draft|bullet|bullets|bulleted|outline|summary|report|letter|agenda|template|paragraph|paragraphs|spreadsheet|checklist|headline|slide|slides|script|caption)\b/i.test(t)}},
- {l:'Context beyond the ask',w:'Background the model cannot infer, the who and the situation, is what separates your answer from a generic one.',
-  d:function(t){return (t.match(/[.!?](\s|$)/g)||[]).length>=2||t.length>180}},
- {l:'A named audience or role',w:'Saying who is writing or who will read it shifts vocabulary, depth and tone toward that reader.',
-  d:function(t){return /\b(you are|act as|as an? \w+|audience|reader|readers|for my|for our|client|clients|prospect|prospects|board|committee|colleague|colleagues|adviser|advisers|advisor|advisors|planner|planners|attorney|attorneys|accountant|accountants|student|students|beginner|beginners|expert|experts)\b/i.test(t)}},
- {l:'A constraint on length, tone or scope',w:'A stated limit is the difference between an answer you can use and one you cut down yourself.',
-  d:function(t){return /\b(no more than|at most|under|within|maximum|max|limit|only|brief|briefly|concise|short|long|formal|informal|casual|plain|professional|friendly|neutral|tone|word|words|sentence|sentences|page|pages|paragraph|paragraphs|scope|exclude|excluding|without|avoid|keep it)\b/i.test(t)}},
- {l:'An example or reference point',w:'One example anchors format and register more reliably than a paragraph of description.',
-  d:function(t){return /\b(for example|e\.g|such as|like this|like the|similar to|based on|modelled on|modeled on|in the style of|sample|example|attached|below|here is|as in|following the)\b/i.test(t)}},
- {l:'What to do when unsure',w:'Telling it to verify, cite or ask first trades confident guessing for something you can check.',
-  d:function(t){return /\b(verify|cite|citation|citations|source|sources|if unsure|if you are unsure|if you're unsure|not sure|unsure|don't know|do not know|ask me|ask first|ask before|flag|confirm|double-check|check first|uncertain|say so)\b/i.test(t)}}
-];
-(function(){
-  var go=document.getElementById('coldGo');if(!go)return;
+/* ===== 16 CLOSING CHECK =====
+   timed-ritual. A written answer first, then the key. Nothing is stored. */
+(function(){var go=$('closeGo');if(!go)return;
+  var shown=false;
+  function key(){shown=true;var o=$('closeOut');o.className='readout on';
+    o.innerHTML='<span class="cz">The key</span>You cannot conclude that the number is right, or that a second run would give the same one. The reason is the sampler: the model drew a likely continuation from a probability distribution, and no step looked anything up or checked it. For the Roth question there is also nothing to look up, because the case leaves the judgment open.'+
+      '<div class="fx">Check your answer for both halves: what you cannot conclude, and which part of the machine is the reason.</div>'}
   go.onclick=function(){
-    var box=document.getElementById('coldPrompt'),out=document.getElementById('coldOut');
-    var t=box.value.trim();
-    if(!t){out.className='rout';out.innerHTML='<span class="rnil">Paste something first.</span>';return}
-    var n=0,rows=COLD_CHECKS.map(function(c){
-      var hit=false;try{hit=!!c.d(t)}catch(err){hit=false}
-      if(hit)n++;
-      return '<div style="margin:9px 0 0"><span style="color:var(--'+(hit?'on':'warn')+');font-weight:700">'+
-        (hit?'\u2713 present':'\u2717 missing')+'</span> \u00b7 <b>'+c.l+'</b>'+
-        '<div class="dim" style="font-size:13px;margin-top:2px">'+c.w+'</div></div>';
-    });
-    out.className='rout on';
-    out.innerHTML='<span class="rz">Prompt checklist</span>'+rows.join('')+
-      '<div class="rfx"><b>'+n+' of 8 present.</b> Diagnostic only: nothing is scored and nothing unlocks. Keep the text on screen; the comparison across sessions is the point.</div>';
-    if(typeof mark==='function')mark('gc');
-  };
+    var t=($('closeAns').value||'').trim();
+    if(t.length<20){var o=$('closeOut');o.className='readout bad';
+      o.innerHTML='<span class="cz">Write first</span>A sentence or two, in your own words, before the key opens.';return}
+    key();mark('g17')};
+  onRevealAll(function(){if(!shown)key()});
 })();
 
 /* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
-window.__coreMins=69;
+window.__coreMins=60;
 /* APXCORE:END */
 
 /* ===== appendix depth control: tier filter + core-only mode ===== */
@@ -3316,7 +3428,7 @@ window.__coreMins=69;
 })();
 
 /* ===== LIVE HOOKS, page-specific =====================================
-   Appendix A5: the same temperature control the lab simulates, applied to a
+   Appendix A6: the same temperature control the lab simulates, applied to a
    live model. The simulator above is untouched \u2014 it teaches the mechanism,
    this shows the mechanism is not a teaching fiction. */
 (function(){

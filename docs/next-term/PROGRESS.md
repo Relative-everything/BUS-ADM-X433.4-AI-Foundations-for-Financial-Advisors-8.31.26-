@@ -13,7 +13,7 @@ Resume rule (RUNBOOK A.1.6): read `RUNBOOK.md` (A.0 first), this file, `DECISION
 | 4b | done | 2026-10-12 | 2026-10-12 | (P4b commit) | verify-case 0 · verify-migration 1 (session-0.1 only, Phase 8) · verify-sources 0 · verify-facts 0 · verify-editorial 0 · test-editorial 1 (T7 ratchet fall, documented) · test-case-viewer 0 · verify-browser 0 · live-console 0 · verify-style 1 (env) |
 | 5 | done | 2026-10-12 | 2026-10-12 | (P5 commit) | verify-facts 0 · verify-sources 0 · verify-case 0 · verify-migration 1 (session-0.1 only) · verify-editorial 0 · test-editorial 1 (T7) · test-case-viewer 0 · verify-browser 0 · live-console 0 · verify-style 1 (env) |
 | 6a | done | 2026-10-12 | 2026-10-12 | (P6a commit) | none required; proposal tables sum to 150 (125) per session |
-| 6b | pending | | | | |
+| 6b | done | 2026-10-12 | 2026-10-12 | (P6b commit) | build-appendix --check 0 · verify-case 0 · verify-migration 1 (session-0.1 only) · verify-facts 0 · verify-editorial 1 (A9 R11 corpus ratchet, D-048) · test-editorial 1 (T7) · test-case-viewer 0 · verify-browser 0 · live-console 0 · verify-style 1 (env) |
 | 7 | pending | | | | |
 | 8 | pending | | | | |
 | 9 | pending | | | | |
@@ -201,3 +201,30 @@ Left as labelled snapshots, for the deferred-work register (D-042): the Session 
 
 Shared moves: the cold-open ritual becomes the case opener from `cases/case-N.html` (10 min, core), the named discussion moves into core at 15 min, the retrieval bridge takes 7 min in core (Session 5 keeps 5). Every core keeps at least six interactions, at least six component types with no two alike consecutively, one commit-before-reveal activity and one case link.
 
+## Phase 6b: apply the accepted section changes
+
+Five Sonnet editors (one per lesson; 2.39M tokens, 593 tool uses, 61 minutes) applied every proposal row. The orchestrator then fixed `build-appendix.mjs`'s "one minutes over the hour" grammar, regenerated every generated region, had one Sonnet agent relabel the SOURCES.md `used_for` clauses that cited the old section numbers (the footers are generated from them), flagged the EDITORIAL rows that PEDAGOGY v2.0 supersedes (D18 band, R11 boilerplate, the A9 R11 corpus baseline) under a dated heading in EDITORIAL.md, and ran the battery.
+
+| Lesson | Core before | Core after | Appendix before | Appendix after | Total | Sections core / appendix | New sections (component, min) | Promoted | Demoted | Deleted |
+|---|---:|---:|---:|---:|---:|---|---|---:|---:|---:|
+| session-1 | 69 | 60 | 81 | 90 | 150 | 8 / 10 | sCase (prediction-commit, 10) | 1 | 5 | 1 |
+| session-2 | 69 | 63 | 81 | 87 | 150 | 8 / 10 | sCase (prediction-commit, 10), sZ (commit-first-mcq, 5), sDel (builder-assembler, 8) | 2 | 7 | 4 |
+| session-3 | 67 | 61 | 83 | 89 | 150 | 8 / 10 | sCase (prediction-commit, 10) | 1 | 6 | 1 |
+| session-4 | 67 | 60 | 83 | 90 | 150 | 8 / 10 | sCase (prediction-commit, 10), sAud (builder-assembler, 7) | 2 | 5 | 1 |
+| session-5 | 59 | 45 | 66 | 80 | 125 | 6 / 10 | sCase (prediction-commit, 10), sE6 (builder-assembler, 6) | 1 | 5 | 2 |
+
+Every lesson: the cold-open ritual replaced in its slot by `sCase` (prediction-commit, Constructive, 10 min, linking to `../cases/case-N.html`), the named discussion in core at 15 min (sealed-vote-debate, Interactive), a "Case N" link beside the Case facts control, and an empty `READINGS:BEGIN sN+1` region in the closing section. Core component sequences carry no consecutive repeat; every file keeps at least 13 interactions with at least 6 in core (session-5: 7). Session-1 `s14b` is the own-account click-along with a four-step builder and work-along gate; session-2 `s9` (seven steps and the delegation line) and session-4 `sRSP` (the 30-day poll and the two clocks) are core; session-3 `sVend` and session-5 `s8` are gone as proposed.
+
+| Validator | Exit | Reading |
+|---|---:|---|
+| build-appendix (write), --check | 0 | core 60 / 63 / 61 / 60 / 45; totals 150, 150, 150, 150, 125 |
+| inject-case, build-cardsort, verify-case | 0 | spans current on all seven files |
+| verify-migration | 1 | 1c and 4 on session-0.1 only; 9, 10, 16, 18, 20 PASS on every lesson |
+| verify-facts | 0 | clean |
+| verify-editorial | 1 | one hard failure, A9 R11 corpus: 5 shared blocks carrying 5 dashes against a baseline of 6 and 6, because the cold-open block left every lesson (D-048; flagged in EDITORIAL, baseline untouched); 5 advisories |
+| test-editorial-regions | 1 | T7, the same ratchet (session-1 66 to 51, session-2 38 to 29, session-3 4/3 to 3/3) |
+| test-case-viewer, verify-browser, test_live_console | 0 | all files (V1 on sessions 3 to 5 passes with the fixed case-button wrapper) |
+| verify-sources, build-bibliography, case-inventory, build-unsourced | 0 | after the `used_for` relabel and regeneration |
+| verify-style | 1 | environment |
+
+Handoffs: Phase 7 builds each case page to match its `sCase` commit and key (session-2's four statements A to D; session-3's six comparison rows; session-5's five-step workflow and the "first break" answer); Phase 9 rewrites session-2 `s12`'s one-item checklist and the package text; Phase 10 rewrites the instructor run sheets for the new numbering, the predicted split for session-1 `s14c`, and the retired `sCold`; session-4's LMBOX-S4 console text cites old section numbers (editable only with the fence version bumped: deferred-work row).

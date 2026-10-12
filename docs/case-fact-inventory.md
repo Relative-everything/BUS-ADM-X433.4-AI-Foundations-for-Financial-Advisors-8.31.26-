@@ -22,12 +22,12 @@ occurrence does not follow fails the check. Everything else can.
 | | Total | Quantitative | Qualitative |
 |---|---:|---:|---:|
 | `INJECTED` | 2737 | 2044 | 693 |
-| `PINNED` | 12 | 11 | 1 |
-| `UNGUARDED` | 177 | 46 | 131 |
-| **TOTAL** | **2926** | **2101** | **825** |
+| `PINNED` | 8 | 8 | 0 |
+| `UNGUARDED` | 169 | 45 | 124 |
+| **TOTAL** | **2914** | **2097** | **817** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
-`46`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
+`45`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
 the target state under the rule *every quantitative case fact appears once,
 injected from `CASE.md`; every other reference to it is qualitative*, so a
 qualitative reference is not drift surface and removing one would be a loss.
@@ -38,23 +38,23 @@ qualitative reference is not drift surface and removing one would be a loss.
 |---|---:|---:|
 | `index.html` | 5 | 1 |
 | `session-0.1/index.html` | 7 | 0 |
-| `session-1/index.html` | 35 | 12 |
-| `session-2/index.html` | 12 | 4 |
-| `session-3/index.html` | 75 | 15 |
-| `session-4/index.html` | 34 | 9 |
-| `session-5/index.html` | 9 | 5 |
+| `session-1/index.html` | 29 | 10 |
+| `session-2/index.html` | 20 | 8 |
+| `session-3/index.html` | 67 | 10 |
+| `session-4/index.html` | 29 | 9 |
+| `session-5/index.html` | 12 | 7 |
 
 ## `UNGUARDED`, by region
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R2` | script string literal | 107 | 21 |
-| `R1` | body prose | 64 | 22 |
+| `R2` | script string literal | 104 | 20 |
+| `R1` | body prose | 58 | 21 |
+| `R3` | attribute value | 3 | 0 |
 | `R4` | CSS | 3 | 3 |
-| `R7` | footer source entry | 2 | 0 |
-| `R8` | source note | 1 | 0 |
+| `R8` | source note | 1 | 1 |
 
-**`R2` carries 21 of the 46 quantitative unguarded references, 45.7%** — answer
+**`R2` carries 20 of the 45 quantitative unguarded references, 44.4%** — answer
 keys, chart data arrays and JS feedback strings. They are inside `<script>`, so
 they are outside the injected span and outside the pins, and a student reads
 every one of them.
@@ -63,54 +63,54 @@ every one of them.
 
 | Class | Count |
 |---|---:|
-| `name` | 131 |
-| `age` | 16 |
-| `money` | 15 |
-| `date` | 8 |
-| `count` | 6 |
+| `name` | 124 |
+| `money` | 18 |
+| `age` | 13 |
+| `date` | 10 |
+| `count` | 3 |
 | `pct` | 1 |
 
 ## `UNGUARDED`, by fact
 
 | Fact | Count |
 |---|---:|
-| `domicile` | 26 |
-| `emmaShort` | 21 |
+| `emmaShort` | 23 |
+| `domicile` | 18 |
 | `ryanShort` | 15 |
-| `ruthShort` | 14 |
-| `megShort` | 12 |
-| `davidEmployerShort` | 10 |
-| `davidName` | 6 |
-| `megAge` | 5 |
-| `spdAmended` | 5 |
-| `residenceTown` | 4 |
-| `davidEmployer` | 4 |
+| `ruthShort` | 13 |
+| `davidEmployerShort` | 13 |
+| `davidName` | 11 |
+| `megShort` | 10 |
+| `spdAmended` | 7 |
 | `david401kRoth` | 4 |
 | `otherLiving` | 4 |
-| `ruthTown` | 4 |
+| `megAge` | 4 |
 | `dorothyName` | 4 |
-| `megEmployer` | 3 |
-| `davidAge` | 3 |
-| `ruthName` | 3 |
-| `marriedYears` | 3 |
+| `ruthTown` | 4 |
+| `davidEmployer` | 3 |
 | `riskGap` | 3 |
-| `megRiskScore` | 3 |
+| `megRetireAge` | 3 |
 | `pcPremiums` | 2 |
-| `ruthCommunity` | 2 |
 | `memoDate` | 2 |
 | `priorAdviser` | 2 |
-| `megRetireAge` | 2 |
+| `ruthName` | 2 |
+| `davidAge` | 2 |
+| `residenceTown` | 2 |
+| `marriedYears` | 2 |
+| `tomShort` | 2 |
+| `ruthLoanToTom` | 2 |
 | `estatePlusInsurance` | 1 |
 | `county` | 1 |
 | `davidRollover` | 1 |
 | `esppPct` | 1 |
 | `brokerage` | 1 |
-| `emmaAge` | 1 |
-| `ryanAge` | 1 |
-| `ruthAge` | 1 |
+| `megApplicableAge` | 1 |
 | `rolloverFormDate` | 1 |
 | `emmaDebt` | 1 |
+| `megEmployer` | 1 |
 | `megTermLife` | 1 |
+| `davidRetireAge` | 1 |
+| `investable` | 1 |
 
 ## Machinery
 
@@ -134,42 +134,42 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**1206 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**1180 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
-| `ryanAge` | 488 |
-| `megRetireAge` | 155 |
-| `davidRetireAge` | 98 |
+| `ryanAge` | 479 |
+| `megRetireAge` | 148 |
+| `davidRetireAge` | 96 |
 | `riskGap` | 61 |
 | `tomAge` | 60 |
 | `emmaAge` | 58 |
-| `davidRiskScore` | 49 |
+| `davidRiskScore` | 50 |
 | `megAge` | 44 |
-| `megRiskScore` | 27 |
-| `marriedYears` | 18 |
+| `megRiskScore` | 26 |
 | `earlyReduction` | 17 |
 | `delayedCredit` | 16 |
 | `megSs62` | 14 |
+| `marriedYears` | 14 |
+| `davidNewsMonth` | 12 |
 | `umbrella` | 9 |
-| `davidLossTolerance` | 9 |
-| `rmdExciseTax` | 9 |
-| `ruthAge` | 8 |
+| `davidLossTolerance` | 8 |
+| `rmdExciseTax` | 8 |
 | `megRoth` | 7 |
 | `propertyTax` | 7 |
 | `travel` | 7 |
 | `asOfDate` | 7 |
 | `ipsEquity` | 7 |
-| `davidAge` | 6 |
 | `tomShort` | 4 |
-| `davidNewsMonth` | 4 |
 | `megApplicableAge` | 3 |
 | `marginalRate` | 2 |
+| `davidAge` | 2 |
 | `ipsDate` | 2 |
 | `allocFixed` | 2 |
 | `megLossTolerance` | 2 |
 | `rmdExciseCorrected` | 2 |
+| `ruthAge` | 2 |
 | `rothPct` | 2 |
 | `ruthShort` | 1 |
 | `ryanShort` | 1 |
@@ -179,12 +179,10 @@ with the text around it, so the undercount can be judged rather than trusted.
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
 | `index.html:935` | UNGUARDED | $64,200 | 35 ILCS 405). CASE.md &sect;H.4 puts the Coles at $3,935,800 with life insurance counted, 〈$64,200〉 below it, and states no conclusion.</li> <li>The f |
-| `session-2/index.html:2623` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'SECURE 2.0 Act \u00a71 |
-| `session-3/index.html:1138` | UNGUARDED | $3,000 | ll.</li> <li><b>What is new.</b> Ruth may need assisted living within a year, about 〈$3,000〉 a month more. Emma carries about $14,000 of card debt and |
-| `session-3/index.html:2860` | UNGUARDED | $3,000 | KI=[ {t:'Meg’s mother’s care team says she may need assisted living within a year, about 〈$3,000〉 a month more than she pays now.',k:'in',w:'Meg’s fir |
-| `session-3/index.html:2906` | UNGUARDED | $3,000 | 's mother\'s care team says she may need the assisted living wing within a year, at about 〈$3,000〉 a month more than she pays now. The new summary pla |
-| `session-5/index.html:3957` | UNGUARDED | $3,000 | o name, no employer, no town. The one case figure it types is the meeting's own "about 〈$3,000〉 a month more" (CASE.md A.3, Part O), as spoken; the fi |
-| `session-5/index.html:3980` | UNGUARDED | $3,000 | e. The wife\u2019s mother may need assisted living within a year. The extra cost is about 〈$3,000〉 a month.', checks:'Verification: read the brief and |
+| `session-3/index.html:2956` | UNGUARDED | $3,000 | KI=[ {t:'Meg’s mother’s care team says she may need assisted living within a year, about 〈$3,000〉 a month more than she pays now.',k:'in',w:'Meg’s fir |
+| `session-3/index.html:3002` | UNGUARDED | $3,000 | 's mother\'s care team says she may need the assisted living wing within a year, at about 〈$3,000〉 a month more than she pays now. The new summary pla |
+| `session-5/index.html:3937` | UNGUARDED | $3,000 | o name, no employer, no town. The one case figure it types is the meeting's own "about 〈$3,000〉 a month more" (CASE.md A.3, Part O), as spoken; the fi |
+| `session-5/index.html:3960` | UNGUARDED | $3,000 | e. The wife\u2019s mother may need assisted living within a year. The extra cost is about 〈$3,000〉 a month.', checks:'Verification: read the brief and |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,

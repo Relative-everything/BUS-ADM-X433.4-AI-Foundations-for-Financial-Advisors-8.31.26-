@@ -690,11 +690,31 @@ table.tbudget tr.apxrow td{color:var(--gold)}
 table.tbudget tr.nosum td{color:var(--muted);font-style:italic}
 table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border-bottom:none}
 .stamp{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.05em;color:var(--muted);margin:18px 0 0}
+
+/* ===== Phase 6b: the Case button, the case opener, the source-line column ===== */
+.topbar-case{position:fixed;right:14px;top:14px;z-index:60;display:flex;gap:8px;align-items:center}
+.topbar-case #caseBtn.casefab{position:static}
+.casebtn{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;line-height:normal;background:none;border:1.5px solid var(--on);color:var(--on);border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap;text-decoration:none}
+.casebtn:hover{background:var(--on-bg)}
+@media print{.topbar-case{display:none}}
+@media(max-width:640px){.topbar-case{top:auto;bottom:12px;right:auto;left:10px}}
+.casego{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:20px 0}
+.c3wrap{overflow-x:auto;margin:14px 0}
+table.c3tab{min-width:680px;font-size:14.5px}
+table.c3tab td{padding:10px 12px 10px 0;line-height:1.48}
+table.c3tab td:first-child{width:64px}
+table.c3tab input[type=checkbox]{width:20px;height:20px;accent-color:var(--on);margin:2px 0 0}
+table.c3tab td.mono{font-size:12.5px;white-space:nowrap}
+table.c3tab b.flag{color:var(--warn)}
+.placed li span.srcl{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--on)}
 </style></head>
 <body>
 <nav id="rail" aria-label="Sections"></nav>
 <div id="ovr">Shift+U — reveal all answer panels</div>
-<button id="caseBtn" class="casefab">Case facts</button>
+<div class="topbar-case">
+  <a class="casebtn" href="../cases/case-3.html">Case 3</a>
+  <button id="caseBtn" class="casefab">Case facts</button>
+</div>
 <div id="caseModal"><div class="inner" id="caseInner">
   <div class="eyebrow"><span>Synthetic case, classroom anchor only</span></div>
   <h2 style="margin-bottom:14px">The Cole Household</h2>
@@ -1107,8 +1127,8 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 <div class="wrap">
 
 <!-- ============ 1 ============ -->
-<section class="slide" id="s1" data-nav="Bridge + case">
-  <div class="eyebrow"><span>BUS ADM X433.4 &middot; Session 3</span><span class="mins">5 min</span></div>
+<section class="slide" id="s1" data-nav="Bridge">
+  <div class="eyebrow"><span>BUS ADM X433.4 &middot; Session 3</span><span class="mins">7 min</span></div>
   <h1>Gathering and Documenting Client Information</h1>
   <p class="lede">Grounding makes the model cite your sources. The nearest passage is not always the right one.</p>
   <div class="panel pace" data-task="t-s1" data-comp="retrieval-bridge"><div id="paceOut"></div>
@@ -1126,26 +1146,17 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <li><b>Session 1.</b> The model predicts rather than knows.</li>
     <li><b>Session 2.</b> It samples a plausible answer rather than computing the true one.</li>
     <li><b>Tonight.</b> Grounding: hand it your own documents and require it to answer from them. Then measure how much that removes.</li>
-    <li><b>The file.</b> The Coles, in the panel below. The whole file is behind Case facts, top right; nothing on this page needs it.</li>
+    <li><b>The ladder.</b> Why it happens (Session 1), how often it happens (tonight), what it costs you (Session 4).</li>
+    <li><b>The file.</b> The Coles, in the case section next. The whole file is behind Case facts, top right; nothing on this page needs it.</li>
   </ul>
-
-  <div class="panel">
-    <span class="plab">The Cole file, in four lines</span>
-    <ul class="pts" style="margin:0">
-      <li><b>The household.</b> Meg Cole, 58, is a nurse manager at Northlake Regional Health System; David, 59, is a senior mechanical engineer at Dunmore Industrial Equipment. Married 29 years, in Naperville. Emma, 21, graduates in 2027; Ryan is 16. Meg's mother, Ruth Alder, 83, lives at Maple Court in Wheaton.</li>
-      <li><b>The question, nothing decided.</b> How much to convert to Roth, and in which years, between the last paycheck and the first required distribution. David's plan has allowed in-plan conversion since 1 January 2026; a 2024 memo in the file says the plan does not allow it.</li>
-      <li><b>The documents.</b> Ten are in the retrieval set, D1 to D10 in &sect;03: the 2025 review notes, the 2024 investment policy statement, the 2026 plan description, the 2009 beneficiary form on David's rollover IRA, the Social Security statements, Ruth's residency agreement, the 2024 Roth memo, the 529 statement, the mortgage statement and Meg's 2011 will.</li>
-      <li><b>What is new.</b> Ruth may need assisted living within a year, about $3,000 a month more. Emma carries about $14,000 of card debt and asked that Ryan and her grandmother not be told. David has been told, in confidence, that his division may be sold.</li>
-    </ul>
-  </div>
 
   <div class="panel" style="border-color:var(--on);border-width:2px">
     <span class="plab">Tonight's one thing</span>
-    <p class="big" style="margin:0">By the end of the session you will be able to take any step of your own client-meeting workflow and say whether you would hand it to a tool, and defend the answer on what the tool can actually verify. If you do not run client meetings, read that as the recurring meeting you pick in &sect;06. &sect;11's closing check asks exactly this.</p>
+    <p class="big" style="margin:0">By the end of the session you will be able to take any step of your own client-meeting workflow and say whether you would hand it to a tool, and defend the answer on what the tool can actually verify. If you do not run client meetings, pick one recurring meeting that you write up afterwards (a committee, a case review, a hiring interview) and read &ldquo;client meeting&rdquo; as that meeting all session. &sect;07's closing check asks exactly this.</p>
   </div>
 
   <div class="panel">
-    <span class="do">Retrieval bridge — 4 minutes</span>
+    <span class="do">Retrieval bridge: 5 minutes</span>
     <h4>Session 2 Recall: The Citation-Verification Order</h4>
     <p class="hint">Four checks from Session 2, no notes. Say the four letters in the order you would run them, then click them in that order. Wrong and committed beats right and read. Click again to reset.</p>
     <div id="bridgeList" class="chiplist"></div>
@@ -1157,23 +1168,77 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 <!-- APXPANEL:BEGIN generated-by=scripts/build-appendix.mjs -->
 <section class="slide apxdiv" id="apx" data-nav="Appendix contents">
-  <div class="eyebrow"><span>Appendix &middot; 6 optional sections</span><span class="mins">83 min</span></div>
+  <div class="eyebrow"><span>Appendix &middot; 10 optional sections</span><span class="mins">89 min</span></div>
   <h2>Appendix contents</h2>
-  <p class="lede">Six optional sections, 83 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
-  <p>The 12 sections of the core session run in about 67 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <p class="lede">Ten optional sections, 89 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
+  <p>The 8 sections of the core session run in about 61 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
-    <a class="apxcard" href="#sRag"><span class="ac">A1 &middot; 14 min &middot; after &sect;03</span><b>Do You Need Retrieval at All?</b></a>
-    <a class="apxcard" href="#sPrep"><span class="ac">A2 &middot; 14 min &middot; after &sect;06</span><b>The Intake Questionnaire, Drafted With AI</b></a>
-    <a class="apxcard" href="#sChk"><span class="ac">A3 &middot; 14 min &middot; after &sect;07</span><b>Check the Summary Against the Transcript</b></a>
-    <a class="apxcard" href="#s11"><span class="ac">C3 &middot; 14 min &middot; after &sect;07</span><b>Note-Taker Adoption Against Note-Taker Satisfaction</b></a>
-    <a class="apxcard" href="#sVend"><span class="ac">A5 &middot; 9 min &middot; after &sect;09</span><b>Eight Questions for a Note-Taker Vendor</b></a>
-    <a class="apxcard" href="#s15"><span class="ac">C4 &middot; 18 min &middot; after &sect;10</span><b>Citation-Backed Output and Verification Effort</b></a>
+    <a class="apxcard" href="#s2"><span class="ac">C1 &middot; 7 min &middot; after &sect;01</span><b>Meaning Space, and the Failure It Creates</b></a>
+    <a class="apxcard" href="#sRag"><span class="ac">C2 &middot; 14 min &middot; after &sect;02</span><b>Do You Need Retrieval at All?</b></a>
+    <a class="apxcard" href="#sPrep"><span class="ac">C3 &middot; 14 min &middot; after &sect;03</span><b>The Intake Questionnaire, Drafted With AI</b></a>
+    <a class="apxcard" href="#s7"><span class="ac">C4 &middot; 5 min &middot; after &sect;03</span><b>Grounding Compared With Fine-Tuning</b></a>
+    <a class="apxcard" href="#s9"><span class="ac">C5 &middot; 6 min &middot; after &sect;03</span><b>The Advisor Meeting Workflow: Prep, Capture, Summarise, Follow-Up, Log</b></a>
+    <a class="apxcard" href="#sChk"><span class="ac">C6 &middot; 14 min &middot; after &sect;04</span><b>Check the Summary Against the Transcript</b></a>
+    <a class="apxcard" href="#s11"><span class="ac">C7 &middot; 14 min &middot; after &sect;04</span><b>Note-Taker Adoption Against Note-Taker Satisfaction</b></a>
+    <a class="apxcard" href="#s12"><span class="ac">C8 &middot; 4 min &middot; after &sect;05</span><b>Recording Consent and the Confidentiality Obligation</b></a>
+    <a class="apxcard" href="#sPol"><span class="ac">C9 &middot; 5 min &middot; after &sect;05</span><b>What the Firm Must Have Written Down</b></a>
+    <a class="apxcard" href="#s13"><span class="ac">C10 &middot; 6 min &middot; after &sect;05</span><b>Documenting Circumstances and the Basis for a Recommendation</b></a>
   </div>
 </section>
 <!-- APXPANEL:END -->
 
-<section class="slide" id="s2" data-nav="Meaning space">
-  <div class="eyebrow"><span>01 and 02 &middot; Mechanism</span><span class="mins">7 min</span></div>
+<section class="slide" id="sCase" data-nav="Case 3">
+  <div class="eyebrow"><span>01 &middot; Case 3: the annual review as CRM tasks and a follow-up email</span><span class="mins">10 min</span></div>
+  <h2>The Annual Review: CRM Tasks and the Follow-Up Email</h2>
+
+  <p class="big">Meg and David Cole, 58 and 59, have just finished their annual review, and a note-taker recorded it. The advisor now owes them a follow-up email and owes the CRM a list of tasks, and every task has to point to the line of the transcript it came from. The finished list and email are the deliverable on the Case 3 page; before they open, log the action items yourself from the six turns below.</p>
+
+  <div class="casego"><a class="btn" href="../cases/case-3.html" style="text-decoration:none;display:inline-block">Open Case 3: the finished tasks and email</a><span class="dim mono" style="font-size:12px">The page asks the same question. Skipped it? Commit here.</span></div>
+
+  <div class="mpanel has" style="min-height:0"><span class="hd">Synthetic meeting excerpt, six turns: the advisor with Meg and David Cole, no real client data</span>
+    <!-- The excerpt is CASE.md PART O, rendered from COLEDOCS at load. -->
+    <span id="c3Excerpt" style="font-family:'Source Serif 4',serif;font-size:15.5px;line-height:1.6;display:block"></span>
+  </div>
+
+  <div class="panel" style="background:var(--gold-bg);border-color:#DFD3AF" data-task="t-sCase" data-comp="prediction-commit">
+    <span class="plab" style="color:var(--gold)">Commit before the comparison opens &middot; guessing wrong is the design</span>
+    <h4>List the action items you would log</h4>
+    <p class="hint">Three minutes, in writing. One line per item: what, who owns it, by when, and the turn it comes from. Write an owner or a date only if a turn gives one. This page keeps nothing, so the list is yours to copy out.</p>
+    <label class="fl" for="c3List">Your list</label>
+    <textarea id="c3List" placeholder="1. What, owner, date (turn 5)" aria-describedby="c3Msg"></textarea>
+    <div class="row" style="margin-top:12px"><button type="button" class="btn" id="c3Lock" disabled>Lock my list and open the comparison</button><span class="mono dim" id="c3Msg" role="status" aria-live="polite" style="font-size:12px">Write at least one line to lock.</span></div>
+  </div>
+
+  <div class="panel keyhide" id="c3Reveal" tabindex="-1" style="display:none">
+    <span class="plab">The comparison &middot; six candidates from the six turns</span>
+    <p class="hint">Tick the rows your list had. The extraction column is the summary that &sect;04 builds from these six turns; the last column reads it against the turn it came from.</p>
+    <div class="c3wrap">
+    <table class="dt tight c3tab">
+      <thead><tr><th>On my list</th><th>Turn</th><th>What the turn holds</th><th>The extraction</th><th>Read against the turn</th></tr></thead>
+      <tbody>
+        <tr><td><input type="checkbox" class="c3chk" aria-label="Ruth's care was on my list"></td><td class="mono">2</td><td>Ruth's care team says she may need the assisted living wing within a year, about three thousand a month more.</td><td>Filed under Facts that changed. No task. <b>Matches.</b></td><td>A changed fact. Nobody agrees to act on it, so a task here would carry an owner and a date that are yours, not the transcript's.</td></tr>
+        <tr><td><input type="checkbox" class="c3chk" aria-label="Emma's debt was on my list"></td><td class="mono">2</td><td>Emma's debt: &ldquo;We are deciding whether to pay it off before she starts work in August.&rdquo; Confidential (Part J).</td><td>Open question, Meg and David, under discussion. The constraint is kept. <b>Matches.</b></td><td>An open question for the clients, not a task for the firm. It stays out of the recap and out of any tool.</td></tr>
+        <tr><td><input type="checkbox" class="c3chk" aria-label="Re-running the conversion analysis was on my list"></td><td class="mono">4</td><td>&ldquo;I want to re-run the conversion analysis on that basis&rdquo;: the 2026 plan description against the 2024 memo.</td><td>Action item. Says who proposed it, not who owns it; no date. <b class="flag">Differs.</b></td><td>Owner: the Advisor, in the same turn. No date given. The plan conflict is why the task exists.</td></tr>
+        <tr><td><input type="checkbox" class="c3chk" aria-label="Pulling the beneficiary form was on my list"></td><td class="mono">4, 5</td><td>The beneficiary form on David's rollover IRA: asked for in turn 4, &ldquo;I will pull the current form this week&rdquo; in turn 5.</td><td>Action item, David, this week. <b>Matches.</b></td><td>The same, now with both turns named. The copy on file is from 2009.</td></tr>
+        <tr><td><input type="checkbox" class="c3chk" aria-label="The sale scenario was on my list"></td><td class="mono">5</td><td>&ldquo;Re-run the Roth numbers, but with the sale scenario in it.&rdquo; The sale is David's confidence from turn 3 (Part J).</td><td>Folded into the re-run, so David's news sits in the task text. <b class="flag">Differs.</b></td><td>A second scenario on the re-run, at David's request. The reason stays in the file, not in the task.</td></tr>
+        <tr><td><input type="checkbox" class="c3chk" aria-label="Ryan's 529 question was on my list"></td><td class="mono">6</td><td>Ryan's 529 at five hundred a month, college in 2029, and whether the Illinois deduction changes if they put in more.</td><td>Open question tagged Meg, not answered. Read as an owner, it names the person who asked. <b class="flag">Differs.</b></td><td>Two questions in one turn. Meg asked, so she does not own the answer, and nobody has agreed to give it. Owner not given.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div id="c3Tally" class="mpanel" role="status" aria-live="polite"><span class="hd">Your list against the six rows</span><span class="nil">Tick the rows your list had.</span></div>
+  </div>
+
+  <p>A tool's list can only be checked against the line it came from, so the next three sections follow that line: how the retriever finds it (&sect;02), where a grounded answer still goes wrong (&sect;03), and what a note-taker keeps and drops on the way to the list (&sect;04).</p>
+
+  <p class="src">The six turns are CASE.md Part O, rendered from the case file. The six rows and the extraction they compare (the one &sect;04 shows) are written for this lesson <span class="conf l" data-src="src-case">L</span>. Synthetic; no real client.</p>
+
+  <div class="check" data-gate="gCase"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Write your list, lock it, tick the rows you had, and read the three rows where the extraction differs.</div></div>
+
+</section>
+
+<section class="slide apx" id="s2" data-nav="C1 &middot; Meaning space" data-insert-after="sCase" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C1 &middot; Meaning Space, and the Failure It Creates</b><span>7 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C1 &middot; Mechanism, the full picture</span><span class="mins">7 min</span></div>
   <h2>Meaning Space, and the Failure It Creates</h2>
 
   <p class="big">Wolfram's definition: an embedding turns a word into an array of numbers, and words with similar meanings get nearby numbers.</p>
@@ -1228,14 +1293,14 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </section>
 
 <section class="slide" id="s4" data-nav="Retrieval">
-  <div class="eyebrow"><span>03 &middot; RAG, mechanically</span><span class="mins">6 min</span></div>
+  <div class="eyebrow"><span>02 &middot; RAG, mechanically</span><span class="mins">6 min</span></div>
   <h2>Retrieval Mechanics: Chunking, Indexing, and Ranking</h2>
 
   <p class="big">Retrieval-augmented generation, RAG, also called grounding: the model answers from your documents instead of from memory. Four steps.</p>
 
   <ul class="pts">
     <li><b>Split.</b> The documents are cut into short passages.</li>
-    <li><b>Index.</b> Each passage gets its own embedding, the array of numbers from &sect;01.</li>
+    <li><b>Index.</b> Each passage gets its own embedding: an array of numbers that puts passages with similar wording close together.</li>
     <li><b>Rank.</b> Your question gets one too, and the passages closest to it rank highest.</li>
     <li><b>Answer.</b> The top few passages are pasted into the prompt and the model is told to answer only from them.</li>
     <li><b>The Cole set.</b> Ten documents, one passage from each: the 2025 review notes, the 2024 policy statement, the 2026 plan description, the 2009 beneficiary form, the Social Security statements, Ruth's residency agreement, the 2024 Roth memo, the 529 statement, the mortgage statement and Meg's 2011 will.</li>
@@ -1263,16 +1328,16 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 </section>
 
-<section class="slide apx" id="sRag" data-nav="A1 &middot; Do you need retrieval?" data-insert-after="s4" data-tier="foundational">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A1 &middot; Do You Need Retrieval at All?</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix A1 &middot; Before you buy a retrieval tool</span><span class="mins">14 min</span></div>
+<section class="slide apx" id="sRag" data-nav="C2 &middot; Do you need retrieval?" data-insert-after="s4" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C2 &middot; Do You Need Retrieval at All?</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C2 &middot; Before you buy a retrieval tool</span><span class="mins">14 min</span></div>
   <h2>Do You Need Retrieval at All?</h2>
 
   <p class="big">Most planning files fit in one prompt. Anthropic's September 2024 guidance: under roughly 200,000 tokens, about 500 pages, put the whole set of documents in and skip retrieval.</p>
 
   <ul class="pts">
     <li><b>Fits in one prompt.</b> Paste or attach the whole set. Everything the model needs is in front of it, and nothing has to be found first.</li>
-    <li><b>Needs a retrieval tool.</b> A firm's whole archive or years of email is far bigger than one prompt. Then the finding step exists, and so do its failures (&sect;04).</li>
+    <li><b>Needs a retrieval tool.</b> A firm's whole archive or years of email is far bigger than one prompt. Then the finding step exists, and so do its failures (&sect;03).</li>
     <li><b>Either way.</b> Tell it to answer only from the documents and to say so when the answer is not in them.</li>
     <li><b>The context window.</b> All the text the model can reference when it writes a response, the response itself included: the system prompt, every message and document in the request, the tool definitions and the reply. It is not the box you type in, and all of it counts <span class="conf h" data-src="src-context-windows" data-fact="context-window-definition">H</span>. On the current Claude models it holds up to 1M tokens, so the 200,000-token line above is a rule of thumb from 2024, not the limit <span class="conf h" data-src="src-models" data-fact="claude-context-window">H</span>.</li>
   </ul>
@@ -1296,7 +1361,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </section>
 
 <section class="slide" id="s6" data-nav="Grounding limits">
-  <div class="eyebrow"><span>04 &middot; What grounding fixes</span><span class="mins">6 min</span></div>
+  <div class="eyebrow"><span>03 &middot; What grounding fixes</span><span class="mins">6 min</span></div>
   <h2>What Grounding Fixes, and What It Does Not</h2>
 
   <p class="big">Grounding cuts mistakes. It does not remove them. Either the right passage is not found, or it is found and the model still writes something it does not say.</p>
@@ -1315,17 +1380,48 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <ul class="pts">
     <li><b>The finding step, alone.</b> Anthropic's best setup still missed the right passage for about 2 questions in 100, down from about 6 <span class="conf h" data-src="src-anthropic-ctx">H</span>.</li>
     <li><b>The reading step.</b> Stanford tested grounded legal research tools sold as hallucination-free: unsupported answers on 17% to 33% of questions, against 43% with no documents <span class="conf h" data-src="src-magesh">H</span>.</li>
-    <li><b>In the Cole file.</b> Preset 1 in &sect;03: fully cited, quotes the 2024 memo correctly, wrong. The memo says the Dunmore plan does not permit in-plan Roth conversion, which was true when it was written; the plan description amended 1 January 2026 says it does. No error message. Only a person who knows the plan changed catches it.</li>
+    <li><b>In the Cole file.</b> Preset 1 in &sect;02: fully cited, quotes the 2024 memo correctly, wrong. The memo says the Dunmore plan does not permit in-plan Roth conversion, which was true when it was written; the plan description amended 1 January 2026 says it does. No error message. Only a person who knows the plan changed catches it.</li>
+    <li><b>Why ground rather than tune.</b> Your facts change. A grounded tool reads the replacement file on Wednesday; a model tuned on the old file keeps the old answer until it is retrained, and cannot cite where the answer came from.</li>
   </ul>
 
-  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em>: top-20 retrieval failure 5.7% at baseline, 1.9% with contextual embeddings, BM25 and reranking <span class="conf h" data-src="src-anthropic-ctx">H</span>; benchmarked on codebases, fiction and papers, not advisory documents <span class="conf m" data-src="src-anthropic-ctx">M, transfer unverified</span>. Magesh et al. (2025), <em>Journal of Empirical Legal Studies, 22</em>(2), 216: Lexis+ AI above 17%, Westlaw AI-Assisted Research about 33%, GPT-4 43%, tested May 2024 <span class="conf h" data-src="src-magesh">H, peer reviewed</span>. The Cole example is synthetic <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em>: top-20 retrieval failure 5.7% at baseline, 1.9% with contextual embeddings, BM25 and reranking <span class="conf h" data-src="src-anthropic-ctx">H</span>; benchmarked on codebases, fiction and papers, not advisory documents <span class="conf m" data-src="src-anthropic-ctx">M, transfer unverified</span>. Magesh et al. (2025), <em>Journal of Empirical Legal Studies, 22</em>(2), 216: Lexis+ AI above 17%, Westlaw AI-Assisted Research about 33%, GPT-4 43%, tested May 2024 <span class="conf h" data-src="src-magesh">H, peer reviewed</span>. The Cole example is synthetic <span class="conf l" data-src="src-case">L</span>. The grounding-against-tuning point is a design judgement for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Commit before the reveal, then read the figures.</div></div>
 
 </section>
 
-<section class="slide" id="s7" data-nav="Grounding vs tuning">
-  <div class="eyebrow"><span>05 &middot; Two ways to teach it your file</span><span class="mins">5 min</span></div>
+<section class="slide apx" id="sPrep" data-nav="C3 &middot; Intake questionnaire" data-insert-after="s6" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C3 &middot; The Intake Questionnaire, Drafted With AI</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C3 &middot; Prep</span><span class="mins">14 min</span></div>
+  <h2>The Intake Questionnaire, Drafted With AI</h2>
+
+  <p class="big">The prep stage is a list: what to ask, and what to ask the client to bring. An assistant drafts it well, as long as no client fact enters the tool to do it.</p>
+
+  <ul class="pts">
+    <li><b>Pick the areas.</b> The assistant drafts the questions and the document requests for each area the meeting has to cover.</li>
+    <li><b>Make it ask you first.</b> A prompt that interviews you before drafting produces a questionnaire for this meeting, not a generic one.</li>
+    <li><b>Keep the client out of it.</b> The questionnaire is built before any client fact is typed. The client's answers go in the file, not in the chat.</li>
+  </ul>
+
+  <div class="panel" data-task="t-sPrep" data-comp="builder-assembler">
+    <span class="do">Do this now: 6 minutes</span>
+    <h4>Build the Prep Prompt</h4>
+    <p class="hint">Choose the meeting and at least two areas. The prompt assembles below; copy it into Claude, or whichever assistant you use.</p>
+    <div class="row" id="ppMeet"></div>
+    <div id="ppAreas" class="ckgrid"></div>
+    <pre id="ppOut" class="ppout">Choose a meeting type and at least two areas.</pre>
+    <div class="row"><button class="btn" id="ppCopy">Copy the prompt</button><span id="ppMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
+  </div>
+
+  <p class="src">The areas follow the Session 3 syllabus item on the client's personal and financial circumstances; the prompt is written for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+
+  <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Build the prompt for the next meeting you will prepare for and copy it out; this page keeps nothing.</div></div>
+
+</section>
+
+<section class="slide apx" id="s7" data-nav="C4 &middot; Grounding vs tuning" data-insert-after="s6" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C4 &middot; Grounding Compared With Fine-Tuning</b><span>5 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C4 &middot; Two ways to teach it your file</span><span class="mins">5 min</span></div>
   <h2>Grounding Compared With Fine-Tuning</h2>
 
   <p class="big">Grounding changes what the model reads. Fine-tuning changes what the model is. For a planning practice, grounding wins, because your facts change and need citing.</p>
@@ -1360,8 +1456,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 </section>
 
-<section class="slide" id="s9" data-nav="Workflow">
-  <div class="eyebrow"><span>06 &middot; The workflow</span><span class="mins">6 min</span></div>
+<section class="slide apx" id="s9" data-nav="C5 &middot; Workflow" data-insert-after="s6" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C5 &middot; The Advisor Meeting Workflow: Prep, Capture, Summarise, Follow-Up, Log</b><span>6 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C5 &middot; The workflow</span><span class="mins">6 min</span></div>
   <h2>The Advisor Meeting Workflow: Prep, Capture, Summarise, Follow-Up, Log</h2>
 
   <p class="big">Five stages as a chain: a mistake at any stage is inherited by every stage after it, and the log is what an examiner reads.</p>
@@ -1374,9 +1471,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <li><b>Log.</b> The note lands in the CRM with the basis for what you recommended.</li>
   </ul>
 
-  <p>No client meetings? Pick a recurring meeting you write up afterwards: a committee, a case review, a hiring interview. Same five stages, same checks. Use it wherever this session says client meeting.</p>
+  <p>No client meetings? Use the recurring meeting you picked at the start of the session. Same five stages, same checks.</p>
 
-  <p>Which of the seven planning steps a tool may not take: <a href="../session-2/index.html#s9">Session 2, appendix B4</a>, Standard depth.</p>
+  <p>Which of the seven planning steps a tool may not take: <a href="../session-2/index.html#s9">Session 2, the seven-step section</a>.</p>
 
   <div class="panel" data-task="t-s9" data-comp="symptom-diagnoser">
     <span class="do">Do this now: 4 minutes</span>
@@ -1392,37 +1489,8 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 </section>
 
-<section class="slide apx" id="sPrep" data-nav="A2 &middot; Intake questionnaire" data-insert-after="s9" data-tier="foundational">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A2 &middot; The Intake Questionnaire, Drafted With AI</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix A2 &middot; Prep</span><span class="mins">14 min</span></div>
-  <h2>The Intake Questionnaire, Drafted With AI</h2>
-
-  <p class="big">The prep stage is a list: what to ask, and what to ask the client to bring. An assistant drafts it well, as long as no client fact enters the tool to do it.</p>
-
-  <ul class="pts">
-    <li><b>Pick the areas.</b> The assistant drafts the questions and the document requests for each area the meeting has to cover.</li>
-    <li><b>Make it ask you first.</b> A prompt that interviews you before drafting produces a questionnaire for this meeting, not a generic one.</li>
-    <li><b>Keep the client out of it.</b> The questionnaire is built before any client fact is typed. The client's answers go in the file, not in the chat.</li>
-  </ul>
-
-  <div class="panel" data-task="t-sPrep" data-comp="builder-assembler">
-    <span class="do">Do this now: 6 minutes</span>
-    <h4>Build the Prep Prompt</h4>
-    <p class="hint">Choose the meeting and at least two areas. The prompt assembles below; copy it into Claude, or whichever assistant you use.</p>
-    <div class="row" id="ppMeet"></div>
-    <div id="ppAreas" class="ckgrid"></div>
-    <pre id="ppOut" class="ppout">Choose a meeting type and at least two areas.</pre>
-    <div class="row"><button class="btn" id="ppCopy">Copy the prompt</button><span id="ppMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
-  </div>
-
-  <p class="src">The areas follow the Session 3 syllabus item on the client's personal and financial circumstances; the prompt is written for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
-
-  <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Build the prompt for the next meeting you will prepare for and copy it out; this page keeps nothing.</div></div>
-
-</section>
-
 <section class="slide" id="s10" data-nav="Note-takers">
-  <div class="eyebrow"><span>07 &middot; The note-taker</span><span class="mins">7 min</span></div>
+  <div class="eyebrow"><span>04 &middot; The note-taker</span><span class="mins">7 min</span></div>
   <h2>How an AI Note-Taker Works, and How to Prompt It</h2>
 
   <p class="big">A note-taker transcribes, extracts, categorises and drafts the follow-up. Transcription is nearly solved. Extraction is where a model decides which sentences from ninety minutes become the record.</p>
@@ -1448,7 +1516,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <h4 style="margin-top:26px">How to prompt it</h4>
-  <p>Paste this into the tool's instruction field, where it becomes the standing instruction for every meeting, or into Claude with the transcript attached. For the meeting you chose in &sect;06, swap "client" for whoever was in the room and keep the rest.</p>
+  <p>Paste this into the tool's instruction field, where it becomes the standing instruction for every meeting, or into Claude with the transcript attached. For the meeting you picked at the start, swap "client" for whoever was in the room and keep the rest.</p>
   <pre id="ntPrompt">Summarise this client meeting for the file. Extract, under these headings and nothing else:
 1. DECISIONS made in the meeting, each with who made it.
 2. ACTION ITEMS, each with an owner and a date if one was given.
@@ -1466,9 +1534,9 @@ If a heading has nothing under it, write "none".</pre>
 
 </section>
 
-<section class="slide apx" id="sChk" data-nav="A3 &middot; Check the summary" data-insert-after="s10" data-tier="foundational">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A3 &middot; Check the Summary Against the Transcript</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix A3 &middot; The after-meeting check</span><span class="mins">14 min</span></div>
+<section class="slide apx" id="sChk" data-nav="C6 &middot; Check the summary" data-insert-after="s10" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C6 &middot; Check the Summary Against the Transcript</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C6 &middot; The after-meeting check</span><span class="mins">14 min</span></div>
   <h2>Check the Summary Against the Transcript</h2>
 
   <p class="big">The one habit that makes a note-taker safe: before the summary goes anywhere, read each line against the transcript. Two errors hide in a clean-looking summary: a fact the transcript does not contain, and a fact it states differently.</p>
@@ -1476,7 +1544,7 @@ If a heading has nothing under it, write "none".</pre>
   <div class="panel" data-task="t-sChk" data-comp="two-bucket-sorter">
     <span class="do">Do this now: 6 minutes</span>
     <h4>In the Transcript, or Not</h4>
-    <p class="hint">Re-read the six turns in &sect;07, then place each line. Two are wrong on purpose.</p>
+    <p class="hint">Re-read the six turns in &sect;04, then place each line. Two are wrong on purpose.</p>
     <div class="sorter">
       <div id="chkList" class="chiplist"></div>
       <div id="chkBoxes" class="boxes"></div>
@@ -1485,15 +1553,15 @@ If a heading has nothing under it, write "none".</pre>
     <div id="chkKey" class="mpanel keyhide" style="display:none"></div>
   </div>
 
-  <p class="src">The summary lines are written for this lesson from the &sect;07 excerpt; two are wrong on purpose, labelled in the key and in the footer's case entry <span class="conf l" data-src="src-case">L</span>. The excerpt itself is synthetic.</p>
+  <p class="src">The summary lines are written for this lesson from the &sect;04 excerpt; two are wrong on purpose, labelled in the key and in the footer's case entry <span class="conf l" data-src="src-case">L</span>. The excerpt itself is synthetic.</p>
 
   <div class="check" data-gate="ga6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Find both planted errors, then say which one you would have let through reading the summary alone.</div></div>
 
 </section>
 
-<section class="slide apx" id="s11" data-nav="C3 &middot; Adoption" data-insert-after="s10" data-tier="foundational">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C3 &middot; Note-Taker Adoption Against Note-Taker Satisfaction</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix C3 &middot; Market evidence</span><span class="mins">14 min</span></div>
+<section class="slide apx" id="s11" data-nav="C7 &middot; Adoption" data-insert-after="s10" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C7 &middot; Note-Taker Adoption Against Note-Taker Satisfaction</b><span>14 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C7 &middot; Market evidence</span><span class="mins">14 min</span></div>
   <h2>Note-Taker Adoption Against Note-Taker Satisfaction</h2>
 
   <p class="big">Rank note-takers by adoption, then by satisfaction. Do the two orders match?</p>
@@ -1519,7 +1587,7 @@ If a heading has nothing under it, write "none".</pre>
 </section>
 
 <section class="slide" id="sOff" data-nav="The client review">
-  <div class="eyebrow"><span>08 &middot; In the files you already use</span><span class="mins">5 min</span></div>
+  <div class="eyebrow"><span>05 &middot; In the files you already use</span><span class="mins">6 min</span></div>
   <h2>The Client Review, in the Files You Already Have</h2>
 
   <p class="big">The annual review lives in three files: a letter, a cash-flow sheet and a deck. Hand the assistant the source, ask in plain words for the change, read what comes back. The tool matters less than three rules.</p>
@@ -1533,7 +1601,7 @@ If a heading has nothing under it, write "none".</pre>
   <div class="panel" data-task="t-sOff" data-comp="multi-column-sorter">
     <span class="do">Do this now: 3 minutes</span>
     <h4>Which Kind of Work, or Not an AI Task at All</h4>
-    <p class="hint">Six review-update tasks. Some belong to no assistant, in any tool.</p>
+    <p class="hint">Six review-update tasks. Some belong to no assistant, in any tool. Say where each task&rsquo;s source line is, a turn number or the sheet, before you pick its bucket; the answer shows it.</p>
     <div class="sorter">
       <div id="offList" class="chiplist"></div>
       <div id="offBoxes" class="boxes"></div>
@@ -1543,9 +1611,9 @@ If a heading has nothing under it, write "none".</pre>
   </div>
 
   <h4 style="margin-top:26px">Three prompts that take the summary and nothing else</h4>
-  <p>Tonight everyone's source is the &sect;07 summary, repeated below. Each Copy button carries the summary with the prompt, so you paste once.</p>
+  <p>Tonight everyone's source is the &sect;04 summary, repeated below. Each Copy button carries the summary with the prompt, so you paste once.</p>
 
-  <div class="mpanel has" style="min-height:0"><span class="hd">The source: the &sect;07 summary, synthetic, no real client</span><span id="sumBlock" style="font-family:'Source Serif 4',serif;font-size:15px;line-height:1.6;display:block"></span></div>
+  <div class="mpanel has" style="min-height:0"><span class="hd">The source: the &sect;04 summary, synthetic, no real client</span><span id="sumBlock" style="font-family:'Source Serif 4',serif;font-size:15px;line-height:1.6;display:block"></span></div>
 
   <span class="plab" style="margin-top:18px">1 &middot; The follow-up letter</span>
   <pre id="offP0">Below is the summary of a client review meeting. Draft the follow-up letter to the clients from it, under 200 words.
@@ -1568,7 +1636,7 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
   <div class="row"><button class="btn" id="offC2">Copy the agenda prompt with the summary</button><span id="offM2" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
 
   <div class="panel" style="border-color:var(--warn);border-width:2px">
-    <span class="plab">The silent run: four minutes, nobody talks</span>
+    <span class="plab">The silent run: three minutes, nobody talks</span>
     <ol style="margin:0;padding-left:22px;max-width:64ch">
       <li>Open Claude in another tab.</li>
       <li>Under prompt 1, click Copy the letter prompt with the summary.</li>
@@ -1577,14 +1645,15 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
     </ol>
   </div>
 
-  <p class="src">The three prompts, the summary and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>. The summary is &sect;07's categorisation output. The two example outputs are claude-sonnet-5-5's answers to prompts 1 and 2 on it, captured 2026-10-12 through the Claude Code CLI and shown verbatim <span class="conf l" data-src="src-case">L</span>; claude-sonnet-5-5 is a current model id <span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>. The pattern holds wherever you run it.</p>
+  <p class="src">The three prompts, the summary and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>. The summary is &sect;04's categorisation output. The two example outputs are claude-sonnet-5-5's answers to prompts 1 and 2 on it, captured 2026-10-12 through the Claude Code CLI and shown verbatim <span class="conf l" data-src="src-case">L</span>; claude-sonnet-5-5 is a current model id <span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>. The pattern holds wherever you run it.</p>
 
   <div class="check" data-gate="g9b"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six tasks, then run the silent run. Synthetic material only.</div></div>
 
 </section>
 
-<section class="slide" id="s12" data-nav="Consent">
-  <div class="eyebrow"><span>09 &middot; Obligation</span><span class="mins">4 min</span></div>
+<section class="slide apx" id="s12" data-nav="C8 &middot; Consent" data-insert-after="sOff" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C8 &middot; Recording Consent and the Confidentiality Obligation</b><span>4 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C8 &middot; Obligation</span><span class="mins">4 min</span></div>
   <h2>Recording Consent and the Confidentiality Obligation</h2>
 
   <p class="big">A note-taker is a recording device with a vendor attached. Two obligations: may the recording be made, and what may the vendor see.</p>
@@ -1612,30 +1681,9 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
 
 </section>
 
-<section class="slide apx" id="sVend" data-nav="A5 &middot; Vendor questions" data-insert-after="s12" data-tier="standard">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>A5 &middot; Eight Questions for a Note-Taker Vendor</b><span>9 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix A5 &middot; Due diligence</span><span class="mins">9 min</span></div>
-  <h2>Eight Questions for a Note-Taker Vendor</h2>
-
-  <p class="big">The contract either answers these or it does not. Ask before you sign, in writing, and file the answers with the contract.</p>
-
-  <div class="panel" data-task="t-sVend" data-comp="builder-assembler">
-    <span class="do">Do this now: 4 minutes</span>
-    <h4>Build the Email</h4>
-    <p class="hint">Tick at least three. The email assembles below; copy it out. It goes to a vendor before any pilot, not after.</p>
-    <div id="vqList" class="ckgrid"></div>
-    <pre id="vqOut" class="ppout">Tick at least three questions.</pre>
-    <div class="row"><button class="btn" id="vqCopy">Copy the email</button><span id="vqMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
-  </div>
-
-  <p class="src">The questions are written for this lesson from the confidentiality obligation in &sect;09 <span class="conf l" data-src="src-case">L</span>; Iskowitz (29 Jul 2025) is the assigned reading on the compliance framing. No vendor's answer is asserted here.</p>
-
-  <div class="check" data-gate="ga7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Build the email for a tool you use or might try. Keep it for the day a vendor is on the table.</div></div>
-
-</section>
-
-<section class="slide" id="sPol" data-nav="What must be written down">
-  <div class="eyebrow"><span>09b &middot; The firm's side</span><span class="mins">5 min</span></div>
+<section class="slide apx" id="sPol" data-nav="C9 &middot; What must be written down" data-insert-after="sOff" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C9 &middot; What the Firm Must Have Written Down</b><span>5 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C9 &middot; The firm's side</span><span class="mins">5 min</span></div>
   <h2>What the Firm Must Have Written Down</h2>
 
   <p class="big">A note-taker's summary becomes a firm record the moment it is written. The question at an examination is not which tool you bought. It is what you can produce.</p>
@@ -1669,8 +1717,9 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
 
 </section>
 
-<section class="slide" id="s13" data-nav="Basis">
-  <div class="eyebrow"><span>10 &middot; Documentation</span><span class="mins">6 min</span></div>
+<section class="slide apx" id="s13" data-nav="C10 &middot; Basis" data-insert-after="sOff" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C10 &middot; Documenting Circumstances and the Basis for a Recommendation</b><span>6 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix C10 &middot; Documentation</span><span class="mins">6 min</span></div>
   <h2>Documenting Circumstances and the Basis for a Recommendation</h2>
 
   <p class="big">What was said is not why you recommended it. The note-taker produces the first. You write the second, because the alternatives you rejected were never spoken aloud.</p>
@@ -1730,22 +1779,25 @@ then a list of every element where my answer was thin.</pre>
 
   <p class="src">Structure follows the Session 3 syllabus item on documenting circumstances and the basis for recommendations. The six lines are synthetic <span class="conf l" data-src="src-case">L</span>. Nothing here asserts a tax result or what an examiner would accept.</p>
 
-  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place the six lines. Then run the prompt on the last meeting you wrote up, or on the Cole review with the &sect;07 summary as your memory of it.</div></div>
+  <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place the six lines. Then run the prompt on the last meeting you wrote up, or on the Cole review with the &sect;04 summary as your memory of it.</div></div>
 
 </section>
 
-<section class="slide apx" id="s15" data-nav="C4 &middot; Discussion" data-insert-after="s13" data-tier="standard">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>C4 &middot; Citation-Backed Output and Verification Effort</b><span>18 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix C4 &middot; Discussion</span><span class="mins">18 min</span></div>
+<section class="slide" id="s15" data-nav="Discussion">
+  <div class="eyebrow"><span>06 &middot; Discussion</span><span class="mins">15 min</span></div>
   <h2>Citation-Backed Output and Verification Effort</h2>
 
   <p class="big">The question: does a citation-backed output make you check more, or check less?</p>
 
   <ul class="pts">
     <li><b>Check more.</b> A citation is a handle, something specific to pull on.</li>
-    <li><b>Check less.</b> A citation reads as completed work, so a busy professional stops there. &sect;04 supplied evidence for this side; &sect;03 supplied evidence for the other, where reading the top passage against David's question about his plan is what exposed the 2024 memo as superseded by the 2026 plan description.</li>
+    <li><b>Check less.</b> A citation reads as completed work, so a busy professional stops there. &sect;03 supplied evidence for this side; &sect;02 supplied evidence for the other, where reading the top passage against David's question about his plan is what exposed the 2024 memo as superseded by the 2026 plan description.</li>
     <li><b>The method.</b> Vote before you read the arguments. Read the case for each side, then the complication, then vote again. A vote that does not move is a finding, not a failure.</li>
   </ul>
+
+  <p class="dim" style="font-size:15px">Predicted split: most of the room opens on &ldquo;I check more&rdquo;, because a citation looks like a handle to pull. &ldquo;I check less&rdquo; will be the smallest group and speaks first in the defence. Expect the second vote to move only on the complication: the one failure in &sect;02 that opening the citation would not have caught.</p>
+
+  <div class="phase" role="list" aria-label="The four phases and their minutes"><span class="ph on" role="listitem">Position 2 min</span><span class="ph" role="listitem">Defence 7 min</span><span class="ph" role="listitem">Complication 4 min</span><span class="ph" role="listitem">Re-vote 2 min</span></div>
 
   <div class="panel" data-task="t-s15" data-comp="sealed-vote-debate">
     <span class="do">Locked vote: commit before you read the arguments</span>
@@ -1765,15 +1817,15 @@ then a list of every element where my answer was thin.</pre>
 </section>
 
 <section class="slide" id="s16" data-nav="Checklist + assignments">
-  <div class="eyebrow"><span>11 &middot; Close</span><span class="mins">5 min</span></div>
+  <div class="eyebrow"><span>07 &middot; Close</span><span class="mins">4 min</span></div>
   <h2>The Meeting Checklist</h2>
 
   <p class="big">What a planner does before, during and after a client meeting so that AI makes the intake and the record faster without making them wrong.</p>
 
   <div class="panel" data-task="t-s16" data-comp="builder-assembler">
-    <span class="do">Do this now: 3 minutes</span>
+    <span class="do">Do this now: 2 minutes</span>
     <h4>Tick What You Already Do</h4>
-    <p class="hint">Tick it for your client meetings, or the meeting you chose in &sect;06. The readout names the gaps; say the number of the one you will close first. Copy the list out; this page keeps nothing.</p>
+    <p class="hint">Tick it for your client meetings, or the meeting you picked at the start. The readout names the gaps; say the number of the one you will close first. Copy the list out; this page keeps nothing.</p>
     <div id="ckList"></div>
     <div id="ckOut" class="mpanel"><span class="hd">Your gaps</span><span class="nil">Tick the steps you already do.</span></div>
     <div class="row" style="margin-top:12px"><button class="btn" id="ckCopy">Copy the checklist</button><span id="ckMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
@@ -1786,15 +1838,17 @@ then a list of every element where my answer was thin.</pre>
 
   <div class="cards">
     <div class="card gold"><span class="num">Assignment</span><h4>AI usage policy for your firm</h4><p>Three cited sources minimum, at least one scholarly. Every source you need has appeared in this course.</p></div>
-    <div class="card warn"><span class="num">Part 1</span><h4>Final Project Part 1, the handoff package</h4><p>One email, body "See attached"; everything needed is in the attachments. Seven-element checklist: Session 2 &sect;09. Most often missing: the baseline time (estimated if never timed) against the AI-assisted time, and the data-handling note. A classmate runs it cold in Session 4.</p></div>
-    <div class="card"><span class="num">Reading for Session 4</span><h4>Daly (2026) &middot; SEC FY2026 Exam Priorities &sect;VII &middot; Journal of Accountancy (2025)</h4><p>The regulatory frame, in which the examination priorities carry no legal force and the rules behind them do, and the audit-trail prompt technique.</p></div>
+    <div class="card warn"><span class="num">Part 1</span><h4>Final Project Part 1, the handoff package</h4><p>The checklist is in Session 2. A classmate runs your package cold in Session 4.</p></div>
+<!-- READINGS:BEGIN s4 -->
+<div class="card" data-readings="s4"><span class="num">Reading for Session 4</span><p class="dim">Filled before the term starts.</p></div>
+<!-- READINGS:END -->
   </div>
 
   <p class="src">The checklist is built for this lesson from the sections above <span class="conf l" data-src="src-case">L</span>. The assignment terms are the course's, stated here in one form. The SEC's FY2026 examination priorities, released 17 November 2025, state that they have &ldquo;no legal force or effect&rdquo;; the rules behind them do bind <span class="conf m" data-src="src-secpri" data-fact="sec-exam-priorities-status">M</span>.</p>
 
   <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Tick the list, copy it out, name the one gap you will close first.</div></div>
 
-  <div class="talk"><span class="th">Closing check &middot; in chat, one line each, against tonight's one thing</span>One step of your meeting workflow you would hand to a tool tonight, one you would not, and why. Then, if there is time: the grounded answer in &sect;03 was retrieved and quoted correctly, and wrong. Where in your workflow do you catch it, and who is holding it if nobody does?</div>
+  <div class="talk"><span class="th">Closing check &middot; in chat, one line each, against tonight's one thing</span>One step of your meeting workflow you would hand to a tool tonight, one you would not, and why. If there is time: the grounded answer in &sect;02 was quoted correctly and was wrong. Where in your workflow do you catch that?</div>
 
 </section>
 
@@ -1804,27 +1858,27 @@ then a list of every element where my answer was thin.</pre>
     <thead><tr><th>Section</th><th>Title</th><th>Min</th></tr></thead>
 <!-- APXBUDGET:BEGIN generated-by=scripts/build-appendix.mjs -->
     <tbody>
-      <tr><td>BUS ADM X433.4 &middot; Session 3</td><td>Gathering and Documenting Client Information</td><td class="n">5</td></tr>
-      <tr><td>01 and 02 &middot; Mechanism</td><td>Meaning Space, and the Failure It Creates</td><td class="n">7</td></tr>
-      <tr><td>03 &middot; RAG, mechanically</td><td>Retrieval Mechanics: Chunking, Indexing, and Ranking</td><td class="n">6</td></tr>
-      <tr><td>04 &middot; What grounding fixes</td><td>What Grounding Fixes, and What It Does Not</td><td class="n">6</td></tr>
-      <tr><td>05 &middot; Two ways to teach it your file</td><td>Grounding Compared With Fine-Tuning</td><td class="n">5</td></tr>
-      <tr><td>06 &middot; The workflow</td><td>The Advisor Meeting Workflow: Prep, Capture, Summarise, Follow-Up, Log</td><td class="n">6</td></tr>
-      <tr><td>07 &middot; The note-taker</td><td>How an AI Note-Taker Works, and How to Prompt It</td><td class="n">7</td></tr>
-      <tr><td>08 &middot; In the files you already use</td><td>The Client Review, in the Files You Already Have</td><td class="n">5</td></tr>
-      <tr><td>09 &middot; Obligation</td><td>Recording Consent and the Confidentiality Obligation</td><td class="n">4</td></tr>
-      <tr><td>09b &middot; The firm's side</td><td>What the Firm Must Have Written Down</td><td class="n">5</td></tr>
-      <tr><td>10 &middot; Documentation</td><td>Documenting Circumstances and the Basis for a Recommendation</td><td class="n">6</td></tr>
-      <tr><td>11 &middot; Close</td><td>The Meeting Checklist</td><td class="n">5</td></tr>
-      <tr class="apxrow"><td>Appendix A1 &middot; Before you buy a retrieval tool</td><td>Do You Need Retrieval at All?</td><td class="n">14</td></tr>
-      <tr class="apxrow"><td>Appendix A2 &middot; Prep</td><td>The Intake Questionnaire, Drafted With AI</td><td class="n">14</td></tr>
-      <tr class="apxrow"><td>Appendix A3 &middot; The after-meeting check</td><td>Check the Summary Against the Transcript</td><td class="n">14</td></tr>
-      <tr class="apxrow"><td>Appendix C3 &middot; Market evidence</td><td>Note-Taker Adoption Against Note-Taker Satisfaction</td><td class="n">14</td></tr>
-      <tr class="apxrow"><td>Appendix A5 &middot; Due diligence</td><td>Eight Questions for a Note-Taker Vendor</td><td class="n">9</td></tr>
-      <tr class="apxrow"><td>Appendix C4 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">18</td></tr>
+      <tr><td>BUS ADM X433.4 &middot; Session 3</td><td>Gathering and Documenting Client Information</td><td class="n">7</td></tr>
+      <tr><td>01 &middot; Case 3: the annual review as CRM tasks and a follow-up email</td><td>The Annual Review: CRM Tasks and the Follow-Up Email</td><td class="n">10</td></tr>
+      <tr><td>02 &middot; RAG, mechanically</td><td>Retrieval Mechanics: Chunking, Indexing, and Ranking</td><td class="n">6</td></tr>
+      <tr><td>03 &middot; What grounding fixes</td><td>What Grounding Fixes, and What It Does Not</td><td class="n">6</td></tr>
+      <tr><td>04 &middot; The note-taker</td><td>How an AI Note-Taker Works, and How to Prompt It</td><td class="n">7</td></tr>
+      <tr><td>05 &middot; In the files you already use</td><td>The Client Review, in the Files You Already Have</td><td class="n">6</td></tr>
+      <tr><td>06 &middot; Discussion</td><td>Citation-Backed Output and Verification Effort</td><td class="n">15</td></tr>
+      <tr><td>07 &middot; Close</td><td>The Meeting Checklist</td><td class="n">4</td></tr>
+      <tr class="apxrow"><td>Appendix C1 &middot; Mechanism, the full picture</td><td>Meaning Space, and the Failure It Creates</td><td class="n">7</td></tr>
+      <tr class="apxrow"><td>Appendix C2 &middot; Before you buy a retrieval tool</td><td>Do You Need Retrieval at All?</td><td class="n">14</td></tr>
+      <tr class="apxrow"><td>Appendix C3 &middot; Prep</td><td>The Intake Questionnaire, Drafted With AI</td><td class="n">14</td></tr>
+      <tr class="apxrow"><td>Appendix C4 &middot; Two ways to teach it your file</td><td>Grounding Compared With Fine-Tuning</td><td class="n">5</td></tr>
+      <tr class="apxrow"><td>Appendix C5 &middot; The workflow</td><td>The Advisor Meeting Workflow: Prep, Capture, Summarise, Follow-Up, Log</td><td class="n">6</td></tr>
+      <tr class="apxrow"><td>Appendix C6 &middot; The after-meeting check</td><td>Check the Summary Against the Transcript</td><td class="n">14</td></tr>
+      <tr class="apxrow"><td>Appendix C7 &middot; Market evidence</td><td>Note-Taker Adoption Against Note-Taker Satisfaction</td><td class="n">14</td></tr>
+      <tr class="apxrow"><td>Appendix C8 &middot; Obligation</td><td>Recording Consent and the Confidentiality Obligation</td><td class="n">4</td></tr>
+      <tr class="apxrow"><td>Appendix C9 &middot; The firm's side</td><td>What the Firm Must Have Written Down</td><td class="n">5</td></tr>
+      <tr class="apxrow"><td>Appendix C10 &middot; Documentation</td><td>Documenting Circumstances and the Basis for a Recommendation</td><td class="n">6</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 67 + appendix 83; the core alone runs 67 minutes, seven minutes over the hour</td><td class="n">150</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 61 + appendix 89; the core alone runs 61 minutes, one minute over the hour</td><td class="n">150</td></tr>
     </tbody>
 <!-- APXBUDGET:END -->
   </table>
@@ -1832,25 +1886,25 @@ then a list of every element where my answer was thin.</pre>
   <h4 style="margin:26px 0 14px">Sources cited in this session</h4>
   <ul>
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 1142a777f4f9aef7897a67f509ca9fd65758a7b459ecc63940e88af49262d1d2 -->
-      <li id="src-context-windows">Anthropic. <em>Context windows</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">platform.claude.com</a> Retrieved 2026, October 11. Used for: what the context window is, all the text the model can reference when generating a response, the response itself included, and that everything attached and the conversation so far counts, in Appendix A1. <span class="conf h" data-src="src-context-windows">H</span></li>
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 882c5170f58498de8af6b60d3b7647dbec502e6e0334a6d6a1d82afcb3b6f7fd -->
+      <li id="src-context-windows">Anthropic. <em>Context windows</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">platform.claude.com</a> Retrieved 2026, October 11. Used for: what the context window is, all the text the model can reference when generating a response, the response itself included, and that everything attached and the conversation so far counts, in Appendix C2. <span class="conf h" data-src="src-context-windows">H</span></li>
       <li id="src-anthropic-ctx">Anthropic. (2024, September 19). <em>Contextual retrieval in AI systems</em>. Anthropic Engineering. <a href="https://www.anthropic.com/engineering/contextual-retrieval">anthropic.com/engineering/contextual-retrieval</a> Used for: the measured retrieval failure rates, the 67% reduction, and the 200,000-token boundary condition. <span class="conf h" data-src="src-anthropic-ctx">H</span></li>
-      <li id="src-models">Anthropic. <em>Models overview</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/models/overview">platform.claude.com/docs/en/models/overview</a> Retrieved 2026, October 11. Used for: the 1M-token context window of the current Claude models, beside the 200,000-token rule of thumb from 2024 (Appendix A1). <span class="conf h" data-src="src-models">H</span></li>
-      <li id="src-anthropic-deprecations">Anthropic. (2026, September 30). <em>Model deprecations</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">platform.claude.com/docs/en/about-claude/model-deprecations</a> Retrieved 2026, October 11. Other sessions cite other retrievals of this page. Used for: that claude-sonnet-5-5, the model id on the two captured example outputs, is a current Claude model id (§08). <span class="conf h" data-src="src-anthropic-deprecations">H</span></li>
-      <li id="src-iskowitz">Iskowitz, C. (2025, July 29). <em>AI notetakers and compliance in wealth management: What firms need to know</em>. WealthTech Today. Used for: the six documents in §09b, the 12% figure behind its prediction commit, and the compliance framing in §09. <span class="conf m" data-src="src-iskowitz">M</span></li>
-      <li id="src-kitces-notetakers">Kitces.com. (2025, January 15). <em>Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends</em>. Kitces.com. <a href="https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/">kitces.com</a> Used for: the prep-and-follow-up ratio (§07), the whole-cycle tooling (§06), and the adoption-against-satisfaction ranking with the $60 to $80 pricing (Appendix C3). <span class="conf m" data-src="src-kitces-notetakers">M</span></li>
-      <li id="src-lee-cognitive">Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025, April). <em>The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers</em>. Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI '25), ACM, Yokohama, 26 April to 1 May 2025, 23 pages; doi 10.1145/3706598.3713778. Author's version hosted by Microsoft Research. <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf">microsoft.com</a> Retrieved 2026, October 2. Used for: the title claim of self-reported reductions in cognitive effort, in the Appendix C4 discussion. <span class="conf h" data-src="src-lee-cognitive">H</span></li>
+      <li id="src-models">Anthropic. <em>Models overview</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/models/overview">platform.claude.com/docs/en/models/overview</a> Retrieved 2026, October 11. Used for: the 1M-token context window of the current Claude models, beside the 200,000-token rule of thumb from 2024 (Appendix C2). <span class="conf h" data-src="src-models">H</span></li>
+      <li id="src-anthropic-deprecations">Anthropic. (2026, September 30). <em>Model deprecations</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">platform.claude.com/docs/en/about-claude/model-deprecations</a> Retrieved 2026, October 11. Other sessions cite other retrievals of this page. Used for: that claude-sonnet-5-5, the model id on the two captured example outputs, is a current Claude model id (§05). <span class="conf h" data-src="src-anthropic-deprecations">H</span></li>
+      <li id="src-iskowitz">Iskowitz, C. (2025, July 29). <em>AI notetakers and compliance in wealth management: What firms need to know</em>. WealthTech Today. Used for: the six documents in Appendix C9, the 12% figure behind its prediction commit, and the compliance framing in Appendix C8. <span class="conf m" data-src="src-iskowitz">M</span></li>
+      <li id="src-kitces-notetakers">Kitces.com. (2025, January 15). <em>Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends</em>. Kitces.com. <a href="https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/">kitces.com</a> Used for: the prep-and-follow-up ratio (§04), the whole-cycle tooling (Appendix C5), and the adoption-against-satisfaction ranking with the $60 to $80 pricing (Appendix C7). <span class="conf m" data-src="src-kitces-notetakers">M</span></li>
+      <li id="src-lee-cognitive">Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025, April). <em>The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers</em>. Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI '25), ACM, Yokohama, 26 April to 1 May 2025, 23 pages; doi 10.1145/3706598.3713778. Author's version hosted by Microsoft Research. <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf">microsoft.com</a> Retrieved 2026, October 2. Used for: the title claim of self-reported reductions in cognitive effort, in the §06 discussion. <span class="conf h" data-src="src-lee-cognitive">H</span></li>
       <li id="src-magesh">Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-free? Assessing the reliability of leading AI legal research tools</em>. Journal of Empirical Legal Studies 22(2), 216. <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">reglab.stanford.edu</a> Used for: the >17% / ~33% / 43% rates, the claim that tools made statements unsupported by the sources they cited, and the cross-study comparability caveat. <span class="conf h" data-src="src-magesh">H</span></li>
-      <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: the retrieval corpus, the meeting excerpt and the note-taker stage outputs written from it, the consent items, the said-or-recommended lines, the six review-update tasks and the three prompts in §08 with the summary they run on, the checklist, the illustrative meaning-space map whose coordinates were assigned rather than learned, and the six summary lines in Appendix A3, two of which are written wrong on purpose and labelled so on the page. Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
-      <li id="src-wiretap">State of California; United States Congress. <em>Cal. Penal Code § 637.2(a)(1), (c); 18 U.S.C. § 2511</em>. Statutory text. Used for: the federal one-party consent floor in §09. <span class="conf h" data-src="src-wiretap">H</span></li>
-      <li id="src-regsp">U.S. Securities and Exchange Commission. (2024). <em>Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments</em>. SEC, adopting release. Used for: the privacy notice, the written incident response programme and the 30-day notification, named in §09b as obligations owed apart from any note-taker and taught in Session 4. <span class="conf h" data-src="src-regsp">H</span></li>
-      <li id="src-regsp-guide">U.S. Securities and Exchange Commission. <em>Regulation S-P: small entity compliance guide</em>. SEC. <a href="https://www.sec.gov/files/rules/final/2024/regulation-s-p-small-entity-compliance-guide.pdf">sec.gov</a> Retrieved 2026, October 11. Used for: the compliance dates, the 30-day customer notice and the 72-hour service-provider notice behind the written incident response programme (§09b). <span class="conf m" data-src="src-regsp-guide">M</span></li>
-      <li id="src-secpri">U.S. Securities and Exchange Commission, Division of Examinations. (2025, November 17). <em>Examination priorities: Fiscal year 2026, §VII</em>. SEC. <a href="https://www.sec.gov/files/2026-exam-priorities.pdf">sec.gov/files/2026-exam-priorities.pdf</a> Retrieved 2026, October 11. Used for: that the fiscal 2026 examination priorities, released 17 November 2025, state that they have no legal force or effect, and that an AI use policy is an examination expectation named in no rule (§09b, §11). <span class="conf h" data-src="src-secpri">H</span></li>
-      <li id="src-wolfram">Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a> Used for: assigned reading; "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion" in §01 and §02 (the definition, the five-billion-word construction, the 768 and 12,288 lengths, alligator and crocodile); "Beyond Basic Training" in §05 (the tell-it-once observation and its limit). <span class="conf h" data-src="src-wolfram">H</span></li>
+      <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: the retrieval corpus, the meeting excerpt and the note-taker stage outputs written from it, the consent items, the said-or-recommended lines, the six review-update tasks and the three prompts in §05 with the summary they run on, the checklist, the illustrative meaning-space map whose coordinates were assigned rather than learned, and the six summary lines in Appendix C6, two of which are written wrong on purpose and labelled so on the page. Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
+      <li id="src-wiretap">State of California; United States Congress. <em>Cal. Penal Code § 637.2(a)(1), (c); 18 U.S.C. § 2511</em>. Statutory text. Used for: the federal one-party consent floor in Appendix C8. <span class="conf h" data-src="src-wiretap">H</span></li>
+      <li id="src-regsp">U.S. Securities and Exchange Commission. (2024). <em>Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments</em>. SEC, adopting release. Used for: the privacy notice, the written incident response programme and the 30-day notification, named in Appendix C9 as obligations owed apart from any note-taker and taught in Session 4. <span class="conf h" data-src="src-regsp">H</span></li>
+      <li id="src-regsp-guide">U.S. Securities and Exchange Commission. <em>Regulation S-P: small entity compliance guide</em>. SEC. <a href="https://www.sec.gov/files/rules/final/2024/regulation-s-p-small-entity-compliance-guide.pdf">sec.gov</a> Retrieved 2026, October 11. Used for: the compliance dates, the 30-day customer notice and the 72-hour service-provider notice behind the written incident response programme (Appendix C9). <span class="conf m" data-src="src-regsp-guide">M</span></li>
+      <li id="src-secpri">U.S. Securities and Exchange Commission, Division of Examinations. (2025, November 17). <em>Examination priorities: Fiscal year 2026, §VII</em>. SEC. <a href="https://www.sec.gov/files/2026-exam-priorities.pdf">sec.gov/files/2026-exam-priorities.pdf</a> Retrieved 2026, October 11. Used for: that the fiscal 2026 examination priorities, released 17 November 2025, state that they have no legal force or effect, and that an AI use policy is an examination expectation named in no rule (Appendix C9, §07). <span class="conf h" data-src="src-secpri">H</span></li>
+      <li id="src-wolfram">Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a> Used for: assigned reading; "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion" in Appendix C1 and Appendix C1 (the definition, the five-billion-word construction, the 768 and 12,288 lengths, alligator and crocodile); "Beyond Basic Training" in Appendix C4 (the tell-it-once observation and its limit). <span class="conf h" data-src="src-wolfram">H</span></li>
 <!-- SOURCES:END -->
   </ul>
 <!-- APXNOTE:BEGIN generated-by=scripts/build-appendix.mjs -->
-  <p style="margin-top:22px">The core is 12 sections and runs in about 67 minutes, seven minutes over the hour. The 6 appendix sections add 83 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
+  <p style="margin-top:22px">The core is 8 sections and runs in about 61 minutes, one minute over the hour. The 10 appendix sections add 89 more, taken in place at whatever depth the tier bar is set to, or read alone afterwards. No section gating: everything scrolls freely and answer panels stay hidden until an explicit reveal control or <strong>Shift+U</strong>.</p>
 <!-- APXNOTE:END -->
   <p><strong>No client data.</strong> The Cole household and every document, transcript and figure attributed to them are synthetic and exist only as a classroom anchor. Nothing in this document is legal, tax or compliance advice, and no tax or legal conclusion is asserted anywhere in it.</p>
 
@@ -1882,6 +1936,9 @@ function mkSorter(cfg){
  /* Chips and buckets are numbered in the render only, so a room can commit in
     aloud with two digits (item, bucket) before anyone clicks. Data is untouched. */
  function nameOf(k){for(var i=0;i<bk.length;i++)if(bk[i].k===k)return (i+1)+' \u00b7 '+bk[i].t;return k}
+ /* An item may carry s, its source line (a transcript turn, or none). It is shown with
+    the answer, never on the chip, so it cannot hint at the bucket. */
+ function srcSpan(p){return p.s===undefined?'':'<span class="srcl">'+esc(cfg.srcLabel||'Source line')+': '+esc(p.s)+'</span>'}
  function draw(){
   var done=Object.keys(placed).length;
   O.className='mpanel'+(done?' has':'');
@@ -1895,7 +1952,7 @@ function mkSorter(cfg){
   var h='<span class="hd">Answer key</span>';
   items.forEach(function(p,i){var got=placed[i],ok=got===p.k;
    h+=(got!==undefined?(ok?'<span class="good">\u2713</span> ':'<span class="flag">\u2717</span> '):'\u00b7 ')+(i+1)+'. '+esc(p.t)+': '+esc(nameOf(p.k))+
-      '<br><span style="color:#6F7B78">'+esc(p.w)+'</span><br><br>'});
+      '<br><span style="color:#6F7B78">'+esc(p.w)+'</span>'+(p.s!==undefined?'<br><span class="good">'+esc(cfg.srcLabel||'Source line')+': '+esc(p.s)+'</span>':'')+'<br><br>'});
   h+='<span class="hd">Score</span>'+score+' of '+items.length+(cfg.after?'<br><br>'+cfg.after:'');
   K.className='mpanel has keyhide';K.innerHTML=h;K.style.display='block';
  }
@@ -1909,7 +1966,7 @@ function mkSorter(cfg){
   b.onclick=function(){
    if(sel<0)return;var it=items[sel],ok=it.k===k.k;placed[sel]=k.k;if(ok)score++;
    var li=document.createElement('li');li.className=ok?'good':'flag';
-   li.innerHTML='<b>'+(ok?'\u2713':'\u2717')+'</b>'+(sel+1)+'. '+esc(it.t)+'<span>'+(ok?'':'Belongs under \u201c'+esc(nameOf(it.k))+'\u201d. ')+esc(it.w)+'</span>';
+   li.innerHTML='<b>'+(ok?'\u2713':'\u2717')+'</b>'+(sel+1)+'. '+esc(it.t)+'<span>'+(ok?'':'Belongs under \u201c'+esc(nameOf(it.k))+'\u201d. ')+esc(it.w)+'</span>'+srcSpan(it);
    ul.appendChild(li);
    L.children[sel].classList.remove('act');L.children[sel].classList.add('done');sel=-1;draw();
    if(Object.keys(placed).length===items.length){showKey();if(cfg.gate&&typeof mark==='function')mark(cfg.gate)}
@@ -2004,6 +2061,45 @@ var BRIDGE=[
   b.onclick=function(){var p=ord.indexOf(i);if(p>=0){ord=[]}else{ord.push(i)}draw()};
   L.appendChild(b)});
  draw();
+})();
+
+/* ================= 1b. Case 3 opener: log the action items, lock the list, then compare ================= */
+/* The six turns are CASE.md PART O through COLEDOCS, the same capture \u00a704 reads. The six
+   comparison rows are static markup in the section; this script renders the turns, locks the
+   list on the button, opens the comparison, and counts the rows the learner ticks. Nothing is
+   stored. Shift+U opens the comparison without a lock (REVEALS). */
+(function(){
+ var host=$('c3Excerpt');
+ if(host){var h='';COLEDOCS.transcript.forEach(function(t,i){h+=(i?'<br>':'')+'<strong>'+(i+1)+' \u00b7 '+esc(t.who)+':</strong> '+esc(t.said)});host.innerHTML=h}
+ var TA=$('c3List'),GO=$('c3Lock'),MS=$('c3Msg'),R=$('c3Reveal'),T=$('c3Tally'),locked=false;
+ if(!TA||!GO||!R||!T)return;
+ var boxes=[].slice.call(R.querySelectorAll('input.c3chk'));
+ function tally(){
+  var n=boxes.filter(function(b){return b.checked}).length;
+  T.className='mpanel has';
+  T.innerHTML='<span class="hd">Your list against the six rows</span>'+n+' of '+boxes.length+' rows were on your list.<br><br>'+
+   'The extraction matches the transcript on three rows and differs on three: an owner it did not name (turn 4), a confidence carried into a task (turn 5), and an owner implied for a question Meg asked (turn 6). None of the three shows unless someone opens the turn. That is the source-line check.';
+ }
+ function show(){
+  if(!locked&&!document.body.classList.contains('reveal'))return;
+  R.style.display='block';tally();
+ }
+ TA.addEventListener('input',function(){
+  if(locked)return;
+  var has=TA.value.replace(/\s+/g,'').length>0;
+  GO.disabled=!has;
+  MS.textContent=has?'Ready. Nothing opens until you press the button.':'Write at least one line to lock.';
+ });
+ GO.addEventListener('click',function(){
+  if(locked||GO.disabled)return;
+  locked=true;TA.readOnly=true;GO.disabled=true;
+  MS.textContent='Locked. Your list cannot change now. Read the comparison below.';
+  show();
+  try{R.focus()}catch(e){}
+  if(typeof mark==='function')mark('gCase');
+ });
+ boxes.forEach(function(b){b.addEventListener('change',tally)});
+ REVEALS.push(show);
 })();
 
 /* ========== 9b. What the firm must have written down ==========
@@ -2118,7 +2214,7 @@ var TERMS=[
  {n:'alligator',x:88,y:39,cs:'wolf',dy:14},{n:'crocodile',x:92,y:31,cs:'wolf',dy:-9}
 ];
 var CSNOTE={
- conv:'Same transaction, different governing condition. The 2024 memo (D7) says the Dunmore plan does not permit in-plan Roth conversion; the plan description amended 1 January 2026 (D3) says it does. The two passages share their key words, and a retriever cannot tell them apart from the words. It is the failure you are about to watch in §03.',
+ conv:'Same transaction, different governing condition. The 2024 memo (D7) says the Dunmore plan does not permit in-plan Roth conversion; the plan description amended 1 January 2026 (D3) says it does. The two passages share their key words, and a retriever cannot tell them apart from the words. It is the failure you are about to watch in §02.',
  ben:'The 2009 form (D4) names Dorothy Cole as primary beneficiary and no contingent. Primary and contingent differ by one word, a question about who inherits matches both, and nothing in the passage says she has died. A retriever cannot tell them apart from language.',
  care:'Independent living at '+COLEm('ruthMonthlyFee')+' a month and assisted living at a '+COLEm('ruthAssistedBase')+' base plus care-level charges sit in one residency agreement (D6) and share its vocabulary. A question about what Ruth’s care costs matches both, and a retriever cannot tell which one is meant.',
  wolf:'Wolfram’s own example. Two different animals, placed together because people write about them the same way.'};
@@ -2430,7 +2526,7 @@ var PRESET=[
 var RAGI=[
  {t:'The Cole file: ten documents',k:'fit',w:'Ten documents is nowhere near 500 pages. Attach them all; nothing has to be found first.'},
  {t:'One 40-page plan document',k:'fit',w:'One document. Paste it, ask the question, and ask for the page.'},
- {t:'Every client file in the firm, about 300 households',k:'ret',w:'Far past one prompt. A retrieval tool finds the passages, and \u00a704\u2019s failure rates apply.'},
+ {t:'Every client file in the firm, about 300 households',k:'ret',w:'Far past one prompt. A retrieval tool finds the passages, and \u00a703\u2019s failure rates apply.'},
  {t:'Ten years of the firm\u2019s email',k:'ret',w:'Retrieval, and a hard case for it: the same words recur across thousands of threads.'},
  {t:'This year\u2019s statements for one household, about 60 pages',k:'fit',w:'Fits with room to spare. Attach the statements and the question together.'},
  {t:'A year of meeting transcripts for one client, about 800 pages',k:'ret',w:'Over the rule of thumb. Either retrieve, or split by meeting and ask one meeting at a time.'}
@@ -2547,7 +2643,7 @@ mkQuiz($('tuneWrap'),TUNE,null,'g6');
 /* ================= 9. Workflow chain ================= */
 var CHAIN=[
  {s:'Prep',ai:'Reads the Cole file and drafts the agenda: what changed since last year, what is still open, what to ask.',
-  chk:'Read the draft against the file. In §03 the retriever put the 2024 memo first for a question about David’s plan, and that memo is superseded by the 2026 plan description.',
+  chk:'Read the draft against the file. In §02 the retriever put the 2024 memo first for a question about David’s plan, and that memo is superseded by the 2026 plan description.',
   skip:['Capture: you open the review on the wrong plan assumption, and it is now in the transcript in your voice.',
         'Follow-up: the recap email repeats it to Meg and David.',
         'Log: the record carries a plan rule that was true in 2024.'],
@@ -2659,7 +2755,7 @@ var CHAIN=[
  };
 })();
 
-/* ---- §05: grounding against fine-tuning, drawn on one week ---------------
+/* ---- C4: grounding against fine-tuning, drawn on one week ---------------
    Two architectures, the same question on Wednesday. The grounded one reads a
    tray it does not own; the tuned one has the documents baked in. Tuesday's
    replacement of the beneficiary form is the only input that changes. */
@@ -2741,9 +2837,9 @@ var CHAIN=[
 /* The transcription stage quotes COLEDOCS; the other three are written for
    this lesson to show the shape of each step and are labelled illustrative.
    NTSUM is the categorisation stage's output under the instruction below it:
-   the five headings that instruction names and nothing else. §08 copies the
+   the five headings that instruction names and nothing else. §05 copies the
    same constant onto the clipboard, so the source the room runs its prompts
-   on and the output §07 shows cannot drift apart. */
+   on and the output §04 shows cannot drift apart. */
 var NTSUM=[
  {h:'Decisions',t:'none'},
  {h:'Action items',t:'Pull the current beneficiary form for David’s rollover IRA; the copy on file is from 2009 and names his mother (David; this week). Re-run the conversion analysis on the in-plan basis, with the sale scenario included (the Advisor proposed it, David added the scenario; no date given).'},
@@ -2873,12 +2969,12 @@ mkSorter({list:$('chkList'),boxes:$('chkBoxes'),out:$('chkOut'),key:$('chkKey'),
 
 /* ================= 10b. The client review: which kind of work, or not an AI task ================= */
 var OFFI=[
- {t:'Update the review letter\u2019s figures and the open points from the meeting',k:'word',w:'Prose from a source you hand it, with every change marked. The letter\u2019s structure stays yours.'},
- {t:'Add this year\u2019s column to the cash-flow table using last year\u2019s formulas',k:'excel',w:'A repeatable change to a sheet it can see. Ask it to say which formulas it copied.'},
- {t:'Rebuild the six review slides from the meeting summary',k:'ppt',w:'The summary is the source; the template is the constraint. One summary line per slide keeps it checkable.'},
- {t:'Decide how much to convert to Roth, and in which years',k:'none',w:'A judgement, and the basis for it is what the file needs (§10). An assistant can list the considerations; it cannot own the decision.'},
- {t:'Flag every cash-flow cell that moved more than ten percent',k:'excel',w:'Arithmetic over the sheet, stated as a rule. Exactly what an assistant is for, and exactly what you then read.'},
- {t:'Sign off the letter before it goes to the client',k:'none',w:'The check is yours. Every number against its source, every decision against the meeting. No tool does this for you.'}
+ {t:'Update the review letter\u2019s figures and the open points from the meeting',k:'word',s:'turns 4 and 6 for the open points; the figures come from the file',w:'Prose from a source you hand it, with every change marked. The letter\u2019s structure stays yours.'},
+ {t:'Add this year\u2019s column to the cash-flow table using last year\u2019s formulas',k:'excel',s:'no turn; the source is last year\u2019s sheet',w:'A repeatable change to a sheet it can see. Ask it to say which formulas it copied.'},
+ {t:'Rebuild the six review slides from the meeting summary',k:'ppt',s:'turns 2 to 6, through the summary',w:'The summary is the source; the template is the constraint. One summary line per slide keeps it checkable.'},
+ {t:'Decide how much to convert to Roth, and in which years',k:'none',s:'turns 4 and 5 ask for a re-run; no turn makes the decision',w:'A judgement, and the basis for it is what the file needs (appendix C10). An assistant can list the considerations; it cannot own the decision.'},
+ {t:'Flag every cash-flow cell that moved more than ten percent',k:'excel',s:'no turn; the source is the sheet',w:'Arithmetic over the sheet, stated as a rule. Exactly what an assistant is for, and exactly what you then read.'},
+ {t:'Sign off the letter before it goes to the client',k:'none',s:'every sentence in the letter needs a turn',w:'The check is yours. Every number against its source, every decision against the meeting. No tool does this for you.'}
 ];
 var OFFB=[
  {k:'word',t:'Prose that changes',d:'Letters, memos, the plan narrative.'},
@@ -2886,10 +2982,10 @@ var OFFB=[
  {k:'ppt',t:'The deck',d:'Slides drafted from a source, inside your own headings.'},
  {k:'none',t:'Not an AI task',d:'A decision, or a check, that is yours.'}
 ];
-mkSorter({list:$('offList'),boxes:$('offBoxes'),out:$('offOut'),key:$('offKey'),items:OFFI,buckets:OFFB,label:'Progress',gate:'g9b',
+mkSorter({list:$('offList'),boxes:$('offBoxes'),out:$('offOut'),key:$('offKey'),items:OFFI,buckets:OFFB,label:'Progress',srcLabel:'Source line',gate:'g9b',
  after:'<span class="good">The pattern: the assistant changes a file from a source you give it, and you check the result. The decision and the sign-off never move.</span>'});
 
-/* ===== 10d. The §08 run: three prompts, each copied together with NTSUM ===== */
+/* ===== 10d. The §05 run: three prompts, each copied together with NTSUM ===== */
 /* OFFEX: the answers of claude-sonnet-5-5 to prompts 1 and 2 on the NTSUM payload, run through
    scripts/recapture.mjs on 2026-10-12 and pasted verbatim; the model id is the one the
    CLI reported. Illustrative, so the run has a comparison if a learner's own run
@@ -3010,37 +3106,6 @@ var QITEMS=[
 ];
 mkQuiz($('quizWrap'),QITEMS,$('quizScore'),'g9');
 
-/* ================= 12b. Vendor questions: an email built from a checklist ================= */
-(function(){
- var L=$('vqList'),O=$('vqOut'),B=$('vqCopy'),M=$('vqMsg');if(!L)return;
- var Q=['Where are the recording and the transcript stored, and in which country?',
-  'Who at your company can open a client\u2019s transcript, and is every access logged?',
-  'How long are recordings and transcripts kept, and can we set the period?',
-  'Is any client content used to train or improve a model, yours or anyone else\u2019s?',
-  'Which other companies process the content on your behalf?',
-  'Can we delete a client\u2019s recordings on request, and how is the deletion confirmed?',
-  'How is consent to record captured and shown to every participant?',
-  'Can we export every transcript in a readable format if we leave?'];
- var on=Q.map(function(){return false});
- function build(){
-  var picked=Q.filter(function(q,i){return on[i]});
-  if(picked.length<3){O.textContent='Tick at least three questions.';O.className='ppout';return}
-  var t='Subject: Due diligence questions before we pilot your note-taker\n\nBefore we begin a pilot, please answer the following in writing:\n';
-  picked.forEach(function(q,i){t+=(i+1)+'. '+q+'\n'});
-  t+='\nWe will file your answers with the contract. Thank you.';
-  O.textContent=t;O.className='ppout on';if(typeof mark==='function')mark('ga7');
- }
- Q.forEach(function(q,i){var l=document.createElement('label');var c=document.createElement('input');c.type='checkbox';
-  l.appendChild(c);l.appendChild(document.createTextNode(q));c.onchange=function(){on[i]=c.checked;l.classList.toggle('on',c.checked);build()};L.appendChild(l)});
- B.onclick=function(){
-  var txt=O.textContent;
-  function ok(){M.textContent='Copied.';setTimeout(function(){M.textContent=''},2500)}
-  function fail(){var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();
-   try{document.execCommand('copy');ok()}catch(e){M.textContent='Select the block and copy manually.'}document.body.removeChild(ta)}
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fail)}else{fail()}
- };
-})();
-
 /* ================= 13. Said, recommended, or neither ================= */
 var DOCI=[
  {t:'Meg: my mother’s care team says she may need the assisted living wing within a year.',k:'said',w:'A fact, in the client’s words, with its status. This is the record of circumstances.'},
@@ -3079,10 +3144,10 @@ function showDefence(){
  if(v1===null&&!document.body.classList.contains('reveal'))return;
  D.className='mpanel has keyhide';
  D.innerHTML='<span class="hd">The case for each side</span>'+
-  '<span class="good">If you voted "check more":</span> a citation converts an unfalsifiable claim into a falsifiable one. Before grounding you could only assess plausibility. Now you can open the document. That is what \u00a703 showed: opening the top passage put a date on the memo, '+COLEv('memoDate')+', and a reader who knew the plan had been amended since could see it was out of date.<br><br>'+
+  '<span class="good">If you voted "check more":</span> a citation converts an unfalsifiable claim into a falsifiable one. Before grounding you could only assess plausibility. Now you can open the document. That is what \u00a702 showed: opening the top passage put a date on the memo, '+COLEv('memoDate')+', and a reader who knew the plan had been amended since could see it was out of date.<br><br>'+
   '<span class="good">If you voted "check the same":</span> your verification protocol is a property of your process, not of the output format. If it did not change when you adopted the tool, that is a defensible position and the burden is on the other two sides.<br><br>'+
   '<span class="good">If you voted "check less":</span> the presence of a source is read by a busy professional as evidence the source was consulted. Magesh et al. measured tools making claims their own cited sources did not support, a failure only visible to someone who opens the citation, which is the thing the citation makes you feel you need not do.<br><br>'+
-  '<span class="hd">The complication</span><span class="flag">Every failure you saw in this session was fully cited. The 2024 memo was retrieved accurately and quoted accurately, and the one document that is current, the 2026 plan description, ranked second and was never the passage the model answered from. Not one of those failures would have been caught by opening the citation and confirming the passage says what the model said it says, which is step two of the verification order you ranked at the start of this session. Checking the citation harder would not have helped. Only knowing which document should have been there would.</span>';
+  '<span class="hd">The complication</span><span class="flag">Every failure you saw in this session was fully cited. The number on screen: in \u00a702 the 2024 memo ranked first, 42.6 against 24.8 for the 2026 plan description, a margin of 41.9% that looks safe. The memo advised converting '+COLEm('memoConversion')+' on the premise that the Dunmore plan does not permit in-plan conversion, and that premise ended on '+COLEv('spdAmended')+'. It was retrieved accurately and quoted accurately, and the one document that is current, the 2026 plan description, ranked second and was never the passage the model answered from. Not one of those failures would have been caught by opening the citation and confirming the passage says what the model said it says, which is step two of the verification order you ranked at the start of this session. Checking the citation harder would not have helped. Only knowing which document should have been there would.</span>';
  D.style.display='block';
 }
 function showRevote(){
@@ -3185,7 +3250,7 @@ document.addEventListener('keydown',function(e){
 });
 
 /* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
-window.__coreMins=67;
+window.__coreMins=61;
 /* APXCORE:END */
 
 /* ===== appendix depth control: tier filter + core-only mode ===== */

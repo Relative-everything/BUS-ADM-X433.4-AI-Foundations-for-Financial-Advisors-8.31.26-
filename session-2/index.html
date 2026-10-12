@@ -704,16 +704,7 @@ body.core-only #rail button.apxnav:not(.apxidx){display:none}
 .verify{border:2px dashed var(--warn);border-radius:11px;padding:15px 18px;margin:20px 0;background:#fff;font-size:14.5px;line-height:1.5}
 .verify .vh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
 .verify ul{margin:7px 0 0;padding-left:19px}.verify li{margin:5px 0}
-/* ===== family 17: standing cold-open ritual — identical in every session ===== */
-.ritual{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:20px 24px;margin:22px 0}
-.ritual .rlab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:9px;font-weight:500}
-.ritual textarea{width:100%;min-height:96px;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.55;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;background:var(--page);color:var(--ink);resize:vertical}
-.ritual textarea:focus{outline:2.5px solid var(--on);outline-offset:2px}
-.rout{margin-top:13px;background:var(--off-bg);border-radius:9px;padding:13px 16px;font-size:14.5px;line-height:1.55}
-.rout.on{background:var(--on-bg)}
-.rout .rz{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:5px;font-weight:500}
-.rout .rnil{color:var(--muted)}
-.rout .rfx{margin-top:9px;padding-top:9px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+/* ===== gold note (.rnote): a one-line pointer from a core section to its appendix depth ===== */
 .rnote{background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0;font-size:14px;line-height:1.5}
 .rnote .rh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px;font-weight:500}
 /* ===== family 1: work-along gate (completion feedback only; never withholds) ===== */
@@ -748,12 +739,16 @@ table.tbudget tr.apxrow td{color:var(--gold)}
 table.tbudget tr.nosum td{color:var(--muted);font-style:italic}
 table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border-bottom:none}
 .stamp{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.05em;color:var(--muted);margin:18px 0 0}
+/* ===== Case 2 link in the top bar: the look of #caseBtn, as an anchor ===== */
+#topbar .casebtn{margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:none;border:1.5px solid var(--on);color:var(--on);border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap;text-decoration:none}
+#topbar .casebtn:hover{background:var(--on-bg)}
 </style>
 </head>
 <body>
 <div id="prog"></div>
 <div id="topbar">
   <span class="tb-l">BUS ADM X433.4 &middot; Session 2</span>
+  <a class="casebtn" href="../cases/case-2.html">Case 2</a>
   <button id="caseBtn">Case facts</button>
 </div>
 <div id="caseModal"><div class="inner" id="caseInner">
@@ -1169,7 +1164,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 <!-- ============ 0 ============ -->
 <section class="slide" id="s0" data-nav="Retrieval bridge">
-  <div class="eyebrow"><span>BUS ADM X433.4 · Session 2</span><span class="mins">6 min</span></div>
+  <div class="eyebrow"><span>BUS ADM X433.4 · Session 2</span><span class="mins">7 min</span></div>
   <h1>Practical AI Usage in Daily Advisory Workflows</h1>
   <p class="lede">The model samples a plausible answer. It does not compute the true one. Everything in this session follows from that one sentence.</p>
   <div class="panel pace"><div id="paceOut"></div>
@@ -1184,28 +1179,33 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 
   <h3>Retrieval bridge &mdash; Session 1</h3>
-  <p>Three questions, no notes. Answer each in the box before anything is revealed.</p>
+  <p>Four questions, no notes. Answer each in the box before its key opens.</p>
   <div class="panel" id="bridge" data-task="t-s0" data-comp="retrieval-bridge"></div>
   <div class="row" style="margin-top:-12px">
-    <button class="btn ghost mini" id="bridgeReveal">Reveal all three</button>
+    <button class="btn ghost mini" id="bridgeReveal">Reveal all four</button>
     <span class="mono dim" style="font-size:12px" id="bridgeCount"></span>
   </div>
-  <div class="csrc" style="margin-top:14px">Item 1, the price ratio and the three rates, and the billing clause of item 3: <b>Anthropic, Claude Platform Docs, Pricing</b>, retrieved 11 October 2026 <span class="conf h" data-src="src-pricing" data-fact="claude-output-input-ratio claude-api-price-sonnet-5-5 claude-api-price-opus-5-5 claude-api-price-fable-5-1">H</span>. Item 1&rsquo;s size of a token and item 2&rsquo;s size of the window: <b>Anthropic, Claude Platform Docs, Models overview</b>, retrieved 11 October 2026 <span class="conf h" data-src="src-models" data-fact="claude-context-window">H</span>. Items 2 and 3: <b>Anthropic, Claude Platform Docs, Context windows</b>, retrieved 11 October 2026; the window is all the text the model can reference when generating a response, the response itself included, and it is not the box you type in; each turn&rsquo;s input is all previous conversation history plus the current message, the system prompt, every message including tool results, images and documents, and the tool definitions all count, and as the token count grows accuracy and recall degrade, which the page calls context rot <span class="conf h" data-src="src-context-windows" data-fact="context-window-definition">H</span>. The turn count in item 3 is the instructor&rsquo;s working rule from Session 1, not a published threshold.</div>
+  <div class="csrc" style="margin-top:14px">Item 1, the price ratio and the three rates, and the billing clause of item 3: <b>Anthropic, Claude Platform Docs, Pricing</b>, retrieved 11 October 2026 <span class="conf h" data-src="src-pricing" data-fact="claude-output-input-ratio claude-api-price-sonnet-5-5 claude-api-price-opus-5-5 claude-api-price-fable-5-1">H</span>. Item 1&rsquo;s size of a token and item 2&rsquo;s size of the window: <b>Anthropic, Claude Platform Docs, Models overview</b>, retrieved 11 October 2026 <span class="conf h" data-src="src-models" data-fact="claude-context-window">H</span>. Items 2 and 3: <b>Anthropic, Claude Platform Docs, Context windows</b>, retrieved 11 October 2026; the window is all the text the model can reference when generating a response, the response itself included, and it is not the box you type in; each turn&rsquo;s input is all previous conversation history plus the current message, the system prompt, every message including tool results, images and documents, and the tool definitions all count, and as the token count grows accuracy and recall degrade, which the page calls context rot <span class="conf h" data-src="src-context-windows" data-fact="context-window-definition">H</span>. The turn count in item 3 is the instructor&rsquo;s working rule from Session 1, not a published threshold. Item 4&rsquo;s mechanism, that each word is chosen as a probable continuation of the words before it: <b>Wolfram, S. (2023)</b>, &ldquo;It&rsquo;s Just Adding One Word at a Time&rdquo; <span class="conf h" data-src="src-wolfram">H</span>. The three-rung ladder is the course&rsquo;s own.</div>
 
 </section>
 
 <!-- APXPANEL:BEGIN generated-by=scripts/build-appendix.mjs -->
 <section class="slide apxdiv" id="apx" data-nav="Appendix contents">
-  <div class="eyebrow"><span>Appendix &middot; 5 optional sections</span><span class="mins">81 min</span></div>
+  <div class="eyebrow"><span>Appendix &middot; 10 optional sections</span><span class="mins">87 min</span></div>
   <h2>Appendix contents</h2>
-  <p class="lede">Five optional sections, 81 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
-  <p>The 11 sections of the core session run in about 69 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <p class="lede">Ten optional sections, 87 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
+  <p>The 8 sections of the core session run in about 63 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
     <a class="apxcard" href="#s1"><span class="ac">B1 &middot; 16 min &middot; after &sect;00</span><b>Next-Token Probabilities for a Single Prompt</b></a>
     <a class="apxcard" href="#s2"><span class="ac">B2 &middot; 15 min &middot; after &sect;00</span><b>Laplace on Probability as a Measure of Ignorance</b></a>
-    <a class="apxcard" href="#s4"><span class="ac">B3 &middot; 16 min &middot; after &sect;01</span><b>Sampling Failure on a Task That Requires Counting</b></a>
-    <a class="apxcard" href="#s9"><span class="ac">B4 &middot; 16 min &middot; after &sect;06</span><b>The Seven-Step Process and the Delegation Line</b></a>
-    <a class="apxcard" href="#s12d"><span class="ac">B5 &middot; 18 min &middot; after &sect;08</span><b>Specification Cost Against Task Cost</b></a>
+    <a class="apxcard" href="#s6"><span class="ac">B3 &middot; 6 min &middot; after &sect;01</span><b>Persona, Task, Context, Format</b></a>
+    <a class="apxcard" href="#s3"><span class="ac">B4 &middot; 5 min &middot; after &sect;02</span><b>Temperature and Output Variance</b></a>
+    <a class="apxcard" href="#s4"><span class="ac">B5 &middot; 16 min &middot; after &sect;02</span><b>Sampling Failure on a Task That Requires Counting</b></a>
+    <a class="apxcard" href="#sZ"><span class="ac">B6 &middot; 5 min &middot; after &sect;02</span><b>Zero-Shot, One-Shot, Few-Shot</b></a>
+    <a class="apxcard" href="#sDel"><span class="ac">B7 &middot; 8 min &middot; after &sect;03</span><b>The Delegation Brief for One Task</b></a>
+    <a class="apxcard" href="#s5"><span class="ac">B8 &middot; 6 min &middot; after &sect;03</span><b>Cost Per Task Versus Cost Per Token</b></a>
+    <a class="apxcard" href="#s7"><span class="ac">B9 &middot; 5 min &middot; after &sect;05</span><b>Prompt Specification Triage</b></a>
+    <a class="apxcard" href="#s11"><span class="ac">B10 &middot; 5 min &middot; after &sect;05</span><b>Template Audit and Live Audit</b></a>
   </div>
 </section>
 <!-- APXPANEL:END -->
@@ -1244,15 +1244,15 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="doit">
     <span class="plab">Live run &mdash; 3 minutes</span>
     <p>In your AI tool, send exactly this and nothing else: <span class="mono">The best thing about AI is its ability to</span></p>
-    <p>Send it three separate times, in three separate chats. Compare the three openings and keep them. &sect;01 explains the difference and how to narrow it.</p>
+    <p>Send it three separate times, in three separate chats. Compare the three openings and keep them. Appendix B4 explains the difference and how to narrow it.</p>
   </div>
 
   <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Draw from the distribution until you have seen the same prompt produce three different continuations.</div></div>
 
 </section>
 
-<section class="slide apx" id="s2" data-nav="B2 · Laplace" data-insert-after="s0" data-tier="foundational">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B2 &middot; Laplace on Probability as a Measure of Ignorance</b><span>15 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+<section class="slide apx" id="s2" data-nav="B2 · Laplace" data-insert-after="s0" data-tier="advanced">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B2 &middot; Laplace on Probability as a Measure of Ignorance</b><span>15 min &middot; advanced &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
   <div class="eyebrow"><span>Appendix B2 &middot; Foundation</span><span class="mins">15 min</span></div>
   <h2>Laplace on Probability as a Measure of Ignorance</h2>
   <p class="big">In 1814 Laplace proposed an intellect that knew every force and every position in nature. For such an intellect, he wrote, nothing would be uncertain; the future, like the past, would be present to its eyes. Probability, on his account, is not a property of the world. It is a property of the observer's incomplete information.</p>
@@ -1312,20 +1312,175 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 </section>
 
-<section class="slide" id="sCold" data-nav="Cold open">
-  <div class="eyebrow"><span>Cold open &middot; standing ritual</span><span class="mins">8 min</span></div>
-  <h2>The Last Prompt You Sent</h2>
+<section class="slide" id="sCase" data-nav="Case 2">
+  <div class="eyebrow"><span>01 &middot; Case 2: the Roth conversion email</span><span class="mins">10 min</span></div>
+  <h2>The Roth Conversion Email and Its Four Citations</h2>
+  <p class="big">David&rsquo;s 401(k) plan has let him convert pre-tax money to Roth inside the plan since 1 January 2026. The draft below explains that to Meg and David and cites four authorities. One citation is wrong. Find it, and say why, before anything opens.</p>
 
-  <div class="ritual" data-task="t-cold-open" data-comp="timed-ritual">
-    <label class="rlab" for="coldPrompt">Paste your last prompt, verbatim, from any tool and any context</label>
-    <textarea id="coldPrompt" placeholder="Paste it exactly. Do not clean it up &mdash; the typos are the useful part."></textarea>
-    <div class="row" style="margin-top:12px"><button class="btn" id="coldGo">Analyse what I typed</button></div>
-    <div class="rout" id="coldOut"><span class="rnil">Paste something and press the button.</span></div>
+  <p>The finished email, with every citation checked against its source, is the deliverable on the Case 2 page. If you have already worked it there, answer again here: the room&rsquo;s spread is what we read. A wrong guess is the design intent.</p>
+  <p><a class="btn" id="caseLink" href="../cases/case-2.html" style="text-decoration:none;display:inline-block">Open the Case 2 page</a> <span class="mono dim" style="font-size:12px">The finished email and its verification log</span></p>
+
+  <div class="panel" style="background:var(--gold-bg);border-color:#DFD3AF" data-task="t-sCase" data-comp="prediction-commit">
+    <span class="plab" style="color:var(--gold)">Commit before the key opens</span>
+    <p style="margin:0 0 12px;font-size:15.5px"><span class="caseflag">Synthetic case</span> <span class="conf l" data-src="src-case">L</span> <span class="sim">Exercise material: one citation is wrong on purpose</span></p>
+    <div class="out has" style="white-space:normal">Meg and David,<br>Here is what David&rsquo;s plan change means for your Roth question. Four points, each with its authority.</div>
+    <div class="vote" id="ceVote" role="group" aria-label="The four cited statements. Pick the one whose citation is wrong.">
+      <button type="button" data-v="A" aria-pressed="false"><strong>A.</strong> David&rsquo;s plan now lets him convert pre-tax money to Roth inside the 401(k).<br><span class="mono dim" style="font-size:12px">Dunmore Industrial Equipment 401(k) Summary Plan Description, amended 1 January 2026</span></button>
+      <button type="button" data-v="B" aria-pressed="false"><strong>B.</strong> The converted amount is taxable income in the year of the conversion, and an in-plan conversion cannot be undone.<br><span class="mono dim" style="font-size:12px">IRC &sect;408A(d)(3) and &sect;402A(c)(4)</span></button>
+      <button type="button" data-v="C" aria-pressed="false"><strong>C.</strong> Illinois does not tax the converted amount.<br><span class="mono dim" style="font-size:12px">35 ILCS 5/203(a)(2)(F)</span></button>
+      <button type="button" data-v="D" aria-pressed="false"><strong>D.</strong> Required minimum distributions begin at age 73 for both of you.<br><span class="mono dim" style="font-size:12px">SECURE 2.0 Act &sect;107</span></button>
+    </div>
+    <label class="plab" for="ceWhy">Why? One sentence: what would you open to check it?</label>
+    <textarea id="ceWhy" style="min-height:72px" placeholder="Type your reason. It locks with your pick."></textarea>
+    <div class="row" style="margin-top:12px">
+      <button type="button" class="btn" id="ceGo" disabled>Lock my call and open the key</button>
+      <span class="mono dim" style="font-size:12px" id="ceNote" aria-live="polite">Pick one statement. Nothing locks until you press the button.</span>
+    </div>
+
+    <div id="ceReveal" hidden style="margin-top:24px">
+      <div class="out" id="ceVerdict" aria-live="polite"></div>
+      <span class="plab" style="margin-top:22px">The room</span>
+      <p style="font-size:14.5px;margin:0 0 10px">Instructor: type how many in the room picked each statement, from the poll or the chat, then draw it.</p>
+      <div class="row tight">
+        <label class="mono dim" style="font-size:12px" for="ceR0">A</label><input type="text" id="ceR0" inputmode="numeric" aria-label="Number who picked A" style="width:64px">
+        <label class="mono dim" style="font-size:12px" for="ceR1">B</label><input type="text" id="ceR1" inputmode="numeric" aria-label="Number who picked B" style="width:64px">
+        <label class="mono dim" style="font-size:12px" for="ceR2">C</label><input type="text" id="ceR2" inputmode="numeric" aria-label="Number who picked C" style="width:64px">
+        <label class="mono dim" style="font-size:12px" for="ceR3">D</label><input type="text" id="ceR3" inputmode="numeric" aria-label="Number who picked D" style="width:64px">
+        <button type="button" class="btn ghost mini" id="ceRoomGo">Draw the room</button>
+      </div>
+      <div class="tally" id="ceTally" style="margin-top:14px"></div>
+      <span class="plab" style="margin-top:22px">Which one, and why the other three hold</span>
+      <div class="out has" id="ceKey" style="white-space:normal;font-family:'Source Serif 4',Georgia,serif;font-size:15.5px;line-height:1.6"></div>
+      <p id="ceBridge" style="margin-top:18px">That check only works on output built to be checked: &sect;02 builds the prompt that gives you one, &sect;03 draws the line on what a model may draft at all, and &sect;05 runs the four checks on every citation.</p>
+    </div>
   </div>
+
+  <div class="check" data-gate="gCase"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Pick one statement, write your reason, lock, then read the key and the room.</div></div>
+
 </section>
 
-<section class="slide" id="s3" data-nav="Temperature">
-  <div class="eyebrow"><span>01 &middot; Mechanism</span><span class="mins">5 min</span></div>
+<section class="slide apx" id="s6" data-nav="B3 · P·T·C·F" data-insert-after="sCase" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B3 &middot; Persona, Task, Context, Format</b><span>6 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix B3 &middot; Framework</span><span class="mins">6 min</span></div>
+  <h2>Persona, Task, Context, Format</h2>
+  <p class="big">Google's prompting guide splits a prompt into four parts. The framework is worth adopting, and the evidence says one of the four does far less work than the way it is taught implies.</p>
+
+  <p><span class="caseflag">Synthetic case</span> The worked prompt explains the in-plan Roth conversion to David in language he can act on. Each toggle below adds one part. Watch what changes in the output and what does not.</p>
+
+  <p>The names and their order are Google's <span class="conf h" data-src="src-google-ptcf">H</span>.</p>
+
+  <div class="panel" data-task="t-s6" data-comp="builder-assembler">
+    <div class="ctrls" style="margin:0 0 20px">
+      <label class="tg" id="tgP"><input type="checkbox" id="cbP"><span class="track"><span class="knob"></span></span><span><span class="tl">Persona</span><span class="td">Who the model should write as</span></span></label>
+      <label class="tg" id="tgT"><input type="checkbox" id="cbT"><span class="track"><span class="knob"></span></span><span><span class="tl">Task</span><span class="td">The verb and the object</span></span></label>
+      <label class="tg" id="tgC"><input type="checkbox" id="cbC"><span class="track"><span class="knob"></span></span><span><span class="tl">Context</span><span class="td">Facts, constraints, source boundary</span></span></label>
+      <label class="tg" id="tgF"><input type="checkbox" id="cbF"><span class="track"><span class="knob"></span></span><span><span class="tl">Format</span><span class="td">Shape, length, structure of output</span></span></label>
+    </div>
+    <span class="plab">Assembled prompt</span>
+    <div class="out" id="ptcfPrompt"></div>
+    <span class="plab" style="margin-top:20px">What comes back</span>
+    <div class="out" id="ptcfOut"></div>
+    <div class="out" id="ptcfDiag" style="margin-top:14px;background:var(--gold-bg)"></div>
+  </div>
+
+  <h3>What the evidence says about Persona</h3>
+  <p>Zheng and colleagues tested 162 distinct roles across four model families on 2,410 factual questions. Adding a persona to the system prompt did not improve accuracy against a no-persona control. The best-performing role varied question by question, and automated strategies for choosing a good role performed no better than picking one at random.</p>
+
+  <div class="chart">
+    <div class="ctitle">Effect of adding a persona to the system prompt on factual accuracy</div>
+    <div class="csub">Persona changes register, vocabulary and audience calibration. On objective questions with a checkable answer, it does not reliably change whether the answer is right.</div>
+    <svg viewBox="0 0 700 230" role="img" aria-label="Bar chart of persona study findings"><g id="personaChart"></g></svg>
+    <div class="csrc">Source: Zheng, M., Pei, J., Logeswaran, L., et al. (2024). <em>When &ldquo;A Helpful Assistant&rdquo; Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models.</em> Findings of EMNLP 2024. Study design and null result as reported <span class="conf h" data-src="src-zheng-persona">H</span>.</div>
+  </div>
+
+  <h3>Where the effort should go instead</h3>
+  <table>
+    <thead><tr><th>Component</th><th>What it controls</th><th>Effect on whether the answer is correct, this course's ranking</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Persona</strong></td><td>Register, vocabulary, assumed audience</td><td>No reliable effect on objective accuracy</td></tr>
+      <tr><td><strong>Task</strong></td><td>Which operation gets performed</td><td>Large &mdash; a wrong verb produces a competent answer to a different question</td></tr>
+      <tr class="hi"><td><strong>Context</strong></td><td>The facts available and the boundary on sources</td><td>Largest &mdash; this is the only channel through which the model can see your client's situation</td></tr>
+      <tr class="hi"><td><strong>Format</strong></td><td>The shape of the output</td><td>Large &mdash; a constrained output space is checkable; free prose is not</td></tr>
+    </tbody>
+  </table>
+
+  <p>Persona still earns its place: it sets the reading level for a client email and the terseness of a case note. It is not the lever for correctness, and a template that is only a persona is an unspecified template.</p>
+
+  <div class="panel tightpad">
+    <span class="plab">A related point on prompt length</span>
+    <p style="font-size:15.5px;margin:0">Longer prompts are not better prompts. Specific prompts are better prompts, and specificity is usually shorter than the padding it replaces.</p>
+  </div>
+
+  <p class="mono dim" style="font-size:12px"><a href="#s6b" style="color:var(--gold)">On to &sect;02, Building Prompts Against P.T.C.F</a></p>
+
+</section>
+
+<section class="slide" id="s6b" data-nav="Build a prompt">
+  <div class="eyebrow"><span>02 &middot; Workshop</span><span class="mins">9 min</span></div>
+  <h2>Building Prompts Against P.T.C.F</h2>
+  <p class="big">Three starter prompts, each built up one element at a time from absent to specified and checkable. Watch what each step adds.</p>
+
+  <div class="rnote"><span class="rh">Frame, Appendix B3</span>The four-toggle P.T.C.F frame this workshop writes against, and the evidence on persona, is in <a href="#s6" style="color:var(--gold)">B3 &middot; Persona, Task, Context, Format</a>.</div>
+
+  <div class="doit">
+    <span class="plab">Room call, 3 minutes</span>
+    <p>Take F1. For each element in turn, P, T, C and F, the room chooses the level in the chat, one answer each: absent, gestured at, specified, or specified and checkable. Press what the room says and read the prompt it builds. Stop when you can say what the model will have to guess.</p>
+  </div>
+
+  <p>Then rewrite the weakest of your own three templates in the editor below, or start from one of these. <strong>The rewrite, not the original, is what carries forward</strong> into your Part 1 template library.</p>
+
+  <div class="panel" id="fixtures" data-task="t-s6b" data-comp="builder-assembler">
+    <div class="row" style="margin-bottom:12px">
+      <button class="btn sel mini act" data-fx="0">F1 &middot; Client email</button>
+      <button class="btn sel mini" data-fx="1">F2 &middot; Meeting notes</button>
+      <button class="btn sel mini" data-fx="2">F3 &middot; Plan summary</button>
+      <span class="mono dim" style="font-size:12px" id="fxWhich"></span>
+    </div>
+    <p style="font-size:14.5px;margin:0 0 10px"><span class="caseflag">Synthetic case</span> <span class="sim">Exercise material</span> Three inputs from the Cole file <span class="conf l" data-src="src-case">L</span>. Pick one, then set the level of each element and watch the prompt change.</p>
+    <span class="plab" id="fxInLabel">The input</span>
+    <div class="out has" id="fxIn"></div>
+    <div class="row" style="margin-top:8px"><button class="btn ghost mini" id="fxCopyIn">Copy the input</button></div>
+    <div id="hwScore" style="margin-top:20px"></div>
+    <span class="plab" style="margin-top:20px">The prompt at these levels</span>
+    <div class="out has" id="fxPrompt"></div>
+    <div class="out" id="hwVerdict" style="margin-top:12px"></div>
+    <div class="row" style="margin-top:10px">
+      <button class="btn mini" id="fxUse">Load this version into the editor</button>
+      <span class="mono dim" style="font-size:12px" id="hwWhich"></span>
+    </div>
+    <p style="font-size:14px;margin:12px 0 0">To run it: paste the input and the prompt into your own tool, score the output against the facts in the Case facts panel, and write down what the model assumed that the input never said.</p>
+  </div>
+
+  <h3>Rewrite the weakest of the three</h3>
+  <p>The scaffold loads all four elements as bracketed placeholders; the builder above can load its assembled version instead. Replace every placeholder with your own text. The counter checks the four elements against what you have written, live.</p>
+
+  <div class="panel">
+    <div class="row" style="margin-bottom:14px">
+      <button class="btn ghost mini" id="hwScaffold">Load the P.T.C.F scaffold</button>
+      <button class="btn sel mini" id="hwClear">Clear</button>
+      <span class="mono dim" style="font-size:12px" id="hwLive"></span>
+    </div>
+    <label class="plab" for="hwRewrite">Your rewritten prompt</label>
+    <textarea class="editor" id="hwRewrite" placeholder="Write the revised version here. This is the version that carries forward."></textarea>
+    <div id="hwLiveScore" style="margin-top:18px"></div>
+    <div class="row" style="margin-top:14px">
+      <button class="btn mini" id="hwCopy">Copy the rewrite</button>
+      <span class="mono dim" style="font-size:12px">Paste it into your tool and run both versions on the same input before you leave this section.</span>
+    </div>
+  </div>
+
+  <div class="doit">
+    <span class="plab">Group report &mdash; 2 minutes</span>
+    <p>One sentence: which element was hardest to get to specified and checkable, and what you had assumed the model already knew.</p>
+  </div>
+
+  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Take each of the three prompts to specified and checkable, then rewrite the weakest of your own in the editor.</div></div>
+
+</section>
+
+<section class="slide apx" id="s3" data-nav="B4 · Temperature" data-insert-after="s6b" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B4 &middot; Temperature and Output Variance</b><span>5 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix B4 &middot; Mechanism</span><span class="mins">5 min</span></div>
   <h2>Temperature and Output Variance</h2>
 
   <div class="panel" style="background:var(--gold-bg);border-color:#DFD3AF" data-task="t-s3" data-comp="prediction-commit">
@@ -1376,11 +1531,13 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="card warn"><span class="num">Consequence 03</span><h4>Control variance with the prompt</h4><p>You cannot set temperature in the chat product, and current Claude models no longer accept it in the API either <span class="conf h" data-src="src-api-messages">H</span>. Constrain the output space instead: name the form, the length and the allowed values, and the spread collapses.</p></div>
   </div>
 
+  <p class="mono dim" style="font-size:12px"><a href="#s6b" style="color:var(--gold)">Back to &sect;02, Building Prompts Against P.T.C.F</a></p>
+
 </section>
 
-<section class="slide apx" id="s4" data-nav="B3 · Counting failure" data-insert-after="s3" data-tier="standard">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B3 &middot; Sampling Failure on a Task That Requires Counting</b><span>16 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix B3 &middot; Failure mode</span><span class="mins">16 min</span></div>
+<section class="slide apx" id="s4" data-nav="B5 · Counting failure" data-insert-after="s6b" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B5 &middot; Sampling Failure on a Task That Requires Counting</b><span>16 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix B5 &middot; Failure mode</span><span class="mins">16 min</span></div>
   <h2>Sampling Failure on a Task That Requires Counting</h2>
   <p class="big">Wolfram trained a small transformer on a language with exactly one rule: parentheses must balance. The rule is simpler than any tax provision. The network still fails, and it fails in a specific and instructive way.</p>
 
@@ -1412,10 +1569,94 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Push the sequence until the predictor offers a closing parenthesis with nothing open, and read the count it never kept.</div></div>
 
+  <p class="mono dim" style="font-size:12px"><a href="#s6b" style="color:var(--gold)">Back to &sect;02, Building Prompts Against P.T.C.F</a></p>
+
 </section>
 
-<section class="slide" id="s5" data-nav="Cost frontier">
-  <div class="eyebrow"><span>02 &middot; Economics</span><span class="mins">6 min</span></div>
+<section class="slide apx" id="sZ" data-nav="B6 · Zero, one, few" data-insert-after="s6b" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B6 &middot; Zero-Shot, One-Shot, Few-Shot</b><span>5 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix B6 &middot; Vocabulary</span><span class="mins">5 min</span></div>
+  <h2>Zero-Shot, One-Shot, Few-Shot</h2>
+  <p class="big">A &ldquo;shot&rdquo; is a worked example inside the prompt. The count is of examples. It is not a count of how much instruction you wrote, or of how many times you ran it.</p>
+
+  <p>Zero-shot gives the model an instruction and no example. One-shot gives it the instruction and exactly one example. Few-shot gives it several <span class="conf m" data-fact="zero-shot-definition">M</span>. Label each prompt below before its feedback opens. A wrong label is the design intent.</p>
+
+  <p><span class="caseflag">Synthetic case</span> All four prompts ask for the same Case 2 email and are written for this page <span class="conf l" data-src="src-case">L</span>.</p>
+
+  <div class="panel quiz" id="zsQuiz" data-task="t-sZ" data-comp="commit-first-mcq"></div>
+
+  <div class="csrc">Definitions: Brown, T. et al. (2020), <em>Language Models are Few-Shot Learners</em>, arXiv 2005.14165 <span class="conf m" data-fact="zero-shot-definition">M</span>.</div>
+
+  <p>A bare prompt is a fair first try. If the shape or the register comes out wrong, an example shows the model what you mean, and you then check that its content did not leak into the new draft. If a fact comes out wrong, an example will not fix it: a named source will (&sect;02, Context).</p>
+
+  <p class="mono dim" style="font-size:12px"><a href="#s6b" style="color:var(--gold)">Back to &sect;02, Building Prompts Against P.T.C.F</a></p>
+
+  <div class="check" data-gate="gZ"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Label all four prompts, then read the feedback on the ones you missed.</div></div>
+
+</section>
+
+<section class="slide" id="s9" data-nav="Seven steps">
+  <div class="eyebrow"><span>03 &middot; Process</span><span class="mins">8 min</span></div>
+  <h2>The Seven-Step Process and the Delegation Line</h2>
+  <p class="big">The CFP Board's seven-step financial planning process is the structure your duty of care attaches to. Not every step is the same kind of work, and the steps that look most similar on paper have the least in common when you ask what a sampler could contribute.</p>
+
+  <p>Sort each step. Click a step, then click a column. Change your mind as often as you like. The key appears when all seven are placed, and you are expected to argue with it.</p>
+
+  <div class="panel" data-task="t-s9" data-comp="multi-column-sorter">
+    <div id="sortBoard"></div>
+    <div class="row" style="margin-top:20px">
+      <button class="btn sel mini" id="sortReset">Reset</button>
+      <button class="btn ghost mini" id="sortKey" disabled>Reveal instructor key</button>
+      <span class="mono dim" style="font-size:12px" id="sortCount"></span>
+    </div>
+    <div id="sortKeyOut" style="margin-top:20px"></div>
+  </div>
+
+  <h3>The delegation decision</h3>
+  <p>Steps 2 and 4 stay with you. Step 2 is eliciting what a client actually wants, which is often not what they first say. Step 4 is the judgment your registration, your credential and your liability attach to. A model can draft language for either; it cannot perform either. Steps 3 and 7 are the opposite case: high-volume, structured and checkable against a source, which is where the measurable time recovery lives.</p>
+
+  <p>The profession has already drawn this line. 52.2% of advisors use AI search and generative tools <span class="conf m" data-src="src-t3-survey" data-fact="adoption-t3-2026">M</span>, while roughly 3% report relying on a model&rsquo;s recommendation, a directional figure <span class="conf m" data-src="src-kitces-productivity">M</span>. Where steps 1, 5 and 6 sit is your firm&rsquo;s choice.</p>
+
+  <div class="doit">
+    <span class="plab">Your line, 1 minute</span>
+    <p>In the chat, name one step of your own work that you will let a model draft first, and the source you will check the draft against. <a href="#sDel" style="color:var(--gold)">B7 &middot; The Delegation Brief for One Task</a> writes that out for the Case 2 email.</p>
+  </div>
+
+  <div class="check" data-gate="ga4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all seven steps against the delegation line, then argue with the key.</div></div>
+
+</section>
+
+<section class="slide apx" id="sDel" data-nav="B7 · Delegation brief" data-insert-after="s9" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B7 &middot; The Delegation Brief for One Task</b><span>8 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix B7 &middot; Delegation, written out</span><span class="mins">8 min</span></div>
+  <h2>The Delegation Brief for One Task</h2>
+  <p class="big">&sect;03 drew the line between the seven steps. A delegation brief draws it for one task: what you hand the model, what you keep, and what you check before anything leaves your desk.</p>
+
+  <p><span class="caseflag">Synthetic case</span> The task is the Case 2 email: explain David&rsquo;s in-plan Roth conversion option to Meg and David <span class="conf l" data-src="src-case">L</span>. Build the brief by choosing from each list. Nothing is marked until you press the button. There is no single right brief, but some choices cannot be defended.</p>
+
+  <div class="panel" id="dbBuild" data-task="t-sDel" data-comp="builder-assembler">
+    <div id="dbGroups"></div>
+    <span class="plab" style="margin-top:22px">Your brief</span>
+    <div class="out has" id="dbBrief"></div>
+    <div class="row" style="margin-top:14px">
+      <button type="button" class="btn" id="dbGo">Check my brief</button>
+      <button type="button" class="btn sel mini" id="dbReset">Clear</button>
+      <span class="mono dim" style="font-size:12px" id="dbCount" aria-live="polite"></span>
+    </div>
+    <div class="out" id="dbOut" style="margin-top:16px;white-space:normal" aria-live="polite">Choose from each list, then check.</div>
+  </div>
+
+  <p>The brief has the same job as the seven-step sort: it puts the judgment on the planner&rsquo;s side of the line in writing, so a colleague who runs the workflow without you knows what is theirs.</p>
+
+  <p class="mono dim" style="font-size:12px"><a href="#s9" style="color:var(--gold)">Back to &sect;03, The Seven-Step Process and the Delegation Line</a></p>
+
+  <div class="check" data-gate="gDel"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Choose from all three lists, check the brief, and fix any choice that cannot be defended.</div></div>
+
+</section>
+
+<section class="slide apx" id="s5" data-nav="B8 · Cost frontier" data-insert-after="s9" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B8 &middot; Cost Per Task Versus Cost Per Token</b><span>6 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix B8 &middot; Economics</span><span class="mins">6 min</span></div>
   <h2>Cost Per Task Versus Cost Per Token</h2>
   <p class="big">Dollars per million tokens measures the wrong thing. Two models two dollars apart per million tokens can differ fourfold in what a finished piece of work costs, because they burn different numbers of tokens getting there.</p>
 
@@ -1483,143 +1724,16 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <p style="margin:10px 0 0"><span class="sim">Illustrative token counts per task: constructed for this page, not measured</span></p>
     <div class="csrc">Rates: <b>Anthropic</b> pricing page, retrieved 11 October 2026 <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-sonnet-5-5 claude-api-price-opus-5-5 claude-api-price-fable-5-1">H</span>. Token counts per task are this page&rsquo;s assumptions, shown in the readout so you can replace them with your own.</div>
   </div>
-</section>
-
-<section class="slide" id="s6" data-nav="P·T·C·F">
-  <div class="eyebrow"><span>03 &middot; Framework</span><span class="mins">6 min</span></div>
-  <h2>Persona, Task, Context, Format</h2>
-  <p class="big">Google's prompting guide splits a prompt into four parts. The framework is worth adopting, and the evidence says one of the four does far less work than the way it is taught implies.</p>
-
-  <p><span class="caseflag">Synthetic case</span> The worked prompt explains the in-plan Roth conversion to David in language he can act on. Each toggle below adds one part. Watch what changes in the output and what does not.</p>
-
-  <p>The cold open's eight checks fold into these four letters: the ask and the named format are Task and Format, the audience is Persona, and everything else is Context. The names and their order are Google's <span class="conf h" data-src="src-google-ptcf">H</span>.</p>
-
-  <div class="panel" data-task="t-s6" data-comp="builder-assembler">
-    <div class="ctrls" style="margin:0 0 20px">
-      <label class="tg" id="tgP"><input type="checkbox" id="cbP"><span class="track"><span class="knob"></span></span><span><span class="tl">Persona</span><span class="td">Who the model should write as</span></span></label>
-      <label class="tg" id="tgT"><input type="checkbox" id="cbT"><span class="track"><span class="knob"></span></span><span><span class="tl">Task</span><span class="td">The verb and the object</span></span></label>
-      <label class="tg" id="tgC"><input type="checkbox" id="cbC"><span class="track"><span class="knob"></span></span><span><span class="tl">Context</span><span class="td">Facts, constraints, source boundary</span></span></label>
-      <label class="tg" id="tgF"><input type="checkbox" id="cbF"><span class="track"><span class="knob"></span></span><span><span class="tl">Format</span><span class="td">Shape, length, structure of output</span></span></label>
-    </div>
-    <span class="plab">Assembled prompt</span>
-    <div class="out" id="ptcfPrompt"></div>
-    <span class="plab" style="margin-top:20px">What comes back</span>
-    <div class="out" id="ptcfOut"></div>
-    <div class="out" id="ptcfDiag" style="margin-top:14px;background:var(--gold-bg)"></div>
-  </div>
-
-  <h3>What the evidence says about Persona</h3>
-  <p>Zheng and colleagues tested 162 distinct roles across four model families on 2,410 factual questions. Adding a persona to the system prompt did not improve accuracy against a no-persona control. The best-performing role varied question by question, and automated strategies for choosing a good role performed no better than picking one at random.</p>
-
-  <div class="chart">
-    <div class="ctitle">Effect of adding a persona to the system prompt on factual accuracy</div>
-    <div class="csub">Persona changes register, vocabulary and audience calibration. On objective questions with a checkable answer, it does not reliably change whether the answer is right.</div>
-    <svg viewBox="0 0 700 230" role="img" aria-label="Bar chart of persona study findings"><g id="personaChart"></g></svg>
-    <div class="csrc">Source: Zheng, M., Pei, J., Logeswaran, L., et al. (2024). <em>When &ldquo;A Helpful Assistant&rdquo; Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models.</em> Findings of EMNLP 2024. Study design and null result as reported <span class="conf h" data-src="src-zheng-persona">H</span>.</div>
-  </div>
-
-  <h3>Where the effort should go instead</h3>
-  <table>
-    <thead><tr><th>Component</th><th>What it controls</th><th>Effect on whether the answer is correct, this course's ranking</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Persona</strong></td><td>Register, vocabulary, assumed audience</td><td>No reliable effect on objective accuracy</td></tr>
-      <tr><td><strong>Task</strong></td><td>Which operation gets performed</td><td>Large &mdash; a wrong verb produces a competent answer to a different question</td></tr>
-      <tr class="hi"><td><strong>Context</strong></td><td>The facts available and the boundary on sources</td><td>Largest &mdash; this is the only channel through which the model can see your client's situation</td></tr>
-      <tr class="hi"><td><strong>Format</strong></td><td>The shape of the output</td><td>Large &mdash; a constrained output space is checkable; free prose is not</td></tr>
-    </tbody>
-  </table>
-
-  <p>Persona still earns its place: it sets the reading level for a client email and the terseness of a case note. It is not the lever for correctness, and a template that is only a persona is an unspecified template.</p>
-
-  <div class="panel tightpad">
-    <span class="plab">A related point on prompt length</span>
-    <p style="font-size:15.5px;margin:0">Longer prompts are not better prompts. Specific prompts are better prompts, and specificity is usually shorter than the padding it replaces.</p>
-  </div>
-
-</section>
-
-<section class="slide" id="s6b" data-nav="Build a prompt">
-  <div class="eyebrow"><span>04 &middot; Workshop</span><span class="mins">7 min</span></div>
-  <h2>Building Prompts Against P.T.C.F</h2>
-  <p class="big">Three starter prompts, each built up one element at a time from absent to specified and checkable. Watch what each step adds.</p>
-
-  <p>Then rewrite the weakest of your own three templates in the editor below, or start from one of these. <strong>The rewrite, not the original, is what carries forward</strong> into your Part 1 template library.</p>
-
-  <div class="panel" id="fixtures" data-task="t-s6b" data-comp="builder-assembler">
-    <div class="row" style="margin-bottom:12px">
-      <button class="btn sel mini act" data-fx="0">F1 &middot; Client email</button>
-      <button class="btn sel mini" data-fx="1">F2 &middot; Meeting notes</button>
-      <button class="btn sel mini" data-fx="2">F3 &middot; Plan summary</button>
-      <span class="mono dim" style="font-size:12px" id="fxWhich"></span>
-    </div>
-    <p style="font-size:14.5px;margin:0 0 10px"><span class="caseflag">Synthetic case</span> <span class="sim">Exercise material</span> Three inputs from the Cole file <span class="conf l" data-src="src-case">L</span>. Pick one, then set the level of each element and watch the prompt change.</p>
-    <span class="plab" id="fxInLabel">The input</span>
-    <div class="out has" id="fxIn"></div>
-    <div class="row" style="margin-top:8px"><button class="btn ghost mini" id="fxCopyIn">Copy the input</button></div>
-    <div id="hwScore" style="margin-top:20px"></div>
-    <span class="plab" style="margin-top:20px">The prompt at these levels</span>
-    <div class="out has" id="fxPrompt"></div>
-    <div class="out" id="hwVerdict" style="margin-top:12px"></div>
-    <div class="row" style="margin-top:10px">
-      <button class="btn mini" id="fxUse">Load this version into the editor</button>
-      <span class="mono dim" style="font-size:12px" id="hwWhich"></span>
-    </div>
-    <p style="font-size:14px;margin:12px 0 0">To run it: paste the input and the prompt into your own tool, score the output against the facts in the Case facts panel, and write down what the model assumed that the input never said.</p>
-  </div>
-
-  <h3>Rewrite the weakest of the three</h3>
-  <p>The scaffold loads all four elements as bracketed placeholders; the builder above can load its assembled version instead. Replace every placeholder with your own text. The counter checks the four elements against what you have written, live.</p>
-
-  <div class="panel">
-    <div class="row" style="margin-bottom:14px">
-      <button class="btn ghost mini" id="hwScaffold">Load the P.T.C.F scaffold</button>
-      <button class="btn sel mini" id="hwClear">Clear</button>
-      <span class="mono dim" style="font-size:12px" id="hwLive"></span>
-    </div>
-    <label class="plab" for="hwRewrite">Your rewritten prompt</label>
-    <textarea class="editor" id="hwRewrite" placeholder="Write the revised version here. This is the version that carries forward."></textarea>
-    <div id="hwLiveScore" style="margin-top:18px"></div>
-    <div class="row" style="margin-top:14px">
-      <button class="btn mini" id="hwCopy">Copy the rewrite</button>
-      <span class="mono dim" style="font-size:12px">Paste it into your tool and run both versions on the same input before you leave this section.</span>
-    </div>
-  </div>
-
-  <div class="doit">
-    <span class="plab">Group report &mdash; 2 minutes</span>
-    <p>One sentence: which element was hardest to get to specified and checkable, and what you had assumed the model already knew.</p>
-  </div>
-
-  <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Take each of the three prompts to specified and checkable, then rewrite the weakest of your own in the editor.</div></div>
-
-</section>
-
-<section class="slide" id="s7" data-nav="Triage">
-  <div class="eyebrow"><span>05 &middot; Diagnostic</span><span class="mins">5 min</span></div>
-  <h2>Prompt Specification Triage</h2>
-  <p class="big">Three categories, not two. A prompt can be underspecified. It can be fully specified and still produce output nobody can check. Or it can be specified in a way that makes checking possible. Only the third is usable in a fiduciary practice.</p>
-
-  <div class="cards">
-    <div class="card"><span class="num">Category A</span><h4>Underspecified</h4><p>The output shape, the source boundary, or the operation itself is left to the model to choose.</p></div>
-    <div class="card gold"><span class="num">Category B</span><h4>Specified, unverifiable</h4><p>You know exactly what will come back. You have no procedure for confirming it is right.</p></div>
-    <div class="card"><span class="num">Category C</span><h4>Specified and verifiable</h4><p>The output is constrained to a form where a named source settles whether each element is correct.</p></div>
-  </div>
-
-  <p class="dim" style="font-size:15.5px">Several of these are designed to be mis-sorted. Read the whole prompt before choosing.</p>
-
-  <div class="panel" id="quiz" data-task="t-s7" data-comp="commit-first-mcq"></div>
-  <div class="csrc">Item 5 and its key: <b>Rev. Proc. 2022-32 (IRB 2022-30)</b>, the late portability election on a complete Form 706 filed on or before the fifth anniversary of death for an estate not required to file under IRC 6018(a) <span class="conf m" data-src="src-rp-2022-32" data-fact="portability-late-election">M</span>.</div>
-
-  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Triage every prompt in the set and read the feedback on the ones you got wrong.</div></div>
+  <p class="mono dim" style="font-size:12px"><a href="#s9" style="color:var(--gold)">Back to &sect;03, The Seven-Step Process and the Delegation Line</a></p>
 
 </section>
 
 <section class="slide" id="s8" data-nav="Interview rewrite">
-  <div class="eyebrow"><span>06 &middot; Technique</span><span class="mins">6 min</span></div>
+  <div class="eyebrow"><span>04 &middot; Technique</span><span class="mins">5 min</span></div>
   <h2>The Interview Rewrite (Reverse Prompting)</h2>
   <p class="big">Wolfram makes an observation that most prompting advice skips: you can tell the model something once, as part of the prompt, and it will use it. The prompt is not a request. It is the entire evidentiary record available to the model at the moment it answers.</p>
 
-  <p>Which means the standard of inquiry you apply to a prompt is the same standard you apply to a client interview. You would not build a recommendation from a client meeting in which you asked one question. The technique below inverts the order: instead of writing a better prompt, you make the model conduct the intake.</p>
+  <p>You would not build a recommendation from a client meeting in which you asked one question. The technique below inverts the order: instead of writing a better prompt, you make the model conduct the intake.</p>
 
   <div class="copybox" id="cbWrap">Before you produce anything, ask me the questions you need answered to do this well.
 Ask them in one numbered batch, then stop.
@@ -1648,8 +1762,8 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <div class="out has" id="rpQs"></div>
   </div>
 
-  <h3>Specification diagnosis on your own prompt</h3>
-  <p>Now paste one of your own prompts, or the Roth-memo prompt above. The checker looks for ten specification dimensions that determine whether the output can be verified. It runs entirely in this page; nothing is transmitted.</p>
+  <h3>Check your own prompt</h3>
+  <p>Paste one of your own prompts, or the Roth-memo prompt above. The checker looks for ten specification dimensions. It runs in this page; nothing is transmitted.</p>
 
   <div class="panel">
     <label class="plab" for="promptIn">Your prompt</label>
@@ -1662,9 +1776,8 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   </div>
 
   <div class="doit">
-    <span class="plab">The inversion &mdash; 5 minutes</span>
-    <p>Take the prompt you just diagnosed. Wrap it in the interview block above and send it. Count the questions the model asks you. Then answer the three that you would not have thought to specify.</p>
-    <p>Report to the room: how many questions, and which one you did not see coming.</p>
+    <span class="plab">The inversion, 2 minutes</span>
+    <p>Wrap the prompt you just checked in the interview block above and send it. Count the questions the model asks. Report to the room: how many, and which one you did not see coming.</p>
   </div>
 
 
@@ -1673,46 +1786,12 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
 </section>
 
-<section class="slide apx" id="s9" data-nav="B4 · Seven steps" data-insert-after="s8" data-tier="standard">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B4 &middot; The Seven-Step Process and the Delegation Line</b><span>16 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix B4 &middot; Process</span><span class="mins">16 min</span></div>
-  <h2>The Seven-Step Process and the Delegation Line</h2>
-  <p class="big">The CFP Board's seven-step financial planning process is the structure your duty of care attaches to. Not every step is the same kind of work, and the steps that look most similar on paper have the least in common when you ask what a sampler could contribute.</p>
-
-  <p>Sort each step. Click a step, then click a column. Change your mind as often as you like. The instructor key appears when all seven are placed, and you are expected to argue with it.</p>
-
-  <div class="panel" data-task="t-s9" data-comp="multi-column-sorter">
-    <div id="sortBoard"></div>
-    <div class="row" style="margin-top:20px">
-      <button class="btn sel mini" id="sortReset">Reset</button>
-      <button class="btn ghost mini" id="sortKey" disabled>Reveal instructor key</button>
-      <span class="mono dim" style="font-size:12px" id="sortCount"></span>
-    </div>
-    <div id="sortKeyOut" style="margin-top:20px"></div>
-  </div>
-
-  <div class="chart">
-    <div class="ctitle">Advisor adoption of AI tools against reliance on AI-generated recommendations</div>
-    <div class="csub">The profession has already drawn a line, whether or not any individual firm has written it down. Adoption of AI search and drafting is over half, and notetaking tools are close behind. Reliance on the model's recommendation is close to zero.</div>
-    <svg viewBox="0 0 700 206" role="img" aria-label="Bar chart of advisor AI adoption versus reliance"><g id="adoptChart"></g></svg>
-    <div class="csrc">Sources: T3 / Inside Information Software Survey 2026, n=2,906 advisors, 95% at fee-only RIA or dually registered firms &mdash; 52.2% using AI search and generative language, 42.9% using AI notetaking <span class="conf m" data-src="src-t3-survey" data-fact="adoption-t3-2026">M</span>. Reliance figure reported via Advisor360 and Kitces Research through a secondary aggregator; treat as directional <span class="conf m" data-src="src-kitces-productivity">M</span>. Kitces Research on Advisor Productivity: approximately one hour of note, summary and follow-up work per two-hour client meeting <span class="conf h" data-src="src-kitces-productivity">H</span>.</div>
-  </div>
-
-  <h3>Why steps 2 and 4 sit apart</h3>
-  <p>Step 2 is the elicitation of what a client actually wants, which is frequently not what they first say they want. Step 4 is the exercise of professional judgment that your registration, your credential and your liability all attach to. A model can draft language for either. It cannot perform either, and a workflow that quietly lets it is the failure mode this course exists to prevent.</p>
-
-  <p>Steps 3 and 7 are the opposite case. Analysing alternative courses of action and monitoring for drift are both high-volume, structured, and verifiable against a source. They are where the measurable time recovery lives.</p>
-
-  <div class="check" data-gate="ga4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all seven steps against the delegation line, then argue with the key.</div></div>
-
-</section>
-
 <section class="slide" id="s10" data-nav="Citations">
-  <div class="eyebrow"><span>07 &middot; Verification</span><span class="mins">8 min</span></div>
+  <div class="eyebrow"><span>05 &middot; Verification</span><span class="mins">6 min</span></div>
   <h2>Citation Failure Types on the Cole RMD Age</h2>
   <p class="big">There is a base rate for this, and it is not small. General-purpose models tested on verifiable legal questions hallucinated on between 58 and 88 percent of them <span class="conf h" data-src="src-dahl-fictions">H</span>. Purpose-built legal research products from LexisNexis and Thomson Reuters, marketed as retrieval-grounded, hallucinated on 17 to 33 percent of the same kind of question <span class="conf h" data-src="src-magesh">H</span>.</p>
 
-  <p><span class="caseflag">Synthetic case</span> Your draft email to Meg and David says their required minimum distributions begin at 73. You ask an AI assistant what authority supports that age. What comes back looks like this section&rsquo;s exercise, and three of the six items are wrong in a way that survives the check most people actually perform.</p>
+  <p><span class="caseflag">Synthetic case</span> The wrong citation in the Case 2 email was the age 73. Ask an AI assistant what authority supports that age and six items like these come back. Three of them are wrong in a way that survives the check most people actually perform.</p>
 
   <div class="chart">
     <div class="ctitle">Measured hallucination rates on verifiable legal research questions</div>
@@ -1721,12 +1800,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <div class="csrc">Sources: Dahl, M., Magesh, V., Suzgun, M., &amp; Ho, D. E. (2024). <em>Large Legal Fictions</em> &mdash; general-purpose models, &gt;800,000 verifiable legal questions, 58&ndash;88% hallucination; GPT-4 58%, GPT-3.5 69%, Llama 2 88% <span class="conf h" data-src="src-dahl-fictions">H</span>. Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools</em>, Journal of Empirical Legal Studies &mdash; over 200 preregistered queries, Lexis+ AI ~17%, Westlaw AI-Assisted Research ~33% <span class="conf h" data-src="src-magesh">H</span>. Figures reflect model and tool versions available in 2023&ndash;2024 <span class="conf h" data-src="src-magesh">H</span>.</div>
   </div>
 
-  <div class="chart">
-    <div class="ctitle">Court decisions identifying AI-fabricated citations, cumulative</div>
-    <div class="csub">Damien Charlotin's database includes a matter only where a court explicitly found fabricated content. The curve is the professional consequence of skipping verification, measured in sanctions rather than in benchmarks.</div>
-    <svg viewBox="0 0 700 260" role="img" aria-label="Line chart of cumulative AI hallucination court cases"><g id="caseChart"></g></svg>
-    <div class="csrc">Source: AI Hallucination Cases database, maintained by Damien Charlotin (HEC Paris), as reported: approximately 200 cases mid-2025, 719 by January 2026, 1,227 by early April 2026, 1,598 as of 9 June 2026; largest single-matter penalty approximately $109,700 <span class="conf m" data-src="src-charlotin">M</span> &mdash; retrieved through a secondary tracker, verify the current count before citing it to a client or a regulator.</div>
-  </div>
+  <p>The professional consequence shows up in court. The AI Hallucination Cases database, which counts only matters where a court found fabricated content, stood at 1,598 as of 9 June 2026, up from about 200 in mid-2025 <span class="conf m" data-src="src-charlotin">M</span>. It comes through a secondary tracker, so verify the current count before citing it to a client or a regulator.</p>
 
   <h3>Four failure types, in ascending order of danger</h3>
   <p>The Stanford taxonomy separates fabrication from misgrounding. This question adds a third and a fourth that matter in retirement planning: an age the Code has since amended, so that an older answer fits an earlier birth cohort, and guidance that is cited as if it were law.</p>
@@ -1755,8 +1829,8 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <p class="pull">Existence is the floor of verification and never the ceiling.</p>
 
   <div class="doit">
-    <span class="plab">Live run &mdash; 5 minutes</span>
-    <p>Ask your AI tool: <span class="mono">What authority sets the age at which a person born in 1968 must begin required minimum distributions from a 403(b), and what are the principal risks of relying on the answer?</span> Then run all four checks on every authority it returns, plus a fifth: for any publication or form instruction, confirm whether it is the law or only guidance about the law. Time yourself.</p>
+    <span class="plab">Live run, 2 minutes</span>
+    <p>Ask your AI tool: <span class="mono">What authority sets the age at which a person born in 1968 must begin required minimum distributions from a 403(b), and what are the principal risks of relying on the answer?</span> Run all four checks on the first authority it returns, plus a fifth: for a publication or form instruction, confirm whether it is the law or only guidance about the law. Time yourself.</p>
     <p>That elapsed time is the real cost of the workflow. It belongs in your final project's time comparison, and leaving it out is the most common way these projects overstate their savings.</p>
   </div>
 
@@ -1764,10 +1838,34 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
 </section>
 
-<section class="slide" id="s11" data-nav="Template audit">
-  <div class="eyebrow"><span>08 &middot; Workshop</span><span class="mins">5 min</span></div>
+<section class="slide apx" id="s7" data-nav="B9 · Triage" data-insert-after="s10" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B9 &middot; Prompt Specification Triage</b><span>5 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix B9 &middot; Diagnostic</span><span class="mins">5 min</span></div>
+  <h2>Prompt Specification Triage</h2>
+  <p class="big">Three categories, not two. A prompt can be underspecified. It can be fully specified and still produce output nobody can check. Or it can be specified in a way that makes checking possible. Only the third is usable in a fiduciary practice.</p>
+
+  <div class="cards">
+    <div class="card"><span class="num">Category A</span><h4>Underspecified</h4><p>The output shape, the source boundary, or the operation itself is left to the model to choose.</p></div>
+    <div class="card gold"><span class="num">Category B</span><h4>Specified, unverifiable</h4><p>You know exactly what will come back. You have no procedure for confirming it is right.</p></div>
+    <div class="card"><span class="num">Category C</span><h4>Specified and verifiable</h4><p>The output is constrained to a form where a named source settles whether each element is correct.</p></div>
+  </div>
+
+  <p class="dim" style="font-size:15.5px">Several of these are designed to be mis-sorted. Read the whole prompt before choosing.</p>
+
+  <div class="panel" id="quiz" data-task="t-s7" data-comp="commit-first-mcq"></div>
+  <div class="csrc">Item 5 and its key: <b>Rev. Proc. 2022-32 (IRB 2022-30)</b>, the late portability election on a complete Form 706 filed on or before the fifth anniversary of death for an estate not required to file under IRC 6018(a) <span class="conf m" data-src="src-rp-2022-32" data-fact="portability-late-election">M</span>.</div>
+
+  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Triage every prompt in the set and read the feedback on the ones you got wrong.</div></div>
+
+  <p class="mono dim" style="font-size:12px"><a href="#s10" style="color:var(--gold)">Back to &sect;05, Citation Failure Types on the Cole RMD Age</a></p>
+
+</section>
+
+<section class="slide apx" id="s11" data-nav="B10 · Template audit" data-insert-after="s10" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B10 &middot; Template Audit and Live Audit</b><span>5 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix B10 &middot; Workshop</span><span class="mins">5 min</span></div>
   <h2>Template Audit and Live Audit</h2>
-  <p class="big">&sect;04 rebuilt one of your prompts. This section tests whether it is a <em>template</em> — something a second person can run — rather than a prompt that happens to work in your hands.</p>
+  <p class="big">&sect;02 rebuilt one of your prompts. This section tests whether it is a <em>template</em> — something a second person can run — rather than a prompt that happens to work in your hands.</p>
 
   <p><span class="caseflag">Synthetic case</span> The audit target is a client-explanation template for the Cole Roth conversion question: a reusable instrument that takes any pre-retiree whose employer plan has just added in-plan Roth conversion and produces an explanation they can act on. Score the version you would hand to a colleague, not the one in your head.</p>
 
@@ -1795,17 +1893,20 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
   <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Self-audit one template against the rubric, then score the live audit as it runs.</div></div>
 
+  <p class="mono dim" style="font-size:12px"><a href="#s10" style="color:var(--gold)">Back to &sect;05, Citation Failure Types on the Cole RMD Age</a></p>
+
 </section>
 
-<section class="slide apx" id="s12d" data-nav="B5 · Discussion" data-insert-after="s11" data-tier="standard">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>B5 &middot; Specification Cost Against Task Cost</b><span>18 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix B5 &middot; Discussion</span><span class="mins">18 min</span></div>
+<section class="slide" id="s12d" data-nav="Discussion">
+  <div class="eyebrow"><span>06 &middot; Discussion</span><span class="mins">15 min</span></div>
   <h2>Specification Cost Against Task Cost</h2>
-  <p class="big">The question, stated once and not softened: if a reliable prompt has to be specified as carefully as &sect;04 required, has the tool saved time, or has it moved the work from doing the task to specifying the task?</p>
+  <p class="big">The question, stated once and not softened: if a reliable prompt has to be specified as carefully as &sect;02 required, has the tool saved time, or has it moved the work from doing the task to specifying the task?</p>
 
   <p>This is not a rhetorical question with a preferred answer. Both positions are defensible and the room will divide. Commit before anyone speaks.</p>
 
-  <h3>Phase one &mdash; position, 3 minutes</h3>
+  <p class="dim" style="font-size:15px">Predicted split: close to even on the first vote. The &ldquo;saved&rdquo; side leans on reuse across clients; the &ldquo;moved&rdquo; side leans on the check that cannot be reused. Expect the second vote to move only if someone names a fact.</p>
+
+  <h3>Phase one: position, 2 minutes</h3>
   <p>Vote. Your vote locks and cannot be changed. Nobody sees the distribution yet, including you.</p>
   <div class="panel" data-task="t-s12d" data-comp="sealed-vote-debate">
     <div class="vote" id="dVote1">
@@ -1815,7 +1916,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <div class="out" id="dVote1Out"></div>
   </div>
 
-  <h3>Phase two &mdash; defence, 7 minutes</h3>
+  <h3>Phase two: defence, 7 minutes</h3>
   <p>Two speakers per side, alternating, ninety seconds each. <strong>The minority side speaks first</strong> &mdash; they expected to have to defend and are the more prepared for it. Nobody rebuts during this phase.</p>
   <div class="panel tightpad">
     <span class="plab">Speaking timer</span>
@@ -1827,15 +1928,15 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     </div>
   </div>
 
-  <h3>Phase three &mdash; complication, 5 minutes</h3>
+  <h3>Phase three: complication, 4 minutes</h3>
   <p>One fact neither side has raised. Nobody who has already spoken speaks again.</p>
   <div class="cards">
-    <div class="card gold"><span class="num">Complication</span><h4>The verification time is not optional and it is not amortised</h4><p>&sect;07 timed it on one transaction. Every run of the template on a new client produces new citations, and every one of them needs the same four checks. The template amortises the specification. It does not amortise the verification.</p></div>
-    <div class="card"><span class="num">Already on screen</span><h4>&sect;09 arithmetic</h4><p>A workflow that saves 20 minutes of drafting and adds 12 minutes of citation checking has saved 8. Whoever recorded a baseline at the start of the session should read theirs aloud now.</p></div>
-    <div class="card"><span class="num">Already on screen</span><h4>Appendix B4 adoption gap</h4><p>52.2% of advisors use these tools <span class="conf m" data-src="src-t3-survey" data-fact="adoption-t3-2026">M</span>. Roughly 3% rely on the recommendation <span class="conf m" data-src="src-kitces-productivity">M</span>. The profession is already behaving as though specification and verification are the job.</p></div>
+    <div class="card gold"><span class="num">Complication</span><h4>The verification time is not optional and it is not amortised</h4><p>&sect;05 timed it on one question. Every run of the template on a new client produces new citations, and each one needs the same four checks. In this session&rsquo;s Roth email the wrong citation was a real section with the wrong age, and only the clients&rsquo; birth years exposed it. A template carries the specification forward. It cannot carry the birth years.</p></div>
+    <div class="card"><span class="num">The arithmetic</span><h4>Drafting saved against checking added</h4><p>A workflow that saves 20 minutes of drafting and adds 12 minutes of citation checking has saved 8. The baseline you record in &sect;07 is the number this subtracts from.</p></div>
+    <div class="card"><span class="num">Already on screen</span><h4>&sect;03 adoption gap</h4><p>52.2% of advisors use these tools <span class="conf m" data-src="src-t3-survey" data-fact="adoption-t3-2026">M</span>. Roughly 3% rely on the recommendation <span class="conf m" data-src="src-kitces-productivity">M</span>. The profession is already behaving as though specification and verification are the job.</p></div>
   </div>
 
-  <h3>Phase four &mdash; re-vote, 3 minutes</h3>
+  <h3>Phase four: re-vote, 2 minutes</h3>
   <p>Vote again. Both distributions display together. The instructor enters the room percentages from the Zoom poll; the delta appears without comment.</p>
   <div class="panel">
     <div class="vote" id="dVote2">
@@ -1860,16 +1961,9 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 </section>
 
 <section class="slide" id="s12" data-nav="Final project">
-  <div class="eyebrow"><span>09 &middot; Assignment</span><span class="mins">7 min</span></div>
+  <div class="eyebrow"><span>07 &middot; Assignment</span><span class="mins">3 min</span></div>
   <h2>Final Project Part 1 and Baseline Capture</h2>
   <p class="big">Part 1 is a scalable AI-enabled workflow for a recurring task in your own practice. The baseline it is measured against cannot be reconstructed once you have used a tool on the task, so it is captured in this room.</p>
-
-  <div class="cards">
-    <div class="card"><span class="num">What it is</span><h4>A scalable AI-enabled workflow for a recurring task in your own practice</h4><p>Scalable means two things: it works for the next twenty clients rather than the one you built it on, and another advisor can run it without you in the room.</p></div>
-    <div class="card"><span class="num">The handoff</span><h4>A single email, body reading only &ldquo;See attached&rdquo;</h4><p>No context in the email. No explanation in the covering note. Everything a classmate needs lives inside the attachments, because that is the test.</p></div>
-  </div>
-
-  <p>A missing or invented baseline is the most common way this project falls apart, so we capture yours before you leave the room.</p>
 
   <div class="panel" data-task="t-s12" data-comp="timed-ritual">
     <span class="plab">Baseline capture &mdash; complete this now</span>
@@ -1889,12 +1983,17 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     </div>
   </div>
 
-  <h3>Part 1 deliverable checklist</h3>
-  <p>Seven elements. Tick what you have planned for; the ones left unticked are what you are missing.</p>
-
   <div class="panel">
     <div id="checklist" data-task="t-s12b" data-comp="work-along-gate"></div>
     <div class="out" id="checkOut" style="margin-top:18px"></div>
+  </div>
+
+  <p class="dim" style="font-size:15px">What goes in the Part 1 package is described on the course site. A worked example, with its own readme.txt, is on <a href="../cases/case-1.html" style="color:var(--on)">the Case 1 page</a>.</p>
+
+  <div class="cards">
+<!-- READINGS:BEGIN s3 -->
+<div class="card" data-readings="s3"><span class="num">Reading for Session 3</span><p class="dim">Filled before the term starts.</p></div>
+<!-- READINGS:END -->
   </div>
 
 </section>
@@ -1906,25 +2005,27 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <thead><tr><th>Section</th><th>Title</th><th>Min</th></tr></thead>
 <!-- APXBUDGET:BEGIN generated-by=scripts/build-appendix.mjs -->
     <tbody>
-      <tr><td>BUS ADM X433.4 · Session 2</td><td>Practical AI Usage in Daily Advisory Workflows</td><td class="n">6</td></tr>
-      <tr><td>Cold open &middot; standing ritual</td><td>The Last Prompt You Sent</td><td class="n">8</td></tr>
-      <tr><td>01 &middot; Mechanism</td><td>Temperature and Output Variance</td><td class="n">5</td></tr>
-      <tr><td>02 &middot; Economics</td><td>Cost Per Task Versus Cost Per Token</td><td class="n">6</td></tr>
-      <tr><td>03 &middot; Framework</td><td>Persona, Task, Context, Format</td><td class="n">6</td></tr>
-      <tr><td>04 &middot; Workshop</td><td>Building Prompts Against P.T.C.F</td><td class="n">7</td></tr>
-      <tr><td>05 &middot; Diagnostic</td><td>Prompt Specification Triage</td><td class="n">5</td></tr>
-      <tr><td>06 &middot; Technique</td><td>The Interview Rewrite (Reverse Prompting)</td><td class="n">6</td></tr>
-      <tr><td>07 &middot; Verification</td><td>Citation Failure Types on the Cole RMD Age</td><td class="n">8</td></tr>
-      <tr><td>08 &middot; Workshop</td><td>Template Audit and Live Audit</td><td class="n">5</td></tr>
-      <tr><td>09 &middot; Assignment</td><td>Final Project Part 1 and Baseline Capture</td><td class="n">7</td></tr>
+      <tr><td>BUS ADM X433.4 · Session 2</td><td>Practical AI Usage in Daily Advisory Workflows</td><td class="n">7</td></tr>
+      <tr><td>01 &middot; Case 2: the Roth conversion email</td><td>The Roth Conversion Email and Its Four Citations</td><td class="n">10</td></tr>
+      <tr><td>02 &middot; Workshop</td><td>Building Prompts Against P.T.C.F</td><td class="n">9</td></tr>
+      <tr><td>03 &middot; Process</td><td>The Seven-Step Process and the Delegation Line</td><td class="n">8</td></tr>
+      <tr><td>04 &middot; Technique</td><td>The Interview Rewrite (Reverse Prompting)</td><td class="n">5</td></tr>
+      <tr><td>05 &middot; Verification</td><td>Citation Failure Types on the Cole RMD Age</td><td class="n">6</td></tr>
+      <tr><td>06 &middot; Discussion</td><td>Specification Cost Against Task Cost</td><td class="n">15</td></tr>
+      <tr><td>07 &middot; Assignment</td><td>Final Project Part 1 and Baseline Capture</td><td class="n">3</td></tr>
       <tr class="apxrow"><td>Appendix B1 &middot; Mechanism, deeper</td><td>Next-Token Probabilities for a Single Prompt</td><td class="n">16</td></tr>
       <tr class="apxrow"><td>Appendix B2 &middot; Foundation</td><td>Laplace on Probability as a Measure of Ignorance</td><td class="n">15</td></tr>
-      <tr class="apxrow"><td>Appendix B3 &middot; Failure mode</td><td>Sampling Failure on a Task That Requires Counting</td><td class="n">16</td></tr>
-      <tr class="apxrow"><td>Appendix B4 &middot; Process</td><td>The Seven-Step Process and the Delegation Line</td><td class="n">16</td></tr>
-      <tr class="apxrow"><td>Appendix B5 &middot; Discussion</td><td>Specification Cost Against Task Cost</td><td class="n">18</td></tr>
+      <tr class="apxrow"><td>Appendix B3 &middot; Framework</td><td>Persona, Task, Context, Format</td><td class="n">6</td></tr>
+      <tr class="apxrow"><td>Appendix B4 &middot; Mechanism</td><td>Temperature and Output Variance</td><td class="n">5</td></tr>
+      <tr class="apxrow"><td>Appendix B5 &middot; Failure mode</td><td>Sampling Failure on a Task That Requires Counting</td><td class="n">16</td></tr>
+      <tr class="apxrow"><td>Appendix B6 &middot; Vocabulary</td><td>Zero-Shot, One-Shot, Few-Shot</td><td class="n">5</td></tr>
+      <tr class="apxrow"><td>Appendix B7 &middot; Delegation, written out</td><td>The Delegation Brief for One Task</td><td class="n">8</td></tr>
+      <tr class="apxrow"><td>Appendix B8 &middot; Economics</td><td>Cost Per Task Versus Cost Per Token</td><td class="n">6</td></tr>
+      <tr class="apxrow"><td>Appendix B9 &middot; Diagnostic</td><td>Prompt Specification Triage</td><td class="n">5</td></tr>
+      <tr class="apxrow"><td>Appendix B10 &middot; Workshop</td><td>Template Audit and Live Audit</td><td class="n">5</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 69 + appendix 81; the core alone runs 69 minutes, nine minutes over the hour</td><td class="n">150</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 63 + appendix 87; the core alone runs 63 minutes, three minutes over the hour</td><td class="n">150</td></tr>
     </tbody>
 <!-- APXBUDGET:END -->
   </table>
@@ -1932,34 +2033,34 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <h4 style="margin-bottom:18px">Sources</h4>
     <ol>
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 39ddcfb14a81a369d2ec5060166bed03e53f8fd823227b66f3f7355fc76e36b5 -->
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 49c8452f1ee938057ac6b09e4d589aba581fe7bdffc4e433489e9f9ce380ddb3 -->
       <li id="src-pricing">Anthropic. <em>Pricing</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com/docs/en/about-claude/pricing</a> Retrieved 2026, October 11. Used for: the published rates behind the blended token price and the cost estimator, and the five-to-one output-to-input price ratio and the three current rates in the retrieval bridge. <span class="conf h" data-src="src-pricing">H</span></li>
       <li id="src-context-windows">Anthropic. <em>Context windows</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">platform.claude.com</a> Retrieved 2026, October 11. Used for: the retrieval bridge's context item, the definition of the window as all the text the model can reference when generating a response, the response itself included, and the two reasons behind its new-chat item. <span class="conf h" data-src="src-context-windows">H</span></li>
-      <li id="src-api-messages">Anthropic. <em>Messages API reference</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/api/messages">platform.claude.com/docs/en/api/messages</a> Retrieved 2026, September 13. Used for: §01's list of what can differ between two runs and the third consequence card. <span class="conf h" data-src="src-api-messages">H</span></li>
+      <li id="src-api-messages">Anthropic. <em>Messages API reference</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/api/messages">platform.claude.com/docs/en/api/messages</a> Retrieved 2026, September 13. Used for: Appendix B4's list of what can differ between two runs and the third consequence card. <span class="conf h" data-src="src-api-messages">H</span></li>
       <li id="src-anthropic-fluency" data-nochip="background">Anthropic. (2025). <em>AI fluency: Frameworks and foundations</em>. Anthropic. Used for: assigned reading; no page claim rests on it.</li>
-      <li id="src-memory">Anthropic. <em>Use Claude's chat search and memory to build on previous context</em>. support.claude.com article 11817273. Retrieved 2026, August 20. Used for: §01, memory as a source of run-to-run difference. <span class="conf h" data-src="src-memory">H</span></li>
-      <li id="src-models">Anthropic. <em>Models overview</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/models/overview">platform.claude.com/docs/en/models/overview</a> Retrieved 2026, October 11. Used for: §00, the 1M-token window and the size of a token in the retrieval bridge; §01, the pinned-snapshot statement behind the version item in the run-to-run list. <span class="conf h" data-src="src-models">H</span></li>
-      <li id="src-personalization">Anthropic. <em>Understanding Claude's personalization features</em>. support.claude.com article 10185728. Retrieved 2026, August 20. Used for: §01, standing instructions as a source of run-to-run difference. <span class="conf h" data-src="src-personalization">H</span></li>
-      <li id="src-anthropic-deprecations">Anthropic. (2026, September 30). <em>Model deprecations</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">platform.claude.com/docs/en/about-claude/model-deprecations</a> Retrieved 2026, October 11. Other sessions cite other retrievals of this page. Used for: the names of the four Claude models current in October 2026, set beside the August snapshot in the cost frontier (§02), and the model id on the captured interview run (§06). <span class="conf h" data-src="src-anthropic-deprecations">H</span></li>
+      <li id="src-memory">Anthropic. <em>Use Claude's chat search and memory to build on previous context</em>. support.claude.com article 11817273. Retrieved 2026, August 20. Used for: Appendix B4, memory as a source of run-to-run difference. <span class="conf h" data-src="src-memory">H</span></li>
+      <li id="src-models">Anthropic. <em>Models overview</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/models/overview">platform.claude.com/docs/en/models/overview</a> Retrieved 2026, October 11. Used for: §00, the 1M-token window and the size of a token in the retrieval bridge; Appendix B4, the pinned-snapshot statement behind the version item in the run-to-run list. <span class="conf h" data-src="src-models">H</span></li>
+      <li id="src-personalization">Anthropic. <em>Understanding Claude's personalization features</em>. support.claude.com article 10185728. Retrieved 2026, August 20. Used for: Appendix B4, standing instructions as a source of run-to-run difference. <span class="conf h" data-src="src-personalization">H</span></li>
+      <li id="src-anthropic-deprecations">Anthropic. (2026, September 30). <em>Model deprecations</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">platform.claude.com/docs/en/about-claude/model-deprecations</a> Retrieved 2026, October 11. Other sessions cite other retrievals of this page. Used for: the names of the four Claude models current in October 2026, set beside the August snapshot in the cost frontier (Appendix B8), and the model id on the captured interview run (§04). <span class="conf h" data-src="src-anthropic-deprecations">H</span></li>
       <li id="src-aa">Artificial Analysis. <em>Artificial Analysis Intelligence Index and cost-per-task figures</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a> Retrieved 2026, August. Other sessions cite other retrievals of this page. Used for: index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5; how the cost per index task is measured and the kinds of question the index draws on, described in general terms. <span class="conf m" data-src="src-aa">M</span></li>
       <li id="src-charlotin">Charlotin, D. <em>AI Hallucination Cases database</em>. HEC Paris. Retrieved 2026, June. Used for: the cumulative count of filed fabricated citations. <span class="conf m" data-src="src-charlotin">M</span></li>
       <li id="src-dahl-fictions">Dahl, M., Magesh, V., Suzgun, M., &amp; Ho, D. E. (2024). <em>Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models</em>. Stanford RegLab / Institute for Human-Centered AI. Used for: the general-purpose model hallucination rates in the citation-failure section. <span class="conf h" data-src="src-dahl-fictions">H</span></li>
       <li id="src-td10001" data-nochip="authority">Department of the Treasury, Internal Revenue Service. (2024, July 19). <em>Required Minimum Distributions, T.D. 10001, 89 FR 58886 (final regulations under IRC § 401(a)(9))</em>. Federal Register. <a href="https://www.govinfo.gov/content/pkg/FR-2024-07-19/html/2024-14542.htm">govinfo.gov</a> Retrieved 2026, October 12. Used for: named as a cited authority in the citation-triage items.</li>
-      <li id="src-google-ptcf">Google. (2024). <em>Gemini for Workspace: Prompting guide 101</em>. Google. Used for: the Persona-Task-Context-Format framework taught in §03 and scored in §04. <span class="conf h" data-src="src-google-ptcf">H</span></li>
-      <li id="src-rp-2022-32">Internal Revenue Service. (2022). <em>Late portability elections under Rev. Proc. 2022-32 (IRB 2022-30)</em>. Internal Revenue Bulletin. <a href="https://www.irs.gov/pub/irs-drop/rp-22-32.pdf">irs.gov/pub/irs-drop/rp-22-32.pdf</a> Retrieved 2026, October 11. Used for: the late portability election and its fifth-anniversary limit behind the key to the fifth triage item (§05). <span class="conf m" data-src="src-rp-2022-32">M</span></li>
+      <li id="src-google-ptcf">Google. (2024). <em>Gemini for Workspace: Prompting guide 101</em>. Google. Used for: the Persona-Task-Context-Format framework taught in Appendix B3 and scored in §02. <span class="conf h" data-src="src-google-ptcf">H</span></li>
+      <li id="src-rp-2022-32">Internal Revenue Service. (2022). <em>Late portability elections under Rev. Proc. 2022-32 (IRB 2022-30)</em>. Internal Revenue Bulletin. <a href="https://www.irs.gov/pub/irs-drop/rp-22-32.pdf">irs.gov/pub/irs-drop/rp-22-32.pdf</a> Retrieved 2026, October 11. Used for: the late portability election and its fifth-anniversary limit behind the key to the fifth triage item (Appendix B9). <span class="conf m" data-src="src-rp-2022-32">M</span></li>
       <li id="src-irs-590b" data-nochip="authority">Internal Revenue Service. (annual). <em>Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)</em>. Internal Revenue Service. <a href="https://www.irs.gov/publications/p590b">irs.gov/publications/p590b</a> Retrieved 2026, October 12. Used for: named as a cited authority in the citation-triage items.</li>
       <li id="src-irs-8606" data-nochip="authority">Internal Revenue Service. (annual). <em>Form 8606, Nondeductible IRAs, and its instructions</em>. Internal Revenue Service. <a href="https://www.irs.gov/forms-pubs/about-form-8606">irs.gov/forms-pubs/about-form-8606</a> Retrieved 2026, October 12. Used for: named as a cited authority in the citation-triage items.</li>
       <li id="src-kitces-productivity">Kitces.com. (2026, August). <em>Kitces Research on Advisor Productivity</em>. as summarised in The Latest in Financial AdvisorTech, Kitces.com. Used for: the prep-and-follow-up hour ratio and the directional reliance figure. <span class="conf m" data-src="src-kitces-productivity">M</span></li>
       <li id="src-laplace" data-nochip="background">Laplace, P. S. (1902). <em>A philosophical essay on probabilities</em>. Truscott &amp; Emory, Trans.; original work published 1814. Chapter II, "Concerning Probability," pp. 3-8. Used for: assigned reading behind Appendix B2; no measured claim rests on it.</li>
       <li id="src-magesh">Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-free? Assessing the reliability of leading AI legal research tools</em>. Journal of Empirical Legal Studies 22(2), 216. <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">reglab.stanford.edu</a> Used for: the measured hallucination rates for legal research tools. <span class="conf h" data-src="src-magesh">H</span></li>
       <li id="src-morningstar" data-nochip="background">Morningstar. (2025, October 15). <em>AI for advisors: Enhancing client conversations</em>. Morningstar. Used for: assigned reading; no page claim rests on it.</li>
-      <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: every client example, exercise input and discussion prompt, including the three §04 fixture inputs and their three deliberately weak starter prompts, which are exercise material. Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
+      <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: every client example, exercise input and discussion prompt, including the three §02 fixture inputs and their three deliberately weak starter prompts, which are exercise material. Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
       <li id="src-openai-pricing">OpenAI. <em>API pricing</em>. OpenAI Platform. <a href="https://openai.com/api/pricing/">openai.com/api/pricing</a> Used for: the OpenAI rates behind the blended token price and the cost estimator. <span class="conf m" data-src="src-openai-pricing">M</span></li>
-      <li id="src-t3-survey">T3 / Inside Information. (2026, March). <em>Software Survey 2026</em>. as summarised in Kitces.com Weekend Reading, March 2026. Used for: the adoption shares in the Appendix B4 adoption-gap discussion. <span class="conf m" data-src="src-t3-survey">M</span></li>
+      <li id="src-t3-survey">T3 / Inside Information. (2026, March). <em>Software Survey 2026</em>. as summarised in Kitces.com Weekend Reading, March 2026. Used for: the adoption shares in the §03 adoption-gap discussion. <span class="conf m" data-src="src-t3-survey">M</span></li>
       <li id="src-secure2-107" data-nochip="authority">United States Congress. (2022, December 29). <em>SECURE 2.0 Act of 2022, section 107 (increase in age for required beginning date)</em>. Division T of the Consolidated Appropriations Act, 2023, Pub. L. 117-328. <a href="https://www.congress.gov/bill/117th-congress/house-bill/2617">congress.gov/bill/117th-congress/house-bill/2617</a> Retrieved 2026, October 12. Used for: named as a cited authority in the citation-triage items (sound citation; also the planted mis-citation that attributes the wrong age to it).</li>
       <li id="src-wolfram">Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a> Used for: the sections "It's Just Adding One Word at a Time," "Where Do the Probabilities Come From?," "What Is a Model?," the temperature passage, and the parenthesis-language discussion. <span class="conf h" data-src="src-wolfram">H</span></li>
       <li id="src-zheng-persona">Zheng, M., Pei, J., Logeswaran, L., Lee, M., &amp; Jurgens, D. (2024). <em>When "A Helpful Assistant" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models</em>. Findings of the Association for Computational Linguistics: EMNLP 2024. <a href="https://aclanthology.org/2024.findings-emnlp.888/">aclanthology.org/2024.findings-emnlp.888</a> Used for: the study design and null result behind the caution on personas. <span class="conf h" data-src="src-zheng-persona">H</span></li>
-      <li id="src-kessler" data-nochip="fabricated" class="fab"><b>Not a real source.</b> <em>Kessler v. Commissioner, 152 T.C. 88 (2019)</em> was invented for the §07 citation triage on the required minimum distribution age, where it is one of the six citations to check and the page labels it as fabricated.</li>
+      <li id="src-kessler" data-nochip="fabricated" class="fab"><b>Not a real source.</b> <em>Kessler v. Commissioner, 152 T.C. 88 (2019)</em> was invented for the §05 citation triage on the required minimum distribution age, where it is one of the six citations to check and the page labels it as fabricated.</li>
 <!-- SOURCES:END -->
     </ol>
     <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="conf h">H</span> directly verified against the cited source. <span class="conf m">M</span> reported by a secondary source or derived from a stated relationship. <span class="conf l">L</span> illustrative construction, not a published figure.</p>
@@ -2422,7 +2523,7 @@ var QZ=[
  {p:'Act as a CFP\u00ae professional with twenty years of ultra-high-net-worth experience, deep expertise in estate planning, and a reputation for clarity. Summarise this client\u2019s tax return.',a:'A',
   f:{A:'Correct, and this is the trap. Fifty words were added and none of them was Task, Context or Format. It is the previous prompt with a costume on.',
      B:'The persona is not a specification. The output shape is still whatever the model picks.',
-     C:'The added length is entirely Persona, which the evidence in \u00a703 says does not move objective accuracy.'}},
+     C:'The added length is entirely Persona, which the evidence in Appendix B3 says does not move objective accuracy.'}},
  {p:'From the attached 2025 Form 1040 and schedules, list every line item that changed by more than $10,000 against the 2024 return, as a two-column table, and flag any change I should raise with the client.',a:'C',
   f:{A:'Source, threshold, output shape and the action all appear. This is specified.',
      B:'It is verifiable: open both returns and check the arithmetic. The threshold makes the answer set finite.',
@@ -2438,7 +2539,7 @@ var QZ=[
  {p:'Research whether my client can still elect portability for a spouse who died in 2021, and cite the governing authority.',a:'B',
   f:{A:'It is specific about the question and demands a citation, so it is not underspecified in the ordinary sense.',
      B:'Correct. It names no facts that determine the answer: the exact date of death, the estate\u2019s size, whether a return was filed, whether the estate was under the filing threshold. A missed election is not always permanently lost. Rev. Proc. 2022-32 lets an estate that was not required to file elect portability late, on a complete Form 706 filed on or before the fifth anniversary of death, and a death in 2021 reaches that anniversary during 2026, so for any session held after 2026 the simplified route has closed and relief runs only through a private letter ruling. The prompt also sets no verification standard for the citation it demands. A citation you did not require to be current is not a check.',
-     C:'A demand for a citation is not a verification procedure. \u00a707 covers the four checks a citation still has to pass.'}},
+     C:'A demand for a citation is not a verification procedure. \u00a705 covers the four checks a citation still has to pass.'}},
  {p:'Give me the 2026 gift tax annual exclusion and the lifetime exclusion amount, with citations.',a:'B',
   f:{A:'It is perfectly specific. That is what makes it dangerous.',
      B:'Correct, and this is the hardest item. It looks like the most verifiable prompt on the list. Both figures are indexed annually, both may post-date the training data, and the prompt gives the model no source to read. It will answer confidently from memory. Specified is not the same as grounded.',
@@ -2560,25 +2661,6 @@ var BUCK=[{k:'draft',t:'AI drafts, planner verifies'},{k:'assist',t:'AI assists 
   render();count();
 })();
 
-/* adoption chart */
-(function(){
-  var g=$('adoptChart'),L=8,W=700,BW=430,x0=250;
-  var rows=[
-   {t:'Using AI search and generative language',v:52.2,c:'var(--plot)'},
-   {t:'Using AI notetaking tools',v:42.9,c:'var(--plot)'},
-   {t:'Relying on AI-generated recommendations',v:3,c:'var(--plot2)'}
-  ];
-  rows.forEach(function(r,i){
-    var y=26+i*48;
-    g.appendChild(el('text',{x:x0-14,y:y+15,'text-anchor':'end',class:'dlab','font-size':'13'},r.t));
-    g.appendChild(el('rect',{x:x0,y:y,width:BW,height:22,rx:4,fill:'var(--off-bg)'}));
-    g.appendChild(el('rect',{x:x0,y:y,width:BW*(r.v/100),height:22,rx:4,fill:r.c}));
-    g.appendChild(el('text',{x:x0+BW*(r.v/100)+9,y:y+16,class:'dlab b','font-size':'13',fill:r.c},r.v+'%'));
-  });
-  g.appendChild(el('line',{x1:x0,y1:14,x2:x0,y2:150,class:'axis'}));
-  g.appendChild(el('text',{x:14,y:192,class:'alab'},'THE GAP BETWEEN ROWS 1 AND 3 IS THE DELEGATION LINE, ALREADY DRAWN IN PRACTICE.'));
-})();
-
 /* ================= 10 · CITATIONS ================= */
 (function(){
   var g=$('hallChart'),x0=278,BW=372;
@@ -2604,25 +2686,6 @@ var BUCK=[{k:'draft',t:'AI drafts, planner verifies'},{k:'assist',t:'AI assists 
   g.appendChild(el('text',{x:14,y:258,class:'alab'},'VENDOR MARKETING AT THE TIME CLAIMED \u201c100% HALLUCINATION-FREE LINKED CITATIONS.\u201d'));
   g.appendChild(el('text',{x:14,y:274,class:'alab'},'THE STUDY FOUND THE CLAIM OVERSTATED.'));
 })();
-(function(){
-  var g=$('caseChart'),W=700,H=260,L=62,R=26,T=22,B=52,pw=W-L-R,ph=H-T-B;
-  var d=[['Mid-2025',200],['Jan 2026',719],['Apr 2026',1227],['Jun 2026',1598]];
-  function X(i){return L+i*(pw/(d.length-1))}
-  function Y(v){return T+ph-(v/1700)*ph}
-  [0,400,800,1200,1600].forEach(function(v){
-    g.appendChild(el('line',{x1:L,y1:Y(v),x2:L+pw,y2:Y(v),class:'gridln'}));
-    g.appendChild(el('text',{x:L-10,y:Y(v)+4,'text-anchor':'end',class:'alab'},v.toLocaleString()));
-  });
-  g.appendChild(el('polyline',{points:d.map(function(r,i){return X(i)+','+Y(r[1])}).join(' '),fill:'none',stroke:'var(--plot2)','stroke-width':2.6}));
-  d.forEach(function(r,i){
-    g.appendChild(el('circle',{cx:X(i),cy:Y(r[1]),r:5.5,fill:'var(--plot2)'}));
-    g.appendChild(el('text',{x:X(i),y:Y(r[1])-14,'text-anchor':'middle',class:'dlab b','font-size':'13',fill:'var(--plot2)'},r[1].toLocaleString()));
-    g.appendChild(el('text',{x:X(i),y:T+ph+20,'text-anchor':'middle',class:'alab'},r[0].toUpperCase()));
-  });
-  g.appendChild(el('line',{x1:L,y1:T+ph,x2:L+pw,y2:T+ph,class:'axis'}));
-  g.appendChild(el('text',{x:L,y:H-12,class:'alab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY $109,700.'));
-})();
-
 var CITES=[
  {c:'SECURE 2.0 Act \u00a7107 (Pub. L. 117-328, Division T), cited for the proposition that the applicable age for required minimum distributions is '+COLEn('megApplicableAge')+' for anyone born in 1960 or later.',
   a:'sound',w:['Real, in force, and used correctly.','It sets the applicable age at '+COLEn('megApplicableAge')+' for a person born in 1960 or later. Meg (born 1968) and David (born 1967) are both inside that cohort.','The first distribution years follow by arithmetic, birth year plus '+COLEn('megApplicableAge')+': '+COLEn('davidFirstDistYear')+' for David and '+COLEn('megFirstDistYear')+' for Meg.','What it does not settle: how large any distribution is. That depends on the balance and a life-expectancy factor.']},
@@ -2766,7 +2829,7 @@ function base(){
   o+='Annual cost at $'+r+'/hr: $'+(cost*12).toFixed(0)+'\n\n';
   o+='BREAK-EVEN NOTE\n';
   o+='An illustrative 40% time reduction, an assumption and not a measurement, would recover '+(hrs*12*0.4).toFixed(0)+' hours a year.\n';
-  o+='Subtract the verification time you measured in \u00a707 before\n';
+  o+='Subtract the verification time you measured in \u00a705 before\n';
   o+='you claim any of it. A workflow that saves 20 minutes of drafting\n';
   o+='and adds 12 minutes of citation checking has saved 8 minutes.';
   $('baseOut').textContent=o;
@@ -2775,13 +2838,7 @@ function base(){
 $('baseCopy').onclick=function(){copyTo(this,$('baseOut').textContent)};
 
 var CHK=[
- 'The workflow itself \u2014 prompts, system instructions or skill, tool and model tier, supporting files',
- 'A one-page explanation: what it does, why AI suits it, where a human stays in the loop (two pages maximum, images on page two)',
- 'Setup instructions: tool, subscription tier, inputs and files a classmate needs to run it',
- 'The verification steps built into the workflow, and the two failure modes you hit while building',
- 'The baseline time you recorded in Session 2 against the AI-assisted time, including any step AI made slower or worse',
- 'A data-handling note: which fields would need removing or de-identifying before real client use',
- 'The complete build transcript, including the attempts that failed \u2014 to the instructor only, not to your classmate'
+ 'The recurring task is named and its baseline minutes are recorded above'
 ];
 (function(){
   var st={};
@@ -2795,8 +2852,8 @@ var CHK=[
     $('checklist').innerHTML=h;
     $('checklist').querySelectorAll('.ck').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-i');st[i]=!st[i];render()}});
     var n=Object.keys(st).filter(function(k){return st[k]}).length;
-    $('checkOut').textContent='PLANNED  '+n+' / 7\n\nThe finished product alone is not the point \u2014\nthe transcript has to show what failed on the way there.';
-    $('checkOut').classList.toggle('has',n===7);
+    $('checkOut').textContent='DONE  '+n+' / '+CHK.length+'\n\nThe rest of the Part 1 package is described on the course site.';
+    $('checkOut').classList.toggle('has',n===CHK.length);
   }
   render();
 })();
@@ -2809,7 +2866,9 @@ var BRIDGE=[
  {q:'Session 1 separated the box you type in from the context window. When you press send, what travels with your new message?',
   a:'The context window is all the text the model can reference when it writes a response, the response itself included. It is not the box you type in. For that turn it holds the standing instructions on the account, every earlier message in the chat, yours and the model\u2019s, any file, image or tool result already in it, the tool definitions, your new text and the reply being written, up to 1M tokens on the current Claude models. Everything except the reply is billed as input. The vendor\u2019s documentation puts the input side in one line: each turn\u2019s input is all previous conversation history plus the current message. The box is the smallest part of the window.'},
  {q:'Session 1 gave a rule for when to start a new chat instead of continuing a long one. State the rule, then the two reasons it rests on.',
-  a:'The working rule was ten to fifteen turns. The number is a rule of thumb; the reasons are not. First, every turn re-sends the whole conversation, so the input bill grows with every exchange. Second, the vendor\u2019s documentation states that as the token count grows, accuracy and recall degrade, which it calls context rot. A new chat resets both. Carry over a short summary of what matters, not the transcript.'}
+  a:'The working rule was ten to fifteen turns. The number is a rule of thumb; the reasons are not. First, every turn re-sends the whole conversation, so the input bill grows with every exchange. Second, the vendor\u2019s documentation states that as the token count grows, accuracy and recall degrade, which it calls context rot. A new chat resets both. Carry over a short summary of what matters, not the transcript.'},
+ {q:'Session 1 declared a ladder for hallucination: why it happens, how often it happens, what it costs you. Which rung did Session 1 climb, and in one sentence, why does a model write a fluent answer that is wrong?',
+  a:'The first rung, why it happens. The model writes each word by choosing a probable continuation of the words before it, and a true statement and a false one can both be probable continuations. Nothing in that process checks which is which. How often it happens is Session 3; what it costs you is Session 4.'}
 ];
 /* Commit, then reveal (DW-114, S2-25): each item has its own control, and
    pressing it locks that item's box (readOnly) before its key is shown, so an
@@ -3091,7 +3150,7 @@ var BSQ=[
         done=true;b.classList.add('on');
         box.querySelectorAll('button').forEach(function(x){x.disabled=true});
         var v=b.getAttribute('data-v');
-        if(which===1){v1=v;$(outId).textContent='Locked. The distribution stays hidden until after the re-vote. Nothing you hear in the next twelve minutes can change this vote, which is the point of locking it.';}
+        if(which===1){v1=v;$(outId).textContent='Locked. The distribution stays hidden until after the re-vote. Nothing you hear in the next eleven minutes can change this vote, which is the point of locking it.';}
         else{v2=v;$(outId).textContent=v===v1?'Locked. You held your position under the complication. That is a finding, not a failure \u2014 report it as one.':'Locked. You moved. The instructor will ask which specific fact moved you, so have it ready.';}
         $(outId).classList.add('has');
       };
@@ -3119,7 +3178,7 @@ var BSQ=[
      ['Vote 2 \u00b7 saved',b,'var(--plot)'],['Vote 2 \u00b7 moved',100-b,'var(--plot2)']
     ];
     $('dTally').innerHTML=rows.map(function(r){
-      return '<div class="trow"><span>'+r[0]+'</span><span class="bg"><span class="fl" style="width:'+r[1].toFixed(0)+'%;background:'+r[2]+'"></span></span><span style="text-align:right">'+r[1].toFixed(0)+'%</span></div>';
+      return '<div class="trow"><span>'+r[0]+'</span><span class="bg"><span class="fl" style="display:block;width:'+r[1].toFixed(0)+'%;background:'+r[2]+'"></span></span><span style="text-align:right">'+r[1].toFixed(0)+'%</span></div>';
     }).join('');
     var d=b-a;
     $('dDelta').textContent='DELTA  '+(d>0?'+':'')+d.toFixed(0)+' percentage points toward \u201ctime was saved\u201d\n\n'+
@@ -3131,52 +3190,205 @@ var BSQ=[
   $('dDelta').textContent='Both distributions render here after the re-vote.';
 })();
 
-/* ===== family 17: cold-open ritual — identical in every session ===== */
-/* COURSE-WIDE COLD-OPEN CHECKLIST. COLD_CHECKS is the one constant that
-   defines the eight fixed checks: a label, one plain line on why the item
-   matters, and a deterministic, offline detect function d(t). Every rule is
-   readable below: a presence test is a visible word list or a plain
-   measurement, never a relevance score, and there is no threshold. The rows
-   are diagnostic only; nothing else on the page reads them. Sessions 2-4
-   copy this constant and the renderer under it verbatim (register row
-   DW-066). */
-var COLD_CHECKS=[
- {l:'An explicit ask',w:'A question mark or an opening imperative tells the model what to return; without one it guesses the task as well as the answer.',
-  d:function(t){return /\?/.test(t)||/^\s*(?:\w+[,:]\s+)?(?:please\s+)?(?:write|make|give|list|draft|summarise|summarize|explain|create|find|tell|help|review|compare|analyse|analyze|rewrite|check|generate|outline|describe|calculate|translate|classify|extract|suggest|recommend|plan|edit|fix|improve|assess|evaluate)\b/i.test(t)}},
- {l:'At least 15 words',w:'Below about fifteen words there is rarely enough signal to tell your task apart from a thousand similar ones.',
-  d:function(t){return (t.match(/\S+/g)||[]).length>=15}},
- {l:'A named output format',w:'Naming a list, table, email, memo or draft fixes the shape of the answer instead of leaving the model to pick one.',
-  d:function(t){return /\b(list|table|email|e-mail|memo|draft|bullet|bullets|bulleted|outline|summary|report|letter|agenda|template|paragraph|paragraphs|spreadsheet|checklist|headline|slide|slides|script|caption)\b/i.test(t)}},
- {l:'Context beyond the ask',w:'Background the model cannot infer, the who and the situation, is what separates your answer from a generic one.',
-  d:function(t){return (t.match(/[.!?](\s|$)/g)||[]).length>=2||t.length>180}},
- {l:'A named audience or role',w:'Saying who is writing or who will read it shifts vocabulary, depth and tone toward that reader.',
-  d:function(t){return /\b(you are|act as|as an? \w+|audience|reader|readers|for my|for our|client|clients|prospect|prospects|board|committee|colleague|colleagues|adviser|advisers|advisor|advisors|planner|planners|attorney|attorneys|accountant|accountants|student|students|beginner|beginners|expert|experts)\b/i.test(t)}},
- {l:'A constraint on length, tone or scope',w:'A stated limit is the difference between an answer you can use and one you cut down yourself.',
-  d:function(t){return /\b(no more than|at most|under|within|maximum|max|limit|only|brief|briefly|concise|short|long|formal|informal|casual|plain|professional|friendly|neutral|tone|word|words|sentence|sentences|page|pages|paragraph|paragraphs|scope|exclude|excluding|without|avoid|keep it)\b/i.test(t)}},
- {l:'An example or reference point',w:'One example anchors format and register more reliably than a paragraph of description.',
-  d:function(t){return /\b(for example|e\.g|such as|like this|like the|similar to|based on|modelled on|modeled on|in the style of|sample|example|attached|below|here is|as in|following the)\b/i.test(t)}},
- {l:'What to do when unsure',w:'Telling it to verify, cite or ask first trades confident guessing for something you can check.',
-  d:function(t){return /\b(verify|cite|citation|citations|source|sources|if unsure|if you are unsure|if you're unsure|not sure|unsure|don't know|do not know|ask me|ask first|ask before|flag|confirm|double-check|check first|uncertain|say so)\b/i.test(t)}}
-];
+/* ================= 1 · CASE 2 OPENER (prediction-commit, Constructive) =================
+   The pattern of the stance capture in Appendix B4: a gold panel, .vote tiles, a lock,
+   then the key. The pick and the reason lock together and the key opens only after the
+   lock; nothing on the page is withheld. The room's spread is typed in by the instructor
+   from the poll, as in the discussion. Case figures are read from COLE, never typed. */
 (function(){
-  var go=document.getElementById('coldGo');if(!go)return;
-  go.onclick=function(){
-    var box=document.getElementById('coldPrompt'),out=document.getElementById('coldOut');
-    var t=box.value.trim();
-    if(!t){out.className='rout';out.innerHTML='<span class="rnil">Paste something first.</span>';return}
-    var n=0,rows=COLD_CHECKS.map(function(c){
-      var hit=false;try{hit=!!c.d(t)}catch(err){hit=false}
-      if(hit)n++;
-      return '<div style="margin:9px 0 0"><span style="color:var(--'+(hit?'on':'warn')+');font-weight:700">'+
-        (hit?'\u2713 present':'\u2717 missing')+'</span> \u00b7 <b>'+c.l+'</b>'+
-        '<div class="dim" style="font-size:13px;margin-top:2px">'+c.w+'</div></div>';
-    });
-    out.className='rout on';
-    out.innerHTML='<span class="rz">Prompt checklist</span>'+rows.join('')+
-      '<div class="rfx"><b>'+n+' of 8 present.</b> Diagnostic only: nothing is scored and nothing unlocks. Keep the text on screen; the comparison across sessions is the point.</div>';
-    if(typeof mark==='function')mark('gc');
+  var vote=$('ceVote');if(!vote)return;
+  var KEY='D',pick=null,locked=false;
+  var tiles=[].slice.call(vote.querySelectorAll('button'));
+  tiles.forEach(function(b){
+    b.onclick=function(){
+      if(locked)return;
+      pick=b.getAttribute('data-v');
+      tiles.forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on?'true':'false')});
+      $('ceGo').disabled=false;
+      $('ceNote').textContent='Your pick: '+pick+'. You can change it until you press the button.';
+    };
+  });
+  function room(){
+    var n=[0,1,2,3].map(function(i){var v=parseInt($('ceR'+i).value,10);return isNaN(v)||v<0?0:v});
+    var tot=n.reduce(function(a,b){return a+b},0);
+    if(!tot){$('ceTally').innerHTML='<div class="out">Type at least one count, then draw the room.</div>';return}
+    $('ceTally').innerHTML=['A','B','C','D'].map(function(k,i){
+      var pct=Math.round(n[i]/tot*100);
+      var tag=(k===KEY?' · wrong':'')+(k===pick?' · you':'');
+      return '<div class="trow"><span>'+k+tag+'</span><span class="bg"><span class="fl" style="display:block;width:'+pct+'%;background:'+(k===KEY?'var(--plot2)':'var(--off)')+'"></span></span><span style="text-align:right">'+n[i]+' of '+tot+'</span></div>';
+    }).join('');
+  }
+  $('ceRoomGo').onclick=room;
+  $('ceGo').onclick=function(){
+    if(locked||!pick)return;
+    locked=true;
+    tiles.forEach(function(x){x.disabled=true});
+    $('ceWhy').readOnly=true;$('ceGo').disabled=true;
+    var ok=pick===KEY,why=$('ceWhy').value.trim();
+    $('ceNote').textContent='Locked at '+pick+'.';
+    $('ceReveal').hidden=false;
+    $('ceVerdict').textContent='YOUR CALL  '+pick+'  '+(ok?'✓ Right: that is the wrong citation.':'✗ Not this one. The wrong citation is '+KEY+'.')+'\n\nYOUR REASON  '+(why||'none written. Write it now, before you read on.');
+    $('ceVerdict').classList.toggle('has',ok);
+    $('ceKey').innerHTML=
+      '<p style="margin:0 0 10px"><b>D is the wrong one.</b> SECURE 2.0 Act §107 is real and it is the right section, so an existence check passes and a format check passes. The age is the problem. Age 73 is the applicable age for people born from 1951 to 1959; for anyone born in 1960 or later it is 75 <span class="conf m" data-src="src-secure2-107">M</span>.</p>'+
+      '<p style="margin:0 0 10px">Meg was born on '+COLEn('megDob')+' and David on '+COLEn('davidDob')+'. Both are in the later cohort, so the applicable age is '+COLEn('megApplicableAge')+' for each, and the first distribution years are '+COLEn('davidFirstDistYear')+' for David and '+COLEn('megFirstDistYear')+' for Meg. Right section, wrong cohort: only reading the section against the clients’ birth years catches it.</p>'+
+      '<p style="margin:0">A, B and C each hold. A checks against the plan description in the case file, B against the Code’s conversion rules, and C against Illinois’s retirement-income subtraction. The Case 2 page opens each one in its verification log: claim, cited authority, primary-source link, verified yes or no.</p>';
+    mark('gCase');
+    $('ceVerdict').setAttribute('tabindex','-1');
+    $('ceVerdict').focus();
   };
 })();
+
+
+/* ================= B6 · ZERO-SHOT, ONE-SHOT, FEW-SHOT (commit-first-mcq, Constructive) =================
+   The pattern of the triage quiz in Appendix B9: each item locks on the first click, then its
+   feedback opens. Definitions: FACTS zero-shot-definition. */
+var ZS=[
+ {p:'Draft a two-paragraph email to Meg and David explaining what an in-plan Roth conversion is.',a:'zero',
+  f:{zero:'Correct. An instruction and no example. A bare prompt is zero-shot, not one-shot: shots count examples, and there are none.',
+     one:'One-shot needs exactly one example inside the prompt. This prompt holds an instruction and nothing else, so the count is zero.',
+     few:'Few-shot needs several examples inside the prompt. This one holds none.'}},
+ {p:'You are the Coles’ planner writing to clients who are not tax specialists. Explain in-plan Roth conversion in two paragraphs, under 150 words, with no bullet points, and end with one question for their tax preparer.',a:'zero',
+  f:{zero:'Correct, and this is the trap. The prompt is long and precise, but every word of it is instruction. Detail is not shots; an example is.',
+     one:'There is no example in this prompt. A long, specific instruction is still an instruction, so the count is zero.',
+     few:'Few-shot needs several examples. Constraints on length and form are instruction, not examples.'}},
+ {p:'Below is one email I sent another client, in the style I want. [email 1] Write the email for Meg and David on in-plan Roth conversion in that style.',a:'one',
+  f:{zero:'The prompt carries an example, [email 1], so it is not zero-shot.',
+     one:'Correct. The instruction plus exactly one example. The example shows the shape and the register; check that its content did not leak into the new draft.',
+     few:'Few-shot needs several examples. This prompt holds one.'}},
+ {p:'Below are three emails I sent other clients, in the style I want. [email 1] [email 2] [email 3] Write the email for Meg and David on in-plan Roth conversion in that style.',a:'few',
+  f:{zero:'The prompt carries three examples, so it is not zero-shot.',
+     one:'One-shot means exactly one example. This prompt holds three.',
+     few:'Correct. Several examples make it few-shot. Each one gives its content another chance to leak into the draft, so use synthetic examples, never a real client\u2019s email.'}}
+];
+(function(){
+  var host=$('zsQuiz'),score=0,done=0;if(!host)return;
+  var LBL={zero:'Zero-shot',one:'One-shot',few:'Few-shot'};
+  ZS.forEach(function(q,i){
+    var d=document.createElement('div');d.className='qitem';
+    var btns='';['zero','one','few'].forEach(function(o){btns+='<button type="button" class="btn sel mini" data-o="'+o+'">'+LBL[o]+'</button>'});
+    d.innerHTML='<span class="plab">Prompt '+(i+1)+'</span><div class="mono" style="font-size:14px;line-height:1.6;margin-bottom:13px">“'+q.p+'”</div><div class="row tight qbtns">'+btns+'</div><div class="qfb" style="display:none" aria-live="polite"></div>';
+    host.appendChild(d);
+    var fb=d.querySelector('.qfb');
+    d.querySelectorAll('button').forEach(function(b){
+      b.onclick=function(){
+        if(d.classList.contains('done'))return;
+        d.classList.add('done');done++;
+        var pick=b.getAttribute('data-o'),ok=pick===q.a;
+        if(ok)score++;
+        b.classList.add('act');if(!ok)b.classList.add('bad');
+        d.querySelectorAll('button').forEach(function(x){if(x!==b)x.style.opacity=.35;x.style.pointerEvents='none';
+          if(x.getAttribute('data-o')===q.a&&!ok){x.style.opacity=1;x.classList.add('act')}});
+        fb.style.display='block';fb.className='qfb '+(ok?'right':'wrong');
+        fb.textContent=(ok?'✓  ':'✗  The answer is '+LBL[q.a].toLowerCase()+'.  ')+q.f[pick];
+        tally();
+      };
+    });
+  });
+  var t=document.createElement('div');t.className='mono';t.style.cssText='font-size:13px;color:var(--on);margin-top:18px';host.appendChild(t);
+  function tally(){
+    t.textContent=score+' of '+done+' correct, '+ZS.length+' prompts in all.'+(done===ZS.length?'  Shots count examples, not words.':'');
+    if(done===ZS.length)mark('gZ');
+  }
+  tally();
+})();
+
+/* ================= B7 · THE DELEGATION BRIEF (builder-assembler, Constructive) =================
+   Three lists, one brief. The assembled text redraws as the learner chooses; the marks and
+   reasons open only when the learner presses the check (commit, then reveal). q: g good,
+   w weak, b cannot be defended. Case inputs come from the Cole file (CASE.md Parts B, C and J);
+   the check order is the four checks taught in the citation section. */
+var DB=[
+ {k:'HAND',t:'What you hand the model',o:[
+  {l:'The plan description excerpt, amended 1 January 2026',q:'g',w:'The facts the email rests on come from a named document, so the model has no gap to fill and you have something to check against.'},
+  {l:'Meg’s and David’s birth years',q:'g',w:'Every age and date in the email is arithmetic on a birth year. Give the model the inputs and check the result.'},
+  {l:'The marginal rate from your own planning output',q:'g',w:'A figure computed where it can be reproduced. The model drafts around it; it does not produce it.'},
+  {l:'The clients’ account numbers and home address',q:'b',w:'The email needs neither. Identifiers the task does not need do not go into the tool.'},
+  {l:'“Use what you know about the Roth rules”',q:'b',w:'No named source. Whatever the model supplies from memory is exactly what you would then have to check from scratch.'}]},
+ {k:'KEEP',t:'What you keep',o:[
+  {l:'How much to convert, and in which years',q:'g',w:'The open question in this case. The model can set out the trade-offs; the recommendation is yours.'},
+  {l:'David’s confidential news about his employer',q:'g',w:'A confidence belongs to the client. It stays out of the tool.'},
+  {l:'The decision to send the email',q:'g',w:'Your name goes on it. You read it the way the client will.'},
+  {l:'The wording of the first draft',q:'w',w:'Drafting is what the model is for. Keeping it gives away the time saving and buys no extra check.'},
+  {l:'Nothing: the model decides what goes in',q:'b',w:'Then no one is accountable for the email, and the planner is the one whose name is on it.'}]},
+ {k:'CHECK',t:'What you check, and against what',o:[
+  {l:'Each authority exists: search the Code or the bulletin',q:'g',w:'The floor of verification. It catches an invented authority in seconds.'},
+  {l:'Each authority says what the sentence claims: open it and read the operative text',q:'g',w:'The check that catches a real section used for the wrong proposition.'},
+  {l:'Each authority is still current: look for a later change',q:'g',w:'Training data has a cutoff; the Code does not.'},
+  {l:'Each age and date against the clients’ birth years',q:'g',w:'The check that catches a real section with the wrong age, as in the Case 2 email.'},
+  {l:'Ask the model to double-check its own citations',q:'b',w:'A second answer is another sample from the same distribution. Two matching answers tell you about the model, not about the Code.'}]}
+];
+(function(){
+  var host=$('dbGroups');if(!host)return;
+  var sel={};
+  DB.forEach(function(g,gi){
+    var wrap=document.createElement('div');wrap.style.cssText='margin:0 0 20px';
+    wrap.innerHTML='<span class="plab" id="dbH'+gi+'">'+g.k+' · '+g.t+'</span>';
+    var list=document.createElement('div');list.setAttribute('role','group');list.setAttribute('aria-labelledby','dbH'+gi);
+    list.style.cssText='display:flex;flex-direction:column;gap:8px';
+    g.o.forEach(function(o,oi){
+      var b=document.createElement('button');b.type='button';b.className='dbopt';b.setAttribute('aria-pressed','false');b.setAttribute('data-g',gi);b.setAttribute('data-o',oi);
+      b.style.cssText='text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:10px 14px;cursor:pointer;font-family:Source Serif 4,serif;font-size:14.5px;line-height:1.45;color:var(--ink);display:flex;gap:12px';
+      b.innerHTML='<span class="dbmk" style="flex:none;color:var(--off);font-family:JetBrains Mono,monospace">○</span><span>'+o.l+'</span>';
+      b.onclick=function(){
+        var key=gi+'.'+oi;sel[key]=!sel[key];
+        var on=!!sel[key];
+        b.setAttribute('aria-pressed',on?'true':'false');
+        b.style.background=on?'var(--on-bg)':'var(--card)';b.style.borderColor=on?'var(--on)':'var(--line)';
+        var mk=b.querySelector('.dbmk');mk.textContent=on?'✓':'○';mk.style.color=on?'var(--on)':'var(--off)';
+        brief();
+      };
+      list.appendChild(b);
+    });
+    wrap.appendChild(list);host.appendChild(wrap);
+  });
+  function chosen(gi){return DB[gi].o.filter(function(o,oi){return sel[gi+'.'+oi]})}
+  function brief(){
+    var t='TASK   Draft the email that explains David’s in-plan Roth conversion option to Meg and David Cole.\n';
+    var n=0;
+    DB.forEach(function(g,gi){
+      var c=chosen(gi);n+=c.length;
+      t+='\n'+g.k+(c.length?'':'   (nothing chosen yet)')+'\n';
+      c.forEach(function(o){t+='  - '+o.l+'\n'});
+    });
+    $('dbBrief').textContent=t;
+    $('dbCount').textContent=n+' chosen';
+  }
+  $('dbGo').onclick=function(){
+    var empty=DB.map(function(g,gi){return chosen(gi).length}).some(function(n){return n===0});
+    var out=$('dbOut');
+    if(empty){out.className='out';out.textContent='Choose at least one item in each of the three lists, then check.';return}
+    var bad=0,goodMiss=0,h='';
+    DB.forEach(function(g,gi){
+      var c=chosen(gi),goodAll=g.o.filter(function(o){return o.q==='g'}),goodHit=c.filter(function(o){return o.q==='g'});
+      h+='<p style="margin:14px 0 6px"><b>'+g.k+'</b> · '+goodHit.length+' of '+goodAll.length+' defensible choices made</p><ul style="margin:0;padding-left:20px">';
+      c.forEach(function(o){
+        var tag=o.q==='g'?'Defensible':(o.q==='w'?'Weak':'Cannot be defended');
+        if(o.q==='b')bad++;
+        h+='<li style="margin:4px 0"><b>'+tag+'.</b> '+o.l+'. '+o.w+'</li>';
+      });
+      g.o.forEach(function(o,oi){if(o.q==='g'&&!sel[gi+'.'+oi]){goodMiss++;h+='<li style="margin:4px 0"><b>Left out.</b> '+o.l+'. '+o.w+'</li>'}});
+      h+='</ul>';
+    });
+    var head=bad===0&&goodMiss===0?'A brief a colleague could run: every defensible choice is in, and nothing that cannot be defended.'
+      :bad===0?'Nothing here cannot be defended, but '+goodMiss+' defensible choice'+(goodMiss===1?' is':'s are')+' still left out. A colleague running this without you would have to supply them.'
+      :bad+' choice'+(bad===1?'':'s')+' cannot be defended. Remove '+(bad===1?'it':'them')+' and run the check again.';
+    out.className='out has';
+    out.innerHTML='<p style="margin:0 0 6px;font-family:Bricolage Grotesque,sans-serif;font-size:17px;font-weight:600;line-height:1.3">'+head+'</p>'+h;
+    mark('gDel');
+  };
+  $('dbReset').onclick=function(){
+    sel={};
+    host.querySelectorAll('.dbopt').forEach(function(b){
+      b.setAttribute('aria-pressed','false');b.style.background='var(--card)';b.style.borderColor='var(--line)';
+      var mk=b.querySelector('.dbmk');mk.textContent='○';mk.style.color='var(--off)';
+    });
+    $('dbOut').className='out';$('dbOut').textContent='Choose from each list, then check.';
+    brief();
+  };
+  brief();
+})();
+
 
 /* ===== family 1: work-along gates — completion feedback only (pedagogy R10) ===== */
 var __done={};
@@ -3189,7 +3401,7 @@ function mark(id){
 }
 
 /* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
-window.__coreMins=69;
+window.__coreMins=63;
 /* APXCORE:END */
 
 /* ===== appendix depth control: tier filter + core-only mode ===== */

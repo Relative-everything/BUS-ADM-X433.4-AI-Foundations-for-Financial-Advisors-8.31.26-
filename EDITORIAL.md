@@ -1502,6 +1502,16 @@ The same test applies to Phase 2 step (j)'s closing questions, which must be
 answerable from the core alone, and to any carry-forward artifact a later
 session reads from an earlier one.
 
+## Follow-ups flagged by the 2027-term rebuild (2026-10-12, branch next-term-2027)
+
+Flagged, not rewritten (kickoff reduction A.0.3 item 3 in `docs/next-term/RUNBOOK.md`): three rows below are now out of step with `PEDAGOGY.md` v2.0 (§4, §9.6, §13.1, ratified 2026-10-11), which governs. Jared decides the wording here.
+
+| Row | What changed | What this file still says |
+|---|---|---|
+| D18 | PEDAGOGY §4 sets core at about 60 minutes and Session 5 at about 45 (presentations take about 105); the 2027 lessons measure 60, 63, 61, 60 and 45, with 150 (125) allocated and tolerance 0 unchanged | "The band is 60–70" |
+| R11 | The cold-open `.ritual` block was retired in every lesson by the case opener (`sCase`), so the shared boilerplate is now `.apxback` furniture, the shared close block and the console fences | names the cold-open `.ritual` block as shared boilerplate |
+| A9 R11 corpus baseline | `scripts/editorial-baseline.json` records 6 shared blocks carrying 6 dashes; the corpus now has 5 and 5, so A9 R11 and `test-editorial-regions` T7 read red on purpose until the baseline moves | the baseline file moves only with Jared |
+
 ## D18 — the core minute band, ratified 2026-08-25
 
 **The band is 60–70 minutes. `150` allocated with tolerance 0 is unchanged.**

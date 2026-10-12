@@ -690,25 +690,10 @@ table.tbudget tr.apxrow td{color:var(--gold)}
 table.tbudget tr.nosum td{color:var(--muted);font-style:italic}
 table.tbudget tr.alloc td{font-weight:600;border-top:2px solid var(--ink);border-bottom:none}
 .stamp{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.05em;color:var(--muted);margin:18px 0 0}
-/* ===== family 17: the cold open. Session 5 runs a then-and-now form, so this container is
-   not the byte-shared .ritual block and does not carry that class (EDITORIAL R11). ===== */
-.coldopen .rlab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:9px;font-weight:500}
-.coldopen textarea{min-height:96px;background:var(--page)}
-.rout{margin-top:13px;background:var(--off-bg);border-radius:9px;padding:13px 16px;font-size:14.5px;line-height:1.55}
-.rout.on{background:var(--on-bg)}
-.rout .rz{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:5px;font-weight:500}
-.rout .rnil{color:var(--muted)}
-.rout .rfx{margin-top:9px;padding-top:9px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
 /* ===== shared components, carried from session-4 (2026-09-25 rebuild) ===== */
 .rout .good,.poln .good{color:var(--on);font-weight:600}.rout .flag,.poln .flag{color:var(--warn);font-weight:600}
 .mpanel .kw{color:var(--muted)}
 .cmsg{font-family:"JetBrains Mono",monospace;font-size:12px}
-.cpick{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px;margin:6px 0 4px}
-.cpick button{display:flex;gap:10px;align-items:flex-start;text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;font-family:"JetBrains Mono",monospace;font-size:12.5px;line-height:1.5;color:var(--ink);transition:.15s}
-.cpick button:hover{border-color:var(--off)}
-.cpick button b{flex:none;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--off-bg);color:var(--muted);font-size:12px}
-.cpick button.act{border-color:var(--on);background:var(--on-bg)}
-.cpick button.act b{background:var(--on);color:#fff}
 .crow{margin:8px 0 0}.crow .cw{font-size:13px;margin-top:2px}
 table.ctab{margin:6px 0 0;font-size:13.5px;font-family:"Source Serif 4",Georgia,serif}
 table.ctab td,table.ctab th{padding:7px 10px 7px 0}
@@ -906,59 +891,6 @@ svg [data-drop].drop-over{stroke:var(--on);stroke-width:3;fill:var(--on-bg)}
 #s0 .s0-foot.fin{fill:var(--on);font-weight:600}
 
 @media (prefers-reduced-motion: reduce){#s0 .s0-ring,#s0 .s0-spoke,#s0 .s0-stop .s0-dot,#s0 .s0-stop .s0-halo,#s0 .s0-ghost,#s0 .s0-box,#s0 .s0-gen,#s0 .s0-stamp rect{transition:none}#s0 .s0-stop:hover .s0-dot{transform:none}}
-/* ===== sCold ===== */
-/* sCold · then and now: two prompts. Every selector is scoped to #sCold; every new class is sCold-. */
-#sCold .sCold-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start;margin-top:4px}
-@media (max-width:760px){#sCold .sCold-grid{grid-template-columns:1fr}}
-#sCold .cpick{grid-template-columns:1fr;gap:12px}
-#sCold .cpick button{align-items:flex-start}
-#sCold .cpick button b{margin-top:2px}
-#sCold .ptxt{display:block;font-family:"Source Serif 4",Georgia,serif;font-size:14.5px;line-height:1.5;color:var(--ink);text-transform:none;letter-spacing:0}
-#sCold .plbl{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
-#sCold .idp{background:var(--warn-bg);color:var(--warn);border-radius:4px;padding:0 4px;font-weight:600}
-#sCold .vtag{display:block;margin-top:8px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-style:normal;min-height:1.3em}
-#sCold .vtag.ok{color:var(--on)}
-#sCold .vtag.bad{color:var(--warn)}
-#sCold .sCold-figcol{min-width:0}
-#sCold .sCold-fig svg{display:block;width:100%;height:auto;max-width:420px}
-#sCold .sCold-tests{margin-top:10px}
-#sCold .sCold-ttl{font-family:"Bricolage Grotesque",sans-serif;font-size:13.5px;font-weight:600;fill:var(--ink)}
-#sCold .sCold-trk{stroke:var(--line);stroke-width:4;stroke-linecap:round}
-#sCold .sCold-trk.ok{stroke:var(--on-bg)}
-#sCold .sCold-trk.bad{stroke:var(--warn-bg)}
-#sCold .sCold-tick{stroke:var(--off);stroke-width:1.5}
-#sCold .sCold-num{font-family:"JetBrains Mono",monospace;font-size:11px;fill:var(--muted)}
-#sCold .sCold-lane{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;opacity:0;transition:opacity .3s}
-#sCold .sCold-lane.show{opacity:1}
-#sCold .sCold-lane.ok{fill:var(--on)}
-#sCold .sCold-lane.bad{fill:var(--warn)}
-#sCold .sCold-hide{opacity:0;transition:opacity .3s}
-#sCold .sCold-hide.show{opacity:1}
-#sCold .sCold-tok{opacity:0;transition:transform .5s ease,opacity .3s ease}
-#sCold .sCold-tok.show{opacity:1}
-#sCold .sCold-tok circle{fill:var(--ink)}
-#sCold .sCold-tok.now circle{fill:var(--on)}
-#sCold .sCold-tok.sunk circle{fill:var(--warn)}
-#sCold .sCold-tokt{font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:700;fill:#fff}
-#sCold .sCold-rowl{font-family:"Bricolage Grotesque",sans-serif;font-size:13px;font-weight:600;fill:var(--ink)}
-#sCold .sCold-seg{fill:var(--card);stroke:var(--line);stroke-width:1.2;stroke-dasharray:3 2;transition:fill .3s,stroke .3s}
-#sCold .sCold-seg.hit{fill:var(--on);stroke:var(--on);stroke-dasharray:none}
-#sCold .sCold-segt{font-family:"JetBrains Mono",monospace;font-size:10px;fill:var(--muted)}
-#sCold .sCold-seg.hit+.sCold-segt{fill:#fff}
-#sCold .sCold-name{font-family:"JetBrains Mono",monospace;font-size:10.5px;fill:var(--muted)}
-#sCold .sCold-drift{font-family:"Bricolage Grotesque",sans-serif;font-size:15px;font-weight:600;fill:var(--on)}
-#sCold .sCold-driftsub{font-family:"JetBrains Mono",monospace;font-size:11px;fill:var(--muted)}
-#sCold .rout.on .rz{color:var(--on)}
-#sCold table.ctab th,#sCold table.ctab td{text-align:left}
-#sCold table.ctab td.c{text-align:center;font-family:"JetBrains Mono",monospace}
-#sCold td.c.y{color:var(--on)}
-#sCold td.c.n{color:var(--warn)}
-#sCold .sCold-mine{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
-#sCold .sCold-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media (max-width:640px){#sCold .sCold-two{grid-template-columns:1fr}}
-#sCold .sCold-tl{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:14px;display:block;margin:6px 0 4px;line-height:1.3}
-#sCold .sCold-mine textarea{min-height:88px;background:var(--page)}
-#sCold .sCold-ans{font-size:14px;margin:8px 0 0;color:var(--ink);max-width:none}
 /* ===== s1 ===== */
 /* s1 · the model your workflow runs on will retire. Every selector is scoped to #s1; every new class is s1-. */
 #s1 .s1-ctl{display:grid;gap:8px 20px;grid-template-columns:minmax(0,1fr);margin-bottom:12px}
@@ -2226,106 +2158,154 @@ svg [data-drop].drop-over{stroke:var(--on);stroke-width:3;fill:var(--on-bg)}
 
 /* phone width: the scale scrolls sideways inside its box rather than shrinking past legibility */
 @media (max-width:600px){#sE5 .sE5-fig{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}#sE5 .sE5-fig svg{min-width:480px}}
-/* ===== s8 ===== */
-/* ===== s8 ===== */
+/* ===== the folded s8 task (Phase 6b): "Predict the Paper" now lives inside section s5. The s8- class prefix and the ids
+   s8Quiz, s8Tool and the rest are kept so the data-task t-s8 and every handle stay stable; the selectors are scoped to #s5. ===== */
 /* beat 1: the two locked questions sit side by side on a laptop, one under the other on a phone */
-#s8 .s8-quiz{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:16px;align-items:start;margin:0;border:none;padding:0}
-#s8 .s8-quiz .qitem,#s8 .s8-quiz .qitem:last-child{position:relative;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:14px;min-width:0;transition:border-color .2s}
-#s8 .s8-quiz .qbtns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0 0 6px;align-items:stretch}
-#s8 .s8-quiz .qbtns .btn.mini{padding:8px 6px;line-height:1.35;letter-spacing:.03em;text-align:center;white-space:normal}
+#s5 .s8-quiz{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:16px;align-items:start;margin:0;border:none;padding:0}
+#s5 .s8-quiz .qitem,#s5 .s8-quiz .qitem:last-child{position:relative;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:14px;min-width:0;transition:border-color .2s}
+#s5 .s8-quiz .qbtns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0 0 6px;align-items:stretch}
+#s5 .s8-quiz .qbtns .btn.mini{padding:8px 6px;line-height:1.35;letter-spacing:.03em;text-align:center;white-space:normal}
 /* a judged card: right is teal and solid, not quite is rust and dashed (state as a border style, not colour alone) */
-#s8 .s8-quiz .qitem.s8-ok{border-color:var(--on)}
-#s8 .s8-quiz .qitem.s8-bad{border-color:var(--warn);border-style:dashed}
+#s5 .s8-quiz .qitem.s8-ok{border-color:var(--on)}
+#s5 .s8-quiz .qitem.s8-bad{border-color:var(--warn);border-style:dashed}
 /* the stamp that lands on a card when its answer locks (Session 4's wsStamp) */
-#s8 .s8-stamp{position:absolute;right:10px;top:-13px;pointer-events:none;z-index:1;font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;line-height:1.3;padding:3px 9px;border:2.5px solid currentColor;border-radius:6px;background:var(--card);transform:rotate(-3deg) scale(1.9);opacity:0;white-space:nowrap}
-#s8 .s8-stamp.ok{color:var(--on);background:var(--on-bg)}
-#s8 .s8-stamp.bad{color:var(--warn);background:var(--warn-bg);border-style:dashed}
-#s8 .s8-stamp.on{transform:rotate(-3deg) scale(1);opacity:1;transition:transform .22s cubic-bezier(.2,1.6,.4,1),opacity .12s}
+#s5 .s8-stamp{position:absolute;right:10px;top:-13px;pointer-events:none;z-index:1;font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;line-height:1.3;padding:3px 9px;border:2.5px solid currentColor;border-radius:6px;background:var(--card);transform:rotate(-3deg) scale(1.9);opacity:0;white-space:nowrap}
+#s5 .s8-stamp.ok{color:var(--on);background:var(--on-bg)}
+#s5 .s8-stamp.bad{color:var(--warn);background:var(--warn-bg);border-style:dashed}
+#s5 .s8-stamp.on{transform:rotate(-3deg) scale(1);opacity:1;transition:transform .22s cubic-bezier(.2,1.6,.4,1),opacity .12s}
 @media (max-width:560px){
-  #s8 .s8-quiz .qbtns{grid-template-columns:minmax(0,1fr)}
+  #s5 .s8-quiz .qbtns{grid-template-columns:minmax(0,1fr)}
 }
 
 /* beat 2: hidden until both answers lock; fades in when it opens */
-#s8 .s8-beat2{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line);opacity:0;transform:translateY(6px);transition:opacity .4s,transform .4s}
-#s8 .s8-beat2.on{opacity:1;transform:none}
-#s8 .s8-beat2[hidden]{display:none}
-#s8 .s8-sl{margin-top:4px}
-#s8 .s8-n{font-family:"JetBrains Mono",monospace;font-weight:500;color:var(--on);white-space:nowrap}
-#s8 .s8-fig{margin:6px 0 0}
-#s8 .s8-fig svg{width:100%;height:auto;display:block;max-width:640px;margin:0 auto}
-#s8 .s8-cap{font-size:13px;color:var(--muted);margin:8px 0 0;line-height:1.5;max-width:none}
+#s5 .s8-beat2{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line);opacity:0;transform:translateY(6px);transition:opacity .4s,transform .4s}
+#s5 .s8-beat2.on{opacity:1;transform:none}
+#s5 .s8-beat2[hidden]{display:none}
+#s5 .s8-sl{margin-top:4px}
+#s5 .s8-n{font-family:"JetBrains Mono",monospace;font-weight:500;color:var(--on);white-space:nowrap}
+#s5 .s8-fig{margin:6px 0 0}
+#s5 .s8-fig svg{width:100%;height:auto;display:block;max-width:640px;margin:0 auto}
+#s5 .s8-cap{font-size:13px;color:var(--muted);margin:8px 0 0;line-height:1.5;max-width:none}
 
 /* the figure: three bands, built once and moved in place */
-#s8 .s8-t{font-family:"JetBrains Mono",monospace;font-size:13px;fill:var(--muted);letter-spacing:.03em}
-#s8 .s8-l{font-family:"JetBrains Mono",monospace;font-size:14px;fill:var(--ink)}
-#s8 .s8-v{font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:700}
-#s8 .s8-s{font-family:"JetBrains Mono",monospace;font-size:12px;fill:var(--muted)}
-#s8 .s8-axis{stroke:var(--ink);stroke-width:1.5}
-#s8 .s8-bar rect{transition:fill-opacity .35s}
-#s8 .s8-bar .s8-rect{transform-box:fill-box;transition:transform .6s cubic-bezier(.2,1,.4,1)}
-#s8 .s8-rust .s8-rect{fill:var(--warn);transform-origin:right center}
-#s8 .s8-rust .s8-v{fill:#fff}
-#s8 .s8-teal .s8-rect{fill:var(--on);transform-origin:left center}
-#s8 .s8-teal .s8-v{fill:var(--on)}
-#s8 .s8-strip rect{transition:fill-opacity .35s}
-#s8 .s8-act rect{fill:var(--gold)}
-#s8 .s8-pv{font-family:"JetBrains Mono",monospace;font-size:13px;fill:var(--ink);font-weight:600}
-#s8 .s8-pn{font-family:"JetBrains Mono",monospace;font-size:11px;fill:var(--muted)}
-#s8 .s8-base{stroke:var(--off);stroke-width:1.5}
-#s8 .s8-track{stroke:var(--off-bg);stroke-width:10;stroke-linecap:round}
-#s8 .s8-mid{stroke:var(--off);stroke-width:2}
-#s8 .s8-fill{fill:var(--gold);transform-box:fill-box;transform-origin:left center;transition:transform .35s,fill .35s}
-#s8 .s8-skip .s8-fill{fill:var(--warn)}
-#s8 .s8-check .s8-fill{fill:var(--on)}
-#s8 .s8-you{transition:none}
-#s8 .s8-dot{fill:var(--gold);stroke:var(--card);stroke-width:3;transition:fill .35s}
-#s8 .s8-skip .s8-dot{fill:var(--warn);stroke:var(--warn-bg);stroke-dasharray:3 2}
-#s8 .s8-check .s8-dot{fill:var(--on)}
-#s8 .s8-yl{font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:700;fill:var(--ink)}
-#s8 .s8-skip .s8-yl{fill:var(--warn)}
-#s8 .s8-check .s8-yl{fill:var(--on)}
-#s8 .s8-mpair{color:var(--muted);display:block;margin-top:6px}
+#s5 .s8-t{font-family:"JetBrains Mono",monospace;font-size:13px;fill:var(--muted);letter-spacing:.03em}
+#s5 .s8-l{font-family:"JetBrains Mono",monospace;font-size:14px;fill:var(--ink)}
+#s5 .s8-v{font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:700}
+#s5 .s8-s{font-family:"JetBrains Mono",monospace;font-size:12px;fill:var(--muted)}
+#s5 .s8-axis{stroke:var(--ink);stroke-width:1.5}
+#s5 .s8-bar rect{transition:fill-opacity .35s}
+#s5 .s8-bar .s8-rect{transform-box:fill-box;transition:transform .6s cubic-bezier(.2,1,.4,1)}
+#s5 .s8-rust .s8-rect{fill:var(--warn);transform-origin:right center}
+#s5 .s8-rust .s8-v{fill:#fff}
+#s5 .s8-teal .s8-rect{fill:var(--on);transform-origin:left center}
+#s5 .s8-teal .s8-v{fill:var(--on)}
+#s5 .s8-strip rect{transition:fill-opacity .35s}
+#s5 .s8-act rect{fill:var(--gold)}
+#s5 .s8-pv{font-family:"JetBrains Mono",monospace;font-size:13px;fill:var(--ink);font-weight:600}
+#s5 .s8-pn{font-family:"JetBrains Mono",monospace;font-size:11px;fill:var(--muted)}
+#s5 .s8-base{stroke:var(--off);stroke-width:1.5}
+#s5 .s8-track{stroke:var(--off-bg);stroke-width:10;stroke-linecap:round}
+#s5 .s8-mid{stroke:var(--off);stroke-width:2}
+#s5 .s8-fill{fill:var(--gold);transform-box:fill-box;transform-origin:left center;transition:transform .35s,fill .35s}
+#s5 .s8-skip .s8-fill{fill:var(--warn)}
+#s5 .s8-check .s8-fill{fill:var(--on)}
+#s5 .s8-you{transition:none}
+#s5 .s8-dot{fill:var(--gold);stroke:var(--card);stroke-width:3;transition:fill .35s}
+#s5 .s8-skip .s8-dot{fill:var(--warn);stroke:var(--warn-bg);stroke-dasharray:3 2}
+#s5 .s8-check .s8-dot{fill:var(--on)}
+#s5 .s8-yl{font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:700;fill:var(--ink)}
+#s5 .s8-skip .s8-yl{fill:var(--warn)}
+#s5 .s8-check .s8-yl{fill:var(--on)}
+#s5 .s8-mpair{color:var(--muted);display:block;margin-top:6px}
 /* on a phone the drawing is scaled to about two thirds: the one-per-row labels grow to stay legible */
 @media (max-width:560px){
-  #s8 .s8-t,#s8 .s8-s,#s8 .s8-pv{font-size:15px}
-  #s8 .s8-yl{font-size:15px}
+  #s5 .s8-t,#s5 .s8-s,#s5 .s8-pv{font-size:15px}
+  #s5 .s8-yl{font-size:15px}
 }
 
-/* beat 3: the sealed line and the five principles */
-#s8 .rlab{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:9px;font-weight:500;line-height:1.6}
-#s8 textarea.s8-sealed{background:var(--on-bg);border-color:var(--on);color:var(--ink)}
-#s8 .s8-sealrow{margin-top:12px}
-#s8 .s8-sealrow .s5stamp[hidden]{display:none}
-#s8 #s8Five{min-height:0}
-#s8 .s8-mine{display:block;margin:0 0 14px;padding:10px 12px;border-left:3px solid var(--on);background:var(--card);border-radius:0 8px 8px 0;font-family:"Source Serif 4",Georgia,serif;font-size:15px;line-height:1.5;color:var(--ink);white-space:pre-wrap;word-break:break-word}
-#s8 .s8-mine[hidden]{display:none}
-#s8 .s8-mine::before{content:"Yours: ";font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--on)}
-#s8 .s8-five{list-style:none;margin:0;padding:0}
-#s8 .s8-five li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:12px;align-items:start;padding:9px 0;border-bottom:1px dashed var(--off)}
-#s8 .s8-five li:last-child{border-bottom:none}
-#s8 .s8-five .nb{margin-top:1px}
-#s8 .s8-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
-
-/* talk strip: the four closing stops, as Session 4's close */
-#s8 .s8gates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:8px 0 10px}
-#s8 .s8gate{background:var(--card);border:1.5px solid var(--on);border-radius:8px;padding:8px 10px;font-size:14px;line-height:1.35}
-#s8 .s8gate b{display:block;font:11px "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--on);margin-bottom:3px}
-@media (max-width:760px){
-  #s8 .s8gates{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
 @media (max-width:560px){
-  #s8 .s8gates{grid-template-columns:minmax(0,1fr)}
-  #s8 .panel[data-task]{padding:18px 12px}
+  #s5 .panel[data-task]{padding:18px 12px}
 }
 @media (prefers-reduced-motion:reduce){
-  #s8 .s8-beat2,#s8 .s8-bar rect,#s8 .s8-bar .s8-rect,#s8 .s8-strip rect,#s8 .s8-fill,#s8 .s8-dot,#s8 .s8-stamp.on,#s8 .s8-quiz .qitem{transition:none}
+  #s5 .s8-beat2,#s5 .s8-bar rect,#s5 .s8-bar .s8-rect,#s5 .s8-strip rect,#s5 .s8-fill,#s5 .s8-dot,#s5 .s8-stamp.on,#s5 .s8-quiz .qitem{transition:none}
 }
-#s8{overflow-x:clip}
+#s5{overflow-x:clip}
+/* ===== Phase 6b: the Case button, the case opener (sCase), the maintenance log (sE6) and the closing check ===== */
+.topbar-case{position:fixed;right:14px;top:14px;z-index:60;display:flex;gap:8px;align-items:center}
+.topbar-case #caseBtn.casefab{position:static}
+.casebtn{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;line-height:normal;background:none;border:1.5px solid var(--on);color:var(--on);border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap;text-decoration:none}
+.casebtn:hover{background:var(--on-bg)}
+@media print{.topbar-case{display:none}}
+@media (max-width:640px){.topbar-case{top:auto;bottom:12px;right:10px;gap:6px;padding:3px;background:var(--page);border-radius:8px}.topbar-case .casebtn{padding:6px 9px;font-size:9.5px;box-shadow:0 2px 8px rgba(0,0,0,.12)}}
+.casego{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:20px 0}
+.casego a.btn{text-decoration:none;display:inline-block}
+
+/* ===== sCase · Case 5 opener. Every selector is scoped to #sCase; every new class is c5-. ===== */
+#sCase .c5-wl{margin:2px 0 14px}
+#sCase .vote .vopt .mono{font-size:13.5px;overflow-wrap:anywhere}
+#sCase .c5-commit{background:var(--gold-bg);border-color:#DFD3AF}
+#sCase .c5-commit h4{margin:4px 0 8px}
+#sCase .c5-commit .c5-q2{margin-top:18px}
+#sCase .c5-crow{margin-top:12px}
+#sCase .c5-crow .mono{font-size:12px}
+#sCase .vote .vopt{align-items:flex-start}
+#sCase .c5wrap{overflow-x:auto;margin:14px 0 0}
+#sCase table.c5tab{min-width:640px;font-size:14.5px;margin:0}
+#sCase table.c5tab td{padding:9px 12px 9px 0;line-height:1.48}
+#sCase table.c5tab td:first-child{width:88px;white-space:nowrap;font-family:"JetBrains Mono",monospace;font-size:12.5px}
+#sCase table.c5tab tr.first td{background:var(--warn-bg)}
+#sCase table.c5tab tr.first td:first-child{padding-left:8px}
+#sCase .c5-tl{margin-top:18px}
+#sCase .c5-tally{gap:14px;margin-top:6px}
+#sCase .c5-tally label{font-size:12px;display:flex;gap:8px;align-items:center}
+#sCase .c5-tally input{width:70px}
+#sCase .c5-bridge{font-size:clamp(17px,2vw,20px);margin:16px 0 0}
+
+/* ===== sE6 · the maintenance log: five fields, three entries each, one assembled row. Scoped to #sE6; classes sE6-. ===== */
+#sE6 .sE6-simrow{margin:0 0 12px}
+#sE6 .sE6-fields{display:grid;gap:12px;margin:6px 0 0}
+#sE6 .sE6-f{border:1.5px solid var(--line);border-radius:10px;padding:11px 14px;background:var(--card)}
+#sE6 .sE6-fl{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);margin-bottom:8px;font-weight:500}
+#sE6 .sE6-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:8px}
+#sE6 .sE6-opts .btn.sel{display:flex;gap:8px;align-items:flex-start;text-align:left;text-transform:none;letter-spacing:0;font-family:"Source Serif 4",Georgia,serif;font-size:14px;font-weight:400;line-height:1.4;padding:9px 11px;white-space:normal}
+#sE6 .sE6-opts .btn.sel .sE6-g{flex:none;min-width:12px;font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700}
+#sE6 .sE6-opts .btn.sel.act{color:#fff}
+#sE6 .sE6-opts .btn.sel.ok{border-color:var(--on);background:var(--on-bg);color:var(--ink)}
+#sE6 .sE6-opts .btn.sel.bad{border-color:var(--warn);border-style:dashed;background:var(--warn-bg);color:var(--ink)}
+#sE6 .sE6-opts .btn.sel.key{border-color:var(--on);border-style:dashed;color:var(--ink)}
+#sE6 .sE6-opts .btn.sel[aria-disabled="true"]{cursor:default}
+#sE6 .sE6-opts .btn.sel[aria-disabled="true"]:not(.ok):not(.bad):not(.key){opacity:.5}
+#sE6 .sE6-pl{margin-top:16px}
+#sE6 .sE6-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+#sE6 .sE6-cell{border:1.5px dashed var(--off);border-radius:8px;padding:8px 9px;background:var(--card);font-size:13px;line-height:1.4;min-width:0;overflow-wrap:anywhere}
+#sE6 .sE6-cell b{display:block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;font-weight:500}
+#sE6 .sE6-cell.set{border-style:solid;border-color:var(--on)}
+#sE6 .sE6-cell.ok{border-style:solid;border-color:var(--on);background:var(--on-bg)}
+#sE6 .sE6-cell.bad{border-style:dashed;border-color:var(--warn);background:var(--warn-bg)}
+@media (max-width:820px){#sE6 .sE6-row{grid-template-columns:minmax(0,1fr)}}
+#sE6 .sE6-ctl{margin-top:12px}
+#sE6 .sE6-msg{font-size:12px}
+#sE6 .sE6-tpl{margin:0 0 10px;padding:12px 14px;background:var(--off-bg);border-radius:9px;font-family:"JetBrains Mono",monospace;font-size:12px;line-height:1.7;color:var(--ink);white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;max-width:none}
+#sE6 .sE6-lines{list-style:none;margin:0 0 10px;padding:0}
+#sE6 .sE6-lines li{padding:7px 0;border-bottom:1px dashed var(--off)}
+#sE6 .sE6-lines li:last-child{border-bottom:none}
+#sE6 .sE6-lines .kw{display:block;margin-top:2px}
+@media (max-width:560px){#sE6 .sE6-tpl{font-size:11px;padding:10px 11px}}
+
+/* ===== sE5 · the closing check, moved here from the old s8 (the four stops, as Session 4's close) ===== */
+#sE5 .sE5-gates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:8px 0 10px}
+#sE5 .sE5-gate{background:var(--card);border:1.5px solid var(--on);border-radius:8px;padding:8px 10px;font-size:14px;line-height:1.35}
+#sE5 .sE5-gate b{display:block;font:11px "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--on);margin-bottom:3px}
+@media (max-width:760px){#sE5 .sE5-gates{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){#sE5 .sE5-gates{grid-template-columns:minmax(0,1fr)}}
 </style></head>
 <body>
 <nav id="rail" aria-label="Sections"></nav>
 <div id="ovr">Shift+U &middot; reveal all answer panels</div>
-<button id="caseBtn" class="casefab">Case facts</button>
+<div class="topbar-case">
+  <a class="casebtn" href="../cases/case-5.html">Case 5</a>
+  <button id="caseBtn" class="casefab">Case facts</button>
+</div>
 <div id="caseModal"><div class="inner" id="caseInner">
   <div class="eyebrow"><span>Synthetic case, classroom anchor only</span></div>
   <h2 style="margin-bottom:14px">The Cole Household</h2>
@@ -2804,78 +2784,61 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
 <!-- APXPANEL:BEGIN generated-by=scripts/build-appendix.mjs -->
 <section class="slide apxdiv" id="apx" data-nav="Appendix contents">
-  <div class="eyebrow"><span>Appendix &middot; 5 optional sections</span><span class="mins">66 min</span></div>
+  <div class="eyebrow"><span>Appendix &middot; 10 optional sections</span><span class="mins">80 min</span></div>
   <h2>Appendix contents</h2>
-  <p class="lede">Five optional sections, 66 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
-  <p>The 11 sections of the core session run in about 59 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
+  <p class="lede">Ten optional sections, 80 minutes in all. Each one is placed in the core at the point it belongs, so the depth control above adds depth in place rather than sending you to the back of the file.</p>
+  <p>The 6 sections of the core session run in about 45 minutes and are what always gets taught. Nothing in the core depends on anything in the appendix. Each card names the core section its appendix section follows, so what you are skipping and what it would cost are both on this page.</p>
   <div class="apxgrid">
-    <a class="apxcard" href="#sE2"><span class="ac">E2 &middot; 14 min &middot; after &sect;01</span><b>Swap the Model, Keep the Test Set</b></a>
-    <a class="apxcard" href="#sE3"><span class="ac">E3 &middot; 12 min &middot; after &sect;03</span><b>Five Ways It Broke, Sessions 1 to 4</b></a>
-    <a class="apxcard" href="#sE4"><span class="ac">E4 &middot; 10 min &middot; after &sect;04</span><b>The Builder's Two Minutes</b></a>
-    <a class="apxcard" href="#sE1"><span class="ac">E1 &middot; 12 min &middot; after &sect;04</span><b>Six Minutes, Five Beats</b></a>
-    <a class="apxcard" href="#sE5"><span class="ac">E5 &middot; 18 min &middot; after &sect;08</span><b>Discussion: As the Tool Does the Analysis, Does Your Value Move to the Relationship?</b></a>
+    <a class="apxcard" href="#sE3"><span class="ac">E3 &middot; 12 min &middot; after &sect;02</span><b>Five Ways It Broke, Sessions 1 to 4</b></a>
+    <a class="apxcard" href="#sE4"><span class="ac">E4 &middot; 10 min &middot; after &sect;02</span><b>The Builder's Two Minutes</b></a>
+    <a class="apxcard" href="#sE2"><span class="ac">E2 &middot; 14 min &middot; after &sect;02</span><b>Swap the Model, Keep the Test Set</b></a>
+    <a class="apxcard" href="#sE6"><span class="ac">E6 &middot; 6 min &middot; after &sect;02</span><b>The Maintenance Log: Five Fields, One Row</b></a>
+    <a class="apxcard" href="#s2"><span class="ac">E7 &middot; 6 min &middot; after &sect;02</span><b>Read a Stranger's Package Like an Examiner</b></a>
+    <a class="apxcard" href="#s3"><span class="ac">E8 &middot; 5 min &middot; after &sect;02</span><b>Six Inputs: Which Ones Break It?</b></a>
+    <a class="apxcard" href="#s4"><span class="ac">E9 &middot; 5 min &middot; after &sect;02</span><b>A Change You Can Defend</b></a>
+    <a class="apxcard" href="#sE1"><span class="ac">E1 &middot; 12 min &middot; after &sect;02</span><b>Six Minutes, Five Beats</b></a>
+    <a class="apxcard" href="#s6"><span class="ac">E10 &middot; 5 min &middot; after &sect;04</span><b>New Tools, the Same Four Questions</b></a>
+    <a class="apxcard" href="#sLib"><span class="ac">E11 &middot; 5 min &middot; after &sect;04</span><b>One Repository, Every Desk</b></a>
   </div>
 </section>
 <!-- APXPANEL:END -->
 
-<section class="slide" id="sCold" data-nav="Cold open">
-  <div class="eyebrow"><span>Cold open &middot; standing ritual</span><span class="mins">8 min</span></div>
-  <h2>Then and Now: Two Prompts</h2>
-  <p class="big">Two prompts about one client, from this course&rsquo;s first week and its last. Run the eight checks on both, then the test that decides whether either may be sent.</p>
+<section class="slide" id="sCase" data-nav="Case 5">
+  <div class="eyebrow"><span>01 &middot; Case 5: the retirement-income one-pager and the maintenance log</span><span class="mins">10 min</span></div>
+  <h2>The One-Pager That Has to Survive a Model Change</h2>
 
-  <div class="panel coldopen" data-task="t-cold-open" data-comp="timed-ritual">
+  <p class="big">The finished deliverable is a one-page retirement-income summary for Meg and David Cole, with the log that keeps the workflow behind it honest. They hold $2,446,000 of investable assets and plan to stop work at 60 and 62, and the firm redrafts the one-pager whenever their numbers move. The workflow that drafts it was written and tested on Claude Sonnet 4.5, which Anthropic deprecated on 30 September 2026 and lists to retire on 30 November 2026 <span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>.</p>
+
+  <div class="casego"><a class="btn" href="../cases/case-5.html">Open Case 5: the finished one-pager and the log</a><span class="dim mono" style="font-size:12px">The page asks the same question. Skipped it? Commit here.</span></div>
+
+  <div class="panel c5-commit" data-task="t-sCase" data-comp="prediction-commit">
     <span class="do">Do this now: 3 minutes</span>
-    <p class="hint">Click a prompt to score it, then run both tests.</p>
-    <div class="sCold-grid">
-      <div id="coldPicks" class="cpick" role="group" aria-label="Two prompts, Then and Now: pick one to score it"></div>
-      <div class="sCold-figcol">
-        <div id="coldFig" class="sCold-fig"></div>
-        <div class="row sCold-tests" role="group" aria-label="The two tests">
-          <button class="btn mini" id="coldRank" type="button">Test 1 &middot; check both</button>
-          <button class="btn ghost mini" id="coldAll" type="button">Test 2 &middot; could you send it?</button>
-        </div>
-      </div>
-    </div>
-    <div class="rout" id="coldOut" aria-live="polite"><span class="rnil">Pick a prompt to run the eight checks on it.</span></div>
-    <div class="mpanel keyhide" id="coldCmp" style="display:none"></div>
-    <div class="row" style="margin-top:12px"><button class="btn ghost mini" id="coldMine" type="button" style="display:none">Now try two of your own</button></div>
-    <div class="sCold-mine" id="coldMineBox" style="display:none">
-      <span class="rlab">Your prompts stay on this page: nothing is sent or saved.</span>
-      <div class="sCold-two">
-        <div class="sCold-tcol">
-          <label class="sCold-tl" for="coldThen">The oldest prompt you can find in your own AI history</label>
-          <textarea id="coldThen" placeholder="Paste your oldest prompt."></textarea>
-        </div>
-        <div class="sCold-tcol">
-          <label class="sCold-tl" for="coldNow">The latest one</label>
-          <textarea id="coldNow" placeholder="Paste your latest prompt."></textarea>
-        </div>
-      </div>
-      <div class="row" style="margin-top:10px"><button class="btn ghost mini" id="coldGo" type="button">Test 1 &middot; check both</button></div>
-      <div class="rout" id="coldMineOut" aria-live="polite"></div>
-      <div id="coldMineQ" style="display:none">
-        <p class="hint">Test 2 is yours: does either one name a client, or show who your client is?</p>
-        <div class="row" role="group" aria-label="Your answer to Test 2">
-          <button class="btn sel mini" id="coldMineY" type="button" aria-pressed="false">One of them names a client</button>
-          <button class="btn sel mini" id="coldMineN" type="button" aria-pressed="false">Neither names anyone</button>
-        </div>
-        <p class="sCold-ans" id="coldMineAns" aria-live="polite"></p>
-      </div>
-    </div>
+    <span class="plab" style="color:var(--gold)">Commit before the finished version opens &middot; guessing wrong is the design</span>
+    <span class="plab c5-wl">The documented workflow &middot; five steps, constructed for this lesson</span>
+    <h4>1. Which step breaks first when the model is retired?</h4>
+    <div class="vote" id="c5Steps" role="group" aria-label="The five documented steps of the workflow. Pick the one you predict breaks first."></div>
+    <h4 class="c5-q2">2. Why does it break?</h4>
+    <div class="vote" id="c5Why" role="group" aria-label="Four reasons. Pick the one that explains the first break."></div>
+    <div class="row c5-crow"><button type="button" class="btn" id="c5Commit" disabled>Commit both answers</button><span class="mono dim" id="c5Msg" role="status" aria-live="polite">Pick a step and a reason.</span></div>
   </div>
 
-  <ul class="pts">
-    <li><b>The drift is the course.</b> The eight checks are Session 1&rsquo;s. The gap between Then and Now is what five weeks changed in how you ask.</li>
-    <li><b>Two different tests.</b> The checks ask whether a prompt is well made. Test 2 asks whether you may send it at all. Passing one tells you nothing about the other.</li>
-  </ul>
+  <div class="panel keyhide c5-reveal" id="c5Reveal" tabindex="-1" style="display:none">
+    <span class="plab">The reveal</span>
+    <div class="readout" id="c5Out"><span class="nil">Commit both answers first.</span></div>
+    <div class="c5wrap" id="c5Table"></div>
+    <span class="plab c5-tl">Room tally for question 1 &middot; the instructor keys in the Zoom poll counts</span>
+    <div class="row c5-tally" id="c5TallyIn"></div>
+    <div class="dist" id="c5TallyBars"></div>
+    <p class="big c5-bridge">The date was public weeks ahead, so the next section builds the two lines that let a skill outlive its model, and Appendix E6 shows the one log row that records the swap.</p>
+  </div>
 
-  <p class="src">Both prompts are written for this lesson; the client in Then is synthetic. The eight checks are the Session 1 checklist, run as simple word tests <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">Anthropic, Model deprecations, platform.claude.com, opened 12 October 2026: the dates, and the sentence that requests to retired models fail <span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>. The Coles&rsquo; ages, retirement ages and $2,446,000 are CASE.md Parts A and C, synthetic by construction. The workflow, its five steps and the one-pager it drafts are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
-  <div class="check" data-gate="gc"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run both tests and find the prompt you could not send.</div></div>
+  <div class="check" data-gate="gCase"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Pick a step and a reason, commit both, then read the reveal against your own answers.</div></div>
 </section>
 
 <section class="slide" id="s1" data-nav="The tools change">
-  <div class="eyebrow"><span>01 &middot; The tools change</span><span class="mins">5 min</span></div>
+  <div class="eyebrow"><span>02 &middot; The tools change</span><span class="mins">5 min</span></div>
   <h2>The Model Your Workflow Runs On Will Retire</h2>
   <p class="big">Every current and legacy model on Anthropic&rsquo;s own calendar has a retirement date or a not-sooner-than date. Pin a workflow to one and drag the day forward. Then build the two lines that let a skill outlive the model it was written on.</p>
 
@@ -2963,6 +2926,88 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="check" data-gate="g2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Pin the workflow, drag the day past a retirement, then fill both slots and advance the model.</div></div>
 </section>
 
+<section class="slide apx" id="sE3" data-nav="E3 &middot; Failure types" data-insert-after="s1" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E3 &middot; Five Ways It Broke, Sessions 1 to 4</b><span>12 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix E3 &middot; Failure types</span><span class="mins">12 min</span></div>
+  <h2>Five Ways It Broke, Sessions 1 to 4</h2>
+
+  <p class="big">Every failure this course showed you is one of five kinds. Sort ten of them, and you have a diagnosis sheet for any workflow.</p>
+
+  <div class="panel" data-task="t-sE3" data-comp="multi-column-sorter">
+    <span class="do">Do this now: 6 minutes</span>
+    <h4>Ten Failures, Five Kinds</h4>
+    <p class="hint">Click a failure, then the kind it is. Each lands with a tick or a cross and a one-line why.</p>
+    <div class="sorter sE3-sort">
+      <div id="e3List" class="chiplist" role="group" aria-label="Ten failures to sort"></div>
+      <div class="sE3-right">
+        <div id="e3Fig" class="sE3-fig"></div>
+        <div id="e3Boxes" class="boxes" role="group" aria-label="The five kinds"></div>
+        <div id="e3Out" class="mpanel" aria-live="polite"><span class="hd">Progress</span><span class="nil">Click a failure, then the kind it is.</span></div>
+      </div>
+    </div>
+    <div id="e3Key" class="mpanel keyhide" style="display:none"></div>
+  </div>
+
+  <ul class="pts">
+    <li><b>Two of the five are the model&rsquo;s.</b> Guessing and sampling happen inside it; the other three are about what you gave it and what you let it do <span class="conf h" data-src="src-kalai">H</span> <span class="conf h" data-src="src-wolfram">H</span>.</li>
+    <li><b>Each kind has its own fix,</b> and none of them is &ldquo;be careful&rdquo;: a rule with a word in it, a record, an opened source, a cleaned input, less access.</li>
+    <li><b>The sheet travels.</b> When a stranger&rsquo;s workflow breaks in your hands, name the kind first; the fix follows from it.</li>
+  </ul>
+
+  <p class="src">Kalai and colleagues (2025) on guessing <span class="conf h" data-src="src-kalai">H</span>; Wolfram (2023), the temperature passage in &ldquo;It&rsquo;s Just Adding One Word at a Time&rdquo;, on sampling <span class="conf h" data-src="src-wolfram">H</span>; Magesh and colleagues (2025) on unsupported citations <span class="conf h" data-src="src-magesh">H</span>; EchoLeak, CVE-2025-32711, on hidden instructions <span class="conf h" data-src="src-cve">H</span>. The ten failures restate the course&rsquo;s own exercises, which are constructed <span class="conf l" data-src="src-case">L</span>.</p>
+
+  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all ten.</div></div>
+</section>
+
+<section class="slide apx" id="sE4" data-nav="E4 &middot; The builder's two minutes" data-insert-after="s1" data-tier="foundational">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E4 &middot; The Builder's Two Minutes</b><span>10 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix E4 &middot; The builder's turn</span><span class="mins">10 min</span></div>
+  <h2>The Builder's Two Minutes</h2>
+
+  <p class="big">When a stranger presents your workflow, you get two minutes. Three things can be true of each sentence they say, and only one of them is about them.</p>
+
+  <div class="panel" data-task="t-sE4" data-comp="commit-first-mcq">
+    <span class="do">Do this now: 5 minutes</span>
+    <h4>What the Presenter Said</h4>
+    <p class="hint">One sentence at a time. Say your call aloud, then click it.</p>
+    <p class="sE4-simrow"><span class="sim">Simulated for this lesson <span class="conf l" data-src="src-case">L</span></span></p>
+
+    <div class="sE4-pkg" id="e4Pkg" aria-label="The package the presenter was handed"></div>
+
+    <div class="sE4-quote" id="e4Quote">
+      <span class="sE4-qh">Sentence <b id="e4N">1</b> of 5 &middot; the presenter, about your meeting-prep brief</span>
+      <span class="sE4-qt" id="e4Said"></span>
+    </div>
+
+    <div class="sE4-stage">
+      <div class="sE4-figcol">
+        <div id="e4Fig" class="sE4-fig"></div>
+        <p class="sE4-cap">In two minutes, name what they got right first.</p>
+      </div>
+      <div class="sE4-side">
+        <div class="sE4-calls" id="e4Calls" role="group" aria-label="Your call on this sentence">
+          <button class="btn sel mini" type="button" data-k="a" aria-pressed="false"><span class="sE4-bt">(a) Understood: that is how I built it</span><span class="sE4-g" aria-hidden="true"></span></button>
+          <button class="btn sel mini" type="button" data-k="b" aria-pressed="false"><span class="sE4-bt">(b) Missed: the package says otherwise</span><span class="sE4-g" aria-hidden="true"></span></button>
+          <button class="btn sel mini" type="button" data-k="c" aria-pressed="false"><span class="sE4-bt">(c) My package failed them: it never said</span><span class="sE4-g" aria-hidden="true"></span></button>
+        </div>
+        <div class="row sE4-nextrow"><button class="btn" id="e4Next" type="button" style="display:none">Next sentence &#9656;</button><span class="sE4-tally" id="e4Tally" aria-live="polite">0 of 5 called</span></div>
+        <div id="e4Out" class="mpanel" aria-live="polite"><span class="hd">Your call</span><span class="nil">Read sentence 1 against the package above. Then click (a), (b) or (c).</span></div>
+      </div>
+    </div>
+    <div id="e4Key" class="mpanel keyhide" style="display:none"></div>
+  </div>
+
+  <ul class="pts">
+    <li><b>Three truths, one order.</b> Say what they understood first, what they missed second, and what your package never told them last, as a list of fixes to your own work.</li>
+    <li><b>The gap belongs to the package.</b> If the documents did not let them run it, the finding is about the handoff, not about the runner.</li>
+    <li><b>Adopt the good change.</b> A presenter&rsquo;s fix that comes with the input that proves it is a gift; take it.</li>
+  </ul>
+
+  <p class="src">The five sentences and the calls are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+
+  <div class="check" data-gate="ga4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Call all five sentences.</div></div>
+</section>
+
 <section class="slide apx" id="sE2" data-nav="E2 &middot; The test set" data-insert-after="s1" data-tier="standard">
   <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E2 &middot; Swap the Model, Keep the Test Set</b><span>14 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
   <div class="eyebrow"><span>Appendix E2 &middot; Maintenance</span><span class="mins">14 min</span></div>
@@ -3000,7 +3045,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <ul class="pts">
     <li><b>Anthropic&rsquo;s own advice.</b> &ldquo;consider thorough testing of your applications with the new models well before the retirement date&rdquo; <span class="conf h" data-src="src-anthropic-deprecations">H</span>.</li>
-    <li><b>A test set is five inputs you already know the answer to.</b> The hard cases from &sect;03 are the first five.</li>
+    <li><b>A test set is five inputs you already know the answer to.</b> The hard cases from Appendix E8 are the first five.</li>
     <li><b>Same prompt, new model, different answer</b> is Session 2&rsquo;s lesson arriving a year later. Only a comparison you wrote down can see it.</li>
   </ul>
 
@@ -3009,8 +3054,48 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="check" data-gate="ga2"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run the set on at least one model and decide: ship or hold.</div></div>
 </section>
 
-<section class="slide" id="s2" data-nav="Explain it">
-  <div class="eyebrow"><span>02 &middot; Explain it</span><span class="mins">6 min</span></div>
+<section class="slide apx" id="sE6" data-nav="E6 &middot; The maintenance log" data-insert-after="s1" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E6 &middot; The Maintenance Log: Five Fields, One Row</b><span>6 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix E6 &middot; The log</span><span class="mins">6 min</span></div>
+  <h2>The Maintenance Log: Five Fields, One Row</h2>
+
+  <p class="big">A change you did not write down is a change the next person has to rediscover. A log row has five fields, and each one either lets a stranger re-run what you did or does not.</p>
+
+  <div class="panel" data-task="t-sE6" data-comp="builder-assembler">
+    <span class="do">Do this now: 4 minutes</span>
+    <h4>Assemble the Row, Then Lock It</h4>
+    <p class="hint">The meeting-prep workflow moved from claude-sonnet-4-5-20250929 to claude-sonnet-5-5 <span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span> on 12 November 2026. The five-input test set from Appendix E2 ran on the replacement: four inputs matched, and the two-column table came back as a table. Pick one entry for each field and the row builds. Lock it to see which fields a stranger could act on.</p>
+    <p class="sE6-simrow"><span class="sim">The date, the test results and the fix are constructed for this lesson <span class="conf l" data-src="src-case">L</span></span></p>
+    <div class="sE6-fields" id="e6Fields"></div>
+    <span class="plab sE6-pl">The log row, as you have built it</span>
+    <div class="sE6-row" id="e6Row" role="group" aria-label="The log row so far: five cells"></div>
+    <div class="row sE6-ctl"><button class="btn" id="e6Lock" type="button" disabled>Lock the row</button><span class="mono dim sE6-msg" id="e6Msg" role="status" aria-live="polite">Pick one entry for each of the five fields.</span></div>
+    <div id="e6Out" class="mpanel" aria-live="polite"><span class="hd">Your row</span><span class="nil">Build the row, then lock it.</span></div>
+    <div id="e6Key" class="mpanel keyhide" style="display:none"></div>
+  </div>
+
+  <div class="panel">
+    <span class="do">Then this: 2 minutes</span>
+    <h4>Copy the Log Template</h4>
+    <p class="hint">One row per change. Keep it in the workflow&rsquo;s folder, next to the test set, so the next runner finds both.</p>
+    <pre class="sE6-tpl" id="e6Tpl" aria-label="The maintenance-log template, three rows"></pre>
+    <div class="row"><button class="btn ghost mini" id="e6Copy" type="button">Copy the log template</button><span class="dim cmsg" id="e6CopyMsg" aria-live="polite"></span></div>
+  </div>
+
+  <ul class="pts">
+    <li><b>Ids, not nicknames.</b> A model id names one model; &ldquo;the newest Sonnet&rdquo; names a different one next month. Ids and retirement dates are on the vendor&rsquo;s public calendar <span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>.</li>
+    <li><b>The words you added, exactly.</b> &ldquo;Reworded the prompt&rdquo; cannot be applied again; the line itself can.</li>
+    <li><b>A changed prompt re-runs the whole set.</b> A fix can move any answer, not only the one it was written for, so the re-test row names how many matched out of how many.</li>
+  </ul>
+
+  <p class="src">Anthropic, Model deprecations, platform.claude.com, opened 12 October 2026: the two model ids, the retirement of the first, and the sentence that requests to retired models fail <span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>. Anthropic advises testing the replacement before the retirement date <span class="conf h" data-src="src-anthropic-deprecations">H</span>. The workflow, the five inputs, their results and the log entries are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+
+  <div class="check" data-gate="ga6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Pick one entry for each field, lock the row, and read which fields a stranger could act on.</div></div>
+</section>
+
+<section class="slide apx" id="s2" data-nav="E7 &middot; Explain it" data-insert-after="s1" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E7 &middot; Read a Stranger's Package Like an Examiner</b><span>6 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix E7 &middot; Explain it</span><span class="mins">6 min</span></div>
   <h2>Read a Stranger's Package Like an Examiner</h2>
 
   <p class="big">Before you run someone else&rsquo;s workflow, say what it is made of: the tool, the tier, the prompt&rsquo;s shape, the check, and what it does with client data.</p>
@@ -3080,8 +3165,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="check" data-gate="g3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place every phrase, copy the four-line explanation, then sort the eight loose files.</div></div>
 </section>
 
-<section class="slide" id="s3" data-nav="Break it">
-  <div class="eyebrow"><span>03 &middot; Break it</span><span class="mins">5 min</span></div>
+<section class="slide apx" id="s3" data-nav="E8 &middot; Break it" data-insert-after="s1" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E8 &middot; Six Inputs: Which Ones Break It?</b><span>5 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix E8 &middot; Break it</span><span class="mins">5 min</span></div>
   <h2>Six Inputs: Which Ones Break It?</h2>
 
   <p class="big">A workflow that worked on the builder&rsquo;s example has passed one test. Predict which of six inputs break it, then run them.</p>
@@ -3115,41 +3201,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="check" data-gate="g4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Lock a prediction, run all six, and read which three broke.</div></div>
 </section>
 
-<section class="slide apx" id="sE3" data-nav="E3 &middot; Failure types" data-insert-after="s3" data-tier="foundational">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E3 &middot; Five Ways It Broke, Sessions 1 to 4</b><span>12 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix E3 &middot; Failure types</span><span class="mins">12 min</span></div>
-  <h2>Five Ways It Broke, Sessions 1 to 4</h2>
-
-  <p class="big">Every failure this course showed you is one of five kinds. Sort ten of them, and you have a diagnosis sheet for any workflow.</p>
-
-  <div class="panel" data-task="t-sE3" data-comp="multi-column-sorter">
-    <span class="do">Do this now: 6 minutes</span>
-    <h4>Ten Failures, Five Kinds</h4>
-    <p class="hint">Click a failure, then the kind it is. Each lands with a tick or a cross and a one-line why.</p>
-    <div class="sorter sE3-sort">
-      <div id="e3List" class="chiplist" role="group" aria-label="Ten failures to sort"></div>
-      <div class="sE3-right">
-        <div id="e3Fig" class="sE3-fig"></div>
-        <div id="e3Boxes" class="boxes" role="group" aria-label="The five kinds"></div>
-        <div id="e3Out" class="mpanel" aria-live="polite"><span class="hd">Progress</span><span class="nil">Click a failure, then the kind it is.</span></div>
-      </div>
-    </div>
-    <div id="e3Key" class="mpanel keyhide" style="display:none"></div>
-  </div>
-
-  <ul class="pts">
-    <li><b>Two of the five are the model&rsquo;s.</b> Guessing and sampling happen inside it; the other three are about what you gave it and what you let it do <span class="conf h" data-src="src-kalai">H</span> <span class="conf h" data-src="src-wolfram">H</span>.</li>
-    <li><b>Each kind has its own fix,</b> and none of them is &ldquo;be careful&rdquo;: a rule with a word in it, a record, an opened source, a cleaned input, less access.</li>
-    <li><b>The sheet travels.</b> When a stranger&rsquo;s workflow breaks in your hands, name the kind first; the fix follows from it.</li>
-  </ul>
-
-  <p class="src">Kalai and colleagues (2025) on guessing <span class="conf h" data-src="src-kalai">H</span>; Wolfram (2023), the temperature passage in &ldquo;It&rsquo;s Just Adding One Word at a Time&rdquo;, on sampling <span class="conf h" data-src="src-wolfram">H</span>; Magesh and colleagues (2025) on unsupported citations <span class="conf h" data-src="src-magesh">H</span>; EchoLeak, CVE-2025-32711, on hidden instructions <span class="conf h" data-src="src-cve">H</span>. The ten failures restate the course&rsquo;s own exercises, which are constructed <span class="conf l" data-src="src-case">L</span>.</p>
-
-  <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all ten.</div></div>
-</section>
-
-<section class="slide" id="s4" data-nav="Improve it">
-  <div class="eyebrow"><span>04 &middot; Improve it</span><span class="mins">5 min</span></div>
+<section class="slide apx" id="s4" data-nav="E9 &middot; Improve it" data-insert-after="s1" data-tier="standard">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E9 &middot; A Change You Can Defend</b><span>5 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix E9 &middot; Improve it</span><span class="mins">5 min</span></div>
   <h2>A Change You Can Defend</h2>
 
   <p class="big">Three inputs broke the brief. For each, two fixes sound reasonable. Only the ones a reader can check change the result.</p>
@@ -3186,56 +3240,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Pick one fix for each of the three breaks, then watch the improved version run.</div></div>
 </section>
 
-<section class="slide apx" id="sE4" data-nav="E4 &middot; The builder's two minutes" data-insert-after="s4" data-tier="foundational">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E4 &middot; The Builder's Two Minutes</b><span>10 min &middot; foundational &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix E4 &middot; The builder's turn</span><span class="mins">10 min</span></div>
-  <h2>The Builder's Two Minutes</h2>
-
-  <p class="big">When a stranger presents your workflow, you get two minutes. Three things can be true of each sentence they say, and only one of them is about them.</p>
-
-  <div class="panel" data-task="t-sE4" data-comp="commit-first-mcq">
-    <span class="do">Do this now: 5 minutes</span>
-    <h4>What the Presenter Said</h4>
-    <p class="hint">One sentence at a time. Say your call aloud, then click it.</p>
-    <p class="sE4-simrow"><span class="sim">Simulated for this lesson <span class="conf l" data-src="src-case">L</span></span></p>
-
-    <div class="sE4-pkg" id="e4Pkg" aria-label="The package the presenter was handed"></div>
-
-    <div class="sE4-quote" id="e4Quote">
-      <span class="sE4-qh">Sentence <b id="e4N">1</b> of 5 &middot; the presenter, about your meeting-prep brief</span>
-      <span class="sE4-qt" id="e4Said"></span>
-    </div>
-
-    <div class="sE4-stage">
-      <div class="sE4-figcol">
-        <div id="e4Fig" class="sE4-fig"></div>
-        <p class="sE4-cap">In two minutes, name what they got right first.</p>
-      </div>
-      <div class="sE4-side">
-        <div class="sE4-calls" id="e4Calls" role="group" aria-label="Your call on this sentence">
-          <button class="btn sel mini" type="button" data-k="a" aria-pressed="false"><span class="sE4-bt">(a) Understood: that is how I built it</span><span class="sE4-g" aria-hidden="true"></span></button>
-          <button class="btn sel mini" type="button" data-k="b" aria-pressed="false"><span class="sE4-bt">(b) Missed: the package says otherwise</span><span class="sE4-g" aria-hidden="true"></span></button>
-          <button class="btn sel mini" type="button" data-k="c" aria-pressed="false"><span class="sE4-bt">(c) My package failed them: it never said</span><span class="sE4-g" aria-hidden="true"></span></button>
-        </div>
-        <div class="row sE4-nextrow"><button class="btn" id="e4Next" type="button" style="display:none">Next sentence &#9656;</button><span class="sE4-tally" id="e4Tally" aria-live="polite">0 of 5 called</span></div>
-        <div id="e4Out" class="mpanel" aria-live="polite"><span class="hd">Your call</span><span class="nil">Read sentence 1 against the package above. Then click (a), (b) or (c).</span></div>
-      </div>
-    </div>
-    <div id="e4Key" class="mpanel keyhide" style="display:none"></div>
-  </div>
-
-  <ul class="pts">
-    <li><b>Three truths, one order.</b> Say what they understood first, what they missed second, and what your package never told them last, as a list of fixes to your own work.</li>
-    <li><b>The gap belongs to the package.</b> If the documents did not let them run it, the finding is about the handoff, not about the runner.</li>
-    <li><b>Adopt the good change.</b> A presenter&rsquo;s fix that comes with the input that proves it is a gift; take it.</li>
-  </ul>
-
-  <p class="src">The five sentences and the calls are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
-
-  <div class="check" data-gate="ga4"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Call all five sentences.</div></div>
-</section>
-
-<section class="slide apx" id="sE1" data-nav="E1 &middot; Rehearsal" data-insert-after="s4" data-tier="standard">
+<section class="slide apx" id="sE1" data-nav="E1 &middot; Rehearsal" data-insert-after="s1" data-tier="standard">
   <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E1 &middot; Six Minutes, Five Beats</b><span>12 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
   <div class="eyebrow"><span>Appendix E1 &middot; Rehearsal</span><span class="mins">12 min</span></div>
   <h2>Six Minutes, Five Beats</h2>
@@ -3244,7 +3249,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel" data-task="t-sE1" data-comp="timed-ritual">
     <span class="do">Do this now: 6 minutes, out loud</span>
     <h4>Start the Clock, Press Next at Each Beat</h4>
-    <p class="hint">Talk through the meeting-prep brief from &sect;02 to &sect;04, or your own. Press Next when you move on.</p>
+    <p class="hint">Talk through the meeting-prep brief from Appendices E7 to E9, or your own. Press Next when you move on.</p>
     <div class="sE1-top">
       <div class="sE1-clockbox">
         <span class="sE1-clock mono" id="e1Clock" aria-live="off">0:00</span>
@@ -3282,9 +3287,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </section>
 
 <section class="slide" id="s5" data-nav="Measure it">
-  <div class="eyebrow"><span>05 &middot; Measure it</span><span class="mins">5 min</span></div>
+  <div class="eyebrow"><span>03 &middot; Measure it</span><span class="mins">5 min</span></div>
   <h2>Felt Faster Is Not Faster</h2>
-  <p class="big">Four trials timed people with and without AI. Guess the saving, lock it, then see them, and then time your own task instead of feeling it.</p>
+  <p class="big">Four trials timed people with and without AI, and one survey asked 319 workers when they still think critically with it. Guess each result, lock it, then see it. Then time your own task instead of feeling it.</p>
 
   <div class="panel" data-task="t-s5" data-comp="estimate-then-reveal">
     <span class="do">Do this now: 2 minutes</span>
@@ -3300,10 +3305,36 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div id="s5Key" class="mpanel keyhide" style="display:none"></div>
   </div>
 
-  <div class="panel">
+  <div class="panel" data-task="t-s8" data-comp="commit-first-mcq">
     <span class="do">Then this: 2 minutes</span>
+    <h4>Predict the Paper Before You See It</h4>
+    <p class="hint">The assigned paper asked 319 knowledge workers when they still think critically with AI. Pick one answer to each question. Your pick locks, then the paper answers.</p>
+    <div class="quiz s8-quiz" id="s8Quiz"></div>
+    <span class="score" id="s8Score" aria-live="polite"></span>
+
+    <div id="s8Beat2" class="s8-beat2" hidden>
+      <h4>Set Your Two Confidences</h4>
+      <p class="hint">Move both sliders. The marker shows where the survey&rsquo;s pattern puts you.</p>
+      <div class="sliders s8-sl">
+        <div class="sl">
+          <label class="fl" for="s8Tool">How much do you trust the tool for this task? <span class="s8-n"><span id="s8ToolVal">5</span> of 10</span></label>
+          <input type="range" id="s8Tool" min="0" max="10" step="1" value="5" aria-valuetext="5 of 10">
+        </div>
+        <div class="sl">
+          <label class="fl" for="s8Self">How confident are you doing it yourself? <span class="s8-n"><span id="s8SelfVal">5</span> of 10</span></label>
+          <input type="range" id="s8Self" min="0" max="10" step="1" value="5" aria-valuetext="5 of 10">
+        </div>
+      </div>
+      <div id="s8Fig" class="s8-fig"></div>
+      <p class="s8-cap">The bars are the paper&rsquo;s numbers. The marker is a reading, not a score.</p>
+      <div id="s8Out" class="mpanel" aria-live="polite"><span class="hd">Where the survey puts you</span><span class="nil">Move either slider: the marker and this reading follow.</span></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <span class="do">Then this: 1 minute</span>
     <h4>Time One Task of Your Own</h4>
-    <p class="hint">Use your best estimate of how long the task takes you without AI, or keep the default. Checking means opening the source behind each answer; the record is what Session 4 asked you to keep.</p>
+    <p class="hint">Keep the default or use your best estimate of the minutes without AI. Checking means opening the source behind each answer; the record is what Session 4 asked you to keep.</p>
     <div class="s5-mywrap"><div id="s5Mine" class="sliders"></div><div id="s5MyFig" class="s5-myfig"></div></div>
     <div id="s5MyOut" class="mpanel"></div>
     <p id="s5MySay" class="s5-sr" aria-live="polite"></p>
@@ -3313,16 +3344,60 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <ul class="pts">
     <li><b>Four trials, four answers.</b> Writing 40% faster, consulting 25% faster, support 14% more per hour, coding 19% slower. None were planning tasks, and the one that measured feeling found it wrong <span class="conf m" data-src="src-metr-2025">M</span>.</li>
     <li><b>Inside and outside the frontier.</b> The same consultants who gained 25% inside the model&rsquo;s reach were 19 points worse outside it, and could not tell which side they were on <span class="conf m" data-src="src-dellacqua">M</span>.</li>
+    <li><b>Trust cuts checking.</b> In a survey of 319 workers and 936 examples, confidence in the tool went with less critical thinking (minus 0.69) and confidence in yourself with more (plus 0.26) <span class="conf h" data-src="src-lee-cognitive" data-fact="lee-2025-critical-thinking">H</span>.</li>
+    <li><b>The work moved; it did not vanish.</b> From gathering to verifying, from solving to integrating, from doing to stewarding <span class="conf h" data-src="src-lee-cognitive" data-fact="lee-2025-critical-thinking">H</span>.</li>
     <li><b>The baseline is the denominator.</b> Without the minutes it took you before, every saving is a feeling.</li>
   </ul>
 
-  <p class="src">Noy and Zhang (2023), Science <span class="conf m" data-src="src-noy-zhang">M</span>. Dell&rsquo;Acqua and colleagues (2023), Harvard Business School working paper <span class="conf m" data-src="src-dellacqua">M</span>. Brynjolfsson, Li and Raymond (2025), Quarterly Journal of Economics <span class="conf m" data-src="src-brynjolfsson">M</span>. METR (2025), Measuring the impact of early-2025 AI on experienced open-source developer productivity <span class="conf m" data-src="src-metr-2025">M</span>. All four reached through consistent secondary reports; none opened directly. Your task&rsquo;s starting values are examples <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">Noy and Zhang (2023), Science <span class="conf m" data-src="src-noy-zhang">M</span>. Dell&rsquo;Acqua and colleagues (2023), Harvard Business School working paper <span class="conf m" data-src="src-dellacqua">M</span>. Brynjolfsson, Li and Raymond (2025), Quarterly Journal of Economics <span class="conf m" data-src="src-brynjolfsson">M</span>. METR (2025), Measuring the impact of early-2025 AI on experienced open-source developer productivity <span class="conf m" data-src="src-metr-2025">M</span>. All four reached through consistent secondary reports; none opened directly. Lee, Sarkar, Tankelevitch, Drosos, Rintel, Banks and Wilson (2025), CHI: the survey design, the coefficients in Table 4, the effort shares and the three shifts; opened in full <span class="conf h" data-src="src-lee-cognitive" data-fact="lee-2025-critical-thinking">H</span>. Self-reported and cross-sectional (one survey, at one time): it measures what workers said, not whether they were right. Your task&rsquo;s starting values are examples <span class="conf l" data-src="src-case">L</span>.</p>
 
-  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Lock a guess, reveal the four trials, then enter one task of your own.</div></div>
+  <div class="check" data-gate="g6"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Lock a guess and reveal the four trials, answer both questions about the paper, then enter one task of your own.</div></div>
 </section>
 
-<section class="slide" id="s6" data-nav="New tools">
-  <div class="eyebrow"><span>06 &middot; New tools</span><span class="mins">5 min</span></div>
+<section class="slide" id="s7" data-nav="What stays human">
+  <div class="eyebrow"><span>04 &middot; What stays human</span><span class="mins">5 min</span></div>
+  <h2>The Cole Meeting: Eight Moments</h2>
+  <p class="big">Eight moments from one client meeting. A tool can draft some of them. The ones it cannot are where the relationship is made or lost.</p>
+
+  <div class="panel" data-task="t-s7" data-comp="two-bucket-sorter">
+    <span class="do">Do this now: 3 minutes</span>
+    <h4>Tool, or Only You?</h4>
+    <p class="hint">Click a moment, then the bucket. The meeting on the right fills in as you go. Or drag the moment onto its bucket.</p>
+    <div class="s7-stage">
+      <div id="s7List" class="chiplist" role="group" aria-label="Eight moments from the meeting, in the order they happened"></div>
+      <div id="s7Fig" class="s7-fig"></div>
+      <div id="s7Boxes" class="boxes"></div>
+    </div>
+    <div id="s7Out" class="mpanel" aria-live="polite"><span class="hd">The meeting</span><span class="nil">Click a moment, then the bucket it belongs in.</span></div>
+    <div id="s7Key" class="mpanel keyhide" style="display:none"></div>
+  </div>
+
+  <div class="panel s7-rank">
+    <span class="do">Then this: 2 minutes</span>
+    <h4>Rank the Reasons Clients Leave</h4>
+    <p class="hint">Morningstar asked investors who had fired an adviser why. Drag the six reasons into the order you expect, most common first, or move them with the arrows. Lock, then see the survey&rsquo;s order.</p>
+    <div class="s7-rankgrid">
+      <ol class="s7-ranklist" id="s7Rank" aria-label="Six reasons in your order, most common first. Drag a reason to reorder it, or use its up and down buttons."></ol>
+      <div id="s7RankFig" class="s7-rankfig"></div>
+    </div>
+    <div class="row s7-rankctl"><button class="btn" id="s7RankLock" type="button">Lock my order</button><button class="btn ghost" id="s7Show" type="button" disabled aria-disabled="true">Show the survey&rsquo;s order</button></div>
+    <div id="s7FactOut" class="mpanel" aria-live="polite"><span class="hd">What the surveys found</span><span class="nil">Order the six, lock, then reveal.</span></div>
+  </div>
+
+  <ul class="pts">
+    <li><b>Draft is not decide.</b> The four tool moments all end with you reading the draft before it moves; the four human moments have nothing to draft.</li>
+    <li><b>Why clients leave.</b> Advice quality and the relationship, 32% and 21%, not returns, 11% <span class="conf m" data-src="src-morningstar-fired">M</span>.</li>
+    <li><b>The profession agrees.</b> Counselling, values and biases are a tested domain of the CFP exam <span class="conf m" data-src="src-cfp-psychology">M</span>.</li>
+  </ul>
+
+  <p class="src">Lamas and Labotka, Morningstar, Why do investors fire their financial advisor? as reported <span class="conf m" data-src="src-morningstar-fired">M</span>. Kinniry and colleagues (2022), Putting a value on your value, Vanguard, as reported <span class="conf m" data-src="src-vanguard-alpha">M</span>. CFP Board (2021), Psychology of Financial Planning added to the exam, as reported <span class="conf m" data-src="src-cfp-psychology">M</span>. The eight moments are written from the course&rsquo;s synthetic meeting excerpt <span class="conf l" data-src="src-case">L</span>.</p>
+
+  <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all eight moments, then rank the six reasons and lock.</div></div>
+</section>
+
+<section class="slide apx" id="s6" data-nav="E10 &middot; New tools" data-insert-after="s7" data-tier="advanced">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E10 &middot; New Tools, the Same Four Questions</b><span>5 min &middot; advanced &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix E10 &middot; New tools</span><span class="mins">5 min</span></div>
   <h2>New Tools, the Same Four Questions</h2>
   <p class="big">Note-takers, CRM automations, planning agents, and the model your prospects ask about you: each is new, and Session 4&rsquo;s four questions fit every one. Wire each tool to what it reads and where that goes, and the four answers write themselves.</p>
 
@@ -3370,8 +3445,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Wire all five tools: a source on the left, a destination on the right.</div></div>
 </section>
 
-<section class="slide" id="sLib" data-nav="The firm's library">
-  <div class="eyebrow"><span>07 &middot; The firm&rsquo;s library</span><span class="mins">5 min</span></div>
+<section class="slide apx" id="sLib" data-nav="E11 &middot; The firm's library" data-insert-after="s7" data-tier="advanced">
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E11 &middot; One Repository, Every Desk</b><span>5 min &middot; advanced &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <div class="eyebrow"><span>Appendix E11 &middot; The firm&rsquo;s library</span><span class="mins">5 min</span></div>
   <h2>One Repository, Every Desk</h2>
   <p class="big">Your final project was one workflow in one person&rsquo;s hands. A firm keeps fifteen of them in one repository, approves which plugins and models every desk may use, pushes each update to every desk, and an adviser only ever types the question.</p>
 
@@ -3422,56 +3498,14 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="check" data-gate="gl"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Send two questions, push one update, and place all three proposals.</div></div>
 </section>
 
-<section class="slide" id="s7" data-nav="What stays human">
-  <div class="eyebrow"><span>08 &middot; What stays human</span><span class="mins">5 min</span></div>
-  <h2>The Cole Meeting: Eight Moments</h2>
-  <p class="big">Eight moments from one client meeting. A tool can draft some of them. The ones it cannot are where the relationship is made or lost.</p>
-
-  <div class="panel" data-task="t-s7" data-comp="two-bucket-sorter">
-    <span class="do">Do this now: 3 minutes</span>
-    <h4>Tool, or Only You?</h4>
-    <p class="hint">Click a moment, then the bucket. The meeting on the right fills in as you go. Or drag the moment onto its bucket.</p>
-    <div class="s7-stage">
-      <div id="s7List" class="chiplist" role="group" aria-label="Eight moments from the meeting, in the order they happened"></div>
-      <div id="s7Fig" class="s7-fig"></div>
-      <div id="s7Boxes" class="boxes"></div>
-    </div>
-    <div id="s7Out" class="mpanel" aria-live="polite"><span class="hd">The meeting</span><span class="nil">Click a moment, then the bucket it belongs in.</span></div>
-    <div id="s7Key" class="mpanel keyhide" style="display:none"></div>
-  </div>
-
-  <div class="panel s7-rank">
-    <span class="do">Then this: 2 minutes</span>
-    <h4>Rank the Reasons Clients Leave</h4>
-    <p class="hint">Morningstar asked investors who had fired an adviser why. Drag the six reasons into the order you expect, most common first, or move them with the arrows. Lock, then see the survey&rsquo;s order.</p>
-    <div class="s7-rankgrid">
-      <ol class="s7-ranklist" id="s7Rank" aria-label="Six reasons in your order, most common first. Drag a reason to reorder it, or use its up and down buttons."></ol>
-      <div id="s7RankFig" class="s7-rankfig"></div>
-    </div>
-    <div class="row s7-rankctl"><button class="btn" id="s7RankLock" type="button">Lock my order</button><button class="btn ghost" id="s7Show" type="button" disabled aria-disabled="true">Show the survey&rsquo;s order</button></div>
-    <div id="s7FactOut" class="mpanel" aria-live="polite"><span class="hd">What the surveys found</span><span class="nil">Order the six, lock, then reveal.</span></div>
-  </div>
-
-  <ul class="pts">
-    <li><b>Draft is not decide.</b> The four tool moments all end with you reading the draft before it moves; the four human moments have nothing to draft.</li>
-    <li><b>Why clients leave.</b> Advice quality and the relationship, 32% and 21%, not returns, 11% <span class="conf m" data-src="src-morningstar-fired">M</span>.</li>
-    <li><b>The profession agrees.</b> Counselling, values and biases are a tested domain of the CFP exam <span class="conf m" data-src="src-cfp-psychology">M</span>.</li>
-  </ul>
-
-  <p class="src">Lamas and Labotka, Morningstar, Why do investors fire their financial advisor? as reported <span class="conf m" data-src="src-morningstar-fired">M</span>. Kinniry and colleagues (2022), Putting a value on your value, Vanguard, as reported <span class="conf m" data-src="src-vanguard-alpha">M</span>. CFP Board (2021), Psychology of Financial Planning added to the exam, as reported <span class="conf m" data-src="src-cfp-psychology">M</span>. The eight moments are written from the course&rsquo;s synthetic meeting excerpt <span class="conf l" data-src="src-case">L</span>.</p>
-
-  <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all eight moments, then rank the six reasons and lock.</div></div>
-</section>
-
-<section class="slide apx" id="sE5" data-nav="E5 &middot; Discussion" data-insert-after="s7" data-tier="standard">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E5 &middot; Discussion: As the Tool Does the Analysis, Does Your Value Move to the Relationship?</b><span>18 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
-  <div class="eyebrow"><span>Appendix E5 &middot; Discussion</span><span class="mins">18 min</span></div>
+<section class="slide" id="sE5" data-nav="Discussion">
+  <div class="eyebrow"><span>05 &middot; Discussion</span><span class="mins">15 min</span></div>
   <h2>Discussion: As the Tool Does the Analysis, Does Your Value Move to the Relationship?</h2>
 
   <p class="big">Vote before you read a word of either case. Then the cases, one complication, and a second vote.</p>
 
   <div class="panel" data-task="t-sE5" data-comp="sealed-vote-debate">
-    <span class="do">Do this now: 1 minute</span>
+    <span class="do">Do this now: 15 minutes, in four steps</span>
     <h4>1 &middot; Vote</h4>
     <p class="hint">Pick a, b, c or d. The pick locks, and it opens step 2.</p>
     <span class="qtext"><b>The proposition.</b> As the tool does more of the analysis, an adviser&rsquo;s value moves to the relationship.</span>
@@ -3513,70 +3547,13 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p class="src">Lamas and Labotka, Morningstar, as reported <span class="conf m" data-src="src-morningstar-fired">M</span>. Kinniry and colleagues (2022), Vanguard, as reported <span class="conf m" data-src="src-vanguard-alpha">M</span>. Dell&rsquo;Acqua and colleagues (2023), as reported <span class="conf m" data-src="src-dellacqua">M</span>. Lee and colleagues (2025), CHI, opened in full <span class="conf h" data-src="src-lee-cognitive">H</span>. The scale is constructed <span class="conf l" data-src="src-case">L</span>.</p>
 
+  <div class="talk"><span class="th">Closing check</span><div class="sE5-gates"><span class="sE5-gate"><b>1 Explain</b>What is the workflow made of?</span><span class="sE5-gate"><b>2 Break</b>Which input breaks it?</span><span class="sE5-gate"><b>3 Improve</b>What change can you defend?</span><span class="sE5-gate"><b>4 Keep</b>What stays yours?</span></div>Answer all four for the workflow you presented, or for one of your own.</div>
+
+  <!-- READINGS:BEGIN s6 -->
+  <div class="card" data-readings="s6"><span class="num">Reading after the course</span><p class="dim">Filled before the term starts.</p></div>
+  <!-- READINGS:END -->
+
   <div class="check" data-gate="ga5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Vote, weigh both cases, read the complication, vote again.</div></div>
-</section>
-
-<section class="slide" id="s8" data-nav="The reading">
-  <div class="eyebrow"><span>09 &middot; The reading</span><span class="mins">5 min</span></div>
-  <h2>Trust the Tool, Think Less?</h2>
-
-  <p class="big">The assigned paper asked 319 knowledge workers when they still think critically with AI. Commit to two answers before you see what it found.</p>
-
-  <div class="panel" data-task="t-s8" data-comp="commit-first-mcq">
-    <span class="do">Do this now: 2 minutes</span>
-    <h4>Commit Before You Look</h4>
-    <p class="hint">Pick one answer to each question. Your pick locks, then the paper answers.</p>
-    <div class="quiz s8-quiz" id="s8Quiz"></div>
-    <span class="score" id="s8Score" aria-live="polite"></span>
-
-    <div id="s8Beat2" class="s8-beat2" hidden>
-      <h4>Set Your Two Confidences</h4>
-      <p class="hint">Move both sliders. The marker shows where the survey&rsquo;s pattern puts you.</p>
-      <div class="sliders s8-sl">
-        <div class="sl">
-          <label class="fl" for="s8Tool">How much do you trust the tool for this task? <span class="s8-n"><span id="s8ToolVal">5</span> of 10</span></label>
-          <input type="range" id="s8Tool" min="0" max="10" step="1" value="5" aria-valuetext="5 of 10">
-        </div>
-        <div class="sl">
-          <label class="fl" for="s8Self">How confident are you doing it yourself? <span class="s8-n"><span id="s8SelfVal">5</span> of 10</span></label>
-          <input type="range" id="s8Self" min="0" max="10" step="1" value="5" aria-valuetext="5 of 10">
-        </div>
-      </div>
-      <div id="s8Fig" class="s8-fig"></div>
-      <p class="s8-cap">The bars are the paper&rsquo;s numbers. The marker is a reading, not a score.</p>
-      <div id="s8Out" class="mpanel" aria-live="polite"><span class="hd">Where the survey puts you</span><span class="nil">Move either slider: the marker and this reading follow.</span></div>
-    </div>
-  </div>
-
-  <div class="panel">
-    <span class="do">Then this: 1 minute</span>
-    <h4>One Thing You Carry</h4>
-    <label class="rlab" for="s8Carry">One line: the one thing from this course you will do differently from Monday. It stays on this page.</label>
-    <textarea id="s8Carry" rows="2" placeholder="From Monday I will ..."></textarea>
-    <div class="row s8-sealrow"><button class="btn" id="s8Seal" type="button">Seal it</button><span class="s5stamp ok" id="s8Stamp" hidden>Sealed</span><span class="dim cmsg" id="s8SealMsg" aria-live="polite"></span></div>
-    <div id="s8Five" class="mpanel keyhide" style="display:none">
-      <span class="hd">Five sessions, five principles</span>
-      <span class="s8-mine" id="s8Mine" hidden></span>
-      <ol class="s8-five">
-        <li><span class="nb ok">1</span><span><span class="s8-tag">Session 1</span>It predicts; it does not know.</span></li>
-        <li><span class="nb ok">2</span><span><span class="s8-tag">Session 2</span>It samples a plausible answer rather than computing the true one; which one you got is a fact about that draw.</span></li>
-        <li><span class="nb ok">3</span><span><span class="s8-tag">Session 3</span>Grounded means it cites your file, and the nearest passage is not always the right one.</span></li>
-        <li><span class="nb ok">4</span><span><span class="s8-tag">Session 4</span>Four stops around the model: what goes in, where it goes, how you check, what you keep.</span></li>
-        <li><span class="nb ok">5</span><span><span class="s8-tag">Session 5</span>A workflow is finished when a stranger can run it and you can measure the result.</span></li>
-      </ol>
-    </div>
-    <div class="talk"><span class="th">Closing check</span><div class="s8gates"><span class="s8gate"><b>1 Explain</b>What is the workflow made of?</span><span class="s8gate"><b>2 Break</b>Which input breaks it?</span><span class="s8gate"><b>3 Improve</b>What change can you defend?</span><span class="s8gate"><b>4 Keep</b>What stays yours?</span></div>Answer all four for the workflow you presented, or for one of your own.</div>
-  </div>
-
-  <ul class="pts">
-    <li><b>What the paper measured.</b> 319 workers, 936 examples; critical thinking reported in 59% of them; less effort reported in 55% to 79% of examples by activity <span class="conf h" data-src="src-lee-cognitive" data-fact="lee-2025-critical-thinking">H</span>.</li>
-    <li><b>Trust cuts checking.</b> Confidence in the tool went with less critical thinking (minus 0.69); confidence in yourself with more (plus 0.26) <span class="conf h" data-src="src-lee-cognitive">H</span>.</li>
-    <li><b>The work moved; it did not vanish.</b> From gathering to verifying, from solving to integrating, from doing to stewarding <span class="conf h" data-src="src-lee-cognitive">H</span>.</li>
-  </ul>
-
-  <p class="src">Lee, Sarkar, Tankelevitch, Drosos, Rintel, Banks and Wilson (2025), CHI: the survey design, the coefficients in Table 4, the effort shares and the three shifts; opened in full <span class="conf h" data-src="src-lee-cognitive" data-fact="lee-2025-critical-thinking">H</span>. Self-reported and cross-sectional (one survey, at one time): it measures what workers said, not whether they were right. The five principles restate this course <span class="conf l" data-src="src-case">L</span>.</p>
-
-  <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer both questions, then set your two confidences.</div></div>
 </section>
 
 <footer>
@@ -3587,24 +3564,24 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 <!-- APXBUDGET:BEGIN generated-by=scripts/build-appendix.mjs -->
     <tbody>
       <tr><td>BUS ADM X433.4 &middot; Session 5</td><td>Final Project and Advisor Use Case Deep Dive</td><td class="n">5</td></tr>
-      <tr><td>Cold open &middot; standing ritual</td><td>Then and Now: Two Prompts</td><td class="n">8</td></tr>
-      <tr><td>01 &middot; The tools change</td><td>The Model Your Workflow Runs On Will Retire</td><td class="n">5</td></tr>
-      <tr><td>02 &middot; Explain it</td><td>Read a Stranger's Package Like an Examiner</td><td class="n">6</td></tr>
-      <tr><td>03 &middot; Break it</td><td>Six Inputs: Which Ones Break It?</td><td class="n">5</td></tr>
-      <tr><td>04 &middot; Improve it</td><td>A Change You Can Defend</td><td class="n">5</td></tr>
-      <tr><td>05 &middot; Measure it</td><td>Felt Faster Is Not Faster</td><td class="n">5</td></tr>
-      <tr><td>06 &middot; New tools</td><td>New Tools, the Same Four Questions</td><td class="n">5</td></tr>
-      <tr><td>07 &middot; The firm&rsquo;s library</td><td>One Repository, Every Desk</td><td class="n">5</td></tr>
-      <tr><td>08 &middot; What stays human</td><td>The Cole Meeting: Eight Moments</td><td class="n">5</td></tr>
-      <tr><td>09 &middot; The reading</td><td>Trust the Tool, Think Less?</td><td class="n">5</td></tr>
-      <tr class="apxrow"><td>Appendix E2 &middot; Maintenance</td><td>Swap the Model, Keep the Test Set</td><td class="n">14</td></tr>
+      <tr><td>01 &middot; Case 5: the retirement-income one-pager and the maintenance log</td><td>The One-Pager That Has to Survive a Model Change</td><td class="n">10</td></tr>
+      <tr><td>02 &middot; The tools change</td><td>The Model Your Workflow Runs On Will Retire</td><td class="n">5</td></tr>
+      <tr><td>03 &middot; Measure it</td><td>Felt Faster Is Not Faster</td><td class="n">5</td></tr>
+      <tr><td>04 &middot; What stays human</td><td>The Cole Meeting: Eight Moments</td><td class="n">5</td></tr>
+      <tr><td>05 &middot; Discussion</td><td>Discussion: As the Tool Does the Analysis, Does Your Value Move to the Relationship?</td><td class="n">15</td></tr>
       <tr class="apxrow"><td>Appendix E3 &middot; Failure types</td><td>Five Ways It Broke, Sessions 1 to 4</td><td class="n">12</td></tr>
       <tr class="apxrow"><td>Appendix E4 &middot; The builder's turn</td><td>The Builder's Two Minutes</td><td class="n">10</td></tr>
+      <tr class="apxrow"><td>Appendix E2 &middot; Maintenance</td><td>Swap the Model, Keep the Test Set</td><td class="n">14</td></tr>
+      <tr class="apxrow"><td>Appendix E6 &middot; The log</td><td>The Maintenance Log: Five Fields, One Row</td><td class="n">6</td></tr>
+      <tr class="apxrow"><td>Appendix E7 &middot; Explain it</td><td>Read a Stranger's Package Like an Examiner</td><td class="n">6</td></tr>
+      <tr class="apxrow"><td>Appendix E8 &middot; Break it</td><td>Six Inputs: Which Ones Break It?</td><td class="n">5</td></tr>
+      <tr class="apxrow"><td>Appendix E9 &middot; Improve it</td><td>A Change You Can Defend</td><td class="n">5</td></tr>
       <tr class="apxrow"><td>Appendix E1 &middot; Rehearsal</td><td>Six Minutes, Five Beats</td><td class="n">12</td></tr>
-      <tr class="apxrow"><td>Appendix E5 &middot; Discussion</td><td>Discussion: As the Tool Does the Analysis, Does Your Value Move to the Relationship?</td><td class="n">18</td></tr>
+      <tr class="apxrow"><td>Appendix E10 &middot; New tools</td><td>New Tools, the Same Four Questions</td><td class="n">5</td></tr>
+      <tr class="apxrow"><td>Appendix E11 &middot; The firm&rsquo;s library</td><td>One Repository, Every Desk</td><td class="n">5</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
       <tr class="nosum"><td>Reserve</td><td>Transitions and overrun, inside the 180-minute block</td><td class="n">15</td></tr>
-      <tr class="alloc"><td>Allocated</td><td>Core 59 + appendix 66; the core alone runs 59 minutes, and fits the hour</td><td class="n">125</td></tr>
+      <tr class="alloc"><td>Allocated</td><td>Core 45 + appendix 80; the core alone runs 45 minutes, and fits the hour</td><td class="n">125</td></tr>
     </tbody>
 <!-- APXBUDGET:END -->
   </table>
@@ -3613,37 +3590,37 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <p style="max-width:74ch;font-size:14.5px">Every external figure carries a confidence label. <strong>H</strong>: checked directly against the named source. <strong>M</strong>: reported by a secondary source, derived from a stated relationship, or taken from a summary of a page that could not be opened directly. <strong>L</strong>: an illustration constructed for this lesson, not a published figure.</p>
     <ol class="srcs">
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 c6fdde98ba10bc2ab13e2db2aac8441ce99f8db41a471573c22c44e730c08c8b -->
-      <li id="src-kitces-aisearch">(2025, November 17). <em>Ways advisors can optimize for AI search (AI SEO)</em>. Kitces.com, Nerd's Eye View. <a href="https://www.kitces.com/blog/artificial-intelligence-ai-search-engine-optimization-seo-financial-advisor-marketing-content-strategy/">kitces.com</a> Used for: the assigned reading, and its who-what-where recommendation on the AI-search tool card (§06). <span class="conf m" data-src="src-kitces-aisearch">M</span></li>
-      <li id="src-anthropic-terms">Anthropic. <em>Consumer Terms of Service, Commercial Terms of Service and Privacy Policy</em>. Anthropic, anthropic.com/legal. <a href="https://www.anthropic.com/legal/commercial-terms">anthropic.com/legal/commercial-terms</a> Retrieved 2026, September 27. Used for: the consumer training default behind the chat assistant's Where answer (§06). <span class="conf h" data-src="src-anthropic-terms">H</span></li>
-      <li id="src-anthropic-deprecations">Anthropic. (2026, September 30). <em>Model deprecations</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">platform.claude.com/docs/en/about-claude/model-deprecations</a> Retrieved 2026, October 12. Other sessions cite other retrievals of this page. Used for: the lifecycle terms, the 60 days' notice, the retirement and not-sooner-than dates on the calendar, Haiku 5.5 among them, the sentence that requests to retired models fail, and the lifecycle states in The Gate and the Scorecard (§01); the advice to test the replacement before the retirement date (Appendix E2). <span class="conf h" data-src="src-anthropic-deprecations">H</span></li>
-      <li id="src-anthropic-deprecation-commitments">Anthropic. (2025, November 4). <em>Commitments on model deprecation and preservation</em>. Anthropic, research and alignment pages. <a href="https://www.anthropic.com/research/deprecation-commitments">anthropic.com/research/deprecation-commitments</a> Retrieved 2026, October 2. Used for: that model weights are preserved and that retiring models is currently necessary to serve new ones (§01). <span class="conf h" data-src="src-anthropic-deprecation-commitments">H</span></li>
-      <li id="src-anthropic-models-overview">Anthropic. (2026). <em>Models overview</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/models/overview">platform.claude.com/docs/en/about-claude/models/overview</a> Retrieved 2026, October 12. Used for: the four current models and the legacy ones on the §01 calendar, and the lineup sentence in §01's bullets and status readout. <span class="conf h" data-src="src-anthropic-models-overview">H</span></li>
-      <li id="src-claude-code-skills">Anthropic. (2026). <em>Skills</em>. Claude Code documentation, code.claude.com. <a href="https://code.claude.com/docs/en/skills">code.claude.com/docs/en/skills</a> Retrieved 2026, October 4. Used for: that a skill is one described file, that the description is what triggers it, that an organisation can distribute skills centrally, and that a skill file can name its model (§01 bullets; §07 One Repository, Every Desk). <span class="conf h" data-src="src-claude-code-skills">H</span></li>
-      <li id="src-claude-code-marketplace">Anthropic. (2026). <em>Create a marketplace</em>. Claude Code documentation, code.claude.com. <a href="https://code.claude.com/docs/en/plugin-marketplaces">code.claude.com/docs/en/plugin-marketplaces</a> Retrieved 2026, October 4. Used for: the repository card in §07: one catalogue file, one git repository, the add-and-install step. <span class="conf h" data-src="src-claude-code-marketplace">H</span></li>
-      <li id="src-claude-code-org">Anthropic. (2026). <em>Manage Claude Code plugins for your organization</em>. Claude Code documentation, code.claude.com. <a href="https://code.claude.com/docs/en/plugins/org">code.claude.com/docs/en/plugins/org</a> Retrieved 2026, October 4. Used for: the policy card, the push-an-update beat and two of the three proposals in §07. <span class="conf h" data-src="src-claude-code-org">H</span></li>
-      <li id="src-claude-code-host">Anthropic. (2026). <em>Host and maintain a marketplace</em>. Claude Code documentation, code.claude.com. <a href="https://code.claude.com/docs/en/plugins/host-marketplace">code.claude.com/docs/en/plugins/host-marketplace</a> Retrieved 2026, October 4. Used for: how an update travels from the repository to the desks in §07. <span class="conf h" data-src="src-claude-code-host">H</span></li>
-      <li id="src-claude-code-settings">Anthropic. (2026). <em>Settings files and precedence</em>. Claude Code documentation, code.claude.com. <a href="https://code.claude.com/docs/en/settings">code.claude.com/docs/en/settings</a> Retrieved 2026, October 4. Used for: that a firm can lock the list of models any session may use (§01 bullets; the third proposal in §07). <span class="conf h" data-src="src-claude-code-settings">H</span></li>
-      <li id="src-claude-privacy-training">Anthropic. <em>Is my data used for model training?</em> Anthropic Privacy Center, article 10023580. <a href="https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training">privacy.claude.com</a> Retrieved 2026, October 11. Used for: the five-year and 30-day retention under the training setting, in the retrieval bridge's first question (§00) and the chat assistant's Where answer (§06). <span class="conf m" data-src="src-claude-privacy-training">M</span></li>
-      <li id="src-brynjolfsson">Brynjolfsson, E., Li, D., &amp; Raymond, L. (2025). <em>Generative AI at work</em>. The Quarterly Journal of Economics 140(2), 889 to 942, 2025; doi 10.1093/qje/qjae044. First circulated as NBER Working Paper 31161, April 2023. <a href="https://www.nber.org/papers/w31161">nber.org/papers/w31161</a> Used for: the 14% average and 34% novice bars in the four-trial figure (§05). <span class="conf m" data-src="src-brynjolfsson">M</span></li>
-      <li id="src-cfp-psychology">CFP Board. (2021, March). <em>CFP Board adds Psychology of Financial Planning to exam requirements</em>. CFP Board, news release, March 2021. <a href="https://www.cfp.net/news/2021/03/cfp-board-adds-psychology-of-financial-planning-to-exam-requirements">cfp.net</a> Used for: the domain's existence and its 7% weight (§08). <span class="conf m" data-src="src-cfp-psychology">M</span></li>
-      <li id="src-dellacqua">Dell'Acqua, F., McFowland III, E., Mollick, E., Lifshitz-Assaf, H., Kellogg, K., Rajendran, S., Krayer, L., Candelon, F., &amp; Lakhani, K. (2023, September). <em>Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality</em>. Harvard Business School working paper, September 2023; also on SSRN. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321">papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321</a> Used for: the 25% faster, 12% more tasks and 40% quality bars, and the 19-point penalty outside the frontier (§05, Appendix E5). <span class="conf m" data-src="src-dellacqua">M</span></li>
-      <li id="src-google-ptcf">Google. (2024). <em>Gemini for Workspace: Prompting guide 101</em>. Google. Used for: the Persona, Task, Context and Format names used to tag the sample prompt (§02). <span class="conf h" data-src="src-google-ptcf">H</span></li>
-      <li id="src-investmentnews-t3-2026">InvestmentNews. (2026, March). <em>AI moves from novelty to backbone as advisors reshape their fintech stacks</em>. InvestmentNews, reporting the 2026 T3 / Inside Information Software Survey. <a href="https://investmentnews.com/fintech/ai-moves-from-novelty-to-backbone-as-advisors-reshape-fintech-stacks/265643">investmentnews.com</a> Used for: the 14 note-taking tools tracked for the first time, and AI as a supplement to the established stack (§06). <span class="conf m" data-src="src-investmentnews-t3-2026">M</span></li>
-      <li id="src-kalai">Kalai, A. T., Nachum, O., Vempala, S. S., &amp; Zhang, E. (2025). <em>Why language models hallucinate</em>. arXiv:2509.04664, §1 and §1.2. Retrieved 2025, May 11. Used for: why a model fills a missing field with a plausible guess rather than saying the field is missing (§03, Appendix E3). <span class="conf h" data-src="src-kalai">H</span></li>
-      <li id="src-vanguard-alpha">Kinniry, F. M., Jaconetti, C. M., DiJoseph, M. A., Walker, D. J., &amp; Quinn, M. C. (2022). <em>Putting a value on your value: Quantifying Vanguard Advisor's Alpha</em>. The Vanguard Group, research paper (2022 update). Used for: the about-3% figure and behavioural coaching as about half of it (§08, Appendix E5). <span class="conf m" data-src="src-vanguard-alpha">M</span></li>
-      <li id="src-morningstar-fired">Lamas, S., &amp; Labotka, D. (2023). <em>Why do investors fire their financial advisor?</em> Morningstar, behavioural research. Used for: the six reasons and their shares, which the learner ranks before the reveal (§08), and the first two in the discussion (Appendix E5). <span class="conf m" data-src="src-morningstar-fired">M</span></li>
-      <li id="src-lee-cognitive">Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025, April). <em>The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers</em>. Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI '25), ACM, Yokohama, 26 April to 1 May 2025, 23 pages; doi 10.1145/3706598.3713778. Author's version hosted by Microsoft Research. <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf">microsoft.com</a> Retrieved 2026, October 2. Used for: the survey's size and design, the finding that confidence in the tool predicts less critical thinking and self-confidence more, the share of examples reporting less effort, and the three shifts (§08, Appendix E5). <span class="conf h" data-src="src-lee-cognitive">H</span></li>
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 b58cf838afcc83a2d254bbbd8e923b9e1e472ac5b49b3f2efa97637f9f604723 -->
+      <li id="src-kitces-aisearch">(2025, November 17). <em>Ways advisors can optimize for AI search (AI SEO)</em>. Kitces.com, Nerd's Eye View. <a href="https://www.kitces.com/blog/artificial-intelligence-ai-search-engine-optimization-seo-financial-advisor-marketing-content-strategy/">kitces.com</a> Used for: the assigned reading, and its who-what-where recommendation on the AI-search tool card (Appendix E10). <span class="conf m" data-src="src-kitces-aisearch">M</span></li>
+      <li id="src-anthropic-terms">Anthropic. <em>Consumer Terms of Service, Commercial Terms of Service and Privacy Policy</em>. Anthropic, anthropic.com/legal. <a href="https://www.anthropic.com/legal/commercial-terms">anthropic.com/legal/commercial-terms</a> Retrieved 2026, September 27. Used for: the consumer training default behind the chat assistant's Where answer (Appendix E10). <span class="conf h" data-src="src-anthropic-terms">H</span></li>
+      <li id="src-anthropic-deprecations">Anthropic. (2026, September 30). <em>Model deprecations</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">platform.claude.com/docs/en/about-claude/model-deprecations</a> Retrieved 2026, October 12. Other sessions cite other retrievals of this page. Used for: the lifecycle terms, the 60 days' notice, the retirement and not-sooner-than dates on the calendar, Haiku 5.5 among them, the sentence that requests to retired models fail, and the lifecycle states in The Gate and the Scorecard (§02); the advice to test the replacement before the retirement date (Appendix E2). <span class="conf h" data-src="src-anthropic-deprecations">H</span></li>
+      <li id="src-anthropic-deprecation-commitments">Anthropic. (2025, November 4). <em>Commitments on model deprecation and preservation</em>. Anthropic, research and alignment pages. <a href="https://www.anthropic.com/research/deprecation-commitments">anthropic.com/research/deprecation-commitments</a> Retrieved 2026, October 2. Used for: that model weights are preserved and that retiring models is currently necessary to serve new ones (§02). <span class="conf h" data-src="src-anthropic-deprecation-commitments">H</span></li>
+      <li id="src-anthropic-models-overview">Anthropic. (2026). <em>Models overview</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/models/overview">platform.claude.com/docs/en/about-claude/models/overview</a> Retrieved 2026, October 12. Used for: the four current models and the legacy ones on the §02 calendar, and the lineup sentence in §02's bullets and status readout. <span class="conf h" data-src="src-anthropic-models-overview">H</span></li>
+      <li id="src-claude-code-skills">Anthropic. (2026). <em>Skills</em>. Claude Code documentation, code.claude.com. <a href="https://code.claude.com/docs/en/skills">code.claude.com/docs/en/skills</a> Retrieved 2026, October 4. Used for: that a skill is one described file, that the description is what triggers it, that an organisation can distribute skills centrally, and that a skill file can name its model (§02 bullets; Appendix E11 One Repository, Every Desk). <span class="conf h" data-src="src-claude-code-skills">H</span></li>
+      <li id="src-claude-code-marketplace">Anthropic. (2026). <em>Create a marketplace</em>. Claude Code documentation, code.claude.com. <a href="https://code.claude.com/docs/en/plugin-marketplaces">code.claude.com/docs/en/plugin-marketplaces</a> Retrieved 2026, October 4. Used for: the repository card in Appendix E11: one catalogue file, one git repository, the add-and-install step. <span class="conf h" data-src="src-claude-code-marketplace">H</span></li>
+      <li id="src-claude-code-org">Anthropic. (2026). <em>Manage Claude Code plugins for your organization</em>. Claude Code documentation, code.claude.com. <a href="https://code.claude.com/docs/en/plugins/org">code.claude.com/docs/en/plugins/org</a> Retrieved 2026, October 4. Used for: the policy card, the push-an-update beat and two of the three proposals in Appendix E11. <span class="conf h" data-src="src-claude-code-org">H</span></li>
+      <li id="src-claude-code-host">Anthropic. (2026). <em>Host and maintain a marketplace</em>. Claude Code documentation, code.claude.com. <a href="https://code.claude.com/docs/en/plugins/host-marketplace">code.claude.com/docs/en/plugins/host-marketplace</a> Retrieved 2026, October 4. Used for: how an update travels from the repository to the desks in Appendix E11. <span class="conf h" data-src="src-claude-code-host">H</span></li>
+      <li id="src-claude-code-settings">Anthropic. (2026). <em>Settings files and precedence</em>. Claude Code documentation, code.claude.com. <a href="https://code.claude.com/docs/en/settings">code.claude.com/docs/en/settings</a> Retrieved 2026, October 4. Used for: that a firm can lock the list of models any session may use (§02 bullets; the third proposal in Appendix E11). <span class="conf h" data-src="src-claude-code-settings">H</span></li>
+      <li id="src-claude-privacy-training">Anthropic. <em>Is my data used for model training?</em> Anthropic Privacy Center, article 10023580. <a href="https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training">privacy.claude.com</a> Retrieved 2026, October 11. Used for: the five-year and 30-day retention under the training setting, in the retrieval bridge's first question (§00) and the chat assistant's Where answer (Appendix E10). <span class="conf m" data-src="src-claude-privacy-training">M</span></li>
+      <li id="src-brynjolfsson">Brynjolfsson, E., Li, D., &amp; Raymond, L. (2025). <em>Generative AI at work</em>. The Quarterly Journal of Economics 140(2), 889 to 942, 2025; doi 10.1093/qje/qjae044. First circulated as NBER Working Paper 31161, April 2023. <a href="https://www.nber.org/papers/w31161">nber.org/papers/w31161</a> Used for: the 14% average and 34% novice bars in the four-trial figure (§03). <span class="conf m" data-src="src-brynjolfsson">M</span></li>
+      <li id="src-cfp-psychology">CFP Board. (2021, March). <em>CFP Board adds Psychology of Financial Planning to exam requirements</em>. CFP Board, news release, March 2021. <a href="https://www.cfp.net/news/2021/03/cfp-board-adds-psychology-of-financial-planning-to-exam-requirements">cfp.net</a> Used for: the domain's existence and its 7% weight (§04). <span class="conf m" data-src="src-cfp-psychology">M</span></li>
+      <li id="src-dellacqua">Dell'Acqua, F., McFowland III, E., Mollick, E., Lifshitz-Assaf, H., Kellogg, K., Rajendran, S., Krayer, L., Candelon, F., &amp; Lakhani, K. (2023, September). <em>Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality</em>. Harvard Business School working paper, September 2023; also on SSRN. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321">papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321</a> Used for: the 25% faster, 12% more tasks and 40% quality bars, and the 19-point penalty outside the frontier (§03, §05). <span class="conf m" data-src="src-dellacqua">M</span></li>
+      <li id="src-google-ptcf">Google. (2024). <em>Gemini for Workspace: Prompting guide 101</em>. Google. Used for: the Persona, Task, Context and Format names used to tag the sample prompt (Appendix E7). <span class="conf h" data-src="src-google-ptcf">H</span></li>
+      <li id="src-investmentnews-t3-2026">InvestmentNews. (2026, March). <em>AI moves from novelty to backbone as advisors reshape their fintech stacks</em>. InvestmentNews, reporting the 2026 T3 / Inside Information Software Survey. <a href="https://investmentnews.com/fintech/ai-moves-from-novelty-to-backbone-as-advisors-reshape-fintech-stacks/265643">investmentnews.com</a> Used for: the 14 note-taking tools tracked for the first time, and AI as a supplement to the established stack (Appendix E10). <span class="conf m" data-src="src-investmentnews-t3-2026">M</span></li>
+      <li id="src-kalai">Kalai, A. T., Nachum, O., Vempala, S. S., &amp; Zhang, E. (2025). <em>Why language models hallucinate</em>. arXiv:2509.04664, §1 and §1.2. Retrieved 2025, May 11. Used for: why a model fills a missing field with a plausible guess rather than saying the field is missing (Appendices E3 and E8). <span class="conf h" data-src="src-kalai">H</span></li>
+      <li id="src-vanguard-alpha">Kinniry, F. M., Jaconetti, C. M., DiJoseph, M. A., Walker, D. J., &amp; Quinn, M. C. (2022). <em>Putting a value on your value: Quantifying Vanguard Advisor's Alpha</em>. The Vanguard Group, research paper (2022 update). Used for: the about-3% figure and behavioural coaching as about half of it (§04, §05). <span class="conf m" data-src="src-vanguard-alpha">M</span></li>
+      <li id="src-morningstar-fired">Lamas, S., &amp; Labotka, D. (2023). <em>Why do investors fire their financial advisor?</em> Morningstar, behavioural research. Used for: the six reasons and their shares, which the learner ranks before the reveal (§04), and the first two in the discussion (§05). <span class="conf m" data-src="src-morningstar-fired">M</span></li>
+      <li id="src-lee-cognitive">Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025, April). <em>The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers</em>. Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI '25), ACM, Yokohama, 26 April to 1 May 2025, 23 pages; doi 10.1145/3706598.3713778. Author's version hosted by Microsoft Research. <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf">microsoft.com</a> Retrieved 2026, October 2. Used for: the survey's size and design, the finding that confidence in the tool predicts less critical thinking and self-confidence more, the share of examples reporting less effort, and the three shifts (§03, §05). <span class="conf h" data-src="src-lee-cognitive">H</span></li>
       <li id="src-magesh">Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-free? Assessing the reliability of leading AI legal research tools</em>. Journal of Empirical Legal Studies 22(2), 216. <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">reglab.stanford.edu</a> Used for: the wrong-passage and unsupported-citation failure types (Appendix E3). <span class="conf h" data-src="src-magesh">H</span></li>
-      <li id="src-metr-2025">METR (Model Evaluation and Threat Research). (2025, July 10). <em>Measuring the impact of early-2025 AI on experienced open-source developer productivity</em>. METR, blog. <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">metr.org</a> Used for: the 19% slower bar and the expected and believed speed-ups beside it (§05). <span class="conf m" data-src="src-metr-2025">M</span></li>
+      <li id="src-metr-2025">METR (Model Evaluation and Threat Research). (2025, July 10). <em>Measuring the impact of early-2025 AI on experienced open-source developer productivity</em>. METR, blog. <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">metr.org</a> Used for: the 19% slower bar and the expected and believed speed-ups beside it (§03). <span class="conf m" data-src="src-metr-2025">M</span></li>
       <li id="src-cve">MITRE / NVD. (2025). <em>CVE-2025-32711 (EchoLeak, CVSS 9.3)</em>. Public CVE record. Used for: the did-what-the-text-said failure type, EchoLeak (Appendix E3). <span class="conf h" data-src="src-cve">H</span></li>
-      <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: the sample meeting-prep package and its six inputs (§02 to §04, Appendices E1, E2 and E4), the two cold-open prompts, the eight meeting moments built from the injected transcript (§07), and the five-session frame (§00), all written for this lesson. Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
-      <li id="src-noy-zhang">Noy, S., &amp; Zhang, W. (2023, July). <em>Experimental evidence on the productivity effects of generative artificial intelligence</em>. Science, July 2023 (MIT Department of Economics). <a href="https://www.science.org/doi/10.1126/science.adh2586">science.org/doi/10.1126/science.adh2586</a> Used for: the 40% less time and 18% higher quality bars in the four-trial figure (§05). <span class="conf m" data-src="src-noy-zhang">M</span></li>
-      <li id="src-openai-retire-4o">OpenAI. (2026, January). <em>Retiring GPT-4o and other ChatGPT models</em>. OpenAI Help Center, article 20001051. <a href="https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models">help.openai.com</a> Used for: the ChatGPT retirements of GPT-4 and GPT-4o, one line beside Anthropic's calendar (§01). <span class="conf m" data-src="src-openai-retire-4o">M</span></li>
-      <li id="src-pew-ai-summaries">Pew Research Center. (2025, July 22). <em>Google users are less likely to click on links when an AI summary appears in the results</em>. Pew Research Center, short read, 22 July 2025. <a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">pewresearch.org</a> Used for: the 8% against 15% click rates behind the AI-search tool card (§06). <span class="conf m" data-src="src-pew-ai-summaries">M</span></li>
-      <li id="src-rightcapital-iris">RightCapital. (2026, June 23). <em>RightCapital launches Iris, the first planning-focused AI agent designed to transform the financial planning process</em>. ACCESS Newswire, press release, 23 June 2026. <a href="https://www.accessnewswire.com/newsroom/en/business-and-professional-services/rightcapital-launches-iristm-the-first-planning-focused-ai-agent-designed-to-transform-the-fin-1180326">accessnewswire.com</a> Used for: one example of a planning-software agent that reads the client file (§06). <span class="conf m" data-src="src-rightcapital-iris">M</span></li>
-      <li id="src-t3-survey">T3 / Inside Information. (2026, March). <em>Software Survey 2026</em>. as summarised in Kitces.com Weekend Reading, March 2026. Used for: the 42.9% note-taking and 52.2% AI-search adoption shares among 2,906 advisors (§06). <span class="conf m" data-src="src-t3-survey">M</span></li>
-      <li id="src-regsp">U.S. Securities and Exchange Commission. (2024). <em>Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments</em>. SEC, adopting release. Used for: the service-provider reading behind the Where question for a note-taker or a CRM automation (§06). <span class="conf h" data-src="src-regsp">H</span></li>
+      <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: the sample meeting-prep package and its six inputs (Appendices E1, E2, E4, E7, E8 and E9), the Case 5 opener's five-step documented workflow and the one-pager it drafts (§01), the eight meeting moments built from the injected transcript (§04), and the five-session frame (§00), all written for this lesson. Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
+      <li id="src-noy-zhang">Noy, S., &amp; Zhang, W. (2023, July). <em>Experimental evidence on the productivity effects of generative artificial intelligence</em>. Science, July 2023 (MIT Department of Economics). <a href="https://www.science.org/doi/10.1126/science.adh2586">science.org/doi/10.1126/science.adh2586</a> Used for: the 40% less time and 18% higher quality bars in the four-trial figure (§03). <span class="conf m" data-src="src-noy-zhang">M</span></li>
+      <li id="src-openai-retire-4o">OpenAI. (2026, January). <em>Retiring GPT-4o and other ChatGPT models</em>. OpenAI Help Center, article 20001051. <a href="https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models">help.openai.com</a> Used for: the ChatGPT retirements of GPT-4 and GPT-4o, one line beside Anthropic's calendar (§02). <span class="conf m" data-src="src-openai-retire-4o">M</span></li>
+      <li id="src-pew-ai-summaries">Pew Research Center. (2025, July 22). <em>Google users are less likely to click on links when an AI summary appears in the results</em>. Pew Research Center, short read, 22 July 2025. <a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">pewresearch.org</a> Used for: the 8% against 15% click rates behind the AI-search tool card (Appendix E10). <span class="conf m" data-src="src-pew-ai-summaries">M</span></li>
+      <li id="src-rightcapital-iris">RightCapital. (2026, June 23). <em>RightCapital launches Iris, the first planning-focused AI agent designed to transform the financial planning process</em>. ACCESS Newswire, press release, 23 June 2026. <a href="https://www.accessnewswire.com/newsroom/en/business-and-professional-services/rightcapital-launches-iristm-the-first-planning-focused-ai-agent-designed-to-transform-the-fin-1180326">accessnewswire.com</a> Used for: one example of a planning-software agent that reads the client file (Appendix E10). <span class="conf m" data-src="src-rightcapital-iris">M</span></li>
+      <li id="src-t3-survey">T3 / Inside Information. (2026, March). <em>Software Survey 2026</em>. as summarised in Kitces.com Weekend Reading, March 2026. Used for: the 42.9% note-taking and 52.2% AI-search adoption shares among 2,906 advisors (Appendix E10). <span class="conf m" data-src="src-t3-survey">M</span></li>
+      <li id="src-regsp">U.S. Securities and Exchange Commission. (2024). <em>Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments</em>. SEC, adopting release. Used for: the service-provider reading behind the Where question for a note-taker or a CRM automation (Appendix E10). <span class="conf h" data-src="src-regsp">H</span></li>
       <li id="src-wolfram">Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a> Used for: the temperature passage in "It's Just Adding One Word at a Time", behind the sampled-differently failure type (Appendix E3). <span class="conf h" data-src="src-wolfram">H</span></li>
 <!-- SOURCES:END -->
     </ol>
@@ -3915,7 +3892,10 @@ function tween(ms,step,done){
  window.requestAnimationFrame(f);
  return {stop:function(){stopped=true}};
 }
-var S5STATE={s5:null,s3:null,s4:null,gates:{}};
+var S5STATE={s5:null,s3:null,s4:null,trials:0,paper:0,gates:{}};
+/* s5 holds three tasks (the four trials, the paper, your own task) and one work-along cue, g6: it completes when the
+   trials are revealed and both questions about the paper are answered. */
+function s5Gate(){if(S5STATE.trials&&S5STATE.paper&&typeof mark==='function')mark('g6')}
 
 /* ---------- rail + instructor override ---------- */
 var secs=[].slice.call(document.querySelectorAll('section.slide')),rail=$('rail');
@@ -3950,8 +3930,8 @@ document.addEventListener('keydown',function(e){
       [].slice.call(document.querySelectorAll('[data-gate]')).forEach(function(c){mark(c.dataset.gate)});
     }
   }});
-/* ===== Session 5 shared data. ONE sample workflow runs through §02, §03, §04 and
-   Appendices E1, E2 and E4, so it is defined once, here, and every section reads it.
+/* ===== Session 5 shared data. ONE sample workflow runs through Appendices E7, E8 and E9 (the old §02 to §04)
+   and Appendices E1, E2 and E4, so it is defined once, here, and every section reads it.
    Everything in it is constructed for this lesson (src-case, L). The note is
    de-identified by design: no name, no employer, no town. The one case figure it
    types is the meeting's own "about $3,000 a month more" (CASE.md A.3, Part O), as
@@ -3965,7 +3945,7 @@ var S5PKG={
   '2. Where it says [NOTE], paste the client\u2019s case note (sample-input.txt shows the shape).',
   '3. Read the brief it returns. If it looks right, save it to the client file.'
  ],
- /* the prompt, as segments so §02 can tag each design choice; k = the design choice it implements */
+ /* the prompt, as segments so Appendix E7 can tag each design choice; k = the design choice it implements */
  prompt:[
   {t:'You are a CFP professional preparing for a client review meeting.',k:'persona'},
   {p:' '},
@@ -3979,7 +3959,7 @@ var S5PKG={
  ],
  sample:'Client: two earners, late fifties, both planning to stop work within three years. Two children, one about to graduate. Since the last meeting: the husband\u2019s employer plan now allows an in-plan Roth conversion, which the prior adviser\u2019s 2024 memo said it did not. Open items: how much to convert, and when; the beneficiary form on the husband\u2019s rollover IRA dates from 2009 and names his late mother, so the account would pay to his estate. The wife\u2019s mother may need assisted living within a year. The extra cost is about $3,000 a month.',
  checks:'Verification: read the brief and make sure it looks right.',
- /* what the package states, half-states, or never states; §02 fills these five slots */
+ /* what the package states, half-states, or never states; Appendix E7 fills these five slots */
  choices:[
   {k:'tool',n:'Tool and plan',state:'half',why:'README names \u201cthe firm\u2019s AI tool\u201d and never says which plan or whose contract.'},
   {k:'tier',n:'Model tier',state:'none',why:'No model or tier is named anywhere. A runner picks one, and the brief changes with it.'},
@@ -3988,8 +3968,8 @@ var S5PKG={
   {k:'data',n:'Data handling',state:'none',why:'Nothing says what to remove from a real note before it is pasted, or which plan may receive it.'}
  ]
 };
-/* The six inputs §03 runs and §04 re-runs. ok = passes as the package stands; fix = the
-   checkable fix in §04 that makes it pass; out = the simulated brief line the figure shows. */
+/* The six inputs Appendix E8 runs and Appendix E9 re-runs. ok = passes as the package stands; fix = the
+   checkable fix in Appendix E9 that makes it pass; out = the simulated brief line the figure shows. */
 var S5INPUTS=[
  {id:'in1',n:'The sample note, as supplied',ok:true,
   out:'Changed: the plan now allows in-plan Roth conversion; the 2024 memo said it did not. Questions: the conversion analysis on the new rule; the 2009 beneficiary form; the mother\u2019s care cost. Risk: the form pays to the estate.',
@@ -4010,7 +3990,7 @@ var S5INPUTS=[
   out:'Changed: the in-plan Roth conversion rule \u2026 (read from the table).',
   why:'A table is text too. Shape did not break it.'}
 ];
-/* The three checkable fixes §04 offers against three vague ones. k matches S5INPUTS[].fix. */
+/* The three checkable fixes Appendix E9 offers against three vague ones. k matches S5INPUTS[].fix. */
 var S5FIXES=[
  {k:'gap',title:'The missing care cost',vague:'Be careful with missing information.',
   check:'If a fact is not in the note, write NOT IN NOTE in its place. Never estimate a value.',
@@ -4100,10 +4080,10 @@ var host=$('s0Fig'),out=$('s0Out'),adv=$('s0Adv'),sg=$('s0Stops');
 if(!host||!out||!adv||!sg)return;
 
 var STOPS=[
- {w:'Predicts',ses:'Session 1',p:'It predicts the next word; it does not know.',q:'what would make this answer wrong?',use:[['s3','§03'],['sE3','Appendix E3']]},
- {w:'Shape it',ses:'Session 2',p:'You shape the output with the ask: persona, task, context, format.',q:'what did I leave out of the ask?',use:[['s2','§02'],['s4','§04']]},
- {w:'Reads your file',ses:'Session 3',p:'Grounded, it cites your file, and the nearest passage is not always the right one.',q:'did I open the source?',use:[['s6','§06'],['sE3','Appendix E3']]},
- {w:'Answer for it',ses:'Session 4',p:'No AI rulebook: what goes in, where it goes, how you check, what you keep.',q:'could an examiner re-check this?',use:[['s3','§03'],['s6','§06']]},
+ {w:'Predicts',ses:'Session 1',p:'It predicts the next word; it does not know.',q:'what would make this answer wrong?',use:[['s3','Appendix E8'],['sE3','Appendix E3']]},
+ {w:'Shape it',ses:'Session 2',p:'You shape the output with the ask: persona, task, context, format.',q:'what did I leave out of the ask?',use:[['s2','Appendix E7'],['s4','Appendix E9']]},
+ {w:'Reads your file',ses:'Session 3',p:'Grounded, it cites your file, and the nearest passage is not always the right one.',q:'did I open the source?',use:[['s6','Appendix E10'],['sE3','Appendix E3']]},
+ {w:'Answer for it',ses:'Session 4',p:'No AI rulebook: what goes in, where it goes, how you check, what you keep.',q:'could an examiner re-check this?',use:[['s3','Appendix E8'],['s6','Appendix E10']]},
  {w:'Hand it over',ses:'Session 5',p:'A workflow is finished when a stranger can run it and you can measure the result.',q:'where does a stranger stop first?',use:null}
 ];
 var GENS=['a 2023 model','a 2025 model','a 2026 model','the next one'];
@@ -4253,183 +4233,93 @@ REVEALS.push(function(){
 });
 })();
 }catch(err){try{console.warn("section s0 failed:",err&&err.message)}catch(_){}}
-/* ----- section sCold ----- */
+/* ----- section sCase ----- */
 try{
 (function(){
-/* ================= sCold · then and now: two prompts on one track =================
-   Two prompts, the course's first week and its last, land on a 0 to 8 track at their
-   COLD_CHECKS score. Test 1 draws both eight-segment meters and the drift; Test 2 splits
-   the track into two lanes, names no one and names a client, and Then sinks. Anchors:
-   session-4 sCold (lazy scoring in ensure(), the lane split, the card badges), the shared
-   figure kit. COLD_CHECKS is defined after the section scripts, so every score is
-   computed at click time. */
-var host=$('coldPicks'),fig=$('coldFig'),out=$('coldOut'),cmp=$('coldCmp');
-if(!host||!fig||!out)return;
-var THEN='whats the best way for meg cole to do a roth conversion without a huge tax bill?';
-var NOW='List the three questions I should raise about the Roth conversion window, for a review meeting with a client in her late fifties. You are a CFP professional; use only the attached de-identified case note. Bullets, under 120 words, plain English, for my own prep notes. If a fact is not in the note, say so rather than guessing, and cite the line each question rests on.';
-var P=[
- {l:'Then',sub:'Week one of this course',t:THEN,send:false,mark:'meg cole',tag:'✗ names the client'},
- {l:'Now',sub:'The last week',t:NOW,send:true,mark:'',tag:'✓ names no one'}
+/* ================= sCase · Case 5 opener: predict the break, commit, reveal =================
+   prediction-commit (Constructive). The five documented steps of one workflow are written once, in
+   STEPS, and rendered as the vote buttons and again as the reveal table. Two commits, a step and a
+   reason, lock on the button; the reveal opens after it, and nothing is withheld from Shift+U (REVEALS).
+   The room tally is keyed in by the instructor from the Zoom poll; nothing is stored or sent. The dates
+   and the sentence about retired models are FACTS claude-model-ids-and-retirements (H); the workflow and
+   its steps are constructed for this lesson (L). Pattern: session-1's case opener, session-3's table. */
+var stepsEl=$('c5Steps'),whyEl=$('c5Why'),commit=$('c5Commit'),msg=$('c5Msg'),
+    reveal=$('c5Reveal'),out=$('c5Out'),tbl=$('c5Table'),tin=$('c5TallyIn'),bars=$('c5TallyBars');
+if(!stepsEl||!whyEl||!commit||!msg||!reveal||!out||!tbl||!tin||!bars)return;
+var CHIP='<span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>';
+var CHIPL='<span class="conf l" data-src="src-case">L</span>';
+var STEPS=[
+ {t:'Paste the household’s figures from the client file into the prompt.',
+  res:'Nothing changes: the figures come from the file, not from the model.',see:'No change to see.'},
+ {t:'Run the prompt on the model the skill file names: <span class="mono">claude-sonnet-4-5-20250929</span>.',
+  res:'Breaks first. The skill names a model that retires on 30 November 2026, and “requests to retired models will fail” '+CHIP+'.',see:'An error. The run stops.'},
+ {t:'Draft the one-pager: three headings, plain English, bullets under each.',
+  res:'Can change on the replacement: the wording, the length, a table where the prompt asked for bullets '+CHIPL+'.',see:'Only a test set sees it (Appendix E2).'},
+ {t:'Check it: read the draft and make sure it looks right.',
+  res:'Cannot tell. “Looks right” compares the draft with your memory of the last one, and a changed answer can read the same.',see:'It does not.'},
+ {t:'Save the draft to the client file.',
+  res:'Nothing changes, but it files whatever step 4 passed.',see:'No change to see.'}
 ];
-var CKS=['An ask','15+ words','A format','Context','An audience','A limit','An example','If unsure'];
-var SC=null,st={pick:-1,t1:false,t2:false};
+var WHY=[
+ {k:'a',t:'It names a model that will no longer answer.'},
+ {k:'b',t:'Its wording only works on the model it was tested on.'},
+ {k:'c',t:'Its check cannot tell a changed answer from a right one.'},
+ {k:'d',t:'Nothing breaks: the workflow is the prompt, and the prompt stays the same.'}
+];
+var TRUTH=1,WHYOK='a';
+var pickS=-1,pickW=null,locked=false;
 
-function score(t){var n=0,h=[];for(var k=0;k<8;k++){var ok=false;try{ok=!!COLD_CHECKS[k].d(t)}catch(e){ok=false}h.push(ok);if(ok)n++}return {n:n,hits:h}}
-function ensure(){
-  if(SC)return true;
-  if(typeof COLD_CHECKS==='undefined'||!COLD_CHECKS||COLD_CHECKS.length<8)return false;
-  SC=P.map(function(p){return score(p.t)});
-  return true;
-}
-function list(hits,want){var o=[];for(var k=0;k<8;k++)if(hits[k]===want)o.push(CKS[k].toLowerCase());return o.length?o.join(', '):'none'}
+stepsEl.innerHTML=STEPS.map(function(s,i){return '<button type="button" class="vopt" data-cs="'+i+'" aria-pressed="false"><span class="vk">'+(i+1)+'</span><span>'+s.t+'</span></button>'}).join('');
+whyEl.innerHTML=WHY.map(function(w){return '<button type="button" class="vopt" data-cw="'+w.k+'" aria-pressed="false"><span class="vk">'+w.k+'</span><span>'+esc(w.t)+'</span></button>'}).join('');
+tin.innerHTML=STEPS.map(function(_,i){return '<label class="mono dim">Step '+(i+1)+' <input type="text" inputmode="numeric" id="c5Ct'+i+'" placeholder="0" aria-label="Poll count for step '+(i+1)+'"></label>'}).join('');
 
-/* ---------- cards ---------- */
-function markPhrase(txt,ph){
-  if(!ph)return esc(txt);
-  var i=txt.toLowerCase().indexOf(ph.toLowerCase());
-  if(i<0)return esc(txt);
-  return esc(txt.slice(0,i))+'<span class="idp">'+esc(txt.slice(i,i+ph.length))+'</span>'+esc(txt.slice(i+ph.length));
+function paint(){
+ all('[data-cs]',stepsEl).forEach(function(b){var on=(+b.getAttribute('data-cs')===pickS);b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');if(locked)b.setAttribute('aria-disabled','true')});
+ all('[data-cw]',whyEl).forEach(function(b){var on=(b.getAttribute('data-cw')===pickW);b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');if(locked)b.setAttribute('aria-disabled','true')});
+ var ready=pickS>=0&&pickW!==null;
+ commit.disabled=locked||!ready;
+ msg.textContent=locked?'Committed. The reveal is open below.':(ready?'Ready. Commit both answers.':'Pick a step and a reason.');
 }
-var cards=[];
-P.forEach(function(p,i){
-  var b=document.createElement('button');b.type='button';b.setAttribute('aria-pressed','false');
-  b.innerHTML='<b>'+esc(p.l.charAt(0))+'</b><span class="ptxt"><span class="plbl">'+esc(p.l)+' · '+esc(p.sub)+'</span>'+markPhrase(p.t,p.mark)+'<em class="vtag"></em></span>';
-  b.onclick=function(){pick(i)};
-  host.appendChild(b);cards.push(b);
-});
-
-/* ---------- figure, built once ---------- */
-var W=360,H=300,Y1=58,Y2=112,YM=[160,200];
-function X(s){return 38+37*s}
-var svg=svgRoot(fig,W,H,'A track of checks passed, from 0 to 8. Two prompts, Then and Now, land at their scores; Test 2 splits the track into a lane that names no one and a lane that names a client.','fig','img');
-svt(svg,6,20,'Checks passed, 0 to 8','sCold-ttl');
-var lane1=sv('line',{x1:X(0),y1:Y1,x2:X(8),y2:Y1,'class':'sCold-trk'},svg);
-for(var s=0;s<=8;s++){sv('line',{x1:X(s),y1:Y1-7,x2:X(s),y2:Y1+7,'class':'sCold-tick'},svg);svt(svg,X(s),Y1+24,s,'sCold-num','middle')}
-var lab1=svt(svg,X(0),Y1-16,'✓ names no one','sCold-lane ok');
-var lane2=sv('line',{x1:X(0),y1:Y2,x2:X(8),y2:Y2,'class':'sCold-trk bad sCold-hide'},svg);
-var lab2=svt(svg,X(0),Y2+22,'✗ names a client','sCold-lane bad');
-var toks=P.map(function(p,i){
-  var g=sv('g',{'class':'sCold-tok'+(i===1?' now':'')},svg);
-  sv('circle',{cx:0,cy:0,r:12},g);
-  svt(g,0,3.5,p.l,'sCold-tokt','middle');
-  g.style.transform='translate('+X(0)+'px,'+(Y1-30)+'px)';
-  return g;
-});
-var meters=P.map(function(p,i){
-  var g=sv('g',{'class':'sCold-hide'},svg);
-  svt(g,6,YM[i]+5,p.l,'sCold-rowl');
-  var segs=[];
-  for(var k=0;k<8;k++){
-    var r=sv('rect',{x:X(k+1)-15,y:YM[i]-9,width:30,height:18,rx:3,'class':'sCold-seg'},g);
-    svt(g,X(k+1),YM[i]+4,k+1,'sCold-segt','middle');
-    segs.push(r);
-  }
-  return {g:g,segs:segs};
-});
-var names=sv('g',{'class':'sCold-hide'},svg);
-for(var k=0;k<8;k++){svt(names,14+(k%4)*86,236+Math.floor(k/4)*16,(k+1)+' '+CKS[k],'sCold-name')}
-var drift=svt(svg,6,282,'','sCold-drift');
-var driftSub=svt(svg,6,296,'','sCold-driftsub');
-
-function place(i){
-  var n=SC?SC[i].n:0;
-  var y=(st.t2&&!P[i].send)?Y2:Y1;
-  toks[i].style.transform='translate('+X(n)+'px,'+y+'px)';
-  toks[i].setAttribute('class','sCold-tok show'+(i===1?' now':'')+((st.t2&&!P[i].send)?' sunk':''));
+function table(){
+ var h='<table class="dt tight c5tab"><thead><tr><th>Step</th><th>On and after 30 November 2026</th><th>How you would see it</th></tr></thead><tbody>';
+ STEPS.forEach(function(s,i){h+='<tr'+(i===TRUTH?' class="first"':'')+'><td>'+(i+1)+(i===TRUTH?' &middot; first':'')+'</td><td>'+s.res+'</td><td>'+s.see+'</td></tr>'});
+ return h+'</tbody></table>';
 }
-
-/* ---------- readouts ---------- */
-function draw(){
-  var h='';
-  if(st.pick>=0&&SC){
-    var p=P[st.pick],sc=SC[st.pick];
-    h+='<span class="rz">'+esc(p.l)+' · '+sc.n+' of 8 checks</span>';
-    h+='Passed: '+esc(list(sc.hits,true))+'. Missed: '+esc(list(sc.hits,false))+'.';
-    if(!st.t1)h+='<div class="rfx">Next: Test 1 on both.</div>';
-  }
-  if(st.t1&&SC){
-    var a=SC[0].n,b=SC[1].n,d=b-a;
-    h+=(h?'<div class="rfx">':'')+'<b>Test 1.</b> Then passes '+a+' of 8; Now passes '+b+' of 8. Drift: '+(d>=0?'+':'')+d+' checks in five weeks. The same eight checks; a different habit of asking.'+(h?'</div>':'');
-    if(!st.t2)h+='<div class="rfx">Next: Test 2, the one the checks cannot see.</div>';
-  }
-  if(st.t2){
-    h+='<div class="rfx"><b>Test 2.</b> Then could not be sent: it names the client. Now could: it names no one. Whether a prompt is good and whether it is allowed are separate tests, and this course taught both.</div>';
-  }
-  out.className='rout'+(h?' on':'');
-  out.innerHTML=h||'<span class="rnil">Pick a prompt to run the eight checks on it.</span>';
-  cards.forEach(function(c,i){
-    c.classList.toggle('act',st.pick===i);c.setAttribute('aria-pressed',st.pick===i?'true':'false');
-    var tag=c.querySelector('.vtag');
-    if(tag){
-      if(st.t2){tag.textContent=P[i].tag;tag.className='vtag '+(P[i].send?'ok':'bad')}
-      else if(st.t1||st.pick===i){tag.textContent=(SC?SC[i].n:0)+' of 8 checks';tag.className='vtag'}
-      else{tag.textContent='';tag.className='vtag'}
-    }
-  });
+function tally(){
+ var c=[],s=0;
+ STEPS.forEach(function(_,i){var e=$('c5Ct'+i),v=Math.max(0,parseFloat(e&&e.value)||0);c.push(v);s+=v});
+ bars.innerHTML=s?STEPS.map(function(_,i){var p=c[i]/s*100;
+  return '<div class="drow'+(i===TRUTH?' keep':'')+'"><span>Step '+(i+1)+(i===TRUTH?' · first':'')+'</span><span class="dbar"><span style="width:'+p.toFixed(1)+'%"></span></span><span class="pv">'+p.toFixed(0)+'%</span></div>'}).join(''):'';
 }
-function showCmp(){
-  if(!cmp||!SC)return;
-  var h='<span class="hd">The eight checks, side by side</span><table class="ctab"><thead><tr><th>Check</th><th>Then</th><th>Now</th></tr></thead><tbody>';
-  for(var k=0;k<8;k++){
-    h+='<tr><td>'+(k+1)+' '+esc(CKS[k])+'</td><td class="c '+(SC[0].hits[k]?'y':'n')+'">'+(SC[0].hits[k]?'✓':'✗')+'</td><td class="c '+(SC[1].hits[k]?'y':'n')+'">'+(SC[1].hits[k]?'✓':'✗')+'</td></tr>';
-  }
-  h+='<tr><td><b>Checks passed</b></td><td class="c"><b>'+SC[0].n+'</b></td><td class="c"><b>'+SC[1].n+'</b></td></tr></tbody></table>';
-  cmp.className='mpanel has keyhide';cmp.innerHTML=h;cmp.style.display='block';
+function show(committed){
+ var d;
+ if(committed){
+  var okS=pickS===TRUTH,okW=pickW===WHYOK;
+  d='<span class="cz">Your commitment</span><b>Step '+(pickS+1)+':</b> '+(okS?'right.':'not the first break.')+' <b>Reason '+esc(pickW)+':</b> '+(okW?'right.':'not why the first break happens.');
+ }else d='<span class="cz">The first break</span>';
+ d+='<br>Step 2 breaks first: the skill names a model that stops answering on 30 November 2026 '+CHIP+'. Steps 3 and 4 break second, and quietly, once step 2 is swapped; reasons b and c are true of them, and are still not the first break.';
+ d+='<div class="fx">The loud break is the cheap one. The quiet ones cannot be seen by reading the page, so what you write down has to name the model, the date and the test.</div>';
+ out.className='readout on';out.innerHTML=d;
+ tbl.innerHTML=table();
+ reveal.style.display='block';
+ tally();
 }
-
-function pick(i){
-  if(!ensure()){out.className='rout';out.innerHTML='<span class="rnil">The checks are still loading. Click again.</span>';return}
-  st.pick=i;place(i);draw();
-}
-function test1(){
-  if(!ensure())return;
-  st.t1=true;
-  P.forEach(function(p,i){place(i);meters[i].g.setAttribute('class','sCold-hide show');
-    meters[i].segs.forEach(function(r,k){var fn=function(){r.setAttribute('class','sCold-seg'+(SC[i].hits[k]?' hit':''))};if(reduced())fn();else setTimeout(fn,60*k+(i?300:0))});
-  });
-  names.setAttribute('class','sCold-hide show');
-  var d=SC[1].n-SC[0].n;
-  drift.textContent='Drift: '+(d>=0?'+':'')+d+' checks in five weeks';
-  driftSub.textContent='Then '+SC[0].n+' of 8 · Now '+SC[1].n+' of 8';
-  showCmp();draw();
-}
-function test2(){
-  if(!st.t1)test1();
-  if(!SC)return;
-  st.t2=true;
-  lane1.setAttribute('class','sCold-trk ok');lab1.setAttribute('class','sCold-lane ok show');
-  lane2.setAttribute('class','sCold-trk bad show');lab2.setAttribute('class','sCold-lane bad show');
-  P.forEach(function(p,i){place(i)});
-  draw();
-  var mine=$('coldMine');if(mine)mine.style.display='';
-  if(typeof mark==='function')mark('gc');
-}
-var rk=$('coldRank'),al=$('coldAll');
-if(rk)rk.onclick=test1;
-if(al)al.onclick=test2;
-
-/* ---------- now yours: two prompts of the learner's own ---------- */
-var mineBtn=$('coldMine'),box=$('coldMineBox'),tThen=$('coldThen'),tNow=$('coldNow'),go=$('coldGo'),mout=$('coldMineOut'),mq=$('coldMineQ'),mY=$('coldMineY'),mN=$('coldMineN'),mAns=$('coldMineAns');
-if(mineBtn&&box)mineBtn.onclick=function(){box.style.display='';mineBtn.style.display='none';if(tThen)tThen.focus()};
-if(go&&tThen&&tNow&&mout)go.onclick=function(){
-  if(!ensure())return;
-  var a=tThen.value.replace(/^\s+|\s+$/g,''),b=tNow.value.replace(/^\s+|\s+$/g,'');
-  if(!a||!b){mout.className='rout';mout.innerHTML='<span class="rnil">Paste both prompts first: the oldest you can find, and the latest.</span>';return}
-  var sa=score(a),sb=score(b),d=sb.n-sa.n;
-  mout.className='rout on';
-  mout.innerHTML='<span class="rz">Yours · oldest '+sa.n+' of 8, latest '+sb.n+' of 8</span>Oldest passed: '+esc(list(sa.hits,true))+'.<br>Latest passed: '+esc(list(sb.hits,true))+'.<div class="rfx">Drift: '+(d>=0?'+':'')+d+' checks. '+(d>0?'That is the course, measured on your own history.':(d===0?'No drift in the checks; the drift may be in what you ask, which the checks cannot see.':'Your latest passes fewer checks than your oldest: read the missed ones aloud and decide if they were needed.'))+'</div>';
-  if(mq)mq.style.display='';
+stepsEl.addEventListener('click',function(e){var b=e.target&&e.target.closest?e.target.closest('[data-cs]'):null;if(!b||locked)return;pickS=+b.getAttribute('data-cs');paint()});
+whyEl.addEventListener('click',function(e){var b=e.target&&e.target.closest?e.target.closest('[data-cw]'):null;if(!b||locked)return;pickW=b.getAttribute('data-cw');paint()});
+all('input',tin).forEach(function(i){i.addEventListener('input',tally)});
+commit.onclick=function(){
+ try{
+  if(locked||pickS<0||pickW===null)return;
+  locked=true;show(true);paint();
+  if(typeof mark==='function')mark('gCase');
+  try{reveal.focus({preventScroll:true})}catch(e1){}
+  try{if(reveal.scrollIntoView)reveal.scrollIntoView({block:'nearest'})}catch(e2){}
+ }catch(e){}
 };
-function lockMine(which){
-  [mY,mN].forEach(function(b){if(!b)return;var on=(b===which);b.classList.toggle('act',on);b.setAttribute('aria-pressed',on?'true':'false');if(!on)b.setAttribute('aria-disabled','true')});
-}
-if(mY)mY.onclick=function(){if(mY.getAttribute('aria-disabled')==='true')return;lockMine(mY);if(mAns)mAns.textContent='Then it cannot go in as written. Session 4’s §02 and Appendix D6 show how to clean it: replace the details, do not just delete them.'};
-if(mN)mN.onclick=function(){if(mN.getAttribute('aria-disabled')==='true')return;lockMine(mN);if(mAns)mAns.textContent='Then both pass the test the eight checks cannot see.'};
-
-REVEALS.push(function(){try{pick(0);test1();test2()}catch(e){}});
-draw();
+REVEALS.push(function(){try{if(!locked)show(false)}catch(e){}});
+paint();
 })();
-}catch(err){try{console.warn("section sCold failed:",err&&err.message)}catch(_){}}
+}catch(err){try{console.warn("section sCase failed:",err&&err.message)}catch(_){}}
 /* ----- section s1 ----- */
 try{
 (function(){
@@ -4814,7 +4704,7 @@ paintTray();paintFig();readout('','');
 /* ----- section sE2 ----- */
 try{
 (function(){
-/* sE2 · swap the model, keep the test set (pipeline-lab). Five inputs from §03,
+/* sE2 · swap the model, keep the test set (pipeline-lab). Five inputs from Appendix E8,
    read from S5INPUTS and never retyped, each with the line the brief should
    return. Three model cards; Run sends five tokens left to right through the
    model box (tween, instant under reduced motion), and each result slot stamps
@@ -5071,6 +4961,118 @@ REVEALS.push(function(){
 });
 })();
 }catch(err){try{console.warn("section sE2 failed:",err&&err.message)}catch(_){}}
+/* ----- section sE6 ----- */
+try{
+(function(){
+/* sE6 · the maintenance log (builder-assembler, Constructive). Five fields, three entries each; the row
+   builds in five cells as the learner picks. Lock marks every entry: a tick for the one a stranger could
+   act on, a cross with its why for the rest, and the right entry marked where it was missed. The two
+   model ids and the retirement are FACTS claude-model-ids-and-retirements (H); the date, the five-input
+   results and the log entries are constructed for this lesson (L). The five inputs are Appendix E2's:
+   four match, the two-column table (input 5) comes back as a table until the format line is fixed.
+   Harvest: s4's pick-one-per-row builder and E2's copy template. Nothing is stored or sent. */
+var FH=$('e6Fields'),ROW=$('e6Row'),LOCK=$('e6Lock'),MSG=$('e6Msg'),OUT=$('e6Out'),KEY=$('e6Key'),TPL=$('e6Tpl'),CP=$('e6Copy'),CPM=$('e6CopyMsg');
+if(!FH||!ROW||!LOCK||!MSG||!OUT)return;
+var TICK='✓',CROSS='✗';
+var CH='<span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>';
+var F=[
+ {l:'Date',o:[
+  {t:'Late 2026',ok:false,w:'A season is not a date. Nobody can tell whether the test ran before or after the retirement.'},
+  {t:'30 November 2026',ok:false,w:'That is the vendor’s retirement date, not the day anything was done. The row records your own day.'},
+  {t:'12 November 2026',ok:true,w:'The day the swap and the re-test were done, in full: a stranger can line it up with the calendar.'}]},
+ {l:'Model id',o:[
+  {t:'claude-sonnet-4-5-20250929 to claude-sonnet-5-5',ok:true,w:'Both ids, from and to. An id names one model and stays true after the next release '+CH+'.'},
+  {t:'Sonnet',ok:false,w:'A family name. Every release brings a different Sonnet, and the row cannot say which two were compared.'},
+  {t:'The newest Sonnet',ok:false,w:'A moving target: next month it names a different model.'}]},
+ {l:'Change observed',o:[
+  {t:'The brief seemed different',ok:false,w:'Nobody can reproduce a feeling. Which input? Different how?'},
+  {t:'Quality got worse',ok:false,w:'A verdict with no input behind it. The test set exists to say which answer changed.'},
+  {t:'On input 5, the two-column table, the brief came back as a table instead of bullets; the other four inputs matched',ok:true,w:'It names the input and the result, and says what still matched. A stranger can reproduce it.'}]},
+ {l:'Fix',o:[
+  {t:'Reworded the prompt',ok:false,w:'Reworded how? A fix that is not written down cannot be applied again.'},
+  {t:'Added to the format line: bullets, never a table',ok:true,w:'The exact words, so the fix can be applied again, and removed.'},
+  {t:'Switched back to Claude Sonnet 4.5',ok:false,w:'A fix that expires: Claude Sonnet 4.5 retires on 30 November 2026, and requests to a retired model fail '+CH+'.'}]},
+ {l:'Re-test',o:[
+  {t:'Looks fine now',ok:false,w:'“Looks right” is the check that cannot see a change.'},
+  {t:'Re-ran input 5 only: it matched',ok:false,w:'A changed prompt can move any answer, not only the one it was written for. The whole set runs again.'},
+  {t:'Re-ran all five inputs: 5 of 5 matched',ok:true,w:'It names what ran and how many matched, so the next runner knows what “passed” meant.'}]}
+];
+var pick={},locked=false,cells=[];
+F.forEach(function(f,fi){
+ var box=document.createElement('div');box.className='sE6-f';
+ box.innerHTML='<span class="sE6-fl">'+(fi+1)+' · '+esc(f.l)+'</span>';
+ var opts=document.createElement('div');opts.className='sE6-opts';opts.setAttribute('role','group');opts.setAttribute('aria-label',f.l+': pick one entry');
+ f.o.forEach(function(o,oi){
+  var b=document.createElement('button');b.type='button';b.className='btn sel';b.setAttribute('aria-pressed','false');
+  b.setAttribute('data-f',String(fi));b.setAttribute('data-o',String(oi));
+  b.innerHTML='<span class="sE6-g" aria-hidden="true"></span><span>'+esc(o.t)+'</span>';
+  b.onclick=function(){try{choose(fi,oi)}catch(e){}};
+  opts.appendChild(b);
+ });
+ box.appendChild(opts);FH.appendChild(box);
+ var c=document.createElement('div');c.className='sE6-cell';c.innerHTML='<b>'+esc(f.l)+'</b><span class="sE6-cv">Not picked yet</span>';
+ ROW.appendChild(c);cells.push(c);
+});
+function nPicked(){var n=0;F.forEach(function(f,fi){if(pick[fi]!==undefined)n++});return n}
+function paint(){
+ F.forEach(function(f,fi){
+  all('button',FH.children[fi]).forEach(function(b,oi){var on=pick[fi]===oi;b.classList.toggle('act',on);b.setAttribute('aria-pressed',on?'true':'false')});
+  var has=pick[fi]!==undefined;
+  cells[fi].querySelector('.sE6-cv').textContent=has?f.o[pick[fi]].t:'Not picked yet';
+  if(!locked)cells[fi].className='sE6-cell'+(has?' set':'');
+ });
+ var n=nPicked();
+ LOCK.disabled=locked||n<F.length;
+ MSG.textContent=locked?'Locked. The key is below.':(n<F.length?n+' of '+F.length+' fields picked.':'All five picked. Lock the row.');
+}
+function choose(fi,oi){if(locked)return;pick[fi]=oi;paint()}
+function rightOf(f){for(var i=0;i<f.o.length;i++)if(f.o[i].ok)return f.o[i]; return f.o[0]}
+function keyHtml(){
+ var h='<span class="hd">Key · which entries a stranger could act on</span><ul class="sE6-lines">';
+ F.forEach(function(f,fi){
+  var has=pick[fi]!==undefined,o=has?f.o[pick[fi]]:null,r=rightOf(f);
+  if(has){
+   h+='<li><b class="'+(o.ok?'good':'flag')+'">'+(o.ok?TICK:CROSS)+'</b> '+esc(f.l)+': '+esc(o.t)+'<span class="kw">'+o.w+(o.ok?'':' Write instead: '+esc(r.t)+'.')+'</span></li>';
+  }else{
+   h+='<li><b class="good">'+TICK+'</b> '+esc(f.l)+': '+esc(r.t)+'<span class="kw">'+r.w+'</span></li>';
+  }
+ });
+ return h+'</ul>';
+}
+function showKey(){if(KEY){KEY.innerHTML=keyHtml();KEY.style.display='block'}}
+function lockRow(){
+ if(locked||nPicked()<F.length)return;
+ locked=true;
+ var right=0;
+ F.forEach(function(f,fi){
+  var ok=f.o[pick[fi]].ok;if(ok)right++;
+  all('button',FH.children[fi]).forEach(function(b,oi){
+   b.setAttribute('aria-disabled','true');
+   var g=b.querySelector('.sE6-g'),isPick=(oi===pick[fi]),isOk=f.o[oi].ok;
+   if(isPick){b.classList.add(isOk?'ok':'bad');g.textContent=isOk?TICK:CROSS}
+   else if(isOk){b.classList.add('key');g.textContent=TICK}
+  });
+  cells[fi].className='sE6-cell '+(ok?'ok':'bad');
+ });
+ var o='<span class="hd">Your row · '+right+' of '+F.length+' fields a stranger could act on</span>';
+ o+=right===F.length?'<span class="good">All five.</span> A stranger can line up the date, re-run the two ids, reproduce the input, apply the words and check the count.':
+   (F.length-right)+' field'+(F.length-right===1?'':'s')+' could not be acted on by someone who was not there. The key below says which, and what to write instead.';
+ OUT.className='mpanel has';OUT.innerHTML=o;
+ showKey();paint();
+ if(typeof mark==='function')mark('ga6');
+}
+LOCK.onclick=function(){try{lockRow()}catch(e){}};
+
+/* ---------- beat 2: the template ---------- */
+var TPLTXT=['Date | Model id, from and to | Change observed: input and result | Fix: the exact words | Re-test: what ran, how many matched',
+ '____ | ____ | ____ | ____ | ____','____ | ____ | ____ | ____ | ____','____ | ____ | ____ | ____ | ____'].join('\n');
+if(TPL)TPL.textContent=TPLTXT;
+if(CP)CP.onclick=function(){try{copyText(TPLTXT,CPM)}catch(e){}};
+
+REVEALS.push(function(){try{showKey()}catch(e){}});
+paint();
+})();
+}catch(err){try{console.warn("section sE6 failed:",err&&err.message)}catch(_){}}
 /* ----- section s2 ----- */
 try{
 (function(){
@@ -5714,7 +5716,7 @@ function writeOut(){
   });
   var dx=el('span','s3-dx');
   dx.appendChild(el('b',null,'The input that broke it is the diagnosis.'));
-  dx.appendChild(document.createTextNode(' Write it down exactly: it opens §04.'));
+  dx.appendChild(document.createTextNode(' Write it down exactly: it opens Appendix E9.'));
   out.appendChild(dx);
   out.className='mpanel has';
 }
@@ -5867,7 +5869,7 @@ var ITEMS=[
  {t:'Session 3: a clean-looking meeting summary carried a fact the transcript does not contain',k:'guess',
   w:'The summariser wrote the likelier sentence where the transcript had none. Read each line against the transcript before it goes anywhere.'},
  {t:'Session 5: the care-cost line was missing from the note and the brief gave a figure anyway',k:'guess',
-  w:'A gap, filled. The §04 fix gives the model a word to write instead.'},
+  w:'A gap, filled. The Appendix E9 fix gives the model a word to write instead.'},
  {t:'Session 5: the CRM line and the pasted email disagreed, and the brief picked one',k:'carry',
   w:'The conflict was in the input. The brief passed one half through and dropped the other.'},
  {t:'Session 2: an identical prompt sent twice, an hour apart, and two materially different answers',k:'sample',
@@ -6050,7 +6052,7 @@ REVEALS.push(function(){
 try{
 (function(){
 /* ================= s4 · a change you can defend =================
-   builder-assembler. Three rows, one per break §03 found; each offers two
+   builder-assembler. Three rows, one per break Appendix E8 found; each offers two
    fixes that both sound like advice. A pick stamps the row CHECKABLE or TOO
    VAGUE at once and re-runs the six inputs on the board: a checkable fix flips
    its input's stamp from ✗ to ✓ (a squash-and-swap tween on the stamp), strikes
@@ -6103,7 +6105,7 @@ function lines(parent,x,y,str,cls,max,maxLines,dy){
 
 /* ---------- A. the board ---------- */
 var root=svgRoot(fig,W,H,'','s4-svg','img');
-svt(root,6,19,'Re-run: the six inputs from §03','s4-ttl');
+svt(root,6,19,'Re-run: the six inputs from E8','s4-ttl');
 var cntT=svt(root,W-6,19,'','s4-cnt','end');
 var tiles={};
 S5INPUTS.forEach(function(it,i){
@@ -6256,7 +6258,7 @@ function update(){
   if(!n){h+='<span class="nil">'+pc+' of '+ALL+' inputs pass as the package stands. Pick a fix in any row: the board re-runs at once.</span>'}
   else{
     var s3=(typeof S5STATE==='object'&&S5STATE&&S5STATE.s3)?S5STATE.s3:null;
-    if(s3&&typeof s3.called==='number'&&s3.called===s3.called)h+='<span class="kw">You found '+s3.called+' of the three in §03.</span><br>';
+    if(s3&&typeof s3.called==='number'&&s3.called===s3.called)h+='<span class="kw">You found '+s3.called+' of the three in Appendix E8.</span><br>';
     if(allOk)h+='<span class="good">'+pc+' of '+ALL+'. Each change names a word a reader can search for, or a step a runner can tick.</span>';
     else h+='<span class="kw">'+pc+' of '+ALL+' inputs pass.</span>';
     for(i=0;i<N;i++){var f=S5FIXES[i],p=pick[f.k];if(!p)continue;var ok=p==='check';
@@ -6655,7 +6657,7 @@ function beatLine(j){
 }
 function introLine(j){
  var s='<span class="hd">Beat '+(j+1)+' of '+N+' is on the clock</span><b>'+esc(BEATS[j].t)+'.</b> Plan '+mmss(BEATS[j].p)+'.';
- if(j===2&&PKG&&broke.length)s+='<br><span class="kw">For the sample package (the '+esc(PKG.name)+' from §02), the inputs that broke it in §03 were: '+esc(broke.join('; '))+'.</span>';
+ if(j===2&&PKG&&broke.length)s+='<br><span class="kw">For the sample package (the '+esc(PKG.name)+' from Appendix E7), the inputs that broke it in Appendix E8 were: '+esc(broke.join('; '))+'.</span>';
  s+='<br>Press Next beat when you move on.';
  return s;
 }
@@ -6983,7 +6985,7 @@ function doReveal(animate){
   else{paintBars(0);tw=tween(1500,paintBars,fin)}
   readReveal();renderKey();if(key)key.style.display='block';
   labels();
-  if(typeof mark==='function')mark('g6');
+  S5STATE.trials=1;s5Gate();
 }
 revB.onclick=function(){
   try{
@@ -7104,6 +7106,172 @@ MINE.forEach(function(c){
 draw(true);
 })();
 }catch(err){try{console.warn("section s5 failed:",err&&err.message)}catch(_){}}
+/* ----- the folded s8 task, now inside section s5 ----- */
+try{
+(function(){
+/* ================= s5, second task (was section s8) · predict the paper, then see it =================
+   Folded into s5 in Phase 6b (P6 row 5, D-046): the ids s8Quiz, s8Tool and the rest, the s8- classes and the data-task t-s8
+   are kept so every handle stays stable. The seal-a-line and five-principles beat was dropped with the section; the
+   closing check moved to sE5.
+   Harvest: the two commits before any reveal and the side-by-side locked cards
+   from Session 4's D3 (sWS: mkQuiz-shaped qitems, aria-pressed, the rest closed),
+   and its stamp that lands on the card the moment the call locks (wsStamp: ink
+   while unjudged, teal or rust once judged); the slider-driven figure built once
+   and moved in place from Session 4's §06 pricer; the four-stop closing strip
+   from Session 4's §09 (s9gates, renamed). The figure is three bands: the paper's
+   two coefficients as horizontal bars, the six activities as a strip, and one
+   marker, you, on a line. Every input sets the figure, the aria-label and the
+   readout at once; motion is CSS transitions on transform and opacity only.
+   Nothing here measures layout. */
+var host=$('s8Quiz'),score=$('s8Score'),beat=$('s8Beat2'),fig=$('s8Fig'),out=$('s8Out');
+var tool=$('s8Tool'),me=$('s8Self'),toolV=$('s8ToolVal'),meV=$('s8SelfVal');
+if(!host||!beat||!fig||!out||!tool||!me)return;
+
+function guard(f){return function(){try{return f.apply(this,arguments)}catch(e){try{console.warn('s8:',e&&e.message)}catch(_){}}}}
+function revealOn(){return document.body.classList.contains('reveal')}
+function nextFrame(f){if(window.requestAnimationFrame&&!reduced())window.requestAnimationFrame(f);else f()}
+
+/* ---------- beat 1: two commits, locked on the first pick ---------- */
+var QUIZ=[
+ {q:'In the survey, which predicted more critical thinking with AI?',
+  opts:[{k:'a',t:'Confidence in the tool'},{k:'b',t:'Confidence in yourself'},{k:'c',t:'Neither mattered'}],a:'b',
+  fb:{a:'Not quite: (b). The more people trusted the tool, the less critical thinking they reported (minus 0.69).',
+      b:'Right: self-confidence predicted more (plus 0.26); confidence in the tool predicted less (minus 0.69).',
+      c:'Not quite: (b). Both mattered, in opposite directions.'}},
+ {q:'When the tool did the information gathering, where did the workers say their effort went?',
+  opts:[{k:'a',t:'Nowhere: it was saved'},{k:'b',t:'To verifying what the tool said'},{k:'c',t:'To writing longer prompts'}],a:'b',
+  fb:{a:'Not quite: (b). Less effort gathering, more effort checking: the work moved.',
+      b:'Right: from gathering to verification, from problem-solving to integrating the response, from doing the task to stewarding it.',
+      c:'Not quite: (b). Prompting was not where the effort went; verifying was.'}}
+];
+var opened=false;
+function openBeat2(){
+ if(opened)return;opened=true;
+ beat.hidden=false;
+ /* the bars grow in from zero once the panel is on screen */
+ nextFrame(function(){beat.classList.add('on');grow()});
+}
+mkQuiz(host,QUIZ,score,null,function(){
+ S5STATE.paper=1;s5Gate();
+ /* a keyboard user's focus is on a button that just closed: hand it to the first slider */
+ var ae=document.activeElement,inQuiz=!!(ae&&host.contains(ae));
+ openBeat2();
+ if(inQuiz)try{tool.focus({preventScroll:true})}catch(e){}
+});
+
+/* the stamp that lands on a card the moment its answer locks (mkQuiz has already
+   run on the button; this listener sees the card after it). Right is teal and
+   solid, not quite is rust and dashed, and the glyph says which, so the card's
+   state is never colour alone. */
+host.addEventListener('click',guard(function(e){
+ var t=e.target;
+ while(t&&t!==host&&!(t.classList&&t.classList.contains('qitem')))t=t.parentNode;
+ if(!t||t===host||!t.classList.contains('done')||t.classList.contains('s8-stamped'))return;
+ var ok=!!t.querySelector('.qfb.right');
+ t.classList.add('s8-stamped');t.classList.add(ok?'s8-ok':'s8-bad');
+ var st=el('span','s8-stamp '+(ok?'ok':'bad'));
+ st.setAttribute('aria-hidden','true');
+ st.textContent=ok?'✓ Right':'✗ Not quite';
+ t.appendChild(st);
+ nextFrame(function(){st.classList.add('on')});
+}));
+
+/* ---------- the figure, built once ---------- */
+var W=560,H=300,X0=330,SC=170,CX=280,UNIT=22,LX=CX-10*UNIT,RX=CX+10*UNIT,LY=270;
+var ACT=[['knowledge',72],['comprehension',79],['application',69],['analysis',72],['synthesis',76],['evaluation',55]];
+var svg=svgRoot(fig,W,H,'','s8-svg','img');
+
+/* band A: the two coefficients from the paper */
+svt(svg,10,20,'Effect on critical thinking, from the survey','s8-t','start');
+sv('line',{x1:X0,y1:28,x2:X0,y2:96,'class':'s8-axis'},svg);
+var toolW=Math.round(0.69*SC),meW=Math.round(0.26*SC);
+var gTool=sv('g',{'class':'s8-bar s8-rust'},svg);
+var rTool=sv('rect',{x:X0-toolW,y:34,width:toolW,height:20,rx:3,'class':'s8-rect'},gTool);
+svt(gTool,X0-8,48,'minus 0.69','s8-v','end');
+svt(svg,10,48,'confidence in the tool','s8-l','start');
+var gMe=sv('g',{'class':'s8-bar s8-teal'},svg);
+var rMe=sv('rect',{x:X0,y:62,width:meW,height:20,rx:3,'class':'s8-rect'},gMe);
+svt(gMe,X0+meW+8,76,'plus 0.26','s8-v','start');
+svt(svg,10,76,'confidence in yourself','s8-l','start');
+svt(svg,X0-6,110,'less critical thinking','s8-s','end');
+svt(svg,X0+6,110,'more','s8-s','start');
+rTool.style.transform='scaleX(0)';rMe.style.transform='scaleX(0)';
+
+/* band B: the six activities, share of examples reporting less effort */
+svt(svg,10,134,'Examples reporting less effort with the tool, by activity','s8-t','start');
+var strip=sv('g',{'class':'s8-strip'},svg);
+ACT.forEach(function(a,i){
+ var cx=10+i*90+45,h=Math.round(a[1]*0.62);
+ var g=sv('g',{'class':'s8-act'},strip);
+ sv('rect',{x:cx-26,y:204-h,width:52,height:h,rx:2},g);
+ svt(g,cx,204-h-5,a[1]+'%','s8-pv','middle');
+ svt(g,cx,218,a[0],'s8-pn','middle');
+});
+sv('line',{x1:10,y1:204,x2:550,y2:204,'class':'s8-base'},svg);
+
+/* band C: one marker, you, on a line (a reading, not a score) */
+svt(svg,CX,242,'Where the survey’s pattern puts you','s8-t','middle');
+sv('line',{x1:LX,y1:LY,x2:RX,y2:LY,'class':'s8-track'},svg);
+sv('line',{x1:CX,y1:LY-10,x2:CX,y2:LY+10,'class':'s8-mid'},svg);
+var fill=sv('rect',{x:CX,y:LY-5,width:UNIT,height:10,'class':'s8-fill'},svg);
+svt(svg,LX,292,'likely to skip the check','s8-s','start');
+svt(svg,RX,292,'likely to check','s8-s','end');
+var gYou=sv('g',{'class':'s8-you'},svg);
+sv('circle',{cx:CX,cy:LY,r:10,'class':'s8-dot'},gYou);
+var youT=svt(gYou,CX,LY-18,'you','s8-yl','middle');
+fill.style.transform='scaleX(0)';
+
+function grow(){rTool.style.transform='scaleX(1)';rMe.style.transform='scaleX(1)'}
+
+/* ---------- the reading ---------- */
+var READ={
+ skip:'Trust in the tool high, confidence in yourself low: the survey’s pattern for the least checking. Session 4’s record and Session 3’s opened source are the habits that stand in for confidence.',
+ check:'Confidence in yourself high, trust in the tool low: the survey’s pattern for the most checking. Keep the habit, and put the clock below on it so you know what it costs.',
+ mid:'Both about even: the survey’s middle. The habits decide it: Session 4’s record and Session 3’s opened source, whichever way your trust moves.'
+};
+var ZONE={skip:'the least checking',check:'the most checking',mid:'the middle'};
+var WORD={skip:'skip',check:'check',mid:'even'};
+function num(e){var n=parseInt(e.value,10);if(!(n>=0))n=0;if(n>10)n=10;return n}
+function zone(d){return d<=-3?'skip':(d>=3?'check':'mid')}
+/* emphasis goes on the rectangles only (fill-opacity), never on a group that holds text: a group
+   opacity below 1 makes the browser raster the text in a layer, which is what blurred and fattened
+   the labels near the middle of the sliders (fixed 2026-10-04) */
+function op(e,v){var o=String(Math.round(v*100)/100);var rs=e.tagName==='rect'?[e]:[].slice.call(e.querySelectorAll('rect'));rs.forEach(function(r){r.style.fillOpacity=o})}
+var touched=false;
+
+function draw(){
+ var t=num(tool),s=num(me),d=s-t,z=zone(d);
+ if(toolV)toolV.textContent=String(t);
+ if(meV)meV.textContent=String(s);
+ tool.setAttribute('aria-valuetext',t+' of 10');me.setAttribute('aria-valuetext',s+' of 10');
+ /* the marker and its fill */
+ gYou.setAttribute('transform','translate('+(d*UNIT)+' 0)');
+ fill.style.transform='scaleX('+d+')';
+ /* the force each slider leans on: the matching bar comes forward, the strip follows trust in the tool */
+ op(gTool,0.4+0.06*t);
+ op(gMe,0.4+0.06*s);
+ op(strip,0.35+0.065*t);
+ svg.setAttribute('class','s8-svg s8-'+z);
+ /* the marker carries its zone as a word, so position is never the only signal */
+ youT.textContent='you · '+WORD[z];
+ svg.setAttribute('aria-label','Figure. Two bars from the survey: confidence in the tool, minus 0.69, runs left towards less critical thinking; confidence in yourself, plus 0.26, runs right towards more. A strip of six activities shows the share of examples reporting less effort, 55 to 79 percent. On a line from likely to skip the check to likely to check, your marker sits at '+ZONE[z]+': tool '+t+' of 10, yourself '+s+' of 10.');
+ if(touched||revealOn()){
+  out.className='mpanel has';
+  out.innerHTML='<span class="hd">Where the survey puts you</span>'+esc(READ[z])+
+   '<span class="s8-mpair">Tool '+t+' of 10 · Yourself '+s+' of 10 · a reading, not a score</span>';
+ }
+}
+function onSlide(){touched=true;draw()}
+tool.addEventListener('input',guard(onSlide));tool.addEventListener('change',guard(onSlide));
+me.addEventListener('input',guard(onSlide));me.addEventListener('change',guard(onSlide));
+draw();
+
+REVEALS.push(function(){
+ openBeat2();grow();draw();
+});
+})();
+}catch(err){try{console.warn("section s8 failed:",err&&err.message)}catch(_){}}
+
 /* ----- section s6 ----- */
 try{
 (function(){
@@ -7504,7 +7672,7 @@ function doPush(){
   later(function(){deskV[i]=REPO_V;d.r.setAttribute('class','sLib-desk upd');paintVer()},per*(i+1)+200);
  });
  later(function(){clearFig();paintVer();busy=false;push.disabled=REPO_V>=9},per*(DESKS+1)+500);
- var what=REPO_V===5?'adds the eight-digit test from §04, so a brief with an account number is refused before it is shown':'one more rule, one more version';
+ var what=REPO_V===5?'adds the eight-digit test from Appendix E9, so a brief with an account number is refused before it is shown':'one more rule, one more version';
  out.className='mpanel has';
  out.innerHTML='<span class="hd">Pushed · de-identify '+vtxt(REPO_V)+'</span>'+
   '<span class="r on"><b>what changed</b>'+what+'. One commit to the repository; nobody emailed anybody.</span>'+
@@ -7900,7 +8068,7 @@ function chip(k,l){return ' <span class="conf '+l.toLowerCase()+'" data-src='+'"
 var CARDS=[
  {pan:'rel',t:'Vanguard puts about half of an adviser’s potential value in behavioural coaching',c:chip('src-vanguard-alpha','M'),w:'coaching'},
  {pan:'rel',t:'Among investors who fired an adviser, 21% named the relationship',c:chip('src-morningstar-fired','M'),w:'21%'},
- {pan:'rel',t:'§08’s four moments no tool can draft',c:'',w:'4 moments'},
+ {pan:'rel',t:'§04’s four moments no tool can draft',c:'',w:'4 moments'},
  {pan:'ana',t:'The top reason for firing was the quality of advice and services, 32%',c:chip('src-morningstar-fired','M'),w:'32%'},
  {pan:'ana',t:'Outside the model’s frontier, consultants with AI were 19 points less likely to be right, and could not tell',c:chip('src-dellacqua','M'),w:'19 pts'},
  {pan:'ana',t:'In the survey of 319 knowledge workers, confidence in the tool predicted less critical thinking; the judgment does not delegate',c:chip('src-lee-cognitive','H','','lee-2025-critical-thinking'),w:'319'}
@@ -7930,7 +8098,7 @@ var weights=CARDS.map(function(c,i){
   var g=sv('g',{'class':'sE5-w '+c.pan},svg);
   sv('rect',{x:-24,y:-9,width:48,height:18,rx:3},g);
   svt(g,0,4,c.w,'','middle');
-  g.style.transform='translate('+(pans[c.pan].x)+'px,-30px)';
+  g.style.transform='translate('+(pans[c.pan].x)+'px,16px)';  /* parked inside the viewBox, invisible: sE5 is core now, so the page lays it out */
   return g;
 });
 var twW=sv('g',{'class':'sE5-w tw'},svg);sv('rect',{x:-44,y:-9,width:88,height:18,rx:3},twW);svt(twW,0,4,'explained advice','','middle');twW.style.transform='translate('+PX+'px,'+(PY-26)+'px)';
@@ -7957,7 +8125,7 @@ function setWeight(i,show,stackIndex){
   var c=CARDS[i],p=pans[c.pan],g=weights[i];
   var a=(pans.ana.n-pans.rel.n)*4,rad=a*Math.PI/180;
   var ex=PX+(c.pan==='rel'?-ARM:ARM)*Math.cos(rad),ey=PY+(c.pan==='rel'?-ARM:ARM)*Math.sin(rad);
-  g.style.transform='translate('+ex+'px,'+(show?(ey+DROP-10-stackIndex*20):-30)+'px)';
+  g.style.transform='translate('+ex+'px,'+(show?(ey+DROP-10-stackIndex*20):16)+'px)';
   g.setAttribute('class','sE5-w '+c.pan+(show?' show':''));
 }
 function reposition(){
@@ -8045,225 +8213,6 @@ REVEALS.push(function(){try{
 }catch(e){}});
 })();
 }catch(err){try{console.warn("section sE5 failed:",err&&err.message)}catch(_){}}
-/* ----- section s8 ----- */
-try{
-(function(){
-/* ================= s8 · trust the tool, think less? =================
-   Harvest: the two commits before any reveal and the side-by-side locked cards
-   from Session 4's D3 (sWS: mkQuiz-shaped qitems, aria-pressed, the rest closed),
-   and its stamp that lands on the card the moment the call locks (wsStamp: ink
-   while unjudged, teal or rust once judged); the slider-driven figure built once
-   and moved in place from Session 4's §06 pricer; the four-stop closing strip
-   from Session 4's §09 (s9gates, renamed). The figure is three bands: the paper's
-   two coefficients as horizontal bars, the six activities as a strip, and one
-   marker, you, on a line. Every input sets the figure, the aria-label and the
-   readout at once; motion is CSS transitions on transform and opacity only.
-   Nothing here measures layout. */
-var host=$('s8Quiz'),score=$('s8Score'),beat=$('s8Beat2'),fig=$('s8Fig'),out=$('s8Out');
-var tool=$('s8Tool'),me=$('s8Self'),toolV=$('s8ToolVal'),meV=$('s8SelfVal');
-var ta=$('s8Carry'),seal=$('s8Seal'),msg=$('s8SealMsg'),stamp=$('s8Stamp'),five=$('s8Five'),mine=$('s8Mine');
-if(!host||!beat||!fig||!out||!tool||!me)return;
-
-function guard(f){return function(){try{return f.apply(this,arguments)}catch(e){try{console.warn('s8:',e&&e.message)}catch(_){}}}}
-function revealOn(){return document.body.classList.contains('reveal')}
-function nextFrame(f){if(window.requestAnimationFrame&&!reduced())window.requestAnimationFrame(f);else f()}
-
-/* ---------- beat 1: two commits, locked on the first pick ---------- */
-var QUIZ=[
- {q:'In the survey, which predicted more critical thinking with AI?',
-  opts:[{k:'a',t:'Confidence in the tool'},{k:'b',t:'Confidence in yourself'},{k:'c',t:'Neither mattered'}],a:'b',
-  fb:{a:'Not quite: (b). The more people trusted the tool, the less critical thinking they reported (minus 0.69).',
-      b:'Right: self-confidence predicted more (plus 0.26); confidence in the tool predicted less (minus 0.69).',
-      c:'Not quite: (b). Both mattered, in opposite directions.'}},
- {q:'When the tool did the information gathering, where did the workers say their effort went?',
-  opts:[{k:'a',t:'Nowhere: it was saved'},{k:'b',t:'To verifying what the tool said'},{k:'c',t:'To writing longer prompts'}],a:'b',
-  fb:{a:'Not quite: (b). Less effort gathering, more effort checking: the work moved.',
-      b:'Right: from gathering to verification, from problem-solving to integrating the response, from doing the task to stewarding it.',
-      c:'Not quite: (b). Prompting was not where the effort went; verifying was.'}}
-];
-var opened=false;
-function openBeat2(){
- if(opened)return;opened=true;
- beat.hidden=false;
- /* the bars grow in from zero once the panel is on screen */
- nextFrame(function(){beat.classList.add('on');grow()});
-}
-mkQuiz(host,QUIZ,score,'g9',function(){
- /* a keyboard user's focus is on a button that just closed: hand it to the first slider */
- var ae=document.activeElement,inQuiz=!!(ae&&host.contains(ae));
- openBeat2();
- if(inQuiz)try{tool.focus({preventScroll:true})}catch(e){}
-});
-
-/* the stamp that lands on a card the moment its answer locks (mkQuiz has already
-   run on the button; this listener sees the card after it). Right is teal and
-   solid, not quite is rust and dashed, and the glyph says which, so the card's
-   state is never colour alone. */
-host.addEventListener('click',guard(function(e){
- var t=e.target;
- while(t&&t!==host&&!(t.classList&&t.classList.contains('qitem')))t=t.parentNode;
- if(!t||t===host||!t.classList.contains('done')||t.classList.contains('s8-stamped'))return;
- var ok=!!t.querySelector('.qfb.right');
- t.classList.add('s8-stamped');t.classList.add(ok?'s8-ok':'s8-bad');
- var st=el('span','s8-stamp '+(ok?'ok':'bad'));
- st.setAttribute('aria-hidden','true');
- st.textContent=ok?'✓ Right':'✗ Not quite';
- t.appendChild(st);
- nextFrame(function(){st.classList.add('on')});
-}));
-
-/* ---------- the figure, built once ---------- */
-var W=560,H=300,X0=330,SC=170,CX=280,UNIT=22,LX=CX-10*UNIT,RX=CX+10*UNIT,LY=270;
-var ACT=[['knowledge',72],['comprehension',79],['application',69],['analysis',72],['synthesis',76],['evaluation',55]];
-var svg=svgRoot(fig,W,H,'','s8-svg','img');
-
-/* band A: the two coefficients from the paper */
-svt(svg,10,20,'Effect on critical thinking, from the survey','s8-t','start');
-sv('line',{x1:X0,y1:28,x2:X0,y2:96,'class':'s8-axis'},svg);
-var toolW=Math.round(0.69*SC),meW=Math.round(0.26*SC);
-var gTool=sv('g',{'class':'s8-bar s8-rust'},svg);
-var rTool=sv('rect',{x:X0-toolW,y:34,width:toolW,height:20,rx:3,'class':'s8-rect'},gTool);
-svt(gTool,X0-8,48,'minus 0.69','s8-v','end');
-svt(svg,10,48,'confidence in the tool','s8-l','start');
-var gMe=sv('g',{'class':'s8-bar s8-teal'},svg);
-var rMe=sv('rect',{x:X0,y:62,width:meW,height:20,rx:3,'class':'s8-rect'},gMe);
-svt(gMe,X0+meW+8,76,'plus 0.26','s8-v','start');
-svt(svg,10,76,'confidence in yourself','s8-l','start');
-svt(svg,X0-6,110,'less critical thinking','s8-s','end');
-svt(svg,X0+6,110,'more','s8-s','start');
-rTool.style.transform='scaleX(0)';rMe.style.transform='scaleX(0)';
-
-/* band B: the six activities, share of examples reporting less effort */
-svt(svg,10,134,'Examples reporting less effort with the tool, by activity','s8-t','start');
-var strip=sv('g',{'class':'s8-strip'},svg);
-ACT.forEach(function(a,i){
- var cx=10+i*90+45,h=Math.round(a[1]*0.62);
- var g=sv('g',{'class':'s8-act'},strip);
- sv('rect',{x:cx-26,y:204-h,width:52,height:h,rx:2},g);
- svt(g,cx,204-h-5,a[1]+'%','s8-pv','middle');
- svt(g,cx,218,a[0],'s8-pn','middle');
-});
-sv('line',{x1:10,y1:204,x2:550,y2:204,'class':'s8-base'},svg);
-
-/* band C: one marker, you, on a line (a reading, not a score) */
-svt(svg,CX,242,'Where the survey’s pattern puts you','s8-t','middle');
-sv('line',{x1:LX,y1:LY,x2:RX,y2:LY,'class':'s8-track'},svg);
-sv('line',{x1:CX,y1:LY-10,x2:CX,y2:LY+10,'class':'s8-mid'},svg);
-var fill=sv('rect',{x:CX,y:LY-5,width:UNIT,height:10,'class':'s8-fill'},svg);
-svt(svg,LX,292,'likely to skip the check','s8-s','start');
-svt(svg,RX,292,'likely to check','s8-s','end');
-var gYou=sv('g',{'class':'s8-you'},svg);
-sv('circle',{cx:CX,cy:LY,r:10,'class':'s8-dot'},gYou);
-var youT=svt(gYou,CX,LY-18,'you','s8-yl','middle');
-fill.style.transform='scaleX(0)';
-
-function grow(){rTool.style.transform='scaleX(1)';rMe.style.transform='scaleX(1)'}
-
-/* ---------- the reading ---------- */
-var READ={
- skip:'Trust in the tool high, confidence in yourself low: the survey’s pattern for the least checking. Session 4’s record and Session 3’s opened source are the habits that stand in for confidence.',
- check:'Confidence in yourself high, trust in the tool low: the survey’s pattern for the most checking. Keep the habit, and put §05’s clock on it so you know what it costs.',
- mid:'Both about even: the survey’s middle. The habits decide it: Session 4’s record and Session 3’s opened source, whichever way your trust moves.'
-};
-var ZONE={skip:'the least checking',check:'the most checking',mid:'the middle'};
-var WORD={skip:'skip',check:'check',mid:'even'};
-function num(e){var n=parseInt(e.value,10);if(!(n>=0))n=0;if(n>10)n=10;return n}
-function zone(d){return d<=-3?'skip':(d>=3?'check':'mid')}
-/* emphasis goes on the rectangles only (fill-opacity), never on a group that holds text: a group
-   opacity below 1 makes the browser raster the text in a layer, which is what blurred and fattened
-   the labels near the middle of the sliders (fixed 2026-10-04) */
-function op(e,v){var o=String(Math.round(v*100)/100);var rs=e.tagName==='rect'?[e]:[].slice.call(e.querySelectorAll('rect'));rs.forEach(function(r){r.style.fillOpacity=o})}
-var touched=false;
-
-function draw(){
- var t=num(tool),s=num(me),d=s-t,z=zone(d);
- if(toolV)toolV.textContent=String(t);
- if(meV)meV.textContent=String(s);
- tool.setAttribute('aria-valuetext',t+' of 10');me.setAttribute('aria-valuetext',s+' of 10');
- /* the marker and its fill */
- gYou.setAttribute('transform','translate('+(d*UNIT)+' 0)');
- fill.style.transform='scaleX('+d+')';
- /* the force each slider leans on: the matching bar comes forward, the strip follows trust in the tool */
- op(gTool,0.4+0.06*t);
- op(gMe,0.4+0.06*s);
- op(strip,0.35+0.065*t);
- svg.setAttribute('class','s8-svg s8-'+z);
- /* the marker carries its zone as a word, so position is never the only signal */
- youT.textContent='you · '+WORD[z];
- svg.setAttribute('aria-label','Figure. Two bars from the survey: confidence in the tool, minus 0.69, runs left towards less critical thinking; confidence in yourself, plus 0.26, runs right towards more. A strip of six activities shows the share of examples reporting less effort, 55 to 79 percent. On a line from likely to skip the check to likely to check, your marker sits at '+ZONE[z]+': tool '+t+' of 10, yourself '+s+' of 10.');
- if(touched||revealOn()){
-  out.className='mpanel has';
-  out.innerHTML='<span class="hd">Where the survey puts you</span>'+esc(READ[z])+
-   '<span class="s8-mpair">Tool '+t+' of 10 · Yourself '+s+' of 10 · a reading, not a score</span>';
- }
-}
-function onSlide(){touched=true;draw()}
-tool.addEventListener('input',guard(onSlide));tool.addEventListener('change',guard(onSlide));
-me.addEventListener('input',guard(onSlide));me.addEventListener('change',guard(onSlide));
-draw();
-
-/* ---------- beat 3: seal one line, then the five principles ---------- */
-var sealed=false;
-function showFive(){
- if(!five)return;
- five.className='mpanel has keyhide';five.style.display='block';
-}
-function doSeal(){
- if(sealed||!ta||!seal)return;
- var t=String(ta.value||'').replace(/\s+/g,' ').replace(/^\s+|\s+$/g,'');
- if(!t){
-  if(msg)msg.textContent='Write your one line first, then seal it.';
-  try{ta.focus({preventScroll:true})}catch(e){}
-  return;
- }
- sealed=true;
- ta.readOnly=true;ta.classList.add('s8-sealed');
- seal.disabled=true;seal.setAttribute('aria-disabled','true');seal.textContent='Sealed';
- if(stamp)stamp.hidden=false;
- if(msg)msg.textContent='Sealed. It stays on this page; nothing is sent or saved.';
- if(mine){mine.textContent=t;mine.hidden=false}
- showFive();
-}
-if(seal)seal.addEventListener('click',guard(doSeal));
-if(ta)ta.addEventListener('keydown',guard(function(e){
- if(e.key==='Enter'&&!e.shiftKey&&!sealed){e.preventDefault();doSeal()}
-}));
-
-REVEALS.push(function(){
- openBeat2();grow();draw();
- showFive();
-});
-})();
-}catch(err){try{console.warn("section s8 failed:",err&&err.message)}catch(_){}}
-
-/* ===== family 17: cold-open ritual, identical in every session ===== */
-/* COURSE-WIDE COLD-OPEN CHECKLIST. COLD_CHECKS is the one constant that
-   defines the eight fixed checks: a label, one plain line on why the item
-   matters, and a deterministic, offline detect function d(t). Every rule is
-   readable below: a presence test is a visible word list or a plain
-   measurement, never a relevance score, and there is no threshold. The rows
-   are diagnostic only; nothing else on the page reads them. Sessions 2-5
-   copy this constant verbatim (register row DW-066); the renderer above is
-   session-5's then-and-now form. */
-var COLD_CHECKS=[
- {l:'An explicit ask',w:'A question mark or an opening imperative tells the model what to return; without one it guesses the task as well as the answer.',
-  d:function(t){return /\?/.test(t)||/^\s*(?:\w+[,:]\s+)?(?:please\s+)?(?:write|make|give|list|draft|summarise|summarize|explain|create|find|tell|help|review|compare|analyse|analyze|rewrite|check|generate|outline|describe|calculate|translate|classify|extract|suggest|recommend|plan|edit|fix|improve|assess|evaluate)\b/i.test(t)}},
- {l:'At least 15 words',w:'Below about fifteen words there is rarely enough signal to tell your task apart from a thousand similar ones.',
-  d:function(t){return (t.match(/\S+/g)||[]).length>=15}},
- {l:'A named output format',w:'Naming a list, table, email, memo or draft fixes the shape of the answer instead of leaving the model to pick one.',
-  d:function(t){return /\b(list|table|email|e-mail|memo|draft|bullet|bullets|bulleted|outline|summary|report|letter|agenda|template|paragraph|paragraphs|spreadsheet|checklist|headline|slide|slides|script|caption)\b/i.test(t)}},
- {l:'Context beyond the ask',w:'Background the model cannot infer, the who and the situation, is what separates your answer from a generic one.',
-  d:function(t){return (t.match(/[.!?](\s|$)/g)||[]).length>=2||t.length>180}},
- {l:'A named audience or role',w:'Saying who is writing or who will read it shifts vocabulary, depth and tone toward that reader.',
-  d:function(t){return /\b(you are|act as|as an? \w+|audience|reader|readers|for my|for our|client|clients|prospect|prospects|board|committee|colleague|colleagues|adviser|advisers|advisor|advisors|planner|planners|attorney|attorneys|accountant|accountants|student|students|beginner|beginners|expert|experts)\b/i.test(t)}},
- {l:'A constraint on length, tone or scope',w:'A stated limit is the difference between an answer you can use and one you cut down yourself.',
-  d:function(t){return /\b(no more than|at most|under|within|maximum|max|limit|only|brief|briefly|concise|short|long|formal|informal|casual|plain|professional|friendly|neutral|tone|word|words|sentence|sentences|page|pages|paragraph|paragraphs|scope|exclude|excluding|without|avoid|keep it)\b/i.test(t)}},
- {l:'An example or reference point',w:'One example anchors format and register more reliably than a paragraph of description.',
-  d:function(t){return /\b(for example|e\.g|such as|like this|like the|similar to|based on|modelled on|modeled on|in the style of|sample|example|attached|below|here is|as in|following the)\b/i.test(t)}},
- {l:'What to do when unsure',w:'Telling it to verify, cite or ask first trades confident guessing for something you can check.',
-  d:function(t){return /\b(verify|cite|citation|citations|source|sources|if unsure|if you are unsure|if you're unsure|not sure|unsure|don't know|do not know|ask me|ask first|ask before|flag|confirm|double-check|check first|uncertain|say so)\b/i.test(t)}}
-];
-
 /* ===== family 1: work-along gates, completion feedback only (pedagogy R10) ===== */
 var __done={};
 function mark(id){
@@ -8277,7 +8226,7 @@ function mark(id){
 }
 
 /* APXCORE:BEGIN generated-by=scripts/build-appendix.mjs */
-window.__coreMins=59;
+window.__coreMins=45;
 /* APXCORE:END */
 
 /* ===== appendix depth control: tier filter + core-only mode ===== */

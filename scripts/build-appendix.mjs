@@ -394,7 +394,7 @@ function build(lesson) {
   const over = coreMin - 60;
   const hour = over <= 0
     ? 'and fits the hour'
-    : `${card(over)} minutes over the hour`;
+    : `${card(over)} ${over === 1 ? 'minute' : 'minutes'} over the hour`;
   const budget = fill(BUDGET, {
     ROWS: rows,
     CORE_MIN: coreMin,
