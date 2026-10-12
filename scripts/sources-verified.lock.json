@@ -1,13 +1,21 @@
 {
   "note": "NOTARISED. Every last_verified date in SOURCES.md, frozen. build-sources.mjs recomputes this digest on every parse and refuses to build if a date moved. Only scripts/attest-verified.mjs writes this file, and only at an interactive terminal. Do not hand-edit: a hand edit here and a matching hand edit in SOURCES.md is the one thing this pair cannot catch, and it is a lie about a human having read a source.",
   "updated_by": "--sync (records with an empty last_verified only)",
-  "digest": "b2668529e6170c8cfb6a7116889c47f68dbbaa3510b1d3515463c9d7b710fa4d",
+  "digest": "03ef33e5c2a6f078289a57e3ee5ccb01e9b0b6146213413904169b0d13eb8488",
   "entries": {
     "src-0din-gemini": {
       "last_verified": "",
       "verified_by": ""
     },
     "src-aa": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-aa-index": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-aa-leaderboard": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -103,6 +111,14 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-arena-board": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-arena-rename": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-arup": {
       "last_verified": "",
       "verified_by": ""
@@ -176,6 +192,14 @@
       "verified_by": ""
     },
     "src-claude-pricing": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-privacy-training": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-watermark": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -323,6 +347,10 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-iss-ai-policy": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-joa-prompt": {
       "last_verified": "",
       "verified_by": ""
@@ -356,6 +384,10 @@
       "verified_by": ""
     },
     "src-lee-cognitive": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-livebench": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -411,6 +443,10 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-openai-provenance": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-openai-retire-4o": {
       "last_verified": "",
       "verified_by": ""
@@ -439,6 +475,10 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-regsp-guide": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-rightcapital-iris": {
       "last_verified": "",
       "verified_by": ""
@@ -448,6 +488,10 @@
       "verified_by": ""
     },
     "src-routing": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-rp-2022-32": {
       "last_verified": "",
       "verified_by": ""
     },

@@ -23,8 +23,8 @@ that time. Every drag on the page also works as click the item, then click the p
 4. **6:09 COLD OPEN.** POLL 1: Then or Now? Click Then, Test 1 · check both, Test 2 · could you
    send it? Then 3 of 8 and names the client; Now 8 of 8. Land: "good and allowed are two tests."
    NEVER SKIP.
-5. **6:17 §01.** Pin A, drag to today: deprecated, 57 days. Past 30 Nov: retired, requests fail.
-   Pin C: untested. Then drag gate B and rule 2 onto the skill card, Advance the model four times:
+5. **6:17 §01.** Pin A, drag to today: deprecated, 57 days. Past 30 Nov: retired, requests fail
+   (FACTS:claude-model-ids-and-retirements). Pin C: untested. Then drag gate B and rule 2 onto the skill card, Advance the model four times:
    STOPPED, RUNS, RUNS, STOPPED + HELD 4 OF 5. Land: "a gate names what may run; a scorecard
    names what right looks like; approve once per release."
 6. **6:22 §02 WORKED.** Tag the five choices; Model tier and Data handling: NOT STATED;
@@ -103,21 +103,22 @@ never stated is a package gap. The question you ask every time: "which input wou
 test set?"
 
 **L2 · 8:40 · the tools change; the judgment does not.** §01's calendar against §00's ring: every
-model has a date, none of the five stops does; Sonnet 4.5 was deprecated two days after Session 4.
+model has a date, none of the five stops does; Sonnet 4.5 was deprecated two days after Session 4
+(deprecated 2026-09-30, FACTS:claude-model-ids-and-retirements).
 The five things the course leaves them: the eight checks, the four parts of a prompt, the opened
 source, in-where-check-keep, the handoff test. §07 is where the five go to live at a firm. E5's
 output: the one sentence to a client about what you do that the tool does not.
 
 **F · §01 run flow.** A, today: deprecated since 30 Sep, retirement 30 Nov, replacement named; past
-30 Nov: retired, "requests to retired models will fail". B: active, not sooner than 28 Sep 2027.
+30 Nov: retired, "requests to retired models will fail". B: active, not sooner than 28 Sep 2027 (Sonnet 5.5).
 C: runs on whatever is current, untested. Then the gate and the scorecard: drag B and 2 onto the
-card, Advance four times: STOPPED (names 5.5), RUNS, RUNS, STOPPED + HELD 4 OF 5. A with 1 if
+card, Advance four times: STOPPED (names Sonnet 5.5), RUNS, RUNS, STOPPED + HELD 4 OF 5. A with 1 if
 asked: RUNS, FAILS, FAILS, FAILS.
 
 **G · cues.** Gate 1 §03: input 5. Gate 2 each builder: "what did they understand that you never
 wrote down?" Gate 3 §09: yourself. Closing check written: explain, break, improve, keep.
 
 **H · for you.** Open Anthropic's model deprecations page and models overview once (H, opened 4
-Oct). The five Claude Code documentation pages behind §07 and §01's gate were opened 4 Oct (H); the
+Oct, re-read 2026-10-11). The five Claude Code documentation pages behind §07 and §01's gate were opened 4 Oct (H); the
 firm on the page is invented. Everything else external is M and listed in the run sheet's Verify
 section. Lee et al. was opened in full.

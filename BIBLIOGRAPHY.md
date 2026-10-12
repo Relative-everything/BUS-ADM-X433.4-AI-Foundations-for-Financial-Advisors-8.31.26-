@@ -5,11 +5,11 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**139 works, 480 references across 6 lessons.** 117 are
+**150 works, 532 references across 6 lessons.** 128 are
 cited by at least one claim; 22 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
-**100 records carry at least one field this repository could not verify, and
+**102 records carry at least one field this repository could not verify, and
 every one of them is printed below as `[UNVERIFIED, needs source]` rather than omitted.** The
 rendered footer in a lesson omits an unknown field, because a footer in which
 thirty entries shout about a missing publisher helps nobody. This file is where a
@@ -31,11 +31,11 @@ reader comes for completeness, so here the gap is the point.
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/pricing> |
 | Published | *not applicable* |
-| Last retrieved | 2026-09-13 |
+| Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **9** |
-| Cited in | S1 `#s5` · S1 `#s10` · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 |
+| **Total references** | **13** |
+| Cited in | S1 `#s5` ×2 · S1 `#s10` ×2 · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 · S4 `#s3` · S4 `#s9` |
 
 Per-token input and output rates by model, cache-hit and batch discounts.
 
@@ -53,8 +53,8 @@ Per-token input and output rates by model, cache-hit and batch discounts.
 | Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **4** |
-| Cited in | S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 |
+| **Total references** | **6** |
+| Cited in | S1 `#s5` ×2 · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 |
 
 What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate.
 
@@ -107,13 +107,13 @@ Top-20-chunk retrieval failure rates — baseline 5.7%, contextual embeddings 3.
 | Publisher | Claude Help Center, support.claude.com article 16266773 |
 | Link | <https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content> |
 | Published | *not applicable* |
-| Last retrieved | 2026-09-27 |
+| Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **18** |
-| Cited in | S4 `#s1` · S4 `#sW1` ×6 · S4 `#sW2` ×6 · S4 `#s9` ×5 |
+| Cited in | S4 `#s1` · S4 `#sW1` ×5 · S4 `#sW2` ×6 · S4 `#s9` ×6 |
 
-Claude models launched in the EU on or after 2 August 2026 mark generated text with an imperceptible watermark at launch, earlier models are being added with all covered by 2 December 2026, and marking applies "to output from supported models wherever Claude is offered, worldwide". Files Claude makes (PNG, JPG, SVG, MP4, audio) carry signed Content Credentials following the C2PA standard. Text watermark detection is in private preview, "available to eligible organizations as required under EU law (such as regulators, law enforcement, media, fact-checkers, independent researchers, educational organizations, and EU civil society groups)" and to enterprises with their own Article 50 obligations, through a registration form. A detected mark "tells you that the content may have been processed by Claude" and does not confirm full provenance; "Lack of a detected mark doesn't mean the content wasn't AI-generated or processed": heavy editing, paraphrase, translation, very short passages, or metadata stripped "through format conversion, re-saving, screenshots, or other means". The free Claude Content Checker checks a file, in the browser, for a Claude-issued credential; "The tool does not check text." Anthropic signed the EU AI Act Article 50(2) Code of Practice on Transparency of AI-Generated Content. The page describes no account or user identifier in the mark; that is a reading of an absence and is chipped M wherever it is used.
+Claude models launched in the EU on or after 2 August 2026 mark generated text with an imperceptible watermark at launch, the law gives models launched earlier a transition period and Anthropic is adding marking to them, the page keeps a per-model list of which models and which surfaces mark text, and marking applies "to output from supported models wherever Claude is offered, worldwide". Files Claude makes of a supported type (such as PNG, JPG and SVG) carry signed Content Credentials following the C2PA standard. Text watermark detection is in private preview, "available to eligible organizations as required under EU law (such as regulators, law enforcement, media, fact-checkers, independent researchers, educational organizations, and EU civil society groups)" and to enterprises with their own Article 50 obligations, through a registration form. A detected mark "tells you that the content may have been processed by Claude" and does not confirm full provenance; "Lack of a detected mark doesn't mean the content wasn't AI-generated or processed": heavy editing, paraphrase, translation, very short passages, or metadata stripped "through format conversion, re-saving, screenshots, or other means". The free Claude Content Checker checks a file, in the browser, for a Claude-issued credential; "The tool does not check text." Anthropic signed the EU AI Act Article 50(2) Code of Practice on Transparency of AI-Generated Content. That the mark carries no account or user identifier is stated in the announcement, src-claude-watermark, which is the record to cite for it.
 
 ### Anthropic
 
@@ -262,8 +262,8 @@ The two live memory experiences and where each puts its toggles, real-time entry
 | Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **5** |
-| Cited in | S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` · S2 `#s3` |
+| **Total references** | **10** |
+| Cited in | S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 · S4 `#s9` |
 
 The four current models, context window sizes (1M for Fable 5, Opus 5 and Sonnet 5; 200K for Haiku 4.5), which models carry adaptive against extended thinking, and effort defaults. Price per MTok and knowledge cutoffs are carried by this source but are quoted nowhere in the lesson, because no figure for either was recorded at verification.
 
@@ -395,10 +395,10 @@ Anthropic's fourth threat-intelligence report, covering misuse disrupted between
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **5** |
-| Cited in | S4 `#(footer)` · S4 `#s3` ×3 · S4 `#s9` |
+| **Total references** | **6** |
+| Cited in | S1 `#s11` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#s9` |
 
-Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from $100 a month for five times Pro usage, $200 for twenty times. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, September 2026: from $1 in and $5 out for the smallest model to $10 in and $50 out for the largest.
+Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from $100 a month for five times Pro usage, $200 for twenty times. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, October 2026: from $0.10 in and $0.50 out for the smallest model, for prompts up to 100K tokens, to $10 in and $50 out for the largest (FACTS claude-api-price-haiku-5-5 and claude-api-price-fable-5-1).
 
 ### Anthropic
 
@@ -601,13 +601,13 @@ A standard for connecting assistants to the systems where data lives (November 2
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/model-deprecations> |
 | Published | 2026-09-30 |
-| Last retrieved | 2026-10-04 |
+| Last retrieved | 2026-10-12 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **5** |
-| Cited in | S5 `#s1` ×3 · S5 `#sE2` ×2 |
+| **Total references** | **9** |
+| Cited in | S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#s1` ×3 · S5 `#sE2` ×2 |
 
-Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §01 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027. Dates are for Anthropic-operated platforms; partner platforms set their own.
+Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §01 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current and legacy models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027, Haiku 5.5 7 October 2027. Dates are for Anthropic-operated platforms; partner platforms set their own.
 
 ### Anthropic
 
@@ -639,13 +639,13 @@ Anthropic commits to preserving the weights of all publicly released models, and
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/models/overview> |
 | Published | 2026 |
-| Last retrieved | 2026-10-04 |
+| Last retrieved | 2026-10-12 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **3** |
 | Cited in | S5 `#s1` ×3 |
 
-The current lineup of four models (Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 4.5) with each one's retirement commitment (not sooner than 1 September 2027, 22 September 2027, 28 September 2027 and 15 October 2026), and the eight legacy models still available (Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6). The page recommends Opus 5.5 for most workloads. No price or benchmark from it is on the page.
+The current lineup of four models (Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5) with each one's retirement commitment (not sooner than 1 September 2027, 22 September 2027, 28 September 2027 and 7 October 2027), and the legacy models still available (Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Haiku 4.5). The page recommends Opus 5.5 for most workloads. No price or benchmark from it is on the page.
 
 ### Anthropic
 
@@ -742,6 +742,82 @@ A marketplace can be hosted on GitHub, another git host, a hosted catalogue URL 
 
 Managed settings sit above every other level (command line, project, shared project, user) and nothing a user sets overrides them, apart from a few security-sensitive exceptions. A managed model sets the model a session starts with; the lock on which models may be used is availableModels, which constrains the model picker, the command-line flag and the model key in a user's own files, and a managed list applies as-is.
 
+### Anthropic
+
+**How Claude's text watermark works**  
+`src-claude-watermark` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Anthropic, anthropic.com/news |
+| Link | <https://www.anthropic.com/news/claude-text-watermark> |
+| Published | 2026-08-14 |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **3** |
+| Cited in | S4 `#sW1` ×3 |
+
+Future Claude models generate text that contains a statistical watermark, announced 14 August 2026 and adopted to comply with the EU AI Act. Nothing is added to the text and there are no hidden characters. Watermarking carries no identifying information and cannot be traced to a specific person, organization or chat. Claude's method is a version of the SynthID-Text approach Google DeepMind published in Nature in 2024. When Claude produces a file of a supported type (such as .png, .jpg or .svg) it attaches a C2PA content credential in the file's metadata, which also carries no identifying information.
+
+### Anthropic
+
+**Is my data used for model training?**  
+`src-claude-privacy-training` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Anthropic Privacy Center, article 10023580 |
+| Link | <https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **5** |
+| Cited in | S4 `#s3` ×2 · S4 `#s9` ×2 · S5 `#s0` |
+
+With the model training setting ("Help improve Claude") on, de-identified data may be kept up to five years in training pipelines; with it off, a deleted conversation is removed from back-end storage within 30 days. Exceptions the page names: flagged content up to 2 years, safety classifier scores up to 7 years, and thumbs-up or thumbs-down feedback, which keeps the whole conversation up to 5 years. Applies to Free, Pro and Max accounts, not to Team, Enterprise or the API.
+
+### Arena
+
+**Text leaderboard**  
+`src-arena-board` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Arena |
+| Publisher | arena.ai |
+| Link | <https://arena.ai/leaderboard/chat/text> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | L |
+| **Total references** | **2** |
+| Cited in | S1 `#s10` ×2 |
+
+What Arena measures, human pairwise preference votes converted to a Bradley-Terry (Elo-style) score, and the first two places on its text leaderboard in a secondary snapshot dated 8 October 2026.
+
+### Arena
+
+**LMArena is now Arena**  
+`src-arena-rename` · evidence
+
+| | |
+|---|---|
+| Author | Arena |
+| Publisher | arena.ai |
+| Link | <https://arena.ai/blog/lmarena-is-now-arena> |
+| Published | 2026-01-28 |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S1 `#s10` |
+
+The leaderboard formerly called LMArena, and before that Chatbot Arena, has been Arena, at arena.ai, since 28 January 2026.
+
 ### artefact2
 
 **LLM sampling visualiser**  
@@ -779,6 +855,44 @@ The nine sampler controls and their interaction. Behaviour reimplemented in Appe
 | Cited in | S1 `#s10` · S2 `#s5` ×3 · S4 `#sWS` |
 
 A live leaderboard of capability index scores and cost per index task. Every figure drawn from it is a moving target and none of them is stable between terms.
+
+### Artificial Analysis
+
+**Language model leaderboard, Intelligence Index**  
+`src-aa-leaderboard` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Artificial Analysis |
+| Publisher | Artificial Analysis |
+| Link | <https://artificialanalysis.ai/leaderboards/models> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S1 `#s10` ×2 |
+
+The current Intelligence Index scores of the leading models at a stated effort setting. A live leaderboard: every figure drawn from it is a moving target.
+
+### Artificial Analysis
+
+**Intelligence Index methodology**  
+`src-aa-index` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Artificial Analysis |
+| Publisher | Artificial Analysis |
+| Link | <https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S1 `#s10` |
+
+What the Intelligence Index measures: a weighted average of 10 evaluations in four categories, scaled 0 to 100, at version 4.3.2.
 
 ### Brewster, T.
 
@@ -1060,8 +1174,8 @@ An email styled with HTML and CSS to set the font size to zero and the colour to
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **7** |
-| Cited in | S1 `#s14` ×2 · S4 `#s1` ×2 · S4 `#s7` · S4 `#s9` ×2 |
+| **Total references** | **8** |
+| Cited in | S1 `#s14` ×2 · S4 `#s1` ×3 · S4 `#s7` · S4 `#s9` ×2 |
 
 FINRA's position that existing rules reach generative AI and that supervision is not suspended by the technology. Creates no new obligations.
 
@@ -1283,15 +1397,15 @@ The free tier's request limits are small, were cut in December 2025, and are now
 |---|---|
 | Author | Google DeepMind |
 | Publisher | Google DeepMind |
-| Link | **[UNVERIFIED, needs source]** |
+| Link | <https://deepmind.google/models/synthid/> |
 | Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **4** |
-| Cited in | S4 `#sW1` · S4 `#s9` ×3 |
+| **Total references** | **5** |
+| Cited in | S4 `#sW1` ×2 · S4 `#s9` ×3 |
 
-Tournament sampling in text, perturbation in image and video, and the frequency-domain approach in audio. Adoption is a vendor decision and changes; the mechanism does not.
+Tournament sampling in text, perturbation in image and video, and the frequency-domain approach in audio. Imperceptible watermarks in AI-generated images (Imagen), video (Veo), audio (Lyria, NotebookLM) and Gemini text, with detection in Gemini, Search and Chrome. Adoption is a vendor decision and changes; the mechanism does not.
 
 ### Google Threat Intelligence Group
 
@@ -1349,6 +1463,25 @@ Cost of a Data Breach Report 2026, 602 organisations, breaches March 2025 to Feb
 | Cited in | S4 `#sRSP` ×2 · S4 `#s9` ×2 |
 
 Notice to affected Illinois residents "in the most expedient time possible and without unreasonable delay"; notice to the Attorney General when more than 500 Illinois residents are affected by a single breach.
+
+### Internal Revenue Service
+
+**Late portability elections under Rev. Proc. 2022-32 (IRB 2022-30)**  
+`src-rp-2022-32` · evidence
+
+| | |
+|---|---|
+| Author | Internal Revenue Service |
+| Publisher | Internal Revenue Bulletin |
+| Link | <https://www.irs.gov/pub/irs-drop/rp-22-32.pdf> |
+| Published | 2022 |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S2 `#s7` |
+
+The simplified method for a late portability election: an estate not required to file under IRC 6018(a) may elect portability on a complete Form 706 filed on or before the fifth anniversary of death, which supersedes the second anniversary in Rev. Proc. 2017-34; later relief only by private letter ruling under Treas. Reg. 301.9100-3.
 
 ### InvestmentNews
 
@@ -1439,7 +1572,7 @@ Vanguard's framework attributes about 3 percentage points a year of potential ne
 | Published | 2025-01-15 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
+| Confidence | M |
 | **Total references** | **7** |
 | Cited in | S3 `#s9` · S3 `#s10` ×2 · S3 `#s11` ×2 · S3 `#s16` ×2 |
 
@@ -1501,6 +1634,25 @@ Three Morningstar surveys in 2021 and 2022, about 3,000 responses, of which 184 
 | Cited in | S3 `#s15` · S5 `#sE5` ×2 · S5 `#s8` ×4 |
 
 A survey of 319 knowledge workers who shared 936 first-hand examples of using a generative AI tool at work (374 creation, 303 information, 259 advice; 309 of 319 used ChatGPT). Critical thinking was self-reported as enacted in 555 of the 936 examples (59.29%). In the mixed-effects models, confidence in the tool predicted less enacted critical thinking (coefficient -0.69, p < 0.001) and less perceived effort in five of six Bloom activities; confidence in oneself predicted more (0.26, p = 0.026) and more effort in applying and evaluating. Examples reporting less effort with the tool: 72% knowledge, 79% comprehension, 69% application, 72% analysis, 76% synthesis, 55% evaluation. Three qualitative shifts: from information gathering to information verification, from problem-solving to response integration, from task execution to task stewardship. Self-reported, cross-sectional, not a measure of accuracy.
+
+### LiveBench
+
+**LiveBench leaderboard and question releases**  
+`src-livebench` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | LiveBench |
+| Publisher | livebench.ai |
+| Link | <https://livebench.ai/> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S1 `#s10` ×2 |
+
+What LiveBench measures and the name of its latest question release.
 
 ### Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., & Ho, D. E.
 
@@ -1692,6 +1844,25 @@ On the Free, Plus and Pro plans the "Improve the model for everyone" setting is 
 
 GPT-4 was removed from ChatGPT on 30 April 2025, replaced as the default by GPT-4o. GPT-4o, GPT-4.1, GPT-4.1 mini and o4-mini were retired from ChatGPT on 13 February 2026, with conversations moved to newer defaults; the models remained available in the API. One line on the page, to show the retirement cycle is vendor-wide.
 
+### OpenAI
+
+**Provenance signals in OpenAI-generated content**  
+`src-openai-provenance` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | OpenAI |
+| Publisher | OpenAI Help Center, article 8912793 |
+| Link | <https://help.openai.com/en/articles/8912793-provenance-signals-in-openai-generated-content> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S4 `#sW1` ×2 |
+
+Images from ChatGPT, Codex and the API carry C2PA content credentials and a Google SynthID invisible watermark; text watermarking is EU-only for ChatGPT and Codex and opt-in, off by default, for the API.
+
 ### OWASP
 
 **Top 10 for LLM Applications and Top 10 for Agentic Applications**  
@@ -1748,6 +1919,25 @@ Twenty-two payload techniques observed in real web content, from zero-size fonts
 | Cited in | S5 `#s6` |
 
 68,879 Google searches by 900 US adults in March 2025, from a panel that shared its browsing data. Users clicked a traditional result on 8% of visits when an AI summary appeared and 15% when it did not; a link inside the summary itself was clicked on 1% of such visits; users ended their session on 26% of pages with a summary against 16% without.
+
+### PLANADVISER
+
+**Advisers Using AI by the Numbers**  
+`src-iss-ai-policy` · evidence
+
+| | |
+|---|---|
+| Author | PLANADVISER |
+| Publisher | PLANADVISER, reporting the ISS Market Intelligence Advisor Pulse survey |
+| Link | <https://www.planadviser.com/exclusives/advisers-using-ai-by-the-numbers/> |
+| Published | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S4 `#s9` ×2 |
+
+ISS survey, n = 466, fielded June 2025: 48% of U.S. advisors use AI in their workflows; 78% of RIAs say their firm has no written AI policy, against 35% at regional, independent and bank firms.
 
 ### Privacy Rights Clearinghouse
 
@@ -1895,7 +2085,7 @@ The two-party consent exposure behind the recording-consent section: the Califor
 | Published | 2026-03 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
+| Confidence | M |
 | **Total references** | **4** |
 | Cited in | S2 `#s9` · S2 `#s12d` · S5 `#s6` ×2 |
 
@@ -2029,8 +2219,8 @@ Equifax discovered the breach on 29 July 2017 and announced it on 7 September 20
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **24** |
-| Cited in | S3 `#sPol` ×2 · S4 `#s2` ×3 · S4 `#sRSP` ×7 · S4 `#s4` ×3 · S4 `#s9` ×8 · S5 `#s6` |
+| **Total references** | **10** |
+| Cited in | S3 `#sPol` · S4 `#s2` ×3 · S4 `#sRSP` ×2 · S4 `#s9` ×3 · S5 `#s6` |
 
 The four obligations of the 2024 amendments: a written incident response program; customer notification no later than 30 days after the firm becomes aware; service provider oversight, including the service provider's notice to the firm within 72 hours of becoming aware of a breach; and recordkeeping. The definition and scope limits of nonpublic personal information at 17 CFR 248.3, including the fact that an individual is a customer and information disclosed in a manner indicating the individual is a customer. The compliance dates 3 December 2025 and 3 June 2026.
 
@@ -2043,13 +2233,13 @@ The four obligations of the 2024 amendments: a written incident response program
 |---|---|
 | Author | U.S. Securities and Exchange Commission |
 | Publisher | SEC |
-| Link | **[UNVERIFIED, needs source]** |
+| Link | <https://www.sec.gov/newsroom/press-releases/2024-36> |
 | Published | 2024-03-18 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **4** |
-| Cited in | S1 `#s1` ×2 · S4 `#s1` ×2 |
+| **Total references** | **5** |
+| Cited in | S1 `#s1` ×2 · S1 `#s14` · S4 `#s1` ×2 |
 
 The two AI-washing settlements and their penalty amounts. Penalty figures are reported at two values across sources; the page states the majority figure.
 
@@ -2067,8 +2257,8 @@ The two AI-washing settlements and their penalty amounts. Penalty figures are re
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **1** |
-| Cited in | S4 `#s1` |
+| **Total references** | **2** |
+| Cited in | S4 `#s1` ×2 |
 
 That the SEC withdrew its 2023 proposal on conflicts of interest from predictive data analytics used by broker-dealers and investment advisers, on 12 June 2025, together with thirteen other proposals; any future rule would need a new proposal.
 
@@ -2129,6 +2319,25 @@ The fiduciary duty of care under the Advisers Act includes a duty to provide adv
 
 A registered adviser must adopt and implement written policies and procedures reasonably designed to prevent violations, review them no less than annually, and designate a chief compliance officer; the AI-use policy and the record of its annual review are themselves required records.
 
+### U.S. Securities and Exchange Commission
+
+**Regulation S-P: small entity compliance guide**  
+`src-regsp-guide` · evidence
+
+| | |
+|---|---|
+| Author | U.S. Securities and Exchange Commission |
+| Publisher | SEC |
+| Link | <https://www.sec.gov/files/rules/final/2024/regulation-s-p-small-entity-compliance-guide.pdf> |
+| Published | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **19** |
+| Cited in | S3 `#sPol` ×2 · S4 `#sRSP` ×6 · S4 `#s4` ×3 · S4 `#s9` ×8 |
+
+The compliance dates of the 2024 amendments, 3 December 2025 for larger entities and 3 June 2026 for smaller entities; the written incident response program; customer notice as soon as practicable and no later than 30 days after the firm becomes aware of unauthorized access to or use of customer information; and the 72-hour notice a service provider owes the firm.
+
 ### U.S. Securities and Exchange Commission, Division of Examinations
 
 **Examination priorities: Fiscal year 2026, §VII**  
@@ -2138,13 +2347,13 @@ A registered adviser must adopt and implement written policies and procedures re
 |---|---|
 | Author | U.S. Securities and Exchange Commission, Division of Examinations |
 | Publisher | SEC |
-| Link | **[UNVERIFIED, needs source]** |
+| Link | <https://www.sec.gov/files/2026-exam-priorities.pdf> |
 | Published | 2025-11-17 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **5** |
-| Cited in | S4 `#s1` ×2 · S4 `#s5` · S4 `#s9` ×2 |
+| **Total references** | **12** |
+| Cited in | S3 `#sPol` · S3 `#s16` · S4 `#s1` ×3 · S4 `#s5` · S4 `#s7` · S4 `#s9` ×5 |
 
 §VII, Risk Areas Impacting Various Market Participants. Information security and operational resiliency, including ransomware, data loss prevention, incident response and the 2024 amendments to Regulation S-P; emerging financial technology and AI, including the accuracy of AI representations and a review of training and security controls for risks from AI and polymorphic malware attacks.
 
@@ -2200,8 +2409,8 @@ A publicly reachable ClickHouse database belonging to DeepSeek held over a milli
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **2026-08-23** |
 | Confidence | H |
-| **Total references** | **20** |
-| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s1` ×2 · S2 `#s2` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s7` · S4 `#sWS` · S4 `#s9` · S5 `#sE3` ×2 |
+| **Total references** | **19** |
+| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` · S2 `#s1` ×2 · S2 `#s2` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s7` · S4 `#sWS` · S4 `#s9` · S5 `#sE3` ×2 |
 
 The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D3 is about exactly that.
 

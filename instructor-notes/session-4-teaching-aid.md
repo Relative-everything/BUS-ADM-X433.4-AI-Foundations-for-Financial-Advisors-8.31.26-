@@ -11,7 +11,8 @@ red text = stop by that time.
 ## Page 1: the flow
 
 1. **6:00 OPEN.** Zoom. "Setup questions at the break." Correction from Session 1: the watermark
-   does not identify your account; it says the text may have passed through Claude. Stop.
+   does not identify your account; it says the text may have passed through Claude
+   (FACTS:claude-text-watermark). Stop.
 2. **6:03 OBJECTIVE.** §00. Read "Session 4's one thing" off the page. Non-advisors: "pick any
    recurring task at work." The Coles in two lines, aloud. NEVER SKIP.
 3. **6:05 BRIDGE.** §00. Three letters, b, c, a. Then Zoom out: In, Where, Check, Keep; stop 4
@@ -25,7 +26,10 @@ red text = stop by that time.
    1 to 5, 3 takes 6 to 8, 1 takes 9. Item 9, the EU rule: "binds the vendor, not you; it is why
    your Claude text carries a mark."
 7. **6:24 LECTURE 2.** The duty you already have. Reg S-P is a privacy rule from 2000; the 1940
-   Act; CFP A.9 and A.14. Your AI policy is a supervision document. (Page 3, E2.)
+   Act; CFP A.9 and A.14. Your AI policy is a supervision document. 78% of RIAs say their firm has no
+   written AI policy (ISS Market Intelligence, n = 466, June 2025; FACTS:adoption-iss-policy, M). No
+   rule names an "AI use policy"; it is an examination expectation under Rule 206(4)-7
+   (FACTS:ai-policy-requirement). (Page 3, E2.)
 8. **6:26 §02 WORKED.** Ask the guess, click A. Room calls phrases until the meter reads No. Copy
    the clean prompt into chat. GATE 1: "name and employer gone: what still points to her?" Job
    plus town. POLL 2 if picked, then The Harder Ones: guess how many of the nine phrases still
@@ -106,7 +110,7 @@ vote, complication, re-vote (saves 4). **Never drop:** cold open, §02, demo A, 
 closing check.
 
 **Answers.** Bridge b, c, a. Cold open D 5, C 4, A 3, B 1. §01 binds you: 0. §02 harder ones: all
-7 point to her. §03 Claude A: 5 years on, 30 days off. §05 poll 5: b; the call: c. §06: 61, then
+7 point to her. §03 Claude A: up to 5 years on, 30 days off. §05 poll 5: b; the call: c. §06: 61, then
 about 86. Poll 6: 30 days. §07: B B B B A A; record 6 NOT FOUND. §09: a b a b b a. D5: event 2, Day 33; Equifax 40
 days, Capital One 10.
 
@@ -129,7 +133,7 @@ CONDITIONS.
 4. The banker test: "Could a Naperville banker name this family from what is left?" If yes, replace
    more. This is D6 in one question.
 5. Tab 3: personal Claude, Privacy settings on screen: the training switch is off; say the numbers:
-   five years if it is on, 30 days if it is off. "This is plan A on the §03 map. My firm signed
+   up to five years if it is on, 30 days if it is off (FACTS:claude-consumer-retention). "This is plan A on the §03 map. My firm signed
    nothing."
 6. Three questions, pasted with the cleaned text: "What should I raise at the next meeting?" ·
    "What does a 2009 beneficiary form that names a parent who has died risk?" · "Which of these
@@ -151,7 +155,7 @@ Advanced): Run the knockout with Key A, Key B, off. Beat 2: press 1, 2, 3: 19, 1
 a PNG you made in Claude, into claude.com/check-content: a Claude credential is present. Drop the
 screenshot of the same image: no credential. "A screenshot strips the label; the text watermark is
 a different animal, and you will never hold the key to it." One sentence on why EU law is on a US
-page: Claude marks output worldwide because it is one product.
+page: Claude marks output worldwide because it is one product (FACTS:claude-text-watermark).
 
 **D · 6:55 · 6 min · The Live API box.** Open the box at the top of Session 4. "Plan C on the map
 is this: a key, one request, one reply, and nothing else." Press 1 · See the request before pasting
@@ -169,22 +173,23 @@ plan C is the paid key under a contract your firm signed. Forget the key on scre
 - E3, after §04: approved means on paper. You already do this for custodians and software: the
   contract, the SOC 2 report, the breach clause. An officer with authority signs, never the adviser
   with a credit card. The vendor becomes your service provider under Reg S-P and owes the firm 72
-  hours; Anthropic's addendum promises 48.
+  hours, because your policies must require it (FACTS:reg-sp-compliance); Anthropic's addendum
+  promises 48.
 - E4, after §07 if time: the record is the plan file. Rule 204-2 already makes you keep the
   communication; the four slots make it re-checkable. Complete is not correct.
 
 **F · §03 run flow: click every model, every option, one at a time.** Claude A: sixty rust squares,
 up to five years, the firm signed nothing; switch off: one square, 30 days; switch on again; B: the
 contract slides to the firm, no switch, 30 days; C: the API, 30 days, "the same model." ChatGPT A:
-sixty squares either way, until you delete; the switch stops training, not keeping; B and C:
-dashed, in the contract. Copilot A: 18 squares either way; B: work account, not trained on. Gemini
+sixty squares either way, until you delete; the switch stops training, not keeping (consumer ChatGPT trains unless the user opts out,
+FACTS:openai-consumer-training-default); B and C: dashed, in the contract. Copilot A: 18 squares either way; B: work account, not trained on. Gemini
 A: 18 rust and 18 dashed, 36 months if read; off: one square, 72 hours; B: Workspace, no human
 review. The six leaks: 2 LOGS (DeepSeek) and 5 CONNECTORS (EchoLeak). The ladder: rungs 1 to 6 in
 order; the personal door never opens; the firm door opens on rung 6; Climb all once. Land: "the
 plan buys the contract, not the model."
 
-**G · D5 cues.** Black and white, said once: vendor to firm 72 hours; firm to clients 30 days from
-the day you knew, not the day counsel confirmed; Illinois "without unreasonable delay" and the
+**G · D5 cues.** Black and white, said once: vendor to firm 72 hours; firm to clients as soon as practicable and no later than 30 days from
+the day you knew, not the day counsel confirmed (FACTS:reg-sp-compliance); Illinois "without unreasonable delay" and the
 Attorney General above 500 residents; the only lawful pause is the US Attorney General's written
 say-so. Equifax knew 29 July 2017, told the public 7 September: 40 days, at least $575 million.
 Capital One determined an intrusion on 19 July 2019, told the public 29 July: ten days, and still
@@ -205,12 +210,15 @@ draft; reviewed and sent"; lands no. 8 (8:25, D4): the proposition, agree or dis
 twice. 9 (8:41, closing): which one thing changes first; habits check, their pick is their keep
 line.
 
-**H · For you.** Three readings: FINRA Regulatory Notice 24-09 (June 2024); the generative AI
-section of FINRA's 2026 Annual Regulatory Oversight Report (December 2025); SEC Examination
-Priorities FY2026, §VII (November 2025); then Daly's 3 February 2026 remarks. Verify before
+**H · For you.** Three readings: FINRA Regulatory Notice 24-09 (June 2024; still active, not rescinded,
+FACTS:finra-24-09-status); the generative AI section of FINRA's 2026 Annual Regulatory Oversight
+Report (December 2025); SEC Examination Priorities FY2026, §VII (November 2025; it states it has no
+legal force or effect, FACTS:sec-exam-priorities-status); then Daly's 3 February 2026 remarks. Verify before
 teaching: the four other vendors' pages (M); the FINRA prompt-injection primer's wording (M); the
 state day counts (M); whether your firm's manual permits personal-account use even with
-de-identified text; whether the university records the Zoom. Do not say on the page's authority:
+de-identified text; whether the university records the Zoom. No rule names a tool or a plan; what
+makes a personal plan untenable for client work is the firm's safeguards, records and policy
+(FACTS:reg-sp-compliance, FACTS:ai-policy-requirement). Do not say on the page's authority:
 the Gemini app's own SynthID image check; any OpenAI dates; "loop engineering" as a term. The
 rule key (session-4-rule-key.pdf, two pages from the 27 September round): the nine §01 items with
 the date each passed, whom each binds, and five likely questions.

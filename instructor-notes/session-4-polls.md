@@ -47,7 +47,7 @@ the room is quick; keep 8 only if D4 runs in full.
 **Question:** Your firm becomes aware that a client file was reached by someone outside. Under Regulation S-P, what is the latest lawful day to tell the client?
 **Answers:** A · 3 days / B · 30 days from the day you knew / C · 45 days / D · When the investigation is complete / E · Only once harm is confirmed
 **Lands:** B.
-**Say on the result:** "Thirty days from awareness, and an inconclusive investigation does not excuse the notice. The vendor owes your firm 72 hours; your firm owes the client 30 days; Equifax took 40."
+**Say on the result:** "Customer notice must go out as soon as practicable and no later than 30 days after the firm becomes aware, and an inconclusive investigation does not excuse the notice. The vendor owes your firm 72 hours; your firm owes the client 30 days at the outside; Equifax took 40." (FACTS:reg-sp-compliance)
 
 ### Poll 7 · 8:09 · §07, the record (new slot)
 **Question:** Your CRM note reads: "Used AI to draft the Roth memo; reviewed and sent." An examiner asks you to re-check that memo a year from now. Can you?

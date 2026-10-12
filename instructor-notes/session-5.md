@@ -142,8 +142,10 @@ Button labels are the page's own. Where a step says drag, clicking the item and 
 does the same thing.
 
 ### s0 · Opener, 6:03
-Three recall items, answers **b, b, b** by content (the personal plan trains by default; her job
-and her town together; the full prompt, model, date and output). Then **Advance the model** three times:
+Three recall items, answers **b, b, b** by content (on a personal plan your click is the contract, and chats
+may be used for training unless you switch it off; at Claude, up to five years with the training
+setting on and 30 days with it off, FACTS:claude-consumer-retention; her job and her town together;
+the full prompt, model, date and output). Then **Advance the model** three times:
 the centre box changes, the ring of five does not. Click **5 Hand it over** and read the one
 thing. The Coles in two lines are on the page.
 
@@ -155,12 +157,13 @@ your own" is theirs after class.
 
 ### s1 · §01, 6:17
 **A · The model the package named**, drag to today: deprecated since 30 September, 57 days to go.
-Drag past 30 November: retired, "requests to retired models will fail". **C · Whatever the app
+Drag past 30 November: retired, "requests to retired models will fail" (claude-sonnet-4-5-20250929:
+deprecated 2026-09-30, retires 2026-11-30, FACTS:claude-model-ids-and-retirements). **C · Whatever the app
 picks**: runs, untested. Point at the calendar's lower half once: four models in the current
 lineup, eight legacy ones still served, every one with a date. Then **The Gate and the Scorecard**:
 drag **B** (the two newest generations) onto the model-gate slot and **2** (the five-check
 scorecard) onto the quality slot, press **Advance the model** four times. Read the stamps aloud:
-STOPPED (the gate catches Sonnet 4.5 today and names 5.5), RUNS, RUNS, STOPPED with HELD 4 OF 5
+STOPPED (the gate catches Sonnet 4.5 today and names Sonnet 5.5, claude-sonnet-5-5), RUNS, RUNS, STOPPED with HELD 4 OF 5
 (the next generation changed the format; the scorecard caught it before anyone approved). If a
 hand goes up, do **A** with **1**: RUNS, then FAILS three times. Land: "A gate names what may run;
 a scorecard names what right looks like. Together a skill outlives its model. Approve once per
@@ -199,7 +202,7 @@ watch the saving vanish.
 
 ### s6 · §06, 8:20
 **Wire the Desk.** Drag **The meeting** onto the note-taker's left port and **A vendor's servers**
-onto its right; the wire lights and the four answers write (42.9% of 2,906 advisers; 14 tools
+onto its right; the wire lights and the four answers write (42.9% of 2,906 advisers use AI notetakers, FACTS:adoption-t3-2026; 14 tools
 tracked for the first time). Then **Your public pages** and **The open model's index** onto AI
 search (8% against 15%; who-what-where). Drag a wrong one on purpose once: the port shakes and
 says why. Let the room call the other three. Land: "The four questions did not change. The answers
@@ -245,7 +248,11 @@ Nothing below is stated as a holding on the page. Check each before answering it
 - **Anthropic's model calendar (§01).** Opened 2 and 4 October 2026 at H; the page is updated in
   place by the vendor. Open it once before class; a new deprecation would change the §01
   readout's "days to go" line only in words you say, not on the page. The current lineup and the
-  legacy list come from the models overview, opened 4 October.
+  legacy list come from the models overview, opened 4 October. Re-read in full 2026-10-11
+  (FACTS:claude-model-ids-and-retirements, H): the current ids are claude-fable-5-1,
+  claude-opus-5-5, claude-sonnet-5-5 and claude-haiku-5-5, retiring not before 2027-09-01,
+  2027-09-22, 2027-09-28 and 2027-10-07; claude-sonnet-4-5-20250929 was deprecated 2026-09-30 and
+  retires 2026-11-30.
 - **The Claude Code documentation behind §07 and §01's third bullet (H, opened 4 October).**
   Skills, marketplaces, organisation policy, hosting and settings. Vendor documentation changes;
   the page quotes nothing beyond what the five pages said that day, and the firm on the page is
@@ -265,7 +272,7 @@ Nothing below is stated as a holding on the page. Check each before answering it
 - **The Kitces reading (§06, M).** Not opened; one recommendation carried. See the corrections slot.
 - **The planning-agent example (§06, M).** A vendor's press release as reported; the page does
   not name the vendor in the readout and does not endorse it.
-- **Lee et al. (§09, E5, H).** Opened in full. The coefficients are the paper's Table 4 figures;
+- **Lee et al. (§09, E5, H, FACTS:lee-2025-critical-thinking).** Opened in full. The coefficients are the paper's Table 4 figures;
   the effort shares are from §5.1. Self-reported survey; the page says so.
 
 ## What is not yet done

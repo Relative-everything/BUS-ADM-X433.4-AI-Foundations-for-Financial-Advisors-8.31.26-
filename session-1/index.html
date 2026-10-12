@@ -1581,18 +1581,19 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <table class="dt tight">
-    <thead><tr><th>Document from this case</th><th>Approx. tokens</th><th>Into Opus 5</th></tr></thead>
+    <thead><tr><th>Document from this case</th><th>Approx. tokens</th><th>Into Opus 5.5, input only</th></tr></thead>
     <tbody>
-      <tr><td>Discovery meeting notes (3,000 words)</td><td class="n">~4,000</td><td class="n">$0.02</td></tr>
-      <tr><td>2011 wills and powers of attorney (about 12,000 words)</td><td class="n">~16,000</td><td class="n">$0.08</td></tr>
-      <tr><td>Plan description, 2024 Roth memo, 2009 beneficiary form and residency agreement (about 60,000 words)</td><td class="n">~80,000</td><td class="n">$0.40</td></tr>
-      <tr><td>A full 1M-token context window, for scale</td><td class="n">1,000,000</td><td class="n">$5.00</td></tr>
+      <tr><td>Discovery meeting notes (3,000 words)</td><td class="n">~5,400</td><td class="n">$0.02</td></tr>
+      <tr><td>2011 wills and powers of attorney (about 12,000 words)</td><td class="n">~21,600</td><td class="n">$0.09</td></tr>
+      <tr><td>Plan description, 2024 Roth memo, 2009 beneficiary form and residency agreement (about 60,000 words)</td><td class="n">~108,000</td><td class="n">$0.43</td></tr>
+      <tr><td>A full 1M-token context window, for scale</td><td class="n">1,000,000</td><td class="n">$4.00</td></tr>
     </tbody>
   </table>
-  <p>A full million-token window costs five dollars to read. Cost is not the constraint. Your duty of care is &mdash; &sect;08.</p>
+  <p>Filling a 1M-token context window with input costs four dollars on Opus 5.5. Cost is not the constraint. Your duty of care is &mdash; &sect;08.</p>
+  <p>The <b>context window</b> is all the text the model can reference when it generates a response, the response itself included: the system prompt, every message and document in the request, the tool definitions, and the output, extended thinking included. It is not the box you type in. On the current Claude models it holds up to 1M tokens. <span class="conf h" data-src="src-context-windows" data-fact="context-window-definition">H</span> <span class="conf h" data-src="src-models" data-fact="claude-context-window">H</span></p>
 
   <div class="check" data-gate="g5"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Replace the sample with your own writing, at least 40 tokens.</div></div>
-  <span class="src">Prices and context window: <b>Anthropic, Claude Platform Docs &mdash; Pricing</b>, retrieved 25 August 2026. First-party. <span class="conf h" data-src="src-pricing">H</span> &middot; Token IDs and vocabulary figures: Wolfram (2023). <span class="conf h" data-src="src-wolfram">H</span> &middot; Word-to-token rows derived at 0.75 words per token from instructor-set word counts for the synthetic documents. <span class="conf m" data-src="src-wolfram">M</span></span>
+  <span class="src">Prices: <b>Anthropic, Claude Platform Docs &mdash; Pricing</b>, retrieved 11 October 2026. First-party. <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-opus-5-5">H</span> &middot; Token IDs and vocabulary figures: Wolfram (2023). <span class="conf h" data-src="src-wolfram">H</span> &middot; Word-to-token rows derived at about 1.8 tokens per word, the rate of roughly 555,000 English words per million tokens on the current tokenizer, from instructor-set word counts for the synthetic documents. <span class="conf h" data-src="src-context-windows" data-fact="claude-context-window">H</span> <span class="conf h" data-src="src-pricing" data-fact="claude-tokenizer-4-7">H</span></span>
  </div>
 
 
@@ -1768,7 +1769,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <ul><li>Which of Meg's questions are arbitrary facts &mdash; a rate, a date, a threshold with one right answer and many plausible wrong ones?</li><li>Which are contested judgments where no answer is retrievable because none exists?</li><li>Sort this session's case that way. The first list is what you verify line by line. The second is what you never delegate at all.</li></ul></div>
 
   <div class="check" data-gate="g9"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Ask three times, then view both scoring rules.</div></div>
-  <span class="src"><b>Kalai, A. T., Nachum, O., Vempala, S. S. &amp; Zhang, E. (2025), Why Language Models Hallucinate</b>, arXiv:2509.04664, &sect;1 and &sect;1.2. Model was DeepSeek-V3, accessed 11 May 2025. Assigned reading. <span class="conf h" data-src="src-kalai">H</span> &middot; The three captured dates are that paper's runs. With a key connected the prompt is issued live against whichever model you chose, and what you see is your own observation rather than a sourced claim, so it carries no chip.</span>
+  <span class="src"><b>Kalai, A. T., Nachum, O., Vempala, S. S. &amp; Zhang, E. (2025), Why Language Models Hallucinate</b>, arXiv:2509.04664, &sect;1 and &sect;1.2. Model was DeepSeek-V3, accessed 11 May 2025. Assigned reading. <span class="conf h" data-src="src-kalai" data-fact="openai-hallucination-paper">H</span> &middot; The three captured dates are that paper's runs. With a key connected the prompt is issued live against whichever model you chose, and what you see is your own observation rather than a sourced claim, so it carries no chip.</span>
  </div>
 </section>
 
@@ -1778,7 +1779,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h2>Intelligence Index Plotted Against Cost per Task</h2>
 
   <div class="chartbox">
-    <span class="plab">Artificial Analysis Intelligence Index against cost per index task, July 2026</span>
+    <span class="plab">Artificial Analysis Intelligence Index against cost per index task, July 2026 pull</span>
     <svg class="ch" id="frontCh" viewBox="0 0 700 380" role="img" aria-label="Intelligence index against cost per task"></svg>
     <div style="margin-top:18px">
       <div class="slab"><span>Maximum you will pay per task</span><b id="budgLab">$3.00</b></div>
@@ -1791,19 +1792,32 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p>The dashed line connects models no other model beats on capability and price at once. Going from $2.75 to $1.04 per task costs one index point; going to $0.31 costs six. Whether six points matters depends on whether you are drafting Meg's meeting agenda or reading the 2024 Roth conversion memo against the 2026 plan.</p>
   <p class="pull">Paying for the top of the leaderboard is a decision, not a default.</p>
 
+  <p class="dim" style="font-size:14.5px">The scatter is a pull from 17 and 24 July 2026, with the model names as the board listed them then. Index scores from different versions of the index are not comparable, and the current version is v4.3.2, so do not read a July score against a score in the table below.</p>
+
+  <h3>Three leaderboards, and what each one measures</h3>
   <table class="dt tight">
-    <thead><tr><th>Claude tier</th><th>Input / MTok</th><th>Output / MTok</th><th>Cache hit</th></tr></thead>
+    <thead><tr><th>Leaderboard</th><th>What it measures</th><th>Latest snapshot read</th></tr></thead>
     <tbody>
-      <tr><td>Haiku 4.5</td><td class="n">$1</td><td class="n">$5</td><td class="n">$0.10</td></tr>
-      <tr><td>Sonnet 5</td><td class="n">$2</td><td class="n">$10</td><td class="n">$0.20</td></tr>
-      <tr><td>Opus 5</td><td class="n">$5</td><td class="n">$25</td><td class="n">$0.50</td></tr>
-      <tr><td>Fable 5</td><td class="n">$10</td><td class="n">$50</td><td class="n">$1</td></tr>
+      <tr><td>Artificial Analysis Intelligence Index</td><td>Version 4.3.2: a weighted average of 10 evaluations (Agents 30%, Coding 20%, Scientific Reasoning 20%, General 30%), scaled 0 to 100 <span class="conf m" data-src="src-aa-index" data-fact="aa-index-definition">M</span></td><td>About 7 October 2026: Claude Opus 5.5 (Max) 58, Claude Sonnet 5.5 (Max) 56, GPT-6 Astra (Max) 53, Gemini 4 Argon (High) 53 <span class="conf m" data-src="src-aa-leaderboard" data-fact="leaderboard-snapshot-aa">M</span></td></tr>
+      <tr><td>LiveBench</td><td>A contamination-limited benchmark of 23 objective tasks in 7 categories, refreshed about every six months <span class="conf m" data-src="src-livebench" data-fact="aa-index-definition">M</span></td><td>Latest question release: LiveBench-2026-06-25 <span class="conf m" data-src="src-livebench" data-fact="livebench-last-release">M</span></td></tr>
+      <tr><td>Arena (formerly LMArena) <span class="conf m" data-src="src-arena-rename" data-fact="arena-rename">M</span></td><td>Human pairwise preference votes converted to a Bradley-Terry (Elo-style) score <span class="conf m" data-src="src-arena-board" data-fact="aa-index-definition">M</span></td><td>Snapshot dated 8 October 2026, from a secondary roundup: Gemini 4 Argon 1,525 (preliminary) first, Claude Opus 5.5 1,507 second <span class="conf l" data-src="src-arena-board" data-fact="leaderboard-snapshot-arena">L</span></td></tr>
     </tbody>
   </table>
-  <p class="dim" style="font-size:14.5px">Ten times from cheapest to most expensive inside one vendor. Published rates move, and every figure in this table is one a vendor can change without asking you: price a workload against the pricing page, not against a number you remember. Cache hits cost 10% of input; batch is 50% on both sides. Claude 4.7 and later also produce roughly 30% more tokens for the same text &mdash; a per-token price cut does not always cut the bill.</p>
+  <p class="dim" style="font-size:14.5px">They measure different things, so they can rank the same models differently: one scores objective task results, one scores human preference, one is a weighted composite of ten evaluations. The effort setting moves a score too: Claude Opus 5.5 scores 54 at High against 58 at Max. <span class="conf m" data-src="src-aa-leaderboard" data-fact="leaderboard-snapshot-aa">M</span></p>
+
+  <table class="dt tight">
+    <thead><tr><th>Claude tier</th><th>Input / MTok</th><th>Output / MTok</th><th>Cache read</th></tr></thead>
+    <tbody>
+      <tr><td>Haiku 5.5</td><td class="n">$0.10, or $0.50 over 100K tokens</td><td class="n">$0.50, or $2.50 over 100K tokens</td><td class="n">0.1x input</td></tr>
+      <tr><td>Sonnet 5.5</td><td class="n">$2</td><td class="n">$10</td><td class="n">0.05x input</td></tr>
+      <tr><td>Opus 5.5</td><td class="n">$4</td><td class="n">$20</td><td class="n">0.05x input</td></tr>
+      <tr><td>Fable 5.1</td><td class="n">$10</td><td class="n">$50</td><td class="n">0.025x input</td></tr>
+    </tbody>
+  </table>
+  <p class="dim" style="font-size:14.5px">At the up-to-100K-token rate, input runs from $0.10 to $10 per million tokens across the four tiers: a hundredfold spread inside one vendor. Output tokens cost five times input tokens on every listed Claude model. A cache read costs 0.1x base input by default, 0.05x on Opus 5.5 and Sonnet 5.5, and 0.025x on Fable 5.1; a cache write costs 1.25x for five minutes or 2x for an hour; the Batch API takes 50% off input and output. Haiku 5.5 is the only current model priced by prompt length: a prompt over 100K tokens, counting every input token, is priced per request at the higher rate. Published rates move, and every figure in this table is one a vendor can change without asking you: price a workload against the pricing page, not against a number you remember. Claude 4.7 and later also produce roughly 30% more tokens for the same text, so a per-token price cut does not always cut the bill. <span class="conf h" data-src="src-pricing" data-fact="claude-tokenizer-4-7">H</span></p>
 
   <div class="check" data-gate="g10"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Set the budget below $1.00 and identify the best model still available.</div></div>
-  <span class="src"><b>Artificial Analysis</b>, 17 and 24 July 2026. <span class="conf h" data-src="src-aa">H</span> &middot; Opus 5 and GPT-5.6 Terra omitted: cost per index task unpublished, not estimated. &middot; Prices: <b>Anthropic Claude Platform Docs</b>, 25 August 2026. First-party. <span class="conf h" data-src="src-pricing">H</span></span>
+  <span class="src"><b>Artificial Analysis</b>, scatter data pulled 17 and 24 July 2026. <span class="conf m" data-src="src-aa">M</span> &middot; In that pull Opus 5 and GPT-5.6 Terra were omitted: cost per index task unpublished, not estimated. &middot; Prices: <b>Anthropic Claude Platform Docs</b>, 11 October 2026. First-party. <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-haiku-5-5 claude-api-price-sonnet-5-5 claude-api-price-opus-5-5 claude-api-price-fable-5-1 claude-output-input-ratio claude-cache-and-batch-pricing">H</span> &middot; Model names: <b>Anthropic Claude Platform Docs, Model deprecations</b>, 11 October 2026. First-party. <span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span> &middot; The leaderboard figures were read through search listings of each leaderboard&rsquo;s own site, not from the live boards, and the Arena pair comes from one secondary roundup, which is why it carries the lowest label.</span>
  </div>
 </section>
 
@@ -1830,25 +1844,25 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <h3>What one pass over the Cole file costs</h3>
-  <p>Different question, and the more useful one. Not what the firm spends in a year &mdash; what a single piece of work costs. Read the plan description, the 2024 Roth memo, the 2009 beneficiary form and the residency agreement together, roughly 80,000 tokens in, and produce an 8,000-token issues memo.</p>
+  <p>Different question, and the more useful one. Not what the firm spends in a year &mdash; what a single piece of work costs. Read the plan description, the 2024 Roth memo, the 2009 beneficiary form and the residency agreement together, roughly 108,000 tokens in, and produce an 11,000-token issues memo.</p>
   <div class="panel">
     <div class="row" style="margin-bottom:12px">
       <span class="dim" style="font-size:14px">Tier:</span>
-      <button class="btn sel mini act" data-dp="0">Haiku 4.5</button>
-      <button class="btn sel mini" data-dp="1">Sonnet 5</button>
-      <button class="btn sel mini" data-dp="2">Opus 5</button>
-      <button class="btn sel mini" data-dp="3">Fable 5</button>
+      <button class="btn sel mini act" data-dp="0">Haiku 5.5</button>
+      <button class="btn sel mini" data-dp="1">Sonnet 5.5</button>
+      <button class="btn sel mini" data-dp="2">Opus 5.5</button>
+      <button class="btn sel mini" data-dp="3">Fable 5.1</button>
     </div>
     <div class="stats" id="dpStats"></div>
     <div class="readout" id="dpOut"></div>
   </div>
-  <p>Run every tier. The spread across the whole ladder is $1.08 for the same piece of work: $1.20 on the top tier less $0.12 on the bottom one. On this household, at any plausible fee, the cost of the model is not a line item you would ever discuss. The cost of missing the conflict between the 2024 memo and the 2026 plan is.</p>
+  <p>Run every tier. The spread across the whole ladder is $1.61 for the same piece of work: $1.63 on the top tier less $0.02 on the bottom one. On this household, at any plausible fee, the cost of the model is not a line item you would ever discuss. The cost of missing the conflict between the 2024 memo and the 2026 plan is.</p>
   <p class="pull">Price is never the reason to use the cheap tier. Fitness for the task is.</p>
 
-  <p>At the defaults, metered Opus costs less than half of five Pro subscriptions. That is not an argument for the API. The subscription buys the interface, the file handling and the projects, and removes the need to build anything. Most of this room should be on subscriptions. Knowing why is the point.</p>
+  <p>At the defaults, metered Opus costs less than half of five Pro subscriptions. That is not an argument for the API. The subscription buys the interface, the file handling and the projects, and removes the need to build anything. Most of this room should be on subscriptions. Knowing why is the point. Claude Pro is $20 a month billed monthly or $17 a month billed annually; Max 5x is $100 a month and Max 20x is $200 a month.</p>
 
-  <div class="check" data-gate="g11"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Find a volume where metered Opus 5 exceeds the same number of Pro subscriptions, then price the Cole document pass at all four tiers.</div></div>
-  <span class="src">Rates: <b>Anthropic Claude Platform Docs</b>, 25 August 2026. <span class="conf h" data-src="src-pricing">H</span> &middot; Annual figures derived. <span class="conf h" data-src="src-pricing">H</span> &middot; Tokens per meeting is an instructor-set assumption, not measured data. <span class="conf m" data-src="src-pricing">M</span></span>
+  <div class="check" data-gate="g11"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Find a volume where metered Opus 5.5 exceeds the same number of Pro subscriptions, then price the Cole document pass at all four tiers.</div></div>
+  <span class="src">Rates: <b>Anthropic Claude Platform Docs</b>, 11 October 2026. <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-haiku-5-5 claude-api-price-sonnet-5-5 claude-api-price-opus-5-5 claude-api-price-fable-5-1">H</span> &middot; Annual figures derived. <span class="conf h" data-src="src-pricing">H</span> &middot; Tokens per meeting is an instructor-set assumption, not measured data. <span class="conf m" data-src="src-pricing">M</span> &middot; Subscription prices: <b>Anthropic, Plans and pricing</b>, 11 October 2026. First-party. <span class="conf h" data-src="src-claude-pricing" data-fact="claude-plans">H</span></span>
  </div>
 </section>
 
@@ -1930,7 +1944,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   </div>
 
   <div class="check" data-gate="g14"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open at least four symptoms and match each to the section of this session that explains it.</div></div>
-  <span class="src"><b>FINRA Regulatory Notice 24-09</b>, 27 June 2024, first-party. <span class="conf h" data-src="src-finra2409">H</span> &middot; SEC proceedings announced 18 March 2024, reported consistently across Mayer Brown, Crowell &amp; Moring, White &amp; Case and Cleary. <span class="conf h" data-src="src-finra2409">H</span> &middot; One secondary source reports Delphia at $250,000; the SEC's own announcement and the majority report $225,000.</span>
+  <span class="src"><b>FINRA Regulatory Notice 24-09</b>, 27 June 2024, first-party. <span class="conf h" data-src="src-finra2409">H</span> &middot; The notice is still published with no rescission, and FINRA&rsquo;s 2026 Annual Regulatory Oversight Report, released 9 December 2025, carries a Generative AI section. <span class="conf m" data-src="src-finra2409" data-fact="finra-24-09-status">M</span> &middot; SEC proceedings announced 18 March 2024, reported consistently across Mayer Brown, Crowell &amp; Moring, White &amp; Case and Cleary. <span class="conf m" data-src="src-sec-ai" data-fact="sec-ai-washing-enforcement">M</span> &middot; One secondary source reports Delphia at $250,000; the SEC's own announcement and the majority report $225,000.</span>
  </div>
 </section>
 
@@ -2116,20 +2130,29 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h3 style="margin:22px 0 4px;font-size:17px">Sources cited in this session</h3>
   <ol class="srcs">
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 620bd0a60f1d0ac8c8fc4ff7789157f506b9555976e6919008e01a206cc60153 -->
-      <li id="src-pricing">Anthropic. <em>Pricing</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com/docs/en/about-claude/pricing</a> Retrieved 2026, August 25. Other sessions cite other retrievals of this page. Used for: per-token rates, cache and batch discounts, and the Cole document-pass arithmetic. <span class="conf h" data-src="src-pricing">H</span></li>
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 999987d72d1a78bac27bcab28325f0bfa1d0ed6de79a88691db333f0e47780f8 -->
+      <li id="src-pricing">Anthropic. <em>Pricing</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com/docs/en/about-claude/pricing</a> Retrieved 2026, October 11. Used for: per-token rates for the four current Claude models, the five-to-one output-to-input price ratio, cache and batch discounts, and the Cole document-pass arithmetic. <span class="conf h" data-src="src-pricing">H</span></li>
+      <li id="src-context-windows">Anthropic. <em>Context windows</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">platform.claude.com</a> Retrieved 2026, October 11. Used for: the definition of the context window, all the text the model can reference when generating a response, the response itself included, which is not the box you type in (§03). <span class="conf h" data-src="src-context-windows">H</span></li>
+      <li id="src-models">Anthropic. <em>Models overview</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/models/overview">platform.claude.com/docs/en/models/overview</a> Retrieved 2026, October 11. Used for: the 1M-token context window of the current Claude models (§03). <span class="conf h" data-src="src-models">H</span></li>
+      <li id="src-claude-pricing">Anthropic. <em>Plans and pricing</em>. claude.com. <a href="https://claude.com/pricing">claude.com/pricing</a> Retrieved 2026, October 11. Used for: the Pro and Max subscription prices set against metered API cost in the practice-cost comparison (§06). <span class="conf h" data-src="src-claude-pricing">H</span></li>
+      <li id="src-anthropic-deprecations">Anthropic. (2026, September 30). <em>Model deprecations</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">platform.claude.com/docs/en/about-claude/model-deprecations</a> Retrieved 2026, October 11. Other sessions cite other retrievals of this page. Used for: the names of the four current Claude models in the tier table (§05). <span class="conf h" data-src="src-anthropic-deprecations">H</span></li>
+      <li id="src-arena-board">Arena. <em>Text leaderboard</em>. arena.ai. <a href="https://arena.ai/leaderboard/chat/text">arena.ai/leaderboard/chat/text</a> Retrieved 2026, October 11. Used for: what Arena measures and the first two places on its text leaderboard, Gemini 4 Argon 1,525 (preliminary) and Claude Opus 5.5 1,507, snapshot dated 8 October 2026 (§05). <span class="conf l" data-src="src-arena-board">L</span></li>
+      <li id="src-arena-rename">Arena. (2026, January 28). <em>LMArena is now Arena</em>. arena.ai. <a href="https://arena.ai/blog/lmarena-is-now-arena">arena.ai/blog/lmarena-is-now-arena</a> Retrieved 2026, October 11. Used for: the name Arena, with one parenthetical "formerly LMArena" at first mention (§05). <span class="conf m" data-src="src-arena-rename">M</span></li>
       <li id="src-sampling">artefact2. <em>LLM sampling visualiser</em>. GitHub Pages. <a href="https://artefact2.github.io/llm-sampling/">artefact2.github.io/llm-sampling</a> Used for: the nine sampler controls reimplemented in Appendix A5. <span class="conf h" data-src="src-sampling">H</span></li>
       <li id="src-aa">Artificial Analysis. <em>Artificial Analysis Intelligence Index and cost-per-task figures</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a> Retrieved 2026, July 28. Other sessions cite other retrievals of this page. Used for: the capability-against-price frontier and the tier comparison. <span class="conf m" data-src="src-aa">M</span></li>
-      <li id="src-finra2409">Financial Industry Regulatory Authority. (2024, June 27). <em>Regulatory Notice 24-09</em>. FINRA. <a href="https://www.finra.org/rules-guidance/notices/24-09">finra.org/rules-guidance/notices/24-09</a> Used for: the position that existing rules apply to generative AI and that supervision is not suspended by the technology. <span class="conf h" data-src="src-finra2409">H</span></li>
+      <li id="src-aa-leaderboard">Artificial Analysis. <em>Language model leaderboard, Intelligence Index</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/leaderboards/models">artificialanalysis.ai/leaderboards/models</a> Retrieved 2026, October 11. Used for: the current Intelligence Index snapshot beside the July scatter (§05): Claude Opus 5.5 (Max) 58, Claude Sonnet 5.5 (Max) 56, GPT-6 Astra (Max) 53, Gemini 4 Argon (High) 53, about 7 October 2026. <span class="conf m" data-src="src-aa-leaderboard">M</span></li>
+      <li id="src-aa-index">Artificial Analysis. <em>Intelligence Index methodology</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index">artificialanalysis.ai</a> Retrieved 2026, October 11. Used for: what the Intelligence Index measures, version 4.3.2 (§05). <span class="conf m" data-src="src-aa-index">M</span></li>
+      <li id="src-finra2409">Financial Industry Regulatory Authority. (2024, June 27). <em>Regulatory Notice 24-09</em>. FINRA. <a href="https://www.finra.org/rules-guidance/notices/24-09">finra.org/rules-guidance/notices/24-09</a> Used for: the position that existing rules apply to generative AI and that supervision is not suspended by the technology, and that the notice is still published with no rescission, beside FINRA's 2026 Annual Regulatory Oversight Report and its Generative AI section. <span class="conf h" data-src="src-finra2409">H</span></li>
       <li id="src-kalai">Kalai, A. T., Nachum, O., Vempala, S. S., &amp; Zhang, E. (2025). <em>Why language models hallucinate</em>. arXiv:2509.04664, §1 and §1.2. Retrieved 2025, May 11. Used for: why a model guesses rather than abstains, and the two scoring rules. <span class="conf h" data-src="src-kalai">H</span></li>
+      <li id="src-livebench">LiveBench. <em>LiveBench leaderboard and question releases</em>. livebench.ai. <a href="https://livebench.ai/">livebench.ai</a> Retrieved 2026, October 11. Used for: what LiveBench measures and its latest question release, LiveBench-2026-06-25 (§05). <span class="conf m" data-src="src-livebench">M</span></li>
       <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: every worked example in this session and the next three. Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
       <li id="src-rohrer">Rohrer, D., Dedrick, R. F., &amp; Stershic, S. (2015). <em>Interleaved practice improves mathematics learning</em>. Journal of Educational Psychology, 107(3), 900–908. <a href="https://doi.org/10.1037/edu0000001">doi.org/10.1037/edu0000001</a> Retrieved 2026, August 29. Used for: the interleaved deck order of the section 08 card sort. <span class="conf h" data-src="src-rohrer">H</span></li>
-      <li id="src-sec-ai">U.S. Securities and Exchange Commission. (2024, March 18). <em>Enforcement actions against Delphia (USA) Inc. and Global Predictions, Inc.</em> SEC. Used for: the AI-washing settlements and their penalty amounts. <span class="conf m" data-src="src-sec-ai">M</span></li>
+      <li id="src-sec-ai">U.S. Securities and Exchange Commission. (2024, March 18). <em>Enforcement actions against Delphia (USA) Inc. and Global Predictions, Inc.</em> SEC. <a href="https://www.sec.gov/newsroom/press-releases/2024-36">sec.gov/newsroom/press-releases/2024-36</a> Used for: the AI-washing settlements and their penalty amounts. <span class="conf m" data-src="src-sec-ai">M</span></li>
       <li id="src-wolfram">Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a> Used for: next-token prediction, the temperature passage, tokens and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. <span class="conf h" data-src="src-wolfram">H</span></li>
 <!-- SOURCES:END -->
   </ol>
 
-  <p>Capability figures reflect published data as of 24 July 2026, and pricing as of 25 August 2026. Six frontier models crossed the same capability threshold in the six weeks before this was built. Verify every benchmark and price before relying on it.</p>
+  <p>The frontier scatter reflects Artificial Analysis data pulled on 17 and 24 July 2026, the leaderboard snapshots were read on 11 October 2026, and Claude pricing is as of 11 October 2026. Six frontier models crossed the same capability threshold in the six weeks before the July pull. Verify every benchmark and price before relying on it.</p>
 
   <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="conf h">H</span> directly verified against the cited source. <span class="conf m">M</span> reported by a secondary source or derived from a stated relationship. <span class="conf l">L</span> illustrative construction, not a published figure.</p>
 
@@ -2636,7 +2659,7 @@ var GUESS=[
     G4.guess=1;checkG4()}})();
 
 /* ===== 04 TOKENS ===== */
-var TIERS=[['Haiku 4.5',1],['Sonnet 5',2],['Opus 5',5],['Fable 5',10]];
+var TIERS=[['Haiku 5.5',0.10],['Sonnet 5.5',2],['Opus 5.5',4],['Fable 5.1',10]];
 function tokenize(t){var parts=t.match(/\s+|[^\s]+/g)||[],out=[];
   parts.forEach(function(p){if(/^\s+$/.test(p))return;
     if(p.length<=5){out.push(p);return}
@@ -2904,7 +2927,7 @@ function drawFront(b){
     $('frontOut').className='readout on';
     $('frontOut').innerHTML='<span class="cz">'+m.n+'</span>Index '+m.i+' at '+money(m.c)+' per task. '+
       (m.f?'On the efficient frontier.':'Not on the frontier \u2014 another model delivers at least this score for less.')+
-      ' Against Fable 5: '+gap+' point'+(gap===1?'':'s')+' lower at '+Math.round(m.c/top.c*100)+'% of the cost.'}})}
+      ' Against '+top.n+': '+gap+' point'+(gap===1?'':'s')+' lower at '+Math.round(m.c/top.c*100)+'% of the cost.'}})}
 function budgUpd(){
   var b=Math.exp(flo+(+$('budget').value/100)*(fhi-flo));
   $('budgLab').textContent=money(b);drawFront(b);
@@ -2918,9 +2941,9 @@ function budgUpd(){
 $('budget').addEventListener('input',budgUpd);budgUpd();
 
 /* ===== 10 PRACTICE COST ===== */
-var PATHS=[{n:'Haiku 4.5',i:1,o:5,k:'api'},{n:'Sonnet 5',i:2,o:10,k:'api'},
- {n:'Opus 5',i:5,o:25,k:'api'},{n:'Fable 5',i:10,o:50,k:'api'},
- {n:'Claude Pro subscription',sub:20,k:'sub'},{n:'Claude Max 5\u00d7 subscription',sub:100,k:'sub'}];
+var PATHS=[{n:'Haiku 5.5',i:0.10,o:0.50,k:'api'},{n:'Sonnet 5.5',i:2,o:10,k:'api'},
+ {n:'Opus 5.5',i:4,o:20,k:'api'},{n:'Fable 5.1',i:10,o:50,k:'api'},
+ {n:'Claude Pro subscription (billed monthly)',sub:20,k:'sub'},{n:'Claude Max 5\u00d7 subscription',sub:100,k:'sub'}];
 function costUpd(){
   var a=+$('adv').value,m=+$('mtg').value;$('advLab').textContent=a;$('mtgLab').textContent=m;
   var mt=m*46,ti=mt*27000,to=mt*5000;
@@ -2929,8 +2952,8 @@ function costUpd(){
   $('costBars').innerHTML=rows.map(function(r){
     return '<div class="cbar'+(r.k==='sub'?' sub':'')+'"><span>'+r.n+'</span><span class="tr"><span style="width:'+(r.v/mx*100)+'%"></span></span><span class="amt">'+money(r.v)+'</span></div>'}).join('');
   var opus=rows[2].v,pro=rows[4].v;
-  $('assumeBox').innerHTML='<b>Stated assumption.</b> '+m+' meetings per advisor per week \u00d7 46 weeks = '+fmt(mt)+' per advisor per year, at 27,000 input and 5,000 output tokens each. No prompt caching assumed \u2014 a cache hit costs 10% of input, so a firm reusing templates pays materially less.'+
-    (opus>pro?' <b style="color:var(--warn)">Metered Opus 5 now exceeds the subscription \u2014 it took '+m+' meetings per advisor per week, roughly four a working day.</b>':'');
+  $('assumeBox').innerHTML='<b>Stated assumption.</b> '+m+' meetings per advisor per week \u00d7 46 weeks = '+fmt(mt)+' per advisor per year, at 27,000 input and 5,000 output tokens each, output priced at five times input and Haiku 5.5 at its up-to-100K-token rate. No prompt caching assumed \u2014 a cache read costs 0.1x base input at most (0.05x on Opus 5.5 and Sonnet 5.5, 0.025x on Fable 5.1), so a firm reusing templates pays materially less. <span class="conf h" data-src="src-pricing" data-fact="claude-output-input-ratio claude-cache-and-batch-pricing">H</span>'+
+    (opus>pro?' <b style="color:var(--warn)">Metered Opus 5.5 now exceeds the subscription \u2014 it took '+m+' meetings per advisor per week, roughly '+Math.round(m/5)+' a working day.</b>':'');
   if(opus>pro)mark('g11')}
 $('adv').addEventListener('input',costUpd);$('mtg').addEventListener('input',costUpd);costUpd();
 
@@ -2940,7 +2963,7 @@ $('adv').addEventListener('input',costUpd);$('mtg').addEventListener('input',cos
 var BROK=COLE.brokerageFunds+COLE.esppValue;
 var TQ=[
  {d:'Investment Planning',t:'From the brokerage export, compute the concentration of the Dunmore stock: '+fmt(COLE.esppShares)+' shares at $'+COLE.esppPrice+' against the $'+fmt(BROK)+' taxable account.',a:0,
-  f:['Correct. One computation, zero judgment: '+fmt(COLE.esppShares)+' shares at $'+COLE.esppPrice+' is $'+fmt(COLE.esppValue)+', which is '+COLE.esppPct+'% of $'+fmt(BROK)+', checkable at a glance, and either the tool got that or it did not.','This works and you are paying five to ten times what the task needs. There is no judgment in the computation: '+fmt(COLE.esppShares)+' shares at $'+COLE.esppPrice+' is $'+fmt(COLE.esppValue)+', which is '+COLE.esppPct+'% of $'+fmt(BROK)+', and you can verify it with a calculator.']},
+  f:['Correct. One computation, zero judgment: '+fmt(COLE.esppShares)+' shares at $'+COLE.esppPrice+' is $'+fmt(COLE.esppValue)+', which is '+COLE.esppPct+'% of $'+fmt(BROK)+', checkable at a glance, and either the tool got that or it did not.','This works and you are paying twenty to a hundred times what the task needs. There is no judgment in the computation: '+fmt(COLE.esppShares)+' shares at $'+COLE.esppPrice+' is $'+fmt(COLE.esppValue)+', which is '+COLE.esppPct+'% of $'+fmt(BROK)+', and you can verify it with a calculator.']},
  {d:'General Principles',t:'Draft the confirmation email and agenda for next week\u2019s meeting with Meg and David.',a:1,
   f:['Correct. Templated is not the same as low-stakes: the draft goes out under your name, you answer for every factual detail in it, and the error a cheaper tier misses costs more than the tier saves.','Templated is not the same as low-stakes. The draft goes out under your name, you answer for every factual detail in it, and the error a cheaper tier misses costs more than the tier saves; a mid-tier draft you read before sending is the match.']},
  {d:'Psychology of Financial Planning',t:'Summarise a 90-minute meeting in which Meg said, for the first time, that her mother\u2019s care team expects Ruth to need assisted living within a year, and David pushed back on what it would do to stopping at '+COLE.davidRetireAge+'.',a:1,
@@ -3037,7 +3060,7 @@ var DG=[
  {s:'It gave a confident Medicare premium threshold',c:'The scoring rule plus stale training data. Abstention scores like a wrong answer, and years of annual thresholds sit in training in near-identical sentences with no signal about which is current.',f:'Treat every rate, date and threshold as unverified. Published figures come from the publisher, not the model.'},
  {s:'It reconciled two documents and missed a conflict',c:'An exact reconciliation across a long document. There is no loop in the machine, so it cannot hold a running comparison \u2014 it approximates one from local pattern and the approximation decays with length. The 2024 Roth memo against the 2026 plan amendment is exactly this shape.',f:'Never delegate an exact reconciliation. Extract the provisions with the tool, then compare them yourself or in a spreadsheet.'},
  {s:'It summarised a tense meeting as if everyone agreed',c:'Fluency bias. Coherent narrative is what the objective rewards, and disagreement makes a summary less coherent, so it is smoothed away \u2014 which is how David\u2019s reaction to the cost of Ruth\u2019s care disappears from a meeting note.',f:'Ask for points of disagreement and unresolved items as a separate output. Never accept a single-narrative summary of a multi-party meeting.'},
- {s:'The bill was far higher than the pricing page implied',c:'Cost is per-token price times tokens consumed. Verbose output, reasoning tokens and long context all move the second number. A tokenizer change moves it too.',f:'Measure tokens on your actual workload. Enable prompt caching where a system prompt repeats \u2014 a cache hit costs 10% of input.'}];
+ {s:'The bill was far higher than the pricing page implied',c:'Cost is per-token price times tokens consumed, and output tokens cost five times input tokens on every listed Claude model. <span class="conf h" data-src="src-pricing" data-fact="claude-output-input-ratio">H</span> Verbose output, reasoning tokens and long context all move the second number. A tokenizer change moves it too.',f:'Measure tokens on your actual workload. Enable prompt caching where a system prompt repeats \u2014 a cache read costs 0.1x base input at most. <span class="conf h" data-src="src-pricing" data-fact="claude-cache-and-batch-pricing">H</span>'}];
 (function(){
   var seen={};
   $('diagBtns').innerHTML=DG.map(function(d,i){return '<button class="btn sel mini" data-d="'+i+'">'+d.s+'</button>'}).join('');
@@ -3051,11 +3074,12 @@ var DG=[
 
 
 /* ===== 10b COLE DOCUMENT PASS ===== */
-var DPT=[['Haiku 4.5',1,5],['Sonnet 5',2,10],['Opus 5',5,25],['Fable 5',10,50]];
-/* One shared constant for the pass: 60,000 words of the four documents at 0.75
-   words per token is 80,000 tokens in; the issues memo is 8,000 tokens out.
+var DPT=[['Haiku 5.5',0.10,0.50],['Sonnet 5.5',2,10],['Opus 5.5',4,20],['Fable 5.1',10,50]];
+/* One shared constant for the pass: 60,000 words of the four documents at about
+   1.8 tokens per word (555,000 words per million tokens on the current tokenizer,
+   FACTS claude-context-window) is 108,000 tokens in; the issues memo is 11,000 tokens out.
    The s5 table row, the s11 prose and this panel all state the same pair. */
-var DPIN=80000,DPOUT=8000;
+var DPIN=108000,DPOUT=11000;
 var dpSeen={};
 function dpDraw(k){
   var t=DPT[k],cin=DPIN/1e6*t[1],cout=DPOUT/1e6*t[2],tot=cin+cout;
@@ -3067,8 +3091,8 @@ function dpDraw(k){
   var cheapest=DPIN/1e6*DPT[0][1]+DPOUT/1e6*DPT[0][2];
   $('dpOut').className='readout on';
   $('dpOut').innerHTML='<span class="cz">'+t[0]+'</span>Reading the plan description, the 2024 memo, the 2009 beneficiary form and the residency agreement together and writing an issues memo costs <b>$'+tot.toFixed(2)+'</b> on this tier'+
-    (k===0?'. That is the floor.':' \u2014 '+(tot/cheapest).toFixed(1)+'\u00d7 the cheapest tier, and still under two dollars.')+
-    ' With prompt caching the input side drops to a tenth on every pass after the first, because those four documents do not change between questions.';
+    (k===0?'. That is the floor, at the up-to-100K-token rate; a prompt over 100K tokens is priced higher.':' \u2014 '+(tot/cheapest).toFixed(1)+'\u00d7 the cheapest tier, and still under two dollars.')+
+    ' With prompt caching the input side drops to 0.1x base input or less on every pass after the first (0.05x on Opus 5.5 and Sonnet 5.5, 0.025x on Fable 5.1), because those four documents do not change between questions. <span class="conf h" data-src="src-pricing" data-fact="claude-cache-and-batch-pricing">H</span>';
   dpSeen[k]=1;if(Object.keys(dpSeen).length>=4)mark('g11');
 }
 all('[data-dp]').forEach(function(b){b.onclick=function(){

@@ -1268,13 +1268,13 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>Appendix A1 &middot; Before you buy a retrieval tool</span><span class="mins">14 min</span></div>
   <h2>Do You Need Retrieval at All?</h2>
 
-  <p class="big">Most planning files fit in one prompt. Anthropic's own guidance: under roughly 200,000 tokens, about 500 pages, put the whole set of documents in and skip retrieval.</p>
+  <p class="big">Most planning files fit in one prompt. Anthropic's September 2024 guidance: under roughly 200,000 tokens, about 500 pages, put the whole set of documents in and skip retrieval.</p>
 
   <ul class="pts">
     <li><b>Fits in one prompt.</b> Paste or attach the whole set. Everything the model needs is in front of it, and nothing has to be found first.</li>
     <li><b>Needs a retrieval tool.</b> A firm's whole archive or years of email is far bigger than one prompt. Then the finding step exists, and so do its failures (&sect;04).</li>
     <li><b>Either way.</b> Tell it to answer only from the documents and to say so when the answer is not in them.</li>
-    <li><b>The context window.</b> The model's working space for one exchange: everything you attach plus the whole conversation so far, and all of it counts <span class="conf h" data-src="src-context-windows">H</span>.</li>
+    <li><b>The context window.</b> All the text the model can reference when it writes a response, the response itself included: the system prompt, every message and document in the request, the tool definitions and the reply. It is not the box you type in, and all of it counts <span class="conf h" data-src="src-context-windows" data-fact="context-window-definition">H</span>. On the current Claude models it holds up to 1M tokens, so the 200,000-token line above is a rule of thumb from 2024, not the limit <span class="conf h" data-src="src-models" data-fact="claude-context-window">H</span>.</li>
   </ul>
 
   <div class="panel" data-task="t-sRag" data-comp="two-bucket-sorter">
@@ -1289,7 +1289,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div id="ragKey" class="mpanel keyhide" style="display:none"></div>
   </div>
 
-  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em>: the roughly 200,000-token, about 500-page threshold below which the whole corpus goes in the prompt <span class="conf h" data-src="src-anthropic-ctx">H</span>. Anthropic, <em>Context windows</em>, Claude Platform Docs, fetched 2026-09-13: everything in the request counts toward the window, the conversation so far included <span class="conf h" data-src="src-context-windows">H</span>. The six sets are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">Anthropic (19 Sep 2024), <em>Contextual Retrieval in AI Systems</em>: the roughly 200,000-token, about 500-page threshold below which the whole corpus goes in the prompt <span class="conf h" data-src="src-anthropic-ctx">H</span>. Anthropic, <em>Context windows</em>, Claude Platform Docs, fetched 2026-10-11: the window is all the text the model can reference when generating a response, the response itself included, and everything in the request counts toward it, the conversation so far included <span class="conf h" data-src="src-context-windows" data-fact="context-window-definition">H</span>. Anthropic, <em>Models overview</em>, Claude Platform Docs, fetched 2026-10-11: 1M tokens of context on the current models <span class="conf h" data-src="src-models" data-fact="claude-context-window">H</span>. The six sets are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six sets, then say which one is closest to the files you work with.</div></div>
 
@@ -1386,7 +1386,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div id="chainOut" class="mpanel"><span class="hd">The stage</span><span class="nil">Click a stage.</span></div>
   </div>
 
-  <p class="src">The five stages are the Session 3 syllabus sequence. Kitces (15 Jan 2025) documents advisor tools spanning the cycle: summary, CRM capture, tasks, recap, next agenda <span class="conf h" data-src="src-kitces-notetakers">H</span>. The failures are synthetic <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">The five stages are the Session 3 syllabus sequence. Kitces (15 Jan 2025) documents advisor tools spanning the cycle: summary, CRM capture, tasks, recap, next agenda <span class="conf m" data-src="src-kitces-notetakers">M</span>. The failures are synthetic <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="g7"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Click every stage. Which check do you already do?</div></div>
 
@@ -1431,7 +1431,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <li><b>Before.</b> Get consent. Add the tool to the call or upload the recording after. Say what the summary must contain.</li>
     <li><b>During.</b> Talk. The tool listens and does not need managing.</li>
     <li><b>After.</b> Read the summary against the transcript before it reaches the client or the file. Then send the recap and log the note.</li>
-    <li><b>Why it sells.</b> The average advisor spends more than an hour on prep and follow-up per hour in client meetings <span class="conf h" data-src="src-kitces-notetakers">H</span>. The tool is sold against that hour.</li>
+    <li><b>Why it sells.</b> Without a note-taker, a client meeting takes about an hour to prepare and about an hour to follow up <span class="conf m" data-src="src-kitces-notetakers" data-fact="kitces-notetakers-2025">M</span>. The tool is sold against those two hours.</li>
   </ul>
 
   <div class="panel" data-task="t-s10" data-comp="spoiler-reveal">
@@ -1460,7 +1460,7 @@ Do not record account numbers, dates of birth or identity checks.
 If a heading has nothing under it, write "none".</pre>
   <div class="row"><button class="btn" id="ntCopy">Copy the instruction</button><span id="ntCopyMsg" class="dim" style="font-family:'JetBrains Mono',monospace;font-size:12px"></span></div>
 
-  <p class="src">Kitces.com (15 Jan 2025), <em>Best AI Notetakers For Financial Advisor Meetings</em>, on Kitces Research on Advisor Productivity (autumn 2024): more than an hour of prep and follow-up per meeting hour <span class="conf h" data-src="src-kitces-notetakers">H</span>. The excerpt, the stage outputs and the instruction are written for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">Kitces.com (15 Jan 2025), <em>Best AI Notetakers For Financial Advisor Meetings</em>, on Kitces Research on Advisor Productivity (autumn 2024): about an hour to prepare and an hour to follow up per client meeting without a note-taker <span class="conf m" data-src="src-kitces-notetakers" data-fact="kitces-notetakers-2025">M</span>. The excerpt, the stage outputs and the instruction are written for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="g8"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open all four stages, then copy the instruction and keep it for whichever tool you use.</div></div>
 
@@ -1512,7 +1512,7 @@ If a heading has nothing under it, write "none".</pre>
     <figure id="figSlope" class="keyhide" style="display:none"></figure>
   </div>
 
-  <p class="src">Kitces.com (15 Jan 2025): Zoom AI Companion first in adoption and last in satisfaction; industry-specific tools lead satisfaction; $60 to $80 a month <span class="conf h" data-src="src-kitces-notetakers">H</span>. The slopegraph plots ranks, not scores <span class="conf m" data-src="src-kitces-notetakers">M, rank order published, scores not</span>.</p>
+  <p class="src">Kitces.com (15 Jan 2025): Zoom AI Companion first in adoption and last in satisfaction; industry-specific tools lead satisfaction; $60 to $80 a month <span class="conf m" data-src="src-kitces-notetakers" data-fact="kitces-notetakers-2025">M</span>. The slopegraph plots ranks, not scores <span class="conf m" data-src="src-kitces-notetakers">M, rank order published, scores not</span>.</p>
 
   <div class="check" data-gate="ga3"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Name the tool you use, if any, and where you would have placed it.</div></div>
 
@@ -1577,7 +1577,7 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
     </ol>
   </div>
 
-  <p class="src">The three prompts, the summary and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>. The summary is &sect;07's categorisation output. The two example outputs are claude-sonnet-5-5's answers to prompts 1 and 2 on it, captured 2026-10-12 through the Claude Code CLI and shown verbatim <span class="conf l" data-src="src-case">L</span>. The pattern holds wherever you run it.</p>
+  <p class="src">The three prompts, the summary and the six tasks are written for this lesson <span class="conf l" data-src="src-case">L</span>. The summary is &sect;07's categorisation output. The two example outputs are claude-sonnet-5-5's answers to prompts 1 and 2 on it, captured 2026-10-12 through the Claude Code CLI and shown verbatim <span class="conf l" data-src="src-case">L</span>; claude-sonnet-5-5 is a current model id <span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>. The pattern holds wherever you run it.</p>
 
   <div class="check" data-gate="g9b"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Place all six tasks, then run the silent run. Synthetic material only.</div></div>
 
@@ -1660,10 +1660,10 @@ Add nothing that is not in the summary. Where the summary says "none", say so.</
 
   <div class="panel" style="border-color:var(--gold);background:var(--gold-bg)">
     <span class="plab">Two more, owed for a different reason</span>
-    <p style="margin:0">Your firm also owes a <b>written incident response programme</b>, with customer notification no later than 30 days after the firm becomes aware of an incident, under Regulation S-P as amended in 2024 <span class="conf h" data-src="src-regsp">H</span>, and the <b>privacy notice</b> the same regulation requires, which Session 4 covers. Neither is a note-taker rule. Both apply whether or not you ever switch one on, and a note-taker only widens what an incident would reach. Session 4 runs the tabletop.</p>
+    <p style="margin:0">Your firm also owes a <b>written incident response programme</b> under Regulation S-P as amended in 2024 <span class="conf h" data-src="src-regsp">H</span>. A customer must be told as soon as practicable, and no later than 30 days after the firm becomes aware of unauthorized access to or use of customer information, and a service provider must tell the firm within 72 hours. Both compliance dates have passed, 3 December 2025 for larger firms and 3 June 2026 for smaller ones, so the rule is in force for every covered firm <span class="conf m" data-src="src-regsp-guide" data-fact="reg-sp-compliance">M</span>. The same regulation requires the <b>privacy notice</b>, which Session 4 covers. Neither is a note-taker rule. Both apply whether or not you ever switch one on, and a note-taker only widens what an incident would reach. Session 4 runs the tabletop.</p>
   </div>
 
-  <p class="src">Iskowitz, C. (29 Jul 2025), <em>AI Notetakers and Compliance in Wealth Management</em>, WealthTech Today, assigned reading <span class="conf m" data-src="src-iskowitz">M, trade publication</span>: the three things examiners are reported to ask for, the human-review and edit-trail practices, the vendor, retention and high-stakes-meeting rules, and the ACA Group 2024 figure of 12%. The article relays the SEC and FINRA positions rather than quoting the rule text, and no rule text is quoted here. Regulation S-P, 2024 amendments: the written incident response programme and the 30-day notification <span class="conf h" data-src="src-regsp">H</span>, taught in Session 4.</p>
+  <p class="src">Iskowitz, C. (29 Jul 2025), <em>AI Notetakers and Compliance in Wealth Management</em>, WealthTech Today, assigned reading <span class="conf m" data-src="src-iskowitz">M, trade publication</span>: the three things examiners are reported to ask for, the human-review and edit-trail practices, the vendor, retention and high-stakes-meeting rules, and the ACA Group 2024 figure of 12%. The article relays the SEC and FINRA positions rather than quoting the rule text, and no rule text is quoted here. Regulation S-P, 2024 amendments: the written incident response programme, the 30-day customer notice and the 72-hour service-provider notice <span class="conf m" data-src="src-regsp-guide" data-fact="reg-sp-compliance">M</span>, taught in Session 4. No SEC or FINRA rule names a document called an AI use policy; the expectation sits in the compliance policies that Advisers Act Rule 206(4)-7 requires and in the examination priorities, which state that they carry no legal force of their own <span class="conf m" data-src="src-secpri" data-fact="ai-policy-requirement sec-exam-priorities-status">M</span>.</p>
 
   <div class="check" data-gate="g9c"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open all six pages. Say which one your firm could produce now.</div></div>
 
@@ -1787,10 +1787,10 @@ then a list of every element where my answer was thin.</pre>
   <div class="cards">
     <div class="card gold"><span class="num">Assignment</span><h4>AI usage policy for your firm</h4><p>Three cited sources minimum, at least one scholarly. Every source you need has appeared in this course.</p></div>
     <div class="card warn"><span class="num">Part 1</span><h4>Final Project Part 1, the handoff package</h4><p>One email, body "See attached"; everything needed is in the attachments. Seven-element checklist: Session 2 &sect;09. Most often missing: the baseline time (estimated if never timed) against the AI-assisted time, and the data-handling note. A classmate runs it cold in Session 4.</p></div>
-    <div class="card"><span class="num">Reading for Session 4</span><h4>Daly (2026) &middot; SEC FY2026 Exam Priorities &sect;VII &middot; Journal of Accountancy (2025)</h4><p>The regulatory frame and the audit-trail prompt technique.</p></div>
+    <div class="card"><span class="num">Reading for Session 4</span><h4>Daly (2026) &middot; SEC FY2026 Exam Priorities &sect;VII &middot; Journal of Accountancy (2025)</h4><p>The regulatory frame, in which the examination priorities carry no legal force and the rules behind them do, and the audit-trail prompt technique.</p></div>
   </div>
 
-  <p class="src">The checklist is built for this lesson from the sections above <span class="conf l" data-src="src-case">L</span>. The assignment terms are the course's, stated here in one form.</p>
+  <p class="src">The checklist is built for this lesson from the sections above <span class="conf l" data-src="src-case">L</span>. The assignment terms are the course's, stated here in one form. The SEC's FY2026 examination priorities, released 17 November 2025, state that they have &ldquo;no legal force or effect&rdquo;; the rules behind them do bind <span class="conf m" data-src="src-secpri" data-fact="sec-exam-priorities-status">M</span>.</p>
 
   <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Tick the list, copy it out, name the one gap you will close first.</div></div>
 
@@ -1832,16 +1832,20 @@ then a list of every element where my answer was thin.</pre>
   <h4 style="margin:26px 0 14px">Sources cited in this session</h4>
   <ul>
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 956bf2c5a65321cbb3f04c4aacf653ff1c29a10e4125adeb1734ac6bcc063076 -->
-      <li id="src-context-windows">Anthropic. <em>Context windows</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">platform.claude.com</a> Retrieved 2026, September 13. Used for: what the context window contains, and that everything attached and the conversation so far counts, in Appendix A1. <span class="conf h" data-src="src-context-windows">H</span></li>
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 1142a777f4f9aef7897a67f509ca9fd65758a7b459ecc63940e88af49262d1d2 -->
+      <li id="src-context-windows">Anthropic. <em>Context windows</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">platform.claude.com</a> Retrieved 2026, October 11. Used for: what the context window is, all the text the model can reference when generating a response, the response itself included, and that everything attached and the conversation so far counts, in Appendix A1. <span class="conf h" data-src="src-context-windows">H</span></li>
       <li id="src-anthropic-ctx">Anthropic. (2024, September 19). <em>Contextual retrieval in AI systems</em>. Anthropic Engineering. <a href="https://www.anthropic.com/engineering/contextual-retrieval">anthropic.com/engineering/contextual-retrieval</a> Used for: the measured retrieval failure rates, the 67% reduction, and the 200,000-token boundary condition. <span class="conf h" data-src="src-anthropic-ctx">H</span></li>
+      <li id="src-models">Anthropic. <em>Models overview</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/models/overview">platform.claude.com/docs/en/models/overview</a> Retrieved 2026, October 11. Used for: the 1M-token context window of the current Claude models, beside the 200,000-token rule of thumb from 2024 (Appendix A1). <span class="conf h" data-src="src-models">H</span></li>
+      <li id="src-anthropic-deprecations">Anthropic. (2026, September 30). <em>Model deprecations</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">platform.claude.com/docs/en/about-claude/model-deprecations</a> Retrieved 2026, October 11. Other sessions cite other retrievals of this page. Used for: that claude-sonnet-5-5, the model id on the two captured example outputs, is a current Claude model id (§08). <span class="conf h" data-src="src-anthropic-deprecations">H</span></li>
       <li id="src-iskowitz">Iskowitz, C. (2025, July 29). <em>AI notetakers and compliance in wealth management: What firms need to know</em>. WealthTech Today. Used for: the six documents in §09b, the 12% figure behind its prediction commit, and the compliance framing in §09. <span class="conf m" data-src="src-iskowitz">M</span></li>
-      <li id="src-kitces-notetakers">Kitces.com. (2025, January 15). <em>Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends</em>. Kitces.com. <a href="https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/">kitces.com</a> Used for: the prep-and-follow-up ratio (§07), the whole-cycle tooling (§06), and the adoption-against-satisfaction ranking with the $60 to $80 pricing (Appendix C3). <span class="conf h" data-src="src-kitces-notetakers">H</span></li>
+      <li id="src-kitces-notetakers">Kitces.com. (2025, January 15). <em>Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends</em>. Kitces.com. <a href="https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/">kitces.com</a> Used for: the prep-and-follow-up ratio (§07), the whole-cycle tooling (§06), and the adoption-against-satisfaction ranking with the $60 to $80 pricing (Appendix C3). <span class="conf m" data-src="src-kitces-notetakers">M</span></li>
       <li id="src-lee-cognitive">Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., &amp; Wilson, N. (2025, April). <em>The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers</em>. Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI '25), ACM, Yokohama, 26 April to 1 May 2025, 23 pages; doi 10.1145/3706598.3713778. Author's version hosted by Microsoft Research. <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf">microsoft.com</a> Retrieved 2026, October 2. Used for: the title claim of self-reported reductions in cognitive effort, in the Appendix C4 discussion. <span class="conf h" data-src="src-lee-cognitive">H</span></li>
       <li id="src-magesh">Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., &amp; Ho, D. E. (2025). <em>Hallucination-free? Assessing the reliability of leading AI legal research tools</em>. Journal of Empirical Legal Studies 22(2), 216. <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">reglab.stanford.edu</a> Used for: the >17% / ~33% / 43% rates, the claim that tools made statements unsupported by the sources they cited, and the cross-study comparability caveat. <span class="conf h" data-src="src-magesh">H</span></li>
       <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: the retrieval corpus, the meeting excerpt and the note-taker stage outputs written from it, the consent items, the said-or-recommended lines, the six review-update tasks and the three prompts in §08 with the summary they run on, the checklist, the illustrative meaning-space map whose coordinates were assigned rather than learned, and the six summary lines in Appendix A3, two of which are written wrong on purpose and labelled so on the page. Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
       <li id="src-wiretap">State of California; United States Congress. <em>Cal. Penal Code § 637.2(a)(1), (c); 18 U.S.C. § 2511</em>. Statutory text. Used for: the federal one-party consent floor in §09. <span class="conf h" data-src="src-wiretap">H</span></li>
       <li id="src-regsp">U.S. Securities and Exchange Commission. (2024). <em>Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments</em>. SEC, adopting release. Used for: the privacy notice, the written incident response programme and the 30-day notification, named in §09b as obligations owed apart from any note-taker and taught in Session 4. <span class="conf h" data-src="src-regsp">H</span></li>
+      <li id="src-regsp-guide">U.S. Securities and Exchange Commission. <em>Regulation S-P: small entity compliance guide</em>. SEC. <a href="https://www.sec.gov/files/rules/final/2024/regulation-s-p-small-entity-compliance-guide.pdf">sec.gov</a> Retrieved 2026, October 11. Used for: the compliance dates, the 30-day customer notice and the 72-hour service-provider notice behind the written incident response programme (§09b). <span class="conf m" data-src="src-regsp-guide">M</span></li>
+      <li id="src-secpri">U.S. Securities and Exchange Commission, Division of Examinations. (2025, November 17). <em>Examination priorities: Fiscal year 2026, §VII</em>. SEC. <a href="https://www.sec.gov/files/2026-exam-priorities.pdf">sec.gov/files/2026-exam-priorities.pdf</a> Retrieved 2026, October 11. Used for: that the fiscal 2026 examination priorities, released 17 November 2025, state that they have no legal force or effect, and that an AI use policy is an examination expectation named in no rule (§09b, §11). <span class="conf h" data-src="src-secpri">H</span></li>
       <li id="src-wolfram">Wolfram, S. (2023, February 14). <em>What is ChatGPT doing … and why does it work?</em> Stephen Wolfram Writings. <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">writings.stephenwolfram.com</a> Used for: assigned reading; "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion" in §01 and §02 (the definition, the five-billion-word construction, the 768 and 12,288 lengths, alligator and crocodile); "Beyond Basic Training" in §05 (the tell-it-once observation and its limit). <span class="conf h" data-src="src-wolfram">H</span></li>
 <!-- SOURCES:END -->
   </ul>
@@ -2011,7 +2015,7 @@ var BRIDGE=[
  var DOCS=[
   {t:'AI use policy',
    s:'Which tools are approved, for which meetings, and who may switch one on.',
-   d:'Examiners are reported to ask for written policies governing AI use in client communications and in the advice process. "We use a note-taker" is not a policy; a policy names the tool, the meetings it is allowed in, and the person who decides.',
+   d:'Examiners are reported to ask for written policies governing AI use in client communications and in the advice process. No SEC or FINRA rule names a document called an AI use policy; the expectation comes from the compliance policies the Advisers Act requires and from examination practice. "We use a note-taker" is not a policy; a policy names the tool, the meetings it is allowed in, and the person who decides.',
    miss:'Nothing to produce when asked what governs the tool.'},
   {t:'Review before the record',
    s:'A named person reads every summary against the transcript before it reaches the CRM or the client.',
@@ -2495,7 +2499,7 @@ function showSlope(){
   s+='<text x="'+(RX+12)+'" y="'+n1(yy(d.s)+4)+'" class="chartval">'+d.s+'. '+esc(d.n)+'</text>';
  });
  s+='</svg>';
- F.innerHTML=s+'<figcaption>Endpoints are published: Kitces reports Zoom\u2019s AI Companion as first in adoption and last in advisor satisfaction, with industry-specific tools leading satisfaction <span class="conf h" data-src="src-kitces-notetakers">H</span>. The two middle positions are ordered consistently with that statement but are not individually published <span class="conf m" data-src="src-kitces-notetakers">M, rank order inferred</span>.</figcaption>';
+ F.innerHTML=s+'<figcaption>Endpoints are published: Kitces reports Zoom\u2019s AI Companion as first in adoption and last in advisor satisfaction, with industry-specific tools leading satisfaction <span class="conf m" data-src="src-kitces-notetakers" data-fact="kitces-notetakers-2025">M</span>. The two middle positions are ordered consistently with that statement but are not individually published <span class="conf m" data-src="src-kitces-notetakers">M, rank order inferred</span>.</figcaption>';
  F.style.display='block';
 }
 
@@ -2534,7 +2538,7 @@ var TUNE=[
  {q:'On Tuesday David files a new beneficiary form for the rollover IRA and the 2009 form is replaced in the file. Which assistant gives the new beneficiary on Wednesday with no engineering work?',
   opts:[{k:'gr',t:'A grounded assistant that reads the file each time'},{k:'ft',t:'A model fine-tuned on the firm\u2019s documents'},{k:'gen',t:'A general model answering from what it was trained on'}],
   a:'gr',
-  fb:{gr:'Correct. Replace the form in the file and the next answer reads the replacement, and it can point at the page it came from. Anthropic’s own guidance: under about 200,000 tokens, roughly 500 pages, put the whole file in the prompt rather than use a retrieval tool. The Cole set is ten documents.',
+  fb:{gr:'Correct. Replace the form in the file and the next answer reads the replacement, and it can point at the page it came from. Anthropic’s September 2024 guidance: under about 200,000 tokens, roughly 500 pages, put the whole file in the prompt rather than use a retrieval tool. The Cole set is ten documents.',
       ft:'No. The old name stays inside the model until it is retrained, which is a project, not an edit. And when it answers, it cannot cite the document the name came from, because the name is no longer in a document.',
       gen:'No. It was never given the form at all, old or new. Anything it says about the beneficiary is a guess dressed as an answer, and the only way to find out is after it reaches David.'}}
 ];

@@ -198,24 +198,42 @@ Scheduled 157 of 180 (§09b's five minutes come out of the Q&A reserve, 20 to 15
 
 Two aloud. Both are things a CFP could act on. Say each with a confidence label.
 
-1. **Output tokens cost five times input, not twice.** Haiku 1 and 5, Sonnet 2 and 10, Opus 5 and
-   25, Fable 10 and 50, per million. The cost-per-task conclusion stands; the multiple was wrong.
+1. **Output tokens cost five times input, not twice,** on every listed Claude model
+   (FACTS:claude-output-input-ratio). Per million tokens, input and output: Haiku 5.5 $0.10 and
+   $0.50 for prompts up to 100K tokens ($0.50 and $2.50 above that), Sonnet 5.5 $2 and $10, Opus 5.5
+   $4 and $20, Fable 5.1 $10 and $50 (FACTS:claude-api-price-haiku-5-5,
+   FACTS:claude-api-price-sonnet-5-5, FACTS:claude-api-price-opus-5-5,
+   FACTS:claude-api-price-fable-5-1). The cost-per-task conclusion stands; the multiple was wrong.
 2. **A missed portability election is not always permanently lost.** For an estate with no filing
    requirement under §6018(a), Rev. Proc. 2022-32 gives a simplified election up to the fifth
    anniversary of death, on a complete Form 706 marked "FILED PURSUANT TO REV. PROC. 2022-32 TO
-   ELECT PORTABILITY UNDER § 2010(c)(5)(A)". It supersedes Rev. Proc. 2017-34's two-year window.
+   ELECT PORTABILITY UNDER § 2010(c)(5)(A)". It supersedes Rev. Proc. 2017-34's two-year window. Later
+   relief runs only through a private letter ruling under Treas. Reg. 301.9100-3, and the simplified
+   route was never open to an estate that had to file (FACTS:portability-late-election, M).
 
 **The hook for item 2, which makes it concrete.** Session 2's prompt-critique item asks whether a
-client can still elect portability for a spouse who died in 2021. Its answer key names the three
-facts the prompt omits: estate size, whether a return was filed, whether the estate was under the
-filing threshold. Those three are exactly the Rev. Proc. 2022-32 predicate, and a 2021 death is
-inside the five-year window. Tell them to reopen the item.
+client can still elect portability for a spouse who died in 2021. Its answer key now names four
+facts the prompt omits: the exact date of death, estate size, whether a return was filed, whether
+the estate was under the filing threshold. Those four are the Rev. Proc. 2022-32 predicate
+(FACTS:portability-late-election). The date of death sets the window. The fifth anniversary of a
+2021 death falls during 2026, so for any session held after 2026 no 2021 death is still inside it:
+the simplified route has closed, and later relief runs only through a private letter ruling under
+Treas. Reg. 301.9100-3. The v5 Cole file dates Dorothy Cole's death 9 March 2021 with an as-of date
+of 2026-12-31, so her fifth anniversary passed on 9 March 2026. She was David's mother, not a spouse,
+and no Cole estate is in view (CASE.md §I), so do not apply the window to the Coles. Tell them to
+reopen the item.
 
-**Do not read Session 4's watermark appendix aloud to correct the Session 1 watermark claim.** Three
-sources disagree: the room was told the watermark traces to an account; Session 4's page says Claude
-output is not watermarked at all and marks itself unconfirmed; the note on that same line reports
-two search passes finding SynthID applied since August. Until you have read Anthropic's own page
-yourself, say only the narrow true thing: **the watermark does not identify an account.** Then stop.
+**Do not read Session 4's watermark appendix aloud to correct the Session 1 watermark claim.** Say only
+the narrow true thing: **the watermark does not identify an account.** Then stop. For your own
+reading, the three records say this. Claude text output carries a statistical watermark (announced
+2026-08-14, for future and supported models) that does not identify individual users and adds no
+hidden characters, and supported files (.png, .jpg, .svg) carry a C2PA content credential with no
+identifying information (FACTS:claude-text-watermark, H); do not say every Claude text output is
+watermarked today, because the support article keeps a per-model table with a transition period.
+Google SynthID embeds imperceptible watermarks in AI-generated images, video, audio and Gemini text
+(FACTS:google-synthid, M). OpenAI images carry C2PA content credentials and a SynthID watermark,
+and text watermarking is EU-only for ChatGPT and Codex and opt-in for the API
+(FACTS:openai-provenance, M).
 
 The rest of the Session 1 backlog goes out in writing, not aloud.
 
@@ -453,7 +471,8 @@ honest answer to be one or none, and say that the honest answer is the common on
 
 The gold panel is the Session 4 pointer, not a topic. Read the two items, say they are owed whether
 or not anyone buys a note-taker, and move on; D5's tabletop next week is where the 30-day clock gets
-run. Do not teach Regulation S-P here.
+run (customer notice as soon as practicable and no later than 30 days after the firm becomes
+aware, FACTS:reg-sp-compliance). Do not teach Regulation S-P here.
 
 Shift+U does not open §09b's poll figure or its six pages; click a letter, then click pages.
 

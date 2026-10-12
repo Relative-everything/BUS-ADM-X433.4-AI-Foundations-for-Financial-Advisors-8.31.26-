@@ -33,9 +33,10 @@ around it:
 - **§03 has a ladder under the map: Personal or Firm Account.** Six rungs (training off, retention
   in writing, a contract the firm signs, an audit report on request, SSO and audit logs, breach
   notice in hours) light on the side that has them; the client-file door opens only on the firm
-  side and only after all six. Price tags are today's: Pro $20 a month; Team from $20 a seat;
-  Enterprise $20 a seat plus API usage; API from $1 in and $5 out per million tokens. **Climb all**
-  runs it. A Plan C pointer under it opens the Live API box.
+  side and only after all six. Price tags follow the records: Pro $20 a month ($17 billed annually); Team Standard $25 a seat
+  ($20 billed annually); Enterprise $20 a seat billed annually plus usage (FACTS:claude-plans); API
+  from $0.10 in and $0.50 out per million tokens, Haiku 5.5, for prompts up to 100K tokens
+  (FACTS:claude-api-price-haiku-5-5). **Climb all** runs it. A Plan C pointer under it opens the Live API box.
 - **§04's copy button drafts a real email now**, and a second beat, **What the Clause Looks Like**,
   shows each lock as a contract sentence: Anthropic's own words where they exist (no training,
   Section B; breach notice within 48 hours, DPA G.1; audit reports on request, DPA F.1), labelled
@@ -79,12 +80,14 @@ sections, minutes, gates and polls. What you will notice:
 
 - **§03 has a vendor row above the plans: Claude, ChatGPT, Copilot, Gemini.** Plan A at each
   opens with that vendor's own switch on (Training on your chats; Improve the model for everyone;
-  Model training on text; Keep Activity) and the calendar shows that vendor's number: five years,
-  until you delete, 18 months (Copilot), 18 months with 18 dashed squares for reviewed chats
-  (Gemini). Off: 30 days, still until you delete, still 18 months, 72 hours. Plans B and C at the
+  Model training on text; Keep Activity), a starting position for the demonstration and not a claim
+  about what each vendor ships, and the calendar shows that vendor's number: up to five years at
+  Claude with the training setting on, until you delete, 18 months (Copilot), 18 months with 18
+  dashed squares for reviewed chats (Gemini). Off: 30 days, still until you delete, still 18
+  months, 72 hours (Claude's figures: FACTS:claude-consumer-retention). Plans B and C at the
   three other vendors draw the calendar as dashed squares: "in the contract", which §04 asks for.
-  Only Claude's figures are chipped H; the other three vendors' pages could not be opened and
-  their figures are M, from search summaries. See Verify.
+  Every vendor figure is chipped M: Claude's because privacy.claude.com could not be read from the
+  build, and the other three vendors' because their pages could not be opened. See Verify.
 - **§03's six places are six leaks now.** Each card carries its syllabus word (the default, logs,
   memory, caches, connectors, features) and opening it names the incident: DeepSeek's open
   database, shared ChatGPT chats in Google, EchoLeak, the Meta AI feed. The copy button copies the
@@ -110,8 +113,10 @@ room works. What you will notice:
 - **The cold open's prompts changed slightly.** B now asks with a question mark about "someone",
   and C opens with its request, so every check the page marks is really there or really missing:
   A 3, B 1, C 4, D 5. D still leads and is still the one you could not paste in.
-- **§03 opens on the consumer default.** Pick A and sixty rust squares fill the calendar (five
-  years); flip the switch off and one square is left (30 days).
+- **§03 opens with the training switch on.** Pick A and sixty rust squares fill the calendar (up
+  to five years, the retention with the training setting on); flip the switch off and one square is
+  left (30 days) (FACTS:claude-consumer-retention). Do not say which way the switch ships: that
+  record holds the default state as a gap.
 - **The Shift+U hint is hidden until you press Shift+U.** The shortcut works as before; switching
   it off now keeps any answer key the room had already earned.
 - **On a phone the Case facts button sits bottom right**, not top right.
@@ -141,9 +146,12 @@ The page was rebuilt whole. What you will notice:
   are in this sheet under 7:15. The page teaches the handoff test with a sample package, so a
   learner who is not in the room can do it.
 - **The watermark sentence was false and is corrected.** The old D1 said nothing generated with
-  Claude is watermarked. Anthropic's own help-centre page (fetched 2026-09-25) says supported
-  Claude models launched from 2 August 2026 mark their text, all models by 2 December 2026, with
-  detection open only to organisations eligible under EU law.
+  Claude is watermarked. Anthropic's own pages (the 14 August 2026 announcement and the help
+  article, both read in full 2026-10-11) say Claude text from supported models carries a
+  statistical watermark that identifies no user and adds no hidden characters, that models launched
+  from 2 August 2026 support it at launch and earlier ones are being added, and that detection is
+  in private preview for organisations eligible under EU law (FACTS:claude-text-watermark). Do not
+  say every Claude text output is watermarked today.
 - **The model-economics charts left §03.** Session 2 owns cost per task, and the chart data was
   dated 2026-08-13. §03 is now the contract: plan, training switch, retention, and six settings.
 - **§05 is a simulation you can run live**: an inbox, a hidden line in email 3, a prediction first.
@@ -191,14 +199,21 @@ page 3). Scheduled 169 of 180.
 One aloud. Say it with its confidence label.
 
 1. **The watermark does not identify your account.** In Session 1 the room heard that Claude output
-   can be traced to the account that produced it. What Anthropic's own page says (fetched
-   2026-09-25, high confidence): text from supported Claude models launched from 2 August 2026
-   carries an invisible watermark, all models by 2 December 2026, and only organisations eligible
-   under EU law, such as regulators, researchers and the press, can run the detector. A detected
-   mark says the text may have passed through Claude. **Nothing on the page says it identifies an
-   account or a person** (medium confidence: that is a reading of what the page does not say).
-   Read the page yourself before you say it: support.claude.com, "How Claude marks AI-generated
-   content". Appendix D1 carries the detail if anyone asks.
+   can be traced to the account that produced it. What Anthropic's own pages say (read in full
+   2026-10-11, high confidence, FACTS:claude-text-watermark): Claude text from supported models
+   carries a statistical watermark, announced 2026-08-14; it does not identify individual users and
+   adds no hidden characters; and for now only organisations eligible under EU law, such as
+   regulators, researchers and the press, can run the detector. A detected mark says the text may
+   have passed through Claude. **The announcement says the watermark carries no identifying
+   information and cannot be traced to a specific person, organisation or chat**, so this is no
+   longer a reading of what a page leaves out. Do not say every Claude text output is watermarked
+   today: models launched from 2 August 2026 support it at launch, and the help article's per-model
+   table covers earlier models during a transition period. Other vendors, both medium confidence:
+   Google SynthID marks images, video, audio and Gemini text (FACTS:google-synthid); OpenAI images
+   carry C2PA content credentials and a SynthID watermark, and text watermarking is EU-only for
+   ChatGPT and Codex and opt-in for the API (FACTS:openai-provenance). Read the page yourself before
+   you say it: support.claude.com, "How Claude marks AI-generated content". Appendix D1 carries the
+   detail if anyone asks.
 
 ## The five polls. Build them in Zoom before the night
 
@@ -317,21 +332,23 @@ task) are safe to keep. **Copy the clean note**; **Start again** resets it.
 
 ### s3 · §03, 6:46
 Poll 2 first, and click the room's vendor in the row above the plans. At **Claude**, **A · Free,
-Pro, Max**: sixty rust squares, five years, "Your firm signed nothing". Switch off: one square,
-30 days. At **ChatGPT**, A: sixty squares either way, "until you delete"; the switch stops
-training, not keeping. At **Gemini**, A: 18 rust squares and 18 dashed ("36 months if read");
+Pro, Max**: sixty rust squares, up to five years with the training setting on, "Your firm signed
+nothing". Switch off: one square, 30 days (FACTS:claude-consumer-retention; do not say which way the
+switch ships). At **ChatGPT**, A: sixty squares either way, "until you delete"; the switch stops
+training, not keeping (consumer ChatGPT content may be used for training unless the user turns off
+"Improve the model for everyone" or uses the privacy portal, FACTS:openai-consumer-training-default). At **Gemini**, A: 18 rust squares and 18 dashed ("36 months if read");
 off: one square, 72 hours. At **Copilot**, A: 18 squares either way. Click **B** at any vendor:
 the contract page slides to the firm, no switch; at the three other vendors the calendar goes
 dashed, "in the contract". The line to land: "Same model, different contract, at all four." Then
 the six leaks: open **2 · LOGS** (DeepSeek) and **5 · CONNECTORS** (EchoLeak, which §05 runs);
-the other four are theirs after class. Every non-Claude number is M (see Verify).
+the other four are theirs after class. Every number here is M, Claude's included (see Verify).
 
 **2026-09-28, the ladder and Plan C.** Under the leaks: **Personal or Firm Account**. Click rungs
 1 to 6 in order and read the "stops" line for each: 1 training off (personal: only if you flip it;
 firm: by contract); 2 retention in writing (30 days standard on the API, Enterprise sets its own,
 ZDR by arrangement); 3 a contract the firm signs (an officer, never you); 4 an audit report on
 request (SOC 2 Type II, ISO 27001, ISO 42001 held); 5 SSO, admin controls, audit logs; 6 breach
-notice in hours (48 in Anthropic's DPA against the 72 the rule makes you require). The personal
+notice in hours (48 in Anthropic's DPA against the 72 the rule makes you require, FACTS:reg-sp-compliance). The personal
 door never opens; the firm door opens on rung 6. **Climb all** for the animation. Land: "the plan
 buys the contract, not the model." Then **Open the Live API box** (page 2, D of the aid).
 
@@ -340,7 +357,7 @@ Pick **C · Client file**, then answer the locks for the consumer plan you use: 
 business contract, is No, and the file bounces off the shut slot with "✗ Stop". To jump to a
 lock, click it in the safe (the row of numbered tabs is gone). Click **B** and
 **A** for their verdicts, then show the email the open locks wrote. The 72 hours run from the
-vendor becoming aware of a breach. Standard A.14 is on the page at medium confidence (see Verify).
+vendor becoming aware of a breach (FACTS:reg-sp-compliance). Standard A.14 is on the page at medium confidence (see Verify).
 
 **2026-09-28, the email and the clause view.** **Copy the email to the vendor** now copies a real
 email: a subject line, one opener naming Regulation S-P, and Lock n: the question for every open
@@ -358,7 +375,8 @@ it, then **(c)**, the number on file: "I never called you." One sentence on Arup
 minute: the board **Four attacks, one wall** under the call. Click **4 · AI-written malware**: the
 one attack no page can simulate, its gate drawn dashed because it is ordinary hygiene, and the
 Anthropic and Google cases in the readout. Say the SEC line: the FY2026 priorities name AI and
-polymorphic malware among the security controls examiners test (M, see Verify).
+polymorphic malware among the security controls examiners test (M, see Verify), and say what the
+document says of itself: it has "no legal force or effect" (FACTS:sec-exam-priorities-status).
 
 **2026-09-28, how it hid, the fixes' language, the bill, the scale.** After the x-ray: **How it
 hid: pick one**, 1 to 4; 3 (invisible characters) and 4 (in an image) are the ones the room has not
@@ -403,8 +421,12 @@ about its content because the article could not be opened from the build.
 **2026-09-28, the four slots' provenance and the skill.** Under the file: **Why slot 1** to **4**.
 Say the sentence on the page: no rule lists these four; the rules require the record (Rule 204-2
 for advisers, FINRA 4511 and 17a-4 for broker-dealers) and a basis for advice (the fiduciary duty);
-FINRA's 2026 report expects supervision and logging; Rule 206(4)-7 makes the AI policy and its
-annual review a record. Then **As a skill**: the same block as a SKILL.md with a name and a
+FINRA's 2026 report expects supervision and logging; Rule 206(4)-7 makes the firm's compliance
+policies, whatever it has written about AI included, and their annual review a record. No rule
+names an "AI use policy", so call it an examination expectation, not a requirement
+(FACTS:ai-policy-requirement). Say the figure here: 78% of RIAs say their firm has no written AI
+policy (ISS Market Intelligence, n = 466, fielded June 2025; 35% at regional, independent and bank
+firms; FACTS:adoption-iss-policy, M). Then **As a skill**: the same block as a SKILL.md with a name and a
 description, and **Copy the skill**. Mention the skill's name may not contain the vendor's name.
 
 ### sD · D4, 8:25
@@ -427,7 +449,9 @@ outline** into chat. The assignment: two pages, bullets, three cited sources, on
 ### sRSP · D5, 7:56 (depth to Foundational)
 Pick the event: **2**, the log read; the bar lands on Day 33. Close the clause. Then **The Clocks
 That Are Law**: drag the day to 4 (the vendor's 72 hours have run), to 31 (the firm's 30 days have
-run), to 45; read the consequence lines. Then **Two Real Clocks**: **Equifax** drops a 40-day bar,
+run), to 45; read the consequence lines. The rule: customer notice as soon as practicable and no later
+than 30 days after the firm becomes aware, and the service provider owes the firm 72 hours
+(FACTS:reg-sp-compliance). Then **Two Real Clocks**: **Equifax** drops a 40-day bar,
 stamped LATE, at least $575 million; **Capital One** ten days, IN TIME, and still $80 million for
 the control failure; Uber in one line. Say it: none of these companies was under Regulation S-P's
 clock; the principle, count from the day you knew, is what they show. Your breach story goes here
@@ -464,10 +488,16 @@ answering it in class.
   person is your client (both chipped H). It then applies the rule to a combination of fields that
   identifies one person without a name (chipped M, "applied"). Confirm the combination reading
   with your compliance officer before you teach it as settled.
-- **The 72-hour service-provider notice** in §04. The 2024 amendments require a covered firm's
-  policies to require service providers to notify the firm as soon as possible and no later than
-  72 hours after becoming aware of a breach affecting a customer information system. Carried at H
-  from several consistent secondary sources; the SEC release itself was not loaded from the build.
+- **The Regulation S-P clocks and dates** (§01, §04, D5; FACTS:reg-sp-compliance, M). The 2024
+  amendments are in force for every covered firm: the compliance dates were 2025-12-03 for larger
+  entities and 2026-06-03 for smaller ones. They require a written incident response program; notice to
+  affected customers as soon as practicable and no later than 30 days after the firm becomes aware of
+  unauthorized access or use; and policies that make service providers notify the firm within 72
+  hours of becoming aware of a breach affecting a customer information system. The rule imposes no
+  SEC notification and no 24-hour clock for telling a chief compliance officer; any such window is
+  the firm's own choice. Carried at M: sec.gov could not be opened from the build, every figure comes
+  from sec.gov search snippets (the compliance guide, the fact sheet, the press release) with
+  law-firm summaries, and the two negatives rest on absence in the primary text.
 - **The D5 awareness reading.** The page treats the operations lead reading the access log (Day 3,
   9:05) as the moment the firm became aware. That is the lesson's reading, chipped L, not a
   holding.
@@ -476,22 +506,31 @@ answering it in class.
   because cfp.net is blocked from the build. Read the Standard.
 - **CFP Board Generative AI Ethics Guide (February 2025)**, on pseudonyms and removing confidential
   information before upload (§02, D6), at M for the same reason. You have the PDF.
-- **The SEC's withdrawal of the predictive data analytics proposal**, 12 June 2025, with thirteen
-  others (§01 sorter), at M: reported consistently by several law firms, the SEC page not loaded.
-- **Anthropic's consumer terms** (§03): training on by default for Free, Pro and Max, five years
-  if it is on, 30 days if off; retrieved 2026-08-14. The page opens plan A with the switch on. A
-  vendor can change these without notice, and privacy.claude.com could not be re-read from the
-  build on 2026-09-25.
-- **The FY2026 exam priorities** name AI and Regulation S-P. The SEC's fiscal year ends
-  2026-09-30, two days after class; the FY2027 priorities may follow. New on 2026-09-27: §05's
-  board quotes §VII as naming "AI and polymorphic malware attacks" among the training and
-  security controls examiners review. That line is at M, from several consistent law-firm
+- **The SEC's withdrawal of the predictive data analytics proposal**, 12 June 2025 (Release
+  33-11377 / 34-103247 / IA-6885 / IC-35635), published in the Federal Register 2025-06-17 with 13
+  other 2022 to 2023 proposals (§01 sorter), at M (FACTS:sec-pda-withdrawal): sec.gov snippets and
+  law-firm reports; the Commission does not intend to issue final rules on these proposals.
+- **Anthropic's consumer terms** (§03; FACTS:claude-consumer-retention, M): with "Help improve
+  Claude" on, de-identified data may be kept up to five years in training pipelines; with it off, a
+  deleted conversation is removed from back-end storage within 30 days. Whether the toggle ships on
+  or off is not stated on that page, so say neither. The page opens plan A with the switch on as a
+  starting position. Exceptions: flagged content up to two years, safety classifier scores up to
+  seven years, and thumbs-up or thumbs-down feedback keeps the whole conversation up to five years.
+  A vendor can change these without notice, and privacy.claude.com could not be read from the build
+  (the values are from primary-domain search snippets and the anthropic.com consumer-terms post,
+  retrieved 2026-10-11).
+- **The FY2026 exam priorities** (FACTS:sec-exam-priorities-status, M), released 2025-11-17, name
+  AI and Regulation S-P. The document states it has "no legal force or effect": the priorities bind
+  nobody, and the rules they point at are what bind. FY2027 priorities had not been found as of
+  2026-10-11; check sec.gov/compliance/examination-priorities before class and swap the reading if
+  they are out. New on 2026-09-27: §05's board quotes §VII as naming "AI and polymorphic malware
+  attacks" among the training and security controls examiners review. That line is at M, from several consistent law-firm
   summaries; sec.gov could not be opened. Read §VII before you say it.
 - **The three other vendors' terms** (§03, 2026-09-27), all at M because help.openai.com,
   support.microsoft.com, learn.microsoft.com and support.google.com are egress-blocked from the
   build: ChatGPT's "Improve the model for everyone" on by default for Free, Plus and Pro, chats
   kept until deleted, deleted chats gone within 30 days, Business and Enterprise excluded from
-  training; Copilot with a personal Microsoft account may train unless you opt out under "Model
+  training (FACTS:openai-consumer-training-default); Copilot with a personal Microsoft account may train unless you opt out under "Model
   training on text", history 18 months by default, enterprise data protection under a work
   account; Gemini's "Keep Activity" on by default, 18-month auto-delete, human reviewers, reviewed
   chats kept up to three years, 72 hours with the switch off, Workspace not trained on and not
@@ -517,7 +556,7 @@ answering it in class.
 - **New on 2026-09-28, the ladder and the clause view (§03, §04).** Every Anthropic figure was
   read on 2026-09-27 from claude.com/pricing, the Commercial Terms, the Data Processing Addendum,
   the retention docs and the certifications article (all H). Prices and terms move without notice;
-  open claude.com/pricing once before class.
+  open claude.com/pricing once before class. The plan prices were re-read on 2026-10-11 (FACTS:claude-plans, H).
 - **The deepfake bill and the breach clocks (§05, D5).** Arup, the UAE bank, the Singapore cases,
   Equifax, Capital One and Uber each rest on three or more independent publishers found by search;
   none of the primary pages could be opened from the build. Figures are H on that basis.
@@ -535,19 +574,23 @@ answering it in class.
   console."
 - **The legality of the work-along** (demo A): the verdict on page 2 of the aid rests on the rule
   text as reported by three publishers each (§248.10, .13, .14, .15, Standard A.9); the one thing
-  only you can check is your own firm's manual on personal-account use and external display.
+  only you can check is your own firm's manual on personal-account use and external display. No rule
+  names a tool or a plan, so a personal Claude plan is not illegal for client work as such; what makes
+  it untenable is Regulation S-P's safeguards and service-provider oversight, Rule 204-2
+  recordkeeping and the firm's own policy (FACTS:reg-sp-compliance, FACTS:ai-policy-requirement).
 - **New on 2026-09-27, from the fact-check behind the rule key's page 2** (`session-4-rule-key.pdf`;
   web search only; the regulators' sites refused the build, so each point is M unless marked).
   - **The EU Digital Omnibus is in force.** It is Regulation (EU) 2026/1744, in force 27 July 2026.
     Article 50(2) marking applies from 2 August 2026 to systems placed on the market from that
-    date; systems already on the market have until 2 December 2026. That is Anthropic's own
-    2 December date.
+    date; systems already on the market have until 2 December 2026. Anthropic's help article
+    describes that transition period without giving a date.
   - **Anthropic's detector is open to more than regulators and researchers.** The help page, which
-    was opened (H), also names enterprises that the AI Act obliges to verify marking. Marking
-    applies worldwide. The corrections line still holds: nothing on the page says the mark names
-    an account.
+    was opened (H), also names enterprises that the AI Act obliges to verify marking, and the
+    detector is in private preview. Marking applies worldwide. The corrections line holds, and the
+    announcement now says outright that the watermark carries no identifying information
+    (FACTS:claude-text-watermark).
   - **The 72-hour notice binds the firm, not the vendor.** The firm's policies, and its contracts,
-    must require the vendor to report within 72 hours.
+    must require the vendor to report within 72 hours (FACTS:reg-sp-compliance).
   - **FINRA Regulatory Notice 26-14, 9 July 2026**, proposes replacing the principal's
     pre-approval of retail communications under Rule 2210 with a risk-based standard, citing
     generative AI. Comments closed 11 September 2026. Not adopted.
@@ -564,7 +607,8 @@ answering it in class.
 - Your own firm's manual has not been checked on personal-account use with de-identified text and
   on showing client material to a class; the verdict on page 2 of the aid assumes it forbids the
   first unless it says otherwise.
-- The corrections line rests on a page fetched through a summariser; read it yourself first.
+- The corrections line now rests on Anthropic's announcement and help article, read in full on
+  2026-10-11 (FACTS:claude-text-watermark); read them yourself before you say it.
 - The pairing list is not drawn, and the packages are not screened.
 - Speaker-labelled transcripts: confirm they are still on.
 - Poll 2 now asks the vendor as well as the plan; rebuild it.

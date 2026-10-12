@@ -43,7 +43,7 @@ needs your GitHub, your Zoom, your Canvas or your printer. Minutes are estimates
   Figure 1.
 - The pipeline artifact open in claude.ai with every output shut (Shift+U toggles all six). The
   repository copy is `instructor-notes/session-3-notetaker-pipeline.htm` if the artifact link fails.
-- Claude: a new chat, the skill-build prompt typed and **not sent**. Sonnet 5 is fine for it.
+- Claude: a new chat, the skill-build prompt typed and **not sent**. Sonnet 5.5 is fine for it (FACTS:claude-model-ids-and-retirements).
 - Polls loaded. Aid printed and in reach. The three chat lines below ready to paste.
 - In the room from 5:45 for setup questions. At 6:00, step 1 of the aid.
 

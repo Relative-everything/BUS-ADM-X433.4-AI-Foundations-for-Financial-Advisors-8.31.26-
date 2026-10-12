@@ -23,11 +23,11 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 2737 | 2044 | 693 |
 | `PINNED` | 12 | 11 | 1 |
-| `UNGUARDED` | 171 | 40 | 131 |
-| **TOTAL** | **2920** | **2095** | **825** |
+| `UNGUARDED` | 177 | 46 | 131 |
+| **TOTAL** | **2926** | **2101** | **825** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
-`40`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
+`46`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
 the target state under the rule *every quantitative case fact appears once,
 injected from `CASE.md`; every other reference to it is qualitative*, so a
 qualitative reference is not drift surface and removing one would be a loss.
@@ -38,8 +38,8 @@ qualitative reference is not drift surface and removing one would be a loss.
 |---|---:|---:|
 | `index.html` | 5 | 1 |
 | `session-0.1/index.html` | 7 | 0 |
-| `session-1/index.html` | 30 | 7 |
-| `session-2/index.html` | 11 | 3 |
+| `session-1/index.html` | 35 | 12 |
+| `session-2/index.html` | 12 | 4 |
 | `session-3/index.html` | 75 | 15 |
 | `session-4/index.html` | 34 | 9 |
 | `session-5/index.html` | 9 | 5 |
@@ -48,13 +48,13 @@ qualitative reference is not drift surface and removing one would be a loss.
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R2` | script string literal | 104 | 18 |
-| `R1` | body prose | 61 | 19 |
+| `R2` | script string literal | 107 | 21 |
+| `R1` | body prose | 64 | 22 |
 | `R4` | CSS | 3 | 3 |
 | `R7` | footer source entry | 2 | 0 |
 | `R8` | source note | 1 | 0 |
 
-**`R2` carries 18 of the 40 quantitative unguarded references, 45.0%** — answer
+**`R2` carries 21 of the 46 quantitative unguarded references, 45.7%** — answer
 keys, chart data arrays and JS feedback strings. They are inside `<script>`, so
 they are outside the injected span and outside the pins, and a student reads
 every one of them.
@@ -65,7 +65,7 @@ every one of them.
 |---|---:|
 | `name` | 131 |
 | `age` | 16 |
-| `money` | 9 |
+| `money` | 15 |
 | `date` | 8 |
 | `count` | 6 |
 | `pct` | 1 |
@@ -86,6 +86,7 @@ every one of them.
 | `residenceTown` | 4 |
 | `davidEmployer` | 4 |
 | `david401kRoth` | 4 |
+| `otherLiving` | 4 |
 | `ruthTown` | 4 |
 | `dorothyName` | 4 |
 | `megEmployer` | 3 |
@@ -94,6 +95,7 @@ every one of them.
 | `marriedYears` | 3 |
 | `riskGap` | 3 |
 | `megRiskScore` | 3 |
+| `pcPremiums` | 2 |
 | `ruthCommunity` | 2 |
 | `memoDate` | 2 |
 | `priorAdviser` | 2 |
@@ -132,41 +134,42 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**1200 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**1206 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
 | `ryanAge` | 488 |
-| `megRetireAge` | 156 |
+| `megRetireAge` | 155 |
 | `davidRetireAge` | 98 |
 | `riskGap` | 61 |
 | `tomAge` | 60 |
 | `emmaAge` | 58 |
-| `davidRiskScore` | 44 |
-| `megAge` | 41 |
+| `davidRiskScore` | 49 |
+| `megAge` | 44 |
 | `megRiskScore` | 27 |
-| `marriedYears` | 19 |
+| `marriedYears` | 18 |
+| `earlyReduction` | 17 |
 | `delayedCredit` | 16 |
-| `earlyReduction` | 15 |
 | `megSs62` | 14 |
+| `umbrella` | 9 |
 | `davidLossTolerance` | 9 |
 | `rmdExciseTax` | 9 |
 | `ruthAge` | 8 |
 | `megRoth` | 7 |
 | `propertyTax` | 7 |
 | `travel` | 7 |
-| `umbrella` | 7 |
 | `asOfDate` | 7 |
 | `ipsEquity` | 7 |
 | `davidAge` | 6 |
-| `megLossTolerance` | 5 |
-| `rmdExciseCorrected` | 5 |
 | `tomShort` | 4 |
 | `davidNewsMonth` | 4 |
 | `megApplicableAge` | 3 |
 | `marginalRate` | 2 |
+| `ipsDate` | 2 |
 | `allocFixed` | 2 |
+| `megLossTolerance` | 2 |
+| `rmdExciseCorrected` | 2 |
 | `rothPct` | 2 |
 | `ruthShort` | 1 |
 | `ryanShort` | 1 |
@@ -176,12 +179,12 @@ with the text around it, so the undercount can be judged rather than trusted.
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
 | `index.html:935` | UNGUARDED | $64,200 | 35 ILCS 405). CASE.md &sect;H.4 puts the Coles at $3,935,800 with life insurance counted, 〈$64,200〉 below it, and states no conclusion.</li> <li>The f |
-| `session-2/index.html:2620` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'SECURE 2.0 Act \u00a71 |
+| `session-2/index.html:2623` | UNGUARDED | $109,700 | ab'},'EIGHTFOLD IN TWELVE MONTHS. LARGEST SINGLE-MATTER PENALTY REPORTED AT APPROXIMATELY 〈$109,700〉.')); })(); var CITES=[ {c:'SECURE 2.0 Act \u00a71 |
 | `session-3/index.html:1138` | UNGUARDED | $3,000 | ll.</li> <li><b>What is new.</b> Ruth may need assisted living within a year, about 〈$3,000〉 a month more. Emma carries about $14,000 of card debt and |
-| `session-3/index.html:2856` | UNGUARDED | $3,000 | KI=[ {t:'Meg’s mother’s care team says she may need assisted living within a year, about 〈$3,000〉 a month more than she pays now.',k:'in',w:'Meg’s fir |
-| `session-3/index.html:2902` | UNGUARDED | $3,000 | 's mother\'s care team says she may need the assisted living wing within a year, at about 〈$3,000〉 a month more than she pays now. The new summary pla |
-| `session-5/index.html:3956` | UNGUARDED | $3,000 | o name, no employer, no town. The one case figure it types is the meeting's own "about 〈$3,000〉 a month more" (CASE.md A.3, Part O), as spoken; the fi |
-| `session-5/index.html:3979` | UNGUARDED | $3,000 | e. The wife\u2019s mother may need assisted living within a year. The extra cost is about 〈$3,000〉 a month.', checks:'Verification: read the brief and |
+| `session-3/index.html:2860` | UNGUARDED | $3,000 | KI=[ {t:'Meg’s mother’s care team says she may need assisted living within a year, about 〈$3,000〉 a month more than she pays now.',k:'in',w:'Meg’s fir |
+| `session-3/index.html:2906` | UNGUARDED | $3,000 | 's mother\'s care team says she may need the assisted living wing within a year, at about 〈$3,000〉 a month more than she pays now. The new summary pla |
+| `session-5/index.html:3957` | UNGUARDED | $3,000 | o name, no employer, no town. The one case figure it types is the meeting's own "about 〈$3,000〉 a month more" (CASE.md A.3, Part O), as spoken; the fi |
+| `session-5/index.html:3980` | UNGUARDED | $3,000 | e. The wife\u2019s mother may need assisted living within a year. The extra cost is about 〈$3,000〉 a month.', checks:'Verification: read the brief and |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,

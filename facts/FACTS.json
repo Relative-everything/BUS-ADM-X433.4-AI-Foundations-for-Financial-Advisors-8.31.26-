@@ -857,5 +857,26 @@
   "reverify_before": "term-start",
   "retired_values": [],
   "notes": "PDF fetched in full 2026-10-11 and its first page read; title, authors, venue and DOI match. Cite the full title with the subtitle. SOURCES.md carries src-lee-cognitive."
+ },
+ {
+  "id": "claude-tokenizer-4-7",
+  "statement": "Claude 4.7 and later models (and Claude Mythos Preview) use a newer tokenizer that produces approximately 30% more tokens for the same text; the exact increase depends on content and workload",
+  "value": "about 30% more tokens for the same text on Claude 4.7 and later",
+  "unit": "percent",
+  "applies_to": [
+   "session-1",
+   "session-2"
+  ],
+  "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "source_title": "Pricing (Claude Platform Docs), section on tokenizer differences",
+  "retrieved": "2026-10-12",
+  "confidence": "H",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "0.75 words per token",
+   "three quarters of an English word"
+  ],
+  "notes": "Primary page fetched in full 2026-10-12: \"Claude 4.7 and later models and Claude Mythos Preview use a newer tokenizer that contributes to their improved performance on a wide range of tasks. This tokenizer produces approximately 30% more tokens for the same text.\" The old 0.75 words-per-token rule of thumb predates it and is retired as a stated rule; the context-window record carries the 555,000 words per 1M tokens note."
  }
 ]

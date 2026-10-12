@@ -11,8 +11,9 @@ the closing check. Black numbers in the PDF are the steps that must not be skipp
 13, 15, 19. The colour box on each step says what is on screen: Zoom, Tab 1 (Session 3), Tab 2
 (Session 2), an image, a PDF, the artifact, the Claude chat, or the slide.
 
-1. **6:00 OPEN.** Zoom. "Canvas and file questions at the break." Tokens: output costs 5x input.
-   Watermark: "not your account." Stop.
+1. **6:00 OPEN.** Zoom. "Canvas and file questions at the break." Tokens: output costs 5x input
+   (FACTS:claude-output-input-ratio). Watermark: "not your account" (FACTS:claude-text-watermark).
+   Stop.
 2. **6:03 OBJECTIVE.** Tab 1, §00. Read "Tonight's one thing" off the page. Non-advisors: "your
    recurring meeting."
 3. **6:05 POLL 1**, prompts typed since Session 2. Half or more say 0 or 1 to 3? §08 silence gets
@@ -27,8 +28,8 @@ the closing check. Black numbers in the PDF are the steps that must not be skipp
 7. **6:31 KITCES CYCLE.** Image. "Same five stages as §06." GATE at CRM: "Who reads this note, and
    when?" Sold against the hour of prep and follow-up per meeting hour.
 8. **6:34 PIPELINE**, steps 0 to 5. Artifact. ASK each question, count four, open. Step 3: will it
-   flag it? No. Step 5, POLL N3 if built, then: Rev. Proc. 2022-32, five years. "One error, three
-   copies. It records what was said, not what is true." Stop 6:58.
+   flag it? No. Step 5, POLL N3 if built, then: Rev. Proc. 2022-32, the fifth anniversary of death (FACTS:portability-late-election). "One
+   error, three copies. It records what was said, not what is true." Stop 6:58.
 9. **6:58 BREAK.** Post "back at 7:15", Pacific. Artifact not done? At 7:15 open Step 5 only, one
    minute, then the build.
 10. **7:15 SKILL BUILD.** Claude. Send the prompt, Step 0 pasted as the transcript. While it runs:

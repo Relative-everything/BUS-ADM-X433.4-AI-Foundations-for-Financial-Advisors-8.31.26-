@@ -14,8 +14,9 @@ never skipped.
 **Before the break · Tab 1, Core only**
 
 1. **6:00 OPEN.** Zoom. "Setup questions at the break, not now." Pre-class window closed at 5:58.
-2. **6:03 CORRECTION.** Zoom. "The watermark does not identify your account." Claude marks text
-   from 2 Aug 2026, all models by 2 Dec. Only bodies EU law names can check.
+2. **6:03 CORRECTION.** Zoom. "The watermark does not identify your account." Claude text carries a
+   statistical watermark, announced 2026-08-14, that names no user and adds no hidden characters
+   (FACTS:claude-text-watermark). Only bodies EU law names can check, for now.
 3. **6:06 OBJECTIVE.** §00. Read "Session 4's one thing". Four stops: In, Where, Check, Keep.
    Non-advisors: "any recurring task at work."
 4. **6:08 BRIDGE.** §00. Three letters aloud, then click: **b, c, a**. Then Zoom out.
@@ -25,7 +26,7 @@ never skipped.
    **0**. "The duty has existed since 1940." Page 2.
 7. **6:29 §02.** GATE 1: "Name gone. What still points to her?" **The job and the town: a
    nurse manager in Naperville.** "Reg S-P is the rule behind it." Copy the clean prompt to chat.
-8. **6:39 §03.** POLL 2. Vendor, then plan A, flip the switch. Claude **5 years, off 30 days**.
+8. **6:39 §03.** POLL 2. Vendor, then plan A, flip the switch. Claude **up to 5 years with training on, 30 days off** (FACTS:claude-consumer-retention).
    "Same model, different contract." Open leaks 2 and 5.
 9. **6:46 §04.** Six locks. C, client file, consumer plan. Lock 1 **No, Stop**. The firm's contract makes the
    vendor report within 72 hours. Standard A.14.
@@ -64,7 +65,7 @@ closing check.
 **Never drop:** the cold open, §02, the cold run, the closing check.
 
 **Not tonight:** D5, D6 (Foundational); D1, D2 watermark depth; leaks 1, 3, 4 and 6; fixing
-anyone's package (Session 5). Vendor numbers other than Claude's are M: say "as of their page".
+anyone's package (Session 5). Vendor numbers, Claude's included, are M: say "as of their page".
 
 **After:** export the transcript, the chat log and the poll report within 24 hours.
 
@@ -76,10 +77,12 @@ different rule that does the same job for the other registration.
 
 ### Lane 2 · A duty you already have (items 1 to 5): binds you now, written before AI
 
-1. **Regulation S-P**, SEC, 17 CFR Part 248. 2000; amended May 2024; in force 3 Dec 2025 for
-   RIAs with $1.5B or more, 3 Jun 2026 for smaller (H). Protect client NPI; since 2024 a breach
-   plan, clients told within 30 days, vendor contracts that make them report to the firm within
-   72 hours. Binds SEC-registered advisers and broker-dealers; CFP twin A.9. General. Say:
+1. **Regulation S-P**, SEC, 17 CFR Part 248. 2000; amended May 2024; compliance 3 Dec 2025 for
+   larger entities (RIAs with $1.5B or more), 3 Jun 2026 for smaller, so in force for every
+   covered firm now (M, FACTS:reg-sp-compliance). Protect client NPI; since 2024 a written
+   incident response program, clients told as soon as practicable and no later than 30 days after
+   the firm becomes aware, vendor contracts that make them report to the firm within 72 hours.
+   No 24-hour clock for a CCO and no SEC notice. Binds SEC-registered advisers and broker-dealers; CFP twin A.9. General. Say:
    "Pasting client data into a tool is a disclosure." It needs a contract limiting the vendor's
    use; a consumer plan has none. Trap: "she is my client" is NPI by itself.
 2. **Fiduciary duty**, Advisers Act §206. 1940; duty from *Capital Gains*, 1963; SEC restated
@@ -102,15 +105,18 @@ different rule that does the same job for the other registration.
 
 ### Lane 3 · Guidance or a proposal (items 6 to 8): names AI, binds nobody
 
-6. **FINRA Regulatory Notice 24-09**, 27 Jun 2024 (H). Reminds member firms the existing rules
-   apply to generative AI; no new requirement. Trap: naming AI does not make it binding; it is a
+6. **FINRA Regulatory Notice 24-09**, 27 Jun 2024 (M, FACTS:finra-24-09-status). Still published,
+   not rescinded; FINRA's 2026 oversight report (9 Dec 2025) has a generative AI section. Reminds
+   member firms the existing rules apply to generative AI; it states it creates no new legal or
+   regulatory requirements. Trap: naming AI does not make it binding; it is a
    signpost to rows 3 to 5.
-7. **SEC exam priorities, FY2026, §VII**, 17 Nov 2025; the fiscal year ends 30 Sep 2026 (H). What
-   examiners test: AI claims, AI supervision, Reg S-P readiness, polymorphic malware. Say: "No
-   duty. It tells you which duties get checked." Trap: it lapses two days after class; FY2027 is
-   due October or November (M).
+7. **SEC exam priorities, FY2026, §VII**, released 17 Nov 2025 (M, FACTS:sec-exam-priorities-status).
+   The document states it has "no legal force or effect". What examiners test: AI claims, AI
+   supervision, Reg S-P readiness, polymorphic malware. Say: "No duty. It tells you which duties
+   get checked; the rules underneath are what bind you." Trap: it is not a rule. FY2027
+   priorities had not been found as of 2026-10-11, so check sec.gov before class.
 8. **SEC predictive data analytics proposal**, S7-12-23. Proposed Jul 2023, withdrawn 12 Jun 2025
-   with 13 others (H). Would have made firms neutralise conflicts in AI tools used with investors.
+   with 13 others (M, FACTS:sec-pda-withdrawal). Would have made firms neutralise conflicts in AI tools used with investors.
    Say: "The one US proposal that would have named the technology. Withdrawn: binds nobody."
 
 ### Lane 1 · A rule written for AI (item 9): names AI, binds someone, not you
@@ -129,18 +135,22 @@ registration; the employer's policy.
 **Also named on the page.** CFP Board Code, in force 1 Oct 2019; A.14, reasonable care selecting,
 using and recommending technology, binds every CFP professional. CFP Board Generative AI Ethics
 Guide, Feb 2025: pseudonyms, strip details before upload; guidance. SEC AI-washing, 18 Mar 2024:
-$225,000 and $175,000 under the Marketing Rule for AI claimed and not used. Daly, SEC, 3 Feb
+$225,000 and $175,000 under the Marketing Rule for AI claimed and not used
+(FACTS:sec-ai-washing-enforcement). Daly, SEC, 3 Feb
 2026: who answers for wrong AI output is "unsettled".
 
 **If you are asked.** "Does the vendor owe the 72 hours?" No, the firm does, through its
-contract. "Are prompts records?" Unresolved; FINRA's 2026 report suggests keeping prompt and
+contract: the rule makes the firm's policies require it (FACTS:reg-sp-compliance). "Are prompts records?" Unresolved; FINRA's 2026 report suggests keeping prompt and
 output logs (M); keep them. "Is pre-approval going away?" FINRA proposed a risk-based standard in
 July 2026, Regulatory Notice 26-14 (M); not adopted. "Who can read Claude's mark?" Bodies EU law
-names, and firms the Act obliges to check; nothing on Anthropic's page says it names an account.
+names, and firms the Act obliges to check; Anthropic's announcement says the watermark carries no
+identifying information and cannot be traced to a person, organisation or chat
+(FACTS:claude-text-watermark).
 
 **How page 2 was checked, 2026-09-27.** Every date was checked by web search. sec.gov, finra.org,
 ecfr.gov, eur-lex, federalregister.gov and cfp.net refused the build's connection, so each date
 rests on search results from those domains plus law-firm summaries; only support.claude.com was
 opened. H means several consistent sources agree, one of them a result from the regulator's own
-domain.
+domain. Rows 1 and 6 to 8 and the watermark line were re-read against facts/FACTS.json (retrieved
+2026-10-11), and their letters follow those records.
 

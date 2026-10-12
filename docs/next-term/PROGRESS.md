@@ -11,7 +11,7 @@ Resume rule (RUNBOOK A.1.6): read `RUNBOOK.md` (A.0 first), this file, `DECISION
 | 3 | done | 2026-10-12 | 2026-10-12 | (P3 commit) | build-case 0 · inject-case --check 0 · build-cardsort --check 0 · verify-case 0 · verify-style 1 (env) · verify-migration 1 (1c and 4 only: v4 lesson prose) · case-inventory --report-check 0 · test-case-viewer 1 (V9 on three lessons: v4 `COLE` keys in lesson code, D-030) · verify-browser 1 (same cause) |
 | 4a | done | 2026-10-12 | 2026-10-12 | (P4a commit) | none required; register built from eight scans; `verify-migration` unchanged from Phase 3 (1c and 4 red: the v4 prose the register now lists) |
 | 4b | done | 2026-10-12 | 2026-10-12 | (P4b commit) | verify-case 0 · verify-migration 1 (session-0.1 only, Phase 8) · verify-sources 0 · verify-facts 0 · verify-editorial 0 · test-editorial 1 (T7 ratchet fall, documented) · test-case-viewer 0 · verify-browser 0 · live-console 0 · verify-style 1 (env) |
-| 5 | pending | | | | |
+| 5 | done | 2026-10-12 | 2026-10-12 | (P5 commit) | verify-facts 0 · verify-sources 0 · verify-case 0 · verify-migration 1 (session-0.1 only) · verify-editorial 0 · test-editorial 1 (T7) · test-case-viewer 0 · verify-browser 0 · live-console 0 · verify-style 1 (env) |
 | 6a | pending | | | | |
 | 6b | pending | | | | |
 | 7 | pending | | | | |
@@ -152,3 +152,37 @@ Orchestrator steps after the editors: `attest-verified.mjs --sync` (five v4-only
 | verify-style | 1 | environment: the lesson-builder skill is absent (A.0.4) |
 
 Handoffs recorded by the editors (not 4b work): Phase 5 corrections register rows the editors saw (the 2021-death-inside-the-five-year-window claim in session-2 §05 and the session-3 notes lapses in 2026); Phase 10 rewrites the instructor run sheets (dates, clock times, the session-3 presets, NTSUM and six-turn funnel are described from this report); Phase 8 owns session-0.1 and the probe re-runs; session-4-polls.md "five of eight identifiers" and session-5-polls.md option 4 wording are pre-existing and left for Phase 10.
+
+## Phase 5: facts and accuracy correction sweep
+
+Five Sonnet editors (lessons by group, hub, instructor notes; 1.89M tokens, 523 tool uses, 51 minutes) brought every volatile statement into agreement with facts/FACTS.json, cited each with a `data-fact` chip (lessons) or a `FACTS:<id>` note (instructor notes), and applied the Fall 2026 corrections register. The orchestrator then re-derived Session 1's words-to-tokens arithmetic on the current tokenizer rule, aligned chip letters with FACTS confidence, synced the sources lock, regenerated footers and bibliography, re-rendered the four changed instructor-note PDFs and ran the battery.
+
+| File group | Corrections applied | Register rows not found (spoken only) | Figures changed | Chips added | FACTS ids cited | New SOURCES records |
+|---|---:|---:|---:|---:|---:|---:|
+| session-1 | 9 | 17 | 33 | 17 | 18 | 5 |
+| session-2-3 | 12 | 17 | 31 | 10 | 13 | 2 |
+| session-4 | 17 | 13 | 15 | 26 | 17 | 4 |
+| session-5-hub | 7 | 17 | 16 | 1 | 4 | 0 |
+| notes | 35 | 12 | 35 | 26 | 28 | 0 |
+
+Corrections register, by row: output 2x to 5x, context-window definition, Claude watermark scope, ChatGPT training default, Max plan prices, consumer retention, exam-priorities status, Reg S-P clocks and in-force date, AI-use-policy status, personal-plan legality, portability late election (and the v5 Dorothy Cole window, which lapsed March 2026), IRC 7872 thresholds, Arena rename: each fixed wherever repo text stated or implied it (see the reports' `corrections_applied`). Rows found in no repo text, so spoken-only in Fall 2026 and owed to the Phase 10 "Verified facts" cards: MCP expansion, TCJA year, Max $500, one-shot versus zero-shot, Navajo (the notes carried the correction already), FINRA rescission, PDA proposal, the 24-hour CCO notice.
+
+Session 1 model lineup: tier table, price chart, `TIERS`, `PATHS` and `DPT` arrays now carry Haiku 5.5 (tiered by prompt length), Sonnet 5.5, Opus 5.5 and Fable 5.1 at FACTS prices with cache-read multipliers and the Batch discount; a "Three leaderboards, and what each one measures" table names Artificial Analysis, LiveBench and Arena (formerly LMArena) with snapshots. Session 4: Reg S-P reads as in force with the 30-day and 72-hour clocks, every watermark claim follows the three FACTS records, and the AI-policy section opens on the ISS figure (78% of RIAs with no written policy, M).
+
+New FACTS record: `claude-tokenizer-4-7` (H, primary page fetched 2026-10-12: Claude 4.7 and later produce about 30% more tokens for the same text). Its retired string (the 0.75 words-per-token rule) was still the basis of Session 1's token table and document-pass constants, so those were re-derived at about 1.8 tokens per word (555,000 words per million tokens, FACTS claude-context-window): 3,000 words about 5,400 tokens ($0.02 on Opus 5.5), 12,000 words about 21,600 ($0.09), 60,000 words about 108,000 ($0.43); the document pass is 108,000 tokens in and 11,000 out, so the ladder runs $0.02 (Haiku 5.5) to $1.63 (Fable 5.1), a $1.61 spread, and "still under two dollars" holds.
+
+| Validator | Exit | Reading |
+|---|---:|---|
+| verify-facts (gate) | 0 | 44 records; 36 cited by served files; 8 never cited (claude-skills-format, openai-models-and-plans, gemini-plans, mcp-name, colorado-sb26-189, utah-ai-disclosure, tcja-enactment, zero-shot-definition: Phases 6b and 10 cite them) |
+| verify-sources, build-bibliography, attest-verified | 0 | 150 records, 6 of 6 footers current |
+| verify-case, inject-case --check, build-cardsort --check, build-appendix --check | 0 | no structural change (section ids, minutes, components identical) |
+| verify-migration | 1 | 1c and 4 on session-0.1 only (Phase 8); check 20: 13 pins agree |
+| case-inventory --report-check, build-unsourced --check | 0 | reports current |
+| verify-editorial | 0 | 17 rules clean, 0 hard failures, 2 pre-existing advisories |
+| test-editorial-regions | 1 | T7 only: A9 baseline session-1 66 to 64, session-2 38 to 37 (D-038) |
+| test-case-viewer, verify-browser, test_live_console | 0 | all files |
+| verify-style | 1 | environment |
+
+Chips per lesson after the sweep (`data-fact` attributes): session-1 25, session-2 11, session-3 13, session-4 56, session-5 14, hub 0 (no volatile statement outside the generated span); instructor notes carry 100 `FACTS:` citations.
+
+Left as labelled snapshots, for the deferred-work register (D-042): the Session 1 July 2026 frontier scatter and the Session 2 August 2026 cost-frontier chart (per-task costs FACTS does not hold), the OpenAI per-token rates on Session 2 (M), src-aa `index_version.session-1` still `[UNVERIFIED, needs source]`, src-kalai's `last_retrieved` (a run date, not a retrieval), the EU AI Act and state-law dates on Session 4 and in the Session 4 notes (not in FACTS, left as written), the retention-toggle default sentence on Session 4 (FACTS says the privacy page does not state the default).
