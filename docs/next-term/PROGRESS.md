@@ -9,7 +9,7 @@ Resume rule (RUNBOOK A.1.6): read `RUNBOOK.md` (A.0 first), this file, `DECISION
 | 1 | done | 2026-10-11 | 2026-10-11 | (P1 commit) | verify-facts --report 0; verify-facts (gate) 0; P0 validators unchanged |
 | 2 | done | 2026-10-11 | 2026-10-12 | (P2 commit) | none required; `build-case.mjs` (v5 rewrite, run with `CASE_PATH`) recomputes 67 identities against the draft, all agree |
 | 3 | done | 2026-10-12 | 2026-10-12 | (P3 commit) | build-case 0 · inject-case --check 0 · build-cardsort --check 0 · verify-case 0 · verify-style 1 (env) · verify-migration 1 (1c and 4 only: v4 lesson prose) · case-inventory --report-check 0 · test-case-viewer 1 (V9 on three lessons: v4 `COLE` keys in lesson code, D-030) · verify-browser 1 (same cause) |
-| 4a | pending | | | | |
+| 4a | done | 2026-10-12 | 2026-10-12 | (P4a commit) | none required; register built from eight scans; `verify-migration` unchanged from Phase 3 (1c and 4 red: the v4 prose the register now lists) |
 | 4b | pending | | | | |
 | 5 | pending | | | | |
 | 6a | pending | | | | |
@@ -87,3 +87,32 @@ Branch `next-term-2027` created from `main` at `da7b003` (PR #45 merged 2026-10-
 **Card-sort decision:** the deck still fits v5 (D-024); no replacement deck proposed.
 
 **MAINTAINING.md diff:** heading "The CASE.md v5.0 migration checks"; the `build-case` and `build-cardsort` comments; the layout line; the case-spine paragraph; one purge-list row for the v4 layer.
+
+## Phase 4a: old-case reference register
+
+Eight hit-driven scans (one Sonnet agent per file group, 2.77M tokens, 573 tool uses, 58 minutes) read every check-1c hit, every Part K grep target, every `COLE` key read by lesson code and every data array, alt, aria, title and data attribute, then wrote one row per reference. `docs/next-term/P4-cole-reference-register.md` holds 774 rows with per-file ordered work lists for Phase 4b.
+
+| File group | Rows | KEEP-NAME | REWRITE-V5 | REPLACE-EXERCISE | DELETE | RECAPTURE |
+|---|---:|---:|---:|---:|---:|---:|
+| session-1 | 101 | 23 | 67 | 3 | 8 | 0 |
+| session-2 | 64 | 4 | 19 | 35 | 5 | 1 |
+| session-3 | 152 | 27 | 105 | 8 | 1 | 11 |
+| session-4 | 97 | 18 | 75 | 0 | 4 | 0 |
+| session-5 | 42 | 12 | 30 | 0 | 0 | 0 |
+| hub, README, SOURCES, probe-captures | 168 | 17 | 14 | 0 | 13 | 124 |
+| notes s2 and s3 | 73 | 11 | 41 | 4 | 16 | 1 |
+| notes s4, s5 (and s1, s0.1) | 77 | 19 | 54 | 0 | 4 | 0 |
+| all | 774 | 131 | 405 | 50 | 51 | 137 |
+
+RECAPTURE list, as units (D-033): session-2 `t-s8`; session-3 `offP0` and `offP1`; docs/probe-captures.md `P1` (three ways: `P1`, `P1b`, `P4`), `P2`, `P3`. The first three are re-run in Phase 4b with `scripts/recapture.mjs`; the probe runs are deferred to Phase 8 with Session 0.1.
+
+REPLACE-EXERCISE proposals, all accepted under R2 (D-032):
+- session-1 `s12` quiz items 5 and 6: the demand-note terms item becomes the IRMAA tier a 2030 conversion puts David in for 2032 (arbitrary fact, one right answer); the buy-sell reconciliation becomes reconciling the 2024 memo (no in-plan conversion) with the 2026 plan description (permitted).
+- session-2 `s8` builder-assembler: "The Cole Buy-Sell Agreement" becomes "The Cole Roth Conversion Memo", the interview run on the 3 October 2024 memorandum; the questions the model asks back are re-captured.
+- session-2 `s10` citation triage (six items, `CITES`): from the IDGT sale to the required-beginning-age question, with one planted wrong authority (src-kessler re-aimed, kind fabricated).
+- session-3 `s4` retriever presets: four v5 queries (fail: the 2024 memo outranks the 2026 plan description; ambiguous: the two documents contradict each other; pass: assisted-living cost in one document; pass: the 2009 beneficiary form, which does not say the beneficiary has died), ranks computed with the page's own tokenizer.
+- instructor-notes/session-2.md: the four rows that describe the session-2 exercises follow them.
+
+Also found: five SOURCES.md records only v4 Session 2 cited (D-034); two check-1c false positives from an unanchored date regex (D-035); session-1, session-2 and session-4 each read retired `COLE` keys that throw at load (the Phase 3 reds, D-030), listed first in each work order.
+
+Scratch: the scan workflow and its raw result are in the session scratchpad (`p4/scan-workflow.js`, `p4/scan-run.json`); the register is the committed form.
