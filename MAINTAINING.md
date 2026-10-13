@@ -12,6 +12,9 @@ browsing the course want [README.md](README.md).
 ```
 index.html            Course hub, the URL students bookmark
 session-N/index.html  One self-contained lesson per session
+cases/case-N.html     One case-file page per session (2027 term), opened before
+                      class: the lessons' chrome and style fence, its own
+                      case-file identity, generated CASE and SOURCES spans
 CASE.md               Canonical Cole household case block (v5.0, the pre-retiree
                       household), the source of truth. Part O holds session-3's
                       retrieval corpus and meeting excerpt; Part L the two sheets
@@ -367,7 +370,6 @@ npm i -g jsdom
 NODE_PATH=$(npm root -g) node docs/changes/2026-10-04-session-5-interactivity/checks.mjs
 NODE_PATH=$(npm root -g) node docs/changes/2026-10-02-session-5-build/section-tests/run-all.mjs
 NODE_PATH=$(npm root -g) node scripts/audit/section_profile.mjs session-5/index.html   # writes docs/audits/profiles/
-`cases/case-1.html` to `cases/case-5.html`: the case-file pages (2027 term), one per session, opened before class; same chrome and style fence as the lessons, their own case-file identity, and the generated CASE and SOURCES spans.
 ```
 
 The three oldest harnesses (`2026-09-13-session-2-manual-pass`,
@@ -407,6 +409,21 @@ pass writes checks or re-pins V6, read that V6 line as history and every other
 assertion in the folder as the regression set. A pass that changes a lesson
 should write a `checks.mjs` for what it changed, which joins that lesson's
 regression set; the 2026-10-11 catch-up's pins its Wave 2 edits and DW-041.
+
+**The 2027-term rebuild (2026-10-13) turned every folder above red, by design.**
+The `next-term-2027` pass (`docs/next-term/`) re-authored the hub, the five
+lessons and Session 0.1 and added the case pages, so each `checks.mjs` from
+`2026-09-13-session-2-manual-pass` to `2026-10-11-deferred-work-catchup`, and
+the Session 5 section tests, now pin Fall 2026 content the rebuild replaced on
+purpose: the cold open, the 67- and 83-minute cores, the v4 case panel and its
+names, the eleven-section Session 5, the Fall 2026 footer records and
+deferred-work counts. Read all of them as history under the rule above; the
+pages they pin are at the `fall-2026-final` tag. The regression set for every
+served page is now `docs/next-term/checks.mjs`
+(`NODE_PATH=$(npm root -g) node docs/next-term/checks.mjs`): the case pages'
+six sections and spans, the lessons' case links and reading cards, the hub
+order, the setup page and the poll files. A later pass that changes a page adds
+its pins there or in a `docs/changes/` folder of its own.
 
 ## Shared styling
 
