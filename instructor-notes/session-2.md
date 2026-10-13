@@ -1,143 +1,78 @@
 # Session 2 · Practical AI Usage in Daily Advisory Workflows
 
-Run sheet for 2026-09-14, from `audit/AUDIT-2026-09-07.md` §5.3 and §5.4 with the D5 and D7 decisions applied. Clock times are Pacific (the block is 6:00 to 9:00 PM); the Central time is in brackets, confirm it is the right second zone before printing. The page is worked in the room at core-only depth (D1). Nothing in this file addresses a learner.
+Run sheet for the 2027 term, rebuilt on 2026-10-13 against `session-2/index.html` after Phases 6b and 9. Core runs 63 of the 150 allocated minutes; the page opens at Core only depth. No clock times or dates are fixed here. Nothing in this file addresses a learner.
 
-## Changed since the 09-14 class (deferred-work catch-up, 2026-10-11)
+## Objective and set-up
+- Objective, said aloud in the first minute: by the end of the session you can write a prompt whose output can be checked, say which steps of the planning process a model may draft, and run four checks on a citation before anything reaches a client. Admin goes in the course-site announcement, not in the room.
+- Tabs open before the room fills: `cases/case-2.html` and `session-2/index.html`. Leave the appendix depth control (in `s0`) on Core only; raise it only to show one chosen appendix section.
+- The four Zoom polls are built and tested (`instructor-notes/session-2-polls.md`); students are not co-hosts. Read "Verified facts for this session" below: every price, window and tax statement you say aloud is on it.
 
-- s0, the retrieval bridge: each item now has its own "Lock and reveal", which locks that box and opens its key; "Reveal all three" locks every box first (DW-114). The s0 Flow line below records how the page worked when it was taught.
+## Core run order (63 min)
+1. `s0` Retrieval bridge, 7 min, `retrieval-bridge` (`t-s0`). "Four questions, no notes. Wrong and committed beats right and read." About three minutes of typing, then "Reveal all four", which locks every box first (each box also has its own "Lock and reveal"). The four items: which side of the price is dearer and by how much; what travels with a message (the window is not the input box); the new-chat rule and its two documented reasons; why a fluent answer can be wrong. Say the answers from the facts below.
+2. `sCase` Case 2, the Roth conversion email, 10 min, `prediction-commit` (`t-sCase`). **Case-opener moment:** the students opened `cases/case-2.html` before class; this section re-asks the same commit. Read the big paragraph, then three minutes of silence: each student picks one of the four cited statements, writes one sentence on what they would open to check it, and locks. On "go", letters in chat; type the counts into the A to D boxes, press "Draw the room", then read the key. Expected: D is the wrong citation, right section and wrong cohort (CASE.md Part F.1 and F.4: Meg born 1968, David 1967, applicable age 75). A, B and C hold (A: Part B.2, plan amended 1 January 2026; B: Part E.1; C: Part E.2). Prediction, not data: D draws the students who checked the birth years and the rest scatter, B and C attracting "sounds unusual" votes. Say before the key opens that a wrong guess is the design intent. **The one case link moment:** `#caseLink`, "Open the Case 2 page", for anyone who skipped it; two minutes, then the same commit. Bridge in one sentence to `s6b`.
+3. `s6b` Building Prompts Against P.T.C.F, 9 min, `builder-assembler` (`t-s6b`). **Poll 1** (ranking) opens it. Room call, 3 minutes, on F1: the room names the level of P, T, C and F in chat, one answer each (absent, gestured at, specified, specified and checkable); press what it says and read the prompt it builds. Then 3 minutes of silent rewrite of the weakest of their own three templates in the editor ("Load this version into the editor" hands over a built one); the rewrite is what carries forward. Group report, 2 minutes: the element hardest to get to specified and checkable.
+4. `s9` The Seven-Step Process and the Delegation Line, 8 min, `multi-column-sorter` (`t-s9`). **Poll 2** (multi-select) opens it. Sort the seven steps, 3 minutes; open the key and argue with it, 2 minutes, calling on the distribution; "Your line", 1 minute in chat: one step of your own work you will let a model draft first, and the source you will check it against.
+5. `s8` The Interview Rewrite, 5 min, `builder-assembler` (`t-s8`). Show the wrapper (`#cbWrap`), send it with the Roth memo task, and open the model's questions one at a time as clicked; the page labels the capture with its model and date (claude-sonnet-5-5, FACTS:claude-model-ids-and-retirements). "Reveal the rest" last. Say the data rule aloud before anyone pastes into the checker: no real client data and no identifying information enters any AI tool in this course. The starters (`#rpStart`) and the checker are for after class unless time allows; the 2-minute inversion is the work-along.
+6. `s10` Citation Failure Types on the Cole RMD Age, 6 min, `multi-column-sorter` (`t-s10c`). **Poll 3** (numeric range) opens it, before the paragraph that says three of the six items fail the usual check. Then the triage: one learner runs one check aloud, you call on the distribution for the rest. The four-check order in thirty seconds; close on "Existence is the floor of verification and never the ceiling." The live run is dropped first if behind.
+7. `s12d` Specification Cost Against Task Cost, 15 min, `sealed-vote-debate` (`t-s12d`). **Poll 4** (advisor fee) opens Phase one. Phase one, 2 minutes: the poll takes about a minute, then everyone locks a tile on the page and types S or M in chat on "go". Phase two, 7 minutes: four speakers at ninety seconds each with the page timer, minority side first, called by name. Phase three, 4 minutes: the complication, below. Phase four, 2 minutes: re-vote the same way, enter the "time was saved" percentage in the page's two boxes, press "Render both distributions", say nothing about the delta.
+8. `s12` Final Project Part 1 and Your Baseline, 3 min, `timed-ritual` (`t-s12`), `prediction-commit` (`t-s12c`), `work-along-gate` (`t-s12b`). Baseline: confirm the figure from the Homework 1 worksheet and copy the record; time nothing live. Readme commit-then-reveal: each student writes the TASK and HOW TO RUN lines for their own task, presses "Lock and compare", then reads the Case 1 lines and answers the two questions under them. The handoff package text and its checklist are on the page: point at them, do not read or restate them. A worked example is on the Case 1 page. The Session 3 reading card sits at the foot of the page; do not announce it.
 
-## Changed since the 09-13 run sheet (polish pass, 2026-09-14)
+Poll map: Poll 1 at `s6b`, Poll 2 at `s9`, Poll 3 at `s10`, Poll 4 at `s12d`. Break, 10 minutes, posted as a clock time, after `s9`; keep it for rest, not for 1:1 tech support. If behind, cut appendix first, then the `s8` starters and checker, the `s10` live run and the `s6b` group report; never `sCase`, `s12d` or the close.
 
-- Nothing that changes a slot: no element id, `data-comp`, opener, poll, minute or reveal moved. Print this sheet as it stands.
-- What the room sees differently, by section. §01: the explanation ends "no theory behind that number: it is simply what works for essays". §02: the lede reads "Two models two dollars apart per million tokens" and the paragraph under it "Plotted together, they scramble the price-sheet ranking". §03: the prompt-length panel is labelled "A related point". §05: the feedback on items 2 and 6 prints the section sign where it printed the literal "&sect;". §06: the two subheadings are sentence case, the memo paragraph reads "The questions it asked back are below", and the panel's hint line under the eight questions is gone (the label and "Reveal the rest" carry the instruction). §07: the Check 03 card no longer repeats "Training data has a cutoff; the Code does not" from the Type 03 card. §08: the section opens "§04 rebuilt one of your prompts" and the first live-audit criterion reads "Pasted in as written, it produced something". B1: the live-run doit points at §01 as it now is. B4: the adoption chart's caption names rows 1 and 3 and sits under the three bars. B5: the question reads "if a reliable prompt has to be specified as carefully as §04 required". Screen-reader-only changes in §04 (named level groups, pressed state on F1 to F3), §08 (pressed state on the three templates) and B5 (names on the two percentage boxes).
-- Two things the page still says that are yours to decide, opened in `docs/changes/2026-09-14-session-2-polish/recommendations.md`: §07's "three of the six items are wrong in a way that survives the check most people actually perform" against the triage tally's "Five of the six exist" (PL-026), and the footer's "Last updated 2026-09-12" (PL-034). Re-counted on the v5 key (six items on the age at which Meg and David must start required minimum distributions), the two sentences are both true and count different things: five items exist (1 to 5); three of those five are wrong (item 3, the right section and the wrong cohort; items 4 and 5, an instruction cited as law); items 1 and 2 are sound; item 6, Kessler, is the one that fails an existence check.
+## Named discussion: predicted split
+- Prediction, not data, written for about eight learners: first vote 5 "time was saved", 3 "the work moved" (about 63%). The savers are the practicing advisors paid on assets, who keep the hours after Poll 4; the movers are the non-practicing students and anyone who watched Case 2 turn on a birth year. At that size name the choice and the names, not a mean.
+- Complication on screen, Phase three: the card "The verification time is not optional and it is not amortised" and the card beside it, "A workflow that saves 20 minutes of drafting and adds 12 minutes of citation checking has saved 8." Add the 52.2% adoption and roughly 3% reliance card (FACTS:adoption-t3-2026, M).
+- Second vote: expect one or two voters to move from saved to moved. A zero delta is a finding; say so and stop.
 
-## Changed since the 09-12 run sheet (manual pass, 2026-09-13)
+## Appendix: select live, up to 87 minutes
+Order of preference when time is free; each sits after the core section named. Tiers decide what shows at each depth setting.
+- B3 `s6` P.T.C.F frame, 6 min, foundational, before `s6b`: take it first if the four parts are new; it holds the persona evidence behind Poll 1.
+- B6 `sZ` Zero-shot, one-shot, few-shot, 5 min, standard, after `s6b`: take it the moment anyone calls a bare prompt one-shot.
+- B7 `sDel` The delegation brief, 8 min, standard, after `s9`.
+- B9 `s7` Prompt specification triage, 5 min, standard, after `s10`.
+- B10 `s11` Template audit and live audit, 5 min, standard, after `s10`: have one prompt prepared; ask first whether anyone will offer theirs.
+- B4 `s3` Temperature, 5 min, standard, after `s6b`: when someone asks why the same prompt gives a different answer.
+- B8 `s5` Cost per task, 6 min, standard, after `s9`: read prices off the facts below, not from memory.
+- B5 `s4` Counting failure, 16 min, standard, after `s6b`; B1 `s1` Next-token probabilities, 16 min, foundational, after `s0`; B2 `s2` Laplace, 15 min, advanced, after `s0`: depth only.
 
-- §00 is the title, the lede, the depth control and the bridge. The case cards, the outcome cards, the glossary and the before-we-start block are gone; nothing on the page introduces the household before the Case facts button and §03.
-- The bridge is three items, all on content delivered 08-31: tokens (which side of the price is dearer), the context window (what travels with a message; the window is not the input box, FACTS:context-window-definition), the new-chat rule with the two documented reasons in the key. "Reveal all three".
-- The cold open is the heading, the box and the button. No opening line, no first-run sentence, no work-along.
-- The pacing panel is the four depth buttons and three timing cells; no readout line under the buttons.
-- There is no Shift+U override on this page. Every key is behind its own reveal control.
-- Batch 2 (same day): §01 lists seven sources of run-to-run difference after the vote, its explanation is a third of the length, the comparison exercise is gone and the consequence cards are shorter, the first now about a compliance review. §02 defines a task with five advisory examples, the estimator is a personal task mix across two tiers, and the decision block and the verification panel are gone. §03 is shorter. §04 is a builder: three premade prompts, four elements, four levels each; the paste-and-rank scorer and the fixture pack are gone; the verification gate moved to the §07 slot below. §05 has no discussion block. §06 opens questions one at a time as clicked, adds five reverse-prompting starters, and has no standing-constraint panel (say the rule aloud). §07 chips both base rates on the sentence, its chart caption fits, and Check 03 says how to check currency. §08's peer review is now your live audit (slot below). §09 keeps the two cards, the capture and the checklist; the reading list and the closing question are in the §09 slot below, not on the page. B2 has Three Cups.
-- Batch 3 (same day): §07's six triage explanations are four or five plain bullets each. The case dialog no longer carries the verification gate; its items are in the §07 slot below with the others. §02 has a second block, six example prompts in the shape of the benchmark's question kinds, between the five advisory tasks and the frontier chart.
+## Close
+- From the reserve, 2 minutes after `s12`. Chat waterfall, one sentence each: "Your rewritten template just produced a clean, well-sourced answer on David's in-plan Roth conversion. Name the one check you would still run before any of it reaches Meg, and say why the answer looking right is not a reason to skip it." Read two aloud and stop.
 
-## Standing
+## Check before teaching `s10` and `sCase`
+Every tax and legal characterisation attached to the case is a question, not a holding; you sign the slide, not the model. Confirm against primary text the week before:
+- SECURE 2.0 section 107, IRC 401(a)(9)(C)(v): applicable age 75 for births from 1960; first distribution years 2043 (Meg) and 2042 (David); required beginning dates 1 April 2044 and 1 April 2043 (CASE.md Part F.1 and F.4, M).
+- T.D. 10001 (July 2024), Treas. Reg. 1.401(a)(9)-2: confirms 75 for births on or after 1 January 1960 and leaves 1959 to a proposed rule; say the 1959 point only after reading the Federal Register text (Part F.4, M).
+- Pub. 590-B, Uniform Lifetime Table: $192,000 at 31 December 2025 divided by 17.7 at age 83 is $10,847 (Part F.6, M); confirm the factor in the current table.
+- IRC 408(d)(2): the pro-rata rule is in the Code and the Form 8606 instructions only explain reporting; David's base would include the $210,000 rollover IRA and a 401(k) is not aggregated (Part C.3.5 and E.1, M).
+- IRC 4974(a), SECURE 2.0 section 302: 25% of the shortfall, 10% if corrected within the correction window (Part F.4, M); confirm the window's length.
+- Case 2 email: IRC 408A(d)(3) and 402A(c)(4), a conversion is taxed in the year made and an in-plan Roth rollover is irrevocable (Part E.1, M); 35 ILCS 5/203(a)(2)(F), Illinois subtracts the taxable amount of a conversion (Part E.2, M); the 401(k) summary plan description amended 1 January 2026 (Part B.2). Kessler v. Commissioner does not exist; the page labels it a deliberately fabricated citation.
+- If portability comes up live: Dorothy Cole, David's mother, died 9 March 2021 (Part C.3.5). She was not a spouse and no Cole estate is in view, so do not apply the late-election window to the Coles.
 
-### Flow
-- The page is open at core-only depth. Do not raise the appendix depth in the room; B1 to B5 are for the async reader.
-- Every slot names the element by id and `data-comp`. If a slot runs long, the drop order is §06 first (as a three-minute demonstration of the wrapper, eight-question reveal skipped), then the §02 estimator, never §05 and never the baseline capture.
-- Six Zoom polls are prepared (P1 to P6 below). Launch each before the on-page vote or reveal it mirrors, so the room commits before it reads.
+## Verified facts for this session
+Say these as written. Each line is a record from `facts/FACTS.json` whose applies_to includes session-2.
 
-## Corrections slot (6:03 PM, 3 min) [8:03 CT]
+- FACTS:claude-api-price-sonnet-5-5 (H, retrieved 2026-10-11): Claude Sonnet 5.5 API price per million tokens. $2 input / $10 output. Source: Claude API pricing (platform.claude.com), https://platform.claude.com/docs/en/about-claude/pricing
+- FACTS:claude-api-price-opus-5-5 (H, retrieved 2026-10-11): Claude Opus 5.5 API price per million tokens. $4 input / $20 output. Source: Claude API pricing (platform.claude.com), https://platform.claude.com/docs/en/about-claude/pricing
+- FACTS:claude-api-price-fable-5-1 (H, retrieved 2026-10-11): Claude Fable 5.1 API price per million tokens. $10 input / $50 output. Source: Claude API pricing (platform.claude.com), https://platform.claude.com/docs/en/about-claude/pricing
+- FACTS:claude-api-price-haiku-5-5 (H, retrieved 2026-10-11): Claude Haiku 5.5 API price per million tokens, tiered by prompt length. $0.10 / $0.50 for prompts up to 100K tokens; $0.50 / $2.50 for prompts over 100K. Source: Claude API pricing (platform.claude.com), https://platform.claude.com/docs/en/about-claude/pricing
+- FACTS:claude-output-input-ratio (H, retrieved 2026-10-11): Output tokens cost five times input tokens on every listed Claude model. 5x. Source: Claude API pricing (platform.claude.com), https://platform.claude.com/docs/en/about-claude/pricing
+- FACTS:claude-cache-and-batch-pricing (H, retrieved 2026-10-11): Prompt-cache read and Batch API pricing relative to base input. cache read 0.1x base input (0.025x on Fable 5.1 and Mythos 5.1; 0.05x on Opus 5.5 and Sonnet 5.5); cache write 1.25x (5 minute) or 2x (1 hour); Batch API 50% off input and output. Source: Claude API pricing (platform.claude.com), https://platform.claude.com/docs/en/about-claude/pricing
+- FACTS:claude-context-window (H, retrieved 2026-10-11): Context window and maximum output of the four current Claude models. 1M tokens context; 128K tokens maximum output (synchronous Messages API). The record notes that 1M tokens is roughly 555K words on the current tokenizer. Source: Models overview (platform.claude.com), https://platform.claude.com/docs/en/models/overview
+- FACTS:context-window-definition (H, retrieved 2026-10-11): What the context window is. All the text the model can reference when generating a response, including the response itself: the system prompt, every message and document in the request, tool definitions, and the output including extended thinking; up to 1M tokens on current models. It is not the input box. Source: Context windows (platform.claude.com), https://platform.claude.com/docs/en/build-with-claude/context-windows
+- FACTS:claude-tokenizer-4-7 (H, retrieved 2026-10-12): Claude 4.7 and later models (and Claude Mythos Preview) use a newer tokenizer that produces approximately 30% more tokens for the same text; the exact increase depends on content and workload. about 30% more tokens for the same text on Claude 4.7 and later. Source: Pricing (Claude Platform Docs), section on tokenizer differences, https://platform.claude.com/docs/en/about-claude/pricing
+- FACTS:claude-model-ids-and-retirements (H, retrieved 2026-10-11): Current Claude model ids and their earliest retirement dates; Sonnet 4.5 retirement. claude-fable-5-1 (not before 2027-09-01), claude-opus-5-5 (2027-09-22), claude-sonnet-5-5 (2027-09-28), claude-haiku-5-5 (2027-10-07); claude-sonnet-4-5-20250929 deprecated 2026-09-30, retires 2026-11-30. Source: Model deprecations (platform.claude.com), https://platform.claude.com/docs/en/about-claude/model-deprecations
+- FACTS:arena-rename (M, retrieved 2026-10-11): LMArena is now Arena. The leaderboard formerly called LMArena (and before that Chatbot Arena) has been Arena, at arena.ai, since 2026-01-28. Source: LMArena is now Arena (arena.ai blog, 2026-01-28), https://arena.ai/blog/lmarena-is-now-arena
+- FACTS:zero-shot-definition (M, retrieved 2026-10-11): Zero-shot, one-shot and few-shot prompting. Brown et al. (2020), "Language Models are Few-Shot Learners" (arXiv 2005.14165): zero-shot gives the model only a natural-language instruction and no demonstrations; one-shot gives exactly one demonstration plus the instruction; few-shot gives as many demonstrations as fit in the context (typically 10 to 100). Source: Brown et al. (2020), Language Models are Few-Shot Learners, arXiv 2005.14165, https://arxiv.org/abs/2005.14165
+- FACTS:portability-late-election (M, retrieved 2026-10-11): Late portability elections under Rev. Proc. 2022-32. An estate not required to file under IRC 6018(a) may elect portability on a complete Form 706 filed on or before the fifth anniversary of death (superseding Rev. Proc. 2017-34's second anniversary); later relief only by private letter ruling under Treas. Reg. 301.9100-3. Source: Rev. Proc. 2022-32 (IRB 2022-30), https://www.irs.gov/pub/irs-drop/rp-22-32.pdf
+- FACTS:tcja-enactment (M, retrieved 2026-10-11): When the Tax Cuts and Jobs Act was enacted. Signed 22 December 2017 as Public Law 115-97 (H.R. 1, 115th Congress). Source: Congress.gov, H.R. 1 (115th Congress) actions, https://www.congress.gov/bill/115th-congress/house-bill/1/actions
 
-### Flow
-- Opener: "Three things I said last time that I have since checked. Here is what I found and how confident I am."
-- Aloud, no chart needed (D7): input tokens are one fifth of output on every listed Claude model, not half, so output costs five times input (DW-092 item 2, H, FACTS:claude-output-input-ratio); a cache read is 10% of base input by default, 5% on Opus 5.5 and Sonnet 5.5 and 2.5% on Fable 5.1, so say "about a tenth, less on the newest tiers" and never 5% or 50% as the rule (item 3, H, FACTS:claude-cache-and-batch-pricing); and §7872 has two figures, not one: aggregate gift loans between individuals at or below $10,000 are outside the section on that day (not for loans used to buy or carry income-producing assets), and $100,000 is the separate figure at or below which the imputed interest is capped at the borrower's net investment income, treated as zero if that income is $1,000 or less (item 5, M, FACTS:irc-7872-thresholds).
-- Moved to §01's opener at 6:26: temperature zero is an accepted API value and is still not fully deterministic (item 4, H). The page now says the same at the slider.
-- Moved to §02's opener at 6:35, where the chart is on screen: Fable 5.1 costs $10 / $50 per million tokens and Opus 5.5 $4 / $20, two and a half times, not "six times", and the multiple moves whenever either price does, so read the prices off the chart (item 9, H, FACTS:claude-api-price-fable-5-1 and FACTS:claude-api-price-opus-5-5); the Intelligence Index is Artificial Analysis's, a weighted average of 10 evaluations scaled 0 to 100, and the "83 to 81" figures were LiveBench's, a separate contamination-limited benchmark of 23 objective tasks in 7 categories; Arena (formerly LMArena) is a third board, built from human pairwise preference votes (item 11, M, FACTS:aa-index-definition and FACTS:arena-rename).
-- In writing to the class after the session: items 1, 6, 7, 8, 10 and 12 of DW-092.
+### Corrections register: the correct versions for this session
+- Output against input price: output tokens cost five times input tokens on every listed Claude model. Sonnet 5.5 is $2 in and $10 out, Opus 5.5 $4 and $20, Fable 5.1 $10 and $50 per million tokens, so Fable 5.1 costs two and a half times Opus 5.5 on both sides, a multiple that moves whenever either price does: read it off the chart (FACTS:claude-output-input-ratio, FACTS:claude-api-price-sonnet-5-5, FACTS:claude-api-price-opus-5-5, FACTS:claude-api-price-fable-5-1).
+- Cache reads: about a tenth of base input by default, a twentieth on Opus 5.5 and Sonnet 5.5, a fortieth on Fable 5.1 (FACTS:claude-cache-and-batch-pricing).
+- The context window is all the text the model can reference when generating a response, the response itself included, up to 1M tokens on current models; the box you type in is the smallest part of it (FACTS:context-window-definition, FACTS:claude-context-window).
+- Portability: an estate not required to file under IRC 6018(a) may elect portability on a complete Form 706 filed on or before the fifth anniversary of death under Rev. Proc. 2022-32; after that, only a private letter ruling under Treas. Reg. 301.9100-3, and none of it for an estate that must file under 6018(a). Illinois has no portability (CASE.md Part E.2). Both "permanently gone" and "still inside the window" overstate; the answer turns on the date of death, the estate's size and whether a return was filed (FACTS:portability-late-election).
+- A prompt with an instruction and no example is zero-shot; one-shot is exactly one example inside the prompt; few-shot is several (FACTS:zero-shot-definition).
+- The leaderboard is Arena (arena.ai), renamed on 2026-01-28 from the name it carried before (FACTS:arena-rename).
+- The Tax Cuts and Jobs Act was signed 22 December 2017 as Public Law 115-97 (FACTS:tcja-enactment).
 
-## sCold (Cold open, 6:06 PM, 8 min) [8:06 CT]
-
-### Flow
-- 8 min, identical every session. Do not vary it, survey the room, or collect anything else - the five-week comparison needs it unmoved.
-- Element: `#sCold`, `.ritual` (`t-cold-open`, `timed-ritual`). Opener: "Same question every session. Five minutes, nobody talks, then we look."
-- Five minutes silent, then "Analyse what I typed". The page renders the eight checks the room heard on 08-31; it scores nothing.
-
-## s0 (Retrieval bridge, 6:14 PM, 7 min) [8:14 CT]
-
-### Flow
-- Element: `#bridge` (`t-s0`, `retrieval-bridge`). Opener: "Three questions, no notes. Wrong and committed beats right and read."
-- Item 1, tokens: which side of the price is dearer. The room heard "half" on 08-31 (DW-092 item 2); the key says output is five times input on every current tier, so the 6:03 correction lands again here as retrieval. Item 2, context: what travels with a message; the key says all previous history plus the new message, all billed as input (DW-092 item 10); say it with the definition, which also counts the answer: the window is all the text the model can reference when generating a response, including the response itself, and it is not the input box (FACTS:context-window-definition). Item 3, the new-chat rule: your ten-to-fifteen-turn working rule, and the key names it as a heuristic, then gives the two documented reasons, the re-sent history and the vendor's context-rot statement. All three were taught 08-31 (tokens and price 02:12 to 02:22; memory and chat length 01:49 to 02:01; the restart rule 01:50 to 01:57).
-- Reveal all three only after the room has typed; the reveal is all-or-nothing on this page. *(As taught on 2026-09-14; see the 2026-10-11 change above.)*
-
-## s12 (Baseline capture, moved up, 6:21 PM, 5 min) [8:21 CT]
-
-### Flow
-- Element: `#s12` capture panel (`t-s12`, `timed-ritual`), "Copy baseline record". Opener: "This is the one thing tonight you cannot do later. Task, unassisted minutes, output. Copy the record to your notes."
-- The record's 40% line is labelled an assumption on the page; say it aloud once.
-
-## s3 (§01 Temperature, 6:26 PM, 9 min) [8:26 CT]
-
-### Flow
-- Poll P1 before the on-page vote: "Same prompt to the same model twice, an hour apart. Substantially the same / may differ materially."
-- Element: `#stanceVote` (`t-s3`, `prediction-commit`), then the slider `#temp`. Opener: "You watched me set this to 0, 0.8 and 1.6 two weeks ago. Now you set it."
-- Deliver DW-092 item 4 here. The slider's zero setting now says "greedy: top bar every time; real APIs still vary".
-- After the vote the page lists seven sources of run-to-run difference. Read two aloud, memory and the version, and point at the third consequence card: temperature is not yours to set in the chat product or, on current models, in the API.
-
-## s5 (§02 Cost per finished task, 6:35 PM, 10 min) [8:35 CT]
-
-### Flow
-- Deliver DW-092 items 9 and 11 with the chart up.
-- Element: `#frontierChart`, then the estimator (`t-s5`, `parameter-sandbox`). Poll P2 at the tier decision: "Which tier will your final-project workflow use? Sonnet 5.5 / Opus 5.5 / Fable 5.1 / another vendor / undecided." (Names per FACTS:claude-model-ids-and-retirements.)
-- The benchmark-task block (`#benchKinds`, six example prompts in the shape of the index's question kinds) is read, not run: point at Kind 06 as the nearest to their week, then go to the chart. The kinds are described in general terms at M and are on the DW-118 re-check list.
-- Finding 02's token-count clause is gone; quote only the two per-task costs. The estimator is a task mix: move the judgment slider live, the point is the share, not the list price. The index scores and OpenAI rates carry an August date (DW-118).
-
-## s6 (§03 P.T.C.F, 6:45 PM, 10 min) [8:45 CT]
-
-### Flow
-- Element: the assembler (`t-s6`, `builder-assembler`). The worked prompt explains the in-plan Roth conversion to David; the claims it states are under Verify before teaching at s10. Opener: "The eight checks you heard last time collapse into four letters."
-- Poll P3 before the persona evidence: "Which P.T.C.F element do you leave out most often? P / T / C / F."
-
-### Facts
-- Zheng and colleagues: 162 roles, four model families, 2,410 factual questions, no gain from personas on objective accuracy (H, ACL abstract).
-
-## s6b (§04 Score your three templates, 6:55 PM, 15 min) [8:55 CT]
-
-### Flow
-- Element: the builder `#fixtures` (`t-s6b`, `builder-assembler`), then the editor. Opener: "Three prompts, four dials each. Watch what specified and checkable adds." Take F2, meeting notes, from gestured at to checkable on Format, then on Context; the prompt redraws each time. "Load this version into the editor" hands it to the rewrite editor, whose scaffold is unchanged.
-- 7:10 group report, 2 min. Poll P4 instead of a spoken round if the room is large: "Your weakest element across the three prompts: P / T / C / F."
-
-## Break (7:12 PM, 15 min, posted as "back at 7:27") [9:12 CT]
-
-## s8 (§06 The interview rewrite, 7:27 PM, 10 min) [9:27 CT]
-
-### Flow
-- Element: `#cbWrap` copy box, `#bsell` (`t-s8`, `builder-assembler`), the diagnostic `#promptIn`. Opener: "Ask it to ask you questions. You saw me do it building a skill; now it rebuilds your prompt." The worked task is the 3 October 2024 Roth conversion memorandum read against the 2026 plan description, and the eight questions the model asked back open one at a time as clicked (the page labels the capture with its model and date); "Reveal the rest" opens the remainder. The reverse-prompting starters (`#rpStart`, `t-s8b`) are for the async reader unless time allows one.
-- Say the data rule aloud before anyone pastes into the diagnostic: no real client data and no identifying information enters any AI tool in this course, synthetic or de-identified facts only. The on-page panel that said so is gone by instruction (2026-09-13); the hub and Session 1 still carry the rule.
-- First to drop if behind: show the wrapper, skip the eight-question reveal (three minutes).
-
-## s10 (§07 Citation failure types, 7:37 PM, 12 min) [9:37 CT]
-
-### Flow
-- Instructor-led; one learner runs one check aloud. Element: `#triage` (`t-s10c`, `multi-column-sorter`). Poll P5 before the reveal: "How many of the six citations would you have accepted as authority? 0 to 6." The six items are what an assistant returned for the age at which Meg and David must start required minimum distributions: two sound (SECURE 2.0 §107 and T.D. 10001), one right section and wrong cohort (age 73 where the applicable age is 75), two instructions cited as law (Publication 590-B and the Form 8606 instructions) and Kessler, fabricated.
-- The live-run prompt asks for the authority that sets the required minimum distribution age for a person born in 1968, Meg's cohort. Before this slot, work through the verification list below; the page no longer carries it.
-
-### Verify before teaching (moved from the page 2026-09-13; the on-page gate is gone by instruction)
-- The §07 triage key states five authorities as holdings and one case as a deliberate fabrication, so that citation failure can be taught; nothing else in this session is stated as a holding. Check each against primary authority before answering it in class.
-- SECURE 2.0 §107 (IRC §401(a)(9)(C)(v)) as key items 1 and 3 state it: the applicable age is 75 for anyone born in 1960 or later, so Meg (born 1968) has a first distribution year of 2043 and a required beginning date of 1 April 2044, and David (born 1967) a first distribution year of 2042 (CASE.md §F.1, §F.4, M). Item 3 plants age 73 as the wrong cohort. Confirm the statute's text and its birth-year line.
-- T.D. 10001 (July 2024), Treas. Reg. §1.401(a)(9)-2, key item 2: the final regulations confirm 75 for births on or after 1 January 1960 and leave 1959 to a proposed rule (CASE.md §F.4, M). Confirm against the Federal Register text before saying the 1959 point aloud.
-- IRS Publication 590-B and the Uniform Lifetime Table, key item 4: the key says the publication is an instruction, not law, and works Ruth's 2026 distribution as $192,000 at 31 December 2025 divided by the factor 17.7 for age 83, which is $10,847 (CASE.md §F.6, M). Confirm the factor in the current table.
-- IRC §408(d)(2) and the Form 8606 instructions, key item 5: the pro-rata rule is in the Code and the instructions only explain the reporting; David's base would include the $210,000 pre-tax rollover IRA, and a 401(k) balance is not aggregated (CASE.md §C.3.5, §E.1, M). Confirm the aggregation rule against the Code.
-- IRC §4974(a) and SECURE 2.0 §302, closing the Kessler item (key item 6): the excise tax on a missed distribution is 25% of the shortfall, reduced to 10% if corrected within the correction window (CASE.md §F.4, M). Confirm both rates and the length of the window.
-- IRC §408A(d)(3) and §402A(c)(4) as the authority behind the in-plan Roth conversion explanation built in §03: a conversion is taxable in the year it is made and an in-plan Roth rollover is irrevocable (CASE.md §E.1, M). The worked prompt also states the 24% marginal rate, that Illinois does not tax the converted amount (35 ILCS 5/203(a)(2)(F)) and that Medicare premiums two years later can rise (CASE.md §E.2, §E.3, §F.3, M). Sound as stated, and stated without its limits: 24% is the Coles' 2026 marginal rate, not the rate in a later conversion year, and the premium effect depends on the IRMAA tier.
-- Portability: the §05 triage item asks whether a client can still elect portability for a spouse who died in 2021. The authority is Rev. Proc. 2022-32 (FACTS:portability-late-election, M): an estate not required to file under IRC 6018(a) may elect portability on a complete Form 706 filed on or before the fifth anniversary of death, which superseded Rev. Proc. 2017-34's second anniversary; later relief only by private letter ruling under Treas. Reg. 301.9100-3, and none of it for an estate that must file under 6018(a). The fifth anniversary of a 2021 death falls during 2026, so for any session held after 2026 the simplified route has closed for every 2021 death. Neither "permanently lost" nor "still inside the five-year window" is the right answer; the page's key says the first is not always true and that the route has closed, and it names four omitted facts: the exact date of death, the estate's size, whether a return was filed and whether the estate was under the filing threshold. The v5 Cole file dates Dorothy Cole's death 9 March 2021 (CASE.md §C.3.5), so her fifth anniversary passed on 9 March 2026; she was David's mother, not a spouse, and no Cole estate is in view, so do not apply the window to the Coles.
-- From the case dialog (its gate is off the page too, batch 3, 2026-09-13; the other five lessons still carry theirs, DW-056): the Illinois estate tax exclusion is $4,000,000, a threshold not a credit, not indexed, with no portability, and the Coles' $3,935,800 including insurance sits $64,200 below it (CASE.md §E.2, §H.4, M). Every tax and legal characterisation attached to the case is a question, not a holding; you sign the slide, not the model.
-
-### Facts
-- Kessler v. Commissioner does not exist; labelled on the page and in the footer as a deliberately fabricated citation used as exercise material.
-
-## s7 (§05 Triage, 7:49 PM, 8 min) [9:49 CT]
-
-### Flow
-- Element: `#quiz` (`t-s7`, `commit-first-mcq`). Poll P6 on item 7 before anyone clicks: "Underspecified / Specified, unverifiable / Specified and verifiable."
-- §08 now runs in the room as your live audit at 7:57 PM (below). There is no pairing to announce.
-
-## s11 (§08 Live audit, 7:57 PM, 8 min, taken from the reserve) [9:57 CT]
-
-### Flow
-- Element: `#rubric` then `#peer` (`t-s11`, `work-along-gate`). Opener: "One prompt, audited in front of you. Score along on the four criteria."
-- Have one prompt prepared; ask first whether anyone will offer theirs. Run the eight-item self-audit on it aloud, then the room scores the four live-audit criteria 0 to 3 and reads the total.
-- Nothing is shared between classmates and nothing runs between sessions (decision of 2026-09-13, superseding D5).
-
-## Reserve (8:05 PM, 17 min) [10:05 CT]
-
-### Flow
-- Q&A and demonstration. The room's best 20 minutes in Session 1 were here; the live audit took eight of them.
-
-## s12 (§09 Part 1 and the reading, 8:22 PM, 5 min) [10:22 CT]
-
-### Flow
-- Element: `#checklist` (`t-s12b`, `work-along-gate`). Announce the Session 3 reading aloud; the page no longer lists it: Wolfram, "The Concept of Embeddings" and the opening of "Meaning Space"; Kitces (January 2025) on AI notetaker adoption and satisfaction; Iskowitz (July 2025) on notetakers and compliance.
-- Closing question at 8:27, aloud, one to three answers; the page no longer carries it: "Your rewritten template just produced a clean, well-sourced answer on David's in-plan Roth conversion. Name the one check you would still run before any of it reaches Meg, and say why the answer looking right is not a reason to skip it." Stop by 8:50.
+Re-verify the week before: node scripts/verify-facts.mjs --as-of <session date> --session 2

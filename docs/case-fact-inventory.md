@@ -134,19 +134,19 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**1158 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**1160 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
 | `ryanAge` | 464 |
-| `megRetireAge` | 147 |
+| `megRetireAge` | 146 |
 | `davidRetireAge` | 96 |
-| `riskGap` | 62 |
-| `tomAge` | 60 |
+| `riskGap` | 63 |
+| `tomAge` | 61 |
 | `emmaAge` | 58 |
 | `davidRiskScore` | 48 |
-| `megAge` | 43 |
+| `megAge` | 45 |
 | `megRiskScore` | 25 |
 | `earlyReduction` | 17 |
 | `delayedCredit` | 15 |
@@ -167,11 +167,11 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `allocFixed` | 2 |
 | `megLossTolerance` | 2 |
 | `rmdExciseCorrected` | 2 |
-| `ruthAge` | 2 |
 | `megApplicableAge` | 2 |
 | `rothPct` | 2 |
 | `ruthShort` | 1 |
 | `ryanShort` | 1 |
+| `ruthAge` | 1 |
 | `marginalRate` | 1 |
 
 ## Money figures in case context that `CASE.md` does not carry
@@ -179,10 +179,10 @@ with the text around it, so the undercount can be judged rather than trusted.
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
 | `index.html:938` | UNGUARDED | $64,200 | 35 ILCS 405). CASE.md &sect;H.4 puts the Coles at $3,935,800 with life insurance counted, 〈$64,200〉 below it, and states no conclusion.</li> <li>The f |
-| `session-3/index.html:2956` | UNGUARDED | $3,000 | KI=[ {t:'Meg’s mother’s care team says she may need assisted living within a year, about 〈$3,000〉 a month more than she pays now.',k:'in',w:'Meg’s fir |
-| `session-3/index.html:3002` | UNGUARDED | $3,000 | 's mother\'s care team says she may need the assisted living wing within a year, at about 〈$3,000〉 a month more than she pays now. The new summary pla |
-| `session-5/index.html:3943` | UNGUARDED | $3,000 | o name, no employer, no town. The one case figure it types is the meeting's own "about 〈$3,000〉 a month more" (CASE.md A.3, Part O), as spoken; the fi |
-| `session-5/index.html:3966` | UNGUARDED | $3,000 | e. The wife\u2019s mother may need assisted living within a year. The extra cost is about 〈$3,000〉 a month.', checks:'Verification: read the brief and |
+| `session-3/index.html:2969` | UNGUARDED | $3,000 | KI=[ {t:'Meg’s mother’s care team says she may need assisted living within a year, about 〈$3,000〉 a month more than she pays now.',k:'in',w:'Meg’s fir |
+| `session-3/index.html:3015` | UNGUARDED | $3,000 | 's mother\'s care team says she may need the assisted living wing within a year, at about 〈$3,000〉 a month more than she pays now. The new summary pla |
+| `session-5/index.html:3947` | UNGUARDED | $3,000 | o name, no employer, no town. The one case figure it types is the meeting's own "about 〈$3,000〉 a month more" (CASE.md A.3, Part O), as spoken; the fi |
+| `session-5/index.html:3970` | UNGUARDED | $3,000 | e. The wife\u2019s mother may need assisted living within a year. The extra cost is about 〈$3,000〉 a month.', checks:'Verification: read the brief and |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,

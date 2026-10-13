@@ -108,11 +108,12 @@ confidence:     H
 kind:           assigned_reading
 moving_target:  false
 scope:          The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D6 is about exactly that.
-used_for.session-1: next-token prediction, the temperature passage, tokens and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison
-used_for.session-2: the sections "It's Just Adding One Word at a Time," "Where Do the Probabilities Come From?," "What Is a Model?," the temperature passage, and the parenthesis-language discussion
-used_for.session-3: assigned reading; "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion" in Appendix C1 and Appendix C1 (the definition, the five-billion-word construction, the 768 and 12,288 lengths, alligator and crocodile); "Beyond Basic Training" in Appendix C4 (the tell-it-once observation and its limit)
-used_for.session-4: the temperature passage in "It's Just Adding One Word at a Time" and the one-pass, no-loops description of the model (Appendix D6)
-used_for.session-5: the temperature passage in "It's Just Adding One Word at a Time", behind the sampled-differently failure type (Appendix E3)
+used_for.session-1: next-token prediction, the temperature passage, tokens and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison; also the assigned reading sections on the reading card
+used_for.session-2: the sections "It's Just Adding One Word at a Time," "Where Do the Probabilities Come From?," "What Is a Model?," the temperature passage, and the parenthesis-language discussion; also the assigned reading sections on the reading card
+used_for.session-3: assigned reading; "The Concept of Embeddings" and "Meaning Space and Semantic Laws of Motion" in Appendix C1 and Appendix C1 (the definition, the five-billion-word construction, the 768 and 12,288 lengths, alligator and crocodile); "Beyond Basic Training" in Appendix C4 (the tell-it-once observation and its limit); also the assigned reading sections on the reading card
+used_for.session-4: the temperature passage in "It's Just Adding One Word at a Time" and the one-pass, no-loops description of the model (Appendix D6); also the assigned reading section on the reading card
+used_for.session-5: the temperature passage in "It's Just Adding One Word at a Time", behind the sampled-differently failure type (Appendix E3); also the assigned reading sections on the reading card
+used_for.session-0.1: the Session 1 reading card (the assigned sections)
 ```
 
 ## src-case
@@ -381,6 +382,7 @@ moving_target:  false
 scope:          Why a model guesses rather than abstains, and the two scoring rules. The model tested was DeepSeek-V3 on 11 May 2025 — a historical fixture; the finding is about that model on that date.
 used_for.session-1: why a model guesses rather than abstains, and the two scoring rules
 used_for.session-5: why a model fills a missing field with a plausible guess rather than saying the field is missing (Appendices E3 and E8)
+used_for.session-0.1: the Session 1 reading card (the assigned reading on the reading card)
 ```
 
 ## src-rohrer
@@ -485,10 +487,11 @@ published:      2025-01-15
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
 confidence:     M
-kind:           evidence
+kind:           assigned_reading
 moving_target:  false
 scope:          Drawing on Kitces Research on Advisor Productivity, fielded autumn 2024: the greater-than-1:1 prep-and-follow-up ratio, the solo-versus-team adoption pattern, the UHNW drop-off, and the roughly fourfold rate for most-extensive against most-targeted plans.
 used_for.session-3: the prep-and-follow-up ratio (§04), the whole-cycle tooling (Appendix C5), and the adoption-against-satisfaction ranking with the $60 to $80 pricing (Appendix C7)
+used_for.session-2: the Session 3 reading card (the assigned reading on the reading card)
 ```
 
 ## src-lee-cognitive
@@ -503,11 +506,12 @@ last_retrieved: 2026-10-02
 last_verified:
 retrieval_note: OPENED IN FULL on 2026-10-02 (the Microsoft Research PDF, 23 pages, text extracted and read). Until that date this record carried the link as unverified and the confidence at M, because the 2026-08 build characterised the paper by its title alone. Session 3's §06 still uses only the title claim; Session 5 uses the measured findings below. The regression coefficients are the non-standardised figures in the paper's Table 4.
 confidence:     H
-kind:           evidence
+kind:           assigned_reading
 moving_target:  false
 scope:          A survey of 319 knowledge workers who shared 936 first-hand examples of using a generative AI tool at work (374 creation, 303 information, 259 advice; 309 of 319 used ChatGPT). Critical thinking was self-reported as enacted in 555 of the 936 examples (59.29%). In the mixed-effects models, confidence in the tool predicted less enacted critical thinking (coefficient -0.69, p < 0.001) and less perceived effort in five of six Bloom activities; confidence in oneself predicted more (0.26, p = 0.026) and more effort in applying and evaluating. Examples reporting less effort with the tool: 72% knowledge, 79% comprehension, 69% application, 72% analysis, 76% synthesis, 55% evaluation. Three qualitative shifts: from information gathering to information verification, from problem-solving to response integration, from task execution to task stewardship. Self-reported, cross-sectional, not a measure of accuracy.
 used_for.session-3: the title claim of self-reported reductions in cognitive effort, in the §06 discussion
 used_for.session-5: the survey's size and design, the finding that confidence in the tool predicts less critical thinking and self-confidence more, the share of examples reporting less effort, and the three shifts (§03, §05)
+used_for.session-4: the Session 5 reading card (the assigned reading on the reading card)
 ```
 
 ## src-wiretap
@@ -627,10 +631,10 @@ published:      2025
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
 confidence:     H
-kind:           background
+kind:           assigned_reading
 moving_target:  false
 scope:          The Delegation, Description, Discernment, Diligence framing. Assigned reading; no page claim rests on it.
-used_for.session-2: assigned reading; no page claim rests on it
+used_for.session-1: the Session 2 reading card (the assigned reading on the reading card)
 ```
 
 ## src-dahl-fictions
@@ -770,10 +774,11 @@ published:      2025-12-09
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
 confidence:     H
-kind:           evidence
+kind:           assigned_reading
 moving_target:  false
 scope:          FINRA's first standalone generative-AI section: enterprise-level supervisory processes, controls for hallucinations, bias, cybersecurity and threat-actor use, ongoing human monitoring, and novel oversight for agents that can act or transact.
 used_for.session-4: generative AI's section in the 2026 report (§02); supervision, with added oversight and logging for AI agents that act or transact (§05)
+used_for.session-3: the Session 4 reading card (the assigned reading on the reading card)
 ```
 
 ## src-finra-inj
@@ -1008,11 +1013,12 @@ last_retrieved: [UNVERIFIED, needs source]
 last_verified:
 retrieval_note: NOT RETRIEVED. cfp.net and the press-release hosts are egress-blocked from this build environment (2026-09-25). The title, the February 2025 date and the substance in scope come from search-engine summaries of the guide and of CFP Board's press release of 25 February 2025, which is why the confidence is M. The instructor holds the PDF (instructor-notes/session-3.md, the 09-21 night) and can raise it by reading the page.
 confidence:     M
-kind:           evidence
+kind:           assigned_reading
 moving_target:  false
 scope:          A checklist for CFP professionals using generative AI: safeguard confidentiality, including using pseudonyms and anonymisation to remove confidential information before uploading; verify the accuracy of output; confirm the platform stores output in compliance with recordkeeping rules; confirm the vendor commits to notice of data breaches; and keep professional judgment with the professional.
 used_for.session-4: using pseudonyms and removing identifying details before upload (§03, Appendix D1)
 used_for.case-4: pseudonyms, and confidential information removed, before upload, behind the plan matrix and the replacement step
+used_for.session-3: the Session 4 reading card (the assigned reading on the reading card)
 ```
 
 ## src-cfp-code
@@ -3020,7 +3026,7 @@ last_retrieved: 2026-10-11
 last_verified:
 retrieval_note: privacy.claude.com is unreachable from the build container (FACTS claude-consumer-retention, 2026-10-11). The values come from primary-domain search snippets plus the fully fetched anthropic.com post "Updates to Consumer Terms and Privacy Policy", read again in full on 2026-10-12: up to five years if you allow model training, the existing 30-day period if you do not. The page does not say whether the toggle starts on or off, so the lesson takes the training default from the Consumer Terms, src-anthropic-terms, and states none from this page.
 confidence:     M
-kind:           evidence
+kind:           assigned_reading
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4 §03
@@ -3033,7 +3039,7 @@ last_retrieved.session-5: 2026-10-11
 figures.session-5: up to five years with the training setting on, 30 days with it off (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11); no default stated
 used_for.case-1: how long a personal plan keeps conversations under the training setting, beside the readme's data-handling note
 used_for.case-4: how long a personal Claude plan keeps conversations under the training setting, in the vendor table of the reveal and behind the vendor paragraph
-used_for.session-0.1: what the Help improve Claude setting means on a personal plan: up to five years with it on, 30 days with it off, and the three named exceptions (section 00)
+used_for.session-0.1: what the Help improve Claude setting means on a personal plan: up to five years with it on, 30 days with it off, and the three named exceptions (section 00); also the Session 1 assigned reading on the reading card
 last_retrieved.session-0.1: 2026-10-11
 figures.session-0.1: up to five years with the setting on, within 30 days with it off, exceptions of two, seven and five years (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11); no default stated
 ```
@@ -3236,4 +3242,109 @@ scope:          Connectors let Claude access a user's apps and services, retriev
 used_for.session-0.1: what a connector is, that Claude inherits the user's permissions in the service, the warning that connecting can change data, and the owner step on Team and Enterprise (section 05)
 last_retrieved.session-0.1: 2026-10-13
 figures.session-0.1: none typed
+```
+
+## src-3b1b-llm
+
+```source
+title:          Large Language Models explained briefly (video, about 8 minutes)
+author:         Sanderson, G. (3Blue1Brown)
+publisher:      YouTube
+link:           https://www.youtube.com/watch?v=LPZh9BOjkQs
+published:      2024-11-20
+last_retrieved: 2026-10-13
+last_verified:
+retrieval_note: Title, date (companion post 2024-11-20, made for the Computer History Museum exhibit) and length (about 7:58) verified 2026-10-13 from the 3Blue1Brown newsletter and aggregators found by web search; the YouTube id itself was not resolved from this container, so Jared confirms the link on review.
+content_changed:
+confidence:     M
+kind:           assigned_reading
+moving_target:  true
+figure_class:   none
+recheck_before: the week before the session that assigns it
+scope:          Assigned video for Session 1 (watch before class): what a large language model is, in eight minutes.
+used_for.session-0.1: the Session 1 reading card (the assigned video on the reading card, watched before class)
+```
+
+## src-irs-guidance-primer
+
+```source
+title:          Understanding IRS guidance: a brief primer
+author:         Internal Revenue Service
+publisher:      IRS newsroom
+link:           https://www.irs.gov/newsroom/understanding-irs-guidance-a-brief-primer
+published:      not stated
+last_retrieved: 2026-10-13
+last_verified:
+retrieval_note: Existence and content (revenue rulings, revenue procedures, notices, announcements, and their place in the Internal Revenue Bulletin) verified 2026-10-13 from the IRS newsroom listing and two law-library guides found by web search; irs.gov is not reachable from the build container.
+content_changed:
+confidence:     M
+kind:           assigned_reading
+moving_target:  true
+figure_class:   none
+recheck_before: the week before the session that assigns it
+scope:          Assigned reading for Session 2: the kinds of IRS guidance and what authority each carries, the frame for the citation-verification work.
+used_for.session-1: the Session 2 reading card (the assigned reading on the reading card)
+```
+
+## src-anthropic-prompting-101
+
+```source
+title:          Prompting 101 (Code w/ Claude) (video, about 25 minutes)
+author:         Anthropic
+publisher:      YouTube
+link:           https://www.youtube.com/watch?v=ysPbXH0LpIE
+published:      2025-07-31
+last_retrieved: 2026-10-13
+last_verified:
+retrieval_note: Listed in the runbook's Appendix R (tentative); a web search on 2026-10-13 returned nothing that confirms the title, date or id, so the record stands at L until Jared confirms the link on review.
+content_changed:
+confidence:     L
+kind:           assigned_reading
+moving_target:  true
+figure_class:   none
+recheck_before: the week before the session that assigns it
+scope:          Assigned optional video for Session 2 (watch before class): prompt structure as Anthropic teaches it.
+used_for.session-1: the Session 2 reading card (the optional video on the reading card)
+```
+
+## src-claude-projects-rag
+
+```source
+title:          Retrieval augmented generation (RAG) for projects; What are projects?
+author:         Claude Help Center
+publisher:      support.claude.com
+link:           https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects
+published:      not stated
+last_retrieved: 2026-10-13
+last_verified:
+retrieval_note: Fetched in full 2026-10-13: "RAG for projects is available on paid plans (Pro, Max, Team, and Enterprise)"; "RAG automatically activates when your project approaches or exceeds the context window limits". The companion article "What are projects?" (support.claude.com/en/articles/9517075) is the second half of the reading.
+content_changed:
+confidence:     H
+kind:           assigned_reading
+moving_target:  true
+figure_class:   none
+recheck_before: the week before the session that assigns it
+scope:          Assigned reading for Session 3: how project knowledge is retrieved once it exceeds the context window, the product behind the retrieval sections.
+used_for.session-2: the Session 3 reading card (the assigned reading on the reading card)
+```
+
+## src-karpathy-intro
+
+```source
+title:          [1hr Talk] Intro to Large Language Models, the segment 45:43 to 58:37 (video)
+author:         Karpathy, A.
+publisher:      YouTube
+link:           https://www.youtube.com/watch?v=zjkBMFhNj_g
+published:      2023-11-22
+last_retrieved: 2026-10-13
+last_verified:
+retrieval_note: Title, date (posted 2023-11-23 per the summaries; the talk is dated 2023-11-22) and the security segment (jailbreaks, prompt injection, data poisoning) verified 2026-10-13 from three independent write-ups found by web search; the YouTube id was not resolved from this container.
+content_changed:
+confidence:     M
+kind:           assigned_reading
+moving_target:  true
+figure_class:   none
+recheck_before: the week before the session that assigns it
+scope:          Assigned video segment for Session 4 (watch before class): jailbreaks, prompt injection and data poisoning, the attack classes Session 4 teaches.
+used_for.session-3: the Session 4 reading card (the assigned video segment on the reading card, watched before class)
 ```

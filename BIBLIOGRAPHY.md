@@ -5,8 +5,8 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**157 works, 648 references across 11 lessons.** 128 are
-cited by at least one claim; 29 are listed by a lesson without carrying a
+**162 works, 665 references across 11 lessons.** 134 are
+cited by at least one claim; 28 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
 **102 records carry at least one field this repository could not verify, and
@@ -95,6 +95,25 @@ The Messages API reference as read on 2026-09-27: temperature is marked deprecat
 | Cited in | S3 `#sRag` · S3 `#s6` ×3 · S3 `#s7` · S3 `#s16` |
 
 Top-20-chunk retrieval failure rates — baseline 5.7%, contextual embeddings 3.7%, plus contextual BM25 2.9%, plus reranking 1.9% — and the stated ~200,000-token threshold below which the whole corpus beats retrieval. Vendor-reported benchmarks on codebases, fiction and research papers, not advisory documents.
+
+### Anthropic
+
+**AI fluency: Frameworks and foundations**  
+`src-anthropic-fluency` · assigned_reading
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Anthropic |
+| Link | **[UNVERIFIED, needs source]** |
+| Published | 2025 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S1 `#s15` |
+
+The Delegation, Description, Discernment, Diligence framing. Assigned reading; no page claim rests on it.
 
 ### Anthropic
 
@@ -650,7 +669,7 @@ Future Claude models generate text that contains a statistical watermark, announ
 ### Anthropic
 
 **Is my data used for model training?**  
-`src-claude-privacy-training` · evidence · **moving target**
+`src-claude-privacy-training` · assigned_reading · **moving target**
 
 | | |
 |---|---|
@@ -661,8 +680,8 @@ Future Claude models generate text that contains a statistical watermark, announ
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **9** |
-| Cited in | case-1 `#built` · S0.1 `#s0` ×3 · S4 `#s3` ×2 · S4 `#sCR` ×2 · S5 `#s0` |
+| **Total references** | **10** |
+| Cited in | case-1 `#built` · S0.1 `#s0` ×3 · S0.1 `#s11` · S4 `#s3` ×2 · S4 `#sCR` ×2 · S5 `#s0` |
 
 With the model training setting ("Help improve Claude") on, de-identified data may be kept up to five years in training pipelines; with it off, a deleted conversation is removed from back-end storage within 30 days. Exceptions the page names: flagged content up to 2 years, safety classifier scores up to 7 years, and thumbs-up or thumbs-down feedback, which keeps the whole conversation up to 5 years. Applies to Free, Pro and Max accounts, not to Team, Enterprise or the API.
 
@@ -779,6 +798,25 @@ Projects are available to all users including Free, which can create five; a pro
 | Cited in | S0.1 `#s5` ×6 |
 
 Connectors let Claude access a user's apps and services, retrieve data and take actions in them; Claude inherits each person's permissions from the connected service; connecting grants Claude permission to access and potentially modify data in the service; on Team and Enterprise plans an owner must enable a connector for the organization first.
+
+### Anthropic
+
+**Prompting 101 (Code w/ Claude) (video, about 25 minutes)**  
+`src-anthropic-prompting-101` · assigned_reading · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | YouTube |
+| Link | <https://www.youtube.com/watch?v=ysPbXH0LpIE> |
+| Published | 2025-07-31 |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | L |
+| **Total references** | **1** |
+| Cited in | S1 `#s15` |
+
+Assigned optional video for Session 2 (watch before class): prompt structure as Anthropic teaches it.
 
 ### Arena
 
@@ -935,7 +973,7 @@ In early 2020 a bank branch manager in the UAE authorised transfers of $35 milli
 ### CFP Board
 
 **Generative AI Ethics Guide: A Checklist for Upholding the Code and Standards**  
-`src-cfp-genai` · evidence
+`src-cfp-genai` · assigned_reading
 
 | | |
 |---|---|
@@ -946,8 +984,8 @@ In early 2020 a bank branch manager in the UAE authorised transfers of $35 milli
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **5** |
-| Cited in | case-4 `#built` · S4 `#s2` ×2 · S4 `#sAnon` ×2 |
+| **Total references** | **6** |
+| Cited in | case-4 `#built` · S3 `#s16` · S4 `#s2` ×2 · S4 `#sAnon` ×2 |
 
 A checklist for CFP professionals using generative AI: safeguard confidentiality, including using pseudonyms and anonymisation to remove confidential information before uploading; verify the accuracy of output; confirm the platform stores output in compliance with recordkeeping rules; confirm the vendor commits to notice of data breaches; and keep professional judgment with the professional.
 
@@ -1007,6 +1045,25 @@ The 2021 practice analysis added Psychology of Financial Planning as the eighth 
 | Cited in | S2 `#s10` |
 
 A running count of court cases in which fabricated citations were filed. Cumulative counts as reported through a secondary tracker; the number only ever rises.
+
+### Claude Help Center
+
+**Retrieval augmented generation (RAG) for projects; What are projects?**  
+`src-claude-projects-rag` · assigned_reading · **moving target**
+
+| | |
+|---|---|
+| Author | Claude Help Center |
+| Publisher | support.claude.com |
+| Link | <https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects> |
+| Published | not stated |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S2 `#s12` |
+
+Assigned reading for Session 3: how project knowledge is retrieved once it exceeds the context window, the product behind the retrieval sections.
 
 ### Dahl, M., Magesh, V., Suzgun, M., & Ho, D. E.
 
@@ -1182,7 +1239,7 @@ FINRA's position that existing rules reach generative AI and that supervision is
 ### Financial Industry Regulatory Authority
 
 **2026 Annual Regulatory Oversight Report**  
-`src-finra2026` · evidence
+`src-finra2026` · assigned_reading
 
 | | |
 |---|---|
@@ -1193,8 +1250,8 @@ FINRA's position that existing rules reach generative AI and that supervision is
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **8** |
-| Cited in | S4 `#s1` ×2 · S4 `#s7` ×3 · S4 `#sAud` ×2 · S4 `#sCR` |
+| **Total references** | **9** |
+| Cited in | S3 `#s16` · S4 `#s1` ×2 · S4 `#s7` ×3 · S4 `#sAud` ×2 · S4 `#sCR` |
 
 FINRA's first standalone generative-AI section: enterprise-level supervisory processes, controls for hallucinations, bias, cybersecurity and threat-actor use, ongoing human monitoring, and novel oversight for agents that can act or transact.
 
@@ -1521,6 +1578,25 @@ The IRS publication on IRA distributions, including required minimum distributio
 
 The form on which a Roth conversion and any IRA basis are reported; named as a citation inside the session-2 citation-triage items.
 
+### Internal Revenue Service
+
+**Understanding IRS guidance: a brief primer**  
+`src-irs-guidance-primer` · assigned_reading · **moving target**
+
+| | |
+|---|---|
+| Author | Internal Revenue Service |
+| Publisher | IRS newsroom |
+| Link | <https://www.irs.gov/newsroom/understanding-irs-guidance-a-brief-primer> |
+| Published | not stated |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S1 `#s15` |
+
+Assigned reading for Session 2: the kinds of IRS guidance and what authority each carries, the frame for the citation-verification work.
+
 ### InvestmentNews
 
 **AI moves from novelty to backbone as advisors reshape their fintech stacks**  
@@ -1573,10 +1649,29 @@ The compliance framing around note-takers: that an AI summary is a firm record h
 | Last retrieved | 2025-05-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **5** |
-| Cited in | S1 `#s9` · S5 `#sE3` ×2 · S5 `#s3` ×2 |
+| **Total references** | **6** |
+| Cited in | S0.1 `#s11` · S1 `#s9` · S5 `#sE3` ×2 · S5 `#s3` ×2 |
 
 Why a model guesses rather than abstains, and the two scoring rules. The model tested was DeepSeek-V3 on 11 May 2025 — a historical fixture; the finding is about that model on that date.
+
+### Karpathy, A.
+
+**[1hr Talk] Intro to Large Language Models, the segment 45:43 to 58:37 (video)**  
+`src-karpathy-intro` · assigned_reading · **moving target**
+
+| | |
+|---|---|
+| Author | Karpathy, A. |
+| Publisher | YouTube |
+| Link | <https://www.youtube.com/watch?v=zjkBMFhNj_g> |
+| Published | 2023-11-22 |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S3 `#s16` |
+
+Assigned video segment for Session 4 (watch before class): jailbreaks, prompt injection and data poisoning, the attack classes Session 4 teaches.
 
 ### Kinniry, F. M., Jaconetti, C. M., DiJoseph, M. A., Walker, D. J., & Quinn, M. C.
 
@@ -1600,7 +1695,7 @@ Vanguard's framework attributes about 3 percentage points a year of potential ne
 ### Kitces.com
 
 **Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends**  
-`src-kitces-notetakers` · evidence
+`src-kitces-notetakers` · assigned_reading
 
 | | |
 |---|---|
@@ -1611,8 +1706,8 @@ Vanguard's framework attributes about 3 percentage points a year of potential ne
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **7** |
-| Cited in | S3 `#s9` · S3 `#s10` ×2 · S3 `#s11` ×2 · S3 `#s16` ×2 |
+| **Total references** | **8** |
+| Cited in | S2 `#s12` · S3 `#s9` · S3 `#s10` ×2 · S3 `#s11` ×2 · S3 `#s16` ×2 |
 
 Drawing on Kitces Research on Advisor Productivity, fielded autumn 2024: the greater-than-1:1 prep-and-follow-up ratio, the solo-versus-team adoption pattern, the UHNW drop-off, and the roughly fourfold rate for most-extensive against most-targeted plans.
 
@@ -1657,7 +1752,7 @@ Three Morningstar surveys in 2021 and 2022, about 3,000 responses, of which 184 
 ### Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., & Wilson, N.
 
 **The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers**  
-`src-lee-cognitive` · evidence
+`src-lee-cognitive` · assigned_reading
 
 | | |
 |---|---|
@@ -1668,8 +1763,8 @@ Three Morningstar surveys in 2021 and 2022, about 3,000 responses, of which 184 
 | Last retrieved | 2026-10-02 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **6** |
-| Cited in | S3 `#s15` · S5 `#s5` ×3 · S5 `#sE5` ×2 |
+| **Total references** | **7** |
+| Cited in | S3 `#s15` · S4 `#s9` · S5 `#s5` ×3 · S5 `#sE5` ×2 |
 
 A survey of 319 knowledge workers who shared 936 first-hand examples of using a generative AI tool at work (374 creation, 303 information, 259 advice; 309 of 319 used ChatGPT). Critical thinking was self-reported as enacted in 555 of the 936 examples (59.29%). In the mixed-effects models, confidence in the tool predicted less enacted critical thinking (coefficient -0.69, p < 0.001) and less perceived effort in five of six Bloom activities; confidence in oneself predicted more (0.26, p = 0.026) and more effort in applying and evaluating. Examples reporting less effort with the tool: 72% knowledge, 79% comprehension, 69% application, 72% analysis, 76% synthesis, 55% evaluation. Three qualitative shifts: from information gathering to information verification, from problem-solving to response integration, from task execution to task stewardship. Self-reported, cross-sectional, not a measure of accuracy.
 
@@ -2053,6 +2148,25 @@ A planning-software agent that reads the client's plan data inside the software,
 
 Cited ONLY for the design claim that interleaving categories during classification practice beats blocking them, which is what the section 04 deck order does. Bibliographic identity confirmed 2026-08-29 against three independent listings — the ERIC index record EJ1071568, the publisher's abstract page for doi 10.1037/edu0000001, and the author's own publication list at uweb.cas.usf.edu/~drohrer, which hosts the full text. The full text was not pulled into this build environment, so no figure or effect size from it appears anywhere in the corpus.
 
+### Sanderson, G. (3Blue1Brown)
+
+**Large Language Models explained briefly (video, about 8 minutes)**  
+`src-3b1b-llm` · assigned_reading · **moving target**
+
+| | |
+|---|---|
+| Author | Sanderson, G. (3Blue1Brown) |
+| Publisher | YouTube |
+| Link | <https://www.youtube.com/watch?v=LPZh9BOjkQs> |
+| Published | 2024-11-20 |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S0.1 `#s11` |
+
+Assigned video for Session 1 (watch before class): what a large language model is, in eight minutes.
+
 ### Schluntz, E., & Zhang, B.
 
 **Building effective agents**  
@@ -2409,8 +2523,8 @@ A publicly reachable ClickHouse database belonging to DeepSeek held over a milli
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **2026-08-23** |
 | Confidence | H |
-| **Total references** | **20** |
-| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s5` · S1 `#s4` · S2 `#s0` · S2 `#s1` ×2 · S2 `#s2` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s7` · S4 `#sWS` · S4 `#sCR` · S5 `#sE3` ×2 |
+| **Total references** | **25** |
+| Cited in | S0.1 `#s11` · S1 `#s2` · S1 `#s3` ×2 · S1 `#s5` · S1 `#s4` · S1 `#s15` · S2 `#s0` · S2 `#s1` ×2 · S2 `#s2` ×2 · S2 `#s3` ×2 · S2 `#s4` · S2 `#s12` · S3 `#s2` ×2 · S3 `#s7` · S3 `#s16` · S4 `#sWS` · S4 `#s9` · S4 `#sCR` · S5 `#sE3` ×2 |
 
 The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D6 is about exactly that.
 
@@ -2465,7 +2579,6 @@ source that does not belong in that lesson's footer.
 
 | Source | Kind | Listed by | Exempt? |
 |---|---|---|---|
-| `src-anthropic-fluency` | background | S2 | yes, by kind |
 | `src-beta` | evidence |  | **NO — finding** |
 | `src-ctxwindow` | evidence |  | **NO — finding** |
 | `src-features` | evidence |  | **NO — finding** |

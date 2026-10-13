@@ -324,6 +324,10 @@ facts to rank, the same key, the same verdict rows. When a case page's captured
 output changes, re-read the lesson's opener; nothing checks the two mechanically
 yet (deferred-work row).
 
+### Reading cards (`docs/next-term/readings.json`, `scripts/build-readings.mjs`)
+
+The "Reading for Session N" card on each page is generated from `docs/next-term/readings.json` into the `READINGS:BEGIN sN` region of the page that precedes Session N (the setup page carries Session 1's). Edit the JSON (drop a row, change its status from "tentative", fix a title), run `node scripts/build-readings.mjs`, then `node scripts/inject-sources.mjs` (each row's `source_key` is a SOURCES.md record of kind `assigned_reading`, cited by the card's chip), and commit all three; `--check` says whether a card is stale.
+
 ## Change-folder checks, and jsdom
 
 Nearly every pass on a lesson since 2026-09-12 left a folder,

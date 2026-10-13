@@ -1,124 +1,46 @@
-# Session 5 teaching aid, Monday 2026-10-05, 6:00 to 9:00 PT
+# Session 5 teaching aid
 
-Plain-text copy of `session-5-teaching-aid.pdf`, for a phone. The PDF is the one to print: two
-landscape pages, page 1 the flow, page 2 the setup, the presentations, the lecture cards, the §01
-run flow, the cues and your own prep. Rewritten 2026-10-04 for the page after the interactivity
-pass: §07 (the firm's library) is new and the second half runs five minutes later. Nothing in this
-file addresses a learner.
+Plain-text copy of `session-5-teaching-aid.pdf`, for a phone. The PDF is the one to print: two landscape pages, page 1 the flow, page 2 the setup, the slot clock, the case and calendar run flows, the discussion, the cues and your own prep. Written for the 2027 term against the page after Phase 6b: core is 45 minutes (sections 00 to 05), the presentations are 8 + 2 + 3 minutes each, and the rest of the old page lives in the appendix. Every time below is minutes from the start of the night. Nothing in this file addresses a learner.
 
-Colour lanes in the PDF: blue = work the page; red = you lecture, two minutes; green = the
-presentations; purple = a poll or a chat harvest; a black number = never skip; red text = stop by
-that time. Every drag on the page also works as click the item, then click the place.
+Colour lanes in the PDF: blue = work the page; green = the presentations; purple = a poll or a chat harvest; a black number = never skip; red text = stop by that time. Every drag on the page also works as click the item, then click the place.
 
 ## Page 1: the flow
 
-1. **6:00 OPEN.** Zoom. "Setup questions at the break." Correction: the AI-search reading could
-   not be opened from the build; the page carries one recommendation from it (who-what-where) at
-   medium confidence. Say what else it says if you have read it.
-2. **6:03 OBJECTIVE.** §00. Read "Session 5's one thing": explain it, break it, improve it, say
-   what stays yours. Non-advisors: "the workflow you were handed is still someone's recurring
-   task." The Coles in two lines. NEVER SKIP.
-3. **6:05 BRIDGE.** §00. Three letters, all b by content (positions vary). Advance the model three
-   times: the box changes, the ring does not. Click 5 Hand it over.
-4. **6:09 COLD OPEN.** POLL 1: Then or Now? Click Then, Test 1 · check both, Test 2 · could you
-   send it? Then 3 of 8 and names the client; Now 8 of 8. Land: "good and allowed are two tests."
-   NEVER SKIP.
-5. **6:17 §01.** Pin A, drag to today: deprecated, 57 days. Past 30 Nov: retired, requests fail
-   (FACTS:claude-model-ids-and-retirements). Pin C: untested. Then drag gate B and rule 2 onto the skill card, Advance the model four times:
-   STOPPED, RUNS, RUNS, STOPPED + HELD 4 OF 5. Land: "a gate names what may run; a scorecard
-   names what right looks like; approve once per release."
-6. **6:22 §02 WORKED.** Tag the five choices; Model tier and Data handling: NOT STATED;
-   Verification: WEAK. Copy the explanation. Then drag the eight loose files: three PDFs into one
-   prompt.txt, the docx into README.txt, the email and the chat link out. "Minute one of every
-   talk tonight; and the package was one README and one zip." NEVER SKIP.
-7. **6:28 §03 WORKED.** POLL 2: which break? Lock my prediction, Run all six: 2, 4, 5 broke.
-   GATE 1: "which break was not the model's fault?" Input 5. NEVER SKIP.
-8. **6:33 §04.** Three rows, a or b; checkable: NOT IN NOTE, CONFLICT heading, the README step
-   with the eight-digit test. 3 of 6 becomes 6 of 6 and the strip runs the improved version through
-   five stations.
-9. **6:38 LECTURE 1.** What to listen for in the next hour (page 2, L1). STOP 6:40.
-10. **6:40 BLOCK 1.** Presentations 1 to 4, ten minutes each: six, the builder's two, your
-    questions. Stop at seven minutes, kindly. GATE 2 to each builder. NEVER SKIP.
-11. **7:20 BREAK.** Post "back at 7:35 Pacific" in chat. Break starts by 7:20.
-12. **7:35 BLOCK 2.** Presentations 5 to 8. A presenter who could not run it presents where it
-    stopped; the finding is about the package. STOP 8:15. NEVER SKIP.
-13. **8:15 §05.** POLL 3: how much faster? Lock my guess, Reveal the four trials: +40, +25.1,
-    +14, minus 19 (believed +20). Click METR: the five lines of what it measured. The room's
-    sliders at the defaults: saves 45 a time, 6 hours a month; drag checking up and the saving
-    vanishes. Land: "felt faster is not faster; time it."
-14. **8:20 §06 WIRE THE DESK.** Drag The meeting and A vendor's servers onto the note-taker
-    (42.9% of 2,906; 14 tools); Your public pages and The open model's index onto AI search (8%
-    against 15%). A wrong one shakes and says why. The room calls the other three. Land: "the
-    questions do not change; the answers do."
-15. **8:25 §07 ONE REPOSITORY, EVERY DESK.** Click the Cole prep question: four skills light and
-    nobody named one. Click the transcript question: six. Push an update: six desks take v1.5.
-    Drag the unapproved plugin onto the policy: "blocked by enterprise policy". Land: "your
-    project was one of these; a firm keeps fifteen in a repository and ships them like code."
-16. **8:30 §08.** Eight moments, 1 or 2: tool 1, 4, 6, 8; you 2, 3, 5, 7. Rank the Reasons as the
-    room calls them, Lock my order, Show the survey's order: 32% advice, 21% relationship, 17%
-    cost, 11% returns, 10% alone, 9% communication; Vanguard's half; the exam's 7%. Land: "the
-    judgments are the fee."
-17. **8:35 §09.** Two commits, both b. GATE 3: "which confidence predicted more checking?"
-    Yourself, plus 0.26; the tool, minus 0.69. The two sliders, then Seal it.
-18. **8:40 LECTURE 2.** The tools change; the judgment does not (page 2, L2). STOP 8:42.
-19. **8:42 CLOSING CHECK, written.** Chat, one line each: explain, break, improve, keep. Read
-    three aloud. NEVER SKIP.
-20. **8:47 E5 if time.** POLL 4 sealed vote, 2 · Weigh both cases, 3 · The complication, POLL 4
-    again, 4 · Vote again. Depth to + Standard. Else: "the two pans may be one pan."
-21. **8:52 CLOSE.** Improved versions back to each builder; where the materials live; thanks.
-    End 8:54; six minutes of buffer.
+1. **Min 0 · section 00, the bridge (3).** Three Session 4 recall items, all b by content: on a personal plan your click is the contract, and chats may be used for training unless you switch it off (up to five years with the training setting on, 30 days with it off; state no default, FACTS:claude-consumer-retention); her job and her town together; the full answer with the model, the date and what you decided.
+2. **Min 3 · section 00, the objective (2). NEVER SKIP.** Say it once: explain it, break it, improve it, say what stays yours. Non-advisors: "the workflow you were handed is still someone's recurring task." Advance the model three times (the box changes, the ring of five does not); click 5 Hand it over. Point at the Part 2 card: 8 + 2 + 3.
+3. **Min 5 · section 01, Case 5 (10). NEVER SKIP.** POLL 1: which step breaks first? Silent commit on the page, key the five counts into the Room tally, reveal: step 2 breaks first and loudly, steps 3 and 4 second and quietly. The one case link: Case 5 section 3, the log's second row (nested bullets in 7 of 8, 1 of 8 pass all five checks). Bridge: the date was public weeks ahead.
+4. **Min 15 · section 02, the tools change (5).** Pin A, jump to 30 Sep, then 30 Nov: retired, "requests to retired models will fail" (FACTS:claude-model-ids-and-retirements). Pin C: untested. POLL 2, then drag gate B and rule 2 onto the skill card and Advance the model four times: STOPPED, RUNS, RUNS, STOPPED + HELD 4 OF 5. Land: "approve once per release, never by surprise." Last 30 seconds: what to listen for.
+5. **Min 20 · block 1 (52). NEVER SKIP.** Presenters 1 to 4. Each slot is 13 minutes: the talk 8, the builder 2, questions 3. Name Appendix E4 once before the first. Call "one minute" at 7:00 of the talk, stop it at 9:00.
+6. **Min 72 · break (15).** Post "back at" a clock time, in their zone, in chat. Break starts by 72.
+7. **Min 87 · block 2 (52). NEVER SKIP.** Presenters 5 to 8, same slots. A presenter who could not run the package presents where it stopped: valid, and the finding is about the package. Done by 139.
+8. **Min 139 · section 03, measure it (5).** POLL 3: lock the room's band on the slider, Reveal the four trials: +40, +25.1, +14, and METR minus 19 (believed about +20). Click METR. Predict the Paper: b, b; yourself plus 0.26, the tool minus 0.69. Time One Task: saves 45 a time, 6 hours a month; drag checking up. Land: "felt faster is not faster; time it."
+9. **Min 144 · section 04, what stays human (5).** Eight moments, the room calls 1 or 2: tool 1, 4, 6, 8; you 2, 3, 5, 7. POLL 4 (short answer), then Rank the Reasons as the room calls them, Lock my order, Show the survey's order: 32 21 17 11 10 9. Land: "the judgments are the fee."
+10. **Min 149 · section 05, the discussion (15). NEVER SKIP.** Vote a, b, c or d by chat waterfall and write the tally down. 2 · Weigh both cases, minority first, 90 seconds each. 3 · The complication on screen, with 32% + 21% = 53% beside it. 4 · Vote again; show both tallies and say nothing about the delta.
+11. **Min 164 · the closing check, written (3). NEVER SKIP.** In chat, one line each: what is it made of, what breaks it, what change would you defend, what stays yours? Read three aloud. A line with no "stays yours": name section 04.
+12. **Min 167 · close (2).** Improved versions and packages back to each builder through the course site; where the course materials live; one sentence: the tools change and the judgment does not. Ends at 169; 11 minutes of buffer.
 
-**Setup at 5:45.** Tab 1 Session 5, Core only. Tab 2 the pairing list from Session 4. Four polls
-built from `session-5-polls.md`. Three chat lines ready. Speaker labels on; a visible clock.
+**Setup.** Tab 1 the Session 5 page, depth bar on Core only. Tab 2 `cases/case-5.html`. Tab 3 the pairing list from Session 4 and each presenter's `changes.txt`. Four polls built from `session-5-polls.md`, nobody a co-host. Three chat lines ready: the break time, the closing check, the one-thing line. Speaker labels on; a visible clock for the 8:00 and 9:00 marks.
 
-**Not tonight.** Live demonstrations of any workflow; E1 to E4 on the page; vendor names for
-note-takers or CRMs; any date, weight or platform; anything with a real client in it.
+**Not tonight.** Live demonstrations of any workflow; Appendix E1 (their rehearsal, before class); vendor names for note-takers or CRMs; any date, weight or platform not on the verified card; anything with a real client in it.
 
-**Checkpoints.** 6:40 presenter 1 on. 7:20 break. 8:15 block 2 done. 8:42 closing check.
+**Checkpoints.** Min 20 presenter 1 on. Min 72 block 1 done, break. Min 139 block 2 done. Min 164 closing check starts, whatever is unfinished.
 
-**Drop order if late.** 1 §02's file sort (saves 2). 2 §07 to one question (saves 3). 3 §06 to
-one tool (saves 3). 4 E5 to the one sentence (saves 5). 5 §04 to one row (saves 3). **Never
-drop:** objective, cold open, §02, §03, the presentations, the closing check.
+**Drop order if late.** 1 section 03's Time One Task (saves 1). 2 section 04's rank down to lock-and-show (saves 1). 3 the section 00 frame panel down to the objective line (saves 2). 4 the discussion's defence from 7 to 5 (saves 2). **Never drop:** the case commit, the presentations, the discussion's two votes, the closing check.
 
-**Answers.** Bridge all b · cold open Then 3, Now 8 · §01 retired after 30 Nov; B with 2 is the
-pair with no failure · §02 files: PDFs to the zip as one prompt.txt, docx to README, email and link
-out · §03 2, 4, 5 broke · §04 6 of 6 · §05 +40, +25.1, +14, minus 19 · §06 meeting to vendor, file
-to vendor twice, you to plan, pages to index · §08 tool 1 4 6 8, you 2 3 5 7; rank 32 21 17 11 10
-9 · §09 b, b · E5 no right answer.
+**Answers.** Bridge all b · Poll 1 step 2 · Poll 2 B and E · Poll 3 the 10 to 20% band (mean of the four bars is 15.0; the spread is the lesson) · section 04 sorter tool 1 4 6 8, you 2 3 5 7; rank 32 21 17 11 10 9 · section 03 paper b, b · section 05 no right answer.
 
 ## Page 2: around the flow
 
-**P · 6:40 and 7:35 · the presentations.** The pairing list: nobody presents their own, no two
-present each other's. Six minutes, five beats (what it does; the design choices; where it worked
-and the input that broke it; what they changed; one thing they take); stop at seven. The builder's
-two minutes in E4's order: understood, missed, what the package never said. Your two to four
-questions, one to the builder: "which input would you add to the test set?" · "which model and date
-is in the record?" · "what stays yours?" · "was it one README and one zip?" · "what did the runner
-try that you did not anticipate?" Could not run it: present where it stopped; valid; the finding is
-about the package. No live demonstrations.
+**P · min 20 and 87 · the presentations.** The pairing list: nobody presents their own, no two present each other's; the order inside a block is yours. Slot: talk 8 (one minute called at 7:00, stopped at 9:00), builder 2, questions 3. Slot starts: block 1 at 20, 33, 46, 59; block 2 at 87, 100, 113, 126. The five questions the talk answers: what it does and the problem; the design choices (tool, tier, prompt structure, verification); where it worked and the input that broke it; what they changed and the re-run result; one thing they take. The builder's two minutes in E4's order: understood, missed, what the package never said. Your questions, at least one to the builder: "Which input would you add to the test set?" · "Which model and tier is in the record?" · "What did the re-run show, and on which input?" · "What stays yours?" · to the builder: "What did the runner try that you did not anticipate?" Open `changes.txt` before each slot. No live demonstrations.
 
-**L1 · 6:38 · what to listen for.** Four things per talk: what it is made of (§02), the input that
-broke it (§03), the change and its proof (§04), what stays human. A tier named that the package
-never stated is a package gap. The question you ask every time: "which input would you add to the
-test set?"
+**L · min 19 · what to listen for (30 seconds).** Four things per talk, the four the page just taught: what it is made of, the input that broke it, the change and its proof, what stays human. A tier the presenter names that the package never stated is a package gap, said at the builder's turn.
 
-**L2 · 8:40 · the tools change; the judgment does not.** §01's calendar against §00's ring: every
-model has a date, none of the five stops does; Sonnet 4.5 was deprecated two days after Session 4
-(deprecated 2026-09-30, FACTS:claude-model-ids-and-retirements).
-The five things the course leaves them: the eight checks, the four parts of a prompt, the opened
-source, in-where-check-keep, the handoff test. §07 is where the five go to live at a firm. E5's
-output: the one sentence to a client about what you do that the tool does not.
+**C · min 5 · section 01 and the one link.** Title: "The One-Pager That Has to Survive a Model Change". The five steps: paste the figures; run the prompt on the model the skill names; draft the one-pager; check it; save it. Poll 1, silent commit, tally, reveal. Link out once: the log in Case 5 section 3. Second row: same prompt, eight drafts, nested bullets in 7 of 8 on the new id and none of 8 on the old, figures clean in 8 of 8, 1 of 8 pass all five checks. "The swap changed the layout, not a number."
 
-**F · §01 run flow.** A, today: deprecated since 30 Sep, retirement 30 Nov, replacement named; past
-30 Nov: retired, "requests to retired models will fail". B: active, not sooner than 28 Sep 2027 (Sonnet 5.5).
-C: runs on whatever is current, untested. Then the gate and the scorecard: drag B and 2 onto the
-card, Advance four times: STOPPED (names Sonnet 5.5), RUNS, RUNS, STOPPED + HELD 4 OF 5. A with 1 if
-asked: RUNS, FAILS, FAILS, FAILS.
+**F · min 15 · section 02 run flow.** A, today: deprecated since 30 Sep, retirement 30 Nov, replacement named; past 30 Nov: retired. B: active, not sooner than 28 Sep 2027 (Sonnet 5.5); "write the date you tested it". C: runs on whatever is current, untested. Gate B + rule 2, Advance ×4: STOPPED (names Sonnet 5.5), RUNS, RUNS, STOPPED + HELD 4 OF 5. A + 1 if asked: RUNS, FAILS, FAILS, FAILS. The page replays October 2026; say so once.
 
-**G · cues.** Gate 1 §03: input 5. Gate 2 each builder: "what did they understand that you never
-wrote down?" Gate 3 §09: yourself. Closing check written: explain, break, improve, keep.
+**D · min 149 · the discussion.** Proposition: as the tool does more of the analysis, an adviser's value moves to the relationship. Predicted, N about 8: vote 1 a 2, b 4, c 2, d 0; vote 2 a 1, b 3, c 3, d 1. Six or more on one side: assign the two nearest the middle to argue the other. The complication, on screen: "Quality of advice" is what the client perceived, and perceived quality includes how the advice was explained and whether it was theirs; the two pans may be one pan (Morningstar, about 185 investors, M). Beside it: 32% advice quality, 21% relationship, 53% together.
 
-**H · for you.** Open Anthropic's model deprecations page and models overview once (H, opened 4
-Oct, re-read 2026-10-11). The five Claude Code documentation pages behind §07 and §01's gate were opened 4 Oct (H); the
-firm on the page is invented. Everything else external is M and listed in the run sheet's Verify
-section. Lee et al. was opened in full.
+**G · cues.** Section 01 reveal: to a step 3 or 4 voter, "what would you see on the day?" Each builder: "what did the presenter understand that you did not write down?" Section 03: "which confidence predicted more critical thinking?" Yourself. Closing check, written: explain, break, improve, keep.
+
+**H · for you.** Open Anthropic's deprecations page and models overview once (FACTS:claude-model-ids-and-retirements, H). Case 5's log rows on the old model id are a dated record and cannot be re-run. The four trials, Morningstar, Vanguard and the CFP exam weight are M and listed in the run sheet's verify section; Lee et al. was opened in full (FACTS:lee-2025-critical-thinking).

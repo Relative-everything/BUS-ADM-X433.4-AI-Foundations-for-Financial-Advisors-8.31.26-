@@ -1,74 +1,32 @@
-# Session 4 Zoom polls: nine to choose from, run four or five
+# Session 4 Zoom polls
 
-Each poll is written to paste straight into Zoom (question under 255 characters, answers under 100).
-The slot time is the teaching aid's. A tick marks the answer the section lands; "habits check"
-means there is no right answer and the result is the lesson. Every figure is on the page or in the
-verified facts behind it.
+Four polls, each launched before the on-page step it mirrors. Build and test them ahead; students are not co-hosts. Questions under 255 characters, answers under 100. If a poll fails, take the answer in chat on a count of three and apply the same rule. The Case 4 commit (`sCase`) is a chat waterfall of three letters, not a poll.
 
-**Recommended five:** 1, 3, 5, 6, 9. They sit at 6:12, 6:46, 7:42, 7:56 and 8:41, one per hour of
-the room's attention, and each one is clicked on the page straight after the result. Add 4 or 7 if
-the room is quick; keep 8 only if D4 runs in full.
+## Poll 1
+- **Section:** `s1`, opens it, before the page's guess. **Format:** ranking. **Zoom:** Rank Order, four items, anonymous.
+- **Question:** Rank these four by legal force over a US adviser's use of AI today, most force first.
+- **Options:** Regulation S-P, as amended in 2024 / FINRA Regulatory Notice 24-09 / SEC examination priorities for fiscal 2026 / The SEC's 2023 predictive data analytics proposal.
+- **Expected:** Regulation S-P first, in force for every covered firm (FACTS:reg-sp-compliance); the withdrawn proposal last (FACTS:sec-pda-withdrawal). The middle two are not keyed: the notice adds no requirement (FACTS:finra-24-09-status); the priorities state "no legal force or effect" (FACTS:sec-exam-priorities-status). Source: the `s1` key.
+- **Rule:** If fewer than half rank Regulation S-P first, read the lane 2 header aloud and give the sorter its full three minutes. Otherwise press the guess in ten seconds and give the minutes to `s2`.
 
----
+## Poll 2
+- **Section:** `s2`, opens its second panel, The Harder Ones. **Format:** multi-select. **Zoom:** Multiple choice, select all, nine answers, anonymous.
+- **Question:** A case note has had her name and employer removed. Select every phrase that must still change or come out before it goes into an AI tool.
+- **Options:** 1 a nurse manager at a hospital system / 2 58 / 3 lives at Maple Court Senior Living in Wheaton / 4 daughter graduating May 2027 / 5 29 years / 6 a senior mechanical engineer / 7 Naperville / 8 His division may be sold in 2027 (told in confidence) / 9 Prepare three Roth questions for the next meeting.
+- **Expected:** 1 to 8, not 9. Phrases 1 to 7 are identifiers, replaced with a range, category or placeholder; 8 is a confidence, removed as a whole sentence with nothing in its place (CASE.md Part J); 9 is the task and stays. Source: the `s2` key.
+- **Rule:** If fewer than half select 8, say a confidence is not a replacement problem and click phrase 8 first. If anyone selects 9, take twenty seconds: the task identifies nobody. If four or fewer of 1 to 8 draw a majority, run the page's guess and take Appendix D1 next; otherwise skip the guess and click through in a minute.
 
-### Poll 1 · 6:12 · Cold open (the aid's Poll 1)
-**Question:** Four prompts about the Cole case are on the page. Which one would you have sent from your own AI account this morning?
-**Answers:** A · Prompt A / B · Prompt B / C · Prompt C / D · Prompt D
-**Lands:** D is the one you could not send: five of eight identifiers present. Most of the room picks D because it is the most useful prompt.
-**Say on the result:** "Good and allowed are two tests. D passed the first and failed the second; click it and watch it sink."
+## Poll 3
+- **Section:** `sRSP`, opens it. **Format:** single choice with a surprising, checkable answer, the Regulation S-P breach-deadline poll. **Zoom:** Single choice, five answers (A to E are events 1 to 5), not anonymous: the smallest group opens the defence in `sD`.
+- **Question:** Regulation S-P gives a firm 30 days from becoming aware to tell clients. In this one leak, which moment started the firm's 30 days?
+- **Options:** A Day 0: a paralegal finds the open folder, fixes it, tells nobody / B Day 3, 9:05 am: the operations lead reads the access log / C Day 3, 4:40 pm: the operations lead emails compliance / D Day 9: outside counsel confirms it must be reported / E Day 21: the client phones about her notes.
+- **Expected:** B: a supervisor now holds evidence of unauthorized access; the clock ends Day 33. C: same date, wrong reason. D, the common wrong answer, is six days late; E is 18 days late; A turns on her role and the firm's policy. Clocks: customer notice no later than 30 days after awareness, service provider to firm within 72 hours, in force for every covered firm (FACTS:reg-sp-compliance). "Aware" is the lesson's reading, not a holding.
+- **Rule:** Key the counts into the boxes under the timeline. If more than half pick B, go to the day slider. If D or E draws two or more, run a sixty-second defence first: ask a D voter what counsel's letter changed about what the firm knew. Hand-off: the page names the smallest group, which opens the defence in `sD`.
+- **Provenance:** Reused from Fall 2026, the term's one learner-to-learner argument; the Fall wording was not saved.
 
-### Poll 2 · 6:26 · §02, before The Harder Ones (new slot)
-**Question:** A client meeting transcript is going into an AI tool. What do you do to it first, today, honestly?
-**Answers:** A · Paste it as it is into the firm's tool / B · Delete the names / C · Replace the names and every fact that points to her / D · I never paste transcripts
-**Lands:** C. (habits check as well: the As and Bs are the room's real practice)
-**Say on the result:** "Names are the easy part. In two minutes the page shows seven phrases with no name in them that still point to one woman in Naperville."
-
-### Poll 3 · 6:46 · §03, two questions in one poll (replaces the aid's Poll 2)
-**Question 1:** Which AI tool do you use most for work?
-**Answers:** A · Claude / B · ChatGPT / C · Copilot / D · Gemini / E · None yet
-**Question 2:** Whose name is on the agreement for that tool?
-**Answers:** A · Mine: I clicked Accept on a personal plan / B · My firm's: an officer signed a Team or Enterprise agreement / C · A developer's: it runs through an API key / D · I do not know
-**Lands:** habits check. Click the majority vendor on the map and the majority plan tile.
-**Say on the result:** "If you answered A to the second question, your firm signed nothing, and the switch that keeps your prompts out of training is one you had to find yourself. The ladder shows what the firm's signature adds, rung by rung."
-
-### Poll 4 · 7:33 · §04, the contract (new slot)
-**Question:** Your firm approves an AI tool for client work. Who signs the agreement with the vendor?
-**Answers:** A · The adviser who found it, on the firm card / B · An officer with authority to bind the firm / C · Nobody signs; the terms are accepted online / D · Legal, once the tool is already in use
-**Lands:** B.
-**Say on the result:** "Approved means on paper, signed by someone who can bind the firm. The six answers in §04 are that paper, and lock 4 shows the vendor promising 48 hours where the rule makes you demand 72."
-
-### Poll 5 · 7:42 · §05, the assistant (the aid's Poll 3)
-**Question:** The email assistant reads three emails. One carries a hidden line asking it to forward every file with Cole in its name. What comes back?
-**Answers:** A · Just the summary / B · The summary, and it forwards the files
-**Lands:** B.
-**Say on the result:** "It read the hidden line as an instruction, because it is text like everything else it reads. Wording is not a lock; access is. Fixes 2 and 3 are settings."
-
-### Poll 6 · 7:56 · D5, the clock (new slot)
-**Question:** Your firm becomes aware that a client file was reached by someone outside. Under Regulation S-P, what is the latest lawful day to tell the client?
-**Answers:** A · 3 days / B · 30 days from the day you knew / C · 45 days / D · When the investigation is complete / E · Only once harm is confirmed
-**Lands:** B.
-**Say on the result:** "Customer notice must go out as soon as practicable and no later than 30 days after the firm becomes aware, and an inconclusive investigation does not excuse the notice. The vendor owes your firm 72 hours; your firm owes the client 30 days at the outside; Equifax took 40." (FACTS:reg-sp-compliance)
-
-### Poll 7 · 8:09 · §07, the record (new slot)
-**Question:** Your CRM note reads: "Used AI to draft the Roth memo; reviewed and sent." An examiner asks you to re-check that memo a year from now. Can you?
-**Answers:** A · Yes, the note is enough / B · Yes, if I can still find the chat / C · No: the prompt, the model and the source are not on file / D · That is compliance's job, not mine
-**Lands:** C.
-**Say on the result:** "Complete is not correct. Rule 204-2 already makes you keep the communication; the four slots are what make it re-checkable."
-
-### Poll 8 · 8:25 · D4, the sealed vote and the re-vote (the aid's Polls 4 and 5)
-**Question (run it twice, before and after the complication):** For a typical recurring deliverable, the full burden of this session costs more time than the AI saves. Agree or disagree?
-**Answers:** A · Agree: the burden costs more / B · Disagree: the saving wins
-**Lands:** no right answer; the second vote against the first is the result.
-**Say on the result:** "Same room, same proposition, one fact added: the setup is shared by twelve deliverables a year. Watch which way the scale moved."
-
-### Poll 9 · 8:41 · Closing, with the written check (new slot)
-**Question:** After tonight, which one thing changes first in your practice?
-**Answers:** A · Client work moves to the firm's account / B · Replace, do not delete, before any paste / C · The vendor gets the six questions in writing / D · The four-slot record starts on the next memo / E · Nothing changes yet
-**Lands:** habits check.
-**Say on the result:** "Write the one you picked as your keep line in the chat. That line is the assignment."
-
----
-
-**Building them in Zoom:** Polls 1, 2, 4, 5, 6, 7 and 9 are single-choice, one question each. Poll 3
-is one poll with two questions. Poll 8 is one single-choice poll launched twice. Name each poll by
-its number and slot time so the launch order is obvious in the polls panel.
+## Poll 4
+- **Section:** `s9`, opens it; launch from `sD` before scrolling, because the section's first line states the answer. **Format:** numeric-range prediction. **Zoom:** Single choice, four ranges, anonymous.
+- **Question:** In a 2025 survey of 466 advisers, what share of RIAs said their firm has no written AI policy?
+- **Options:** Under 25% / 25% to 49% / 50% to 74% / 75% or more.
+- **Expected:** 75% or more: 78% of RIAs, 35% at regional, independent and bank firms (ISS Market Intelligence, June 2025, via PLANADVISER; M, FACTS:adoption-iss-policy).
+- **Rule:** If more than half pick under 50%, say the gap is the task on this page and give the builder its full three minutes. If more than half pick 75% or more, add that no rule names an AI use policy (FACTS:ai-policy-requirement) and run the builder at two minutes.

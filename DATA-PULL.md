@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**67 of 157 works are moving targets, feeding 311 of
-648 references.**
+**72 of 162 works are moving targets, feeding 317 of
+665 references.**
 
 
 ---
@@ -170,6 +170,26 @@ version string means the version is not tracking the data.
 | References | 11 |
 | Feeds | case-4 `#built` · S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#sCR` ×6 |
 
+### `src-claude-privacy-training` — Is my data used for model training?
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 10 |
+| Feeds | case-1 `#built` · S0.1 `#s0` ×3 · S0.1 `#s11` · S4 `#s3` ×2 · S4 `#sCR` ×2 · S5 `#s0` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| CLAUDE-PRIVACY-TRAINING-001 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | the five-year and 30-day retention (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11) |
+| CLAUDE-PRIVACY-TRAINING-002 | S5 | 2026-10-11 | **[UNVERIFIED, needs source]** | up to five years with the training setting on, 30 days with it off (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11); no default stated |
+| CLAUDE-PRIVACY-TRAINING-003 | S0.1 | 2026-10-11 | **[UNVERIFIED, needs source]** | up to five years with the setting on, within 30 days with it off, exceptions of two, seven and five years (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11); no default stated |
+
 ### `src-context-windows` — Context windows
 
 | | |
@@ -208,26 +228,6 @@ version string means the version is not tracking the data.
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
 | MEMORY-001 | S0.1 | 2026-10-13 | **[UNVERIFIED, needs source]** | memory on by default for Free, Pro and Max and off for each member on Team and Enterprise until they turn it on; never saved: government ID numbers, criminal history, financial account numbers, immigration status; deleting a chat does not delete the memory made from it (read in full 2026-10-13) |
-
-### `src-claude-privacy-training` — Is my data used for model training?
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-11 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
-| References | 9 |
-| Feeds | case-1 `#built` · S0.1 `#s0` ×3 · S4 `#s3` ×2 · S4 `#sCR` ×2 · S5 `#s0` |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| CLAUDE-PRIVACY-TRAINING-001 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | the five-year and 30-day retention (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11) |
-| CLAUDE-PRIVACY-TRAINING-002 | S5 | 2026-10-11 | **[UNVERIFIED, needs source]** | up to five years with the training setting on, 30 days with it off (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11); no default stated |
-| CLAUDE-PRIVACY-TRAINING-003 | S0.1 | 2026-10-11 | **[UNVERIFIED, needs source]** | up to five years with the setting on, within 30 days with it off, exceptions of two, seven and five years (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11); no default stated |
 
 ### `src-personalization` — Understanding Claude's personalization features
 
@@ -926,6 +926,66 @@ version string means the version is not tracking the data.
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
 | CLAUDE-WEB-SEARCH-001 | S0.1 | 2026-10-13 | **[UNVERIFIED, needs source]** | none typed |
+
+### `src-3b1b-llm` — Large Language Models explained briefly (video, about 8 minutes)
+
+| | |
+|---|---|
+| Figure class | `none` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | the week before the session that assigns it |
+| References | 1 |
+| Feeds | S0.1 `#s11` |
+
+### `src-irs-guidance-primer` — Understanding IRS guidance: a brief primer
+
+| | |
+|---|---|
+| Figure class | `none` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | the week before the session that assigns it |
+| References | 1 |
+| Feeds | S1 `#s15` |
+
+### `src-anthropic-prompting-101` — Prompting 101 (Code w/ Claude) (video, about 25 minutes)
+
+| | |
+|---|---|
+| Figure class | `none` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | the week before the session that assigns it |
+| References | 1 |
+| Feeds | S1 `#s15` |
+
+### `src-claude-projects-rag` — Retrieval augmented generation (RAG) for projects; What are projects?
+
+| | |
+|---|---|
+| Figure class | `none` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | the week before the session that assigns it |
+| References | 1 |
+| Feeds | S2 `#s12` |
+
+### `src-karpathy-intro` — [1hr Talk] Intro to Large Language Models, the segment 45:43 to 58:37 (video)
+
+| | |
+|---|---|
+| Figure class | `none` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | the week before the session that assigns it |
+| References | 1 |
+| Feeds | S3 `#s16` |
 
 ### `src-vectara` — Introducing the next generation of Vectara's hallucination leaderboard
 

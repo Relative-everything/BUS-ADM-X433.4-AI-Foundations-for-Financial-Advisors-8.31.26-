@@ -6,12 +6,11 @@
 <title>Session 5 teaching aid</title>
 <!-- Instructor-only. Not a lesson: no managed style fence on purpose, and the
      .htm extension keeps it outside the lesson sweep. Print landscape, two
-     pages. Source of the printed PDF beside it. Written 2026-10-02 for Monday
-     2026-10-05, 6:00 to 9:00 PM Pacific, against the page as built that day
-     (branch claude/practical-fermi-5g0sm0); rewritten 2026-10-04 for the page after
-     the interactivity pass (branch claude/vibrant-hypatia-8iabd0): §07 the firm's
-     library is new, the second half runs five minutes later. Nothing in this file
-     addresses a learner. The stylesheet is Session 4's aid's, unchanged. -->
+     pages. Source of the printed PDF beside it. Written for the 2027 term
+     against the page after Phase 6b: core is 45 minutes (sections 00 to 05),
+     each presenter has a 13 minute slot (8 + 2 + 3), and every time is minutes
+     from the start of the night. Nothing in this file addresses a learner.
+     The stylesheet is Session 4's aid's, unchanged. -->
 <style>
 @page{size:letter landscape;margin:0.26in}
 *{box-sizing:border-box}
@@ -64,16 +63,23 @@ html,body{margin:0;padding:0;background:#fff;color:#111;font-family:Helvetica,Ar
 .say{font-style:italic;color:#222}
 .mono{font-family:"Courier New",monospace;font-size:8.8px;background:#f1f1f1;border-radius:3px;padding:0 3px}
 .conf{font:700 6.8px/1 Helvetica,Arial,sans-serif;border:1px solid #777;padding:0 2px;border-radius:2px;margin-left:2px;color:#444;vertical-align:1px}
+/* page 1 carries 12 steps, not 21: larger type than the stylesheet's default */
+.p1 .step{min-height:0.5in;padding:3px 0 3px 4px}
+.p1 .step .t{font-size:13px;padding-top:4px}
+.p1 .step .n{width:0.3in;height:0.3in;font-size:13px}
+.p1 .step .w{font-size:8.2px;padding:4px 2px}
+.p1 .step .a{font-size:13.4px;line-height:1.14}
+.p1 .step .c{font-size:11.2px;line-height:1.22;margin-top:2px}
+.p1 .step{grid-template-columns:0.44in 0.34in 0.66in 1fr}
 </style>
 </head>
 <body>
 <!-- PAGE 1: the flow -->
-<div class="page">
+<div class="page p1">
   <div class="top">
-    <h1>SESSION 5 · MON 10/5 · 6:00 TO 9:00 PT · THE FLOW, TOP TO BOTTOM</h1>
+    <h1>SESSION 5 · THE FLOW · MINUTES FROM THE START</h1>
     <div class="legend">
       <span class="k repo"><i></i>Repo: work the page</span>
-      <span class="k lec"><i></i>Lecture: you, 2 min</span>
       <span class="k demo"><i></i>Presentations</span>
       <span class="k poll"><i></i>Poll / chat</span>
       <span class="k gate"><i></i>Black number: never skip</span>
@@ -82,29 +88,20 @@ html,body{margin:0;padding:0;background:#fff;color:#111;font-family:Helvetica,Ar
   </div>
   <div class="cols">
   <div>
-    <div class="step"><div class="t">6:00</div><div class="n">1</div><div class="w">Zoom</div><div><div class="a">OPEN. "Setup questions at the break."</div><div class="c">Correction: <b>the AI-search reading could not be opened from the build</b>; the page carries one recommendation from it at medium confidence (who-what-where). Say what else it says if you have read it.</div></div></div>
-    <div class="step repo key"><div class="t">6:03</div><div class="n">2</div><div class="w repo">§00</div><div><div class="a">OBJECTIVE. Read "Session 5's one thing" off the page: explain it, break it, improve it, say what stays yours.</div><div class="c">Non-advisors: "the workflow you were handed is still someone's recurring task." The Coles in two lines, aloud.</div></div></div>
-    <div class="step repo"><div class="t">6:05</div><div class="n">3</div><div class="w repo">§00</div><div><div class="a">BRIDGE: three letters, all <b>b</b> by content (positions vary). Then <b>Advance the model</b> three times.</div><div class="c">The box changes, the ring of five does not. Click <b>5 Hand it over</b>; read the one thing.</div></div></div>
-    <div class="step poll key"><div class="t">6:09</div><div class="n">4</div><div class="w poll">Cold open</div><div><div class="a"><span class="tag poll">poll 1</span> Then or Now? Click <b>Then</b>, <b>Test 1 · check both</b>, <b>Test 2 · could you send it?</b></div><div class="c">Then 3 of 8 and names the client; Now 8 of 8. Land: "good and allowed are two tests; the course is the gap between Then and Now."</div></div></div>
-    <div class="step repo"><div class="t">6:17</div><div class="n">5</div><div class="w repo">§01</div><div><div class="a">Pin <b>A</b>, drag to today: deprecated, 57 days. Past 30 Nov: <b>retired, requests fail</b> <span class="conf" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>. Pin <b>C</b>: untested. Then drag gate <b>B</b> + rule <b>2</b> onto the skill card, <b>Advance the model</b> ×4.</div><div class="c">Stamps: STOPPED, RUNS, RUNS, STOPPED + HELD 4 OF 5. Land: "a gate names what may run; a scorecard names what right looks like; approve once per release."</div></div></div>
-    <div class="step repo key"><div class="t">6:22</div><div class="n">6</div><div class="w repo">§02 worked</div><div><div class="a">Tag the five choices; <b>Model tier</b> and <b>Data handling</b>: NOT STATED; Verification: WEAK. <b>Copy the explanation</b>. Then drag the eight loose files: three PDFs → one prompt.txt, docx → README.txt, email + chat link out.</div><div class="c">"Minute one of every talk is these four lines; the package that let a stranger run yours was one README and one zip, not eight attachments."</div></div></div>
-    <div class="step poll key"><div class="t">6:28</div><div class="n">7</div><div class="w poll">§03 worked</div><div><div class="a"><span class="tag poll">poll 2</span> which break? <b>Lock my prediction</b>, <b>Run all six</b>: 2, 4, 5 broke.</div><div class="c"><span class="tag g">gate 1</span> "Which break was not the model's fault?" Input 5: it repeated what it was given. Land: "the input is the finding."</div></div></div>
-    <div class="step repo"><div class="t">6:33</div><div class="n">8</div><div class="w repo">§04</div><div><div class="a">Three rows, the room calls a or b; checkable: NOT IN NOTE · CONFLICT heading · the README step with the eight-digit test.</div><div class="c">3 of 6 becomes 6 of 6 and the strip runs the improved version through five stations. Land: "a model cannot be careful; it can follow a rule you can test."</div></div></div>
-    <div class="step lec"><div class="t">6:38</div><div class="n">9</div><div class="w lec">Lecture 1</div><div><div class="a lec"><b>What to listen for in the next hour.</b> <span class="tag p2">page 2, L1</span></div><div class="c">Four things per talk: what it is made of, the input that broke it, the change and its proof, what stays human. <span class="stop">STOP 6:40.</span></div></div></div>
-    <div class="step demo key"><div class="t">6:40</div><div class="n">10</div><div class="w demo">Block 1</div><div><div class="a">PRESENTATIONS 1 to 4. Ten minutes each: six, the builder's two, your questions. <span class="tag p2">page 2, P</span></div><div class="c">Stop a presenter at seven minutes, kindly. <span class="tag g">gate 2</span> to each builder: "what did they understand that you never wrote down?"</div></div></div>
-    <div class="step brk"><div class="t">7:20</div><div class="n">11</div><div class="w brk">Break</div><div><div class="a">BREAK. Post "back at 7:35 Pacific" in chat.</div><div class="c">Post the clock time in their zone, not yours. <span class="stop">Break starts by 7:20</span> or block 2 runs into §05.</div></div></div>
+    <div class="step repo"><div class="t">0</div><div class="n">1</div><div class="w repo">§00 bridge</div><div><div class="a">BRIDGE: three Session 4 recall items, all <b>b</b> by content. Three minutes.</div><div class="c">Personal plan: your click is the contract; chats may train unless you switch it off, up to five years on and 30 days off, state no default <span class="conf" data-src="src-claude-privacy-training" data-fact="claude-consumer-retention">M</span>. Her job and her town together. The full answer: model, date, what you decided.</div></div></div>
+    <div class="step repo key"><div class="t">3</div><div class="n">2</div><div class="w repo">§00 frame</div><div><div class="a">OBJECTIVE. Say it once: explain it, break it, improve it, say what stays yours.</div><div class="c">Non-advisors: "the workflow you were handed is still someone's recurring task." <b>Advance the model</b> ×3: the box changes, the ring of five does not. Click <b>5 Hand it over</b>. Point at the Part 2 card: 8 + 2 + 3.</div></div></div>
+    <div class="step poll key"><div class="t">5</div><div class="n">3</div><div class="w poll">§01 Case 5</div><div><div class="a"><span class="tag poll">poll 1</span> Which step breaks first? Silent commit, key the <b>Room tally</b>, reveal.</div><div class="c">Step 2 breaks first and loudly: the skill names a model that retires <span class="conf" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>. Steps 3 and 4 break second, quietly. <b>One link out:</b> Case 5 section 3, the log's second row (nested bullets in 7 of 8; 1 of 8 pass all five checks). Bridge: the date was public weeks ahead.</div></div></div>
+    <div class="step repo"><div class="t">15</div><div class="n">4</div><div class="w repo">§02</div><div><div class="a">Pin <b>A</b>, jump to 30 Sep, then 30 Nov: <b>retired, requests fail</b> <span class="conf" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>. Pin <b>C</b>: untested. <span class="tag poll">poll 2</span> then gate <b>B</b> + rule <b>2</b>, <b>Advance the model</b> ×4.</div><div class="c">Stamps: STOPPED, RUNS, RUNS, STOPPED + HELD 4 OF 5. Land: "a gate names what may run; a scorecard names what right looks like; approve once per release." Last 30 seconds: what to listen for <span class="tag p2">page 2, L</span></div></div></div>
+    <div class="step demo key"><div class="t">20</div><div class="n">5</div><div class="w demo">Block 1</div><div><div class="a">PRESENTATIONS 1 to 4. A slot is 13: talk 8, builder 2, questions 3. <span class="tag p2">page 2, P</span></div><div class="c">Call "one minute" at 7:00; stop the talk at 9:00. Name Appendix E4 once before the first. <span class="tag g">cue</span> to each builder. <span class="stop">Block 1 done by 72.</span></div></div></div>
+    <div class="step brk"><div class="t">72</div><div class="n">6</div><div class="w brk">Break</div><div><div class="a">BREAK. Post "back at" a clock time in chat.</div><div class="c">Give the time in their zone, not yours. <span class="stop">Break starts by 72</span> or block 2 runs into the discussion.</div></div></div>
   </div>
   <div>
-    <div class="step demo key"><div class="t">7:35</div><div class="n">12</div><div class="w demo">Block 2</div><div><div class="a">PRESENTATIONS 5 to 8. Same rules. <span class="tag p2">page 2, P</span></div><div class="c">A presenter who could not run it presents where it stopped: valid, and the finding is about the package. <span class="stop">STOP 8:15.</span></div></div></div>
-    <div class="step poll"><div class="t">8:15</div><div class="n">13</div><div class="w poll">§05</div><div><div class="a"><span class="tag poll">poll 3</span> how much faster? <b>Lock my guess</b>, <b>Reveal the four trials</b>: +40, +25.1, +14, and <b>minus 19</b>. Click <b>METR</b>: the five lines of what it measured.</div><div class="c">"They believed plus 20; they were minus 19." The room's sliders at the defaults: saves 45 a time, 6 hours a month; drag checking up and the saving vanishes. Land: "felt faster is not faster; time it."</div></div></div>
-    <div class="step repo"><div class="t">8:20</div><div class="n">14</div><div class="w repo">§06</div><div><div class="a">WIRE THE DESK. Drag <b>The meeting</b> + <b>A vendor's servers</b> onto the note-taker (42.9% of 2,906; 14 tools); <b>Your public pages</b> + <b>The open model's index</b> onto AI search (8% v 15%).</div><div class="c">Four answers write when both ports are right; a wrong one shakes and says why. The room calls the other three. Land: "the questions do not change; the answers do."</div></div></div>
-    <div class="step repo"><div class="t">8:25</div><div class="n">15</div><div class="w repo">§07</div><div><div class="a">ONE REPOSITORY, EVERY DESK. Click the Cole prep question: four skills light, nobody named one. Click the transcript question: six. <b>Push an update</b>: six desks take v1.5.</div><div class="c">Drag the unapproved plugin onto the policy: "blocked by enterprise policy". Land: "your project was one of these; a firm keeps fifteen in a repository and ships them like code; the adviser types the question."</div></div></div>
-    <div class="step repo"><div class="t">8:30</div><div class="n">16</div><div class="w repo">§08</div><div><div class="a">Eight moments, the room calls 1 or 2: tool 1, 4, 6, 8; you 2, 3, 5, 7. Then RANK THE REASONS as the room calls them, <b>Lock my order</b>, <b>Show the survey's order</b>.</div><div class="c">32% advice, 21% relationship, 17% cost, 11% returns, 10% alone, 9% communication; Vanguard's half; the exam's 7%. Land: "the judgments are the fee."</div></div></div>
-    <div class="step repo"><div class="t">8:35</div><div class="n">17</div><div class="w repo">§09</div><div><div class="a">Two commits, both <b>b</b>. <span class="tag g">gate 3</span> "which confidence predicted more checking?" Yourself: plus 0.26; the tool: minus 0.69.</div><div class="c">The two sliders, then <b>Seal it</b>: one line each in chat, the five principles open.</div></div></div>
-    <div class="step lec"><div class="t">8:40</div><div class="n">18</div><div class="w lec">Lecture 2</div><div><div class="a lec"><b>The tools change; the judgment does not.</b> <span class="tag p2">page 2, L2</span></div><div class="c">Two minutes: the calendar in §01 against the ring in §00. <span class="stop">STOP 8:42.</span></div></div></div>
-    <div class="step poll key"><div class="t">8:42</div><div class="n">19</div><div class="w poll">Closing</div><div><div class="a">CLOSING CHECK, written. <span class="tag chat">chat</span> one line each: explain, break, improve, keep.</div><div class="c">Read three aloud. A line with no "stays yours": name §08.</div></div></div>
-    <div class="step poll"><div class="t">8:47</div><div class="n">20</div><div class="w poll">E5 if time</div><div><div class="a"><span class="tag poll">poll 4</span> sealed vote → <b>2 · Weigh both cases</b> → <b>3 · The complication</b> → <span class="tag poll">poll 4</span> again → <b>4 · Vote again</b>.</div><div class="c">Depth → <b>+ Standard</b>. If no time, one sentence: "the two pans may be one pan."</div></div></div>
-    <div class="step"><div class="t">8:52</div><div class="n">21</div><div class="w">Zoom</div><div><div class="a">CLOSE. Improved versions back to each builder; where the course materials live; thanks.</div><div class="c">End 8:54; six minutes of buffer.</div></div></div>
+    <div class="step demo key"><div class="t">87</div><div class="n">7</div><div class="w demo">Block 2</div><div><div class="a">PRESENTATIONS 5 to 8. Same slots. <span class="tag p2">page 2, P</span></div><div class="c">A presenter who could not run it presents where it stopped: valid, and the finding is about the package. <span class="stop">Block 2 done by 139.</span></div></div></div>
+    <div class="step poll"><div class="t">139</div><div class="n">8</div><div class="w poll">§03</div><div><div class="a"><span class="tag poll">poll 3</span> how much faster? <b>Lock</b> the room's band, <b>Reveal the four trials</b>: +40, +25.1, +14, <b>minus 19</b>. Click <b>METR</b>.</div><div class="c">"They believed plus 20; they were minus 19." Predict the Paper: b, b; yourself plus 0.26, the tool minus 0.69. Time One Task: saves 45 a time, 6 hours a month; drag checking up. Land: "felt faster is not faster; time it."</div></div></div>
+    <div class="step poll"><div class="t">144</div><div class="n">9</div><div class="w poll">§04</div><div><div class="a">Eight moments, the room calls 1 or 2: tool 1, 4, 6, 8; you 2, 3, 5, 7. <span class="tag poll">poll 4</span> short answer, then <b>RANK THE REASONS</b>, <b>Lock my order</b>, <b>Show the survey's order</b>.</div><div class="c">32% advice, 21% relationship, 17% cost, 11% returns, 10% alone, 9% communication <span class="conf" data-src="src-morningstar-fired">M</span>. Land: "the judgments are the fee."</div></div></div>
+    <div class="step poll key"><div class="t">149</div><div class="n">10</div><div class="w poll">§05</div><div><div class="a">THE DISCUSSION. Vote a, b, c or d in chat; write the tally down. <b>2 · Weigh both cases</b> → <b>3 · The complication</b> → <b>4 · Vote again</b>. <span class="tag p2">page 2, D</span></div><div class="c">Minority first, 90 seconds each. Complication on screen with 32% + 21% = 53% beside it. Show both tallies; say nothing about the delta. Six or more of 8 on one side: the middle argues the other.</div></div></div>
+    <div class="step poll key"><div class="t">164</div><div class="n">11</div><div class="w poll">Closing</div><div><div class="a">CLOSING CHECK, written. <span class="tag chat">chat</span> one line each: explain, break, improve, keep.</div><div class="c">Read three aloud. A line with no "stays yours": name section 04. Three minutes, from the reserve; never cut.</div></div></div>
+    <div class="step"><div class="t">167</div><div class="n">12</div><div class="w">Zoom</div><div><div class="a">CLOSE. Improved versions and packages back to each builder; where the course materials live.</div><div class="c">One sentence: the tools change and the judgment does not. Ends at 169; 11 minutes of buffer.</div></div></div>
   </div>
   </div>
 </div>
@@ -112,63 +109,66 @@ html,body{margin:0;padding:0;background:#fff;color:#111;font-family:Helvetica,Ar
 <!-- PAGE 2: around the flow -->
 <div class="page">
   <div class="top">
-    <h1>SESSION 5 · PAGE 2 · SETUP, THE PRESENTATIONS, THE LECTURE CARDS, THE ANSWERS</h1>
-    <div class="legend"><span class="k demo"><i></i>Presentations</span><span class="k lec"><i></i>Lecture card</span><span class="k repo"><i></i>Run flow</span><span class="k gate"><i></i>Cue</span></div>
+    <h1>SESSION 5 · PAGE 2 · SETUP, THE PRESENTATIONS, THE CASE, THE DISCUSSION, THE ANSWERS</h1>
+    <div class="legend"><span class="k demo"><i></i>Presentations</span><span class="k lec"><i></i>Listen-for card</span><span class="k repo"><i></i>Run flow</span><span class="k gate"><i></i>Cue</span></div>
   </div>
   <div class="boxes">
-    <div class="box"><h3>Setup at 5:45</h3><ul><li><b>Tab 1</b> Session 5, Core only, depth bar at + Standard for E5 later</li><li><b>Tab 2</b> the pairing list from Session 4: who presents whose package</li><li>Four polls built from <span class="mono">session-5-polls.md</span></li><li>Three chat lines ready: the break time, the closing check, the one-thing line</li><li>Speaker labels on; a visible clock</li></ul></div>
-    <div class="box no"><h3>Not tonight</h3><ul><li>Live demonstrations of any workflow</li><li>E1 to E4 on the page (theirs, after)</li><li>Vendor names for note-takers or CRMs</li><li>Any date, weight or platform</li><li>Anything with a real client in it</li></ul></div>
-    <div class="box"><h3>Checkpoints</h3><ul><li><b>6:40</b> §04 done, presenter 1 on</li><li><b>7:20</b> block 1 done, break</li><li><b>8:15</b> block 2 done</li><li><b>8:42</b> closing check</li></ul></div>
-    <div class="box"><h3>Drop order if late</h3><ul><li>1 §02's file sort (saves 2)</li><li>2 §07 to one question (saves 3)</li><li>3 §06 to one tool (saves 3)</li><li>4 E5 to the one sentence (saves 5)</li><li>5 §04 to one row (saves 3)</li><li><b>Never drop:</b> objective, cold open, §02, §03, the presentations, the closing check</li></ul></div>
-    <div class="box"><h3>Answers</h3><ul><li>Bridge: all b · cold open: Then 3, Now 8 · §01: retired after 30 Nov; B + 2 is the pair with no failure</li><li>§02 files: PDFs → zip as prompt.txt, docx → README, email + link out · §03: 2, 4, 5 broke · §04: 6 of 6</li><li>§05: +40, +25.1, +14, minus 19 (believed +20) · §06: meeting→vendor, file→vendor ×2, you→plan, pages→index · §08: tool 1 4 6 8, you 2 3 5 7; rank 32 21 17 11 10 9</li><li>§09: b, b · E5: no right answer</li></ul></div>
+    <div class="box"><h3>Setup</h3><ul><li><b>Tab 1</b> Session 5, Core only</li><li><b>Tab 2</b> <span class="mono">cases/case-5.html</span></li><li><b>Tab 3</b> the pairing list from Session 4; each presenter's <span class="mono">changes.txt</span></li><li>Four polls built from <span class="mono">session-5-polls.md</span>; nobody a co-host</li><li>Three chat lines ready: the break time, the closing check, the one-thing line</li><li>Speaker labels on; a visible clock for the 8:00 and 9:00 marks</li></ul></div>
+    <div class="box no"><h3>Not tonight</h3><ul><li>Live demonstrations of any workflow</li><li>Appendix E1 (their rehearsal, before class)</li><li>Vendor names for note-takers or CRMs</li><li>Any date, weight or platform not on the verified card</li><li>Anything with a real client in it</li></ul></div>
+    <div class="box"><h3>Checkpoints</h3><ul><li><b>20</b> presenter 1 on</li><li><b>72</b> block 1 done, break</li><li><b>139</b> block 2 done</li><li><b>164</b> closing check, whatever is unfinished</li></ul></div>
+    <div class="box"><h3>Drop order if late</h3><ul><li>1 §03 Time One Task (saves 1)</li><li>2 §04 rank to lock-and-show (saves 1)</li><li>3 §00 frame to the objective line (saves 2)</li><li>4 discussion defence 7 to 5 (saves 2)</li><li><b>Never drop:</b> the case commit, the presentations, the two votes, the closing check</li></ul></div>
+    <div class="box"><h3>Answers</h3><ul><li>Bridge: all b · poll 1: step 2 · poll 2: B and E · poll 3: the 10 to 20% band (mean of the four bars 15.0; the spread is the lesson)</li><li>§03 paper: b, b · §04: tool 1 4 6 8, you 2 3 5 7; rank 32 21 17 11 10 9 · §05: no right answer</li></ul></div>
   </div>
   <div class="two">
   <div>
-    <div class="seg demo"><h2><span class="w">P · 6:40 and 7:35 · 40 min each</span>The presentations: eight, ten minutes each</h2>
+    <div class="seg demo"><h2><span class="w">P · min 20 and 87 · 13 minutes a slot</span>The presentations: eight, in two blocks of four</h2>
       <ol>
-        <li><b>Order.</b> The pairing list from Session 4: nobody presents their own package and no two present each other's. Call the next name while the builder is still answering.</li>
-        <li><b>Six minutes, five beats</b> (E1 is their rehearsal): what it does and the problem; the design choices (tool, tier, prompt structure, checks); where it worked and the input that broke it; what they changed and why; one thing they take. Stop at seven minutes.</li>
-        <li><b>The builder's two minutes</b> (E4's order): understood first, missed second, what the package never said last. <span class="tag g">gate 2</span> "What did they understand that you never wrote down?"</li>
-        <li><b>Your two to four questions</b>, at least one to the builder: "Which input would you add to the test set?" · "Which model and date is in the record?" · "What stays yours in this workflow?" · to the builder: "What did the runner try that you did not anticipate?"</li>
-        <li><b>Could not run it.</b> A presenter who could not run it from the documents presents exactly where it stopped. Valid; the finding is about the package. Session 4's seven stations are the vocabulary.</li>
-        <li><b>No live demonstrations.</b> If someone offers, "the talk is the evidence; the transcript is with me."</li>
+        <li><b>Order.</b> The pairing list from Session 4: nobody presents their own package and no two present each other's. The order in a block is yours. Slot starts: block 1 at 20, 33, 46, 59; block 2 at 87, 100, 113, 126.</li>
+        <li><b>Talk 8, builder 2, questions 3.</b> The talk answers five questions: what it does and the problem; the design choices (tool, tier, prompt structure, verification); where it worked and the input that broke it; what they changed and the re-run result; one thing they take. "One minute" at 7:00; stop at 9:00. Open <span class="mono">changes.txt</span> before each slot.</li>
+        <li><b>The builder's two minutes</b> (E4's order): understood first, missed second, what the package never said last.</li>
+        <li><b>Your questions</b>, at least one to the builder: "Which input would you add to the test set?" · "Which model and tier is in the record?" · "What did the re-run show, and on which input?" · "What stays yours?" · to the builder: "What did the runner try that you did not anticipate?"</li>
+        <li><b>Could not run it:</b> present exactly where it stopped. Valid; the finding is about the package. <b>No live demonstrations:</b> "the talk is the evidence; the transcript is with me."</li>
       </ol>
     </div>
-    <div class="seg lec"><h2><span class="w">L1 · 6:38 · 2 min</span>What to listen for in the next hour</h2>
+    <div class="seg lec"><h2><span class="w">L · min 19 · 30 seconds</span>What to listen for in the next hour</h2>
       <ul>
-        <li><b>Four things per talk</b>, the four the page just taught: what it is made of (§02), the input that broke it (§03), the change and the input that proves it (§04), and what the builder kept human.</li>
-        <li><b>Listen for the tier.</b> If a presenter names a model and the package did not, that is a package gap, not a presenter error; say so at the builder's turn.</li>
-        <li><b>The question you will ask every time:</b> "which input would you add to the test set?"</li>
+        <li><b>Four things per talk</b>, the four the page just taught: what it is made of, the input that broke it, the change and its proof, what stays human.</li>
+        <li><b>Listen for the tier.</b> A model the presenter names that the package never stated is a package gap, said at the builder's turn.</li>
+      </ul>
+    </div>
+    <div class="seg gate"><h2><span class="w">G · cues</span>Three questions and the closing line</h2>
+      <ul>
+        <li><span class="tag g">cue</span> §01 reveal: to a step 3 or 4 voter, "what would you see on the day?"</li>
+        <li><span class="tag g">cue</span> each builder: "what did the presenter understand that you did not write down?"</li>
+        <li><span class="tag g">cue</span> §03: "which confidence predicted more critical thinking?" Yourself.</li>
+        <li><b>Closing check, written:</b> explain, break, improve, keep. Read three aloud.</li>
       </ul>
     </div>
   </div>
   <div>
-    <div class="seg lec"><h2><span class="w">L2 · 8:35 · 2 min</span>The tools change; the judgment does not</h2>
+    <div class="seg repo"><h2><span class="w">C · min 5 · §01 and the one link</span>The One-Pager That Has to Survive a Model Change</h2>
       <ul>
-        <li><b>§01's calendar</b> against <b>§00's ring</b>: every model on the calendar has a date; none of the five stops does. Sonnet 4.5 was deprecated two days after Session 4 <span class="conf" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>; the four questions did not change that night.</li>
-        <li><b>What the course leaves them:</b> the eight checks (Session 1), the four parts of a prompt (2), the opened source (3), in-where-check-keep (4), and the handoff test (5). Say the five in one breath.</li>
-        <li><b>The one sentence to a client</b> (E5's output): what you do that the tool does not. Ask two people for theirs.</li>
+        <li><b>Five steps:</b> paste the figures; run the prompt on the model the skill names; draft the one-pager; check it; save it. Silent commit, <span class="tag poll">poll 1</span>, tally, reveal.</li>
+        <li><b>Link out once</b> after the reveal: "Open Case 5", section 3, Document 5B's second row. Same prompt, eight drafts: nested bullets in 7 of 8 on the new id, none of 8 on the old; figures clean in 8 of 8; 1 of 8 pass all five checks. "The swap changed the layout, not a number."</li>
       </ul>
     </div>
-    <div class="seg repo"><h2><span class="w">F · §01 run flow</span>Click every pin, then drag</h2>
+    <div class="seg repo"><h2><span class="w">F · min 15 · §02 run flow</span>Click every pin, then drag</h2>
       <ul>
-        <li><b>A</b>, today: deprecated since 30 Sep, retirement 30 Nov, replacement named. Drag past 30 Nov: retired; "requests to retired models will fail".</li>
-        <li><b>B</b>: active, not sooner than 28 Sep 2027 (Sonnet 5.5); "still write the date you tested it".</li>
-        <li><b>C</b>: runs on whatever is current, untested. Then the gate and the scorecard: drag <b>B</b> and <b>2</b> onto the card, Advance ×4: STOPPED (names Sonnet 5.5), RUNS, RUNS, STOPPED + HELD 4 OF 5. <b>A</b> + <b>1</b> if asked: RUNS, FAILS, FAILS, FAILS.</li>
+        <li><b>A</b>, today: deprecated since 30 Sep, retirement 30 Nov, replacement named; past 30 Nov: retired. <b>B</b>: active, not sooner than 28 Sep 2027 (Sonnet 5.5); "write the date you tested it". <b>C</b>: runs on whatever is current, untested.</li>
+        <li>Gate <b>B</b> + rule <b>2</b>, Advance ×4: STOPPED (names Sonnet 5.5), RUNS, RUNS, STOPPED + HELD 4 OF 5. <b>A</b> + <b>1</b> if asked: RUNS, FAILS, FAILS, FAILS.</li>
+        <li>The page replays October 2026: say so once, and do not read "days to go" as today's.</li>
       </ul>
     </div>
-    <div class="seg gate"><h2><span class="w">G · cues</span>Three gated questions and the closing line</h2>
+    <div class="seg gate"><h2><span class="w">D · min 149 · §05</span>The discussion: the proposition and the prediction</h2>
       <ul>
-        <li><span class="tag g">gate 1</span> §03: "which break was not the model's fault?" Input 5.</li>
-        <li><span class="tag g">gate 2</span> each builder: "what did they understand that you never wrote down?"</li>
-        <li><span class="tag g">gate 3</span> §09: "which confidence predicted more checking?" Yourself.</li>
-        <li><b>Closing check, written:</b> explain, break, improve, keep. Read three aloud.</li>
+        <li>As the tool does more of the analysis, an adviser's value moves to the relationship. Predicted, N about 8: vote 1 a 2, b 4, c 2, d 0; vote 2 a 1, b 3, c 3, d 1. A prediction, not data.</li>
+        <li><b>Complication, on screen:</b> "Quality of advice" is what the client perceived, and perceived quality includes how the advice was explained and whether it was theirs; the two pans may be one pan <span class="conf" data-src="src-morningstar-fired">M</span>. Beside it: 32% advice quality, 21% relationship, 53% together.</li>
       </ul>
     </div>
     <div class="seg demo"><h2><span class="w">H · for you</span>Verify before teaching</h2>
       <ul>
-        <li>Open Anthropic's model deprecations page and models overview once (the §01 calendar, both H, opened 4 Oct). The five Claude Code documentation pages behind §07 and §01's gate were opened 4 Oct (H); the firm on the page is invented. Everything else external is M and listed in the run sheet's Verify section: the four trials, Morningstar, Vanguard, the CFP exam weight, the planning agent, Pew, OpenAI, the Kitces reading.</li>
-        <li>Lee et al. (§09, E5) was opened in full: Table 4's coefficients and §5.1's shares.</li>
+        <li>Open Anthropic's deprecations page and models overview once <span class="conf" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>. Case 5's log rows on the old model id are a dated record and cannot be re-run.</li>
+        <li>The four trials, Morningstar, Vanguard and the CFP exam weight are M and listed in the run sheet's verify section. Lee et al. was opened in full <span class="conf" data-src="src-lee-cognitive" data-fact="lee-2025-critical-thinking">H</span>.</li>
       </ul>
     </div>
   </div>

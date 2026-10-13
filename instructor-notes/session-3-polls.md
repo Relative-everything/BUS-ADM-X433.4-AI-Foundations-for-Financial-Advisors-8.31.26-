@@ -1,184 +1,30 @@
-# Session 3 Zoom polls: three to build, five new ones to pick from
+# Session 3 Zoom polls
 
-Written 2026-09-18, rebuilt 2026-09-21 for the night in the order it will be taught (see the
-teaching aid). Build them in the Zoom web portal before class; a poll configured live was
-retracted in Session 2. Every block below is laid out the way Zoom's poll editor asks for it:
-title, question, one option per line, single choice unless marked. Copy a block, paste each line
-into its field. Set **Anonymous** only where marked.
+One poll in each of four core sections, rebuilt on 2026-10-13 against `session-3/index.html`. Build and test all four ahead; students are not co-hosts. Questions under 255 characters, answers under 100. If a poll fails, take the answer in chat on a count of three, read the tally and apply the same rule. The `sCase` commit and the two `s15` votes are not polls. At eight learners "more than half" is five; on the anonymous poll read counts, never names.
 
-**State on 2026-09-21 afternoon.** Poll 1 is built (options 0 / 1-3 / 4-10 / 11+, which match).
-A second poll exists with Poll 1's title and four blank options: delete it, or rename it and fill
-it as Poll 2 below. Nothing else is built.
+## Poll 1
+- **Section:** `s4`, closes it; click Preset 1 first so 42.6 and 24.8 are on screen. **Format:** short answer. **Zoom:** Short answer, one question, not anonymous.
+- **Question:** For "does the Dunmore 401(k) permit a Roth conversion", the retriever ranked the 2024 memo (42.6) above the 2026 plan description (24.8). In one sentence, why did the memo win?
+- **Expected:** it counts shared words and cannot tell which document is current. The memo holds all five scored terms (dunmore, 401k, permit, roth, conversion), the plan description four, because it says "permitted"; the ranker reads no amendment date. Source: the `s4` Preset 1 verdict; scores recomputed on the page's tokenizer from CASE.md Part O, D7 and D3.
+- **Rule:** Sort answers as they arrive: A names the word match, B names that it cannot tell which is current, C is anything else. If more than half are C, read the Preset 1 verdict aloud before `s6`; otherwise move on.
 
-**Build tonight, in this order: Poll 2, Poll 3, then N3 and N2 if there is time.** Five polls is
-the ceiling for the night; each costs about a minute. Polls 4a, 4b, 5 and 6 from the earlier set
-are kept below as spoken asks or optional extras.
+## Poll 2
+- **Section:** `s6`, opens it, before the page's four buttons, which carry the same letters. **Format:** single choice with a surprising, checkable answer. **Zoom:** Single choice, four answers.
+- **Question:** A tool answers only from your own documents and cites them. How often does an answer still contain something those documents do not support?
+- **Options:** (a) Essentially never / (b) About 1 in 20 / (c) About 1 in 5 / (d) As often as a tool with no documents.
+- **Expected:** (c). Stanford measured grounded legal research tools at 17% to 33% unsupported answers against 43% for GPT-4 with no documents: Magesh et al. (2025), SOURCES `src-magesh`, H. Option (b) is the finding step alone: 5.7 missed in 100 at baseline, 1.9 at Anthropic's best setting (`src-anthropic-ctx`, H; not benchmarked on advisory documents, M).
+- **Rule:** If more than half pick (a) or (b), read the 17 and the 33 off the chart before the key opens. If more than half pick (d), say grounding cut 43 to between 17 and 33, not to zero. Otherwise click the majority on the page.
 
-Every poll below is single choice. Read the result aloud, then take the branch or decline it
-aloud; declining aloud still counts.
+## Poll 3
+- **Section:** `s10`, opens it. **Format:** single choice, practice reality. **Zoom:** Single choice, five answers, **Anonymous** on at creation.
+- **Question:** Does an AI note-taker join your client meetings today?
+- **Options:** Yes, a firm-approved tool / Yes, unofficially / No, not allowed at my firm / No, I have not considered it / I do not run client meetings.
+- **Expected:** none; the answer is the room's. Market reference after the room sees its own bars: 42.9% of advisors use AI notetakers (T3 2026, n = 2,906; FACTS:adoption-t3-2026, M) and about 18% of advisory teams use an AI meeting-note tool (Kitces; FACTS:kitces-notetakers-2025, M). Different surveys and denominators: read both, rank neither.
+- **Rule:** If anyone picks "unofficially", take C9 `sPol` (5 min) after `sOff` and say the Reg S-P clocks: 30 days to the customer, 72 hours from a service provider (FACTS:reg-sp-compliance, M). If more than half pick either "Yes", skip the "Why it sells" line; otherwise read it (an hour to prepare, an hour to follow up; FACTS:kitces-notetakers-2025).
 
----
-
-## Poll 1 · 6:05 · ANONYMOUS · built
-
-```
-Title: Since Session 2
-Question: Since Session 2, how many times have you typed a prompt into any AI tool?
-0
-1-3
-4-10
-11+
-```
-Anonymous: ON. Rule: if half or more pick 0 or 1-3, give §08's silent run six minutes instead of
-four. Say which you chose. (The earlier rule also cut §05; §05 is not on the page tonight, the
-grounding-against-tuning sentence lives inside the skill build.)
-
-## Poll 2 · about 7:20, inside the skill build, while the first generation runs · build
-
-```
-Title: Grounded assistants
-Question: A grounded assistant that cites your own documents makes things up:
-(a) Essentially never
-(b) About 1 in 20 answers
-(c) About 1 in 5 answers
-(d) As often as a tool with no documents
-```
-Answer (c). Fires while Claude is generating the skill, which is the latency filler the Session 2
-audit asked for (F11). Rule: if 60% or more pick (a), spend two extra minutes on the Stanford
-chart. On the chart in the screenshot the vendor bars read about 17 and 19 percent hallucination
-and GPT-4 about 43; the 33 percent Westlaw figure the page cites is from the later, four-bar
-version of the paper. Say the numbers that are on screen.
-
-## Poll 3 · 8:00, after §03 preset 1 · build
-
-```
-Title: The plan description
-Question: The retriever ranked the 2024 memo (D7) above the 2026 plan description (D3). The best explanation is:
-(a) A memo outranks a plan description
-(b) The memo repeats more of the question's words
-(c) The retriever was set to the wrong model
-(d) The plan description was not in the corpus
-```
-Answer (b). (a) is the trap: it sounds like a rule about document types, and the ranker has none.
-The memo holds all five scored words of preset 1's question; the plan description holds four,
-because it says "permitted" where the question says "permit". Rule: if 30% or more pick (a),
-re-run preset 1 and read the shared-term line aloud before moving on.
-
----
-
-## Five new polls for the reordered night
-
-Each is written for a moment that exists only in tonight's order. N2 and N3 are the two worth
-building if there is time; N1, N4 and N5 work as spoken asks.
-
-## N1 · 6:10, before the B4 sorter · spoken ask or poll
-
-```
-Title: Seven steps, before
-Question: How many of the seven planning steps could a tool draft without you?
-0
-1 to 2
-3 to 4
-5 or more
-```
-Key: 2 (steps 3 and 7 are "AI drafts, planner verifies"). Rule: if the majority say 3 or more,
-spend the two minutes after the key on why 2 and 4 are planner-only; if the majority say 0, spend
-them on 3 and 7 being draftable because they are checkable against a source.
-
-## N2 · 6:25, before the CFP checklist · ANONYMOUS · build if time
-
-```
-Title: Note-taker in the room
-Question: Does an AI note-taker join your client meetings today?
-Yes, a firm-approved tool
-Yes, unofficially
-No, not allowed
-No, never considered it
-I do not run client meetings
-```
-Anonymous: ON. This is the practice-reality instrument the checklist step needs: it tells you
-whether the room is regulating a tool it already uses or a tool it has not met. Rule: any
-"unofficially" and §09b's "what must be written down" pages get their two minutes in the reserve;
-a majority on the two "No" lines and you say the ACA Group figure, 12% of financial-services
-firms using AI have any formal risk framework, and that the honest answer is the common one.
-
-## N3 · about 6:52, before opening the artifact's Step 5 · build if time
-
-```
-Title: The spread
-Question: One statement in the excerpt is wrong. How many of the four outputs above repeat it?
-0
-1
-2
-3 or more
-```
-Answer: 3 (Output 3 Facts item 5, Output 3 Action item 1, the Output 4 email). This is the
-prediction-before-reveal the artifact's Step 5 is built for. Rule: if the majority say 0 or 1,
-read the spread-count line aloud twice and click to each of the three places.
-
-## N4 · 7:30, before running the built skill on Step 0 · spoken ask or poll
-
-```
-Title: What the skill will catch
-Question: We run the skill on the excerpt. The wrong statement about portability will be:
-Flagged as wrong
-Flagged as unverified
-Recorded as a fact that was stated
-Dropped
-```
-Expected: recorded as stated. Rule: none. Run it, then say why whatever happened happened: the
-skill has the transcript, not the Code. Grounding gives it the room's words; nothing in the room
-said Rev. Proc. 2022-32.
-
-## N5 · 7:42, on the instructor's own cycle slide · spoken ask or poll
-
-```
-Title: Your hours
-Question: In your own meeting cycle, which stage eats the most hours?
-Detect
-Build
-Review
-Meeting
-Close
-I do not run client meetings
-```
-Rule: read the distribution, then say that Build is 6.75 of 14.0 hours on the slide and Close is
-2.75, and that the note-taker is sold against Close while the hours live in Build. That is the
-delegation line drawn in hours rather than in steps.
-
----
-
-## Kept from the earlier set, now optional
-
-## Poll 4a and 4b · 8:14, around §10's sorter · spoken asks tonight
-
-Before the sorter: "Of six lines from a client meeting, how many do you expect to be your
-inference rather than something said? 0 / 1 / 2 / 3 or more." After: the same question about
-your own file notes. Read both. Say that a zero delta is a finding, not a failure. Tonight these
-are asks, not polls; the five-poll ceiling is spent.
-
-## Poll 5 · 8:28, opening the reserve · optional · ANONYMOUS
-
-```
-Title: Pace
-Question: How was tonight's pace?
-1 Far too fast
-2 Too fast
-3 About right
-4 Too slow
-5 Far too slow
-```
-Anonymous: ON. Rule: average under 3, take the reserve on §03 again, slowly; over 4, §09b's six
-pages. Spoken "am I going too fast?" returned silence twice.
-
-## Poll 6 · 6:25, at the CFP checklist step · optional · ANONYMOUS
-
-```
-Title: What goes into the tool
-Question: A meeting transcript with every name, company and figure removed. It still describes a senior engineer at a material-handling manufacturer in a named Illinois metro area whose division is quietly under evaluation for sale, and his wife, a nurse manager at the local hospital system. Into your contracted documentation vendor:
-(a) Send as is
-(b) Strip something first
-(c) Never, into any tool
-```
-Anonymous: ON. Answer (c). §09's sorter is not on the page tonight; this poll is the one-item
-version of it if the checklist step wants a split on screen instead of N2.
+## Poll 4
+- **Section:** `sOff`, opens it, before the sorter. **Format:** multi-select. **Zoom:** Multiple choice, select all, six answers.
+- **Question:** Six review-update tasks. Which belong to no AI tool, in any file? Select all that apply.
+- **Options:** 1 Update the review letter's figures / 2 Add this year's column to the cash-flow table / 3 Rebuild the six review slides / 4 Decide how much to convert to Roth, and when / 5 Flag every cash-flow cell that moved over ten percent / 6 Sign off the letter before it goes to the client.
+- **Expected:** 4 and 6 only. Source: the `sOff` sorter key, the two items in "Not an AI task": the conversion decision is a judgement (its basis is Appendix C10) and the sign-off is a check no tool does for you. Task 5 is arithmetic under a stated rule, an AI task you still read.
+- **Rule:** If fewer than half select 6, read the key's line for it aloud before the sorter opens and start on that row. If more than half select 5, say a rule stated over a sheet is an AI task and the reading is still yours. Otherwise reveal and move on.

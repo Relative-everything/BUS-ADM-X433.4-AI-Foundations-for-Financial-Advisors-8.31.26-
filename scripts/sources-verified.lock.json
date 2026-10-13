@@ -1,9 +1,13 @@
 {
   "note": "NOTARISED. Every last_verified date in SOURCES.md, frozen. build-sources.mjs recomputes this digest on every parse and refuses to build if a date moved. Only scripts/attest-verified.mjs writes this file, and only at an interactive terminal. Do not hand-edit: a hand edit here and a matching hand edit in SOURCES.md is the one thing this pair cannot catch, and it is a lie about a human having read a source.",
   "updated_by": "--sync (records with an empty last_verified only)",
-  "digest": "72bb19425d4df560e648bded249d2c191289ccb229998f6acbd1fd82bcee0aae",
+  "digest": "bb9858139679cb0f938bcc2af5ee693bf567a975349178c63c45da347800acc0",
   "entries": {
     "src-0din-gemini": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-3b1b-llm": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -84,6 +88,10 @@
       "verified_by": ""
     },
     "src-anthropic-models-overview": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-anthropic-prompting-101": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -208,6 +216,10 @@
       "verified_by": ""
     },
     "src-claude-projects": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-projects-rag": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -371,6 +383,10 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-irs-guidance-primer": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-iskowitz": {
       "last_verified": "",
       "verified_by": ""
@@ -384,6 +400,10 @@
       "verified_by": ""
     },
     "src-kalai": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-karpathy-intro": {
       "last_verified": "",
       "verified_by": ""
     },
