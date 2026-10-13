@@ -402,5 +402,12 @@ Jared's instruction after the A.4 report: *"analyze if this is merge ready and a
 
 **Validators after polish** (`NODE_PATH=$(npm root -g)`): build-case, inject-case --check, build-cardsort --check, build-appendix --check, build-readings --check, build-facts-md --check, build-unsourced --check, case-inventory --report-check, verify-case, verify-migration, verify-sources, verify-facts, verify-editorial, test-editorial-regions, test-case-viewer, verify-browser, test_live_console, docs/next-term/checks.mjs: all exit 0. verify-style exits 1 for the environment (skill absent, DW-184).
 
-**Merge.** `main` takes `next-term-2027` by a `--no-ff` merge commit, pushed on 2026-10-13, which publishes the 2027 pages at the live URL (Pages serves `main`); the Fall 2026 pages stay at the `fall-2026-final` tag, and `next-term-2027-ready` marks the branch head (D-066).
+**Merge.** `main` takes `next-term-2027` by a `--no-ff` merge commit, pushed on 2026-10-13, which publishes the 2027 pages at the live URL (Pages serves `main`); the Fall 2026 pages are the tree at `da7b003`, and the branch head is `0831bcd` (D-066). **The two tags did not reach origin**: the container's git gateway answered HTTP 403 to every push of `refs/tags/*` while accepting the branch pushes, so `fall-2026-final` (at `da7b003`) and `next-term-2027-ready` (at `0831bcd`) exist only in the session container. To create them from a local clone:
+
+```
+git fetch origin main next-term-2027
+git tag -a fall-2026-final da7b003 -m "Fall 2026 final state of main before the next-term-2027 run"
+git tag -a next-term-2027-ready 0831bcd -m "2027 cohort build, reviewed"
+git push origin fall-2026-final next-term-2027-ready
+```
 
