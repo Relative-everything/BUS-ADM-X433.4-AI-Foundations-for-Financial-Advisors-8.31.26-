@@ -19,7 +19,8 @@ Resume rule (RUNBOOK A.1.6): read `RUNBOOK.md` (A.0 first), this file, `DECISION
 | 9 | done | 2026-10-13 | 2026-10-13 | (P9 commit) | verify-browser 0 · verify-facts 0 · build-appendix --check 0 · verify-sources 0 · verify-editorial unchanged · verify-migration 0 |
 | 10 | done | 2026-10-13 | 2026-10-13 | (P10 commit) | verify-facts 0 · verify-migration 0 · verify-sources 0 · build-readings --check 0 · verify-browser 0 · test-case-viewer 0 · live-console 0 · verify-editorial 1 (known) · test-editorial 1 (known) · verify-style 1 (env) |
 | 11 | done | 2026-10-13 | 2026-10-13 | `a12ba60` | 16 checks exit 0; verify-editorial 1 and test-editorial 1 (documented ratchets); verify-style 1 (env) |
-| merge polish | done | 2026-10-13 | 2026-10-13 | (two polish commits, then the merge) | every check exits 0 except verify-style (env); see "Merge polish and merge" |
+| merge polish | done | 2026-10-13 | 2026-10-13 | `7bca2e2`, `0831bcd`, merge `ed2029c` | every check exits 0 except verify-style (env); see "Merge polish and merge" |
+| final review | done | 2026-10-13 | 2026-10-13 | (the commit after `fbdd395` on `main`) | nine record defects fixed, battery re-run: every check exits 0 except verify-style (env) |
 
 ## init (A.1): run files
 
@@ -410,4 +411,6 @@ git tag -a fall-2026-final da7b003 -m "Fall 2026 final state of main before the 
 git tag -a next-term-2027-ready 0831bcd -m "2027 cohort build, reviewed"
 git push origin fall-2026-final next-term-2027-ready
 ```
+
+**Final readiness review, 2026-10-13.** Six read-only lenses over `main` at `fbdd395` (the validator battery, the polish diffs, the thirteen pages in Chromium, the records against the tree, git hygiene, a content sanity pass), each finding put to three independent refuters, majority rules. Nine confirmed and one refuted; all nine were records, none a page defect: the changelog entry still said "the branch waits for review" and counted decisions to D-062, its commit-history link was relative and dead from the served page, the chip and note counts were Phase 5 snapshots, Case 4 is 26 minutes not 25, MAINTAINING said the `.case-*` CSS lives in seven copies (twelve, the case pages included) and pointed at the unpushed tag without its commit, the case files lacked the "Last updated" sentence the merge polish claimed for every served page, and the Python bytecode cache was tracked without an ignore rule. Fixed on `main` in the next commit (D-067), the changelog page regenerated with its fence refilled from the committed copy, and the battery re-run on the result.
 

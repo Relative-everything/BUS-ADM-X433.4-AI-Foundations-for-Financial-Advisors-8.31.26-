@@ -201,7 +201,7 @@ node scripts/build-cardsort.mjs --check   # the session-1 card-sort deck and key
                                    # cannot silently orphan the answer key.
 node scripts/verify-case.mjs       # hash every injected block, and assert the
                                    # lesson-local .case-* layout rules agree in
-                                   # all seven lessons; non-zero on drift
+                                   # all twelve pages; non-zero on drift
 node scripts/verify-migration.mjs  # retired facts, allowances, arithmetic, timing,
                                    # and the spine drift guard (check 20)
 node scripts/verify-browser.mjs    # DOM, handlers, flowchart, screenshots (Chromium)
@@ -418,7 +418,7 @@ the Session 5 section tests, now pin Fall 2026 content the rebuild replaced on
 purpose: the cold open, the 67- and 83-minute cores, the v4 case panel and its
 names, the eleven-section Session 5, the Fall 2026 footer records and
 deferred-work counts. Read all of them as history under the rule above; the
-pages they pin are at the `fall-2026-final` tag. The regression set for every
+pages they pin are at `da7b003` (the `fall-2026-final` tag, once pushed). The regression set for every
 served page is now `docs/next-term/checks.mjs`
 (`NODE_PATH=$(npm root -g) node docs/next-term/checks.mjs`): the case pages'
 six sections and spans, the lessons' case links and reading cards, the hub
@@ -522,15 +522,15 @@ that opened it; the page behind is `aria-hidden` while it is open and only the
 nodes the controller hid are unhidden after; and the selected tab is marked
 three ways that are not colour, plus `aria-selected`.
 
-**The lessons still carry the `.case-*` layout CSS in seven copies** (the hub,
-`session-0.1` and sessions 1 to 5), because it predates this and the viewer's
-own rules are emitted into the span instead. A new rule goes in
-`inject-case.mjs`; do not add one to the seven.
+**The pages still carry the `.case-*` layout CSS in twelve copies** (the hub,
+`session-0.1`, sessions 1 to 5 and `cases/case-1` to `case-5`), because it
+predates this and the viewer's own rules are emitted into the span instead. A
+new rule goes in `inject-case.mjs`; do not add one to the twelve.
 
-**`scripts/verify-case.mjs` asserts the seven copies agree** (DW-043). It reads
+**`scripts/verify-case.mjs` asserts the twelve copies agree** (DW-043). It reads
 every `<style>` body between `/* STYLE:END */` and the `CASE:BEGIN` sentinel,
 drops comments, normalises whitespace, keeps each rule any of whose selectors
-names a `.case-*` class, and compares the ordered list across the seven files,
+names a `.case-*` class, and compares the ordered list across the twelve files,
 counting copies. Re-indenting is not drift; a changed value, selector, rule
 order or `@media` block is, and so is a rule pasted in twice. A file that differs
 from the largest group fails, by name, with the rules only it has, the rules it
@@ -550,11 +550,11 @@ FAIL  layout  session-3/index.html  its 20 lesson-local .case-* rule(s) differ f
         missing here:  .case-src{font-size:13px;color:var(--muted);margin:16px 0 0}
 ```
 
-On 2026-10-11 the seven agree on 20 rules. `#caseBtn.casefab` is outside the
+On 2026-10-13 the twelve agree on 20 rules. `#caseBtn.casefab` is outside the
 set, being no `.case-*` rule: today the button sits bottom right in the hub,
-`session-0.1`, 1 and 2 and top right in 3 to 5, and the narrow-screen rules
-that move it are lesson-local. A layout change to the viewer is made in all
-seven lessons in one commit, or moved into `inject-case.mjs`.
+`session-0.1`, 1 and 2 and the case files, and top right in 3 to 5, and the
+narrow-screen rules that move it are page-local. A layout change to the viewer is made in all
+twelve pages in one commit, or moved into `inject-case.mjs`.
 
 ## The retrieval corpus lives in CASE.md
 

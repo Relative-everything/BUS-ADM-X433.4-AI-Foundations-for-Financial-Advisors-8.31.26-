@@ -4,7 +4,7 @@ Every substantive revision to the course materials, newest first.
 
 Each entry corresponds to one or more commits. For the exact character-level
 diff of any change, see the
-[commit history](../../commits/main) on GitHub.
+[commit history](https://github.com/Relative-everything/BUS-ADM-X433.4-AI-Foundations-for-Financial-Advisors-8.31.26-/commits/main) on GitHub.
 
 Format: `## YYYY-MM-DD` with changes grouped by session.
 
@@ -15,8 +15,9 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 Branch `next-term-2027`, run from `docs/next-term/RUNBOOK.md` under PEDAGOGY v2.0, one
 commit per phase; `docs/next-term/PROGRESS.md` holds every validator run and
 `docs/next-term/DECISIONS.md` every call made under the runbook's decision rules
-(D-001 to D-062). Fall 2026 is frozen at `da7b003` (local tag `fall-2026-final`).
-Nothing on `main` changed; the branch waits for review.
+(D-001 to D-067). Fall 2026 is frozen at `da7b003` (the `fall-2026-final` tag, once pushed).
+Merged into `main` on 2026-10-13 by a merge commit (`ed2029c`, no fast-forward), which
+published these pages; the final readiness review's corrections followed on `main`.
 
 ### The case · CASE.md v5.0
 
@@ -41,8 +42,8 @@ Nothing on `main` changed; the branch waits for review.
   window, watermarks, training defaults, leaderboards, Reg S-P dates and clocks, exam
   priorities, FINRA 24-09, the corrections register's facts) with `scripts/verify-facts.mjs`
   as a gate and a week-before ritual in MAINTAINING. Every lesson cites it with
-  `data-fact` chips (119 on the lessons, 34 ids on the case pages, 100 `FACTS:` notes in
-  the instructor notes); the Fall 2026 corrections register was applied wherever repo text
+  `data-fact` chips (153 on the setup page and Sessions 1 to 5, 76 on the case pages citing
+  12 ids, 228 `FACTS:` notes in the instructor notes); the Fall 2026 corrections register was applied wherever repo text
   stated an error; Session 1's token arithmetic was re-derived on the current tokenizer.
 
 ### Sessions 1 to 5 · the core at about an hour
@@ -62,7 +63,7 @@ Nothing on `main` changed; the branch waits for review.
 
 ### Case files · `cases/case-1.html` to `case-5.html`
 
-- Five standalone case-file pages, each 25 minutes of student work before class: brief,
+- Five standalone case-file pages, 25 minutes of student work before class (Case 4: 26): brief,
   the commit, the captured deliverable (labelled with model id and date, failures flagged),
   how it was built (prompts, tier, checks, the failure caught; case 1 carries the model
   readme.txt), a check and the link into the lesson. The pipeline (case block, sources
@@ -84,14 +85,20 @@ Nothing on `main` changed; the branch waits for review.
 
 ### Merge polish
 
-- Every served page's "Last updated" stamp reads 2026-10-13 (DW-140), the setup page
-  included. MAINTAINING's layout block lists the case pages, and its change-folder section
+- The hub, the setup page, Sessions 1 to 5 and the five case files carry a "Last updated
+  2026-10-13" stamp (DW-140); the setup page and the case files gain theirs. MAINTAINING's
+  layout block lists the case pages, and its change-folder section
   records that the Fall 2026 folders now read red by design, with
   `docs/next-term/checks.mjs` as the regression set.
 - The editorial baseline (`scripts/editorial-baseline.json`) is re-recorded for the 2027
   pages: every em-dash figure fell or held, none rose (D-063 in
   `docs/next-term/DECISIONS.md`). `test-editorial-regions` T2 proves the R10 claim on a
   fixture, since no served page carries a captured transcript any more.
+- A final readiness review on `main` (six lenses over the merged tree, every finding put to
+  three independent refuters) found nine record defects and no page defect, fixed on `main`
+  in the commit after the merge: this entry's status line and commit-history link, the chip
+  counts, Case 4's minutes, MAINTAINING's "seven copies" text, the case-file stamps and the
+  tracked bytecode cache (D-067).
 
 ### Verification
 
