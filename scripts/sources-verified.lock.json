@@ -1,13 +1,25 @@
 {
   "note": "NOTARISED. Every last_verified date in SOURCES.md, frozen. build-sources.mjs recomputes this digest on every parse and refuses to build if a date moved. Only scripts/attest-verified.mjs writes this file, and only at an interactive terminal. Do not hand-edit: a hand edit here and a matching hand edit in SOURCES.md is the one thing this pair cannot catch, and it is a lie about a human having read a source.",
   "updated_by": "--sync (records with an empty last_verified only)",
-  "digest": "9a264af4627fb8ad7f36b4b63c4000b51d73c34cbc95afc1725989fc09c1a813",
+  "digest": "bb9858139679cb0f938bcc2af5ee693bf567a975349178c63c45da347800acc0",
   "entries": {
     "src-0din-gemini": {
       "last_verified": "",
       "verified_by": ""
     },
+    "src-3b1b-llm": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-aa": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-aa-index": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-aa-leaderboard": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -79,6 +91,10 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-anthropic-prompting-101": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-anthropic-retention": {
       "last_verified": "",
       "verified_by": ""
@@ -100,6 +116,14 @@
       "verified_by": ""
     },
     "src-api-messages": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-arena-board": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-arena-rename": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -167,6 +191,14 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-claude-connectors": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-incognito": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-claude-marks": {
       "last_verified": "",
       "verified_by": ""
@@ -176,6 +208,34 @@
       "verified_by": ""
     },
     "src-claude-pricing": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-privacy-training": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-projects": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-projects-rag": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-research": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-skills-use": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-watermark": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-web-search": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -196,10 +256,6 @@
       "verified_by": ""
     },
     "src-daly": {
-      "last_verified": "",
-      "verified_by": ""
-    },
-    "src-davidson": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -311,15 +367,31 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-il-retirement-subtraction": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-investmentnews-t3-2026": {
       "last_verified": "",
       "verified_by": ""
     },
-    "src-irc": {
+    "src-irs-590b": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-irs-8606": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-irs-guidance-primer": {
       "last_verified": "",
       "verified_by": ""
     },
     "src-iskowitz": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-iss-ai-policy": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -328,6 +400,10 @@
       "verified_by": ""
     },
     "src-kalai": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-karpathy-intro": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -356,6 +432,10 @@
       "verified_by": ""
     },
     "src-lee-cognitive": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-livebench": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -411,6 +491,10 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-openai-provenance": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-openai-retire-4o": {
       "last_verified": "",
       "verified_by": ""
@@ -439,6 +523,10 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-regsp-guide": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-rightcapital-iris": {
       "last_verified": "",
       "verified_by": ""
@@ -451,11 +539,7 @@
       "last_verified": "",
       "verified_by": ""
     },
-    "src-rr200464": {
-      "last_verified": "",
-      "verified_by": ""
-    },
-    "src-rr8513": {
+    "src-rp-2022-32": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -476,6 +560,10 @@
       "verified_by": ""
     },
     "src-secpri": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-secure2-107": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -508,6 +596,10 @@
       "verified_by": ""
     },
     "src-t3-survey": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-td10001": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -544,10 +636,6 @@
       "verified_by": ""
     },
     "src-wiretap": {
-      "last_verified": "",
-      "verified_by": ""
-    },
-    "src-woelbing": {
       "last_verified": "",
       "verified_by": ""
     },

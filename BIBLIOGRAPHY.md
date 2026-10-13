@@ -5,11 +5,11 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**140 works, 480 references across 6 lessons.** 117 are
-cited by at least one claim; 23 are listed by a lesson without carrying a
+**162 works, 665 references across 11 lessons.** 134 are
+cited by at least one claim; 28 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
-**105 records carry at least one field this repository could not verify, and
+**102 records carry at least one field this repository could not verify, and
 every one of them is printed below as `[UNVERIFIED, needs source]` rather than omitted.** The
 rendered footer in a lesson omits an unknown field, because a footer in which
 thirty entries shout about a missing publisher helps nobody. This file is where a
@@ -31,11 +31,11 @@ reader comes for completeness, so here the gap is the point.
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/pricing> |
 | Published | *not applicable* |
-| Last retrieved | 2026-09-13 |
+| Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **9** |
-| Cited in | S1 `#s5` · S1 `#s10` · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 |
+| **Total references** | **34** |
+| Cited in | case-1 `#built` ×5 · case-2 `#built` ×4 · case-3 `#built` ×4 · case-4 `#built` ×4 · case-5 `#built` ×4 · S1 `#s5` ×2 · S1 `#s10` ×2 · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 · S4 `#s3` · S4 `#sCR` |
 
 Per-token input and output rates by model, cache-hit and batch discounts.
 
@@ -53,8 +53,8 @@ Per-token input and output rates by model, cache-hit and batch discounts.
 | Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **4** |
-| Cited in | S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 |
+| **Total references** | **9** |
+| Cited in | S0.1 `#s1` · S0.1 `#s10` · S1 `#s1` · S1 `#s5` ×2 · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 |
 
 What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate.
 
@@ -73,7 +73,7 @@ What the context window contains, how turns accumulate, that all of it is counte
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **4** |
-| Cited in | S2 `#s3` ×2 · S4 `#sWS` · S4 `#s9` |
+| Cited in | S2 `#s3` ×2 · S4 `#sWS` · S4 `#sCR` |
 
 The Messages API reference as read on 2026-09-27: temperature is marked deprecated ("Models released after Claude Opus 4.6 do not support setting temperature. A value of 1.0 will be accepted for backwards compatibility, all other values will be rejected with a 400 error"); the effort parameter ("How much effort the model should put into its response") takes low, medium, high, xhigh or max; thinking can be enabled with a token budget, disabled, or adaptive, where the model decides.
 
@@ -98,6 +98,25 @@ Top-20-chunk retrieval failure rates — baseline 5.7%, contextual embeddings 3.
 
 ### Anthropic
 
+**AI fluency: Frameworks and foundations**  
+`src-anthropic-fluency` · assigned_reading
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Anthropic |
+| Link | **[UNVERIFIED, needs source]** |
+| Published | 2025 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S1 `#s15` |
+
+The Delegation, Description, Discernment, Diligence framing. Assigned reading; no page claim rests on it.
+
+### Anthropic
+
 **How Claude marks AI-generated content**  
 `src-claude-marks` · evidence · **moving target**
 
@@ -107,13 +126,13 @@ Top-20-chunk retrieval failure rates — baseline 5.7%, contextual embeddings 3.
 | Publisher | Claude Help Center, support.claude.com article 16266773 |
 | Link | <https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content> |
 | Published | *not applicable* |
-| Last retrieved | 2026-09-27 |
+| Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **18** |
-| Cited in | S4 `#s1` · S4 `#sW1` ×6 · S4 `#sW2` ×6 · S4 `#s9` ×5 |
+| Cited in | S4 `#s1` · S4 `#sW1` ×5 · S4 `#sW2` ×6 · S4 `#sCR` ×6 |
 
-Claude models launched in the EU on or after 2 August 2026 mark generated text with an imperceptible watermark at launch, earlier models are being added with all covered by 2 December 2026, and marking applies "to output from supported models wherever Claude is offered, worldwide". Files Claude makes (PNG, JPG, SVG, MP4, audio) carry signed Content Credentials following the C2PA standard. Text watermark detection is in private preview, "available to eligible organizations as required under EU law (such as regulators, law enforcement, media, fact-checkers, independent researchers, educational organizations, and EU civil society groups)" and to enterprises with their own Article 50 obligations, through a registration form. A detected mark "tells you that the content may have been processed by Claude" and does not confirm full provenance; "Lack of a detected mark doesn't mean the content wasn't AI-generated or processed": heavy editing, paraphrase, translation, very short passages, or metadata stripped "through format conversion, re-saving, screenshots, or other means". The free Claude Content Checker checks a file, in the browser, for a Claude-issued credential; "The tool does not check text." Anthropic signed the EU AI Act Article 50(2) Code of Practice on Transparency of AI-Generated Content. The page describes no account or user identifier in the mark; that is a reading of an absence and is chipped M wherever it is used.
+Claude models launched in the EU on or after 2 August 2026 mark generated text with an imperceptible watermark at launch, the law gives models launched earlier a transition period and Anthropic is adding marking to them, the page keeps a per-model list of which models and which surfaces mark text, and marking applies "to output from supported models wherever Claude is offered, worldwide". Files Claude makes of a supported type (such as PNG, JPG and SVG) carry signed Content Credentials following the C2PA standard. Text watermark detection is in private preview, "available to eligible organizations as required under EU law (such as regulators, law enforcement, media, fact-checkers, independent researchers, educational organizations, and EU civil society groups)" and to enterprises with their own Article 50 obligations, through a registration form. A detected mark "tells you that the content may have been processed by Claude" and does not confirm full provenance; "Lack of a detected mark doesn't mean the content wasn't AI-generated or processed": heavy editing, paraphrase, translation, very short passages, or metadata stripped "through format conversion, re-saving, screenshots, or other means". The free Claude Content Checker checks a file, in the browser, for a Claude-issued credential; "The tool does not check text." Anthropic signed the EU AI Act Article 50(2) Code of Practice on Transparency of AI-Generated Content. That the mark carries no account or user identifier is stated in the announcement, src-claude-watermark, which is the record to cite for it.
 
 ### Anthropic
 
@@ -129,48 +148,10 @@ Claude models launched in the EU on or after 2 August 2026 mark generated text w
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **15** |
-| Cited in | S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#s9` ×6 · S5 `#s6` |
+| **Total references** | **17** |
+| Cited in | S0.1 `#s0` · S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#sCR` ×7 · S5 `#s6` |
 
 Consumer plans: Anthropic may use chats "including training our models, unless you opt out of training through your account settings"; retention five years if training is allowed, 30 days if not; the Consumer Terms are a contract between the individual and Anthropic. Commercial plans (Team, Enterprise, the API): "Anthropic may not train models on Customer Content from Services" (Section B); the Customer "retains all rights to its Inputs, and owns its Outputs" (Section B); Confidential Information may be used only to exercise rights and perform obligations under the Terms and is destroyed promptly on request (Sections E.2, E.4); the Terms are an agreement between Anthropic and the organisation the signer represents, and nobody may accept for an organisation without legal authority to bind it.
-
-### Anthropic
-
-**Available beta and research preview features**  
-`src-beta` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | support.claude.com article 14503520 |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | 2026-07-07 |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **1** |
-| Cited in | S0.1 `#s7` |
-
-The label semantics and the eight-row table in section 7. H as of the article's own date and no later: this is the oldest source in the file and the one most likely to be wrong on screen.
-
-### Anthropic
-
-**How large is the context window on paid Claude plans?**  
-`src-ctxwindow` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | support.claude.com article 8606394 |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **6** |
-| Cited in | S0.1 `#s1` · S0.1 `#s4` ×4 · S0.1 `#s6` |
-
-Window sizes by model, the 500K figure for the 4.x tier in chat and 200K outside those models, automatic context management and its code-execution requirement, project knowledge served by retrieval rather than loaded whole, and the statement that tools and connectors are token-intensive. That last item is a direction, not a magnitude: no first-party figure exists for what a connector costs and none is printed in the lesson.
 
 ### Anthropic
 
@@ -187,7 +168,7 @@ Window sizes by model, the 500K figure for the 4.x tier in chat and 200K outside
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
-| Cited in | S0.1 `#s7` |
+| Cited in | S0.1 `#s5` |
 
 The Customize sidebar and its three tabs, install and enable semantics, directory-installed skills being view-only, and organisation sharing being off by default.
 
@@ -205,29 +186,10 @@ The Customize sidebar and its three tabs, install and enable semantics, director
 | Last retrieved | 2026-08-20 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **10** |
-| Cited in | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3` ×5 · S0.1 `#s9` · S4 `#sWS` · S4 `#s9` |
+| **Total references** | **2** |
+| Cited in | S4 `#sWS` · S4 `#sCR` |
 
 The five effort levels, which models carry the effort selector, extended thinking not being disableable in Claude on Opus 5, xhigh requiring Opus 4.7 or newer, the rule that a change applies starting with Claude's next response, and admin role gating of models and effort levels.
-
-### Anthropic
-
-**Features and capabilities collection index**  
-`src-features` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | support.claude.com article 18031719 |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **1** |
-| Cited in | S0.1 `#s7` |
-
-The enumeration of surfaces beyond the chat box, and the attachment path.
 
 ### Anthropic
 
@@ -243,10 +205,10 @@ The enumeration of surfaces beyond the chat box, and the attachment path.
 | Last retrieved | 2026-08-20 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **10** |
-| Cited in | S0.1 `#s0` · S0.1 `#s5` ×2 · S0.1 `#s6` ×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10` ×2 · S2 `#s3` |
+| **Total references** | **9** |
+| Cited in | S0.1 `#s1` · S0.1 `#s7` · S0.1 `#s8` ×6 · S2 `#s3` |
 
-The two live memory experiences and where each puts its toggles, real-time entry writing against a 24-hour synthesis, incognito chats on Enterprise and Team being included in standard data exports and following organisation retention, Owners retaining access for at least 30 days, Team plans having no organisation-level memory controls, the Enterprise org toggle and what disabling it deletes, past-chat search being paid-plans-only and appearing as tool calls, project-scoped search, Enterprise CMEK blocking past-chat search, pause against reset semantics, and deletion of a conversation not deleting the memory generated from it. Upgraded from M to H by the verified evidence annex, section A.
+The two live memory experiences and where each puts its toggles, real-time entry writing against a 24-hour synthesis, incognito chats on Enterprise and Team being included in standard data exports and following organisation retention, Owners retaining access for at least 30 days, Team plans having no organisation-level memory controls, the Enterprise org toggle and what disabling it deletes, past-chat search being paid-plans-only and appearing as tool calls, project-scoped search, Enterprise CMEK blocking past-chat search, pause against reset semantics, and deletion of a conversation not deleting the memory generated from it. Upgraded from M to H by the verified evidence annex, section A. Read again in full on 2026-10-13 for the setup page: the new memory experience (Settings > Memory) is the one the article leads with, memory is on by default for Free, Pro and Max, and the per-chat Memory switch sits in the + menu.
 
 ### Anthropic
 
@@ -262,8 +224,8 @@ The two live memory experiences and where each puts its toggles, real-time entry
 | Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **5** |
-| Cited in | S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` · S2 `#s3` |
+| **Total references** | **12** |
+| Cited in | case-1 `#built` · case-2 `#built` · case-3 `#built` · case-4 `#built` · case-5 `#built` · S0.1 `#s1` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 · S4 `#sCR` |
 
 The four current models, context window sizes (1M for Fable 5, Opus 5 and Sonnet 5; 200K for Haiku 4.5), which models carry adaptive against extended thinking, and effort defaults. Price per MTok and knowledge cutoffs are carried by this source but are quoted nowhere in the lesson, because no figure for either was recorded at verification.
 
@@ -281,67 +243,10 @@ The four current models, context window sizes (1M for Fable 5, Opus 5 and Sonnet
 | Last retrieved | 2026-08-20 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **3** |
-| Cited in | S0.1 `#s1` · S0.1 `#s6` · S2 `#s3` |
+| **Total references** | **8** |
+| Cited in | S0.1 `#s2` ×3 · S0.1 `#s3` ×4 · S2 `#s3` |
 
 Profile instructions applying account-wide, project instructions, styles as a separate mechanism, and five projects on the free plan.
-
-### Anthropic
-
-**Use plugins in Claude**  
-`src-plugins` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | support.claude.com article 13837440 |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **3** |
-| Cited in | S0.1 `#s7` ×3 |
-
-Plugins on all paid plans, a plugin bundling skills, connectors and sub-agents, availability in chat on the web, the Desktop Chat tab and Cowork, and hooks and sub-agents running only in Cowork and appearing greyed out in chat. Retrieved via search-result content rather than a full page fetch, then upgraded from UNVERIFIED to H by the verified evidence annex, section B. THREE ITEMS ARE STARRED THERE for re-confirmation at the page before they are taught: the built-in and GitHub-sourced marketplaces, the Customize action opening a Cowork task, and the Plugin Create plugin.
-
-### Anthropic
-
-**Why Claude switched models in your conversation with Fable 5**  
-`src-routing` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | support.claude.com article 15363606 |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | L |
-| **Total references** | **1** |
-| Cited in | S0.1 `#s2` |
-
-[UNVERIFIED, needs source]: the URL and title are confirmed from two other fetched pages, but the BODY OF THIS ARTICLE HAS NOT BEEN READ. Referenced once, solely to record that model switching inside a conversation is a documented behaviour with an article behind it. No mechanism, trigger or consequence is asserted from it anywhere. Fetch it before teaching anything about routing.
-
-### Anthropic
-
-**What are skills?**  
-`src-skills` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | support.claude.com article 12512176 |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **3** |
-| Cited in | S0.1 `#s6` · S0.1 `#s7` · S0.1 `#s9` |
-
-Progressive disclosure of skill metadata against skill body, the code-execution requirement, the four skill types, and how skills differ from projects, MCP and instructions.
 
 ### Anthropic
 
@@ -357,8 +262,8 @@ Progressive disclosure of skill metadata against skill body, the code-execution 
 | Last retrieved | 2026-08-20 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **9** |
-| Cited in | S0.1 `#s1` · S0.1 `#s4` · S0.1 `#s5` ×3 · S0.1 `#s8` ×3 · S0.1 `#s9` |
+| **Total references** | **3** |
+| Cited in | S0.1 `#s4` ×3 |
 
 One to two tool calls for web search on a factual query, five or more tool calls over one to three minutes for research, and the combined behaviour of the two.
 
@@ -377,7 +282,7 @@ One to two tool calls for web search on a factual query, five or more tool calls
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **3** |
-| Cited in | S4 `#s5` · S4 `#s9` ×2 |
+| Cited in | S4 `#s5` · S4 `#sCR` ×2 |
 
 Anthropic's fourth threat-intelligence report, covering misuse disrupted between December 2025 and August 2026 across seven harm areas. The case the lesson uses (GTG-20006, assessed as a Russian espionage actor) had AI agents watch security products for detections of its deployed malware and rebuild the malware until it evaded them. The lesson names no group and quotes no tradecraft beyond that sentence.
 
@@ -395,10 +300,10 @@ Anthropic's fourth threat-intelligence report, covering misuse disrupted between
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **5** |
-| Cited in | S4 `#(footer)` · S4 `#s3` ×3 · S4 `#s9` |
+| **Total references** | **12** |
+| Cited in | case-1 `#built` · case-4 `#built` · S0.1 `#s0` ×2 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
 
-Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from $100 a month for five times Pro usage, $200 for twenty times. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, September 2026: from $1 in and $5 out for the smallest model to $10 in and $50 out for the largest.
+Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from $100 a month for five times Pro usage, $200 for twenty times. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, October 2026: from $0.10 in and $0.50 out for the smallest model, for prompts up to 100K tokens, to $10 in and $50 out for the largest (FACTS claude-api-price-haiku-5-5 and claude-api-price-fable-5-1).
 
 ### Anthropic
 
@@ -415,7 +320,7 @@ Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **5** |
-| Cited in | S4 `#s3` ×2 · S4 `#s4` · S4 `#s9` ×2 |
+| Cited in | S4 `#s3` ×2 · S4 `#s4` · S4 `#sCR` ×2 |
 
 Standard retention on the API is 30 days; Enterprise organisations can set a custom retention period, 30 days at minimum; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years.
 
@@ -433,8 +338,8 @@ Standard retention on the API is 30 days; Enterprise organisations can set a cus
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **10** |
-| Cited in | S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#s9` ×6 |
+| **Total references** | **11** |
+| Cited in | case-4 `#built` · S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#sCR` ×6 |
 
 Section G.1: "Anthropic will notify Customer in writing without undue delay, but in any event within 48 hours, after becoming aware of any Security Breach." Section H.1: within thirty days of termination or expiration, on request, return a copy of all Customer Data or provide self-service functionality to do the same, and delete all copies. Section F.1: "Upon Customer's written request, and subject to the confidentiality obligations set forth in the Agreement, Anthropic will provide Customer with such audit reports or certificates applicable to the Services (e.g., SOC 2 report), to the extent available". Section C.3: reasonable prior notice of a new subprocessor and fifteen days to object. Section B.2: processing only to provide or maintain the Services and on the Customer's documented instructions.
 
@@ -453,7 +358,7 @@ Section G.1: "Anthropic will notify Customer in writing without undue delay, but
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **2** |
-| Cited in | S4 `#s3` · S4 `#s9` |
+| Cited in | S4 `#s3` · S4 `#sCR` |
 
 SOC 2 Type I and Type II; ISO 27001:2022; ISO/IEC 42001:2023; a HIPAA-ready configuration with a Business Associate Agreement, available on Enterprise plans and accepted by the organisation's primary owner; compliance documents requested through the Trust Portal.
 
@@ -472,7 +377,7 @@ SOC 2 Type I and Type II; ISO 27001:2022; ISO/IEC 42001:2023; a HIPAA-ready conf
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
-| Cited in | S4 `#s9` |
+| Cited in | S4 `#sCR` |
 
 One actor used Claude Code to automate reconnaissance, credential harvesting, intrusion and extortion against at least 17 organisations, including healthcare, emergency services, government and religious institutions; "Ransom demands sometimes exceeded $500,000." Demands, not measured losses.
 
@@ -491,7 +396,7 @@ One actor used Claude Code to automate reconnaissance, credential harvesting, in
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
-| Cited in | S4 `#s9` |
+| Cited in | S4 `#sCR` |
 
 "A 1% attack success rate, while a significant improvement, still represents meaningful risk"; the platform docs warn that "Claude will follow commands found in content even when they conflict with your instructions"; Claude for Chrome "asks users before taking high-risk actions like publishing, purchasing, or sharing personal data".
 
@@ -509,8 +414,8 @@ One actor used Claude Code to automate reconnaissance, credential harvesting, in
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **3** |
-| Cited in | S4 `#sWS` · S4 `#s7` · S4 `#s9` |
+| **Total references** | **5** |
+| Cited in | S0.1 `#s6` ×2 · S4 `#s7` · S4 `#sWS` · S4 `#sCR` |
 
 A skill is a folder with a SKILL.md file: YAML front matter with a required name (at most 64 characters, lowercase letters, numbers and hyphens) and a required description (non-empty, at most 1,024 characters, saying what the skill does and when to use it), then the instructions in markdown. Custom skills upload in the Claude app's settings on Pro, Max, Team and Enterprise plans.
 
@@ -529,7 +434,7 @@ A skill is a folder with a SKILL.md file: YAML front matter with a required name
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **2** |
-| Cited in | S4 `#sWS` · S4 `#s9` |
+| Cited in | S4 `#sWS` · S4 `#sCR` |
 
 Memory came to Team and Enterprise plans on 11 September 2025 and to Pro and Max on 23 October 2025; Claude saves memory as a set of individual topics as you chat rather than summarising afterwards.
 
@@ -548,7 +453,7 @@ Memory came to Team and Enterprise plans on 11 September 2025 and to Pro and Max
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **2** |
-| Cited in | S4 `#sWS` · S4 `#s9` |
+| Cited in | S4 `#sWS` · S4 `#sCR` |
 
 Visible, extended step-by-step thinking arrived on 24 February 2025; by 2026 thinking is built in and adaptive, and "think step by step" is a fallback when it is off.
 
@@ -566,8 +471,8 @@ Visible, extended step-by-step thinking arrived on 24 February 2025; by 2026 thi
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S4 `#sWS` · S4 `#s9` |
+| **Total references** | **3** |
+| Cited in | S0.1 `#s5` · S4 `#sWS` · S4 `#sCR` |
 
 A standard for connecting assistants to the systems where data lives (November 2024); web search with direct citations in Claude (March 2025); integrations and advanced research across internal and external sources (May 2025): grounding built in rather than a retrieval pipeline you build.
 
@@ -586,7 +491,7 @@ A standard for connecting assistants to the systems where data lives (November 2
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **2** |
-| Cited in | S4 `#sWS` · S4 `#s9` |
+| Cited in | S4 `#sWS` · S4 `#sCR` |
 
 9,000 tokens in March 2023, 100,000 in May 2023, 200,000 in November 2023, one million by default on current models, about 555,000 words; and "As token count grows, accuracy and recall degrade, a phenomenon known as context rot."
 
@@ -601,13 +506,13 @@ A standard for connecting assistants to the systems where data lives (November 2
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/model-deprecations> |
 | Published | 2026-09-30 |
-| Last retrieved | 2026-10-04 |
+| Last retrieved | 2026-10-12 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **5** |
-| Cited in | S5 `#s1` ×3 · S5 `#sE2` ×2 |
+| **Total references** | **52** |
+| Cited in | case-1 `#deliverable` ×3 · case-1 `#built` ×2 · case-2 `#deliverable` ×2 · case-2 `#built` ×2 · case-3 `#deliverable` ×5 · case-3 `#built` ×2 · case-4 `#deliverable` ×4 · case-4 `#built` ×3 · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable` ×4 · case-5 `#built` ×5 · case-5 `#next` ×2 · S0.1 `#s0` · S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#sCase` ×2 · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#sE6` ×4 |
 
-Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §01 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027. Dates are for Anthropic-operated platforms; partner platforms set their own.
+Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §02 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current and legacy models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027, Haiku 5.5 7 October 2027. Dates are for Anthropic-operated platforms; partner platforms set their own.
 
 ### Anthropic
 
@@ -639,13 +544,13 @@ Anthropic commits to preserving the weights of all publicly released models, and
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/models/overview> |
 | Published | 2026 |
-| Last retrieved | 2026-10-04 |
+| Last retrieved | 2026-10-12 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **3** |
 | Cited in | S5 `#s1` ×3 |
 
-The current lineup of four models (Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 4.5) with each one's retirement commitment (not sooner than 1 September 2027, 22 September 2027, 28 September 2027 and 15 October 2026), and the eight legacy models still available (Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6). The page recommends Opus 5.5 for most workloads. No price or benchmark from it is on the page.
+The current lineup of four models (Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5) with each one's retirement commitment (not sooner than 1 September 2027, 22 September 2027, 28 September 2027 and 7 October 2027), and the legacy models still available (Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Haiku 4.5). The page recommends Opus 5.5 for most workloads. No price or benchmark from it is on the page.
 
 ### Anthropic
 
@@ -742,6 +647,215 @@ A marketplace can be hosted on GitHub, another git host, a hosted catalogue URL 
 
 Managed settings sit above every other level (command line, project, shared project, user) and nothing a user sets overrides them, apart from a few security-sensitive exceptions. A managed model sets the model a session starts with; the lock on which models may be used is availableModels, which constrains the model picker, the command-line flag and the model key in a user's own files, and a managed list applies as-is.
 
+### Anthropic
+
+**How Claude's text watermark works**  
+`src-claude-watermark` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Anthropic, anthropic.com/news |
+| Link | <https://www.anthropic.com/news/claude-text-watermark> |
+| Published | 2026-08-14 |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **4** |
+| Cited in | S4 `#s7` · S4 `#sW1` ×3 |
+
+Future Claude models generate text that contains a statistical watermark, announced 14 August 2026 and adopted to comply with the EU AI Act. Nothing is added to the text and there are no hidden characters. Watermarking carries no identifying information and cannot be traced to a specific person, organization or chat. Claude's method is a version of the SynthID-Text approach Google DeepMind published in Nature in 2024. When Claude produces a file of a supported type (such as .png, .jpg or .svg) it attaches a C2PA content credential in the file's metadata, which also carries no identifying information.
+
+### Anthropic
+
+**Is my data used for model training?**  
+`src-claude-privacy-training` · assigned_reading · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Anthropic Privacy Center, article 10023580 |
+| Link | <https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **10** |
+| Cited in | case-1 `#built` · S0.1 `#s0` ×3 · S0.1 `#s11` · S4 `#s3` ×2 · S4 `#sCR` ×2 · S5 `#s0` |
+
+With the model training setting ("Help improve Claude") on, de-identified data may be kept up to five years in training pipelines; with it off, a deleted conversation is removed from back-end storage within 30 days. Exceptions the page names: flagged content up to 2 years, safety classifier scores up to 7 years, and thumbs-up or thumbs-down feedback, which keeps the whole conversation up to 5 years. Applies to Free, Pro and Max accounts, not to Team, Enterprise or the API.
+
+### Anthropic
+
+**Use skills in Claude**  
+`src-claude-skills-use` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Help Center, article 12512180 |
+| Link | <https://support.claude.com/en/articles/12512180-use-skills-in-claude> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **4** |
+| Cited in | S0.1 `#s6` ×4 |
+
+How a custom skill is added in Claude (package the skill folder as a ZIP file, then Customize > Skills, the + button, + Create skill, Upload a skill), that skills are available on Free, Pro, Max, Team and Enterprise plans, and that they need code execution and file creation: Settings > Capabilities on Free, Pro and Max, and an organization policy under Organization settings > Plugins & skills on Team and Enterprise.
+
+### Anthropic
+
+**Enable and use web search**  
+`src-claude-web-search` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Help Center, article 10684626 |
+| Link | <https://support.claude.com/en/articles/10684626-enable-and-use-web-search> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S0.1 `#s4` |
+
+Web search is available on the current Claude models; on the new Claude experience there is no web search toggle and Claude searches the web when it helps; elsewhere it is switched on from the + menu; every response that uses it carries citations; on Team and Enterprise an owner enables it for the workspace first.
+
+### Anthropic
+
+**Use research on Claude**  
+`src-claude-research` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Help Center, article 11088861 |
+| Link | <https://support.claude.com/en/articles/11088861-use-research-on-claude> |
+| Published | 2026-06-02 |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **3** |
+| Cited in | S0.1 `#s4` ×3 |
+
+Research is available on the paid plans (Pro, Max, Team, Enterprise) on the web, Claude Desktop and Claude Mobile; it is switched on from the + menu and runs only with web search turned on; it is subject to the same usage limits as standard conversations but can use them up faster.
+
+### Anthropic
+
+**Use incognito chats**  
+`src-claude-incognito` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Help Center, article 12260368 |
+| Link | <https://support.claude.com/en/articles/12260368-use-incognito-chats> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **4** |
+| Cited in | S0.1 `#s7` ×4 |
+
+Incognito chats are temporary conversations not saved to chat history or to memory, available on all plans, opened from the ghost icon outside a project, and not used for training; they are retained for 30 days by default, or longer under an organization's custom retention setting; on Team and Enterprise plans they are included in organizational data exports available to owners.
+
+### Anthropic
+
+**How can I create and manage projects?**  
+`src-claude-projects` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Help Center, article 9519177 |
+| Link | <https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **3** |
+| Cited in | S0.1 `#s2` ×3 |
+
+Projects are available to all users including Free, which can create five; a project is created from the Projects page with + New Project; Claude does not see a project's name or description; Set project instructions saves instructions that Claude uses for all the chats within the project; context is not shared across chats in a project unless it is added to project knowledge.
+
+### Anthropic
+
+**Use connectors to extend Claude's capabilities**  
+`src-claude-connectors` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Help Center, article 11176164 |
+| Link | <https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **6** |
+| Cited in | S0.1 `#s5` ×6 |
+
+Connectors let Claude access a user's apps and services, retrieve data and take actions in them; Claude inherits each person's permissions from the connected service; connecting grants Claude permission to access and potentially modify data in the service; on Team and Enterprise plans an owner must enable a connector for the organization first.
+
+### Anthropic
+
+**Prompting 101 (Code w/ Claude) (video, about 25 minutes)**  
+`src-anthropic-prompting-101` · assigned_reading · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | YouTube |
+| Link | <https://www.youtube.com/watch?v=ysPbXH0LpIE> |
+| Published | 2025-07-31 |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | L |
+| **Total references** | **1** |
+| Cited in | S1 `#s15` |
+
+Assigned optional video for Session 2 (watch before class): prompt structure as Anthropic teaches it.
+
+### Arena
+
+**Text leaderboard**  
+`src-arena-board` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Arena |
+| Publisher | arena.ai |
+| Link | <https://arena.ai/leaderboard/chat/text> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | L |
+| **Total references** | **2** |
+| Cited in | S1 `#s10` ×2 |
+
+What Arena measures, human pairwise preference votes converted to a Bradley-Terry (Elo-style) score, and the first two places on its text leaderboard in a secondary snapshot dated 8 October 2026.
+
+### Arena
+
+**LMArena is now Arena**  
+`src-arena-rename` · evidence
+
+| | |
+|---|---|
+| Author | Arena |
+| Publisher | arena.ai |
+| Link | <https://arena.ai/blog/lmarena-is-now-arena> |
+| Published | 2026-01-28 |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S1 `#s10` |
+
+The leaderboard formerly called LMArena, and before that Chatbot Arena, has been Arena, at arena.ai, since 28 January 2026.
+
 ### artefact2
 
 **LLM sampling visualiser**  
@@ -759,7 +873,7 @@ Managed settings sit above every other level (command line, project, shared proj
 | **Total references** | **1** |
 | Cited in | S1 `#s8` |
 
-The nine sampler controls and their interaction. Behaviour reimplemented in Appendix A5, not embedded; no code or asset is loaded from it.
+The nine sampler controls and their interaction. Behaviour reimplemented in Appendix A6, not embedded; no code or asset is loaded from it.
 
 ### Artificial Analysis
 
@@ -780,6 +894,44 @@ The nine sampler controls and their interaction. Behaviour reimplemented in Appe
 
 A live leaderboard of capability index scores and cost per index task. Every figure drawn from it is a moving target and none of them is stable between terms.
 
+### Artificial Analysis
+
+**Language model leaderboard, Intelligence Index**  
+`src-aa-leaderboard` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Artificial Analysis |
+| Publisher | Artificial Analysis |
+| Link | <https://artificialanalysis.ai/leaderboards/models> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S1 `#s10` ×2 |
+
+The current Intelligence Index scores of the leading models at a stated effort setting. A live leaderboard: every figure drawn from it is a moving target.
+
+### Artificial Analysis
+
+**Intelligence Index methodology**  
+`src-aa-index` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Artificial Analysis |
+| Publisher | Artificial Analysis |
+| Link | <https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S1 `#s10` |
+
+What the Intelligence Index measures: a weighted average of 10 evaluations in four categories, scaled 0 to 100, at version 4.3.2.
+
 ### Brewster, T.
 
 **Fraudsters cloned company director's voice in $35 million heist, police find**  
@@ -795,7 +947,7 @@ A live leaderboard of capability index scores and cost per index task. Every fig
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
-| Cited in | S4 `#s9` |
+| Cited in | S4 `#sCR` |
 
 In early 2020 a bank branch manager in the UAE authorised transfers of $35 million after a phone call from a cloned voice of a company director he knew, backed by forged emails about an acquisition; the case surfaced in a 2021 court document.
 
@@ -818,29 +970,10 @@ In early 2020 a bank branch manager in the UAE authorised transfers of $35 milli
 
 5,179 customer-support agents doing live text-chat support for a Fortune 500 software firm's small-business customers, with a generative-AI assistant that suggested replies and documentation links (which the agent could use or ignore) rolled out in stages. Issues resolved per hour rose 14% on average, 34% for the least experienced and least skilled agents, with little measurable effect on the most experienced; the authors read the tool as spreading the practices of the best workers. A support-centre trial, stated as such on the page.
 
-### Capital One
-
-**2019 Capital One cyber incident: what happened**  
-`src-capitalone` · evidence
-
-| | |
-|---|---|
-| Author | Capital One |
-| Publisher | Capital One |
-| Link | <https://www.capitalone.com/digital/facts2019/> |
-| Published | 2019-07-29 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **2** |
-| Cited in | S4 `#sRSP` · S4 `#s9` |
-
-Tipped on 17 July 2019, Capital One determined on 19 July 2019 that an intrusion had occurred, contacted the FBI, and announced it publicly on 29 July 2019; about 100 million US and 6 million Canadian applicants affected; an $80 million OCC penalty in August 2020 and a $190 million class settlement.
-
 ### CFP Board
 
 **Generative AI Ethics Guide: A Checklist for Upholding the Code and Standards**  
-`src-cfp-genai` · evidence
+`src-cfp-genai` · assigned_reading
 
 | | |
 |---|---|
@@ -851,8 +984,8 @@ Tipped on 17 July 2019, Capital One determined on 19 July 2019 that an intrusion
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **4** |
-| Cited in | S4 `#s2` ×2 · S4 `#sAnon` ×2 |
+| **Total references** | **6** |
+| Cited in | case-4 `#built` · S3 `#s16` · S4 `#s2` ×2 · S4 `#sAnon` ×2 |
 
 A checklist for CFP professionals using generative AI: safeguard confidentiality, including using pseudonyms and anonymisation to remove confidential information before uploading; verify the accuracy of output; confirm the platform stores output in compliance with recordkeeping rules; confirm the vendor commits to notice of data breaches; and keep professional judgment with the professional.
 
@@ -890,7 +1023,7 @@ Standard A.14, Duties When Selecting, Using, or Recommending Technology: a CFP p
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **3** |
-| Cited in | S5 `#s7` ×2 · S5 `#s8` |
+| Cited in | S5 `#s7` ×2 · S5 `#sE5` |
 
 The 2021 practice analysis added Psychology of Financial Planning as the eighth principal knowledge domain, weighted at 7% of the CFP exam from the March 2022 administration; the domain covers client and planner attitudes, values and biases, behavioural finance, sources of money conflict, and principles of counselling.
 
@@ -912,6 +1045,25 @@ The 2021 practice analysis added Psychology of Financial Planning as the eighth 
 | Cited in | S2 `#s10` |
 
 A running count of court cases in which fabricated citations were filed. Cumulative counts as reported through a secondary tracker; the number only ever rises.
+
+### Claude Help Center
+
+**Retrieval augmented generation (RAG) for projects; What are projects?**  
+`src-claude-projects-rag` · assigned_reading · **moving target**
+
+| | |
+|---|---|
+| Author | Claude Help Center |
+| Publisher | support.claude.com |
+| Link | <https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects> |
+| Published | not stated |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S2 `#s12` |
+
+Assigned reading for Session 3: how project knowledge is retrieved once it exceeds the context window, the product behind the retrieval sections.
 
 ### Dahl, M., Magesh, V., Suzgun, M., & Ho, D. E.
 
@@ -985,9 +1137,28 @@ NARROW, AND IT WAS READ TOO WIDELY. The speech states that the core questions re
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **1** |
-| Cited in | S4 `#s9` |
+| Cited in | S4 `#sCR` |
 
 US GenAI-enabled fraud losses projected from $12.3bn (2023) to $40bn (2027). A PROJECTION, NOT A MEASUREMENT, and the page says so.
+
+### Department of the Treasury, Internal Revenue Service
+
+**Required Minimum Distributions, T.D. 10001, 89 FR 58886 (final regulations under IRC § 401(a)(9))**  
+`src-td10001` · authority
+
+| | |
+|---|---|
+| Author | Department of the Treasury, Internal Revenue Service |
+| Publisher | Federal Register |
+| Link | <https://www.govinfo.gov/content/pkg/FR-2024-07-19/html/2024-14542.htm> |
+| Published | 2024-07-19 |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | case-2 `#deliverable` |
+
+The 2024 final regulations on required minimum distributions, Treas. Reg. §§ 1.401(a)(9)-1 to -9; named as a citation inside the session-2 citation-triage items.
 
 ### European Parliament and Council
 
@@ -1023,7 +1194,7 @@ Providers of AI systems that generate synthetic audio, image, video or text must
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **2** |
-| Cited in | S4 `#s5` · S4 `#s9` |
+| Cited in | S4 `#s5` · S4 `#sCR` |
 
 For 2025: 1,008,597 complaints and $20.877 billion in reported losses, up 26% on 2024; business email compromise $3.05 billion from 24,768 complaints; the report's first AI section counts 22,364 complaints that named AI, about $893 million, which the FBI calls an undercount because victims must recognise AI to report it.
 
@@ -1042,7 +1213,7 @@ For 2025: 1,008,597 complaints and $20.877 billion in reported losses, up 26% on
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
-| Cited in | S4 `#s9` |
+| Cited in | S4 `#sCR` |
 
 An email styled with HTML and CSS to set the font size to zero and the colour to white carried an instruction that Gemini for Workspace followed when the recipient asked it to summarise the email.
 
@@ -1060,15 +1231,15 @@ An email styled with HTML and CSS to set the font size to zero and the colour to
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **7** |
-| Cited in | S1 `#s14` ×2 · S4 `#s1` ×2 · S4 `#s7` · S4 `#s9` ×2 |
+| **Total references** | **8** |
+| Cited in | S1 `#s14` ×2 · S4 `#s1` ×3 · S4 `#s7` · S4 `#s9` · S4 `#sCR` |
 
 FINRA's position that existing rules reach generative AI and that supervision is not suspended by the technology. Creates no new obligations.
 
 ### Financial Industry Regulatory Authority
 
 **2026 Annual Regulatory Oversight Report**  
-`src-finra2026` · evidence
+`src-finra2026` · assigned_reading
 
 | | |
 |---|---|
@@ -1079,8 +1250,8 @@ FINRA's position that existing rules reach generative AI and that supervision is
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **6** |
-| Cited in | S4 `#s1` ×2 · S4 `#s7` ×3 · S4 `#s9` |
+| **Total references** | **9** |
+| Cited in | S3 `#s16` · S4 `#s1` ×2 · S4 `#s7` ×3 · S4 `#sAud` ×2 · S4 `#sCR` |
 
 FINRA's first standalone generative-AI section: enterprise-level supervisory processes, controls for hallucinations, bias, cybersecurity and threat-actor use, ongoing human monitoring, and novel oversight for agents that can act or transact.
 
@@ -1099,7 +1270,7 @@ FINRA's first standalone generative-AI section: enterprise-level supervisory pro
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **4** |
-| Cited in | S4 `#s5` ×2 · S4 `#s9` ×2 |
+| Cited in | S4 `#s5` ×2 · S4 `#sCR` ×2 |
 
 A self-regulatory organisation publishing a standalone primer on an attack technique, which is the evidence for the claim that prompt injection has left the research literature.
 
@@ -1118,7 +1289,7 @@ A self-regulatory organisation publishing a standalone primer on an attack techn
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
-| Cited in | S4 `#s9` |
+| Cited in | S4 `#sCR` |
 
 In August 2025 stolen OAuth tokens from the Drift AI chatbot's Salesforce integration let an attacker export data from more than 700 organisations; the standing connector token bypassed multi-factor authentication; tokens were revoked on 20 August 2025. FINRA issued a cybersecurity alert to member firms.
 
@@ -1137,7 +1308,7 @@ In August 2025 stolen OAuth tokens from the Drift AI chatbot's Salesforce integr
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
-| Cited in | S4 `#s7` · S4 `#s9` |
+| Cited in | S4 `#s7` · S4 `#sCR` |
 
 Members must make and preserve books and records under FINRA rules, the Exchange Act and its rules, in a format consistent with Exchange Act Rule 17a-4; records with no stated period are kept at least six years; correspondence under Rule 17a-4(b)(4) for three years, the first two in an easily accessible place.
 
@@ -1156,7 +1327,7 @@ Members must make and preserve books and records under FINRA rules, the Exchange
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **5** |
-| Cited in | S4 `#s5` ×2 · S4 `#s9` ×3 |
+| Cited in | S4 `#s5` ×2 · S4 `#sCR` ×3 |
 
 Approximately $25 million across 15 transfers. The one deepfake figure the course endorses putting in front of a client.
 
@@ -1177,7 +1348,7 @@ Approximately $25 million across 15 transfers. The one deepfake figure the cours
 | **Total references** | **3** |
 | Cited in | S2 `#s6` · S5 `#s2` ×2 |
 
-The Persona-Task-Context-Format framework that session-2 §03 teaches and §04 scores against.
+The Persona-Task-Context-Format framework that session-2 Appendix B3 teaches and §02 scores against.
 
 ### Google
 
@@ -1213,7 +1384,7 @@ TEXT WATERMARKING ONLY. The boundary is load-bearing, because the sibling record
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **3** |
-| Cited in | S4 `#s3` ×2 · S4 `#s9` |
+| Cited in | S4 `#s3` ×2 · S4 `#sCR` |
 
 With a personal Google account, Gemini Apps Activity ("Keep Activity") is on by default; activity is used to improve Google's models and may be read by trained reviewers. Activity auto-deletes after 18 months by default, with 3 or 36 months selectable. A conversation a reviewer has read is kept for up to three years even if the person deletes their activity. With the setting off, chats are kept up to 72 hours and not used to train models unless the person sends feedback. Google's own page warns against entering confidential information.
 
@@ -1283,15 +1454,15 @@ The free tier's request limits are small, were cut in December 2025, and are now
 |---|---|
 | Author | Google DeepMind |
 | Publisher | Google DeepMind |
-| Link | **[UNVERIFIED, needs source]** |
+| Link | <https://deepmind.google/models/synthid/> |
 | Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **4** |
-| Cited in | S4 `#sW1` · S4 `#s9` ×3 |
+| **Total references** | **6** |
+| Cited in | S4 `#s7` · S4 `#sW1` ×2 · S4 `#sCR` ×3 |
 
-Tournament sampling in text, perturbation in image and video, and the frequency-domain approach in audio. Adoption is a vendor decision and changes; the mechanism does not.
+Tournament sampling in text, perturbation in image and video, and the frequency-domain approach in audio. Imperceptible watermarks in AI-generated images (Imagen), video (Veo), audio (Lyria, NotebookLM) and Gemini text, with detection in Gemini, Search and Chrome. Adoption is a vendor decision and changes; the mechanism does not.
 
 ### Google Threat Intelligence Group
 
@@ -1308,7 +1479,7 @@ Tournament sampling in text, perturbation in image and video, and the frequency-
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
-| Cited in | S4 `#s5` · S4 `#s9` |
+| Cited in | S4 `#s5` · S4 `#sCR` |
 
 PROMPTFLUX, a VBScript dropper that called the Gemini API to request obfuscated rewrites of its own source code, described as experimental and not yet able to do real damage; PROMPTSTEAL, which generated commands through a hosted model; and the report's statement that, for the first time, malware families used large language models during execution. Google disabled the associated API access.
 
@@ -1327,7 +1498,7 @@ PROMPTFLUX, a VBScript dropper that called the Gemini API to request obfuscated 
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
-| Cited in | S4 `#s9` |
+| Cited in | S4 `#sCR` |
 
 Cost of a Data Breach Report 2026, 602 organisations, breaches March 2025 to February 2026: global average $4.99 million, US average $11.5 million; one in four malicious breaches AI-enabled, at $6 million on average; shadow AI in 43% of AI-related breaches.
 
@@ -1345,10 +1516,86 @@ Cost of a Data Breach Report 2026, 602 organisations, breaches March 2025 to Feb
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **4** |
-| Cited in | S4 `#sRSP` ×2 · S4 `#s9` ×2 |
+| **Total references** | **1** |
+| Cited in | case-4 `#built` |
 
 Notice to affected Illinois residents "in the most expedient time possible and without unreasonable delay"; notice to the Attorney General when more than 500 Illinois residents are affected by a single breach.
+
+### Internal Revenue Service
+
+**Late portability elections under Rev. Proc. 2022-32 (IRB 2022-30)**  
+`src-rp-2022-32` · evidence
+
+| | |
+|---|---|
+| Author | Internal Revenue Service |
+| Publisher | Internal Revenue Bulletin |
+| Link | <https://www.irs.gov/pub/irs-drop/rp-22-32.pdf> |
+| Published | 2022 |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S2 `#s7` |
+
+The simplified method for a late portability election: an estate not required to file under IRC 6018(a) may elect portability on a complete Form 706 filed on or before the fifth anniversary of death, which supersedes the second anniversary in Rev. Proc. 2017-34; later relief only by private letter ruling under Treas. Reg. 301.9100-3.
+
+### Internal Revenue Service
+
+**Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)**  
+`src-irs-590b` · authority · **moving target**
+
+| | |
+|---|---|
+| Author | Internal Revenue Service |
+| Publisher | Internal Revenue Service |
+| Link | <https://www.irs.gov/publications/p590b> |
+| Published | annual |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | case-2 `#deliverable` |
+
+The IRS publication on IRA distributions, including required minimum distributions and Roth IRA distribution rules; named as a citation inside the session-2 citation-triage items.
+
+### Internal Revenue Service
+
+**Form 8606, Nondeductible IRAs, and its instructions**  
+`src-irs-8606` · authority · **moving target**
+
+| | |
+|---|---|
+| Author | Internal Revenue Service |
+| Publisher | Internal Revenue Service |
+| Link | <https://www.irs.gov/forms-pubs/about-form-8606> |
+| Published | annual |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | case-2 `#deliverable` |
+
+The form on which a Roth conversion and any IRA basis are reported; named as a citation inside the session-2 citation-triage items.
+
+### Internal Revenue Service
+
+**Understanding IRS guidance: a brief primer**  
+`src-irs-guidance-primer` · assigned_reading · **moving target**
+
+| | |
+|---|---|
+| Author | Internal Revenue Service |
+| Publisher | IRS newsroom |
+| Link | <https://www.irs.gov/newsroom/understanding-irs-guidance-a-brief-primer> |
+| Published | not stated |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S1 `#s15` |
+
+Assigned reading for Session 2: the kinds of IRS guidance and what authority each carries, the frame for the citation-verification work.
 
 ### InvestmentNews
 
@@ -1402,10 +1649,29 @@ The compliance framing around note-takers: that an AI summary is a firm record h
 | Last retrieved | 2025-05-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **5** |
-| Cited in | S1 `#s9` · S5 `#s3` ×2 · S5 `#sE3` ×2 |
+| **Total references** | **6** |
+| Cited in | S0.1 `#s11` · S1 `#s9` · S5 `#sE3` ×2 · S5 `#s3` ×2 |
 
 Why a model guesses rather than abstains, and the two scoring rules. The model tested was DeepSeek-V3 on 11 May 2025 — a historical fixture; the finding is about that model on that date.
+
+### Karpathy, A.
+
+**[1hr Talk] Intro to Large Language Models, the segment 45:43 to 58:37 (video)**  
+`src-karpathy-intro` · assigned_reading · **moving target**
+
+| | |
+|---|---|
+| Author | Karpathy, A. |
+| Publisher | YouTube |
+| Link | <https://www.youtube.com/watch?v=zjkBMFhNj_g> |
+| Published | 2023-11-22 |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S3 `#s16` |
+
+Assigned video segment for Session 4 (watch before class): jailbreaks, prompt injection and data poisoning, the attack classes Session 4 teaches.
 
 ### Kinniry, F. M., Jaconetti, C. M., DiJoseph, M. A., Walker, D. J., & Quinn, M. C.
 
@@ -1422,14 +1688,14 @@ Why a model guesses rather than abstains, and the two scoring rules. The model t
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **3** |
-| Cited in | S5 `#s7` · S5 `#sE5` · S5 `#s8` |
+| Cited in | S5 `#s7` · S5 `#sE5` ×2 |
 
 Vanguard's framework attributes about 3 percentage points a year of potential net value to an adviser following its best practices, of which behavioural coaching, keeping clients to their plan in fearful or greedy markets, is the largest single module at about 150 basis points, roughly half.
 
 ### Kitces.com
 
 **Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends**  
-`src-kitces-notetakers` · evidence
+`src-kitces-notetakers` · assigned_reading
 
 | | |
 |---|---|
@@ -1439,9 +1705,9 @@ Vanguard's framework attributes about 3 percentage points a year of potential ne
 | Published | 2025-01-15 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **7** |
-| Cited in | S3 `#s9` · S3 `#s10` ×2 · S3 `#s11` ×2 · S3 `#s16` ×2 |
+| Confidence | M |
+| **Total references** | **8** |
+| Cited in | S2 `#s12` · S3 `#s9` · S3 `#s10` ×2 · S3 `#s11` ×2 · S3 `#s16` ×2 |
 
 Drawing on Kitces Research on Advisor Productivity, fielded autumn 2024: the greater-than-1:1 prep-and-follow-up ratio, the solo-versus-team adoption pattern, the UHNW drop-off, and the roughly fourfold rate for most-extensive against most-targeted plans.
 
@@ -1459,8 +1725,8 @@ Drawing on Kitces Research on Advisor Productivity, fielded autumn 2024: the gre
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **3** |
-| Cited in | S2 `#s9` ×2 · S2 `#s12d` |
+| **Total references** | **2** |
+| Cited in | S2 `#s9` · S2 `#s12d` |
 
 Approximately one hour of note, summary and follow-up work per two-hour client meeting. The reliance figure travelling with it is reported via Advisor360 and Kitces Research through a secondary aggregator and is directional only.
 
@@ -1479,14 +1745,14 @@ Approximately one hour of note, summary and follow-up work per two-hour client m
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **5** |
-| Cited in | S5 `#s7` ×2 · S5 `#sE5` ×2 · S5 `#s8` |
+| Cited in | S5 `#s7` ×2 · S5 `#sE5` ×3 |
 
 Three Morningstar surveys in 2021 and 2022, about 3,000 responses, of which 184 to 185 investors had fired an advisor. Reasons, as shares of responses: quality of advice and services 32%, quality of the relationship 21%, cost 17%, returns 11%, comfort handling finances alone 10%, communication 9%. The authors' reading: the top two reasons are the advice and the relationship, not performance or fees.
 
 ### Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., & Wilson, N.
 
 **The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers**  
-`src-lee-cognitive` · evidence
+`src-lee-cognitive` · assigned_reading
 
 | | |
 |---|---|
@@ -1498,9 +1764,28 @@ Three Morningstar surveys in 2021 and 2022, about 3,000 responses, of which 184 
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **7** |
-| Cited in | S3 `#s15` · S5 `#sE5` ×2 · S5 `#s8` ×4 |
+| Cited in | S3 `#s15` · S4 `#s9` · S5 `#s5` ×3 · S5 `#sE5` ×2 |
 
 A survey of 319 knowledge workers who shared 936 first-hand examples of using a generative AI tool at work (374 creation, 303 information, 259 advice; 309 of 319 used ChatGPT). Critical thinking was self-reported as enacted in 555 of the 936 examples (59.29%). In the mixed-effects models, confidence in the tool predicted less enacted critical thinking (coefficient -0.69, p < 0.001) and less perceived effort in five of six Bloom activities; confidence in oneself predicted more (0.26, p = 0.026) and more effort in applying and evaluating. Examples reporting less effort with the tool: 72% knowledge, 79% comprehension, 69% application, 72% analysis, 76% synthesis, 55% evaluation. Three qualitative shifts: from information gathering to information verification, from problem-solving to response integration, from task execution to task stewardship. Self-reported, cross-sectional, not a measure of accuracy.
+
+### LiveBench
+
+**LiveBench leaderboard and question releases**  
+`src-livebench` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | LiveBench |
+| Publisher | livebench.ai |
+| Link | <https://livebench.ai/> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S1 `#s10` ×2 |
+
+What LiveBench measures and the name of its latest question release.
 
 ### Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., & Ho, D. E.
 
@@ -1517,7 +1802,7 @@ A survey of 319 knowledge workers who shared 936 first-hand examples of using a 
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **13** |
-| Cited in | S2 `#s10` ×3 · S3 `#s6` ×2 · S3 `#s15` · S3 `#s16` ×2 · S4 `#s6` ×3 · S4 `#s9` · S5 `#sE3` |
+| Cited in | S2 `#s10` ×3 · S3 `#s6` ×2 · S3 `#s15` · S3 `#s16` ×2 · S4 `#s6` ×3 · S4 `#sCR` · S5 `#sE3` |
 
 Over 200 preregistered legal queries, expert hand-scored, against Lexis+ AI, Westlaw AI-Assisted Research and GPT-4. Tools tested May 2024 — a historical fixture. The measured rates belong to the tools as they were on that date and must never be "updated".
 
@@ -1555,7 +1840,7 @@ A randomised trial with 16 experienced open-source developers, each years into t
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **3** |
-| Cited in | S4 `#s3` ×2 · S4 `#s9` |
+| Cited in | S4 `#s3` ×2 · S4 `#sCR` |
 
 With a personal Microsoft account, conversations may be used to train Microsoft's generative AI models unless the person opts out under "Model training on text"; the opt-out is not the default, and takes effect across systems within 30 days. Conversation history is kept 18 months by default unless deleted sooner. Some users and regions are excluded from training by the vendor's own rules.
 
@@ -1593,9 +1878,9 @@ Signed in with a work or school account, prompts and responses fall under enterp
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **7** |
-| Cited in | S4 `#s3` · S4 `#s5` ×2 · S4 `#s9` ×3 · S5 `#sE3` |
+| Cited in | S4 `#s3` · S4 `#s5` ×2 · S4 `#sCR` ×3 · S5 `#sE3` |
 
-Identifier, score and mechanism of EchoLeak, verified against the public record: one crafted email could make Microsoft 365 Copilot send internal data out with no click. Kind was background until 2026-09-25, when the §05 bullet stating that mechanism was found resting on it unchipped (A20); it is now the chip on that claim. CurXecute (CVE-2025-54135) left the title with the rebuild that took it off the page.
+Identifier, score and mechanism of EchoLeak, verified against the public record: one crafted email could make Microsoft 365 Copilot send internal data out with no click. Kind was background until 2026-09-25, when the Appendix D4 bullet stating that mechanism was found resting on it unchipped (A20); it is now the chip on that claim. CurXecute (CVE-2025-54135) left the title with the rebuild that took it off the page.
 
 ### Mothership
 
@@ -1612,7 +1897,7 @@ Identifier, score and mechanism of EchoLeak, verified against the public record:
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
-| Cited in | S4 `#s9` |
+| Cited in | S4 `#sCR` |
 
 In May 2026 a Singapore businessman transferred S$4.9 million, about US$3.8 million, to a scammer-controlled corporate account after a Zoom call with deepfakes of the Prime Minister, the President and a minister; he realised on 14 May 2026. Nothing stopped it.
 
@@ -1669,7 +1954,7 @@ Per-token input and output rates for the GPT-5.6 Sol, Terra and Luna tiers, as c
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **4** |
-| Cited in | S4 `#s3` ×3 · S4 `#s9` |
+| Cited in | S4 `#s3` ×3 · S4 `#sCR` |
 
 On the Free, Plus and Pro plans the "Improve the model for everyone" setting is on by default and can be switched off under Data controls. ChatGPT Business (formerly Team), Enterprise, Edu and the API are not used for training by default. Chats stay in the account until deleted; a deleted chat is removed from OpenAI's systems within 30 days; temporary chats are kept up to 30 days and not used for training. Every one of these is a term the vendor can change without notice.
 
@@ -1692,6 +1977,25 @@ On the Free, Plus and Pro plans the "Improve the model for everyone" setting is 
 
 GPT-4 was removed from ChatGPT on 30 April 2025, replaced as the default by GPT-4o. GPT-4o, GPT-4.1, GPT-4.1 mini and o4-mini were retired from ChatGPT on 13 February 2026, with conversations moved to newer defaults; the models remained available in the API. One line on the page, to show the retirement cycle is vendor-wide.
 
+### OpenAI
+
+**Provenance signals in OpenAI-generated content**  
+`src-openai-provenance` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | OpenAI |
+| Publisher | OpenAI Help Center, article 8912793 |
+| Link | <https://help.openai.com/en/articles/8912793-provenance-signals-in-openai-generated-content> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **3** |
+| Cited in | S4 `#s7` · S4 `#sW1` ×2 |
+
+Images from ChatGPT, Codex and the API carry C2PA content credentials and a Google SynthID invisible watermark; text watermarking is EU-only for ChatGPT and Codex and opt-in, off by default, for the API.
+
 ### OWASP
 
 **Top 10 for LLM Applications and Top 10 for Agentic Applications**  
@@ -1707,7 +2011,7 @@ GPT-4 was removed from ChatGPT on 30 April 2025, replaced as the default by GPT-
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **2** |
-| Cited in | S4 `#s9` ×2 |
+| Cited in | S4 `#sCR` ×2 |
 
 The LLM01 ranking for prompt injection and the mapping into six of ten agentic categories. The ranking is revised between editions, so the position is a moving target even though the finding is not.
 
@@ -1726,7 +2030,7 @@ The LLM01 ranking for prompt injection and the mapping into six of ten agentic c
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
-| Cited in | S4 `#s9` |
+| Cited in | S4 `#sCR` |
 
 Twenty-two payload techniques observed in real web content, from zero-size fonts and off-screen text to encoded payloads that assemble themselves at runtime; most framed as an authority override of the assistant's instructions.
 
@@ -1749,24 +2053,24 @@ Twenty-two payload techniques observed in real web content, from zero-size fonts
 
 68,879 Google searches by 900 US adults in March 2025, from a panel that shared its browsing data. Users clicked a traditional result on 8% of visits when an AI summary appeared and 15% when it did not; a link inside the summary itself was clicked on 1% of such visits; users ended their session on 26% of pages with a summary against 16% without.
 
-### Privacy Rights Clearinghouse
+### PLANADVISER
 
-**Data breach notification laws: a 50-state survey, 2026 edition**  
-`src-state-breach` · evidence · **moving target**
+**Advisers Using AI by the Numbers**  
+`src-iss-ai-policy` · evidence
 
 | | |
 |---|---|
-| Author | Privacy Rights Clearinghouse |
-| Publisher | Privacy Rights Clearinghouse |
-| Link | <https://privacyrights.org/resources-tools/reports/data-breach-notification-laws-50-state-survey-2026-edition> |
-| Published | 2026 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Author | PLANADVISER |
+| Publisher | PLANADVISER, reporting the ISS Market Intelligence Advisor Pulse survey |
+| Link | <https://www.planadviser.com/exclusives/advisers-using-ai-by-the-numbers/> |
+| Published | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **3** |
-| Cited in | S4 `#sRSP` ×2 · S4 `#s9` |
+| **Total references** | **2** |
+| Cited in | S4 `#s9` ×2 |
 
-Hard consumer-notice deadlines in some states: Colorado, Florida and Washington 30 days from discovery; Maryland 45; Texas 60. Most states add a regulator filing above a headcount threshold.
+ISS survey, n = 466, fielded June 2025: 48% of U.S. advisors use AI in their workflows; 78% of RIAs say their firm has no written AI policy, against 35% at regional, independent and bank firms.
 
 ### Rajasekaran, P., Dixon, E., Ryan, C., & Hadfield, J.
 
@@ -1783,7 +2087,7 @@ Hard consumer-notice deadlines in some states: Colorado, Florida and Washington 
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **2** |
-| Cited in | S4 `#sWS` · S4 `#s9` |
+| Cited in | S4 `#sWS` · S4 `#sCR` |
 
 "Context engineering refers to the set of strategies for curating and maintaining the optimal set of tokens (information) during LLM inference": what the model sees, its tools, its notes and what it retrieves, rather than the wording of one prompt.
 
@@ -1802,7 +2106,7 @@ Hard consumer-notice deadlines in some states: Colorado, Florida and Washington 
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
-| Cited in | S4 `#s9` |
+| Cited in | S4 `#sCR` |
 
 Unicode tag characters carry letters the screen never draws, so an instruction can sit inside ordinary-looking text invisibly; used to make Microsoft 365 Copilot exfiltrate email content until Microsoft fixed it.
 
@@ -1842,7 +2146,26 @@ A planning-software agent that reads the client's plan data inside the software,
 | **Total references** | **1** |
 | Cited in | S1 `#s13` |
 
-Cited ONLY for the design claim that interleaving categories during classification practice beats blocking them, which is what the section 08 deck order does. Bibliographic identity confirmed 2026-08-29 against three independent listings — the ERIC index record EJ1071568, the publisher's abstract page for doi 10.1037/edu0000001, and the author's own publication list at uweb.cas.usf.edu/~drohrer, which hosts the full text. The full text was not pulled into this build environment, so no figure or effect size from it appears anywhere in the corpus.
+Cited ONLY for the design claim that interleaving categories during classification practice beats blocking them, which is what the section 04 deck order does. Bibliographic identity confirmed 2026-08-29 against three independent listings — the ERIC index record EJ1071568, the publisher's abstract page for doi 10.1037/edu0000001, and the author's own publication list at uweb.cas.usf.edu/~drohrer, which hosts the full text. The full text was not pulled into this build environment, so no figure or effect size from it appears anywhere in the corpus.
+
+### Sanderson, G. (3Blue1Brown)
+
+**Large Language Models explained briefly (video, about 8 minutes)**  
+`src-3b1b-llm` · assigned_reading · **moving target**
+
+| | |
+|---|---|
+| Author | Sanderson, G. (3Blue1Brown) |
+| Publisher | YouTube |
+| Link | <https://www.youtube.com/watch?v=LPZh9BOjkQs> |
+| Published | 2024-11-20 |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S0.1 `#s11` |
+
+Assigned video for Session 1 (watch before class): what a large language model is, in eight minutes.
 
 ### Schluntz, E., & Zhang, B.
 
@@ -1859,7 +2182,7 @@ Cited ONLY for the design claim that interleaving categories during classificati
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **3** |
-| Cited in | S4 `#sWS` · S4 `#s9` ×2 |
+| Cited in | S4 `#sWS` · S4 `#sCR` ×2 |
 
 Agents "are typically just LLMs using tools based on environmental feedback in a loop"; the feedback loop is gather context, take action, verify work, repeat; the API documentation names the pattern the agentic loop.
 
@@ -1895,7 +2218,7 @@ The two-party consent exposure behind the recording-consent section: the Califor
 | Published | 2026-03 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
+| Confidence | M |
 | **Total references** | **4** |
 | Cited in | S2 `#s9` · S2 `#s12d` · S5 `#s6` ×2 |
 
@@ -1916,7 +2239,7 @@ n = 2,906 advisors, 95% at fee-only RIA or dually registered firms. 52.2% using 
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
-| Cited in | S4 `#s3` · S4 `#s9` |
+| Cited in | S4 `#s3` · S4 `#sCR` |
 
 Conversations shared from ChatGPT with the "make this chat discoverable" box ticked appeared in Google search results in late July 2025; OpenAI removed the option within days. The lesson uses it as the "caches" leak: a copy a search engine has made is the search engine's, whatever the vendor does next. The count of indexed chats (reported as about 4,500) is not stated on the page.
 
@@ -1934,10 +2257,10 @@ Conversations shared from ChatGPT with the "make this chat discoverable" box tic
 | Last retrieved | *not applicable* |
 | Last verified by the instructor | *not applicable* |
 | Confidence | L |
-| **Total references** | **60** |
-| Cited in | S1 `#s1` · S2 `#s6b` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` · S3 `#s7` · S3 `#s9` · S3 `#sPrep` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#sVend` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCold` · S4 `#s2` ×2 · S4 `#sRSP` · S4 `#sAnon` · S4 `#s3` · S4 `#s4` · S4 `#s5` · S4 `#sW1` · S4 `#sW2` · S4 `#s6` · S4 `#sWS` · S4 `#s7` · S4 `#sCR` ×2 · S4 `#sD` · S4 `#s9` ×2 · S5 `#s0` · S5 `#sCold` · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#s2` ×3 · S5 `#s3` ×2 · S5 `#sE3` · S5 `#s4` · S5 `#sE4` ×2 · S5 `#sE1` · S5 `#s5` · S5 `#s6` · S5 `#sLib` ×2 · S5 `#s7` · S5 `#sE5` · S5 `#s8` |
+| **Total references** | **93** |
+| Cited in | case-1 `#brief` · case-1 `#commit` · case-1 `#deliverable` · case-1 `#built` · case-2 `#brief` · case-2 `#commit` · case-2 `#deliverable` ×2 · case-2 `#built` · case-3 `#brief` · case-3 `#commit` · case-3 `#deliverable` · case-3 `#built` · case-4 `#brief` · case-4 `#commit` · case-4 `#deliverable` · case-4 `#built` · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable` ×2 · case-5 `#built` · case-5 `#next` · S1 `#s1` · S1 `#sCase` · S2 `#sCase` · S2 `#s6b` · S2 `#sZ` · S2 `#sDel` · S3 `#sCase` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6` ×2 · S3 `#sPrep` · S3 `#s7` · S3 `#s9` · S3 `#s10` · S3 `#sChk` · S3 `#sOff` ×2 · S3 `#s12` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCase` ×2 · S4 `#s2` ×3 · S4 `#sAnon` · S4 `#s3` · S4 `#s4` · S4 `#sRSP` · S4 `#s7` · S4 `#s5` · S4 `#s6` · S4 `#sWS` · S4 `#sAud` · S4 `#sW1` · S4 `#sW2` · S4 `#sD` · S4 `#s9` · S4 `#sCR` ×4 · S5 `#s0` · S5 `#sCase` · S5 `#s1` ×3 · S5 `#sE3` · S5 `#sE4` ×2 · S5 `#sE2` ×2 · S5 `#sE6` ×2 · S5 `#s2` ×3 · S5 `#s3` ×2 · S5 `#s4` · S5 `#sE1` · S5 `#s5` · S5 `#s7` · S5 `#s6` · S5 `#sLib` ×2 · S5 `#sE5` |
 
-Entirely synthetic. Every figure, document and family fact is invented, including the 2014 buy-sell, the 2023 appraisal and the meeting transcript. Not based on any client, living or dead.
+Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead.
 
 ### Tom's Guide
 
@@ -1954,7 +2277,7 @@ Entirely synthetic. Every figure, document and family fact is invented, includin
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
-| Cited in | S4 `#s3` · S4 `#s9` |
+| Cited in | S4 `#s3` · S4 `#sCR` |
 
 The Meta AI app's Discover feed showed conversations people had shared with a Share button, many of them plainly private (medical, legal, financial, tied to real names), with little warning that sharing meant publishing. The lesson uses it as the "uncovered features" leak: a feature nobody's policy covered.
 
@@ -1973,47 +2296,9 @@ The Meta AI app's Discover feed showed conversations people had shared with a Sh
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
-| Cited in | S4 `#s9` |
+| Cited in | S4 `#sCR` |
 
 Images that look benign at full size reveal an instruction once the AI platform downscales them, so a multimodal model reads text the human never saw; the authors recommend explicit confirmation for sensitive tool actions when embedded text is detected.
-
-### U.S. Department of Justice, Northern District of California
-
-**Former chief security officer of Uber sentenced to three years' probation for covering up data breach**  
-`src-uber-doj` · evidence
-
-| | |
-|---|---|
-| Author | U.S. Department of Justice, Northern District of California |
-| Publisher | Department of Justice |
-| Link | <https://www.justice.gov/usao-ndca/pr/former-chief-security-officer-uber-sentenced-three-years-probation-covering-data> |
-| Published | 2023-05-04 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **2** |
-| Cited in | S4 `#sRSP` · S4 `#s9` |
-
-A November 2016 breach of about 57 million records was concealed for a year; the chief security officer arranged a $100,000 payment to the hackers under a bug-bounty nondisclosure agreement; he was convicted in October 2022 of obstruction of justice and misprision of a felony and sentenced in May 2023 to three years' probation and a $50,000 fine.
-
-### U.S. Government Accountability Office
-
-**Data protection: actions taken by Equifax and federal agencies in response to the 2017 breach (GAO-18-559)**  
-`src-equifax` · evidence
-
-| | |
-|---|---|
-| Author | U.S. Government Accountability Office |
-| Publisher | GAO |
-| Link | <https://www.gao.gov/products/gao-18-559> |
-| Published | 2018-08-30 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **2** |
-| Cited in | S4 `#sRSP` · S4 `#s9` |
-
-Equifax discovered the breach on 29 July 2017 and announced it on 7 September 2017, about 147 million US consumers affected; the July 2019 settlement with the FTC, the CFPB and the states was at least $575 million and up to $700 million.
 
 ### U.S. Securities and Exchange Commission
 
@@ -2029,8 +2314,8 @@ Equifax discovered the breach on 29 July 2017 and announced it on 7 September 20
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **24** |
-| Cited in | S3 `#sPol` ×2 · S4 `#s2` ×3 · S4 `#sRSP` ×7 · S4 `#s4` ×3 · S4 `#s9` ×8 · S5 `#s6` |
+| **Total references** | **8** |
+| Cited in | S3 `#sPol` · S4 `#s2` ×3 · S4 `#s9` · S4 `#sCR` ×2 · S5 `#s6` |
 
 The four obligations of the 2024 amendments: a written incident response program; customer notification no later than 30 days after the firm becomes aware; service provider oversight, including the service provider's notice to the firm within 72 hours of becoming aware of a breach; and recordkeeping. The definition and scope limits of nonpublic personal information at 17 CFR 248.3, including the fact that an individual is a customer and information disclosed in a manner indicating the individual is a customer. The compliance dates 3 December 2025 and 3 June 2026.
 
@@ -2043,13 +2328,13 @@ The four obligations of the 2024 amendments: a written incident response program
 |---|---|
 | Author | U.S. Securities and Exchange Commission |
 | Publisher | SEC |
-| Link | **[UNVERIFIED, needs source]** |
+| Link | <https://www.sec.gov/newsroom/press-releases/2024-36> |
 | Published | 2024-03-18 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **4** |
-| Cited in | S1 `#s1` ×2 · S4 `#s1` ×2 |
+| **Total references** | **5** |
+| Cited in | S1 `#s1` ×2 · S1 `#s14` · S4 `#s1` ×2 |
 
 The two AI-washing settlements and their penalty amounts. Penalty figures are reported at two values across sources; the page states the majority figure.
 
@@ -2067,8 +2352,8 @@ The two AI-washing settlements and their penalty amounts. Penalty figures are re
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **1** |
-| Cited in | S4 `#s1` |
+| **Total references** | **2** |
+| Cited in | S4 `#s1` ×2 |
 
 That the SEC withdrew its 2023 proposal on conflicts of interest from predictive data analytics used by broker-dealers and investment advisers, on 12 June 2025, together with thirteen other proposals; any future rule would need a new proposal.
 
@@ -2087,7 +2372,7 @@ That the SEC withdrew its 2023 proposal on conflicts of interest from predictive
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
-| Cited in | S4 `#s7` · S4 `#s9` |
+| Cited in | S4 `#s7` · S4 `#sCR` |
 
 Paragraph (a)(7): originals of written communications received and copies of those sent relating to any recommendation made or proposed or any advice given or proposed; paragraph (e)(1): kept for not less than five years from the end of the fiscal year of the last entry, the first two years in an appropriate office of the adviser.
 
@@ -2106,7 +2391,7 @@ Paragraph (a)(7): originals of written communications received and copies of tho
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
-| Cited in | S4 `#s7` · S4 `#s9` |
+| Cited in | S4 `#s7` · S4 `#sCR` |
 
 The fiduciary duty of care under the Advisers Act includes a duty to provide advice that is in the client's best interest, with a reasonable basis for it, which is why the source behind an AI-assisted answer belongs in the file.
 
@@ -2125,9 +2410,28 @@ The fiduciary duty of care under the Advisers Act includes a duty to provide adv
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
-| Cited in | S4 `#s7` · S4 `#s9` |
+| Cited in | S4 `#s7` · S4 `#sCR` |
 
 A registered adviser must adopt and implement written policies and procedures reasonably designed to prevent violations, review them no less than annually, and designate a chief compliance officer; the AI-use policy and the record of its annual review are themselves required records.
+
+### U.S. Securities and Exchange Commission
+
+**Regulation S-P: small entity compliance guide**  
+`src-regsp-guide` · evidence
+
+| | |
+|---|---|
+| Author | U.S. Securities and Exchange Commission |
+| Publisher | SEC |
+| Link | <https://www.sec.gov/files/rules/final/2024/regulation-s-p-small-entity-compliance-guide.pdf> |
+| Published | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **22** |
+| Cited in | case-4 `#deliverable` ×2 · case-4 `#built` ×2 · S3 `#sPol` ×2 · S4 `#s4` ×3 · S4 `#sRSP` ×6 · S4 `#s9` · S4 `#sCR` ×6 |
+
+The compliance dates of the 2024 amendments, 3 December 2025 for larger entities and 3 June 2026 for smaller entities; the written incident response program; customer notice as soon as practicable and no later than 30 days after the firm becomes aware of unauthorized access to or use of customer information; and the 72-hour notice a service provider owes the firm.
 
 ### U.S. Securities and Exchange Commission, Division of Examinations
 
@@ -2138,15 +2442,34 @@ A registered adviser must adopt and implement written policies and procedures re
 |---|---|
 | Author | U.S. Securities and Exchange Commission, Division of Examinations |
 | Publisher | SEC |
-| Link | **[UNVERIFIED, needs source]** |
+| Link | <https://www.sec.gov/files/2026-exam-priorities.pdf> |
 | Published | 2025-11-17 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **5** |
-| Cited in | S4 `#s1` ×2 · S4 `#s5` · S4 `#s9` ×2 |
+| **Total references** | **14** |
+| Cited in | S3 `#sPol` · S3 `#s16` · S4 `#s1` ×3 · S4 `#s7` · S4 `#s5` · S4 `#sAud` ×2 · S4 `#s9` ×2 · S4 `#sCR` ×3 |
 
 §VII, Risk Areas Impacting Various Market Participants. Information security and operational resiliency, including ransomware, data loss prevention, incident response and the 2024 amendments to Regulation S-P; emerging financial technology and AI, including the accuracy of AI representations and a review of training and security controls for risks from AI and polymorphic malware attacks.
+
+### United States Congress
+
+**SECURE 2.0 Act of 2022, section 107 (increase in age for required beginning date)**  
+`src-secure2-107` · authority
+
+| | |
+|---|---|
+| Author | United States Congress |
+| Publisher | Division T of the Consolidated Appropriations Act, 2023, Pub. L. 117-328 |
+| Link | <https://www.congress.gov/bill/117th-congress/house-bill/2617> |
+| Published | 2022-12-29 |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **3** |
+| Cited in | case-2 `#deliverable` ×3 |
+
+The statutory source of the applicable age for required minimum distributions; named as a citation inside the session-2 citation-triage items, evidencing no page claim.
 
 ### Ways advisors can optimize for AI search (AI SEO)
 
@@ -2182,7 +2505,7 @@ The assigned reading for Session 5 on how prospects now find advisers through AI
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
-| Cited in | S4 `#s3` · S4 `#s9` |
+| Cited in | S4 `#s3` · S4 `#sCR` |
 
 A publicly reachable ClickHouse database belonging to DeepSeek held over a million lines of log streams, including chat history, API keys and back-end details, with no authentication. Wiz disclosed it and DeepSeek secured it promptly. The lesson uses it as the "logs" leak: the vendor's own record of what was typed.
 
@@ -2200,10 +2523,10 @@ A publicly reachable ClickHouse database belonging to DeepSeek held over a milli
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **2026-08-23** |
 | Confidence | H |
-| **Total references** | **20** |
-| Cited in | S1 `#s2` · S1 `#s3` ×2 · S1 `#s4` · S1 `#s5` ×2 · S2 `#s1` ×2 · S2 `#s2` ×2 · S2 `#s3` ×2 · S2 `#s4` · S3 `#s2` ×2 · S3 `#s7` · S4 `#sWS` · S4 `#s9` · S5 `#sE3` ×2 |
+| **Total references** | **25** |
+| Cited in | S0.1 `#s11` · S1 `#s2` · S1 `#s3` ×2 · S1 `#s5` · S1 `#s4` · S1 `#s15` · S2 `#s0` · S2 `#s1` ×2 · S2 `#s2` ×2 · S2 `#s3` ×2 · S2 `#s4` · S2 `#s12` · S3 `#s2` ×2 · S3 `#s7` · S3 `#s16` · S4 `#sWS` · S4 `#s9` · S4 `#sCR` · S5 `#sE3` ×2 |
 
-The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D3 is about exactly that.
+The mechanism of next-token prediction, the temperature passage, tokenisation and the GPT-2 token values, embeddings and vector lengths, the parenthesis-counting limit, and the brain-scale comparison. A February 2023 essay describing a 2020-era model; three of its structural claims are stale and session-4 Appendix D6 is about exactly that.
 
 ### Writing an effective AI prompt for an audit
 
@@ -2222,7 +2545,7 @@ The mechanism of next-token prediction, the temperature passage, tokenisation an
 | **Total references** | **2** |
 | Cited in | S4 `#s7` ×2 |
 
-The assigned reading for §07, from the Journal of Accountancy's A&A Focus series on AI in audit work. Its content is not characterised anywhere in the lesson.
+The assigned reading for §05, from the Journal of Accountancy's A&A Focus series on AI in audit work. Its content is not characterised anywhere in the lesson.
 
 ### Zheng, M., Pei, J., Logeswaran, L., Lee, M., & Jurgens, D.
 
@@ -2256,15 +2579,20 @@ source that does not belong in that lesson's footer.
 
 | Source | Kind | Listed by | Exempt? |
 |---|---|---|---|
-| `src-anthropic-fluency` | background | S2 | yes, by kind |
+| `src-beta` | evidence |  | **NO — finding** |
+| `src-ctxwindow` | evidence |  | **NO — finding** |
+| `src-features` | evidence |  | **NO — finding** |
+| `src-plugins` | evidence |  | **NO — finding** |
+| `src-routing` | evidence |  | **NO — finding** |
+| `src-skills` | evidence |  | **NO — finding** |
 | `src-anthropic-aup` | evidence |  | **NO — finding** |
+| `src-capitalone` | evidence |  | **NO — finding** |
 | `src-uk-voice` | evidence |  | **NO — finding** |
 | `src-fbi-ic3-2024` | evidence |  | **NO — finding** |
 | `src-ferrari` | evidence |  | **NO — finding** |
 | `src-gartner` | evidence |  | **NO — finding** |
 | `src-hallowell` | fabricated | S4 | yes, by kind |
-| `src-rr8513` | authority | S2 | yes, by kind |
-| `src-rr200464` | authority | S2 | yes, by kind |
+| `src-il-retirement-subtraction` | authority | S2, case-2 | yes, by kind |
 | `src-kessler` | fabricated | S2 | yes, by kind |
 | `src-kitces-advisortech` | background |  | yes, by kind |
 | `src-laplace` | background | S2 | yes, by kind |
@@ -2272,10 +2600,26 @@ source that does not belong in that lesson's footer.
 | `src-sg-deepfake-2025` | evidence |  | **NO — finding** |
 | `src-nikkei-papers` | evidence |  | **NO — finding** |
 | `src-forcedleak` | evidence |  | **NO — finding** |
+| `src-state-breach` | evidence |  | **NO — finding** |
 | `src-safebreach-gemini` | evidence |  | **NO — finding** |
 | `src-surfshark` | evidence |  | **NO — finding** |
-| `src-irc` | authority | S2 | yes, by kind |
-| `src-woelbing` | authority | S2 | yes, by kind |
-| `src-davidson` | authority | S2 | yes, by kind |
+| `src-uber-doj` | evidence |  | **NO — finding** |
+| `src-equifax` | evidence |  | **NO — finding** |
 | `src-vectara` | evidence |  | **NO — finding** |
 | `src-zhao` | evidence |  | **NO — finding** |
+
+**Cited elsewhere, listed without a chip here.** The corpus-wide count
+above hides these, because the source is genuinely used — just not in the
+lesson whose footer names it.
+
+| Source | Listed by | Cited in |
+|---|---|---|
+| `src-anthropic-terms` | case-4 | S0.1, S4, S5 |
+| `src-openai-data` | case-4 | S4 |
+| `src-gemini-privacy` | case-4 | S4 |
+| `src-gemini-workspace` | case-4 | S4 |
+| `src-secure2-107` | S2 | case-2 |
+| `src-td10001` | S2 | case-2 |
+| `src-irs-590b` | S2 | case-2 |
+| `src-irs-8606` | S2 | case-2 |
+| `src-claude-privacy-training` | case-4 | case-1, S0.1, S4, S5 |

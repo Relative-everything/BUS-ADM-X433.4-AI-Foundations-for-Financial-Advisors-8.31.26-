@@ -90,125 +90,104 @@ const dateRx = (s) => new RegExp(s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
 const NEAR = 260;
 const F_ = (k) => F[k];
 const facts = [];
+/* v5.0 (next-term-2027, Phase 3): the fact list below is the v5 household's; the v4 list is at tag fall-2026-final. */
 const fact = (key, klass, rx, opts = {}) =>
   facts.push({ key, klass, rx: [].concat(rx).filter(Boolean), near: opts.near || null,
                value: opts.value !== undefined ? opts.value : F_(key), where: opts.where || '' });
 
 /* Facts whose value collides with something the corpus legitimately counts.
-   Each collision was observed, not anticipated: 1,000,000 is the inherited IRA
-   AND a 1M context window in tokens (session-1:1522); $5M is the dividend AND a
-   portfolio band (session-4:2077). */
+   Each collision was observed or anticipated from the v5 figures: $1,000,000 is
+   the umbrella limit AND a 1M-token context window; $85,000 and $65,000 are
+   round sums a lesson may use for an unrelated example; 75 is an age AND a
+   percentage. */
 const MONEY_NEAR = {
-  inheritedIra: /IRA|inherited|Hensley|RMD|retirement|beneficiar/i,
-  dividend: /dividend|distribut|CPC|LLC|per unit|trust/i,
-  tbills: /T-bill|Treasury|laddered|balance sheet/i,
-  david403b: /403|David|retirement|balance sheet/i,
-  /* $5M is also the endowment intent AND a de-identification band width. */
-  endowmentIntent: /endow|charit|foundation|Rockford Workforce|gift/i,
+  umbrella: /umbrella|liability|insurance/i,
+  cash: /cash|reserve|savings|money market|balance sheet/i,
+  megRoth: /Roth|Meg|balance sheet|IRA/i,
+  davidRoth: /Roth|David|balance sheet|IRA/i,
+  hsa: /HSA|health savings|balance sheet/i,
+  plan529: /529|Bright Start|Ryan|college/i,
+  esppValue: /employer stock|ESPP|Dunmore|shares|concentrat/i,
+  emmaDebt: /Emma|credit[- ]card|debt/i,
+  ruthLoanToTom: /Ruth|Tom|loan|lent/i,
+  travelBudget: /travel/i,
+  propertyTax: /property tax|Naperville|DuPage/i,
+  contrib529: /529|Ryan|contribution/i,
+  travel: /travel/i,
+  memoConversion: /convert|conversion|memo|Roth/i,
 };
 
-/* money — every keyed figure whose separated form is distinctive on its own */
+/* money — every keyed v5 figure whose separated form is distinctive on its own */
 for (const [key, where] of [
-  ['cpcValue', 'C.1'], ['megBasis', 'B.2'], ['revenue', 'B.3'], ['ebitda', 'B.3'],
-  ['dividend', 'B.4'], ['brokerage', 'C.1'], ['megIra', 'C.1'], ['inheritedIra', 'C.1'],
-  ['david403b', 'C.1'], ['residence', 'C.1'], ['cash', 'C.1'], ['tbills', 'C.1'],
-  ['netWorth', 'C.1'], ['techPositions', 'C.2'], ['inhIraRmd2026', 'C.3.3'],
-  ['megW2', 'D.1'], ['householdIncome', 'D.1'], ['livingExpenses', 'D.2'],
-  ['charitable', 'D.2'], ['propertyTax', 'D.2'], ['dividendTax', 'D.3'],
-  ['householdGap', 'D.3'], ['perNonVoting', 'E.2'], ['perVoting', 'E.2'],
-  ['proRataNonVote', 'E.2'], ['seedValue', 'E.4'], ['exemption', 'E.4'],
-  ['exemptionLeft', 'E.4'], ['notePrincipal', 'E.5'], ['noteInterest', 'E.6'],
-  ['trancheCash', 'E.7'], ['totalToMeg', 'E.7'], ['estateReduction', 'E.7'],
-  ['megPostClose', 'E.7'], ['belowProRata', 'E.7'], ['retainedDiscount', 'E.7'],
-  ['megYear1Distrib', 'E.7'], ['steadyInflow', 'E.7'], ['steadyOutflow', 'E.7'],
-  ['steadyGap', 'E.7'], ['trustEquity', 'E.7'], ['trustUnitsValue', 'E.7'],
-  ['burnSteady', 'E.8'], ['trustDivSteady', 'E.8'], ['burnYear1', 'E.8'],
-  ['burnCum25', 'E.8'], ['buySellFormula', 'F.6'], ['appraisal2023', 'F.7'],
-  ['endowmentIntent', 'PART G'], ['ilExclusion', 'A.4'], ['fedExclusion', 'H.6.1'],
-  ['rateSpreadCost', 'H.4'],
+  ['meg403b', 'C.1'], ['megRoth', 'C.1'], ['david401k', 'C.1'], ['david401kPre', 'C.1'],
+  ['david401kRoth', 'C.1'], ['davidRoth', 'C.1'], ['davidRollover', 'C.1'], ['brokerage', 'C.1'],
+  ['hsa', 'C.1'], ['cash', 'C.1'], ['plan529', 'C.1'], ['investable', 'C.1'], ['residence', 'C.1'],
+  ['totalAssets', 'C.1'], ['mortgage', 'C.1'], ['netWorth', 'C.1'], ['preTaxTotal', 'C.1'],
+  ['rothTotal', 'C.1'], ['taxableTotal', 'C.1'], ['brokerageFunds', 'C.2'], ['brokerageFundsBasis', 'C.2'],
+  ['esppValue', 'C.2'], ['esppBasis', 'C.2'], ['esppGain', 'C.2'], ['brokerageBasis', 'C.2'],
+  ['brokerageGain', 'C.2'], ['brokerageIncome', 'C.2'], ['qualDividends', 'C.2'], ['fundInterest', 'C.2'],
+  ['cashInterest', 'C.2'], ['hsaContrib', 'C.2'], ['homeBasis', 'C.2'], ['homePurchase', 'C.2'],
+  ['homeImprovements', 'C.2'], ['homeGain', 'C.2'], ['mortgageOriginal', 'C.4'], ['mortgagePayment', 'C.4'],
+  ['megW2', 'B.1'], ['davidW2', 'B.2'], ['megDeferral', 'B.1'], ['megMatch', 'B.1'], ['davidMatch', 'B.2'],
+  ['megGroupLife', 'B.1'], ['davidGroupLife', 'B.2'], ['megFica2025', 'B.1'], ['davidFica2025', 'B.2'],
+  ['wages', 'B.3'], ['employerContribs', 'D.2'], ['householdIncome', 'D.1'], ['payrollSavings', 'D.2'],
+  ['hsaEmployee', 'D.2'], ['mortgageAnnual', 'D.3'], ['propertyTax', 'D.3'], ['pcPremiums', 'D.3'],
+  ['megTermPremium', 'D.3'], ['emmaSupport', 'A.2'], ['contrib529', 'D.3'], ['travel', 'D.3'],
+  ['otherLiving', 'D.3'], ['totalOutflow', 'D.3'], ['afterTaxCash', 'D.4'], ['preTaxDeductions', 'E.3'],
+  ['investmentIncome', 'E.3'], ['agi', 'E.3'], ['taxableIncome', 'E.3'], ['fedTax', 'E.3'], ['niit', 'E.3'],
+  ['ilTax', 'E.3'], ['payrollTaxes', 'E.3'], ['bracketRoom', 'E.3'], ['itemizedEstimate', 'E.3'],
+  ['mortgageInterest', 'E.3'], ['ruthIra', 'A.3'], ['ruthSavings', 'A.3'], ['ruthTotal', 'A.3'],
+  ['ruthRmd2026', 'A.3'], ['ruthLoanToTom', 'A.3'], ['ruthIraPriorYear', 'F.6'], ['travelBudget', 'A.6'],
+  ['megTermLife', 'H.3'], ['umbrella', 'H.3'], ['deathBenefits', 'H.4'], ['estatePlusInsurance', 'H.4'],
+  ['emmaDebt', 'PART J'], ['memoConversion', 'H.1'],
 ]) {
   const v = F_(key);
   if (typeof v !== 'number') continue;
-  /* under $100,000 an un-separated match is coincidence-prone; keep the $ form */
   fact(key, 'money', [moneyRx(v), v >= 1000000 ? millionsRx(v) : null], { where, near: MONEY_NEAR[key] });
 }
 
-/* money the lessons state that CASE.md derives rather than keys */
+/* monthly figures the case states as "$X a month" */
+for (const [key, where, near] of [
+  ['ruthMonthlyFee', 'A.3', /month|Maple|Ruth|independent living/i],
+  ['ruthAssistedBase', 'A.3', /month|assisted|Ruth/i],
+  ['ruthSsMonthly', 'A.3', /month|Social Security|Ruth/i],
+  ['ruthPensionMonthly', 'A.3', /month|pension|Ruth/i],
+  ['megSs62', 'F.2', /month|62|Social Security|Meg/i], ['megSsFra', 'F.2', /month|67|full retirement|PIA|Meg/i],
+  ['megSsAt70', 'F.2', /month|70|Social Security|Meg/i], ['davidSs62', 'F.2', /month|62|Social Security|David/i],
+  ['davidSsFra', 'F.2', /month|67|full retirement|PIA|David/i], ['davidSsAt70', 'F.2', /month|70|Social Security|David/i],
+]) fact(key, 'money', [moneyRx(F_(key))], { where, near });
+
+/* money the lessons may state that CASE.md derives rather than keys */
 for (const [label, v, where, expr] of [
-  ['votingBlockValue', F.votingUnits * F.perVoting, 'E.7', '100 × $55,000'],
-  ['nonVotingAggregate', F.nonVotingUnits * F.perNonVoting, 'E.2', '900 × $38,500'],
-  ['megUnitsValue', F.votingUnits * F.perVoting + F.megRetainedNV * F.perNonVoting, 'E.7 / Part L', '100 × $55,000 + 328 × $38,500'],
-  ['votingBlockDividend', F.votingUnits * (F.dividend / F.totalUnits), 'E.7', '100 × $5,000'],
-  ['trustYear1Dividend', F.trustUnitsAtClose * (F.dividend / F.totalUnits), 'E.7 / E.8', '572 × $5,000'],
-  ['year1Excess', 2095236, 'E.7', '$2,860,000 − $764,764'],
-  ['interestPerMillion', Math.round(1000000 * F.noteRate), 'E.6', '$1,000,000 × 3.82%'],
-  ['perUnitDividend', F.dividend / F.totalUnits, 'E.2', '$5,000,000 ÷ 1,000'],  /* near-tested below */
+  ['bothDeferrals', F.megDeferral + F.davidDeferral, 'D.2', '$32,500 + $32,500'],
+  ['brokerageAndCash', F.brokerage + F.cash, 'C.1', '$360,000 + $85,000'],
+  ['rothAndTaxable', F.rothTotal + F.taxableTotal, 'C.1', '$195,000 + $445,000'],
 ]) fact(label, 'money', [moneyRx(v), v >= 1000000 ? millionsRx(v) : null], { value: v, where: `${where} — ${expr}` });
-/* $5,000 is a per-unit dividend here and statutory damages under Cal. Penal Code
-   §637.2 three lines away in session-3, and an <input max="5000"> elsewhere. It
-   only counts next to the thing it is a dividend on. Measured, not guessed. */
-for (const f of facts) if (f.key === 'perUnitDividend') f.near = /unit|dividend|LLC|distribut|per share/i;
 
 /* rates and percentages the case states */
 for (const [key, p, where, near] of [
-  ['discount', 30, 'E.2 / H.5', /discount|DLOM|DLOC|marketab|lack of control|non-?voting|valuation|appraise/i],
-  ['qualDivRate', 28.75, 'D.3', null],
-  ['ordinaryRate', 41.95, 'D.3', null],
-  ['ilIncomeRate', 4.95, 'D.3', null],
-  ['noteRate', 3.82, 'E.6 / H.3', /note|rate|interest|blended|7872|demand/i],
-  ['afrShort', 4.10, 'H.1', /AFR|applicable federal|short-term|1274|rate/i],
-  ['afrMid', 4.35, 'H.1', /AFR|applicable federal|mid-term|7520|rate/i],
-  ['afrLong', 4.92, 'H.1', /AFR|applicable federal|long-term|rate/i],
-  ['rate7520', 5.20, 'H.2', /7520|AFR|rate|annuit|remainder/i],
-  ['techPct', 62, 'C.2', /brokerage|technology|concentrat|three (?:technology|tech)/i],
-  ['cpcShareOfNetWorth', 82.1, 'M', null],
-  ['ilTopRate', 16, 'H.6.2', /Illinois|estate tax|top rate/i],
-  ['dividendYield', 9.09, 'B.4', /yield|dividend|indicated value/i],
-  ['custConcentration', 61, 'B.3', /customer|revenue|concentrat/i],
-  ['corpRate', 21, 'B.3 / D.3', /corporat|§\s*11|C corporation|federal rate/i],
-  ['qualDivFed', 23.8, 'D.3', null],
-  ['topOrdinary', 37, 'D.3', /federal|ordinary|bracket|top rate|marginal/i],
-  ['ltcgTop', 20, 'D.3', /qualified dividend|long-term|capital gain/i],
-  ['niit', 3.8, 'D.3', /net investment|NIIT|1411/i],
-  ['charFloor', 0.5, 'PART G', /floor|contribution base|170\(b\)/i],
-  /* ADDED after the first measurement, and the reason is recorded because it
-     changes the baseline. index.html:869 states the Illinois replacement income
-     tax on trusts at 1.5%. It is a CASE.md figure (§D.3, §E.8) that is NOT in
-     case-facts.json, NOT in COLE and NOT in the injected span — a quantitative
-     case fact with no guard anywhere in the corpus — and the first pass had no
-     pattern for it, so the drift surface it sits on was invisible to the
-     measurement. The rest of this block is the same audit run over CASE.md
-     Parts D, G and H for figures the first pass could not see. */
-  ['ilTrustReplacementRate', 1.5, 'D.3 / E.8', /trust|replacement|grantor|Illinois|201\(c\)/i],
-  ['ilCorpRate', 7.0, 'B.3', /Illinois|corporate|201\(b\)/i],
-  ['ilCorpReplacement', 2.5, 'B.3', /Illinois|replacement|corporate/i],
-  ['trustCombinedRate', 6.45, 'E.8', /trust|Illinois|replacement|toggl/i],
-  ['estateTopRate', 40, 'H.6.1', /estate|gift|transfer tax|2001\(c\)/i],
-  ['evEbitda', 6.0, 'C.2', /EBITDA|multiple|EV\/|mid-point/i],
-  ['charSubsidy', 24.06, 'PART G', /charit|subsid|deduct/i],
-  ['itemisedCap', 35, 'PART G', /itemis|itemiz|deduction|cent/i],
-  ['medicareSurtax', 0.9, 'D.3', /Medicare|wages|3101/i],
+  ['preTaxPct', F.preTaxPct, 'C.1', /pre-tax|tax-deferred|investable|of what they have/i],
+  ['rothPct', F.rothPct, 'C.1', /Roth/i],
+  ['taxablePct', F.taxablePct, 'C.1', /taxable/i],
+  ['esppPct', F.esppPct, 'C.2', /brokerage|employer|stock|concentrat|account/i],
+  ['mortgageRate', F.mortgageRate, 'C.4', /mortgage|fixed|refinanc|rate/i],
+  ['mortgageRateShort', 3.1, 'C.4', /mortgage|fixed|refinanc|rate/i],
+  ['cashRate', F.cashRate, 'C.2', /cash|money market|yield|interest/i],
+  ['ilRate', F.ilRate, 'E.2', /Illinois|flat|state/i],
+  ['marginalRate', F.marginalRate, 'E.3', /bracket|marginal|federal/i],
+  ['propertyTaxEffective', F.propertyTaxEffective, 'E.2', /property tax|effective|Naperville|DuPage/i],
+  ['cola2026', F.cola2026, 'F.2', /COLA|cost-of-living|Social Security/i],
+  ['allocEquityFunds', F.allocEquityFunds, 'G.2', /equit|allocation|stocks/i],
+  ['allocFixed', F.allocFixed, 'G.2', /fixed income|bond|allocation/i],
+  ['allocCash', F.allocCash, 'G.2', /cash|allocation/i],
+  ['ipsEquity', F.ipsEquity, 'G.3', /target|IPS|policy|equit|60\/40/i],
+  ['megLossTolerance', F.megLossTolerance, 'G.1', /loss|tolerat|Meg|conservative/i],
+  ['davidLossTolerance', F.davidLossTolerance, 'G.1', /loss|tolerat|David|aggressive/i],
+  ['earlyReduction', 30, 'F.1', /62|early|reduc|Social Security/i],
+  ['delayedCredit', 24, 'F.1', /70|delay|credit|Social Security/i],
+  ['rmdExciseTax', F.rmdExciseTax, 'F.4', /excise|shortfall|RMD|4974/i],
+  ['rmdExciseCorrected', F.rmdExciseCorrected, 'F.4', /excise|corrected|RMD|4974/i],
 ]) fact(key, 'pct', pctRx(p), { value: p, where, near });
-
-/* money CASE.md states that the first pass had no pattern for */
-for (const [key, v, where, near] of [
-  ['annualExclusion', 19000, 'H.6.1', /annual exclusion|donee|2503/i],
-  ['charFloorAmount', 25000, 'PART G', /floor|contribution base/i],
-  ['charDeductible', 55000, 'PART G', /deduct|charit/i],
-  ['charFedBenefit', 19250, 'PART G', /benefit|subsid|charit/i],
-  ['megW2Net', 250650, 'D.3', /W-2|net|after/i],
-  ['inhIraRmd2027', 45249, 'C.3.3', /RMD|2027|distribution/i],
-  ['inhIraRmd2028', 47393, 'C.3.3', /RMD|2028|distribution/i],
-  ['afrShortInterest', 820820, 'H.4', /4\.10|1274|short-term|interest/i],
-  ['deMinimisLoan', 10000, 'H.3', /de minimis|7872/i],
-  ['giftLoanNII', 100000, 'H.3', /net investment|7872|gift.?loan/i],
-  ['revolver', 4000000, 'B.1', /revolv|line of credit|undrawn|debt/i],
-  ['capex', 1850000, 'B.3', /capital expenditure|capex/i],
-  ['netIncome', 5180000, 'B.3', /net income|after tax/i],
-  ['nathanW2', 96000, 'B.5', /Nathan|compensation|W-2/i],
-  ['largestGift', 35000, 'PART G', /charit|largest|organisation|organization/i],
-  ['facilitySqFt', 96000, 'B.1', /sq ft|square feet|facility/i],
-]) fact(key, 'money', [moneyRx(v)], { value: v, where, near });
 
 /* proper nouns and entity names */
 for (const [key, s, where, near] of [
@@ -216,79 +195,70 @@ for (const [key, s, where, near] of [
   ['megNameAlt', 'Margaret Cole', 'A.1', null],
   ['megShort', 'Meg Cole', 'A.1', null],
   ['davidName', 'David Cole', 'A.1', null],
-  ['claireName', 'Claire Cole Whitaker', 'A.2', null],
-  ['claireShort', 'Claire', 'A.2', /Cole|Nathan|physician|daughter|children/i],
-  ['nathanName', 'Nathan Cole', 'A.2', null],
-  ['nathanShort', 'Nathan', 'A.2', /Cole|Claire|son|operations|succession/i],
-  ['benName', 'Ben Whitaker', 'A.2', null],
-  ['decedent', 'Walter Hensley', 'A.3', null],
-  ['priorCompany', 'Hensley Precision Products', 'B.1', null],
-  ['companyName', 'Cole Precision Components', 'B.1', null],
-  ['companyAbbr', 'CPC', 'B.1', null],
-  ['llcName', 'Cole Family Holdings', 'E.1', null],
-  ['trustName', 'Cole 2026 Irrevocable Trust', 'E.3', null],
-  ['revTrustName', 'Cole Joint Revocable Trust', 'F.2', null],
-  ['charityName', 'Rockford Workforce Alliance', 'PART G', null],
-  ['residenceTown', 'Barrington Hills', 'A.4', null],
-  ['plantTown', 'Rockford', 'A.4', null],
+  ['emmaName', 'Emma Cole', 'A.2', null],
+  ['emmaShort', 'Emma', 'A.2', /Cole|Ryan|daughter|children|university|graduat|debt/i],
+  ['ryanName', 'Ryan Cole', 'A.2', null],
+  ['ryanShort', 'Ryan', 'A.2', /Cole|Emma|son|529|college|children/i],
+  ['ruthName', 'Ruth Alder', 'A.3', null],
+  ['ruthShort', 'Ruth', 'A.3', /Alder|Meg|mother|Maple|Wheaton|power of attorney|POA|assisted|IRA/i],
+  ['tomName', 'Tom Alder', 'A.3', null],
+  ['tomShort', 'Tom', 'A.3', /Alder|Ruth|brother|loan|guardian|Denver/i],
+  ['frankName', 'Frank Alder', 'A.3', null],
+  ['dorothyName', 'Dorothy Cole', 'C.3.5', null],
+  ['megEmployer', 'Northlake Regional', 'B.1', null],
+  ['davidEmployer', 'Dunmore Industrial', 'B.2', null],
+  ['davidEmployerShort', 'Dunmore', 'B.2', null],
+  ['priorEmployer', 'Halberd Controls', 'C.3.5', null],
+  ['ruthCommunity', 'Maple Court', 'A.3', null],
+  ['estateCounsel', 'Whitfield Law', 'A.5', null],
+  ['taxPreparer', 'Lindqvist', 'A.5', null],
+  ['priorAdviser', 'Harlan Beck', 'A.5', null],
+  ['residenceTown', 'Naperville', 'A.4', null],
+  ['county', 'DuPage', 'A.4', null],
+  ['ruthTown', 'Wheaton', 'A.3', null],
   ['domicile', 'Illinois', 'A.4', null],
-  ['estateCounsel', 'Corbin & Reyes', 'A.5', null],
-  ['cpaFirm', 'Halvorsen Group', 'A.5', null],
-  ['appraiser', 'Merrit Valuation Advisors', 'A.5', null],
-  ['banker', 'Lakeshore Industrial Partners', 'A.5', null],
-  ['buySellDrafter', 'Ostrander LLC', 'F.6', null],
+  ['plan529Name', 'Bright Start', 'C.2', null],
 ]) fact(key, 'name', wordRx(s), { value: s, where, near });
 
 /* dated documents and events */
 for (const [key, s, where, near] of [
-  ['purchaseDate', '1 July 2016', 'B.2'],
-  ['decedentDied', '4 November 2021', 'A.3'],
-  ['marriedDate', '21 September 1991', 'A.1'],
-  ['incorporated', '3 February 1987', 'B.1'],
-  ['renamed', '15 August 2016', 'B.1'],
-  ['noteSatisfied', '1 July 2025', 'B.2'],
-  ['buySellDate', '30 May 2014', 'F.6'],
-  ['willsDate', '22 March 2011', 'F.1'],
-  ['appraisalDate', '12 September 2023', 'F.7'],
-  ['memoDate', '19 February 2026', 'F.8'],
-  ['succMemoDate', '12 March 2026', 'F.13'],
-  /* Anthropic's Consumer Terms carry the same date in session-4:1278. A date
-     is only a case date next to the thing it dated. */
-  ['inquiryDate', '8 October 2025', 'F.14', /competitor|inquiry|acquir|CPC|Cole|approach/i],
-  ['draftDate', '6 April 2026', 'F.10'],
-  ['indicativeDate', '30 June 2026', 'C.2'],
-  ['asOfDate', '31 July 2026', 'PART C'],
+  ['megDob', '2 May 1968', 'A.1'], ['davidDob', '9 August 1967', 'A.1'],
+  ['emmaDob', '18 March 2005', 'A.2'], ['ryanDob', '27 October 2010', 'A.2'],
+  ['ruthDob', '6 February 1943', 'A.3'], ['frankDied', '12 September 2019', 'A.3'],
+  ['marriedDate', '14 June 1997', 'A.1'], ['ruthPoaDate', '8 June 2022', 'A.3'],
+  ['ruthIraFormDate', '14 April 2020', 'A.3'], ['spdAmended', '1 January 2026', 'B.2', /plan|SPD|amend|conversion|Roth/i],
+  ['dorothyDied', '9 March 2021', 'C.3.5'], ['rolloverFormDate', '11 May 2009', 'C.3.5'],
+  ['willsDate', '17 May 2011', 'H.1'], ['ipsDate', 'September 2024', 'G.3', /IPS|policy|investment/i],
+  ['memoDate', '3 October 2024', 'H.1'], ['mortgageRefi', 'November 2022', 'C.4', /mortgage|refinanc|loan/i],
+  ['mortgageMaturity', 'November 2037', 'C.4', /mortgage|matur|loan/i],
+  ['asOfDate', '31 December 2026', 'PART C', /as of|balance sheet|statement/i],
+  ['davidNewsMonth', 'November 2026', 'PART J', /David|told|division|confiden/i],
 ]) fact(key, 'date', dateRx(s), { value: s, where, near });
 
 /* counts that are only distinctive in context */
 for (const [key, n, where, near] of [
-  ['totalUnits', 1000, 'E.1', /unit|share|recapitaliz/i],
-  ['votingUnits', 100, 'E.1', /voting unit|\bvoting\b.{0,40}unit|unit.{0,30}voting/i],
-  ['nonVotingUnits', 900, 'E.1', /non-?voting/i],
-  ['seedUnits', 52, 'E.4', /unit|gift|seed/i],
-  ['saleUnits', 520, 'E.5', /unit|sold|sale|sell/i],
-  ['trustUnitsAtClose', 572, 'E.5', /unit|trust/i],
-  ['megRetainedNV', 328, 'E.5', /unit|retain|remaining/i],
-  ['megYear1Units', 428, 'E.7', /unit/i],
-  ['employees', 180, 'B.1', /employee|workforce|staff/i],
-  ['megAge', 64, 'A.1', /Meg|Margaret/i],
-  ['davidAge', 63, 'A.1', /David/i],
-  ['claireAge', 34, 'A.2', /Claire/i],
-  ['nathanAge', 31, 'A.2', /Nathan/i],
-  ['marriedYears', 34, 'A.1', /married|marriage/i],
-  ['megApplicableAge', 75, 'C.3.1', /applicable age|RMD|required beginning/i],
-  ['megFirstDistYear', 2037, 'C.3.1', /distribution|RMD/i],
-  ['inhIraOuterLimit', 2031, 'C.3.3', /ten-year|inherited|31 December/i],
+  ['megAge', F.megAge, 'A.1', /Meg|Margaret/i],
+  ['davidAge', F.davidAge, 'A.1', /David/i],
+  ['emmaAge', F.emmaAge, 'A.2', /Emma/i],
+  ['ryanAge', F.ryanAge, 'A.2', /Ryan/i],
+  ['ruthAge', F.ruthAge, 'A.3', /Ruth|mother/i],
+  ['tomAge', F.tomAge, 'A.3', /Tom/i],
+  ['marriedYears', F.marriedYears, 'A.1', /married|marriage/i],
+  ['megRetireAge', F.megRetireAge, 'A.1', /Meg.{0,40}retire|retire.{0,40}Meg|stops at|age 60/i],
+  ['davidRetireAge', F.davidRetireAge, 'A.1', /David.{0,40}retire|retire.{0,40}David|stops at|age 62/i],
+  ['megRiskScore', F.megRiskScore, 'G.1', /score|questionnaire|risk|Meg|of 100/i],
+  ['davidRiskScore', F.davidRiskScore, 'G.1', /score|questionnaire|risk|David|of 100/i],
+  ['riskGap', F.riskGap, 'G.1', /points apart|gap|score/i],
+  ['megApplicableAge', F.megApplicableAge, 'C.3.1', /applicable age|RMD|required minimum|required beginning|age 75/i],
+  ['megFirstDistYear', F.megFirstDistYear, 'C.3.1', /distribution|RMD|Meg|window/i],
+  ['davidFirstDistYear', F.davidFirstDistYear, 'C.3.3', /distribution|RMD|David|window/i],
+  ['megWindowStart', F.megWindowStart, 'F.1', /window|convers|Meg/i],
+  ['davidWindowStart', F.davidWindowStart, 'F.1', /window|convers|David/i],
+  ['esppShares', F.esppShares, 'C.2', /shares|Dunmore|ESPP/i],
+  ['davidEmployees', F.davidEmployees, 'B.2', /employee|workforce|Dunmore/i],
+  ['megRetireYear', F.megRetireYear, 'A.1', /Meg.{0,60}(retire|stop|paycheck)|(retire|stop|paycheck).{0,60}Meg/i],
+  ['davidRetireYear', F.davidRetireYear, 'A.1', /David.{0,60}(retire|stop|paycheck)|(retire|stop|paycheck).{0,60}David/i],
 ]) fact(key, key.endsWith('Age') || key === 'marriedYears' ? 'age' : 'count',
-        /* the hyphen in the lookbehind is measured, not cautious: without it,
-           megAge 64 matched "Rev. Rul. 2004-64" twice in session-2, because the
-           context test only asks for "Meg" nearby and a citation sits in a
-           sentence about her. A number after a hyphen is part of a citation or
-           a range. */
-        /* Also excluded: an SVG coordinate (`x:52`) and a form bound
-           (`max="5000"`). session-3's meaning-space map put `x:52` three
-           characters from the words "seed gift", so the context test passed on
-           a number that is a pixel. */
         new RegExp(`(?<![0-9,.$*-])(?<![xyXY]:)(?<!="\\s*)${money(n)}(?![0-9])(?!,[0-9])(?!%)`, 'g'),
         { value: n, where, near });
 
@@ -298,19 +268,20 @@ export { facts };
 
 /** verify-migration check 20's pins, transcribed. Kept in step by assertPins(). */
 export const CHECK20_PINS = [
-  { rx: /Meg is short (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? a year/g, key: 'steadyGap' },
-  { rx: /How much of the (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? note does she call/g, key: 'notePrincipal' },
-  { rx: /Each \$1,000,000 she calls permanently removes \$([0-9,]+) of future interest/g, key: 'interestPerMillion' },
-  { rx: /so the gap widens by ([0-9.]+)% of every call/g, key: 'noteRate' },
-  { rx: /Explain to a (\d+)-year-old business owner/g, key: 'megAge' },
-  { rx: /a sale\s+of ([0-9,]+) non-voting units of a new family LLC/g, key: 'saleUnits' },
-  { rx: /grantor trust for a \$([0-9,]+) note payable on demand/g, key: 'notePrincipal' },
-  { rx: /preceded by a \$([0-9,]+) seed gift/g, key: 'seedValue' },
-  { rx: /seed gift of ([0-9,]+) units, with a/g, key: 'seedUnits' },
-  { rx: /units, with a ([0-9]+)%\s+valuation discount claimed/g, key: 'discount' },
-  { rx: /this yields roughly\s+\$([0-9,]+), materially below both/g, key: 'buySellFormula' },
-  { rx: /materially below both the \$([0-9,]+) concluded in/g, key: 'appraisal2023' },
-  { rx: /and the \$([0-9,]+) indicated range/g, key: 'cpcValue' },
+  { rx: /The Coles hold (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? in pre-tax accounts/g, key: 'preTaxTotal' },
+  { rx: /in pre-tax accounts, (?:<(?:b|strong)>)?([0-9.]+)%(?:<\/(?:b|strong)>)? of what they have/g, key: 'preTaxPct' },
+  { rx: /Meg (\d{4}) to \d{4}, David \d{4} to \d{4}\./g, key: 'megWindowStart' },
+  { rx: /the 24% bracket has \$([0-9,]+) of room in 2026/g, key: 'bracketRoom' },
+  /* Phase 4b (2026-10-12): v5 figures typed into lesson prose; keep in step with verify-migration.mjs */
+  { rx: /They hold \$([0-9,]+) of investable assets/g, key: 'investable' },
+  { rx: /([0-9.]+)% of it in pre-tax accounts/g, key: 'preTaxPct' },
+  { rx: /concentration is computed on the taxable account \(\$([0-9,]+) of \$[0-9,]+\)/g, key: 'esppValue' },
+  { rx: /concentration is computed on the taxable account \(\$[0-9,]+ of \$([0-9,]+)\)/g, key: 'brokerage' },
+  { rx: /\(2% of \$([0-9,]+)\)/g, key: 'investable' },
+  { rx: /Dunmore position at ([0-9.]+)% of the taxable account/g, key: 'esppPct' },
+  { rx: /taxable account but ([0-9]+)% of investable assets/g, key: 'allocEspp' },
+  { rx: /about \$([0-9,]+) of card debt/g, key: 'emmaDebt' },
+  { rx: /credit card debt of about \$([0-9,]+)/g, key: 'emmaDebt' },
 ];
 
 /** The pin list here must be the pin list there. A silent divergence is the defect. */

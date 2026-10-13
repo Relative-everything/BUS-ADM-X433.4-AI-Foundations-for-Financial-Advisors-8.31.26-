@@ -1,79 +1,40 @@
-# Session 3 teaching aid, Monday 2026-09-21, 6:00 to 9:00 PT
+# Session 3 teaching aid, 61 core minutes
 
-Plain-text copy of `session-3-teaching-aid.pdf`, for a phone. The PDF is the one to print. Rebuilt
-2026-09-21, the afternoon of the session, for the night in the order it will be taught: the
-seven-step process first, then the note-taker block on five surfaces, the live skill build after
-the break, then the Session 3 page entered at §03. Nothing in this file addresses a learner.
+Plain-text copy of `session-3-teaching-aid.pdf`, for a phone. The PDF is the one to print. Rebuilt on 2026-10-13 for the 2027 term against `session-3/index.html`: eight core sections, four polls, no clock times fixed. Minute marks count from the first word of `s1`; core adds up to 61, the closing check borrows 2 from the reserve, and the break and any appendix sit on top. Nothing in this file addresses a learner.
 
-ASK = one question, aloud, count four; take any answer; if none, say it yourself and go. POLL =
-read the result aloud, say the branch. Only two things are written all night: the §08 harvest and
-the closing check. Black numbers in the PDF are the steps that must not be skipped: 2, 5, 8, 10,
-13, 15, 19. The colour box on each step says what is on screen: Zoom, Tab 1 (Session 3), Tab 2
-(Session 2), an image, a PDF, the artifact, the Claude chat, or the slide.
+ASK = one question aloud, wait three seconds, take any answer; if none, say it yourself and go. POLL = read the distribution aloud, then say the branch. Black numbers in the PDF are the steps that must not be skipped: 3, 4, 5, 14, 17, 20. The colour box on each step says what is on screen: Zoom, Tab 1 (the Session 3 page), Tab 2 (the Case 3 page), or the Claude chat.
 
-1. **6:00 OPEN.** Zoom. "Canvas and file questions at the break." Tokens: output costs 5x input.
-   Watermark: "not your account." Stop.
-2. **6:03 OBJECTIVE.** Tab 1, §00. Read "Tonight's one thing" off the page. Non-advisors: "your
-   recurring meeting."
-3. **6:05 POLL 1**, prompts typed since Session 2. Half or more say 0 or 1 to 3? §08 silence gets
-   6 min. Say it.
-4. **6:08 7-STEP WHEEL.** Image. ASK which steps is tonight? 1, 2, 7. ASK which two are
-   planner-only? 2 and 4. "Last week's page has the sorter."
-5. **6:11 B4 SORTER, WORKED.** Tab 2, + Standard, B4. Room places all 7. Key at 6:22 whatever is
-   placed. Two minutes: why 2 and 4 sit apart from 3 and 7. Stop 6:25.
-6. **6:25 CFP CHECKLIST.** PDF. Headings only. GATE: "Whose consent do you need on this call?"
-   POLL N2 first, if built. Name A.9 confidentiality, A.14 technology. "Checklist first. Now how
-   it works."
-7. **6:31 KITCES CYCLE.** Image. "Same five stages as §06." GATE at CRM: "Who reads this note, and
-   when?" Sold against the hour of prep and follow-up per meeting hour.
-8. **6:34 PIPELINE**, steps 0 to 5. Artifact. ASK each question, count four, open. Step 3: will it
-   flag it? No. Step 5, POLL N3 if built, then: Rev. Proc. 2022-32, five years. "One error, three
-   copies. It records what was said, not what is true." Stop 6:58.
-9. **6:58 BREAK.** Post "back at 7:15", Pacific. Artifact not done? At 7:15 open Step 5 only, one
-   minute, then the build.
-10. **7:15 SKILL BUILD.** Claude. Send the prompt, Step 0 pasted as the transcript. While it runs:
-    "grounding changes what it reads; tuning changes what it is." Stanford Fig 1. POLL 2, answer
-    (c). 7:35 stuck? Paste §07's instruction as the skill.
-11. **7:30 TEST IT** on Step 0. ASK did it catch the error? No. "A skill is grounding. It still
-    records what was said." Stop 7:42.
-12. **7:42 MY CYCLE.** Slide. ASK which stage would you hand to a tool tonight? Take two. "That is
-    the closing question. Hold your answer." Then Tab 1, Core only.
-13. **7:48 §03 WORKED.** Tab 1. ASK which passage should win? Preset 1. Say: appraisal D3 third at
-    3.3, shares only "value". Right, quoted, wrong. Presets 2, 3, 4 fast. "This is RAG."
-14. **8:00 POLL 3.** Why did the appraisal rank third? (b). 30% or more said (a)? Re-run preset 1,
-    read the shared-term line.
-15. **8:02 §08 WORKED, SILENT.** Tab 1. Read the four steps on the page. "Four minutes. Nobody
-    talks. Synthetic only." Silence 4:00. CHAT harvest. Read two aloud.
-16. **8:14 §10.** Tab 1. ASK line 4, which bucket? 3, Neither. GATE: "Which is your reading, not
-    their words?" Key. "Reverse prompting: it interviews you first."
-17. **8:22 §11.** Tab 1. Read the Course rule verbatim. ASK which gap first? Part 1: seven
-    elements, baseline estimate, data note, cold run in Session 4.
-18. **8:28 RESERVE**, 4 min. "What do you want to see?" Start from the §08 harvest. Ahead by 10 or
-    more? §09b, two pages: ASK which could your firm produce today?
-19. **8:32 CLOSING CHECK.** CHAT one step to hand over, one to keep, why. "The thing I said we
-    would cover." Read three aloud. Do not skip.
-20. **8:37 HOMEWORK**, one breath, then stop. Part 1 (date in Canvas). Policy, three sources. Read
-    Daly, SEC §VII, JoA. No real client data.
+1. **0:00 OBJECTIVE. Read "Tonight's one thing" off the page.** Not running client meetings: "your recurring meeting." Core only.
+2. **0:02 BRIDGE. Say four letters aloud, then click them.** Key: C, A, D, B. "B is this session."
+3. **0:07 CASE 3, COMMIT. Read it. Silent 3 min, one line per item, lock.** "Wrong is the design." Skipped the case page? Open Case 3 button (Tab 2), 2 min, same commit.
+4. **0:11 CASE 3, COMPARE. Room ticks the rows its list had.** Key: 1 matches, 2 kept out, 3 matches, 4 differs, 5 differs, 6 matches. "A list is checked against its line."
+5. **0:17 RANK. ASK the passage number, click Preset 1.** Memo D7 42.6, plan description D3 24.8, margin 41.9%. "permit" against "permitted"; no dates. Right, quoted, no longer the plan.
+6. **0:19 PRESETS 2 TO 4.** P2: D7 31.9, D3 31.4, 1.5% apart. P3: D6 32.3, no total. P4: D4 41.7, nothing says Dorothy died. Late? Drop P3.
+7. **0:22 **POLL 1** Short answer, closes s4. Click Preset 1 first.** Sort A word match, B no dates, C other. More than half C: read the Preset 1 verdict aloud.
+8. **0:23 **POLL 2** Single choice, opens s6. Answer (c).** About 1 in 5. More than half (a) or (b): read the 17 and the 33 before the key. Then click the majority on the page.
+9. **0:25 CHART AND KEY. Bars 43, 33, 17, 1.9.** "Grounded. Cited. Quoted. Wrong." Why ground, not tune: your facts change.
+10. **0:29 **POLL 3** Anonymous, opens s10.** Any "unofficially": C9 after sOff, 30 days and 72 hours. More than half "Yes": skip "Why it sells". Market: 42.9% of advisors, about 18% of teams.
+11. **0:30 FUNNEL. Click each of the four stages.** ASK which turn holds what the file most needs and a tool drops? 3. Copy the standing instruction.
+12. **0:36 BREAK, 10 min, posted as a clock time.** Not for 1:1 tech support.
+13. **0:36 **POLL 4** Multi-select, opens sOff. Answer 4 and 6.** Fewer than half pick 6: read the key line for it. Then the sorter, 2 min, source line before bucket.
+14. **0:39 SILENT RUN, 3 min. Copy the letter prompt with the summary.** Read it against the summary. One chat line: usable, and one sentence added or stated as settled. Stalled: Example output. "Nobody talks. Synthetic only."
+15. **0:42 POSITION. "Do not scroll." Lock Vote One; chat 1 more, 2 same, 3 less.** Read the tally. Predicted 5, 2, 1.
+16. **0:44 DEFENCE, 7 min. Minority first, 90 seconds each, by name.** Less, then same, then more. Wait three seconds after each question.
+17. **0:51 COMPLICATION, 4 min. On screen: memo first at 42.6, plan description 24.8, margin 41.9%.** Memo dated 3 October 2024; plan amended 1 January 2026. Checking the citation harder would not have helped.
+18. **0:55 RE-VOTE, 2 min. Same way.** Say nothing about the delta. A zero delta is a finding.
+19. **0:57 CHECKLIST. Tick, 2 min; name the gap you close first.** Course rule verbatim. Point at the assignment and Part 1 cards; do not read them. s16 ends at 1:01.
+20. **1:01 CLOSING CHECK, 2 min from the reserve. **CHAT** one step to hand to a tool, one to keep, why.** Read three aloud. Do not skip.
 
-**Setup at 5:45:** Tab 1 Session 3, Core only. Tab 2 Session 2, + Standard, at B4. Images: the
-wheel, the Kitces cycle, my cycle. PDFs: the CFP checklist, Stanford at Fig 1. Artifact open,
-outputs shut. Claude: new chat, prompt typed, not sent. Polls 1, 2, 3 loaded, N2 and N3 if built.
-Three chat lines ready. Speaker labels on.
+**Setup:** Tab 1 Session 3 at Core only. Tab 2 the Case 3 page. Claude: a new chat open and signed in, no client data. Polls 1 to 4 built and tested, students not co-hosts, Poll 3 anonymous. Speaker labels on.
 
-**Not tonight:** model tiers, token prices, cost per task; fee philosophy; Claude for Financial
-Advisors; the watermark beyond one sentence; Canvas help; §01/02, §04, §05, §06, §07 and §09 on
-the page, because the front half covers them.
+**Not this session:** model tiers and token prices; fee models; vendor selection and the full Reg S-P tabletop (Session 4); any appendix section you did not pick.
 
-**Checkpoints:** 6:25 sorter key shown. 6:58 break on time. 7:42 build stopped. 8:02 in §08. 8:32
-closing check.
+**Checkpoints (elapsed minutes):** 0:17 case key shown. 0:36 break on time. 0:42 in `s15`. 0:57 in `s16`. 1:01 closing check. 1:03 done.
 
-**Never drop:** the sorter, Step 5, the §08 silence, the closing check.
+**Never drop:** `sCase`, `s15`, the closing check.
 
-**Drop order if late:** 1 artifact to steps 0, 3 and 5. 2 build to 20 min. 3 my cycle to 3 min.
-4 §03 preset 1 only. 5 §10 demonstrated, not run. 6 §11 to the rule and Part 1.
+**Drop order if late:** 1 appendix. 2 `s4` Preset 3. 3 `sOff` silent run to the Example output. 4 `s1` bridge to the key. 5 `s10` stage panels to extraction and follow-up.
 
-**Answers:** wheel, tonight 1, 2, 7, planner-only 2 and 4. Sorter key 1A 2P 3D 4P 5A 6A 7D
-(assist, planner only, drafts). Step 3 no. Step 5 Rev. Proc. 2022-32. Test: no. Poll 2 (c). Poll
-3 (b). §10 line 4: 3. Stanford chart: 17, 19, 43; "33" is Westlaw, in the later version.
+**Answers:** bridge C A D B. Case 3 rows 1 matches, 2 kept out, 3 matches, 4 differs, 5 differs, 6 matches. Poll 1: shared words, no dates. Poll 2 (c). Poll 4: 4 and 6. Funnel: 6, 5, 5, 1 (six turns in, five out of extraction, five headings, one recap); turn 3. Sorter: 1 prose, 2 figures, 3 deck, 4 not an AI task, 5 figures, 6 not an AI task. Reg S-P: 30 days to the customer, 72 hours from the service provider (FACTS:reg-sp-compliance). Market: FACTS:adoption-t3-2026, FACTS:kitces-notetakers-2025.
 
 **After:** export the transcript, the chat log and the poll report within 24 hours.

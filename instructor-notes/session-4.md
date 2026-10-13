@@ -1,572 +1,89 @@
 # Session 4 · Compliance, Security and Responsible Use
 
-Run sheet for Monday 2026-09-28, 6:00 to 9:00 PM Pacific. **Teach from the teaching aid beside
-this file** (`session-4-teaching-aid.pdf`, three landscape pages; `.htm` is its source and `.md`
-its phone copy): page 1 is the clock, page 2 the setup and the live segments, page 3 the two other
-demos and the lecture cards. This sheet holds what the aid does not: the objective, the polls, the
-gates, the relay, the per-slot notes for each figure, and the verify list. Nothing in this file
-addresses a learner. Rewritten 2026-09-28 against the page as rebuilt that day (branch
-`claude/gracious-cray-2k4fkc`, `docs/changes/2026-09-28-session-4-notes/`).
-
-**Print `session-4-teaching-aid.pdf`**, now three landscape pages (built 2026-09-28), with the rule
-key beside it (`session-4-rule-key.pdf`, two pages from the 27 September round): its page 1 is
-this clock as 19 steps with the answers inline; its page 2 is the rule key for §01's nine items
-(when each passed, what it does, whom it binds, and whether it names AI). This sheet stays the
-full version.
-
-## What changed on 2026-09-28: the instructor's notes, implemented
-
-Same sections, minutes, tiers and 17 gates. Fourteen things are new on the page and three are new
-around it:
-
-- **A Live API box at the top of the page.** Optional, off by default, like the one on Sessions 0.1
-  and 1, but built for §03: press **1 · See the request** with no key and the exact request that
-  would leave the laptop is printed, key masked; paste a free Gemini key, **Connect**, then
-  **2 · Send**, and the reply comes back with tokens in, tokens out, and what the same tokens would
-  cost through the smallest Claude model. The box says on its face that a free key is Google's
-  training tier (plan A) and a paid key the contract tier (plan C). The prompt starts as the clean
-  Prompt D. Page 2, D of the aid is the six-minute script.
-- **§02 has a second card, The Harder Ones.** Seven phrases that are not names (a title, an exact
-  age, a headcount, a dated family sale, $55 million, a spouse's profession, a village) with a
-  locking guess (how many of the nine numbered phrases still point to her: all seven) and a
-  people-who-fit figure whose sieves dissolve as phrases are replaced.
-- **§03 has a ladder under the map: Personal or Firm Account.** Six rungs (training off, retention
-  in writing, a contract the firm signs, an audit report on request, SSO and audit logs, breach
-  notice in hours) light on the side that has them; the client-file door opens only on the firm
-  side and only after all six. Price tags are today's: Pro $20 a month; Team from $20 a seat;
-  Enterprise $20 a seat plus API usage; API from $1 in and $5 out per million tokens. **Climb all**
-  runs it. A Plan C pointer under it opens the Live API box.
-- **§04's copy button drafts a real email now**, and a second beat, **What the Clause Looks Like**,
-  shows each lock as a contract sentence: Anthropic's own words where they exist (no training,
-  Section B; breach notice within 48 hours, DPA G.1; audit reports on request, DPA F.1), labelled
-  verbatim or paraphrase, with who signs and who it binds. **Copy the sample contract**.
-- **§05: How it hid** (white text, zero-size font, invisible characters, an image) re-renders the
-  x-ray of email 3; each fix now shows the skill or system-prompt language it corresponds to, with
-  a verdict (fix 1 is text against text; 2 and 3 are settings) and **Copy the skill block**; the
-  video call ends with **the bill** (Arup $25.6 million, a UAE bank $35 million, Singapore
-  $3.8 million, and the FBI's 2025 count); every attack on the board carries **The scale**, marked
-  measured, demanded or projected.
-- **§06's pricer** is in class words (minutes you take today, minutes to draft with AI, answers you
-  must open and check, minutes per check, minutes for the record); the arithmetic was re-verified.
-- **§07: Why slot 1 to 4** under the file names the rule behind each slot and says plainly that no
-  rule lists the four; the record block has an **As a skill** view with its own copy button.
-- **D1's detector beat is rewritten to be obvious** (three numbered steps that light as you press
-  them; the meter's zones in words), a third beat shows the two kinds of image mark (a pixel mark
-  survives a screenshot, a provenance label does not), and a callout says why EU law is on a US
-  page. §01's item 9 says the same in one line.
-- **D2's buckets alternate**, the detector question is reworded (a detector answers mark found,
-  uncertain, or no mark found), and the bullets say what a CFP can check (a file, through the
-  free Claude Content Checker) and cannot (text).
-- **D3's two claims carry the current guidance** (temperature is deprecated; effort and adaptive
-  thinking replace it) and a deck of eight flip cards, 2023 against now, ends on the agent loop.
-- **D5 gains The Clocks That Are Law** (a day slider against 72 hours, 30 days, Illinois's
-  "without unreasonable delay" and the hard-count states), a plan block with the three required
-  elements and the four contents of the client notice, and **Two Real Clocks**: Equifax, 40 days,
-  late; Capital One, 10 days, in time; Uber in one line.
-- **D6 has Start again.**
-- **Around the page:** the teaching aid (three pages, colour lanes), this sheet, and 42 new source
-  records with three updated; the README and MAINTAINING now record the Session 4 console.
-
-What could not be verified from the build and is therefore not on the page: the Gemini app's own
-SynthID image check, the Gemini free tier's exact request limits, and "loop engineering" as a term
-(Anthropic's words are "the agent loop"). The handback in the change folder carries the wording you
-may use aloud for each.
-
-## What changed on 2026-09-27: the page now covers the whole syllabus line list
-
-Branch `claude/vigilant-noether-7ep3ev`, `docs/changes/2026-09-27-session-4-syllabus/`. Same
-sections, minutes, gates and polls. What you will notice:
-
-- **§03 has a vendor row above the plans: Claude, ChatGPT, Copilot, Gemini.** Plan A at each
-  opens with that vendor's own switch on (Training on your chats; Improve the model for everyone;
-  Model training on text; Keep Activity) and the calendar shows that vendor's number: five years,
-  until you delete, 18 months (Copilot), 18 months with 18 dashed squares for reviewed chats
-  (Gemini). Off: 30 days, still until you delete, still 18 months, 72 hours. Plans B and C at the
-  three other vendors draw the calendar as dashed squares: "in the contract", which §04 asks for.
-  Only Claude's figures are chipped H; the other three vendors' pages could not be opened and
-  their figures are M, from search summaries. See Verify.
-- **§03's six places are six leaks now.** Each card carries its syllabus word (the default, logs,
-  memory, caches, connectors, features) and opening it names the incident: DeepSeek's open
-  database, shared ChatGPT chats in Google, EchoLeak, the Meta AI feed. The copy button copies the
-  six checks whatever was opened.
-- **§05 ends with an untimed board: four attacks, one wall.** Prompt injection, data
-  exfiltration (named for the first time), deepfake, AI-written malware. Click one and its path
-  to what it reaches lights, with the gate that stops it. Row 4 is the one the page cannot
-  simulate; its gate is ordinary hygiene, drawn dashed, and its readout carries the evidence.
-- **§07's record block ends with a DECISION line**, and the Journal of Accountancy reading is
-  named under the section at M (the article could not be opened; the page claims nothing about
-  what it says).
-- **§04's thesis says what approved means**: the six answers are on paper.
-
-## What changed again, 2026-09-25 evening: every section is a figure
-
-After PR #37 merged, the page was rebuilt a second time in the mode of the most graphic sections
-of Sessions 1 to 3. Same sections, minutes, gates and polls; every section is now a figure the
-room works. What you will notice:
-
-- **Each section has one picture that moves because of a click**, and the words shrank around it:
-  visible words after working every section fell 23%. The per-slot notes below are rewritten for
-  the figures; the numbers you say aloud are in them.
-- **The cold open's prompts changed slightly.** B now asks with a question mark about "someone",
-  and C opens with its request, so every check the page marks is really there or really missing:
-  A 3, B 1, C 4, D 5. D still leads and is still the one you could not paste in.
-- **§03 opens on the consumer default.** Pick A and sixty rust squares fill the calendar (five
-  years); flip the switch off and one square is left (30 days).
-- **The Shift+U hint is hidden until you press Shift+U.** The shortcut works as before; switching
-  it off now keeps any answer key the room had already earned.
-- **On a phone the Case facts button sits bottom right**, not top right.
-- **Two gates tick earlier than their sections finish**: §03 on the first plan pick, D3 once both
-  claims are called. §04's gate also ticks on "Copy the email to the vendor" at any time.
-
-## What changed on the page, 2026-09-25
-
-The page was rebuilt whole. What you will notice:
-
-- **Every section is a thesis line and bullets.** Page prose is down 54%, from 7,140 words to
-  3,293, and the core from 4,821 to 2,207. Session 3's page is 4,007.
-- **Nothing on the page speaks to you.** Both "Requires instructor verification" blocks, the
-  instructor-verification source note, the nine `[UNCONFIRMED]` and `[NEEDS SOURCE]` markers and
-  the first-person asides are gone. What you still need to check is under
-  **Verify before teaching** at the end of this sheet.
-- **The cold open is choose-one-of-four.** Your decision of 2026-09-17. Four beginner prompts,
-  one click, the same eight checks. Prompt D scores highest (5 of 8) and is the one nobody could
-  send: it names Meg, her age, her company, its value and the letter Nathan has not been told
-  about. §02 reopens it. An optional paste box sits under the four, off the one-click path.
-- **No Session 1 baseline is presupposed anywhere.** §06 asks for "your best estimate, or keep 90".
-  The Part 1 checklist says "your best estimate if you never timed it". The D4 discussion asks for
-  the §06 figure.
-- **The 30% grade weight is gone.** Nothing on the page states a date, deadline, grade or weight.
-- **The Part 1 relay is off the page.** The relay table, "forwarded intact" and the pairing draw
-  are in this sheet under 7:15. The page teaches the handoff test with a sample package, so a
-  learner who is not in the room can do it.
-- **The watermark sentence was false and is corrected.** The old D1 said nothing generated with
-  Claude is watermarked. Anthropic's own help-centre page (fetched 2026-09-25) says supported
-  Claude models launched from 2 August 2026 mark their text, all models by 2 December 2026, with
-  detection open only to organisations eligible under EU law.
-- **The model-economics charts left §03.** Session 2 owns cost per task, and the chart data was
-  dated 2026-08-13. §03 is now the contract: plan, training switch, retention, and six settings.
-- **§05 is a simulation you can run live**: an inbox, a hidden line in email 3, a prediction first.
-  The old free-text "write a standing instruction" scorer is gone.
-- **Every sorter answers at once**: the item lands on its stack or tray with a tick or a cross and
-  a one-line reason. Every quiz option has a letter and every sorter item and bucket a number, so
-  the room can commit aloud before anyone clicks.
-- **Shift+U stays** and opens every answer key on the page; it also ticks every Work along box.
-
-## The objective, said before 6:12, out loud, once
-
-> "One thing tonight. By nine o'clock you will be able to take one AI task from your own work and
-> answer four questions about it: what may go in, where it goes, how you check what comes out, and
-> what record you keep. That is what I will check before I let you go."
-
-Bloom tier: Apply, with an Evaluate edge (the "may" and the "how you check"). The closing check at
-8:41 asks exactly this, at the same tier. It is printed on the page in §00 as "Session 4's one
-thing".
-
-For the three who do not run client meetings: "If you do not advise clients, pick any recurring
-task at work that you would like AI to help with; the four questions are the same."
-
-## The clock
-
-The clock is page 1 of the teaching aid. Twenty-seven steps, 6:00 to 8:49, eleven minutes of
-buffer; five black-numbered steps are never skipped (objective, cold open, §02, demo A, the cold
-run, the closing check), and red stops are printed at 6:46, 7:02 and 7:33. The three live segments
-the notes asked for sit where the aid places them: the de-identification work-along after §02
-(6:36), the Live API box after §03 (6:55), the hidden-text demo after §05 (7:52) and the watermark
-demo after §07 (8:15). Lecture stops of two minutes follow §00, §01 and §04 (cards E1 to E3 on
-page 3). Scheduled 169 of 180.
-
-### Checkpoints, readable off a clock
-
-| By | Finished |
-|---|---|
-| **6:46** | Demo A, the work-along, is done. If it is not, cut the three questions to one. |
-| **7:02** | The break has started or the night is already lost. |
-| **7:33** | The cold run is done and logged. It only works once, cold. |
-| **8:25** | D4 has begun, short: vote, complication, re-vote. |
-| **8:41** | The closing check starts, whatever is unfinished. |
-
-## The corrections slot, 6:03
-
-One aloud. Say it with its confidence label.
-
-1. **The watermark does not identify your account.** In Session 1 the room heard that Claude output
-   can be traced to the account that produced it. What Anthropic's own page says (fetched
-   2026-09-25, high confidence): text from supported Claude models launched from 2 August 2026
-   carries an invisible watermark, all models by 2 December 2026, and only organisations eligible
-   under EU law, such as regulators, researchers and the press, can run the detector. A detected
-   mark says the text may have passed through Claude. **Nothing on the page says it identifies an
-   account or a person** (medium confidence: that is a reading of what the page does not say).
-   Read the page yourself before you say it: support.claude.com, "How Claude marks AI-generated
-   content". Appendix D1 carries the detail if anyone asks.
-
-## The five polls. Build them in Zoom before the night
-
-| Poll | When | Question | Options | Decision rule |
-|---|---|---|---|---|
-| 1 | 6:12 | Which of the four would you have sent? | A, B, C, D | Click the most-picked letter first. If anyone picked D, click D second and say "hold that thought for §02". If nobody did, click D yourself. |
-| 2 | 6:46 | Which AI tool, and which plan, do you use today? | Claude, ChatGPT, Copilot or Gemini, then: a personal plan; a plan my firm signed; the API; none | Click the most-picked vendor first, then its plan A. If a majority are on a personal plan, spend the minutes on the switch and the calendar at that vendor. If most are on a firm tool, click B and go to the six leaks. |
-| 3 | 7:42 | Before it runs: what will the assistant do? | a, b | If half or more pick (a), run it without comment and let the output land. If most pick (b), ask one (a) voter why before you run it. |
-| 4 | 8:26 | First vote: the full record costs more time than the AI saves | a agree, b lean agree, c lean disagree, d disagree | Show the distribution. The minority side speaks first. |
-| 5 | 8:33 | Second vote, after the complication | the same four | Show both distributions side by side. Report the change; a zero change is a finding, not a failure. |
-
-## The three gated questions
-
-Each is asked, answered by the room or by you, and not skipped. Nothing else is gated.
-
-1. **[GATE 1] §02, 6:31.** "Her name is gone, the company name is gone. What is still left that
-   points to her?" Answer: the trade and the town together, "an aerospace-fastener maker in
-   Rockford". It is the Session 3 insight; say "you found this last week, Regulation S-P is the
-   rule behind it".
-2. **[GATE 2] §05, 7:48.** "What stops this attack: better wording in the prompt, or less access
-   for the assistant?" Answer: less access, and an approval step before it sends anything.
-3. **[GATE 3] §07, 8:12.** "Record 3: full prompt, full model name, date, full output, the clause
-   summarised in your own words. Could an examiner re-check it?" Answer: no. A summary records
-   what you understood; if the model misread the clause, your summary repeats its error.
-
-## The three who do not run client meetings
-
-The page already carries them: §02 and D6 are about any client data, §03 and §04 are about any
-tool, the §08 sample package is not a client workflow, and the objective is "one AI task from your
-own work". Say the one sentence under the objective and nothing more.
-
-## The closing check, 8:41, written
-
-> "In chat, one line each: take one AI task from your own work. What may go in, where does it go,
-> how do you check what comes out, and what do you keep?"
-
-Written, not spoken: spoken closing asks returned silence twice. Read three aloud. If a line has
-no "what do you keep", say so, kindly, and name §07.
-
-## Part 1 relay and the pairing, 7:16
-
-This came off the page because a learner working alone cannot do it. What the page used to say, now
-yours to say:
-
-- **Before class:** each learner emailed you one message with every file attached and a body
-  reading only "See attached". You read each package as received and screened every attachment
-  for real client data. **Do not send on any package that contains real client data**; that
-  learner runs the page's sample package instead.
-- **The pairing.** Nobody runs their own package, and no two people run each other's. Method,
-  done before class: list the names in a random order; each person runs the package of the next
-  name down, and the last runs the first. With eight people there are no reciprocal pairs.
-- **Forward intact, do not repackage.** A failed handoff is the builder's finding only if the
-  receiver got exactly what the builder sent. Forward the original email unaltered.
-- **Anyone without a package** (theirs is missing, or theirs was held back) runs the sample in §08.
-  It has five gaps on purpose; the page's "Show the gaps" button lists them.
-- **Builders, while they watch:** do not help. Write down what the runner tried that you did not
-  anticipate. That list is the most valuable page of the Part 2 response, and it can only be
-  collected tonight.
-
-## Standing
-
-### Flow
-
-- 8 minutes for the cold open, as every session. It is choose-one-of-four now, by your decision of
-  2026-09-17; the earlier note on this sheet, "do not vary it", is superseded.
-- D4, minute 6 (it is ten minutes now): after both sides commit to a time-cost frame, say the complication, which is also
-  on the page behind "The complication": the burden is paid once per workflow, not once per
-  deliverable. Ask both sides to re-price. Then Poll 5.
-
-### Drop order, first to go at the top
-
-The drop order is on page 1 of the teaching aid (demo C to the checker only; D3 to card 1; §04's
-clause view to lock 4; D5 to the pick and one real clock; D4 to vote, complication, re-vote).
-Never drop: the cold open, §02, demo A, the cold run, the closing check.
-
-## Per-slot notes
-
-Rewritten 2026-09-25 evening for the figures, and updated the same night for the polish pass
-(fewer controls on screen: a step's controls appear once the step before it is done). Button
-labels are the page's own.
-
-### s0 · Bridge, 6:05
-Three recall items, answers **b, c, a**; say the letter, then click. A wrong letter turns rust and
-the right one gets a tick, with "Not quite: (a)." in the feedback. Then **Zoom out**: the model
-shrinks into a building with four stops, In, Where, Check, Keep, and the prompt card walks them
-once. Click stops 1 to 4 if there is time; stop 4 lists all four questions, the objective.
-
-### sCold · Cold open, 6:12 · **WORKED 1**
-Poll 1, then click the most-picked card; its token lands on the track at its score. **Test 1 ·
-check all four**, then **Test 2 · could you paste it in?**: the track splits, and D, the most
-checks, sinks into "names a client". Say the scores off the comparison panel: **D 5, C 4, A 3,
-B 1**. The line to land: "Whether a prompt is good and whether it is allowed are separate tests."
-"Now try one of your own" appears after Test 2; do not run it on screen.
-
-### s1 · §01, 6:19
-Guess first: the room's number for how many of the nine bind them; click it (it locks). Then
-open a lane and click every item that belongs in it: lane 2 takes 1 to 5, lane 3 takes 6 to 8,
-lane 1 takes 9. **What binds you?**: the four items that name AI drop through the floor. Actual:
-0. The pull line: "The duty you are looking for has existed since 1940."
-
-### s2 · §02, 6:26 · **WORKED 2**
-Ask the guess aloud first ("name and company gone: still one person?"), click **A**; the name and
-company are replaced for you. Gate 1 now: the town column and the trade row still cross on her
-dot, "likely one person". Then the room calls phrases: the trade, Rockford, her son Nathan. The
-meter goes Probably, Possibly, No; at No the crowd reads "dozens". **Copy the clean prompt** and
-paste it in chat. D5 and D6 follow this section at Foundational depth; D6 is skipped (demo A covers it) and D5 runs at 7:56.
-
-**2026-09-28, beat 2, The Harder Ones.** After the copy: "Names gone. How many of these nine
-phrases still point to her?" Room guesses 0 to 5+; click it (it locks). Then call phrases: 1 her
-title, 2 the exact age, 3 the 180 employees, 4 the 2016 sale from her father, 5 $55 million, 6 the
-retired pharmacist, 7 Barrington Hills. The big number goes 1 person, a handful, dozens, hundreds,
-thousands, anyone; seven sieves dissolve. Answer: all seven. The two unnumbered-looking phrases (the
-competitor's letter, the task) are safe to keep. **Copy the clean note**; **Start again** resets it.
-
-### s3 · §03, 6:46
-Poll 2 first, and click the room's vendor in the row above the plans. At **Claude**, **A · Free,
-Pro, Max**: sixty rust squares, five years, "Your firm signed nothing". Switch off: one square,
-30 days. At **ChatGPT**, A: sixty squares either way, "until you delete"; the switch stops
-training, not keeping. At **Gemini**, A: 18 rust squares and 18 dashed ("36 months if read");
-off: one square, 72 hours. At **Copilot**, A: 18 squares either way. Click **B** at any vendor:
-the contract page slides to the firm, no switch; at the three other vendors the calendar goes
-dashed, "in the contract". The line to land: "Same model, different contract, at all four." Then
-the six leaks: open **2 · LOGS** (DeepSeek) and **5 · CONNECTORS** (EchoLeak, which §05 runs);
-the other four are theirs after class. Every non-Claude number is M (see Verify).
-
-**2026-09-28, the ladder and Plan C.** Under the leaks: **Personal or Firm Account**. Click rungs
-1 to 6 in order and read the "stops" line for each: 1 training off (personal: only if you flip it;
-firm: by contract); 2 retention in writing (30 days standard on the API, Enterprise sets its own,
-ZDR by arrangement); 3 a contract the firm signs (an officer, never you); 4 an audit report on
-request (SOC 2 Type II, ISO 27001, ISO 42001 held); 5 SSO, admin controls, audit logs; 6 breach
-notice in hours (48 in Anthropic's DPA against the 72 the rule makes you require). The personal
-door never opens; the firm door opens on rung 6. **Climb all** for the animation. Land: "the plan
-buys the contract, not the model." Then **Open the Live API box** (page 2, D of the aid).
-
-### s4 · §04, 7:33
-Pick **C · Client file**, then answer the locks for the consumer plan you use: lock 1, the
-business contract, is No, and the file bounces off the shut slot with "✗ Stop". To jump to a
-lock, click it in the safe (the row of numbered tabs is gone). Click **B** and
-**A** for their verdicts, then show the email the open locks wrote. The 72 hours run from the
-vendor becoming aware of a breach. Standard A.14 is on the page at medium confidence (see Verify).
-
-**2026-09-28, the email and the clause view.** **Copy the email to the vendor** now copies a real
-email: a subject line, one opener naming Regulation S-P, and Lock n: the question for every open
-lock; when all six are shut it asks for written confirmation instead. Then **What the Clause Looks
-Like**: click **2 · No training** (Anthropic's sentence, verbatim), then **4 · 72h notice** (the
-DPA's 48 hours, verbatim, against the rule's 72), then any other. The contract page inks a line per
-lock and signs when all six are read. **Copy the sample contract** for the room.
-
-### s5 · §05, 7:42
-Poll 3. Click the majority letter; it locks. **Run the assistant**: three estate files cross the
-firm's wall, and the summary ends "I also forwarded 3 files". The x-ray and the fixes appear
-only now. **Sweep the x-ray**: the white line in email 3 appears. Gate 2, then show fixes 1 (a warning: not a lock), 2 (approve each
-send: held) and 3 (only what it needs: nothing leaves). Video call: (a) first if the room wants
-it, then **(c)**, the number on file: "I never called you." One sentence on Arup. If there is a
-minute: the board **Four attacks, one wall** under the call. Click **4 · AI-written malware**: the
-one attack no page can simulate, its gate drawn dashed because it is ordinary hygiene, and the
-Anthropic and Google cases in the readout. Say the SEC line: the FY2026 priorities name AI and
-polymorphic malware among the security controls examiners test (M, see Verify).
-
-**2026-09-28, how it hid, the fixes' language, the bill, the scale.** After the x-ray: **How it
-hid: pick one**, 1 to 4; 3 (invisible characters) and 4 (in an image) are the ones the room has not
-imagined. Each fix now prints the sentence you would put in the skill and a verdict: 1 is text
-against text (FINRA: it "cannot reliably distinguish"), 2 holds when the tool enforces the pause, 3
-is set in the connector. **Copy the skill block** once 2 or 3 has been tried. After the call answer,
-**the bill** appears: three bars, one sentence each. On the board, each attack's readout has **The
-scale** line: EchoLeak $0, the patch came first; a US breach averages $11.5 million (2026); Arup
-$25.6 million and the FBI's $893 million; demands above $500,000 with no paid figure public.
-
-### Relay, 7:16
-See the Part 1 relay section above.
-
-### sCR · §08 cold run, 7:21 · **WORKED 3**
-Eight minutes silent, then each runner clicks the station on the route where they first stopped
-(the list of seven sentences is gone; each station's sentence heads the readout) and writes one sentence in chat: "stopped at: ... because ...". Their token shudders at
-that stop. **Show the gaps · run the builder** after the harvest: five barriers drop on the
-sample, and the builder's token glides past every one from memory. Nobody fixes anything
-tonight; that is Session 5.
-
-### s6 · §06, 8:04
-Ask for a guess, drag to it, **Lock my guess**, **Run 100 memos**: the skyline climbs 17, 31, 43,
-53, 61. Run it again: the count moves, the average stays near 61. Then **33%**: about 86. **Check
-every answer**: 500 answers opened to catch 85 wrong ones. The pricing panel at its defaults: 90
-without AI, 39 with, still saves 51. Move "Answers or citations to check" to 20: saves 6; set 4
-minutes each: costs 14 more.
-
-**2026-09-28.** The pricer's five sliders are in class words; nothing else moved. Say the framing
-in the hint: checking means opening the source behind each answer (the grounded answer, Session
-3); the record is the file an examiner can re-check (§07). The record is the smallest bar; checking
-is the one that grows.
-
-### s7 · §07, 8:09
-One record at a time: the room says A or B, then **Next record ▸**. Records 1 to 4 are B (Gate 3
-on record 3, the summary), 5 and 6 are A. Then **Last step · Check record 6's citation**: slot 3,
-*Hallowell v. Commissioner*, turns NOT FOUND. "Complete is not correct." Copy the record block
-and point out the first three lines are theirs to fill, and the last one, DECISION, after they
-have read the answer: a model cannot reliably report its own name, the date, or what they
-decided. The Journal of Accountancy reading is named under the section; the page claims nothing
-about its content because the article could not be opened from the build.
-
-**2026-09-28, the four slots' provenance and the skill.** Under the file: **Why slot 1** to **4**.
-Say the sentence on the page: no rule lists these four; the rules require the record (Rule 204-2
-for advisers, FINRA 4511 and 17a-4 for broker-dealers) and a basis for advice (the fiduciary duty);
-FINRA's 2026 report expects supervision and logging; Rule 206(4)-7 makes the AI policy and its
-annual review a record. Then **As a skill**: the same block as a SKILL.md with a name and a
-description, and **Copy the skill**. Mention the skill's name may not contain the vendor's name.
-
-### sD · D4, 8:25
-Set depth to **+ Standard**; D4 appears after §08. Poll 4 is the sealed vote; click the
-majority on the page and the scale loads with the §06 defaults: 70 saved against 19, the saving
-by 51. Minority side first, two speakers per side, 90 seconds each. **2 · Weigh both cases**: the
-agreeing case charges all 120 setup minutes to one deliverable, the burden by 69. At minute 11,
-**3 · The complication**: shared by 12, the saving by 41, tipping point 3. Poll 5, then **4 ·
-Vote again** on the page with the majority. Both distributions on screen.
-
-**2026-09-28.** Ten minutes, not eighteen: vote, both cases in one breath, the complication at
-minute 6, re-vote. Both distributions on screen.
-
-### s9 · §09, 8:35
-The course data rule aloud: "No real client data or personally identifying information enters any
-AI tool at any point in this course." Then the six rows, the room calling a or b: the checkable
-clauses are **a, b, a, b, b, a**, and each pick is stamped checkable or too vague. **Copy the
-outline** into chat. The assignment: two pages, bullets, three cited sources, one scholarly.
-
-### sRSP · D5, 7:56 (depth to Foundational)
-Pick the event: **2**, the log read; the bar lands on Day 33. Close the clause. Then **The Clocks
-That Are Law**: drag the day to 4 (the vendor's 72 hours have run), to 31 (the firm's 30 days have
-run), to 45; read the consequence lines. Then **Two Real Clocks**: **Equifax** drops a 40-day bar,
-stamped LATE, at least $575 million; **Capital One** ten days, IN TIME, and still $80 million for
-the control failure; Uber in one line. Say it: none of these companies was under Regulation S-P's
-clock; the principle, count from the day you knew, is what they show. Your breach story goes here
-(page 2, G of the aid). **Copy the plan skeleton** last.
-
-### sAnon · D6 (not run tonight; the demo covers it)
-**Start again** resets the whole section without reloading, so it can be run twice if a second
-cohort asks.
-
-### sW1 · D1, 8:15 (depth to + Advanced), with demo C
-**Run the knockout** with Key A, Key B, off. Beat 2, press **1, 2, 3** in order: 19 of 24, mark
-found; 11 of 24, chance; 15 of 24, uncertain. Say the closing line: you will never hold the key.
-Beat 3, **Images Carry Two Kinds of Mark**: toggle the pixel mark and the label, then Crop,
-Screenshot, Compress: the label dies on screenshot, the pixel mark does not. The callout at the end
-is the EU answer if anyone asks why EU law is on the page.
-
-### sW2 · D2 (one sentence tonight)
-"You will not run the detector. What you can check is a file, through the free Claude Content
-Checker; what you keep is your own record."
-
-### sWS · D3, 8:21 (depth to + Standard)
-Call both claims, drag each to now. Claim 1's key now says what to set instead: nothing; effort
-defaults to high, and the app's selector is the same control. Then **Flip the Cards**: 1
-(temperature), 5 (grounding built in), 8 (the agent loop); **Flip all** if there is a minute. Do not
-say "loop engineering" as a term; say "the agent loop, Anthropic's phrase".
-
-## Verify before teaching (moved from the page 2026-09-25; the on-page blocks are gone by instruction)
-
-Nothing below is stated as a holding on the page. Check each against primary authority before
-answering it in class.
-
-- **Regulation S-P, 17 CFR § 248.3.** §02 says the fact that someone is your client counts as NPI
-  on its own, and that public information becomes NPI when disclosed in a way that shows the
-  person is your client (both chipped H). It then applies the rule to a combination of fields that
-  identifies one person without a name (chipped M, "applied"). Confirm the combination reading
-  with your compliance officer before you teach it as settled.
-- **The 72-hour service-provider notice** in §04. The 2024 amendments require a covered firm's
-  policies to require service providers to notify the firm as soon as possible and no later than
-  72 hours after becoming aware of a breach affecting a customer information system. Carried at H
-  from several consistent secondary sources; the SEC release itself was not loaded from the build.
-- **The D5 awareness reading.** The page treats the operations lead reading the access log (Day 3,
-  9:05) as the moment the firm became aware. That is the lesson's reading, chipped L, not a
-  holding.
-- **CFP Board Standard A.14**, Duties When Selecting, Using, or Recommending Technology. §04
-  paraphrases it as "reasonable care when selecting, using or recommending technology" at M,
-  because cfp.net is blocked from the build. Read the Standard.
-- **CFP Board Generative AI Ethics Guide (February 2025)**, on pseudonyms and removing confidential
-  information before upload (§02, D6), at M for the same reason. You have the PDF.
-- **The SEC's withdrawal of the predictive data analytics proposal**, 12 June 2025, with thirteen
-  others (§01 sorter), at M: reported consistently by several law firms, the SEC page not loaded.
-- **Anthropic's consumer terms** (§03): training on by default for Free, Pro and Max, five years
-  if it is on, 30 days if off; retrieved 2026-08-14. The page opens plan A with the switch on. A
-  vendor can change these without notice, and privacy.claude.com could not be re-read from the
-  build on 2026-09-25.
-- **The FY2026 exam priorities** name AI and Regulation S-P. The SEC's fiscal year ends
-  2026-09-30, two days after class; the FY2027 priorities may follow. New on 2026-09-27: §05's
-  board quotes §VII as naming "AI and polymorphic malware attacks" among the training and
-  security controls examiners review. That line is at M, from several consistent law-firm
-  summaries; sec.gov could not be opened. Read §VII before you say it.
-- **The three other vendors' terms** (§03, 2026-09-27), all at M because help.openai.com,
-  support.microsoft.com, learn.microsoft.com and support.google.com are egress-blocked from the
-  build: ChatGPT's "Improve the model for everyone" on by default for Free, Plus and Pro, chats
-  kept until deleted, deleted chats gone within 30 days, Business and Enterprise excluded from
-  training; Copilot with a personal Microsoft account may train unless you opt out under "Model
-  training on text", history 18 months by default, enterprise data protection under a work
-  account; Gemini's "Keep Activity" on by default, 18-month auto-delete, human reviewers, reviewed
-  chats kept up to three years, 72 hours with the switch off, Workspace not trained on and not
-  reviewed. Open each vendor's page before class; the numbers move without notice.
-- **The four leaks** (§03, 2026-09-27), three at M: DeepSeek's open database (Wiz Research,
-  January 2025), shared ChatGPT chats in Google results (TechCrunch, July 2025), the Meta AI
-  Discover feed (Tom's Guide, June 2025; the original reporting would be the better citation).
-  EchoLeak is H on its CVE record.
-- **AI-written malware** (§05, 2026-09-27): Anthropic's September 2026 threat report was fetched
-  through a summariser and the quoted sentence came back verbatim (H, but read the case). Google's
-  November 2025 tracker (PROMPTFLUX rewriting its own code through the Gemini API, experimental) is
-  at M; services.google.com could not be opened.
-- **The Journal of Accountancy reading** (§07): the syllabus calls it "Writing an Effective AI
-  Prompt for an Audit Trail"; the page's own title, as search returns it, is "Writing an effective
-  AI prompt for an audit", November 2025, author not captured. journalofaccountancy.com could not
-  be opened, so nothing on the page characterises it. Read it and decide whether §07 should say
-  what it recommends.
-- **From the case dialog** (its gate is off this page too, as on Sessions 2 and 3): whether
-  §7872's blended annual rate or §1274's applicable federal rate governs a demand note issued in
-  exchange for property (CASE.md §H.4 records no controlling authority); whether the combined
-  lack-of-control and marketability discount the memorandum asserts is supportable (no appraiser
-  engaged, no restricted-stock or pre-IPO study on file); the Illinois estate tax rate table and
-  the adjusted-taxable-gift add-back (both at M); the Illinois replacement income tax on trusts
-  (CASE.md §D.3 carries the rate at M). Karmazin, Woelbing and Davidson are flagged in CASE.md
-  Part I as settled or stipulated: they decided nothing and are not authority. Nothing tonight
-  asks any of these.
-
-- **New on 2026-09-28, the ladder and the clause view (§03, §04).** Every Anthropic figure was
-  read on 2026-09-27 from claude.com/pricing, the Commercial Terms, the Data Processing Addendum,
-  the retention docs and the certifications article (all H). Prices and terms move without notice;
-  open claude.com/pricing once before class.
-- **The deepfake bill and the breach clocks (§05, D5).** Arup, the UAE bank, the Singapore cases,
-  Equifax, Capital One and Uber each rest on three or more independent publishers found by search;
-  none of the primary pages could be opened from the build. Figures are H on that basis.
-- **The hiding techniques (§05).** Each technique rests on the researcher's own write-up plus
-  independent coverage, found by search; none was opened. The FINRA prompt-injection primer's
-  sentence ("cannot reliably distinguish") is from finra.org search snippets, M: read the page.
-- **The state day counts (D5).** Colorado, Florida and Washington 30, Maryland 45, Texas 60 are
-  from aggregator sites only (M); Illinois's statute wording is H from three publishers.
-- **The Gemini app's own SynthID image check** is not on the page: Google's pages are egress-blocked
-  and the search budget ran out before it could be triple-sourced. If you say it, say "Google has
-  described a check inside the Gemini app for images made by its own models; open Google's page
-  before relying on it."
-- **The Gemini free tier's request limits** are not printed: sources conflict (about 20 a day on
-  newer models against 250 on older ones after the December 2025 cut). Say "small; check your own
-  console."
-- **The legality of the work-along** (demo A): the verdict on page 2 of the aid rests on the rule
-  text as reported by three publishers each (§248.10, .13, .14, .15, Standard A.9); the one thing
-  only you can check is your own firm's manual on personal-account use and external display.
-- **New on 2026-09-27, from the fact-check behind the rule key's page 2** (`session-4-rule-key.pdf`;
-  web search only; the regulators' sites refused the build, so each point is M unless marked).
-  - **The EU Digital Omnibus is in force.** It is Regulation (EU) 2026/1744, in force 27 July 2026.
-    Article 50(2) marking applies from 2 August 2026 to systems placed on the market from that
-    date; systems already on the market have until 2 December 2026. That is Anthropic's own
-    2 December date.
-  - **Anthropic's detector is open to more than regulators and researchers.** The help page, which
-    was opened (H), also names enterprises that the AI Act obliges to verify marking. Marking
-    applies worldwide. The corrections line still holds: nothing on the page says the mark names
-    an account.
-  - **The 72-hour notice binds the firm, not the vendor.** The firm's policies, and its contracts,
-    must require the vendor to report within 72 hours.
-  - **FINRA Regulatory Notice 26-14, 9 July 2026**, proposes replacing the principal's
-    pre-approval of retail communications under Rule 2210 with a risk-based standard, citing
-    generative AI. Comments closed 11 September 2026. Not adopted.
-  - **No SEC or FINRA rule says prompts and outputs are records.** FINRA's 2026 oversight report
-    suggests keeping prompt and output logs. The SEC's spring 2026 agenda lists amendments to the
-    scope of electronic communications under Rule 204-2.
-
-## What is not yet done
-
-- The five polls are not built in Zoom (Poll 2 asks the vendor as well as the plan).
-- Demo A's Google Doc (the synthetic transcript), demo B's white-text doc, and demo C's PNG plus its
-  screenshot are not made; a free Gemini key for the box is not created (make it on a throwaway
-  Google account; it is plan A).
-- Your own firm's manual has not been checked on personal-account use with de-identified text and
-  on showing client material to a class; the verdict on page 2 of the aid assumes it forbids the
-  first unless it says otherwise.
-- The corrections line rests on a page fetched through a summariser; read it yourself first.
-- The pairing list is not drawn, and the packages are not screened.
-- Speaker-labelled transcripts: confirm they are still on.
-- Poll 2 now asks the vendor as well as the plan; rebuild it.
+Run sheet for the 2027 term, rebuilt on 2026-10-13 against `session-4/index.html` after Phases 6b and 9. Core runs 60 of the 150 allocated minutes; the page opens at Core only depth and the appendix adds up to 90 minutes in three tiers. No clock times or dates are fixed here. Nothing in this file addresses a learner. Teach the session from `session-4-teaching-aid.pdf` (the order, the live demos off the page, the lecture cards); `session-4-rule-key.pdf` holds the nine items of `s1` with the date each passed and whom each binds. This sheet is the full version.
+
+## Objective and set-up
+- Objective, said aloud once before minute 10: "One thing this session. By the end of the session you can take one AI task from your own work and answer four questions about it: what may go in, where it goes, how you check what comes out, and what record you keep. That is what I will check before I let you go." Bloom tier Apply, with an Evaluate edge in the closing check. For anyone who does not run client meetings: "pick any recurring task at work; the four questions are the same."
+- Tabs open before the room fills: `cases/case-4.html` and `session-4/index.html`. Leave the depth control (in `s0`) on Core only; raise it only to show one chosen appendix section. The Live API box at the top of the page is optional and off; no core section needs a key.
+- The four Zoom polls are built and tested (`instructor-notes/session-4-polls.md`); students are not co-hosts; Poll 3 is not anonymous. Speaker labels on. Read "Verified facts for this session" below: every clock, plan term and legal characterisation you say aloud is on it.
+
+## Core run order (60 min)
+1. `s0` Bridge and frame, 7 min, `retrieval-bridge` (`t-s0`). Four recall questions, no notes: say a letter, then click it. Answers **b, c, a, c**. Read "Session 4's one thing" aloud, then Zoom out: the model inside four stops, In, Where, Check, Keep; stop 4 lists the four questions. The Coles in two lines.
+2. `sCase` Case 4, the client file, 10 min, `prediction-commit` (`t-sCase`). **Case-opener moment:** the students opened `cases/case-4.html` before class; this section re-asks the same three commits. Read the big paragraph, then three minutes of silence: each student picks one answer to each question and writes it down. On "go", three letters in chat; on the shared screen pick the room's majority and press "Commit all three answers", which opens the reveal, type the chat counts into the Room tally boxes under it, and read the reveal question by question. Key: Q1 **B** (the jobs, the town, the marriage and the family still point to one household, so the finished file is pseudonymized, not anonymized, and the key stays in the firm's own files); Q2 **B** (the plan buys the contract, not the model); Q3 **B**, 72 hours (the firm's own 30 days to clients is `sRSP`). Prediction, not data: Q1 draws the votes of anyone who thinks removing names is enough, and Q3 splits between the two numbers students half remember. Say before the key opens that a wrong guess is the design. **The one case link moment:** the button "Open Case 4: the de-identified file, the vendor decision and the breach timeline" at the top of the section, for anyone who skipped the page; two minutes, then the same commit. Bridge in one sentence to `s1`.
+3. `s1` Which AI rules bind you, 5 min, `multi-column-sorter` (`t-s1`). **Poll 1** (ranking) opens it. Then the page's guess, how many of the nine were written for AI and bind you, and the sorter: nine items into three lanes, lane 2 takes items 1 to 5, lane 3 takes 6 to 8, lane 1 takes item 9. "What binds you?" opens when all nine are placed and the four items that name AI drop through the floor. Answer to the guess: **0**. Item 9, the EU rule, binds the vendor selling in Europe, not a US adviser; it is why supported Claude models mark their text (Appendix D8). Say the page's four bullets from the facts below: the notice is still published (FACTS:finra-24-09-status), the priorities have no legal force (FACTS:sec-exam-priorities-status), the two AI-washing settlements (FACTS:sec-ai-washing-enforcement), the withdrawn proposal (FACTS:sec-pda-withdrawal). Pull line: "The duty you are looking for has existed since 1940."
+4. `s2` Debrief: what counts as client data, 5 min, `builder-assembler` (`t-s2`). The room marked the Coles' note on the case page; this debriefs it. **Beat 1, Prompt D** (3 min): ask the guess aloud, "remove only her name and employer, can someone still find her?", and click **A**. The room then calls phrases until the meter reads No. Prompt D has twelve numbered phrases and **nine keyed items**: seven identifiers replaced (her name, her exact age, her job title, her employer, the town, her husband's job, her daughter's name) and the two confidences, David's division and Emma's card debt, removed as whole sentences under CASE.md Part J. The instruction, the question and the format line are the three that stay. The meter cannot read No while either confidence is in. Ask: "name and employer gone, what still points to her?" Answer: the job and the town together. Copy the clean prompt into chat. **Poll 2** (multi-select) opens **beat 2, The Harder Ones** (2 min): the note with no names has nine numbered phrases and **eight keyed items**, seven identifiers plus the division sentence, which is removed whole; the task is the one phrase that stays. The figure is eight sieves. The guess buttons stop at 5+, so anyone who answers six or more presses 5+. Answer: **all eight**. Copy the clean note. Land: names are the easy part, the combination is the identifier, and being your client counts on its own. The file holds three confidences (Part J): David's division, Ruth's $25,000 loan to Tom and Emma's card debt; Prompt D carries two of them, and none belongs in any tool.
+5. `sRSP` The thirty-day clock, 8 min, `commit-first-mcq` (`t-sRSP`). **Poll 3** (the breach-deadline poll) opens it. Read the big paragraph, then everyone picks one of five events on the timeline or in the list; the first pick locks. Zoom letters A to E are events 1 to 5. Key the five counts from Poll 3 into the boxes under the timeline, then read the key: event 2, the log read, is the defensible start (Day 3, notice by Day 33); event 3 reaches Day 33 for the wrong reason; event 4, counsel's letter, is six days late; event 5, the client's call, is 18 days late; event 1 turns on her role and the firm's policy. Then **The Two Clocks That Are Law**, 3 min: use the Day 3 and Day 30 buttons. Day 3 is where the service provider's 72 hours have run; Day 30 is where the firm's 30 days to clients have run; read the consequence lines. Say the rule from the facts below (FACTS:reg-sp-compliance): in force for every covered firm, 30 days from awareness, 72 hours from the vendor, and the rule sets no clock for telling a chief compliance officer. **Hand-off to `sD`:** see the discussion below. Teaching-aid slot: the story of the adviser you know who had a breach, 3 minutes, no name, no firm; end on which day their clock started and who owned the date.
+6. `s7` The record, 5 min, `two-bucket-sorter` (`t-s7`). Six records, one at a time: could an examiner re-check it, A or B? Records 1 to 4 are B, records 5 and 6 are A. Ask on record 3, the summary memo: "could an examiner re-check it?" Answer: no, a summary repeats whatever the model misread. Last step: check record 6's citation; it turns NOT FOUND, the case is invented for the exercise. "Complete is not correct." Press Why slot 1 to 4: no rule lists the four, the rules require the record and a basis for advice. Then the record block (prompt block, then As a skill; Copy). Read the watermark card in three lines from the facts below (FACTS:claude-text-watermark, FACTS:google-synthid, FACTS:openai-provenance): a found mark is a hint, a missing one proves nothing, and your own record is the proof.
+7. `sD` Discussion: does the record cost more than the tool saves? 15 min, `sealed-vote-debate` (`t-sD`). See the next section.
+8. `s9` Your firm's AI use policy, 5 min, `builder-assembler` (`t-s9`). **Poll 4** (numeric range) opens it. Say the course data rule aloud: "No real client data enters any AI tool in this course." Then the builder: one clause per row, six rows; the clauses an examiner can check are **a, b, a, b, b, a**, and each pick is stamped checkable or too vague. Copy the outline. The policy task and its card are on the page: point at them, do not restate them. The reading card for Session 5 sits at the foot of the page; do not announce it.
+
+Poll map: Poll 1 at `s1`, Poll 2 at `s2` beat 2, Poll 3 at `sRSP`, Poll 4 at `s9`; at about minutes 17, 25, 27 and 55 of the core. Break, 10 minutes, posted as a clock time, at the natural stop nearest the middle of the session (after `sRSP` and the breach story on the teaching aid's suggested run), never inside `sD`; keep it for rest, not for one-to-one tech support. If behind, cut appendix first, then the `s7` record-block copy, the `s1` bullets and the `s0` tour; never `sCase`, `s2`, `sRSP`, `sD` or the closing check.
+
+## Named discussion: predicted split
+- The proposition on the page: for a typical recurring deliverable, the full burden costs more time than the AI saves. Four sealed options: a Agree, b Lean agree, c Lean disagree, d Disagree. The first vote loads the scale with the pricer's starting values: 90 minutes by hand, 20 with AI, 15 to check, 4 for the record, so 70 saved against 19 per deliverable (if the room changed the pricer in Appendix D5, the scale loads those minutes instead).
+- Prediction, not data, written for about eight learners: first vote a 2, b 3, c 2, d 1 (5 of 8 agree or lean agree, about 63%). The agreeing side is the practicing advisers who have just spent forty minutes adding steps (replace, vet, clock, record) and vote before the scale loads; the disagreeing side is whoever's deliverable is short and recurring. At that size name the choice and the names, not a mean.
+- **Hand-off from Poll 3.** The seed box at the top of `sD` reads "Seeded by the 30-day poll" and, once the five counts are keyed in, names the smallest group, which opens the defence, and the largest, which answers. Poll 3 was not anonymous: open the Zoom report and call a member of the smallest group by name. Ask them: "You counted the 30 days from event N. What record would you have needed to show an examiner that date, and what did keeping it cost?" If two events tie for smallest the page names the lower number; pick between them by name. If everyone picked event 2 the page says a zero spread is a finding; take the defence from the first vote instead.
+- Phases: position, vote and lock (2 to 3 minutes); defence, "Weigh both cases", minority side first, ninety seconds each, called by name (7 to 9); complication (4 to 5); re-vote (2 to 3).
+- Complication on screen, phase three, the page's card: setup is paid once per workflow, not once per deliverable. Setup is 120 minutes (vet the tool 60, placeholders 30, record block 30). Not shared, all 120 land on one deliverable and the burden wins by 69 minutes. Shared by 12, it is 10 minutes each: burden 29 against 70 saved, the saving wins by 41, and the tipping point is 3 deliverables (shared by 2 the burden still wins by 9; by 3 the saving wins by 11). If a voter says checking is the real cost, press ×4: shared by 12 the burden wins by 4 and the tipping point moves to 21.
+- Second vote, same buttons, both distributions on screen, say nothing about the delta. Expect two or three voters to move one or two steps toward disagree: the complication changes the arithmetic, not the obligations. A zero delta is a finding; say so and stop.
+
+## Appendix: select live, up to 90 minutes
+Each section sits after the core section named, and the tier decides what shows at each depth setting. The teaching aid's suggested run uses D2, D3, D4, D5 and D7 beside four live demos off the page (130 instruction minutes plus the break) and leaves D1, D6, D8, D9 and D10 in reserve. Order of preference when time is free:
+- D1 `sAnon` Replace details, don't just delete them, 12 min, foundational, after `s2`: take it first when four or fewer of phrases 1 to 8 drew a majority in Poll 2, or when the room asks what to put in the blank. The off-page work-along in the teaching aid replaces it.
+- D3 `s4` Six locks before client data goes in, 5 min, standard, after `s2`: the vendor paragraph of Case 4; take it when anyone asks which tool may see client data.
+- D2 `s3` Where your prompt goes, 6 min, standard, after `s2`: personal against firm account across four vendors; the Live API box belongs here.
+- D7 `sAud` The audit trail for one AI-assisted deliverable, 7 min, standard, after `s7`: the direct follow-up to the record.
+- D5 `s6` What checking costs, 5 min, standard, after `s7`: take it before `sD` so the room's own minutes load the scale.
+- D4 `s5` Attacks: hidden instructions and fake clients, 6 min, standard, after `s7`: the inbox test is a fast prediction; the hidden-text demo off the page attaches here.
+- D6 `sWS` When a source goes stale, 13 min, standard, after `s7`.
+- D8 `sW1` How a text watermark works, 14 min, and D9 `sW2` What a watermark can and cannot prove, 12 min, both advanced, after `s7`: depth only; the watermark and Content Checker demo attaches here.
+- D10 `sCR` The handoff test, 10 min, standard, after `s9`: packages route to each student through the course site where available; anyone without one runs the sample on the page.
+
+## Close
+- From the reserve, 3 minutes after `s9`, written, not spoken: "In chat, one line each: take one AI task from your own work. What may go in, where does it go, how do you check what comes out, and what do you keep?" Read three aloud. If a line has no "what do you keep", say so, kindly, and name `s7`. Admin goes in the course-site announcement, not in the room.
+
+## Check before teaching
+Nothing below is stated as a holding on the page. Confirm against primary text the week before.
+- The 30-day and 72-hour clocks and both compliance dates (FACTS:reg-sp-compliance, M): sec.gov could not be opened from the build, so every figure rests on search snippets from sec.gov plus law-firm summaries, and the two negatives (no SEC notice, no chief compliance officer clock) rest on absence in the primary text. Read the final rule and the small entity compliance guide.
+- The `sRSP` reading of "aware", the log read on Day 3, is the lesson's construction, not a holding.
+- The SEC exam priorities: the fiscal 2027 document may be out by the time you teach (earlier years came out in October of the prior year). Check sec.gov/compliance/examination-priorities; if released, update the `s1` bullet and the reading, and the record FACTS:sec-exam-priorities-status.
+- CFP Board Standard A.14 and the Generative AI Ethics Guide are chipped M because cfp.net could not be opened from the build (FACTS:cfp-genai-guide). Read the Standard.
+- Vendor terms in Appendix D2 (Claude's included, M) move without notice: open each vendor's page the week before. State no default for the Claude training toggle (FACTS:claude-consumer-retention); the page opens plan A with the switch on as a starting position only.
+- Watermarks: do not say every Claude reply is marked today. The OpenAI text-watermark rollout date was inferred from search listings and not read on the page; give no date (FACTS:openai-provenance).
+- If a live work-along with a personal account is run: a real transcript on a shared screen is not allowed (a class of advisers from other firms is a nonaffiliated third party under Regulation S-P section 248.10 and no exception fits; read sections 248.13 to 248.15 and CFP Standard A.9 yourself). Synthetic text, or text cleaned off-screen, in a personal account is allowed only if your own firm's manual permits personal-account use at all.
+- State AI laws, if asked: the page names none. Colorado and Utah are on the list below with their confidence; Utah's definition of a high-risk interaction names financial advice, and whether an adviser is in a regulated occupation turns on Utah licensure.
+
+## Verified facts for this session
+Say these as written. Each line is a record from `facts/FACTS.json` whose applies_to includes session-4.
+
+- FACTS:claude-output-input-ratio (H, retrieved 2026-10-11): Output tokens cost five times input tokens on every listed Claude model. 5x. Source: Claude API pricing (platform.claude.com), https://platform.claude.com/docs/en/about-claude/pricing
+- FACTS:claude-context-window (H, retrieved 2026-10-11): Context window and maximum output of the four current Claude models. 1M tokens context; 128K tokens maximum output (synchronous Messages API). Source: Models overview (platform.claude.com), https://platform.claude.com/docs/en/models/overview
+- FACTS:claude-model-ids-and-retirements (H, retrieved 2026-10-11): Current Claude model ids and their earliest retirement dates; Sonnet 4.5 retirement. claude-fable-5-1 (not before 2027-09-01), claude-opus-5-5 (2027-09-22), claude-sonnet-5-5 (2027-09-28), claude-haiku-5-5 (2027-10-07); claude-sonnet-4-5-20250929 deprecated 2026-09-30, retires 2026-11-30. Source: Model deprecations (platform.claude.com), https://platform.claude.com/docs/en/about-claude/model-deprecations
+- FACTS:claude-plans (H, retrieved 2026-10-11): Claude consumer and business plan prices. Free $0; Pro $20 per month or $17 per month billed annually; Max 5x $100; Max 20x $200; Team Standard $25 ($20 annual); Team Premium $125 ($100 annual); Enterprise $20 per seat billed annually plus usage. Source: Claude plans and pricing (claude.com), https://claude.com/pricing
+- FACTS:claude-consumer-retention (M, retrieved 2026-10-11): Consumer-plan data retention under the model-training setting. With "Help improve Claude" on, de-identified data may be kept up to 5 years in training pipelines; with it off, a deleted conversation is removed from back-end storage within 30 days; whether the toggle defaults on or off is not stated on the page. Source: Is my data used for model training? (privacy.claude.com), https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training
+- FACTS:claude-text-watermark (H, retrieved 2026-10-11): Claude text watermark and file content credentials. Claude text output carries a statistical watermark (announced 2026-08-14, future and supported models); it does not identify individual users and adds no hidden characters; supported files (.png, .jpg, .svg) carry a C2PA content credential with no identifying information. Source: Claude text watermark (anthropic.com news, 2026-08-14), https://www.anthropic.com/news/claude-text-watermark
+- FACTS:openai-consumer-training-default (M, retrieved 2026-10-11): ChatGPT consumer plans train on content by default, with an opt-out. Consumer ChatGPT and Codex content may be used for training unless the user turns off "Improve the model for everyone" (Settings > Data controls) or uses the privacy portal; ChatGPT Business, Enterprise, Edu and the API are not used for training by default. Source: How your data is used to improve model performance (OpenAI help), https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance
+- FACTS:openai-provenance (M, retrieved 2026-10-11): How OpenAI marks generated images and text. Images from ChatGPT, Codex and the API carry C2PA content credentials and a Google SynthID invisible watermark; text watermarking is EU-only for ChatGPT and Codex and opt-in (off by default) for the API. Source: Provenance signals in OpenAI-generated content (OpenAI help), https://help.openai.com/en/articles/8912793-provenance-signals-in-openai-generated-content
+- FACTS:google-synthid (M, retrieved 2026-10-11): What Google SynthID watermarks. SynthID embeds imperceptible watermarks in AI-generated images (Imagen), video (Veo), audio (Lyria, NotebookLM) and Gemini text; detection is available in Gemini, Search and Chrome. Source: SynthID (Google DeepMind), https://deepmind.google/models/synthid/
+- FACTS:reg-sp-compliance (M, retrieved 2026-10-11): Regulation S-P 2024 amendments: compliance dates and the notice clocks. Compliance by 2025-12-03 (larger entities) and 2026-06-03 (smaller entities); a written incident response program is required; customer notice as soon as practicable and no later than 30 days after becoming aware of unauthorized access or use; service providers must notify the firm within 72 hours; the rule imposes no SEC notification and no 24-hour CCO clock. Source: SEC Regulation S-P small entity compliance guide; fact sheet 34-100155, https://www.sec.gov/files/rules/final/2024/regulation-s-p-small-entity-compliance-guide.pdf
+- FACTS:sec-exam-priorities-status (M, retrieved 2026-10-11): SEC Division of Examinations priorities: status and legal force. FY2026 priorities released 2025-11-17; the document states it has "no legal force or effect"; FY2027 priorities not found as of 2026-10-11. Source: SEC FY2026 Examination Priorities, https://www.sec.gov/files/2026-exam-priorities.pdf
+- FACTS:finra-24-09-status (M, retrieved 2026-10-11): FINRA Regulatory Notice 24-09 remains active; the 2026 oversight report has a GenAI section. Notice 24-09 (2024-06-27) is still published with no rescission; FINRA's 2026 Annual Regulatory Oversight Report (released 2025-12-09) carries a Generative AI section. Source: FINRA Regulatory Notice 24-09; 2026 Annual Regulatory Oversight Report, https://www.finra.org/rules-guidance/notices/24-09
+- FACTS:sec-pda-withdrawal (M, retrieved 2026-10-11): SEC withdrew the predictive data analytics conflicts proposal. Withdrawn 2025-06-12 (Release 33-11377 / 34-103247 / IA-6885 / IC-35635), published in the Federal Register 2025-06-17 with 13 other 2022 to 2023 proposals. Source: SEC File S7-12-23, Withdrawal of Proposed Regulatory Actions, https://www.sec.gov/rules-regulations/2025/06/s7-12-23
+- FACTS:ai-policy-requirement (M, retrieved 2026-10-11): No rule names an "AI use policy"; existing rules and examination expectations apply. No SEC or FINRA rule requires a document called an AI use policy; Advisers Act Rule 206(4)-7 compliance policies, Regulation S-P and Rule 204-2 recordkeeping govern AI use, and the FY2025 and FY2026 examination priorities say examiners review AI-related policies and procedures and the accuracy of AI claims. Source: SEC FY2026 Examination Priorities; FINRA Notice 24-09, https://www.sec.gov/files/2026-exam-priorities.pdf
+- FACTS:sec-ai-washing-enforcement (M, retrieved 2026-10-11): SEC "AI washing" settlements against advisers. Press release 2024-36 (2024-03-18): Delphia (USA) Inc. $225,000 and Global Predictions Inc. $175,000 for false statements about their use of AI; press release 2024-167 (2024-10-10): Rimar Capital and two individuals, civil penalties and a cease-and-desist. Source: SEC press release 2024-36, https://www.sec.gov/newsroom/press-releases/2024-36
+- FACTS:cfp-genai-guide (M, retrieved 2026-10-11): CFP Board Generative AI Ethics Guide. Published 2025-02-25 as "Generative AI Ethics Guide: A Checklist for Upholding the Code and Standards", applying the Technology Standard (A.14) and the duties of care and competence to generative AI; a resource, not a new standard. Source: CFP Board news release, 2025-02-25, https://www.cfp.net/news/2025/02/news-releases/guide-on-ethical-use-of-generative-ai
+- FACTS:colorado-sb26-189 (M, retrieved 2026-10-11): Colorado SB 26-189 and the Colorado AI Act timeline. Signed 2026-05-14 and effective on signature; it repeals and re-enacts the SB 24-205 provisions, with developer documentation duties and attorney general rulemaking from 2027-01-01. Source: Colorado General Assembly, SB26-189, https://leg.colorado.gov/bills/sb26-189
+- FACTS:utah-ai-disclosure (M, retrieved 2026-10-11): Utah's generative-AI disclosure duty for regulated occupations. Utah SB 149 (2024) created the AI Policy Act; SB 226 (2025) narrows the disclosure duty to high-risk interactions in regulated occupations (the statutory definition of high-risk interaction names financial advice); the Act sunsets 2027-07-01. Source: Utah S.B. 226 (2025), enrolled, https://le.utah.gov/Session/2025/bills/enrolled/SB0226.pdf
+- FACTS:adoption-iss-policy (M, retrieved 2026-10-11): Advisor AI use and written AI policies, ISS Market Intelligence. 48% of U.S. advisors use AI in their workflows; 78% of RIAs say their firm has no written AI policy (35% at regional, independent and bank firms); n = 466, fielded June 2025. Source: PLANADVISER, Advisers Using AI by the Numbers (ISS Market Intelligence Advisor Pulse), https://www.planadviser.com/exclusives/advisers-using-ai-by-the-numbers/
+
+### Corrections register: the correct versions for this session
+- Watermarks: Claude text from supported models carries a statistical watermark, announced 2026-08-14; it does not identify individual users and adds no hidden characters; not every Claude reply is marked today; supported files (.png, .jpg, .svg) carry a C2PA content credential with no identifying information (FACTS:claude-text-watermark). Google SynthID marks images, video, audio and Gemini text (FACTS:google-synthid). OpenAI images carry C2PA credentials and a SynthID watermark; text is marked only in the EU for ChatGPT and Codex and by opt-in for the API (FACTS:openai-provenance).
+- Consumer ChatGPT and Codex content may be used for training unless the user turns off "Improve the model for everyone" or uses the privacy portal; ChatGPT Business, Enterprise, Edu and the API are not used for training by default (FACTS:openai-consumer-training-default).
+- Claude consumer retention: with "Help improve Claude" on, de-identified data may be kept up to 5 years in training pipelines; with it off, a deleted conversation is removed from back-end storage within 30 days; the record does not say which way the toggle ships, so say neither (FACTS:claude-consumer-retention).
+- FINRA Regulatory Notice 24-09 (2024-06-27) is still published, with no rescission, and adds no new requirement; the 2026 oversight report carries a Generative AI section (FACTS:finra-24-09-status). The SEC withdrew its predictive data analytics proposal on 2025-06-12 (FACTS:sec-pda-withdrawal).
+- The fiscal 2026 SEC examination priorities state that they have no legal force or effect; the rules they point at are what bind (FACTS:sec-exam-priorities-status).
+- Regulation S-P: a written incident response program; notice to affected customers as soon as practicable and no later than 30 days after the firm becomes aware of unauthorized access or use; service providers notify the firm within 72 hours; no SEC notification, and no rule clock for telling a chief compliance officer, which is the firm's own choice; compliance dates 2025-12-03 for larger entities and 2026-06-03 for smaller ones, so the rule is in force for every covered firm (FACTS:reg-sp-compliance).
+- An AI use policy is an examination expectation under Advisers Act Rule 206(4)-7, Regulation S-P and Rule 204-2, named in no SEC or FINRA rule; 78% of RIAs say their firm has none (FACTS:ai-policy-requirement, FACTS:adoption-iss-policy).
+- Personal Claude plan and client work: no rule names a tool or a plan; what makes a personal plan untenable for client work is Regulation S-P's safeguards and service-provider oversight, Rule 204-2 recordkeeping and the firm's own policy (FACTS:reg-sp-compliance, FACTS:ai-policy-requirement).
+
+Re-verify the week before: node scripts/verify-facts.mjs --as-of <session date> --session 4

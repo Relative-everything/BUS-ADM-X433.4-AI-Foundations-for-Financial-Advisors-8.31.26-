@@ -21,7 +21,8 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = join(HERE, '..');
 export const LESSONS = ['index.html', 'session-0.1/index.html', 'session-1/index.html',
                         'session-2/index.html', 'session-3/index.html', 'session-4/index.html',
-                        'session-5/index.html'];
+                        'session-5/index.html',
+                        'cases/case-1.html', 'cases/case-2.html', 'cases/case-3.html', 'cases/case-4.html', 'cases/case-5.html'];
 
 const facts  = JSON.parse(readFileSync(join(HERE, 'case-facts.json'), 'utf8'));
 const corpus = JSON.parse(readFileSync(join(HERE, 'case-corpus.json'), 'utf8'));
@@ -29,7 +30,7 @@ const OPEN  = `<!-- CASE:BEGIN ${facts.case_id} v${facts.case_version} -->`;
 const CLOSE = `<!-- CASE:END ${facts.case_id} -->`;
 
 /**
- * buildBlock — the injected region. Facts tab, Structure tab, COLE constant,
+ * buildBlock — the injected region. Facts tab, Map tab (Part L), COLE constant,
  * COLEDOCS, the case-facts viewer, and the visible version stamp. Every
  * interactive part is written HERE rather than in the lesson, so all six files
  * get one identical implementation and one edit reaches all of them. That was
@@ -51,58 +52,50 @@ export function buildBlock() {
      drift, not a formatting choice: fail loudly. */
   const sheets = flowchart.split('<!-- SHEET-BREAK -->');
   if (sheets.length !== 2) throw new Error('case-flowchart.html: expected one SHEET-BREAK marker between the two sheets, found ' + (sheets.length - 1));
-  const perUnitDiv  = F.dividend / F.totalUnits;
-  const votingVal   = F.votingUnits * F.perVoting;
-  const retainedVal = F.megRetainedNV * F.perNonVoting;
-  const trustShare  = F.trustUnitsAtClose * perUnitDiv;
-  const purchases   = trustShare - F.noteInterest;
-  const unitsBought = (purchases / F.perNonVoting).toFixed(2);
-  const unitsAfter  = (F.trustUnitsAtClose + purchases / F.perNonVoting).toFixed(2);
-  const pctU    = (n) => (n / F.totalUnits * 100).toFixed(1) + '%';
-  const seedPct = (F.seedValue / F.notePrincipal * 100).toFixed(1);
-  const fedPct  = ((F.qualDivRate - F.ilIncomeRate) * 100).toFixed(1);
-  const ratePct = (F.noteRate * 100).toFixed(2);
+  const usdK = (n) => usd(n);
+  const pct1 = (n) => Number(n).toFixed(1) + '%';
 
+  /* D1: the balance sheet by owner and tax character, behind Sheet 1 (the map). */
   const D1 = [];
   D1.push('<div class="case-detail case-dhide" id="caseDetail1">');
-  D1.push('  <p class="case-h">Sheet 1 detail. The balance sheets and unit arithmetic behind the sparse view.</p>');
+  D1.push('  <p class="case-h">Sheet 1 detail. Every account on the map, by owner and tax character, as of ' + esc(facts.as_of) + '.</p>');
   D1.push('  <table class="dt tight case-t"><tbody>');
-  D1.push(`    <tr><td>Meg after closing · ${F.votingUnits} voting LLC units · ${pctU(F.votingUnits)} of units</td><td class="case-num">${usd(votingVal)}</td></tr>`);
-  D1.push(`    <tr><td>${F.megRetainedNV} non-voting LLC units · ${pctU(F.megRetainedNV)}</td><td class="case-num">${usd(retainedVal)}</td></tr>`);
-  D1.push(`    <tr><td>Units subtotal · ${pctU(F.votingUnits + F.megRetainedNV)} of units</td><td class="case-num">${usd(votingVal + retainedVal)}</td></tr>`);
-  D1.push(`    <tr><td>Demand note receivable from the trust</td><td class="case-num">${usd(F.notePrincipal)}</td></tr>`);
-  D1.push(`    <tr><td><b>Total inside the taxable estate</b></td><td class="case-num"><b>${usd(F.megPostClose)}</b></td></tr>`);
+  D1.push(`    <tr><td>Meg · 403(b) · pre-tax · to David</td><td class="case-num">${usdK(F.meg403b)}</td></tr>`);
+  D1.push(`    <tr><td>Meg · Roth IRA · to David, then Emma and Ryan</td><td class="case-num">${usdK(F.megRoth)}</td></tr>`);
+  D1.push(`    <tr><td>David · 401(k) · pre-tax ${usdK(F.david401kPre)} and Roth ${usdK(F.david401kRoth)} · to Meg, then Emma and Ryan</td><td class="case-num">${usdK(F.david401k)}</td></tr>`);
+  D1.push(`    <tr><td>David · Roth IRA · to Meg; no contingent</td><td class="case-num">${usdK(F.davidRoth)}</td></tr>`);
+  D1.push(`    <tr><td><b>David · rollover IRA · pre-tax · names ${esc(F.dorothyName)} (died ${esc(F.dorothyDied)}); no contingent</b></td><td class="case-num"><b>${usdK(F.davidRollover)}</b></td></tr>`);
+  D1.push(`    <tr><td>Joint · brokerage · taxable · ${F.esppPct}% in David's employer's stock</td><td class="case-num">${usdK(F.brokerage)}</td></tr>`);
+  D1.push(`    <tr><td>Joint · cash reserve · taxable</td><td class="case-num">${usdK(F.cash)}</td></tr>`);
+  D1.push(`    <tr><td>David · health savings account · to Meg</td><td class="case-num">${usdK(F.hsa)}</td></tr>`);
+  D1.push(`    <tr><td>Meg (owner) · 529 for Ryan · David successor owner</td><td class="case-num">${usdK(F.plan529)}</td></tr>`);
+  D1.push(`    <tr><td><b>Investable total</b></td><td class="case-num"><b>${usdK(F.investable)}</b></td></tr>`);
   D1.push('  </tbody></table>');
-  D1.push(`  <p class="case-dnote">The ${usd(F.estateReduction)} drop from the ${usd(F.cpcValue)} indicated value of CPC is two things: the ${F.trustUnitsAtClose} transferred units left for ${usd(F.belowProRata)} less than pro rata, and the ${F.megRetainedNV} retained non-voting units are now themselves discounted, ${usd(F.retainedDiscount)}.</p>`);
+  D1.push(`  <p class="case-dnote">By tax character: pre-tax ${usdK(F.preTaxTotal)} (${pct1(F.preTaxPct)}), Roth ${usdK(F.rothTotal)} (${pct1(F.rothPct)}), taxable ${usdK(F.taxableTotal)} (${pct1(F.taxablePct)}), plus the HSA and the 529. Every pre-tax dollar is ordinary income to someone, in some year.</p>`);
   D1.push('  <table class="dt tight case-t"><tbody>');
-  D1.push(`    <tr><td>Trust after closing · ${F.trustUnitsAtClose} non-voting LLC units · ${pctU(F.trustUnitsAtClose)}</td><td class="case-num">${usd(F.trustUnitsValue)}</td></tr>`);
-  D1.push(`    <tr><td>Demand note payable to Meg</td><td class="case-num">(${usd(F.notePrincipal)})</td></tr>`);
-  D1.push(`    <tr><td><b>Net trust equity</b></td><td class="case-num"><b>${usd(F.trustEquity)}</b></td></tr>`);
+  D1.push(`    <tr><td>Residence, ${esc(F.residenceTown)} · joint tenancy · no transfer-on-death instrument</td><td class="case-num">${usdK(F.residence)}</td></tr>`);
+  D1.push(`    <tr><td>Mortgage · ${F.mortgageRate.toFixed(2)}% fixed · ${usdK(F.mortgagePayment)} a month · to ${esc(F.mortgageMaturity)}</td><td class="case-num">(${usdK(F.mortgage)})</td></tr>`);
+  D1.push(`    <tr><td><b>Net worth</b></td><td class="case-num"><b>${usdK(F.netWorth)}</b></td></tr>`);
   D1.push('  </tbody></table>');
-  D1.push(`  <p class="case-dnote">Net equity equals the seed gift; the seed is ${seedPct}% of the note. The note is interest only, payable on demand, at the 2026 blended annual rate of ${ratePct}%. Grantor trust under IRC §§ 671 to 679: Meg is taxed on all trust income.</p>`);
-  D1.push('  <table class="dt tight case-t"><tbody>');
-  D1.push(`    <tr><td>Voting units · ${F.votingUnits} of ${F.totalUnits.toLocaleString('en-US')} · ${usd(F.perVoting)} each</td><td class="case-num">${usd(votingVal)}</td></tr>`);
-  D1.push(`    <tr><td>Non-voting units · ${F.nonVotingUnits} of ${F.totalUnits.toLocaleString('en-US')} · ${usd(F.perNonVoting)} each after the ${Math.round(F.discount * 100)}% combined discount</td><td class="case-num">${usd(F.nonVotingUnits * F.perNonVoting)}</td></tr>`);
-  D1.push('  </tbody></table>');
+  D1.push(`  <p class="case-dnote">${esc(F.ruthName)}, ${F.ruthAge}: a traditional IRA of ${usdK(F.ruthIra)} naming Meg, and ${usdK(F.ruthSavings)} of savings payable on death to Meg and Tom. Independent living at ${usdK(F.ruthMonthlyFee)} a month; assisted living at ${usdK(F.ruthAssistedBase)} plus care charges.</p>`);
   D1.push('</div>');
 
+  /* D2: the clocks, behind Sheet 2 (the timeline). */
   const D2 = [];
   D2.push('<div class="case-detail case-dhide" id="caseDetail2">');
-  D2.push('  <p class="case-h">Sheet 2 detail. Where every year-1 dollar goes.</p>');
-  D2.push('  <table class="dt tight case-t"><tbody>');
-  D2.push(`    <tr><td>Meg · pro-rata distribution on her ${F.megYear1Units} units</td><td class="case-num">${usd(F.megYear1Distrib)}</td></tr>`);
-  D2.push(`    <tr><td>Note interest at ${ratePct}%</td><td class="case-num">${usd(F.noteInterest)}</td></tr>`);
-  D2.push(`    <tr><td>Unit purchase payments from the trust</td><td class="case-num">${usd(purchases)}</td></tr>`);
-  D2.push(`    <tr><td><b>Total cash to Meg · the entire dividend</b></td><td class="case-num"><b>${usd(F.dividend)}</b></td></tr>`);
+  D2.push('  <p class="case-h">Sheet 2 detail. The dates behind the bars.</p>');
+  D2.push('  <table class="dt tight case-t"><thead><tr><th></th><th>Meg (born 1968)</th><th>David (born 1967)</th></tr></thead><tbody>');
+  D2.push(`    <tr><td>Age 59&frac12;</td><td class="case-num">${esc(F.megAge59h)}</td><td class="case-num">${esc(F.davidAge59h)}</td></tr>`);
+  D2.push(`    <tr><td>Planned last paycheck</td><td class="case-num">${F.megRetireYear} (${F.megRetireAge})</td><td class="case-num">${F.davidRetireYear} (${F.davidRetireAge}), or earlier</td></tr>`);
+  D2.push(`    <tr><td>Social Security, earliest (62)</td><td class="case-num">${esc(F.megSsEarliest)}</td><td class="case-num">${esc(F.davidSsEarliest)}</td></tr>`);
+  D2.push(`    <tr><td>Full retirement age (67)</td><td class="case-num">${esc(F.megFra)}</td><td class="case-num">${esc(F.davidFra)}</td></tr>`);
+  D2.push(`    <tr><td>Delayed credits end (70)</td><td class="case-num">${esc(F.megSs70)}</td><td class="case-num">${esc(F.davidSs70)}</td></tr>`);
+  D2.push(`    <tr><td>Medicare (65)</td><td class="case-num">${esc(F.megMedicare)}</td><td class="case-num">${esc(F.davidMedicare)}</td></tr>`);
+  D2.push(`    <tr><td>First Medicare premium set on</td><td class="case-num">${F.megIrmaaLookback} income</td><td class="case-num">${F.davidIrmaaLookback} income</td></tr>`);
+  D2.push(`    <tr><td>First required minimum distribution (75)</td><td class="case-num">${F.megFirstDistYear}</td><td class="case-num">${F.davidFirstDistYear}</td></tr>`);
+  D2.push(`    <tr><td><b>Roth conversion window</b></td><td class="case-num"><b>${F.megWindowStart} to ${F.megWindowEnd}</b></td><td class="case-num"><b>${F.davidWindowStart} to ${F.davidWindowEnd}</b></td></tr>`);
   D2.push('  </tbody></table>');
-  D2.push(`  <p class="case-dnote">Tax paid by Meg: ${usd(F.dividendTax)}, at ${fedPct}% federal plus ${(F.ilIncomeRate * 100).toFixed(2)}% Illinois, on all ${usd(F.dividend)} of dividends; the trust is a grantor trust, so its share lands on her return.</p>`);
-  D2.push('  <table class="dt tight case-t"><tbody>');
-  D2.push(`    <tr><td>Trust · distribution received on ${F.trustUnitsAtClose} units · ${pctU(F.trustUnitsAtClose)}</td><td class="case-num">${usd(trustShare)}</td></tr>`);
-  D2.push(`    <tr><td>Note interest paid to Meg</td><td class="case-num">(${usd(F.noteInterest)})</td></tr>`);
-  D2.push(`    <tr><td>Applied to purchase units from Meg</td><td class="case-num">(${usd(purchases)})</td></tr>`);
-  D2.push(`    <tr><td><b>Cash remaining</b></td><td class="case-num"><b>${usd(0)}</b></td></tr>`);
-  D2.push('  </tbody></table>');
-  D2.push(`  <p class="case-dnote">Units purchased in year 1: ${unitsBought} at ${usd(F.perNonVoting)} · units held after year 1: ${unitsAfter}. In years 1 through 4 the entire ${usd(F.dividend)} round-trips to Meg: her ${F.megYear1Units} units draw ${usd(F.megYear1Distrib)} pro rata and the trust passes through its whole ${usd(trustShare)} as interest and unit purchases. The trust first retains cash in year 5.</p>`);
+  D2.push(`  <p class="case-dnote">Synthetic Social Security estimates, monthly, in 2026 dollars: Meg ${usdK(F.megSs62)} at 62, ${usdK(F.megSsFra)} at 67, ${usdK(F.megSsAt70)} at 70; David ${usdK(F.davidSs62)}, ${usdK(F.davidSsFra)}, ${usdK(F.davidSsAt70)}. The window is the calendar years with no wages and no required distributions; a conversion in a year raises that year's federal bracket and, two years later, the Medicare premium of whichever spouse is then enrolled. Illinois does not tax the conversion.</p>`);
   D2.push('</div>');
 
   const L = [];
@@ -147,28 +140,29 @@ export function buildBlock() {
   L.push('  </div>');
   L.push('  <div class="case-tabs" role="tablist" aria-label="Cole household case">');
   L.push('    <button type="button" class="case-tab on" role="tab" id="caseTabFacts" aria-controls="casePanelFacts" aria-selected="true" tabindex="0"><span class="case-mk" aria-hidden="true">&#9679;</span>Facts</button>');
-  L.push('    <button type="button" class="case-tab" role="tab" id="caseTabStruct" aria-controls="casePanelStruct" aria-selected="false" tabindex="-1"><span class="case-mk" aria-hidden="true">&#9675;</span>Structure</button>');
+  L.push('    <button type="button" class="case-tab" role="tab" id="caseTabStruct" aria-controls="casePanelStruct" aria-selected="false" tabindex="-1"><span class="case-mk" aria-hidden="true">&#9675;</span>Map</button>');
   L.push('  </div>');
   L.push('  <div class="case-panel" role="tabpanel" id="casePanelFacts" aria-labelledby="caseTabFacts" tabindex="0">');
   L.push(indent(extract, 4));
   L.push('  </div>');
   L.push('  <div class="case-panel case-off" role="tabpanel" id="casePanelStruct" aria-labelledby="caseTabStruct" tabindex="0">');
-  L.push('    <p class="case-h">Structure and annual cash flow. Sheet 1 is ownership after closing; Sheet 2 is year-1 cash with every ribbon at one stated scale. Show detail opens the balance sheets and cash tables the sheets summarize.</p>');
+  L.push('    <p class="case-h">The household map and the timeline. Sheet 1 is who owns what and who each account passes to; Sheet 2 is the clocks from 2026 to 2044 with the Roth conversion window marked. Show detail opens the balance sheet by owner and the table of dates behind the bars.</p>');
   L.push('    <div class="case-dtl"><button type="button" class="case-dtl-btn" id="caseDetailBtn" aria-expanded="false" aria-controls="caseDetail1 caseDetail2">Show detail</button></div>');
   L.push(indent(sheets[0].trim(), 4));
   L.push(indent(D1.join('\n'), 4));
   L.push(indent(sheets[1].trim(), 4));
   L.push(indent(D2.join('\n'), 4));
   L.push('  </div>');
-  /* The recurring question. Chosen by the instructor from docs/spine-brief.md:
-     candidate A as the spine, with candidate C's lever-choice as the closing
-     clause. It is NOT a CASE.md fact and is deliberately not generated from the
-     master: CASE.md supplies the arithmetic and draws no conclusion, and this
-     question asks for none. It lives here so one edit reaches all six files. */
+  /* The recurring question. The v5 unresolved question (CASE.md header, PEDAGOGY
+     §5.2): the Roth conversion window. It is NOT a CASE.md fact and is deliberately
+     not generated from the master: CASE.md supplies the arithmetic and draws no
+     conclusion, and this question asks for none. It lives here so one edit
+     reaches every file. The three figures it carries are read from case-facts.json
+     and pinned by verify-migration check 20. */
   L.push('  <div class="case-spine">');
   L.push('    <span class="case-spine-h">The question that runs through every session</span>');
-  L.push('    <p class="case-spine-q">Meg is short <b>' + usd(F.steadyGap) + '</b> a year from year 6, while the structure performs exactly as designed. <b>How much of the ' + usd(F.notePrincipal) + ' note does she call this year, what does calling it cost her in every year after, and when is a different lever the better answer?</b></p>');
-  L.push('    <p class="case-spine-n">No session answers it. Every session works on a different part of it. The arithmetic is in the case: each ' + usd(1000000) + ' called permanently removes ' + usd(Math.round(1000000 * F.noteRate)) + ' of future interest, so the gap widens by ' + (F.noteRate * 100).toFixed(2) + '% of every call. Nothing in the case says whether the structure is advisable, and neither does this course.</p>');
+  L.push('    <p class="case-spine-q">The Coles hold <b>' + usd(F.preTaxTotal) + '</b> in pre-tax accounts, <b>' + F.preTaxPct.toFixed(1) + '%</b> of what they have, and a window of years with no paycheck and no required distribution: Meg ' + F.megWindowStart + ' to ' + F.megWindowEnd + ', David ' + F.davidWindowStart + ' to ' + F.davidWindowEnd + '. <b>How much do they convert to Roth, in which years, when the federal bracket is one price and the Medicare premium two years later is the other?</b></p>');
+  L.push('    <p class="case-spine-n">No session answers it. Every session works on a different part of it. The arithmetic is in the case: the 24% bracket has ' + usd(F.bracketRoom) + ' of room in 2026 and a Medicare premium is set on income from two years before; Illinois taxes none of it. Nothing in the case says how much to convert, and neither does this course.</p>');
   L.push('  </div>');
   L.push('  <p class="case-stamp"><span class="mono">Case v' + facts.case_version + ' ' + '__STAMP__' + '</span></p>');
   L.push('</div>');
@@ -367,6 +361,7 @@ export function buildBlock() {
 }
 
 const usd = (n) => '$' + Number(n).toLocaleString('en-US');
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 function indent(s, n) {
   const pad = ' '.repeat(n);
@@ -382,7 +377,19 @@ export function sha256(s) { return createHash('sha256').update(s, 'utf8').digest
 export { OPEN, CLOSE, facts };
 
 /* ---------------------------------------------------------------- main -- */
-if (import.meta.url === `file://${process.argv[1]}`) {
+/* The main guard compares real paths, so the script also runs when invoked
+   through a symlinked checkout or home (DW-165: the typed-path comparison did
+   nothing through a symlink). */
+import { realpathSync } from 'node:fs';
+const invokedAsMain = (() => {
+  try { return realpathSync(fileURLToPath(import.meta.url)) === realpathSync(process.argv[1]); } catch { return false; }
+})();
+/* A lesson carries the sentinel of the version it was last injected with. On a
+   version change (v4.0 -> v5.0) the opening sentinel is found by case id, any
+   version, and rewritten to the current one; the closing sentinel never
+   carries a version. */
+const OPEN_ANY = new RegExp(`<!-- CASE:BEGIN ${facts.case_id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')} v[0-9.]+ -->`);
+if (invokedAsMain) {
   const check = process.argv.includes('--check');
   const { body, stamp } = buildBlock();
   const region = regionFor(body, stamp);
@@ -390,7 +397,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   for (const rel of LESSONS) {
     const path = join(REPO, rel);
     const text = readFileSync(path, 'utf8');
-    const a = text.indexOf(OPEN), b = text.indexOf(CLOSE);
+    const om = text.match(OPEN_ANY);
+    const a = om ? om.index : -1, b = text.indexOf(CLOSE);
     if (a < 0 || b < 0) { missing.push(rel); continue; }
     const next = text.slice(0, a) + region + text.slice(b + CLOSE.length);
     if (next === text) { console.log(`OK    current  ${rel}`); continue; }

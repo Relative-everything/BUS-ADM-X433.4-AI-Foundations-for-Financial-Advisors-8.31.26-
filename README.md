@@ -34,14 +34,14 @@ out.
 
 ### The one exception, and it is off unless you switch it on
 
-Sessions 0.1 and 1 have an optional box at the top marked **Live model**, and
-Session 4 has one marked **Live API**. Session 5 has neither: its exercises run on
-your own work. Leave the box alone and those pages behave like every other: they transmit nothing, and the model outputs you see are real runs
+Session 1 has an optional box at the top marked **Live model**, and Session 4
+has one marked **Live API**. The setup page and Sessions 2, 3 and 5 have neither:
+they run in your own account or on your own work. Leave the box alone and those pages behave like every other: they transmit nothing, and the model outputs you see are real runs
 that were captured and dated in advance.
 
 Paste your own free Gemini API key into it and the exercises call a live model
 instead, so you watch it happen rather than read a recording. Then, and only
-then, those three pages send something: whatever is in the box you pressed the
+then, those two pages send something: whatever is in the box you pressed the
 button on, to Google, over the connection your key authorises. Your key is held
 in one JavaScript variable, is never stored, never appears in a link, and is
 gone the moment you reload.
@@ -52,7 +52,7 @@ Three things worth knowing before you use it:
   with no key. Nothing is graded on it.
 - **Do not send client information through it.** Google's terms for the free
   tier let it use what you submit to improve its products, and let human
-  reviewers read it. Every prompt on those three pages is a public fact or
+  reviewers read it. Every prompt on those two pages is a public fact or
   synthetic Cole household data that is already published on this site; Session
   4's box starts from the de-identified Prompt D that page builds, and exists to
   show what one API request contains. That is why the box is on those pages and
@@ -78,17 +78,22 @@ Three things worth knowing before you use it:
   version.
 - The **Shift+U** label on the lesson pages that carry it is the instructor's
   reveal-all override. Using it yourself skips the part that does the teaching.
+- Each session has a **case file** (`cases/case-N.html`) to open before class: a
+  finished advisor deliverable set up as a problem, your call first, then how it
+  was built, with the model and date of every captured output. The lesson opens
+  on the same case, and the Case link in its top bar takes you back to the file.
 - Printing works. Print preview gives you a clean copy without the navigation.
 
 ## The sessions
 
-| # | Title | Link |
-|---|---|---|
-| 1 | Prediction, Model Tiers, and the Cost of Using Them | [session-1](session-1/) |
-| 2 | Practical AI Usage in Daily Advisory Workflows | [session-2](session-2/) |
-| 3 | Gathering and Documenting Client Information | [session-3](session-3/) |
-| 4 | Compliance, Security and Responsible Use | [session-4](session-4/) |
-| 5 | Final Project and Advisor Use Case Deep Dive | [session-5](session-5/) |
+| # | Title | Link | Case file (open before class) |
+|---|---|---|---|
+| 0 | Start here: setup and click-along (self-paced, about an hour) | [session-0.1](session-0.1/) | [case-1](cases/case-1.html) is the first thing to open after setup |
+| 1 | Prediction, Model Tiers, and the Cost of Using Them | [session-1](session-1/) | [Case 1: intake summary and risk-profile letter](cases/case-1.html) |
+| 2 | Practical AI Usage in Daily Advisory Workflows | [session-2](session-2/) | [Case 2: Roth conversion email and citation log](cases/case-2.html) |
+| 3 | Gathering and Documenting Client Information | [session-3](session-3/) | [Case 3: annual-review notes to CRM tasks and a follow-up email](cases/case-3.html) |
+| 4 | Compliance, Security and Responsible Use | [session-4](session-4/) | [Case 4: de-identified file, vendor decision and breach timeline](cases/case-4.html) |
+| 5 | Final Project and Advisor Use Case Deep Dive | [session-5](session-5/) | [Case 5: retirement-income one-pager and maintenance log](cases/case-5.html) |
 
 Session dates, deadlines, submission and grading are set by the instructor
 outside this site. Lessons are updated in place across cohorts, so a date
@@ -97,11 +102,18 @@ printed on a page goes stale the day the next cohort starts.
 ## The Cole household
 
 Every worked example, exercise input and discussion prompt in the course draws
-on one client household: Meg and David Cole of Barrington Hills, Illinois,
-whose company is in Rockford. The Cole household
+on one client household: Meg and David Cole of Naperville, Illinois, two W-2
+earners in their late fifties (a nurse manager and a senior mechanical
+engineer) with $2,446,000 of investable assets, a mortgage, two children, and
+Meg's mother Ruth in a senior living community. One question runs through all
+five sessions and no session answers it: how much should the Coles convert to
+Roth, and in which years, between the day the second paycheck stops and the day
+required minimum distributions begin? The Cole household
 is **entirely synthetic**. It was constructed for this course, it is labelled as
 synthetic in every lesson that presents it, and it is not derived from, based
-on, or de-identified from any real household.
+on, or de-identified from any real household. The case files carry the same
+household, injected from the same `CASE.md` block, so a figure on a case page is
+the figure on every lesson.
 
 It is also **not your final-project dataset**. Part 1 is built on a real
 recurring task from your own practice, using your own synthetic or

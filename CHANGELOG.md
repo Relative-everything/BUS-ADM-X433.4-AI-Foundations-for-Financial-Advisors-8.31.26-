@@ -10,6 +10,99 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-10-13 · Next-term update (2027 cohort)
+
+Branch `next-term-2027`, run from `docs/next-term/RUNBOOK.md` under PEDAGOGY v2.0, one
+commit per phase; `docs/next-term/PROGRESS.md` holds every validator run and
+`docs/next-term/DECISIONS.md` every call made under the runbook's decision rules
+(D-001 to D-062). Fall 2026 is frozen at `da7b003` (local tag `fall-2026-final`).
+Nothing on `main` changed; the branch waits for review.
+
+### The case · CASE.md v5.0
+
+- **The Cole household keeps its name and loses every fact.** Meg and David Cole are now a
+  pre-retiree couple in Naperville (a nurse manager and a senior mechanical engineer,
+  $2,446,000 investable, 70.3% pre-tax, a mortgage, two children, Meg's mother Ruth in a
+  senior living community), with one unresolved question running through all five
+  sessions: how much to convert to Roth, and when, between the second last paycheck and
+  the first required minimum distribution. The v4 IDGT sale, the company, the appraisal,
+  the buy-sell and the demand note are retired; CASE.md Part K lists every retired
+  string and `verify-migration.mjs` check 1c fails on any of them anywhere served.
+- `build-case.mjs` was rewritten for v5 (67 identities recomputed), the Facts and Map
+  tabs, the recurring question and the card-sort deck regenerated into every page, and
+  774 references outside the generated spans were registered
+  (`docs/next-term/P4-cole-reference-register.md`) and migrated; three captured model
+  outputs were re-run through the new `scripts/recapture.mjs` and labelled with the
+  model id the CLI reported.
+
+### Facts · `facts/FACTS.json`
+
+- A registry of 44 volatile records (prices, plans, model ids and retirements, context
+  window, watermarks, training defaults, leaderboards, Reg S-P dates and clocks, exam
+  priorities, FINRA 24-09, the corrections register's facts) with `scripts/verify-facts.mjs`
+  as a gate and a week-before ritual in MAINTAINING. Every lesson cites it with
+  `data-fact` chips (119 on the lessons, 34 ids on the case pages, 100 `FACTS:` notes in
+  the instructor notes); the Fall 2026 corrections register was applied wherever repo text
+  stated an error; Session 1's token arithmetic was re-derived on the current tokenizer.
+
+### Sessions 1 to 5 · the core at about an hour
+
+- Core 60, 63, 61, 60 and 45 minutes (totals unchanged at 150; 125 for Session 5): the
+  cold-open ritual replaced by a case opener from the case page, the named discussion
+  into core at 15 minutes, the retrieval bridge at 7 in core, four new appendix sections,
+  Session 1's own-account click-along, Session 2's seven-step process and delegation line
+  in core, Session 4's 30-day clock and poll in core. Proposals and evidence in
+  `docs/next-term/P6-section-proposals.md`.
+- Each lesson carries a Case link beside Case facts and a "Reading for Session N" card
+  generated from `docs/next-term/readings.json` (every row tentative until the instructor
+  edits it).
+- The final-project package is described once, identically, on Sessions 2 to 5: one .zip
+  with a twelve-heading readme.txt, workflow/, samples/ and selfcheck.txt; Part 2 is an
+  8 + 2 + 3 minute slot answering five questions.
+
+### Case files · `cases/case-1.html` to `case-5.html`
+
+- Five standalone case-file pages, each 25 minutes of student work before class: brief,
+  the commit, the captured deliverable (labelled with model id and date, failures flagged),
+  how it was built (prompts, tier, checks, the failure caught; case 1 carries the model
+  readme.txt), a check and the link into the lesson. The pipeline (case block, sources
+  footers, viewer and browser checks) covers them; the hub lists them in a Case files strip.
+
+### Session 0.1 · "Start here: setup and click-along"
+
+- Rebuilt at the same URL as a self-paced setup page (12 sections, 57 minutes, every plan
+  and setting from FACTS, the Homework 1 baseline worksheet, the twelve-term vocabulary
+  card). The live model console left this page; Sessions 1 and 4 keep it, and the pairing
+  rule, pre-push gate and `test_live_console.js` say so.
+
+### Instructor notes
+
+- Run sheets rewritten for the new pages with "Verified facts for this session" cards,
+  four polls per session (`instructor-notes/session-N-polls.md`, formats rotated, every
+  answer sourced, decision rules keyed to the distribution), a Zoom poll setup card, the
+  teaching aids and rule key renumbered and their PDFs re-rendered.
+
+### Merge polish
+
+- Every served page's "Last updated" stamp reads 2026-10-13 (DW-140), the setup page
+  included. MAINTAINING's layout block lists the case pages, and its change-folder section
+  records that the Fall 2026 folders now read red by design, with
+  `docs/next-term/checks.mjs` as the regression set.
+- The editorial baseline (`scripts/editorial-baseline.json`) is re-recorded for the 2027
+  pages: every em-dash figure fell or held, none rose (D-063 in
+  `docs/next-term/DECISIONS.md`). `test-editorial-regions` T2 proves the R10 claim on a
+  fixture, since no served page carries a captured transcript any more.
+
+### Verification
+
+- `verify-migration`, `verify-case`, `verify-sources`, `verify-facts`, `verify-editorial`,
+  `test-editorial-regions`, `verify-browser`, `test-case-viewer`, `test_live_console` and
+  `docs/next-term/checks.mjs` exit 0 on the merged tree. `verify-style` could not run: the
+  lesson-builder skill is absent from the cloud container (DW-184). Thirteen deferred-work
+  rows (DW-171 to DW-173 and DW-175 to DW-184) record what the run leaves open.
+
+---
+
 ## 2026-10-11 · The deferred-work register catches up with a taught course, and seven live-page defects close
 
 Branch `claude/magical-thompson-yhaivm`, after PR #44 merged. Change folder

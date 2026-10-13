@@ -12,11 +12,17 @@ browsing the course want [README.md](README.md).
 ```
 index.html            Course hub, the URL students bookmark
 session-N/index.html  One self-contained lesson per session
-CASE.md               Canonical Cole household case block, the source of truth
-                      Part O holds session-3's retrieval corpus and meeting excerpt
+cases/case-N.html     One case-file page per session (2027 term), opened before
+                      class: the lessons' chrome and style fence, its own
+                      case-file identity, generated CASE and SOURCES spans
+CASE.md               Canonical Cole household case block (v5.0, the pre-retiree
+                      household), the source of truth. Part O holds session-3's
+                      retrieval corpus and meeting excerpt; Part L the two sheets
 CHANGELOG.md          Human-readable record of every revision
 MAINTAINING.md        This file
 docs/deferred-work.md The single register of open work. Nothing else tracks it
+facts/FACTS.json      The volatile-fact registry: model names, prices, plans,
+                      leaderboards, regulation dates. FACTS.md is generated from it
 audit/                Dated audit reports against the lesson-builder protocol
 .nojekyll             Tells GitHub Pages to serve files as-is
 ```
@@ -30,7 +36,7 @@ Two external origins are permitted, and no others:
 | Origin | When | Where |
 |---|---|---|
 | `fonts.googleapis.com`, `fonts.gstatic.com` | Page load | Every page |
-| `generativelanguage.googleapis.com` | Runtime only, and only after a reader pastes their own API key | Sessions 0.1, 1 and 4 |
+| `generativelanguage.googleapis.com` | Runtime only, and only after a reader pastes their own API key | Sessions 1 and 4 |
 
 The second is the live model console (`LM:BEGIN` / `LMBOX:BEGIN` /
 `LMSTYLE:BEGIN` fences). It is off by default, every exercise it touches keeps a
@@ -43,7 +49,8 @@ and the free tier's terms permit Google to train on what is submitted. Session 4
 carries it since 2026-09-27 for one reason, to show the request itself: its box
 (`LMBOX-S4:BEGIN v1`, a page-specific variant of the shared box markup) sends
 only what the reader types, starts from the synthetic clean Prompt D, and says on
-its face that a free key is the training tier.
+its face that a free key is the training tier. Session 0.1 carried it until
+2026-10-12 and dropped it with the probes it ran (see "The live model console").
 
 ## Publishing
 
@@ -132,6 +139,35 @@ RESTYLE_SWEEP=/path/to/restyle_sweep.py python3 scripts/build-changelog.py
 `validate_dom.js` needs jsdom, which is not a repository dependency: see
 "Change-folder checks, and jsdom" below.
 
+**The volatile-fact check runs with the gate, with or without the skill.**
+`facts/FACTS.json` is the single source of truth for every volatile fact a page
+or an instructor note states: model names and ids, API and plan prices, plan
+features, leaderboard figures, regulation and guidance dates. Each record carries
+the value, its source, the date it was last read, an H/M/L/GAP confidence, a
+volatility, a re-verify window and the retired strings that must not appear on a
+served page. `scripts/verify-facts.mjs` fails on (a) any retired string in the
+hub, a lesson, a case page or an instructor note, (b) a high-volatility record
+whose `retrieved` date is older than its window relative to `--as-of` (14 days
+for `each-session`, 180 for `term-start`), and (c) a `data-fact="<id>"` chip or a
+`FACTS:<id>` note citing an id the registry does not hold. `--report` lists
+everything and exits 0; `--session N` narrows the scope to one session's files.
+
+```bash
+node scripts/verify-facts.mjs                       # the gate: exit 1 on a, b or c
+node scripts/verify-facts.mjs --report              # every hit, exit 0
+node facts/build-facts-md.mjs                       # FACTS.json -> FACTS.md (generated; never hand-edit FACTS.md)
+node facts/build-facts-md.mjs --check               # exit 1 if FACTS.md is stale
+```
+
+**The week-before-each-session ritual.** Run
+`node scripts/verify-facts.mjs --as-of <session date> --session <N>`. For every
+record it lists as stale, re-open the source, correct `value` and `statement`
+if they moved (moving the old value into `retired_values`), set `retrieved` to
+the day you read it, regenerate `FACTS.md`, and re-run the Phase 5 sweep on the
+pages the record's `applies_to` names. Commit `FACTS.json` and `FACTS.md`
+together. A record whose source is unreachable keeps its confidence at M or L
+and says so in `notes`; nothing is filled from memory (PEDAGOGY §1.11).
+
 **Red by design for `session-2`.** The Shift+U override was removed from
 `session-2` by instruction (DW-116), so the page has no `#ovr`, the override's
 label; its chrome carries `id="prog"`, the progress bar, and no label at all.
@@ -141,20 +177,26 @@ before the corpus renamed it `#ovr` (DW-112). An upstream fix that asserts
 `validate_lesson.py` V8 and the DOM-mode Shift+U line (DW-116). Read those
 lines as known, not as regressions.
 
-## The CASE.md v4.0 migration checks
+## The CASE.md v5.0 migration checks
 
 These live in this repo, not the skill, and all exit 0. Run them from the repo
 root after any edit to `CASE.md` or to a lesson.
 
 ```bash
 node scripts/build-case.mjs        # CASE.md -> the generated artifacts. Fails
-                                   # loudly if a figure it looks for has moved,
-                                   # and recomputes 13 Part M identities.
+                                   # loudly if a table row or label it looks for
+                                   # has moved, and recomputes the Part M
+                                   # identities (67 at v5.0). CASE_PATH=<file>
+                                   # runs it against a draft without touching
+                                   # CASE.md's artifacts' meaning: it still writes
+                                   # scripts/case-*.json, so run it on CASE.md after.
 node scripts/inject-case.mjs       # rewrite the span between the CASE sentinels
 node scripts/inject-case.mjs --check   # report drift, write nothing
 node scripts/build-cardsort.mjs --check   # the session-1 card-sort deck and key
                                    # between the CARDSORT sentinels, derived from
-                                   # CASE.md Part J and Part H. Fails when a fact
+                                   # CASE.md Part J (the three landmines and the
+                                   # identifying combination) and Parts E and I
+                                   # (four published parameters). Fails when a fact
                                    # the deck rests on moves, so a CASE.md edit
                                    # cannot silently orphan the answer key.
 node scripts/verify-case.mjs       # hash every injected block, and assert the
@@ -201,10 +243,11 @@ in the order the pre-push gate above sets out.
   python3 scripts/verify-wolfram-quotes.py <article.txt> [session-1/index.html]
   ```
 
-- **`scripts/state_space.py` is not a check.** It enumerates the legal
-  configuration space of Session 0.1's context inspector under six sourced
-  constraints and prints its size against the naive grid, and the coverage a
-  50-cell hand-written lookup would give. It asserts nothing and exits 0.
+- **`scripts/state_space.py` is not a check, and nothing runs it now.** It
+  enumerated the legal configuration space of the context inspector that Session
+  0.1 carried until 2026-10-12, under six sourced constraints, and printed its
+  size against the naive grid. The page that used it is gone; the script is kept
+  as a record. It asserts nothing and exits 0.
 
 Without the skill, these fallback checks cover the same ground:
 
@@ -216,22 +259,95 @@ for f in index.html session-*/index.html; do                 # externals: allowl
   grep -Eo '<(link|script|img|iframe)[^>]*(href|src)="https?://[^"]+"' "$f" \
     | grep -Ev 'fonts.googleapis|fonts.gstatic'
 done
-# the console's runtime origin, allowed only in 0.1, 1 and 4, and only in JS
+# the console's runtime origin, allowed only in 1 and 4, and only in JS
 grep -l 'generativelanguage.googleapis.com' index.html session-*/index.html \
-  | grep -Ev 'session-(0\.1|1|4)/index.html'                  # must be empty
-# the three shared console blocks must stay byte-identical across lessons
+  | grep -Ev 'session-(1|4)/index.html'                        # must be empty
+# session-4 shares the style and the call layer with session-1, not the box
 # (each fence is opened and closed by its own versioned marker; the earlier
 # form of this check matched no closing line and ran to the end of the file)
-for m in 'LMSTYLE' 'LMBOX' 'LM'; do
-  sed -n "/$m:BEGIN v1/,/$m:END v1/p" session-0.1/index.html | md5sum
-  sed -n "/$m:BEGIN v1/,/$m:END v1/p" session-1/index.html   | md5sum
-done                                                          # pairs must match
-# session-4 shares the style and the call layer, not the box
 for m in 'LMSTYLE' 'LM'; do
+  sed -n "/$m:BEGIN v1/,/$m:END v1/p" session-1/index.html | md5sum
   sed -n "/$m:BEGIN v1/,/$m:END v1/p" session-4/index.html | md5sum
-done                                                          # must equal the pairs above
+done                                                          # each pair must match
 grep -H '<title>' index.html session-*/index.html            # hub and lessons agree
 ```
+
+### Re-capturing a model output (`scripts/recapture.mjs`)
+
+A lesson that shows a captured model output (session-2 `#bsell`, session-3
+`OFFEX`) labels it with the model that produced it and the date. The Session 0.1
+probe captures retired with the Fall 2026 page; `docs/probe-captures.md` keeps
+them as a record and owes no re-run. When the case or the prompt changes, the capture is re-run,
+never edited by hand, through the helper added for the 2027 term:
+
+```bash
+node scripts/recapture.mjs --prompt <file> --model claude-sonnet-5-5   # prints a label line, then the answer verbatim
+node scripts/recapture.mjs --prompt <file> --model <id> --json          # the raw CLI JSON instead
+```
+
+It runs the `claude` CLI non-interactively (`-p`, JSON output) and prints
+`# model <id> · captured <date> · prompt sha256 <12 hex>` from what the CLI
+reported, then the answer. **The label on the page is the model id the helper
+printed**, never a name typed from memory and never the identity of whatever
+session is doing the editing: the CLI's reported model is the only fact the page
+can stand behind. Run it from a directory outside the repository so no project
+file is read as context. If the CLI is unavailable, the page keeps the old
+capture's structure with the labelled text "Capture pending re-run against the
+v5 case" and the deferred-work register gets a row (D-033 in
+`docs/next-term/DECISIONS.md` records the five probe captures deferred this way).
+
+## The case pages (`cases/case-N.html`)
+
+Added for the 2027 term (Phase 7 of `docs/next-term/RUNBOOK.md`). Each is one
+self-contained file a student opens before Session N: case brief, the commit
+("your call first"), the finished deliverable captured from a model and labelled
+with the model id and date the `claude` CLI reported, how it was built (prompts,
+tier, checks, one failure caught, the human-judgment points; case-1 carries the
+model `readme.txt`), a check, and the link into the lesson's opener `#sCase`.
+
+What the pipeline does with them:
+
+- `scripts/inject-case.mjs` LESSONS lists them, so they carry the injected case
+  block and the viewer; `verify-case.mjs` and `test-case-viewer.mjs` check them
+  with the lessons (12 files).
+- `scripts/build-sources.mjs` knows the keys `case-1` to `case-5` and maps every
+  key to its page through `pagePath()`; a record cites a case page with
+  `used_for.case-N`, and `inject-sources.mjs` writes the footer. Every reader of
+  `LESSONS` that opens a page goes through `pagePath()`.
+- `verify-browser.mjs`, `verify-migration.mjs` (with a zero baseline for the
+  `var()` count) and `verify-facts.mjs` scan them. Two lesson parameters do not
+  apply and say so in their output: the 13-interaction floor (check 9: a case page
+  is built around one commit and one check) and the time-budget table (check 16:
+  minutes sit on the eyebrows, no allocation row). They are outside `build-appendix.mjs`
+  and outside EDITORIAL A1 to A7 (no core/appendix split), like `session-0.1`.
+- The hub lists them in the "Case files" strip; each lesson's top bar links its case.
+
+The lesson's `#sCase` opener and the case page must tell the same story: the same
+facts to rank, the same key, the same verdict rows. When a case page's captured
+output changes, re-read the lesson's opener; nothing checks the two mechanically
+yet (deferred-work row).
+
+### Reading cards (`docs/next-term/readings.json`, `scripts/build-readings.mjs`)
+
+The "Reading for Session N" card on each page is generated from `docs/next-term/readings.json` into the `READINGS:BEGIN sN` region of the page that precedes Session N (the setup page carries Session 1's). Edit the JSON (drop a row, change its status from "tentative", fix a title), run `node scripts/build-readings.mjs`, then `node scripts/inject-sources.mjs` (each row's `source_key` is a SOURCES.md record of kind `assigned_reading`, cited by the card's chip), and commit all three; `--check` says whether a card is stale.
+
+### Re-rendering the instructor-note PDFs
+
+The `.pdf` beside each `.htm` teaching aid and rule key is a print of the `.htm`
+(Letter, landscape, the file's own `@page`, backgrounds on). Never edit it; re-render
+after the `.htm` changes, with the Playwright Chromium the browser checks use:
+
+```bash
+NODE_PATH=$(npm root -g) node -e '
+const { chromium } = require("playwright");
+(async () => { const b = await chromium.launch();
+  for (const f of ["instructor-notes/session-3-teaching-aid","instructor-notes/session-4-rule-key","instructor-notes/session-4-teaching-aid","instructor-notes/session-5-teaching-aid"]) {
+    const p = await b.newPage(); await p.goto("file://" + process.cwd() + "/" + f + ".htm", { waitUntil: "load" }); await p.emulateMedia({ media: "print" });
+    await p.pdf({ path: f + ".pdf", format: "Letter", landscape: true, printBackground: true, preferCSSPageSize: true }); await p.close(); }
+  await b.close(); })();'
+```
+
+Expected page counts: session-3 teaching aid 1, session-4 rule key 2, session-4 teaching aid 3, session-5 teaching aid 2 (`pdfinfo` prints them).
 
 ## Change-folder checks, and jsdom
 
@@ -294,6 +410,21 @@ assertion in the folder as the regression set. A pass that changes a lesson
 should write a `checks.mjs` for what it changed, which joins that lesson's
 regression set; the 2026-10-11 catch-up's pins its Wave 2 edits and DW-041.
 
+**The 2027-term rebuild (2026-10-13) turned every folder above red, by design.**
+The `next-term-2027` pass (`docs/next-term/`) re-authored the hub, the five
+lessons and Session 0.1 and added the case pages, so each `checks.mjs` from
+`2026-09-13-session-2-manual-pass` to `2026-10-11-deferred-work-catchup`, and
+the Session 5 section tests, now pin Fall 2026 content the rebuild replaced on
+purpose: the cold open, the 67- and 83-minute cores, the v4 case panel and its
+names, the eleven-section Session 5, the Fall 2026 footer records and
+deferred-work counts. Read all of them as history under the rule above; the
+pages they pin are at the `fall-2026-final` tag. The regression set for every
+served page is now `docs/next-term/checks.mjs`
+(`NODE_PATH=$(npm root -g) node docs/next-term/checks.mjs`): the case pages'
+six sections and spans, the lessons' case links and reading cards, the hub
+order, the setup page and the poll files. A later pass that changes a page adds
+its pins there or in a `docs/changes/` folder of its own.
+
 ## Shared styling
 
 Style is edited once and swept into every lesson. Each page carries a managed
@@ -311,17 +442,24 @@ and will be reported by `--check`.
 
 ## The live model console
 
-Sessions 0.1, 1 and 4 carry an optional console that lets a reader paste their own
+Sessions 1 and 4 carry an optional console that lets a reader paste their own
 Gemini API key and run the page's probes against a live model instead of the
 captured outputs (Session 4's shows the request itself, then sends it). Rationale, alternatives considered and the pedagogical case are
 in [`docs/live-model-console-plan.md`](docs/live-model-console-plan.md); the
 terms and quota analysis behind the bring-your-own-key choice are in
 [`docs/gemini-live-api-feasibility.md`](docs/gemini-live-api-feasibility.md).
 
-Three fenced blocks, **byte-identical across Sessions 0.1 and 1**. Session 4
-carries the first and the third byte-identical, and its own box under
+**Session 0.1 dropped the console on 2026-10-12, with the probes it ran
+(decision D-054).** The page became a self-paced setup page for students working
+in their own paid Claude accounts. It has no use for a bring-your-own-Gemini-key
+console and carries no probe for one to run. The probe exercise retired with the
+Fall 2026 page, and `docs/probe-captures.md` keeps its captures as a record. The
+byte pairing between Sessions 0.1 and 1 ended with the fences.
+
+Three fenced blocks. Session 1 carries all three. Session 4 carries the first and
+the third byte-identical to Session 1's, and its own box under
 `LMBOX-S4:BEGIN v1`, because its copy teaches the request rather than a probe;
-the element ids the call layer binds are the same in all three:
+the element ids the call layer binds are the same in both:
 
 | Fence | Where in the file | What |
 |---|---|---|
@@ -336,8 +474,9 @@ the second gives a silent `$ is not defined` at load.
 
 Rules for changing it:
 
-- Edit one copy, then paste it into the other and confirm the md5 pair in the
-  pre-push gate matches. Bump the version in all three fences on any change.
+- Edit Session 1's copy, then paste the first and third fences into Session 4 and
+  confirm the two md5 pairs in the pre-push gate match. Bump the version in every
+  fence on any change.
 - Plain ES5, matching the rest of the corpus. The only exception is `fetch`,
   which returns a promise, so `.then()` chains are used. No arrow functions, no
   `const`/`let`, no template literals, no `async`/`await`.
@@ -440,11 +579,20 @@ stops requiring one.
 
 ## The case spine
 
-The Cole household is the canonical case, ratified 2026-08-18. `CASE.md` holds
-the authoritative block and its figures. Session 1 introduces it in full;
-Sessions 2 through 4 carry shorter recall summaries, and every figure in those
-summaries must match `CASE.md`. Changing a figure means changing `CASE.md` and
-every lesson in the same commit.
+The Cole household is the canonical case, ratified 2026-08-18 and replaced
+whole on 2026-10-11 as **v5.0**: the name stayed and every fact changed
+(PEDAGOGY §5.7, §13.2 R9). v5 is a mainstream pre-retiree household in
+Naperville, Illinois: Meg Cole, 58, a nurse manager, and David Cole, 59, a
+mechanical engineer, about $2,446,000 of investable assets (70% pre-tax), a
+mortgage, two children, Meg's mother Ruth, two 2011 wills and one stale
+beneficiary designation. Its unresolved question is the Roth conversion window.
+`CASE.md` holds the authoritative block and its figures; the injected span
+carries the Facts tab, the Map tab (Part L's two sheets) and the `COLE`
+constant, and every lesson reads figures from `COLE` rather than typing them.
+Changing a figure means changing `CASE.md`, running `build-case.mjs` and
+`inject-case.mjs`, and re-deriving any lesson threshold that depends on it
+(PEDAGOGY §8, derived thresholds), in the same commit. The v4 household (the
+founder-owner and the trust sale) is retired; its every fact is a Part K row.
 
 ### Standing purge list
 
@@ -461,6 +609,7 @@ the lessons rather than running it across the whole tree.
 | Adaeze | 2026-08-18 | Meg Cole |
 | Ilesanmi | 2026-08-18 | (no equivalent, character removed) |
 | Reyes | 2026-08-18 | Cole |
+| **The v4 Cole facts** (CASE.md v5.0 Part K): Cole Precision Components, CPC, Hensley, Walter, Claire, Nathan, Whitaker, Barrington Hills, Rockford, Winnebago, Lakeshore, Merrit, Ostrander, Corbin, Halvorsen, Cole Family Holdings, the Irrevocable Trust, IDGT, SLAT, grantor trust, installment sale, seed gift, demand note, the burn, non-voting, voting unit, aerospace, fastener, buy-sell, appraisal, endowment, and every v4 dollar figure and authority Part K lists (`verify-migration.mjs` check 1 carries the regexes) | 2026-10-11 | the v5 household: Naperville, Northlake Regional Health System, Dunmore Industrial Equipment, Ruth Alder, Emma and Ryan |
 | the LMS by name, the platform assignments are submitted through | 2026-08-25 | "the course site" |
 | instructor note | 2026-08-26 | `instructor-notes/session-N.md`, outside the served pages |
 | **Tier A — grading.** graded · grading · a grade · rubric *(as a course instrument)* · graded component · loses marks · full credit · submit · submitted · submission · turn in · points *(as course credit)* · pass/fail · any weight or percentage of a grade | 2026-08-27 | nothing — deleted. Grading is set by the instructor outside this site |
@@ -575,29 +724,36 @@ example survives any single lesson edit, and it names the actual boundary — wh
 an AI tool — rather than what appears in produced work. The `session-1:1961` sentence
 remains in force and remains covered by this row; it is simply no longer the example.
 
-**`session-0.1` is excluded from Tier A and Tier B, permanently, by instructor
-decision, and here is the test that says so.** It is **not part of the current
-offering** — it is a primer for a future course — so the ungraded-repo argument
-above does not reach it: whatever it says about grading is a claim about a course
-that has not been scheduled, not a second source of truth against the syllabus. It
-**stays in the repository, stays linked from the hub at `index.html:1045`, and
-stays in every validator population unchanged.**
+**`session-0.1` was excluded from Tier A and Tier B, by instructor decision,
+until the rebuild of 2026-10-12, and the exclusion ended with it.** The exclusion
+covered the Fall 2026 page, which was a primer for a course that had not been
+scheduled, so the ungraded-repo argument above did not reach it. The page is now
+the self-paced setup page, part of the course, and it is written clean: it passes
+the same Tier A, Tier B, LMS-name and `instructor note` greps as the lessons and
+the hub, with nothing excluded but the STYLE fence for the last. It stays in the
+repository, stays linked from the hub (first card), and stays in every validator
+population. Nothing below is a rule for the rebuilt page; it is the record of why
+the Fall 2026 page was left alone.
 
-**MUST NOT be purged**, and the reason is mechanical rather than editorial. Its
-`LMBOX` and `LMSTYLE` fences are byte-paired with `session-1`'s, asserted by the
+**Historical, and no longer a constraint: the Fall 2026 page MUST NOT be
+purged**, and the reason was mechanical rather than editorial. Its
+`LMBOX` and `LMSTYLE` fences were byte-paired with `session-1`'s, asserted by the
 md5 loop in the pre-push gate above and counted by `A9b` as shared boilerplate.
 Editing either copy alone breaks the pairing — measured, not assumed: removing
 one clause from `session-1`'s copy raised `A9b` from 6 distinct shared blocks to
-7. So a Tier A or Tier B string inside a fence cannot be purged from one lesson,
-and purging it from both means editing `session-0.1`, which this decision
-forbids. The disposition is held open for a later phase as **DW-057**.
+7. So a Tier A or Tier B string inside a fence could not be purged from one lesson,
+and purging it from both meant editing `session-0.1`, which this decision
+forbade. The disposition was held open as **DW-057**; the rebuild closed it, and
+the pairing it protected is gone.
 
 **One Tier A string survives in `session-1` and it is ACCEPTED, not outstanding.**
 `session-1:1349` — *"Nothing is graded on it and nothing breaks without it"* —
 sits inside that `LMBOX` fence. The instructor accepted it as-is on 2026-08-27:
 it **disclaims** grading rather than asserting it, so it is not the defect Tier A
-exists to catch, and editing it would cost the `session-0.1` byte-pairing for no
-gain. **DW-048, closed. Do not re-open it.**
+exists to catch, and editing it would have cost the `session-0.1` byte-pairing for
+no gain. **DW-048, closed. Do not re-open it.** (The pairing cost lapsed on
+2026-10-12 with `session-0.1`'s copy of the fence; the acceptance stands as the
+instructor's decision until the instructor revisits it.)
 
 ## Adding a session
 
@@ -802,10 +958,13 @@ A marker in any other script comment is never exempt: outside `session-0.1` it
 needs a CLAIM annotation like any claim and fails without one; in `session-0.1`
 an unannotated `[UNVERIFIED, needs source]` is listed as a legacy, no-weight
 claim and any other form fails. So a new comment, or a lexer that mistakes a
-string for a comment, lists a claim or fails; it never exempts one. `session-0.1` is frozen (DW-057) and its markers predate the CLAIM
+string for a comment, lists a claim or fails; it never exempts one. `session-0.1` was frozen (DW-057) and its markers predated the CLAIM
 convention, so it is the one file in `LEGACY_UNANNOTATED` allowed to carry the
 old form without an annotation; those rows have no weight and sit in their own
-section. Anywhere else an unannotated marker of any form is the usual hard
+section. The rebuilt page of 2026-10-12 carries no marker of any form, so that
+allowance and the two pinned `CONVENTION_COMMENTS` lines for `session-0.1` match
+nothing and are inert; they are left in `scripts/build-unsourced.mjs`, and
+`docs/unsourced-claims.md` is regenerated to drop the six rows. Anywhere else an unannotated marker of any form is the usual hard
 failure. **Regenerate the register after any edit to a lesson that moves a
 marker's line.**
 

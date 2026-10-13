@@ -1,0 +1,882 @@
+[
+ {
+  "id": "claude-api-price-fable-5-1",
+  "statement": "Claude Fable 5.1 API price per million tokens",
+  "value": "$10 input / $50 output",
+  "unit": "USD per MTok",
+  "applies_to": [
+   "session-0.1",
+   "session-1",
+   "session-2",
+   "session-5"
+  ],
+  "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "source_title": "Claude API pricing (platform.claude.com)",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [],
+  "notes": "Fetched in full 2026-10-11. Cache read $0.25 (0.025x base input), cache write $12.50 (5m) / $20 (1h), batch $5 / $25. Same price for Claude Mythos 5.1 (limited availability) and Fable 5."
+ },
+ {
+  "id": "claude-api-price-opus-5-5",
+  "statement": "Claude Opus 5.5 API price per million tokens",
+  "value": "$4 input / $20 output",
+  "unit": "USD per MTok",
+  "applies_to": [
+   "session-0.1",
+   "session-1",
+   "session-2",
+   "session-5"
+  ],
+  "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "source_title": "Claude API pricing (platform.claude.com)",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [
+   "$15 / $75",
+   "$15/$75",
+   "$75 per million output",
+   "Opus is $5 / $25",
+   "Opus at $5/$25"
+  ],
+  "notes": "Fetched in full 2026-10-11. Cheaper than Opus 5 / 4.8 / 4.7 / 4.6 / 4.5 ($5 / $25) and the retired Opus 4.1 / 4 ($15 / $75). Cache read $0.20 (0.05x), batch $2 / $10, fast mode (research preview, API only) $8 / $40."
+ },
+ {
+  "id": "claude-api-price-sonnet-5-5",
+  "statement": "Claude Sonnet 5.5 API price per million tokens",
+  "value": "$2 input / $10 output",
+  "unit": "USD per MTok",
+  "applies_to": [
+   "session-0.1",
+   "session-1",
+   "session-2",
+   "session-5"
+  ],
+  "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "source_title": "Claude API pricing (platform.claude.com)",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [],
+  "notes": "Fetched in full 2026-10-11. Cache read $0.10 (0.05x), batch $1 / $5. Sonnet 5 introductory $2 / $10 is now standard (the Sept 1, 2026 rise to $3 / $15 did not occur); Sonnet 4.6 / 4.5 / 4 remain $3 / $15."
+ },
+ {
+  "id": "claude-api-price-haiku-5-5",
+  "statement": "Claude Haiku 5.5 API price per million tokens, tiered by prompt length",
+  "value": "$0.10 / $0.50 for prompts up to 100K tokens; $0.50 / $2.50 for prompts over 100K",
+  "unit": "USD per MTok",
+  "applies_to": [
+   "session-0.1",
+   "session-1",
+   "session-2",
+   "session-5"
+  ],
+  "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "source_title": "Claude API pricing (platform.claude.com)",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [],
+  "notes": "Fetched in full 2026-10-11. The only current model with tiered long-context pricing; prompt length counts all input tokens including cache reads and writes, priced per request. Haiku 4.5 remains $1 / $5."
+ },
+ {
+  "id": "claude-output-input-ratio",
+  "statement": "Output tokens cost five times input tokens on every listed Claude model",
+  "value": "5x",
+  "unit": "ratio",
+  "applies_to": [
+   "session-0.1",
+   "session-1",
+   "session-2",
+   "session-5",
+   "session-3",
+   "session-4"
+  ],
+  "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "source_title": "Claude API pricing (platform.claude.com)",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "twice the input",
+   "2x input",
+   "double the input",
+   "about double the input",
+   "output tokens cost about double"
+  ],
+  "notes": "Fetched in full 2026-10-11: all 23 rows of the pricing table, retired models included, have output = 5x base input. The Fall 2026 class twice heard about 2x; the correction is 5x."
+ },
+ {
+  "id": "claude-cache-and-batch-pricing",
+  "statement": "Prompt-cache read and Batch API pricing relative to base input",
+  "value": "cache read 0.1x base input (0.025x on Fable 5.1 and Mythos 5.1; 0.05x on Opus 5.5 and Sonnet 5.5); cache write 1.25x (5 minute) or 2x (1 hour); Batch API 50% off input and output",
+  "unit": "multipliers",
+  "applies_to": [
+   "session-1",
+   "session-2",
+   "session-5"
+  ],
+  "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "source_title": "Claude API pricing (platform.claude.com)",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "cache read is 5% on every model",
+   "cache read at 50%"
+  ],
+  "notes": "Fetched in full 2026-10-11. The Fall 2026 correction \"a cache read is 10% of base input, not 5%\" is itself model-specific now: 10% is the default, 5% on Opus 5.5 and Sonnet 5.5, 2.5% on Fable 5.1. Multipliers stack with the batch discount and the US-only inference_geo 1.1x."
+ },
+ {
+  "id": "claude-context-window",
+  "statement": "Context window and maximum output of the four current Claude models",
+  "value": "1M tokens context; 128K tokens maximum output (synchronous Messages API)",
+  "unit": "tokens",
+  "applies_to": [
+   "session-0.1",
+   "session-1",
+   "session-2",
+   "session-5",
+   "session-3",
+   "session-4"
+  ],
+  "source_url": "https://platform.claude.com/docs/en/models/overview",
+  "source_title": "Models overview (platform.claude.com)",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "high",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "Fetched in full 2026-10-11 for Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5. 1M tokens is roughly 555K words on the current tokenizer; the Batch API allows up to 300K output with a beta header on most current models. A \"200K context window\" statement about Haiku 4.5 or an older model is history, not a defect, so no retired string is registered; the current-model claim is checked by reading, in Phase 5 and the week-before ritual."
+ },
+ {
+  "id": "claude-model-ids-and-retirements",
+  "statement": "Current Claude model ids and their earliest retirement dates; Sonnet 4.5 retirement",
+  "value": "claude-fable-5-1 (not before 2027-09-01), claude-opus-5-5 (2027-09-22), claude-sonnet-5-5 (2027-09-28), claude-haiku-5-5 (2027-10-07); claude-sonnet-4-5-20250929 deprecated 2026-09-30, retires 2026-11-30",
+  "unit": "dates",
+  "applies_to": [
+   "session-0.1",
+   "session-1",
+   "session-2",
+   "session-5",
+   "session-3",
+   "session-4"
+  ],
+  "source_url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+  "source_title": "Model deprecations (platform.claude.com)",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "high",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "Both pages fetched in full 2026-10-11. Every captured model output on a served page that names Sonnet 4.5 must be re-run after 2026-11-30 (runbook section 4, step 3). Other dated rows: Haiku 4.5 active (not before 2026-10-15), Opus 4.5 active (not before 2026-11-24), Opus 4.1 and Opus 4 retired 2026-08-05 and 2026-06-15. Reliable knowledge cutoff for the four current models: June 2026."
+ },
+ {
+  "id": "claude-plans",
+  "statement": "Claude consumer and business plan prices",
+  "value": "Free $0; Pro $20 per month or $17 per month billed annually; Max 5x $100; Max 20x $200; Team Standard $25 ($20 annual); Team Premium $125 ($100 annual); Enterprise $20 per seat billed annually plus usage",
+  "unit": "USD per month",
+  "applies_to": [
+   "session-0.1",
+   "session-1",
+   "session-4",
+   "session-5"
+  ],
+  "source_url": "https://claude.com/pricing",
+  "source_title": "Claude plans and pricing (claude.com)",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [
+   "$500 Max",
+   "Max plan is $500",
+   "Max at $500",
+   "$500 a month for Max",
+   "Max plan costs $500"
+  ],
+  "notes": "claude.com/pricing fetched in full 2026-10-11; the Max 20x $200 figure is on the support article \"What is the Max plan?\" (support.claude.com/en/articles/11049741). The runbook URL 11049744 returns 404. Free includes Sonnet and Haiku; Pro includes Opus, Sonnet and Haiku with Fable through usage credits; Max and Team Premium carry Fable at 50% of weekly limits."
+ },
+ {
+  "id": "claude-skills-format",
+  "statement": "How custom skills are added in Claude and on which plans",
+  "value": "Upload a ZIP of the skill folder; available on Free, Pro, Max, Team and Enterprise; requires the \"Code execution and file creation\" setting (Settings > Capabilities on consumer plans; Organization settings > Plugins & skills for Team and Enterprise)",
+  "unit": "",
+  "applies_to": [
+   "session-0.1",
+   "session-1",
+   "session-5"
+  ],
+  "source_url": "https://support.claude.com/en/articles/12512180-use-skills-in-claude",
+  "source_title": "Use skills in Claude (support.claude.com)",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "Fetched in full 2026-10-11. A lesson that tells Team users to flip a personal toggle is wrong: on Team and Enterprise the setting is an organization policy."
+ },
+ {
+  "id": "claude-consumer-retention",
+  "statement": "Consumer-plan data retention under the model-training setting",
+  "value": "With \"Help improve Claude\" on, de-identified data may be kept up to 5 years in training pipelines; with it off, a deleted conversation is removed from back-end storage within 30 days; whether the toggle defaults on or off is not stated on the page",
+  "unit": "",
+  "applies_to": [
+   "session-0.1",
+   "session-1",
+   "session-4"
+  ],
+  "source_url": "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training",
+  "source_title": "Is my data used for model training? (privacy.claude.com)",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "high",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "retains for 5 years by default",
+   "kept for five years by default",
+   "five-year retention by default"
+  ],
+  "notes": "privacy.claude.com is unreachable from the build container; values are from primary-domain search snippets plus the fully fetched anthropic.com post \"Updates to our consumer terms\". The default state of the toggle is a GAP: do not state one. Exceptions: flagged content up to 2 years, safety classifier scores up to 7 years, thumbs-up/down feedback keeps the whole conversation up to 5 years."
+ },
+ {
+  "id": "claude-text-watermark",
+  "statement": "Claude text watermark and file content credentials",
+  "value": "Claude text output carries a statistical watermark (announced 2026-08-14, future and supported models); it does not identify individual users and adds no hidden characters; supported files (.png, .jpg, .svg) carry a C2PA content credential with no identifying information",
+  "unit": "",
+  "applies_to": [
+   "session-1",
+   "session-4"
+  ],
+  "source_url": "https://www.anthropic.com/news/claude-text-watermark",
+  "source_title": "Claude text watermark (anthropic.com news, 2026-08-14)",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "traces to your account",
+   "traced to your account",
+   "identifies your account",
+   "watermark identifies the user",
+   "tied to your account"
+  ],
+  "notes": "Both the news post and support.claude.com/en/articles/16266773 fetched in full 2026-10-11. Nuance: the announcement says \"future Claude models\" and the support article keeps a per-model table with a transition period, so do not say every Claude text output is watermarked today."
+ },
+ {
+  "id": "openai-consumer-training-default",
+  "statement": "ChatGPT consumer plans train on content by default, with an opt-out",
+  "value": "Consumer ChatGPT and Codex content may be used for training unless the user turns off \"Improve the model for everyone\" (Settings > Data controls) or uses the privacy portal; ChatGPT Business, Enterprise, Edu and the API are not used for training by default",
+  "unit": "",
+  "applies_to": [
+   "session-1",
+   "session-4"
+  ],
+  "source_url": "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+  "source_title": "How your data is used to improve model performance (OpenAI help)",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "ChatGPT defaults to no training",
+   "ChatGPT does not train by default",
+   "OpenAI does not train on consumer chats"
+  ],
+  "notes": "openai.com and help.openai.com are unreachable from the build container; primary-domain snippets only. Temporary Chat is not used for training; thumbs up/down feedback can submit the whole conversation. OpenAI now calls the former Team tier \"ChatGPT Business\"."
+ },
+ {
+  "id": "openai-models-and-plans",
+  "statement": "Current OpenAI consumer model family and plan prices",
+  "value": "GPT-6 family (Astra, Sol, Luna) and GPT-6.1 Sol; Free $0 (GPT-6 Luna), Go $8 (US), Plus $20, Pro from $100 with $100 / $200 / $500 tiers (new $200 sign-ups paused from 2026-09-10)",
+  "unit": "USD per month",
+  "applies_to": [
+   "session-1"
+  ],
+  "source_url": "https://chatgpt.com/pricing/",
+  "source_title": "ChatGPT pricing (chatgpt.com)",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [],
+  "notes": "chatgpt.com is unreachable from the build container and search returned two cached snapshots (one still listing GPT-5.6 variants), so per-plan model assignments are provisional until the live page is read. Prefer tier-generic prose."
+ },
+ {
+  "id": "openai-provenance",
+  "statement": "How OpenAI marks generated images and text",
+  "value": "Images from ChatGPT, Codex and the API carry C2PA content credentials and a Google SynthID invisible watermark; text watermarking is EU-only for ChatGPT and Codex and opt-in (off by default) for the API",
+  "unit": "",
+  "applies_to": [
+   "session-1",
+   "session-4"
+  ],
+  "source_url": "https://help.openai.com/en/articles/8912793-provenance-signals-in-openai-generated-content",
+  "source_title": "Provenance signals in OpenAI-generated content (OpenAI help)",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "high",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "Primary-domain snippets only. The help article was retitled from \"C2PA in ChatGPT images\"; the text-watermark rollout date (about 2026-10-05) is inferred from search listings, not read on the page: a GAP to close before Session 4."
+ },
+ {
+  "id": "gemini-plans",
+  "statement": "Google AI consumer plan prices",
+  "value": "Google AI Plus $4.99; Google AI Pro $19.99; Google AI Ultra $99.99 (5x) or $199.99 (20x)",
+  "unit": "USD per month",
+  "applies_to": [
+   "session-1"
+  ],
+  "source_url": "https://gemini.google/subscriptions/",
+  "source_title": "Gemini subscriptions (gemini.google)",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [],
+  "notes": "Primary-domain snippets only (host unreachable from the build container). The Google One page also lists a $9.99 AI Plus (2 TB) variant and shows Pro at $199.99 per year, so \"$199.99\" is ambiguous without the period."
+ },
+ {
+  "id": "google-synthid",
+  "statement": "What Google SynthID watermarks",
+  "value": "SynthID embeds imperceptible watermarks in AI-generated images (Imagen), video (Veo), audio (Lyria, NotebookLM) and Gemini text; detection is available in Gemini, Search and Chrome",
+  "unit": "",
+  "applies_to": [
+   "session-1",
+   "session-4"
+  ],
+  "source_url": "https://deepmind.google/models/synthid/",
+  "source_title": "SynthID (Google DeepMind)",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "Primary-domain snippets only. OpenAI's own help article confirms SynthID is embedded in OpenAI-generated images."
+ },
+ {
+  "id": "mcp-name",
+  "statement": "What MCP stands for and who governs it",
+  "value": "MCP is the Model Context Protocol; Anthropic donated it to the Linux Foundation's Agentic AI Foundation on 2025-12-09",
+  "unit": "",
+  "applies_to": [
+   "session-0.1",
+   "session-5"
+  ],
+  "source_url": "https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/",
+  "source_title": "MCP joins the Agentic AI Foundation (modelcontextprotocol.io blog, 2025-12-09)",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "low",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "master control protocol",
+   "Master Control Protocol",
+   "Model Control Protocol"
+  ],
+  "notes": "The MCP blog post fetched in full 2026-10-11; the Linux Foundation press release title and date confirmed by a linuxfoundation.org snippet. Said as \"master control protocol\" in Session 5 of Fall 2026."
+ },
+ {
+  "id": "arena-rename",
+  "statement": "LMArena is now Arena",
+  "value": "The leaderboard formerly called LMArena (and before that Chatbot Arena) has been Arena, at arena.ai, since 2026-01-28",
+  "unit": "",
+  "applies_to": [
+   "session-1",
+   "session-2"
+  ],
+  "source_url": "https://arena.ai/blog/lmarena-is-now-arena",
+  "source_title": "LMArena is now Arena (arena.ai blog, 2026-01-28)",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "lmarena.ai",
+   "the LMArena leaderboard",
+   "on LMArena"
+  ],
+  "notes": "arena.ai is unreachable from the build container; the date comes from the blog post's search metadata. A historical \"formerly LMArena\" is fine; a present-tense LMArena is not."
+ },
+ {
+  "id": "leaderboard-snapshot-arena",
+  "statement": "Arena text leaderboard, most recent readable snapshot",
+  "value": "Gemini 4 Argon 1,525 (preliminary) first, Claude Opus 5.5 1,507 second, snapshot dated 2026-10-08 (secondary roundup)",
+  "unit": "Arena score",
+  "applies_to": [
+   "session-1"
+  ],
+  "source_url": "https://arena.ai/leaderboard/chat/text",
+  "source_title": "Arena text leaderboard (arena.ai)",
+  "retrieved": "2026-10-11",
+  "confidence": "L",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [],
+  "notes": "The live board could not be read (host unreachable); the pair comes from one secondary roundup (slash-digital.io, 2026-10-08) with Argon's 1,525 corroborated by two others. Scores move weekly: re-read the live board the week before Session 1 and treat this record as a placeholder until then."
+ },
+ {
+  "id": "leaderboard-snapshot-aa",
+  "statement": "Artificial Analysis Intelligence Index, most recent readable snapshot",
+  "value": "Index v4.3.2 (about 2026-10-07): Claude Opus 5.5 (Max) 58, Claude Sonnet 5.5 (Max) 56, GPT-6 Astra (Max) 53, Gemini 4 Argon (High) 53",
+  "unit": "index points",
+  "applies_to": [
+   "session-1"
+  ],
+  "source_url": "https://artificialanalysis.ai/leaderboards/models",
+  "source_title": "Artificial Analysis models leaderboard",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [],
+  "notes": "Primary-domain snippets only (host unreachable). Effort tiers matter: Opus 5.5 High scores 54 and GPT-6 Astra High 51. Not comparable with v4.1.1 figures (Claude Opus 5 at 63)."
+ },
+ {
+  "id": "aa-index-definition",
+  "statement": "What the three leaderboards measure",
+  "value": "Artificial Analysis Intelligence Index v4.3.2: a weighted average of 10 evaluations (Agents 30%, Coding 20%, Scientific Reasoning 20%, General 30%), scaled 0 to 100. LiveBench: a contamination-limited benchmark of 23 objective tasks in 7 categories, refreshed about every six months. Arena: human pairwise preference votes converted to a Bradley-Terry (Elo-style) score",
+  "unit": "",
+  "applies_to": [
+   "session-1"
+  ],
+  "source_url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
+  "source_title": "Artificial Analysis Intelligence Index methodology; LiveBench README; Arena",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "The LiveBench README (github.com/LiveBench/LiveBench) fetched in full; the AA and Arena descriptions are primary-domain snippets. AA's evaluations-page FAQ still says 25% per category; the v4.3 announcement and methodology page say 30/20/20/30."
+ },
+ {
+  "id": "livebench-last-release",
+  "statement": "LiveBench latest question release",
+  "value": "LiveBench-2026-06-25",
+  "unit": "release date",
+  "applies_to": [
+   "session-1"
+  ],
+  "source_url": "https://livebench.ai/",
+  "source_title": "LiveBench",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [],
+  "notes": "Homepage snippet plus GitHub issue titles referencing the 2026-06-25 release; the GitHub README is stale (still says 2025-04-25)."
+ },
+ {
+  "id": "reg-sp-compliance",
+  "statement": "Regulation S-P 2024 amendments: compliance dates and the notice clocks",
+  "value": "Compliance by 2025-12-03 (larger entities) and 2026-06-03 (smaller entities); a written incident response program is required; customer notice as soon as practicable and no later than 30 days after becoming aware of unauthorized access or use; service providers must notify the firm within 72 hours; the rule imposes no SEC notification and no 24-hour CCO clock",
+  "unit": "",
+  "applies_to": [
+   "session-3",
+   "session-4"
+  ],
+  "source_url": "https://www.sec.gov/files/rules/final/2024/regulation-s-p-small-entity-compliance-guide.pdf",
+  "source_title": "SEC Regulation S-P small entity compliance guide; fact sheet 34-100155",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "report to the CCO within 24 hours",
+   "CCO within 24 hours",
+   "notify the SEC within 24 hours"
+  ],
+  "notes": "sec.gov is unreachable from the build container; every figure comes from sec.gov snippets (compliance guide, fact sheet, press release) corroborated by law-firm summaries. The two negatives rest on absence in the primary text plus secondary statements. Companion release IA-6604 not confirmed. Both compliance dates have passed: the rule is in force for every covered firm."
+ },
+ {
+  "id": "sec-exam-priorities-status",
+  "statement": "SEC Division of Examinations priorities: status and legal force",
+  "value": "FY2026 priorities released 2025-11-17; the document states it has \"no legal force or effect\"; FY2027 priorities not found as of 2026-10-11",
+  "unit": "",
+  "applies_to": [
+   "session-3",
+   "session-4"
+  ],
+  "source_url": "https://www.sec.gov/files/2026-exam-priorities.pdf",
+  "source_title": "SEC FY2026 Examination Priorities",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "high",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "exam priorities bind you",
+   "exam priorities are binding",
+   "priorities have the force of law"
+  ],
+  "notes": "sec.gov snippets. FY2025 and FY2024 priorities were released in October of the prior year, so check sec.gov/compliance/examination-priorities before Session 4 and swap the reading if FY2027 is out (runbook section 4, step 2)."
+ },
+ {
+  "id": "finra-24-09-status",
+  "statement": "FINRA Regulatory Notice 24-09 remains active; the 2026 oversight report has a GenAI section",
+  "value": "Notice 24-09 (2024-06-27) is still published with no rescission; FINRA's 2026 Annual Regulatory Oversight Report (released 2025-12-09) carries a Generative AI section",
+  "unit": "",
+  "applies_to": [
+   "session-3",
+   "session-4"
+  ],
+  "source_url": "https://www.finra.org/rules-guidance/notices/24-09",
+  "source_title": "FINRA Regulatory Notice 24-09; 2026 Annual Regulatory Oversight Report",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "24-09 was rescinded",
+   "24-09 has been rescinded",
+   "FINRA rescinded",
+   "rescinded its guidance",
+   "guidance was rescinded"
+  ],
+  "notes": "finra.org snippets only. \"Not rescinded\" is inferred from continued publication and FINRA's own later cross-references. The notice says it \"does not create new legal or regulatory requirements\"."
+ },
+ {
+  "id": "sec-pda-withdrawal",
+  "statement": "SEC withdrew the predictive data analytics conflicts proposal",
+  "value": "Withdrawn 2025-06-12 (Release 33-11377 / 34-103247 / IA-6885 / IC-35635), published in the Federal Register 2025-06-17 with 13 other 2022 to 2023 proposals",
+  "unit": "",
+  "applies_to": [
+   "session-4"
+  ],
+  "source_url": "https://www.sec.gov/rules-regulations/2025/06/s7-12-23",
+  "source_title": "SEC File S7-12-23, Withdrawal of Proposed Regulatory Actions",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "low",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "The runbook seed carried 34-103244, which is an unrelated NYSE notice; the correct Exchange Act release is 34-103247. The Commission \"does not intend to issue final rules with respect to these proposals\"."
+ },
+ {
+  "id": "ai-policy-requirement",
+  "statement": "No rule names an \"AI use policy\"; existing rules and examination expectations apply",
+  "value": "No SEC or FINRA rule requires a document called an AI use policy; Advisers Act Rule 206(4)-7 compliance policies, Regulation S-P and Rule 204-2 recordkeeping govern AI use, and the FY2025 and FY2026 examination priorities say examiners review AI-related policies and procedures and the accuracy of AI claims",
+  "unit": "",
+  "applies_to": [
+   "session-3",
+   "session-4"
+  ],
+  "source_url": "https://www.sec.gov/files/2026-exam-priorities.pdf",
+  "source_title": "SEC FY2026 Examination Priorities; FINRA Notice 24-09",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "AI use policy is required",
+   "legally required to have an AI policy",
+   "AI policy is required by law",
+   "rule requires an AI use policy"
+  ],
+  "notes": "A negative claim; supported by FINRA 24-09's own disclaimer, the PDA withdrawal and the exam priorities' wording. The Rule 204-2 link rests on secondary commentary."
+ },
+ {
+  "id": "sec-ai-washing-enforcement",
+  "statement": "SEC \"AI washing\" settlements against advisers",
+  "value": "Press release 2024-36 (2024-03-18): Delphia (USA) Inc. $225,000 and Global Predictions Inc. $175,000 for false statements about their use of AI; press release 2024-167 (2024-10-10): Rimar Capital and two individuals, civil penalties and a cease-and-desist",
+  "unit": "USD",
+  "applies_to": [
+   "session-4"
+  ],
+  "source_url": "https://www.sec.gov/newsroom/press-releases/2024-36",
+  "source_title": "SEC press release 2024-36",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "low",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "sec.gov snippets. Do not cite LR-26577 (AI Financial Education Foundation, 2026) as AI washing; it concerns false Form ADV statements. The Rimar penalty total is omitted here because its figure coincides with a retired v3 case string; the press release carries it."
+ },
+ {
+  "id": "cfp-genai-guide",
+  "statement": "CFP Board Generative AI Ethics Guide",
+  "value": "Published 2025-02-25 as \"Generative AI Ethics Guide: A Checklist for Upholding the Code and Standards\", applying the Technology Standard (A.14) and the duties of care and competence to generative AI; a resource, not a new standard",
+  "unit": "",
+  "applies_to": [
+   "session-4"
+  ],
+  "source_url": "https://www.cfp.net/news/2025/02/news-releases/guide-on-ethical-use-of-generative-ai",
+  "source_title": "CFP Board news release, 2025-02-25",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "low",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "cfp.net snippets. The runbook URL did not surface; the guide PDF lives under cfp.net/-/media/files/cfp-board/standards-and-ethics/compliance-resources/. \"A resource, not a binding standard\" is the course's characterization, consistent with the guide's framing, not a quotation."
+ },
+ {
+  "id": "colorado-sb26-189",
+  "statement": "Colorado SB 26-189 and the Colorado AI Act timeline",
+  "value": "Signed 2026-05-14 and effective on signature; it repeals and re-enacts the SB 24-205 provisions, with developer documentation duties and attorney general rulemaking from 2027-01-01",
+  "unit": "",
+  "applies_to": [
+   "session-4"
+  ],
+  "source_url": "https://leg.colorado.gov/bills/sb26-189",
+  "source_title": "Colorado General Assembly, SB26-189",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "leg.colorado.gov snippets. The runbook seed's \"effective 2027-01-01\" is only partly right: the act took effect on signature and 2027-01-01 is when the key obligations begin."
+ },
+ {
+  "id": "utah-ai-disclosure",
+  "statement": "Utah's generative-AI disclosure duty for regulated occupations",
+  "value": "Utah SB 149 (2024) created the AI Policy Act; SB 226 (2025) narrows the disclosure duty to high-risk interactions in regulated occupations (the statutory definition of high-risk interaction names financial advice); the Act sunsets 2027-07-01",
+  "unit": "",
+  "applies_to": [
+   "session-4"
+  ],
+  "source_url": "https://le.utah.gov/Session/2025/bills/enrolled/SB0226.pdf",
+  "source_title": "Utah S.B. 226 (2025), enrolled",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "le.utah.gov snippets. \"Financial advice\" appears in the definition of high-risk interaction, not as a named regulated occupation; whether an adviser is in a regulated occupation turns on Utah Department of Commerce licensure."
+ },
+ {
+  "id": "adoption-t3-2026",
+  "statement": "Advisor AI adoption, 2026 T3/Inside Information survey",
+  "value": "52.2% of advisors use AI search or generative tools (41.8% a year earlier); 42.9% use AI notetakers; n = 2,906",
+  "unit": "percent",
+  "applies_to": [
+   "session-1",
+   "session-3"
+  ],
+  "source_url": "https://www.kitces.com/blog/weekend-reading-for-financial-planners-march-14-15-2026/",
+  "source_title": "Kitces Weekend Reading, March 14 to 15, 2026, on the 2026 T3/Inside Information Advisor Software Survey",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "kitces.com snippets; the survey PDF is at t3technologyhub.com (2026-T3_Inside-Information-Software-Survey.pdf). T3 rounds the figures to 52% and 41%."
+ },
+ {
+  "id": "adoption-iss-policy",
+  "statement": "Advisor AI use and written AI policies, ISS Market Intelligence",
+  "value": "48% of U.S. advisors use AI in their workflows; 78% of RIAs say their firm has no written AI policy (35% at regional, independent and bank firms); n = 466, fielded June 2025",
+  "unit": "percent",
+  "applies_to": [
+   "session-3",
+   "session-4"
+  ],
+  "source_url": "https://www.planadviser.com/exclusives/advisers-using-ai-by-the-numbers/",
+  "source_title": "PLANADVISER, Advisers Using AI by the Numbers (ISS Market Intelligence Advisor Pulse)",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "planadviser.com snippets; the ISS release is at insights.issgovernance.com (2025-07-22)."
+ },
+ {
+  "id": "kitces-notetakers-2025",
+  "statement": "Kitces research on AI notetaker adoption and satisfaction",
+  "value": "About 18% of advisory teams use an AI meeting-note tool; Jump and Zocks lead satisfaction and the most-adopted Zoom AI Companion ranks lowest; a client meeting takes about an hour to prepare and an hour to follow up without one",
+  "unit": "",
+  "applies_to": [
+   "session-3"
+  ],
+  "source_url": "https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/",
+  "source_title": "Kitces, Best AI Notetakers for Financial Advisor Meetings",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "low",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "kitces.com snippets; the 2025-03-17 publication date in the runbook could not be confirmed and is a GAP. Kitces attributes the 18% to its Research on the Financial Planning Process."
+ },
+ {
+  "id": "context-window-definition",
+  "statement": "What the context window is",
+  "value": "All the text the model can reference when generating a response, including the response itself: the system prompt, every message and document in the request, tool definitions, and the output including extended thinking; up to 1M tokens on current models. It is not the input box.",
+  "unit": "",
+  "applies_to": [
+   "session-0.1",
+   "session-1",
+   "session-2",
+   "session-3"
+  ],
+  "source_url": "https://platform.claude.com/docs/en/build-with-claude/context-windows",
+  "source_title": "Context windows (platform.claude.com)",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "low",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "the input box is the context window",
+   "input box is called the context window",
+   "the box you type in is the context window"
+  ],
+  "notes": "Fetched in full 2026-10-11. The page says \"reference\", not \"attend to\", and never mentions an input box; the contrast is the course's own framing. The Fall 2026 class heard the box called the window in Sessions 1 and 2."
+ },
+ {
+  "id": "tcja-enactment",
+  "statement": "When the Tax Cuts and Jobs Act was enacted",
+  "value": "Signed 22 December 2017 as Public Law 115-97 (H.R. 1, 115th Congress)",
+  "unit": "date",
+  "applies_to": [
+   "session-5",
+   "session-2"
+  ],
+  "source_url": "https://www.congress.gov/bill/115th-congress/house-bill/1/actions",
+  "source_title": "Congress.gov, H.R. 1 (115th Congress) actions",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "low",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "TCJA in 2016",
+   "Tax Cuts and Jobs Act of 2016"
+  ],
+  "notes": "congress.gov snippets only (host unreachable). The short title \"Tax Cuts and Jobs Act\" was struck before passage; the enrolled law is headed Public Law 115-97, Dec. 22, 2017. Said as 2016 in Session 5 of Fall 2026."
+ },
+ {
+  "id": "portability-late-election",
+  "statement": "Late portability elections under Rev. Proc. 2022-32",
+  "value": "An estate not required to file under IRC 6018(a) may elect portability on a complete Form 706 filed on or before the fifth anniversary of death (superseding Rev. Proc. 2017-34's second anniversary); later relief only by private letter ruling under Treas. Reg. 301.9100-3",
+  "unit": "",
+  "applies_to": [
+   "session-2"
+  ],
+  "source_url": "https://www.irs.gov/pub/irs-drop/rp-22-32.pdf",
+  "source_title": "Rev. Proc. 2022-32 (IRB 2022-30)",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "low",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "portability is permanently lost",
+   "portability election is permanently lost",
+   "lost forever if not elected"
+  ],
+  "notes": "irs.gov snippets only. The Form 706 instructions (Rev. July 2026) still cite Rev. Proc. 2022-32 as current. The relief is unavailable to an estate that must file under 6018(a). Fall 2026 Session 2 said portability is permanently lost if not elected."
+ },
+ {
+  "id": "irc-7872-thresholds",
+  "statement": "The two IRC 7872 thresholds for gift loans between individuals",
+  "value": "$10,000: aggregate loans at or below it are outside the section on that day (not for loans used to buy or carry income-producing assets). $100,000: at or below it, imputed interest treated as retransferred by the borrower is capped at the borrower's net investment income (treated as zero if $1,000 or less)",
+  "unit": "USD",
+  "applies_to": [
+   "session-1"
+  ],
+  "source_url": "https://www.law.cornell.edu/uscode/text/26/7872",
+  "source_title": "26 U.S.C. 7872 (LII, Cornell)",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "low",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "law.cornell.edu and irs.gov are unreachable from the build container; search excerpts of the statute and IRS Publication 535. Fall 2026 Session 1 conflated the two thresholds. The v5 case carries no intra-family loan at interest; this record exists for the Session 1 correction and for Ruth's undocumented $25,000 loan to Tom (CASE.md §J), which is a gift loan above $10,000."
+ },
+ {
+  "id": "navajo-written-form",
+  "statement": "Navajo has a standardized written form",
+  "value": "Navajo (Dine bizaad) has had an official orthography since 1937 (Robert W. Young and William Morgan, with John P. Harrington), used in teaching materials by 1940, a Navajo-language newspaper in the 1940s and 1950s, and Young and Morgan's dictionaries (1943; 1980, revised 1987)",
+  "unit": "",
+  "applies_to": [
+   "session-1"
+  ],
+  "source_url": "https://navajo.unm.edu/timeline/",
+  "source_title": "University of New Mexico Navajo Language Program timeline",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "low",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "Navajo has no written form",
+   "Navajo has no written language"
+  ],
+  "notes": "navajo.unm.edu snippets; newspaper dates from secondary sources. Said as having no written form in Session 1 of Fall 2026 (the Code Talkers aside). The Navajo New Testament was translated by Faye Edgerton (Wycliffe), not Young and Morgan."
+ },
+ {
+  "id": "zero-shot-definition",
+  "statement": "Zero-shot, one-shot and few-shot prompting",
+  "value": "Brown et al. (2020), \"Language Models are Few-Shot Learners\" (arXiv 2005.14165): zero-shot gives the model only a natural-language instruction and no demonstrations; one-shot gives exactly one demonstration plus the instruction; few-shot gives as many demonstrations as fit in the context (typically 10 to 100)",
+  "unit": "",
+  "applies_to": [
+   "session-2"
+  ],
+  "source_url": "https://arxiv.org/abs/2005.14165",
+  "source_title": "Brown et al. (2020), Language Models are Few-Shot Learners, arXiv 2005.14165",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "low",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "arxiv.org is unreachable from the build container; the zero-shot sentence is quoted from the paper via search text. A bare prompt with no example is zero-shot, not one-shot (Fall 2026 Session 2)."
+ },
+ {
+  "id": "openai-hallucination-paper",
+  "statement": "OpenAI, Why language models hallucinate",
+  "value": "Published 2025-09-05 on openai.com; paper arXiv 2509.04664 (submitted 2025-09-04) by Adam Tauman Kalai, Ofir Nachum, Santosh S. Vempala and Edwin Zhang; argues that training and evaluation reward guessing over acknowledging uncertainty",
+  "unit": "",
+  "applies_to": [
+   "session-1"
+  ],
+  "source_url": "https://openai.com/index/why-language-models-hallucinate/",
+  "source_title": "OpenAI, Why language models hallucinate (2025-09-05)",
+  "retrieved": "2026-10-11",
+  "confidence": "M",
+  "volatility": "low",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "openai.com unreachable from the build container; date and title from search summaries, authors from the arXiv listing. Tentative Session 1 reading (Appendix R); SOURCES.md already carries src-kalai."
+ },
+ {
+  "id": "lee-2025-critical-thinking",
+  "statement": "Lee et al. (2025), The Impact of Generative AI on Critical Thinking",
+  "value": "Hao-Ping (Hank) Lee, Advait Sarkar, Lev Tankelevitch, Ian Drosos, Sean Rintel, Richard Banks and Nicholas Wilson, \"The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers\", CHI '25 (Yokohama, 26 April to 1 May 2025), ACM, DOI 10.1145/3706598.3713778; survey of 319 knowledge workers and 936 examples",
+  "unit": "",
+  "applies_to": [
+   "session-5"
+  ],
+  "source_url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf",
+  "source_title": "Lee et al. (2025), CHI 2025",
+  "retrieved": "2026-10-11",
+  "confidence": "H",
+  "volatility": "low",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "PDF fetched in full 2026-10-11 and its first page read; title, authors, venue and DOI match. Cite the full title with the subtitle. SOURCES.md carries src-lee-cognitive."
+ },
+ {
+  "id": "claude-tokenizer-4-7",
+  "statement": "Claude 4.7 and later models (and Claude Mythos Preview) use a newer tokenizer that produces approximately 30% more tokens for the same text; the exact increase depends on content and workload",
+  "value": "about 30% more tokens for the same text on Claude 4.7 and later",
+  "unit": "percent",
+  "applies_to": [
+   "session-1",
+   "session-2"
+  ],
+  "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "source_title": "Pricing (Claude Platform Docs), section on tokenizer differences",
+  "retrieved": "2026-10-12",
+  "confidence": "H",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [
+   "0.75 words per token",
+   "three quarters of an English word"
+  ],
+  "notes": "Primary page fetched in full 2026-10-12: \"Claude 4.7 and later models and Claude Mythos Preview use a newer tokenizer that contributes to their improved performance on a wide range of tasks. This tokenizer produces approximately 30% more tokens for the same text.\" The old 0.75 words-per-token rule of thumb predates it and is retired as a stated rule; the context-window record carries the 555,000 words per 1M tokens note."
+ }
+]

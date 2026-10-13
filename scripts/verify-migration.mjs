@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * verify-migration.mjs — the CASE.md v4.0 migration battery, run programmatically.
+ * verify-migration.mjs — the CASE.md migration battery (v5.0 since 2026-10-11), run programmatically.
  *
  * Checks 1-4, 7-12, 14b, 16-18 of the migration plan. The browser checks (13, 14,
  * 15) live in scripts/verify-browser.mjs; injection and idempotence (5, 6) are
@@ -20,7 +20,8 @@ import { classify } from './editorial-regions.mjs';
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LESSONS = ['index.html', 'session-0.1/index.html', 'session-1/index.html',
                  'session-2/index.html', 'session-3/index.html', 'session-4/index.html',
-                 'session-5/index.html'];
+                 'session-5/index.html',
+                 'cases/case-1.html', 'cases/case-2.html', 'cases/case-3.html', 'cases/case-4.html', 'cases/case-5.html'];
 const F = JSON.parse(readFileSync(join(REPO, 'scripts/case-facts.json'), 'utf8')).figures;
 const CASE = readFileSync(join(REPO, 'CASE.md'), 'utf8');
 
@@ -50,7 +51,7 @@ const rel = (p) => relative(REPO, p);
  * table. Anything under audit/ qualifies by definition: an audit that cannot
  * name what it retired is not an audit.
  */
-const isRegister = (rel) => rel.startsWith('audit/') || REGISTER.has(rel);
+const isRegister = (rel) => rel.startsWith('audit/') || rel.startsWith('docs/next-term/') || REGISTER.has(rel);
 const REGISTER = new Set(['CASE.md', 'CHANGELOG.md', 'changelog/index.html',
                           'docs/probe-captures.md', 'docs/live-model-console-plan.md',
                           /* this file names every retired string in order to search for it */
@@ -106,6 +107,170 @@ const RETIRED = [
      note with a balloon" two migrations later. The note is payable on demand. */
   ['balloon', /\bballoon\b/gi],
 ];
+/* ---- 1c  the v4 layer, over the SERVED surface ------------------------------
+   ADDED 2026-10-11 (CASE.md v5.0, next-term-2027 Phase 3). Every v4 name, place,
+   firm, instrument, figure and authority that CASE.md Part K retires. Unlike
+   check 1 (the v3 strings, whole tree), this layer is scoped the way the
+   standing purge list is scoped (MAINTAINING.md): the hub, the lessons, the
+   case pages, the instructor notes, README.md and SOURCES.md. Every other file
+   that names a v4 fact is a record of the household that was taught in Fall
+   2026 (docs/changes/, docs/audits/, the audit reports, the governance files,
+   this script) and keeps it. Dollar figures match with or without the
+   separator. */
+const RETIRED_V4 = [
+  ['Cole Precision', /Cole Precision/gi], ['CPC', /\bCPC\b/g], ['Hensley', /Hensley/g],
+  ['Walter', /\bWalter\b/g], ['Claire', /\bClaire\b/g], ['Nathan', /\bNathan\b/g], ['Whitaker', /Whitaker/g],
+  ['Barrington', /Barrington/g], ['Rockford', /Rockford/g], ['Winnebago', /Winnebago/g],
+  ['Lakeshore Industrial', /Lakeshore Industrial/g], ['Merrit', /\bMerrit\b/g], ['Ostrander', /Ostrander/g],
+  ['Corbin', /\bCorbin\b/g], ['Halvorsen', /Halvorsen/g], ['Cole Family Holdings', /Cole Family Holdings/g],
+  ['Irrevocable Trust', /Irrevocable Trust/g], ['IDGT', /\bIDGT\b/g], ['SLAT', /\bSLAT\b/g],
+  ['grantor trust', /grantor[- ]trust/gi], ['installment sale', /installment sale/gi], ['seed gift', /seed gift/gi],
+  ['demand note', /demand note/gi], ['the burn', /\bthe burn\b/gi], ['non-voting', /non-?voting/gi],
+  ['voting unit', /voting unit/gi], ['aerospace', /aerospace/gi], ['fastener', /fastener/gi],
+  ['buy-sell', /buy-?sell/gi], ['appraisal', /\bappraisal/gi], ['endowment', /\bendowment/gi],
+  ['$55,000,000', new RegExp(NB + '(?:55,000,000|55000000)' + NA, 'g')],
+  ['$67,000,000', new RegExp(NB + '(?:67,000,000|67000000)' + NA, 'g')],
+  ['$20,020,000', new RegExp(NB + '(?:20,020,000|20020000)' + NA, 'g')],
+  ['$2,002,000', new RegExp(NB + '(?:2,002,000|2002000)' + NA, 'g')],
+  ['$38,500', new RegExp(NB + '(?:38,500|38500)' + NA, 'g')],
+  ['$764,764', new RegExp(NB + '(?:764,764|764764)' + NA, 'g')],
+  ['$16,852,000', new RegExp(NB + '(?:16,852,000|16852000)' + NA, 'g')],
+  ['$38,148,000', new RegExp(NB + '(?:38,148,000|38148000)' + NA, 'g')],
+  ['$12,628,000', new RegExp(NB + '(?:12,628,000|12628000)' + NA, 'g')],
+  ['$1,437,500', new RegExp(NB + '(?:1,437,500|1437500)' + NA, 'g')],
+  ['$522,086', new RegExp(NB + '(?:522,086|522086)' + NA, 'g')],
+  ['$349,350', new RegExp(NB + '(?:349,350|349350)' + NA, 'g')],
+  ['$5,644,790', new RegExp(NB + '(?:5,644,790|5644790)' + NA, 'g')],
+  ['$43,290', new RegExp(NB + '(?:43,290|43290)' + NA, 'g')],
+  ['$14,000,000', new RegExp(NB + '(?:14,000,000|14000000)' + NA, 'g')],
+  ['$42,400,000', new RegExp(NB + '(?:42,400,000|42400000)' + NA, 'g')],
+  ['$9,170,000', new RegExp(NB + '(?:9,170,000|9170000)' + NA, 'g')],
+  ['$2,500,000', new RegExp(NB + '(?:2,500,000|2500000)' + NA, 'g')],
+  ['$1,550,000', new RegExp(NB + '(?:1,550,000|1550000)' + NA, 'g')],
+  ['$38,000,000', new RegExp(NB + '(?:38,000,000|38000000)' + NA, 'g')],
+  ['$18,000,000', new RegExp(NB + '(?:18,000,000|18000000)' + NA, 'g')],
+  ['$5,180,000', new RegExp(NB + '(?:5,180,000|5180000)' + NA, 'g')],
+  ['$1,850,000', new RegExp(NB + '(?:1,850,000|1850000)' + NA, 'g')],
+  ['$1,340,000', new RegExp(NB + '(?:1,340,000|1340000)' + NA, 'g')],
+  ['$118,000', new RegExp(NB + '(?:118,000|118000)' + NA, 'g')],
+  ['$950,000', new RegExp(NB + '(?:950,000|950000)' + NA, 'g')],
+  ['$930,000', new RegExp(NB + '(?:930,000|930000)' + NA, 'g')],
+  ['$780,000', new RegExp(NB + '(?:780,000|780000)' + NA, 'g')],
+  ['$450,000', new RegExp(NB + '(?:450,000|450000)' + NA, 'g')],
+  ['$600,000', new RegExp(NB + '(?:600,000|600000)' + NA, 'g')],
+  ['$250,650', new RegExp(NB + '(?:250,650|250650)' + NA, 'g')],
+  ['$1,250,000', new RegExp(NB + '(?:1,250,000|1250000)' + NA, 'g')],
+  ['$52,000', new RegExp(NB + '(?:52,000|52000)' + NA, 'g')],
+  ['$41,000', new RegExp(NB + '(?:41,000|41000)' + NA, 'g')],
+  ['$58,500', new RegExp(NB + '(?:58,500|58500)' + NA, 'g')],
+  ['$45,249', new RegExp(NB + '(?:45,249|45249)' + NA, 'g')],
+  ['$47,393', new RegExp(NB + '(?:47,393|47393)' + NA, 'g')],
+  ['$49,751', new RegExp(NB + '(?:49,751|49751)' + NA, 'g')],
+  ['$52,356', new RegExp(NB + '(?:52,356|52356)' + NA, 'g')],
+  ['$49,500,000', new RegExp(NB + '(?:49,500,000|49500000)' + NA, 'g')],
+  ['$34,650,000', new RegExp(NB + '(?:34,650,000|34650000)' + NA, 'g')],
+  ['$14,850,000', new RegExp(NB + '(?:14,850,000|14850000)' + NA, 'g')],
+  ['$5,500,000', new RegExp(NB + '(?:5,500,000|5500000)' + NA, 'g')],
+  ['$22,022,000', new RegExp(NB + '(?:22,022,000|22022000)' + NA, 'g')],
+  ['$11,440,000', new RegExp(NB + '(?:11,440,000|11440000)' + NA, 'g')],
+  ['$5,412,000', new RegExp(NB + '(?:5,412,000|5412000)' + NA, 'g')],
+  ['$32,648,000', new RegExp(NB + '(?:32,648,000|32648000)' + NA, 'g')],
+  ['$946,197', new RegExp(NB + '(?:946,197|946197)' + NA, 'g')],
+  ['$1,264,764', new RegExp(NB + '(?:1,264,764|1264764)' + NA, 'g')],
+  ['$1,786,850', new RegExp(NB + '(?:1,786,850|1786850)' + NA, 'g')],
+  ['$2,140,000', new RegExp(NB + '(?:2,140,000|2140000)' + NA, 'g')],
+  ['$2,860,000', new RegExp(NB + '(?:2,860,000|2860000)' + NA, 'g')],
+  ['$3,213,150', new RegExp(NB + '(?:3,213,150|3213150)' + NA, 'g')],
+  ['$2,266,953', new RegExp(NB + '(?:2,266,953|2266953)' + NA, 'g')],
+  ['$4,053,803', new RegExp(NB + '(?:4,053,803|4053803)' + NA, 'g')],
+  ['$2,095,236', new RegExp(NB + '(?:2,095,236|2095236)' + NA, 'g')],
+  ['$2,367,345', new RegExp(NB + '(?:2,367,345|2367345)' + NA, 'g')],
+  ['$2,674,792', new RegExp(NB + '(?:2,674,792|2674792)' + NA, 'g')],
+  ['$3,022,167', new RegExp(NB + '(?:3,022,167|3022167)' + NA, 'g')],
+  ['$3,414,657', new RegExp(NB + '(?:3,414,657|3414657)' + NA, 'g')],
+  ['$2,468,460', new RegExp(NB + '(?:2,468,460|2468460)' + NA, 'g')],
+  ['$820,579', new RegExp(NB + '(?:820,579|820579)' + NA, 'g')],
+  ['$1,213,069', new RegExp(NB + '(?:1,213,069|1213069)' + NA, 'g')],
+  ['$1,560,444', new RegExp(NB + '(?:1,560,444|1560444)' + NA, 'g')],
+  ['$1,867,891', new RegExp(NB + '(?:1,867,891|1867891)' + NA, 'g')],
+  ['$3,132,109', new RegExp(NB + '(?:3,132,109|3132109)' + NA, 'g')],
+  ['$3,439,556', new RegExp(NB + '(?:3,439,556|3439556)' + NA, 'g')],
+  ['$3,786,931', new RegExp(NB + '(?:3,786,931|3786931)' + NA, 'g')],
+  ['$4,179,421', new RegExp(NB + '(?:4,179,421|4179421)' + NA, 'g')],
+  ['$900,481', new RegExp(NB + '(?:900,481|900481)' + NA, 'g')],
+  ['$988,872', new RegExp(NB + '(?:988,872|988872)' + NA, 'g')],
+  ['$1,088,743', new RegExp(NB + '(?:1,088,743|1088743)' + NA, 'g')],
+  ['$1,201,583', new RegExp(NB + '(?:1,201,583|1201583)' + NA, 'g')],
+  ['$1,293,750', new RegExp(NB + '(?:1,293,750|1293750)' + NA, 'g')],
+  ['$822,250', new RegExp(NB + '(?:822,250|822250)' + NA, 'g')],
+  ['$5,001,930', new RegExp(NB + '(?:5,001,930|5001930)' + NA, 'g')],
+  ['$11,470,680', new RegExp(NB + '(?:11,470,680|11470680)' + NA, 'g')],
+  ['$24,408,180', new RegExp(NB + '(?:24,408,180|24408180)' + NA, 'g')],
+  ['$30,876,930', new RegExp(NB + '(?:30,876,930|30876930)' + NA, 'g')],
+  ['$12,998,000', new RegExp(NB + '(?:12,998,000|12998000)' + NA, 'g')],
+  ['$820,820', new RegExp(NB + '(?:820,820|820820)' + NA, 'g')],
+  ['$56,056', new RegExp(NB + '(?:56,056|56056)' + NA, 'g')],
+  ['$16,700', new RegExp(NB + '(?:16,700|16700)' + NA, 'g')],
+  ['$38,200', new RegExp(NB + '(?:38,200|38200)' + NA, 'g')],
+  ['$19,250', new RegExp(NB + '(?:19,250|19250)' + NA, 'g')],
+  ['$8,000,000', new RegExp(NB + '(?:8,000,000|8000000)' + NA, 'g')],
+  ['$690,000', new RegExp(NB + '(?:690,000|690000)' + NA, 'g')],
+  ['$3,000,000 IRA', /\$3,000,000 (?:traditional )?IRA/g],
+  ['$1,000,000 inherited IRA', /\$1,000,000 inherited IRA|inherited IRA of \$1,000,000/g],
+  ['3.82%', /(?<![0-9.])3\.82\s*(?:%|&#37;)/g], ['4.35%', /(?<![0-9.])4\.35\s*(?:%|&#37;)/g],
+  ['4.92%', /(?<![0-9.])4\.92\s*(?:%|&#37;)/g], ['5.20%', /(?<![0-9.])5\.20\s*(?:%|&#37;)/g],
+  ['28.75%', /(?<![0-9.])28\.75\s*(?:%|&#37;)/g], ['41.95%', /(?<![0-9.])41\.95\s*(?:%|&#37;)/g],
+  ['24.06%', /(?<![0-9.])24\.06\s*(?:%|&#37;)/g], ['63.56%', /(?<![0-9.])63\.56\s*(?:%|&#37;)/g],
+  ['57.2%', /(?<![0-9.])57\.2\s*(?:%|&#37;)/g], ['32.8%', /(?<![0-9.])32\.8\s*(?:%|&#37;)/g],
+  ['6.45%', /(?<![0-9.])6\.45\s*(?:%|&#37;)/g], ['9.09%', /(?<![0-9.])9\.09\s*(?:%|&#37;)/g],
+  ['82.1%', /(?<![0-9.])82\.1\s*(?:%|&#37;)/g],
+  ['Rev. Rul. 2004-64', /2004-64/g], ['Rev. Rul. 85-13', /\b85-13\b/g], ['Rev. Rul. 86-17', /\b86-17\b/g],
+  ['Rev. Rul. 2026-13', /Rev\.? ?Rul\.? 2026-13|2026-13, Table/g], ['Rev. Rul. 2026-12', /Rev\.? ?Rul\.? 2026-12|2026-12, Table/g],
+  ['Rev. Rul. 2004-77', /2004-77/g], ['Rev. Rul. 93-12', /\b93-12\b/g], ['Rev. Rul. 59-60', /\b59-60\b/g], ['Rev. Rul. 77-287', /77-287/g],
+  ['T.D. 9884', /9884/g], ['25.2704', /25\.2704/g], ['2701', new RegExp(NB + '2701' + NA, 'g')], ['675(4)', /675\(4\)/g], ['2036(a)', /2036\(a\)/g],
+  ['Byrum', /\bByrum\b/g], ['Strangi', /Strangi/g], ['Bongard', /Bongard/g], ['Holman', /\bHolman\b/g], ['Senda', /\bSenda\b/g],
+  ['Cahill', /\bCahill\b/g], ['Connelly', /Connelly/g], ['Powell', /\bPowell\b/g],
+  ['805 ILCS 180', /805 ILCS 180/g], ['760 ILCS 3', /760 ILCS 3\b/g], ['HB 2601', /HB ?2601/g],
+  ['Cole Joint Revocable Trust', /Cole Joint Revocable Trust/g], ['Rockford Workforce', /Rockford Workforce/g], ['FBO Margaret Cole', /FBO Margaret Cole/g],
+  ['AS9100D', /AS9100D/g], ['ITAR', /\bITAR\b/g], ['DDTC', /\bDDTC\b/g], ['NAICS 332722', /332722/g],
+  ['credit-shelter', /credit[- ]shelter/gi], ['QTIP', /\bQTIP\b/g], ['Article VII', /Article VII\b/g], ['Article IX', /Article IX\b/g],
+  /* The two dates below carry a lookbehind and a word boundary: SOURCES.md states Anthropic's
+     Consumer Terms effective date and the Haiku 3.5 retirement date, which are true sentences
+     that share the v4 memorandum and letter dates (D-035); \b stops 28 October matching 8 October. */
+  ['1 July 2016', /1 July 2016/g], ['4 November 2021', /4 November 2021/g], ['30 May 2014', /30 May 2014/g], ['22 March 2011', /22 March 2011/g],
+  ['12 September 2023', /12 September 2023/g], ['19 February 2026', /(?<!Haiku 3\.5 )\b19 February 2026/g], ['12 March 2026', /12 March 2026/g],
+  ['8 October 2025', /(?<!effective )\b8 October 2025/g], ['6 April 2026', /6 April 2026/g], ['30 June 2026', /30 June 2026/g], ['31 July 2026', /31 July 2026/g],
+  ['21 September 1991', /21 September 1991/g], ['3 February 1987', /3 February 1987/g],
+  ['Mirowski', /Mirowski/g], ['Karmazin', /Karmazin/g], ['Woelbing', /Woelbing/g], ['Davidson', /\bDavidson\b/g],
+  ['IRC 1274', /(?:§\s*|IRC\s*§?\s*|[Ss]ection\s+)1274\b/g], ['IRC 7520', /(?:§\s*|IRC\s*§?\s*|[Ss]ection\s+)7520\b/g],
+  ['2036(a)(2)', /2036\(a\)\(2\)/g],
+];
+function servedFiles() {
+  const out = [...LESSONS, 'README.md', 'SOURCES.md'];
+  for (const p of ALL) {
+    const r = rel(p);
+    if (/^cases\/[^/]+\.html$/.test(r) || /^instructor-notes\/[^/]+\.(md|htm|html)$/.test(r)) out.push(r);
+  }
+  return [...new Set(out)];
+}
+{
+  const bad = [];
+  for (const r of servedFiles()) {
+    const t = text(join(REPO, r));
+    for (const [label, rx] of RETIRED_V4) {
+      rx.lastIndex = 0;
+      let m; while ((m = rx.exec(t))) {
+        const around = t.slice(Math.max(0, m.index - 40), m.index + 60);
+        bad.push(`${r}:${t.slice(0, m.index).split('\n').length}  ${label}  ...${around.replace(/\s+/g, ' ').trim().slice(0, 90)}...`);
+      }
+    }
+  }
+  const byFile = {};
+  for (const b of bad) { const f = b.split(':')[0]; byFile[f] = (byFile[f] || 0) + 1; }
+  check('1c', 'v4 Cole facts purged from the served surface (Part K v5 layer: hub, lessons, cases, instructor notes, README, SOURCES)',
+        bad.length === 0, bad.length ? Object.entries(byFile).map(([f, n]) => `${f}: ${n} hit(s)`).join('\n') + '\n' + bad.slice(0, 12).join('\n') + (bad.length > 12 ? `\n... ${bad.length - 12} more` : '') : '');
+}
+
 {
   const bad = [];
   for (const p of ALL) {
@@ -150,12 +315,15 @@ const RETIRED = [
    captures carry "9-year" inside `base:` strings for exactly that reason. */
 {
   const MISAPPLIED = [
-    ['founder applied to Meg', /\bfound(?:er|ed|ing)\b/gi, /\bMeg\b|\bMs\.?\s+Cole\b/i,
-     'Walter Hensley founded the company in 1987 (§A.3, §B.2); Meg bought it in 2016'],
-    ['nine-year applied to the proposed note', /\b(?:nine|9)[-\s]year\b/gi,
-     /proposed note|demand note|payable on demand|new note|3\.82/i,
-     'the nine-year term belongs to the 2016 installment note (§B.2); the proposed note is payable on demand'],
+    /* v5.0: no Cole founded anything, inherited a company or sold one. The word
+       "founder" is legitimate of a vendor ("the founder of OpenAI"); next to a
+       Cole it is a v4 survival. */
+    ['founder applied to a Cole', /\bfound(?:er|ed|ing)\b/gi, /\bCole\b|\bMeg\b|\bDavid\b/i,
+     'no Cole founded, bought or sold a company in v5.0 (CASE.md Part K)'],
+    ['inherited IRA applied to Meg today', /inherited IRA/gi, /\bMeg\b.{0,80}(?:holds|has|her)\b|her inherited IRA/i,
+     'Meg holds no inherited IRA in v5.0; Ruth\'s IRA names her and Ruth is alive (§A.3, §F.6)'],
   ];
+
   const bad = [];
   for (const l of LESSONS) {
     const t = text(join(REPO, l));
@@ -196,36 +364,22 @@ for (const [id, name, rxs] of [
 /* ---- 4  conditional allowances, checked in context ----------------------- */
 {
   const ALLOW = [
-    ['$18,000,000', new RegExp(NB + '(?:18,000,000|18000000)' + NA, 'g'),
-     /buy-?sell|formula|buySellFormula/i, 'the F.6 buy-sell formula output'],
-    ['$38,000,000', new RegExp(NB + '(?:38,000,000|38000000)' + NA, 'g'),
-     /appraisal|2023|appraisal2023/i, 'the F.7 2023 appraisal conclusion'],
-    ['$4,500,000', new RegExp(NB + '(?:4,500,000|4500000)' + NA, 'g'),
-     /trustDivSteady|dividend|E\.8|steady/i, "the E.8 steady-state dividend share"],
-    ['$2,000,000', new RegExp(NB + '(?:2,000,000|2000000)' + NA, 'g'),
-     /residence|Barrington|residence"/i, 'the C.1/C.2 residence value'],
-    /* THREE ADDED 2026-08-25 (Phase 3.5), and each was found surviving the v4.0
-       migration because nothing looked for it.
-
-       `$18M` is the same conditional allowance as $18,000,000 and the pattern
-       above cannot see it: session-1 read "a company appraised at $18M", which
-       attaches the buy-sell FORMULA output to the word appraised, in a file
-       whose §H.5 exists to keep three values for one company apart.
-
-       `nine-year` is legitimate ONLY of the 2016 purchase note. session-1 and
-       session-3 both applied it to the proposed note, which is payable on
-       demand, and one of them scored a student for reproducing it.
-
-       `founder` is legitimate ONLY of Walter Hensley. session-1 and session-2
-       applied it to Meg in three places, one a revealed answer key. Part K's
-       list carried `founder stock` and not the bare word. */
-    ['$18M', /(?<![0-9,.])\$18\s*M\b/g,
-     /buy-?sell|formula|buySellFormula/i, 'the F.6 buy-sell formula output, abbreviated'],
-    ['nine-year note', /\b(?:nine|9)[- ]year\b/gi,
-     /2016|Walter|purchase note|installment|mid-term|term note|AFR/i, "the 2016 installment note from Walter Hensley (§B.2), never the proposed demand note"],
-    ['founder', /\bfound(?:er|ed|ing)\b/gi,
-     /Walter|Hensley|1987|did not found|not the founder|incorporat/i, 'Walter Hensley founded the company in 1987 (§A.3, §B.2); Meg bought it in 2016'],
+    /* v5.0 (CASE.md Part K, conditional allowances) */
+    ['$1,000,000', new RegExp(NB + '(?:1,000,000|1000000)' + NA, 'g'),
+     /umbrella|liability|1M|context window|million tokens|tokens|million-token|a million/i, 'the umbrella liability limit (§H.3) or a token count; never an account balance'],
+    ['$4,000,000', new RegExp(NB + '(?:4,000,000|4000000)' + NA, 'g'),
+     /Illinois|estate|exclusion/i, 'the Illinois estate tax exclusion'],
+    ['$15,000,000', new RegExp(NB + '(?:15,000,000|15000000)' + NA, 'g'),
+     /exclusion|basic exclusion|federal estate|gift/i, 'the federal basic exclusion amount'],
+    ['7872', new RegExp(NB + '7872' + NA, 'g'),
+     /10,000|100,000|gift loan|loan to Tom|Ruth|threshold|below-market/i, 'the two gift-loan thresholds, for the Session 1 correction and Ruth\'s loan (§J)'],
+    ['Rev. Proc. 2022-32', /2022-32/g,
+     /portability|late election|fifth anniversary|Form 706/i, 'the late portability election, for the Session 2 correction'],
+    ['$25,000', new RegExp(NB + '(?:25,000|25000)' + NA, 'g'), /Ruth|Tom|loan|lent|landmine/i, 'Ruth\'s loan to Tom (§A.3, §J)'],
+    ['$35,000', new RegExp(NB + '(?:35,000|35000)' + NA, 'g'), /529|Roth|lifetime|rollover/i, 'the 529-to-Roth lifetime limit (§E.1)'],
+    ['$410,000', new RegExp(NB + '(?:410,000|410000)' + NA, 'g'), /IRMAA|MAGI|Medicare|tier|premium/i, 'the fourth IRMAA tier bound (§F.3)'],
   ];
+
   const bad = [], seen = {};
   for (const p of LESSONS.map((l) => join(REPO, l))) {
     const t = text(p); const r = rel(p);
@@ -251,14 +405,13 @@ for (const [id, name, rxs] of [
   const nums = [...extract.matchAll(/\$([0-9][0-9,]{2,})/g)].map((m) => m[1].replace(/,/g, ''));
   const known = new Set(Object.values(F).filter((v) => typeof v === 'number').map(String));
   // figures the extract composes rather than quotes, each shown with its arithmetic
-  for (const composed of [F.votingUnits * F.perVoting, F.megRetainedNV * F.perNonVoting, 5000000,
-                          F.votingUnits * (F.dividend / F.totalUnits)]) known.add(String(composed));
+  for (const composed of [F.megDeferral + F.davidDeferral]) known.add(String(composed));
   const orphan = [...new Set(nums)].filter((n) => !known.has(n));
   check('7', 'Extract fidelity: every figure traces to case-facts.json or a shown computation',
         orphan.length === 0, orphan.length ? 'untraceable: ' + orphan.join(', ') : `${new Set(nums).size} distinct figures, all traced`);
   const forbidden = ['Part H', 'Part I', 'Part M', 'Karmazin v', 'applicable federal rate table'];
-  check('7b', 'Extract is a fraction: Parts H, I and M are not reproduced',
-        !/## H\.|## I\.|## M\b|Rev\. Rul\. 2026-13, Table 1/.test(extract), '');
+  check('7b', 'Extract is a fraction: Parts E, F (parameters), I and M are not reproduced',
+        !/## E\.|## F\.|## I\.|## M\b|Rev\. Proc\. 2025-32|Notice 2025-67/.test(extract), '');
 }
 
 /* ---- 8  case coverage ----------------------------------------------------- */
@@ -281,7 +434,10 @@ for (const [id, name, rxs] of [
     const secs = [...t.matchAll(/<section\b[^>]*>([\s\S]*?)<\/section>/g)];
     const empty = secs.filter((s) => !/data-task=/.test(s[1])).length;
     rows.push(`${l.padEnd(24)} distinct interactions ${String(tasks.size).padStart(3)}   sections ${String(secs.length).padStart(3)}   sections with no interaction ${empty}`);
-    if (l !== 'index.html' && tasks.size < 13) bad.push(`${l}: ${tasks.size} interactions, floor is 13`);
+    /* Case pages (cases/*.html, 2027 term) are 20 to 30 minutes of student work built
+       around one commit and one check (PEDAGOGY 5.6); the 13-interaction floor is a
+       lesson parameter and does not apply to them. They are still counted above. */
+    if (l !== 'index.html' && !/^cases\//.test(l) && tasks.size < 13) bad.push(`${l}: ${tasks.size} interactions, floor is 13`);
   }
   check('9', 'Interaction floor of 13 per lesson (hub exempt, no padding applied)',
         bad.length === 0, bad.length ? bad.join('\n') : rows.join('\n'));
@@ -304,31 +460,36 @@ for (const [id, name, rxs] of [
 {
   const bad = [];
   const eq = (name, got, want) => { if (got !== want) bad.push(`${name}: computed ${got}, CASE.md Part M states ${want}`); };
-  eq('per non-voting unit', Math.round(F.cpcValue * 0.9 * (1 - F.discount) / F.nonVotingUnits), F.perNonVoting);
-  eq('seed value', F.seedUnits * F.perNonVoting, F.seedValue);
-  eq('note principal', F.saleUnits * F.perNonVoting, F.notePrincipal);
-  eq('seed as % of note', Math.round(F.seedValue / F.notePrincipal * 10000) / 100, 10);
-  eq('annual note interest', Math.round(F.notePrincipal * F.noteRate), F.noteInterest);
-  eq('dividend tax', Math.round(F.dividend * F.qualDivRate), F.dividendTax);
-  eq('non-voting units sum', F.seedUnits + F.saleUnits + F.megRetainedNV, F.nonVotingUnits);
-  eq('estate reduction', F.proRataNonVote - F.totalToMeg, F.estateReduction);
-  eq('reduction, two components', F.belowProRata + F.retainedDiscount, F.estateReduction);
-  eq('below-pro-rata component', F.trustUnitsAtClose * F.perVoting - F.notePrincipal, F.belowProRata);
-  eq('retained-discount component', F.megRetainedNV * (F.perVoting - F.perNonVoting), F.retainedDiscount);
-  eq('trust net equity', F.trustUnitsValue - F.notePrincipal, F.trustEquity);
-  eq('trust equity equals seed', F.trustEquity, F.seedValue);
-  eq('Meg post-closing balance sheet', F.votingUnits * F.perVoting + F.megRetainedNV * F.perNonVoting + F.notePrincipal, F.megPostClose);
-  eq('Meg year-1 pro-rata distribution', 428 * (F.dividend / F.totalUnits), F.megYear1Distrib);
-  eq('year-1 round trip', 428 * (F.dividend / F.totalUnits) + F.noteInterest + 2095236, F.dividend);
-  eq('year-6 steady inflow', F.votingUnits * (F.dividend / F.totalUnits) + F.noteInterest, F.steadyInflow);
-  eq('year-6 steady gap', F.steadyOutflow - F.steadyInflow, F.steadyGap);
-  eq('trust steady dividend share', F.nonVotingUnits * (F.dividend / F.totalUnits), F.trustDivSteady);
-  eq('burn at steady state', Math.round(F.trustDivSteady * F.qualDivRate), F.burnSteady);
-  eq('tech concentration', Math.round(F.brokerage * F.techPct), F.techPositions);
-  eq('CPC share of net worth', Math.round(F.cpcValue / F.netWorth * 1000) / 10, F.cpcShareOfNetWorth);
-  eq('leverage per $1 exemption', Math.round(F.estateReduction / F.seedValue * 100) / 100, Number(F.leverage));
-  eq('rate spread on the note', Math.round(F.notePrincipal * (F.afrShort - F.noteRate)), F.rateSpreadCost);
-  check('11', `Rendered arithmetic recomputed in Node (24 identities) against CASE.md Part M`,
+  const r1 = (x) => Math.round(x * 10) / 10;
+  eq('investable', F.meg403b + F.megRoth + F.david401k + F.davidRoth + F.davidRollover + F.brokerage + F.hsa + F.cash + F.plan529, F.investable);
+  eq('net worth', F.investable + F.residence - F.mortgage, F.netWorth);
+  eq('pre-tax total', F.meg403b + F.david401kPre + F.davidRollover, F.preTaxTotal);
+  eq('Roth total', F.megRoth + F.david401kRoth + F.davidRoth, F.rothTotal);
+  eq('taxable total', F.brokerage + F.cash, F.taxableTotal);
+  eq('character sum', F.preTaxTotal + F.rothTotal + F.taxableTotal + F.hsa + F.plan529, F.investable);
+  eq('pre-tax share', r1(F.preTaxTotal / F.investable * 100), F.preTaxPct);
+  eq('wages', F.megW2 + F.davidW2, F.wages);
+  eq('deferral', F.deferralLimit + F.catchUp, F.megDeferral);
+  eq('AGI', F.wages - F.preTaxDeductions + F.investmentIncome, F.agi);
+  eq('taxable income', F.agi - F.stdDeduction, F.taxableIncome);
+  eq('24% room', F.bracket24 - F.taxableIncome, F.bracketRoom);
+  eq('Illinois tax', Math.round(F.ilRate / 100 * (F.agi - 4 * F.ilExemption - F.contrib529)), F.ilTax);
+  eq('after-tax cash', F.wages - F.megDeferral - F.davidDeferral - F.hsaEmployee - F.fedTax - F.niit - F.ilTax - F.payrollTaxes, F.afterTaxCash);
+  eq('mortgage annual', F.mortgagePayment * 12, F.mortgageAnnual);
+  eq('total outflow', F.mortgageAnnual + F.propertyTax + F.pcPremiums + F.megTermPremium + F.emmaSupport + F.contrib529 + F.travel + F.otherLiving, F.totalOutflow);
+  eq('ESPP concentration', r1(F.esppValue / F.brokerage * 100), F.esppPct);
+  eq('home gain', F.residence - F.homeBasis, F.homeGain);
+  eq('Ruth assets', F.ruthIra + F.ruthSavings, F.ruthTotal);
+  eq('Ruth RMD', Math.round(F.ruthIraPriorYear / F.ruthRmdFactor), F.ruthRmd2026);
+  eq('David first RMD year', 1967 + F.davidApplicableAge, F.davidFirstDistYear);
+  eq('Meg first RMD year', 1968 + F.megApplicableAge, F.megFirstDistYear);
+  eq('Meg window', F.megWindowEnd - F.megWindowStart + 1, F.megWindowYears);
+  eq('David window', F.davidWindowEnd - F.davidWindowStart + 1, F.davidWindowYears);
+  eq('David group life', 2 * F.davidW2, F.davidGroupLife);
+  eq('death benefits', F.davidGroupLife + F.megGroupLife + F.megTermLife, F.deathBenefits);
+  eq('estate plus insurance', F.netWorth + F.deathBenefits, F.estatePlusInsurance);
+  eq('risk gap', F.davidRiskScore - F.megRiskScore, F.riskGap);
+  check('11', `Rendered arithmetic recomputed in Node (28 identities) against CASE.md Part M`,
         bad.length === 0, bad.join('\n'));
 }
 
@@ -364,7 +525,8 @@ for (const [id, name, rxs] of [
      either way. verify-browser.mjs measures whether it actually renders. */
   const VAR_BASELINE = { 'index.html': 0, 'session-0.1/index.html': 8, 'session-1/index.html': 7,
                          'session-2/index.html': 0, 'session-3/index.html': 0, 'session-4/index.html': 0,
-                         'scripts/case-flowchart.html': 0 };
+                         'scripts/case-flowchart.html': 0, 'cases/case-1.html': 0, 'cases/case-2.html': 0,
+                         'cases/case-3.html': 0, 'cases/case-4.html': 0, 'cases/case-5.html': 0 };
   const varsBy = {};
   for (const b of bad) { const f = b.split(':')[0]; if (/var\(/.test(b)) varsBy[f] = (varsBy[f] || 0) + 1; }
   const regress = Object.entries(varsBy).filter(([f, n]) => n > (VAR_BASELINE[f] ?? 0));
@@ -381,7 +543,7 @@ for (const [id, name, rxs] of [
   for (const l of LESSONS) {
     const t = readFileSync(join(REPO, l), 'utf8');
     const tbl = t.match(/<table class="tbudget"[\s\S]*?<\/table>/);
-    if (!tbl) { rows.push(`${l.padEnd(24)} no time-budget table`); continue; }
+    if (!tbl) { rows.push(`${l.padEnd(24)} ${/^cases\//.test(l) ? 'no time-budget table (case page: minutes sit on the eyebrows, no allocation row)' : 'no time-budget table'}`); continue; }
     const seg = [...tbl[0].matchAll(/<tr(?![^>]*class="[^"]*(?:nosum|alloc)[^"]*")[^>]*>[\s\S]*?<td[^>]*class="[^"]*n[^"]*"[^>]*>\s*(\d+)\s*</g)].map((m) => Number(m[1]));
     const alloc = tbl[0].match(/<tr[^>]*class="[^"]*alloc[^"]*"[^>]*>[\s\S]*?(\d+)\s*<\/td>/);
     const sum = seg.reduce((a, b) => a + b, 0);
@@ -443,28 +605,25 @@ for (const [id, name, rxs] of [
    amounts beside it all had one. Added 2026-08-25, Phase 3.5. */
 {
   const PINS = [
-    [/Meg is short (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? a year/g, 'steadyGap',    'the steady-state annual shortfall'],
-    [/How much of the (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? note does she call/g, 'notePrincipal', 'the demand-note principal'],
-    [/Each \$1,000,000 she calls permanently removes \$([0-9,]+) of future interest/g, null, 'interest removed per $1,000,000 called'],
-    [/so the gap widens by ([0-9.]+)% of every call/g, 'noteRate', 'the demand-note rate in the recurring question', (v) => Math.round(v * 10000) / 100],
-    /* session-4 §08's two audit exhibits. These CANNOT be generated and cannot
-       go qualitative: the exercise asks whether each is a well-formed record,
-       and a record whose figures are interpolated at render time is not the
-       artifact the student is auditing. They are reproductions of a Session 2
-       prompt and a Session 3 extraction output, and their whole evidentiary
-       point is that they say what they said at the time. So they are pinned:
-       the figures stay literal and a CASE.md change that leaves them behind
-       fails here. This is preference 4 doing the job preference 3 cannot. */
-    [/Explain to a (\d+)-year-old business owner/g, 'megAge', 'the client age in the §08 prompt exhibit', null, ''],
-    [/a sale\s+of ([0-9,]+) non-voting units of a new family LLC/g, 'saleUnits', 'the sale size in the §08 prompt exhibit', null, ' units'],
-    [/grantor trust for a \$([0-9,]+) note payable on demand/g, 'notePrincipal', 'the note principal in the §08 prompt exhibit'],
-    [/preceded by a \$([0-9,]+) seed gift/g, 'seedValue', 'the seed gift in the §08 prompt exhibit'],
-    [/seed gift of ([0-9,]+) units, with a/g, 'seedUnits', 'the seed unit count in the §08 prompt exhibit', null, ' units'],
-    [/units, with a ([0-9]+)%\s+valuation discount claimed/g, 'discount', 'the discount in the §08 prompt exhibit', (v) => Math.round(v * 100)],
-    [/this yields roughly\s+\$([0-9,]+), materially below both/g, 'buySellFormula', 'the buy-sell formula value in the §08 extraction exhibit'],
-    [/materially below both the \$([0-9,]+) concluded in/g, 'appraisal2023', 'the 2023 appraisal in the §08 extraction exhibit'],
-    [/and the \$([0-9,]+) indicated range/g, 'cpcValue', 'the indicated value in the §08 extraction exhibit'],
+    /* the recurring question (inject-case.mjs .case-spine), v5.0 */
+    [/The Coles hold (?:<(?:b|strong)>)?\$([0-9,]+)(?:<\/(?:b|strong)>)? in pre-tax accounts/g, 'preTaxTotal', 'the pre-tax total in the recurring question'],
+    [/in pre-tax accounts, (?:<(?:b|strong)>)?([0-9.]+)%(?:<\/(?:b|strong)>)? of what they have/g, 'preTaxPct', 'the pre-tax share in the recurring question', (v) => v],
+    [/Meg (\d{4}) to \d{4}, David \d{4} to \d{4}\./g, 'megWindowStart', 'the first year of Meg\'s window in the recurring question', null, ''],
+    [/the 24% bracket has \$([0-9,]+) of room in 2026/g, 'bracketRoom', 'the 24% bracket room in the recurring question'],
+    /* Phase 4b (2026-10-12): the v5 figures a lesson types into prose rather
+       than reading from COLE. Ages and years are not pinned (too short to be
+       unambiguous); dollar amounts and percentages are. */
+    [/They hold \$([0-9,]+) of investable assets/g, 'investable', 'the investable total in the session-1 case panel'],
+    [/([0-9.]+)% of it in pre-tax accounts/g, 'preTaxPct', 'the pre-tax share in the session-1 case panel', (v) => v],
+    [/concentration is computed on the taxable account \(\$([0-9,]+) of \$[0-9,]+\)/g, 'esppValue', 'the Dunmore position in the session-1 appendix bullet'],
+    [/concentration is computed on the taxable account \(\$[0-9,]+ of \$([0-9,]+)\)/g, 'brokerage', 'the taxable account in the session-1 appendix bullet'],
+    [/\(2% of \$([0-9,]+)\)/g, 'investable', 'the investable total behind the 2% figure in the session-1 appendix bullet'],
+    [/Dunmore position at ([0-9.]+)% of the taxable account/g, 'esppPct', 'the concentration share in the session-1 CFP table', (v) => v],
+    [/taxable account but ([0-9]+)% of investable assets/g, 'allocEspp', 'the investable share in the session-1 CFP table', (v) => v],
+    [/about \$([0-9,]+) of card debt/g, 'emmaDebt', 'Emma\'s card debt in the session-3 case panel'],
+    [/credit card debt of about \$([0-9,]+)/g, 'emmaDebt', 'Emma\'s card debt in the session-3 note excerpt'],
   ];
+
   const bad = [], seen = [];
   for (const l of LESSONS) {
     const raw = readFileSync(join(REPO, l), 'utf8');
@@ -475,7 +634,7 @@ for (const [id, name, rxs] of [
       rx.lastIndex = 0; let m;
       while ((m = rx.exec(prose))) {
         const got = Number(m[1].replace(/,/g, ''));
-        const want = key ? (xform ? xform(F[key]) : F[key]) : Math.round(1000000 * F.noteRate);
+        const want = xform ? xform(F[key]) : F[key];
         /* `unit` overrides: a unit count is neither dollars nor per cent. */
         const show = (n) => (unit !== undefined && unit !== null
           ? `${n.toLocaleString('en-US')}${unit}`

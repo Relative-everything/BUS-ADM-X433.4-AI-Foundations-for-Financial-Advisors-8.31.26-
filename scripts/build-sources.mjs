@@ -22,7 +22,12 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
-export const LESSONS = ['session-0.1', 'session-1', 'session-2', 'session-3', 'session-4', 'session-5'];
+export const LESSONS = ['session-0.1', 'session-1', 'session-2', 'session-3', 'session-4', 'session-5',
+                        'case-1', 'case-2', 'case-3', 'case-4', 'case-5'];
+/* Where a lesson key's page lives. Sessions are directories with an index.html; the
+   case pages (Phase 7, 2027 term) are files under cases/. Every reader of LESSONS
+   that opens a page goes through this, so a new page kind is one line here. */
+export const pagePath = (lesson) => (/^case-\d+$/.test(lesson) ? `cases/${lesson}.html` : `${lesson}/index.html`);
 
 /* The three kinds that are exempt from carrying a confidence chip, and that A15
    accepts as a data-nochip reason. THIS LIST IS ASSERTED AGAINST THE CHECKER'S
@@ -296,7 +301,7 @@ function sectionIndex(text) {
 export function deriveUsage(sources) {
   for (const rec of sources.values()) { rec.cited_by = []; rec.total_references = 0; }
   for (const lesson of LESSONS) {
-    const text = readFileSync(join(REPO, lesson, 'index.html'), 'utf8');
+    const text = readFileSync(join(REPO, pagePath(lesson)), 'utf8');
     const whereIs = sectionIndex(text);
     /* the span of the footer source list, so its self-labelling chips are excluded */
     const listStart = text.search(/<li id="src-/);

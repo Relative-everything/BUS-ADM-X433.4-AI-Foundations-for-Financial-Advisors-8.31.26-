@@ -892,7 +892,7 @@ why the rule is "chip **or** declared reason" rather than "chip":
 | `data-nochip` | Meaning | Examples |
 |---|---|---|
 | `fabricated` | Planted as exercise material and labelled as such. **Must never carry a confidence chip** — a chip asserts the claim is evidenced, and the point is that it is not | `src-kessler`, `src-hallowell` |
-| `authority` | Legal authority cited descriptively, travelling with the case rather than evidencing a page claim | `src-irc`, `src-rr8513`, `src-rr200464`, `src-woelbing`, `src-davidson` |
+| `authority` | Legal authority cited descriptively, travelling with the case rather than evidencing a page claim | `src-secure2-107`, `src-td10001`, `src-irs-590b`, `src-irs-8606` (the v4 examples `src-irc`, `src-rr8513`, `src-rr200464`, `src-woelbing`, `src-davidson` were retired with CASE.md v5.0 on 2026-10-12) |
 | `background` | Assigned or background reading with no on-page claim | `src-laplace`, `src-anthropic-fluency`, `src-morningstar`, `src-lee-cognitive` |
 
 Anything left after those three declarations is a genuinely lost chip and must be
@@ -1501,6 +1501,16 @@ it.
 The same test applies to Phase 2 step (j)'s closing questions, which must be
 answerable from the core alone, and to any carry-forward artifact a later
 session reads from an earlier one.
+
+## Follow-ups flagged by the 2027-term rebuild (2026-10-12, branch next-term-2027)
+
+Flagged, not rewritten (kickoff reduction A.0.3 item 3 in `docs/next-term/RUNBOOK.md`): three rows below are now out of step with `PEDAGOGY.md` v2.0 (§4, §9.6, §13.1, ratified 2026-10-11), which governs. Jared decides the wording here.
+
+| Row | What changed | What this file still says |
+|---|---|---|
+| D18 | PEDAGOGY §4 sets core at about 60 minutes and Session 5 at about 45 (presentations take about 105); the 2027 lessons measure 60, 63, 61, 60 and 45, with 150 (125) allocated and tolerance 0 unchanged | "The band is 60–70" |
+| R11 | The cold-open `.ritual` block was retired in every lesson by the case opener (`sCase`), so the shared boilerplate is now `.apxback` furniture, the shared close block and the console fences | names the cold-open `.ritual` block as shared boilerplate |
+| A9 R11 corpus baseline, A8 `session-0.1`, RC-3 Class A2 | `scripts/editorial-baseline.json` was re-recorded for the 2027 pages on 2026-10-13 in the merge polish (R11 4 shared blocks carrying 4 dashes; `session-0.1` majority literal / minority 0, on no dash at all; A9 per-file totals; D-063 in `docs/next-term/DECISIONS.md`), and `test-editorial-regions` T2 now proves the R10 claim on a fixture, since no served page carries a captured transcript | RC-3 still counts Class A2 at 28 (22 em + 6 en, four captured strings) and the R10 row still names session 0.1's `PROBE` array; both describe the retired page |
 
 ## D18 — the core minute band, ratified 2026-08-25
 
