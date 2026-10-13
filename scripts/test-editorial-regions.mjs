@@ -43,18 +43,29 @@ const t = (id, name, ok, detail = '') => {
 
 /* ---------------------------------------------------------------- T2  R10 */
 {
-  const src = read('session-0.1');
-  const c = classify(src);
-  const spans = c.spans.R10 || [];
-  let em = 0, en = 0;
-  for (const [s, e] of spans) {
-    const body = src.slice(s, e);
-    em += (body.match(/\\u2014|—/g) || []).length;
-    en += (body.match(/\\u2013|–/g) || []).length;
+  // Until 2026-10-13 this pinned the four captured transcripts in session-0.1's
+  // PROBE array (22 em + 6 en). The 2027-term rebuild (docs/next-term/, Phase 8;
+  // D-055 and D-063) retired that exercise, and no served page carries a base:
+  // string literal today. T2 now proves two things: the classifier still claims
+  // R10 for the Class A2 pattern, on a fixture, and the served pages carry none.
+  const fixture = '<script>var PROBE=[{id:1,base:"Yes \\u2014 the model said so \\u2013 twice"},'
+    + '{id:2,base:\'two\\u2014dashes\\u2014here\'}];</script><p>Prose with a dash \u2014 outside.</p>';
+  const fc = classify(fixture);
+  const fs = fc.spans.R10 || [];
+  let fem = 0, fen = 0;
+  for (const [s, e] of fs) {
+    const body = fixture.slice(s, e);
+    fem += (body.match(/\\u2014|\u2014/g) || []).length;
+    fen += (body.match(/\\u2013|\u2013/g) || []).length;
   }
-  t('T2', 'R10 claims the four captured transcripts carrying 28 dashes (Class A2)',
-    spans.length === 4 && em === 22 && en === 6,
-    `${spans.length} base: strings, ${em} em + ${en} en = ${em + en} dashes (want 4, 22, 6, 28)`);
+  const live = [];
+  for (const l of LESSONS) {
+    const n = (classify(read(l)).spans.R10 || []).length;
+    if (n) live.push(`${l}: ${n}`);
+  }
+  t('T2', 'R10 claims base: string literals (Class A2) and no served page carries one',
+    fs.length === 2 && fem === 3 && fen === 1 && live.length === 0,
+    `fixture: ${fs.length} base: strings, ${fem} em + ${fen} en (want 2, 3, 1); live R10 spans: ${live.length ? live.join(', ') : 'none'}`);
 }
 
 /* ---------------------------------------------------------------- T3  R4 */

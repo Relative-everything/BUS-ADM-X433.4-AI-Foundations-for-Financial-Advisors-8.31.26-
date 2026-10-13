@@ -18,7 +18,8 @@ Resume rule (RUNBOOK A.1.6): read `RUNBOOK.md` (A.0 first), this file, `DECISION
 | 8 | done | 2026-10-13 | 2026-10-13 | (P8 commit) | verify-migration 0 (first clean run) · verify-case 0 · verify-browser 0 · test-case-viewer 0 · verify-sources 0 · verify-facts 0 · live-console 0 (75) · verify-editorial 1 (A8 artifact, A9 R11) · test-editorial 1 (T2, T7) · verify-style 1 (env) |
 | 9 | done | 2026-10-13 | 2026-10-13 | (P9 commit) | verify-browser 0 · verify-facts 0 · build-appendix --check 0 · verify-sources 0 · verify-editorial unchanged · verify-migration 0 |
 | 10 | done | 2026-10-13 | 2026-10-13 | (P10 commit) | verify-facts 0 · verify-migration 0 · verify-sources 0 · build-readings --check 0 · verify-browser 0 · test-case-viewer 0 · live-console 0 · verify-editorial 1 (known) · test-editorial 1 (known) · verify-style 1 (env) |
-| 11 | done | 2026-10-13 | 2026-10-13 | (P11 commit) | 16 checks exit 0; verify-editorial 1 and test-editorial 1 (documented ratchets); verify-style 1 (env) |
+| 11 | done | 2026-10-13 | 2026-10-13 | `a12ba60` | 16 checks exit 0; verify-editorial 1 and test-editorial 1 (documented ratchets); verify-style 1 (env) |
+| merge polish | done | 2026-10-13 | 2026-10-13 | (two polish commits, then the merge) | every check exits 0 except verify-style (env); see "Merge polish and merge" |
 
 ## init (A.1): run files
 
@@ -385,9 +386,21 @@ The two editorial reds, verbatim, are the ones the run documents and does not re
 
 **Docs.** README.md: the session table gains the setup row and a case-file column, "How to use a lesson" gains the case-file bullet, "The Cole household" names the shared CASE.md block. CHANGELOG.md: "2026-10-13 · Next-term update (2027 cohort)", rendered by `build-changelog.py`. `docs/deferred-work.md`: DW-171 to DW-184 added, DW-057 closed. `docs/next-term/checks.mjs`: the run's own regression set (case-page shape and spans, Case links, READINGS regions, FACTS chips, the hub order, readings.json against the cards, four polls per file, the setup page): exit 0. MAINTAINING.md: the case pages, the readings workflow and the PDF re-render command.
 
-**Tag command for Jared** (not run; the branch is pushed, nothing touched `main`):
+**Tag command for Jared** (superseded the same day: see "Merge polish and merge" below, which ran it):
 
 ```
 git fetch origin next-term-2027 && git tag -a next-term-2027-ready origin/next-term-2027 -m "2027 cohort build, reviewed" && git push origin next-term-2027-ready
 ```
+
+## Merge polish and merge, 2026-10-13
+
+Jared's instruction after the A.4 report: *"analyze if this is merge ready and apply any needed final polish, then merge"*.
+
+**Readiness.** `origin/main` has not moved since the freeze (`da7b003`); the branch is 15 commits ahead and 0 behind, so the merge is clean. Every Fall 2026 change-folder `checks.mjs` (12 folders) and the Session 5 section tests (89 of 766 assertions) read red against the 2027 pages, as MAINTAINING's rule predicts for a sanctioned later pass; recorded there as history, with `docs/next-term/checks.mjs` named as the regression set. The "Last updated" stamps named Fall 2026 dates on every served page and the setup page had none. MAINTAINING's layout line for the case pages had landed inside the jsdom code block. The only non-environmental reds were the two editorial ratchets (DW-174).
+
+**Polish applied.** Commit 1: stamps to 2026-10-13 on the hub, Sessions 1 to 5 and the setup page (D-065); MAINTAINING's layout block lists `cases/case-N.html` and its change-folder section records the rebuild. Commit 2: the editorial re-baseline (D-063), T2 retargeted to a fixture (D-064), DW-174 closed, EDITORIAL's follow-ups row, CHANGELOG's Verification paragraph, the changelog page regenerated (fence refilled from the committed copy, D-062), this file and DECISIONS.
+
+**Validators after polish** (`NODE_PATH=$(npm root -g)`): build-case, inject-case --check, build-cardsort --check, build-appendix --check, build-readings --check, build-facts-md --check, build-unsourced --check, case-inventory --report-check, verify-case, verify-migration, verify-sources, verify-facts, verify-editorial, test-editorial-regions, test-case-viewer, verify-browser, test_live_console, docs/next-term/checks.mjs: all exit 0. verify-style exits 1 for the environment (skill absent, DW-184).
+
+**Merge.** `main` takes `next-term-2027` by a `--no-ff` merge commit, pushed on 2026-10-13, which publishes the 2027 pages at the live URL (Pages serves `main`); the Fall 2026 pages stay at the `fall-2026-final` tag, and `next-term-2027-ready` marks the branch head (D-066).
 

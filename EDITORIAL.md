@@ -1510,7 +1510,7 @@ Flagged, not rewritten (kickoff reduction A.0.3 item 3 in `docs/next-term/RUNBOO
 |---|---|---|
 | D18 | PEDAGOGY §4 sets core at about 60 minutes and Session 5 at about 45 (presentations take about 105); the 2027 lessons measure 60, 63, 61, 60 and 45, with 150 (125) allocated and tolerance 0 unchanged | "The band is 60–70" |
 | R11 | The cold-open `.ritual` block was retired in every lesson by the case opener (`sCase`), so the shared boilerplate is now `.apxback` furniture, the shared close block and the console fences | names the cold-open `.ritual` block as shared boilerplate |
-| A9 R11 corpus baseline | `scripts/editorial-baseline.json` records 6 shared blocks carrying 6 dashes; the corpus now has 5 and 5, so A9 R11 and `test-editorial-regions` T7 read red on purpose until the baseline moves | the baseline file moves only with Jared |
+| A9 R11 corpus baseline, A8 `session-0.1`, RC-3 Class A2 | `scripts/editorial-baseline.json` was re-recorded for the 2027 pages on 2026-10-13 in the merge polish (R11 4 shared blocks carrying 4 dashes; `session-0.1` majority literal / minority 0, on no dash at all; A9 per-file totals; D-063 in `docs/next-term/DECISIONS.md`), and `test-editorial-regions` T2 now proves the R10 claim on a fixture, since no served page carries a captured transcript | RC-3 still counts Class A2 at 28 (22 em + 6 en, four captured strings) and the R10 row still names session 0.1's `PROBE` array; both describe the retired page |
 
 ## D18 — the core minute band, ratified 2026-08-25
 

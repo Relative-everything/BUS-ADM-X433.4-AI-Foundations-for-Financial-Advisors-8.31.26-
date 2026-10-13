@@ -82,15 +82,24 @@ Nothing on `main` changed; the branch waits for review.
   answer sourced, decision rules keyed to the distribution), a Zoom poll setup card, the
   teaching aids and rule key renumbered and their PDFs re-rendered.
 
+### Merge polish
+
+- Every served page's "Last updated" stamp reads 2026-10-13 (DW-140), the setup page
+  included. MAINTAINING's layout block lists the case pages, and its change-folder section
+  records that the Fall 2026 folders now read red by design, with
+  `docs/next-term/checks.mjs` as the regression set.
+- The editorial baseline (`scripts/editorial-baseline.json`) is re-recorded for the 2027
+  pages: every em-dash figure fell or held, none rose (D-063 in
+  `docs/next-term/DECISIONS.md`). `test-editorial-regions` T2 proves the R10 claim on a
+  fixture, since no served page carries a captured transcript any more.
+
 ### Verification
 
-- `verify-migration`, `verify-case`, `verify-sources`, `verify-facts`, `verify-browser`,
-  `test-case-viewer`, `test_live_console` and `docs/next-term/checks.mjs` exit 0 on the
-  final tree. `verify-editorial` and `test-editorial-regions` read red on purpose (the A9
-  em-dash baseline fell when the cold-open block left every lesson; A8 and T2 pin the old
-  Session 0.1; the baseline moves only with the instructor, D-055). `verify-style` could
-  not run: the lesson-builder skill is absent from the cloud container (DW-184). Fourteen
-  deferred-work rows (DW-171 to DW-184) record what the run leaves open.
+- `verify-migration`, `verify-case`, `verify-sources`, `verify-facts`, `verify-editorial`,
+  `test-editorial-regions`, `verify-browser`, `test-case-viewer`, `test_live_console` and
+  `docs/next-term/checks.mjs` exit 0 on the merged tree. `verify-style` could not run: the
+  lesson-builder skill is absent from the cloud container (DW-184). Thirteen deferred-work
+  rows (DW-171 to DW-173 and DW-175 to DW-184) record what the run leaves open.
 
 ---
 
