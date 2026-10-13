@@ -23,13 +23,13 @@ never-fabricate rule exists to prevent.
 
 | | |
 |---|---|
-| Source records | **151** |
-| `last_verified` **EMPTY** | **147** |
+| Source records | **157** |
+| `last_verified` **EMPTY** | **153** |
 | `last_verified` populated | 1 |
 | `last_verified` *not applicable* (synthetic or fabricated) | 3 |
-| References standing behind an EMPTY `last_verified` | **530** of 643 |
-| Moving targets | 61 |
-| Lock | notarised, digest `fae9c57ba059337e` |
+| References standing behind an EMPTY `last_verified` | **535** of 648 |
+| Moving targets | 67 |
+| Lock | notarised, digest `72bb19425d4df560` |
 
 
 ## Already attested
@@ -46,32 +46,32 @@ Each one cites the evidence in the repository that records the confirmation.
 | # | Key | Title | `last_verified` | `last_retrieved` | Refs | Moving | Depends on it |
 |---|---|---|---|---|---|---|---|
 | 1 | `src-case` | The Cole household | *n/a* | *n/a* | 93 | no | case-1 `#brief` · case-1 `#commit` · case-1 `#deliverable` · case-1 `#built` · case-2 `#brief` · case-2 `#commit` · case-2 `#deliverable`×2 · case-2 `#built` · case-3 `#brief` · case-3 `#commit` · case-3 `#deliverable` · case-3 `#built` · case-4 `#brief` · case-4 `#commit` · case-4 `#deliverable` · case-4 `#built` · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable`×2 · case-5 `#built` · case-5 `#next` · S1 `#s1` · S1 `#sCase` · S2 `#sCase` · S2 `#s6b` · S2 `#sZ` · S2 `#sDel` · S3 `#sCase` · S3 `#s2` · S3 `#s4` · S3 `#sRag` · S3 `#s6`×2 · S3 `#sPrep` · S3 `#s7` · S3 `#s9` · S3 `#s10` · S3 `#sChk` · S3 `#sOff`×2 · S3 `#s12` · S3 `#s13` · S3 `#s16` · S4 `#s0` · S4 `#sCase`×2 · S4 `#s2`×3 · S4 `#sAnon` · S4 `#s3` · S4 `#s4` · S4 `#sRSP` · S4 `#s7` · S4 `#s5` · S4 `#s6` · S4 `#sWS` · S4 `#sAud` · S4 `#sW1` · S4 `#sW2` · S4 `#sD` · S4 `#s9` · S4 `#sCR`×4 · S5 `#s0` · S5 `#sCase` · S5 `#s1`×3 · S5 `#sE3` · S5 `#sE4`×2 · S5 `#sE2`×2 · S5 `#sE6`×2 · S5 `#s2`×3 · S5 `#s3`×2 · S5 `#s4` · S5 `#sE1` · S5 `#s5` · S5 `#s7` · S5 `#s6` · S5 `#sLib`×2 · S5 `#sE5` |
-| 2 | `src-anthropic-deprecations` | Model deprecations | **EMPTY** | 2026-10-12 | 51 | yes | case-1 `#deliverable`×3 · case-1 `#built`×2 · case-2 `#deliverable`×2 · case-2 `#built`×2 · case-3 `#deliverable`×5 · case-3 `#built`×2 · case-4 `#deliverable`×4 · case-4 `#built`×3 · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable`×4 · case-5 `#built`×5 · case-5 `#next`×2 · S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#sCase`×2 · S5 `#s1`×3 · S5 `#sE2`×2 · S5 `#sE6`×4 |
+| 2 | `src-anthropic-deprecations` | Model deprecations | **EMPTY** | 2026-10-12 | 52 | yes | case-1 `#deliverable`×3 · case-1 `#built`×2 · case-2 `#deliverable`×2 · case-2 `#built`×2 · case-3 `#deliverable`×5 · case-3 `#built`×2 · case-4 `#deliverable`×4 · case-4 `#built`×3 · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable`×4 · case-5 `#built`×5 · case-5 `#next`×2 · S0.1 `#s0` · S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#sCase`×2 · S5 `#s1`×3 · S5 `#sE2`×2 · S5 `#sE6`×4 |
 | 3 | `src-pricing` | Pricing | **EMPTY** | 2026-10-11 | 34 | yes | case-1 `#built`×5 · case-2 `#built`×4 · case-3 `#built`×4 · case-4 `#built`×4 · case-5 `#built`×4 · S1 `#s5`×2 · S1 `#s10`×2 · S1 `#s11`×3 · S2 `#s0` · S2 `#s5`×3 · S4 `#s3` · S4 `#sCR` |
 | 4 | `src-regsp-guide` | Regulation S-P: small entity compliance guide | **EMPTY** | 2026-10-11 | 22 | no | case-4 `#deliverable`×2 · case-4 `#built`×2 · S3 `#sPol`×2 · S4 `#s4`×3 · S4 `#sRSP`×6 · S4 `#s9` · S4 `#sCR`×6 |
 | 5 | `src-wolfram` | What is ChatGPT doing … and why does it work? | **2026-08-23** | **none** | 20 | no | S1 `#s2` · S1 `#s3`×2 · S1 `#s5` · S1 `#s4` · S2 `#s0` · S2 `#s1`×2 · S2 `#s2`×2 · S2 `#s3`×2 · S2 `#s4` · S3 `#s2`×2 · S3 `#s7` · S4 `#sWS` · S4 `#sCR` · S5 `#sE3`×2 |
 | 6 | `src-claude-marks` | How Claude marks AI-generated content | **EMPTY** | 2026-10-11 | 18 | yes | S4 `#s1` · S4 `#sW1`×5 · S4 `#sW2`×6 · S4 `#sCR`×6 |
-| 7 | `src-anthropic-terms` | Consumer Terms of Service, Commercial Terms of Service and Privacy Policy | **EMPTY** | 2026-09-27 | 16 | yes | S4 `#s3`×6 · S4 `#s4`×2 · S4 `#sCR`×7 · S5 `#s6` |
-| 8 | `src-models` | Models overview | **EMPTY** | 2026-09-13 | 15 | yes | case-1 `#built` · case-2 `#built` · case-3 `#built` · case-4 `#built` · case-5 `#built` · S0.1 `#s2` · S0.1 `#s3`×2 · S0.1 `#s4` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag`×2 · S4 `#sCR` |
-| 9 | `src-secpri` | Examination priorities: Fiscal year 2026, §VII | **EMPTY** | **none** | 14 | no | S3 `#sPol` · S3 `#s16` · S4 `#s1`×3 · S4 `#s7` · S4 `#s5` · S4 `#sAud`×2 · S4 `#s9`×2 · S4 `#sCR`×3 |
-| 10 | `src-magesh` | Hallucination-free? Assessing the reliability of leading AI legal research tools | **EMPTY** | **none** | 13 | no | S2 `#s10`×3 · S3 `#s6`×2 · S3 `#s15` · S3 `#s16`×2 · S4 `#s6`×3 · S4 `#sCR` · S5 `#sE3` |
-| 11 | `src-anthropic-dpa` | Data Processing Addendum | **EMPTY** | 2026-09-27 | 11 | yes | case-4 `#built` · S4 `#s3`×2 · S4 `#s4`×2 · S4 `#sCR`×6 |
-| 12 | `src-claude-pricing` | Plans and pricing | **EMPTY** | 2026-09-27 | 10 | yes | case-1 `#built` · case-4 `#built` · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3`×3 · S4 `#sCR` |
-| 13 | `src-effort` | Change the model, effort, and thinking settings | **EMPTY** | 2026-08-20 | 10 | yes | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3`×5 · S0.1 `#s9` · S4 `#sWS` · S4 `#sCR` |
-| 14 | `src-memory` | Use Claude's chat search and memory to build on previous context | **EMPTY** | 2026-08-20 | 10 | yes | S0.1 `#s0` · S0.1 `#s5`×2 · S0.1 `#s6`×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10`×2 · S2 `#s3` |
-| 15 | `src-tools3` | When should I use web search, extended thinking, and research? | **EMPTY** | 2026-08-20 | 9 | yes | S0.1 `#s1` · S0.1 `#s4` · S0.1 `#s5`×3 · S0.1 `#s8`×3 · S0.1 `#s9` |
+| 7 | `src-anthropic-terms` | Consumer Terms of Service, Commercial Terms of Service and Privacy Policy | **EMPTY** | 2026-09-27 | 17 | yes | S0.1 `#s0` · S4 `#s3`×6 · S4 `#s4`×2 · S4 `#sCR`×7 · S5 `#s6` |
+| 8 | `src-secpri` | Examination priorities: Fiscal year 2026, §VII | **EMPTY** | **none** | 14 | no | S3 `#sPol` · S3 `#s16` · S4 `#s1`×3 · S4 `#s7` · S4 `#s5` · S4 `#sAud`×2 · S4 `#s9`×2 · S4 `#sCR`×3 |
+| 9 | `src-magesh` | Hallucination-free? Assessing the reliability of leading AI legal research tools | **EMPTY** | **none** | 13 | no | S2 `#s10`×3 · S3 `#s6`×2 · S3 `#s15` · S3 `#s16`×2 · S4 `#s6`×3 · S4 `#sCR` · S5 `#sE3` |
+| 10 | `src-claude-pricing` | Plans and pricing | **EMPTY** | 2026-09-27 | 12 | yes | case-1 `#built` · case-4 `#built` · S0.1 `#s0`×2 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3`×3 · S4 `#sCR` |
+| 11 | `src-models` | Models overview | **EMPTY** | 2026-09-13 | 12 | yes | case-1 `#built` · case-2 `#built` · case-3 `#built` · case-4 `#built` · case-5 `#built` · S0.1 `#s1` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag`×2 · S4 `#sCR` |
+| 12 | `src-anthropic-dpa` | Data Processing Addendum | **EMPTY** | 2026-09-27 | 11 | yes | case-4 `#built` · S4 `#s3`×2 · S4 `#s4`×2 · S4 `#sCR`×6 |
+| 13 | `src-claude-privacy-training` | Is my data used for model training? | **EMPTY** | 2026-10-11 | 9 | yes | case-1 `#built` · S0.1 `#s0`×3 · S4 `#s3`×2 · S4 `#sCR`×2 · S5 `#s0` |
+| 14 | `src-context-windows` | Context windows | **EMPTY** | 2026-09-13 | 9 | yes | S0.1 `#s1` · S0.1 `#s10` · S1 `#s1` · S1 `#s5`×2 · S2 `#s0` · S2 `#s3` · S3 `#sRag`×2 |
+| 15 | `src-memory` | Use Claude's chat search and memory to build on previous context | **EMPTY** | 2026-08-20 | 9 | yes | S0.1 `#s1` · S0.1 `#s7` · S0.1 `#s8`×6 · S2 `#s3` |
 | 16 | `src-finra2026` | 2026 Annual Regulatory Oversight Report | **EMPTY** | **none** | 8 | no | S4 `#s1`×2 · S4 `#s7`×3 · S4 `#sAud`×2 · S4 `#sCR` |
 | 17 | `src-finra2409` | Regulatory Notice 24-09 | **EMPTY** | **none** | 8 | no | S1 `#s14`×2 · S4 `#s1`×3 · S4 `#s7` · S4 `#s9` · S4 `#sCR` |
-| 18 | `src-regsp` | Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments | **EMPTY** | **none** | 8 | no | S3 `#sPol` · S4 `#s2`×3 · S4 `#s9` · S4 `#sCR`×2 · S5 `#s6` |
-| 19 | `src-context-windows` | Context windows | **EMPTY** | 2026-09-13 | 7 | yes | S1 `#s1` · S1 `#s5`×2 · S2 `#s0` · S2 `#s3` · S3 `#sRag`×2 |
+| 18 | `src-personalization` | Understanding Claude's personalization features | **EMPTY** | 2026-08-20 | 8 | yes | S0.1 `#s2`×3 · S0.1 `#s3`×4 · S2 `#s3` |
+| 19 | `src-regsp` | Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments | **EMPTY** | **none** | 8 | no | S3 `#sPol` · S4 `#s2`×3 · S4 `#s9` · S4 `#sCR`×2 · S5 `#s6` |
 | 20 | `src-cve` | CVE-2025-32711 (EchoLeak, CVSS 9.3) | **EMPTY** | **none** | 7 | no | S4 `#s3` · S4 `#s5`×2 · S4 `#sCR`×3 · S5 `#sE3` |
 | 21 | `src-kitces-notetakers` | Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends | **EMPTY** | **none** | 7 | no | S3 `#s9` · S3 `#s10`×2 · S3 `#s11`×2 · S3 `#s16`×2 |
 | 22 | `src-anthropic-ctx` | Contextual retrieval in AI systems | **EMPTY** | **none** | 6 | no | S3 `#sRag` · S3 `#s6`×3 · S3 `#s7` · S3 `#s16` |
-| 23 | `src-claude-privacy-training` | Is my data used for model training? | **EMPTY** | 2026-10-11 | 6 | yes | case-1 `#built` · S4 `#s3`×2 · S4 `#sCR`×2 · S5 `#s0` |
-| 24 | `src-ctxwindow` | How large is the context window on paid Claude plans? | **EMPTY** | 2026-08-20 | 6 | yes | S0.1 `#s1` · S0.1 `#s4`×4 · S0.1 `#s6` |
-| 25 | `src-lee-cognitive` | The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers | **EMPTY** | 2026-10-02 | 6 | no | S3 `#s15` · S5 `#s5`×3 · S5 `#sE5`×2 |
-| 26 | `src-synthid` | SynthID | **EMPTY** | 2026-10-11 | 6 | yes | S4 `#s7` · S4 `#sW1`×2 · S4 `#sCR`×3 |
-| 27 | `src-aa` | Artificial Analysis Intelligence Index and cost-per-task figures | **EMPTY** | 2026-08-13 | 5 | yes | S1 `#s10` · S2 `#s5`×3 · S4 `#sWS` |
+| 23 | `src-claude-connectors` | Use connectors to extend Claude's capabilities | **EMPTY** | 2026-10-13 | 6 | yes | S0.1 `#s5`×6 |
+| 24 | `src-lee-cognitive` | The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers | **EMPTY** | 2026-10-02 | 6 | no | S3 `#s15` · S5 `#s5`×3 · S5 `#sE5`×2 |
+| 25 | `src-synthid` | SynthID | **EMPTY** | 2026-10-11 | 6 | yes | S4 `#s7` · S4 `#sW1`×2 · S4 `#sCR`×3 |
+| 26 | `src-aa` | Artificial Analysis Intelligence Index and cost-per-task figures | **EMPTY** | 2026-08-13 | 5 | yes | S1 `#s10` · S2 `#s5`×3 · S4 `#sWS` |
+| 27 | `src-agent-skills` | Agent Skills overview | **EMPTY** | 2026-09-27 | 5 | yes | S0.1 `#s6`×2 · S4 `#s7` · S4 `#sWS` · S4 `#sCR` |
 | 28 | `src-anthropic-retention` | API and data retention | **EMPTY** | 2026-09-27 | 5 | yes | S4 `#s3`×2 · S4 `#s4` · S4 `#sCR`×2 |
 | 29 | `src-arup` | Reporting on the Arup deepfake incident | **EMPTY** | **none** | 5 | no | S4 `#s5`×2 · S4 `#sCR`×3 |
 | 30 | `src-cfp-genai` | Generative AI Ethics Guide: A Checklist for Upholding the Code and Standards | **EMPTY** | **none** | 5 | no | case-4 `#built` · S4 `#s2`×2 · S4 `#sAnon`×2 |
@@ -82,89 +82,89 @@ Each one cites the evidence in the repository that records the confirmation.
 | 35 | `src-api-messages` | Messages API reference | **EMPTY** | 2026-09-27 | 4 | yes | S2 `#s3`×2 · S4 `#sWS` · S4 `#sCR` |
 | 36 | `src-claude-code-settings` | Settings files and precedence | **EMPTY** | 2026-10-04 | 4 | yes | S5 `#s1`×2 · S5 `#sLib`×2 |
 | 37 | `src-claude-code-skills` | Skills | **EMPTY** | 2026-10-04 | 4 | yes | S5 `#s1`×2 · S5 `#sLib`×2 |
-| 38 | `src-claude-watermark` | How Claude's text watermark works | **EMPTY** | 2026-10-11 | 4 | yes | S4 `#s7` · S4 `#sW1`×3 |
-| 39 | `src-finra-inj` | Understanding Generative AI and Prompt Injection Fundamentals | **EMPTY** | **none** | 4 | no | S4 `#s5`×2 · S4 `#sCR`×2 |
-| 40 | `src-openai-data` | How your data is used to improve model performance | **EMPTY** | **none** | 4 | yes | S4 `#s3`×3 · S4 `#sCR` |
-| 41 | `src-t3-survey` | Software Survey 2026 | **EMPTY** | **none** | 4 | no | S2 `#s9` · S2 `#s12d` · S5 `#s6`×2 |
-| 42 | `src-agent-skills` | Agent Skills overview | **EMPTY** | 2026-09-27 | 3 | yes | S4 `#s7` · S4 `#sWS` · S4 `#sCR` |
-| 43 | `src-anthropic-agents` | Building effective agents | **EMPTY** | 2026-09-27 | 3 | no | S4 `#sWS` · S4 `#sCR`×2 |
-| 44 | `src-anthropic-models-overview` | Models overview | **EMPTY** | 2026-10-12 | 3 | yes | S5 `#s1`×3 |
-| 45 | `src-anthropic-threat` | Detecting and countering misuse of AI: September 2026 | **EMPTY** | 2026-09-27 | 3 | no | S4 `#s5` · S4 `#sCR`×2 |
-| 46 | `src-cfp-psychology` | CFP Board adds Psychology of Financial Planning to exam requirements | **EMPTY** | **none** | 3 | no | S5 `#s7`×2 · S5 `#sE5` |
-| 47 | `src-claude-code-org` | Manage Claude Code plugins for your organization | **EMPTY** | 2026-10-04 | 3 | yes | S5 `#sLib`×3 |
-| 48 | `src-daly` | Artificial Intelligence and the Future of Investment Management | **EMPTY** | **none** | 3 | no | S4 `#s1`×2 · S4 `#s9` |
-| 49 | `src-dellacqua` | Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality | **EMPTY** | **none** | 3 | no | S5 `#s5`×2 · S5 `#sE5` |
-| 50 | `src-gemini-privacy` | Gemini Apps Privacy Hub | **EMPTY** | **none** | 3 | yes | S4 `#s3`×2 · S4 `#sCR` |
-| 51 | `src-google-ptcf` | Gemini for Workspace: Prompting guide 101 | **EMPTY** | **none** | 3 | no | S2 `#s6` · S5 `#s2`×2 |
-| 52 | `src-ms-copilot` | Privacy FAQ for Microsoft Copilot | **EMPTY** | **none** | 3 | yes | S4 `#s3`×2 · S4 `#sCR` |
-| 53 | `src-openai-provenance` | Provenance signals in OpenAI-generated content | **EMPTY** | 2026-10-11 | 3 | yes | S4 `#s7` · S4 `#sW1`×2 |
-| 54 | `src-personalization` | Understanding Claude's personalization features | **EMPTY** | 2026-08-20 | 3 | yes | S0.1 `#s1` · S0.1 `#s6` · S2 `#s3` |
-| 55 | `src-plugins` | Use plugins in Claude | **EMPTY** | 2026-08-20 | 3 | yes | S0.1 `#s7`×3 |
-| 56 | `src-secure2-107` | SECURE 2.0 Act of 2022, section 107 (increase in age for required beginning date) | **EMPTY** | 2026-10-12 | 3 | no | case-2 `#deliverable`×3 |
-| 57 | `src-skills` | What are skills? | **EMPTY** | 2026-08-20 | 3 | yes | S0.1 `#s6` · S0.1 `#s7` · S0.1 `#s9` |
-| 58 | `src-vanguard-alpha` | Putting a value on your value: Quantifying Vanguard Advisor's Alpha | **EMPTY** | **none** | 3 | no | S5 `#s7` · S5 `#sE5`×2 |
-| 59 | `src-aa-leaderboard` | Language model leaderboard, Intelligence Index | **EMPTY** | 2026-10-11 | 2 | yes | S1 `#s10`×2 |
-| 60 | `src-advisers-204-2` | Books and records to be maintained by investment advisers, 17 CFR 275.204-2 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
-| 61 | `src-advisers-206-4-7` | Compliance procedures and practices, 17 CFR 275.206(4)-7 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
-| 62 | `src-advisers-fiduciary` | Commission Interpretation Regarding Standard of Conduct for Investment Advisers, Release IA-5248 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
-| 63 | `src-anthropic-certs` | What certifications has Anthropic obtained? | **EMPTY** | 2026-09-27 | 2 | yes | S4 `#s3` · S4 `#sCR` |
-| 64 | `src-anthropic-context` | Context windows | **EMPTY** | 2026-09-27 | 2 | yes | S4 `#sWS` · S4 `#sCR` |
-| 65 | `src-anthropic-ctx-eng` | Effective context engineering for AI agents | **EMPTY** | 2026-09-27 | 2 | no | S4 `#sWS` · S4 `#sCR` |
-| 66 | `src-anthropic-mcp` | Introducing the Model Context Protocol | **EMPTY** | 2026-09-27 | 2 | no | S4 `#sWS` · S4 `#sCR` |
-| 67 | `src-anthropic-thinking` | Claude 3.7 Sonnet and Claude Code | **EMPTY** | 2026-09-27 | 2 | no | S4 `#sWS` · S4 `#sCR` |
-| 68 | `src-arena-board` | Text leaderboard | **EMPTY** | 2026-10-11 | 2 | yes | S1 `#s10`×2 |
-| 69 | `src-cfp-code` | Code of Ethics and Standards of Conduct | **EMPTY** | **none** | 2 | no | S4 `#s4`×2 |
-| 70 | `src-chatgpt-index` | Your public ChatGPT queries are getting indexed by Google and other search engines | **EMPTY** | **none** | 2 | no | S4 `#s3` · S4 `#sCR` |
-| 71 | `src-claude-code-marketplace` | Create a marketplace | **EMPTY** | 2026-10-04 | 2 | yes | S5 `#sLib`×2 |
-| 72 | `src-claude-memory` | Bringing memory to teams at work | **EMPTY** | 2026-09-27 | 2 | yes | S4 `#sWS` · S4 `#sCR` |
-| 73 | `src-dahl-fictions` | Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models | **EMPTY** | **none** | 2 | no | S2 `#s10`×2 |
-| 74 | `src-deepseek` | Wiz Research uncovers exposed DeepSeek database leaking sensitive information, including chat history | **EMPTY** | **none** | 2 | no | S4 `#s3` · S4 `#sCR` |
-| 75 | `src-eu-ai-act` | Regulation (EU) 2024/1689 (the Artificial Intelligence Act), Article 50, transparency obligations | **EMPTY** | **none** | 2 | no | S4 `#sW1`×2 |
-| 76 | `src-fbi-ic3-2025` | Cryptocurrency and AI scams bilk Americans of billions: 2025 Internet Crime Report | **EMPTY** | **none** | 2 | no | S4 `#s5` · S4 `#sCR` |
-| 77 | `src-finra-4511` | FINRA Rule 4511, General Requirements, and Exchange Act Rule 17a-4 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
-| 78 | `src-gemini-workspace` | Generative AI in Google Workspace Privacy Hub | **EMPTY** | **none** | 2 | yes | S4 `#s3`×2 |
-| 79 | `src-gtig-ai` | GTIG AI Threat Tracker: Advances in threat actor usage of AI tools | **EMPTY** | **none** | 2 | no | S4 `#s5` · S4 `#sCR` |
-| 80 | `src-iskowitz` | AI notetakers and compliance in wealth management: What firms need to know | **EMPTY** | **none** | 2 | no | S3 `#sPol` · S3 `#s16` |
-| 81 | `src-iss-ai-policy` | Advisers Using AI by the Numbers | **EMPTY** | 2026-10-11 | 2 | no | S4 `#s9`×2 |
-| 82 | `src-joa-prompt` | Writing an effective AI prompt for an audit | **EMPTY** | **none** | 2 | no | S4 `#s7`×2 |
-| 83 | `src-kitces-aisearch` | Ways advisors can optimize for AI search (AI SEO) | **EMPTY** | **none** | 2 | no | S5 `#s6`×2 |
-| 84 | `src-kitces-productivity` | Kitces Research on Advisor Productivity | **EMPTY** | **none** | 2 | no | S2 `#s9` · S2 `#s12d` |
-| 85 | `src-livebench` | LiveBench leaderboard and question releases | **EMPTY** | 2026-10-11 | 2 | yes | S1 `#s10`×2 |
-| 86 | `src-meta-feed` | Meta AI's discover feed is full of revealing personal info: here's how to protect your privacy | **EMPTY** | **none** | 2 | no | S4 `#s3` · S4 `#sCR` |
-| 87 | `src-metr-2025` | Measuring the impact of early-2025 AI on experienced open-source developer productivity | **EMPTY** | **none** | 2 | no | S5 `#s5`×2 |
-| 88 | `src-ms-copilot-edp` | Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat | **EMPTY** | **none** | 2 | yes | S4 `#s3`×2 |
-| 89 | `src-owasp` | Top 10 for LLM Applications and Top 10 for Agentic Applications | **EMPTY** | **none** | 2 | yes | S4 `#sCR`×2 |
-| 90 | `src-sec-withdraw` | Withdrawal of proposed regulatory actions, including Conflicts of Interest Associated with the Use of Predictive Data Analytics (S7-12-23) | **EMPTY** | **none** | 2 | no | S4 `#s1`×2 |
-| 91 | `src-wiretap` | Cal. Penal Code § 637.2(a)(1), (c); 18 U.S.C. § 2511 | **EMPTY** | **none** | 2 | no | S3 `#s12`×2 |
-| 92 | `src-0din-gemini` | Phishing for Gemini | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
-| 93 | `src-aa-index` | Intelligence Index methodology | **EMPTY** | 2026-10-11 | 1 | yes | S1 `#s10` |
-| 94 | `src-anthropic-deprecation-commitments` | Commitments on model deprecation and preservation | **EMPTY** | 2026-10-02 | 1 | no | S5 `#s1` |
-| 95 | `src-anthropic-injection` | Mitigating the risk of prompt injections in browser use | **EMPTY** | 2026-09-27 | 1 | yes | S4 `#sCR` |
-| 96 | `src-anthropic-threat-aug25` | Detecting and countering misuse of AI: August 2025 | **EMPTY** | 2026-09-27 | 1 | no | S4 `#sCR` |
-| 97 | `src-arena-rename` | LMArena is now Arena | **EMPTY** | 2026-10-11 | 1 | no | S1 `#s10` |
-| 98 | `src-ascii-smuggling` | Microsoft Copilot: from prompt injection to data exfiltration of your emails | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
-| 99 | `src-beta` | Available beta and research preview features | **EMPTY** | 2026-08-20 | 1 | yes | S0.1 `#s7` |
-| 100 | `src-brynjolfsson` | Generative AI at work | **EMPTY** | **none** | 1 | no | S5 `#s5` |
-| 101 | `src-charlotin` | AI Hallucination Cases database | **EMPTY** | 2026-06 *(month only)* | 1 | yes | S2 `#s10` |
-| 102 | `src-claude-code-host` | Host and maintain a marketplace | **EMPTY** | 2026-10-04 | 1 | yes | S5 `#sLib` |
-| 103 | `src-deloitte` | Generative-AI fraud projection | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
-| 104 | `src-directory` | Browse skills, connectors, and plugins in one directory | **EMPTY** | 2026-08-20 | 1 | yes | S0.1 `#s7` |
-| 105 | `src-drift` | Cybersecurity alert: Salesloft Drift AI supply chain attack | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
-| 106 | `src-features` | Features and capabilities collection index | **EMPTY** | 2026-08-20 | 1 | yes | S0.1 `#s7` |
-| 107 | `src-gemini-api-terms` | Gemini API Additional Terms of Service | **EMPTY** | **none** | 1 | yes | S4 `#(footer)` |
-| 108 | `src-gemini-ratelimits` | Rate limits | **EMPTY** | **none** | 1 | yes | S4 `#(footer)` |
-| 109 | `src-ibm-breach-2026` | IBM study: one in four malicious breaches are AI-enabled, costing companies $6 million on average | **EMPTY** | **none** | 1 | yes | S4 `#sCR` |
-| 110 | `src-il-pipa` | Personal Information Protection Act, 815 ILCS 530/10 | **EMPTY** | **none** | 1 | no | case-4 `#built` |
-| 111 | `src-investmentnews-t3-2026` | AI moves from novelty to backbone as advisors reshape their fintech stacks | **EMPTY** | **none** | 1 | no | S5 `#s6` |
-| 112 | `src-irs-590b` | Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs) | **EMPTY** | 2026-10-12 | 1 | yes | case-2 `#deliverable` |
-| 113 | `src-irs-8606` | Form 8606, Nondeductible IRAs, and its instructions | **EMPTY** | 2026-10-12 | 1 | yes | case-2 `#deliverable` |
-| 114 | `src-noy-zhang` | Experimental evidence on the productivity effects of generative artificial intelligence | **EMPTY** | **none** | 1 | no | S5 `#s5` |
-| 115 | `src-openai-pricing` | API pricing | **EMPTY** | **none** | 1 | yes | S2 `#s5` |
-| 116 | `src-openai-retire-4o` | Retiring GPT-4o and other ChatGPT models | **EMPTY** | **none** | 1 | yes | S5 `#s1` |
-| 117 | `src-pew-ai-summaries` | Google users are less likely to click on links when an AI summary appears in the results | **EMPTY** | **none** | 1 | no | S5 `#s6` |
-| 118 | `src-rightcapital-iris` | RightCapital launches Iris, the first planning-focused AI agent designed to transform the financial planning process | **EMPTY** | **none** | 1 | yes | S5 `#s6` |
-| 119 | `src-rohrer` | Interleaved practice improves mathematics learning | **EMPTY** | 2026-08-29 | 1 | no | S1 `#s13` |
-| 120 | `src-routing` | Why Claude switched models in your conversation with Fable 5 | **EMPTY** | 2026-08-20 | 1 | yes | S0.1 `#s2` |
+| 38 | `src-claude-incognito` | Use incognito chats | **EMPTY** | 2026-10-13 | 4 | yes | S0.1 `#s7`×4 |
+| 39 | `src-claude-skills-use` | Use skills in Claude | **EMPTY** | 2026-10-13 | 4 | yes | S0.1 `#s6`×4 |
+| 40 | `src-claude-watermark` | How Claude's text watermark works | **EMPTY** | 2026-10-11 | 4 | yes | S4 `#s7` · S4 `#sW1`×3 |
+| 41 | `src-finra-inj` | Understanding Generative AI and Prompt Injection Fundamentals | **EMPTY** | **none** | 4 | no | S4 `#s5`×2 · S4 `#sCR`×2 |
+| 42 | `src-openai-data` | How your data is used to improve model performance | **EMPTY** | **none** | 4 | yes | S4 `#s3`×3 · S4 `#sCR` |
+| 43 | `src-t3-survey` | Software Survey 2026 | **EMPTY** | **none** | 4 | no | S2 `#s9` · S2 `#s12d` · S5 `#s6`×2 |
+| 44 | `src-anthropic-agents` | Building effective agents | **EMPTY** | 2026-09-27 | 3 | no | S4 `#sWS` · S4 `#sCR`×2 |
+| 45 | `src-anthropic-mcp` | Introducing the Model Context Protocol | **EMPTY** | 2026-09-27 | 3 | no | S0.1 `#s5` · S4 `#sWS` · S4 `#sCR` |
+| 46 | `src-anthropic-models-overview` | Models overview | **EMPTY** | 2026-10-12 | 3 | yes | S5 `#s1`×3 |
+| 47 | `src-anthropic-threat` | Detecting and countering misuse of AI: September 2026 | **EMPTY** | 2026-09-27 | 3 | no | S4 `#s5` · S4 `#sCR`×2 |
+| 48 | `src-cfp-psychology` | CFP Board adds Psychology of Financial Planning to exam requirements | **EMPTY** | **none** | 3 | no | S5 `#s7`×2 · S5 `#sE5` |
+| 49 | `src-claude-code-org` | Manage Claude Code plugins for your organization | **EMPTY** | 2026-10-04 | 3 | yes | S5 `#sLib`×3 |
+| 50 | `src-claude-projects` | How can I create and manage projects? | **EMPTY** | 2026-10-13 | 3 | yes | S0.1 `#s2`×3 |
+| 51 | `src-claude-research` | Use research on Claude | **EMPTY** | 2026-10-13 | 3 | yes | S0.1 `#s4`×3 |
+| 52 | `src-daly` | Artificial Intelligence and the Future of Investment Management | **EMPTY** | **none** | 3 | no | S4 `#s1`×2 · S4 `#s9` |
+| 53 | `src-dellacqua` | Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality | **EMPTY** | **none** | 3 | no | S5 `#s5`×2 · S5 `#sE5` |
+| 54 | `src-gemini-privacy` | Gemini Apps Privacy Hub | **EMPTY** | **none** | 3 | yes | S4 `#s3`×2 · S4 `#sCR` |
+| 55 | `src-google-ptcf` | Gemini for Workspace: Prompting guide 101 | **EMPTY** | **none** | 3 | no | S2 `#s6` · S5 `#s2`×2 |
+| 56 | `src-ms-copilot` | Privacy FAQ for Microsoft Copilot | **EMPTY** | **none** | 3 | yes | S4 `#s3`×2 · S4 `#sCR` |
+| 57 | `src-openai-provenance` | Provenance signals in OpenAI-generated content | **EMPTY** | 2026-10-11 | 3 | yes | S4 `#s7` · S4 `#sW1`×2 |
+| 58 | `src-secure2-107` | SECURE 2.0 Act of 2022, section 107 (increase in age for required beginning date) | **EMPTY** | 2026-10-12 | 3 | no | case-2 `#deliverable`×3 |
+| 59 | `src-tools3` | When should I use web search, extended thinking, and research? | **EMPTY** | 2026-08-20 | 3 | yes | S0.1 `#s4`×3 |
+| 60 | `src-vanguard-alpha` | Putting a value on your value: Quantifying Vanguard Advisor's Alpha | **EMPTY** | **none** | 3 | no | S5 `#s7` · S5 `#sE5`×2 |
+| 61 | `src-aa-leaderboard` | Language model leaderboard, Intelligence Index | **EMPTY** | 2026-10-11 | 2 | yes | S1 `#s10`×2 |
+| 62 | `src-advisers-204-2` | Books and records to be maintained by investment advisers, 17 CFR 275.204-2 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
+| 63 | `src-advisers-206-4-7` | Compliance procedures and practices, 17 CFR 275.206(4)-7 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
+| 64 | `src-advisers-fiduciary` | Commission Interpretation Regarding Standard of Conduct for Investment Advisers, Release IA-5248 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
+| 65 | `src-anthropic-certs` | What certifications has Anthropic obtained? | **EMPTY** | 2026-09-27 | 2 | yes | S4 `#s3` · S4 `#sCR` |
+| 66 | `src-anthropic-context` | Context windows | **EMPTY** | 2026-09-27 | 2 | yes | S4 `#sWS` · S4 `#sCR` |
+| 67 | `src-anthropic-ctx-eng` | Effective context engineering for AI agents | **EMPTY** | 2026-09-27 | 2 | no | S4 `#sWS` · S4 `#sCR` |
+| 68 | `src-anthropic-thinking` | Claude 3.7 Sonnet and Claude Code | **EMPTY** | 2026-09-27 | 2 | no | S4 `#sWS` · S4 `#sCR` |
+| 69 | `src-arena-board` | Text leaderboard | **EMPTY** | 2026-10-11 | 2 | yes | S1 `#s10`×2 |
+| 70 | `src-cfp-code` | Code of Ethics and Standards of Conduct | **EMPTY** | **none** | 2 | no | S4 `#s4`×2 |
+| 71 | `src-chatgpt-index` | Your public ChatGPT queries are getting indexed by Google and other search engines | **EMPTY** | **none** | 2 | no | S4 `#s3` · S4 `#sCR` |
+| 72 | `src-claude-code-marketplace` | Create a marketplace | **EMPTY** | 2026-10-04 | 2 | yes | S5 `#sLib`×2 |
+| 73 | `src-claude-memory` | Bringing memory to teams at work | **EMPTY** | 2026-09-27 | 2 | yes | S4 `#sWS` · S4 `#sCR` |
+| 74 | `src-dahl-fictions` | Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models | **EMPTY** | **none** | 2 | no | S2 `#s10`×2 |
+| 75 | `src-deepseek` | Wiz Research uncovers exposed DeepSeek database leaking sensitive information, including chat history | **EMPTY** | **none** | 2 | no | S4 `#s3` · S4 `#sCR` |
+| 76 | `src-effort` | Change the model, effort, and thinking settings | **EMPTY** | 2026-08-20 | 2 | yes | S4 `#sWS` · S4 `#sCR` |
+| 77 | `src-eu-ai-act` | Regulation (EU) 2024/1689 (the Artificial Intelligence Act), Article 50, transparency obligations | **EMPTY** | **none** | 2 | no | S4 `#sW1`×2 |
+| 78 | `src-fbi-ic3-2025` | Cryptocurrency and AI scams bilk Americans of billions: 2025 Internet Crime Report | **EMPTY** | **none** | 2 | no | S4 `#s5` · S4 `#sCR` |
+| 79 | `src-finra-4511` | FINRA Rule 4511, General Requirements, and Exchange Act Rule 17a-4 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
+| 80 | `src-gemini-workspace` | Generative AI in Google Workspace Privacy Hub | **EMPTY** | **none** | 2 | yes | S4 `#s3`×2 |
+| 81 | `src-gtig-ai` | GTIG AI Threat Tracker: Advances in threat actor usage of AI tools | **EMPTY** | **none** | 2 | no | S4 `#s5` · S4 `#sCR` |
+| 82 | `src-iskowitz` | AI notetakers and compliance in wealth management: What firms need to know | **EMPTY** | **none** | 2 | no | S3 `#sPol` · S3 `#s16` |
+| 83 | `src-iss-ai-policy` | Advisers Using AI by the Numbers | **EMPTY** | 2026-10-11 | 2 | no | S4 `#s9`×2 |
+| 84 | `src-joa-prompt` | Writing an effective AI prompt for an audit | **EMPTY** | **none** | 2 | no | S4 `#s7`×2 |
+| 85 | `src-kitces-aisearch` | Ways advisors can optimize for AI search (AI SEO) | **EMPTY** | **none** | 2 | no | S5 `#s6`×2 |
+| 86 | `src-kitces-productivity` | Kitces Research on Advisor Productivity | **EMPTY** | **none** | 2 | no | S2 `#s9` · S2 `#s12d` |
+| 87 | `src-livebench` | LiveBench leaderboard and question releases | **EMPTY** | 2026-10-11 | 2 | yes | S1 `#s10`×2 |
+| 88 | `src-meta-feed` | Meta AI's discover feed is full of revealing personal info: here's how to protect your privacy | **EMPTY** | **none** | 2 | no | S4 `#s3` · S4 `#sCR` |
+| 89 | `src-metr-2025` | Measuring the impact of early-2025 AI on experienced open-source developer productivity | **EMPTY** | **none** | 2 | no | S5 `#s5`×2 |
+| 90 | `src-ms-copilot-edp` | Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat | **EMPTY** | **none** | 2 | yes | S4 `#s3`×2 |
+| 91 | `src-owasp` | Top 10 for LLM Applications and Top 10 for Agentic Applications | **EMPTY** | **none** | 2 | yes | S4 `#sCR`×2 |
+| 92 | `src-sec-withdraw` | Withdrawal of proposed regulatory actions, including Conflicts of Interest Associated with the Use of Predictive Data Analytics (S7-12-23) | **EMPTY** | **none** | 2 | no | S4 `#s1`×2 |
+| 93 | `src-wiretap` | Cal. Penal Code § 637.2(a)(1), (c); 18 U.S.C. § 2511 | **EMPTY** | **none** | 2 | no | S3 `#s12`×2 |
+| 94 | `src-0din-gemini` | Phishing for Gemini | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
+| 95 | `src-aa-index` | Intelligence Index methodology | **EMPTY** | 2026-10-11 | 1 | yes | S1 `#s10` |
+| 96 | `src-anthropic-deprecation-commitments` | Commitments on model deprecation and preservation | **EMPTY** | 2026-10-02 | 1 | no | S5 `#s1` |
+| 97 | `src-anthropic-injection` | Mitigating the risk of prompt injections in browser use | **EMPTY** | 2026-09-27 | 1 | yes | S4 `#sCR` |
+| 98 | `src-anthropic-threat-aug25` | Detecting and countering misuse of AI: August 2025 | **EMPTY** | 2026-09-27 | 1 | no | S4 `#sCR` |
+| 99 | `src-arena-rename` | LMArena is now Arena | **EMPTY** | 2026-10-11 | 1 | no | S1 `#s10` |
+| 100 | `src-ascii-smuggling` | Microsoft Copilot: from prompt injection to data exfiltration of your emails | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
+| 101 | `src-brynjolfsson` | Generative AI at work | **EMPTY** | **none** | 1 | no | S5 `#s5` |
+| 102 | `src-charlotin` | AI Hallucination Cases database | **EMPTY** | 2026-06 *(month only)* | 1 | yes | S2 `#s10` |
+| 103 | `src-claude-code-host` | Host and maintain a marketplace | **EMPTY** | 2026-10-04 | 1 | yes | S5 `#sLib` |
+| 104 | `src-claude-web-search` | Enable and use web search | **EMPTY** | 2026-10-13 | 1 | yes | S0.1 `#s4` |
+| 105 | `src-deloitte` | Generative-AI fraud projection | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
+| 106 | `src-directory` | Browse skills, connectors, and plugins in one directory | **EMPTY** | 2026-08-20 | 1 | yes | S0.1 `#s5` |
+| 107 | `src-drift` | Cybersecurity alert: Salesloft Drift AI supply chain attack | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
+| 108 | `src-gemini-api-terms` | Gemini API Additional Terms of Service | **EMPTY** | **none** | 1 | yes | S4 `#(footer)` |
+| 109 | `src-gemini-ratelimits` | Rate limits | **EMPTY** | **none** | 1 | yes | S4 `#(footer)` |
+| 110 | `src-ibm-breach-2026` | IBM study: one in four malicious breaches are AI-enabled, costing companies $6 million on average | **EMPTY** | **none** | 1 | yes | S4 `#sCR` |
+| 111 | `src-il-pipa` | Personal Information Protection Act, 815 ILCS 530/10 | **EMPTY** | **none** | 1 | no | case-4 `#built` |
+| 112 | `src-investmentnews-t3-2026` | AI moves from novelty to backbone as advisors reshape their fintech stacks | **EMPTY** | **none** | 1 | no | S5 `#s6` |
+| 113 | `src-irs-590b` | Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs) | **EMPTY** | 2026-10-12 | 1 | yes | case-2 `#deliverable` |
+| 114 | `src-irs-8606` | Form 8606, Nondeductible IRAs, and its instructions | **EMPTY** | 2026-10-12 | 1 | yes | case-2 `#deliverable` |
+| 115 | `src-noy-zhang` | Experimental evidence on the productivity effects of generative artificial intelligence | **EMPTY** | **none** | 1 | no | S5 `#s5` |
+| 116 | `src-openai-pricing` | API pricing | **EMPTY** | **none** | 1 | yes | S2 `#s5` |
+| 117 | `src-openai-retire-4o` | Retiring GPT-4o and other ChatGPT models | **EMPTY** | **none** | 1 | yes | S5 `#s1` |
+| 118 | `src-pew-ai-summaries` | Google users are less likely to click on links when an AI summary appears in the results | **EMPTY** | **none** | 1 | no | S5 `#s6` |
+| 119 | `src-rightcapital-iris` | RightCapital launches Iris, the first planning-focused AI agent designed to transform the financial planning process | **EMPTY** | **none** | 1 | yes | S5 `#s6` |
+| 120 | `src-rohrer` | Interleaved practice improves mathematics learning | **EMPTY** | 2026-08-29 | 1 | no | S1 `#s13` |
 | 121 | `src-rp-2022-32` | Late portability elections under Rev. Proc. 2022-32 (IRB 2022-30) | **EMPTY** | 2026-10-11 | 1 | no | S2 `#s7` |
 | 122 | `src-sampling` | LLM sampling visualiser | **EMPTY** | **none** | 1 | no | S1 `#s8` |
 | 123 | `src-sg-deepfake-2026` | Fake Zoom call with PM Wong: police release deepfake footage of scam that caused victim to hand over S$4.9 million | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
@@ -175,27 +175,33 @@ Each one cites the evidence in the repository that records the confirmation.
 | 128 | `src-zheng-persona` | When "A Helpful Assistant" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models | **EMPTY** | **none** | 1 | no | S2 `#s6` |
 | 129 | `src-anthropic-aup` | Usage Policy | **EMPTY** | 2026-09-27 | 0 | yes | *listed by no lesson, cited by none* |
 | 130 | `src-anthropic-fluency` | AI fluency: Frameworks and foundations | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 131 | `src-capitalone` | 2019 Capital One cyber incident: what happened | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 132 | `src-equifax` | Data protection: actions taken by Equifax and federal agencies in response to the 2017 breach (GAO-18-559) | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 133 | `src-fbi-ic3-2024` | FBI releases annual Internet Crime Report: 2024 | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 134 | `src-ferrari` | Ferrari deepfake attempt: scammer foiled by security question about CEO Benedetto Vigna | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 135 | `src-forcedleak` | ForcedLeak: AI agent risks exposed in Salesforce Agentforce | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 136 | `src-gartner` | Survey of 302 security leaders | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 137 | `src-hallowell` | Hallowell v. Commissioner, T.C. Memo. 2023-217 | *n/a* | *n/a* | 0 | no | *listed by S4, cited by none* |
-| 138 | `src-il-retirement-subtraction` | Illinois Income Tax Act, 35 ILCS 5/203(a)(2)(F): the subtraction for federally taxed retirement income | **EMPTY** | 2026-10-12 | 0 | no | *listed by S2, case-2, cited by none* |
-| 139 | `src-kessler` | Kessler v. Commissioner, 152 T.C. 88 (2019) | *n/a* | *n/a* | 0 | no | *listed by S2, cited by none* |
-| 140 | `src-kitces-advisortech` | The Latest in Financial AdvisorTech — AdvisorTech columns, October 2025, November 2025 and August 2026 | **EMPTY** | **none** | 0 | yes | *listed by no lesson, cited by none* |
-| 141 | `src-laplace` | A philosophical essay on probabilities | **EMPTY** | *n/a* | 0 | no | *listed by S2, cited by none* |
-| 142 | `src-morningstar` | AI for advisors: Enhancing client conversations | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
-| 143 | `src-nikkei-papers` | 'Positive review only': researchers hide AI prompts in papers | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 144 | `src-safebreach-gemini` | Invitation is all you need: hacking Gemini | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 145 | `src-sg-deepfake-2025` | Finance director in Singapore transfers S$670,000 to scammers who used deepfake to impersonate company's executives | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 146 | `src-state-breach` | Data breach notification laws: a 50-state survey, 2026 edition | **EMPTY** | **none** | 0 | yes | *listed by no lesson, cited by none* |
-| 147 | `src-surfshark` | 2026 deepfake-loss analysis | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 148 | `src-uber-doj` | Former chief security officer of Uber sentenced to three years' probation for covering up data breach | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 149 | `src-uk-voice` | A voice deepfake was used to scam a CEO out of $243,000 | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 150 | `src-vectara` | Introducing the next generation of Vectara's hallucination leaderboard | **EMPTY** | **none** | 0 | yes | *listed by no lesson, cited by none* |
-| 151 | `src-zhao` | Invisible image watermarks are provably removable using generative AI | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 131 | `src-beta` | Available beta and research preview features | **EMPTY** | 2026-08-20 | 0 | yes | *listed by no lesson, cited by none* |
+| 132 | `src-capitalone` | 2019 Capital One cyber incident: what happened | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 133 | `src-ctxwindow` | How large is the context window on paid Claude plans? | **EMPTY** | 2026-08-20 | 0 | yes | *listed by no lesson, cited by none* |
+| 134 | `src-equifax` | Data protection: actions taken by Equifax and federal agencies in response to the 2017 breach (GAO-18-559) | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 135 | `src-fbi-ic3-2024` | FBI releases annual Internet Crime Report: 2024 | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 136 | `src-features` | Features and capabilities collection index | **EMPTY** | 2026-08-20 | 0 | yes | *listed by no lesson, cited by none* |
+| 137 | `src-ferrari` | Ferrari deepfake attempt: scammer foiled by security question about CEO Benedetto Vigna | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 138 | `src-forcedleak` | ForcedLeak: AI agent risks exposed in Salesforce Agentforce | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 139 | `src-gartner` | Survey of 302 security leaders | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 140 | `src-hallowell` | Hallowell v. Commissioner, T.C. Memo. 2023-217 | *n/a* | *n/a* | 0 | no | *listed by S4, cited by none* |
+| 141 | `src-il-retirement-subtraction` | Illinois Income Tax Act, 35 ILCS 5/203(a)(2)(F): the subtraction for federally taxed retirement income | **EMPTY** | 2026-10-12 | 0 | no | *listed by S2, case-2, cited by none* |
+| 142 | `src-kessler` | Kessler v. Commissioner, 152 T.C. 88 (2019) | *n/a* | *n/a* | 0 | no | *listed by S2, cited by none* |
+| 143 | `src-kitces-advisortech` | The Latest in Financial AdvisorTech — AdvisorTech columns, October 2025, November 2025 and August 2026 | **EMPTY** | **none** | 0 | yes | *listed by no lesson, cited by none* |
+| 144 | `src-laplace` | A philosophical essay on probabilities | **EMPTY** | *n/a* | 0 | no | *listed by S2, cited by none* |
+| 145 | `src-morningstar` | AI for advisors: Enhancing client conversations | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
+| 146 | `src-nikkei-papers` | 'Positive review only': researchers hide AI prompts in papers | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 147 | `src-plugins` | Use plugins in Claude | **EMPTY** | 2026-08-20 | 0 | yes | *listed by no lesson, cited by none* |
+| 148 | `src-routing` | Why Claude switched models in your conversation with Fable 5 | **EMPTY** | 2026-08-20 | 0 | yes | *listed by no lesson, cited by none* |
+| 149 | `src-safebreach-gemini` | Invitation is all you need: hacking Gemini | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 150 | `src-sg-deepfake-2025` | Finance director in Singapore transfers S$670,000 to scammers who used deepfake to impersonate company's executives | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 151 | `src-skills` | What are skills? | **EMPTY** | 2026-08-20 | 0 | yes | *listed by no lesson, cited by none* |
+| 152 | `src-state-breach` | Data breach notification laws: a 50-state survey, 2026 edition | **EMPTY** | **none** | 0 | yes | *listed by no lesson, cited by none* |
+| 153 | `src-surfshark` | 2026 deepfake-loss analysis | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 154 | `src-uber-doj` | Former chief security officer of Uber sentenced to three years' probation for covering up data breach | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 155 | `src-uk-voice` | A voice deepfake was used to scam a CEO out of $243,000 | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 156 | `src-vectara` | Introducing the next generation of Vectara's hallucination leaderboard | **EMPTY** | **none** | 0 | yes | *listed by no lesson, cited by none* |
+| 157 | `src-zhao` | Invisible image watermarks are provably removable using generative AI | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
 
 
 ---
@@ -211,26 +217,26 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-wolfram` | https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/ |
 | `src-claude-marks` | https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content |
 | `src-anthropic-terms` | https://www.anthropic.com/legal/commercial-terms |
-| `src-models` | https://platform.claude.com/docs/en/models/overview |
 | `src-secpri` | https://www.sec.gov/files/2026-exam-priorities.pdf |
 | `src-magesh` | https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/ |
-| `src-anthropic-dpa` | https://www.anthropic.com/legal/data-processing-addendum |
 | `src-claude-pricing` | https://claude.com/pricing |
-| `src-effort` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
+| `src-models` | https://platform.claude.com/docs/en/models/overview |
+| `src-anthropic-dpa` | https://www.anthropic.com/legal/data-processing-addendum |
+| `src-claude-privacy-training` | https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training |
+| `src-context-windows` | https://platform.claude.com/docs/en/build-with-claude/context-windows |
 | `src-memory` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
-| `src-tools3` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-finra2026` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-finra2409` | https://www.finra.org/rules-guidance/notices/24-09 |
+| `src-personalization` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-regsp` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
-| `src-context-windows` | https://platform.claude.com/docs/en/build-with-claude/context-windows |
 | `src-cve` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-kitces-notetakers` | https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/ |
 | `src-anthropic-ctx` | https://www.anthropic.com/engineering/contextual-retrieval |
-| `src-claude-privacy-training` | https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training |
-| `src-ctxwindow` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
+| `src-claude-connectors` | https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities |
 | `src-lee-cognitive` | https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf |
 | `src-synthid` | https://deepmind.google/models/synthid/ |
 | `src-aa` | https://artificialanalysis.ai/models |
+| `src-agent-skills` | https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview |
 | `src-anthropic-retention` | https://platform.claude.com/docs/en/manage-claude/api-and-data-retention |
 | `src-arup` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-cfp-genai` | https://www.cfp.net/ethics/compliance-resources/2025/02/generative-ai-ethics-guide |
@@ -241,26 +247,28 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-api-messages` | https://platform.claude.com/docs/en/api/messages |
 | `src-claude-code-settings` | https://code.claude.com/docs/en/settings |
 | `src-claude-code-skills` | https://code.claude.com/docs/en/skills |
+| `src-claude-incognito` | https://support.claude.com/en/articles/12260368-use-incognito-chats |
+| `src-claude-skills-use` | https://support.claude.com/en/articles/12512180-use-skills-in-claude |
 | `src-claude-watermark` | https://www.anthropic.com/news/claude-text-watermark |
 | `src-finra-inj` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-openai-data` | https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance |
 | `src-t3-survey` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
-| `src-agent-skills` | https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview |
 | `src-anthropic-agents` | https://www.anthropic.com/engineering/building-effective-agents |
+| `src-anthropic-mcp` | https://www.anthropic.com/news/model-context-protocol |
 | `src-anthropic-models-overview` | https://platform.claude.com/docs/en/about-claude/models/overview |
 | `src-anthropic-threat` | https://www.anthropic.com/threat-intelligence-report-september-2026 |
 | `src-cfp-psychology` | https://www.cfp.net/news/2021/03/cfp-board-adds-psychology-of-financial-planning-to-exam-requirements |
 | `src-claude-code-org` | https://code.claude.com/docs/en/plugins/org |
+| `src-claude-projects` | https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects |
+| `src-claude-research` | https://support.claude.com/en/articles/11088861-use-research-on-claude |
 | `src-daly` | https://www.sec.gov/newsroom/speeches-statements/daly-020326-artificial-intelligence-future-investment-management-remarks-investment-company-institute-ici-winter |
 | `src-dellacqua` | https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321 |
 | `src-gemini-privacy` | https://support.google.com/gemini/answer/13594961 |
 | `src-google-ptcf` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-ms-copilot` | https://support.microsoft.com/en-us/microsoft-copilot/privacy-faq-for-microsoft-copilot |
 | `src-openai-provenance` | https://help.openai.com/en/articles/8912793-provenance-signals-in-openai-generated-content |
-| `src-personalization` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
-| `src-plugins` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-secure2-107` | https://www.congress.gov/bill/117th-congress/house-bill/2617 |
-| `src-skills` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
+| `src-tools3` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-vanguard-alpha` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-aa-leaderboard` | https://artificialanalysis.ai/leaderboards/models |
 | `src-advisers-204-2` | https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.204-2 |
@@ -269,7 +277,6 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-anthropic-certs` | https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained |
 | `src-anthropic-context` | https://platform.claude.com/docs/en/build-with-claude/context-windows |
 | `src-anthropic-ctx-eng` | https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents |
-| `src-anthropic-mcp` | https://www.anthropic.com/news/model-context-protocol |
 | `src-anthropic-thinking` | https://www.anthropic.com/news/claude-3-7-sonnet |
 | `src-arena-board` | https://arena.ai/leaderboard/chat/text |
 | `src-cfp-code` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
@@ -278,6 +285,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-claude-memory` | https://claude.com/blog/memory |
 | `src-dahl-fictions` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-deepseek` | https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak |
+| `src-effort` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-eu-ai-act` | https://eur-lex.europa.eu/eli/reg/2024/1689/oj |
 | `src-fbi-ic3-2025` | https://www.fbi.gov/news/press-releases/cryptocurrency-and-ai-scams-bilk-americans-of-billions |
 | `src-finra-4511` | https://www.finra.org/rules-guidance/rulebooks/finra-rules/4511 |
@@ -302,14 +310,13 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-anthropic-threat-aug25` | https://www.anthropic.com/news/detecting-countering-misuse-aug-2025 |
 | `src-arena-rename` | https://arena.ai/blog/lmarena-is-now-arena |
 | `src-ascii-smuggling` | https://embracethered.com/blog/posts/2024/m365-copilot-prompt-injection-tool-invocation-and-data-exfil-using-ascii-smuggling/ |
-| `src-beta` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-brynjolfsson` | https://www.nber.org/papers/w31161 |
 | `src-charlotin` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-claude-code-host` | https://code.claude.com/docs/en/plugins/host-marketplace |
+| `src-claude-web-search` | https://support.claude.com/en/articles/10684626-enable-and-use-web-search |
 | `src-deloitte` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-directory` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-drift` | https://www.finra.org/rules-guidance/guidance/salesloft-drift-AI-supply-chain-attack |
-| `src-features` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-gemini-api-terms` | https://ai.google.dev/gemini-api/terms |
 | `src-gemini-ratelimits` | https://ai.google.dev/gemini-api/docs/rate-limits |
 | `src-ibm-breach-2026` | https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average |
@@ -323,7 +330,6 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-pew-ai-summaries` | https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/ |
 | `src-rightcapital-iris` | https://www.accessnewswire.com/newsroom/en/business-and-professional-services/rightcapital-launches-iristm-the-first-planning-focused-ai-agent-designed-to-transform-the-fin-1180326 |
 | `src-rohrer` | https://doi.org/10.1037/edu0000001 |
-| `src-routing` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-rp-2022-32` | https://www.irs.gov/pub/irs-drop/rp-22-32.pdf |
 | `src-sampling` | https://artefact2.github.io/llm-sampling/ |
 | `src-sg-deepfake-2026` | https://mothership.sg/2026/05/pm-wong-zoom-deepfake-scam/ |
@@ -334,9 +340,12 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-zheng-persona` | https://aclanthology.org/2024.findings-emnlp.888/ |
 | `src-anthropic-aup` | https://www.anthropic.com/legal/aup |
 | `src-anthropic-fluency` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
+| `src-beta` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-capitalone` | https://www.capitalone.com/digital/facts2019/ |
+| `src-ctxwindow` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-equifax` | https://www.gao.gov/products/gao-18-559 |
 | `src-fbi-ic3-2024` | https://www.fbi.gov/news/press-releases/fbi-releases-annual-internet-crime-report |
+| `src-features` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-ferrari` | https://fortune.com/2024/07/27/ferrari-deepfake-attempt-scammer-security-question-ceo-benedetto-vigna-cybersecurity-ai |
 | `src-forcedleak` | https://noma.security/blog/forcedleak-agent-risks-exposed-in-salesforce-agentforce |
 | `src-gartner` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
@@ -347,8 +356,11 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-laplace` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-morningstar` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-nikkei-papers` | https://asia.nikkei.com/business/technology/artificial-intelligence/positive-review-only-researchers-hide-ai-prompts-in-papers |
+| `src-plugins` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
+| `src-routing` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-safebreach-gemini` | https://www.safebreach.com/blog/invitation-is-all-you-need-hacking-gemini/ |
 | `src-sg-deepfake-2025` | https://mothership.sg/2025/04/finance-director-scammed-deepfake/ |
+| `src-skills` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-state-breach` | https://privacyrights.org/resources-tools/reports/data-breach-notification-laws-50-state-survey-2026-edition |
 | `src-surfshark` | **[UNVERIFIED, needs source]** — find the canonical page before verifying |
 | `src-uber-doj` | https://www.justice.gov/usao-ndca/pr/former-chief-security-officer-uber-sentenced-three-years-probation-covering-data |
@@ -384,29 +396,33 @@ Opened directly on 2026-09-25 and again, in full, on 2026-09-27, together with t
 
 Opened directly on 2026-09-27: the Commercial Terms (effective 17 June 2025), the Consumer Terms (effective 8 October 2025), the Privacy Policy (effective 10 September 2026) and the 28 August 2025 news post on the consumer training change. The consumer-side retention figures (five years if training is allowed, 30 days if not) are stated in the news post and on the Claude Code data-usage page; privacy.claude.com itself could not be opened. Earlier retrieval 2026-08-14.
 
-### `src-models`
-
-Re-fetched 2026-09-13 at the page's current address for session-2 §01. Every Claude model ID is a pinned snapshot, including the dateless IDs from the 4.6 generation on; Fable 5.1 is the current flagship at $10 / $50 per MTok and Fable 5 is listed as a legacy model, still available.
-
 ### `src-secpri`
 
 sec.gov is egress-blocked from the build (2026-09-27). §VII's contents in scope are as reported by several consistent law-firm and compliance-firm summaries of the 17 November 2025 release; the record's H stands on the earlier verification of the AI and Regulation S-P focus, and the Appendix D4 use of the polymorphic-malware line is chipped M on the page for that reason.
-
-### `src-anthropic-dpa`
-
-Opened directly on 2026-09-27, three reads, consistent. Incorporated by reference into the Commercial Terms (Section C, Data Privacy). Quotations in scope are the document's own words.
 
 ### `src-claude-pricing`
 
 Opened directly on 2026-09-27, with the Help Center articles on the Max plan (11049741) and on Enterprise seats (13393991) and the Claude Enterprise solutions page. The Max 20x figure is on the Help Center article, not the pricing page. Prices move without notice.
 
-### `src-context-windows`
+### `src-models`
 
-Fetched in full 2026-09-13 for the session-2 retrieval bridge. Three sentences carry the lesson's claims. On contents, everything in the request counts toward the context window, the system prompt, every message including tool results, images and documents, and the tool definitions. On accumulation, each turn's input phase contains all previous conversation history plus the current user message, and previous turns are preserved completely. On degradation, as token count grows, accuracy and recall degrade, a phenomenon the page names context rot. The page adds that chat interfaces such as claude.ai can manage the window on a rolling first-in, first-out basis.
+Re-fetched 2026-09-13 at the page's current address for session-2 §01. Every Claude model ID is a pinned snapshot, including the dateless IDs from the 4.6 generation on; Fable 5.1 is the current flagship at $10 / $50 per MTok and Fable 5 is listed as a legacy model, still available.
+
+### `src-anthropic-dpa`
+
+Opened directly on 2026-09-27, three reads, consistent. Incorporated by reference into the Commercial Terms (Section C, Data Privacy). Quotations in scope are the document's own words.
 
 ### `src-claude-privacy-training`
 
 privacy.claude.com is unreachable from the build container (FACTS claude-consumer-retention, 2026-10-11). The values come from primary-domain search snippets plus the fully fetched anthropic.com post "Updates to Consumer Terms and Privacy Policy", read again in full on 2026-10-12: up to five years if you allow model training, the existing 30-day period if you do not. The page does not say whether the toggle starts on or off, so the lesson takes the training default from the Consumer Terms, src-anthropic-terms, and states none from this page.
+
+### `src-context-windows`
+
+Fetched in full 2026-09-13 for the session-2 retrieval bridge. Three sentences carry the lesson's claims. On contents, everything in the request counts toward the context window, the system prompt, every message including tool results, images and documents, and the tool definitions. On accumulation, each turn's input phase contains all previous conversation history plus the current user message, and previous turns are preserved completely. On degradation, as token count grows, accuracy and recall degrade, a phenomenon the page names context rot. The page adds that chat interfaces such as claude.ai can manage the window on a rolling first-in, first-out basis.
+
+### `src-claude-connectors`
+
+Fetched in full on 2026-10-13 (the page reads "Updated over a week ago" and carries no publication date).
 
 ### `src-lee-cognitive`
 
@@ -419,6 +435,10 @@ Fetch ATTEMPTED 2026-08-25 and REFUSED before it reached the source: the Google 
 ### `src-aa`
 
 PULL-002 (session-2) carries a PARTIAL DATE, "2026-08". A month cannot be ordered against a day, which is where this record's version incoherence hid. The ordering rule now reports every partial date as a precondition failure AND orders it at its earliest possible day, so the v4.1.1 -> v4.1 regression against PULL-003 still fires.
+
+### `src-agent-skills`
+
+Opened directly on 2026-09-27.
 
 ### `src-anthropic-retention`
 
@@ -448,6 +468,14 @@ OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in 
 
 OPENED on 2026-10-04 (code.claude.com is reachable from this build). The documentation is updated in place; the retrieval date is the one to read.
 
+### `src-claude-incognito`
+
+Fetched in full on 2026-10-13 (the page reads "Updated over a week ago" and carries no publication date).
+
+### `src-claude-skills-use`
+
+Fetched in full on 2026-10-13 (support.claude.com is reachable from this build; the page reads "Updated over 3 weeks ago" and carries no publication date). Read for the custom-skill upload steps, the plans that offer skills and the code execution setting. FACTS claude-skills-format carries the same facts, read in full 2026-10-11.
+
 ### `src-claude-watermark`
 
 Fetched in full 2026-10-11 (FACTS claude-text-watermark) and read again in full on 2026-10-12 with the same content; the post carries an update note of 1 September 2026 on the detection API. The announcement says future Claude models; the help article, src-claude-marks, keeps the per-model list, so the lesson does not say every Claude text output is marked today.
@@ -460,13 +488,13 @@ NOT RETRIEVED. help.openai.com and openai.com are egress-blocked from this build
 
 As summarised by Kitces.com Weekend Reading, March 2026. Re-checked 2026-10-04: kitces.com, investmentnews.com and dwealth.news were egress-blocked from this build; a fresh search returned 2,906 responses, 52.2%, 42.9% and 14 note-taking tools, unchanged.
 
-### `src-agent-skills`
-
-Opened directly on 2026-09-27.
-
 ### `src-anthropic-agents`
 
 Opened directly on 2026-09-27, with the Agent SDK post of 29 September 2025 on claude.com and the tool-use documentation, whose section on the agentic loop was also opened. No source opened uses the phrase "loop engineering"; Anthropic's words are "in a loop", "the agent loop" and "the agentic loop".
+
+### `src-anthropic-mcp`
+
+Opened directly on 2026-09-27, with the web search post of 20 March 2025 and the integrations post of 1 May 2025 on claude.com, both opened.
 
 ### `src-anthropic-models-overview`
 
@@ -483,6 +511,14 @@ NOT RETRIEVED. cfp.net is egress-blocked from this build environment (2026-10-02
 ### `src-claude-code-org`
 
 OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read.
+
+### `src-claude-projects`
+
+Fetched in full on 2026-10-13 (the page reads "Updated over a week ago" and carries no publication date).
+
+### `src-claude-research`
+
+Fetched in full on 2026-10-13. The page carries the date 2 June 2026 where other articles say "Updated" with a relative time.
 
 ### `src-daly`
 
@@ -539,10 +575,6 @@ Opened directly on 2026-09-27, with the models overview and the 2023 announcemen
 ### `src-anthropic-ctx-eng`
 
 Opened directly on 2026-09-27, with the current prompting best-practices page, which still says a role in the system prompt focuses behaviour and tone.
-
-### `src-anthropic-mcp`
-
-Opened directly on 2026-09-27, with the web search post of 20 March 2025 and the integrations post of 1 May 2025 on claude.com, both opened.
 
 ### `src-anthropic-thinking`
 
@@ -667,6 +699,10 @@ PARTIAL DATE. The day was never recorded. The pull captured a count the source i
 ### `src-claude-code-host`
 
 OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read.
+
+### `src-claude-web-search`
+
+Fetched in full on 2026-10-13 (the page reads "Updated this week" and carries no publication date). The page lists the models that can search the web, says the new Claude experience has no web search toggle because Claude searches the web when it helps, and gives the + menu route for accounts that have the toggle.
 
 ### `src-drift`
 
@@ -818,7 +854,7 @@ THE PAPER ITSELF WAS NEVER LOADED, so last_retrieved is unresolved. arxiv.org, p
 an update.** Nothing below has been silently rewritten in the lessons. Each
 entry names the delta and every lesson element that depends on it.
 
-### `src-anthropic-deprecations` — 51 reference(s)
+### `src-anthropic-deprecations` — 52 reference(s)
 
 2026-10-12. The page lists Claude Haiku 5.5 (claude-haiku-5-5, not sooner than 7 October 2027), which the 2026-10-04 pull did not record; Claude Haiku 4.5 keeps its 15 October 2026 date but is no longer one of the four current models. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12: the session-5 §01 calendar gained a Haiku 5.5 row and moved Haiku 4.5 to the legacy rows, and the lineup bullet no longer counts the legacy models.
 

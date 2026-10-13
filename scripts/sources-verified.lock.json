@@ -1,7 +1,7 @@
 {
   "note": "NOTARISED. Every last_verified date in SOURCES.md, frozen. build-sources.mjs recomputes this digest on every parse and refuses to build if a date moved. Only scripts/attest-verified.mjs writes this file, and only at an interactive terminal. Do not hand-edit: a hand edit here and a matching hand edit in SOURCES.md is the one thing this pair cannot catch, and it is a lie about a human having read a source.",
   "updated_by": "--sync (records with an empty last_verified only)",
-  "digest": "fae9c57ba059337e9aee7477d8a58c7a7fb085e8f603fff08aa328a6e3b72f44",
+  "digest": "72bb19425d4df560e648bded249d2c191289ccb229998f6acbd1fd82bcee0aae",
   "entries": {
     "src-0din-gemini": {
       "last_verified": "",
@@ -183,6 +183,14 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-claude-connectors": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-incognito": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-claude-marks": {
       "last_verified": "",
       "verified_by": ""
@@ -199,7 +207,23 @@
       "last_verified": "",
       "verified_by": ""
     },
+    "src-claude-projects": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-research": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-skills-use": {
+      "last_verified": "",
+      "verified_by": ""
+    },
     "src-claude-watermark": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-claude-web-search": {
       "last_verified": "",
       "verified_by": ""
     },

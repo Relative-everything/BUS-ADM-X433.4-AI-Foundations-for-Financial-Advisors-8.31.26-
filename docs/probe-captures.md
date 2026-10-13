@@ -1,5 +1,8 @@
 # Probe captures for Session 0.1
 
+> **Retired 2026-10-12 (closes D-033).** The probe exercise retired with the Fall 2026 Session 0.1 page, which became the self-paced setup page; these captures are a record, and no re-run is owed.
+> The banner below, which says re-runs are pending, is superseded by this note. Teach none of these figures.
+
 > **Superseded by CASE.md v5.0 (2026-10-11, adopted in Phase 3 of the
 > next-term-2027 run).** Every capture in this file was run on 2026-08-22,
 > before the v4.0 rebuild of 2026-08-23, so each one was made against the v3

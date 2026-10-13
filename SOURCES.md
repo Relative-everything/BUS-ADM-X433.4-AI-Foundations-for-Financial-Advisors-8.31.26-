@@ -274,6 +274,9 @@ last_retrieved.session-2: 2026-10-11
 figures.session-2: the 1M-token ceiling; the keys paraphrase the page's first sentence and its sentences on contents, accumulation and degradation (FACTS context-window-definition, read in full 2026-10-11)
 last_retrieved.session-1: 2026-10-11
 figures.session-1: none typed; the definition paraphrases the page's first sentence (FACTS context-window-definition, read in full 2026-10-11)
+used_for.session-0.1: the definition of the context window, all the text the model can reference when generating a response, the response itself included, in section 01 and on the vocabulary card
+last_retrieved.session-0.1: 2026-10-11
+figures.session-0.1: none typed; the definition paraphrases the page's first sentence (FACTS context-window-definition, read in full 2026-10-11)
 ```
 
 ## src-api-messages
@@ -1070,6 +1073,9 @@ retrieval_note: Opened directly on 2026-09-27: the Commercial Terms (effective 1
 used_for.session-4: the consumer training switch, five-year and 30-day retention, and the business plans' exclusion from training (Appendix D2)
 used_for.session-5: the consumer training default behind the chat assistant's Where answer (Appendix E10)
 used_for.case-4: the consumer training default and the business plans' exclusion from training under the Commercial Terms, behind the second commit question and the vendor table
+used_for.session-0.1: where the model training setting sits, in your Privacy Settings, and that it applies to Free, Pro and Max accounts and not to Team or Enterprise (section 00)
+last_retrieved.session-0.1: 2026-10-13
+figures.session-0.1: the setting is changed in Privacy Settings; the update applies to Free, Pro and Max and not to services under the Commercial Terms (the 28 August 2025 news post, read in full 2026-10-13); no default stated
 ```
 
 ## src-beta
@@ -1088,7 +1094,6 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          The label semantics and the eight-row table in section 7. H as of the article's own date and no later: this is the oldest source in the file and the one most likely to be wrong on screen.
-used_for.session-0.1: the label semantics and the eight-row table in section 7
 ```
 
 ## src-ctxwindow
@@ -1107,7 +1112,6 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          Window sizes by model, the 500K figure for the 4.x tier in chat and 200K outside those models, automatic context management and its code-execution requirement, project knowledge served by retrieval rather than loaded whole, and the statement that tools and connectors are token-intensive. That last item is a direction, not a magnitude: no first-party figure exists for what a connector costs and none is printed in the lesson.
-used_for.session-0.1: window sizes by model, automatic context management, project knowledge retrieval, and the token cost of tools and connectors as a direction
 ```
 
 ## src-directory
@@ -1126,7 +1130,9 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          The Customize sidebar and its three tabs, install and enable semantics, directory-installed skills being view-only, and organisation sharing being off by default.
-used_for.session-0.1: the Customize sidebar and its three tabs, install and enable semantics, and organisation sharing defaults
+used_for.session-0.1: where the connectors catalog sits: Customize in the left sidebar, then the Connectors tab (section 05)
+last_retrieved.session-0.1: 2026-10-13
+figures.session-0.1: Customize in the left sidebar with Skills, Connectors and Plugins tabs; Connect on a service starts the authentication flow (read in full 2026-10-13)
 ```
 
 ## src-effort
@@ -1145,7 +1151,6 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          The five effort levels, which models carry the effort selector, extended thinking not being disableable in Claude on Opus 5, xhigh requiring Opus 4.7 or newer, the rule that a change applies starting with Claude's next response, and admin role gating of models and effort levels.
-used_for.session-0.1: the five effort levels, the selector availability, the next-response rule, and admin role gating
 used_for.session-4: effort as the setting you change on current models (Appendix D6)
 ```
 
@@ -1165,7 +1170,6 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          The enumeration of surfaces beyond the chat box, and the attachment path.
-used_for.session-0.1: the enumeration of surfaces beyond the chat box in section 7, and the attachment path in section 4
 ```
 
 ## src-memory
@@ -1183,8 +1187,10 @@ kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
-scope:          The two live memory experiences and where each puts its toggles, real-time entry writing against a 24-hour synthesis, incognito chats on Enterprise and Team being included in standard data exports and following organisation retention, Owners retaining access for at least 30 days, Team plans having no organisation-level memory controls, the Enterprise org toggle and what disabling it deletes, past-chat search being paid-plans-only and appearing as tool calls, project-scoped search, Enterprise CMEK blocking past-chat search, pause against reset semantics, and deletion of a conversation not deleting the memory generated from it. Upgraded from M to H by the verified evidence annex, section A.
-used_for.session-0.1: the two memory experiences, their toggles and retention semantics, and past-chat search behaviour
+scope:          The two live memory experiences and where each puts its toggles, real-time entry writing against a 24-hour synthesis, incognito chats on Enterprise and Team being included in standard data exports and following organisation retention, Owners retaining access for at least 30 days, Team plans having no organisation-level memory controls, the Enterprise org toggle and what disabling it deletes, past-chat search being paid-plans-only and appearing as tool calls, project-scoped search, Enterprise CMEK blocking past-chat search, pause against reset semantics, and deletion of a conversation not deleting the memory generated from it. Upgraded from M to H by the verified evidence annex, section A. Read again in full on 2026-10-13 for the setup page: the new memory experience (Settings > Memory) is the one the article leads with, memory is on by default for Free, Pro and Max, and the per-chat Memory switch sits in the + menu.
+used_for.session-0.1: what memory saves and who controls it by plan, what is never saved, the Memory switch in the + menu for one chat, and what an incognito chat leaves out of history and memory (sections 07 and 08)
+last_retrieved.session-0.1: 2026-10-13
+figures.session-0.1: memory on by default for Free, Pro and Max and off for each member on Team and Enterprise until they turn it on; never saved: government ID numbers, criminal history, financial account numbers, immigration status; deleting a chat does not delete the memory made from it (read in full 2026-10-13)
 used_for.session-2: Appendix B4, memory as a source of run-to-run difference
 ```
 
@@ -1205,7 +1211,9 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          The four current models, context window sizes (1M for Fable 5, Opus 5 and Sonnet 5; 200K for Haiku 4.5), which models carry adaptive against extended thinking, and effort defaults. Price per MTok and knowledge cutoffs are carried by this source but are quoted nowhere in the lesson, because no figure for either was recorded at verification.
-used_for.session-0.1: the four current models, context window sizes, thinking modes, and effort defaults
+used_for.session-0.1: the 1M-token context window of the current Claude models (section 01)
+last_retrieved.session-0.1: 2026-10-11
+figures.session-0.1: 1M tokens of context on the current Claude models (FACTS claude-context-window, read in full 2026-10-11)
 used_for.session-2: §00, the 1M-token window and the size of a token in the retrieval bridge; Appendix B4, the pinned-snapshot statement behind the version item in the run-to-run list
 last_retrieved.session-2: 2026-10-11
 figures.session-2: 1M tokens of context on the current Claude models, and 1M tokens as roughly 555,000 English words on the current tokenizer (FACTS claude-context-window, read in full 2026-10-11)
@@ -1241,7 +1249,9 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          Profile instructions applying account-wide, project instructions, styles as a separate mechanism, and five projects on the free plan.
-used_for.session-0.1: profile and project instructions, styles as a separate mechanism, and the free-plan project limit
+used_for.session-0.1: what Instructions for Claude and project instructions are, where each applies, and that a Free account can hold five projects (sections 02 and 03)
+last_retrieved.session-0.1: 2026-10-13
+figures.session-0.1: Instructions for Claude apply to all of a user's conversations; project instructions apply only to chats in that project; Free accounts can create five projects (read in full 2026-10-13)
 used_for.session-2: Appendix B4, standing instructions as a source of run-to-run difference
 ```
 
@@ -1261,7 +1271,6 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          Plugins on all paid plans, a plugin bundling skills, connectors and sub-agents, availability in chat on the web, the Desktop Chat tab and Cowork, and hooks and sub-agents running only in Cowork and appearing greyed out in chat. Retrieved via search-result content rather than a full page fetch, then upgraded from UNVERIFIED to H by the verified evidence annex, section B. THREE ITEMS ARE STARRED THERE for re-confirmation at the page before they are taught: the built-in and GitHub-sourced marketplaces, the Customize action opening a Cowork task, and the Plugin Create plugin.
-used_for.session-0.1: plugin availability by plan and surface, what a plugin bundles, and where hooks and sub-agents run
 ```
 
 ## src-routing
@@ -1280,7 +1289,6 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          [UNVERIFIED, needs source]: the URL and title are confirmed from two other fetched pages, but the BODY OF THIS ARTICLE HAS NOT BEEN READ. Referenced once, solely to record that model switching inside a conversation is a documented behaviour with an article behind it. No mechanism, trigger or consequence is asserted from it anywhere. Fetch it before teaching anything about routing.
-used_for.session-0.1: the single record that model switching inside a conversation is documented; no mechanism is asserted
 ```
 
 ## src-skills
@@ -1299,7 +1307,6 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          Progressive disclosure of skill metadata against skill body, the code-execution requirement, the four skill types, and how skills differ from projects, MCP and instructions.
-used_for.session-0.1: progressive disclosure, the code-execution requirement, the four skill types, and the comparison with projects and MCP
 ```
 
 ## src-tools3
@@ -1318,7 +1325,9 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          One to two tool calls for web search on a factual query, five or more tool calls over one to three minutes for research, and the combined behaviour of the two.
-used_for.session-0.1: the tool-call counts and durations for web search against research
+used_for.session-0.1: when web search suits a question and when research does: one or two tool calls against five or more over one to three minutes (section 04)
+last_retrieved.session-0.1: 2026-10-13
+figures.session-0.1: web search for plain factual queries that take one or two tool calls; research for five or more tool calls over one to three minutes (the page is dated 2 June 2026, read in full 2026-10-13)
 ```
 
 ## src-openai-data
@@ -1557,6 +1566,9 @@ last_retrieved.session-4: 2026-10-11
 figures.session-4: Pro $20 a month or $17 a month on annual billing; Team and Enterprise from $20 a seat a month billed annually (FACTS claude-plans, read in full 2026-10-11)
 used_for.case-1: the Pro plan price named in the workflow readme
 used_for.case-4: the Claude plan prices in the vendor table of the reveal (Free, Pro, Max, Team, Enterprise) and the Team Standard seat price behind the vendor paragraph
+used_for.session-0.1: the plan prices (Free, Pro, Max, Team, Enterprise), Pro as the course minimum, and which models each plan includes (section 00)
+last_retrieved.session-0.1: 2026-10-11
+figures.session-0.1: Free $0; Pro $20 a month or $17 a month billed annually; Max 5x $100 and 20x $200; Team Standard $25 ($20 annual) and Premium $125 ($100 annual); Enterprise $20 per seat billed annually plus usage; Free includes Sonnet and Haiku, Pro adds Opus with Fable through usage credits, Max and Team Premium include Fable (FACTS claude-plans, read in full 2026-10-11)
 ```
 
 ## src-anthropic-retention
@@ -2018,6 +2030,9 @@ figure_class:   vendor_policy
 recheck_before: every teaching of session-4 §07
 scope:          A skill is a folder with a SKILL.md file: YAML front matter with a required name (at most 64 characters, lowercase letters, numbers and hyphens) and a required description (non-empty, at most 1,024 characters, saying what the skill does and when to use it), then the instructions in markdown. Custom skills upload in the Claude app's settings on Pro, Max, Team and Enterprise plans.
 used_for.session-4: the skill form of the record block (§05) and of the inbox fixes (Appendix D4)
+used_for.session-0.1: the shape of a skill folder, a required SKILL.md that opens with a name and a description, behind the sample skill (section 06)
+last_retrieved.session-0.1: 2026-10-13
+figures.session-0.1: name: lowercase letters, numbers and hyphens, 64 characters at most; description: what the skill does and when to use it (read in full 2026-10-13)
 ```
 
 ## src-il-pipa
@@ -2198,6 +2213,9 @@ kind:           evidence
 moving_target:  false
 scope:          A standard for connecting assistants to the systems where data lives (November 2024); web search with direct citations in Claude (March 2025); integrations and advanced research across internal and external sources (May 2025): grounding built in rather than a retrieval pipeline you build.
 used_for.session-4: the grounding card in the then-and-now deck (Appendix D6)
+used_for.session-0.1: that MCP is the Model Context Protocol, an open standard for connecting AI assistants to the systems where data lives (section 05)
+last_retrieved.session-0.1: 2026-10-13
+figures.session-0.1: the name Model Context Protocol and its description as an open standard (FACTS mcp-name; the post read in full 2026-10-13)
 ```
 
 ## src-anthropic-context
@@ -2345,6 +2363,9 @@ used_for.case-3: that claude-sonnet-5-5 is a current model id with an earliest r
 used_for.case-2: that claude-sonnet-5-5 is a current model id with an earliest retirement date of 2027-09-28, behind the model label on the email and the re-run note
 used_for.case-4: that claude-sonnet-5-5 is a current model id with an earliest retirement date of 2027-09-28, behind the model label on the note, the vendor paragraph and the timeline, and the re-run note
 used_for.case-5: that claude-sonnet-4-5-20250929 was deprecated on 30 September 2026 and is listed to retire on 30 November 2026, that Anthropic names claude-sonnet-5-5 as its replacement, the earliest retirement dates of claude-haiku-5-5, claude-sonnet-5-5 and claude-opus-5-5 in the tier table, and the sentence that requests to retired models will fail
+used_for.session-0.1: the names of the four current Claude models, in the model-picker check (section 00)
+last_retrieved.session-0.1: 2026-10-11
+figures.session-0.1: model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11)
 ```
 
 ## src-anthropic-deprecation-commitments
@@ -3012,6 +3033,9 @@ last_retrieved.session-5: 2026-10-11
 figures.session-5: up to five years with the training setting on, 30 days with it off (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11); no default stated
 used_for.case-1: how long a personal plan keeps conversations under the training setting, beside the readme's data-handling note
 used_for.case-4: how long a personal Claude plan keeps conversations under the training setting, in the vendor table of the reveal and behind the vendor paragraph
+used_for.session-0.1: what the Help improve Claude setting means on a personal plan: up to five years with it on, 30 days with it off, and the three named exceptions (section 00)
+last_retrieved.session-0.1: 2026-10-11
+figures.session-0.1: up to five years with the setting on, within 30 days with it off, exceptions of two, seven and five years (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11); no default stated
 ```
 
 ## src-openai-provenance
@@ -3080,4 +3104,136 @@ used_for.session-2: named as a cited authority in the Case 2 opener's statement 
 used_for.case-2: the Illinois row of the citation verification log
 last_retrieved.session-2: 2026-10-12
 figures.session-2: none
+```
+
+## src-claude-skills-use
+
+```source
+title:          Use skills in Claude
+author:         Anthropic
+publisher:      Claude Help Center, article 12512180
+link:           https://support.claude.com/en/articles/12512180-use-skills-in-claude
+published:      not applicable
+last_retrieved: 2026-10-13
+last_verified:
+retrieval_note: Fetched in full on 2026-10-13 (support.claude.com is reachable from this build; the page reads "Updated over 3 weeks ago" and carries no publication date). Read for the custom-skill upload steps, the plans that offer skills and the code execution setting. FACTS claude-skills-format carries the same facts, read in full 2026-10-11.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: the start of each term
+scope:          How a custom skill is added in Claude (package the skill folder as a ZIP file, then Customize > Skills, the + button, + Create skill, Upload a skill), that skills are available on Free, Pro, Max, Team and Enterprise plans, and that they need code execution and file creation: Settings > Capabilities on Free, Pro and Max, and an organization policy under Organization settings > Plugins & skills on Team and Enterprise.
+used_for.session-0.1: how a custom skill is added (a ZIP of the skill folder), the plans that offer skills, and the code execution setting they need (section 06)
+last_retrieved.session-0.1: 2026-10-13
+figures.session-0.1: none typed; the upload steps and the plan list restate the page (FACTS claude-skills-format, read in full 2026-10-11 and again 2026-10-13)
+```
+
+## src-claude-web-search
+
+```source
+title:          Enable and use web search
+author:         Anthropic
+publisher:      Claude Help Center, article 10684626
+link:           https://support.claude.com/en/articles/10684626-enable-and-use-web-search
+published:      not applicable
+last_retrieved: 2026-10-13
+last_verified:
+retrieval_note: Fetched in full on 2026-10-13 (the page reads "Updated this week" and carries no publication date). The page lists the models that can search the web, says the new Claude experience has no web search toggle because Claude searches the web when it helps, and gives the + menu route for accounts that have the toggle.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: the start of each term
+scope:          Web search is available on the current Claude models; on the new Claude experience there is no web search toggle and Claude searches the web when it helps; elsewhere it is switched on from the + menu; every response that uses it carries citations; on Team and Enterprise an owner enables it for the workspace first.
+used_for.session-0.1: where the web search switch is, that the newer layout has none, and that responses carry citations (section 04)
+last_retrieved.session-0.1: 2026-10-13
+figures.session-0.1: none typed
+```
+
+## src-claude-research
+
+```source
+title:          Use research on Claude
+author:         Anthropic
+publisher:      Claude Help Center, article 11088861
+link:           https://support.claude.com/en/articles/11088861-use-research-on-claude
+published:      2026-06-02
+last_retrieved: 2026-10-13
+last_verified:
+retrieval_note: Fetched in full on 2026-10-13. The page carries the date 2 June 2026 where other articles say "Updated" with a relative time.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: the start of each term
+scope:          Research is available on the paid plans (Pro, Max, Team, Enterprise) on the web, Claude Desktop and Claude Mobile; it is switched on from the + menu and runs only with web search turned on; it is subject to the same usage limits as standard conversations but can use them up faster.
+used_for.session-0.1: that research needs a paid plan, where it is switched on, and that it can use up usage limits faster (section 04)
+last_retrieved.session-0.1: 2026-10-13
+figures.session-0.1: none typed
+```
+
+## src-claude-incognito
+
+```source
+title:          Use incognito chats
+author:         Anthropic
+publisher:      Claude Help Center, article 12260368
+link:           https://support.claude.com/en/articles/12260368-use-incognito-chats
+published:      not applicable
+last_retrieved: 2026-10-13
+last_verified:
+retrieval_note: Fetched in full on 2026-10-13 (the page reads "Updated over a week ago" and carries no publication date).
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: the start of each term
+scope:          Incognito chats are temporary conversations not saved to chat history or to memory, available on all plans, opened from the ghost icon outside a project, and not used for training; they are retained for 30 days by default, or longer under an organization's custom retention setting; on Team and Enterprise plans they are included in organizational data exports available to owners.
+used_for.session-0.1: what an incognito chat leaves out, that it is retained for 30 days by default, where it opens, and that Team and Enterprise exports include it (section 07)
+last_retrieved.session-0.1: 2026-10-13
+figures.session-0.1: 30 days default retention (read in full 2026-10-13)
+```
+
+## src-claude-projects
+
+```source
+title:          How can I create and manage projects?
+author:         Anthropic
+publisher:      Claude Help Center, article 9519177
+link:           https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects
+published:      not applicable
+last_retrieved: 2026-10-13
+last_verified:
+retrieval_note: Fetched in full on 2026-10-13 (the page reads "Updated over a week ago" and carries no publication date).
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: the start of each term
+scope:          Projects are available to all users including Free, which can create five; a project is created from the Projects page with + New Project; Claude does not see a project's name or description; Set project instructions saves instructions that Claude uses for all the chats within the project; context is not shared across chats in a project unless it is added to project knowledge.
+used_for.session-0.1: how a project is created, that Claude does not see its name or description, and that its instructions apply to all chats in it (section 02)
+last_retrieved.session-0.1: 2026-10-13
+figures.session-0.1: five projects on Free (read in full 2026-10-13)
+```
+
+## src-claude-connectors
+
+```source
+title:          Use connectors to extend Claude's capabilities
+author:         Anthropic
+publisher:      Claude Help Center, article 11176164
+link:           https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities
+published:      not applicable
+last_retrieved: 2026-10-13
+last_verified:
+retrieval_note: Fetched in full on 2026-10-13 (the page reads "Updated over a week ago" and carries no publication date).
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: the start of each term
+scope:          Connectors let Claude access a user's apps and services, retrieve data and take actions in them; Claude inherits each person's permissions from the connected service; connecting grants Claude permission to access and potentially modify data in the service; on Team and Enterprise plans an owner must enable a connector for the organization first.
+used_for.session-0.1: what a connector is, that Claude inherits the user's permissions in the service, the warning that connecting can change data, and the owner step on Team and Enterprise (section 05)
+last_retrieved.session-0.1: 2026-10-13
+figures.session-0.1: none typed
 ```

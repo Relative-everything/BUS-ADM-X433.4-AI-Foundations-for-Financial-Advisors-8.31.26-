@@ -1,4 +1,4 @@
-/* Browser acceptance suite for the live model console in Sessions 0.1, 1 and 4.
+/* Browser acceptance suite for the live model console in Sessions 1 and 4.
  *
  *   NODE_PATH=$(npm root -g) node scripts/test_live_console.js
  *
@@ -6,10 +6,14 @@
  * the suite runs offline and consumes no API quota. Google Fonts is aborted
  * because the load event would otherwise never fire on an air-gapped runner.
  *
- * The two cases that matter most are A and B: with no key connected, both
+ * The two cases that matter most are A and N: with no key connected, both
  * lessons must behave exactly as they did before the console existed. If those
  * regress, the console has broken the lesson for every student who never
  * pastes a key, which is most of them.
+ *
+ * Session 0.1 carried the console until 2026-10-12 and dropped it with the probes
+ * it ran (MAINTAINING.md, "The live model console"). Sections B and J, its no-key
+ * and run 4 tests, went with it; the lettering of the rest is unchanged.
  */
 const { chromium } = require('playwright');
 const path = require('path');
@@ -94,21 +98,6 @@ async function connect(page, key) {
     ok('captured verdict text preserved', v.includes('three different dates, all wrong'), v.slice(0, 70));
     ok('verdict labelled captured', v.includes('captured'));
     ok('button disabled after 3', await page.locator('#kalaiBtn').isDisabled());
-    await page.close();
-  }
-
-  // =====================================================================
-  console.log('\n--- B. session-0.1, NO KEY ---');
-  {
-    const page = await browser.newPage();
-    const errs = []; page.on('pageerror', e => errs.push(e.message));
-    await blockFonts(page); await page.goto(url('session-0.1/index.html'), {waitUntil:'domcontentloaded'});
-    await page.waitForTimeout(250);
-    ok('no JS errors on load', errs.length === 0, errs.join('|'));
-    ok('run 4 hidden without key', await page.locator('#lmRun4').isHidden());
-    ok('capture buttons still present', await page.locator('#capOpen1').count() === 1);
-    await page.click('#capOpen1'); await page.waitForTimeout(80);
-    ok('capture 1 still opens', !(await page.locator('#cap1').evaluate(n => n.classList.contains('hidden'))));
     await page.close();
   }
 
@@ -255,27 +244,6 @@ async function connect(page, key) {
   }
 
   // =====================================================================
-  console.log('\n--- J. session-0.1 run 4 live ---');
-  {
-    const page = await browser.newPage();
-    const seen = [];
-    await page.route('**generativelanguage.googleapis.com/**',
-      makeRoute({ answers: ['I cannot verify the current rate.'], seen }));
-    await blockFonts(page); await page.goto(url('session-0.1/index.html'), {waitUntil:'domcontentloaded'});
-    await connect(page, 'GOODKEY');
-    ok('run 4 visible once connected', await page.locator('#lmRun4').isVisible());
-    ok('hint switched to live', (await page.locator('#lmHint08').textContent()).includes('Live'));
-    await page.click('#lmRun4'); await page.waitForTimeout(250);
-    ok('run 4 output rendered', (await page.locator('#lmOut4').textContent()).includes('cannot verify'));
-    const g = seen.filter(b => b.contents).pop();
-    ok('run 4 sends the probe-captures P1 prompt',
-      g.contents[0].parts[0].text.includes('Section 7520 rate and Applicable Federal Rate'));
-    const rb = await page.locator('#s8 table.dt').first().textContent();
-    ok('runbook table untouched', rb.includes('Sonnet 5') && rb.includes('Opus 5') && rb.includes('search off'), rb.slice(0,60));
-    await page.close();
-  }
-
-  // =====================================================================
   console.log('\n--- K. A5 live temperature (session-1) ---');
   {
     const page = await browser.newPage();
@@ -366,8 +334,8 @@ async function connect(page, key) {
   }
 
   // =====================================================================
-  console.log('\n--- M. rendered copy sanity (all three lessons) ---');
-  for (const lesson of ['session-0.1/index.html', 'session-1/index.html', 'session-4/index.html']) {
+  console.log('\n--- M. rendered copy sanity (both lessons) ---');
+  for (const lesson of ['session-1/index.html', 'session-4/index.html']) {
     const page = await browser.newPage();
     await blockFonts(page);
     await page.goto(url(lesson), { waitUntil: 'domcontentloaded' });

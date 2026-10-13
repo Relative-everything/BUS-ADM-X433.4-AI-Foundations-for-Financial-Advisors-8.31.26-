@@ -33,7 +33,7 @@ Two external origins are permitted, and no others:
 | Origin | When | Where |
 |---|---|---|
 | `fonts.googleapis.com`, `fonts.gstatic.com` | Page load | Every page |
-| `generativelanguage.googleapis.com` | Runtime only, and only after a reader pastes their own API key | Sessions 0.1, 1 and 4 |
+| `generativelanguage.googleapis.com` | Runtime only, and only after a reader pastes their own API key | Sessions 1 and 4 |
 
 The second is the live model console (`LM:BEGIN` / `LMBOX:BEGIN` /
 `LMSTYLE:BEGIN` fences). It is off by default, every exercise it touches keeps a
@@ -46,7 +46,8 @@ and the free tier's terms permit Google to train on what is submitted. Session 4
 carries it since 2026-09-27 for one reason, to show the request itself: its box
 (`LMBOX-S4:BEGIN v1`, a page-specific variant of the shared box markup) sends
 only what the reader types, starts from the synthetic clean Prompt D, and says on
-its face that a free key is the training tier.
+its face that a free key is the training tier. Session 0.1 carried it until
+2026-10-12 and dropped it with the probes it ran (see "The live model console").
 
 ## Publishing
 
@@ -239,10 +240,11 @@ in the order the pre-push gate above sets out.
   python3 scripts/verify-wolfram-quotes.py <article.txt> [session-1/index.html]
   ```
 
-- **`scripts/state_space.py` is not a check.** It enumerates the legal
-  configuration space of Session 0.1's context inspector under six sourced
-  constraints and prints its size against the naive grid, and the coverage a
-  50-cell hand-written lookup would give. It asserts nothing and exits 0.
+- **`scripts/state_space.py` is not a check, and nothing runs it now.** It
+  enumerated the legal configuration space of the context inspector that Session
+  0.1 carried until 2026-10-12, under six sourced constraints, and printed its
+  size against the naive grid. The page that used it is gone; the script is kept
+  as a record. It asserts nothing and exits 0.
 
 Without the skill, these fallback checks cover the same ground:
 
@@ -254,28 +256,25 @@ for f in index.html session-*/index.html; do                 # externals: allowl
   grep -Eo '<(link|script|img|iframe)[^>]*(href|src)="https?://[^"]+"' "$f" \
     | grep -Ev 'fonts.googleapis|fonts.gstatic'
 done
-# the console's runtime origin, allowed only in 0.1, 1 and 4, and only in JS
+# the console's runtime origin, allowed only in 1 and 4, and only in JS
 grep -l 'generativelanguage.googleapis.com' index.html session-*/index.html \
-  | grep -Ev 'session-(0\.1|1|4)/index.html'                  # must be empty
-# the three shared console blocks must stay byte-identical across lessons
+  | grep -Ev 'session-(1|4)/index.html'                        # must be empty
+# session-4 shares the style and the call layer with session-1, not the box
 # (each fence is opened and closed by its own versioned marker; the earlier
 # form of this check matched no closing line and ran to the end of the file)
-for m in 'LMSTYLE' 'LMBOX' 'LM'; do
-  sed -n "/$m:BEGIN v1/,/$m:END v1/p" session-0.1/index.html | md5sum
-  sed -n "/$m:BEGIN v1/,/$m:END v1/p" session-1/index.html   | md5sum
-done                                                          # pairs must match
-# session-4 shares the style and the call layer, not the box
 for m in 'LMSTYLE' 'LM'; do
+  sed -n "/$m:BEGIN v1/,/$m:END v1/p" session-1/index.html | md5sum
   sed -n "/$m:BEGIN v1/,/$m:END v1/p" session-4/index.html | md5sum
-done                                                          # must equal the pairs above
+done                                                          # each pair must match
 grep -H '<title>' index.html session-*/index.html            # hub and lessons agree
 ```
 
 ### Re-capturing a model output (`scripts/recapture.mjs`)
 
 A lesson that shows a captured model output (session-2 `#bsell`, session-3
-`OFFEX`, the Session 0.1 probe captures) labels it with the model that produced
-it and the date. When the case or the prompt changes, the capture is re-run,
+`OFFEX`) labels it with the model that produced it and the date. The Session 0.1
+probe captures retired with the Fall 2026 page; `docs/probe-captures.md` keeps
+them as a record and owes no re-run. When the case or the prompt changes, the capture is re-run,
 never edited by hand, through the helper added for the 2027 term:
 
 ```bash
@@ -404,17 +403,24 @@ and will be reported by `--check`.
 
 ## The live model console
 
-Sessions 0.1, 1 and 4 carry an optional console that lets a reader paste their own
+Sessions 1 and 4 carry an optional console that lets a reader paste their own
 Gemini API key and run the page's probes against a live model instead of the
 captured outputs (Session 4's shows the request itself, then sends it). Rationale, alternatives considered and the pedagogical case are
 in [`docs/live-model-console-plan.md`](docs/live-model-console-plan.md); the
 terms and quota analysis behind the bring-your-own-key choice are in
 [`docs/gemini-live-api-feasibility.md`](docs/gemini-live-api-feasibility.md).
 
-Three fenced blocks, **byte-identical across Sessions 0.1 and 1**. Session 4
-carries the first and the third byte-identical, and its own box under
+**Session 0.1 dropped the console on 2026-10-12, with the probes it ran
+(decision D-054).** The page became a self-paced setup page for students working
+in their own paid Claude accounts. It has no use for a bring-your-own-Gemini-key
+console and carries no probe for one to run. The probe exercise retired with the
+Fall 2026 page, and `docs/probe-captures.md` keeps its captures as a record. The
+byte pairing between Sessions 0.1 and 1 ended with the fences.
+
+Three fenced blocks. Session 1 carries all three. Session 4 carries the first and
+the third byte-identical to Session 1's, and its own box under
 `LMBOX-S4:BEGIN v1`, because its copy teaches the request rather than a probe;
-the element ids the call layer binds are the same in all three:
+the element ids the call layer binds are the same in both:
 
 | Fence | Where in the file | What |
 |---|---|---|
@@ -429,8 +435,9 @@ the second gives a silent `$ is not defined` at load.
 
 Rules for changing it:
 
-- Edit one copy, then paste it into the other and confirm the md5 pair in the
-  pre-push gate matches. Bump the version in all three fences on any change.
+- Edit Session 1's copy, then paste the first and third fences into Session 4 and
+  confirm the two md5 pairs in the pre-push gate match. Bump the version in every
+  fence on any change.
 - Plain ES5, matching the rest of the corpus. The only exception is `fetch`,
   which returns a promise, so `.then()` chains are used. No arrow functions, no
   `const`/`let`, no template literals, no `async`/`await`.
@@ -678,29 +685,36 @@ example survives any single lesson edit, and it names the actual boundary — wh
 an AI tool — rather than what appears in produced work. The `session-1:1961` sentence
 remains in force and remains covered by this row; it is simply no longer the example.
 
-**`session-0.1` is excluded from Tier A and Tier B, permanently, by instructor
-decision, and here is the test that says so.** It is **not part of the current
-offering** — it is a primer for a future course — so the ungraded-repo argument
-above does not reach it: whatever it says about grading is a claim about a course
-that has not been scheduled, not a second source of truth against the syllabus. It
-**stays in the repository, stays linked from the hub at `index.html:1045`, and
-stays in every validator population unchanged.**
+**`session-0.1` was excluded from Tier A and Tier B, by instructor decision,
+until the rebuild of 2026-10-12, and the exclusion ended with it.** The exclusion
+covered the Fall 2026 page, which was a primer for a course that had not been
+scheduled, so the ungraded-repo argument above did not reach it. The page is now
+the self-paced setup page, part of the course, and it is written clean: it passes
+the same Tier A, Tier B, LMS-name and `instructor note` greps as the lessons and
+the hub, with nothing excluded but the STYLE fence for the last. It stays in the
+repository, stays linked from the hub (first card), and stays in every validator
+population. Nothing below is a rule for the rebuilt page; it is the record of why
+the Fall 2026 page was left alone.
 
-**MUST NOT be purged**, and the reason is mechanical rather than editorial. Its
-`LMBOX` and `LMSTYLE` fences are byte-paired with `session-1`'s, asserted by the
+**Historical, and no longer a constraint: the Fall 2026 page MUST NOT be
+purged**, and the reason was mechanical rather than editorial. Its
+`LMBOX` and `LMSTYLE` fences were byte-paired with `session-1`'s, asserted by the
 md5 loop in the pre-push gate above and counted by `A9b` as shared boilerplate.
 Editing either copy alone breaks the pairing — measured, not assumed: removing
 one clause from `session-1`'s copy raised `A9b` from 6 distinct shared blocks to
-7. So a Tier A or Tier B string inside a fence cannot be purged from one lesson,
-and purging it from both means editing `session-0.1`, which this decision
-forbids. The disposition is held open for a later phase as **DW-057**.
+7. So a Tier A or Tier B string inside a fence could not be purged from one lesson,
+and purging it from both meant editing `session-0.1`, which this decision
+forbade. The disposition was held open as **DW-057**; the rebuild closed it, and
+the pairing it protected is gone.
 
 **One Tier A string survives in `session-1` and it is ACCEPTED, not outstanding.**
 `session-1:1349` — *"Nothing is graded on it and nothing breaks without it"* —
 sits inside that `LMBOX` fence. The instructor accepted it as-is on 2026-08-27:
 it **disclaims** grading rather than asserting it, so it is not the defect Tier A
-exists to catch, and editing it would cost the `session-0.1` byte-pairing for no
-gain. **DW-048, closed. Do not re-open it.**
+exists to catch, and editing it would have cost the `session-0.1` byte-pairing for
+no gain. **DW-048, closed. Do not re-open it.** (The pairing cost lapsed on
+2026-10-12 with `session-0.1`'s copy of the fence; the acceptance stands as the
+instructor's decision until the instructor revisits it.)
 
 ## Adding a session
 
@@ -905,10 +919,13 @@ A marker in any other script comment is never exempt: outside `session-0.1` it
 needs a CLAIM annotation like any claim and fails without one; in `session-0.1`
 an unannotated `[UNVERIFIED, needs source]` is listed as a legacy, no-weight
 claim and any other form fails. So a new comment, or a lexer that mistakes a
-string for a comment, lists a claim or fails; it never exempts one. `session-0.1` is frozen (DW-057) and its markers predate the CLAIM
+string for a comment, lists a claim or fails; it never exempts one. `session-0.1` was frozen (DW-057) and its markers predated the CLAIM
 convention, so it is the one file in `LEGACY_UNANNOTATED` allowed to carry the
 old form without an annotation; those rows have no weight and sit in their own
-section. Anywhere else an unannotated marker of any form is the usual hard
+section. The rebuilt page of 2026-10-12 carries no marker of any form, so that
+allowance and the two pinned `CONVENTION_COMMENTS` lines for `session-0.1` match
+nothing and are inert; they are left in `scripts/build-unsourced.mjs`, and
+`docs/unsourced-claims.md` is regenerated to drop the six rows. Anywhere else an unannotated marker of any form is the usual hard
 failure. **Regenerate the register after any edit to a lesson that moves a
 marker's line.**
 

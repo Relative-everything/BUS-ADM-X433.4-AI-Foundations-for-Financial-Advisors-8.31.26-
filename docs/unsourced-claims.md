@@ -30,15 +30,14 @@ script fails a marker in an undeclared form itself, since A16 never sees it.
 
 | | |
 |---|---|
-| Marked claims | **4** |
+| Marked claims | **0** |
 | `[UNCONFIRMED]` | **0** |
 | `[NEEDS SOURCE]` | 0 |
-| `[UNVERIFIED, needs source]` | 4 |
-| no weight | 4: the pre-existing form with no CLAIM annotation, listed in its own section below |
-| Markers that are not claims | 2 |
-| **A16's population** | **6**: the markers in `session-0.1` and sessions 1 to 5, the count A16 prints |
+| `[UNVERIFIED, needs source]` | 0 |
+| Markers that are not claims | 0 |
+| **A16's population** | **0**: the markers in `session-0.1` and sessions 1 to 5, the count A16 prints |
 | The hub, `index.html` | 0: read here, not by A16 |
-| **All markers read** | **6**: 4 marked claim(s) and 2 marker(s) that are not claims |
+| **All markers read** | **0**: 0 marked claim(s) and 0 marker(s) that are not claims |
 
 ## The order
 
@@ -50,78 +49,4 @@ the corpus on every run.
 
 ---
 
-## no weight: the pre-existing form, unannotated
-
-*These use `[UNVERIFIED, needs source]` and carry no CLAIM annotation, so
-they have no authored weight and say nothing about what would resolve them.
-The files allowed to carry them, and why, are named in
-`scripts/build-unsourced.mjs` (`LEGACY_UNANNOTATED`); an unannotated marker
-anywhere else is a hard failure. Annotating one gives it a weight and moves
-it into the sections above.*
-
-### 1. `session-0.1/index.html:1190` · `#s2` · **[UNVERIFIED, needs source]**
-
-> On screen, where a figure belongs: [UNVERIFIED, needs source] for price per MTok, and [UNVERIFIED, needs source] for knowledge cutoff, on all four models.
-
-| | |
-|---|---|
-| File and line | `session-0.1/index.html:1190` |
-| Section | `#s2` (`core`) |
-| Region | R1: body prose |
-| Marker | **[UNVERIFIED, needs source]** |
-| What would resolve it | *not annotated* |
-| Why it has no annotation | session-0.1 is frozen by instructor decision (DW-057), and its markers predate the CLAIM convention of 2026-08-25 |
-
-### 2. `session-0.1/index.html:1190` · `#s2` · **[UNVERIFIED, needs source]**
-
-> On screen, where a figure belongs: [UNVERIFIED, needs source] for price per MTok, and [UNVERIFIED, needs source] for knowledge cutoff, on all four models.
-
-| | |
-|---|---|
-| File and line | `session-0.1/index.html:1190` |
-| Section | `#s2` (`core`) |
-| Region | R1: body prose |
-| Marker | **[UNVERIFIED, needs source]** |
-| What would resolve it | *not annotated* |
-| Why it has no annotation | session-0.1 is frozen by instructor decision (DW-057), and its markers predate the CLAIM convention of 2026-08-25 |
-
-### 3. `session-0.1/index.html:1192` · `#s2` · **[UNVERIFIED, needs source]**
-
-> So the only claim made here is that the behaviour exists and is documented: [UNVERIFIED, needs source] for what triggers it, what it changes, and what you can do about it.
-
-| | |
-|---|---|
-| File and line | `session-0.1/index.html:1192` |
-| Section | `#s2` (`core`) |
-| Region | R1: body prose |
-| Marker | **[UNVERIFIED, needs source]** |
-| What would resolve it | *not annotated* |
-| Why it has no annotation | session-0.1 is frozen by instructor decision (DW-057), and its markers predate the CLAIM convention of 2026-08-25 |
-
-### 4. `session-0.1/index.html:2180` · script · **[UNVERIFIED, needs source]**
-
-> The figure that should actually decide a 4,000-item batch is price per MTok, and that is [UNVERIFIED, needs source] in this lesson.
-
-| | |
-|---|---|
-| File and line | `session-0.1/index.html:2180` |
-| Section | *not derivable: a script literal renders wherever the code puts it* |
-| Region | R2: script string literal |
-| Marker | **[UNVERIFIED, needs source]** |
-| What would resolve it | *not annotated* |
-| Why it has no annotation | session-0.1 is frozen by instructor decision (DW-057), and its markers predate the CLAIM convention of 2026-08-25 |
-
-## Markers that are not claims
-
-*Each one talks about the marker convention instead of marking a claim: a
-whole line of a script comment in `session-0.1` declaring the convention
-(`EDITORIAL.md` A16, "two comments declaring the convention itself"), or a
-marker named inside a CLAIM annotation. A marker in a script comment in any
-other file needs a CLAIM annotation like any claim. Listed so the totals add
-up; nothing here needs a source.*
-
-| File and line | Marker | Where it sits | The sentence |
-|---|---|---|---|
-| `session-0.1/index.html:1958` | [UNVERIFIED, needs source] | a script comment declaring the convention | The sections print [UNVERIFIED, needs source] where the teaching wants the number. |
-| `session-0.1/index.html:2172` | [UNVERIFIED, needs source] | a script comment declaring the convention | Where the deciding number would be price or cutoff, the string says [UNVERIFIED, needs source] rather than inventing one. |
-
+*No marked claims. Either every claim carries a source, or nobody has looked.*

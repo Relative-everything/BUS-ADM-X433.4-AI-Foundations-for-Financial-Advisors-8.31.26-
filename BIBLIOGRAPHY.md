@@ -5,8 +5,8 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**151 works, 643 references across 11 lessons.** 128 are
-cited by at least one claim; 23 are listed by a lesson without carrying a
+**157 works, 648 references across 11 lessons.** 128 are
+cited by at least one claim; 29 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
 **102 records carry at least one field this repository could not verify, and
@@ -53,8 +53,8 @@ Per-token input and output rates by model, cache-hit and batch discounts.
 | Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **7** |
-| Cited in | S1 `#s1` · S1 `#s5` ×2 · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 |
+| **Total references** | **9** |
+| Cited in | S0.1 `#s1` · S0.1 `#s10` · S1 `#s1` · S1 `#s5` ×2 · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 |
 
 What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate.
 
@@ -129,48 +129,10 @@ Claude models launched in the EU on or after 2 August 2026 mark generated text w
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **16** |
-| Cited in | S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#sCR` ×7 · S5 `#s6` |
+| **Total references** | **17** |
+| Cited in | S0.1 `#s0` · S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#sCR` ×7 · S5 `#s6` |
 
 Consumer plans: Anthropic may use chats "including training our models, unless you opt out of training through your account settings"; retention five years if training is allowed, 30 days if not; the Consumer Terms are a contract between the individual and Anthropic. Commercial plans (Team, Enterprise, the API): "Anthropic may not train models on Customer Content from Services" (Section B); the Customer "retains all rights to its Inputs, and owns its Outputs" (Section B); Confidential Information may be used only to exercise rights and perform obligations under the Terms and is destroyed promptly on request (Sections E.2, E.4); the Terms are an agreement between Anthropic and the organisation the signer represents, and nobody may accept for an organisation without legal authority to bind it.
-
-### Anthropic
-
-**Available beta and research preview features**  
-`src-beta` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | support.claude.com article 14503520 |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | 2026-07-07 |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **1** |
-| Cited in | S0.1 `#s7` |
-
-The label semantics and the eight-row table in section 7. H as of the article's own date and no later: this is the oldest source in the file and the one most likely to be wrong on screen.
-
-### Anthropic
-
-**How large is the context window on paid Claude plans?**  
-`src-ctxwindow` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | support.claude.com article 8606394 |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **6** |
-| Cited in | S0.1 `#s1` · S0.1 `#s4` ×4 · S0.1 `#s6` |
-
-Window sizes by model, the 500K figure for the 4.x tier in chat and 200K outside those models, automatic context management and its code-execution requirement, project knowledge served by retrieval rather than loaded whole, and the statement that tools and connectors are token-intensive. That last item is a direction, not a magnitude: no first-party figure exists for what a connector costs and none is printed in the lesson.
 
 ### Anthropic
 
@@ -187,7 +149,7 @@ Window sizes by model, the 500K figure for the 4.x tier in chat and 200K outside
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
-| Cited in | S0.1 `#s7` |
+| Cited in | S0.1 `#s5` |
 
 The Customize sidebar and its three tabs, install and enable semantics, directory-installed skills being view-only, and organisation sharing being off by default.
 
@@ -205,29 +167,10 @@ The Customize sidebar and its three tabs, install and enable semantics, director
 | Last retrieved | 2026-08-20 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **10** |
-| Cited in | S0.1 `#s1` · S0.1 `#s2` · S0.1 `#s3` ×5 · S0.1 `#s9` · S4 `#sWS` · S4 `#sCR` |
+| **Total references** | **2** |
+| Cited in | S4 `#sWS` · S4 `#sCR` |
 
 The five effort levels, which models carry the effort selector, extended thinking not being disableable in Claude on Opus 5, xhigh requiring Opus 4.7 or newer, the rule that a change applies starting with Claude's next response, and admin role gating of models and effort levels.
-
-### Anthropic
-
-**Features and capabilities collection index**  
-`src-features` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | support.claude.com article 18031719 |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **1** |
-| Cited in | S0.1 `#s7` |
-
-The enumeration of surfaces beyond the chat box, and the attachment path.
 
 ### Anthropic
 
@@ -243,10 +186,10 @@ The enumeration of surfaces beyond the chat box, and the attachment path.
 | Last retrieved | 2026-08-20 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **10** |
-| Cited in | S0.1 `#s0` · S0.1 `#s5` ×2 · S0.1 `#s6` ×2 · S0.1 `#s7` · S0.1 `#s9` · S0.1 `#s10` ×2 · S2 `#s3` |
+| **Total references** | **9** |
+| Cited in | S0.1 `#s1` · S0.1 `#s7` · S0.1 `#s8` ×6 · S2 `#s3` |
 
-The two live memory experiences and where each puts its toggles, real-time entry writing against a 24-hour synthesis, incognito chats on Enterprise and Team being included in standard data exports and following organisation retention, Owners retaining access for at least 30 days, Team plans having no organisation-level memory controls, the Enterprise org toggle and what disabling it deletes, past-chat search being paid-plans-only and appearing as tool calls, project-scoped search, Enterprise CMEK blocking past-chat search, pause against reset semantics, and deletion of a conversation not deleting the memory generated from it. Upgraded from M to H by the verified evidence annex, section A.
+The two live memory experiences and where each puts its toggles, real-time entry writing against a 24-hour synthesis, incognito chats on Enterprise and Team being included in standard data exports and following organisation retention, Owners retaining access for at least 30 days, Team plans having no organisation-level memory controls, the Enterprise org toggle and what disabling it deletes, past-chat search being paid-plans-only and appearing as tool calls, project-scoped search, Enterprise CMEK blocking past-chat search, pause against reset semantics, and deletion of a conversation not deleting the memory generated from it. Upgraded from M to H by the verified evidence annex, section A. Read again in full on 2026-10-13 for the setup page: the new memory experience (Settings > Memory) is the one the article leads with, memory is on by default for Free, Pro and Max, and the per-chat Memory switch sits in the + menu.
 
 ### Anthropic
 
@@ -262,8 +205,8 @@ The two live memory experiences and where each puts its toggles, real-time entry
 | Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **15** |
-| Cited in | case-1 `#built` · case-2 `#built` · case-3 `#built` · case-4 `#built` · case-5 `#built` · S0.1 `#s2` · S0.1 `#s3` ×2 · S0.1 `#s4` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 · S4 `#sCR` |
+| **Total references** | **12** |
+| Cited in | case-1 `#built` · case-2 `#built` · case-3 `#built` · case-4 `#built` · case-5 `#built` · S0.1 `#s1` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 · S4 `#sCR` |
 
 The four current models, context window sizes (1M for Fable 5, Opus 5 and Sonnet 5; 200K for Haiku 4.5), which models carry adaptive against extended thinking, and effort defaults. Price per MTok and knowledge cutoffs are carried by this source but are quoted nowhere in the lesson, because no figure for either was recorded at verification.
 
@@ -281,67 +224,10 @@ The four current models, context window sizes (1M for Fable 5, Opus 5 and Sonnet
 | Last retrieved | 2026-08-20 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **3** |
-| Cited in | S0.1 `#s1` · S0.1 `#s6` · S2 `#s3` |
+| **Total references** | **8** |
+| Cited in | S0.1 `#s2` ×3 · S0.1 `#s3` ×4 · S2 `#s3` |
 
 Profile instructions applying account-wide, project instructions, styles as a separate mechanism, and five projects on the free plan.
-
-### Anthropic
-
-**Use plugins in Claude**  
-`src-plugins` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | support.claude.com article 13837440 |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **3** |
-| Cited in | S0.1 `#s7` ×3 |
-
-Plugins on all paid plans, a plugin bundling skills, connectors and sub-agents, availability in chat on the web, the Desktop Chat tab and Cowork, and hooks and sub-agents running only in Cowork and appearing greyed out in chat. Retrieved via search-result content rather than a full page fetch, then upgraded from UNVERIFIED to H by the verified evidence annex, section B. THREE ITEMS ARE STARRED THERE for re-confirmation at the page before they are taught: the built-in and GitHub-sourced marketplaces, the Customize action opening a Cowork task, and the Plugin Create plugin.
-
-### Anthropic
-
-**Why Claude switched models in your conversation with Fable 5**  
-`src-routing` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | support.claude.com article 15363606 |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | L |
-| **Total references** | **1** |
-| Cited in | S0.1 `#s2` |
-
-[UNVERIFIED, needs source]: the URL and title are confirmed from two other fetched pages, but the BODY OF THIS ARTICLE HAS NOT BEEN READ. Referenced once, solely to record that model switching inside a conversation is a documented behaviour with an article behind it. No mechanism, trigger or consequence is asserted from it anywhere. Fetch it before teaching anything about routing.
-
-### Anthropic
-
-**What are skills?**  
-`src-skills` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | support.claude.com article 12512176 |
-| Link | **[UNVERIFIED, needs source]** |
-| Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **3** |
-| Cited in | S0.1 `#s6` · S0.1 `#s7` · S0.1 `#s9` |
-
-Progressive disclosure of skill metadata against skill body, the code-execution requirement, the four skill types, and how skills differ from projects, MCP and instructions.
 
 ### Anthropic
 
@@ -357,8 +243,8 @@ Progressive disclosure of skill metadata against skill body, the code-execution 
 | Last retrieved | 2026-08-20 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **9** |
-| Cited in | S0.1 `#s1` · S0.1 `#s4` · S0.1 `#s5` ×3 · S0.1 `#s8` ×3 · S0.1 `#s9` |
+| **Total references** | **3** |
+| Cited in | S0.1 `#s4` ×3 |
 
 One to two tool calls for web search on a factual query, five or more tool calls over one to three minutes for research, and the combined behaviour of the two.
 
@@ -395,8 +281,8 @@ Anthropic's fourth threat-intelligence report, covering misuse disrupted between
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **10** |
-| Cited in | case-1 `#built` · case-4 `#built` · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
+| **Total references** | **12** |
+| Cited in | case-1 `#built` · case-4 `#built` · S0.1 `#s0` ×2 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
 
 Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from $100 a month for five times Pro usage, $200 for twenty times. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, October 2026: from $0.10 in and $0.50 out for the smallest model, for prompts up to 100K tokens, to $10 in and $50 out for the largest (FACTS claude-api-price-haiku-5-5 and claude-api-price-fable-5-1).
 
@@ -509,8 +395,8 @@ One actor used Claude Code to automate reconnaissance, credential harvesting, in
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **3** |
-| Cited in | S4 `#s7` · S4 `#sWS` · S4 `#sCR` |
+| **Total references** | **5** |
+| Cited in | S0.1 `#s6` ×2 · S4 `#s7` · S4 `#sWS` · S4 `#sCR` |
 
 A skill is a folder with a SKILL.md file: YAML front matter with a required name (at most 64 characters, lowercase letters, numbers and hyphens) and a required description (non-empty, at most 1,024 characters, saying what the skill does and when to use it), then the instructions in markdown. Custom skills upload in the Claude app's settings on Pro, Max, Team and Enterprise plans.
 
@@ -566,8 +452,8 @@ Visible, extended step-by-step thinking arrived on 24 February 2025; by 2026 thi
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **2** |
-| Cited in | S4 `#sWS` · S4 `#sCR` |
+| **Total references** | **3** |
+| Cited in | S0.1 `#s5` · S4 `#sWS` · S4 `#sCR` |
 
 A standard for connecting assistants to the systems where data lives (November 2024); web search with direct citations in Claude (March 2025); integrations and advanced research across internal and external sources (May 2025): grounding built in rather than a retrieval pipeline you build.
 
@@ -604,8 +490,8 @@ A standard for connecting assistants to the systems where data lives (November 2
 | Last retrieved | 2026-10-12 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **51** |
-| Cited in | case-1 `#deliverable` ×3 · case-1 `#built` ×2 · case-2 `#deliverable` ×2 · case-2 `#built` ×2 · case-3 `#deliverable` ×5 · case-3 `#built` ×2 · case-4 `#deliverable` ×4 · case-4 `#built` ×3 · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable` ×4 · case-5 `#built` ×5 · case-5 `#next` ×2 · S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#sCase` ×2 · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#sE6` ×4 |
+| **Total references** | **52** |
+| Cited in | case-1 `#deliverable` ×3 · case-1 `#built` ×2 · case-2 `#deliverable` ×2 · case-2 `#built` ×2 · case-3 `#deliverable` ×5 · case-3 `#built` ×2 · case-4 `#deliverable` ×4 · case-4 `#built` ×3 · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable` ×4 · case-5 `#built` ×5 · case-5 `#next` ×2 · S0.1 `#s0` · S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#sCase` ×2 · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#sE6` ×4 |
 
 Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §02 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current and legacy models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027, Haiku 5.5 7 October 2027. Dates are for Anthropic-operated platforms; partner platforms set their own.
 
@@ -775,10 +661,124 @@ Future Claude models generate text that contains a statistical watermark, announ
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **6** |
-| Cited in | case-1 `#built` · S4 `#s3` ×2 · S4 `#sCR` ×2 · S5 `#s0` |
+| **Total references** | **9** |
+| Cited in | case-1 `#built` · S0.1 `#s0` ×3 · S4 `#s3` ×2 · S4 `#sCR` ×2 · S5 `#s0` |
 
 With the model training setting ("Help improve Claude") on, de-identified data may be kept up to five years in training pipelines; with it off, a deleted conversation is removed from back-end storage within 30 days. Exceptions the page names: flagged content up to 2 years, safety classifier scores up to 7 years, and thumbs-up or thumbs-down feedback, which keeps the whole conversation up to 5 years. Applies to Free, Pro and Max accounts, not to Team, Enterprise or the API.
+
+### Anthropic
+
+**Use skills in Claude**  
+`src-claude-skills-use` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Help Center, article 12512180 |
+| Link | <https://support.claude.com/en/articles/12512180-use-skills-in-claude> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **4** |
+| Cited in | S0.1 `#s6` ×4 |
+
+How a custom skill is added in Claude (package the skill folder as a ZIP file, then Customize > Skills, the + button, + Create skill, Upload a skill), that skills are available on Free, Pro, Max, Team and Enterprise plans, and that they need code execution and file creation: Settings > Capabilities on Free, Pro and Max, and an organization policy under Organization settings > Plugins & skills on Team and Enterprise.
+
+### Anthropic
+
+**Enable and use web search**  
+`src-claude-web-search` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Help Center, article 10684626 |
+| Link | <https://support.claude.com/en/articles/10684626-enable-and-use-web-search> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S0.1 `#s4` |
+
+Web search is available on the current Claude models; on the new Claude experience there is no web search toggle and Claude searches the web when it helps; elsewhere it is switched on from the + menu; every response that uses it carries citations; on Team and Enterprise an owner enables it for the workspace first.
+
+### Anthropic
+
+**Use research on Claude**  
+`src-claude-research` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Help Center, article 11088861 |
+| Link | <https://support.claude.com/en/articles/11088861-use-research-on-claude> |
+| Published | 2026-06-02 |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **3** |
+| Cited in | S0.1 `#s4` ×3 |
+
+Research is available on the paid plans (Pro, Max, Team, Enterprise) on the web, Claude Desktop and Claude Mobile; it is switched on from the + menu and runs only with web search turned on; it is subject to the same usage limits as standard conversations but can use them up faster.
+
+### Anthropic
+
+**Use incognito chats**  
+`src-claude-incognito` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Help Center, article 12260368 |
+| Link | <https://support.claude.com/en/articles/12260368-use-incognito-chats> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **4** |
+| Cited in | S0.1 `#s7` ×4 |
+
+Incognito chats are temporary conversations not saved to chat history or to memory, available on all plans, opened from the ghost icon outside a project, and not used for training; they are retained for 30 days by default, or longer under an organization's custom retention setting; on Team and Enterprise plans they are included in organizational data exports available to owners.
+
+### Anthropic
+
+**How can I create and manage projects?**  
+`src-claude-projects` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Help Center, article 9519177 |
+| Link | <https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **3** |
+| Cited in | S0.1 `#s2` ×3 |
+
+Projects are available to all users including Free, which can create five; a project is created from the Projects page with + New Project; Claude does not see a project's name or description; Set project instructions saves instructions that Claude uses for all the chats within the project; context is not shared across chats in a project unless it is added to project knowledge.
+
+### Anthropic
+
+**Use connectors to extend Claude's capabilities**  
+`src-claude-connectors` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Help Center, article 11176164 |
+| Link | <https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-13 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **6** |
+| Cited in | S0.1 `#s5` ×6 |
+
+Connectors let Claude access a user's apps and services, retrieve data and take actions in them; Claude inherits each person's permissions from the connected service; connecting grants Claude permission to access and potentially modify data in the service; on Team and Enterprise plans an owner must enable a connector for the organization first.
 
 ### Arena
 
@@ -2466,6 +2466,12 @@ source that does not belong in that lesson's footer.
 | Source | Kind | Listed by | Exempt? |
 |---|---|---|---|
 | `src-anthropic-fluency` | background | S2 | yes, by kind |
+| `src-beta` | evidence |  | **NO — finding** |
+| `src-ctxwindow` | evidence |  | **NO — finding** |
+| `src-features` | evidence |  | **NO — finding** |
+| `src-plugins` | evidence |  | **NO — finding** |
+| `src-routing` | evidence |  | **NO — finding** |
+| `src-skills` | evidence |  | **NO — finding** |
 | `src-anthropic-aup` | evidence |  | **NO — finding** |
 | `src-capitalone` | evidence |  | **NO — finding** |
 | `src-uk-voice` | evidence |  | **NO — finding** |
@@ -2495,7 +2501,7 @@ lesson whose footer names it.
 
 | Source | Listed by | Cited in |
 |---|---|---|
-| `src-anthropic-terms` | case-4 | S4, S5 |
+| `src-anthropic-terms` | case-4 | S0.1, S4, S5 |
 | `src-openai-data` | case-4 | S4 |
 | `src-gemini-privacy` | case-4 | S4 |
 | `src-gemini-workspace` | case-4 | S4 |
@@ -2503,4 +2509,4 @@ lesson whose footer names it.
 | `src-td10001` | S2 | case-2 |
 | `src-irs-590b` | S2 | case-2 |
 | `src-irs-8606` | S2 | case-2 |
-| `src-claude-privacy-training` | case-4 | case-1, S4, S5 |
+| `src-claude-privacy-training` | case-4 | case-1, S0.1, S4, S5 |
