@@ -328,6 +328,24 @@ yet (deferred-work row).
 
 The "Reading for Session N" card on each page is generated from `docs/next-term/readings.json` into the `READINGS:BEGIN sN` region of the page that precedes Session N (the setup page carries Session 1's). Edit the JSON (drop a row, change its status from "tentative", fix a title), run `node scripts/build-readings.mjs`, then `node scripts/inject-sources.mjs` (each row's `source_key` is a SOURCES.md record of kind `assigned_reading`, cited by the card's chip), and commit all three; `--check` says whether a card is stale.
 
+### Re-rendering the instructor-note PDFs
+
+The `.pdf` beside each `.htm` teaching aid and rule key is a print of the `.htm`
+(Letter, landscape, the file's own `@page`, backgrounds on). Never edit it; re-render
+after the `.htm` changes, with the Playwright Chromium the browser checks use:
+
+```bash
+NODE_PATH=$(npm root -g) node -e '
+const { chromium } = require("playwright");
+(async () => { const b = await chromium.launch();
+  for (const f of ["instructor-notes/session-3-teaching-aid","instructor-notes/session-4-rule-key","instructor-notes/session-4-teaching-aid","instructor-notes/session-5-teaching-aid"]) {
+    const p = await b.newPage(); await p.goto("file://" + process.cwd() + "/" + f + ".htm", { waitUntil: "load" }); await p.emulateMedia({ media: "print" });
+    await p.pdf({ path: f + ".pdf", format: "Letter", landscape: true, printBackground: true, preferCSSPageSize: true }); await p.close(); }
+  await b.close(); })();'
+```
+
+Expected page counts: session-3 teaching aid 1, session-4 rule key 2, session-4 teaching aid 3, session-5 teaching aid 2 (`pdfinfo` prints them).
+
 ## Change-folder checks, and jsdom
 
 Nearly every pass on a lesson since 2026-09-12 left a folder,

@@ -78,17 +78,22 @@ Three things worth knowing before you use it:
   version.
 - The **Shift+U** label on the lesson pages that carry it is the instructor's
   reveal-all override. Using it yourself skips the part that does the teaching.
+- Each session has a **case file** (`cases/case-N.html`) to open before class: a
+  finished advisor deliverable set up as a problem, your call first, then how it
+  was built, with the model and date of every captured output. The lesson opens
+  on the same case, and the Case link in its top bar takes you back to the file.
 - Printing works. Print preview gives you a clean copy without the navigation.
 
 ## The sessions
 
-| # | Title | Link |
-|---|---|---|
-| 1 | Prediction, Model Tiers, and the Cost of Using Them | [session-1](session-1/) |
-| 2 | Practical AI Usage in Daily Advisory Workflows | [session-2](session-2/) |
-| 3 | Gathering and Documenting Client Information | [session-3](session-3/) |
-| 4 | Compliance, Security and Responsible Use | [session-4](session-4/) |
-| 5 | Final Project and Advisor Use Case Deep Dive | [session-5](session-5/) |
+| # | Title | Link | Case file (open before class) |
+|---|---|---|---|
+| 0 | Start here: setup and click-along (self-paced, about an hour) | [session-0.1](session-0.1/) | [case-1](cases/case-1.html) is the first thing to open after setup |
+| 1 | Prediction, Model Tiers, and the Cost of Using Them | [session-1](session-1/) | [Case 1: intake summary and risk-profile letter](cases/case-1.html) |
+| 2 | Practical AI Usage in Daily Advisory Workflows | [session-2](session-2/) | [Case 2: Roth conversion email and citation log](cases/case-2.html) |
+| 3 | Gathering and Documenting Client Information | [session-3](session-3/) | [Case 3: annual-review notes to CRM tasks and a follow-up email](cases/case-3.html) |
+| 4 | Compliance, Security and Responsible Use | [session-4](session-4/) | [Case 4: de-identified file, vendor decision and breach timeline](cases/case-4.html) |
+| 5 | Final Project and Advisor Use Case Deep Dive | [session-5](session-5/) | [Case 5: retirement-income one-pager and maintenance log](cases/case-5.html) |
 
 Session dates, deadlines, submission and grading are set by the instructor
 outside this site. Lessons are updated in place across cohorts, so a date
@@ -106,7 +111,9 @@ Roth, and in which years, between the day the second paycheck stops and the day
 required minimum distributions begin? The Cole household
 is **entirely synthetic**. It was constructed for this course, it is labelled as
 synthetic in every lesson that presents it, and it is not derived from, based
-on, or de-identified from any real household.
+on, or de-identified from any real household. The case files carry the same
+household, injected from the same `CASE.md` block, so a figure on a case page is
+the figure on every lesson.
 
 It is also **not your final-project dataset**. Part 1 is built on a real
 recurring task from your own practice, using your own synthetic or

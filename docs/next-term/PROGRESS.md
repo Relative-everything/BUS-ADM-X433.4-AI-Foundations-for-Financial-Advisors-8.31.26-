@@ -18,7 +18,7 @@ Resume rule (RUNBOOK A.1.6): read `RUNBOOK.md` (A.0 first), this file, `DECISION
 | 8 | done | 2026-10-13 | 2026-10-13 | (P8 commit) | verify-migration 0 (first clean run) · verify-case 0 · verify-browser 0 · test-case-viewer 0 · verify-sources 0 · verify-facts 0 · live-console 0 (75) · verify-editorial 1 (A8 artifact, A9 R11) · test-editorial 1 (T2, T7) · verify-style 1 (env) |
 | 9 | done | 2026-10-13 | 2026-10-13 | (P9 commit) | verify-browser 0 · verify-facts 0 · build-appendix --check 0 · verify-sources 0 · verify-editorial unchanged · verify-migration 0 |
 | 10 | done | 2026-10-13 | 2026-10-13 | (P10 commit) | verify-facts 0 · verify-migration 0 · verify-sources 0 · build-readings --check 0 · verify-browser 0 · test-case-viewer 0 · live-console 0 · verify-editorial 1 (known) · test-editorial 1 (known) · verify-style 1 (env) |
-| 11 | pending | | | | |
+| 11 | done | 2026-10-13 | 2026-10-13 | (P11 commit) | 16 checks exit 0; verify-editorial 1 and test-editorial 1 (documented ratchets); verify-style 1 (env) |
 
 ## init (A.1): run files
 
@@ -327,4 +327,67 @@ Readings (orchestrator): `docs/next-term/readings.json` holds Appendix R's 17 ro
 | verify-style | 1 | environment |
 
 Left for Jared (listed in the final report): the 2027 session dates (`<session date>` placeholders in the run sheets' week-before lines), the predicted splits (reasoned, not measured), every reading row's tentative status, the Session 5 presenter count (assumed eight), the Session 4 teaching aid's suggested run order (a proposal).
+
+## Phase 11: full verification, changelog, README, deferred-work rows, tag
+
+Every validator, test and regression set on the final tree (`NODE_PATH=$(npm root -g)`), last line of each run quoted:
+
+| Check | Exit | Last line |
+|---|---:|---|
+| `build-case` | 0 | `OK    Part M self-check    67 identities recomputed, all agree` |
+| `inject-case --check` | 0 | `summary: 12 current, 0 stale, 0 without sentinels  ·  stamp 732dd65` |
+| `build-cardsort --check` | 0 | `OK    current  session-1/index.html` |
+| `build-appendix --check` | 0 | `all generated regions agree with their sections` |
+| `build-readings --check` | 0 | `summary: 6 card region(s) across 7 page(s); 0 stale; 17 rows, 17 tentative` |
+| `build-facts-md --check` | 0 | `current       facts/FACTS.md` |
+| `verify-case` | 0 | `summary: 12 of 12 lessons carry the current CASE.md v5.0 block` |
+| `verify-migration` | 0 | `summary: 16 passed, 0 failed` |
+| `verify-sources` | 0 | `summary: 11 of 11 lessons carry the current SOURCES.md block` |
+| `verify-facts` | 0 | `summary: clean` |
+| `case-inventory --report-check` | 0 | `current       docs/case-fact-inventory.md` |
+| `build-unsourced --check` | 0 | `current       docs/unsourced-claims.md  (0 marked claim(s), 0 not a claim; A16 population 0, hub 0)` |
+| `verify-editorial` | 1 | `summary: 15 rule(s) clean, 2 hard failure(s), 1 advisory` |
+| `test-editorial-regions` | 1 | `summary: 7 passed, 2 failed` |
+| `test-case-viewer` | 0 | `summary: 0 failure(s)` |
+| `verify-browser` | 0 | `summary: 0 failure(s). Screenshots in /home/user/BUS-ADM-X433.4-AI-Foundations-for-Financial-Advisors-8.31.26-/.verify-shots` |
+| `test_live_console` | 0 | `75 passed, 0 failed` |
+| `docs/next-term/checks.mjs` | 0 | `summary: 0 failure(s)` |
+| `verify-style` | 1 | `FAIL  restyle_sweep.py not found. Tried, in order:` |
+
+The two editorial reds, verbatim, are the ones the run documents and does not re-baseline (D-012, D-038, D-048, D-055; DW-174):
+
+```
+        FAIL  A8   session-0.1/index.html  majority form changed from entity to literal
+        FAIL  A9   R11 (corpus, deduplicated)  shared boilerplate: 4 distinct blocks carrying 4 dashes; baseline records 6 blocks and 6
+        FAIL  T2   R10 claims the four captured transcripts carrying 28 dashes (Class A2)
+        FAIL  T7   R11 exclusion reproduces the recorded A9 baseline exactly
+```
+
+`verify-style` fails only because `restyle_sweep.py` (the interactive-lesson-builder skill) is not installed in the cloud container (A.0.4, DW-184); every STYLE fence was kept byte-identical to the committed copy, and the regenerated `changelog/index.html` had its fence refilled from the committed page (D-062).
+
+**Purge proof.** `verify-migration` checks 1, 1b, 1c, 2, 3 and 4 PASS (every Part K retired string at zero on the hub, the six lessons, the five case pages, README.md, SOURCES.md and the instructor notes); `verify-facts` (a) OK (every FACTS `retired_values` string absent from the same surface); the standing purge greps (the Fall names, the LMS name, "instructor note", the v4 entities, the storage APIs) print zero hits outside the STYLE fence on all twelve served pages, and zero in README.md and the instructor notes.
+
+**Timing proof** (`build-appendix.mjs --check`, all generated regions current):
+
+| Page | Core | Appendix | Total | Sections |
+|---|---:|---:|---:|---:|
+| session-0.1 (setup, self-paced) | 57 | 0 | 57 | 12 |
+| session-1 | 60 | 90 | 150 | 8 + 10 |
+| session-2 | 63 | 87 | 150 | 8 + 10 |
+| session-3 | 61 | 89 | 150 | 8 + 10 |
+| session-4 | 60 | 90 | 150 | 8 + 10 |
+| session-5 | 45 | 80 | 125 | 6 + 10 |
+| cases 1 to 5 | 25, 25, 25, 26, 25 | | | 6 each |
+
+**Link proof.** 193 internal `href`s across the twelve pages resolve to an existing file; 47 anchors the static scan could not find are ids the pages create at load (case-3's `#turn-1` to `#turn-6`, confirmed present in jsdom after the scripts run; two template strings in session-4 and session-5 scripts). Hub to sessions to cases to lessons and back, the appendix gold links and the Case links all resolve. Reading URLs probed from the container: the two support.claude.com articles return 200; the Microsoft Research PDF 403; the other eleven hosts (Wolfram, OpenAI, privacy.claude.com, YouTube, IRS, Skilljar, Kitces, FINRA, CFP Board) are blocked at the container's proxy (connection refused, code 000) and are listed for Jared's review with the readings themselves (DW-183).
+
+**Visual proof.** First-screen screenshots (1280 by 800, fonts blocked) in `docs/next-term/screenshots/`: cases-case-1.png; cases-case-2.png; cases-case-3.png; cases-case-4.png; cases-case-5.png; index.png; session-0.1.png; session-1.png; session-2.png; session-3.png; session-4.png; session-5.png. The case pages read as case files (the oxblood header band, the file-tab strip, document panels); the lessons keep the lesson chrome; the hub lists the setup page first and the Case files strip.
+
+**Docs.** README.md: the session table gains the setup row and a case-file column, "How to use a lesson" gains the case-file bullet, "The Cole household" names the shared CASE.md block. CHANGELOG.md: "2026-10-13 · Next-term update (2027 cohort)", rendered by `build-changelog.py`. `docs/deferred-work.md`: DW-171 to DW-184 added, DW-057 closed. `docs/next-term/checks.mjs`: the run's own regression set (case-page shape and spans, Case links, READINGS regions, FACTS chips, the hub order, readings.json against the cards, four polls per file, the setup page): exit 0. MAINTAINING.md: the case pages, the readings workflow and the PDF re-render command.
+
+**Tag command for Jared** (not run; the branch is pushed, nothing touched `main`):
+
+```
+git fetch origin next-term-2027 && git tag -a next-term-2027-ready origin/next-term-2027 -m "2027 cohort build, reviewed" && git push origin next-term-2027-ready
+```
 
