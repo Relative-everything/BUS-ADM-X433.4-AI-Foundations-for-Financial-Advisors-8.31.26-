@@ -528,6 +528,11 @@ section.slide{scroll-margin-top:46px}
 .scale button.on.lo{background:var(--warn);border-color:var(--warn)}
 /* §00 retrieval bridge: a box locks when its key is revealed (DW-114, S2-25) */
 #bridge textarea[readonly]{background:var(--page);border-style:dashed;cursor:default}
+/* §07 readme lines: boxes freeze before the model lines show */
+#rmPanel textarea[readonly]{background:var(--page);border-style:dashed;cursor:default}
+#rmKey{display:none;font-size:14.5px;line-height:1.55;margin-top:14px;padding:12px 15px;border-radius:7px;background:var(--on-bg);color:#0A423F}
+#rmKey p{margin:6px 0 12px;max-width:none}
+#rmKey p:last-child{margin-bottom:0}
 .vote{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:20px 0}
 .vote button{padding:18px 16px;border-radius:11px;border:2px solid var(--line);background:var(--card);cursor:pointer;text-align:left;font-family:"Source Serif 4",serif;font-size:15.5px;line-height:1.45;color:var(--ink)}
 .vote button.on{border-color:var(--on);background:var(--on-bg)}
@@ -1962,12 +1967,12 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
 <section class="slide" id="s12" data-nav="Final project">
   <div class="eyebrow"><span>07 &middot; Assignment</span><span class="mins">3 min</span></div>
-  <h2>Final Project Part 1 and Baseline Capture</h2>
-  <p class="big">Part 1 is a scalable AI-enabled workflow for a recurring task in your own practice. The baseline it is measured against cannot be reconstructed once you have used a tool on the task, so it is captured in this room.</p>
+  <h2>Final Project Part 1 and Your Baseline</h2>
+  <p class="big">Part 1 is a scalable AI-enabled workflow for a recurring task in your own practice. The baseline it is measured against cannot be reconstructed once you have used a tool on the task, so you timed it by hand on the setup page's worksheet before Session 1 (Homework 1). If you have not, time it before you build anything.</p>
 
   <div class="panel" data-task="t-s12" data-comp="timed-ritual">
-    <span class="plab">Baseline capture &mdash; complete this now</span>
-    <p style="margin-top:0;font-size:15.5px">Name the recurring task your workflow will address, and record how long it takes you today, unassisted. Estimate honestly; you will be comparing against it in Session 5 and an inflated baseline is visible to a reader.</p>
+    <span class="plab">Your baseline: write it down now</span>
+    <p style="margin-top:0;font-size:15.5px">Name the recurring task your workflow will address and the minutes it takes you today, unassisted, as recorded on your worksheet. Keep it honest; you will be comparing against it in Session 5 and an inflated baseline is visible to a reader.</p>
     <div class="ctrls" style="grid-template-columns:1fr">
       <div><label class="plab" for="taskName">The recurring task</label><input type="text" id="taskName" placeholder="e.g. Preparing a pre-meeting brief from a new prospect's statements"></div>
     </div>
@@ -1983,12 +1988,35 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     </div>
   </div>
 
+  <div class="panel" id="rmPanel" data-task="t-s12c" data-comp="prediction-commit">
+    <span class="plab">Draft the top of your readme.txt, then compare</span>
+    <p style="margin-top:0;font-size:15.5px">Write the two lines a stranger reads first, for the task you just named. Lock them, then read the same two lines from the Case 1 readme.txt.</p>
+    <div class="ctrls" style="grid-template-columns:1fr;margin:14px 0 0">
+      <div><label class="plab" for="rmTask">TASK: what it turns into what, and who checks it</label><textarea id="rmTask" style="min-height:66px" placeholder="One or two sentences."></textarea></div>
+      <div><label class="plab" for="rmRun">HOW TO RUN: the first step a stranger takes</label><textarea id="rmRun" style="min-height:66px" placeholder="One line: what to paste, and what to send."></textarea></div>
+    </div>
+    <div class="row" style="margin-top:12px">
+      <button type="button" class="btn ghost mini" id="rmLock" aria-expanded="false" aria-controls="rmKey">Lock and compare</button>
+      <button type="button" class="btn ghost mini" id="rmCopy">Copy my two lines</button>
+      <span class="mono dim" style="font-size:12px" id="rmMsg" aria-live="polite">This page keeps nothing. Copy your lines out first.</span>
+    </div>
+    <div id="rmKey" aria-live="polite">
+      <span class="plab">Case 1 readme.txt, TASK</span>
+      <p>Turn one client intake file into two drafts for the advisor to check: a one-page intake summary for the client file, and a plain-language letter that explains the clients' two risk profiles and how the firm will reconcile them. The model drafts. The advisor checks every figure and decides what is sent.</p>
+      <span class="plab">Case 1 readme.txt, HOW TO RUN, step 1</span>
+      <p>1. Paste intake-file.txt into the chat and send Task A in the same message.</p>
+      <p>Does yours name what goes in, what comes out and who checks it? Could a stranger start from your second line without asking you?</p>
+    </div>
+  </div>
+
   <div class="panel">
+    <span class="plab">The Part 1 handoff package</span>
+    <p style="margin-top:0;font-size:15px">Upload to the course site: one .zip file, the Part 1 handoff package. It holds readme.txt, the workflow/ folder, the samples/ folder and selfcheck.txt. The readme.txt is plain text with twelve headings, in this order: TASK; WHO RUNS IT; TOOL, PLAN, MODEL, EFFORT SETTING; SETUP STEPS (numbered); INPUTS (the format, and where the sample inputs are); HOW TO RUN (the exact starter prompt); EXPECTED OUTPUT; VERIFICATION STEPS; WHERE A HUMAN MUST DECIDE; TWO FAILURE MODES YOU HIT; BASELINE VS AI TIME (baseline from Homework 1); DATA-HANDLING NOTE (the fields to remove or pseudonymize before real use). The workflow/ folder holds the skill .zip, or the prompt files and project instructions as .txt, plus any supporting files. The samples/ folder holds synthetic inputs for at least two different clients, and the output each one produced. The selfcheck.txt is your own cold run: a fresh chat or project with memory off, following only readme.txt, both samples run, every link opened, and the result of each check. The build transcript is not in this package; it goes with Part 2.</p>
     <div id="checklist" data-task="t-s12b" data-comp="work-along-gate"></div>
     <div class="out" id="checkOut" style="margin-top:18px"></div>
   </div>
 
-  <p class="dim" style="font-size:15px">What goes in the Part 1 package is described on the course site. A worked example, with its own readme.txt, is on <a href="../cases/case-1.html" style="color:var(--on)">the Case 1 page</a>.</p>
+  <p class="dim" style="font-size:15px">A worked example, with its own readme.txt, is on <a href="../cases/case-1.html" style="color:var(--on)">the Case 1 page</a>.</p>
 
   <div class="cards">
 <!-- READINGS:BEGIN s3 -->
@@ -2012,7 +2040,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
       <tr><td>04 &middot; Technique</td><td>The Interview Rewrite (Reverse Prompting)</td><td class="n">5</td></tr>
       <tr><td>05 &middot; Verification</td><td>Citation Failure Types on the Cole RMD Age</td><td class="n">6</td></tr>
       <tr><td>06 &middot; Discussion</td><td>Specification Cost Against Task Cost</td><td class="n">15</td></tr>
-      <tr><td>07 &middot; Assignment</td><td>Final Project Part 1 and Baseline Capture</td><td class="n">3</td></tr>
+      <tr><td>07 &middot; Assignment</td><td>Final Project Part 1 and Your Baseline</td><td class="n">3</td></tr>
       <tr class="apxrow"><td>Appendix B1 &middot; Mechanism, deeper</td><td>Next-Token Probabilities for a Single Prompt</td><td class="n">16</td></tr>
       <tr class="apxrow"><td>Appendix B2 &middot; Foundation</td><td>Laplace on Probability as a Measure of Ignorance</td><td class="n">15</td></tr>
       <tr class="apxrow"><td>Appendix B3 &middot; Framework</td><td>Persona, Task, Context, Format</td><td class="n">6</td></tr>
@@ -2839,7 +2867,12 @@ function base(){
 $('baseCopy').onclick=function(){copyTo(this,$('baseOut').textContent)};
 
 var CHK=[
- 'The recurring task is named and its baseline minutes are recorded above'
+ 'The recurring task is named and its baseline minutes are recorded above',
+ 'readme.txt is plain text with all twelve headings in order, from TASK to DATA-HANDLING NOTE, and HOW TO RUN holds the exact starter prompt',
+ 'workflow/ holds the skill .zip, or the prompt files and project instructions as .txt, plus any supporting files',
+ 'samples/ holds synthetic inputs for at least two different clients, and the output each one produced',
+ 'selfcheck.txt records my own cold run: fresh chat or project with memory off, only readme.txt followed, both samples run, every link opened, the result of each check',
+ 'The build transcript stays out of the package; it goes with Part 2'
 ];
 (function(){
   var st={};
@@ -2853,10 +2886,30 @@ var CHK=[
     $('checklist').innerHTML=h;
     $('checklist').querySelectorAll('.ck').forEach(function(b){b.onclick=function(){var i=b.getAttribute('data-i');st[i]=!st[i];render()}});
     var n=Object.keys(st).filter(function(k){return st[k]}).length;
-    $('checkOut').textContent='DONE  '+n+' / '+CHK.length+'\n\nThe rest of the Part 1 package is described on the course site.';
+    $('checkOut').textContent='DONE  '+n+' / '+CHK.length+'\n\nAll of it goes in the one .zip. A classmate runs it in Part 2 with nothing but these files.';
     $('checkOut').classList.toggle('has',n===CHK.length);
   }
   render();
+})();
+
+
+/* ================= 12c · README LINES: commit, then compare =================
+   The boxes freeze (readOnly) before the model lines show, the same order as the
+   retrieval bridge. No gating and nothing stored: the page keeps no copy. */
+(function(){
+  var t=$('rmTask'),r=$('rmRun'),lk=$('rmLock'),cp=$('rmCopy'),key=$('rmKey'),msg=$('rmMsg');
+  if(!t||!r||!lk||!key)return;
+  var locked=false;
+  lk.onclick=function(){
+    if(locked)return;
+    locked=true;
+    t.readOnly=true;r.readOnly=true;
+    key.style.display='block';
+    lk.setAttribute('aria-expanded','true');
+    lk.textContent='Locked';
+    if(msg)msg.textContent='Locked. Compare, then copy your lines out if you want them.';
+  };
+  if(cp)cp.onclick=function(){copyTo(cp,'TASK\n'+t.value.trim()+'\n\nHOW TO RUN\n'+r.value.trim())};
 })();
 
 

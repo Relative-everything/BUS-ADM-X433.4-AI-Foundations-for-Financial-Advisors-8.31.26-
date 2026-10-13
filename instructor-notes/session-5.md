@@ -123,6 +123,64 @@ One aloud, with its confidence label.
   about the package.
 - Nothing is demonstrated live.
 
+## Presentation logistics (2027)
+
+This section supersedes the Fall 2026 figures above ("about 80" minutes of presentations, "six
+minutes, five beats", "ten minutes each", "stop a presenter at seven minutes"). The pages no
+longer carry any room logistics; this is where they live.
+
+**The clock for one presenter: 8 + 2 + 3 = 13 minutes.**
+
+| Slot | Minutes | Who |
+|---|---|---|
+| The talk | 8 | The presenter. No live demo; slides optional. |
+| The builder's response | 2 | The builder of the package the presenter ran. |
+| Questions | 3 | The room, at least one to the builder. |
+
+Four presenters in a block now take 52 minutes, not 40. Recut the clock table in "The clock"
+once the presenter count and the block lengths are known; the rest of that table does not change.
+
+**The five questions the talk answers** (Appendix E1 rehearses them as five beats, 8:00 in all):
+
+1. What it does and the problem it solves. (1:00)
+2. The design choices: tool, model tier, prompt structure, verification. (2:00)
+3. Where it worked and where it broke, naming the input that broke it. (2:00)
+4. What they changed and the re-run result. (2:00)
+5. One thing they are taking into their own practice. (1:00)
+
+The minutes in brackets are the page's suggestion, not a rule. A talk with no named breaking input
+has not answered question 3; ask for it in the questions.
+
+**The presenter's Part 2 package** (one .zip): `improved/` (the revised workflow), `outputs/`
+(outputs from the original and from the improved version), `changes.txt` (what broke, the
+breaking input, the change, the re-run result), `transcripts/` (the chats used to learn and
+improve it, plus the presenter's own Part 1 build transcript). Open `changes.txt` before each slot:
+the talk should say what it says. The Part 1 build transcript travels here; it is not in the
+Part 1 package.
+
+**Order of presenters.** The Session 4 pairing stands: nobody presents their own package, and no
+two people present each other's. The order inside a block is yours; the builder answers
+immediately after their presenter, before the next one starts. Keep the pairing list beside the aid.
+
+**Timing enforcement (proposed, confirm).** Call "one minute" at 7:00 of the talk; stop the
+talk at 9:00 (the same one-minute allowance the Fall 2026 note used on six); hold the builder to
+2:00; close questions at 3:00. Appendix E1's rehearsal clock plans 8:00 and stops at 9:00, so
+a presenter who rehearsed it has met the same limits.
+
+**Room logistics.** Share a screen only for slides or for `changes.txt`; nothing is demonstrated
+live. A presenter who could not run the package from its documents presents exactly where it
+stopped, as before.
+
+**Question bank, by question.** 1: "Who would run this, and what do they hand it?" 2: "Which model
+and tier is in the record?" 3: "Which input would you add to the test set?" 4: "What did the
+re-run show, and on which input?" 5: "What stays yours in this workflow?" To the builder: "What did
+the runner try that you did not anticipate?"
+
+**What the pages now say.** The Part 2 paragraph below is on Session 5's opening section, word
+for word; the Part 1 package paragraph is on Sessions 2, 3, 4 and 5.
+
+> Part 2: you run the package a classmate built, improve it, and give an 8-minute talk. The talk answers five questions: what it does and the problem it solves; the design choices (tool, model tier, prompt structure, verification); where it worked and where it broke, naming the input that broke it; what you changed and the re-run result; one thing you are taking into your own practice. There is no live demo, and slides are optional. The builder then has 2 minutes to respond, and then there are 3 minutes of questions. Your Part 2 package is also one .zip file: improved/ (the revised workflow), outputs/ (outputs from the original and from the improved version), changes.txt (what broke, the breaking input, the change, the re-run result) and transcripts/ (the chats you used to learn and improve it, plus your own Part 1 build transcript).
+
 ## The three who do not run client meetings
 
 §05's sliders take any recurring task; §06's desk is any office's; §07's firm is any firm with a

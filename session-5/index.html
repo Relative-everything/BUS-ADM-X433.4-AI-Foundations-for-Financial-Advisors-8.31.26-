@@ -2776,6 +2776,10 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <li><b>Why a stranger.</b> The builder&rsquo;s memory fills every gap in the builder&rsquo;s own package. Only a cold run finds them (Session 4&rsquo;s handoff test).</li>
   </ul>
 
+  <div class="cards">
+    <div class="card gold" style="grid-column:1/-1"><span class="num">Part 2</span><h4>The talk, the response and the package</h4><p>Part 2: you run the package a classmate built, improve it, and give an 8-minute talk. The talk answers five questions: what it does and the problem it solves; the design choices (tool, model tier, prompt structure, verification); where it worked and where it broke, naming the input that broke it; what you changed and the re-run result; one thing you are taking into your own practice. There is no live demo, and slides are optional. The builder then has 2 minutes to respond, and then there are 3 minutes of questions. Your Part 2 package is also one .zip file: improved/ (the revised workflow), outputs/ (outputs from the original and from the improved version), changes.txt (what broke, the breaking input, the change, the re-run result) and transcripts/ (the chats you used to learn and improve it, plus your own Part 1 build transcript).</p></div>
+  </div>
+
   <p class="src">The five-session frame and the Coles are constructed for this course <span class="conf l" data-src="src-case">L</span>. Question 1&rsquo;s retention figures: Anthropic, Is my data used for model training? <span class="conf m" data-src="src-claude-privacy-training" data-fact="claude-consumer-retention">M</span>.</p>
 
   <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Answer all three recall questions.</div></div>
@@ -2796,7 +2800,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <a class="apxcard" href="#s2"><span class="ac">E7 &middot; 6 min &middot; after &sect;02</span><b>Read a Stranger's Package Like an Examiner</b></a>
     <a class="apxcard" href="#s3"><span class="ac">E8 &middot; 5 min &middot; after &sect;02</span><b>Six Inputs: Which Ones Break It?</b></a>
     <a class="apxcard" href="#s4"><span class="ac">E9 &middot; 5 min &middot; after &sect;02</span><b>A Change You Can Defend</b></a>
-    <a class="apxcard" href="#sE1"><span class="ac">E1 &middot; 12 min &middot; after &sect;02</span><b>Six Minutes, Five Beats</b></a>
+    <a class="apxcard" href="#sE1"><span class="ac">E1 &middot; 12 min &middot; after &sect;02</span><b>Eight Minutes, Five Beats</b></a>
     <a class="apxcard" href="#s6"><span class="ac">E10 &middot; 5 min &middot; after &sect;04</span><b>New Tools, the Same Four Questions</b></a>
     <a class="apxcard" href="#sLib"><span class="ac">E11 &middot; 5 min &middot; after &sect;04</span><b>One Repository, Every Desk</b></a>
   </div>
@@ -2964,7 +2968,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="eyebrow"><span>Appendix E4 &middot; The builder's turn</span><span class="mins">10 min</span></div>
   <h2>The Builder's Two Minutes</h2>
 
-  <p class="big">When a stranger presents your workflow, you get two minutes. Three things can be true of each sentence they say, and only one of them is about them.</p>
+  <p class="big">When a stranger presents your workflow, you get 2 minutes to respond, and then there are 3 minutes of questions. Three things can be true of each sentence they say, and only one of them is about them.</p>
 
   <div class="panel" data-task="t-sE4" data-comp="commit-first-mcq">
     <span class="do">Do this now: 5 minutes</span>
@@ -3100,6 +3104,8 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p class="big">Before you run someone else&rsquo;s workflow, say what it is made of: the tool, the tier, the prompt&rsquo;s shape, the check, and what it does with client data.</p>
 
+  <p class="dim" style="font-size:15px">Upload to the course site: one .zip file, the Part 1 handoff package. It holds readme.txt, the workflow/ folder, the samples/ folder and selfcheck.txt. The readme.txt is plain text with twelve headings, in this order: TASK; WHO RUNS IT; TOOL, PLAN, MODEL, EFFORT SETTING; SETUP STEPS (numbered); INPUTS (the format, and where the sample inputs are); HOW TO RUN (the exact starter prompt); EXPECTED OUTPUT; VERIFICATION STEPS; WHERE A HUMAN MUST DECIDE; TWO FAILURE MODES YOU HIT; BASELINE VS AI TIME (baseline from Homework 1); DATA-HANDLING NOTE (the fields to remove or pseudonymize before real use). The workflow/ folder holds the skill .zip, or the prompt files and project instructions as .txt, plus any supporting files. The samples/ folder holds synthetic inputs for at least two different clients, and the output each one produced. The selfcheck.txt is your own cold run: a fresh chat or project with memory off, following only readme.txt, both samples run, every link opened, and the result of each check. The build transcript is not in this package; it goes with Part 2.</p>
+
   <div class="panel" data-task="t-s2" data-comp="click-map-explorer">
     <span class="do">Do this now: 3 minutes</span>
     <h4>Tag the Five Design Choices</h4>
@@ -3108,9 +3114,9 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div id="pkg2" class="pkg">
       <div class="pkghd"><b>HANDOFF PACKAGE</b>: <span id="s2PkgName"></span> <span class="pkgatt" id="s2PkgAtt"></span></div>
       <div class="pkgfiles">
-        <div class="pfile"><span class="ptab">README</span><div class="s2-txt" id="s2Readme" role="group" aria-label="README. The underlined phrases are buttons: click one, then a design choice."></div></div>
-        <div class="pfile"><span class="ptab">prompt.txt</span><div class="s2-txt" id="s2Prompt" role="group" aria-label="prompt.txt. Every line is a button: click one, then a design choice."></div></div>
-        <div class="pfile s2-sample"><span class="ptab">sample-input.txt, de-identified</span><pre id="s2Sample"></pre></div>
+        <div class="pfile"><span class="ptab">readme.txt</span><div class="s2-txt" id="s2Readme" role="group" aria-label="readme.txt. The underlined phrases are buttons: click one, then a design choice."></div></div>
+        <div class="pfile"><span class="ptab">workflow/prompt.txt</span><div class="s2-txt" id="s2Prompt" role="group" aria-label="workflow/prompt.txt. Every line is a button: click one, then a design choice."></div></div>
+        <div class="pfile s2-sample"><span class="ptab">samples/sample-input.txt, de-identified</span><pre id="s2Sample"></pre></div>
       </div>
     </div>
     <div class="s2-lay">
@@ -3135,7 +3141,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <div class="panel s2-pk">
     <span class="do">Then this: 2 minutes</span>
     <h4>Two Packages, One Stranger</h4>
-    <p class="hint">A handoff arrived as eight loose files. Drag each one to where it belongs: the one README a stranger reads first, the one zip that holds everything the README names, or out of the package. Or click a file, then a place.</p>
+    <p class="hint">A handoff arrived as eight loose files. Drag each one to where it belongs: the one readme.txt a stranger reads first, the one .zip that holds everything the readme.txt names, or out of the package. Or click a file, then a place.</p>
     <p class="s2-simrow"><span class="sim">The eight files are constructed from this course&rsquo;s own handoffs <span class="conf l" data-src="src-case">L</span></span></p>
     <div class="s2-pkgrid">
       <div class="s2-loose">
@@ -3143,8 +3149,8 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
         <div class="s2-files" id="s2Files" role="group" aria-label="Eight loose files: drag one to a place, or click it and then the place"></div>
       </div>
       <div class="s2-targets" role="group" aria-label="The three places a file can go">
-        <button class="s2-zone" type="button" data-drop data-z="readme" id="s2ZReadme" aria-label="README.txt: the one page a stranger reads first. Empty."><span class="s2-zh">README.txt</span><span class="s2-zs">the one page a stranger reads first</span><ul class="s2-zl" id="s2LReadme"></ul></button>
-        <button class="s2-zone" type="button" data-drop data-z="zip" id="s2ZZip" aria-label="package.zip: everything the README names, by name. Empty."><span class="s2-zh">package.zip</span><span class="s2-zs">everything the README names, by name</span><ul class="s2-zl" id="s2LZip"></ul></button>
+        <button class="s2-zone" type="button" data-drop data-z="readme" id="s2ZReadme" aria-label="readme.txt: the one page a stranger reads first. Empty."><span class="s2-zh">readme.txt</span><span class="s2-zs">the one page a stranger reads first</span><ul class="s2-zl" id="s2LReadme"></ul></button>
+        <button class="s2-zone" type="button" data-drop data-z="zip" id="s2ZZip" aria-label="package.zip: everything the readme.txt names, by name. Empty."><span class="s2-zh">package.zip</span><span class="s2-zs">everything the readme.txt names, by name</span><ul class="s2-zl" id="s2LZip"></ul></button>
         <button class="s2-zone out" type="button" data-drop data-z="out" id="s2ZOut" aria-label="Not in the package: a message is not a file, and a link dies. Empty."><span class="s2-zh">Not in the package</span><span class="s2-zs">a message is not a file; a link dies</span><ul class="s2-zl" id="s2LOut"></ul></button>
       </div>
       <div class="s2-meter" id="s2Meter"></div>
@@ -3231,7 +3237,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <ul class="pts">
     <li><b>A model cannot be careful.</b> It can follow a rule that names what to write, and you can test whether it did.</li>
-    <li><b>Some fixes are not prompt fixes.</b> The name and the account number left before the model read a word; the fix is a step in the README and a test at the end.</li>
+    <li><b>Some fixes are not prompt fixes.</b> The name and the account number left before the model read a word; the fix is a step in the readme.txt and a test at the end.</li>
     <li><b>Defend the change with the input.</b> &ldquo;I added a rule&rdquo; is a claim; &ldquo;the brief now says NOT IN NOTE on the input that made it invent a value&rdquo; is evidence.</li>
   </ul>
 
@@ -3241,19 +3247,19 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 </section>
 
 <section class="slide apx" id="sE1" data-nav="E1 &middot; Rehearsal" data-insert-after="s1" data-tier="standard">
-  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E1 &middot; Six Minutes, Five Beats</b><span>12 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
+  <!-- APXSTUB:BEGIN --><div class="apxstub"><b>E1 &middot; Eight Minutes, Five Beats</b><span>12 min &middot; standard &middot; hidden at the current appendix depth</span></div><!-- APXSTUB:END -->
   <div class="eyebrow"><span>Appendix E1 &middot; Rehearsal</span><span class="mins">12 min</span></div>
-  <h2>Six Minutes, Five Beats</h2>
-  <p class="big">Presenting a stranger&rsquo;s workflow is five beats in six minutes. Rehearse against a real clock and see where your minutes went.</p>
+  <h2>Eight Minutes, Five Beats</h2>
+  <p class="big">Presenting a classmate&rsquo;s workflow is five beats in eight minutes, one for each question the talk answers. Rehearse against a real clock and see where your minutes went.</p>
 
   <div class="panel" data-task="t-sE1" data-comp="timed-ritual">
-    <span class="do">Do this now: 6 minutes, out loud</span>
+    <span class="do">Do this now: 8 minutes, out loud</span>
     <h4>Start the Clock, Press Next at Each Beat</h4>
     <p class="hint">Talk through the meeting-prep brief from Appendices E7 to E9, or your own. Press Next when you move on.</p>
     <div class="sE1-top">
       <div class="sE1-clockbox">
         <span class="sE1-clock mono" id="e1Clock" aria-live="off">0:00</span>
-        <span class="sE1-stat" id="e1Stat">Not started &middot; 6:00 planned, the clock stops at 7:00</span>
+        <span class="sE1-stat" id="e1Stat">Not started &middot; 8:00 planned, the clock stops at 9:00</span>
       </div>
       <div class="row sE1-ctl" role="group" aria-label="Clock controls">
         <button class="btn" id="e1Start" type="button">Start the clock</button>
@@ -3262,26 +3268,26 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       </div>
     </div>
     <div id="e1Fig" class="sE1-fig"></div>
-    <p class="sE1-key"><span class="kit"><i class="sE1-sw plan"></i>planned</span><span class="kit"><i class="sE1-sw ok"></i>&#10003; on plan, within 15 s</span><span class="kit"><i class="sE1-sw under"></i>under</span><span class="kit"><i class="sE1-sw over"></i>over</span><span class="kit"><i class="sE1-sw tot"></i>6:00, the total</span></p>
+    <p class="sE1-key"><span class="kit"><i class="sE1-sw plan"></i>planned</span><span class="kit"><i class="sE1-sw ok"></i>&#10003; on plan, within 15 s</span><span class="kit"><i class="sE1-sw under"></i>under</span><span class="kit"><i class="sE1-sw over"></i>over</span><span class="kit"><i class="sE1-sw tot"></i>8:00, the total</span></p>
     <div id="e1Out" class="mpanel" aria-live="polite"><span class="hd">Your beats</span><span class="nil">Press Start the clock, talk through beat 1, and press Next beat when you move on.</span></div>
   </div>
 
   <div class="panel">
     <span class="do">Then this: 1 minute</span>
-    <h4>The Five-Beat Outline</h4>
+    <h4>The Five-Question Outline</h4>
     <p class="hint">Keep it at the top of your notes. The minutes are a suggestion; the order is the format.</p>
-    <ol id="e1List" class="sE1-outline" aria-label="The five beats and their planned minutes"></ol>
-    <p class="sE1-oline" id="e1Line">The builder then responds for up to two minutes; expect questions on the input that broke it.</p>
-    <div class="row"><button class="btn ghost mini" id="e1Copy" type="button">Copy the five-beat outline</button><span class="dim cmsg" aria-live="polite"></span></div>
+    <ol id="e1List" class="sE1-outline" aria-label="The five questions and their planned minutes"></ol>
+    <p class="sE1-oline" id="e1Line">There is no live demo, and slides are optional. The builder then has 2 minutes to respond, and then there are 3 minutes of questions. Expect questions on the input that broke it.</p>
+    <div class="row"><button class="btn ghost mini" id="e1Copy" type="button">Copy the five-question outline</button><span class="dim cmsg" aria-live="polite"></span></div>
   </div>
 
   <ul class="pts">
-    <li><b>The clock is the format.</b> Six minutes rewards one diagnosis with its input over a tour of every feature.</li>
-    <li><b>Say the break at 2:30.</b> If you reach the input that broke it before the halfway mark, the rest of the talk has a spine.</li>
+    <li><b>The clock is the format.</b> Eight minutes rewards one diagnosis with its input over a tour of every feature.</li>
+    <li><b>Name the break by 4:00.</b> If you reach the input that broke it before the halfway mark, the rest of the talk has a spine.</li>
     <li><b>Rehearse alone, aloud.</b> Reading silently takes a third of the time and finds none of the stumbles.</li>
   </ul>
 
-  <p class="src">The five beats restate the presentation&rsquo;s parts in this course; the timings are a suggestion constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
+  <p class="src">The five beats are the five questions the Part 2 talk answers; the timings are a suggestion constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
 
   <div class="check" data-gate="ga1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Run the clock through all five beats once.</div></div>
 </section>
@@ -3576,7 +3582,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       <tr class="apxrow"><td>Appendix E7 &middot; Explain it</td><td>Read a Stranger's Package Like an Examiner</td><td class="n">6</td></tr>
       <tr class="apxrow"><td>Appendix E8 &middot; Break it</td><td>Six Inputs: Which Ones Break It?</td><td class="n">5</td></tr>
       <tr class="apxrow"><td>Appendix E9 &middot; Improve it</td><td>A Change You Can Defend</td><td class="n">5</td></tr>
-      <tr class="apxrow"><td>Appendix E1 &middot; Rehearsal</td><td>Six Minutes, Five Beats</td><td class="n">12</td></tr>
+      <tr class="apxrow"><td>Appendix E1 &middot; Rehearsal</td><td>Eight Minutes, Five Beats</td><td class="n">12</td></tr>
       <tr class="apxrow"><td>Appendix E10 &middot; New tools</td><td>New Tools, the Same Four Questions</td><td class="n">5</td></tr>
       <tr class="apxrow"><td>Appendix E11 &middot; The firm&rsquo;s library</td><td>One Repository, Every Desk</td><td class="n">5</td></tr>
       <tr class="nosum"><td>Break</td><td>Posted as a clock time, not a duration</td><td class="n">15</td></tr>
@@ -3939,10 +3945,10 @@ document.addEventListener('keydown',function(e){
    figure. ===== */
 var S5PKG={
  name:'Meeting-prep brief',
- files:['README','prompt.txt','sample-input.txt'],
+ files:['readme.txt','workflow/prompt.txt','samples/sample-input.txt'],
  readme:[
-  '1. Open prompt.txt and paste it into the firm\u2019s AI tool.',
-  '2. Where it says [NOTE], paste the client\u2019s case note (sample-input.txt shows the shape).',
+  '1. Open workflow/prompt.txt and paste it into the firm\u2019s AI tool.',
+  '2. Where it says [NOTE], paste the client\u2019s case note (samples/sample-input.txt shows the shape).',
   '3. Read the brief it returns. If it looks right, save it to the client file.'
  ],
  /* the prompt, as segments so Appendix E7 can tag each design choice; k = the design choice it implements */
@@ -3961,7 +3967,7 @@ var S5PKG={
  checks:'Verification: read the brief and make sure it looks right.',
  /* what the package states, half-states, or never states; Appendix E7 fills these five slots */
  choices:[
-  {k:'tool',n:'Tool and plan',state:'half',why:'README names \u201cthe firm\u2019s AI tool\u201d and never says which plan or whose contract.'},
+  {k:'tool',n:'Tool and plan',state:'half',why:'readme.txt names \u201cthe firm\u2019s AI tool\u201d and never says which plan or whose contract.'},
   {k:'tier',n:'Model tier',state:'none',why:'No model or tier is named anywhere. A runner picks one, and the brief changes with it.'},
   {k:'structure',n:'Prompt structure',state:'full',why:'Persona, task, context and format are all there: the one thing the builder did completely.'},
   {k:'verify',n:'Verification',state:'half',why:'\u201cMake sure it looks right\u201d compares the brief with nothing. A check names what to open and what should match.'},
@@ -4001,7 +4007,7 @@ var S5FIXES=[
   whyVague:'The model was being accurate to one of the two lines. Accuracy was not the problem; silence was.',
   whyCheck:'The conflict now has a heading you can look for, and the decision stays with you.'},
  {k:'npi',title:'The name and the account number',vague:'Respect client privacy.',
-  check:'README step 2: before pasting, replace the client\u2019s name with [the client] and delete every account number. Reject any brief that contains an eight-digit number.',
+  check:'readme.txt step 2: before pasting, replace the client\u2019s name with [the client] and delete every account number. Reject any brief that contains an eight-digit number.',
   whyVague:'A sentence in the prompt cannot un-send what was already pasted. The data had left before the model read the sentence.',
   whyCheck:'The fix is in the runner\u2019s steps, before the paste, and it has a test at the end.'}
 ];
@@ -4423,7 +4429,7 @@ function status(p,d){
   if(p===0){
     if(d<DEP)return {k:'run',s:'RUNS',t:'<b>Running.</b> On this day Sonnet 4.5 was active. Its deprecation was announced on 30 September 2026; nothing in the package says what to do when it is.'};
     if(d<RET)return {k:'dep',s:'DEPRECATED',t:'<b>Deprecated since 30 September 2026.</b> The brief still runs. Retirement 30 November 2026, '+(RET-d)+' day'+(RET-d===1?'':'s')+' away: the replacement is Sonnet 5.5 '+CHIP+'. Test the package on it before then (Appendix E2), or give the skill a gate that stops it first (below).'};
-    return {k:'fail',s:'FAILS',t:'<b>Retired on 30 November 2026.</b> “Requests to retired models will fail” '+CHIP+'. A runner who opens this package gets an error, and the README does not say what to do.'};
+    return {k:'fail',s:'FAILS',t:'<b>Retired on 30 November 2026.</b> “Requests to retired models will fail” '+CHIP+'. A runner who opens this package gets an error, and the readme.txt does not say what to do.'};
   }
   if(p===1){
     if(d<NST)return {k:'run',s:'ACTIVE',t:'<b>Active.</b> One of the four models in the current lineup '+CHIP2+', not retired sooner than 28 September 2027 '+CHIP+'. Still write the date you tested it: the next notice comes at least 60 days before a retirement, and only a dated test tells you what changed.'};
@@ -5107,7 +5113,7 @@ var Q1='1 Which model and tier did you test it on?',Q2='2 What do I remove from 
 
 /* ---------- the package card, rendered from S5PKG ---------- */
 if(nameEl)nameEl.textContent=String(P.name||'');
-if(attEl)attEl.textContent='Attached: '+(P.files||[]).join(', ');
+if(attEl)attEl.textContent='In the .zip: '+(P.files||[]).join(', ');
 if(samp)samp.textContent=String(P.sample||'');
 var phrases=[];
 function seg(host,t,k){
@@ -5273,7 +5279,7 @@ function explText(force){
  var parts=[];PARTS.forEach(function(p){if(st.sub[p]||full)parts.push(p)});
  var L=[];
  L.push('What it does: a one-page meeting-prep brief from a case note.');
- L.push((tool?'Tool: the firm’s AI tool; plan not stated.':'Tool: (tag README step 1).')+' '+(tier?'Model tier: not stated.':'Model tier: (click the slot to ask).'));
+ L.push((tool?'Tool: the firm’s AI tool; plan not stated.':'Tool: (tag readme.txt step 1).')+' '+(tier?'Model tier: not stated.':'Model tier: (click the slot to ask).'));
  L.push(parts.length===4?'Prompt: persona, task, context, format, all present.':(parts.length?'Prompt: '+parts.join(', ')+' so far; tag the rest.':'Prompt: (tag its four parts).'));
  L.push((verify?'Check: read it and see if it looks right (not a check).':'Check: (tag the check).')+' '+(data?'Data handling: not stated.':'Data handling: (click the slot to ask).'));
  return L.join('\n');
@@ -5410,16 +5416,16 @@ draw();
 (function(){
 var host=$('s2Files'),zR=$('s2ZReadme'),zZ=$('s2ZZip'),zO=$('s2ZOut'),lR=$('s2LReadme'),lZ=$('s2LZip'),lO=$('s2LOut'),meter=$('s2Meter'),out=$('s2PkOut'),key=$('s2PkKey'),looseN=$('s2LooseN');
 if(!host||!zR||!zZ||!zO||!lR||!lZ||!lO||!meter||!out)return;
-var ZONES={readme:{el:zR,ul:lR,n:'README.txt'},zip:{el:zZ,ul:lZ,n:'package.zip'},out:{el:zO,ul:lO,n:'Not in the package'}};
+var ZONES={readme:{el:zR,ul:lR,n:'readme.txt'},zip:{el:zZ,ul:lZ,n:'package.zip'},out:{el:zO,ul:lO,n:'Not in the package'}};
 var FILES=[
- {n:'Prompt 1.pdf',ext:'PDF',cls:'pdf',z:'zip',as:'prompt.txt',merge:'prompt',why:'A prompt is text to paste, and a PDF cannot be pasted. Three PDFs of one prompt are three guesses at the order. One prompt.txt.',wrong:{readme:'The prompt is not the page a stranger reads first; the README tells them where the prompt is.',out:'The prompt is the workflow. It stays, as one text file.'}},
- {n:'Prompt 2.pdf',ext:'PDF',cls:'pdf',z:'zip',as:'prompt.txt',merge:'prompt',why:'Part two of the same prompt. It joins prompt.txt, in order.',wrong:{readme:'Part two of the prompt belongs with part one, in the zip.',out:'Part two is still the prompt. It stays.'}},
- {n:'Prompt 3.pdf',ext:'PDF',cls:'pdf',z:'zip',as:'prompt.txt',merge:'prompt',why:'Part three. prompt.txt is now one file a stranger can paste whole.',wrong:{readme:'Part three of the prompt belongs with the other two, in the zip.',out:'Part three is still the prompt. It stays.'}},
- {n:'How to run it (final) v2.docx',ext:'DOC',cls:'doc',z:'readme',as:'README.txt',why:'This is the page a stranger reads first: what it does, the steps, the tool and plan, the model and the date tested, the check, the data rule. Plain text, no version suffix, one of it.',wrong:{zip:'The instructions are what a stranger opens before the zip. Inside the zip they are the last thing found.',out:'Without the instructions nothing else can be run.'}},
- {n:'Screenshot of the output.png',ext:'PNG',cls:'img',z:'zip',as:'expected-output.png',why:'A stranger needs something to compare their run with. Named for what it is, it is the first test.',wrong:{readme:'A picture cannot be the page they read first; the README should name it and say what to compare.',out:'Without it a stranger cannot tell whether their run matched yours.'}},
- {n:'sample data (client xyz).xlsx',ext:'XLS',cls:'xls',z:'zip',as:'sample-input.xlsx',tag:'de-identify first',why:'Fine in the zip once nothing in it points to a client. The file name already does: the client’s name goes before anything else.',wrong:{readme:'Data is not instructions. The README names the file and says it is de-identified.',out:'A stranger needs an input to run. One de-identified sample, named for what it is.'}},
- {n:'Email: “let me know if you have questions”',ext:'MSG',cls:'msg',z:'out',as:'',why:'A message to one person is not part of the package. The stranger does not have your inbox, and the package has to work without it.',wrong:{readme:'A note to one reader is not the README; the README has to answer the questions before they are asked.',zip:'An email in the zip is noise a stranger opens before the prompt.'}},
- {n:'Link to my chat conversation',ext:'URL',cls:'msg',z:'out',as:'',why:'A link to a live chat opens on your account, or not at all, and it changes after you send it. The prompt goes in prompt.txt instead.',wrong:{readme:'The README is a page, not a link that may not open.',zip:'A link is not a file; a stranger offline has nothing.'}}
+ {n:'Prompt 1.pdf',ext:'PDF',cls:'pdf',z:'zip',as:'workflow/prompt.txt',merge:'prompt',why:'A prompt is text to paste, and a PDF cannot be pasted. Three PDFs of one prompt are three guesses at the order. One prompt.txt, in workflow/.',wrong:{readme:'The prompt is not the page a stranger reads first; the readme.txt tells them where the prompt is.',out:'The prompt is the workflow. It stays, as one text file.'}},
+ {n:'Prompt 2.pdf',ext:'PDF',cls:'pdf',z:'zip',as:'workflow/prompt.txt',merge:'prompt',why:'Part two of the same prompt. It joins prompt.txt, in order.',wrong:{readme:'Part two of the prompt belongs with part one, in the zip.',out:'Part two is still the prompt. It stays.'}},
+ {n:'Prompt 3.pdf',ext:'PDF',cls:'pdf',z:'zip',as:'workflow/prompt.txt',merge:'prompt',why:'Part three. prompt.txt is now one file a stranger can paste whole.',wrong:{readme:'Part three of the prompt belongs with the other two, in the zip.',out:'Part three is still the prompt. It stays.'}},
+ {n:'How to run it (final) v2.docx',ext:'DOC',cls:'doc',z:'readme',as:'readme.txt',why:'This is the page a stranger reads first: what it does, the steps, the tool and plan, the model and the date tested, the check, the data rule. Plain text, no version suffix, one of it.',wrong:{zip:'The instructions are what a stranger opens before the zip. Inside the zip they are the last thing found.',out:'Without the instructions nothing else can be run.'}},
+ {n:'Screenshot of the output.png',ext:'PNG',cls:'img',z:'zip',as:'samples/expected-output.png',why:'A stranger needs something to compare their run with. Named for what it is, it is the first test.',wrong:{readme:'A picture cannot be the page they read first; the readme.txt should name it and say what to compare.',out:'Without it a stranger cannot tell whether their run matched yours.'}},
+ {n:'sample data (client xyz).xlsx',ext:'XLS',cls:'xls',z:'zip',as:'samples/sample-input.xlsx',tag:'de-identify first',why:'Fine in the zip once nothing in it points to a client. The file name already does: the client’s name goes before anything else.',wrong:{readme:'Data is not instructions. The readme.txt names the file and says it is de-identified.',out:'A stranger needs an input to run. One de-identified sample, named for what it is.'}},
+ {n:'Email: “let me know if you have questions”',ext:'MSG',cls:'msg',z:'out',as:'',why:'A message to one person is not part of the package. The stranger does not have your inbox, and the package has to work without it.',wrong:{readme:'A note to one reader is not the readme.txt; the readme.txt has to answer the questions before they are asked.',zip:'An email in the zip is noise a stranger opens before the prompt.'}},
+ {n:'Link to my chat conversation',ext:'URL',cls:'msg',z:'out',as:'',why:'A link to a live chat opens on your account, or not at all, and it changes after you send it. The prompt goes in workflow/prompt.txt instead.',wrong:{readme:'The readme.txt is a page, not a link that may not open.',zip:'A link is not a file; a stranger offline has nothing.'}}
 ];
 var N=FILES.length,placed={},misses=0,held=-1,promptParts=0,chips=[];
 /* ---------- the chips ---------- */
@@ -5446,7 +5452,7 @@ var docs=SCAT.map(function(p,i){
 var beforeN=svt(ms,10,100,String(N),'s2-mn');
 var beforeS=svt(ms,40,100,'files, in no order','s2-ms');
 var rd=sv('path',{d:'M330 28 H352 L360 36 V66 H330 Z','class':'s2-rd'},ms);
-svt(ms,368,40,'README.txt','s2-ms');
+svt(ms,368,40,'readme.txt','s2-ms');
 var rdC=svt(ms,368,56,'read first','s2-cnt dim');
 var zp=sv('rect',{x:330,y:74,width:30,height:22,rx:3,'class':'s2-zip'},ms);
 sv('path',{d:'M345 74 V96 M341 78 H349 M341 84 H349 M341 90 H349','class':'s2-zip'},ms);
@@ -5469,7 +5475,7 @@ function paintMeter(){
  bin.setAttribute('class','s2-bin'+(bo?' on':''));binC.textContent=String(bo);binC.setAttribute('class','s2-cnt'+(bo?'':' dim'));
  var things=(hasR?1:0)+(zf?1:0);
  afterN.textContent=things?'a stranger opens '+things+(things===1?' thing':' things')+', in order':'';
- ms.setAttribute('aria-label','Before: '+left+' loose files in no order. After: '+(hasR?'one README read first, ':'')+zf+' named files in the zip, '+bo+' left out.');
+ ms.setAttribute('aria-label','Before: '+left+' loose files in no order. After: '+(hasR?'one readme.txt read first, ':'')+zf+' named files in the zip, '+bo+' left out.');
 }
 function paintZones(){
  for(var z in ZONES){var Z=ZONES[z],c=count(z);Z.el.classList.toggle('has',c>0);Z.el.classList.toggle('ready',held>=0);
@@ -5480,14 +5486,14 @@ function paintZones(){
 function readout(line,cls){
  var n=nPlaced(),h='<span class="hd">The stranger’s first minute · '+n+' of '+N+' placed'+(misses?' · '+misses+(misses===1?' bounce':' bounces'):'')+'</span>';
  if(line)h+='<span class="'+(cls||'kw')+'">'+line+'</span>';
- if(n===N)h+='<br><span class="good">Done. Before: eight files and no first one. After: a README that says what to open next, and one zip whose files are named for what they are. The handoff test (Session 4) is passed or failed in that first minute.</span>';
+ if(n===N)h+='<br><span class="good">Done. Before: eight files and no first one. After: a readme.txt that says what to open next, and one .zip whose files are named for what they are. The handoff test (Session 4) is passed or failed in that first minute.</span>';
  out.className='mpanel'+(n?' has':'');out.innerHTML=h;
 }
 function showKey(){
  if(!key)return;
  var h='<span class="hd">Key · where each file goes</span>';
  FILES.forEach(function(f,i){h+='<b>'+(i+1)+' · '+esc(f.n)+'</b> → '+esc(f.z==='out'?'not in the package':ZONES[f.z].n+(f.as?' as '+f.as:''))+'<br><span class="kw">'+esc(f.why)+'</span><br><br>'});
- h+='One README, one zip, nothing loose: the package a stranger can run.';
+ h+='One readme.txt, one .zip, nothing loose: the package a stranger can run.';
  key.className='mpanel has keyhide';key.innerHTML=h;key.style.display='block';
 }
 function bounce(z){var el=ZONES[z].el;el.classList.remove('miss');setTimeout(function(){el.classList.add('miss')},10);setTimeout(function(){el.classList.remove('miss')},500)}
@@ -6202,7 +6208,7 @@ function showKey(){
 }
 /* ---------- the improved version, running: five stations and one token (2026-10-04) ---------- */
 var FLOW=[
-  ['README','step 2: [the client]|no account numbers'],
+  ['readme.txt','step 2: [the client]|no account numbers'],
   ['prompt.txt','NOT IN NOTE|CONFLICT'],
   ['the brief','three headings|bullets, no table'],
   ['the test','eight-digit number?|reject'],
@@ -6212,7 +6218,7 @@ var fsvg=null,fst=[],ftok=null,fstamp=null,ftw=null,FX0=10,FSW=108,FSG=10,FY=26,
 function fcx(i){return FX0+i*(FSW+FSG)+FSW/2}
 function buildFlow(){
   if(fsvg||!flowHost)return;
-  fsvg=svgRoot(flowHost,600,124,'The improved version running: README step 2, prompt.txt, the brief, the test, the record. A token travels the five stations.','s4-fsvg','img');
+  fsvg=svgRoot(flowHost,600,124,'The improved version running: readme.txt step 2, prompt.txt, the brief, the test, the record. A token travels the five stations.','s4-fsvg','img');
   sv('line',{x1:fcx(0),y1:16,x2:fcx(4),y2:16,'class':'s4-frail'},fsvg);   /* the track runs above the stations, never across their text */
   FLOW.forEach(function(f,i){
     var x=FX0+i*(FSW+FSG),g=sv('g',{'class':'s4-fst'},fsvg);
@@ -6332,7 +6338,7 @@ var EV4=readme.join(' ');
 var EV5=fxNpi&&fxNpi.check?fxNpi.check:'';
 if(PK){
  if(readme.length){
-  var ph='<span class="sE4-ph">What they were handed · '+esc(PKG.name||'the package')+' · README</span>';
+  var ph='<span class="sE4-ph">What they were handed · '+esc(PKG.name||'the package')+' · readme.txt</span>';
   readme.forEach(function(l){ph+='<span class="sE4-pl">'+esc(l)+'</span>'});
   if(PKG.checks)ph+='<span class="sE4-pv">'+esc(PKG.checks)+'</span>';
   PK.innerHTML=ph;
@@ -6348,8 +6354,8 @@ var SENT=[
  {t:'The verification step is a comparison against the CRM record.',a:'b',
   w:'The package says “make sure it looks right”. The presenter credited it with a check it does not have; say so, kindly, and then build the check.',ev:EV3},
  {t:'It is meant for any client meeting, including prospects.',a:'c',
-  w:'The README never says whom it is for. If the scope is in your head, it is not in the package.',ev:EV4},
- {t:'I changed the README so the client’s name is replaced before the paste, and I rejected any brief with an eight-digit number.',a:'a',
+  w:'The readme.txt never says whom it is for. If the scope is in your head, it is not in the package.',ev:EV4},
+ {t:'I changed the readme.txt so the client’s name is replaced before the paste, and I rejected any brief with an eight-digit number.',a:'a',
   w:'A change you can defend: a step and a test. The right response is to adopt it.',ev:EV5}
 ];
 var OPT={a:'(a) Understood: that is how I built it',b:'(b) Missed: the package says otherwise',c:'(c) My package failed them: it never said'};
@@ -6508,10 +6514,10 @@ REVEALS.push(function(){
 /* ----- section sE1 ----- */
 try{
 (function(){
-/* ================= sE1 · six minutes, five beats: a real stopwatch over five planned bars =================
+/* ================= sE1 · eight minutes, five beats: a real stopwatch over five planned bars =================
    Harvest: planned-against-actual bars built once and repainted in place, the gold dashed
    marker and the halo text from session-4 s6 (price one deliverable, the tower of minutes);
-   the shared tween for the override fill. New here: a Gantt line from 0:00 to 7:00 with the
+   the shared tween for the override fill. New here: a Gantt line from 0:00 to 9:00 with the
    five planned beats laid end to end in grey, the learner's beats laid end to end in colour
    as the clock runs, a vertical "you" line at the elapsed total, and a verdict per beat
    (teal within 15 s of the plan, gold under, rust over). Date.now deltas on a 250 ms
@@ -6523,19 +6529,19 @@ if(!host||!CLK||!START||!NEXT||!RESET||!O)return;
 /* ---------- the five beats and their plan (seconds) ---------- */
 var BEATS=[
  {t:'What it does, and the problem it solves',s:'What it does',p:60},
- {t:'The design choices: tool, tier, prompt structure, checks',s:'Design choices',p:90},
- {t:'Where it worked, and the input that broke it',s:'Where it broke',p:90},
- {t:'What you changed, and why',s:'What changed',p:60},
- {t:'One thing you take into your own practice',s:'Your practice',p:60}
+ {t:'The design choices: tool, model tier, prompt structure, verification',s:'Design choices',p:120},
+ {t:'Where it worked and where it broke, naming the input that broke it',s:'Where it broke',p:120},
+ {t:'What you changed, and the re-run result',s:'What changed',p:120},
+ {t:'One thing you are taking into your own practice',s:'Your practice',p:60}
 ];
 var N=BEATS.length,TOTAL=0,i;
-for(i=0;i<N;i++)TOTAL+=BEATS[i].p;           /* 360 */
-var CAP=420,TOL=15;                           /* the clock stops at 7:00; within 15 s is on plan */
+for(i=0;i<N;i++)TOTAL+=BEATS[i].p;           /* 480 */
+var CAP=540,TOL=15;                           /* the clock stops at 9:00; within 15 s is on plan */
 var PSTART=[],acc0=0;
 for(i=0;i<N;i++){PSTART.push(acc0);acc0+=BEATS[i].p}
 var KEYLINE='The beat most people rush is the one with the input that broke it: that is the one the room remembers.';
 var NIL='Press Start the clock, talk through beat 1, and press Next beat when you move on.';
-var STAT0='Not started · '+'6:00 planned, the clock stops at 7:00';
+var STAT0='Not started · '+mmss(TOTAL)+' planned, the clock stops at '+mmss(CAP);
 
 /* the shared sample workflow, read and never retyped: named at beat 3 so a learner alone has an input to talk about */
 var PKG=(typeof S5PKG==='object'&&S5PKG)?S5PKG:null;
@@ -6563,10 +6569,10 @@ svt(svg,0,18,'The plan in grey, your minutes in colour','sE1-ttl');
 var rowbg=[],numc=[],numt=[],lab=[],lab2=[],plan=[],act=[],dv=[];
 for(i=0;i<N;i++){rowbg.push(sv('rect',{x:0,y:RY+i*RH,width:W,height:RH,rx:5,'class':'sE1-rowbg'},svg))}
 var m;
-for(m=0;m<=7;m++){
+for(m=0;m<=CAP/60;m++){
  var gx=X(m*60);
- if(m!==6)sv('line',{x1:gx,x2:gx,y1:RY-2,y2:RY+N*RH+2,'class':'sE1-grd'},svg);
- svt(svg,gx,264,m+':00',m===6?'sE1-tott':'sE1-tick','middle');
+ if(m!==TOTAL/60)sv('line',{x1:gx,x2:gx,y1:RY-2,y2:RY+N*RH+2,'class':'sE1-grd'},svg);
+ svt(svg,gx,264,m+':00',m===TOTAL/60?'sE1-tott':'sE1-tick','middle');
 }
 sv('line',{x1:X(TOTAL),x2:X(TOTAL),y1:RY-6,y2:RY+N*RH+6,'class':'sE1-tot'},svg);
 for(i=0;i<N;i++){
@@ -6586,7 +6592,7 @@ var yout=svt(svg,X0,38,'you','sE1-yout gone','middle');
 var running=false,ticking=false,finished=false,stopped=false,startAt=0,beat=-1,acc=0,done=[],timer=null,tw=null;
 
 function ariaText(){
- var s='Five beats on a line from 0:00 to 7:00: the plan in grey, laid end to end, with a marker at 6:00; your beats in colour as the clock runs.';
+ var s='Five beats on a line from 0:00 to '+mmss(CAP)+': the plan in grey, laid end to end, with a marker at '+mmss(TOTAL)+'; your beats in colour as the clock runs.';
  if(!running&&!finished)return s+' Not started.';
  var parts=[];
  for(var j=0;j<N;j++)if(done[j]){var A=whole(done[j].a);parts.push('Beat '+(j+1)+': '+mmss(A)+' against '+mmss(BEATS[j].p)+', '+VWORD(done[j].v))}
@@ -6620,9 +6626,9 @@ function stopClock(){
  if(timer!==null){clearInterval(timer);timer=null}
  ticking=false;stopped=true;
  CLK.textContent=mmss(CAP);CLK.className='sE1-clock mono past';
- if(STAT){STAT.textContent='Over time · the clock stopped at 7:00 on beat '+(beat+1);STAT.className='sE1-stat past'}
+ if(STAT){STAT.textContent='Over time · the clock stopped at '+mmss(CAP)+' on beat '+(beat+1);STAT.className='sE1-stat past'}
  O.className='mpanel';
- O.innerHTML='<span class="hd">Over time</span><span class="flag">The clock stopped at 7:00 on beat '+(beat+1)+' of '+N+'.</span><br>Press Next beat to close out the beats you have left, or Start again.';
+ O.innerHTML='<span class="hd">Over time</span><span class="flag">The clock stopped at '+mmss(CAP)+' on beat '+(beat+1)+' of '+N+'.</span><br>Press Next beat to close out the beats you have left, or Start again.';
 }
 
 /* a row goes live */
@@ -6667,8 +6673,8 @@ function summary(){
  for(j=0;j<N;j++){if(!done[j])continue;d=whole(done[j].a)-BEATS[j].p;
   if(d>0&&(mo<0||d>whole(done[mo].a)-BEATS[mo].p))mo=j;
   if(d<0&&(mu<0||d<whole(done[mu].a)-BEATS[mu].p))mu=j}
- var h='<span class="hd">Your six minutes</span>';
- h+='<b>Total '+mmss(T)+' against 6:00 ('+(dT===0?'on the plan':(dT>0?'over by '+secs(dT):'under by '+secs(-dT)))+')</b> '+stamp(vT)+'<br>';
+ var h='<span class="hd">Your eight minutes</span>';
+ h+='<b>Total '+mmss(T)+' against '+mmss(TOTAL)+' ('+(dT===0?'on the plan':(dT>0?'over by '+secs(dT):'under by '+secs(-dT)))+')</b> '+stamp(vT)+'<br>';
  var recap=[];
  for(j=0;j<N;j++)if(done[j])recap.push((j+1)+' · '+mmss(whole(done[j].a))+' '+(done[j].v==='ok'?'✓':done[j].v));
  h+='<span class="kw">Beats: '+recap.join(', ')+'.</span><br>';
@@ -6684,7 +6690,7 @@ function finish(line){
  setBtn(NEXT,false);
  var T=totalSec();
  CLK.textContent=mmss(T);CLK.className='sE1-clock mono'+(T>TOTAL?' past':'');
- if(STAT){STAT.textContent='Done · '+mmss(T)+' against a plan of 6:00';STAT.className='sE1-stat'+(T>TOTAL?' past':'')}
+ if(STAT){STAT.textContent='Done · '+mmss(T)+' against a plan of '+mmss(TOTAL);STAT.className='sE1-stat'+(T>TOTAL?' past':'')}
  you.setAttribute('x1',String(X(Math.min(CAP,T))));you.setAttribute('x2',String(X(Math.min(CAP,T))));yout.setAttribute('x',String(X(Math.min(CAP,T))));
  summary();
  svg.setAttribute('aria-label',ariaText());
@@ -6753,9 +6759,9 @@ setBtn(NEXT,false);
 svg.setAttribute('aria-label',ariaText());
 
 /* ---------- the outline and its copy button ---------- */
-var outline='Six minutes, five beats\n';
+var outline='Eight minutes, five beats\n';
 for(i=0;i<N;i++)outline+=(i+1)+'. '+BEATS[i].t+' ('+mmss(BEATS[i].p)+')\n';
-outline+='Total 6:00. The builder then responds for up to two minutes; expect questions on the input that broke it.';
+outline+='Total '+mmss(TOTAL)+'. There is no live demo, and slides are optional. The builder then has 2 minutes to respond, and then there are 3 minutes of questions. Expect questions on the input that broke it.';
 if(LIST){
  LIST.innerHTML='';
  for(i=0;i<N;i++){
@@ -6783,7 +6789,7 @@ REVEALS.push(function(){
   setBtn(START,false);
   cls(you,'sE1-you');cls(yout,'sE1-yout');
   finish('');
-  if(STAT){STAT.textContent='Override · the five beats as planned, 6:00';STAT.className='sE1-stat'}
+  if(STAT){STAT.textContent='Override · the five beats as planned, '+mmss(TOTAL);STAT.className='sE1-stat'}
  }catch(e){}
 });
 })();

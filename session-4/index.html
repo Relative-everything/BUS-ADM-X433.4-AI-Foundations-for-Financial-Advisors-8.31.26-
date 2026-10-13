@@ -4604,18 +4604,20 @@ DECISION: (the person fills in, after reading: what they
 
   <p class="big">Part 1 of your final project is an AI workflow you build. It is scalable when another advisor can run it for the next twenty clients without you. The test: hand it over and watch where they stop.</p>
 
+  <p class="dim" style="font-size:15px">Upload to the course site: one .zip file, the Part 1 handoff package. It holds readme.txt, the workflow/ folder, the samples/ folder and selfcheck.txt. The readme.txt is plain text with twelve headings, in this order: TASK; WHO RUNS IT; TOOL, PLAN, MODEL, EFFORT SETTING; SETUP STEPS (numbered); INPUTS (the format, and where the sample inputs are); HOW TO RUN (the exact starter prompt); EXPECTED OUTPUT; VERIFICATION STEPS; WHERE A HUMAN MUST DECIDE; TWO FAILURE MODES YOU HIT; BASELINE VS AI TIME (baseline from Homework 1); DATA-HANDLING NOTE (the fields to remove or pseudonymize before real use). The workflow/ folder holds the skill .zip, or the prompt files and project instructions as .txt, plus any supporting files. The samples/ folder holds synthetic inputs for at least two different clients, and the output each one produced. The selfcheck.txt is your own cold run: a fresh chat or project with memory off, following only readme.txt, both samples run, every link opened, and the result of each check. The build transcript is not in this package; it goes with Part 2.</p>
+
   <div class="panel" data-task="t-sCR" data-comp="symptom-diagnoser">
     <span class="do">Do this now: 8 minutes</span>
     <h4>Run a Package Cold</h4>
-    <p class="hint">Follow the README using only this card, and ask nobody. Where did you first stop? Click it.</p>
+    <p class="hint">Follow the readme.txt using only this card, and ask nobody. Where did you first stop? Click it.</p>
     <p style="margin:0 0 8px"><span class="sim">Sample package, gaps on purpose <span class="conf l" data-src="src-case">L</span></span></p>
     <div id="pkgText" class="pkg">
-      <div class="pkghd"><b>HANDOFF PACKAGE</b>: Quarterly review email drafter <span class="pkgatt">Attached: README, prompt.txt</span></div>
+      <div class="pkghd"><b>HANDOFF PACKAGE</b>: Quarterly review email drafter <span class="pkgatt">In the .zip: readme.txt, workflow/prompt.txt</span></div>
       <div class="pkgfiles">
-        <div class="pfile"><span class="ptab">README</span><pre>1. Open prompt.txt.
+        <div class="pfile"><span class="ptab">readme.txt</span><pre>1. Open workflow/prompt.txt.
 2. Paste the client's quarter summary where it says [SUMMARY].
 3. Run it and send the draft for review.</pre></div>
-        <div class="pfile"><span class="ptab">prompt.txt</span><pre>You are an advisor writing a quarterly review email to [CLIENT]. Use the summary below. Under 200 words, plain English, no jargon. End with one question for the client.
+        <div class="pfile"><span class="ptab">workflow/prompt.txt</span><pre>You are an advisor writing a quarterly review email to [CLIENT]. Use the summary below. Under 200 words, plain English, no jargon. End with one question for the client.
 [SUMMARY]</pre></div>
       </div>
     </div>
@@ -4640,8 +4642,8 @@ DECISION: (the person fills in, after reading: what they
   </div>
 
   <ul class="pts">
-    <li><b>The builder cannot see it.</b> What you know fills every gap in your own package, so only a cold run finds them.</li>
-    <li><b>If it ran,</b> run it again on a different input. The builder's example and the next client are different claims.</li>
+    <li><b>The builder cannot see it.</b> What you know fills every gap in your own package, so only a cold run finds them. Your selfcheck.txt is that cold run, done before anyone else opens the package.</li>
+    <li><b>If it ran,</b> run it again on a different input. The builder's example and the next client are different claims, which is why samples/ holds two clients.</li>
   </ul>
 
   <p class="src">The handoff test restates the course&rsquo;s scalability standard for Part 1. The sample package and its five gaps are constructed for this lesson <span class="conf l" data-src="src-case">L</span>.</p>
@@ -10488,13 +10490,13 @@ var STUCK=[
  'It ran, and I could tell the output was right'
 ];
 var FIX=[
- 'A one-line fix: say which file to open first and what it is for.',
- 'The builder knew what they had installed and did not write it down.',
- 'The package needs one sample input. Without it, every runner guesses the format.',
- 'A compliance gap as well as a usability one. The package needs a data-handling note (§03).',
- 'It runs and cannot be trusted. It needs a check step: what to open, and what should match.',
- 'No amount of reading fixes it: only the builder knows. Note exactly what was referred to.',
- 'Rare. Now run it on a new input: the next client is the real test.'
+ 'A one-line fix: readme.txt opens with TASK and WHO RUNS IT, and says which file to open first.',
+ 'The builder knew what they had installed and did not write it down. TOOL, PLAN, MODEL, EFFORT SETTING and SETUP STEPS hold it.',
+ 'INPUTS names the format and where the sample inputs are, and samples/ holds them. Without them, every runner guesses the format.',
+ 'A compliance gap as well as a usability one. The readme.txt needs a DATA-HANDLING NOTE (§03).',
+ 'It runs and cannot be trusted. VERIFICATION STEPS say what to open, and what should match.',
+ 'No amount of reading fixes it: only the builder knows. WHERE A HUMAN MUST DECIDE names who, and what. Note exactly what was referred to.',
+ 'Rare. Now run it on a new input: the next client is the real test, which is why samples/ holds two clients.'
 ];
 var GAPS=[1,2,3,4,5];
 var BUB={1:'my tool',2:'my format',3:'names out',4:'I can tell',5:'I know who'};
@@ -10644,7 +10646,7 @@ function coldRun(){
  function readout(){
   var i=st.stop;if(i<0)return;
   var note='';
-  if(st.rev)note=isGap(i)?'<br><span class="sg">✗ In the sample: one of its five gaps.</span>':(i===0?'<br><span class="sg ok">In the sample: not a gap. The README names prompt.txt first.</span>':'');
+  if(st.rev)note=isGap(i)?'<br><span class="sg">✗ In the sample: one of its five gaps.</span>':(i===0?'<br><span class="sg ok">In the sample: not a gap. The readme.txt names workflow/prompt.txt first.</span>':'');
   out.className='mpanel has';
   if(i<6)out.innerHTML='<span class="hd">First stop · '+(i+1)+' '+esc(NAME[i])+' · '+esc(CAT[i])+' gap</span><b>'+esc(STUCK[i])+'.</b> '+esc(FIX[i])+note+'<br><span class="kw">Log only this stop, in one sentence: what were you trying to do?</span>';
   else out.innerHTML='<span class="hd">First stop · none · 7 Done</span><b>'+esc(STUCK[6])+'.</b> '+esc(FIX[6]);
@@ -10665,11 +10667,11 @@ function coldRun(){
   if(!key)return;
   key.className='mpanel has keyhide';key.style.display='block';
   key.innerHTML='<span class="hd">Five gaps in the sample</span>'+
-   '<b>2 Tool.</b> No tool or model named. <span class="kw">Fill: setup.</span><br>'+
-   '<b>3 Input.</b> No sample summary, so the shape of [SUMMARY] is a guess. <span class="kw">Fill: setup.</span><br>'+
-   '<b>4 Client data.</b> Nothing says whether a real client’s summary may go in, or what to remove first. <span class="kw">Fill: the data-handling note.</span><br>'+
-   '<b>5 Check.</b> Nothing says how to tell whether the draft is right. <span class="kw">Fill: checks and failures.</span><br>'+
-   '<b>6 Missing piece.</b> “Send the draft for review”: to whom, and who approves it? The package never names them. <span class="kw">Fill: the workflow.</span><br><br>'+
+   '<b>2 Tool.</b> No tool or model named. <span class="kw">Fill: TOOL, PLAN, MODEL, EFFORT SETTING.</span><br>'+
+   '<b>3 Input.</b> No sample summary, so the shape of [SUMMARY] is a guess. <span class="kw">Fill: INPUTS, and samples/.</span><br>'+
+   '<b>4 Client data.</b> Nothing says whether a real client’s summary may go in, or what to remove first. <span class="kw">Fill: DATA-HANDLING NOTE.</span><br>'+
+   '<b>5 Check.</b> Nothing says how to tell whether the draft is right. <span class="kw">Fill: VERIFICATION STEPS.</span><br>'+
+   '<b>6 Missing piece.</b> “Send the draft for review”: to whom, and who approves it? The package never names them. <span class="kw">Fill: WHERE A HUMAN MUST DECIDE.</span><br><br>'+
    'Got past one? You filled it from your own head, the way the builder does.';
  }
  function reveal(){
@@ -10693,15 +10695,15 @@ function packBox(){
  if(!host||!out)return;
  var MLABEL='Your package\'s route for a stranger: seven stations with a barrier wherever the part that answers that station is empty; the first barrier is ringed.';
  var SL=[
-  {n:'The workflow',d:'prompts, tool, model, files',r:[0,5]},
-  {n:'The explanation',d:'what it does and why AI',r:[]},
-  {n:'Setup',d:'tool, plan and inputs',r:[1,2]},
-  {n:'Checks and failures',d:'checks built in, two failures',r:[4]},
-  {n:'The time comparison',d:'without AI against with AI',r:[]},
-  {n:'The data-handling note',d:'what comes out first',r:[3]},
-  {n:'The build transcript',d:'failed attempts included',r:[]}
+  {n:'TASK; WHO RUNS IT',d:'readme.txt: what it is for, who opens it',f:'TASK and WHO RUNS IT',r:[0]},
+  {n:'TOOL, PLAN, MODEL, EFFORT SETTING; SETUP STEPS',d:'readme.txt: what to have ready',f:'TOOL, PLAN, MODEL, EFFORT SETTING and SETUP STEPS',r:[1]},
+  {n:'INPUTS; HOW TO RUN',d:'readme.txt, with samples/ for two clients',f:'INPUTS and HOW TO RUN, with samples/',r:[2]},
+  {n:'DATA-HANDLING NOTE',d:'readme.txt: what comes out first',f:'the DATA-HANDLING NOTE',r:[3]},
+  {n:'EXPECTED OUTPUT; VERIFICATION STEPS',d:'readme.txt: what to open, what should match',f:'EXPECTED OUTPUT and VERIFICATION STEPS',r:[4]},
+  {n:'WHERE A HUMAN MUST DECIDE; TWO FAILURE MODES YOU HIT; BASELINE VS AI TIME',d:'readme.txt: the human call, two failures, the time',f:'WHERE A HUMAN MUST DECIDE',r:[5]},
+  {n:'workflow/ and selfcheck.txt',d:'the files themselves, and your own cold run',f:'workflow/ and selfcheck.txt',r:[]}
  ];
- var ANS=[0,2,2,5,3,0,-1];
+ var ANS=[0,1,2,3,4,5,-1];
  var on=[false,false,false,false,false,false,false];
  var tiles=[];
  SL.forEach(function(s,i){
@@ -10754,12 +10756,12 @@ function packBox(){
   }
   var h='<span class="hd">Your box · '+n+' of 7</span>';
   out.className='mpanel'+(n?' has':'');
-  if(first>=0)h+='A stranger stops first at '+(first+1)+' · '+esc(NAME[first])+'. Fill: '+esc(SL[ANS[first]].n.toLowerCase())+'.';
+  if(first>=0)h+='A stranger stops first at '+(first+1)+' · '+esc(NAME[first])+'. Fill: '+esc(SL[ANS[first]].f)+'.';
   else if(n<7){
-   var miss=[];SL.forEach(function(s,i){if(!on[i])miss.push(esc(s.n.toLowerCase()))});
-   h+='No station is blocked. Still empty: '+miss.join(' · ')+'. Part 1 needs all seven.';
+   var miss=[];SL.forEach(function(s,i){if(!on[i])miss.push(esc(s.f))});
+   h+='No station is blocked. Still empty: '+miss.join(' · ')+'. The package needs all seven.';
   }
-  else h+='<span class="good">Complete.</span> Freeze it before anyone runs it. A full box can still hide a gap only a cold run finds.';
+  else h+='<span class="good">Complete.</span> Freeze it before anyone runs it. A full box can still hide a gap only a cold run finds. Run it cold yourself and write the result in selfcheck.txt.';
   out.innerHTML=h;
  }
  draw();
