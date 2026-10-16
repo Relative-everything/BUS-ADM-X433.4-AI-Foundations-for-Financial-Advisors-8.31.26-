@@ -34,7 +34,7 @@ Colour lanes in the PDF: blue = work the page (core); dashed blue = an appendix 
 26. **2:07 Closing.** CLOSING CHECK, written. CHAT one line each: in, where, check, keep. NEVER SKIP. Read three aloud. A line with no keep: name §05. End 2:10. If ahead: **D10 The handoff test** (10), then **D6 When a source goes stale** (13).
 
 **Setup before class**
-- **Tab 1** Session 4, Core only, Live API box collapsed; a fresh free Gemini key in a text file (never in the page until step 11)
+- **Tab 1** Session 4, Core only, Live API box collapsed; a fresh key in a text file (never in the page until step 11): the course workspace's Claude key, which shows the browser-access header and bills the class balance, or a free Gemini key
 - **Tab 2** Case 4; **Tab 3** a Workspace Google Doc with the synthetic Cole transcript; **Tab 4** personal Claude, Privacy settings open, training switch visible and off
 - **Tab 5** a doc with a hidden white line in 1-point font; **Tab 6** claude.com/check-content plus a PNG made in Claude and a screenshot of it
 - Four polls built from session-4-polls.md, Poll 3 not anonymous, students not co-hosts; three chat lines ready; speaker labels on

@@ -579,7 +579,7 @@ with the exempt classes already removed.
 
 Excluding byte-shared boilerplate from every per-file population would leave it
 checked nowhere, and it is student-facing copy: *"Live model &mdash; optional"*,
-*"Gemini API key &mdash; free, from…"*. So R11 carries **one corpus-level
+*"Gemini API key &mdash; free, from…, or Claude API key from…"*. So R11 carries **one corpus-level
 baseline**, ratcheted the same way, and is covered once instead of N times.
 
 Measured from the canonical copy — R11 spans deduplicated by content hash, so a

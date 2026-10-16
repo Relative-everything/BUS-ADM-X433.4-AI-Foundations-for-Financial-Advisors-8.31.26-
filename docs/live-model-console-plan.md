@@ -1,5 +1,17 @@
 # Implementation plan: a bring-your-own-key live model console in Sessions 0.1 and 1
 
+> **Addendum, 2026-10-16.** The console now takes a Claude API key as well as a
+> Gemini key (`docs/changes/2026-10-16-claude-api-keys/`). The vendor is read off
+> the key's prefix, the request is built in one place for both, and the
+> Claude-specific rules (thinking, temperature, the browser-access header) are in
+> `MAINTAINING.md`, "The live model console". What follows is the 2026-08-22 plan
+> as written, Gemini-only; its reasoning about scope (Sessions 1 and 4, fixed public
+> prompts, no console in Sessions 2, 3 and 5) stands for both keys. The data-terms
+> objection in §1 is weaker for a Claude key, which runs under the Commercial Terms,
+> but the scope rule is kept: the console sends only what is already public or
+> synthetic, whichever vendor is behind the key. Session 0.1 dropped the console on
+> 2026-10-12 (D-054).
+
 Planning date: 2026-08-22. Companion to
 [`gemini-live-api-feasibility.md`](gemini-live-api-feasibility.md), which
 established that the wire protocol works from GitHub Pages with no backend and

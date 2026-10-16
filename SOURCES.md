@@ -1076,7 +1076,8 @@ figure_class:   vendor_policy
 recheck_before: every teaching of session-4 §03
 scope:          Consumer plans: Anthropic may use chats "including training our models, unless you opt out of training through your account settings"; retention five years if training is allowed, 30 days if not; the Consumer Terms are a contract between the individual and Anthropic. Commercial plans (Team, Enterprise, the API): "Anthropic may not train models on Customer Content from Services" (Section B); the Customer "retains all rights to its Inputs, and owns its Outputs" (Section B); Confidential Information may be used only to exercise rights and perform obligations under the Terms and is destroyed promptly on request (Sections E.2, E.4); the Terms are an agreement between Anthropic and the organisation the signer represents, and nobody may accept for an organisation without legal authority to bind it.
 retrieval_note: Opened directly on 2026-09-27: the Commercial Terms (effective 17 June 2025), the Consumer Terms (effective 8 October 2025), the Privacy Policy (effective 10 September 2026) and the 28 August 2025 news post on the consumer training change. The consumer-side retention figures (five years if training is allowed, 30 days if not) are stated in the news post and on the Claude Code data-usage page; privacy.claude.com itself could not be opened. Earlier retrieval 2026-08-14.
-used_for.session-4: the consumer training switch, five-year and 30-day retention, and the business plans' exclusion from training (Appendix D2)
+used_for.session-4: the consumer training switch, five-year and 30-day retention, and the business plans' exclusion from training (Appendix D2), and the Commercial Terms' exclusion of training behind a Claude API key in the Live API box (above §00)
+used_for.session-1: the Commercial Terms' exclusion of training behind a Claude API key, in the live model console (above §01)
 used_for.session-5: the consumer training default behind the chat assistant's Where answer (Appendix E10)
 used_for.case-4: the consumer training default and the business plans' exclusion from training under the Commercial Terms, behind the second commit question and the vendor table
 used_for.session-0.1: where the model training setting sits, in your Privacy Settings, and that it applies to Free, Pro and Max accounts and not to Team or Enterprise (section 00)
@@ -1594,7 +1595,69 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4 §03
 scope:          Standard retention on the API is 30 days; Enterprise organisations can set a custom retention period, 30 days at minimum; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years.
-used_for.session-4: the retention rung of the ladder and the retention clause of the contract view (Appendices D2 and D3)
+used_for.session-4: the retention rung of the ladder and the retention clause of the contract view (Appendices D2 and D3), and the 30-day retention behind a Claude API key in the Live API box (above §00)
+used_for.session-1: the 30-day retention behind a Claude API key, in the live model console (above §01)
+```
+
+## src-anthropic-api-credits
+
+```source
+title:          API credits for Max and Team plans
+author:         Anthropic
+publisher:      Claude Platform Docs
+link:           https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers
+published:      not applicable
+last_retrieved: 2026-10-16
+last_verified:
+retrieval_note: Opened directly on 2026-10-16, with the Help Center article of the same name (17154008). The programme was announced 7 October 2026.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-1 and session-4
+scope:          Max 5x plans carry $100 USD a month of Claude API credit, Max 20x $200, Team plans a pooled balance capped at $500; the credit is claimed by linking one Claude Console organisation to the plan, arrives each billing cycle and does not roll over. "Every API key and workspace in the linked organization draws from the same balance. To cap spending on a project, give it its own workspace and set that workspace's spend limit." "If the organization has no credits left, API requests stop until your next monthly API credits arrive. Usage is never charged to your Claude plan." The credits cover the Claude API, Managed Agents, the Agent SDK and the playground, and not Claude Code or the Claude apps.
+used_for.session-1: a key issued from the course workspace draws on a class balance that stops when spent, with nothing charged to the student, in the live model console (above §01)
+used_for.session-4: a key issued from the course workspace draws on a class balance that stops when spent, with nothing charged to the student, in the Live API box (above §00)
+```
+
+## src-anthropic-browser-access
+
+```source
+title:          TypeScript SDK
+author:         Anthropic
+publisher:      Claude Platform Docs
+link:           https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/typescript
+published:      not applicable
+last_retrieved: 2026-10-16
+last_verified:
+retrieval_note: Opened directly on 2026-10-16. The docs page names the option and the risk; the header the option sends, anthropic-dangerous-direct-browser-access: true, is read from the SDK's own source (anthropic-sdk-typescript, src/client.ts, buildHeaders), which is why the chip is M rather than H: the page documents the switch, the code documents the wire.
+confidence:     M
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-4
+scope:          Browser use of the SDK is "disabled by default to avoid exposing your secret API credentials" and is enabled only by setting dangerouslyAllowBrowser to true, which the SDK honours by sending the header anthropic-dangerous-direct-browser-access: true on every request; the API answers a browser only when that header is present. The page's own warning: "Any user with access to the browser can potentially inspect, extract, and misuse these credentials."
+used_for.session-4: the extra header a Claude request from a browser must carry, and why its name is the warning, in the Live API box (above §00)
+```
+
+## src-anthropic-sampling
+
+```source
+title:          Claude Opus 5.5 migration guide
+author:         Anthropic
+publisher:      Claude Platform Docs
+link:           https://platform.claude.com/docs/en/models/opus-5-5/migration-guide
+published:      not applicable
+last_retrieved: 2026-10-16
+last_verified:
+retrieval_note: Opened directly on 2026-10-16, with the Claude Haiku 5.5 migration guide, which states the same rule for Haiku 5.5 against Haiku 4.5 (temperature must be 1 if sent; top_p 0.99; any top_k a 400).
+confidence:     M
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-1
+scope:          "Setting temperature, top_p, or top_k to any non-default value on Claude Opus 4.7 and later models, including Claude Opus 5.5, returns a 400 error." Claude 4.6 and earlier accept them. The lesson's live temperature panel therefore routes a Claude key to the newest model it reaches from 4.6 or earlier and names that model on each row.
+used_for.session-1: Claude models from Opus 4.7 on reject a temperature setting, so the live temperature panel runs on an older Claude model when a Claude key is connected (Appendix A6)
 ```
 
 ## src-anthropic-dpa

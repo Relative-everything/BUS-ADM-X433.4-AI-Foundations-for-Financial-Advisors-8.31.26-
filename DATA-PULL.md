@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**72 of 162 works are moving targets, feeding 317 of
-665 references.**
+**75 of 165 works are moving targets, feeding 325 of
+673 references.**
 
 
 ---
@@ -86,6 +86,24 @@ version string means the version is not tracking the data.
 | PRICING-002 | S2 | 2026-10-11 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio; the Sonnet 5.5, Opus 5.5 and Fable 5.1 input and output rates in the cost estimator and the retrieval bridge, and output at five times input (FACTS claude-api-price-sonnet-5-5, claude-api-price-opus-5-5, claude-api-price-fable-5-1 and claude-output-input-ratio, read in full 2026-10-11) |
 | PRICING-003 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | input $0.10 and output $0.50 per million tokens for prompts up to 100K tokens, output at five times input (FACTS claude-api-price-haiku-5-5 and claude-output-input-ratio, read in full 2026-10-11) |
 
+### `src-anthropic-terms` — Consumer Terms of Service, Commercial Terms of Service and Privacy Policy
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-27 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 19 |
+| Feeds | S0.1 `#s0` · S1 `#(footer)` · S4 `#(footer)` · S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#sCR` ×7 · S5 `#s6` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| ANTHROPIC-TERMS-001 | S0.1 | 2026-10-13 | **[UNVERIFIED, needs source]** | the setting is changed in Privacy Settings; the update applies to Free, Pro and Max and not to services under the Commercial Terms (the 28 August 2025 news post, read in full 2026-10-13); no default stated |
+
 ### `src-claude-marks` — How Claude marks AI-generated content
 
 | | |
@@ -97,24 +115,6 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-4 Appendices D1 and D2 |
 | References | 18 |
 | Feeds | S4 `#s1` · S4 `#sW1` ×5 · S4 `#sW2` ×6 · S4 `#sCR` ×6 |
-
-### `src-anthropic-terms` — Consumer Terms of Service, Commercial Terms of Service and Privacy Policy
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
-| References | 17 |
-| Feeds | S0.1 `#s0` · S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#sCR` ×7 · S5 `#s6` |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| ANTHROPIC-TERMS-001 | S0.1 | 2026-10-13 | **[UNVERIFIED, needs source]** | the setting is changed in Privacy Settings; the update applies to Free, Pro and Max and not to services under the Commercial Terms (the 28 August 2025 news post, read in full 2026-10-13); no default stated |
 
 ### `src-models` — Models overview
 
@@ -247,6 +247,18 @@ version string means the version is not tracking the data.
 |---|---|---|---|---|
 | PERSONALIZATION-001 | S0.1 | 2026-10-13 | **[UNVERIFIED, needs source]** | Instructions for Claude apply to all of a user's conversations; project instructions apply only to chats in that project; Free accounts can create five projects (read in full 2026-10-13) |
 
+### `src-anthropic-retention` — API and data retention
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-27 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 §03 |
+| References | 7 |
+| Feeds | S1 `#(footer)` · S4 `#(footer)` · S4 `#s3` ×2 · S4 `#s4` · S4 `#sCR` ×2 |
+
 ### `src-synthid` — SynthID
 
 | | |
@@ -314,18 +326,6 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-4 Appendices D1 and D2 |
 | References | 5 |
 | Feeds | S4 `#sW1` ×2 · S4 `#sW2` ×3 |
-
-### `src-anthropic-retention` — API and data retention
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
-| References | 5 |
-| Feeds | S4 `#s3` ×2 · S4 `#s4` · S4 `#sCR` ×2 |
 
 ### `src-agent-skills` — Agent Skills overview
 
@@ -627,6 +627,18 @@ version string means the version is not tracking the data.
 | References | 2 |
 | Feeds | S4 `#s3` ×2 |
 
+### `src-anthropic-api-credits` — API credits for Max and Team plans
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-16 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-1 and session-4 |
+| References | 2 |
+| Feeds | S1 `#(footer)` · S4 `#(footer)` |
+
 ### `src-anthropic-certs` — What certifications has Anthropic obtained?
 
 | | |
@@ -770,6 +782,30 @@ version string means the version is not tracking the data.
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
 | DIRECTORY-001 | S0.1 | 2026-10-13 | **[UNVERIFIED, needs source]** | Customize in the left sidebar with Skills, Connectors and Plugins tabs; Connect on a service starts the authentication flow (read in full 2026-10-13) |
+
+### `src-anthropic-browser-access` — TypeScript SDK
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-16 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 |
+| References | 1 |
+| Feeds | S4 `#(footer)` |
+
+### `src-anthropic-sampling` — Claude Opus 5.5 migration guide
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-16 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-1 |
+| References | 1 |
+| Feeds | S1 `#s8` |
 
 ### `src-gemini-api-terms` — Gemini API Additional Terms of Service
 
@@ -1137,10 +1173,10 @@ wrong when they go stale.
 | Lesson | Distinct model names in prose | Occurrences |
 |---|---|---|
 | S0.1 | `Fable 5`, `Opus 5`, `Sonnet 5` | 8 |
-| S1 | `Fable 5`, `GPT-5.6`, `Kimi K3`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 52 |
+| S1 | `Fable 5`, `GPT-5.6`, `Kimi K3`, `Luna`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 59 |
 | S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 52 |
 | S3 | — | 0 |
-| S4 | — | 0 |
+| S4 | `Opus 4.7`, `Opus 5`, `Sonnet 5` | 4 |
 | S5 | `Fable 5`, `Haiku 4.5`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sonnet 5` | 32 |
 | case-1 | `Opus 5`, `Sonnet 5` | 10 |
 | case-2 | `Opus 5`, `Sonnet 5` | 7 |
@@ -1148,7 +1184,7 @@ wrong when they go stale.
 | case-4 | `Opus 5`, `Sonnet 5` | 7 |
 | case-5 | `Opus 5`, `Sonnet 5` | 7 |
 
-**182 occurrences across 11 lessons.** This count is read off
+**193 occurrences across 11 lessons.** This count is read off
 the corpus on every run, so it cannot go stale the way a typed one would.
 
 

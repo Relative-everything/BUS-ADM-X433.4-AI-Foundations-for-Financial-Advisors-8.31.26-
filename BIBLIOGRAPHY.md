@@ -5,7 +5,7 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**162 works, 665 references across 11 lessons.** 134 are
+**165 works, 673 references across 11 lessons.** 137 are
 cited by at least one claim; 28 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
@@ -148,8 +148,8 @@ Claude models launched in the EU on or after 2 August 2026 mark generated text w
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **17** |
-| Cited in | S0.1 `#s0` · S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#sCR` ×7 · S5 `#s6` |
+| **Total references** | **19** |
+| Cited in | S0.1 `#s0` · S1 `#(footer)` · S4 `#(footer)` · S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#sCR` ×7 · S5 `#s6` |
 
 Consumer plans: Anthropic may use chats "including training our models, unless you opt out of training through your account settings"; retention five years if training is allowed, 30 days if not; the Consumer Terms are a contract between the individual and Anthropic. Commercial plans (Team, Enterprise, the API): "Anthropic may not train models on Customer Content from Services" (Section B); the Customer "retains all rights to its Inputs, and owns its Outputs" (Section B); Confidential Information may be used only to exercise rights and perform obligations under the Terms and is destroyed promptly on request (Sections E.2, E.4); the Terms are an agreement between Anthropic and the organisation the signer represents, and nobody may accept for an organisation without legal authority to bind it.
 
@@ -319,10 +319,67 @@ Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **5** |
-| Cited in | S4 `#s3` ×2 · S4 `#s4` · S4 `#sCR` ×2 |
+| **Total references** | **7** |
+| Cited in | S1 `#(footer)` · S4 `#(footer)` · S4 `#s3` ×2 · S4 `#s4` · S4 `#sCR` ×2 |
 
 Standard retention on the API is 30 days; Enterprise organisations can set a custom retention period, 30 days at minimum; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years.
+
+### Anthropic
+
+**API credits for Max and Team plans**  
+`src-anthropic-api-credits` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Platform Docs |
+| Link | <https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-16 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **2** |
+| Cited in | S1 `#(footer)` · S4 `#(footer)` |
+
+Max 5x plans carry $100 USD a month of Claude API credit, Max 20x $200, Team plans a pooled balance capped at $500; the credit is claimed by linking one Claude Console organisation to the plan, arrives each billing cycle and does not roll over. "Every API key and workspace in the linked organization draws from the same balance. To cap spending on a project, give it its own workspace and set that workspace's spend limit." "If the organization has no credits left, API requests stop until your next monthly API credits arrive. Usage is never charged to your Claude plan." The credits cover the Claude API, Managed Agents, the Agent SDK and the playground, and not Claude Code or the Claude apps.
+
+### Anthropic
+
+**TypeScript SDK**  
+`src-anthropic-browser-access` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Platform Docs |
+| Link | <https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/typescript> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-16 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S4 `#(footer)` |
+
+Browser use of the SDK is "disabled by default to avoid exposing your secret API credentials" and is enabled only by setting dangerouslyAllowBrowser to true, which the SDK honours by sending the header anthropic-dangerous-direct-browser-access: true on every request; the API answers a browser only when that header is present. The page's own warning: "Any user with access to the browser can potentially inspect, extract, and misuse these credentials."
+
+### Anthropic
+
+**Claude Opus 5.5 migration guide**  
+`src-anthropic-sampling` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Platform Docs |
+| Link | <https://platform.claude.com/docs/en/models/opus-5-5/migration-guide> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-16 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **1** |
+| Cited in | S1 `#s8` |
+
+"Setting temperature, top_p, or top_k to any non-default value on Claude Opus 4.7 and later models, including Claude Opus 5.5, returns a 400 error." Claude 4.6 and earlier accept them. The lesson's live temperature panel therefore routes a Claude key to the newest model it reaches from 4.6 or earlier and names that model on each row.
 
 ### Anthropic
 
@@ -2614,7 +2671,7 @@ lesson whose footer names it.
 
 | Source | Listed by | Cited in |
 |---|---|---|
-| `src-anthropic-terms` | case-4 | S0.1, S4, S5 |
+| `src-anthropic-terms` | case-4 | S0.1, S1, S4, S5 |
 | `src-openai-data` | case-4 | S4 |
 | `src-gemini-privacy` | case-4 | S4 |
 | `src-gemini-workspace` | case-4 | S4 |
