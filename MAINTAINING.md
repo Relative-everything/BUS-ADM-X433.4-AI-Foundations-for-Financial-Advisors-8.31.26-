@@ -36,10 +36,12 @@ Two external origins are permitted, and no others:
 | Origin | When | Where |
 |---|---|---|
 | `fonts.googleapis.com`, `fonts.gstatic.com` | Page load | Every page |
-| `generativelanguage.googleapis.com` | Runtime only, and only after a reader pastes their own API key | Sessions 1 and 4 |
+| `generativelanguage.googleapis.com` | Runtime only, and only after a reader pastes their own Gemini API key | Sessions 1 and 4 |
+| `api.anthropic.com` | Runtime only, and only after a reader pastes their own Claude API key (one beginning `sk-ant-`) | Sessions 1 and 4 |
 
-The second is the live model console (`LM:BEGIN` / `LMBOX:BEGIN` /
-`LMSTYLE:BEGIN` fences). It is off by default, every exercise it touches keeps a
+The second and third are the live model console (`LM:BEGIN` / `LMBOX:BEGIN` /
+`LMSTYLE:BEGIN` fences), which takes either vendor's key and calls only the
+vendor the key belongs to. It is off by default, every exercise it touches keeps a
 captured fallback that renders when no key is connected or a call fails, and the
 key is held in one JavaScript variable and never stored. **The storage grep in
 the pre-push gate is the regression test for that key handling** — if it ever
@@ -259,15 +261,16 @@ for f in index.html session-*/index.html; do                 # externals: allowl
   grep -Eo '<(link|script|img|iframe)[^>]*(href|src)="https?://[^"]+"' "$f" \
     | grep -Ev 'fonts.googleapis|fonts.gstatic'
 done
-# the console's runtime origin, allowed only in 1 and 4, and only in JS
-grep -l 'generativelanguage.googleapis.com' index.html session-*/index.html \
+# the console's two runtime origins, allowed only in 1 and 4, and only in JS
+grep -l 'generativelanguage.googleapis.com\|api.anthropic.com' \
+  index.html session-*/index.html cases/*.html \
   | grep -Ev 'session-(1|4)/index.html'                        # must be empty
 # session-4 shares the style and the call layer with session-1, not the box
-# (each fence is opened and closed by its own versioned marker; the earlier
-# form of this check matched no closing line and ran to the end of the file)
-for m in 'LMSTYLE' 'LM'; do
-  sed -n "/$m:BEGIN v1/,/$m:END v1/p" session-1/index.html | md5sum
-  sed -n "/$m:BEGIN v1/,/$m:END v1/p" session-4/index.html | md5sum
+# (each fence is opened and closed by its own versioned marker, and the two
+# fences are on different versions: LMSTYLE v1, LM v2 since 2026-10-16)
+for m in 'LMSTYLE:BEGIN v1,LMSTYLE:END v1' 'LM:BEGIN v2,LM:END v2'; do
+  sed -n "/${m%,*}/,/${m#*,}/p" session-1/index.html | md5sum
+  sed -n "/${m%,*}/,/${m#*,}/p" session-4/index.html | md5sum
 done                                                          # each pair must match
 grep -H '<title>' index.html session-*/index.html            # hub and lessons agree
 ```
@@ -443,11 +446,57 @@ and will be reported by `--check`.
 ## The live model console
 
 Sessions 1 and 4 carry an optional console that lets a reader paste their own
-Gemini API key and run the page's probes against a live model instead of the
-captured outputs (Session 4's shows the request itself, then sends it). Rationale, alternatives considered and the pedagogical case are
+API key, Gemini or Claude, and run the page's probes against a live model instead
+of the captured outputs (Session 4's shows the request itself, then sends it).
+Rationale, alternatives considered and the pedagogical case are
 in [`docs/live-model-console-plan.md`](docs/live-model-console-plan.md); the
 terms and quota analysis behind the bring-your-own-key choice are in
 [`docs/gemini-live-api-feasibility.md`](docs/gemini-live-api-feasibility.md).
+The Claude key was added on 2026-10-16
+(`docs/changes/2026-10-16-claude-api-keys/`), so that the instructor's Max-plan
+API credit can carry a class through a workspace key.
+
+**Two vendors, one box, since 2026-10-16 (fences `LMBOX v2`, `LM v2`,
+`LMBOX-S4 v2`; `LMSTYLE` stays at v1).** The call layer reads the vendor off the
+key before anything is sent: a key beginning `sk-ant-` goes to
+`api.anthropic.com`, anything else to `generativelanguage.googleapis.com`, and
+nothing ever goes to both. Connect validates against each vendor's model list
+(`GET /v1/models`, no generation quota or credit spent) and fills the selector
+from it: the Gemini list filtered to `flash` text models as before, the Claude
+list every `active` model the key reaches in the API's newest-first order, with
+`claude-opus-5-5` as the default when present. `lmBuild()` is the one place a
+request is assembled; `lmCall()` sends exactly what it returns and Session 4's
+"See the request" prints the same object, which is what makes the shown request
+the sent request. Four Claude-specific rules live in `lmBuild()`, each with a
+test in the suite below:
+
+- **Thinking.** The `/v1/models` record's `capabilities.thinking.types.disabled`
+  flag decides it. Where the model can switch thinking off, the request does, so
+  a 64-token ceiling is a 64-token answer. Where it cannot (Opus 5.5, Sonnet 5.5,
+  Fable), the request asks for `output_config.effort: low` and raises
+  `max_tokens` to at least 2048, because thinking tokens count against the
+  ceiling and are billed as output. The connect message says so.
+- **Temperature.** Claude models from Opus 4.7 on reject `temperature`, `top_p`
+  and `top_k`; 4.6 and earlier accept them (`src-anthropic-sampling`). A
+  temperature of 1 is the default and is never sent. The one exercise that
+  varies it, Session 1's Appendix A6 panel, routes to the newest 4.6-or-earlier
+  model the key reaches and names that model on each row; the selector is left
+  as the reader set it.
+- **Headers.** Every Claude request carries `anthropic-version: 2023-06-01` and
+  `anthropic-dangerous-direct-browser-access: true`, the flag Anthropic requires
+  before it answers a browser (`src-anthropic-browser-access`). Session 4's box
+  shows both and says why the second one's name is the warning.
+- **Replies and errors.** Text blocks only are read, usage is normalised to the
+  Gemini field names so the page hooks need not know the vendor, and
+  `stop_reason: refusal` and an all-thinking `max_tokens` stop are reported as
+  errors rather than as an empty reply. 401, 402 (an empty balance), 403, 404,
+  429 and 529 each have their own sentence; the Gemini sentences are unchanged.
+
+A Gemini key must still send nothing to Anthropic and a Claude key nothing to
+Google; the suite asserts both. Session 4's cost line still prices the tokens at
+the smallest Claude model (`LM_PRICE`); under a Claude key it says the model's own
+rate is that figure or higher and that thinking tokens sit in the out count. It
+does not price per model (DW-185).
 
 **Session 0.1 dropped the console on 2026-10-12, with the probes it ran
 (decision D-054).** The page became a self-paced setup page for students working
@@ -487,10 +536,16 @@ Rules for changing it:
   must be interpolated goes through `lmEsc`.
 - Never commit a key. Google keys are a GitHub secret-scanning partner pattern
   and are push-protected by default: the push gets blocked or the key is
-  auto-revoked, and you find out mid-class.
+  auto-revoked, and you find out mid-class. Treat an `sk-ant-` key the same way.
+- A class key is a workspace key, never the organisation's. The Max-plan credit
+  is one balance per linked Console organisation and every key in it draws on
+  that balance (`src-anthropic-api-credits`), so issue the class its own
+  workspace with a spend limit, and a key with an expiry on the term's last day.
+  When the balance is gone, requests stop; nothing is charged to a student.
 
 The browser test suite in `scripts/test_live_console.js` covers all of this
-against a mocked endpoint. Run it before pushing a console change:
+against mocked endpoints for both vendors. Run it before pushing a console
+change (about five minutes; sections P to W are the Claude key):
 
 ```bash
 NODE_PATH=$(npm root -g) node scripts/test_live_console.js

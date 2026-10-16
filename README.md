@@ -39,12 +39,12 @@ has one marked **Live API**. The setup page and Sessions 2, 3 and 5 have neither
 they run in your own account or on your own work. Leave the box alone and those pages behave like every other: they transmit nothing, and the model outputs you see are real runs
 that were captured and dated in advance.
 
-Paste your own free Gemini API key into it and the exercises call a live model
-instead, so you watch it happen rather than read a recording. Then, and only
-then, those two pages send something: whatever is in the box you pressed the
-button on, to Google, over the connection your key authorises. Your key is held
-in one JavaScript variable, is never stored, never appears in a link, and is
-gone the moment you reload.
+Paste your own API key into it, a free Gemini key or a Claude key, and the
+exercises call a live model instead, so you watch it happen rather than read a
+recording. Then, and only then, those two pages send something: whatever is in
+the box you pressed the button on, to the one vendor your key belongs to, over
+the connection your key authorises. Your key is held in one JavaScript variable,
+is never stored, never appears in a link, and is gone the moment you reload.
 
 Three things worth knowing before you use it:
 
@@ -52,15 +52,19 @@ Three things worth knowing before you use it:
   with no key. Nothing is graded on it.
 - **Do not send client information through it.** Google's terms for the free
   tier let it use what you submit to improve its products, and let human
-  reviewers read it. Every prompt on those two pages is a public fact or
+  reviewers read it. A Claude API key runs under Anthropic's Commercial Terms,
+  which exclude training, and a key your instructor issues from the course
+  workspace draws on a class balance that stops when it is spent; the rule is
+  the same either way. Every prompt on those two pages is a public fact or
   synthetic Cole household data that is already published on this site; Session
   4's box starts from the de-identified Prompt D that page builds, and exists to
   show what one API request contains. That is why the box is on those pages and
   not on the ones built around your own practice.
 - **Check before you trust it.** The pages are static and their source is
   readable. View Source, or open the Network tab in your browser's developer
-  tools, and confirm for yourself that the only address they send to is
-  `generativelanguage.googleapis.com`. Doing that, rather than taking this
+  tools, and confirm for yourself that they send to one of two addresses and
+  never both: `generativelanguage.googleapis.com` for a Gemini key,
+  `api.anthropic.com` for a Claude key. Doing that, rather than taking this
   paragraph's word for it, is the habit Session 4 is about.
 
 ## How to use a lesson

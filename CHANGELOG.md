@@ -10,6 +10,54 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-10-16 · Claude API keys in the live model console
+
+Branch `claude/peaceful-edison-n73y17`; plan, ledger and handback in
+`docs/changes/2026-10-16-claude-api-keys/`. The instructor's Max plan now carries a
+monthly Claude API credit, so the two lessons that take a Gemini key take a Claude key
+as well and a class can run on a workspace key against that balance.
+
+### Sessions 1 and 4 · the console (`LMBOX v2`, `LM v2`, `LMBOX-S4 v2`; `LMSTYLE` unchanged at v1)
+
+- **One key box, two vendors.** A key beginning `sk-ant-` is sent to `api.anthropic.com`;
+  anything else to `generativelanguage.googleapis.com`; never both, and nothing until
+  Connect is pressed. Connect validates against each vendor's model list and fills the
+  selector from it: Claude's every active model the key reaches, newest first,
+  `claude-opus-5-5` the default.
+- **One request builder.** `lmBuild()` assembles the request; `lmCall()` sends it and Session
+  4's *See the request* prints the same object, now with the two headers a browser must
+  carry to Anthropic (`anthropic-version`, `anthropic-dangerous-direct-browser-access`),
+  the key masked. Without a key the Gemini request is shown and the Claude alternative named.
+- **Claude's rules, read off the model record.** Thinking is switched off where the model
+  allows it; where it cannot be (Opus 5.5, Sonnet 5.5, Fable) the request asks for the
+  lowest effort and leaves 2048 tokens of room, since thinking tokens count against the
+  ceiling and are billed as output. A temperature is never sent to a model that rejects one
+  (Opus 4.7 and later); Session 1's Appendix A6 temperature panel routes to the newest
+  4.6-or-earlier model the key reaches and names it on each row. `refusal` and an
+  all-thinking `max_tokens` stop read as errors, not empty replies; 401, 402, 403, 404,
+  429 and 529 each have a sentence. Every Gemini sentence is unchanged.
+- **The box's copy** names both addresses, the Commercial Terms behind a Claude key (no
+  training, 30-day retention) and that a course-workspace key draws on a class balance that
+  stops when spent with nothing charged to the student. Session 4's box also fixes DW-177
+  (Plan C is in Appendix D2, Prompt D in §03) and explains why the browser-access header's
+  name is the warning. Under a Claude key the cost line says the model's own rate is the
+  Haiku figure or higher and that thinking tokens sit in the out count.
+- Three source records added (`src-anthropic-api-credits` H, `src-anthropic-browser-access`
+  M, `src-anthropic-sampling` M); `src-anthropic-terms` and `src-anthropic-retention` gain
+  Session 1 uses. Footers regenerated.
+
+### Tooling and record
+
+- `scripts/test_live_console.js` mocks Anthropic as well as Google and gains sections P to W:
+  connect, Opus 5.5 effort and headroom, the temperature re-route, model choice, 401/429/402/
+  refusal, forget-then-Gemini, Session 4's shown-equals-sent check, and escaping.
+- `MAINTAINING.md`: the origins table, the fallback origin grep and the md5 pairing loop (two
+  fence versions now), a *Two vendors, one box* section, and the workspace-key rule. README,
+  EDITORIAL's R11 example and the Session 4 teaching aid updated. DW-177 closed; DW-185 and
+  DW-186 opened.
+
+---
+
 ## 2026-10-13 · Next-term update (2027 cohort)
 
 Branch `next-term-2027`, run from `docs/next-term/RUNBOOK.md` under PEDAGOGY v2.0, one
