@@ -1,3 +1,5 @@
+> **Archived 2026-10-27 (DW-182). Historical record, not current guidance:** the annex for the retired Fall 2026 Session 0.1; facts/FACTS.json and SOURCES.md carry the current evidence.
+
 Session 0.1 evidence annex, verified 2026-08-20
 Companion to session-0-1-BUILD-SPEC.md. This file closes both blocking evidence gaps named in spec s10, corrects three items in the spec, and adds four findings that materially improve sections 6, 7, and 10.
 Read this after the build spec and before writing any HTML. Where the two disagree, this file wins, because it is later and sourced.

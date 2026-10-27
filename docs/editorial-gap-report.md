@@ -1,3 +1,5 @@
+> **Archived 2026-10-27 (DW-182). Historical record, not current guidance:** the 2026-08 gap report; EDITORIAL.md and `scripts/editorial-baseline.json` carry the current rules and figures.
+
 # Editorial gap report
 
 **Date** 2026-08-23 · **Branch** `claude/editorial-gap-audit-gfyqr1` ·

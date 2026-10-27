@@ -1,3 +1,5 @@
+> **Archived 2026-10-27 (DW-182). Historical record, not current guidance:** the Phase 3 enumeration of 2026-08-25; chips are now generated from SOURCES.md and measured by `verify-editorial` A13 and A15.
+
 # Chip rewiring — the Phase 3 Part 1 enumeration
 
 **Every confidence chip in sessions 1 to 4, re-derived from the files on

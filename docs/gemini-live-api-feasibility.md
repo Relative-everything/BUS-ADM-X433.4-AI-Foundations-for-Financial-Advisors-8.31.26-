@@ -1,3 +1,5 @@
+> **Archived 2026-10-27 (DW-182). Historical record, not current guidance:** the console it studied shipped on 2026-09-28 and was rebuilt for two vendors on 2026-10-16; `docs/changes/2026-10-16-claude-api-keys/` and MAINTAINING "The live model console" govern. Its two `[UNVERIFIED]` rate-limit figures reach no served page (DW-151).
+
 # Feasibility: a live Gemini API inside the lesson pages
 
 Analysis date: 2026-08-22. Author: analysis run against the repository at

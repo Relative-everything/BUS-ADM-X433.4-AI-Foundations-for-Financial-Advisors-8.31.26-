@@ -49,7 +49,7 @@ export const LESSONS = ['index.html', 'session-0.1/index.html', 'session-1/index
 const MACHINERY = ['scripts/case-facts.json', 'scripts/case-extract.html',
                    'scripts/case-flowchart.html', 'scripts/build-case.mjs',
                    'scripts/inject-case.mjs', 'scripts/verify-migration.mjs',
-                   'scripts/case-inventory.mjs', 'scripts/state_space.py'];
+                   'scripts/case-inventory.mjs'];
 const DOCS = ['CHANGELOG.md', 'README.md', 'MAINTAINING.md', 'EDITORIAL.md', 'SOURCES.md',
               'BIBLIOGRAPHY.md', 'DATA-PULL.md', 'changelog/index.html'];
 

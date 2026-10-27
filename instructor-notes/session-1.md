@@ -81,6 +81,7 @@ Each poll has a decision rule keyed to its distribution in the polls file. Launc
 | Dunmore 401(k) summary plan description, amended | 1 January 2026 | In-plan Roth conversion of pre-tax balances has been permitted since 1 January 2026; the plan accepts rollovers from IRAs. | B.2, H.1.9 |
 
 The page already carries the memo against the plan in its complication line; put the two rows above on screen beside it, read the page's line, then add this. Both documents are in the file and both read with the same confidence; a summary of the file would quote either one fluently. Your line-by-line review checked the summary against the file, and nothing checked the file against the plan as it stands now. Regulatory Notice 24-09 is still published and creates no new obligations, so the rule does not decide this; the question is what you want on the record if the summary had been wrong and Meg's counsel asked how the file was produced (FACTS:finra-24-09-status). The fact cuts both ways: it pushes some toward A, because a record of what produced and who checked each statement is worth having, and some toward C or B, because the stale document here was written by a person and the control that matters is verification, not the label on the tool.
+- Small room (under twelve): one defender per side instead of two, hands or chat instead of a poll for the first vote, and read the split as a count, not a percentage; the complication and re-vote run unchanged (PEDAGOGY §15.1, decided 2026-10-27).
 
 ## Appendix sections you may select live
 

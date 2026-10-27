@@ -1,3 +1,5 @@
+> **Archived 2026-10-27 (DW-182). Historical record, not current guidance:** the Session 1 page it inventories was rebuilt on 2026-10-12; its measurements describe the Fall 2026 page (DW-157).
+
 # Session-1 feedback inventory
 
 **PROVENANCE WARNING — READ BEFORE USING ANY NUMBER IN THIS FILE.**

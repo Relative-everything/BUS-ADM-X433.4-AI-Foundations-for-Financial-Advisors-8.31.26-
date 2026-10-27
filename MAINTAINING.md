@@ -107,9 +107,40 @@ skill root. All must exit 0.
 python3 scripts/validate_lesson.py <repo>/session-N/index.html \
   --case Cole --purge "Okonkwo,Reyes,Adaeze,Ilesanmi" \
   --require-timing --require-tagging
-node scripts/validate_dom.js <repo>/session-N/index.html      # needs jsdom
+python3 scripts/validate_lesson.py <repo>/session-5/index.html --minutes 125 ...   # Session 5 is 125 allocated
+python3 scripts/validate_lesson.py <repo>/session-0.1/index.html --minutes 57 ...  # the setup page is 57, self-paced
+NODE_PATH=$(npm root -g) node scripts/validate_dom.js <repo>/session-N/index.html  # DOM mode needs jsdom resolvable from the skill's directory; without it the script runs static-only and says so
 python3 scripts/restyle_sweep.py <repo>                       # WRITE the fence
 ```
+
+Then the in-repo battery from the repo root, every one exiting 0 (`NODE_PATH=$(npm root -g)`):
+`build-case`, `inject-case --check`, `build-cardsort --check`, `build-appendix --check`,
+`build-readings --check`, `build-sources --check`, `build-unsourced --check`,
+`case-inventory --report-check`, `facts/build-facts-md --check`, `verify-case`,
+`verify-migration`, `verify-sources --check`, `verify-facts`, `verify-editorial`,
+`test-editorial-regions`, `test-case-viewer`, `verify-style`, `verify-stamps`,
+`test_live_console.js`, `verify-browser`, and `docs/next-term/checks.mjs`.
+
+**What the skill validator says that this repository does not act on** (decided
+2026-10-27, DW-189, DW-029, DW-030, DW-051, DW-065, DW-112, DW-116). The skill's
+`references/pedagogy.md` v3.1 and this repository's `PEDAGOGY.md` v2.0 disagree
+on course parameters, and PEDAGOGY.md governs them (its §0). Until the skill
+reads a repo profile, these lines are red by design on every run and are not
+regressions:
+
+| Line | Where | Why it is red | Fix belongs |
+|---|---|---|---|
+| V2 *external request outside the fonts exception* | every page, one per footer citation link | the regex matches `<a href>`, which makes no request | skill |
+| V6 *distinct interactions (band 13-15)* | every lesson (17 to 22) | PEDAGOGY §4 uncaps the appendix; the band assumed a 150-minute flat page | skill, or a repo profile |
+| V6 *same component type in consecutive sections* | session-0.1 (prediction-commit), session-2 (builder-assembler, work-along-gate) | accepted as shipped 2026-10-27 (DW-094); pedagogy s3.5 says flag, not fix | nothing |
+| V5 timing | session-0.1 and session-5 without the `--minutes` flags above | the validator assumes 150 | the flags |
+| V8 *Shift+U override missing* and the DOM-mode Shift+U line, `#pnum` | session-2 | removed by instruction (DW-116); the label is `#ovr` elsewhere (DW-112) | skill |
+| C2 em-dash INFO count | every page | counts the raw file and prints *policy unratified*; EDITORIAL D1 ratified it | skill |
+| `tokens.css:6` *instructor notes* | the STYLE fence, every page | skill-owned text (R4) inside a byte-exact fence | skill |
+| `pedagogy.md` s3.5 interleaving rule, uncited | the skill | the citation is `src-rohrer` (H) | skill |
+
+The upstream requests are recorded here and nowhere else in this repository; the
+skill is not edited from here.
 
 **Where this repo looks for the skill.** Two scripts here call the skill's
 `restyle_sweep.py`, `scripts/verify-style.mjs` and `scripts/build-changelog.py`.
@@ -245,11 +276,10 @@ in the order the pre-push gate above sets out.
   python3 scripts/verify-wolfram-quotes.py <article.txt> [session-1/index.html]
   ```
 
-- **`scripts/state_space.py` is not a check, and nothing runs it now.** It
-  enumerated the legal configuration space of the context inspector that Session
-  0.1 carried until 2026-10-12, under six sourced constraints, and printed its
-  size against the naive grid. The page that used it is gone; the script is kept
-  as a record. It asserts nothing and exits 0.
+- **`scripts/state_space.py` was deleted on 2026-10-27 (DW-172).** It enumerated the
+  configuration space of the context inspector Session 0.1 carried until
+  2026-10-12; the page is gone and the script asserted nothing. `git show
+  233bb72:scripts/state_space.py` recovers it.
 
 Without the skill, these fallback checks cover the same ground:
 
@@ -1212,6 +1242,11 @@ visible and diffable. A human edits it; nothing infers it at runtime.
 
 > **`docs/deferred-work.md` IS THE SINGLE DEFERRAL REGISTER. Every open item
 > in this repository is a row in it, and open work is tracked nowhere else.**
+>
+> **Since 2026-10-27 the register's Open table is empty.** Tasks that no change in
+> this repository can close (tags, Canvas, Zoom, the class key, the browser day for
+> source attestation, the week-before rituals) live in
+> `instructor-notes/term-start-checklist.md`; a new in-repo item opens a row.
 >
 > **The per-phase `§N.8 What Phase N leaves open` sections in
 > `docs/repo-updates-plan.md` point here and do not accumulate their own.**
