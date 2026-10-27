@@ -1,0 +1,719 @@
+[
+  {
+    "id": "src-anthropic-fluency",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch of https://www.anthropic.com/ai-fluency returned a 307 redirect from anthropic.com to https://anthropic.skilljar.com/ai-fluency-framework-foundations (skilljar host itself is ENOTFOUND from this build). WebSearch (allowed_domains anthropic.com, anthropic.skilljar.com, coursera.org) returned the Skilljar page titled 'AI Fluency: Framework & Foundations - Anthropic Courses', the Coursera listing https://www.coursera.org/learn/ai-fluency-framework-foundations (offered by Anthropic Academy), and a Pitt IT access guide. Snippets: built with Prof. Rick Dakan (Ringling) and Prof. Joseph Feller (UCC); 4D framework Delegation, Description, Discernment, Diligence; CC BY-NC-SA 4.0; Coursera lists 10 modules/about 3 hours, Claude Academy lists 14 lessons/4 hr.",
+    "corrections": {
+      "link": "https://anthropic.skilljar.com/ai-fluency-framework-foundations",
+      "title": "AI Fluency: Framework & Foundations",
+      "author": "Anthropic, with Rick Dakan and Joseph Feller",
+      "publisher": "Anthropic Academy (Skilljar); short link anthropic.com/ai-fluency",
+      "published": "2025 (course live by mid-2025; exact date not shown on fetched surfaces)"
+    },
+    "claim_check": "Scope only names the 4D framing; every search result confirms the four Ds are the course's spine. No page claim rests on it. Course body not read (host unreachable), so lesson count/duration left as search snippets only.",
+    "alt1": {
+      "title": "AI Fluency: Framework & Foundations (Coursera listing)",
+      "author": "Anthropic Academy",
+      "publisher": "Coursera",
+      "date": "2025",
+      "url": "https://www.coursera.org/learn/ai-fluency-framework-foundations",
+      "why": "Durable mirror of the same course for students who prefer Coursera; secondary to the Skilljar original."
+    },
+    "alt2": {
+      "title": "Try Claude / AI Fluency short link (redirects to the Skilljar course)",
+      "author": "Anthropic",
+      "publisher": "anthropic.com",
+      "date": "n/a",
+      "url": "https://www.anthropic.com/ai-fluency",
+      "why": "Anthropic-owned short URL that redirects to the canonical course; good as the printed link because it is Anthropic's domain, but it is a redirect, not content."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fill the missing link with the Skilljar canonical URL (or the anthropic.com/ai-fluency redirect) and fix the ampersand in the title; the work exists and the framing matches.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-marks",
+    "status": "VERIFIED",
+    "evidence": "WebFetch of the stated URL and its .md rendering (both 200). Page: Anthropic 'has signed the EU AI Act's Article 50(2) Code of Practice on Transparency of AI-Generated Content'; 'Claude models launched in the EU on or after August 2, 2026 will support machine-readable marking at launch'; 'The law includes a transition period for AI systems launched before August 2, 2026'; 'Marking will apply to output from supported models wherever Claude is offered, worldwide'; 'Watermark detection is currently in private preview, available to eligible organizations as required under EU law'; 'Detecting a Claude mark tells you that the content may have been processed by Claude'; 'Lack of a detected mark doesn't mean the content wasn't AI-generated or processed'; 'A file's metadata was stripped through format conversion, re-saving, screenshots, or other means'. Per-model table (27 Oct 2026): text watermark + cloud + C2PA for Fable 5.1, Fable 5, Mythos 5.1, Opus 5.5, Opus 5, Opus 4.8, Sonnet 5.5, Sonnet 5, Haiku 5.5; C2PA-only rows for Mythos 5, Opus 4.7/4.6/4.5, Sonnet 4.6/4.5, Haiku 4.5; footnote 'Rollout on Amazon Bedrock will complete by October 23'. Companion page https://claude.com/check-content fetched: 'The tool does not check text.' and 'This tool runs in your browser. Your file never leaves your device.'",
+    "corrections": {},
+    "claim_check": "All scope claims supported. One attribution note: 'The tool does not check text' is on claude.com/check-content, not on the help article (the help article only describes the checker for files); the record's retrieval_note already says both pages were read, so no change needed beyond citing check-content for that sentence. The eligible-organizations list in scope matches the page. Moving target: the per-model list has changed since 2026-10-12 (older 4.x models are now C2PA-only; Mythos rows added), so Appendix D8 should re-read the table before teaching.",
+    "alt1": {
+      "title": "Check if files were made with Claude (Claude Content Checker)",
+      "author": "Anthropic",
+      "publisher": "claude.com",
+      "date": "n/a (live tool page)",
+      "url": "https://claude.com/check-content",
+      "why": "Primary page for the 'does not check text', in-browser processing and supported-format claims; narrower than the help article, so a supplement not a replacement."
+    },
+    "alt2": {
+      "title": "Strong backing for the Code of Practice on Transparency of AI-generated Content",
+      "author": "European Commission",
+      "publisher": "digital-strategy.ec.europa.eu",
+      "date": "2026 (signatory announcement; Article 50 applies from 2 August 2026)",
+      "url": "https://digital-strategy.ec.europa.eu/en/news/strong-backing-code-practice-transparency-ai-generated-content",
+      "why": "The regulator's own signatory announcement (linked from Anthropic's watermark post); more authoritative for the legal rule and the 2 December 2026 grace period, but says nothing about Claude specifically. Found via search; host not fetchable from this build."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Live page still supports every claim; it is the primary vendor statement and the record already tracks it as a moving target.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-terms",
+    "status": "VERIFIED",
+    "evidence": "WebFetch https://www.anthropic.com/legal/commercial-terms (Effective June 17, 2025): 'Anthropic may not train models on Customer Content from Services' (Section B); Customer 'retains all rights to its Inputs, and (b) owns its Outputs' (B); E.2 use of Confidential Information only to exercise rights and perform obligations; E.4 'Recipient will destroy Discloser's Confidential Information promptly upon request'; preamble: agreement 'between Anthropic and you or the organization, company, or other entity that you represent' and no entry for an organization 'unless you have the legal authority to bind that entity'. WebFetch https://www.anthropic.com/legal/consumer-terms (Effective Oct 8, 2025): Section 4 'including training our models, unless you opt out of training through your account settings'; 'These Terms are a contract between you and Anthropic, PBC'. WebFetch https://www.anthropic.com/legal/privacy (Effective Sep 10, 2026): may use Inputs/Outputs to train 'unless you opt out through your account settings'; deleted conversations removed from back-end within 30 days. WebFetch https://www.anthropic.com/news/updates-to-our-consumer-terms (Aug 28, 2025): five-year retention if training allowed, 30-day otherwise, applies to Free/Pro/Max, not Claude for Work/API/Bedrock/Vertex, change in Privacy Settings; no default stated.",
+    "corrections": {},
+    "claim_check": "Every quoted clause found verbatim with the stated section letters. The five-year/30-day figures are, as the record says, in the 28 Aug 2025 news post and not in the Terms themselves. The Privacy Policy (10 Sep 2026) is the cleanest primary text for 'training on unless you opt out' (the default the lesson takes from the Consumer Terms).",
+    "alt1": {
+      "title": "Consumer Terms of Service",
+      "author": "Anthropic",
+      "publisher": "Anthropic, anthropic.com/legal",
+      "date": "2025-10-08 (effective)",
+      "url": "https://www.anthropic.com/legal/consumer-terms",
+      "why": "The record's link points only at the Commercial Terms; adding this URL gives the consumer-side quote its own primary location."
+    },
+    "alt2": {
+      "title": "Updates to Consumer Terms and Privacy Policy",
+      "author": "Anthropic",
+      "publisher": "Anthropic, anthropic.com/news",
+      "date": "2025-08-28",
+      "url": "https://www.anthropic.com/news/updates-to-our-consumer-terms",
+      "why": "Primary announcement carrying the five-year and 30-day retention figures and the plan scope; worth its own URL in the record since the retention numbers rest on it."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "Record is accurate; add the Consumer Terms and the 28 Aug 2025 post as explicit URLs so each quoted figure has a fetchable home.",
+    "tag": "H"
+  },
+  {
+    "id": "src-directory",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebSearch returned the canonical URL; WebFetch https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory (200). Title 'Browse skills, connectors, and plugins in one directory', 'Updated: September 25, 2026'. Page: Customize in the left sidebar, Skills/Connectors/Plugins tabs, Discover tab; skills added from the directory are enabled by default and can be toggled off; directory-installed skills 'can be used but not edited' (download, modify, upload as your own); 'Clicking Connect on a service starts the authentication flow'; publishing to an org directory governed by Owners' Publishing setting (Open or Requires review) under Organization settings > Plugins & skills.",
+    "corrections": {
+      "link": "https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory",
+      "published": "not applicable (page shows Updated September 25, 2026)"
+    },
+    "claim_check": "Supported: three tabs, install/enable semantics, view-only directory skills, Connect starts authentication. NOT supported on the live page: 'organisation sharing being off by default'. The page describes a Publishing setting (Open / Requires review) and skill sharing with specific colleagues; it states no default. Session 0.1 only uses the Customize/Connectors route, which is fine; drop or re-source the 'off by default' sentence in scope.",
+    "alt1": {
+      "title": "Connectors, skills, and plugins (overview)",
+      "author": "Anthropic",
+      "publisher": "claude.com/docs",
+      "date": "n/a (live docs)",
+      "url": "https://claude.com/docs/extend/overview",
+      "why": "Fetched in full; cleaner conceptual explanation of connectors vs skills vs plugins and the Customize page, but lacks the view-only and publishing details."
+    },
+    "alt2": {
+      "title": "Skills overview",
+      "author": "Anthropic",
+      "publisher": "claude.com/docs",
+      "date": "n/a",
+      "url": "https://claude.com/docs/skills/overview.md",
+      "why": "Listed in the claude.com docs index (not fetched); covers finding and turning on skills; runner-up only."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fill the link and updated date, and remove the unsupported 'organisation sharing off by default' claim from scope.",
+    "tag": "H"
+  },
+  {
+    "id": "src-effort",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebSearch returned slug variants (…-change-the-model-effort-and-thinking-settings, …-changing-the-model-effort-and-thinking-settings); WebFetch https://support.claude.com/en/articles/8664678 (200). Title 'Change the model, effort, and thinking settings', 'Updated over 2 weeks ago'. Five effort levels: Low, Medium, High, Extra high (xhigh), Max. Effort selector on Haiku 5.5, Sonnet 5.5, Opus 5.5, Fable 5.1, Opus 5, Sonnet 5, Fable 5, Opus 4.7, Opus 4.6, Sonnet 4.6. xhigh 'Available on Opus 4.7 and newer models'. Thinking cannot be turned off on Opus 5 in the Claude app. Changes take effect starting with Claude's next response. Enterprise: a missing model or effort level may mean an administrator turned it off for your role.",
+    "corrections": {
+      "link": "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings",
+      "published": "not applicable (Updated over 2 weeks ago as of 2026-10-27)"
+    },
+    "claim_check": "All six scope claims supported verbatim or near-verbatim. Model list has grown since 2026-08-20 (5.5 family and Fable 5.1 now carry the selector); Appendix D6 wording 'current models' remains safe.",
+    "alt1": {
+      "title": "Using extended thinking",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 10574485",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/10574485-using-extended-thinking",
+      "why": "Returned by search alongside the effort article; the dedicated page for the thinking toggle, narrower than the current record."
+    },
+    "alt2": {
+      "title": "Models and effort levels (Claude Desktop on third-party clouds)",
+      "author": "Anthropic",
+      "publisher": "claude.com/docs",
+      "date": "n/a",
+      "url": "https://claude.com/docs/third-party/claude-desktop/models.md",
+      "why": "Listed in the docs index; describes default effort levels and per-model caps, but for the 3P desktop deployment rather than claude.ai; runner-up."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fill the canonical link; content fully supports the lesson.",
+    "tag": "H"
+  },
+  {
+    "id": "src-memory",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebSearch returned many slug variants of article 11817273; WebFetch https://support.claude.com/en/articles/11817273 (200). Live title 'Use Claude's chat search and memory to build on previous context', 'Updated this week'. Page: new experience 'saves memory as individual topics while you chat' (toggle 'Memory from chats' under Settings > Your Claude); legacy = summary synthesized every 24 hours, used by a small number of Team/Enterprise orgs; memory on by default for Free, Pro, Max; off for each Team/Enterprise member until turned on; never saved: government ID numbers, criminal history, financial account numbers, immigration status; per-chat Memory switch in the + menu before the first message; past-chat search paid plans only, appears as tool calls, scoped to outside projects or within one project; unavailable under Enterprise CMEK; incognito chats included in Team/Enterprise standard exports and retained at least 30 days for Owners; pause keeps memory but stops use, reset deletes permanently; deleting a chat does not delete memories generated from it; Enterprise org toggle off deletes all users' memory immediately; 'Legacy Team plans had no organization-level memory controls'.",
+    "corrections": {
+      "link": "https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context",
+      "published": "not applicable (Updated this week as of 2026-10-27)"
+    },
+    "claim_check": "Every scope and figures.session-0.1 claim is on the live page. Two drifts: (1) the toggle is now labelled 'Memory from chats' under Settings > Your Claude rather than Settings > Memory; (2) 'Team plans having no organisation-level memory controls' is now stated only for legacy Team plans; current Team Owners enable memory for the org. Also the legacy-memory export option expired 9 Sep 2026.",
+    "alt1": {
+      "title": "Bringing memory to teams (Claude blog)",
+      "author": "Anthropic",
+      "publisher": "claude.com/blog",
+      "date": "2025-09-11, updated 2025-10-23",
+      "url": "https://claude.com/blog/memory",
+      "why": "Primary launch announcement for the dates; not a substitute for the control-by-plan detail."
+    },
+    "alt2": {
+      "title": "Use incognito chats",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 12260368",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/12260368-use-incognito-chats",
+      "why": "Fetched; covers the incognito/export/30-day claims from the other side and is the better cite for section 07."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fill the link and update the two drifted phrasings (toggle location; Team controls now legacy-only).",
+    "tag": "H"
+  },
+  {
+    "id": "src-personalization",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebSearch returned the canonical URL; WebFetch https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features (200). Title 'Understanding Claude's personalization features', 'Updated this week'. Page: Instructions for Claude 'will be applied to all of your conversations with Claude' (Settings > Your Claude); project instructions apply only within that project; skills add behaviors on demand; projects available to free users, 'maximum of five'. Styles are not mentioned on the current page.",
+    "corrections": {
+      "link": "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features",
+      "published": "not applicable (Updated this week as of 2026-10-27)"
+    },
+    "claim_check": "Supported: account-wide instructions, project instructions, five projects on Free. NOT supported now: 'styles as a separate mechanism' (the page was rewritten; it now lists instructions, project instructions and skills). Session 0.1 and Appendix B4 do not depend on styles per used_for, so remove 'styles' from scope or re-source it.",
+    "alt1": {
+      "title": "How can I create and manage projects?",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 9519177",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects",
+      "why": "Fetched; the dedicated page for the five-project limit and project instructions; more precise for section 02."
+    },
+    "alt2": {
+      "title": "Use skills in Claude",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 12512180",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/12512180-use-skills-in-claude",
+      "why": "Fetched; the current page's third personalization mechanism is skills, and this is its primary article."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fill the link and drop 'styles' from scope; the rest is live.",
+    "tag": "H"
+  },
+  {
+    "id": "src-tools3",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebSearch returned the canonical URL; WebFetch https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research (200). Title 'When should I use web search, extended thinking, and research?', page date June 2, 2026. Quotes: 'Web search is best for straightforward, factual queries that can be answered with one or two tool calls.'; 'Research is optimal for comprehensive information gathering requiring five or more tool calls over 1-3 minutes.'; 'Combining extended thinking with research allows Claude to both plan its approach thoughtfully…'",
+    "corrections": {
+      "link": "https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research",
+      "published": "2026-06-02"
+    },
+    "claim_check": "All three scope figures appear verbatim. Note this is the article that carries the 2 June 2026 date; src-claude-research no longer shows one (see that record).",
+    "alt1": {
+      "title": "Use research on Claude",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 11088861",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/11088861-use-research-on-claude",
+      "why": "Fetched; the how-to companion (plans, + menu, limits); narrower than this record."
+    },
+    "alt2": {
+      "title": "Enable and use web search",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 10684626",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/10684626-enable-and-use-web-search",
+      "why": "Fetched; the web-search companion; together the three articles cover section 04."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fill the link and the 2026-06-02 date; content matches.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-threat",
+    "status": "VERIFIED",
+    "evidence": "WebFetch https://www.anthropic.com/threat-intelligence-report-september-2026 (200; 276K characters, first 200K read). Title 'Detecting and countering misuse of AI: September 2026'; compares itself to the March, August and November 2025 reports (fourth); covers activity disrupted December 2025 to August 2026; seven harm areas (cyber operations, influence operations, surveillance, scams and fraud, biological misuse, conventional weapons, illicit distillation); GTG-20006 described as a Russian state-nexus espionage actor consistent with public reporting on Midnight Blizzard; the fetch returned the fragment 'monitoring AI agents identified that any of their deployed malware was detected by a security product' verbatim, and the full sentence in the record was echoed verbatim by The Hacker News (search snippet). A companion /news/ URL (…/news/detecting-and-countering-misuse-of-ai-september-2026) returned 404; the report page is the canonical location.",
+    "corrections": {},
+    "claim_check": "Supported: fourth report, period, seven harm areas, GTG-20006 as Russian espionage actor, the rebuild-until-undetected sentence. Secondary coverage adds that more than 20 organizations appeared in the actor's planning or operations (not claimed by the lesson).",
+    "alt1": {
+      "title": "Anthropic Says Russian Hackers Used Claude AI to Automate Malware Evasion",
+      "author": "SecurityWeek",
+      "publisher": "securityweek.com",
+      "date": "2026-09",
+      "url": "https://www.securityweek.com/anthropic-says-russian-hackers-used-claude-ai-to-automate-malware-evasion/",
+      "why": "Independent trade-press confirmation of the same case; secondary, so a supplement for the H tag rather than a replacement (found via search, host not fetchable)."
+    },
+    "alt2": {
+      "title": "Russian State-Sponsored Hackers Use Claude to Rebuild Malware After Detection",
+      "author": "The Hacker News",
+      "publisher": "thehackernews.com",
+      "date": "2026-09-11",
+      "url": "https://thehackernews.com/2026/09/russian-state-sponsored-hackers-use.html",
+      "why": "Quotes the exact sentence the lesson rests on; useful second source, secondary."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary report exists at the stated URL with the stated content; two independent write-ups corroborate.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-pricing",
+    "status": "VERIFIED",
+    "evidence": "WebFetch https://claude.com/pricing (200, 2026-10-27). Free $0; Pro $20/month monthly or $17/month billed annually ($200 up front); Max from $100/month, 5x or 20x Pro usage ($100 and $200); Team 2-150 seats, Standard $25 monthly/$20 annual, Premium $125/$100, SSO, admin controls, enterprise search, 'Models are not trained on your content by default'; Enterprise $20/seat/month billed annually, 20-seat minimum, usage at API rates, role-based access, SCIM, audit logs, Compliance API, custom data retention, HIPAA-ready; domain capture listed as not in Team. API: Haiku 5.5 $0.10 in/$0.50 out up to 100K tokens ($0.50/$2.50 above), Fable 5.1 $10/$50. Free includes Sonnet and Haiku; Pro adds Opus with Fable through usage credits; Max and Team Premium list Fable at 50% of weekly limits. WebFetch https://support.claude.com/en/articles/11049741 'What is the Max plan?': Max 5x $100, Max 20x $200, 5x/20x Pro per-session allowance. WebFetch Team plan article 9266767 and Enterprise plan article 9797531 (Updated September 1, 2026; self-serve minimum 20, sales-assisted 50).",
+    "corrections": {},
+    "claim_check": "Every figure in scope and in the per-session figures lines matches the live page. Minor drift: the Max 20x figure now also appears on the pricing page itself (retrieval_note said it was only on the Help Center). Enterprise SSO/SAML and domain capture are implied by the Team 'not included' list rather than spelled out in the Enterprise column; harmless. Moving target: Max/Team Premium now describe Fable as 'limited to 50% of weekly limits', a nuance for section 00's 'include Fable'.",
+    "alt1": {
+      "title": "What is the Team plan?",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 9266767",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/9266767-what-is-the-team-plan",
+      "why": "Fetched; carries the Standard/Premium seat prices and 2-150 range in prose; good second source for the Team figures."
+    },
+    "alt2": {
+      "title": "What is the Enterprise plan?",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 9797531",
+      "date": "2026-09-01 (Updated)",
+      "url": "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan",
+      "why": "Fetched; gives the 20 vs 50 seat minimums and usage-at-API-rates rule but no dollar figure; supplement for the Enterprise rung."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Pricing page still states every number the lessons use; the two plan articles are useful second sources.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-dpa",
+    "status": "VERIFIED",
+    "evidence": "WebFetch https://www.anthropic.com/legal/data-processing-addendum (200). Effective February 24, 2025. G.1 'without undue delay, but in any event within 48 hours' after becoming aware of a Security Breach; H.1 'Within thirty (30) days of the date of termination or expiration of the Agreement' return or self-service export on request and delete all copies; F.1 audit reports or certificates such as a SOC 2 report 'to the extent available', current certifications at trust.anthropic.com; C.3 reasonable notice of a new Subprocessor and objection 'within fifteen (15) days of the date of such notice'; B.2 processing only to provide or maintain the Services and on the Customer's documented instructions.",
+    "corrections": {},
+    "claim_check": "All five clauses present with the stated section identifiers and figures. Note C.3 gives no day count for the notice itself, only the 15-day objection window, which is how the record phrases it.",
+    "alt1": {
+      "title": "Commercial Terms of Service, Section C (Data Privacy)",
+      "author": "Anthropic",
+      "publisher": "Anthropic, anthropic.com/legal",
+      "date": "2025-06-17 (effective)",
+      "url": "https://www.anthropic.com/legal/commercial-terms",
+      "why": "Fetched; the contract that incorporates the DPA by reference; needed context, not a replacement."
+    },
+    "alt2": {
+      "title": "How long do you store my organization's data?",
+      "author": "Anthropic",
+      "publisher": "Anthropic Privacy Center, article 7996866",
+      "date": "n/a",
+      "url": "https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data",
+      "why": "Returned by search (privacy.claude.com not fetchable from this build); the plain-language retention statement that pairs with H.1; weaker because unfetched."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary contract text supports every clause quoted.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-certs",
+    "status": "VERIFIED",
+    "evidence": "WebFetch https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained (200). Title 'What Certifications has Anthropic obtained?', Updated March 16, 2026; scope is commercial products, not consumer plans. Lists HIPAA-ready configuration with BAA, ISO 27001:2022, ISO/IEC 42001:2023, SOC 2 Type I and Type II; directs to the Trust Portal (trust.anthropic.com) to request documents. WebFetch https://support.claude.com/en/articles/13296973 'HIPAA-ready Enterprise plans' (Updated this week): Enterprise-only, click-to-accept BAA, 'Only the Primary Owner can accept the BAA and enable HIPAA'. WebFetch https://www.anthropic.com/news/anthropic-achieves-iso-42001-certification-for-responsible-ai (January 13, 2025). trust.anthropic.com is ENOTFOUND; search confirms the Trust Center page exists.",
+    "corrections": {},
+    "claim_check": "All claims supported; the 'Enterprise plans, accepted by the primary owner' detail lives in the HIPAA article the retrieval_note names, not in the certifications article itself.",
+    "alt1": {
+      "title": "HIPAA-ready Enterprise plans",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 13296973",
+      "date": "n/a (Updated this week)",
+      "url": "https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans",
+      "why": "Fetched; the primary page for the BAA and Primary-Owner acceptance; should be cited explicitly for those two claims."
+    },
+    "alt2": {
+      "title": "Anthropic achieves ISO 42001 certification for responsible AI",
+      "author": "Anthropic",
+      "publisher": "Anthropic, anthropic.com/news",
+      "date": "2025-01-13",
+      "url": "https://www.anthropic.com/news/anthropic-achieves-iso-42001-certification-for-responsible-ai",
+      "why": "Fetched; names the certifying body (Schellman, ANAB-accredited); dated primary announcement for the ISO 42001 rung."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "Record is accurate; add the HIPAA article URL for the BAA/primary-owner claims and the ISO 42001 post with its corrected URL.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-threat-aug25",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch https://www.anthropic.com/news/detecting-countering-misuse-aug-2025 (200), dated August 27, 2025, part of the August 2025 Threat Intelligence Report; the 'vibe hacking' section: at least 17 distinct organizations, healthcare, emergency services, government and religious institutions; the actor threatened to expose stolen data rather than encrypt it, 'ransoms that sometimes exceeded $500,000'. The page links the full PDF at https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf (host not fetchable from this build). WebSearch (thehackernews.com) returned the 2025-08 coverage https://thehackernews.com/2025/08/anthropic-disrupts-ai-powered.html.",
+    "corrections": {
+      "scope_quote": "The page's wording is 'ransoms that sometimes exceeded $500,000' (demands framed as ransoms), not 'Ransom demands sometimes exceeded $500,000.'; adjust the quotation marks or paraphrase."
+    },
+    "claim_check": "Numbers and sectors supported. The quoted sentence in scope is a close paraphrase, not the page's exact words; since EDITORIAL rules on quotation apply, either quote the fragment exactly or drop the quotation marks. The fetcher reported the section heading \"'Vibe hacking': how cybercriminals used Claude Code to scale a data extortion operation\" as a title; the post's URL and date match the record's title, so no title change is recommended.",
+    "alt1": {
+      "title": "Threat Intelligence Report: August 2025 (full PDF)",
+      "author": "Anthropic",
+      "publisher": "Anthropic, www-cdn.anthropic.com",
+      "date": "2025-08-27",
+      "url": "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf",
+      "why": "Linked from the fetched news post; the full report with case detail; more primary but a CDN hash URL is less durable and was not fetchable here."
+    },
+    "alt2": {
+      "title": "Anthropic Disrupts AI-Powered Cyberattacks Automating Theft and Extortion Across Critical Sectors",
+      "author": "The Hacker News",
+      "publisher": "thehackernews.com",
+      "date": "2025-08",
+      "url": "https://thehackernews.com/2025/08/anthropic-disrupts-ai-powered.html",
+      "why": "Independent coverage of the same 17-organization case; secondary, a supplement only."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fix the quotation to the page's exact wording; otherwise the record stands.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-injection",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch https://www.anthropic.com/news/prompt-injection-defenses (200): live title 'Mitigating prompt injections in browser use', November 24, 2025; text: 'A 1% attack success rate—while a significant improvement—still represents meaningful risk.' and 'No browser agent is immune to prompt injection…'. It does not contain the 'Claude will follow commands' sentence or the 'asks users before…' sentence. WebFetch https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool (200): 'In some circumstances, Claude follows commands found in content even when they conflict with your instructions.' WebFetch https://www.anthropic.com/news/claude-for-chrome redirected (308) to https://claude.com/blog/claude-for-chrome, fetched: 'Piloting Claude in Chrome', August 25, 2025 (updated Nov 24 and Dec 18, 2025): 'Claude asks users before taking high-risk actions like publishing, purchasing, or sharing personal data.'; 23.6% to 11.2% attack success figures. The marketing page https://claude.com/claude-for-chrome now says 'Claude asks before financial, personal, or work-critical actions.'",
+    "corrections": {
+      "title": "Mitigating prompt injections in browser use",
+      "docs_quote": "Platform docs now read 'Claude follows commands found in content even when they conflict with your instructions' (present tense, prefixed 'In some circumstances'), not 'Claude will follow commands…'"
+    },
+    "claim_check": "The 1% sentence is on the cited page. The other two quotations are accurate to their own pages but those pages are not in the record's link field: the docs quote is on the computer-use tool page (tense differs slightly) and the 'asks users before taking high-risk actions' quote is on the Chrome pilot post at claude.com/blog/claude-for-chrome. Appendix D4's point (warning vs approval step) is supported once all three URLs are cited.",
+    "alt1": {
+      "title": "Piloting Claude in Chrome",
+      "author": "Anthropic",
+      "publisher": "claude.com/blog (redirect target of anthropic.com/news/claude-for-chrome)",
+      "date": "2025-08-25, updated 2025-12-18",
+      "url": "https://claude.com/blog/claude-for-chrome",
+      "why": "Fetched; carries the exact 'asks users before taking high-risk actions' sentence and the 23.6%/11.2% figures; should be cited by URL."
+    },
+    "alt2": {
+      "title": "Computer use tool (security section)",
+      "author": "Anthropic",
+      "publisher": "platform.claude.com docs",
+      "date": "n/a (live docs)",
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool",
+      "why": "Fetched; carries the 'follows commands found in content' warning and the human-confirmation precautions; should be cited by URL."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Correct the title, add the two companion URLs, and align the docs quotation to the live tense.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-memory",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch https://claude.com/blog/memory (200): HTML title 'Bringing memory to teams | Claude by Anthropic' (fetcher also reported a heading 'Bringing memory to Claude'); September 11, 2025, with an update dated October 23, 2025 'Memory is now rolling out to Pro and Max plan users'; memory launched for Team and Enterprise, admins can disable; describes a memory summary you can view and edit, project-level memory, and generating memory from past chats. The page does not say memory is saved as topics as you chat. WebFetch support article 11817273 (see src-memory) says 'Claude saves memory as individual topics while you chat' and contrasts it with the legacy 24-hour summary.",
+    "corrections": {
+      "title": "Bringing memory to teams (page title; the record's 'at work' is not on the page)"
+    },
+    "claim_check": "Dates supported (11 Sep 2025 Team/Enterprise; 23 Oct 2025 Pro/Max). The 'topics as you chat rather than summarising afterwards' claim is not on the blog; it is on the help article, which the record's retrieval_note already acknowledges. Appendix D6 should attribute that sentence to src-memory, and note the blog itself describes the older summary model.",
+    "alt1": {
+      "title": "Use Claude's chat search and memory to build on previous context",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 11817273",
+      "date": "n/a (Updated this week)",
+      "url": "https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context",
+      "why": "Fetched; the only page that states the topics-as-you-chat behaviour; cite it for that claim."
+    },
+    "alt2": {
+      "title": "Use incognito chats",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 12260368",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/12260368-use-incognito-chats",
+      "why": "Fetched; the blog's incognito launch item has its durable home here; runner-up."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fix the title and move the topics-as-you-chat attribution to src-memory; keep the blog for the launch dates.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-deprecation-commitments",
+    "status": "VERIFIED",
+    "evidence": "WebFetch https://www.anthropic.com/research/deprecation-commitments (200): 'Commitments on model deprecation and preservation', November 4, 2025; 'committing to preserving the weights of all publicly released models' and models in significant internal use for at least the company's existence; serving cost 'scales roughly linearly with the number of models we serve'; 'retiring past models is currently necessary for making new models available and advancing the frontier'; post-deployment report preserved with the weights; interviews with the model about its development and deployment. WebFetch https://platform.claude.com/docs/en/about-claude/model-deprecations (200) links to the commitments page and states Anthropic 'has committed to long-term preservation of model weights'.",
+    "corrections": {},
+    "claim_check": "All four scope statements present on the page in near-exact wording.",
+    "alt1": {
+      "title": "Model deprecations",
+      "author": "Anthropic",
+      "publisher": "platform.claude.com docs",
+      "date": "n/a (live; last entry 2026-09-30)",
+      "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+      "why": "Fetched; the operational page (60-day notice, status table, 'Deprecation downsides and mitigations') that cites the commitments; good supplement for §02's retirement point."
+    },
+    "alt2": {
+      "title": "Migration guides",
+      "author": "Anthropic",
+      "publisher": "platform.claude.com docs",
+      "date": "n/a",
+      "url": "https://platform.claude.com/docs/en/about-claude/models/migration-guide",
+      "why": "Linked from the deprecations page (not fetched); runner-up, relevant only if the lesson discusses moving workloads."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary research-page source matches; docs page corroborates.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-watermark",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch https://www.anthropic.com/news/claude-text-watermark (200): title 'How Claude's text watermarking works', Aug 14, 2026, 'Updated Sep 1, 2026: Provided up to date information on the watermarking detection API.'; 'Nothing is added to the text and there are no hidden characters'; 'Watermarking carries no identifying information and can't be traced to a specific person, organization, or chat'; a version of the SynthID-Text approach Google DeepMind published in a 2024 Nature paper (links https://www.nature.com/articles/s41586-024-08025-4); adopted to comply with the EU AI Act, signed the EU Code of Practice in July 2026 with around 190 signatories (links the Commission's 'Strong backing' page); C2PA credential on .png/.jpg/.svg with no identifying information. The detection API link is a Google Form, not a docs page.",
+    "corrections": {
+      "title": "How Claude's text watermarking works"
+    },
+    "claim_check": "All scope claims supported verbatim. Title differs by one word ('watermarking'). The page frames marked output as from 'future Claude models', consistent with the record's note that the help article keeps the per-model list.",
+    "alt1": {
+      "title": "Scalable watermarking for identifying large language model outputs (SynthID-Text)",
+      "author": "Dathathri et al., Google DeepMind",
+      "publisher": "Nature, vol. 634 (24 Oct 2024)",
+      "date": "2024-10",
+      "url": "https://www.nature.com/articles/s41586-024-08025-4",
+      "why": "Linked from the Anthropic post and returned by search; the primary method paper; more authoritative on how the watermark works, says nothing about Claude (host not fetchable here)."
+    },
+    "alt2": {
+      "title": "Strong backing for the Code of Practice on Transparency of AI-generated Content",
+      "author": "European Commission",
+      "publisher": "digital-strategy.ec.europa.eu",
+      "date": "2026",
+      "url": "https://digital-strategy.ec.europa.eu/en/news/strong-backing-code-practice-transparency-ai-generated-content",
+      "why": "Linked from the Anthropic post and returned by search; the regulator's signatory announcement; supplement for the EU rule (not fetchable here)."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Correct the title; everything else is live and matches.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-privacy-training",
+    "status": "UNREACHABLE",
+    "evidence": "WebFetch of https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training and of article 10023548 failed three times (getaddrinfo ENOTFOUND privacy.claude.com), despite the coordinator's host list. WebSearch with allowed_domains privacy.claude.com returned the exact URL and title 'Is my data used for model training?' plus 'How long do you store my data?' (https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data); snippets: 'If you allow us to use your chats or coding sessions to improve Claude, we may retain your data in a de-identified format for up to 5 years in our model training pipelines'; deleted chats 'Removed from your chat history immediately; Deleted from our back-end storage systems within 30 days'; flagged 'inputs and outputs for up to 2 years and trust and safety classification scores for up to 7 years'; thumbs feedback 'store the entire related conversation... for up to 5 years'; incognito chats not used even if Model Improvement is on. WebFetch https://www.anthropic.com/legal/privacy (effective Sep 10, 2026): training 'unless you opt out through your account settings'; deleted conversations removed from back-end within 30 days.",
+    "corrections": {
+      "supplementary_link": "https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data (retention periods article; the 30-day figure is phrased there as deletion of deleted chats within 30 days)"
+    },
+    "claim_check": "Existence confirmed by search (exact URL/title). Snippets support five years (training on), 30 days, 2-year flagged, 7-year classifier scores, 5-year feedback, Free/Pro/Max scope. Nuance: the 30-day figure on the privacy pages is the back-end deletion window for deleted chats, which the Privacy Policy (10 Sep 2026) also states; the 'if training is off, 30 days' framing comes from the 28 Aug 2025 news post. The training default is not stated on the article, as the record says; the Privacy Policy's 'unless you opt out' wording is the primary text for default-on. Tag M because the page body could not be fetched.",
+    "alt1": {
+      "title": "How long do you store my data?",
+      "author": "Anthropic",
+      "publisher": "Anthropic Privacy Center, article 10023548",
+      "date": "n/a",
+      "url": "https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data",
+      "why": "Returned by search with the retention snippets; the dedicated retention page and the better cite for the 5-year/30-day/2-year/7-year figures (unfetched here)."
+    },
+    "alt2": {
+      "title": "Privacy Policy",
+      "author": "Anthropic",
+      "publisher": "Anthropic, anthropic.com/legal",
+      "date": "2026-09-10 (effective)",
+      "url": "https://www.anthropic.com/legal/privacy",
+      "why": "Fetched in full; binding text for the opt-out default and the 30-day back-end deletion; lacks the five-year training figure."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "Keep the article (it exists and the search snippets match) but add the retention article and the Privacy Policy as fetchable supplements; verifying by opening privacy.claude.com in a browser would lift this to H.",
+    "tag": "M"
+  },
+  {
+    "id": "src-claude-skills-use",
+    "status": "VERIFIED",
+    "evidence": "WebFetch https://support.claude.com/en/articles/12512180-use-skills-in-claude (200): 'Use skills in Claude', 'Updated this week'; available on Free, Pro, Max, Team and Enterprise (also Claude Code and API beta); upload steps: skill folder, ZIP, Customize > Skills, '+' then '+ Create skill', 'Upload a skill'; code execution/file creation under Settings > Capabilities on Free/Pro/Max (may be labelled 'Create and edit files'), and Organization settings > Plugins & skills, Policy tab, on Team/Enterprise.",
+    "corrections": {},
+    "claim_check": "All scope claims supported. One label drift: the capability may now read 'Create and edit files' in the updated Settings layout.",
+    "alt1": {
+      "title": "Browse skills, connectors, and plugins in one directory",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 14328846",
+      "date": "2026-09-25 (Updated)",
+      "url": "https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory",
+      "why": "Fetched; covers directory-installed skills (view-only) and publishing; complements the upload steps."
+    },
+    "alt2": {
+      "title": "Skills overview",
+      "author": "Anthropic",
+      "publisher": "claude.com/docs",
+      "date": "n/a",
+      "url": "https://claude.com/docs/skills/overview.md",
+      "why": "Listed in the docs index (not fetched); runner-up for the conceptual framing."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Live page still supports section 06 step by step.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-web-search",
+    "status": "VERIFIED",
+    "evidence": "WebFetch https://support.claude.com/en/articles/10684626-enable-and-use-web-search (200): 'Enable and use web search', 'Updated over 2 weeks ago'; models: Haiku 5.5, Sonnet 5.5, Opus 5.5, Fable 5.1, Opus 5, Sonnet 5, Fable 5, Opus 4.8, Opus 4.7, Sonnet 4.6, Opus 4.6, Haiku 4.5; new Claude experience has no web search toggle, Claude searches when it determines it will help; '+' button > Web search elsewhere; every response using web search includes citations; Team/Enterprise Owner or Primary Owner enables it in Organization settings > Capabilities first.",
+    "corrections": {},
+    "claim_check": "All five scope claims supported.",
+    "alt1": {
+      "title": "When should I use web search, extended thinking, and research?",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 11095361",
+      "date": "2026-06-02",
+      "url": "https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research",
+      "why": "Fetched; the when-to-use guidance that section 04 pairs with this how-to."
+    },
+    "alt2": {
+      "title": "Use research on Claude",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 11088861",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/11088861-use-research-on-claude",
+      "why": "Fetched; states research requires web search on; companion."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Live page matches.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-research",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch https://support.claude.com/en/articles/11088861-use-research-on-claude (200): 'Use research on Claude', page shows 'Updated over a week ago' and no calendar date; research only on Pro, Max, Team, Enterprise; on web, Claude Desktop and Claude Mobile; '+' button > Research, blue indicator; web search must be on; same limits as standard conversations but 'research sessions can use up your limits faster'.",
+    "corrections": {
+      "published": "not applicable (page shows 'Updated over a week ago' on 2026-10-27; the 2 June 2026 date belongs to article 11095361, src-tools3)"
+    },
+    "claim_check": "All scope claims supported. The 2026-06-02 'published' value is not on this page any more; the sibling article 11095361 carries that date, so the record most likely absorbed it from there.",
+    "alt1": {
+      "title": "When should I use web search, extended thinking, and research?",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 11095361",
+      "date": "2026-06-02",
+      "url": "https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research",
+      "why": "Fetched; carries the dated, quantified guidance (five or more tool calls); the stronger cite for 'when to use research'."
+    },
+    "alt2": {
+      "title": "Enable and use web search",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 10684626",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/10684626-enable-and-use-web-search",
+      "why": "Fetched; prerequisite feature; companion."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Change published to not applicable; claims are live.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-incognito",
+    "status": "VERIFIED",
+    "evidence": "WebFetch https://support.claude.com/en/articles/12260368-use-incognito-chats (200): 'Use incognito chats', 'Updated over 3 weeks ago'; temporary conversations not saved to chat history or memory; all plans; ghost icon in the upper right of a new chat outside a project (not available inside projects); not used for model training; retained for 30 days by default, Enterprise organizations can set longer retention under custom data retention; included in organizational data exports available to Owners and in the Enterprise Compliance API.",
+    "corrections": {},
+    "claim_check": "All scope claims supported. Precision note: the longer-retention clause is tied to Enterprise custom retention settings; Team exports are included per the page's 'Team and Enterprise' export statement.",
+    "alt1": {
+      "title": "Use Claude's chat search and memory to build on previous context",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 11817273",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context",
+      "why": "Fetched; restates incognito exclusion from memory and search and the Owner 30-day retention; second source."
+    },
+    "alt2": {
+      "title": "Is my data used for model training?",
+      "author": "Anthropic",
+      "publisher": "Anthropic Privacy Center, article 10023580",
+      "date": "n/a",
+      "url": "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training",
+      "why": "Search snippet: 'Your Incognito chats are not used to improve Claude, even if you have enabled Model Improvement'; supplement for the no-training claim (unfetched)."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Live page matches.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-projects",
+    "status": "VERIFIED",
+    "evidence": "WebFetch https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects (200): 'How can I create and manage projects?', 'Updated over a week ago'; projects available to all users including free, free users up to five; Projects in the left menu or claude.ai/projects, '+ New Project'; Claude 'will not have access to these details' (name and description); 'Set project instructions' applies to all chats in the project; context not shared across chats unless added to project knowledge.",
+    "corrections": {},
+    "claim_check": "All scope claims supported.",
+    "alt1": {
+      "title": "What are projects?",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 9517075",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/9517075-what-are-projects",
+      "why": "Fetched; the conceptual companion (workspaces, knowledge base, five on Free, RAG on paid plans)."
+    },
+    "alt2": {
+      "title": "Retrieval augmented generation (RAG) for projects",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 11473015",
+      "date": "2026-09-10 (Updated)",
+      "url": "https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects",
+      "why": "Fetched; explains what happens when knowledge exceeds the context window; supplement."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Live page matches.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-connectors",
+    "status": "VERIFIED",
+    "evidence": "WebFetch https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities (200): 'Use connectors to extend Claude's capabilities', 'Updated over a week ago'; connectors let Claude access apps and services, retrieve data and take actions (Linear issues, Slack messages, Drive search); Claude inherits each person's permissions from the connected service; connecting 'grants Claude permission to access and potentially modify data' and 'Only connect services you trust and need for your workflows'; on Team/Enterprise an Owner or Primary Owner must enable a connector first, each person still authenticates; enterprise-managed auth in beta.",
+    "corrections": {},
+    "claim_check": "All scope claims supported. Added nuance: custom connectors using a shared credential reach whatever that credential can, and enterprise-managed auth (beta) can authorize once for everyone.",
+    "alt1": {
+      "title": "Get started with connectors",
+      "author": "Anthropic",
+      "publisher": "claude.com/docs",
+      "date": "n/a",
+      "url": "https://claude.com/docs/connectors/getting-started.md",
+      "why": "Listed in the docs index and linked from the fetched extend overview (not fetched itself); the developer-docs version of the same steps."
+    },
+    "alt2": {
+      "title": "Browse skills, connectors, and plugins in one directory",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 14328846",
+      "date": "2026-09-25",
+      "url": "https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory",
+      "why": "Fetched; the catalogue route (Customize > Connectors > Connect) section 05 teaches."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Live page matches.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-prompting-101",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch of youtube.com fails (ENOTFOUND). WebSearch with allowed_domains youtube.com returned the exact URL https://www.youtube.com/watch?v=ysPbXH0LpIE with the title 'Prompting 101' (and a sibling 'Prompting for Agents' https://www.youtube.com/watch?v=XSZP9GhhuAc). Extended search: presented at Code w/ Claude, San Francisco, May 22, 2025, speakers Hannah Moran and Christian Ryan (Applied AI, Anthropic); a transcript index lists 24:49; third-party write-ups call it the 24-minute official Anthropic video.",
+    "corrections": {
+      "published": "Presented 2025-05-22 at Code w/ Claude; YouTube upload date not confirmed (record's 2025-07-31 unverified)",
+      "title": "Prompting 101 | Code w/ Claude (video, about 25 minutes)",
+      "author": "Anthropic (Hannah Moran and Christian Ryan)"
+    },
+    "claim_check": "The video exists at the stated id with the stated title; the course only assigns it as optional viewing, so no page claim is at risk. The 2025-07-31 date could not be confirmed from any surface; the event date is 22 May 2025.",
+    "alt1": {
+      "title": "Prompt engineering overview",
+      "author": "Anthropic",
+      "publisher": "platform.claude.com docs",
+      "date": "n/a (live docs)",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview",
+      "why": "Fetched; durable text version of the same structure guidance, pointing to the living 'Prompting best practices' page; better as an assigned reading, worse as a video."
+    },
+    "alt2": {
+      "title": "Prompting for Agents | Code w/ Claude",
+      "author": "Anthropic",
+      "publisher": "YouTube",
+      "date": "2025-05-22 (event)",
+      "url": "https://www.youtube.com/watch?v=XSZP9GhhuAc",
+      "why": "Returned by the same domain-restricted search; the companion talk from the same event; runner-up only."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "The link resolves to the right video; replace the unverified upload date with the event date and raise confidence from L to M.",
+    "tag": "M"
+  },
+  {
+    "id": "src-claude-projects-rag",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects (200): 'Retrieval augmented generation (RAG) for projects', Updated September 10, 2026; available on Pro, Max, Team and Enterprise; activates automatically when project knowledge approaches or exceeds the context window limit, with a visual indicator, reverting if knowledge drops below the threshold; up to 10x more content; a project knowledge search tool retrieves the most relevant parts; works with web search, extended thinking and Research. WebFetch https://support.claude.com/en/articles/9517075-what-are-projects (200): 'What are projects?', 'Updated over a week ago'; RAG on paid plans; 'seamlessly enables RAG mode to expand capacity by up to 10x'.",
+    "corrections": {
+      "published": "not applicable (RAG article shows Updated September 10, 2026)",
+      "link_companion": "https://support.claude.com/en/articles/9517075-what-are-projects"
+    },
+    "claim_check": "Both quoted sentences in the retrieval_note are on the live page in substance ('RAG for projects is available on paid plans'; activates automatically near the context limit). Companion article confirmed.",
+    "alt1": {
+      "title": "What are projects?",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 9517075",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/9517075-what-are-projects",
+      "why": "Fetched; already the second half of the reading; give it its own URL in the record."
+    },
+    "alt2": {
+      "title": "How can I create and manage projects?",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center, article 9519177",
+      "date": "n/a",
+      "url": "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects",
+      "why": "Fetched; the how-to companion; runner-up."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Record the 10 Sep 2026 update date and the companion URL; content matches.",
+    "tag": "H"
+  }
+]
