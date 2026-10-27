@@ -142,7 +142,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `riskGap` | 65 |
 | `tomAge` | 61 |
 | `emmaAge` | 58 |
-| `davidRiskScore` | 48 |
+| `davidRiskScore` | 49 |
 | `megAge` | 44 |
 | `megRiskScore` | 25 |
 | `earlyReduction` | 17 |
@@ -158,8 +158,8 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `travel` | 7 |
 | `asOfDate` | 7 |
 | `ipsEquity` | 7 |
-| `megApplicableAge` | 4 |
 | `tomShort` | 3 |
+| `megApplicableAge` | 3 |
 | `ryanShort` | 2 |
 | `davidAge` | 2 |
 | `ipsDate` | 2 |

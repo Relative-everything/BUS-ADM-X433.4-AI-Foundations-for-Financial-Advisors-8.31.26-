@@ -27,7 +27,7 @@ never-fabricate rule exists to prevent.
 | `last_verified` **EMPTY** | **140** |
 | `last_verified` populated | 1 |
 | `last_verified` *not applicable* (synthetic or fabricated) | 3 |
-| References standing behind an EMPTY `last_verified` | **584** of 704 |
+| References standing behind an EMPTY `last_verified` | **585** of 705 |
 | Moving targets | 65 |
 | Lock | notarised, digest `03d5867f4f6423ac` |
 
@@ -59,8 +59,8 @@ Each one cites the evidence in the repository that records the confirmation.
 | 12 | `src-models` | Models overview | **EMPTY** | 2026-10-27 | 12 | yes | case-1 `#built` · case-2 `#built` · case-3 `#built` · case-4 `#built` · case-5 `#built` · S0.1 `#s1` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag`×2 · S4 `#sCR` |
 | 13 | `src-claude-privacy-training` | Is my data used for model training? | **EMPTY** | 2026-10-11 | 11 | yes | case-1 `#built` · case-4 `#next` · S0.1 `#s0`×3 · S0.1 `#s11` · S4 `#s3`×2 · S4 `#sCR`×2 · S5 `#s0` |
 | 14 | `src-context-windows` | Context windows | **EMPTY** | 2026-09-13 | 11 | yes | S0.1 `#s1` · S0.1 `#s10` · S1 `#s1` · S1 `#s5`×2 · S2 `#s0` · S2 `#s3` · S3 `#sRag`×2 · S4 `#sWS` · S4 `#sCR` |
-| 15 | `src-finra2026` | 2026 FINRA Annual Regulatory Oversight Report | **EMPTY** | **none** | 9 | no | S3 `#s16` · S4 `#s1`×2 · S4 `#s7`×3 · S4 `#sAud`×2 · S4 `#sCR` |
-| 16 | `src-memory` | Use Claude's chat search and memory to build on previous context | **EMPTY** | 2026-10-27 | 9 | yes | S0.1 `#s1` · S0.1 `#s7` · S0.1 `#s8`×6 · S2 `#s3` |
+| 15 | `src-memory` | Use Claude's chat search and memory to build on previous context | **EMPTY** | 2026-10-27 | 10 | yes | S0.1 `#s1` · S0.1 `#s7` · S0.1 `#s8`×6 · S2 `#s3` · S4 `#sCR` |
+| 16 | `src-finra2026` | 2026 FINRA Annual Regulatory Oversight Report | **EMPTY** | **none** | 9 | no | S3 `#s16` · S4 `#s1`×2 · S4 `#s7`×3 · S4 `#sAud`×2 · S4 `#sCR` |
 | 17 | `src-anthropic-retention` | API and data retention | **EMPTY** | 2026-10-27 | 8 | yes | S1 `#(footer)` · S4 `#(footer)` · S4 `#s3`×2 · S4 `#s4` · S4 `#sCR`×3 |
 | 18 | `src-finra2409` | Regulatory Notice 24-09 | **EMPTY** | **none** | 8 | no | S1 `#s14`×2 · S4 `#s1`×3 · S4 `#s7` · S4 `#s9` · S4 `#sCR` |
 | 19 | `src-kitces-notetakers` | Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends | **EMPTY** | **none** | 8 | no | S2 `#s12` · S3 `#s9` · S3 `#s10`×2 · S3 `#s11`×2 · S3 `#s16`×2 |
@@ -211,8 +211,8 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-models` | https://platform.claude.com/docs/en/models/overview |
 | `src-claude-privacy-training` | https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training |
 | `src-context-windows` | https://platform.claude.com/docs/en/build-with-claude/context-windows |
-| `src-finra2026` | https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report |
 | `src-memory` | https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context |
+| `src-finra2026` | https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report |
 | `src-anthropic-retention` | https://platform.claude.com/docs/en/manage-claude/api-and-data-retention |
 | `src-finra2409` | https://www.finra.org/rules-guidance/notices/24-09 |
 | `src-kitces-notetakers` | https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/ |
@@ -398,13 +398,13 @@ privacy.claude.com is unreachable from the build container (FACTS claude-consume
 
 Fetched in full 2026-09-13 for the session-2 retrieval bridge. Three sentences carry the lesson's claims. On contents, everything in the request counts toward the context window, the system prompt, every message including tool results, images and documents, and the tool definitions. On accumulation, each turn's input phase contains all previous conversation history plus the current user message, and previous turns are preserved completely. On degradation, as token count grows, accuracy and recall degrade, a phenomenon the page names context rot. The page adds that chat interfaces such as claude.ai can manage the window on a rolling first-in, first-out basis. Merged on 2026-10-27 with src-anthropic-context, a second record of this same page that session-4 cited: its 2026-09-27 read opened the 100K (11 May 2023) and 200K (21 November 2023) announcements and the 1M announcement of 12 August 2025, now at claude.com/blog/1m-context; the 100K post writes 9K, not 9,000.
 
-### `src-finra2026`
-
-Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections.
-
 ### `src-memory`
 
 Audit 2026-10-27 (fetched in full): verified with corrections. All claims live; the toggle is now named Memory from chats under Settings, Your Claude; the no-organisation-controls statement for Team now applies to legacy Team plans only.
+
+### `src-finra2026`
+
+Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections.
 
 ### `src-anthropic-retention`
 

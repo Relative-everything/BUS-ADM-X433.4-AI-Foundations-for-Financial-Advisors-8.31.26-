@@ -1080,6 +1080,7 @@ used_for.session-0.1: what memory saves and who controls it by plan, what is nev
 last_retrieved.session-0.1: 2026-10-13
 figures.session-0.1: memory on by default for Free, Pro and Max and off for each member on Team and Enterprise until they turn it on; never saved: government ID numbers, criminal history, financial account numbers, immigration status; deleting a chat does not delete the memory made from it (read in full 2026-10-13)
 used_for.session-2: Appendix B4, memory as a source of run-to-run difference
+used_for.session-4: the memory flip card in the then-and-now deck: memory saved as a set of topics as you chat, on by default on consumer plans (Appendix D6)
 ```
 
 ## src-models

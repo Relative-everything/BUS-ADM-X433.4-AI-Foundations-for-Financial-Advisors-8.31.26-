@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**65 of 144 works are moving targets, feeding 348 of
-704 references.**
+**65 of 144 works are moving targets, feeding 349 of
+705 references.**
 
 
 ---
@@ -220,8 +220,8 @@ version string means the version is not tracking the data.
 | Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
-| References | 9 |
-| Feeds | S0.1 `#s1` · S0.1 `#s7` · S0.1 `#s8` ×6 · S2 `#s3` |
+| References | 10 |
+| Feeds | S0.1 `#s1` · S0.1 `#s7` · S0.1 `#s8` ×6 · S2 `#s3` · S4 `#sCR` |
 
 **Registered retrievals**
 
