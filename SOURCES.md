@@ -159,7 +159,7 @@ kind:           evidence
 moving_target:  true
 figure_class:   benchmark_index
 index_version:  divergent, see the three pulls below
-recheck_before: every teaching of session-1 §05, session-2 §02 and session-4 Appendix D3
+recheck_before: every teaching of session-1 Appendix A7, session-2 Appendix B8 and session-4 Appendix D6
 scope:          A live leaderboard of capability index scores and cost per index task. Every figure drawn from it is a moving target and none of them is stable between terms.
 used_for.session-1: the capability-against-price frontier and the tier comparison
 used_for.session-2: index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5; how the cost per index task is measured and the kinds of question the index draws on, described in general terms
@@ -210,7 +210,7 @@ confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   price
-recheck_before: every teaching of session-2 §02
+recheck_before: every teaching of session-2 Appendix B8
 scope:          Per-token input and output rates for the GPT-5.6 Sol, Terra and Luna tiers, as carried in session-2's MODELS array.
 used_for.session-2: the OpenAI rates behind the blended token price and the cost estimator
 ```
@@ -226,12 +226,12 @@ published:      not applicable
 last_retrieved: 2026-10-11
 last_verified:
 retrieval_note: Fetched in full 2026-08-25 for Phase 3.5, and again in full 2026-09-13 for the session-2 retrieval bridge; the table is unchanged for Sonnet 5, Opus 5 and Fable 5, and the FAQ gives the rule of thumb of one token to about 0.75 words. PULL-002 (session-2) carried a PARTIAL DATE, "2026-08", until the 2026-09-13 pull replaced it.
-content_changed: 2026-08-25. The page now states that Sonnet 5's $2 / $10 introductory pricing "is now the standard price" and that "the previously scheduled increase to $3/$15 per million input/output tokens on September 1, 2026 will not occur". The 2026-07-28 pull recorded the increase as scheduled. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-08-25 in Phase 3.6: session-1 §10's second Sonnet 5 table row and its "rises 50% tomorrow" note both carried the cancelled rise and are gone; the surviving row states $2 / $10 / $0.20 with no date on it. Three script arrays carried the same cancelled figure and were corrected with it — TIERS (§03 cost boxes), PATHS (§06 practice cost) and DPT (§06 document pass), the last two of which also printed the label "Sonnet 5 (from 1 Sep)" on screen. session-2 §02's "Sonnet 5 lists at $2 in / $10 out per million tokens" was UNAFFECTED and is the standing price. Phase 3.5 flagged rather than resolved; Phase 3.6 resolved on instruction.
+content_changed: 2026-08-25. The page now states that Sonnet 5's $2 / $10 introductory pricing "is now the standard price" and that "the previously scheduled increase to $3/$15 per million input/output tokens on September 1, 2026 will not occur". The 2026-07-28 pull recorded the increase as scheduled. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-08-25 in Phase 3.6: session-1 Appendix A7's second Sonnet 5 table row and its "rises 50% tomorrow" note both carried the cancelled rise and are gone; the surviving row states $2 / $10 / $0.20 with no date on it. Three script arrays carried the same cancelled figure and were corrected with it — TIERS (Appendix A2 cost boxes), PATHS (Appendix A8 practice cost) and DPT (Appendix A8 document pass), the last two of which also printed the label "Sonnet 5 (from 1 Sep)" on screen. session-2 Appendix B8's "Sonnet 5 lists at $2 in / $10 out per million tokens" was UNAFFECTED and is the standing price. Phase 3.5 flagged rather than resolved; Phase 3.6 resolved on instruction.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   price
-recheck_before: every teaching of session-1 §03, §05 and §06
+recheck_before: every teaching of session-1 Appendix A2, Appendix A7 and Appendix A8
 scope:          Per-token input and output rates by model, cache-hit and batch discounts.
 used_for.session-1: per-token rates for the four current Claude models, the five-to-one output-to-input price ratio, cache and batch discounts, and the Cole document-pass arithmetic
 used_for.session-2: the published rates behind the blended token price and the cost estimator, and the five-to-one output-to-input price ratio and the three current rates in the retrieval bridge
@@ -264,7 +264,7 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-2 §00
+recheck_before: every teaching of session-2 s0, the retrieval bridge (unnumbered)
 scope:          What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate.
 used_for.session-2: the retrieval bridge's context item, the definition of the window as all the text the model can reference when generating a response, the response itself included, and the two reasons behind its new-chat item
 used_for.session-1: the definition of the context window, all the text the model can reference when generating a response, the response itself included, which is not the box you type in (Appendix A2)
@@ -295,7 +295,7 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-2 §01
+recheck_before: every teaching of session-2 Appendix B4
 scope:          The Messages API reference as read on 2026-09-27: temperature is marked deprecated ("Models released after Claude Opus 4.6 do not support setting temperature. A value of 1.0 will be accepted for backwards compatibility, all other values will be rejected with a 400 error"); the effort parameter ("How much effort the model should put into its response") takes low, medium, high, xhigh or max; thinking can be enabled with a token budget, disabled, or adaptive, where the model decides.
 used_for.session-2: Appendix B4's list of what can differ between two runs and the third consequence card
 last_retrieved.session-2: 2026-09-13
@@ -456,26 +456,6 @@ scope:          Top-20-chunk retrieval failure rates — baseline 5.7%, contextu
 used_for.session-3: the measured retrieval failure rates, the 67% reduction, and the 200,000-token boundary condition
 ```
 
-## src-vectara
-
-```source
-title:          Introducing the next generation of Vectara's hallucination leaderboard
-author:         Vectara
-publisher:      Vectara
-link:           https://www.vectara.com/blog/introducing-the-next-generation-of-vectaras-hallucination-leaderboard
-published:      2025-11-19
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-retrieval_note: Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: www.vectara.com is blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited blog post itself was never loaded. A SURROGATE was reachable and was read: Vectara's own hallucination-leaderboard repository, fetched 2026-08-25, last updated 2026-05-11, HHEM-2.3, 123 models. Reading a surrogate is not retrieving the source.
-content_changed: 2026-08-25. THE MEASUREMENTS HOLD; THE SUPERLATIVE IS STALE. Every per-model rate session-3 quotes is still on the live board — Gemini-3-Pro 13.6%, Claude Sonnet 4.5 12.0%, GPT-OSS-120B 14.2%, DeepSeek-R1 11.3%, gemini-2.5-flash-lite 3.3%. But 3.3% is now RANK 3, not the floor; the floor is 1.8%. DEPENDENT LESSON ELEMENTS: session-3's HALL chart array labels 3.3% 'Best model, grounded' at :2010, and the toggle panel teaches the grounded range as '3.3% to above 13%' at :2139. Both are superlatives about a leaderboard that has moved past them; the numbers themselves are unchanged. Separately, this record's `scope` asserts a 32K-token length and a 3,792 / 3,939 complexity split that the reachable artifact does not state — it says '50 words to as long as 24K words' and gives no split. NOT silently updated.
-confidence:     H
-kind:           evidence
-moving_target:  true
-figure_class:   leaderboard_position
-recheck_before: every teaching of session-3 §05
-scope:          Dataset size, 32K-token length, domain mix, the low/high complexity split of 3,792 and 3,939, the leaderboard prompt, and the named per-model rates. A live leaderboard: the named model rates move.
-```
-
 ## src-kitces-notetakers
 
 ```source
@@ -564,7 +544,7 @@ confidence:     M
 kind:           background
 moving_target:  true
 figure_class:   cumulative_counter
-recheck_before: every teaching of session-3 Appendix C3
+recheck_before: every teaching of session-3 Appendix C7
 scope:          Note-taker adoption shares and category consolidation. Named for the reader; no page claim currently rests on it.
 ```
 
@@ -669,7 +649,7 @@ confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   cumulative_counter
-recheck_before: every teaching of session-2 §07
+recheck_before: every teaching of session-2 §05
 scope:          A running count of court cases in which fabricated citations were filed. Cumulative counts as reported through a secondary tracker; the number only ever rises.
 used_for.session-2: the cumulative count of filed fabricated citations
 ```
@@ -816,23 +796,6 @@ scope:          NARROW, AND IT WAS READ TOO WIDELY. The speech states that the c
 used_for.session-4: the open questions on responsibility and supervision for AI output (§02)
 ```
 
-## src-zhao
-
-```source
-title:          Invisible image watermarks are provably removable using generative AI
-author:         Zhao, X., Zhang, K., Su, Z., Vasan, S., Grishchenko, I., Kruegel, C., Vigna, G., Wang, Y.-X., & Li, L.
-publisher:      Advances in Neural Information Processing Systems (NeurIPS 2024)
-link:           https://arxiv.org/abs/2306.01953
-published:      2024
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-retrieval_note: THE PAPER ITSELF WAS NEVER LOADED, so last_retrieved is unresolved. arxiv.org, proceedings.neurips.cc, openreview.net, dl.acm.org and semanticscholar.org are all blocked by the build environment's egress policy (403 on CONNECT). Identity was established on 2026-08-25 from the AUTHORS' OWN REPOSITORY, github.com/XuandongZhao/WatermarkAttacker, which was reachable and returned the official BibTeX and a NeurIPS 2024 badge verbatim, corroborated by six independent search-index entries (arXiv 2306.01953, OpenReview 7hy5fy2OC6, NeurIPS 2024 poster 96428, an ACM DL DOI, a Semantic Scholar record, and the proceedings PDF path). A repository is not the paper and a search index is not a retrieval, so no date is written for either. [UNVERIFIED, needs source] for the proceedings volume and page range.
-confidence:     H
-kind:           evidence
-moving_target:  false
-scope:          The regeneration attack only: add random noise to destroy the embedded signal, then reconstruct the image with a denoiser or a pre-trained diffusion model. Formal proofs plus evaluation against pixel-level schemes; the removal guarantee is proved for watermarks that perturb the image within a bounded distance. It does NOT reach latent- or semantic-binding schemes, and it is NOT the source of the 2026 mutual-information result cited in the same sentence — that is arXiv 2602.20680, which has no key here and was not read.
-```
-
 ## src-owasp
 
 ```source
@@ -844,12 +807,12 @@ published:      [UNVERIFIED, needs source]
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
 retrieval_note: Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: owasp.org and genai.owasp.org are both blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited page itself was never loaded. A SURROGATE was reachable and was read: the GitHub repository backing that exact project page, fetched 2026-08-25. Reading a surrogate is not retrieving the source and no date is written for one.
-content_changed: 2026-08-25. THE SOURCE HAS MOVED. Established from the project's own GitHub repository, which the blocked page is built from. OWASP's own words describe the cited project page as maintained as a historical archive; active development moved to github.com/GenAI-Security-Project/GenAI-LLM-Top10 and a new edition, OWASP GenAI LLM Top 10 2026, was published 2026-08-04. DEPENDENT LESSON ELEMENTS: session-4 §05's claim that prompt injection is LLM01 SURVIVES the move intact — it is LLM01:2026 Prompt Injection in the new edition, and is now anchorable to a dated edition instead of an undated page. The CITATION does not survive: the `link` field points at an archive. The 'six of ten agentic categories' half of the same sentence is separately UNCONFIRMED — an Agentic Top 10 2026 v1.0 exists (published 2025-12-01) but sits on no reachable host and its category count was not read. NOT silently updated.
+content_changed: 2026-08-25. THE SOURCE HAS MOVED. Established from the project's own GitHub repository, which the blocked page is built from. OWASP's own words describe the cited project page as maintained as a historical archive; active development moved to github.com/GenAI-Security-Project/GenAI-LLM-Top10 and a new edition, OWASP GenAI LLM Top 10 2026, was published 2026-08-04. DEPENDENT LESSON ELEMENTS: session-4 Appendix D4's claim that prompt injection is LLM01 SURVIVES the move intact — it is LLM01:2026 Prompt Injection in the new edition, and is now anchorable to a dated edition instead of an undated page. The CITATION does not survive: the `link` field points at an archive. The 'six of ten agentic categories' half of the same sentence is separately UNCONFIRMED — an Agentic Top 10 2026 v1.0 exists (published 2025-12-01) but sits on no reachable host and its category count was not read. NOT silently updated.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   leaderboard_position
-recheck_before: no lesson cites this record since the 2026-09-25 session-4 rebuild
+recheck_before: session-4 Appendix D4 cites this record (three chips); the link points at the 2025 archive and the 2026 edition's URL is confirmed from a browser (term-start checklist item 11)
 scope:          The LLM01 ranking for prompt injection and the mapping into six of ten agentic categories. The ranking is revised between editions, so the position is a moving target even though the finding is not.
 used_for.session-4: least privilege and human approval for high-risk actions as the fixes that hold against prompt injection (Appendix D4)
 ```
@@ -872,22 +835,6 @@ used_for.session-4: the public vulnerability record for EchoLeak (Appendix D4)
 used_for.session-5: the did-what-the-text-said failure type, EchoLeak (Appendix E3)
 ```
 
-## src-gartner
-
-```source
-title:          Survey of 302 security leaders
-author:         Gartner
-publisher:      Gartner
-link:           [UNVERIFIED, needs source]
-published:      2025
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-confidence:     M
-kind:           evidence
-moving_target:  false
-scope:          62% of organisations experiencing at least one deepfake attack in twelve months, 37% on a live video call. A single vendor survey, n = 302.
-```
-
 ## src-deloitte
 
 ```source
@@ -903,22 +850,6 @@ kind:           evidence
 moving_target:  false
 scope:          US GenAI-enabled fraud losses projected from $12.3bn (2023) to $40bn (2027). A PROJECTION, NOT A MEASUREMENT, and the page says so.
 used_for.session-4: the projected scale of generative-AI fraud, labelled a projection on the four-attack board (Appendix D4)
-```
-
-## src-surfshark
-
-```source
-title:          2026 deepfake-loss analysis
-author:         Surfshark
-publisher:      Surfshark, as reported by two outlets
-link:           [UNVERIFIED, needs source]
-published:      2026
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-confidence:     L
-kind:           evidence
-moving_target:  false
-scope:          Two outlets citing the same analysis report $2.19bn and $3.7bn. Carried on the page as an unresolved disagreement rather than a resolved figure, which is why its confidence is L.
 ```
 
 ## src-arup
@@ -953,7 +884,7 @@ confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 Appendices D1 and D2
+recheck_before: every teaching of session-4 Appendices D8 and D9
 scope:          Tournament sampling in text, perturbation in image and video, and the frequency-domain approach in audio. Imperceptible watermarks in AI-generated images (Imagen), video (Veo), audio (Lyria, NotebookLM) and Gemini text, with detection in Gemini, Search and Chrome. Adoption is a vendor decision and changes; the mechanism does not.
 used_for.session-4: the pixel-level image watermark that survives a screenshot, and what SynthID marks across images, video, audio and Gemini text (Appendix D8)
 last_retrieved.session-4: 2026-10-11
@@ -975,7 +906,7 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 Appendices D1 and D2
+recheck_before: every teaching of session-4 Appendices D8 and D9
 scope:          TEXT WATERMARKING ONLY. The boundary is load-bearing, because the sibling record `src-synthid` is cited for image, video and audio claims that this page does not reach. What it substantiates, and nothing outside this list: detection is probabilistic and returns watermarked, not watermarked, or uncertain, against two tunable thresholds; the signal survives cropping, changing a few words, and mild paraphrase; detector confidence is greatly reduced by thorough rewriting or by translation; watermarking is less effective on factual responses, because there is less opportunity to augment generation without decreasing accuracy; detector exposure is a three-way deployer choice between fully-private, semi-private and public; the scheme is not designed to stop motivated adversaries; and the underlying technical description is Dathathri et al., Scalable watermarking for identifying large language model outputs, Nature 634:818-823 (2024), https://www.nature.com/articles/s41586-024-08025-4. IT SUBSTANTIATES NO ADOPTION FIGURE AND NO MARKET-SHARE CLAIM, which is the fact that keeps session-4's scale paragraph open rather than closing it.
 used_for.session-4: watermarks working less well on factual answers, and the three results a detector can return (Appendix D9); the published scheme behind the knockout figure (Appendix D8)
 ```
@@ -991,12 +922,12 @@ published:      not applicable
 last_retrieved: 2026-10-11
 last_verified:
 retrieval_note: Opened directly on 2026-09-25 and again, in full, on 2026-09-27, together with the Claude Content Checker page at claude.com/check-content. Quotations below are the pages' own words. Read again in full on 2026-10-12 and found to match the 2026-10-11 reading (FACTS claude-text-watermark).
-content_changed: 2026-10-12. The help page no longer gives 2 December 2026 as the date by which earlier models are all covered; it keeps a per-model list and says the law gives models launched before 2 August 2026 a transition period while marking is added. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12 in next-term Phase 5: session-4 Appendix D1, the Which models bullet, now cites the 14 August 2026 announcement, the 2 August 2026 launch rule and the per-model list, and no longer states a completion date; the §01 sorter line and the D1 talk box say supported Claude models.
+content_changed: 2026-10-12. The help page no longer gives 2 December 2026 as the date by which earlier models are all covered; it keeps a per-model list and says the law gives models launched before 2 August 2026 a transition period while marking is added. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12 in next-term Phase 5: session-4 Appendix D8, the Which models bullet, now cites the 14 August 2026 announcement, the 2 August 2026 launch rule and the per-model list, and no longer states a completion date; the §02 sorter line and the D8 talk box say supported Claude models.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 Appendices D1 and D2
+recheck_before: every teaching of session-4 Appendices D8 and D9
 scope:          Claude models launched in the EU on or after 2 August 2026 mark generated text with an imperceptible watermark at launch, the law gives models launched earlier a transition period and Anthropic is adding marking to them, the page keeps a per-model list of which models and which surfaces mark text, and marking applies "to output from supported models wherever Claude is offered, worldwide". Files Claude makes of a supported type (such as PNG, JPG and SVG) carry signed Content Credentials following the C2PA standard. Text watermark detection is in private preview, "available to eligible organizations as required under EU law (such as regulators, law enforcement, media, fact-checkers, independent researchers, educational organizations, and EU civil society groups)" and to enterprises with their own Article 50 obligations, through a registration form. A detected mark "tells you that the content may have been processed by Claude" and does not confirm full provenance; "Lack of a detected mark doesn't mean the content wasn't AI-generated or processed": heavy editing, paraphrase, translation, very short passages, or metadata stripped "through format conversion, re-saving, screenshots, or other means". The free Claude Content Checker checks a file, in the browser, for a Claude-issued credential; "The tool does not check text." Anthropic signed the EU AI Act Article 50(2) Code of Practice on Transparency of AI-Generated Content. That the mark carries no account or user identifier is stated in the announcement, src-claude-watermark, which is the record to cite for it.
 used_for.session-4: which Claude models mark their text and where that is listed, who can check a mark and what it shows, and the Content Credential on supported files (Appendices D8 and D9); the EU marking rule in the §02 sorter
 ```
@@ -1073,7 +1004,7 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 §03
+recheck_before: every teaching of session-4 Appendix D2
 scope:          Consumer plans: Anthropic may use chats "including training our models, unless you opt out of training through your account settings"; retention five years if training is allowed, 30 days if not; the Consumer Terms are a contract between the individual and Anthropic. Commercial plans (Team, Enterprise, the API): "Anthropic may not train models on Customer Content from Services" (Section B); the Customer "retains all rights to its Inputs, and owns its Outputs" (Section B); Confidential Information may be used only to exercise rights and perform obligations under the Terms and is destroyed promptly on request (Sections E.2, E.4); the Terms are an agreement between Anthropic and the organisation the signer represents, and nobody may accept for an organisation without legal authority to bind it.
 retrieval_note: Opened directly on 2026-09-27: the Commercial Terms (effective 17 June 2025), the Consumer Terms (effective 8 October 2025), the Privacy Policy (effective 10 September 2026) and the 28 August 2025 news post on the consumer training change. The consumer-side retention figures (five years if training is allowed, 30 days if not) are stated in the news post and on the Claude Code data-usage page; privacy.claude.com itself could not be opened. Earlier retrieval 2026-08-14.
 used_for.session-4: the consumer training switch, five-year and 30-day retention, and the business plans' exclusion from training (Appendix D2), and the Commercial Terms' exclusion of training behind a Claude API key in the Live API box (above §00)
@@ -1083,42 +1014,6 @@ used_for.case-4: the consumer training default and the business plans' exclusion
 used_for.session-0.1: where the model training setting sits, in your Privacy Settings, and that it applies to Free, Pro and Max accounts and not to Team or Enterprise (section 00)
 last_retrieved.session-0.1: 2026-10-13
 figures.session-0.1: the setting is changed in Privacy Settings; the update applies to Free, Pro and Max and not to services under the Commercial Terms (the 28 August 2025 news post, read in full 2026-10-13); no default stated
-```
-
-## src-beta
-
-```source
-title:          Available beta and research preview features
-author:         Anthropic
-publisher:      support.claude.com article 14503520
-link:           [UNVERIFIED, needs source]
-published:      2026-07-07
-last_retrieved: 2026-08-20
-last_verified:
-confidence:     H
-kind:           evidence
-moving_target:  true
-figure_class:   vendor_policy
-recheck_before: every teaching of session-0.1
-scope:          The label semantics and the eight-row table in section 7. H as of the article's own date and no later: this is the oldest source in the file and the one most likely to be wrong on screen.
-```
-
-## src-ctxwindow
-
-```source
-title:          How large is the context window on paid Claude plans?
-author:         Anthropic
-publisher:      support.claude.com article 8606394
-link:           [UNVERIFIED, needs source]
-published:      [UNVERIFIED, needs source]
-last_retrieved: 2026-08-20
-last_verified:
-confidence:     H
-kind:           evidence
-moving_target:  true
-figure_class:   vendor_policy
-recheck_before: every teaching of session-0.1
-scope:          Window sizes by model, the 500K figure for the 4.x tier in chat and 200K outside those models, automatic context management and its code-execution requirement, project knowledge served by retrieval rather than loaded whole, and the statement that tools and connectors are token-intensive. That last item is a direction, not a magnitude: no first-party figure exists for what a connector costs and none is printed in the lesson.
 ```
 
 ## src-directory
@@ -1159,24 +1054,6 @@ figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
 scope:          The five effort levels, which models carry the effort selector, extended thinking not being disableable in Claude on Opus 5, xhigh requiring Opus 4.7 or newer, the rule that a change applies starting with Claude's next response, and admin role gating of models and effort levels.
 used_for.session-4: effort as the setting you change on current models (Appendix D6)
-```
-
-## src-features
-
-```source
-title:          Features and capabilities collection index
-author:         Anthropic
-publisher:      support.claude.com article 18031719
-link:           [UNVERIFIED, needs source]
-published:      [UNVERIFIED, needs source]
-last_retrieved: 2026-08-20
-last_verified:
-confidence:     H
-kind:           evidence
-moving_target:  true
-figure_class:   vendor_policy
-recheck_before: every teaching of session-0.1
-scope:          The enumeration of surfaces beyond the chat box, and the attachment path.
 ```
 
 ## src-memory
@@ -1262,60 +1139,6 @@ figures.session-0.1: Instructions for Claude apply to all of a user's conversati
 used_for.session-2: Appendix B4, standing instructions as a source of run-to-run difference
 ```
 
-## src-plugins
-
-```source
-title:          Use plugins in Claude
-author:         Anthropic
-publisher:      support.claude.com article 13837440
-link:           [UNVERIFIED, needs source]
-published:      [UNVERIFIED, needs source]
-last_retrieved: 2026-08-20
-last_verified:
-confidence:     H
-kind:           evidence
-moving_target:  true
-figure_class:   vendor_policy
-recheck_before: every teaching of session-0.1
-scope:          Plugins on all paid plans, a plugin bundling skills, connectors and sub-agents, availability in chat on the web, the Desktop Chat tab and Cowork, and hooks and sub-agents running only in Cowork and appearing greyed out in chat. Retrieved via search-result content rather than a full page fetch, then upgraded from UNVERIFIED to H by the verified evidence annex, section B. THREE ITEMS ARE STARRED THERE for re-confirmation at the page before they are taught: the built-in and GitHub-sourced marketplaces, the Customize action opening a Cowork task, and the Plugin Create plugin.
-```
-
-## src-routing
-
-```source
-title:          Why Claude switched models in your conversation with Fable 5
-author:         Anthropic
-publisher:      support.claude.com article 15363606
-link:           [UNVERIFIED, needs source]
-published:      [UNVERIFIED, needs source]
-last_retrieved: 2026-08-20
-last_verified:
-confidence:     L
-kind:           evidence
-moving_target:  true
-figure_class:   vendor_policy
-recheck_before: every teaching of session-0.1
-scope:          [UNVERIFIED, needs source]: the URL and title are confirmed from two other fetched pages, but the BODY OF THIS ARTICLE HAS NOT BEEN READ. Referenced once, solely to record that model switching inside a conversation is a documented behaviour with an article behind it. No mechanism, trigger or consequence is asserted from it anywhere. Fetch it before teaching anything about routing.
-```
-
-## src-skills
-
-```source
-title:          What are skills?
-author:         Anthropic
-publisher:      support.claude.com article 12512176
-link:           [UNVERIFIED, needs source]
-published:      [UNVERIFIED, needs source]
-last_retrieved: 2026-08-20
-last_verified:
-confidence:     H
-kind:           evidence
-moving_target:  true
-figure_class:   vendor_policy
-recheck_before: every teaching of session-0.1
-scope:          Progressive disclosure of skill metadata against skill body, the code-execution requirement, the four skill types, and how skills differ from projects, MCP and instructions.
-```
-
 ## src-tools3
 
 ```source
@@ -1352,7 +1175,7 @@ confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 §03
+recheck_before: every teaching of session-4 Appendix D2
 scope:          On the Free, Plus and Pro plans the "Improve the model for everyone" setting is on by default and can be switched off under Data controls. ChatGPT Business (formerly Team), Enterprise, Edu and the API are not used for training by default. Chats stay in the account until deleted; a deleted chat is removed from OpenAI's systems within 30 days; temporary chats are kept up to 30 days and not used for training. Every one of these is a term the vendor can change without notice.
 used_for.session-4: ChatGPT's consumer training switch and its default, keeping until you delete, and the business plans' exclusion from training (Appendix D2)
 used_for.case-4: ChatGPT's consumer training setting and the business plans' exclusion from training, in the vendor table of the reveal
@@ -1373,7 +1196,7 @@ confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 §03
+recheck_before: every teaching of session-4 Appendix D2
 scope:          With a personal Microsoft account, conversations may be used to train Microsoft's generative AI models unless the person opts out under "Model training on text"; the opt-out is not the default, and takes effect across systems within 30 days. Conversation history is kept 18 months by default unless deleted sooner. Some users and regions are excluded from training by the vendor's own rules.
 used_for.session-4: Copilot's personal-account training default, the opt-out setting, and the 18-month history (Appendix D2)
 ```
@@ -1393,7 +1216,7 @@ confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 §03
+recheck_before: every teaching of session-4 Appendix D2
 scope:          Signed in with a work or school account, prompts and responses fall under enterprise data protection: the same contractual terms as Exchange mail and SharePoint files, encrypted at rest and in transit, and not used to train the underlying foundation models.
 used_for.session-4: prompts and responses under a work account are not used to train the foundation models (Appendix D2)
 ```
@@ -1413,7 +1236,7 @@ confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 §03
+recheck_before: every teaching of session-4 Appendix D2
 scope:          With a personal Google account, Gemini Apps Activity ("Keep Activity") is on by default; activity is used to improve Google's models and may be read by trained reviewers. Activity auto-deletes after 18 months by default, with 3 or 36 months selectable. A conversation a reviewer has read is kept for up to three years even if the person deletes their activity. With the setting off, chats are kept up to 72 hours and not used to train models unless the person sends feedback. Google's own page warns against entering confidential information.
 used_for.session-4: Gemini's Keep Activity default, the 18-month auto-delete, human review and the three-year keep of reviewed chats, and 72 hours with the switch off (Appendix D2)
 used_for.case-4: the Gemini Apps Activity default, the 18-month auto-delete and the 72 hours with the switch off, in the vendor table of the reveal
@@ -1434,7 +1257,7 @@ confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 §03
+recheck_before: every teaching of session-4 Appendix D2
 scope:          For Workspace accounts with Gemini, prompts, generated content and Workspace data are not used to train models outside the customer's domain without permission, are not reviewed by humans, and are not used for advertising; the Cloud Data Processing Addendum governs.
 used_for.session-4: Workspace prompts not used to train models and not reviewed by humans (Appendix D2)
 used_for.case-4: Workspace prompts not used to train models and not reviewed by humans, in the vendor table of the reveal
@@ -1563,7 +1386,7 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_pricing
-recheck_before: every teaching of session-4 §03
+recheck_before: every teaching of session-4 Appendix D2
 scope:          Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from $100 a month for five times Pro usage, $200 for twenty times. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, October 2026: from $0.10 in and $0.50 out for the smallest model, for prompts up to 100K tokens, to $10 in and $50 out for the largest (FACTS claude-api-price-haiku-5-5 and claude-api-price-fable-5-1).
 used_for.session-1: the Pro and Max subscription prices set against metered API cost in the practice-cost comparison (Appendix A8)
 used_for.session-4: the personal and firm price tags and what Team and Enterprise add, on the ladder (Appendix D2)
@@ -1576,6 +1399,31 @@ used_for.case-4: the Claude plan prices in the vendor table of the reveal (Free,
 used_for.session-0.1: the plan prices (Free, Pro, Max, Team, Enterprise), Pro as the course minimum, and which models each plan includes (section 00)
 last_retrieved.session-0.1: 2026-10-11
 figures.session-0.1: Free $0; Pro $20 a month or $17 a month billed annually; Max 5x $100 and 20x $200; Team Standard $25 ($20 annual) and Premium $125 ($100 annual); Enterprise $20 per seat billed annually plus usage; Free includes Sonnet and Haiku, Pro adds Opus with Fable through usage credits, Max and Team Premium include Fable (FACTS claude-plans, read in full 2026-10-11)
+```
+
+## src-gemini-plans
+
+```source
+title:          Gemini subscriptions
+author:         Google
+publisher:      gemini.google
+link:           https://gemini.google/subscriptions/
+published:      not applicable
+last_retrieved: 2026-10-11
+last_verified:
+retrieval_note: A real retrieval on 2026-10-11, recorded in FACTS gemini-plans: the figures were read through primary-domain search listings of this page, because gemini.google was unreachable from the build container, so the page itself was not opened and the confidence is M (D-015). The Google One page also lists a $9.99 AI Plus (2 TB) variant and shows Pro at $199.99 per year, so "$199.99" is ambiguous without the period. Record added 2026-10-27 (DW-181) from the FACTS record without a fresh fetch; last_retrieved is copied from it. Prices move without notice.
+confidence:     M
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_pricing
+recheck_before: every teaching of session-1 Appendix A7 and case-4
+scope:          Google AI consumer plan prices: Google AI Plus $4.99, Google AI Pro $19.99, Google AI Ultra $99.99 (5x) or $199.99 (20x) a month. Training and retention terms for these plans are not in the register.
+used_for.session-1: the Gemini row of the other-assistants table, set beside Claude (Appendix A7)
+last_retrieved.session-1: 2026-10-11
+figures.session-1: Google AI Plus $4.99; Google AI Pro $19.99; Google AI Ultra $99.99 (5x) or $199.99 (20x) a month (FACTS gemini-plans, primary-domain snippets read 2026-10-11)
+used_for.case-4: the Google plan prices in the vendor table of the reveal
+last_retrieved.case-4: 2026-10-11
+figures.case-4: Google AI Plus $4.99; Google AI Pro $19.99; Google AI Ultra $99.99 (5x) or $199.99 (20x) a month (FACTS gemini-plans, primary-domain snippets read 2026-10-11)
 ```
 
 ## src-anthropic-retention
@@ -1593,7 +1441,7 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 §03
+recheck_before: every teaching of session-4 Appendix D2
 scope:          Standard retention on the API is 30 days; Enterprise organisations can set a custom retention period, 30 days at minimum; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years.
 used_for.session-4: the retention rung of the ladder and the retention clause of the contract view (Appendices D2 and D3), and the 30-day retention behind a Claude API key in the Live API box (above §00)
 used_for.session-1: the 30-day retention behind a Claude API key, in the live model console (above §01)
@@ -1675,7 +1523,7 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 §04
+recheck_before: every teaching of session-4 Appendix D3
 scope:          Section G.1: "Anthropic will notify Customer in writing without undue delay, but in any event within 48 hours, after becoming aware of any Security Breach." Section H.1: within thirty days of termination or expiration, on request, return a copy of all Customer Data or provide self-service functionality to do the same, and delete all copies. Section F.1: "Upon Customer's written request, and subject to the confidentiality obligations set forth in the Agreement, Anthropic will provide Customer with such audit reports or certificates applicable to the Services (e.g., SOC 2 report), to the extent available". Section C.3: reasonable prior notice of a new subprocessor and fifteen days to object. Section B.2: processing only to provide or maintain the Services and on the Customer's documented instructions.
 used_for.session-4: the breach-notice, export and audit clauses of the contract view (Appendix D3) and the matching rungs of the ladder (Appendix D2)
 used_for.case-4: the 48-hour breach notice in the Data Processing Addendum, in the vendor table of the reveal and in the list of human decisions
@@ -1696,28 +1544,9 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 §03 and §04
+recheck_before: every teaching of session-4 Appendices D2 and D3
 scope:          SOC 2 Type I and Type II; ISO 27001:2022; ISO/IEC 42001:2023; a HIPAA-ready configuration with a Business Associate Agreement, available on Enterprise plans and accepted by the organisation's primary owner; compliance documents requested through the Trust Portal.
 used_for.session-4: the audit rung of the ladder and the audit clause of the contract view (Appendices D2 and D3)
-```
-
-## src-anthropic-aup
-
-```source
-title:          Usage Policy
-author:         Anthropic
-publisher:      Anthropic, anthropic.com/legal
-link:           https://www.anthropic.com/legal/aup
-published:      2025-09-15
-last_retrieved: 2026-09-27
-last_verified:
-retrieval_note: Opened directly on 2026-09-27.
-confidence:     H
-kind:           evidence
-moving_target:  true
-figure_class:   vendor_policy
-recheck_before: every teaching of session-4
-scope:          Use cases related to financial decisions, including investment advice, are treated as high-risk: a qualified professional must review the content or decision before it goes out, and the user must disclose that AI helped produce the advice. The policy also prohibits sharing personal information without consent.
 ```
 
 ## src-gemini-api-terms
@@ -1778,40 +1607,6 @@ scope:          In early 2020 a bank branch manager in the UAE authorised transf
 used_for.session-4: the second bar on the bill: a voice alone, $35 million (Appendix D4)
 ```
 
-## src-uk-voice
-
-```source
-title:          A voice deepfake was used to scam a CEO out of $243,000
-author:         Damiani, J.
-publisher:      Forbes
-link:           https://www.forbes.com/sites/jessedamiani/2019/09/03/a-voice-deepfake-was-used-to-scam-a-ceo-out-of-243000/
-published:      2019-09-03
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-retrieval_note: NOT RETRIEVED. forbes.com is egress-blocked from this build environment (2026-09-27). The case was first reported by the Wall Street Journal on 30 August 2019 citing the insurer Euler Hermes; cross-checked against Gizmodo, CBC and Avast. The call was not recorded, so the AI attribution rests on the insurer's assessment.
-confidence:     H
-kind:           evidence
-moving_target:  false
-scope:          In March 2019 the chief executive of a UK energy firm wired €220,000, about $243,000, to a Hungarian account after a phone call that mimicked his German parent company chief's voice.
-```
-
-## src-sg-deepfake-2025
-
-```source
-title:          Finance director in Singapore transfers S$670,000 to scammers who used deepfake to impersonate company's executives
-author:         Mothership
-publisher:      Mothership.sg
-link:           https://mothership.sg/2025/04/finance-director-scammed-deepfake/
-published:      2025-04
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-retrieval_note: NOT RETRIEVED. mothership.sg and police.gov.sg are egress-blocked from this build environment (2026-09-27). The primary source is the Singapore Police Force news release of 7 April 2025 on the joint recovery with the Hong Kong Police Force; cross-checked against HRD Asia, Fortune (25 April 2025) and The Straits Times.
-confidence:     H
-kind:           evidence
-moving_target:  false
-scope:          On 24 to 26 March 2025 a finance director joined a Zoom call with deepfakes of the chief executive and other executives and sent about US$499,000 (S$670,000) to a mule account; police in Singapore and Hong Kong traced and withheld it.
-```
-
 ## src-sg-deepfake-2026
 
 ```source
@@ -1830,23 +1625,6 @@ scope:          In May 2026 a Singapore businessman transferred S$4.9 million, a
 used_for.session-4: the third bar on the bill: a private individual, a video call with officials (Appendix D4)
 ```
 
-## src-ferrari
-
-```source
-title:          Ferrari deepfake attempt: scammer foiled by security question about CEO Benedetto Vigna
-author:         Fortune
-publisher:      Fortune
-link:           https://fortune.com/2024/07/27/ferrari-deepfake-attempt-scammer-security-question-ceo-benedetto-vigna-cybersecurity-ai
-published:      2024-07-27
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-retrieval_note: NOT RETRIEVED. fortune.com is egress-blocked from this build environment (2026-09-27). First reported by Bloomberg on 26 July 2024; cross-checked against MIT Sloan Management Review, Jalopnik and the AI Incident Database.
-confidence:     H
-kind:           evidence
-moving_target:  false
-scope:          In July 2024 a Ferrari executive received messages and then a call carrying a cloned voice of the chief executive about a confidential acquisition; he asked which book the chief executive had recommended days earlier, and the caller hung up. Nothing was lost.
-```
-
 ## src-fbi-ic3-2025
 
 ```source
@@ -1863,40 +1641,6 @@ kind:           evidence
 moving_target:  false
 scope:          For 2025: 1,008,597 complaints and $20.877 billion in reported losses, up 26% on 2024; business email compromise $3.05 billion from 24,768 complaints; the report's first AI section counts 22,364 complaints that named AI, about $893 million, which the FBI calls an undercount because victims must recognise AI to report it.
 used_for.session-4: the bill's caption and the deepfake row's scale line (Appendix D4)
-```
-
-## src-fbi-ic3-2024
-
-```source
-title:          FBI releases annual Internet Crime Report: 2024
-author:         Federal Bureau of Investigation
-publisher:      FBI, Internet Crime Complaint Center
-link:           https://www.fbi.gov/news/press-releases/fbi-releases-annual-internet-crime-report
-published:      2025-04-23
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-retrieval_note: NOT RETRIEVED. fbi.gov is egress-blocked from this build environment (2026-09-27). Figures consistent across search snippets of the FBI press release, CyberScoop, Cybersecurity Dive, SecureWorld and Nacha.
-confidence:     H
-kind:           evidence
-moving_target:  false
-scope:          For 2024: 859,532 complaints and $16.6 billion in reported losses, a record at the time; business email compromise $2.77 billion from 21,442 complaints.
-```
-
-## src-forcedleak
-
-```source
-title:          ForcedLeak: AI agent risks exposed in Salesforce Agentforce
-author:         Noma Security
-publisher:      Noma Security
-link:           https://noma.security/blog/forcedleak-agent-risks-exposed-in-salesforce-agentforce
-published:      2025-09
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-retrieval_note: NOT RETRIEVED. noma.security is egress-blocked from this build environment (2026-09-27). Cross-checked against The Hacker News, Dark Reading and Security Affairs (September 2025), consistent on the CVSS score, the mechanism and the $5 domain.
-confidence:     H
-kind:           evidence
-moving_target:  false
-scope:          A prompt injection through a web-to-lead form let Salesforce's Agentforce agent send CRM data to an expired allow-listed domain the researchers bought for $5; CVSS 9.4; fixed by Salesforce on 8 September 2025.
 ```
 
 ## src-drift
@@ -1932,7 +1676,7 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   survey
-recheck_before: every teaching of session-4 §05
+recheck_before: every teaching of session-4 Appendix D4
 scope:          Cost of a Data Breach Report 2026, 602 organisations, breaches March 2025 to February 2026: global average $4.99 million, US average $11.5 million; one in four malicious breaches AI-enabled, at $6 million on average; shadow AI in 43% of AI-related breaches.
 used_for.session-4: the scale line on the exfiltration row of the four-attack board (Appendix D4)
 ```
@@ -2027,40 +1771,6 @@ scope:          Images that look benign at full size reveal an instruction once 
 used_for.session-4: text inside an image as a hiding technique (Appendix D4)
 ```
 
-## src-safebreach-gemini
-
-```source
-title:          Invitation is all you need: hacking Gemini
-author:         SafeBreach Labs, with Tel Aviv University and Technion researchers
-publisher:      SafeBreach
-link:           https://www.safebreach.com/blog/invitation-is-all-you-need-hacking-gemini/
-published:      2025-08
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-retrieval_note: NOT RETRIEVED. safebreach.com is egress-blocked from this build environment (2026-09-27). Presented at Black Hat USA in August 2025 after disclosure to Google on 22 February 2025; cross-checked against The Register, TechRepublic and Bitdefender.
-confidence:     H
-kind:           evidence
-moving_target:  false
-scope:          Instructions inside a Google Calendar invite hijacked Gemini for Workspace, in one case firing later on an innocent "thanks"; Google added confirmation prompts for sensitive actions.
-```
-
-## src-nikkei-papers
-
-```source
-title:          'Positive review only': researchers hide AI prompts in papers
-author:         Nikkei Asia
-publisher:      Nikkei Asia
-link:           https://asia.nikkei.com/business/technology/artificial-intelligence/positive-review-only-researchers-hide-ai-prompts-in-papers
-published:      2025-07
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-retrieval_note: NOT RETRIEVED. asia.nikkei.com is egress-blocked from this build environment (2026-09-27). Cross-checked against the arXiv follow-up study (2507.06185, which found 18 papers), Smithsonian Magazine and Duke University's analysis of about 200,000 CVs.
-confidence:     H
-kind:           evidence
-moving_target:  false
-scope:          Hidden prompts such as "give a positive review only", in white or microscopic text, found in 17 preprints from 14 institutions; about 1% of 200,000 real CVs analysed by Duke carried similar injections.
-```
-
 ## src-anthropic-injection
 
 ```source
@@ -2076,7 +1786,7 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 §05
+recheck_before: every teaching of session-4 Appendix D4
 scope:          "A 1% attack success rate, while a significant improvement, still represents meaningful risk"; the platform docs warn that "Claude will follow commands found in content even when they conflict with your instructions"; Claude for Chrome "asks users before taking high-risk actions like publishing, purchasing, or sharing personal data".
 used_for.session-4: why a warning is not a lock and an approval step is (Appendix D4)
 ```
@@ -2096,7 +1806,7 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 §07
+recheck_before: every teaching of session-4 §05
 scope:          A skill is a folder with a SKILL.md file: YAML front matter with a required name (at most 64 characters, lowercase letters, numbers and hyphens) and a required description (non-empty, at most 1,024 characters, saying what the skill does and when to use it), then the instructions in markdown. Custom skills upload in the Claude app's settings on Pro, Max, Team and Enterprise plans.
 used_for.session-4: the skill form of the record block (§05) and of the inbox fixes (Appendix D4)
 used_for.session-0.1: the shape of a skill folder, a required SKILL.md that opens with a name and a description, behind the sample skill (section 06)
@@ -2122,25 +1832,6 @@ scope:          Notice to affected Illinois residents "in the most expedient tim
 used_for.case-4: the Illinois notice standard and the Attorney General notice above 500 residents, in the list of human decisions
 ```
 
-## src-state-breach
-
-```source
-title:          Data breach notification laws: a 50-state survey, 2026 edition
-author:         Privacy Rights Clearinghouse
-publisher:      Privacy Rights Clearinghouse
-link:           https://privacyrights.org/resources-tools/reports/data-breach-notification-laws-50-state-survey-2026-edition
-published:      2026
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-retrieval_note: NOT RETRIEVED. privacyrights.org is egress-blocked from this build environment (2026-09-27), and the day counts in scope come from aggregated search snippets of several survey sites rather than from each statute, which is why the confidence is M.
-confidence:     M
-kind:           evidence
-moving_target:  true
-figure_class:   survey
-recheck_before: every teaching of session-4 Appendix D5
-scope:          Hard consumer-notice deadlines in some states: Colorado, Florida and Washington 30 days from discovery; Maryland 45; Texas 60. Most states add a regulator filing above a headcount threshold.
-```
-
 ## src-equifax
 
 ```source
@@ -2153,7 +1844,7 @@ last_retrieved: [UNVERIFIED, needs source]
 last_verified:
 retrieval_note: NOT RETRIEVED. gao.gov is egress-blocked from this build environment (2026-09-27). The dates and figures in scope are consistent across search snippets of the GAO report, the FTC's July 2019 settlement release, the CFPB's release, the House Oversight Committee's December 2018 report and EPIC.
 confidence:     H
-kind:           evidence
+kind:           background
 moving_target:  false
 scope:          Equifax discovered the breach on 29 July 2017 and announced it on 7 September 2017, about 147 million US consumers affected; the July 2019 settlement with the FTC, the CFPB and the states was at least $575 million and up to $700 million.
 ```
@@ -2170,26 +1861,9 @@ last_retrieved: [UNVERIFIED, needs source]
 last_verified:
 retrieval_note: NOT RETRIEVED. capitalone.com is egress-blocked from this build environment (2026-09-27). Dates and figures consistent across search snippets of Capital One's page, CBS News and SiliconANGLE (August 2020, the $80 million OCC penalty), Banking Dive and the Department of Justice's case page.
 confidence:     H
-kind:           evidence
+kind:           background
 moving_target:  false
 scope:          Tipped on 17 July 2019, Capital One determined on 19 July 2019 that an intrusion had occurred, contacted the FBI, and announced it publicly on 29 July 2019; about 100 million US and 6 million Canadian applicants affected; an $80 million OCC penalty in August 2020 and a $190 million class settlement.
-```
-
-## src-uber-doj
-
-```source
-title:          Former chief security officer of Uber sentenced to three years' probation for covering up data breach
-author:         U.S. Department of Justice, Northern District of California
-publisher:      Department of Justice
-link:           https://www.justice.gov/usao-ndca/pr/former-chief-security-officer-uber-sentenced-three-years-probation-covering-data
-published:      2023-05-04
-last_retrieved: [UNVERIFIED, needs source]
-last_verified:
-retrieval_note: NOT RETRIEVED. justice.gov is egress-blocked from this build environment (2026-09-27). Consistent across search snippets of the DOJ release and of BakerHostetler, Norton Rose Fulbright, Arnold & Porter and SC Media.
-confidence:     H
-kind:           evidence
-moving_target:  false
-scope:          A November 2016 breach of about 57 million records was concealed for a year; the chief security officer arranged a $100,000 payment to the hackers under a bug-bounty nondisclosure agreement; he was convicted in October 2022 of obstruction of justice and misprision of a felony and sentenced in May 2023 to three years' probation and a $50,000 fine.
 ```
 
 ## src-eu-ai-act
@@ -2225,7 +1899,7 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 Appendix D3
+recheck_before: every teaching of session-4 Appendix D6
 scope:          Memory came to Team and Enterprise plans on 11 September 2025 and to Pro and Max on 23 October 2025; Claude saves memory as a set of individual topics as you chat rather than summarising afterwards.
 used_for.session-4: the memory card in the then-and-now deck (Appendix D6)
 ```
@@ -2302,7 +1976,7 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 Appendix D3
+recheck_before: every teaching of session-4 Appendix D6
 scope:          9,000 tokens in March 2023, 100,000 in May 2023, 200,000 in November 2023, one million by default on current models, about 555,000 words; and "As token count grows, accuracy and recall degrade, a phenomenon known as context rot."
 used_for.session-4: the context-window card and the context-rot card in the then-and-now deck (Appendix D6)
 ```
@@ -2408,7 +2082,7 @@ published:      2026-09-30
 last_retrieved: 2026-10-12
 last_verified:
 retrieval_note: OPENED on 2026-10-02 and RE-OPENED on 2026-10-04 (platform.claude.com is reachable from this build). On 2026-10-04 every date the page carried on 2026-10-02 was unchanged; the not-sooner-than dates of the current and legacy models were added to the scope for the §02 calendar's new rows. The published date is the page's most recent deprecation announcement (Claude Sonnet 4.5, 30 September 2026); the page is updated in place with every announcement. RE-OPENED in full on 2026-10-12, after FACTS claude-model-ids-and-retirements read it in full on 2026-10-11: every date in the §02 calendar is unchanged, and the table now also lists claude-haiku-5-5 (Active, not sooner than 7 October 2027), with claude-haiku-4-5-20251001 still Active and not sooner than 15 October 2026.
-content_changed: 2026-10-12. The page lists Claude Haiku 5.5 (claude-haiku-5-5, not sooner than 7 October 2027), which the 2026-10-04 pull did not record; Claude Haiku 4.5 keeps its 15 October 2026 date but is no longer one of the four current models. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12: the session-5 §01 calendar gained a Haiku 5.5 row and moved Haiku 4.5 to the legacy rows, and the lineup bullet no longer counts the legacy models.
+content_changed: 2026-10-12. The page lists Claude Haiku 5.5 (claude-haiku-5-5, not sooner than 7 October 2027), which the 2026-10-04 pull did not record; Claude Haiku 4.5 keeps its 15 October 2026 date but is no longer one of the four current models. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12: the session-5 §02 calendar gained a Haiku 5.5 row and moved Haiku 4.5 to the legacy rows, and the lineup bullet no longer counts the legacy models.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2686,7 +2360,7 @@ published:      2026
 last_retrieved: 2026-10-12
 last_verified:
 retrieval_note: OPENED on 2026-10-04 (platform.claude.com is reachable from this build). The page carries no publication date of its own; it is updated in place with each model release, so the year is recorded and the retrieval date is the one to read. RE-OPENED on 2026-10-12 (the old address redirects to platform.claude.com/docs/en/models/overview), after FACTS claude-model-ids-and-retirements read the same page on 2026-10-11.
-content_changed: 2026-10-12. The four current models are now Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5 and Claude Haiku 5.5 (retirement not sooner than 7 October 2027); the 2026-10-04 pull recorded Claude Haiku 4.5 as the fourth. Haiku 4.5 now sits among the legacy models. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12: the session-5 §01 calendar rows for Haiku 4.5 and Haiku 5.5, and the lineup bullet.
+content_changed: 2026-10-12. The four current models are now Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5 and Claude Haiku 5.5 (retirement not sooner than 7 October 2027); the 2026-10-04 pull recorded Claude Haiku 4.5 as the fourth. Haiku 4.5 now sits among the legacy models. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12: the session-5 §02 calendar rows for Haiku 4.5 and Haiku 5.5, and the lineup bullet.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2814,7 +2488,7 @@ confidence:     M
 kind:           evidence
 moving_target:  false
 figure_class:   regulatory_date
-recheck_before: any teaching of session-2 §05
+recheck_before: any teaching of session-2 Appendix B9
 scope:          The simplified method for a late portability election: an estate not required to file under IRC 6018(a) may elect portability on a complete Form 706 filed on or before the fifth anniversary of death, which supersedes the second anniversary in Rev. Proc. 2017-34; later relief only by private letter ruling under Treas. Reg. 301.9100-3.
 used_for.session-2: the late portability election and its fifth-anniversary limit behind the key to the fifth triage item (Appendix B9)
 last_retrieved.session-2: 2026-10-11
@@ -2837,7 +2511,7 @@ confidence:     M
 kind:           evidence
 moving_target:  false
 figure_class:   regulatory_date
-recheck_before: any teaching of session-3 §09b and session-4 §04
+recheck_before: any teaching of session-3 Appendix C9, session-4 §04 and Appendix D3
 scope:          The compliance dates of the 2024 amendments, 3 December 2025 for larger entities and 3 June 2026 for smaller entities; the written incident response program; customer notice as soon as practicable and no later than 30 days after the firm becomes aware of unauthorized access to or use of customer information; and the 72-hour notice a service provider owes the firm.
 used_for.session-3: the compliance dates, the 30-day customer notice and the 72-hour service-provider notice behind the written incident response programme (Appendix C9)
 last_retrieved.session-3: 2026-10-11
@@ -2864,7 +2538,7 @@ confidence:     M
 kind:           authority
 moving_target:  false
 figure_class:   none
-recheck_before: any teaching of session-2 §s10
+recheck_before: any teaching of session-2 §05
 scope:          The statutory source of the applicable age for required minimum distributions; named as a citation inside the session-2 citation-triage items, evidencing no page claim.
 used_for.session-2: named as a cited authority in the citation-triage items (sound citation; also the planted mis-citation that attributes the wrong age to it)
 last_retrieved.session-2: 2026-10-12
@@ -2888,7 +2562,7 @@ confidence:     H
 kind:           authority
 moving_target:  false
 figure_class:   none
-recheck_before: any teaching of session-2 §s10
+recheck_before: any teaching of session-2 §05
 scope:          The 2024 final regulations on required minimum distributions, Treas. Reg. §§ 1.401(a)(9)-1 to -9; named as a citation inside the session-2 citation-triage items.
 used_for.session-2: named as a cited authority in the citation-triage items
 last_retrieved.session-2: 2026-10-12
@@ -2912,7 +2586,7 @@ confidence:     M
 kind:           authority
 moving_target:  true
 figure_class:   none
-recheck_before: any teaching of session-2 §s10
+recheck_before: any teaching of session-2 §05
 scope:          The IRS publication on IRA distributions, including required minimum distributions and Roth IRA distribution rules; named as a citation inside the session-2 citation-triage items.
 used_for.session-2: named as a cited authority in the citation-triage items
 last_retrieved.session-2: 2026-10-12
@@ -2936,7 +2610,7 @@ confidence:     M
 kind:           authority
 moving_target:  true
 figure_class:   none
-recheck_before: any teaching of session-2 §s10
+recheck_before: any teaching of session-2 §05
 scope:          The form on which a Roth conversion and any IRA basis are reported; named as a citation inside the session-2 citation-triage items.
 used_for.session-2: named as a cited authority in the citation-triage items
 last_retrieved.session-2: 2026-10-12
@@ -2960,7 +2634,7 @@ kind:           evidence
 moving_target:  true
 figure_class:   benchmark_index
 index_version:  v4.3.2
-recheck_before: every teaching of session-1 §05
+recheck_before: every teaching of session-1 Appendix A7
 scope:          The current Intelligence Index scores of the leading models at a stated effort setting. A live leaderboard: every figure drawn from it is a moving target.
 used_for.session-1: the current Intelligence Index snapshot beside the July scatter (Appendix A7): Claude Opus 5.5 (Max) 58, Claude Sonnet 5.5 (Max) 56, GPT-6 Astra (Max) 53, Gemini 4 Argon (High) 53, about 7 October 2026
 last_retrieved.session-1: 2026-10-11
@@ -2984,7 +2658,7 @@ kind:           evidence
 moving_target:  true
 figure_class:   benchmark_index
 index_version:  v4.3.2
-recheck_before: every teaching of session-1 §05
+recheck_before: every teaching of session-1 Appendix A7
 scope:          What the Intelligence Index measures: a weighted average of 10 evaluations in four categories, scaled 0 to 100, at version 4.3.2.
 used_for.session-1: what the Intelligence Index measures, version 4.3.2 (Appendix A7)
 last_retrieved.session-1: 2026-10-11
@@ -3007,7 +2681,7 @@ confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   benchmark_index
-recheck_before: every teaching of session-1 §05
+recheck_before: every teaching of session-1 Appendix A7
 scope:          What LiveBench measures and the name of its latest question release.
 used_for.session-1: what LiveBench measures and its latest question release, LiveBench-2026-06-25 (Appendix A7)
 last_retrieved.session-1: 2026-10-11
@@ -3029,7 +2703,7 @@ confidence:     L
 kind:           evidence
 moving_target:  true
 figure_class:   leaderboard_position
-recheck_before: every teaching of session-1 §05
+recheck_before: every teaching of session-1 Appendix A7
 scope:          What Arena measures, human pairwise preference votes converted to a Bradley-Terry (Elo-style) score, and the first two places on its text leaderboard in a secondary snapshot dated 8 October 2026.
 used_for.session-1: what Arena measures and the first two places on its text leaderboard, Gemini 4 Argon 1,525 (preliminary) and Claude Opus 5.5 1,507, snapshot dated 8 October 2026 (Appendix A7)
 last_retrieved.session-1: 2026-10-11
@@ -3070,7 +2744,7 @@ confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 Appendices D1 and D2
+recheck_before: every teaching of session-4 Appendices D8 and D9
 scope:          Future Claude models generate text that contains a statistical watermark, announced 14 August 2026 and adopted to comply with the EU AI Act. Nothing is added to the text and there are no hidden characters. Watermarking carries no identifying information and cannot be traced to a specific person, organization or chat. Claude's method is a version of the SynthID-Text approach Google DeepMind published in Nature in 2024. When Claude produces a file of a supported type (such as .png, .jpg or .svg) it attaches a C2PA content credential in the file's metadata, which also carries no identifying information.
 used_for.session-4: that Claude's text watermark is statistical, adds no hidden characters and does not identify users, and that supported files carry a content credential with no identifying information (Appendices D8 and D9)
 last_retrieved.session-4: 2026-10-11
@@ -3092,7 +2766,7 @@ confidence:     M
 kind:           assigned_reading
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 §03
+recheck_before: every teaching of session-4 Appendix D2
 scope:          With the model training setting ("Help improve Claude") on, de-identified data may be kept up to five years in training pipelines; with it off, a deleted conversation is removed from back-end storage within 30 days. Exceptions the page names: flagged content up to 2 years, safety classifier scores up to 7 years, and thumbs-up or thumbs-down feedback, which keeps the whole conversation up to 5 years. Applies to Free, Pro and Max accounts, not to Team, Enterprise or the API.
 used_for.session-4: how long a personal Claude plan keeps chats: up to five years with the training setting on, 30 days with it off (Appendix D2)
 last_retrieved.session-4: 2026-10-11
@@ -3122,7 +2796,7 @@ confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
-recheck_before: every teaching of session-4 Appendices D1 and D2
+recheck_before: every teaching of session-4 Appendices D8 and D9
 scope:          Images from ChatGPT, Codex and the API carry C2PA content credentials and a Google SynthID invisible watermark; text watermarking is EU-only for ChatGPT and Codex and opt-in, off by default, for the API.
 used_for.session-4: what OpenAI marks: C2PA credentials and SynthID in images, and the EU-only text watermark (Appendix D8)
 last_retrieved.session-4: 2026-10-11
@@ -3144,7 +2818,7 @@ confidence:     M
 kind:           evidence
 moving_target:  false
 figure_class:   survey
-recheck_before: any teaching of session-4 §09
+recheck_before: any teaching of session-4 §07
 scope:          ISS survey, n = 466, fielded June 2025: 48% of U.S. advisors use AI in their workflows; 78% of RIAs say their firm has no written AI policy, against 35% at regional, independent and bank firms.
 used_for.session-4: the share of RIAs that say their firm has no written AI policy, where the AI use policy is introduced (§07)
 last_retrieved.session-4: 2026-10-11

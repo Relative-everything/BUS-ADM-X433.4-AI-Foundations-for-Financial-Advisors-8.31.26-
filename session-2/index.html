@@ -1706,7 +1706,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       <button class="btn sel mini act" id="frontToggle">Hide efficient frontier</button>
       <span class="mono dim" style="font-size:12px" id="frontNote"></span>
     </div>
-    <div class="csrc">Source: Artificial Analysis Intelligence Index v4.1.1, max reasoning effort, retrieved August 2026; Anthropic and OpenAI published API rates. Index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5 <span class="conf h" data-src="src-aa">H</span>. Terra and Luna per-task costs derived from Artificial Analysis's stated ~50% and ~80% reductions relative to Sol <span class="conf m" data-src="src-aa">M</span>. This chart is a dated snapshot of the August 2026 lineup. The four Claude models current in October 2026 are Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 <span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>, and none of them is plotted here.</div>
+    <div class="csrc">Source: Artificial Analysis Intelligence Index v4.1.1, max reasoning effort, retrieved August 2026; Anthropic and OpenAI published API rates. Index scores and per-task costs for Opus 5, Fable 5, Sol, Opus 4.8 and Sonnet 5 <span class="conf h" data-src="src-aa" data-fact="aa-cost-frontier-2026-08">H</span>. Terra and Luna per-task costs derived from Artificial Analysis's stated ~50% and ~80% reductions relative to Sol <span class="conf m" data-src="src-aa">M</span>. This chart is a dated snapshot of the August 2026 lineup. The four Claude models current in October 2026 are Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 <span class="conf h" data-src="src-anthropic-deprecations" data-fact="claude-model-ids-and-retirements">H</span>, and none of them is plotted here.</div>
   </div>
 
   <h3>Three findings a price sheet hides</h3>
@@ -1720,7 +1720,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <div class="ctitle">Rank by token price against rank by cost per finished task</div>
     <div class="csub">Same seven models, two orderings. Lines that cross are models whose price sheet misdescribes what they cost you. Sonnet 5 moves from second-cheapest to second-most-expensive.</div>
     <svg viewBox="0 0 700 380" role="img" aria-label="Slopegraph comparing rank by token price and rank by cost per task"><g id="slopeChart"></g></svg>
-    <div class="csrc">Blended token price computed at a 3:1 input-to-output ratio from the published Anthropic rates <span class="conf h" data-src="src-pricing" data-fact="claude-output-input-ratio claude-api-price-sonnet-5-5 claude-api-price-opus-5-5 claude-api-price-fable-5-1">H</span> and OpenAI rates <span class="conf m" data-src="src-openai-pricing">M</span>. The ratio is this page's assumption, stated so you can recompute it for your own mix.</div>
+    <div class="csrc">Blended token price computed at a 3:1 input-to-output ratio from the published Anthropic rates <span class="conf h" data-src="src-pricing" data-fact="claude-output-input-ratio claude-api-price-sonnet-5-5 claude-api-price-opus-5-5 claude-api-price-fable-5-1">H</span> and OpenAI rates <span class="conf m" data-src="src-openai-pricing" data-fact="openai-api-rates-gpt-5-6">M</span>. The ratio is this page's assumption, stated so you can recompute it for your own mix.</div>
   </div>
 
   <div class="panel" data-task="t-s5" data-comp="parameter-sandbox">
@@ -2115,7 +2115,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
     <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="lgd h">H</span> directly verified against the cited source. <span class="lgd m">M</span> reported by a secondary source or derived from a stated relationship. <span class="lgd l">L</span> illustrative construction, not a published figure.</p>
     <p style="font-size:13.5px">Nothing in this file is tax or legal advice. Every characterisation of an authority is a teaching illustration built on a synthetic case, and several are deliberately wrong and labelled as such. Verify against the Code, the regulations and the current IRS instructions before any of it informs a recommendation. That instruction is the course.</p>
     <p style="font-size:13.5px">BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors. UC Berkeley Extension. Session 2.</p>
-  <p class="stamp">Last updated 2026-10-13. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
+  <p class="stamp">Last updated 2026-10-27. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
 
   </div>
 </footer>

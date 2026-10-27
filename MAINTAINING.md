@@ -134,6 +134,7 @@ regressions:
 | V6 *distinct interactions (band 13-15)* | every lesson (17 to 22) | PEDAGOGY §4 uncaps the appendix; the band assumed a 150-minute flat page | skill, or a repo profile |
 | V6 *same component type in consecutive sections* | session-0.1 (prediction-commit), session-2 (builder-assembler, work-along-gate) | accepted as shipped 2026-10-27 (DW-094); pedagogy s3.5 says flag, not fix | nothing |
 | V5 timing | session-0.1 and session-5 without the `--minutes` flags above | the validator assumes 150 | the flags |
+| V4 *.conf chip(s) without data-src* | session-1 (3), session-2 (2) | the chips carry `data-fact` (a FACTS record) and no `data-src`; the validator predates FACTS | skill |
 | V8 *Shift+U override missing* and the DOM-mode Shift+U line, `#pnum` | session-2 | removed by instruction (DW-116); the label is `#ovr` elsewhere (DW-112) | skill |
 | C2 em-dash INFO count | every page | counts the raw file and prints *policy unratified*; EDITORIAL D1 ratified it | skill |
 | `tokens.css:6` *instructor notes* | the STYLE fence, every page | skill-owned text (R4) inside a byte-exact fence | skill |

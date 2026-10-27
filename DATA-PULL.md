@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**75 of 165 works are moving targets, feeding 325 of
-673 references.**
+**67 of 146 works are moving targets, feeding 346 of
+702 references.**
 
 
 ---
@@ -53,8 +53,8 @@ version string means the version is not tracking the data.
 | Last retrieved | 2026-10-12 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
-| References | 52 |
-| Feeds | case-1 `#deliverable` ×3 · case-1 `#built` ×2 · case-2 `#deliverable` ×2 · case-2 `#built` ×2 · case-3 `#deliverable` ×5 · case-3 `#built` ×2 · case-4 `#deliverable` ×4 · case-4 `#built` ×3 · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable` ×4 · case-5 `#built` ×5 · case-5 `#next` ×2 · S0.1 `#s0` · S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#sCase` ×2 · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#sE6` ×4 |
+| References | 56 |
+| Feeds | case-1 `#deliverable` ×3 · case-1 `#built` ×2 · case-2 `#deliverable` ×2 · case-2 `#built` ×2 · case-3 `#deliverable` ×5 · case-3 `#built` ×2 · case-4 `#deliverable` ×4 · case-4 `#built` ×3 · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable` ×4 · case-5 `#built` ×5 · case-5 `#next` ×2 · S0.1 `#s0` · S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#sCase` ×2 · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#sE6` ×4 · S5 `#sE5` ×4 |
 
 **Registered retrievals**
 
@@ -74,9 +74,9 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-1 §03, §05 and §06 |
-| References | 34 |
-| Feeds | case-1 `#built` ×5 · case-2 `#built` ×4 · case-3 `#built` ×4 · case-4 `#built` ×4 · case-5 `#built` ×4 · S1 `#s5` ×2 · S1 `#s10` ×2 · S1 `#s11` ×3 · S2 `#s0` · S2 `#s5` ×3 · S4 `#s3` · S4 `#sCR` |
+| Re-check before | every teaching of session-1 Appendix A2, Appendix A7 and Appendix A8 |
+| References | 41 |
+| Feeds | case-1 `#built` ×5 · case-2 `#built` ×4 · case-3 `#built` ×4 · case-4 `#built` ×4 · case-5 `#built` ×4 · S1 `#s5` ×2 · S1 `#s10` ×2 · S1 `#s11` ×3 · S1 `#s15` ×4 · S2 `#s0` · S2 `#s5` ×3 · S4 `#s3` · S4 `#sCR` ×4 |
 
 **Registered retrievals**
 
@@ -94,9 +94,9 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
-| References | 19 |
-| Feeds | S0.1 `#s0` · S1 `#(footer)` · S4 `#(footer)` · S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#sCR` ×7 · S5 `#s6` |
+| Re-check before | every teaching of session-4 Appendix D2 |
+| References | 20 |
+| Feeds | case-4 `#next` · S0.1 `#s0` · S1 `#(footer)` · S4 `#(footer)` · S4 `#s3` ×6 · S4 `#s4` ×2 · S4 `#sCR` ×7 · S5 `#s6` |
 
 **Registered retrievals**
 
@@ -112,9 +112,29 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 Appendices D1 and D2 |
+| Re-check before | every teaching of session-4 Appendices D8 and D9 |
 | References | 18 |
 | Feeds | S4 `#s1` · S4 `#sW1` ×5 · S4 `#sW2` ×6 · S4 `#sCR` ×6 |
+
+### `src-claude-pricing` — Plans and pricing
+
+| | |
+|---|---|
+| Figure class | `vendor_pricing` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-27 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 Appendix D2 |
+| References | 13 |
+| Feeds | case-1 `#built` · case-4 `#built` · case-4 `#next` · S0.1 `#s0` ×2 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| CLAUDE-PRICING-001 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | Pro $20 per month billed monthly; Max 5x $100 and Max 20x $200 (FACTS claude-plans, read in full 2026-10-11) |
+| CLAUDE-PRICING-002 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | Pro $20 a month or $17 a month on annual billing; Team and Enterprise from $20 a seat a month billed annually (FACTS claude-plans, read in full 2026-10-11) |
+| CLAUDE-PRICING-003 | S0.1 | 2026-10-11 | **[UNVERIFIED, needs source]** | Free $0; Pro $20 a month or $17 a month billed annually; Max 5x $100 and 20x $200; Team Standard $25 ($20 annual) and Premium $125 ($100 annual); Enterprise $20 per seat billed annually plus usage; Free includes Sonnet and Haiku, Pro adds Opus with Fable through usage credits, Max and Team Premium include Fable (FACTS claude-plans, read in full 2026-10-11) |
 
 ### `src-models` — Models overview
 
@@ -138,26 +158,6 @@ version string means the version is not tracking the data.
 | MODELS-004 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | context window of 1M tokens on Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-context-window, read in full 2026-10-11) |
 | MODELS-005 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | 1M tokens of context on the current Claude models, about 555,000 words (FACTS claude-context-window, read in full 2026-10-11) |
 
-### `src-claude-pricing` — Plans and pricing
-
-| | |
-|---|---|
-| Figure class | `vendor_pricing` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
-| References | 12 |
-| Feeds | case-1 `#built` · case-4 `#built` · S0.1 `#s0` ×2 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| CLAUDE-PRICING-001 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | Pro $20 per month billed monthly; Max 5x $100 and Max 20x $200 (FACTS claude-plans, read in full 2026-10-11) |
-| CLAUDE-PRICING-002 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | Pro $20 a month or $17 a month on annual billing; Team and Enterprise from $20 a seat a month billed annually (FACTS claude-plans, read in full 2026-10-11) |
-| CLAUDE-PRICING-003 | S0.1 | 2026-10-11 | **[UNVERIFIED, needs source]** | Free $0; Pro $20 a month or $17 a month billed annually; Max 5x $100 and 20x $200; Team Standard $25 ($20 annual) and Premium $125 ($100 annual); Enterprise $20 per seat billed annually plus usage; Free includes Sonnet and Haiku, Pro adds Opus with Fable through usage credits, Max and Team Premium include Fable (FACTS claude-plans, read in full 2026-10-11) |
-
 ### `src-anthropic-dpa` — Data Processing Addendum
 
 | | |
@@ -166,9 +166,9 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §04 |
-| References | 11 |
-| Feeds | case-4 `#built` · S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#sCR` ×6 |
+| Re-check before | every teaching of session-4 Appendix D3 |
+| References | 12 |
+| Feeds | case-4 `#built` · case-4 `#next` · S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#sCR` ×6 |
 
 ### `src-claude-privacy-training` — Is my data used for model training?
 
@@ -178,9 +178,9 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
-| References | 10 |
-| Feeds | case-1 `#built` · S0.1 `#s0` ×3 · S0.1 `#s11` · S4 `#s3` ×2 · S4 `#sCR` ×2 · S5 `#s0` |
+| Re-check before | every teaching of session-4 Appendix D2 |
+| References | 11 |
+| Feeds | case-1 `#built` · case-4 `#next` · S0.1 `#s0` ×3 · S0.1 `#s11` · S4 `#s3` ×2 · S4 `#sCR` ×2 · S5 `#s0` |
 
 **Registered retrievals**
 
@@ -198,7 +198,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-2 §00 |
+| Re-check before | every teaching of session-2 s0, the retrieval bridge (unnumbered) |
 | References | 9 |
 | Feeds | S0.1 `#s1` · S0.1 `#s10` · S1 `#s1` · S1 `#s5` ×2 · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 |
 
@@ -255,7 +255,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
+| Re-check before | every teaching of session-4 Appendix D2 |
 | References | 7 |
 | Feeds | S1 `#(footer)` · S4 `#(footer)` · S4 `#s3` ×2 · S4 `#s4` · S4 `#sCR` ×2 |
 
@@ -267,7 +267,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 Appendices D1 and D2 |
+| Re-check before | every teaching of session-4 Appendices D8 and D9 |
 | References | 6 |
 | Feeds | S4 `#s7` · S4 `#sW1` ×2 · S4 `#sCR` ×3 |
 
@@ -303,7 +303,7 @@ version string means the version is not tracking the data.
 | Index version | divergent, see the three pulls below |
 | Last retrieved | 2026-08-13 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-1 §05, session-2 §02 and session-4 Appendix D3 |
+| Re-check before | every teaching of session-1 Appendix A7, session-2 Appendix B8 and session-4 Appendix D6 |
 | References | 5 |
 | Feeds | S1 `#s10` · S2 `#s5` ×3 · S4 `#sWS` |
 
@@ -323,9 +323,21 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-08-25 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 Appendices D1 and D2 |
+| Re-check before | every teaching of session-4 Appendices D8 and D9 |
 | References | 5 |
 | Feeds | S4 `#sW1` ×2 · S4 `#sW2` ×3 |
+
+### `src-openai-data` — How your data is used to improve model performance
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-4 Appendix D2 |
+| References | 5 |
+| Feeds | case-4 `#next` · S4 `#s3` ×3 · S4 `#sCR` |
 
 ### `src-agent-skills` — Agent Skills overview
 
@@ -335,7 +347,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §07 |
+| Re-check before | every teaching of session-4 §05 |
 | References | 5 |
 | Feeds | S0.1 `#s6` ×2 · S4 `#s7` · S4 `#sWS` · S4 `#sCR` |
 
@@ -353,7 +365,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-2 §01 |
+| Re-check before | every teaching of session-2 Appendix B4 |
 | References | 4 |
 | Feeds | S2 `#s3` ×2 · S4 `#sWS` · S4 `#sCR` |
 
@@ -363,7 +375,7 @@ version string means the version is not tracking the data.
 |---|---|---|---|---|
 | API-MESSAGES-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed |
 
-### `src-openai-data` — How your data is used to improve model performance
+### `src-gemini-privacy` — Gemini Apps Privacy Hub
 
 | | |
 |---|---|
@@ -371,9 +383,27 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
+| Re-check before | every teaching of session-4 Appendix D2 |
 | References | 4 |
-| Feeds | S4 `#s3` ×3 · S4 `#sCR` |
+| Feeds | case-4 `#next` · S4 `#s3` ×2 · S4 `#sCR` |
+
+### `src-anthropic-models-overview` — Models overview
+
+| | |
+|---|---|
+| Figure class | `vendor model lineup` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-12 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | each teaching of Session 5 |
+| References | 4 |
+| Feeds | S5 `#s1` ×3 · S5 `#sE5` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| ANTHROPIC-MODELS-OVERVIEW-001 | S5 | 2026-10-12 | **[UNVERIFIED, needs source]** | the four current models Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 and their not-sooner-than dates (1 September, 22 September, 28 September and 7 October 2027), with Haiku 4.5 among the legacy models (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12) |
 
 ### `src-claude-code-skills` — Skills
 
@@ -407,7 +437,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 Appendices D1 and D2 |
+| Re-check before | every teaching of session-4 Appendices D8 and D9 |
 | References | 4 |
 | Feeds | S4 `#s7` · S4 `#sW1` ×3 |
 
@@ -479,11 +509,11 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
+| Re-check before | every teaching of session-4 Appendix D2 |
 | References | 3 |
 | Feeds | S4 `#s3` ×2 · S4 `#sCR` |
 
-### `src-gemini-privacy` — Gemini Apps Privacy Hub
+### `src-gemini-workspace` — Generative AI in Google Workspace Privacy Hub
 
 | | |
 |---|---|
@@ -491,27 +521,9 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
+| Re-check before | every teaching of session-4 Appendix D2 |
 | References | 3 |
-| Feeds | S4 `#s3` ×2 · S4 `#sCR` |
-
-### `src-anthropic-models-overview` — Models overview
-
-| | |
-|---|---|
-| Figure class | `vendor model lineup` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-12 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | each teaching of Session 5 |
-| References | 3 |
-| Feeds | S5 `#s1` ×3 |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| ANTHROPIC-MODELS-OVERVIEW-001 | S5 | 2026-10-12 | **[UNVERIFIED, needs source]** | the four current models Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 and their not-sooner-than dates (1 September, 22 September, 28 September and 7 October 2027), with Haiku 4.5 among the legacy models (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12) |
+| Feeds | case-4 `#next` · S4 `#s3` ×2 |
 
 ### `src-claude-code-org` — Manage Claude Code plugins for your organization
 
@@ -533,7 +545,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 Appendices D1 and D2 |
+| Re-check before | every teaching of session-4 Appendices D8 and D9 |
 | References | 3 |
 | Feeds | S4 `#s7` · S4 `#sW1` ×2 |
 
@@ -587,7 +599,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | no lesson cites this record since the 2026-09-25 session-4 rebuild |
+| Re-check before | session-4 Appendix D4 cites this record (three chips); the link points at the 2025 archive and the 2026 edition's URL is confirmed from a browser (term-start checklist item 11) |
 | References | 2 |
 | Feeds | S4 `#sCR` ×2 |
 
@@ -611,21 +623,28 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
+| Re-check before | every teaching of session-4 Appendix D2 |
 | References | 2 |
 | Feeds | S4 `#s3` ×2 |
 
-### `src-gemini-workspace` — Generative AI in Google Workspace Privacy Hub
+### `src-gemini-plans` — Gemini subscriptions
 
 | | |
 |---|---|
-| Figure class | `vendor_policy` |
+| Figure class | `vendor_pricing` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 |
+| Re-check before | every teaching of session-1 Appendix A7 and case-4 |
 | References | 2 |
-| Feeds | S4 `#s3` ×2 |
+| Feeds | case-4 `#next` · S1 `#s10` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| GEMINI-PLANS-001 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | Google AI Plus $4.99; Google AI Pro $19.99; Google AI Ultra $99.99 (5x) or $199.99 (20x) a month (FACTS gemini-plans, primary-domain snippets read 2026-10-11) |
+| GEMINI-PLANS-002 | case-4 | 2026-10-11 | **[UNVERIFIED, needs source]** | Google AI Plus $4.99; Google AI Pro $19.99; Google AI Ultra $99.99 (5x) or $199.99 (20x) a month (FACTS gemini-plans, primary-domain snippets read 2026-10-11) |
 
 ### `src-anthropic-api-credits` — API credits for Max and Team plans
 
@@ -647,7 +666,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §03 and §04 |
+| Re-check before | every teaching of session-4 Appendices D2 and D3 |
 | References | 2 |
 | Feeds | S4 `#s3` · S4 `#sCR` |
 
@@ -659,7 +678,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 Appendix D3 |
+| Re-check before | every teaching of session-4 Appendix D6 |
 | References | 2 |
 | Feeds | S4 `#sWS` · S4 `#sCR` |
 
@@ -671,7 +690,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 Appendix D3 |
+| Re-check before | every teaching of session-4 Appendix D6 |
 | References | 2 |
 | Feeds | S4 `#sWS` · S4 `#sCR` |
 
@@ -695,7 +714,7 @@ version string means the version is not tracking the data.
 | Index version | v4.3.2 |
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-1 §05 |
+| Re-check before | every teaching of session-1 Appendix A7 |
 | References | 2 |
 | Feeds | S1 `#s10` ×2 |
 
@@ -713,7 +732,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-1 §05 |
+| Re-check before | every teaching of session-1 Appendix A7 |
 | References | 2 |
 | Feeds | S1 `#s10` ×2 |
 
@@ -731,7 +750,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-1 §05 |
+| Re-check before | every teaching of session-1 Appendix A7 |
 | References | 2 |
 | Feeds | S1 `#s10` ×2 |
 
@@ -749,7 +768,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-2 §02 |
+| Re-check before | every teaching of session-2 Appendix B8 |
 | References | 1 |
 | Feeds | S2 `#s5` |
 
@@ -761,7 +780,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-06 **· PARTIAL, month only** |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-2 §07 |
+| Re-check before | every teaching of session-2 §05 |
 | References | 1 |
 | Feeds | S2 `#s10` |
 
@@ -839,7 +858,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §05 |
+| Re-check before | every teaching of session-4 Appendix D4 |
 | References | 1 |
 | Feeds | S4 `#sCR` |
 
@@ -851,7 +870,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 §05 |
+| Re-check before | every teaching of session-4 Appendix D4 |
 | References | 1 |
 | Feeds | S4 `#sCR` |
 
@@ -899,7 +918,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-10-12 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | any teaching of session-2 §s10 |
+| Re-check before | any teaching of session-2 §05 |
 | References | 1 |
 | Feeds | case-2 `#deliverable` |
 
@@ -917,7 +936,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-10-12 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | any teaching of session-2 §s10 |
+| Re-check before | any teaching of session-2 §05 |
 | References | 1 |
 | Feeds | case-2 `#deliverable` |
 
@@ -935,7 +954,7 @@ version string means the version is not tracking the data.
 | Index version | v4.3.2 |
 | Last retrieved | 2026-10-11 |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-1 §05 |
+| Re-check before | every teaching of session-1 Appendix A7 |
 | References | 1 |
 | Feeds | S1 `#s10` |
 
@@ -1023,18 +1042,6 @@ version string means the version is not tracking the data.
 | References | 1 |
 | Feeds | S3 `#s16` |
 
-### `src-vectara` — Introducing the next generation of Vectara's hallucination leaderboard
-
-| | |
-|---|---|
-| Figure class | `leaderboard_position` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-3 §05 |
-| References | 0 |
-| Feeds | *nothing on the page* |
-
 ### `src-kitces-advisortech` — The Latest in Financial AdvisorTech — AdvisorTech columns, October 2025, November 2025 and August 2026
 
 | | |
@@ -1043,103 +1050,7 @@ version string means the version is not tracking the data.
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-3 Appendix C3 |
-| References | 0 |
-| Feeds | *nothing on the page* |
-
-### `src-beta` — Available beta and research preview features
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-0.1 |
-| References | 0 |
-| Feeds | *nothing on the page* |
-
-### `src-ctxwindow` — How large is the context window on paid Claude plans?
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-0.1 |
-| References | 0 |
-| Feeds | *nothing on the page* |
-
-### `src-features` — Features and capabilities collection index
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-0.1 |
-| References | 0 |
-| Feeds | *nothing on the page* |
-
-### `src-plugins` — Use plugins in Claude
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-0.1 |
-| References | 0 |
-| Feeds | *nothing on the page* |
-
-### `src-routing` — Why Claude switched models in your conversation with Fable 5
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-0.1 |
-| References | 0 |
-| Feeds | *nothing on the page* |
-
-### `src-skills` — What are skills?
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-0.1 |
-| References | 0 |
-| Feeds | *nothing on the page* |
-
-### `src-anthropic-aup` — Usage Policy
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 |
-| References | 0 |
-| Feeds | *nothing on the page* |
-
-### `src-state-breach` — Data breach notification laws: a 50-state survey, 2026 edition
-
-| | |
-|---|---|
-| Figure class | `survey` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 Appendix D5 |
+| Re-check before | every teaching of session-3 Appendix C7 |
 | References | 0 |
 | Feeds | *nothing on the page* |
 
@@ -1176,7 +1087,7 @@ wrong when they go stale.
 | S1 | `Fable 5`, `GPT-5.6`, `Kimi K3`, `Luna`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 59 |
 | S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 52 |
 | S3 | — | 0 |
-| S4 | `Opus 4.7`, `Opus 5`, `Sonnet 5` | 4 |
+| S4 | `Fable 5`, `Opus 4.7`, `Opus 5`, `Sonnet 5` | 7 |
 | S5 | `Fable 5`, `Haiku 4.5`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sonnet 5` | 32 |
 | case-1 | `Opus 5`, `Sonnet 5` | 10 |
 | case-2 | `Opus 5`, `Sonnet 5` | 7 |
@@ -1184,7 +1095,7 @@ wrong when they go stale.
 | case-4 | `Opus 5`, `Sonnet 5` | 7 |
 | case-5 | `Opus 5`, `Sonnet 5` | 7 |
 
-**193 occurrences across 11 lessons.** This count is read off
+**196 occurrences across 11 lessons.** This count is read off
 the corpus on every run, so it cannot go stale the way a typed one would.
 
 

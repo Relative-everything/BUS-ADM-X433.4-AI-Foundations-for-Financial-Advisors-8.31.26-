@@ -63,8 +63,7 @@ D9); this file names the task, never the date.
     flattened inner quotation marks at `session-1` A2 and take the span out of
     `scripts/verify-wolfram-quotes.py`'s `PDIM_FIGURES` whitelist), Dahl et al.'s
     *>800,000* and Charlotin's count (Session 2), the Artificial Analysis index
-    behind both cost charts, the OWASP 2026 edition link for `src-owasp`, Zhao et
-    al.'s arXiv page for `src-zhao`, the twelve Session 5 records at M, and the
+    behind both cost charts, the OWASP 2026 edition link for `src-owasp`, the twelve Session 5 records at M, and the
     fifteen moving-target records with no retrieval date that `verify-sources`
     lists as ADVISE.
 12. **FACTS.** The week before each session:

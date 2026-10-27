@@ -878,5 +878,73 @@
    "three quarters of an English word"
   ],
   "notes": "Primary page fetched in full 2026-10-12: \"Claude 4.7 and later models and Claude Mythos Preview use a newer tokenizer that contributes to their improved performance on a wide range of tasks. This tokenizer produces approximately 30% more tokens for the same text.\" The old 0.75 words-per-token rule of thumb predates it and is retired as a stated rule; the context-window record carries the 555,000 words per 1M tokens note."
+ },
+ {
+  "id": "aa-frontier-scatter-2026-07",
+  "statement": "Session 1 frontier scatter: Artificial Analysis Intelligence Index score and cost per index task for eight models, July 2026 pull",
+  "value": "GPT-5.6 Luna (max) 51 at $0.21; Muse Spark 1.1 (xhigh) 51 at $0.26; Grok 4.5 (high) 54 at $0.31; GLM-5.2 (max) 51 at $0.32; Kimi K3 57 at $0.94; GPT-5.6 Sol (max) 59 at $1.04; Claude Opus 4.8 (max) 56 at $1.80; Claude Fable 5 (max) 60 at $2.75",
+  "unit": "Intelligence Index score; USD per index task",
+  "applies_to": [
+   "session-1"
+  ],
+  "source_url": "https://artificialanalysis.ai/models",
+  "source_title": "Artificial Analysis Intelligence Index and cost-per-task figures (artificialanalysis.ai)",
+  "retrieved": "2026-07-28",
+  "confidence": "M",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [],
+  "notes": "Created 2026-10-27 from session-1/index.html (the MODELS array behind the Appendix A7 frontier chart) and SOURCES.md src-aa (last_retrieved.session-1 2026-07-28; the page body dates the pull 17 and 24 July 2026 and the footer 28 July) without a fresh fetch. The index version of this pull is unrecorded (src-aa index_version.session-1). Opus 5 and GPT-5.6 Terra were omitted from the pull because their cost per index task was unpublished. DW-175."
+ },
+ {
+  "id": "aa-cost-frontier-2026-08",
+  "statement": "Session 2 cost-frontier chart: Artificial Analysis Intelligence Index v4.1.1 score and cost per index task for seven models, August 2026 pull",
+  "value": "Claude Opus 5 61 at $2.03; Claude Fable 5 60 at $2.75; GPT-5.6 Sol 59 at $1.04; Claude Opus 4.8 56 at $1.80; Claude Sonnet 5 55 at $2.29; GPT-5.6 Terra 55 at $0.52; GPT-5.6 Luna 51 at $0.21 (max reasoning effort; Terra and Luna costs derived from the stated ~50% and ~80% reductions relative to Sol)",
+  "unit": "Intelligence Index v4.1.1 score; USD per index task",
+  "applies_to": [
+   "session-2"
+  ],
+  "source_url": "https://artificialanalysis.ai/models",
+  "source_title": "Artificial Analysis Intelligence Index and cost-per-task figures (artificialanalysis.ai)",
+  "retrieved": "2026-08-01",
+  "confidence": "M",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [],
+  "notes": "Created 2026-10-27 from session-2/index.html (the MODELS array behind the Appendix B8 cost-frontier chart and its source line) and SOURCES.md src-aa (last_retrieved.session-2 is the PARTIAL date 2026-08, DATA-PULL PULL-002) without a fresh fetch. The day in retrieved is NOT a recorded retrieval: the registry schema requires a full date, so this record stands at the partial date's earliest possible day, the reading convention MAINTAINING.md declares for partial dates. Replace it with the real day at the next re-pull. The shared figures are identical to the July 2026 session-1 pull under a later version string (src-aa). DW-175, DW-118."
+ },
+ {
+  "id": "openai-api-rates-gpt-5-6",
+  "statement": "OpenAI API per-token rates for the GPT-5.6 Sol, Terra and Luna tiers, as carried in Session 2",
+  "value": "GPT-5.6 Sol $5 input / $30 output; GPT-5.6 Terra $2.50 / $15; GPT-5.6 Luna $1 / $6",
+  "unit": "USD per MTok",
+  "applies_to": [
+   "session-2"
+  ],
+  "source_url": "https://openai.com/api/pricing/",
+  "source_title": "API pricing (openai.com)",
+  "retrieved": "2026-08-01",
+  "confidence": "M",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [],
+  "notes": "Created 2026-10-27 from session-2/index.html (the i and o fields of the MODELS array and the Appendix B8 source lines, which say retrieved August 2026) and SOURCES.md src-openai-pricing (last_retrieved [UNVERIFIED, needs source]; the rates entered with the 2026-08 pull and no retrieval was recorded) without a fresh fetch. The day in retrieved is NOT a recorded retrieval: it is the earliest possible day of the page's own August 2026, the partial-date reading convention in MAINTAINING.md. openai.com was egress-blocked when the source record was written. DW-176, DW-081."
+ },
+ {
+  "id": "eu-ai-act-article-50",
+  "statement": "EU AI Act Article 50 transparency obligations: application date and who is bound",
+  "value": "Regulation (EU) 2024/1689 entered into force in August 2024; Article 50 applies from 2 August 2026; it binds providers placing AI systems on the EU market and deployers in the EU, not a US adviser",
+  "unit": "",
+  "applies_to": [
+   "session-4"
+  ],
+  "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+  "source_title": "Regulation (EU) 2024/1689, Article 50 (EUR-Lex)",
+  "retrieved": "2026-09-27",
+  "confidence": "M",
+  "volatility": "medium",
+  "reverify_before": "term-start",
+  "retired_values": [],
+  "notes": "Created 2026-10-27 from session-4/index.html (the EU bullet in Appendix D8 and the §02 sorter item) and SOURCES.md src-eu-ai-act without a fresh fetch. eur-lex.europa.eu was egress-blocked on 2026-09-27, when the source record was written: the 2 August 2026 date and the marking duty were corroborated from Anthropic's page on how Claude marks content, not read in the Regulation, so M. The instructor rule key (instructor-notes/session-4-rule-key.md item 9) also says tools already on the market by 2 Dec 2026, a figure no source record states and src-claude-marks content_changed records as withdrawn from the Claude help page: not carried here. DW-176."
  }
 ]

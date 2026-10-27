@@ -92,7 +92,7 @@ different rule that does the same job for the other registration.
 ### Lane 1 · A rule written for AI (item 9): names AI, binds someone, not you
 
 9. **EU AI Act, Article 50**, Regulation (EU) 2024/1689. In force Aug 2024; Article 50 from
-   2 Aug 2026; tools already on the market by 2 Dec 2026 (M). Providers mark AI output
+   2 Aug 2026 (M, FACTS:eu-ai-act-article-50). Providers mark AI output
    machine-readably; deployers label deepfakes. Binds the vendor. Say: "Binding law that names
    AI. Not a US securities rule." Trap: it binds Anthropic, not a US adviser with US clients.
 

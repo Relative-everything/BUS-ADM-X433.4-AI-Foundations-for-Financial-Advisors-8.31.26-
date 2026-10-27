@@ -10,6 +10,86 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-10-27 · The deferred-work register is emptied
+
+Branch `ccr-3f106263-7kokop`, the same day as the audit below; rules, six worker
+ledgers and the handback in `docs/changes/2026-10-27-register-closeout/`; decisions
+D-068 to D-092 in `docs/next-term/DECISIONS.md`. The instruction was to finish or
+retire every open row and leave the branch merge-ready. 197 ids: 0 open, 6 recorded
+as upstream, 134 closed, 57 superseded. Off-site term tasks moved to
+`instructor-notes/term-start-checklist.md`.
+
+### Served pages
+
+- **Hub.** The case dialog's instructor-addressed verification block is one learner
+  sentence; its four items are on the Session 2 run sheet (DW-017, DW-056).
+- **Setup page.** The Shift+U badge reads *Shift+U: reveal all answer panels*, so the
+  narrowed R2 classifier (DW-104) uncovers no dash and the editorial baseline holds.
+- **Session 1.** The footer legend is plain labels, not chips (DW-020); `table.mtx` and
+  the tight tables scroll inside their box at phone width (DW-161); the frontier
+  scatter cites FACTS `aa-frontier-scatter-2026-07` and the Gemini plans row cites
+  `src-gemini-plans` (DW-175, DW-181).
+- **Session 2.** A closing check in the other lessons' form ends the core (DW-152); the
+  handoff threshold is stated as the course's own rule (DW-110); the six `.tg` toggles
+  are reachable by keyboard and show a focus ring (they were not focusable at all);
+  five dead CSS rules gone (DW-190); the cost-frontier chart and the OpenAI rates cite
+  FACTS records (DW-175, DW-176); the one bare URL in a reading list wraps (DW-161).
+- **Session 3.** Five *tonight* sites read *this session* (DW-075); the slope chart's
+  chip wraps at 320 px (DW-161); orphan `.verify` rules outside the fence removed.
+- **Session 4.** The live-console cost line prices the model that answered from a
+  four-row table read from FACTS, each row chipped, and says the out count includes
+  thinking tokens (DW-185); the Article 50 chip cites `eu-ai-act-article-50`; the two
+  sentences that asserted a consumer training default now state none (the FACTS
+  record holds it as GAP).
+- **Session 5.** The §01 *SESSION MODEL* pointer label sat 2 to 3 units above its
+  viewBox and decided `verify-browser` 14b by which font loaded; it and two other
+  pointer groups now start inside the figure (DW-170). §07's route figure shows a
+  ten-step route's last step with a *+N more* line (DW-163) and the right-column
+  desks' wires no longer cross labels (DW-164).
+- **Case pages.** Case 1 and Case 4 fit 320 px (the citation-log table wraps, DW-161);
+  Case 2's row C carries the Illinois statute link at M instead of *None yet*; Case 4's
+  Gemini chip cites `src-gemini-plans`. Every stamp set by `scripts/verify-stamps.mjs`.
+
+### Sources and facts
+
+- SOURCES.md 165 to 146 records: twenty unreferenced evidence records deleted,
+  `src-equifax` and `src-capitalone` reclassed background, `src-gemini-plans` added;
+  46 `recheck_before`/`content_changed` section labels relabelled to the 2027 sections
+  (DW-173, DW-178, DW-181). Lock synced; footers, bibliography, queue regenerated.
+- FACTS gains `aa-frontier-scatter-2026-07`, `aa-cost-frontier-2026-08`,
+  `openai-api-rates-gpt-5-6`, `eu-ai-act-article-50` (48 records), dated from the
+  pages and records, not re-fetched, so the week-before ritual ages them.
+
+### Tooling
+
+- `inject-sources.mjs` writes only as the entry point (DW-159); `verify-sources`
+  ADVISEs undated or 180-day-old moving targets (DW-081); `build-sources`
+  `deriveUsage` reads to the SOURCES sentinels (DW-179); `verify-case` recurses into
+  nested and media-scoped CSS, fails on `.case-*` rules outside its window, and pins
+  the seven dollar figures in the v5 sheets to `case-facts.json` (DW-166, DW-191);
+  `verify-editorial` exports `ALL_LESSONS`, `build-unsourced` imports it and rebuilds
+  template claim text (DW-167, DW-168); `verify-style` and `build-changelog.py`
+  resolve the sweep path the same way (DW-169); `verify-facts` reports stale
+  high-volatility records as advisory without `--as-of`/`--session` (DW-187);
+  `verify-browser` 13b tests the first text box on eight pages (DW-196); the new
+  `verify-stamps.mjs` checks and fixes the *Last updated* dates (DW-140);
+  `docs/next-term/checks.mjs` §7 compares each lesson's case opener with its case
+  page (DW-171); `drags.mjs` measures both font states (DW-162). A8 session-3's
+  minority re-recorded 15 to 3 (DW-053); A15 is HARD (DW-023).
+
+### Record
+
+- `CLAUDE.md` (DW-010), `audit/README.md` (DW-193), `instructor-notes/term-start-checklist.md`
+  (DW-150 and the rows no repo change closes), small-room lines in every run sheet
+  (DW-194), MAINTAINING's gate flags and its *What the skill validator says that this
+  repository does not act on* table (DW-136, DW-189), README's M definition (DW-142),
+  EDITORIAL's D18, R11, R10 and Class A2 brought to the 2027 state (DW-195, DW-060),
+  `docs/repo-updates-plan.md` Phases 5 to 7 retired (DW-082), nine Fall-era documents
+  archive-marked (DW-182), the contested audit rulings made (DW-084),
+  `scripts/state_space.py` deleted (DW-172), the register compacted (DW-192).
+
+---
+
 ## 2026-10-27 · The deferred-work register is audited against the 2027 tree
 
 Branch `ccr-3f106263-7kokop`. Every open row in `docs/deferred-work.md` was re-measured
