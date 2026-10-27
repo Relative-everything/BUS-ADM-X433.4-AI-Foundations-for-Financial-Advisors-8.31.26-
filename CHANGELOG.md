@@ -10,6 +10,39 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-10-27 · The deferred-work register is audited against the 2027 tree
+
+Branch `ccr-3f106263-7kokop`. Every open row in `docs/deferred-work.md` was re-measured
+against `main` at `233bb72`, the first full pass since the 2027-cohort rebuild of
+2026-10-13 replaced most of the pages the rows described. No lesson, case page or
+instructor note changed; this entry is record only.
+
+### The register
+
+- **Counts.** 86 open rows in, 67 out: 10 closed on the tree (DW-050, DW-054, DW-092,
+  DW-105, DW-108, DW-143, DW-160, DW-165, DW-184, and DW-177 moved out of the Open table),
+  28 superseded because the rebuild removed their premise or a later row owns the residue
+  (the nine ratchet-ratification rows among them, met by the 2026-10-13 re-baseline D-063),
+  the six open-upstream rows moved to their own *Open upstream* table (D-20) and confirmed
+  for the first time with the skill installed, nine rows re-owned to Claude Code, and
+  eleven new rows DW-187 to DW-197.
+- **A queue for the 2027 term** replaces the catch-up's waves: P1 (before Session 1,
+  all instructor: the off-site checklist, the week-before FACTS re-verify, the seventeen
+  tentative readings, the case recaptures, the class-key probe, and the skill-versus-
+  PEDAGOGY decision), P2 (served-page correctness and the browser day), P3 (mechanical
+  cleanups), P4 (housekeeping).
+- **The battery at `233bb72`** with the skill installed: every in-repo check green except
+  `verify-facts` (ten FACTS records past their 14-day window, by design between terms,
+  DW-187), `case-inventory --report-check` (stale generated report, DW-188) and
+  `verify-browser` 14b on session-5 (the DW-170 flake's second occurrence). The skill's
+  `validate_lesson.py` ran on every served page: V6's 13-to-15 interaction band fails on
+  all six lessons under PEDAGOGY v2.0's uncapped appendix (DW-189), V2 still fires on
+  citation links (DW-029), the setup page needs `--minutes 57` (DW-136).
+- **Tags.** The seven owed tags were cut locally and the push was refused with HTTP 403
+  (a dry-run is accepted); DW-096 and DW-149 record the commits and the one-minute fix.
+
+---
+
 ## 2026-10-16 · Claude API keys in the live model console
 
 Branch `claude/peaceful-edison-n73y17`; plan, ledger and handback in
