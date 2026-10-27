@@ -1,6 +1,6 @@
 # Plan: bibliography audit applied
 From: direct request. Date: 2026-10-27. Tier: Lite.
-Status: accepted.
+Status: implemented.
 
 Instruction: a comprehensive update of the bibliography, every record except `src-wolfram`
 (locked); delete hallucinated sources first; then, for each remaining source, the best two
@@ -56,3 +56,5 @@ Every gate script MAINTAINING lists exits 0 on the final tree; `build-sources --
 
 ## Departures from plan
 - Step 3, 2026-10-27: `src-anthropic-context` merged into `src-context-windows` (the same page under two keys; the audit's UPDATE_METADATA for both said merge). Inside the named files (SOURCES.md, session-4): its one inline chip and its flip-card chip now point at `src-context-windows`, which gained the session-4 clause and the context-history scope; the duplicate record was deleted and the lock synced with the two emptied temperature records. The other duplicate pair (`src-models`, `src-anthropic-models-overview`) is not merged, because the second is cited only by session-5.
+- Steps 2 to 5, 2026-10-27: generators rewrote files the plan did not list, all generated: `docs/case-fact-inventory.md`, `facts/FACTS.md`, and the footers of `session-0.1`, `session-3`, `session-5` and `cases/*.html` (every lesson footer is built from SOURCES.md). No hand edit outside the named files.
+- Step 5, 2026-10-27: `src-memory` gained a `used_for.session-4` clause so the chip added to the memory flip card resolves to a footer entry (check 18).
