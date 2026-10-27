@@ -616,6 +616,7 @@ ul.pts{margin:14px 0;padding-left:22px;max-width:64ch}ul.pts li{margin:6px 0;lin
 figure{margin:28px 0;border:1px solid var(--line);border-radius:11px;background:var(--card);padding:18px}
 figure svg{width:100%;height:auto;display:block}
 figcaption{font-size:14px;color:var(--muted);margin-top:12px;padding:0 2px;line-height:1.55}
+figcaption .conf{white-space:normal} /* a chip that carries a clause must wrap at 320 px */
 .chartlab{font-family:"JetBrains Mono",monospace;font-size:11px;fill:var(--muted);letter-spacing:.04em}
 .chartval{font-family:"JetBrains Mono",monospace;font-size:12px;fill:var(--ink);font-weight:500}
 .chartttl{font-family:"Bricolage Grotesque",sans-serif;font-size:14px;fill:var(--ink);font-weight:600}
@@ -655,9 +656,6 @@ body.core-only #rail button.apxnav:not(.apxidx){display:none}
 .pace .pcell span{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
 .pace p{margin:13px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted);max-width:70ch}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
-.verify{border:2px dashed var(--warn);border-radius:11px;padding:15px 18px;margin:20px 0;background:#fff;font-size:14.5px;line-height:1.5}
-.verify .vh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
-.verify ul{margin:7px 0 0;padding-left:19px}.verify li{margin:5px 0}
 /* ===== family 1: work-along gate (completion feedback only; never withholds) ===== */
 .check{display:flex;gap:13px;align-items:flex-start;background:var(--gold-bg);border:1.5px solid #DFD3AF;border-radius:11px;padding:14px 17px;margin:22px 0}
 .check.done{background:var(--on-bg);border-color:var(--on)}
@@ -1145,13 +1143,13 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <ul class="pts">
     <li><b>Session 1.</b> The model predicts rather than knows.</li>
     <li><b>Session 2.</b> It samples a plausible answer rather than computing the true one.</li>
-    <li><b>Tonight.</b> Grounding: hand it your own documents and require it to answer from them. Then measure how much that removes.</li>
-    <li><b>The ladder.</b> Why it happens (Session 1), how often it happens (tonight), what it costs you (Session 4).</li>
+    <li><b>This session.</b> Grounding: hand it your own documents and require it to answer from them. Then measure how much that removes.</li>
+    <li><b>The ladder.</b> Why it happens (Session 1), how often it happens (this session), what it costs you (Session 4).</li>
     <li><b>The file.</b> The Coles, in the case section next. The whole file is behind Case facts, top right; nothing on this page needs it.</li>
   </ul>
 
   <div class="panel" style="border-color:var(--on);border-width:2px">
-    <span class="plab">Tonight's one thing</span>
+    <span class="plab">This session's one thing</span>
     <p class="big" style="margin:0">By the end of the session you will be able to take any step of your own client-meeting workflow and say whether you would hand it to a tool, and defend the answer on what the tool can actually verify. If you do not run client meetings, pick one recurring meeting that you write up afterwards (a committee, a case review, a hiring interview) and read &ldquo;client meeting&rdquo; as that meeting all session. &sect;07's closing check asks exactly this.</p>
   </div>
 
@@ -1611,7 +1609,7 @@ If a heading has nothing under it, write "none".</pre>
   </div>
 
   <h4 style="margin-top:26px">Three prompts that take the summary and nothing else</h4>
-  <p>Tonight everyone's source is the &sect;04 summary, repeated below. Each Copy button carries the summary with the prompt, so you paste once.</p>
+  <p>Everyone's source is the &sect;04 summary, repeated below. Each Copy button carries the summary with the prompt, so you paste once.</p>
 
   <div class="mpanel has" style="min-height:0"><span class="hd">The source: the &sect;04 summary, synthetic, no real client</span><span id="sumBlock" style="font-family:'Source Serif 4',serif;font-size:15px;line-height:1.6;display:block"></span></div>
 
@@ -1858,7 +1856,7 @@ then a list of every element where my answer was thin.</pre>
 
   <div class="check" data-gate="g12"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Tick the list, copy it out, name the one gap you will close first.</div></div>
 
-  <div class="talk"><span class="th">Closing check &middot; in chat, one line each, against tonight's one thing</span>One step of your meeting workflow you would hand to a tool tonight, one you would not, and why. If there is time: the grounded answer in &sect;02 was quoted correctly and was wrong. Where in your workflow do you catch that?</div>
+  <div class="talk"><span class="th">Closing check &middot; in chat, one line each, against this session's one thing</span>One step of your meeting workflow you would hand to a tool this week, one you would not, and why. If there is time: the grounded answer in &sect;02 was quoted correctly and was wrong. Where in your workflow do you catch that?</div>
 
 </section>
 

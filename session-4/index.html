@@ -688,9 +688,6 @@ body.core-only #rail button.apxnav:not(.apxidx){display:none}
 .pace .pcell span{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
 .pace p{margin:13px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted);max-width:70ch}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
-.verify{border:2px dashed var(--warn);border-radius:11px;padding:15px 18px;margin:20px 0;background:#fff;font-size:14.5px;line-height:1.5}
-.verify .vh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
-.verify ul{margin:7px 0 0;padding-left:19px}.verify li{margin:5px 0}
 /* ===== family 1: work-along gate (completion feedback only; never withholds) ===== */
 .check{display:flex;gap:13px;align-items:flex-start;background:var(--gold-bg);border:1.5px solid #DFD3AF;border-radius:11px;padding:14px 17px;margin:22px 0}
 .check.done{background:var(--on-bg);border-color:var(--on)}
@@ -11586,13 +11583,39 @@ window.__coreMins=60;
       without a key. A Claude key shows the Anthropic request, with the two
       headers a browser must carry; a Gemini key shows Google's.
    2  A cost line under the reply: the tokens that came back, priced at the
-      Claude API's smallest model so the room sees tokens become dollars.
+      rate of the Claude model that answered (a model the table does not know
+      prices at the Haiku floor) so the room sees tokens become dollars.
    3  Appendix D2's ladder panel: a pointer to the box, its live status, and a button
       that loads the clean Prompt D from §03.
    Nothing here stores anything, and nothing runs unless a reader presses a
    button. The default prompt is the clean Prompt D: synthetic, and already
    on this page. Plain ES5. */
-var LM_PRICE={inp:0.1,out:0.5,note:'the smallest Claude model, $0.10 in and $0.50 out per million tokens for a prompt up to 100K tokens <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-haiku-5-5 claude-output-input-ratio">H</span>'};
+/* Prices in USD per million tokens, copied from facts/FACTS.json
+   (claude-api-price-*); each carries its chip literally, so the facts
+   check can read it. Keyed on the family and
+   version in the model id the console writes into #lmFreeUse, so a dated
+   suffix still matches. Haiku 5.5 is tiered on prompt length. A model the
+   table does not know prices at the Haiku floor, and the line says so. */
+var LM_PRICES={
+  'haiku-5-5':{name:'Claude Haiku 5.5',inp:0.1,out:0.5,tier:100000,inpHi:0.5,outHi:2.5,
+    note:'$0.10 in and $0.50 out per million tokens for a prompt up to 100K tokens, $0.50 and $2.50 above that <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-haiku-5-5 claude-output-input-ratio">H</span>'},
+  'sonnet-5-5':{name:'Claude Sonnet 5.5',inp:2,out:10,
+    note:'$2 in and $10 out per million tokens <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-sonnet-5-5">H</span>'},
+  'opus-5-5':{name:'Claude Opus 5.5',inp:4,out:20,
+    note:'$4 in and $20 out per million tokens <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-opus-5-5">H</span>'},
+  'fable-5-1':{name:'Claude Fable 5.1',inp:10,out:50,
+    note:'$10 in and $50 out per million tokens <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-fable-5-1">H</span>'}
+};
+var LM_PRICE=LM_PRICES['haiku-5-5'];
+LM_PRICE.floor='the smallest Claude model, '+LM_PRICE.note;
+function lmPriceFor(model){
+  var m=/claude-(haiku|sonnet|opus|fable)-(\d+)-(\d+)/.exec(model||'');
+  return m?(LM_PRICES[m[1]+'-'+m[2]+'-'+m[3]]||null):null;
+}
+function lmUsd(p,tin,tout){
+  var hi=p.tier&&tin>p.tier;
+  return tin/1e6*(hi?p.inpHi:p.inp)+tout/1e6*(hi?p.outHi:p.out);
+}
 /* the clean Prompt D: every identifying phrase of RED replaced by its placeholder and both confidences removed, which is the string section 02 copies once the meter reads No. Derived through redJoin, so there is no second literal to drift. */
 var LM_DEFAULT_PROMPT=redJoin(RED,function(){return true});
 function lmCleanPrompt(){
@@ -11635,10 +11658,22 @@ function lmCleanPrompt(){
   var use=$('lmFreeUse');
   if(cost&&use&&window.MutationObserver){
     new MutationObserver(function(){
-      var m=use.textContent.match(/in (\d+) tokens[^0-9]*out (\d+) tokens/);
+      /* the fence writes "in N tokens · out N tokens · <model id>"; the model
+         is the one the call was routed to */
+      var m=use.textContent.match(/in (\d+) tokens[^0-9]*out (\d+) tokens(?:\s*\u00b7\s*(\S+))?/);
       if(!m){cost.textContent='';return}
-      var tin=+m[1],tout=+m[2],usd=tin/1e6*LM_PRICE.inp+tout/1e6*LM_PRICE.out;
-      cost.innerHTML='The same tokens through '+LM_PRICE.note+': about $'+usd.toFixed(5)+'. '+
+      var tin=+m[1],tout=+m[2],model=m[3]||'';
+      var p=LM.provider==='anthropic'?lmPriceFor(model):null;
+      if(p){
+        /* a model that cannot switch thinking off thinks before it answers;
+           Anthropic bills those tokens as output and reports them inside
+           output_tokens, so the out count above already holds them */
+        var thinks=!(typeof lmCap==='function'&&lmCap(model,'thinking.types.disabled'));
+        cost.innerHTML='A Claude key is billed at the rate of the model that answered. '+p.name+', at '+p.note+': about $'+lmUsd(p,tin,tout).toFixed(5)+' for this reply, against the balance behind the key.'+
+          (thinks?' This model thinks before it answers; the thinking tokens are billed as output and the out count of '+tout+' includes them.':' Thinking is off for this model, so the out count is the reply alone.');
+        return;
+      }
+      cost.innerHTML='The same tokens through '+LM_PRICE.floor+': about $'+lmUsd(LM_PRICE,tin,tout).toFixed(5)+'. '+
         (LM.provider==='anthropic'
           ?'A Claude key is billed at its own model\u2019s rate, this figure or higher, against the balance behind the key; on a model that thinks first, the thinking tokens are in the out count.'
           :'The free tier charges nothing and is paid for with your data.');

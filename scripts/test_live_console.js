@@ -600,6 +600,15 @@ async function connect(page, key) {
     ok('s4 claude: token counts shown', /in 13 tokens .* out 9 tokens/.test(await page.locator('#lmFreeUse').textContent()));
     const cost = await page.locator('#lmCost').textContent();
     ok('s4 claude: the cost line prices the tokens and names the Claude billing', /about \$/.test(cost) && /Claude key is billed/.test(cost), cost.slice(0, 120));
+    // per-model pricing (DW-185): the default model is Opus 5.5, 13 in at $4 + 9 out at $20 per MTok = $0.00023
+    ok('s4 claude: the cost line names the model that answered and its own rate', /Claude Opus 5\.5, at \$4 in and \$20 out/.test(cost) && /about \$0\.00023/.test(cost), cost.slice(0, 160));
+    ok('s4 claude: a model that cannot switch thinking off says the out count holds its thinking tokens', /thinking tokens are billed as output and the out count of 9 includes them/.test(cost), cost.slice(0, 220));
+    await page.selectOption('#lmModel', 'claude-haiku-5-5'); await page.click('#lmSend'); await page.waitForTimeout(300);
+    const costH = await page.locator('#lmCost').textContent();
+    ok('s4 claude: Haiku 5.5 prices at $0.10 / $0.50 with thinking off', /Claude Haiku 5\.5, at \$0\.10 in and \$0\.50 out/.test(costH) && /about \$0\.00001/.test(costH) && /Thinking is off/.test(costH), costH.slice(0, 160));
+    await page.selectOption('#lmModel', 'claude-sonnet-4-6'); await page.click('#lmSend'); await page.waitForTimeout(300);
+    const costU = await page.locator('#lmCost').textContent();
+    ok('s4 claude: a model the table does not know falls back to the Haiku floor sentence', /smallest Claude model/.test(costU) && /this figure or higher/.test(costU), costU.slice(0, 160));
     ok('s4 claude: the key never reaches the DOM', !(await page.content()).includes(A_KEY));
     await page.close();
   }
