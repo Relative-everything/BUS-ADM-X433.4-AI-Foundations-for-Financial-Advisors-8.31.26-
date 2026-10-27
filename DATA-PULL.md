@@ -50,7 +50,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor lifecycle schedule` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-12 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
 | References | 56 |
@@ -72,7 +72,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `price` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-11 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 Appendix A2, Appendix A7 and Appendix A8 |
 | References | 41 |
@@ -92,7 +92,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendix D2 |
 | References | 20 |
@@ -110,7 +110,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-11 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendices D8 and D9 |
 | References | 18 |
@@ -122,7 +122,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_pricing` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendix D2 |
 | References | 13 |
@@ -142,7 +142,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-13 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 12 |
@@ -164,7 +164,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendix D3 |
 | References | 12 |
@@ -217,7 +217,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 9 |
@@ -235,7 +235,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 8 |
@@ -283,7 +283,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-13 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | the start of each term |
 | References | 6 |
@@ -339,13 +339,13 @@ version string means the version is not tracking the data.
 | References | 5 |
 | Feeds | case-4 `#next` · S4 `#s3` ×3 · S4 `#sCR` |
 
-### `src-agent-skills` — Agent Skills overview
+### `src-agent-skills` — Agent Skills
 
 | | |
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 §05 |
 | References | 5 |
@@ -393,7 +393,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor model lineup` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-12 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
 | References | 4 |
@@ -405,13 +405,13 @@ version string means the version is not tracking the data.
 |---|---|---|---|---|
 | ANTHROPIC-MODELS-OVERVIEW-001 | S5 | 2026-10-12 | **[UNVERIFIED, needs source]** | the four current models Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 and their not-sooner-than dates (1 September, 22 September, 28 September and 7 October 2027), with Haiku 4.5 among the legacy models (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12) |
 
-### `src-claude-code-skills` — Skills
+### `src-claude-code-skills` — Extend Claude with skills
 
 | | |
 |---|---|
 | Figure class | `vendor product documentation` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-04 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
 | References | 4 |
@@ -423,19 +423,19 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor product documentation` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-04 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
 | References | 4 |
 | Feeds | S5 `#s1` ×2 · S5 `#sLib` ×2 |
 
-### `src-claude-watermark` — How Claude's text watermark works
+### `src-claude-watermark` — How Claude's text watermarking works
 
 | | |
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-11 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendices D8 and D9 |
 | References | 4 |
@@ -453,7 +453,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-13 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | the start of each term |
 | References | 4 |
@@ -471,7 +471,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-13 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | the start of each term |
 | References | 4 |
@@ -489,7 +489,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 3 |
@@ -531,13 +531,13 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor product documentation` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-04 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
 | References | 3 |
 | Feeds | S5 `#sLib` ×3 |
 
-### `src-openai-provenance` — Provenance signals in OpenAI-generated content
+### `src-openai-provenance` — Provenance signals (Content Credentials & SynthID) in OpenAI-generated content
 
 | | |
 |---|---|
@@ -561,7 +561,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-13 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | the start of each term |
 | References | 3 |
@@ -579,7 +579,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-13 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | the start of each term |
 | References | 3 |
@@ -609,13 +609,13 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 2 |
 | Feeds | S4 `#sWS` · S4 `#sCR` |
 
-### `src-ms-copilot-edp` — Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat
+### `src-ms-copilot-edp` — Enterprise data protection in Microsoft 365 Copilot and Microsoft 365 Copilot Chat
 
 | | |
 |---|---|
@@ -652,7 +652,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-16 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 and session-4 |
 | References | 2 |
@@ -664,19 +664,19 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendices D2 and D3 |
 | References | 2 |
 | Feeds | S4 `#s3` · S4 `#sCR` |
 
-### `src-claude-memory` — Bringing memory to teams at work
+### `src-claude-memory` — Bringing memory to teams
 
 | | |
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendix D6 |
 | References | 2 |
@@ -700,7 +700,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor product documentation` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-04 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
 | References | 2 |
@@ -790,7 +790,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-08-20 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 1 |
@@ -808,7 +808,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-16 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 |
 | References | 1 |
@@ -862,13 +862,13 @@ version string means the version is not tracking the data.
 | References | 1 |
 | Feeds | S4 `#sCR` |
 
-### `src-anthropic-injection` — Mitigating the risk of prompt injections in browser use
+### `src-anthropic-injection` — Mitigating prompt injections in browser use
 
 | | |
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendix D4 |
 | References | 1 |
@@ -904,7 +904,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor product documentation` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-04 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
 | References | 1 |
@@ -970,7 +970,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-13 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | the start of each term |
 | References | 1 |
@@ -1006,7 +1006,7 @@ version string means the version is not tracking the data.
 | References | 1 |
 | Feeds | S1 `#s15` |
 
-### `src-anthropic-prompting-101` — Prompting 101 (Code w/ Claude) (video, about 25 minutes)
+### `src-anthropic-prompting-101` — Prompting 101, Code w/ Claude (video, about 25 minutes)
 
 | | |
 |---|---|
@@ -1024,7 +1024,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `none` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-13 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | the week before the session that assigns it |
 | References | 1 |
@@ -1042,7 +1042,7 @@ version string means the version is not tracking the data.
 | References | 1 |
 | Feeds | S3 `#s16` |
 
-### `src-kitces-advisortech` — The Latest in Financial AdvisorTech — AdvisorTech columns, October 2025, November 2025 and August 2026
+### `src-kitces-advisortech` — The Latest in Financial AdvisorTech, AdvisorTech columns, August 2026 and November 2025
 
 | | |
 |---|---|
