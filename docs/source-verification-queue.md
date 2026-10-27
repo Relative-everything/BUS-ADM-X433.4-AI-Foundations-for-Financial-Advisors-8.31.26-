@@ -27,7 +27,7 @@ never-fabricate rule exists to prevent.
 | `last_verified` **EMPTY** | **140** |
 | `last_verified` populated | 1 |
 | `last_verified` *not applicable* (synthetic or fabricated) | 3 |
-| References standing behind an EMPTY `last_verified` | **583** of 703 |
+| References standing behind an EMPTY `last_verified` | **584** of 704 |
 | Moving targets | 65 |
 | Lock | notarised, digest `03d5867f4f6423ac` |
 
@@ -61,11 +61,11 @@ Each one cites the evidence in the repository that records the confirmation.
 | 14 | `src-context-windows` | Context windows | **EMPTY** | 2026-09-13 | 11 | yes | S0.1 `#s1` · S0.1 `#s10` · S1 `#s1` · S1 `#s5`×2 · S2 `#s0` · S2 `#s3` · S3 `#sRag`×2 · S4 `#sWS` · S4 `#sCR` |
 | 15 | `src-finra2026` | 2026 FINRA Annual Regulatory Oversight Report | **EMPTY** | **none** | 9 | no | S3 `#s16` · S4 `#s1`×2 · S4 `#s7`×3 · S4 `#sAud`×2 · S4 `#sCR` |
 | 16 | `src-memory` | Use Claude's chat search and memory to build on previous context | **EMPTY** | 2026-10-27 | 9 | yes | S0.1 `#s1` · S0.1 `#s7` · S0.1 `#s8`×6 · S2 `#s3` |
-| 17 | `src-finra2409` | Regulatory Notice 24-09 | **EMPTY** | **none** | 8 | no | S1 `#s14`×2 · S4 `#s1`×3 · S4 `#s7` · S4 `#s9` · S4 `#sCR` |
-| 18 | `src-kitces-notetakers` | Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends | **EMPTY** | **none** | 8 | no | S2 `#s12` · S3 `#s9` · S3 `#s10`×2 · S3 `#s11`×2 · S3 `#s16`×2 |
-| 19 | `src-personalization` | Understanding Claude's personalization features | **EMPTY** | 2026-10-27 | 8 | yes | S0.1 `#s2`×3 · S0.1 `#s3`×4 · S2 `#s3` |
-| 20 | `src-regsp` | Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments | **EMPTY** | **none** | 8 | no | S3 `#sPol` · S4 `#s2`×3 · S4 `#s9` · S4 `#sCR`×2 · S5 `#s6` |
-| 21 | `src-anthropic-retention` | API and data retention | **EMPTY** | 2026-09-27 | 7 | yes | S1 `#(footer)` · S4 `#(footer)` · S4 `#s3`×2 · S4 `#s4` · S4 `#sCR`×2 |
+| 17 | `src-anthropic-retention` | API and data retention | **EMPTY** | 2026-10-27 | 8 | yes | S1 `#(footer)` · S4 `#(footer)` · S4 `#s3`×2 · S4 `#s4` · S4 `#sCR`×3 |
+| 18 | `src-finra2409` | Regulatory Notice 24-09 | **EMPTY** | **none** | 8 | no | S1 `#s14`×2 · S4 `#s1`×3 · S4 `#s7` · S4 `#s9` · S4 `#sCR` |
+| 19 | `src-kitces-notetakers` | Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends | **EMPTY** | **none** | 8 | no | S2 `#s12` · S3 `#s9` · S3 `#s10`×2 · S3 `#s11`×2 · S3 `#s16`×2 |
+| 20 | `src-personalization` | Understanding Claude's personalization features | **EMPTY** | 2026-10-27 | 8 | yes | S0.1 `#s2`×3 · S0.1 `#s3`×4 · S2 `#s3` |
+| 21 | `src-regsp` | Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments | **EMPTY** | **none** | 8 | no | S3 `#sPol` · S4 `#s2`×3 · S4 `#s9` · S4 `#sCR`×2 · S5 `#s6` |
 | 22 | `src-cfp-genai` | Generative AI Ethics Guide: A Checklist for Upholding the Code and Standards | **EMPTY** | **none** | 7 | no | case-4 `#built` · case-4 `#next` · S3 `#s16` · S4 `#s2`×2 · S4 `#sAnon`×2 |
 | 23 | `src-cve` | CVE-2025-32711 (EchoLeak, CVSS 9.3) | **EMPTY** | **none** | 7 | no | S4 `#s3` · S4 `#s5`×2 · S4 `#sCR`×3 · S5 `#sE3` |
 | 24 | `src-lee-cognitive` | The impact of generative AI on critical thinking: Self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers | **EMPTY** | 2026-10-02 | 7 | no | S3 `#s15` · S4 `#s9` · S5 `#s5`×3 · S5 `#sE5`×2 |
@@ -213,11 +213,11 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-context-windows` | https://platform.claude.com/docs/en/build-with-claude/context-windows |
 | `src-finra2026` | https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report |
 | `src-memory` | https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context |
+| `src-anthropic-retention` | https://platform.claude.com/docs/en/manage-claude/api-and-data-retention |
 | `src-finra2409` | https://www.finra.org/rules-guidance/notices/24-09 |
 | `src-kitces-notetakers` | https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/ |
 | `src-personalization` | https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features |
 | `src-regsp` | https://www.federalregister.gov/documents/2024/06/03/2024-11116/regulation-s-p-privacy-of-consumer-financial-information-and-safeguarding-customer-information |
-| `src-anthropic-retention` | https://platform.claude.com/docs/en/manage-claude/api-and-data-retention |
 | `src-cfp-genai` | https://www.cfp.net/ethics/compliance-resources/2025/02/generative-ai-ethics-guide |
 | `src-cve` | https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-32711 |
 | `src-lee-cognitive` | https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf |
@@ -406,6 +406,10 @@ Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web searc
 
 Audit 2026-10-27 (fetched in full): verified with corrections. All claims live; the toggle is now named Memory from chats under Settings, Your Claude; the no-organisation-controls statement for Team now applies to legacy Team plans only.
 
+### `src-anthropic-retention`
+
+Opened directly on 2026-09-27, with the Help Center articles on custom retention for Enterprise plans (10440198) and on retention for covered models (15425996, effective 9 June 2026) and the Claude Code data-usage page. Two Anthropic pages differ on the Enterprise chat default (30 days standard against "indefinitely unless a custom period is set"); the lesson states only what both agree on. Audit 2026-10-27 (fetched in full): verified with corrections. The page no longer states a blanket 30-day standard API retention; it says content "is not retained by default; the exception is Covered Models, which require 30-day retention", and defers the rest to the commercial data retention policy (privacy.claude.com article 7996866, unreachable from the build). Help Center 15425996 (Covered Models, effective 9 June 2026) states the 30 days; Help Center 10440198 states the Enterprise default as indefinite. The three lesson sentences that stated 30 days were reworded and chipped to FACTS claude-api-retention. Supplements: both Help Center articles.
+
 ### `src-finra2409`
 
 Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
@@ -421,10 +425,6 @@ Audit 2026-10-27 (fetched in full): verified with corrections. Styles are no lon
 ### `src-regsp`
 
 Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Adopted 16 May 2024; published 3 June 2024 at 89 FR 47688. Link filled with the Federal Register document.
-
-### `src-anthropic-retention`
-
-Opened directly on 2026-09-27, with the Help Center articles on custom retention for Enterprise plans (10440198) and on retention for covered models (15425996, effective 9 June 2026) and the Claude Code data-usage page. Two Anthropic pages differ on the Enterprise chat default (30 days standard against "indefinitely unless a custom period is set"); the lesson states only what both agree on.
 
 ### `src-cfp-genai`
 

@@ -5,7 +5,7 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**144 works, 703 references across 11 lessons.** 137 are
+**144 works, 704 references across 11 lessons.** 137 are
 cited by at least one claim; 7 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
@@ -316,13 +316,13 @@ Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/manage-claude/api-and-data-retention> |
 | Published | *not applicable* |
-| Last retrieved | 2026-09-27 |
+| Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **7** |
-| Cited in | S1 `#(footer)` · S4 `#(footer)` · S4 `#s3` ×2 · S4 `#s4` · S4 `#sCR` ×2 |
+| **Total references** | **8** |
+| Cited in | S1 `#(footer)` · S4 `#(footer)` · S4 `#s3` ×2 · S4 `#s4` · S4 `#sCR` ×3 |
 
-Standard retention on the API is 30 days; Enterprise organisations can set a custom retention period, 30 days at minimum; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years.
+Conversation content sent through the API is not retained by default; the exception is the Covered Models (Fable 5.1, Mythos 5.1, Fable 5, Mythos 5), which require 30-day retention; standard retention otherwise is defined in the commercial data retention policy the page links; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years. The Enterprise custom retention period, 30 days at minimum with an indefinite default, is on Help Center article 10440198, which covers claude.ai chats and not the API.
 
 ### Anthropic
 

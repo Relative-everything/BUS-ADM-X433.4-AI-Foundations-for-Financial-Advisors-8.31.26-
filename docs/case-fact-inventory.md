@@ -131,7 +131,7 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**1172 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**1173 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
@@ -158,8 +158,8 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `travel` | 7 |
 | `asOfDate` | 7 |
 | `ipsEquity` | 7 |
+| `megApplicableAge` | 4 |
 | `tomShort` | 3 |
-| `megApplicableAge` | 3 |
 | `ryanShort` | 2 |
 | `davidAge` | 2 |
 | `ipsDate` | 2 |

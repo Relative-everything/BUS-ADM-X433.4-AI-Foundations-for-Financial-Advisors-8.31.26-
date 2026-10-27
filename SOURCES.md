@@ -1440,17 +1440,17 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/manage-claude/api-and-data-retention
 published:      not applicable
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-27, with the Help Center articles on custom retention for Enterprise plans (10440198) and on retention for covered models (15425996, effective 9 June 2026) and the Claude Code data-usage page. Two Anthropic pages differ on the Enterprise chat default (30 days standard against "indefinitely unless a custom period is set"); the lesson states only what both agree on.
+retrieval_note: Opened directly on 2026-09-27, with the Help Center articles on custom retention for Enterprise plans (10440198) and on retention for covered models (15425996, effective 9 June 2026) and the Claude Code data-usage page. Two Anthropic pages differ on the Enterprise chat default (30 days standard against "indefinitely unless a custom period is set"); the lesson states only what both agree on. Audit 2026-10-27 (fetched in full): verified with corrections. The page no longer states a blanket 30-day standard API retention; it says content "is not retained by default; the exception is Covered Models, which require 30-day retention", and defers the rest to the commercial data retention policy (privacy.claude.com article 7996866, unreachable from the build). Help Center 15425996 (Covered Models, effective 9 June 2026) states the 30 days; Help Center 10440198 states the Enterprise default as indefinite. The three lesson sentences that stated 30 days were reworded and chipped to FACTS claude-api-retention. Supplements: both Help Center articles.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4 Appendix D2
-scope:          Standard retention on the API is 30 days; Enterprise organisations can set a custom retention period, 30 days at minimum; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years.
-used_for.session-4: the retention rung of the ladder and the retention clause of the contract view (Appendices D2 and D3), and the 30-day retention behind a Claude API key in the Live API box (above §00)
-used_for.session-1: the 30-day retention behind a Claude API key, in the live model console (above §01)
+scope:          Conversation content sent through the API is not retained by default; the exception is the Covered Models (Fable 5.1, Mythos 5.1, Fable 5, Mythos 5), which require 30-day retention; standard retention otherwise is defined in the commercial data retention policy the page links; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years. The Enterprise custom retention period, 30 days at minimum with an indefinite default, is on Help Center article 10440198, which covers claude.ai chats and not the API.
+used_for.session-4: the retention rung of the ladder and the retention clause of the contract view (Appendices D2 and D3), and the API retention behind a Claude key in the Live API box (above §00)
+used_for.session-1: the API retention behind a Claude key, in the live model console (above §01)
 ```
 
 ## src-anthropic-api-credits

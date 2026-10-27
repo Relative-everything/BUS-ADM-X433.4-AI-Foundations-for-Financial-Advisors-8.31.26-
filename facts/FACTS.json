@@ -248,6 +248,28 @@
   "notes": "privacy.claude.com is unreachable from the build container; values are from primary-domain search snippets plus the fully fetched anthropic.com post \"Updates to our consumer terms\". The default state of the toggle is a GAP: do not state one. Exceptions: flagged content up to 2 years, safety classifier scores up to 7 years, thumbs-up/down feedback keeps the whole conversation up to 5 years."
  },
  {
+  "id": "claude-api-retention",
+  "statement": "Claude API data retention under the commercial terms",
+  "value": "Conversation content sent through the API is not retained by default; the exception is the Covered Models (Fable 5.1, Mythos 5.1, Fable 5, Mythos 5), whose prompts and outputs are retained 30 days; Zero Data Retention is arranged per organisation through sales; a flagged chat may be kept up to 2 years; retained data is never used for training without express permission",
+  "unit": "",
+  "applies_to": [
+   "session-1",
+   "session-4"
+  ],
+  "source_url": "https://platform.claude.com/docs/en/manage-claude/api-and-data-retention",
+  "source_title": "API and data retention (Claude Platform Docs)",
+  "retrieved": "2026-10-27",
+  "confidence": "H",
+  "volatility": "high",
+  "reverify_before": "each-session",
+  "retired_values": [
+   "keep what you send for 30 days",
+   "30 days standard on the API",
+   "standard operational retention is 30 days"
+  ],
+  "notes": "Fetched in full 2026-10-27 by the bibliography audit. Until then Sessions 1 and 4 stated a blanket 30-day API retention, which the page no longer says: content is not retained by default and the Covered Models are the 30-day exception (Help Center 15425996, effective 9 June 2026). The commercial data retention policy the page links (privacy.claude.com article 7996866) was unreachable from the build. Enterprise custom retention (30 days minimum, default indefinite) is Help Center 10440198 and covers claude.ai chats, not the API."
+ },
+ {
   "id": "claude-text-watermark",
   "statement": "Claude text watermark and file content credentials",
   "value": "Claude text output carries a statistical watermark (announced 2026-08-14, future and supported models); it does not identify individual users and adds no hidden characters; supported files (.png, .jpg, .svg) carry a C2PA content credential with no identifying information",
