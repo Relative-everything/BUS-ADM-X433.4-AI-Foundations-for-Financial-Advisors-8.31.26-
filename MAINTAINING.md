@@ -623,8 +623,13 @@ lacks, and any rule it carries more or fewer times than the reference
 (`duplicated here:`, `fewer copies here:`); the same rules in another order fail
 as `same rules, different order`. If the largest group has no `.case-*` rule at
 all the check fails, because an empty set agrees with every other empty set and
-proves nothing. It does not see a `<style media=...>` attribute, CSS nesting,
-`@scope`, or a `.case-*` rule placed after `CASE:END`. The script's main guard
+proves nothing. Since 2026-10-27 (DW-166) it folds a `<style media=...>`
+attribute into the rule's context as `@media ...`, recurses into every at-rule
+and nested block (`@scope`, `#x{.case-src{}}` included), and fails hard on any
+`.case-*` rule found outside its read window, before `/* STYLE:END */` or after
+`CASE:END`. Check 5 (DW-191) parses `scripts/case-flowchart.html`'s SVG `<text>`
+for dollar figures and asserts each equals a `scripts/case-facts.json` value, so
+a figure drawn into the artwork cannot drift from the case. The script's main guard
 compares real paths, so it also runs when invoked through a symlinked checkout
 or home (the guard as first written on 2026-10-11 compared the typed path and
 did nothing through a symlink):
@@ -912,7 +917,10 @@ node scripts/build-sources.mjs            # the model, as a report
 node scripts/build-sources.mjs --json     # the model, as JSON
 node scripts/inject-sources.mjs           # write every lesson's footer from it
 node scripts/inject-sources.mjs --check   # report drift, write nothing
-node scripts/verify-sources.mjs           # the hash guard, plus what only it can see
+node scripts/verify-sources.mjs           # the hash guard, plus what only it can see;
+                                          # read-only since 2026-10-27 (DW-159: inject-sources
+                                          # writes only when it is the entry point); also ADVISEs
+                                          # moving targets with no retrieval date or older than 180 days
 node scripts/build-bibliography.mjs       # write BIBLIOGRAPHY.md, DATA-PULL.md and
                                           # docs/source-verification-queue.md
 node scripts/build-bibliography.mjs --check

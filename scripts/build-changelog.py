@@ -166,18 +166,31 @@ def find_sweep():
       4. ~/.claude/skills/interactive-lesson-builder/scripts/restyle_sweep.py
 
     Keep this list in step with CANDIDATES in verify-style.mjs.
+
+    Every candidate is normalised the same way verify-style.mjs normalises its
+    (DW-169): a trailing slash is stripped, and the path given is resolved to
+    its REAL path before anything is joined under it. pathlib accepted a
+    trailing slash that Node's statSync rejected, and a ".." after a symlinked
+    component resolved physically here and lexically there, so the two scripts
+    could run two copies of the skill. A path that does not exist keeps its
+    stripped spelling.
     """
     P = pathlib.Path
+
+    def real(p):
+        q = p.rstrip("/") or p
+        return P(os.path.realpath(q)) if os.path.exists(q) else P(q)
+
     candidates = []
     sweep = os.environ.get("RESTYLE_SWEEP")
     if sweep:
-        candidates.append(P(sweep))
+        candidates.append(real(sweep))
     skill = os.environ.get("LESSON_BUILDER_SKILL")
     if skill:
-        candidates.append(P(skill) / "scripts" / "restyle_sweep.py")
+        candidates.append(real(str(real(skill) / "scripts" / "restyle_sweep.py")))
     candidates += [
-        P.home() / ".claude/skills/synced/interactive-lesson-builder/scripts/restyle_sweep.py",
-        P.home() / ".claude/skills/interactive-lesson-builder/scripts/restyle_sweep.py",
+        real(str(P.home() / ".claude/skills/synced/interactive-lesson-builder/scripts/restyle_sweep.py")),
+        real(str(P.home() / ".claude/skills/interactive-lesson-builder/scripts/restyle_sweep.py")),
     ]
     for c in candidates:
         if c.is_file():

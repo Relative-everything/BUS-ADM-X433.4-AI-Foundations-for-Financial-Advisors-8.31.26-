@@ -15,11 +15,15 @@
  *   - a chip pointing at a key SOURCES.md does not define
  *   - a source declared for a lesson that the lesson never cites, split by
  *     whether its kind exempts it from carrying a chip
+ *   - a moving_target record with no retrieval date, or one retrieved more than
+ *     MOVING_WINDOW_DAYS ago (ADVISE, DW-081: the FACTS-style age check, and the
+ *     same 180-day term-start window verify-facts.mjs uses; dating the undated
+ *     records is a re-pull, not a check)
  */
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { model, LESSONS, isAbsent, UNVERIFIED, pagePath } from './build-sources.mjs';
+import { model, LESSONS, isAbsent, UNVERIFIED, pagePath, orderableDate } from './build-sources.mjs';
 import { OPEN, CLOSE, sha256, buildBlock } from './inject-sources.mjs';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -78,6 +82,36 @@ if (notExempt.length) {
 const gaps = [...sources.values()].filter((r) =>
   ['author', 'publisher', 'link', 'published', 'last_retrieved'].some((f) => isAbsent(r[f]) && r[f] !== 'not applicable'));
 console.log(`----  ${gaps.length} record(s) carry at least one ${UNVERIFIED} field; BIBLIOGRAPHY.md prints every one`);
+
+/* ---- moving targets and their age (DW-081) --------------------------------- */
+/* A moving_target record is one whose source changes under the citation, so its
+   last_retrieved is the measurement that matters. Two findings, both ADVISE:
+   no retrieval date at all (empty or [UNVERIFIED…]), and a date older than the
+   window. A partial date (YYYY-MM) is aged from its earliest day, which is how
+   build-sources.mjs orders it; the age printed is therefore a floor. Nothing
+   here fails the run, because between re-pulls this is red by design; the
+   re-pull is DATA-PULL.md's, and it moves last_retrieved, never last_verified. */
+const MOVING_WINDOW_DAYS = 180;
+const today = new Date();
+const moving = [...sources.values()].filter((r) => r.moving_target);
+const undated = moving.filter((r) => isAbsent(r.last_retrieved));
+const aged = moving.filter((r) => !isAbsent(r.last_retrieved)).map((r) => {
+  const retrieved = new Date(orderableDate(r.last_retrieved) + 'T00:00:00Z');
+  return { rec: r, age: Number.isNaN(retrieved.getTime()) ? null : Math.floor((today - retrieved) / 86400000) };
+}).filter((x) => x.age === null || x.age > MOVING_WINDOW_DAYS);
+console.log('');
+console.log(`----  ${moving.length} moving_target record(s); window ${MOVING_WINDOW_DAYS} days, measured ${today.toISOString().slice(0, 10)}`);
+if (undated.length) {
+  console.log(`ADVISE ${undated.length} moving_target record(s) carry no retrieval date`);
+  for (const r of undated) console.log(`        ${r.key.padEnd(28)} last_retrieved ${r.last_retrieved || '(empty)'}`);
+}
+if (aged.length) {
+  console.log(`ADVISE ${aged.length} moving_target record(s) retrieved more than ${MOVING_WINDOW_DAYS} days ago`);
+  for (const { rec, age } of aged) {
+    console.log(`        ${rec.key.padEnd(28)} last_retrieved ${rec.last_retrieved}  ${age === null ? 'not a date' : `${age} days${rec.retrieved_partial ? ' (month only, aged from its first day)' : ''}`}`);
+  }
+}
+if (!undated.length && !aged.length) console.log(`----  every moving_target record is dated and inside the window`);
 
 /* ---- disclose_on_page, and the check that it is what gates the disclosure -- */
 /* SOURCES.md declares disclose_on_page as "the page must say so where they

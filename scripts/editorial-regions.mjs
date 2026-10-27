@@ -149,11 +149,37 @@ export function classify(text) {
   }
 
   /* R2 — script. The whole element is claimed so script CODE is never R1; the
-     student-visible part is the literals, returned separately. */
+     student-visible part is the literals, returned separately.
+
+     DW-104 (2026-10-27): the span must open on a REAL <script> tag. A plain
+     regex over the raw text also fired on the words "<script src>" inside the
+     head comment of session-0.1 (line 10) and ran R2 from there to the first
+     </script>, swallowing the head, the topbar and every section down to line
+     999 (83,798 bytes) into "script string literal", which authoredProse masks
+     out. The scan below walks the text once: whichever of "<!--" or "<script"
+     comes next wins, a comment is skipped to its "-->" (R5 claims it later),
+     and only a <script> met outside a comment opens a span. R5 still runs after
+     R2, so an HTML-comment-shaped sequence inside a script body stays R2 as it
+     always did. */
   const scriptSpans = [];
   {
-    const rx = /<script\b[^>]*>[\s\S]*?<\/script\s*>/gi;
-    let m; while ((m = rx.exec(text))) { claim(m.index, m.index + m[0].length, 'R2'); scriptSpans.push([m.index, m.index + m[0].length]); }
+    const next = /<!--|<script\b[^>]*>/gi;
+    const close = /<\/script\s*>/gi;
+    let i = 0, m;
+    while (i < text.length && (next.lastIndex = i, (m = next.exec(text)))) {
+      if (m[0] === '<!--') {
+        const end = text.indexOf('-->', m.index + 4);
+        i = end < 0 ? text.length : end + 3;
+        continue;
+      }
+      close.lastIndex = m.index + m[0].length;
+      const c = close.exec(text);
+      if (!c) break;
+      const e = c.index + c[0].length;
+      claim(m.index, e, 'R2');
+      scriptSpans.push([m.index, e]);
+      i = e;
+    }
   }
 
   /* R5 — HTML comments not already claimed as R6. */

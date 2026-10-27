@@ -6,7 +6,8 @@
  * jsdom cannot).
  *
  *   13  DOM and handlers: handlers bind, Shift+U present and labelled, tabs work
- *   13b DW-064 negative: Shift+U from inside a text box must reveal nothing
+ *   13b DW-064 negative: Shift+U from inside the first text box must reveal nothing
+       (retargeted 2026-10-27, DW-196: the cold-open textarea is gone)
  *   14  flowchart fragment: zero JS errors, zero network requests beyond fonts
  *   14b var() in an SVG presentation attribute: measured, not asserted
  *   15  visual: screenshot at the target width
@@ -348,68 +349,80 @@ const REVEAL_SIGNATURE = () => ({
   ovr: ((document.getElementById('ovr') || document.getElementById('pnum') || {}).textContent || '')
     .replace(/\s+/g, ' ').trim(),
 });
-const TYPING = 'textarea, input[type="text"], input[type="password"], input[type="search"],'
-             + ' input[type="email"], input[type="number"], input:not([type])';
+const TYPING = 'textarea, input[type="text"]';
 
 {
   console.log(`\n--- 13b  Shift+U from inside a text box (DW-064) ---`);
+  /* DW-196 (2026-10-27): the cold open and its #coldPrompt textarea left every lesson
+     in the 2027-term rebuild, so the old "first, then coldPrompt" pair tested nothing.
+     One target per page now: the first textarea or input[type="text"] a reader can
+     type into. A candidate is scrolled into view and focused; where every candidate
+     sits in a panel that is closed at load (session-4's console body, session-5's
+     answer-key fields), the panel is opened the way the page opens it (its
+     aria-controls button) or, failing that, by lifting the hiding class, and the
+     line says so. A page with no text input at all is a skip with the count. */
   for (const rel of LESSONS) {
     if (rel === 'index.html') {
       console.log('      13b hub carries no override handler and no answer panels; nothing to guard');
       continue;
     }
-    /* The first typing surface on the page, then the cold-open textarea, which is
-       the one a learner reaches first in the run order even where it is not first
-       in the document. */
-    for (const which of ['first', 'coldPrompt']) {
-      const ctx = await browser.newContext({ viewport: { width: WIDTH, height: 1000 } });
-      const page = await ctx.newPage();
-      await page.goto(pathToFileURL(join(REPO, rel)).href, { waitUntil: 'load' });
-      await page.waitForTimeout(400);
+    const ctx = await browser.newContext({ viewport: { width: WIDTH, height: 1000 } });
+    const page = await ctx.newPage();
+    await page.goto(pathToFileURL(join(REPO, rel)).href, { waitUntil: 'load' });
+    await page.waitForTimeout(400);
 
-      const target = await page.evaluate(([sel, which]) => {
-        /* The first box a reader can actually type into. session-0.1 and
-           session-1 open with the live-model key box, which is inside a panel
-           that is closed at load, so "first in the document" and "first
-           focusable" are not the same element and only the second one is the
-           thing being tested. */
-        const cands = which === 'coldPrompt'
-          ? [document.getElementById('coldPrompt')].filter(Boolean)
-          : [...document.querySelectorAll(sel)];
-        let skipped = 0;
-        for (const el of cands) {
-          el.focus();
-          if (document.activeElement === el) {
-            return { id: el.id || null, tag: el.tagName, value: el.value, skipped, of: cands.length };
+    const target = await page.evaluate((sel) => {
+      const cands = [...document.querySelectorAll(sel)];
+      const tryFocus = (el) => { el.scrollIntoView({ block: 'center' }); el.focus(); return document.activeElement === el; };
+      const describe = (el, skipped, opened) => ({ id: el.id || null, tag: el.tagName, value: el.value, skipped, of: cands.length, opened });
+      /* pass 1: as the page loads */
+      for (let i = 0; i < cands.length; i++) if (tryFocus(cands[i])) return describe(cands[i], i, []);
+      /* pass 2: open whatever hides the candidate, nearest ancestor first */
+      for (let i = 0; i < cands.length; i++) {
+        const el = cands[i], opened = [];
+        for (let a = el.parentElement; a && a !== document.body; a = a.parentElement) {
+          const cs = getComputedStyle(a);
+          const closed = cs.display === 'none' || cs.visibility === 'hidden' || (a.tagName === 'DETAILS' && !a.open);
+          if (!closed) continue;
+          const btn = a.id ? document.querySelector(`[aria-controls="${a.id}"]`) : null;
+          if (btn) { btn.click(); opened.push(`#${a.id} via its button`); }
+          if (a.tagName === 'DETAILS') { a.open = true; opened.push(`<details${a.id ? '#' + a.id : ''}>`); }
+          const still = getComputedStyle(a);
+          if (still.display === 'none' || still.visibility === 'hidden') {
+            if (a.classList.contains('hidden')) a.classList.remove('hidden');
+            if (getComputedStyle(a).display === 'none') a.style.display = 'block';
+            if (getComputedStyle(a).visibility === 'hidden') a.style.visibility = 'visible';
+            opened.push(`${a.tagName.toLowerCase()}${a.id ? '#' + a.id : ''} by lifting its hiding style`);
           }
-          skipped++;
         }
-        return { none: true, of: cands.length };
-      }, [TYPING, which]);
-
-      if (target.none) {
-        console.log(`      13b ${rel} has no focusable ${which} text box (${target.of} candidate(s)); skipped`);
-        await ctx.close();
-        continue;
+        if (tryFocus(el)) return describe(el, i, opened);
       }
+      return { none: true, of: cands.length };
+    }, TYPING);
 
-      const before = await page.evaluate(REVEAL_SIGNATURE);
-      await page.keyboard.down('Shift'); await page.keyboard.press('KeyU'); await page.keyboard.up('Shift');
-      await page.waitForTimeout(200);
-      const after = await page.evaluate(REVEAL_SIGNATURE);
-      const typed = await page.evaluate((id) => (id ? (document.getElementById(id) || {}).value : null), target.id);
-
-      const moved = Object.keys(before).filter((k) => String(before[k]) !== String(after[k]));
-      say(moved.length === 0,
-          `13b ${rel} Shift+U in #${target.id || target.tag} reveals nothing `
-          + `(.hidden ${before.hidden}, gates ${before.gatesDone} done, badge "${before.ovr}"`
-          + `${target.skipped ? `, ${target.skipped} earlier box(es) unfocusable at load` : ''})`
-          + (moved.length ? `\n        moved: ${moved.map((k) => `${k} ${before[k]} -> ${after[k]}`).join(', ')}` : ''));
-      if (typed !== null && typed !== undefined) {
-        console.log(`      13b the U lands in the box instead: value "${String(typed).slice(-8)}"`);
-      }
+    if (target.none) {
+      console.log(`      13b ${rel} has no ${target.of ? 'focusable ' : ''}text box (${target.of} textarea/input[type=text] candidate(s)); skipped`);
       await ctx.close();
+      continue;
     }
+
+    const before = await page.evaluate(REVEAL_SIGNATURE);
+    await page.keyboard.down('Shift'); await page.keyboard.press('KeyU'); await page.keyboard.up('Shift');
+    await page.waitForTimeout(200);
+    const after = await page.evaluate(REVEAL_SIGNATURE);
+    const typed = await page.evaluate((id) => (id ? (document.getElementById(id) || {}).value : null), target.id);
+
+    const moved = Object.keys(before).filter((k) => String(before[k]) !== String(after[k]));
+    say(moved.length === 0,
+        `13b ${rel} Shift+U in #${target.id || target.tag} reveals nothing `
+        + `(.hidden ${before.hidden}, gates ${before.gatesDone} done, badge "${before.ovr}"`
+        + `${target.skipped ? `, ${target.skipped} earlier box(es) unfocusable at load` : ''}`
+        + `${target.opened.length ? `; opened ${target.opened.join(', ')}` : ''})`
+        + (moved.length ? `\n        moved: ${moved.map((k) => `${k} ${before[k]} -> ${after[k]}`).join(', ')}` : ''));
+    if (typed !== null && typed !== undefined) {
+      console.log(`      13b the U lands in the box instead: value "${String(typed).slice(-8)}"`);
+    }
+    await ctx.close();
   }
 }
 

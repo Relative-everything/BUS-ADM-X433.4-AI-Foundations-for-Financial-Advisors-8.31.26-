@@ -25,7 +25,7 @@
  *     node scripts/verify-style.mjs
  */
 import { execFileSync } from 'node:child_process';
-import { statSync } from 'node:fs';
+import { realpathSync, statSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -44,15 +44,26 @@ const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
  *
  * The home directory comes from os.homedir(), never a hard-coded /root: the
  * synced skills move between hosts, and a fixed path is how this script came to
- * exit 1 from every clean clone. */
+ * exit 1 from every clean clone.
+ *
+ * EVERY CANDIDATE IS NORMALISED THE SAME WAY AS find_sweep() DOES IT (DW-169): a
+ * trailing slash is stripped, and the path given is resolved to its REAL path
+ * before anything is joined under it. Without that, "…/restyle_sweep.py/" was a
+ * file to pathlib and not to statSync, and a ".." after a symlinked component in
+ * LESSON_BUILDER_SKILL normalised lexically here and physically in Python, so the
+ * two scripts could run two copies of the skill. A path that does not exist
+ * keeps its stripped spelling, so the WARN below names what was typed. */
 const SKILL_REL = ['scripts', 'restyle_sweep.py'];
+/* realpathSync.native, not realpathSync: the JS one resolves ".." lexically before
+   it looks at the disk, which is the very divergence this fixes. */
+const real = (p) => { const q = p.replace(/\/+$/, '') || p; try { return realpathSync.native(q); } catch { return q; } };
 const CANDIDATES = [];
-if (process.env.RESTYLE_SWEEP) CANDIDATES.push(['RESTYLE_SWEEP', process.env.RESTYLE_SWEEP]);
+if (process.env.RESTYLE_SWEEP) CANDIDATES.push(['RESTYLE_SWEEP', real(process.env.RESTYLE_SWEEP)]);
 if (process.env.LESSON_BUILDER_SKILL) {
-  CANDIDATES.push(['LESSON_BUILDER_SKILL', join(process.env.LESSON_BUILDER_SKILL, ...SKILL_REL)]);
+  CANDIDATES.push(['LESSON_BUILDER_SKILL', real(join(real(process.env.LESSON_BUILDER_SKILL), ...SKILL_REL))]);
 }
-CANDIDATES.push(['home, synced', join(homedir(), '.claude/skills/synced/interactive-lesson-builder', ...SKILL_REL)]);
-CANDIDATES.push(['home', join(homedir(), '.claude/skills/interactive-lesson-builder', ...SKILL_REL)]);
+CANDIDATES.push(['home, synced', real(join(homedir(), '.claude/skills/synced/interactive-lesson-builder', ...SKILL_REL))]);
+CANDIDATES.push(['home', real(join(homedir(), '.claude/skills/interactive-lesson-builder', ...SKILL_REL))]);
 const isFile = (p) => { try { return statSync(p).isFile(); } catch { return false; } };
 const FOUND = CANDIDATES.find(([, p]) => isFile(p));
 const SWEEP = FOUND && FOUND[1];
