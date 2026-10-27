@@ -595,6 +595,13 @@ a.btn{text-decoration:none;display:inline-block}
 .cf-tiers td.n,.cf-tiers th.n{text-align:right}
 @media(max-width:720px){
   .cf-tabs a{padding:9px 11px;font-size:10.5px}
+}
+/* 320 px (DW-161, 2026-10-27): the result column of the check log is nowrap, so at the narrowest phone width the
+   table pushed the page 8 to 39 px wider than the viewport. Below 400 px the cell may wrap instead, and the open
+   details panel scrolls sideways rather than the page if anything inside it is still too wide. */
+@media(max-width:400px){
+  .cf-log td.res{white-space:normal}
+  .cf-det{overflow-x:auto}
   .doc-body{padding:16px 16px 20px 14px}
   .doc-h,.doc-label{padding-left:14px;padding-right:14px}
   .cf-go .btn{display:block;text-align:center}

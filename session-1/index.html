@@ -559,9 +559,6 @@ a.btn{text-decoration:none;display:inline-block}
 .inote{border-left:4px solid var(--warn);background:var(--warn-bg);border-radius:0 9px 9px 0;padding:14px 18px;margin:20px 0;font-size:15px;line-height:1.52}
 .inote .ih{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
 .inote ul{margin:7px 0 0;padding-left:19px}.inote li{margin:4px 0}
-.verify{border:2px dashed var(--warn);border-radius:11px;padding:15px 18px;margin:20px 0;background:#fff;font-size:14.5px;line-height:1.5}
-.verify .vh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
-.verify ul{margin:7px 0 0;padding-left:19px}.verify li{margin:5px 0}
 .bigask{border:3px solid var(--on);border-radius:14px;padding:26px 30px;margin:28px 0;background:var(--on-bg)}
 .bigask h3{margin-top:0;font-size:clamp(21px,2.8vw,28px)}
 .bigask .req{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:8px}
@@ -610,6 +607,10 @@ a.btn{text-decoration:none;display:inline-block}
 .src b{color:var(--on);font-weight:500}
 .conf{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:3px 7px;border-radius:4px;font-weight:500;display:inline-block}
 .conf.h{background:var(--on);color:#fff}.conf.m{background:var(--gold-bg);color:var(--gold)}.conf.l{background:var(--warn-bg);color:var(--warn)}
+/* DW-020. The footer legend explains the chip notation; it is not a chip, so it
+   carries its own class and no data-src. Same look as .conf. */
+.lgd{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:3px 7px;border-radius:4px;font-weight:500;display:inline-block}
+.lgd.h{background:var(--on);color:#fff}.lgd.m{background:var(--gold-bg);color:var(--gold)}.lgd.l{background:var(--warn-bg);color:var(--warn)}
 .wolf{border-left:4px solid var(--gold);background:var(--gold-bg);border-radius:0 9px 9px 0;padding:14px 18px;margin:20px 0;font-size:15.5px;line-height:1.55}
 .wolf .wh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px}
 
@@ -684,6 +685,9 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 .mtx td.best{background:var(--on);color:#fff}
 .mtx .rl{background:none;text-align:left;font-size:13.5px;color:var(--ink);padding-left:0}
 .mverdict{font-size:15px;line-height:1.52;padding:12px 15px;border-radius:8px;background:var(--on-bg);color:#0A423F;margin-top:6px}
+/* DW-161. At 320px the scoring matrix and the wider .dt tables are wider than
+   the column; below 480px they scroll inside their own box instead of the page. */
+@media (max-width:480px){.mtx,table.dt{display:block;overflow-x:auto;max-width:100%}}
 
 .costbars{display:flex;flex-direction:column;gap:8px;margin-top:18px}
 .cbar{display:grid;grid-template-columns:186px 1fr 90px;gap:12px;align-items:center;font-size:14px}
@@ -2206,7 +2210,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p>The frontier scatter reflects Artificial Analysis data pulled on 17 and 24 July 2026, the leaderboard snapshots were read on 11 October 2026, and Claude pricing is as of 11 October 2026. Six frontier models crossed the same capability threshold in the six weeks before the July pull. Verify every benchmark and price before relying on it.</p>
 
-  <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="conf h">H</span> directly verified against the cited source. <span class="conf m">M</span> reported by a secondary source or derived from a stated relationship. <span class="conf l">L</span> illustrative construction, not a published figure.</p>
+  <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="lgd h">H</span> directly verified against the cited source. <span class="lgd m">M</span> reported by a secondary source or derived from a stated relationship. <span class="lgd l">L</span> illustrative construction, not a published figure.</p>
 
   <p class="stamp">Last updated 2026-10-13. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
 </footer>

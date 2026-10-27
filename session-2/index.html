@@ -513,8 +513,6 @@ section.slide{padding:clamp(48px,7vw,88px) 0;border-bottom:1px solid var(--line)
 #rail button.on{color:var(--on)}
 #prog{position:fixed;top:0;left:0;height:3px;background:var(--on);z-index:60;width:0}
 #topbar{position:fixed;top:3px;left:0;right:0;z-index:55;background:rgba(244,244,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:16px;padding:7px clamp(14px,4vw,32px);font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
-#topbar .tb-r{color:var(--on);font-weight:500}
-#topbar kbd{font-family:inherit;background:var(--on-bg);border:1px solid var(--on);border-radius:4px;padding:1px 5px;color:var(--on)}
 body{padding-top:34px}
 section.slide{scroll-margin-top:46px}
 .caseflag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;background:var(--gold-bg);color:var(--gold);border:1px solid #DFD3AF;border-radius:4px;padding:3px 8px;font-weight:500}
@@ -561,13 +559,20 @@ section.slide{scroll-margin-top:46px}
 .tg{display:flex;gap:13px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:11px;padding:15px 17px;cursor:pointer;transition:.18s;user-select:none}
 .tg:hover{border-color:var(--off)}
 .tg.on{border-color:var(--on);background:var(--on-bg)}
-.tg input{position:absolute;opacity:0;width:0;height:0}
+/* DW-190 (PL-004). A 0px checkbox is not focusable in Chromium, so the toggles
+   were unreachable by keyboard. Visually hidden at 1px, it takes focus and Space
+   fires its change handler; the label draws the ring (rule below). */
+.tg{position:relative}
+.tg input{position:absolute;opacity:0;width:1px;height:1px;margin:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);pointer-events:none}
 .track{width:42px;height:24px;border-radius:12px;background:var(--off);position:relative;flex:none;margin-top:2px;transition:.2s}
 .tg.on .track{background:var(--on)}
 .knob{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s}
 .tg.on .knob{left:21px}
 .tg .tl{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:15px;display:block;line-height:1.3}
 .tg .td{font-size:13px;color:var(--muted);line-height:1.45;display:block;margin-top:3px}
+/* DW-190 (PL-004). The toggle's checkbox is visually hidden, so the page-wide
+   :focus-visible ring lands on a 1px box nobody can see; draw it on the label. */
+.tg:has(input:focus-visible){outline:2.5px solid var(--on);outline-offset:3px}
 
 .panel{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:24px;margin:26px 0}
 .panel.tightpad{padding:18px 20px}
@@ -658,6 +663,13 @@ text{font-family:"JetBrains Mono",monospace}
 .conf.h{background:var(--on-bg);color:var(--on)}
 .conf.m{background:var(--gold-bg);color:var(--gold)}
 .conf.l{background:var(--warn-bg);color:var(--warn)}
+/* DW-020. The footer legend explains the chip notation; it is not a chip, so it
+   carries its own class and no data-src. Same look as .conf. */
+.lgd{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:3px 7px;border-radius:4px;font-weight:500;vertical-align:middle;margin-left:6px}
+.lgd.h{background:var(--on-bg);color:var(--on)}.lgd.m{background:var(--gold-bg);color:var(--gold)}.lgd.l{background:var(--warn-bg);color:var(--warn)}
+/* DW-161. The reading list carries bare URLs with no break opportunity; at 320px
+   one of them was the only thing wider than the page. */
+.readlist a{overflow-wrap:anywhere;word-break:break-word}
 
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:17px;margin:28px 0}
 .card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:20px}
@@ -705,10 +717,6 @@ body.core-only #rail button.apxnav:not(.apxidx){display:none}
 .pace .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:4px}
 .pace .pcell b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--gold)}
 .pace .pcell span{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
-.pace p{margin:13px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted);max-width:70ch}
-.verify{border:2px dashed var(--warn);border-radius:11px;padding:15px 18px;margin:20px 0;background:#fff;font-size:14.5px;line-height:1.5}
-.verify .vh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
-.verify ul{margin:7px 0 0;padding-left:19px}.verify li{margin:5px 0}
 /* ===== gold note (.rnote): a one-line pointer from a core section to its appendix depth ===== */
 .rnote{background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0;font-size:14px;line-height:1.5}
 .rnote .rh{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px;font-weight:500}
@@ -1875,7 +1883,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
   <p><span class="caseflag">Synthetic case</span> The audit target is a client-explanation template for the Cole Roth conversion question: a reusable instrument that takes any pre-retiree whose employer plan has just added in-plan Roth conversion and produces an explanation they can act on. Score the version you would hand to a colleague, not the one in your head.</p>
 
   <h3>Part one &mdash; self-audit</h3>
-  <p>Every criterion is binary and observable from the template text itself. A template that scores below 5 will not survive a handoff.</p>
+  <p>Every criterion is binary and observable from the template text itself. This course&rsquo;s own threshold, not a published one: a template that scores below 5 of the 8 will not survive a handoff.</p>
 
   <div class="panel" data-task="t-s11" data-comp="work-along-gate">
     <div class="row" style="margin-bottom:16px">
@@ -2018,6 +2026,8 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
 
   <p class="dim" style="font-size:15px">A worked example, with its own readme.txt, is on <a href="../cases/case-1.html" style="color:var(--on)">the Case 1 page</a>.</p>
 
+  <div class="talk"><span class="th">Closing check &middot; in chat, one line each, against this session&rsquo;s one sentence</span>Name one step in the workflow you built in this session where a plausible answer would pass for the true one, and the check that catches it before a client sees it.</div>
+
   <div class="cards">
 <!-- READINGS:BEGIN s3 -->
 <!-- generated by scripts/build-readings.mjs from docs/next-term/readings.json · 3 item(s) · status tentative · do not edit between the sentinels -->
@@ -2102,7 +2112,7 @@ The task is: [paste your task here]<button data-copy="cbWrap">Copy</button></div
       <li id="src-kessler" data-nochip="fabricated" class="fab"><b>Not a real source.</b> <em>Kessler v. Commissioner, 152 T.C. 88 (2019)</em> was invented for the §05 citation triage on the required minimum distribution age, where it is one of the six citations to check and the page labels it as fabricated.</li>
 <!-- SOURCES:END -->
     </ol>
-    <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="conf h">H</span> directly verified against the cited source. <span class="conf m">M</span> reported by a secondary source or derived from a stated relationship. <span class="conf l">L</span> illustrative construction, not a published figure.</p>
+    <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="lgd h">H</span> directly verified against the cited source. <span class="lgd m">M</span> reported by a secondary source or derived from a stated relationship. <span class="lgd l">L</span> illustrative construction, not a published figure.</p>
     <p style="font-size:13.5px">Nothing in this file is tax or legal advice. Every characterisation of an authority is a teaching illustration built on a synthetic case, and several are deliberately wrong and labelled as such. Verify against the Code, the regulations and the current IRS instructions before any of it informs a recommendation. That instruction is the course.</p>
     <p style="font-size:13.5px">BUS ADM X433.4 &mdash; AI Foundations for Financial Advisors. UC Berkeley Extension. Session 2.</p>
   <p class="stamp">Last updated 2026-10-13. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
