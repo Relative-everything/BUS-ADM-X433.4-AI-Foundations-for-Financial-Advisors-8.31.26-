@@ -29,8 +29,8 @@
  *   storage and gating                           validate_lesson V3 / migration 10
  *   the retired-name purge                       validate_lesson V7 / migration 1,2,3
  */
-import { readFileSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+import { readFileSync, realpathSync } from 'node:fs';
+import { basename, join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { classify, authoredProse, quotationScope } from './editorial-regions.mjs';
 
@@ -43,9 +43,27 @@ const BASE = JSON.parse(readFileSync(join(REPO, 'scripts/editorial-baseline.json
    population in that file. The skip is declared and reasoned here rather than left
    silent, and it is A1-A7 ONLY — session-0.1 is in scope for every other rule. */
 const TIERED = ['session-1', 'session-2', 'session-3', 'session-4', 'session-5'];
-const ALL_LESSONS = ['session-0.1', ...TIERED];
+/* Exported so build-unsourced.mjs reads A16's population from here instead of
+   keeping a copy of it (DW-167). */
+export const ALL_LESSONS = ['session-0.1', ...TIERED];
 const D14_SKIP = 'session-0.1';
 const D14_REASON = 'D20 2026-08-25: out of scope for the appendix/tier architecture (standalone async, different delivery mode); no appendix, no data-tier, no tier bar';
+
+/* Run as a script, not when imported. Every rule below sits in an `if (enabled(…))`
+   block and `enabled` is false when this file is imported, so an importer gets
+   ALL_LESSONS and countSentences and no check runs. Both sides are compared as
+   REAL paths, as verify-case.mjs does: import.meta.url is the real path of the
+   entry module and argv[1] is the path as typed, so through a symlinked checkout
+   a plain comparison was false. If argv[1] cannot be resolved, the file name
+   decides, so a guard that cannot tell errs towards running the checks. */
+function invokedDirectly() {
+  const arg = process.argv[1];
+  if (!arg) return false;                     /* node -e, a REPL: imported, not run */
+  const self = fileURLToPath(import.meta.url);
+  try { return realpathSync(arg) === realpathSync(self); }
+  catch { return basename(arg) === basename(self); }
+}
+const RUN = invokedDirectly();
 
 const argv = process.argv.slice(2);
 const ADVISORY_ONLY = argv.includes('--advisory-only');
@@ -84,7 +102,7 @@ function ran(id, note) {
   if (sev === 'DISABLED') return;
   clean.push(`PASS  ${id.padEnd(4)} ${note}`);
 }
-const enabled = (id) => BASE.severity[id] !== 'DISABLED' && (!only || only.has(id));
+const enabled = (id) => RUN && BASE.severity[id] !== 'DISABLED' && (!only || only.has(id));
 
 /* ------------------------------------------------------------------ helpers */
 
@@ -939,17 +957,19 @@ if (enabled('A19')) {
 
 /* ------------------------------------------------------------------ output */
 
-if (clean.length) console.log(clean.join('\n'));
-if (skipped.length) console.log('\n' + skipped.join('\n'));
-if (hard.length) console.log('\n' + hard.join('\n'));
-if (advisory.length) {
-  console.log('\n' + '='.repeat(66));
-  console.log('ADVISORY — reported, does not block the push');
-  console.log('='.repeat(66));
-  console.log(advisory.join('\n'));
+if (RUN) {
+  if (clean.length) console.log(clean.join('\n'));
+  if (skipped.length) console.log('\n' + skipped.join('\n'));
+  if (hard.length) console.log('\n' + hard.join('\n'));
+  if (advisory.length) {
+    console.log('\n' + '='.repeat(66));
+    console.log('ADVISORY — reported, does not block the push');
+    console.log('='.repeat(66));
+    console.log(advisory.join('\n'));
+  }
+
+  console.log(`\nsummary: ${clean.length} rule(s) clean, ${hard.length} hard failure(s), `
+    + `${advisory.length} advisory${ADVISORY_ONLY ? ' (--advisory-only: nothing blocks)' : ''}`);
+
+  process.exit(hard.length ? 1 : 0);
 }
-
-console.log(`\nsummary: ${clean.length} rule(s) clean, ${hard.length} hard failure(s), `
-  + `${advisory.length} advisory${ADVISORY_ONLY ? ' (--advisory-only: nothing blocks)' : ''}`);
-
-process.exit(hard.length ? 1 : 0);

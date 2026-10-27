@@ -1,3 +1,5 @@
+> **Archived 2026-10-27 (DW-182). Historical record, not current guidance:** the Fall 2026 Session 0.1 build it tracks ended; the page was replaced on 2026-10-13 (D-054).
+
 # Session 0.1 build progress
 
 Live state file for the EXECUTE session. A fresh context window restarts from

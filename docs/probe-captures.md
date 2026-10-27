@@ -1,3 +1,5 @@
+> **Archived 2026-10-27 (DW-182). Historical record, not current guidance:** the probe exercise and the Session 0.1 page it served were retired on 2026-10-13 (D-054); captures for the 2027 pages live on the case pages and are re-run by `scripts/recapture.mjs`.
+
 # Probe captures for Session 0.1
 
 > **Retired 2026-10-12 (closes D-033).** The probe exercise retired with the Fall 2026 Session 0.1 page, which became the self-paced setup page; these captures are a record, and no re-run is owed.

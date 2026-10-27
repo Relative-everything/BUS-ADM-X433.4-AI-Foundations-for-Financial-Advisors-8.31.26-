@@ -39,13 +39,13 @@
   },
 
   "A8": {
-    "_": "Majority form and minority count over authoredProse. The majority form may not change and the minority count may not rise. Unaffected by the console-fence decision: all four disputed dashes are entities in files whose majority is already entity. 2026-10-13: session-0.1 is re-recorded as majority literal / minority 0. The 2027-term rebuild (docs/next-term/, Phase 8) re-authored the page as the setup page and its authored prose now carries no em dash at all; the checker breaks that 0-0 tie to literal, so the recorded majority follows it. Nothing was converted: there is no dash to convert. D-063 in docs/next-term/DECISIONS.md.",
+    "_": "Majority form and minority count over authoredProse. The majority form may not change and the minority count may not rise. Unaffected by the console-fence decision: all four disputed dashes are entities in files whose majority is already entity. 2026-10-13: session-0.1 is re-recorded as majority literal / minority 0. The 2027-term rebuild (docs/next-term/, Phase 8) re-authored the page as the setup page and its authored prose now carries no em dash at all; the checker breaks that 0-0 tie to literal, so the recorded majority follows it. Nothing was converted: there is no dash to convert. D-063 in docs/next-term/DECISIONS.md. 2026-10-27: session-3 minority is re-recorded 15 -> 3 (DW-053). The 15 was the WHOLE-FILE entity count when the row was written, not the count over authoredProse, which is the population this rule declares and the checker reads; the measured minority over authoredProse is 3 (literal 3, entity 3; the checker breaks the tie to literal, so the recorded majority stands). The slack had been 15 against 13, then 15 against 12 after Phase 4, then 15 against 3 after the 2027-term rebuild. Nothing on the page changed and no dash was added, converted or removed: the figure FALLS to what has been measured since 2026-10-13, under the ratchet rule in MAINTAINING.md and on the D-063 precedent (re-record a figure that fell or held, in a commit that reverts cleanly). test-editorial-regions.mjs T7 pins A9, not A8, so it is unmoved by this edit.",
     "population": "authoredProse",
     "files": {
       "session-0.1": { "majority": "literal", "minority_form": "entity", "minority": 0 },
       "session-1":   { "majority": "entity", "minority_form": "literal", "minority": 1 },
       "session-2":   { "majority": "entity", "minority_form": "literal", "minority": 2 },
-      "session-3":   { "majority": "literal", "minority_form": "entity", "minority": 15 },
+      "session-3":   { "majority": "literal", "minority_form": "entity", "minority": 3 },
       "session-4":   { "majority": "entity", "minority_form": "literal", "minority": 1 },
       "session-5":   { "majority": "entity", "minority_form": "literal", "minority": 1 }
     }
@@ -74,8 +74,9 @@
   },
 
   "session_3_reconciliation": {
-    "_": "S-3. Both figures are correct and count different populations. Neither supersedes the other.",
-    "whole_file_entity": 15,
-    "authoredProse_entity": 13
+    "_": "S-3. Both figures are correct and count different populations. Neither supersedes the other. 2026-10-27 (DW-053): re-measured on the 2027-term page, whole-file &mdash; count 3 and authoredProse entity count 3; the two populations happen to agree today because every entity dash left on the page is in authored prose. The historical pair (15 whole-file, 13 authoredProse, 2026-08) is kept in history_2026_08 so the note still explains where A8's old 15 came from.",
+    "whole_file_entity": 3,
+    "authoredProse_entity": 3,
+    "history_2026_08": { "whole_file_entity": 15, "authoredProse_entity": 13 }
   }
 }

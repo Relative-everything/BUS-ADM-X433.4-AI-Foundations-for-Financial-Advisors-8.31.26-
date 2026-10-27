@@ -18,12 +18,12 @@ checked. A wrong `[UNCONFIRMED]` gets read and downgraded; a wrong
 and moving an entry the other way is a decision with evidence behind it.
 
 All three forms are declared in `EDITORIAL.md` A16 and enforced by
-`scripts/verify-editorial.mjs` in `session-0.1` and sessions 1 to 5; a marker
+`scripts/verify-editorial.mjs` in `session-0.1`, `session-1`, `session-2`, `session-3`, `session-4`, `session-5`; a marker
 in any other form is a hard failure. This register reads the regions A16
 reads (body prose, script, footer source entries and source notes: R1, R2, R7
-and R8) in those six lessons, and the hub (`index.html`) as well, which A16
+and R8) in those six lessons, and `index.html` as well, which A16
 does not read. The totals count the two apart: A16's population reconciles
-with the marker count A16 prints, and the hub's is extra. In the hub this
+with the marker count A16 prints, and the rest is extra. In `index.html` this
 script fails a marker in an undeclared form itself, since A16 never sees it.
 
 ## Totals
@@ -35,8 +35,8 @@ script fails a marker in an undeclared form itself, since A16 never sees it.
 | `[NEEDS SOURCE]` | 0 |
 | `[UNVERIFIED, needs source]` | 0 |
 | Markers that are not claims | 0 |
-| **A16's population** | **0**: the markers in `session-0.1` and sessions 1 to 5, the count A16 prints |
-| The hub, `index.html` | 0: read here, not by A16 |
+| **A16's population** | **0**: the markers in `session-0.1`, `session-1`, `session-2`, `session-3`, `session-4`, `session-5`, the count A16 prints |
+| `index.html` | 0: read here, not by A16 |
 | **All markers read** | **0**: 0 marked claim(s) and 0 marker(s) that are not claims |
 
 ## The order

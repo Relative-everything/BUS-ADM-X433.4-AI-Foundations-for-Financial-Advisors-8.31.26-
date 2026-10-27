@@ -107,9 +107,41 @@ skill root. All must exit 0.
 python3 scripts/validate_lesson.py <repo>/session-N/index.html \
   --case Cole --purge "Okonkwo,Reyes,Adaeze,Ilesanmi" \
   --require-timing --require-tagging
-node scripts/validate_dom.js <repo>/session-N/index.html      # needs jsdom
+python3 scripts/validate_lesson.py <repo>/session-5/index.html --minutes 125 ...   # Session 5 is 125 allocated
+python3 scripts/validate_lesson.py <repo>/session-0.1/index.html --minutes 57 ...  # the setup page is 57, self-paced
+NODE_PATH=$(npm root -g) node scripts/validate_dom.js <repo>/session-N/index.html  # DOM mode needs jsdom resolvable from the skill's directory; without it the script runs static-only and says so
 python3 scripts/restyle_sweep.py <repo>                       # WRITE the fence
 ```
+
+Then the in-repo battery from the repo root, every one exiting 0 (`NODE_PATH=$(npm root -g)`):
+`build-case`, `inject-case --check`, `build-cardsort --check`, `build-appendix --check`,
+`build-readings --check`, `build-sources --check`, `build-unsourced --check`,
+`case-inventory --report-check`, `facts/build-facts-md --check`, `verify-case`,
+`verify-migration`, `verify-sources --check`, `verify-facts`, `verify-editorial`,
+`test-editorial-regions`, `test-case-viewer`, `verify-style`, `verify-stamps`,
+`test_live_console.js`, `verify-browser`, and `docs/next-term/checks.mjs`.
+
+**What the skill validator says that this repository does not act on** (decided
+2026-10-27, DW-189, DW-029, DW-030, DW-051, DW-065, DW-112, DW-116). The skill's
+`references/pedagogy.md` v3.1 and this repository's `PEDAGOGY.md` v2.0 disagree
+on course parameters, and PEDAGOGY.md governs them (its §0). Until the skill
+reads a repo profile, these lines are red by design on every run and are not
+regressions:
+
+| Line | Where | Why it is red | Fix belongs |
+|---|---|---|---|
+| V2 *external request outside the fonts exception* | every page, one per footer citation link | the regex matches `<a href>`, which makes no request | skill |
+| V6 *distinct interactions (band 13-15)* | every lesson (17 to 22) | PEDAGOGY §4 uncaps the appendix; the band assumed a 150-minute flat page | skill, or a repo profile |
+| V6 *same component type in consecutive sections* | session-0.1 (prediction-commit), session-2 (builder-assembler, work-along-gate) | accepted as shipped 2026-10-27 (DW-094); pedagogy s3.5 says flag, not fix | nothing |
+| V5 timing | session-0.1 and session-5 without the `--minutes` flags above | the validator assumes 150 | the flags |
+| V4 *.conf chip(s) without data-src* | session-1 (3), session-2 (2) | the chips carry `data-fact` (a FACTS record) and no `data-src`; the validator predates FACTS | skill |
+| V8 *Shift+U override missing* and the DOM-mode Shift+U line, `#pnum` | session-2 | removed by instruction (DW-116); the label is `#ovr` elsewhere (DW-112) | skill |
+| C2 em-dash INFO count | every page | counts the raw file and prints *policy unratified*; EDITORIAL D1 ratified it | skill |
+| `tokens.css:6` *instructor notes* | the STYLE fence, every page | skill-owned text (R4) inside a byte-exact fence | skill |
+| `pedagogy.md` s3.5 interleaving rule, uncited | the skill | the citation is `src-rohrer` (H) | skill |
+
+The upstream requests are recorded here and nowhere else in this repository; the
+skill is not edited from here.
 
 **Where this repo looks for the skill.** Two scripts here call the skill's
 `restyle_sweep.py`, `scripts/verify-style.mjs` and `scripts/build-changelog.py`.
@@ -245,11 +277,10 @@ in the order the pre-push gate above sets out.
   python3 scripts/verify-wolfram-quotes.py <article.txt> [session-1/index.html]
   ```
 
-- **`scripts/state_space.py` is not a check, and nothing runs it now.** It
-  enumerated the legal configuration space of the context inspector that Session
-  0.1 carried until 2026-10-12, under six sourced constraints, and printed its
-  size against the naive grid. The page that used it is gone; the script is kept
-  as a record. It asserts nothing and exits 0.
+- **`scripts/state_space.py` was deleted on 2026-10-27 (DW-172).** It enumerated the
+  configuration space of the context inspector Session 0.1 carried until
+  2026-10-12; the page is gone and the script asserted nothing. `git show
+  233bb72:scripts/state_space.py` recovers it.
 
 Without the skill, these fallback checks cover the same ground:
 
@@ -593,8 +624,13 @@ lacks, and any rule it carries more or fewer times than the reference
 (`duplicated here:`, `fewer copies here:`); the same rules in another order fail
 as `same rules, different order`. If the largest group has no `.case-*` rule at
 all the check fails, because an empty set agrees with every other empty set and
-proves nothing. It does not see a `<style media=...>` attribute, CSS nesting,
-`@scope`, or a `.case-*` rule placed after `CASE:END`. The script's main guard
+proves nothing. Since 2026-10-27 (DW-166) it folds a `<style media=...>`
+attribute into the rule's context as `@media ...`, recurses into every at-rule
+and nested block (`@scope`, `#x{.case-src{}}` included), and fails hard on any
+`.case-*` rule found outside its read window, before `/* STYLE:END */` or after
+`CASE:END`. Check 5 (DW-191) parses `scripts/case-flowchart.html`'s SVG `<text>`
+for dollar figures and asserts each equals a `scripts/case-facts.json` value, so
+a figure drawn into the artwork cannot drift from the case. The script's main guard
 compares real paths, so it also runs when invoked through a symlinked checkout
 or home (the guard as first written on 2026-10-11 compared the typed path and
 did nothing through a symlink):
@@ -882,7 +918,10 @@ node scripts/build-sources.mjs            # the model, as a report
 node scripts/build-sources.mjs --json     # the model, as JSON
 node scripts/inject-sources.mjs           # write every lesson's footer from it
 node scripts/inject-sources.mjs --check   # report drift, write nothing
-node scripts/verify-sources.mjs           # the hash guard, plus what only it can see
+node scripts/verify-sources.mjs           # the hash guard, plus what only it can see;
+                                          # read-only since 2026-10-27 (DW-159: inject-sources
+                                          # writes only when it is the entry point); also ADVISEs
+                                          # moving targets with no retrieval date or older than 180 days
 node scripts/build-bibliography.mjs       # write BIBLIOGRAPHY.md, DATA-PULL.md and
                                           # docs/source-verification-queue.md
 node scripts/build-bibliography.mjs --check
@@ -1212,6 +1251,11 @@ visible and diffable. A human edits it; nothing infers it at runtime.
 
 > **`docs/deferred-work.md` IS THE SINGLE DEFERRAL REGISTER. Every open item
 > in this repository is a row in it, and open work is tracked nowhere else.**
+>
+> **Since 2026-10-27 the register's Open table is empty.** Tasks that no change in
+> this repository can close (tags, Canvas, Zoom, the class key, the browser day for
+> source attestation, the week-before rituals) live in
+> `instructor-notes/term-start-checklist.md`; a new in-repo item opens a row.
 >
 > **The per-phase `§N.8 What Phase N leaves open` sections in
 > `docs/repo-updates-plan.md` point here and do not accumulate their own.**

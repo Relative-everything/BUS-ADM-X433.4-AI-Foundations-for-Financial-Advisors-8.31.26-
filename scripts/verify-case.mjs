@@ -26,6 +26,19 @@
  * reported as a duplicate, not as a reordering; and a reference set with no
  * rules in it fails, because seven empty sets agree with each other about
  * nothing (the window moved, or the rules were deleted everywhere at once).
+ *
+ * THE WINDOW IS ALSO ASSERTED CLOSED (DW-166). A .case-* rule in a <style> that
+ * is outside the window and outside the CASE span (before "/* STYLE:END *\/", or
+ * after CASE:END) is a hard failure in that lesson, because it changes the viewer
+ * and the comparison above never reads it. The reader folds a <style media="…">
+ * attribute into the rule's context, and descends into every at-rule and every
+ * nested block (@scope, #caseModal{.case-src{…}}), so none of those is a place to
+ * hide a rule either.
+ *
+ * A FIFTH CHECK, ON THE ARTWORK (DW-191). scripts/case-flowchart.html hand-types
+ * dollar figures into SVG <text>; the block is hashed, not read, so a wrong figure
+ * drawn into the sheet would ship. Every $-figure in a <text> must equal a value
+ * in scripts/case-facts.json, and the sheet must carry at least one.
  */
 import { readFileSync, realpathSync } from 'node:fs';
 import { basename, dirname, join } from 'node:path';
@@ -53,21 +66,18 @@ function stripComments(css) {
   return out;
 }
 
-/** Split a comment-free stylesheet into { ctx, sel, body } rules, with at-rule nesting. */
+/**
+ * Split a comment-free stylesheet into { ctx, sel, body } rules. Every block
+ * opens a context: an at-rule prelude (@media, @scope, @layer, anything) or a
+ * selector, so a rule nested under either carries the whole chain in ctx and a
+ * nested .case-* rule is read wherever it sits. A rule's body is its own
+ * declarations only, never a nested block's. Rules are emitted in source order
+ * of their opening brace.
+ */
 function parseRules(css) {
   const rules = [], stack = [];
   let i = 0, buf = '';
-  const readBlock = (from) => {          /* from = index just past '{'; returns [body, indexPast'}'] */
-    let depth = 1, j = from;
-    while (j < css.length && depth) {
-      const ch = css[j];
-      if (ch === '"' || ch === "'") { j++; while (j < css.length && css[j] !== ch) j += css[j] === '\\' ? 2 : 1; }
-      else if (ch === '{') depth++;
-      else if (ch === '}') depth--;
-      j++;
-    }
-    return [css.slice(from, j - 1), j];
-  };
+  const open = () => stack[stack.length - 1];
   while (i < css.length) {
     const ch = css[i];
     if (ch === '"' || ch === "'") {
@@ -75,15 +85,27 @@ function parseRules(css) {
       while (j < css.length && css[j] !== ch) j += css[j] === '\\' ? 2 : 1;
       buf += css.slice(i, j + 1); i = j + 1; continue;
     }
-    if (ch === ';' && buf.trim().startsWith('@')) { buf = ''; i++; continue; }   /* @import, @charset */
+    if (ch === ';') {                                /* a declaration, or @import / @charset */
+      if (open() && !buf.trim().startsWith('@')) open().decls.push(buf);
+      buf = ''; i++; continue;
+    }
     if (ch === '{') {
       const prelude = buf.trim(); buf = '';
-      if (/^@(media|supports|layer|container|document)\b/i.test(prelude)) { stack.push(prelude); i++; continue; }
-      const [body, next] = readBlock(i + 1);
-      rules.push({ ctx: [...stack], sel: prelude, body });
-      i = next; continue;
+      const frame = { prelude, decls: [] };
+      if (!prelude.startsWith('@')) {
+        frame.rule = { ctx: stack.map((f) => f.prelude), sel: prelude, body: '' };
+        rules.push(frame.rule);
+      }
+      stack.push(frame); i++; continue;
     }
-    if (ch === '}') { stack.pop(); buf = ''; i++; continue; }
+    if (ch === '}') {
+      const frame = stack.pop();
+      if (frame) {
+        if (buf.trim()) frame.decls.push(buf);
+        if (frame.rule) frame.rule.body = frame.decls.join(';');
+      }
+      buf = ''; i++; continue;
+    }
     buf += ch; i++;
   }
   return rules;
@@ -98,10 +120,34 @@ function normBody(b) {
   }).filter(Boolean).join(';');
 }
 
+/** The media attribute of the <style> tag that opens at or before `at`, as an @media context. */
+function styleMedia(text, at) {
+  const tagStart = text.lastIndexOf('<style', at);
+  if (tagStart < 0) return null;
+  const tag = text.slice(tagStart, text.indexOf('>', tagStart) + 1);
+  const m = tag.match(/\bmedia\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i);
+  const q = m ? (m[1] ?? m[2] ?? m[3]).trim() : '';
+  return q && q.toLowerCase() !== 'all' ? `@media ${q}` : null;
+}
+
+/** The normalised .case-* rules in one stylesheet body, under an optional outer context. */
+function caseRulesIn(css, outer) {
+  const out = [];
+  for (const r of parseRules(stripComments(css))) {
+    if (!/\.case-[\w-]/.test(r.sel)) continue;
+    const ctx = [outer, ...r.ctx].filter(Boolean).map(ws).join(' ');
+    out.push(`${ctx ? ctx + ' ' : ''}${normSel(r.sel)}{${normBody(r.body)}}`);
+  }
+  return out;
+}
+
 /**
  * caseLayoutRules(text): the lesson-local .case-* rules of one lesson, normalised,
  * in source order. Population: every <style> body between the end of the managed
- * STYLE fence and the CASE:BEGIN sentinel. Returns { rules } or { error }.
+ * STYLE fence and the CASE:BEGIN sentinel, each under its tag's media attribute.
+ * Also returns `outside`: every .case-* rule in a <style> that is neither in that
+ * window nor in the CASE span, which the caller fails. Returns { rules, outside }
+ * or { error }.
  */
 export function caseLayoutRules(text) {
   const a = text.indexOf(STYLE_END);
@@ -109,20 +155,27 @@ export function caseLayoutRules(text) {
   if (a < 0) return { error: `no "${STYLE_END}" marker, so the lesson-local CSS cannot be located` };
   if (b < 0) return { error: 'no CASE:BEGIN sentinel' };
   if (b < a) return { error: 'CASE:BEGIN sits before the end of the STYLE fence' };
-  const region = text.slice(a + STYLE_END.length, b);
-  /* the fence's own <style> runs on from the marker; later <style> elements are whole */
-  const first = region.search(/<\/style\s*>/i);
-  const parts = [first < 0 ? region : region.slice(0, first)];
-  if (first >= 0) for (const m of region.slice(first).matchAll(/<style\b[^>]*>([\s\S]*?)<\/style\s*>/gi)) parts.push(m[1]);
-  const rules = [];
-  for (const css of parts) {
-    for (const r of parseRules(stripComments(css))) {
-      if (!/\.case-[\w-]/.test(r.sel)) continue;
-      const ctx = r.ctx.map(ws).join(' ');
-      rules.push(`${ctx ? ctx + ' ' : ''}${normSel(r.sel)}{${normBody(r.body)}}`);
+  const c = text.indexOf(CLOSE, b);
+  const spanEnd = c < 0 ? b : c;
+  const rules = [], outside = [];
+  /* the fence's own <style> runs on from the marker; it is the window's first part */
+  const tail = text.slice(a + STYLE_END.length);
+  const first = tail.search(/<\/style\s*>/i);
+  rules.push(...caseRulesIn(first < 0 ? tail : tail.slice(0, first), styleMedia(text, a)));
+  /* every whole <style> element, placed by where it opens. The element that holds
+     the marker is the managed fence: only its part before the marker is outside. */
+  for (const m of text.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style\s*>/gi)) {
+    const at = m.index, bodyAt = at + m[0].indexOf('>') + 1;
+    if (at < a) {
+      const css = bodyAt + m[1].length > a ? text.slice(bodyAt, a) : m[1];
+      outside.push(...caseRulesIn(css, styleMedia(text, at)).map((r) => `before ${STYLE_END}: ${r}`));
+      continue;
     }
+    if (at > a && at < b) { rules.push(...caseRulesIn(m[1], styleMedia(text, at))); continue; }
+    if (at >= b && at < spanEnd) continue;               /* the CASE span: hash-guarded above */
+    outside.push(...caseRulesIn(m[1], styleMedia(text, at)).map((r) => `after CASE:END: ${r}`));
   }
-  return { rules };
+  return { rules, outside };
 }
 
 /** How many times each rule occurs, in first-seen order. */
@@ -140,11 +193,14 @@ const tally = (rules) => rules.reduce((m, r) => m.set(r, (m.get(r) || 0) + 1), n
  */
 export function compareCaseLayout(texts) {
   const files = Object.keys(texts);
-  const per = {}, errors = [];
+  const per = {}, errors = [], outside = [];
   for (const f of files) {
     const r = caseLayoutRules(texts[f]);
     if (r.error) errors.push({ file: f, error: r.error });
-    else per[f] = { rules: r.rules, digest: sha256(r.rules.join('\n')) };
+    else {
+      per[f] = { rules: r.rules, digest: sha256(r.rules.join('\n')) };
+      for (const rule of r.outside) outside.push({ file: f, rule });
+    }
   }
   const groups = new Map();
   for (const f of files) if (per[f]) groups.set(per[f].digest, [...(groups.get(per[f].digest) || []), f]);
@@ -171,7 +227,28 @@ export function compareCaseLayout(texts) {
                   reordered: !onlyHere.length && !missing.length && !duplicated.length && !fewer.length });
   }
   return { ref: { files: refFiles, count: ref.rules.length, digest: ref.digest },
-           empty: refFiles.length > 0 && ref.rules.length === 0, differ, errors };
+           empty: refFiles.length > 0 && ref.rules.length === 0, differ, errors, outside };
+}
+
+/**
+ * flowchartFigures(html, figures): every $-figure typed into an SVG <text> of the
+ * flowchart, and whether each equals a value in case-facts.json. Markup inside a
+ * <text> (a <tspan>) is dropped before reading. Returns { found, unmatched }.
+ */
+export function flowchartFigures(html, figures) {
+  const values = new Map();
+  for (const [k, v] of Object.entries(figures)) if (typeof v === 'number') values.set(v, [...(values.get(v) || []), k]);
+  const found = [], unmatched = [];
+  for (const t of html.matchAll(/<text\b[^>]*>([\s\S]*?)<\/text\s*>/gi)) {
+    const plain = t[1].replace(/<[^>]*>/g, '');
+    for (const m of plain.matchAll(/\$(\d{1,3}(?:,\d{3})+|\d+)(?![\d,])/g)) {
+      const n = Number(m[1].replace(/,/g, ''));
+      const keys = values.get(n);
+      found.push({ text: m[0], value: n, keys: keys || [] });
+      if (!keys) unmatched.push({ text: m[0], line: html.slice(0, t.index).split('\n').length, context: plain.trim() });
+    }
+  }
+  return { found, unmatched };
 }
 
 /* ---------------------------------------------------------------- main -- */
@@ -237,7 +314,12 @@ if (invokedDirectly()) {
     const more = [d.onlyHere, d.missing, d.duplicated, d.fewer].reduce((n, xs) => n + Math.max(0, xs.length - 4), 0);
     if (more) console.log(`        ... and ${more} more`);
   }
-  const bad = [...lay.errors.map((x) => x.file), ...(lay.empty ? lay.ref.files : []), ...lay.differ.map((x) => x.file)];
+  for (const o of lay.outside) {
+    console.log(`FAIL  layout  ${o.file}  a .case-* rule sits outside the window the comparison reads, ${o.rule}`);
+    console.log('        the viewer is changed and the cross-lesson comparison never sees it; move it between "/* STYLE:END */" and CASE:BEGIN');
+  }
+  const bad = [...new Set([...lay.errors.map((x) => x.file), ...(lay.empty ? lay.ref.files : []), ...lay.differ.map((x) => x.file),
+                           ...lay.outside.map((x) => x.file)])];
   const layoutFails = bad.length;
   if (layoutFails) {
     console.log(`layout: ${layoutFails} of ${LESSONS.length} lessons ${lay.empty ? 'carry no lesson-local .case-* rules or differ in them' : 'differ in their lesson-local .case-* rules'}: `
@@ -246,5 +328,22 @@ if (invokedDirectly()) {
   } else {
     console.log(`layout: the ${lay.ref.count} lesson-local .case-* rules agree in all ${LESSONS.length} lessons  sha256 ${lay.ref.digest.slice(0, 16)}`);
   }
-  process.exit(fails || layoutFails ? 1 : 0);
+
+  /* 5. the figures drawn into the artwork (DW-191) */
+  const sheet = readFileSync(join(REPO, 'scripts/case-flowchart.html'), 'utf8');
+  const fig = flowchartFigures(sheet, facts.figures);
+  let artFails = 0;
+  if (!fig.found.length) {
+    console.log('FAIL  artwork  scripts/case-flowchart.html  no $-figure found in any SVG <text>; a reader that finds nothing proves nothing');
+    artFails++;
+  }
+  for (const u of fig.unmatched) {
+    console.log(`FAIL  artwork  scripts/case-flowchart.html:${u.line}  ${u.text} is drawn into the sheet and equals no value in scripts/case-facts.json  ("${u.context}")`);
+    artFails++;
+  }
+  if (!artFails) {
+    console.log(`artwork: the ${fig.found.length} $-figure(s) drawn in scripts/case-flowchart.html each equal a case-facts.json value  `
+      + fig.found.map((f) => `${f.text}=${f.keys[0]}`).join(' '));
+  }
+  process.exit(fails || layoutFails || artFails ? 1 : 0);
 }

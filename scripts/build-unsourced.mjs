@@ -72,6 +72,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { classify, REGIONS } from './editorial-regions.mjs';
+import { ALL_LESSONS } from './verify-editorial.mjs';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CHECK = process.argv.includes('--check');
@@ -109,10 +110,15 @@ const A16_BRACKET = /\[(?:UNVERIFIED|NEEDS[ _-]?SOURCE|UNCONFIRMED)[^\]]*\]/gi;
 const KEY = (form) => (form.startsWith('UNVERIFIED') ? 'UNVERIFIED' : form);
 /* A16's regions, so the register and the rule count the same markers. */
 const POPULATION = ['R1', 'R2', 'R7', 'R8'];
-/* The files A16 reads (verify-editorial.mjs ALL_LESSONS). Every other file in
-   LESSONS is read here only, and gets the bracket-form check here. */
-const A16_FILES = new Set(['session-0.1/index.html', 'session-1/index.html', 'session-2/index.html',
-                           'session-3/index.html', 'session-4/index.html', 'session-5/index.html']);
+/* The files A16 reads, imported from verify-editorial.mjs rather than copied
+   (DW-167): a lesson added to one list and not the other was mislabelled here and
+   made the register's reconciliation sentence false. Every file in LESSONS that
+   A16 does not read is read here only, and gets the bracket-form check here. */
+const A16_FILES = new Set(ALL_LESSONS.map((l) => `${l}/index.html`));
+const HERE_ONLY = LESSONS.filter((f) => !A16_FILES.has(f));
+for (const f of A16_FILES) {
+  if (!LESSONS.includes(f)) throw new Error(`build-unsourced.mjs: A16 reads ${f} and this register does not; add it to LESSONS`);
+}
 const ANNOT = /(?:<!--|\/\*)\s*CLAIM\s+([\s\S]*?)(?:-->|\*\/)/g;
 
 /**
@@ -221,15 +227,19 @@ function lexScript(text, s, e) {
   let i = s, prev = '';
   /* From the opening delimiter (a backtick, or the "}" of a substitution) to the
      closing backtick or the next "${"; pushes the piece, returns where to go on. */
+  /* Every piece of one template carries the same tid, so claimText() can put
+     the template back together across its substitutions (DW-168). */
+  let tid = 0;
   const template = (from) => {
+    if (text[from] === '`') tid++;
     let j = from + 1;
     while (j < e) {
       if (text[j] === '\\') { j += 2; continue; }
-      if (text[j] === '`') { out.push(['string', from, j + 1]); prev = 'v'; return j + 1; }
-      if (text[j] === '$' && text[j + 1] === '{') { out.push(['string', from, j + 2]); braces.push('t'); prev = '{'; return j + 2; }
+      if (text[j] === '`') { out.push(['string', from, j + 1, tid]); prev = 'v'; return j + 1; }
+      if (text[j] === '$' && text[j + 1] === '{') { out.push(['string', from, j + 2, tid]); braces.push('t'); prev = '{'; return j + 2; }
       j++;
     }
-    out.push(['string', from, e]); return e;
+    out.push(['string', from, e, tid]); return e;
   };
   while (i < e) {
     const ch = text[i], nx = text[i + 1];
@@ -270,15 +280,28 @@ function lexScript(text, s, e) {
   return out;
 }
 
-/** Where a marker sits: html, or inside a script as a comment, a string or code. */
-function locator(text) {
+/**
+ * Where a marker sits: html, or inside a script as a comment, a string or code.
+ * A template piece also carries `pieces`, every [s, e] span of its template in
+ * order, so the claim is read across the substitutions. A marker in code (a
+ * regex literal, say) is clamped to its own line: the whole script body is not
+ * a sentence, and a claim several hundred characters long was not one either.
+ */
+export function locator(text) {
   const bodies = scriptBodies(text);
   const lexed = bodies.map(([s, e]) => lexScript(text, s, e));
   return (at) => {
     const k = bodies.findIndex(([s, e]) => at >= s && at < e);
     if (k < 0) return { kind: 'html' };
     const tok = lexed[k].find(([, s, e]) => at >= s && at < e);
-    return tok ? { kind: tok[0], s: tok[1], e: tok[2] } : { kind: 'code', s: bodies[k][0], e: bodies[k][1] };
+    if (!tok) {
+      const ls = Math.max(bodies[k][0], text.lastIndexOf('\n', at - 1) + 1);
+      let le = text.indexOf('\n', at); le = le < 0 || le > bodies[k][1] ? bodies[k][1] : le;
+      return { kind: 'code', s: ls, e: le };
+    }
+    const loc = { kind: tok[0], s: tok[1], e: tok[2] };
+    if (tok[3]) loc.pieces = lexed[k].filter((t) => t[3] === tok[3]).map(([, s, e]) => [s, e]);
+    return loc;
   };
 }
 
@@ -304,11 +327,14 @@ function sentenceAt(raw) {
 }
 
 /** The sentence the marker sits in, cleaned of tags, as the claim verbatim. */
-function claimText(text, at, loc) {
+export function claimText(text, at, loc) {
   if (loc.kind === 'string' || loc.kind === 'comment' || loc.kind === 'code') {
-    const raw = text.slice(loc.s, at) + PIN + text.slice(at, loc.e);
+    /* a template is read across its pieces; a substitution stands as "…" */
+    const piece = ([s, e]) => (at >= s && at < e ? text.slice(s, at) + PIN + text.slice(at, e) : text.slice(s, e))
+      .replace(/^[`'"}]/, '').replace(/(?:\$\{|[`'"])$/, '');
+    const raw = loc.pieces ? loc.pieces.map(piece).join('\u2026') : text.slice(loc.s, at) + PIN + text.slice(at, loc.e);
     const body = loc.kind === 'string'
-      ? raw.replace(/^[`'"}]/, '').replace(/(?:\$\{|[`'"])$/, '').replace(/\\u([0-9a-f]{4})/gi, (_, h) => String.fromCharCode(parseInt(h, 16))).replace(/\\(.)/g, '$1')
+      ? (loc.pieces ? raw : piece([loc.s, loc.e])).replace(/\\u([0-9a-f]{4})/gi, (_, h) => String.fromCharCode(parseInt(h, 16))).replace(/\\(.)/g, '$1')
       : loc.kind === 'comment' ? raw.replace(/^\/[*/]/, '').replace(/\*\/$/, '').replace(/^\s*\*(?!\/)/gm, '') : raw;
     return sentenceAt(ENTITIES(body));
   }
@@ -435,14 +461,24 @@ function render({ rows, notClaims, population, hub }) {
   L.push('`[NEEDS SOURCE]` gets read and believed. **The default is `[UNCONFIRMED]`**,');
   L.push('and moving an entry the other way is a decision with evidence behind it.');
   L.push('');
+  /* The population sentences are derived from the two lists, so they cannot say
+     the hub is unread once A16 reads it (DW-167). */
+  const a16Names = [...A16_FILES].map((f) => `\`${f.replace(/\/index\.html$/, '')}\``);
+  const hereNames = HERE_ONLY.map((f) => `\`${f}\``);
+  const count = (n) => ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'][n] || String(n);
   L.push('All three forms are declared in `EDITORIAL.md` A16 and enforced by');
-  L.push('`scripts/verify-editorial.mjs` in `session-0.1` and sessions 1 to 5; a marker');
+  L.push(`\`scripts/verify-editorial.mjs\` in ${a16Names.join(', ')}; a marker`);
   L.push('in any other form is a hard failure. This register reads the regions A16');
   L.push('reads (body prose, script, footer source entries and source notes: R1, R2, R7');
-  L.push('and R8) in those six lessons, and the hub (`index.html`) as well, which A16');
-  L.push('does not read. The totals count the two apart: A16\'s population reconciles');
-  L.push('with the marker count A16 prints, and the hub\'s is extra. In the hub this');
-  L.push('script fails a marker in an undeclared form itself, since A16 never sees it.');
+  if (hereNames.length) {
+    L.push(`and R8) in those ${count(A16_FILES.size)} lessons, and ${hereNames.join(', ')} as well, which A16`);
+    L.push('does not read. The totals count the two apart: A16\'s population reconciles');
+    L.push(`with the marker count A16 prints, and the rest is extra. In ${hereNames.join(', ')} this`);
+    L.push('script fails a marker in an undeclared form itself, since A16 never sees it.');
+  } else {
+    L.push(`and R8) in the same ${count(A16_FILES.size)} files A16 reads, and no other, so the`);
+    L.push('totals below are A16\'s population and reconcile with the marker count A16 prints.');
+  }
   L.push('');
   L.push('## Totals');
   L.push('');
@@ -458,8 +494,8 @@ function render({ rows, notClaims, population, hub }) {
   }
   if (legacy.length) L.push(`| no weight | ${legacy.length}: the pre-existing form with no CLAIM annotation, listed in its own section below |`);
   L.push(`| Markers that are not claims | ${notClaims.length} |`);
-  L.push(`| **A16's population** | **${population}**: the markers in \`session-0.1\` and sessions 1 to 5, the count A16 prints |`);
-  L.push(`| The hub, \`index.html\` | ${hub}: read here, not by A16 |`);
+  L.push(`| **A16's population** | **${population}**: the markers in ${a16Names.join(', ')}, the count A16 prints |`);
+  if (hereNames.length) L.push(`| ${hereNames.join(', ')} | ${hub}: read here, not by A16 |`);
   L.push(`| **All markers read** | **${population + hub}**: ${rows.length} marked claim(s) and ${notClaims.length} marker(s) that are not claims |`);
   L.push('');
   L.push('## The order');

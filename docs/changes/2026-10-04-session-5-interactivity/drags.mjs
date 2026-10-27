@@ -1,13 +1,26 @@
 #!/usr/bin/env node
-/* drags.mjs <page.html>: one real pointer drag per T3 beat, in Chromium at 1280 and 380 px, with the
-   result asserted from the DOM. The jsdom checks drive the same beats through their click path; this is
-   the only place the pointer path (mkDrag: pointerdown, a 6 px threshold, a ghost, rect hit-testing) runs.
-   Needs PLAYWRIGHT_PATH or a global playwright; Chromium at /opt/pw-browsers/chromium. */
+/* drags.mjs [--fonts-blocked] <page.html>: one real pointer drag per T3 beat, in Chromium at 1280 and
+   380 px, with the result asserted from the DOM. The jsdom checks drive the same beats through their
+   click path; this is the only place the pointer path (mkDrag: pointerdown, a 6 px threshold, a ghost,
+   rect hit-testing) runs. Needs PLAYWRIGHT_PATH or a global playwright; Chromium at /opt/pw-browsers/chromium.
+
+   Fonts (DW-162, 2026-10-27). Every geometry assertion below depends on which faces the text was set in,
+   and a container without egress measures the fallback stack and says nothing, which is how DW-131
+   shipped. So each run now prints which of the two measured faces loaded (Source Serif 4, JetBrains Mono;
+   read from document.fonts, not fonts.check alone, because check() answers true when no @font-face for
+   the family exists at all) and ASSERTS the expected state: loaded by default, not loaded under
+   --fonts-blocked, which routes fonts.googleapis.com and fonts.gstatic.com to abort. Run both ways to
+   measure both geometries on purpose:
+       node drags.mjs session-5/index.html
+       node drags.mjs --fonts-blocked session-5/index.html */
 import { createRequire } from 'node:module';
 import { resolve } from 'node:path';
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
-const file = process.argv[2] || 'session-5/index.html';
+const argv = process.argv.slice(2);
+const FONTS_BLOCKED = argv.includes('--fonts-blocked');
+const file = argv.find((a) => !a.startsWith('--')) || 'session-5/index.html';
+const FACES = ['Source Serif 4', 'JetBrains Mono'];
 let fails = 0;
 const say = (ok, w, id, s) => { if (!ok) fails++; console.log(`${ok ? 'PASS' : 'FAIL'}  ${w}px  ${id}  ${s}`); };
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox'] });
@@ -16,7 +29,22 @@ for (const width of [1280, 380]) {
   const page = await ctx.newPage();
   const errs = [];
   page.on('pageerror', (e) => errs.push(String(e)));
+  if (FONTS_BLOCKED) await ctx.route(/https?:\/\/fonts\.(googleapis|gstatic)\.com\//, (r) => r.abort());
   await page.goto('file://' + resolve(file), { waitUntil: 'load' });
+  /* Which faces the geometry is about to be measured in. A face counts as loaded when document.fonts
+     holds at least one FontFace of that family with status "loaded"; fonts.check is printed beside it
+     but not trusted, since it is true for a family with no faces at all. */
+  const fonts = await page.evaluate(async (faces) => {
+    await Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 5000))]);
+    const all = [...document.fonts];
+    return faces.map((f) => {
+      const mine = all.filter((ff) => ff.family.replace(/^["']|["']$/g, '') === f);
+      return { f, faces: mine.length, loaded: mine.filter((ff) => ff.status === 'loaded').length, check: document.fonts.check(`16px "${f}"`) };
+    });
+  }, FACES);
+  const fontLine = fonts.map((x) => `${x.f}: ${x.loaded ? 'loaded' : 'NOT loaded'} (${x.loaded}/${x.faces} faces, check ${x.check})`).join('; ');
+  const fontsOk = fonts.every((x) => (x.loaded > 0) === !FONTS_BLOCKED);
+  say(fontsOk, width, 'D-FONT', `${FONTS_BLOCKED ? 'fonts blocked: ' : ''}${fontLine}${fontsOk ? '' : FONTS_BLOCKED ? ' (a face loaded although fonts were blocked)' : ' (a face is missing; the geometry below is the fallback stack. Rerun with --fonts-blocked to measure that on purpose)'}`);
   await page.evaluate(() => { const b = document.querySelector('#tierbar button[data-level="2"]'); if (b) b.click(); });
   /* Rects are read without scrolling; the page is scrolled once, instantly, before the pointer goes down,
      and by the wheel during the drag when the target is off screen, the way a person does it. The kit
@@ -116,5 +144,5 @@ for (const width of [1280, 380]) {
   await ctx.close();
 }
 await browser.close();
-console.log(`\nsummary: ${fails ? fails + ' failed' : 'all passed'}`);
+console.log(`\nsummary: ${fails ? fails + ' failed' : 'all passed'} (${FONTS_BLOCKED ? 'fonts blocked' : 'fonts allowed'})`);
 process.exit(fails ? 1 : 0);

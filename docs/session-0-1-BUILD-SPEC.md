@@ -1,3 +1,5 @@
+> **Archived 2026-10-27 (DW-182). Historical record, not current guidance:** the Fall 2026 Session 0.1 it specifies was replaced on 2026-10-13 by *Start here: setup and click-along* (D-054, PEDAGOGY §13.1).
+
 Session 0.1 build specification
 "The Control Surface: what every setting actually does to one inference"
 

@@ -1,3 +1,5 @@
+> **Superseded as a plan, 2026-10-27.** Phases 0 to 4 ran in August 2026; Phases 5 to 7 were retired on 2026-10-27 (DW-082) because the 2027-cohort rebuild (`docs/next-term/RUNBOOK.md`) replaced them. Read as history.
+
 # Repo updates plan — BUS ADM X433.4
 
 **This file is the specification for Phases 2 through 7. Every later session
@@ -35,9 +37,9 @@ re-derive it.
 | **2** | **Phase 2, structure** | sessions 1-4, one pass per file | **done.** Step (b) deleted, not deferred — §13.1 |
 | **3** | **Phase 3, sources** | all six files | **done** — §15. 20 chips rewired, `SOURCES.md` at 57 records, both artifacts generated |
 | 4 | Phase 4, instructor notes | all six files | after Phase 2, because notes are keyed to sections. *[2026-10-11: done. PR #10 executed it, merged 2026-08-27 as `f975742`; this row was not updated when it landed.]* |
-| 5-9 | **Phase 5, prose: REDUCE + analogues + citations + vocabulary marking** | one lesson per chat, parallelisable in worktrees | after Phase 3 (citations need the source keys) |
-| 10 | Phase 6, vocabulary | all six files, **`session-0.1` first** | after Phase 3 (A19 joins the bibliography) |
-| 11 | Phase 7, verify and record | repo-wide | last |
+| 5-9 | **Phase 5, prose: REDUCE + analogues + citations + vocabulary marking** | one lesson per chat, parallelisable in worktrees | **retired 2026-10-27 (DW-082): never executed; the 2027 rebuild (`docs/next-term/RUNBOOK.md`, Phases 5 and 6b) rewrote every lesson's prose instead** |
+| 10 | Phase 6, vocabulary | all six files, **`session-0.1` first** | **retired 2026-10-27 (DW-082): PEDAGOGY §13.1's new-term cap (about 12 per session, defined on first use) replaced the inventory; A17 to A19 stay unbuilt** |
+| 11 | Phase 7, verify and record | repo-wide | **retired 2026-10-27 (DW-082): the next-term run's Phase 11 and `docs/next-term/checks.mjs` are the verification record** |
 
 **Why the ordering is what it is.** Phase 3 precedes Phases 5 and 6 because A19
 joins vocabulary read-more links to footer keys and D8 makes `SOURCES.md` the

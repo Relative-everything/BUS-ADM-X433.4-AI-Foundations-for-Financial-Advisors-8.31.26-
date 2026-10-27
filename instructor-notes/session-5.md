@@ -95,6 +95,7 @@ Each poll has its question, options, expected answer, source and full rule in th
 > The Morningstar reasons are what about 185 people said in a survey in 2021 and 2022, in their own words. "Quality of advice" is what the client perceived, and perceived quality includes how the advice was explained and whether it was theirs. The two pans may be one pan.
 
 Beside it: advice quality 32% and the relationship 21%, 53% between them, out of six shares that sum to 100 (src-morningstar-fired, M). The fact cuts both ways: it pushes some toward agree, because explaining is relationship work, and some toward disagree, because the explanation is part of the analysis and no one can explain what they did not check.
+- Small room (under twelve): one defender per side instead of two, hands or chat instead of a poll for the first vote, and read the split as a count, not a percentage; the complication and re-vote run unchanged (PEDAGOGY §15.1, decided 2026-10-27).
 
 ## Appendix sections you may select live
 

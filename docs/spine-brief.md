@@ -1,3 +1,5 @@
+> **Archived 2026-10-27 (DW-182). Historical record, not current guidance:** the case spine it describes was implemented in `scripts/inject-case.mjs` and then re-cut for CASE.md v5.0 on 2026-10-12; PEDAGOGY.md §5 and CASE.md Part O govern.
+
 # Spine brief
 
 **Collected for the instructor. ~~Nothing here is implemented, and nothing here is

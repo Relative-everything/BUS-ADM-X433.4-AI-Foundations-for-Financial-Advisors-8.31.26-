@@ -129,10 +129,11 @@ because your reviewer already knows every input.
 The course argues that fluent and correct look identical, so the lessons hold
 themselves to the standard they teach.
 
-- Every substantive factual claim carries a confidence chip: **H** verified
-  directly against a named primary source, **M** derived or reported by a
-  single secondary source, **L** illustrative or contested. Each chip resolves
-  to a numbered entry in that lesson's footer.
+- Every substantive factual claim carries a confidence chip: **H** the primary
+  source itself was opened and the claim read from it; **M** the claim rests on
+  secondary reports, or on a primary source that could only be confirmed
+  through excerpts rather than opened in full; **L** illustrative or contested.
+  Each chip resolves to a numbered entry in that lesson's footer.
 - Where published sources disagree, both figures are shown rather than averaged
   or quietly resolved.
 - **Some exhibits are deliberately wrong.** Fabricated citations are planted as

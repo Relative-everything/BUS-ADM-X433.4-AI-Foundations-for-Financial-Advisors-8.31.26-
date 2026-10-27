@@ -97,8 +97,8 @@ that into one shared classifier and give every rule its population.
 | R7 | **Footer source entry** | `<li id="src-…">` | in scope for citation rules only |
 | R8 | **Source note** | `<span class="src">`, `<p class="src">`, `<div class="csrc">` | in scope for citation rules |
 | R9 | **Assigned-reading block** | `<div class="wolf">` | in scope for quotation and citation rules |
-| R10 | **Captured transcript** | the four `base:` fields in session 0.1's `PROBE` array | **never** in scope. Verbatim third-party output |
-| R11 | **Byte-shared boilerplate** | the cold-open `.ritual` block, `.apxback` furniture, the shared close block, and the `LM:` / `LMBOX:` / `LMSTYLE:` console fences | excluded from per-file consistency rules (see A8) |
+| R10 | **Captured transcript** | `base:` string literals carrying verbatim model output (no served page has carried one since the 2026-10-13 setup-page rebuild; `test-editorial-regions` T2 proves the claim on a fixture) | **never** in scope. Verbatim third-party output |
+| R11 | **Byte-shared boilerplate** | `.apxback` furniture, the shared close block, and the `LM:` / `LMBOX:` / `LMSTYLE:` console fences (the cold-open `.ritual` block was retired by the case opener on 2026-10-12; baseline 4 blocks / 4 dashes since 2026-10-13) | excluded from per-file consistency rules (see A8) |
 
 **R11 exists because of a collision.** Decision D2 asks for form consistency
 *within* a file. Decision D3b protects the 22 entity dashes that have crept into
@@ -197,7 +197,10 @@ The rule exists as a regression guard. **Do not go looking for instances to
 exempt. There are none, and inventing some would be worse than having none.**
 
 **Class A2 — captured transcripts. HARD EXEMPT.**
-The four `base:` fields in session 0.1's `PROBE` array carry **28 dashes**
+*(Historical count: until 2026-10-13 the four `base:` fields in session 0.1's
+`PROBE` array carried 28 dashes; the array left with the setup-page rebuild and
+the class now has zero members on served pages. The rule stands for any future
+capture.)* The four `base:` fields in session 0.1's `PROBE` array carried **28 dashes**
 (22 em, 6 en). They are verbatim model output, and the block's own header states
 the contract:
 
@@ -1128,12 +1131,14 @@ Three undefined terms in seventeen words, in the sentence that tells a student w
 finished looks like. `token`, `temperature` and `log–log axes` are all first used
 here as instructions, not as prose.
 
-**BAD, and worse** — `session-1/index.html:1322`, the §02 distribution picker,
-**the first interaction in the lesson**:
+**BAD, and worse** — `session-1/index.html`, the §02 distribution picker's
+label (`span.plab`, about line 1456 on 2026-10-27), **the first interaction in
+the lesson**:
 
-> Click a candidate to append it &mdash; the next distribution follows your choice
+> Click a candidate to add it as the next word; the next distribution follows your choice
 
-`candidate`, `distribution`, `token` and `append` are undefined at this point. A
+`candidate`, `distribution` and `token` are undefined at this point (a 2026-08-29
+rewrite replaced `append`, the fourth, with *add it as the next word*; DW-060). A
 student who stops here has done nothing at all.
 
 **GOOD** — the shape to aim for is session 0.1's own convention for its captured
@@ -1504,6 +1509,8 @@ session reads from an earlier one.
 
 ## Follow-ups flagged by the 2027-term rebuild (2026-10-12, branch next-term-2027)
 
+> Resolved 2026-10-27 (DW-195): D18 carries a superseding note, R11 and R10 are reworded above, Class A2's count is marked historical. The table below is the record of what was flagged.
+
 Flagged, not rewritten (kickoff reduction A.0.3 item 3 in `docs/next-term/RUNBOOK.md`): three rows below are now out of step with `PEDAGOGY.md` v2.0 (§4, §9.6, §13.1, ratified 2026-10-11), which governs. Jared decides the wording here.
 
 | Row | What changed | What this file still says |
@@ -1515,6 +1522,13 @@ Flagged, not rewritten (kickoff reduction A.0.3 item 3 in `docs/next-term/RUNBOO
 ## D18 — the core minute band, ratified 2026-08-25
 
 **The band is 60–70 minutes. `150` allocated with tolerance 0 is unchanged.**
+
+> **Superseded on the number, 2026-10-27 (DW-195).** PEDAGOGY.md v2.0 §4 (ratified
+> 2026-10-11) sets the core at *about 60 minutes*, Session 5 at *about 45*, with
+> the appendix uncapped and depth-tiered; the 2027 lessons measure 60, 63, 61, 60
+> and 45, and `150` (`125` for Session 5) allocated with tolerance 0 still holds.
+> Read the rest of this entry as the history of how the band was found; the
+> figure that governs is PEDAGOGY §4's.
 
 This is recorded as a **new** decision rather than as a supersession, and the
 reason matters: **searched for and not found — no ratified decision anywhere in

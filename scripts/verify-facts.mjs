@@ -17,6 +17,12 @@
  *       re-verifies every record before every session, and sessions are 14 days
  *       apart); "term-start" is 180 days. Medium- and low-volatility records are
  *       reported when stale and never fail the run.
+ *       (b) IS HARD ONLY IN THE RITUAL (DW-187). With --as-of or --session on the
+ *       command line, a stale high-volatility record fails the run: that is the
+ *       week-before check, and the session is the date it is measured against.
+ *       Without either, it is ADVISE and exits 0: between terms every 14-day
+ *       record is past its window by design, and a check that is red on main
+ *       for months is a check nobody reads. (a) and (c) are hard always.
  *   (c) a page cites a FACTS id that does not exist. A chip cites a record with
  *       data-fact="<id>" on any element (lessons, case pages, the hub); an
  *       instructor note cites one as FACTS:<id>. A dangling id is a chip
@@ -27,10 +33,10 @@
  * instructor-notes/*.md and *.htm. CHANGELOG.md, changelog/, audit/ and docs/
  * are the record of what was retired and are never scanned.
  *
- *   node scripts/verify-facts.mjs                    # exit 1 on any (a), (b)-high or (c)
+ *   node scripts/verify-facts.mjs                    # exit 1 on any (a) or (c); (b)-high is ADVISE
  *   node scripts/verify-facts.mjs --report           # list everything, exit 0
- *   node scripts/verify-facts.mjs --as-of 2027-01-25 # the week-before ritual
- *   node scripts/verify-facts.mjs --session 4        # session-4, cases/case-4, its notes
+ *   node scripts/verify-facts.mjs --as-of 2027-01-25 # the week-before ritual: (b)-high is a hard FAIL
+ *   node scripts/verify-facts.mjs --session 4        # session-4, cases/case-4, its notes; (b)-high hard
  *
  * Node built-ins only. Every hit prints file:line: context.
  */
@@ -43,6 +49,8 @@ const argv = process.argv.slice(2);
 const REPORT = argv.includes('--report');
 const asOfArg = (() => { const i = argv.indexOf('--as-of'); return i >= 0 ? argv[i + 1] : null; })();
 const sessionArg = (() => { const i = argv.indexOf('--session'); return i >= 0 ? argv[i + 1] : null; })();
+/* the week-before ritual names a date or a session; only then is (b) hard */
+const RITUAL = asOfArg !== null || sessionArg !== null;
 
 const WINDOW_DAYS = { 'each-session': 14, 'term-start': 180 };
 
@@ -134,20 +142,21 @@ for (const r of FACTS) {
 }
 
 /* ---- output ------------------------------------------------------------------- */
-const say = (ok, label, lines) => {
-  console.log(`${ok ? 'OK  ' : 'FAIL'}  ${label}${lines.length ? `  (${lines.length})` : ''}`);
+const say = (ok, label, lines, advise = false) => {
+  console.log(`${ok ? 'OK  ' : advise ? 'ADVISE' : 'FAIL'}  ${label}${lines.length ? `  (${lines.length})` : ''}`);
   for (const l of lines.slice(0, REPORT ? lines.length : 40)) console.log('        ' + l);
   if (!REPORT && lines.length > 40) console.log(`        ... ${lines.length - 40} more (run with --report for all)`);
 };
 console.log(`facts/FACTS.json  ${FACTS.length} record(s)   scope ${FILES.length} file(s)${sessionArg ? ` (session ${sessionArg})` : ''}   as-of ${asOf.toISOString().slice(0, 10)}`);
 say(shapeProblems.length === 0, 'record shape', shapeProblems);
 say(retiredHits.length === 0, '(a) retired values absent from served pages and instructor notes', retiredHits);
-say(staleHigh.length === 0, '(b) high-volatility records inside their re-verify window', staleHigh);
+say(staleHigh.length === 0, `(b) high-volatility records inside their re-verify window${RITUAL ? '' : ' (advisory between rituals; hard with --as-of or --session)'}`, staleHigh, !RITUAL);
 if (staleOther.length) { console.log(`info  (b) medium/low-volatility records past their window, reported only  (${staleOther.length})`); for (const l of staleOther) console.log('        ' + l); }
 say(danglingIds.length === 0, '(c) every cited FACTS id exists', danglingIds);
 const uncited = FACTS.filter((r) => !citedIds.has(r.id)).map((r) => r.id);
 if (REPORT) { console.log(`info  records never cited by a scanned file  (${uncited.length})`); for (const l of uncited) console.log('        ' + l); }
 
-const fails = shapeProblems.length + retiredHits.length + staleHigh.length + danglingIds.length;
-console.log(`\nsummary: ${fails === 0 ? 'clean' : fails + ' failure line(s)'}${REPORT ? ' (--report: exit 0)' : ''}`);
+const fails = shapeProblems.length + retiredHits.length + (RITUAL ? staleHigh.length : 0) + danglingIds.length;
+console.log(`\nsummary: ${fails === 0 ? 'clean' : fails + ' failure line(s)'}${REPORT ? ' (--report: exit 0)' : ''}`
+  + `${!RITUAL && staleHigh.length ? `; ${staleHigh.length} high-volatility record(s) past their window, advisory until --as-of or --session names the ritual` : ''}`);
 process.exit(REPORT ? 0 : (fails ? 1 : 0));

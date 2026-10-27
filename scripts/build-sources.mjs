@@ -303,9 +303,18 @@ export function deriveUsage(sources) {
   for (const lesson of LESSONS) {
     const text = readFileSync(join(REPO, pagePath(lesson)), 'utf8');
     const whereIs = sectionIndex(text);
-    /* the span of the footer source list, so its self-labelling chips are excluded */
-    const listStart = text.search(/<li id="src-/);
-    const listEnd = text.lastIndexOf('</li>');
+    /* the span of the footer source list, so its self-labelling chips are excluded.
+       The SOURCES sentinels bound it exactly once inject-sources has run. Before
+       that, the span runs from the first <li id="src-…"> to the </li> that closes
+       the list it opens, never to the LAST </li> in the file: case-4 builds list
+       markup in a script template after the footer, and the old heuristic swept
+       five real vendor-table chips into the footer and called them uncited (DW-179). */
+    let listStart = text.indexOf('<!-- SOURCES:BEGIN'), listEnd = text.indexOf('<!-- SOURCES:END -->');
+    if (listStart < 0 || listEnd < listStart) {
+      listStart = text.search(/<li id="src-/);
+      const closeAt = listStart < 0 ? -1 : text.slice(listStart).search(/<\/(?:ol|ul)>/);
+      listEnd = closeAt < 0 ? text.length : text.lastIndexOf('</li>', listStart + closeAt);
+    }
     for (const m of text.matchAll(/data-src="(src-[^"]+)"/g)) {
       const key = m[1];
       const inFooterList = listStart >= 0 && m.index > listStart && m.index < listEnd;
