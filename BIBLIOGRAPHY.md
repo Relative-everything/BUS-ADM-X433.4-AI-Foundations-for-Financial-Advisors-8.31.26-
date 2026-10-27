@@ -5,11 +5,11 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**146 works, 702 references across 11 lessons.** 139 are
+**144 works, 703 references across 11 lessons.** 137 are
 cited by at least one claim; 7 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
-**73 records carry at least one field this repository could not verify, and
+**72 records carry at least one field this repository could not verify, and
 every one of them is printed below as `[UNVERIFIED, needs source]` rather than omitted.** The
 rendered footer in a lesson omits an unknown field, because a footer in which
 thirty entries shout about a missing publisher helps nobody. This file is where a
@@ -72,29 +72,10 @@ Per-token input and output rates by model, cache-hit and batch discounts.
 | Last retrieved | 2026-09-13 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **9** |
-| Cited in | S0.1 `#s1` · S0.1 `#s10` · S1 `#s1` · S1 `#s5` ×2 · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 |
+| **Total references** | **11** |
+| Cited in | S0.1 `#s1` · S0.1 `#s10` · S1 `#s1` · S1 `#s5` ×2 · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 · S4 `#sWS` · S4 `#sCR` |
 
-What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate.
-
-### Anthropic
-
-**Messages API reference**  
-`src-api-messages` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | Claude Platform Docs |
-| Link | <https://platform.claude.com/docs/en/api/messages> |
-| Published | *not applicable* |
-| Last retrieved | 2026-09-27 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **4** |
-| Cited in | S2 `#s3` ×2 · S4 `#sWS` · S4 `#sCR` |
-
-The Messages API reference as read on 2026-09-27: temperature is marked deprecated ("Models released after Claude Opus 4.6 do not support setting temperature. A value of 1.0 will be accepted for backwards compatibility, all other values will be rejected with a 400 error"); the effort parameter ("How much effort the model should put into its response") takes low, medium, high, xhigh or max; thinking can be enabled with a token budget, disabled, or adaptive, where the model decides.
+What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate. Also the history the page and its announcement posts give: 9K tokens in March 2023, 100K in May 2023, 200K in November 2023, one million by default on current models, about 555,000 words; and the sentence "As token count grows, accuracy and recall degrade, a phenomenon known as context rot."
 
 ### Anthropic
 
@@ -383,25 +364,6 @@ Browser use of the SDK is "disabled by default to avoid exposing your secret API
 
 ### Anthropic
 
-**Claude Opus 5.5 migration guide**  
-`src-anthropic-sampling` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | Claude Platform Docs |
-| Link | <https://platform.claude.com/docs/en/models/opus-5-5/migration-guide> |
-| Published | *not applicable* |
-| Last retrieved | 2026-10-16 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | M |
-| **Total references** | **1** |
-| Cited in | S1 `#s8` |
-
-"Setting temperature, top_p, or top_k to any non-default value on Claude Opus 4.7 and later models, including Claude Opus 5.5, returns a 400 error." Claude 4.6 and earlier accept them. The lesson's live temperature panel therefore routes a Claude key to the newest model it reaches from 4.6 or earlier and names that model on each row.
-
-### Anthropic
-
 **Data Processing Addendum**  
 `src-anthropic-dpa` · evidence · **moving target**
 
@@ -554,25 +516,6 @@ A standard for connecting assistants to the systems where data lives (November 2
 
 ### Anthropic
 
-**Context windows**  
-`src-anthropic-context` · evidence · **moving target**
-
-| | |
-|---|---|
-| Author | Anthropic |
-| Publisher | Claude Platform Docs |
-| Link | <https://platform.claude.com/docs/en/build-with-claude/context-windows> |
-| Published | *not applicable* |
-| Last retrieved | 2026-09-27 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | H |
-| **Total references** | **2** |
-| Cited in | S4 `#sWS` · S4 `#sCR` |
-
-9,000 tokens in March 2023, 100,000 in May 2023, 200,000 in November 2023, one million by default on current models, about 555,000 words; and "As token count grows, accuracy and recall degrade, a phenomenon known as context rot."
-
-### Anthropic
-
 **Model deprecations**  
 `src-anthropic-deprecations` · evidence · **moving target**
 
@@ -585,10 +528,29 @@ A standard for connecting assistants to the systems where data lives (November 2
 | Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **56** |
-| Cited in | case-1 `#deliverable` ×3 · case-1 `#built` ×2 · case-2 `#deliverable` ×2 · case-2 `#built` ×2 · case-3 `#deliverable` ×5 · case-3 `#built` ×2 · case-4 `#deliverable` ×4 · case-4 `#built` ×3 · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable` ×4 · case-5 `#built` ×5 · case-5 `#next` ×2 · S0.1 `#s0` · S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#sCase` ×2 · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#sE6` ×4 · S5 `#sE5` ×4 |
+| **Total references** | **61** |
+| Cited in | case-1 `#deliverable` ×3 · case-1 `#built` ×2 · case-2 `#deliverable` ×2 · case-2 `#built` ×2 · case-3 `#deliverable` ×5 · case-3 `#built` ×2 · case-4 `#deliverable` ×4 · case-4 `#built` ×3 · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable` ×4 · case-5 `#built` ×5 · case-5 `#next` ×2 · S0.1 `#s0` · S1 `#s8` · S1 `#s10` · S2 `#s3` ×2 · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S4 `#sWS` · S4 `#sCR` · S5 `#sCase` ×2 · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#sE6` ×4 · S5 `#sE5` ×4 |
 
-Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §02 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current and legacy models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027, Haiku 5.5 7 October 2027. Dates are for Anthropic-operated platforms; partner platforms set their own.
+Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §02 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current and legacy models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027, Haiku 5.5 7 October 2027. Dates are for Anthropic-operated platforms; partner platforms set their own. Since the 2026-10-21 API version the page also carries an API parameter deprecations table: temperature, top_p and top_k are removed in API version 2026-10-21, and a request that sends any of them returns a 400 error on every model; earlier API versions return a 400 when one is set to a non-default value on Claude 4.7 and later models; the recommended replacement is to omit them and guide the model by prompting.
+
+### Anthropic
+
+**Migrating to API version 2026-10-21**  
+`src-api-migration-2026-10-21` · evidence · **moving target**
+
+| | |
+|---|---|
+| Author | Anthropic |
+| Publisher | Claude Platform Docs |
+| Link | <https://platform.claude.com/docs/en/api/migration-2026-10-21> |
+| Published | *not applicable* |
+| Last retrieved | 2026-10-27 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S1 `#s8` |
+
+Under API version 2026-10-21 the temperature, top_p and top_k request parameters are removed and a request that sends any of them returns a 400 error on every model; a request that relies on a non-default value must either stop sending the parameter or stay on API version 2023-06-01, where Claude 4.6 and earlier models still accept it. SDKs from major version 1.0 send 2026-10-21 by default, so a console that varies temperature has to name the earlier version itself.
 
 ### Anthropic
 
@@ -1768,6 +1730,25 @@ Assigned reading for Session 2: the kinds of IRS guidance and what authority eac
 
 The compliance framing around note-takers: that an AI summary is a firm record however it is stored, the three things examiners are reported to ask for (written AI-use policies, review of output before it becomes the record, vendor risk assessment), the human-review and edit-trail practices, the retention and high-stakes-meeting rules, and the ACA Group 2024 figure of 12%. A trade publication relaying the SEC and FINRA positions rather than quoting rule text, which is why the chip is M and why session-3 quotes no rule text from it.
 
+### ISS Market Intelligence
+
+**AI Adoption Set to Rise Amongst Advisors**  
+`src-iss-ai-policy` · evidence
+
+| | |
+|---|---|
+| Author | ISS Market Intelligence |
+| Publisher | ISS Market Intelligence, Advisor Pulse; summarised by PLANADVISER, Advisers Using AI, by the Numbers |
+| Link | <https://www.issmarketintelligence.com/resources/ai-adoption-set-to-rise-amongst-advisors/> |
+| Published | 2025-07 |
+| Last retrieved | 2026-10-11 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S4 `#s9` ×2 |
+
+ISS survey, n = 466, fielded June 2025: 48% of U.S. advisors use AI in their workflows; 78% of RIAs say their firm has no written AI policy, against 35% at regional, independent and bank firms.
+
 ### Kalai, A. T., Nachum, O., Vempala, S. S., & Zhang, E.
 
 **Why language models hallucinate**  
@@ -2148,24 +2129,24 @@ GPT-4 was removed from ChatGPT on 30 April 2025, replaced as the default by GPT-
 
 Images from ChatGPT, Codex and the API carry C2PA content credentials and a Google SynthID invisible watermark; text watermarking is EU-only for ChatGPT and Codex and opt-in, off by default, for the API.
 
-### OWASP
+### OWASP GenAI Security Project
 
-**Top 10 for LLM Applications and Top 10 for Agentic Applications**  
+**OWASP GenAI LLM Top 10 2026 and OWASP Top 10 for Agentic Applications 2026**  
 `src-owasp` · evidence · **moving target**
 
 | | |
 |---|---|
-| Author | OWASP |
-| Publisher | OWASP |
-| Link | <https://owasp.org/www-project-top-10-for-large-language-model-applications/> |
-| Published | **[UNVERIFIED, needs source]** |
+| Author | OWASP GenAI Security Project |
+| Publisher | OWASP GenAI Security Project, genai.owasp.org |
+| Link | <https://genai.owasp.org/2026/09/01/owasp-genai-security-project-unveils-2026-top-10-for-llm-applications-new-agent-control-standard-and-sponsors-as-community-tops-30000-members/> |
+| Published | 2026-08-04 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **2** |
 | Cited in | S4 `#sCR` ×2 |
 
-The LLM01 ranking for prompt injection and the mapping into six of ten agentic categories. The ranking is revised between editions, so the position is a moving target even though the finding is not.
+The LLM01 ranking for prompt injection in the 2026 edition of the LLM Top 10 (published 4 August 2026, with about a quarter of the ranking weight from 6,639 recorded incidents) and the mapping into the agentic categories of the Top 10 for Agentic Applications for 2026 (published 9 December 2025). The ranking is revised between editions, so the position is a moving target even though the finding is not.
 
 ### Palo Alto Networks Unit 42
 
@@ -2204,25 +2185,6 @@ Twenty-two payload techniques observed in real web content, from zero-size fonts
 | Cited in | S5 `#s6` |
 
 68,879 Google searches by 900 US adults in March 2025, from a panel that shared its browsing data. Users clicked a traditional result on 8% of visits when an AI summary appeared and 15% when it did not; a link inside the summary itself was clicked on 1% of such visits; users ended their session on 26% of pages with a summary against 16% without.
-
-### PLANADVISER
-
-**Advisers Using AI by the Numbers**  
-`src-iss-ai-policy` · evidence
-
-| | |
-|---|---|
-| Author | PLANADVISER |
-| Publisher | PLANADVISER, reporting the ISS Market Intelligence Advisor Pulse survey |
-| Link | <https://www.planadviser.com/exclusives/advisers-using-ai-by-the-numbers/> |
-| Published | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-11 |
-| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
-| Confidence | M |
-| **Total references** | **2** |
-| Cited in | S4 `#s9` ×2 |
-
-ISS survey, n = 466, fielded June 2025: 48% of U.S. advisors use AI in their workflows; 78% of RIAs say their firm has no written AI policy, against 35% at regional, independent and bank firms.
 
 ### Rajasekaran, P., Dixon, E., Ryan, C., & Hadfield, J.
 

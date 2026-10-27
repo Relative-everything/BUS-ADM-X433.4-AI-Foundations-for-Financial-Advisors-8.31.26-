@@ -131,13 +131,13 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**1175 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**1172 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
-| `ryanAge` | 471 |
-| `megRetireAge` | 148 |
+| `ryanAge` | 470 |
+| `megRetireAge` | 147 |
 | `davidRetireAge` | 96 |
 | `riskGap` | 65 |
 | `tomAge` | 61 |
@@ -146,7 +146,7 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `megAge` | 44 |
 | `megRiskScore` | 25 |
 | `earlyReduction` | 17 |
-| `marriedYears` | 16 |
+| `marriedYears` | 17 |
 | `delayedCredit` | 15 |
 | `megSs62` | 14 |
 | `davidNewsMonth` | 12 |
@@ -158,10 +158,10 @@ with the text around it, so the undercount can be judged rather than trusted.
 | `travel` | 7 |
 | `asOfDate` | 7 |
 | `ipsEquity` | 7 |
-| `megApplicableAge` | 4 |
-| `davidAge` | 3 |
 | `tomShort` | 3 |
+| `megApplicableAge` | 3 |
 | `ryanShort` | 2 |
+| `davidAge` | 2 |
 | `ipsDate` | 2 |
 | `allocFixed` | 2 |
 | `megLossTolerance` | 2 |

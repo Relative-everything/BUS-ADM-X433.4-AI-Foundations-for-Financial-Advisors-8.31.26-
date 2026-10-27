@@ -678,14 +678,14 @@
    "session-3",
    "session-4"
   ],
-  "source_url": "https://www.planadviser.com/exclusives/advisers-using-ai-by-the-numbers/",
-  "source_title": "PLANADVISER, Advisers Using AI by the Numbers (ISS Market Intelligence Advisor Pulse)",
+  "source_url": "https://www.issmarketintelligence.com/resources/ai-adoption-set-to-rise-amongst-advisors/",
+  "source_title": "ISS Market Intelligence, AI Adoption Set to Rise Amongst Advisors (Advisor Pulse)",
   "retrieved": "2026-10-11",
   "confidence": "M",
   "volatility": "medium",
   "reverify_before": "term-start",
   "retired_values": [],
-  "notes": "planadviser.com snippets; the ISS release is at insights.issgovernance.com (2025-07-22)."
+  "notes": "Repointed 2026-10-27 from the PLANADVISER summary to the survey producer's own page, confirmed by publisher-domain search snippets (n = 466, June 2025, 78% and 35% verbatim), not fetched; the ISS STOXX release is at insights.issgovernance.com (2025-07-22); PLANADVISER (planadviser.com/exclusives/advisers-using-ai-by-the-numbers/) stays the secondary."
  },
  {
   "id": "kitces-notetakers-2025",

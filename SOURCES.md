@@ -260,13 +260,13 @@ link:           https://platform.claude.com/docs/en/build-with-claude/context-wi
 published:      not applicable
 last_retrieved: 2026-09-13
 last_verified:
-retrieval_note: Fetched in full 2026-09-13 for the session-2 retrieval bridge. Three sentences carry the lesson's claims. On contents, everything in the request counts toward the context window, the system prompt, every message including tool results, images and documents, and the tool definitions. On accumulation, each turn's input phase contains all previous conversation history plus the current user message, and previous turns are preserved completely. On degradation, as token count grows, accuracy and recall degrade, a phenomenon the page names context rot. The page adds that chat interfaces such as claude.ai can manage the window on a rolling first-in, first-out basis.
+retrieval_note: Fetched in full 2026-09-13 for the session-2 retrieval bridge. Three sentences carry the lesson's claims. On contents, everything in the request counts toward the context window, the system prompt, every message including tool results, images and documents, and the tool definitions. On accumulation, each turn's input phase contains all previous conversation history plus the current user message, and previous turns are preserved completely. On degradation, as token count grows, accuracy and recall degrade, a phenomenon the page names context rot. The page adds that chat interfaces such as claude.ai can manage the window on a rolling first-in, first-out basis. Merged on 2026-10-27 with src-anthropic-context, a second record of this same page that session-4 cited: its 2026-09-27 read opened the 100K (11 May 2023) and 200K (21 November 2023) announcements and the 1M announcement of 12 August 2025, now at claude.com/blog/1m-context; the 100K post writes 9K, not 9,000.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-2 s0, the retrieval bridge (unnumbered)
-scope:          What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate.
+scope:          What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate. Also the history the page and its announcement posts give: 9K tokens in March 2023, 100K in May 2023, 200K in November 2023, one million by default on current models, about 555,000 words; and the sentence "As token count grows, accuracy and recall degrade, a phenomenon known as context rot."
 used_for.session-2: the retrieval bridge's context item, the definition of the window as all the text the model can reference when generating a response, the response itself included, and the two reasons behind its new-chat item
 used_for.session-1: the definition of the context window, all the text the model can reference when generating a response, the response itself included, which is not the box you type in (Appendix A2)
 used_for.session-3: what the context window is, all the text the model can reference when generating a response, the response itself included, and that everything attached and the conversation so far counts, in Appendix C2
@@ -279,29 +279,7 @@ figures.session-1: none typed; the definition paraphrases the page's first sente
 used_for.session-0.1: the definition of the context window, all the text the model can reference when generating a response, the response itself included, in section 01 and on the vocabulary card
 last_retrieved.session-0.1: 2026-10-11
 figures.session-0.1: none typed; the definition paraphrases the page's first sentence (FACTS context-window-definition, read in full 2026-10-11)
-```
-
-## src-api-messages
-
-```source
-title:          Messages API reference
-author:         Anthropic
-publisher:      Claude Platform Docs
-link:           https://platform.claude.com/docs/en/api/messages
-published:      not applicable
-last_retrieved: 2026-09-27
-last_verified:
-retrieval_note: Fetched 2026-09-13 for session-2 §01. The temperature parameter is marked deprecated for models released after Claude Opus 4.6, with 1.0 accepted for backwards compatibility and other values rejected with a 400 error; it defaults to 1.0 and ranges 0.0 to 1.0; the page states that even with temperature of 0.0 the results will not be fully deterministic.
-confidence:     H
-kind:           evidence
-moving_target:  true
-figure_class:   vendor_policy
-recheck_before: every teaching of session-2 Appendix B4
-scope:          The Messages API reference as read on 2026-09-27: temperature is marked deprecated ("Models released after Claude Opus 4.6 do not support setting temperature. A value of 1.0 will be accepted for backwards compatibility, all other values will be rejected with a 400 error"); the effort parameter ("How much effort the model should put into its response") takes low, medium, high, xhigh or max; thinking can be enabled with a token budget, disabled, or adaptive, where the model decides.
-used_for.session-2: Appendix B4's list of what can differ between two runs and the third consequence card
-last_retrieved.session-2: 2026-09-13
-figures.session-2: none typed
-used_for.session-4: temperature, deprecated on current Claude models (Appendix D6)
+used_for.session-4: the context-window card and the context-rot card in the then-and-now deck (Appendix D6)
 ```
 
 ## src-finra2409
@@ -819,21 +797,21 @@ used_for.session-4: the open questions on responsibility and supervision for AI 
 ## src-owasp
 
 ```source
-title:          Top 10 for LLM Applications and Top 10 for Agentic Applications
-author:         OWASP
-publisher:      OWASP
-link:           https://owasp.org/www-project-top-10-for-large-language-model-applications/
-published:      [UNVERIFIED, needs source]
+title:          OWASP GenAI LLM Top 10 2026 and OWASP Top 10 for Agentic Applications 2026
+author:         OWASP GenAI Security Project
+publisher:      OWASP GenAI Security Project, genai.owasp.org
+link:           https://genai.owasp.org/2026/09/01/owasp-genai-security-project-unveils-2026-top-10-for-llm-applications-new-agent-control-standard-and-sponsors-as-community-tops-30000-members/
+published:      2026-08-04
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: owasp.org and genai.owasp.org are both blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited page itself was never loaded. A SURROGATE was reachable and was read: the GitHub repository backing that exact project page, fetched 2026-08-25. Reading a surrogate is not retrieving the source and no date is written for one.
+retrieval_note: Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: owasp.org and genai.owasp.org are both blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited page itself was never loaded. A SURROGATE was reachable and was read: the GitHub repository backing that exact project page, fetched 2026-08-25. Reading a surrogate is not retrieving the source and no date is written for one. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): the record is repointed from the owasp.org project page, which OWASP describes as an archive, to the project's dated announcement of the 2026 edition; the Agentic Top 10 page is genai.owasp.org/resource/2025-12-09/owasp-top-10-for-agentic-applications-for-2026; the publication date is on the owasp.org project page and in the announcement. The old link (owasp.org/www-project-top-10-for-large-language-model-applications/) is kept here as the archive.
 content_changed: 2026-08-25. THE SOURCE HAS MOVED. Established from the project's own GitHub repository, which the blocked page is built from. OWASP's own words describe the cited project page as maintained as a historical archive; active development moved to github.com/GenAI-Security-Project/GenAI-LLM-Top10 and a new edition, OWASP GenAI LLM Top 10 2026, was published 2026-08-04. DEPENDENT LESSON ELEMENTS: session-4 Appendix D4's claim that prompt injection is LLM01 SURVIVES the move intact — it is LLM01:2026 Prompt Injection in the new edition, and is now anchorable to a dated edition instead of an undated page. The CITATION does not survive: the `link` field points at an archive. The 'six of ten agentic categories' half of the same sentence is separately UNCONFIRMED — an Agentic Top 10 2026 v1.0 exists (published 2025-12-01) but sits on no reachable host and its category count was not read. NOT silently updated.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   leaderboard_position
 recheck_before: session-4 Appendix D4 cites this record (three chips); the link points at the 2025 archive and the 2026 edition's URL is confirmed from a browser (term-start checklist item 11)
-scope:          The LLM01 ranking for prompt injection and the mapping into six of ten agentic categories. The ranking is revised between editions, so the position is a moving target even though the finding is not.
+scope:          The LLM01 ranking for prompt injection in the 2026 edition of the LLM Top 10 (published 4 August 2026, with about a quarter of the ranking weight from 6,639 recorded incidents) and the mapping into the agentic categories of the Top 10 for Agentic Applications for 2026 (published 9 December 2025). The ranking is revised between editions, so the position is a moving target even though the finding is not.
 used_for.session-4: least privilege and human approval for high-risk actions as the fixes that hold against prompt injection (Appendix D4)
 ```
 
@@ -1516,26 +1494,6 @@ scope:          Browser use of the SDK is "disabled by default to avoid exposing
 used_for.session-4: the extra header a Claude request from a browser must carry, and why its name is the warning, in the Live API box (above §00)
 ```
 
-## src-anthropic-sampling
-
-```source
-title:          Claude Opus 5.5 migration guide
-author:         Anthropic
-publisher:      Claude Platform Docs
-link:           https://platform.claude.com/docs/en/models/opus-5-5/migration-guide
-published:      not applicable
-last_retrieved: 2026-10-16
-last_verified:
-retrieval_note: Opened directly on 2026-10-16, with the Claude Haiku 5.5 migration guide, which states the same rule for Haiku 5.5 against Haiku 4.5 (temperature must be 1 if sent; top_p 0.99; any top_k a 400).
-confidence:     M
-kind:           evidence
-moving_target:  true
-figure_class:   vendor_policy
-recheck_before: every teaching of session-1
-scope:          "Setting temperature, top_p, or top_k to any non-default value on Claude Opus 4.7 and later models, including Claude Opus 5.5, returns a 400 error." Claude 4.6 and earlier accept them. The lesson's live temperature panel therefore routes a Claude key to the newest model it reaches from 4.6 or earlier and names that model on each row.
-used_for.session-1: Claude models from Opus 4.7 on reject a temperature setting, so the live temperature panel runs on an older Claude model when a Claude key is connected (Appendix A6)
-```
-
 ## src-anthropic-dpa
 
 ```source
@@ -1989,26 +1947,6 @@ last_retrieved.session-0.1: 2026-10-13
 figures.session-0.1: the name Model Context Protocol and its description as an open standard (FACTS mcp-name; the post read in full 2026-10-13)
 ```
 
-## src-anthropic-context
-
-```source
-title:          Context windows
-author:         Anthropic
-publisher:      Claude Platform Docs
-link:           https://platform.claude.com/docs/en/build-with-claude/context-windows
-published:      not applicable
-last_retrieved: 2026-09-27
-last_verified:
-retrieval_note: Opened directly on 2026-09-27, with the models overview and the 2023 announcements of 100K (11 May 2023) and 200K (21 November 2023) context windows and the 1M announcement of 12 August 2025, all on anthropic.com or claude.com.
-confidence:     H
-kind:           evidence
-moving_target:  true
-figure_class:   vendor_policy
-recheck_before: every teaching of session-4 Appendix D6
-scope:          9,000 tokens in March 2023, 100,000 in May 2023, 200,000 in November 2023, one million by default on current models, about 555,000 words; and "As token count grows, accuracy and recall degrade, a phenomenon known as context rot."
-used_for.session-4: the context-window card and the context-rot card in the then-and-now deck (Appendix D6)
-```
-
 ## src-anthropic-agents
 
 ```source
@@ -2116,8 +2054,8 @@ kind:           evidence
 moving_target:  true
 figure_class:   vendor lifecycle schedule
 recheck_before: each teaching of Session 5
-scope:          Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §02 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current and legacy models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027, Haiku 5.5 7 October 2027. Dates are for Anthropic-operated platforms; partner platforms set their own.
-used_for.session-1: the names of the four current Claude models in the tier table (Appendix A7)
+scope:          Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §02 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current and legacy models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027, Haiku 5.5 7 October 2027. Dates are for Anthropic-operated platforms; partner platforms set their own. Since the 2026-10-21 API version the page also carries an API parameter deprecations table: temperature, top_p and top_k are removed in API version 2026-10-21, and a request that sends any of them returns a 400 error on every model; earlier API versions return a 400 when one is set to a non-default value on Claude 4.7 and later models; the recommended replacement is to omit them and guide the model by prompting.
+used_for.session-1: the names of the four current Claude models in the tier table (Appendix A7); and that Claude models from Opus 4.7 on reject a temperature setting, so the live temperature panel runs on an older Claude model when a Claude key is connected (Appendix A6)
 used_for.session-2: the names of the four Claude models current in October 2026, set beside the August snapshot in the cost frontier (Appendix B8), and the model id on the captured interview run (§04)
 used_for.session-3: that claude-sonnet-5-5, the model id on the two captured example outputs, is a current Claude model id (§05)
 last_retrieved.session-3: 2026-10-11
@@ -2137,6 +2075,28 @@ used_for.case-5: that claude-sonnet-4-5-20250929 was deprecated on 30 September 
 used_for.session-0.1: the names of the four current Claude models, in the model-picker check (section 00)
 last_retrieved.session-0.1: 2026-10-11
 figures.session-0.1: model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11)
+used_for.session-2: Appendix B4's list of what can differ between two runs and the third consequence card: temperature removed from the API, from the API parameter deprecations table
+used_for.session-4: temperature removed from the API, on the then-and-now deck and its flip card (Appendix D6)
+```
+
+## src-api-migration-2026-10-21
+
+```source
+title:          Migrating to API version 2026-10-21
+author:         Anthropic
+publisher:      Claude Platform Docs
+link:           https://platform.claude.com/docs/en/api/migration-2026-10-21
+published:      not applicable
+last_retrieved: 2026-10-27
+last_verified:
+retrieval_note: Fetched in full 2026-10-27 by the bibliography audit, with the API versions page. The sampling-parameters section states the removal, the 400 on every model, and the fallback of keeping a request on 2023-06-01; the TypeScript SDK page states that SDKs from major version 1.0 send 2026-10-21 by default. Added by the audit because the Messages API reference and the Opus 5.5 migration guide no longer carry the temperature rule.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-1 Appendix A6
+scope:          Under API version 2026-10-21 the temperature, top_p and top_k request parameters are removed and a request that sends any of them returns a 400 error on every model; a request that relies on a non-default value must either stop sending the parameter or stay on API version 2023-06-01, where Claude 4.6 and earlier models still accept it. SDKs from major version 1.0 send 2026-10-21 by default, so a console that varies temperature has to name the earlier version itself.
+used_for.session-1: why the live temperature panel pins API version 2023-06-01 as well as a 4.6-or-earlier model (Appendix A6)
 ```
 
 ## src-anthropic-deprecation-commitments
@@ -2834,14 +2794,14 @@ figures.session-4: the image marks and the EU-only text watermark (FACTS openai-
 ## src-iss-ai-policy
 
 ```source
-title:          Advisers Using AI by the Numbers
-author:         PLANADVISER
-publisher:      PLANADVISER, reporting the ISS Market Intelligence Advisor Pulse survey
-link:           https://www.planadviser.com/exclusives/advisers-using-ai-by-the-numbers/
-published:      [UNVERIFIED, needs source]
+title:          AI Adoption Set to Rise Amongst Advisors
+author:         ISS Market Intelligence
+publisher:      ISS Market Intelligence, Advisor Pulse; summarised by PLANADVISER, Advisers Using AI, by the Numbers
+link:           https://www.issmarketintelligence.com/resources/ai-adoption-set-to-rise-amongst-advisors/
+published:      2025-07
 last_retrieved: 2026-10-11
 last_verified:
-retrieval_note: planadviser.com is unreachable from the build container (FACTS adoption-iss-policy, 2026-10-11). The figures come from primary-domain search snippets; the ISS release itself is at insights.issgovernance.com, dated 2025-07-22. The survey is a self-report by advisers, fielded in June 2025.
+retrieval_note: planadviser.com is unreachable from the build container (FACTS adoption-iss-policy, 2026-10-11). The figures come from primary-domain search snippets; the ISS release itself is at insights.issgovernance.com, dated 2025-07-22. The survey is a self-report by advisers, fielded in June 2025. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): record repointed from the PLANADVISER summary to the survey producer's own write-up, which states n = 466, the June 2025 fielding and the 78 percent against 35 percent policy figures verbatim; the ISS STOXX release of 22 July 2025 (insights.issgovernance.com) carries the 48 percent and 87 percent headline figures. PLANADVISER's piece (planadviser.com/exclusives/advisers-using-ai-by-the-numbers/) is kept as the secondary.
 confidence:     M
 kind:           evidence
 moving_target:  false

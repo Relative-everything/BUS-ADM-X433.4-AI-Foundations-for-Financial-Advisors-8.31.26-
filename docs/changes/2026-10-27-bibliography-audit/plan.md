@@ -55,3 +55,4 @@ Every gate script MAINTAINING lists exits 0 on the final tree; `build-sources --
 - Records that could not be fetched keep their old `last_retrieved`; the audit line in `retrieval_note` records the search confirmation.
 
 ## Departures from plan
+- Step 3, 2026-10-27: `src-anthropic-context` merged into `src-context-windows` (the same page under two keys; the audit's UPDATE_METADATA for both said merge). Inside the named files (SOURCES.md, session-4): its one inline chip and its flip-card chip now point at `src-context-windows`, which gained the session-4 clause and the context-history scope; the duplicate record was deleted and the lock synced with the two emptied temperature records. The other duplicate pair (`src-models`, `src-anthropic-models-overview`) is not merged, because the second is cited only by session-5.

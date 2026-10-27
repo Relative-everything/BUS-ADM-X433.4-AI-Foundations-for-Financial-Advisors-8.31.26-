@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**67 of 146 works are moving targets, feeding 346 of
-702 references.**
+**65 of 144 works are moving targets, feeding 347 of
+703 references.**
 
 
 ---
@@ -53,8 +53,8 @@ version string means the version is not tracking the data.
 | Last retrieved | 2026-10-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
-| References | 56 |
-| Feeds | case-1 `#deliverable` ×3 · case-1 `#built` ×2 · case-2 `#deliverable` ×2 · case-2 `#built` ×2 · case-3 `#deliverable` ×5 · case-3 `#built` ×2 · case-4 `#deliverable` ×4 · case-4 `#built` ×3 · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable` ×4 · case-5 `#built` ×5 · case-5 `#next` ×2 · S0.1 `#s0` · S1 `#s10` · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S5 `#sCase` ×2 · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#sE6` ×4 · S5 `#sE5` ×4 |
+| References | 61 |
+| Feeds | case-1 `#deliverable` ×3 · case-1 `#built` ×2 · case-2 `#deliverable` ×2 · case-2 `#built` ×2 · case-3 `#deliverable` ×5 · case-3 `#built` ×2 · case-4 `#deliverable` ×4 · case-4 `#built` ×3 · case-5 `#brief` · case-5 `#commit` · case-5 `#deliverable` ×4 · case-5 `#built` ×5 · case-5 `#next` ×2 · S0.1 `#s0` · S1 `#s8` · S1 `#s10` · S2 `#s3` ×2 · S2 `#s5` · S2 `#s8` · S3 `#sOff` · S4 `#sWS` · S4 `#sCR` · S5 `#sCase` ×2 · S5 `#s1` ×3 · S5 `#sE2` ×2 · S5 `#sE6` ×4 · S5 `#sE5` ×4 |
 
 **Registered retrievals**
 
@@ -170,6 +170,27 @@ version string means the version is not tracking the data.
 | References | 12 |
 | Feeds | case-4 `#built` · case-4 `#next` · S4 `#s3` ×2 · S4 `#s4` ×2 · S4 `#sCR` ×6 |
 
+### `src-context-windows` — Context windows
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-09-13 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-2 s0, the retrieval bridge (unnumbered) |
+| References | 11 |
+| Feeds | S0.1 `#s1` · S0.1 `#s10` · S1 `#s1` · S1 `#s5` ×2 · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 · S4 `#sWS` · S4 `#sCR` |
+
+**Registered retrievals**
+
+| Pull | Lesson | Retrieved | Index version | Figures it landed in |
+|---|---|---|---|---|
+| CONTEXT-WINDOWS-001 | S3 | 2026-10-11 | **[UNVERIFIED, needs source]** | none typed; the bullet paraphrases the page's first sentence (FACTS context-window-definition, read in full 2026-10-11) |
+| CONTEXT-WINDOWS-002 | S2 | 2026-10-11 | **[UNVERIFIED, needs source]** | the 1M-token ceiling; the keys paraphrase the page's first sentence and its sentences on contents, accumulation and degradation (FACTS context-window-definition, read in full 2026-10-11) |
+| CONTEXT-WINDOWS-003 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | none typed; the definition paraphrases the page's first sentence (FACTS context-window-definition, read in full 2026-10-11) |
+| CONTEXT-WINDOWS-004 | S0.1 | 2026-10-11 | **[UNVERIFIED, needs source]** | none typed; the definition paraphrases the page's first sentence (FACTS context-window-definition, read in full 2026-10-11) |
+
 ### `src-claude-privacy-training` — Is my data used for model training?
 
 | | |
@@ -189,27 +210,6 @@ version string means the version is not tracking the data.
 | CLAUDE-PRIVACY-TRAINING-001 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | the five-year and 30-day retention (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11) |
 | CLAUDE-PRIVACY-TRAINING-002 | S5 | 2026-10-11 | **[UNVERIFIED, needs source]** | up to five years with the training setting on, 30 days with it off (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11); no default stated |
 | CLAUDE-PRIVACY-TRAINING-003 | S0.1 | 2026-10-11 | **[UNVERIFIED, needs source]** | up to five years with the setting on, within 30 days with it off, exceptions of two, seven and five years (FACTS claude-consumer-retention, from primary-domain snippets read 2026-10-11); no default stated |
-
-### `src-context-windows` — Context windows
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-13 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-2 s0, the retrieval bridge (unnumbered) |
-| References | 9 |
-| Feeds | S0.1 `#s1` · S0.1 `#s10` · S1 `#s1` · S1 `#s5` ×2 · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| CONTEXT-WINDOWS-001 | S3 | 2026-10-11 | **[UNVERIFIED, needs source]** | none typed; the bullet paraphrases the page's first sentence (FACTS context-window-definition, read in full 2026-10-11) |
-| CONTEXT-WINDOWS-002 | S2 | 2026-10-11 | **[UNVERIFIED, needs source]** | the 1M-token ceiling; the keys paraphrase the page's first sentence and its sentences on contents, accumulation and degradation (FACTS context-window-definition, read in full 2026-10-11) |
-| CONTEXT-WINDOWS-003 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | none typed; the definition paraphrases the page's first sentence (FACTS context-window-definition, read in full 2026-10-11) |
-| CONTEXT-WINDOWS-004 | S0.1 | 2026-10-11 | **[UNVERIFIED, needs source]** | none typed; the definition paraphrases the page's first sentence (FACTS context-window-definition, read in full 2026-10-11) |
 
 ### `src-memory` — Use Claude's chat search and memory to build on previous context
 
@@ -356,24 +356,6 @@ version string means the version is not tracking the data.
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
 | AGENT-SKILLS-001 | S0.1 | 2026-10-13 | **[UNVERIFIED, needs source]** | name: lowercase letters, numbers and hyphens, 64 characters at most; description: what the skill does and when to use it (read in full 2026-10-13) |
-
-### `src-api-messages` — Messages API reference
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-2 Appendix B4 |
-| References | 4 |
-| Feeds | S2 `#s3` ×2 · S4 `#sWS` · S4 `#sCR` |
-
-**Registered retrievals**
-
-| Pull | Lesson | Retrieved | Index version | Figures it landed in |
-|---|---|---|---|---|
-| API-MESSAGES-001 | S2 | 2026-09-13 | **[UNVERIFIED, needs source]** | none typed |
 
 ### `src-gemini-privacy` — Gemini Apps Privacy Hub
 
@@ -591,7 +573,7 @@ version string means the version is not tracking the data.
 |---|---|---|---|---|
 | CLAUDE-PROJECTS-001 | S0.1 | 2026-10-13 | **[UNVERIFIED, needs source]** | five projects on Free (read in full 2026-10-13) |
 
-### `src-owasp` — Top 10 for LLM Applications and Top 10 for Agentic Applications
+### `src-owasp` — OWASP GenAI LLM Top 10 2026 and OWASP Top 10 for Agentic Applications 2026
 
 | | |
 |---|---|
@@ -677,18 +659,6 @@ version string means the version is not tracking the data.
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
 | Last retrieved | 2026-10-27 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-4 Appendix D6 |
-| References | 2 |
-| Feeds | S4 `#sWS` · S4 `#sCR` |
-
-### `src-anthropic-context` — Context windows
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-09-27 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendix D6 |
 | References | 2 |
@@ -814,18 +784,6 @@ version string means the version is not tracking the data.
 | References | 1 |
 | Feeds | S4 `#(footer)` |
 
-### `src-anthropic-sampling` — Claude Opus 5.5 migration guide
-
-| | |
-|---|---|
-| Figure class | `vendor_policy` |
-| Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-16 |
-| Last verified by the instructor | **EMPTY** |
-| Re-check before | every teaching of session-1 |
-| References | 1 |
-| Feeds | S1 `#s8` |
-
 ### `src-gemini-api-terms` — Gemini API Additional Terms of Service
 
 | | |
@@ -873,6 +831,18 @@ version string means the version is not tracking the data.
 | Re-check before | every teaching of session-4 Appendix D4 |
 | References | 1 |
 | Feeds | S4 `#sCR` |
+
+### `src-api-migration-2026-10-21` — Migrating to API version 2026-10-21
+
+| | |
+|---|---|
+| Figure class | `vendor_policy` |
+| Index version | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-10-27 |
+| Last verified by the instructor | **EMPTY** |
+| Re-check before | every teaching of session-1 Appendix A6 |
+| References | 1 |
+| Feeds | S1 `#s8` |
 
 ### `src-openai-retire-4o` — Retiring GPT-4o and other ChatGPT models
 
@@ -1084,7 +1054,7 @@ wrong when they go stale.
 | Lesson | Distinct model names in prose | Occurrences |
 |---|---|---|
 | S0.1 | `Fable 5`, `Opus 5`, `Sonnet 5` | 8 |
-| S1 | `Fable 5`, `GPT-5.6`, `Kimi K3`, `Luna`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 59 |
+| S1 | `Fable 5`, `GPT-5.6`, `Kimi K3`, `Luna`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 58 |
 | S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 52 |
 | S3 | — | 0 |
 | S4 | `Fable 5`, `Opus 4.7`, `Opus 5`, `Sonnet 5` | 7 |
@@ -1095,7 +1065,7 @@ wrong when they go stale.
 | case-4 | `Opus 5`, `Sonnet 5` | 7 |
 | case-5 | `Opus 5`, `Sonnet 5` | 7 |
 
-**196 occurrences across 11 lessons.** This count is read off
+**195 occurrences across 11 lessons.** This count is read off
 the corpus on every run, so it cannot go stale the way a typed one would.
 
 
