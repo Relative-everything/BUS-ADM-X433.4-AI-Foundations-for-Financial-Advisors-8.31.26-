@@ -153,7 +153,7 @@ link:           https://artificialanalysis.ai/models
 published:      not applicable
 last_retrieved: 2026-08-13
 last_verified:
-retrieval_note: PULL-002 (session-2) carries a PARTIAL DATE, "2026-08". A month cannot be ordered against a day, which is where this record's version incoherence hid. The ordering rule now reports every partial date as a precondition failure AND orders it at its earliest possible day, so the v4.1.1 -> v4.1 regression against PULL-003 still fires.
+retrieval_note: PULL-002 (session-2) carries a PARTIAL DATE, "2026-08". A month cannot be ordered against a day, which is where this record's version incoherence hid. The ordering rule now reports every partial date as a precondition failure AND orders it at its earliest possible day, so the v4.1.1 -> v4.1 regression against PULL-003 still fires. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Index versions v4.1, v4.1.1, v4.2 and v4.3 each have a dated announcement article on artificialanalysis.ai; each pull should cite the matching article so the version divergence is anchored.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -180,11 +180,12 @@ figures.session-4: none typed since 2026-09-25; the frontier and divergence char
 ```source
 title:          Hallucination-free? Assessing the reliability of leading AI legal research tools
 author:         Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., & Ho, D. E.
-publisher:      Journal of Empirical Legal Studies 22(2), 216
-link:           https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/
+publisher:      Journal of Empirical Legal Studies, 22(2), 216-242
+link:           https://onlinelibrary.wiley.com/doi/10.1111/jels.12413
 published:      2025
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Published 23 April 2025, doi 10.1111/jels.12413 (preprint arXiv:2405.20362); RegLab page reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools kept as the secondary. More than 200 queries, May 2024, and the 17 to 33 percent rates are confirmed; the 43 percent GPT-4 figure appears only in secondary posts (GAP, see register).
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -201,11 +202,11 @@ used_for.session-5: the wrong-passage and unsupported-citation failure types (Ap
 title:          API pricing
 author:         OpenAI
 publisher:      OpenAI Platform
-link:           https://openai.com/api/pricing/
+link:           https://developers.openai.com/api/docs/pricing
 published:      not applicable
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: The GPT-5.6 Sol, Terra and Luna rates in session-2 Appendix B8 entered the repository with the 2026-08 pull and no retrieval was recorded for them. openai.com was egress-blocked on 2026-09-12 when this record was written, so the rates are carried at M until the DW-081 re-pull records a retrieval.
+retrieval_note: The GPT-5.6 Sol, Terra and Luna rates in session-2 Appendix B8 entered the repository with the 2026-08 pull and no retrieval was recorded for them. openai.com was egress-blocked on 2026-09-12 when this record was written, so the rates are carried at M until the DW-081 re-pull records a retrieval. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): unreachable. The pricing page now lives on developers.openai.com (returned by search 2026-10-27); the Sol, Terra and Luna rates have changed since the August pull; re-pull from the model pages before teaching.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -223,9 +224,9 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/about-claude/pricing
 published:      not applicable
-last_retrieved: 2026-10-11
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Fetched in full 2026-08-25 for Phase 3.5, and again in full 2026-09-13 for the session-2 retrieval bridge; the table is unchanged for Sonnet 5, Opus 5 and Fable 5, and the FAQ gives the rule of thumb of one token to about 0.75 words. PULL-002 (session-2) carried a PARTIAL DATE, "2026-08", until the 2026-09-13 pull replaced it.
+retrieval_note: Fetched in full 2026-08-25 for Phase 3.5, and again in full 2026-09-13 for the session-2 retrieval bridge; the table is unchanged for Sonnet 5, Opus 5 and Fable 5, and the FAQ gives the rule of thumb of one token to about 0.75 words. PULL-002 (session-2) carried a PARTIAL DATE, "2026-08", until the 2026-09-13 pull replaced it. Audit 2026-10-27 (fetched in full): verified.
 content_changed: 2026-08-25. The page now states that Sonnet 5's $2 / $10 introductory pricing "is now the standard price" and that "the previously scheduled increase to $3/$15 per million input/output tokens on September 1, 2026 will not occur". The 2026-07-28 pull recorded the increase as scheduled. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-08-25 in Phase 3.6: session-1 Appendix A7's second Sonnet 5 table row and its "rises 50% tomorrow" note both carried the cancelled rise and are gone; the surviving row states $2 / $10 / $0.20 with no date on it. Three script arrays carried the same cancelled figure and were corrected with it — TIERS (Appendix A2 cost boxes), PATHS (Appendix A8 practice cost) and DPT (Appendix A8 document pass), the last two of which also printed the label "Sonnet 5 (from 1 Sep)" on screen. session-2 Appendix B8's "Sonnet 5 lists at $2 in / $10 out per million tokens" was UNAFFECTED and is the standing price. Phase 3.5 flagged rather than resolved; Phase 3.6 resolved on instruction.
 confidence:     H
 kind:           evidence
@@ -259,13 +260,13 @@ link:           https://platform.claude.com/docs/en/build-with-claude/context-wi
 published:      not applicable
 last_retrieved: 2026-09-13
 last_verified:
-retrieval_note: Fetched in full 2026-09-13 for the session-2 retrieval bridge. Three sentences carry the lesson's claims. On contents, everything in the request counts toward the context window, the system prompt, every message including tool results, images and documents, and the tool definitions. On accumulation, each turn's input phase contains all previous conversation history plus the current user message, and previous turns are preserved completely. On degradation, as token count grows, accuracy and recall degrade, a phenomenon the page names context rot. The page adds that chat interfaces such as claude.ai can manage the window on a rolling first-in, first-out basis.
+retrieval_note: Fetched in full 2026-09-13 for the session-2 retrieval bridge. Three sentences carry the lesson's claims. On contents, everything in the request counts toward the context window, the system prompt, every message including tool results, images and documents, and the tool definitions. On accumulation, each turn's input phase contains all previous conversation history plus the current user message, and previous turns are preserved completely. On degradation, as token count grows, accuracy and recall degrade, a phenomenon the page names context rot. The page adds that chat interfaces such as claude.ai can manage the window on a rolling first-in, first-out basis. Merged on 2026-10-27 with src-anthropic-context, a second record of this same page that session-4 cited: its 2026-09-27 read opened the 100K (11 May 2023) and 200K (21 November 2023) announcements and the 1M announcement of 12 August 2025, now at claude.com/blog/1m-context; the 100K post writes 9K, not 9,000.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-2 s0, the retrieval bridge (unnumbered)
-scope:          What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate.
+scope:          What the context window contains, how turns accumulate, that all of it is counted as input, and the vendor's statement that accuracy and recall degrade as the token count grows. The page gives the direction of the degradation and no threshold, turn count or rate. Also the history the page and its announcement posts give: 9K tokens in March 2023, 100K in May 2023, 200K in November 2023, one million by default on current models, about 555,000 words; and the sentence "As token count grows, accuracy and recall degrade, a phenomenon known as context rot."
 used_for.session-2: the retrieval bridge's context item, the definition of the window as all the text the model can reference when generating a response, the response itself included, and the two reasons behind its new-chat item
 used_for.session-1: the definition of the context window, all the text the model can reference when generating a response, the response itself included, which is not the box you type in (Appendix A2)
 used_for.session-3: what the context window is, all the text the model can reference when generating a response, the response itself included, and that everything attached and the conversation so far counts, in Appendix C2
@@ -278,29 +279,7 @@ figures.session-1: none typed; the definition paraphrases the page's first sente
 used_for.session-0.1: the definition of the context window, all the text the model can reference when generating a response, the response itself included, in section 01 and on the vocabulary card
 last_retrieved.session-0.1: 2026-10-11
 figures.session-0.1: none typed; the definition paraphrases the page's first sentence (FACTS context-window-definition, read in full 2026-10-11)
-```
-
-## src-api-messages
-
-```source
-title:          Messages API reference
-author:         Anthropic
-publisher:      Claude Platform Docs
-link:           https://platform.claude.com/docs/en/api/messages
-published:      not applicable
-last_retrieved: 2026-09-27
-last_verified:
-retrieval_note: Fetched 2026-09-13 for session-2 §01. The temperature parameter is marked deprecated for models released after Claude Opus 4.6, with 1.0 accepted for backwards compatibility and other values rejected with a 400 error; it defaults to 1.0 and ranges 0.0 to 1.0; the page states that even with temperature of 0.0 the results will not be fully deterministic.
-confidence:     H
-kind:           evidence
-moving_target:  true
-figure_class:   vendor_policy
-recheck_before: every teaching of session-2 Appendix B4
-scope:          The Messages API reference as read on 2026-09-27: temperature is marked deprecated ("Models released after Claude Opus 4.6 do not support setting temperature. A value of 1.0 will be accepted for backwards compatibility, all other values will be rejected with a 400 error"); the effort parameter ("How much effort the model should put into its response") takes low, medium, high, xhigh or max; thinking can be enabled with a token budget, disabled, or adaptive, where the model decides.
-used_for.session-2: Appendix B4's list of what can differ between two runs and the third consequence card
-last_retrieved.session-2: 2026-09-13
-figures.session-2: none typed
-used_for.session-4: temperature, deprecated on current Claude models (Appendix D6)
+used_for.session-4: the context-window card and the context-rot card in the then-and-now deck (Appendix D6)
 ```
 
 ## src-finra2409
@@ -313,6 +292,7 @@ link:           https://www.finra.org/rules-guidance/notices/24-09
 published:      2024-06-27
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -328,11 +308,12 @@ figures.session-4: the notice is still published with no rescission (FACTS finra
 ```source
 title:          Regulation S-P: Privacy of consumer financial information and safeguarding customer information, 2024 amendments
 author:         U.S. Securities and Exchange Commission
-publisher:      SEC, adopting release
-link:           [UNVERIFIED, needs source]
-published:      2024
+publisher:      SEC, Release Nos. 34-100155; IA-6604; IC-35193 (File No. S7-05-23)
+link:           https://www.federalregister.gov/documents/2024/06/03/2024-11116/regulation-s-p-privacy-of-consumer-financial-information-and-safeguarding-customer-information
+published:      2024-05-16
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Adopted 16 May 2024; published 3 June 2024 at 89 FR 47688. Link filled with the Federal Register document.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -356,7 +337,7 @@ last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
-retrieval_note: sec.gov is egress-blocked from the build (2026-09-27). §VII's contents in scope are as reported by several consistent law-firm and compliance-firm summaries of the 17 November 2025 release; the record's H stands on the earlier verification of the AI and Regulation S-P focus, and the Appendix D4 use of the polymorphic-malware line is chipped M on the page for that reason.
+retrieval_note: sec.gov is egress-blocked from the build (2026-09-27). §VII's contents in scope are as reported by several consistent law-firm and compliance-firm summaries of the 17 November 2025 release; the record's H stands on the earlier verification of the AI and Regulation S-P focus, and the Appendix D4 use of the polymorphic-malware line is chipped M on the page for that reason. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the FY2027 examination priorities (sec.gov/files/2027-exam-priorities.pdf, released 2026-10-23) and the 2026 priorities press release 2025-132. Section number VII and the quoted disclaimer are not confirmed from the PDF.
 scope:          §VII, Risk Areas Impacting Various Market Participants. Information security and operational resiliency, including ransomware, data loss prevention, incident response and the 2024 amendments to Regulation S-P; emerging financial technology and AI, including the accuracy of AI representations and a review of training and security controls for risks from AI and polymorphic malware attacks.
 used_for.session-3: that the fiscal 2026 examination priorities, released 17 November 2025, state that they have no legal force or effect, and that an AI use policy is an examination expectation named in no rule (Appendix C9, §07)
 last_retrieved.session-3: 2026-10-11
@@ -372,10 +353,11 @@ figures.session-4: the no-legal-force statement (FACTS sec-exam-priorities-statu
 title:          Why language models hallucinate
 author:         Kalai, A. T., Nachum, O., Vempala, S. S., & Zhang, E.
 publisher:      arXiv:2509.04664, §1 and §1.2
-link:           [UNVERIFIED, needs source]
+link:           https://arxiv.org/abs/2509.04664
 published:      2025
-last_retrieved: 2025-05-11
+last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. arXiv 2509.04664, posted 4 September 2025; the earlier retrieval date of 2025-05-11 predates the paper and is withdrawn. The DeepSeek-V3 on 11 May 2025 fixture in scope is not visible in search results (GAP, see register).
 confidence:     H
 kind:           assigned_reading
 moving_target:  false
@@ -395,6 +377,7 @@ link:           https://doi.org/10.1037/edu0000001
 published:      2015
 last_retrieved: 2026-08-29
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -409,9 +392,10 @@ title:          LLM sampling visualiser
 author:         artefact2
 publisher:      GitHub Pages
 link:           https://artefact2.github.io/llm-sampling/
-published:      [UNVERIFIED, needs source]
+published:      2024-07
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Repository last updated 9 July 2024; the nine-control count should be read off the page before class.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -429,7 +413,8 @@ link:           https://www.sec.gov/newsroom/press-releases/2024-36
 published:      2024-03-18
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-confidence:     M
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Penalty figures consistent across the SEC release and four secondary reports; raised M to H.
+confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          The two AI-washing settlements and their penalty amounts. Penalty figures are reported at two values across sources; the page states the majority figure.
@@ -442,13 +427,14 @@ figures.session-4: the two penalty amounts, $225,000 and $175,000 (FACTS sec-ai-
 ## src-anthropic-ctx
 
 ```source
-title:          Contextual retrieval in AI systems
+title:          Introducing Contextual Retrieval
 author:         Anthropic
 publisher:      Anthropic Engineering
-link:           https://www.anthropic.com/engineering/contextual-retrieval
+link:           https://www.anthropic.com/research/contextual-retrieval
 published:      2024-09-19
-last_retrieved: [UNVERIFIED, needs source]
+last_retrieved: 2026-10-27
 last_verified:
+retrieval_note: Audit 2026-10-27 (fetched in full): verified with corrections. The engineering address redirects (308) to /research/; the page's H1 is Introducing Contextual Retrieval and it credits research and writing to Daniel Ford. The 35, 49 and 67 percent reductions, the 5.7 to 1.9 percent failure rates, the 200K threshold and the three datasets are all on the page.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -460,12 +446,13 @@ used_for.session-3: the measured retrieval failure rates, the 67% reduction, and
 
 ```source
 title:          Best AI notetakers for financial advisor meetings: Adoption, satisfaction, and trends
-author:         Kitces.com
+author:         Kitces, M.
 publisher:      Kitces.com
 link:           https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/
-published:      2025-01-15
+published:      2025-03-17
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Byline Michael Kitces, dated 17 March 2025 (not 15 January). The more-than-one-to-one ratio, the solo pattern and the satisfaction ranking are confirmed; the UHNW drop-off, the fourfold plan rate and the $60 to $80 pricing were not seen in results (GAP, see register).
 confidence:     M
 kind:           assigned_reading
 moving_target:  false
@@ -484,7 +471,7 @@ link:           https://www.microsoft.com/en-us/research/wp-content/uploads/2025
 published:      2025-04
 last_retrieved: 2026-10-02
 last_verified:
-retrieval_note: OPENED IN FULL on 2026-10-02 (the Microsoft Research PDF, 23 pages, text extracted and read). Until that date this record carried the link as unverified and the confidence at M, because the 2026-08 build characterised the paper by its title alone. Session 3's §06 still uses only the title claim; Session 5 uses the measured findings below. The regression coefficients are the non-standardised figures in the paper's Table 4.
+retrieval_note: OPENED IN FULL on 2026-10-02 (the Microsoft Research PDF, 23 pages, text extracted and read). Until that date this record carried the link as unverified and the confidence at M, because the 2026-08 build characterised the paper by its title alone. Session 3's §06 still uses only the title claim; Session 5 uses the measured findings below. The regression coefficients are the non-standardised figures in the paper's Table 4. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 confidence:     H
 kind:           assigned_reading
 moving_target:  false
@@ -497,13 +484,14 @@ used_for.session-4: the Session 5 reading card (the assigned reading on the read
 ## src-wiretap
 
 ```source
-title:          Cal. Penal Code § 637.2(a)(1), (c); 18 U.S.C. § 2511
+title:          Cal. Penal Code §§ 632 and 637.2(a)(1), (c); 18 U.S.C. § 2511(2)(d)
 author:         State of California; United States Congress
 publisher:      Statutory text
-link:           [UNVERIFIED, needs source]
-published:      [UNVERIFIED, needs source]
+link:           https://law.justia.com/codes/california/code-pen/part-1/title-15/chapter-1-5/section-632
+published:      not applicable
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. § 632 added to the citation; § 637.2 at california.public.law/codes/ca_penal_code_section_637.2; statutes verified from two independent code hosts.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -518,10 +506,11 @@ used_for.session-3: the federal one-party consent floor in Appendix C8
 title:          AI notetakers and compliance in wealth management: What firms need to know
 author:         Iskowitz, C.
 publisher:      WealthTech Today
-link:           [UNVERIFIED, needs source]
+link:           https://wealthtechtoday.com/2025/07/29/ai-notetakers-and-compliance-in-wealth-management-what-firms-need-to-know/
 published:      2025-07-29
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Compliance framing confirmed; the 12 percent ACA figure is unclear from results (the ACA 2025 survey implies about 45 percent formal use in 2024) and needs the article read.
 confidence:     M
 kind:           assigned_reading
 moving_target:  false
@@ -532,14 +521,14 @@ used_for.session-3: the six documents in Appendix C9, the 12% figure behind its 
 ## src-kitces-advisortech
 
 ```source
-title:          The Latest in Financial AdvisorTech — AdvisorTech columns, October 2025, November 2025 and August 2026
-author:         Kitces.com
+title:          The Latest in Financial AdvisorTech, AdvisorTech columns, August 2026 and November 2025
+author:         Henry-Moreland, B.
 publisher:      Kitces.com
-link:           [UNVERIFIED, needs source]
-published:      2026-08
+link:           https://www.kitces.com/blog/the-latest-in-financial-advisortech-august-2026-ycharts-zephyr-hadrius-greenboard-feathery/
+published:      2026-08-03
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: Fetch ATTEMPTED 2026-08-25 and REFUSED before it reached the source: www.kitces.com is not permitted by the build environment's egress policy (HTTP 403 on CONNECT). This is a statement about this environment, NOT about the source — the source is not known to have moved or gone. No date is written, because no retrieval happened. Listed in docs/source-verification-queue.md as instructor work.
+retrieval_note: Fetch ATTEMPTED 2026-08-25 and REFUSED before it reached the source: www.kitces.com is not permitted by the build environment's egress policy (HTTP 403 on CONNECT). This is a statement about this environment, NOT about the source — the source is not known to have moved or gone. No date is written, because no retrieval happened. Listed in docs/source-verification-queue.md as instructor work. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The August 2026 column (YCharts, Zephyr, Advyzon AI) exists; the consolidation and Jump 9.7 percent claim sits in the November 2025 column (kitces.com/blog/the-latest-in-financial-advisortech-november-2025-right-capital-data-migration-advyzon-elements-emoney/); the October 2025 column was not located.
 confidence:     M
 kind:           background
 moving_target:  true
@@ -553,11 +542,12 @@ scope:          Note-taker adoption shares and category consolidation. Named for
 ```source
 title:          A philosophical essay on probabilities
 author:         Laplace, P. S.
-publisher:      Truscott & Emory, Trans.; original work published 1814. Chapter II, "Concerning Probability," pp. 3-8
-link:           [UNVERIFIED, needs source]
+publisher:      John Wiley & Sons; Chapman & Hall (Truscott & Emory, Trans.; original work published 1814)
+link:           https://www.gutenberg.org/ebooks/58881
 published:      1902
 last_retrieved: not applicable
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Project Gutenberg #58881; Chapter II, Concerning Probability, begins on p. 3.
 confidence:     H
 kind:           background
 moving_target:  false
@@ -568,13 +558,14 @@ used_for.session-2: assigned reading behind Appendix B2; no measured claim rests
 ## src-google-ptcf
 
 ```source
-title:          Gemini for Workspace: Prompting guide 101
+title:          Prompting guide 101: A quick-start handbook for effective prompts
 author:         Google
 publisher:      Google
-link:           [UNVERIFIED, needs source]
-published:      2024
+link:           https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf
+published:      2024-10
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. October 2024 edition; first edition April 2024.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -588,11 +579,12 @@ used_for.session-5: the Persona, Task, Context and Format names used to tag the 
 ```source
 title:          When "A Helpful Assistant" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models
 author:         Zheng, M., Pei, J., Logeswaran, L., Lee, M., & Jurgens, D.
-publisher:      Findings of the Association for Computational Linguistics: EMNLP 2024
+publisher:      Findings of the Association for Computational Linguistics: EMNLP 2024, 15126-15154
 link:           https://aclanthology.org/2024.findings-emnlp.888/
 published:      2024
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. doi 10.18653/v1/2024.findings-emnlp.888; 162 personas, 2,410 questions, four model families, null result confirmed. Supplement: the Wharton December 2025 replication.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -603,13 +595,14 @@ used_for.session-2: the study design and null result behind the caution on perso
 ## src-anthropic-fluency
 
 ```source
-title:          AI fluency: Frameworks and foundations
+title:          AI Fluency: Framework & Foundations
 author:         Anthropic
-publisher:      Anthropic
-link:           [UNVERIFIED, needs source]
+publisher:      Anthropic Academy
+link:           https://anthropic.skilljar.com/ai-fluency-framework-foundations
 published:      2025
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. anthropic.com/ai-fluency redirects (307) to the Skilljar course; the Skilljar host and the Coursera mirror (coursera.org/learn/ai-fluency-framework-foundations) are confirmed by domain-restricted search, not fetched. Built with Rick Dakan and Joseph Feller; the Delegation, Description, Discernment, Diligence framing is the course's spine.
 confidence:     H
 kind:           assigned_reading
 moving_target:  false
@@ -622,11 +615,12 @@ used_for.session-1: the Session 2 reading card (the assigned reading on the read
 ```source
 title:          Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models
 author:         Dahl, M., Magesh, V., Suzgun, M., & Ho, D. E.
-publisher:      Stanford RegLab / Institute for Human-Centered AI
-link:           [UNVERIFIED, needs source]
+publisher:      Journal of Legal Analysis, 16(1), 64-93
+link:           https://academic.oup.com/jla/article/16/1/64/7699227
 published:      2024
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Published version, doi 10.1093/jla/laae003 (preprint arXiv:2401.01301); open-access PDF at dho.stanford.edu/wp-content/uploads/Hallucinations_JLA.pdf. The 58, 69 and 88 percent rates are confirmed; the 800,000-question count appears only in a secondary post (GAP, see register).
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -639,12 +633,12 @@ used_for.session-2: the general-purpose model hallucination rates in the citatio
 ```source
 title:          AI Hallucination Cases database
 author:         Charlotin, D.
-publisher:      HEC Paris
-link:           [UNVERIFIED, needs source]
+publisher:      Damien Charlotin
+link:           https://www.damiencharlotin.com/hallucinations/
 published:      not applicable
 last_retrieved: 2026-06
 last_verified:
-retrieval_note: PARTIAL DATE. The day was never recorded. The pull captured a count the source itself dates "as of 9 June 2026" (session-2:1669) and the text entered the repo on 2026-08-15, so the retrieval falls in 2026-06-09..2026-06-30. Not narrowed further, and no day is invented.
+retrieval_note: PARTIAL DATE. The day was never recorded. The pull captured a count the source itself dates "as of 9 June 2026" (session-2:1669) and the text entered the repo on 2026-08-15, so the retrieval falls in 2026-06-09..2026-06-30. Not narrowed further, and no day is invented. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Database path reported by several search summaries; the HEC Paris affiliation was not confirmed by any result. Third-party counts: about 1,600 (mid-June 2026), 2,028 (9 September 2026), 2,202 (19 October 2026).
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -657,14 +651,14 @@ used_for.session-2: the cumulative count of filed fabricated citations
 ## src-t3-survey
 
 ```source
-title:          Software Survey 2026
-author:         T3 / Inside Information
-publisher:      as summarised in Kitces.com Weekend Reading, March 2026
-link:           [UNVERIFIED, needs source]
+title:          2026 T3/Inside Information Software Survey
+author:         Veres, B., & Bruckenstein, J.
+publisher:      T3 Technology Hub and Inside Information; summarised in Kitces.com Weekend Reading, 14 to 15 March 2026
+link:           https://t3technologyhub.com/wp-content/uploads/2026/03/2026-T3_Inside-Information-Software-Survey.pdf
 published:      2026-03
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: As summarised by Kitces.com Weekend Reading, March 2026. Re-checked 2026-10-04: kitces.com, investmentnews.com and dwealth.news were egress-blocked from this build; a fresh search returned 2,906 responses, 52.2%, 42.9% and 14 note-taking tools, unchanged.
+retrieval_note: As summarised by Kitces.com Weekend Reading, March 2026. Re-checked 2026-10-04: kitces.com, investmentnews.com and dwealth.news were egress-blocked from this build; a fresh search returned 2,906 responses, 52.2%, 42.9% and 14 note-taking tools, unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Primary PDF found; 2,906 responses, 95 percent RIA, 52.2 percent (from 41.8) and 42.9 percent confirmed by Kitces, BusinessWire (2026-03-10) and InvestmentNews. Could be raised to H; one chip is in session-5, which this pass does not touch.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -676,17 +670,18 @@ used_for.session-5: the 42.9% note-taking and 52.2% AI-search adoption shares am
 ## src-kitces-productivity
 
 ```source
-title:          Kitces Research on Advisor Productivity
+title:          Kitces Research on Advisor Productivity (fourth edition, 2024 survey data)
 author:         Kitces.com
-publisher:      as summarised in The Latest in Financial AdvisorTech, Kitces.com
-link:           [UNVERIFIED, needs source]
-published:      2026-08
+publisher:      Kitces.com (Kitces Research)
+link:           https://www.kitces.com/blog/advisor-productivity-key-drivers-practice-management-team-structure-revenue-client-pricing-success/
+published:      2025
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Kitces states about two hours of prep plus follow-up per meeting, more than an hour per meeting hour, not one hour per two-hour meeting; dated 2025 on 2024 data, not August 2026; the Advisor360 reliance figure was not found (GAP, see register).
 confidence:     M
 kind:           evidence
 moving_target:  false
-scope:          Approximately one hour of note, summary and follow-up work per two-hour client meeting. The reliance figure travelling with it is reported via Advisor360 and Kitces Research through a secondary aggregator and is directional only.
+scope:          About two hours of preparation and follow-up per client meeting, more than one hour per meeting hour. The reliance figure travelling with it is reported via Advisor360 and Kitces Research through a secondary aggregator and is directional only.
 used_for.session-2: the prep-and-follow-up hour ratio and the directional reliance figure
 ```
 
@@ -694,12 +689,13 @@ used_for.session-2: the prep-and-follow-up hour ratio and the directional relian
 
 ```source
 title:          AI for advisors: Enhancing client conversations
-author:         Morningstar
+author:         Labotka, D.
 publisher:      Morningstar
-link:           [UNVERIFIED, needs source]
-published:      2025-10-15
+link:           https://www.morningstar.com/business/insights/blog/client-engagement/financial-advisor-ai-conversations
+published:      2025-11
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Listed as November 2025 (2025-11-06 in one index); the earlier 2025-10-15 date is not supported.
 confidence:     M
 kind:           background
 moving_target:  false
@@ -746,13 +742,14 @@ used_for.session-4: the §05 exercise, where it is the case cited in record 6 an
 ## src-finra2026
 
 ```source
-title:          2026 Annual Regulatory Oversight Report
+title:          2026 FINRA Annual Regulatory Oversight Report
 author:         Financial Industry Regulatory Authority
 publisher:      FINRA
-link:           [UNVERIFIED, needs source]
+link:           https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report
 published:      2025-12-09
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections.
 confidence:     H
 kind:           assigned_reading
 moving_target:  false
@@ -767,10 +764,11 @@ used_for.session-3: the Session 4 reading card (the assigned reading on the read
 title:          Understanding Generative AI and Prompt Injection Fundamentals
 author:         Financial Industry Regulatory Authority
 publisher:      FINRA
-link:           [UNVERIFIED, needs source]
+link:           https://www.finra.org/rules-guidance/key-topics/artificial-intelligence/understanding-generative-ai-and-prompt-injection-fundamentals
 published:      2026-03-06
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -783,12 +781,12 @@ used_for.session-4: FINRA's March 2026 primer on prompt injection (Appendix D4)
 ```source
 title:          Artificial Intelligence and the Future of Investment Management
 author:         Daly, B., Director, Division of Investment Management
-publisher:      ICI Winter Board Meeting
+publisher:      SEC (speech delivered at the ICI Winter Board Meeting)
 link:           https://www.sec.gov/newsroom/speeches-statements/daly-020326-artificial-intelligence-future-investment-management-remarks-investment-company-institute-ici-winter
 published:      2026-02-03
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: The link is the sec.gov address the search engine returned on 2026-09-27 for this title, date and venue (Manalapan, Florida, delivered virtually). sec.gov is egress-blocked from the build, so the page itself was not re-read; the scope below stands on the earlier verification.
+retrieval_note: The link is the sec.gov address the search engine returned on 2026-09-27 for this title, date and venue (Manalapan, Florida, delivered virtually). sec.gov is egress-blocked from the build, so the page itself was not re-read; the scope below stands on the earlier verification. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: Daly's October 2026 remarks at Stanford, same theme.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -799,21 +797,21 @@ used_for.session-4: the open questions on responsibility and supervision for AI 
 ## src-owasp
 
 ```source
-title:          Top 10 for LLM Applications and Top 10 for Agentic Applications
-author:         OWASP
-publisher:      OWASP
-link:           https://owasp.org/www-project-top-10-for-large-language-model-applications/
-published:      [UNVERIFIED, needs source]
+title:          OWASP GenAI LLM Top 10 2026 and OWASP Top 10 for Agentic Applications 2026
+author:         OWASP GenAI Security Project
+publisher:      OWASP GenAI Security Project, genai.owasp.org
+link:           https://genai.owasp.org/2026/09/01/owasp-genai-security-project-unveils-2026-top-10-for-llm-applications-new-agent-control-standard-and-sponsors-as-community-tops-30000-members/
+published:      2026-08-04
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: owasp.org and genai.owasp.org are both blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited page itself was never loaded. A SURROGATE was reachable and was read: the GitHub repository backing that exact project page, fetched 2026-08-25. Reading a surrogate is not retrieving the source and no date is written for one.
+retrieval_note: Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: owasp.org and genai.owasp.org are both blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited page itself was never loaded. A SURROGATE was reachable and was read: the GitHub repository backing that exact project page, fetched 2026-08-25. Reading a surrogate is not retrieving the source and no date is written for one. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): the record is repointed from the owasp.org project page, which OWASP describes as an archive, to the project's dated announcement of the 2026 edition; the Agentic Top 10 page is genai.owasp.org/resource/2025-12-09/owasp-top-10-for-agentic-applications-for-2026; the publication date is on the owasp.org project page and in the announcement. The old link (owasp.org/www-project-top-10-for-large-language-model-applications/) is kept here as the archive.
 content_changed: 2026-08-25. THE SOURCE HAS MOVED. Established from the project's own GitHub repository, which the blocked page is built from. OWASP's own words describe the cited project page as maintained as a historical archive; active development moved to github.com/GenAI-Security-Project/GenAI-LLM-Top10 and a new edition, OWASP GenAI LLM Top 10 2026, was published 2026-08-04. DEPENDENT LESSON ELEMENTS: session-4 Appendix D4's claim that prompt injection is LLM01 SURVIVES the move intact — it is LLM01:2026 Prompt Injection in the new edition, and is now anchorable to a dated edition instead of an undated page. The CITATION does not survive: the `link` field points at an archive. The 'six of ten agentic categories' half of the same sentence is separately UNCONFIRMED — an Agentic Top 10 2026 v1.0 exists (published 2025-12-01) but sits on no reachable host and its category count was not read. NOT silently updated.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   leaderboard_position
 recheck_before: session-4 Appendix D4 cites this record (three chips); the link points at the 2025 archive and the 2026 edition's URL is confirmed from a browser (term-start checklist item 11)
-scope:          The LLM01 ranking for prompt injection and the mapping into six of ten agentic categories. The ranking is revised between editions, so the position is a moving target even though the finding is not.
+scope:          The LLM01 ranking for prompt injection in the 2026 edition of the LLM Top 10 (published 4 August 2026, with about a quarter of the ranking weight from 6,639 recorded incidents) and the mapping into the agentic categories of the Top 10 for Agentic Applications for 2026 (published 9 December 2025). The ranking is revised between editions, so the position is a moving target even though the finding is not.
 used_for.session-4: least privilege and human approval for high-risk actions as the fixes that hold against prompt injection (Appendix D4)
 ```
 
@@ -821,12 +819,13 @@ used_for.session-4: least privilege and human approval for high-risk actions as 
 
 ```source
 title:          CVE-2025-32711 (EchoLeak, CVSS 9.3)
-author:         MITRE / NVD
-publisher:      Public CVE record
-link:           [UNVERIFIED, needs source]
-published:      2025
+author:         Microsoft Security Response Center
+publisher:      Microsoft Security Update Guide
+link:           https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-32711
+published:      2025-06-11
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The MSRC advisory is the primary; the EchoLeak name is Aim Security's; the NVD record at nvd.nist.gov/vuln/detail/CVE-2025-32711 was not confirmed from a browser.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -838,13 +837,14 @@ used_for.session-5: the did-what-the-text-said failure type, EchoLeak (Appendix 
 ## src-deloitte
 
 ```source
-title:          Generative-AI fraud projection
-author:         Deloitte Center for Financial Services
-publisher:      Deloitte
-link:           [UNVERIFIED, needs source]
-published:      [UNVERIFIED, needs source]
+title:          Generative AI is expected to magnify the risk of deepfakes and other fraud in banking
+author:         Lalchand, S., Srinivas, V., Maggiore, B., & Henderson, J.
+publisher:      Deloitte Insights, Deloitte Center for Financial Services
+link:           https://www.deloitte.com/us/en/insights/industry/financial-services/deepfake-banking-fraud-risk-on-the-rise.html
+published:      2024-05-29
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The primary report; $12.3 billion to $40 billion by 2027, a 32 percent compound rate, stated as a forecast.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -859,9 +859,10 @@ title:          Reporting on the Arup deepfake incident
 author:         Financial Times
 publisher:      Financial Times
 link:           [UNVERIFIED, needs source]
-published:      2024-05
+published:      2024-05-17
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The FT page is unreachable and ft.com is not indexed for the search tool; the FT's own post of 17 May 2024 says $25mn in 15 transfers to five Hong Kong banks; secondary coverage agrees (HK$200m). The FT headline still needs FT access (GAP).
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -879,7 +880,7 @@ link:           https://deepmind.google/models/synthid/
 published:      [UNVERIFIED, needs source]
 last_retrieved: 2026-10-11
 last_verified:
-retrieval_note: Fetch ATTEMPTED 2026-08-25 and REFUSED before it reached the source: the Google DeepMind host is not permitted by the build environment's egress policy (HTTP 403 on CONNECT). This is a statement about this environment, NOT about the source — the source is not known to have moved or gone. No date is written, because no retrieval happened. Listed in docs/source-verification-queue.md as instructor work. STILL OPEN AFTER 2026-08-25, and this record now says which references are open rather than leaving them to be counted by hand. `src-synthid-text` was added that day for a page that WAS retrieved, and it closed exactly one of the eleven references — session-4:1476, the factual-responses claim. The other ten remain on this key and this page has still never been loaded: :1412 and :1416 are C2PA metadata and soft-binding claims that belong to the C2PA specification rather than to Google; :1425 and :1440 are the tournament-sampling mechanism, whose real authority is the Nature paper the retrieved page names and which no build has read either; :1443 and :1457 are image, video and audio robustness, which the retrieved page does not cover at all; :1460 is the adoption-figure paragraph, whose second sentence asserts what a page nobody has loaded currently says and now carries [UNCONFIRMED]; :1493 is the formatter-erases-the-slack claim; :1500 chips a sentence whose sources are Zhao, two arXiv preprints and Christ. Registered in docs/deferred-work.md as session-4 work. 2026-10-11, next-term Phase 5: FACTS google-synthid records the page, https://deepmind.google/models/synthid/, as still unreachable from the build container and reads it from primary-domain search snippets, so this record now carries that link and the FACTS retrieval date at M; a snippet is not a reading, and last_verified stays empty.
+retrieval_note: Fetch ATTEMPTED 2026-08-25 and REFUSED before it reached the source: the Google DeepMind host is not permitted by the build environment's egress policy (HTTP 403 on CONNECT). This is a statement about this environment, NOT about the source — the source is not known to have moved or gone. No date is written, because no retrieval happened. Listed in docs/source-verification-queue.md as instructor work. STILL OPEN AFTER 2026-08-25, and this record now says which references are open rather than leaving them to be counted by hand. `src-synthid-text` was added that day for a page that WAS retrieved, and it closed exactly one of the eleven references — session-4:1476, the factual-responses claim. The other ten remain on this key and this page has still never been loaded: :1412 and :1416 are C2PA metadata and soft-binding claims that belong to the C2PA specification rather than to Google; :1425 and :1440 are the tournament-sampling mechanism, whose real authority is the Nature paper the retrieved page names and which no build has read either; :1443 and :1457 are image, video and audio robustness, which the retrieved page does not cover at all; :1460 is the adoption-figure paragraph, whose second sentence asserts what a page nobody has loaded currently says and now carries [UNCONFIRMED]; :1493 is the formatter-erases-the-slack claim; :1500 chips a sentence whose sources are Zhao, two arXiv preprints and Christ. Registered in docs/deferred-work.md as session-4 work. 2026-10-11, next-term Phase 5: FACTS google-synthid records the page, https://deepmind.google/models/synthid/, as still unreachable from the build container and reads it from primary-domain search snippets, so this record now carries that link and the FACTS retrieval date at M; a snippet is not a reading, and last_verified stays empty. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the dated SynthID Detector post and the Gemini-app image verification post on blog.google; the product page is undated and moves.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -901,7 +902,7 @@ link:           https://ai.google.dev/responsible/docs/safeguards/synthid
 published:      2025-04-09
 last_retrieved: 2026-08-25
 last_verified:
-retrieval_note: The 2025-04-09 in `published` is the page's OWN last-updated stamp, in UTC, not a publication date; it is a living documentation page and the stamp is the only date it carries. RETRIEVED OUTSIDE THIS BUILD ENVIRONMENT: the instructor's analyst surface loaded the page on 2026-08-25 and supplied the substantiations recorded in `scope`. This environment answers 403 on CONNECT for the host, so no generator here has read the page and none can re-check it. A retrieval is not a reading, so `last_verified` is EMPTY and stays that way until a human attests at a terminal.
+retrieval_note: The 2025-04-09 in `published` is the page's OWN last-updated stamp, in UTC, not a publication date; it is a living documentation page and the stamp is the only date it carries. RETRIEVED OUTSIDE THIS BUILD ENVIRONMENT: the instructor's analyst surface loaded the page on 2026-08-25 and supplied the substantiations recorded in `scope`. This environment answers 403 on CONNECT for the host, so no generator here has read the page and none can re-check it. A retrieval is not a reading, so `last_verified` is EMPTY and stays that way until a human attests at a terminal. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -919,9 +920,9 @@ author:         Anthropic
 publisher:      Claude Help Center, support.claude.com article 16266773
 link:           https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content
 published:      not applicable
-last_retrieved: 2026-10-11
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-25 and again, in full, on 2026-09-27, together with the Claude Content Checker page at claude.com/check-content. Quotations below are the pages' own words. Read again in full on 2026-10-12 and found to match the 2026-10-11 reading (FACTS claude-text-watermark).
+retrieval_note: Opened directly on 2026-09-25 and again, in full, on 2026-09-27, together with the Claude Content Checker page at claude.com/check-content. Quotations below are the pages' own words. Read again in full on 2026-10-12 and found to match the 2026-10-11 reading (FACTS claude-text-watermark). Audit 2026-10-27 (fetched in full): verified.
 content_changed: 2026-10-12. The help page no longer gives 2 December 2026 as the date by which earlier models are all covered; it keeps a per-model list and says the law gives models launched before 2 August 2026 a transition period while marking is added. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12 in next-term Phase 5: session-4 Appendix D8, the Which models bullet, now cites the 14 August 2026 announcement, the 2 August 2026 launch rule and the per-model list, and no longer states a completion date; the §02 sorter line and the D8 talk box say supported Claude models.
 confidence:     H
 kind:           evidence
@@ -942,7 +943,7 @@ link:           https://www.cfp.net/ethics/compliance-resources/2025/02/generati
 published:      2025-02
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. cfp.net and the press-release hosts are egress-blocked from this build environment (2026-09-25). The title, the February 2025 date and the substance in scope come from search-engine summaries of the guide and of CFP Board's press release of 25 February 2025, which is why the confidence is M. The instructor holds the PDF (instructor-notes/session-3.md, the 09-21 night) and can raise it by reading the page.
+retrieval_note: NOT RETRIEVED. cfp.net and the press-release hosts are egress-blocked from this build environment (2026-09-25). The title, the February 2025 date and the substance in scope come from search-engine summaries of the guide and of CFP Board's press release of 25 February 2025, which is why the confidence is M. The instructor holds the PDF (instructor-notes/session-3.md, the 09-21 night) and can raise it by reading the page. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Page and PDF exist on cfp.net with the stated date; the pseudonym wording stays M until the PDF is read.
 confidence:     M
 kind:           assigned_reading
 moving_target:  false
@@ -958,15 +959,15 @@ used_for.session-3: the Session 4 reading card (the assigned reading on the read
 title:          Code of Ethics and Standards of Conduct
 author:         CFP Board
 publisher:      Certified Financial Planner Board of Standards, Inc.
-link:           [UNVERIFIED, needs source]
-published:      2019
+link:           https://www.cfp.net/-/media/files/cfp-board/standards-and-ethics/cfp-code-and-standards.pdf
+published:      2019-10-01
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. cfp.net is egress-blocked from this build environment (2026-09-25). Standard A.14's name and its reasonable-care duty are carried from the instructor's own run sheet for the 2026-09-21 session, which names Standards A.9 and A.14 at high confidence from the Code itself; the wording on the session-4 page is a paraphrase, not a quotation, and the chip is M until the page is read.
+retrieval_note: NOT RETRIEVED. cfp.net is egress-blocked from this build environment (2026-09-25). Standard A.14's name and its reasonable-care duty are carried from the instructor's own run sheet for the 2026-09-21 session, which names Standards A.9 and A.14 at high confidence from the Code itself; the wording on the session-4 page is a paraphrase, not a quotation, and the chip is M until the page is read. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Effective 1 October 2019; Standard A.14's title reads "and", not "or".
 confidence:     M
 kind:           evidence
 moving_target:  false
-scope:          Standard A.14, Duties When Selecting, Using, or Recommending Technology: a CFP professional must exercise reasonable care and judgment when selecting, using or recommending technology in providing professional services. Standard A.9, Confidentiality and Privacy.
+scope:          Standard A.14, Duties When Selecting, Using, and Recommending Technology: a CFP professional must exercise reasonable care and judgment when selecting, using or recommending technology in providing professional services. Standard A.9, Confidentiality and Privacy.
 used_for.session-4: Standard A.14, reasonable care in selecting and using technology (Appendix D3)
 ```
 
@@ -975,13 +976,13 @@ used_for.session-4: Standard A.14, reasonable care in selecting and using techno
 ```source
 title:          Withdrawal of proposed regulatory actions, including Conflicts of Interest Associated with the Use of Predictive Data Analytics (S7-12-23)
 author:         U.S. Securities and Exchange Commission
-publisher:      SEC
+publisher:      SEC, Release Nos. 33-11377; 34-103247; IA-6885; IC-35635
 link:           https://www.sec.gov/rules-regulations/2025/06/s7-12-23
 published:      2025-06-12
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT READ FROM THE SEC. The withdrawal on 12 June 2025 of fourteen proposals, the predictive data analytics proposal of August 2023 among them, is reported consistently by several law-firm client alerts reached through search on 2026-09-25; the SEC page itself was not loaded from this build. M until it is.
-confidence:     M
+retrieval_note: NOT READ FROM THE SEC. The withdrawal on 12 June 2025 of fourteen proposals, the predictive data analytics proposal of August 2023 among them, is reported consistently by several law-firm client alerts reached through search on 2026-09-25; the SEC page itself was not loaded from this build. M until it is. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Release numbers added; raised M to H on the release and the Federal Register notice.
+confidence:     H
 kind:           evidence
 moving_target:  false
 scope:          That the SEC withdrew its 2023 proposal on conflicts of interest from predictive data analytics used by broker-dealers and investment advisers, on 12 June 2025, together with thirteen other proposals; any future rule would need a new proposal.
@@ -998,7 +999,7 @@ author:         Anthropic
 publisher:      Anthropic, anthropic.com/legal
 link:           https://www.anthropic.com/legal/commercial-terms
 published:      not applicable
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
 confidence:     H
 kind:           evidence
@@ -1006,7 +1007,7 @@ moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4 Appendix D2
 scope:          Consumer plans: Anthropic may use chats "including training our models, unless you opt out of training through your account settings"; retention five years if training is allowed, 30 days if not; the Consumer Terms are a contract between the individual and Anthropic. Commercial plans (Team, Enterprise, the API): "Anthropic may not train models on Customer Content from Services" (Section B); the Customer "retains all rights to its Inputs, and owns its Outputs" (Section B); Confidential Information may be used only to exercise rights and perform obligations under the Terms and is destroyed promptly on request (Sections E.2, E.4); the Terms are an agreement between Anthropic and the organisation the signer represents, and nobody may accept for an organisation without legal authority to bind it.
-retrieval_note: Opened directly on 2026-09-27: the Commercial Terms (effective 17 June 2025), the Consumer Terms (effective 8 October 2025), the Privacy Policy (effective 10 September 2026) and the 28 August 2025 news post on the consumer training change. The consumer-side retention figures (five years if training is allowed, 30 days if not) are stated in the news post and on the Claude Code data-usage page; privacy.claude.com itself could not be opened. Earlier retrieval 2026-08-14.
+retrieval_note: Opened directly on 2026-09-27: the Commercial Terms (effective 17 June 2025), the Consumer Terms (effective 8 October 2025), the Privacy Policy (effective 10 September 2026) and the 28 August 2025 news post on the consumer training change. The consumer-side retention figures (five years if training is allowed, 30 days if not) are stated in the news post and on the Claude Code data-usage page; privacy.claude.com itself could not be opened. Earlier retrieval 2026-08-14. Audit 2026-10-27 (fetched in full): verified. Commercial Terms (17 June 2025), Consumer Terms dated 2025-10-08, Privacy Policy (10 September 2026) and the 28 August 2025 post all match. Supplement: anthropic.com/legal/consumer-terms and anthropic.com/news/updates-to-our-consumer-terms.
 used_for.session-4: the consumer training switch, five-year and 30-day retention, and the business plans' exclusion from training (Appendix D2), and the Commercial Terms' exclusion of training behind a Claude API key in the Live API box (above §00)
 used_for.session-1: the Commercial Terms' exclusion of training behind a Claude API key, in the live model console (above §01)
 used_for.session-5: the consumer training default behind the chat assistant's Where answer (Appendix E10)
@@ -1022,16 +1023,17 @@ figures.session-0.1: the setting is changed in Privacy Settings; the update appl
 title:          Browse skills, connectors, and plugins in one directory
 author:         Anthropic
 publisher:      support.claude.com article 14328846
-link:           [UNVERIFIED, needs source]
-published:      [UNVERIFIED, needs source]
-last_retrieved: 2026-08-20
+link:           https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory
+published:      not applicable
+last_retrieved: 2026-10-27
 last_verified:
+retrieval_note: Audit 2026-10-27 (fetched in full): verified with corrections. Page shows Updated September 25, 2026. The earlier scope clause that organisation sharing is off by default is not on the page and is dropped.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
-scope:          The Customize sidebar and its three tabs, install and enable semantics, directory-installed skills being view-only, and organisation sharing being off by default.
+scope:          The Customize sidebar and its three tabs, install and enable semantics, and directory-installed skills being view-only.
 used_for.session-0.1: where the connectors catalog sits: Customize in the left sidebar, then the Connectors tab (section 05)
 last_retrieved.session-0.1: 2026-10-13
 figures.session-0.1: Customize in the left sidebar with Skills, Connectors and Plugins tabs; Connect on a service starts the authentication flow (read in full 2026-10-13)
@@ -1043,10 +1045,11 @@ figures.session-0.1: Customize in the left sidebar with Skills, Connectors and P
 title:          Change the model, effort, and thinking settings
 author:         Anthropic
 publisher:      support.claude.com article 8664678
-link:           [UNVERIFIED, needs source]
-published:      [UNVERIFIED, needs source]
-last_retrieved: 2026-08-20
+link:           https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings
+published:      not applicable
+last_retrieved: 2026-10-27
 last_verified:
+retrieval_note: Audit 2026-10-27 (fetched in full): verified with corrections. All six claims in scope are live, including the five effort levels, xhigh on Opus 4.7 and later, and that thinking cannot be switched off on Opus 5.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1062,10 +1065,11 @@ used_for.session-4: effort as the setting you change on current models (Appendix
 title:          Use Claude's chat search and memory to build on previous context
 author:         Anthropic
 publisher:      support.claude.com article 11817273
-link:           [UNVERIFIED, needs source]
-published:      [UNVERIFIED, needs source]
-last_retrieved: 2026-08-20
+link:           https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context
+published:      not applicable
+last_retrieved: 2026-10-27
 last_verified:
+retrieval_note: Audit 2026-10-27 (fetched in full): verified with corrections. All claims live; the toggle is now named Memory from chats under Settings, Your Claude; the no-organisation-controls statement for Team now applies to legacy Team plans only.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1076,6 +1080,7 @@ used_for.session-0.1: what memory saves and who controls it by plan, what is nev
 last_retrieved.session-0.1: 2026-10-13
 figures.session-0.1: memory on by default for Free, Pro and Max and off for each member on Team and Enterprise until they turn it on; never saved: government ID numbers, criminal history, financial account numbers, immigration status; deleting a chat does not delete the memory made from it (read in full 2026-10-13)
 used_for.session-2: Appendix B4, memory as a source of run-to-run difference
+used_for.session-4: the memory flip card in the then-and-now deck: memory saved as a set of topics as you chat, on by default on consumer plans (Appendix D6)
 ```
 
 ## src-models
@@ -1085,16 +1090,16 @@ title:          Models overview
 author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/models/overview
-published:      [UNVERIFIED, needs source]
-last_retrieved: 2026-09-13
-retrieval_note: Re-fetched 2026-09-13 at the page's current address for session-2 §01. Every Claude model ID is a pinned snapshot, including the dateless IDs from the 4.6 generation on; Fable 5.1 is the current flagship at $10 / $50 per MTok and Fable 5 is listed as a legacy model, still available.
+published:      not applicable
+last_retrieved: 2026-10-27
+retrieval_note: Re-fetched 2026-09-13 at the page's current address for session-2 §01. Every Claude model ID is a pinned snapshot, including the dateless IDs from the 4.6 generation on; Fable 5.1 is the current flagship at $10 / $50 per MTok and Fable 5 is listed as a legacy model, still available. Audit 2026-10-27 (fetched in full): verified with corrections. Until this audit the scope named Haiku 4.5 at 200K as the fourth current model; the page now lists Haiku 5.5 at 1M and Haiku 4.5 among the legacy models. Same page as src-anthropic-models-overview (that record's address redirects here); the two records are not merged because the other one is cited only by session-5, which this pass does not touch.
 last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
-scope:          The four current models, context window sizes (1M for Fable 5, Opus 5 and Sonnet 5; 200K for Haiku 4.5), which models carry adaptive against extended thinking, and effort defaults. Price per MTok and knowledge cutoffs are carried by this source but are quoted nowhere in the lesson, because no figure for either was recorded at verification.
+scope:          The four current models (Claude Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5), each with a 1M context window; which models carry adaptive against extended thinking, and effort defaults; that every model ID is a pinned snapshot; about 555,000 words to the million tokens. The comparison table also carries each model's price per MTok and a reliable knowledge cutoff of June 2026; neither figure is quoted from this record in any lesson.
 used_for.session-0.1: the 1M-token context window of the current Claude models (section 01)
 last_retrieved.session-0.1: 2026-10-11
 figures.session-0.1: 1M tokens of context on the current Claude models (FACTS claude-context-window, read in full 2026-10-11)
@@ -1123,16 +1128,17 @@ used_for.case-5: the words-per-token rule of thumb, about 555,000 words to the m
 title:          Understanding Claude's personalization features
 author:         Anthropic
 publisher:      support.claude.com article 10185728
-link:           [UNVERIFIED, needs source]
-published:      [UNVERIFIED, needs source]
-last_retrieved: 2026-08-20
+link:           https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features
+published:      not applicable
+last_retrieved: 2026-10-27
 last_verified:
+retrieval_note: Audit 2026-10-27 (fetched in full): verified with corrections. Styles are no longer on the page; it now lists instructions, project instructions and skills.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
-scope:          Profile instructions applying account-wide, project instructions, styles as a separate mechanism, and five projects on the free plan.
+scope:          Profile instructions applying account-wide, project instructions, skills as a separate mechanism, and five projects on the free plan.
 used_for.session-0.1: what Instructions for Claude and project instructions are, where each applies, and that a Free account can hold five projects (sections 02 and 03)
 last_retrieved.session-0.1: 2026-10-13
 figures.session-0.1: Instructions for Claude apply to all of a user's conversations; project instructions apply only to chats in that project; Free accounts can create five projects (read in full 2026-10-13)
@@ -1145,10 +1151,11 @@ used_for.session-2: Appendix B4, standing instructions as a source of run-to-run
 title:          When should I use web search, extended thinking, and research?
 author:         Anthropic
 publisher:      support.claude.com article 11095361
-link:           [UNVERIFIED, needs source]
-published:      [UNVERIFIED, needs source]
-last_retrieved: 2026-08-20
+link:           https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research
+published:      2026-06-02
+last_retrieved: 2026-10-27
 last_verified:
+retrieval_note: Audit 2026-10-27 (fetched in full): verified with corrections. Dated June 2, 2026 on the page; the one-or-two against five-or-more tool-call wording is verbatim.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1170,13 +1177,13 @@ link:           https://help.openai.com/en/articles/5722486-how-your-data-is-use
 published:      not applicable
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. help.openai.com and openai.com are egress-blocked from this build environment (2026-09-27). The figures in scope come from search-engine summaries of this article and of "Chat and file retention in ChatGPT" (article 8983778), which is why the confidence is M. Read both pages before teaching the numbers.
+retrieval_note: NOT RETRIEVED. help.openai.com and openai.com are egress-blocked from this build environment (2026-09-27). The figures in scope come from search-engine summaries of this article and of "Chat and file retention in ChatGPT" (article 8983778), which is why the confidence is M. Read both pages before teaching the numbers. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the retention figures belong to Chat and file retention in ChatGPT (help.openai.com article 8983778).
 confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4 Appendix D2
-scope:          On the Free, Plus and Pro plans the "Improve the model for everyone" setting is on by default and can be switched off under Data controls. ChatGPT Business (formerly Team), Enterprise, Edu and the API are not used for training by default. Chats stay in the account until deleted; a deleted chat is removed from OpenAI's systems within 30 days; temporary chats are kept up to 30 days and not used for training. Every one of these is a term the vendor can change without notice.
+scope:          On the Free, Plus and Pro plans the "Improve the model for everyone" setting is on by default and can be switched off under Data controls. ChatGPT Business (formerly Team), Enterprise, Edu, ChatGPT for Healthcare and the API are not used for training by default. Chats stay in the account until deleted; a deleted chat is removed from OpenAI's systems within 30 days; temporary chats are kept up to 30 days and not used for training. Every one of these is a term the vendor can change without notice.
 used_for.session-4: ChatGPT's consumer training switch and its default, keeping until you delete, and the business plans' exclusion from training (Appendix D2)
 used_for.case-4: ChatGPT's consumer training setting and the business plans' exclusion from training, in the vendor table of the reveal
 ```
@@ -1191,27 +1198,27 @@ link:           https://support.microsoft.com/en-us/microsoft-copilot/privacy-fa
 published:      not applicable
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. support.microsoft.com is egress-blocked from this build environment (2026-09-27). The figures in scope come from search-engine summaries of this FAQ and of "Conversation history in Microsoft Copilot", which is why the confidence is M. Read both pages before teaching the numbers.
+retrieval_note: NOT RETRIEVED. support.microsoft.com is egress-blocked from this build environment (2026-09-27). The figures in scope come from search-engine summaries of this FAQ and of "Conversation history in Microsoft Copilot", which is why the confidence is M. Read both pages before teaching the numbers. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The setting is named Training on conversation activity (and Training on voice conversations) on Microsoft's privacy-controls page; the takes-effect-within-30-days clause is on no returned page and is dropped.
 confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4 Appendix D2
-scope:          With a personal Microsoft account, conversations may be used to train Microsoft's generative AI models unless the person opts out under "Model training on text"; the opt-out is not the default, and takes effect across systems within 30 days. Conversation history is kept 18 months by default unless deleted sooner. Some users and regions are excluded from training by the vendor's own rules.
+scope:          With a personal Microsoft account, conversations may be used to train Microsoft's generative AI models unless the person opts out under "Training on conversation activity"; the opt-out is not the default. Conversation history is kept 18 months by default unless deleted sooner. Some users and regions are excluded from training by the vendor's own rules.
 used_for.session-4: Copilot's personal-account training default, the opt-out setting, and the 18-month history (Appendix D2)
 ```
 
 ## src-ms-copilot-edp
 
 ```source
-title:          Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat
+title:          Enterprise data protection in Microsoft 365 Copilot and Microsoft 365 Copilot Chat
 author:         Microsoft
 publisher:      Microsoft Learn
 link:           https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection
 published:      not applicable
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. learn.microsoft.com is egress-blocked from this build environment (2026-09-27). The substance in scope comes from search-engine summaries of the page, which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. learn.microsoft.com is egress-blocked from this build environment (2026-09-27). The substance in scope comes from search-engine summaries of the page, which is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -1231,7 +1238,7 @@ link:           https://support.google.com/gemini/answer/13594961
 published:      not applicable
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. support.google.com is egress-blocked from this build environment (2026-09-27). The figures in scope come from search-engine summaries of this hub and of "Manage and delete your activity in Gemini Apps" (answer 13278892), which is why the confidence is M. Read both pages before teaching the numbers.
+retrieval_note: NOT RETRIEVED. support.google.com is egress-blocked from this build environment (2026-09-27). The figures in scope come from search-engine summaries of this hub and of "Manage and delete your activity in Gemini Apps" (answer 13278892), which is why the confidence is M. Read both pages before teaching the numbers. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -1252,7 +1259,7 @@ link:           https://support.google.com/a/answer/15706919
 published:      not applicable
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. support.google.com is egress-blocked from this build environment (2026-09-27). The substance in scope comes from search-engine summaries of the page, which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. support.google.com is egress-blocked from this build environment (2026-09-27). The substance in scope comes from search-engine summaries of the page, which is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -1267,13 +1274,13 @@ used_for.case-4: Workspace prompts not used to train models and not reviewed by 
 
 ```source
 title:          Wiz Research uncovers exposed DeepSeek database leaking sensitive information, including chat history
-author:         Wiz Research
+author:         Nagli, G. (Wiz Research)
 publisher:      Wiz blog
 link:           https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak
 published:      2025-01-29
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. wiz.io is egress-blocked from this build environment (2026-09-27). The facts in scope come from search-engine summaries of the post and of the reporting that cited it (TechCrunch, The Register, SecurityWeek, 30 January 2025), which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. wiz.io is egress-blocked from this build environment (2026-09-27). The facts in scope come from search-engine summaries of the post and of the reporting that cited it (TechCrunch, The Register, SecurityWeek, 30 January 2025), which is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -1291,7 +1298,7 @@ link:           https://techcrunch.com/2025/07/31/your-public-chatgpt-queries-ar
 published:      2025-07-31
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. techcrunch.com is egress-blocked from this build environment (2026-09-27). The facts in scope come from search-engine summaries of this article and of Search Engine Land's and Search Engine Journal's reporting of the same days, which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. techcrunch.com is egress-blocked from this build environment (2026-09-27). The facts in scope come from search-engine summaries of this article and of Search Engine Land's and Search Engine Journal's reporting of the same days, which is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. OpenAI pulled the discoverable option within hours (Stuckey quote). Supplement: TechCrunch, 27 July 2026, on Claude shared chats and artifacts indexed by Google.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -1303,13 +1310,13 @@ used_for.session-4: shared ChatGPT chats appearing in Google search results, and
 
 ```source
 title:          Meta AI's discover feed is full of revealing personal info: here's how to protect your privacy
-author:         Tom's Guide
+author:         Bouman, A.
 publisher:      Tom's Guide
 link:           https://www.tomsguide.com/computing/online-security/meta-ais-discover-feed-is-full-of-revealing-personal-info-heres-how-to-protect-your-privacy
-published:      2025-06
+published:      2025-06-13
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. The article's own headline uses a dash where this record uses a colon, so that the injected footer adds no em dash to the lesson. The facts in scope come from search-engine summaries of this article and of the Mozilla Foundation's campaign page on the same feed (June 2025), which is why the confidence is M. A stronger citation (the original reporting) is a review-list item.
+retrieval_note: NOT RETRIEVED. The article's own headline uses a dash where this record uses a colon, so that the injected footer adds no em dash to the lesson. The facts in scope come from search-engine summaries of this article and of the Mozilla Foundation's campaign page on the same feed (June 2025), which is why the confidence is M. A stronger citation (the original reporting) is a review-list item. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The page headline uses an em dash; the colon in the record is an editorial substitution.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -1325,9 +1332,9 @@ author:         Anthropic
 publisher:      Anthropic
 link:           https://www.anthropic.com/threat-intelligence-report-september-2026
 published:      2026-09
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Retrieved 2026-09-27 through a summarising fetch, not read whole. The passage the lesson rests on was returned verbatim: "If their monitoring AI agents identified that any of their deployed malware was detected by a security product, agents would then set about the process of autonomously modifying and rebuilding the malware to evade the existing detections." Read the report before teaching the case.
+retrieval_note: Retrieved 2026-09-27 through a summarising fetch, not read whole. The passage the lesson rests on was returned verbatim: "If their monitoring AI agents identified that any of their deployed malware was detected by a security product, agents would then set about the process of autonomously modifying and rebuilding the malware to evade the existing detections." Read the report before teaching the case. Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1341,11 +1348,11 @@ used_for.session-4: an espionage group's agents watching security tools for dete
 title:          GTIG AI Threat Tracker: Advances in threat actor usage of AI tools
 author:         Google Threat Intelligence Group
 publisher:      Google
-link:           https://services.google.com/fh/files/misc/advances-in-threat-actor-usage-of-ai-tools-en.pdf
+link:           https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools
 published:      2025-11-05
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. services.google.com and cloud.google.com are egress-blocked from this build environment (2026-09-27). The facts in scope come from search-engine summaries of the report and of the reporting on its release (The Hacker News, BleepingComputer, Infosecurity Magazine, 5 November 2025), which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. services.google.com and cloud.google.com are egress-blocked from this build environment (2026-09-27). The facts in scope come from search-engine summaries of the report and of the reporting on its release (The Hacker News, BleepingComputer, Infosecurity Magazine, 5 November 2025), which is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Blog post address; outlets date it 4 or 5 November 2025; the every-hour wording should be verified before teaching.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -1360,10 +1367,10 @@ title:          Writing an effective AI prompt for an audit
 author:         [UNVERIFIED, needs source]
 publisher:      Journal of Accountancy, A&A Focus newsletter (AICPA)
 link:           https://www.journalofaccountancy.com/newsletters/a-a-focus/writing-an-effective-ai-prompt-for-an-audit/
-published:      2025-11
+published:      2025-11-17
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. journalofaccountancy.com is egress-blocked from this build environment (2026-09-27). The syllabus lists this reading as "Writing an Effective AI Prompt for an Audit Trail"; the page's own title, as the search engine returns it, is the one recorded here, and the November 2025 date is from the same summary. The article was not read, so the lesson claims nothing about what it says: it names it as the assigned reading behind the record block and no more.
+retrieval_note: NOT RETRIEVED. journalofaccountancy.com is egress-blocked from this build environment (2026-09-27). The syllabus lists this reading as "Writing an Effective AI Prompt for an Audit Trail"; the page's own title, as the search engine returns it, is the one recorded here, and the November 2025 date is from the same summary. The article was not read, so the lesson claims nothing about what it says: it names it as the assigned reading behind the record block and no more. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. An A&A Focus webcast recap (Durak, Supkis Cheek, the STAR framework); the Journal dates it 17 November 2025; the byline is not shown in search metadata.
 confidence:     M
 kind:           assigned_reading
 moving_target:  false
@@ -1379,9 +1386,9 @@ author:         Anthropic
 publisher:      claude.com
 link:           https://claude.com/pricing
 published:      not applicable
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-27, with the Help Center articles on the Max plan (11049741) and on Enterprise seats (13393991) and the Claude Enterprise solutions page. The Max 20x figure is on the Help Center article, not the pricing page. Prices move without notice.
+retrieval_note: Opened directly on 2026-09-27, with the Help Center articles on the Max plan (11049741) and on Enterprise seats (13393991) and the Claude Enterprise solutions page. The Max 20x figure is on the Help Center article, not the pricing page. Prices move without notice. Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1411,7 +1418,7 @@ link:           https://gemini.google/subscriptions/
 published:      not applicable
 last_retrieved: 2026-10-11
 last_verified:
-retrieval_note: A real retrieval on 2026-10-11, recorded in FACTS gemini-plans: the figures were read through primary-domain search listings of this page, because gemini.google was unreachable from the build container, so the page itself was not opened and the confidence is M (D-015). The Google One page also lists a $9.99 AI Plus (2 TB) variant and shows Pro at $199.99 per year, so "$199.99" is ambiguous without the period. Record added 2026-10-27 (DW-181) from the FACTS record without a fresh fetch; last_retrieved is copied from it. Prices move without notice.
+retrieval_note: A real retrieval on 2026-10-11, recorded in FACTS gemini-plans: the figures were read through primary-domain search listings of this page, because gemini.google was unreachable from the build container, so the page itself was not opened and the confidence is M (D-015). The Google One page also lists a $9.99 AI Plus (2 TB) variant and shows Pro at $199.99 per year, so "$199.99" is ambiguous without the period. Record added 2026-10-27 (DW-181) from the FACTS record without a fresh fetch; last_retrieved is copied from it. Prices move without notice. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -1434,17 +1441,17 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/manage-claude/api-and-data-retention
 published:      not applicable
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-27, with the Help Center articles on custom retention for Enterprise plans (10440198) and on retention for covered models (15425996, effective 9 June 2026) and the Claude Code data-usage page. Two Anthropic pages differ on the Enterprise chat default (30 days standard against "indefinitely unless a custom period is set"); the lesson states only what both agree on.
+retrieval_note: Opened directly on 2026-09-27, with the Help Center articles on custom retention for Enterprise plans (10440198) and on retention for covered models (15425996, effective 9 June 2026) and the Claude Code data-usage page. Two Anthropic pages differ on the Enterprise chat default (30 days standard against "indefinitely unless a custom period is set"); the lesson states only what both agree on. Audit 2026-10-27 (fetched in full): verified with corrections. The page no longer states a blanket 30-day standard API retention; it says content "is not retained by default; the exception is Covered Models, which require 30-day retention", and defers the rest to the commercial data retention policy (privacy.claude.com article 7996866, unreachable from the build). Help Center 15425996 (Covered Models, effective 9 June 2026) states the 30 days; Help Center 10440198 states the Enterprise default as indefinite. The three lesson sentences that stated 30 days were reworded and chipped to FACTS claude-api-retention. Supplements: both Help Center articles.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4 Appendix D2
-scope:          Standard retention on the API is 30 days; Enterprise organisations can set a custom retention period, 30 days at minimum; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years.
-used_for.session-4: the retention rung of the ladder and the retention clause of the contract view (Appendices D2 and D3), and the 30-day retention behind a Claude API key in the Live API box (above §00)
-used_for.session-1: the 30-day retention behind a Claude API key, in the live model console (above §01)
+scope:          Conversation content sent through the API is not retained by default; the exception is the Covered Models (Fable 5.1, Mythos 5.1, Fable 5, Mythos 5), which require 30-day retention; standard retention otherwise is defined in the commercial data retention policy the page links; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years. The Enterprise custom retention period, 30 days at minimum with an indefinite default, is on Help Center article 10440198, which covers claude.ai chats and not the API.
+used_for.session-4: the retention rung of the ladder and the retention clause of the contract view (Appendices D2 and D3), and the API retention behind a Claude key in the Live API box (above §00)
+used_for.session-1: the API retention behind a Claude key, in the live model console (above §01)
 ```
 
 ## src-anthropic-api-credits
@@ -1455,9 +1462,9 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers
 published:      not applicable
-last_retrieved: 2026-10-16
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-10-16, with the Help Center article of the same name (17154008). The programme was announced 7 October 2026.
+retrieval_note: Opened directly on 2026-10-16, with the Help Center article of the same name (17154008). The programme was announced 7 October 2026. Audit 2026-10-27 (fetched in full): verified. The 7 October 2026 announcement date is carried by a third-party aggregator only; no dated first-party page was found.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1476,36 +1483,16 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/typescript
 published:      not applicable
-last_retrieved: 2026-10-16
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-10-16. The docs page names the option and the risk; the header the option sends, anthropic-dangerous-direct-browser-access: true, is read from the SDK's own source (anthropic-sdk-typescript, src/client.ts, buildHeaders), which is why the chip is M rather than H: the page documents the switch, the code documents the wire.
-confidence:     M
+retrieval_note: Opened directly on 2026-10-16. The docs page names the option and the risk; the header the option sends, anthropic-dangerous-direct-browser-access: true, is read from the SDK's own source (anthropic-sdk-typescript, src/client.ts, buildHeaders), which is why the chip is M rather than H: the page documents the switch, the code documents the wire. Audit 2026-10-27 (fetched in full): verified. Both page quotations exact; the header anthropic-dangerous-direct-browser-access confirmed in the SDK source (src/client.ts); the clause that the API answers a browser only when the header is present is an inference, stated as such. Raised M to H.
+confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4
 scope:          Browser use of the SDK is "disabled by default to avoid exposing your secret API credentials" and is enabled only by setting dangerouslyAllowBrowser to true, which the SDK honours by sending the header anthropic-dangerous-direct-browser-access: true on every request; the API answers a browser only when that header is present. The page's own warning: "Any user with access to the browser can potentially inspect, extract, and misuse these credentials."
 used_for.session-4: the extra header a Claude request from a browser must carry, and why its name is the warning, in the Live API box (above §00)
-```
-
-## src-anthropic-sampling
-
-```source
-title:          Claude Opus 5.5 migration guide
-author:         Anthropic
-publisher:      Claude Platform Docs
-link:           https://platform.claude.com/docs/en/models/opus-5-5/migration-guide
-published:      not applicable
-last_retrieved: 2026-10-16
-last_verified:
-retrieval_note: Opened directly on 2026-10-16, with the Claude Haiku 5.5 migration guide, which states the same rule for Haiku 5.5 against Haiku 4.5 (temperature must be 1 if sent; top_p 0.99; any top_k a 400).
-confidence:     M
-kind:           evidence
-moving_target:  true
-figure_class:   vendor_policy
-recheck_before: every teaching of session-1
-scope:          "Setting temperature, top_p, or top_k to any non-default value on Claude Opus 4.7 and later models, including Claude Opus 5.5, returns a 400 error." Claude 4.6 and earlier accept them. The lesson's live temperature panel therefore routes a Claude key to the newest model it reaches from 4.6 or earlier and names that model on each row.
-used_for.session-1: Claude models from Opus 4.7 on reject a temperature setting, so the live temperature panel runs on an older Claude model when a Claude key is connected (Appendix A6)
 ```
 
 ## src-anthropic-dpa
@@ -1516,9 +1503,9 @@ author:         Anthropic
 publisher:      Anthropic, anthropic.com/legal
 link:           https://www.anthropic.com/legal/data-processing-addendum
 published:      2025-02-24
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-27, three reads, consistent. Incorporated by reference into the Commercial Terms (Section C, Data Privacy). Quotations in scope are the document's own words.
+retrieval_note: Opened directly on 2026-09-27, three reads, consistent. Incorporated by reference into the Commercial Terms (Section C, Data Privacy). Quotations in scope are the document's own words. Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1537,9 +1524,9 @@ author:         Anthropic
 publisher:      Claude Help Center, support.claude.com article 10015870
 link:           https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained
 published:      not applicable
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-27 (the article says it was last updated 16 March 2026), with the HIPAA-ready Enterprise plans article (13296973) and the January 2025 news post on ISO 42001. The Trust Portal itself is egress-blocked from this build.
+retrieval_note: Opened directly on 2026-09-27 (the article says it was last updated 16 March 2026), with the HIPAA-ready Enterprise plans article (13296973) and the January 2025 news post on ISO 42001. The Trust Portal itself is egress-blocked from this build. Audit 2026-10-27 (fetched in full): verified. Certification list live (Updated March 16, 2026). Supplement: the BAA and primary-owner detail is on the HIPAA-ready Enterprise plans article (support.claude.com article 13296973); ISO 42001 post at anthropic.com/news/anthropic-achieves-iso-42001-certification-for-responsible-ai.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1559,7 +1546,7 @@ link:           https://ai.google.dev/gemini-api/terms
 published:      not applicable
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. ai.google.dev is egress-blocked from this build environment (2026-09-27). The wording in scope appears verbatim in search snippets of the page itself and in two independent mirrors of the terms (Simon Willison, October 2024; ScanCode LicenseDB, 2025). Read the page before class; Google changes it.
+retrieval_note: NOT RETRIEVED. ai.google.dev is egress-blocked from this build environment (2026-09-27). The wording in scope appears verbatim in search snippets of the page itself and in two independent mirrors of the terms (Simon Willison, October 2024; ScanCode LicenseDB, 2025). Read the page before class; Google changes it. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the archived text dated 20 November 2025 (ai.google.dev/gemini-api/terms-archive/terms_11_20_25) anchors the quoted sentence to a frozen version.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -1579,7 +1566,7 @@ link:           https://ai.google.dev/gemini-api/docs/rate-limits
 published:      not applicable
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. ai.google.dev is egress-blocked from this build environment (2026-09-27), and the secondary sources disagree (250 requests a day for an older flash model against about 20 for the newer ones, after Google cut free quotas in December 2025 and moved to per-project limits). No number is printed on the page.
+retrieval_note: NOT RETRIEVED. ai.google.dev is egress-blocked from this build environment (2026-09-27), and the secondary sources disagree (250 requests a day for an older flash model against about 20 for the newer ones, after Google cut free quotas in December 2025 and moved to per-project limits). No number is printed on the page. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 confidence:     L
 kind:           evidence
 moving_target:  true
@@ -1599,11 +1586,11 @@ link:           https://www.forbes.com/sites/thomasbrewster/2021/10/14/huge-bank
 published:      2021-10-14
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. forbes.com is egress-blocked from this build environment (2026-09-27). Cross-checked against search snippets from Dark Reading, Unite.AI, SingularityHub and Interesting Engineering (October 2021), all consistent on the amount, the year and the court filing Forbes reported.
+retrieval_note: NOT RETRIEVED. forbes.com is egress-blocked from this build environment (2026-09-27). Cross-checked against search snippets from Dark Reading, Unite.AI, SingularityHub and Interesting Engineering (October 2021), all consistent on the amount, the year and the court filing Forbes reported. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Forbes' own text describes the victim as a branch manager of a Japanese company, not a UAE bank; the UAE is the investigating jurisdiction. Secondary outlets paraphrase it as a bank manager.
 confidence:     H
 kind:           evidence
 moving_target:  false
-scope:          In early 2020 a bank branch manager in the UAE authorised transfers of $35 million after a phone call from a cloned voice of a company director he knew, backed by forged emails about an acquisition; the case surfaced in a 2021 court document.
+scope:          In early 2020 the branch manager of a Japanese company's Hong Kong office authorised transfers of $35 million after a phone call from a cloned voice of a company director he knew, backed by forged emails about an acquisition; UAE investigators sought help through a US court filing in 2021.
 used_for.session-4: the second bar on the bill: a voice alone, $35 million (Appendix D4)
 ```
 
@@ -1617,7 +1604,7 @@ link:           https://mothership.sg/2026/05/pm-wong-zoom-deepfake-scam/
 published:      2026-05-16
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. mothership.sg is egress-blocked from this build environment (2026-09-27). Cross-checked against search snippets from the South China Morning Post, The Star (Malaysia), Malay Mail, VnExpress International and Fintech News Singapore, all consistent on the amount and the dates; the Singapore Police Force released the deepfake footage on 16 May 2026.
+retrieval_note: NOT RETRIEVED. mothership.sg is egress-blocked from this build environment (2026-09-27). Cross-checked against search snippets from the South China Morning Post, The Star (Malaysia), Malay Mail, VnExpress International and Fintech News Singapore, all consistent on the amount and the dates; the Singapore Police Force released the deepfake footage on 16 May 2026. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. S$4.9 million (about US$3.8 million), deepfakes of the Prime Minister, President Tharman and Minister Indranee, realised 14 May 2026; the Singapore Police Force media release of 16 May 2026 and Malay Mail (17 May 2026) corroborate.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1635,7 +1622,7 @@ link:           https://www.fbi.gov/news/press-releases/cryptocurrency-and-ai-sc
 published:      2026-04-07
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. fbi.gov and ic3.gov are egress-blocked from this build environment (2026-09-27). Figures are consistent across search snippets of the FBI press release and of SpyCloud, SecureWorld, Paubox, Abnormal, McDonald Hopkins and Alston & Bird. The report is at ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf.
+retrieval_note: NOT RETRIEVED. fbi.gov and ic3.gov are egress-blocked from this build environment (2026-09-27). Figures are consistent across search snippets of the FBI press release and of SpyCloud, SecureWorld, Paubox, Abnormal, McDonald Hopkins and Alston & Bird. The report is at ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. All headline figures confirmed (1,008,597 complaints, $20.877 billion, up 26 percent, BEC $3.05 billion from 24,768, AI 22,364 complaints and about $893 million); outlets split the release date between 6 and 7 April 2026. Supplement: the IC3 2025 Annual Report PDF (ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf) as the primary.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1646,14 +1633,14 @@ used_for.session-4: the bill's caption and the deepfake row's scale line (Append
 ## src-drift
 
 ```source
-title:          Cybersecurity alert: Salesloft Drift AI supply chain attack
+title:          Cybersecurity Alert: Salesloft Drift AI Supply Chain Attack
 author:         Financial Industry Regulatory Authority
 publisher:      FINRA
 link:           https://www.finra.org/rules-guidance/guidance/salesloft-drift-AI-supply-chain-attack
-published:      2025-09
+published:      2025-09-10
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. finra.org is egress-blocked from this build environment (2026-09-27). The incident is described consistently by AppOmni, WTW, TechRadar and Paubox (August and September 2025), citing Google Threat Intelligence's count of more than 700 affected organisations.
+retrieval_note: NOT RETRIEVED. finra.org is egress-blocked from this build environment (2026-09-27). The incident is described consistently by AppOmni, WTW, TechRadar and Paubox (August and September 2025), citing Google Threat Intelligence's count of more than 700 affected organisations. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Dated 10 September 2025; the MFA-bypass phrase in scope should be read off the alert before it is taught.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1671,7 +1658,7 @@ link:           https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malici
 published:      2026-07-29
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. newsroom.ibm.com is egress-blocked from this build environment (2026-09-27). Figures consistent across search snippets of the IBM release, Infosecurity Magazine, Security Boulevard, ASIS Security Management and Cybersecurity Dive. Supersedes the 2025 edition's $4.44 million and $10.22 million.
+retrieval_note: NOT RETRIEVED. newsroom.ibm.com is egress-blocked from this build environment (2026-09-27). Figures consistent across search snippets of the IBM release, Infosecurity Magazine, Security Boulevard, ASIS Security Management and Cybersecurity Dive. Supersedes the 2025 edition's $4.44 million and $10.22 million. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. 602 organisations, $4.99 million global, $11.5 million US, one in four AI-enabled at $6 million (up 56 percent) confirmed; the shadow-AI 43 percent figure was not seen (GAP, see register).
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1689,13 +1676,13 @@ author:         Anthropic
 publisher:      Anthropic
 link:           https://www.anthropic.com/news/detecting-countering-misuse-aug-2025
 published:      2025-08-27
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-27. Cross-checked against Malwarebytes, Forrester and Halcyon, which report the demand range as $75,000 to $500,000. No payment figure is public.
+retrieval_note: Opened directly on 2026-09-27. Cross-checked against Malwarebytes, Forrester and Halcyon, which report the demand range as $75,000 to $500,000. No payment figure is public. Audit 2026-10-27 (fetched in full): verified with corrections. The page's wording is "ransoms that sometimes exceeded $500,000"; the earlier scope quoted a sentence the page does not carry. Full PDF of the report is linked from the page.
 confidence:     H
 kind:           evidence
 moving_target:  false
-scope:          One actor used Claude Code to automate reconnaissance, credential harvesting, intrusion and extortion against at least 17 organisations, including healthcare, emergency services, government and religious institutions; "Ransom demands sometimes exceeded $500,000." Demands, not measured losses.
+scope:          One actor used Claude Code to automate reconnaissance, credential harvesting, intrusion and extortion against at least 17 organisations, including healthcare, emergency services, government and religious institutions, with "ransoms that sometimes exceeded $500,000". Demands, not measured losses.
 used_for.session-4: the scale line on the AI-written malware row of the four-attack board (Appendix D4)
 ```
 
@@ -1705,11 +1692,11 @@ used_for.session-4: the scale line on the AI-written malware row of the four-att
 title:          Phishing for Gemini
 author:         Figueroa, M.
 publisher:      Mozilla 0Din
-link:           https://0din.ai/blog/phishing-for-gemini
-published:      2025-07
+link:           https://www.0din.ai/blog/phishing-for-gemini
+published:      2025-07-10
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. 0din.ai is egress-blocked from this build environment (2026-09-27). The mechanism is described consistently in search snippets of the disclosure's coverage and in Microsoft's Defender documentation on prompt-injection protection, which names white-on-white text and zero-size fonts among the techniques it scans for.
+retrieval_note: NOT RETRIEVED. 0din.ai is egress-blocked from this build environment (2026-09-27). The mechanism is described consistently in search snippets of the disclosure's coverage and in Microsoft's Defender documentation on prompt-injection protection, which names white-on-white text and zero-size fonts among the techniques it scans for. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1727,7 +1714,7 @@ link:           https://unit42.paloaltonetworks.com/ai-agent-prompt-injection/
 published:      2026-03-03
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. unit42.paloaltonetworks.com is egress-blocked from this build environment (2026-09-27). The counts in scope come from the Cloud Security Alliance's research note on the report and from search snippets of the report itself.
+retrieval_note: NOT RETRIEVED. unit42.paloaltonetworks.com is egress-blocked from this build environment (2026-09-27). The counts in scope come from the Cloud Security Alliance's research note on the report and from search snippets of the report itself. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the arXiv paper 2604.27202 anchors the 22-technique count.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1738,14 +1725,14 @@ used_for.session-4: hidden HTML, off-screen and zero-size text seen in the wild 
 ## src-ascii-smuggling
 
 ```source
-title:          Microsoft Copilot: from prompt injection to data exfiltration of your emails
+title:          Microsoft Copilot: From Prompt Injection to Exfiltration of Personal Information
 author:         Rehberger, J.
 publisher:      Embrace The Red
 link:           https://embracethered.com/blog/posts/2024/m365-copilot-prompt-injection-tool-invocation-and-data-exfil-using-ascii-smuggling/
 published:      2024-08-26
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. embracethered.com is egress-blocked from this build environment (2026-09-27). The technique was first shown by Riley Goodside on 11 January 2024; cross-checked against The Hacker News, SC Media, Cisco and Keysight, and Microsoft's fix in August 2024.
+retrieval_note: NOT RETRIEVED. embracethered.com is egress-blocked from this build environment (2026-09-27). The technique was first shown by Riley Goodside on 11 January 2024; cross-checked against The Hacker News, SC Media, Cisco and Keysight, and Microsoft's fix in August 2024. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Title corrected to the one the page carries.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1763,7 +1750,7 @@ link:           https://blog.trailofbits.com/2025/08/21/weaponizing-image-scalin
 published:      2025-08-21
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. blog.trailofbits.com is egress-blocked from this build environment (2026-09-27). Cross-checked against BleepingComputer and SecurityWeek (August 2025) and Brave's October 2025 disclosure of faint text in screenshots read by AI browsers.
+retrieval_note: NOT RETRIEVED. blog.trailofbits.com is egress-blocked from this build environment (2026-09-27). Cross-checked against BleepingComputer and SecurityWeek (August 2025) and Brave's October 2025 disclosure of faint text in screenshots read by AI browsers. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Authors Kikimora Morozova and a co-author not confirmed from snippets.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1774,14 +1761,14 @@ used_for.session-4: text inside an image as a hiding technique (Appendix D4)
 ## src-anthropic-injection
 
 ```source
-title:          Mitigating the risk of prompt injections in browser use
+title:          Mitigating prompt injections in browser use
 author:         Anthropic
 publisher:      Anthropic
 link:           https://www.anthropic.com/news/prompt-injection-defenses
 published:      2025-11-24
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-27, with the Claude for Chrome pilot post on claude.com and the computer-use tool's security section in the platform docs.
+retrieval_note: Opened directly on 2026-09-27, with the Claude for Chrome pilot post on claude.com and the computer-use tool's security section in the platform docs. Audit 2026-10-27 (fetched in full): verified with corrections. Live title drops "the risk of". The 1 percent sentence is present; the platform docs now read "Claude follows commands found in content even when they conflict with your instructions"; the asks-before-publishing-purchasing wording is on claude.com/blog/claude-for-chrome.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1794,14 +1781,14 @@ used_for.session-4: why a warning is not a lock and an approval step is (Appendi
 ## src-agent-skills
 
 ```source
-title:          Agent Skills overview
+title:          Agent Skills
 author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
 published:      not applicable
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-27.
+retrieval_note: Opened directly on 2026-09-27. Audit 2026-10-27 (fetched in full): verified with corrections. Page title is now Agent Skills; the name and description limits and the plan list are verbatim; the page has added reserved words (anthropic, claude) and a no-XML rule for the frontmatter.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1820,11 +1807,11 @@ figures.session-0.1: name: lowercase letters, numbers and hyphens, 64 characters
 title:          Personal Information Protection Act, 815 ILCS 530/10
 author:         Illinois General Assembly
 publisher:      Illinois Compiled Statutes
-link:           https://ilga.gov/documents/legislation/ilcs/documents/081505300K10.htm
+link:           https://www.ilga.gov/Documents/legislation/ilcs/documents/081505300K10.htm
 published:      not applicable
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. ilga.gov is egress-blocked from this build environment (2026-09-27). The statutory wording in scope appears in search snippets of the statute and of Justia, the Illinois Attorney General's guidance page and a Hogan Lovells summary, all consistent.
+retrieval_note: NOT RETRIEVED. ilga.gov is egress-blocked from this build environment (2026-09-27). The statutory wording in scope appears in search snippets of the statute and of Justia, the Illinois Attorney General's guidance page and a Hogan Lovells summary, all consistent. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 confidence:     H
 kind:           authority
 moving_target:  false
@@ -1842,28 +1829,28 @@ link:           https://www.gao.gov/products/gao-18-559
 published:      2018-08-30
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. gao.gov is egress-blocked from this build environment (2026-09-27). The dates and figures in scope are consistent across search snippets of the GAO report, the FTC's July 2019 settlement release, the CFPB's release, the House Oversight Committee's December 2018 report and EPIC.
+retrieval_note: NOT RETRIEVED. gao.gov is egress-blocked from this build environment (2026-09-27). The dates and figures in scope are consistent across search snippets of the GAO report, the FTC's July 2019 settlement release, the CFPB's release, the House Oversight Committee's December 2018 report and EPIC. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Supplement: the full report PDF (gao.gov/assets/700/694347.pdf) and the House Oversight minority report of December 2018.
 confidence:     H
 kind:           background
 moving_target:  false
-scope:          Equifax discovered the breach on 29 July 2017 and announced it on 7 September 2017, about 147 million US consumers affected; the July 2019 settlement with the FTC, the CFPB and the states was at least $575 million and up to $700 million.
+scope:          Equifax discovered the breach on 29 July 2017 and announced it on 7 September 2017; GAO-18-559 reports at least 145.5 million US consumers affected. The 147 million figure and the July 2019 settlement with the FTC, the CFPB and the states (at least $575 million, up to $700 million) postdate the report and rest on the FTC's July 2019 release.
 ```
 
 ## src-capitalone
 
 ```source
-title:          2019 Capital One cyber incident: what happened
+title:          Information on the Capital One Cyber Incident
 author:         Capital One
 publisher:      Capital One
 link:           https://www.capitalone.com/digital/facts2019/
 published:      2019-07-29
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. capitalone.com is egress-blocked from this build environment (2026-09-27). Dates and figures consistent across search snippets of Capital One's page, CBS News and SiliconANGLE (August 2020, the $80 million OCC penalty), Banking Dive and the Department of Justice's case page.
+retrieval_note: NOT RETRIEVED. capitalone.com is egress-blocked from this build environment (2026-09-27). Dates and figures consistent across search snippets of Capital One's page, CBS News and SiliconANGLE (August 2020, the $80 million OCC penalty), Banking Dive and the Department of Justice's case page. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Supplement: Capital One's Form 10-Q for the quarter ended 31 March 2020 (EDGAR) and contemporaneous wire coverage.
 confidence:     H
 kind:           background
 moving_target:  false
-scope:          Tipped on 17 July 2019, Capital One determined on 19 July 2019 that an intrusion had occurred, contacted the FBI, and announced it publicly on 29 July 2019; about 100 million US and 6 million Canadian applicants affected; an $80 million OCC penalty in August 2020 and a $190 million class settlement.
+scope:          Tipped on 17 July 2019, Capital One determined on 19 July 2019 that an intrusion had occurred, contacted the FBI, and announced it publicly on 29 July 2019; about 100 million US and 6 million Canadian applicants affected. The $80 million OCC penalty of August 2020 and the $190 million class settlement postdate the page and rest on their own reports.
 ```
 
 ## src-eu-ai-act
@@ -1872,11 +1859,11 @@ scope:          Tipped on 17 July 2019, Capital One determined on 19 July 2019 t
 title:          Regulation (EU) 2024/1689 (the Artificial Intelligence Act), Article 50, transparency obligations
 author:         European Parliament and Council
 publisher:      Official Journal of the European Union, EUR-Lex
-link:           https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+link:           https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng
 published:      2024-07-12
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. eur-lex.europa.eu is egress-blocked from this build environment (2026-09-27). The application date of 2 August 2026, the machine-readable marking duty and the Article 50(2) code of practice are corroborated by Anthropic's own page on how Claude marks content, which was opened; the Regulation's text was not, which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. eur-lex.europa.eu is egress-blocked from this build environment (2026-09-27). The application date of 2 August 2026, the machine-readable marking duty and the Article 50(2) code of practice are corroborated by Anthropic's own page on how Claude marks content, which was opened; the Regulation's text was not, which is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Link points at the consolidated text as amended 27 July 2026; the original Official Journal text is eur-lex.europa.eu/eli/reg/2024/1689/oj/eng. Secondary sources report that the 2026 Digital Omnibus amendment kept the 2 August 2026 date for Article 50 and gave systems already on the market until 2 December 2026 for machine-readable marking; not read from the text.
 confidence:     M
 kind:           authority
 moving_target:  false
@@ -1887,14 +1874,14 @@ used_for.session-4: why a US adviser's Claude text carries a mark it cannot chec
 ## src-claude-memory
 
 ```source
-title:          Bringing memory to teams at work
+title:          Bringing memory to teams
 author:         Anthropic
 publisher:      claude.com blog
 link:           https://claude.com/blog/memory
 published:      2025-09-11
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-27, with the Help Center article on chat search and memory (11817273), which states that memory is saved as a set of topics as you chat.
+retrieval_note: Opened directly on 2026-09-27, with the Help Center article on chat search and memory (11817273), which states that memory is saved as a set of topics as you chat. Audit 2026-10-27 (fetched in full): verified with corrections. Page title carries no "at work". The topics-as-you-chat claim is on help article 11817273 (src-memory), not on this post.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -1912,9 +1899,9 @@ author:         Rajasekaran, P., Dixon, E., Ryan, C., & Hadfield, J.
 publisher:      Anthropic Engineering
 link:           https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 published:      2025-09-29
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-27, with the current prompting best-practices page, which still says a role in the system prompt focuses behaviour and tone.
+retrieval_note: Opened directly on 2026-09-27, with the current prompting best-practices page, which still says a role in the system prompt focuses behaviour and tone. Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1930,9 +1917,9 @@ author:         Anthropic
 publisher:      Anthropic
 link:           https://www.anthropic.com/news/claude-3-7-sonnet
 published:      2025-02-24
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-27, with the current prompting best-practices page, which describes manual step-by-step prompting as a fallback for when thinking is off.
+retrieval_note: Opened directly on 2026-09-27, with the current prompting best-practices page, which describes manual step-by-step prompting as a fallback for when thinking is off. Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1948,9 +1935,9 @@ author:         Anthropic
 publisher:      Anthropic
 link:           https://www.anthropic.com/news/model-context-protocol
 published:      2024-11-25
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-27, with the web search post of 20 March 2025 and the integrations post of 1 May 2025 on claude.com, both opened.
+retrieval_note: Opened directly on 2026-09-27, with the web search post of 20 March 2025 and the integrations post of 1 May 2025 on claude.com, both opened. Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1961,37 +1948,17 @@ last_retrieved.session-0.1: 2026-10-13
 figures.session-0.1: the name Model Context Protocol and its description as an open standard (FACTS mcp-name; the post read in full 2026-10-13)
 ```
 
-## src-anthropic-context
-
-```source
-title:          Context windows
-author:         Anthropic
-publisher:      Claude Platform Docs
-link:           https://platform.claude.com/docs/en/build-with-claude/context-windows
-published:      not applicable
-last_retrieved: 2026-09-27
-last_verified:
-retrieval_note: Opened directly on 2026-09-27, with the models overview and the 2023 announcements of 100K (11 May 2023) and 200K (21 November 2023) context windows and the 1M announcement of 12 August 2025, all on anthropic.com or claude.com.
-confidence:     H
-kind:           evidence
-moving_target:  true
-figure_class:   vendor_policy
-recheck_before: every teaching of session-4 Appendix D6
-scope:          9,000 tokens in March 2023, 100,000 in May 2023, 200,000 in November 2023, one million by default on current models, about 555,000 words; and "As token count grows, accuracy and recall degrade, a phenomenon known as context rot."
-used_for.session-4: the context-window card and the context-rot card in the then-and-now deck (Appendix D6)
-```
-
 ## src-anthropic-agents
 
 ```source
 title:          Building effective agents
 author:         Schluntz, E., & Zhang, B.
 publisher:      Anthropic Engineering
-link:           https://www.anthropic.com/engineering/building-effective-agents
+link:           https://www.anthropic.com/research/building-effective-agents
 published:      2024-12-19
-last_retrieved: 2026-09-27
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Opened directly on 2026-09-27, with the Agent SDK post of 29 September 2025 on claude.com and the tool-use documentation, whose section on the agentic loop was also opened. No source opened uses the phrase "loop engineering"; Anthropic's words are "in a loop", "the agent loop" and "the agentic loop".
+retrieval_note: Opened directly on 2026-09-27, with the Agent SDK post of 29 September 2025 on claude.com and the tool-use documentation, whose section on the agentic loop was also opened. No source opened uses the phrase "loop engineering"; Anthropic's words are "in a loop", "the agent loop" and "the agentic loop". Audit 2026-10-27 (fetched in full): verified with corrections. The engineering address redirects (308) to /research/; the live byline abbreviates the first author's surname (Erik S.), so Schluntz is kept from the earlier record and not re-confirmed from the page. The in-a-loop quotation is exact.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -2009,7 +1976,7 @@ link:           https://www.ecfr.gov/current/title-17/chapter-II/part-275/sectio
 published:      not applicable
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. ecfr.gov, law.cornell.edu and govinfo.gov are egress-blocked from this build environment (2026-09-27). The rule's citation is certain; its wording as stated in scope is from the maintainer's knowledge of the rule and is why the confidence is M. Read paragraph (a)(7) and paragraph (e)(1) before teaching them as settled.
+retrieval_note: NOT RETRIEVED. ecfr.gov, law.cornell.edu and govinfo.gov are egress-blocked from this build environment (2026-09-27). The rule's citation is certain; its wording as stated in scope is from the maintainer's knowledge of the rule and is why the confidence is M. Read paragraph (a)(7) and paragraph (e)(1) before teaching them as settled. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): unreachable.
 confidence:     M
 kind:           authority
 moving_target:  false
@@ -2027,7 +1994,7 @@ link:           https://www.finra.org/rules-guidance/rulebooks/finra-rules/4511
 published:      not applicable
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. finra.org is egress-blocked from this build environment (2026-09-27). The rules' citations are certain; the periods in scope are from the maintainer's knowledge and are why the confidence is M. A broker-dealer's correspondence period differs from an adviser's, so the page never states one number for both.
+retrieval_note: NOT RETRIEVED. finra.org is egress-blocked from this build environment (2026-09-27). The rules' citations are certain; the periods in scope are from the maintainer's knowledge and are why the confidence is M. A broker-dealer's correspondence period differs from an adviser's, so the page never states one number for both. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Supplement: FINRA's SEA Rule 17a-4 and Related Interpretations page, which carries the retention periods the scope states.
 confidence:     M
 kind:           authority
 moving_target:  false
@@ -2041,15 +2008,15 @@ used_for.session-4: the broker-dealer counterpart of the books-and-records rule 
 title:          Commission Interpretation Regarding Standard of Conduct for Investment Advisers, Release IA-5248
 author:         U.S. Securities and Exchange Commission
 publisher:      SEC
-link:           https://www.sec.gov/rules-regulations/2019/06/commission-interpretation-regarding-standard-conduct-investment-advisers
+link:           https://sec.gov/rules/interp/2019/ia-5248.pdf
 published:      2019-06-05
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. sec.gov is egress-blocked from this build environment (2026-09-27). The release's existence, date and number are certain; the characterisation in scope is from the maintainer's knowledge and is why the confidence is M.
+retrieval_note: NOT RETRIEVED. sec.gov is egress-blocked from this build environment (2026-09-27). The release's existence, date and number are certain; the characterisation in scope is from the maintainer's knowledge and is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Adopted 5 June 2019; Federal Register 12 July 2019. Scope reworded to the release's own terms.
 confidence:     M
 kind:           authority
 moving_target:  false
-scope:          The fiduciary duty of care under the Advisers Act includes a duty to provide advice that is in the client's best interest, with a reasonable basis for it, which is why the source behind an AI-assisted answer belongs in the file.
+scope:          The fiduciary duty of care under the Advisers Act includes a duty to provide advice that is in the client's best interest, resting on a reasonable inquiry into the client and a reasonable belief that the advice is in the client's best interest, which is why the source behind an AI-assisted answer belongs in the file.
 used_for.session-4: the duty behind the source-quoted slot of the record (§05)
 ```
 
@@ -2063,7 +2030,7 @@ link:           https://www.ecfr.gov/current/title-17/chapter-II/part-275/sectio
 published:      not applicable
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. ecfr.gov and law.cornell.edu are egress-blocked from this build environment (2026-09-27). The rule's citation is certain; the wording in scope is from the maintainer's knowledge and is why the confidence is M.
+retrieval_note: NOT RETRIEVED. ecfr.gov and law.cornell.edu are egress-blocked from this build environment (2026-09-27). The rule's citation is certain; the wording in scope is from the maintainer's knowledge and is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the SEC examinations staff's September 2026 observations on investment adviser annual compliance reviews (sec.gov/files/examinations-observations-regarding-investment-adviser-annual-compliance-review-091426.pdf).
 confidence:     M
 kind:           authority
 moving_target:  false
@@ -2079,17 +2046,17 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/about-claude/model-deprecations
 published:      2026-09-30
-last_retrieved: 2026-10-12
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: OPENED on 2026-10-02 and RE-OPENED on 2026-10-04 (platform.claude.com is reachable from this build). On 2026-10-04 every date the page carried on 2026-10-02 was unchanged; the not-sooner-than dates of the current and legacy models were added to the scope for the §02 calendar's new rows. The published date is the page's most recent deprecation announcement (Claude Sonnet 4.5, 30 September 2026); the page is updated in place with every announcement. RE-OPENED in full on 2026-10-12, after FACTS claude-model-ids-and-retirements read it in full on 2026-10-11: every date in the §02 calendar is unchanged, and the table now also lists claude-haiku-5-5 (Active, not sooner than 7 October 2027), with claude-haiku-4-5-20251001 still Active and not sooner than 15 October 2026.
+retrieval_note: OPENED on 2026-10-02 and RE-OPENED on 2026-10-04 (platform.claude.com is reachable from this build). On 2026-10-04 every date the page carried on 2026-10-02 was unchanged; the not-sooner-than dates of the current and legacy models were added to the scope for the §02 calendar's new rows. The published date is the page's most recent deprecation announcement (Claude Sonnet 4.5, 30 September 2026); the page is updated in place with every announcement. RE-OPENED in full on 2026-10-12, after FACTS claude-model-ids-and-retirements read it in full on 2026-10-11: every date in the §02 calendar is unchanged, and the table now also lists claude-haiku-5-5 (Active, not sooner than 7 October 2027), with claude-haiku-4-5-20251001 still Active and not sooner than 15 October 2026. Audit 2026-10-27 (fetched in full): verified. Every one of the 24 dates, the lifecycle terms, the 60 days' notice and the testing advice match the live table; the page has added Mythos rows and an API parameter deprecations section (see scope).
 content_changed: 2026-10-12. The page lists Claude Haiku 5.5 (claude-haiku-5-5, not sooner than 7 October 2027), which the 2026-10-04 pull did not record; Claude Haiku 4.5 keeps its 15 October 2026 date but is no longer one of the four current models. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12: the session-5 §02 calendar gained a Haiku 5.5 row and moved Haiku 4.5 to the legacy rows, and the lineup bullet no longer counts the legacy models.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor lifecycle schedule
 recheck_before: each teaching of Session 5
-scope:          Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §02 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current and legacy models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027, Haiku 5.5 7 October 2027. Dates are for Anthropic-operated platforms; partner platforms set their own.
-used_for.session-1: the names of the four current Claude models in the tier table (Appendix A7)
+scope:          Anthropic's lifecycle terms (active, legacy, deprecated, retired); that deprecated models get a recommended replacement and a retirement date; that requests to retired models fail; at least 60 days' notice before a publicly released model is retired; the advice to test applications against the replacement well before the retirement date; and the dated table of retirements the §02 calendar draws: Claude 2, 2.1 and Sonnet 3 retired 21 July 2025; Sonnet 3.5 models 28 October 2025; Opus 3 5 January 2026; Sonnet 3.7 and Haiku 3.5 19 February 2026; Haiku 3 20 April 2026; Sonnet 4 and Opus 4 15 June 2026; Opus 4.1 5 August 2026; Sonnet 4.5 deprecated 30 September 2026 with retirement on 30 November 2026 and Sonnet 5.5 as the replacement; current and legacy models carry a not-sooner-than date: Haiku 4.5 15 October 2026, Opus 4.5 24 November 2026, Opus 4.6 5 February 2027, Sonnet 4.6 17 February 2027, Opus 4.7 16 April 2027, Opus 4.8 28 May 2027, Fable 5 9 June 2027, Sonnet 5 30 June 2027, Opus 5 24 July 2027, Fable 5.1 1 September 2027, Opus 5.5 22 September 2027, Sonnet 5.5 28 September 2027, Haiku 5.5 7 October 2027. Dates are for Anthropic-operated platforms; partner platforms set their own. Since the 2026-10-21 API version the page also carries an API parameter deprecations table: temperature, top_p and top_k are removed in API version 2026-10-21, and a request that sends any of them returns a 400 error on every model; earlier API versions return a 400 when one is set to a non-default value on Claude 4.7 and later models; the recommended replacement is to omit them and guide the model by prompting.
+used_for.session-1: the names of the four current Claude models in the tier table (Appendix A7); and that Claude models from Opus 4.7 on reject a temperature setting, so the live temperature panel runs on an older Claude model when a Claude key is connected (Appendix A6)
 used_for.session-2: the names of the four Claude models current in October 2026, set beside the August snapshot in the cost frontier (Appendix B8), and the model id on the captured interview run (§04)
 used_for.session-3: that claude-sonnet-5-5, the model id on the two captured example outputs, is a current Claude model id (§05)
 last_retrieved.session-3: 2026-10-11
@@ -2109,6 +2076,28 @@ used_for.case-5: that claude-sonnet-4-5-20250929 was deprecated on 30 September 
 used_for.session-0.1: the names of the four current Claude models, in the model-picker check (section 00)
 last_retrieved.session-0.1: 2026-10-11
 figures.session-0.1: model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11)
+used_for.session-2: Appendix B4's list of what can differ between two runs and the third consequence card: temperature removed from the API, from the API parameter deprecations table
+used_for.session-4: temperature removed from the API, on the then-and-now deck and its flip card (Appendix D6)
+```
+
+## src-api-migration-2026-10-21
+
+```source
+title:          Migrating to API version 2026-10-21
+author:         Anthropic
+publisher:      Claude Platform Docs
+link:           https://platform.claude.com/docs/en/api/migration-2026-10-21
+published:      not applicable
+last_retrieved: 2026-10-27
+last_verified:
+retrieval_note: Fetched in full 2026-10-27 by the bibliography audit, with the API versions page. The sampling-parameters section states the removal, the 400 on every model, and the fallback of keeping a request on 2023-06-01; the TypeScript SDK page states that SDKs from major version 1.0 send 2026-10-21 by default. Added by the audit because the Messages API reference and the Opus 5.5 migration guide no longer carry the temperature rule.
+confidence:     H
+kind:           evidence
+moving_target:  true
+figure_class:   vendor_policy
+recheck_before: every teaching of session-1 Appendix A6
+scope:          Under API version 2026-10-21 the temperature, top_p and top_k request parameters are removed and a request that sends any of them returns a 400 error on every model; a request that relies on a non-default value must either stop sending the parameter or stay on API version 2023-06-01, where Claude 4.6 and earlier models still accept it. SDKs from major version 1.0 send 2026-10-21 by default, so a console that varies temperature has to name the earlier version itself.
+used_for.session-1: why the live temperature panel pins API version 2023-06-01 as well as a 4.6-or-earlier model (Appendix A6)
 ```
 
 ## src-anthropic-deprecation-commitments
@@ -2119,9 +2108,9 @@ author:         Anthropic
 publisher:      Anthropic, research and alignment pages
 link:           https://www.anthropic.com/research/deprecation-commitments
 published:      2025-11-04
-last_retrieved: 2026-10-02
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: OPENED on 2026-10-02 (anthropic.com is reachable from this build).
+retrieval_note: OPENED on 2026-10-02 (anthropic.com is reachable from this build). Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -2139,7 +2128,7 @@ link:           https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and
 published:      2026-01
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. help.openai.com and openai.com are egress-blocked from this build environment (2026-10-02). The facts in scope come from the search engine's summary of the article and from three consistent reports (YourStory; Gigazine, 30 January 2026; letsdatascience), plus TechCrunch and Tom's Guide (April 2025) for the GPT-4 retirement, which is why the confidence is M. Still blocked on 2026-10-04. Open the article before saying a date aloud.
+retrieval_note: NOT RETRIEVED. help.openai.com and openai.com are egress-blocked from this build environment (2026-10-02). The facts in scope come from the search engine's summary of the article and from three consistent reports (YourStory; Gigazine, 30 January 2026; letsdatascience), plus TechCrunch and Tom's Guide (April 2025) for the GPT-4 retirement, which is why the confidence is M. Still blocked on 2026-10-04. Open the article before saying a date aloud. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. A living help page; the headline GPT-4o date is confirmed; the other dates in scope should be read off the page before Session 5.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -2154,12 +2143,12 @@ used_for.session-5: the ChatGPT retirements of GPT-4 and GPT-4o, one line beside
 ```source
 title:          Experimental evidence on the productivity effects of generative artificial intelligence
 author:         Noy, S., & Zhang, W.
-publisher:      Science, July 2023 (MIT Department of Economics)
+publisher:      Science, 381(6654), 187-192
 link:           https://www.science.org/doi/10.1126/science.adh2586
 published:      2023-07
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. science.org and the NBER conference copy are egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as was economics.mit.edu). The figures in scope are the ones every summary found repeats (Stanford SCALE's publication listing, Marginal Revolution, Gulf News, the IT-Daily report), which is why the confidence is M. The task and occupation lines added on 2026-10-04 come from the same consistent summaries. Volume and page numbers are not recorded because they were not read off the article.
+retrieval_note: NOT RETRIEVED. science.org and the NBER conference copy are egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as was economics.mit.edu). The figures in scope are the ones every summary found repeats (Stanford SCALE's publication listing, Marginal Revolution, Gulf News, the IT-Daily report), which is why the confidence is M. The task and occupation lines added on 2026-10-04 come from the same consistent summaries. Volume and page numbers are not recorded because they were not read off the article. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. 14 July 2023, doi 10.1126/science.adh2586; 453 participants, 40 percent time, 18 percent quality and the narrowing of inequality confirmed by three or more sources. Could be raised to H; the chip is in session-5, which this pass does not touch.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2172,12 +2161,12 @@ used_for.session-5: the 40% less time and 18% higher quality bars in the four-tr
 ```source
 title:          Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality
 author:         Dell'Acqua, F., McFowland III, E., Mollick, E., Lifshitz-Assaf, H., Kellogg, K., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K.
-publisher:      Harvard Business School working paper, September 2023; also on SSRN
+publisher:      Harvard Business School Working Paper 24-013; SSRN 4573321; published in Organization Science, 11 March 2026
 link:           https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321
 published:      2023-09
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. hbs.edu and ssrn.com are egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04). The figures in scope are consistent across the reports found (Computing, beSpacific, Silicon Canals, the TFT summary, the Brainscape card set), which is why the confidence is M. The task descriptions and the below- and above-average split added on 2026-10-04 come from the same consistent reports. The working-paper number is not recorded because it was not read off the paper.
+retrieval_note: NOT RETRIEVED. hbs.edu and ssrn.com are egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04). The figures in scope are consistent across the reports found (Computing, beSpacific, Silicon Canals, the TFT summary, the Brainscape card set), which is why the confidence is M. The task descriptions and the below- and above-average split added on 2026-10-04 come from the same consistent reports. The working-paper number is not recorded because it was not read off the paper. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Published version doi 10.1287/orsc.2025.21838 (open access) lists the author as Lifshitz; all figures (758, 12.2 percent, 25.1 percent, over 40 percent, 43 against 17, 19 points) confirmed.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2195,7 +2184,7 @@ link:           https://www.nber.org/papers/w31161
 published:      2025
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. nber.org, arxiv.org and academic.oup.com are egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04). The figures in scope are consistent across the reports found (the NBER abstract as the search engine returns it, IDEAS/RePEc, the SSRN listing, the arXiv listing), which is why the confidence is M. The setting and tool lines added on 2026-10-04 come from the same reports.
+retrieval_note: NOT RETRIEVED. nber.org, arxiv.org and academic.oup.com are egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04). The figures in scope are consistent across the reports found (the NBER abstract as the search engine returns it, IDEAS/RePEc, the SSRN listing, the arXiv listing), which is why the confidence is M. The setting and tool lines added on 2026-10-04 come from the same reports. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. QJE 140(2), 889-942 confirmed, but the 5,179 agents, 14 percent and 34 percent figures are the NBER working paper 31161 numbers; the QJE abstract reports 5,172 agents and about 15 percent. The chip is in session-5, which this pass does not touch; the record keeps the NBER link and figures until that lesson is revised (see register).
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2207,13 +2196,13 @@ used_for.session-5: the 14% average and 34% novice bars in the four-trial figure
 
 ```source
 title:          Measuring the impact of early-2025 AI on experienced open-source developer productivity
-author:         METR (Model Evaluation and Threat Research)
+author:         Becker, J., Rush, N., Barnes, E., & Rein, D. (METR)
 publisher:      METR, blog
 link:           https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/
 published:      2025-07-10
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. metr.org is egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as were the secondary hosts tried). The figures in scope are consistent across five reports found (The Decoder, eWeek, diginomica, letsdatascience, the Harvard tagteam feed of the post), which is why the confidence is M. The task line added on 2026-10-04 comes from the same reports.
+retrieval_note: NOT RETRIEVED. metr.org is egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as were the secondary hosts tried). The figures in scope are consistent across five reports found (The Decoder, eWeek, diginomica, letsdatascience, the Harvard tagteam feed of the post), which is why the confidence is M. The task line added on 2026-10-04 comes from the same reports. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. All figures (16 developers, 246 tasks, 19 percent slower, 24 percent forecast, 20 percent believed) confirmed by five or more reports. Supplement: arXiv:2507.09089 and METR's 2026 note that its newer data is unreliable.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2224,18 +2213,18 @@ used_for.session-5: the 19% slower bar and the expected and believed speed-ups b
 ## src-morningstar-fired
 
 ```source
-title:          Why do investors fire their financial advisor?
-author:         Lamas, S., & Labotka, D.
+title:          Why do investors break up with their financial advisor?
+author:         Labotka, D., & Lamas, S.
 publisher:      Morningstar, behavioural research
-link:           [UNVERIFIED, needs source]
-published:      2023
+link:           https://www.morningstar.com/financial-advisors/why-do-investors-break-up-with-their-financial-advisor
+published:      2023-04-12
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. morningstar.com is egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across four reports found (Financial Advisor magazine, InsuranceNewsNet, Institutional Investor's RIA Intel, the IFA Magazine podcast with both authors); the reports give the sample as 184 investors in one and 185 in another, and the page says "about 185". Re-checked 2026-10-04: morningstar.com and the secondary hosts were still blocked; a fresh search returned the same six shares and 184 investors. The exact title and publication date were not read off the report, so both are recorded as the reports give them, which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. morningstar.com is egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across four reports found (Financial Advisor magazine, InsuranceNewsNet, Institutional Investor's RIA Intel, the IFA Magazine podcast with both authors); the reports give the sample as 184 investors in one and 185 in another, and the page says "about 185". Re-checked 2026-10-04: morningstar.com and the secondary hosts were still blocked; a fresh search returned the same six shares and 184 investors. The exact title and publication date were not read off the report, so both are recorded as the reports give them, which is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Canonical Morningstar article bylined Labotka, 12 April 2023; 184 of 3,003 across three 2021 to 2022 surveys; the 185 variant is unsupported and dropped.
 confidence:     M
 kind:           evidence
 moving_target:  false
-scope:          Three Morningstar surveys in 2021 and 2022, about 3,000 responses, of which 184 to 185 investors had fired an advisor. Reasons, as shares of responses: quality of advice and services 32%, quality of the relationship 21%, cost 17%, returns 11%, comfort handling finances alone 10%, communication 9%. The authors' reading: the top two reasons are the advice and the relationship, not performance or fees.
+scope:          Three Morningstar surveys in 2021 and 2022, 3,003 responses, of which 184 investors had fired an advisor. Reasons, as shares of responses: quality of advice and services 32%, quality of the relationship 21%, cost 17%, returns 11%, comfort handling finances alone 10%, communication 9%. The authors' reading: the top two reasons are the advice and the relationship, not performance or fees.
 used_for.session-5: the six reasons and their shares, which the learner ranks before the reveal (§04), and the first two in the discussion (§05)
 ```
 
@@ -2245,11 +2234,11 @@ used_for.session-5: the six reasons and their shares, which the learner ranks be
 title:          Putting a value on your value: Quantifying Vanguard Advisor's Alpha
 author:         Kinniry, F. M., Jaconetti, C. M., DiJoseph, M. A., Walker, D. J., & Quinn, M. C.
 publisher:      The Vanguard Group, research paper (2022 update)
-link:           [UNVERIFIED, needs source]
-published:      2022
+link:           https://corporate.vanguard.com/content/dam/corp/articles/pdf/putting_value_on_your_value_quantifying_vanguard_advisors_alpha.pdf
+published:      2022-07
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee. Re-checked 2026-10-04: vanguard.ca, Vanguard's own host for the infographic, was blocked; a fresh search returned about 3% and 150 basis points unchanged.
+retrieval_note: NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee. Re-checked 2026-10-04: vanguard.ca, Vanguard's own host for the infographic, was blocked; a fresh search returned about 3% and 150 basis points unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The about 3 percent framing is confirmed on Vanguard's own pages; the 150 bps behavioural-coaching figure is printed in the 2016 US and 2018 Canada editions, while one summary says the 2022 edition frames coaching as 0 to over 200 bps (GAP, see register).
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2264,10 +2253,10 @@ title:          CFP Board adds Psychology of Financial Planning to exam requirem
 author:         CFP Board
 publisher:      CFP Board, news release, March 2021
 link:           https://www.cfp.net/news/2021/03/cfp-board-adds-psychology-of-financial-planning-to-exam-requirements
-published:      2021-03
+published:      2021-03-30
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. cfp.net is egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as was institutionalinvestor.com). The facts in scope come from the search engine's summary of the release and from Institutional Investor's RIA Intel report, which agree, which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. cfp.net is egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as was institutionalinvestor.com). The facts in scope come from the search engine's summary of the release and from Institutional Investor's RIA Intel report, which agree, which is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Dated 30 March 2021; the 7 percent exam-weight figure is in the exam blueprint. Could be raised to H; the chip is in session-5, which this pass does not touch.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2285,7 +2274,7 @@ link:           https://www.accessnewswire.com/newsroom/en/business-and-professi
 published:      2026-06-23
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. accessnewswire.com and rightcapital.com are egress-blocked from this build environment (2026-10-02; unchanged on 2026-10-04). The facts in scope are consistent across four reports found (InvestmentNews, WealthManagement.com, Pulse 2.0, the Eagle-Tribune syndication of the release), which is why the confidence is M. A vendor's description of its own product; the page uses it as one example of a planning-software agent, not as an endorsement.
+retrieval_note: NOT RETRIEVED. accessnewswire.com and rightcapital.com are egress-blocked from this build environment (2026-10-02; unchanged on 2026-10-04). The facts in scope are consistent across four reports found (InvestmentNews, WealthManagement.com, Pulse 2.0, the Eagle-Tribune syndication of the release), which is why the confidence is M. A vendor's description of its own product; the page uses it as one example of a planning-software agent, not as an endorsement. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. ACCESS Newswire release confirmed with the features named (Double Check, Cash Flow Reviews, Plan Builder); the 70 percent Smart Import claim is the vendor's; the Premium and Platinum no-cost detail was not seen (GAP). Supplement: InvestmentNews, RightCapital claims industry first with AI agent for financial planning (investmentnews.com, article 267144).
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -2305,7 +2294,7 @@ link:           https://www.pewresearch.org/short-reads/2025/07/22/google-users-
 published:      2025-07-22
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. pewresearch.org is egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as was theregister.com). The figures in scope are consistent across five reports found (The Register, TheWrap, PPC Land, AI Weekly, Gigazine), which is why the confidence is M.
+retrieval_note: NOT RETRIEVED. pewresearch.org is egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as was theregister.com). The figures in scope are consistent across five reports found (The Register, TheWrap, PPC Land, AI Weekly, Gigazine), which is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Pew's own text quoted in results: 900 adults, March 2025, 68,879 searches, 8 against 15 percent, 1 percent, 26 against 16 percent. Could be raised to H; the chip is in session-5, which this pass does not touch.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2317,13 +2306,13 @@ used_for.session-5: the 8% against 15% click rates behind the AI-search tool car
 
 ```source
 title:          Ways advisors can optimize for AI search (AI SEO)
-author:         [UNVERIFIED, needs source]
+author:         Carnduff, B.
 publisher:      Kitces.com, Nerd's Eye View
 link:           https://www.kitces.com/blog/artificial-intelligence-ai-search-engine-optimization-seo-financial-advisor-marketing-content-strategy/
 published:      2025-11-17
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. kitces.com is egress-blocked from this build environment (2026-10-02, and again on 2026-10-04), both for the container's proxy and for the fetch tool. The syllabus lists the reading as "Ways Advisors Can Optimize for AI Search with a Marketing Strategy Refresh"; the title recorded here is the one the search engine returns for the URL. The one recommendation on the page is the one the search engine's summary of the article repeats; nothing else from the article is characterised.
+retrieval_note: NOT RETRIEVED. kitces.com is egress-blocked from this build environment (2026-10-02, and again on 2026-10-04), both for the container's proxy and for the fetch tool. The syllabus lists the reading as "Ways Advisors Can Optimize for AI Search with a Marketing Strategy Refresh"; the title recorded here is the one the search engine returns for the URL. The one recommendation on the page is the one the search engine's summary of the article repeats; nothing else from the article is characterised. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. A guest post on Nerd's Eye View; the who-what-where recommendation is confirmed verbatim; the 17 November 2025 date is not shown in results.
 confidence:     M
 kind:           assigned_reading
 moving_target:  false
@@ -2335,13 +2324,13 @@ used_for.session-5: the assigned reading, and its who-what-where recommendation 
 
 ```source
 title:          AI moves from novelty to backbone as advisors reshape their fintech stacks
-author:         InvestmentNews
+author:         Almazora, L.
 publisher:      InvestmentNews, reporting the 2026 T3 / Inside Information Software Survey
-link:           https://investmentnews.com/fintech/ai-moves-from-novelty-to-backbone-as-advisors-reshape-fintech-stacks/265643
-published:      2026-03
+link:           https://www.investmentnews.com/fintech/ai-moves-from-novelty-to-backbone-as-advisors-reshape-fintech-stacks/265643
+published:      2026-03-11
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. investmentnews.com is egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as was dwealth.news). The facts in scope are consistent across three reports found (InvestmentNews, a vendor's release about the same survey, the dwealth Advisor Tech Talk column of 17 March 2026), which is why the confidence is M. The survey's headline shares are held separately at H in src-t3-survey.
+retrieval_note: NOT RETRIEVED. investmentnews.com is egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04, as was dwealth.news). The facts in scope are consistent across three reports found (InvestmentNews, a vendor's release about the same survey, the dwealth Advisor Tech Talk column of 17 March 2026), which is why the confidence is M. The survey's headline shares are held separately at H in src-t3-survey. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The 42.86 percent and stack-supplement claims are confirmed; the fourteen-tools, fastest-curve line is in the T3 BusinessWire release.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2355,18 +2344,18 @@ used_for.session-5: the 14 note-taking tools tracked for the first time, and AI 
 title:          Models overview
 author:         Anthropic
 publisher:      Claude Platform Docs
-link:           https://platform.claude.com/docs/en/about-claude/models/overview
-published:      2026
-last_retrieved: 2026-10-12
+link:           https://platform.claude.com/docs/en/models/overview
+published:      not applicable
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: OPENED on 2026-10-04 (platform.claude.com is reachable from this build). The page carries no publication date of its own; it is updated in place with each model release, so the year is recorded and the retrieval date is the one to read. RE-OPENED on 2026-10-12 (the old address redirects to platform.claude.com/docs/en/models/overview), after FACTS claude-model-ids-and-retirements read the same page on 2026-10-11.
+retrieval_note: OPENED on 2026-10-04 (platform.claude.com is reachable from this build). The page carries no publication date of its own; it is updated in place with each model release, so the year is recorded and the retrieval date is the one to read. RE-OPENED on 2026-10-12 (the old address redirects to platform.claude.com/docs/en/models/overview), after FACTS claude-model-ids-and-retirements read the same page on 2026-10-11. Audit 2026-10-27 (fetched in full): verified with corrections. Link updated to the address the old one redirected to. Same page as src-models; not merged in this pass (see that record).
 content_changed: 2026-10-12. The four current models are now Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5 and Claude Haiku 5.5 (retirement not sooner than 7 October 2027); the 2026-10-04 pull recorded Claude Haiku 4.5 as the fourth. Haiku 4.5 now sits among the legacy models. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12: the session-5 §02 calendar rows for Haiku 4.5 and Haiku 5.5, and the lineup bullet.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor model lineup
 recheck_before: each teaching of Session 5
-scope:          The current lineup of four models (Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5) with each one's retirement commitment (not sooner than 1 September 2027, 22 September 2027, 28 September 2027 and 7 October 2027), and the legacy models still available (Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Haiku 4.5). The page recommends Opus 5.5 for most workloads. No price or benchmark from it is on the page.
+scope:          The current lineup of four models (Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5) with each one's retirement commitment (not sooner than 1 September 2027, 22 September 2027, 28 September 2027 and 7 October 2027), and the legacy models still available (Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Haiku 4.5). The page recommends Opus 5.5 for most workloads. The comparison table carries prices and a June 2026 knowledge cutoff; no benchmark is on the page.
 used_for.session-5: the four current models and the legacy ones on the §02 calendar, and the lineup sentence in §02's bullets and status readout
 last_retrieved.session-5: 2026-10-12
 figures.session-5: the four current models Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 and their not-sooner-than dates (1 September, 22 September, 28 September and 7 October 2027), with Haiku 4.5 among the legacy models (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12)
@@ -2375,14 +2364,14 @@ figures.session-5: the four current models Fable 5.1, Opus 5.5, Sonnet 5.5 and H
 ## src-claude-code-skills
 
 ```source
-title:          Skills
+title:          Extend Claude with skills
 author:         Anthropic
 publisher:      Claude Code documentation, code.claude.com
 link:           https://code.claude.com/docs/en/skills
 published:      2026
-last_retrieved: 2026-10-04
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). The documentation is updated in place; the retrieval date is the one to read.
+retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). The documentation is updated in place; the retrieval date is the one to read. Audit 2026-10-27 (fetched in full): verified with corrections. Page title is now Extend Claude with skills. Every frontmatter field is now optional and only description is recommended; the folder name supplies the skill name.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2398,11 +2387,11 @@ used_for.session-5: that a skill is one described file, that the description is 
 title:          Create a marketplace
 author:         Anthropic
 publisher:      Claude Code documentation, code.claude.com
-link:           https://code.claude.com/docs/en/plugin-marketplaces
+link:           https://code.claude.com/docs/en/plugins/create-marketplace
 published:      2026
-last_retrieved: 2026-10-04
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read.
+retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read. Audit 2026-10-27 (fetched in full): verified with corrections. The old /plugin-marketplaces address still serves the page; the canonical path is /docs/en/plugins/create-marketplace.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2420,9 +2409,9 @@ author:         Anthropic
 publisher:      Claude Code documentation, code.claude.com
 link:           https://code.claude.com/docs/en/plugins/org
 published:      2026
-last_retrieved: 2026-10-04
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read.
+retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read. Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2440,9 +2429,9 @@ author:         Anthropic
 publisher:      Claude Code documentation, code.claude.com
 link:           https://code.claude.com/docs/en/plugins/host-marketplace
 published:      2026
-last_retrieved: 2026-10-04
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read.
+retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read. Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2460,9 +2449,9 @@ author:         Anthropic
 publisher:      Claude Code documentation, code.claude.com
 link:           https://code.claude.com/docs/en/settings
 published:      2026
-last_retrieved: 2026-10-04
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read.
+retrieval_note: OPENED on 2026-10-04 (code.claude.com is reachable from this build). Updated in place; the retrieval date is the one to read. Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2479,10 +2468,10 @@ title:          Late portability elections under Rev. Proc. 2022-32 (IRB 2022-30
 author:         Internal Revenue Service
 publisher:      Internal Revenue Bulletin
 link:           https://www.irs.gov/pub/irs-drop/rp-22-32.pdf
-published:      2022
+published:      2022-07-08
 last_retrieved: 2026-10-11
 last_verified:
-retrieval_note: irs.gov is unreachable from the build container (FACTS portability-late-election, 2026-10-11). The terms come from irs.gov search snippets, and the Form 706 instructions (Rev. July 2026) still cite the revenue procedure as current. The relief is unavailable to an estate that must file under IRC 6018(a).
+retrieval_note: irs.gov is unreachable from the build container (FACTS portability-late-election, 2026-10-11). The terms come from irs.gov search snippets, and the Form 706 instructions (Rev. July 2026) still cite the revenue procedure as current. The relief is unavailable to an estate that must file under IRC 6018(a). Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Published in 2022-30 I.R.B. 101.
 content_changed:
 confidence:     M
 kind:           evidence
@@ -2498,14 +2487,14 @@ figures.session-2: the fifth anniversary of death as the limit, and a death in 2
 ## src-regsp-guide
 
 ```source
-title:          Regulation S-P: small entity compliance guide
+title:          Enhancements to Regulation S-P: A Small Entity Compliance Guide
 author:         U.S. Securities and Exchange Commission
 publisher:      SEC
 link:           https://www.sec.gov/files/rules/final/2024/regulation-s-p-small-entity-compliance-guide.pdf
-published:      [UNVERIFIED, needs source]
+published:      2024
 last_retrieved: 2026-10-11
 last_verified:
-retrieval_note: sec.gov is unreachable from the build container (FACTS reg-sp-compliance, 2026-10-11). Every figure comes from sec.gov snippets of the compliance guide, fact sheet 34-100155 and the press release, corroborated by law-firm summaries. The two negatives, no SEC notification and no 24-hour clock to the chief compliance officer, rest on their absence from the primary text plus secondary statements. Both compliance dates have passed, so the rule is in force for every covered firm.
+retrieval_note: sec.gov is unreachable from the build container (FACTS reg-sp-compliance, 2026-10-11). Every figure comes from sec.gov snippets of the compliance guide, fact sheet 34-100155 and the press release, corroborated by law-firm summaries. The two negatives, no SEC notification and no 24-hour clock to the chief compliance officer, rest on their absence from the primary text plus secondary statements. Both compliance dates have passed, so the rule is in force for every covered firm. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Undated staff guide under /rules/final/2024/; the 72-hour clock should be cited to the adopting release (src-regsp).
 content_changed:
 confidence:     M
 kind:           evidence
@@ -2532,7 +2521,7 @@ link:           https://www.congress.gov/bill/117th-congress/house-bill/2617
 published:      2022-12-29
 last_retrieved: 2026-10-12
 last_verified:
-retrieval_note: Citation and effect verified 2026-10-12 from three secondary summaries (Milliman, Foley, Kilpatrick Townsend) found by web search; congress.gov is not reachable from the build container, so the statutory text itself was not fetched. Applicable age 73 for those born 1951 to 1959 and 75 for 1960 and later; the 1959 cohort was clarified by the May 2023 chairs' letter and the July 2024 proposed regulations.
+retrieval_note: Citation and effect verified 2026-10-12 from three secondary summaries (Milliman, Foley, Kilpatrick Townsend) found by web search; congress.gov is not reachable from the build container, so the statutory text itself was not fetched. Applicable age 73 for those born 1951 to 1959 and 75 for 1960 and later; the 1959 cohort was clarified by the May 2023 chairs' letter and the July 2024 proposed regulations. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections.
 content_changed:
 confidence:     M
 kind:           authority
@@ -2556,7 +2545,7 @@ link:           https://www.govinfo.gov/content/pkg/FR-2024-07-19/html/2024-1454
 published:      2024-07-19
 last_retrieved: 2026-10-12
 last_verified:
-retrieval_note: Verified 2026-10-12 from the GovInfo Federal Register listing, the IRS newsroom release (IR-2024-190) and the Journal of Accountancy report found by web search: issued 18 July 2024, published 19 July 2024, effective 17 September 2024, applying to calendar years beginning on or after 1 January 2025; companion proposed regulations REG-103529-23 issued the same day. The GovInfo page itself was not fetched from the build container.
+retrieval_note: Verified 2026-10-12 from the GovInfo Federal Register listing, the IRS newsroom release (IR-2024-190) and the Journal of Accountancy report found by web search: issued 18 July 2024, published 19 July 2024, effective 17 September 2024, applying to calendar years beginning on or after 1 January 2025; companion proposed regulations REG-103529-23 issued the same day. The GovInfo page itself was not fetched from the build container. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 content_changed:
 confidence:     H
 kind:           authority
@@ -2580,7 +2569,7 @@ link:           https://www.irs.gov/publications/p590b
 published:      annual
 last_retrieved: 2026-10-12
 last_verified:
-retrieval_note: Title verified 2026-10-12 from the IRS Form 8606 instructions (which cite it) found by web search; irs.gov is not reachable from the build container, so the current edition was not fetched.
+retrieval_note: Title verified 2026-10-12 from the IRS Form 8606 instructions (which cite it) found by web search; irs.gov is not reachable from the build container, so the current edition was not fetched. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Current edition is the 2025 publication.
 content_changed:
 confidence:     M
 kind:           authority
@@ -2604,7 +2593,7 @@ link:           https://www.irs.gov/forms-pubs/about-form-8606
 published:      annual
 last_retrieved: 2026-10-12
 last_verified:
-retrieval_note: Scope verified 2026-10-12 from the 2022 to 2025 instruction texts found by web search (nondeductible contributions, distributions with basis, conversions to Roth IRAs, Roth distributions); irs.gov is not reachable from the build container, so the current form was not fetched.
+retrieval_note: Scope verified 2026-10-12 from the 2022 to 2025 instruction texts found by web search (nondeductible contributions, distributions with basis, conversions to Roth IRAs, Roth distributions); irs.gov is not reachable from the build container, so the current form was not fetched. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Current instructions are the 2025 revision.
 content_changed:
 confidence:     M
 kind:           authority
@@ -2628,7 +2617,7 @@ link:           https://artificialanalysis.ai/leaderboards/models
 published:      not applicable
 last_retrieved: 2026-10-11
 last_verified:
-retrieval_note: artificialanalysis.ai is unreachable from the build container (FACTS leaderboard-snapshot-aa, 2026-10-11); the snapshot is read from primary-domain search snippets and carried at M. Effort tiers matter: Opus 5.5 at High scores 54 against 58 at Max, and GPT-6 Astra at High scores 51. The scores are not comparable with the index figures in the July 2026 scatter, which src-aa carries.
+retrieval_note: artificialanalysis.ai is unreachable from the build container (FACTS leaderboard-snapshot-aa, 2026-10-11); the snapshot is read from primary-domain search snippets and carried at M. Effort tiers matter: Opus 5.5 at High scores 54 against 58 at Max, and GPT-6 Astra at High scores 51. The scores are not comparable with the index figures in the July 2026 scatter, which src-aa carries. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the dated launch articles (artificialanalysis.ai/articles/claude-opus-5-5 and /claude-sonnet-5-5); re-read the board the week before Session 1.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -2652,7 +2641,7 @@ link:           https://artificialanalysis.ai/evaluations/artificial-analysis-in
 published:      not applicable
 last_retrieved: 2026-10-11
 last_verified:
-retrieval_note: Host unreachable from the build container (FACTS aa-index-definition, 2026-10-11); the description is read from primary-domain snippets. The evaluations-page FAQ still says 25% per category; the v4.3 announcement and the methodology page say 30/20/20/30, which is what the lesson states.
+retrieval_note: Host unreachable from the build container (FACTS aa-index-definition, 2026-10-11); the description is read from primary-domain snippets. The evaluations-page FAQ still says 25% per category; the v4.3 announcement and the methodology page say 30/20/20/30, which is what the lesson states. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the methodology page (artificialanalysis.ai/methodology/intelligence-benchmarking) and the v4.3 announcement article.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -2676,7 +2665,7 @@ link:           https://livebench.ai/
 published:      not applicable
 last_retrieved: 2026-10-11
 last_verified:
-retrieval_note: The site is unreachable from the build container (FACTS livebench-last-release, 2026-10-11). The release date is read from the homepage snippet and GitHub issue titles that reference the 2026-06-25 release; the GitHub README is stale and still says 2025-04-25. The description (23 objective tasks in 7 categories, refreshed about every six months) comes from the README, fetched in full.
+retrieval_note: The site is unreachable from the build container (FACTS livebench-last-release, 2026-10-11). The release date is read from the homepage snippet and GitHub issue titles that reference the 2026-06-25 release; the GitHub README is stale and still says 2025-04-25. The description (23 objective tasks in 7 categories, refreshed about every six months) comes from the README, fetched in full. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): unreachable. livebench.ai was returned by search on 2026-10-27 as LiveBench 2.0 with the v1 board at livebench.ai/v1/ (latest release 2026-06-25); the task count and release name in scope are GAP until read from the site.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -2698,7 +2687,7 @@ link:           https://arena.ai/leaderboard/chat/text
 published:      not applicable
 last_retrieved: 2026-10-11
 last_verified:
-retrieval_note: The live board could not be read (arena.ai unreachable from the build container, FACTS leaderboard-snapshot-arena, 2026-10-11). The pair of scores comes from one secondary roundup dated 2026-10-08, with Gemini 4 Argon's 1,525 corroborated by two others. Scores move weekly, so this is a placeholder until the live board is re-read the week before Session 1.
+retrieval_note: The live board could not be read (arena.ai unreachable from the build container, FACTS leaderboard-snapshot-arena, 2026-10-11). The pair of scores comes from one secondary roundup dated 2026-10-08, with Gemini 4 Argon's 1,525 corroborated by two others. Scores move weekly, so this is a placeholder until the live board is re-read the week before Session 1. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Gemini 4 Argon at 1,525 (preliminary) in first place is corroborated; Claude Opus 5.5 at 1,507 in second is not (snapshots show 1504 fourth on 2 October, 1508 third on 13 October); replace with the live board figure the week before Session 1.
 confidence:     L
 kind:           evidence
 moving_target:  true
@@ -2716,11 +2705,11 @@ figures.session-1: two scores and the snapshot date (FACTS leaderboard-snapshot-
 title:          LMArena is now Arena
 author:         Arena
 publisher:      arena.ai
-link:           https://arena.ai/blog/lmarena-is-now-arena
+link:           https://arena.ai/blog/lmarena-is-now-arena/
 published:      2026-01-28
 last_retrieved: 2026-10-11
 last_verified:
-retrieval_note: arena.ai is unreachable from the build container (FACTS arena-rename, 2026-10-11); the date comes from the blog post's search metadata. A historical "formerly LMArena" is fine; a present-tense LMArena is not.
+retrieval_note: arena.ai is unreachable from the build container (FACTS arena-rename, 2026-10-11); the date comes from the blog post's search metadata. A historical "formerly LMArena" is fine; a present-tense LMArena is not. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2732,14 +2721,14 @@ used_for.session-1: the name Arena, with one parenthetical "formerly LMArena" at
 ## src-claude-watermark
 
 ```source
-title:          How Claude's text watermark works
+title:          How Claude's text watermarking works
 author:         Anthropic
 publisher:      Anthropic, anthropic.com/news
 link:           https://www.anthropic.com/news/claude-text-watermark
 published:      2026-08-14
-last_retrieved: 2026-10-11
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Fetched in full 2026-10-11 (FACTS claude-text-watermark) and read again in full on 2026-10-12 with the same content; the post carries an update note of 1 September 2026 on the detection API. The announcement says future Claude models; the help article, src-claude-marks, keeps the per-model list, so the lesson does not say every Claude text output is marked today.
+retrieval_note: Fetched in full 2026-10-11 (FACTS claude-text-watermark) and read again in full on 2026-10-12 with the same content; the post carries an update note of 1 September 2026 on the detection API. The announcement says future Claude models; the help article, src-claude-marks, keeps the per-model list, so the lesson does not say every Claude text output is marked today. Audit 2026-10-27 (fetched in full): verified with corrections. Title is "watermarking", with an update note of 1 September 2026; every claim in scope is verbatim; the post links the Nature SynthID paper and the EU signatory page.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2761,7 +2750,7 @@ link:           https://privacy.claude.com/en/articles/10023580-is-my-data-used-
 published:      not applicable
 last_retrieved: 2026-10-11
 last_verified:
-retrieval_note: privacy.claude.com is unreachable from the build container (FACTS claude-consumer-retention, 2026-10-11). The values come from primary-domain search snippets plus the fully fetched anthropic.com post "Updates to Consumer Terms and Privacy Policy", read again in full on 2026-10-12: up to five years if you allow model training, the existing 30-day period if you do not. The page does not say whether the toggle starts on or off, so the lesson takes the training default from the Consumer Terms, src-anthropic-terms, and states none from this page.
+retrieval_note: privacy.claude.com is unreachable from the build container (FACTS claude-consumer-retention, 2026-10-11). The values come from primary-domain search snippets plus the fully fetched anthropic.com post "Updates to Consumer Terms and Privacy Policy", read again in full on 2026-10-12: up to five years if you allow model training, the existing 30-day period if you do not. The page does not say whether the toggle starts on or off, so the lesson takes the training default from the Consumer Terms, src-anthropic-terms, and states none from this page. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): unreachable. privacy.claude.com is unreachable from this build; the 5-year, 30-day, 2-year, 7-year and 5-year figures and the plan scope are confirmed by domain-restricted search snippets. Supplement: How long do you store my data? (privacy.claude.com/en/articles/10023548) and the Privacy Policy (anthropic.com/legal/privacy), which states the default-on wording "unless you opt out".
 confidence:     M
 kind:           assigned_reading
 moving_target:  true
@@ -2784,14 +2773,14 @@ figures.session-0.1: up to five years with the setting on, within 30 days with i
 ## src-openai-provenance
 
 ```source
-title:          Provenance signals in OpenAI-generated content
+title:          Provenance signals (Content Credentials & SynthID) in OpenAI-generated content
 author:         OpenAI
 publisher:      OpenAI Help Center, article 8912793
-link:           https://help.openai.com/en/articles/8912793-provenance-signals-in-openai-generated-content
+link:           https://help.openai.com/en/articles/8912793-provenance-signals-content-credentials-synthid-in-openai-generated-content
 published:      not applicable
 last_retrieved: 2026-10-11
 last_verified:
-retrieval_note: help.openai.com is unreachable from the build container (FACTS openai-provenance, 2026-10-11). The values come from primary-domain search snippets. The help article was retitled from "C2PA in ChatGPT images", and the date the EU text watermark began (about 5 October 2026) is inferred from search listings and not read on the page, so the lesson states no date for it.
+retrieval_note: help.openai.com is unreachable from the build container (FACTS openai-provenance, 2026-10-11). The values come from primary-domain search snippets. The help article was retitled from "C2PA in ChatGPT images", and the date the EU text watermark began (about 5 October 2026) is inferred from search listings and not read on the page, so the lesson states no date for it. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The EU-only text watermark in scope was supported by no snippet; read the EU post before teaching it.
 confidence:     M
 kind:           evidence
 moving_target:  true
@@ -2806,14 +2795,14 @@ figures.session-4: the image marks and the EU-only text watermark (FACTS openai-
 ## src-iss-ai-policy
 
 ```source
-title:          Advisers Using AI by the Numbers
-author:         PLANADVISER
-publisher:      PLANADVISER, reporting the ISS Market Intelligence Advisor Pulse survey
-link:           https://www.planadviser.com/exclusives/advisers-using-ai-by-the-numbers/
-published:      [UNVERIFIED, needs source]
+title:          AI Adoption Set to Rise Amongst Advisors
+author:         ISS Market Intelligence
+publisher:      ISS Market Intelligence, Advisor Pulse; summarised by PLANADVISER, Advisers Using AI, by the Numbers
+link:           https://www.issmarketintelligence.com/resources/ai-adoption-set-to-rise-amongst-advisors/
+published:      2025-07
 last_retrieved: 2026-10-11
 last_verified:
-retrieval_note: planadviser.com is unreachable from the build container (FACTS adoption-iss-policy, 2026-10-11). The figures come from primary-domain search snippets; the ISS release itself is at insights.issgovernance.com, dated 2025-07-22. The survey is a self-report by advisers, fielded in June 2025.
+retrieval_note: planadviser.com is unreachable from the build container (FACTS adoption-iss-policy, 2026-10-11). The figures come from primary-domain search snippets; the ISS release itself is at insights.issgovernance.com, dated 2025-07-22. The survey is a self-report by advisers, fielded in June 2025. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): record repointed from the PLANADVISER summary to the survey producer's own write-up, which states n = 466, the June 2025 fielding and the 78 percent against 35 percent policy figures verbatim; the ISS STOXX release of 22 July 2025 (insights.issgovernance.com) carries the 48 percent and 87 percent headline figures. PLANADVISER's piece (planadviser.com/exclusives/advisers-using-ai-by-the-numbers/) is kept as the secondary.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2835,7 +2824,7 @@ link:           https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=00350
 published:      not applicable
 last_retrieved: 2026-10-12
 last_verified:
-retrieval_note: Verified 2026-10-12 by web search from a tax-preparation guide (TaxSlayer, Form IL-1040 line 5) and Illinois Department of Revenue general information letters as summarised by a rulings aggregator (IT 10-0025-GIL, IT 15-0008-GIL on a rollover to a Roth IRA, IT 23-0005-GIL): the subtraction reaches amounts included in federal income under IRC 402(a), 402(c), 403(a), 403(b), 406(a), 407(a) and 408, so a conversion from a qualified plan or IRA is subtractable to the extent included in federal AGI; general information letters are not binding on the Department. ilga.gov is not reachable from the build container, so the statutory text itself was not fetched.
+retrieval_note: Verified 2026-10-12 by web search from a tax-preparation guide (TaxSlayer, Form IL-1040 line 5) and Illinois Department of Revenue general information letters as summarised by a rulings aggregator (IT 10-0025-GIL, IT 15-0008-GIL on a rollover to a Roth IRA, IT 23-0005-GIL): the subtraction reaches amounts included in federal income under IRC 402(a), 402(c), 403(a), 403(b), 406(a), 407(a) and 408, so a conversion from a qualified plan or IRA is subtractable to the extent included in federal AGI; general information letters are not binding on the Department. ilga.gov is not reachable from the build container, so the statutory text itself was not fetched. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Newest Department guidance found: IT 26-0004-GIL (2026-04-23).
 content_changed:
 confidence:     M
 kind:           authority
@@ -2857,9 +2846,9 @@ author:         Anthropic
 publisher:      Claude Help Center, article 12512180
 link:           https://support.claude.com/en/articles/12512180-use-skills-in-claude
 published:      not applicable
-last_retrieved: 2026-10-13
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Fetched in full on 2026-10-13 (support.claude.com is reachable from this build; the page reads "Updated over 3 weeks ago" and carries no publication date). Read for the custom-skill upload steps, the plans that offer skills and the code execution setting. FACTS claude-skills-format carries the same facts, read in full 2026-10-11.
+retrieval_note: Fetched in full on 2026-10-13 (support.claude.com is reachable from this build; the page reads "Updated over 3 weeks ago" and carries no publication date). Read for the custom-skill upload steps, the plans that offer skills and the code execution setting. FACTS claude-skills-format carries the same facts, read in full 2026-10-11. Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2879,9 +2868,9 @@ author:         Anthropic
 publisher:      Claude Help Center, article 10684626
 link:           https://support.claude.com/en/articles/10684626-enable-and-use-web-search
 published:      not applicable
-last_retrieved: 2026-10-13
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Fetched in full on 2026-10-13 (the page reads "Updated this week" and carries no publication date). The page lists the models that can search the web, says the new Claude experience has no web search toggle because Claude searches the web when it helps, and gives the + menu route for accounts that have the toggle.
+retrieval_note: Fetched in full on 2026-10-13 (the page reads "Updated this week" and carries no publication date). The page lists the models that can search the web, says the new Claude experience has no web search toggle because Claude searches the web when it helps, and gives the + menu route for accounts that have the toggle. Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2900,10 +2889,10 @@ title:          Use research on Claude
 author:         Anthropic
 publisher:      Claude Help Center, article 11088861
 link:           https://support.claude.com/en/articles/11088861-use-research-on-claude
-published:      2026-06-02
-last_retrieved: 2026-10-13
+published:      not applicable
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Fetched in full on 2026-10-13. The page carries the date 2 June 2026 where other articles say "Updated" with a relative time.
+retrieval_note: Fetched in full on 2026-10-13. The page carries the date 2 June 2026 where other articles say "Updated" with a relative time. Audit 2026-10-27 (fetched in full): verified with corrections. The page no longer shows a date; the 2 June 2026 date belongs to article 11095361 (src-tools3).
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2923,9 +2912,9 @@ author:         Anthropic
 publisher:      Claude Help Center, article 12260368
 link:           https://support.claude.com/en/articles/12260368-use-incognito-chats
 published:      not applicable
-last_retrieved: 2026-10-13
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Fetched in full on 2026-10-13 (the page reads "Updated over a week ago" and carries no publication date).
+retrieval_note: Fetched in full on 2026-10-13 (the page reads "Updated over a week ago" and carries no publication date). Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2945,9 +2934,9 @@ author:         Anthropic
 publisher:      Claude Help Center, article 9519177
 link:           https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects
 published:      not applicable
-last_retrieved: 2026-10-13
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Fetched in full on 2026-10-13 (the page reads "Updated over a week ago" and carries no publication date).
+retrieval_note: Fetched in full on 2026-10-13 (the page reads "Updated over a week ago" and carries no publication date). Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2967,9 +2956,9 @@ author:         Anthropic
 publisher:      Claude Help Center, article 11176164
 link:           https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities
 published:      not applicable
-last_retrieved: 2026-10-13
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Fetched in full on 2026-10-13 (the page reads "Updated over a week ago" and carries no publication date).
+retrieval_note: Fetched in full on 2026-10-13 (the page reads "Updated over a week ago" and carries no publication date). Audit 2026-10-27 (fetched in full): verified.
 confidence:     H
 kind:           evidence
 moving_target:  true
@@ -2991,7 +2980,7 @@ link:           https://www.youtube.com/watch?v=LPZh9BOjkQs
 published:      2024-11-20
 last_retrieved: 2026-10-13
 last_verified:
-retrieval_note: Title, date (companion post 2024-11-20, made for the Computer History Museum exhibit) and length (about 7:58) verified 2026-10-13 from the 3Blue1Brown newsletter and aggregators found by web search; the YouTube id itself was not resolved from this container, so Jared confirms the link on review.
+retrieval_note: Title, date (companion post 2024-11-20, made for the Computer History Museum exhibit) and length (about 7:58) verified 2026-10-13 from the 3Blue1Brown newsletter and aggregators found by web search; the YouTube id itself was not resolved from this container, so Jared confirms the link on review. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Video id LPZh9BOjkQs confirmed via transcript and mirror pages; 20 November 2024, about 7:58; the Computer History Museum exhibit confirmed.
 content_changed:
 confidence:     M
 kind:           assigned_reading
@@ -3012,7 +3001,7 @@ link:           https://www.irs.gov/newsroom/understanding-irs-guidance-a-brief-
 published:      not stated
 last_retrieved: 2026-10-13
 last_verified:
-retrieval_note: Existence and content (revenue rulings, revenue procedures, notices, announcements, and their place in the Internal Revenue Bulletin) verified 2026-10-13 from the IRS newsroom listing and two law-library guides found by web search; irs.gov is not reachable from the build container.
+retrieval_note: Existence and content (revenue rulings, revenue procedures, notices, announcements, and their place in the Internal Revenue Bulletin) verified 2026-10-13 from the IRS newsroom listing and two law-library guides found by web search; irs.gov is not reachable from the build container. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
 content_changed:
 confidence:     M
 kind:           assigned_reading
@@ -3026,14 +3015,14 @@ used_for.session-1: the Session 2 reading card (the assigned reading on the read
 ## src-anthropic-prompting-101
 
 ```source
-title:          Prompting 101 (Code w/ Claude) (video, about 25 minutes)
-author:         Anthropic
+title:          Prompting 101, Code w/ Claude (video, about 25 minutes)
+author:         Anthropic (Moran, H., & Ryan, C.)
 publisher:      YouTube
 link:           https://www.youtube.com/watch?v=ysPbXH0LpIE
 published:      2025-07-31
 last_retrieved: 2026-10-13
 last_verified:
-retrieval_note: Listed in the runbook's Appendix R (tentative); a web search on 2026-10-13 returned nothing that confirms the title, date or id, so the record stands at L until Jared confirms the link on review.
+retrieval_note: Listed in the runbook's Appendix R (tentative); a web search on 2026-10-13 returned nothing that confirms the title, date or id, so the record stands at L until Jared confirms the link on review. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. YouTube search returns the exact id ysPbXH0LpIE titled Prompting 101; presented 22 May 2025 at Code w/ Claude, about 24:49; the 2025-07-31 upload date is not confirmed from YouTube. Left at L so the reading card (docs/next-term/readings.json carries the chip) and the footer agree; a raise to M once that file is revised.
 content_changed:
 confidence:     L
 kind:           assigned_reading
@@ -3051,10 +3040,10 @@ title:          Retrieval augmented generation (RAG) for projects; What are proj
 author:         Claude Help Center
 publisher:      support.claude.com
 link:           https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects
-published:      not stated
-last_retrieved: 2026-10-13
+published:      not applicable
+last_retrieved: 2026-10-27
 last_verified:
-retrieval_note: Fetched in full 2026-10-13: "RAG for projects is available on paid plans (Pro, Max, Team, and Enterprise)"; "RAG automatically activates when your project approaches or exceeds the context window limits". The companion article "What are projects?" (support.claude.com/en/articles/9517075) is the second half of the reading.
+retrieval_note: Fetched in full 2026-10-13: "RAG for projects is available on paid plans (Pro, Max, Team, and Enterprise)"; "RAG automatically activates when your project approaches or exceeds the context window limits". The companion article "What are projects?" (support.claude.com/en/articles/9517075) is the second half of the reading. Audit 2026-10-27 (fetched in full): verified with corrections. RAG article shows Updated September 10, 2026; the companion What are projects? is support.claude.com/en/articles/9517075.
 content_changed:
 confidence:     H
 kind:           assigned_reading
@@ -3075,7 +3064,7 @@ link:           https://www.youtube.com/watch?v=zjkBMFhNj_g
 published:      2023-11-22
 last_retrieved: 2026-10-13
 last_verified:
-retrieval_note: Title, date (posted 2023-11-23 per the summaries; the talk is dated 2023-11-22) and the security segment (jailbreaks, prompt injection, data poisoning) verified 2026-10-13 from three independent write-ups found by web search; the YouTube id was not resolved from this container.
+retrieval_note: Title, date (posted 2023-11-23 per the summaries; the talk is dated 2023-11-22) and the security segment (jailbreaks, prompt injection, data poisoning) verified 2026-10-13 from three independent write-ups found by web search; the YouTube id was not resolved from this container. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Video id zjkBMFhNj_g confirmed; chapter list 45:43 Security intro, 46:14 Jailbreaks, 51:30 Prompt injection, 56:23 Data poisoning, 58:37 Conclusions matches the segment; an aggregator shows the upload as 23 November 2023.
 content_changed:
 confidence:     M
 kind:           assigned_reading

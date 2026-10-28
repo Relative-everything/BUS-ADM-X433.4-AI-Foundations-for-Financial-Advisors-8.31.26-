@@ -1,0 +1,852 @@
+[
+  {
+    "id": "src-finra2409",
+    "status": "VERIFIED",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. finra.org-restricted search returned https://www.finra.org/rules-guidance/notices/24-09 titled 'Regulatory Notice 24-09' and the PDF https://www.finra.org/sites/default/files/2024-06/regulatory-notice-24-09.pdf. Date 2024-06-27 confirmed by Mayer Brown, Debevoise and Free Writings summaries (July 2024). FINRA snippets: 'FINRA's rules, which are intended to be technology neutral, and the securities laws more generally, continue to apply when member firms use Gen AI tools'; the notice 'creates no new legal requirements and no new interpretations of existing ones'; cites Rules 2210 and 3110. The 2026 Annual Regulatory Oversight Report (finra.org) lists the notice as a resource, and the FINRA AI key-topics hub still links it, which is evidence it is still published with no rescission.",
+    "corrections": {
+      "last_retrieved": "2026-10-27 (finra.org search result; page not fetched, host blocked)"
+    },
+    "claim_check": "Supported: technology-neutral rules, existing rules (3110 supervision, 2210 communications) reach generative AI, no new obligations, still published and cited by FINRA's December 2025 report and its AI hub.",
+    "alt1": {
+      "title": "GenAI: Continuing and Emerging Trends (2026 FINRA Annual Regulatory Oversight Report)",
+      "author": "FINRA",
+      "publisher": "FINRA",
+      "date": "2025-12-09",
+      "url": "https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai",
+      "why": "More current restatement of the same technology-neutral position, with FINRA's expectations on testing and monitoring; complements rather than replaces the notice."
+    },
+    "alt2": {
+      "title": "Artificial Intelligence (AI) key topics hub",
+      "author": "FINRA",
+      "publisher": "FINRA",
+      "date": "ongoing",
+      "url": "https://www.finra.org/rules-guidance/key-topics/artificial-intelligence",
+      "why": "Durable index page that shows the notice still listed; good for the 'no rescission' fact but not a substitute for the notice itself."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary source exists at the stated URL with the stated date and supports every claim in scope.",
+    "tag": "H"
+  },
+  {
+    "id": "src-regsp",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. Search restricted to federalregister.gov/sec.gov/govinfo.gov returned the adopting release: Federal Register 'Regulation S-P: Privacy of Consumer Financial Information and Safeguarding Customer Information', 89 FR 47688, published 2024-06-03, FR Doc. 2024-11116, Release Nos. 34-100155; IA-6604; IC-35193; File S7-05-23; adopted 2024-05-16; effective 2024-08-02 (https://www.federalregister.gov/documents/2024/06/03/2024-11116/regulation-s-p-privacy-of-consumer-financial-information-and-safeguarding-customer-information). Conformed SEC PDF https://www.sec.gov/files/rules/final/2024/34-100155.pdf; rulemaking page https://www.sec.gov/rules-regulations/2024/06/s7-05-23; correction 89 FR 53487 (2024-06-27). Compliance dates 2025-12-03 (larger) and 2026-06-03 (smaller) stated in the SEC small entity guide snippet, Goodwin (Nov 2025), Sidley (Apr 2026), DWT and Holland & Knight (May 2026). Industry asked for a 6-month extension on 2025-11-19 (SIFMA/IAA); no grant found; May 2026 alerts still give June 3, 2026.",
+    "corrections": {
+      "link": "https://www.federalregister.gov/documents/2024/06/03/2024-11116/regulation-s-p-privacy-of-consumer-financial-information-and-safeguarding-customer-information",
+      "published": "2024-05-16 (adopted); 2024-06-03 (89 FR 47688)",
+      "publisher": "SEC, Release Nos. 34-100155; IA-6604; IC-35193 (File No. S7-05-23)",
+      "last_retrieved": "2026-10-27 (search result; page not fetched)"
+    },
+    "claim_check": "Compliance dates 3 Dec 2025 / 3 Jun 2026 confirmed by the SEC guide snippet plus four law-firm sources and no extension was granted, so both have passed. 30-day customer notice confirmed (FR snippet: 'as soon as practicable and no later than 30 days'). Written incident response program and service-provider oversight confirmed in the SEC guide snippet. NOT confirmed from snippets this session: the 72-hour service-provider notice figure, the 17 CFR 248.3 NPI definition language, and the recordkeeping element; these are in the adopting release but would need the FR text read (GAP on those three).",
+    "alt1": {
+      "title": "Regulation S-P: Privacy of Consumer Financial Information and Safeguarding Customer Information (final rule, 89 FR 47688)",
+      "author": "SEC",
+      "publisher": "Federal Register",
+      "date": "2024-06-03",
+      "url": "https://www.federalregister.gov/documents/2024/06/03/2024-11116/regulation-s-p-privacy-of-consumer-financial-information-and-safeguarding-customer-information",
+      "why": "The primary, durable citation; it is what the record should link."
+    },
+    "alt2": {
+      "title": "Fact Sheet: Final Rules, Enhancements to Regulation S-P (34-100155)",
+      "author": "SEC",
+      "publisher": "SEC",
+      "date": "2024-05",
+      "url": "https://www.sec.gov/files/34-100155-fact-sheet.pdf",
+      "why": "Two-page summary of the four obligations and the dates; easier for students, less authoritative than the release."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Record has no link; fill with the Federal Register citation and release numbers; claims hold.",
+    "tag": "H"
+  },
+  {
+    "id": "src-secpri",
+    "status": "VERIFIED",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. sec.gov-restricted search returned https://www.sec.gov/files/2026-exam-priorities.pdf titled 'Examination Priorities Fiscal Year 2026 Division of Examinations', the press release https://www.sec.gov/newsroom/press-releases/2025-132-sec-division-examinations-announces-2026-priorities and the landing page https://www.sec.gov/about/reports-publications/2026-examination-priorities. Release date 2025-11-17 confirmed by McGuireWoods, Troutman, Sidley, Seward & Kissel, Mayer Brown. sec.gov snippet: 'the Division will also examine for compliance with new rules, such as the 2024 amendments to Regulation S-P'. Polymorphic malware line confirmed by Akin Gump, Dorsey, Goodwin, Shulman Rogers summaries (controls to identify and mitigate AI-related threats 'including vulnerabilities to polymorphic malware attacks and AI-enabled social engineering'). IMPORTANT: sec.gov search also returned the FY2027 priorities, released 2026-10-23: https://www.sec.gov/files/2027-exam-priorities.pdf and press release 2026-109 https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities.",
+    "corrections": {
+      "last_retrieved": "2026-10-27 (search result; PDF not fetched)",
+      "title": "Examination Priorities, Fiscal Year 2026 (section number VII not confirmed from snippets)"
+    },
+    "claim_check": "Existence, date, AI focus, Reg S-P focus and the polymorphic-malware/training-and-security-controls line are all supported. NOT confirmed: that the section is numbered VII, and the exact 'no legal force or effect' disclaimer in the FY2026 edition (the search found that wording only in the FY2020 and FY2021 editions); the FY2026 PDF must be read to quote it (GAP). Supersession: the FY2027 priorities (23 Oct 2026) are now current; the session pages should say which year they cite.",
+    "alt1": {
+      "title": "Examination Priorities, Fiscal Year 2027",
+      "author": "SEC Division of Examinations",
+      "publisher": "SEC",
+      "date": "2026-10-23",
+      "url": "https://www.sec.gov/files/2027-exam-priorities.pdf",
+      "why": "Supersedes FY2026 for a Fall 2026 class; must be read to see whether the AI, Reg S-P and polymorphic-malware lines carry over."
+    },
+    "alt2": {
+      "title": "SEC Division of Examinations Announces 2026 Priorities (press release 2025-132)",
+      "author": "SEC",
+      "publisher": "SEC",
+      "date": "2025-11-17",
+      "url": "https://www.sec.gov/newsroom/press-releases/2025-132-sec-division-examinations-announces-2026-priorities",
+      "why": "Durable HTML with the release date; thinner than the PDF."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "Keep the FY2026 record for its dated claims but add the FY2027 priorities (released 2026-10-23) and verify the quoted disclaimer against the PDF.",
+    "tag": "M"
+  },
+  {
+    "id": "src-sec-ai",
+    "status": "VERIFIED",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. sec.gov-restricted search returned https://www.sec.gov/newsroom/press-releases/2024-36 (2024-03-18) and the Delphia order https://www.sec.gov/files/litigation/admin/2024/ia-6573.pdf; sec.gov snippet: the firms 'agreed to settle the SEC's charges and pay $400,000 in total civil penalties'. Morrison Foerster, Ropes & Gray, FS Tech and Verdict all give Delphia $225,000 and Global Predictions $175,000.",
+    "corrections": {
+      "confidence": "H (penalty figures are consistent across the SEC release and four secondary sources; drop the 'two values across sources' caveat)",
+      "last_retrieved": "2026-10-27 (search result)"
+    },
+    "claim_check": "Supported: two AI-washing settlements, 18 March 2024, $225,000 and $175,000 ($400,000 total), charged under the Marketing Rule and compliance rule.",
+    "alt1": {
+      "title": "In the Matter of Delphia (USA) Inc., Advisers Act Release IA-6573",
+      "author": "SEC",
+      "publisher": "SEC",
+      "date": "2024-03-18",
+      "url": "https://www.sec.gov/files/litigation/admin/2024/ia-6573.pdf",
+      "why": "The settled order itself; primary for the $225,000 figure and the findings."
+    },
+    "alt2": {
+      "title": "SEC Targets 'AI Washing' With Two New Settled Cases",
+      "author": "Morrison & Foerster",
+      "publisher": "MoFo",
+      "date": "2024-03-20",
+      "url": "https://www.mofo.com/resources/insights/240320-sec-targets-ai-washing-with-two-new-settled-cases",
+      "why": "Independent secondary confirmation of both penalty amounts; not primary."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Raise confidence to H and remove the two-values caveat; the figures are consistent everywhere found.",
+    "tag": "H"
+  },
+  {
+    "id": "src-wiretap",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. Cal. Penal Code 637.2 text returned by california.public.law and Justia: (a)(1) 'Five thousand dollars ($5,000) per violation, or three times the amount of actual damages', whichever greater; (b) injunction; (c) 'A plaintiff need not have suffered, or be threatened with, actual damages'. Cal. Penal Code 632 text returned by Justia (2024 code) and california.public.law: intentionally recording a confidential communication 'without the consent of all parties' is the offense (fine up to $2,500 / up to one year; (c) defines confidential communication). 18 U.S.C. 2511(2)(d) text quoted in results: 'not unlawful ... for a person not acting under color of law to intercept ... where such person is a party to the communication or where one of the parties ... has given prior consent ... unless ... for the purpose of committing any criminal or tortious act' (secondary hosts; law.cornell.edu is blocked).",
+    "corrections": {
+      "title": "Cal. Penal Code §§ 632 and 637.2(a)(1), (c); 18 U.S.C. § 2511(2)(d)",
+      "link": "https://law.justia.com/codes/california/code-pen/part-1/title-15/chapter-1-5/section-632 ; https://california.public.law/codes/ca_penal_code_section_637.2",
+      "published": "not applicable (statutes; cite the 2024 California Code edition)",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "The all-party consent exposure lives in § 632 (the prohibition), not § 637.2, which is only the private right of action ($5,000 per violation or treble damages, no actual damage needed). The federal one-party consent floor is § 2511(2)(d). The record's title omits § 632, which is the section that actually creates the two-party rule; add it.",
+    "alt1": {
+      "title": "California Penal Code § 632 (2024 California Code)",
+      "author": "State of California",
+      "publisher": "Justia",
+      "date": "2024",
+      "url": "https://law.justia.com/codes/california/code-pen/part-1/title-15/chapter-1-5/section-632",
+      "why": "The operative consent provision the record's claim depends on; more precise than citing only the remedy section."
+    },
+    "alt2": {
+      "title": "California Penal Code § 637.2",
+      "author": "State of California",
+      "publisher": "Public.Law",
+      "date": "current",
+      "url": "https://california.public.law/codes/ca_penal_code_section_637.2",
+      "why": "Current text of the private right of action; the official leginfo.legislature.ca.gov page would be better but was not returned by search."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Statutes verified from two independent code hosts; add § 632 to the citation and fill the links.",
+    "tag": "H"
+  },
+  {
+    "id": "src-finra2026",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. finra.org-restricted searches returned the report landing page https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report, the GenAI section https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai, the PDF https://www.finra.org/sites/default/files/2025-12/2026-annual-regulatory-oversight-report.pdf and the news release https://www.finra.org/media-center/newsreleases/2025/finra-publishes-2026-regulatory-oversight-report-empower-member-firm. Release date 2025-12-09 confirmed by finra.org, Debevoise, Sidley, McGuireWoods, Troutman. finra.org snippets: new standalone GenAI section; risks 'accuracy (e.g., hallucinations) and bias'; AI agents 'acting autonomously without human validation and approval'; suggested controls on monitoring agent system access, human oversight, tracking agent actions and guardrails; 'bias, hallucinations, and privacy risks also remain present and applicable for GenAI agents'.",
+    "corrections": {
+      "title": "2026 FINRA Annual Regulatory Oversight Report",
+      "link": "https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Supported: first standalone GenAI section; hallucination and bias controls; human-in-the-loop monitoring; novel oversight, logging and guardrails for AI agents that act. 'Cybersecurity and threat-actor use' appears in Debevoise/ACA summaries but was not seen verbatim in a finra.org snippet (minor gap).",
+    "alt1": {
+      "title": "GenAI: Continuing and Emerging Trends (section of the 2026 report)",
+      "author": "FINRA",
+      "publisher": "FINRA",
+      "date": "2025-12-09",
+      "url": "https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai",
+      "why": "Deep link to the exact section the course cites; better reading-card target than the report landing page."
+    },
+    "alt2": {
+      "title": "Emerging Trend in GenAI: Observations on AI Agents",
+      "author": "FINRA",
+      "publisher": "FINRA blog",
+      "date": "2026-01-27",
+      "url": "https://www.finra.org/media-center/blog/observations-on-ai-agents",
+      "why": "Newer FINRA statement on agents that says it creates no new requirements; useful supplement for §05."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fill the missing link with the finra.org report (or its GenAI section) and standardise the title.",
+    "tag": "H"
+  },
+  {
+    "id": "src-finra-inj",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. Two searches (one finra.org-restricted) returned https://www.finra.org/rules-guidance/key-topics/artificial-intelligence/understanding-generative-ai-and-prompt-injection-fundamentals titled 'Understanding Generative AI and Prompt Injection Fundamentals', listed on FINRA's AI key-topics hub with the date March 6, 2026; snippets describe GenAI basics, firm-size considerations for prompt injection, key terms, and that prompt injection abuses a system that already has legitimate access and 'cannot reliably tell genuine instructions from malicious ones hidden in content it reads'. Also cited by vdf.ai and Shumaker client alerts (2026).",
+    "corrections": {
+      "link": "https://www.finra.org/rules-guidance/key-topics/artificial-intelligence/understanding-generative-ai-and-prompt-injection-fundamentals",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Supported: a self-regulatory organisation published a standalone primer on prompt injection on 2026-03-06.",
+    "alt1": {
+      "title": "Artificial Intelligence (AI) key topics hub",
+      "author": "FINRA",
+      "publisher": "FINRA",
+      "date": "ongoing",
+      "url": "https://www.finra.org/rules-guidance/key-topics/artificial-intelligence",
+      "why": "Durable parent page that dates the primer and lists FINRA's other 2026 AI resources."
+    },
+    "alt2": {
+      "title": "GenAI: Continuing and Emerging Trends (2026 report section)",
+      "author": "FINRA",
+      "publisher": "FINRA",
+      "date": "2025-12-09",
+      "url": "https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/gen-ai",
+      "why": "Earlier and broader; places prompt injection among the cybersecurity risks FINRA names."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fill the missing link; existence and date confirmed on finra.org via two result sets.",
+    "tag": "H"
+  },
+  {
+    "id": "src-daly",
+    "status": "VERIFIED",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. sec.gov-restricted search returned the record's exact URL (daly-020326-...-ici-winter). Speech 'Artificial Intelligence and the Future of Investment Management', Brian Daly, Director, Division of Investment Management, ICI Winter Board Meeting, Manalapan, Florida, delivered virtually, 2026-02-03; standard disclaimer that views are not the Commission's. Secondary summaries (Mondaq, Charltons Quantum, Vigilant, ESG Dive): he asked whether LLM-based disclosure tools 'would constitute marketing, require investment adviser registration, and how they would be supervised'; requested industry comment and invited pilot programmes and no-action requests; 'the greatest impediment to a more widespread adoption of AI is liability concerns'. No result mentions watermarking, SynthID, benchmarks or token counts, consistent with the record's NARROW scope note. sec.gov also lists later Daly remarks: Stanford roundtable 2026-10-16 https://www.sec.gov/newsroom/speeches-statements/daly-remarks-stanford-roundtable-101626.",
+    "corrections": {
+      "publisher": "SEC (speech delivered at the ICI Winter Board Meeting)",
+      "last_retrieved": "2026-10-27 (search result; page not fetched)"
+    },
+    "claim_check": "Supported: the open questions (marketing vs advice vs registration; responsibility; supervision) and the request for comment rather than an answer. The scope's warning that it says nothing about watermarking etc. is consistent with every summary found.",
+    "alt1": {
+      "title": "Remarks at the Stanford Roundtable (Brian Daly)",
+      "author": "Daly, B., Director, Division of Investment Management",
+      "publisher": "SEC",
+      "date": "2026-10-16",
+      "url": "https://www.sec.gov/newsroom/speeches-statements/daly-remarks-stanford-roundtable-101626",
+      "why": "Newer statement by the same official on adviser AI adoption; should be read to see whether the open questions have moved."
+    },
+    "alt2": {
+      "title": "SEC Director Encourages AI Innovation And Industry Dialogue: 'Every Idea Will Be Heard'",
+      "author": "Mondaq contributor",
+      "publisher": "Mondaq",
+      "date": "2026-02",
+      "url": "https://www.mondaq.com/unitedstates/new-technology/1748096/sec-director-encourages-ai-innovation-and-industry-dialogue-every-idea-will-be-heard",
+      "why": "Secondary summary of the speech; useful corroboration, not a substitute."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Exact sec.gov URL, date and venue confirmed; scope is correctly narrow; consider adding the October 2026 Stanford remarks as a supplement.",
+    "tag": "H"
+  },
+  {
+    "id": "src-cfp-genai",
+    "status": "VERIFIED",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. cfp.net-restricted search returned the record's exact URL, the PDF https://www.cfp.net/-/media/files/cfp-board/standards-and-ethics/compliance-resources/cfp-board-ethics-and-generative-ai-checklist.pdf titled 'GENERATIVE AI ETHICS GUIDE: A CHECKLIST FOR UPHOLDING THE CODE AND STANDARDS', and February 2025 news releases https://www.cfp.net/news/2025/02/news-releases/guide-on-ethical-use-of-generative-ai and https://www.cfp.net/news/2025/02/cfp-board-addresses-ai-risk-with-new-ethics-guide. Snippet: checklist step 'Before entering materials that contain, or reasonably may contain, Client information, such as transcripts or notes', and that the Technology Standard (A.14) 'incorporates key components of the Duty of Care and the Duty of Competence'.",
+    "corrections": {
+      "confidence": "H for existence/date; M for the pseudonym wording until the PDF is read",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Existence, title, February 2025 date and the confidentiality-before-upload step are supported. The specific 'pseudonyms and anonymisation' wording, the recordkeeping-compliance item, the vendor breach-notice item and the professional-judgment item were not visible in snippets (GAP; reading the PDF the instructor holds would close it).",
+    "alt1": {
+      "title": "Generative AI Ethics Guide: A Checklist for Upholding the Code and Standards (PDF)",
+      "author": "CFP Board",
+      "publisher": "CFP Board",
+      "date": "2025-02",
+      "url": "https://www.cfp.net/-/media/files/cfp-board/standards-and-ethics/compliance-resources/cfp-board-ethics-and-generative-ai-checklist.pdf",
+      "why": "The checklist document itself; stable file for the reading card."
+    },
+    "alt2": {
+      "title": "Guide to CFP Board's Technology Standard",
+      "author": "CFP Board",
+      "publisher": "CFP Board",
+      "date": "2024-01",
+      "url": "https://www.cfp.net/ethics/compliance-resources/2024/01/guide-to-cfp-boards-technology-standard",
+      "why": "The A.14 guide the checklist builds on; says AI output must be evaluated before reliance; broader, older."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Page and PDF exist on cfp.net with the stated date; raise existence confidence and link the PDF.",
+    "tag": "M"
+  },
+  {
+    "id": "src-cfp-code",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. cfp.net-restricted search returned the Code PDF https://www.cfp.net/-/media/files/cfp-board/standards-and-ethics/cfp-code-and-standards.pdf ('CODE OF ETHICS AND STANDARDS OF CONDUCT, EFFECTIVE DATE: OCTOBER 1, 2019'), the April 2025 FAQ https://www.cfp.net/-/media/files/cfp-board/standards-and-ethics/compliance-resources/cfp-board-code-of-ethics-and-standards-of-conduct-faq-april-2025.pdf, and the Commentary. Snippets: Standard A.14 'Duties When Selecting, Using, and Recommending Technology' has three duties (reasonable care and judgment; reasonable understanding of assumptions and outcomes; reasonable basis to believe results are reliable, objective and appropriate); Standard A.9 restricts disclosure of non-public client information and requires reasonable steps against unauthorised access.",
+    "corrections": {
+      "link": "https://www.cfp.net/-/media/files/cfp-board/standards-and-ethics/cfp-code-and-standards.pdf",
+      "published": "2019-10-01 (effective date)",
+      "scope": "Standard A.14 title reads 'Duties When Selecting, Using, and Recommending Technology' (and, not or)",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Supported: A.14 reasonable-care duty and A.9 confidentiality. The emoney/planadviser summaries and CFP Board's own technology guide agree on the three A.14 components.",
+    "alt1": {
+      "title": "Guide to CFP Board's Technology Standard (PDF)",
+      "author": "CFP Board",
+      "publisher": "CFP Board",
+      "date": "2024-01",
+      "url": "https://www.cfp.net/-/media/files/cfp-board/standards-and-ethics/compliance-resources/cfp-board-technology-guide.pdf",
+      "why": "CFP Board's own application of A.14 to AI tools; more specific to the session-4 use than the Code alone."
+    },
+    "alt2": {
+      "title": "Frequently Asked Questions: Code of Ethics and Standards of Conduct (April 2025)",
+      "author": "CFP Board",
+      "publisher": "CFP Board",
+      "date": "2025-04",
+      "url": "https://www.cfp.net/-/media/files/cfp-board/standards-and-ethics/compliance-resources/cfp-board-code-of-ethics-and-standards-of-conduct-faq-april-2025.pdf",
+      "why": "Most recent CFP Board interpretation covering A.9 and A.14; secondary to the Code."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fill the link with the Code PDF and correct the standard's title; content confirmed.",
+    "tag": "H"
+  },
+  {
+    "id": "src-sec-withdraw",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. sec.gov/federalregister.gov-restricted search returned https://www.sec.gov/rules-regulations/2025/06/s7-12-23, the Federal Register notice 'Withdrawal of Proposed Regulatory Actions' https://www.federalregister.gov/documents/2025/06/17/2025-11110/withdrawal-of-proposed-regulatory-actions (dated 2025-06-12, published 2025-06-17) and the conformed PDF https://www.sec.gov/files/rules/final/2025/33-11377.pdf. Release Nos. 33-11377; 34-103247; IA-6885; IC-35635. Snippets: 'The Commission is formally withdrawing certain notices of proposed rulemaking issued between March 2022 and November 2023'; 'we no longer intend to issue final rules'; future action 'by publishing a new proposed rule'. 14 proposals confirmed by 401(k) Specialist, Paul Hastings, Dechert, House FSC. PDA proposal date 2023-08-09 confirmed.",
+    "corrections": {
+      "publisher": "SEC, Release Nos. 33-11377; 34-103247; IA-6885; IC-35635; 90 FR (FR Doc. 2025-11110, published 2025-06-17)",
+      "confidence": "H",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Supported: withdrawal on 12 June 2025 of the predictive data analytics proposal (S7-12-23) with thirteen others; any future rule would need a new proposal.",
+    "alt1": {
+      "title": "Withdrawal of Proposed Regulatory Actions (FR Doc. 2025-11110)",
+      "author": "SEC",
+      "publisher": "Federal Register",
+      "date": "2025-06-17",
+      "url": "https://www.federalregister.gov/documents/2025/06/17/2025-11110/withdrawal-of-proposed-regulatory-actions",
+      "why": "Durable primary citation with the full list of withdrawn files; preferable to the sec.gov file-number page."
+    },
+    "alt2": {
+      "title": "Withdrawal of Proposed Regulatory Actions (conformed release 33-11377)",
+      "author": "SEC",
+      "publisher": "SEC",
+      "date": "2025-06-12",
+      "url": "https://www.sec.gov/files/rules/final/2025/33-11377.pdf",
+      "why": "The Commission's own release PDF; same content, SEC host."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Add release numbers and the Federal Register citation; raise confidence to H.",
+    "tag": "H"
+  },
+  {
+    "id": "src-drift",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. Search returned the record's exact finra.org URL titled 'Cybersecurity Alert'; summary gives the alert date as 2025-09-10, says the breach 'started in August 2025 and affected more than 700 organizations', used stolen OAuth tokens for the Drift app, and that FINRA notified firms using affected vendors. Salesloft's advisory and token revocation on 2025-08-20 confirmed by Arctic Wolf; Google Threat Intelligence window Aug 8-18 2025 and UNC6395 confirmed by The Hacker News/BleepingComputer. FINRA later issued a related Salesforce/Gainsight advisory https://www.finra.org/rules-guidance/guidance/cybersecurity-advisory-salesforce-gainsight.",
+    "corrections": {
+      "published": "2025-09-10",
+      "title": "Cybersecurity Alert: Salesloft Drift AI Supply Chain Attack",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Supported: August 2025, OAuth tokens from the Drift-Salesforce integration, >700 organisations (FINRA's figure; Google/Mandiant say 'hundreds'), tokens revoked 20 Aug 2025, FINRA alert issued. 'Bypassed multi-factor authentication' was not seen in any snippet; it is a fair characterisation of token theft but should be chipped M or sourced.",
+    "alt1": {
+      "title": "Widespread Salesforce Data Theft via Compromised Salesloft Drift OAuth Tokens",
+      "author": "Arctic Wolf",
+      "publisher": "Arctic Wolf",
+      "date": "2025-08/09",
+      "url": "https://arcticwolf.com/resources/blog/widespread-salesforce-data-theft-via-compromised-salesloft-drift-oauth-tokens/",
+      "why": "Dated technical timeline including the 20 August 2025 revocation; secondary but precise."
+    },
+    "alt2": {
+      "title": "Salesloft breached to steal OAuth tokens for Salesforce data theft attacks",
+      "author": "BleepingComputer",
+      "publisher": "BleepingComputer",
+      "date": "2025-08/09",
+      "url": "https://www.bleepingcomputer.com/news/security/salesloft-breached-to-steal-oauth-tokens-for-salesforce-data-theft-attacks",
+      "why": "Reports Mandiant's finding that the chain began with Salesloft's GitHub in March 2025; adds the supply-chain detail the course uses."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Alert exists; set the date to 2025-09-10 and source or soften the MFA-bypass phrase.",
+    "tag": "H"
+  },
+  {
+    "id": "src-il-pipa",
+    "status": "VERIFIED",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. Search returned ilga.gov pages for 815 ILCS 530/10 (https://www.ilga.gov/Documents/legislation/ilcs/documents/081505300K10.htm and https://ilga.gov/legislation/ilcs/documents/081505300K10.htm) and Public Act 101-0343 https://my.ilga.gov/ftp/Public%20Acts/101/101-0343.htm. Snippets quote subsection (a): notification 'in the most expedient time possible and without unreasonable delay, consistent with any measures necessary to determine the scope of the breach'; and the AG provision: a data collector required to notify 'more than 500 Illinois residents as a result of a single breach' must notify the Attorney General with the nature of the breach, number affected and steps taken, no later than when consumers are notified.",
+    "corrections": {
+      "last_retrieved": "2026-10-27 (search results)",
+      "link": "https://www.ilga.gov/Documents/legislation/ilcs/documents/081505300K10.htm (same document; capitalised path returned by search)"
+    },
+    "claim_check": "Both quoted standards are supported by the statute text and the enacting Public Act.",
+    "alt1": {
+      "title": "Public Act 101-0343 (SB 1624), amending the Personal Information Protection Act",
+      "author": "Illinois General Assembly",
+      "publisher": "ILGA",
+      "date": "2019",
+      "url": "https://my.ilga.gov/ftp/Public%20Acts/101/101-0343.htm",
+      "why": "The enacting act for the >500-resident Attorney General notice; useful to show when the duty arose."
+    },
+    "alt2": {
+      "title": "815 ILCS 530/10 (ILCS ftp text)",
+      "author": "Illinois General Assembly",
+      "publisher": "ILGA",
+      "date": "current",
+      "url": "https://ilga.gov/ftp/ILCS/Ch%200815/Act%200530/081505300K10.html",
+      "why": "Alternate official host of the same section; redundancy if the Documents path moves."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Official statute page exists and both quoted standards are in it.",
+    "tag": "H"
+  },
+  {
+    "id": "src-equifax",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. Search returned https://www.gao.gov/products/gao-18-559 and https://www.gao.gov/products/GAO-18-559, the PDF https://www.gao.gov/assets/700/694347.pdf and highlights https://www.gao.gov/assets/gao-18-559-highlights.pdf. Title 'Data Protection: Actions Taken by Equifax and Federal Agencies in Response to the 2017 Breach'; published 2018-08-30, publicly released 2018-09-07. GAO highlights state the attackers reached PII on 'at least 145.5 million' people and that the CFPB/FTC investigation was ongoing at publication.",
+    "corrections": {
+      "scope": "GAO-18-559 reports at least 145.5 million affected and predates the July 2019 settlement; the 147 million figure and the $575-700 million FTC/CFPB/state settlement must be sourced elsewhere (FTC July 2019 release)",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Existence, title, number and date are confirmed. The scope over-attributes: the 2019 settlement cannot be in a 2018 report, and GAO's figure is 145.5 million, not 147 million. The 29 July 2017 discovery and 7 September 2017 announcement dates are consistent with the GAO timeline but were not visible in snippets (GAP on the dates from this source).",
+    "alt1": {
+      "title": "GAO-18-559 full report (PDF)",
+      "author": "U.S. Government Accountability Office",
+      "publisher": "GAO",
+      "date": "2018-08-30",
+      "url": "https://www.gao.gov/assets/700/694347.pdf",
+      "why": "The report text with the breach timeline; primary for the 2017 dates."
+    },
+    "alt2": {
+      "title": "How Equifax Neglected Cybersecurity and Suffered a Devastating Data Breach (House Oversight minority report)",
+      "author": "House Committee on Oversight and Government Reform (minority staff)",
+      "publisher": "U.S. House",
+      "date": "2018-12-10",
+      "url": "https://oversightdemocrats.house.gov/sites/evo-subsites/democrats-oversight.house.gov/files/Equifax%20Minority%20Report%20-%20FINAL%2012-10-2018.pdf",
+      "why": "Independent congressional account of the same timeline; still cannot source the 2019 settlement."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "Keep GAO for the 2017 timeline but add the FTC July 2019 settlement release for the 147 million and $575-700 million figures, which this report cannot support.",
+    "tag": "M"
+  },
+  {
+    "id": "src-capitalone",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. Search returned https://www.capitalone.com/digital/facts2019/ and https://www.capitalone.com/facts2019/, both titled 'Information on the Capital One Cyber Incident'. Snippets: 'On July 19, 2019, we determined that an outside individual gained unauthorized access'; customer letter dated July 29, 2019; 'approximately 100 million individuals in the United States and approximately 6 million in Canada'. Reuters/Euronews (2019-07-30) confirm the July 29 announcement and that the intrusion ran March 12 to July 17 with the GitHub tip. Capital One's Q1 2020 10-Q https://www.sec.gov/Archives/edgar/data/0000927628/000092762820000173/cof-03312020x10q.htm revises SSN count to ~120,000.",
+    "corrections": {
+      "title": "Information on the Capital One Cyber Incident",
+      "scope": "The page does not carry the August 2020 $80 million OCC penalty or the $190 million class settlement; those postdate it and need their own sources",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Supported from the page: 19 July determination, 29 July announcement, 100 million US and 6 million Canada. 17 July tip is supported by Reuters, not the page. FBI contact, the OCC $80 million penalty and the $190 million settlement were not confirmed in this session's results (GAP; the OCC August 2020 consent order and the settlement docket would verify them).",
+    "alt1": {
+      "title": "Capital One Financial Corp. Form 10-Q for the quarter ended March 31, 2020 (cyber incident note)",
+      "author": "Capital One Financial Corp.",
+      "publisher": "SEC EDGAR",
+      "date": "2020-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000927628/000092762820000173/cof-03312020x10q.htm",
+      "why": "Audited filing with the revised affected-record counts and incident costs; more durable than the marketing-site FAQ."
+    },
+    "alt2": {
+      "title": "Capital One says information of over 100 mln individuals in US, Canada hacked",
+      "author": "Reuters (via Euronews)",
+      "publisher": "Euronews",
+      "date": "2019-07-30",
+      "url": "https://www.euronews.com/2019/07/30/capital-one-says-information-of-over-100-million-individuals-in-us-canada-hacked",
+      "why": "Contemporaneous independent report of the July 29 announcement and the March 12-July 17 window."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "Page exists and supports the timeline; add sources for the OCC penalty and the class settlement, which it does not carry.",
+    "tag": "M"
+  },
+  {
+    "id": "src-eu-ai-act",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. eur-lex-restricted search returned https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng (OJ L, 2024/1689, 12.7.2024), the PDF, and a consolidated version https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng ('32024R1689 — EN — 27.07.2026') showing M1 amendments to Article 50; also the Commission's AI Act Service Desk Article 50 page https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50. Snippets: providers must ensure synthetic outputs 'are marked in a machine-readable format and detectable as artificially generated'; deployers of deepfakes must disclose; codes of practice for marking. Secondary 2026 sources (Jones Walker, Gibson Dunn, Cooley, Usercentrics, CSA) agree that the Digital Omnibus deferred high-risk obligations (Annex III to 2 Dec 2027) but left Article 50 applying from 2 Aug 2026, with one reported grace period: systems already on the market have until 2 Dec 2026 to implement the Art. 50(2) marking.",
+    "corrections": {
+      "link": "https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng (consolidated text as amended 27 July 2026); original OJ https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+      "scope": "Add: the 2026 Digital Omnibus amendment did not move the 2 August 2026 date for Article 50 but (per secondary sources) grants systems already on the market until 2 December 2026 for machine-readable marking",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Article 50(2) marking, 50(4) deepfake disclosure, extraterritorial scope and the 2 August 2026 application are supported. The record is silent on the 2026 Omnibus amendment and its marking grace period, which matters for the session-4 'why Claude text carries a mark' claim; the consolidated EUR-Lex text should be read to confirm the exact transitional wording (GAP on that detail).",
+    "alt1": {
+      "title": "Regulation (EU) 2024/1689, consolidated text of 27 July 2026",
+      "author": "European Parliament and Council",
+      "publisher": "EUR-Lex",
+      "date": "2026-07-27",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng",
+      "why": "Reflects the Omnibus amendments to Article 50; the original OJ text is now out of date on transitional timing."
+    },
+    "alt2": {
+      "title": "Article 50: Transparency obligations for providers and deployers of certain AI systems",
+      "author": "European Commission AI Act Service Desk",
+      "publisher": "European Commission",
+      "date": "current",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50",
+      "why": "Official, readable article page with the Commission's explanatory notes; less authoritative than the OJ text."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Regulation and Article 50 confirmed; point the link at the 2026 consolidated text and note the marking grace period.",
+    "tag": "M"
+  },
+  {
+    "id": "src-advisers-204-2",
+    "status": "UNREACHABLE",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. ecfr.gov and law.cornell.edu are blocked and no search returned the eCFR or LII page for 204-2; the quoted-phrase search for (a)(7) was blocked by the per-turn search limit. An SEC information collection supporting statement (via omb.report, https://omb.report/icr/202610-3235-003/doc/original/173488100.pdf) confirms 'the standard retention period required for books and records under rule 204-2 is five years, with the first two years in an appropriate adviser office' and notes a 2026-09-03 SEC proposal to amend 204-2 (removing pay-to-play record provisions). Secondary summaries (Smarsh, RIA Compliance Consultants) confirm (e) governs retention.",
+    "corrections": {
+      "last_retrieved": "2026-10-27 (rule existence only; text not fetched)"
+    },
+    "claim_check": "(e)(1) five years from end of the fiscal year, first two in an appropriate office: supported by the SEC supporting statement. (a)(7) wording on communications relating to recommendations or advice: not confirmed this session (GAP; reading the eCFR section would close it). Note the pending September 2026 amendment proposal.",
+    "alt1": {
+      "title": "Supporting Statement for Rule 204-2 information collection (OMB 3235-0278), October 2026",
+      "author": "SEC",
+      "publisher": "omb.report mirror of reginfo.gov",
+      "date": "2026-10",
+      "url": "https://omb.report/icr/202610-3235-003/doc/original/173488100.pdf",
+      "why": "SEC's own statement of the retention period and of the pending 2026 amendment; not the rule text."
+    },
+    "alt2": {
+      "title": "Investment Advisers Act of 1940 Rule 204-2 (summary)",
+      "author": "Smarsh",
+      "publisher": "Smarsh",
+      "date": "current",
+      "url": "https://smarsh.com/?p=6730",
+      "why": "Vendor summary; weak, listed only because no primary host was reachable or returned."
+    },
+    "recommendation": "KEEP",
+    "rationale": "The eCFR link is the right primary; the five-year term is confirmed but (a)(7) wording and the 2026 amendment proposal need a direct read before teaching.",
+    "tag": "M"
+  },
+  {
+    "id": "src-finra-4511",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. Search did not return the 4511 rulebook page, but returned FINRA's 'SEA Rule 17a-4 and Related Interpretations' page https://www.finra.org/rules-guidance/guidance/interpretations-financial-operational-rules/sea-rule-17a-4-and-related-interpretations and PDF https://www.finra.org/sites/default/files/SEA.Rule_.17a-4.Interpretations.pdf, whose snippets read: 17a-4(a) records 'not less than 6 years, the first two years in an easily accessible place'; 17a-4(b) 'preserve for a period of not less than three years, the first two years in an easily accessible place'. Secondary summaries (Jatheon, LegalClarity) confirm 4511(b)'s six-year default where no period is specified and the 17a-4 format requirement.",
+    "corrections": {
+      "last_retrieved": "2026-10-27 (search results)",
+      "link": "https://www.finra.org/rules-guidance/rulebooks/finra-rules/4511 (not returned by search; FINRA's 17a-4 interpretations page is the reachable corroboration)"
+    },
+    "claim_check": "Six-year default, three-year/first-two-easily-accessible period, and the 17a-4 format tie are supported. That correspondence specifically falls under 17a-4(b)(4) was not confirmed from snippets (GAP on the paragraph number; eCFR 17 CFR 240.17a-4 would verify).",
+    "alt1": {
+      "title": "SEA Rule 17a-4 and Related Interpretations",
+      "author": "FINRA",
+      "publisher": "FINRA",
+      "date": "current",
+      "url": "https://www.finra.org/rules-guidance/guidance/interpretations-financial-operational-rules/sea-rule-17a-4-and-related-interpretations",
+      "why": "FINRA's annotated text of 17a-4 with the six- and three-year periods; the best reachable primary for the periods."
+    },
+    "alt2": {
+      "title": "SEA Rule 17a-4 Interpretations (PDF)",
+      "author": "FINRA",
+      "publisher": "FINRA",
+      "date": "current",
+      "url": "https://www.finra.org/sites/default/files/SEA.Rule_.17a-4.Interpretations.pdf",
+      "why": "Same content as a stable file."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "Keep the 4511 link and add FINRA's 17a-4 interpretations page, which carries the periods the scope states.",
+    "tag": "M"
+  },
+  {
+    "id": "src-advisers-fiduciary",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. Search returned the release PDF https://sec.gov/rules/interp/2019/ia-5248.pdf and the Federal Register version https://www.govinfo.gov/content/pkg/FR-2019-07-12/html/2019-12208.htm (84 FR, 2019-07-12; effective 2019-07-12). Summaries (SRZ, JD Supra) state the duty of care comprises a 'Duty to Provide Advice that is in the Best Interest of the Client', best execution, and advice and monitoring, and that best-interest advice requires 'a reasonable understanding of the client's objectives' and 'a reasonable belief that the advice is in the best interest of the client'. The phrase 'reasonable basis' did not appear in any result.",
+    "corrections": {
+      "link": "https://sec.gov/rules/interp/2019/ia-5248.pdf (the record's HTML page was not returned by search)",
+      "published": "2019-06-05 (adopted); 2019-07-12 (Federal Register, effective)",
+      "scope": "Use the release's own terms: 'reasonable inquiry' into the client and a 'reasonable belief' that the advice is in the client's best interest, rather than 'reasonable basis'",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Existence, number and date confirmed. The duty-of-care characterisation is supported in substance; the record's 'reasonable basis' phrase is not the release's wording and should be adjusted.",
+    "alt1": {
+      "title": "Commission Interpretation Regarding Standard of Conduct for Investment Advisers, Release No. IA-5248 (PDF)",
+      "author": "SEC",
+      "publisher": "SEC",
+      "date": "2019-06-05",
+      "url": "https://sec.gov/rules/interp/2019/ia-5248.pdf",
+      "why": "The release itself; primary."
+    },
+    "alt2": {
+      "title": "Commission Interpretation Regarding Standard of Conduct for Investment Advisers (84 FR, July 12, 2019)",
+      "author": "SEC",
+      "publisher": "Federal Register via GovInfo",
+      "date": "2019-07-12",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2019-07-12/html/2019-12208.htm",
+      "why": "Durable Federal Register citation of the same text."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Release confirmed; fix the link and align the scope wording with the release.",
+    "tag": "H"
+  },
+  {
+    "id": "src-advisers-206-4-7",
+    "status": "VERIFIED",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. Search returned Cornell LII https://www.law.cornell.edu/cfr/text/17/275.206%284%29-7, the GovInfo 2007 CFR PDF https://www.govinfo.gov/content/pkg/CFR-2007-title17-vol3/pdf/CFR-2007-title17-vol3-sec275-2064-7.pdf and the 2003 adopting release; snippets quote (a) 'Adopt and implement written policies and procedures reasonably designed to prevent violation, by you and your supervised persons', (b) 'Review, no less frequently than annually', (c) 'Designate an individual (who is a supervised person) responsible for administering'. Also returned: SEC exam staff observations on adviser annual compliance reviews dated 2026-09-14, https://www.sec.gov/files/examinations-observations-regarding-investment-adviser-annual-compliance-review-091426.pdf, which ties the annual review to Rule 204-2 recordkeeping.",
+    "corrections": {
+      "last_retrieved": "2026-10-27 (search results; eCFR page not fetched)"
+    },
+    "claim_check": "All three elements in scope are supported by the rule text. The inference that the AI-use policy and its annual-review record are required records is supported by the September 2026 SEC staff observations linking the annual review to 204-2 records.",
+    "alt1": {
+      "title": "Observations Regarding Investment Adviser Annual Compliance Review",
+      "author": "SEC Division of Examinations",
+      "publisher": "SEC",
+      "date": "2026-09-14",
+      "url": "https://www.sec.gov/files/examinations-observations-regarding-investment-adviser-annual-compliance-review-091426.pdf",
+      "why": "New (September 2026) SEC staff document on exactly the annual-review duty the session teaches; strong supplement."
+    },
+    "alt2": {
+      "title": "17 CFR § 275.206(4)-7 Compliance procedures and practices",
+      "author": "SEC",
+      "publisher": "Cornell Legal Information Institute",
+      "date": "current",
+      "url": "https://www.law.cornell.edu/cfr/text/17/275.206%284%29-7",
+      "why": "Mirror of the eCFR text on a host that search can reach; equivalent to the current link."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "Rule text confirmed; add the September 2026 SEC exam observations on annual compliance reviews.",
+    "tag": "H"
+  },
+  {
+    "id": "src-rp-2022-32",
+    "status": "VERIFIED",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. irs.gov PDF not returned by search, but Journal of Accountancy, The Tax Adviser (Nov 2022), Carlton Fields, Brown Winick and Tax Notes all describe Rev. Proc. 2022-32, 2022-30 I.R.B. 101, effective 2022-07-08: supersedes Rev. Proc. 2017-34; simplified method for estates not required to file under § 6018(a); complete Form 706 filed 'on or before the fifth anniversary of the decedent's date of death' with the required statement at the top; after that, relief only by letter ruling under § 301.9100-3.",
+    "corrections": {
+      "published": "2022-07-08 (2022-30 I.R.B. 101)",
+      "last_retrieved": "2026-10-27 (secondary search results; IRS PDF not fetched)"
+    },
+    "claim_check": "Every element in scope is supported by at least two independent secondary sources.",
+    "alt1": {
+      "title": "Estates can now request late portability election relief for 5 years",
+      "author": "Journal of Accountancy",
+      "publisher": "AICPA",
+      "date": "2022-07",
+      "url": "https://www.journalofaccountancy.com/news/2022/jul/estates-now-request-late-portability-election-relief-5-years.html",
+      "why": "Clear professional summary with the five-year rule and the supersession; secondary."
+    },
+    "alt2": {
+      "title": "Updated simplified method for estate portability elections",
+      "author": "The Tax Adviser",
+      "publisher": "AICPA",
+      "date": "2022-11",
+      "url": "https://editions.thetaxadviser.com/article/Updated+simplified+method+for+estate+portability+elections/4364607/764799/article.html",
+      "why": "Detailed practitioner article covering eligibility limits and protective claims."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fill the publication date and IRB citation; the irs.gov link remains the right primary.",
+    "tag": "H"
+  },
+  {
+    "id": "src-regsp-guide",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. sec.gov-restricted search returned the record's exact PDF URL, its landing page https://www.sec.gov/file/regulation-s-p-small-entity-compliance-guide, and the SEC small-firm outreach page https://www.sec.gov/newsroom/meetings-events/compliance-outreach-regulation-s-p-small-firms. Title per snippet: 'Enhancements to Regulation S-P: A Small Entity Compliance Guide'. Snippets: written incident response program including service-provider oversight and customer notice; notice 'as soon as practicable, but not later than 30 days'; larger entities 18 months and smaller entities 24 months after FR publication (Dec 3, 2025 / June 3, 2026); the outreach page states the small-firm compliance date as June 3, 2026. No extension found as of May 2026 law-firm reminders.",
+    "corrections": {
+      "title": "Enhancements to Regulation S-P: A Small Entity Compliance Guide",
+      "published": "2024 (undated staff guide; file path /rules/final/2024/)",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Compliance dates, 30-day customer notice and the written incident response program are supported. The 72-hour service-provider notice was not visible in any snippet this session (GAP from this source; it is in the adopting release's 248.30(a)(5)). The negatives (no SEC notification; no 24-hour CCO clock) remain absence-based.",
+    "alt1": {
+      "title": "Regulation S-P final rule, 89 FR 47688",
+      "author": "SEC",
+      "publisher": "Federal Register",
+      "date": "2024-06-03",
+      "url": "https://www.federalregister.gov/documents/2024/06/03/2024-11116/regulation-s-p-privacy-of-consumer-financial-information-and-safeguarding-customer-information",
+      "why": "The binding text, including the 72-hour service-provider clock the guide snippets did not show."
+    },
+    "alt2": {
+      "title": "Compliance Outreach: Regulation S-P for Small Firms",
+      "author": "SEC",
+      "publisher": "SEC",
+      "date": "2026",
+      "url": "https://www.sec.gov/newsroom/meetings-events/compliance-outreach-regulation-s-p-small-firms",
+      "why": "Confirms the June 3, 2026 small-firm date in the SEC's own words; event page, not a rule."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Guide exists at the URL; fix the title and date; dates and 30-day clock confirmed, 72-hour clock should be cited to the release.",
+    "tag": "H"
+  },
+  {
+    "id": "src-secure2-107",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. congress.gov is blocked and the search did not return the H.R. 2617 page, so the bill/public-law numbers were not confirmed this session. Section 107's content is confirmed by JD Supra, NatLawReview, RPAG and a Minnesota state employer page: 'increases the RMD age to 73 for retirees who attain age 72 after December 31, 2022, and attain age 73 before January 1, 2033 ... to 75 for retirees who attain age 74 after December 31, 2032'; part of Division T of the Consolidated Appropriations Act, 2023, signed 2022-12-29; the 1959 cohort ambiguity is noted on BenefitsLink.",
+    "corrections": {
+      "last_retrieved": "2026-10-27 (secondary search results; congress.gov not fetched)"
+    },
+    "claim_check": "Statutory effect (73/75 applicable age; Division T; 29 Dec 2022) supported by multiple secondary sources. H.R. 2617 / Pub. L. 117-328 identifiers not confirmed by any result (GAP; congress.gov or the Statutes at Large would verify).",
+    "alt1": {
+      "title": "SECURE 2.0 Series Part 3: Retirement Plan Required Minimum Distribution Age to Increase",
+      "author": "National Law Review contributor",
+      "publisher": "National Law Review",
+      "date": "2023",
+      "url": "https://natlawreview.com/article/secure-20-series-part-3-retirement-plan-required-minimum-distribution-age-to",
+      "why": "Law-firm summary quoting the section's mechanics; secondary."
+    },
+    "alt2": {
+      "title": "Required Minimum Distributions, T.D. 10001 (89 FR 58886)",
+      "author": "Treasury/IRS",
+      "publisher": "Federal Register via GovInfo",
+      "date": "2024-07-19",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2024-07-19/html/2024-14542.htm",
+      "why": "The regulations implementing the applicable age; primary and already in the bibliography."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Content is right and the congress.gov link is the correct primary; confirm the bill and public-law numbers when the host is reachable.",
+    "tag": "M"
+  },
+  {
+    "id": "src-td10001",
+    "status": "VERIFIED",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. Search returned the record's exact govinfo URL ('Federal Register Volume 89, Number 139, Friday, July 19, 2024'), the PDF, Justia's FR page (58886-58954, FR Doc. 2024-14542), Tax Notes and GAO's major-rule report B-336556 https://www.gao.gov/products/b-336556 (effective 2024-09-17). Snippets: §§ 1.401(a)(9)-1 through -9 apply to calendar years beginning on or after 2025-01-01; companion proposed regulations REG-103529-23 at 89 FR 58644 the same day.",
+    "corrections": {
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Title, T.D. number, FR citation, dates and section range all supported.",
+    "alt1": {
+      "title": "Required Minimum Distributions, T.D. 10001 (PDF)",
+      "author": "Treasury/IRS",
+      "publisher": "GovInfo",
+      "date": "2024-07-19",
+      "url": "https://govinfo.gov/content/pkg/FR-2024-07-19/pdf/2024-14542.pdf",
+      "why": "Page-numbered PDF of the same document for pinpoint cites."
+    },
+    "alt2": {
+      "title": "Required Minimum Distributions, 58886-58954 [2024-14542]",
+      "author": "Treasury/IRS",
+      "publisher": "Justia Regulations",
+      "date": "2024-07-19",
+      "url": "https://regulations.justia.com/regulations/fedreg/2024/07/19/2024-14542.html",
+      "why": "Mirror with applicability dates in the summary; secondary host."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary at the stated URL with every stated detail confirmed.",
+    "tag": "H"
+  },
+  {
+    "id": "src-irs-590b",
+    "status": "VERIFIED",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. irs.gov-restricted search returned https://www.irs.gov/publications/p590b titled 'Publication 590-B (2025), Distributions from Individual Retirement Arrangements (IRAs)', the PDF https://www.irs.gov/pub/irs-pdf/p590b.pdf and the RMD comparison chart. Snippets: applicable age 73 for tax years 2023 and later; first RMD 'by April 1 of the year following the year in which you turn 73'; later years by December 31.",
+    "corrections": {
+      "published": "annual; current edition is the 2025 publication (Pub. 590-B (2025))",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Supported, including the 1 April first-distribution timing used in case-2.",
+    "alt1": {
+      "title": "Publication 590-B (PDF, current edition)",
+      "author": "IRS",
+      "publisher": "IRS",
+      "date": "2025 edition",
+      "url": "https://www.irs.gov/pub/irs-pdf/p590b.pdf",
+      "why": "Stable PDF of the same edition."
+    },
+    "alt2": {
+      "title": "RMD comparison chart (IRAs vs. defined contribution plans)",
+      "author": "IRS",
+      "publisher": "IRS",
+      "date": "current",
+      "url": "https://www.irs.gov/retirement-plans/rmd-comparison-chart-iras-vs-defined-contribution-plans",
+      "why": "One-page IRS statement of the April 1 rule; narrower than the publication."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Note the current edition year; otherwise exact.",
+    "tag": "H"
+  },
+  {
+    "id": "src-irs-8606",
+    "status": "VERIFIED",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. irs.gov-restricted search returned 'Instructions for Form 8606 (2025)' https://www.irs.gov/instructions/i8606 and the PDF https://www.irs.gov/pub/irs-pdf/i8606.pdf plus prior-year instructions 2018-2023; the about-form page itself was not in the result list. Snippets list the four uses: nondeductible contributions to traditional IRAs; distributions from traditional, SEP or SIMPLE IRAs with basis; conversions to Roth IRAs; distributions from Roth IRAs.",
+    "corrections": {
+      "published": "annual; current instructions are the 2025 revision",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Supported: the form reports Roth conversions and IRA basis.",
+    "alt1": {
+      "title": "Instructions for Form 8606 (2025)",
+      "author": "IRS",
+      "publisher": "IRS",
+      "date": "2025",
+      "url": "https://www.irs.gov/instructions/i8606",
+      "why": "Direct link to the instructions that state the four uses; more precise than the about page."
+    },
+    "alt2": {
+      "title": "Publication 590-A (2025), Contributions to Individual Retirement Arrangements",
+      "author": "IRS",
+      "publisher": "IRS",
+      "date": "2025",
+      "url": "https://www.irs.gov/publications/p590a",
+      "why": "States when Form 8606 must be filed; broader context."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Form and instructions confirmed on irs.gov; about-page link is the conventional citation.",
+    "tag": "H"
+  },
+  {
+    "id": "src-il-retirement-subtraction",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. ilga.gov page for 35 ILCS 5/203 not returned by search. Illinois Department of Revenue general information letters as summarised on ezel.ai (IT 10-0025-GIL, IT 23-0005-GIL, IT 26-0003/0004/0005-GIL of April-May 2026) and Bloomberg Tax (on IT 26-0004-GIL) all describe 203(a)(2)(F) as subtracting amounts included in federal income under IRC 402(a), 402(c), 403(a), 403(b), 406(a), 407(a) and 408, plus certain government plan and retired-partner payments; GILs are not binding.",
+    "corrections": {
+      "last_retrieved": "2026-10-27 (secondary search results; ilga.gov not fetched)",
+      "retrieval_note": "newest Department guidance found: IT 26-0004-GIL (2026-04-23) and IT 26-0005-GIL (2026-05-04) on foreign pensions"
+    },
+    "claim_check": "The listed IRC sections and the conversion-subtraction reasoning are supported by multiple Department letters as summarised; statutory text itself not read (GAP on exact wording).",
+    "alt1": {
+      "title": "Illinois DOR Clarifies Foreign Pensions' Ineligibility for State Retirement Deduction (on IT 26-0004-GIL)",
+      "author": "Bloomberg Tax",
+      "publisher": "Bloomberg Tax",
+      "date": "2026-04",
+      "url": "https://news.bloombergtax.com/daily-tax-report/illinois-dor-clarifies-foreign-pensions-ineligibility-for-state-retirement-deduction",
+      "why": "Most recent reporting of the Department's reading of 203(a)(2)(F); secondary."
+    },
+    "alt2": {
+      "title": "IL IT 23-0005-GIL, Subtractions (Illinois Income Tax)",
+      "author": "Illinois Department of Revenue (as summarised)",
+      "publisher": "ezel.ai rulings aggregator",
+      "date": "2023-05-31",
+      "url": "https://ezel.ai/tax-rulings/il/it-23-0005-gil-subtractions",
+      "why": "Lists the IRC sections the subtraction reaches; aggregator, not the Department's own site."
+    },
+    "recommendation": "KEEP",
+    "rationale": "ilga.gov remains the right primary; content corroborated by Department letters, including 2026 ones.",
+    "tag": "M"
+  },
+  {
+    "id": "src-irs-guidance-primer",
+    "status": "VERIFIED",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. Search returned https://www.irs.gov/node/2729 titled 'Understanding IRS guidance - A brief primer' and the IRS guidance index https://irs.gov/newsroom/irs-guidance, plus mirrors. Snippets describe regulations, revenue rulings ('printed in the Internal Revenue Bulletin'), revenue procedures, notices, announcements, private letter rulings and technical advice memoranda, and the IRB as 'the authoritative instrument' for substantive rulings.",
+    "corrections": {
+      "last_retrieved": "2026-10-27 (search results; newsroom slug not returned but the irs.gov node URL is the same page)"
+    },
+    "claim_check": "Supported: the page catalogues the kinds of IRS guidance and their authority.",
+    "alt1": {
+      "title": "Understanding IRS guidance - A brief primer (irs.gov node URL)",
+      "author": "IRS",
+      "publisher": "IRS",
+      "date": "undated",
+      "url": "https://www.irs.gov/node/2729",
+      "why": "Alternate official address of the same page, useful if the newsroom slug changes."
+    },
+    "alt2": {
+      "title": "IRS guidance (index page)",
+      "author": "IRS",
+      "publisher": "IRS",
+      "date": "ongoing",
+      "url": "https://irs.gov/newsroom/irs-guidance",
+      "why": "Parent index linking the primer and the IRB; broader."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Page exists on irs.gov with the content in scope.",
+    "tag": "H"
+  },
+  {
+    "id": "src-cfp-psychology",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network: WebFetch and curl are refused for every non-Anthropic host in this session (ENOTFOUND / CONNECT 403), so no page was fetched. Evidence is from WebSearch result lists and snippets; a domain-restricted search returning the exact URL and title is treated as existence evidence. Search returned the record's exact cfp.net URL, an April 2021 cfp.net release https://cfp.net/news/2021/04/cfp-board-adds-psychology-of-financial-planning-to-exam-topics, the 2021 Principal Knowledge Topics infographic https://cdslot.cfp.net/-/media/files/cfp-board/cfp-certification/2021-practice-analysis/2021-principal-knowledge-topics-infographic.pdf ('H. Psychology of Financial Planning (7%)'), FA-mag coverage (announced 2021-03-30) and ThinkAdvisor 2022-04-27 (March 2022 was the first exam to test it). Topics listed: client and planner attitudes, values and biases; behavioral finance; sources of money conflict; principles of counseling; communication; crisis events.",
+    "corrections": {
+      "published": "2021-03-30",
+      "confidence": "H",
+      "last_retrieved": "2026-10-27 (search results)"
+    },
+    "claim_check": "Supported: eighth domain, 7% weight from the March 2022 exam, and the listed topics.",
+    "alt1": {
+      "title": "2021 Principal Knowledge Topics (infographic)",
+      "author": "CFP Board",
+      "publisher": "CFP Board",
+      "date": "2021",
+      "url": "https://cdslot.cfp.net/-/media/files/cfp-board/cfp-certification/2021-practice-analysis/2021-principal-knowledge-topics-infographic.pdf",
+      "why": "CFP Board's own blueprint showing the 7% weight; more primary for the figure than the press release."
+    },
+    "alt2": {
+      "title": "CFP Exam Pass Rate Hits 65% in March",
+      "author": "ThinkAdvisor",
+      "publisher": "ThinkAdvisor",
+      "date": "2022-04-27",
+      "url": "https://www.thinkadvisor.com/2022/04/27/cfp-exam-pass-rate-hits-65-in-march/?amp=1",
+      "why": "Independent confirmation that March 2022 was the first administration testing the domain."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Release exists at the URL; set the date to 2021-03-30 and raise confidence; add the blueprint for the 7% figure.",
+    "tag": "H"
+  }
+]

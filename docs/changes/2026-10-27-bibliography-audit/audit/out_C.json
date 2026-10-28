@@ -1,0 +1,495 @@
+[
+  {
+    "id": "src-magesh",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search (Wiley/RegLab/arXiv domains) returned the Wiley record https://onlinelibrary.wiley.com/doi/abs/10.1111/jels.12413 and the JELS vol 22 issue 2 TOC https://onlinelibrary.wiley.com/toc/17401461/2025/22/2: Magesh, Surani, Dahl, Suzgun, Manning & Ho, Journal of Empirical Legal Studies 22(2), 216-242, first published 23 April 2025, DOI 10.1111/jels.12413. Preprint arXiv:2405.20362 (May 2024). The RegLab URL in the record was returned verbatim by search, so it resolves. An OA copy of the published version is hosted by Manning at https://nlp.stanford.edu/~manning/papers/Magesh-Hallucination%E2%80%90Free-2025.pdf and by Ho at https://dho.stanford.edu/wp-content/uploads/Legal_RAG_Hallucinations.pdf.",
+    "corrections": {
+      "publisher": "Journal of Empirical Legal Studies 22(2), 216-242 (Wiley), first published 23 April 2025; doi 10.1111/jels.12413; preprint arXiv:2405.20362",
+      "link": "https://onlinelibrary.wiley.com/doi/10.1111/jels.12413 (keep RegLab URL as secondary)",
+      "last_retrieved": "not retrieved in this audit; metadata from search index 2026-10-27"
+    },
+    "claim_check": "Abstract (arXiv/Wiley snippets): 'over 200 preregistered legal queries', tools tested May 2024 (secondary: ediscoveryllc), Lexis+ AI and Westlaw AI-Assisted Research / Ask Practical Law AI 'each hallucinate between 17% and 33% of the time', hallucinations lower than GPT-4, Lexis+ AI accurate 65%, Westlaw 42%, Westlaw hallucinated about one-third. CONFIRMED: >200 queries, May 2024, >17%, ~33%, unsupported-citation finding. NOT CONFIRMED FROM PRIMARY: the 43% GPT-4 rate appears only in secondary posts (AI Law Librarians 2026, LLRX 2026); it is consistent but needs the paper's Table/Fig to pin. The paper also tests Ask Practical Law AI, which the scope omits.",
+    "alt1": {
+      "title": "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (published version)",
+      "author": "Magesh, Surani, Dahl, Suzgun, Manning, Ho",
+      "publisher": "Journal of Empirical Legal Studies 22(2):216-242, Wiley",
+      "date": "2025-04-23",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jels.12413",
+      "why": "The peer-reviewed version of record; the record already cites it by volume but links to the lab page, so the DOI link should be primary."
+    },
+    "alt2": {
+      "title": "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (preprint)",
+      "author": "Magesh et al.",
+      "publisher": "arXiv:2405.20362",
+      "date": "2024-05-30",
+      "url": "https://arxiv.org/abs/2405.20362",
+      "why": "Open-access original with full result tables; slightly different headline wording (Westlaw 'more than 34%' in v1) so the published version should govern the numbers."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Record is right about venue and volume; add pages 216-242, DOI, the Wiley link, and verify the 43% GPT-4 figure against the paper itself since only secondary sources state it.",
+    "tag": "H (existence/venue: 2+ sources); M for the 43% figure"
+  },
+  {
+    "id": "src-kalai",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search (arxiv.org/openai.com domains) returned https://arxiv.org/abs/2509.04664 '[2509.04664] Why Language Models Hallucinate', authors Adam Tauman Kalai, Ofir Nachum, Santosh S. Vempala, Edwin Zhang, submitted 4 Sep 2025 (cs.CL). OpenAI companion post https://openai.com/index/why-language-models-hallucinate/ dated 5 Sep 2025 and PDF at https://cdn.openai.com/pdf/d04913be-3f6f-4d2b-b283-ff432ef4aaa5/why-language-models-hallucinate.pdf.",
+    "corrections": {
+      "link": "https://arxiv.org/abs/2509.04664",
+      "last_retrieved": "2025-05-11 is impossible (paper posted 2025-09-04); the date in the record is the model-test date from the paper, not a retrieval date; replace with the actual retrieval date"
+    },
+    "claim_check": "CONFIRMED (abstract + 3 independent summaries): models guess rather than abstain because training/evaluation reward guessing; under any binary (0-1) grader abstention is never optimal; 9 of 10 mainstream benchmarks use binary grading (WildBench the exception); proposed fix is changing scoring of existing benchmarks. The birthday example (three wrong dates in three attempts from 'a state-of-the-art open-source model') is confirmed. NOT CONFIRMED from snippets: that the model was DeepSeek-V3 and that the query date was 11 May 2025; no snippet named the model. GAP: open the PDF §1 to confirm model name and date.",
+    "alt1": {
+      "title": "Why language models hallucinate (OpenAI research post)",
+      "author": "OpenAI (Kalai, Nachum, Vempala, Zhang)",
+      "publisher": "OpenAI",
+      "date": "2025-09-05",
+      "url": "https://openai.com/index/why-language-models-hallucinate/",
+      "why": "Plain-language companion to the paper from the same authors; better for a reading card aimed at advisors, weaker as a citation because it is a blog post."
+    },
+    "alt2": {
+      "title": "Calibrated Language Models Must Hallucinate",
+      "author": "Kalai, A. T., & Vempala, S. S.",
+      "publisher": "Proceedings of STOC '24 (ACM); arXiv:2311.14648",
+      "date": "2024-06",
+      "url": "https://arxiv.org/abs/2311.14648",
+      "why": "Peer-reviewed theoretical predecessor (hallucination rate tied to singleton facts); more rigorous but does not cover the scoring-rule argument the course uses."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Paper and core argument verified; fill the link, fix the impossible last_retrieved date, and confirm the DeepSeek-V3 / 11 May 2025 fixture from the PDF.",
+    "tag": "H (existence, scoring-rule claim); GAP for the DeepSeek-V3 date detail"
+  },
+  {
+    "id": "src-rohrer",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search returned the IES grant record, bohrium and zendy index entries, and the Gwern-hosted PDF agreeing on Rohrer, Dedrick & Stershic (2015), Journal of Educational Psychology 107(3), 900-908, doi 10.1037/edu0000001, online first October 2014.",
+    "corrections": {},
+    "claim_check": "Scope claims only that interleaving beats blocking; confirmed: 126 seventh-graders, interleaved vs blocked practice, tests 1 and 30 days later, effect sizes d=0.42 (immediate) and 0.79 (delayed) favouring interleaving. Note the study is about maths problem types, not visual category classification, so the course's card-sort application is an extrapolation.",
+    "alt1": {
+      "title": "Similarity matters: A meta-analysis of interleaved learning and its moderators",
+      "author": "Brunmair, M., & Richter, T.",
+      "publisher": "Psychological Bulletin 145(11), 1029-1052; doi 10.1037/bul0000209",
+      "date": "2019-11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31556629/",
+      "why": "Better fit for the course's claim: 59-study meta-analysis of interleaved category/inductive learning (overall g=0.42; maths g=0.34), with the between-category-similarity moderator that explains why a card sort benefits."
+    },
+    "alt2": {
+      "title": "A randomized controlled trial of interleaved mathematics practice",
+      "author": "Rohrer, D., Dedrick, R. F., Hartwig, M. K., & Cheung, C.-N.",
+      "publisher": "Journal of Educational Psychology 112(1), 40-52; doi 10.1037/edu0000367",
+      "date": "2020",
+      "url": "https://ies.ed.gov/ncee/wwc/Study/88770",
+      "why": "Larger preregistered cluster RCT (54 classes, 787 students, d about 0.83) that meets WWC standards; stronger evidence but same maths-only limitation."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "Citation is correct and already the primary source; add Brunmair & Richter because it directly covers interleaved category classification, which is what the card sort does.",
+    "tag": "H"
+  },
+  {
+    "id": "src-lee-cognitive",
+    "status": "VERIFIED",
+    "evidence": "PRIMARY READ: WebFetch of the Microsoft Research PDF succeeded (binary saved); text extracted with pdftotext (23 pages). Header: 'The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers', Lee, Sarkar, Tankelevitch, Drosos, Rintel, Banks, Wilson; CHI '25, April 26-May 01 2025, Yokohama; ACM, 23 pages; https://doi.org/10.1145/3706598.3713778; CC BY 4.0.",
+    "corrections": {},
+    "claim_check": "ALL CONFIRMED in the PDF text: 319 knowledge workers, 936 examples; 374 (39.96%) Creation, 303 (32.37%) Information, 259 (27.67%) Advice; ChatGPT 309 (96.87%); critical thinking enacted for 555 (59.29%); confidence in GenAI beta=-0.69 p<0.001; self-confidence beta=0.26 p=0.026; 'much less/less effort' 72% Knowledge, 79% Comprehension, 69% Application, 72% Analysis, 76% Synthesis, 55% Evaluation; three shifts (information gathering to information verification; problem-solving to response integration; task execution to task stewardship). Survey is self-report and cross-sectional as stated.",
+    "alt1": {
+      "title": "AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking",
+      "author": "Gerlich, M.",
+      "publisher": "Societies 15(1), 6 (MDPI); doi 10.3390/soc15010006",
+      "date": "2025-01",
+      "url": "https://doaj.org/article/d5c17dd91ce64775a065095d8af730ce",
+      "why": "Independent 666-participant mixed-methods study finding frequent AI use negatively correlated with critical-thinking scores via cognitive offloading; correlational and in a lower-tier journal, so a supplement rather than a replacement."
+    },
+    "alt2": {
+      "title": "Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task",
+      "author": "Kosmyna, N., Hauptmann, E., et al. (MIT Media Lab)",
+      "publisher": "arXiv:2506.08872 (v2 31 Dec 2025)",
+      "date": "2025-06-10",
+      "url": "https://arxiv.org/abs/2506.08872v1",
+      "why": "Behavioural/EEG evidence (54 participants, 18 with full EEG) rather than self-report; widely cited but a small, non-peer-reviewed preprint, so weaker than the current record."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary source read in full; every figure in scope matches the paper.",
+    "tag": "H"
+  },
+  {
+    "id": "src-laplace",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search (gutenberg.org/archive.org domains) returned Project Gutenberg eBook #58881 'A Philosophical Essay on Probabilities', translator F. W. Truscott, F. L. Emory, title page New York: John Wiley & Sons; London: Chapman & Hall, 1902 (from the sixth French edition), HTML at https://www.gutenberg.org/files/58881/58881-h/58881-h.htm; Internet Archive scans https://archive.org/details/philosophicaless00lapliala (UCLA, iv+196 p.) and https://archive.org/download/cu31924001150733/cu31924001150733.pdf (Cornell). A search snippet from the Gutenberg HTML shows the page marker {3} directly above 'CHAPTER II. CONCERNING PROBABILITY.' and the TOC entry 'Concerning Probability 3'.",
+    "corrections": {
+      "link": "https://www.gutenberg.org/ebooks/58881 (Project Gutenberg #58881, Truscott & Emory 1902 translation, public domain in the US)",
+      "publisher": "New York: John Wiley & Sons; London: Chapman & Hall, 1902 (Truscott & Emory, trans.; original 1814). Chapter II 'Concerning Probability' begins p. 3"
+    },
+    "claim_check": "Scope makes no measured claim. Chapter II title and starting page 3 confirmed from the Gutenberg text; the chapter's opening sentence (events, however insignificant, follow the laws of nature) is the passage that carries the 'probability is relative to our ignorance' argument. End page 8 not confirmed from snippets.",
+    "alt1": {
+      "title": "Philosophical Essay on Probabilities (translated from the fifth French edition of 1825, with notes)",
+      "author": "Laplace, P. S.; Dale, A. I. (trans.)",
+      "publisher": "Springer, Sources in the History of Mathematics and Physical Sciences 13; doi 10.1007/978-1-4612-4184-3",
+      "date": "1995",
+      "url": "https://link.springer.com/book/9780387943497",
+      "why": "Modern scholarly translation with historical notes; more accurate than the 1902 text but paywalled, so less useful as assigned reading."
+    },
+    "alt2": {
+      "title": "A philosophical essay on probabilities (1902 scan)",
+      "author": "Laplace, P. S.; Truscott & Emory (trans.)",
+      "publisher": "Internet Archive (UCLA copy)",
+      "date": "1902",
+      "url": "https://archive.org/details/philosophicaless00lapliala",
+      "why": "Page-faithful scan of the same edition, so page numbers 3-8 can be cited exactly; Gutenberg's HTML is easier to read."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Edition, translators, publisher and chapter location all verified; fill the missing link with the Gutenberg edition.",
+    "tag": "H"
+  },
+  {
+    "id": "src-zheng-persona",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search returned the ACL Anthology record https://aclanthology.org/2024.findings-emnlp.888/ (also preview.aclanthology.org): Mingqian Zheng, Jiaxin Pei, Lajanugen Logeswaran, Moontae Lee, David Jurgens, Findings of the ACL: EMNLP 2024, Miami, pages 15126-15154, DOI 10.18653/v1/2024.findings-emnlp.888; arXiv:2311.10054 (v3) and HF paper page agree.",
+    "corrections": {
+      "publisher": "Findings of the Association for Computational Linguistics: EMNLP 2024, Miami, pp. 15126-15154; doi 10.18653/v1/2024.findings-emnlp.888; arXiv:2311.10054",
+      "last_retrieved": "metadata confirmed from search index 2026-10-27"
+    },
+    "claim_check": "CONFIRMED (arXiv abstract via two indexes): 162 roles across 6 relationship types and 8 expertise domains, 2,410 factual questions, 4 LLM families; adding a persona did not improve accuracy versus a no-persona control (effects null or slightly negative); best-persona-per-question helps but automatic selection is no better than random. Matches the scope's null-result description.",
+    "alt1": {
+      "title": "Prompting Science Report 4: Playing Pretend: Expert Personas Don't Improve Factual Accuracy",
+      "author": "Basil, P., Meincke, L., Mollick, E., et al. (Wharton GAIL)",
+      "publisher": "SSRN 5879722 / arXiv:2512.05858",
+      "date": "2025-12",
+      "url": "https://papers.ssrn.com/abstract=5879722",
+      "why": "Newer replication on 6 current models (GPQA Diamond, MMLU-Pro) reaching the same null result; not peer reviewed, so a supplement to Zheng rather than a replacement."
+    },
+    "alt2": {
+      "title": "Better Zero-Shot Reasoning with Role-Play Prompting",
+      "author": "Kong, A., et al.",
+      "publisher": "NAACL 2024; arXiv:2308.07702",
+      "date": "2024-03-14",
+      "url": "https://arxiv.org/abs/2308.07702",
+      "why": "The main peer-reviewed counter-evidence (role-play improved reasoning benchmarks on ChatGPT); useful if the lesson wants to state the caveat fairly, but it contradicts rather than supports the null result."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Verified; add pages and DOI and note the 2025 Wharton replication as a supplement.",
+    "tag": "H"
+  },
+  {
+    "id": "src-dahl-fictions",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search returned the OUP article page https://academic.oup.com/jla/article/16/1/64/7699227 and the author-hosted PDF whose header reads 'Journal of Legal Analysis, 2024, 16, 64-93 https://doi.org/10.1093/jla/laae003' (https://dho.stanford.edu/wp-content/uploads/Hallucinations_JLA.pdf), plus arXiv:2401.01301 and the Stanford Law publications listing. Authors Dahl, Magesh, Suzgun, Ho confirmed.",
+    "corrections": {
+      "publisher": "Journal of Legal Analysis 16(1), 64-93 (Oxford University Press), 2024; doi 10.1093/jla/laae003; preprint arXiv:2401.01301",
+      "link": "https://academic.oup.com/jla/article/16/1/64/7699227 (OA PDF: https://dho.stanford.edu/wp-content/uploads/Hallucinations_JLA.pdf)",
+      "last_retrieved": "metadata confirmed from search index 2026-10-27"
+    },
+    "claim_check": "CONFIRMED: hallucination between 58% (ChatGPT 4) and 88% (Llama 2) on verifiable questions about random federal cases; Table 5.1 mean rates GPT 4 0.58, GPT 3.5 0.69, PaLM 2 0.72, Llama 2 0.88 (arXiv text snippet). The authors state the contradiction-based rate is a lower bound. NOT CONFIRMED from primary snippets: 'more than 800,000 verifiable legal questions' (appears only in the AI Law Librarians 2026 post). GAP: confirm the query count in the paper's methods section (§3/§4 of the JLA version). Scope omits PaLM 2, which is fine but worth noting.",
+    "alt1": {
+      "title": "Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models (published version)",
+      "author": "Dahl, M., Magesh, V., Suzgun, M., & Ho, D. E.",
+      "publisher": "Journal of Legal Analysis 16(1):64-93, OUP",
+      "date": "2024",
+      "url": "https://academic.oup.com/jla/article/16/1/64/7699227",
+      "why": "Peer-reviewed version of record and open access; the record currently credits the lab instead of the journal."
+    },
+    "alt2": {
+      "title": "Large Legal Fictions (preprint)",
+      "author": "Dahl et al.",
+      "publisher": "arXiv:2401.01301",
+      "date": "2024-04-25 (v2)",
+      "url": "https://arxiv.org/abs/2401.01301",
+      "why": "Open-access with the full tables including the per-model rates; superseded by the JLA version for citation."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Rates are right; the publisher field is wrong (journal, not lab) and the link is missing; verify the 800,000-query count.",
+    "tag": "H (rates: 2+ sources); GAP for the 800,000 figure"
+  },
+  {
+    "id": "src-charlotin",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search returned Charlotin's own site (https://www.damiencharlotin.com/media/) and multiple independent reports naming the database 'AI Hallucination Cases' maintained by Damien Charlotin (French lawyer/scholar) at damiencharlotin.com/hallucinations (path quoted in search summaries; the only Charlotin URL returned directly was /media/). Counts reported by third parties: 1,545 (4 Jun 2026, tool review), 1,600 from 35 countries with 1,116 US (The Star 15 Jun 2026; Malay Mail 16 Jun 2026), 1,624 (vaquill.ai, 18 Jun 2026), 2,028 (Inside Legal AI, 9 Sep 2026 update), 2,202 with 1,501 US (haqq.ai, citing the database's 19 Oct 2026 update). The record's 'as of 9 June 2026' figure is consistent with the ~1,545-1,600 range.",
+    "corrections": {
+      "link": "https://www.damiencharlotin.com/hallucinations/ (path reported by multiple search summaries; confirm it resolves)",
+      "publisher": "Damien Charlotin (personal site); the HEC Paris affiliation was not confirmed by any search result",
+      "last_retrieved": "counts above are third-party as of 2026-10-27"
+    },
+    "claim_check": "Existence and nature (crowd-sourced tracker of court decisions where generative AI produced fabricated citations/content, downloadable CSV) confirmed by 5+ independent reports. Approximate count today: about 2,200 decisions worldwide as of the 19 Oct 2026 update (single third-party source; the 9 Sep 2026 figure of 2,028 is also single-source). The 'only ever rises' characterisation is supported (eightfold year-on-year growth reported June 2026). Scope says 'through a secondary tracker': the course should name which tracker.",
+    "alt1": {
+      "title": "Who's submitting AI-tainted filings in court?",
+      "author": "Stanford Center for Internet and Society",
+      "publisher": "Stanford CIS blog",
+      "date": "2025-10",
+      "url": "https://cyberlaw.stanford.edu/blog/2025/10/whos-submitting-ai-tainted-filings-in-court/",
+      "why": "Independent analysis of 114 US cases from the Charlotin data (90% solo/small firms); adds who-files context but is a snapshot, not a live count."
+    },
+    "alt2": {
+      "title": "Handling Hallucinations: A Reflection on the Last Three Years",
+      "author": "UNC School of Law Library",
+      "publisher": "UNC Law Library blog",
+      "date": "2026-06",
+      "url": "https://library.law.unc.edu/2026/06/handling-hallucinations-a-reflection/",
+      "why": "Dated secondary count (1,058 US cases as of early June 2026) from a law library, useful as a citable fixture for the session's 'as of' figure; lags the live database."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fill the link, drop or verify the HEC Paris attribution, and refresh the cumulative count (about 2,200 as of 19 Oct 2026) before teaching session 2.",
+    "tag": "M (counts are third-party; H on existence)"
+  },
+  {
+    "id": "src-noy-zhang",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search returned the Stanford SCALE listing, CiNii, SUFE and bibbase index records and the MIT-hosted PDF (https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf) agreeing on Noy & Zhang, Science 381(6654), 187-192, 14 July 2023, doi 10.1126/science.adh2586; EurekAlert release https://www.eurekalert.org/news-releases/995024 quotes the abstract.",
+    "corrections": {
+      "publisher": "Science 381(6654), 187-192, 14 July 2023; doi 10.1126/science.adh2586",
+      "last_retrieved": "metadata confirmed from search index 2026-10-27; abstract text via EurekAlert"
+    },
+    "claim_check": "CONFIRMED (abstract via EurekAlert + 3 reports): 453 college-educated professionals, occupation-specific incentivised writing tasks, half randomly given ChatGPT, average time down 40%, quality up 18%, inequality between workers decreased. Occupations (marketers, grant writers, consultants, data analysts, HR, managers) confirmed. Task examples confirmed as grant cover letters, restructuring emails, analysis plans (the scope's 'press release' and 'short report' not seen in snippets but plausible). Caveat the search surfaced: no fact-checking of outputs was done; the working paper version reported 444 participants and SD units, so cite the published 453/40%/18%.",
+    "alt1": {
+      "title": "When combinations of humans and AI are useful: A systematic review and meta-analysis",
+      "author": "Vaccaro, M., Almaatouq, A., & Malone, T.",
+      "publisher": "Nature Human Behaviour; doi 10.1038/s41562-024-02024-1",
+      "date": "2024-10-28",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11659167/",
+      "why": "106-study meta-analysis (370 effect sizes) showing human augmentation on average but no synergy, with creative/generative tasks faring best; broader and newer context for the four-trial figure, though it is not a writing-task result."
+    },
+    "alt2": {
+      "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence (MIT working paper)",
+      "author": "Noy, S., & Zhang, W.",
+      "publisher": "MIT Department of Economics",
+      "date": "2023-03",
+      "url": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1_0.pdf",
+      "why": "Free full text, but it is the earlier 444-participant version with effects in SD units, so it is worse than the Science version for the 40%/18% figures."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Figures verified by multiple independent summaries of the abstract; add volume/issue/pages and raise confidence.",
+    "tag": "H"
+  },
+  {
+    "id": "src-dellacqua",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search returned econbiz and HBS-derived listings (Working Paper No. 24-013, Technology & Operations Mgt. Unit, 2023, ~58 pp.), the SSRN listing https://papers.ssrn.com/abstract=4573321 and an MIT Sloan mirror of the SSRN PDF (https://mitsloan.mit.edu/sites/default/files/2023-10/SSRN-id4573321.pdf), and the published version: Organization Science, Articles in Advance 11 March 2026, doi 10.1287/orsc.2025.21838, CC BY 4.0, nine authors (Dell'Acqua, McFowland III, Mollick, Lifshitz, Kellogg, Rajendran, Krayer, Candelon, Lakhani).",
+    "corrections": {
+      "publisher": "Harvard Business School Working Paper 24-013 (Sept 2023); SSRN 4573321; published in Organization Science, Articles in Advance 11 March 2026, doi 10.1287/orsc.2025.21838 (open access)",
+      "author": "published version lists 'Lifshitz' (not 'Lifshitz-Assaf')",
+      "last_retrieved": "metadata confirmed from search index 2026-10-27"
+    },
+    "claim_check": "CONFIRMED by 3+ reports (Computing, beSpacific, Siili, Brainscape, AI-wiki): 758 BCG consultants (~7% of individual contributors), three arms (no AI / GPT-4 / GPT-4 + prompting overview), 18 tasks inside the frontier, 12.2% more tasks, 25.1% faster, >40% higher quality, below-average +43% vs above-average +17%, 19 percentage points less likely correct on the outside-frontier task. Footwear-product task framing and the brand-recommendation outside-frontier task appear in summaries. One wiki reports the published version's quality gain as +1.31 on a 1-10 scale (29.9%) for GPT-only, so check whether the Organization Science tables restate '>40%' before switching citations.",
+    "alt1": {
+      "title": "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality (published)",
+      "author": "Dell'Acqua, F., McFowland III, E., Mollick, E., Lifshitz, H., Kellogg, K., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K. R.",
+      "publisher": "Organization Science (INFORMS), Articles in Advance; doi 10.1287/orsc.2025.21838",
+      "date": "2026-03-11",
+      "url": "https://doi.org/10.1287/orsc.2025.21838",
+      "why": "Peer-reviewed, open-access version of record; cite it instead of the working paper, after checking that the headline percentages are unchanged."
+    },
+    "alt2": {
+      "title": "Navigating the Jagged Technological Frontier (SSRN working paper PDF, mirrored)",
+      "author": "Dell'Acqua et al.",
+      "publisher": "SSRN 4573321 / MIT Sloan mirror",
+      "date": "2023-09",
+      "url": "https://mitsloan.mit.edu/sites/default/files/2023-10/SSRN-id4573321.pdf",
+      "why": "Free full text of the exact version whose 12.2/25.1/40 figures the course quotes; useful for pinning the numbers if the journal version restates them."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "All figures verified against consistent reports of the working paper; add the HBS number, SSRN id and the 2026 Organization Science publication.",
+    "tag": "H"
+  },
+  {
+    "id": "src-brynjolfsson",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search returned the RePEc record https://econpapers.repec.org/RePEc:oup:qjecon:v:140:y:2025:i:2:p:889-942. and SUFE/EurekAlert summaries confirming Brynjolfsson, Li & Raymond, 'Generative AI at Work', QJE 140(2), 889-942, 2025, doi 10.1093/qje/qjae044; NBER WP 31161 pages https://www.nber.org/papers/w31161 and PDF https://www.nber.org/system/files/working_papers/w31161/w31161.pdf returned by search; SSRN 4426942.",
+    "corrections": {
+      "scope figures": "5,179 agents / 14% / 34% are the NBER WP 31161 (April 2023) figures; the published QJE abstract reports 5,172 agents and about 15% average, with less-experienced and lower-skilled workers gaining in speed and quality and the most experienced seeing small speed gains and slight quality declines. Either cite NBER for the current numbers or update the numbers to the QJE version.",
+      "last_retrieved": "metadata confirmed from search index 2026-10-27"
+    },
+    "claim_check": "NBER version CONFIRMED (abstract via 3 indexes): 5,179 agents, issues resolved per hour +14% average, +34% for novice/low-skilled, minimal effect on experienced; tool suggested replies (suggestion vs automation modes); spreads best-worker practices. Setting: the NBER abstract says a Fortune 500 software firm's small-business customers (one news write-up said 'online retailer'; prefer the paper). QJE version: 5,172 agents, 15%; the published novice-gain percentage was not visible in snippets (GAP: read the QJE abstract/Table to replace 34%).",
+    "alt1": {
+      "title": "Generative AI at Work (published)",
+      "author": "Brynjolfsson, E., Li, D., & Raymond, L.",
+      "publisher": "The Quarterly Journal of Economics 140(2), 889-942; doi 10.1093/qje/qjae044",
+      "date": "2025-05",
+      "url": "https://econpapers.repec.org/RePEc:oup:qjecon:v:140:y:2025:i:2:p:889-942.",
+      "why": "Peer-reviewed version of record with revised sample (5,172) and estimate (about 15%); the course's bars should match whichever version is cited."
+    },
+    "alt2": {
+      "title": "Generative AI at Work (NBER Working Paper 31161)",
+      "author": "Brynjolfsson, Li, Raymond",
+      "publisher": "NBER",
+      "date": "2023-04",
+      "url": "https://www.nber.org/papers/w31161",
+      "why": "Free and the exact source of the 14%/34% figures; weaker because superseded by the journal version."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Record cites the QJE version but quotes NBER-version numbers; align the two (simplest: keep the NBER link and state the figures are from the 2023 working paper, or re-read the QJE abstract and update to 5,172/15%).",
+    "tag": "H (existence); M for the figure-version mismatch"
+  },
+  {
+    "id": "src-metr-2025",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search returned the METR blog URL verbatim (https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/), the arXiv paper https://arxiv.org/abs/2507.09089v1 (Becker, Rush, Barnes, Rein; v1 12 Jul 2025, v2 25 Jul 2025) and reports from Business Insider, Simon Willison, diginomica, Pragmatic Engineer, ITPro and IBM.",
+    "corrections": {
+      "author": "Becker, J., Rush, N., Barnes, E., & Rein, D. (METR); add arXiv:2507.09089 as the citable paper",
+      "last_retrieved": "metadata confirmed from search index 2026-10-27"
+    },
+    "claim_check": "CONFIRMED by 5+ independent reports: RCT, 16 experienced open-source developers (about 5 years on their repos), 246 tasks, AI allowed/disallowed per task, mainly Cursor Pro with Claude 3.5/3.7 Sonnet, February-June 2025; AI-allowed tasks took 19% longer; developers forecast 24% faster beforehand and believed about 20% faster afterwards (experts forecast 38-39%). Caveats: small sample, mature repos, tools since improved.",
+    "alt1": {
+      "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+      "author": "Becker, J., Rush, N., Barnes, E., & Rein, D.",
+      "publisher": "arXiv:2507.09089",
+      "date": "2025-07-12 (v2 2025-07-25)",
+      "url": "https://arxiv.org/abs/2507.09089v1",
+      "why": "The full paper with methods and confidence intervals; better than the blog post as a citation, same findings."
+    },
+    "alt2": {
+      "title": "We are changing our developer productivity experiment design",
+      "author": "METR",
+      "publisher": "METR blog (mirrored on conffab.com; metr.org URL not returned by search)",
+      "date": "2026",
+      "url": "https://conffab.com/?p=10163",
+      "why": "METR's 2026 follow-up stating the newer data (about -18% returning / -4% new developers) is an unreliable signal because developers declined to work without AI; worse as evidence but needed context if the 19% figure is taught in 2026."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "All figures verified; add the arXiv paper as the citable version and the 2026 follow-up note so the 19% slowdown is taught as a dated fixture.",
+    "tag": "H"
+  },
+  {
+    "id": "src-morningstar-fired",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search (morningstar.com domain) returned: 'Why Do Investors Break Up With Their Financial Advisor?' by Danielle Labotka, 12 April 2023, https://www.morningstar.com/financial-advisors/why-do-investors-break-up-with-their-financial-advisor; 'Top Reasons Investors Fire Their Financial Advisors', 17 April 2023, https://www.morningstar.com/business/insights/blog/client-engagement/why-do-investors-fire-their-advisors; research landing 'Why Clients Fire Financial Advisors and How You Can Be the Exception' https://www.morningstar.com/business/insights/research/fire-financial-advisor. Trade press (FA Magazine, Institutional Investor RIA Intel, WealthManagement.com, Wealth Professional, InvestmentNews, IFA Magazine podcast with Lamas and Labotka) agree.",
+    "corrections": {
+      "title": "Exact research-paper title not confirmed; the canonical Morningstar article is 'Why Do Investors Break Up With Their Financial Advisor?' (Labotka, 12 April 2023); the research landing page is titled 'Why Clients Fire Financial Advisors and How You Can Be the Exception'",
+      "author": "Labotka, D., & Lamas, S. (article bylined Labotka; both named as researchers)",
+      "link": "https://www.morningstar.com/financial-advisors/why-do-investors-break-up-with-their-financial-advisor",
+      "published": "2023-04-12",
+      "sample": "184 (the '185' variant is unsupported)"
+    },
+    "claim_check": "CONFIRMED by 4+ independent sources: 184 investors who had fired an advisor, drawn from 3,003 respondents across three surveys in 2021 and 2022; shares of responses: quality of advice/services 32%, quality of relationship 21%, cost 17%, returns 11%, comfort handling finances alone 10%, communication 9%; authors' reading that advice and relationship, not returns or fees, dominate. Extra context found: only 30% of those who fired still work with an advisor; leavers skew wealthier and more financially literate.",
+    "alt1": {
+      "title": "Why Do Investors 'Break Up' With Their Financial Advisor?",
+      "author": "Labotka, D. (Morningstar Behavioral Insights, with S. Lamas)",
+      "publisher": "Morningstar",
+      "date": "2023-04-12",
+      "url": "https://www.morningstar.com/financial-advisors/why-do-investors-break-up-with-their-financial-advisor",
+      "why": "Morningstar's own write-up of the study with the six shares; the primary public source, better than the trade-press reports the record currently relies on."
+    },
+    "alt2": {
+      "title": "Morningstar: Quality of Advice Most Common Reason for Firing an Advisor",
+      "author": "WealthManagement.com",
+      "publisher": "WealthManagement.com",
+      "date": "2023-04",
+      "url": "https://www.wealthmanagement.com/wealth-management-industry-trends/morningstar-quality-of-advice-most-common-reason-for-firing-an-advisor",
+      "why": "Independent trade-press confirmation that adds the 3,003-respondent base and the 2021-2022 polls; secondary, so worse than Morningstar's page."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Figures verified by multiple independent reports; fill the canonical Morningstar link and date, record the sample as 184, and stop carrying the '185' variant.",
+    "tag": "H (figures: 4+ sources); M for exact report title"
+  },
+  {
+    "id": "src-vanguard-alpha",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search returned Vanguard's canonical 2022 PDF https://corporate.vanguard.com/content/dam/corp/articles/pdf/putting_value_on_your_value_quantifying_vanguard_advisors_alpha.pdf (July 2022) and Vanguard's behavioral-coaching page https://advisors.vanguard.com/behavioral-coaching citing it as Kinniry, Jaconetti, DiJoseph, Walker & Quinn, 2022 (Maria Quinn credited for the 2022 revision). Also returned: Vanguard Canada advisor brief https://www.vanguard.ca/content/dam/intl/americas/canada/en/documents/gas/quantifying-your-value-to-clients-advisor.pdf (snippet shows 'About 3% ... 150 bps ... Behavioural coaching'), Vanguard Canada infographic, Vanguard UK June 2020 paper, and secondary coverage (InvestmentNews, datapoints.com, dwealth.news).",
+    "corrections": {
+      "link": "https://corporate.vanguard.com/content/dam/corp/articles/pdf/putting_value_on_your_value_quantifying_vanguard_advisors_alpha.pdf",
+      "published": "2022-07",
+      "scope attribution": "'about 3%' confirmed for the framework generally (2022 summary: 'up to, or even exceed, 3%' per the search summary); the 150 bps behavioural-coaching figure is explicitly stated in the 2016 US edition and the 2018 Vanguard Canada brief, while one search summary reports the 2022 US edition framing coaching as '0 to >200 bps'. Verify in the 2022 PDF before attributing 150 bps to it."
+    },
+    "claim_check": "PARTIALLY CONFIRMED: 'about 3 percentage points of potential net value over time, not an annual guarantee' confirmed by Vanguard Canada infographic and Vanguard UK ('very irregular and not an annual expectation'). Behavioural coaching = 150 bps and 'roughly half' confirmed for the 2016 US paper (datapoints.com) and the 2018 Canada brief (Vanguard's own PDF snippet). GAP: whether the July 2022 edition still prints 150 bps (versus a 0 to >200 bps range) could not be read; opening Figure 1 of the 2022 PDF would settle it.",
+    "alt1": {
+      "title": "Quantifying your value to your clients (Vanguard Advisor's Alpha advisor brief)",
+      "author": "Schlanger, Jaconetti, Kinniry, Bennyhoff, Zilbering (Vanguard Canada)",
+      "publisher": "Vanguard Investments Canada",
+      "date": "2018-10",
+      "url": "https://www.vanguard.ca/content/dam/intl/americas/canada/en/documents/gas/quantifying-your-value-to-clients-advisor.pdf",
+      "why": "Vanguard's own document that prints the exact 'About 3%' and '150 bps behavioural coaching' figures the lesson uses; older than the 2022 US paper but an exact match to the claim."
+    },
+    "alt2": {
+      "title": "Putting a value on your value: Quantifying Vanguard Adviser's Alpha (UK edition)",
+      "author": "Kinniry, F. M., et al.",
+      "publisher": "Vanguard UK research",
+      "date": "2020-06",
+      "url": "https://www.vanguard.co.uk/content/dam/intl/europe/documents/en/whitepapers/quantifying-vanguards-advisers-alpha.pdf",
+      "why": "Vanguard's own statement that the 3% is irregular and not an annual expectation, which supports the lesson's framing; UK-adapted, so the US modules differ."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Fill the canonical 2022 link and date; attribute the 150 bps figure to the edition that states it, or confirm it in the 2022 PDF, since one summary reports the 2022 edition uses a 0 to >200 bps range.",
+    "tag": "M (about 3%: H from Vanguard's own pages; 150 bps in the 2022 edition: GAP)"
+  },
+  {
+    "id": "src-pew-ai-summaries",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search (pewresearch.org domain) returned the exact URL and title, dated 22 July 2025, with quoted text; independent reports (Search Engine Roundtable, TheWrap, PPC Land, AI Weekly, The Decoder, ODSC, Gigazine) repeat the figures.",
+    "corrections": {
+      "last_retrieved": "confirmed via search index 2026-10-27 (page text quoted in results)"
+    },
+    "claim_check": "ALL CONFIRMED from Pew's own text as quoted: browsing data from 900 US adults, March 1-31 2025, google.com searches only, 68,879 unique searches of which 12,593 (18%) produced an AI summary; clicked a traditional result on 8% of visits with a summary vs 15% without; clicked a link inside the summary on 1% of such visits; ended session on 26% of pages with a summary vs 16% without. One secondary source gave April 7-17 2025 as the collection window; Pew's own text says March.",
+    "alt1": {
+      "title": "Update: AI Overviews Reduce Clicks by 58%",
+      "author": "Ahrefs",
+      "publisher": "Ahrefs blog",
+      "date": "2026-02",
+      "url": "https://ahrefs.com/blog/ai-overviews-reduce-clicks-update/",
+      "why": "Newer and much larger (about 150k keywords with vs without AI Overviews, Search Console CTR, December 2025 data) but site-side CTR rather than user-panel behaviour, and vendor-published; a supplement, not a replacement."
+    },
+    "alt2": {
+      "title": "Americans and AI 2026: Chatbots, Smart Devices and Views on Impact",
+      "author": "Pew Research Center",
+      "publisher": "Pew Research Center",
+      "date": "2026-06-17",
+      "url": "https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/",
+      "why": "Pew's 2026 survey (5,119 adults, Feb 17-23 2026) finding 60% say they read AI search summaries; self-report rather than observed clicks, so complementary."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary source confirmed and every figure matches Pew's own wording; raise confidence to H.",
+    "tag": "H"
+  },
+  {
+    "id": "src-3b1b-llm",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search returned the transcript page for the exact ID (https://you-tldr.com/transcript/LPZh9BOjkQs 'Large Language Models explained briefly'), an Odysee mirror of the same 3Blue1Brown video, the lesson page https://www.3blue1brown.com/lessons/mini-llm/, the 3Blue1Brown Substack post, and a podcast aggregator listing 'YouTube 20 Nov 2024' with runtime 7m58s; the Computer History Museum origin confirmed by the members post https://members.3blue1brown.com/posts/7-minute-llm-of-114560202.",
+    "corrections": {
+      "last_retrieved": "ID resolved via search index 2026-10-27 (not from YouTube directly)"
+    },
+    "claim_check": "Video exists at LPZh9BOjkQs with the stated title; upload 20 Nov 2024 (two sources); length about 7:58 (one aggregator) i.e. 'about 8 minutes'; made for the CHM chatbot exhibit. Content (LLM as next-word probability function, parameters, pre-training, RLHF, transformers/attention) matches 'what an LLM is, in eight minutes'.",
+    "alt1": {
+      "title": "Large Language Models explained briefly (lesson page with text)",
+      "author": "Sanderson, G. (3Blue1Brown)",
+      "publisher": "3blue1brown.com",
+      "date": "2024-11",
+      "url": "https://www.3blue1brown.com/lessons/mini-llm/",
+      "why": "Same content as a stable, text-plus-video page on the creator's own site; better for a reading card because it does not depend on the YouTube ID resolving."
+    },
+    "alt2": {
+      "title": "Deep Dive into LLMs like ChatGPT",
+      "author": "Karpathy, A.",
+      "publisher": "YouTube",
+      "date": "2025-02-05",
+      "url": "https://www.youtube.com/watch?v=7xTGNNLPyMI",
+      "why": "Far more thorough (about 3.5 hours: pre-training, SFT, RL, tokenisation, hallucinations) but far too long for a pre-class assignment; a runner-up for students who want depth."
+    },
+    "recommendation": "KEEP",
+    "rationale": "ID, title, date and length verified from independent aggregators; the instructor should still click the link once since YouTube itself was unreachable.",
+    "tag": "H"
+  },
+  {
+    "id": "src-karpathy-intro",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch resolved no external host (ENOTFOUND on reglab, arxiv, doi.org, aclanthology, science.org, ssrn, nber, metr, pewresearch, youtube, crossref, vanguard, morningstar); all evidence below is from WebSearch result snippets/summaries unless stated. Search (youtube.com domain) returned https://www.youtube.com/watch?v=zjkBMFhNj_g and https://m.youtube.com/watch?v=zjkBMFhNj_g titled '[1hr Talk] Intro to Large Language Models' with the description ('1 hour general-audience introduction ... based on the slides of a talk I gave recently at the AI Security Summit'). Chapter lists reposted on summify.io, classcentral.com and econmacromicro.blogspot.com give 00:45:43 LLM Security Intro, 00:46:14 Jailbreaks, 00:51:30 Prompt Injection, 00:56:23 Data poisoning, 00:58:37 LLM Security conclusions; Simon Willison's post independently places the security section at the 45-minute mark. A channel aggregator dates the upload Nov 23, 2023.",
+    "corrections": {
+      "published": "upload shown as 2023-11-23 by an aggregator (record says 2023-11-22; the one-day difference is likely time zone); duration not confirmed",
+      "last_retrieved": "ID resolved via search index 2026-10-27"
+    },
+    "claim_check": "Segment 45:43 to 58:37 maps exactly onto the chapter list (Security Intro, Jailbreaks, Prompt Injection, Data poisoning, ending at the Security conclusions chapter at 58:37), so the stated timestamps match the described content. GAP: exact upload date (22 vs 23 Nov 2023) and total length (about 59-60 min) not confirmed from YouTube.",
+    "alt1": {
+      "title": "Deep Dive into LLMs like ChatGPT",
+      "author": "Karpathy, A.",
+      "publisher": "YouTube",
+      "date": "2025-02-05",
+      "url": "https://www.youtube.com/watch?v=7xTGNNLPyMI",
+      "why": "Karpathy's 2025 successor talk is more current on model behaviour and hallucination, but it does not have a compact security segment, so it is worse for Session 4's specific assignment."
+    },
+    "alt2": {
+      "title": "Intro to Large Language Models (write-up of the talk, security section at 45m)",
+      "author": "Willison, S.",
+      "publisher": "simonwillison.net",
+      "date": "2023-11",
+      "url": "https://simonwillison.net/random/jailbreaking",
+      "why": "Independent written summary that confirms the segment's contents (jailbreaking, prompt injection, data poisoning); a text companion for students, not a replacement for the video."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Video ID, title and the security-segment timestamps verified by three independent chapter listings; only the exact upload day and runtime remain unconfirmed.",
+    "tag": "H (segment content); M for upload date/length"
+  }
+]

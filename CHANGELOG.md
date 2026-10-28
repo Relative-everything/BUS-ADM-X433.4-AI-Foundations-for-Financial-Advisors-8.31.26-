@@ -10,6 +10,60 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-10-27 · The bibliography audited against live pages
+
+Branch `ccr-ef57ff7a-gwm5uh`, the same day as the register close-out below; plan,
+ledger, handback and the six batch audit files in
+`docs/changes/2026-10-27-bibliography-audit/`; decisions D-093 to D-099 in
+`docs/next-term/DECISIONS.md`. The instruction was a comprehensive update of the
+bibliography, every record except the locked Wolfram essay: delete anything
+hallucinated, then find the best two alternatives for each source. 142 records were
+checked (the synthetic case and the two deliberately fabricated citations excepted):
+none is hallucinated and none was deleted for cause. Anthropic pages were fetched
+and read; everything else was confirmed by publisher-domain web search, which the
+record says.
+
+### Sources
+
+- **135 records corrected or annotated.** Titles, authors, publishers, links and dates
+  set to what the live page or the search index carries; a dated `Audit 2026-10-27`
+  line on every record saying how it was checked and what it found; 42
+  `last_retrieved` dates advanced on the Anthropic pages fetched in full.
+- **Four records replaced.** The temperature rule left the Messages API reference and
+  the Opus 5.5 migration guide; the five chips now cite the Model deprecations page's
+  API parameter deprecations table, and a new record, `src-api-migration-2026-10-21`,
+  carries the pinned API version the Session 1 console depends on. The ISS advisor
+  survey cites ISS Market Intelligence rather than the trade summary. OWASP cites the
+  2026 editions of the LLM Top 10 and the Agentic Top 10.
+- **Two duplicate records retired** (`src-anthropic-context` into `src-context-windows`;
+  `src-api-messages` and `src-anthropic-sampling` emptied by the move above), the lock
+  synced. 144 works, 705 references.
+- **Supplements recorded** on 21 records as dated lines naming the better companion
+  source (the FY2027 exam priorities, the IC3 annual report PDF, the published journal
+  versions of three papers, and so on).
+
+### Served pages
+
+- **API retention.** A new FACTS record, `claude-api-retention`, from the fetched
+  platform page: content is not retained by default; the Covered Models keep prompts
+  and outputs 30 days. The Session 1 console note, the Session 4 Live API box, Appendix
+  D2's business-plan bullet, the ladder rung, the vendor grid and the contract-view
+  clause no longer state a blanket 30-day API retention.
+- **Session 4.** The voice-clone bar names a Japanese company's branch manager, as
+  Forbes does; the Copilot setting is named as Microsoft names it; the memory flip card
+  also cites the help article that carries the topics claim; three chips rise to H on
+  two or more independent sources; the §07 and B4 source notes name the pages their
+  chips now cite.
+- **Session 1 and 2.** The temperature chips and source notes cite the deprecations
+  page; the console note says why the panel pins the earlier API version.
+
+### Registers
+
+- Six rows opened, DW-198 to DW-203: five figures no search result confirmed, left in
+  place at the instructor's instruction, and the audit's method limit.
+
+---
+
 ## 2026-10-27 · The deferred-work register is emptied
 
 Branch `ccr-3f106263-7kokop`, the same day as the audit below; rules, six worker

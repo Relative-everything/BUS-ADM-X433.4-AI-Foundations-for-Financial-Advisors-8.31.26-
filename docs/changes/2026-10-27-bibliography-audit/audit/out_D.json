@@ -1,0 +1,613 @@
+[
+  {
+    "id": "src-kitces-notetakers",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search on kitces.com returned the exact URL with the headline 'Best AI Notetakers For Financial Advisor Meetings' (subtitle 'AI Meeting Notes Tools For Financial Advisors: Solo Productivity Vs Associate Advisor Development?'), byline Michael Kitces, dated March 17, 2025, categorised Research / Technology & Advisor FinTech. Snippets state it draws on Kitces Research's fall 2024 Advisor Productivity study; that Jump and Zocks lead advisor satisfaction while Zoom AI Companion, the most-adopted tool, ranks lowest; that adoption is most common among 'pure solo' advisors; that about 18% of advisory teams used an AI meeting-notes tool in the 2024 research; and that 'preparing for and following up after client meetings takes an average of one hour each (or two hours total) per meeting without the use of an AI notetaker'. A second Kitces snippet: 'the average financial advisor spends more than one hour in meeting preparation and follow-up client-servicing tasks for every hour they spend in client meetings'.",
+    "corrections": {
+      "title": "Best AI Notetakers For Financial Advisor Meetings (subtitle: AI Meeting Notes Tools For Financial Advisors: Solo Productivity Vs Associate Advisor Development?)",
+      "author": "Kitces, M.",
+      "published": "2025-03-17",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "CONFIRMED from snippets: greater-than-1:1 prep-and-follow-up ratio (Kitces states roughly two hours of prep plus follow-up per meeting, or more than one hour per client-meeting hour); solo-versus-team pattern (pure solo adopt most); adoption-versus-satisfaction ranking (Zoom AI Companion #1 adoption, last in satisfaction; Jump and Zocks top satisfaction); fielded autumn 2024. NOT SEEN in any snippet: the UHNW drop-off, the roughly fourfold rate for most-extensive versus most-targeted plans, and the $60 to $80 pricing. These three need the article read at a terminal (GAP). Date in the record (2025-01-15) is wrong; search metadata says 2025-03-17.",
+    "alt1": {
+      "title": "The 4 Key Drivers of Advisor Productivity (Kitces Research Advisor Productivity study, fourth edition, 2024 data)",
+      "author": "Kitces Research",
+      "publisher": "Kitces.com",
+      "date": "2025",
+      "url": "https://www.kitces.com/blog/advisor-productivity-key-drivers-practice-management-team-structure-revenue-client-pricing-success/",
+      "why": "Closer to the primary study the notetaker article draws on (same 2024 survey), so better for the productivity and team-structure claims; but it does not carry the notetaker satisfaction ranking."
+    },
+    "alt2": {
+      "title": "The Latest In Financial #AdvisorTech (November 2025)",
+      "author": "Henry-Moreland, B.",
+      "publisher": "Kitces.com",
+      "date": "2025-11",
+      "url": "https://www.kitces.com/blog/the-latest-in-financial-advisortech-november-2025-right-capital-data-migration-advyzon-elements-emoney/",
+      "why": "Newer Kitces Research adoption share (Jump 9.7%, highest standalone notetaker; 18 notetakers on the AdvisorTech Map; consolidation) for Appendix C7; weaker as a satisfaction source."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Article exists at the recorded URL and carries the core ratio, solo and satisfaction claims, but the date and byline are wrong and three attributed figures (UHNW drop-off, fourfold plan rate, $60-$80 pricing) could not be seen in search evidence.",
+    "tag": "M"
+  },
+  {
+    "id": "src-iskowitz",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search returned the exact page https://wealthtechtoday.com/2025/07/29/ai-notetakers-and-compliance-in-wealth-management-what-firms-need-to-know/ with the headline 'AI Notetakers and Compliance in Wealth Management: What Firms Need to Know' and the author page for Craig Iskowitz. Snippets: three main risks (compliance, disclosure, operational oversight); SEC attention to AI in 2025 exams; FINRA Rule 3110 supervisory systems must cover AI notetakers; firms without documented controls 'may face exam findings, or worse, enforcement action'. Related Iskowitz April 2025 buyer's guide cites FINRA Regulatory Notice 24-09 and recommends human review before notes reach the CRM or clients.",
+    "corrections": {
+      "link": "https://wealthtechtoday.com/2025/07/29/ai-notetakers-and-compliance-in-wealth-management-what-firms-need-to-know/",
+      "author": "Iskowitz, C. (Craig Iskowitz, Ezra Group)",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "CONFIRMED: the compliance framing (AI output is a regulated record; documented controls; SEC/FINRA positions relayed, not rule text). NOT CONFIRMED from snippets: the specific list of three things examiners ask for, the human-review and edit-trail practices, retention and high-stakes-meeting rules, and the 'ACA Group 2024 figure of 12%'. Caution on the 12%: the ACA/NSCP 2025 AI Benchmarking Survey release (Oct 29, 2025) says formal AI use reached 71%, up 26 points from 2024, which implies about 45% in 2024, so 12% must refer to some other ACA metric (for example firms with an AI policy or AI testing); it needs the article read to pin down what 12% measures (GAP for that figure).",
+    "alt1": {
+      "title": "Financial Services Firms Rapidly Integrate AI, but Validation and Third-Party Oversight Still Lag, Survey Finds (ACA/NSCP 2025 AI Benchmarking Survey)",
+      "author": "ACA Group and NSCP",
+      "publisher": "Business Wire (syndicated)",
+      "date": "2025-10-29",
+      "url": "https://business.mammothtimes.com/mammothtimes/article/bizwire-2025-10-29-financial-services-firms-rapidly-integrate-ai-but-validation-and-third-party-oversight-still-lag-survey-finds",
+      "why": "The primary survey behind the ACA figure, and a year newer; better for any percentage the lesson quotes, worse for the notetaker-specific compliance narrative."
+    },
+    "alt2": {
+      "title": "Major Compliance Risks Advisors Face When Using AI Tools",
+      "author": "Kitces.com (Nerd's Eye View)",
+      "publisher": "Kitces.com",
+      "date": "2024-2025 (not shown in snippet)",
+      "url": "https://www.kitces.com/blog/artificial-intelligence-ai-tools-regulation-compliance-regulatory-ria-chatgpt-records-client-data-risk/",
+      "why": "Independent second trade source on the same records and supervision points (books-and-records, client data), which would lift the chip from M toward H; still not rule text."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "The article exists with the recorded title, author and date; fill the missing link and verify what the 12% ACA figure measures before the prediction commit relies on it.",
+    "tag": "M"
+  },
+  {
+    "id": "src-kitces-advisortech",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search on kitces.com returned the August 2026 column: 'The Latest In Financial #AdvisorTech (August 2026)', https://www.kitces.com/blog/the-latest-in-financial-advisortech-august-2026-ycharts-zephyr-hadrius-greenboard-feathery/, published 2026-08-03 per the category listing; lead items Advyzon's new AI features (framed as AI reaching mainstream adoption), YCharts acquiring Zephyr, Feathery's $30M raise, Hadrius and Greenboard Series A, AI-native CRMs, Ezra Group's AI agents directory. The November 2025 column was also returned: https://www.kitces.com/blog/the-latest-in-financial-advisortech-november-2025-right-capital-data-migration-advyzon-elements-emoney/, whose snippet says the AI notetaker market 'has shifted from rapid growth and new tools to one where the market leaders have largely been decided and are now focused on consolidating', that 18 notetakers sit on the Kitces AdvisorTech Map, and that in Kitces Research Jump had the highest standalone adoption at 9.7% (Jump acquired Mobile Assistant). Two searches for the October 2025 column returned nothing. Snippets attribute the monthly roundups to Ben Henry-Moreland.",
+    "corrections": {
+      "title": "The Latest In Financial #AdvisorTech (August 2026); with (November 2025)",
+      "author": "Henry-Moreland, B. (Kitces.com)",
+      "link": "https://www.kitces.com/blog/the-latest-in-financial-advisortech-august-2026-ycharts-zephyr-hadrius-greenboard-feathery/ ; November 2025: https://www.kitces.com/blog/the-latest-in-financial-advisortech-november-2025-right-capital-data-migration-advyzon-elements-emoney/",
+      "published": "2026-08-03 (August column); November 2025 column 2025-11",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "The scope ('note-taker adoption shares and category consolidation') is supported by the NOVEMBER 2025 column snippet (consolidation, 18 tools, Jump 9.7%), not visibly by the August 2026 column, whose snippet is about Advyzon, YCharts/Zephyr and funding rounds. The October 2025 column could not be located by search (GAP: confirm its URL at a terminal or drop it from the record). No page claim rests on this record, so nothing in the lesson is at risk.",
+    "alt1": {
+      "title": "2026 T3/Inside Information Software Survey",
+      "author": "Veres, B. and Bruckenstein, J.",
+      "publisher": "T3 Technology Hub / Inside Information",
+      "date": "2026-03",
+      "url": "https://t3technologyhub.com/wp-content/uploads/2026/03/2026-T3_Inside-Information-Software-Survey.pdf",
+      "why": "Primary survey data for notetaker adoption shares (category 42.86%; Jump 22.7%, Zocks 10.2% per Kitces' summary), larger sample (2,906) than Kitces Research; lacks Kitces' editorial on consolidation."
+    },
+    "alt2": {
+      "title": "The Latest In Financial #AdvisorTech (March 2026)",
+      "author": "Henry-Moreland, B.",
+      "publisher": "Kitces.com",
+      "date": "2026-03",
+      "url": "https://www.kitces.com/blog/the-latest-in-financial-advisortech-march-2026-altruist-jump-zocks-ria-custodian/",
+      "why": "Same column, URL slug names Jump and Zocks, so likely the 2026 column that discusses the notetaker category leaders; needs reading to confirm."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Both named 2025/2026 columns exist with confirmable URLs and the consolidation claim sits in the November 2025 column; fill links, add the byline, and resolve or drop the unlocated October 2025 column.",
+    "tag": "M"
+  },
+  {
+    "id": "src-t3-survey",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search returned the primary PDF https://t3technologyhub.com/wp-content/uploads/2026/03/2026-T3_Inside-Information-Software-Survey.pdf (title '2026 Bob Veres Joel Bruckenstein T3/Inside Information Software Survey'), the BusinessWire release 'Live from T3: Key Wealthtech and AI Findings from the 2026 T3 / Inside Information Software Survey' dated 2026-03-10 (https://www.businesswire.com/news/home/20260310790990/en/...), and the Kitces summary 'Weekend Reading For Financial Planners (March 14-15) 2026' https://www.kitces.com/blog/weekend-reading-for-financial-planners-march-14-15-2026/ (published 2026-03-13). Kitces snippet: 'responses from 2,906 advisors, 95% of which work at fee-only RIAs or dually registered firms ... 52.2% of respondents using AI search and generative language functionality, up from 41.8% the previous year', 42.9% using AI notetaking. BusinessWire snippet: 2,906 responses; '52% ... compared to only 41% in 2025'; 14 notetaking solutions 'up from exactly one last year', aggregate share 42.86%.",
+    "corrections": {
+      "title": "2026 T3/Inside Information Software Survey",
+      "author": "Veres, B. and Bruckenstein, J. (T3 / Inside Information)",
+      "publisher": "T3 Technology Hub / Inside Information (primary); summarised in Kitces.com Weekend Reading, March 14-15, 2026",
+      "link": "https://t3technologyhub.com/wp-content/uploads/2026/03/2026-T3_Inside-Information-Software-Survey.pdf (primary); summary: https://www.kitces.com/blog/weekend-reading-for-financial-planners-march-14-15-2026/",
+      "published": "2026-03 (survey released at T3 conference; release 2026-03-10; Kitces summary 2026-03-13)",
+      "last_retrieved": "2026-10-27 (search snippets only)",
+      "confidence": "H"
+    },
+    "claim_check": "ALL CONFIRMED: n = 2,906; 95% at fee-only RIA or dually registered firms (Kitces summary); 52.2% AI search and generative language (Kitces; release rounds to 52%, prior year 41.8% / 41%); 42.9% AI notetaking (release and InvestmentNews give 42.86%). Three independent outlets agree.",
+    "alt1": {
+      "title": "Live from T3: Key Wealthtech and AI Findings from the 2026 T3 / Inside Information Software Survey",
+      "author": "T3 Technology Hub",
+      "publisher": "Business Wire",
+      "date": "2026-03-10",
+      "url": "https://www.businesswire.com/news/home/20260310790990/en/Live-from-T3-Key-Wealthtech-and-AI-Findings-from-the-2026-T3-Inside-Information-Software-Survey",
+      "why": "The producers' own release: authoritative for the headline numbers and the '14 solutions' quote, though it rounds 52.2% to 52%."
+    },
+    "alt2": {
+      "title": "AI moves from novelty to backbone as advisors reshape their fintech stacks",
+      "author": "Almazora, L.",
+      "publisher": "InvestmentNews",
+      "date": "2026-03-11",
+      "url": "https://www.investmentnews.com/fintech/ai-moves-from-novelty-to-backbone-as-advisors-reshape-fintech-stacks/265643",
+      "why": "Independent trade coverage confirming 42.86% and the 'nearly 3,000' sample; secondary to the PDF."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Point the record at the primary PDF and the dated Kitces summary; every figure in scope is confirmed by three independent sources, so the chip can move to H.",
+    "tag": "H"
+  },
+  {
+    "id": "src-kitces-productivity",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Searches on kitces.com returned the productivity series: 'The 4 Key Drivers of Advisor Productivity' (snippet: 'the fourth edition of our semi-annual Advisor Productivity study (using original survey data gathered in 2024)'), 'How Do Financial Advisors Actually Spend Their Time?' (8.8 hours in client meetings, 5.3 hours prep, 6.6 hours supporting work, 6 hours follow-up per week; under 20% of time in client meetings), 'New Kitces Research On What Improves Advisor Productivity', and the March 2025 notetaker article whose snippet gives 'one hour each (or two hours total) per meeting' for prep and follow-up and 'more than one hour in meeting preparation and follow-up ... for every hour they spend in client meetings'. The August 2026 AdvisorTech column snippet does not mention the productivity ratio. A search for the Advisor360 reliance figure returned only Advisor360's 2024 survey of 300 advisors (85% call GenAI a 'help', 76% immediate benefits), nothing on reliance on notetakers.",
+    "corrections": {
+      "title": "Kitces Research on Advisor Productivity (fourth edition, 2024 survey data), as summarised in 'Best AI Notetakers For Financial Advisor Meetings' (Kitces, 2025-03-17) and 'The 4 Key Drivers of Advisor Productivity'",
+      "publisher": "Kitces.com (Kitces Research)",
+      "link": "https://www.kitces.com/blog/advisor-productivity-key-drivers-practice-management-team-structure-revenue-client-pricing-success/ ; ratio summary at https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/",
+      "published": "2025 (study fielded autumn 2024); not 2026-08",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "PARTLY CONFIRMED, WORDING WRONG: Kitces does not say 'one hour of note, summary and follow-up work per two-hour meeting'. The snippets say prep and follow-up each take about one hour per meeting (two hours total) and that advisors spend more than one hour of prep and follow-up per hour in meetings. The lesson's ratio should be restated to 'more than 1:1' or 'about two hours of prep and follow-up per meeting'. The Advisor360-sourced reliance figure was not found in any snippet (GAP: identify the aggregator and the Advisor360 release, or drop the figure).",
+    "alt1": {
+      "title": "How Do Financial Advisors Actually Spend Their Time?",
+      "author": "Kitces Research",
+      "publisher": "Kitces.com",
+      "date": "not shown in snippet (study of 1,000+ advisors)",
+      "url": "https://www.kitces.com/blog/how-do-financial-advisors-spend-time-research-study-productivity-capacity-efficiency/",
+      "why": "Gives the underlying weekly hours (8.8 meeting, 5.3 prep, 6 follow-up) from which the >1:1 ratio is derived, so it is the closest thing to primary data; older edition than the 2024 study."
+    },
+    "alt2": {
+      "title": "Kitces Study: Advisor Tech Not Materially Lifting Productivity",
+      "author": "WealthManagement.com",
+      "publisher": "WealthManagement.com",
+      "date": "not shown in snippet",
+      "url": "https://www.wealthmanagement.com/financial-technology/kitces-study-advisor-tech-not-materially-lifting-productivity",
+      "why": "Independent trade coverage of the same Kitces productivity research, useful as a second source on the direction of the findings; secondary."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "The study exists and supports a greater-than-1:1 ratio, but the record's phrasing of the ratio and its 2026-08 date are wrong, and the travelling reliance figure has no visible source.",
+    "tag": "M"
+  },
+  {
+    "id": "src-morningstar",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Extended search returned the exact page 'AI for Advisors: Enhancing Client Conversations' at https://www.morningstar.com/business/insights/blog/client-engagement/financial-advisor-ai-conversations (4 min read), attributed in snippets to Danielle Labotka, November 2025 (one result listed November 6, 2025). Snippet: generative AI can help advisors 'strike a balance between too much and too little explanation'; AI can produce false information so a human must review; it cannot reproduce an advisor's voice unless trained on their work.",
+    "corrections": {
+      "link": "https://www.morningstar.com/business/insights/blog/client-engagement/financial-advisor-ai-conversations",
+      "author": "Labotka, D. (Morningstar)",
+      "published": "2025-11 (listed as 2025-11-06; record's 2025-10-15 not supported)",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "Assigned reading only; no page claim rests on it. Existence, title and publisher confirmed; the date appears to be November 2025 rather than 2025-10-15.",
+    "alt1": {
+      "title": "How Financial Advisors Can Deliver Value in 2026 (Morningstar survey: 63% of advisors expect AI's greatest impact in client communications), as reported in 'Advisors Look to AI for Client Outreach'",
+      "author": "401(k) Specialist (reporting Morningstar)",
+      "publisher": "401kspecialistmag.com",
+      "date": "2026",
+      "url": "https://401kspecialistmag.com/advisors-look-to-ai-for-client-outreach/",
+      "why": "Adds a quantified Morningstar finding on AI and client conversations, which the assigned blog lacks; secondary coverage, so find the Morningstar report itself before citing a number."
+    },
+    "alt2": {
+      "title": "Morningstar Introduces AI Assistant Built into the Advisor Workflow",
+      "author": "Morningstar",
+      "publisher": "Morningstar Newsroom",
+      "date": "2026-03-09",
+      "url": "https://newsroom.morningstar.com/news/news-details/2026/Morningstar-Introduces-AI-Assistant-Built-into-the-Advisor-Workflow/default.aspx",
+      "why": "Newer and primary, shows the vendor's own meeting-brief and proposal use case; but it is a product release, not a reading on conversation craft."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "The reading exists at a confirmable URL with a byline; fill the link and author and correct the date to November 2025.",
+    "tag": "M"
+  },
+  {
+    "id": "src-joa-prompt",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search returned the exact URL with the title 'Writing an effective AI prompt for an audit' on journalofaccountancy.com under the A&A Focus newsletter; a JofA reference list dates it 'JofA, Nov. 17, 2025' and NJCPA's syndication lists November 24, 2025. Snippets describe it as a recap of the November 2025 A&A Focus webcast: Bob Durak hosted; Danielle Supkis Cheek presented a STAR framework (Situation, Task, Appearance, Refine) with an ASC 842 lease-review example and data-governance advice (paid tools that keep client data out of training); the same webcast covered quality-management documentation and fraud red flags. No byline appeared in any snippet.",
+    "corrections": {
+      "published": "2025-11-17 (JofA's own reference list; NJCPA syndication 2025-11-24)",
+      "author": "[not shown in search metadata; a JofA staff webcast recap, presenters Bob Durak and Danielle Supkis Cheek]",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "Existence, publisher, URL and November 2025 date confirmed. The lesson characterises nothing from it, which remains correct. The syllabus title 'Writing an Effective AI Prompt for an Audit Trail' is wrong; the page title has no 'Trail'. Byline remains a GAP (reading the page at a terminal would close it).",
+    "alt1": {
+      "title": "GenAI for accountants: 10 prompt-writing tips",
+      "author": "Journal of Accountancy",
+      "publisher": "Journal of Accountancy (AICPA)",
+      "date": "2024-04",
+      "url": "https://www.journalofaccountancy.com/issues/2024/apr/genai-for-accountants-10-prompt-writing-tips/",
+      "why": "A full feature article rather than a webcast recap, so more readable as an assigned reading; older and not audit-specific."
+    },
+    "alt2": {
+      "title": "A Guide to Prompt Writing for Generative AI in Audit and Assurance",
+      "author": "Caseware",
+      "publisher": "Caseware",
+      "date": "not shown in snippet",
+      "url": "https://www.caseware.com/resources/reports/a-guide-to-prompt-writing-for-generative-ai-in-audit-and-assurance",
+      "why": "Documents the same STAR framework at length; vendor white paper, so weaker provenance than the AICPA outlet."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "The reading exists and is correctly titled; set the date to 2025-11-17, note it is a webcast recap, and fix the syllabus title.",
+    "tag": "M"
+  },
+  {
+    "id": "src-rightcapital-iris",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search returned the ACCESS Newswire release at the recorded URL with headline 'RightCapital Launches Iris(TM), the First Planning-Focused AI Agent Designed to Transform the Financial Planning Process', dated June 23, 2026, plus the Eagle-Tribune syndication, Pulse 2.0 (2026-06), InvestmentNews 'RightCapital claims industry first with AI agent for financial planning' (/267144) and PLANADVISER's June 29, 2026 AI product roundup. Snippets: Iris 'directly interpret[s] client data' inside the platform, Double Check finds missing or inconsistent client data, Cash Flow Reviews surfaces planning risks, Plan Builder proposes three strategies to hit a probability-of-success target, runs retirement simulations; outputs come from RightCapital's calculation engine; firms can control access. A separate RightCapital help page documents Smart Import (AI scanning of intake forms, transcripts, statements) and a RightCapital blog snippet claims it cuts data entry time 'by 70% or more'.",
+    "corrections": {
+      "title": "RightCapital Launches Iris(TM), the First Planning-Focused AI Agent Designed to Transform the Financial Planning Process",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "CONFIRMED: reads plan data in the software, flags anomalies (Double Check), runs retirement simulations and explains results (Plan Builder / Cash Flow Reviews); preceded by a document-import feature (Smart Import) the vendor says cuts manual entry by 70% or more. NOT SEEN in snippets: 'offered on the Premium and Platinum plans at no added cost' (GAP: confirm from the release text or RightCapital pricing page). InvestmentNews notes the 'industry first' claim is contested.",
+    "alt1": {
+      "title": "RightCapital claims industry first with AI agent for financial planning",
+      "author": "InvestmentNews",
+      "publisher": "InvestmentNews",
+      "date": "2026-06",
+      "url": "https://www.investmentnews.com/fintech/rightcapital-claims-industry-first-with-ai-agent-for-financial-planning/267144",
+      "why": "Independent trade coverage that reports the same features while flagging the vendor's 'first' claim as debatable; better for balance, worse as the canonical description."
+    },
+    "alt2": {
+      "title": "The Latest In Financial #AdvisorTech (July 2026)",
+      "author": "Henry-Moreland, B.",
+      "publisher": "Kitces.com",
+      "date": "2026-07",
+      "url": "https://www.kitces.com/blog/the-latest-in-financial-advisortech-july-2026-salesforce-rightcapital-ycharts-ai-news/",
+      "why": "Analyst commentary on the RightCapital AI launch in the month after it; gives the planning-agent example independent framing, but needs reading to confirm coverage depth."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "The release exists as recorded and four outlets agree on the features; add the InvestmentNews piece as an independent counterweight and confirm the plan-tier detail.",
+    "tag": "M"
+  },
+  {
+    "id": "src-kitces-aisearch",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search on kitces.com returned the recorded URL with headline 'Ways Advisors Can Optimize For AI Search (AI SEO)'. The summary identifies it as a guest post by Brent Carnduff (founder of Advisor Rankings) and quotes the recommendations: define a Who-What-Where (name and firm, niche, location) kept consistent across the web 'since AI models and search engines rely on recognizable, repeated patterns'; pillar-cluster content (6 to 10 clusters per pillar); schema, FAQs, author bios; distribution on directories, LinkedIn, Reddit, Medium; keep local SEO. Publication date did not appear in the snippets; a related Carnduff podcast aired 2025-10-17 and a ThinkAdvisor piece on the same theme ran 2025-11-14.",
+    "corrections": {
+      "title": "Ways Advisors Can Optimize For AI Search (AI SEO)",
+      "author": "Carnduff, B. (guest post, Kitces.com Nerd's Eye View)",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "CONFIRMED: the who-what-where recommendation and its rationale, exactly as the lesson states. Date 2025-11-17 not confirmed by snippet (minor GAP; November 2025 is consistent with surrounding coverage).",
+    "alt1": {
+      "title": "4 Ways Advisors Can Boost Their Presence in AI Search Results",
+      "author": "ThinkAdvisor",
+      "publisher": "ThinkAdvisor",
+      "date": "2025-11-14",
+      "url": "https://www.thinkadvisor.com/2025/11/14/4-ways-advisors-can-boost-their-presence-in-ai-search-results/",
+      "why": "Independent outlet, same week, adds the third-party-source point; shorter and less practical than the Kitces guest post."
+    },
+    "alt2": {
+      "title": "From SEO to GEO: How advisors can be discoverable in the age of AI",
+      "author": "InvestmentNews",
+      "publisher": "InvestmentNews",
+      "date": "2025",
+      "url": "https://www.investmentnews.com/practice-management/from-seo-to-geo-how-advisors-can-be-discoverable-in-the-age-of-ai/261837",
+      "why": "Second independent trade source on AI-search discoverability for advisers; useful as a supplement, not a replacement."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "The reading exists with the recorded URL and carries the one recommendation the lesson quotes; add the author byline.",
+    "tag": "M"
+  },
+  {
+    "id": "src-investmentnews-t3-2026",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search returned the article at https://www.investmentnews.com/fintech/ai-moves-from-novelty-to-backbone-as-advisors-reshape-fintech-stacks/265643 with the exact headline, dated March 11, 2026; InvestmentNews listing pages credit Leo Almazora. Snippets: survey 'based on responses from nearly 3,000 advisors collected through February'; more than half use a generative language AI program; 'AI notetaking market penetration at 42.86%'; Jump and Zocks now populate CRM fields and draft follow-ups ('creep into traditional CRM territory'); suites (Orion, Advyzon) versus best-of-breed stacks, hybrids common; portfolio management penetration 67% to 74%. The '14 solutions, up from exactly one last year' statement and the Veres quote appear in the T3 BusinessWire release (2026-03-10), not in the InvestmentNews snippets.",
+    "corrections": {
+      "author": "Almazora, L.",
+      "published": "2026-03-11",
+      "link": "https://www.investmentnews.com/fintech/ai-moves-from-novelty-to-backbone-as-advisors-reshape-fintech-stacks/265643",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "CONFIRMED: AI as supplement to an entrenched stack (InvestmentNews stack discussion; Kitces summary adds that the top three CRMs hold about 70% share); 42.86% notetaking. The '14 note-taking tools tracked for the first time' and the co-producer's adoption-curve remark are confirmed from the T3 release (Veres: 14 identified this year, up from one; 42.86% in one year; he estimates over 60% now) rather than from the InvestmentNews snippets, so attribute that sentence to the release.",
+    "alt1": {
+      "title": "Live from T3: Key Wealthtech and AI Findings from the 2026 T3 / Inside Information Software Survey",
+      "author": "T3 Technology Hub",
+      "publisher": "Business Wire",
+      "date": "2026-03-10",
+      "url": "https://www.businesswire.com/news/home/20260310790990/en/Live-from-T3-Key-Wealthtech-and-AI-Findings-from-the-2026-T3-Inside-Information-Software-Survey",
+      "why": "The producers' release is where the '14 solutions' count and the Veres quote actually sit; primary for those two claims."
+    },
+    "alt2": {
+      "title": "Advisor Tech Talk (Week of 3/17/26)",
+      "author": "dwealth.news",
+      "publisher": "Digital Wealth News",
+      "date": "2026-03-17",
+      "url": "https://dwealth.news/2026/03/advisor-tech-talk-week-of-3-17-26/",
+      "why": "Third independent summary already cited in the retrieval note; confirms the 14-tool and 42.86% figures, but is a newsletter column."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Article exists with byline and date now known; move the '14 tools' attribution to the T3 release that carries it.",
+    "tag": "H"
+  },
+  {
+    "id": "src-iss-ai-policy",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search returned the PLANADVISER page at the recorded URL with the exact title 'Advisers Using AI, by the Numbers' (comma in the title). Snippets: ISS Market Intelligence Advisor Pulse survey of 466 advisers in June 2025; 48% already using AI, 87% plan to within 12 months; RIAs 56% (47% regional/independent/bank, 46% wirehouse); '78% of RIAs said their firms did not have written policies on AI, compared with 35% of regional, independent and bank advisers'; summarizing 58%; accuracy top concern 40%. Primary found: ISS MI 'AI Adoption Set to Rise Amongst Advisors' (https://www.issmarketintelligence.com/resources/ai-adoption-set-to-rise-amongst-advisors/), which states 466 advisors, June 2025, and the 78% vs 35% policy figures verbatim; and the ISS release 'Nearly 9 in 10 Advisors Plan to Use A.I. Within a Year, ISS Market Intelligence Study Finds' (insights.issgovernance.com, 2025-07-22; 'nearly 500 interviews', 48%, 87%, 58%). PLANADVISER byline and date did not appear in snippets.",
+    "corrections": {
+      "title": "Advisers Using AI, by the Numbers",
+      "published": "2025-07/08 (after the 2025-07-22 ISS release; exact date not shown)",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "ALL CONFIRMED by both PLANADVISER and the ISS MI primary: n = 466, fielded June 2025, 48% use AI, 78% of RIAs with no written AI policy versus 35% at regional, independent and bank firms. Note PLANADVISER and ISS MI share an owner (ISS STOXX), so they are not fully independent.",
+    "alt1": {
+      "title": "AI Adoption Set to Rise Amongst Advisors",
+      "author": "ISS Market Intelligence",
+      "publisher": "ISS Market Intelligence (Advisor Pulse series)",
+      "date": "2025-07",
+      "url": "https://www.issmarketintelligence.com/resources/ai-adoption-set-to-rise-amongst-advisors/",
+      "why": "The survey producer's own write-up with the exact n, fielding month and the 78%/35% policy figures; strictly better than trade coverage."
+    },
+    "alt2": {
+      "title": "Nearly 9 in 10 Advisors Plan to Use A.I. Within a Year, ISS Market Intelligence Study Finds",
+      "author": "ISS STOXX",
+      "publisher": "ISS Insights (press release)",
+      "date": "2025-07-22",
+      "url": "https://insights.issgovernance.com/posts/nearly-9-in-10-advisors-plan-to-use-a-i-within-a-year-iss-market-intelligence-study-finds/",
+      "why": "Dated primary release for the 48% and 87% headline figures; it does not state the 78%/35% policy split, so keep alt1 for that."
+    },
+    "recommendation": "REPLACE_WITH_ALT1",
+    "rationale": "The ISS MI resource page is the primary source and states every figure the lesson uses; keep PLANADVISER as the trade citation if a reader-facing link is wanted.",
+    "tag": "H"
+  },
+  {
+    "id": "src-deloitte",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Searches (general and restricted to deloitte.com) returned the Deloitte Insights article 'Generative AI is expected to magnify the risk of deepfakes and other fraud in banking' at https://www.deloitte.com/us/en/insights/industry/financial-services/deepfake-banking-fraud-risk-on-the-rise.html (also under the 2024 Financial Services Industry Predictions path on www2.deloitte.com), by Satish Lalchand, Val Srinivas, Brendan Maggiore and Joshua Henderson, Deloitte Center for Financial Services, published May 29, 2024. Snippet: 'forecasts that gen AI could enable fraud losses to reach US$40 billion in the United States by 2027, up from US$12.3 billion in 2023, a compound annual growth rate of 32%'; also gen-AI email fraud about US$11.5 billion by 2027 in an aggressive scenario; cites the Hong Kong deepfake CFO case. Secondary coverage (Biometric Update June 2024, Quartz, IDTechWire) repeats the figures; one mentions a conservative ~$22 billion scenario not confirmed in Deloitte's text.",
+    "corrections": {
+      "title": "Generative AI is expected to magnify the risk of deepfakes and other fraud in banking",
+      "author": "Lalchand, S., Srinivas, V., Maggiore, B. and Henderson, J. (Deloitte Center for Financial Services)",
+      "publisher": "Deloitte Insights (2024 Financial Services Industry Predictions)",
+      "link": "https://www.deloitte.com/us/en/insights/industry/financial-services/deepfake-banking-fraud-risk-on-the-rise.html",
+      "published": "2024-05-29",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "CONFIRMED: $12.3bn (2023) to $40bn (2027), US, gen-AI-enabled fraud losses, explicitly a forecast ('could enable'), 32% CAGR. The lesson's 'projection, not measurement' label is correct.",
+    "alt1": {
+      "title": "Financial services industry predictions 2024",
+      "author": "Deloitte Center for Financial Services",
+      "publisher": "Deloitte Insights",
+      "date": "2024",
+      "url": "https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-predictions/2024.html",
+      "why": "The series hub the article belongs to; same primary, useful for context, no extra data."
+    },
+    "alt2": {
+      "title": "2025 IC3 Annual Report (FBI Internet Crime Complaint Center)",
+      "author": "Federal Bureau of Investigation",
+      "publisher": "IC3",
+      "date": "2026-04",
+      "url": "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf",
+      "why": "A measured counterpart (22,364 AI-named complaints, about $893M in 2025) to set beside Deloitte's projection; different scope (reported complaints, all AI, not bank fraud only)."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "The primary Deloitte article exists with full metadata now known and states the exact figures; fill the blank fields.",
+    "tag": "H"
+  },
+  {
+    "id": "src-arup",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. ft.com is blocked to the search tool ('not accessible to our user agent'), so the FT article page could not be confirmed. Search did return the FT's own post on X (https://x.com/FT/status/1791404267451900203; the status ID decodes to 2024-05-17 09:43 UTC): 'Arup has been revealed as the company that lost $25mn in one of the world's biggest known deepfake scams. A staff member made 15 transfers to five Hong Kong banks after what they thought was a video call with the CFO was actually one with a digital clone', linking to on.ft.com/3wLewoE. Secondary coverage (AI Incident Database 634, Adaptive Security, Insurance Business Asia, Fintelegram, Biometric Update May 2024) agrees: HK$200m (about US$25.6m), 15 transfers to five HK bank accounts, phishing email from the UK CFO, Arup reported to Hong Kong police in January 2024, no systems compromised, FT first named Arup in May 2024.",
+    "corrections": {
+      "title": "[FT headline not retrievable; FT's own summary 2024-05-17: 'Arup has been revealed as the company that lost $25mn in one of the world's biggest known deepfake scams']",
+      "published": "2024-05-17",
+      "link": "FT short link from the FT post: on.ft.com/3wLewoE (not opened); FT post: https://x.com/FT/status/1791404267451900203",
+      "last_retrieved": "2026-10-27 (search snippets and FT X post only)"
+    },
+    "claim_check": "CONFIRMED: approximately $25 million (HK$200m) across 15 transfers, deepfake video call, Arup named by the FT in May 2024. Remaining GAP: the FT headline and byline (instructor at a terminal with FT access, or the on.ft.com link, closes it).",
+    "alt1": {
+      "title": "Financial Times post naming Arup as the $25mn deepfake victim",
+      "author": "Financial Times",
+      "publisher": "FT on X",
+      "date": "2024-05-17",
+      "url": "https://x.com/FT/status/1791404267451900203",
+      "why": "Direct FT wording and date for the naming of Arup, with the 15-transfer and five-bank details; a social post, so pair it with the article once reachable."
+    },
+    "alt2": {
+      "title": "Incident 634: Alleged Deepfake CFO Scam Reportedly Costs Multinational Engineering Firm Arup $25 Million",
+      "author": "AI Incident Database",
+      "publisher": "incidentdatabase.ai",
+      "date": "2024",
+      "url": "https://incidentdatabase.ai/cite/634/",
+      "why": "Collects the primary reports (police, CNN, FT) with dates in one citable record; a curated database rather than original reporting."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "The incident and figures are solid across many outlets and the FT's own post dates the naming to 2024-05-17; the record needs the FT date and link, and the headline remains to be captured by someone with FT access.",
+    "tag": "H"
+  },
+  {
+    "id": "src-deepseek",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search returned the recorded wiz.io URL (and locale mirrors) with the exact title 'Wiz Research Uncovers Exposed DeepSeek Database Leaking Sensitive Information, Including Chat History'; coverage (Globes, TechTarget, The Register 2025-01-30, SiliconANGLE, Computer Weekly) credits Wiz researcher Gal Nagli and dates the disclosure January 29, 2025. Snippets: publicly accessible ClickHouse database at oauth2callback.deepseek.com:9000 and dev.deepseek.com:9000, 'completely open and unauthenticated'; log_stream table with over 1 million log entries from January 6, 2025; chat history, secret keys, backend details; Wiz disclosed and DeepSeek 'promptly secured the exposure'.",
+    "corrections": {
+      "author": "Nagli, G. (Wiz Research)",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "ALL CONFIRMED: over a million log lines including chat history, API keys and backend details; no authentication; prompt fix after disclosure. (Some secondary outlets say 'millions'; Wiz's own figure is 'over a million'.)",
+    "alt1": {
+      "title": "DeepSeek database left open (The Register)",
+      "author": "The Register",
+      "publisher": "The Register",
+      "date": "2025-01-30",
+      "url": "https://www.theregister.com/2025/01/30/deepseek_database_left_open",
+      "why": "Independent technical coverage that adds what the researchers did not attempt (plaintext passwords, local files); secondary to Wiz."
+    },
+    "alt2": {
+      "title": "Wiz reveals DeepSeek database exposed API keys, chat history",
+      "author": "TechTarget",
+      "publisher": "TechTarget SearchSecurity",
+      "date": "2025-01-30",
+      "url": "https://www.techtarget.com/cybersecurity/news/366618594/Wiz-reveals-DeepSeek-database-exposed-API-keys-chat-history",
+      "why": "Second independent outlet quoting Nagli directly; useful to lift the chip to H."
+    },
+    "recommendation": "KEEP",
+    "rationale": "The Wiz post is the primary disclosure, exists at the recorded URL with matching title and date, and two independent outlets confirm every figure in scope.",
+    "tag": "H"
+  },
+  {
+    "id": "src-chatgpt-index",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search returned the TechCrunch URL (canonical form ends with a trailing slash) with the exact headline 'Your public ChatGPT queries are getting indexed by Google and other search engines', dated July 31, 2025, 12:23 PM PDT, updated the same day. Snippets: filtering Google/Bing to chatgpt.com/share surfaced strangers' chats; a share URL exists only after the user clicks Share then Create link, with a 'make this chat discoverable' option; hours after publication OpenAI's CISO Dane Stuckey said on X the feature was removed, calling it 'a short-lived experiment' that 'introduced too many opportunities for folks to accidentally share things they didn't intend to', and that OpenAI was working to remove already-indexed chats; Google said publishers control indexing. No byline appeared in any snippet; an X estimate of up to 70,000 indexed chats is described as unverified.",
+    "corrections": {
+      "link": "https://techcrunch.com/2025/07/31/your-public-chatgpt-queries-are-getting-indexed-by-google-and-other-search-engines/",
+      "author": "[byline not shown in search metadata]",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "CONFIRMED: discoverable shared chats appeared in Google in late July 2025; OpenAI withdrew the option within hours (the lesson says 'within days', which is safe but could say 'the same day'). The record's note that the ~4,500 count is not on the page stands; secondary estimates range widely (4,500 to 70,000), so the lesson is right not to quote one.",
+    "alt1": {
+      "title": "ChatGPT's Share Feature Let Private Chats Appear in Google Search",
+      "author": "eWeek",
+      "publisher": "eWeek",
+      "date": "2025-08",
+      "url": "https://www.eweek.com/news/openai-chatgpt-google-search-indexes/",
+      "why": "Independent confirmation of the sequence and OpenAI's statement; secondary to TechCrunch's original report."
+    },
+    "alt2": {
+      "title": "PSA: Your Claude shared chats and Artifacts may have ended up on Google",
+      "author": "TechCrunch",
+      "publisher": "TechCrunch",
+      "date": "2026-07-27",
+      "url": "https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/",
+      "why": "A year newer and shows the 'caches' leak recurring across vendors (also Grok, Aug 2025), which strengthens the lesson's point; does not replace the ChatGPT case."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "The original report exists as recorded and its facts are confirmed by independent coverage; the 2026 Claude-shares story is a stronger, current illustration of the same leak class.",
+    "tag": "H"
+  },
+  {
+    "id": "src-meta-feed",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search on tomsguide.com returned the recorded URL with the headline 'Meta AI's discover feed is full of revealing personal info — here's how to protect your privacy', byline Amber Bouman, published 13 June 2025. Snippets: the feed 'is full of users who apparently are unaware that they have been openly publishing their conversations', including text, audio clips and images with personally identifying details; the share flow previews a public post but the warning 'does not seem to have been communicated well enough'; Meta did not respond for comment; the piece cites TechCrunch. Mozilla Foundation's campaign page (June 2025) makes the same complaint about missing interface cues.",
+    "corrections": {
+      "author": "Bouman, A.",
+      "published": "2025-06-13",
+      "title_note": "The page headline uses an em dash; the record's colon substitution is a deliberate editorial choice and should be noted as such",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "CONFIRMED: shared conversations, many plainly private, published to a public Discover feed with inadequate warning. The 'medical, legal, financial, tied to real names' detail is in secondary coverage and the Mozilla campaign; the Tom's Guide snippet says 'personally identifying details'. The original TechCrunch reporting Tom's Guide cites was not located within the search budget (GAP for the stronger citation the record already flags).",
+    "alt1": {
+      "title": "Meta: Help Users Stop Accidentally Sharing Private AI Conversations",
+      "author": "Mozilla Foundation",
+      "publisher": "Mozilla Foundation (campaign)",
+      "date": "2025-06",
+      "url": "https://www.mozillafoundation.org/pt-BR/campaigns/meta-shut-down-your-invasive-ai-discover-feed-now",
+      "why": "An advocacy organisation's documented complaint about the interface, independent of Tom's Guide; a campaign page, not reporting."
+    },
+    "alt2": {
+      "title": "Meta AI App Accidentally Broadcasts Private Chats to All",
+      "author": "iPhone in Canada",
+      "publisher": "iphoneincanada.ca",
+      "date": "2025-06-13",
+      "url": "https://www.iphoneincanada.ca/2025/06/13/meta-ai-app-leaks-private-chats-to-all/",
+      "why": "Same-day independent coverage confirming the feed's contents; a smaller outlet, so a supplement only."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "The article exists with byline and date now known; fill them and keep hunting the original TechCrunch report as the record already plans.",
+    "tag": "M"
+  },
+  {
+    "id": "src-uae-voice",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search restricted to forbes.com returned the recorded URL with the headline 'Fraudsters Cloned Company Director's Voice In $35 Million Heist, Police Find', by Thomas Brewster, October 14, 2021. Forbes snippets: 'In early 2020, a branch manager of a Japanese company in Hong Kong received a call from a man whose voice he recognized, the director of his parent business ... authorize some transfers to the tune of $35 million'; emails from the director and lawyer Martin Zelner; a court document unearthed by Forbes says 'deep voice' technology cloned the director's speech; the UAE sought US help tracing $400,000 sent to Centennial Bank accounts; at least 17 people involved; Forbes later updated to say the victim was an unnamed Japanese business with Dubai investigators leading the probe; second known voice-cloning heist after the 2019 UK case. Secondary outlets (Biometric Update, Gizmodo, i-AML) say 'bank manager in the UAE'.",
+    "corrections": {
+      "title": "Fraudsters Cloned Company Director's Voice In $35 Million Heist, Police Find",
+      "scope_note": "Forbes' own text describes the victim as a branch manager of a Japanese company (Hong Kong office, later corrected to an unnamed Japanese business) and the UAE as the investigating jurisdiction via a US court filing; 'bank branch manager in the UAE' is the secondary outlets' paraphrase",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "CONFIRMED: early 2020, cloned voice of a director the manager knew, $35 million authorised, forged emails about an acquisition, surfaced in a 2021 court document. ONE DISCREPANCY: who the manager was (Forbes: branch manager of a Japanese company; the record and secondary outlets: a UAE bank branch manager). The lesson's bar label 'a voice alone, $35 million' is unaffected, but the caption should follow Forbes' wording.",
+    "alt1": {
+      "title": "$35M stolen in voice clone as deepfake tech availability increases",
+      "author": "Biometric Update",
+      "publisher": "biometricupdate.com",
+      "date": "2021-10",
+      "url": "https://www.biometricupdate.com/202110/35m-stolen-in-voice-clone-as-deepfake-tech-availability-increases",
+      "why": "Independent same-month coverage of the Forbes court-document find; secondary, and it carries the 'UAE bank manager' paraphrase."
+    },
+    "alt2": {
+      "title": "Bank Robbers in the Middle East Reportedly Cloned Someone's Voice to Assist With $35 Million Heist",
+      "author": "Gizmodo",
+      "publisher": "Gizmodo",
+      "date": "2021-10",
+      "url": "https://gizmodo.com/bank-robbers-in-the-middle-east-reportedly-cloned-someo-1847863805",
+      "why": "Second independent write-up; adds nothing primary but confirms amount, year and the court filing."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Forbes article exists exactly as recorded; align the scope wording on the victim with Forbes' corrected text.",
+    "tag": "H"
+  },
+  {
+    "id": "src-sg-deepfake-2026",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search restricted to mothership.sg returned the recorded URL with the exact headline 'Fake Zoom call with PM Wong: Police release deepfake footage of scam that caused victim to hand over S$4.9 million', plus an earlier Mothership piece 'Scammers told victim to attend Zoom call with PM Wong & asked for urgent funding for Strait of Hormuz'. Snippets: WhatsApp message purporting to come from the Secretary to the Cabinet; Zoom call with deepfakes of PM Wong, President Tharman Shanmugaratnam, Minister Indranee Rajah and MAS representatives; 'urgent funding assistance' tied to the Strait of Hormuz; at least S$4.9 million transferred in a series of transactions to a scammer-supplied corporate bank account; email promising reimbursement within 15 business days; 'the victim contacted the Secretary to the Cabinet on May 14, at which point he realised that he had fallen prey to a scam'; police flagged lip-sync mismatch and distorted backgrounds. Malay Mail (2026-05-17) and Fintech News Singapore corroborate; Crypto Briefing gives US$3.8M. The 2026-05-16 date was not shown directly in a snippet but fits the May 17 Malaysian coverage.",
+    "corrections": {
+      "last_retrieved": "2026-10-27 (search snippets only)",
+      "author": "Mothership (staff; byline not shown)"
+    },
+    "claim_check": "CONFIRMED: S$4.9 million (about US$3.8 million), Zoom call with deepfakes of the PM, the President and a minister, realised on 14 May 2026, transfers to a scammer-controlled corporate account, police released footage. Minor: some outlets say 'business professional' rather than 'businessman'. Exact Mothership publication date not shown in snippet (minor GAP).",
+    "alt1": {
+      "title": "Singapore police detail how AI deepfake Zoom call mimicking PM Lawrence Wong was exposed (VIDEO)",
+      "author": "Malay Mail",
+      "publisher": "Malay Mail",
+      "date": "2026-05-17",
+      "url": "https://malaymail.com/news/singapore/2026/05/17/singapore-police-detail-how-ai-deepfake-zoom-call-mimicking-pm-lawrence-wong-was-exposed-video/220263",
+      "why": "Independent regional outlet reporting the same police release, dated; the Singapore Police Force's own advisory would be better still but was not returned by search."
+    },
+    "alt2": {
+      "title": "Scammers told victim to attend Zoom call with PM Wong & asked for 'urgent funding' for Strait of Hormuz",
+      "author": "Mothership",
+      "publisher": "Mothership.sg",
+      "date": "2026-05",
+      "url": "https://mothership.sg/2026/05/scam-impersonate-lawrence-wong/",
+      "why": "Mothership's first report on the case, with the WhatsApp and Hormuz pretext details; same outlet, so not independent."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Headline, URL and every figure in scope are confirmed, with Malay Mail and Fintech News Singapore as independent corroboration.",
+    "tag": "H"
+  },
+  {
+    "id": "src-fbi-ic3-2025",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search restricted to fbi.gov/ic3.gov returned the recorded press-release URL with headline 'Cryptocurrency and AI Scams Bilk Americans of Billions' and the report PDF https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf. FBI snippet: 'more than 1 million complaints of cyber-enabled crimes that cost Americans nearly $21 billion in 2025, a 26% increase in losses from 2024'; first dedicated AI section, 22,364 complaints, 'nearly $893 million'; crypto 181,565 complaints over $11 billion; over-60s $7.7 billion. Secondary (CU Times, McDonald Hopkins, Enterprise Security Tech, PYMNTS, Alston & Bird): 1,008,597 complaints; $20.877 billion; 24,768 BEC complaints with $3,046,598,558 in losses. Release date is reported as April 6 (PYMNTS 'released Monday'; McDonald Hopkins) and April 7, 2026 (Alston & Bird) in different outlets.",
+    "corrections": {
+      "title": "Cryptocurrency and AI Scams Bilk Americans of Billions (FBI press release on the 2025 Internet Crime Report)",
+      "published": "2026-04-06 or 2026-04-07 (outlets split; confirm on the fbi.gov page)",
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "ALL FIGURES CONFIRMED: 1,008,597 complaints; $20.877 billion (FBI rounds to 'nearly $21 billion'), up 26%; BEC $3.05 billion from 24,768 complaints; AI section 22,364 complaints, about $893 million; FBI/IC3 says reported figures under-represent true losses. Only the exact release date is unsettled between April 6 and 7.",
+    "alt1": {
+      "title": "2025 IC3 Annual Report",
+      "author": "FBI Internet Crime Complaint Center",
+      "publisher": "IC3",
+      "date": "2026-04",
+      "url": "https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf",
+      "why": "The primary report with the exact complaint and loss tables; better than the press release for the BEC and AI-section numbers."
+    },
+    "alt2": {
+      "title": "Cybercrime Trends to Watch: Takeaways from the FBI's 2025 IC3 Annual Report",
+      "author": "Alston & Bird Privacy, Cyber & Data Strategy",
+      "publisher": "alstonprivacy.com",
+      "date": "2026-04",
+      "url": "https://www.alstonprivacy.com/cybercrime-trends-to-watch-takeaways-from-the-fbis-2025-ic3-annual-report/",
+      "why": "Law-firm digest that reproduces the exact figures (1,008,597; $20.877B; BEC) and the release date; secondary."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "The press release exists as recorded and its figures match; cite the IC3 PDF as the primary alongside it and settle the April 6/7 date.",
+    "tag": "H"
+  },
+  {
+    "id": "src-ibm-breach-2026",
+    "status": "VERIFIED",
+    "evidence": "Network note: WebFetch could not resolve any non-Anthropic host in this environment (ENOTFOUND on every attempt) and curl was refused at the proxy (403 on CONNECT), so no page was fetched. All evidence below is from WebSearch result titles, URLs and snippets, 2026-10-27; the per-turn search budget ran out before a few targeted follow-ups could be made. Search restricted to ibm.com returned the recorded newsroom URL with the exact headline 'IBM Study: One in Four Malicious Breaches are AI-Enabled, Costing Companies $6 Million on Average', dated 2026-07-29. IBM snippet: 'One in four malicious breaches were AI-enabled, a 56% increase over last year, and these breaches cost an average of $6 million'; deepfake impersonation 45% of AI-enabled attacks, AI-enabled malware 19%, phishing 17%; AI and automation in security cut costs by almost $2 million ($1.93M in secondary). Secondary (eSecurity Planet, SecureWorld, TechRepublic, Baker Donelson, Cycode): Ponemon study of 602 organisations, breaches March 2025 to February 2026; global average $4.99 million (+12%, record); US average $11.5 million; 21% had incidents involving their own AI. The 'shadow AI in 43% of AI-related breaches' figure did not appear in any snippet before the search budget ran out; one secondary gives shadow-AI breach cost $5.39M.",
+    "corrections": {
+      "last_retrieved": "2026-10-27 (search snippets only)"
+    },
+    "claim_check": "CONFIRMED: 602 organisations, March 2025 to February 2026; global average $4.99 million; US $11.5 million; one in four malicious breaches AI-enabled at $6 million average; supersedes 2025's $4.44M/$10.22M. NOT CONFIRMED: 'shadow AI in 43% of AI-related breaches' (GAP: check the IBM release text or report; a targeted search was blocked by the budget).",
+    "alt1": {
+      "title": "AI-powered adversaries and the enterprise risk challenge: Preparing for the new reality (2026 Cost of a Data Breach)",
+      "author": "IBM X-Force",
+      "publisher": "IBM Think",
+      "date": "2026",
+      "url": "https://www.ibm.com/think/x-force/2026-cost-of-a-data-breach-ai-adversaries-enterprise-risk",
+      "why": "IBM's own analysis of the AI-adversary findings, same primary data with more detail on attack types; the full report PDF would be better still."
+    },
+    "alt2": {
+      "title": "IBM: AI-Enabled Data Breaches Cost Organizations $6 Million on Average",
+      "author": "TechRepublic",
+      "publisher": "TechRepublic",
+      "date": "2026-07",
+      "url": "https://www.techrepublic.com/article/news-ibm-ai-enabled-data-breach-costs/",
+      "why": "Independent coverage reproducing the $6M, $4.99M, $11.5M and 602-organisation figures; secondary."
+    },
+    "recommendation": "KEEP",
+    "rationale": "The release exists exactly as recorded and all headline figures are confirmed by IBM and several outlets; only the 43% shadow-AI share still needs a look at the release text before the next teaching.",
+    "tag": "H"
+  }
+]

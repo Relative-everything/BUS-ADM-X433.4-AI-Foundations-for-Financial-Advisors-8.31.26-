@@ -1,0 +1,611 @@
+[
+  {
+    "id": "src-pricing",
+    "status": "VERIFIED",
+    "evidence": "WebFetch 2026-10-27 of the recorded URL, HTTP 200, title 'Pricing'. Model table: Fable 5.1 $10/$50; Opus 5.5 $4/$20 (cache hit $0.20, footnote 0.05x); Sonnet 5.5 $2/$10 (cache hit $0.10, 0.05x); Sonnet 5 $2/$10 with footnote 3; Haiku 5.5 $0.10/$0.50 for prompts up to 100,000 tokens and $0.50/$2.50 over; footnote 1: cache hits on Fable 5.1 and Mythos 5.1 at 0.025x. Batch section: 'a 50 percent discount on both input and output tokens'. Footnote 3 verbatim: 'The $2/$10 per million input/output token pricing for Claude Sonnet 5, announced at launch as introductory pricing through August 31, 2026, is now the standard price. The previously scheduled increase to $3/$15 per million input/output tokens on September 1, 2026 will not occur.' Hostname check 2026-10-27: platform.claude.com is canonical (200). docs.claude.com redirects to platform.claude.com (301/302 observed on two paths). docs.anthropic.com could not be tested from this sandbox (proxy refused the CONNECT, WebFetch ENOTFOUND), so whether it still redirects is unconfirmed. anthropic.com/engineering/* now 308-redirects to anthropic.com/research/*; anthropic.com/news/1m-context 308-redirects to claude.com/blog/1m-context.",
+    "corrections": {},
+    "claim_check": "All scope and figures.* claims hold: the four current-model rates, output at 5x input on every listed row, cache-read multipliers 0.1x default / 0.05x Opus 5.5 and Sonnet 5.5 / 0.025x Fable 5.1, and the 50% Batch discount. One drift: the retrieval_note's 'FAQ gives the rule of thumb of one token to about 0.75 words' is gone; the FAQ ('How is token usage calculated?') now says only that Claude 4.7+ models' tokenizer 'produces approximately 30 percent more tokens for the same text'. The words-per-token figure the cases use (1M tokens ~ 555k words) lives on the Models overview, not here. Page also now lists Mythos 5.1/5 rows and a Haiku 5.5 long-context tier; it is a moving target, recheck before each teaching as the record already says.",
+    "alt1": {
+      "title": "Models overview (compare models table)",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/models/overview",
+      "why": "Same prices in one comparison row per current model plus the 555k-words-per-1M-tokens rule of thumb and the Batch/cache percentages in its footnotes; less detailed than the pricing page (no cache-write or long-context rows), so a supplement rather than a replacement."
+    },
+    "alt2": {
+      "title": "Context windows",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/context-windows",
+      "why": "States that 1M context is billed at standard pricing 'except on Claude Haiku 5.5, where prompts over 100,000 tokens cost more', the one tier rule the session-4 cost line depends on; narrower than the pricing page."
+    },
+    "recommendation": "KEEP",
+    "rationale": "The recorded page is the primary source and every typed figure matches the live table; only the retrieval_note's 0.75-words line should be dropped.",
+    "tag": "H"
+  },
+  {
+    "id": "src-context-windows",
+    "status": "VERIFIED",
+    "evidence": "WebFetch 2026-10-27, HTTP 200, title 'Context windows'. Verbatim: 'The \"context window\" refers to all the text a language model can reference when generating a response, including the response itself.' 'As token count grows, accuracy and recall degrade, a phenomenon known as context rot.' 'Everything in the request counts toward the context window: the system prompt, every message in messages (including tool results, images, and documents), and your tool definitions.' 'Input phase: Contains all previous conversation history plus the current user message'; 'previous turns are preserved completely'. Footnote: 'Chat interfaces such as claude.ai can also manage the context window on a rolling \"first in, first out\" basis.' Sizes: Fable 5.1, Opus 5.5, Sonnet 5.5, Haiku 5.5 and others 'have a 1M-token context window'; Sonnet 4.5 (deprecated) 200k.",
+    "corrections": {},
+    "claim_check": "Every sentence the retrieval_note and scope rely on is still on the page, word for word. The page gives direction of degradation and no threshold, as the scope says. New since the record: the page now opens by recommending server-side compaction and adds a 'context awareness' section (budget tags injected on Sonnet 5/4.6/4.5 and Haiku 4.5 only).",
+    "alt1": {
+      "title": "Effective context engineering for AI agents",
+      "author": "Rajasekaran, P., Dixon, E., Ryan, C., & Hadfield, J.",
+      "publisher": "Anthropic (Applied AI)",
+      "date": "2025-09-29",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "why": "The docs page itself links this post 'for more on why long contexts degrade'; it is the fuller primary explanation of context rot, but it is an essay rather than the vendor's normative statement, so a supplement."
+    },
+    "alt2": {
+      "title": "Models overview",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/models/overview",
+      "why": "Carries the per-model context-window row (1M on all four current models) and the 555k-words equivalence the lessons quote; narrower on mechanism."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary vendor statement, unchanged in every quoted sentence; note it is the same URL as src-anthropic-context (consider merging the two records).",
+    "tag": "H"
+  },
+  {
+    "id": "src-api-messages",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch 2026-10-27 of the recorded URL, HTTP 200; page title is 'Messages' (H1 'Messages', section 'Create a Message'), not 'Messages API reference'. Because the page is 1.29M characters, the full markdown was also downloaded via curl from platform.claude.com/docs/en/api/messages.md (200, 1,290,042 bytes) and grepped: 'temperature' 0 hits, 'top_p' 0, 'top_k' 0, 'deterministic' 0; 'effort' 8 hits ('How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer.' Valid values low, medium, high, xhigh, max); 'thinking' options documented as enabled+budget_tokens (>=1024), disabled, adaptive, and a new between_tools type. Versions page (fetched): under API version 2026-10-21 'The temperature, top_p, and top_k request parameters are removed. A request that sends any of them returns a 400 error on every model.' Model deprecations page (fetched) carries an 'API parameter deprecations' table: temperature/top_p/top_k 'Removed in API version 2026-10-21 ... Earlier API versions return it [400] when set to a non-default value on Claude 4.7 and later models'.",
+    "corrections": {
+      "title": "Messages",
+      "note": "The temperature paragraph quoted in scope ('Models released after Claude Opus 4.6 do not support setting temperature ... rejected with a 400 error', default 1.0, range 0.0-1.0, 'results will not be fully deterministic') is no longer anywhere on the page; the parameters were removed from the reference with API version 2026-10-21."
+    },
+    "claim_check": "Effort (five levels) and thinking (enabled/disabled/adaptive) claims still hold. The temperature claim, which is what session-2 Appendix B4 and session-4 Appendix D6 use, is no longer supported by this page. It is supported by the Model deprecations page's parameter table and by the 2026-10-21 migration guide, which also says 'If a request relies on a non-default value, either stop sending the parameter, or keep that request on 2023-06-01' and, on Opus 5.5, 'If you were using temperature = 0 for determinism, note that it never guaranteed identical outputs on prior models.' Lesson consequence: any live console that sends temperature must pin anthropic-version 2023-06-01 and a 4.6-or-earlier model; TypeScript SDK 1.0.0+ sends 2026-10-21 by default (TypeScript SDK page, 'Semantic versioning').",
+    "alt1": {
+      "title": "Model deprecations, section 'API parameter deprecations'",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "updated in place; latest entry 2026-09-30",
+      "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+      "why": "Now the only reference-style statement of the temperature/top_p/top_k rule for both API versions and the Claude 4.7+ model cut-off; more durable than a 1.29M-character API reference that drops removed parameters."
+    },
+    "alt2": {
+      "title": "Migrating to API version 2026-10-21 (sampling parameters section)",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/api/migration-2026-10-21",
+      "why": "States the removal, the 400 on every model, and the fallback of staying on 2023-06-01; the most precise text for what the course's live console must do, but a migration page may be retired once the old version is."
+    },
+    "recommendation": "REPLACE_WITH_ALT1",
+    "rationale": "The sentence the course attributes to this page has been removed; cite the deprecations parameter table for the temperature claim and keep the Messages page only for effort and thinking.",
+    "tag": "H"
+  },
+  {
+    "id": "src-models",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch 2026-10-27, HTTP 200, title 'Models overview'. Current lineup table: Fable 5.1, Opus 5.5, Sonnet 5.5, Haiku 5.5; all four '1M tokens' context, 128K max output, adaptive thinking (always on for Fable 5.1 and Opus 5.5), default effort high/medium/high/medium, retirement not sooner than 1 Sep / 22 Sep / 28 Sep / 7 Oct 2027. Footnotes verbatim: 'Every Claude model ID is a pinned snapshot, including the dateless IDs used from the 4.6 generation on.' '1M tokens is roughly 555k words or 2.5M Unicode characters on the current tokenizer (introduced with Claude Opus 4.7); models before it fit about 750k words in 1M tokens. 200k tokens is roughly 150k words.' Legacy list includes Fable 5 and Haiku 4.5. Page carries no publication date.",
+    "corrections": {
+      "published": "not applicable (page carries no date; updated in place)",
+      "scope": "The scope text is stale: it names Haiku 4.5 at 200K as the fourth current model; the page now lists Haiku 5.5 at 1M as the fourth, with Haiku 4.5 among legacy models. The scope also says no price or cutoff was recorded; the page states prices ($10/$50, $4/$20, $2/$10, from $0.10/$0.50) and 'Reliable knowledge cutoff Jun 2026' for all four.",
+      "duplicate": "Same page as src-anthropic-models-overview (that record's URL 307-redirects here); merge."
+    },
+    "claim_check": "Figures.* lines (1M context on the current models; 555,000 words per 1M tokens; pinned snapshot statement) are all supported verbatim. The scope's model list and context sizes are out of date as noted.",
+    "alt1": {
+      "title": "Model IDs and versioning",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions",
+      "why": "Dedicated page for the pinned-snapshot claim ('A 4.6-generation ID such as claude-sonnet-4-6 is not an alias. It is the snapshot.'), more precise than a footnote on the overview."
+    },
+    "alt2": {
+      "title": "Model deprecations",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "updated in place; latest entry 2026-09-30",
+      "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+      "why": "Carries the same not-sooner-than dates in a full status table; use it for lifecycle, the overview for sizes and prices."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Page and figures verified; fix the published field, refresh the stale scope lineup, and merge with the duplicate record.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-retention",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch 2026-10-27, HTTP 200, title 'API and data retention'. Verbatim: 'Retained data is never used for model training without your express permission.' 'Conversation content (your prompts and Claude's outputs) is not retained by default; the exception is Covered Models, which require 30-day retention.' 'Under a ZDR arrangement, Anthropic does not store customer prompts or responses at rest after the API response is returned. To request ZDR for your organization, contact the Anthropic sales team. ZDR is enabled per organization'. 'Claude Teams and Claude Enterprise product interfaces: These interfaces are not ZDR-eligible.' 'if a chat or session is flagged, Anthropic may retain inputs and outputs for up to 2 years.' Covered Models = Fable 5.1, Mythos 5.1, Fable 5, Mythos 5. Help Center 10440198 (fetched, now slug '...configure-custom-data-retention-controls-for-enterprise-plans'): 'By default, data is retained indefinitely unless a custom retention period is set' and 'The minimum retention period is 30 days'; covers claude.ai chats/projects/artifacts, not the API. Help Center 15425996 (fetched, 'Data retention practices for Covered Models', effective June 9, 2026): covered-model prompts and outputs 'are retained for 30 days'. The commercial retention policy the page links (privacy.claude.com/en/articles/7996866) could not be fetched (proxy refused; WebSearch budget exhausted before a domain-restricted search ran).",
+    "corrections": {
+      "scope": "Replace 'Standard retention on the API is 30 days' with what the page now says: conversation content is not retained by default; Covered Models (Fable 5.1, Mythos 5.1, Fable 5, Mythos 5) require 30-day retention; standard retention otherwise is defined in the commercial data retention policy, not on this page. The 'Enterprise custom retention, 30 days minimum' sentence belongs to Help Center 10440198 (claude.ai Enterprise, default indefinite), not to this page."
+    },
+    "claim_check": "Supported verbatim: ZDR definition and sales/per-org enablement; Team and Enterprise interfaces not ZDR-eligible; never used for training without express permission; flagged content up to two years. NOT supported by this page: a blanket 30-day standard API retention, which session-1's live console and session-4's Live API box state as 'the 30-day retention behind a Claude API key'. That figure now needs the commercial retention policy (unreachable here: GAP) or must be rephrased to the Covered-Models rule. The 'two Anthropic pages differ on the Enterprise chat default' note still holds (10440198 says indefinitely by default).",
+    "alt1": {
+      "title": "Data retention practices for Covered Models",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center",
+      "date": "effective 2026-06-09",
+      "url": "https://support.claude.com/en/articles/15425996-data-retention-practices-for-covered-models",
+      "why": "The only fetched page that states a 30-day retention figure in plain terms, but it applies to Covered Models only; narrower than the course's claim."
+    },
+    "alt2": {
+      "title": "Configure custom data retention controls for Enterprise plans",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center",
+      "date": "undated ('Updated today' on 2026-10-27)",
+      "url": "https://support.claude.com/en/articles/10440198-configure-custom-data-retention-controls-for-enterprise-plans",
+      "why": "Primary source for the Enterprise custom-period and 30-day minimum sentence; it is about claude.ai chat data, not the API, so cite it only for that clause."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "Keep the page for ZDR, training and two-year claims, add the two Help Center articles, and re-source or reword the '30-day retention behind an API key' claim, which this page no longer states and which I could not confirm elsewhere.",
+    "tag": "M"
+  },
+  {
+    "id": "src-anthropic-api-credits",
+    "status": "VERIFIED",
+    "evidence": "WebFetch 2026-10-27, HTTP 200, title 'API credits for Max and Team plans'. Summary table: Max 5x $100 USD, Max 20x $200 USD, Team 'up to $500 USD (Team, pooled*)'; covers 'Claude API, Claude Managed Agents, the Claude Agent SDK, and playground'; doesn't cover 'Claude Code, extra usage in the Claude apps'; 'Expiry: End of each billing cycle ... with no rollover'. Verbatim: 'Every API key and workspace in the linked organization draws from the same balance. To cap spending on a project, give it its own workspace and set that workspace's spend limit.' 'If the organization has no credits left, API requests stop until your next monthly API credits arrive. Usage is never charged to your Claude plan.' Help Center 17154008 (fetched; redirects to slug 'monthly-api-credits-for-max-and-team-plans') repeats the amounts and 'Usage is never charged to your Claude plan', and says credits are 'rolling out over a few days' with no calendar date. The 7 October 2026 announcement date appears only in a third-party aggregator returned by WebSearch (pasqualepillitteri.it, quoting a ClaudeDevs post); no first-party dated announcement was fetched.",
+    "corrections": {
+      "retrieval_note": "The '7 October 2026' announcement date is unconfirmed on any Anthropic page; mark it M or drop it."
+    },
+    "claim_check": "Every quoted sentence and every amount in scope matches the live page exactly, including the Team-plan $500 cap, the one-linked-organization rule, and the Claude Code exclusion. Eligibility detail worth adding for the course workspace: 'New subscribers can claim credits after 7 days on an eligible plan' and 'Free, Pro, and Enterprise plans aren't eligible.'",
+    "alt1": {
+      "title": "Monthly API credits for Max and Team plans",
+      "author": "Anthropic",
+      "publisher": "Claude Help Center",
+      "date": "undated ('Updated over a week ago' on 2026-10-27)",
+      "url": "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans",
+      "why": "Second Anthropic statement of the same amounts and the stop-when-exhausted rule; written for subscribers rather than developers, so slightly less precise on workspaces."
+    },
+    "alt2": {
+      "title": "Anthropic Announces Up to $500 a Month in API Credits for Claude Max and Team",
+      "author": "pasqualepillitteri.it (aggregator)",
+      "publisher": "pasqualepillitteri.it",
+      "date": "2026-10-07 (as stated by the site)",
+      "url": "https://pasqualepillitteri.it/en/news/21541/anthropic-claude-max-team-api-credits",
+      "why": "Only source found that dates the announcement to 7 October 2026; third-party and not fetched (search result only), so weak; use solely to justify the date if the instructor wants one."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary vendor page, every scope sentence verbatim; only the announcement date lacks a first-party source.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-browser-access",
+    "status": "VERIFIED",
+    "evidence": "WebFetch 2026-10-27, HTTP 200, title 'TypeScript SDK'. Verbatim under Requirements: 'Web browsers: disabled by default to avoid exposing your secret API credentials ... Enable browser support by explicitly setting dangerouslyAllowBrowser to true.' Under Runtime support: 'Any user with access to the browser can potentially inspect, extract, and misuse these credentials.' The page does not name the header. SDK source fetched via curl (HTTP 200) from raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/main/src/client.ts: line 779 'dangerouslyAllowBrowser?: boolean | undefined;', lines 964-966 the thrown error 'It looks like you're running in a browser-like environment. This is disabled by default, as it risks exposing your secret API credentials to attackers...', lines 2015-2016 in the header builder: '...(this._options.dangerouslyAllowBrowser ? { \"anthropic-dangerous-direct-browser-access\": \"true\" }'. TypeScript SDK page also states SDK 1.0.0+ sends API version 2026-10-21 by default.",
+    "corrections": {},
+    "claim_check": "Both page quotes are exact and the header name and value are confirmed in the current SDK source. One clause is not stated by either source: 'the API answers a browser only when that header is present' is an inference about server behaviour (the SDK refuses to run without the option; whether the API rejects browser-origin requests lacking the header is not documented on either page). Soften to 'the SDK sends the header on every request when the option is set'.",
+    "alt1": {
+      "title": "anthropic-sdk-typescript src/client.ts (buildHeaders)",
+      "author": "Anthropic",
+      "publisher": "GitHub, anthropics/anthropic-sdk-typescript",
+      "date": "main branch, fetched 2026-10-27",
+      "url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/main/src/client.ts",
+      "why": "The wire-level primary source for the header name; moving (main branch), so pin a tag or commit when citing."
+    },
+    "alt2": {
+      "title": "API credits for Max and Team plans (sharing and spend limits)",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers",
+      "why": "Supplies the mitigation the Live API box needs beside the warning: give the class key its own workspace and set a spend limit; not about browsers, so a supplement only."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Docs page plus SDK source give two independent primary confirmations; the record's M chip can rise to H now that the source line is cited.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-sampling",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch 2026-10-27, HTTP 200, title 'Claude Opus 5.5 migration guide'. Grep of the full page: the quoted sentence 'Setting temperature, top_p, or top_k to any non-default value on Claude Opus 4.7 and later models, including Claude Opus 5.5, returns a 400 error' does not appear ('non-default' 0 hits). Current wording: 'Sampling parameters: Omit temperature, top_p, and top_k. Use prompting to guide the model's behavior.' (request requirements, where 'a setting is rejected, the API returns a 400 error'); 'Sampling parameters removed: ... If you were using temperature = 0 for determinism, note that it never guaranteed identical outputs on prior models.'; 'Manual extended thinking, sampling parameters, and assistant prefill return a 400 error on both models'. Haiku 5.5 migration guide (fetched, 200) now says only 'On Claude Haiku 5.5, omit temperature, top_p, and top_k and use prompting', not the 'must be 1 / top_p 0.99 / any top_k a 400' wording in the retrieval_note. Model deprecations page: 'Earlier API versions return it [400] when set to a non-default value on Claude 4.7 and later models'. Versions page: under 2026-10-21 the three parameters 'are removed ... returns a 400 error on every model'.",
+    "corrections": {
+      "scope": "Replace the quotation with the current sentences; the 'Claude 4.7 and later' cut-off is now stated on the Model deprecations parameter table, not on this guide.",
+      "retrieval_note": "The Haiku 5.5 guide no longer states temperature-must-be-1 / top_p 0.99 rules."
+    },
+    "claim_check": "The substantive claim (Opus 4.7+ models reject non-default temperature with a 400; 4.6 and earlier accept it on the old API version) is still true per the deprecations table and the 2026-10-21 migration guide, but the exact quote is gone and the guide's wording is now 'omit'. New condition the lesson's live temperature panel must meet: a request that sends temperature at all returns 400 under API version 2026-10-21 on every model, so the panel must send anthropic-version 2023-06-01 (SDKs at major version 1.0+ default to 2026-10-21) as well as route to a 4.6-or-earlier model.",
+    "alt1": {
+      "title": "Model deprecations, section 'API parameter deprecations'",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "updated in place; latest entry 2026-09-30",
+      "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+      "why": "Single table that states both halves of the rule the lesson needs (removed in 2026-10-21; 400 on non-default values for Claude 4.7+ on earlier versions); more durable than a per-model migration guide."
+    },
+    "alt2": {
+      "title": "Migrating to API version 2026-10-21 (sampling parameters)",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/api/migration-2026-10-21",
+      "why": "Gives the operational instruction ('either stop sending the parameter, or keep that request on 2023-06-01') and names Sonnet 4.6 as a model that still accepts other values; the best page for the live-panel routing decision."
+    },
+    "recommendation": "REPLACE_WITH_ALT1",
+    "rationale": "The quoted sentence no longer exists and the governing rule has moved to the deprecations parameter table, which also captures the API-version change the live panel must now handle.",
+    "tag": "H"
+  },
+  {
+    "id": "src-agent-skills",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch 2026-10-27, HTTP 200; page title is 'Agent Skills' (record: 'Agent Skills overview'). Verbatim: 'Every Skill requires a SKILL.md file with YAML frontmatter'; 'Required fields: name and description'; name: 'Maximum 64 characters', 'Must contain only lowercase letters, numbers, and hyphens', 'Cannot contain XML tags', 'Cannot contain reserved words: \"anthropic\", \"claude\"'; description: 'Must be non-empty', 'Maximum 1,024 characters', 'Cannot contain XML tags'; 'The description must include both what the Skill does and when Claude should use it.' claude.ai: 'Upload your own Skills as zip files through Settings > Features. Available on Pro, Max, Team, and Enterprise plans with code execution enabled.'",
+    "corrections": {
+      "title": "Agent Skills"
+    },
+    "claim_check": "All scope claims hold (folder with SKILL.md, name/description limits and character rules, plan list for upload). Two constraints the course could add for the session-4 record block: name cannot contain the reserved words 'anthropic' or 'claude', and neither field may contain XML tags. Also: custom skills on claude.ai 'are individual to each user ... cannot be centrally managed by admins', relevant to Session 5's distribution story.",
+    "alt1": {
+      "title": "Equipping agents for the real world with Agent Skills",
+      "author": "Zhang, B., Lazuka, K., & Murag, M.",
+      "publisher": "Anthropic Engineering",
+      "date": "2025-10-16",
+      "url": "https://www.anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills",
+      "why": "Design rationale (progressive disclosure, name and description loaded at startup); the docs page is the normative spec, this is the explanation, so a supplement."
+    },
+    "alt2": {
+      "title": "Extend Claude with skills",
+      "author": "Anthropic",
+      "publisher": "Claude Code documentation",
+      "date": "undated, updated in place",
+      "url": "https://code.claude.com/docs/en/skills",
+      "why": "Claude Code's own frontmatter reference (model, effort, allowed-tools fields and the enterprise/personal/project/plugin locations); covers what the platform page leaves to Claude Code."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Content verified verbatim; only the title changed.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-context",
+    "status": "VERIFIED",
+    "evidence": "Same URL as src-context-windows (fetched 2026-10-27, 200). Context rot sentence verbatim on the page; '1M' default confirmed ('For every model with a 1M-token context window, 1M is the default: you don't need a beta header'); 555k words on the Models overview footnote. The history figures were checked against the announcement posts the retrieval_note names: 'Introducing 100K context windows' (fetched, May 11, 2023): 'We've expanded Claude's context window from 9K to 100K tokens, corresponding to around 75,000 words!'; 'Introducing Claude 2.1' (fetched, November 21, 2023): 'doubling the amount of information you can relay to Claude with a limit of 200,000 tokens'; 'Claude Sonnet 4 now supports 1M tokens of context' (anthropic.com/news/1m-context 308-redirects to claude.com/blog/1m-context, fetched, August 12, 2025). anthropic.com/news/introducing-claude (March 2023) returned HTTP 200 on a curl HEAD but was not fetched.",
+    "corrections": {
+      "link": "Keep the context-windows URL for the current-window and context-rot claims, but add the three announcement URLs as the sources of the 9K/100K/200K/1M history, because the record's single link does not support those dates.",
+      "note": "The 100K post writes '9K', not '9,000'; the March 2023 date for 9K is from the Claude launch post, which was not fetched."
+    },
+    "claim_check": "All six scope claims are supported, but by four pages, not one: the dated history by the announcement posts, the 1M default and context-rot sentence by the context-windows page, the 555,000-word figure by the Models overview. The 1M post announced the window for Claude Sonnet 4 (beta, August 2025); 'one million by default on current models' is the docs page's current statement.",
+    "alt1": {
+      "title": "Introducing 100K context windows",
+      "author": "Anthropic",
+      "publisher": "Anthropic",
+      "date": "2023-05-11",
+      "url": "https://www.anthropic.com/news/100k-context-windows",
+      "why": "Primary dated source for the 9K-to-100K step the then-and-now deck quotes."
+    },
+    "alt2": {
+      "title": "Introducing Claude 2.1",
+      "author": "Anthropic",
+      "publisher": "Anthropic",
+      "date": "2023-11-21",
+      "url": "https://www.anthropic.com/news/claude-2-1",
+      "why": "Primary dated source for the 200,000-token step; pair with claude.com/blog/1m-context (2025-08-12) for the 1M step."
+    },
+    "recommendation": "ADD_SUPPLEMENT",
+    "rationale": "Claims verified, but the record should list the announcement posts it actually draws dates from and be merged with src-context-windows, which cites the same URL.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-deprecations",
+    "status": "VERIFIED",
+    "evidence": "WebFetch 2026-10-27, HTTP 200, title 'Model deprecations'. Lifecycle terms verbatim (Active, Legacy, Deprecated, Retired; 'Requests to retired models fail'). 'providing at least 60 days' notice before model retirement for publicly released models'. 'consider thorough testing of your applications with the new models well before the retirement date'. Status table matches every date in scope: Fable 5.1 not sooner than Sep 1 2027; Fable 5 Jun 9 2027; Opus 5.5 Sep 22 2027; Opus 5 Jul 24 2027; Opus 4.8 May 28 2027; Opus 4.7 Apr 16 2027; Opus 4.6 Feb 5 2027; Opus 4.5 Nov 24 2026; Sonnet 5.5 Sep 28 2027; Sonnet 5 Jun 30 2027; Sonnet 4.6 Feb 17 2027; Sonnet 4.5 deprecated Sep 30 2026, retirement Nov 30 2026, replacement claude-sonnet-5-5; Haiku 5.5 Oct 7 2027; Haiku 4.5 Oct 15 2026. Retired: Opus 4.1 Aug 5 2026; Sonnet 4 and Opus 4 Jun 15 2026; Haiku 3 Apr 20 2026; Sonnet 3.7 and Haiku 3.5 Feb 19 2026; Opus 3 Jan 5 2026; Sonnet 3.5 Oct 28 2025; Claude 2, 2.1, Sonnet 3 Jul 21 2025. Most recent announcement heading '2026-09-30: Claude Sonnet 4.5 model'. 'The dates on this page apply to Anthropic-operated platforms ... Partner-operated platforms ... set their own retirement schedules.'",
+    "corrections": {},
+    "claim_check": "Every date, term and sentence in scope is on the live page unchanged since the 2026-10-12 pull. Additions since then: Mythos 5.1 and Mythos 5 rows (Active), Mythos Preview deprecated June 9 2026 with retirement 'To be announced', and a new 'API parameter deprecations' section (temperature/top_p/top_k). The published field (2026-09-30) is the latest announcement date, which the record explains; the page itself is undated.",
+    "alt1": {
+      "title": "Models overview",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/models/overview",
+      "why": "Same not-sooner-than dates for the four current models in the comparison table, with IDs; no history, so a supplement."
+    },
+    "alt2": {
+      "title": "Model IDs and versioning",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions",
+      "why": "States 'Every model ID, whether dated or dateless, has its own distinct deprecation and retirement schedule', the sentence behind the case files' model-id reasoning."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary lifecycle source; the whole §02 calendar re-verifies against the live table.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-models-overview",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "curl HEAD 2026-10-27: the recorded URL returns HTTP 307 to https://platform.claude.com/docs/en/models/overview; WebFetch of the recorded URL followed the same-host redirect and returned the Models overview page (200). Current lineup Fable 5.1 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5 with retirement not sooner than September 1, September 22, September 28 and October 7, 2027. 'Legacy models (still available): Claude Fable 5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Opus 4.5, Claude Sonnet 5, Claude Sonnet 4.6, Claude Haiku 4.5.' 'If you're unsure which model to use, start with Claude Opus 5.5 for most workloads.' Pricing row present ($10/$50, $4/$20, $2/$10, from $0.10/$0.50).",
+    "corrections": {
+      "link": "https://platform.claude.com/docs/en/models/overview",
+      "published": "not applicable (undated, updated in place)",
+      "scope": "'No price or benchmark from it is on the page' is wrong: the comparison table carries a Pricing row and reliable-knowledge-cutoff row (Jun 2026). No benchmarks, correct.",
+      "duplicate": "Same page as src-models; merge the two records under one canonical URL."
+    },
+    "claim_check": "Lineup, every not-sooner-than date, the legacy list (exact match, nine models) and the Opus 5.5 recommendation all hold. Session 5's §02 lineup sentence is supported.",
+    "alt1": {
+      "title": "Model deprecations",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "updated in place; latest entry 2026-09-30",
+      "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+      "why": "Fuller status table (includes Mythos rows and deprecated/retired models) for the calendar; the overview is better for the 'four current models' framing."
+    },
+    "alt2": {
+      "title": "Model IDs and versioning",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions",
+      "why": "Explains why the dateless IDs the lineup uses are pinned snapshots; supplement."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Content verified; update the link to the canonical address, fix the published and scope fields, and merge with src-models.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-code-skills",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch 2026-10-27, HTTP 200; page title 'Extend Claude with skills' (record: 'Skills'). Verbatim: 'Create a SKILL.md file with instructions, and Claude adds it to its toolkit. Claude uses skills when relevant, or you can invoke one directly with /skill-name.' 'Every skill needs a SKILL.md file with two parts: YAML frontmatter ... and markdown content'. 'All fields are optional. Only description is recommended so Claude knows when to use the skill.' description: 'What the skill does and when to use it. Claude uses this to decide when to apply the skill.' Locations table: Enterprise (managed settings directory), Personal ~/.claude/skills, Project .claude/skills, Plugin. Precedence: 'Enterprise over personal, and personal over project.' model: 'Model to use when this skill is active.' effort and allowed-tools fields documented.",
+    "corrections": {
+      "title": "Extend Claude with skills",
+      "scope": "The frontmatter 'names the skill' is now optional: the page says all fields are optional and only description is recommended; the folder name supplies the skill name."
+    },
+    "claim_check": "Every scope claim holds: description-triggered invocation, invocation by name, four locations including the organisation's managed settings directory with enterprise precedence, and model/tools/effort fields. Last 18K characters of the page were not read (WebFetch limit) but the quoted sections sit in the first 100K.",
+    "alt1": {
+      "title": "Agent Skills",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+      "why": "Cross-product definition (name/description requirements, where skills work, that claude.ai custom skills cannot be centrally managed); narrower on Claude Code's own fields."
+    },
+    "alt2": {
+      "title": "Manage Claude Code plugins for your organization",
+      "author": "Anthropic",
+      "publisher": "Claude Code documentation",
+      "date": "undated, updated in place",
+      "url": "https://code.claude.com/docs/en/plugins/org",
+      "why": "The actual central-distribution mechanism (managed settings, enabledPlugins) behind 'an organisation can distribute skills centrally'; supplement to the skills page."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Verified; update the title and the now-optional name clause.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-code-marketplace",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "WebFetch 2026-10-27 of the recorded URL (HTTP 200) returned the page 'Create a marketplace'. Sibling pages (host-marketplace, plugins/org) link the page as code.claude.com/docs/en/plugins/create-marketplace, which also returns 200, so that is the canonical path and /plugin-marketplaces is an alias. Verbatim: 'A plugin marketplace is a directory or repository with a .claude-plugin/marketplace.json file that lists your plugins and where to fetch each one. You push the directory to a git host, and anyone with access registers it in Claude Code with one command and installs your plugins from it.' 'The repository can be private, it can list as many plugins as you like, and an administrator can require it on every machine.' 'The command has the plugin's name as a prefix, as every plugin skill's name does.' Commands: claude plugin marketplace add, claude plugin install name@marketplace.",
+    "corrections": {
+      "link": "https://code.claude.com/docs/en/plugins/create-marketplace"
+    },
+    "claim_check": "All scope claims hold verbatim, including the one-command add-and-install step and the plugin-name prefix on skills.",
+    "alt1": {
+      "title": "Host and maintain a marketplace",
+      "author": "Anthropic",
+      "publisher": "Claude Code documentation",
+      "date": "undated, updated in place",
+      "url": "https://code.claude.com/docs/en/plugins/host-marketplace",
+      "why": "Covers the teammates' add command, private-repo access and update flow that Appendix E11's repository card describes; complements rather than replaces."
+    },
+    "alt2": {
+      "title": "Manage Claude Code plugins for your organization",
+      "author": "Anthropic",
+      "publisher": "Claude Code documentation",
+      "date": "undated, updated in place",
+      "url": "https://code.claude.com/docs/en/plugins/org",
+      "why": "Primary source for 'an administrator can require it on every machine'."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Content verified; move the link to the canonical /plugins/create-marketplace path before the alias stops resolving.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-code-org",
+    "status": "VERIFIED",
+    "evidence": "WebFetch 2026-10-27, HTTP 200, title 'Manage Claude Code plugins for your organization'. Verbatim: 'Managed settings let you decide which plugins Claude Code installs and allows on every machine in your organization. Users can't override them. You deliver them either as server-managed settings from the claude.ai admin console or as endpoint-managed settings through MDM or a managed-settings.json file.' 'extraKnownMarketplaces registers a marketplace on each machine, and enabledPlugins names the plugins to install and enable from it.' 'After the settings reach a machine, Claude Code registers the marketplace and installs the two plugins at the start of the user's next session.' autoUpdate: 'true keeps the marketplace and its plugins refreshing in the background'. 'The managed strictKnownMarketplaces allowlist and blockedMarketplaces blocklist decide which marketplace sources plugins may come from.' 'adding any source outside the list ... fails with a message containing is blocked by enterprise policy'.",
+    "corrections": {},
+    "claim_check": "Every sentence in scope is supported verbatim, including the error-message fragment. New since the pull: aliases allowedMarketplaces/additionalMarketplaces, disableSideloadFlags, and a seed-directory mechanism for CI; none contradict the lesson.",
+    "alt1": {
+      "title": "Settings files and precedence",
+      "author": "Anthropic",
+      "publisher": "Claude Code documentation",
+      "date": "undated, updated in place",
+      "url": "https://code.claude.com/docs/en/settings",
+      "why": "States the precedence rule (managed above all, no user override) that the policy card rests on; less detail on plugin keys."
+    },
+    "alt2": {
+      "title": "Plugin loading reference",
+      "author": "Anthropic",
+      "publisher": "Claude Code documentation",
+      "date": "undated, updated in place",
+      "url": "https://code.claude.com/docs/en/plugins/loading",
+      "why": "Documents what a user sees when managed settings win ('Disabled in ~/.claude/settings.json but still loads') and the auto-update timing; supplement for the push-an-update beat."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary admin page; all claims verbatim.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-code-host",
+    "status": "VERIFIED",
+    "evidence": "WebFetch 2026-10-27, HTTP 200, title 'Host and maintain a marketplace'. Verbatim: 'You can host the marketplace on GitHub, on another git host, as a hosted marketplace.json URL, or in a directory on a shared filesystem.' 'Your changes reach users through background auto-update, once it's turned on for your marketplace, or when users update the plugin themselves. In both cases a user gets a new copy of a plugin only when its computed version changes'. 'Bump version on each release ... Omit version: users track your commits instead.' 'Claude Code runs git on their machine with interactive prompts turned off and relies on whatever credentials that machine already holds. Claude Code has no git token of its own'.",
+    "corrections": {},
+    "claim_check": "All scope claims hold verbatim. Nuance for Appendix E11: 'Background auto-update is off for your marketplace by default' until a user or an admin's autoUpdate setting turns it on, which the scope already states.",
+    "alt1": {
+      "title": "Plugin loading reference (Versions and updates; When auto-update runs)",
+      "author": "Anthropic",
+      "publisher": "Claude Code documentation",
+      "date": "undated, updated in place",
+      "url": "https://code.claude.com/docs/en/plugins/loading",
+      "why": "Gives the exact version-resolution order (plugin.json, then marketplace entry, then commit SHA) and the random up-to-ten-minute auto-update delay; more precise than the host page on how an update travels."
+    },
+    "alt2": {
+      "title": "Manage Claude Code plugins for your organization",
+      "author": "Anthropic",
+      "publisher": "Claude Code documentation",
+      "date": "undated, updated in place",
+      "url": "https://code.claude.com/docs/en/plugins/org",
+      "why": "Admin side of the same flow (autoUpdate in managed settings)."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary page for the update path; verbatim support.",
+    "tag": "H"
+  },
+  {
+    "id": "src-claude-code-settings",
+    "status": "VERIFIED",
+    "evidence": "WebFetch 2026-10-27, HTTP 200, title 'Settings files and precedence'. Verbatim: 'Settings precedence, highest first: managed settings, command line, project local, shared project, user.' 'Nothing in your own settings files or --settings overrides a managed key, and a flag such as --model picks only from the models your organization allows. A managed model is a starting default, not a lock; the locks are availableModels and deniedModels.' 'availableModels: when the managed settings Claude Code applies define it, Claude Code applies that list as-is and ignores entries you add in user, project, or local settings'. Exceptions table: 'For a few security-sensitive keys, Claude Code honors a stricter value from a lower level over a managed value'. settings-reference (fetched): availableModels 'A managed list constrains /model, --model, and the model key in a developer's own files; a model outside it can't be selected.'",
+    "corrections": {},
+    "claim_check": "All scope claims hold verbatim: precedence order, managed non-overridable except the listed security exceptions, managed model as starting default, availableModels as the lock constraining picker, flag and model key, applied as-is. New: a managed-only deniedModels key blocks specific models even when availableModels permits them; worth a line in the third proposal of Appendix E11.",
+    "alt1": {
+      "title": "All settings (settings reference): availableModels, deniedModels, model",
+      "author": "Anthropic",
+      "publisher": "Claude Code documentation",
+      "date": "undated, updated in place",
+      "url": "https://code.claude.com/docs/en/settings-reference",
+      "why": "Key-by-key reference with scope ('Managed' for deniedModels) and examples; more precise for a proposal that names the exact key."
+    },
+    "alt2": {
+      "title": "Manage Claude Code plugins for your organization",
+      "author": "Anthropic",
+      "publisher": "Claude Code documentation",
+      "date": "undated, updated in place",
+      "url": "https://code.claude.com/docs/en/plugins/org",
+      "why": "Describes the three delivery mechanisms (server-managed, MDM, managed-settings.json) the firm would use to push the lock."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary page; verbatim support plus a new deniedModels lock worth adding.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-ctx",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "curl HEAD 2026-10-27: the recorded URL returns HTTP 308 to https://www.anthropic.com/research/contextual-retrieval; WebFetch of both addresses returned the post. H1 'Introducing Contextual Retrieval'; HTML title 'Contextual retrieval in AI systems'; credits 'Research and writing by Daniel Ford' with thanks to nine others; tagged Engineering; dated Sep 19, 2024. Verbatim: 'Contextual Embeddings reduced the top-20-chunk retrieval failure rate by 35%'; 'Combining Contextual Embeddings and Contextual BM25 reduced the top-20-chunk retrieval failure rate by 49%'; 'Reranked Contextual Embedding and Contextual BM25 reduced the top-20-chunk retrieval failure rate by 67%'; the parentheticals 5.7% to 3.7%, 2.9%, 1.9% accompany these in the post. 'If your knowledge base is smaller than 200,000 tokens (about 500 pages of material)' the whole base can go in the prompt. Datasets: 'codebases, fiction, ArXiv papers, Science Papers'.",
+    "corrections": {
+      "link": "https://www.anthropic.com/research/contextual-retrieval",
+      "author": "Ford, D. (research and writing), Anthropic",
+      "title": "Introducing Contextual Retrieval (HTML title: Contextual retrieval in AI systems)",
+      "last_retrieved": "2026-10-27"
+    },
+    "claim_check": "All figures in scope (5.7 / 3.7 / 2.9 / 1.9 percent, the 67% reduction, the 200,000-token threshold, the vendor-benchmark caveat and domains) are on the live page. Context for the session-3 boundary condition: the 200K threshold was written when Claude's window was 200K; current models default to 1M, so present it as the 2024 rule of thumb the record already frames it as.",
+    "alt1": {
+      "title": "Context windows",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/context-windows",
+      "why": "Current vendor statement that 1M is the default window and that recall degrades with size (context rot), which qualifies the 2024 'under 200K, skip RAG' rule; supplement."
+    },
+    "alt2": {
+      "title": "Effective context engineering for AI agents",
+      "author": "Rajasekaran, P., Dixon, E., Ryan, C., & Hadfield, J.",
+      "publisher": "Anthropic (Applied AI)",
+      "date": "2025-09-29",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "why": "Later Anthropic guidance on retrieval versus just-in-time context loading; frames when retrieval still pays, but gives no failure-rate numbers."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Post exists and every number checks; update the redirected URL, the credited author and the empty last_retrieved field.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-ctx-eng",
+    "status": "VERIFIED",
+    "evidence": "WebFetch 2026-10-27 of the recorded URL returned the post (title 'Effective context engineering for AI agents'; authors Prithvi Rajasekaran, Ethan Dixon, Carly Ryan, Jeremy Hadfield, Applied AI team; Sep 29, 2025). Verbatim: 'Context engineering refers to the set of strategies for curating and maintaining the optimal set of tokens' (continues as the record quotes). Also: 'At Anthropic, we view context engineering as the natural progression of prompt engineering.' Note: sibling /engineering/ posts now 308-redirect to /research/, so this URL may follow; both forms resolved today. Prompting best practices (fetched) still says 'Setting a role in the system prompt focuses Claude's behavior and tone for your use case.'",
+    "corrections": {},
+    "claim_check": "Definition quote and the prompt-versus-context contrast are on the page; the retrieval_note's role sentence is still on the prompting best-practices page verbatim.",
+    "alt1": {
+      "title": "Prompting best practices",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "why": "Vendor's current normative prompting guidance (role sentence, CoT-as-fallback); pairs with the essay for the then-and-now card."
+    },
+    "alt2": {
+      "title": "Context windows",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/context-windows",
+      "why": "The docs page that links the essay for context rot; gives the mechanism the essay reasons from."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary, dated, authored; verbatim match.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-agents",
+    "status": "VERIFIED_WITH_CORRECTIONS",
+    "evidence": "curl HEAD 2026-10-27: recorded URL returns HTTP 308 to https://www.anthropic.com/research/building-effective-agents; WebFetch of both returned the post, dated Dec 19, 2024, byline as rendered: 'Written by Erik S. and Barry Zhang.' (first author's surname is abbreviated on the live page, so 'Schluntz' cannot be confirmed from it). Verbatim: 'They are typically just LLMs using tools based on environmental feedback in a loop.' The page adds that much of the tooling landscape has changed since December 2024. The post does not use 'agentic loop' or 'agent loop'; those phrases are on platform docs: 'How tool use works' has the heading 'The agentic loop (client tools)' with the five-step while-loop keyed on stop_reason, and the tool-use overview says 'For the full conceptual model including the agentic loop'.",
+    "corrections": {
+      "link": "https://www.anthropic.com/research/building-effective-agents",
+      "author": "Erik S. [surname abbreviated on the live page] & Zhang, B.; retain 'Schluntz' only if confirmed from an archived copy"
+    },
+    "claim_check": "The 'in a loop' quote is verbatim. The 'gather context, take action, verify work, repeat' phrasing is a paraphrase: the post talks of gaining 'ground truth from the environment at each step', planning and operating independently, and stopping conditions; the docs' agentic loop is 'send, tool_use, run tools, send results, repeat while stop_reason is tool_use'. 'The API documentation names the pattern the agentic loop' is confirmed on how-tool-use-works.",
+    "alt1": {
+      "title": "How tool use works (The agentic loop)",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works",
+      "why": "The current normative description of the loop with its exact stop-reason mechanics; the source for the 'agentic loop' name the scope attributes to 'the API documentation'."
+    },
+    "alt2": {
+      "title": "Tool use with Claude (overview)",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+      "why": "Entry page that uses the phrase 'the agentic loop' and shows the round trip; less conceptual than how-tool-use-works."
+    },
+    "recommendation": "UPDATE_METADATA",
+    "rationale": "Post verified; update the redirected URL and note the byline as rendered, and cite how-tool-use-works for the 'agentic loop' name.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-mcp",
+    "status": "VERIFIED",
+    "evidence": "WebFetch 2026-10-27, HTTP 200, title 'Introducing the Model Context Protocol', November 25, 2024. Verbatim: 'Today, we're open-sourcing the Model Context Protocol (MCP), a new standard for connecting AI assistants to the systems where data lives, including content repositories, business tools, and development environments.' The post also calls MCP 'an open standard'. Web search post fetched at claude.com/blog/web-search ('Claude can now search the web', March 20, 2025: 'Claude can now search the web to deliver up-to-date, cited information'). Integrations post fetched at claude.com/blog/integrations ('Claude can now connect to your world', May 1, 2025: 'Today we're announcing Integrations' and 'an advanced mode that searches the web'). WebSearch restricted to modelcontextprotocol.io returned the intro page 'What is the Model Context Protocol (MCP)?' at https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro and a 2026-07-28 specification; the host is not fetchable from this sandbox.",
+    "corrections": {},
+    "claim_check": "All three dated claims and the 'open standard for connecting AI assistants to the systems where data lives' description are verbatim or directly supported. The session-0.1 FACTS mcp-name description matches the post's own words.",
+    "alt1": {
+      "title": "What is the Model Context Protocol (MCP)?",
+      "author": "Model Context Protocol project",
+      "publisher": "modelcontextprotocol.io",
+      "date": "spec revision 2026-07-28",
+      "url": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "why": "The protocol's own current definition and spec, more durable than a launch post, but found by search only (not fetchable here), so M."
+    },
+    "alt2": {
+      "title": "Claude can now connect to your world",
+      "author": "Anthropic",
+      "publisher": "claude.com blog",
+      "date": "2025-05-01",
+      "url": "https://claude.com/blog/integrations",
+      "why": "Primary source for the Integrations and advanced-research claim on the grounding card; already cited in the retrieval_note."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Primary launch post, verbatim; the two later posts the card uses were also fetched.",
+    "tag": "H"
+  },
+  {
+    "id": "src-anthropic-thinking",
+    "status": "VERIFIED",
+    "evidence": "WebFetch 2026-10-27, HTTP 200, title 'Claude 3.7 Sonnet and Claude Code', February 24, 2025. Verbatim: 'our most intelligent model to date and the first hybrid reasoning model on the market'; 'Claude 3.7 Sonnet can produce near-instant responses or extended, step-by-step thinking that is made visible to the user.' Thinking docs page (fetched): per-model table shows adaptive thinking as the default on Fable 5.1, Opus 5.5, Sonnet 5.5, Haiku 5.5, Opus 5 and Sonnet 5, with 'Extended thinking (deprecated)' on Opus 4.6 and Sonnet 4.6 and a 400 error on later models. Prompting best practices (fetched): 'Manual chain-of-thought (CoT) prompting as a fallback. When thinking is off, you can still encourage step-by-step reasoning by asking Claude to think through the problem before it answers'; and on Fable 5.1, Fable 5, Opus 5.5, Opus 5 and Sonnet 5.5 'a prompt that asks the model to write out its reasoning ... may be declined.'",
+    "corrections": {},
+    "claim_check": "All three scope claims hold: the 24 February 2025 arrival of visible extended thinking; thinking built in and adaptive by 2026; 'think step by step' as a fallback when thinking is off. One sharpening for the chain-of-thought card: on the newest models a manual 'write out your reasoning' prompt 'may be declined', so the fallback applies mainly to models where thinking can be turned off.",
+    "alt1": {
+      "title": "Thinking",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/thinking",
+      "why": "The current normative table of which models think adaptively, always, or with the deprecated manual budget; the 'now' half of the card."
+    },
+    "alt2": {
+      "title": "Prompting best practices",
+      "author": "Anthropic",
+      "publisher": "Claude Platform Docs",
+      "date": "undated, updated in place",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "why": "Source of the CoT-as-fallback sentence the card quotes, with the new 'may be declined' caveat."
+    },
+    "recommendation": "KEEP",
+    "rationale": "Dated primary announcement verified verbatim; the two docs pages already behind the 'now' half were re-read and still support it.",
+    "tag": "H"
+  }
+]

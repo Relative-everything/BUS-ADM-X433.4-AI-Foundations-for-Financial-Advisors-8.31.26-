@@ -1,7 +1,7 @@
 {
   "note": "NOTARISED. Every last_verified date in SOURCES.md, frozen. build-sources.mjs recomputes this digest on every parse and refuses to build if a date moved. Only scripts/attest-verified.mjs writes this file, and only at an interactive terminal. Do not hand-edit: a hand edit here and a matching hand edit in SOURCES.md is the one thing this pair cannot catch, and it is a lie about a human having read a source.",
   "updated_by": "--sync (records with an empty last_verified only)",
-  "digest": "8a2c20e717e8934bbc051740cec7ea33d3c4af6e6b82684c26601177be2fd83d",
+  "digest": "03d5867f4f6423ac0677fc39ff0eb452ab24be4c846efaeeec2feccd8c64ecf2",
   "entries": {
     "src-0din-gemini": {
       "last_verified": "",
@@ -55,10 +55,6 @@
       "last_verified": "",
       "verified_by": ""
     },
-    "src-anthropic-context": {
-      "last_verified": "",
-      "verified_by": ""
-    },
     "src-anthropic-ctx": {
       "last_verified": "",
       "verified_by": ""
@@ -103,10 +99,6 @@
       "last_verified": "",
       "verified_by": ""
     },
-    "src-anthropic-sampling": {
-      "last_verified": "",
-      "verified_by": ""
-    },
     "src-anthropic-terms": {
       "last_verified": "",
       "verified_by": ""
@@ -123,7 +115,7 @@
       "last_verified": "",
       "verified_by": ""
     },
-    "src-api-messages": {
+    "src-api-migration-2026-10-21": {
       "last_verified": "",
       "verified_by": ""
     },
