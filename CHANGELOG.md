@@ -88,6 +88,20 @@ their hosts; everything else is recorded as search-result evidence in the regist
   until just before the next term*, names everything to refresh in one sitting before
   February 2027, the Session 2 cost-frontier chart first.
 
+### Fourth pass
+
+- **Session 4** §02 gains a note on a name: the SEC's fiscal 2027 priorities write
+  "super intelligence (SI)" because Executive Order 14434 (29 September 2026) tells
+  federal agencies to, and defines the term as the same technologies; Bostrom's 1998
+  definition shows what the word meant before. The course keeps saying AI.
+- **Session 4**, from sources read that day: the FBI caption says reported internet
+  crime (the IC3 report's "cyber-enabled fraud" is a $17.7 billion subset of the $20.9
+  billion); the exfiltration row gives IBM's $4.99 million global and $6.3 million
+  financial-services breach averages, the figures its release carries.
+- **Case 2**: age 73 applies to people born 1951 through 1958; the final regulations
+  reserve 1959.
+- **Register**: a list of the documents the instructor will supply before the term.
+
 ### Register
 
 - DW-198, DW-199 and DW-202 closed. DW-200, DW-201 and DW-203 narrowed. DW-204 to

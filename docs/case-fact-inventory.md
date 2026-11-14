@@ -137,16 +137,16 @@ with the text around it, so the undercount can be judged rather than trusted.
 | Declined for | Count |
 |---|---:|
 | `ryanAge` | 470 |
-| `megRetireAge` | 150 |
+| `megRetireAge` | 149 |
 | `davidRetireAge` | 98 |
 | `riskGap` | 65 |
 | `tomAge` | 61 |
 | `emmaAge` | 58 |
 | `davidRiskScore` | 48 |
 | `megAge` | 43 |
-| `megRiskScore` | 26 |
+| `megRiskScore` | 25 |
 | `davidNewsMonth` | 21 |
-| `marriedYears` | 18 |
+| `marriedYears` | 20 |
 | `earlyReduction` | 15 |
 | `delayedCredit` | 15 |
 | `megSs62` | 14 |

@@ -740,6 +740,44 @@ scope:          Advisor360's survey of 300 financial advisors, fielded in fall 2
 used_for.session-2: the roughly 3% of advisors who rely on a model's recommendation, set against the adoption share (§03 and the retrieval bridge)
 ```
 
+## src-eo-14434
+
+```source
+title:          Executive Order 14434: Inaugurating the Era of Super Intelligence
+author:         Executive Office of the President
+publisher:      The White House, Presidential Actions
+link:           https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/
+published:      2026-09-29
+last_retrieved: 2026-11-14
+last_verified:
+retrieval_note: Page fetched and read in full 2026-11-14. Section 1: "the executive branch shall use the terms 'Super Intelligence' and 'SI' in place of 'Artificial Intelligence' and 'AI'". Section 2(a): agencies shall do so "in official correspondence, public communications, websites, reports, policy documents, and other non-statutory documents within the executive branch"; 2(b): nothing requires altering previously issued regulations or historical documents. Section 3(a): the terms "mean the technologies and systems encompassed by the term 'artificial intelligence' as defined in section 9401(3) of title 15, United States Code"; 3(b): proposed legislative language for a federal definition is due within 60 days. Federal Register publication on 2 October 2026 is by search result only.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          The order that tells executive departments and agencies to write Super Intelligence and SI where they wrote Artificial Intelligence and AI, in non-statutory documents, and that defines the new term as what the statute already calls artificial intelligence. A legislative definition was due within 60 days and may change the meaning.
+used_for.session-4: why the SEC's fiscal 2027 examination priorities say super intelligence (SI), and that the term is defined as the same technologies (§02)
+last_retrieved.session-4: 2026-11-14
+```
+
+## src-bostrom-superintelligence
+
+```source
+title:          How long before superintelligence?
+author:         Bostrom, N.
+publisher:      International Journal of Futures Studies, 2 (1998); reprinted in Linguistic and Philosophical Investigations, 5(1), 11 to 30 (2006)
+link:           https://nickbostrom.com/superintelligence
+published:      1998
+last_retrieved: 2026-11-14
+last_verified:
+retrieval_note: The author's page fetched and read 2026-11-14: written 1997, revised 25 October 1998, with postscripts to 2008. Definition, verbatim: "By a 'superintelligence' we mean an intellect that is much smarter than the best human brains in practically every field, including scientific creativity, general wisdom and social skills." The page is cited for an early definition, not as the first use of the word: who coined it was not established, and I. J. Good's 1965 "ultraintelligent machine" is the usual earlier reference by secondary sources only.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          An early and much-cited definition of superintelligence as an intellect far beyond the best human minds in practically every field. Cited for what the word meant before a federal order adopted it as a name for AI.
+used_for.session-4: the 1998 definition of superintelligence, set against the federal usage (§02)
+last_retrieved.session-4: 2026-11-14
+```
+
 ## src-kessler
 
 ```source
@@ -1659,7 +1697,7 @@ link:           https://www.fbi.gov/news/press-releases/cryptocurrency-and-ai-sc
 published:      2026-04-07
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. fbi.gov and ic3.gov are egress-blocked from this build environment (2026-09-27). Figures are consistent across search snippets of the FBI press release and of SpyCloud, SecureWorld, Paubox, Abnormal, McDonald Hopkins and Alston & Bird. The report is at ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. All headline figures confirmed (1,008,597 complaints, $20.877 billion, up 26 percent, BEC $3.05 billion from 24,768, AI 22,364 complaints and about $893 million); outlets split the release date between 6 and 7 April 2026. Supplement: the IC3 2025 Annual Report PDF (ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf) as the primary.
+retrieval_note: NOT RETRIEVED. fbi.gov and ic3.gov are egress-blocked from this build environment (2026-09-27). Figures are consistent across search snippets of the FBI press release and of SpyCloud, SecureWorld, Paubox, Abnormal, McDonald Hopkins and Alston & Bird. The report is at ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. All headline figures confirmed (1,008,597 complaints, $20.877 billion, up 26 percent, BEC $3.05 billion from 24,768, AI 22,364 complaints and about $893 million); outlets split the release date between 6 and 7 April 2026. Supplement: the IC3 2025 Annual Report PDF (ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf) as the primary. Audit 2026-11-14: the 2025 Internet Crime Report itself (ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf, 66 pages, fetched and read) gives 1,008,597 complaints, $20.877 billion in losses, a 26% increase, and 22,364 AI-related complaints with $893,346,472 in losses. "Cyber-enabled fraud" is the report's name for a subset, 452,868 complaints and $17.697 billion, so the Session 4 caption now says reported internet crime. The press release at this record's link (fbi.gov) is not an allowed host and was not fetched, so last_retrieved does not move.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1693,15 +1731,15 @@ author:         IBM
 publisher:      IBM Newsroom
 link:           https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average
 published:      2026-07-29
-last_retrieved: [UNVERIFIED, needs source]
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: NOT RETRIEVED. newsroom.ibm.com is egress-blocked from this build environment (2026-09-27). Figures consistent across search snippets of the IBM release, Infosecurity Magazine, Security Boulevard, ASIS Security Management and Cybersecurity Dive. Supersedes the 2025 edition's $4.44 million and $10.22 million. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. 602 organisations, $4.99 million global, $11.5 million US, one in four AI-enabled at $6 million (up 56 percent) confirmed; the shadow-AI 43 percent figure was not seen (GAP, see register).
+retrieval_note: NOT RETRIEVED. newsroom.ibm.com is egress-blocked from this build environment (2026-09-27). Figures consistent across search snippets of the IBM release, Infosecurity Magazine, Security Boulevard, ASIS Security Management and Cybersecurity Dive. Supersedes the 2025 edition's $4.44 million and $10.22 million. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. 602 organisations, $4.99 million global, $11.5 million US, one in four AI-enabled at $6 million (up 56 percent) confirmed; the shadow-AI 43 percent figure was not seen (GAP, see register). Audit 2026-11-14 (release fetched and read in full): every figure now in scope is in the release. The US average of $11.5 million and the shadow-AI 43% figure the record carried are not in it, so both left the scope, and the Session 4 exfiltration row now gives the global average and the financial-services figure.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   survey
 recheck_before: every teaching of session-4 Appendix D4
-scope:          Cost of a Data Breach Report 2026, 602 organisations, breaches March 2025 to February 2026: global average $4.99 million, US average $11.5 million; one in four malicious breaches AI-enabled, at $6 million on average; shadow AI in 43% of AI-related breaches.
+scope:          IBM's release on the Cost of a Data Breach Report 2026: 602 organisations, breaches March 2025 to February 2026; global average breach cost $4.99 million; one in four malicious breaches AI-enabled, up 56%, at $6 million on average; financial services breaches $6.3 million on average. The release does not carry a US average or a shadow-AI share; those are in the full report, which was not read.
 used_for.session-4: the scale line on the exfiltration row of the four-attack board (Appendix D4)
 ```
 
@@ -2569,7 +2607,7 @@ scope:          The statutory source of the applicable age for required minimum 
 used_for.session-2: named as a cited authority in the citation-triage items (sound citation; also the planted mis-citation that attributes the wrong age to it)
 last_retrieved.session-2: 2026-10-12
 figures.session-2: none (the item text carries the applicable ages; the case facts carry Meg's and David's years)
-used_for.case-2: the section named in statement D of the exercise draft, and in the log rows for the planted age 73 and the corrected age 75, with the 1951 to 1959 and 1960 cohorts
+used_for.case-2: the section named in statement D of the exercise draft, and in the log rows for the planted age 73 and the corrected age 75, with the 1951 to 1958 and 1960 cohorts
 ```
 
 ## src-td10001
@@ -2580,9 +2618,9 @@ author:         Department of the Treasury, Internal Revenue Service
 publisher:      Federal Register
 link:           https://www.govinfo.gov/content/pkg/FR-2024-07-19/html/2024-14542.htm
 published:      2024-07-19
-last_retrieved: 2026-10-12
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: Verified 2026-10-12 from the GovInfo Federal Register listing, the IRS newsroom release (IR-2024-190) and the Journal of Accountancy report found by web search: issued 18 July 2024, published 19 July 2024, effective 17 September 2024, applying to calendar years beginning on or after 1 January 2025; companion proposed regulations REG-103529-23 issued the same day. The GovInfo page itself was not fetched from the build container. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
+retrieval_note: Verified 2026-10-12 from the GovInfo Federal Register listing, the IRS newsroom release (IR-2024-190) and the Journal of Accountancy report found by web search: issued 18 July 2024, published 19 July 2024, effective 17 September 2024, applying to calendar years beginning on or after 1 January 2025; companion proposed regulations REG-103529-23 issued the same day. The GovInfo page itself was not fetched from the build container. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Audit 2026-11-14 (govinfo text fetched and read): "(iv) Employees born in 1951 through 1958 ... the applicable age is age 73; (v) [Reserved] (vi) Employees born after 1959 ... the applicable age is age 75", with a footnote that section 107 is ambiguous for people born in 1959. The two Case 2 commentary sentences that said 1951 to 1959 now say 1951 to 1958 and that 1959 is open; the exercise email itself still says 1951 to 1959.
 content_changed:
 confidence:     H
 kind:           authority
@@ -2593,7 +2631,7 @@ scope:          The 2024 final regulations on required minimum distributions, Tr
 used_for.session-2: named as a cited authority in the citation-triage items
 last_retrieved.session-2: 2026-10-12
 figures.session-2: none
-used_for.case-2: the final regulations named beside SECURE 2.0 section 107 for the corrected age 75, in the log's corrected-D row
+used_for.case-2: the final regulations named beside SECURE 2.0 section 107 for the corrected age 75, in the log's corrected-D row; and that they set age 73 for people born 1951 through 1958 and reserve 1959
 ```
 
 ## src-irs-590b

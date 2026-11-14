@@ -83,7 +83,8 @@ different rule that does the same job for the other registration.
 7. **SEC exam priorities, FY2027, §VII**, released 23 Oct 2026 (M, FACTS:sec-exam-priorities-status).
    The document states it has "no legal force or effect". What examiners test: AI claims, AI
    supervision, Reg S-P readiness, AI-generated phishing and deepfakes. The document writes
-   "super intelligence (SI)" where earlier years wrote AI. Say: "No duty. It tells you which duties
+   "super intelligence (SI)" where earlier years wrote AI, following Executive Order 14434
+   (29 Sept 2026), which defines SI as the same technologies; the page keeps saying AI. Say: "No duty. It tells you which duties
    get checked; the rules underneath are what bind you." Trap: it is not a rule. The
    FY2027 document was read in full on 2026-11-14.
 8. **SEC predictive data analytics proposal**, S7-12-23. Proposed Jul 2023, withdrawn 12 Jun 2025

@@ -5,11 +5,11 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**146 works, 707 references across 11 lessons.** 139 are
+**148 works, 712 references across 11 lessons.** 141 are
 cited by at least one claim; 7 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
-**68 records carry at least one field this repository could not verify, and
+**67 records carry at least one field this repository could not verify, and
 every one of them is printed below as `[UNVERIFIED, needs source]` rather than omitted.** The
 rendered footer in a lesson omits an unknown field, because a footer in which
 thirty entries shout about a missing publisher helps nobody. This file is where a
@@ -1008,6 +1008,25 @@ What the Intelligence Index measures: a weighted average of 9 evaluations in fou
 
 A randomised trial with 16 experienced open-source developers, each years into the repository they worked on, on 246 real tasks from those repositories (bug fixes, features, refactors), each task randomly assigned to AI allowed or not (mainly Cursor Pro with Claude 3.5 and 3.7 Sonnet, early 2025). With AI the tasks took 19% longer. Before the study the developers expected to be 24% faster; afterwards they believed they had been about 20% faster. The perception gap, not the coding, is what the page teaches.
 
+### Bostrom, N.
+
+**How long before superintelligence?**  
+`src-bostrom-superintelligence` · evidence
+
+| | |
+|---|---|
+| Author | Bostrom, N. |
+| Publisher | International Journal of Futures Studies, 2 (1998); reprinted in Linguistic and Philosophical Investigations, 5(1), 11 to 30 (2006) |
+| Link | <https://nickbostrom.com/superintelligence> |
+| Published | 1998 |
+| Last retrieved | 2026-11-14 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **2** |
+| Cited in | S4 `#s1` ×2 |
+
+An early and much-cited definition of superintelligence as an intellect far beyond the best human minds in practically every field. Cited for what the word meant before a federal order adopted it as a name for AI.
+
 ### Bouman, A.
 
 **Meta AI's discover feed is full of revealing personal info: here's how to protect your privacy**  
@@ -1247,7 +1266,7 @@ NARROW, AND IT WAS READ TOO WIDELY. The speech states that the core questions re
 | Publisher | Federal Register |
 | Link | <https://www.govinfo.gov/content/pkg/FR-2024-07-19/html/2024-14542.htm> |
 | Published | 2024-07-19 |
-| Last retrieved | 2026-10-12 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
@@ -1273,6 +1292,25 @@ The 2024 final regulations on required minimum distributions, Treas. Reg. §§ 1
 | Cited in | S4 `#sW1` ×2 |
 
 Providers of AI systems that generate synthetic audio, image, video or text must ensure the output is marked in a machine-readable format and detectable as artificially generated; deployers of deepfakes must disclose them; the obligations apply from 2 August 2026 and bind providers placing systems on the EU market and deployers in the EU.
+
+### Executive Office of the President
+
+**Executive Order 14434: Inaugurating the Era of Super Intelligence**  
+`src-eo-14434` · evidence
+
+| | |
+|---|---|
+| Author | Executive Office of the President |
+| Publisher | The White House, Presidential Actions |
+| Link | <https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/> |
+| Published | 2026-09-29 |
+| Last retrieved | 2026-11-14 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **2** |
+| Cited in | S4 `#s1` ×2 |
+
+The order that tells executive departments and agencies to write Super Intelligence and SI where they wrote Artificial Intelligence and AI, in non-statutory documents, and that defines the new term as what the statute already calls artificial intelligence. A legislative definition was due within 60 days and may change the meaning.
 
 ### Federal Bureau of Investigation
 
@@ -1627,13 +1665,13 @@ PROMPTFLUX, a VBScript dropper that called the Gemini API to request obfuscated 
 | Publisher | IBM Newsroom |
 | Link | <https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average> |
 | Published | 2026-07-29 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S4 `#sCR` |
 
-Cost of a Data Breach Report 2026, 602 organisations, breaches March 2025 to February 2026: global average $4.99 million, US average $11.5 million; one in four malicious breaches AI-enabled, at $6 million on average; shadow AI in 43% of AI-related breaches.
+IBM's release on the Cost of a Data Breach Report 2026: 602 organisations, breaches March 2025 to February 2026; global average breach cost $4.99 million; one in four malicious breaches AI-enabled, up 56%, at $6 million on average; financial services breaches $6.3 million on average. The release does not carry a US average or a shadow-AI share; those are in the full report, which was not read.
 
 ### Illinois General Assembly
 
@@ -2561,8 +2599,8 @@ The compliance dates of the 2024 amendments, 3 December 2025 for larger entities
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **14** |
-| Cited in | S3 `#sPol` · S3 `#s16` · S4 `#s1` ×3 · S4 `#s7` · S4 `#s5` · S4 `#sAud` ×2 · S4 `#s9` ×2 · S4 `#sCR` ×3 |
+| **Total references** | **15** |
+| Cited in | S3 `#sPol` · S3 `#s16` · S4 `#s1` ×4 · S4 `#s7` · S4 `#s5` · S4 `#sAud` ×2 · S4 `#s9` ×2 · S4 `#sCR` ×3 |
 
 §VII, Risk Areas Impacting Various Market Participants. A.1 cybersecurity, including ransomware, data loss prevention, incident response and third-party service providers; A.2 emerging financial technology, where the document calls AI "super intelligence (SI)": preparation for SI-related cyberattacks such as SI-generated phishing and synthetic or deepfake voice and video, policies and procedures relating to monitoring SI, and whether representations are fair and accurate; A.3 Regulation S-ID and Regulation S-P, including customer notification procedures and oversight of service providers under the amended rule. The disclaimer page states the document "has no legal force or effect".
 

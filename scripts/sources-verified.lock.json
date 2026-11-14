@@ -1,7 +1,7 @@
 {
   "note": "NOTARISED. Every last_verified date in SOURCES.md, frozen. build-sources.mjs recomputes this digest on every parse and refuses to build if a date moved. Only scripts/attest-verified.mjs writes this file, and only at an interactive terminal. Do not hand-edit: a hand edit here and a matching hand edit in SOURCES.md is the one thing this pair cannot catch, and it is a lie about a human having read a source.",
   "updated_by": "--sync (records with an empty last_verified only)",
-  "digest": "7597b58bd2a00f594bd5214d34a686323ed4764854f7bcf70c2bfdcca62811cc",
+  "digest": "80decac850fabc90afd9839a02322e63699f24677cb1439a756a09ef6afb8652",
   "entries": {
     "src-0din-gemini": {
       "last_verified": "",
@@ -136,6 +136,10 @@
       "verified_by": ""
     },
     "src-ascii-smuggling": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-bostrom-superintelligence": {
       "last_verified": "",
       "verified_by": ""
     },
@@ -276,6 +280,10 @@
       "verified_by": ""
     },
     "src-effort": {
+      "last_verified": "",
+      "verified_by": ""
+    },
+    "src-eo-14434": {
       "last_verified": "",
       "verified_by": ""
     },
