@@ -656,9 +656,9 @@ author:         Veres, B., & Bruckenstein, J.
 publisher:      T3 Technology Hub and Inside Information; summarised in Kitces.com Weekend Reading, 14 to 15 March 2026
 link:           https://t3technologyhub.com/wp-content/uploads/2026/03/2026-T3_Inside-Information-Software-Survey.pdf
 published:      2026-03
-last_retrieved: [UNVERIFIED, needs source]
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: As summarised by Kitces.com Weekend Reading, March 2026. Re-checked 2026-10-04: kitces.com, investmentnews.com and dwealth.news were egress-blocked from this build; a fresh search returned 2,906 responses, 52.2%, 42.9% and 14 note-taking tools, unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Primary PDF found; 2,906 responses, 95 percent RIA, 52.2 percent (from 41.8) and 42.9 percent confirmed by Kitces, BusinessWire (2026-03-10) and InvestmentNews. Could be raised to H; one chip is in session-5, which this pass does not touch.
+retrieval_note: As summarised by Kitces.com Weekend Reading, March 2026. Re-checked 2026-10-04: kitces.com, investmentnews.com and dwealth.news were egress-blocked from this build; a fresh search returned 2,906 responses, 52.2%, 42.9% and 14 note-taking tools, unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Primary PDF found; 2,906 responses, 95 percent RIA, 52.2 percent (from 41.8) and 42.9 percent confirmed by Kitces, BusinessWire (2026-03-10) and InvestmentNews. Could be raised to H; one chip is in session-5, which this pass does not touch. Audit 2026-11-14 (PDF fetched and read, 91 pages): 2,906 responses; AI search and generative language at 52.15% total category market penetration against 41.78% a year earlier; AI notetaking solutions at 42.86%. The page figures are these, rounded to one decimal.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2048,7 +2048,7 @@ link:           https://platform.claude.com/docs/en/about-claude/model-deprecati
 published:      2026-09-30
 last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: OPENED on 2026-10-02 and RE-OPENED on 2026-10-04 (platform.claude.com is reachable from this build). On 2026-10-04 every date the page carried on 2026-10-02 was unchanged; the not-sooner-than dates of the current and legacy models were added to the scope for the §02 calendar's new rows. The published date is the page's most recent deprecation announcement (Claude Sonnet 4.5, 30 September 2026); the page is updated in place with every announcement. RE-OPENED in full on 2026-10-12, after FACTS claude-model-ids-and-retirements read it in full on 2026-10-11: every date in the §02 calendar is unchanged, and the table now also lists claude-haiku-5-5 (Active, not sooner than 7 October 2027), with claude-haiku-4-5-20251001 still Active and not sooner than 15 October 2026. Audit 2026-10-27 (fetched in full): verified. Every one of the 24 dates, the lifecycle terms, the 60 days' notice and the testing advice match the live table; the page has added Mythos rows and an API parameter deprecations section (see scope). Audit 2026-11-14 (fetched in full): claude-fable-5-2 and claude-mythos-5-2 added, Active, not sooner than 9 November 2027; claude-fable-5-1 stays Active (1 September 2027); claude-sonnet-4-5-20250929 still retires 30 November 2026. Session 0.1 and Session 1 name Fable 5.2; the Session 2 sentence is dated October 2026 and the Session 5 calendar is a 12 October snapshot, both left as written (register).
+retrieval_note: OPENED on 2026-10-02 and RE-OPENED on 2026-10-04 (platform.claude.com is reachable from this build). On 2026-10-04 every date the page carried on 2026-10-02 was unchanged; the not-sooner-than dates of the current and legacy models were added to the scope for the §02 calendar's new rows. The published date is the page's most recent deprecation announcement (Claude Sonnet 4.5, 30 September 2026); the page is updated in place with every announcement. RE-OPENED in full on 2026-10-12, after FACTS claude-model-ids-and-retirements read it in full on 2026-10-11: every date in the §02 calendar is unchanged, and the table now also lists claude-haiku-5-5 (Active, not sooner than 7 October 2027), with claude-haiku-4-5-20251001 still Active and not sooner than 15 October 2026. Audit 2026-10-27 (fetched in full): verified. Every one of the 24 dates, the lifecycle terms, the 60 days' notice and the testing advice match the live table; the page has added Mythos rows and an API parameter deprecations section (see scope). Audit 2026-11-14 (fetched in full): claude-fable-5-2 and claude-mythos-5-2 added, Active, not sooner than 9 November 2027; claude-fable-5-1 stays Active (1 September 2027); claude-sonnet-4-5-20250929 still retires 30 November 2026. Session 0.1 and Session 1 name Fable 5.2; the Session 2 sentence is dated October 2026 and the Session 5 calendar is a 12 October snapshot, both left as written (register). Later on 2026-11-14 the Session 5 §02 calendar gained the claude-fable-5-2 row and its source line reads opened 14 November 2026.
 content_changed: 2026-10-12. The page lists Claude Haiku 5.5 (claude-haiku-5-5, not sooner than 7 October 2027), which the 2026-10-04 pull did not record; Claude Haiku 4.5 keeps its 15 October 2026 date but is no longer one of the four current models. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12: the session-5 §02 calendar gained a Haiku 5.5 row and moved Haiku 4.5 to the legacy rows, and the lineup bullet no longer counts the legacy models.
 confidence:     H
 kind:           evidence
@@ -2064,7 +2064,7 @@ figures.session-3: the id claude-sonnet-5-5 (FACTS claude-model-ids-and-retireme
 last_retrieved.session-2: 2026-10-11
 figures.session-2: model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5, and the id claude-sonnet-5-5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11)
 used_for.session-5: the lifecycle terms, the 60 days' notice, the retirement and not-sooner-than dates on the calendar, Haiku 5.5 among them, the sentence that requests to retired models fail, and the lifecycle states in The Gate and the Scorecard (§02); the advice to test the replacement before the retirement date (Appendix E2)
-last_retrieved.session-5: 2026-10-12
+last_retrieved.session-5: 2026-11-14
 figures.session-5: the retirement and not-sooner-than date of every row on the §02 calendar, Haiku 5.5 (7 October 2027) added and Haiku 4.5 (15 October 2026) moved to the legacy rows; Sonnet 4.5 deprecated 30 September 2026 and retiring 30 November 2026 with Sonnet 5.5 as the replacement; at least 60 days of notice (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12)
 last_retrieved.session-1: 2026-11-14
 figures.session-1: model names Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-11-14)
@@ -2238,7 +2238,7 @@ link:           https://corporate.vanguard.com/content/dam/corp/articles/pdf/put
 published:      2022-07
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee. Re-checked 2026-10-04: vanguard.ca, Vanguard's own host for the infographic, was blocked; a fresh search returned about 3% and 150 basis points unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The about 3 percent framing is confirmed on Vanguard's own pages; the 150 bps behavioural-coaching figure is printed in the 2016 US and 2018 Canada editions, while one summary says the 2022 edition frames coaching as 0 to over 200 bps (GAP, see register). Audit 2026-11-14: the link on this record now returns Vanguard's 404 page ("This page is currently unavailable"), so the 2022 PDF could not be read and the record needs a working link; search results for two copies of the 2022 edition show behavioural coaching as "0 to > 200 bps" (register).
+retrieval_note: NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee. Re-checked 2026-10-04: vanguard.ca, Vanguard's own host for the infographic, was blocked; a fresh search returned about 3% and 150 basis points unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The about 3 percent framing is confirmed on Vanguard's own pages; the 150 bps behavioural-coaching figure is printed in the 2016 US and 2018 Canada editions, while one summary says the 2022 edition frames coaching as 0 to over 200 bps (GAP, see register). Audit 2026-11-14: the link on this record returned Vanguard's 404 page ("This page is currently unavailable") to this build's fetch, although a web search the same day still lists it, so the 2022 PDF could not be read here and the link wants checking in a browser; search results for two copies of the 2022 edition show behavioural coaching as "0 to > 200 bps" (register).
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2346,19 +2346,19 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/models/overview
 published:      not applicable
-last_retrieved: 2026-10-27
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: OPENED on 2026-10-04 (platform.claude.com is reachable from this build). The page carries no publication date of its own; it is updated in place with each model release, so the year is recorded and the retrieval date is the one to read. RE-OPENED on 2026-10-12 (the old address redirects to platform.claude.com/docs/en/models/overview), after FACTS claude-model-ids-and-retirements read the same page on 2026-10-11. Audit 2026-10-27 (fetched in full): verified with corrections. Link updated to the address the old one redirected to. Same page as src-models; not merged in this pass (see that record). Audit 2026-11-14 (fetched in full): the four latest models are now Claude Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5; the Session 5 §02 calendar still shows Fable 5.1 in the lineup row and is a dated snapshot until its next re-pull (register).
+retrieval_note: OPENED on 2026-10-04 (platform.claude.com is reachable from this build). The page carries no publication date of its own; it is updated in place with each model release, so the year is recorded and the retrieval date is the one to read. RE-OPENED on 2026-10-12 (the old address redirects to platform.claude.com/docs/en/models/overview), after FACTS claude-model-ids-and-retirements read the same page on 2026-10-11. Audit 2026-10-27 (fetched in full): verified with corrections. Link updated to the address the old one redirected to. Same page as src-models; not merged in this pass (see that record). Audit 2026-11-14 (fetched in full): the four latest models are now Claude Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5; the Session 5 §02 calendar still shows Fable 5.1 in the lineup row and is a dated snapshot until its next re-pull (register). Later on 2026-11-14 the Session 5 §02 calendar was brought to the page as read that day: Fable 5.1 is a legacy row and Fable 5.2 (not sooner than 9 November 2027) is the fourth lineup row.
 content_changed: 2026-10-12. The four current models are now Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5 and Claude Haiku 5.5 (retirement not sooner than 7 October 2027); the 2026-10-04 pull recorded Claude Haiku 4.5 as the fourth. Haiku 4.5 now sits among the legacy models. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12: the session-5 §02 calendar rows for Haiku 4.5 and Haiku 5.5, and the lineup bullet.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor model lineup
 recheck_before: each teaching of Session 5
-scope:          The current lineup of four models (Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5) with each one's retirement commitment (not sooner than 1 September 2027, 22 September 2027, 28 September 2027 and 7 October 2027), and the legacy models still available (Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Haiku 4.5). The page recommends Opus 5.5 for most workloads. The comparison table carries prices and a June 2026 knowledge cutoff; no benchmark is on the page.
+scope:          The current lineup of four models (Claude Fable 5.2, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5) with each one's retirement commitment (not sooner than 9 November 2027, 22 September 2027, 28 September 2027 and 7 October 2027), and the legacy models still available (Fable 5.1, Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Haiku 4.5). The page recommends Opus 5.5 for most workloads. The comparison table carries prices and a June 2026 knowledge cutoff; no benchmark is on the page.
 used_for.session-5: the four current models and the legacy ones on the §02 calendar, and the lineup sentence in §02's bullets and status readout
-last_retrieved.session-5: 2026-10-12
-figures.session-5: the four current models Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 and their not-sooner-than dates (1 September, 22 September, 28 September and 7 October 2027), with Haiku 4.5 among the legacy models (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12)
+last_retrieved.session-5: 2026-11-14
+figures.session-5: the four current models Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5 and their not-sooner-than dates (9 November, 22 September, 28 September and 7 October 2027), with Fable 5.1 (1 September 2027) and Haiku 4.5 among the legacy models (FACTS claude-model-ids-and-retirements, read in full 2026-11-14)
 ```
 
 ## src-claude-code-skills
@@ -2615,20 +2615,20 @@ author:         Artificial Analysis
 publisher:      Artificial Analysis
 link:           https://artificialanalysis.ai/leaderboards/models
 published:      not applicable
-last_retrieved: 2026-10-11
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: artificialanalysis.ai is unreachable from the build container (FACTS leaderboard-snapshot-aa, 2026-10-11); the snapshot is read from primary-domain search snippets and carried at M. Effort tiers matter: Opus 5.5 at High scores 54 against 58 at Max, and GPT-6 Astra at High scores 51. The scores are not comparable with the index figures in the July 2026 scatter, which src-aa carries. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the dated launch articles (artificialanalysis.ai/articles/claude-opus-5-5 and /claude-sonnet-5-5); re-read the board the week before Session 1.
+retrieval_note: artificialanalysis.ai is unreachable from the build container (FACTS leaderboard-snapshot-aa, 2026-10-11); the snapshot is read from primary-domain search snippets and carried at M. Effort tiers matter: Opus 5.5 at High scores 54 against 58 at Max, and GPT-6 Astra at High scores 51. The scores are not comparable with the index figures in the July 2026 scatter, which src-aa carries. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the dated launch articles (artificialanalysis.ai/articles/claude-opus-5-5 and /claude-sonnet-5-5); re-read the board the week before Session 1. Audit 2026-11-14 (page fetched and read; the host is allowed since that day): the index is v5.0.1 and the page's own summary lists Claude Fable 5.2 (Max) 65, Fable 5.2 (Xhigh) 62, Fable 5.2 (High) 62, Gemini 4 Carbon (High) 60 and Claude Opus 5.5 (Max) 59. The 7 October snapshot (v4.3.2) left the Session 1 table.
 confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   benchmark_index
-index_version:  v4.3.2
+index_version:  v5.0.1
 recheck_before: every teaching of session-1 Appendix A7
 scope:          The current Intelligence Index scores of the leading models at a stated effort setting. A live leaderboard: every figure drawn from it is a moving target.
-used_for.session-1: the current Intelligence Index snapshot beside the July scatter (Appendix A7): Claude Opus 5.5 (Max) 58, Claude Sonnet 5.5 (Max) 56, GPT-6 Astra (Max) 53, Gemini 4 Argon (High) 53, about 7 October 2026
-last_retrieved.session-1: 2026-10-11
-index_version.session-1: v4.3.2
-figures.session-1: four index scores with their effort settings, about 2026-10-07 (FACTS leaderboard-snapshot-aa)
+used_for.session-1: the current Intelligence Index snapshot beside the July scatter (Appendix A7): Claude Fable 5.2 (Max) 65, Claude Fable 5.2 (High) 62, Gemini 4 Carbon (High) 60, Claude Opus 5.5 (Max) 59, 14 November 2026
+last_retrieved.session-1: 2026-11-14
+index_version.session-1: v5.0.1
+figures.session-1: four index scores with their effort settings, 2026-11-14 (FACTS leaderboard-snapshot-aa)
 ```
 
 ## src-aa-index
@@ -2637,22 +2637,22 @@ figures.session-1: four index scores with their effort settings, about 2026-10-0
 title:          Intelligence Index methodology
 author:         Artificial Analysis
 publisher:      Artificial Analysis
-link:           https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index
+link:           https://artificialanalysis.ai/methodology/intelligence-benchmarking
 published:      not applicable
-last_retrieved: 2026-10-11
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: Host unreachable from the build container (FACTS aa-index-definition, 2026-10-11); the description is read from primary-domain snippets. The evaluations-page FAQ still says 25% per category; the v4.3 announcement and the methodology page say 30/20/20/30, which is what the lesson states. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the methodology page (artificialanalysis.ai/methodology/intelligence-benchmarking) and the v4.3 announcement article.
+retrieval_note: Host unreachable from the build container (FACTS aa-index-definition, 2026-10-11); the description is read from primary-domain snippets. The evaluations-page FAQ still says 25% per category; the v4.3 announcement and the methodology page say 30/20/20/30, which is what the lesson states. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the methodology page (artificialanalysis.ai/methodology/intelligence-benchmarking) and the v4.3 announcement article. Audit 2026-11-14 (methodology page fetched and read): "Artificial Analysis Intelligence Index v5.0.1 incorporates 9 evaluations" and "a weighted average across four categories: Knowledge Work (25%), Coding (25%), Science (25%), and General (25%)". The record is repointed from the evaluations page (artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index), whose FAQ lagged the methodology in October, to the methodology page that was read.
 confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   benchmark_index
-index_version:  v4.3.2
+index_version:  v5.0.1
 recheck_before: every teaching of session-1 Appendix A7
-scope:          What the Intelligence Index measures: a weighted average of 10 evaluations in four categories, scaled 0 to 100, at version 4.3.2.
-used_for.session-1: what the Intelligence Index measures, version 4.3.2 (Appendix A7)
-last_retrieved.session-1: 2026-10-11
-index_version.session-1: v4.3.2
-figures.session-1: 10 evaluations; Agents 30%, Coding 20%, Scientific Reasoning 20%, General 30%; scale 0 to 100 (FACTS aa-index-definition)
+scope:          What the Intelligence Index measures: a weighted average of 9 evaluations in four categories, scaled 0 to 100, at version 5.0.1.
+used_for.session-1: what the Intelligence Index measures, version 5.0.1 (Appendix A7)
+last_retrieved.session-1: 2026-11-14
+index_version.session-1: v5.0.1
+figures.session-1: 9 evaluations; Knowledge Work, Coding, Science and General at 25% each; scale 0 to 100 (FACTS aa-index-definition)
 ```
 
 ## src-livebench
@@ -2663,18 +2663,18 @@ author:         LiveBench
 publisher:      livebench.ai
 link:           https://livebench.ai/
 published:      not applicable
-last_retrieved: 2026-10-11
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: The site is unreachable from the build container (FACTS livebench-last-release, 2026-10-11). The release date is read from the homepage snippet and GitHub issue titles that reference the 2026-06-25 release; the GitHub README is stale and still says 2025-04-25. The description (23 objective tasks in 7 categories, refreshed about every six months) comes from the README, fetched in full. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): unreachable. livebench.ai was returned by search on 2026-10-27 as LiveBench 2.0 with the v1 board at livebench.ai/v1/ (latest release 2026-06-25); the task count and release name in scope are GAP until read from the site.
+retrieval_note: The site is unreachable from the build container (FACTS livebench-last-release, 2026-10-11). The release date is read from the homepage snippet and GitHub issue titles that reference the 2026-06-25 release; the GitHub README is stale and still says 2025-04-25. The description (23 objective tasks in 7 categories, refreshed about every six months) comes from the README, fetched in full. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): unreachable. livebench.ai was returned by search on 2026-10-27 as LiveBench 2.0 with the v1 board at livebench.ai/v1/ (latest release 2026-06-25); the task count and release name in scope are GAP until read from the site. Audit 2026-11-14 (page fetched and read): the site titles itself "LiveBench 2.0 - A challenging, contamination-free long-horizon AI benchmark" and describes models doing "real work (decks, research reports, bug fixes, apps that run for hours)". The 23-tasks-in-7-categories description belonged to the earlier board and left the Session 1 table; the new board's release name needs a browser.
 confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   benchmark_index
 recheck_before: every teaching of session-1 Appendix A7
-scope:          What LiveBench measures and the name of its latest question release.
-used_for.session-1: what LiveBench measures and its latest question release, LiveBench-2026-06-25 (Appendix A7)
-last_retrieved.session-1: 2026-10-11
-figures.session-1: 23 objective tasks in 7 categories, refreshed about every six months; latest release LiveBench-2026-06-25 (FACTS aa-index-definition and livebench-last-release)
+scope:          What LiveBench measures. Since its relaunch as LiveBench 2.0 the page is a script application and gave no release name to a plain fetch.
+used_for.session-1: what LiveBench 2.0 measures, and LiveBench-2026-06-25 as the last question release read on the earlier board (Appendix A7)
+last_retrieved.session-1: 2026-11-14
+figures.session-1: LiveBench 2.0, long-horizon work graded on what the model hands back; last release read on the earlier board LiveBench-2026-06-25 (FACTS aa-index-definition and livebench-last-release)
 ```
 
 ## src-arena-board

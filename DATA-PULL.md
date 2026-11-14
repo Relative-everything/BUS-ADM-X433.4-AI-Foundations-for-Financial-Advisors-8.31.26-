@@ -62,7 +62,7 @@ version string means the version is not tracking the data.
 |---|---|---|---|---|
 | ANTHROPIC-DEPRECATIONS-001 | S3 | 2026-10-11 | **[UNVERIFIED, needs source]** | the id claude-sonnet-5-5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11) |
 | ANTHROPIC-DEPRECATIONS-002 | S2 | 2026-10-11 | **[UNVERIFIED, needs source]** | model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5, and the id claude-sonnet-5-5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11) |
-| ANTHROPIC-DEPRECATIONS-003 | S5 | 2026-10-12 | **[UNVERIFIED, needs source]** | the retirement and not-sooner-than date of every row on the §02 calendar, Haiku 5.5 (7 October 2027) added and Haiku 4.5 (15 October 2026) moved to the legacy rows; Sonnet 4.5 deprecated 30 September 2026 and retiring 30 November 2026 with Sonnet 5.5 as the replacement; at least 60 days of notice (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12) |
+| ANTHROPIC-DEPRECATIONS-003 | S5 | 2026-11-14 | **[UNVERIFIED, needs source]** | the retirement and not-sooner-than date of every row on the §02 calendar, Haiku 5.5 (7 October 2027) added and Haiku 4.5 (15 October 2026) moved to the legacy rows; Sonnet 4.5 deprecated 30 September 2026 and retiring 30 November 2026 with Sonnet 5.5 as the replacement; at least 60 days of notice (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12) |
 | ANTHROPIC-DEPRECATIONS-004 | S1 | 2026-11-14 | **[UNVERIFIED, needs source]** | model names Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-11-14) |
 | ANTHROPIC-DEPRECATIONS-005 | S0.1 | 2026-11-14 | **[UNVERIFIED, needs source]** | model names Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-11-14) |
 
@@ -375,7 +375,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor model lineup` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
 | References | 4 |
@@ -385,7 +385,7 @@ version string means the version is not tracking the data.
 
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
-| ANTHROPIC-MODELS-OVERVIEW-001 | S5 | 2026-10-12 | **[UNVERIFIED, needs source]** | the four current models Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 and their not-sooner-than dates (1 September, 22 September, 28 September and 7 October 2027), with Haiku 4.5 among the legacy models (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12) |
+| ANTHROPIC-MODELS-OVERVIEW-001 | S5 | 2026-11-14 | **[UNVERIFIED, needs source]** | the four current models Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5 and their not-sooner-than dates (9 November, 22 September, 28 September and 7 October 2027), with Fable 5.1 (1 September 2027) and Haiku 4.5 among the legacy models (FACTS claude-model-ids-and-retirements, read in full 2026-11-14) |
 
 ### `src-claude-code-skills` — Extend Claude with skills
 
@@ -681,8 +681,8 @@ version string means the version is not tracking the data.
 | | |
 |---|---|
 | Figure class | `benchmark_index` |
-| Index version | v4.3.2 |
-| Last retrieved | 2026-10-11 |
+| Index version | v5.0.1 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 Appendix A7 |
 | References | 2 |
@@ -692,7 +692,7 @@ version string means the version is not tracking the data.
 
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
-| AA-LEADERBOARD-001 | S1 | 2026-10-11 | v4.3.2 | four index scores with their effort settings, about 2026-10-07 (FACTS leaderboard-snapshot-aa) |
+| AA-LEADERBOARD-001 | S1 | 2026-11-14 | v5.0.1 | four index scores with their effort settings, 2026-11-14 (FACTS leaderboard-snapshot-aa) |
 
 ### `src-livebench` — LiveBench leaderboard and question releases
 
@@ -700,7 +700,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `benchmark_index` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-11 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 Appendix A7 |
 | References | 2 |
@@ -710,7 +710,7 @@ version string means the version is not tracking the data.
 
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
-| LIVEBENCH-001 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | 23 objective tasks in 7 categories, refreshed about every six months; latest release LiveBench-2026-06-25 (FACTS aa-index-definition and livebench-last-release) |
+| LIVEBENCH-001 | S1 | 2026-11-14 | **[UNVERIFIED, needs source]** | LiveBench 2.0, long-horizon work graded on what the model hands back; last release read on the earlier board LiveBench-2026-06-25 (FACTS aa-index-definition and livebench-last-release) |
 
 ### `src-arena-board` — Text leaderboard
 
@@ -921,8 +921,8 @@ version string means the version is not tracking the data.
 | | |
 |---|---|
 | Figure class | `benchmark_index` |
-| Index version | v4.3.2 |
-| Last retrieved | 2026-10-11 |
+| Index version | v5.0.1 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 Appendix A7 |
 | References | 1 |
@@ -932,7 +932,7 @@ version string means the version is not tracking the data.
 
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
-| AA-INDEX-001 | S1 | 2026-10-11 | v4.3.2 | 10 evaluations; Agents 30%, Coding 20%, Scientific Reasoning 20%, General 30%; scale 0 to 100 (FACTS aa-index-definition) |
+| AA-INDEX-001 | S1 | 2026-11-14 | v5.0.1 | 9 evaluations; Knowledge Work, Coding, Science and General at 25% each; scale 0 to 100 (FACTS aa-index-definition) |
 
 ### `src-claude-web-search` — Enable and use web search
 
@@ -1054,18 +1054,18 @@ wrong when they go stale.
 | Lesson | Distinct model names in prose | Occurrences |
 |---|---|---|
 | S0.1 | `Fable 5`, `Opus 5`, `Sonnet 5` | 8 |
-| S1 | `Fable 5`, `GPT-5.6`, `Kimi K3`, `Luna`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 58 |
+| S1 | `Fable 5`, `GPT-5.6`, `Kimi K3`, `Luna`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 60 |
 | S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 52 |
 | S3 | — | 0 |
 | S4 | `Fable 5`, `Opus 4.7`, `Opus 5`, `Sonnet 5` | 7 |
-| S5 | `Fable 5`, `Haiku 4.5`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sonnet 5` | 32 |
+| S5 | `Fable 5`, `Haiku 4.5`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sonnet 5` | 33 |
 | case-1 | `Opus 5`, `Sonnet 5` | 10 |
 | case-2 | `Opus 5`, `Sonnet 5` | 7 |
 | case-3 | `Opus 5`, `Sonnet 5` | 7 |
 | case-4 | `Opus 5`, `Sonnet 5` | 7 |
 | case-5 | `Opus 5`, `Sonnet 5` | 7 |
 
-**195 occurrences across 11 lessons.** This count is read off
+**198 occurrences across 11 lessons.** This count is read off
 the corpus on every run, so it cannot go stale the way a typed one would.
 
 

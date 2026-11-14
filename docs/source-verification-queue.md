@@ -81,7 +81,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | 34 | `src-sec-ai` | Enforcement actions against Delphia (USA) Inc. and Global Predictions, Inc. | **EMPTY** | **none** | 5 | no | S1 `#s1`×2 · S1 `#s14` · S4 `#s1`×2 |
 | 35 | `src-secure2-107` | SECURE 2.0 Act of 2022, section 107 (increase in age for required beginning date) | **EMPTY** | 2026-10-12 | 5 | no | case-2 `#deliverable`×3 · case-2 `#next` · S2 `#s12` |
 | 36 | `src-synthid-text` | SynthID: Tools for watermarking and detecting LLM-generated Text | **EMPTY** | 2026-08-25 | 5 | yes | S4 `#sW1`×2 · S4 `#sW2`×3 |
-| 37 | `src-anthropic-models-overview` | Models overview | **EMPTY** | 2026-10-27 | 4 | yes | S5 `#s1`×3 · S5 `#sE5` |
+| 37 | `src-anthropic-models-overview` | Models overview | **EMPTY** | 2026-11-14 | 4 | yes | S5 `#s1`×3 · S5 `#sE5` |
 | 38 | `src-claude-code-settings` | Settings files and precedence | **EMPTY** | 2026-10-27 | 4 | yes | S5 `#s1`×2 · S5 `#sLib`×2 |
 | 39 | `src-claude-code-skills` | Extend Claude with skills | **EMPTY** | 2026-10-27 | 4 | yes | S5 `#s1`×2 · S5 `#sLib`×2 |
 | 40 | `src-claude-incognito` | Use incognito chats | **EMPTY** | 2026-10-27 | 4 | yes | S0.1 `#s7`×4 |
@@ -89,7 +89,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | 42 | `src-claude-watermark` | How Claude's text watermarking works | **EMPTY** | 2026-10-27 | 4 | yes | S4 `#s7` · S4 `#sW1`×3 |
 | 43 | `src-finra-inj` | Understanding Generative AI and Prompt Injection Fundamentals | **EMPTY** | **none** | 4 | no | S4 `#s5`×2 · S4 `#sCR`×2 |
 | 44 | `src-gemini-privacy` | Gemini Apps Privacy Hub | **EMPTY** | **none** | 4 | yes | case-4 `#next` · S4 `#s3`×2 · S4 `#sCR` |
-| 45 | `src-t3-survey` | 2026 T3/Inside Information Software Survey | **EMPTY** | **none** | 4 | no | S2 `#s9` · S2 `#s12d` · S5 `#s6`×2 |
+| 45 | `src-t3-survey` | 2026 T3/Inside Information Software Survey | **EMPTY** | 2026-11-14 | 4 | no | S2 `#s9` · S2 `#s12d` · S5 `#s6`×2 |
 | 46 | `src-anthropic-agents` | Building effective agents | **EMPTY** | 2026-10-27 | 3 | no | S4 `#sWS` · S4 `#sCR`×2 |
 | 47 | `src-anthropic-mcp` | Introducing the Model Context Protocol | **EMPTY** | 2026-10-27 | 3 | no | S0.1 `#s5` · S4 `#sWS` · S4 `#sCR` |
 | 48 | `src-anthropic-threat` | Detecting and countering misuse of AI: September 2026 | **EMPTY** | 2026-10-27 | 3 | no | S4 `#s5` · S4 `#sCR`×2 |
@@ -106,7 +106,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | 59 | `src-openai-provenance` | Provenance signals (Content Credentials & SynthID) in OpenAI-generated content | **EMPTY** | 2026-10-11 | 3 | yes | S4 `#s7` · S4 `#sW1`×2 |
 | 60 | `src-tools3` | When should I use web search, extended thinking, and research? | **EMPTY** | 2026-10-27 | 3 | yes | S0.1 `#s4`×3 |
 | 61 | `src-vanguard-alpha` | Putting a value on your value: Quantifying Vanguard Advisor's Alpha | **EMPTY** | **none** | 3 | no | S5 `#s7` · S5 `#sE5`×2 |
-| 62 | `src-aa-leaderboard` | Language model leaderboard, Intelligence Index | **EMPTY** | 2026-10-11 | 2 | yes | S1 `#s10`×2 |
+| 62 | `src-aa-leaderboard` | Language model leaderboard, Intelligence Index | **EMPTY** | 2026-11-14 | 2 | yes | S1 `#s10`×2 |
 | 63 | `src-advisers-204-2` | Books and records to be maintained by investment advisers, 17 CFR 275.204-2 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
 | 64 | `src-advisers-206-4-7` | Compliance procedures and practices, 17 CFR 275.206(4)-7 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
 | 65 | `src-advisers-fiduciary` | Commission Interpretation Regarding Standard of Conduct for Investment Advisers, Release IA-5248 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
@@ -131,7 +131,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | 84 | `src-iss-ai-policy` | AI Adoption Set to Rise Amongst Advisors | **EMPTY** | 2026-10-11 | 2 | no | S4 `#s9`×2 |
 | 85 | `src-joa-prompt` | Writing an effective AI prompt for an audit | **EMPTY** | **none** | 2 | no | S4 `#s7`×2 |
 | 86 | `src-kitces-aisearch` | Ways advisors can optimize for AI search (AI SEO) | **EMPTY** | **none** | 2 | no | S5 `#s6`×2 |
-| 87 | `src-livebench` | LiveBench leaderboard and question releases | **EMPTY** | 2026-10-11 | 2 | yes | S1 `#s10`×2 |
+| 87 | `src-livebench` | LiveBench leaderboard and question releases | **EMPTY** | 2026-11-14 | 2 | yes | S1 `#s10`×2 |
 | 88 | `src-meta-feed` | Meta AI's discover feed is full of revealing personal info: here's how to protect your privacy | **EMPTY** | **none** | 2 | no | S4 `#s3` · S4 `#sCR` |
 | 89 | `src-metr-2025` | Measuring the impact of early-2025 AI on experienced open-source developer productivity | **EMPTY** | **none** | 2 | no | S5 `#s5`×2 |
 | 90 | `src-ms-copilot-edp` | Enterprise data protection in Microsoft 365 Copilot and Microsoft 365 Copilot Chat | **EMPTY** | **none** | 2 | yes | S4 `#s3`×2 |
@@ -140,7 +140,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | 93 | `src-wiretap` | Cal. Penal Code §§ 632 and 637.2(a)(1), (c); 18 U.S.C. § 2511(2)(d) | **EMPTY** | **none** | 2 | no | S3 `#s12`×2 |
 | 94 | `src-0din-gemini` | Phishing for Gemini | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
 | 95 | `src-3b1b-llm` | Large Language Models explained briefly (video, about 8 minutes) | **EMPTY** | 2026-10-13 | 1 | yes | S0.1 `#s11` |
-| 96 | `src-aa-index` | Intelligence Index methodology | **EMPTY** | 2026-10-11 | 1 | yes | S1 `#s10` |
+| 96 | `src-aa-index` | Intelligence Index methodology | **EMPTY** | 2026-11-14 | 1 | yes | S1 `#s10` |
 | 97 | `src-anthropic-browser-access` | TypeScript SDK | **EMPTY** | 2026-10-27 | 1 | yes | S4 `#(footer)` |
 | 98 | `src-anthropic-deprecation-commitments` | Commitments on model deprecation and preservation | **EMPTY** | 2026-10-27 | 1 | no | S5 `#s1` |
 | 99 | `src-anthropic-fluency` | AI Fluency: Framework & Foundations | **EMPTY** | **none** | 1 | no | S1 `#s15` |
@@ -292,7 +292,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-wiretap` | https://law.justia.com/codes/california/code-pen/part-1/title-15/chapter-1-5/section-632 |
 | `src-0din-gemini` | https://www.0din.ai/blog/phishing-for-gemini |
 | `src-3b1b-llm` | https://www.youtube.com/watch?v=LPZh9BOjkQs |
-| `src-aa-index` | https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index |
+| `src-aa-index` | https://artificialanalysis.ai/methodology/intelligence-benchmarking |
 | `src-anthropic-browser-access` | https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/typescript |
 | `src-anthropic-deprecation-commitments` | https://www.anthropic.com/research/deprecation-commitments |
 | `src-anthropic-fluency` | https://anthropic.skilljar.com/ai-fluency-framework-foundations |
@@ -352,7 +352,7 @@ about the source.
 
 ### `src-anthropic-deprecations`
 
-OPENED on 2026-10-02 and RE-OPENED on 2026-10-04 (platform.claude.com is reachable from this build). On 2026-10-04 every date the page carried on 2026-10-02 was unchanged; the not-sooner-than dates of the current and legacy models were added to the scope for the §02 calendar's new rows. The published date is the page's most recent deprecation announcement (Claude Sonnet 4.5, 30 September 2026); the page is updated in place with every announcement. RE-OPENED in full on 2026-10-12, after FACTS claude-model-ids-and-retirements read it in full on 2026-10-11: every date in the §02 calendar is unchanged, and the table now also lists claude-haiku-5-5 (Active, not sooner than 7 October 2027), with claude-haiku-4-5-20251001 still Active and not sooner than 15 October 2026. Audit 2026-10-27 (fetched in full): verified. Every one of the 24 dates, the lifecycle terms, the 60 days' notice and the testing advice match the live table; the page has added Mythos rows and an API parameter deprecations section (see scope). Audit 2026-11-14 (fetched in full): claude-fable-5-2 and claude-mythos-5-2 added, Active, not sooner than 9 November 2027; claude-fable-5-1 stays Active (1 September 2027); claude-sonnet-4-5-20250929 still retires 30 November 2026. Session 0.1 and Session 1 name Fable 5.2; the Session 2 sentence is dated October 2026 and the Session 5 calendar is a 12 October snapshot, both left as written (register).
+OPENED on 2026-10-02 and RE-OPENED on 2026-10-04 (platform.claude.com is reachable from this build). On 2026-10-04 every date the page carried on 2026-10-02 was unchanged; the not-sooner-than dates of the current and legacy models were added to the scope for the §02 calendar's new rows. The published date is the page's most recent deprecation announcement (Claude Sonnet 4.5, 30 September 2026); the page is updated in place with every announcement. RE-OPENED in full on 2026-10-12, after FACTS claude-model-ids-and-retirements read it in full on 2026-10-11: every date in the §02 calendar is unchanged, and the table now also lists claude-haiku-5-5 (Active, not sooner than 7 October 2027), with claude-haiku-4-5-20251001 still Active and not sooner than 15 October 2026. Audit 2026-10-27 (fetched in full): verified. Every one of the 24 dates, the lifecycle terms, the 60 days' notice and the testing advice match the live table; the page has added Mythos rows and an API parameter deprecations section (see scope). Audit 2026-11-14 (fetched in full): claude-fable-5-2 and claude-mythos-5-2 added, Active, not sooner than 9 November 2027; claude-fable-5-1 stays Active (1 September 2027); claude-sonnet-4-5-20250929 still retires 30 November 2026. Session 0.1 and Session 1 name Fable 5.2; the Session 2 sentence is dated October 2026 and the Session 5 calendar is a 12 October snapshot, both left as written (register). Later on 2026-11-14 the Session 5 §02 calendar gained the claude-fable-5-2 row and its source line reads opened 14 November 2026.
 
 ### `src-pricing`
 
@@ -488,7 +488,7 @@ The 2025-04-09 in `published` is the page's OWN last-updated stamp, in UTC, not 
 
 ### `src-anthropic-models-overview`
 
-OPENED on 2026-10-04 (platform.claude.com is reachable from this build). The page carries no publication date of its own; it is updated in place with each model release, so the year is recorded and the retrieval date is the one to read. RE-OPENED on 2026-10-12 (the old address redirects to platform.claude.com/docs/en/models/overview), after FACTS claude-model-ids-and-retirements read the same page on 2026-10-11. Audit 2026-10-27 (fetched in full): verified with corrections. Link updated to the address the old one redirected to. Same page as src-models; not merged in this pass (see that record). Audit 2026-11-14 (fetched in full): the four latest models are now Claude Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5; the Session 5 §02 calendar still shows Fable 5.1 in the lineup row and is a dated snapshot until its next re-pull (register).
+OPENED on 2026-10-04 (platform.claude.com is reachable from this build). The page carries no publication date of its own; it is updated in place with each model release, so the year is recorded and the retrieval date is the one to read. RE-OPENED on 2026-10-12 (the old address redirects to platform.claude.com/docs/en/models/overview), after FACTS claude-model-ids-and-retirements read the same page on 2026-10-11. Audit 2026-10-27 (fetched in full): verified with corrections. Link updated to the address the old one redirected to. Same page as src-models; not merged in this pass (see that record). Audit 2026-11-14 (fetched in full): the four latest models are now Claude Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5; the Session 5 §02 calendar still shows Fable 5.1 in the lineup row and is a dated snapshot until its next re-pull (register). Later on 2026-11-14 the Session 5 §02 calendar was brought to the page as read that day: Fable 5.1 is a legacy row and Fable 5.2 (not sooner than 9 November 2027) is the fourth lineup row.
 
 ### `src-claude-code-settings`
 
@@ -520,7 +520,7 @@ NOT RETRIEVED. support.google.com is egress-blocked from this build environment 
 
 ### `src-t3-survey`
 
-As summarised by Kitces.com Weekend Reading, March 2026. Re-checked 2026-10-04: kitces.com, investmentnews.com and dwealth.news were egress-blocked from this build; a fresh search returned 2,906 responses, 52.2%, 42.9% and 14 note-taking tools, unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Primary PDF found; 2,906 responses, 95 percent RIA, 52.2 percent (from 41.8) and 42.9 percent confirmed by Kitces, BusinessWire (2026-03-10) and InvestmentNews. Could be raised to H; one chip is in session-5, which this pass does not touch.
+As summarised by Kitces.com Weekend Reading, March 2026. Re-checked 2026-10-04: kitces.com, investmentnews.com and dwealth.news were egress-blocked from this build; a fresh search returned 2,906 responses, 52.2%, 42.9% and 14 note-taking tools, unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Primary PDF found; 2,906 responses, 95 percent RIA, 52.2 percent (from 41.8) and 42.9 percent confirmed by Kitces, BusinessWire (2026-03-10) and InvestmentNews. Could be raised to H; one chip is in session-5, which this pass does not touch. Audit 2026-11-14 (PDF fetched and read, 91 pages): 2,906 responses; AI search and generative language at 52.15% total category market penetration against 41.78% a year earlier; AI notetaking solutions at 42.86%. The page figures are these, rounded to one decimal.
 
 ### `src-anthropic-agents`
 
@@ -584,11 +584,11 @@ Audit 2026-10-27 (fetched in full): verified with corrections. Dated June 2, 202
 
 ### `src-vanguard-alpha`
 
-NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee. Re-checked 2026-10-04: vanguard.ca, Vanguard's own host for the infographic, was blocked; a fresh search returned about 3% and 150 basis points unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The about 3 percent framing is confirmed on Vanguard's own pages; the 150 bps behavioural-coaching figure is printed in the 2016 US and 2018 Canada editions, while one summary says the 2022 edition frames coaching as 0 to over 200 bps (GAP, see register). Audit 2026-11-14: the link on this record now returns Vanguard's 404 page ("This page is currently unavailable"), so the 2022 PDF could not be read and the record needs a working link; search results for two copies of the 2022 edition show behavioural coaching as "0 to > 200 bps" (register).
+NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee. Re-checked 2026-10-04: vanguard.ca, Vanguard's own host for the infographic, was blocked; a fresh search returned about 3% and 150 basis points unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The about 3 percent framing is confirmed on Vanguard's own pages; the 150 bps behavioural-coaching figure is printed in the 2016 US and 2018 Canada editions, while one summary says the 2022 edition frames coaching as 0 to over 200 bps (GAP, see register). Audit 2026-11-14: the link on this record returned Vanguard's 404 page ("This page is currently unavailable") to this build's fetch, although a web search the same day still lists it, so the 2022 PDF could not be read here and the link wants checking in a browser; search results for two copies of the 2022 edition show behavioural coaching as "0 to > 200 bps" (register).
 
 ### `src-aa-leaderboard`
 
-artificialanalysis.ai is unreachable from the build container (FACTS leaderboard-snapshot-aa, 2026-10-11); the snapshot is read from primary-domain search snippets and carried at M. Effort tiers matter: Opus 5.5 at High scores 54 against 58 at Max, and GPT-6 Astra at High scores 51. The scores are not comparable with the index figures in the July 2026 scatter, which src-aa carries. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the dated launch articles (artificialanalysis.ai/articles/claude-opus-5-5 and /claude-sonnet-5-5); re-read the board the week before Session 1.
+artificialanalysis.ai is unreachable from the build container (FACTS leaderboard-snapshot-aa, 2026-10-11); the snapshot is read from primary-domain search snippets and carried at M. Effort tiers matter: Opus 5.5 at High scores 54 against 58 at Max, and GPT-6 Astra at High scores 51. The scores are not comparable with the index figures in the July 2026 scatter, which src-aa carries. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the dated launch articles (artificialanalysis.ai/articles/claude-opus-5-5 and /claude-sonnet-5-5); re-read the board the week before Session 1. Audit 2026-11-14 (page fetched and read; the host is allowed since that day): the index is v5.0.1 and the page's own summary lists Claude Fable 5.2 (Max) 65, Fable 5.2 (Xhigh) 62, Fable 5.2 (High) 62, Gemini 4 Carbon (High) 60 and Claude Opus 5.5 (Max) 59. The 7 October snapshot (v4.3.2) left the Session 1 table.
 
 ### `src-advisers-204-2`
 
@@ -688,7 +688,7 @@ NOT RETRIEVED. kitces.com is egress-blocked from this build environment (2026-10
 
 ### `src-livebench`
 
-The site is unreachable from the build container (FACTS livebench-last-release, 2026-10-11). The release date is read from the homepage snippet and GitHub issue titles that reference the 2026-06-25 release; the GitHub README is stale and still says 2025-04-25. The description (23 objective tasks in 7 categories, refreshed about every six months) comes from the README, fetched in full. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): unreachable. livebench.ai was returned by search on 2026-10-27 as LiveBench 2.0 with the v1 board at livebench.ai/v1/ (latest release 2026-06-25); the task count and release name in scope are GAP until read from the site.
+The site is unreachable from the build container (FACTS livebench-last-release, 2026-10-11). The release date is read from the homepage snippet and GitHub issue titles that reference the 2026-06-25 release; the GitHub README is stale and still says 2025-04-25. The description (23 objective tasks in 7 categories, refreshed about every six months) comes from the README, fetched in full. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): unreachable. livebench.ai was returned by search on 2026-10-27 as LiveBench 2.0 with the v1 board at livebench.ai/v1/ (latest release 2026-06-25); the task count and release name in scope are GAP until read from the site. Audit 2026-11-14 (page fetched and read): the site titles itself "LiveBench 2.0 - A challenging, contamination-free long-horizon AI benchmark" and describes models doing "real work (decks, research reports, bug fixes, apps that run for hours)". The 23-tasks-in-7-categories description belonged to the earlier board and left the Session 1 table; the new board's release name needs a browser.
 
 ### `src-meta-feed`
 
@@ -724,7 +724,7 @@ Title, date (companion post 2024-11-20, made for the Computer History Museum exh
 
 ### `src-aa-index`
 
-Host unreachable from the build container (FACTS aa-index-definition, 2026-10-11); the description is read from primary-domain snippets. The evaluations-page FAQ still says 25% per category; the v4.3 announcement and the methodology page say 30/20/20/30, which is what the lesson states. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the methodology page (artificialanalysis.ai/methodology/intelligence-benchmarking) and the v4.3 announcement article.
+Host unreachable from the build container (FACTS aa-index-definition, 2026-10-11); the description is read from primary-domain snippets. The evaluations-page FAQ still says 25% per category; the v4.3 announcement and the methodology page say 30/20/20/30, which is what the lesson states. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the methodology page (artificialanalysis.ai/methodology/intelligence-benchmarking) and the v4.3 announcement article. Audit 2026-11-14 (methodology page fetched and read): "Artificial Analysis Intelligence Index v5.0.1 incorporates 9 evaluations" and "a weighted average across four categories: Knowledge Work (25%), Coding (25%), Science (25%), and General (25%)". The record is repointed from the evaluations page (artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index), whose FAQ lagged the methodology in October, to the methodology page that was read.
 
 ### `src-anthropic-browser-access`
 

@@ -469,36 +469,36 @@
  {
   "id": "leaderboard-snapshot-aa",
   "statement": "Artificial Analysis Intelligence Index, most recent readable snapshot",
-  "value": "Index v4.3.2 (about 2026-10-07): Claude Opus 5.5 (Max) 58, Claude Sonnet 5.5 (Max) 56, GPT-6 Astra (Max) 53, Gemini 4 Argon (High) 53",
+  "value": "Index v5.0.1 (2026-11-14): Claude Fable 5.2 (Max) 65, Claude Fable 5.2 (Xhigh) 62, Claude Fable 5.2 (High) 62, Gemini 4 Carbon (High) 60, Claude Opus 5.5 (Max) 59",
   "unit": "index points",
   "applies_to": [
    "session-1"
   ],
   "source_url": "https://artificialanalysis.ai/leaderboards/models",
   "source_title": "Artificial Analysis models leaderboard",
-  "retrieved": "2026-10-11",
+  "retrieved": "2026-11-14",
   "confidence": "M",
   "volatility": "high",
   "reverify_before": "each-session",
   "retired_values": [],
-  "notes": "Primary-domain snippets only (host unreachable). Effort tiers matter: Opus 5.5 High scores 54 and GPT-6 Astra High 51. Not comparable with v4.1.1 figures (Claude Opus 5 at 63)."
+  "notes": "artificialanalysis.ai/leaderboards/models fetched 2026-11-14 (the environment now allows the host); the five places are read from the page's own summary sentence. Not comparable with v4.3.2 figures (Opus 5.5 (Max) 58 on 2026-10-07) or v4.1.1 (Claude Opus 5 at 63)."
  },
  {
   "id": "aa-index-definition",
   "statement": "What the three leaderboards measure",
-  "value": "Artificial Analysis Intelligence Index v4.3.2: a weighted average of 10 evaluations (Agents 30%, Coding 20%, Scientific Reasoning 20%, General 30%), scaled 0 to 100. LiveBench: a contamination-limited benchmark of 23 objective tasks in 7 categories, refreshed about every six months. Arena: human pairwise preference votes converted to a Bradley-Terry (Elo-style) score",
+  "value": "Artificial Analysis Intelligence Index v5.0.1: a weighted average of 9 evaluations in four categories (Knowledge Work 25%, Coding 25%, Science 25%, General 25%), scaled 0 to 100. LiveBench 2.0: a contamination-limited benchmark of long-horizon work (decks, research reports, bug fixes, apps that run for hours), graded on what the model hands back. Arena: human pairwise preference votes converted to a Bradley-Terry (Elo-style) score",
   "unit": "",
   "applies_to": [
    "session-1"
   ],
-  "source_url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
+  "source_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
   "source_title": "Artificial Analysis Intelligence Index methodology; LiveBench README; Arena",
-  "retrieved": "2026-10-11",
+  "retrieved": "2026-11-14",
   "confidence": "M",
   "volatility": "medium",
   "reverify_before": "term-start",
   "retired_values": [],
-  "notes": "The LiveBench README (github.com/LiveBench/LiveBench) fetched in full; the AA and Arena descriptions are primary-domain snippets. AA's evaluations-page FAQ still says 25% per category; the v4.3 announcement and methodology page say 30/20/20/30."
+  "notes": "The Artificial Analysis methodology page and livebench.ai fetched 2026-11-14. AA v5.0.1 names its nine evaluations: AA-Briefcase v1.1, AutomationBench-AA, GDP.pdf, FrontierCode-AA 2.0, Terminal-Bench 4.0, AA-Omniscience v1.1, HLE-Diamond, CritPt v2 (Hard Subset) and Terminal-Bench-Science 0.1.0. LiveBench now titles itself LiveBench 2.0; the earlier description (23 objective tasks in 7 categories, refreshed about every six months) belonged to the first board, and the new board's task count and cadence were not read. The Arena description is a primary-domain snippet from 2026-10-11; arena.ai still answers 403."
  },
  {
   "id": "livebench-last-release",
@@ -515,7 +515,7 @@
   "volatility": "high",
   "reverify_before": "each-session",
   "retired_values": [],
-  "notes": "Homepage snippet plus GitHub issue titles referencing the 2026-06-25 release; the GitHub README is stale (still says 2025-04-25)."
+  "notes": "Homepage snippet plus GitHub issue titles referencing the 2026-06-25 release; the GitHub README is stale (still says 2025-04-25). 2026-11-14: livebench.ai fetched; it is now LiveBench 2.0, a long-horizon benchmark, and the page (a script application) gave no release name to a plain fetch. A search result gives a release of 2026-11-06, unread. The value stays as the last release read on the earlier board until the live page is read in a browser."
  },
  {
   "id": "reg-sp-compliance",
@@ -679,19 +679,19 @@
  {
   "id": "utah-ai-disclosure",
   "statement": "Utah's generative-AI disclosure duty for regulated occupations",
-  "value": "Utah SB 149 (2024) created the AI Policy Act; SB 226 (2025) narrows the disclosure duty to high-risk interactions in regulated occupations (the statutory definition of high-risk interaction names financial advice); the Act sunsets 2027-07-01",
+  "value": "Utah SB 149 (2024) created the AI Policy Act; SB 226 (2025) narrows the disclosure duty to high-risk interactions in regulated occupations (Utah Code 13-77-103; the definition of high-risk artificial intelligence interaction in 13-77-101 names financial advice or services); the 2027-07-01 repeal in 63I-2-213 covers Title 13, Chapter 72, the Artificial Intelligence Policy Act, and does not name Chapter 77",
   "unit": "",
   "applies_to": [
    "session-4"
   ],
-  "source_url": "https://le.utah.gov/Session/2025/bills/enrolled/SB0226.pdf",
+  "source_url": "https://le.utah.gov/xcode/Title63I/Chapter2/63I-2-S213.html",
   "source_title": "Utah S.B. 226 (2025), enrolled",
-  "retrieved": "2026-10-11",
-  "confidence": "M",
+  "retrieved": "2026-11-14",
+  "confidence": "H",
   "volatility": "medium",
   "reverify_before": "term-start",
   "retired_values": [],
-  "notes": "le.utah.gov snippets. \"Financial advice\" appears in the definition of high-risk interaction, not as a named regulated occupation; whether an adviser is in a regulated occupation turns on Utah Department of Commerce licensure."
+  "notes": "le.utah.gov fetched and read 2026-11-14: 63I-2-213 (version effective 5/7/2025) reads \"Title 13, Chapter 72, Artificial Intelligence Policy Act, is repealed July 1, 2027\" and lists nothing else from the AI statutes; 13-77-103(2) carries the regulated-occupation disclosure duty and 13-77-101(5)(b)(i) names \"financial advice or services\". The earlier value said the Act sunsets, which read as if the disclosure duty did. Whether an adviser is in a regulated occupation turns on Utah Department of Commerce licensure."
  },
  {
   "id": "adoption-t3-2026",
@@ -702,14 +702,14 @@
    "session-1",
    "session-3"
   ],
-  "source_url": "https://www.kitces.com/blog/weekend-reading-for-financial-planners-march-14-15-2026/",
+  "source_url": "https://t3technologyhub.com/wp-content/uploads/2026/03/2026-T3_Inside-Information-Software-Survey.pdf",
   "source_title": "Kitces Weekend Reading, March 14 to 15, 2026, on the 2026 T3/Inside Information Advisor Software Survey",
-  "retrieved": "2026-10-11",
+  "retrieved": "2026-11-14",
   "confidence": "M",
   "volatility": "medium",
   "reverify_before": "term-start",
   "retired_values": [],
-  "notes": "kitces.com snippets; the survey PDF is at t3technologyhub.com (2026-T3_Inside-Information-Software-Survey.pdf). T3 rounds the figures to 52% and 41%."
+  "notes": "The survey PDF (91 pages) fetched and read 2026-11-14: 2,906 responses; AI search and generative language, total category market penetration 52.15% against 41.78% the year before; AI notetaking solutions 42.86%. The page figures 52.2%, 41.8% and 42.9% are these, rounded."
  },
  {
   "id": "adoption-iss-policy",
@@ -970,7 +970,7 @@
   "volatility": "high",
   "reverify_before": "each-session",
   "retired_values": [],
-  "notes": "Created 2026-10-27 from session-2/index.html (the i and o fields of the MODELS array and the Appendix B8 source lines, which say retrieved August 2026) and SOURCES.md src-openai-pricing (last_retrieved [UNVERIFIED, needs source]; the rates entered with the 2026-08 pull and no retrieval was recorded) without a fresh fetch. The day in retrieved is NOT a recorded retrieval: it is the earliest possible day of the page's own August 2026, the partial-date reading convention in MAINTAINING.md. openai.com was egress-blocked when the source record was written. DW-176, DW-081."
+  "notes": "Created 2026-10-27 from session-2/index.html (the i and o fields of the MODELS array and the Appendix B8 source lines, which say retrieved August 2026) and SOURCES.md src-openai-pricing (last_retrieved [UNVERIFIED, needs source]; the rates entered with the 2026-08 pull and no retrieval was recorded) without a fresh fetch. The day in retrieved is NOT a recorded retrieval: it is the earliest possible day of the page's own August 2026, the partial-date reading convention in MAINTAINING.md. openai.com was egress-blocked when the source record was written. DW-176, DW-081. 2026-11-14: developers.openai.com/api/docs/pricing fetched. The current rows are gpt-6-astra $10 / $50, gpt-6.1-sol $2 / $10, gpt-6.1-terra $1 / $5 and gpt-6-luna $0.10 / $0.50, and the page says GPT-5.6 Sol's promotional pricing runs until 30 November 2026. The value stays the August pull because the Session 2 chart is labelled an August 2026 snapshot (DW-205)."
  },
  {
   "id": "eu-ai-act-article-50",

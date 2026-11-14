@@ -131,36 +131,36 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**1175 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**1184 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
 | `ryanAge` | 470 |
-| `megRetireAge` | 147 |
-| `davidRetireAge` | 96 |
-| `riskGap` | 66 |
+| `megRetireAge` | 149 |
+| `davidRetireAge` | 98 |
+| `riskGap` | 65 |
 | `tomAge` | 61 |
 | `emmaAge` | 58 |
 | `davidRiskScore` | 48 |
-| `megAge` | 44 |
+| `megAge` | 43 |
 | `megRiskScore` | 25 |
-| `earlyReduction` | 17 |
-| `davidNewsMonth` | 16 |
+| `davidNewsMonth` | 21 |
 | `marriedYears` | 16 |
+| `earlyReduction` | 15 |
 | `delayedCredit` | 15 |
 | `megSs62` | 14 |
 | `umbrella` | 9 |
-| `davidLossTolerance` | 8 |
-| `rmdExciseTax` | 8 |
+| `davidLossTolerance` | 9 |
+| `rmdExciseTax` | 9 |
 | `megRoth` | 7 |
 | `propertyTax` | 7 |
 | `travel` | 7 |
 | `asOfDate` | 7 |
 | `ipsEquity` | 7 |
+| `davidAge` | 4 |
 | `tomShort` | 3 |
 | `ryanShort` | 2 |
-| `davidAge` | 2 |
 | `ipsDate` | 2 |
 | `allocFixed` | 2 |
 | `megLossTolerance` | 2 |

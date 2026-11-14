@@ -57,6 +57,19 @@ their hosts; everything else is recorded as search-result evidence in the regist
   et al.'s 43% for GPT-4 (Figure 4), Dahl et al.'s more than 800,000 queries, Kalai et
   al.'s DeepSeek-V3 on 11 May 2025, and the three Kitces notetaker figures.
 
+### Later the same day
+
+- **Session 5** §02 calendar: Fable 5.1 is a legacy row and Fable 5.2 (not retired
+  sooner than 9 November 2027) is the fourth lineup row; the source line reads opened
+  14 November 2026.
+- **Session 1** leaderboard table: the Artificial Analysis row carries index v5.0.1
+  (nine evaluations, four categories at 25% each) and the scores read that day, Claude
+  Fable 5.2 (Max) 65 first; the LiveBench cell describes LiveBench 2.0. The Arena row
+  is unchanged because the board could not be read.
+- **FACTS.** `utah-ai-disclosure` corrected from the Utah Code as read: the 1 July 2027
+  repeal covers Chapter 72, the AI Policy Act, and not the disclosure duty in Chapter 77.
+  `adoption-t3-2026` confirmed against the survey PDF (52.15%, 41.78%, 42.86%).
+
 ### Register
 
 - DW-198, DW-199 and DW-202 closed. DW-200, DW-201 and DW-203 narrowed. DW-204 to

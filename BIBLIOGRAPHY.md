@@ -9,7 +9,7 @@ read off the chips, never typed.
 cited by at least one claim; 7 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
-**68 records carry at least one field this repository could not verify, and
+**67 records carry at least one field this repository could not verify, and
 every one of them is printed below as `[UNVERIFIED, needs source]` rather than omitted.** The
 rendered footer in a lesson omits an unknown field, because a footer in which
 thirty entries shout about a missing publisher helps nobody. This file is where a
@@ -582,13 +582,13 @@ Anthropic commits to preserving the weights of all publicly released models, and
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/models/overview> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **4** |
 | Cited in | S5 `#s1` ×3 · S5 `#sE5` |
 
-The current lineup of four models (Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5) with each one's retirement commitment (not sooner than 1 September 2027, 22 September 2027, 28 September 2027 and 7 October 2027), and the legacy models still available (Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Haiku 4.5). The page recommends Opus 5.5 for most workloads. The comparison table carries prices and a June 2026 knowledge cutoff; no benchmark is on the page.
+The current lineup of four models (Claude Fable 5.2, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5) with each one's retirement commitment (not sooner than 9 November 2027, 22 September 2027, 28 September 2027 and 7 October 2027), and the legacy models still available (Fable 5.1, Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Haiku 4.5). The page recommends Opus 5.5 for most workloads. The comparison table carries prices and a June 2026 knowledge cutoff; no benchmark is on the page.
 
 ### Anthropic
 
@@ -943,7 +943,7 @@ A live leaderboard of capability index scores and cost per index task. Every fig
 | Publisher | Artificial Analysis |
 | Link | <https://artificialanalysis.ai/leaderboards/models> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-11 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
@@ -960,15 +960,15 @@ The current Intelligence Index scores of the leading models at a stated effort s
 |---|---|
 | Author | Artificial Analysis |
 | Publisher | Artificial Analysis |
-| Link | <https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index> |
+| Link | <https://artificialanalysis.ai/methodology/intelligence-benchmarking> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-11 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **1** |
 | Cited in | S1 `#s10` |
 
-What the Intelligence Index measures: a weighted average of 10 evaluations in four categories, scaled 0 to 100, at version 4.3.2.
+What the Intelligence Index measures: a weighted average of 9 evaluations in four categories, scaled 0 to 100, at version 5.0.1.
 
 ### Becker, J., Rush, N., Barnes, E., & Rein, D. (METR)
 
@@ -1912,13 +1912,13 @@ A survey of 319 knowledge workers who shared 936 first-hand examples of using a 
 | Publisher | livebench.ai |
 | Link | <https://livebench.ai/> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-11 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
 | Cited in | S1 `#s10` ×2 |
 
-What LiveBench measures and the name of its latest question release.
+What LiveBench measures. Since its relaunch as LiveBench 2.0 the page is a script application and gave no release name to a plain fetch.
 
 ### Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., & Ho, D. E.
 
@@ -2558,7 +2558,7 @@ The statutory source of the applicable age for required minimum distributions; n
 | Publisher | T3 Technology Hub and Inside Information; summarised in Kitces.com Weekend Reading, 14 to 15 March 2026 |
 | Link | <https://t3technologyhub.com/wp-content/uploads/2026/03/2026-T3_Inside-Information-Software-Survey.pdf> |
 | Published | 2026-03 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **4** |
