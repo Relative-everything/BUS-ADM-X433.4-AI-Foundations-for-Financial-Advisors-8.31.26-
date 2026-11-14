@@ -70,6 +70,24 @@ their hosts; everything else is recorded as search-result evidence in the regist
   repeal covers Chapter 72, the AI Policy Act, and not the disclosure duty in Chapter 77.
   `adoption-t3-2026` confirmed against the survey PDF (52.15%, 41.78%, 42.86%).
 
+### Third pass, on the instructor's answers
+
+- **Sessions 3 and 4 cite the SEC's fiscal 2027 examination priorities**, read in full
+  from the PDF the instructor supplied. The disclaimer the pages quote is in it. The
+  document writes "super intelligence (SI)" where earlier years wrote AI, and does not
+  mention polymorphic malware; two Session 4 lines now give its own examples,
+  AI-generated phishing and deepfake voice and video.
+- **Session 0.1 and Session 4 say model training is opt-out** on the individual Claude
+  plans, from the comparison table on claude.com/pricing.
+- **Session 5** no longer says behavioural coaching is about half of Vanguard's figure;
+  it gives the about-3% figure and names coaching as a module.
+- **Session 2** cites Advisor360's 2026 Connected Wealth Report for the roughly 3% who
+  rely on a model's recommendation (new record, medium confidence, unread).
+- **Session 4** names FINRA Regulatory Notice 26-14 (9 July 2026) on its sources line.
+- **Register.** DW-200, DW-201 and DW-204 closed; five rows open. A new list, *Hold
+  until just before the next term*, names everything to refresh in one sitting before
+  February 2027, the Session 2 cost-frontier chart first.
+
 ### Register
 
 - DW-198, DW-199 and DW-202 closed. DW-200, DW-201 and DW-203 narrowed. DW-204 to

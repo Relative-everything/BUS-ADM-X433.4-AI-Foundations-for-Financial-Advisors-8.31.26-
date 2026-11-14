@@ -247,7 +247,7 @@
  {
   "id": "claude-consumer-retention",
   "statement": "Consumer-plan data retention under the model-training setting",
-  "value": "With \"Help improve Claude\" on, de-identified data may be kept up to 5 years in training pipelines; with it off, a deleted conversation is removed from back-end storage within 30 days; whether the toggle defaults on or off is not stated on the page",
+  "value": "With \"Help improve Claude\" on, de-identified data may be kept up to 5 years in training pipelines; with it off, a deleted conversation is removed from back-end storage within 30 days; model training is opt-out on Free, Pro, Max and Ultra (on unless turned off)",
   "unit": "",
   "applies_to": [
    "session-0.1",
@@ -265,7 +265,7 @@
    "kept for five years by default",
    "five-year retention by default"
   ],
-  "notes": "privacy.claude.com is unreachable from the build container; values are from primary-domain search snippets plus the fully fetched anthropic.com post \"Updates to our consumer terms\". The default state of the toggle is a GAP: do not state one. Exceptions: flagged content up to 2 years, safety classifier scores up to 7 years, thumbs-up/down feedback keeps the whole conversation up to 5 years. 2026-11-14: privacy.claude.com is now reachable and the article was fetched; it still states no default for the toggle. claude.com/pricing (fetched the same day) labels model training Opt-out on Free, Pro, Max and Ultra, and the anthropic.com terms post says new users choose at signup; whether a page states \"opt-out\" is the instructor's wording call and is not yet made."
+  "notes": "privacy.claude.com is unreachable from the build container; values are from primary-domain search snippets plus the fully fetched anthropic.com post \"Updates to our consumer terms\". The default state of the toggle is a GAP: do not state one. Exceptions: flagged content up to 2 years, safety classifier scores up to 7 years, thumbs-up/down feedback keeps the whole conversation up to 5 years. 2026-11-14: privacy.claude.com is now reachable and the article was fetched; it still states no default for the toggle. claude.com/pricing (fetched the same day) labels model training Opt-out on Free, Pro, Max and Ultra, and the anthropic.com terms post says new users choose at signup; whether a page states \"opt-out\" is the instructor's wording call and is not yet made. Decided by the instructor 2026-11-14: the pages state opt-out, sourced to the comparison table on claude.com/pricing, read that day; the privacy article itself still states no default."
  },
  {
   "id": "claude-api-retention",
@@ -542,14 +542,14 @@
  {
   "id": "sec-exam-priorities-status",
   "statement": "SEC Division of Examinations priorities: status and legal force",
-  "value": "FY2027 priorities released 2026-10-23 (press release 2026-109), not yet read; FY2026 priorities released 2025-11-17, and the served pages still cite FY2026; the \"no legal force or effect\" wording is unconfirmed for either year",
+  "value": "FY2027 priorities released 2026-10-23 (press release 2026-109); the document states that it \"has no legal force or effect\"; it calls AI \"super intelligence (SI)\"",
   "unit": "",
   "applies_to": [
    "session-3",
    "session-4"
   ],
-  "source_url": "https://www.sec.gov/files/2026-exam-priorities.pdf",
-  "source_title": "SEC FY2026 Examination Priorities",
+  "source_url": "https://www.sec.gov/files/2027-exam-priorities.pdf",
+  "source_title": "SEC FY2027 Examination Priorities",
   "retrieved": "2026-10-11",
   "confidence": "M",
   "volatility": "high",
@@ -559,7 +559,7 @@
    "exam priorities are binding",
    "priorities have the force of law"
   ],
-  "notes": "sec.gov snippets. FY2025 and FY2024 priorities were released in October of the prior year, so check sec.gov/compliance/examination-priorities before Session 4 and swap the reading if FY2027 is out (runbook section 4, step 2). 2026-11-14: sec.gov search results give the FY2027 release (sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities; sec.gov/files/2027-exam-priorities.pdf), corroborated by three law-firm summaries; sec.gov answered 403 (request rate threshold) to a direct fetch, so retrieved does not move and the document is unread. Swap the reading and the nine served references only after the PDF is read."
+  "notes": "The FY2027 document was read in full on 2026-11-14 from a PDF the instructor supplied (kept at docs/changes/2026-11-14-facts-refresh/sec-fy2027-exam-priorities.pdf); sec.gov answers 403 to a fetch, so retrieved does not move and the release date rests on sec.gov search results. Disclaimer, verbatim: \"This statement, like all staff statements, has no legal force or effect: it does not alter or amend applicable law, and it creates no new or additional obligations for any person.\" Section VII.A.2 covers \"super intelligence (SI)\": SI-generated phishing, synthetic or deepfake voice and video, and policies and procedures relating to monitoring SI. It does not mention polymorphic malware. FY2026 priorities were released 2025-11-17 and were never read from this build."
  },
  {
   "id": "finra-24-09-status",
@@ -605,14 +605,14 @@
  {
   "id": "ai-policy-requirement",
   "statement": "No rule names an \"AI use policy\"; existing rules and examination expectations apply",
-  "value": "No SEC or FINRA rule requires a document called an AI use policy; Advisers Act Rule 206(4)-7 compliance policies, Regulation S-P and Rule 204-2 recordkeeping govern AI use, and the FY2025 and FY2026 examination priorities say examiners review AI-related policies and procedures and the accuracy of AI claims",
+  "value": "No SEC or FINRA rule requires a document called an AI use policy; Advisers Act Rule 206(4)-7 compliance policies, Regulation S-P and Rule 204-2 recordkeeping govern AI use, and the FY2027 examination priorities say examiners will review policies and procedures relating to monitoring AI and whether representations are fair and accurate",
   "unit": "",
   "applies_to": [
    "session-3",
    "session-4"
   ],
-  "source_url": "https://www.sec.gov/files/2026-exam-priorities.pdf",
-  "source_title": "SEC FY2026 Examination Priorities; FINRA Notice 24-09",
+  "source_url": "https://www.sec.gov/files/2027-exam-priorities.pdf",
+  "source_title": "SEC FY2027 Examination Priorities; FINRA Notice 24-09",
   "retrieved": "2026-10-11",
   "confidence": "M",
   "volatility": "medium",
@@ -623,7 +623,7 @@
    "AI policy is required by law",
    "rule requires an AI use policy"
   ],
-  "notes": "A negative claim; supported by FINRA 24-09's own disclaimer, the PDA withdrawal and the exam priorities' wording. The Rule 204-2 link rests on secondary commentary."
+  "notes": "A negative claim; supported by FINRA 24-09's own disclaimer, the PDA withdrawal and the exam priorities' wording. The Rule 204-2 link rests on secondary commentary. 2026-11-14: reworded to the FY2027 document as read (section VII.A.2, where AI is called \"super intelligence (SI)\"); the FY2025 and FY2026 documents were never read from this build."
  },
  {
   "id": "sec-ai-washing-enforcement",

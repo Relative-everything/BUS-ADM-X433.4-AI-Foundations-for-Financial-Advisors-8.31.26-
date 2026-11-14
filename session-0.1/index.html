@@ -1010,8 +1010,8 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
      picker, the data setting. Plan names and prices, model names and the
      retention figures all come from facts/FACTS.json (claude-plans,
      claude-model-ids-and-retirements, claude-consumer-retention) and carry
-     data-fact chips. The page does not say which way the training setting
-     starts: the record is a GAP on that and says not to state one.
+     data-fact chips. Since 2026-11-14 the page says model training is opt-out on the
+     individual plans, from the comparison table on claude.com/pricing (claude-plans).
      ================================================================== -->
 <section class="slide" id="s0" data-nav="What you need">
   <div class="eyebrow"><span>00 &middot; Start here</span><span class="mins">5 min</span></div>
@@ -1069,7 +1069,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <div class="panel pred" data-task="t-privacy" data-comp="commit-first-mcq" id="privPred">
     <span class="plab">Task 3 &middot; the data setting</span>
-    <p style="margin-top:0">Free, Pro and Max accounts carry a setting called <b>Help improve Claude</b>. It decides whether Anthropic may use your chats and coding sessions to train future models. You change it in your Privacy Settings: open them now and read how yours is set. <span class="conf h" data-src="src-anthropic-terms">H</span> Team and Enterprise accounts sit under commercial terms, so the setting does not apply to them. <span class="conf m" data-src="src-claude-privacy-training" data-fact="claude-consumer-retention">M</span></p>
+    <p style="margin-top:0">Free, Pro, Max and Ultra accounts carry a setting called <b>Help improve Claude</b>. It decides whether Anthropic may use your chats and coding sessions to train future models. <span class="conf h" data-src="src-anthropic-terms">H</span> Model training on these plans is opt-out: it is on unless you turn it off. <span class="conf h" data-src="src-claude-pricing" data-fact="claude-plans">H</span> You change it in your Privacy Settings: open them now and check yours. Team and Enterprise accounts sit under commercial terms, so the setting does not apply to them. <span class="conf m" data-src="src-claude-privacy-training" data-fact="claude-consumer-retention">M</span></p>
     <span class="qtext">You turn Help improve Claude off and delete a conversation. How long until it is removed from Anthropic&rsquo;s back-end storage?</span>
     <div class="vote" role="group" aria-label="How long until a deleted conversation is removed">
       <button type="button" class="vopt" data-k="a" aria-pressed="false"><span class="vk">A</span><span>Within 24 hours.</span></button>

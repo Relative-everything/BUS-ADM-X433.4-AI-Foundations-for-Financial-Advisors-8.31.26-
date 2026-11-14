@@ -23,13 +23,13 @@ never-fabricate rule exists to prevent.
 
 | | |
 |---|---|
-| Source records | **144** |
-| `last_verified` **EMPTY** | **140** |
+| Source records | **146** |
+| `last_verified` **EMPTY** | **142** |
 | `last_verified` populated | 1 |
 | `last_verified` *not applicable* (synthetic or fabricated) | 3 |
-| References standing behind an EMPTY `last_verified` | **585** of 705 |
+| References standing behind an EMPTY `last_verified` | **587** of 707 |
 | Moving targets | 65 |
-| Lock | notarised, digest `03d5867f4f6423ac` |
+| Lock | notarised, digest `7597b58bd2a00f59` |
 
 
 ## Already attested
@@ -52,8 +52,8 @@ Each one cites the evidence in the repository that records the confirmation.
 | 5 | `src-regsp-guide` | Enhancements to Regulation S-P: A Small Entity Compliance Guide | **EMPTY** | 2026-10-11 | 23 | no | case-4 `#deliverable`×2 · case-4 `#built`×2 · case-4 `#next` · S3 `#sPol`×2 · S4 `#s4`×3 · S4 `#sRSP`×6 · S4 `#s9` · S4 `#sCR`×6 |
 | 6 | `src-anthropic-terms` | Consumer Terms of Service, Commercial Terms of Service and Privacy Policy | **EMPTY** | 2026-10-27 | 20 | yes | case-4 `#next` · S0.1 `#s0` · S1 `#(footer)` · S4 `#(footer)` · S4 `#s3`×6 · S4 `#s4`×2 · S4 `#sCR`×7 · S5 `#s6` |
 | 7 | `src-claude-marks` | How Claude marks AI-generated content | **EMPTY** | 2026-10-27 | 18 | yes | S4 `#s1` · S4 `#sW1`×5 · S4 `#sW2`×6 · S4 `#sCR`×6 |
-| 8 | `src-secpri` | Examination priorities: Fiscal year 2026, §VII | **EMPTY** | **none** | 14 | no | S3 `#sPol` · S3 `#s16` · S4 `#s1`×3 · S4 `#s7` · S4 `#s5` · S4 `#sAud`×2 · S4 `#s9`×2 · S4 `#sCR`×3 |
-| 9 | `src-claude-pricing` | Plans and pricing | **EMPTY** | 2026-11-14 | 13 | yes | case-1 `#built` · case-4 `#built` · case-4 `#next` · S0.1 `#s0`×2 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3`×3 · S4 `#sCR` |
+| 8 | `src-claude-pricing` | Plans and pricing | **EMPTY** | 2026-11-14 | 14 | yes | case-1 `#built` · case-4 `#built` · case-4 `#next` · S0.1 `#s0`×3 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3`×3 · S4 `#sCR` |
+| 9 | `src-secpri` | Examination priorities: Fiscal year 2027, §VII | **EMPTY** | **none** | 14 | no | S3 `#sPol` · S3 `#s16` · S4 `#s1`×3 · S4 `#s7` · S4 `#s5` · S4 `#sAud`×2 · S4 `#s9`×2 · S4 `#sCR`×3 |
 | 10 | `src-magesh` | Hallucination-free? Assessing the reliability of leading AI legal research tools | **EMPTY** | **none** | 13 | no | S2 `#s10`×3 · S3 `#s6`×2 · S3 `#s15` · S3 `#s16`×2 · S4 `#s6`×3 · S4 `#sCR` · S5 `#sE3` |
 | 11 | `src-anthropic-dpa` | Data Processing Addendum | **EMPTY** | 2026-10-27 | 12 | yes | case-4 `#built` · case-4 `#next` · S4 `#s3`×2 · S4 `#s4`×2 · S4 `#sCR`×6 |
 | 12 | `src-models` | Models overview | **EMPTY** | 2026-11-14 | 12 | yes | case-1 `#built` · case-2 `#built` · case-3 `#built` · case-4 `#built` · case-5 `#built` · S0.1 `#s1` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag`×2 · S4 `#sCR` |
@@ -101,15 +101,15 @@ Each one cites the evidence in the repository that records the confirmation.
 | 54 | `src-dellacqua` | Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality | **EMPTY** | **none** | 3 | no | S5 `#s5`×2 · S5 `#sE5` |
 | 55 | `src-gemini-workspace` | Generative AI in Google Workspace Privacy Hub | **EMPTY** | **none** | 3 | yes | case-4 `#next` · S4 `#s3`×2 |
 | 56 | `src-google-ptcf` | Prompting guide 101: A quick-start handbook for effective prompts | **EMPTY** | **none** | 3 | no | S2 `#s6` · S5 `#s2`×2 |
-| 57 | `src-kitces-productivity` | Kitces Research on Advisor Productivity (fourth edition, 2024 survey data) | **EMPTY** | **none** | 3 | no | S2 `#s9` · S2 `#s12d` · S2 `#s12` |
-| 58 | `src-ms-copilot` | Privacy FAQ for Microsoft Copilot | **EMPTY** | **none** | 3 | yes | S4 `#s3`×2 · S4 `#sCR` |
-| 59 | `src-openai-provenance` | Provenance signals (Content Credentials & SynthID) in OpenAI-generated content | **EMPTY** | 2026-10-11 | 3 | yes | S4 `#s7` · S4 `#sW1`×2 |
-| 60 | `src-tools3` | When should I use web search, extended thinking, and research? | **EMPTY** | 2026-10-27 | 3 | yes | S0.1 `#s4`×3 |
-| 61 | `src-vanguard-alpha` | Putting a value on your value: Quantifying Vanguard Advisor's Alpha | **EMPTY** | **none** | 3 | no | S5 `#s7` · S5 `#sE5`×2 |
-| 62 | `src-aa-leaderboard` | Language model leaderboard, Intelligence Index | **EMPTY** | 2026-11-14 | 2 | yes | S1 `#s10`×2 |
-| 63 | `src-advisers-204-2` | Books and records to be maintained by investment advisers, 17 CFR 275.204-2 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
-| 64 | `src-advisers-206-4-7` | Compliance procedures and practices, 17 CFR 275.206(4)-7 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
-| 65 | `src-advisers-fiduciary` | Commission Interpretation Regarding Standard of Conduct for Investment Advisers, Release IA-5248 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
+| 57 | `src-ms-copilot` | Privacy FAQ for Microsoft Copilot | **EMPTY** | **none** | 3 | yes | S4 `#s3`×2 · S4 `#sCR` |
+| 58 | `src-openai-provenance` | Provenance signals (Content Credentials & SynthID) in OpenAI-generated content | **EMPTY** | 2026-10-11 | 3 | yes | S4 `#s7` · S4 `#sW1`×2 |
+| 59 | `src-tools3` | When should I use web search, extended thinking, and research? | **EMPTY** | 2026-10-27 | 3 | yes | S0.1 `#s4`×3 |
+| 60 | `src-vanguard-alpha` | Putting a value on your value: Quantifying Vanguard Advisor's Alpha | **EMPTY** | **none** | 3 | no | S5 `#s7` · S5 `#sE5`×2 |
+| 61 | `src-aa-leaderboard` | Language model leaderboard, Intelligence Index | **EMPTY** | 2026-11-14 | 2 | yes | S1 `#s10`×2 |
+| 62 | `src-advisers-204-2` | Books and records to be maintained by investment advisers, 17 CFR 275.204-2 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
+| 63 | `src-advisers-206-4-7` | Compliance procedures and practices, 17 CFR 275.206(4)-7 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
+| 64 | `src-advisers-fiduciary` | Commission Interpretation Regarding Standard of Conduct for Investment Advisers, Release IA-5248 | **EMPTY** | **none** | 2 | no | S4 `#s7` · S4 `#sCR` |
+| 65 | `src-advisor360-2026` | 2026 Connected Wealth Report | **EMPTY** | **none** | 2 | no | S2 `#s9` · S2 `#s12d` |
 | 66 | `src-anthropic-api-credits` | API credits for Max and Team plans | **EMPTY** | 2026-10-27 | 2 | yes | S1 `#(footer)` · S4 `#(footer)` |
 | 67 | `src-anthropic-certs` | What certifications has Anthropic obtained? | **EMPTY** | 2026-10-27 | 2 | yes | S4 `#s3` · S4 `#sCR` |
 | 68 | `src-anthropic-ctx-eng` | Effective context engineering for AI agents | **EMPTY** | 2026-10-27 | 2 | no | S4 `#sWS` · S4 `#sCR` |
@@ -158,37 +158,39 @@ Each one cites the evidence in the repository that records the confirmation.
 | 111 | `src-deloitte` | Generative AI is expected to magnify the risk of deepfakes and other fraud in banking | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
 | 112 | `src-directory` | Browse skills, connectors, and plugins in one directory | **EMPTY** | 2026-10-27 | 1 | yes | S0.1 `#s5` |
 | 113 | `src-drift` | Cybersecurity Alert: Salesloft Drift AI Supply Chain Attack | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
-| 114 | `src-gemini-api-terms` | Gemini API Additional Terms of Service | **EMPTY** | **none** | 1 | yes | S4 `#(footer)` |
-| 115 | `src-gemini-ratelimits` | Rate limits | **EMPTY** | **none** | 1 | yes | S4 `#(footer)` |
-| 116 | `src-ibm-breach-2026` | IBM study: one in four malicious breaches are AI-enabled, costing companies $6 million on average | **EMPTY** | **none** | 1 | yes | S4 `#sCR` |
-| 117 | `src-il-pipa` | Personal Information Protection Act, 815 ILCS 530/10 | **EMPTY** | **none** | 1 | no | case-4 `#built` |
-| 118 | `src-il-retirement-subtraction` | Illinois Income Tax Act, 35 ILCS 5/203(a)(2)(F): the subtraction for federally taxed retirement income | **EMPTY** | 2026-10-12 | 1 | no | case-2 `#deliverable` |
-| 119 | `src-investmentnews-t3-2026` | AI moves from novelty to backbone as advisors reshape their fintech stacks | **EMPTY** | **none** | 1 | no | S5 `#s6` |
-| 120 | `src-irs-590b` | Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs) | **EMPTY** | 2026-10-12 | 1 | yes | case-2 `#deliverable` |
-| 121 | `src-irs-8606` | Form 8606, Nondeductible IRAs, and its instructions | **EMPTY** | 2026-10-12 | 1 | yes | case-2 `#deliverable` |
-| 122 | `src-irs-guidance-primer` | Understanding IRS guidance: a brief primer | **EMPTY** | 2026-10-13 | 1 | yes | S1 `#s15` |
-| 123 | `src-karpathy-intro` | [1hr Talk] Intro to Large Language Models, the segment 45:43 to 58:37 (video) | **EMPTY** | 2026-10-13 | 1 | yes | S3 `#s16` |
-| 124 | `src-noy-zhang` | Experimental evidence on the productivity effects of generative artificial intelligence | **EMPTY** | **none** | 1 | no | S5 `#s5` |
-| 125 | `src-openai-pricing` | API pricing | **EMPTY** | **none** | 1 | yes | S2 `#s5` |
-| 126 | `src-openai-retire-4o` | Retiring GPT-4o and other ChatGPT models | **EMPTY** | **none** | 1 | yes | S5 `#s1` |
-| 127 | `src-pew-ai-summaries` | Google users are less likely to click on links when an AI summary appears in the results | **EMPTY** | **none** | 1 | no | S5 `#s6` |
-| 128 | `src-rightcapital-iris` | RightCapital launches Iris, the first planning-focused AI agent designed to transform the financial planning process | **EMPTY** | **none** | 1 | yes | S5 `#s6` |
-| 129 | `src-rohrer` | Interleaved practice improves mathematics learning | **EMPTY** | 2026-08-29 | 1 | no | S1 `#s13` |
-| 130 | `src-rp-2022-32` | Late portability elections under Rev. Proc. 2022-32 (IRB 2022-30) | **EMPTY** | 2026-10-11 | 1 | no | S2 `#s7` |
-| 131 | `src-sampling` | LLM sampling visualiser | **EMPTY** | **none** | 1 | no | S1 `#s8` |
-| 132 | `src-sg-deepfake-2026` | Fake Zoom call with PM Wong: police release deepfake footage of scam that caused victim to hand over S$4.9 million | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
-| 133 | `src-td10001` | Required Minimum Distributions, T.D. 10001, 89 FR 58886 (final regulations under IRC § 401(a)(9)) | **EMPTY** | 2026-10-12 | 1 | no | case-2 `#deliverable` |
-| 134 | `src-trailofbits-image` | Weaponizing image scaling against production AI systems | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
-| 135 | `src-uae-voice` | Fraudsters cloned company director's voice in $35 million heist, police find | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
-| 136 | `src-unit42-ipi` | Fooling AI agents: web-based indirect prompt injection observed in the wild | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
-| 137 | `src-zheng-persona` | When "A Helpful Assistant" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models | **EMPTY** | **none** | 1 | no | S2 `#s6` |
-| 138 | `src-capitalone` | Information on the Capital One Cyber Incident | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 139 | `src-equifax` | Data protection: actions taken by Equifax and federal agencies in response to the 2017 breach (GAO-18-559) | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
-| 140 | `src-hallowell` | Hallowell v. Commissioner, T.C. Memo. 2023-217 | *n/a* | *n/a* | 0 | no | *listed by S4, cited by none* |
-| 141 | `src-kessler` | Kessler v. Commissioner, 152 T.C. 88 (2019) | *n/a* | *n/a* | 0 | no | *listed by S2, cited by none* |
-| 142 | `src-kitces-advisortech` | The Latest in Financial AdvisorTech, AdvisorTech columns, August 2026 and November 2025 | **EMPTY** | **none** | 0 | yes | *listed by no lesson, cited by none* |
-| 143 | `src-laplace` | A philosophical essay on probabilities | **EMPTY** | *n/a* | 0 | no | *listed by S2, cited by none* |
-| 144 | `src-morningstar` | AI for advisors: Enhancing client conversations | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
+| 114 | `src-finra2614` | Regulatory Notice 26-14: FINRA requests comment on proposed changes to modernize Rule 2210 (Communications with the Public) | **EMPTY** | 2026-11-14 | 1 | no | S4 `#s1` |
+| 115 | `src-gemini-api-terms` | Gemini API Additional Terms of Service | **EMPTY** | **none** | 1 | yes | S4 `#(footer)` |
+| 116 | `src-gemini-ratelimits` | Rate limits | **EMPTY** | **none** | 1 | yes | S4 `#(footer)` |
+| 117 | `src-ibm-breach-2026` | IBM study: one in four malicious breaches are AI-enabled, costing companies $6 million on average | **EMPTY** | **none** | 1 | yes | S4 `#sCR` |
+| 118 | `src-il-pipa` | Personal Information Protection Act, 815 ILCS 530/10 | **EMPTY** | **none** | 1 | no | case-4 `#built` |
+| 119 | `src-il-retirement-subtraction` | Illinois Income Tax Act, 35 ILCS 5/203(a)(2)(F): the subtraction for federally taxed retirement income | **EMPTY** | 2026-10-12 | 1 | no | case-2 `#deliverable` |
+| 120 | `src-investmentnews-t3-2026` | AI moves from novelty to backbone as advisors reshape their fintech stacks | **EMPTY** | **none** | 1 | no | S5 `#s6` |
+| 121 | `src-irs-590b` | Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs) | **EMPTY** | 2026-10-12 | 1 | yes | case-2 `#deliverable` |
+| 122 | `src-irs-8606` | Form 8606, Nondeductible IRAs, and its instructions | **EMPTY** | 2026-10-12 | 1 | yes | case-2 `#deliverable` |
+| 123 | `src-irs-guidance-primer` | Understanding IRS guidance: a brief primer | **EMPTY** | 2026-10-13 | 1 | yes | S1 `#s15` |
+| 124 | `src-karpathy-intro` | [1hr Talk] Intro to Large Language Models, the segment 45:43 to 58:37 (video) | **EMPTY** | 2026-10-13 | 1 | yes | S3 `#s16` |
+| 125 | `src-kitces-productivity` | Kitces Research on Advisor Productivity (fourth edition, 2024 survey data) | **EMPTY** | **none** | 1 | no | S2 `#s12` |
+| 126 | `src-noy-zhang` | Experimental evidence on the productivity effects of generative artificial intelligence | **EMPTY** | **none** | 1 | no | S5 `#s5` |
+| 127 | `src-openai-pricing` | API pricing | **EMPTY** | **none** | 1 | yes | S2 `#s5` |
+| 128 | `src-openai-retire-4o` | Retiring GPT-4o and other ChatGPT models | **EMPTY** | **none** | 1 | yes | S5 `#s1` |
+| 129 | `src-pew-ai-summaries` | Google users are less likely to click on links when an AI summary appears in the results | **EMPTY** | **none** | 1 | no | S5 `#s6` |
+| 130 | `src-rightcapital-iris` | RightCapital launches Iris, the first planning-focused AI agent designed to transform the financial planning process | **EMPTY** | **none** | 1 | yes | S5 `#s6` |
+| 131 | `src-rohrer` | Interleaved practice improves mathematics learning | **EMPTY** | 2026-08-29 | 1 | no | S1 `#s13` |
+| 132 | `src-rp-2022-32` | Late portability elections under Rev. Proc. 2022-32 (IRB 2022-30) | **EMPTY** | 2026-10-11 | 1 | no | S2 `#s7` |
+| 133 | `src-sampling` | LLM sampling visualiser | **EMPTY** | **none** | 1 | no | S1 `#s8` |
+| 134 | `src-sg-deepfake-2026` | Fake Zoom call with PM Wong: police release deepfake footage of scam that caused victim to hand over S$4.9 million | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
+| 135 | `src-td10001` | Required Minimum Distributions, T.D. 10001, 89 FR 58886 (final regulations under IRC § 401(a)(9)) | **EMPTY** | 2026-10-12 | 1 | no | case-2 `#deliverable` |
+| 136 | `src-trailofbits-image` | Weaponizing image scaling against production AI systems | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
+| 137 | `src-uae-voice` | Fraudsters cloned company director's voice in $35 million heist, police find | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
+| 138 | `src-unit42-ipi` | Fooling AI agents: web-based indirect prompt injection observed in the wild | **EMPTY** | **none** | 1 | no | S4 `#sCR` |
+| 139 | `src-zheng-persona` | When "A Helpful Assistant" Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models | **EMPTY** | **none** | 1 | no | S2 `#s6` |
+| 140 | `src-capitalone` | Information on the Capital One Cyber Incident | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 141 | `src-equifax` | Data protection: actions taken by Equifax and federal agencies in response to the 2017 breach (GAO-18-559) | **EMPTY** | **none** | 0 | no | *listed by no lesson, cited by none* |
+| 142 | `src-hallowell` | Hallowell v. Commissioner, T.C. Memo. 2023-217 | *n/a* | *n/a* | 0 | no | *listed by S4, cited by none* |
+| 143 | `src-kessler` | Kessler v. Commissioner, 152 T.C. 88 (2019) | *n/a* | *n/a* | 0 | no | *listed by S2, cited by none* |
+| 144 | `src-kitces-advisortech` | The Latest in Financial AdvisorTech, AdvisorTech columns, August 2026 and November 2025 | **EMPTY** | **none** | 0 | yes | *listed by no lesson, cited by none* |
+| 145 | `src-laplace` | A philosophical essay on probabilities | **EMPTY** | *n/a* | 0 | no | *listed by S2, cited by none* |
+| 146 | `src-morningstar` | AI for advisors: Enhancing client conversations | **EMPTY** | **none** | 0 | no | *listed by S2, cited by none* |
 
 
 ---
@@ -204,8 +206,8 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-regsp-guide` | https://www.sec.gov/files/rules/final/2024/regulation-s-p-small-entity-compliance-guide.pdf |
 | `src-anthropic-terms` | https://www.anthropic.com/legal/commercial-terms |
 | `src-claude-marks` | https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content |
-| `src-secpri` | https://www.sec.gov/files/2026-exam-priorities.pdf |
 | `src-claude-pricing` | https://claude.com/pricing |
+| `src-secpri` | https://www.sec.gov/files/2027-exam-priorities.pdf |
 | `src-magesh` | https://onlinelibrary.wiley.com/doi/10.1111/jels.12413 |
 | `src-anthropic-dpa` | https://www.anthropic.com/legal/data-processing-addendum |
 | `src-models` | https://platform.claude.com/docs/en/models/overview |
@@ -253,7 +255,6 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-dellacqua` | https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321 |
 | `src-gemini-workspace` | https://support.google.com/a/answer/15706919 |
 | `src-google-ptcf` | https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf |
-| `src-kitces-productivity` | https://www.kitces.com/blog/advisor-productivity-key-drivers-practice-management-team-structure-revenue-client-pricing-success/ |
 | `src-ms-copilot` | https://support.microsoft.com/en-us/microsoft-copilot/privacy-faq-for-microsoft-copilot |
 | `src-openai-provenance` | https://help.openai.com/en/articles/8912793-provenance-signals-content-credentials-synthid-in-openai-generated-content |
 | `src-tools3` | https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research |
@@ -262,6 +263,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-advisers-204-2` | https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.204-2 |
 | `src-advisers-206-4-7` | https://www.ecfr.gov/current/title-17/chapter-II/part-275/section-275.206(4)-7 |
 | `src-advisers-fiduciary` | https://sec.gov/rules/interp/2019/ia-5248.pdf |
+| `src-advisor360-2026` | https://www.businesswire.com/news/home/20260113913247/en/ |
 | `src-anthropic-api-credits` | https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers |
 | `src-anthropic-certs` | https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained |
 | `src-anthropic-ctx-eng` | https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents |
@@ -310,6 +312,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-deloitte` | https://www.deloitte.com/us/en/insights/industry/financial-services/deepfake-banking-fraud-risk-on-the-rise.html |
 | `src-directory` | https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory |
 | `src-drift` | https://www.finra.org/rules-guidance/guidance/salesloft-drift-AI-supply-chain-attack |
+| `src-finra2614` | https://www.finra.org/rules-guidance/notices/26-14 |
 | `src-gemini-api-terms` | https://ai.google.dev/gemini-api/terms |
 | `src-gemini-ratelimits` | https://ai.google.dev/gemini-api/docs/rate-limits |
 | `src-ibm-breach-2026` | https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average |
@@ -320,6 +323,7 @@ Each one cites the evidence in the repository that records the confirmation.
 | `src-irs-8606` | https://www.irs.gov/forms-pubs/about-form-8606 |
 | `src-irs-guidance-primer` | https://www.irs.gov/newsroom/understanding-irs-guidance-a-brief-primer |
 | `src-karpathy-intro` | https://www.youtube.com/watch?v=zjkBMFhNj_g |
+| `src-kitces-productivity` | https://www.kitces.com/blog/advisor-productivity-key-drivers-practice-management-team-structure-revenue-client-pricing-success/ |
 | `src-noy-zhang` | https://www.science.org/doi/10.1126/science.adh2586 |
 | `src-openai-pricing` | https://developers.openai.com/api/docs/pricing |
 | `src-openai-retire-4o` | https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models |
@@ -370,13 +374,13 @@ Opened directly on 2026-09-27: the Commercial Terms (effective 17 June 2025), th
 
 Opened directly on 2026-09-25 and again, in full, on 2026-09-27, together with the Claude Content Checker page at claude.com/check-content. Quotations below are the pages' own words. Read again in full on 2026-10-12 and found to match the 2026-10-11 reading (FACTS claude-text-watermark). Audit 2026-10-27 (fetched in full): verified.
 
-### `src-secpri`
-
-sec.gov is egress-blocked from the build (2026-09-27). §VII's contents in scope are as reported by several consistent law-firm and compliance-firm summaries of the 17 November 2025 release; the record's H stands on the earlier verification of the AI and Regulation S-P focus, and the Appendix D4 use of the polymorphic-malware line is chipped M on the page for that reason. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the FY2027 examination priorities (sec.gov/files/2027-exam-priorities.pdf, released 2026-10-23) and the 2026 priorities press release 2025-132. Section number VII and the quoted disclaimer are not confirmed from the PDF. Audit 2026-11-14: sec.gov search results show the FY2027 priorities were released on 23 October 2026 (press release 2026-109, sec.gov/files/2027-exam-priorities.pdf); sec.gov answered 403 to a direct fetch, so neither year was read and the served pages still cite FY2026 (register).
-
 ### `src-claude-pricing`
 
 Opened directly on 2026-09-27, with the Help Center articles on the Max plan (11049741) and on Enterprise seats (13393991) and the Claude Enterprise solutions page. The Max 20x figure is on the Help Center article, not the pricing page. Prices move without notice. Audit 2026-10-27 (fetched in full): verified. Audit 2026-11-14 (fetched in full, with Help Center 11049741): the $200 tier is now a separate plan named Ultra and Max is the single $100 tier; "Max 5x" and "Max 20x" are no longer plan names. The comparison table labels model training Opt-out on the four individual plans. Session 0.1 and Session 1 were reworded the same day; cases/case-4.html keeps the old names inside a captured prompt until its re-capture.
+
+### `src-secpri`
+
+sec.gov is egress-blocked from the build (2026-09-27). §VII's contents in scope are as reported by several consistent law-firm and compliance-firm summaries of the 17 November 2025 release; the record's H stands on the earlier verification of the AI and Regulation S-P focus, and the Appendix D4 use of the polymorphic-malware line is chipped M on the page for that reason. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the FY2027 examination priorities (sec.gov/files/2027-exam-priorities.pdf, released 2026-10-23) and the 2026 priorities press release 2025-132. Section number VII and the quoted disclaimer are not confirmed from the PDF. Audit 2026-11-14: sec.gov search results show the FY2027 priorities were released on 23 October 2026 (press release 2026-109, sec.gov/files/2027-exam-priorities.pdf); sec.gov answered 403 to a direct fetch, so neither year was read and the served pages still cite FY2026 (register). Audit 2026-11-14: the record moves from the fiscal 2026 document (sec.gov/files/2026-exam-priorities.pdf, released 17 November 2025, never read from this build) to the fiscal 2027 document, which the instructor supplied as a PDF and which was read in full; the copy is docs/changes/2026-11-14-facts-refresh/sec-fy2027-exam-priorities.pdf (20 pages, PDF created 21 October 2026). Its disclaimer reads "This statement, like all staff statements, has no legal force or effect: it does not alter or amend applicable law, and it creates no new or additional obligations for any person." It writes "super intelligence (SI)" throughout where earlier years wrote AI, and it does not mention polymorphic malware, so the two Session 4 lines that carried that phrase were reworded. The 23 October release date is from sec.gov search results (press release 2026-109), not printed in the PDF. sec.gov answers 403 to a fetch, so last_retrieved does not move.
 
 ### `src-magesh`
 
@@ -566,10 +570,6 @@ NOT RETRIEVED. support.google.com is egress-blocked from this build environment 
 
 Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. October 2024 edition; first edition April 2024.
 
-### `src-kitces-productivity`
-
-Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Kitces states about two hours of prep plus follow-up per meeting, more than an hour per meeting hour, not one hour per two-hour meeting; dated 2025 on 2024 data, not August 2026; the Advisor360 reliance figure was not found (GAP, see register). Audit 2026-11-14: a search result on businesswire.com attributes "just 3% rely on AI-generated financial recommendations" to Advisor360's 2026 Connected Wealth Report (300 advisors, released 13 January 2026), not to Kitces; the release answered 403 and was not read. The two Session 2 chips on the 3% figure still point here (register).
-
 ### `src-ms-copilot`
 
 NOT RETRIEVED. support.microsoft.com is egress-blocked from this build environment (2026-09-27). The figures in scope come from search-engine summaries of this FAQ and of "Conversation history in Microsoft Copilot", which is why the confidence is M. Read both pages before teaching the numbers. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The setting is named Training on conversation activity (and Training on voice conversations) on Microsoft's privacy-controls page; the takes-effect-within-30-days clause is on no returned page and is dropped.
@@ -584,7 +584,7 @@ Audit 2026-10-27 (fetched in full): verified with corrections. Dated June 2, 202
 
 ### `src-vanguard-alpha`
 
-NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee. Re-checked 2026-10-04: vanguard.ca, Vanguard's own host for the infographic, was blocked; a fresh search returned about 3% and 150 basis points unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The about 3 percent framing is confirmed on Vanguard's own pages; the 150 bps behavioural-coaching figure is printed in the 2016 US and 2018 Canada editions, while one summary says the 2022 edition frames coaching as 0 to over 200 bps (GAP, see register). Audit 2026-11-14: the link on this record returned Vanguard's 404 page ("This page is currently unavailable") to this build's fetch, although a web search the same day still lists it, so the 2022 PDF could not be read here and the link wants checking in a browser; search results for two copies of the 2022 edition show behavioural coaching as "0 to > 200 bps" (register).
+NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee. Re-checked 2026-10-04: vanguard.ca, Vanguard's own host for the infographic, was blocked; a fresh search returned about 3% and 150 basis points unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The about 3 percent framing is confirmed on Vanguard's own pages; the 150 bps behavioural-coaching figure is printed in the 2016 US and 2018 Canada editions, while one summary says the 2022 edition frames coaching as 0 to over 200 bps (GAP, see register). Audit 2026-11-14: the link on this record returned Vanguard's 404 page ("This page is currently unavailable") to this build's fetch, although a web search the same day still lists it, so the 2022 PDF could not be read here and the link wants checking in a browser; search results for two copies of the 2022 edition show behavioural coaching as "0 to > 200 bps" (register). Later on 2026-11-14, at the instructor's instruction to keep the page to quantified evidence: the two Session 5 sentences no longer say coaching is about half; they state the about-3% figure, which is confirmed on Vanguard's own pages, and name coaching as a module.
 
 ### `src-aa-leaderboard`
 
@@ -601,6 +601,10 @@ NOT RETRIEVED. ecfr.gov and law.cornell.edu are egress-blocked from this build e
 ### `src-advisers-fiduciary`
 
 NOT RETRIEVED. sec.gov is egress-blocked from this build environment (2026-09-27). The release's existence, date and number are certain; the characterisation in scope is from the maintainer's knowledge and is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Adopted 5 June 2019; Federal Register 12 July 2019. Scope reworded to the release's own terms.
+
+### `src-advisor360-2026`
+
+NOT RETRIEVED. businesswire.com answered 403 to this build's fetch on 2026-11-14. A search result on the publisher's domain gives the release date, a survey of 300 advisors fielded in fall 2025, and the sentence "just 3% rely on AI-generated financial recommendations", which is why the confidence is M. Added 2026-11-14 at the instructor's instruction, to take the two Session 2 chips on the 3% figure off src-kitces-productivity, which never carried it.
 
 ### `src-anthropic-api-credits`
 
@@ -794,6 +798,10 @@ Audit 2026-10-27 (fetched in full): verified with corrections. Page shows Update
 
 NOT RETRIEVED. finra.org is egress-blocked from this build environment (2026-09-27). The incident is described consistently by AppOmni, WTW, TechRadar and Paubox (August and September 2025), citing Google Threat Intelligence's count of more than 700 affected organisations. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Dated 10 September 2025; the MFA-bypass phrase in scope should be read off the alert before it is taught.
 
+### `src-finra2614`
+
+Page fetched and read 2026-11-14. Published 9 July 2026; comment period expired 11 September 2026. A request for comment, not a rule: it proposes replacing the principal pre-use approval requirement for retail communications with risk-based supervision standards, and cites changes in social media use and advances in generative AI. Its Artificial Intelligence section says FINRA's rules and guidance are intended to be technologically neutral and that "Members are responsible for their communications, regardless of whether they are generated by a human or AI technology."
+
 ### `src-gemini-api-terms`
 
 NOT RETRIEVED. ai.google.dev is egress-blocked from this build environment (2026-09-27). The wording in scope appears verbatim in search snippets of the page itself and in two independent mirrors of the terms (Simon Willison, October 2024; ScanCode LicenseDB, 2025). Read the page before class; Google changes it. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the archived text dated 20 November 2025 (ai.google.dev/gemini-api/terms-archive/terms_11_20_25) anchors the quoted sentence to a frozen version.
@@ -833,6 +841,10 @@ Existence and content (revenue rulings, revenue procedures, notices, announcemen
 ### `src-karpathy-intro`
 
 Title, date (posted 2023-11-23 per the summaries; the talk is dated 2023-11-22) and the security segment (jailbreaks, prompt injection, data poisoning) verified 2026-10-13 from three independent write-ups found by web search; the YouTube id was not resolved from this container. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Video id zjkBMFhNj_g confirmed; chapter list 45:43 Security intro, 46:14 Jailbreaks, 51:30 Prompt injection, 56:23 Data poisoning, 58:37 Conclusions matches the segment; an aggregator shows the upload as 23 November 2023.
+
+### `src-kitces-productivity`
+
+Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Kitces states about two hours of prep plus follow-up per meeting, more than an hour per meeting hour, not one hour per two-hour meeting; dated 2025 on 2024 data, not August 2026; the Advisor360 reliance figure was not found (GAP, see register). Audit 2026-11-14: a search result on businesswire.com attributes "just 3% rely on AI-generated financial recommendations" to Advisor360's 2026 Connected Wealth Report (300 advisors, released 13 January 2026), not to Kitces; the release answered 403 and was not read. The two Session 2 chips on the 3% figure still point here (register). Later on 2026-11-14: the two Session 2 chips on the 3% figure moved to the new record src-advisor360-2026.
 
 ### `src-noy-zhang`
 

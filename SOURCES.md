@@ -327,24 +327,24 @@ used_for.session-5: the service-provider reading behind the Where question for a
 ## src-secpri
 
 ```source
-title:          Examination priorities: Fiscal year 2026, §VII
+title:          Examination priorities: Fiscal year 2027, §VII
 author:         U.S. Securities and Exchange Commission, Division of Examinations
 publisher:      SEC
-link:           https://www.sec.gov/files/2026-exam-priorities.pdf
-published:      2025-11-17
+link:           https://www.sec.gov/files/2027-exam-priorities.pdf
+published:      2026-10-23
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
-retrieval_note: sec.gov is egress-blocked from the build (2026-09-27). §VII's contents in scope are as reported by several consistent law-firm and compliance-firm summaries of the 17 November 2025 release; the record's H stands on the earlier verification of the AI and Regulation S-P focus, and the Appendix D4 use of the polymorphic-malware line is chipped M on the page for that reason. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the FY2027 examination priorities (sec.gov/files/2027-exam-priorities.pdf, released 2026-10-23) and the 2026 priorities press release 2025-132. Section number VII and the quoted disclaimer are not confirmed from the PDF. Audit 2026-11-14: sec.gov search results show the FY2027 priorities were released on 23 October 2026 (press release 2026-109, sec.gov/files/2027-exam-priorities.pdf); sec.gov answered 403 to a direct fetch, so neither year was read and the served pages still cite FY2026 (register).
-scope:          §VII, Risk Areas Impacting Various Market Participants. Information security and operational resiliency, including ransomware, data loss prevention, incident response and the 2024 amendments to Regulation S-P; emerging financial technology and AI, including the accuracy of AI representations and a review of training and security controls for risks from AI and polymorphic malware attacks.
-used_for.session-3: that the fiscal 2026 examination priorities, released 17 November 2025, state that they have no legal force or effect, and that an AI use policy is an examination expectation named in no rule (Appendix C9, §07)
+retrieval_note: sec.gov is egress-blocked from the build (2026-09-27). §VII's contents in scope are as reported by several consistent law-firm and compliance-firm summaries of the 17 November 2025 release; the record's H stands on the earlier verification of the AI and Regulation S-P focus, and the Appendix D4 use of the polymorphic-malware line is chipped M on the page for that reason. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the FY2027 examination priorities (sec.gov/files/2027-exam-priorities.pdf, released 2026-10-23) and the 2026 priorities press release 2025-132. Section number VII and the quoted disclaimer are not confirmed from the PDF. Audit 2026-11-14: sec.gov search results show the FY2027 priorities were released on 23 October 2026 (press release 2026-109, sec.gov/files/2027-exam-priorities.pdf); sec.gov answered 403 to a direct fetch, so neither year was read and the served pages still cite FY2026 (register). Audit 2026-11-14: the record moves from the fiscal 2026 document (sec.gov/files/2026-exam-priorities.pdf, released 17 November 2025, never read from this build) to the fiscal 2027 document, which the instructor supplied as a PDF and which was read in full; the copy is docs/changes/2026-11-14-facts-refresh/sec-fy2027-exam-priorities.pdf (20 pages, PDF created 21 October 2026). Its disclaimer reads "This statement, like all staff statements, has no legal force or effect: it does not alter or amend applicable law, and it creates no new or additional obligations for any person." It writes "super intelligence (SI)" throughout where earlier years wrote AI, and it does not mention polymorphic malware, so the two Session 4 lines that carried that phrase were reworded. The 23 October release date is from sec.gov search results (press release 2026-109), not printed in the PDF. sec.gov answers 403 to a fetch, so last_retrieved does not move.
+scope:          §VII, Risk Areas Impacting Various Market Participants. A.1 cybersecurity, including ransomware, data loss prevention, incident response and third-party service providers; A.2 emerging financial technology, where the document calls AI "super intelligence (SI)": preparation for SI-related cyberattacks such as SI-generated phishing and synthetic or deepfake voice and video, policies and procedures relating to monitoring SI, and whether representations are fair and accurate; A.3 Regulation S-ID and Regulation S-P, including customer notification procedures and oversight of service providers under the amended rule. The disclaimer page states the document "has no legal force or effect".
+used_for.session-3: that the fiscal 2027 examination priorities, released 23 October 2026, state that they have no legal force or effect, and that an AI use policy is an examination expectation named in no rule (Appendix C9, §07)
 last_retrieved.session-3: 2026-10-11
-figures.session-3: the release date and the no-legal-force statement (FACTS sec-exam-priorities-status), and the absence of a rule that names an AI use policy (FACTS ai-policy-requirement), both from sec.gov snippets read 2026-10-11
-used_for.session-4: the fiscal 2026 examination priorities naming AI and Regulation S-P, which state that they have no legal force or effect (§02); that an AI use policy is an examination expectation named in no rule (Appendix D2, §05, §07); its line on training and security controls for AI and polymorphic malware (Appendix D4)
+figures.session-3: the no-legal-force statement, read in the document on 2026-11-14; the release date from sec.gov search results (FACTS sec-exam-priorities-status); the absence of a rule that names an AI use policy (FACTS ai-policy-requirement)
+used_for.session-4: the fiscal 2027 examination priorities covering AI and Regulation S-P, which state that they have no legal force or effect (§02); that an AI use policy is an examination expectation named in no rule (Appendix D2, §05, §07); its line on AI-generated phishing and deepfake voice and video (Appendix D4)
 last_retrieved.session-4: 2026-10-11
-figures.session-4: the no-legal-force statement (FACTS sec-exam-priorities-status) and the absence of a rule that names an AI use policy (FACTS ai-policy-requirement), both from sec.gov snippets read 2026-10-11
+figures.session-4: the no-legal-force statement and the §VII.A.2 wording, read in the document on 2026-11-14 (FACTS sec-exam-priorities-status and ai-policy-requirement)
 ```
 
 ## src-kalai
@@ -677,12 +677,12 @@ link:           https://www.kitces.com/blog/advisor-productivity-key-drivers-pra
 published:      2025
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Kitces states about two hours of prep plus follow-up per meeting, more than an hour per meeting hour, not one hour per two-hour meeting; dated 2025 on 2024 data, not August 2026; the Advisor360 reliance figure was not found (GAP, see register). Audit 2026-11-14: a search result on businesswire.com attributes "just 3% rely on AI-generated financial recommendations" to Advisor360's 2026 Connected Wealth Report (300 advisors, released 13 January 2026), not to Kitces; the release answered 403 and was not read. The two Session 2 chips on the 3% figure still point here (register).
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Kitces states about two hours of prep plus follow-up per meeting, more than an hour per meeting hour, not one hour per two-hour meeting; dated 2025 on 2024 data, not August 2026; the Advisor360 reliance figure was not found (GAP, see register). Audit 2026-11-14: a search result on businesswire.com attributes "just 3% rely on AI-generated financial recommendations" to Advisor360's 2026 Connected Wealth Report (300 advisors, released 13 January 2026), not to Kitces; the release answered 403 and was not read. The two Session 2 chips on the 3% figure still point here (register). Later on 2026-11-14: the two Session 2 chips on the 3% figure moved to the new record src-advisor360-2026.
 confidence:     M
 kind:           evidence
 moving_target:  false
-scope:          About two hours of preparation and follow-up per client meeting, more than one hour per meeting hour. The reliance figure travelling with it is reported via Advisor360 and Kitces Research through a secondary aggregator and is directional only.
-used_for.session-2: the prep-and-follow-up hour ratio and the directional reliance figure
+scope:          About two hours of preparation and follow-up per client meeting, more than one hour per meeting hour.
+used_for.session-2: the prep-and-follow-up hour ratio
 ```
 
 ## src-morningstar
@@ -701,6 +701,43 @@ kind:           background
 moving_target:  false
 scope:          Assigned reading for session-2. No page claim rests on it.
 used_for.session-2: assigned reading; no page claim rests on it
+```
+
+## src-finra2614
+
+```source
+title:          Regulatory Notice 26-14: FINRA requests comment on proposed changes to modernize Rule 2210 (Communications with the Public)
+author:         Financial Industry Regulatory Authority
+publisher:      FINRA
+link:           https://www.finra.org/rules-guidance/notices/26-14
+published:      2026-07-09
+last_retrieved: 2026-11-14
+last_verified:
+retrieval_note: Page fetched and read 2026-11-14. Published 9 July 2026; comment period expired 11 September 2026. A request for comment, not a rule: it proposes replacing the principal pre-use approval requirement for retail communications with risk-based supervision standards, and cites changes in social media use and advances in generative AI. Its Artificial Intelligence section says FINRA's rules and guidance are intended to be technologically neutral and that "Members are responsible for their communications, regardless of whether they are generated by a human or AI technology."
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          FINRA's July 2026 request for comment on modernising Rule 2210. A proposal, creating no obligation; it restates that members are responsible for their communications whether a human or AI generated them.
+used_for.session-4: that members answer for their communications whether a human or AI wrote them, named beside Notice 24-09 on the §02 source line
+last_retrieved.session-4: 2026-11-14
+```
+
+## src-advisor360-2026
+
+```source
+title:          2026 Connected Wealth Report
+author:         Advisor360
+publisher:      Advisor360, news release on Business Wire
+link:           https://www.businesswire.com/news/home/20260113913247/en/
+published:      2026-01-13
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. businesswire.com answered 403 to this build's fetch on 2026-11-14. A search result on the publisher's domain gives the release date, a survey of 300 advisors fielded in fall 2025, and the sentence "just 3% rely on AI-generated financial recommendations", which is why the confidence is M. Added 2026-11-14 at the instructor's instruction, to take the two Session 2 chips on the 3% figure off src-kitces-productivity, which never carried it.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          Advisor360's survey of 300 financial advisors, fielded in fall 2025 and released 13 January 2026: 3% rely on AI-generated financial recommendations. A vendor survey; the figure is directional.
+used_for.session-2: the roughly 3% of advisors who rely on a model's recommendation, set against the adoption share (§03 and the retrieval bridge)
 ```
 
 ## src-kessler
@@ -2238,12 +2275,12 @@ link:           https://corporate.vanguard.com/content/dam/corp/articles/pdf/put
 published:      2022-07
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee. Re-checked 2026-10-04: vanguard.ca, Vanguard's own host for the infographic, was blocked; a fresh search returned about 3% and 150 basis points unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The about 3 percent framing is confirmed on Vanguard's own pages; the 150 bps behavioural-coaching figure is printed in the 2016 US and 2018 Canada editions, while one summary says the 2022 edition frames coaching as 0 to over 200 bps (GAP, see register). Audit 2026-11-14: the link on this record returned Vanguard's 404 page ("This page is currently unavailable") to this build's fetch, although a web search the same day still lists it, so the 2022 PDF could not be read here and the link wants checking in a browser; search results for two copies of the 2022 edition show behavioural coaching as "0 to > 200 bps" (register).
+retrieval_note: NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee. Re-checked 2026-10-04: vanguard.ca, Vanguard's own host for the infographic, was blocked; a fresh search returned about 3% and 150 basis points unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The about 3 percent framing is confirmed on Vanguard's own pages; the 150 bps behavioural-coaching figure is printed in the 2016 US and 2018 Canada editions, while one summary says the 2022 edition frames coaching as 0 to over 200 bps (GAP, see register). Audit 2026-11-14: the link on this record returned Vanguard's 404 page ("This page is currently unavailable") to this build's fetch, although a web search the same day still lists it, so the 2022 PDF could not be read here and the link wants checking in a browser; search results for two copies of the 2022 edition show behavioural coaching as "0 to > 200 bps" (register). Later on 2026-11-14, at the instructor's instruction to keep the page to quantified evidence: the two Session 5 sentences no longer say coaching is about half; they state the about-3% figure, which is confirmed on Vanguard's own pages, and name coaching as a module.
 confidence:     M
 kind:           evidence
 moving_target:  false
-scope:          Vanguard's framework attributes about 3 percentage points a year of potential net value to an adviser following its best practices, of which behavioural coaching, keeping clients to their plan in fearful or greedy markets, is the largest single module at about 150 basis points, roughly half.
-used_for.session-5: the about-3% figure and behavioural coaching as about half of it (§04, §05)
+scope:          Vanguard's framework attributes about 3 percentage points a year of potential net value to an adviser following its best practices; behavioural coaching, keeping clients to their plan in fearful or greedy markets, is one of its modules. The share coaching makes up differs by edition (about 150 basis points in the 2014 to 2020 editions; a range in the 2022 edition by search result) and is on no page.
+used_for.session-5: the about-3% figure and behavioural coaching as one of its modules (§04, §05)
 ```
 
 ## src-cfp-psychology

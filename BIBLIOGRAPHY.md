@@ -5,11 +5,11 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**144 works, 705 references across 11 lessons.** 137 are
+**146 works, 707 references across 11 lessons.** 139 are
 cited by at least one claim; 7 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
-**67 records carry at least one field this repository could not verify, and
+**68 records carry at least one field this repository could not verify, and
 every one of them is printed below as `[UNVERIFIED, needs source]` rather than omitted.** The
 rendered footer in a lesson omits an unknown field, because a footer in which
 thirty entries shout about a missing publisher helps nobody. This file is where a
@@ -19,6 +19,25 @@ reader comes for completeness, so here the gap is the point.
 ---
 
 ## Works cited
+
+### Advisor360
+
+**2026 Connected Wealth Report**  
+`src-advisor360-2026` · evidence
+
+| | |
+|---|---|
+| Author | Advisor360 |
+| Publisher | Advisor360, news release on Business Wire |
+| Link | <https://www.businesswire.com/news/home/20260113913247/en/> |
+| Published | 2026-01-13 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S2 `#s9` · S2 `#s12d` |
+
+Advisor360's survey of 300 financial advisors, fielded in fall 2025 and released 13 January 2026: 3% rely on AI-generated financial recommendations. A vendor survey; the figure is directional.
 
 ### Almazora, L.
 
@@ -300,8 +319,8 @@ Anthropic's fourth threat-intelligence report, covering misuse disrupted between
 | Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **13** |
-| Cited in | case-1 `#built` · case-4 `#built` · case-4 `#next` · S0.1 `#s0` ×2 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
+| **Total references** | **14** |
+| Cited in | case-1 `#built` · case-4 `#built` · case-4 `#next` · S0.1 `#s0` ×3 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
 
 Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max $100 a month for five times Pro usage; Ultra $200 a month with no five-hour limit and ten times Pro weekly usage. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, October 2026: from $0.10 in and $0.50 out for the smallest model, for prompts up to 100K tokens, to $10 in and $50 out for the largest (FACTS claude-api-price-haiku-5-5 and claude-api-price-fable-5-1).
 
@@ -1314,6 +1333,25 @@ FINRA's position that existing rules reach generative AI and that supervision is
 
 ### Financial Industry Regulatory Authority
 
+**Regulatory Notice 26-14: FINRA requests comment on proposed changes to modernize Rule 2210 (Communications with the Public)**  
+`src-finra2614` · evidence
+
+| | |
+|---|---|
+| Author | Financial Industry Regulatory Authority |
+| Publisher | FINRA |
+| Link | <https://www.finra.org/rules-guidance/notices/26-14> |
+| Published | 2026-07-09 |
+| Last retrieved | 2026-11-14 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S4 `#s1` |
+
+FINRA's July 2026 request for comment on modernising Rule 2210. A proposal, creating no obligation; it restates that members are responsible for their communications whether a human or AI generated them.
+
+### Financial Industry Regulatory Authority
+
 **2026 FINRA Annual Regulatory Oversight Report**  
 `src-finra2026` · assigned_reading
 
@@ -1804,7 +1842,7 @@ Assigned video segment for Session 4 (watch before class): jailbreaks, prompt in
 | **Total references** | **3** |
 | Cited in | S5 `#s7` · S5 `#sE5` ×2 |
 
-Vanguard's framework attributes about 3 percentage points a year of potential net value to an adviser following its best practices, of which behavioural coaching, keeping clients to their plan in fearful or greedy markets, is the largest single module at about 150 basis points, roughly half.
+Vanguard's framework attributes about 3 percentage points a year of potential net value to an adviser following its best practices; behavioural coaching, keeping clients to their plan in fearful or greedy markets, is one of its modules. The share coaching makes up differs by edition (about 150 basis points in the 2014 to 2020 editions; a range in the 2022 edition by search result) and is on no page.
 
 ### Kitces, M.
 
@@ -1839,10 +1877,10 @@ Drawing on Kitces Research on Advisor Productivity, fielded autumn 2024: the gre
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **3** |
-| Cited in | S2 `#s9` · S2 `#s12d` · S2 `#s12` |
+| **Total references** | **1** |
+| Cited in | S2 `#s12` |
 
-About two hours of preparation and follow-up per client meeting, more than one hour per meeting hour. The reliance figure travelling with it is reported via Advisor360 and Kitces Research through a secondary aggregator and is directional only.
+About two hours of preparation and follow-up per client meeting, more than one hour per meeting hour.
 
 ### Labotka, D., & Lamas, S.
 
@@ -2511,22 +2549,22 @@ The compliance dates of the 2024 amendments, 3 December 2025 for larger entities
 
 ### U.S. Securities and Exchange Commission, Division of Examinations
 
-**Examination priorities: Fiscal year 2026, §VII**  
+**Examination priorities: Fiscal year 2027, §VII**  
 `src-secpri` · evidence
 
 | | |
 |---|---|
 | Author | U.S. Securities and Exchange Commission, Division of Examinations |
 | Publisher | SEC |
-| Link | <https://www.sec.gov/files/2026-exam-priorities.pdf> |
-| Published | 2025-11-17 |
+| Link | <https://www.sec.gov/files/2027-exam-priorities.pdf> |
+| Published | 2026-10-23 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **14** |
 | Cited in | S3 `#sPol` · S3 `#s16` · S4 `#s1` ×3 · S4 `#s7` · S4 `#s5` · S4 `#sAud` ×2 · S4 `#s9` ×2 · S4 `#sCR` ×3 |
 
-§VII, Risk Areas Impacting Various Market Participants. Information security and operational resiliency, including ransomware, data loss prevention, incident response and the 2024 amendments to Regulation S-P; emerging financial technology and AI, including the accuracy of AI representations and a review of training and security controls for risks from AI and polymorphic malware attacks.
+§VII, Risk Areas Impacting Various Market Participants. A.1 cybersecurity, including ransomware, data loss prevention, incident response and third-party service providers; A.2 emerging financial technology, where the document calls AI "super intelligence (SI)": preparation for SI-related cyberattacks such as SI-generated phishing and synthetic or deepfake voice and video, policies and procedures relating to monitoring SI, and whether representations are fair and accurate; A.3 Regulation S-ID and Regulation S-P, including customer notification procedures and oversight of service providers under the amended rule. The disclaimer page states the document "has no legal force or effect".
 
 ### United States Congress
 
