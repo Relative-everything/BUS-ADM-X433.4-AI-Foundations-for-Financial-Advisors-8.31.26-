@@ -10,6 +10,63 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-11-14 · Facts and sources refreshed against live pages
+
+Branch `claude/kind-heisenberg-k8wote`; handback in
+`docs/changes/2026-11-14-facts-refresh/`; decisions D-100 to D-106 in
+`docs/next-term/DECISIONS.md`. The instruction was a full refresh audit of every
+claimed fact and source and of the deferred-work register, then to apply the fixes
+that are quantifiably wrong. Of 49 FACTS records, 28 held, 16 had gone stale, 2 were
+wrong in part and 3 were only partly confirmable. Anthropic pages were fetched and
+read in full; nine other publishers were read once a personal environment allowed
+their hosts; everything else is recorded as search-result evidence in the register.
+
+### Sessions 0.1, 1 and 2
+
+- **Claude Fable 5.2 is the top tier.** Released 9 November 2026 at $8 in and $40 out
+  per million tokens. The Session 0.1 model-picker check, the Session 1 tier table,
+  token-cost strip, practice-cost comparison, document pass and account builder, and
+  the Session 2 cost estimator and retrieval bridge now name Fable 5.2 at that price.
+- **The $200 plan is Ultra.** Max is the single $100 plan; "Max 5x" and "Max 20x" are no
+  longer plan names. The plan menus on Sessions 0.1 and 1, the Figures on File row and
+  the subscriptions paragraph say so.
+- **The Session 1 document pass priced Haiku 5.5 at the wrong rate.** The pass sends
+  108,000 input tokens, which is over the 100K threshold the same section describes.
+  The floor is $0.08, not $0.02; with Fable 5.2 on top the ladder runs to $1.30 and the
+  spread is $1.22. The input spread across the four tiers is eightyfold, $0.10 to $8.
+
+### Sessions 3 and 5
+
+- **Session 3** dated the Kitces notetaker article 15 Jan 2025 in three places; the
+  article, read today, was published 17 March 2025, as the footer already said.
+- **Session 5** said about 185 investors had fired an adviser; Morningstar's page says 184.
+
+### Facts and sources
+
+- **FACTS.** New record `claude-api-price-fable-5-2` (50 records). Rewritten from the
+  fetched pages: the plans, the skills format, the model ids and retirement dates, the
+  cache multipliers, the context window note, the API retention record (Fable 5.2 and
+  Mythos 5.2 join the Covered Models) and the Kitces notetaker record. The SEC
+  examination-priorities record now carries the FY2027 release of 23 October 2026, unread.
+- **SOURCES.** Seventeen records annotated with a dated `Audit 2026-11-14` line saying
+  what was fetched and what it showed. `src-brynjolfsson` cites NBER Working Paper 31161
+  for the figures Session 5 prints and names the QJE article as the published version.
+  `src-owasp` moves its publication date from 4 to 3 August 2026. The link on
+  `src-vanguard-alpha` now returns a 404 page.
+- **Four figures the last audit could not confirm are confirmed in the papers:** Magesh
+  et al.'s 43% for GPT-4 (Figure 4), Dahl et al.'s more than 800,000 queries, Kalai et
+  al.'s DeepSeek-V3 on 11 May 2025, and the three Kitces notetaker figures.
+
+### Register
+
+- DW-198, DW-199 and DW-202 closed. DW-200, DW-201 and DW-203 narrowed. DW-204 to
+  DW-208 opened: the unread FY2027 examination priorities, the Session 1 leaderboards
+  and Session 2 OpenAI rates, the four places that keep the earlier lineup on purpose,
+  three regulatory records that are wrong or incomplete by search result, and a list of
+  small repairs. `claude-sonnet-4-5-20250929` retires on 30 November 2026.
+
+---
+
 ## 2026-10-27 · The bibliography audited against live pages
 
 Branch `ccr-ef57ff7a-gwm5uh`, the same day as the register close-out below; plan,

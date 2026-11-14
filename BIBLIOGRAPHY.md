@@ -9,7 +9,7 @@ read off the chips, never typed.
 cited by at least one claim; 7 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
-**72 records carry at least one field this repository could not verify, and
+**68 records carry at least one field this repository could not verify, and
 every one of them is printed below as `[UNVERIFIED, needs source]` rather than omitted.** The
 rendered footer in a lesson omits an unknown field, because a footer in which
 thirty entries shout about a missing publisher helps nobody. This file is where a
@@ -50,7 +50,7 @@ In the 2026 survey, AI note-taking appeared as a tracked category for the first 
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/pricing> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **41** |
@@ -221,13 +221,13 @@ The two live memory experiences and where each puts its toggles, real-time entry
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/models/overview> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **12** |
 | Cited in | case-1 `#built` · case-2 `#built` · case-3 `#built` · case-4 `#built` · case-5 `#built` · S0.1 `#s1` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 · S4 `#sCR` |
 
-The four current models (Claude Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5), each with a 1M context window; which models carry adaptive against extended thinking, and effort defaults; that every model ID is a pinned snapshot; about 555,000 words to the million tokens. The comparison table also carries each model's price per MTok and a reliable knowledge cutoff of June 2026; neither figure is quoted from this record in any lesson.
+The four current models (Claude Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5), each with a 1M context window; which models carry adaptive against extended thinking, and effort defaults; that every model ID is a pinned snapshot; about 555,000 words to the million tokens. The comparison table also carries each model's price per MTok and a reliable knowledge cutoff of June 2026; neither figure is quoted from this record in any lesson.
 
 ### Anthropic
 
@@ -297,13 +297,13 @@ Anthropic's fourth threat-intelligence report, covering misuse disrupted between
 | Publisher | claude.com |
 | Link | <https://claude.com/pricing> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **13** |
 | Cited in | case-1 `#built` · case-4 `#built` · case-4 `#next` · S0.1 `#s0` ×2 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
 
-Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from $100 a month for five times Pro usage, $200 for twenty times. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, October 2026: from $0.10 in and $0.50 out for the smallest model, for prompts up to 100K tokens, to $10 in and $50 out for the largest (FACTS claude-api-price-haiku-5-5 and claude-api-price-fable-5-1).
+Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max $100 a month for five times Pro usage; Ultra $200 a month with no five-hour limit and ten times Pro weekly usage. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, October 2026: from $0.10 in and $0.50 out for the smallest model, for prompts up to 100K tokens, to $10 in and $50 out for the largest (FACTS claude-api-price-haiku-5-5 and claude-api-price-fable-5-1).
 
 ### Anthropic
 
@@ -316,13 +316,13 @@ Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/manage-claude/api-and-data-retention> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **8** |
 | Cited in | S1 `#(footer)` · S4 `#(footer)` · S4 `#s3` ×2 · S4 `#s4` · S4 `#sCR` ×3 |
 
-Conversation content sent through the API is not retained by default; the exception is the Covered Models (Fable 5.1, Mythos 5.1, Fable 5, Mythos 5), which require 30-day retention; standard retention otherwise is defined in the commercial data retention policy the page links; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years. The Enterprise custom retention period, 30 days at minimum with an indefinite default, is on Help Center article 10440198, which covers claude.ai chats and not the API.
+Conversation content sent through the API is not retained by default; the exception is the Covered Models (Fable 5.2, Mythos 5.2, Fable 5.1, Mythos 5.1, Fable 5, Mythos 5), which require 30-day retention; standard retention otherwise is defined in the commercial data retention policy the page links; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years. The Enterprise custom retention period, 30 days at minimum with an indefinite default, is on Help Center article 10440198, which covers claude.ai chats and not the API.
 
 ### Anthropic
 
@@ -525,7 +525,7 @@ A standard for connecting assistants to the systems where data lives (November 2
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/model-deprecations> |
 | Published | 2026-09-30 |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **61** |
@@ -734,7 +734,7 @@ With the model training setting ("Help improve Claude") on, de-identified data m
 | Publisher | Claude Help Center, article 12512180 |
 | Link | <https://support.claude.com/en/articles/12512180-use-skills-in-claude> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **4** |
@@ -1035,10 +1035,10 @@ In early 2020 the branch manager of a Japanese company's Hong Kong office author
 | | |
 |---|---|
 | Author | Brynjolfsson, E., Li, D., & Raymond, L. |
-| Publisher | The Quarterly Journal of Economics 140(2), 889 to 942, 2025; doi 10.1093/qje/qjae044. First circulated as NBER Working Paper 31161, April 2023 |
+| Publisher | NBER Working Paper 31161, April 2023. Published, with a revised sample, as The Quarterly Journal of Economics 140(2), 889 to 942, 2025; doi 10.1093/qje/qjae044 |
 | Link | <https://www.nber.org/papers/w31161> |
-| Published | 2025 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Published | 2023 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **1** |
@@ -1760,7 +1760,7 @@ ISS survey, n = 466, fielded June 2025: 48% of U.S. advisors use AI in their wor
 | Publisher | arXiv:2509.04664, §1 and §1.2 |
 | Link | <https://arxiv.org/abs/2509.04664> |
 | Published | 2025 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **6** |
@@ -1817,7 +1817,7 @@ Vanguard's framework attributes about 3 percentage points a year of potential ne
 | Publisher | Kitces.com |
 | Link | <https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/> |
 | Published | 2025-03-17 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **8** |
@@ -1855,7 +1855,7 @@ About two hours of preparation and follow-up per client meeting, more than one h
 | Publisher | Morningstar, behavioural research |
 | Link | <https://www.morningstar.com/financial-advisors/why-do-investors-break-up-with-their-financial-advisor> |
 | Published | 2023-04-12 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **5** |
@@ -2139,7 +2139,7 @@ Images from ChatGPT, Codex and the API carry C2PA content credentials and a Goog
 | Author | OWASP GenAI Security Project |
 | Publisher | OWASP GenAI Security Project, genai.owasp.org |
 | Link | <https://genai.owasp.org/2026/09/01/owasp-genai-security-project-unveils-2026-top-10-for-llm-applications-new-agent-control-standard-and-sponsors-as-community-tops-30000-members/> |
-| Published | 2026-08-04 |
+| Published | 2026-08-03 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |

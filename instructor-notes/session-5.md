@@ -184,7 +184,7 @@ for word; the Part 1 package paragraph is on Sessions 2, 3, 4 and 5.
 
 Nothing below is stated as a holding on the page beyond its label. Check each before answering it in class.
 
-- **Anthropic's model calendar and lineup (section 02, Case 5).** FACTS:claude-model-ids-and-retirements, H, retrieved 2026-10-11: the page is updated in place by the vendor. Open the deprecations page and the models overview once before class. If the four current ids differ from the card below, the names on the screen win and the record is fixed before class.
+- **Anthropic's model calendar and lineup (section 02, Case 5).** FACTS:claude-model-ids-and-retirements, H, retrieved 2026-11-14: the page is updated in place by the vendor. Open the deprecations page and the models overview once before class. If the four current ids differ from the card below, the names on the screen win and the record is fixed before class.
 - **Case 5's log (section 3 of the case page).** Its baseline rows ran on claude-sonnet-4-5-20250929, which cannot be asked again after 2026-11-30; they are a dated record and cannot be re-run, as the case page says.
 - **The four trials (section 03, all M).** None of the four publishers was opened in the builds; each figure is consistent across several reports and SOURCES.md says which lines the page uses. The mean in Poll 3 is this file's arithmetic.
 - **Morningstar's fired-adviser study (sections 04 and 05, M).** Two reports give 184 investors and one gives 185; the page says about 185. The six shares are the ones every report repeats.
@@ -198,20 +198,21 @@ One line per record in `facts/FACTS.json` whose `applies_to` includes session-5 
 
 ### Claude models, prices and limits
 
-- FACTS:claude-api-price-fable-5-1 · Claude Fable 5.1 API price per million tokens: $10 input / $50 output (USD per MTok) · https://platform.claude.com/docs/en/about-claude/pricing · retrieved 2026-10-11 · confidence H
-- FACTS:claude-api-price-opus-5-5 · Claude Opus 5.5 API price per million tokens: $4 input / $20 output (USD per MTok) · https://platform.claude.com/docs/en/about-claude/pricing · retrieved 2026-10-11 · confidence H
-- FACTS:claude-api-price-sonnet-5-5 · Claude Sonnet 5.5 API price per million tokens: $2 input / $10 output (USD per MTok) · https://platform.claude.com/docs/en/about-claude/pricing · retrieved 2026-10-11 · confidence H
-- FACTS:claude-api-price-haiku-5-5 · Claude Haiku 5.5 API price per million tokens, tiered by prompt length: $0.10 / $0.50 for prompts up to 100K tokens; $0.50 / $2.50 for prompts over 100K (USD per MTok) · https://platform.claude.com/docs/en/about-claude/pricing · retrieved 2026-10-11 · confidence H
-- FACTS:claude-output-input-ratio · Output tokens cost five times input tokens on every listed Claude model: 5x (ratio) · https://platform.claude.com/docs/en/about-claude/pricing · retrieved 2026-10-11 · confidence H
-- FACTS:claude-cache-and-batch-pricing · Prompt-cache read and Batch API pricing relative to base input: cache read 0.1x base input (0.025x on Fable 5.1 and Mythos 5.1; 0.05x on Opus 5.5 and Sonnet 5.5); cache write 1.25x (5 minute) or 2x (1 hour); Batch API 50% off input and output (multipliers) · https://platform.claude.com/docs/en/about-claude/pricing · retrieved 2026-10-11 · confidence H
-- FACTS:claude-context-window · Context window and maximum output of the four current Claude models: 1M tokens context; 128K tokens maximum output (synchronous Messages API) · https://platform.claude.com/docs/en/models/overview · retrieved 2026-10-11 · confidence H
-- FACTS:claude-model-ids-and-retirements · Current Claude model ids and their earliest retirement dates; Sonnet 4.5 retirement: claude-fable-5-1 (not before 2027-09-01), claude-opus-5-5 (2027-09-22), claude-sonnet-5-5 (2027-09-28), claude-haiku-5-5 (2027-10-07); claude-sonnet-4-5-20250929 deprecated 2026-09-30, retires 2026-11-30 (dates) · https://platform.claude.com/docs/en/about-claude/model-deprecations · retrieved 2026-10-11 · confidence H
+- FACTS:claude-api-price-fable-5-1 · Claude Fable 5.1 API price per million tokens: $10 input / $50 output (USD per MTok) · https://platform.claude.com/docs/en/about-claude/pricing · retrieved 2026-11-14 · confidence H
+- FACTS:claude-api-price-fable-5-2 · Claude Fable 5.2 API price per million tokens: $8 input / $40 output (USD per MTok) · https://platform.claude.com/docs/en/about-claude/pricing · retrieved 2026-11-14 · confidence H
+- FACTS:claude-api-price-opus-5-5 · Claude Opus 5.5 API price per million tokens: $4 input / $20 output (USD per MTok) · https://platform.claude.com/docs/en/about-claude/pricing · retrieved 2026-11-14 · confidence H
+- FACTS:claude-api-price-sonnet-5-5 · Claude Sonnet 5.5 API price per million tokens: $2 input / $10 output (USD per MTok) · https://platform.claude.com/docs/en/about-claude/pricing · retrieved 2026-11-14 · confidence H
+- FACTS:claude-api-price-haiku-5-5 · Claude Haiku 5.5 API price per million tokens, tiered by prompt length: $0.10 / $0.50 for prompts up to 100K tokens; $0.50 / $2.50 for prompts over 100K (USD per MTok) · https://platform.claude.com/docs/en/about-claude/pricing · retrieved 2026-11-14 · confidence H
+- FACTS:claude-output-input-ratio · Output tokens cost five times input tokens on every listed Claude model: 5x (ratio) · https://platform.claude.com/docs/en/about-claude/pricing · retrieved 2026-11-14 · confidence H
+- FACTS:claude-cache-and-batch-pricing · Prompt-cache read and Batch API pricing relative to base input: cache read 0.1x base input (0.025x on Fable 5.2, Fable 5.1 and the matching Mythos models; 0.05x on Opus 5.5 and Sonnet 5.5); cache write 1.25x (5 minute) or 2x (1 hour); Batch API 50% off input and output (multipliers) · https://platform.claude.com/docs/en/about-claude/pricing · retrieved 2026-11-14 · confidence H
+- FACTS:claude-context-window · Context window and maximum output of the four current Claude models: 1M tokens context; 128K tokens maximum output (synchronous Messages API) · https://platform.claude.com/docs/en/models/overview · retrieved 2026-11-14 · confidence H
+- FACTS:claude-model-ids-and-retirements · Current Claude model ids and their earliest retirement dates; Sonnet 4.5 retirement: claude-fable-5-2 (not before 2027-11-09), claude-opus-5-5 (2027-09-22), claude-sonnet-5-5 (2027-09-28), claude-haiku-5-5 (2027-10-07); claude-fable-5-1 stays served (not before 2027-09-01); claude-sonnet-4-5-20250929 deprecated 2026-09-30, retires 2026-11-30 (dates) · https://platform.claude.com/docs/en/about-claude/model-deprecations · retrieved 2026-11-14 · confidence H
 
 ### Plans, skills and protocol
 
-- FACTS:claude-plans · Claude consumer and business plan prices: Free $0; Pro $20 per month or $17 per month billed annually; Max 5x $100; Max 20x $200; Team Standard $25 ($20 annual); Team Premium $125 ($100 annual); Enterprise $20 per seat billed annually plus usage (USD per month) · https://claude.com/pricing · retrieved 2026-10-11 · confidence H
-- FACTS:claude-skills-format · How custom skills are added in Claude and on which plans: Upload a ZIP of the skill folder; available on Free, Pro, Max, Team and Enterprise; requires the "Code execution and file creation" setting (Settings > Capabilities on consumer plans; Organization settings > Plugins & skills for Team and Enterprise) · https://support.claude.com/en/articles/12512180-use-skills-in-claude · retrieved 2026-10-11 · confidence H
-- FACTS:mcp-name · What MCP stands for and who governs it: MCP is the Model Context Protocol; Anthropic donated it to the Linux Foundation's Agentic AI Foundation on 2025-12-09 · https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/ · retrieved 2026-10-11 · confidence H
+- FACTS:claude-plans · Claude consumer and business plan prices: Free $0; Pro $20 per month or $17 per month billed annually; Max $100 (5x Pro usage); Ultra $200 (no 5-hour limit, 10x Pro weekly usage); Team Standard $25 ($20 annual); Team Premium $125 ($100 annual); Enterprise $20 per seat billed annually plus usage (USD per month) · https://claude.com/pricing · retrieved 2026-11-14 · confidence H
+- FACTS:claude-skills-format · How custom skills are added in Claude and on which plans: Upload a ZIP of the skill folder; available on Free, Pro, Max, Ultra, Team and Enterprise; requires the "Code execution and file creation" setting (Settings > Capabilities on consumer plans; Organization settings > Plugins & skills for Team and Enterprise) · https://support.claude.com/en/articles/12512180-use-skills-in-claude · retrieved 2026-11-14 · confidence H
+- FACTS:mcp-name · What MCP stands for and who governs it: MCP is the Model Context Protocol; Anthropic donated it to the Linux Foundation's Agentic AI Foundation on 2025-12-09 · https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/ · retrieved 2026-11-14 · confidence H
 
 ### Background and the assigned study
 
@@ -220,13 +221,13 @@ One line per record in `facts/FACTS.json` whose `applies_to` includes session-5 
 
 ### Corrections register: the correct versions for Session 5
 
-- Claude Max is two tiers: Max 5x at $100 a month and Max 20x at $200 a month (FACTS:claude-plans).
+- The two top personal plans are Max at $100 a month and Ultra at $200 a month; "Max 5x" and "Max 20x" are no longer plan names (FACTS:claude-plans).
 - MCP is the Model Context Protocol; Anthropic donated it to the Linux Foundation's Agentic AI Foundation on 2025-12-09 (FACTS:mcp-name).
 - The Tax Cuts and Jobs Act was signed on 22 December 2017 as Public Law 115-97 (FACTS:tcja-enactment).
 
 ### Week-before checks specific to Session 5
 
-- The record this session turns on is FACTS:claude-model-ids-and-retirements. If a deprecation notice has appeared since 2026-10-11, the section 02 stamps, the Case 5 reveal and Poll 1 and Poll 2 change in the words you say; read the deprecations page the week before.
+- The record this session turns on is FACTS:claude-model-ids-and-retirements. If a deprecation notice has appeared since 2026-11-14, the section 02 stamps, the Case 5 reveal and Poll 1 and Poll 2 change in the words you say; read the deprecations page the week before.
 - The plan record (FACTS:claude-plans) and the four price records are high volatility on a 14-day window: re-open claude.com/pricing and the API pricing page before you say a tier or a price aloud.
 - The skills record (FACTS:claude-skills-format) matters if a presenter's package is a skill ZIP and someone asks how it is added: on Team and Enterprise the setting is an organization policy, not a personal toggle.
 
