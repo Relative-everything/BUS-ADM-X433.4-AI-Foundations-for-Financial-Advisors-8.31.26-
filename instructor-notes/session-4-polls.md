@@ -5,7 +5,7 @@ Four polls, each launched before the on-page step it mirrors. Build and test the
 ## Poll 1
 - **Section:** `s1`, opens it, before the page's guess. **Format:** ranking. **Zoom:** Rank Order, four items, anonymous.
 - **Question:** Rank these four by legal force over a US adviser's use of AI today, most force first.
-- **Options:** Regulation S-P, as amended in 2024 / FINRA Regulatory Notice 24-09 / SEC examination priorities for fiscal 2026 / The SEC's 2023 predictive data analytics proposal.
+- **Options:** Regulation S-P, as amended in 2024 / FINRA Regulatory Notice 24-09 / SEC examination priorities for fiscal 2027 / The SEC's 2023 predictive data analytics proposal.
 - **Expected:** Regulation S-P first, in force for every covered firm (FACTS:reg-sp-compliance); the withdrawn proposal last (FACTS:sec-pda-withdrawal). The middle two are not keyed: the notice adds no requirement (FACTS:finra-24-09-status); the priorities state "no legal force or effect" (FACTS:sec-exam-priorities-status). Source: the `s1` key.
 - **Rule:** If fewer than half rank Regulation S-P first, read the lane 2 header aloud and give the sorter its full three minutes. Otherwise press the guess in ten seconds and give the minutes to `s2`.
 

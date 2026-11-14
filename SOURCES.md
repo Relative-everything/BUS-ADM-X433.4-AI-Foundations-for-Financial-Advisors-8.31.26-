@@ -185,7 +185,7 @@ link:           https://onlinelibrary.wiley.com/doi/10.1111/jels.12413
 published:      2025
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Published 23 April 2025, doi 10.1111/jels.12413 (preprint arXiv:2405.20362); RegLab page reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools kept as the secondary. More than 200 queries, May 2024, and the 17 to 33 percent rates are confirmed; the 43 percent GPT-4 figure appears only in secondary posts (GAP, see register).
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Published 23 April 2025, doi 10.1111/jels.12413 (preprint arXiv:2405.20362); RegLab page reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools kept as the secondary. More than 200 queries, May 2024, and the 17 to 33 percent rates are confirmed; the 43 percent GPT-4 figure appears only in secondary posts (GAP, see register). Audit 2026-11-14: the arXiv preprint (2405.20362, PDF fetched and read) carries the figure in Figure 4, hallucinated responses Lexis 17%, Westlaw 33%, Practical Law 17%, GPT-4 43%, with GPT-4 accurate on 49%; the 43 percent GAP is closed against the preprint. The JELS page itself was not fetched, so last_retrieved does not move.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -224,9 +224,9 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/about-claude/pricing
 published:      not applicable
-last_retrieved: 2026-10-27
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: Fetched in full 2026-08-25 for Phase 3.5, and again in full 2026-09-13 for the session-2 retrieval bridge; the table is unchanged for Sonnet 5, Opus 5 and Fable 5, and the FAQ gives the rule of thumb of one token to about 0.75 words. PULL-002 (session-2) carried a PARTIAL DATE, "2026-08", until the 2026-09-13 pull replaced it. Audit 2026-10-27 (fetched in full): verified.
+retrieval_note: Fetched in full 2026-08-25 for Phase 3.5, and again in full 2026-09-13 for the session-2 retrieval bridge; the table is unchanged for Sonnet 5, Opus 5 and Fable 5, and the FAQ gives the rule of thumb of one token to about 0.75 words. PULL-002 (session-2) carried a PARTIAL DATE, "2026-08", until the 2026-09-13 pull replaced it. Audit 2026-10-27 (fetched in full): verified. Audit 2026-11-14 (fetched in full): Claude Fable 5.2 and Claude Mythos 5.2 added at $8 / $40 with a 0.025x cache read; Fable 5.1, Opus 5.5, Sonnet 5.5 and both Haiku 5.5 tiers unchanged. The Session 1 tier table, cost ladder and Session 2 estimator moved to Fable 5.2 the same day, and the Session 1 document pass now prices its 108,000-token prompt at the Haiku 5.5 over-100K rate the page states.
 content_changed: 2026-08-25. The page now states that Sonnet 5's $2 / $10 introductory pricing "is now the standard price" and that "the previously scheduled increase to $3/$15 per million input/output tokens on September 1, 2026 will not occur". The 2026-07-28 pull recorded the increase as scheduled. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-08-25 in Phase 3.6: session-1 Appendix A7's second Sonnet 5 table row and its "rises 50% tomorrow" note both carried the cancelled rise and are gone; the surviving row states $2 / $10 / $0.20 with no date on it. Three script arrays carried the same cancelled figure and were corrected with it — TIERS (Appendix A2 cost boxes), PATHS (Appendix A8 practice cost) and DPT (Appendix A8 document pass), the last two of which also printed the label "Sonnet 5 (from 1 Sep)" on screen. session-2 Appendix B8's "Sonnet 5 lists at $2 in / $10 out per million tokens" was UNAFFECTED and is the standing price. Phase 3.5 flagged rather than resolved; Phase 3.6 resolved on instruction.
 confidence:     H
 kind:           evidence
@@ -236,10 +236,10 @@ recheck_before: every teaching of session-1 Appendix A2, Appendix A7 and Appendi
 scope:          Per-token input and output rates by model, cache-hit and batch discounts.
 used_for.session-1: per-token rates for the four current Claude models, the five-to-one output-to-input price ratio, cache and batch discounts, and the Cole document-pass arithmetic
 used_for.session-2: the published rates behind the blended token price and the cost estimator, and the five-to-one output-to-input price ratio and the three current rates in the retrieval bridge
-last_retrieved.session-1: 2026-10-11
-figures.session-1: per-token input and output rates for Haiku 5.5 (tiered at 100K tokens), Sonnet 5.5, Opus 5.5 and Fable 5.1; output at five times input on every listed model; cache-read multipliers (0.1x default, 0.05x Opus 5.5 and Sonnet 5.5, 0.025x Fable 5.1), cache-write multipliers and the 50% Batch API discount; all from FACTS claude-api-price-* , claude-output-input-ratio and claude-cache-and-batch-pricing, read in full 2026-10-11
-last_retrieved.session-2: 2026-10-11
-figures.session-2: the published rates behind the blended token price at a 3:1 input-to-output ratio; the Sonnet 5.5, Opus 5.5 and Fable 5.1 input and output rates in the cost estimator and the retrieval bridge, and output at five times input (FACTS claude-api-price-sonnet-5-5, claude-api-price-opus-5-5, claude-api-price-fable-5-1 and claude-output-input-ratio, read in full 2026-10-11)
+last_retrieved.session-1: 2026-11-14
+figures.session-1: per-token input and output rates for Haiku 5.5 (tiered at 100K tokens), Sonnet 5.5, Opus 5.5 and Fable 5.2 ($8 in, $40 out); output at five times input on every listed model; cache-read multipliers (0.1x default, 0.05x Opus 5.5 and Sonnet 5.5, 0.025x Fable 5.2), cache-write multipliers and the 50% Batch API discount; all from FACTS claude-api-price-* , claude-output-input-ratio and claude-cache-and-batch-pricing, read in full 2026-10-11
+last_retrieved.session-2: 2026-11-14
+figures.session-2: the published rates behind the blended token price at a 3:1 input-to-output ratio; the Sonnet 5.5, Opus 5.5 and Fable 5.2 input and output rates in the cost estimator and the retrieval bridge, and output at five times input (FACTS claude-api-price-sonnet-5-5, claude-api-price-opus-5-5, claude-api-price-fable-5-2 and claude-output-input-ratio, read in full 2026-10-11)
 used_for.session-4: the per-million-token API price of the smallest Claude model, $0.10 in and $0.50 out for a prompt up to 100K tokens, on the firm tag of the ladder (Appendix D2) and in the cost line under the live API box
 last_retrieved.session-4: 2026-10-11
 figures.session-4: input $0.10 and output $0.50 per million tokens for prompts up to 100K tokens, output at five times input (FACTS claude-api-price-haiku-5-5 and claude-output-input-ratio, read in full 2026-10-11)
@@ -327,24 +327,24 @@ used_for.session-5: the service-provider reading behind the Where question for a
 ## src-secpri
 
 ```source
-title:          Examination priorities: Fiscal year 2026, §VII
+title:          Examination priorities: Fiscal year 2027, §VII
 author:         U.S. Securities and Exchange Commission, Division of Examinations
 publisher:      SEC
-link:           https://www.sec.gov/files/2026-exam-priorities.pdf
-published:      2025-11-17
+link:           https://www.sec.gov/files/2027-exam-priorities.pdf
+published:      2026-10-23
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  false
-retrieval_note: sec.gov is egress-blocked from the build (2026-09-27). §VII's contents in scope are as reported by several consistent law-firm and compliance-firm summaries of the 17 November 2025 release; the record's H stands on the earlier verification of the AI and Regulation S-P focus, and the Appendix D4 use of the polymorphic-malware line is chipped M on the page for that reason. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the FY2027 examination priorities (sec.gov/files/2027-exam-priorities.pdf, released 2026-10-23) and the 2026 priorities press release 2025-132. Section number VII and the quoted disclaimer are not confirmed from the PDF.
-scope:          §VII, Risk Areas Impacting Various Market Participants. Information security and operational resiliency, including ransomware, data loss prevention, incident response and the 2024 amendments to Regulation S-P; emerging financial technology and AI, including the accuracy of AI representations and a review of training and security controls for risks from AI and polymorphic malware attacks.
-used_for.session-3: that the fiscal 2026 examination priorities, released 17 November 2025, state that they have no legal force or effect, and that an AI use policy is an examination expectation named in no rule (Appendix C9, §07)
+retrieval_note: sec.gov is egress-blocked from the build (2026-09-27). §VII's contents in scope are as reported by several consistent law-firm and compliance-firm summaries of the 17 November 2025 release; the record's H stands on the earlier verification of the AI and Regulation S-P focus, and the Appendix D4 use of the polymorphic-malware line is chipped M on the page for that reason. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the FY2027 examination priorities (sec.gov/files/2027-exam-priorities.pdf, released 2026-10-23) and the 2026 priorities press release 2025-132. Section number VII and the quoted disclaimer are not confirmed from the PDF. Audit 2026-11-14: sec.gov search results show the FY2027 priorities were released on 23 October 2026 (press release 2026-109, sec.gov/files/2027-exam-priorities.pdf); sec.gov answered 403 to a direct fetch, so neither year was read and the served pages still cite FY2026 (register). Audit 2026-11-14: the record moves from the fiscal 2026 document (sec.gov/files/2026-exam-priorities.pdf, released 17 November 2025, never read from this build) to the fiscal 2027 document, which the instructor supplied as a PDF and which was read in full; the copy is docs/changes/2026-11-14-facts-refresh/sec-fy2027-exam-priorities.pdf (20 pages, PDF created 21 October 2026). Its disclaimer reads "This statement, like all staff statements, has no legal force or effect: it does not alter or amend applicable law, and it creates no new or additional obligations for any person." It writes "super intelligence (SI)" throughout where earlier years wrote AI, and it does not mention polymorphic malware, so the two Session 4 lines that carried that phrase were reworded. The 23 October release date is from sec.gov search results (press release 2026-109), not printed in the PDF. sec.gov answers 403 to a fetch, so last_retrieved does not move.
+scope:          §VII, Risk Areas Impacting Various Market Participants. A.1 cybersecurity, including ransomware, data loss prevention, incident response and third-party service providers; A.2 emerging financial technology, where the document calls AI "super intelligence (SI)": preparation for SI-related cyberattacks such as SI-generated phishing and synthetic or deepfake voice and video, policies and procedures relating to monitoring SI, and whether representations are fair and accurate; A.3 Regulation S-ID and Regulation S-P, including customer notification procedures and oversight of service providers under the amended rule. The disclaimer page states the document "has no legal force or effect".
+used_for.session-3: that the fiscal 2027 examination priorities, released 23 October 2026, state that they have no legal force or effect, and that an AI use policy is an examination expectation named in no rule (Appendix C9, §07)
 last_retrieved.session-3: 2026-10-11
-figures.session-3: the release date and the no-legal-force statement (FACTS sec-exam-priorities-status), and the absence of a rule that names an AI use policy (FACTS ai-policy-requirement), both from sec.gov snippets read 2026-10-11
-used_for.session-4: the fiscal 2026 examination priorities naming AI and Regulation S-P, which state that they have no legal force or effect (§02); that an AI use policy is an examination expectation named in no rule (Appendix D2, §05, §07); its line on training and security controls for AI and polymorphic malware (Appendix D4)
+figures.session-3: the no-legal-force statement, read in the document on 2026-11-14; the release date from sec.gov search results (FACTS sec-exam-priorities-status); the absence of a rule that names an AI use policy (FACTS ai-policy-requirement)
+used_for.session-4: the fiscal 2027 examination priorities covering AI and Regulation S-P, which state that they have no legal force or effect (§02); that an AI use policy is an examination expectation named in no rule (Appendix D2, §05, §07); its line on AI-generated phishing and deepfake voice and video (Appendix D4)
 last_retrieved.session-4: 2026-10-11
-figures.session-4: the no-legal-force statement (FACTS sec-exam-priorities-status) and the absence of a rule that names an AI use policy (FACTS ai-policy-requirement), both from sec.gov snippets read 2026-10-11
+figures.session-4: the no-legal-force statement and the §VII.A.2 wording, read in the document on 2026-11-14 (FACTS sec-exam-priorities-status and ai-policy-requirement)
 ```
 
 ## src-kalai
@@ -355,9 +355,9 @@ author:         Kalai, A. T., Nachum, O., Vempala, S. S., & Zhang, E.
 publisher:      arXiv:2509.04664, §1 and §1.2
 link:           https://arxiv.org/abs/2509.04664
 published:      2025
-last_retrieved: [UNVERIFIED, needs source]
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. arXiv 2509.04664, posted 4 September 2025; the earlier retrieval date of 2025-05-11 predates the paper and is withdrawn. The DeepSeek-V3 on 11 May 2025 fixture in scope is not visible in search results (GAP, see register).
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. arXiv 2509.04664, posted 4 September 2025; the earlier retrieval date of 2025-05-11 predates the paper and is withdrawn. The DeepSeek-V3 on 11 May 2025 fixture in scope is not visible in search results (GAP, see register). Audit 2026-11-14 (PDF fetched and read): the paper states "The language model was DeepSeek-V3 (600 B parameters), accessed via the DeepSeek app on 11 May 2025" for the birthday probe; the dissertation-title table used models "freely accessed 2025-05-09". The fixture GAP is closed; the date belongs to the birthday example.
 confidence:     H
 kind:           assigned_reading
 moving_target:  false
@@ -450,9 +450,9 @@ author:         Kitces, M.
 publisher:      Kitces.com
 link:           https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/
 published:      2025-03-17
-last_retrieved: [UNVERIFIED, needs source]
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Byline Michael Kitces, dated 17 March 2025 (not 15 January). The more-than-one-to-one ratio, the solo pattern and the satisfaction ranking are confirmed; the UHNW drop-off, the fourfold plan rate and the $60 to $80 pricing were not seen in results (GAP, see register).
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Byline Michael Kitces, dated 17 March 2025 (not 15 January). The more-than-one-to-one ratio, the solo pattern and the satisfaction ranking are confirmed; the UHNW drop-off, the fourfold plan rate and the $60 to $80 pricing were not seen in results (GAP, see register). Audit 2026-11-14 (page fetched in full): published 17 March 2025 per the page metadata, and the three figures the earlier audit could not see are on the page: AI meeting-note use at "nearly 4X the rate" for the most extensive plans, "a precipitous drop-off" among ultra-high-net-worth clientele, and notetakers "charging $60–$80/month or more". The three Session 3 body mentions that read 15 Jan 2025 were corrected to 17 March 2025.
 confidence:     M
 kind:           assigned_reading
 moving_target:  false
@@ -620,7 +620,7 @@ link:           https://academic.oup.com/jla/article/16/1/64/7699227
 published:      2024
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Published version, doi 10.1093/jla/laae003 (preprint arXiv:2401.01301); open-access PDF at dho.stanford.edu/wp-content/uploads/Hallucinations_JLA.pdf. The 58, 69 and 88 percent rates are confirmed; the 800,000-question count appears only in a secondary post (GAP, see register).
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Published version, doi 10.1093/jla/laae003 (preprint arXiv:2401.01301); open-access PDF at dho.stanford.edu/wp-content/uploads/Hallucinations_JLA.pdf. The 58, 69 and 88 percent rates are confirmed; the 800,000-question count appears only in a secondary post (GAP, see register). Audit 2026-11-14: the arXiv version (2401.01301, PDF fetched and read) states "In total, we execute more than 800,000 queries—200,000+ per LLM"; the count GAP is closed against the preprint. The OUP page answered 403 and was not fetched, so last_retrieved does not move.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -656,9 +656,9 @@ author:         Veres, B., & Bruckenstein, J.
 publisher:      T3 Technology Hub and Inside Information; summarised in Kitces.com Weekend Reading, 14 to 15 March 2026
 link:           https://t3technologyhub.com/wp-content/uploads/2026/03/2026-T3_Inside-Information-Software-Survey.pdf
 published:      2026-03
-last_retrieved: [UNVERIFIED, needs source]
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: As summarised by Kitces.com Weekend Reading, March 2026. Re-checked 2026-10-04: kitces.com, investmentnews.com and dwealth.news were egress-blocked from this build; a fresh search returned 2,906 responses, 52.2%, 42.9% and 14 note-taking tools, unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Primary PDF found; 2,906 responses, 95 percent RIA, 52.2 percent (from 41.8) and 42.9 percent confirmed by Kitces, BusinessWire (2026-03-10) and InvestmentNews. Could be raised to H; one chip is in session-5, which this pass does not touch.
+retrieval_note: As summarised by Kitces.com Weekend Reading, March 2026. Re-checked 2026-10-04: kitces.com, investmentnews.com and dwealth.news were egress-blocked from this build; a fresh search returned 2,906 responses, 52.2%, 42.9% and 14 note-taking tools, unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Primary PDF found; 2,906 responses, 95 percent RIA, 52.2 percent (from 41.8) and 42.9 percent confirmed by Kitces, BusinessWire (2026-03-10) and InvestmentNews. Could be raised to H; one chip is in session-5, which this pass does not touch. Audit 2026-11-14 (PDF fetched and read, 91 pages): 2,906 responses; AI search and generative language at 52.15% total category market penetration against 41.78% a year earlier; AI notetaking solutions at 42.86%. The page figures are these, rounded to one decimal.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -677,12 +677,12 @@ link:           https://www.kitces.com/blog/advisor-productivity-key-drivers-pra
 published:      2025
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Kitces states about two hours of prep plus follow-up per meeting, more than an hour per meeting hour, not one hour per two-hour meeting; dated 2025 on 2024 data, not August 2026; the Advisor360 reliance figure was not found (GAP, see register).
+retrieval_note: Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Kitces states about two hours of prep plus follow-up per meeting, more than an hour per meeting hour, not one hour per two-hour meeting; dated 2025 on 2024 data, not August 2026; the Advisor360 reliance figure was not found (GAP, see register). Audit 2026-11-14: a search result on businesswire.com attributes "just 3% rely on AI-generated financial recommendations" to Advisor360's 2026 Connected Wealth Report (300 advisors, released 13 January 2026), not to Kitces; the release answered 403 and was not read. The two Session 2 chips on the 3% figure still point here (register). Later on 2026-11-14: the two Session 2 chips on the 3% figure moved to the new record src-advisor360-2026.
 confidence:     M
 kind:           evidence
 moving_target:  false
-scope:          About two hours of preparation and follow-up per client meeting, more than one hour per meeting hour. The reliance figure travelling with it is reported via Advisor360 and Kitces Research through a secondary aggregator and is directional only.
-used_for.session-2: the prep-and-follow-up hour ratio and the directional reliance figure
+scope:          About two hours of preparation and follow-up per client meeting, more than one hour per meeting hour.
+used_for.session-2: the prep-and-follow-up hour ratio
 ```
 
 ## src-morningstar
@@ -701,6 +701,81 @@ kind:           background
 moving_target:  false
 scope:          Assigned reading for session-2. No page claim rests on it.
 used_for.session-2: assigned reading; no page claim rests on it
+```
+
+## src-finra2614
+
+```source
+title:          Regulatory Notice 26-14: FINRA requests comment on proposed changes to modernize Rule 2210 (Communications with the Public)
+author:         Financial Industry Regulatory Authority
+publisher:      FINRA
+link:           https://www.finra.org/rules-guidance/notices/26-14
+published:      2026-07-09
+last_retrieved: 2026-11-14
+last_verified:
+retrieval_note: Page fetched and read 2026-11-14. Published 9 July 2026; comment period expired 11 September 2026. A request for comment, not a rule: it proposes replacing the principal pre-use approval requirement for retail communications with risk-based supervision standards, and cites changes in social media use and advances in generative AI. Its Artificial Intelligence section says FINRA's rules and guidance are intended to be technologically neutral and that "Members are responsible for their communications, regardless of whether they are generated by a human or AI technology."
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          FINRA's July 2026 request for comment on modernising Rule 2210. A proposal, creating no obligation; it restates that members are responsible for their communications whether a human or AI generated them.
+used_for.session-4: that members answer for their communications whether a human or AI wrote them, named beside Notice 24-09 on the §02 source line
+last_retrieved.session-4: 2026-11-14
+```
+
+## src-advisor360-2026
+
+```source
+title:          2026 Connected Wealth Report
+author:         Advisor360
+publisher:      Advisor360, news release on Business Wire
+link:           https://www.businesswire.com/news/home/20260113913247/en/
+published:      2026-01-13
+last_retrieved: [UNVERIFIED, needs source]
+last_verified:
+retrieval_note: NOT RETRIEVED. businesswire.com answered 403 to this build's fetch on 2026-11-14. A search result on the publisher's domain gives the release date, a survey of 300 advisors fielded in fall 2025, and the sentence "just 3% rely on AI-generated financial recommendations", which is why the confidence is M. Added 2026-11-14 at the instructor's instruction, to take the two Session 2 chips on the 3% figure off src-kitces-productivity, which never carried it.
+confidence:     M
+kind:           evidence
+moving_target:  false
+scope:          Advisor360's survey of 300 financial advisors, fielded in fall 2025 and released 13 January 2026: 3% rely on AI-generated financial recommendations. A vendor survey; the figure is directional.
+used_for.session-2: the roughly 3% of advisors who rely on a model's recommendation, set against the adoption share (§03 and the retrieval bridge)
+```
+
+## src-eo-14434
+
+```source
+title:          Executive Order 14434: Inaugurating the Era of Super Intelligence
+author:         Executive Office of the President
+publisher:      The White House, Presidential Actions
+link:           https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/
+published:      2026-09-29
+last_retrieved: 2026-11-14
+last_verified:
+retrieval_note: Page fetched and read in full 2026-11-14. Section 1: "the executive branch shall use the terms 'Super Intelligence' and 'SI' in place of 'Artificial Intelligence' and 'AI'". Section 2(a): agencies shall do so "in official correspondence, public communications, websites, reports, policy documents, and other non-statutory documents within the executive branch"; 2(b): nothing requires altering previously issued regulations or historical documents. Section 3(a): the terms "mean the technologies and systems encompassed by the term 'artificial intelligence' as defined in section 9401(3) of title 15, United States Code"; 3(b): proposed legislative language for a federal definition is due within 60 days. Federal Register publication on 2 October 2026 is by search result only.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          The order that tells executive departments and agencies to write Super Intelligence and SI where they wrote Artificial Intelligence and AI, in non-statutory documents, and that defines the new term as what the statute already calls artificial intelligence. A legislative definition was due within 60 days and may change the meaning.
+used_for.session-4: why the SEC's fiscal 2027 examination priorities say super intelligence (SI), and that the term is defined as the same technologies (§02)
+last_retrieved.session-4: 2026-11-14
+```
+
+## src-bostrom-superintelligence
+
+```source
+title:          How long before superintelligence?
+author:         Bostrom, N.
+publisher:      International Journal of Futures Studies, 2 (1998); reprinted in Linguistic and Philosophical Investigations, 5(1), 11 to 30 (2006)
+link:           https://nickbostrom.com/superintelligence
+published:      1998
+last_retrieved: 2026-11-14
+last_verified:
+retrieval_note: The author's page fetched and read 2026-11-14: written 1997, revised 25 October 1998, with postscripts to 2008. Definition, verbatim: "By a 'superintelligence' we mean an intellect that is much smarter than the best human brains in practically every field, including scientific creativity, general wisdom and social skills." The page is cited for an early definition, not as the first use of the word: who coined it was not established, and I. J. Good's 1965 "ultraintelligent machine" is the usual earlier reference by secondary sources only.
+confidence:     H
+kind:           evidence
+moving_target:  false
+scope:          An early and much-cited definition of superintelligence as an intellect far beyond the best human minds in practically every field. Cited for what the word meant before a federal order adopted it as a name for AI.
+used_for.session-4: the 1998 definition of superintelligence, set against the federal usage (§02)
+last_retrieved.session-4: 2026-11-14
 ```
 
 ## src-kessler
@@ -801,10 +876,10 @@ title:          OWASP GenAI LLM Top 10 2026 and OWASP Top 10 for Agentic Applica
 author:         OWASP GenAI Security Project
 publisher:      OWASP GenAI Security Project, genai.owasp.org
 link:           https://genai.owasp.org/2026/09/01/owasp-genai-security-project-unveils-2026-top-10-for-llm-applications-new-agent-control-standard-and-sponsors-as-community-tops-30000-members/
-published:      2026-08-04
+published:      2026-08-03
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: owasp.org and genai.owasp.org are both blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited page itself was never loaded. A SURROGATE was reachable and was read: the GitHub repository backing that exact project page, fetched 2026-08-25. Reading a surrogate is not retrieving the source and no date is written for one. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): the record is repointed from the owasp.org project page, which OWASP describes as an archive, to the project's dated announcement of the 2026 edition; the Agentic Top 10 page is genai.owasp.org/resource/2025-12-09/owasp-top-10-for-agentic-applications-for-2026; the publication date is on the owasp.org project page and in the announcement. The old link (owasp.org/www-project-top-10-for-large-language-model-applications/) is kept here as the archive.
+retrieval_note: Fetch of the cited link ATTEMPTED 2026-08-25 and REFUSED before it reached the source: owasp.org and genai.owasp.org are both blocked by the build environment's egress policy (403 on CONNECT), so last_retrieved stays unresolved — the cited page itself was never loaded. A SURROGATE was reachable and was read: the GitHub repository backing that exact project page, fetched 2026-08-25. Reading a surrogate is not retrieving the source and no date is written for one. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): the record is repointed from the owasp.org project page, which OWASP describes as an archive, to the project's dated announcement of the 2026 edition; the Agentic Top 10 page is genai.owasp.org/resource/2025-12-09/owasp-top-10-for-agentic-applications-for-2026; the publication date is on the owasp.org project page and in the announcement. The old link (owasp.org/www-project-top-10-for-large-language-model-applications/) is kept here as the archive. Audit 2026-11-14: the OWASP resource page (genai.owasp.org/resource/owasp-genai-llm-top-10-2026/, fetched and read) dates the LLM Top 10 2026 3 August 2026, so published moves from 4 to 3 August; the cited announcement link was not re-fetched, and the incident count in scope (6,639 against 7,714 in other summaries) is still unread.
 content_changed: 2026-08-25. THE SOURCE HAS MOVED. Established from the project's own GitHub repository, which the blocked page is built from. OWASP's own words describe the cited project page as maintained as a historical archive; active development moved to github.com/GenAI-Security-Project/GenAI-LLM-Top10 and a new edition, OWASP GenAI LLM Top 10 2026, was published 2026-08-04. DEPENDENT LESSON ELEMENTS: session-4 Appendix D4's claim that prompt injection is LLM01 SURVIVES the move intact — it is LLM01:2026 Prompt Injection in the new edition, and is now anchorable to a dated edition instead of an undated page. The CITATION does not survive: the `link` field points at an archive. The 'six of ten agentic categories' half of the same sentence is separately UNCONFIRMED — an Agentic Top 10 2026 v1.0 exists (published 2025-12-01) but sits on no reachable host and its category count was not read. NOT silently updated.
 confidence:     H
 kind:           evidence
@@ -1091,15 +1166,15 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/models/overview
 published:      not applicable
-last_retrieved: 2026-10-27
-retrieval_note: Re-fetched 2026-09-13 at the page's current address for session-2 §01. Every Claude model ID is a pinned snapshot, including the dateless IDs from the 4.6 generation on; Fable 5.1 is the current flagship at $10 / $50 per MTok and Fable 5 is listed as a legacy model, still available. Audit 2026-10-27 (fetched in full): verified with corrections. Until this audit the scope named Haiku 4.5 at 200K as the fourth current model; the page now lists Haiku 5.5 at 1M and Haiku 4.5 among the legacy models. Same page as src-anthropic-models-overview (that record's address redirects here); the two records are not merged because the other one is cited only by session-5, which this pass does not touch.
+last_retrieved: 2026-11-14
+retrieval_note: Re-fetched 2026-09-13 at the page's current address for session-2 §01. Every Claude model ID is a pinned snapshot, including the dateless IDs from the 4.6 generation on; Fable 5.1 is the current flagship at $10 / $50 per MTok and Fable 5 is listed as a legacy model, still available. Audit 2026-10-27 (fetched in full): verified with corrections. Until this audit the scope named Haiku 4.5 at 200K as the fourth current model; the page now lists Haiku 5.5 at 1M and Haiku 4.5 among the legacy models. Same page as src-anthropic-models-overview (that record's address redirects here); the two records are not merged because the other one is cited only by session-5, which this pass does not touch. Audit 2026-11-14 (fetched in full): Claude Fable 5.2 (claude-fable-5-2, not sooner than 9 November 2027) replaced Fable 5.1 as the first of the four latest models; 1M context and 128K output on all four.
 last_verified:
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-0.1
-scope:          The four current models (Claude Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5), each with a 1M context window; which models carry adaptive against extended thinking, and effort defaults; that every model ID is a pinned snapshot; about 555,000 words to the million tokens. The comparison table also carries each model's price per MTok and a reliable knowledge cutoff of June 2026; neither figure is quoted from this record in any lesson.
+scope:          The four current models (Claude Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5), each with a 1M context window; which models carry adaptive against extended thinking, and effort defaults; that every model ID is a pinned snapshot; about 555,000 words to the million tokens. The comparison table also carries each model's price per MTok and a reliable knowledge cutoff of June 2026; neither figure is quoted from this record in any lesson.
 used_for.session-0.1: the 1M-token context window of the current Claude models (section 01)
 last_retrieved.session-0.1: 2026-10-11
 figures.session-0.1: 1M tokens of context on the current Claude models (FACTS claude-context-window, read in full 2026-10-11)
@@ -1111,7 +1186,7 @@ used_for.session-3: the 1M-token context window of the current Claude models, be
 last_retrieved.session-3: 2026-10-11
 figures.session-3: 1M tokens of context on the current Claude models (FACTS claude-context-window, read in full 2026-10-11)
 last_retrieved.session-1: 2026-10-11
-figures.session-1: context window of 1M tokens on Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-context-window, read in full 2026-10-11)
+figures.session-1: context window of 1M tokens on Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-context-window, read in full 2026-10-11)
 used_for.session-4: the 1M-token context window of the current Claude models, on the context-window card of the then-and-now deck (Appendix D6)
 last_retrieved.session-4: 2026-10-11
 figures.session-4: 1M tokens of context on the current Claude models, about 555,000 words (FACTS claude-context-window, read in full 2026-10-11)
@@ -1386,26 +1461,26 @@ author:         Anthropic
 publisher:      claude.com
 link:           https://claude.com/pricing
 published:      not applicable
-last_retrieved: 2026-10-27
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: Opened directly on 2026-09-27, with the Help Center articles on the Max plan (11049741) and on Enterprise seats (13393991) and the Claude Enterprise solutions page. The Max 20x figure is on the Help Center article, not the pricing page. Prices move without notice. Audit 2026-10-27 (fetched in full): verified.
+retrieval_note: Opened directly on 2026-09-27, with the Help Center articles on the Max plan (11049741) and on Enterprise seats (13393991) and the Claude Enterprise solutions page. The Max 20x figure is on the Help Center article, not the pricing page. Prices move without notice. Audit 2026-10-27 (fetched in full): verified. Audit 2026-11-14 (fetched in full, with Help Center 11049741): the $200 tier is now a separate plan named Ultra and Max is the single $100 tier; "Max 5x" and "Max 20x" are no longer plan names. The comparison table labels model training Opt-out on the four individual plans. Session 0.1 and Session 1 were reworded the same day; cases/case-4.html keeps the old names inside a captured prompt until its re-capture.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_pricing
 recheck_before: every teaching of session-4 Appendix D2
-scope:          Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from $100 a month for five times Pro usage, $200 for twenty times. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, October 2026: from $0.10 in and $0.50 out for the smallest model, for prompts up to 100K tokens, to $10 in and $50 out for the largest (FACTS claude-api-price-haiku-5-5 and claude-api-price-fable-5-1).
+scope:          Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max $100 a month for five times Pro usage; Ultra $200 a month with no five-hour limit and ten times Pro weekly usage. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, October 2026: from $0.10 in and $0.50 out for the smallest model, for prompts up to 100K tokens, to $10 in and $50 out for the largest (FACTS claude-api-price-haiku-5-5 and claude-api-price-fable-5-1).
 used_for.session-1: the Pro and Max subscription prices set against metered API cost in the practice-cost comparison (Appendix A8)
 used_for.session-4: the personal and firm price tags and what Team and Enterprise add, on the ladder (Appendix D2)
-last_retrieved.session-1: 2026-10-11
-figures.session-1: Pro $20 per month billed monthly; Max 5x $100 and Max 20x $200 (FACTS claude-plans, read in full 2026-10-11)
+last_retrieved.session-1: 2026-11-14
+figures.session-1: Pro $20 per month billed monthly; Max $100 and Ultra $200 (FACTS claude-plans, read in full 2026-11-14)
 last_retrieved.session-4: 2026-10-11
 figures.session-4: Pro $20 a month or $17 a month on annual billing; Team and Enterprise from $20 a seat a month billed annually (FACTS claude-plans, read in full 2026-10-11)
 used_for.case-1: the Pro plan price named in the workflow readme
 used_for.case-4: the Claude plan prices in the vendor table of the reveal (Free, Pro, Max, Team, Enterprise) and the Team Standard seat price behind the vendor paragraph
 used_for.session-0.1: the plan prices (Free, Pro, Max, Team, Enterprise), Pro as the course minimum, and which models each plan includes (section 00)
-last_retrieved.session-0.1: 2026-10-11
-figures.session-0.1: Free $0; Pro $20 a month or $17 a month billed annually; Max 5x $100 and 20x $200; Team Standard $25 ($20 annual) and Premium $125 ($100 annual); Enterprise $20 per seat billed annually plus usage; Free includes Sonnet and Haiku, Pro adds Opus with Fable through usage credits, Max and Team Premium include Fable (FACTS claude-plans, read in full 2026-10-11)
+last_retrieved.session-0.1: 2026-11-14
+figures.session-0.1: Free $0; Pro $20 a month or $17 a month billed annually; Max $100 and Ultra $200; Team Standard $25 ($20 annual) and Premium $125 ($100 annual); Enterprise $20 per seat billed annually plus usage; Free includes Sonnet and Haiku, Pro adds Opus with Fable through usage credits, Max, Ultra and Team Premium include Fable (FACTS claude-plans, read in full 2026-10-11)
 ```
 
 ## src-gemini-plans
@@ -1441,15 +1516,15 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/manage-claude/api-and-data-retention
 published:      not applicable
-last_retrieved: 2026-10-27
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: Opened directly on 2026-09-27, with the Help Center articles on custom retention for Enterprise plans (10440198) and on retention for covered models (15425996, effective 9 June 2026) and the Claude Code data-usage page. Two Anthropic pages differ on the Enterprise chat default (30 days standard against "indefinitely unless a custom period is set"); the lesson states only what both agree on. Audit 2026-10-27 (fetched in full): verified with corrections. The page no longer states a blanket 30-day standard API retention; it says content "is not retained by default; the exception is Covered Models, which require 30-day retention", and defers the rest to the commercial data retention policy (privacy.claude.com article 7996866, unreachable from the build). Help Center 15425996 (Covered Models, effective 9 June 2026) states the 30 days; Help Center 10440198 states the Enterprise default as indefinite. The three lesson sentences that stated 30 days were reworded and chipped to FACTS claude-api-retention. Supplements: both Help Center articles.
+retrieval_note: Opened directly on 2026-09-27, with the Help Center articles on custom retention for Enterprise plans (10440198) and on retention for covered models (15425996, effective 9 June 2026) and the Claude Code data-usage page. Two Anthropic pages differ on the Enterprise chat default (30 days standard against "indefinitely unless a custom period is set"); the lesson states only what both agree on. Audit 2026-10-27 (fetched in full): verified with corrections. The page no longer states a blanket 30-day standard API retention; it says content "is not retained by default; the exception is Covered Models, which require 30-day retention", and defers the rest to the commercial data retention policy (privacy.claude.com article 7996866, unreachable from the build). Help Center 15425996 (Covered Models, effective 9 June 2026) states the 30 days; Help Center 10440198 states the Enterprise default as indefinite. The three lesson sentences that stated 30 days were reworded and chipped to FACTS claude-api-retention. Supplements: both Help Center articles. Audit 2026-11-14 (fetched in full): Fable 5.2 and Mythos 5.2 joined the Covered Models on 9 November 2026; nothing else changed.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor_policy
 recheck_before: every teaching of session-4 Appendix D2
-scope:          Conversation content sent through the API is not retained by default; the exception is the Covered Models (Fable 5.1, Mythos 5.1, Fable 5, Mythos 5), which require 30-day retention; standard retention otherwise is defined in the commercial data retention policy the page links; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years. The Enterprise custom retention period, 30 days at minimum with an indefinite default, is on Help Center article 10440198, which covers claude.ai chats and not the API.
+scope:          Conversation content sent through the API is not retained by default; the exception is the Covered Models (Fable 5.2, Mythos 5.2, Fable 5.1, Mythos 5.1, Fable 5, Mythos 5), which require 30-day retention; standard retention otherwise is defined in the commercial data retention policy the page links; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years. The Enterprise custom retention period, 30 days at minimum with an indefinite default, is on Help Center article 10440198, which covers claude.ai chats and not the API.
 used_for.session-4: the retention rung of the ladder and the retention clause of the contract view (Appendices D2 and D3), and the API retention behind a Claude key in the Live API box (above §00)
 used_for.session-1: the API retention behind a Claude key, in the live model console (above §01)
 ```
@@ -1622,7 +1697,7 @@ link:           https://www.fbi.gov/news/press-releases/cryptocurrency-and-ai-sc
 published:      2026-04-07
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. fbi.gov and ic3.gov are egress-blocked from this build environment (2026-09-27). Figures are consistent across search snippets of the FBI press release and of SpyCloud, SecureWorld, Paubox, Abnormal, McDonald Hopkins and Alston & Bird. The report is at ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. All headline figures confirmed (1,008,597 complaints, $20.877 billion, up 26 percent, BEC $3.05 billion from 24,768, AI 22,364 complaints and about $893 million); outlets split the release date between 6 and 7 April 2026. Supplement: the IC3 2025 Annual Report PDF (ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf) as the primary.
+retrieval_note: NOT RETRIEVED. fbi.gov and ic3.gov are egress-blocked from this build environment (2026-09-27). Figures are consistent across search snippets of the FBI press release and of SpyCloud, SecureWorld, Paubox, Abnormal, McDonald Hopkins and Alston & Bird. The report is at ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. All headline figures confirmed (1,008,597 complaints, $20.877 billion, up 26 percent, BEC $3.05 billion from 24,768, AI 22,364 complaints and about $893 million); outlets split the release date between 6 and 7 April 2026. Supplement: the IC3 2025 Annual Report PDF (ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf) as the primary. Audit 2026-11-14: the 2025 Internet Crime Report itself (ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf, 66 pages, fetched and read) gives 1,008,597 complaints, $20.877 billion in losses, a 26% increase, and 22,364 AI-related complaints with $893,346,472 in losses. "Cyber-enabled fraud" is the report's name for a subset, 452,868 complaints and $17.697 billion, so the Session 4 caption now says reported internet crime. The press release at this record's link (fbi.gov) is not an allowed host and was not fetched, so last_retrieved does not move.
 confidence:     H
 kind:           evidence
 moving_target:  false
@@ -1656,15 +1731,15 @@ author:         IBM
 publisher:      IBM Newsroom
 link:           https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average
 published:      2026-07-29
-last_retrieved: [UNVERIFIED, needs source]
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: NOT RETRIEVED. newsroom.ibm.com is egress-blocked from this build environment (2026-09-27). Figures consistent across search snippets of the IBM release, Infosecurity Magazine, Security Boulevard, ASIS Security Management and Cybersecurity Dive. Supersedes the 2025 edition's $4.44 million and $10.22 million. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. 602 organisations, $4.99 million global, $11.5 million US, one in four AI-enabled at $6 million (up 56 percent) confirmed; the shadow-AI 43 percent figure was not seen (GAP, see register).
+retrieval_note: NOT RETRIEVED. newsroom.ibm.com is egress-blocked from this build environment (2026-09-27). Figures consistent across search snippets of the IBM release, Infosecurity Magazine, Security Boulevard, ASIS Security Management and Cybersecurity Dive. Supersedes the 2025 edition's $4.44 million and $10.22 million. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. 602 organisations, $4.99 million global, $11.5 million US, one in four AI-enabled at $6 million (up 56 percent) confirmed; the shadow-AI 43 percent figure was not seen (GAP, see register). Audit 2026-11-14 (release fetched and read in full): every figure now in scope is in the release. The US average of $11.5 million and the shadow-AI 43% figure the record carried are not in it, so both left the scope, and the Session 4 exfiltration row now gives the global average and the financial-services figure.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   survey
 recheck_before: every teaching of session-4 Appendix D4
-scope:          Cost of a Data Breach Report 2026, 602 organisations, breaches March 2025 to February 2026: global average $4.99 million, US average $11.5 million; one in four malicious breaches AI-enabled, at $6 million on average; shadow AI in 43% of AI-related breaches.
+scope:          IBM's release on the Cost of a Data Breach Report 2026: 602 organisations, breaches March 2025 to February 2026; global average breach cost $4.99 million; one in four malicious breaches AI-enabled, up 56%, at $6 million on average; financial services breaches $6.3 million on average. The release does not carry a US average or a shadow-AI share; those are in the full report, which was not read.
 used_for.session-4: the scale line on the exfiltration row of the four-attack board (Appendix D4)
 ```
 
@@ -2046,9 +2121,9 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/about-claude/model-deprecations
 published:      2026-09-30
-last_retrieved: 2026-10-27
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: OPENED on 2026-10-02 and RE-OPENED on 2026-10-04 (platform.claude.com is reachable from this build). On 2026-10-04 every date the page carried on 2026-10-02 was unchanged; the not-sooner-than dates of the current and legacy models were added to the scope for the §02 calendar's new rows. The published date is the page's most recent deprecation announcement (Claude Sonnet 4.5, 30 September 2026); the page is updated in place with every announcement. RE-OPENED in full on 2026-10-12, after FACTS claude-model-ids-and-retirements read it in full on 2026-10-11: every date in the §02 calendar is unchanged, and the table now also lists claude-haiku-5-5 (Active, not sooner than 7 October 2027), with claude-haiku-4-5-20251001 still Active and not sooner than 15 October 2026. Audit 2026-10-27 (fetched in full): verified. Every one of the 24 dates, the lifecycle terms, the 60 days' notice and the testing advice match the live table; the page has added Mythos rows and an API parameter deprecations section (see scope).
+retrieval_note: OPENED on 2026-10-02 and RE-OPENED on 2026-10-04 (platform.claude.com is reachable from this build). On 2026-10-04 every date the page carried on 2026-10-02 was unchanged; the not-sooner-than dates of the current and legacy models were added to the scope for the §02 calendar's new rows. The published date is the page's most recent deprecation announcement (Claude Sonnet 4.5, 30 September 2026); the page is updated in place with every announcement. RE-OPENED in full on 2026-10-12, after FACTS claude-model-ids-and-retirements read it in full on 2026-10-11: every date in the §02 calendar is unchanged, and the table now also lists claude-haiku-5-5 (Active, not sooner than 7 October 2027), with claude-haiku-4-5-20251001 still Active and not sooner than 15 October 2026. Audit 2026-10-27 (fetched in full): verified. Every one of the 24 dates, the lifecycle terms, the 60 days' notice and the testing advice match the live table; the page has added Mythos rows and an API parameter deprecations section (see scope). Audit 2026-11-14 (fetched in full): claude-fable-5-2 and claude-mythos-5-2 added, Active, not sooner than 9 November 2027; claude-fable-5-1 stays Active (1 September 2027); claude-sonnet-4-5-20250929 still retires 30 November 2026. Session 0.1 and Session 1 name Fable 5.2; the Session 2 sentence is dated October 2026 and the Session 5 calendar is a 12 October snapshot, both left as written (register). Later on 2026-11-14 the Session 5 §02 calendar gained the claude-fable-5-2 row and its source line reads opened 14 November 2026.
 content_changed: 2026-10-12. The page lists Claude Haiku 5.5 (claude-haiku-5-5, not sooner than 7 October 2027), which the 2026-10-04 pull did not record; Claude Haiku 4.5 keeps its 15 October 2026 date but is no longer one of the four current models. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12: the session-5 §02 calendar gained a Haiku 5.5 row and moved Haiku 4.5 to the legacy rows, and the lineup bullet no longer counts the legacy models.
 confidence:     H
 kind:           evidence
@@ -2064,18 +2139,18 @@ figures.session-3: the id claude-sonnet-5-5 (FACTS claude-model-ids-and-retireme
 last_retrieved.session-2: 2026-10-11
 figures.session-2: model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5, and the id claude-sonnet-5-5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11)
 used_for.session-5: the lifecycle terms, the 60 days' notice, the retirement and not-sooner-than dates on the calendar, Haiku 5.5 among them, the sentence that requests to retired models fail, and the lifecycle states in The Gate and the Scorecard (§02); the advice to test the replacement before the retirement date (Appendix E2)
-last_retrieved.session-5: 2026-10-12
+last_retrieved.session-5: 2026-11-14
 figures.session-5: the retirement and not-sooner-than date of every row on the §02 calendar, Haiku 5.5 (7 October 2027) added and Haiku 4.5 (15 October 2026) moved to the legacy rows; Sonnet 4.5 deprecated 30 September 2026 and retiring 30 November 2026 with Sonnet 5.5 as the replacement; at least 60 days of notice (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12)
-last_retrieved.session-1: 2026-10-11
-figures.session-1: model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11)
+last_retrieved.session-1: 2026-11-14
+figures.session-1: model names Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-11-14)
 used_for.case-1: that claude-sonnet-5-5 is a current model id with an earliest retirement date of 2027-09-28, behind the model label on the two drafts and the re-run note
 used_for.case-3: that claude-sonnet-5-5 is a current model id with an earliest retirement date of 2027-09-28, behind the model label on the two drafts and the re-run note
 used_for.case-2: that claude-sonnet-5-5 is a current model id with an earliest retirement date of 2027-09-28, behind the model label on the email and the re-run note
 used_for.case-4: that claude-sonnet-5-5 is a current model id with an earliest retirement date of 2027-09-28, behind the model label on the note, the vendor paragraph and the timeline, and the re-run note
 used_for.case-5: that claude-sonnet-4-5-20250929 was deprecated on 30 September 2026 and is listed to retire on 30 November 2026, that Anthropic names claude-sonnet-5-5 as its replacement, the earliest retirement dates of claude-haiku-5-5, claude-sonnet-5-5 and claude-opus-5-5 in the tier table, and the sentence that requests to retired models will fail
 used_for.session-0.1: the names of the four current Claude models, in the model-picker check (section 00)
-last_retrieved.session-0.1: 2026-10-11
-figures.session-0.1: model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11)
+last_retrieved.session-0.1: 2026-11-14
+figures.session-0.1: model names Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-11-14)
 used_for.session-2: Appendix B4's list of what can differ between two runs and the third consequence card: temperature removed from the API, from the API parameter deprecations table
 used_for.session-4: temperature removed from the API, on the then-and-now deck and its flip card (Appendix D6)
 ```
@@ -2179,12 +2254,12 @@ used_for.session-5: the 25% faster, 12% more tasks and 40% quality bars, and the
 ```source
 title:          Generative AI at work
 author:         Brynjolfsson, E., Li, D., & Raymond, L.
-publisher:      The Quarterly Journal of Economics 140(2), 889 to 942, 2025; doi 10.1093/qje/qjae044. First circulated as NBER Working Paper 31161, April 2023
+publisher:      NBER Working Paper 31161, April 2023. Published, with a revised sample, as The Quarterly Journal of Economics 140(2), 889 to 942, 2025; doi 10.1093/qje/qjae044
 link:           https://www.nber.org/papers/w31161
-published:      2025
-last_retrieved: [UNVERIFIED, needs source]
+published:      2023
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: NOT RETRIEVED. nber.org, arxiv.org and academic.oup.com are egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04). The figures in scope are consistent across the reports found (the NBER abstract as the search engine returns it, IDEAS/RePEc, the SSRN listing, the arXiv listing), which is why the confidence is M. The setting and tool lines added on 2026-10-04 come from the same reports. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. QJE 140(2), 889-942 confirmed, but the 5,179 agents, 14 percent and 34 percent figures are the NBER working paper 31161 numbers; the QJE abstract reports 5,172 agents and about 15 percent. The chip is in session-5, which this pass does not touch; the record keeps the NBER link and figures until that lesson is revised (see register).
+retrieval_note: NOT RETRIEVED. nber.org, arxiv.org and academic.oup.com are egress-blocked from this build environment (2026-10-02; still blocked on 2026-10-04). The figures in scope are consistent across the reports found (the NBER abstract as the search engine returns it, IDEAS/RePEc, the SSRN listing, the arXiv listing), which is why the confidence is M. The setting and tool lines added on 2026-10-04 come from the same reports. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. QJE 140(2), 889-942 confirmed, but the 5,179 agents, 14 percent and 34 percent figures are the NBER working paper 31161 numbers; the QJE abstract reports 5,172 agents and about 15 percent. The chip is in session-5, which this pass does not touch; the record keeps the NBER link and figures until that lesson is revised (see register). Audit 2026-11-14 (NBER page fetched): the abstract reads "data from 5,179 customer support agents ... by 14% on average, including a 34% improvement for novice and low-skilled workers". Decided the same day by the instructor: Session 5 keeps these figures and the record cites the working paper for them, naming the QJE article (5,172 agents in its abstract; academic.oup.com answered 403) as the published version.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2218,9 +2293,9 @@ author:         Labotka, D., & Lamas, S.
 publisher:      Morningstar, behavioural research
 link:           https://www.morningstar.com/financial-advisors/why-do-investors-break-up-with-their-financial-advisor
 published:      2023-04-12
-last_retrieved: [UNVERIFIED, needs source]
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: NOT RETRIEVED. morningstar.com is egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across four reports found (Financial Advisor magazine, InsuranceNewsNet, Institutional Investor's RIA Intel, the IFA Magazine podcast with both authors); the reports give the sample as 184 investors in one and 185 in another, and the page says "about 185". Re-checked 2026-10-04: morningstar.com and the secondary hosts were still blocked; a fresh search returned the same six shares and 184 investors. The exact title and publication date were not read off the report, so both are recorded as the reports give them, which is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Canonical Morningstar article bylined Labotka, 12 April 2023; 184 of 3,003 across three 2021 to 2022 surveys; the 185 variant is unsupported and dropped.
+retrieval_note: NOT RETRIEVED. morningstar.com is egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across four reports found (Financial Advisor magazine, InsuranceNewsNet, Institutional Investor's RIA Intel, the IFA Magazine podcast with both authors); the reports give the sample as 184 investors in one and 185 in another, and the page says "about 185". Re-checked 2026-10-04: morningstar.com and the secondary hosts were still blocked; a fresh search returned the same six shares and 184 investors. The exact title and publication date were not read off the report, so both are recorded as the reports give them, which is why the confidence is M. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. Canonical Morningstar article bylined Labotka, 12 April 2023; 184 of 3,003 across three 2021 to 2022 surveys; the 185 variant is unsupported and dropped. Audit 2026-11-14 (page fetched): "We gathered data from 184 investors who have previously fired their financial advisor"; the two Session 5 sentences that read about 185 now read 184.
 confidence:     M
 kind:           evidence
 moving_target:  false
@@ -2238,12 +2313,12 @@ link:           https://corporate.vanguard.com/content/dam/corp/articles/pdf/put
 published:      2022-07
 last_retrieved: [UNVERIFIED, needs source]
 last_verified:
-retrieval_note: NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee. Re-checked 2026-10-04: vanguard.ca, Vanguard's own host for the infographic, was blocked; a fresh search returned about 3% and 150 basis points unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The about 3 percent framing is confirmed on Vanguard's own pages; the 150 bps behavioural-coaching figure is printed in the 2016 US and 2018 Canada editions, while one summary says the 2022 edition frames coaching as 0 to over 200 bps (GAP, see register).
+retrieval_note: NOT RETRIEVED. vanguard.com and its regional PDF hosts are egress-blocked from this build environment (2026-10-02). The figures in scope are consistent across the reports found (PLANADVISER, Index Fund Advisors, InvestmentNews, Investment Executive, Vanguard Canada's own summary as the search engine returns it), which is why the confidence is M. Vanguard frames the figure as potential value added over time, not an annual guarantee. Re-checked 2026-10-04: vanguard.ca, Vanguard's own host for the infographic, was blocked; a fresh search returned about 3% and 150 basis points unchanged. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified with corrections. The about 3 percent framing is confirmed on Vanguard's own pages; the 150 bps behavioural-coaching figure is printed in the 2016 US and 2018 Canada editions, while one summary says the 2022 edition frames coaching as 0 to over 200 bps (GAP, see register). Audit 2026-11-14: the link on this record returned Vanguard's 404 page ("This page is currently unavailable") to this build's fetch, although a web search the same day still lists it, so the 2022 PDF could not be read here and the link wants checking in a browser; search results for two copies of the 2022 edition show behavioural coaching as "0 to > 200 bps" (register). Later on 2026-11-14, at the instructor's instruction to keep the page to quantified evidence: the two Session 5 sentences no longer say coaching is about half; they state the about-3% figure, which is confirmed on Vanguard's own pages, and name coaching as a module.
 confidence:     M
 kind:           evidence
 moving_target:  false
-scope:          Vanguard's framework attributes about 3 percentage points a year of potential net value to an adviser following its best practices, of which behavioural coaching, keeping clients to their plan in fearful or greedy markets, is the largest single module at about 150 basis points, roughly half.
-used_for.session-5: the about-3% figure and behavioural coaching as about half of it (§04, §05)
+scope:          Vanguard's framework attributes about 3 percentage points a year of potential net value to an adviser following its best practices; behavioural coaching, keeping clients to their plan in fearful or greedy markets, is one of its modules. The share coaching makes up differs by edition (about 150 basis points in the 2014 to 2020 editions; a range in the 2022 edition by search result) and is on no page.
+used_for.session-5: the about-3% figure and behavioural coaching as one of its modules (§04, §05)
 ```
 
 ## src-cfp-psychology
@@ -2346,19 +2421,19 @@ author:         Anthropic
 publisher:      Claude Platform Docs
 link:           https://platform.claude.com/docs/en/models/overview
 published:      not applicable
-last_retrieved: 2026-10-27
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: OPENED on 2026-10-04 (platform.claude.com is reachable from this build). The page carries no publication date of its own; it is updated in place with each model release, so the year is recorded and the retrieval date is the one to read. RE-OPENED on 2026-10-12 (the old address redirects to platform.claude.com/docs/en/models/overview), after FACTS claude-model-ids-and-retirements read the same page on 2026-10-11. Audit 2026-10-27 (fetched in full): verified with corrections. Link updated to the address the old one redirected to. Same page as src-models; not merged in this pass (see that record).
+retrieval_note: OPENED on 2026-10-04 (platform.claude.com is reachable from this build). The page carries no publication date of its own; it is updated in place with each model release, so the year is recorded and the retrieval date is the one to read. RE-OPENED on 2026-10-12 (the old address redirects to platform.claude.com/docs/en/models/overview), after FACTS claude-model-ids-and-retirements read the same page on 2026-10-11. Audit 2026-10-27 (fetched in full): verified with corrections. Link updated to the address the old one redirected to. Same page as src-models; not merged in this pass (see that record). Audit 2026-11-14 (fetched in full): the four latest models are now Claude Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5; the Session 5 §02 calendar still shows Fable 5.1 in the lineup row and is a dated snapshot until its next re-pull (register). Later on 2026-11-14 the Session 5 §02 calendar was brought to the page as read that day: Fable 5.1 is a legacy row and Fable 5.2 (not sooner than 9 November 2027) is the fourth lineup row.
 content_changed: 2026-10-12. The four current models are now Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5 and Claude Haiku 5.5 (retirement not sooner than 7 October 2027); the 2026-10-04 pull recorded Claude Haiku 4.5 as the fourth. Haiku 4.5 now sits among the legacy models. DEPENDENT LESSON ELEMENTS, RESOLVED 2026-10-12: the session-5 §02 calendar rows for Haiku 4.5 and Haiku 5.5, and the lineup bullet.
 confidence:     H
 kind:           evidence
 moving_target:  true
 figure_class:   vendor model lineup
 recheck_before: each teaching of Session 5
-scope:          The current lineup of four models (Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5) with each one's retirement commitment (not sooner than 1 September 2027, 22 September 2027, 28 September 2027 and 7 October 2027), and the legacy models still available (Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Haiku 4.5). The page recommends Opus 5.5 for most workloads. The comparison table carries prices and a June 2026 knowledge cutoff; no benchmark is on the page.
+scope:          The current lineup of four models (Claude Fable 5.2, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5) with each one's retirement commitment (not sooner than 9 November 2027, 22 September 2027, 28 September 2027 and 7 October 2027), and the legacy models still available (Fable 5.1, Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Haiku 4.5). The page recommends Opus 5.5 for most workloads. The comparison table carries prices and a June 2026 knowledge cutoff; no benchmark is on the page.
 used_for.session-5: the four current models and the legacy ones on the §02 calendar, and the lineup sentence in §02's bullets and status readout
-last_retrieved.session-5: 2026-10-12
-figures.session-5: the four current models Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 and their not-sooner-than dates (1 September, 22 September, 28 September and 7 October 2027), with Haiku 4.5 among the legacy models (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12)
+last_retrieved.session-5: 2026-11-14
+figures.session-5: the four current models Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5 and their not-sooner-than dates (9 November, 22 September, 28 September and 7 October 2027), with Fable 5.1 (1 September 2027) and Haiku 4.5 among the legacy models (FACTS claude-model-ids-and-retirements, read in full 2026-11-14)
 ```
 
 ## src-claude-code-skills
@@ -2532,7 +2607,7 @@ scope:          The statutory source of the applicable age for required minimum 
 used_for.session-2: named as a cited authority in the citation-triage items (sound citation; also the planted mis-citation that attributes the wrong age to it)
 last_retrieved.session-2: 2026-10-12
 figures.session-2: none (the item text carries the applicable ages; the case facts carry Meg's and David's years)
-used_for.case-2: the section named in statement D of the exercise draft, and in the log rows for the planted age 73 and the corrected age 75, with the 1951 to 1959 and 1960 cohorts
+used_for.case-2: the section named in statement D of the exercise draft, and in the log rows for the planted age 73 and the corrected age 75, with the 1951 to 1958 and 1960 cohorts
 ```
 
 ## src-td10001
@@ -2543,9 +2618,9 @@ author:         Department of the Treasury, Internal Revenue Service
 publisher:      Federal Register
 link:           https://www.govinfo.gov/content/pkg/FR-2024-07-19/html/2024-14542.htm
 published:      2024-07-19
-last_retrieved: 2026-10-12
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: Verified 2026-10-12 from the GovInfo Federal Register listing, the IRS newsroom release (IR-2024-190) and the Journal of Accountancy report found by web search: issued 18 July 2024, published 19 July 2024, effective 17 September 2024, applying to calendar years beginning on or after 1 January 2025; companion proposed regulations REG-103529-23 issued the same day. The GovInfo page itself was not fetched from the build container. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified.
+retrieval_note: Verified 2026-10-12 from the GovInfo Federal Register listing, the IRS newsroom release (IR-2024-190) and the Journal of Accountancy report found by web search: issued 18 July 2024, published 19 July 2024, effective 17 September 2024, applying to calendar years beginning on or after 1 January 2025; companion proposed regulations REG-103529-23 issued the same day. The GovInfo page itself was not fetched from the build container. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Audit 2026-11-14 (govinfo text fetched and read): "(iv) Employees born in 1951 through 1958 ... the applicable age is age 73; (v) [Reserved] (vi) Employees born after 1959 ... the applicable age is age 75", with a footnote that section 107 is ambiguous for people born in 1959. The two Case 2 commentary sentences that said 1951 to 1959 now say 1951 to 1958 and that 1959 is open; the exercise email itself still says 1951 to 1959.
 content_changed:
 confidence:     H
 kind:           authority
@@ -2556,7 +2631,7 @@ scope:          The 2024 final regulations on required minimum distributions, Tr
 used_for.session-2: named as a cited authority in the citation-triage items
 last_retrieved.session-2: 2026-10-12
 figures.session-2: none
-used_for.case-2: the final regulations named beside SECURE 2.0 section 107 for the corrected age 75, in the log's corrected-D row
+used_for.case-2: the final regulations named beside SECURE 2.0 section 107 for the corrected age 75, in the log's corrected-D row; and that they set age 73 for people born 1951 through 1958 and reserve 1959
 ```
 
 ## src-irs-590b
@@ -2615,20 +2690,20 @@ author:         Artificial Analysis
 publisher:      Artificial Analysis
 link:           https://artificialanalysis.ai/leaderboards/models
 published:      not applicable
-last_retrieved: 2026-10-11
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: artificialanalysis.ai is unreachable from the build container (FACTS leaderboard-snapshot-aa, 2026-10-11); the snapshot is read from primary-domain search snippets and carried at M. Effort tiers matter: Opus 5.5 at High scores 54 against 58 at Max, and GPT-6 Astra at High scores 51. The scores are not comparable with the index figures in the July 2026 scatter, which src-aa carries. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the dated launch articles (artificialanalysis.ai/articles/claude-opus-5-5 and /claude-sonnet-5-5); re-read the board the week before Session 1.
+retrieval_note: artificialanalysis.ai is unreachable from the build container (FACTS leaderboard-snapshot-aa, 2026-10-11); the snapshot is read from primary-domain search snippets and carried at M. Effort tiers matter: Opus 5.5 at High scores 54 against 58 at Max, and GPT-6 Astra at High scores 51. The scores are not comparable with the index figures in the July 2026 scatter, which src-aa carries. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the dated launch articles (artificialanalysis.ai/articles/claude-opus-5-5 and /claude-sonnet-5-5); re-read the board the week before Session 1. Audit 2026-11-14 (page fetched and read; the host is allowed since that day): the index is v5.0.1 and the page's own summary lists Claude Fable 5.2 (Max) 65, Fable 5.2 (Xhigh) 62, Fable 5.2 (High) 62, Gemini 4 Carbon (High) 60 and Claude Opus 5.5 (Max) 59. The 7 October snapshot (v4.3.2) left the Session 1 table.
 confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   benchmark_index
-index_version:  v4.3.2
+index_version:  v5.0.1
 recheck_before: every teaching of session-1 Appendix A7
 scope:          The current Intelligence Index scores of the leading models at a stated effort setting. A live leaderboard: every figure drawn from it is a moving target.
-used_for.session-1: the current Intelligence Index snapshot beside the July scatter (Appendix A7): Claude Opus 5.5 (Max) 58, Claude Sonnet 5.5 (Max) 56, GPT-6 Astra (Max) 53, Gemini 4 Argon (High) 53, about 7 October 2026
-last_retrieved.session-1: 2026-10-11
-index_version.session-1: v4.3.2
-figures.session-1: four index scores with their effort settings, about 2026-10-07 (FACTS leaderboard-snapshot-aa)
+used_for.session-1: the current Intelligence Index snapshot beside the July scatter (Appendix A7): Claude Fable 5.2 (Max) 65, Claude Fable 5.2 (High) 62, Gemini 4 Carbon (High) 60, Claude Opus 5.5 (Max) 59, 14 November 2026
+last_retrieved.session-1: 2026-11-14
+index_version.session-1: v5.0.1
+figures.session-1: four index scores with their effort settings, 2026-11-14 (FACTS leaderboard-snapshot-aa)
 ```
 
 ## src-aa-index
@@ -2637,22 +2712,22 @@ figures.session-1: four index scores with their effort settings, about 2026-10-0
 title:          Intelligence Index methodology
 author:         Artificial Analysis
 publisher:      Artificial Analysis
-link:           https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index
+link:           https://artificialanalysis.ai/methodology/intelligence-benchmarking
 published:      not applicable
-last_retrieved: 2026-10-11
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: Host unreachable from the build container (FACTS aa-index-definition, 2026-10-11); the description is read from primary-domain snippets. The evaluations-page FAQ still says 25% per category; the v4.3 announcement and the methodology page say 30/20/20/30, which is what the lesson states. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the methodology page (artificialanalysis.ai/methodology/intelligence-benchmarking) and the v4.3 announcement article.
+retrieval_note: Host unreachable from the build container (FACTS aa-index-definition, 2026-10-11); the description is read from primary-domain snippets. The evaluations-page FAQ still says 25% per category; the v4.3 announcement and the methodology page say 30/20/20/30, which is what the lesson states. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): verified. Supplement: the methodology page (artificialanalysis.ai/methodology/intelligence-benchmarking) and the v4.3 announcement article. Audit 2026-11-14 (methodology page fetched and read): "Artificial Analysis Intelligence Index v5.0.1 incorporates 9 evaluations" and "a weighted average across four categories: Knowledge Work (25%), Coding (25%), Science (25%), and General (25%)". The record is repointed from the evaluations page (artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index), whose FAQ lagged the methodology in October, to the methodology page that was read.
 confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   benchmark_index
-index_version:  v4.3.2
+index_version:  v5.0.1
 recheck_before: every teaching of session-1 Appendix A7
-scope:          What the Intelligence Index measures: a weighted average of 10 evaluations in four categories, scaled 0 to 100, at version 4.3.2.
-used_for.session-1: what the Intelligence Index measures, version 4.3.2 (Appendix A7)
-last_retrieved.session-1: 2026-10-11
-index_version.session-1: v4.3.2
-figures.session-1: 10 evaluations; Agents 30%, Coding 20%, Scientific Reasoning 20%, General 30%; scale 0 to 100 (FACTS aa-index-definition)
+scope:          What the Intelligence Index measures: a weighted average of 9 evaluations in four categories, scaled 0 to 100, at version 5.0.1.
+used_for.session-1: what the Intelligence Index measures, version 5.0.1 (Appendix A7)
+last_retrieved.session-1: 2026-11-14
+index_version.session-1: v5.0.1
+figures.session-1: 9 evaluations; Knowledge Work, Coding, Science and General at 25% each; scale 0 to 100 (FACTS aa-index-definition)
 ```
 
 ## src-livebench
@@ -2663,18 +2738,18 @@ author:         LiveBench
 publisher:      livebench.ai
 link:           https://livebench.ai/
 published:      not applicable
-last_retrieved: 2026-10-11
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: The site is unreachable from the build container (FACTS livebench-last-release, 2026-10-11). The release date is read from the homepage snippet and GitHub issue titles that reference the 2026-06-25 release; the GitHub README is stale and still says 2025-04-25. The description (23 objective tasks in 7 categories, refreshed about every six months) comes from the README, fetched in full. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): unreachable. livebench.ai was returned by search on 2026-10-27 as LiveBench 2.0 with the v1 board at livebench.ai/v1/ (latest release 2026-06-25); the task count and release name in scope are GAP until read from the site.
+retrieval_note: The site is unreachable from the build container (FACTS livebench-last-release, 2026-10-11). The release date is read from the homepage snippet and GitHub issue titles that reference the 2026-06-25 release; the GitHub README is stale and still says 2025-04-25. The description (23 objective tasks in 7 categories, refreshed about every six months) comes from the README, fetched in full. Audit 2026-10-27 (existence and metadata confirmed by publisher-domain web search, page not fetched): unreachable. livebench.ai was returned by search on 2026-10-27 as LiveBench 2.0 with the v1 board at livebench.ai/v1/ (latest release 2026-06-25); the task count and release name in scope are GAP until read from the site. Audit 2026-11-14 (page fetched and read): the site titles itself "LiveBench 2.0 - A challenging, contamination-free long-horizon AI benchmark" and describes models doing "real work (decks, research reports, bug fixes, apps that run for hours)". The 23-tasks-in-7-categories description belonged to the earlier board and left the Session 1 table; the new board's release name needs a browser.
 confidence:     M
 kind:           evidence
 moving_target:  true
 figure_class:   benchmark_index
 recheck_before: every teaching of session-1 Appendix A7
-scope:          What LiveBench measures and the name of its latest question release.
-used_for.session-1: what LiveBench measures and its latest question release, LiveBench-2026-06-25 (Appendix A7)
-last_retrieved.session-1: 2026-10-11
-figures.session-1: 23 objective tasks in 7 categories, refreshed about every six months; latest release LiveBench-2026-06-25 (FACTS aa-index-definition and livebench-last-release)
+scope:          What LiveBench measures. Since its relaunch as LiveBench 2.0 the page is a script application and gave no release name to a plain fetch.
+used_for.session-1: what LiveBench 2.0 measures, and LiveBench-2026-06-25 as the last question release read on the earlier board (Appendix A7)
+last_retrieved.session-1: 2026-11-14
+figures.session-1: LiveBench 2.0, long-horizon work graded on what the model hands back; last release read on the earlier board LiveBench-2026-06-25 (FACTS aa-index-definition and livebench-last-release)
 ```
 
 ## src-arena-board
@@ -2846,9 +2921,9 @@ author:         Anthropic
 publisher:      Claude Help Center, article 12512180
 link:           https://support.claude.com/en/articles/12512180-use-skills-in-claude
 published:      not applicable
-last_retrieved: 2026-10-27
+last_retrieved: 2026-11-14
 last_verified:
-retrieval_note: Fetched in full on 2026-10-13 (support.claude.com is reachable from this build; the page reads "Updated over 3 weeks ago" and carries no publication date). Read for the custom-skill upload steps, the plans that offer skills and the code execution setting. FACTS claude-skills-format carries the same facts, read in full 2026-10-11. Audit 2026-10-27 (fetched in full): verified.
+retrieval_note: Fetched in full on 2026-10-13 (support.claude.com is reachable from this build; the page reads "Updated over 3 weeks ago" and carries no publication date). Read for the custom-skill upload steps, the plans that offer skills and the code execution setting. FACTS claude-skills-format carries the same facts, read in full 2026-10-11. Audit 2026-10-27 (fetched in full): verified. Audit 2026-11-14 (fetched in full): the individual plans are now named Free, Pro, Max and Ultra; the ZIP upload and the Capabilities setting are unchanged.
 confidence:     H
 kind:           evidence
 moving_target:  true

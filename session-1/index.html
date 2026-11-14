@@ -1388,7 +1388,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     </dl>
   </div>
 
-  <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open your own Claude account in another tab and choose the plan it is on. Section 05 runs in that account and says where your plan changes a step.<div class="row" style="margin-top:10px"><select id="s1plan" aria-label="The plan your Claude account is on" style="max-width:520px;width:100%;font-family:&quot;JetBrains Mono&quot;,monospace;font-size:13.5px;line-height:1.6;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:11px 13px"><option value="">Choose your plan</option><option value="free">Free</option><option value="pro">Pro</option><option value="max5">Max 5x</option><option value="max20">Max 20x</option><option value="team">Team</option><option value="ent">Enterprise</option><option value="other">Another assistant, not Claude</option><option value="none">No account yet</option></select></div><p class="dim" id="s1planOut" role="status" aria-live="polite" style="font-size:14px;margin:10px 0 0">No account yet? The <a class="inl" href="../session-0.1/index.html">setup page</a> walks through opening one.</p></div></div>
+  <div class="check" data-gate="g1"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Open your own Claude account in another tab and choose the plan it is on. Section 05 runs in that account and says where your plan changes a step.<div class="row" style="margin-top:10px"><select id="s1plan" aria-label="The plan your Claude account is on" style="max-width:520px;width:100%;font-family:&quot;JetBrains Mono&quot;,monospace;font-size:13.5px;line-height:1.6;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:11px 13px"><option value="">Choose your plan</option><option value="free">Free</option><option value="pro">Pro</option><option value="max5">Max</option><option value="max20">Ultra</option><option value="team">Team</option><option value="ent">Enterprise</option><option value="other">Another assistant, not Claude</option><option value="none">No account yet</option></select></div><p class="dim" id="s1planOut" role="status" aria-live="polite" style="font-size:14px;margin:10px 0 0">No account yet? The <a class="inl" href="../session-0.1/index.html">setup page</a> walks through opening one.</p></div></div>
  </div>
 </section>
 
@@ -1844,14 +1844,14 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <p>The dashed line connects models no other model beats on capability and price at once. Going from $2.75 to $1.04 per task costs one index point; going to $0.31 costs six. Whether six points matters depends on whether you are drafting Meg's meeting agenda or reading the 2024 Roth conversion memo against the 2026 plan.</p>
   <p class="pull">Paying for the top of the leaderboard is a decision, not a default.</p>
 
-  <p class="dim" style="font-size:14.5px">The scatter is a pull from 17 and 24 July 2026, with the model names as the board listed them then. Index scores from different versions of the index are not comparable, and the current version is v4.3.2, so do not read a July score against a score in the table below.</p>
+  <p class="dim" style="font-size:14.5px">The scatter is a pull from 17 and 24 July 2026, with the model names as the board listed them then. Index scores from different versions of the index are not comparable, and the current version is v5.0.1, so do not read a July score against a score in the table below.</p>
 
   <h3>Three leaderboards, and what each one measures</h3>
   <table class="dt tight">
     <thead><tr><th>Leaderboard</th><th>What it measures</th><th>Latest snapshot read</th></tr></thead>
     <tbody>
-      <tr><td>Artificial Analysis Intelligence Index</td><td>Version 4.3.2: a weighted average of 10 evaluations (Agents 30%, Coding 20%, Scientific Reasoning 20%, General 30%), scaled 0 to 100 <span class="conf m" data-src="src-aa-index" data-fact="aa-index-definition">M</span></td><td>About 7 October 2026: Claude Opus 5.5 (Max) 58, Claude Sonnet 5.5 (Max) 56, GPT-6 Astra (Max) 53, Gemini 4 Argon (High) 53 <span class="conf m" data-src="src-aa-leaderboard" data-fact="leaderboard-snapshot-aa">M</span></td></tr>
-      <tr><td>LiveBench</td><td>A contamination-limited benchmark of 23 objective tasks in 7 categories, refreshed about every six months <span class="conf m" data-src="src-livebench" data-fact="aa-index-definition">M</span></td><td>Latest question release: LiveBench-2026-06-25 <span class="conf m" data-src="src-livebench" data-fact="livebench-last-release">M</span></td></tr>
+      <tr><td>Artificial Analysis Intelligence Index</td><td>Version 5.0.1: a weighted average of 9 evaluations in four categories (Knowledge Work, Coding, Science and General, 25% each), scaled 0 to 100 <span class="conf m" data-src="src-aa-index" data-fact="aa-index-definition">M</span></td><td>14 November 2026: Claude Fable 5.2 (Max) 65, Claude Fable 5.2 (High) 62, Gemini 4 Carbon (High) 60, Claude Opus 5.5 (Max) 59 <span class="conf m" data-src="src-aa-leaderboard" data-fact="leaderboard-snapshot-aa">M</span></td></tr>
+      <tr><td>LiveBench</td><td>LiveBench 2.0: a contamination-limited benchmark of long-horizon work (decks, research reports, bug fixes, apps that run for hours), graded on what the model hands back <span class="conf m" data-src="src-livebench" data-fact="aa-index-definition">M</span></td><td>Relaunched as LiveBench 2.0 by 14 November 2026; LiveBench-2026-06-25 was the last question release read on the earlier board <span class="conf m" data-src="src-livebench" data-fact="livebench-last-release">M</span></td></tr>
       <tr><td>Arena (formerly LMArena) <span class="conf m" data-src="src-arena-rename" data-fact="arena-rename">M</span></td><td>Human pairwise preference votes converted to a Bradley-Terry (Elo-style) score <span class="conf m" data-src="src-arena-board" data-fact="aa-index-definition">M</span></td><td>Snapshot dated 8 October 2026, from a secondary roundup: Gemini 4 Argon 1,525 (preliminary) first, Claude Opus 5.5 1,507 second <span class="conf l" data-src="src-arena-board" data-fact="leaderboard-snapshot-arena">L</span></td></tr>
     </tbody>
   </table>
@@ -1863,10 +1863,10 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       <tr><td>Haiku 5.5</td><td class="n">$0.10, or $0.50 over 100K tokens</td><td class="n">$0.50, or $2.50 over 100K tokens</td><td class="n">0.1x input</td></tr>
       <tr><td>Sonnet 5.5</td><td class="n">$2</td><td class="n">$10</td><td class="n">0.05x input</td></tr>
       <tr><td>Opus 5.5</td><td class="n">$4</td><td class="n">$20</td><td class="n">0.05x input</td></tr>
-      <tr><td>Fable 5.1</td><td class="n">$10</td><td class="n">$50</td><td class="n">0.025x input</td></tr>
+      <tr><td>Fable 5.2</td><td class="n">$8</td><td class="n">$40</td><td class="n">0.025x input</td></tr>
     </tbody>
   </table>
-  <p class="dim" style="font-size:14.5px">At the up-to-100K-token rate, input runs from $0.10 to $10 per million tokens across the four tiers: a hundredfold spread inside one vendor. Output tokens cost five times input tokens on every listed Claude model. A cache read costs 0.1x base input by default, 0.05x on Opus 5.5 and Sonnet 5.5, and 0.025x on Fable 5.1; a cache write costs 1.25x for five minutes or 2x for an hour; the Batch API takes 50% off input and output. Haiku 5.5 is the only current model priced by prompt length: a prompt over 100K tokens, counting every input token, is priced per request at the higher rate. Published rates move, and every figure in this table is one a vendor can change without asking you: price a workload against the pricing page, not against a number you remember. Claude 4.7 and later also produce roughly 30% more tokens for the same text, so a per-token price cut does not always cut the bill. <span class="conf h" data-src="src-pricing" data-fact="claude-tokenizer-4-7">H</span></p>
+  <p class="dim" style="font-size:14.5px">At the up-to-100K-token rate, input runs from $0.10 to $8 per million tokens across the four tiers: an eightyfold spread inside one vendor. Output tokens cost five times input tokens on every listed Claude model. A cache read costs 0.1x base input by default, 0.05x on Opus 5.5 and Sonnet 5.5, and 0.025x on Fable 5.2; a cache write costs 1.25x for five minutes or 2x for an hour; the Batch API takes 50% off input and output. Haiku 5.5 is the only current model priced by prompt length: a prompt over 100K tokens, counting every input token, is priced per request at the higher rate. Published rates move, and every figure in this table is one a vendor can change without asking you: price a workload against the pricing page, not against a number you remember. Claude 4.7 and later also produce roughly 30% more tokens for the same text, so a per-token price cut does not always cut the bill. <span class="conf h" data-src="src-pricing" data-fact="claude-tokenizer-4-7">H</span></p>
 
   <h3>The Other Assistants, on the Figures on File</h3>
   <div class="card">
@@ -1874,7 +1874,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
     <table class="dt tight">
       <thead><tr><th>Assistant</th><th>What this page holds on file</th></tr></thead>
       <tbody>
-        <tr><td>Claude</td><td>Free $0; Pro $20 a month, or $17 a month billed annually; Max 5x $100; Max 20x $200. <span class="conf h" data-src="src-claude-pricing" data-fact="claude-plans">H</span></td></tr>
+        <tr><td>Claude</td><td>Free $0; Pro $20 a month, or $17 a month billed annually; Max $100; Ultra $200. <span class="conf h" data-src="src-claude-pricing" data-fact="claude-plans">H</span></td></tr>
         <tr><td>ChatGPT</td><td>The GPT-6 family (Astra, Sol, Luna) and GPT-6.1 Sol. Free $0, Go $8 in the US, Plus $20, Pro from $100 a month. Consumer content may be used for training unless you turn off &ldquo;Improve the model for everyone&rdquo;; Business, Enterprise, Edu and the API are not used for training by default. <span class="conf m" data-fact="openai-models-and-plans openai-consumer-training-default">M</span></td></tr>
         <tr><td>Gemini</td><td>Google AI Plus $4.99, Google AI Pro $19.99, Google AI Ultra $99.99 (5x) or $199.99 (20x) a month. <span class="conf m" data-src="src-gemini-plans" data-fact="gemini-plans">M</span></td></tr>
         <tr><td>Copilot</td><td>No plan or price figure on file.</td></tr>
@@ -1922,18 +1922,18 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
       <button class="btn sel mini act" data-dp="0">Haiku 5.5</button>
       <button class="btn sel mini" data-dp="1">Sonnet 5.5</button>
       <button class="btn sel mini" data-dp="2">Opus 5.5</button>
-      <button class="btn sel mini" data-dp="3">Fable 5.1</button>
+      <button class="btn sel mini" data-dp="3">Fable 5.2</button>
     </div>
     <div class="stats" id="dpStats"></div>
     <div class="readout" id="dpOut"></div>
   </div>
-  <p>Run every tier. The spread across the whole ladder is $1.61 for the same piece of work: $1.63 on the top tier less $0.02 on the bottom one. On this household, at any plausible fee, the cost of the model is not a line item you would ever discuss. The cost of missing the conflict between the 2024 memo and the 2026 plan is.</p>
+  <p>Run every tier. The spread across the whole ladder is $1.22 for the same piece of work: $1.30 on the top tier less $0.08 on the bottom one. On this household, at any plausible fee, the cost of the model is not a line item you would ever discuss. The cost of missing the conflict between the 2024 memo and the 2026 plan is.</p>
   <p class="pull">Price is never the reason to use the cheap tier. Fitness for the task is.</p>
 
-  <p>At the defaults, metered Opus costs less than half of five Pro subscriptions. That is not an argument for the API. The subscription buys the interface, the file handling and the projects, and removes the need to build anything. Most of this room should be on subscriptions. Knowing why is the point. Claude Pro is $20 a month billed monthly or $17 a month billed annually; Max 5x is $100 a month and Max 20x is $200 a month.</p>
+  <p>At the defaults, metered Opus costs less than half of five Pro subscriptions. That is not an argument for the API. The subscription buys the interface, the file handling and the projects, and removes the need to build anything. Most of this room should be on subscriptions. Knowing why is the point. Claude Pro is $20 a month billed monthly or $17 a month billed annually; Max is $100 a month and Ultra is $200 a month.</p>
 
   <div class="check" data-gate="g11"><span class="mk">&middot;</span><div class="ct"><b>Work along</b>Find a volume where metered Opus 5.5 exceeds the same number of Pro subscriptions, then price the Cole document pass at all four tiers.</div></div>
-  <span class="src">Rates: <b>Anthropic Claude Platform Docs</b>, 11 October 2026. <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-haiku-5-5 claude-api-price-sonnet-5-5 claude-api-price-opus-5-5 claude-api-price-fable-5-1">H</span> &middot; Annual figures derived. <span class="conf h" data-src="src-pricing">H</span> &middot; Tokens per meeting is an instructor-set assumption, not measured data. <span class="conf m" data-src="src-pricing">M</span> &middot; Subscription prices: <b>Anthropic, Plans and pricing</b>, 11 October 2026. First-party. <span class="conf h" data-src="src-claude-pricing" data-fact="claude-plans">H</span></span>
+  <span class="src">Rates: <b>Anthropic Claude Platform Docs</b>, 14 November 2026. <span class="conf h" data-src="src-pricing" data-fact="claude-api-price-haiku-5-5 claude-api-price-sonnet-5-5 claude-api-price-opus-5-5 claude-api-price-fable-5-2">H</span> &middot; Annual figures derived. <span class="conf h" data-src="src-pricing">H</span> &middot; Tokens per meeting is an instructor-set assumption, not measured data. <span class="conf m" data-src="src-pricing">M</span> &middot; Subscription prices: <b>Anthropic, Plans and pricing</b>, 14 November 2026. First-party. <span class="conf h" data-src="src-claude-pricing" data-fact="claude-plans">H</span></span>
  </div>
 </section>
 
@@ -2179,29 +2179,29 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
   <h3 style="margin:22px 0 4px;font-size:17px">Sources cited in this session</h3>
   <ol class="srcs">
 <!-- SOURCES:BEGIN v1 -->
-<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 0d77e559895e6a7debf555540688fede569aa4c1143ade47c9ad048ccd3fefa0 -->
-      <li id="src-pricing">Anthropic. <em>Pricing</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com/docs/en/about-claude/pricing</a> Retrieved 2026, October 11. Used for: per-token rates for the four current Claude models, the five-to-one output-to-input price ratio, cache and batch discounts, and the Cole document-pass arithmetic. <span class="conf h" data-src="src-pricing">H</span></li>
+<!-- generated by scripts/inject-sources.mjs from SOURCES.md — sha256 58eed27722ce6bce9dcb936c7a5e95c05a069f12bf1ce312d627891713ce485c -->
+      <li id="src-pricing">Anthropic. <em>Pricing</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/pricing">platform.claude.com/docs/en/about-claude/pricing</a> Retrieved 2026, November 14. Other sessions cite other retrievals of this page. Used for: per-token rates for the four current Claude models, the five-to-one output-to-input price ratio, cache and batch discounts, and the Cole document-pass arithmetic. <span class="conf h" data-src="src-pricing">H</span></li>
       <li id="src-context-windows">Anthropic. <em>Context windows</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">platform.claude.com</a> Retrieved 2026, October 11. Used for: the definition of the context window, all the text the model can reference when generating a response, the response itself included, which is not the box you type in (Appendix A2). <span class="conf h" data-src="src-context-windows">H</span></li>
       <li id="src-anthropic-fluency">Anthropic. (2025). <em>AI Fluency: Framework &amp; Foundations</em>. Anthropic Academy. <a href="https://anthropic.skilljar.com/ai-fluency-framework-foundations">anthropic.skilljar.com/ai-fluency-framework-foundations</a> Used for: the Session 2 reading card (the assigned reading on the reading card). <span class="conf h" data-src="src-anthropic-fluency">H</span></li>
       <li id="src-anthropic-terms">Anthropic. <em>Consumer Terms of Service, Commercial Terms of Service and Privacy Policy</em>. Anthropic, anthropic.com/legal. <a href="https://www.anthropic.com/legal/commercial-terms">anthropic.com/legal/commercial-terms</a> Retrieved 2026, October 27. Used for: the Commercial Terms' exclusion of training behind a Claude API key, in the live model console (above §01). <span class="conf h" data-src="src-anthropic-terms">H</span></li>
       <li id="src-models">Anthropic. <em>Models overview</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/models/overview">platform.claude.com/docs/en/models/overview</a> Retrieved 2026, October 11. Used for: the 1M-token context window of the current Claude models (Appendix A2). <span class="conf h" data-src="src-models">H</span></li>
-      <li id="src-claude-pricing">Anthropic. <em>Plans and pricing</em>. claude.com. <a href="https://claude.com/pricing">claude.com/pricing</a> Retrieved 2026, October 11. Used for: the Pro and Max subscription prices set against metered API cost in the practice-cost comparison (Appendix A8). <span class="conf h" data-src="src-claude-pricing">H</span></li>
-      <li id="src-anthropic-retention">Anthropic. <em>API and data retention</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/manage-claude/api-and-data-retention">platform.claude.com</a> Retrieved 2026, October 27. Used for: the API retention behind a Claude key, in the live model console (above §01). <span class="conf h" data-src="src-anthropic-retention">H</span></li>
+      <li id="src-claude-pricing">Anthropic. <em>Plans and pricing</em>. claude.com. <a href="https://claude.com/pricing">claude.com/pricing</a> Retrieved 2026, November 14. Other sessions cite other retrievals of this page. Used for: the Pro and Max subscription prices set against metered API cost in the practice-cost comparison (Appendix A8). <span class="conf h" data-src="src-claude-pricing">H</span></li>
+      <li id="src-anthropic-retention">Anthropic. <em>API and data retention</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/manage-claude/api-and-data-retention">platform.claude.com</a> Retrieved 2026, November 14. Used for: the API retention behind a Claude key, in the live model console (above §01). <span class="conf h" data-src="src-anthropic-retention">H</span></li>
       <li id="src-anthropic-api-credits">Anthropic. <em>API credits for Max and Team plans</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers">platform.claude.com</a> Retrieved 2026, October 27. Used for: a key issued from the course workspace draws on a class balance that stops when spent, with nothing charged to the student, in the live model console (above §01). <span class="conf h" data-src="src-anthropic-api-credits">H</span></li>
-      <li id="src-anthropic-deprecations">Anthropic. (2026, September 30). <em>Model deprecations</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">platform.claude.com/docs/en/about-claude/model-deprecations</a> Retrieved 2026, October 11. Other sessions cite other retrievals of this page. Used for: the names of the four current Claude models in the tier table (Appendix A7); and that Claude models from Opus 4.7 on reject a temperature setting, so the live temperature panel runs on an older Claude model when a Claude key is connected (Appendix A6). <span class="conf h" data-src="src-anthropic-deprecations">H</span></li>
+      <li id="src-anthropic-deprecations">Anthropic. (2026, September 30). <em>Model deprecations</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations">platform.claude.com/docs/en/about-claude/model-deprecations</a> Retrieved 2026, November 14. Other sessions cite other retrievals of this page. Used for: the names of the four current Claude models in the tier table (Appendix A7); and that Claude models from Opus 4.7 on reject a temperature setting, so the live temperature panel runs on an older Claude model when a Claude key is connected (Appendix A6). <span class="conf h" data-src="src-anthropic-deprecations">H</span></li>
       <li id="src-api-migration-2026-10-21">Anthropic. <em>Migrating to API version 2026-10-21</em>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/api/migration-2026-10-21">platform.claude.com/docs/en/api/migration-2026-10-21</a> Retrieved 2026, October 27. Used for: why the live temperature panel pins API version 2023-06-01 as well as a 4.6-or-earlier model (Appendix A6). <span class="conf h" data-src="src-api-migration-2026-10-21">H</span></li>
       <li id="src-anthropic-prompting-101">Anthropic (Moran, H., &amp; Ryan, C.). (2025, July 31). <em>Prompting 101, Code w/ Claude (video, about 25 minutes)</em>. YouTube. <a href="https://www.youtube.com/watch?v=ysPbXH0LpIE">youtube.com/watch?v=ysPbXH0LpIE</a> Retrieved 2026, October 13. Used for: the Session 2 reading card (the optional video on the reading card). <span class="conf l" data-src="src-anthropic-prompting-101">L</span></li>
       <li id="src-arena-board">Arena. <em>Text leaderboard</em>. arena.ai. <a href="https://arena.ai/leaderboard/chat/text">arena.ai/leaderboard/chat/text</a> Retrieved 2026, October 11. Used for: what Arena measures and the first two places on its text leaderboard, Gemini 4 Argon 1,525 (preliminary) and Claude Opus 5.5 1,507, snapshot dated 8 October 2026 (Appendix A7). <span class="conf l" data-src="src-arena-board">L</span></li>
       <li id="src-arena-rename">Arena. (2026, January 28). <em>LMArena is now Arena</em>. arena.ai. <a href="https://arena.ai/blog/lmarena-is-now-arena/">arena.ai/blog/lmarena-is-now-arena</a> Retrieved 2026, October 11. Used for: the name Arena, with one parenthetical "formerly LMArena" at first mention (Appendix A7). <span class="conf m" data-src="src-arena-rename">M</span></li>
       <li id="src-sampling">artefact2. (2024, July). <em>LLM sampling visualiser</em>. GitHub Pages. <a href="https://artefact2.github.io/llm-sampling/">artefact2.github.io/llm-sampling</a> Used for: the nine sampler controls reimplemented in Appendix A6. <span class="conf h" data-src="src-sampling">H</span></li>
       <li id="src-aa">Artificial Analysis. <em>Artificial Analysis Intelligence Index and cost-per-task figures</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a> Retrieved 2026, July 28. Other sessions cite other retrievals of this page. Used for: the capability-against-price frontier and the tier comparison. <span class="conf m" data-src="src-aa">M</span></li>
-      <li id="src-aa-leaderboard">Artificial Analysis. <em>Language model leaderboard, Intelligence Index</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/leaderboards/models">artificialanalysis.ai/leaderboards/models</a> Retrieved 2026, October 11. Used for: the current Intelligence Index snapshot beside the July scatter (Appendix A7): Claude Opus 5.5 (Max) 58, Claude Sonnet 5.5 (Max) 56, GPT-6 Astra (Max) 53, Gemini 4 Argon (High) 53, about 7 October 2026. <span class="conf m" data-src="src-aa-leaderboard">M</span></li>
-      <li id="src-aa-index">Artificial Analysis. <em>Intelligence Index methodology</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index">artificialanalysis.ai</a> Retrieved 2026, October 11. Used for: what the Intelligence Index measures, version 4.3.2 (Appendix A7). <span class="conf m" data-src="src-aa-index">M</span></li>
+      <li id="src-aa-leaderboard">Artificial Analysis. <em>Language model leaderboard, Intelligence Index</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/leaderboards/models">artificialanalysis.ai/leaderboards/models</a> Retrieved 2026, November 14. Used for: the current Intelligence Index snapshot beside the July scatter (Appendix A7): Claude Fable 5.2 (Max) 65, Claude Fable 5.2 (High) 62, Gemini 4 Carbon (High) 60, Claude Opus 5.5 (Max) 59, 14 November 2026. <span class="conf m" data-src="src-aa-leaderboard">M</span></li>
+      <li id="src-aa-index">Artificial Analysis. <em>Intelligence Index methodology</em>. Artificial Analysis. <a href="https://artificialanalysis.ai/methodology/intelligence-benchmarking">artificialanalysis.ai/methodology/intelligence-benchmarking</a> Retrieved 2026, November 14. Used for: what the Intelligence Index measures, version 5.0.1 (Appendix A7). <span class="conf m" data-src="src-aa-index">M</span></li>
       <li id="src-finra2409">Financial Industry Regulatory Authority. (2024, June 27). <em>Regulatory Notice 24-09</em>. FINRA. <a href="https://www.finra.org/rules-guidance/notices/24-09">finra.org/rules-guidance/notices/24-09</a> Used for: the position that existing rules apply to generative AI and that supervision is not suspended by the technology, and that the notice is still published with no rescission, beside FINRA's 2026 Annual Regulatory Oversight Report and its Generative AI section. <span class="conf h" data-src="src-finra2409">H</span></li>
       <li id="src-gemini-plans">Google. <em>Gemini subscriptions</em>. gemini.google. <a href="https://gemini.google/subscriptions/">gemini.google/subscriptions</a> Retrieved 2026, October 11. Used for: the Gemini row of the other-assistants table, set beside Claude (Appendix A7). <span class="conf m" data-src="src-gemini-plans">M</span></li>
       <li id="src-irs-guidance-primer">Internal Revenue Service. (not stated). <em>Understanding IRS guidance: a brief primer</em>. IRS newsroom. <a href="https://www.irs.gov/newsroom/understanding-irs-guidance-a-brief-primer">irs.gov</a> Retrieved 2026, October 13. Used for: the Session 2 reading card (the assigned reading on the reading card). <span class="conf m" data-src="src-irs-guidance-primer">M</span></li>
-      <li id="src-kalai">Kalai, A. T., Nachum, O., Vempala, S. S., &amp; Zhang, E. (2025). <em>Why language models hallucinate</em>. arXiv:2509.04664, §1 and §1.2. <a href="https://arxiv.org/abs/2509.04664">arxiv.org/abs/2509.04664</a> Used for: why a model guesses rather than abstains, and the two scoring rules. <span class="conf h" data-src="src-kalai">H</span></li>
-      <li id="src-livebench">LiveBench. <em>LiveBench leaderboard and question releases</em>. livebench.ai. <a href="https://livebench.ai/">livebench.ai</a> Retrieved 2026, October 11. Used for: what LiveBench measures and its latest question release, LiveBench-2026-06-25 (Appendix A7). <span class="conf m" data-src="src-livebench">M</span></li>
+      <li id="src-kalai">Kalai, A. T., Nachum, O., Vempala, S. S., &amp; Zhang, E. (2025). <em>Why language models hallucinate</em>. arXiv:2509.04664, §1 and §1.2. <a href="https://arxiv.org/abs/2509.04664">arxiv.org/abs/2509.04664</a> Retrieved 2026, November 14. Used for: why a model guesses rather than abstains, and the two scoring rules. <span class="conf h" data-src="src-kalai">H</span></li>
+      <li id="src-livebench">LiveBench. <em>LiveBench leaderboard and question releases</em>. livebench.ai. <a href="https://livebench.ai/">livebench.ai</a> Retrieved 2026, November 14. Used for: what LiveBench 2.0 measures, and LiveBench-2026-06-25 as the last question release read on the earlier board (Appendix A7). <span class="conf m" data-src="src-livebench">M</span></li>
       <li id="src-case"><em>The Cole household</em>. Constructed for this course as a classroom anchor, BUS ADM X433.4. Used for: every worked example in this session and the next three. Entirely synthetic. Every figure, document and family fact is invented, including the 2011 wills, the 2009 beneficiary form, the 2024 Roth conversion memorandum and the meeting transcript. Not based on any client, living or dead. <span class="conf l" data-src="src-case">L</span></li>
       <li id="src-rohrer">Rohrer, D., Dedrick, R. F., &amp; Stershic, S. (2015). <em>Interleaved practice improves mathematics learning</em>. Journal of Educational Psychology, 107(3), 900–908. <a href="https://doi.org/10.1037/edu0000001">doi.org/10.1037/edu0000001</a> Retrieved 2026, August 29. Used for: the interleaved deck order of the section 04 card sort. <span class="conf h" data-src="src-rohrer">H</span></li>
       <li id="src-sec-ai">U.S. Securities and Exchange Commission. (2024, March 18). <em>Enforcement actions against Delphia (USA) Inc. and Global Predictions, Inc.</em> SEC. <a href="https://www.sec.gov/newsroom/press-releases/2024-36">sec.gov/newsroom/press-releases/2024-36</a> Used for: the AI-washing settlements and their penalty amounts. <span class="conf h" data-src="src-sec-ai">H</span></li>
@@ -2213,7 +2213,7 @@ function COLEp(k,d){return (COLEv(k)*100).toFixed(d==null?2:d)+"%"}
 
   <p style="font-size:13.5px;margin-top:26px">Confidence labels: <span class="lgd h">H</span> directly verified against the cited source. <span class="lgd m">M</span> reported by a secondary source or derived from a stated relationship. <span class="lgd l">L</span> illustrative construction, not a published figure.</p>
 
-  <p class="stamp">Last updated 2026-10-27. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
+  <p class="stamp">Last updated 2026-11-14. Lessons are updated in place, so this page is always current. If you have had this tab open a while, reload before relying on a figure. <a href="../changelog/">What changed</a></p>
 </footer>
 
 </div>
@@ -2920,7 +2920,7 @@ var GUESS=[
     G4.guess=1;checkG4()}})();
 
 /* ===== 04 TOKENS ===== */
-var TIERS=[['Haiku 5.5',0.10],['Sonnet 5.5',2],['Opus 5.5',4],['Fable 5.1',10]];
+var TIERS=[['Haiku 5.5',0.10],['Sonnet 5.5',2],['Opus 5.5',4],['Fable 5.2',8]];
 function tokenize(t){var parts=t.match(/\s+|[^\s]+/g)||[],out=[];
   parts.forEach(function(p){if(/^\s+$/.test(p))return;
     if(p.length<=5){out.push(p);return}
@@ -3203,8 +3203,8 @@ $('budget').addEventListener('input',budgUpd);budgUpd();
 
 /* ===== 10 PRACTICE COST ===== */
 var PATHS=[{n:'Haiku 5.5',i:0.10,o:0.50,k:'api'},{n:'Sonnet 5.5',i:2,o:10,k:'api'},
- {n:'Opus 5.5',i:4,o:20,k:'api'},{n:'Fable 5.1',i:10,o:50,k:'api'},
- {n:'Claude Pro subscription (billed monthly)',sub:20,k:'sub'},{n:'Claude Max 5\u00d7 subscription',sub:100,k:'sub'}];
+ {n:'Opus 5.5',i:4,o:20,k:'api'},{n:'Fable 5.2',i:8,o:40,k:'api'},
+ {n:'Claude Pro subscription (billed monthly)',sub:20,k:'sub'},{n:'Claude Max subscription',sub:100,k:'sub'}];
 function costUpd(){
   var a=+$('adv').value,m=+$('mtg').value;$('advLab').textContent=a;$('mtgLab').textContent=m;
   var mt=m*46,ti=mt*27000,to=mt*5000;
@@ -3213,7 +3213,7 @@ function costUpd(){
   $('costBars').innerHTML=rows.map(function(r){
     return '<div class="cbar'+(r.k==='sub'?' sub':'')+'"><span>'+r.n+'</span><span class="tr"><span style="width:'+(r.v/mx*100)+'%"></span></span><span class="amt">'+money(r.v)+'</span></div>'}).join('');
   var opus=rows[2].v,pro=rows[4].v;
-  $('assumeBox').innerHTML='<b>Stated assumption.</b> '+m+' meetings per advisor per week \u00d7 46 weeks = '+fmt(mt)+' per advisor per year, at 27,000 input and 5,000 output tokens each, output priced at five times input and Haiku 5.5 at its up-to-100K-token rate. No prompt caching assumed \u2014 a cache read costs 0.1x base input at most (0.05x on Opus 5.5 and Sonnet 5.5, 0.025x on Fable 5.1), so a firm reusing templates pays materially less. <span class="conf h" data-src="src-pricing" data-fact="claude-output-input-ratio claude-cache-and-batch-pricing">H</span>'+
+  $('assumeBox').innerHTML='<b>Stated assumption.</b> '+m+' meetings per advisor per week \u00d7 46 weeks = '+fmt(mt)+' per advisor per year, at 27,000 input and 5,000 output tokens each, output priced at five times input and Haiku 5.5 at its up-to-100K-token rate. No prompt caching assumed \u2014 a cache read costs 0.1x base input at most (0.05x on Opus 5.5 and Sonnet 5.5, 0.025x on Fable 5.2), so a firm reusing templates pays materially less. <span class="conf h" data-src="src-pricing" data-fact="claude-output-input-ratio claude-cache-and-batch-pricing">H</span>'+
     (opus>pro?' <b style="color:var(--warn)">Metered Opus 5.5 now exceeds the subscription \u2014 it took '+m+' meetings per advisor per week, roughly '+Math.round(m/5)+' a working day.</b>':'');
   if(opus>pro)mark('g11')}
 $('adv').addEventListener('input',costUpd);$('mtg').addEventListener('input',costUpd);costUpd();
@@ -3335,7 +3335,11 @@ var DG=[
 
 
 /* ===== 10b COLE DOCUMENT PASS ===== */
-var DPT=[['Haiku 5.5',0.10,0.50],['Sonnet 5.5',2,10],['Opus 5.5',4,20],['Fable 5.1',10,50]];
+var DPT=[['Haiku 5.5',0.10,0.50,0.50,2.50],['Sonnet 5.5',2,10],['Opus 5.5',4,20],['Fable 5.2',8,40]];
+/* Haiku 5.5 is priced by prompt length (FACTS claude-api-price-haiku-5-5): the fourth and fifth
+   figures are its input and output rates for a prompt over 100,000 tokens, which this pass is. */
+var DPTIER=100000;
+function dpRate(t){return (t.length>3&&DPIN>DPTIER)?[t[3],t[4]]:[t[1],t[2]]}
 /* One shared constant for the pass: 60,000 words of the four documents at about
    1.8 tokens per word (555,000 words per million tokens on the current tokenizer,
    FACTS claude-context-window) is 108,000 tokens in; the issues memo is 11,000 tokens out.
@@ -3343,17 +3347,17 @@ var DPT=[['Haiku 5.5',0.10,0.50],['Sonnet 5.5',2,10],['Opus 5.5',4,20],['Fable 5
 var DPIN=108000,DPOUT=11000;
 var dpSeen={};
 function dpDraw(k){
-  var t=DPT[k],cin=DPIN/1e6*t[1],cout=DPOUT/1e6*t[2],tot=cin+cout;
+  var t=DPT[k],r=dpRate(t),cin=DPIN/1e6*r[0],cout=DPOUT/1e6*r[1],tot=cin+cout;
   $('dpStats').innerHTML=
    '<div class="stat"><span class="sn">Input '+DPIN.toLocaleString('en-US')+' tok</span><span class="sv">$'+cin.toFixed(3)+'</span></div>'+
    '<div class="stat"><span class="sn">Output '+DPOUT.toLocaleString('en-US')+' tok</span><span class="sv">$'+cout.toFixed(3)+'</span></div>'+
    '<div class="stat hit"><span class="sn">One full pass</span><span class="sv">$'+tot.toFixed(2)+'</span></div>'+
    '<div class="stat"><span class="sn">Ten passes</span><span class="sv">$'+(tot*10).toFixed(2)+'</span></div>';
-  var cheapest=DPIN/1e6*DPT[0][1]+DPOUT/1e6*DPT[0][2];
+  var r0=dpRate(DPT[0]),cheapest=DPIN/1e6*r0[0]+DPOUT/1e6*r0[1];
   $('dpOut').className='readout on';
   $('dpOut').innerHTML='<span class="cz">'+t[0]+'</span>Reading the plan description, the 2024 memo, the 2009 beneficiary form and the residency agreement together and writing an issues memo costs <b>$'+tot.toFixed(2)+'</b> on this tier'+
-    (k===0?'. That is the floor, at the up-to-100K-token rate; a prompt over 100K tokens is priced higher.':' \u2014 '+(tot/cheapest).toFixed(1)+'\u00d7 the cheapest tier, and still under two dollars.')+
-    ' With prompt caching the input side drops to 0.1x base input or less on every pass after the first (0.05x on Opus 5.5 and Sonnet 5.5, 0.025x on Fable 5.1), because those four documents do not change between questions. <span class="conf h" data-src="src-pricing" data-fact="claude-cache-and-batch-pricing">H</span>';
+    (k===0?'. That is the floor. At 108,000 input tokens this prompt is over 100K, so Haiku 5.5 bills it at its higher rate, $0.50 in and $2.50 out per million tokens.':' \u2014 '+(tot/cheapest).toFixed(1)+'\u00d7 the cheapest tier, and still under two dollars.')+
+    ' With prompt caching the input side drops to 0.1x base input or less on every pass after the first (0.05x on Opus 5.5 and Sonnet 5.5, 0.025x on Fable 5.2), because those four documents do not change between questions. <span class="conf h" data-src="src-pricing" data-fact="claude-cache-and-batch-pricing">H</span>';
   dpSeen[k]=1;if(Object.keys(dpSeen).length>=4)mark('g11');
 }
 all('[data-dp]').forEach(function(b){b.onclick=function(){
@@ -3381,7 +3385,7 @@ var ACCT={
    w:'the mid tier matches a draft you read before it goes out.'},
   {l:'Opus 5.5',t:'The upper tier. Built for long multi-step reasoning, which a summary and a letter rarely need.',
    w:'the upper tier is built for long multi-step reasoning; this task is extraction and plain-language drafting, so you pay for reach you will not use.'},
-  {l:'Fable 5.1',t:'The top tier. Reached through usage credits or a higher plan, and priced to match.',
+  {l:'Fable 5.2',t:'The top tier. Reached through usage credits or a higher plan, and priced to match.',
    w:'the top tier costs the most, and this task does not use what it adds.'}],
  project:[
   {l:'One project for this task',t:'Instructions for the intake summary and the letter, and nothing else. Project instructions apply to that project only.',
