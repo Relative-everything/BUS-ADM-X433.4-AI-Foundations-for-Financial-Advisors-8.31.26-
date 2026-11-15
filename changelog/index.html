@@ -448,8 +448,6 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 /* STYLE:END */
 </style>
 <style>
-:root{--page:#F4F4F1;--card:#FFF;--ink:#16211F;--muted:#6F7B78;--off:#B9BDB9;--off-bg:#E7E8E4;
---on:#0E5A55;--on-bg:#E2EDEB;--warn:#9A4B22;--warn-bg:#F6EAE2;--line:#D8DAD4;--gold:#8A6A12;--gold-bg:#F3EEDF}
 *{box-sizing:border-box}
 body{margin:0;background:var(--page);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.6}
 .wrap{max-width:840px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,48px) 72px}
@@ -483,6 +481,15 @@ footer{border-top:1px solid var(--line);margin-top:56px;padding-top:22px;font-si
 <p>Every substantive revision to the course materials, newest first.</p>
 <p>Each entry corresponds to one or more commits. For the exact character-level diff of any change, see the <a href="https://github.com/Relative-everything/BUS-ADM-X433.4-AI-Foundations-for-Financial-Advisors-8.31.26-/commits/main">commit history</a> on GitHub.</p>
 <p>Format: <code>## YYYY-MM-DD</code> with changes grouped by session.</p>
+<hr>
+<h2>2026-11-15 · Duplicate colour-token blocks removed from six pages</h2>
+<p>Branch <code>claude/adoring-cannon-g71l1a</code>; handback in <code>docs/changes/2026-11-15-local-token-blocks/</code>; decisions D-100 to D-102 in <code>docs/next-term/DECISIONS.md</code>. No page looks different. This is the first step of a restyle that is still a draft outside this repository: the shared style sheet could not change a colour on these pages until the copies were gone.</p>
+<h3>All sessions and the hub</h3>
+<ul><li><strong>The hub and Sessions 1 to 5 no longer repeat the thirteen colour tokens after the style fence.</strong> Each page declared them twice, once in the fence and once in its own CSS with identical values. The second copy is removed, so the fence is the only declaration and a swept change to <code>tokens.css</code> now reaches these pages. Session 0.1 never had a copy. The five case pages declare seven tokens of their own, which are not duplicates and stay.</li><li><strong>Session 2's four chart tokens</strong> stay in the page, and three of them now read the fence tokens (<code>--plot</code> from <code>--on</code>, <code>--plot2</code> from <code>--warn</code>, <code>--plot3</code> from <code>--gold</code>) instead of repeating their values. <code>--plot4</code> keeps its own blue.</li></ul>
+<h3>Tooling</h3>
+<ul><li><code>scripts/build-changelog.py</code> no longer writes the same thirteen tokens into the changelog page, which carries the fence like every other page.</li><li>MAINTAINING's <em>Shared styling</em> states the rule: page-local CSS does not redefine a fence token.</li></ul>
+<h3>Open</h3>
+<ul><li>DW-204: the restyled shared style sheet is drafted and not yet in the skill.</li><li>DW-205: page-local rules that repeat a fence selector, 2 to 221 per page.</li><li>DW-206: <code>verify-migration</code> can fail on a screenshot left by an earlier gate run.</li></ul>
 <hr>
 <h2>2026-10-27 · The bibliography audited against live pages</h2>
 <p>Branch <code>ccr-ef57ff7a-gwm5uh</code>, the same day as the register close-out below; plan, ledger, handback and the six batch audit files in <code>docs/changes/2026-10-27-bibliography-audit/</code>; decisions D-093 to D-099 in <code>docs/next-term/DECISIONS.md</code>. The instruction was a comprehensive update of the bibliography, every record except the locked Wolfram essay: delete anything hallucinated, then find the best two alternatives for each source. 142 records were checked (the synthetic case and the two deliberately fabricated citations excepted): none is hallucinated and none was deleted for cause. Anthropic pages were fetched and read; everything else was confirmed by publisher-domain web search, which the record says.</p>

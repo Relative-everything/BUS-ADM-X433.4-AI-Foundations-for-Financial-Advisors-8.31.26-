@@ -112,8 +112,6 @@ TEMPLATE = """<!DOCTYPE html>
 /* STYLE:END */
 </style>
 <style>
-:root{--page:#F4F4F1;--card:#FFF;--ink:#16211F;--muted:#6F7B78;--off:#B9BDB9;--off-bg:#E7E8E4;
---on:#0E5A55;--on-bg:#E2EDEB;--warn:#9A4B22;--warn-bg:#F6EAE2;--line:#D8DAD4;--gold:#8A6A12;--gold-bg:#F3EEDF}
 *{box-sizing:border-box}
 body{margin:0;background:var(--page);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.6}
 .wrap{max-width:840px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,48px) 72px}
