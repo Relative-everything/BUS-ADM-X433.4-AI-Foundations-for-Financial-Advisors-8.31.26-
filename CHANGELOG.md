@@ -10,6 +10,51 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-11-15 · Duplicate colour-token blocks removed from six pages
+
+Branch `claude/adoring-cannon-g71l1a`; handback in
+`docs/changes/2026-11-15-local-token-blocks/`; decisions D-117 to D-121 in
+`docs/next-term/DECISIONS.md`. No page looks different. This is the first step of
+a restyle that is still a draft outside this repository: the shared style sheet
+could not change a colour on these pages until the copies were gone.
+
+### All sessions and the hub
+
+- **The hub and Sessions 1 to 5 no longer repeat the thirteen colour tokens after
+  the style fence.** Each page declared them twice, once in the fence and once in
+  its own CSS with identical values. The second copy is removed, so the fence is
+  the only declaration and a swept change to `tokens.css` now reaches these pages.
+  Session 0.1 never had a copy. The five case pages declare seven tokens of their
+  own, which are not duplicates and stay.
+- **Session 2's four chart tokens** stay in the page, and three of them now read
+  the fence tokens (`--plot` from `--on`, `--plot2` from `--warn`, `--plot3` from
+  `--gold`) instead of repeating their values. `--plot4` keeps its own blue.
+
+### Tooling
+
+- `scripts/build-changelog.py` no longer writes the same thirteen tokens into the
+  changelog page, which carries the fence like every other page.
+- MAINTAINING's *Shared styling* states the rule: page-local CSS does not redefine
+  a fence token.
+
+### The restyle, prepared and not applied
+
+- **`docs/design/meridian/` is new.** It holds the design rules for the restyle
+  (working name Meridian), the drafted style sheets and outline script, a
+  migration plan, a kickoff prompt for the session that will do the work, and a
+  content-freeze check. No served page reads anything in it.
+- **The content-freeze check** compares each served page with the same page at a
+  git ref and fails if a word of text, a script, an attribute other than `class`
+  and `style`, or a generated region other than the style fence has changed. It
+  exists so that the restyle can be shown to have changed presentation only.
+- The drafts were compared with the installed skill: its three style sheets are
+  what the pages carry today, so the drafts apply to the skill without conflict.
+
+### Open
+
+- DW-209: the restyled shared style sheet is drafted, in `docs/design/meridian/`, and not yet applied.
+- DW-210: page-local rules that repeat a fence selector, 2 to 221 per page.
+- DW-211: `verify-migration` can fail on a screenshot left by an earlier gate run.
 ## 2026-11-14 · Facts and sources refreshed against live pages
 
 Branch `claude/kind-heisenberg-k8wote`; handback in

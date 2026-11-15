@@ -474,6 +474,25 @@ the skill, then run `restyle_sweep.py <repo>`. Lesson-specific CSS lives after
 the fence and is never touched. A lesson without the fence is outside the sweep
 and will be reported by `--check`.
 
+**Page-local CSS does not redefine a fence token.** The thirteen colour tokens
+(`--page`, `--card`, `--ink`, `--muted`, `--off`, `--off-bg`, `--on`, `--on-bg`,
+`--warn`, `--warn-bg`, `--line`, `--gold`, `--gold-bg`) are declared once, in the
+fence. Until 2026-11-15 the hub, Sessions 1 to 5 and the changelog page each
+repeated all thirteen in a second `:root` block after the fence, which wins the
+cascade, so a swept change to `tokens.css` would have had no effect on those
+pages. A page may declare tokens of its own after the fence (the case pages'
+`--case-*` and `--paper*`, Session 2's `--plot*`), and should build them from the
+fence tokens with `var()` where they mean the same colour.
+
+**The Meridian restyle is prepared and not applied.** `docs/design/meridian/`
+holds the design rules (`DESIGN.md`, `tokens.json`), the drafted replacements for
+the skill's three style sheets and a new `outline.js` (`assets/`), the plan
+(`MIGRATION.md`), and `content-freeze.mjs`, which compares every served page with
+a git ref and fails if text, a script, an attribute other than `class` and
+`style`, or a generated region other than the STYLE fence has changed. The check
+is a tool for that restyle and is not part of the gate above. Nothing in that
+folder is read by a served page.
+
 ## The live model console
 
 Sessions 1 and 4 carry an optional console that lets a reader paste their own

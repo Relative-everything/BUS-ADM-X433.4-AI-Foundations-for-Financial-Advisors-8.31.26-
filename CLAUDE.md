@@ -12,6 +12,7 @@ before editing, in this order of precedence (PEDAGOGY.md §0 states it).
 | `facts/FACTS.json` | Every volatile external fact. Cite with `data-fact`; re-verify the week before each session. |
 | `SOURCES.md` | Every cited source. Footers are generated from it; `last_verified` is written only by a human at a terminal. |
 | `docs/deferred-work.md` | The single register of open work. Off-site term tasks live in `instructor-notes/term-start-checklist.md`. |
+| `docs/design/meridian/` | The Meridian restyle, prepared and not applied: design rules, drafted style sheets, the migration plan and the content-freeze check. |
 
 Working rules that bite most often:
 
