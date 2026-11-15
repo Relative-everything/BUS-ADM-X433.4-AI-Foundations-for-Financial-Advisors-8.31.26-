@@ -1,0 +1,34 @@
+# Meridian restyle: ledger
+
+The source of truth for progress. Newest entry last. Each entry: what was done, the check results, the exact next action. To resume, read the last entry and do its next action. Plan: `plan.md`. Prompt: `docs/design/meridian/KICKOFF-PROMPT.md`.
+
+## L-01, 2026-11-15: reading done, docs aligned, change folder opened
+
+- Read CLAUDE.md, PEDAGOGY.md, MAINTAINING.md, EDITORIAL.md (regions and decisions), `docs/design/meridian/` in full, DW-209 to DW-211, D-117 to D-121.
+- Tree was clean and `HEAD` equalled `origin/main` at `c058b5081a90d11394d1f3f3095f4840ce8d23d9`.
+- Commit `e0da259`: MIGRATION.md and KICKOFF-PROMPT.md revised to the kickoff prompt (first commit, as instructed).
+- This folder created with `plan.md` and this ledger. No page edited yet.
+- Next free ids on main at this time: D-122, DW-212.
+- Collision noted for the planned pause: the 20 `.case-*` layout rules are identical on all twelve pages, so the prompt's step 1.4 would move them into the shared sheets, but `scripts/verify-case.mjs` fails hard on a `.case-*` rule before `/* STYLE:END */` and MAINTAINING says a viewer layout rule belongs in `inject-case.mjs`. Recommendation to bring to the instructor: leave them in the pages in step 1.
+
+**Next action:** write `docs/design/meridian/css-rules.mjs`, `ui-audit.mjs` and `style-snapshot.mjs`; test each on an altered scratch copy; then run the baseline (step 1.1).
+
+## L-02, 2026-11-15: tools built and tested; baseline taken (step 1.1)
+
+- Tools in `docs/design/meridian/`: `css-rules.mjs` (shared parser), `ui-audit.mjs`, `style-snapshot.mjs`, `consolidate.mjs`, `shots-compress.py`.
+- `ui-audit` tested on a scratch copy with planted rules: one identical rule, one variation, one rule shared by two pages, a literal hex and an rgba(), two off-scale sizes, one off-scale radius and one monospace label each moved exactly the expected counter.
+- `style-snapshot` tested: two records of the same files agree; a scratch copy with `h2{color}`, `.btn{padding}` and `.conf.h{letter-spacing}` changed reports each by element and property. Two fixes came out of testing: `Math.random` is seeded (Session 2's `#runs` draws at random), and boxes within 1 px count as the same box (SVG text wobbles by a fraction of a pixel between two records of one file: 3 of 14,073 on Session 3).
+- My population differs from the prompt's measurement: 5,698 page-local rules, 416 identical to a fence rule, 201 variations (74 distinct), against 6,183 / 408 / 267 (113). I count a selector list as one rule and exclude the LMSTYLE fence and the CASE span's styles, which are generated or versioned and cannot be edited. Neither count is wrong; mine is the editable population.
+- `FREEZE_REF` = `c058b5081a90d11394d1f3f3095f4840ce8d23d9`. `content-freeze.mjs`: frozen on 12 pages.
+- Baseline gate (`gate.sh`, record in `gate/baseline.txt`): every in-repo check passes (23 of 23). The skill validators are red on the lines MAINTAINING lists as red by design and on nothing else: V2 on footer links, V4 `data-fact` chips (Sessions 1 and 2), V6 band and consecutive types, V8 and Shift+U on Session 2, `#pnum` on all six.
+- Baseline snapshot: scratchpad `base/` (303 MB, not committed; re-create with `git stash; style-snapshot take`; or from the freeze ref in a worktree). Before-screenshots: `shots/before/`, 24 files, 1440 and 390 px, 64-colour PNG (21 MB).
+
+**Next action:** step 1.2, `node docs/design/meridian/consolidate.mjs identical --write`.
+
+## L-03, 2026-11-15: step 1.2 done, identical rules deleted
+
+- `consolidate.mjs identical --write`: 342 page-local rules identical to a fence rule deleted (index 6, Session 1 216, Session 2 26, Session 3 31, Session 4 31, Session 5 32; Session 0.1 and the case pages carried none). 74 identical copies are left in place because deleting them would change the cascade: a rule of equal specificity between the fence rule and the page copy sets one of the same properties differently and can match the same element (for example the page copy of `h1,h2,h3,h4{margin:0}` sits after the fence's `h3{margin-top}` and overrides it). The list with the reason for each is `identical-report.json`.
+- Checks: `style-snapshot diff` against the baseline: agree on 12 pages. `content-freeze`: frozen on 12 pages. `verify-case`, `verify-migration`, `verify-style`, `verify-editorial`, `verify-stamps`, `test-editorial-regions`, `docs/next-term/checks.mjs`: all exit 0.
+- ui-audit now: 5,356 page-local rules, 74 identical (the order-bound ones), 201 variations (74 distinct).
+
+**Next action:** step 1.3, write `variations.md` from `consolidate.mjs variations`, give the instructor the table and WAIT (the planned pause). Also raise the `.case-*` collision from L-01.

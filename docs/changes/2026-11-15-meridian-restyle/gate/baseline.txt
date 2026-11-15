@@ -1,0 +1,69 @@
+FAIL(1)  validate_lesson session-1
+FAIL(1)  validate_lesson session-2
+FAIL(1)  validate_lesson session-3
+FAIL(1)  validate_lesson session-4
+FAIL(1)  validate_lesson session-5
+FAIL(1)  validate_lesson session-0.1
+FAIL(1)  validate_dom session-0.1
+FAIL(1)  validate_dom session-1
+FAIL(1)  validate_dom session-2
+FAIL(1)  validate_dom session-3
+FAIL(1)  validate_dom session-4
+FAIL(1)  validate_dom session-5
+PASS  build-case
+PASS  inject-case --check
+PASS  build-cardsort --check
+PASS  build-appendix --check
+PASS  build-readings --check
+PASS  build-sources --check
+PASS  inject-sources --check
+PASS  build-bibliography --check
+PASS  build-unsourced --check
+PASS  case-inventory --report-check
+PASS  build-facts-md --check
+PASS  verify-case
+PASS  verify-migration
+PASS  verify-sources --check
+PASS  verify-facts
+PASS  verify-editorial
+PASS  test-editorial-regions
+PASS  test-case-viewer
+PASS  verify-style
+PASS  verify-stamps
+PASS  test_live_console
+PASS  verify-browser
+PASS  next-term checks
+
+Skill-validator lines (V2 href lines counted, not listed):
+===== validate_lesson session-1 | WARN  V2   3 Google Fonts request(s): permitted exception; self-hosting retires it (typography.css header)
+===== validate_lesson session-1 | FAIL  V4   2 .conf chip(s) without data-src (source-entry and legend chips excepted; every claim chip needs a key)
+===== validate_lesson session-1 | FAIL  V6   18 distinct interactions (band 13-15)
+===== validate_lesson session-2 | WARN  V2   3 Google Fonts request(s): permitted exception; self-hosting retires it (typography.css header)
+===== validate_lesson session-2 | FAIL  V4   2 .conf chip(s) without data-src (source-entry and legend chips excepted; every claim chip needs a key)
+===== validate_lesson session-2 | WARN  V4   footer sources never referenced by a chip: src-il-retirement-subtraction, src-irs-590b, src-irs-8606, src-kessler, src-laplace, src-morningstar, src-td10001
+===== validate_lesson session-2 | FAIL  V6   22 distinct interactions (band 13-15)
+===== validate_lesson session-2 | FAIL  V6   same component type in consecutive sections: builder-assembler, work-along-gate
+===== validate_lesson session-2 | FAIL  V8   Shift+U override missing or unlabelled (pedagogy s4)
+===== validate_lesson session-3 | WARN  V2   3 Google Fonts request(s): permitted exception; self-hosting retires it (typography.css header)
+===== validate_lesson session-3 | FAIL  V6   22 distinct interactions (band 13-15)
+===== validate_lesson session-4 | WARN  V2   3 Google Fonts request(s): permitted exception; self-hosting retires it (typography.css header)
+===== validate_lesson session-4 | WARN  V4   footer sources never referenced by a chip: src-hallowell
+===== validate_lesson session-4 | FAIL  V6   18 distinct interactions (band 13-15)
+===== validate_lesson session-5 | WARN  V2   3 Google Fonts request(s): permitted exception; self-hosting retires it (typography.css header)
+===== validate_lesson session-5 | FAIL  V6   17 distinct interactions (band 13-15)
+===== validate_lesson session-0.1 | WARN  V2   3 Google Fonts request(s): permitted exception; self-hosting retires it (typography.css header)
+===== validate_lesson session-0.1 | FAIL  V6   same component type in consecutive sections: prediction-commit
+===== validate_lesson session-0.1 | WARN  V10  could not confirm title/footer session-number agreement
+===== validate_dom session-0.1 | FAIL  #pnum did not flip to the revealed state
+===== validate_dom session-1 | FAIL  #pnum did not flip to the revealed state
+===== validate_dom session-2 | FAIL  Shift+U left 13/13 gate(s) unmarked: ga1, ga2, gCase, g5, ga3, gZ, ga4, gDel, g7, g8, g6, g9, ga5
+===== validate_dom session-2 | FAIL  #pnum did not flip to the revealed state
+===== validate_dom session-3 | FAIL  #pnum did not flip to the revealed state
+===== validate_dom session-4 | FAIL  #pnum did not flip to the revealed state
+===== validate_dom session-5 | FAIL  #pnum did not flip to the revealed state
+===== validate_lesson session-0.1 | V2 external-request lines: 25
+===== validate_lesson session-4 | V2 external-request lines: 78
+===== validate_lesson session-1 | V2 external-request lines: 30
+===== validate_lesson session-2 | V2 external-request lines: 31
+===== validate_lesson session-5 | V2 external-request lines: 30
+===== validate_lesson session-3 | V2 external-request lines: 20
