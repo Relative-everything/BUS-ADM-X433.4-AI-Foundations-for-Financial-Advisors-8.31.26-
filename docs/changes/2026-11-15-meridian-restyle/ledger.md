@@ -32,3 +32,11 @@ The source of truth for progress. Newest entry last. Each entry: what was done, 
 - ui-audit now: 5,356 page-local rules, 74 identical (the order-bound ones), 201 variations (74 distinct).
 
 **Next action:** step 1.3, write `variations.md` from `consolidate.mjs variations`, give the instructor the table and WAIT (the planned pause). Also raise the `.case-*` collision from L-01.
+
+## L-04, 2026-11-15: step 1.3 table written; PAUSED for the instructor
+
+- `variations.md`: 74 distinct variations (201 instances), each with what the fence sets, what the page sets, the pages, and a recommendation: 50 drop (9 of them with no visible change), 16 keep, 1 keep additions only, 7 keep and retire in step 2. `variations-answers.json` holds the same verdicts in the form `consolidate.mjs apply-variations` reads (`action`: drop, keep, additions, supersede).
+- The `.case-*` collision is written up at the foot of `variations.md` with a recommendation (leave them in the pages; register row for `inject-case.mjs`).
+- No page edited in this unit.
+
+**Next action (after the instructor answers):** edit `variations-answers.json` to the answers; add the `additions` action to `consolidate.mjs apply-variations` (keep only declarations the fence does not set) and treat `supersede` as keep in step 1; run `apply-variations --write`; snapshot diff against the baseline and confirm every difference is on a dropped selector; freeze check; commit. Then step 1.4: copy the skill's three style sheets over `docs/design/meridian/assets/` as the step 1 shared source (keep the Meridian drafts aside as `assets-meridian/`), point `verify-style.mjs` and `build-changelog.py` at it with `--assets`, update MAINTAINING, run `consolidate.mjs promote`, sweep, snapshot, full gate, checkpoint 1.
