@@ -17,6 +17,7 @@ The scope is presentation only. Text, figures, sources, chips, case facts, scrip
 | `build-drafts.py` | The script that produced the drafts. Its mechanical rules (label rules to the interface face, size and radius snapping, literals to tokens) are the ones to reuse on page-local CSS. |
 | `content-freeze.mjs` | The content-freeze check. |
 | `KICKOFF-PROMPT.md` | The prompt that starts the migration in a new session. |
+| `ui-audit.mjs`, `style-snapshot.mjs` | The two tools the migration builds first: the page-local rule classifier with its off-token counts, and the computed-style recorder and comparer. |
 
 Published references (private to the instructor): the design system at `https://claude.ai/artifact/NAXpFBo35siQuMWjqnppP6`, a working preview of Session 2 at `https://claude.ai/artifact/ACheynagMCSmehLuEoB3Ak`, and the design review at `https://claude.ai/artifact/K2HSVqkiaEBhdeQbMgtciB`.
 
@@ -57,7 +58,7 @@ Tested 2026-11-15: a copy of Session 2 with one sentence deleted, one id renamed
 | `session-5` | 80 | 141 KB |
 | `cases/case-1` to `case-5` | 7 each | 15 to 20 KB |
 
-An identical copy is deleted. A deliberate variation stays, with a comment saying why. Session 2 has two known ones to decide: `#topbar{display:none}` and a second `.plab` colour rule.
+An identical copy is deleted by script. The distinct variations go to the instructor in one table, each with a keep-or-drop recommendation; a variation that is kept stays in the page. Session 2 has two known ones: `#topbar{display:none}` and a second `.plab` colour rule.
 
 **3. Component CSS that exists only in a page** carries monospace capitals, literal colours, sub-12.5px sizes and old radii. It is not in the fence, so the sweep does not touch it. The rules in `build-drafts.py` convert it mechanically; the result is reviewed by screenshot.
 
@@ -67,16 +68,36 @@ The duplicate colour-token blocks, which would have blocked all of this, were re
 
 ## Order of work
 
-1. **Freeze.** Record `FREEZE_REF`, run the freeze check and MAINTAINING's gate on the untouched tree, and keep screenshots of every page at 1440, 1024, 390 and 320 px.
-2. **Tooling.** Point the sweep, `verify-style` and `build-changelog` at `docs/design/meridian/assets`.
-3. **Sweep.** The palette, type scale and shared components change on every page at once. Expect the pages to look half-converted until steps 4 and 5.
-4. **De-shadow, page by page.** Session 2 first as the pilot, then the hub, Session 0.1, Session 3, Session 1, Session 5, Session 4, and the five case pages together.
-5. **Page-local component CSS**, same order.
-6. **Outline script and `data-commit`**, same order.
-7. **Check each page** against its before-screenshots at all four widths; every text colour 4.5:1 or better on its ground; no horizontal scroll at 320 px.
-8. **Records.** CHANGELOG and its page, DECISIONS, register rows, a change folder with a handback, stamps.
+Revised 2026-11-15 to match the kickoff prompt, which wins where the two differ. The work runs by class of CSS rule across all twelve served pages at once, not page by page, in three steps on one branch, each its own commit so it can be reverted alone. Progress is recorded in `docs/changes/<date>-meridian-restyle/ledger.md`, which is the resume point.
 
-After each of steps 3 to 6, on each page: the freeze check passes and the gate is green or every red line is explained.
+**Tools first**, kept in this folder and each tested on a deliberately altered scratch copy before it is trusted:
+
+- `ui-audit` classifies every page-local rule (identical to a fence rule, a variation of one, shared by two or more pages, unique) and counts off-token values per page (literal colours, font sizes outside the eight-step scale, radii outside the three, monospace label rules).
+- `style-snapshot` records the computed style of every element on every served page at 1440, 1024 and 320 px and compares two snapshots.
+
+**Step 1, consolidate. One shared style source, and no page looks different.**
+
+1. Freeze: a clean tree matching `origin/main`, `FREEZE_REF` written, then the freeze check, the full gate and `style-snapshot` as the baseline, and screenshots of every page at 1440 and 390 px.
+2. Delete the page-local rules identical to a fence rule, by script.
+3. One table of the distinct variations (selector, the fence's declarations, the page's, which pages, keep or drop with a reason). This is the one planned pause: the instructor answers, and the answers are applied.
+4. Point the sweep, `scripts/verify-style.mjs` and `scripts/build-changelog.py` at `docs/design/meridian/assets` with the sweep's `--assets` option, and say so in MAINTAINING. Move page-only rules that are identical on two or more pages into the shared style sheets, through the sweep. A moved rule that loses a cascade fight it used to win goes back, with a note.
+
+Checkpoint 1: `style-snapshot` matches the baseline everywhere except the variations the instructor chose to drop; the freeze check passes; the gate is green or each red line is explained.
+
+**Step 2, restyle.**
+
+1. Replace the shared style sheets with the Meridian drafts, carrying over the rules promoted in step 1, converted to tokens. Sweep.
+2. Convert the remaining page-local CSS with the mechanical rules in `build-drafts.py`.
+
+Checkpoint 2: the freeze check passes; `ui-audit`'s off-token counts are zero or each remaining value is listed with a reason; no horizontal scroll at 320 px; every text colour is 4.5:1 or better on its ground; after-screenshots at 1440 and 390 px are saved beside the before set.
+
+**Step 3, outline.** `outline.js` goes into each lesson as one identical generated region, and `data-commit` onto each control that records a learner's own answer (commits only; opening a key does not count). A script block that must change goes in `freeze-allow.json` with a reason and a decision row.
+
+Checkpoint 3: the freeze check passes with only the allowed entries; the outline lists every core section on every lesson; a commit fills a check and a reveal alone does not, shown on at least Session 2 and Session 4; nothing is written to browser storage; every section still scrolls freely; the gate is green or each red line is explained.
+
+**Records.** CHANGELOG and its page, a DECISIONS row per judgment call, register rows for anything left open, the plan, ledger and a handback in the change folder, current footer stamps. Then one pull request, not merged.
+
+A checkpoint that cannot be reached stops the work: the next step is not started, and what blocks it is recorded in the ledger.
 
 ## Rules that bind the work
 
