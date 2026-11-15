@@ -484,6 +484,15 @@ pages. A page may declare tokens of its own after the fence (the case pages'
 `--case-*` and `--paper*`, Session 2's `--plot*`), and should build them from the
 fence tokens with `var()` where they mean the same colour.
 
+**The Meridian restyle is prepared and not applied.** `docs/design/meridian/`
+holds the design rules (`DESIGN.md`, `tokens.json`), the drafted replacements for
+the skill's three style sheets and a new `outline.js` (`assets/`), the plan
+(`MIGRATION.md`), and `content-freeze.mjs`, which compares every served page with
+a git ref and fails if text, a script, an attribute other than `class` and
+`style`, or a generated region other than the STYLE fence has changed. The check
+is a tool for that restyle and is not part of the gate above. Nothing in that
+folder is read by a served page.
+
 ## The live model console
 
 Sessions 1 and 4 carry an optional console that lets a reader paste their own

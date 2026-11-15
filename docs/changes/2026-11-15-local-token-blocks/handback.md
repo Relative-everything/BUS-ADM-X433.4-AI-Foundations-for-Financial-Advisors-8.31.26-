@@ -43,3 +43,15 @@ Not run: the skill's own `validate_lesson.py` and `validate_dom.js`, which MAINT
 - DW-204: land the drafted style sheet in the skill, then sweep.
 - DW-205: page-local rules that repeat a fence selector.
 - DW-206: on a second gate run on the same tree, `verify-migration` check 2 failed on `.verify-shots/session-5_index.html.png`, a screenshot the first run wrote, whose bytes spell a retired word. The folder is ignored and generated; deleting it cleared the failure. The pages are not involved.
+
+## Addendum, same day: the restyle prepared for a later session
+A second commit on the same branch adds `docs/design/meridian/` and changes no served page.
+
+- `DESIGN.md` and `tokens.json`: the design rules and tokens, copied from the instructor's design-system reference.
+- `assets/`: the drafted `tokens.css`, `typography.css`, `components.css` and `outline.js`. They were regenerated from the installed skill's `assets/`, which differ from the fence text only by a trailing newline in two files, so `skill-assets.diff` applies to the skill as it stands.
+- `MIGRATION.md`: the plan, with the per-page counts of local rules that repeat a fence selector.
+- `KICKOFF-PROMPT.md`: the prompt for the session that does the work.
+- `content-freeze.mjs`: the check that the restyle changes presentation only (D-104). Run against this branch's previous commit and its parent, it reports all twelve pages frozen. Run against a scratch copy of Session 2 with a sentence deleted, an id renamed and a script edited, it fails on each of the three and ignores the copy's colour change.
+- `CLAUDE.md` and MAINTAINING's *Shared styling* point at the folder. Decisions D-103 and D-104; DW-204 rewritten to say where the drafts are.
+
+The in-repo battery was run again on the final tree after this commit's files were added: 23 of 23 exit 0.
