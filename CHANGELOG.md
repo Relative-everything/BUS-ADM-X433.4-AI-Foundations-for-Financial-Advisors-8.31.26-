@@ -13,7 +13,7 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 ## 2026-11-15 · Duplicate colour-token blocks removed from six pages
 
 Branch `claude/adoring-cannon-g71l1a`; handback in
-`docs/changes/2026-11-15-local-token-blocks/`; decisions D-100 to D-104 in
+`docs/changes/2026-11-15-local-token-blocks/`; decisions D-117 to D-121 in
 `docs/next-term/DECISIONS.md`. No page looks different. This is the first step of
 a restyle that is still a draft outside this repository: the shared style sheet
 could not change a colour on these pages until the copies were gone.
@@ -52,9 +52,108 @@ could not change a colour on these pages until the copies were gone.
 
 ### Open
 
-- DW-204: the restyled shared style sheet is drafted, in `docs/design/meridian/`, and not yet applied.
-- DW-205: page-local rules that repeat a fence selector, 2 to 221 per page.
-- DW-206: `verify-migration` can fail on a screenshot left by an earlier gate run.
+- DW-209: the restyled shared style sheet is drafted, in `docs/design/meridian/`, and not yet applied.
+- DW-210: page-local rules that repeat a fence selector, 2 to 221 per page.
+- DW-211: `verify-migration` can fail on a screenshot left by an earlier gate run.
+## 2026-11-14 · Facts and sources refreshed against live pages
+
+Branch `claude/kind-heisenberg-k8wote`; handback in
+`docs/changes/2026-11-14-facts-refresh/`; decisions D-100 to D-106 in
+`docs/next-term/DECISIONS.md`. The instruction was a full refresh audit of every
+claimed fact and source and of the deferred-work register, then to apply the fixes
+that are quantifiably wrong. Of 49 FACTS records, 28 held, 16 had gone stale, 2 were
+wrong in part and 3 were only partly confirmable. Anthropic pages were fetched and
+read in full; nine other publishers were read once a personal environment allowed
+their hosts; everything else is recorded as search-result evidence in the register.
+
+### Sessions 0.1, 1 and 2
+
+- **Claude Fable 5.2 is the top tier.** Released 9 November 2026 at $8 in and $40 out
+  per million tokens. The Session 0.1 model-picker check, the Session 1 tier table,
+  token-cost strip, practice-cost comparison, document pass and account builder, and
+  the Session 2 cost estimator and retrieval bridge now name Fable 5.2 at that price.
+- **The $200 plan is Ultra.** Max is the single $100 plan; "Max 5x" and "Max 20x" are no
+  longer plan names. The plan menus on Sessions 0.1 and 1, the Figures on File row and
+  the subscriptions paragraph say so.
+- **The Session 1 document pass priced Haiku 5.5 at the wrong rate.** The pass sends
+  108,000 input tokens, which is over the 100K threshold the same section describes.
+  The floor is $0.08, not $0.02; with Fable 5.2 on top the ladder runs to $1.30 and the
+  spread is $1.22. The input spread across the four tiers is eightyfold, $0.10 to $8.
+
+### Sessions 3 and 5
+
+- **Session 3** dated the Kitces notetaker article 15 Jan 2025 in three places; the
+  article, read today, was published 17 March 2025, as the footer already said.
+- **Session 5** said about 185 investors had fired an adviser; Morningstar's page says 184.
+
+### Facts and sources
+
+- **FACTS.** New record `claude-api-price-fable-5-2` (50 records). Rewritten from the
+  fetched pages: the plans, the skills format, the model ids and retirement dates, the
+  cache multipliers, the context window note, the API retention record (Fable 5.2 and
+  Mythos 5.2 join the Covered Models) and the Kitces notetaker record. The SEC
+  examination-priorities record now carries the FY2027 release of 23 October 2026, unread.
+- **SOURCES.** Seventeen records annotated with a dated `Audit 2026-11-14` line saying
+  what was fetched and what it showed. `src-brynjolfsson` cites NBER Working Paper 31161
+  for the figures Session 5 prints and names the QJE article as the published version.
+  `src-owasp` moves its publication date from 4 to 3 August 2026. The link on
+  `src-vanguard-alpha` now returns a 404 page.
+- **Four figures the last audit could not confirm are confirmed in the papers:** Magesh
+  et al.'s 43% for GPT-4 (Figure 4), Dahl et al.'s more than 800,000 queries, Kalai et
+  al.'s DeepSeek-V3 on 11 May 2025, and the three Kitces notetaker figures.
+
+### Later the same day
+
+- **Session 5** §02 calendar: Fable 5.1 is a legacy row and Fable 5.2 (not retired
+  sooner than 9 November 2027) is the fourth lineup row; the source line reads opened
+  14 November 2026.
+- **Session 1** leaderboard table: the Artificial Analysis row carries index v5.0.1
+  (nine evaluations, four categories at 25% each) and the scores read that day, Claude
+  Fable 5.2 (Max) 65 first; the LiveBench cell describes LiveBench 2.0. The Arena row
+  is unchanged because the board could not be read.
+- **FACTS.** `utah-ai-disclosure` corrected from the Utah Code as read: the 1 July 2027
+  repeal covers Chapter 72, the AI Policy Act, and not the disclosure duty in Chapter 77.
+  `adoption-t3-2026` confirmed against the survey PDF (52.15%, 41.78%, 42.86%).
+
+### Third pass, on the instructor's answers
+
+- **Sessions 3 and 4 cite the SEC's fiscal 2027 examination priorities**, read in full
+  from the PDF the instructor supplied. The disclaimer the pages quote is in it. The
+  document writes "super intelligence (SI)" where earlier years wrote AI, and does not
+  mention polymorphic malware; two Session 4 lines now give its own examples,
+  AI-generated phishing and deepfake voice and video.
+- **Session 0.1 and Session 4 say model training is opt-out** on the individual Claude
+  plans, from the comparison table on claude.com/pricing.
+- **Session 5** no longer says behavioural coaching is about half of Vanguard's figure;
+  it gives the about-3% figure and names coaching as a module.
+- **Session 2** cites Advisor360's 2026 Connected Wealth Report for the roughly 3% who
+  rely on a model's recommendation (new record, medium confidence, unread).
+- **Session 4** names FINRA Regulatory Notice 26-14 (9 July 2026) on its sources line.
+- **Register.** DW-200, DW-201 and DW-204 closed; five rows open. A new list, *Hold
+  until just before the next term*, names everything to refresh in one sitting before
+  February 2027, the Session 2 cost-frontier chart first.
+
+### Fourth pass
+
+- **Session 4** §02 gains a note on a name: the SEC's fiscal 2027 priorities write
+  "super intelligence (SI)" because Executive Order 14434 (29 September 2026) tells
+  federal agencies to, and defines the term as the same technologies; Bostrom's 1998
+  definition shows what the word meant before. The course keeps saying AI.
+- **Session 4**, from sources read that day: the FBI caption says reported internet
+  crime (the IC3 report's "cyber-enabled fraud" is a $17.7 billion subset of the $20.9
+  billion); the exfiltration row gives IBM's $4.99 million global and $6.3 million
+  financial-services breach averages, the figures its release carries.
+- **Case 2**: age 73 applies to people born 1951 through 1958; the final regulations
+  reserve 1959.
+- **Register**: a list of the documents the instructor will supply before the term.
+
+### Register
+
+- DW-198, DW-199 and DW-202 closed. DW-200, DW-201 and DW-203 narrowed. DW-204 to
+  DW-208 opened: the unread FY2027 examination priorities, the Session 1 leaderboards
+  and Session 2 OpenAI rates, the four places that keep the earlier lineup on purpose,
+  three regulatory records that are wrong or incomplete by search result, and a list of
+  small repairs. `claude-sonnet-4-5-20250929` retires on 30 November 2026.
 
 ---
 

@@ -11,7 +11,7 @@ Read these in full before any edit, in this order:
 2. docs/design/meridian/MIGRATION.md. It is the plan. Follow its order of work.
 3. docs/design/meridian/DESIGN.md and tokens.json. They are the design rules.
 4. docs/design/meridian/assets/ (the three style sheets and outline.js) and build-drafts.py.
-5. Register rows DW-204, DW-205 and DW-206 in docs/deferred-work.md, and decisions D-100 to D-104 in docs/next-term/DECISIONS.md.
+5. Register rows DW-209, DW-210 and DW-211 in docs/deferred-work.md, and decisions D-117 to D-121 in docs/next-term/DECISIONS.md.
 </read_first>
 
 <freeze>
@@ -36,7 +36,7 @@ Out of scope, and each stays exactly as it is: all text, figure titles and capti
 - Page-local CSS repeats fence selectors and wins the cascade. Delete identical copies; keep deliberate variations with a comment and list each one for me.
 - Sessions 4 and 5 carry 141 to 186 KB of page-local component CSS. Convert it with the mechanical rules in build-drafts.py, then check by screenshot.
 - The console regions in Sessions 1 and 4 are byte-paired. Do not edit them.
-- If you run the gate twice on one tree, delete .verify-shots/ first (DW-206).
+- If you run the gate twice on one tree, delete .verify-shots/ first (DW-211).
 </known_obstacles>
 
 <how_to_work>

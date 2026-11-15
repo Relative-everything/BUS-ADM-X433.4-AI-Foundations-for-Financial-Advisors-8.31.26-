@@ -23,11 +23,11 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 2737 | 2044 | 693 |
 | `PINNED` | 8 | 8 | 0 |
-| `UNGUARDED` | 163 | 44 | 119 |
-| **TOTAL** | **2908** | **2096** | **812** |
+| `UNGUARDED` | 164 | 45 | 119 |
+| **TOTAL** | **2909** | **2097** | **812** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
-`44`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
+`45`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
 the target state under the rule *every quantitative case fact appears once,
 injected from `CASE.md`; every other reference to it is qualitative*, so a
 qualitative reference is not drift surface and removing one would be a loss.
@@ -36,7 +36,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 
 | File | Total | Quantitative |
 |---|---:|---:|
-| `session-1/index.html` | 29 | 10 |
+| `session-1/index.html` | 30 | 11 |
 | `session-2/index.html` | 25 | 9 |
 | `session-3/index.html` | 67 | 10 |
 | `session-4/index.html` | 31 | 9 |
@@ -46,14 +46,14 @@ qualitative reference is not drift surface and removing one would be a loss.
 
 | Region | | Total | Quantitative |
 |---|---|---:|---:|
-| `R2` | script string literal | 103 | 19 |
+| `R2` | script string literal | 104 | 20 |
 | `R1` | body prose | 48 | 20 |
 | `R4` | CSS | 4 | 4 |
 | `R7` | footer source entry | 4 | 0 |
 | `R3` | attribute value | 3 | 0 |
 | `R8` | source note | 1 | 1 |
 
-**`R2` carries 19 of the 44 quantitative unguarded references, 43.2%** — answer
+**`R2` carries 20 of the 45 quantitative unguarded references, 44.4%** — answer
 keys, chart data arrays and JS feedback strings. They are inside `<script>`, so
 they are outside the injected span and outside the pins, and a student reads
 every one of them.
@@ -63,7 +63,7 @@ every one of them.
 | Class | Count |
 |---|---:|
 | `name` | 119 |
-| `money` | 17 |
+| `money` | 18 |
 | `age` | 12 |
 | `date` | 10 |
 | `count` | 4 |
@@ -81,8 +81,8 @@ every one of them.
 | `davidName` | 9 |
 | `megShort` | 9 |
 | `spdAmended` | 7 |
+| `otherLiving` | 5 |
 | `david401kRoth` | 4 |
-| `otherLiving` | 4 |
 | `riskGap` | 4 |
 | `megAge` | 4 |
 | `dorothyName` | 4 |
@@ -131,41 +131,41 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**1166 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**1181 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
 | `ryanAge` | 470 |
-| `megRetireAge` | 147 |
-| `davidRetireAge` | 96 |
+| `megRetireAge` | 149 |
+| `davidRetireAge` | 98 |
 | `riskGap` | 65 |
 | `emmaAge` | 58 |
 | `tomAge` | 54 |
-| `davidRiskScore` | 49 |
-| `megAge` | 44 |
+| `davidRiskScore` | 48 |
+| `megAge` | 43 |
 | `megRiskScore` | 25 |
-| `earlyReduction` | 17 |
-| `marriedYears` | 17 |
+| `davidNewsMonth` | 21 |
+| `marriedYears` | 20 |
+| `earlyReduction` | 15 |
 | `delayedCredit` | 15 |
 | `megSs62` | 14 |
-| `davidNewsMonth` | 12 |
 | `umbrella` | 9 |
-| `davidLossTolerance` | 8 |
-| `rmdExciseTax` | 8 |
+| `davidLossTolerance` | 9 |
+| `rmdExciseTax` | 9 |
 | `megRoth` | 7 |
 | `propertyTax` | 7 |
 | `travel` | 7 |
 | `asOfDate` | 7 |
 | `ipsEquity` | 7 |
+| `davidAge` | 4 |
 | `tomShort` | 3 |
-| `megApplicableAge` | 3 |
 | `ryanShort` | 2 |
-| `davidAge` | 2 |
 | `ipsDate` | 2 |
 | `allocFixed` | 2 |
 | `megLossTolerance` | 2 |
 | `rmdExciseCorrected` | 2 |
+| `megApplicableAge` | 2 |
 | `rothPct` | 2 |
 | `ruthShort` | 1 |
 | `ruthAge` | 1 |

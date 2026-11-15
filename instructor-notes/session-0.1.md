@@ -32,7 +32,7 @@ Ask for a hand count on each, without a poll, in the first two minutes. The page
 - The course project from section 02 exists. Section 02 names it "BUS ADM X433.4 AI Foundations".
 - The baseline minutes from section 09 are written down outside the page, since the page stores nothing. The number feeds Homework 1.
 - Case 1 has been opened (section 11 links to it); Session 1 re-asks its two calls for anyone who has not.
-- Each student has read how their own Help improve Claude setting is set. The page states no default for an account, and neither should you (FACTS:claude-consumer-retention).
+- Each student has read how their own Help improve Claude setting is set. The page says model training is opt-out on the individual plans, on unless turned off (FACTS:claude-plans, FACTS:claude-consumer-retention); each student still checks their own.
 
 ## Notes for the instructor
 

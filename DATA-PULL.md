@@ -8,8 +8,8 @@ set rather than a reconciliation between two files that will drift the way the
 appendix index drifted. Every row below is derived from a `moving_target` record
 in `SOURCES.md` and from the chips the corpus actually carries.
 
-**65 of 144 works are moving targets, feeding 349 of
-705 references.**
+**65 of 148 works are moving targets, feeding 350 of
+712 references.**
 
 
 ---
@@ -50,7 +50,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor lifecycle schedule` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
 | References | 61 |
@@ -62,9 +62,9 @@ version string means the version is not tracking the data.
 |---|---|---|---|---|
 | ANTHROPIC-DEPRECATIONS-001 | S3 | 2026-10-11 | **[UNVERIFIED, needs source]** | the id claude-sonnet-5-5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11) |
 | ANTHROPIC-DEPRECATIONS-002 | S2 | 2026-10-11 | **[UNVERIFIED, needs source]** | model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5, and the id claude-sonnet-5-5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11) |
-| ANTHROPIC-DEPRECATIONS-003 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11) |
-| ANTHROPIC-DEPRECATIONS-004 | S0.1 | 2026-10-11 | **[UNVERIFIED, needs source]** | model names Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-10-11) |
-| ANTHROPIC-DEPRECATIONS-005 | S5 | 2026-10-12 | **[UNVERIFIED, needs source]** | the retirement and not-sooner-than date of every row on the §02 calendar, Haiku 5.5 (7 October 2027) added and Haiku 4.5 (15 October 2026) moved to the legacy rows; Sonnet 4.5 deprecated 30 September 2026 and retiring 30 November 2026 with Sonnet 5.5 as the replacement; at least 60 days of notice (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12) |
+| ANTHROPIC-DEPRECATIONS-003 | S5 | 2026-11-14 | **[UNVERIFIED, needs source]** | the retirement and not-sooner-than date of every row on the §02 calendar, Haiku 5.5 (7 October 2027) added and Haiku 4.5 (15 October 2026) moved to the legacy rows; Sonnet 4.5 deprecated 30 September 2026 and retiring 30 November 2026 with Sonnet 5.5 as the replacement; at least 60 days of notice (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12) |
+| ANTHROPIC-DEPRECATIONS-004 | S1 | 2026-11-14 | **[UNVERIFIED, needs source]** | model names Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-11-14) |
+| ANTHROPIC-DEPRECATIONS-005 | S0.1 | 2026-11-14 | **[UNVERIFIED, needs source]** | model names Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-model-ids-and-retirements, read in full 2026-11-14) |
 
 ### `src-pricing` — Pricing
 
@@ -72,7 +72,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `price` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 Appendix A2, Appendix A7 and Appendix A8 |
 | References | 41 |
@@ -82,9 +82,9 @@ version string means the version is not tracking the data.
 
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
-| PRICING-001 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | per-token input and output rates for Haiku 5.5 (tiered at 100K tokens), Sonnet 5.5, Opus 5.5 and Fable 5.1; output at five times input on every listed model; cache-read multipliers (0.1x default, 0.05x Opus 5.5 and Sonnet 5.5, 0.025x Fable 5.1), cache-write multipliers and the 50% Batch API discount; all from FACTS claude-api-price-* , claude-output-input-ratio and claude-cache-and-batch-pricing, read in full 2026-10-11 |
-| PRICING-002 | S2 | 2026-10-11 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio; the Sonnet 5.5, Opus 5.5 and Fable 5.1 input and output rates in the cost estimator and the retrieval bridge, and output at five times input (FACTS claude-api-price-sonnet-5-5, claude-api-price-opus-5-5, claude-api-price-fable-5-1 and claude-output-input-ratio, read in full 2026-10-11) |
-| PRICING-003 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | input $0.10 and output $0.50 per million tokens for prompts up to 100K tokens, output at five times input (FACTS claude-api-price-haiku-5-5 and claude-output-input-ratio, read in full 2026-10-11) |
+| PRICING-001 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | input $0.10 and output $0.50 per million tokens for prompts up to 100K tokens, output at five times input (FACTS claude-api-price-haiku-5-5 and claude-output-input-ratio, read in full 2026-10-11) |
+| PRICING-002 | S1 | 2026-11-14 | **[UNVERIFIED, needs source]** | per-token input and output rates for Haiku 5.5 (tiered at 100K tokens), Sonnet 5.5, Opus 5.5 and Fable 5.2 ($8 in, $40 out); output at five times input on every listed model; cache-read multipliers (0.1x default, 0.05x Opus 5.5 and Sonnet 5.5, 0.025x Fable 5.2), cache-write multipliers and the 50% Batch API discount; all from FACTS claude-api-price-* , claude-output-input-ratio and claude-cache-and-batch-pricing, read in full 2026-10-11 |
+| PRICING-003 | S2 | 2026-11-14 | **[UNVERIFIED, needs source]** | the published rates behind the blended token price at a 3:1 input-to-output ratio; the Sonnet 5.5, Opus 5.5 and Fable 5.2 input and output rates in the cost estimator and the retrieval bridge, and output at five times input (FACTS claude-api-price-sonnet-5-5, claude-api-price-opus-5-5, claude-api-price-fable-5-2 and claude-output-input-ratio, read in full 2026-10-11) |
 
 ### `src-anthropic-terms` — Consumer Terms of Service, Commercial Terms of Service and Privacy Policy
 
@@ -122,19 +122,19 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_pricing` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendix D2 |
-| References | 13 |
-| Feeds | case-1 `#built` · case-4 `#built` · case-4 `#next` · S0.1 `#s0` ×2 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
+| References | 14 |
+| Feeds | case-1 `#built` · case-4 `#built` · case-4 `#next` · S0.1 `#s0` ×3 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
 
 **Registered retrievals**
 
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
-| CLAUDE-PRICING-001 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | Pro $20 per month billed monthly; Max 5x $100 and Max 20x $200 (FACTS claude-plans, read in full 2026-10-11) |
-| CLAUDE-PRICING-002 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | Pro $20 a month or $17 a month on annual billing; Team and Enterprise from $20 a seat a month billed annually (FACTS claude-plans, read in full 2026-10-11) |
-| CLAUDE-PRICING-003 | S0.1 | 2026-10-11 | **[UNVERIFIED, needs source]** | Free $0; Pro $20 a month or $17 a month billed annually; Max 5x $100 and 20x $200; Team Standard $25 ($20 annual) and Premium $125 ($100 annual); Enterprise $20 per seat billed annually plus usage; Free includes Sonnet and Haiku, Pro adds Opus with Fable through usage credits, Max and Team Premium include Fable (FACTS claude-plans, read in full 2026-10-11) |
+| CLAUDE-PRICING-001 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | Pro $20 a month or $17 a month on annual billing; Team and Enterprise from $20 a seat a month billed annually (FACTS claude-plans, read in full 2026-10-11) |
+| CLAUDE-PRICING-002 | S1 | 2026-11-14 | **[UNVERIFIED, needs source]** | Pro $20 per month billed monthly; Max $100 and Ultra $200 (FACTS claude-plans, read in full 2026-11-14) |
+| CLAUDE-PRICING-003 | S0.1 | 2026-11-14 | **[UNVERIFIED, needs source]** | Free $0; Pro $20 a month or $17 a month billed annually; Max $100 and Ultra $200; Team Standard $25 ($20 annual) and Premium $125 ($100 annual); Enterprise $20 per seat billed annually plus usage; Free includes Sonnet and Haiku, Pro adds Opus with Fable through usage credits, Max, Ultra and Team Premium include Fable (FACTS claude-plans, read in full 2026-10-11) |
 
 ### `src-models` — Models overview
 
@@ -142,7 +142,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-0.1 |
 | References | 12 |
@@ -155,7 +155,7 @@ version string means the version is not tracking the data.
 | MODELS-001 | S0.1 | 2026-10-11 | **[UNVERIFIED, needs source]** | 1M tokens of context on the current Claude models (FACTS claude-context-window, read in full 2026-10-11) |
 | MODELS-002 | S2 | 2026-10-11 | **[UNVERIFIED, needs source]** | 1M tokens of context on the current Claude models, and 1M tokens as roughly 555,000 English words on the current tokenizer (FACTS claude-context-window, read in full 2026-10-11) |
 | MODELS-003 | S3 | 2026-10-11 | **[UNVERIFIED, needs source]** | 1M tokens of context on the current Claude models (FACTS claude-context-window, read in full 2026-10-11) |
-| MODELS-004 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | context window of 1M tokens on Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-context-window, read in full 2026-10-11) |
+| MODELS-004 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | context window of 1M tokens on Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5 (FACTS claude-context-window, read in full 2026-10-11) |
 | MODELS-005 | S4 | 2026-10-11 | **[UNVERIFIED, needs source]** | 1M tokens of context on the current Claude models, about 555,000 words (FACTS claude-context-window, read in full 2026-10-11) |
 
 ### `src-anthropic-dpa` — Data Processing Addendum
@@ -253,7 +253,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendix D2 |
 | References | 8 |
@@ -375,7 +375,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor model lineup` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | each teaching of Session 5 |
 | References | 4 |
@@ -385,7 +385,7 @@ version string means the version is not tracking the data.
 
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
-| ANTHROPIC-MODELS-OVERVIEW-001 | S5 | 2026-10-12 | **[UNVERIFIED, needs source]** | the four current models Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 and their not-sooner-than dates (1 September, 22 September, 28 September and 7 October 2027), with Haiku 4.5 among the legacy models (FACTS claude-model-ids-and-retirements, read in full 2026-10-11 and again 2026-10-12) |
+| ANTHROPIC-MODELS-OVERVIEW-001 | S5 | 2026-11-14 | **[UNVERIFIED, needs source]** | the four current models Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5 and their not-sooner-than dates (9 November, 22 September, 28 September and 7 October 2027), with Fable 5.1 (1 September 2027) and Haiku 4.5 among the legacy models (FACTS claude-model-ids-and-retirements, read in full 2026-11-14) |
 
 ### `src-claude-code-skills` — Extend Claude with skills
 
@@ -435,7 +435,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `vendor_policy` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | the start of each term |
 | References | 4 |
@@ -681,8 +681,8 @@ version string means the version is not tracking the data.
 | | |
 |---|---|
 | Figure class | `benchmark_index` |
-| Index version | v4.3.2 |
-| Last retrieved | 2026-10-11 |
+| Index version | v5.0.1 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 Appendix A7 |
 | References | 2 |
@@ -692,7 +692,7 @@ version string means the version is not tracking the data.
 
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
-| AA-LEADERBOARD-001 | S1 | 2026-10-11 | v4.3.2 | four index scores with their effort settings, about 2026-10-07 (FACTS leaderboard-snapshot-aa) |
+| AA-LEADERBOARD-001 | S1 | 2026-11-14 | v5.0.1 | four index scores with their effort settings, 2026-11-14 (FACTS leaderboard-snapshot-aa) |
 
 ### `src-livebench` — LiveBench leaderboard and question releases
 
@@ -700,7 +700,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `benchmark_index` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | 2026-10-11 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 Appendix A7 |
 | References | 2 |
@@ -710,7 +710,7 @@ version string means the version is not tracking the data.
 
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
-| LIVEBENCH-001 | S1 | 2026-10-11 | **[UNVERIFIED, needs source]** | 23 objective tasks in 7 categories, refreshed about every six months; latest release LiveBench-2026-06-25 (FACTS aa-index-definition and livebench-last-release) |
+| LIVEBENCH-001 | S1 | 2026-11-14 | **[UNVERIFIED, needs source]** | LiveBench 2.0, long-horizon work graded on what the model hands back; last release read on the earlier board LiveBench-2026-06-25 (FACTS aa-index-definition and livebench-last-release) |
 
 ### `src-arena-board` — Text leaderboard
 
@@ -814,7 +814,7 @@ version string means the version is not tracking the data.
 |---|---|
 | Figure class | `survey` |
 | Index version | **[UNVERIFIED, needs source]** |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-4 Appendix D4 |
 | References | 1 |
@@ -921,8 +921,8 @@ version string means the version is not tracking the data.
 | | |
 |---|---|
 | Figure class | `benchmark_index` |
-| Index version | v4.3.2 |
-| Last retrieved | 2026-10-11 |
+| Index version | v5.0.1 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** |
 | Re-check before | every teaching of session-1 Appendix A7 |
 | References | 1 |
@@ -932,7 +932,7 @@ version string means the version is not tracking the data.
 
 | Pull | Lesson | Retrieved | Index version | Figures it landed in |
 |---|---|---|---|---|
-| AA-INDEX-001 | S1 | 2026-10-11 | v4.3.2 | 10 evaluations; Agents 30%, Coding 20%, Scientific Reasoning 20%, General 30%; scale 0 to 100 (FACTS aa-index-definition) |
+| AA-INDEX-001 | S1 | 2026-11-14 | v5.0.1 | 9 evaluations; Knowledge Work, Coding, Science and General at 25% each; scale 0 to 100 (FACTS aa-index-definition) |
 
 ### `src-claude-web-search` — Enable and use web search
 
@@ -1054,18 +1054,18 @@ wrong when they go stale.
 | Lesson | Distinct model names in prose | Occurrences |
 |---|---|---|
 | S0.1 | `Fable 5`, `Opus 5`, `Sonnet 5` | 8 |
-| S1 | `Fable 5`, `GPT-5.6`, `Kimi K3`, `Luna`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 58 |
+| S1 | `Fable 5`, `GPT-5.6`, `Kimi K3`, `Luna`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 60 |
 | S2 | `Fable 5`, `GPT-5.6`, `Luna`, `Opus 4.8`, `Opus 5`, `Sol`, `Sonnet 5`, `Terra` | 52 |
 | S3 | — | 0 |
 | S4 | `Fable 5`, `Opus 4.7`, `Opus 5`, `Sonnet 5` | 7 |
-| S5 | `Fable 5`, `Haiku 4.5`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sonnet 5` | 32 |
+| S5 | `Fable 5`, `Haiku 4.5`, `Opus 4.7`, `Opus 4.8`, `Opus 5`, `Sonnet 5` | 33 |
 | case-1 | `Opus 5`, `Sonnet 5` | 10 |
 | case-2 | `Opus 5`, `Sonnet 5` | 7 |
 | case-3 | `Opus 5`, `Sonnet 5` | 7 |
 | case-4 | `Opus 5`, `Sonnet 5` | 7 |
 | case-5 | `Opus 5`, `Sonnet 5` | 7 |
 
-**195 occurrences across 11 lessons.** This count is read off
+**198 occurrences across 11 lessons.** This count is read off
 the corpus on every run, so it cannot go stale the way a typed one would.
 
 

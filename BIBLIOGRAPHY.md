@@ -5,11 +5,11 @@ the next run overwrites it.** To change an entry, change `SOURCES.md`. To change
 a reference count, change where the corpus cites the source — the counts here are
 read off the chips, never typed.
 
-**144 works, 705 references across 11 lessons.** 137 are
+**148 works, 712 references across 11 lessons.** 141 are
 cited by at least one claim; 7 are listed by a lesson without carrying a
 chip, and the reason each is exempt — or is not — is in the second table.
 
-**72 records carry at least one field this repository could not verify, and
+**67 records carry at least one field this repository could not verify, and
 every one of them is printed below as `[UNVERIFIED, needs source]` rather than omitted.** The
 rendered footer in a lesson omits an unknown field, because a footer in which
 thirty entries shout about a missing publisher helps nobody. This file is where a
@@ -19,6 +19,25 @@ reader comes for completeness, so here the gap is the point.
 ---
 
 ## Works cited
+
+### Advisor360
+
+**2026 Connected Wealth Report**  
+`src-advisor360-2026` · evidence
+
+| | |
+|---|---|
+| Author | Advisor360 |
+| Publisher | Advisor360, news release on Business Wire |
+| Link | <https://www.businesswire.com/news/home/20260113913247/en/> |
+| Published | 2026-01-13 |
+| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | M |
+| **Total references** | **2** |
+| Cited in | S2 `#s9` · S2 `#s12d` |
+
+Advisor360's survey of 300 financial advisors, fielded in fall 2025 and released 13 January 2026: 3% rely on AI-generated financial recommendations. A vendor survey; the figure is directional.
 
 ### Almazora, L.
 
@@ -50,7 +69,7 @@ In the 2026 survey, AI note-taking appeared as a tracked category for the first 
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/pricing> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **41** |
@@ -221,13 +240,13 @@ The two live memory experiences and where each puts its toggles, real-time entry
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/models/overview> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **12** |
 | Cited in | case-1 `#built` · case-2 `#built` · case-3 `#built` · case-4 `#built` · case-5 `#built` · S0.1 `#s1` · S1 `#s5` · S2 `#s0` · S2 `#s3` · S3 `#sRag` ×2 · S4 `#sCR` |
 
-The four current models (Claude Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5), each with a 1M context window; which models carry adaptive against extended thinking, and effort defaults; that every model ID is a pinned snapshot; about 555,000 words to the million tokens. The comparison table also carries each model's price per MTok and a reliable knowledge cutoff of June 2026; neither figure is quoted from this record in any lesson.
+The four current models (Claude Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5), each with a 1M context window; which models carry adaptive against extended thinking, and effort defaults; that every model ID is a pinned snapshot; about 555,000 words to the million tokens. The comparison table also carries each model's price per MTok and a reliable knowledge cutoff of June 2026; neither figure is quoted from this record in any lesson.
 
 ### Anthropic
 
@@ -297,13 +316,13 @@ Anthropic's fourth threat-intelligence report, covering misuse disrupted between
 | Publisher | claude.com |
 | Link | <https://claude.com/pricing> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **13** |
-| Cited in | case-1 `#built` · case-4 `#built` · case-4 `#next` · S0.1 `#s0` ×2 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
+| **Total references** | **14** |
+| Cited in | case-1 `#built` · case-4 `#built` · case-4 `#next` · S0.1 `#s0` ×3 · S1 `#s10` · S1 `#s11` · S1 `#s14b` · S4 `#(footer)` · S4 `#s3` ×3 · S4 `#sCR` |
 
-Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from $100 a month for five times Pro usage, $200 for twenty times. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, October 2026: from $0.10 in and $0.50 out for the smallest model, for prompts up to 100K tokens, to $10 in and $50 out for the largest (FACTS claude-api-price-haiku-5-5 and claude-api-price-fable-5-1).
+Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max $100 a month for five times Pro usage; Ultra $200 a month with no five-hour limit and ten times Pro weekly usage. Team: standard seat $25 a month or $20 annual, premium seat $125 or $100, teams of 2 to 150, with SSO, admin controls, enterprise search and no model training on content by default. Enterprise: $20 a seat a month billed annually plus usage at API rates, minimum 20 seats, adding SSO/SAML and domain capture, role-based access, SCIM, audit logs, a compliance API, custom data retention and a HIPAA-ready offering. API per million tokens, October 2026: from $0.10 in and $0.50 out for the smallest model, for prompts up to 100K tokens, to $10 in and $50 out for the largest (FACTS claude-api-price-haiku-5-5 and claude-api-price-fable-5-1).
 
 ### Anthropic
 
@@ -316,13 +335,13 @@ Free $0. Pro $20 a month billed monthly, $17 a month on annual billing. Max from
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/manage-claude/api-and-data-retention> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **8** |
 | Cited in | S1 `#(footer)` · S4 `#(footer)` · S4 `#s3` ×2 · S4 `#s4` · S4 `#sCR` ×3 |
 
-Conversation content sent through the API is not retained by default; the exception is the Covered Models (Fable 5.1, Mythos 5.1, Fable 5, Mythos 5), which require 30-day retention; standard retention otherwise is defined in the commercial data retention policy the page links; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years. The Enterprise custom retention period, 30 days at minimum with an indefinite default, is on Help Center article 10440198, which covers claude.ai chats and not the API.
+Conversation content sent through the API is not retained by default; the exception is the Covered Models (Fable 5.2, Mythos 5.2, Fable 5.1, Mythos 5.1, Fable 5, Mythos 5), which require 30-day retention; standard retention otherwise is defined in the commercial data retention policy the page links; under a Zero Data Retention arrangement, obtained through sales and applied per organisation, "Anthropic does not store customer prompts or responses at rest after the API response is returned"; the Team and Enterprise chat interfaces are not ZDR-eligible; retained data is never used for training without express permission; a flagged chat may be kept up to two years. The Enterprise custom retention period, 30 days at minimum with an indefinite default, is on Help Center article 10440198, which covers claude.ai chats and not the API.
 
 ### Anthropic
 
@@ -525,7 +544,7 @@ A standard for connecting assistants to the systems where data lives (November 2
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/about-claude/model-deprecations> |
 | Published | 2026-09-30 |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **61** |
@@ -582,13 +601,13 @@ Anthropic commits to preserving the weights of all publicly released models, and
 | Publisher | Claude Platform Docs |
 | Link | <https://platform.claude.com/docs/en/models/overview> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **4** |
 | Cited in | S5 `#s1` ×3 · S5 `#sE5` |
 
-The current lineup of four models (Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5) with each one's retirement commitment (not sooner than 1 September 2027, 22 September 2027, 28 September 2027 and 7 October 2027), and the legacy models still available (Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Haiku 4.5). The page recommends Opus 5.5 for most workloads. The comparison table carries prices and a June 2026 knowledge cutoff; no benchmark is on the page.
+The current lineup of four models (Claude Fable 5.2, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5) with each one's retirement commitment (not sooner than 9 November 2027, 22 September 2027, 28 September 2027 and 7 October 2027), and the legacy models still available (Fable 5.1, Fable 5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5, Sonnet 5, Sonnet 4.6, Haiku 4.5). The page recommends Opus 5.5 for most workloads. The comparison table carries prices and a June 2026 knowledge cutoff; no benchmark is on the page.
 
 ### Anthropic
 
@@ -734,7 +753,7 @@ With the model training setting ("Help improve Claude") on, de-identified data m
 | Publisher | Claude Help Center, article 12512180 |
 | Link | <https://support.claude.com/en/articles/12512180-use-skills-in-claude> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-27 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **4** |
@@ -943,7 +962,7 @@ A live leaderboard of capability index scores and cost per index task. Every fig
 | Publisher | Artificial Analysis |
 | Link | <https://artificialanalysis.ai/leaderboards/models> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-11 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
@@ -960,15 +979,15 @@ The current Intelligence Index scores of the leading models at a stated effort s
 |---|---|
 | Author | Artificial Analysis |
 | Publisher | Artificial Analysis |
-| Link | <https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index> |
+| Link | <https://artificialanalysis.ai/methodology/intelligence-benchmarking> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-11 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **1** |
 | Cited in | S1 `#s10` |
 
-What the Intelligence Index measures: a weighted average of 10 evaluations in four categories, scaled 0 to 100, at version 4.3.2.
+What the Intelligence Index measures: a weighted average of 9 evaluations in four categories, scaled 0 to 100, at version 5.0.1.
 
 ### Becker, J., Rush, N., Barnes, E., & Rein, D. (METR)
 
@@ -988,6 +1007,25 @@ What the Intelligence Index measures: a weighted average of 10 evaluations in fo
 | Cited in | S5 `#s5` ×2 |
 
 A randomised trial with 16 experienced open-source developers, each years into the repository they worked on, on 246 real tasks from those repositories (bug fixes, features, refactors), each task randomly assigned to AI allowed or not (mainly Cursor Pro with Claude 3.5 and 3.7 Sonnet, early 2025). With AI the tasks took 19% longer. Before the study the developers expected to be 24% faster; afterwards they believed they had been about 20% faster. The perception gap, not the coding, is what the page teaches.
+
+### Bostrom, N.
+
+**How long before superintelligence?**  
+`src-bostrom-superintelligence` · evidence
+
+| | |
+|---|---|
+| Author | Bostrom, N. |
+| Publisher | International Journal of Futures Studies, 2 (1998); reprinted in Linguistic and Philosophical Investigations, 5(1), 11 to 30 (2006) |
+| Link | <https://nickbostrom.com/superintelligence> |
+| Published | 1998 |
+| Last retrieved | 2026-11-14 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **2** |
+| Cited in | S4 `#s1` ×2 |
+
+An early and much-cited definition of superintelligence as an intellect far beyond the best human minds in practically every field. Cited for what the word meant before a federal order adopted it as a name for AI.
 
 ### Bouman, A.
 
@@ -1035,10 +1073,10 @@ In early 2020 the branch manager of a Japanese company's Hong Kong office author
 | | |
 |---|---|
 | Author | Brynjolfsson, E., Li, D., & Raymond, L. |
-| Publisher | The Quarterly Journal of Economics 140(2), 889 to 942, 2025; doi 10.1093/qje/qjae044. First circulated as NBER Working Paper 31161, April 2023 |
+| Publisher | NBER Working Paper 31161, April 2023. Published, with a revised sample, as The Quarterly Journal of Economics 140(2), 889 to 942, 2025; doi 10.1093/qje/qjae044 |
 | Link | <https://www.nber.org/papers/w31161> |
-| Published | 2025 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Published | 2023 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **1** |
@@ -1228,7 +1266,7 @@ NARROW, AND IT WAS READ TOO WIDELY. The speech states that the core questions re
 | Publisher | Federal Register |
 | Link | <https://www.govinfo.gov/content/pkg/FR-2024-07-19/html/2024-14542.htm> |
 | Published | 2024-07-19 |
-| Last retrieved | 2026-10-12 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
@@ -1254,6 +1292,25 @@ The 2024 final regulations on required minimum distributions, Treas. Reg. §§ 1
 | Cited in | S4 `#sW1` ×2 |
 
 Providers of AI systems that generate synthetic audio, image, video or text must ensure the output is marked in a machine-readable format and detectable as artificially generated; deployers of deepfakes must disclose them; the obligations apply from 2 August 2026 and bind providers placing systems on the EU market and deployers in the EU.
+
+### Executive Office of the President
+
+**Executive Order 14434: Inaugurating the Era of Super Intelligence**  
+`src-eo-14434` · evidence
+
+| | |
+|---|---|
+| Author | Executive Office of the President |
+| Publisher | The White House, Presidential Actions |
+| Link | <https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/> |
+| Published | 2026-09-29 |
+| Last retrieved | 2026-11-14 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **2** |
+| Cited in | S4 `#s1` ×2 |
+
+The order that tells executive departments and agencies to write Super Intelligence and SI where they wrote Artificial Intelligence and AI, in non-statutory documents, and that defines the new term as what the statute already calls artificial intelligence. A legislative definition was due within 60 days and may change the meaning.
 
 ### Federal Bureau of Investigation
 
@@ -1311,6 +1368,25 @@ An email styled with HTML and CSS to set the font size to zero and the colour to
 | Cited in | S1 `#s14` ×2 · S4 `#s1` ×3 · S4 `#s7` · S4 `#s9` · S4 `#sCR` |
 
 FINRA's position that existing rules reach generative AI and that supervision is not suspended by the technology. Creates no new obligations.
+
+### Financial Industry Regulatory Authority
+
+**Regulatory Notice 26-14: FINRA requests comment on proposed changes to modernize Rule 2210 (Communications with the Public)**  
+`src-finra2614` · evidence
+
+| | |
+|---|---|
+| Author | Financial Industry Regulatory Authority |
+| Publisher | FINRA |
+| Link | <https://www.finra.org/rules-guidance/notices/26-14> |
+| Published | 2026-07-09 |
+| Last retrieved | 2026-11-14 |
+| Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
+| Confidence | H |
+| **Total references** | **1** |
+| Cited in | S4 `#s1` |
+
+FINRA's July 2026 request for comment on modernising Rule 2210. A proposal, creating no obligation; it restates that members are responsible for their communications whether a human or AI generated them.
 
 ### Financial Industry Regulatory Authority
 
@@ -1589,13 +1665,13 @@ PROMPTFLUX, a VBScript dropper that called the Gemini API to request obfuscated 
 | Publisher | IBM Newsroom |
 | Link | <https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average> |
 | Published | 2026-07-29 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **1** |
 | Cited in | S4 `#sCR` |
 
-Cost of a Data Breach Report 2026, 602 organisations, breaches March 2025 to February 2026: global average $4.99 million, US average $11.5 million; one in four malicious breaches AI-enabled, at $6 million on average; shadow AI in 43% of AI-related breaches.
+IBM's release on the Cost of a Data Breach Report 2026: 602 organisations, breaches March 2025 to February 2026; global average breach cost $4.99 million; one in four malicious breaches AI-enabled, up 56%, at $6 million on average; financial services breaches $6.3 million on average. The release does not carry a US average or a shadow-AI share; those are in the full report, which was not read.
 
 ### Illinois General Assembly
 
@@ -1760,7 +1836,7 @@ ISS survey, n = 466, fielded June 2025: 48% of U.S. advisors use AI in their wor
 | Publisher | arXiv:2509.04664, §1 and §1.2 |
 | Link | <https://arxiv.org/abs/2509.04664> |
 | Published | 2025 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
 | **Total references** | **6** |
@@ -1804,7 +1880,7 @@ Assigned video segment for Session 4 (watch before class): jailbreaks, prompt in
 | **Total references** | **3** |
 | Cited in | S5 `#s7` · S5 `#sE5` ×2 |
 
-Vanguard's framework attributes about 3 percentage points a year of potential net value to an adviser following its best practices, of which behavioural coaching, keeping clients to their plan in fearful or greedy markets, is the largest single module at about 150 basis points, roughly half.
+Vanguard's framework attributes about 3 percentage points a year of potential net value to an adviser following its best practices; behavioural coaching, keeping clients to their plan in fearful or greedy markets, is one of its modules. The share coaching makes up differs by edition (about 150 basis points in the 2014 to 2020 editions; a range in the 2022 edition by search result) and is on no page.
 
 ### Kitces, M.
 
@@ -1817,7 +1893,7 @@ Vanguard's framework attributes about 3 percentage points a year of potential ne
 | Publisher | Kitces.com |
 | Link | <https://www.kitces.com/blog/ai-notetakers-client-meeting-for-financial-advisors-adoption-satisfaction-trends-research-productivity/> |
 | Published | 2025-03-17 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **8** |
@@ -1839,10 +1915,10 @@ Drawing on Kitces Research on Advisor Productivity, fielded autumn 2024: the gre
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
-| **Total references** | **3** |
-| Cited in | S2 `#s9` · S2 `#s12d` · S2 `#s12` |
+| **Total references** | **1** |
+| Cited in | S2 `#s12` |
 
-About two hours of preparation and follow-up per client meeting, more than one hour per meeting hour. The reliance figure travelling with it is reported via Advisor360 and Kitces Research through a secondary aggregator and is directional only.
+About two hours of preparation and follow-up per client meeting, more than one hour per meeting hour.
 
 ### Labotka, D., & Lamas, S.
 
@@ -1855,7 +1931,7 @@ About two hours of preparation and follow-up per client meeting, more than one h
 | Publisher | Morningstar, behavioural research |
 | Link | <https://www.morningstar.com/financial-advisors/why-do-investors-break-up-with-their-financial-advisor> |
 | Published | 2023-04-12 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **5** |
@@ -1912,13 +1988,13 @@ A survey of 319 knowledge workers who shared 936 first-hand examples of using a 
 | Publisher | livebench.ai |
 | Link | <https://livebench.ai/> |
 | Published | *not applicable* |
-| Last retrieved | 2026-10-11 |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **2** |
 | Cited in | S1 `#s10` ×2 |
 
-What LiveBench measures and the name of its latest question release.
+What LiveBench measures. Since its relaunch as LiveBench 2.0 the page is a script application and gave no release name to a plain fetch.
 
 ### Magesh, V., Surani, F., Dahl, M., Suzgun, M., Manning, C. D., & Ho, D. E.
 
@@ -2139,7 +2215,7 @@ Images from ChatGPT, Codex and the API carry C2PA content credentials and a Goog
 | Author | OWASP GenAI Security Project |
 | Publisher | OWASP GenAI Security Project, genai.owasp.org |
 | Link | <https://genai.owasp.org/2026/09/01/owasp-genai-security-project-unveils-2026-top-10-for-llm-applications-new-agent-control-standard-and-sponsors-as-community-tops-30000-members/> |
-| Published | 2026-08-04 |
+| Published | 2026-08-03 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
@@ -2511,22 +2587,22 @@ The compliance dates of the 2024 amendments, 3 December 2025 for larger entities
 
 ### U.S. Securities and Exchange Commission, Division of Examinations
 
-**Examination priorities: Fiscal year 2026, §VII**  
+**Examination priorities: Fiscal year 2027, §VII**  
 `src-secpri` · evidence
 
 | | |
 |---|---|
 | Author | U.S. Securities and Exchange Commission, Division of Examinations |
 | Publisher | SEC |
-| Link | <https://www.sec.gov/files/2026-exam-priorities.pdf> |
-| Published | 2025-11-17 |
+| Link | <https://www.sec.gov/files/2027-exam-priorities.pdf> |
+| Published | 2026-10-23 |
 | Last retrieved | **[UNVERIFIED, needs source]** |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | H |
-| **Total references** | **14** |
-| Cited in | S3 `#sPol` · S3 `#s16` · S4 `#s1` ×3 · S4 `#s7` · S4 `#s5` · S4 `#sAud` ×2 · S4 `#s9` ×2 · S4 `#sCR` ×3 |
+| **Total references** | **15** |
+| Cited in | S3 `#sPol` · S3 `#s16` · S4 `#s1` ×4 · S4 `#s7` · S4 `#s5` · S4 `#sAud` ×2 · S4 `#s9` ×2 · S4 `#sCR` ×3 |
 
-§VII, Risk Areas Impacting Various Market Participants. Information security and operational resiliency, including ransomware, data loss prevention, incident response and the 2024 amendments to Regulation S-P; emerging financial technology and AI, including the accuracy of AI representations and a review of training and security controls for risks from AI and polymorphic malware attacks.
+§VII, Risk Areas Impacting Various Market Participants. A.1 cybersecurity, including ransomware, data loss prevention, incident response and third-party service providers; A.2 emerging financial technology, where the document calls AI "super intelligence (SI)": preparation for SI-related cyberattacks such as SI-generated phishing and synthetic or deepfake voice and video, policies and procedures relating to monitoring SI, and whether representations are fair and accurate; A.3 Regulation S-ID and Regulation S-P, including customer notification procedures and oversight of service providers under the amended rule. The disclaimer page states the document "has no legal force or effect".
 
 ### United States Congress
 
@@ -2558,7 +2634,7 @@ The statutory source of the applicable age for required minimum distributions; n
 | Publisher | T3 Technology Hub and Inside Information; summarised in Kitces.com Weekend Reading, 14 to 15 March 2026 |
 | Link | <https://t3technologyhub.com/wp-content/uploads/2026/03/2026-T3_Inside-Information-Software-Survey.pdf> |
 | Published | 2026-03 |
-| Last retrieved | **[UNVERIFIED, needs source]** |
+| Last retrieved | 2026-11-14 |
 | Last verified by the instructor | **EMPTY** — no evidence in the repo that a human read it |
 | Confidence | M |
 | **Total references** | **4** |

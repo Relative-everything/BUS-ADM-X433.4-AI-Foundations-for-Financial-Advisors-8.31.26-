@@ -25,7 +25,7 @@ Published references (private to the instructor): the design system at `https://
 - Palette and type: Meridian. Navy ink and app bar, teal for the teaching voice and for done, amber for work-along, brick for caution, serif reading text. One light theme; no dark or presenter mode.
 - Layout: app bar plus labelled outline sidebar, replacing the dot rail.
 - Checks are earned by commits only. Opening a key without committing does not count. State is in memory and clears on reload.
-- Order: this repository is restyled first; the skill is brought into line afterwards (D-103).
+- Order: this repository is restyled first; the skill is brought into line afterwards (D-120).
 
 ## The content freeze
 
@@ -44,7 +44,7 @@ Tested 2026-11-15: a copy of Session 2 with one sentence deleted, one id renamed
 
 **1. The sweep reads the skill, and the skill is not updated yet.** `restyle_sweep.py` takes `--assets DIR`. `scripts/verify-style.mjs` and `scripts/build-changelog.py` both call the sweep without it, so they would report the Meridian fence as stale. Both need to pass `--assets docs/design/meridian/assets` (or read a path from one place) until the skill's own `assets/` match, and MAINTAINING's *Shared styling* needs to say so.
 
-**2. Page-local CSS repeats fence selectors, and the local copy wins (DW-205).** Counted 2026-11-15 as rules whose selector also appears in the fence:
+**2. Page-local CSS repeats fence selectors, and the local copy wins (DW-210).** Counted 2026-11-15 as rules whose selector also appears in the fence:
 
 | Page | Local rules repeating a fence selector | Page-local CSS |
 |---|---|---|
@@ -63,7 +63,7 @@ An identical copy is deleted. A deliberate variation stays, with a comment sayin
 
 **4. The outline and earned checks need markup.** `outline.js` goes into each lesson as an inline script, identical on every page (a generated, versioned region is the repository's pattern for that). Each control that records a learner's own answer takes `data-commit`. Components that build their controls in script must emit it.
 
-The duplicate colour-token blocks, which would have blocked all of this, were removed on 2026-11-15 (D-100).
+The duplicate colour-token blocks, which would have blocked all of this, were removed on 2026-11-15 (D-117).
 
 ## Order of work
 

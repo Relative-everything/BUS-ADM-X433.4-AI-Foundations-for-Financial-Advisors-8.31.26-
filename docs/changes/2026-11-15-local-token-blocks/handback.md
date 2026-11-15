@@ -2,12 +2,12 @@
 Branch: `claude/adoring-cannon-g71l1a`. Change: `docs/changes/2026-11-15-local-token-blocks/`. Tier: Lite. Status: complete.
 
 ## Summary
-A design review of the course site ended in a restyle that is still a draft outside this repository (DW-204). Testing the draft against Session 2 showed it could not take effect: the hub, Sessions 1 to 5 and the changelog page each declared the thirteen colour tokens twice, once in the style fence and once in the page's own CSS, and the page's copy wins. This change removes the second copy. The values were identical, so no page looks different.
+A design review of the course site ended in a restyle that is still a draft outside this repository (DW-209). Testing the draft against Session 2 showed it could not take effect: the hub, Sessions 1 to 5 and the changelog page each declared the thirteen colour tokens twice, once in the style fence and once in the page's own CSS, and the page's copy wins. This change removes the second copy. The values were identical, so no page looks different.
 
 ## What changed
 - `index.html`, `session-1` to `session-5`: the `:root` block after `/* STYLE:END */` that repeated `--page`, `--card`, `--ink`, `--muted`, `--off`, `--off-bg`, `--on`, `--on-bg`, `--warn`, `--warn-bg`, `--line`, `--gold` and `--gold-bg` is gone.
-- `session-2`: the block also held `--plot` to `--plot4` for the page's charts. Those stay, and the three that equalled a fence token now read it with `var()` (D-101).
-- `scripts/build-changelog.py`: the same thirteen tokens are no longer written into the changelog page (D-102).
+- `session-2`: the block also held `--plot` to `--plot4` for the page's charts. Those stay, and the three that equalled a fence token now read it with `var()` (D-118).
+- `scripts/build-changelog.py`: the same thirteen tokens are no longer written into the changelog page (D-119).
 - `MAINTAINING.md`, *Shared styling*: the rule that page-local CSS does not redefine a fence token.
 - Not changed: `session-0.1` (it never had a copy), the five case pages (their seven local tokens are their own), every generated or versioned fence.
 
@@ -40,9 +40,9 @@ Computed values, read in Chromium from `git HEAD` and from the working tree: the
 Not run: the skill's own `validate_lesson.py` and `validate_dom.js`, which MAINTAINING lists as red by design on several lines and which this change does not touch.
 
 ## Open
-- DW-204: land the drafted style sheet in the skill, then sweep.
-- DW-205: page-local rules that repeat a fence selector.
-- DW-206: on a second gate run on the same tree, `verify-migration` check 2 failed on `.verify-shots/session-5_index.html.png`, a screenshot the first run wrote, whose bytes spell a retired word. The folder is ignored and generated; deleting it cleared the failure. The pages are not involved.
+- DW-209: land the drafted style sheet in the skill, then sweep.
+- DW-210: page-local rules that repeat a fence selector.
+- DW-211: on a second gate run on the same tree, `verify-migration` check 2 failed on `.verify-shots/session-5_index.html.png`, a screenshot the first run wrote, whose bytes spell a retired word. The folder is ignored and generated; deleting it cleared the failure. The pages are not involved.
 
 ## Addendum, same day: the restyle prepared for a later session
 A second commit on the same branch adds `docs/design/meridian/` and changes no served page.
@@ -51,7 +51,7 @@ A second commit on the same branch adds `docs/design/meridian/` and changes no s
 - `assets/`: the drafted `tokens.css`, `typography.css`, `components.css` and `outline.js`. They were regenerated from the installed skill's `assets/`, which differ from the fence text only by a trailing newline in two files, so `skill-assets.diff` applies to the skill as it stands.
 - `MIGRATION.md`: the plan, with the per-page counts of local rules that repeat a fence selector.
 - `KICKOFF-PROMPT.md`: the prompt for the session that does the work.
-- `content-freeze.mjs`: the check that the restyle changes presentation only (D-104). Run against this branch's previous commit and its parent, it reports all twelve pages frozen. Run against a scratch copy of Session 2 with a sentence deleted, an id renamed and a script edited, it fails on each of the three and ignores the copy's colour change.
-- `CLAUDE.md` and MAINTAINING's *Shared styling* point at the folder. Decisions D-103 and D-104; DW-204 rewritten to say where the drafts are.
+- `content-freeze.mjs`: the check that the restyle changes presentation only (D-121). Run against this branch's previous commit and its parent, it reports all twelve pages frozen. Run against a scratch copy of Session 2 with a sentence deleted, an id renamed and a script edited, it fails on each of the three and ignores the copy's colour change.
+- `CLAUDE.md` and MAINTAINING's *Shared styling* point at the folder. Decisions D-120 and D-121; DW-209 rewritten to say where the drafts are.
 
 The in-repo battery was run again on the final tree after this commit's files were added: 23 of 23 exit 0.
