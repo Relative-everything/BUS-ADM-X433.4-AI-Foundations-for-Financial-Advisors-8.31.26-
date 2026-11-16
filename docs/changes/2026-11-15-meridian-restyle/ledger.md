@@ -106,3 +106,11 @@ The source of truth for progress. Newest entry last. Each entry: what was done, 
 - After-screenshots retaken with the outline in place: `shots/after/`.
 
 **Next action:** run `gate.sh` (full gate) and save it as `gate/checkpoint-3.txt`; fix or explain any red line; write `handback.md`; commit and push; open one pull request against `main` (do not merge); report to the instructor.
+
+## L-08, 2026-11-16: CHECKPOINT 3 REACHED; handback written
+
+- Final gate (`gate/checkpoint-3.txt`): all 24 in-repo checks pass, including `build-outline --check`, `verify-case`, `verify-migration`, `verify-style`, `verify-editorial`, `verify-stamps`, `test-case-viewer`, `test_live_console`, `verify-browser` and `docs/next-term/checks.mjs`. Skill-validator lines identical to the baseline, all red by design.
+- `content-freeze`: frozen on 12 pages with the two allowed entries. `test-outline`: 58 pass. Storage empty, free scrolling, outline lists every core section on every lesson.
+- `handback.md` written.
+
+**Next action:** open one pull request from `claude/meridian-design-unification-6v4p7m` into `main`; do not merge; report to the instructor. After that nothing is owed on this branch unless the instructor asks.
