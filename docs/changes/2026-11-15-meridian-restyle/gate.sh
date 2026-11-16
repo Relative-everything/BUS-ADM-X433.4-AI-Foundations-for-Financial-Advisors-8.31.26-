@@ -18,6 +18,7 @@ run build-case node scripts/build-case.mjs
 run "inject-case --check" node scripts/inject-case.mjs --check
 run "build-cardsort --check" node scripts/build-cardsort.mjs --check
 run "build-appendix --check" node scripts/build-appendix.mjs --check
+run "build-outline --check" node scripts/build-outline.mjs --check
 run "build-readings --check" node scripts/build-readings.mjs --check
 run "build-sources --check" node scripts/build-sources.mjs --check
 run "inject-sources --check" node scripts/inject-sources.mjs --check

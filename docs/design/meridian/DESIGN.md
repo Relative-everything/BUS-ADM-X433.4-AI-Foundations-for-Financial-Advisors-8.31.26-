@@ -83,4 +83,4 @@ Checks are earned by committing answers, shown per section in the outline, held 
 
 ## Where the source of truth lives
 
-This reference describes the system. The values that ship are `tokens.css`, `typography.css` and `components.css` in the interactive-lesson-builder skill, swept into each page's style fence by `restyle_sweep.py`. Change those files and regenerate; never edit inside a fence. `components/bundle.css` here is the draft of the new `components.css`.
+This reference describes the system. The values that ship are `tokens.css`, `typography.css` and `components.css` in `docs/design/meridian/assets/`, swept into each page's style fence by the lesson-builder skill's `restyle_sweep.py` with `--assets docs/design/meridian/assets`. Change those files and sweep; never edit inside a fence. When the skill's own `assets/` match them, the override comes out (MAINTAINING, *Shared styling*).

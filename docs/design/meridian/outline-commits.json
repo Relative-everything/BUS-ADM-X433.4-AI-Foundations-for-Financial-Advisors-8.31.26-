@@ -1,0 +1,46 @@
+{
+ "_about": "Which control in each task records a learner's own answer. Read by scripts/build-outline.mjs, which stamps data-commit on a control that exists in the page's markup and data-commit-in on the task root when the control is built by script. One task is one earned action. null means the task has no answer to commit (a sandbox, an explorer, a demonstration, a copy button): its section shows the neutral dot. 'needs' names a field that must hold text for the commit to count, so a lock-and-reveal with an empty box is a reveal, not a commit. Rules: C1 a lock, commit, check or record button counts and the options before it do not; C2 where there is no such button, choosing an option counts; C3 in a sorter, placing into a bucket counts; C4 a checklist or self-report field counts on change; never a reveal, show, run, copy, reset or key button.",
+ "session-0.1/index.html": {
+  "t-plan": {"in": "#planSel"}, "t-picker": {"in": "#pickGo"},
+  "t-privacy": {"in": ".vopt"}, "t-newchat": {"in": ".vopt"}, "t-project": {"in": ".vopt"}, "t-instructions": {"in": ".vopt"},
+  "t-search": {"in": ".vopt"}, "t-connectors": {"in": ".vopt"}, "t-skills": {"in": ".vopt"}, "t-incognito": {"in": ".vopt"}, "t-memory": {"in": ".vopt"},
+  "t-baseline": {"in": "#blGo", "needs": "textarea,input[type=text]"},
+  "t-vocab": {"in": "input[type=checkbox]"}, "t-ready": {"in": "input[type=checkbox]"}
+ },
+ "session-1/index.html": {
+  "t-s1": null, "t-case": {"in": "#caseCommit"}, "t-s2": null, "t-s3": null, "t-s5": null,
+  "t-s6": {"in": "button.btn.sel"}, "t-s7": null, "t-s4": null, "t-s8": null, "t-s9": null, "t-s10": null, "t-s11": null,
+  "t-s12": {"in": "button.btn.sel"}, "t-s13": {"in": "#csTo0,#csTo1"}, "t-s14": {"in": "button.btn.sel"},
+  "t-s14b": {"in": ".vopt"}, "t-s14c": {"in": "#toDefence"}, "t-s15": {"in": "#closeGo", "needs": "textarea"}
+ },
+ "session-2/index.html": {
+  "t-s0": {"in": "button.btn.ghost", "needs": "textarea"}, "t-s1": null, "t-s2": null,
+  "t-s2b": {"in": "button.btn.sel.mini:not(#cupAgain)"}, "t-sCase": {"in": "#ceGo"}, "t-s6": null, "t-s6b": null,
+  "t-s3": {"in": "button"}, "t-s4": null, "t-sZ": {"in": "button.btn.sel"}, "t-s9": {"in": ".buck"}, "t-sDel": {"in": "#dbGo"},
+  "t-s5": null, "t-s8": null, "t-s8b": null, "t-s10c": {"in": "button.btn.sel"}, "t-s7": {"in": "button.btn.sel"},
+  "t-s11": {"in": ".rb"}, "t-s12d": {"in": "button"}, "t-s12": {"in": "input[type=text]"},
+  "t-s12c": {"in": "#rmLock", "needs": "textarea"}, "t-s12b": {"in": ".ck"}
+ },
+ "session-3/index.html": {
+  "t-s1": null, "t-sCase": {"in": "#c3Lock", "needs": "textarea"}, "t-s2cube": null, "t-s2": null, "t-s3": {"in": ".lbox"},
+  "t-s4": null, "t-sRag": {"in": ".lbox"}, "t-s6": {"in": "button.btn.sel"}, "t-sPrep": null, "t-s7fig": null,
+  "t-s7": {"in": "button.btn.sel"}, "t-s9": null, "t-s10": null, "t-sChk": {"in": ".lbox"}, "t-s11": {"in": "button.btn.sel"},
+  "t-sOff": {"in": ".lbox"}, "t-s12": {"in": "button.btn.sel"}, "t-sPolQ": {"in": "button.btn.ghost"}, "t-sPol": null,
+  "t-s13": {"in": ".lbox"}, "t-s15": {"in": "button.btn.sel"}, "t-s16": {"in": "input[type=checkbox]"}
+ },
+ "session-4/index.html": {
+  "t-s0": {"in": "button.btn.sel"}, "t-sCase": {"in": "#c4Commit"}, "t-s1": {"in": "button.btn.sel.mini,.lbox"},
+  "t-s2": {"in": "#redGuessY,#redGuessN"}, "t-sAnon": {"in": "#anonStampS,#anonStampX"}, "t-s3": null,
+  "t-s4": {"in": ".s4-ay,.s4-an,.s4-au"}, "t-sRSP": {"in": "input[type=text]"}, "t-s7": {"in": ".lbox"},
+  "t-s5": {"in": "button.btn.sel.mini"}, "t-s6": {"in": "#mmLock"}, "t-sWS": {"in": "button.btn.sel.mini"},
+  "t-sAud": {"in": ".s9opt"}, "t-sW1": null, "t-sW2": {"in": ".lbox"}, "t-sD": {"in": ".sdv"}, "t-s9": {"in": ".s9opt"},
+  "t-sCR": {"in": ".cr-hit"}
+ },
+ "session-5/index.html": {
+  "t-s0": {"in": "button.btn.sel"}, "t-sCase": {"in": "#c5Commit"}, "t-s1": null, "t-sE3": {"in": ".lbox,.sE3-col"},
+  "t-sE4": {"in": "button.btn.sel.mini"}, "t-sE2": {"in": "button.btn.sel.mini"}, "t-sE6": {"in": "#e6Lock"}, "t-s2": null,
+  "t-s3": {"in": "#s3Lock"}, "t-s4": {"in": ".s4-opt"}, "t-sE1": null, "t-s5": {"in": "#s5Lock"},
+  "t-s8": {"in": "button.btn.sel.mini"}, "t-s7": {"in": ".lbox"}, "t-s6": {"in": ".s6-chip.dst,.s6-port.dst"}, "t-sLib": null,
+  "t-sE5": {"in": "button.btn.sel"}
+ }
+}

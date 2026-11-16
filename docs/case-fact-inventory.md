@@ -175,10 +175,10 @@ with the text around it, so the undercount can be judged rather than trusted.
 
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
-| `session-3/index.html:3199` | UNGUARDED | $3,000 | KI=[ {t:'Meg’s mother’s care team says she may need assisted living within a year, about 〈$3,000〉 a month more than she pays now.',k:'in',w:'Meg’s fir |
-| `session-3/index.html:3245` | UNGUARDED | $3,000 | 's mother\'s care team says she may need the assisted living wing within a year, at about 〈$3,000〉 a month more than she pays now. The new summary pla |
-| `session-5/index.html:4112` | UNGUARDED | $3,000 | o name, no employer, no town. The one case figure it types is the meeting's own "about 〈$3,000〉 a month more" (CASE.md A.3, Part O), as spoken; the fi |
-| `session-5/index.html:4135` | UNGUARDED | $3,000 | e. The wife\u2019s mother may need assisted living within a year. The extra cost is about 〈$3,000〉 a month.', checks:'Verification: read the brief and |
+| `session-3/index.html:3204` | UNGUARDED | $3,000 | KI=[ {t:'Meg’s mother’s care team says she may need assisted living within a year, about 〈$3,000〉 a month more than she pays now.',k:'in',w:'Meg’s fir |
+| `session-3/index.html:3250` | UNGUARDED | $3,000 | 's mother\'s care team says she may need the assisted living wing within a year, at about 〈$3,000〉 a month more than she pays now. The new summary pla |
+| `session-5/index.html:4117` | UNGUARDED | $3,000 | o name, no employer, no town. The one case figure it types is the meeting's own "about 〈$3,000〉 a month more" (CASE.md A.3, Part O), as spoken; the fi |
+| `session-5/index.html:4140` | UNGUARDED | $3,000 | e. The wife\u2019s mother may need assisted living within a year. The extra cost is about 〈$3,000〉 a month.', checks:'Verification: read the brief and |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,

@@ -87,3 +87,22 @@ The source of truth for progress. Newest entry last. Each entry: what was done, 
 **Step 2 is the commit that carries this entry.**
 
 **Next action:** ask the instructor about the contrast exceptions (question tool). On "accept": add register rows DW-212+ for the three kinds, then step 3: write `scripts/build-outline.mjs` (generated `OUTLINE` region in the six lessons, from `docs/design/meridian/assets/outline.js`), extend `outline.js` (build a bar when the page has none: Sessions 3 to 5; `data-commit-in` delegation for controls built by script; `data-commit-needs`), write `docs/design/meridian/outline-commits.json` from the per-task control survey, run, verify on Sessions 2 and 4, gate, checkpoint 3.
+
+## L-07, 2026-11-16: step 3 applied (final gate still to run)
+
+**Instructor's answer on the contrast flag (2026-11-16):** accept and continue, with conditions. (1) Dimmed-on-purpose states stay, one register row. (2) Colours written by page scripts below 4.5:1 are fixed in step 3 with the muted or ink token, each changed script block in `freeze-allow.json` with a reason and a decision row, nothing else changed. (3) SVG text that could not be measured is not counted as passing and is listed with page and screenshot. (4) Sessions 3 to 5 get an app bar element added in markup, no existing script changed. D-133, D-134, D-135.
+
+**Applied.**
+- `scripts/build-outline.mjs` (new, `--check` added to `gate.sh` and MAINTAINING's gate list): the `OUTLINE:BEGIN v1` region with `docs/design/meridian/assets/outline.js`, byte-identical in the six lessons (region hash `a0566ebc9662`); commit markers from `docs/design/meridian/outline-commits.json` (78 of 111 tasks earn a check: `data-commit` on 22 controls in the markup, `data-commit-in` on 59 task roots for controls built by script); an empty `<div id="topbar" data-outline-bar>` on Sessions 3 to 5. D-132.
+- `outline.js` extended: delegation (`data-commit-in`), `data-commit-needs`, one task one check, only trusted events count, title written into an empty bar.
+- Script colours (D-133): Session 2 block 2 of 3, six `var(--off)` to `var(--muted)`; Session 3 block 2 of 3, six `style="color:#6F7B78"` to `style="color:var(--muted)"`. `freeze-allow.json` holds exactly these two entries. Each changed block, with its substitutions undone, hashes to the baseline block.
+- Shared sheet: the floating case link on Sessions 3 to 5 takes the ghost colours over the bar.
+- Records: CHANGELOG entry and rebuilt page; DECISIONS D-122 to D-135; register DW-209 updated, DW-210 closed, DW-212 to DW-216 opened; MAINTAINING (*The outline and the earned checks*), MIGRATION.md and DESIGN.md updated.
+
+**Evidence so far.**
+- `content-freeze`: frozen on 12 pages, with the two allowed entries.
+- `test-outline.mjs` (`test-outline.txt`): 58 assertions pass. Every lesson: outline lists every core section; revealing everything earns nothing; storage empty; scrolls top to bottom and to every section; no request beyond the font host; drawer works at 320 px. Session 2: lock-and-reveal on an empty box earns nothing, typing alone earns nothing, a typed and locked answer earns the check. Session 4: Shift+U earns nothing, choosing options before the commit button earns nothing, "Commit all three answers" earns the check, a reveal fired by script earns nothing, "Lock my guess" earns the check. Screenshots: `shots/outline/`.
+- `contrast-check`: 55 selectors below 4.5:1 (from 1,808): 48 dimmed (`contrast-dimmed.md`), 7 SVG (`svg-text-to-check.md`, screenshots in `shots/svg-text/`). No sideways scroll at 320 px.
+- After-screenshots retaken with the outline in place: `shots/after/`.
+
+**Next action:** run `gate.sh` (full gate) and save it as `gate/checkpoint-3.txt`; fix or explain any red line; write `handback.md`; commit and push; open one pull request against `main` (do not merge); report to the instructor.

@@ -31,7 +31,7 @@ catch { ({ chromium } = createRequire(join(process.env.NODE_PATH || '/usr/lib/no
 const browser = await chromium.launch();
 let failed = 0;
 for (const p of (opt('--pages') ? opt('--pages').split(',') : pages(ROOT))) {
-  const groups = new Map(), unread = new Map(); let over = 0, measured = 0;
+  const groups = new Map(), unread = new Map(), where = new Map(); let over = 0, measured = 0;
   for (const w of [1440, 320]) for (const state of ['load', 'open']) {
     const ctx = await browser.newContext({ viewport: { width: w, height: 900 }, reducedMotion: 'reduce' });
     await ctx.route(/^https?:/, r => r.abort());
@@ -80,12 +80,19 @@ for (const p of (opt('--pages') ? opt('--pages').split(',') : pages(ROOT))) {
         if (!g) g = ground(svg ? (el.ownerSVGElement || el) : el); if (!g) { unread.push(sel(el)); continue; }
         fg = over([fg[0], fg[1], fg[2], fg[3] * op], g);
         const a = lum(fg), b = lum(g), ratio = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
-        out.push([sel(el), fg.slice(0, 3).map(Math.round).join(','), g.slice(0, 3).map(Math.round).join(','), Math.round(ratio * 100) / 100, parseFloat(cs.fontSize)]);
+        /* why: dim = an opacity below 1 on the element or an ancestor (a state the page dims on purpose);
+           inline = the colour is in a style attribute or a fill attribute (markup or a page script wrote it);
+           svg = SVG text, whose ground is read from the shape under its centre and may be wrong; css = a style rule */
+        const inl = svg ? (el.hasAttribute('fill') || !!el.style.fill) : !!el.style.color || [...el.querySelectorAll ? [] : []].length > 0;
+        let inh = false; if (!svg && !inl) for (let e = el.parentElement; e && e !== document.body; e = e.parentElement) { if (e.style && e.style.color) { inh = true; break; } const own = getComputedStyle(e).color; if (own !== cs.color) break; }
+        const why = op < 0.999 ? 'dim' : (inl || inh) ? 'inline' : svg ? 'svg' : 'css';
+        const q2 = el.getBoundingClientRect();
+        out.push([sel(el), fg.slice(0, 3).map(Math.round).join(','), g.slice(0, 3).map(Math.round).join(','), Math.round(ratio * 100) / 100, parseFloat(cs.fontSize), why, [Math.round(q2.x + scrollX), Math.round(q2.y + scrollY), Math.round(q2.width), Math.round(q2.height)]]);
       }
       return { out, unread, over: document.documentElement.scrollWidth - document.documentElement.clientWidth };
     });
     measured += res.out.length;
-    for (const [s, fg, g, ratio, size] of res.out) if (ratio < MIN) { const k = fg + ' on ' + g + '  ' + ratio.toFixed(2) + ':1'; if (!groups.has(k)) groups.set(k, new Map()); const m = groups.get(k); m.set(s, (m.get(s) || 0) + 1); }
+    for (const [s, fg, g, ratio, size, why, box] of res.out) if (ratio < MIN) { const k = fg + ' on ' + g + '  ' + ratio.toFixed(2) + ':1  [' + why + ']'; if (!groups.has(k)) groups.set(k, new Map()); const m = groups.get(k); m.set(s, (m.get(s) || 0) + 1); if (!where.has(s + k)) where.set(s + k, { sel: s, pair: k, why, w, state, box }); }
     for (const s of res.unread) unread.set(s, (unread.get(s) || 0) + 1);
     if (w === 320 && res.over > 0) over = Math.max(over, res.over);
     await ctx.close();
@@ -94,7 +101,7 @@ for (const p of (opt('--pages') ? opt('--pages').split(',') : pages(ROOT))) {
   if (bad || over) failed++;
   console.log((bad || over ? 'FAIL  ' : 'ok    ') + p + '  ' + measured + ' text elements measured' + (bad ? ', ' + bad + ' selector(s) below ' + MIN + ':1' : '') + (over ? ', scrolls sideways by ' + over + ' px at 320' : '') + (unread.size ? ', ' + unread.size + ' on an image or gradient ground (unread)' : ''));
   for (const [k, m] of [...groups].sort()) console.log('        rgb ' + k + '   ' + [...m].slice(0, argv.includes('--verbose') ? 99 : 4).map(([s, n]) => s + ' x' + n).join(' | ') + (m.size > 4 && !argv.includes('--verbose') ? ' | and ' + (m.size - 4) + ' more' : ''));
-  if (opt('--json')) { const fs = await import('node:fs'); const prev = fs.existsSync(opt('--json')) ? JSON.parse(fs.readFileSync(opt('--json'), 'utf8')) : {}; prev[p] = [...groups].flatMap(([k, m]) => [...m.keys()].map(sel => [sel, k])); fs.writeFileSync(opt('--json'), JSON.stringify(prev, null, 1)); }
+  if (opt('--json')) { const fs = await import('node:fs'); const prev = fs.existsSync(opt('--json')) ? JSON.parse(fs.readFileSync(opt('--json'), 'utf8')) : {}; prev[p] = [...where.values()]; fs.writeFileSync(opt('--json'), JSON.stringify(prev, null, 1)); }
   if (argv.includes('--verbose')) for (const [s, n] of unread) console.log('        unread  ' + s + ' x' + n);
 }
 await browser.close();

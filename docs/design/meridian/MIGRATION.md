@@ -1,8 +1,8 @@
 # Meridian restyle: migration plan
 
-Status on 2026-11-15: **prepared, nothing applied.** Every served page looks exactly as it did. This folder holds what a later session needs to restyle the whole site without touching its content.
+Status on 2026-11-16: **applied in this repository.** All twelve served pages and the changelog page carry the Meridian shared sheets, page-local CSS is converted to tokens, and the six lessons carry the outline. The record is `docs/changes/2026-11-15-meridian-restyle/` (plan, ledger, handback). What is left is the skill (see *Afterwards* below, DW-209) and the register rows DW-212 to DW-216. The sections below are kept as the plan the work followed.
 
-The scope is presentation only. Text, figures, sources, chips, case facts, scripts and generated regions are frozen, and `content-freeze.mjs` proves it after every step.
+The scope was presentation only. Text, figures, sources, chips, case facts, scripts and generated regions were frozen, and `content-freeze.mjs` proved it after every step.
 
 ## What is in this folder
 
@@ -10,9 +10,12 @@ The scope is presentation only. Text, figures, sources, chips, case facts, scrip
 |---|---|
 | `DESIGN.md` | The design system's rules: colour roles, type, space, layout, figures, progress. Read this first. |
 | `tokens.json` | Every token with its value and usage note. |
-| `assets/tokens.css`, `assets/typography.css`, `assets/components.css` | The restyled shared style sheets, drafted from the skill's current `assets/` (identical to what the pages carry, payload `e13bf73a3fd0`). These are what the sweep writes into the fence. |
-| `assets/outline.js` | Builds the outline sidebar and the earned checks. Commits only. |
-| `skill-assets.diff` | Unified diff of the three style sheets against the skill's current files, for updating the skill afterwards. |
+| `assets/tokens.css`, `assets/typography.css`, `assets/components.css` | The shared style sheets, and since 2026-11-16 the ones the sweep writes into every fence (`--assets docs/design/meridian/assets`). `components.css` ends with the 202 rules promoted from the pages. |
+| `assets/outline.js` | Builds the outline sidebar and the earned checks. Commits only. Inlined into the six lessons by `scripts/build-outline.mjs`. |
+| `outline-commits.json` | Which control in each task records a learner's own answer. Read by `scripts/build-outline.mjs`. |
+| `consolidate.mjs`, `restyle-local.py`, `contrast-check.mjs`, `test-outline.mjs`, `shots-compress.py`, `css-rules.mjs` | The step 1 editor, the step 2 converter, the contrast and overflow check, the outline's behaviour test, the screenshot compressor, and the parser the tools share. |
+| `freeze-allow.json` | The two script blocks the freeze check lets differ, each with its reason (D-133). |
+| `skill-assets.diff` | Unified diff of the drafted style sheets against the skill's files, as drafted on 2026-11-15. It predates the promoted block and the four contrast rules added on 2026-11-16; diff `assets/` against the skill afresh before updating the skill. |
 | `reference-components.css` | The component styles as the design-system reference shows them (`m-` prefixed). Reference only; not swept. |
 | `build-drafts.py` | The script that produced the drafts. Its mechanical rules (label rules to the interface face, size and radius snapping, literals to tokens) are the ones to reuse on page-local CSS. |
 | `content-freeze.mjs` | The content-freeze check. |
@@ -118,4 +121,4 @@ Each is a register row for a later, separate change:
 
 ## Afterwards: the skill
 
-Apply `skill-assets.diff` to the skill's `assets/`, add `outline.js`, then remove the `--assets` override here so `verify-style` reads the skill again. The payload hash in every fence should not change when that happens; if it does, the two copies have drifted.
+Copy `assets/` over the skill's `assets/` (deciding there what to do with the promoted block, which is course-specific), add `outline.js`, then remove the `--assets` override here so `verify-style` reads the skill again. The payload hash in every fence should not change when that happens; if it does, the two copies have drifted.
