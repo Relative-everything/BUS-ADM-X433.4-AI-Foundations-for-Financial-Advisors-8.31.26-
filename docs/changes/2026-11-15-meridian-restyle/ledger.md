@@ -63,3 +63,27 @@ The source of truth for progress. Newest entry last. Each entry: what was done, 
 **Step 1 is commits `733834e` (tools, baseline), `7fd17d8` (1.2), `0ead3c0` (1.3 table) and the commit that carries this entry (1.3 applied, 1.4).** To revert step 1 alone, revert those four.
 
 **Next action:** step 2. (1) `consolidate.mjs identical --write --force` to delete the 74 order-bound copies of the old sheet, and `apply-variations --retire --write` for the supersede rows. (2) Build the new `assets/`: `assets-draft/` tokens, typography, components, plus the promoted block from the current `assets/components.css` converted with `restyle-local.py css`. Sweep. (3) `restyle-local.py pages --write`. (4) Screenshots, ui-audit `--list`, contrast and 320 px overflow checks; fix page by class of problem. Checkpoint 2.
+
+## L-06, 2026-11-16: step 2 applied; one checkpoint 2 criterion is NOT met as written (flagged)
+
+**Applied.**
+- `consolidate.mjs identical --force --write`: the 74 order-bound copies of the old sheet deleted. `apply-variations --retire --write`: the 24 keep-then-retire instances deleted (D-130).
+- `assets/` now holds the Meridian `tokens.css` and `typography.css` and the Meridian `components.css` with the 202 promoted rules appended, converted by `restyle-local.py css`. `assets-draft/` removed. Swept into 13 pages.
+- `restyle-local.py pages --write`: page-local CSS and inline `style` attributes converted with `build-drafts.py`'s rules plus X1 to X5 (D-129).
+- Shared-sheet fixes after the contrast check: `#caseBtn.casefab`, `#topbar #ovr`, `.pipeline .ar` (D-131). `cases/case-3.html`: one narrow-screen rule so the page no longer scrolls sideways.
+- `content-freeze.mjs` region pattern fixed (D-128).
+- New tool: `contrast-check.mjs` (text colour against its ground at 1440 and 320 px in two states, and sideways scroll at 320 px).
+
+**Checkpoint 2 evidence.**
+- `content-freeze`: frozen on 12 pages.
+- `ui-audit` (`ui-audit-after.txt`): page-local off-token values 2,238 to 137: colours 381 to 111, sizes 1,143 to 26, radii 350 to 0, monospace labels 364 to 0. Every remaining value is listed with its reason in `off-token-remaining.md`.
+- No horizontal scroll at 320 px on any page (the baseline scrolled on `cases/case-3.html`, 49 px, and on Session 5 with everything revealed, 47 px).
+- After-screenshots: `shots/after/`, 24 files, beside `shots/before/`.
+- Gate (`gate/checkpoint-2.txt`): every in-repo check passes; skill-validator lines identical to the baseline.
+- **Contrast: NOT 4.5:1 everywhere.** `contrast-check.mjs`: selectors below 4.5:1 went from 1,808 at the freeze ref to 65, on Sessions 1 to 5; the hub, Session 0.1 and the five case pages are clean. The list is `contrast-remaining.txt`. The 65 are of three kinds: (1) states the pages dim on purpose with `opacity` (a spent chip, a struck-out option, an unlit box, an appendix card hidden at the current depth); (2) colours a page script writes (Session 3's `#6F7B78` key text, Session 2's option marks), frozen with the scripts; (3) SVG text whose ground the checker cannot establish (white text on a path, a watermark numeral). None was introduced by the restyle; the three that were are fixed (D-131).
+
+**Why this is a flag and not a pass.** The prompt says every text colour is 4.5:1 or better, and also that scripts are frozen and content does not change. Kinds (2) and (3) cannot be fixed without editing a script; kind (1) can only be fixed by redesigning what "spent" or "eliminated" looks like, component by component. Recommendation put to the instructor: accept the 65 as listed exceptions (WCAG 1.4.3 exempts inactive components and incidental text), open a register row for each kind, and continue to step 3.
+
+**Step 2 is the commit that carries this entry.**
+
+**Next action:** ask the instructor about the contrast exceptions (question tool). On "accept": add register rows DW-212+ for the three kinds, then step 3: write `scripts/build-outline.mjs` (generated `OUTLINE` region in the six lessons, from `docs/design/meridian/assets/outline.js`), extend `outline.js` (build a bar when the page has none: Sessions 3 to 5; `data-commit-in` delegation for controls built by script; `data-commit-needs`), write `docs/design/meridian/outline-commits.json` from the per-task control survey, run, verify on Sessions 2 and 4, gate, checkpoint 3.

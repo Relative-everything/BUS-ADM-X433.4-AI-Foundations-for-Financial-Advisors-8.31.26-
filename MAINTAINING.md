@@ -801,6 +801,14 @@ for f in index.html session-*/index.html; do
 done                                   # must print nothing
 ```
 
+**Since 2026-11-16 the fence carries no such line.** The Meridian `tokens.css`
+(`docs/design/meridian/assets/`, see "Shared styling") has a different header, so
+a raw `grep -ri "instructor note"` over the served pages now returns nothing and
+the scoped check above still must print nothing. The paragraphs here about the six
+R4 hits describe the skill's own sheet, which this repository no longer inlines;
+they apply again only if the override is removed before the skill's sheet changes
+(DW-051 stays upstream).
+
 **Why the string is gone at all.** A note addressed to the person teaching is
 not lesson copy, and a reader who views source is a reader. The notes live in
 `instructor-notes/`, one file per lesson, and nothing links them from a served

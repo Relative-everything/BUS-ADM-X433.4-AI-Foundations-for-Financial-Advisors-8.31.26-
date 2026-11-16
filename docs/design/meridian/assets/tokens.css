@@ -1,24 +1,77 @@
 /* tokens.css
-   Colour tokens. Single source of truth for the palette.
-   Provenance: extracted verbatim from session-1/index.html :root, 2026-08-18.
-   Semantics (see references/design-system.md):
-     --on   teal   = teaching voice, confirmation, primary action
-     --warn rust   = caution, failure states, instructor notes
-     --gold ochre  = work-along cues, assigned-reading (Wolfram) blocks
-     --off  greys  = disabled, cut, unemphasised
+   Meridian tokens. Single source of truth for colour, type, space and radius.
+   Reference: the X433.4 Meridian design system. One light theme by decision:
+   dark text on a light ground is the more legible polarity and the page is
+   taught over a screen share.
+   Semantics:
+     --primary    teal   = teaching voice, primary action, earned checks, the subject marks of a figure
+     --attention  amber  = work-along cues and timers, M chips, assigned-reading blocks
+     --caution    brick  = failure states, deliberately defective artifacts, L chips
+     --chrome     navy   = the app bar only
+   Role text colours (--primary, --attention, --caution) are used as text only on
+   --page, --surface or their own -bg tint. Every such pair holds 5.3:1 or better.
+   The names below the rule (--on, --gold, --warn ...) are the pre-Meridian names,
+   kept as aliases so page-local CSS keeps resolving. New rules use the names above it.
    Edit here, then run scripts/restyle_sweep.py to propagate into every lesson. */
 :root{
-  --page:#F4F4F1;
-  --card:#FFF;
-  --ink:#16211F;
-  --muted:#6F7B78;
-  --off:#B9BDB9;
-  --off-bg:#E7E8E4;
-  --on:#0E5A55;
-  --on-bg:#E2EDEB;
-  --warn:#9A4B22;
-  --warn-bg:#F6EAE2;
-  --line:#D8DAD4;
-  --gold:#8A6A12;
-  --gold-bg:#F3EEDF;
+  color-scheme:light;
+  /* surfaces and text */
+  --page:#F6F6F3;
+  --surface:#FFFFFF;
+  --line:#D9DCE2;
+  --ink:#13203A;
+  --muted:#535F73;
+  /* frame */
+  --chrome:#13203A;
+  --on-chrome:#FFFFFF;
+  --chrome-muted:#B8C2D6;
+  /* roles */
+  --primary:#0B6B66;
+  --primary-bg:#E0EFED;
+  --on-primary:#FFFFFF;
+  --attention:#7A4E00;
+  --attention-bg:#FBF0D2;
+  --attention-fill:#E2A416;
+  --attention-line:#EBD9A4;
+  --caution:#9A3A1E;
+  --caution-bg:#F8E9E3;
+  --caution-line:#E6C9BC;
+  --neutral:#A9B0BD;
+  --neutral-bg:#E4E7EC;
+  /* data: context grey, then four categorical hues in fixed order, never cycled */
+  --chart-context:#A9B0BD;
+  --chart-1:#0A9488;
+  --chart-2:#D9722E;
+  --chart-3:#3567B5;
+  --chart-4:#B8437F;
+  /* type: families and the eight sizes */
+  --font-display:"Bricolage Grotesque",system-ui,sans-serif;
+  --font-ui:"Bricolage Grotesque",system-ui,sans-serif;
+  --font-reading:"Source Serif 4",Georgia,serif;
+  --font-code:"JetBrains Mono",ui-monospace,monospace;
+  --fs-label:.78125rem;   /* 12.5px, the floor */
+  --fs-small:.875rem;     /* 14 */
+  --fs-control:1rem;      /* 16 */
+  --fs-body:1.125rem;     /* 18 */
+  --fs-finding:1.3125rem; /* 21 */
+  --fs-subhead:1.625rem;  /* 26 */
+  --fs-section:2.125rem;  /* 34 */
+  --fs-title:2.875rem;    /* 46 */
+  /* space and radius */
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;
+  --space-5:24px;--space-6:32px;--space-7:48px;--space-8:72px;
+  --radius-sm:4px;--radius-md:8px;--radius-pill:999px;
+  /* layout */
+  --bar-h:46px;
+  --outline-w:260px;
+  /* ---- pre-Meridian aliases ---- */
+  --card:var(--surface);
+  --on:var(--primary);
+  --on-bg:var(--primary-bg);
+  --gold:var(--attention);
+  --gold-bg:var(--attention-bg);
+  --warn:var(--caution);
+  --warn-bg:var(--caution-bg);
+  --off:var(--neutral);
+  --off-bg:var(--neutral-bg);
 }

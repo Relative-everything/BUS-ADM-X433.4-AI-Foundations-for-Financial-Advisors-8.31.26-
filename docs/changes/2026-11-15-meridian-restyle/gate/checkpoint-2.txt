@@ -1,0 +1,37 @@
+FAIL(1)  validate_lesson session-1
+FAIL(1)  validate_lesson session-2
+FAIL(1)  validate_lesson session-3
+FAIL(1)  validate_lesson session-4
+FAIL(1)  validate_lesson session-5
+FAIL(1)  validate_lesson session-0.1
+FAIL(1)  validate_dom session-0.1
+FAIL(1)  validate_dom session-1
+FAIL(1)  validate_dom session-2
+FAIL(1)  validate_dom session-3
+FAIL(1)  validate_dom session-4
+FAIL(1)  validate_dom session-5
+PASS  build-case
+PASS  inject-case --check
+PASS  build-cardsort --check
+PASS  build-appendix --check
+PASS  build-readings --check
+PASS  build-sources --check
+PASS  inject-sources --check
+PASS  build-bibliography --check
+PASS  build-unsourced --check
+PASS  case-inventory --report-check
+PASS  build-facts-md --check
+PASS  verify-case
+PASS  verify-migration
+PASS  verify-sources --check
+PASS  verify-facts
+PASS  verify-editorial
+PASS  test-editorial-regions
+PASS  test-case-viewer
+PASS  verify-style
+PASS  verify-stamps
+PASS  test_live_console
+PASS  verify-browser
+PASS  next-term checks
+
+Skill-validator lines: identical to gate/baseline.txt.

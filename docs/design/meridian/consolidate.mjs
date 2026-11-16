@@ -4,8 +4,8 @@
  * changing what any page computes to. It only ever touches page-local CSS (css-rules.mjs says what
  * that is) and the shared sheets in assets/; the STYLE fence changes only through the sweep.
  *
- *   node consolidate.mjs identical [--root dir] [--write] [--report file.json]
- *        delete each page-local rule identical to a fence rule, where that is safe
+ *   node consolidate.mjs identical [--root dir] [--write] [--report file.json] [--force]
+ *        delete each page-local rule identical to a fence rule, where that is safe (--force: all of them)
  *   node consolidate.mjs variations [--root dir] --out file.json
  *        list the distinct page-local rules that share context and selector with a fence rule
  *   node consolidate.mjs apply-variations --answers file.json [--root dir] [--write]
@@ -196,7 +196,8 @@ async function identical() {
     const move = new Set(cands.map(r => r.key));
     /* after: a moved key's last copy is its last copy outside page-local CSS */
     const lastElse = new Map(); for (const r of R) if (!r.local) lastElse.set(r.key, r.start);
-    const why = settle(move, pairs, lastBefore, (k, mv) => mv.has(k) ? lastElse.get(k) : lastBefore.get(k));
+    /* --force (step 2): the sheet these copies restate is about to be replaced, so order no longer argues for keeping them */
+    const why = argv.includes('--force') ? new Map() : settle(move, pairs, lastBefore, (k, mv) => mv.has(k) ? lastElse.get(k) : lastBefore.get(k));
     const go = R.filter(r => r.local && move.has(r.key));
     report[p] = { deleted: uniq(go).map(r => ({ ctx: r.ctx.join(' '), sel: r.sel, decl: r.decl })), order: cands.filter(r => !move.has(r.key)).map(r => ({ ctx: r.ctx.join(' '), sel: r.sel, decl: r.decl, why: why.get(r.key) })) };
     del += go.length; kept += R.filter(r => r.local && inFence.has(r.key)).length - go.length;

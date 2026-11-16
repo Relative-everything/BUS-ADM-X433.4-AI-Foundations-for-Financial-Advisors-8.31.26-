@@ -1,0 +1,52 @@
+FAIL  session-1/index.html  3856 text elements measured, 14 selector(s) below 4.5:1
+        rgb 137,144,157 on 255,255,255  3.23:1   label.sh > h4 x18
+        rgb 161,166,176 on 255,255,255  2.45:1   div.drow.cut > span x2
+        rgb 169,175,185 on 255,255,255  2.21:1   div#mod_top_k > p.sd x2 | div#mod_tfs_z > p.sd x2 | div#mod_typ_p > p.sd x2 | div#mod_top_p > p.sd x2 | and 5 more
+        rgb 184,188,196 on 255,255,255  1.90:1   a.apxcard.dim > b x4
+        rgb 186,191,199 on 255,255,255  1.85:1   div.drow.cut > span.pv x2
+        rgb 215,202,179 on 255,255,255  1.62:1   a.apxcard.dim > span.ac x4
+FAIL  session-2/index.html  3920 text elements measured, 6 selector(s) below 4.5:1
+        rgb 169,176,189 on 255,255,255  2.18:1   button.bq > span x32 | button.ck > span x24 | button.dbopt > span.dbmk x30 | button.rb > span x16
+        rgb 184,188,196 on 255,255,255  1.90:1   a.apxcard.dim > b x2
+        rgb 215,202,179 on 255,255,255  1.62:1   a.apxcard.dim > span.ac x2
+FAIL  session-3/index.html  3334 text elements measured, 11 selector(s) below 4.5:1
+        rgb 111,123,120 on 224,239,237  3.71:1   div#pairKey > span x12 | div#ragKey > span x12 | div#grKey > span x8 | div#chkKey > span x12 | and 2 more
+        rgb 114,124,140 on 255,255,255  4.23:1   svg > text.chartlab x6
+        rgb 117,127,143 on 255,255,255  4.04:1   svg > text.chartlab x2
+        rgb 140,148,161 on 255,255,255  3.07:1   svg > text.chartlab x4
+        rgb 149,155,166 on 255,255,255  2.80:1   button.lbox > h4 x36
+        rgb 178,183,192 on 255,255,255  2.02:1   button.lbox > p x36
+FAIL  session-4/index.html  7269 text elements measured, 21 selector(s) below 4.5:1, 13 on an image or gradient ground (unread)
+        rgb 122,78,0 on 0,0,0  2.92:1   g.wsGauge > text.wsL.wsGold.wsB x2
+        rgb 137,144,157 on 255,255,255  3.23:1   g.tsleaf.out > text.tsbdt x14
+        rgb 152,159,171 on 83,95,115  2.42:1   g.s5arow > text.s5an x6
+        rgb 156,163,173 on 246,246,243  2.35:1   span.strip > span.f.gh x12
+        rgb 160,167,178 on 255,255,255  2.42:1   g > text.s2fn.off x32
+        rgb 160,199,196 on 224,239,237  1.54:1   g.s4-pl.s4-y > text.s4-st x2
+        rgb 161,166,176 on 255,255,255  2.45:1   g.s5arow > text.s5btt x6
+        rgb 162,177,183 on 224,239,237  1.86:1   g.s4-pl.s4-y > text.s4-ll x2 | g.s4-pl.s4-u > text.s4-ll x2
+        rgb 169,175,185 on 255,255,255  2.21:1   g.tsleaf.out > text.tsword x14
+        rgb 181,178,164 on 251,240,210  1.88:1   g.s4-pl.s4-u > text.s4-ll x2
+        rgb 184,188,196 on 255,255,255  1.90:1   a.apxcard.dim > b x4
+        rgb 186,191,199 on 255,255,255  1.85:1   g.s5arow > text.s5bk x6 | g.s5arow > text.s5bgl x12
+        rgb 203,185,175 on 224,239,237  1.60:1   g.s4-pl.s4-u > text.s4-st x2
+        rgb 215,202,179 on 255,255,255  1.62:1   a.apxcard.dim > span.ac x4
+        rgb 217,220,226 on 240,242,245  1.22:1   svg.s1svg > text.s1wm x6
+        rgb 220,181,168 on 248,233,227  1.59:1   g.s4-pl.s4-u > text.s4-num x4
+        rgb 222,185,156 on 251,240,210  1.60:1   g.s4-pl.s4-u > text.s4-st x2
+        rgb 83,95,115 on 0,0,0  3.25:1   g.qp > text x8
+        rgb 84,151,148 on 11,107,102  1.89:1   g.s4-pl.s4-y > text.s4-num x2
+FAIL  session-5/index.html  5812 text elements measured, 13 selector(s) below 4.5:1
+        rgb 112,122,139 on 228,231,236  3.49:1   button.btn.sel > span.sE2-mscore x4
+        rgb 125,132,147 on 255,255,255  3.74:1   div#s7List > button.chip.done x16 | div#s6Src > button.s6-chip.src.spent x8 | div#s6Dst > button.s6-chip.dst.spent x6
+        rgb 125,138,152 on 224,239,237  2.97:1   text.s4-tbad.gone > tspan x10
+        rgb 133,181,179 on 11,107,102  2.80:1   button.sLib-prop.placed > b x6
+        rgb 137,144,157 on 255,255,255  3.23:1   button.sLib-prop.placed > span x6
+        rgb 184,188,196 on 255,255,255  1.90:1   a.apxcard.dim > b x4
+        rgb 19,32,58 on 19,32,58  1.00:1   svg.sE4-svg > text.sE4-el x2
+        rgb 215,202,179 on 255,255,255  1.62:1   a.apxcard.dim > span.ac x4
+        rgb 255,255,255 on 184,117,98  3.64:1   g.s8-bar.s8-rust > text.s8-v x2
+        rgb 255,255,255 on 211,228,227  1.31:1   g.s0-stop.seen > text.s0-tick x2
+        rgb 255,255,255 on 240,242,245  1.12:1   g.sE3-body > text.sE3-bt x40
+
+summary: 5 page(s) with a contrast or overflow failure
