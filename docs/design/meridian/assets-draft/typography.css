@@ -1,0 +1,114 @@
+/* typography.css
+   Type, base layout, page chrome (app bar and outline), focus, motion, print.
+   Meridian revision. Sizes come from the eight --fs-* tokens; nothing renders
+   below --fs-label (12.5px). Sizes are rem so browser zoom scales the page.
+   Faces: --font-display and --font-ui for headings and interface text,
+   --font-reading for prose, --font-code for prompts, model output and code only.
+   FONT SOURCING is unchanged: one Google Fonts request, local fallbacks in the
+   stacks so an offline open degrades instead of breaking. */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;padding-top:var(--bar-h);background:var(--page);color:var(--ink);
+  font-family:var(--font-reading);font-size:var(--fs-body);line-height:1.6}
+.wrap{max-width:1020px;margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+h1,h2,h3,h4{font-family:var(--font-display);
+  letter-spacing:-.025em;margin:0}
+h1{font-size:clamp(2rem,5.4vw,var(--fs-title));line-height:1.04;font-weight:700}
+h2{font-size:clamp(1.5rem,3.6vw,var(--fs-section));line-height:1.1;font-weight:600}
+h3{font-size:clamp(1.125rem,2.1vw,var(--fs-finding));line-height:1.24;font-weight:600;margin-top:var(--space-6)}
+h4{font-size:var(--fs-control);font-weight:600;letter-spacing:-.01em}
+p{margin:16px 0;max-width:64ch}
+.big{font-size:clamp(1.125rem,2.1vw,var(--fs-finding));line-height:1.5}
+.dim{color:var(--muted)}
+.lede{font-size:clamp(1.125rem,2.1vw,var(--fs-finding));line-height:1.45;color:var(--muted);
+  max-width:46ch;margin:22px 0 0}
+.mono{font-family:var(--font-code)}
+.eyebrow{font-family:var(--font-ui);font-size:var(--fs-label);color:var(--muted);font-weight:600;
+  margin-bottom:14px;display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:center}
+.eyebrow>span:first-child{background:var(--primary-bg);color:var(--primary);padding:2px 8px;border-radius:var(--radius-sm)}
+.slide.apx .eyebrow>span:first-child{background:var(--attention-bg);color:var(--attention)}
+.pull{font-family:var(--font-display);font-weight:600;
+  font-size:clamp(21px,3vw,32px);line-height:1.18;letter-spacing:-.02em;
+  border-left:4px solid var(--on);padding-left:22px;margin:32px 0;max-width:25ch}
+/* Section rhythm */
+section.slide{padding:clamp(44px,6vw,74px) 0;border-bottom:1px solid var(--line);
+  scroll-margin-top:56px}
+/* App bar: navy frame, course name at the left, depth and case controls at the right */
+#topbar{position:fixed;top:0;left:0;right:0;height:var(--bar-h);background:var(--chrome);
+  color:var(--on-chrome);z-index:60;display:flex;align-items:center;gap:10px;
+  padding:0 var(--space-4);font-family:var(--font-ui)}
+#topbar .ttl,#topbar .tb-l{font-size:var(--fs-small);font-weight:600;color:var(--on-chrome);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:auto}
+#topbar .ttl i,#topbar .tb-l i{font-style:normal;font-weight:500;color:var(--chrome-muted)}
+#pnum{font-size:var(--fs-label);color:var(--chrome-muted);white-space:nowrap;font-weight:600}
+#ptrack{flex:1}
+#topbar a.casebtn,#topbar button,#caseBtn{font-family:var(--font-ui);font-size:var(--fs-label);
+  font-weight:600;background:none;border:1px solid var(--chrome-muted);color:var(--on-chrome);
+  border-radius:var(--radius-md);padding:4px 10px;cursor:pointer;white-space:nowrap;text-decoration:none}
+#topbar a.casebtn:hover,#topbar button:hover,#caseBtn:hover{background:var(--on-chrome);
+  color:var(--chrome);border-color:var(--on-chrome)}
+#topbar :focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:var(--radius-sm)}
+#outlineToggle{display:none}
+/* Case modal */
+#caseModal{position:fixed;inset:0;background:rgba(19,32,58,.45);z-index:70;
+  display:none;overflow:auto;padding:60px 16px}
+#caseModal.open{display:block}
+#caseModal .inner{max-width:840px;margin:0 auto;background:var(--card);
+  border-radius:var(--radius-md);padding:30px 34px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+/* Outline sidebar: labelled sections, earned checks, core-time meter.
+   Built by outline.js, which adds body.has-outline; pages without it are unaffected.
+   #rail is the retired dot rail and stays hidden for pages not yet rebuilt. */
+#rail{display:none}
+#outline{position:fixed;top:var(--bar-h);left:0;bottom:0;width:var(--outline-w);background:var(--surface);
+  border-right:1px solid var(--line);padding:var(--space-4) var(--space-2) var(--space-5);overflow:auto;
+  z-index:55;font-family:var(--font-ui);font-size:var(--fs-small);line-height:1.35;
+  display:flex;flex-direction:column;gap:1px}
+#outline .meter{padding:0 var(--space-2) var(--space-3);display:flex;flex-direction:column;gap:6px;
+  font-size:var(--fs-label);color:var(--muted);border-bottom:1px solid var(--line);margin-bottom:var(--space-2)}
+#outline .meter b{color:var(--ink);font-size:var(--fs-small);font-weight:600}
+#outline .meter i{height:6px;border-radius:var(--radius-sm);
+  background:linear-gradient(90deg,var(--primary) var(--pct,0%),var(--line) var(--pct,0%))}
+#outline a{display:grid;grid-template-columns:18px 1fr auto;gap:var(--space-2);align-items:center;
+  padding:6px var(--space-2);border-radius:var(--radius-md);color:var(--ink);text-decoration:none;cursor:pointer}
+#outline a:hover{background:var(--page)}
+#outline a em{font-style:normal;font-size:var(--fs-label);color:var(--muted);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+#outline a[aria-current]{background:var(--primary-bg);color:var(--primary);font-weight:600}
+#outline a.apx{color:var(--muted)}
+@media(min-width:1100px){body.has-outline{padding-left:var(--outline-w)}}
+@media(max-width:1099px){
+  body.has-outline #outlineToggle{display:inline-block}
+  #outline{transform:translateX(-100%);transition:transform .15s}
+  #outline.open{transform:none;box-shadow:0 0 0 100vmax rgba(19,32,58,.35)}
+}
+/* Earned check: done / partial / to do / nothing to complete. Shape first, colour second. */
+.mck{width:18px;height:18px;border-radius:var(--radius-pill);display:inline-grid;place-items:center;
+  font:700 11px/1 var(--font-ui);color:var(--on-primary);position:relative;flex:none}
+.mck.done{background:var(--primary)}
+.mck.done::before{content:"\2713"}
+.mck.part{background:conic-gradient(var(--primary) 0 var(--part,50%),var(--line) var(--part,50%) 100%)}
+.mck.part::after{content:"";position:absolute;inset:4px;border-radius:var(--radius-pill);background:var(--surface)}
+.mck.todo{border:1.5px solid var(--muted)}
+.mck.none{width:6px;height:6px;margin:6px;background:var(--neutral)}
+/* Data table */
+table.dt{width:100%;border-collapse:collapse;margin:20px 0;font-size:var(--fs-control)}
+table.dt th{font-family:var(--font-ui);font-size:var(--fs-label);
+  letter-spacing:.04em;text-transform:uppercase;text-align:left;color:var(--muted);
+  border-bottom:2px solid var(--ink);padding:0 12px 8px 0;font-weight:600}
+table.dt td{padding:10px 12px 10px 0;border-bottom:1px solid var(--line);
+  vertical-align:top;line-height:1.48}
+table.dt td.n{font-family:var(--font-code);font-size:var(--fs-small)}
+table.dt.tight td{padding:7px 12px 7px 0;font-size:var(--fs-small)}
+/* Footer */
+footer{padding:40px 0 84px;font-size:var(--fs-small);color:var(--muted)}
+footer a{color:var(--on);border-bottom:1px solid var(--line);text-decoration:none;
+  word-break:break-word}
+/* Focus and motion floors */
+:focus-visible{outline:2.5px solid var(--on);outline-offset:3px;border-radius:var(--radius-sm)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* Print */
+@media print{
+  #rail,#outline,#topbar,#caseModal{display:none}
+  body,body.has-outline{background:var(--surface);padding:0}
+  .slide{page-break-inside:avoid;padding:18px 0}
+}

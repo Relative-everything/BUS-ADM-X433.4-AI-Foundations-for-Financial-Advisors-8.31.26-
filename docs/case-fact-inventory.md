@@ -23,11 +23,11 @@ occurrence does not follow fails the check. Everything else can.
 |---|---:|---:|---:|
 | `INJECTED` | 2737 | 2044 | 693 |
 | `PINNED` | 8 | 8 | 0 |
-| `UNGUARDED` | 164 | 45 | 119 |
-| **TOTAL** | **2909** | **2097** | **812** |
+| `UNGUARDED` | 165 | 46 | 119 |
+| **TOTAL** | **2910** | **2098** | **812** |
 
 **The number the unification rule moves is the quantitative `UNGUARDED` count:
-`45`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
+`46`.** A qualitative reference — "Meg", "CPC", "Illinois" — is already
 the target state under the rule *every quantitative case fact appears once,
 injected from `CASE.md`; every other reference to it is qualitative*, so a
 qualitative reference is not drift surface and removing one would be a loss.
@@ -37,7 +37,7 @@ qualitative reference is not drift surface and removing one would be a loss.
 | File | Total | Quantitative |
 |---|---:|---:|
 | `session-1/index.html` | 30 | 11 |
-| `session-2/index.html` | 25 | 9 |
+| `session-2/index.html` | 26 | 10 |
 | `session-3/index.html` | 67 | 10 |
 | `session-4/index.html` | 31 | 9 |
 | `session-5/index.html` | 11 | 6 |
@@ -48,12 +48,12 @@ qualitative reference is not drift surface and removing one would be a loss.
 |---|---|---:|---:|
 | `R2` | script string literal | 104 | 20 |
 | `R1` | body prose | 48 | 20 |
-| `R4` | CSS | 4 | 4 |
+| `R4` | CSS | 5 | 5 |
 | `R7` | footer source entry | 4 | 0 |
 | `R3` | attribute value | 3 | 0 |
 | `R8` | source note | 1 | 1 |
 
-**`R2` carries 20 of the 45 quantitative unguarded references, 44.4%** — answer
+**`R2` carries 20 of the 46 quantitative unguarded references, 43.5%** — answer
 keys, chart data arrays and JS feedback strings. They are inside `<script>`, so
 they are outside the injected span and outside the pins, and a student reads
 every one of them.
@@ -66,7 +66,7 @@ every one of them.
 | `money` | 18 |
 | `age` | 12 |
 | `date` | 10 |
-| `count` | 4 |
+| `count` | 5 |
 | `pct` | 1 |
 
 ## `UNGUARDED`, by fact
@@ -82,8 +82,8 @@ every one of them.
 | `megShort` | 9 |
 | `spdAmended` | 7 |
 | `otherLiving` | 5 |
+| `riskGap` | 5 |
 | `david401kRoth` | 4 |
-| `riskGap` | 4 |
 | `megAge` | 4 |
 | `dorothyName` | 4 |
 | `ruthTown` | 4 |
@@ -131,20 +131,20 @@ a round percentage — carries a context test, and a match that fails it is
 dropped. **The bias is deliberate and one-directional: this undercounts rather
 than inventing drift surface.**
 
-**1181 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
+**1257 occurrence(s) declined.** `node scripts/case-inventory.mjs --misses` lists every one
 with the text around it, so the undercount can be judged rather than trusted.
 
 | Declined for | Count |
 |---|---:|
-| `ryanAge` | 470 |
-| `megRetireAge` | 149 |
-| `davidRetireAge` | 98 |
-| `riskGap` | 65 |
-| `emmaAge` | 58 |
+| `ryanAge` | 554 |
+| `megRetireAge` | 146 |
+| `davidRetireAge` | 97 |
+| `emmaAge` | 62 |
+| `riskGap` | 59 |
 | `tomAge` | 54 |
 | `davidRiskScore` | 48 |
-| `megAge` | 43 |
-| `megRiskScore` | 25 |
+| `megAge` | 42 |
+| `megRiskScore` | 24 |
 | `davidNewsMonth` | 21 |
 | `marriedYears` | 20 |
 | `earlyReduction` | 15 |
@@ -175,10 +175,10 @@ with the text around it, so the undercount can be judged rather than trusted.
 
 | File:line | Guard | Figure | Context |
 |---|---|---|---|
-| `session-3/index.html:2962` | UNGUARDED | $3,000 | KI=[ {t:'Meg’s mother’s care team says she may need assisted living within a year, about 〈$3,000〉 a month more than she pays now.',k:'in',w:'Meg’s fir |
-| `session-3/index.html:3008` | UNGUARDED | $3,000 | 's mother\'s care team says she may need the assisted living wing within a year, at about 〈$3,000〉 a month more than she pays now. The new summary pla |
-| `session-5/index.html:3942` | UNGUARDED | $3,000 | o name, no employer, no town. The one case figure it types is the meeting's own "about 〈$3,000〉 a month more" (CASE.md A.3, Part O), as spoken; the fi |
-| `session-5/index.html:3965` | UNGUARDED | $3,000 | e. The wife\u2019s mother may need assisted living within a year. The extra cost is about 〈$3,000〉 a month.', checks:'Verification: read the brief and |
+| `session-3/index.html:3091` | UNGUARDED | $3,000 | KI=[ {t:'Meg’s mother’s care team says she may need assisted living within a year, about 〈$3,000〉 a month more than she pays now.',k:'in',w:'Meg’s fir |
+| `session-3/index.html:3137` | UNGUARDED | $3,000 | 's mother\'s care team says she may need the assisted living wing within a year, at about 〈$3,000〉 a month more than she pays now. The new summary pla |
+| `session-5/index.html:4006` | UNGUARDED | $3,000 | o name, no employer, no town. The one case figure it types is the meeting's own "about 〈$3,000〉 a month more" (CASE.md A.3, Part O), as spoken; the fi |
+| `session-5/index.html:4029` | UNGUARDED | $3,000 | e. The wife\u2019s mother may need assisted living within a year. The extra cost is about 〈$3,000〉 a month.', checks:'Verification: read the brief and |
 
 Checked against every keyed figure in `case-facts.json` and every value this
 inventory derives. A figure here is either a case fact `CASE.md` does not carry,

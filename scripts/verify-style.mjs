@@ -15,12 +15,13 @@
  * whether the corpus is actually styled correctly.
  *
  * This wrapper asserts something STRICTER than the raw sweep, not weaker:
- *   1. every lesson document is CURRENT against the skill's assets, and
+ *   1. every lesson document is CURRENT against the repository's style sheets
+ *      (docs/design/meridian/assets, see ASSETS below), and
  *   2. the ONLY fenceless files in the tree are exactly those two generated
  *      fragments. A third fenceless file, or a renamed one, fails.
  *
  * Run the raw sweep to WRITE the fence:
- *     python3 <skill>/scripts/restyle_sweep.py .
+ *     python3 <skill>/scripts/restyle_sweep.py . --assets docs/design/meridian/assets
  * Run this to CHECK it:
  *     node scripts/verify-style.mjs
  */
@@ -78,6 +79,15 @@ for (const [from, p] of CANDIDATES) {
 }
 if (SWEEP) console.log(`sweep ${SWEEP}  (from ${FOUND[0]})`);
 
+/* WHICH STYLE SHEETS. The sweep inlines tokens.css, typography.css and components.css.
+   Since the Meridian restyle (D-120) those are the REPOSITORY's copy, not the skill's: the
+   restyle lands here first and the skill is brought into line afterwards. The skill still
+   supplies restyle_sweep.py itself; only its --assets directory is overridden.
+   scripts/build-changelog.py passes the same path; keep the two in step, and remove the
+   override from both when the skill's assets/ match this directory again. */
+const ASSETS = join(REPO, 'docs', 'design', 'meridian', 'assets');
+console.log(`assets ${relative(REPO, ASSETS)}  (the repository's copy, passed to the sweep as --assets)`);
+
 /* Fragments that are generated and injected, and therefore must NOT carry a fence. */
 const EXPECTED_FENCELESS = new Set(['scripts/case-extract.html', 'scripts/case-flowchart.html']);
 
@@ -94,7 +104,7 @@ if (!SWEEP) {
 
 let out = '';
 try {
-  out = execFileSync('python3', [SWEEP, REPO, '--check'], { encoding: 'utf8' });
+  out = execFileSync('python3', [SWEEP, REPO, '--check', '--assets', ASSETS], { encoding: 'utf8' });
 } catch (e) {
   out = (e.stdout || '') + (e.stderr || '');   /* exit 1 is expected; the output is the data */
 }
@@ -111,12 +121,12 @@ for (const line of out.split('\n')) {
 
 let fail = 0;
 if (stale.length) {
-  console.log(`FAIL  ${stale.length} lesson(s) stale against the skill's assets:`);
+  console.log(`FAIL  ${stale.length} lesson(s) stale against docs/design/meridian/assets:`);
   for (const f of stale) console.log(`        ${f}`);
-  console.log(`        fix: python3 ${SWEEP} .`);
+  console.log(`        fix: python3 ${SWEEP} . --assets ${relative(REPO, ASSETS)}`);
   fail++;
 } else {
-  console.log(`PASS  all ${current.length} lesson documents current against the skill's assets`);
+  console.log(`PASS  all ${current.length} lesson documents current against docs/design/meridian/assets`);
 }
 
 const unexpected = fenceless.filter((f) => !EXPECTED_FENCELESS.has(f));

@@ -9,8 +9,9 @@
  *   node consolidate.mjs variations [--root dir] --out file.json
  *        list the distinct page-local rules that share context and selector with a fence rule
  *   node consolidate.mjs apply-variations --answers file.json [--root dir] [--write]
- *        answers: [{skey, decl, action:"drop"|"keep"|"trim"}]. drop deletes the page rule (the page
- *        takes the fence's look); trim rewrites it to only the declarations that differ from the fence
+ *        answers: [{skey, decl, action:"drop"|"keep"|"additions"|"supersede"}]. drop deletes the page rule
+ *        (the page takes the fence's look); additions rewrites it to the declarations the fence does not
+ *        set; supersede is kept in step 1 and deleted with --retire in step 2
  *   node consolidate.mjs promote --assets dir [--root dir] [--write] [--report file.json] [--skip file.json]
  *        move each rule that is identical on two or more pages into assets/components.css, where safe
  *
@@ -230,27 +231,26 @@ function variations() {
 }
 
 async function applyVariations() {
-  const answers = JSON.parse(readFileSync(opt('--answers'), 'utf8'));
-  const act = new Map(answers.map(a => [a.skey + ' {' + a.decl + '}', a]));
-  let n = { drop: 0, keep: 0, trim: 0 };
+  /* actions: keep (untouched), drop (deleted), additions (rewritten to the declarations the fence does
+     not set), supersede (untouched in step 1; deleted when run with --retire, which is step 2) */
+  const answers = JSON.parse(readFileSync(opt('--answers'), 'utf8')), RETIRE = argv.includes('--retire');
+  const act = new Map(answers.map(a => [a.skey + ' {' + a.decl + '}', a.action]));
+  const n = { drop: 0, keep: 0, additions: 0, supersede: 0 };
   for (const p of pages(ROOT)) {
     const file = join(ROOT, p); let html = readFileSync(file, 'utf8');
-    const F = fenceRules(html).filter(isRule); const fs = new Map(); for (const f of F) { if (!fs.has(f.skey)) fs.set(f.skey, []); fs.get(f.skey).push(f.decl); }
-    const fk = new Set(F.map(r => r.key));
-    const L = localRules(html).filter(r => isRule(r) && !fk.has(r.key) && fs.has(r.skey));
     const drops = [], trims = [];
-    for (const r of L) { const a = act.get(r.key); if (!a) { console.log('NOTE  ' + p + '  no answer for ' + r.skey); continue; } n[a.action]++;
-      if (a.action === 'drop') drops.push(r.start);
-      if (a.action === 'trim') { const f = new Map(fs.get(r.skey).flatMap(d => splitDecls(d))); const keep = splitDecls(r.decl).filter(([k, v]) => f.get(k) !== v);
-        trims.push([r, keep.map(([k, v]) => k + ':' + v).join(';')]); } }
-    /* trims first, back to front, then drops by re-parsing (offsets move) */
-    for (const [r, d] of trims.sort((x, y) => y[0].start - x[0].start)) { const t = html.slice(r.start, r.end); const i = t.indexOf('{'); html = html.slice(0, r.start) + t.slice(0, i + 1) + d + '}' + html.slice(r.end); }
-    if (trims.length) { const keys = new Set(L.filter(r => drops.includes(r.start)).map(r => r.key)); const again = localRules(html).filter(r => isRule(r) && keys.has(r.key)).map(r => r.start); html = removeRules(html, again); }
-    else html = removeRules(html, drops);
+    for (const r of localRules(html).filter(isRule)) { const a = act.get(r.key); if (!a) continue; n[a]++;
+      if (RETIRE) { if (a === 'supersede') drops.push(r.start); continue; }
+      if (a === 'drop') drops.push(r.start);
+      if (a === 'additions') { const f = new Set(fenceRules(html).filter(x => isRule(x) && x.skey === r.skey).flatMap(x => splitDecls(x.decl)).map(([k]) => k));
+        trims.push([r, splitDecls(r.decl).filter(([k]) => !f.has(k)).map(([k, v]) => k + ':' + v).join(';')]); } }
+    html = removeRules(html, drops);                      /* drops first: offsets of earlier text hold when cut back to front */
+    if (trims.length) { const want = new Map(trims.map(([r, d]) => [r.key, d]));
+      for (const r of localRules(html).filter(x => isRule(x) && want.has(x.key)).sort((x, y) => y.start - x.start)) { const t = html.slice(r.start, r.end), i = t.indexOf('{'); html = html.slice(0, r.start) + t.slice(0, i + 1) + want.get(r.key) + '}' + html.slice(r.end); } }
     if (WRITE) writeFileSync(file, html);
-    console.log((WRITE ? 'wrote ' : 'would ') + p + '  drop ' + drops.length + ', trim ' + trims.length);
+    console.log((WRITE ? 'wrote ' : 'would ') + p + '  delete ' + drops.length + ', rewrite ' + trims.length);
   }
-  console.log('\nsummary: ' + JSON.stringify(n));
+  console.log('\nsummary: instances by verdict ' + JSON.stringify(n) + (RETIRE ? '  (--retire: only the supersede rows were deleted)' : ''));
 }
 
 /* ------------------------------------------------------------------ promote */

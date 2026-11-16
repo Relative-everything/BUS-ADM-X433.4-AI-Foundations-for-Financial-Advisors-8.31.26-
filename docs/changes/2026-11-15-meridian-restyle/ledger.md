@@ -40,3 +40,26 @@ The source of truth for progress. Newest entry last. Each entry: what was done, 
 - No page edited in this unit.
 
 **Next action (after the instructor answers):** edit `variations-answers.json` to the answers; add the `additions` action to `consolidate.mjs apply-variations` (keep only declarations the fence does not set) and treat `supersede` as keep in step 1; run `apply-variations --write`; snapshot diff against the baseline and confirm every difference is on a dropped selector; freeze check; commit. Then step 1.4: copy the skill's three style sheets over `docs/design/meridian/assets/` as the step 1 shared source (keep the Meridian drafts aside as `assets-meridian/`), point `verify-style.mjs` and `build-changelog.py` at it with `--assets`, update MAINTAINING, run `consolidate.mjs promote`, sweep, snapshot, full gate, checkpoint 1.
+
+## L-05, 2026-11-16: steps 1.3 and 1.4 done. CHECKPOINT 1 REACHED
+
+**Answers (2026-11-16).** The instructor accepted every recommendation in `variations.md`, and chose to leave the `.case-*` rules in the pages. D-124.
+
+**1.3 applied.** `consolidate.mjs apply-variations --write`: 134 instances deleted, 3 rewritten to their additions (`.chip{width:100%}` on Sessions 3 to 5), 44 kept, 20 kept to retire in step 2.
+- Two side effects found by scanning the snapshot difference for large jumps, both on Session 2: `h3` top margin went 34 px to 0 (not to the shared 32), and the bar label `.tb-l` fell to unstyled serif. Rows 16, 24, 25, 26 were therefore restored and re-marked `supersede` in `variations-answers.json`: kept through step 1, retired in step 2 (D-125). The end state is the one the instructor chose.
+
+**1.4 applied.**
+- `docs/design/meridian/assets/` is now the shared style source: seeded from the skill's three sheets byte for byte (fence payload stayed `e13bf73a3fd0` before any promotion), with `outline.js`. The Meridian drafts moved to `assets-draft/` and replace `assets/` in step 2.
+- `scripts/verify-style.mjs` and `scripts/build-changelog.py` pass `--assets docs/design/meridian/assets`; MAINTAINING's *Pre-push gate*, *Where this repo looks for the skill* and *Shared styling* say so.
+- `consolidate.mjs promote --write`: 406 rules were identical on two or more pages; 202 moved to the end of `assets/components.css` (after one was moved back, below) and were swept into every fence (payload now differs from `e13bf73a3fd0` by design). 204 stay local: 33 order, 117 reach, 27 case-viewer rules, 25 kept variations, 1 print page rule, and `.cf-band-in`, moved back to the five case pages because `case-inventory.mjs` read its `34px` as a case figure in every fence. Detail: `promote-report.json`. D-126.
+- No moved rule lost a cascade fight in the snapshot; the guard refused the 33 beforehand.
+
+**Checkpoint 1 evidence.**
+- `style-snapshot diff`, baseline against now: `same` on Session 0.1, Session 1 and the five case pages. The hub and Sessions 2 to 5 differ, and only by the dropped variations: the properties that moved are the ones those rules declared (type size, leading, margins, padding, gaps, max-width, scroll margin, and the text-area minimum height on Sessions 3 to 5) and nothing else (no colour, display or position change after the Session 2 restore). Post-drop record against post-promotion record: agree on 12 pages, and on the changelog page.
+- `content-freeze`: frozen on 12 pages.
+- Gate (`gate/checkpoint-1.txt`): every in-repo check passes. Skill-validator lines are identical to the baseline, all red by design. Explained lines: `case-inventory --report-check` needed `docs/case-fact-inventory.md` regenerated (line numbers moved; and the CSS count rose from 4 to 5 because dropping Session 2's `h1` rule exposed its `h3{margin-top:34px}` to the inventory's context heuristic; that rule retires in step 2). `verify-stamps` needed `--fix` because the date rolled to 2026-11-16.
+- ui-audit: 4,459 page-local rules (from 5,698), 74 identical (order-bound), 73 variation instances, page-only bytes repeated on 2+ pages 20% (from 33%).
+
+**Step 1 is commits `733834e` (tools, baseline), `7fd17d8` (1.2), `0ead3c0` (1.3 table) and the commit that carries this entry (1.3 applied, 1.4).** To revert step 1 alone, revert those four.
+
+**Next action:** step 2. (1) `consolidate.mjs identical --write --force` to delete the 74 order-bound copies of the old sheet, and `apply-variations --retire --write` for the supersede rows. (2) Build the new `assets/`: `assets-draft/` tokens, typography, components, plus the promoted block from the current `assets/components.css` converted with `restyle-local.py css`. Sweep. (3) `restyle-local.py pages --write`. (4) Screenshots, ui-audit `--list`, contrast and 320 px overflow checks; fix page by class of problem. Checkpoint 2.

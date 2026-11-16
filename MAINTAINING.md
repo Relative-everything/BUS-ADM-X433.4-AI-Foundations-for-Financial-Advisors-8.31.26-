@@ -110,7 +110,7 @@ python3 scripts/validate_lesson.py <repo>/session-N/index.html \
 python3 scripts/validate_lesson.py <repo>/session-5/index.html --minutes 125 ...   # Session 5 is 125 allocated
 python3 scripts/validate_lesson.py <repo>/session-0.1/index.html --minutes 57 ...  # the setup page is 57, self-paced
 NODE_PATH=$(npm root -g) node scripts/validate_dom.js <repo>/session-N/index.html  # DOM mode needs jsdom resolvable from the skill's directory; without it the script runs static-only and says so
-python3 scripts/restyle_sweep.py <repo>                       # WRITE the fence
+python3 scripts/restyle_sweep.py <repo> --assets <repo>/docs/design/meridian/assets   # WRITE the fence, from the repository's style sheets (see "Shared styling")
 ```
 
 Then the in-repo battery from the repo root, every one exiting 0 (`NODE_PATH=$(npm root -g)`):
@@ -146,7 +146,9 @@ skill is not edited from here.
 **Where this repo looks for the skill.** Two scripts here call the skill's
 `restyle_sweep.py`, `scripts/verify-style.mjs` and `scripts/build-changelog.py`.
 Both try the same candidates in the same order, and the first that is a file wins
-(the same order in both since 2026-10-11):
+(the same order in both since 2026-10-11). Both then hand the sweep the
+repository's style sheets with `--assets docs/design/meridian/assets` (see
+"Shared styling"), so the skill supplies the script and this repository the styles:
 
 | Order | Set by | Resolves to |
 |---|---|---|
@@ -469,10 +471,41 @@ fence:
 /* STYLE:END */
 ```
 
-Edit `assets/tokens.css`, `assets/typography.css`, or `assets/components.css` in
-the skill, then run `restyle_sweep.py <repo>`. Lesson-specific CSS lives after
-the fence and is never touched. A lesson without the fence is outside the sweep
-and will be reported by `--check`.
+**The style sheets the sweep reads are this repository's copy, since 2026-11-15
+(D-120).** Edit `docs/design/meridian/assets/tokens.css`, `typography.css` or
+`components.css`, then run the skill's sweep with its `--assets` option:
+
+```bash
+python3 <skill>/scripts/restyle_sweep.py . --assets docs/design/meridian/assets
+```
+
+`scripts/verify-style.mjs` and `scripts/build-changelog.py` pass the same
+`--assets` path (one constant each, `ASSETS`; keep the two in step), so the
+check and the changelog page read the same three files the sweep wrote from. The
+skill still supplies `restyle_sweep.py` itself, found as "Where this repo looks
+for the skill" sets out; only the directory it inlines is overridden. A sweep run
+without `--assets` would write the skill's own sheets into every fence and
+`verify-style.mjs` would report all thirteen pages stale. The override comes out
+of both scripts when the skill's `assets/` match this directory again (DW-209).
+Lesson-specific CSS lives after the fence and is never touched. A lesson without
+the fence is outside the sweep and will be reported by `--check`.
+
+**A rule that two or more pages carry word for word belongs in the shared
+sheets, not in the pages.** On 2026-11-15 the pages held 5,698 page-local rules:
+416 repeated a fence rule exactly, 201 varied one, and a third of the rest were
+copies of each other. 342 exact repeats were deleted, the variations were decided
+one by one (`docs/changes/2026-11-15-meridian-restyle/variations.md`), and 203
+rules shared between pages moved to the end of `components.css` under the comment
+*promoted from the pages*. Three kinds of repeat stay in the pages on purpose:
+a copy whose position in the cascade matters (a rule of equal specificity sits
+between it and the shared rule and sets the same property), a rule that could
+match something on a page that never carried it, and the `.case-*` viewer rules,
+which `scripts/verify-case.mjs` reads from the page. `docs/design/meridian/`
+keeps the tools that did this and that check it: `ui-audit.mjs` (what the
+page-local CSS holds, and its off-token values), `style-snapshot.mjs` (the
+computed style of every element at three widths, and the difference between two
+records) and `consolidate.mjs` (the moves, each refused if it could change the
+cascade).
 
 **Page-local CSS does not redefine a fence token.** The thirteen colour tokens
 (`--page`, `--card`, `--ink`, `--muted`, `--off`, `--off-bg`, `--on`, `--on-bg`,
@@ -484,14 +517,14 @@ pages. A page may declare tokens of its own after the fence (the case pages'
 `--case-*` and `--paper*`, Session 2's `--plot*`), and should build them from the
 fence tokens with `var()` where they mean the same colour.
 
-**The Meridian restyle is prepared and not applied.** `docs/design/meridian/`
-holds the design rules (`DESIGN.md`, `tokens.json`), the drafted replacements for
-the skill's three style sheets and a new `outline.js` (`assets/`), the plan
-(`MIGRATION.md`), and `content-freeze.mjs`, which compares every served page with
-a git ref and fails if text, a script, an attribute other than `class` and
-`style`, or a generated region other than the STYLE fence has changed. The check
-is a tool for that restyle and is not part of the gate above. Nothing in that
-folder is read by a served page.
+**The Meridian restyle.** `docs/design/meridian/` holds the design rules
+(`DESIGN.md`, `tokens.json`), the shared style sheets and `outline.js`
+(`assets/`), the plan (`MIGRATION.md`), and `content-freeze.mjs`, which compares
+every served page with a git ref and fails if text, a script, an attribute other
+than `class` and `style`, or a generated region other than the STYLE fence has
+changed. The freeze check, `ui-audit.mjs` and `style-snapshot.mjs` are tools for
+a restyle and are not part of the gate above. `assets/` is read by the sweep;
+nothing else in that folder is read by a served page.
 
 ## The live model console
 

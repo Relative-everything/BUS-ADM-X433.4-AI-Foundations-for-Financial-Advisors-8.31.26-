@@ -127,7 +127,7 @@ function diff(a, b) {
       if (va.hscroll !== vb.hscroll) lines.push(view + '  horizontal overflow ' + va.hscroll + ' -> ' + vb.hscroll + ' px');
     }
     if (pageBad) { pagesBad++; bad += pageBad; console.log('DIFF  ' + A.page + '  ' + pageBad + ' difference(s)\n        ' + lines.join('\n        '));
-      console.log('        by property: ' + [...props].sort((x, y) => y[1] - x[1]).slice(0, 12).map(([p, n]) => p + ' ' + n).join(', ')); }
+      console.log('        by property: ' + [...props].sort((x, y) => y[1] - x[1]).map(([p, n]) => p + " " + n).join(', ')); }
     else console.log('same  ' + A.page);
   }
   console.log('\nsummary: ' + (bad ? bad + ' difference(s) on ' + pagesBad + ' page(s)' : 'snapshots agree on ' + files.length + ' pages'));

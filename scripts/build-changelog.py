@@ -4,7 +4,7 @@ styled page rather than raw markdown. No dependencies, no build step: run it
 whenever CHANGELOG.md changes, then commit both files.
 
     python3 scripts/build-changelog.py
-    python3 <skill>/scripts/restyle_sweep.py .   # refill the style fence
+    python3 <skill>/scripts/restyle_sweep.py . --assets docs/design/meridian/assets   # refill the style fence
 
 Handles the subset of markdown the changelog actually uses: h1/h2/h3, hr,
 bullet lists, tables, bold, inline code, and links.
@@ -151,6 +151,9 @@ __BODY__
 """
 
 
+ASSETS = ROOT / "docs" / "design" / "meridian" / "assets"
+
+
 def find_sweep():
     """Locate the skill's restyle_sweep.py, or None if the skill is not installed.
 
@@ -216,10 +219,15 @@ def main():
         print("         Install the interactive-lesson-builder skill, or set")
         print("         RESTYLE_SWEEP (the path of restyle_sweep.py) or")
         print("         LESSON_BUILDER_SKILL (the skill root), then run:")
-        print(f"           python3 <skill>/scripts/restyle_sweep.py {ROOT}")
+        print(f"           python3 <skill>/scripts/restyle_sweep.py {ROOT} --assets {ASSETS}")
         print("         verify-style.mjs will fail until you do.")
         return
-    r = subprocess.run([sys.executable, str(sweep), str(ROOT)],
+    # The style sheets the sweep inlines are the REPOSITORY's copy, not the skill's
+    # (D-120, the Meridian restyle): the restyle lands here first and the skill is
+    # brought into line afterwards. scripts/verify-style.mjs passes the same
+    # --assets path; keep the two in step. Remove the override from both when the
+    # skill's assets/ match docs/design/meridian/assets again.
+    r = subprocess.run([sys.executable, str(sweep), str(ROOT), "--assets", str(ASSETS)],
                        capture_output=True, text=True)
     tail = [l for l in r.stdout.splitlines() if l.startswith(("WROTE", "summary"))]
     for l in tail:
