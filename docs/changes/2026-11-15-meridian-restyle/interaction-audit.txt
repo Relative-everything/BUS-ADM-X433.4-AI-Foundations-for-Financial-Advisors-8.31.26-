@@ -1,0 +1,22 @@
+same  index.html  14 steps (2 clicks, 0 fields filled, 12 key actions; 0 a pointer cannot reach on either version, 0 of those clicked by script)
+same  session-0.1/index.html  162 steps (140 clicks, 10 fields filled, 12 key actions; 0 a pointer cannot reach on either version, 0 of those clicked by script)
+same  session-1/index.html  368 steps (250 clicks, 20 fields filled, 32 key actions; 66 a pointer cannot reach on either version, 62 of those clicked by script)
+        out of a pointer's reach on both: 8 x element is not visible; 4 x element is not enabled; 36 x an element intercepts pointer events; 18 x TimeoutError: locator.fill: Timeout 900ms exceeded.
+same  session-2/index.html  654 steps (486 clicks, 38 fields filled, 24 key actions; 106 a pointer cannot reach on either version, 92 of those clicked by script)
+        out of a pointer's reach on both: 92 x an element intercepts pointer events; 14 x element is not enabled
+same  session-3/index.html  412 steps (342 clicks, 4 fields filled, 12 key actions; 54 a pointer cannot reach on either version, 42 of those clicked by script)
+        out of a pointer's reach on both: 12 x element is not enabled; 2 x <text x="85" y="82" fill="#16211F" class="chartval" text-anc; 2 x <text y="82" x="263" fill="#16211F" class="chartval" text-an; 2 x <text y="82" x="441" fill="#16211F" class="chartval" text-an; 2 x <text y="82" x="619" fill="#16211F" class="chartval" text-an; 20 x an element intercepts pointer events; 2 x <text x="62" y="80" fill="#0E5A55" class="chartval" text-anc; 2 x <text y="80" x="208" fill="#9A4B22" class="chartval" text-an; 2 x <text y="80" x="354" fill="#9A4B22" class="chartval" text-an; 2 x <text y="80" x="500"
+same  session-4/index.html  896 steps (690 clicks, 28 fields filled, 32 key actions; 146 a pointer cannot reach on either version, 106 of those clicked by script)
+        out of a pointer's reach on both: 60 x element is not enabled; 2 x <text x="6" y="15.67" class="s1t1c">✗ 5 Records</text> from ; 1 x <text x="24" y="27" class="rtx num" text-anchor="middle">1</; 2 x <text y="53" x="68.8" class="rtx num" text-anchor="middle">2; 1 x <text y="79" x="68.8" class="rtx num" text-anchor="middle">3; 1 x <text y="105" x="158.4" class="rtx num" text-anchor="middle"; 1 x <text y="131" x="337.6" class="rtx num" text-anchor="middle"; 46 x element is not visible; 2 x <text x="6" y="15.67" class="s1t1c">✗ 1 Reg S-P</text> inter; 2 x <text x="6" y="15.67" class="s
+same  session-5/index.html  518 steps (404 clicks, 12 fields filled, 28 key actions; 74 a pointer cannot reach on either version, 70 of those clicked by script)
+        out of a pointer's reach on both: 60 x element is not enabled; 2 x <rect x="20" rx="4" y="162" width="116" height="22"></rect> ; 2 x <rect rx="4" x="168" y="162" width="116" height="22"></rect>; 2 x <rect rx="4" x="316" y="162" width="116" height="22"></rect>; 2 x <rect rx="4" x="464" y="162" width="116" height="22"></rect>; 2 x <rect x="4" y="68" rx="7" width="64" height="148" role="butt; 4 x element is not visible
+same  cases/case-1.html  104 steps (90 clicks, 0 fields filled, 12 key actions; 2 a pointer cannot reach on either version, 0 of those clicked by script)
+        out of a pointer's reach on both: 2 x element is not enabled
+same  cases/case-2.html  80 steps (66 clicks, 2 fields filled, 12 key actions; 0 a pointer cannot reach on either version, 0 of those clicked by script)
+same  cases/case-3.html  182 steps (116 clicks, 2 fields filled, 12 key actions; 52 a pointer cannot reach on either version, 52 of those clicked by script)
+        out of a pointer's reach on both: 42 x element is not visible; 10 x an element intercepts pointer events
+same  cases/case-4.html  189 steps (177 clicks, 0 fields filled, 12 key actions; 0 a pointer cannot reach on either version, 0 of those clicked by script)
+same  cases/case-5.html  91 steps (79 clicks, 0 fields filled, 12 key actions; 0 a pointer cannot reach on either version, 0 of those clicked by script)
+
+total: 3,670 steps on 12 pages at 1440 and 390 px: 2,842 real pointer clicks, 116 fields filled, 212 key actions, 500 controls a pointer cannot reach on either version (424 of those clicked by script, the rest disabled on both)
+summary: every page behaves as the ref (c058b50) does, step for step

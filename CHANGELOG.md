@@ -10,6 +10,89 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 
 ---
 
+## 2026-11-16 · The site restyled to the Meridian design system
+
+Branch `claude/meridian-design-unification-6v4p7m`; plan, ledger and handback in
+`docs/changes/2026-11-15-meridian-restyle/`; decisions D-122 to D-139 in
+`docs/next-term/DECISIONS.md`. Presentation only: no word, figure, source, chip,
+case fact or generated region changed on any page, which
+`docs/design/meridian/content-freeze.mjs` checks against the commit the work
+started from. Two script blocks changed by twelve colour values, listed below.
+
+### All sessions, the hub and the case pages
+
+- **One visual system on every page.** Navy ink and app bar, teal for the teaching
+  voice and for done, amber for work-along, brick for caution; serif reading text
+  at 18 px and interface text in the grotesque; eight type sizes and three corner
+  radii. Labels are sentence case in the interface face, where many were monospace
+  capitals. Evidence chips carry a dot whose fill shows the grade (full, half,
+  empty) as well as the colour. Callouts are full tints with no side stripe.
+- **One shared style source.** The pages held 5,698 style rules of their own
+  beside the shared sheet. 416 repeated a shared rule exactly and are gone; 74
+  varied one and were decided one by one; 202 that two or more pages shared moved
+  into the shared sheet. 4,364 remain, and the values in them that are off the
+  design's tokens fell from 2,238 to 137, each listed with its reason.
+- **Legibility.** Text drawn below a 4.5:1 contrast ratio fell from 1,808 places
+  to 55. Of those, 48 are states a page fades on purpose (a spent chip, an
+  eliminated option) and 7 are text inside drawings that the check could not
+  measure, listed with a screenshot each for a read by eye. No page scrolls
+  sideways at 320 px; one case page and one lesson did before.
+- **The shared style sheets live in this repository** (`docs/design/meridian/assets/`)
+  until the lesson-builder skill is brought into line. MAINTAINING's *Shared
+  styling* says how the sweep, the style check and this page's generator read them.
+
+### Sessions 0.1 and 1 to 5
+
+- **An outline replaces the dot rail.** A sidebar lists every section with its
+  minutes and a check. A check is earned by committing an answer (locking a
+  prediction, choosing an option, placing a card), never by opening a key, and
+  never by Shift+U. It is held in memory for the sitting and clears on reload.
+  Below 1100 px the outline is a drawer behind an Outline button. Nothing gates
+  scrolling. Sessions 3 to 5, which float their controls, gained the app bar the
+  other lessons have.
+
+### Sessions 2 and 3
+
+- **Two colours written by page scripts were corrected for contrast**, by
+  instruction: the hollow mark on Session 2's unchosen rubric, checklist and brief
+  buttons (the context grey, 2.18:1, now the muted text colour, 6.46:1) and the
+  explanation line under Session 3's answer keys (3.71:1 on its tint, now 5.45:1).
+  Six occurrences each; nothing else in either script changed.
+
+### Pre-merge audit, 2026-11-19
+
+- **Content compared before and after, two more ways.** The source of every page
+  is byte-identical to the version before the restyle once CSS, inline styles, the
+  footer date and the outline's own additions are set aside. Opened in a browser,
+  both versions show the same text, the same things visible and hidden, the same
+  controls and the same drawings, on all twelve pages
+  (`docs/changes/2026-11-15-meridian-restyle/audit-2026-11-19.md`).
+- **Sessions 2, 4 and 5: label sizes inside drawings put back.** The restyle had
+  enlarged the text inside SVG figures along with everything else, and on Session 5
+  and Session 2 labels overlapped or ran off their figures. A size inside a drawing
+  is in the drawing's own units, so 294 such rules have their original size again.
+  Labels outside a figure: 18 before the fix, none after.
+- **Every control on every page used on both versions.** The old page and the new
+  one were opened side by side and given the same 3,670 inputs (2,842 real clicks,
+  116 fields typed into, the rest key presses), core and full appendix depth, at
+  desktop and phone width. After every step the two were compared and agreed.
+  Focus rings, the outline by keyboard, and what prints were checked the same way.
+
+### Repository
+
+- New in `scripts/`: `build-outline.mjs`, with `--check` in the gate.
+  `verify-style.mjs` and `build-changelog.py` pass the repository's style sheets to
+  the sweep. New in `docs/design/meridian/`: `ui-audit.mjs`, `style-snapshot.mjs`,
+  `consolidate.mjs`, `restyle-local.py`, `contrast-check.mjs`, `test-outline.mjs`,
+  and from the audit `source-audit.py`, `render-audit.mjs`, `layout-audit.mjs`,
+  `commit-map-audit.mjs`, `restore-svg-sizes.mjs`, `interaction-audit.mjs`,
+  `keyboard-print-audit.mjs`.
+- `content-freeze.mjs` pairs each generated region with its own end marker; it had
+  paired a one-line region with the next region's.
+- Register: DW-210 closed; DW-209 open for the skill; DW-212 to DW-217 opened.
+
+---
+
 ## 2026-11-15 · Duplicate colour-token blocks removed from six pages
 
 Branch `claude/adoring-cannon-g71l1a`; handback in

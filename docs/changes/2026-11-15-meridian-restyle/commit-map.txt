@@ -1,0 +1,113 @@
+session-0.1 | s0 | What you need | t-plan | self-report | 1 control(s): Choose your planFreeProMaxUl | 
+session-0.1 | s0 | What you need | t-picker | commit-first-checklist | 1 control(s): Check my list | 
+session-0.1 | s0 | What you need | t-privacy | commit-first-mcq | 3 control(s): AWithin 24 hours. / BWithin 30 days. / CAfter up to five years. | 
+session-0.1 | s1 | New chat | t-newchat | prediction-commit | 3 control(s): AEverything from the earlier / BAn empty window, plus whate / COnly your last message. | 
+session-0.1 | s2 | Projects | t-project | prediction-commit | 3 control(s): AEvery chat on your account. / BOnly the chats inside that  / COnly the first chat you ope | 
+session-0.1 | s3 | Instructions | t-instructions | prediction-commit | 3 control(s): AOnly the chat you were in w / BOnly the chats inside one p / CEvery conversation on your  | 
+session-0.1 | s4 | Search | t-search | prediction-commit | 3 control(s): ARequest 1 suits web search; / BRequest 1 suits research; r / CBoth suit research. | 
+session-0.1 | s5 | Connectors | t-connectors | prediction-commit | 3 control(s): AOnly the files you attach t / BWhatever your own login can / COnly files that are shared  | 
+session-0.1 | s6 | Skills | t-skills | prediction-commit | 3 control(s): AA link to a web page. / BA ZIP file of the skill fol / CA PDF of the instructions. | 
+session-0.1 | s7 | Incognito | t-incognito | prediction-commit | 3 control(s): AIt is deleted everywhere th / BIt stays out of your histor / CIt is invisible to your org | 
+session-0.1 | s8 | Memory | t-memory | prediction-commit | 3 control(s): AOpen an incognito chat. / BTurn off Memory in the + me / CDelete the chat afterwards. | 
+session-0.1 | s9 | Baseline | t-baseline | timed-ritual | 1 control(s): Record it | needs text in textarea,input[type=text]
+session-0.1 | s10 | Vocabulary | t-vocab | self-rating | 12 control(s): checkbox | 
+session-0.1 | s11 | Close | t-ready | checklist | 3 control(s): checkbox | 
+session-1 | s1 | Start | t-s1 | work-along-gate | (no check: nothing to commit) | 
+session-1 | sCase | Case 1 | t-case | prediction-commit | 1 control(s): Commit both answers | 
+session-1 | s2 | Prediction | t-s2 | distribution-picker | (no check: nothing to commit) | 
+session-1 | s3 | A1 · n-grams | t-s3 | parameter-sandbox | (no check: nothing to commit) | 
+session-1 | s5 | A2 · Tokens | t-s5 | work-along-gate | (no check: nothing to commit) | 
+session-1 | s6 | A3 · Meaning space | t-s6 | commit-first-mcq | 9 control(s): crocodile / eagle / turnip / eagle and hawk / turnip and eagle | 
+session-1 | s7 | A4 · Counting failure | t-s7 | distribution-picker | (no check: nothing to commit) | 
+session-1 | s4 | A5 · Fitting a model | t-s4 | hand-fit-lab | (no check: nothing to commit) | 
+session-1 | s8 | A6 · SAMPLER LAB | t-s8 | pipeline-lab | (no check: nothing to commit) | 
+session-1 | s9 | Hallucination | t-s9 | work-along-gate | (no check: nothing to commit) | 
+session-1 | s10 | A7 · Tiers and leaderboards | t-s10 | click-map-explorer | (no check: nothing to commit) | 
+session-1 | s11 | A8 · Practice cost | t-s11 | parameter-sandbox | (no check: nothing to commit) | 
+session-1 | s12 | A9 · Tier choice | t-s12 | commit-first-mcq | 18 control(s): Haiku-class / Sonnet-class / Opus / Fable-class | 
+session-1 | s13 | Confidentiality | t-s13 | two-bucket-sorter | 2 control(s): Place in: Nonpublic personal / Place in: Not identifying on | 
+session-1 | s14 | A10 · Regulation | t-s14 | symptom-diagnoser | 6 control(s): It cited a Code section that / The same question gave two d / It gave a confident Medicare / It reconciled two documents  / It summarised a tense meetin | 
+session-1 | s14b | Your own account | t-s14b | builder-assembler | 10 control(s): AHaiku 5.5: The smallest and / BSonnet 5.5: The mid tier. I / COpus 5.5: The upper tier. B / DFable 5.2: The top tier. Re / AOne project for this task:  | 
+session-1 | s14c | Discussion | t-s14c | sealed-vote-debate | 1 control(s): Lock it in — open defence | 
+session-1 | s15 | Close | t-s15 | timed-ritual | 1 control(s): Compare with the key | needs text in textarea
+session-2 | s0 | Retrieval bridge | t-s0 | retrieval-bridge | 4 control(s): Lock and reveal | needs text in textarea
+session-2 | s1 | B1 · Next token | t-s1 | work-along-gate | (no check: nothing to commit) | 
+session-2 | s2 | B2 · Laplace | t-s2 | work-along-gate | (no check: nothing to commit) | 
+session-2 | s2 | B2 · Laplace | t-s2b | estimate-then-reveal | 4 control(s): 33% / 50% / 66% / 100% | 
+session-2 | sCase | Case 2 | t-sCase | prediction-commit | 1 control(s): Lock my call and open the ke | 
+session-2 | s6 | B3 · P·T·C·F | t-s6 | builder-assembler | (no check: nothing to commit) | 
+session-2 | s6b | Build a prompt | t-s6b | builder-assembler | (no check: nothing to commit) | 
+session-2 | s3 | B4 · Temperature | t-s3 | prediction-commit | 2 control(s): The answers will be substant / The answers may differ mater | 
+session-2 | s4 | B5 · Counting failure | t-s4 | work-along-gate | (no check: nothing to commit) | 
+session-2 | sZ | B6 · Zero, one, few | t-sZ | commit-first-mcq | 12 control(s): Zero-shot / One-shot / Few-shot | 
+session-2 | s9 | Seven steps | t-s9 | multi-column-sorter | 3 control(s): AI drafts, planner verifies0 / AI assists at the margin0 pl / Planner only0 placed | 
+session-2 | sDel | B7 · Delegation brief | t-sDel | builder-assembler | 1 control(s): Check my brief | 
+session-2 | s5 | B8 · Cost frontier | t-s5 | parameter-sandbox | (no check: nothing to commit) | 
+session-2 | s8 | Interview rewrite | t-s8 | builder-assembler | (no check: nothing to commit) | 
+session-2 | s8 | Interview rewrite | t-s8b | builder-assembler | (no check: nothing to commit) | 
+session-2 | s10 | Citations | t-s10c | multi-column-sorter | 24 control(s): Fabricated / Real but misgrounded / Cited as law, but only guida / Sound and current | 
+session-2 | s7 | B9 · Triage | t-s7 | commit-first-mcq | 21 control(s): A · Underspecified / B · Specified, unverifiable / C · Specified and verifiable | 
+session-2 | s11 | B10 · Template audit | t-s11 | work-along-gate | 8 control(s): ○The task verb is a single u / ○The source of facts is boun / ○A prohibition on introducin / ○Output length is a number,  / ○Output structure is specifi | 
+session-2 | s12d | Discussion | t-s12d | sealed-vote-debate | 2 control(s): Time was saved.Specification / The work moved.Specification | 
+session-2 | s12 | Final project | t-s12 | timed-ritual | 4 control(s): e.g. Preparing a pre-meeting / text | 
+session-2 | s12 | Final project | t-s12c | prediction-commit | 1 control(s): Lock and compare | needs text in textarea
+session-2 | s12 | Final project | t-s12b | work-along-gate | 6 control(s): ○The recurring task is named / ○readme.txt is plain text wi / ○workflow/ holds the skill . / ○samples/ holds synthetic in / ○selfcheck.txt records my ow | 
+session-3 | s1 | Bridge | t-s1 | retrieval-bridge | (no check: nothing to commit) | 
+session-3 | sCase | Case 3 | t-sCase | prediction-commit | 1 control(s): Lock my list and open the co | needs text in textarea
+session-3 | s2 | C1 · Meaning space | t-s2cube | rotatable-3d-space | (no check: nothing to commit) | 
+session-3 | s2 | C1 · Meaning space | t-s2 | click-map-explorer | (no check: nothing to commit) | 
+session-3 | s2 | C1 · Meaning space | t-s3 | two-bucket-sorter | 3 control(s): 1 · Interchangeable context, / 2 · Same subject, different  / 3 · Different actors or inst | 
+session-3 | s4 | Retrieval | t-s4 | estimate-then-reveal | (no check: nothing to commit) | 
+session-3 | sRag | C2 · Do you need retrieval? | t-sRag | two-bucket-sorter | 2 control(s): 1 · Fits in one promptUnder  / 2 · Needs a retrieval toolFa | 
+session-3 | s6 | Grounding limits | t-s6 | prediction-commit | 4 control(s): (a) Essentially never / (b) About 1 in 20 / (c) About 1 in 5 / (d) As often as a tool with  | 
+session-3 | sPrep | C3 · Intake questionnaire | t-sPrep | builder-assembler | (no check: nothing to commit) | 
+session-3 | s7 | C4 · Grounding vs tuning | t-s7fig | stepped-comparison | (no check: nothing to commit) | 
+session-3 | s7 | C4 · Grounding vs tuning | t-s7 | commit-first-mcq | 3 control(s): (a) A grounded assistant tha / (b) A model fine-tuned on th / (c) A general model answerin | 
+session-3 | s9 | C5 · Workflow | t-s9 | symptom-diagnoser | (no check: nothing to commit) | 
+session-3 | s10 | Note-takers | t-s10 | spoiler-reveal | (no check: nothing to commit) | 
+session-3 | sChk | C6 · Check the summary | t-sChk | two-bucket-sorter | 2 control(s): 1 · In the transcriptSaid, a / 2 · Not in the transcriptInv | 
+session-3 | s11 | C7 · Adoption | t-s11 | estimate-then-reveal | 3 control(s): First / Middle of the pack / Last | 
+session-3 | sOff | The client review | t-sOff | multi-column-sorter | 4 control(s): 1 · Prose that changesLetter / 2 · Figures and formulasTabl / 3 · The deckSlides drafted f / 4 · Not an AI taskA decision | 
+session-3 | s12 | C8 · Consent | t-s12 | commit-first-mcq | 12 control(s): (a) Send as is / (b) Strip something first / (c) Never, into any tool | 
+session-3 | sPol | C9 · What must be written down | t-sPolQ | prediction-commit | 4 control(s): a. about 1 in 10 / b. about 1 in 3 / c. about half / d. about 3 in 4 | 
+session-3 | sPol | C9 · What must be written down | t-sPol | click-document-set | (no check: nothing to commit) | 
+session-3 | s13 | C10 · Basis | t-s13 | two-bucket-sorter | 3 control(s): 1 · What was saidThe client’ / 2 · Why we recommendedOption / 3 · NeitherAn inference or a | 
+session-3 | s15 | Discussion | t-s15 | sealed-vote-debate | 6 control(s): I check more / I check the same / I check less / Re-vote: I check more / Re-vote: I check the same | 
+session-3 | s16 | Checklist + assignments | t-s16 | builder-assembler | 10 control(s): checkbox | 
+session-4 | s0 | Bridge + frame | t-s0 | retrieval-bridge | 12 control(s): (a) Extraction, transcriptio / (b) Transcription, extractio / (c) Transcription, categoris / (a) Yes: a real quote means  / (b) No: grounded tools alway | 
+session-4 | sCase | Case 4 | t-sCase | prediction-commit | 1 control(s): Commit all three answers | 
+session-4 | s1 | The rules | t-s1 | multi-column-sorter | 9 control(s): 0 / 1 / 2 / 3 / 4 | 
+session-4 | s2 | Client data | t-s2 | builder-assembler | 2 control(s): A · Yes, likely still one pe / B · No, she is hidden | 
+session-4 | sAnon | D1 · Replace, don't delete | t-sAnon | two-bucket-sorter | 2 control(s): ✓ 1 · Safe to paste / ✗ 2 · Still gives her away | 
+session-4 | s3 | D2 · The contract | t-s3 | parameter-sandbox | (no check: nothing to commit) | 
+session-4 | s4 | D3 · Vetting a tool | t-s4 | builder-assembler | 18 control(s): Yes, on paper / No / Don’t know | 
+session-4 | sRSP | The 30-day clock | t-sRSP | commit-first-mcq | 5 control(s): Poll count for event 1 / Poll count for event 2 / Poll count for event 3 / Poll count for event 4 / Poll count for event 5 | 
+session-4 | s7 | The record | t-s7 | two-bucket-sorter | 2 control(s): A · Could re-check itEveryth / B · Could notSomething neede | 
+session-4 | s5 | D4 · Attacks | t-s5 | prediction-commit | 10 control(s): (a) Just the summary / (b) What the stranger in ema / 1 · White text / 2 · Zero-size font / 3 · Invisible characters | 
+session-4 | s6 | D5 · What checking costs | t-s6 | estimate-then-reveal | 1 control(s): Lock my guess | 
+session-4 | sWS | D6 · Source staleness | t-sWS | commit-first-mcq | 6 control(s): (a) Still true / (b) Stale now / (c) Never true | 
+session-4 | sAud | D7 · The audit trail | t-sAud | builder-assembler | 15 control(s): aThe prompt as sent, word fo / bA summary of what I asked. / cThe name of my usual templa / aThe model id and setting th / bClaude, because it told me  | 
+session-4 | sW1 | D8 · How a watermark works | t-sW1 | parameter-sandbox | (no check: nothing to commit) | 
+session-4 | sW2 | D9 · What a watermark proves | t-sW2 | two-bucket-sorter | 2 control(s): 1 · Many ways to say itRoom  / 2 · One right answerLittle r | 
+session-4 | sD | Discussion | t-sD | sealed-vote-debate | 8 control(s): aAgree / bLean agree / cLean disagree / dDisagree | 
+session-4 | s9 | Firm policy | t-s9 | builder-assembler | 12 control(s): aOur existing duties apply t / bTo promote the responsible  / aStaff must use appropriate  / bDefine PII and NPI; no NPI  / aFINRA 24-09, SEC FY2027 pri | 
+session-4 | sCR | D10 · Handoff test | t-sCR | symptom-diagnoser | 7 control(s): Station 1, Start: Could not  / Station 2, Tool: Did not kno / Station 3, Input: Could not  / Station 4, Client data: Coul / Station 5, Check: It ran, an | 
+session-5 | s0 | Bridge + frame | t-s0 | retrieval-bridge | 9 control(s): (a) It is deleted when the c / (b) Your click is the contra / (c) Nothing is kept on a per / (a) Nothing: without a name  / (b) Her job and her town tog | 
+session-5 | sCase | Case 5 | t-sCase | prediction-commit | 1 control(s): Commit both answers | 
+session-5 | s1 | The tools change | t-s1 | parameter-sandbox | (no check: nothing to commit) | 
+session-5 | sE3 | E3 · Failure types | t-sE3 | multi-column-sorter | 10 control(s): Kind 1, Guessed: place the s / Kind 2, Sampled differently: / Kind 3, Wrong passage: place / Kind 4, Carried the input’s  / Kind 5, Did what the text sa | 
+session-5 | sE4 | E4 · The builder's two minutes | t-sE4 | commit-first-mcq | 3 control(s): (a) Understood: that is how  / (b) Missed: the package says / (c) My package failed them:  | 
+session-5 | sE2 | E2 · The test set | t-sE2 | pipeline-lab | 2 control(s): Ship it / Hold it | 
+session-5 | sE6 | E6 · The maintenance log | t-sE6 | builder-assembler | 1 control(s): Lock the row | 
+session-5 | s2 | E7 · Explain it | t-s2 | click-map-explorer | (no check: nothing to commit) | 
+session-5 | s3 | E8 · Break it | t-s3 | prediction-commit | 1 control(s): Locked | 
+session-5 | s4 | E9 · Improve it | t-s4 | builder-assembler | 6 control(s): aBe careful with missing inf / bIf a fact is not in the not / aIf two statements in the no / bBe accurate. / aRespect client privacy. | 
+session-5 | sE1 | E1 · Rehearsal | t-sE1 | timed-ritual | (no check: nothing to commit) | 
+session-5 | s5 | Measure it | t-s5 | estimate-then-reveal | 1 control(s): Lock my guess | 
+session-5 | s5 | Measure it | t-s8 | commit-first-mcq | 6 control(s): (a) Confidence in the tool / (b) Confidence in yourself / (c) Neither mattered / (a) Nowhere: it was saved / (b) To verifying what the to | 
+session-5 | s7 | What stays human | t-s7 | two-bucket-sorter | 2 control(s): 1 · A tool can draft itThen  / 2 · Only you can do itCounse | 
+session-5 | s6 | E10 · New tools | t-s6 | builder-assembler | 8 control(s): The plan your firm is on / A vendor’s servers, as a ser / The open model’s index / Tool 1, Chat assistant, righ / Tool 2, Note-taker, right po | 
+session-5 | sLib | E11 · The firm's library | t-sLib | pipeline-lab | (no check: nothing to commit) | 
+session-5 | sE5 | Discussion | t-sE5 | sealed-vote-debate | 8 control(s): aAgree / bLean agree / cLean disagree / dDisagree | 
+
+summary: 78 of 111 tasks are marked; every marker matches at least one control and no reset, reveal, copy, run or navigation control

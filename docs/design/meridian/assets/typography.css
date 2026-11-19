@@ -48,6 +48,16 @@ section.slide{padding:clamp(44px,6vw,74px) 0;border-bottom:1px solid var(--line)
 #topbar a.casebtn:hover,#topbar button:hover,#caseBtn:hover{background:var(--on-chrome);
   color:var(--chrome);border-color:var(--on-chrome)}
 #topbar :focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:var(--radius-sm)}
+/* Two controls that pages place differently. A case button outside the bar (.casefab, a floating
+   control) sits on the page ground, so it takes the ghost-button colours, not the chrome ones.
+   The override label inside the bar is secondary text on chrome. Both pairs hold 5.3:1 or better. */
+#caseBtn.casefab{background:var(--surface);color:var(--primary);border-color:var(--primary)}
+#caseBtn.casefab:hover{background:var(--primary-bg);color:var(--primary);border-color:var(--primary)}
+#topbar #ovr{color:var(--chrome-muted);border-color:var(--chrome-muted)}
+/* A lesson that floats its case link and button over the bar (build-outline.mjs gave it an empty bar):
+   the link takes the same ghost colours as the button beside it, so it reads on the navy. */
+#topbar[data-outline-bar]~.topbar-case a.casebtn{background:var(--surface);color:var(--primary);border-color:var(--primary)}
+#topbar[data-outline-bar]~.topbar-case a.casebtn:hover{background:var(--primary-bg)}
 #outlineToggle{display:none}
 /* Case modal */
 #caseModal{position:fixed;inset:0;background:rgba(19,32,58,.45);z-index:70;

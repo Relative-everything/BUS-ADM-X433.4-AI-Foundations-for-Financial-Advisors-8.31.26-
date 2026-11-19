@@ -18,7 +18,7 @@
  *                hash with a reason. New blocks are allowed and reported.
  *   3. ATTRS     every attribute except class and style: nothing in the baseline
  *                may be missing. Additions (data-commit, aria-*) are allowed and reported.
- *   4. FENCES    every NAME:BEGIN ... NAME:END region except STYLE, byte for byte
+ *   4. FENCES    every NAME:BEGIN ... NAME:END region except STYLE, byte for byte, one-line regions included
  *                (CASE, SOURCES, READINGS, LM, LMBOX, LMSTYLE, appendix regions).
  *   5. ELEMENTS  the count of each tag name may not fall. Additions are reported.
  *
@@ -53,8 +53,13 @@ const pages = ['index.html',
 
 function parse(html) {
   const fences = {};
-  const fr = /([A-Z][A-Z0-9-]*):BEGIN([^\n]*)\n([\s\S]*?)\1:END/g;
-  for (let m; (m = fr.exec(html));) { if (m[1] !== 'STYLE') fences[m[1] + m[2].replace(/\s*(-->|\*\/)\s*$/, '')] = sha(m[3]); }
+  /* A region runs from NAME:BEGIN to the FIRST NAME:END after it, on the same line or a later one, and is
+     keyed by its name and its position among regions of that name. Until 2026-11-16 the pattern required a
+     line break after the BEGIN line, so a one-line region (every APXSTUB) was paired with the NEXT region's
+     END and hashed the whole lesson section between two stubs, class and style attributes included. That
+     section is still frozen by TEXT, ATTRS and ELEMENTS below; the region check now covers the region. */
+  const fr = /([A-Z][A-Z0-9-]*):BEGIN([\s\S]*?)\1:END/g, seen = {};
+  for (let m; (m = fr.exec(html));) { if (m[1] === 'STYLE') continue; seen[m[1]] = (seen[m[1]] || 0) + 1; fences[m[1] + ' #' + seen[m[1]]] = sha(m[2]); }
   const scripts = [];
   let rest = html.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
   rest = rest.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gi, (_, body) => { scripts.push(body); return ''; });

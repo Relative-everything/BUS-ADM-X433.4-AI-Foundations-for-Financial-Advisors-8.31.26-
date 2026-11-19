@@ -1,0 +1,5512 @@
+{
+ "promoted": [
+  {
+   "key": " | .cole-flow {max-width:100%;overflow-x:auto}",
+   "ctx": "",
+   "sel": ".cole-flow",
+   "decl": "max-width:100%;overflow-x:auto",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cole-flow svg {max-width:100%;height:auto}",
+   "ctx": "",
+   "sel": ".cole-flow svg",
+   "decl": "max-width:100%;height:auto",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:720px) | #topbar .ttl {min-width:0;overflow:hidden;text-overflow:ellipsis}",
+   "ctx": "@media(max-width:720px)",
+   "sel": "#topbar .ttl",
+   "decl": "min-width:0;overflow:hidden;text-overflow:ellipsis",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .mins {background:var(--gold-bg);color:var(--gold);border-radius:4px;padding:3px 8px;letter-spacing:.09em}",
+   "ctx": "",
+   "sel": ".mins",
+   "decl": "background:var(--gold-bg);color:var(--gold);border-radius:4px;padding:3px 8px;letter-spacing:.09em",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .inl {color:var(--on);border-bottom:1px solid var(--line);text-decoration:none}",
+   "ctx": "",
+   "sel": ".inl",
+   "decl": "color:var(--on);border-bottom:1px solid var(--line);text-decoration:none",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .casego {display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:20px 0}",
+   "ctx": "",
+   "sel": ".casego",
+   "decl": "display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:20px 0",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | table.tbudget {width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px}",
+   "ctx": "",
+   "sel": "table.tbudget",
+   "decl": "width:100%;border-collapse:collapse;margin:16px 0;font-size:13.5px",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | table.tbudget th {text-align:left;font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);border-bottom:1.5px solid var(--line);padding:7px 9px}",
+   "ctx": "",
+   "sel": "table.tbudget th",
+   "decl": "text-align:left;font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);border-bottom:1.5px solid var(--line);padding:7px 9px",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | table.tbudget td {padding:6px 9px;border-bottom:1px solid var(--line);vertical-align:top}",
+   "ctx": "",
+   "sel": "table.tbudget td",
+   "decl": "padding:6px 9px;border-bottom:1px solid var(--line);vertical-align:top",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | table.tbudget td.n {text-align:right;font-family:\"JetBrains Mono\",monospace;white-space:nowrap}",
+   "ctx": "",
+   "sel": "table.tbudget td.n",
+   "decl": "text-align:right;font-family:\"JetBrains Mono\",monospace;white-space:nowrap",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | table.tbudget tr.nosum td {color:var(--muted);font-style:italic}",
+   "ctx": "",
+   "sel": "table.tbudget tr.nosum td",
+   "decl": "color:var(--muted);font-style:italic",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | table.tbudget tr.alloc td {font-weight:600;border-top:2px solid var(--ink);border-bottom:none}",
+   "ctx": "",
+   "sel": "table.tbudget tr.alloc td",
+   "decl": "font-weight:600;border-top:2px solid var(--ink);border-bottom:none",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .ritual .rlab {font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:9px;font-weight:500}",
+   "ctx": "",
+   "sel": ".ritual .rlab",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:9px;font-weight:500",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .rout.on {background:var(--on-bg)}",
+   "ctx": "",
+   "sel": ".rout.on",
+   "decl": "background:var(--on-bg)",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .rout .rz {font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:5px;font-weight:500}",
+   "ctx": "",
+   "sel": ".rout .rz",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);display:block;margin-bottom:5px;font-weight:500",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .rout .rnil {color:var(--muted)}",
+   "ctx": "",
+   "sel": ".rout .rnil",
+   "decl": "color:var(--muted)",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .rout .rfx {margin-top:9px;padding-top:9px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}",
+   "ctx": "",
+   "sel": ".rout .rfx",
+   "decl": "margin-top:9px;padding-top:9px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .rnote .rh {font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px;font-weight:500}",
+   "ctx": "",
+   "sel": ".rnote .rh",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px;font-weight:500",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html"
+   ]
+  },
+  {
+   "key": " | .chip.caserank {position:relative;padding-left:50px}",
+   "ctx": "",
+   "sel": ".chip.caserank",
+   "decl": "position:relative;padding-left:50px",
+   "pages": [
+    "session-1/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .caserank .crk {position:absolute;left:13px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;border:1.5px solid var(--off);display:grid;place-items:center;font-family:\"JetBrains Mono\",monospace;font-size:12px;font-weight:500;color:var(--on)}",
+   "ctx": "",
+   "sel": ".caserank .crk",
+   "decl": "position:absolute;left:13px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;border:1.5px solid var(--off);display:grid;place-items:center;font-family:\"JetBrains Mono\",monospace;font-size:12px;font-weight:500;color:var(--on)",
+   "pages": [
+    "session-1/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .caserank.act .crk {background:var(--on);border-color:var(--on);color:#fff}",
+   "ctx": "",
+   "sel": ".caserank.act .crk",
+   "decl": "background:var(--on);border-color:var(--on);color:#fff",
+   "pages": [
+    "session-1/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | section.apxdiv {border-top:3px solid var(--gold)}",
+   "ctx": "",
+   "sel": "section.apxdiv",
+   "decl": "border-top:3px solid var(--gold)",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .apxgrid {display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:11px;margin-top:20px}",
+   "ctx": "",
+   "sel": ".apxgrid",
+   "decl": "display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:11px;margin-top:20px",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | a.apxcard {display:block;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;transition:.15s}",
+   "ctx": "",
+   "sel": "a.apxcard",
+   "decl": "display:block;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;transition:.15s",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | a.apxcard:hover {border-color:var(--gold);box-shadow:0 3px 14px rgba(138,106,18,.10)}",
+   "ctx": "",
+   "sel": "a.apxcard:hover",
+   "decl": "border-color:var(--gold);box-shadow:0 3px 14px rgba(138,106,18,.10)",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #rail button.apxnav .pip {background:var(--gold);opacity:.5}",
+   "ctx": "",
+   "sel": "#rail button.apxnav .pip",
+   "decl": "background:var(--gold);opacity:.5",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #rail button.apxnav {color:var(--gold)}",
+   "ctx": "",
+   "sel": "#rail button.apxnav",
+   "decl": "color:var(--gold)",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #rail button.apxnav.on .pip {background:var(--gold);opacity:1}",
+   "ctx": "",
+   "sel": "#rail button.apxnav.on .pip",
+   "decl": "background:var(--gold);opacity:1",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | body.core-only #rail button.apxnav:not(.apxidx) {display:none}",
+   "ctx": "",
+   "sel": "body.core-only #rail button.apxnav:not(.apxidx)",
+   "decl": "display:none",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .pace .pgrid {display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:4px}",
+   "ctx": "",
+   "sel": ".pace .pgrid",
+   "decl": "display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:4px",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #tierbar {display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin:18px 0 0}",
+   "ctx": "",
+   "sel": "#tierbar",
+   "decl": "display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin:18px 0 0",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #tierbar .tl {font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-right:3px}",
+   "ctx": "",
+   "sel": "#tierbar .tl",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-right:3px",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #tierbar button {font-family:\"JetBrains Mono\",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:500;background:none;color:var(--muted);border:1.5px solid var(--line);border-radius:6px;padding:6px 11px;cursor:pointer;transition:.15s}",
+   "ctx": "",
+   "sel": "#tierbar button",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:500;background:none;color:var(--muted);border:1.5px solid var(--line);border-radius:6px;padding:6px 11px;cursor:pointer;transition:.15s",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #tierbar button:hover {border-color:var(--gold);color:var(--gold)}",
+   "ctx": "",
+   "sel": "#tierbar button:hover",
+   "decl": "border-color:var(--gold);color:var(--gold)",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #tierbar button.on {background:var(--gold);border-color:var(--gold);color:#fff}",
+   "ctx": "",
+   "sel": "#tierbar button.on",
+   "decl": "background:var(--gold);border-color:var(--gold);color:#fff",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #tierbar button.core.on {background:var(--on);border-color:var(--on)}",
+   "ctx": "",
+   "sel": "#tierbar button.core.on",
+   "decl": "background:var(--on);border-color:var(--on)",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | section.apx.dim {padding:14px 0;border-bottom:1px dashed var(--line)}",
+   "ctx": "",
+   "sel": "section.apx.dim",
+   "decl": "padding:14px 0;border-bottom:1px dashed var(--line)",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | section.apx.dim>.apxstub {display:block}",
+   "ctx": "",
+   "sel": "section.apx.dim>.apxstub",
+   "decl": "display:block",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .apxstub span {display:block;font-family:\"JetBrains Mono\",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px}",
+   "ctx": "",
+   "sel": ".apxstub span",
+   "decl": "display:block;font-family:\"JetBrains Mono\",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | a.apxcard.dim {opacity:.3}",
+   "ctx": "",
+   "sel": "a.apxcard.dim",
+   "decl": "opacity:.3",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": "@media print | #tierbar {display:none}",
+   "ctx": "@media print",
+   "sel": "#tierbar",
+   "decl": "display:none",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | table.tbudget tr.apxrow td {color:var(--gold)}",
+   "ctx": "",
+   "sel": "table.tbudget tr.apxrow td",
+   "decl": "color:var(--gold)",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .tg.on .knob {left:21px}",
+   "ctx": "",
+   "sel": ".tg.on .knob",
+   "decl": "left:21px",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mpanel.has {background:var(--on-bg)}",
+   "ctx": "",
+   "sel": ".mpanel.has",
+   "decl": "background:var(--on-bg)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mpanel .hd {font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:9px}",
+   "ctx": "",
+   "sel": ".mpanel .hd",
+   "decl": "font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:9px",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mpanel .nil {color:var(--muted);font-style:italic}",
+   "ctx": "",
+   "sel": ".mpanel .nil",
+   "decl": "color:var(--muted);font-style:italic",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mpanel .flag {color:var(--warn)}",
+   "ctx": "",
+   "sel": ".mpanel .flag",
+   "decl": "color:var(--warn)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mpanel .good {color:var(--on)}",
+   "ctx": "",
+   "sel": ".mpanel .good",
+   "decl": "color:var(--on)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .bslot {display:flex;flex-direction:column}",
+   "ctx": "",
+   "sel": ".bslot",
+   "decl": "display:flex;flex-direction:column",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .ntstage {margin-top:10px}",
+   "ctx": "",
+   "sel": ".ntstage",
+   "decl": "margin-top:10px",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .ntstage .ntout {margin-top:8px}",
+   "ctx": "",
+   "sel": ".ntstage .ntout",
+   "decl": "margin-top:8px",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .ckgrid {display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin:12px 0}",
+   "ctx": "",
+   "sel": ".ckgrid",
+   "decl": "display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin:12px 0",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .ckgrid label.on {border-color:var(--on);background:var(--on-bg)}",
+   "ctx": "",
+   "sel": ".ckgrid label.on",
+   "decl": "border-color:var(--on);background:var(--on-bg)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .ckgrid input {margin-top:4px;flex:none}",
+   "ctx": "",
+   "sel": ".ckgrid input",
+   "decl": "margin-top:4px;flex:none",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .ppout {min-height:70px;color:var(--muted)}",
+   "ctx": "",
+   "sel": ".ppout",
+   "decl": "min-height:70px;color:var(--muted)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .ckrow {display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.45;cursor:pointer}",
+   "ctx": "",
+   "sel": ".ckrow",
+   "decl": "display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.45;cursor:pointer",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .ckrow input {margin-top:5px;flex:none}",
+   "ctx": "",
+   "sel": ".ckrow input",
+   "decl": "margin-top:5px;flex:none",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .chartlab {font-family:\"JetBrains Mono\",monospace;font-size:11px;fill:var(--muted);letter-spacing:.04em}",
+   "ctx": "",
+   "sel": ".chartlab",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:11px;fill:var(--muted);letter-spacing:.04em",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .chartval {font-family:\"JetBrains Mono\",monospace;font-size:12px;fill:var(--ink);font-weight:500}",
+   "ctx": "",
+   "sel": ".chartval",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:12px;fill:var(--ink);font-weight:500",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .chartttl {font-family:\"Bricolage Grotesque\",sans-serif;font-size:14px;fill:var(--ink);font-weight:600}",
+   "ctx": "",
+   "sel": ".chartttl",
+   "decl": "font-family:\"Bricolage Grotesque\",sans-serif;font-size:14px;fill:var(--ink);font-weight:600",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .brk .t {font-family:\"Bricolage Grotesque\",sans-serif;font-weight:600;font-size:20px;color:var(--gold)}",
+   "ctx": "",
+   "sel": ".brk .t",
+   "decl": "font-family:\"Bricolage Grotesque\",sans-serif;font-weight:600;font-size:20px;color:var(--gold)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .brk p {margin:6px auto 0;max-width:52ch;font-size:15px;color:var(--gold)}",
+   "ctx": "",
+   "sel": ".brk p",
+   "decl": "margin:6px auto 0;max-width:52ch;font-size:15px;color:var(--gold)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | body.reveal .keyhide {display:block!important}",
+   "ctx": "",
+   "sel": "body.reveal .keyhide",
+   "decl": "display:block!important",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .topbar-case {position:fixed;right:14px;top:14px;z-index:60;display:flex;gap:8px;align-items:center}",
+   "ctx": "",
+   "sel": ".topbar-case",
+   "decl": "position:fixed;right:14px;top:14px;z-index:60;display:flex;gap:8px;align-items:center",
+   "pages": [
+    "session-3/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": "@media print | .topbar-case {display:none}",
+   "ctx": "@media print",
+   "sel": ".topbar-case",
+   "decl": "display:none",
+   "pages": [
+    "session-3/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mpanel .kw {color:var(--muted)}",
+   "ctx": "",
+   "sel": ".mpanel .kw",
+   "decl": "color:var(--muted)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .crow {margin:8px 0 0}",
+   "ctx": "",
+   "sel": ".crow",
+   "decl": "margin:8px 0 0",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .crow .cw {font-size:13px;margin-top:2px}",
+   "ctx": "",
+   "sel": ".crow .cw",
+   "decl": "font-size:13px;margin-top:2px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | table.ctab {margin:6px 0 0;font-size:13.5px;font-family:\"Source Serif 4\",Georgia,serif}",
+   "ctx": "",
+   "sel": "table.ctab",
+   "decl": "margin:6px 0 0;font-size:13.5px;font-family:\"Source Serif 4\",Georgia,serif",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | table.ctab td,table.ctab th {padding:7px 10px 7px 0}",
+   "ctx": "",
+   "sel": "table.ctab td,table.ctab th",
+   "decl": "padding:7px 10px 7px 0",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .redact .seg {font:inherit;color:inherit;background:none;border:none;border-bottom:1.5px dotted var(--muted);border-radius:4px;padding:1px 3px;cursor:pointer}",
+   "ctx": "",
+   "sel": ".redact .seg",
+   "decl": "font:inherit;color:inherit;background:none;border:none;border-bottom:1.5px dotted var(--muted);border-radius:4px;padding:1px 3px;cursor:pointer",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .redact .seg:hover {background:var(--card)}",
+   "ctx": "",
+   "sel": ".redact .seg:hover",
+   "decl": "background:var(--card)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .redact .seg.rep {background:var(--on);color:#fff;border-bottom-color:transparent}",
+   "ctx": "",
+   "sel": ".redact .seg.rep",
+   "decl": "background:var(--on);color:#fff;border-bottom-color:transparent",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .redact .seg.kept {background:var(--gold-bg);border-bottom-color:var(--gold)}",
+   "ctx": "",
+   "sel": ".redact .seg.kept",
+   "decl": "background:var(--gold-bg);border-bottom-color:var(--gold)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .lvl {display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}",
+   "ctx": "",
+   "sel": ".lvl",
+   "decl": "display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .lvl span {font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:5px;border:1px solid var(--line);background:var(--card);color:var(--muted)}",
+   "ctx": "",
+   "sel": ".lvl span",
+   "decl": "font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:5px;border:1px solid var(--line);background:var(--card);color:var(--muted)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .lvl span.on {font-weight:600}",
+   "ctx": "",
+   "sel": ".lvl span.on",
+   "decl": "font-weight:600",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .lvl span.y.on {background:var(--warn);border-color:var(--warn);color:#fff}",
+   "ctx": "",
+   "sel": ".lvl span.y.on",
+   "decl": "background:var(--warn);border-color:var(--warn);color:#fff",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .lvl span.p.on {background:var(--warn-bg);border-color:var(--warn);color:var(--warn)}",
+   "ctx": "",
+   "sel": ".lvl span.p.on",
+   "decl": "background:var(--warn-bg);border-color:var(--warn);color:var(--warn)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .lvl span.q.on {background:var(--gold-bg);border-color:var(--gold);color:var(--gold)}",
+   "ctx": "",
+   "sel": ".lvl span.q.on",
+   "decl": "background:var(--gold-bg);border-color:var(--gold);color:var(--gold)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .lvl span.n.on {background:var(--on);border-color:var(--on);color:#fff}",
+   "ctx": "",
+   "sel": ".lvl span.n.on",
+   "decl": "background:var(--on);border-color:var(--on);color:#fff",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .retfig {margin:16px 0 0}",
+   "ctx": "",
+   "sel": ".retfig",
+   "decl": "margin:16px 0 0",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .rrow {display:grid;grid-template-columns:minmax(120px,190px) 1fr 68px;gap:10px;align-items:center;margin:7px 0;font-size:13.5px;opacity:.55}",
+   "ctx": "",
+   "sel": ".rrow",
+   "decl": "display:grid;grid-template-columns:minmax(120px,190px) 1fr 68px;gap:10px;align-items:center;margin:7px 0;font-size:13.5px;opacity:.55",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .rrow.me {opacity:1;font-weight:600}",
+   "ctx": "",
+   "sel": ".rrow.me",
+   "decl": "opacity:1;font-weight:600",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .rrow .rb {height:16px;background:var(--off-bg);border-radius:4px;overflow:hidden}",
+   "ctx": "",
+   "sel": ".rrow .rb",
+   "decl": "height:16px;background:var(--off-bg);border-radius:4px;overflow:hidden",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .rrow.me .rb i {background:var(--on)}",
+   "ctx": "",
+   "sel": ".rrow.me .rb i",
+   "decl": "background:var(--on)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .rrow .rv {font-family:\"JetBrains Mono\",monospace;font-size:12px;text-align:right}",
+   "ctx": "",
+   "sel": ".rrow .rv",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:12px;text-align:right",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .vq {padding:10px 0;border-bottom:1px solid var(--line)}",
+   "ctx": "",
+   "sel": ".vq",
+   "decl": "padding:10px 0;border-bottom:1px solid var(--line)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .vq:last-child {border-bottom:none}",
+   "ctx": "",
+   "sel": ".vq:last-child",
+   "decl": "border-bottom:none",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .vqq {margin:0 0 8px;font-size:15.5px;line-height:1.45;max-width:none}",
+   "ctx": "",
+   "sel": ".vqq",
+   "decl": "margin:0 0 8px;font-size:15.5px;line-height:1.45;max-width:none",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mail .from {display:block;font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}",
+   "ctx": "",
+   "sel": ".mail .from",
+   "decl": "display:block;font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mail .hid {color:#fff;background:#fff;font-size:12px}",
+   "ctx": "",
+   "sel": ".mail .hid",
+   "decl": "color:#fff;background:#fff;font-size:12px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mail.show {border-color:var(--warn)}",
+   "ctx": "",
+   "sel": ".mail.show",
+   "decl": "border-color:var(--warn)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mail.show .hid {color:var(--warn);background:var(--warn-bg);border-radius:4px;padding:1px 4px}",
+   "ctx": "",
+   "sel": ".mail.show .hid",
+   "decl": "color:var(--warn);background:var(--warn-bg);border-radius:4px;padding:1px 4px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .tsent {font-family:\"JetBrains Mono\",monospace;font-size:13.5px;margin:0 0 10px;max-width:none}",
+   "ctx": "",
+   "sel": ".tsent",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:13.5px;margin:0 0 10px;max-width:none",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .tsl {margin:0 0 10px}",
+   "ctx": "",
+   "sel": ".tsl",
+   "decl": "margin:0 0 10px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .tsl .hd {font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:5px}",
+   "ctx": "",
+   "sel": ".tsl .hd",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:5px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .tsx {font-family:\"JetBrains Mono\",monospace;font-size:12px;color:var(--muted);padding:4px 6px 4px 2px}",
+   "ctx": "",
+   "sel": ".tsx",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:12px;color:var(--muted);padding:4px 6px 4px 2px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mmgrid {margin:16px 0 0}",
+   "ctx": "",
+   "sel": ".mmgrid",
+   "decl": "margin:16px 0 0",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mmrow {display:grid;grid-template-columns:repeat(10,1fr);gap:4px;max-width:420px}",
+   "ctx": "",
+   "sel": ".mmrow",
+   "decl": "display:grid;grid-template-columns:repeat(10,1fr);gap:4px;max-width:420px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mm {aspect-ratio:1/1;border-radius:4px;background:var(--on-bg);border:1px solid #9FC4C0;display:grid;place-items:center;font-size:11px;color:#fff;line-height:1}",
+   "ctx": "",
+   "sel": ".mm",
+   "decl": "aspect-ratio:1/1;border-radius:4px;background:var(--on-bg);border:1px solid #9FC4C0;display:grid;place-items:center;font-size:11px;color:#fff;line-height:1",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .mm.bad {background:var(--warn);border-color:var(--warn)}",
+   "ctx": "",
+   "sel": ".mm.bad",
+   "decl": "background:var(--warn);border-color:var(--warn)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .gap .gl {font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}",
+   "ctx": "",
+   "sel": ".gap .gl",
+   "decl": "font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .gap .gb {height:12px;background:var(--card);border-radius:4px;overflow:hidden}",
+   "ctx": "",
+   "sel": ".gap .gb",
+   "decl": "height:12px;background:var(--card);border-radius:4px;overflow:hidden",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .gap .yg {background:var(--gold)}",
+   "ctx": "",
+   "sel": ".gap .yg",
+   "decl": "background:var(--gold)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .gap .ya {background:var(--warn)}",
+   "ctx": "",
+   "sel": ".gap .ya",
+   "decl": "background:var(--warn)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .srow {display:grid;grid-template-columns:86px 1fr 64px;gap:10px;align-items:center;margin:8px 0;font-size:13.5px}",
+   "ctx": "",
+   "sel": ".srow",
+   "decl": "display:grid;grid-template-columns:86px 1fr 64px;gap:10px;align-items:center;margin:8px 0;font-size:13.5px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .srow .sbar {display:flex;height:18px;background:var(--off-bg);border-radius:4px;overflow:hidden}",
+   "ctx": "",
+   "sel": ".srow .sbar",
+   "decl": "display:flex;height:18px;background:var(--off-bg);border-radius:4px;overflow:hidden",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .srow .sv {font-family:\"JetBrains Mono\",monospace;font-size:12px;text-align:right}",
+   "ctx": "",
+   "sel": ".srow .sv",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:12px;text-align:right",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .polopts {display:flex;flex-direction:column;gap:7px}",
+   "ctx": "",
+   "sel": ".polopts",
+   "decl": "display:flex;flex-direction:column;gap:7px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .poln {font-size:13.5px;margin:7px 0 0;max-width:none;min-height:1em}",
+   "ctx": "",
+   "sel": ".poln",
+   "decl": "font-size:13.5px;margin:7px 0 0;max-width:none;min-height:1em",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .polpre {white-space:pre-wrap;background:var(--card);margin:8px 0 10px;font-size:12.5px}",
+   "ctx": "",
+   "sel": ".polpre",
+   "decl": "white-space:pre-wrap;background:var(--card);margin:8px 0 10px;font-size:12.5px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #rspList {display:flex;flex-direction:column;gap:8px}",
+   "ctx": "",
+   "sel": "#rspList",
+   "decl": "display:flex;flex-direction:column;gap:8px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #rspList .chip:disabled {cursor:default}",
+   "ctx": "",
+   "sel": "#rspList .chip:disabled",
+   "decl": "cursor:default",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #rspList .chip:disabled:not(.act) {opacity:.5}",
+   "ctx": "",
+   "sel": "#rspList .chip:disabled:not(.act)",
+   "decl": "opacity:.5",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 .s0-frame {border-color:var(--on);border-width:2px}",
+   "ctx": "",
+   "sel": "#s0 .s0-frame",
+   "decl": "border-color:var(--on);border-width:2px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 .s0-stage {display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:4px}",
+   "ctx": "",
+   "sel": "#s0 .s0-stage",
+   "decl": "display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:4px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": "@media(min-width:900px) | #s0 .s0-stage {grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;align-items:start}",
+   "ctx": "@media(min-width:900px)",
+   "sel": "#s0 .s0-stage",
+   "decl": "grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;align-items:start",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 .s0-fig {max-width:620px}",
+   "ctx": "",
+   "sel": "#s0 .s0-fig",
+   "decl": "max-width:620px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 .s0-ctl {margin-top:10px}",
+   "ctx": "",
+   "sel": "#s0 .s0-ctl",
+   "decl": "margin-top:10px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:560px) | #s0 .s0-ctl {gap:12px}",
+   "ctx": "@media(max-width:560px)",
+   "sel": "#s0 .s0-ctl",
+   "decl": "gap:12px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 .s0-stage .mpanel {margin-top:0}",
+   "ctx": "",
+   "sel": "#s0 .s0-stage .mpanel",
+   "decl": "margin-top:0",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 #bridgeQuiz .qtext {font-family:\"Source Serif 4\",Georgia,serif;font-size:16px;background:none;padding:0;line-height:1.5}",
+   "ctx": "",
+   "sel": "#s0 #bridgeQuiz .qtext",
+   "decl": "font-family:\"Source Serif 4\",Georgia,serif;font-size:16px;background:none;padding:0;line-height:1.5",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 #bridgeQuiz .qbtns .btn {text-transform:none;letter-spacing:0;font-size:12.5px;text-align:left;line-height:1.4}",
+   "ctx": "",
+   "sel": "#s0 #bridgeQuiz .qbtns .btn",
+   "decl": "text-transform:none;letter-spacing:0;font-size:12.5px;text-align:left;line-height:1.4",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 #bridgeQuiz .qfb:empty {display:none}",
+   "ctx": "",
+   "sel": "#s0 #bridgeQuiz .qfb:empty",
+   "decl": "display:none",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 #bridgeQuiz .qbtns button.s0key {outline:2px dashed var(--on);outline-offset:2px;opacity:1;color:var(--on)}",
+   "ctx": "",
+   "sel": "#s0 #bridgeQuiz .qbtns button.s0key",
+   "decl": "outline:2px dashed var(--on);outline-offset:2px;opacity:1;color:var(--on)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 #bridgeQuiz .qbtns button.s0key::after,#s0 #bridgeQuiz .qbtns button.s0ok::after {content:\" \\2713\"}",
+   "ctx": "",
+   "sel": "#s0 #bridgeQuiz .qbtns button.s0key::after,#s0 #bridgeQuiz .qbtns button.s0ok::after",
+   "decl": "content:\" \\2713\"",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 #bridgeQuiz .qbtns button.s0bad {background:var(--warn);border-color:var(--warn);color:#fff}",
+   "ctx": "",
+   "sel": "#s0 #bridgeQuiz .qbtns button.s0bad",
+   "decl": "background:var(--warn);border-color:var(--warn);color:#fff",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 #bridgeQuiz .qbtns button.s0bad::after {content:\" \\2717\"}",
+   "ctx": "",
+   "sel": "#s0 #bridgeQuiz .qbtns button.s0bad::after",
+   "decl": "content:\" \\2717\"",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 #s0Out .s0q {display:block;font-family:\"Bricolage Grotesque\",sans-serif;font-size:19px;font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:4px}",
+   "ctx": "",
+   "sel": "#s0 #s0Out .s0q",
+   "decl": "display:block;font-family:\"Bricolage Grotesque\",sans-serif;font-size:19px;font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:4px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 #s0Out .kw {display:block}",
+   "ctx": "",
+   "sel": "#s0 #s0Out .kw",
+   "decl": "display:block",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 #s0Out .s0map {display:block;margin-top:10px;font-size:12.5px;line-height:1.7}",
+   "ctx": "",
+   "sel": "#s0 #s0Out .s0map",
+   "decl": "display:block;margin-top:10px;font-size:12.5px;line-height:1.7",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 #s0Out a {color:var(--on);text-decoration:underline;text-underline-offset:2px}",
+   "ctx": "",
+   "sel": "#s0 #s0Out a",
+   "decl": "color:var(--on);text-decoration:underline;text-underline-offset:2px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | #s0 .s0-foot.fin {fill:var(--on);font-weight:600}",
+   "ctx": "",
+   "sel": "#s0 .s0-foot.fin",
+   "decl": "fill:var(--on);font-weight:600",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | @keyframes s4fin {from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}",
+   "ctx": "",
+   "sel": "@keyframes s4fin",
+   "decl": "from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ]
+  },
+  {
+   "key": " | .cf-band {background:var(--case-accent);color:#fff;border-bottom:1px solid var(--case-deep)}",
+   "ctx": "",
+   "sel": ".cf-band",
+   "decl": "background:var(--case-accent);color:#fff;border-bottom:1px solid var(--case-deep)",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-kicker {margin:0 0 16px;max-width:none;display:flex;gap:16px;align-items:center;flex-wrap:wrap}",
+   "ctx": "",
+   "sel": ".cf-kicker",
+   "decl": "margin:0 0 16px;max-width:none;display:flex;gap:16px;align-items:center;flex-wrap:wrap",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-stamp {font-family:\"JetBrains Mono\",monospace;font-size:13px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;border:2px solid rgba(255,255,255,.85);border-radius:4px;padding:5px 11px;display:inline-block;transform:rotate(-1.2deg)}",
+   "ctx": "",
+   "sel": ".cf-stamp",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:13px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;border:2px solid rgba(255,255,255,.85);border-radius:4px;padding:5px 11px;display:inline-block;transform:rotate(-1.2deg)",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-hh {font-family:\"JetBrains Mono\",monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.85)}",
+   "ctx": "",
+   "sel": ".cf-hh",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.85)",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-band h1 {color:#fff;margin:0;max-width:22ch}",
+   "ctx": "",
+   "sel": ".cf-band h1",
+   "decl": "color:#fff;margin:0;max-width:22ch",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-sub {font-size:clamp(17px,2vw,21px);line-height:1.45;color:rgba(255,255,255,.9);max-width:50ch;margin:14px 0 0}",
+   "ctx": "",
+   "sel": ".cf-sub",
+   "decl": "font-size:clamp(17px,2vw,21px);line-height:1.45;color:rgba(255,255,255,.9);max-width:50ch;margin:14px 0 0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-meta {display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px;margin:26px 0 0;padding:16px 0 0;border-top:1px solid rgba(255,255,255,.3)}",
+   "ctx": "",
+   "sel": ".cf-meta",
+   "decl": "display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px 24px;margin:26px 0 0;padding:16px 0 0;border-top:1px solid rgba(255,255,255,.3)",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-meta div {min-width:0}",
+   "ctx": "",
+   "sel": ".cf-meta div",
+   "decl": "min-width:0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-meta dt {font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}",
+   "ctx": "",
+   "sel": ".cf-meta dt",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-meta dd {margin:3px 0 0;font-size:16px;line-height:1.35;color:#fff}",
+   "ctx": "",
+   "sel": ".cf-meta dd",
+   "decl": "margin:3px 0 0;font-size:16px;line-height:1.35;color:#fff",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-tabs {display:flex;gap:4px;margin:26px 0 0;overflow-x:auto}",
+   "ctx": "",
+   "sel": ".cf-tabs",
+   "decl": "display:flex;gap:4px;margin:26px 0 0;overflow-x:auto",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-tabs a b {font-weight:500;opacity:.8}",
+   "ctx": "",
+   "sel": ".cf-tabs a b",
+   "decl": "font-weight:500;opacity:.8",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-tabs a:hover {background:rgba(255,255,255,.22)}",
+   "ctx": "",
+   "sel": ".cf-tabs a:hover",
+   "decl": "background:rgba(255,255,255,.22)",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-tabs a[aria-current=\"true\"] {background:var(--page);color:var(--case-accent);font-weight:700;border-color:var(--page);position:relative;top:1px;text-decoration:underline;text-underline-offset:4px}",
+   "ctx": "",
+   "sel": ".cf-tabs a[aria-current=\"true\"]",
+   "decl": "background:var(--page);color:var(--case-accent);font-weight:700;border-color:var(--page);position:relative;top:1px;text-decoration:underline;text-underline-offset:4px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-tabs a[aria-current=\"true\"] b {opacity:1}",
+   "ctx": "",
+   "sel": ".cf-tabs a[aria-current=\"true\"] b",
+   "decl": "opacity:1",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-tabs a:focus-visible {outline:2.5px solid #fff;outline-offset:-4px}",
+   "ctx": "",
+   "sel": ".cf-tabs a:focus-visible",
+   "decl": "outline:2.5px solid #fff;outline-offset:-4px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-tabs a[aria-current=\"true\"]:focus-visible {outline-color:var(--case-accent)}",
+   "ctx": "",
+   "sel": ".cf-tabs a[aria-current=\"true\"]:focus-visible",
+   "decl": "outline-color:var(--case-accent)",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-sr {position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}",
+   "ctx": "",
+   "sel": ".cf-sr",
+   "decl": "position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .doc-h {display:flex;justify-content:space-between;gap:6px 16px;flex-wrap:wrap;padding:10px 24px;border-bottom:1px solid var(--paper-line);background:var(--paper-head);font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--case-accent)}",
+   "ctx": "",
+   "sel": ".doc-h",
+   "decl": "display:flex;justify-content:space-between;gap:6px 16px;flex-wrap:wrap;padding:10px 24px;border-bottom:1px solid var(--paper-line);background:var(--paper-head);font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--case-accent)",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .doc-label {display:flex;gap:8px 12px;flex-wrap:wrap;align-items:center;padding:9px 24px;border-bottom:1px dashed var(--paper-line);font-family:\"JetBrains Mono\",monospace;font-size:10.5px;line-height:1.5;color:var(--muted)}",
+   "ctx": "",
+   "sel": ".doc-label",
+   "decl": "display:flex;gap:8px 12px;flex-wrap:wrap;align-items:center;padding:9px 24px;border-bottom:1px dashed var(--paper-line);font-family:\"JetBrains Mono\",monospace;font-size:10.5px;line-height:1.5;color:var(--muted)",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .doc-body {padding:20px 28px 26px 26px;font-size:16px;line-height:1.55}",
+   "ctx": "",
+   "sel": ".doc-body",
+   "decl": "padding:20px 28px 26px 26px;font-size:16px;line-height:1.55",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .doc-body p {max-width:none;margin:9px 0}",
+   "ctx": "",
+   "sel": ".doc-body p",
+   "decl": "max-width:none;margin:9px 0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .doc-body ol,.doc-body ul {margin:6px 0 10px;padding-left:22px}",
+   "ctx": "",
+   "sel": ".doc-body ol,.doc-body ul",
+   "decl": "margin:6px 0 10px;padding-left:22px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .doc-title {font-size:21px;margin:0 0 6px;letter-spacing:-.02em}",
+   "ctx": "",
+   "sel": ".doc-title",
+   "decl": "font-size:21px;margin:0 0 6px;letter-spacing:-.02em",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .doc-sec {font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--case-accent);margin:20px 0 6px;padding-bottom:3px;border-bottom:1px solid var(--paper-line)}",
+   "ctx": "",
+   "sel": ".doc-sec",
+   "decl": "font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--case-accent);margin:20px 0 6px;padding-bottom:3px;border-bottom:1px solid var(--paper-line)",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .doc-table {max-width:520px;font-size:14.5px}",
+   "ctx": "",
+   "sel": ".doc-table",
+   "decl": "max-width:520px;font-size:14.5px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .doc-table th:nth-child(n+2) {text-align:right}",
+   "ctx": "",
+   "sel": ".doc-table th:nth-child(n+2)",
+   "decl": "text-align:right",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .doc-table td.n {text-align:right;font-family:\"JetBrains Mono\",monospace;font-size:13px;white-space:nowrap}",
+   "ctx": "",
+   "sel": ".doc-table td.n",
+   "decl": "text-align:right;font-family:\"JetBrains Mono\",monospace;font-size:13px;white-space:nowrap",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-fix {font-family:\"JetBrains Mono\",monospace;font-size:11.5px;color:var(--warn);background:var(--warn-bg);border:1px solid #E0C6B4;border-radius:4px;padding:1px 6px;margin:0 3px 0 5px;white-space:nowrap}",
+   "ctx": "",
+   "sel": ".cf-fix",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:11.5px;color:var(--warn);background:var(--warn-bg);border:1px solid #E0C6B4;border-radius:4px;padding:1px 6px;margin:0 3px 0 5px;white-space:nowrap",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-legend {font-size:14.5px;color:var(--muted);margin:10px 0 0;max-width:none}",
+   "ctx": "",
+   "sel": ".cf-legend",
+   "decl": "font-size:14.5px;color:var(--muted);margin:10px 0 0;max-width:none",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-log {width:100%;border-collapse:collapse;font-size:14px;margin:6px 0 0}",
+   "ctx": "",
+   "sel": ".cf-log",
+   "decl": "width:100%;border-collapse:collapse;font-size:14px;margin:6px 0 0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-log th {font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;text-align:left;color:var(--muted);border-bottom:2px solid var(--ink);padding:0 10px 7px 0}",
+   "ctx": "",
+   "sel": ".cf-log th",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;text-align:left;color:var(--muted);border-bottom:2px solid var(--ink);padding:0 10px 7px 0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-log td {padding:7px 10px 7px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.42}",
+   "ctx": "",
+   "sel": ".cf-log td",
+   "decl": "padding:7px 10px 7px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.42",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-log td.res {white-space:nowrap;font-family:\"JetBrains Mono\",monospace;font-size:12px}",
+   "ctx": "",
+   "sel": ".cf-log td.res",
+   "decl": "white-space:nowrap;font-family:\"JetBrains Mono\",monospace;font-size:12px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-log tr.bad td {background:var(--warn-bg)}",
+   "ctx": "",
+   "sel": ".cf-log tr.bad td",
+   "decl": "background:var(--warn-bg)",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-det {background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:14px 18px;margin:22px 0}",
+   "ctx": "",
+   "sel": ".cf-det",
+   "decl": "background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:14px 18px;margin:22px 0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-det>summary {cursor:pointer;font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-weight:600;font-size:16.5px;letter-spacing:-.01em}",
+   "ctx": "",
+   "sel": ".cf-det>summary",
+   "decl": "cursor:pointer;font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-weight:600;font-size:16.5px;letter-spacing:-.01em",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-det[open]>summary {margin-bottom:12px}",
+   "ctx": "",
+   "sel": ".cf-det[open]>summary",
+   "decl": "margin-bottom:12px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-copy {margin:16px 0 20px}",
+   "ctx": "",
+   "sel": ".cf-copy",
+   "decl": "margin:16px 0 20px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-copybar {display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 6px}",
+   "ctx": "",
+   "sel": ".cf-copybar",
+   "decl": "display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 6px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-copybar .plab {margin:0}",
+   "ctx": "",
+   "sel": ".cf-copybar .plab",
+   "decl": "margin:0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-copy pre {margin:0;background:var(--ink);color:#E8EDEB;border-radius:10px;padding:16px 18px;font-family:\"JetBrains Mono\",monospace;font-size:12.5px;line-height:1.62;white-space:pre-wrap;overflow-wrap:anywhere;max-height:430px;overflow:auto}",
+   "ctx": "",
+   "sel": ".cf-copy pre",
+   "decl": "margin:0;background:var(--ink);color:#E8EDEB;border-radius:10px;padding:16px 18px;font-family:\"JetBrains Mono\",monospace;font-size:12.5px;line-height:1.62;white-space:pre-wrap;overflow-wrap:anywhere;max-height:430px;overflow:auto",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-copy pre.long {max-height:640px}",
+   "ctx": "",
+   "sel": ".cf-copy pre.long",
+   "decl": "max-height:640px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-copy pre:focus-visible {outline:2.5px solid var(--case-accent);outline-offset:3px}",
+   "ctx": "",
+   "sel": ".cf-copy pre:focus-visible",
+   "decl": "outline:2.5px solid var(--case-accent);outline-offset:3px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-quote {border-left:4px solid var(--warn);background:var(--warn-bg);border-radius:0 9px 9px 0;padding:14px 18px;margin:16px 0;font-size:15.5px;line-height:1.6}",
+   "ctx": "",
+   "sel": ".cf-quote",
+   "decl": "border-left:4px solid var(--warn);background:var(--warn-bg);border-radius:0 9px 9px 0;padding:14px 18px;margin:16px 0;font-size:15.5px;line-height:1.6",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-quote .qh {font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}",
+   "ctx": "",
+   "sel": ".cf-quote .qh",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-steps {margin:6px 0 0;padding-left:22px}",
+   "ctx": "",
+   "sel": ".cf-steps",
+   "decl": "margin:6px 0 0;padding-left:22px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-steps li b {font-family:\"Bricolage Grotesque\",system-ui,sans-serif;letter-spacing:-.01em}",
+   "ctx": "",
+   "sel": ".cf-steps li b",
+   "decl": "font-family:\"Bricolage Grotesque\",system-ui,sans-serif;letter-spacing:-.01em",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-sit {list-style:none;margin:10px 0 0;padding:0}",
+   "ctx": "",
+   "sel": ".cf-sit",
+   "decl": "list-style:none;margin:10px 0 0;padding:0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-sit li:first-child {border-top:none}",
+   "ctx": "",
+   "sel": ".cf-sit li:first-child",
+   "decl": "border-top:none",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-where {font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1.5px solid var(--on);border-radius:4px;padding:2px 7px;margin-right:8px;color:var(--on);display:inline-block;white-space:nowrap}",
+   "ctx": "",
+   "sel": ".cf-where",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1.5px solid var(--on);border-radius:4px;padding:2px 7px;margin-right:8px;color:var(--on);display:inline-block;white-space:nowrap",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-where.lead {background:var(--on);color:#fff}",
+   "ctx": "",
+   "sel": ".cf-where.lead",
+   "decl": "background:var(--on);color:#fff",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-sit .why {display:block;color:#3F4C49;margin-top:3px}",
+   "ctx": "",
+   "sel": ".cf-sit .why",
+   "decl": "display:block;color:#3F4C49;margin-top:3px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-go {margin:22px 0}",
+   "ctx": "",
+   "sel": ".cf-go",
+   "decl": "margin:22px 0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-go .btn {font-size:14px;padding:16px 26px}",
+   "ctx": "",
+   "sel": ".cf-go .btn",
+   "decl": "font-size:14px;padding:16px 26px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-pre-note {font-size:14px;color:var(--muted);margin:6px 0 0}",
+   "ctx": "",
+   "sel": ".cf-pre-note",
+   "decl": "font-size:14px;color:var(--muted);margin:6px 0 0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-tiers td.n,.cf-tiers th.n {text-align:right}",
+   "ctx": "",
+   "sel": ".cf-tiers td.n,.cf-tiers th.n",
+   "decl": "text-align:right",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-h {display:none}",
+   "ctx": "@media print",
+   "sel": ".doc-h",
+   "decl": "display:none",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-body p {margin:4pt 0}",
+   "ctx": "@media print",
+   "sel": ".doc-body p",
+   "decl": "margin:4pt 0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-body ol,.doc-body ul {margin:3pt 0 5pt}",
+   "ctx": "@media print",
+   "sel": ".doc-body ol,.doc-body ul",
+   "decl": "margin:3pt 0 5pt",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-sec {margin:6pt 0 2pt;font-size:8.5pt}",
+   "ctx": "@media print",
+   "sel": ".doc-sec",
+   "decl": "margin:6pt 0 2pt;font-size:8.5pt",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-title {font-size:13pt}",
+   "ctx": "@media print",
+   "sel": ".doc-title",
+   "decl": "font-size:13pt",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-body table.dt.doc-table {margin:4pt 0}",
+   "ctx": "@media print",
+   "sel": ".doc-body table.dt.doc-table",
+   "decl": "margin:4pt 0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-body table.dt.doc-table th {padding:0 8pt 2pt 0}",
+   "ctx": "@media print",
+   "sel": ".doc-body table.dt.doc-table th",
+   "decl": "padding:0 8pt 2pt 0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-body table.dt.doc-table td {padding:1.5pt 8pt 1.5pt 0;font-size:9pt;line-height:1.25}",
+   "ctx": "@media print",
+   "sel": ".doc-body table.dt.doc-table td",
+   "decl": "padding:1.5pt 8pt 1.5pt 0;font-size:9pt;line-height:1.25",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": "@media print | .cf-fix {background:none;border:1px solid #000;color:#000}",
+   "ctx": "@media print",
+   "sel": ".cf-fix",
+   "decl": "background:none;border:1px solid #000;color:#000",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-lw {overflow-x:auto}",
+   "ctx": "",
+   "sel": ".cf-lw",
+   "decl": "overflow-x:auto",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ]
+  }
+ ],
+ "order": [
+  {
+   "key": " | .rout {margin-top:13px;background:var(--off-bg);border-radius:9px;padding:13px 16px;font-size:14.5px;line-height:1.55}",
+   "ctx": "",
+   "sel": ".rout",
+   "decl": "margin-top:13px;background:var(--off-bg);border-radius:9px;padding:13px 16px;font-size:14.5px;line-height:1.55",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ],
+   "why": [
+    "session-1/index.html: :focus-visible also sets border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius"
+   ]
+  },
+  {
+   "key": " | .rnote {background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0;font-size:14px;line-height:1.5}",
+   "ctx": "",
+   "sel": ".rnote",
+   "decl": "background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0;font-size:14px;line-height:1.5",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html"
+   ],
+   "why": [
+    "session-1/index.html: :focus-visible also sets border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius"
+   ]
+  },
+  {
+   "key": " | .lgd.m {background:var(--gold-bg);color:var(--gold)}",
+   "ctx": "",
+   "sel": ".lgd.m",
+   "decl": "background:var(--gold-bg);color:var(--gold)",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html"
+   ],
+   "why": [
+    "session-1/index.html: .lgd.h also sets background-image, background-position-x, background-position-y, background-size"
+   ]
+  },
+  {
+   "key": " | .lgd.l {background:var(--warn-bg);color:var(--warn)}",
+   "ctx": "",
+   "sel": ".lgd.l",
+   "decl": "background:var(--warn-bg);color:var(--warn)",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html"
+   ],
+   "why": [
+    "session-1/index.html: .lgd.h also sets background-image, background-position-x, background-position-y, background-size"
+   ]
+  },
+  {
+   "key": " | a.apxcard .ac {font-family:\"JetBrains Mono\",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}",
+   "ctx": "",
+   "sel": "a.apxcard .ac",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-4/index.html: .lmnote.warn b also sets color"
+   ]
+  },
+  {
+   "key": " | a.apxcard b {display:block;font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-size:15px;font-weight:600;letter-spacing:-.015em;margin-top:4px;line-height:1.2}",
+   "ctx": "",
+   "sel": "a.apxcard b",
+   "decl": "display:block;font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-size:15px;font-weight:600;letter-spacing:-.015em;margin-top:4px;line-height:1.2",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-3/index.html: .placed li b also sets font-family"
+   ]
+  },
+  {
+   "key": " | .pace .pcell b {display:block;font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--gold)}",
+   "ctx": "",
+   "sel": ".pace .pcell b",
+   "decl": "display:block;font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--gold)",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-4/index.html: .lmnote.warn b also sets color"
+   ]
+  },
+  {
+   "key": " | .pace .pcell span {font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}",
+   "ctx": "",
+   "sel": ".pace .pcell span",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-4/index.html: a.apxcard .ac also sets font-size, letter-spacing, color"
+   ]
+  },
+  {
+   "key": " | section.apx.dim>* {display:none}",
+   "ctx": "",
+   "sel": "section.apx.dim>*",
+   "decl": "display:none",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-4/index.html: .pace .pcell b also sets display"
+   ]
+  },
+  {
+   "key": " | .apxstub {display:none;background:var(--card);border:1.5px dashed var(--line);border-radius:10px;padding:11px 15px;margin:0}",
+   "ctx": "",
+   "sel": ".apxstub",
+   "decl": "display:none;background:var(--card);border:1.5px dashed var(--line);border-radius:10px;padding:11px 15px;margin:0",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-1/index.html: :focus-visible also sets border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius"
+   ]
+  },
+  {
+   "key": " | .apxstub b {display:block;font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-size:14px;font-weight:600;letter-spacing:-.01em;color:var(--muted)}",
+   "ctx": "",
+   "sel": ".apxstub b",
+   "decl": "display:block;font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-size:14px;font-weight:600;letter-spacing:-.01em;color:var(--muted)",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-2/index.html: .ct b also sets font-size, letter-spacing, color"
+   ]
+  },
+  {
+   "key": " | .knob {position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s}",
+   "ctx": "",
+   "sel": ".knob",
+   "decl": "position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-2/index.html: :focus-visible also sets border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius"
+   ]
+  },
+  {
+   "key": " | .instrline {font-family:\"JetBrains Mono\",monospace;font-size:14px;background:var(--on-bg);color:var(--on);border-radius:8px;padding:12px 16px;margin:18px 0 0;line-height:1.6}",
+   "ctx": "",
+   "sel": ".instrline",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:14px;background:var(--on-bg);color:var(--on);border-radius:8px;padding:12px 16px;margin:18px 0 0;line-height:1.6",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-3/index.html: :focus-visible also sets border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius"
+   ]
+  },
+  {
+   "key": " | .mpanel {background:var(--off-bg);border-radius:9px;padding:20px;font-family:\"JetBrains Mono\",monospace;font-size:13.5px;line-height:1.75;min-height:110px;transition:.3s;margin-top:18px}",
+   "ctx": "",
+   "sel": ".mpanel",
+   "decl": "background:var(--off-bg);border-radius:9px;padding:20px;font-family:\"JetBrains Mono\",monospace;font-size:13.5px;line-height:1.75;min-height:110px;transition:.3s;margin-top:18px",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-3/index.html: :focus-visible also sets border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius"
+   ]
+  },
+  {
+   "key": " | .ckgrid label {display:flex;gap:9px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:10px 12px;font-size:14.5px;line-height:1.4;cursor:pointer}",
+   "ctx": "",
+   "sel": ".ckgrid label",
+   "decl": "display:flex;gap:9px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:10px 12px;font-size:14.5px;line-height:1.4;cursor:pointer",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-3/index.html: label.fl also sets display, font-size"
+   ]
+  },
+  {
+   "key": " | .ppout.on {color:var(--ink);background:var(--on-bg)}",
+   "ctx": "",
+   "sel": ".ppout.on",
+   "decl": "color:var(--ink);background:var(--on-bg)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-3/index.html: .case-tab.on also sets color"
+   ]
+  },
+  {
+   "key": " | .ckrow.on {color:var(--on)}",
+   "ctx": "",
+   "sel": ".ckrow.on",
+   "decl": "color:var(--on)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-3/index.html: .ppout.on also sets color"
+   ]
+  },
+  {
+   "key": " | .brk {background:var(--gold-bg);border:1.5px dashed #DFD3AF;border-radius:12px;padding:22px 26px;margin:34px 0;text-align:center}",
+   "ctx": "",
+   "sel": ".brk",
+   "decl": "background:var(--gold-bg);border:1.5px dashed #DFD3AF;border-radius:12px;padding:22px 26px;margin:34px 0;text-align:center",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-3/index.html: :focus-visible also sets border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius"
+   ]
+  },
+  {
+   "key": " | .rrow .rb i {display:block;height:100%;background:var(--muted);border-radius:4px}",
+   "ctx": "",
+   "sel": ".rrow .rb i",
+   "decl": "display:block;height:100%;background:var(--muted);border-radius:4px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-4/index.html: section.apx.dim>* also sets display"
+   ]
+  },
+  {
+   "key": " | .mail {background:var(--card);border:1px solid var(--line);border-radius:9px;padding:10px 14px;margin:8px 0;font-size:14.5px;line-height:1.5}",
+   "ctx": "",
+   "sel": ".mail",
+   "decl": "background:var(--card);border:1px solid var(--line);border-radius:9px;padding:10px 14px;margin:8px 0;font-size:14.5px;line-height:1.5",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-4/index.html: :focus-visible also sets border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius"
+   ]
+  },
+  {
+   "key": " | .asst {display:block;background:var(--card);border-radius:7px;padding:10px 12px;color:var(--ink)}",
+   "ctx": "",
+   "sel": ".asst",
+   "decl": "display:block;background:var(--card);border-radius:7px;padding:10px 12px;color:var(--ink)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-4/index.html: :focus-visible also sets border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius"
+   ]
+  },
+  {
+   "key": " | .tsw {font-family:\"JetBrains Mono\",monospace;font-size:12px;background:var(--on-bg);color:var(--on);border-radius:6px;padding:4px 8px}",
+   "ctx": "",
+   "sel": ".tsw",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:12px;background:var(--on-bg);color:var(--on);border-radius:6px;padding:4px 8px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-4/index.html: :focus-visible also sets border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius"
+   ]
+  },
+  {
+   "key": " | .gap .gb i {display:block;height:100%}",
+   "ctx": "",
+   "sel": ".gap .gb i",
+   "decl": "display:block;height:100%",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-4/index.html: section.apx.dim>* also sets display"
+   ]
+  },
+  {
+   "key": " | .srow .sbar i {display:block;height:100%}",
+   "ctx": "",
+   "sel": ".srow .sbar i",
+   "decl": "display:block;height:100%",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-4/index.html: section.apx.dim>* also sets display"
+   ]
+  },
+  {
+   "key": " | #s0 .s0-fig svg {display:block;width:100%;height:auto;overflow:hidden}",
+   "ctx": "",
+   "sel": "#s0 .s0-fig svg",
+   "decl": "display:block;width:100%;height:auto;overflow:hidden",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "session-4/index.html: @media(max-width:640px) | body:not(.reveal) #ovr also sets display"
+   ]
+  },
+  {
+   "key": " | .cf-tabs a {font-family:\"JetBrains Mono\",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-bottom:none;border-radius:9px 9px 0 0;padding:10px 15px;white-space:nowrap;display:inline-flex;gap:8px;align-items:baseline}",
+   "ctx": "",
+   "sel": ".cf-tabs a",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-bottom:none;border-radius:9px 9px 0 0;padding:10px 15px;white-space:nowrap;display:inline-flex;gap:8px;align-items:baseline",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "cases/case-1.html: a.btn also sets display"
+   ]
+  },
+  {
+   "key": " | .doc-body li {margin:4px 0}",
+   "ctx": "",
+   "sel": ".doc-body li",
+   "decl": "margin:4px 0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "cases/case-1.html: .case-struct li,.case-open li also sets margin-top, margin-bottom"
+   ]
+  },
+  {
+   "key": " | .cf-steps li {margin:9px 0;font-size:15.5px;line-height:1.5}",
+   "ctx": "",
+   "sel": ".cf-steps li",
+   "decl": "margin:9px 0;font-size:15.5px;line-height:1.5",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "cases/case-1.html: .case-struct li,.case-open li also sets margin-top, margin-bottom"
+   ]
+  },
+  {
+   "key": " | .cf-sit li {padding:11px 0;border-top:1px solid rgba(14,90,85,.2);font-size:14.5px;line-height:1.5}",
+   "ctx": "",
+   "sel": ".cf-sit li",
+   "decl": "padding:11px 0;border-top:1px solid rgba(14,90,85,.2);font-size:14.5px;line-height:1.5",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "cases/case-1.html: .cf-steps li also sets font-size"
+   ]
+  },
+  {
+   "key": "@media(max-width:720px) | .cf-tabs a {padding:9px 11px;font-size:10.5px}",
+   "ctx": "@media(max-width:720px)",
+   "sel": ".cf-tabs a",
+   "decl": "padding:9px 11px;font-size:10.5px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "cases/case-1.html: .cf-tabs a also sets padding-top, padding-right, padding-bottom, padding-left"
+   ]
+  },
+  {
+   "key": "@media print | .doc-label {background:#fff;padding:4pt 12pt;font-size:7.5pt}",
+   "ctx": "@media print",
+   "sel": ".doc-label",
+   "decl": "background:#fff;padding:4pt 12pt;font-size:7.5pt",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "cases/case-1.html: @media(max-width:400px) | .doc-h,.doc-label also sets padding-right, padding-left"
+   ]
+  },
+  {
+   "key": "@media print | .doc-body {font-size:9pt;line-height:1.26;padding:6pt 12pt 8pt}",
+   "ctx": "@media print",
+   "sel": ".doc-body",
+   "decl": "font-size:9pt;line-height:1.26;padding:6pt 12pt 8pt",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "cases/case-1.html: @media(max-width:400px) | .doc-body also sets padding-top, padding-right, padding-bottom, padding-left"
+   ]
+  },
+  {
+   "key": "@media print | .doc-body li {margin:1pt 0}",
+   "ctx": "@media print",
+   "sel": ".doc-body li",
+   "decl": "margin:1pt 0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "cases/case-1.html: .case-struct li,.case-open li also sets margin-top, margin-bottom"
+   ]
+  }
+ ],
+ "reach": [
+  {
+   "key": " | .stamp {font-family:\"JetBrains Mono\",monospace;font-size:11.5px;letter-spacing:.05em;color:var(--muted);margin:18px 0 0}",
+   "ctx": "",
+   "sel": ".stamp",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:11.5px;letter-spacing:.05em;color:var(--muted);margin:18px 0 0",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on changelog/index.html"
+   ]
+  },
+  {
+   "key": " | #ovr {font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--on);white-space:nowrap;font-weight:500;border:1.5px solid var(--on);border-radius:6px;padding:4px 9px}",
+   "ctx": "",
+   "sel": "#ovr",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--on);white-space:nowrap;font-weight:500;border:1.5px solid var(--on);border-radius:6px;padding:4px 9px",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ],
+   "why": [
+    "could match on session-3/index.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:720px) | #ovr {display:none}",
+   "ctx": "@media(max-width:720px)",
+   "sel": "#ovr",
+   "decl": "display:none",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ],
+   "why": [
+    "could match on session-3/index.html"
+   ]
+  },
+  {
+   "key": " | .casebtn {font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;line-height:normal;background:none;border:1.5px solid var(--on);color:var(--on);border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap;text-decoration:none}",
+   "ctx": "",
+   "sel": ".casebtn",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;line-height:normal;background:none;border:1.5px solid var(--on);color:var(--on);border-radius:6px;padding:5px 10px;cursor:pointer;white-space:nowrap;text-decoration:none",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on session-2/index.html"
+   ]
+  },
+  {
+   "key": " | .casebtn:hover {background:var(--on-bg)}",
+   "ctx": "",
+   "sel": ".casebtn:hover",
+   "decl": "background:var(--on-bg)",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on session-2/index.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:720px) | .casebtn {flex:none}",
+   "ctx": "@media(max-width:720px)",
+   "sel": ".casebtn",
+   "decl": "flex:none",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on session-2/index.html"
+   ]
+  },
+  {
+   "key": " | a.btn {text-decoration:none;display:inline-block}",
+   "ctx": "",
+   "sel": "a.btn",
+   "decl": "text-decoration:none;display:inline-block",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-4/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | .gloss {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px 26px;margin:6px 0 0}",
+   "ctx": "",
+   "sel": ".gloss",
+   "decl": "display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px 26px;margin:6px 0 0",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ],
+   "why": [
+    "could match on changelog/index.html"
+   ]
+  },
+  {
+   "key": " | .gloss div {font-size:14.5px;line-height:1.45}",
+   "ctx": "",
+   "sel": ".gloss div",
+   "decl": "font-size:14.5px;line-height:1.45",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ],
+   "why": [
+    "could match on changelog/index.html"
+   ]
+  },
+  {
+   "key": " | .gloss dt {font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-weight:600;font-size:15px;letter-spacing:-.01em}",
+   "ctx": "",
+   "sel": ".gloss dt",
+   "decl": "font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-weight:600;font-size:15px;letter-spacing:-.01em",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ],
+   "why": [
+    "could match on changelog/index.html"
+   ]
+  },
+  {
+   "key": " | .gloss dd {margin:2px 0 0;color:var(--muted)}",
+   "ctx": "",
+   "sel": ".gloss dd",
+   "decl": "margin:2px 0 0;color:var(--muted)",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ],
+   "why": [
+    "could match on changelog/index.html"
+   ]
+  },
+  {
+   "key": " | .ritual {background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:20px 24px;margin:22px 0}",
+   "ctx": "",
+   "sel": ".ritual",
+   "decl": "background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:20px 24px;margin:22px 0",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ],
+   "why": [
+    "could match on changelog/index.html"
+   ]
+  },
+  {
+   "key": " | .ritual textarea:focus {outline:2.5px solid var(--on);outline-offset:2px}",
+   "ctx": "",
+   "sel": ".ritual textarea:focus",
+   "decl": "outline:2.5px solid var(--on);outline-offset:2px",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html"
+   ],
+   "why": [
+    "could match on changelog/index.html"
+   ]
+  },
+  {
+   "key": " | .pace {border-color:var(--gold)!important;background:var(--gold-bg)}",
+   "ctx": "",
+   "sel": ".pace",
+   "decl": "border-color:var(--gold)!important;background:var(--gold-bg)",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .pace p {margin:13px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted);max-width:70ch}",
+   "ctx": "",
+   "sel": ".pace p",
+   "decl": "margin:13px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted);max-width:70ch",
+   "pages": [
+    "session-1/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | body.core-only section.apx {display:none}",
+   "ctx": "",
+   "sel": "body.core-only section.apx",
+   "decl": "display:none",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on changelog/index.html"
+   ]
+  },
+  {
+   "key": "@media print | body.core-only section.apx,body.core-only section.apxdiv {display:none}",
+   "ctx": "@media print",
+   "sel": "body.core-only section.apx,body.core-only section.apxdiv",
+   "decl": "display:none",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on changelog/index.html"
+   ]
+  },
+  {
+   "key": " | .tg {display:flex;gap:13px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:11px;padding:15px 17px;cursor:pointer;transition:.18s;user-select:none}",
+   "ctx": "",
+   "sel": ".tg",
+   "decl": "display:flex;gap:13px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:11px;padding:15px 17px;cursor:pointer;transition:.18s;user-select:none",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .tg:hover {border-color:var(--off)}",
+   "ctx": "",
+   "sel": ".tg:hover",
+   "decl": "border-color:var(--off)",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .tg.on {border-color:var(--on);background:var(--on-bg)}",
+   "ctx": "",
+   "sel": ".tg.on",
+   "decl": "border-color:var(--on);background:var(--on-bg)",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .track {width:42px;height:24px;border-radius:12px;background:var(--off);position:relative;flex:none;margin-top:2px;transition:.2s}",
+   "ctx": "",
+   "sel": ".track",
+   "decl": "width:42px;height:24px;border-radius:12px;background:var(--off);position:relative;flex:none;margin-top:2px;transition:.2s",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | .tg.on .track {background:var(--on)}",
+   "ctx": "",
+   "sel": ".tg.on .track",
+   "decl": "background:var(--on)",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on changelog/index.html"
+   ]
+  },
+  {
+   "key": " | .tg .tl {font-family:\"Bricolage Grotesque\",sans-serif;font-weight:600;font-size:15px;display:block;line-height:1.3}",
+   "ctx": "",
+   "sel": ".tg .tl",
+   "decl": "font-family:\"Bricolage Grotesque\",sans-serif;font-weight:600;font-size:15px;display:block;line-height:1.3",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .tg .td {font-size:13px;color:var(--muted);line-height:1.45;display:block;margin-top:3px}",
+   "ctx": "",
+   "sel": ".tg .td",
+   "decl": "font-size:13px;color:var(--muted);line-height:1.45;display:block;margin-top:3px",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | table {width:100%;border-collapse:collapse;margin:24px 0;font-size:15.5px}",
+   "ctx": "",
+   "sel": "table",
+   "decl": "width:100%;border-collapse:collapse;margin:24px 0;font-size:15.5px",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | th {font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;text-align:left;color:var(--muted);border-bottom:2px solid var(--ink);padding:0 12px 9px 0}",
+   "ctx": "",
+   "sel": "th",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;text-align:left;color:var(--muted);border-bottom:2px solid var(--ink);padding:0 12px 9px 0",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | td {padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.5}",
+   "ctx": "",
+   "sel": "td",
+   "decl": "padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.5",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | .mk {width:24px;height:24px;border-radius:50%;border:2px solid var(--gold);flex:none;display:grid;place-items:center;font-family:\"JetBrains Mono\",monospace;font-size:13px;color:var(--gold);margin-top:1px}",
+   "ctx": "",
+   "sel": ".mk",
+   "decl": "width:24px;height:24px;border-radius:50%;border:2px solid var(--gold);flex:none;display:grid;place-items:center;font-family:\"JetBrains Mono\",monospace;font-size:13px;color:var(--gold);margin-top:1px",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | .ct {font-size:15.5px;line-height:1.48}",
+   "ctx": "",
+   "sel": ".ct",
+   "decl": "font-size:15.5px;line-height:1.48",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .ct b {font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px}",
+   "ctx": "",
+   "sel": ".ct b",
+   "decl": "font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .panel h4 {margin-bottom:6px}",
+   "ctx": "",
+   "sel": ".panel h4",
+   "decl": "margin-bottom:6px",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .do {font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--warn);background:var(--warn-bg);border-radius:5px;padding:5px 10px;display:inline-block;margin-bottom:14px}",
+   "ctx": "",
+   "sel": ".do",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--warn);background:var(--warn-bg);border-radius:5px;padding:5px 10px;display:inline-block;margin-bottom:14px",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | .ctrls {display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:13px;margin:24px 0}",
+   "ctx": "",
+   "sel": ".ctrls",
+   "decl": "display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:13px;margin:24px 0",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-2/index.html"
+   ]
+  },
+  {
+   "key": " | .tg input {position:absolute;opacity:0;width:0;height:0}",
+   "ctx": "",
+   "sel": ".tg input",
+   "decl": "position:absolute;opacity:0;width:0;height:0",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | textarea,input[type=text],input[type=number] {width:100%;font-family:\"JetBrains Mono\",monospace;font-size:14px;line-height:1.6;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:12px 14px;resize:vertical}",
+   "ctx": "",
+   "sel": "textarea,input[type=text],input[type=number]",
+   "decl": "width:100%;font-family:\"JetBrains Mono\",monospace;font-size:14px;line-height:1.6;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:12px 14px;resize:vertical",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | textarea:focus,input:focus {border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on-bg)}",
+   "ctx": "",
+   "sel": "textarea:focus,input:focus",
+   "decl": "border-color:var(--on);outline:none;box-shadow:0 0 0 4px var(--on-bg)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | label.fl {font-family:\"Bricolage Grotesque\",sans-serif;font-weight:600;font-size:15px;display:block;margin-bottom:5px}",
+   "ctx": "",
+   "sel": "label.fl",
+   "decl": "font-family:\"Bricolage Grotesque\",sans-serif;font-weight:600;font-size:15px;display:block;margin-bottom:5px",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-2/index.html"
+   ]
+  },
+  {
+   "key": " | .hint {font-size:13px;color:var(--muted);display:block;margin-bottom:8px;line-height:1.45}",
+   "ctx": "",
+   "sel": ".hint",
+   "decl": "font-size:13px;color:var(--muted);display:block;margin-bottom:8px;line-height:1.45",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .chip.done {opacity:.5}",
+   "ctx": "",
+   "sel": ".chip.done",
+   "decl": "opacity:.5",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .lbox:hover {border-color:var(--off)}",
+   "ctx": "",
+   "sel": ".lbox:hover",
+   "decl": "border-color:var(--off)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .placed {list-style:none;margin:0;padding:0 0 0 12px}",
+   "ctx": "",
+   "sel": ".placed",
+   "decl": "list-style:none;margin:0;padding:0 0 0 12px",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .placed li {margin:6px 0 0;padding:8px 11px;border-radius:8px;background:var(--card);border:1px solid var(--line);font-size:14px;line-height:1.4}",
+   "ctx": "",
+   "sel": ".placed li",
+   "decl": "margin:6px 0 0;padding:8px 11px;border-radius:8px;background:var(--card);border:1px solid var(--line);font-size:14px;line-height:1.4",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .placed li.good {border-color:var(--on)}",
+   "ctx": "",
+   "sel": ".placed li.good",
+   "decl": "border-color:var(--on)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .placed li.flag {border-color:var(--warn)}",
+   "ctx": "",
+   "sel": ".placed li.flag",
+   "decl": "border-color:var(--warn)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .placed li b {font-family:\"JetBrains Mono\",monospace;margin-right:7px}",
+   "ctx": "",
+   "sel": ".placed li b",
+   "decl": "font-family:\"JetBrains Mono\",monospace;margin-right:7px",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .placed li.good b {color:var(--on)}",
+   "ctx": "",
+   "sel": ".placed li.good b",
+   "decl": "color:var(--on)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .placed li.flag b {color:var(--warn)}",
+   "ctx": "",
+   "sel": ".placed li.flag b",
+   "decl": "color:var(--warn)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .placed li span {display:block;color:var(--muted);font-size:12.5px;margin-top:3px;line-height:1.4}",
+   "ctx": "",
+   "sel": ".placed li span",
+   "decl": "display:block;color:var(--muted);font-size:12.5px;margin-top:3px;line-height:1.4",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | ul.pts {margin:14px 0;padding-left:22px;max-width:64ch}",
+   "ctx": "",
+   "sel": "ul.pts",
+   "decl": "margin:14px 0;padding-left:22px;max-width:64ch",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | ul.pts li {margin:6px 0;line-height:1.55}",
+   "ctx": "",
+   "sel": "ul.pts li",
+   "decl": "margin:6px 0;line-height:1.55",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | figure {margin:28px 0;border:1px solid var(--line);border-radius:11px;background:var(--card);padding:18px}",
+   "ctx": "",
+   "sel": "figure",
+   "decl": "margin:28px 0;border:1px solid var(--line);border-radius:11px;background:var(--card);padding:18px",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | figure svg {width:100%;height:auto;display:block}",
+   "ctx": "",
+   "sel": "figure svg",
+   "decl": "width:100%;height:auto;display:block",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | figcaption {font-size:14px;color:var(--muted);margin-top:12px;padding:0 2px;line-height:1.55}",
+   "ctx": "",
+   "sel": "figcaption",
+   "decl": "font-size:14px;color:var(--muted);margin-top:12px;padding:0 2px;line-height:1.55",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | code {font-family:\"JetBrains Mono\",monospace;font-size:.88em;background:var(--off-bg);padding:2px 5px;border-radius:4px}",
+   "ctx": "",
+   "sel": "code",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:.88em;background:var(--off-bg);padding:2px 5px;border-radius:4px",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | pre {font-family:\"JetBrains Mono\",monospace;font-size:13px;line-height:1.7;background:var(--off-bg);border-radius:9px;padding:16px 18px;overflow-x:auto;white-space:pre-wrap;margin:16px 0}",
+   "ctx": "",
+   "sel": "pre",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:13px;line-height:1.7;background:var(--off-bg);border-radius:9px;padding:16px 18px;overflow-x:auto;white-space:pre-wrap;margin:16px 0",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | #ovr {position:fixed;right:14px;bottom:14px;z-index:50;font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:7px;padding:7px 11px}",
+   "ctx": "",
+   "sel": "#ovr",
+   "decl": "position:fixed;right:14px;bottom:14px;z-index:50;font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:7px;padding:7px 11px",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | body.reveal .qitem .qfb {display:block}",
+   "ctx": "",
+   "sel": "body.reveal .qitem .qfb",
+   "decl": "display:block",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | footer li {margin-bottom:9px;line-height:1.55}",
+   "ctx": "",
+   "sel": "footer li",
+   "decl": "margin-bottom:9px;line-height:1.55",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": "@media print | #rail,#ovr {display:none}",
+   "ctx": "@media print",
+   "sel": "#rail,#ovr",
+   "decl": "display:none",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": "@media(prefers-reduced-motion:reduce) | *,*::before,*::after {animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}",
+   "ctx": "@media(prefers-reduced-motion:reduce)",
+   "sel": "*,*::before,*::after",
+   "decl": "animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | .cmsg {font-family:\"JetBrains Mono\",monospace;font-size:12px}",
+   "ctx": "",
+   "sel": ".cmsg",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:12px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .redact {font-family:\"JetBrains Mono\",monospace;font-size:14px;line-height:2.15;background:var(--off-bg);border-radius:9px;padding:14px 16px}",
+   "ctx": "",
+   "sel": ".redact",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:14px;line-height:2.15;background:var(--off-bg);border-radius:9px;padding:14px 16px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-2/index.html"
+   ]
+  },
+  {
+   "key": " | p.cap {font-size:12.5px;margin:6px 0 0;max-width:none}",
+   "ctx": "",
+   "sel": "p.cap",
+   "decl": "font-size:12.5px;margin:6px 0 0;max-width:none",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .gap {display:grid;grid-template-columns:96px 1fr 44px;gap:10px;align-items:center;margin:8px 0 0}",
+   "ctx": "",
+   "sel": ".gap",
+   "decl": "display:grid;grid-template-columns:96px 1fr 44px;gap:10px;align-items:center;margin:8px 0 0",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | .gap .gn {text-align:right}",
+   "ctx": "",
+   "sel": ".gap .gn",
+   "decl": "text-align:right",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .ctl {font-family:\"JetBrains Mono\",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-left:4px}",
+   "ctx": "",
+   "sel": ".ctl",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-left:4px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .sliders {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4px 22px}",
+   "ctx": "",
+   "sel": ".sliders",
+   "decl": "display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4px 22px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on changelog/index.html"
+   ]
+  },
+  {
+   "key": " | .sl input[type=range] {margin:4px 0 10px}",
+   "ctx": "",
+   "sel": ".sl input[type=range]",
+   "decl": "margin:4px 0 10px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-2/index.html"
+   ]
+  },
+  {
+   "key": " | .stack {margin:10px 0 0}",
+   "ctx": "",
+   "sel": ".stack",
+   "decl": "margin:10px 0 0",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .s0 {background:var(--muted)}",
+   "ctx": "",
+   "sel": ".s0",
+   "decl": "background:var(--muted)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .s1 {background:var(--on)}",
+   "ctx": "",
+   "sel": ".s1",
+   "decl": "background:var(--on)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .s2 {background:var(--warn)}",
+   "ctx": "",
+   "sel": ".s2",
+   "decl": "background:var(--warn)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .s3 {background:var(--gold)}",
+   "ctx": "",
+   "sel": ".s3",
+   "decl": "background:var(--gold)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .k {display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:middle;margin:0 3px 0 10px}",
+   "ctx": "",
+   "sel": ".k",
+   "decl": "display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:middle;margin:0 3px 0 10px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | .stuck {display:flex;flex-direction:column;gap:7px;margin:14px 0 0}",
+   "ctx": "",
+   "sel": ".stuck",
+   "decl": "display:flex;flex-direction:column;gap:7px;margin:14px 0 0",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on changelog/index.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:640px) | body:not(.reveal) #ovr {display:none}",
+   "ctx": "@media(max-width:640px)",
+   "sel": "body:not(.reveal) #ovr",
+   "decl": "display:none",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": " | .bslot .lbox {opacity:1}",
+   "ctx": "",
+   "sel": ".bslot .lbox",
+   "decl": "opacity:1",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-3/index.html"
+   ]
+  },
+  {
+   "key": " | .qbtns button[aria-disabled=\"true\"]:not(.picked) {opacity:.55;cursor:default}",
+   "ctx": "",
+   "sel": ".qbtns button[aria-disabled=\"true\"]:not(.picked)",
+   "decl": "opacity:.55;cursor:default",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .sim .conf {margin-left:6px}",
+   "ctx": "",
+   "sel": ".sim .conf",
+   "decl": "margin-left:6px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": " | .nb {display:inline-flex;align-items:center;justify-content:center;flex:none;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--off);background:var(--card);color:var(--ink);font-family:\"JetBrains Mono\",monospace;font-size:12px;font-weight:500;line-height:1}",
+   "ctx": "",
+   "sel": ".nb",
+   "decl": "display:inline-flex;align-items:center;justify-content:center;flex:none;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--off);background:var(--card);color:var(--ink);font-family:\"JetBrains Mono\",monospace;font-size:12px;font-weight:500;line-height:1",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-3/index.html"
+   ]
+  },
+  {
+   "key": " | .nb.act {background:var(--ink);border-color:var(--ink);color:#fff}",
+   "ctx": "",
+   "sel": ".nb.act",
+   "decl": "background:var(--ink);border-color:var(--ink);color:#fff",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-3/index.html"
+   ]
+  },
+  {
+   "key": " | .nb.ok {background:var(--on);border-color:var(--on);color:#fff}",
+   "ctx": "",
+   "sel": ".nb.ok",
+   "decl": "background:var(--on);border-color:var(--on);color:#fff",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-3/index.html"
+   ]
+  },
+  {
+   "key": " | .nb.bad {background:var(--warn);border-color:var(--warn);color:#fff}",
+   "ctx": "",
+   "sel": ".nb.bad",
+   "decl": "background:var(--warn);border-color:var(--warn);color:#fff",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-3/index.html"
+   ]
+  },
+  {
+   "key": " | .nb.guess {border:1.5px dashed var(--gold);color:var(--gold)}",
+   "ctx": "",
+   "sel": ".nb.guess",
+   "decl": "border:1.5px dashed var(--gold);color:var(--gold)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-3/index.html"
+   ]
+  },
+  {
+   "key": " | .mpanel.keyhide {font-family:\"Source Serif 4\",serif;font-size:15px;line-height:1.55}",
+   "ctx": "",
+   "sel": ".mpanel.keyhide",
+   "decl": "font-family:\"Source Serif 4\",serif;font-size:15px;line-height:1.55",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-3/index.html"
+   ]
+  },
+  {
+   "key": " | .mpanel.keyhide .hd {font-family:\"JetBrains Mono\",monospace}",
+   "ctx": "",
+   "sel": ".mpanel.keyhide .hd",
+   "decl": "font-family:\"JetBrains Mono\",monospace",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-3/index.html"
+   ]
+  },
+  {
+   "key": " | body:not(.reveal) #ovr {display:none}",
+   "ctx": "",
+   "sel": "body:not(.reveal) #ovr",
+   "decl": "display:none",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-0.1/index.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:560px) | .slide .mpanel {padding:14px 16px}",
+   "ctx": "@media(max-width:560px)",
+   "sel": ".slide .mpanel",
+   "decl": "padding:14px 16px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on session-3/index.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:640px) | html {scroll-padding-bottom:64px}",
+   "ctx": "@media(max-width:640px)",
+   "sel": "html",
+   "decl": "scroll-padding-bottom:64px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | .doc {position:relative;background:var(--paper);border:1px solid var(--paper-line);border-left:5px solid var(--case-accent);border-radius:3px 9px 9px 3px;margin:26px 0;box-shadow:0 1px 0 rgba(0,0,0,.04),0 10px 26px rgba(70,30,40,.09)}",
+   "ctx": "",
+   "sel": ".doc",
+   "decl": "position:relative;background:var(--paper);border:1px solid var(--paper-line);border-left:5px solid var(--case-accent);border-radius:3px 9px 9px 3px;margin:26px 0;box-shadow:0 1px 0 rgba(0,0,0,.04),0 10px 26px rgba(70,30,40,.09)",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | .cf-flag {background:#FBE6B6;border-bottom:2px wavy var(--warn);padding:0 3px;border-radius:2px;font-weight:600;white-space:nowrap}",
+   "ctx": "",
+   "sel": ".cf-flag",
+   "decl": "background:#FBE6B6;border-bottom:2px wavy var(--warn);padding:0 3px;border-radius:2px;font-weight:600;white-space:nowrap",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": " | .cf-flag::before {content:\"\\2691\\00a0\"}",
+   "ctx": "",
+   "sel": ".cf-flag::before",
+   "decl": "content:\"\\2691\\00a0\"",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:400px) | .cf-log td.res {white-space:normal}",
+   "ctx": "@media(max-width:400px)",
+   "sel": ".cf-log td.res",
+   "decl": "white-space:normal",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-4.html"
+   ],
+   "why": [
+    "could match on cases/case-2.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:400px) | .cf-det {overflow-x:auto}",
+   "ctx": "@media(max-width:400px)",
+   "sel": ".cf-det",
+   "decl": "overflow-x:auto",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-4.html"
+   ],
+   "why": [
+    "could match on cases/case-2.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:400px) | .doc-body {padding:16px 16px 20px 14px}",
+   "ctx": "@media(max-width:400px)",
+   "sel": ".doc-body",
+   "decl": "padding:16px 16px 20px 14px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-4.html"
+   ],
+   "why": [
+    "could match on cases/case-2.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:400px) | .doc-h,.doc-label {padding-left:14px;padding-right:14px}",
+   "ctx": "@media(max-width:400px)",
+   "sel": ".doc-h,.doc-label",
+   "decl": "padding-left:14px;padding-right:14px",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-4.html"
+   ],
+   "why": [
+    "could match on cases/case-2.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:400px) | .cf-go .btn {display:block;text-align:center}",
+   "ctx": "@media(max-width:400px)",
+   "sel": ".cf-go .btn",
+   "decl": "display:block;text-align:center",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-4.html"
+   ],
+   "why": [
+    "could match on cases/case-2.html"
+   ]
+  },
+  {
+   "key": "@media print | main section.slide:not(#deliverable) {display:none}",
+   "ctx": "@media print",
+   "sel": "main section.slide:not(#deliverable)",
+   "decl": "display:none",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": "@media print | #deliverable.slide {padding:0;border:0;page-break-inside:auto}",
+   "ctx": "@media print",
+   "sel": "#deliverable.slide",
+   "decl": "padding:0;border:0;page-break-inside:auto",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on session-1/index.html"
+   ]
+  },
+  {
+   "key": "@media print | #deliverable .wrap,#deliverable .body {max-width:none;padding:0}",
+   "ctx": "@media print",
+   "sel": "#deliverable .wrap,#deliverable .body",
+   "decl": "max-width:none;padding:0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": "@media print | #deliverable .eyebrow,#deliverable h2 {display:none}",
+   "ctx": "@media print",
+   "sel": "#deliverable .eyebrow,#deliverable h2",
+   "decl": "display:none",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc {box-shadow:none;border:1px solid #999;border-left:4px solid #6B1E2E;margin:0 0 12pt;break-inside:auto;page-break-inside:auto}",
+   "ctx": "@media print",
+   "sel": ".doc",
+   "decl": "box-shadow:none;border:1px solid #999;border-left:4px solid #6B1E2E;margin:0 0 12pt;break-inside:auto;page-break-inside:auto",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc+.doc {break-before:page;page-break-before:always}",
+   "ctx": "@media print",
+   "sel": ".doc+.doc",
+   "decl": "break-before:page;page-break-before:always",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": "@media print | .cf-flag {background:none;border-bottom:1.5px solid #000}",
+   "ctx": "@media print",
+   "sel": ".cf-flag",
+   "decl": "background:none;border-bottom:1.5px solid #000",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on index.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:720px) | .doc-body {padding:16px 16px 20px 14px}",
+   "ctx": "@media(max-width:720px)",
+   "sel": ".doc-body",
+   "decl": "padding:16px 16px 20px 14px",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on cases/case-1.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:720px) | .doc-h,.doc-label {padding-left:14px;padding-right:14px}",
+   "ctx": "@media(max-width:720px)",
+   "sel": ".doc-h,.doc-label",
+   "decl": "padding-left:14px;padding-right:14px",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on cases/case-1.html"
+   ]
+  },
+  {
+   "key": "@media(max-width:720px) | .cf-go .btn {display:block;text-align:center}",
+   "ctx": "@media(max-width:720px)",
+   "sel": ".cf-go .btn",
+   "decl": "display:block;text-align:center",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on cases/case-1.html"
+   ]
+  },
+  {
+   "key": " | .cf-log.wide {min-width:760px}",
+   "ctx": "",
+   "sel": ".cf-log.wide",
+   "decl": "min-width:760px",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-4.html"
+   ],
+   "why": [
+    "could match on cases/case-5.html"
+   ]
+  },
+  {
+   "key": " | .cf-log td .conf {margin-left:4px}",
+   "ctx": "",
+   "sel": ".cf-log td .conf",
+   "decl": "margin-left:4px",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on cases/case-1.html"
+   ]
+  },
+  {
+   "key": " | .cf-log td.res {white-space:nowrap}",
+   "ctx": "",
+   "sel": ".cf-log td.res",
+   "decl": "white-space:nowrap",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-4.html"
+   ],
+   "why": [
+    "could match on cases/case-1.html"
+   ]
+  },
+  {
+   "key": "@media print | .cf-lw {overflow:visible}",
+   "ctx": "@media print",
+   "sel": ".cf-lw",
+   "decl": "overflow:visible",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on cases/case-4.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-body .cf-log.wide {min-width:0}",
+   "ctx": "@media print",
+   "sel": ".doc-body .cf-log.wide",
+   "decl": "min-width:0",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on cases/case-4.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-body .cf-log {font-size:7.5pt}",
+   "ctx": "@media print",
+   "sel": ".doc-body .cf-log",
+   "decl": "font-size:7.5pt",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on cases/case-1.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-body .cf-pre-note {font-size:7.5pt;line-height:1.25;margin:4pt 0 0}",
+   "ctx": "@media print",
+   "sel": ".doc-body .cf-pre-note",
+   "decl": "font-size:7.5pt;line-height:1.25;margin:4pt 0 0",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on cases/case-1.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-body .cf-log th {padding:0 5pt 2pt 0}",
+   "ctx": "@media print",
+   "sel": ".doc-body .cf-log th",
+   "decl": "padding:0 5pt 2pt 0",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on cases/case-1.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-body .cf-log td {padding:2pt 5pt 2pt 0;line-height:1.25}",
+   "ctx": "@media print",
+   "sel": ".doc-body .cf-log td",
+   "decl": "padding:2pt 5pt 2pt 0;line-height:1.25",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on cases/case-1.html"
+   ]
+  },
+  {
+   "key": "@media print | .doc-body .cf-log tr.bad td {background:none}",
+   "ctx": "@media print",
+   "sel": ".doc-body .cf-log tr.bad td",
+   "decl": "background:none",
+   "pages": [
+    "cases/case-2.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "could match on cases/case-1.html"
+   ]
+  }
+ ],
+ "other": [
+  {
+   "key": " | #caseBtn.casefab {position:fixed;right:14px;bottom:56px;z-index:60}",
+   "ctx": "",
+   "sel": "#caseBtn.casefab",
+   "decl": "position:fixed;right:14px;bottom:56px;z-index:60",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-tabs {display:flex;gap:6px;margin:0 0 16px;border-bottom:1px solid var(--line)}",
+   "ctx": "",
+   "sel": ".case-tabs",
+   "decl": "display:flex;gap:6px;margin:0 0 16px;border-bottom:1px solid var(--line)",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-tab {font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);padding:8px 12px;cursor:pointer;margin-bottom:-1px}",
+   "ctx": "",
+   "sel": ".case-tab",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);padding:8px 12px;cursor:pointer;margin-bottom:-1px",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-tab:hover {color:var(--ink)}",
+   "ctx": "",
+   "sel": ".case-tab:hover",
+   "decl": "color:var(--ink)",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-tab.on {color:var(--on);border-bottom-color:var(--on)}",
+   "ctx": "",
+   "sel": ".case-tab.on",
+   "decl": "color:var(--on);border-bottom-color:var(--on)",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-tab:focus-visible {outline:2px solid var(--on);outline-offset:3px;border-radius:4px}",
+   "ctx": "",
+   "sel": ".case-tab:focus-visible",
+   "decl": "outline:2px solid var(--on);outline-offset:3px;border-radius:4px",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-panel:focus {outline:none}",
+   "ctx": "",
+   "sel": ".case-panel:focus",
+   "decl": "outline:none",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-panel.case-off {display:none}",
+   "ctx": "",
+   "sel": ".case-panel.case-off",
+   "decl": "display:none",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-lede {font-size:14.5px;color:var(--muted);margin:0 0 14px}",
+   "ctx": "",
+   "sel": ".case-lede",
+   "decl": "font-size:14.5px;color:var(--muted);margin:0 0 14px",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-t {margin:0 0 14px}",
+   "ctx": "",
+   "sel": ".case-t",
+   "decl": "margin:0 0 14px",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-t td.case-k {width:30%}",
+   "ctx": "",
+   "sel": ".case-t td.case-k",
+   "decl": "width:30%",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-h {font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);margin:20px 0 8px}",
+   "ctx": "",
+   "sel": ".case-h",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--on);margin:20px 0 8px",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-struct,.case-open {margin:0 0 14px;padding-left:20px}",
+   "ctx": "",
+   "sel": ".case-struct,.case-open",
+   "decl": "margin:0 0 14px;padding-left:20px",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-struct li,.case-open li {margin:0 0 7px}",
+   "ctx": "",
+   "sel": ".case-struct li,.case-open li",
+   "decl": "margin:0 0 7px",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-src {font-size:13px;color:var(--muted);margin:16px 0 0}",
+   "ctx": "",
+   "sel": ".case-src",
+   "decl": "font-size:13px;color:var(--muted);margin:16px 0 0",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-stamp {margin:18px 0 0;text-align:right}",
+   "ctx": "",
+   "sel": ".case-stamp",
+   "decl": "margin:18px 0 0;text-align:right",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-stamp .mono {font-size:10.5px;letter-spacing:.08em;color:var(--muted);opacity:.75}",
+   "ctx": "",
+   "sel": ".case-stamp .mono",
+   "decl": "font-size:10.5px;letter-spacing:.08em;color:var(--muted);opacity:.75",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-spine {border:1.5px solid var(--on);border-radius:10px;padding:16px 18px;margin:20px 0 0;background:var(--on-bg)}",
+   "ctx": "",
+   "sel": ".case-spine",
+   "decl": "border:1.5px solid var(--on);border-radius:10px;padding:16px 18px;margin:20px 0 0;background:var(--on-bg)",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-spine-h {display:block;font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--on);margin:0 0 8px}",
+   "ctx": "",
+   "sel": ".case-spine-h",
+   "decl": "display:block;font-family:\"JetBrains Mono\",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--on);margin:0 0 8px",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-spine-q {margin:0;font-size:16px;line-height:1.55}",
+   "ctx": "",
+   "sel": ".case-spine-q",
+   "decl": "margin:0;font-size:16px;line-height:1.55",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .case-spine-n {margin:10px 0 0;font-size:13.5px;color:var(--muted)}",
+   "ctx": "",
+   "sel": ".case-spine-n",
+   "decl": "margin:10px 0 0;font-size:13.5px;color:var(--muted)",
+   "pages": [
+    "index.html",
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | h1,h2,h3,h4 {font-family:\"Bricolage Grotesque\",system-ui,sans-serif;letter-spacing:-.025em;margin:0}",
+   "ctx": "",
+   "sel": "h1,h2,h3,h4",
+   "decl": "font-family:\"Bricolage Grotesque\",system-ui,sans-serif;letter-spacing:-.025em;margin:0",
+   "pages": [
+    "index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": "@media(max-width:720px) | #caseBtn {flex:none}",
+   "ctx": "@media(max-width:720px)",
+   "sel": "#caseBtn",
+   "decl": "flex:none",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .eyebrow {font-family:\"JetBrains Mono\",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--on);font-weight:500;margin-bottom:14px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}",
+   "ctx": "",
+   "sel": ".eyebrow",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--on);font-weight:500;margin-bottom:14px;display:flex;gap:14px;flex-wrap:wrap;align-items:center",
+   "pages": [
+    "session-0.1/index.html",
+    "session-1/index.html",
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | :focus-visible {outline:2.5px solid var(--on);outline-offset:3px;border-radius:4px}",
+   "ctx": "",
+   "sel": ":focus-visible",
+   "decl": "outline:2.5px solid var(--on);outline-offset:3px;border-radius:4px",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | .check {display:flex;gap:13px;align-items:flex-start;background:var(--gold-bg);border:1.5px solid #DFD3AF;border-radius:11px;padding:14px 17px;margin:22px 0}",
+   "ctx": "",
+   "sel": ".check",
+   "decl": "display:flex;gap:13px;align-items:flex-start;background:var(--gold-bg);border:1.5px solid #DFD3AF;border-radius:11px;padding:14px 17px;margin:22px 0",
+   "pages": [
+    "session-1/index.html",
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | h4 {font-size:16.5px;font-weight:600;letter-spacing:-.01em}",
+   "ctx": "",
+   "sel": "h4",
+   "decl": "font-size:16.5px;font-weight:600;letter-spacing:-.01em",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": "@media(min-width:1340px) | #rail {display:block}",
+   "ctx": "@media(min-width:1340px)",
+   "sel": "#rail",
+   "decl": "display:block",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | input[type=range]::-webkit-slider-thumb {-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--on);margin-top:-9px;cursor:pointer;border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.2)}",
+   "ctx": "",
+   "sel": "input[type=range]::-webkit-slider-thumb",
+   "decl": "-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--on);margin-top:-9px;cursor:pointer;border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.2)",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | input[type=range]::-moz-range-thumb {width:20px;height:20px;border-radius:50%;background:var(--on);cursor:pointer;border:3px solid #fff}",
+   "ctx": "",
+   "sel": "input[type=range]::-moz-range-thumb",
+   "decl": "width:20px;height:20px;border-radius:50%;background:var(--on);cursor:pointer;border:3px solid #fff",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | .conf.h {background:var(--on-bg);color:var(--on)}",
+   "ctx": "",
+   "sel": ".conf.h",
+   "decl": "background:var(--on-bg);color:var(--on)",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | .conf.m {background:var(--gold-bg);color:var(--gold)}",
+   "ctx": "",
+   "sel": ".conf.m",
+   "decl": "background:var(--gold-bg);color:var(--gold)",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | .conf.l {background:var(--warn-bg);color:var(--warn)}",
+   "ctx": "",
+   "sel": ".conf.l",
+   "decl": "background:var(--warn-bg);color:var(--warn)",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | .sim {font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--warn);background:var(--warn-bg);border-radius:5px;padding:5px 9px;display:inline-block;margin-bottom:6px}",
+   "ctx": "",
+   "sel": ".sim",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--warn);background:var(--warn-bg);border-radius:5px;padding:5px 9px;display:inline-block;margin-bottom:6px",
+   "pages": [
+    "session-2/index.html",
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | #caseBtn.casefab {position:fixed;right:14px;top:14px;z-index:60}",
+   "ctx": "",
+   "sel": "#caseBtn.casefab",
+   "decl": "position:fixed;right:14px;top:14px;z-index:60",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .eyebrow {font-family:\"JetBrains Mono\",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--on);font-weight:500;margin-bottom:15px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}",
+   "ctx": "",
+   "sel": ".eyebrow",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--on);font-weight:500;margin-bottom:15px;display:flex;gap:14px;flex-wrap:wrap;align-items:center",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | .conf {font-family:\"JetBrains Mono\",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:4px;font-weight:500;vertical-align:middle;white-space:nowrap}",
+   "ctx": "",
+   "sel": ".conf",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:4px;font-weight:500;vertical-align:middle;white-space:nowrap",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | .src {font-family:\"JetBrains Mono\",monospace;font-size:11.5px;line-height:1.6;color:var(--muted);margin:12px 0 0;padding-top:10px;border-top:1px solid var(--line);max-width:none}",
+   "ctx": "",
+   "sel": ".src",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:11.5px;line-height:1.6;color:var(--muted);margin:12px 0 0;padding-top:10px;border-top:1px solid var(--line);max-width:none",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | .chip {width:100%}",
+   "ctx": "",
+   "sel": ".chip",
+   "decl": "width:100%",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | .chip:hover {border-color:var(--off)}",
+   "ctx": "",
+   "sel": ".chip:hover",
+   "decl": "border-color:var(--off)",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | .chip.act {border-color:var(--on);background:var(--on-bg);font-weight:600}",
+   "ctx": "",
+   "sel": ".chip.act",
+   "decl": "border-color:var(--on);background:var(--on-bg);font-weight:600",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": "@media(max-width:880px) | .sorter {grid-template-columns:1fr}",
+   "ctx": "@media(max-width:880px)",
+   "sel": ".sorter",
+   "decl": "grid-template-columns:1fr",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | .lbox {border:1.5px solid var(--line);border-radius:11px;padding:15px 17px;background:var(--card);transition:.25s;cursor:pointer;text-align:left;width:100%;font-family:inherit;color:inherit}",
+   "ctx": "",
+   "sel": ".lbox",
+   "decl": "border:1.5px solid var(--line);border-radius:11px;padding:15px 17px;background:var(--card);transition:.25s;cursor:pointer;text-align:left;width:100%;font-family:inherit;color:inherit",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | .qtext {font-family:\"JetBrains Mono\",monospace;font-size:14px;margin-bottom:12px;display:block;line-height:1.65;background:var(--off-bg);padding:12px 14px;border-radius:8px}",
+   "ctx": "",
+   "sel": ".qtext",
+   "decl": "font-family:\"JetBrains Mono\",monospace;font-size:14px;margin-bottom:12px;display:block;line-height:1.65;background:var(--off-bg);padding:12px 14px;border-radius:8px",
+   "pages": [
+    "session-3/index.html",
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | .topbar-case #caseBtn.casefab {position:static}",
+   "ctx": "",
+   "sel": ".topbar-case #caseBtn.casefab",
+   "decl": "position:static",
+   "pages": [
+    "session-3/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": "@media print | #caseBtn {display:none}",
+   "ctx": "@media print",
+   "sel": "#caseBtn",
+   "decl": "display:none",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .sim {background:transparent;color:var(--muted);border:1px dashed var(--off);border-radius:5px;padding:4px 9px;letter-spacing:.09em;line-height:1.5;font-size:10.5px}",
+   "ctx": "",
+   "sel": ".sim",
+   "decl": "background:transparent;color:var(--muted);border:1px dashed var(--off);border-radius:5px;padding:4px 9px;letter-spacing:.09em;line-height:1.5;font-size:10.5px",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": "@media(max-width:640px) | #caseBtn.casefab {top:auto;bottom:12px;right:10px;padding:6px 9px;font-size:9.5px;box-shadow:0 2px 8px rgba(0,0,0,.12)}",
+   "ctx": "@media(max-width:640px)",
+   "sel": "#caseBtn.casefab",
+   "decl": "top:auto;bottom:12px;right:10px;padding:6px 9px;font-size:9.5px;box-shadow:0 2px 8px rgba(0,0,0,.12)",
+   "pages": [
+    "session-4/index.html",
+    "session-5/index.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | :root {--case-accent:#6B1E2E;--case-deep:#45101D;--case-tint:#F7EDEF;--case-line:#DCC3C8;--paper:#FFFDF7;--paper-line:#E4DDCB;--paper-head:#F6F0E1}",
+   "ctx": "",
+   "sel": ":root",
+   "decl": "--case-accent:#6B1E2E;--case-deep:#45101D;--case-tint:#F7EDEF;--case-line:#DCC3C8;--paper:#FFFDF7;--paper-line:#E4DDCB;--paper-head:#F6F0E1",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept",
+    "page tokens"
+   ]
+  },
+  {
+   "key": " | .eyebrow {color:var(--case-accent)}",
+   "ctx": "",
+   "sel": ".eyebrow",
+   "decl": "color:var(--case-accent)",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": " | @page {margin:.5in}",
+   "ctx": "",
+   "sel": "@page",
+   "decl": "margin:.5in",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a face or page rule"
+   ]
+  },
+  {
+   "key": "@media print | body {padding-top:0;background:#fff;font-size:11pt}",
+   "ctx": "@media print",
+   "sel": "body",
+   "decl": "padding-top:0;background:#fff;font-size:11pt",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a variation of a fence rule that was kept"
+   ]
+  },
+  {
+   "key": "@media print | #topbar,#rail,#caseModal,.cf-band,footer,.noprint {display:none!important}",
+   "ctx": "@media print",
+   "sel": "#topbar,#rail,#caseModal,.cf-band,footer,.noprint",
+   "decl": "display:none!important",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "a case-viewer rule: verify-case.mjs requires it in the page"
+   ]
+  },
+  {
+   "key": " | .cf-band-in {padding-top:34px;padding-bottom:0}",
+   "ctx": "",
+   "sel": ".cf-band-in",
+   "decl": "padding-top:34px;padding-bottom:0",
+   "pages": [
+    "cases/case-1.html",
+    "cases/case-2.html",
+    "cases/case-3.html",
+    "cases/case-4.html",
+    "cases/case-5.html"
+   ],
+   "why": [
+    "moved back: its 34px padding reads as a case figure to scripts/case-inventory.mjs once it is in every fence, which grew the drift report"
+   ]
+  }
+ ]
+}

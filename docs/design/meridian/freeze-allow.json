@@ -1,0 +1,18 @@
+{
+ "session-2/index.html": [
+  {
+   "hash": "52a3f46811ef",
+   "block": "2 of 3",
+   "changes": 6,
+   "reason": "The unchosen mark (a hollow circle) on the rubric, checklist, question and brief buttons was written by the script in var(--off), the context grey: 2.18:1 on its white ground. Six occurrences of that colour, in the mark's colour expression only, now read var(--muted) (6.46:1). Nothing else in the block changed. Instructor's instruction of 2026-11-16; D-133."
+  }
+ ],
+ "session-3/index.html": [
+  {
+   "hash": "0d2d649dbecc",
+   "block": "2 of 3",
+   "changes": 6,
+   "reason": "The explanation line under each answer key was written by the script as the literal #6F7B78 (the old muted grey): 3.71:1 on the key's teal tint. Six occurrences of style=\"color:#6F7B78\" now read style=\"color:var(--muted)\" (5.45:1 on the tint). The other uses of that literal in the block (circle and chart-label fills, a data colour) are not text below 4.5:1 and are unchanged. Instructor's instruction of 2026-11-16; D-133."
+  }
+ ]
+}

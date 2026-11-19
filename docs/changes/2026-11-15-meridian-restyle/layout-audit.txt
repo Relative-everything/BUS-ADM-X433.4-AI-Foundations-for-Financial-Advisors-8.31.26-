@@ -1,0 +1,17 @@
+ok    index.html
+ok    session-0.1/index.html
+ok    session-1/index.html
+ok    session-2/index.html
+ok    session-3/index.html
+ok    session-4/index.html
+MORE  session-5/index.html
+        spill at 390 px: 3 -> 4
+          new: #s3 #s3Inputs span.s3-tt "The note plus a "
+ok    cases/case-1.html
+ok    cases/case-2.html
+ok    cases/case-3.html
+ok    cases/case-4.html
+ok    cases/case-5.html
+
+totals, ref -> tree: svg-overlap 85 -> 82, svg-outside 0 -> 0, spill 155 -> 101, ctl-overlap 2 -> 2
+summary: 1 page(s) have more layout defects than the ref

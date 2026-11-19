@@ -1,0 +1,17 @@
+same  index.html  280 text nodes, 4 views
+same  session-0.1/index.html  1004 text nodes, 4 views
+same  session-1/index.html  1736 text nodes, 4 views
+same  session-2/index.html  1716 text nodes, 4 views
+same  session-3/index.html  1568 text nodes, 4 views
+same  session-4/index.html  3463 text nodes, 4 views
+same  session-5/index.html  2745 text nodes, 4 views
+same  cases/case-1.html  633 text nodes, 4 views
+same  cases/case-2.html  617 text nodes, 4 views
+same  cases/case-3.html  751 text nodes, 4 views
+same  cases/case-4.html  894 text nodes, 4 views
+same  cases/case-5.html  614 text nodes, 4 views
+
+R3 generated content that differs in count (string: before -> after), all pages and views:
+        none
+
+summary: what a reader sees is the same on all 12 pages (text, visibility, controls, media, clipping)

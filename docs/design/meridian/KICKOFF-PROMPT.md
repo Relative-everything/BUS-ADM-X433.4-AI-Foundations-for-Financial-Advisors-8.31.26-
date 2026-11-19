@@ -1,65 +1,76 @@
 # Kickoff prompt for the Meridian restyle
 
+Revised 2026-11-15 to the prompt the restyle was actually started with. It replaces the page-by-page draft written earlier the same day: the work now runs by class of CSS rule across all twelve served pages at once, in three steps on one branch, with one planned pause. Where this file and `MIGRATION.md` once differed from the prompt below, the prompt won and both files were updated to match it.
+
 Paste everything in the block below into a new Claude Code session on this repository.
 
 ```text
-Restyle this whole course site to the Meridian design system. This is a presentation-only change: every word, figure, source, chip, case fact, script and generated region is frozen. If a step would change content, stop and ask me.
+Unify this course site's UI under the Meridian design system, in one session, in three steps on one branch. Content is frozen throughout: every word, figure, source, chip, case fact, script and generated region stays as it is. If a step would change content, stop and ask me.
+
+Where this prompt and docs/design/meridian/MIGRATION.md or KICKOFF-PROMPT.md differ, this prompt wins. Your first commit updates those two files to match it.
 
 <read_first>
-Read these in full before any edit, in this order:
 1. CLAUDE.md, then PEDAGOGY.md, MAINTAINING.md and EDITORIAL.md as it directs.
-2. docs/design/meridian/MIGRATION.md. It is the plan. Follow its order of work.
-3. docs/design/meridian/DESIGN.md and tokens.json. They are the design rules.
-4. docs/design/meridian/assets/ (the three style sheets and outline.js) and build-drafts.py.
-5. Register rows DW-209, DW-210 and DW-211 in docs/deferred-work.md, and decisions D-117 to D-121 in docs/next-term/DECISIONS.md.
+2. docs/design/meridian/: DESIGN.md, tokens.json, MIGRATION.md, assets/, build-drafts.py, content-freeze.mjs.
+3. Register rows DW-209 to DW-211 and decisions D-117 to D-121.
 </read_first>
 
-<freeze>
-Before the first edit:
-- Confirm the working tree is clean and matches origin/main.
-- Run: git rev-parse origin/main > docs/design/meridian/FREEZE_REF
-- Run: node docs/design/meridian/content-freeze.mjs   (it must pass on the untouched tree)
-- Run MAINTAINING's full gate and record the result as the baseline.
-- Save screenshots of all twelve served pages at 1440, 1024, 390 and 320 px wide.
+<durable_state>
+This session is long and its early context will be summarized. Before any page edit, create docs/changes/<today>-meridian-restyle/ with plan.md and ledger.md. The ledger is the source of truth for progress: after every completed unit of work, append what was done, the check results, and the exact next action, then commit and push. If you are ever unsure where you are, read the ledger, not your memory. A new session must be able to resume from the ledger alone.
+</durable_state>
 
-After every step, on every page you touched, run the freeze check again. A failure means content changed. Restore it. The only permitted exception is a script block that must emit data-commit: add it to docs/design/meridian/freeze-allow.json with a reason and log a decision.
-</freeze>
+<method>
+Work by class of CSS rule across all twelve served pages at once, not page by page. Measured on main: 6,183 page-local rules, of which 408 are identical to a rule in the STYLE fence, 267 share a selector with a fence rule but differ (113 distinct), and the rest exist only in pages, 39% of those bytes repeated on two or more pages.
 
-<scope>
-In scope: colours, type, spacing, radii, borders, the app bar, the outline sidebar with earned checks (commits only), evidence-chip styling, callout styling, and the CSS of every existing component.
+Build two tools first and keep them in docs/design/meridian/:
+- ui-audit: classifies every page-local rule (identical, variation, shared by 2+ pages, unique) and counts off-token values per page (literal colours, font sizes outside the eight-step scale, radii outside the three, monospace label rules).
+- style-snapshot: records the computed style of every element on every served page at 1440, 1024 and 320 px, and compares two snapshots.
+Test each tool on a deliberately altered scratch copy before trusting it.
+</method>
 
-Out of scope, and each stays exactly as it is: all text, figure titles and captions, source lines, chips and their keys, the Cole case, FACTS and SOURCES, the order and number of sections, timings, and every generated or versioned region except the STYLE fence. Do not rewrite figure titles, move source lines into margin notes, or add section findings. MIGRATION.md lists these as later work.
-</scope>
+<step_1_consolidate>
+Goal: one shared style source, and no page looks different.
+1. Confirm a clean tree matching origin/main. Write git rev-parse origin/main to docs/design/meridian/FREEZE_REF. Run content-freeze.mjs, the full gate and style-snapshot as the baseline. Save screenshots of every page at 1440 and 390 px.
+2. Delete the rules identical to a fence rule, by script.
+3. Write one table of the distinct variations: selector, the fence's declarations, the page's declarations, which pages, and your recommendation (keep or drop) with a reason. THIS IS THE ONE PLANNED PAUSE: give me the table and wait. Apply my answers.
+4. Point the sweep, scripts/verify-style.mjs and scripts/build-changelog.py at the repository's copy of the style sheets with the sweep's --assets option, and update MAINTAINING to say so. Move page-only rules that are identical on two or more pages into the shared style sheets, through the sweep. If style-snapshot shows a moved rule losing a cascade fight it used to win, move it back and note it.
+Checkpoint 1 is reached when: style-snapshot matches the baseline everywhere except the variations I chose to drop; content-freeze passes; the gate is green or each red line is explained. Commit, push, and continue to step 2 without waiting.
+</step_1_consolidate>
 
-<known_obstacles>
-- The skill is not updated yet, by my decision. The sweep must read docs/design/meridian/assets through its --assets option, and scripts/verify-style.mjs and scripts/build-changelog.py must be pointed at the same place. Update MAINTAINING to say so.
-- Page-local CSS repeats fence selectors and wins the cascade. Delete identical copies; keep deliberate variations with a comment and list each one for me.
-- Sessions 4 and 5 carry 141 to 186 KB of page-local component CSS. Convert it with the mechanical rules in build-drafts.py, then check by screenshot.
-- The console regions in Sessions 1 and 4 are byte-paired. Do not edit them.
-- If you run the gate twice on one tree, delete .verify-shots/ first (DW-211).
-</known_obstacles>
+<step_2_restyle>
+1. Replace the shared style sheets with the Meridian drafts, carrying over the rules promoted in step 1, converted to tokens. Sweep.
+2. Convert the remaining page-local CSS with the mechanical rules in build-drafts.py.
+Checkpoint 2 is reached when: content-freeze passes; ui-audit's off-token counts are zero or each remaining value is listed with a reason; no horizontal scroll at 320 px; every text colour is 4.5:1 or better on its ground; after-screenshots of every page at 1440 and 390 px are saved beside the before set. Commit, push, and continue to step 3 without waiting.
+</step_2_restyle>
 
-<how_to_work>
-Work page by page in the order MIGRATION.md gives, Session 2 first as the pilot. Finish and verify one page before starting the next. After Session 2, stop and show me before-and-after screenshots at 1440 and 390 px and the list of local rules you kept as deliberate variations. Continue to the remaining pages after I answer.
+<step_3_outline>
+Add outline.js to each lesson as one identical generated region, and data-commit to each control that records a learner's own answer (commits only; opening a key does not count). A script block that must change goes in docs/design/meridian/freeze-allow.json with a reason and a decision row.
+Checkpoint 3 is reached when: content-freeze passes with only the allowed entries; the outline lists every core section on every lesson; a commit fills a check and a reveal alone does not, shown on at least Session 2 and Session 4; nothing is written to browser storage; every section still scrolls freely; the gate is green or each red line is explained. Commit and push.
+</step_3_outline>
 
-For each page, done means: the freeze check passes; the gate is green or each red line is explained; no horizontal scroll at 320 px; every text colour is 4.5:1 or better on its ground; the page matches DESIGN.md.
-
-Flag, do not resolve: if two instructions collide, or a placement is ambiguous, show me what collides, the evidence each way and your recommendation.
-</how_to_work>
+<rules>
+- Never edit inside a generated or versioned region except through its generator. The console regions in Sessions 1 and 4 are byte-paired and are not edited.
+- No browser storage, no section gating, no new external request, no grading or LMS language, no new em dashes.
+- Out of scope because they change or move content: rewriting figure titles, moving source lines into margin notes, adding section findings.
+- If you run the gate twice on one tree, delete .verify-shots/ first.
+- Keep the three steps as separate commits so each can be reverted alone.
+- Flag, do not resolve: when two instructions collide, show me what collides, the evidence each way and your recommendation. That is the only other reason to stop before the end.
+- If a checkpoint cannot be reached, do not start the next step. Record what blocks it in the ledger, commit, and tell me.
+</rules>
 
 <records>
-Record the work the way this repository does: a CHANGELOG entry and a rebuilt changelog page, a DECISIONS row for every judgment call, register rows for anything left open, a change folder under docs/changes/ with a plan, a ledger and a handback, and current footer stamps. No new em dashes anywhere.
-
-Commit as you complete each page. Open one pull request when I ask for it. Do not merge.
+A CHANGELOG entry and rebuilt changelog page, a DECISIONS row per judgment call, register rows for anything left open, the plan, ledger and a handback in the change folder, current footer stamps. Take the next free DECISIONS and register ids from main at the time you write them.
 </records>
 
-<report>
-When you stop, tell me: which pages are done, the freeze-check and gate results with their output, every deliberate variation you kept, every freeze-allow entry, what you could not verify, and what is left.
-</report>
+<finish>
+After checkpoint 3, open one pull request and do not merge. Then tell me: what is done; the content-freeze, style-snapshot, ui-audit and gate results with their output; every variation kept; every freeze-allow entry; what you could not verify; what is left; and where the before-and-after screenshots are.
+</finish>
 ```
 
 ## Why the prompt is built this way
 
-- The freeze comes before the plan because it is the one constraint that must hold on every step.
-- The pilot stop after Session 2 is the only planned pause. It is where the open design calls (which local rules are deliberate) show up, and answering them once sets the rule for the other eleven pages.
-- Scope names what stays as well as what changes, because the three out-of-scope items were in the design review and would otherwise look like part of the job.
+- The freeze comes first because it is the one constraint that must hold on every step.
+- The work runs by class of rule, not by page, because the page-local CSS is mostly repetition: of 6,183 page-local rules, 408 are identical to a fence rule and 39% of the page-only bytes repeat on two or more pages. One decision per distinct rule settles it on every page that carries it.
+- Step 1 changes no pixel and step 2 changes every pixel, so the two are separate commits and separate checkpoints: `style-snapshot` can prove step 1 exactly, and nothing can prove step 2 except the freeze check, the audit counts and the screenshots.
+- The one planned pause is the variation table, because which local rules are deliberate is the instructor's call and answering it once sets the rule for every page.
+- The ledger in the change folder is the resume point, because the session outlives its own context.
