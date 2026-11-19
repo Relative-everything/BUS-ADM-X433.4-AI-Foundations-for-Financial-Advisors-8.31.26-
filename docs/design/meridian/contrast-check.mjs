@@ -83,7 +83,7 @@ for (const p of (opt('--pages') ? opt('--pages').split(',') : pages(ROOT))) {
         /* why: dim = an opacity below 1 on the element or an ancestor (a state the page dims on purpose);
            inline = the colour is in a style attribute or a fill attribute (markup or a page script wrote it);
            svg = SVG text, whose ground is read from the shape under its centre and may be wrong; css = a style rule */
-        const inl = svg ? (el.hasAttribute('fill') || !!el.style.fill) : !!el.style.color || [...el.querySelectorAll ? [] : []].length > 0;
+        const inl = svg ? (el.hasAttribute('fill') || !!el.style.fill) : !!el.style.color;
         let inh = false; if (!svg && !inl) for (let e = el.parentElement; e && e !== document.body; e = e.parentElement) { if (e.style && e.style.color) { inh = true; break; } const own = getComputedStyle(e).color; if (own !== cs.color) break; }
         const why = op < 0.999 ? 'dim' : (inl || inh) ? 'inline' : svg ? 'svg' : 'css';
         const q2 = el.getBoundingClientRect();

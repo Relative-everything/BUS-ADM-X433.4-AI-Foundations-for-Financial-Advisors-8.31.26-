@@ -14,7 +14,7 @@ The scope was presentation only. Text, figures, sources, chips, case facts, scri
 | `assets/outline.js` | Builds the outline sidebar and the earned checks. Commits only. Inlined into the six lessons by `scripts/build-outline.mjs`. |
 | `outline-commits.json` | Which control in each task records a learner's own answer. Read by `scripts/build-outline.mjs`. |
 | `consolidate.mjs`, `restyle-local.py`, `contrast-check.mjs`, `test-outline.mjs`, `shots-compress.py`, `css-rules.mjs` | The step 1 editor, the step 2 converter, the contrast and overflow check, the outline's behaviour test, the screenshot compressor, and the parser the tools share. |
-| `source-audit.py`, `render-audit.mjs`, `layout-audit.mjs`, `commit-map-audit.mjs` | The pre-merge audit of 2026-11-19: source identity, rendered identity, layout defects against the ref, and the commit markers. |
+| `source-audit.py`, `render-audit.mjs`, `layout-audit.mjs`, `commit-map-audit.mjs`, `interaction-audit.mjs`, `keyboard-print-audit.mjs` | The pre-merge audit of 2026-11-19: source identity, rendered identity, layout defects against the ref, the commit markers, every control used on both versions, and focus, keyboard and print. |
 | `restore-svg-sizes.mjs`, `svg-text-rules.json` | Put back the sizes of rules that style SVG text only (D-136), and the list of them. |
 | `freeze-allow.json` | The two script blocks the freeze check lets differ, each with its reason (D-133). |
 | `skill-assets.diff` | Unified diff of the drafted style sheets against the skill's files, as drafted on 2026-11-15. It predates the promoted block and the four contrast rules added on 2026-11-16; diff `assets/` against the skill afresh before updating the skill. |

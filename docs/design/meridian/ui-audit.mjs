@@ -52,7 +52,6 @@ export function offToken(sel, decl) {
       const val = p === 'font' ? (v.split('/')[0] || '') : v;
       for (const m of val.matchAll(/(?<![\w.-])([0-9]*\.?[0-9]+)(px|pt|rem)\b/g)) {
         const px = m[2] === 'rem' ? +m[1] * 16 : m[2] === 'pt' ? +m[1] * 4 / 3 : +m[1];
-        if (p === 'font' && m[2] === 'px' && /\/\s*[0-9.]+px/.test(v) && false) continue;
         if (!STEPS.some(s => Math.abs(s - px) < 0.01)) out.push({ kind: 'size', prop: p, value: m[0] });
       }
       if (p === 'font-size' && /(?<![\w.-])[0-9.]+(em|%)/.test(v) && !/rem/.test(v.replace(/[0-9.]+rem/g, ''))) out.push({ kind: 'rel', prop: p, value: v });

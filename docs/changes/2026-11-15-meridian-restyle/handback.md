@@ -10,6 +10,7 @@ A pre-merge audit ran on 2026-11-19 with four checks that share no code with the
 - **It found a real defect and fixed it.** Step 2 had enlarged label text inside SVG figures; on Sessions 2 and 5 labels overlapped or ran off their figures (18 outside, 0 on main). 294 SVG-text rules have their original sizes back (D-136). Now 0 outside, and fewer overlaps than main.
 - **The commit markers were checked one by one:** 78 of 111 tasks marked, none matching a reset, reveal, copy, run or navigation control (`commit-map.txt`).
 - The full-length captures of Sessions 4 and 5 were read screen by screen. The figures below are after the fix.
+- **Every control was then used on both versions** (second round, section 6 of the audit record): 3,670 steps, 2,842 real clicks, at two widths and two appendix depths, compared after each step. No difference on any page. Focus rings, the outline by keyboard and what prints: 48 checks pass. Not tested: dragging.
 
 ## What changed, in plain terms
 
@@ -63,9 +64,9 @@ Each changed block, with its six substitutions undone, hashes to the baseline bl
 - **Fonts.** Every measurement ran with the font host refused, so layout was measured in fallback faces. The screenshots were taken with the network open and show the hosted faces.
 - **States nobody was in.** `style-snapshot` records two states (as loaded; everything revealed). A hover, a focus ring, or a class a script adds after a click it did not make is unseen. `consolidate.mjs` refused any move that an equal-specificity rule could reverse, which covers the moves but is a static argument, not an observation.
 - **Seven SVG texts** (`svg-text-to-check.md`, with screenshots). Not counted as passing.
-- **Print.** No print rendering was checked. Print rules were converted by the same mechanical rules; point sizes were left alone.
+- **Print, by eye.** The text that prints is the text the old page prints and the screen chrome is hidden (checked). How the printed page looks was not judged.
 - **Real devices and a real Zoom share.** Headless Chromium only, at 1440, 1024, 390 and 320 px.
-- **Sorters by drag.** The outline counts a placement by click on a bucket; if a sorter also accepts a drag, that path does not earn the check.
+- **Dragging.** No test drags anything. Every sorter was used by click, on both versions. The outline counts a placement by click on a bucket; if a sorter also accepts a drag, that path does not earn the check.
 - **The live console** was exercised only by its mocked suite, as before.
 
 ## What is left

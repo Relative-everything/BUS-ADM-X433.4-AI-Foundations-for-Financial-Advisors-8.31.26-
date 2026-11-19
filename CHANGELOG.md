@@ -13,7 +13,7 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 ## 2026-11-16 · The site restyled to the Meridian design system
 
 Branch `claude/meridian-design-unification-6v4p7m`; plan, ledger and handback in
-`docs/changes/2026-11-15-meridian-restyle/`; decisions D-122 to D-137 in
+`docs/changes/2026-11-15-meridian-restyle/`; decisions D-122 to D-139 in
 `docs/next-term/DECISIONS.md`. Presentation only: no word, figure, source, chip,
 case fact or generated region changed on any page, which
 `docs/design/meridian/content-freeze.mjs` checks against the commit the work
@@ -72,6 +72,11 @@ started from. Two script blocks changed by twelve colour values, listed below.
   and Session 2 labels overlapped or ran off their figures. A size inside a drawing
   is in the drawing's own units, so 294 such rules have their original size again.
   Labels outside a figure: 18 before the fix, none after.
+- **Every control on every page used on both versions.** The old page and the new
+  one were opened side by side and given the same 3,670 inputs (2,842 real clicks,
+  116 fields typed into, the rest key presses), core and full appendix depth, at
+  desktop and phone width. After every step the two were compared and agreed.
+  Focus rings, the outline by keyboard, and what prints were checked the same way.
 
 ### Repository
 
@@ -80,7 +85,8 @@ started from. Two script blocks changed by twelve colour values, listed below.
   the sweep. New in `docs/design/meridian/`: `ui-audit.mjs`, `style-snapshot.mjs`,
   `consolidate.mjs`, `restyle-local.py`, `contrast-check.mjs`, `test-outline.mjs`,
   and from the audit `source-audit.py`, `render-audit.mjs`, `layout-audit.mjs`,
-  `commit-map-audit.mjs`, `restore-svg-sizes.mjs`.
+  `commit-map-audit.mjs`, `restore-svg-sizes.mjs`, `interaction-audit.mjs`,
+  `keyboard-print-audit.mjs`.
 - `content-freeze.mjs` pairs each generated region with its own end marker; it had
   paired a one-line region with the next region's.
 - Register: DW-210 closed; DW-209 open for the skill; DW-212 to DW-217 opened.

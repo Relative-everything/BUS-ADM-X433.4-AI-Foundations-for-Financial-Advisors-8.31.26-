@@ -127,3 +127,16 @@ Asked for by the instructor: audit content before and after, judge the UI work, 
 - Records: D-136, D-137; DW-214 extended, DW-217 opened; CHANGELOG entry extended and page rebuilt; MAINTAINING, MIGRATION.md, DESIGN.md, `off-token-remaining.md`, handback updated; `shots/after/` retaken; stamps at 2026-11-19.
 
 **Next action:** none owed. The pull request is open and waits for the instructor to merge. If main moves first: merge `origin/main` into the branch, re-run `node scripts/verify-stamps.mjs --fix`, the gate, `source-audit.py --ref <new base>` is NOT valid (the freeze ref stays `c058b50`), and push.
+
+## L-10, 2026-11-19: second audit round (every control, both versions); merge authorised
+
+Asked for by the instructor: view each page, use each interaction, show the UI update breaks nothing, polish, then merge. Record: `audit-2026-11-19.md` section 6.
+
+- `interaction-audit.mjs` against a worktree of `c058b50`: the same real input on both versions of every page, at 1440 and 390 px, core and full appendix depth: 3,670 steps, 2,842 real clicks, 116 fields filled, 212 key actions. Every page agrees with the ref after every step (`interaction-audit.txt`). D-138.
+- `keyboard-print-audit.mjs`: 48 checks pass (focus ring on every Tab stop, outline by keyboard, drawer at 390 px, print text and print chrome) (`keyboard-print-audit.txt`).
+- Viewed: Session 0.1 and case files 2 to 5 (tops and a long middle stretch), with Sessions 4 and 5 in full and the others from the first round.
+- Polish: dead code out of two tools; all tools syntax-checked. No page changed since `07be323`.
+- Not tested, registered in DW-217: dragging, the printed page by eye, real devices, a Zoom share, hosted fonts.
+- Final gate: `gate/final.txt`.
+
+**Next action:** merge pull request 51 with a merge commit (D-139), confirm `origin/main` carries it, then nothing is owed. To undo: `git revert -m 1 <merge commit>` on main returns the tree to `c058b50`.
