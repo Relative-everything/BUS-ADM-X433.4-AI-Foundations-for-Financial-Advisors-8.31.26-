@@ -371,9 +371,9 @@ svg.ch .deadzone{fill:var(--warn);opacity:.055}
 .ppout{min-height:70px;color:var(--muted)}
 .ckrow{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);font-size:var(--fs-control);line-height:1.45;cursor:pointer}
 .ckrow input{margin-top:5px;flex:none}
-.chartlab{font-family:var(--font-ui);font-size:var(--fs-label);fill:var(--muted);font-weight:600}
-.chartval{font-family:var(--font-code);font-size:var(--fs-label);fill:var(--ink);font-weight:500}
-.chartttl{font-family:var(--font-display);font-size:var(--fs-small);fill:var(--ink);font-weight:600}
+.chartlab{font-family:var(--font-ui);font-size:11px;fill:var(--muted);font-weight:600}
+.chartval{font-family:var(--font-code);font-size:12px;fill:var(--ink);font-weight:500}
+.chartttl{font-family:var(--font-display);font-size:14px;fill:var(--ink);font-weight:600}
 .brk .t{font-family:var(--font-display);font-weight:600;font-size:var(--fs-finding);color:var(--gold)}
 .brk p{margin:6px auto 0;max-width:52ch;font-size:var(--fs-control);color:var(--gold)}
 body.reveal .keyhide{display:block!important}
@@ -441,7 +441,7 @@ table.ctab td,table.ctab th{padding:7px 10px 7px 0}
 .tsx{font-family:var(--font-code);font-size:var(--fs-label);color:var(--muted);padding:4px 6px 4px 2px}
 .mmgrid{margin:16px 0 0}
 .mmrow{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;max-width:420px}
-.mm{aspect-ratio:1/1;border-radius:var(--radius-sm);background:var(--on-bg);border:1px solid #9FC4C0;display:grid;place-items:center;font-size:var(--fs-label);color:var(--on-primary);line-height:1}
+.mm{aspect-ratio:1/1;border-radius:var(--radius-sm);background:var(--on-bg);border:1px solid #9FC4C0;display:grid;place-items:center;font-size:11px;color:var(--on-primary);line-height:1}
 .mm.bad{background:var(--warn);border-color:var(--warn)}
 .gap .gl{font-size:var(--fs-label);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .gap .gb{height:12px;background:var(--card);border-radius:var(--radius-sm);overflow:hidden}

@@ -32,7 +32,7 @@ Three hosted families, loaded from Google Fonts in one request, with local fallb
 - `display` and `ui` are Bricolage Grotesque. Headings use it at 26px and up; labels, buttons, chips, captions and the outline use it at 12.5 to 16px.
 - `reading` is Source Serif 4. All prose is `body` (18px, 1.6) with a 64-character measure. The section finding is `finding` (21px).
 - `code` is JetBrains Mono. Use it only for prompts, model output and code. It is never a label face.
-- Eight sizes exist: 12.5, 14, 16, 18, 21, 26, 34, 46. Nothing is smaller than 12.5px. Write sizes in rem so browser zoom scales the whole page.
+- Eight sizes exist: 12.5, 14, 16, 18, 21, 26, 34, 46. Nothing is smaller than 12.5px. Write sizes in rem so browser zoom scales the whole page. Text inside an SVG drawing is the exception: its size is in the drawing's own units, set for where the labels are placed, and it scales with the figure.
 - Capitals with letter-spacing are allowed only on `label` text in table headers and margin-note headings. Buttons, tabs and chips are sentence case.
 
 ## Space, radius, borders

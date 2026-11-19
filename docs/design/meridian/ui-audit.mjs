@@ -22,12 +22,14 @@
  *               and are reported separately as rel
  *   radius      a border-radius length other than 0, 4px, 8px, 999px, 50% or a --radius-* token
  *   monolabel   a rule that sets the code face together with letter-spacing or uppercase
+ *   svg         (not counted as off-token) a size on a rule that styles text inside an SVG drawing, listed
+ *               in svg-text-rules.json: drawing units that scale with the figure, not screen pixels
  * The fence and inline style attributes are counted too and printed on their own lines, because the
  * fence is the shared sheet's business and inline styles are markup, not page-local CSS.
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
-import { REPO, pages, localRules, fenceRules, splitDecls } from './css-rules.mjs';
+import { REPO, HERE, pages, localRules, fenceRules, splitDecls } from './css-rules.mjs';
 
 const argv = process.argv.slice(2);
 const opt = n => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : null; };
@@ -69,6 +71,8 @@ export function offToken(sel, decl) {
   return out;
 }
 
+/* rules that size text inside an SVG drawing: drawing units, not screen pixels (restore-svg-sizes.mjs) */
+const SVGF = join(HERE, 'svg-text-rules.json'), SVGR = existsSync(SVGF) ? JSON.parse(readFileSync(SVGF, 'utf8')) : {};
 const data = {}, where = new Map();
 for (const p of pages(ROOT)) {
   const html = readFileSync(join(ROOT, p), 'utf8');
@@ -80,7 +84,7 @@ for (const p of pages(ROOT)) {
 }
 const rows = [], offRows = [], all = [];
 const tot = { rules: 0, bytes: 0, identical: 0, variation: 0, shared: 0, unique: 0, sharedBytes: 0, onlyBytes: 0 };
-const KINDS = ['colour', 'size', 'radius', 'monolabel', 'rel'];
+const KINDS = ['colour', 'size', 'radius', 'monolabel', 'rel', 'svg'];
 const distinctVar = new Set();
 for (const p of pages(ROOT)) {
   const { html, L, F, inline } = data[p];
@@ -93,7 +97,8 @@ for (const p of pages(ROOT)) {
     if (cls === 'variation') distinctVar.add(r.key);
     if (cls === 'shared' || cls === 'unique') { tot.onlyBytes += b; if (cls === 'shared') tot.sharedBytes += b; }
     const o = r.kind === 'rule' ? offToken(r.sel, r.decl) : offToken(r.sel, r.decl.replace(/[^{}]*\{/g, ';').replace(/\}/g, ';'));
-    for (const x of o) { off[x.kind]++; all.push({ page: p, where: 'local', ctx: r.ctx.join(' '), sel: r.sel, ...x }); }
+    const svgRule = (SVGR[p] || []).includes(r.skey);
+    for (const x of o) { if (svgRule && (x.kind === 'size' || x.kind === 'rel')) x.kind = 'svg'; off[x.kind]++; all.push({ page: p, where: 'local', ctx: r.ctx.join(' '), sel: r.sel, ...x }); }
     r.line = html.slice(0, r.start).split('\n').length;
   }
   for (const r of F) if (r.kind === 'rule' && r.sel !== ':root') for (const x of offToken(r.sel, r.decl)) offF[x.kind]++;
@@ -110,7 +115,7 @@ table(['page', 'rules', 'identical', 'variation', 'shared', 'unique', 'KB'], [..
 console.log('distinct variations: ' + distinctVar.size + '   page-only bytes repeated on 2+ pages: ' + (tot.onlyBytes ? Math.round(100 * tot.sharedBytes / tot.onlyBytes) : 0) + '%');
 console.log('\nOff-token values: page-local CSS | inline style attributes | the fence (after :root)');
 const sum = offRows[0].map((_, i) => i === 0 ? 'TOTAL' : offRows[0][i] === '|' ? '|' : offRows.reduce((a, r) => a + r[i], 0));
-table(['page', 'colour', 'size', 'radius', 'monolabel', 'rel', '|', 'colour', 'size', 'radius', 'monolabel', '|', 'colour', 'size', 'radius', 'monolabel'], [...offRows, sum]);
+table(['page', 'colour', 'size', 'radius', 'monolabel', 'rel', 'svg', '|', 'colour', 'size', 'radius', 'monolabel', '|', 'colour', 'size', 'radius', 'monolabel'], [...offRows, sum]);
 if (argv.includes('--list')) for (const x of all) console.log([x.page, x.where, x.kind, x.sel.slice(0, 70), x.prop + ':' + x.value].join('\t'));
 if (opt('--json')) writeFileSync(opt('--json'), JSON.stringify({ rules: Object.fromEntries(pages(ROOT).map(p => [p, data[p].L.map(r => ({ cls: r.cls, kind: r.kind, ctx: r.ctx, sel: r.sel, decl: r.decl, line: r.line }))])), off: all }, null, 1));
 const localOff = sum.slice(1, 5).reduce((a, b) => a + b, 0);

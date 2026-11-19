@@ -524,7 +524,18 @@ fence tokens with `var()` where they mean the same colour.
 every served page with a git ref and fails if text, a script, an attribute other
 than `class` and `style`, or a generated region other than the STYLE fence has
 changed. The freeze check, `ui-audit.mjs` and `style-snapshot.mjs` are tools for
-a restyle and are not part of the gate above. `assets/` is read by the sweep;
+a restyle and are not part of the gate above. Four more audit a restyle against
+a checkout of the commit before it (`git worktree add <dir> <ref>`):
+`source-audit.py` (everything outside CSS and inline style is byte-identical),
+`render-audit.mjs <dir>` (the same text, visibility, controls and drawings in a
+browser), `layout-audit.mjs <dir>` (no more overlapping or overflowing labels,
+spilled text or overlapping controls than before) and `commit-map-audit.mjs`
+(every commit marker matches an answer control and nothing else).
+
+**A size on text inside an SVG drawing is not a type size.** It is in the
+drawing's own units and the labels are placed for it, so it stays as written and
+off the eight-step scale (D-136). `svg-text-rules.json` lists those rules;
+`ui-audit.mjs` reports them in their own column. `assets/` is read by the sweep;
 nothing else in that folder is read by a served page.
 
 ## The outline and the earned checks

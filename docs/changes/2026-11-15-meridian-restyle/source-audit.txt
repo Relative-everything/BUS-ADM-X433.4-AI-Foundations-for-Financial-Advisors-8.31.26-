@@ -1,0 +1,14 @@
+same  index.html  50560 bytes of non-style source identical
+same  session-0.1/index.html  117170 bytes of non-style source identical  (outline region removed; 15 commit marker(s) removed)
+same  session-1/index.html  246703 bytes of non-style source identical  (outline region removed; 10 commit marker(s) removed)
+same  session-2/index.html  256945 bytes of non-style source identical  (3 colour value(s) undone; 1 colour value(s) undone; 1 colour value(s) undone; 1 colour value(s) undone; outline region removed; 16 commit marker(s) removed)
+same  session-3/index.html  232926 bytes of non-style source identical  (6 colour value(s) undone; outline region removed; 1 empty bar element removed; 14 commit marker(s) removed)
+same  session-4/index.html  589954 bytes of non-style source identical  (outline region removed; 1 empty bar element removed; 18 commit marker(s) removed)
+same  session-5/index.html  429110 bytes of non-style source identical  (outline region removed; 1 empty bar element removed; 13 commit marker(s) removed; blank lines before </body> differ)
+same  cases/case-1.html  113212 bytes of non-style source identical
+same  cases/case-2.html  99852 bytes of non-style source identical
+same  cases/case-3.html  103213 bytes of non-style source identical
+same  cases/case-4.html  132316 bytes of non-style source identical
+same  cases/case-5.html  94620 bytes of non-style source identical
+
+summary: outside CSS, inline style attributes, the stamp date and the generated outline additions, all 12 pages are byte-identical to c058b50

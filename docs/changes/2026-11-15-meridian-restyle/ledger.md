@@ -114,3 +114,16 @@ The source of truth for progress. Newest entry last. Each entry: what was done, 
 - `handback.md` written.
 
 **Next action:** open one pull request from `claude/meridian-design-unification-6v4p7m` into `main`; do not merge; report to the instructor. After that nothing is owed on this branch unless the instructor asks.
+
+## L-09, 2026-11-19: pre-merge audit; one defect class found and fixed; branch merge-ready
+
+Asked for by the instructor: audit content before and after, judge the UI work, make the branch merge-ready. Record: `audit-2026-11-19.md`.
+
+- **Content.** `source-audit.py`: 12 pages byte-identical to `c058b50` outside CSS, inline style, the stamp date and the generator's additions (class attributes kept in the comparison; none changed). `render-audit.mjs` against a worktree of `c058b50`: same text, visible text, generated content, controls, media and clipping on 12 pages. `content-freeze`: frozen. D-137.
+- **UI.** `layout-audit.mjs` found SVG labels overlapping and outside their figures on Sessions 2 and 5 (18 outside against 0 on main), caused by step 2 snapping SVG text sizes. `restore-svg-sizes.mjs --write` put back 294 rules; now 0 outside and 82 overlapping pairs against 85 on main. D-136. One 3 px spill on Session 5 at 390 px is registered (DW-214).
+- **Commit markers.** `commit-map-audit.mjs`: 78 of 111 marked, none wrong. Table: `commit-map.txt`.
+- **Read by eye.** Sessions 4 and 5 full captures, tiled; samples of the rest. Nothing broken found.
+- **Re-run after the fix:** contrast 55 (48 dimmed, 7 SVG), unchanged; no sideways scroll at 320 px; `test-outline` 58 pass; gate (`gate/audit-2026-11-19.txt`) 24 of 24 in-repo checks pass, skill-validator lines identical to the baseline.
+- Records: D-136, D-137; DW-214 extended, DW-217 opened; CHANGELOG entry extended and page rebuilt; MAINTAINING, MIGRATION.md, DESIGN.md, `off-token-remaining.md`, handback updated; `shots/after/` retaken; stamps at 2026-11-19.
+
+**Next action:** none owed. The pull request is open and waits for the instructor to merge. If main moves first: merge `origin/main` into the branch, re-run `node scripts/verify-stamps.mjs --fix`, the gate, `source-audit.py --ref <new base>` is NOT valid (the freeze ref stays `c058b50`), and push.

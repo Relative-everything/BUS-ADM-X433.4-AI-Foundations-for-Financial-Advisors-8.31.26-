@@ -13,7 +13,7 @@ Format: `## YYYY-MM-DD` with changes grouped by session.
 ## 2026-11-16 · The site restyled to the Meridian design system
 
 Branch `claude/meridian-design-unification-6v4p7m`; plan, ledger and handback in
-`docs/changes/2026-11-15-meridian-restyle/`; decisions D-122 to D-135 in
+`docs/changes/2026-11-15-meridian-restyle/`; decisions D-122 to D-137 in
 `docs/next-term/DECISIONS.md`. Presentation only: no word, figure, source, chip,
 case fact or generated region changed on any page, which
 `docs/design/meridian/content-freeze.mjs` checks against the commit the work
@@ -59,15 +59,31 @@ started from. Two script blocks changed by twelve colour values, listed below.
   explanation line under Session 3's answer keys (3.71:1 on its tint, now 5.45:1).
   Six occurrences each; nothing else in either script changed.
 
+### Pre-merge audit, 2026-11-19
+
+- **Content compared before and after, two more ways.** The source of every page
+  is byte-identical to the version before the restyle once CSS, inline styles, the
+  footer date and the outline's own additions are set aside. Opened in a browser,
+  both versions show the same text, the same things visible and hidden, the same
+  controls and the same drawings, on all twelve pages
+  (`docs/changes/2026-11-15-meridian-restyle/audit-2026-11-19.md`).
+- **Sessions 2, 4 and 5: label sizes inside drawings put back.** The restyle had
+  enlarged the text inside SVG figures along with everything else, and on Session 5
+  and Session 2 labels overlapped or ran off their figures. A size inside a drawing
+  is in the drawing's own units, so 294 such rules have their original size again.
+  Labels outside a figure: 18 before the fix, none after.
+
 ### Repository
 
 - New in `scripts/`: `build-outline.mjs`, with `--check` in the gate.
   `verify-style.mjs` and `build-changelog.py` pass the repository's style sheets to
   the sweep. New in `docs/design/meridian/`: `ui-audit.mjs`, `style-snapshot.mjs`,
-  `consolidate.mjs`, `restyle-local.py`, `contrast-check.mjs`, `test-outline.mjs`.
+  `consolidate.mjs`, `restyle-local.py`, `contrast-check.mjs`, `test-outline.mjs`,
+  and from the audit `source-audit.py`, `render-audit.mjs`, `layout-audit.mjs`,
+  `commit-map-audit.mjs`, `restore-svg-sizes.mjs`.
 - `content-freeze.mjs` pairs each generated region with its own end marker; it had
   paired a one-line region with the next region's.
-- Register: DW-210 closed; DW-209 open for the skill; DW-212 to DW-216 opened.
+- Register: DW-210 closed; DW-209 open for the skill; DW-212 to DW-217 opened.
 
 ---
 

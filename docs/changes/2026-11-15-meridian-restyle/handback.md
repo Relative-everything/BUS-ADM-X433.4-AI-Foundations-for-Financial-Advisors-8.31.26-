@@ -2,6 +2,15 @@
 
 2026-11-16. Branch `claude/meridian-design-unification-6v4p7m`, from `origin/main` at `c058b50`. One pull request, not merged. The ledger beside this file is the step-by-step record; this is what you need to decide whether to merge.
 
+## Read first: the audit of 2026-11-19
+
+A pre-merge audit ran on 2026-11-19 with four checks that share no code with the ones below. `audit-2026-11-19.md` is its record. In short:
+
+- **Content is unchanged, shown two more ways.** Source: all 12 pages byte-identical outside CSS, inline styles, the stamp date and the outline's additions. Rendered: the same text, visibility, controls and drawings on all 12 pages.
+- **It found a real defect and fixed it.** Step 2 had enlarged label text inside SVG figures; on Sessions 2 and 5 labels overlapped or ran off their figures (18 outside, 0 on main). 294 SVG-text rules have their original sizes back (D-136). Now 0 outside, and fewer overlaps than main.
+- **The commit markers were checked one by one:** 78 of 111 tasks marked, none matching a reset, reveal, copy, run or navigation control (`commit-map.txt`).
+- The full-length captures of Sessions 4 and 5 were read screen by screen. The figures below are after the fix.
+
 ## What changed, in plain terms
 
 Every served page now looks like one system. The pages kept every word, figure, source, chip, case fact and generated region. Two page scripts changed by six colour values each, on your instruction.
@@ -10,7 +19,8 @@ Every served page now looks like one system. The pages kept every word, figure, 
 |---|---|---|
 | 1. Consolidate | 342 page rules that repeated the shared sheet deleted; your 74 variation answers applied; the sweep pointed at this repository's style sheets; 202 rules shared between pages moved into the shared sheet. Nothing computed differently except the variations you dropped. | `733834e`, `7fd17d8`, `0ead3c0`, `fb29ea6` |
 | 2. Restyle | The Meridian sheets replaced the shared sheets; page CSS and inline styles converted to tokens; four contrast fixes in the shared sheet; one narrow-screen fix on case 3. | `2e6fb66` |
-| 3. Outline | Outline sidebar and earned checks in the six lessons; app bar element on Sessions 3 to 5; the two script colour fixes; records. | `46522d4` and the commit that carries this file |
+| 3. Outline | Outline sidebar and earned checks in the six lessons; app bar element on Sessions 3 to 5; the two script colour fixes; records. | `46522d4`, `c6537cd` |
+| Audit | SVG label sizes restored; four audit tools; records. | the commit that carries this revision |
 
 To revert one step alone, revert its commits in the table. `e0da259` is the first commit (MIGRATION and KICKOFF-PROMPT brought into line with the prompt).
 
@@ -20,8 +30,8 @@ To revert one step alone, revert its commits in the table. `e0da259` is the firs
 |---|---|---|
 | `content-freeze.mjs` | Frozen on 12 pages against `c058b50`, with two allowed script blocks | `freeze-allow.json` |
 | `style-snapshot.mjs` | Step 1: the same on Session 0.1, Session 1 and the five case pages; the hub and Sessions 2 to 5 differ only in the properties your dropped variations set. Step 1.4 (promotion) against the post-drop record: the same on all 12 and on the changelog page. Step 2 is a restyle, so the proof there is the freeze, the audit and the screenshots. | ledger L-03, L-05 |
-| `ui-audit.mjs` | Page-local rules 5,698 to 4,364. Off-token values in page CSS 2,238 to 137 (colours 381 to 111, sizes 1,143 to 26, radii 350 to 0, monospace labels 364 to 0), each remaining one with its reason | `ui-audit-after.txt`, `off-token-remaining.md` |
-| Gate | All 24 in-repo checks pass, `build-outline --check` among them. The 12 skill-validator lines are red on exactly the lines red at the baseline (V2 on footer links, V4 `data-fact` chips, V6 band and consecutive types, V8 and Shift+U on Session 2, `#pnum`), all listed in MAINTAINING as red by design; the condensed logs are identical | `gate/baseline.txt`, `gate/checkpoint-1.txt`, `-2.txt`, `-3.txt` |
+| `ui-audit.mjs` | Page-local rules 5,698 to 4,364. Off-token values in page CSS 2,238 to 137 (colours 381 to 111, sizes 1,143 to 26, radii 350 to 0, monospace labels 364 to 0), each remaining one with its reason; 194 sizes on SVG text are drawing units and are reported separately | `ui-audit-after.txt`, `off-token-remaining.md` |
+| Gate | All 24 in-repo checks pass, `build-outline --check` among them. The 12 skill-validator lines are red on exactly the lines red at the baseline (V2 on footer links, V4 `data-fact` chips, V6 band and consecutive types, V8 and Shift+U on Session 2, `#pnum`), all listed in MAINTAINING as red by design; the condensed logs are identical | `gate/baseline.txt`, `gate/checkpoint-1.txt`, `-2.txt`, `-3.txt`, `gate/audit-2026-11-19.txt` |
 
 Also: `contrast-check.mjs`, selectors below 4.5:1 from 1,808 to 55, no page scrolling sideways at 320 px (`contrast-remaining.txt`); `test-outline.mjs`, 58 assertions pass (`test-outline.txt`).
 
@@ -60,7 +70,7 @@ Each changed block, with its six substitutions undone, hashes to the baseline bl
 
 ## What is left
 
-Register rows: DW-209 (the skill: copy `assets/` over, decide the promoted block, add `outline.js`, remove the `--assets` override), DW-212 (48 dimmed states), DW-213 (seven SVG texts), DW-214 (shadows, case-colour literals, code face on plain-case controls, script-drawn colours), DW-215 (204 shared rules still local, the `.case-*` rules among them), DW-216 (the commit map; and the three content changes the design review asked for: figure titles as findings, margin notes, section findings). DW-211 is unchanged.
+Register rows: DW-209 (the skill: copy `assets/` over, decide the promoted block, add `outline.js`, remove the `--assets` override), DW-212 (48 dimmed states), DW-213 (seven SVG texts), DW-214 (shadows, case-colour literals, code face on plain-case controls, script-drawn colours), DW-215 (204 shared rules still local, the `.case-*` rules among them), DW-216 (the commit map; and the three content changes the design review asked for: figure titles as findings, margin notes, section findings), DW-217 (what only a person can check: a phone, a Zoom share, print, the hosted fonts). DW-211 is unchanged.
 
 ## Where the screenshots are
 

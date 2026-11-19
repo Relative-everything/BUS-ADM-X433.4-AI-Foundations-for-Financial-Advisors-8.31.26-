@@ -115,3 +115,7 @@ From `node docs/design/meridian/ui-audit.mjs --list` on 2026-11-16. Before step 
 ## What the audit does not count
 
 Colours and sizes that page scripts write into markup or SVG at run time (chart series, the `#6F7B78` key text in Session 3, the option marks in Session 2). Scripts are frozen, so these are unchanged; the kickoff prompt lists recolouring script-drawn charts as out of scope.
+
+## Added 2026-11-19: sizes on SVG text
+
+194 size values on rules that style text inside an SVG drawing (Session 2: 2, Session 4: 65, Session 5: 127) are back at the sizes they had before the restyle (D-136). They are drawing units that scale with the figure, and the labels are placed for them. `ui-audit.mjs` reports them in the `svg` column and does not count them as off-token. The rules are listed in `docs/design/meridian/svg-text-rules.json`.
